@@ -1,0 +1,32 @@
+// City atlas: success rate with each city as the destination, using common random numbers
+// (one scenario set, shared by every city) at a reduced path count.
+
+import { budgetTotal } from './cost'
+import { runPaths } from './kernel'
+import { prepare } from './prepare'
+import { findCity, kernelConfig, makeScenarios, resolveDestination } from './simulate'
+import type { AtlasEntry, City, MarketData, PlanInputs } from './types'
+
+export const ATLAS_MAX_PATHS = 1500
+
+export function runAtlas(market: MarketData, cities: City[], inputs: PlanInputs, cityIds: string[]): AtlasEntry[] {
+  const prep = prepare(market, inputs.holdings, inputs.outlook)
+  const sc = makeScenarios(prep, inputs, Math.min(inputs.paths, ATLAS_MAX_PATHS))
+  const home = findCity(cities, inputs.homeCityId)
+  const homeSpend = budgetTotal(inputs.budget)
+  const out: AtlasEntry[] = []
+  for (const id of cityIds) {
+    const city = findCity(cities, id)
+    if (!city) continue
+    const dest = resolveDestination(inputs, home, city)
+    const clean = runPaths(sc, kernelConfig(inputs, dest), null)
+    const spendUsd = dest.annual ?? homeSpend
+    out.push({
+      cityId: id,
+      successRate: clean / sc.paths,
+      spendUsd,
+      costRatio: homeSpend > 0 ? spendUsd / homeSpend : 1,
+    })
+  }
+  return out.sort((a, b) => b.successRate - a.successRate || a.spendUsd - b.spendUsd)
+}

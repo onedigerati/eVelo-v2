@@ -8,12 +8,12 @@ Stage 1 of 6 · Data + engine
 Risk: external services (build-time data fetch only)
 Mode: autopilot
 Checks:
-- [ ] `npm run data:refresh` writes monthly total returns for ~150+ tickers plus US CPI (proof: command)
-- [ ] Engine tests pass: bootstrap preserves cross-asset correlation, margin call fires when LTV crosses threshold, cheaper city raises success (proof: test)
+- [x] `npm run data:refresh` writes monthly total returns for ~150+ tickers plus US CPI (proof: command)
+- [x] Engine tests pass: bootstrap preserves cross-asset correlation, margin call fires when LTV crosses threshold, cheaper city raises success (proof: test)
 Open: none
 
 ## Stages
-- [ ] 1. Data + engine — Yahoo/FRED fetch script, factor backfill, block bootstrap + fat-tail, SBLOC/margin call/forced sale, BBD vs sell, city cost model, solver
+- [x] 1. Data + engine — Yahoo/FRED fetch script, factor backfill, block bootstrap + fat-tail, SBLOC/margin call/forced sale, BBD vs sell, city cost model, solver
 - [ ] 2. App shell + design system — Vite/React/TS, tokens, fonts, light/dark, responsive layout, mobile tab bar, state + URL share
 - [ ] 3. Plan inputs — ticker command palette, weights, life/budget, borrowing, move scenario, model settings
 - [ ] 4. Results — verdict + 100-futures dot chart, fan charts (net worth / LTV / loan), margin-call timing, safe-spend solver, BBD vs sell
@@ -27,6 +27,10 @@ Open: none
 - 2026-11-06 · Short histories backfilled from SPY via regression (alpha, beta, resampled residuals); means shrunk toward a CAPM prior by "outlook" setting — stops young winners from projecting forever.
 - 2026-11-06 · Headline success = no forced sale (margin call) and solvent through horizon — the BBD failure mode is selling at the bottom.
 - 2026-11-06 · Destination cost in USD = home budget × per-category city ratios (with expat factor) × US CPI path × real-FX random walk — PPP-consistent and simple.
+- 2026-11-06 · Stages 1, 2 and the city dataset (from stage 5) built in parallel against `src/engine/types.ts` — they're independent; the contract keeps them aligned.
+- 2026-11-06 · Preview: after each stage that changes what the user sees, publish the production build to one private claude.ai Artifact (same URL every time) and keep a local dev server up — user asked to review meaningful updates on a preview site.
+- 2026-11-06 · Single-stock means capped at 35% history weight (balanced) / 15% (conservative); 'historical' uses the real-window mean only — 100% NVDA was projecting 24%/yr for 30 years.
+- 2026-11-06 · Data months keyed by UTC month of timestamp+12h; script fails on gaps or a stale last month — a DST offset bug had shifted/merged months.
 - 2026-11-06 · City cost indices are curated approximations from public indices, labeled as estimates and user-overridable per category.
 
 ## Open questions

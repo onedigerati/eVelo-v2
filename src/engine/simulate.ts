@@ -1,0 +1,147 @@
+import { applyRatios, budgetTotal, categoryRatios } from './cost'
+import { createRecorder, runPaths, type KernelConfig } from './kernel'
+import { prepare, type Prepared } from './prepare'
+import { generateScenarios, type Scenarios } from './scenarios'
+import type { Bands, BudgetCategory, City, MarketData, PlanInputs, SimulationResult } from './types'
+
+const now = () => (typeof performance !== 'undefined' ? performance.now() : Date.now())
+
+export interface Destination {
+  city: City | null
+  ratios: Record<BudgetCategory, number> | null
+  /** Annual destination spend, today's USD (null when staying home). */
+  annual: number | null
+}
+
+export function findCity(cities: City[], id: string | null): City | null {
+  if (!id) return null
+  return cities.find((c) => c.id === id) ?? null
+}
+
+/** Resolve the destination's ratios and annual spend for a given dest city. */
+export function resolveDestination(inputs: PlanInputs, home: City | null, dest: City | null): Destination {
+  if (!dest || !home || dest.id === home.id) return { city: null, ratios: null, annual: null }
+  const ratios = categoryRatios(home, dest, inputs.expatFactor, inputs.ratioOverrides)
+  return { city: dest, ratios, annual: applyRatios(inputs.budget, ratios) }
+}
+
+export function kernelConfig(inputs: PlanInputs, dest: Destination, budgetMultiplier = 1): KernelConfig {
+  const T = Math.max(1, Math.round(inputs.horizonYears * 12))
+  const homeAnnual = budgetTotal(inputs.budget) * budgetMultiplier
+  const hasDest = dest.city != null && dest.annual != null
+  const fxVol = hasDest && dest.city!.currency !== 'USD' ? dest.city!.fxVol || 0 : 0
+  return {
+    T,
+    portfolio: inputs.portfolio,
+    basisFraction: Math.min(1, Math.max(0, inputs.basisFraction)),
+    dragM: inputs.dividendTaxDrag / 12,
+    loanRateM: inputs.loanRate / 12,
+    maxLtv: inputs.maxLtv,
+    targetLtv: Math.min(inputs.targetLtvAfterCall, inputs.maxLtv),
+    tax: inputs.capGainsRate,
+    homeMonthly: homeAnnual / 12,
+    destMonthly: hasDest ? (dest.annual! * budgetMultiplier) / 12 : homeAnnual / 12,
+    moveMonth: hasDest ? Math.max(0, Math.round(inputs.moveInYears * 12)) : T,
+    fxSigmaM: fxVol / Math.sqrt(12),
+    incomeMonthly: inputs.otherIncome / 12,
+    incomeStartMonth: Math.max(0, Math.ceil((inputs.incomeStartAge - inputs.age) * 12 - 1e-9)),
+  }
+}
+
+export function makeScenarios(prep: Prepared, inputs: PlanInputs, paths: number): Scenarios {
+  const T = Math.max(1, Math.round(inputs.horizonYears * 12))
+  return generateScenarios(prep, inputs.method, inputs.blockMonths, Math.max(1, Math.floor(paths)), T, inputs.seed)
+}
+
+function quantile(sorted: ArrayLike<number>, q: number): number {
+  const n = sorted.length
+  if (!n) return 0
+  const pos = (n - 1) * q
+  const lo = Math.floor(pos)
+  const hi = Math.min(n - 1, lo + 1)
+  return sorted[lo] + (sorted[hi] - sorted[lo]) * (pos - lo)
+}
+
+function median(a: Float64Array): number {
+  return quantile(Float64Array.from(a).sort(), 0.5)
+}
+
+function bands(data: Float64Array, paths: number, years: number): Bands {
+  const b: Bands = { p5: [], p25: [], p50: [], p75: [], p95: [] }
+  for (let y = 0; y <= years; y++) {
+    const col = data.subarray(y * paths, (y + 1) * paths).sort()
+    b.p5.push(quantile(col, 0.05))
+    b.p25.push(quantile(col, 0.25))
+    b.p50.push(quantile(col, 0.5))
+    b.p75.push(quantile(col, 0.75))
+    b.p95.push(quantile(col, 0.95))
+  }
+  return b
+}
+
+/** 100 dots proportional to the rates (largest-remainder rounding), sorted clean→bruised→broken. */
+export function outcomeDots(rates: [number, number, number]): (0 | 1 | 2)[] {
+  const raw = rates.map((r) => Math.max(0, r) * 100)
+  const counts = raw.map(Math.floor)
+  let left = 100 - counts.reduce((s, c) => s + c, 0)
+  const order = [0, 1, 2].sort((a, b) => raw[b] - counts[b] - (raw[a] - counts[a]) || a - b)
+  for (let i = 0; left > 0; i = (i + 1) % 3, left--) counts[order[i]]++
+  const dots: (0 | 1 | 2)[] = []
+  for (const k of [0, 1, 2] as const) for (let i = 0; i < counts[k]; i++) dots.push(k)
+  return dots.slice(0, 100)
+}
+
+export function simulate(market: MarketData, cities: City[], inputs: PlanInputs): SimulationResult {
+  const t0 = now()
+  const prep = prepare(market, inputs.holdings, inputs.outlook)
+  const home = findCity(cities, inputs.homeCityId)
+  const dest = resolveDestination(inputs, home, findCity(cities, inputs.destCityId))
+  const cfg = kernelConfig(inputs, dest)
+  const sc = makeScenarios(prep, inputs, inputs.paths)
+  const paths = sc.paths
+  const years = Math.floor(cfg.T / 12)
+  const rec = createRecorder(paths, years)
+  runPaths(sc, cfg, rec)
+
+  const counts = [0, 0, 0]
+  for (let p = 0; p < paths; p++) counts[rec.outcome[p]]++
+  const rates = counts.map((c) => c / paths) as [number, number, number]
+
+  const horizonYears = Math.ceil(cfg.T / 12)
+  const byYear = new Array(horizonYears).fill(0)
+  for (let p = 0; p < paths; p++) {
+    const m = rec.firstCall[p]
+    if (m >= 0) byYear[Math.floor(m / 12)] += 1 / paths
+  }
+  const cumulative: number[] = []
+  byYear.reduce((s, x) => (cumulative.push(s + x), s + x), 0)
+
+  let wins = 0
+  for (let p = 0; p < paths; p++) if (rec.bbdEstate[p] > rec.sellEstate[p]) wins++
+
+  return {
+    inputs,
+    successRate: rates[0],
+    bruisedRate: rates[1],
+    brokenRate: rates[2],
+    outcomeDots: outcomeDots(rates),
+    netWorth: bands(rec.nw, paths, years),
+    portfolioValue: bands(rec.port, paths, years),
+    loan: bands(rec.loan, paths, years),
+    ltv: bands(rec.ltv, paths, years),
+    marginCallByYear: byYear,
+    marginCallCumulative: cumulative,
+    spendHome: budgetTotal(inputs.budget),
+    spendDest: dest.annual,
+    categoryRatios: dest.ratios,
+    estate: {
+      bbdMedian: median(rec.bbdEstate),
+      sellMedian: median(rec.sellEstate),
+      bbdWins: wins / paths,
+      sellTaxMedian: median(rec.sellTax),
+    },
+    stats: { expReturn: prep.expReturn, volatility: prep.volatility, cagrMedian: median(rec.cagr) },
+    correlation: prep.correlation,
+    elapsedMs: now() - t0,
+  }
+}
