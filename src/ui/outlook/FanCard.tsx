@@ -45,6 +45,10 @@ export function fanCaption(r: SimulationResult, m: FanMetric): string {
   const end = a + n
   if (m === 'networth') {
     const low = b.p5[n]
+    if (b.p50[n] <= r.inputs.portfolio * 0.02)
+      return `In the median future the loan consumes everything by ${end}: net worth falls from ${currencyCompact(b.p50[0])} to ${currencyCompact(b.p50[n])}${b.p95[n] > r.inputs.portfolio * 0.02 ? `, and only the luckiest 5% end above ${currencyCompact(b.p95[n])}` : ''}.`
+    if (b.p50[n] < b.p50[0])
+      return `In the median future net worth shrinks from ${currencyCompact(b.p50[0])} to ${currencyCompact(b.p50[n])} by ${end}; the unluckiest 5% end ${low <= r.inputs.portfolio * 0.02 ? 'with almost nothing' : `near ${currencyCompact(low)}`}.`
     return `In the median future net worth grows from ${currencyCompact(b.p50[0])} to ${currencyCompact(b.p50[n])} by ${end}; the unluckiest 5% end ${low <= r.inputs.portfolio * 0.02 ? 'with almost nothing' : `near ${currencyCompact(low)}`}.`
   }
   if (m === 'portfolio')

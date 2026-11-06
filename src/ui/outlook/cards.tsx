@@ -27,7 +27,9 @@ const CATEGORY_LABEL: Record<BudgetCategory, string> = {
 export function safeSpendCaption(r: SimulationResult, s: SolveResult): string {
   const cur = r.spendHome
   const diff = s.maxSpendHome - cur
-  if (s.maxSpendHome <= 0) return 'No level of spending reaches 90% confidence with these terms; the loan cost alone sinks too many futures.'
+  if (cur <= 0) return 'Your budget is empty, so there is nothing to borrow. Add your spending in the plan to see how much this portfolio can carry.'
+  if (s.maxSpendHome < cur * 0.02)
+    return 'Even a token budget misses 90% confidence: on these terms any loan outgrows the portfolio in too many futures. A lower loan rate, more growth or more income would change that.'
   if (Math.abs(diff) < cur * 0.02) return 'Your budget sits right at the 90% line: this is about as much as the plan can carry.'
   if (diff > 0)
     return `You have ${currencyCompact(diff)} a year of headroom: spend up to ${percent(diff / cur)} more and 9 in 10 futures still hold.`
@@ -108,10 +110,10 @@ export function SafeSpendBody({ result, solve, solving }: { result: SimulationRe
       </div>
 
       <div className="safe__actions">
-        <Button variant={same ? 'secondary' : 'primary'} size="sm" onClick={apply} disabled={same || solving || max <= 0}>
+        <Button variant={same ? 'secondary' : 'primary'} size="sm" onClick={apply} disabled={same || solving || max <= 0 || cur <= 0}>
           Use this budget
         </Button>
-        <span className="t-small ink-3">Scales every category by {same ? '0%' : percent(max / cur - 1, { signed: true })}.</span>
+        {cur > 0 && <span className="t-small ink-3">Scales every category by {same ? '0%' : percent(max / cur - 1, { signed: true })}.</span>}
       </div>
     </div>
   )
@@ -122,6 +124,10 @@ export function SafeSpendBody({ result, solve, solving }: { result: SimulationRe
 export function estateCaption(r: SimulationResult): string {
   const { bbdMedian, sellMedian, bbdWins } = r.estate
   const d = bbdMedian - sellMedian
+  if (Math.max(bbdMedian, sellMedian) < r.inputs.portfolio * 0.01)
+    return 'In the median future neither strategy leaves an estate: spending and the loan (or the taxes of selling) use up the portfolio first.'
+  if (Math.abs(d) < r.inputs.portfolio * 0.005)
+    return `Both strategies leave about ${currencyCompact(bbdMedian)} in the median future: there is little or nothing to borrow or sell.`
   if (d >= 0)
     return `Borrowing leaves heirs ${currencyCompact(d)} more in the median future, and comes out ahead in ${percent(bbdWins)} of all futures.`
   return `Selling as you go leaves ${currencyCompact(-d)} more in the median future here: the loan interest outruns the tax it avoids.`

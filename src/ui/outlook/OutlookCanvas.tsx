@@ -1,5 +1,8 @@
 import { m as motion } from 'framer-motion'
+import { navigate } from '../../state/router'
+import { hasHoldings } from '../../state/sim'
 import { useStore } from '../../state/store'
+import { usePlanUi } from '../plan/planUi'
 import { IconPlan } from '../icons'
 import { stagger } from '../motion'
 import { Button, cx } from '../primitives'
@@ -11,7 +14,42 @@ import { VerdictHero } from './VerdictHero'
 import './outlook.css'
 
 /** Right-hand canvas: the verdict, then the detail cards (summary before detail). */
+/** No holdings: nothing to simulate yet. */
+function EmptyOutlook() {
+  return (
+    <section className="verdict verdict--empty" aria-labelledby="verdict-h">
+      <div className="verdict__meta">
+        <span className="t-eyebrow">The verdict</span>
+      </div>
+      <h1 id="verdict-h" className="t-display verdict__empty-h">
+        Start with what you <em>own.</em>
+      </h1>
+      <p className="t-lede verdict__lede">
+        Your plan has no holdings yet. Add a ticker (or pick a ready-made mix in the plan) and eVelo will run thousands of
+        market futures against it.
+      </p>
+      <div className="verdict__empty-cta">
+        <Button
+          variant="primary"
+          onClick={() => {
+            navigate('plan')
+            usePlanUi.getState().setPaletteOpen(true)
+          }}
+        >
+          Add a holding
+        </Button>
+      </div>
+    </section>
+  )
+}
+
 export function OutlookCanvas({ onEditPlan }: { onEditPlan?: () => void }) {
+  const empty = useStore((s) => !hasHoldings(s.inputs))
+  if (empty) return <div className="outlook"><EmptyOutlook /></div>
+  return <OutlookBody onEditPlan={onEditPlan} />
+}
+
+function OutlookBody({ onEditPlan }: { onEditPlan?: () => void }) {
   const result = useStore((s) => s.result)
   const solve = useStore((s) => s.solve)
   const solving = useStore((s) => s.solving)

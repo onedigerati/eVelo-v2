@@ -91,7 +91,8 @@ export function addHolding(hs: Holding[], symbol: string, locked: ReadonlySet<st
 /** Remove a holding; its weight goes to unlocked holdings (or all, if every other is locked). */
 export function removeHolding(hs: Holding[], symbol: string, locked: ReadonlySet<string> = new Set()): Holding[] {
   const at = hs.findIndex((h) => h.symbol === symbol)
-  if (at < 0 || hs.length <= 1) return hs
+  if (at < 0) return hs
+  if (hs.length === 1) return []
   const base = normalize(hs)
   const w = base[at].weight
   const rest = base.filter((_, i) => i !== at)

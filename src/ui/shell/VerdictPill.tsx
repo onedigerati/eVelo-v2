@@ -1,4 +1,5 @@
 import { m as motion } from 'framer-motion'
+import { hasHoldings } from '../../state/sim'
 import { selectSuccess, useStore } from '../../state/store'
 import { IconArrowRight } from '../icons'
 import { AnimatedNumber, cx } from '../primitives'
@@ -9,7 +10,16 @@ import { toneFor } from '../verdict'
 export function VerdictPill() {
   const success = useStore(selectSuccess)
   const status = useStore((s) => s.status)
+  const empty = useStore((s) => !hasHoldings(s.inputs))
   const tone = toneFor(success)
+  if (empty)
+    return (
+      <div className="verdict-pill-wrap">
+        <span className="verdict-pill verdict-pill--empty" role="status">
+          <span className="verdict-pill__text">Add a holding to see your verdict</span>
+        </span>
+      </div>
+    )
   const r = 9
   const c = 2 * Math.PI * r
   return (

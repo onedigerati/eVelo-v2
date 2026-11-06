@@ -115,7 +115,13 @@ export const useStore = create<AppState>()((set) => ({
   baseline: null,
   solving: false,
 
-  setInput: (key, value) => set((s) => ({ inputs: { ...s.inputs, [key]: value } })),
+  setInput: (key, value) =>
+    set((s) => {
+      const inputs = { ...s.inputs, [key]: value }
+      // A destination equal to home means staying home.
+      if (inputs.destCityId && inputs.destCityId === inputs.homeCityId) inputs.destCityId = null
+      return { inputs }
+    }),
   patchInputs: (patch) => set((s) => ({ inputs: { ...s.inputs, ...patch } })),
   replaceInputs: (inputs) => set({ inputs }),
   resetInputs: () => set({ inputs: structuredClone(DEFAULT_INPUTS) }),

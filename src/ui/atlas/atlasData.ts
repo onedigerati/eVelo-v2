@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 import { CITIES, CITY_BY_ID } from '../../data/cities'
 import { BUDGET_CATEGORIES, budgetTotal, categoryRatios } from '../../engine/cost'
 import type { AtlasEntry, BudgetCategory, City, PlanInputs, SimulationResult } from '../../engine/types'
-import { atlasClient, inputsKey, isCancelled, runAtlas } from '../../state/sim'
+import { atlasClient, hasHoldings, inputsKey, isCancelled, runAtlas } from '../../state/sim'
 import { useStore, type Baseline } from '../../state/store'
 import { currencyCompact, number, percent } from '../format'
 
@@ -138,6 +138,11 @@ export function useAtlasSync() {
     const go = () => {
       if (!alive) return
       const st = useStore.getState()
+      if (!hasHoldings(st.inputs)) {
+        st.setAtlas(null)
+        st.setAtlasRunning(false)
+        return
+      }
       const hit = atlasClient.peek(st.inputs, CITY_IDS)
       if (hit) {
         if (st.atlas !== hit.entries) st.setAtlas(hit.entries, hit.at)
@@ -151,6 +156,7 @@ export function useAtlasSync() {
     go()
     const unsub = useStore.subscribe((s, prev) => {
       if (s.inputs === prev.inputs) return
+      if (!hasHoldings(s.inputs)) return go()
       // A destination change alone never changes the ranking (cache hit), so no debounce needed.
       if (atlasClient.peek(s.inputs, CITY_IDS)) return go()
       clearTimeout(timer)

@@ -108,6 +108,6 @@ describe('helpers', () => {
     expect(out).toHaveLength(4)
     expect(w(out, 'QQQ')).toBe(0.2)
     expect(total(out)).toBeCloseTo(1, 12)
-    expect(removeHolding(H([['A', 1]]), 'A')).toHaveLength(1)
+    expect(removeHolding(H([['A', 1]]), 'A')).toHaveLength(0) // the editor then shows its empty state
   })
 })

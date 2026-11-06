@@ -1079,3 +1079,16 @@
   text-decoration: none;
   color: var(--ink-2);
 }
+
+/* No holdings yet. */
+.verdict--empty {
+  --tone: var(--neutral);
+  --tone-text: var(--accent-text);
+  max-width: 720px;
+}
+.verdict__empty-h em {
+  color: var(--accent-text);
+}
+.verdict__empty-cta {
+  margin-top: var(--space-6);
+}

@@ -47,6 +47,9 @@ class Lru<V> {
 
 export const inputsKey = (i: PlanInputs) => JSON.stringify(i)
 
+/** A plan needs at least one holding with weight before there is anything to simulate. */
+export const hasHoldings = (i: PlanInputs) => i.holdings.some((h) => h.weight > 0)
+
 /** Same plan, staying home: destination settings neutralised so the key ignores them. */
 export function homeVariant(i: PlanInputs): PlanInputs {
   return { ...i, destCityId: null, moveInYears: 0, expatFactor: 0, ratioOverrides: undefined }
@@ -133,6 +136,15 @@ class SimClient {
     const st = useStore.getState()
     const inputs = st.inputs
     const live = () => gen === this.gen
+    if (!hasHoldings(inputs)) {
+      // Nothing to simulate: the UI shows an "add a holding" prompt instead of a verdict.
+      st.setResult(null)
+      st.setBaseline(null)
+      st.setSolve(null)
+      st.setSolving(false)
+      st.setStatus('idle')
+      return
+    }
     st.setStatus('running')
     st.setSolving(true)
     try {

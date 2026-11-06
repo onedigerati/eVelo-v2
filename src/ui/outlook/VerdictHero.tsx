@@ -74,7 +74,7 @@ export function diagnosis(r: SimulationResult): string | null {
   const nominal = r.stats.expReturn
   if (r.successRate >= VERDICT_THRESHOLDS.mostly) return null
   if (nominal < i.loanRate)
-    return `The loan costs ${pct1(i.loanRate)} a year but this portfolio is expected to earn about ${pct1(nominal)}: the debt compounds faster than the assets it is secured by, so it overtakes them however markets go.`
+    return `The loan costs ${pct1(i.loanRate)} a year but this portfolio is expected to earn about ${pct1(nominal)}: the debt compounds faster than the assets securing it, so in most futures it catches up with them.`
   if (r.brokenRate > r.bruisedRate && exp < 0.03)
     return `With an expected real return near ${pct1(exp)}, spending plus interest outruns growth in most futures.`
   return null
@@ -163,7 +163,7 @@ export function VerdictHero() {
         {result ? (
           level === 'breaks' ? (
             <>
-              Only {n} of every 100 simulated markets get through without a forced sale
+              {n === 0 ? 'Not one in a hundred simulated markets gets through without a forced sale' : `Only ${n} of every 100 simulated markets get through without a forced sale`}
               {result.brokenRate > result.bruisedRate ? '; in most the loan overtakes the portfolio.' : '; most hit the margin-call line first.'}
             </>
           ) : (

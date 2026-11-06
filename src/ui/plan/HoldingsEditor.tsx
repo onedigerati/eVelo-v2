@@ -54,6 +54,12 @@ export function HoldingsEditor() {
         segments={holdings.map((h, i) => ({ key: h.symbol, value: h.weight, color: color(h.symbol, i), label: `${h.symbol} ${wPct(h.weight)}` }))}
       />
 
+      {holdings.length === 0 && (
+        <div className="holdings__empty" role="status">
+          <b>No holdings yet.</b> Add a ticker, or start from one of the mixes below, to see how the plan holds.
+        </div>
+      )}
+
       <ul className="holdings__list" aria-labelledby="holdings-label">
         <AnimatePresence initial={false}>
           {holdings.map((h, i) => (
@@ -71,7 +77,7 @@ export function HoldingsEditor() {
                 locked={lockSet.has(h.symbol)}
                 // Can this row move? Only if some other row is unlocked.
                 movable={holdings.some((o, j) => j !== i && !lockSet.has(o.symbol))}
-                canRemove={holdings.length > 1}
+                canRemove
                 onWeight={(w) => set(setWeight(holdings, i, w, lockSet))}
                 onLock={() => toggleLock(h.symbol)}
                 onRemove={() => set(removeHolding(holdings, h.symbol, lockSet))}

@@ -7,6 +7,7 @@
 
 import { DEFAULT_INPUTS } from '../engine/defaults'
 import type { PlanInputs } from '../engine/types'
+import { assetMeta } from '../ui/plan/marketIndex'
 
 const VERSION = 1
 
@@ -60,9 +61,11 @@ export function sanitizeInputs(raw: unknown): PlanInputs {
               typeof (h as { weight?: unknown }).weight === 'number' &&
               Number.isFinite((h as { weight: number }).weight),
           )
+          .filter((h) => !!assetMeta(h.symbol)) // only tickers in the bundled data
           .slice(0, 50)
-          .map((h) => ({ symbol: h.symbol.slice(0, 16), weight: h.weight }))
-        if (hs.length) out[k] = hs
+          .map((h) => ({ symbol: h.symbol, weight: h.weight }))
+        // An empty list is a valid (empty) plan; the UI prompts to add a holding.
+        out[k] = hs
       }
     } else if (typeof dv === 'object') {
       if (v && typeof v === 'object' && !Array.isArray(v)) {
@@ -84,6 +87,8 @@ export function sanitizeInputs(raw: unknown): PlanInputs {
     for (const [ck, cv] of Object.entries(ro)) if (ck in base.budget && typeof cv === 'number' && Number.isFinite(cv)) clean[ck] = cv
     if (Object.keys(clean).length) base.ratioOverrides = clean
   }
+  // Moving to where you already live is staying home.
+  if (base.destCityId === base.homeCityId) base.destCityId = null
   return base
 }
 
