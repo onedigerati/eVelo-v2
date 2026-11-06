@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, m as motion } from 'framer-motion'
 import { useStore, type ThemePref } from '../../state/store'
 import { IconMoon, IconSun, IconSystem } from '../icons'
 import { SegmentedControl } from '../primitives'

@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m as motion } from 'framer-motion'
 import { useId, useRef, type KeyboardEvent, type ReactNode } from 'react'
 import { spring } from '../motion'
 import { cx } from './cx'

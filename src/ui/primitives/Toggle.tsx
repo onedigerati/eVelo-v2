@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m as motion } from 'framer-motion'
 import { useId, type ReactNode } from 'react'
 import { springBouncy } from '../motion'
 import { cx } from './cx'

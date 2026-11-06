@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, m as motion } from 'framer-motion'
 import { useId, useState } from 'react'
 import type { ModelMethod, Outlook } from '../../engine/types'
 import { useStore } from '../../state/store'

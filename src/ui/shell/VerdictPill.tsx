@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m as motion } from 'framer-motion'
 import { selectSuccess, useStore } from '../../state/store'
 import { IconArrowRight } from '../icons'
 import { AnimatedNumber, cx } from '../primitives'

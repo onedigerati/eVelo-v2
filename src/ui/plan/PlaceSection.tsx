@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, m as motion } from 'framer-motion'
 import { useState, type CSSProperties, type KeyboardEvent } from 'react'
 import { CITY_BY_ID } from '../../data/cities'
 import { applyRatios, BUDGET_CATEGORIES, budgetTotal, categoryRatios } from '../../engine/cost'

@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m as motion } from 'framer-motion'
 import { NAV_ROUTES, type Route } from '../../state/router'
 import { useStore } from '../../state/store'
 import type { Breakpoint } from '../hooks'

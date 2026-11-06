@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m as motion } from 'framer-motion'
 import type { ReactNode } from 'react'
 import { BUDGET_CATEGORIES } from '../../engine/cost'
 import type { PlanInputs } from '../../engine/types'

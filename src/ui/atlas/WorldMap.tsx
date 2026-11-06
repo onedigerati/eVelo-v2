@@ -1,4 +1,4 @@
-import { animate, AnimatePresence, motion, useReducedMotion } from 'framer-motion'
+import { animate, AnimatePresence, m as motion, useReducedMotion } from 'framer-motion'
 import { geoGraticule10, geoPath } from 'd3-geo'
 import {
   useCallback,

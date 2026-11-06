@@ -1,5 +1,8 @@
 import { describe, expect, it } from 'vitest'
-import { allAssets, assetMeta, searchAssets } from '../marketIndex'
+import { readFileSync } from 'node:fs'
+import { allAssets, assetMeta, marketIndex, searchAssets } from '../marketIndex'
+// @ts-expect-error plain JS build script
+import { buildIndex } from '../../../../scripts/build-market-index.mjs'
 
 describe('market index', () => {
   it('finds tickers by symbol first', () => {
@@ -25,10 +28,15 @@ describe('market index', () => {
     expect(assetMeta('BTC-USD')?.group).toBe('crypto')
     expect(assetMeta('VTI')?.group).toBe('broad')
     for (const m of all) {
-      expect(m.spark).toHaveLength(60)
+      expect(m.spark).toHaveLength(40)
       expect(m.years).toBeGreaterThan(0)
       if (m.years >= 10) expect(m.cagr10).not.toBeNull()
     }
     expect(assetMeta('ARM')!.years).toBeLessThan(10)
+  })
+
+  it('is in sync with market.json (run `npm run data:index` after editing the data)', () => {
+    const market = JSON.parse(readFileSync(new URL('../../../data/market.json', import.meta.url), 'utf8'))
+    expect(buildIndex(market)).toEqual(marketIndex)
   })
 })

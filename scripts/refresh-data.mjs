@@ -2,13 +2,15 @@
 // Refresh bundled market data: Yahoo monthly adjusted closes -> monthly total returns,
 // FRED CPIAUCSL -> monthly US inflation. Writes src/data/market.json (MarketData).
 // Also refreshes FX spot rates (open.er-api.com, USD base) for every currency used by
-// src/data/cities.ts into src/data/fx.json ({ asOf, rates }).
+// src/data/cities.ts into src/data/fx.json ({ asOf, rates }), and derives
+// src/data/market-index.json (build-market-index.mjs) — the small summary the UI's main chunk uses.
 //
 // Usage: npm run data:refresh        (market + FX)
 //        npm run data:fx             (FX only: node scripts/refresh-data.mjs --fx-only)
 import { readFile, writeFile, mkdir } from 'node:fs/promises'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { writeIndex } from './build-market-index.mjs'
 
 const DATA_DIR = resolve(dirname(fileURLToPath(import.meta.url)), '../src/data')
 const OUT = resolve(DATA_DIR, 'market.json')
@@ -234,7 +236,7 @@ async function refreshFx() {
 }
 
 const fxOnly = process.argv.includes('--fx-only')
-;(fxOnly ? refreshFx() : main().then(refreshFx)).catch((e) => {
+;(fxOnly ? refreshFx() : main().then(writeIndex).then(refreshFx)).catch((e) => {
   console.error(e)
   process.exit(1)
 })

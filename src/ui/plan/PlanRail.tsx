@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m as motion } from 'framer-motion'
 import { useStore } from '../../state/store'
 import { IconReset } from '../icons'
 import { rise, stagger } from '../motion'

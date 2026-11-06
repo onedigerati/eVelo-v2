@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, m as motion } from 'framer-motion'
 import { useId, useState, type CSSProperties } from 'react'
 import { useStore } from '../../state/store'
 import { percent } from '../format'

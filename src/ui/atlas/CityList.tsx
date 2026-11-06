@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m as motion } from 'framer-motion'
 import { useDeferredValue, useMemo, useState } from 'react'
 import { currency, currencyCompact, percent } from '../format'
 import { ease } from '../motion'

@@ -282,3 +282,8 @@
     fill var(--dur-3) var(--ease-out),
     stroke var(--dur-3) var(--ease-out) !important;
 }
+
+/* Placeholder while a lazy view's chunk loads (usually a frame or two). */
+.view-fallback {
+  min-height: 60vh;
+}

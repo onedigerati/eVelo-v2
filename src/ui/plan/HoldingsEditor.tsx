@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, m as motion } from 'framer-motion'
 import { useState, type CSSProperties, type KeyboardEvent } from 'react'
 import type { Holding } from '../../engine/types'
 import { useStore } from '../../state/store'

@@ -1,13 +1,14 @@
-import { MotionConfig } from 'framer-motion'
+import { LazyMotion, MotionConfig } from 'framer-motion'
 import { useEffect } from 'react'
 import { loadLiveFx } from './state/fx'
 import { useSimulationSync } from './state/sim'
 import { OPENED_FROM_LINK } from './state/store'
 import { useHashRoute, useThemeEffect } from './ui/hooks'
 import { toast } from './ui/primitives'
-import { AppShell } from './ui/shell/AppShell'
+import { AppShell, prefetchViews } from './ui/shell/AppShell'
 
 let announced = false
+const loadMotionFeatures = () => import('./ui/motionFeatures').then((m) => m.default)
 
 export function App() {
   useThemeEffect()
@@ -16,6 +17,8 @@ export function App() {
 
   useEffect(() => {
     void loadLiveFx()
+    const idle = window.requestIdleCallback ?? ((cb: () => void) => window.setTimeout(cb, 1500))
+    idle(() => prefetchViews())
   }, [])
 
   useEffect(() => {
@@ -28,8 +31,10 @@ export function App() {
   }, [])
 
   return (
-    <MotionConfig reducedMotion="user">
-      <AppShell />
-    </MotionConfig>
+    <LazyMotion features={loadMotionFeatures} strict>
+      <MotionConfig reducedMotion="user">
+        <AppShell />
+      </MotionConfig>
+    </LazyMotion>
   )
 }

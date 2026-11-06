@@ -1,10 +1,32 @@
-// Light, lazily built index over the bundled market dataset: what the ticker search and the
-// holdings rows need (name, group, years of real history, trailing 10-yr CAGR, a sparkline).
+// What the ticker search and the holdings rows need (name, group, years of real history,
+// trailing 10-yr CAGR, a sparkline). Reads the small prebuilt src/data/market-index.json
+// (scripts/build-market-index.mjs) so the full return series stay in the worker chunk.
 
-import marketJson from '../../data/market.json'
-import type { AssetSeries, MarketData } from '../../engine/types'
+import indexJson from '../../data/market-index.json'
+import type { AssetClass } from '../../engine/types'
 
-export const market = marketJson as unknown as MarketData
+export interface MarketIndexAsset {
+  symbol: string
+  name: string
+  cls: AssetClass
+  /** Calendar index of the first real return. */
+  first: number
+  years: number
+  cagr10: number | null
+  /** 40-point log-growth path over the real history, one SPARK_ALPHABET character per point (0..63). */
+  spark: string
+}
+export interface MarketIndex {
+  asOf: string
+  start: string
+  months: number
+  assets: MarketIndexAsset[]
+}
+
+export const marketIndex = indexJson as unknown as MarketIndex
+const index = marketIndex
+const SPARK_ALPHABET = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_'
+const decodeSpark = (s: string) => Array.from(s, (ch) => SPARK_ALPHABET.indexOf(ch) / 63)
 
 export type AssetGroup = 'broad' | 'dividend' | 'bonds' | 'sectors' | 'stocks' | 'real' | 'crypto'
 
@@ -22,7 +44,7 @@ export const GROUP_LABEL = Object.fromEntries(GROUPS.map((g) => [g.id, g])) as R
 const DIVIDEND = new Set(['SCHD', 'VIG', 'DGRO', 'VYM', 'NOBL'])
 const SECTOR = new Set(['SMH', 'SOXX', 'VGT', 'IBB', 'ITA'])
 
-function groupOf(a: AssetSeries): AssetGroup {
+function groupOf(a: { symbol: string; cls: AssetClass }): AssetGroup {
   switch (a.cls) {
     case 'stock':
       return 'stocks'
@@ -48,7 +70,7 @@ export interface AssetMeta {
   years: number
   /** Trailing 10-year CAGR, or null with less than 10 years of history. */
   cagr10: number | null
-  /** 60-point log-growth path over the real history, normalized 0..1. */
+  /** 40-point log-growth path over the real history, normalized 0..1. */
   spark: number[]
   /** Order in the dataset (used to keep groups in a sensible order). */
   order: number
@@ -57,42 +79,18 @@ export interface AssetMeta {
   keyName: string
 }
 
-const SPARK_N = 60
-
 function build(): { list: AssetMeta[]; bySymbol: Record<string, AssetMeta> } {
-  const list: AssetMeta[] = []
-  Object.values(market.assets).forEach((a, order) => {
-    const months = market.months - a.first
-    // Cumulative log growth over the real window.
-    const lg: number[] = [0]
-    let acc = 0
-    for (let i = a.first; i < market.months; i++) {
-      acc += Math.log1p(a.r[i] ?? 0)
-      lg.push(acc)
-    }
-    const spark: number[] = []
-    for (let k = 0; k < SPARK_N; k++) spark.push(lg[Math.round((k / (SPARK_N - 1)) * (lg.length - 1))])
-    const lo = Math.min(...spark)
-    const hi = Math.max(...spark)
-    const norm = spark.map((v) => (hi > lo ? (v - lo) / (hi - lo) : 0.5))
-    let cagr10: number | null = null
-    if (months >= 120) {
-      let s = 0
-      for (let i = market.months - 120; i < market.months; i++) s += Math.log1p(a.r[i] ?? 0)
-      cagr10 = Math.exp(s / 10) - 1
-    }
-    list.push({
-      symbol: a.symbol,
-      name: a.name,
-      group: groupOf(a),
-      years: months / 12,
-      cagr10,
-      spark: norm,
-      order,
-      keySym: a.symbol.toLowerCase().replace(/[^a-z0-9]/g, ''),
-      keyName: a.name.toLowerCase(),
-    })
-  })
+  const list: AssetMeta[] = index.assets.map((a, order) => ({
+    symbol: a.symbol,
+    name: a.name,
+    group: groupOf(a),
+    years: a.years,
+    cagr10: a.cagr10,
+    spark: decodeSpark(a.spark),
+    order,
+    keySym: a.symbol.toLowerCase().replace(/[^a-z0-9]/g, ''),
+    keyName: a.name.toLowerCase(),
+  }))
   return { list, bySymbol: Object.fromEntries(list.map((m) => [m.symbol, m])) }
 }
 

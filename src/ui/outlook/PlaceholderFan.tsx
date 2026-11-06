@@ -1,6 +1,6 @@
 import { scaleLinear } from 'd3-scale'
 import { area, curveMonotoneX, line } from 'd3-shape'
-import { motion } from 'framer-motion'
+import { m as motion } from 'framer-motion'
 import { useMemo } from 'react'
 
 const W = 640

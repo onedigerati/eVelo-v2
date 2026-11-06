@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m as motion } from 'framer-motion'
 import { rise, stagger } from '../motion'
 import '../views.css'
 

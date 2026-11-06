@@ -1,19 +1,31 @@
-import { AnimatePresence, motion } from 'framer-motion'
-import { useEffect, useRef } from 'react'
+import { AnimatePresence, m as motion } from 'framer-motion'
+import { lazy, Suspense, useEffect, useRef } from 'react'
 import { navigate } from '../../state/router'
 import { useStore } from '../../state/store'
-import { AtlasView } from '../atlas/AtlasView'
 import { useBreakpoint, type Breakpoint } from '../hooks'
-import { MethodView } from '../method/MethodView'
 import { ease } from '../motion'
 import { OutlookCanvas } from '../outlook/OutlookCanvas'
 import { PlanRail } from '../plan/PlanRail'
 import { Sheet, Toaster } from '../primitives'
-import { Styleguide } from '../styleguide/Styleguide'
 import { TabBar } from './TabBar'
 import { TopBar } from './TopBar'
 import { VerdictPill } from './VerdictPill'
 import './shell.css'
+
+// Atlas (map + geo), Method (long-form) and the styleguide load on first visit.
+const AtlasView = lazy(() => import('../atlas/AtlasView').then((m) => ({ default: m.AtlasView })))
+const MethodView = lazy(() => import('../method/MethodView').then((m) => ({ default: m.MethodView })))
+const Styleguide = lazy(() => import('../styleguide/Styleguide').then((m) => ({ default: m.Styleguide })))
+
+/** Warm the lazy views once the app is idle so tab switches stay instant. */
+export function prefetchViews() {
+  void import('../atlas/AtlasView')
+  void import('../method/MethodView')
+}
+
+function ViewFallback() {
+  return <div className="view-fallback" role="status" aria-label="Loading" />
+}
 
 /** Plan + Outlook. Desktop: sticky rail + canvas. Tablet: canvas + plan drawer. Phone: one tab at a time. */
 function Workspace({ bp }: { bp: Breakpoint }) {
@@ -89,15 +101,17 @@ export function AppShell() {
             exit={{ opacity: 0, y: -4 }}
             transition={{ duration: 0.28, ease }}
           >
-            {view === 'atlas' ? (
-              <AtlasView />
-            ) : view === 'method' ? (
-              <MethodView />
-            ) : view === 'styleguide' ? (
-              <Styleguide />
-            ) : (
-              <Workspace bp={bp} />
-            )}
+            <Suspense fallback={<ViewFallback />}>
+              {view === 'atlas' ? (
+                <AtlasView />
+              ) : view === 'method' ? (
+                <MethodView />
+              ) : view === 'styleguide' ? (
+                <Styleguide />
+              ) : (
+                <Workspace bp={bp} />
+              )}
+            </Suspense>
           </motion.div>
         </AnimatePresence>
       </main>

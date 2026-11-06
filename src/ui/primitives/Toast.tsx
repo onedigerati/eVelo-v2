@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, m as motion } from 'framer-motion'
 import { create } from 'zustand'
 import { springSoft } from '../motion'
 import { cx } from './cx'

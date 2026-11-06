@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, m as motion } from 'framer-motion'
 import { useId, useState, type ReactNode } from 'react'
 import { ease, spring } from '../motion'
 import { cx } from './cx'

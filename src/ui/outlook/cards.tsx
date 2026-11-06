@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m as motion } from 'framer-motion'
 import { CITY_BY_ID } from '../../data/cities'
 import { BUDGET_CATEGORIES, budgetTotal } from '../../engine/cost'
 import type { Budget, BudgetCategory, SimulationResult, SolveResult } from '../../engine/types'

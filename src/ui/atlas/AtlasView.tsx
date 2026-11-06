@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, m as motion } from 'framer-motion'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { CITIES, CITY_BY_ID } from '../../data/cities'
 import { budgetTotal } from '../../engine/cost'
