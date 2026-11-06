@@ -99,6 +99,8 @@ export function VerdictHero() {
   const toneStyle = result ? { ['--tone' as string]: outcomeColor(holds), ['--tone-text' as string]: outcomeTextColor(holds) } : undefined
   const n = Math.round(holds * 100)
   const dots = result?.outcomeDots ?? null
+  const counts = [0, 0, 0]
+  for (const d of dots ?? []) counts[d]++
 
   const dest = shown.destCityId
   const showChip = !!dest && !!result
@@ -198,13 +200,14 @@ export function VerdictHero() {
         </motion.div>
       )}
 
+      {/* Stats use the dot counts so the three figures always sum to 100. */}
       <motion.div
         className="verdict__dots"
         variants={rise}
         role="img"
         aria-label={
           result
-            ? `${n} of 100 futures hold, ${Math.round(result.bruisedRate * 100)} survive a margin call, ${Math.round(result.brokenRate * 100)} break.`
+            ? `${counts[0]} of 100 futures hold, ${counts[1]} survive a margin call, ${counts[2]} break.`
             : 'Loading outcomes'
         }
       >
@@ -226,9 +229,9 @@ export function VerdictHero() {
       <motion.div className="verdict__stats" variants={rise}>
         {result ? (
           <>
-            <Stat label="Holds" tone="holds" value={result.successRate} format="percent" hint="Never forced to sell" size="sm" />
-            <Stat label="Bruised" tone="bruised" value={result.bruisedRate} format="percent" hint="Margin call, survived" size="sm" />
-            <Stat label="Broken" tone="broken" value={result.brokenRate} format="percent" hint="Loan overtook assets" size="sm" />
+            <Stat label="Holds" tone="holds" value={counts[0] / 100} format="percent" hint="Never forced to sell" size="sm" />
+            <Stat label="Bruised" tone="bruised" value={counts[1] / 100} format="percent" hint="Margin call, survived" size="sm" />
+            <Stat label="Broken" tone="broken" value={counts[2] / 100} format="percent" hint="Loan overtook assets" size="sm" />
           </>
         ) : (
           [0, 1, 2].map((k) => (
