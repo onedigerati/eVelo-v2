@@ -1,0 +1,324 @@
+/* eVelo design tokens — "a private bank's almanac".
+ *
+ * Theming: tokens are declared on :root (light values as the base), then overridden by
+ * [data-theme="dark"] and by prefers-color-scheme when data-theme="system". Because the
+ * selectors are attribute selectors (not :root-only), any subtree can be re-themed by
+ * putting data-theme on it — the styleguide uses this to render both themes side by side.
+ *
+ * Semantic outcome colors:
+ *   --holds   verdigris / emerald — the plan holds (no forced sale)
+ *   --bruised brass               — survived, but took a margin call
+ *   --broken  coral               — insolvent
+ * Each has a *-text variant guaranteed >= 4.5:1 on --bg and surfaces, a *-soft fill and a
+ * *-line border. Use the base for marks (dots, bars, strokes), *-text for words.
+ */
+
+:root,
+[data-theme='light'] {
+  /* ---------- Type ---------- */
+  --font-display: 'Instrument Serif', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  --font-ui: 'Geist Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'Geist Mono Variable', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* Fluid display sizes (serif). Body sizes are fixed for UI density. */
+  --fs-hero: clamp(6rem, 3.6rem + 6vw, 9rem); /* the verdict number */
+  --fs-display: clamp(2.5rem, 1.6rem + 3.4vw, 4.25rem); /* hero sentence */
+  --fs-h1: clamp(2rem, 1.6rem + 1.6vw, 2.75rem); /* page titles */
+  --fs-h2: 1.75rem; /* card / section titles (serif) */
+  --fs-h3: 1.3125rem; /* 21px */
+  --fs-lg: 1.0625rem; /* 17px */
+  --fs-md: 0.9375rem; /* 15px — body */
+  --fs-sm: 0.8125rem; /* 13px — labels */
+  --fs-xs: 0.6875rem; /* 11px — eyebrows (uppercase, tracked) */
+  --fs-stat: 2.25rem; /* Stat value (serif) */
+
+  --lh-tight: 1.02;
+  --lh-snug: 1.2;
+  --lh-body: 1.55;
+  --tracking-eyebrow: 0.14em;
+  --tracking-display: -0.015em;
+
+  /* ---------- Space (4px base) ---------- */
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+  --space-9: 56px;
+  --space-10: 72px;
+  --space-11: 96px;
+  --gutter: 16px;
+
+  /* ---------- Radius ---------- */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px; /* cards */
+  --radius-xl: 28px; /* sheets */
+  --radius-pill: 999px;
+
+  /* ---------- Layout ---------- */
+  --topbar-h: 64px;
+  --tabbar-h: 64px;
+  --rail-w: 400px;
+  --content-max: 1520px;
+  --tap: 44px;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+
+  /* ---------- Z-index ---------- */
+  --z-base: 0;
+  --z-raised: 10;
+  --z-sticky: 100;
+  --z-topbar: 200;
+  --z-tabbar: 210;
+  --z-popover: 400;
+  --z-backdrop: 500;
+  --z-sheet: 510;
+  --z-toast: 700;
+  --z-tooltip: 800;
+
+  /* ---------- Motion ---------- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-1: 120ms;
+  --dur-2: 200ms;
+  --dur-3: 320ms;
+  --dur-4: 560ms;
+
+  /* ---------- Grain (fractal noise, inline SVG) ---------- */
+  --grain: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 1.1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+
+  /* ================= LIGHT (base) — warm paper ================= */
+  color-scheme: light;
+  --bg: #f5f2ea;
+  --bg-deep: #ede8dc;
+  --glow-1: rgba(11, 122, 86, 0.075);
+  --glow-2: rgba(168, 122, 31, 0.06);
+  --grain-opacity: 0.09;
+  --grain-blend: multiply;
+
+  --ink: #141815;
+  --ink-2: #4a524d;
+  --ink-3: #5e655f; /* >= 4.5:1 on bg */
+  --ink-faint: rgba(20, 24, 21, 0.28); /* decorative only */
+  --ink-inverse: #f5f2ea;
+
+  --surface-1: rgba(255, 253, 248, 0.55);
+  --surface-2: rgba(255, 253, 248, 0.82);
+  --surface-3: rgba(20, 24, 21, 0.045); /* wells, tracks */
+  --surface-hover: rgba(20, 24, 21, 0.05);
+  --surface-press: rgba(20, 24, 21, 0.08);
+  --surface-solid: #fbf9f4; /* sheets, menus */
+  --surface-glass: rgba(245, 242, 234, 0.74);
+  --hairline: rgba(20, 24, 21, 0.1);
+  --hairline-strong: rgba(20, 24, 21, 0.18);
+  --highlight: rgba(255, 255, 255, 0.9); /* inner top-edge highlight */
+
+  --holds: #0b7a56;
+  --holds-text: #0a6e4d;
+  --holds-soft: rgba(11, 122, 86, 0.1);
+  --holds-line: rgba(11, 122, 86, 0.32);
+  --bruised: #a87a1f;
+  --bruised-text: #8a6312;
+  --bruised-soft: rgba(168, 122, 31, 0.12);
+  --bruised-line: rgba(168, 122, 31, 0.36);
+  --broken: #d2452f;
+  --broken-text: #b5361f;
+  --broken-soft: rgba(210, 69, 47, 0.1);
+  --broken-line: rgba(210, 69, 47, 0.34);
+  --neutral: #556574;
+  --neutral-text: #4d5c6a;
+  --neutral-soft: rgba(85, 101, 116, 0.1);
+  --neutral-line: rgba(85, 101, 116, 0.3);
+
+  --accent-ink: #ffffff; /* text on solid accent */
+  --focus: #0b7a56;
+
+  /* Charts */
+  --chart-band-1: rgba(11, 122, 86, 0.1); /* p5–p95 */
+  --chart-band-2: rgba(11, 122, 86, 0.18); /* p25–p75 */
+  --chart-band-3: rgba(11, 122, 86, 0.3); /* emphasis */
+  --chart-line: #0b7a56; /* median */
+  --chart-line-2: #556574; /* comparison series */
+  --chart-caution-band: rgba(168, 122, 31, 0.16);
+  --chart-danger-band: rgba(210, 69, 47, 0.14);
+  --chart-threshold: #d2452f;
+  --chart-grid: rgba(20, 24, 21, 0.07);
+  --chart-grid-strong: rgba(20, 24, 21, 0.16);
+  --chart-axis: #5e655f;
+  --chart-crosshair: rgba(20, 24, 21, 0.4);
+
+  /* Shadows */
+  --shadow-1: 0 1px 2px rgba(40, 32, 12, 0.05), 0 1px 1px rgba(40, 32, 12, 0.03);
+  --shadow-2: 0 2px 6px rgba(40, 32, 12, 0.05), 0 12px 32px -12px rgba(40, 32, 12, 0.14);
+  --shadow-3: 0 8px 24px -6px rgba(40, 32, 12, 0.16), 0 32px 64px -24px rgba(40, 32, 12, 0.24);
+  --shadow-thumb: 0 1px 2px rgba(20, 24, 21, 0.2), 0 2px 8px rgba(20, 24, 21, 0.12);
+}
+
+/* Derived tokens. Re-declared on every theme scope so var() references resolve against
+ * that scope's palette (custom properties inherit their computed value). */
+:root,
+[data-theme] {
+  --accent: var(--holds);
+  --accent-text: var(--holds-text);
+  --accent-soft: var(--holds-soft);
+  --focus-ring: 0 0 0 2px var(--bg), 0 0 0 4px var(--focus);
+}
+
+/* ================= DARK — deep green-black ink ================= */
+[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0a0d0c;
+  --bg-deep: #060807;
+  --glow-1: rgba(91, 227, 176, 0.075);
+  --glow-2: rgba(227, 178, 98, 0.04);
+  --grain-opacity: 0.07;
+  --grain-blend: overlay;
+
+  --ink: #ecf1ee;
+  --ink-2: #a9b5af;
+  --ink-3: #84918b;
+  --ink-faint: rgba(236, 241, 238, 0.24);
+  --ink-inverse: #0a0d0c;
+
+  --surface-1: rgba(220, 255, 240, 0.028);
+  --surface-2: rgba(220, 255, 240, 0.05);
+  --surface-3: rgba(220, 255, 240, 0.06);
+  --surface-hover: rgba(220, 255, 240, 0.06);
+  --surface-press: rgba(220, 255, 240, 0.1);
+  --surface-solid: #111715;
+  --surface-glass: rgba(10, 13, 12, 0.72);
+  --hairline: rgba(220, 255, 240, 0.085);
+  --hairline-strong: rgba(220, 255, 240, 0.16);
+  --highlight: rgba(220, 255, 240, 0.07);
+
+  --holds: #5be3b0;
+  --holds-text: #5be3b0;
+  --holds-soft: rgba(91, 227, 176, 0.1);
+  --holds-line: rgba(91, 227, 176, 0.32);
+  --bruised: #e3b262;
+  --bruised-text: #e3b262;
+  --bruised-soft: rgba(227, 178, 98, 0.11);
+  --bruised-line: rgba(227, 178, 98, 0.34);
+  --broken: #ff6b5a;
+  --broken-text: #ff7a6a;
+  --broken-soft: rgba(255, 107, 90, 0.1);
+  --broken-line: rgba(255, 107, 90, 0.34);
+  --neutral: #93a4b4;
+  --neutral-text: #93a4b4;
+  --neutral-soft: rgba(147, 164, 180, 0.1);
+  --neutral-line: rgba(147, 164, 180, 0.3);
+
+  --accent-ink: #04140d;
+  --focus: #5be3b0;
+
+  --chart-band-1: rgba(91, 227, 176, 0.08);
+  --chart-band-2: rgba(91, 227, 176, 0.16);
+  --chart-band-3: rgba(91, 227, 176, 0.28);
+  --chart-line: #5be3b0;
+  --chart-line-2: #93a4b4;
+  --chart-caution-band: rgba(227, 178, 98, 0.14);
+  --chart-danger-band: rgba(255, 107, 90, 0.12);
+  --chart-threshold: #ff6b5a;
+  --chart-grid: rgba(220, 255, 240, 0.06);
+  --chart-grid-strong: rgba(220, 255, 240, 0.14);
+  --chart-axis: #84918b;
+  --chart-crosshair: rgba(220, 255, 240, 0.4);
+
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-2: 0 2px 8px rgba(0, 0, 0, 0.35), 0 16px 40px -16px rgba(0, 0, 0, 0.6);
+  --shadow-3: 0 12px 32px -8px rgba(0, 0, 0, 0.6), 0 40px 80px -24px rgba(0, 0, 0, 0.7);
+  --shadow-thumb: 0 1px 2px rgba(0, 0, 0, 0.5), 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* System preference (data-theme="system" is the default; see index.html boot script). */
+@media (prefers-color-scheme: dark) {
+  [data-theme='system'] {
+    color-scheme: dark;
+    --bg: #0a0d0c;
+    --bg-deep: #060807;
+    --glow-1: rgba(91, 227, 176, 0.075);
+    --glow-2: rgba(227, 178, 98, 0.04);
+    --grain-opacity: 0.07;
+    --grain-blend: overlay;
+
+    --ink: #ecf1ee;
+    --ink-2: #a9b5af;
+    --ink-3: #84918b;
+    --ink-faint: rgba(236, 241, 238, 0.24);
+    --ink-inverse: #0a0d0c;
+
+    --surface-1: rgba(220, 255, 240, 0.028);
+    --surface-2: rgba(220, 255, 240, 0.05);
+    --surface-3: rgba(220, 255, 240, 0.06);
+    --surface-hover: rgba(220, 255, 240, 0.06);
+    --surface-press: rgba(220, 255, 240, 0.1);
+    --surface-solid: #111715;
+    --surface-glass: rgba(10, 13, 12, 0.72);
+    --hairline: rgba(220, 255, 240, 0.085);
+    --hairline-strong: rgba(220, 255, 240, 0.16);
+    --highlight: rgba(220, 255, 240, 0.07);
+
+    --holds: #5be3b0;
+    --holds-text: #5be3b0;
+    --holds-soft: rgba(91, 227, 176, 0.1);
+    --holds-line: rgba(91, 227, 176, 0.32);
+    --bruised: #e3b262;
+    --bruised-text: #e3b262;
+    --bruised-soft: rgba(227, 178, 98, 0.11);
+    --bruised-line: rgba(227, 178, 98, 0.34);
+    --broken: #ff6b5a;
+    --broken-text: #ff7a6a;
+    --broken-soft: rgba(255, 107, 90, 0.1);
+    --broken-line: rgba(255, 107, 90, 0.34);
+    --neutral: #93a4b4;
+    --neutral-text: #93a4b4;
+    --neutral-soft: rgba(147, 164, 180, 0.1);
+    --neutral-line: rgba(147, 164, 180, 0.3);
+
+    --accent-ink: #04140d;
+    --focus: #5be3b0;
+
+    --chart-band-1: rgba(91, 227, 176, 0.08);
+    --chart-band-2: rgba(91, 227, 176, 0.16);
+    --chart-band-3: rgba(91, 227, 176, 0.28);
+    --chart-line: #5be3b0;
+    --chart-line-2: #93a4b4;
+    --chart-caution-band: rgba(227, 178, 98, 0.14);
+    --chart-danger-band: rgba(255, 107, 90, 0.12);
+    --chart-threshold: #ff6b5a;
+    --chart-grid: rgba(220, 255, 240, 0.06);
+    --chart-grid-strong: rgba(220, 255, 240, 0.14);
+    --chart-axis: #84918b;
+    --chart-crosshair: rgba(220, 255, 240, 0.4);
+
+    --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-2: 0 2px 8px rgba(0, 0, 0, 0.35), 0 16px 40px -16px rgba(0, 0, 0, 0.6);
+    --shadow-3: 0 12px 32px -8px rgba(0, 0, 0, 0.6), 0 40px 80px -24px rgba(0, 0, 0, 0.7);
+    --shadow-thumb: 0 1px 2px rgba(0, 0, 0, 0.5), 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+}
+
+@media (min-width: 700px) {
+  :root {
+    --gutter: 24px;
+  }
+}
+@media (min-width: 1100px) {
+  :root {
+    --gutter: 32px;
+  }
+}
+@media (max-width: 699.98px) {
+  :root {
+    --topbar-h: 56px;
+  }
+}
