@@ -7,7 +7,7 @@ Make the Atlas trustworthy and useful for someone choosing where to retire abroa
 2026-11-06 · tests: 65 pass (9 files) · typecheck: clean · build: ok (main chunk 345.6 kB)
 
 ## Now
-All stages done. Committed locally, not yet pushed — pushing to main deploys the live site; waiting on the user's go.
+All stages done. Pushed and deployed 2026-11-06 (user approved); live Atlas shows the top picks.
 Live: https://onedigerati.github.io/eVelo-v2/ (repo onedigerati/eVelo-v2, public; deploys on push to main)
 Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (republish: `npm run build && node scripts/artifact-page.mjs`) — updated with stage 3
 
@@ -33,7 +33,6 @@ Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (republish: `npm run 
 ## Open questions
 - Some 2026 single-stock months are very large (INTC +114% Apr 2026; MU/SNOW/DDOG ~+87% May 2026); match Yahoo raw bars but unverified against a second source.
 - In-browser fetch of arbitrary tickers needs a CORS proxy or serverless function — user decides on hosting later; not blocking.
-- Pushing to main deploys the live site — confirm with the user before the stage 3 push.
 - Phuket keeps a 0.4 healthcare override while Thailand is now 0.3 — not a pick; re-check if it becomes one.
 
 ## Standing decisions
