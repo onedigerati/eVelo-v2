@@ -4,9 +4,9 @@
 import { useEffect } from 'react'
 import { CITIES, CITY_BY_ID } from '../../data/cities'
 import { BUDGET_CATEGORIES, budgetTotal, categoryRatios } from '../../engine/cost'
-import type { AtlasEntry, BudgetCategory, City, PlanInputs, SimulationResult } from '../../engine/types'
-import { atlasClient, hasHoldings, inputsKey, isCancelled, runAtlas } from '../../state/sim'
-import { useStore, type Baseline } from '../../state/store'
+import type { AtlasEntry, BudgetCategory, City, PlanInputs } from '../../engine/types'
+import { atlasClient, hasHoldings, isCancelled, runAtlas } from '../../state/sim'
+import { useStore } from '../../state/store'
 import { currencyCompact, number, percent } from '../format'
 
 export const CITY_IDS = CITIES.map((c) => c.id)
@@ -77,31 +77,6 @@ export interface Ranked extends AtlasEntry {
   city: City
   /** 1-based rank by success. */
   rank: number
-}
-
-/**
- * The Outlook simulates the user's own home and destination with the full path count; the
- * ranking uses fewer paths per city. Where the Outlook has a fresh number for a city, use it,
- * so one city never shows two different odds on screen.
- */
-export function withOutlook(
-  entries: AtlasEntry[] | null,
-  inputs: PlanInputs,
-  result: SimulationResult | null,
-  baseline: Baseline | null,
-): { entries: AtlasEntry[] | null; fromOutlook: string[] } {
-  if (!entries || !result) return { entries, fromOutlook: [] }
-  const key = inputsKey(inputs)
-  if (inputsKey(result.inputs) !== key) return { entries, fromOutlook: [] }
-  const over = new Map<string, number>()
-  if (inputs.destCityId) {
-    over.set(inputs.destCityId, result.successRate)
-    if (baseline && baseline.key === key && baseline.homeCityId === inputs.homeCityId) over.set(inputs.homeCityId, baseline.successRate)
-  } else over.set(inputs.homeCityId, result.successRate)
-  const out = entries.map((e) => (over.has(e.cityId) ? { ...e, successRate: over.get(e.cityId)! } : e))
-  // Same order rule as the engine ranking: success desc, then cheaper first.
-  out.sort((a, b) => b.successRate - a.successRate || a.costRatio - b.costRatio)
-  return { entries: out, fromOutlook: [...over.keys()].filter((id) => entries.some((e) => e.cityId === id)) }
 }
 
 export function ranked(entries: AtlasEntry[] | null): Ranked[] {

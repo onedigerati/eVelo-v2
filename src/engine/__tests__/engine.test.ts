@@ -307,6 +307,18 @@ describe('cities', () => {
     const stl = atlas.find((a) => a.cityId === 'st-louis')!
     expect(stl.costRatio).toBe(1)
   })
+
+  it('atlas odds equal the Outlook for every city, at the full path count', () => {
+    const inp = { ...base, paths: 2500 }
+    const atlas = runAtlas(market, CITIES_FIX, inp, ['st-louis', 'bangkok', 'zurich'])
+    for (const e of atlas) {
+      const outlook = simulate(market, CITIES_FIX, { ...inp, destCityId: e.cityId === inp.homeCityId ? null : e.cityId })
+      expect(e.successRate).toBe(outlook.successRate)
+    }
+    // A destination set in the inputs doesn't change any city's odds.
+    const withDest = runAtlas(market, CITIES_FIX, { ...inp, destCityId: 'zurich' }, ['st-louis', 'bangkok', 'zurich'])
+    expect(withDest).toEqual(atlas)
+  })
 })
 
 describe('results', () => {

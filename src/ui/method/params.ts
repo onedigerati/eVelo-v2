@@ -3,7 +3,6 @@
 
 import { CITIES, CITY_BY_ID, COL_AS_OF } from "../../data/cities";
 import fxJson from "../../data/fx.json";
-import { ATLAS_MAX_PATHS } from "../../engine/atlas";
 import { categoryRatios } from "../../engine/cost";
 import { DEFAULT_INPUTS } from "../../engine/defaults";
 import {
@@ -83,7 +82,6 @@ export const DEF = {
   expat: DEFAULT_INPUTS.expatFactor,
   incomeStartAge: DEFAULT_INPUTS.incomeStartAge,
   tDf: T_DF,
-  atlasPaths: ATLAS_MAX_PATHS,
   solvePaths: SOLVE_MAX_PATHS,
   solveTarget: SOLVE_TARGET,
   thresholds: VERDICT_THRESHOLDS,

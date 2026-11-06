@@ -7,7 +7,7 @@ Let the user name the current holdings mix, save it, and pick it again later fro
 2026-11-06 · tests: 96 pass (11 files) · typecheck: clean · build: ok (main chunk 346.1 kB)
 
 ## Now
-All stages done. Pushed and deployed 2026-11-06 (user approved); saved portfolios are live.
+All stages done. Pushed and deployed 2026-11-06 (user approved); saved portfolios and the full-path Atlas are live.
 Live: https://onedigerati.github.io/eVelo-v2/ (deploys on push to main)
 Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (republish: `npm run build && node scripts/artifact-page.mjs`)
 
@@ -18,8 +18,13 @@ Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (republish: `npm run 
   - [x] Rename and delete work; saving under an existing name asks before replacing it
   - [x] Saved portfolios survive a reload; corrupt or unknown-ticker storage is cleaned, never crashes
   - [x] Works on phone and desktop, light and dark
+- [x] 2. Atlas on the plan's full path count — follow-up the user asked for after Mérida jumped from 16 to 14 when picked
+  - [x] Every city is ranked on the plan's own futures (no 1,500 cap); a city's Atlas odds equal the Outlook's with it as destination (engine test + live check: Mérida 81% / St. Louis 64% in both views)
+  - [x] Choosing a destination changes no city's rank or odds (live check across all 96 rows)
+  - [x] Atlas small print and Method page describe the shared path count
 
 ## Decisions
+- 2026-11-06 · Atlas runs every city on the plan's full path count (was capped at 1,500, with the Outlook's number swapped in for home and destination) — user wanted all cities on the same simulation so picking a city never moves it; ranking takes ~1 s at 4,000 paths, ~2.3 s at 10,000, in the worker. Replaces the standing decision that the Atlas overlays the Outlook's odds.
 - 2026-11-06 · Saving under an existing name (any case) replaces that portfolio's holdings after an on-screen warning, rather than a separate confirm step; up to 30 saved, names up to 40 characters.
 - 2026-11-06 · Saved portfolios live in localStorage under their own key (`evelo:v2:portfolios`), separate from the plan, and are not part of share links — user agreed to browser-only, holdings-only.
 
@@ -37,7 +42,6 @@ Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (republish: `npm run 
 - 2026-11-06 · UI reads a prebuilt `market-index.json` (derived by `scripts/build-market-index.mjs`, sync-checked by a test); `market.json` ships only in the worker. Atlas/Method lazy; framer-motion via LazyMotion — main chunk 1,177 kB → 345 kB. (from [eVelo v2 build](plans/2026-11-06-evelo-v2-build.md))
 - 2026-11-06 · Plain hashes (`#atlas`) are canonical and share links are `#p=…` — the claude.ai preview host only passes plain hashes; `#/atlas` and `#/?p=` still parse. (from [eVelo v2 build](plans/2026-11-06-evelo-v2-build.md))
 - 2026-11-06 · Verdict bands 80 / 65 / 45 (holds / mostly holds / fragile / breaks), classified on the displayed whole percent; one outcome color scale (`outcomeScale.ts`, hue-adjacent `--ramp-*` stops, step at 65%) for every success color. (from [eVelo v2 build](plans/2026-11-06-evelo-v2-build.md))
-- 2026-11-06 · Atlas shows the Outlook's full-path odds for the user's home and destination, so one city never shows two numbers. (from [eVelo v2 build](plans/2026-11-06-evelo-v2-build.md))
 - 2026-11-06 · Ranking blends published sources (IL Global Retirement Index, InterNations, LIOS, GPI, Forbes) weighted for retirees; sources cited in the app. (from [Expat picks](plans/2026-11-06-expat-picks.md))
 - 2026-11-06 · Verified cities carry source, date and confidence; others are labeled rough estimates; Numbeo used to check, not bulk-copied. (from [Expat picks](plans/2026-11-06-expat-picks.md))
 - 2026-11-06 · Profile scores are eVelo's own 1–5 assessment on one scale across all picks, checked against GPI, US advisories and the cost indices. (from [Expat picks](plans/2026-11-06-expat-picks.md))

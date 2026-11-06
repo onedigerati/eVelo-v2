@@ -316,8 +316,9 @@ export function MethodView() {
             </p>
             <p>
               Your plan runs on {number(DEF.paths)} futures. Every city in the
-              Atlas runs on the same {number(DEF.atlasPaths)} futures, so
-              differences between cities are about the cities, not luck; the
+              Atlas runs on those same futures, so differences between cities
+              are about the cities, not luck, and a city’s odds in the Atlas
+              match the Outlook with that city as your destination; the
               safe-spending search uses {number(DEF.solvePaths)} and finds the
               largest budget that still holds in {pct(DEF.solveTarget)} of them.
             </p>

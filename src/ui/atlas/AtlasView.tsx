@@ -2,7 +2,6 @@ import { AnimatePresence, m as motion } from 'framer-motion'
 import { outcomeGradient, RAMP_MAX, RAMP_MIN } from '../outcomeScale'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { CITIES, CITY_BY_ID } from '../../data/cities'
-import { ATLAS_MAX_PATHS } from '../../engine/atlas'
 import { toneFor } from '../verdict'
 import { budgetTotal } from '../../engine/cost'
 import { useStore } from '../../state/store'
@@ -15,7 +14,6 @@ import {
   insight,
   lifestyleCaption,
   ranked,
-  withOutlook,
   successColor,
   successTextColor,
   useAtlasSync,
@@ -81,10 +79,7 @@ export function AtlasView() {
   const [compare, setCompare] = useState<string[]>([])
   const [cmpOpen, setCmpOpen] = useState(false)
   const [profileId, setProfileId] = useState<string | null>(null)
-  const result = useStore((s) => s.result)
-  const baseline = useStore((s) => s.baseline)
-  const merged = useMemo(() => withOutlook(atlas, inputs, result, baseline), [atlas, inputs, result, baseline])
-  const rows = useMemo(() => ranked(merged.entries), [merged])
+  const rows = useMemo(() => ranked(atlas), [atlas])
   const when = useRelativeTime(atlasAt)
   const homeId = inputs.homeCityId
   const destId = inputs.destCityId
@@ -229,14 +224,8 @@ export function AtlasView() {
 
       <motion.div variants={rise}>
         <p className="atlas__paths">
-          Each city is ranked on {Math.min(inputs.paths, ATLAS_MAX_PATHS).toLocaleString('en-US')} simulated futures
-          {merged.fromOutlook.length > 0 && (
-            <>
-              ; {merged.fromOutlook.map((id) => CITY_BY_ID[id]?.name).join(' and ')} {merged.fromOutlook.length > 1 ? 'use' : 'uses'} the Outlook’s
-              full {inputs.paths.toLocaleString('en-US')}, so the numbers match across views
-            </>
-          )}
-          .
+          Each city is ranked on the same {inputs.paths.toLocaleString('en-US')} simulated futures as the Outlook, so a
+          city’s odds here match the Outlook with that city as your destination.
         </p>
         <SourcesLine />
       </motion.div>
