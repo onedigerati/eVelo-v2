@@ -10,7 +10,7 @@ import { ThemeCycleButton, ThemeToggle } from './ThemeToggle'
 
 export function Wordmark() {
   return (
-    <a href="#/" className="wordmark" aria-label="eVelo — home">
+    <a href="#outlook" className="wordmark" aria-label="eVelo — home">
       <Mark size={28} />
       <span className="wordmark__text">
         e<em>V</em>elo

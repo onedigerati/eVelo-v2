@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { DEFAULT_INPUTS } from '../../engine/defaults'
-import { decodeInputs, encodeInputs } from '../share'
+import { parseHash } from '../router'
+import { baseUrl, decodeInputs, encodeInputs, shareUrl } from '../share'
 
 describe('share links', () => {
   it('round-trips changed inputs', () => {
@@ -19,5 +20,13 @@ describe('share links', () => {
     expect(out.portfolio).toBe(DEFAULT_INPUTS.portfolio)
     expect(out.age).toBe(60)
     expect(out.method).toBe(DEFAULT_INPUTS.method)
+  })
+  it('builds a full URL whose hash decodes back to the plan', () => {
+    const inputs = { ...DEFAULT_INPUTS, age: 61 }
+    const url = shareUrl(inputs, baseUrl({ href: 'https://ex.com/evelo/?x=1#atlas', protocol: 'https:' }, ''))
+    expect(url.startsWith('https://ex.com/evelo/?x=1#p=')).toBe(true)
+    const p = parseHash(new URL(url).hash).params.get('p')!
+    expect(decodeInputs(p)).toEqual(inputs)
+    expect(baseUrl({ href: 'about:srcdoc', protocol: 'about:' }, 'https://host.example/a#b')).toBe('https://host.example/a')
   })
 })

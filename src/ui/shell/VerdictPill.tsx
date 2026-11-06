@@ -13,7 +13,7 @@ export function VerdictPill() {
   const c = 2 * Math.PI * r
   return (
     <div className="verdict-pill-wrap">
-      <a href="#/" className={cx('verdict-pill', `verdict-pill--${tone}`, status === 'running' && 'is-running')}>
+      <a href="#outlook" className={cx('verdict-pill', `verdict-pill--${tone}`, status === 'running' && 'is-running')}>
         <svg className="verdict-pill__ring" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
           <circle cx="12" cy="12" r={r} fill="none" stroke="var(--hairline-strong)" strokeWidth="2.5" />
           <motion.circle

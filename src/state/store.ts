@@ -79,7 +79,7 @@ function writePersisted(p: { inputs: PlanInputs; theme: ThemePref }) {
 
 const isTheme = (t: unknown): t is ThemePref => t === 'system' || t === 'light' || t === 'dark'
 
-/** Initial state: shared link (#/?p=) wins over localStorage, which wins over defaults. */
+/** Initial state: shared link (#p=, or legacy #/?p=) wins over localStorage, which wins over defaults. */
 function initial(): { inputs: PlanInputs; theme: ThemePref; route: Route; fromLink: boolean } {
   const persisted = readPersisted()
   const { route, params } = parseHash(window.location.hash)

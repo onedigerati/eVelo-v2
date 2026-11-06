@@ -211,7 +211,7 @@ function Board({ theme }: { theme: 'light' | 'dark' }) {
   )
 }
 
-/** Hidden route #/styleguide — every primitive in both themes. */
+/** Hidden route #styleguide — every primitive in both themes. */
 export function Styleguide() {
   return (
     <div className="sg">

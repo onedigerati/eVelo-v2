@@ -1,4 +1,4 @@
-// Share links: inputs -> compact base64url string in `#/?p=...`.
+// Share links: inputs -> compact base64url string in `#p=...` (legacy `#/?p=...` still opens).
 //
 // Encoding: JSON of only the fields that differ from DEFAULT_INPUTS (deep-compared), wrapped
 // as { v: 1, d: diff }, UTF-8 encoded, base64url without padding. Decoding merges the diff
@@ -97,7 +97,14 @@ export function decodeInputs(s: string): PlanInputs | null {
   }
 }
 
-export function shareUrl(inputs: PlanInputs): string {
-  const { origin, pathname, search } = window.location
-  return `${origin}${pathname}${search}#/?p=${encodeInputs(inputs)}`
+/** Page URL without its hash, preferring a real http(s) address (a sandboxed preview frame may not have one). */
+export function baseUrl(loc: Pick<Location, 'href' | 'protocol'> = window.location, referrer = document.referrer): string {
+  const strip = (u: string) => u.replace(/#.*$/, '')
+  if (/^https?:$/.test(loc.protocol)) return strip(loc.href)
+  if (/^https?:\/\//.test(referrer)) return strip(referrer)
+  return strip(loc.href)
+}
+
+export function shareUrl(inputs: PlanInputs, base = baseUrl()): string {
+  return `${base}#p=${encodeInputs(inputs)}`
 }
