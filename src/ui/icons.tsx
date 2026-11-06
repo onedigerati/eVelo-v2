@@ -80,22 +80,44 @@ export const IconReset = ({ size, ...p }: P) => (
   </svg>
 )
 
-/** The eVelo mark: a widening cone of futures with the median arc rising through it. */
+/**
+ * The eVelo mark ("escape velocity"): a ring holding a script e whose tail breaks into a
+ * rising chart, with a rocket lifting off the e. Drawn white-on-black into a mask, then
+ * filled with the --brand-1 → --brand-2 gradient, so the rocket window is a true cut-out.
+ * At 32px and below the strokes thicken so the figure survives small sizes.
+ * Keep public/favicon.svg in step with this drawing.
+ */
 export function Mark({ size = 28, className }: { size?: number; className?: string }) {
   const id = useId().replace(/:/g, '')
+  const small = size <= 32
+  const w = small ? 9 : 7
   return (
-    <svg width={size} height={size} viewBox="0 0 28 28" fill="none" aria-hidden="true" className={className}>
+    <svg width={size} height={size} viewBox="0 0 100 100" fill="none" aria-hidden="true" className={className}>
       <defs>
-        <linearGradient id={`${id}-c`} x1="4" y1="22" x2="24" y2="8" gradientUnits="userSpaceOnUse">
-          <stop offset="0" stopColor="var(--accent)" stopOpacity="0" />
-          <stop offset="1" stopColor="var(--accent)" stopOpacity="0.38" />
+        <linearGradient id={`${id}-g`} x1="12" y1="88" x2="88" y2="12" gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopColor="var(--brand-2)" />
+          <stop offset="1" stopColor="var(--brand-1)" />
         </linearGradient>
+        <mask id={`${id}-m`} maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+          <rect width="100" height="100" fill="#000" />
+          <circle cx="50" cy="50" r="43" stroke="#fff" strokeWidth={small ? 8 : 6.5} />
+          <path
+            d="M24 62C31 61 39 56 38 48C37 41 26 40 22 50C18 60 21 72 29 73C33 73.5 37 72 40 69L51 58L59 66L74 47"
+            stroke="#fff"
+            strokeWidth={w}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path fill="#fff" d={small ? 'M80.82 38.37L81.85 53.2L66.15 40.8Z' : 'M80.82 38.37L80.67 52.27L67.33 41.73Z'} />
+          <g transform="translate(56 29) rotate(45) scale(.95)" fill="#fff">
+            <path d="M0-17C6.5-11 8-2 6 8L-6 8C-8-2-6.5-11 0-17Z" />
+            <path d="M-6.6-1L-12.8 7.5L-12.4 13.2L-6 8ZM6.6-1L12.8 7.5L12.4 13.2L6 8Z" />
+            <path d="M-3.6 10.6L0 18.6L3.6 10.6Z" />
+            <circle cy="-5.2" r="3.1" fill="#000" />
+          </g>
+        </mask>
       </defs>
-      <path d="M4 22L24 4.5V17.5Z" fill={`url(#${id}-c)`} />
-      <path d="M4 22L24 4.5M4 22L24 17.5" stroke="var(--accent)" strokeOpacity="0.35" strokeWidth="1" />
-      <path d="M4 22C11 20 17.5 15 24 9" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round" />
-      <circle cx="24" cy="9" r="2.25" fill="var(--accent)" />
-      <path d="M4 24.5h20" stroke="currentColor" strokeOpacity="0.3" strokeWidth="1" strokeLinecap="round" />
+      <rect width="100" height="100" fill={`url(#${id}-g)`} mask={`url(#${id}-m)`} />
     </svg>
   )
 }

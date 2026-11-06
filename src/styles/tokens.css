@@ -122,6 +122,9 @@
   --hairline-strong: rgba(20, 24, 21, 0.18);
   --highlight: rgba(255, 255, 255, 0.9); /* inner top-edge highlight */
 
+  /* Brand mark gradient (logo): accent green into deep teal-blue */
+  --brand-1: #0b7a56;
+  --brand-2: #1d5c8f;
   --holds: #0b7a56;
   --holds-text: #0a6e4d;
   --holds-soft: rgba(11, 122, 86, 0.1);
@@ -213,6 +216,8 @@
   --hairline-strong: rgba(220, 255, 240, 0.16);
   --highlight: rgba(220, 255, 240, 0.07);
 
+  --brand-1: #5be3b0;
+  --brand-2: #4fa6e8;
   --holds: #5be3b0;
   --holds-text: #5be3b0;
   --holds-soft: rgba(91, 227, 176, 0.1);
@@ -290,6 +295,8 @@
     --hairline-strong: rgba(220, 255, 240, 0.16);
     --highlight: rgba(220, 255, 240, 0.07);
 
+    --brand-1: #5be3b0;
+    --brand-2: #4fa6e8;
     --holds: #5be3b0;
     --holds-text: #5be3b0;
     --holds-soft: rgba(91, 227, 176, 0.1);
