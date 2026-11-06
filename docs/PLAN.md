@@ -1,24 +1,26 @@
-# Profiles 16–25 plan
+# Saved portfolios plan
 
 ## Goal
-Give picks 16–25 (Medellín, Cuenca, Madeira, Da Nang, Montevideo, Nice, Florence, Bangkok, Split, Bali) the same full profile as the top 15: tagline, summary, six 1–5 scores calibrated against the existing 15, seven facts, drawbacks and sources, opened from the Atlas with the "Your plan here" comparison. Done = all 25 picks open a profile on the live site, tests green, phone and desktop in both themes.
+Let the user name the current holdings mix, save it, and pick it again later from the Portfolio section, alongside the built-in model portfolios; rename and delete saved ones. Saved in the browser (no account), holdings and weights only — applying one never touches budget, borrowing or other settings. Done = save / apply / rename / delete work on the live site, survive a reload, tests green, phone and desktop in both themes.
 
 ## Baseline
-2026-11-06 · tests: 93 pass (11 files) · typecheck: clean · build: ok (main chunk 345.6 kB)
+2026-11-06 · tests: 96 pass (11 files) · typecheck: clean · build: ok (main chunk 346.1 kB)
 
 ## Now
-All stages done and pushed to main (profiles 16–25, new logo and wordmark); live site deploys from the push.
+Stage 1 in progress.
 Live: https://onedigerati.github.io/eVelo-v2/ (deploys on push to main)
-Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (republish: `npm run build && node scripts/artifact-page.mjs`) — updated with profiles 16–25 and the new logo
+Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (republish: `npm run build && node scripts/artifact-page.mjs`)
 
 ## Stages
-- [x] 1. Profiles 16–25 — research, data, Atlas wiring, verify, preview
+- [ ] 1. Saved portfolios — storage module with tests, Portfolio-section UI, verify in the running app, preview
+  - [ ] "Save as…" names the current mix; it appears under "Your portfolios" and is marked active
+  - [ ] Applying a saved portfolio replaces holdings only (budget etc. unchanged), with the same confirm step as model portfolios
+  - [ ] Rename and delete work; saving under an existing name asks before replacing it
+  - [ ] Saved portfolios survive a reload; corrupt or unknown-ticker storage is cleaned, never crashes
+  - [ ] Works on phone and desktop, light and dark
 
 ## Decisions
-- 2026-11-06 · The 16–25 list keeps its compact layout; a row tap opens the profile instead of setting the destination — consistent with the top-15 cards; Make destination lives in the profile.
-- 2026-11-06 · Scores for 16–25 kept as researched except Bangkok climate 2→3 (matches Kuala Lumpur); first 1s on the list (Nice/Florence cost, Split/Da Nang visa) and first 5 for healthcare (Nice) are supported by cost indices and visa/healthcare evidence. Claims from researchers' own knowledge (tax treaties, advisory levels) are hedged as "reportedly".
-- 2026-11-06 · New logo: the user's "escape velocity" concept (ring, script e breaking into a rising chart, rocket) redrawn as SVG — user picked the Homage study of four (https://claude.ai/artifact/1gJfSyj9E8qjbjeGsj9hkX). Gradient uses new `--brand-1/--brand-2` tokens (accent green → teal-blue); `Mark`, `public/favicon.svg` and `public/apple-touch-icon.png` share one drawing.
-- 2026-11-06 · Wordmark set in Geist Semibold (23px, -0.035em), all ink, replacing Instrument Serif with a green italic V — the serif's hairlines looked faint beside the heavy mark and the green V competed with it; user chose this from six studies (https://claude.ai/artifact/VEK952PiL72D8BwTbWBqa3).
+- 2026-11-06 · Saved portfolios live in localStorage under their own key (`evelo:v2:portfolios`), separate from the plan, and are not part of share links — user agreed to browser-only, holdings-only.
 
 ## Open questions
 - Some 2026 single-stock months are very large (INTC +114% Apr 2026; MU/SNOW/DDOG ~+87% May 2026); match Yahoo raw bars but unverified against a second source.
@@ -38,7 +40,10 @@ Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (republish: `npm run 
 - 2026-11-06 · Ranking blends published sources (IL Global Retirement Index, InterNations, LIOS, GPI, Forbes) weighted for retirees; sources cited in the app. (from [Expat picks](plans/2026-11-06-expat-picks.md))
 - 2026-11-06 · Verified cities carry source, date and confidence; others are labeled rough estimates; Numbeo used to check, not bulk-copied. (from [Expat picks](plans/2026-11-06-expat-picks.md))
 - 2026-11-06 · Profile scores are eVelo's own 1–5 assessment on one scale across all picks, checked against GPI, US advisories and the cost indices. (from [Expat picks](plans/2026-11-06-expat-picks.md))
+- 2026-11-06 · New logo: the user's "escape velocity" concept (ring, script e breaking into a rising chart, rocket) redrawn as SVG — user picked the Homage study of four (https://claude.ai/artifact/1gJfSyj9E8qjbjeGsj9hkX). Gradient uses new `--brand-1/--brand-2` tokens (accent green → teal-blue); `Mark`, `public/favicon.svg` and `public/apple-touch-icon.png` share one drawing. (from [Profiles 16–25](plans/2026-11-06-profiles-16-25.md))
+- 2026-11-06 · Wordmark set in Geist Semibold (23px, -0.035em), all ink, replacing Instrument Serif with a green italic V — the serif's hairlines looked faint beside the heavy mark and the green V competed with it; user chose this from six studies (https://claude.ai/artifact/VEK952PiL72D8BwTbWBqa3). (from [Profiles 16–25](plans/2026-11-06-profiles-16-25.md))
 
 ## Shipped
 - 2026-11-06 · eVelo v2 build: BBD planner with engine, plan inputs, outlook charts, Atlas and methodology, live on GitHub Pages — [plan](plans/2026-11-06-evelo-v2-build.md)
 - 2026-11-06 · Expat picks: verified costs for 25 destinations + US home cities, ranked top 25 with sources, profiles for the top 15 in the Atlas — [plan](plans/2026-11-06-expat-picks.md)
+- 2026-11-06 · Profiles 16–25: full profiles for picks 16–25, plus the new escape-velocity logo and Geist wordmark — [plan](plans/2026-11-06-profiles-16-25.md)
