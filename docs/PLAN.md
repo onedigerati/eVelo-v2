@@ -4,7 +4,7 @@
 A slick, design-forward static web app for planning a Buy-Borrow-Die retirement. A user picks real tickers and weights, sets age, horizon, lifestyle budget and borrowing terms, and sees the probability their plan holds for 15/20/30 years without a forced sale — in their home city and in any destination city (cost-of-living, expat factor, FX risk). Done = deployed-ready build that runs on desktop and phone, light and dark themes, real bundled market data with a refresh script, a tested simulation engine, and a city "atlas" ranking where money goes furthest.
 
 ## Now
-All stages done.
+All stages done. Live: https://onedigerati.github.io/eVelo-v2/ (repo onedigerati/eVelo-v2, public; deploys on push to main)
 Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (republish: `npm run build && node scripts/artifact-page.mjs`)
 
 ## Stages
@@ -28,6 +28,7 @@ Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (republish: `npm run 
 - 2026-11-06 · Data months keyed by UTC month of timestamp+12h; script fails on gaps or a stale last month — a DST offset bug had shifted/merged months.
 - 2026-11-06 · Stages 3 and 4 built in parallel: inputs live in `src/ui/plan`, results + worker client in `src/ui/outlook` / `src/state/sim.ts` — disjoint files.
 - 2026-11-06 · Review fixes: shared backfill donor months; explicit priors for bonds/real estate/commodities; insolvency counts as a forced sale; real stats added. Deferred: young asset paired with a full-history asset keeps only beta-linked correlation in backfilled months (NVDA/AMD 0.27 vs 0.53); a call that can't reach target counts as broken.
+- 2026-11-06 · Public repo onedigerati/eVelo-v2 with GitHub Pages via Actions — user chose public (matches v1).
 - 2026-11-06 · City cost indices are curated approximations from public indices, labeled as estimates and user-overridable per category.
 
 - 2026-11-06 · UI reads a prebuilt `market-index.json` (derived by `scripts/build-market-index.mjs`, sync-checked by a test); `market.json` ships only in the worker. Atlas/Method lazy; framer-motion via LazyMotion — main chunk 1,177 kB → 345 kB.
@@ -36,6 +37,5 @@ Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (republish: `npm run 
 - 2026-11-06 · Atlas shows the Outlook's full-path odds for the user's home and destination, so one city never shows two numbers.
 
 ## Open questions
-- Hosting: workflows for GitHub Pages exist but nothing is pushed; needs a GitHub repo and Settings → Pages → GitHub Actions — user decides.
 - Some 2026 single-stock months are very large (INTC +114% Apr 2026; MU/SNOW/DDOG ~+87% May 2026); match Yahoo raw bars but unverified against a second source.
 - In-browser fetch of arbitrary tickers needs a CORS proxy or serverless function — user decides on hosting later; not blocking.
