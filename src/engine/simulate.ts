@@ -91,8 +91,15 @@ export function outcomeDots(rates: [number, number, number]): (0 | 1 | 2)[] {
   return dots.slice(0, 100)
 }
 
-export function simulate(market: MarketData, cities: City[], inputs: PlanInputs): SimulationResult {
+/** Horizon is modelled in whole years (bands are yearly). */
+export function normalizeInputs(inputs: PlanInputs): PlanInputs {
+  const horizonYears = Math.max(1, Math.round(inputs.horizonYears))
+  return horizonYears === inputs.horizonYears ? inputs : { ...inputs, horizonYears }
+}
+
+export function simulate(market: MarketData, cities: City[], rawInputs: PlanInputs): SimulationResult {
   const t0 = now()
+  const inputs = normalizeInputs(rawInputs)
   const prep = prepare(market, inputs.holdings, inputs.outlook)
   const home = findCity(cities, inputs.homeCityId)
   const dest = resolveDestination(inputs, home, findCity(cities, inputs.destCityId))
@@ -140,7 +147,13 @@ export function simulate(market: MarketData, cities: City[], inputs: PlanInputs)
       bbdWins: wins / paths,
       sellTaxMedian: median(rec.sellTax),
     },
-    stats: { expReturn: prep.expReturn, volatility: prep.volatility, cagrMedian: median(rec.cagr) },
+    stats: {
+      expReturn: prep.expReturn,
+      volatility: prep.volatility,
+      cagrMedian: median(rec.cagr),
+      expReturnReal: prep.expReturnReal,
+      cagrMedianReal: median(rec.cagrReal),
+    },
     correlation: prep.correlation,
     elapsedMs: now() - t0,
   }

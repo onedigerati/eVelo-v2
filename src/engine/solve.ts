@@ -4,13 +4,14 @@
 import { budgetTotal } from './cost'
 import { runPaths } from './kernel'
 import { prepare } from './prepare'
-import { findCity, kernelConfig, makeScenarios, resolveDestination } from './simulate'
+import { findCity, kernelConfig, makeScenarios, normalizeInputs, resolveDestination } from './simulate'
 import type { City, MarketData, PlanInputs, SolveResult } from './types'
 
 export const SOLVE_MAX_PATHS = 1500
 const ITERATIONS = 14
 
-export function solveSpending(market: MarketData, cities: City[], inputs: PlanInputs, target: number): SolveResult {
+export function solveSpending(market: MarketData, cities: City[], rawInputs: PlanInputs, target: number): SolveResult {
+  const inputs = normalizeInputs(rawInputs)
   const prep = prepare(market, inputs.holdings, inputs.outlook)
   const sc = makeScenarios(prep, inputs, Math.min(inputs.paths, SOLVE_MAX_PATHS))
   const home = findCity(cities, inputs.homeCityId)

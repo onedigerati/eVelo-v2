@@ -4,12 +4,13 @@
 import { budgetTotal } from './cost'
 import { runPaths } from './kernel'
 import { prepare } from './prepare'
-import { findCity, kernelConfig, makeScenarios, resolveDestination } from './simulate'
+import { findCity, kernelConfig, makeScenarios, normalizeInputs, resolveDestination } from './simulate'
 import type { AtlasEntry, City, MarketData, PlanInputs } from './types'
 
 export const ATLAS_MAX_PATHS = 1500
 
-export function runAtlas(market: MarketData, cities: City[], inputs: PlanInputs, cityIds: string[]): AtlasEntry[] {
+export function runAtlas(market: MarketData, cities: City[], rawInputs: PlanInputs, cityIds: string[]): AtlasEntry[] {
+  const inputs = normalizeInputs(rawInputs)
   const prep = prepare(market, inputs.holdings, inputs.outlook)
   const sc = makeScenarios(prep, inputs, Math.min(inputs.paths, ATLAS_MAX_PATHS))
   const home = findCity(cities, inputs.homeCityId)

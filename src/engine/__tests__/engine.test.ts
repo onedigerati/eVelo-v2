@@ -155,6 +155,61 @@ describe('outlook on a long-lived winner', () => {
   })
 })
 
+describe('backfill co-movement and non-equity priors', () => {
+  // Two young assets sharing a non-SPY factor: correlated residuals.
+  function coMoving(): MarketData {
+    const mkt = syntheticMarket(360)
+    const rng = createRng(11)
+    const spy = mkt.assets.SPY.r as number[]
+    const a: (number | null)[] = []
+    const b: (number | null)[] = []
+    for (let m = 0; m < 360; m++) {
+      const f = 0.03 * rng.normal()
+      const ra = 0.002 + 0.4 * spy[m] + f + 0.01 * rng.normal()
+      const rb = 0.002 + 0.5 * spy[m] + f + 0.01 * rng.normal()
+      a.push(m < 250 ? null : ra)
+      b.push(m < 280 ? null : rb)
+    }
+    mkt.assets.YA = { symbol: 'YA', name: 'YA', cls: 'stock', first: 250, r: a }
+    mkt.assets.YB = { symbol: 'YB', name: 'YB', cls: 'stock', first: 280, r: b }
+    return mkt
+  }
+
+  it('co-moving young assets keep their correlation in the backfilled span (shared donor months)', () => {
+    const mkt = coMoving()
+    const p = prepare(mkt, [{ symbol: 'YA', weight: 0.5 }, { symbol: 'YB', weight: 0.5 }], 'historical')
+    const col = (i: number, from: number, to: number) => Array.from({ length: to - from }, (_, k) => p.R[(from + k) * 2 + i])
+    const real = corr(col(0, 280, 360), col(1, 280, 360))
+    const filled = corr(col(0, 0, 250), col(1, 0, 250))
+    expect(real).toBeGreaterThan(0.8)
+    expect(Math.abs(filled - real)).toBeLessThan(0.1)
+    // deterministic, independent of the simulation seed
+    expect(prepare(mkt, [{ symbol: 'YA', weight: 0.5 }, { symbol: 'YB', weight: 0.5 }], 'historical').R).toEqual(p.R)
+  })
+
+  it('bonds, real estate and commodities shrink toward explicit priors', () => {
+    const mkt = syntheticMarket(360, [
+      { symbol: 'BOND', alpha: 0.006, beta: 0.05, noise: 0.01, first: 240 },
+      { symbol: 'GOLD', alpha: 0.009, beta: 0.1, noise: 0.04, first: 240 },
+      { symbol: 'REIT', alpha: 0.004, beta: 1.0, noise: 0.03, first: 240 },
+    ])
+    mkt.assets.BOND.cls = 'etf-bond'
+    mkt.assets.GOLD.cls = 'commodity'
+    mkt.assets.REIT.cls = 'etf-real-estate'
+    const hold = ['BOND', 'GOLD', 'REIT'].map((symbol) => ({ symbol, weight: 1 }))
+    const bal = prepare(mkt, hold, 'balanced').assets
+    const con = prepare(mkt, hold, 'conservative').assets
+    const wb = 10 / 30 // min(0.5, 10 / (10 + 20))
+    const wc = 0.2 // min(0.25, 10 / (10 + 40))
+    expect(bal[0].muFinal).toBeCloseTo(wb * bal[0].muReal + (1 - wb) * (0.04 / 12), 12)
+    expect(bal[1].muFinal).toBeCloseTo(wb * bal[1].muReal + (1 - wb) * (0.04 / 12), 12)
+    const reitPrior = (0.035 + Math.min(2, Math.max(0.5, bal[2].beta)) * 0.05) / 12
+    expect(bal[2].muFinal).toBeCloseTo(wb * bal[2].muReal + (1 - wb) * reitPrior, 12)
+    expect(con[1].muFinal).toBeCloseTo(wc * con[1].muReal + (1 - wc) * (0.04 / 12), 12)
+    expect(con[1].muFinal).toBeLessThan(bal[1].muFinal)
+  })
+})
+
 describe('margin call', () => {
   const cfg: KernelConfig = {
     T: 12, portfolio: 100, basisFraction: 0.4, dragM: 0, loanRateM: 0, maxLtv: 0.6, targetLtv: 0.45,
@@ -192,6 +247,13 @@ describe('margin call', () => {
     runPaths(path(-0.85), cfg, rec)
     expect(rec.outcome[0]).toBe(2)
     expect(rec.nw[1]).toBe(0)
+    // insolvency without a prior call is recorded as the first forced sale (liquidation)
+    expect(rec.firstCall[0]).toBe(1)
+  })
+
+  it('failure rate equals cumulative forced-sale probability', () => {
+    const r = simulate(market, CITIES_FIX, withInputs({ holdings: [{ symbol: 'MSTR', weight: 1 }], paths: 1000 }))
+    expect(r.marginCallCumulative.at(-1)!).toBeCloseTo(r.bruisedRate + r.brokenRate, 9)
   })
 })
 
@@ -278,6 +340,16 @@ describe('results', () => {
     expect(r.estate.sellTaxMedian).toBeGreaterThan(0)
     expect(r.estate.bbdMedian).toBeGreaterThan(0)
     expect(r.estate.bbdWins).toBeGreaterThan(0.5)
+  })
+
+  it('reports real stats below nominal and rounds the horizon to whole years', () => {
+    const r = simulate(market, CITIES_FIX, withInputs({ paths: 500, horizonYears: 20.4 }))
+    expect(r.inputs.horizonYears).toBe(20)
+    expect(r.netWorth.p50.length).toBe(21)
+    expect(r.marginCallByYear.length).toBe(20)
+    expect(r.stats.expReturnReal).toBeLessThan(r.stats.expReturn)
+    expect(r.stats.cagrMedianReal).toBeLessThan(r.stats.cagrMedian)
+    expect(r.stats.cagrMedianReal).toBeGreaterThan(0)
   })
 
   it('fat-tail method runs end to end', () => {

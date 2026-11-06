@@ -166,8 +166,10 @@ export interface SimulationResult {
     sellTaxMedian: number
   }
 
-  /** Expected portfolio stats (annualized) under the model. */
-  stats: { expReturn: number; volatility: number; cagrMedian: number }
+  /** Expected portfolio stats (annualized) under the model. expReturn / cagrMedian are nominal;
+   *  the *Real variants are deflated by CPI (calendar CPI for expReturnReal, each path's CPI for
+   *  cagrMedianReal). */
+  stats: { expReturn: number; volatility: number; cagrMedian: number; expReturnReal: number; cagrMedianReal: number }
   /** Correlation matrix of the holdings (order = inputs.holdings). */
   correlation: number[][]
   elapsedMs: number

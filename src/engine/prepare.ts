@@ -1,28 +1,44 @@
 // Turn bundled MarketData + holdings + outlook into a complete joint monthly return matrix.
 //
 // 1. Factor backfill: months before an asset's `first` are filled with
-//    alpha + beta * SPY + a residual resampled from the asset's own regression residuals.
-//    The residual draw is seeded by the symbol only, so the backfill is a fixed property of
-//    the dataset (identical across simulation seeds).
+//    alpha + beta * SPY + a resampled regression residual. Residuals are drawn by DONOR MONTH:
+//    each backfilled calendar month gets one donor month shared by every held asset, taken from
+//    the window where all held assets have real data (or, if that common window is < 36 months,
+//    from each asset's own real window using the same shared uniform draw). Asset i's residual in
+//    month m is its residual at the donor month, so co-moving young assets (BND/AGG, BTC/ETH)
+//    keep their residual correlation in the backfilled span. The draws are seeded by the
+//    calendar only (start, months), never by the simulation seed, so the backfill is a fixed
+//    property of the dataset and holdings.
 // 2. Mean shrinkage by outlook: the real-window monthly mean is blended toward a prior with
 //    history weight w = min(wMax, n / (n + k)) (n = years of real history; k and the per-class cap
 //    wMax depend on the outlook — see SHRINK); the whole series is then shifted so its mean equals
 //    the blend, keeping its shape and volatility. The cap stops long-lived winners (NVDA) from
-//    projecting their history forever. Equity prior = rf + clamp(beta, 0.5, 2) * ERP.
+//    projecting their history forever. Annual priors: stock / equity ETF / real estate
+//    rf + clamp(beta, 0.5, 2) * ERP; bonds rf + 0.5%; commodities (gold) rf + 0.5%;
+//    crypto rf + 6%.
 
 import { createRng, hashString } from './rng'
 import type { AssetClass, Holding, MarketData, Outlook } from './types'
 
 export const RF_ANNUAL = 0.035
 export const CRYPTO_PREMIUM = 0.06
+/** Annual premium over rf in the prior for bonds and for commodities (e.g. gold). */
+export const BOND_PREMIUM = 0.005
+export const COMMODITY_PREMIUM = 0.005
+/** Common real window shorter than this falls back to each asset's own window for donors. */
+export const MIN_COMMON_DONOR_MONTHS = 36
 const ERP: Record<Outlook, number> = { historical: 0, balanced: 0.05, conservative: 0.035 }
 /** Prior-strength k and maximum history weight wMax per outlook (w = min(wMax, n / (n + k))). */
-const SHRINK: Record<'balanced' | 'conservative', { k: number; wMax: Partial<Record<AssetClass, number>> }> = {
-  balanced: { k: 20, wMax: { stock: 0.35, 'etf-equity': 0.5, crypto: 0.25 } },
-  conservative: { k: 40, wMax: { stock: 0.15, 'etf-equity': 0.25, crypto: 0.1 } },
+const SHRINK: Record<'balanced' | 'conservative', { k: number; wMax: Record<AssetClass, number> }> = {
+  balanced: {
+    k: 20,
+    wMax: { stock: 0.35, 'etf-equity': 0.5, 'etf-bond': 0.5, 'etf-real-estate': 0.5, commodity: 0.5, crypto: 0.25 },
+  },
+  conservative: {
+    k: 40,
+    wMax: { stock: 0.15, 'etf-equity': 0.25, 'etf-bond': 0.25, 'etf-real-estate': 0.25, commodity: 0.25, crypto: 0.1 },
+  },
 }
-/** Bonds / real estate / commodities keep the original n / (n + k) weights (no cap). */
-const SHRINK_K_OTHER: Record<'balanced' | 'conservative', number> = { balanced: 10, conservative: 20 }
 /** Beta used in the CAPM prior is clamped so a noisy estimate can't inflate (or zero) it. */
 export const PRIOR_BETA_MIN = 0.5
 export const PRIOR_BETA_MAX = 2.0
@@ -31,9 +47,7 @@ export const PRIOR_BETA_MAX = 2.0
 export function shrinkWeight(cls: AssetClass, realYears: number, outlook: Outlook): number {
   if (outlook === 'historical') return 1
   const cfg = SHRINK[outlook]
-  const wMax = cfg.wMax[cls]
-  if (wMax == null) return realYears / (realYears + SHRINK_K_OTHER[outlook])
-  return Math.min(wMax, realYears / (realYears + cfg.k))
+  return Math.min(cfg.wMax[cls], realYears / (realYears + cfg.k))
 }
 
 export interface AssetInfo {
@@ -61,6 +75,8 @@ export interface Prepared {
   assets: AssetInfo[]
   /** Annualized expected return ((1 + mean)^12 - 1) and volatility (sd * sqrt 12) of the portfolio. */
   expReturn: number
+  /** Same, real: mean of (1 + r) / (1 + cpi) - 1 over the calendar, annualized. */
+  expReturnReal: number
   volatility: number
   correlation: number[][]
 }
@@ -71,10 +87,27 @@ function mean(a: ArrayLike<number>, from = 0, to = a.length): number {
   return s / (to - from)
 }
 
-/** Complete (backfilled) series for one symbol, before shrinkage. */
+/**
+ * One uniform draw per calendar month, seeded by the calendar only. Shared by every asset so
+ * the donor month for a given backfilled month is common across holdings.
+ */
+export function donorUniforms(market: MarketData): Float64Array {
+  const rng = createRng(hashString(`donor:${market.start}:${market.months}`))
+  const u = new Float64Array(market.months)
+  for (let m = 0; m < u.length; m++) u[m] = rng.next()
+  return u
+}
+
+/**
+ * Complete (backfilled) series for one symbol, before shrinkage.
+ * `pool` = [from, to) calendar window donor months are drawn from (default: the asset's own real
+ * window); it must lie inside the asset's real window.
+ */
 export function backfillSeries(
   market: MarketData,
   symbol: string,
+  u: Float64Array = donorUniforms(market),
+  pool?: [number, number],
 ): { r: Float64Array; alpha: number; beta: number; first: number } {
   const a = market.assets[symbol]
   if (!a) throw new Error(`Unknown symbol ${symbol}`)
@@ -103,27 +136,32 @@ export function backfillSeries(
   const beta = sxx > 0 ? sxy / sxx : 0
   const alpha = my - beta * mx
   if (first > 0) {
-    const resid = new Float64Array(n)
-    for (let m = first; m < M; m++) resid[m - first] = r[m] - alpha - beta * (spy.r[m] ?? 0)
-    const rng = createRng(hashString(symbol))
+    const [from, to] = pool && pool[0] >= first && pool[1] > pool[0] ? pool : [first, M]
+    const len = to - from
     for (let m = 0; m < first; m++) {
-      const v = alpha + beta * (spy.r[m] ?? 0) + resid[rng.int(n)]
-      r[m] = Math.max(-0.95, v)
+      const d = from + Math.min(len - 1, Math.floor(u[m] * len))
+      const resid = r[d] - alpha - beta * (spy.r[d] ?? 0)
+      r[m] = Math.max(-0.95, alpha + beta * (spy.r[m] ?? 0) + resid)
     }
   }
   return { r, alpha, beta, first }
 }
 
 /** Monthly prior mean for an asset under an outlook. */
-function priorMonthly(cls: AssetClass, beta: number, outlook: Outlook, fullMean: number): number {
-  if (cls === 'crypto') return (RF_ANNUAL + CRYPTO_PREMIUM) / 12
-  if (cls === 'stock' || cls === 'etf-equity') {
-    const b = Math.min(PRIOR_BETA_MAX, Math.max(PRIOR_BETA_MIN, beta))
-    return (RF_ANNUAL + b * ERP[outlook]) / 12
+export function priorMonthly(cls: AssetClass, beta: number, outlook: Outlook): number {
+  switch (cls) {
+    case 'crypto':
+      return (RF_ANNUAL + CRYPTO_PREMIUM) / 12
+    case 'etf-bond':
+      return (RF_ANNUAL + BOND_PREMIUM) / 12 // its own SPY beta is ignored
+    case 'commodity':
+      return (RF_ANNUAL + COMMODITY_PREMIUM) / 12
+    default: {
+      // stock, etf-equity, etf-real-estate
+      const b = Math.min(PRIOR_BETA_MAX, Math.max(PRIOR_BETA_MIN, beta))
+      return (RF_ANNUAL + b * ERP[outlook]) / 12
+    }
   }
-  // Bonds / real estate / commodities: prior is the asset's own long-run (backfilled, full
-  // calendar) mean, blended with the same n/(n+k) weights.
-  return fullMean
 }
 
 export function prepare(market: MarketData, holdings: Holding[], outlook: Outlook): Prepared {
@@ -135,11 +173,18 @@ export function prepare(market: MarketData, holdings: Holding[], outlook: Outloo
   if (!(wsum > 0)) throw new Error('Holding weights must sum to a positive number')
   const weights = Float64Array.from(holdings, (h) => h.weight / wsum)
 
+  for (const sym of symbols) if (!market.assets[sym]) throw new Error(`Unknown symbol ${sym}`)
+  // Shared donor months: the window where every held asset has real data, if long enough.
+  const commonFirst = Math.max(...symbols.map((s) => market.assets[s].first))
+  const pool: [number, number] | undefined =
+    M - commonFirst >= MIN_COMMON_DONOR_MONTHS ? [commonFirst, M] : undefined
+  const u = donorUniforms(market)
+
   const R = new Float64Array(M * n)
   const assets: AssetInfo[] = []
   for (let i = 0; i < n; i++) {
     const sym = symbols[i]
-    const { r, alpha, beta, first } = backfillSeries(market, sym)
+    const { r, alpha, beta, first } = backfillSeries(market, sym, u, pool)
     const cls = market.assets[sym].cls
     const realYears = (M - first) / 12
     const muReal = mean(r, first)
@@ -148,7 +193,7 @@ export function prepare(market: MarketData, holdings: Holding[], outlook: Outloo
     // the backfilled months (alpha + beta * SPY over e.g. the 1990s bull run) would inflate it:
     // NVDA's raw full-calendar series compounds at ~50%/yr vs ~37%/yr over its real history.
     const w = shrinkWeight(cls, realYears, outlook)
-    const muBlend = w === 1 ? muReal : w * muReal + (1 - w) * priorMonthly(cls, beta, outlook, muFull)
+    const muBlend = w === 1 ? muReal : w * muReal + (1 - w) * priorMonthly(cls, beta, outlook)
     const shift = muBlend - muFull
     for (let m = 0; m < M; m++) R[m * n + i] = r[m] + shift
     assets.push({ symbol: sym, cls, alpha, beta, realYears, muReal, muFinal: muFull + shift })
@@ -176,6 +221,8 @@ export function prepare(market: MarketData, holdings: Holding[], outlook: Outloo
     row.map((c, j) => (i === j ? 1 : c / Math.sqrt(cov[i][i] * cov[j][j] || 1))),
   )
 
+  let realSum = 0
+  for (let m = 0; m < M; m++) realSum += (1 + port[m]) / (1 + cpi[m]) - 1
   const pm = mean(port)
   let pv = 0
   for (let m = 0; m < M; m++) pv += (port[m] - pm) ** 2
@@ -190,6 +237,7 @@ export function prepare(market: MarketData, holdings: Holding[], outlook: Outloo
     port,
     assets,
     expReturn: Math.pow(1 + pm, 12) - 1,
+    expReturnReal: Math.pow(1 + realSum / M, 12) - 1,
     volatility: Math.sqrt(pv * 12),
     correlation,
   }

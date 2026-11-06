@@ -10,7 +10,10 @@
 //      liquidates, so portfolio/loan/net worth are 0 and LTV is recorded as 1 thereafter.
 //   5. If loan/portfolio > maxLtv: forced sale of S so that (L - S(1 - g·tax)) / (V - S) = target,
 //      g = max(0, 1 - basis/V) the embedded-gain fraction; tax comes out of the proceeds; basis
-//      falls pro rata. If that is impossible (S >= V) the path is broken.
+//      falls pro rata. A call that cannot reach the target LTV even by liquidating the whole
+//      portfolio (S >= V, or a non-positive denominator) counts as broken, not bruised.
+//   An insolvency is itself a forced liquidation, so the month a path breaks is recorded as its
+//   first forced-sale month if no earlier margin call happened (feeds marginCallByYear).
 // The sell strategy (recording mode only) runs on the same returns: spending net of income is
 // funded by selling shares (gross S = need / (1 - g·tax)), surplus is reinvested, no loan.
 
@@ -49,6 +52,7 @@ export interface Recorder {
   sellEstate: Float64Array
   sellTax: Float64Array
   cagr: Float64Array
+  cagrReal: Float64Array
 }
 
 export function createRecorder(paths: number, years: number): Recorder {
@@ -65,6 +69,7 @@ export function createRecorder(paths: number, years: number): Recorder {
     sellEstate: new Float64Array(paths),
     sellTax: new Float64Array(paths),
     cagr: new Float64Array(paths),
+    cagrReal: new Float64Array(paths),
   }
 }
 
@@ -119,8 +124,10 @@ export function runPaths(
             L = 0
           }
         }
-        if (V <= 0 || V <= L) broken = true
-        else if (L > maxLtv * V) {
+        if (V <= 0 || V <= L) {
+          broken = true
+          if (called < 0) called = t
+        } else if (L > maxLtv * V) {
           if (called < 0) called = t
           const g = B < V ? 1 - B / V : 0
           const S = (L - targetLtv * V) / (1 - g * tax - targetLtv)
@@ -178,6 +185,7 @@ export function runPaths(
       rec.sellEstate[p] = Vs / P
       rec.sellTax[p] = taxReal
       rec.cagr[p] = Math.pow(Math.max(growth, 0), 12 / T) - 1
+      rec.cagrReal[p] = Math.pow(Math.max(growth / P, 0), 12 / T) - 1
     }
   }
   return clean
