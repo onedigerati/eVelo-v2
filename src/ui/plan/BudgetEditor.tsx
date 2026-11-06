@@ -3,8 +3,9 @@ import { BUDGET_CATEGORIES, budgetTotal } from '../../engine/cost'
 import { DEFAULT_INPUTS } from '../../engine/defaults'
 import type { Budget, BudgetCategory } from '../../engine/types'
 import { useStore } from '../../state/store'
+import { scaleBudget } from './budget'
 import { currency, number, parseLoose, percent } from '../format'
-import { AnimatedNumber, cx, SegmentedControl, StackBar } from '../primitives'
+import { cx, SegmentedControl, StackBar } from '../primitives'
 
 export const CATEGORY_LABEL: Record<BudgetCategory, string> = {
   housing: 'Housing',
@@ -60,8 +61,17 @@ export function BudgetEditor() {
         />
       </div>
       <div className="budget__total">
-        <AnimatedNumber className="budget__total-v" value={total / div} format="currency" duration={0.6} />
-        <span className="budget__total-u">{period === 'mo' ? 'per month' : 'per year'}, today’s dollars, at home</span>
+        <MoneyInput
+          id="budget-total"
+          className="money--total"
+          label={`Total lifestyle budget ${period === 'mo' ? 'per month' : 'per year'}`}
+          value={total / div}
+          step={period === 'mo' ? 100 : 1000}
+          onChange={(v) => setInput('budget', scaleBudget(budget, v * div))}
+        />
+        <label className="budget__total-u" htmlFor="budget-total">
+          {period === 'mo' ? 'per month' : 'per year'}, today’s dollars, at home · type your own amount; categories keep their mix
+        </label>
       </div>
       <StackBar
         height={8}
@@ -98,7 +108,7 @@ export function BudgetEditor() {
 }
 
 /** Compact right-aligned currency input (accepts "2.5k", "$1,200"). Arrow keys step. */
-export function MoneyInput({ id, value, step, onChange, label }: { id?: string; value: number; step: number; onChange: (v: number) => void; label?: string }) {
+export function MoneyInput({ id, value, step, onChange, label, className }: { id?: string; value: number; step: number; onChange: (v: number) => void; label?: string; className?: string }) {
   const [draft, setDraft] = useState<string | null>(null)
   const shown = `$${number(Math.round(value))}`
   const commit = (raw: string) => {
@@ -116,7 +126,7 @@ export function MoneyInput({ id, value, step, onChange, label }: { id?: string; 
     else if (e.key === 'Escape') setDraft(null)
   }
   return (
-    <span className="money">
+    <span className={cx('money', className)}>
       <input
         id={id}
         className="money__input num"
