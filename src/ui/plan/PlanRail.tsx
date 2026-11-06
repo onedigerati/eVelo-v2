@@ -8,11 +8,15 @@ import { LifeSection } from './LifeSection'
 import { ModelSection } from './ModelSection'
 import { PlaceSection } from './PlaceSection'
 import { PortfolioSection } from './PortfolioSection'
+import { useSyncPlanUi } from './planUi'
+import { TickerPalette, usePaletteShortcut } from './TickerPalette'
 import './plan.css'
 
 /** The Plan: every input, as collapsible sections. Used in the desktop rail, the tablet drawer and the phone Plan tab. */
 export function PlanRail({ showHeader = true }: { showHeader?: boolean }) {
   const reset = useStore((s) => s.resetInputs)
+  useSyncPlanUi()
+  usePaletteShortcut()
   return (
     <motion.div className="plan" variants={stagger(0.05, 0.05)} initial="hidden" animate="show">
       {showHeader && (
@@ -52,6 +56,7 @@ export function PlanRail({ showHeader = true }: { showHeader?: boolean }) {
       <motion.div variants={rise}>
         <ModelSection />
       </motion.div>
+      <TickerPalette />
     </motion.div>
   )
 }

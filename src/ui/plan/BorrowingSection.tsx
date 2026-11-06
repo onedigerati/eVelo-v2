@@ -1,13 +1,33 @@
+import { AnimatePresence, motion } from 'framer-motion'
+import { useId, useState, type CSSProperties } from 'react'
 import { useStore } from '../../state/store'
 import { percent } from '../format'
-import { InfoTip, Section, Slider } from '../primitives'
+import { ease } from '../motion'
+import { InfoTip, NumberField, Section, SegmentedControl, Slider } from '../primitives'
+
+const GAP = 0.05 // target must sit at least this far under the threshold
+const CG_PRESETS = [0.15, 0.2, 0.238]
 
 export function BorrowingSection() {
   const rate = useStore((s) => s.inputs.loanRate)
   const maxLtv = useStore((s) => s.inputs.maxLtv)
+  const target = useStore((s) => s.inputs.targetLtvAfterCall)
+  const cg = useStore((s) => s.inputs.capGainsRate)
+  const drag = useStore((s) => s.inputs.dividendTaxDrag)
   const setInput = useStore((s) => s.setInput)
+  const patch = useStore((s) => s.patchInputs)
+  const uid = useId()
+  const [cgCustom, setCgCustom] = useState(!CG_PRESETS.some((p) => Math.abs(p - cg) < 1e-6))
+  const isPreset = !cgCustom && CG_PRESETS.some((p) => Math.abs(p - cg) < 1e-6)
+  const targetMax = Math.round((maxLtv - GAP) * 100) / 100
+
   return (
-    <Section index="04" title="Borrowing" summary={`${percent(rate, { digits: 1 })} loan · call at ${percent(maxLtv)} LTV`}>
+    <Section
+      index="04"
+      title="Borrowing"
+      summary={`${percent(rate, { digits: 1 })} loan · call at ${percent(maxLtv)} LTV · ${percent(cg, { digits: 1 })} gains tax`}
+    >
+      <LtvMeter threshold={maxLtv} target={target} />
       <Slider
         label="Loan interest rate"
         value={rate}
@@ -21,7 +41,7 @@ export function BorrowingSection() {
       />
       <Slider
         label="Margin-call threshold"
-        tone="bruised"
+        tone="broken"
         aside={
           <InfoTip label="What is a margin call?">
             If the loan grows past this share of your portfolio, the lender forces a sale — usually at the worst moment. Avoiding
@@ -34,8 +54,130 @@ export function BorrowingSection() {
         step={0.01}
         format="percent"
         ticks={[0.3, 0.5, 0.7, 0.8]}
-        onChange={(v) => setInput('maxLtv', v)}
+        // Keep the post-sale target under the new threshold.
+        onChange={(v) => patch({ maxLtv: v, targetLtvAfterCall: Math.min(target, Math.round((v - GAP) * 100) / 100) })}
+      />
+      <Slider
+        label="LTV after a forced sale"
+        tone="bruised"
+        aside={
+          <InfoTip label="What happens in a forced sale?">
+            The lender sells enough holdings — paying capital-gains tax on them — to bring the loan back down to this share of the
+            portfolio. Lower means a bigger sale.
+          </InfoTip>
+        }
+        value={Math.min(target, targetMax)}
+        min={0.1}
+        max={targetMax}
+        step={0.01}
+        format="percent"
+        ticks={[{ value: 0.1, label: '10%' }, { value: targetMax, label: percent(targetMax) }]}
+        onChange={(v) => setInput('targetLtvAfterCall', Math.min(v, targetMax))}
+        hint={`Must stay below the ${percent(maxLtv)} threshold.`}
+      />
+
+      <div>
+        <div className="field__row">
+          <span className="field__label" id={`${uid}-cg`}>
+            Capital-gains tax when selling
+          </span>
+          <span className="field__value num">{percent(cg, { digits: 1 })}</span>
+        </div>
+        <SegmentedControl<number | 'custom'>
+          block
+          aria-labelledby={`${uid}-cg`}
+          value={isPreset ? CG_PRESETS.find((p) => Math.abs(p - cg) < 1e-6)! : 'custom'}
+          onChange={(v) => {
+            if (v === 'custom') setCgCustom(true)
+            else {
+              setCgCustom(false)
+              setInput('capGainsRate', v)
+            }
+          }}
+          options={[
+            { value: 0.15, label: '15%' },
+            { value: 0.2, label: '20%' },
+            { value: 0.238, label: '23.8%', title: '20% + 3.8% net investment income tax' },
+            { value: 'custom' as const, label: 'Custom' },
+          ]}
+        />
+        <AnimatePresence initial={false}>
+          {!isPreset && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3, ease }}
+              style={{ overflow: 'hidden' }}
+            >
+              <NumberField
+                className="numfield--inset"
+                label="Your combined rate (federal + state)"
+                kind="percent"
+                value={cg}
+                min={0}
+                max={0.6}
+                step={0.005}
+                onChange={(v) => setInput('capGainsRate', v)}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+
+      <Slider
+        label="Dividend tax drag"
+        tone="neutral"
+        aside={
+          <InfoTip label="What is dividend tax drag?">
+            Dividends are taxed each year even if you never sell. This is the yearly hit to returns: roughly dividend yield × your
+            dividend tax rate (e.g. 1.5% × 15% ≈ 0.25%).
+          </InfoTip>
+        }
+        value={drag}
+        min={0}
+        max={0.015}
+        step={0.0005}
+        format="percent2"
+        ticks={[0, 0.005, 0.01, 0.015].map((v) => ({ value: v, label: percent(v, { digits: v === 0 ? 0 : 1 }) }))}
+        onChange={(v) => setInput('dividendTaxDrag', v)}
       />
     </Section>
+  )
+}
+
+/** Explainer: where the loan starts, where a call is triggered, and where a forced sale takes it back to. */
+function LtvMeter({ threshold, target }: { threshold: number; target: number }) {
+  const style = { '--t': threshold, '--g': target } as CSSProperties
+  return (
+    <figure className="ltv" style={style} aria-label={`Loan-to-value meter. Today 0%. A margin call triggers at ${percent(threshold)}; a forced sale brings it back to ${percent(target)}.`}>
+      <div className="ltv__labels-top" aria-hidden="true">
+        <span className="ltv__lab ltv__lab--today">
+          <b className="num">0%</b> today
+        </span>
+        <span className="ltv__lab ltv__lab--call">
+          <b className="num">{percent(threshold)}</b> call
+        </span>
+      </div>
+      <div className="ltv__track" aria-hidden="true">
+        <span className="ltv__zone ltv__zone--safe" />
+        <span className="ltv__zone ltv__zone--warn" />
+        <span className="ltv__zone ltv__zone--call" />
+        <span className="ltv__now" />
+        <span className="ltv__mark ltv__mark--target" />
+        <span className="ltv__mark ltv__mark--call" />
+        <svg className="ltv__arrow" preserveAspectRatio="none" viewBox="0 0 100 12" aria-hidden="true">
+          <path d="M100 2 C 70 12, 30 12, 2 4" fill="none" stroke="currentColor" strokeWidth="1.25" vectorEffect="non-scaling-stroke" strokeDasharray="3 3" />
+        </svg>
+      </div>
+      <div className="ltv__labels" aria-hidden="true">
+        <span className="ltv__lab ltv__lab--target">
+          sold back to <b className="num">{percent(target)}</b>
+        </span>
+      </div>
+      <figcaption className="field__hint">
+        Spending and interest grow the loan. Cross the line and the lender sells; staying left of it is the whole game.
+      </figcaption>
+    </figure>
   )
 }

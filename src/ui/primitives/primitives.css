@@ -1137,3 +1137,17 @@
     padding-left: var(--space-1);
   }
 }
+
+/* Select: optional group headings */
+.select__group {
+  position: sticky;
+  top: -4px;
+  z-index: 1;
+  padding: 10px 10px 4px;
+  font-size: var(--fs-xs);
+  font-weight: 560;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--ink-3);
+  background: var(--surface-solid);
+}

@@ -11,6 +11,10 @@ export interface SelectOption<T extends string> {
   meta?: string
   /** Leading glyph (flag, icon). */
   leading?: ReactNode
+  /** Optional group heading; consecutive options with the same group are listed under it. */
+  group?: string
+  /** Extra text matched by the filter but not shown. */
+  keywords?: string
 }
 
 export interface SelectProps<T extends string> {
@@ -172,7 +176,12 @@ export function Select<T extends string>({ label, value, options, onChange, plac
               onKeyDown={searchable ? undefined : onListKey}
             >
               {filtered.length === 0 && <li className="select__empty">No matches</li>}
-              {filtered.map((o, i) => (
+              {filtered.map((o, i) => [
+                o.group && o.group !== filtered[i - 1]?.group && (
+                  <li key={`g-${o.group}`} role="presentation" className="select__group">
+                    {o.group}
+                  </li>
+                ),
                 <li
                   key={o.value}
                   id={optId(i)}
@@ -189,8 +198,8 @@ export function Select<T extends string>({ label, value, options, onChange, plac
                   <svg className="select__check" width="14" height="14" viewBox="0 0 16 16" aria-hidden="true">
                     <path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                </li>
-              ))}
+                </li>,
+              ])}
             </ul>
           </motion.div>
         )}

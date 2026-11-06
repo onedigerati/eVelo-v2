@@ -1,0 +1,83 @@
+/* Categorical palette for holdings / budget mixes. Validated with the dataviz checker: adjacent
+ * CVD ΔE ≥ 9 and normal-vision ΔE ≥ 16 in both themes. Slot 2 (brass) is < 3:1 on light paper,
+ * so marks in this palette always sit beside a text label. */
+:root,
+[data-theme='light'] {
+  --cat-1: #0b8a5f;
+  --cat-2: #c98a12;
+  --cat-3: #3a6fd0;
+  --cat-4: #d9482f;
+  --cat-5: #8a55d0;
+  --cat-6: #6f8f12;
+  --cat-7: #d0609a;
+  --cat-8: #5560b8;
+  --cat-9: #a8662a;
+  --cat-10: #1497b0;
+}
+[data-theme='dark'] {
+  --cat-1: #26a878;
+  --cat-2: #bb8a26;
+  --cat-3: #4f86e0;
+  --cat-4: #e45d48;
+  --cat-5: #9a72e0;
+  --cat-6: #7f9826;
+  --cat-7: #cf609a;
+  --cat-8: #6e78e0;
+  --cat-9: #ad7038;
+  --cat-10: #2496ae;
+}
+@media (prefers-color-scheme: dark) {
+  [data-theme='system'] {
+    --cat-1: #26a878;
+    --cat-2: #bb8a26;
+    --cat-3: #4f86e0;
+    --cat-4: #e45d48;
+    --cat-5: #9a72e0;
+    --cat-6: #7f9826;
+    --cat-7: #cf609a;
+    --cat-8: #6e78e0;
+    --cat-9: #ad7038;
+    --cat-10: #2496ae;
+  }
+}
+
+/* ---------- StackBar ---------- */
+.stackbar {
+  display: flex;
+  gap: 2px;
+  height: var(--h, 10px);
+  width: 100%;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  background: var(--surface-3);
+}
+.stackbar__seg {
+  flex: 0 0 0;
+  min-width: 0;
+  height: 100%;
+  border-radius: 2px;
+  transition:
+    flex-grow var(--dur-4) var(--ease-out),
+    background-color var(--dur-3);
+}
+.stackbar__seg:first-child {
+  border-radius: var(--radius-pill) 2px 2px var(--radius-pill);
+}
+.stackbar__seg:last-child {
+  border-radius: 2px var(--radius-pill) var(--radius-pill) 2px;
+}
+.stackbar__seg:only-child {
+  border-radius: var(--radius-pill);
+}
+@media (prefers-reduced-motion: reduce) {
+  .stackbar__seg {
+    transition: none;
+  }
+}
+
+/* ---------- Sparkline ---------- */
+.spark {
+  display: block;
+  flex-shrink: 0;
+  overflow: visible;
+}
