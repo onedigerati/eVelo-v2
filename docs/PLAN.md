@@ -4,21 +4,20 @@
 A slick, design-forward static web app for planning a Buy-Borrow-Die retirement. A user picks real tickers and weights, sets age, horizon, lifestyle budget and borrowing terms, and sees the probability their plan holds for 15/20/30 years without a forced sale — in their home city and in any destination city (cost-of-living, expat factor, FX risk). Done = deployed-ready build that runs on desktop and phone, light and dark themes, real bundled market data with a refresh script, a tested simulation engine, and a city "atlas" ranking where money goes furthest.
 
 ## Now
-Stages 3 + 4 (parallel) · Plan inputs, Results
-Risk: UI only
+Stage 5 of 6 · Atlas
+Risk: external services (FX rate fetch)
 Mode: autopilot
 Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (republish: `npm run build && node scripts/artifact-page.mjs`)
 Checks:
-- [ ] Adding a ticker via the command palette (e.g. type "nvda", Enter) adds a holding; weights stay summing to 100% (proof: run the product)
-- [x] Editing any plan input re-runs the simulation in the worker within ~1 s and the verdict number, dot chart and fan charts update (proof: run the product)
-- [ ] Phone (390px): all plan controls usable, no horizontal scroll; charts readable (proof: screenshots)
-- [x] Safe-spend solver shows a max spend at 90% confidence; BBD vs sell estate shown (proof: run the product)
+- [ ] Atlas ranks all 96 cities by success for the current plan within ~2 s; changing an input re-ranks (proof: run the product)
+- [ ] Clicking a city on the map or list sets the destination and the verdict updates (proof: run the product)
+- [ ] Phone and desktop, light and dark: no horizontal scroll, map legible, no console errors (proof: screenshots)
 Open: none
 
 ## Stages
 - [x] 1. Data + engine — Yahoo/FRED fetch script, factor backfill, block bootstrap + fat-tail, SBLOC/margin call/forced sale, BBD vs sell, city cost model, solver
 - [x] 2. App shell + design system — Vite/React/TS, tokens, fonts, light/dark, responsive layout, mobile tab bar, state + URL share
-- [ ] 3. Plan inputs — ticker command palette, weights, life/budget, borrowing, move scenario, model settings
+- [x] 3. Plan inputs — ticker command palette, weights, life/budget, borrowing, move scenario, model settings
 - [x] 4. Results — verdict + 100-futures dot chart, fan charts (net worth / LTV / loan), margin-call timing, safe-spend solver, BBD vs sell
 - [ ] 5. Atlas — city cost data, live FX, world map + ranked cities, side-by-side comparison, country notes
 - [ ] 6. Polish + verify — methodology page, animations, a11y, mobile pass, build, README, data refresh workflow
