@@ -51,6 +51,8 @@ export interface AppState {
 
 export interface Baseline {
   homeCityId: string
+  /** inputsKey of the plan this baseline belongs to (the with-destination inputs). */
+  key?: string
   successRate: number
 }
 

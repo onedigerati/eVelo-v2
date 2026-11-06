@@ -636,11 +636,23 @@
   background: linear-gradient(90deg, var(--broken), var(--bruised) 50%, var(--holds));
 }
 .wlegend__ticks {
-  display: flex;
-  justify-content: space-between;
+  position: relative;
+  height: 1.3em;
   font-size: 10px;
   color: var(--ink-3);
   margin-top: 4px;
+}
+.wlegend__ticks > span {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+.wlegend__ticks > span:first-child {
+  transform: none;
+}
+.wlegend__ticks > span:last-child {
+  transform: translateX(-100%);
 }
 .wlegend__keys {
   display: flex;
@@ -1453,4 +1465,11 @@
   line-height: 1.5;
   color: var(--ink-3);
   max-width: 90ch;
+}
+
+.atlas__paths {
+  margin: 0 0 var(--space-2);
+  font-size: var(--fs-sm);
+  color: var(--ink-3);
+  max-width: 70ch;
 }

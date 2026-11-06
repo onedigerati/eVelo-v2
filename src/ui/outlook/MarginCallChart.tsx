@@ -12,16 +12,22 @@ export function marginCallCaption(r: SimulationResult): string {
   const total = r.marginCallCumulative[r.marginCallCumulative.length - 1] ?? 0
   const a = r.inputs.age
   if (total < 0.005) return 'Not one simulated future in two hundred forces a sale: the loan never gets near the call line.'
+  const n = byYear.length
+  const firstHalf = byYear.slice(0, Math.ceil(n / 2)).reduce((x, y) => x + y, 0)
+  // Shortest span holding 80% of first forced sales: if it covers under ~half the horizon,
+  // the risk is concentrated there, which is the thing worth saying.
+  const w80 = massWindow(byYear, 0.8)
+  if (w80 && w80[1] - w80[0] + 1 <= Math.ceil(n / 2)) {
+    const [s, e] = w80
+    if (s <= 1) return `Risk is concentrated early: 80% of forced sales happen in the first ${e + 1} years (ages ${a} to ${a + e + 1}), when a crash can hit before the portfolio has grown past the loan.`
+    return `Risk is concentrated: 80% of forced sales fall between ages ${a + s} and ${a + e + 1}${firstHalf < total * 0.35 ? ', as the loan compounds faster than the portfolio' : ''}. Outside that window forced sales are rare.`
+  }
   const w = massWindow(byYear, 0.6)
   if (!w) return ''
   const [s, e] = w
-  const len = e - s + 1
-  const firstHalf = byYear.slice(0, Math.ceil(byYear.length / 2)).reduce((x, y) => x + y, 0)
-  if (s <= 1 && len <= Math.max(10, byYear.length / 2.5))
-    return `Most risk lands in the first ${e + 1} years: sequence risk, a crash before the portfolio has grown past the loan.`
   if (firstHalf < total * 0.35)
     return `Risk arrives late: most forced sales fall between ages ${a + s} and ${a + e + 1}, as the loan compounds faster than the portfolio.`
-  return `Risk is spread out: most forced sales fall between ages ${a + s} and ${a + e + 1}; ${percent(total)} of futures face one by ${a + byYear.length}.`
+  return `Risk is spread out: most forced sales fall between ages ${a + s} and ${a + e + 1}; ${percent(total)} of futures face one by ${a + n}.`
 }
 
 export function MarginCallChart({ result }: { result: SimulationResult }) {

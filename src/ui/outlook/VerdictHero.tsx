@@ -1,11 +1,13 @@
 import { AnimatePresence, m as motion } from 'framer-motion'
 import type { ReactNode } from 'react'
-import type { PlanInputs } from '../../engine/types'
+import type { PlanInputs, SimulationResult } from '../../engine/types'
 import { useStore } from '../../state/store'
 import { percent, points } from '../format'
 import { ease, rise, stagger } from '../motion'
 import { AnimatedNumber, Badge, Skeleton, Stat, cx } from '../primitives'
-import { toneFor } from '../verdict'
+import { returnStats } from '../realStats'
+import { outcomeColor, outcomeTextColor } from '../outcomeScale'
+import { toneFor, VERDICT_THRESHOLDS, verdictLevel, type VerdictLevel } from '../verdict'
 import { cityName } from './cards'
 
 /** "living in Bangkok from age 55" / "in St. Louis, moving to Lisbon at 60" / "staying in St. Louis". */
@@ -16,42 +18,68 @@ export function placePhrase(i: PlanInputs): string {
   return i.moveInYears > 0 ? `in ${home}, moving to ${dest} at ${i.age + i.moveInYears}` : `living in ${dest} from age ${i.age}`
 }
 
-function headline({ tone }: { tone: 'holds' | 'bruised' | 'broken' }): { lead: ReactNode; tail: ReactNode } {
-  if (tone === 'holds')
-    return {
-      lead: (
-        <>
-          Your plan <em>holds</em> in
-        </>
-      ),
-      tail: (
-        <>
-          of <em>futures.</em>
-        </>
-      ),
-    }
-  if (tone === 'bruised')
-    return {
-      lead: (
-        <>
-          Your plan is <em>fragile:</em> it holds in
-        </>
-      ),
-      tail: <>of futures.</>,
-    }
-  return {
-    lead: (
-      <>
-        Your plan <em>breaks</em> in most futures. Only
-      </>
-    ),
-    tail: (
-      <>
-        <em>hold.</em>
-      </>
-    ),
+function headline(level: VerdictLevel): { lead: ReactNode; tail: ReactNode } {
+  switch (level) {
+    case 'holds':
+      return {
+        lead: (
+          <>
+            Your plan <em>holds</em> in
+          </>
+        ),
+        tail: (
+          <>
+            of <em>futures.</em>
+          </>
+        ),
+      }
+    case 'mostly':
+      return {
+        lead: (
+          <>
+            Your plan <em>mostly holds:</em> it gets through
+          </>
+        ),
+        tail: <>of futures.</>,
+      }
+    case 'fragile':
+      return {
+        lead: (
+          <>
+            Your plan is <em>fragile:</em> it holds in only
+          </>
+        ),
+        tail: <>of futures.</>,
+      }
+    default:
+      return {
+        lead: (
+          <>
+            Your plan <em>breaks</em> in most futures. Only
+          </>
+        ),
+        tail: (
+          <>
+            <em>hold.</em>
+          </>
+        ),
+      }
   }
 }
+
+/** Why a weak plan fails, in one sentence, from the result itself. */
+export function diagnosis(r: SimulationResult): string | null {
+  const i = r.inputs
+  const exp = returnStats(r.stats).expReturn
+  const nominal = r.stats.expReturn
+  if (r.successRate >= VERDICT_THRESHOLDS.mostly) return null
+  if (nominal < i.loanRate)
+    return `The loan costs ${pct1(i.loanRate)} a year but this portfolio is expected to earn about ${pct1(nominal)}: the debt compounds faster than the assets it is secured by, so it overtakes them however markets go.`
+  if (r.brokenRate > r.bruisedRate && exp < 0.03)
+    return `With an expected real return near ${pct1(exp)}, spending plus interest outruns growth in most futures.`
+  return null
+}
+const pct1 = (x: number) => `${(x * 100).toFixed(1).replace(/\.0$/, '')}%`
 
 export function VerdictHero() {
   const inputs = useStore((s) => s.inputs)
@@ -64,7 +92,11 @@ export function VerdictHero() {
   const { age, horizonYears: horizon } = shown
   const holds = result?.successRate ?? 0
   const tone = result ? toneFor(holds) : 'holds'
-  const { lead, tail } = headline({ tone })
+  const level = result ? verdictLevel(holds) : 'holds'
+  const { lead, tail } = headline(level)
+  const why = result ? diagnosis(result) : null
+  // Same continuous scale as the Atlas, so a city's color matches everywhere.
+  const toneStyle = result ? { ['--tone' as string]: outcomeColor(holds), ['--tone-text' as string]: outcomeTextColor(holds) } : undefined
   const n = Math.round(holds * 100)
   const dots = result?.outcomeDots ?? null
 
@@ -78,6 +110,7 @@ export function VerdictHero() {
       variants={stagger(0.08, 0.05)}
       initial="hidden"
       animate="show"
+      style={toneStyle}
       aria-labelledby="verdict-h"
       aria-busy={status === 'running'}
     >
@@ -103,7 +136,7 @@ export function VerdictHero() {
       <h1 id="verdict-h" className="verdict__headline">
         <motion.span className="verdict__lead t-display" variants={rise}>
           <AnimatePresence mode="popLayout" initial={false}>
-            <motion.span key={tone} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.45, ease }}>
+            <motion.span key={level} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.45, ease }}>
               {lead}
             </motion.span>
           </AnimatePresence>
@@ -128,8 +161,11 @@ export function VerdictHero() {
       <motion.p className="t-lede verdict__lede" variants={rise}>
         Over {horizon} years, age {age} to {age + horizon}, {placePhrase(shown)}.{' '}
         {result ? (
-          tone === 'broken' ? (
-            <>Only {n} of every 100 simulated markets get through without a forced sale; most hit the margin-call line first.</>
+          level === 'breaks' ? (
+            <>
+              Only {n} of every 100 simulated markets get through without a forced sale
+              {result.brokenRate > result.bruisedRate ? '; in most the loan overtakes the portfolio.' : '; most hit the margin-call line first.'}
+            </>
           ) : (
             <>
               In {n} of every 100 simulated markets you never face a forced sale and stay solvent to {age + horizon}.
@@ -138,6 +174,7 @@ export function VerdictHero() {
         ) : (
           <>Running thousands of market histories through your plan…</>
         )}
+        {why && <span className="verdict__why"> {why}</span>}
       </motion.p>
 
       {showChip && (

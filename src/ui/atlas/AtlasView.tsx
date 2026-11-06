@@ -1,6 +1,9 @@
 import { AnimatePresence, m as motion } from 'framer-motion'
+import { outcomeGradient, RAMP_MAX, RAMP_MIN } from '../outcomeScale'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { CITIES, CITY_BY_ID } from '../../data/cities'
+import { ATLAS_MAX_PATHS } from '../../engine/atlas'
+import { toneFor } from '../verdict'
 import { budgetTotal } from '../../engine/cost'
 import { useStore } from '../../state/store'
 import { percent } from '../format'
@@ -12,6 +15,7 @@ import {
   insight,
   lifestyleCaption,
   ranked,
+  withOutlook,
   successColor,
   successTextColor,
   useAtlasSync,
@@ -44,7 +48,7 @@ function chooseDestination(id: string, rows: Ranked[]) {
   }
   st.setDestination(id)
   toast(`${city.name} set as your destination`, {
-    tone: row ? (row.successRate >= 0.8 ? 'holds' : row.successRate >= 0.6 ? 'bruised' : 'broken') : 'holds',
+    tone: row ? toneFor(row.successRate) : 'holds',
     detail: row ? `Your plan holds in ${percent(row.successRate)} of futures there.` : 'The outlook is updating.',
   })
 }
@@ -73,7 +77,10 @@ export function AtlasView() {
   const [region, setRegion] = useState<RegionChip>('All')
   const [compare, setCompare] = useState<string[]>([])
   const [cmpOpen, setCmpOpen] = useState(false)
-  const rows = useMemo(() => ranked(atlas), [atlas])
+  const result = useStore((s) => s.result)
+  const baseline = useStore((s) => s.baseline)
+  const merged = useMemo(() => withOutlook(atlas, inputs, result, baseline), [atlas, inputs, result, baseline])
+  const rows = useMemo(() => ranked(merged.entries), [merged])
   const when = useRelativeTime(atlasAt)
   const homeId = inputs.homeCityId
   const destId = inputs.destCityId
@@ -205,6 +212,16 @@ export function AtlasView() {
       </motion.div>
 
       <motion.div variants={rise}>
+        <p className="atlas__paths">
+          Each city is ranked on {Math.min(inputs.paths, ATLAS_MAX_PATHS).toLocaleString('en-US')} simulated futures
+          {merged.fromOutlook.length > 0 && (
+            <>
+              ; {merged.fromOutlook.map((id) => CITY_BY_ID[id]?.name).join(' and ')} {merged.fromOutlook.length > 1 ? 'use' : 'uses'} the Outlook’s
+              full {inputs.paths.toLocaleString('en-US')}, so the numbers match across views
+            </>
+          )}
+          .
+        </p>
         <SourcesLine />
       </motion.div>
 
@@ -328,16 +345,21 @@ function RegionChips({
   )
 }
 
+const RAMP_TICKS = [RAMP_MIN, 0.45, 0.65, RAMP_MAX]
+
 function Legend() {
   return (
     <div className="wlegend" aria-hidden="true">
       <div className="wlegend__ramp">
         <span className="wlegend__t">Plan holds</span>
-        <span className="wlegend__bar" />
+        <span className="wlegend__bar" style={{ background: outcomeGradient() }} />
         <span className="wlegend__ticks num">
-          <span>≤45%</span>
-          <span>65%</span>
-          <span>≥85%</span>
+          {RAMP_TICKS.map((t) => (
+            <span key={t} style={{ left: `${((t - RAMP_MIN) / (RAMP_MAX - RAMP_MIN)) * 100}%` }}>
+              {t === RAMP_MIN ? '≤' : t === RAMP_MAX ? '≥' : ''}
+              {Math.round(t * 100)}%
+            </span>
+          ))}
         </span>
       </div>
       <div className="wlegend__keys">

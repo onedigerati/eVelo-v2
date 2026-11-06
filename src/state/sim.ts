@@ -144,7 +144,7 @@ class SimClient {
       if (inputs.destCityId) {
         const home = await this.simulate(homeVariant(inputs))
         if (!live()) return
-        st.setBaseline({ homeCityId: inputs.homeCityId, successRate: home.successRate })
+        st.setBaseline({ homeCityId: inputs.homeCityId, successRate: home.successRate, key: inputsKey(inputs) })
       } else {
         st.setBaseline(null)
       }

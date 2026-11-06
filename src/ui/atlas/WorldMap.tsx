@@ -18,7 +18,8 @@ import { currency, currencyCompact, percent } from '../format'
 import { useResolvedTheme } from '../hooks'
 import { ease } from '../motion'
 import { cx } from '../primitives'
-import { costDelta, localCompact, inRegion, rampT, successColor, successTextColor, type Ranked, type RegionChip } from './atlasData'
+import { outcomeRgb } from '../outcomeScale'
+import { costDelta, localCompact, inRegion, successColor, successTextColor, type Ranked, type RegionChip } from './atlasData'
 import { CodeChip } from './CodeChip'
 import { LEVELS, loadLandDots, projection, S0, toWorld, WORLD_W, type LandDots } from './landDots'
 
@@ -68,7 +69,7 @@ type RGB = [number, number, number]
 interface Palette {
   ink: RGB
   dotA: number
-  ramp: [RGB, RGB, RGB]
+  ramp: RGB[]
   sphere: string
   grid: string
 }
@@ -88,16 +89,15 @@ function readPalette(el: HTMLElement, ctx: CanvasRenderingContext2D, dark: boole
   return {
     ink: parseColor(ctx, v('--ink')),
     dotA: dark ? 0.17 : 0.14,
-    ramp: [parseColor(ctx, v('--broken')), parseColor(ctx, v('--bruised')), parseColor(ctx, v('--holds'))],
+    ramp: [0, 1, 2, 3, 4].map((i) => parseColor(ctx, v(`--ramp-${i}`))),
     sphere: v('--surface-3').trim() || 'transparent',
     grid: v('--chart-grid').trim() || 'transparent',
   }
 }
 
 const mix = (a: RGB, b: RGB, t: number): RGB => [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, a[2] + (b[2] - a[2]) * t]
-function rampRGB(p: Palette, t: number): RGB {
-  return t <= 0.5 ? mix(p.ramp[0], p.ramp[1], t * 2) : mix(p.ramp[1], p.ramp[2], (t - 0.5) * 2)
-}
+/** Color for a quantized success bucket (40 buckets; the bucket's midpoint keeps the 65% step crisp). */
+const rampRGB = (p: Palette, bucket: number): RGB => outcomeRgb(p.ramp, (bucket + 0.5) / 40)
 const rgba = ([r, g, b]: RGB, a: number) => `rgba(${r | 0},${g | 0},${b | 0},${a.toFixed(3)})`
 
 /* ---------------------------------------------------------------- Canvas paint */
@@ -193,7 +193,7 @@ function paint(
     let tq = 0
     if (t >= 0 && near) {
       wq = Math.round(near.w[i] * 5) // 0..5
-      tq = Math.round(t * 10) // 0..10
+      tq = Math.min(39, Math.floor(t * 40)) // success bucket 0..39
       if (wq > 0) key = aq + 10 * (1 + tq * 6 + wq)
     }
     let b = buckets.get(key)
@@ -201,7 +201,7 @@ function paint(
       const aa = aq / 4
       const style =
         wq > 0
-          ? rgba(mix(pal.ink, rampRGB(pal, tq / 10), Math.min(1, 0.5 + wq * 0.1)), aa * (pal.dotA + (0.62 - pal.dotA) * (wq / 5)))
+          ? rgba(mix(pal.ink, rampRGB(pal, tq), Math.min(1, 0.5 + wq * 0.1)), aa * (pal.dotA + (0.62 - pal.dotA) * (wq / 5)))
           : rgba(pal.ink, aa * pal.dotA)
       b = { style, pts: [] }
       buckets.set(key, b)
@@ -263,7 +263,7 @@ export function WorldMap({ rows, homeId, destId, region, compare, onToggleCompar
     const t = new Float32Array(CITIES.length).fill(-1)
     for (const r of rows) {
       const i = CITY_INDEX.get(r.cityId)
-      if (i != null) t[i] = rampT(r.successRate)
+      if (i != null) t[i] = Math.max(0, Math.min(1, r.successRate))
     }
     return t
   }, [rows])

@@ -2,6 +2,7 @@ import { m as motion } from 'framer-motion'
 import { selectSuccess, useStore } from '../../state/store'
 import { IconArrowRight } from '../icons'
 import { AnimatedNumber, cx } from '../primitives'
+import { outcomeTextColor } from '../outcomeScale'
 import { toneFor } from '../verdict'
 
 /** Compact live verdict, sticky at the top of the phone Plan tab. Taps through to Outlook. */
@@ -13,7 +14,12 @@ export function VerdictPill() {
   const c = 2 * Math.PI * r
   return (
     <div className="verdict-pill-wrap">
-      <a href="#outlook" className={cx('verdict-pill', `verdict-pill--${tone}`, status === 'running' && 'is-running')}>
+      <a
+        href="#outlook"
+        className={cx('verdict-pill', `verdict-pill--${tone}`, status === 'running' && 'is-running')}
+        style={{ ['--tone' as string]: outcomeTextColor(success) }}
+        aria-label={`Holds in ${Math.round(success * 100)}% of futures. See the outlook.`}
+      >
         <svg className="verdict-pill__ring" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
           <circle cx="12" cy="12" r={r} fill="none" stroke="var(--hairline-strong)" strokeWidth="2.5" />
           <motion.circle

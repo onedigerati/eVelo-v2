@@ -1,10 +1,11 @@
 import { m as motion } from 'framer-motion'
+import { returnStats } from '../realStats'
 import { CITY_BY_ID } from '../../data/cities'
 import { BUDGET_CATEGORIES, budgetTotal } from '../../engine/cost'
 import type { Budget, BudgetCategory, SimulationResult, SolveResult } from '../../engine/types'
 import { useFx, useRate } from '../../state/fx'
 import { useStore } from '../../state/store'
-import { currency, currencyCompact, localCurrency, percent } from '../format'
+import { currency, currencyCompact, number, percent } from '../format'
 import { ease } from '../motion'
 import { AnimatedNumber, Button, Skeleton, cx, toast } from '../primitives'
 
@@ -193,7 +194,10 @@ function corrColor(v: number): string {
   return v >= 0 ? `color-mix(in oklab, var(--holds) ${a}%, transparent)` : `color-mix(in oklab, var(--bruised) ${a}%, transparent)`
 }
 
+const pct1 = (x: number) => `${(x * 100).toFixed(1)}%`
+
 export function LensBody({ result }: { result: SimulationResult }) {
+  const rs = returnStats(result.stats)
   const hs = result.inputs.holdings
   const c = result.correlation
   const n = hs.length
@@ -206,15 +210,18 @@ export function LensBody({ result }: { result: SimulationResult }) {
       <div className="lens__stats">
         <div>
           <div className="t-eyebrow">Exp. return</div>
-          <AnimatedNumber value={result.stats.expReturn} format="percent1" className="lens__num" />
+          <AnimatedNumber value={rs.expReturn} format="percent1" className="lens__num" />
+          <div className="lens__sub">{rs.real ? `after inflation · ${pct1(rs.expReturnNominal)} nominal` : 'before inflation'}</div>
         </div>
         <div>
           <div className="t-eyebrow">Volatility</div>
           <AnimatedNumber value={result.stats.volatility} format="percent1" className="lens__num" />
+          <div className="lens__sub">annualized</div>
         </div>
         <div>
           <div className="t-eyebrow">Median CAGR</div>
-          <AnimatedNumber value={result.stats.cagrMedian} format="percent1" className="lens__num" />
+          <AnimatedNumber value={rs.cagrMedian} format="percent1" className="lens__num" />
+          <div className="lens__sub">{rs.real ? `after inflation · ${pct1(rs.cagrMedianNominal)} nominal` : 'before inflation'}</div>
         </div>
       </div>
       {n > 1 && (
@@ -312,7 +319,7 @@ export function CostBody({ result }: { result: SimulationResult }) {
           <div className="t-small ink-3">
             {fx && destCity.currency !== 'USD' ? (
               <>
-                ≈ <span className="num">{localCurrency(destTotal * fx, destCity.currency)}</span> a year
+                ≈ <span className="num">{number(destTotal * fx, 0)}</span> <abbr className="iso" title={destCity.currency}>{destCity.currency}</abbr> a year
               </>
             ) : (
               'a year'

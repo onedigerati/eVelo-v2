@@ -68,7 +68,7 @@ export function NumberField({
       if (draft !== null) commit(draft)
       bump(e.key === 'ArrowUp' ? 1 : -1, e.shiftKey ? 10 : 1)
     } else if (e.key === 'Enter') {
-      commit(e.currentTarget.value)
+      if (draft !== null) commit(e.currentTarget.value)
     } else if (e.key === 'Escape') {
       setDraft(null)
     }
@@ -103,12 +103,16 @@ export function NumberField({
           aria-describedby={hintId}
           value={draft ?? shown}
           onFocus={(e) => {
-            setDraft(shown)
+            // Select all now and again after the click's mouseup, but never once the user has
+            // started typing (a late rAF select would swallow the next keystroke).
             const el = e.currentTarget
-            requestAnimationFrame(() => el.select())
+            const v = el.value
+            el.select()
+            requestAnimationFrame(() => document.activeElement === el && el.value === v && el.select())
           }}
           onChange={(e) => setDraft(e.currentTarget.value)}
-          onBlur={(e) => commit(e.currentTarget.value)}
+          // Commit only real edits: re-parsing the rounded display would nudge the value.
+          onBlur={(e) => draft !== null && commit(e.currentTarget.value)}
           onKeyDown={onKey}
         />
         {suf && <span className="numfield__affix num" aria-hidden="true">{suf}</span>}

@@ -807,6 +807,15 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.lens__sub {
+  margin-top: 6px;
+  font-size: var(--fs-xs);
+  line-height: 1.35;
+  color: var(--ink-3);
+}
+.verdict__why {
+  color: var(--ink-2);
+}
 .lens__num {
   display: block;
   margin-top: 6px;
@@ -1060,4 +1069,13 @@
   .dot {
     transition: none;
   }
+}
+
+/* ISO currency codes (Geist Mono lacks many local symbols, e.g. ₾). */
+.iso {
+  font-family: var(--font-mono);
+  font-size: 0.86em;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  color: var(--ink-2);
 }

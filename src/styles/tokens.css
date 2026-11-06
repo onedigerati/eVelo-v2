@@ -134,6 +134,19 @@
   --broken-text: #b5361f;
   --broken-soft: rgba(210, 69, 47, 0.1);
   --broken-line: rgba(210, 69, 47, 0.34);
+  /* Outcome ramp (see src/ui/outcomeScale.ts): coral -> ember -> brass | jade -> verdigris.
+     Hue-adjacent stops only, so interpolation never passes through olive; the step at 65%
+     between brass and jade is the "fragile" / "mostly holds" boundary. */
+  --ramp-0: #d2452f;
+  --ramp-0-text: #b5361f;
+  --ramp-1: #c8662b;
+  --ramp-1-text: #a5501d;
+  --ramp-2: #a87a1f;
+  --ramp-2-text: #8a6312;
+  --ramp-3: #3d9776;
+  --ramp-3-text: #237a5c;
+  --ramp-4: #0b7a56;
+  --ramp-4-text: #0a6e4d;
   --neutral: #556574;
   --neutral-text: #4d5c6a;
   --neutral-soft: rgba(85, 101, 116, 0.1);
@@ -212,6 +225,16 @@
   --broken-text: #ff7a6a;
   --broken-soft: rgba(255, 107, 90, 0.1);
   --broken-line: rgba(255, 107, 90, 0.34);
+  --ramp-0: #ff6b5a;
+  --ramp-0-text: #ff7a6a;
+  --ramp-1: #f5925e;
+  --ramp-1-text: #f5925e;
+  --ramp-2: #e3b262;
+  --ramp-2-text: #e3b262;
+  --ramp-3: #9ed8be;
+  --ramp-3-text: #9ed8be;
+  --ramp-4: #5be3b0;
+  --ramp-4-text: #5be3b0;
   --neutral: #93a4b4;
   --neutral-text: #93a4b4;
   --neutral-soft: rgba(147, 164, 180, 0.1);
@@ -279,6 +302,16 @@
     --broken-text: #ff7a6a;
     --broken-soft: rgba(255, 107, 90, 0.1);
     --broken-line: rgba(255, 107, 90, 0.34);
+  --ramp-0: #ff6b5a;
+  --ramp-0-text: #ff7a6a;
+  --ramp-1: #f5925e;
+  --ramp-1-text: #f5925e;
+  --ramp-2: #e3b262;
+  --ramp-2-text: #e3b262;
+  --ramp-3: #9ed8be;
+  --ramp-3-text: #9ed8be;
+  --ramp-4: #5be3b0;
+  --ramp-4-text: #5be3b0;
     --neutral: #93a4b4;
     --neutral-text: #93a4b4;
     --neutral-soft: rgba(147, 164, 180, 0.1);
