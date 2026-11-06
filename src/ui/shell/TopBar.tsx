@@ -12,9 +12,7 @@ export function Wordmark() {
   return (
     <a href="#outlook" className="wordmark" aria-label="eVelo — home">
       <Mark size={28} />
-      <span className="wordmark__text">
-        e<em>V</em>elo
-      </span>
+      <span className="wordmark__text">eVelo</span>
     </a>
   )
 }
