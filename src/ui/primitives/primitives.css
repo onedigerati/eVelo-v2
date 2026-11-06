@@ -1151,3 +1151,6 @@
   color: var(--ink-3);
   background: var(--surface-solid);
 }
+.select__list:has(.select__group) {
+  scroll-padding-top: 34px;
+}
