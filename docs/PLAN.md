@@ -4,18 +4,8 @@
 A slick, design-forward static web app for planning a Buy-Borrow-Die retirement. A user picks real tickers and weights, sets age, horizon, lifestyle budget and borrowing terms, and sees the probability their plan holds for 15/20/30 years without a forced sale — in their home city and in any destination city (cost-of-living, expat factor, FX risk). Done = deployed-ready build that runs on desktop and phone, light and dark themes, real bundled market data with a refresh script, a tested simulation engine, and a city "atlas" ranking where money goes furthest.
 
 ## Now
-Stage 6 of 6 · Polish + verify
-Risk: UI only (plus engine review)
-Mode: autopilot
+All stages done.
 Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (republish: `npm run build && node scripts/artifact-page.mjs`)
-Checks:
-- [x] Method page explains the model in plain language with the real parameters (proof: run the product)
-- [x] market.json is no longer in the main bundle; main chunk < 500 kB (proof: command)
-- [x] Routes work as plain hashes (`#atlas`) as well as `#/atlas` (proof: run the product)
-- [x] Fresh-eyes engine review: findings fixed or logged (proof: review report + tests)
-- [x] All views at 360/390/900/1440, light and dark: no horizontal scroll, no console errors (proof: screenshots)
-- [x] README and scheduled data-refresh workflow exist; `npm run build` and `npm test` pass (proof: command)
-Open: none
 
 ## Stages
 - [x] 1. Data + engine — Yahoo/FRED fetch script, factor backfill, block bootstrap + fat-tail, SBLOC/margin call/forced sale, BBD vs sell, city cost model, solver
@@ -23,7 +13,7 @@ Open: none
 - [x] 3. Plan inputs — ticker command palette, weights, life/budget, borrowing, move scenario, model settings
 - [x] 4. Results — verdict + 100-futures dot chart, fan charts (net worth / LTV / loan), margin-call timing, safe-spend solver, BBD vs sell
 - [x] 5. Atlas — city cost data, live FX, world map + ranked cities, side-by-side comparison, country notes
-- [ ] 6. Polish + verify — methodology page, animations, a11y, mobile pass, build, README, data refresh workflow
+- [x] 6. Polish + verify — methodology page, animations, a11y, mobile pass, build, README, data refresh workflow
 
 ## Decisions
 - 2026-11-06 · Fresh codebase, not a fork of v1 — v1 is a heavy web-components app; v2 is a redesign around one verdict. v1's methodology informs the engine.
@@ -46,4 +36,6 @@ Open: none
 - 2026-11-06 · Atlas shows the Outlook's full-path odds for the user's home and destination, so one city never shows two numbers.
 
 ## Open questions
+- Hosting: workflows for GitHub Pages exist but nothing is pushed; needs a GitHub repo and Settings → Pages → GitHub Actions — user decides.
+- Some 2026 single-stock months are very large (INTC +114% Apr 2026; MU/SNOW/DDOG ~+87% May 2026); match Yahoo raw bars but unverified against a second source.
 - In-browser fetch of arbitrary tickers needs a CORS proxy or serverless function — user decides on hosting later; not blocking.
