@@ -7,14 +7,16 @@ Make the Atlas trustworthy and useful for someone choosing where to retire abroa
 2026-11-06 · tests: 65 pass (9 files) · typecheck: clean · build: ok (main chunk 345.6 kB)
 
 ## Now
-Stage 2 of 3 · Profiles
+Stage 3 of 3 · Atlas picks
 Mode: autopilot
-Risk: UI only (bundled reference data; accuracy checked against sources)
+Risk: UI only
 Checks:
-- [x] `src/data/expatPicks.ts` ranks the 25 picks with their sources, and the top 15 have full profiles: tagline, summary, six 1–5 scores, seven facts, drawbacks, sources (proof: test)
-- [x] Every pick id exists in the city data, every source has an http(s) url, and the ranking method and source list are exported for the app to cite (proof: test)
-- [x] Facts the research couldn't confirm are hedged, and the material risks are stated: Costa Rica's pending 15% tax bill on foreign investment income, Puerto Vallarta's Feb 2026 cartel unrest, Pensionado visas not accepting portfolio income (proof: review of the data file)
-Open: none
+- [ ] The Atlas shows a "Top picks" section ranking the 15 profiled cities, each with its tagline, factor scores and the plan's odds there; picks 16–25 appear as a compact list with their one-line reason (proof: run the product)
+- [ ] Opening a pick shows its profile (summary, scores, facts, drawbacks, sources) beside its cost comparison with home and the plan's odds, and can make it the destination (proof: run the product + test)
+- [ ] City rows and comparisons label each city as verified (source, date) or a rough estimate, and the ranking method and sources are cited in the app (proof: run the product)
+- [ ] Works at phone width (390px) and desktop, in light and dark themes, with keyboard access and no console errors; tests, typecheck and build green (proof: screenshots + commands)
+- [ ] Preview artifact republished (proof: artifact URL)
+Open: pushing to main deploys the live site — ask the user first
 
 ## Stages
 - [x] 1. Verify costs — choose the top 25 for retirees, check their cost/healthcare data against current sources, label verified vs estimate
