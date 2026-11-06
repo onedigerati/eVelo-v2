@@ -10,16 +10,16 @@ Mode: autopilot
 Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (republish: `npm run build && node scripts/artifact-page.mjs`)
 Checks:
 - [ ] Adding a ticker via the command palette (e.g. type "nvda", Enter) adds a holding; weights stay summing to 100% (proof: run the product)
-- [ ] Editing any plan input re-runs the simulation in the worker within ~1 s and the verdict number, dot chart and fan charts update (proof: run the product)
+- [x] Editing any plan input re-runs the simulation in the worker within ~1 s and the verdict number, dot chart and fan charts update (proof: run the product)
 - [ ] Phone (390px): all plan controls usable, no horizontal scroll; charts readable (proof: screenshots)
-- [ ] Safe-spend solver shows a max spend at 90% confidence; BBD vs sell estate shown (proof: run the product)
+- [x] Safe-spend solver shows a max spend at 90% confidence; BBD vs sell estate shown (proof: run the product)
 Open: none
 
 ## Stages
 - [x] 1. Data + engine — Yahoo/FRED fetch script, factor backfill, block bootstrap + fat-tail, SBLOC/margin call/forced sale, BBD vs sell, city cost model, solver
 - [x] 2. App shell + design system — Vite/React/TS, tokens, fonts, light/dark, responsive layout, mobile tab bar, state + URL share
 - [ ] 3. Plan inputs — ticker command palette, weights, life/budget, borrowing, move scenario, model settings
-- [ ] 4. Results — verdict + 100-futures dot chart, fan charts (net worth / LTV / loan), margin-call timing, safe-spend solver, BBD vs sell
+- [x] 4. Results — verdict + 100-futures dot chart, fan charts (net worth / LTV / loan), margin-call timing, safe-spend solver, BBD vs sell
 - [ ] 5. Atlas — city cost data, live FX, world map + ranked cities, side-by-side comparison, country notes
 - [ ] 6. Polish + verify — methodology page, animations, a11y, mobile pass, build, README, data refresh workflow
 
