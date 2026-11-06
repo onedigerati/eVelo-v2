@@ -4,13 +4,15 @@
 A slick, design-forward static web app for planning a Buy-Borrow-Die retirement. A user picks real tickers and weights, sets age, horizon, lifestyle budget and borrowing terms, and sees the probability their plan holds for 15/20/30 years without a forced sale — in their home city and in any destination city (cost-of-living, expat factor, FX risk). Done = deployed-ready build that runs on desktop and phone, light and dark themes, real bundled market data with a refresh script, a tested simulation engine, and a city "atlas" ranking where money goes furthest.
 
 ## Now
-Stage 2 of 6 · App shell + design system
+Stages 3 + 4 (parallel) · Plan inputs, Results
 Risk: UI only
 Mode: autopilot
+Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (republish: `npm run build && node scripts/artifact-page.mjs`)
 Checks:
-- [x] App renders at 390×844 and 1440×900 in light and dark with no horizontal scroll; phone shows bottom tab bar (proof: run the product, screenshots)
-- [x] Theme toggle (system/light/dark) and inputs persist across reload; Share link restores inputs (proof: run the product)
-- [x] `npm run build` succeeds (proof: command)
+- [ ] Adding a ticker via the command palette (e.g. type "nvda", Enter) adds a holding; weights stay summing to 100% (proof: run the product)
+- [ ] Editing any plan input re-runs the simulation in the worker within ~1 s and the verdict number, dot chart and fan charts update (proof: run the product)
+- [ ] Phone (390px): all plan controls usable, no horizontal scroll; charts readable (proof: screenshots)
+- [ ] Safe-spend solver shows a max spend at 90% confidence; BBD vs sell estate shown (proof: run the product)
 Open: none
 
 ## Stages
@@ -32,6 +34,7 @@ Open: none
 - 2026-11-06 · Preview: after each stage that changes what the user sees, publish the production build to one private claude.ai Artifact (same URL every time) and keep a local dev server up — user asked to review meaningful updates on a preview site.
 - 2026-11-06 · Single-stock means capped at 35% history weight (balanced) / 15% (conservative); 'historical' uses the real-window mean only — 100% NVDA was projecting 24%/yr for 30 years.
 - 2026-11-06 · Data months keyed by UTC month of timestamp+12h; script fails on gaps or a stale last month — a DST offset bug had shifted/merged months.
+- 2026-11-06 · Stages 3 and 4 built in parallel: inputs live in `src/ui/plan`, results + worker client in `src/ui/outlook` / `src/state/sim.ts` — disjoint files.
 - 2026-11-06 · City cost indices are curated approximations from public indices, labeled as estimates and user-overridable per category.
 
 ## Open questions
