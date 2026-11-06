@@ -1,4 +1,4 @@
-// Top 25 retirement destinations for US expats, with full profiles for the top 15.
+// Top 25 retirement destinations for US expats, each with a full profile.
 //
 // The rank blends published rankings (EXPAT_RANKING_SOURCES) with retiree
 // adjustments; the 1–5 factor scores are eVelo's own assessment. Research was
@@ -181,6 +181,16 @@ const S = {
     name: 'Mexperience: Financial criteria for residency in Mexico (2026 UMA)',
     url: 'https://mexperience.com/financial-criteria-for-residency-in-mexico/',
   },
+  unitedSummer: {
+    name: 'United: new summer flights to Split, Bari, Glasgow and Santiago de Compostela (Apr 2026)',
+    url: 'https://united.mediaroom.com/2026-04-28-United-Airlines-Launches-New-Summer-Flights-to-Split,-Bari,-Glasgow-and-Santiago-De-Compostela',
+  },
+  timeoutGpi: {
+    name: 'Time Out: most peaceful countries in Asia 2026',
+    url: 'https://www.timeout.com/asia/news/singapore-japan-and-malaysia-are-among-the-worlds-most-peaceful-countries-in-2026-062326',
+    edition: '2026',
+  },
+  thRetire: { name: 'Issa Compass: Thailand retirement visa 2026', url: 'https://www.issacompass.com/insights/retirement-visa-thailand' },
   forbes: {
     name: 'UPI: Forbes best places for Americans to retire abroad, Latin America (Aug 2026)',
     url: 'https://www.upi.com/Top_News/World-News/2026/08/03/latam-Forves-retirment-list-latin-america/4111785782949/',
@@ -611,7 +621,7 @@ export const EXPAT_PICKS: ExpatPick[] = [
         'Far from the US, and serious medical cases often go to Bangkok',
       ],
       sources: [
-        { name: 'Issa Compass: Thailand retirement visa 2026', url: 'https://www.issacompass.com/insights/retirement-visa-thailand' },
+        S.thRetire,
         {
           name: 'Legal500: Thailand proposed foreign income remittance amendment',
           url: 'https://www.legal500.com/developments/press-releases/thailand-proposes-new-amendment-to-tax-rule-for-foreign-income-remittance/',
@@ -718,60 +728,398 @@ export const EXPAT_PICKS: ExpatPick[] = [
     cityId: 'medellin',
     why: 'Colombia was 2nd in Expat Insider 2025 and is 15th in International Living\'s 2026 index, and Medellín is on Forbes\' 2026 list for its spring-like climate, low costs and good hospitals, though safety is weaker than at the cities above.',
     sourceRefs: [EI25, IL, FORBES],
+    profile: {
+      tagline: 'Spring-like climate, good hospitals, weaker safety',
+      summary:
+        'Colombia was 2nd in Expat Insider 2025 and is 15th in International Living\'s 2026 index, and Medellín pairs a mild climate all year with well-regarded private hospitals at low cost. Safety is the weak point: Colombia is 141st of 163 in the 2026 Global Peace Index and is reportedly at US State Dept Level 3.',
+      scores: { cost: 4, healthcare: 4, safety: 2, visa: 3, climate: 5, community: 4 },
+      facts: {
+        healthcare:
+          'Private hospitals such as Pablo Tobón Uribe, Clínica Las Américas and San Vicente Fundación are reportedly among Latin America\'s best ranked; residents with a cédula can join the EPS system, and many expats add a private plan.',
+        safety:
+          'Colombia is 141st of 163 in the 2026 Global Peace Index and reportedly at US State Dept Level 3, "reconsider travel" (March 2026), with warnings about scopolamine druggings and dating-app robberies in Medellín; expats cluster in El Poblado and Laureles.',
+        visa:
+          'M-Pensionado needs a pension of at least 3× the minimum wage (about COP 5.25 million a month in 2026), and portfolio income does not count; a portfolio-only retiree needs the M-Rentista, which one guide puts at 10× the minimum wage (about COP 17.5 million a month) and another at 5×; check current rules.',
+        tax: 'Residents present more than 183 days in any 365 are taxed on worldwide income at up to 39%, so US dividends, interest and gains are reportable in Colombia; there is no US–Colombia income tax treaty, only US foreign tax credits (get local advice and check current rules).',
+        climate: '"Eternal spring" at about 1,500 m: roughly 22–28°C by day all year, with two rainy seasons.',
+        community:
+          'A large, young-skewing expat and digital-nomad scene in El Poblado and Laureles, and a smaller retiree community in nearby Envigado and Sabaneta; Spanish helps a lot.',
+        access:
+          'Nonstops reportedly include Miami, Fort Lauderdale and New York-JFK (mostly Avianca), plus American to Miami and United to Houston; about 4 hours to South Florida (check current schedules).',
+      },
+      drawbacks: [
+        'Worldwide taxation with no US–Colombia treaty, so investment income can face Colombian tax at up to 39%',
+        'Crime that targets foreigners (druggings, dating-app setups, robbery), and a reported Level 3 US advisory',
+        'The Pensionado visa needs an actual pension; living off a portfolio means the much higher Rentista bar',
+      ],
+      sources: [
+        { name: 'Colombia Move: Pensionado visa income requirements 2026', url: 'https://colombiamove.com/blog/colombia-pensionado-visa-income-requirements-2026/' },
+        { name: 'Greenback Tax Services: Tax guide for Americans living in Colombia', url: 'https://www.greenbacktaxservices.com/country-guide/tax-guide-for-americans-living-in-colombia/' },
+        {
+          name: 'El Espectador: Colombia falls in the Global Peace Index 2026',
+          url: 'https://www.elespectador.com/mundo/america/colombia-retrocede-en-el-indice-global-de-paz-mientras-aumentan-los-conflictos-mundiales/',
+          edition: '2026',
+        },
+        { name: 'Jetpac: Is it safe to travel to Colombia in 2026', url: 'https://blog.jetpacglobal.com/blog/is-it-safe-to-travel-to-colombia/' },
+      ],
+    },
   },
   {
     rank: 17,
     cityId: 'cuenca',
     why: 'Ecuador is 11th in International Living\'s 2026 index, and Cuenca combines the US dollar and a pensioner visa with some of the lowest costs on this list.',
     sourceRefs: [IL],
+    profile: {
+      tagline: 'Low-cost Andean city, US dollar, easy pensioner visa',
+      summary:
+        'Ecuador is 11th in International Living\'s 2026 index, uses the US dollar and offers a pensioner visa at about $1,446 a month, and Cuenca is a long-established US retiree base with some of the lowest costs on this list. The risk is security: Ecuador is 135th of 163 in the 2026 Global Peace Index, with the worst areas on the coast and borders.',
+      scores: { cost: 5, healthcare: 3, safety: 3, visa: 4, climate: 4, community: 4 },
+      facts: {
+        healthcare:
+          'Private hospitals such as Hospital del Río and Monte Sinaí reportedly give good care at low prices; residents with a cédula can join IESS public insurance from about $85 a month (2026), and complex cases may go to Quito or Guayaquil.',
+        safety:
+          'Ecuador is 135th of 163 in the 2026 Global Peace Index and reportedly at US State Dept Level 2 (renewed August 2026), with Level 4 zones on the coast, including part of Guayaquil, and along the borders; Cuenca is not among the higher-risk areas.',
+        visa:
+          'Pensioner visa: a foreign pension of at least 3× the basic wage, $1,446/month in 2026 (+$250 per dependant); the rentista visa takes investment returns at the same income, and the investor visa about $48,200 on deposit for 730 days or in property; 2 years of temporary residence, then permanent (official pages lag, so check current figures).',
+        tax: 'Residents present 183+ days a year are taxed on worldwide income at up to 37%, with credit for foreign tax; sources disagree on whether foreign pensions are exempt, and there is no US–Ecuador income tax treaty (check current rules).',
+        climate: 'Spring-like all year at about 2,560 m (roughly 10–22°C), with frequent rain; the altitude can matter for heart and lung conditions.',
+        community: 'One of the largest US retiree communities in Latin America, with English-language groups and services; Spanish is still needed day to day.',
+        access:
+          'No commercial US flights from Cuenca: drive or fly to Guayaquil or Quito, which reportedly have nonstops to Miami, Fort Lauderdale, Houston, Atlanta and New York (check current schedules).',
+      },
+      drawbacks: [
+        'Ecuador ranks low on safety (135th in the Global Peace Index), even if Cuenca has been calmer than the coast',
+        'No US flights from Cuenca itself, so every trip home starts with a connection or a 3–4 hour drive',
+        'The altitude, and cool, damp weather much of the year',
+      ],
+      sources: [
+        { name: 'Rio Times: Residency in Ecuador for foreigners 2026', url: 'https://www.riotimesonline.com/residency-ecuador-foreigners-2026/' },
+        { name: 'Rio Times: Retire in Ecuador 2026', url: 'https://www.riotimesonline.com/retire-in-ecuador-2026/' },
+        {
+          name: 'The Traveler: US renews Ecuador advisory, Guayaquil zone stays at Level 4 (Aug 2026)',
+          url: 'https://www.thetraveler.org/us-renews-ecuador-travel-advisory-keeps-guayaquil-zone-at-level-4/',
+        },
+        { name: 'blogTO: Global Peace Index 2026 rankings', url: 'https://www.blogto.com/travel/2026/06/canada-ranking-most-peaceful-countries/', edition: '2026' },
+        { name: 'Greenback Tax Services: Expat tax guide for Americans in Ecuador', url: 'https://www.greenbacktaxservices.com/country-guide/expat-taxes-for-ecuador/' },
+      ],
+    },
   },
   {
     rank: 18,
     cityId: 'madeira',
     why: 'Madeira has Portugal\'s strengths (4th in International Living\'s 2026 index, 7th in the Global Peace Index) and one of Europe\'s mildest climates, but limited flights.',
     sourceRefs: [IL, GPI],
+    profile: {
+      tagline: 'Portugal\'s safety and visa, spring-like all year',
+      summary:
+        'Madeira has Portugal\'s strengths (7th in the Global Peace Index, the low D7 income bar, EU healthcare) and one of Europe\'s mildest climates, warm and even all year. Residents also pay regional income tax rates up to 30% below the mainland, but it is an island with one main hospital and limited flights.',
+      scores: { cost: 3, healthcare: 3, safety: 5, visa: 4, climate: 5, community: 3 },
+      facts: {
+        healthcare:
+          'Legal residents can register with SESARAM, the regional public service (main hospital: Dr. Nélio Mendonça in Funchal); the private Hospital Particular da Madeira and Hospital da Luz Funchal have English-speaking staff, and highly specialised care generally means a transfer to Lisbon or Porto.',
+        safety: 'Portugal is 7th in the 2026 Global Peace Index; Funchal has very low crime, and the main risks are steep roads, wildfires and landslides after heavy rain.',
+        visa: PT_VISA,
+        tax: 'NHR is closed to new arrivals; Madeira residents pay regional IRS rates up to 30% below the mainland (reportedly a 33.6% top rate vs 48%), and Portuguese-source dividends and interest reportedly 19.6% vs 28%; whether the cut reaches US-source dividends and gains is unclear, and the US–Portugal treaty applies (check current rules).',
+        climate: 'Subtropical and very even: days roughly 19–20°C in winter and 25–26°C in summer, drier and sunnier on the south coast around Funchal.',
+        community: 'A smaller English-speaking scene than the Algarve, mostly British and German retirees plus a growing remote-worker crowd.',
+        access: 'United flies Newark–Madeira 3 times a week in summer (from 16 May 2026); the rest of the year, connect via Lisbon, Porto or another European hub.',
+      },
+      drawbacks: [
+        'One main public hospital, and complex care can mean a flight to Lisbon',
+        'Year-round US trips mean a connection; the Newark nonstop is summer-only',
+        'Very hilly terrain, and housing has risen quickly with tourism and remote workers',
+      ],
+      sources: [
+        S.d7,
+        S.ptTax,
+        {
+          name: 'Cyril Jarnias: healthcare for expats in Madeira',
+          url: 'https://www.jarniascyril.com/expatriation/settling-in-madeira-complete-guide-expats/healthcare-expatriates-madeira-complete-guide/',
+        },
+        S.unitedSummer,
+        S.gpiTop50,
+      ],
+    },
   },
   {
     rank: 19,
     cityId: 'da-nang',
     why: 'Vietnam is 18th in International Living\'s 2026 index and was 5th in Expat Insider 2025, and Da Nang is an inexpensive beach city, but Vietnam\'s visa options for retirees are weak.',
     sourceRefs: [IL, EI25],
+    profile: {
+      tagline: 'Cheap, safe beach city without a retirement visa',
+      summary:
+        'Vietnam was 5th in Expat Insider 2025 and is 18th in International Living\'s 2026 index, and Da Nang offers long beaches and very low costs in a country 41st in the 2026 Global Peace Index. But Vietnam has no retirement visa, and serious medical care usually means Bangkok or Singapore.',
+      scores: { cost: 5, healthcare: 2, safety: 4, visa: 1, climate: 3, community: 3 },
+      facts: {
+        healthcare:
+          'Private hospitals (Vinmec Da Nang, Hoan My Da Nang) have 24/7 emergency departments and English-speaking staff for routine and urgent care; complex cases are often evacuated to Bangkok or Singapore, so evacuation cover is essential.',
+        safety: 'Vietnam is 41st in the 2026 Global Peace Index; violent crime against foreigners is rare, but traffic is chaotic and petty theft and bag-snatching occur.',
+        visa:
+          'No retirement visa: most retirees use the 90-day multiple-entry e-visa ($50), which cannot be extended and does not reset on re-entry, so they leave and reapply; a residence card needs an investor visa tied to an active Vietnamese business (VND 3 billion+) or a Vietnamese spouse.',
+        tax: 'Residents (183+ days a year, or a long lease) are taxed on worldwide income at 5–35%, with investment income at flat schedular rates; a US–Vietnam tax treaty was reportedly signed in 2015 but is not in force (check current rules).',
+        climate: 'Hot and humid: a sunny dry season (roughly February–August), then the typhoon and flood season, usually September–December.',
+        community: 'A growing expat community around An Thuong and My Khe beach, younger and smaller than Chiang Mai\'s; English is limited outside tourist areas.',
+        access: 'No US nonstops; one stop via Seoul, Tokyo, Taipei, Hong Kong or Singapore, typically 20+ hours.',
+      },
+      drawbacks: [
+        'No retirement visa: life on repeated 90-day e-visas, with no secure path to long-term residence',
+        'Serious conditions mean evacuation to Bangkok or Singapore',
+        'Typhoon and flood season, and a long trip to the US',
+      ],
+      sources: [
+        { name: 'GetWhereNext: Vietnam retirement visa 2026, the honest truth', url: 'https://getwherenext.com/blog/vietnam-retirement-visa-2026-honest-truth' },
+        { name: 'Vietnam Tourism: Healthcare in Da Nang for visitors', url: 'https://www.vietnamtourism.com/en/health/da-nang' },
+        { ...S.timeoutGpi, name: 'Time Out: Vietnam 41st in the Global Peace Index 2026' },
+        S.seaGpi,
+      ],
+    },
   },
   {
     rank: 20,
     cityId: 'montevideo',
     why: 'Uruguay is 13th in International Living\'s 2026 index and on Forbes\' 2026 list, with a stable government, straightforward residency and a tax holiday for new residents.',
     sourceRefs: [IL, FORBES],
+    profile: {
+      tagline: 'Stable, easy residency, long foreign-income tax holiday',
+      summary:
+        'Uruguay is 13th in International Living\'s 2026 index and 43rd in the 2026 Global Peace Index, the highest in Latin America, with straightforward residency and a tax holiday on foreign investment income for the arrival year plus 10. Montevideo is a calm, mid-priced capital with good private health cooperatives, but it is far from the US and its homicide rate has been rising.',
+      scores: { cost: 3, healthcare: 4, safety: 3, visa: 4, climate: 3, community: 3 },
+      facts: {
+        healthcare:
+          'Private nonprofit cooperatives (mutualistas) give full coverage for a monthly fee, alongside the public ASSE system; standards are good, and Montevideo has the country\'s main hospitals.',
+        safety:
+          'Uruguay is 43rd in the 2026 Global Peace Index and reportedly at US State Dept Level 2, but Montevideo\'s homicide rate was about 16 per 100,000 in 2025 and the first half of 2026 had Uruguay\'s most homicides since 2015; Pocitos, Punta Carretas and Carrasco are the calmer areas.',
+        visa:
+          'Residency on your own means ("medios de vida propios"): no legal minimum, but officials reportedly expect about $1,500/month from pensions, dividends or other passive income; processing can take 6–18 months, and you are legal while it is pending.',
+        tax: 'New tax residents can exempt foreign dividends, interest and gains for the arrival year plus 10 (Law 20.446, from 2026; 183+ days\' presence qualifies, while the investment routes now need about $2 million in property); after that, one source says 6% for 5 years then 12%, another describes a 50% phase-in, and there is reportedly no US–Uruguay income tax treaty (check current rules).',
+        climate: 'Temperate: warm, humid summers (December–March) and cool, damp, windy winters around 10°C.',
+        community: 'A small but steady expat community, mostly Argentine and European; fewer US retirees and English speakers than the Mexican or Panamanian hubs.',
+        access:
+          'The only US nonstop is American\'s seasonal Miami–Montevideo (daily December to early March, then 3 a week until late March); otherwise connect via São Paulo, Panama City or Bogotá, roughly 12–15 hours.',
+      },
+      drawbacks: [
+        'Rising violent crime in Montevideo despite Uruguay\'s national peace ranking',
+        'Very few nonstop flights to the US, and none for most of the year',
+        'Higher costs than most of Latin America, and grey, windy winters',
+      ],
+      sources: [
+        {
+          name: 'IMI Daily: Uruguay raises tax holiday threshold, taxes foreign income at 12% (Feb 2026)',
+          url: 'https://www.imidaily.com/latin-america/uruguay-raises-tax-holiday-threshold-to-us2-million-taxes-foreign-income-at-12/',
+        },
+        { name: 'Liberty Mundo: Residency in Uruguay 2026', url: 'https://www.libertymundo.com/residency-in-uruguay/' },
+        {
+          name: 'Ámbito: Uruguay 43rd in the Global Peace Index 2026',
+          url: 'https://www.ambito.com/uruguay/reafirma-su-lugar-los-paises-mas-pacificos-del-planeta-n6288498',
+          edition: '2026',
+        },
+        { name: 'Rio Times: Is Uruguay safe for expats 2026', url: 'https://www.riotimesonline.com/is-uruguay-safe-expats-2026/' },
+        {
+          name: 'MercoPress: American Airlines resumes seasonal Montevideo–Miami route in December',
+          url: 'https://en.mercopress.com/2026/08/11/american-airlines-resumes-its-seasonal-montevideo-miami-route-in-december',
+        },
+      ],
+    },
   },
   {
     rank: 21,
     cityId: 'nice',
     why: 'France is 7th in International Living\'s 2026 index and scored best of all for healthcare, but Nice is expensive and French taxes are high.',
     sourceRefs: [IL],
+    profile: {
+      tagline: 'Riviera city with France\'s top-rated healthcare',
+      summary:
+        'France is 7th in International Living\'s 2026 index and scored best of all for healthcare, and Nice adds the Riviera\'s mild winters, a big English-speaking community and a year-round New York nonstop. It is expensive, and French tax on investment income and real estate is heavy for a large portfolio.',
+      scores: { cost: 1, healthcare: 5, safety: 3, visa: 4, climate: 4, community: 4 },
+      facts: {
+        healthcare:
+          'Visitor-visa holders can join the public PUMa system after 3 months\' residence (most add a top-up mutuelle); a contribution for non-EU visitor-visa holders passed in the 2026 social security law but its amount awaits a decree; the CHU de Nice and private clinics are strong.',
+        safety:
+          'France fell to 99th in the 2026 Global Peace Index, mostly on militarisation and nuclear factors, while homicide is very low; in Nice, pickpocketing and car break-ins are the common issues, and security stays visible since the 2016 attack.',
+        visa:
+          'Long-stay visitor visa (VLS-TS visiteur): stable passive income of roughly the net minimum wage (reportedly about €1,440/month in 2026), private health insurance and no work in France; renewed yearly at the prefecture at first.',
+        tax: 'Residents are taxed on worldwide income; dividends, interest and securities gains face a 31.4% flat tax from 2026 (12.8% tax plus 18.6% social charges), and IFI wealth tax hits net real estate over €1.3M, with foreign property excluded for the first 5 years; the US–France treaty applies (check current rules).',
+        climate: 'Mediterranean: about 300 sunny days, winter days around 13°C and hot summers near 28–30°C, with occasional heatwaves.',
+        community: 'A large English-speaking community of British, American and Northern European residents along the Riviera, though daily life and paperwork run in French.',
+        access:
+          'La Compagnie (business class only) flies Newark–Nice year-round from the 2026–27 winter, and US carriers add summer New York flights; check current schedules.',
+      },
+      drawbacks: [
+        'One of the most expensive places on this list, especially for housing',
+        'The 31.4% flat tax and IFI on property weigh on a large taxable portfolio',
+        'French bureaucracy (prefecture renewals, PUMa enrolment) is slow and in French',
+      ],
+      sources: [
+        S.il,
+        {
+          name: 'Connexion: French MPs back health fee for visitor visas',
+          url: 'https://www.connexionfrance.com/news/french-mps-back-new-health-fee-for-visitor-visas-and-target-americans/752385',
+        },
+        { name: 'Expat.com: France raises flat tax to 31.4%', url: 'https://www.expat.com/en/expat-mag/12501-france-raises-flat-tax-to-314-percent-what-it-means-for-expats.html' },
+        {
+          name: 'The Local: how France\'s wealth tax affects new arrivals (Oct 2026)',
+          url: 'https://www.thelocal.fr/20261026/ask-the-expert-how-does-frances-wealth-tax-affect-new-arrivals',
+        },
+        {
+          name: 'AviationPros: Nice gains first year-round New York service',
+          url: 'https://www.aviationpros.com/airport-business/news/55384892/nice-airport-gains-first-year-round-new-york-service-as-la-compagnie-extends-route',
+        },
+      ],
+    },
   },
   {
     rank: 22,
     cityId: 'florence',
     why: 'Italy is 6th in International Living\'s 2026 index and appears on Forbes\' 2026 list, and its elective-residence visa suits retirees, but Florence is one of the costlier cities here.',
     sourceRefs: [IL, FORBES],
+    profile: {
+      tagline: 'Renaissance city, strong healthcare, big American community',
+      summary:
+        'Italy is 6th in International Living\'s 2026 index and on Forbes\' 2026 list, and Florence offers world-class culture, good Tuscan public hospitals and a long-established American community. The elective-residence visa wants about €31,000 a year of passive income, and Florence does not qualify for Italy\'s 7% tax regime for pensioners.',
+      scores: { cost: 1, healthcare: 4, safety: 4, visa: 3, climate: 3, community: 4 },
+      facts: {
+        healthcare:
+          'Elective-residence holders need private insurance for the visa, then can join the public SSN voluntarily for at least €2,000 a year; Careggi is a major teaching hospital, and Tuscany\'s public system is among Italy\'s better ones.',
+        safety: 'Italy is 35th in the 2026 Global Peace Index; violent crime is low, with pickpocketing around the Duomo, the station and on buses.',
+        visa:
+          'Elective-residence visa: stable passive income of about €31,000/year (a consular benchmark, not a statute; more for a spouse); pensions, dividends, interest and rent count, savings alone do not, and no work is allowed, even remote.',
+        tax: 'Residents are taxed on worldwide income; dividends, interest and gains are taxed at 26%, plus IVAFE of 0.2% a year on foreign financial accounts; the 7% pensioner regime covers only small southern and quake-zone towns, so not Florence; check current rules.',
+        climate: 'Hot, humid summers often above 35°C in the river basin, and cool, damp winters with occasional frost.',
+        community: 'A large, long-established American and British community, helped by many US university programmes; English is common in the centre.',
+        access: 'No regular US nonstop to Florence or Pisa could be confirmed for 2026; most trips go via Rome (about 1.5 hours by fast train), Milan or a European hub.',
+      },
+      drawbacks: [
+        'Very expensive housing in the centre, and heavy tourist crowds most of the year',
+        '26% on investment income plus a yearly tax on foreign accounts, and no 7% regime',
+        'The visa needs proven passive income, so a portfolio-only retiree with low dividends may struggle',
+      ],
+      sources: [
+        S.il,
+        { name: 'Global Citizen Solutions: Italy elective residence visa 2026', url: 'https://www.globalcitizensolutions.com/italy-elective-residence-visa/' },
+        {
+          name: 'The Local: is Italy\'s flat tax for pensioners still available in 2026',
+          url: 'https://www.thelocal.it/20260128/is-italys-flat-tax-rate-for-pensioners-still-available-in-2026',
+        },
+        S.gpiTop50,
+      ],
+    },
   },
   {
     rank: 23,
     cityId: 'bangkok',
     why: 'Thailand is 9th in International Living\'s 2026 index and 3rd in Expat Insider 2026, and Bangkok has the country\'s top medical-tourism hospitals and its main international airport.',
     sourceRefs: [IL, EI26],
+    profile: {
+      tagline: 'World-class private hospitals, big-city Asian hub',
+      summary:
+        'Thailand is 9th in International Living\'s 2026 index and 3rd in Expat Insider 2026, and Bangkok\'s private hospitals are among Asia\'s leading medical-tourism centres. It has the same 50+ retirement visa as Chiang Mai, plus a 10-year LTR visa for wealthier retirees that reportedly exempts foreign income from Thai tax.',
+      scores: { cost: 4, healthcare: 4, safety: 3, visa: 4, climate: 3, community: 4 },
+      facts: {
+        healthcare:
+          'Internationally accredited private hospitals (Bumrungrad, Bangkok Hospital, Samitivej) with English-speaking, often US-trained specialists, well below US prices; foreigners rely on private insurance.',
+        safety:
+          'Thailand scores 2.089 in the 2026 Global Peace Index, 8th in Southeast Asia (its global rank could not be confirmed; it was 86th in 2025); street crime is low, but road safety is poor and political protests recur.',
+        visa:
+          'Retirement visa (Non-O or O-A, age 50+): 800,000 baht held in a Thai bank, with yearly extensions and 90-day reporting; or the 10-year LTR "Wealthy Pensioner" visa (50+): $80,000/year of passive income, investment returns included (or $40,000 plus $250,000 invested in Thailand), with yearly instead of 90-day reporting.',
+        tax: 'Since 2024, residents present 180+ days a year are taxed on foreign income remitted into Thailand, at up to 35%; LTR holders are reportedly exempt on foreign income, proposed relief for everyone else has not been enacted, and the US–Thailand treaty applies (check current rules).',
+        climate: 'Hot and humid all year (about 30–35°C), with a wet season (roughly June–October) that floods streets, and smoggy air in the dry months.',
+        community: 'A large expat community along Sukhumvit and in Sathorn, with plenty of English-language services, though more working expats than retirees.',
+        access: 'No US nonstops; one stop via Tokyo, Seoul, Taipei or Hong Kong (United flies Los Angeles–Bangkok via Hong Kong), typically 18–22 hours.',
+      },
+      drawbacks: [
+        'Relentless heat, rainy-season flooding and dry-season air pollution',
+        'Foreign income you bring into Thailand can be taxed unless you qualify for the LTR visa',
+        'A sprawling, congested city, and far from the US',
+      ],
+      sources: [
+        {
+          name: 'Issa Compass: Wealthy Pensioner LTR visa requirements (updated Oct 2026)',
+          url: 'https://www.issacompass.com/insights/wealthy-pensioner-ltr-visa-income-requirements-the-10-year-structure-and-how-to-',
+        },
+        S.thRetire,
+        {
+          name: 'Thai Law Online: Thailand foreign income remittance tax, what applies in 2026',
+          url: 'https://www.thailawonline.com/thailand-foreign-income-tax-2026-what-actually-applies/',
+        },
+        S.seaGpi,
+      ],
+    },
   },
   {
     rank: 24,
     cityId: 'split',
     why: 'Croatia is 19th in International Living\'s 2026 index, and Split offers EU safety on the Adriatic coast, with a smaller expat community than the cities above.',
     sourceRefs: [IL],
+    profile: {
+      tagline: 'Safe Adriatic city, but no retiree visa',
+      summary:
+        'Croatia is 19th in International Living\'s 2026 index and 23rd in the Global Peace Index, and Split pairs a Roman old town and the Adriatic islands with low tax on investment income. The catch is residency: Croatia has no retirement visa, so a non-EU retiree gets permits of up to a year, with a wait between them.',
+      scores: { cost: 3, healthcare: 3, safety: 4, visa: 1, climate: 4, community: 2 },
+      facts: {
+        healthcare:
+          'Temporary-stay holders must join the public HZZO, reportedly about €70–100/month; KBC Split is the regional teaching hospital, private clinics are affordable, and outside private care Croatian is often needed.',
+        safety: 'Croatia is 23rd in the 2026 Global Peace Index; violent crime is rare, and petty theft in peak season is the main issue.',
+        visa:
+          'No retiree visa: "other purposes" temporary stay (for example renting or owning a home) is granted for up to a year, then you must wait 6 months before reapplying; the digital-nomad permit needs remote work, and between permits Schengen\'s 90/180-day rule applies.',
+        tax: 'Residents are taxed on worldwide income, with dividends, interest and gains at a flat 12%; gains on assets held long enough are reportedly exempt, but summaries disagree on the period (two years or 12 months), and a US–Croatia treaty was reportedly signed in 2022 but is not yet in force (check current rules).',
+        climate: 'Mediterranean: hot, dry summers around 30°C and mild winters around 10–12°C, with the cold bura wind on some winter days.',
+        community: 'A small English-speaking resident scene; Split is busy with tourists and cruise passengers in summer and much quieter in winter.',
+        access: 'United flies Newark–Split 3 times a week in summer (from 30 April 2026, its first nonstop); otherwise connect via Zagreb or a European hub.',
+      },
+      drawbacks: [
+        'No stable long-term residence route for a non-EU retiree',
+        'Peak-season crowds, and summer short-term rentals squeeze year-round leases',
+        'A small English-speaking community, and healthcare and paperwork mostly in Croatian',
+      ],
+      sources: [
+        {
+          name: 'Croatian Ministry of Interior: temporary stay of third-country nationals',
+          url: 'https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661',
+        },
+        { name: 'Croatian Ministry of Foreign Affairs: temporary residence', url: 'https://mvep.gov.hr/temporary-residence-247155/247155' },
+        { name: 'Total Croatia News: retiring in Croatia as a non-EU national', url: 'https://total-croatia-news.com/lifestyle/retiring-in-croatia/' },
+        S.unitedSummer,
+        S.gpiTop50,
+      ],
+    },
   },
   {
     rank: 25,
     cityId: 'bali',
     why: 'Bali is 22nd in International Living\'s 2026 index and Indonesia was 8th in Expat Insider 2025, with a retirement visa for people 55 and over, but healthcare is limited and Indonesia is 69th in the Global Peace Index.',
     sourceRefs: [IL, EI25, GPI],
+    profile: {
+      tagline: 'Island lifestyle, retirement visa, limited hospitals',
+      summary:
+        'Bali is 22nd in International Living\'s 2026 index and Indonesia was 8th in Expat Insider 2025, with a retirement KITAS (from age 55, though some guides say 60) and a large international community in Canggu, Ubud and Sanur. Healthcare is the main limit: serious cases are usually evacuated to Singapore.',
+      scores: { cost: 4, healthcare: 2, safety: 3, visa: 3, climate: 3, community: 4 },
+      facts: {
+        healthcare:
+          'Private hospitals (BIMC, Siloam) handle routine and emergency care with English-speaking staff, but complex cases are usually evacuated to Singapore, so evacuation cover is essential.',
+        safety: 'Indonesia is 69th in the 2026 Global Peace Index; violent crime against foreigners is rare in Bali, but scooter accidents, petty theft and scams are common.',
+        visa:
+          'Retirement KITAS (E33F): sources disagree on the age (55, or 60 in some 2026 guides) and the income (a foreign pension or retirement income of $1,500 or $3,000/month; IRA and 401(k) income reportedly count); it also needs a licensed local sponsor, a lease, health insurance and reportedly a hired Indonesian household worker, is renewed yearly and can become a 5-year KITAP after 4 years; the Second Home visa reportedly needs about IDR 2 billion (about $120,000) on deposit.',
+        tax: 'KITAS holders and anyone present 183+ days are generally Indonesian tax residents, taxed on worldwide income at 5–35%; the 4-year foreign-income exemption is for foreign experts, generally not retirees, and a US–Indonesia treaty reportedly applies (get local advice and check current rules).',
+        climate: 'Tropical: hot and humid all year, with a wet season (roughly November–March); Ubud\'s hills are a little cooler.',
+        community: 'A very large international community, skewed to younger digital nomads in Canggu; retirees tend to prefer Sanur and Ubud.',
+        access: 'No US nonstops; one or two stops via Singapore, Tokyo, Seoul or Doha, typically 24+ hours.',
+      },
+      drawbacks: [
+        'Serious medical care usually means evacuation to Singapore',
+        'Visa rules shift often (sources disagree on the age and income bar) and need a paid sponsor, and foreigners cannot own land outright',
+        'Traffic, overdevelopment and overtourism in the south, and a very long trip to the US',
+      ],
+      sources: [
+        { name: 'Liberty Mundo: Retire in Indonesia, the E33F visa and residency guide (2026)', url: 'https://www.libertymundo.com/retire-in-indonesia/' },
+        {
+          name: 'Let\'s Move Indonesia: Retirement KITAS regulation update',
+          url: 'https://www.letsmoveindonesia.com/retirement-kitas-regulation-update-allows-5-years-stay-for-expatriates/',
+        },
+        { name: 'BIMC Hospital Bali: Emergency medical evacuation program', url: 'https://bimcbali.com/medical-evacuation-program' },
+        { ...S.timeoutGpi, name: 'Time Out: Indonesia 69th in the Global Peace Index 2026' },
+      ],
+    },
   },
 ]
 
@@ -782,7 +1130,7 @@ export function expatPickFor(cityId: string): ExpatPick | undefined {
   return PICK_BY_CITY[cityId]
 }
 
-/** Picks that carry a full profile (the top 15), in rank order. */
+/** Picks that carry a full profile (all 25), in rank order. */
 export function topProfiles(): (ExpatPick & { profile: ExpatProfile })[] {
   return EXPAT_PICKS.filter((p): p is ExpatPick & { profile: ExpatProfile } => p.profile !== undefined)
 }

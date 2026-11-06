@@ -1,5 +1,5 @@
 import { m as motion } from 'framer-motion'
-import { EXPAT_SCORE_LABELS, type ExpatFacts } from '../../data/expatPicks'
+import { EXPAT_PICKS, EXPAT_SCORE_LABELS, type ExpatFacts } from '../../data/expatPicks'
 import type { PlanInputs } from '../../engine/types'
 import { currency, currencyCompact, percent } from '../format'
 import { ease } from '../motion'
@@ -73,7 +73,7 @@ function ProfileBody({
       <div className="prof__main">
         <div className="prof__lead">
           <div className="prof__eyebrow t-eyebrow">
-            <CodeChip code={city.countryCode} /> Top pick {pick.rank} of 25 · {city.country}
+            <CodeChip code={city.countryCode} /> Top pick {pick.rank} of {EXPAT_PICKS.length} · {city.country}
           </div>
           <p className="prof__tagline">{p.tagline}</p>
           <p className="prof__summary">{p.summary}</p>

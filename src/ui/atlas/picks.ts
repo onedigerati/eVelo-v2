@@ -41,6 +41,24 @@ export function pickViews<R extends PickRow>(rows: R[], picks: ExpatPick[] = EXP
 
 export const isProfiled = <R extends PickRow>(v: PickView<R>): v is ProfiledPickView<R> => v.pick.profile !== undefined
 
+/** How many picks get a full card in the Top picks grid; the rest are compact rows. */
+export const CARD_PICKS = 15
+
+/**
+ * Splits pick views into the card grid (ranks 1–CARD_PICKS, profiled) and the compact
+ * "Also worth a look" rows (every later rank). Every pick now has a profile, so the split
+ * goes by rank, not by whether a profile exists.
+ */
+export function splitPicks<R extends PickRow>(views: PickView<R>[]): { cards: ProfiledPickView<R>[]; rest: PickView<R>[] } {
+  const cards: ProfiledPickView<R>[] = []
+  const rest: PickView<R>[] = []
+  for (const v of views) {
+    if (v.pick.rank <= CARD_PICKS && isProfiled(v)) cards.push(v)
+    else if (v.pick.rank > CARD_PICKS) rest.push(v)
+  }
+  return { cards, rest }
+}
+
 /** "Cost 3 of 5, Healthcare 4 of 5, …" for the score glyph's accessible label. */
 export function scoreLabel(scores: Record<ExpatScoreKey, number>): string {
   return `Scores out of 5: ${SCORE_KEYS.map((k) => `${EXPAT_SCORE_LABELS[k]} ${scores[k]}`).join(', ')}`

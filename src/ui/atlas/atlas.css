@@ -1798,10 +1798,26 @@
   color: var(--ink-2);
   text-wrap: pretty;
 }
+.also__side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
 .also__odds {
   padding-top: 2px;
   font-size: var(--fs-md);
   font-weight: 600;
+}
+.also__go {
+  font-size: var(--fs-xs);
+  font-weight: 560;
+  color: var(--accent-text);
+  white-space: nowrap;
+  transition: translate var(--dur-2) var(--ease-out);
+}
+.also__row:hover .also__go {
+  translate: 3px 0;
 }
 
 /* How we ranked */

@@ -7,7 +7,7 @@ import { ease } from '../motion'
 import { Card, Chevron, Skeleton, cx } from '../primitives'
 import { costDelta, successColor, successTextColor, type Ranked } from './atlasData'
 import { CodeChip } from './CodeChip'
-import { isProfiled, longDate, pickViews, type PickView, type ProfiledPickView } from './picks'
+import { isProfiled, longDate, pickViews, splitPicks, type PickView, type ProfiledPickView } from './picks'
 import { ScoreDots } from './ScoreDots'
 
 const FIRST = 6
@@ -24,8 +24,7 @@ export function TopPicks({ rows, homeId, destId, onOpen, onChoose }: TopPicksPro
   const bp = useBreakpoint()
   const [all, setAll] = useState(false)
   const views = useMemo(() => pickViews(rows), [rows])
-  const profiled = views.filter(isProfiled)
-  const rest = views.filter((v) => !isProfiled(v))
+  const { cards: profiled, rest } = useMemo(() => splitPicks(views), [views])
   const year = EXPAT_AS_OF.slice(0, 4)
   // Phone: a swipeable row of every pick. Larger: a grid that reveals the rest.
   const scroller = bp === 'phone'
@@ -59,7 +58,7 @@ export function TopPicks({ rows, homeId, destId, onOpen, onChoose }: TopPicksPro
       )}
       {scroller && <p className="picks__swipe t-small ink-3">Swipe for all {profiled.length} picks.</p>}
 
-      {rest.length > 0 && <AlsoList views={rest} homeId={homeId} destId={destId} onChoose={onChoose} />}
+      {rest.length > 0 && <AlsoList views={rest} homeId={homeId} destId={destId} onOpen={onOpen} onChoose={onChoose} />}
       <HowRanked />
     </Card>
   )
@@ -141,11 +140,13 @@ function AlsoList({
   views,
   homeId,
   destId,
+  onOpen,
   onChoose,
 }: {
   views: PickView<Ranked>[]
   homeId: string
   destId: string | null
+  onOpen: (cityId: string) => void
   onChoose: (cityId: string) => void
 }) {
   return (
@@ -154,32 +155,44 @@ function AlsoList({
         <h3 id="also-h" className="t-eyebrow">
           Also worth a look · {views[0].pick.rank}–{views[views.length - 1].pick.rank}
         </h3>
-        <span className="t-small ink-3">Tap one to make it your destination.</span>
+        <span className="t-small ink-3">Tap one for its profile.</span>
       </div>
       <ol className="also__list">
-        {views.map(({ pick, city, row }) => {
+        {views.map((v) => {
+          const { pick, city, row } = v
           const isDest = pick.cityId === destId
+          const isHome = pick.cityId === homeId
+          // Rows open the profile (Make destination lives there); a pick without one falls back to choosing it.
+          const hasProfile = isProfiled(v)
+          const status = isDest ? ' Your destination.' : isHome ? ' Your home.' : ''
           return (
             <li key={pick.cityId} className={cx('also__row', isDest && 'is-dest')}>
               <span className="also__rank num">{pick.rank}</span>
               <button
                 type="button"
                 className="also__main"
-                onClick={() => onChoose(pick.cityId)}
-                aria-label={`${isDest ? 'Your destination' : 'Make destination'}: ${city.name}, ${city.country}, pick ${pick.rank}.${row ? ` Plan holds in ${percent(row.successRate)}.` : ''} ${pick.why}`}
+                onClick={() => (hasProfile ? onOpen : onChoose)(pick.cityId)}
+                aria-label={
+                  hasProfile
+                    ? `Top pick ${pick.rank}: ${city.name}, ${city.country}.${status}${row ? ` Plan holds in ${percent(row.successRate)}.` : ''} ${pick.why} Open profile.`
+                    : `${isDest ? 'Your destination' : 'Make destination'}: ${city.name}, ${city.country}, pick ${pick.rank}.${row ? ` Plan holds in ${percent(row.successRate)}.` : ''} ${pick.why}`
+                }
               >
                 <span className="also__name">
                   <CodeChip code={city.countryCode} />
                   <b>{city.name}</b>
                   <span className="ink-3">{city.country}</span>
                   {isDest && <span className="crow__tag is-dest">Destination</span>}
-                  {pick.cityId === homeId && <span className="crow__tag">Home</span>}
+                  {isHome && <span className="crow__tag">Home</span>}
                 </span>
                 <span className="also__why">{pick.why}</span>
               </button>
-              <b className="also__odds num" style={row ? { color: successTextColor(row.successRate) } : undefined}>
-                {row ? percent(row.successRate) : '—'}
-              </b>
+              <span className="also__side" aria-hidden="true">
+                <b className="also__odds num" style={row ? { color: successTextColor(row.successRate) } : undefined}>
+                  {row ? percent(row.successRate) : '—'}
+                </b>
+                {hasProfile && <span className="also__go">Profile →</span>}
+              </span>
             </li>
           )
         })}

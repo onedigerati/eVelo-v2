@@ -40,12 +40,8 @@ describe('EXPAT_PICKS', () => {
     }
   })
 
-  it('gives ranks 1–15 a full profile and ranks 16–25 none', () => {
+  it('gives all 25 picks a full profile', () => {
     for (const p of EXPAT_PICKS) {
-      if (p.rank > 15) {
-        expect(p.profile, p.cityId).toBeUndefined()
-        continue
-      }
       const pr = p.profile
       expect(pr, p.cityId).toBeDefined()
       if (!pr) continue
@@ -66,7 +62,15 @@ describe('EXPAT_PICKS', () => {
       expect(pr.drawbacks.length, p.cityId).toBeLessThanOrEqual(3)
       for (const d of pr.drawbacks) expect(d.trim(), p.cityId).not.toBe('')
       expect(pr.sources.length, p.cityId).toBeGreaterThanOrEqual(2)
+      // Sources are keyed by url in the profile sheet.
+      expect(new Set(pr.sources.map((s) => s.url)).size, p.cityId).toBe(pr.sources.length)
     }
+  })
+
+  it('keeps every pick\'s scores on one 1–5 scale, using the whole range', () => {
+    const all = EXPAT_PICKS.flatMap((p) => SCORE_KEYS.map((k) => p.profile!.scores[k]))
+    expect(Math.min(...all)).toBe(1)
+    expect(Math.max(...all)).toBe(5)
   })
 
   it('has no internal research markers in the prose', () => {
@@ -106,9 +110,9 @@ describe('helpers', () => {
     expect(expatPickFor('st-louis')).toBeUndefined()
   })
 
-  it('returns the 15 profiled picks in rank order', () => {
+  it('returns all 25 profiled picks in rank order', () => {
     const top = topProfiles()
-    expect(top).toHaveLength(15)
-    expect(top.map((p) => p.rank)).toEqual(Array.from({ length: 15 }, (_, i) => i + 1))
+    expect(top).toHaveLength(25)
+    expect(top.map((p) => p.rank)).toEqual(Array.from({ length: 25 }, (_, i) => i + 1))
   })
 })

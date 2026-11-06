@@ -5,6 +5,7 @@ import { categoryRatios } from '../../../engine/cost'
 import { DEFAULT_INPUTS } from '../../../engine/defaults'
 import {
   categoryCompare,
+  CARD_PICKS,
   costDataLine,
   isProfiled,
   longDate,
@@ -12,6 +13,7 @@ import {
   oddsVsHome,
   pickViews,
   scoreLabel,
+  splitPicks,
   verifiedLabel,
   type PickRow,
 } from '../picks'
@@ -38,16 +40,37 @@ describe('pickViews', () => {
     expect(views.find((v) => v.pick.cityId === 'boquete')!.row).toBeUndefined()
   })
 
-  it('splits the 15 profiled picks from picks 16–25', () => {
+  it('profiles every pick', () => {
     const views = pickViews([])
-    const profiled = views.filter(isProfiled)
-    expect(profiled.map((v) => v.pick.rank)).toEqual(Array.from({ length: 15 }, (_, i) => i + 1))
-    expect(views.filter((v) => !isProfiled(v)).map((v) => v.pick.rank)).toEqual(Array.from({ length: 10 }, (_, i) => i + 16))
+    expect(views.filter(isProfiled)).toHaveLength(25)
   })
 
   it('drops picks whose city is missing', () => {
     const views = pickViews([], [{ rank: 1, cityId: 'atlantis', why: '', sourceRefs: [] }])
     expect(views).toEqual([])
+  })
+})
+
+describe('splitPicks', () => {
+  it('puts ranks 1–15 in the card grid and 16–25 in the compact rows', () => {
+    expect(CARD_PICKS).toBe(15)
+    const { cards, rest } = splitPicks(pickViews([]))
+    expect(cards.map((v) => v.pick.rank)).toEqual(Array.from({ length: 15 }, (_, i) => i + 1))
+    expect(rest.map((v) => v.pick.rank)).toEqual(Array.from({ length: 10 }, (_, i) => i + 16))
+    // Compact rows carry profiles too, so a tap can open them.
+    expect(rest.every(isProfiled)).toBe(true)
+  })
+
+  it('keeps an unprofiled later pick in the rows and leaves an unprofiled top pick out of the grid', () => {
+    const picks = [
+      { ...EXPAT_PICKS[0], profile: undefined },
+      EXPAT_PICKS[1],
+      { ...EXPAT_PICKS[20], profile: undefined },
+    ]
+    const { cards, rest } = splitPicks(pickViews([], picks))
+    expect(cards.map((v) => v.pick.rank)).toEqual([2])
+    expect(rest.map((v) => v.pick.rank)).toEqual([21])
+    expect(isProfiled(rest[0])).toBe(false)
   })
 })
 

@@ -7,21 +7,16 @@ Give picks 16–25 (Medellín, Cuenca, Madeira, Da Nang, Montevideo, Nice, Flore
 2026-11-06 · tests: 93 pass (11 files) · typecheck: clean · build: ok (main chunk 345.6 kB)
 
 ## Now
-Stage 1 of 1 · Profiles 16–25
-Mode: autopilot
-Risk: UI only (bundled reference data; accuracy checked against sources)
-Checks:
-- [ ] All 25 picks in `src/data/expatPicks.ts` have a full profile, scores calibrated against the existing 15, sources with http(s) urls (proof: test)
-- [ ] Material risks and unconfirmed facts for the ten are stated or hedged (proof: review of the data file)
-- [ ] In the Atlas, tapping a 16–25 row opens its profile (Make destination from there), and the "Top pick #n" marker opens the profile for all 25 (proof: run the product)
-- [ ] Phone and desktop, light and dark, keyboard, no console errors; tests, typecheck, build green; preview republished (proof: screenshots + commands + artifact URL)
-Open: pushing to main deploys the live site — ask the user first
+All stages done. Committed locally, not yet pushed — pushing to main deploys the live site; waiting on the user's go.
+Live: https://onedigerati.github.io/eVelo-v2/ (deploys on push to main)
+Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (republish: `npm run build && node scripts/artifact-page.mjs`) — updated with profiles 16–25
 
 ## Stages
-- [ ] 1. Profiles 16–25 — research, data, Atlas wiring, verify, preview
+- [x] 1. Profiles 16–25 — research, data, Atlas wiring, verify, preview
 
 ## Decisions
 - 2026-11-06 · The 16–25 list keeps its compact layout; a row tap opens the profile instead of setting the destination — consistent with the top-15 cards; Make destination lives in the profile.
+- 2026-11-06 · Scores for 16–25 kept as researched except Bangkok climate 2→3 (matches Kuala Lumpur); first 1s on the list (Nice/Florence cost, Split/Da Nang visa) and first 5 for healthcare (Nice) are supported by cost indices and visa/healthcare evidence. Claims from researchers' own knowledge (tax treaties, advisory levels) are hedged as "reportedly".
 
 ## Open questions
 - Some 2026 single-stock months are very large (INTC +114% Apr 2026; MU/SNOW/DDOG ~+87% May 2026); match Yahoo raw bars but unverified against a second source.

@@ -19,7 +19,7 @@ export interface CityListProps {
   compare: string[]
   onToggleCompare: (id: string) => void
   onChoose: (id: string) => void
-  /** Open a top pick's profile (cities ranked 1–15 in the expat picks). */
+  /** Open an expat pick's profile (any of the 25 picks that carries one). */
   onOpenPick?: (id: string) => void
 }
 
