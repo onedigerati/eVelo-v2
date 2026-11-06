@@ -7,17 +7,17 @@ Make the Atlas trustworthy and useful for someone choosing where to retire abroa
 2026-11-06 · tests: 65 pass (9 files) · typecheck: clean · build: ok (main chunk 345.6 kB)
 
 ## Now
-Stage 1 of 3 · Verify costs
-Risk: data accuracy (no user input, auth, money handling or secrets)
+Stage 2 of 3 · Profiles
+Mode: autopilot
+Risk: UI only (bundled reference data; accuracy checked against sources)
 Checks:
-- [ ] The 25 picks are chosen from published retiree/expat rankings, each with its sources listed (proof: data file + test that 25 ids are flagged with source and date)
-- [ ] Each of the 25 has its four cost indices and healthcare factor checked against current published figures; changes of more than 10% are listed in the commit (proof: comparison table in the commit message)
-- [ ] Every city carries a `verified` record or is marked as an estimate, and the sources line names real sources and dates (proof: test)
-- [ ] Atlas still ranks and compares correctly with the new numbers (proof: tests + run the product)
+- [ ] `src/data/expatPicks.ts` ranks the 25 picks with their sources, and the top 15 have full profiles: tagline, summary, six 1–5 scores, seven facts, drawbacks, sources (proof: test)
+- [ ] Every pick id exists in the city data, every source has an http(s) url, and the ranking method and source list are exported for the app to cite (proof: test)
+- [ ] Facts the research couldn't confirm are hedged, and the material risks are stated: Costa Rica's pending 15% tax bill on foreign investment income, Puerto Vallarta's Feb 2026 cartel unrest, Pensionado visas not accepting portfolio income (proof: review of the data file)
 Open: none
 
 ## Stages
-- [ ] 1. Verify costs — choose the top 25 for retirees, check their cost/healthcare data against current sources, label verified vs estimate
+- [x] 1. Verify costs — choose the top 25 for retirees, check their cost/healthcare data against current sources, label verified vs estimate
 - [ ] 2. Profiles — ranked profiles for the top 15: score by factor, why it ranks, drawbacks, sources
 - [ ] 3. Atlas picks — "Top picks for expats" in the Atlas, profile beside the cost comparison and plan odds, verified/estimate labels; phone + both themes; preview
 
@@ -27,6 +27,11 @@ Open: none
 - 2026-11-06 · Ranking blends published sources (InterNations Expat City Ranking, International Living Global Retirement Index and similar) with cost, healthcare, safety and visa factors, weighted for retirees; sources cited in the app — user's choice.
 - 2026-11-06 · Numbeo's figures are used to check and round our own indices, not bulk-copied, and no script scrapes them — their terms restrict bulk copying.
 - 2026-11-06 · If a top pick isn't already in the dataset, add it rather than skip it.
+- 2026-11-06 · Top 25 chosen from IL Global Retirement Index 2026, Live and Invest Overseas 2026, Expat Insider 2026/2025, InterNations city ranking 2024 (latest city edition found), Global Peace Index 2026 and Forbes 2026; all 25 already in the dataset. Dubai, Singapore, London and Dublin were ranked lower for retirees (no retiree visa route, or high cost).
+- 2026-11-06 · Cost indices checked against Numbeo's current city table (read 2026-11-06, cross-checked with the 2026 Mid-Year edition and livingcost.org). US home cities were updated from the same table too: comparisons are destination ÷ home, and US restaurants ran ~13% low (up to 34%) and rent was off by up to 17%. US cities without full Numbeo rows (Scottsdale, Asheville, Sarasota) stay estimates.
+- 2026-11-06 · Healthcare factor = midpoint of local/public cover and an international plan (Cigna/Allianz, age 60) vs a 2026 US benchmark-silver couple at 60 (~$35.9k/yr incl. ~$4k out-of-pocket), rounded to 0.05. Applies per country.
+- 2026-11-06 · Verified cities carry source, date and confidence; Boquete is low confidence (9 Numbeo contributors) and Medellín averages two disagreeing Numbeo editions.
+- 2026-11-06 · Stage 2 profile research runs alongside stage 1 — the 15 cities were settled, so research doesn't need to wait on the cost data.
 
 ## Open questions
 - Some 2026 single-stock months are very large (INTC +114% Apr 2026; MU/SNOW/DDOG ~+87% May 2026); match Yahoo raw bars but unverified against a second source.

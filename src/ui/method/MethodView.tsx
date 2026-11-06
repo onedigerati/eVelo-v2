@@ -268,8 +268,9 @@ export function MethodView() {
             <p>
               Market data as of <b>{DATA.marketAsOf}</b>. Exchange rates as of{" "}
               <b>{DATA.fxAsOf}</b> (open.er-api.com), refreshed live in your
-              browser when the service is reachable. City cost indices as of{" "}
-              <b>{DATA.colAsOf}</b>. A scheduled job refreshes the market data
+              browser when the service is reachable. City cost indices for verified cities were checked against
+              Numbeo in <b>{DATA.colAsOf}</b>; the rest are rough estimates. A
+              scheduled job refreshes the market data
               weekly.
             </p>
             <p>

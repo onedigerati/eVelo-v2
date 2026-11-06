@@ -67,6 +67,22 @@ export interface City {
   healthcare: number
   /** Short, hedged notes on tax / banking realities for a US retiree. */
   notes?: string[]
+  /**
+   * Provenance of `idx` (and the country healthcare factor) when they were
+   * checked against a published source. A city without it carries rough
+   * estimates only. `confidence: 'low'` marks thin source data (few
+   * contributors, derived values); `note` explains mappings or blends.
+   */
+  verified?: CityVerification
+}
+
+export interface CityVerification {
+  source: string
+  url?: string
+  /** ISO date (YYYY-MM-DD) the source was read. */
+  asOf: string
+  confidence: 'high' | 'low'
+  note?: string
 }
 
 export type ModelMethod = 'bootstrap' | 'fat-tail'

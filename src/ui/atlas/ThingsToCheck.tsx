@@ -45,7 +45,7 @@ export function SourcesLine() {
   return (
     <div className="sources">
       <p className="sources__line">
-        <b>Estimates, not tax or legal advice.</b> Cost indices as of {COL_AS_OF}; exchange rates {fxSource === 'live' ? 'live' : 'bundled'}
+        <b>Estimates, not tax or legal advice.</b> Cost indices for verified cities checked {COL_AS_OF}, others rough estimates; exchange rates {fxSource === 'live' ? 'live' : 'bundled'}
         , as of {fxAsOf}.{' '}
         <button type="button" className="link-btn" aria-expanded={open} onClick={() => setOpen((v) => !v)}>
           {open ? 'Hide sources' : 'Sources'}
