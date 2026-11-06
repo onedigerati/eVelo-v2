@@ -12,7 +12,7 @@ Checks:
 - [ ] Method page explains the model in plain language with the real parameters (proof: run the product)
 - [ ] market.json is no longer in the main bundle; main chunk < 500 kB (proof: command)
 - [ ] Routes work as plain hashes (`#atlas`) as well as `#/atlas` (proof: run the product)
-- [ ] Fresh-eyes engine review: findings fixed or logged (proof: review report + tests)
+- [x] Fresh-eyes engine review: findings fixed or logged (proof: review report + tests)
 - [ ] All views at 360/390/900/1440, light and dark: no horizontal scroll, no console errors (proof: screenshots)
 - [ ] README and scheduled data-refresh workflow exist; `npm run build` and `npm test` pass (proof: command)
 Open: none
@@ -37,6 +37,7 @@ Open: none
 - 2026-11-06 · Single-stock means capped at 35% history weight (balanced) / 15% (conservative); 'historical' uses the real-window mean only — 100% NVDA was projecting 24%/yr for 30 years.
 - 2026-11-06 · Data months keyed by UTC month of timestamp+12h; script fails on gaps or a stale last month — a DST offset bug had shifted/merged months.
 - 2026-11-06 · Stages 3 and 4 built in parallel: inputs live in `src/ui/plan`, results + worker client in `src/ui/outlook` / `src/state/sim.ts` — disjoint files.
+- 2026-11-06 · Review fixes: shared backfill donor months; explicit priors for bonds/real estate/commodities; insolvency counts as a forced sale; real stats added. Deferred: young asset paired with a full-history asset keeps only beta-linked correlation in backfilled months (NVDA/AMD 0.27 vs 0.53); a call that can't reach target counts as broken.
 - 2026-11-06 · City cost indices are curated approximations from public indices, labeled as estimates and user-overridable per category.
 
 ## Open questions
