@@ -1,35 +1,31 @@
-# Saved portfolios plan
+# BBD destinations plan
 
 ## Goal
-Let the user name the current holdings mix, save it, and pick it again later from the Portfolio section, alongside the built-in model portfolios; rename and delete saved ones. Saved in the browser (no account), holdings and weights only — applying one never touches budget, borrowing or other settings. Done = save / apply / rename / delete work on the live site, survive a reload, tests green, phone and desktop in both themes.
+Find the best places to retire for someone living on buy-borrow-die: a portfolio that is never sold, spending funded by borrowing against it, and the estate passed on with a step-up. The ranking and the simulation weigh what actually matters for that: the destination's wealth tax and inheritance tax (now modeled in the engine), tax on dividends and foreign income, residency routes that accept assets rather than a pension, whether a US broker will still lend to a resident there, and healthcare cost and quality into the late 70s and beyond, alongside cost, safety, climate and flights. Belize and the other places skipped last time (LIOS 2026 #4–10) are added with verified costs, and the candidate pool is not limited to cities already in the dataset. Done = the live Atlas ranks the new top 25 with BBD-specific scores and sourced profiles, each city's odds and estate reflect its local taxes, tests are green, and it works on phone and desktop in both themes.
 
 ## Baseline
-2026-11-06 · tests: 96 pass (11 files) · typecheck: clean · build: ok (main chunk 346.1 kB)
+2026-11-06 · tests: 107 pass (12 files) · typecheck: clean · build: ok (main chunk 354.0 kB)
 
 ## Now
-All stages done. Pushed and deployed 2026-11-06 (user approved); saved portfolios and the full-path Atlas are live.
-Live: https://onedigerati.github.io/eVelo-v2/ (deploys on push to main)
-Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (republish: `npm run build && node scripts/artifact-page.mjs`)
+Stage 1 of 5 · BBD research
+Risk: none (research notes only)
+Checks:
+- [ ] `docs/research/bbd-ranking-2026-11.md` covers every candidate (current 25, Cayo, Ambergris Caye, Gascony, Crete, Tarragona, Hua Hin, Kotor, Las Terrenas, plus any the research surfaces) with a sourced row per country: wealth tax, inheritance/estate tax on residents and the US treaty position, tax on dividends/interest/foreign income, asset-based residency routes, broker/margin access for residents, healthcare cost and insurance age limits (proof: read the doc; every row cites a URL actually read)
+- [ ] Each candidate dropped from the top 25 has a written reason (proof: read the doc)
+Open: none
 
 ## Stages
-- [x] 1. Saved portfolios — storage module with tests, Portfolio-section UI, verify in the running app, preview
-  - [x] "Save as…" names the current mix; it appears under "Your portfolios" and is marked active
-  - [x] Applying a saved portfolio replaces holdings only (budget etc. unchanged), with the same confirm step as model portfolios
-  - [x] Rename and delete work; saving under an existing name asks before replacing it
-  - [x] Saved portfolios survive a reload; corrupt or unknown-ticker storage is cleaned, never crashes
-  - [x] Works on phone and desktop, light and dark
-- [x] 2. Atlas on the plan's full path count — follow-up the user asked for after Mérida jumped from 16 to 14 when picked
-  - [x] Every city is ranked on the plan's own futures (no 1,500 cap); a city's Atlas odds equal the Outlook's with it as destination (engine test + live check: Mérida 81% / St. Louis 64% in both views)
-  - [x] Choosing a destination changes no city's rank or odds (live check across all 96 rows)
-  - [x] Atlas small print and Method page describe the shared path count
-- [x] 3. Info bubbles stay on screen — follow-up the user reported (cost-basis bubble cut off by the left rail)
-  - [x] Every info bubble shifts sideways and flips above/below to stay inside the rail and viewport (all 5 in the rail checked, desktop 1400 px and phone 390 px)
-  - [x] On touch, tapping the info button opens its bubble and a second tap closes it (before, the tap's focus opened it and its click closed it again, live site included)
+- [ ] 1. BBD research — country tax, residency, lending and healthcare facts for every candidate, sourced; new top-25 draft
+- [ ] 2. New cities — add Belize (Cayo, Ambergris Caye), the other skipped LIOS picks and any research adds, with verified costs and healthcare factors
+- [ ] 3. Local taxes — wealth and inheritance tax per country in the engine, with tests; odds and estate reflect them; Method page explains
+- [ ] 4. BBD ranking — rerank the top 25 with new tax/estate and lending factors; profiles for newcomers, refreshed facts for the rest
+- [ ] 5. Atlas & verify — tax lines in "Your plan here", phone + both themes, preview, deploy on approval
 
 ## Decisions
-- 2026-11-06 · Atlas runs every city on the plan's full path count (was capped at 1,500, with the Outlook's number swapped in for home and destination) — user wanted all cities on the same simulation so picking a city never moves it; ranking takes ~1 s at 4,000 paths, ~2.3 s at 10,000, in the worker. Replaces the standing decision that the Atlas overlays the Outlook's odds.
-- 2026-11-06 · Saving under an existing name (any case) replaces that portfolio's holdings after an on-screen warning, rather than a separate confirm step; up to 30 saved, names up to 40 characters.
-- 2026-11-06 · Saved portfolios live in localStorage under their own key (`evelo:v2:portfolios`), separate from the plan, and are not part of share links — user agreed to browser-only, holdings-only.
+- 2026-11-06 · Belize and LIOS 2026 #4–10 (Gascony, Crete, Tarragona, Cayo, Hua Hin, Kotor, Las Terrenas) are added — last round silently ranked only cities already in the dataset, breaking its own "add it rather than skip it" rule; user asked to add them.
+- 2026-11-06 · Candidates are not limited to the dataset; every candidate dropped from the top 25 gets a written reason.
+- 2026-11-06 · Ranking is judged for buy-borrow-die retirees (tax on holding and passing on a portfolio, asset-based residency, US-broker lending abroad, healthcare into old age) — user: "that's kind of the whole point".
+- 2026-11-06 · The simulation applies each destination's annual wealth tax and inheritance tax — user's choice over score-only, so odds and estates reflect what the plan really keeps.
 
 ## Open questions
 - Some 2026 single-stock months are very large (INTC +114% Apr 2026; MU/SNOW/DDOG ~+87% May 2026); match Yahoo raw bars but unverified against a second source.
@@ -50,8 +46,11 @@ Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (republish: `npm run 
 - 2026-11-06 · Profile scores are eVelo's own 1–5 assessment on one scale across all picks, checked against GPI, US advisories and the cost indices. (from [Expat picks](plans/2026-11-06-expat-picks.md))
 - 2026-11-06 · New logo: the user's "escape velocity" concept (ring, script e breaking into a rising chart, rocket) redrawn as SVG — user picked the Homage study of four (https://claude.ai/artifact/1gJfSyj9E8qjbjeGsj9hkX). Gradient uses new `--brand-1/--brand-2` tokens (accent green → teal-blue); `Mark`, `public/favicon.svg` and `public/apple-touch-icon.png` share one drawing. (from [Profiles 16–25](plans/2026-11-06-profiles-16-25.md))
 - 2026-11-06 · Wordmark set in Geist Semibold (23px, -0.035em), all ink, replacing Instrument Serif with a green italic V — the serif's hairlines looked faint beside the heavy mark and the green V competed with it; user chose this from six studies (https://claude.ai/artifact/VEK952PiL72D8BwTbWBqa3). (from [Profiles 16–25](plans/2026-11-06-profiles-16-25.md))
+- 2026-11-06 · Atlas runs every city on the plan's full path count (was capped at 1,500, with the Outlook's number swapped in for home and destination) — user wanted all cities on the same simulation so picking a city never moves it; ranking takes ~1 s at 4,000 paths, ~2.3 s at 10,000, in the worker. Replaces the standing decision that the Atlas overlays the Outlook's odds. (from [Saved portfolios](plans/2026-11-06-saved-portfolios.md))
+- 2026-11-06 · Saved portfolios live in localStorage under their own key (`evelo:v2:portfolios`), separate from the plan, and are not part of share links — user agreed to browser-only, holdings-only. (from [Saved portfolios](plans/2026-11-06-saved-portfolios.md))
 
 ## Shipped
 - 2026-11-06 · eVelo v2 build: BBD planner with engine, plan inputs, outlook charts, Atlas and methodology, live on GitHub Pages — [plan](plans/2026-11-06-evelo-v2-build.md)
 - 2026-11-06 · Expat picks: verified costs for 25 destinations + US home cities, ranked top 25 with sources, profiles for the top 15 in the Atlas — [plan](plans/2026-11-06-expat-picks.md)
 - 2026-11-06 · Profiles 16–25: full profiles for picks 16–25, plus the new escape-velocity logo and Geist wordmark — [plan](plans/2026-11-06-profiles-16-25.md)
+- 2026-11-06 · Saved portfolios: save/apply/rename/delete holdings mixes, Atlas on the plan's full path count, info bubbles kept on screen — [plan](plans/2026-11-06-saved-portfolios.md)
