@@ -1,37 +1,31 @@
 import { useStore } from '../../state/store'
 import { currencyCompact, percent } from '../format'
 import { InfoTip, NumberField, Section, Slider } from '../primitives'
+import { HoldingsEditor } from './HoldingsEditor'
 
 export function PortfolioSection() {
   const portfolio = useStore((s) => s.inputs.portfolio)
   const basis = useStore((s) => s.inputs.basisFraction)
-  const holdings = useStore((s) => s.inputs.holdings)
+  const n = useStore((s) => s.inputs.holdings.length)
   const setInput = useStore((s) => s.setInput)
   return (
-    <Section index="01" title="Portfolio" summary={`${currencyCompact(portfolio)} · ${holdings.length} holdings`}>
+    <Section
+      index="01"
+      title="Portfolio"
+      summary={`${currencyCompact(portfolio)} · ${n} ${n === 1 ? 'holding' : 'holdings'} · ${percent(basis)} basis`}
+    >
       <NumberField
         label="Portfolio value"
         kind="currency"
         size="lg"
         value={portfolio}
         min={0}
+        max={1e10}
         step={50_000}
         onChange={(v) => setInput('portfolio', v)}
-        hint="Taxable brokerage assets you would borrow against."
+        hint="Taxable brokerage assets you would borrow against. Try “2.5m”."
       />
-      <div>
-        <div className="field__row">
-          <span className="field__label">Holdings</span>
-        </div>
-        <ul className="holding-chips" role="list">
-          {holdings.map((h) => (
-            <li key={h.symbol} className="holding-chip">
-              <span className="holding-chip__sym num">{h.symbol}</span>
-              <span className="holding-chip__w num">{percent(h.weight)}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <HoldingsEditor />
       <Slider
         label="Cost basis"
         aside={
@@ -47,6 +41,7 @@ export function PortfolioSection() {
         format="percent"
         ticks={[0, 0.25, 0.5, 0.75, 1]}
         onChange={(v) => setInput('basisFraction', v)}
+        hint={`${currencyCompact(portfolio * (1 - basis))} of unrealized gains.`}
       />
     </Section>
   )

@@ -1,4 +1,5 @@
 import './primitives.css'
+import './viz.css'
 
 export { AnimatedNumber } from './AnimatedNumber'
 export { Badge, type Tone } from './Badge'
@@ -16,3 +17,5 @@ export { Stat } from './Stat'
 export { toast, dismissToast, Toaster, type ToastTone } from './Toast'
 export { Toggle } from './Toggle'
 export { Tooltip, InfoTip } from './Tooltip'
+export { Sparkline } from './Sparkline'
+export { StackBar, type StackSegment } from './StackBar'
