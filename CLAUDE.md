@@ -6,7 +6,8 @@ Buy-Borrow-Die retirement planner. Static site: React 19 + Vite + TypeScript, ha
 - `npm run dev` — dev server
 - `npm test` — vitest (engine tests in `src/engine/__tests__`)
 - `npm run typecheck` / `npm run build`
-- `npm run data:refresh` — refetch market data (Yahoo monthly adjusted closes + FRED CPI) into `src/data/market.json`
+- `npm run data:refresh` — refetch market data (Yahoo monthly adjusted closes + FRED CPI) into `src/data/market.json`, derive `src/data/market-index.json`, refresh `src/data/fx.json`
+- `npm run data:index` — rebuild the UI index from market.json (a test checks they match)
 
 ## Layout
 - `src/engine/` — pure TS simulation (no DOM). `types.ts` is the contract with the UI.

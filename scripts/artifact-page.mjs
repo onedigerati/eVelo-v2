@@ -3,11 +3,14 @@
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs'
 const html = readFileSync('dist/index.html', 'utf8')
 const js = html.match(/src="\.\/(assets\/[^"]+\.js)"/)[1]
-const css = html.match(/href="\.\/(assets\/[^"]+\.css)"/)[1]
+// Every stylesheet and preloaded chunk index.html links (Vite may split shared CSS/JS).
+const css = [...html.matchAll(/rel="stylesheet"[^>]*href="\.\/(assets\/[^"]+\.css)"/g)].map((m) => m[1])
+const preload = [...html.matchAll(/rel="modulepreload"[^>]*href="\.\/(assets\/[^"]+\.js)"/g)].map((m) => m[1])
 const page = `<title>eVelo</title>
 <meta name="description" content="Stress-test a Buy-Borrow-Die retirement across thousands of market futures, at home or abroad.">
 <script>try{var t=JSON.parse(localStorage.getItem('evelo:v2')||'{}').theme;if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
-<link rel="stylesheet" href="${css}">
+${css.map((c) => `<link rel="stylesheet" href="${c}">`).join('\n')}
+${preload.map((j) => `<link rel="modulepreload" href="${j}">`).join('\n')}
 <div id="root"></div>
 <script type="module" src="${js}"></script>
 `

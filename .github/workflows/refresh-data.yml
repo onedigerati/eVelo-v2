@@ -1,0 +1,58 @@
+# Weekly market-data refresh: Yahoo monthly total returns + FRED CPI -> src/data/market.json,
+# the derived src/data/market-index.json, and FX spot rates -> src/data/fx.json.
+# Commits only when something changed and the tests still pass, then dispatches deploy.yml
+# (pushes made with GITHUB_TOKEN don't trigger other workflows on their own).
+name: Refresh market data
+
+on:
+  schedule:
+    - cron: '17 6 * * 1' # Mondays 06:17 UTC (markets closed; last month's bar is final)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: refresh-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - name: Fetch market data, CPI and FX
+        run: npm run data:refresh
+
+      - name: Test against the new data
+        run: npm test
+
+      - name: Commit if changed
+        id: commit
+        run: |
+          if git diff --quiet -- src/data/market.json src/data/market-index.json src/data/fx.json; then
+            echo "Data unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/market.json src/data/market-index.json src/data/fx.json
+          git commit -m "Data: weekly refresh ($(date -u +%Y-%m-%d))"
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Redeploy the site
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref "${{ github.ref_name }}"
