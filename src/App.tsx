@@ -1,5 +1,6 @@
 import { MotionConfig } from 'framer-motion'
 import { useEffect } from 'react'
+import { useSimulationSync } from './state/sim'
 import { OPENED_FROM_LINK } from './state/store'
 import { useHashRoute, useThemeEffect } from './ui/hooks'
 import { toast } from './ui/primitives'
@@ -10,6 +11,7 @@ let announced = false
 export function App() {
   useThemeEffect()
   useHashRoute()
+  useSimulationSync()
 
   useEffect(() => {
     if (!OPENED_FROM_LINK || announced) return

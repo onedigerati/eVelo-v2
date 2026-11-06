@@ -23,6 +23,10 @@ export interface AppState {
   solve: SolveResult | null
   status: Status
   error: string | null
+  /** Success rate of the same plan staying in the home city (only when a destination is set). */
+  baseline: Baseline | null
+  /** True while the safe-spend solver is running for the current inputs. */
+  solving: boolean
 
   setInput: <K extends keyof PlanInputs>(key: K, value: PlanInputs[K]) => void
   patchInputs: (patch: Partial<PlanInputs>) => void
@@ -34,6 +38,13 @@ export interface AppState {
   setAtlas: (a: AtlasEntry[] | null) => void
   setSolve: (s: SolveResult | null) => void
   setStatus: (s: Status, error?: string | null) => void
+  setBaseline: (b: Baseline | null) => void
+  setSolving: (v: boolean) => void
+}
+
+export interface Baseline {
+  homeCityId: string
+  successRate: number
 }
 
 const LS_KEY = 'evelo:v2'
@@ -90,6 +101,8 @@ export const useStore = create<AppState>()((set) => ({
   solve: null,
   status: 'idle',
   error: null,
+  baseline: null,
+  solving: false,
 
   setInput: (key, value) => set((s) => ({ inputs: { ...s.inputs, [key]: value } })),
   patchInputs: (patch) => set((s) => ({ inputs: { ...s.inputs, ...patch } })),
@@ -101,6 +114,8 @@ export const useStore = create<AppState>()((set) => ({
   setAtlas: (atlas) => set({ atlas }),
   setSolve: (solve) => set({ solve }),
   setStatus: (status, error = null) => set({ status, error }),
+  setBaseline: (baseline) => set({ baseline }),
+  setSolving: (solving) => set({ solving }),
 }))
 
 // Persist inputs + theme (debounced so slider drags don't thrash storage).
@@ -111,5 +126,5 @@ useStore.subscribe((s, prev) => {
   t = setTimeout(() => writePersisted({ inputs: s.inputs, theme: s.theme }), 250)
 })
 
-/** Headline success rate: the engine's, or the placeholder until it runs. */
+/** Headline success rate: the engine's, or the placeholder for the instant before the first run lands. */
 export const selectSuccess = (s: AppState) => s.result?.successRate ?? PLACEHOLDER_SUCCESS

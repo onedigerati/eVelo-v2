@@ -1,31 +1,39 @@
 import { motion } from 'framer-motion'
 import type { ReactNode } from 'react'
+import { useStore } from '../../state/store'
 import { rise } from '../motion'
 import { Card, Skeleton, cx } from '../primitives'
 
 export interface ChartFrameProps {
-  eyebrow: string
+  eyebrow: ReactNode
   title: ReactNode
+  /** One sentence that interprets the data. */
   subtitle?: ReactNode
   actions?: ReactNode
-  /** CSS aspect ratio of the plot area, reserved up front so nothing shifts. */
+  /** CSS aspect ratio of the skeleton shown before data lands. */
   aspect?: string
   span?: 'full' | 'half'
   children?: ReactNode
   className?: string
+  /** Extra "stale" signal (e.g. solver still running) on top of the global recompute state. */
+  stale?: boolean
 }
 
 /** Card frame every Outlook chart lives in. Without children it shows a reserved skeleton plot. */
-export function ChartFrame({ eyebrow, title, subtitle, actions, aspect = '16 / 7', span = 'half', children, className }: ChartFrameProps) {
+export function ChartFrame({ eyebrow, title, subtitle, actions, aspect = '16 / 7', span = 'half', children, className, stale }: ChartFrameProps) {
+  const running = useStore((s) => s.status === 'running')
+  const empty = children === undefined || children === null || children === false
   return (
-    <motion.div className={cx('chart-frame', `chart-frame--${span}`, className)} variants={rise}>
+    <motion.div className={cx('chart-frame', `chart-frame--${span}`, (running || stale) && !empty && 'is-stale', className)} variants={rise}>
       <Card eyebrow={eyebrow} title={title} subtitle={subtitle} actions={actions}>
-        <div className="chart-frame__plot" style={{ aspectRatio: aspect }}>
-          {children ?? (
+        <div className={cx('chart-frame__plot', empty && 'is-empty')} style={empty ? { aspectRatio: aspect } : undefined}>
+          {empty ? (
             <div className="chart-frame__empty">
               <ChartGhost />
               <Skeleton className="chart-frame__skel" height="100%" radius="var(--radius-md)" />
             </div>
+          ) : (
+            children
           )}
         </div>
       </Card>

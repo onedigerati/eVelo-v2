@@ -1,74 +1,206 @@
-import { motion } from 'framer-motion'
-import { PLACEHOLDER_SUCCESS, selectSuccess, useStore } from '../../state/store'
-import { percent } from '../format'
-import { rise, stagger } from '../motion'
-import { AnimatedNumber, Badge, Stat, cx } from '../primitives'
+import { AnimatePresence, motion } from 'framer-motion'
+import type { ReactNode } from 'react'
+import type { PlanInputs } from '../../engine/types'
+import { useStore } from '../../state/store'
+import { percent, points } from '../format'
+import { ease, rise, stagger } from '../motion'
+import { AnimatedNumber, Badge, Skeleton, Stat, cx } from '../primitives'
 import { toneFor } from '../verdict'
+import { cityName } from './cards'
 
-/** Placeholder split used until the engine reports bruised/broken rates. */
-function useOutcomeSplit() {
-  const result = useStore((s) => s.result)
-  const success = useStore(selectSuccess)
-  if (result) return { holds: result.successRate, bruised: result.bruisedRate, broken: result.brokenRate, dots: result.outcomeDots }
-  const bruised = 0.09
-  const broken = 1 - PLACEHOLDER_SUCCESS - bruised
-  const n = Math.round(success * 100)
-  const nb = Math.round(bruised * 100)
-  const dots = Array.from({ length: 100 }, (_, i) => (i < n ? 0 : i < n + nb ? 1 : 2)) as (0 | 1 | 2)[]
-  return { holds: success, bruised, broken, dots }
+/** "living in Bangkok from age 55" / "in St. Louis, moving to Lisbon at 60" / "staying in St. Louis". */
+export function placePhrase(i: PlanInputs): string {
+  const home = cityName(i.homeCityId)
+  if (!i.destCityId) return `staying in ${home}`
+  const dest = cityName(i.destCityId)
+  return i.moveInYears > 0 ? `in ${home}, moving to ${dest} at ${i.age + i.moveInYears}` : `living in ${dest} from age ${i.age}`
+}
+
+function headline({ tone }: { tone: 'holds' | 'bruised' | 'broken' }): { lead: ReactNode; tail: ReactNode } {
+  if (tone === 'holds')
+    return {
+      lead: (
+        <>
+          Your plan <em>holds</em> in
+        </>
+      ),
+      tail: (
+        <>
+          of <em>futures.</em>
+        </>
+      ),
+    }
+  if (tone === 'bruised')
+    return {
+      lead: (
+        <>
+          Your plan is <em>fragile:</em> it holds in
+        </>
+      ),
+      tail: <>of futures.</>,
+    }
+  return {
+    lead: (
+      <>
+        Your plan <em>breaks</em> in most futures. Only
+      </>
+    ),
+    tail: (
+      <>
+        <em>hold.</em>
+      </>
+    ),
+  }
 }
 
 export function VerdictHero() {
-  const age = useStore((s) => s.inputs.age)
-  const horizon = useStore((s) => s.inputs.horizonYears)
-  const hasResult = useStore((s) => s.result !== null)
-  const split = useOutcomeSplit()
-  const tone = toneFor(split.holds)
-  const lowOdds = split.holds < 0.6
+  const inputs = useStore((s) => s.inputs)
+  const result = useStore((s) => s.result)
+  const status = useStore((s) => s.status)
+  const error = useStore((s) => s.error)
+  const baseline = useStore((s) => s.baseline)
+
+  const shown = result?.inputs ?? inputs
+  const { age, horizonYears: horizon } = shown
+  const holds = result?.successRate ?? 0
+  const tone = result ? toneFor(holds) : 'holds'
+  const { lead, tail } = headline({ tone })
+  const n = Math.round(holds * 100)
+  const dots = result?.outcomeDots ?? null
+
+  const dest = shown.destCityId
+  const showChip = !!dest && !!result
+  const delta = baseline && result ? result.successRate - baseline.successRate : 0
 
   return (
-    <motion.section className={cx('verdict', `verdict--${tone}`)} variants={stagger(0.08, 0.05)} initial="hidden" animate="show" aria-labelledby="verdict-h">
+    <motion.section
+      className={cx('verdict', `verdict--${tone}`, !result && 'is-loading')}
+      variants={stagger(0.08, 0.05)}
+      initial="hidden"
+      animate="show"
+      aria-labelledby="verdict-h"
+      aria-busy={status === 'running'}
+    >
       <motion.div className="verdict__meta" variants={rise}>
         <span className="t-eyebrow">
           The verdict · {horizon} years, age {age} → {age + horizon}
         </span>
-        {!hasResult && <Badge tone="neutral">Illustrative</Badge>}
+        <AnimatePresence initial={false}>
+          {status === 'running' && (
+            <motion.span key="run" className="verdict__status" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.2 }}>
+              <span className="verdict__status-dot" aria-hidden="true" />
+              {result ? 'Recomputing' : `Simulating ${shown.paths.toLocaleString('en-US')} futures`}
+            </motion.span>
+          )}
+          {status === 'error' && (
+            <motion.span key="err" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+              <Badge tone="broken">Simulation failed: {error}</Badge>
+            </motion.span>
+          )}
+        </AnimatePresence>
       </motion.div>
 
       <h1 id="verdict-h" className="verdict__headline">
         <motion.span className="verdict__lead t-display" variants={rise}>
-          Your plan <em>holds</em> in{lowOdds ? ' only' : ''}
+          <AnimatePresence mode="popLayout" initial={false}>
+            <motion.span key={tone} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.45, ease }}>
+              {lead}
+            </motion.span>
+          </AnimatePresence>
         </motion.span>
         <motion.span className="verdict__number t-hero" variants={rise}>
-          <AnimatedNumber value={split.holds} from={0} format={(v) => String(Math.round(v * 100))} duration={1.4} delay={0.25} aria-label={percent(split.holds)} />
-          <span className="verdict__pct" aria-hidden="true">%</span>
+          {result ? (
+            <>
+              <AnimatedNumber value={holds} from={0} format={(v) => String(Math.round(v * 100))} duration={1.2} aria-label={percent(holds)} />
+              <span className="verdict__pct" aria-hidden="true">
+                %
+              </span>
+            </>
+          ) : (
+            <Skeleton className="verdict__num-skel" width="1.25em" height="0.78em" radius="0.12em" />
+          )}
         </motion.span>
         <motion.span className="verdict__tail t-display" variants={rise}>
-          of <em>futures.</em>
+          {tail}
         </motion.span>
       </h1>
 
       <motion.p className="t-lede verdict__lede" variants={rise}>
-        In {Math.round(split.holds * 100)} of every 100 simulated markets you never face a forced sale and stay solvent to age{' '}
-        {age + horizon}. Borrowing covers your lifestyle; the portfolio is never sold.
+        Over {horizon} years, age {age} to {age + horizon}, {placePhrase(shown)}.{' '}
+        {result ? (
+          tone === 'broken' ? (
+            <>Only {n} of every 100 simulated markets get through without a forced sale; most hit the margin-call line first.</>
+          ) : (
+            <>
+              In {n} of every 100 simulated markets you never face a forced sale and stay solvent to {age + horizon}.
+            </>
+          )
+        ) : (
+          <>Running thousands of market histories through your plan…</>
+        )}
       </motion.p>
 
-      <motion.div className="verdict__dots" variants={rise} role="img" aria-label={`${Math.round(split.holds * 100)} of 100 futures hold, ${Math.round(split.bruised * 100)} survive a margin call, ${Math.round(split.broken * 100)} break.`}>
-        {split.dots.map((d, i) => (
-          <motion.i
-            key={i}
-            className={cx('dot', d === 0 ? 'dot--holds' : d === 1 ? 'dot--bruised' : 'dot--broken')}
-            initial={{ opacity: 0, scale: 0.2 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.5 + i * 0.008, type: 'spring', stiffness: 500, damping: 24 }}
-          />
-        ))}
+      {showChip && (
+        <motion.div className="verdict__compare" variants={rise}>
+          {baseline ? (
+            <span className="cmp" aria-label={`Staying in ${cityName(baseline.homeCityId)}: ${percent(baseline.successRate)}. In ${cityName(dest)}: ${percent(holds)}.`}>
+              <span className="cmp__city">
+                {cityName(baseline.homeCityId)} <b className="num">{percent(baseline.successRate)}</b>
+              </span>
+              <span className="cmp__arrow" aria-hidden="true">
+                →
+              </span>
+              <span className="cmp__city cmp__city--dest">
+                {cityName(dest)} <b className="num">{percent(holds)}</b>
+              </span>
+              <span className={cx('cmp__delta num', delta > 0.005 ? 'is-up' : delta < -0.005 ? 'is-down' : '')}>{points(delta, 0)}</span>
+            </span>
+          ) : (
+            <Skeleton width={260} height={34} radius={999} />
+          )}
+        </motion.div>
+      )}
+
+      <motion.div
+        className="verdict__dots"
+        variants={rise}
+        role="img"
+        aria-label={
+          result
+            ? `${n} of 100 futures hold, ${Math.round(result.bruisedRate * 100)} survive a margin call, ${Math.round(result.brokenRate * 100)} break.`
+            : 'Loading outcomes'
+        }
+      >
+        {Array.from({ length: 100 }, (_, i) => {
+          const d = dots?.[i]
+          return (
+            <motion.i
+              key={i}
+              className={cx('dot', d === undefined ? 'dot--pending' : d === 0 ? 'dot--holds' : d === 1 ? 'dot--bruised' : 'dot--broken')}
+              style={{ ['--i' as string]: i }}
+              initial={{ opacity: 0, scale: 0.2 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.3 + i * 0.006, type: 'spring', stiffness: 500, damping: 24 }}
+            />
+          )
+        })}
       </motion.div>
 
       <motion.div className="verdict__stats" variants={rise}>
-        <Stat label="Holds" tone="holds" value={split.holds} format="percent" hint="No forced sale" size="sm" />
-        <Stat label="Bruised" tone="bruised" value={split.bruised} format="percent" hint="Margin call, survived" size="sm" />
-        <Stat label="Broken" tone="broken" value={split.broken} format="percent" hint="Ran out" size="sm" />
+        {result ? (
+          <>
+            <Stat label="Holds" tone="holds" value={result.successRate} format="percent" hint="Never forced to sell" size="sm" />
+            <Stat label="Bruised" tone="bruised" value={result.bruisedRate} format="percent" hint="Margin call, survived" size="sm" />
+            <Stat label="Broken" tone="broken" value={result.brokenRate} format="percent" hint="Loan overtook assets" size="sm" />
+          </>
+        ) : (
+          [0, 1, 2].map((k) => (
+            <div key={k} className="stat stat--sm">
+              <Skeleton width={60} height={10} />
+              <Skeleton width={70} height={30} radius={8} style={{ marginTop: 10 }} />
+            </div>
+          ))
+        )}
       </motion.div>
     </motion.section>
   )
