@@ -9,12 +9,12 @@ Risk: UI only (plus engine review)
 Mode: autopilot
 Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (republish: `npm run build && node scripts/artifact-page.mjs`)
 Checks:
-- [ ] Method page explains the model in plain language with the real parameters (proof: run the product)
-- [ ] market.json is no longer in the main bundle; main chunk < 500 kB (proof: command)
-- [ ] Routes work as plain hashes (`#atlas`) as well as `#/atlas` (proof: run the product)
+- [x] Method page explains the model in plain language with the real parameters (proof: run the product)
+- [x] market.json is no longer in the main bundle; main chunk < 500 kB (proof: command)
+- [x] Routes work as plain hashes (`#atlas`) as well as `#/atlas` (proof: run the product)
 - [x] Fresh-eyes engine review: findings fixed or logged (proof: review report + tests)
-- [ ] All views at 360/390/900/1440, light and dark: no horizontal scroll, no console errors (proof: screenshots)
-- [ ] README and scheduled data-refresh workflow exist; `npm run build` and `npm test` pass (proof: command)
+- [x] All views at 360/390/900/1440, light and dark: no horizontal scroll, no console errors (proof: screenshots)
+- [x] README and scheduled data-refresh workflow exist; `npm run build` and `npm test` pass (proof: command)
 Open: none
 
 ## Stages
@@ -39,6 +39,11 @@ Open: none
 - 2026-11-06 · Stages 3 and 4 built in parallel: inputs live in `src/ui/plan`, results + worker client in `src/ui/outlook` / `src/state/sim.ts` — disjoint files.
 - 2026-11-06 · Review fixes: shared backfill donor months; explicit priors for bonds/real estate/commodities; insolvency counts as a forced sale; real stats added. Deferred: young asset paired with a full-history asset keeps only beta-linked correlation in backfilled months (NVDA/AMD 0.27 vs 0.53); a call that can't reach target counts as broken.
 - 2026-11-06 · City cost indices are curated approximations from public indices, labeled as estimates and user-overridable per category.
+
+- 2026-11-06 · UI reads a prebuilt `market-index.json` (derived by `scripts/build-market-index.mjs`, sync-checked by a test); `market.json` ships only in the worker. Atlas/Method lazy; framer-motion via LazyMotion — main chunk 1,177 kB → 345 kB.
+- 2026-11-06 · Plain hashes (`#atlas`) are canonical and share links are `#p=…` — the claude.ai preview host only passes plain hashes; `#/atlas` and `#/?p=` still parse.
+- 2026-11-06 · Verdict bands 80 / 65 / 45 (holds / mostly holds / fragile / breaks), classified on the displayed whole percent; one outcome color scale (`outcomeScale.ts`, hue-adjacent `--ramp-*` stops, step at 65%) for every success color.
+- 2026-11-06 · Atlas shows the Outlook's full-path odds for the user's home and destination, so one city never shows two numbers.
 
 ## Open questions
 - In-browser fetch of arbitrary tickers needs a CORS proxy or serverless function — user decides on hosting later; not blocking.
