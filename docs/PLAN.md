@@ -11,14 +11,14 @@ Stage 2 of 3 · Profiles
 Mode: autopilot
 Risk: UI only (bundled reference data; accuracy checked against sources)
 Checks:
-- [ ] `src/data/expatPicks.ts` ranks the 25 picks with their sources, and the top 15 have full profiles: tagline, summary, six 1–5 scores, seven facts, drawbacks, sources (proof: test)
-- [ ] Every pick id exists in the city data, every source has an http(s) url, and the ranking method and source list are exported for the app to cite (proof: test)
-- [ ] Facts the research couldn't confirm are hedged, and the material risks are stated: Costa Rica's pending 15% tax bill on foreign investment income, Puerto Vallarta's Feb 2026 cartel unrest, Pensionado visas not accepting portfolio income (proof: review of the data file)
+- [x] `src/data/expatPicks.ts` ranks the 25 picks with their sources, and the top 15 have full profiles: tagline, summary, six 1–5 scores, seven facts, drawbacks, sources (proof: test)
+- [x] Every pick id exists in the city data, every source has an http(s) url, and the ranking method and source list are exported for the app to cite (proof: test)
+- [x] Facts the research couldn't confirm are hedged, and the material risks are stated: Costa Rica's pending 15% tax bill on foreign investment income, Puerto Vallarta's Feb 2026 cartel unrest, Pensionado visas not accepting portfolio income (proof: review of the data file)
 Open: none
 
 ## Stages
 - [x] 1. Verify costs — choose the top 25 for retirees, check their cost/healthcare data against current sources, label verified vs estimate
-- [ ] 2. Profiles — ranked profiles for the top 15: score by factor, why it ranks, drawbacks, sources
+- [x] 2. Profiles — ranked profiles for the top 15: score by factor, why it ranks, drawbacks, sources
 - [ ] 3. Atlas picks — "Top picks for expats" in the Atlas, profile beside the cost comparison and plan odds, verified/estimate labels; phone + both themes; preview
 
 ## Decisions
@@ -31,6 +31,7 @@ Open: none
 - 2026-11-06 · Cost indices checked against Numbeo's current city table (read 2026-11-06, cross-checked with the 2026 Mid-Year edition and livingcost.org). US home cities were updated from the same table too: comparisons are destination ÷ home, and US restaurants ran ~13% low (up to 34%) and rent was off by up to 17%. US cities without full Numbeo rows (Scottsdale, Asheville, Sarasota) stay estimates.
 - 2026-11-06 · Healthcare factor = midpoint of local/public cover and an international plan (Cigna/Allianz, age 60) vs a 2026 US benchmark-silver couple at 60 (~$35.9k/yr incl. ~$4k out-of-pocket), rounded to 0.05. Applies per country.
 - 2026-11-06 · Verified cities carry source, date and confidence; Boquete is low confidence (9 Numbeo contributors) and Medellín averages two disagreeing Numbeo editions.
+- 2026-11-06 · Profile scores calibrated across the 15 (San José cost 3→2, San Miguel safety 3→2, Puerto Vallarta healthcare 4→3, Panama City climate 2→3, Panama visa 5→4 because Pensionado excludes portfolio income) — two researchers scored on one scale; checked against GPI, US advisories and the cost indices.
 - 2026-11-06 · Stage 2 profile research runs alongside stage 1 — the 15 cities were settled, so research doesn't need to wait on the cost data.
 
 ## Open questions
