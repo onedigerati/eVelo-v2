@@ -20,6 +20,10 @@ export interface AppState {
 
   result: SimulationResult | null
   atlas: AtlasEntry[] | null
+  /** When the current atlas ranking was computed (ms epoch). */
+  atlasAt: number | null
+  /** True while a city ranking is computing. */
+  atlasRunning: boolean
   solve: SolveResult | null
   status: Status
   error: string | null
@@ -35,7 +39,10 @@ export interface AppState {
   setTheme: (t: ThemePref) => void
   setRoute: (r: Route) => void
   setResult: (r: SimulationResult | null) => void
-  setAtlas: (a: AtlasEntry[] | null) => void
+  setAtlas: (a: AtlasEntry[] | null, at?: number) => void
+  setAtlasRunning: (v: boolean) => void
+  /** Set (or clear) the destination city. */
+  setDestination: (cityId: string | null) => void
   setSolve: (s: SolveResult | null) => void
   setStatus: (s: Status, error?: string | null) => void
   setBaseline: (b: Baseline | null) => void
@@ -98,6 +105,8 @@ export const useStore = create<AppState>()((set) => ({
   route: init.route,
   result: null,
   atlas: null,
+  atlasAt: null,
+  atlasRunning: false,
   solve: null,
   status: 'idle',
   error: null,
@@ -111,7 +120,10 @@ export const useStore = create<AppState>()((set) => ({
   setTheme: (theme) => set({ theme }),
   setRoute: (route) => set({ route }),
   setResult: (result) => set({ result }),
-  setAtlas: (atlas) => set({ atlas }),
+  setAtlas: (atlas, at = Date.now()) => set({ atlas, atlasAt: atlas ? at : null }),
+  setAtlasRunning: (atlasRunning) => set({ atlasRunning }),
+  setDestination: (cityId) =>
+    set((s) => ({ inputs: { ...s.inputs, destCityId: cityId && cityId !== s.inputs.homeCityId ? cityId : null } })),
   setSolve: (solve) => set({ solve }),
   setStatus: (status, error = null) => set({ status, error }),
   setBaseline: (baseline) => set({ baseline }),

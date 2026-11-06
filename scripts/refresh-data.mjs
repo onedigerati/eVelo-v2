@@ -1,13 +1,19 @@
 #!/usr/bin/env node
 // Refresh bundled market data: Yahoo monthly adjusted closes -> monthly total returns,
 // FRED CPIAUCSL -> monthly US inflation. Writes src/data/market.json (MarketData).
+// Also refreshes FX spot rates (open.er-api.com, USD base) for every currency used by
+// src/data/cities.ts into src/data/fx.json ({ asOf, rates }).
 //
-// Usage: npm run data:refresh
-import { writeFile, mkdir } from 'node:fs/promises'
+// Usage: npm run data:refresh        (market + FX)
+//        npm run data:fx             (FX only: node scripts/refresh-data.mjs --fx-only)
+import { readFile, writeFile, mkdir } from 'node:fs/promises'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-const OUT = resolve(dirname(fileURLToPath(import.meta.url)), '../src/data/market.json')
+const DATA_DIR = resolve(dirname(fileURLToPath(import.meta.url)), '../src/data')
+const OUT = resolve(DATA_DIR, 'market.json')
+const FX_OUT = resolve(DATA_DIR, 'fx.json')
+const FX_URL = 'https://open.er-api.com/v6/latest/USD'
 const UA =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36'
 const CONCURRENCY = 4
@@ -205,7 +211,30 @@ async function main() {
   )
 }
 
-main().catch((e) => {
+/** FX: units of each city currency per 1 USD. Fails loudly if any city currency is missing. */
+async function refreshFx() {
+  const src = await readFile(resolve(DATA_DIR, 'cities.ts'), 'utf8')
+  const codes = [...new Set([...src.matchAll(/currency: '([A-Z]{3})'/g)].map((m) => m[1]))].sort()
+  if (!codes.length) throw new Error('No currencies found in cities.ts')
+  const json = JSON.parse(await withRetry(() => fetchText(FX_URL)))
+  if (json.result !== 'success' || !json.rates) throw new Error(`FX API: ${json['error-type'] ?? 'bad response'}`)
+  const rates = {}
+  const missing = []
+  for (const c of codes) {
+    const v = json.rates[c]
+    if (typeof v === 'number' && v > 0) rates[c] = v
+    else missing.push(c)
+  }
+  if (missing.length) throw new Error(`FX API is missing ${missing.join(', ')}`)
+  const asOf = json.time_last_update_unix
+    ? new Date(json.time_last_update_unix * 1000).toISOString().slice(0, 10)
+    : new Date().toISOString().slice(0, 10)
+  await writeFile(FX_OUT, JSON.stringify({ asOf, source: 'open.er-api.com', rates }, null, 2) + '\n')
+  console.log(`Wrote ${FX_OUT}\n  ${codes.length} currencies, as of ${asOf}`)
+}
+
+const fxOnly = process.argv.includes('--fx-only')
+;(fxOnly ? refreshFx() : main().then(refreshFx)).catch((e) => {
   console.error(e)
   process.exit(1)
 })

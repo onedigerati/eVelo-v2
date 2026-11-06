@@ -1,5 +1,6 @@
 import { MotionConfig } from 'framer-motion'
 import { useEffect } from 'react'
+import { loadLiveFx } from './state/fx'
 import { useSimulationSync } from './state/sim'
 import { OPENED_FROM_LINK } from './state/store'
 import { useHashRoute, useThemeEffect } from './ui/hooks'
@@ -12,6 +13,10 @@ export function App() {
   useThemeEffect()
   useHashRoute()
   useSimulationSync()
+
+  useEffect(() => {
+    void loadLiveFx()
+  }, [])
 
   useEffect(() => {
     if (!OPENED_FROM_LINK || announced) return

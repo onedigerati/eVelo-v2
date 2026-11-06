@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion'
-import { CITY_BY_ID, FX_FALLBACK } from '../../data/cities'
+import { CITY_BY_ID } from '../../data/cities'
 import { BUDGET_CATEGORIES, budgetTotal } from '../../engine/cost'
 import type { Budget, BudgetCategory, SimulationResult, SolveResult } from '../../engine/types'
+import { useFx, useRate } from '../../state/fx'
 import { useStore } from '../../state/store'
 import { currency, currencyCompact, localCurrency, percent } from '../format'
 import { ease } from '../motion'
@@ -286,10 +287,11 @@ export function CostBody({ result }: { result: SimulationResult }) {
   const budget = result.inputs.budget
   const rows = costRows(result, budget)
   const destCity = result.inputs.destCityId ? CITY_BY_ID[result.inputs.destCityId] : null
+  const fx = useRate(destCity?.currency)
+  const fxAsOf = useFx((s) => s.asOf)
   if (!destCity || rows.length === 0) return null
   const homeTotal = rows.reduce((a, x) => a + x.home, 0)
   const destTotal = rows.reduce((a, x) => a + x.dest, 0)
-  const fx = FX_FALLBACK[destCity.currency]
   const top = Math.max(...rows.map((x) => Math.max(x.home, x.dest)), 1)
   const home = cityName(result.inputs.homeCityId)
 
@@ -358,8 +360,8 @@ export function CostBody({ result }: { result: SimulationResult }) {
         })}
       </div>
       <p className="t-small ink-3 col__note">
-        First-year spend after the move, today’s dollars, with your expat factor applied. Local currency at an approximate rate of{' '}
-        {fx ? `${fx.toLocaleString('en-US')} ${destCity.currency}` : '—'} per dollar.
+        First-year spend after the move, today’s dollars, with your expat factor applied. Local currency at{' '}
+        {fx ? `${fx.toLocaleString('en-US', { maximumSignificantDigits: 5 })} ${destCity.currency}` : '—'} per dollar (rates as of {fxAsOf}).
       </p>
     </div>
   )

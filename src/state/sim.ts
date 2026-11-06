@@ -120,13 +120,6 @@ class SimClient {
     return r
   }
 
-  /** Stage 5 hook: rank cities at the current lifestyle. Fills store.atlas. */
-  async runAtlas(cityIds: string[]): Promise<AtlasEntry[]> {
-    const r = await this.request({ kind: 'atlas', inputs: useStore.getState().inputs, cityIds })
-    useStore.getState().setAtlas(r)
-    return r
-  }
-
   /** Debounced entry point for input changes. */
   schedule(immediate = false) {
     clearTimeout(this.timer)
@@ -169,7 +162,88 @@ class SimClient {
 }
 
 export const sim = new SimClient()
-export const runAtlas = (cityIds: string[]) => sim.runAtlas(cityIds)
+
+/** Cache key for a city ranking: the destination itself doesn't change any city's odds. */
+export const atlasKey = (i: PlanInputs, cityIds: string[]) => `${cityIds.join(',')}|${inputsKey({ ...i, destCityId: null })}`
+
+export const isCancelled = (e: unknown) => e instanceof Cancelled
+
+/**
+ * City rankings run on their own worker so they never queue behind (or get cancelled by) the
+ * main simulate → solve pipeline. A request for new inputs supersedes one in flight.
+ */
+class AtlasClient {
+  private worker: Worker | null = null
+  private cache = new Lru<{ entries: AtlasEntry[]; at: number }>()
+  private inflight: { key: string; promise: Promise<{ entries: AtlasEntry[]; at: number }>; reject: (e: Error) => void } | null = null
+  private nextId = 1
+
+  /** Cached ranking for these inputs, if any. */
+  peek(inputs: PlanInputs, cityIds: string[]) {
+    return this.cache.get(atlasKey(inputs, cityIds)) ?? null
+  }
+
+  rank(inputs: PlanInputs, cityIds: string[]): Promise<{ entries: AtlasEntry[]; at: number }> {
+    const key = atlasKey(inputs, cityIds)
+    const hit = this.cache.get(key)
+    if (hit) return Promise.resolve(hit)
+    if (this.inflight?.key === key) return this.inflight.promise
+    if (this.inflight) {
+      this.inflight.reject(new Cancelled())
+      this.inflight = null
+      this.worker?.terminate()
+      this.worker = null
+    }
+    const w = (this.worker ??= new Worker(new URL('../engine/worker.ts', import.meta.url), { type: 'module' }))
+    const id = this.nextId++
+    let reject!: (e: Error) => void
+    const promise = new Promise<{ entries: AtlasEntry[]; at: number }>((res, rej) => {
+      reject = rej
+      w.onmessage = (ev: MessageEvent<WorkerResponse>) => {
+        const r = ev.data
+        if (r.id !== id) return
+        if (this.inflight?.key === key) this.inflight = null
+        if (r.kind === 'atlas') {
+          const v = { entries: r.result, at: Date.now() }
+          this.cache.set(key, v)
+          res(v)
+        } else rej(new Error(r.kind === 'error' ? r.message : 'Unexpected atlas response'))
+      }
+      w.onerror = (ev) => {
+        ev.preventDefault()
+        if (this.inflight?.key === key) this.inflight = null
+        this.worker?.terminate()
+        this.worker = null
+        rej(new Error(ev.message || 'Atlas worker failed'))
+      }
+      w.postMessage({ id, kind: 'atlas', inputs, cityIds } as WorkerRequest)
+    })
+    this.inflight = { key, promise, reject }
+    return promise
+  }
+}
+
+export const atlasClient = new AtlasClient()
+
+/** Rank cities at the current lifestyle. Fills store.atlas (+ atlasAt / atlasRunning). */
+export async function runAtlas(cityIds: string[]): Promise<AtlasEntry[]> {
+  const st = useStore.getState()
+  const inputs = st.inputs
+  const key = atlasKey(inputs, cityIds)
+  st.setAtlasRunning(true)
+  try {
+    const { entries, at } = await atlasClient.rank(inputs, cityIds)
+    // Only publish if inputs haven't moved on to a different ranking meanwhile.
+    if (atlasKey(useStore.getState().inputs, cityIds) === key) {
+      useStore.getState().setAtlas(entries, at)
+      useStore.getState().setAtlasRunning(false)
+    }
+    return entries
+  } catch (e) {
+    if (!isCancelled(e)) useStore.getState().setAtlasRunning(false)
+    throw e
+  }
+}
 
 /** Mount once (App): runs the engine now and on every inputs change. */
 export function useSimulationSync() {
