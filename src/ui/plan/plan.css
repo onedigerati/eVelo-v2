@@ -409,6 +409,69 @@
 .presets {
   margin-top: var(--space-2);
 }
+.presets__save {
+  margin-left: auto;
+}
+.presets__save:disabled {
+  color: var(--ink-3);
+  background: none;
+  cursor: not-allowed;
+}
+.presets__empty {
+  font-size: var(--fs-sm);
+  line-height: 1.45;
+  color: var(--ink-3);
+}
+.presets__models {
+  margin-top: var(--space-4);
+}
+.presets__notice {
+  min-height: 1.45em;
+  margin-top: var(--space-2);
+  font-size: var(--fs-sm);
+  color: var(--accent-text);
+}
+.presets__notice:empty {
+  min-height: 0;
+  margin: 0;
+}
+.chip__label {
+  max-width: 22ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.text-btn--danger {
+  color: var(--broken-text);
+}
+.text-btn--danger:hover {
+  background: var(--broken-soft);
+}
+.confirm__inner--calm {
+  background: var(--surface-2);
+  border-color: var(--hairline-strong);
+}
+.confirm__aside {
+  display: inline-flex;
+  gap: 2px;
+  margin-left: auto;
+}
+.nameform {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.nameform .confirm__actions {
+  margin-top: var(--space-1);
+}
+.nameform__msg {
+  font-size: var(--fs-sm);
+  line-height: 1.45;
+  color: var(--bruised-text);
+}
+.nameform__msg.is-error {
+  color: var(--broken-text);
+}
 .confirm {
   overflow: hidden;
 }

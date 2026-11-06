@@ -7,8 +7,9 @@ import { ease } from '../motion'
 import { cx, Sparkline, StackBar } from '../primitives'
 import { assetMeta, GROUP_LABEL } from './marketIndex'
 import { usePlanUi, slotColor } from './planUi'
+import { PortfolioLibrary } from './PortfolioLibrary'
 import { fmtCagr, fmtYears, isMac } from './TickerPalette'
-import { equalWeights, evenOut, MAX_HOLDINGS, removeHolding, roundWeights, setWeight } from './weights'
+import { evenOut, MAX_HOLDINGS, removeHolding, roundWeights, setWeight } from './weights'
 
 /** "50%" for whole numbers, "16.7%" otherwise. */
 export const wPct = (w: number) => {
@@ -100,7 +101,7 @@ export function HoldingsEditor() {
         </span>
       </button>
 
-      <Presets current={holdings} onApply={(hs) => set(hs)} />
+      <PortfolioLibrary current={holdings} onApply={(hs) => set(hs)} />
     </div>
   )
 }
@@ -256,121 +257,5 @@ function WeightInput({ value, disabled, symbol, onChange }: { value: number; dis
         %
       </span>
     </label>
-  )
-}
-
-// ---------- Presets ----------
-
-const PRESETS: { id: string; label: string; holdings: Holding[] }[] = [
-  {
-    id: 'three',
-    label: 'Three-fund',
-    holdings: [
-      { symbol: 'VTI', weight: 0.5 },
-      { symbol: 'VXUS', weight: 0.3 },
-      { symbol: 'BND', weight: 0.2 },
-    ],
-  },
-  {
-    id: 'dividend',
-    label: 'Dividend core',
-    holdings: [
-      { symbol: 'SCHD', weight: 0.3 },
-      { symbol: 'VYM', weight: 0.25 },
-      { symbol: 'VIG', weight: 0.25 },
-      { symbol: 'BND', weight: 0.2 },
-    ],
-  },
-  {
-    id: 'growth',
-    label: 'Growth tilt',
-    holdings: [
-      { symbol: 'VTI', weight: 0.5 },
-      { symbol: 'QQQ', weight: 0.35 },
-      { symbol: 'SMH', weight: 0.15 },
-    ],
-  },
-  {
-    id: 'allweather',
-    label: 'All-weather',
-    holdings: [
-      { symbol: 'VTI', weight: 0.3 },
-      { symbol: 'TLT', weight: 0.4 },
-      { symbol: 'IEF', weight: 0.15 },
-      { symbol: 'GLD', weight: 0.075 },
-      { symbol: 'DBC', weight: 0.075 },
-    ],
-  },
-  { id: 'mag7', label: 'Magnificent 7', holdings: equalWeights(['AAPL', 'MSFT', 'NVDA', 'AMZN', 'GOOGL', 'META', 'TSLA']) },
-]
-
-const sameMix = (a: Holding[], b: Holding[]) =>
-  a.length === b.length && a.every((h, i) => h.symbol === b[i].symbol && Math.abs(h.weight - b[i].weight) < 0.001)
-
-function Presets({ current, onApply }: { current: Holding[]; onApply: (hs: Holding[]) => void }) {
-  const [pending, setPending] = useState<string | null>(null)
-  const p = PRESETS.find((x) => x.id === pending)
-  return (
-    <div className="presets">
-      <div className="field__row">
-        <span className="field__label" id="presets-label">
-          Start from a model portfolio
-        </span>
-      </div>
-      <div className="chips" role="group" aria-labelledby="presets-label">
-        {PRESETS.map((x) => {
-          const active = sameMix(current, x.holdings)
-          return (
-            <button
-              key={x.id}
-              type="button"
-              className={cx('chip', active && 'is-active', pending === x.id && 'is-pending')}
-              aria-pressed={active}
-              aria-expanded={pending === x.id}
-              onClick={() => setPending(active ? null : pending === x.id ? null : x.id)}
-            >
-              {x.label}
-            </button>
-          )
-        })}
-      </div>
-      <AnimatePresence initial={false}>
-        {p && (
-          <motion.div
-            key={p.id}
-            className="confirm"
-            role="region"
-            aria-label={`Apply ${p.label}`}
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease }}
-          >
-            <div className="confirm__inner">
-              <p className="confirm__text">
-                Replace your {current.length} {current.length === 1 ? 'holding' : 'holdings'} with <em>{p.label}</em>?
-              </p>
-              <p className="confirm__mix num">{p.holdings.map((h) => `${h.symbol} ${wPct(h.weight)}`).join(' · ')}</p>
-              <div className="confirm__actions">
-                <button
-                  type="button"
-                  className="btn btn--primary btn--sm"
-                  autoFocus
-                  onClick={() => {
-                    onApply(structuredClone(p.holdings))
-                    setPending(null)
-                  }}
-                >
-                  Replace holdings
-                </button>
-                <button type="button" className="btn btn--ghost btn--sm" onClick={() => setPending(null)}>
-                  Keep mine
-                </button>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
   )
 }

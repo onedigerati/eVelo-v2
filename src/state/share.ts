@@ -6,7 +6,7 @@
 // malformed or hostile link can never put the store into an invalid shape.
 
 import { DEFAULT_INPUTS } from '../engine/defaults'
-import type { PlanInputs } from '../engine/types'
+import type { Holding, PlanInputs } from '../engine/types'
 import { assetMeta } from '../ui/plan/marketIndex'
 
 const VERSION = 1
@@ -35,6 +35,23 @@ export function encodeInputs(inputs: PlanInputs): string {
 }
 
 /** Shallow-typed merge: keeps a key only if its JSON type matches the default's. */
+/** Well-formed holdings for tickers in the bundled data only (max 50); anything else is dropped. */
+export function sanitizeHoldings(v: unknown): Holding[] {
+  if (!Array.isArray(v)) return []
+  return v
+    .filter(
+      (h): h is { symbol: string; weight: number } =>
+        !!h &&
+        typeof h === 'object' &&
+        typeof (h as { symbol?: unknown }).symbol === 'string' &&
+        typeof (h as { weight?: unknown }).weight === 'number' &&
+        Number.isFinite((h as { weight: number }).weight),
+    )
+    .filter((h) => !!assetMeta(h.symbol))
+    .slice(0, 50)
+    .map((h) => ({ symbol: h.symbol, weight: h.weight }))
+}
+
 export function sanitizeInputs(raw: unknown): PlanInputs {
   const base: PlanInputs = structuredClone(DEFAULT_INPUTS)
   if (!raw || typeof raw !== 'object') return base
@@ -52,20 +69,8 @@ export function sanitizeInputs(raw: unknown): PlanInputs {
       if (v === null || typeof v === 'string') out[k] = v
     } else if (Array.isArray(dv)) {
       if (k === 'holdings' && Array.isArray(v)) {
-        const hs = v
-          .filter(
-            (h): h is { symbol: string; weight: number } =>
-              !!h &&
-              typeof h === 'object' &&
-              typeof (h as { symbol?: unknown }).symbol === 'string' &&
-              typeof (h as { weight?: unknown }).weight === 'number' &&
-              Number.isFinite((h as { weight: number }).weight),
-          )
-          .filter((h) => !!assetMeta(h.symbol)) // only tickers in the bundled data
-          .slice(0, 50)
-          .map((h) => ({ symbol: h.symbol, weight: h.weight }))
         // An empty list is a valid (empty) plan; the UI prompts to add a holding.
-        out[k] = hs
+        out[k] = sanitizeHoldings(v)
       }
     } else if (typeof dv === 'object') {
       if (v && typeof v === 'object' && !Array.isArray(v)) {

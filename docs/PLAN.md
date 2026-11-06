@@ -7,19 +7,20 @@ Let the user name the current holdings mix, save it, and pick it again later fro
 2026-11-06 · tests: 96 pass (11 files) · typecheck: clean · build: ok (main chunk 346.1 kB)
 
 ## Now
-Stage 1 in progress.
+All stages done. Committed locally, not yet pushed — pushing to main deploys the live site; waiting on the user's go.
 Live: https://onedigerati.github.io/eVelo-v2/ (deploys on push to main)
 Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (republish: `npm run build && node scripts/artifact-page.mjs`)
 
 ## Stages
-- [ ] 1. Saved portfolios — storage module with tests, Portfolio-section UI, verify in the running app, preview
-  - [ ] "Save as…" names the current mix; it appears under "Your portfolios" and is marked active
-  - [ ] Applying a saved portfolio replaces holdings only (budget etc. unchanged), with the same confirm step as model portfolios
-  - [ ] Rename and delete work; saving under an existing name asks before replacing it
-  - [ ] Saved portfolios survive a reload; corrupt or unknown-ticker storage is cleaned, never crashes
-  - [ ] Works on phone and desktop, light and dark
+- [x] 1. Saved portfolios — storage module with tests, Portfolio-section UI, verify in the running app, preview
+  - [x] "Save as…" names the current mix; it appears under "Your portfolios" and is marked active
+  - [x] Applying a saved portfolio replaces holdings only (budget etc. unchanged), with the same confirm step as model portfolios
+  - [x] Rename and delete work; saving under an existing name asks before replacing it
+  - [x] Saved portfolios survive a reload; corrupt or unknown-ticker storage is cleaned, never crashes
+  - [x] Works on phone and desktop, light and dark
 
 ## Decisions
+- 2026-11-06 · Saving under an existing name (any case) replaces that portfolio's holdings after an on-screen warning, rather than a separate confirm step; up to 30 saved, names up to 40 characters.
 - 2026-11-06 · Saved portfolios live in localStorage under their own key (`evelo:v2:portfolios`), separate from the plan, and are not part of share links — user agreed to browser-only, holdings-only.
 
 ## Open questions
