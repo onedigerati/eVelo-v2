@@ -293,5 +293,8 @@ em,
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
+    /* Staggered ripples (e.g. the 100-dot grid) must not trail in either. */
+    animation-delay: 0ms !important;
+    transition-delay: 0ms !important;
   }
 }

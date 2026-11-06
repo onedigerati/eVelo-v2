@@ -205,14 +205,20 @@
   transform: scale(1.18);
 }
 .slider__input:focus-visible::-webkit-slider-thumb {
+  /* Wider than the shared ring: the thumb often matches the focus color. */
   box-shadow:
-    var(--focus-ring),
+    0 0 0 3px var(--bg),
+    0 0 0 5.5px var(--focus),
     inset 0 0 0 5px var(--track-c);
+  transform: scale(1.08);
 }
 .slider__input:focus-visible::-moz-range-thumb {
+  /* Wider than the shared ring: the thumb often matches the focus color. */
   box-shadow:
-    var(--focus-ring),
+    0 0 0 3px var(--bg),
+    0 0 0 5.5px var(--focus),
     inset 0 0 0 5px var(--track-c);
+  transform: scale(1.08);
 }
 .slider__input:disabled {
   cursor: not-allowed;
