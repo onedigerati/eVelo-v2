@@ -7,7 +7,7 @@ Let the user name the current holdings mix, save it, and pick it again later fro
 2026-11-06 · tests: 96 pass (11 files) · typecheck: clean · build: ok (main chunk 346.1 kB)
 
 ## Now
-All stages done. Committed locally, not yet pushed — pushing to main deploys the live site; waiting on the user's go.
+All stages done. Pushed and deployed 2026-11-06 (user approved); saved portfolios are live.
 Live: https://onedigerati.github.io/eVelo-v2/ (deploys on push to main)
 Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (republish: `npm run build && node scripts/artifact-page.mjs`)
 
