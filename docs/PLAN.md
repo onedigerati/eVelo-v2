@@ -4,14 +4,17 @@
 A slick, design-forward static web app for planning a Buy-Borrow-Die retirement. A user picks real tickers and weights, sets age, horizon, lifestyle budget and borrowing terms, and sees the probability their plan holds for 15/20/30 years without a forced sale — in their home city and in any destination city (cost-of-living, expat factor, FX risk). Done = deployed-ready build that runs on desktop and phone, light and dark themes, real bundled market data with a refresh script, a tested simulation engine, and a city "atlas" ranking where money goes furthest.
 
 ## Now
-Stage 5 of 6 · Atlas
-Risk: external services (FX rate fetch)
+Stage 6 of 6 · Polish + verify
+Risk: UI only (plus engine review)
 Mode: autopilot
 Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (republish: `npm run build && node scripts/artifact-page.mjs`)
 Checks:
-- [ ] Atlas ranks all 96 cities by success for the current plan within ~2 s; changing an input re-ranks (proof: run the product)
-- [ ] Clicking a city on the map or list sets the destination and the verdict updates (proof: run the product)
-- [ ] Phone and desktop, light and dark: no horizontal scroll, map legible, no console errors (proof: screenshots)
+- [ ] Method page explains the model in plain language with the real parameters (proof: run the product)
+- [ ] market.json is no longer in the main bundle; main chunk < 500 kB (proof: command)
+- [ ] Routes work as plain hashes (`#atlas`) as well as `#/atlas` (proof: run the product)
+- [ ] Fresh-eyes engine review: findings fixed or logged (proof: review report + tests)
+- [ ] All views at 360/390/900/1440, light and dark: no horizontal scroll, no console errors (proof: screenshots)
+- [ ] README and scheduled data-refresh workflow exist; `npm run build` and `npm test` pass (proof: command)
 Open: none
 
 ## Stages
@@ -19,7 +22,7 @@ Open: none
 - [x] 2. App shell + design system — Vite/React/TS, tokens, fonts, light/dark, responsive layout, mobile tab bar, state + URL share
 - [x] 3. Plan inputs — ticker command palette, weights, life/budget, borrowing, move scenario, model settings
 - [x] 4. Results — verdict + 100-futures dot chart, fan charts (net worth / LTV / loan), margin-call timing, safe-spend solver, BBD vs sell
-- [ ] 5. Atlas — city cost data, live FX, world map + ranked cities, side-by-side comparison, country notes
+- [x] 5. Atlas — city cost data, live FX, world map + ranked cities, side-by-side comparison, country notes
 - [ ] 6. Polish + verify — methodology page, animations, a11y, mobile pass, build, README, data refresh workflow
 
 ## Decisions
