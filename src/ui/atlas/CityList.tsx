@@ -5,6 +5,9 @@ import { ease } from '../motion'
 import { SegmentedControl, cx } from '../primitives'
 import { FX_RISK_LABEL, costDelta, fxRisk, inRegion, successColor, successTextColor, type Ranked, type RegionChip } from './atlasData'
 import { CodeChip } from './CodeChip'
+import { expatPickFor } from '../../data/expatPicks'
+import { VerifiedMark } from './VerifiedMark'
+import { verifiedLabel } from './picks'
 
 type SortKey = 'odds' | 'cost' | 'name'
 
@@ -16,9 +19,11 @@ export interface CityListProps {
   compare: string[]
   onToggleCompare: (id: string) => void
   onChoose: (id: string) => void
+  /** Open a top pick's profile (cities ranked 1–15 in the expat picks). */
+  onOpenPick?: (id: string) => void
 }
 
-export function CityList({ rows, homeId, destId, region, compare, onToggleCompare, onChoose }: CityListProps) {
+export function CityList({ rows, homeId, destId, region, compare, onToggleCompare, onChoose, onOpenPick }: CityListProps) {
   const [sort, setSort] = useState<SortKey>('odds')
   const [q, setQ] = useState('')
   const query = useDeferredValue(q.trim().toLowerCase())
@@ -47,7 +52,7 @@ export function CityList({ rows, homeId, destId, region, compare, onToggleCompar
     return out
   }, [rows, homeId, destId])
 
-  const rowProps = { homeId, destId, compare, onToggleCompare, onChoose, homeSpend: pinned[0]?.spendUsd ?? 0 }
+  const rowProps = { homeId, destId, compare, onToggleCompare, onChoose, onOpenPick, homeSpend: pinned[0]?.spendUsd ?? 0 }
 
   return (
     <div className="clist">
@@ -133,6 +138,7 @@ function Row({
   compare,
   onToggleCompare,
   onChoose,
+  onOpenPick,
   homeSpend,
   pinnedRow,
 }: {
@@ -143,6 +149,7 @@ function Row({
   compare: string[]
   onToggleCompare: (id: string) => void
   onChoose: (id: string) => void
+  onOpenPick?: (id: string) => void
   homeSpend: number
   pinnedRow?: boolean
 }) {
@@ -152,9 +159,12 @@ function Row({
   const full = compare.length >= 3 && !checked
   const risk = fxRisk(r.city)
   const top = r.rank <= 3
+  const vl = verifiedLabel(r.city)
+  const pick = expatPickFor(r.cityId)
+  const profiled = pick?.profile && onOpenPick ? pick : undefined
   const label = isHome
-    ? `${r.city.name}, your home: plan holds in ${percent(r.successRate)} of futures.${destId ? ' Choose to stay home.' : ''}`
-    : `${isDest ? 'Your destination' : 'Make destination'}: ${r.city.name}, ${r.city.country}. Plan holds in ${percent(r.successRate)}, rank ${r.rank}, ${currency(r.spendUsd)} a year, ${costDelta(r.costRatio)} vs home.`
+    ? `${r.city.name}, your home: plan holds in ${percent(r.successRate)} of futures; ${vl.spoken}.${destId ? ' Choose to stay home.' : ''}`
+    : `${isDest ? 'Your destination' : 'Make destination'}: ${r.city.name}, ${r.city.country}. Plan holds in ${percent(r.successRate)}, rank ${r.rank}, ${currency(r.spendUsd)} a year, ${costDelta(r.costRatio)} vs home; ${vl.spoken}.`
   return (
     <motion.li
       layout={pinnedRow ? false : 'position'}
@@ -162,18 +172,32 @@ function Row({
       className={cx('crow', top && 'is-top', isHome && 'is-home', isDest && 'is-dest', checked && 'is-checked')}
     >
       <span className={cx('crow__rank num', top && 't-italic')}>{String(r.rank).padStart(2, '0')}</span>
-      <button type="button" className="crow__main" onClick={() => onChoose(r.cityId)} aria-label={label}>
-        <CodeChip code={r.city.countryCode} />
-        <span className="crow__name">
-          <b>{r.city.name}</b>
-          <span>
-            {(isHome || isDest) && <em className="crow__role">{isHome ? 'Home · ' : 'Destination · '}</em>}
-            {r.city.country}
+      <span className="crow__who">
+        <button type="button" className="crow__main" onClick={() => onChoose(r.cityId)} aria-label={label}>
+          <CodeChip code={r.city.countryCode} />
+          <span className="crow__name">
+            <b>{r.city.name}</b>
+            <span>
+              {(isHome || isDest) && <em className="crow__role">{isHome ? 'Home · ' : 'Destination · '}</em>}
+              {r.city.country}
+              <VerifiedMark label={vl} className="crow__vmark" />
+            </span>
           </span>
-        </span>
-        {isHome && <span className="crow__tag">Home</span>}
-        {isDest && <span className="crow__tag is-dest">Destination</span>}
-      </button>
+          {isHome && <span className="crow__tag">Home</span>}
+          {isDest && <span className="crow__tag is-dest">Destination</span>}
+        </button>
+        {profiled && (
+          <button
+            type="button"
+            className="pickbadge"
+            onClick={() => onOpenPick!(r.cityId)}
+            aria-label={`Top pick ${profiled.rank} for expat retirees: open the ${r.city.name} profile`}
+            title={`Top pick #${profiled.rank} for expat retirees · open profile`}
+          >
+            <span className="pickbadge__l">Top pick </span>#{profiled.rank}
+          </button>
+        )}
+      </span>
       <span className="crow__odds">
         <span className="crow__bar" aria-hidden="true">
           <motion.i

@@ -25,6 +25,9 @@ import {
 import { CityList } from './CityList'
 import { CodeChip } from './CodeChip'
 import { CompareSheet } from './CompareSheet'
+import { isProfiled, pickViews } from './picks'
+import { ProfileSheet } from './ProfileSheet'
+import { TopPicks } from './TopPicks'
 import { SourcesLine } from './ThingsToCheck'
 import { WorldMap } from './WorldMap'
 import '../views.css'
@@ -77,6 +80,7 @@ export function AtlasView() {
   const [region, setRegion] = useState<RegionChip>('All')
   const [compare, setCompare] = useState<string[]>([])
   const [cmpOpen, setCmpOpen] = useState(false)
+  const [profileId, setProfileId] = useState<string | null>(null)
   const result = useStore((s) => s.result)
   const baseline = useStore((s) => s.baseline)
   const merged = useMemo(() => withOutlook(atlas, inputs, result, baseline), [atlas, inputs, result, baseline])
@@ -101,6 +105,13 @@ export function AtlasView() {
   useEffect(() => {
     if (cmpOpen && cmpRows.length === 0) setCmpOpen(false)
   }, [cmpOpen, cmpRows.length])
+
+  const profileView = useMemo(() => {
+    if (!profileId) return null
+    const v = pickViews(rows).find((x) => x.pick.cityId === profileId)
+    return v && isProfiled(v) ? v : null
+  }, [profileId, rows])
+  const closeProfile = useCallback(() => setProfileId(null), [])
 
   const best = rows[0]
   const home = rows.find((r) => r.cityId === homeId)
@@ -151,6 +162,10 @@ export function AtlasView() {
       </motion.div>
 
       <motion.div variants={rise}>
+        <TopPicks rows={rows} homeId={homeId} destId={destId} onOpen={setProfileId} onChoose={choose} />
+      </motion.div>
+
+      <motion.div variants={rise}>
         <Card
           className="atlas__mapcard"
           eyebrow={`World map · ${CITIES.length} cities`}
@@ -196,6 +211,7 @@ export function AtlasView() {
               compare={compare}
               onToggleCompare={toggleCompare}
               onChoose={choose}
+              onOpenPick={setProfileId}
             />
           ) : (
             <div className="clist__skel" aria-busy="true">
@@ -262,6 +278,8 @@ export function AtlasView() {
         }}
         onRemove={toggleCompare}
       />
+
+      <ProfileSheet view={profileView} home={home} inputs={inputs} onClose={closeProfile} onChoose={choose} />
     </motion.div>
   )
 }

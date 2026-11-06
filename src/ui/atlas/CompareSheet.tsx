@@ -18,6 +18,8 @@ import {
   type Ranked,
 } from './atlasData'
 import { CodeChip } from './CodeChip'
+import { verifiedLabel } from './picks'
+import { VerifiedMark } from './VerifiedMark'
 import { CityNotes, ExpatCaveats, SourcesLine } from './ThingsToCheck'
 
 export interface CompareSheetProps {
@@ -177,6 +179,17 @@ export function CompareSheet({ open, onClose, rows, inputs, onChoose, onRemove }
                 <span className="vs__val num">{r.city.healthcare.toFixed(2)}×</span>
               </div>
             ))}
+          </Metric>
+          <Metric label="Cost data" hint="Checked against a current source, or a rough estimate">
+            {rows.map((r) => {
+              const vl = verifiedLabel(r.city)
+              return (
+                <div key={r.cityId} className="vs__cell">
+                  <VerifiedMark label={vl} spoken />
+                  <span className="vs__sub">{r.city.verified ? r.city.verified.source : 'Not yet checked'}</span>
+                </div>
+              )
+            })}
           </Metric>
           <Metric label="Currency">
             {rows.map((r) => {

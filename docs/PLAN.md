@@ -7,21 +7,14 @@ Make the Atlas trustworthy and useful for someone choosing where to retire abroa
 2026-11-06 · tests: 65 pass (9 files) · typecheck: clean · build: ok (main chunk 345.6 kB)
 
 ## Now
-Stage 3 of 3 · Atlas picks
-Mode: autopilot
-Risk: UI only
-Checks:
-- [ ] The Atlas shows a "Top picks" section ranking the 15 profiled cities, each with its tagline, factor scores and the plan's odds there; picks 16–25 appear as a compact list with their one-line reason (proof: run the product)
-- [ ] Opening a pick shows its profile (summary, scores, facts, drawbacks, sources) beside its cost comparison with home and the plan's odds, and can make it the destination (proof: run the product + test)
-- [ ] City rows and comparisons label each city as verified (source, date) or a rough estimate, and the ranking method and sources are cited in the app (proof: run the product)
-- [ ] Works at phone width (390px) and desktop, in light and dark themes, with keyboard access and no console errors; tests, typecheck and build green (proof: screenshots + commands)
-- [ ] Preview artifact republished (proof: artifact URL)
-Open: pushing to main deploys the live site — ask the user first
+All stages done. Committed locally, not yet pushed — pushing to main deploys the live site; waiting on the user's go.
+Live: https://onedigerati.github.io/eVelo-v2/ (repo onedigerati/eVelo-v2, public; deploys on push to main)
+Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (republish: `npm run build && node scripts/artifact-page.mjs`) — updated with stage 3
 
 ## Stages
 - [x] 1. Verify costs — choose the top 25 for retirees, check their cost/healthcare data against current sources, label verified vs estimate
 - [x] 2. Profiles — ranked profiles for the top 15: score by factor, why it ranks, drawbacks, sources
-- [ ] 3. Atlas picks — "Top picks for expats" in the Atlas, profile beside the cost comparison and plan odds, verified/estimate labels; phone + both themes; preview
+- [x] 3. Atlas picks — "Top picks for expats" in the Atlas, profile beside the cost comparison and plan odds, verified/estimate labels; phone + both themes; preview
 
 ## Decisions
 - 2026-11-06 · Verify cost data for 25 cities; write full profiles for the top 15 — user's choice.
@@ -34,12 +27,14 @@ Open: pushing to main deploys the live site — ask the user first
 - 2026-11-06 · Healthcare factor = midpoint of local/public cover and an international plan (Cigna/Allianz, age 60) vs a 2026 US benchmark-silver couple at 60 (~$35.9k/yr incl. ~$4k out-of-pocket), rounded to 0.05. Applies per country.
 - 2026-11-06 · Verified cities carry source, date and confidence; Boquete is low confidence (9 Numbeo contributors) and Medellín averages two disagreeing Numbeo editions.
 - 2026-11-06 · Profile scores calibrated across the 15 (San José cost 3→2, San Miguel safety 3→2, Puerto Vallarta healthcare 4→3, Panama City climate 2→3, Panama visa 5→4 because Pensionado excludes portfolio income) — two researchers scored on one scale; checked against GPI, US advisories and the cost indices.
+- 2026-11-06 · Top picks sit between the hero tiles and the map; profiles open in a Sheet with "Your plan here" (odds, spend, per-category cost vs home) beside them; every city row shows Verified <month> or Estimate. No component-render test (node test env, no new deps) — the open-profile/make-destination flow is proven by Playwright.
 - 2026-11-06 · Stage 2 profile research runs alongside stage 1 — the 15 cities were settled, so research doesn't need to wait on the cost data.
 
 ## Open questions
 - Some 2026 single-stock months are very large (INTC +114% Apr 2026; MU/SNOW/DDOG ~+87% May 2026); match Yahoo raw bars but unverified against a second source.
 - In-browser fetch of arbitrary tickers needs a CORS proxy or serverless function — user decides on hosting later; not blocking.
 - Pushing to main deploys the live site — confirm with the user before the stage 3 push.
+- Phuket keeps a 0.4 healthcare override while Thailand is now 0.3 — not a pick; re-check if it becomes one.
 
 ## Standing decisions
 - 2026-11-06 · React + Vite + TS, hand-built SVG charts (d3-scale/shape/geo), static hosting — full design control, no backend. (from [eVelo v2 build](plans/2026-11-06-evelo-v2-build.md))

@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { COL_AS_OF, COL_SOURCES, EXPAT_CAVEATS } from '../../data/cities'
+import { EXPAT_AS_OF, EXPAT_RANKING_SOURCES } from '../../data/expatPicks'
+import { longDate, monthYear } from './picks'
 import type { City } from '../../engine/types'
 import { useFx } from '../../state/fx'
 import { cx } from '../primitives'
@@ -45,8 +47,9 @@ export function SourcesLine() {
   return (
     <div className="sources">
       <p className="sources__line">
-        <b>Estimates, not tax or legal advice.</b> Cost indices for verified cities checked {COL_AS_OF}, others rough estimates; exchange rates {fxSource === 'live' ? 'live' : 'bundled'}
-        , as of {fxAsOf}.{' '}
+        <b>Estimates, not tax or legal advice.</b> Cost indices for verified cities checked {longDate(COL_AS_OF)}, others rough estimates; exchange rates{' '}
+        {fxSource === 'live' ? 'live' : 'bundled'}, as of {fxAsOf}; expat picks ranked from {EXPAT_RANKING_SOURCES.length} published indexes and surveys (
+        {monthYear(EXPAT_AS_OF)}).{' '}
         <button type="button" className="link-btn" aria-expanded={open} onClick={() => setOpen((v) => !v)}>
           {open ? 'Hide sources' : 'Sources'}
         </button>
@@ -56,6 +59,19 @@ export function SourcesLine() {
           {COL_SOURCES.map((s) => (
             <li key={s}>{s}</li>
           ))}
+          <li>
+            Expat picks: rank blended from{' '}
+            {EXPAT_RANKING_SOURCES.map((s, i) => (
+              <span key={s.name}>
+                {i > 0 && (i === EXPAT_RANKING_SOURCES.length - 1 ? ' and ' : ', ')}
+                <a href={s.url} target="_blank" rel="noopener noreferrer">
+                  {s.name}
+                </a>{' '}
+                ({s.edition})
+              </span>
+            ))}
+            ; factor scores are eVelo’s own. Researched {longDate(EXPAT_AS_OF)}.
+          </li>
         </ul>
       )}
     </div>
