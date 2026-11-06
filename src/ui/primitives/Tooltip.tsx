@@ -1,5 +1,5 @@
 import { AnimatePresence, m as motion } from 'framer-motion'
-import { cloneElement, isValidElement, useEffect, useId, useRef, useState, type ReactElement, type ReactNode } from 'react'
+import { cloneElement, isValidElement, useEffect, useId, useLayoutEffect, useRef, useState, type ReactElement, type ReactNode, type RefObject } from 'react'
 import { ease } from '../motion'
 import { cx } from './cx'
 
@@ -10,6 +10,59 @@ export interface TooltipProps {
   side?: 'top' | 'bottom'
   delay?: number
   className?: string
+}
+
+const EDGE = 8
+
+/** The visible box a bubble must fit in: the viewport, narrowed by every ancestor that clips. */
+function clipBox(el: HTMLElement): { left: number; right: number; top: number; bottom: number } {
+  const box = { left: 0, top: 0, right: window.innerWidth, bottom: window.innerHeight }
+  for (let n = el.parentElement; n && n !== document.body; n = n.parentElement) {
+    const cs = getComputedStyle(n)
+    if (cs.overflowX === 'visible' && cs.overflowY === 'visible') continue
+    const r = n.getBoundingClientRect()
+    box.left = Math.max(box.left, r.left)
+    box.right = Math.min(box.right, r.right)
+    box.top = Math.max(box.top, r.top)
+    box.bottom = Math.min(box.bottom, r.bottom)
+  }
+  return box
+}
+
+/**
+ * Keeps an open bubble inside its clip box: shifts it sideways (--tip-shift) and flips it to the
+ * other side of the trigger when there's no room on the preferred side.
+ */
+function useFitBubble(ref: RefObject<HTMLElement | null>, open: boolean, side: 'top' | 'bottom') {
+  const [placed, setPlaced] = useState(side)
+  useLayoutEffect(() => {
+    const el = ref.current
+    if (!open || !el) {
+      setPlaced(side)
+      return
+    }
+    const fit = () => {
+      el.style.setProperty('--tip-shift', '0px')
+      el.style.removeProperty('--tip-max')
+      const box = clipBox(el)
+      const avail = box.right - box.left - EDGE * 2
+      if (avail > 0) el.style.setProperty('--tip-max', `${Math.floor(avail)}px`)
+      const r = el.getBoundingClientRect()
+      let shift = 0
+      if (r.left < box.left + EDGE) shift = box.left + EDGE - r.left
+      else if (r.right > box.right - EDGE) shift = box.right - EDGE - r.right
+      el.style.setProperty('--tip-shift', `${Math.round(shift)}px`)
+      const trigger = el.parentElement!.getBoundingClientRect()
+      const h = r.height + EDGE
+      const roomTop = trigger.top - box.top
+      const roomBottom = box.bottom - trigger.bottom
+      setPlaced(side === 'top' ? (roomTop < h && roomBottom > roomTop ? 'bottom' : 'top') : roomBottom < h && roomTop > roomBottom ? 'top' : 'bottom')
+    }
+    fit()
+    window.addEventListener('resize', fit)
+    return () => window.removeEventListener('resize', fit)
+  }, [open, side, ref])
+  return placed
 }
 
 /** Hover/focus tooltip. Escape dismisses. Rendered inline so scoped themes apply. */
@@ -25,6 +78,8 @@ export function Tooltip({ content, children, side = 'top', delay = 260, classNam
     clearTimeout(timer.current)
     setOpen(false)
   }
+  const bubble = useRef<HTMLSpanElement>(null)
+  const placed = useFitBubble(bubble, open, side)
   useEffect(() => () => clearTimeout(timer.current), [])
   useEffect(() => {
     if (!open) return
@@ -46,10 +101,11 @@ export function Tooltip({ content, children, side = 'top', delay = 260, classNam
       <AnimatePresence>
         {open && (
           <motion.span
+            ref={bubble}
             role="tooltip"
             id={id}
-            className={cx('tip__bubble', `tip__bubble--${side}`)}
-            initial={{ opacity: 0, y: side === 'top' ? 4 : -4, scale: 0.97 }}
+            className={cx('tip__bubble', `tip__bubble--${placed}`)}
+            initial={{ opacity: 0, y: placed === 'top' ? 4 : -4, scale: 0.97 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, transition: { duration: 0.1 } }}
             transition={{ duration: 0.18, ease }}
@@ -70,6 +126,9 @@ export function InfoTip({ children, label = 'More info', side = 'top' }: { child
   const id = useId()
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLSpanElement>(null)
+  const bubble = useRef<HTMLSpanElement>(null)
+  const focusedAt = useRef(-Infinity)
+  const placed = useFitBubble(bubble, open, side)
   useEffect(() => {
     if (!open) return
     const onDown = (e: PointerEvent) => !ref.current?.contains(e.target as Node) && setOpen(false)
@@ -94,8 +153,15 @@ export function InfoTip({ children, label = 'More info', side = 'top' }: { child
         aria-label={label}
         aria-expanded={open}
         aria-describedby={id}
-        onClick={() => setOpen((o) => !o)}
-        onFocus={() => setOpen(true)}
+        onClick={() => {
+          // A tap focuses the button (which opens it) and then clicks; don't let that click close it.
+          if (performance.now() - focusedAt.current < 400) return setOpen(true)
+          setOpen((o) => !o)
+        }}
+        onFocus={() => {
+          focusedAt.current = performance.now()
+          setOpen(true)
+        }}
         onBlur={() => setOpen(false)}
       >
         <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true">
@@ -105,7 +171,7 @@ export function InfoTip({ children, label = 'More info', side = 'top' }: { child
         </svg>
       </button>
       {/* Always in the DOM (visually hidden when closed) so aria-describedby resolves. */}
-      <span id={id} role="tooltip" className={cx('tip__bubble', `tip__bubble--${side}`, 'infotip__bubble', open && 'is-open')}>
+      <span ref={bubble} id={id} role="tooltip" className={cx('tip__bubble', `tip__bubble--${placed}`, 'infotip__bubble', open && 'is-open')}>
         {children}
       </span>
     </span>

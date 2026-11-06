@@ -626,7 +626,7 @@
   z-index: var(--z-tooltip);
   left: 50%;
   width: max-content;
-  max-width: min(280px, 72vw);
+  max-width: min(280px, 72vw, var(--tip-max, 280px));
   padding: 8px 12px;
   border-radius: var(--radius-sm);
   background: var(--ink);
@@ -637,7 +637,7 @@
   text-align: left;
   box-shadow: var(--shadow-3);
   pointer-events: none;
-  translate: -50% 0;
+  translate: calc(-50% + var(--tip-shift, 0px)) 0;
 }
 .tip__bubble--top {
   bottom: calc(100% + 8px);

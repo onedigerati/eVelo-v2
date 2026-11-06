@@ -22,6 +22,9 @@ Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (republish: `npm run 
   - [x] Every city is ranked on the plan's own futures (no 1,500 cap); a city's Atlas odds equal the Outlook's with it as destination (engine test + live check: Mérida 81% / St. Louis 64% in both views)
   - [x] Choosing a destination changes no city's rank or odds (live check across all 96 rows)
   - [x] Atlas small print and Method page describe the shared path count
+- [x] 3. Info bubbles stay on screen — follow-up the user reported (cost-basis bubble cut off by the left rail)
+  - [x] Every info bubble shifts sideways and flips above/below to stay inside the rail and viewport (all 5 in the rail checked, desktop 1400 px and phone 390 px)
+  - [x] On touch, tapping the info button opens its bubble and a second tap closes it (before, the tap's focus opened it and its click closed it again, live site included)
 
 ## Decisions
 - 2026-11-06 · Atlas runs every city on the plan's full path count (was capped at 1,500, with the Outlook's number swapped in for home and destination) — user wanted all cities on the same simulation so picking a city never moves it; ranking takes ~1 s at 4,000 paths, ~2.3 s at 10,000, in the worker. Replaces the standing decision that the Atlas overlays the Outlook's odds.
