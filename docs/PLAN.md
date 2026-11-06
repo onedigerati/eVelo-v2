@@ -8,14 +8,14 @@ Stage 2 of 6 · App shell + design system
 Risk: UI only
 Mode: autopilot
 Checks:
-- [ ] App renders at 390×844 and 1440×900 in light and dark with no horizontal scroll; phone shows bottom tab bar (proof: run the product, screenshots)
-- [ ] Theme toggle (system/light/dark) and inputs persist across reload; Share link restores inputs (proof: run the product)
-- [ ] `npm run build` succeeds (proof: command)
+- [x] App renders at 390×844 and 1440×900 in light and dark with no horizontal scroll; phone shows bottom tab bar (proof: run the product, screenshots)
+- [x] Theme toggle (system/light/dark) and inputs persist across reload; Share link restores inputs (proof: run the product)
+- [x] `npm run build` succeeds (proof: command)
 Open: none
 
 ## Stages
 - [x] 1. Data + engine — Yahoo/FRED fetch script, factor backfill, block bootstrap + fat-tail, SBLOC/margin call/forced sale, BBD vs sell, city cost model, solver
-- [ ] 2. App shell + design system — Vite/React/TS, tokens, fonts, light/dark, responsive layout, mobile tab bar, state + URL share
+- [x] 2. App shell + design system — Vite/React/TS, tokens, fonts, light/dark, responsive layout, mobile tab bar, state + URL share
 - [ ] 3. Plan inputs — ticker command palette, weights, life/budget, borrowing, move scenario, model settings
 - [ ] 4. Results — verdict + 100-futures dot chart, fan charts (net worth / LTV / loan), margin-call timing, safe-spend solver, BBD vs sell
 - [ ] 5. Atlas — city cost data, live FX, world map + ranked cities, side-by-side comparison, country notes
