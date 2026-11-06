@@ -4,12 +4,13 @@
 A slick, design-forward static web app for planning a Buy-Borrow-Die retirement. A user picks real tickers and weights, sets age, horizon, lifestyle budget and borrowing terms, and sees the probability their plan holds for 15/20/30 years without a forced sale — in their home city and in any destination city (cost-of-living, expat factor, FX risk). Done = deployed-ready build that runs on desktop and phone, light and dark themes, real bundled market data with a refresh script, a tested simulation engine, and a city "atlas" ranking where money goes furthest.
 
 ## Now
-Stage 1 of 6 · Data + engine
-Risk: external services (build-time data fetch only)
+Stage 2 of 6 · App shell + design system
+Risk: UI only
 Mode: autopilot
 Checks:
-- [x] `npm run data:refresh` writes monthly total returns for ~150+ tickers plus US CPI (proof: command)
-- [x] Engine tests pass: bootstrap preserves cross-asset correlation, margin call fires when LTV crosses threshold, cheaper city raises success (proof: test)
+- [ ] App renders at 390×844 and 1440×900 in light and dark with no horizontal scroll; phone shows bottom tab bar (proof: run the product, screenshots)
+- [ ] Theme toggle (system/light/dark) and inputs persist across reload; Share link restores inputs (proof: run the product)
+- [ ] `npm run build` succeeds (proof: command)
 Open: none
 
 ## Stages
