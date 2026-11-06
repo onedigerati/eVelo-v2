@@ -1,41 +1,48 @@
-# eVelo v2 plan
+# Expat picks plan
 
 ## Goal
-A slick, design-forward static web app for planning a Buy-Borrow-Die retirement. A user picks real tickers and weights, sets age, horizon, lifestyle budget and borrowing terms, and sees the probability their plan holds for 15/20/30 years without a forced sale — in their home city and in any destination city (cost-of-living, expat factor, FX risk). Done = deployed-ready build that runs on desktop and phone, light and dark themes, real bundled market data with a refresh script, a tested simulation engine, and a city "atlas" ranking where money goes furthest.
+Make the Atlas trustworthy and useful for someone choosing where to retire abroad. The cost data for the 25 most expat-friendly destinations (judged for retirees) is checked against current published sources and labeled with source and date. The other cities stay but are clearly marked as rough estimates. The top 15 get a ranked profile explaining why each ranks well, with sources cited: cost, healthcare, safety, visa/residency, climate, expat community and the main drawbacks. All of this is woven into the Atlas flow. Done = the live Atlas shows the ranked picks with reasons, verified vs estimate labels are accurate, tests are green, and it works on phone and desktop in both themes.
+
+## Baseline
+2026-11-06 · tests: 65 pass (9 files) · typecheck: clean · build: ok (main chunk 345.6 kB)
 
 ## Now
-All stages done. Live: https://onedigerati.github.io/eVelo-v2/ (repo onedigerati/eVelo-v2, public; deploys on push to main)
-Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (republish: `npm run build && node scripts/artifact-page.mjs`)
+Stage 1 of 3 · Verify costs
+Risk: data accuracy (no user input, auth, money handling or secrets)
+Checks:
+- [ ] The 25 picks are chosen from published retiree/expat rankings, each with its sources listed (proof: data file + test that 25 ids are flagged with source and date)
+- [ ] Each of the 25 has its four cost indices and healthcare factor checked against current published figures; changes of more than 10% are listed in the commit (proof: comparison table in the commit message)
+- [ ] Every city carries a `verified` record or is marked as an estimate, and the sources line names real sources and dates (proof: test)
+- [ ] Atlas still ranks and compares correctly with the new numbers (proof: tests + run the product)
+Open: none
 
 ## Stages
-- [x] 1. Data + engine — Yahoo/FRED fetch script, factor backfill, block bootstrap + fat-tail, SBLOC/margin call/forced sale, BBD vs sell, city cost model, solver
-- [x] 2. App shell + design system — Vite/React/TS, tokens, fonts, light/dark, responsive layout, mobile tab bar, state + URL share
-- [x] 3. Plan inputs — ticker command palette, weights, life/budget, borrowing, move scenario, model settings
-- [x] 4. Results — verdict + 100-futures dot chart, fan charts (net worth / LTV / loan), margin-call timing, safe-spend solver, BBD vs sell
-- [x] 5. Atlas — city cost data, live FX, world map + ranked cities, side-by-side comparison, country notes
-- [x] 6. Polish + verify — methodology page, animations, a11y, mobile pass, build, README, data refresh workflow
+- [ ] 1. Verify costs — choose the top 25 for retirees, check their cost/healthcare data against current sources, label verified vs estimate
+- [ ] 2. Profiles — ranked profiles for the top 15: score by factor, why it ranks, drawbacks, sources
+- [ ] 3. Atlas picks — "Top picks for expats" in the Atlas, profile beside the cost comparison and plan odds, verified/estimate labels; phone + both themes; preview
 
 ## Decisions
-- 2026-11-06 · Fresh codebase, not a fork of v1 — v1 is a heavy web-components app; v2 is a redesign around one verdict. v1's methodology informs the engine.
-- 2026-11-06 · React + Vite + TS, hand-built SVG charts (d3-scale/shape/geo), static hosting — full design control, no backend.
-- 2026-11-06 · Market data bundled at build time from Yahoo monthly adjusted closes (+ FRED CPI), refreshed by script/scheduled workflow — Yahoo has no browser CORS; keeps the site static and fast.
-- 2026-11-06 · Short histories backfilled from SPY via regression (alpha, beta, resampled residuals); means shrunk toward a CAPM prior by "outlook" setting — stops young winners from projecting forever.
-- 2026-11-06 · Headline success = no forced sale (margin call) and solvent through horizon — the BBD failure mode is selling at the bottom.
-- 2026-11-06 · Destination cost in USD = home budget × per-category city ratios (with expat factor) × US CPI path × real-FX random walk — PPP-consistent and simple.
-- 2026-11-06 · Stages 1, 2 and the city dataset (from stage 5) built in parallel against `src/engine/types.ts` — they're independent; the contract keeps them aligned.
-- 2026-11-06 · Preview: after each stage that changes what the user sees, publish the production build to one private claude.ai Artifact (same URL every time) and keep a local dev server up — user asked to review meaningful updates on a preview site.
-- 2026-11-06 · Single-stock means capped at 35% history weight (balanced) / 15% (conservative); 'historical' uses the real-window mean only — 100% NVDA was projecting 24%/yr for 30 years.
-- 2026-11-06 · Data months keyed by UTC month of timestamp+12h; script fails on gaps or a stale last month — a DST offset bug had shifted/merged months.
-- 2026-11-06 · Stages 3 and 4 built in parallel: inputs live in `src/ui/plan`, results + worker client in `src/ui/outlook` / `src/state/sim.ts` — disjoint files.
-- 2026-11-06 · Review fixes: shared backfill donor months; explicit priors for bonds/real estate/commodities; insolvency counts as a forced sale; real stats added. Deferred: young asset paired with a full-history asset keeps only beta-linked correlation in backfilled months (NVDA/AMD 0.27 vs 0.53); a call that can't reach target counts as broken.
-- 2026-11-06 · Public repo onedigerati/eVelo-v2 with GitHub Pages via Actions — user chose public (matches v1).
-- 2026-11-06 · City cost indices are curated approximations from public indices, labeled as estimates and user-overridable per category.
-
-- 2026-11-06 · UI reads a prebuilt `market-index.json` (derived by `scripts/build-market-index.mjs`, sync-checked by a test); `market.json` ships only in the worker. Atlas/Method lazy; framer-motion via LazyMotion — main chunk 1,177 kB → 345 kB.
-- 2026-11-06 · Plain hashes (`#atlas`) are canonical and share links are `#p=…` — the claude.ai preview host only passes plain hashes; `#/atlas` and `#/?p=` still parse.
-- 2026-11-06 · Verdict bands 80 / 65 / 45 (holds / mostly holds / fragile / breaks), classified on the displayed whole percent; one outcome color scale (`outcomeScale.ts`, hue-adjacent `--ramp-*` stops, step at 65%) for every success color.
-- 2026-11-06 · Atlas shows the Outlook's full-path odds for the user's home and destination, so one city never shows two numbers.
+- 2026-11-06 · Verify cost data for 25 cities; write full profiles for the top 15 — user's choice.
+- 2026-11-06 · Keep all 96 cities; unverified ones are labeled as rough estimates — home and destination choices keep working.
+- 2026-11-06 · Ranking blends published sources (InterNations Expat City Ranking, International Living Global Retirement Index and similar) with cost, healthcare, safety and visa factors, weighted for retirees; sources cited in the app — user's choice.
+- 2026-11-06 · Numbeo's figures are used to check and round our own indices, not bulk-copied, and no script scrapes them — their terms restrict bulk copying.
+- 2026-11-06 · If a top pick isn't already in the dataset, add it rather than skip it.
 
 ## Open questions
 - Some 2026 single-stock months are very large (INTC +114% Apr 2026; MU/SNOW/DDOG ~+87% May 2026); match Yahoo raw bars but unverified against a second source.
 - In-browser fetch of arbitrary tickers needs a CORS proxy or serverless function — user decides on hosting later; not blocking.
+- Pushing to main deploys the live site — confirm with the user before the stage 3 push.
+
+## Standing decisions
+- 2026-11-06 · React + Vite + TS, hand-built SVG charts (d3-scale/shape/geo), static hosting — full design control, no backend. (from [eVelo v2 build](plans/2026-11-06-evelo-v2-build.md))
+- 2026-11-06 · Destination cost in USD = home budget × per-category city ratios (with expat factor) × US CPI path × real-FX random walk — PPP-consistent and simple. (from [eVelo v2 build](plans/2026-11-06-evelo-v2-build.md))
+- 2026-11-06 · Preview: after each stage that changes what the user sees, publish the production build to one private claude.ai Artifact (same URL every time) and keep a local dev server up — user asked to review meaningful updates on a preview site. (from [eVelo v2 build](plans/2026-11-06-evelo-v2-build.md))
+- 2026-11-06 · Public repo onedigerati/eVelo-v2 with GitHub Pages via Actions — user chose public (matches v1). (from [eVelo v2 build](plans/2026-11-06-evelo-v2-build.md))
+- 2026-11-06 · City cost indices are curated approximations from public indices, labeled as estimates and user-overridable per category. (from [eVelo v2 build](plans/2026-11-06-evelo-v2-build.md))
+- 2026-11-06 · UI reads a prebuilt `market-index.json` (derived by `scripts/build-market-index.mjs`, sync-checked by a test); `market.json` ships only in the worker. Atlas/Method lazy; framer-motion via LazyMotion — main chunk 1,177 kB → 345 kB. (from [eVelo v2 build](plans/2026-11-06-evelo-v2-build.md))
+- 2026-11-06 · Plain hashes (`#atlas`) are canonical and share links are `#p=…` — the claude.ai preview host only passes plain hashes; `#/atlas` and `#/?p=` still parse. (from [eVelo v2 build](plans/2026-11-06-evelo-v2-build.md))
+- 2026-11-06 · Verdict bands 80 / 65 / 45 (holds / mostly holds / fragile / breaks), classified on the displayed whole percent; one outcome color scale (`outcomeScale.ts`, hue-adjacent `--ramp-*` stops, step at 65%) for every success color. (from [eVelo v2 build](plans/2026-11-06-evelo-v2-build.md))
+- 2026-11-06 · Atlas shows the Outlook's full-path odds for the user's home and destination, so one city never shows two numbers. (from [eVelo v2 build](plans/2026-11-06-evelo-v2-build.md))
+
+## Shipped
+- 2026-11-06 · eVelo v2 build: BBD planner with engine, plan inputs, outlook charts, Atlas and methodology, live on GitHub Pages — [plan](plans/2026-11-06-evelo-v2-build.md)
