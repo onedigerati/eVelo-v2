@@ -422,7 +422,7 @@ const europeCities: City[] = [
   mk(CH, 'zurich', 'Zurich', 47.38, 8.54, [125, 70, 130, 140]),
   mk(HR, 'split', 'Split', 43.51, 16.44, [54, 22, 48, 63], ['Summer tourism drives short-term rents up sharply; long-term leases are cheaper off-season.']),
   mk(GE, 'tbilisi', 'Tbilisi', 41.72, 44.79, [38, 17, 40, 42]),
-  mk(GE, 'batumi', 'Batumi', 41.64, 41.63, [33, 11, 36, 37], ['Black Sea resort city with Georgia'\''s tax profile; healthcare and flights are weaker than in Tbilisi.']),
+  mk(GE, 'batumi', 'Batumi', 41.64, 41.63, [33, 11, 36, 37], ['Black Sea resort city with Georgia\'s tax profile; healthcare and flights are weaker than in Tbilisi.']),
   mk(TR, 'istanbul', 'Istanbul', 41.01, 28.98, [46, 24, 40, 48]),
   // Stage 3 additions (BBD destinations).
   mk(GR, 'crete', 'Crete (Chania)', 35.51, 24.02, [53, 14, 48, 57], [

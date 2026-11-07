@@ -17,6 +17,10 @@ One-off vitest over the 75 ids: 0 missing after adding Batumi and pricing Rome, 
 
 ## Check 4: tests, typecheck, build
 ```
- Test Files  5 failed | 10 passed (15)
-      Tests  94 passed (94)
+ Test Files  15 passed (15)
+      Tests  163 passed (163)
+typecheck: clean
+dist/assets/index-DnaFcJph.js                                   521.38 kB │ gzip: 170.17 kB
+✓ built in 426ms
 ```
+(First run after the Batumi row showed 5 failing files from a quoting slip in its note; fixed in the next commit and re-run here.)
