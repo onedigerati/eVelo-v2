@@ -1,39 +1,45 @@
-# Landing page plan
+# City photo galleries plan
 
 ## Goal
-Give eVelo a landing page that says what the site is before a visitor meets the planner: study G, "The Atlas is the chart" (canvas https://claude.ai/artifact/YXsFA24Z4bXtpgNhhMouHY, boards `AtlasHero` and `AtlasHeroDark`). A two-column hero (eyebrow, the headline "Live off your portfolio *without ever selling it.*", G's copy, "Stress-test my plan" and "Explore the Atlas", the no-sign-up line) beside a map card: one illustrative plan's odds city by city, Lisbon highlighted with its readout and fan chart; below, the four steps Buy / Borrow / Live anywhere / Die. It follows the site theme (paper in light, ink in dark), works at phone width, and respects reduced motion. First-time visitors at the bare URL see it; everyone else goes straight to the app. Done = verified on the running app in both themes and on a phone viewport, tests green, previewed, and deployed on approval.
+Every one of the 75 profiled Atlas picks shows five real, openly licensed photos of the place at the top of its profile, laid out as design A, the "cover mosaic" (canvas https://claude.ai/artifact/71Q8M4YvnFsJUaQkyayR8y, boards "A · Cover mosaic" and "Shared · Full-size view"). One large photo and four small ones, with an "All 5 photos" button. A badge on the large photo shows the plan's odds for that city ("82% plan holds", bar with a home tick, "+6 pts vs 76% in Austin"). Tapping any photo opens a full-size view (arrows, keys, swipe) with a caption, a credit with its licence, and the same odds as a pill in the top bar. Profiles without photos keep today's layout. Done = all 75 cities have photos that were checked to show the place, verified in both themes and on a phone viewport, tests green, previewed, and deployed on approval.
 
 ## Baseline
-2026-11-07 · tests: 189 pass (17 files) · typecheck: clean · build: ok
+2026-11-07 · tests: 214 pass (20 files) · typecheck: clean · build: ok
 
 ## Now
-All stages done. Stage 1 ([evidence](evidence/stage-1/report.md)) and stage 2, study G ([evidence](evidence/stage-2/report.md); study C's in [stage-2-study-c](evidence/stage-2-study-c/report.md)). Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (v24). Live: https://onedigerati.github.io/eVelo-v2/ — matches v24 (deployed 2026-11-07, run 42407271640; asset hashes confirmed against a local build).
+Stage 1 of 5 · Photo pipeline
+Risk: external services (build-time downloads from Wikimedia Commons), third-party content and licences
+Checks:
+- [ ] `npm run photos` reads each city's photo list (Commons file titles plus captions), fetches author and licence from the Commons API, downloads each photo and writes a resized WebP under `src/data/photos/<cityId>/` (proof: run the command for lisbon twice; the second run downloads nothing)
+- [ ] A photo whose licence isn't CC0, public domain, CC BY or CC BY-SA is refused with its file title, and nothing is written (proof: test)
+- [ ] Every city with photos has exactly 5, each with a file on disk, alt text, a one-line caption, author, licence name and URL, and an https Commons source URL, with no file used twice (proof: test)
+- [ ] The five pilot cities (lisbon, algarve, panama-city, boquete, kuala-lumpur) have their photos, and each is under 200 kB (proof: test + command)
+- [ ] A contact sheet of the pilot photos with captions is saved to the evidence, and each photo was looked at and shows the place its caption names (proof: run the product: contact-sheet screenshot)
+- [ ] Photos ship through Vite as hashed files in `dist/assets`, so `scripts/artifact-page.mjs` picks them up for the preview with no change (proof: command: `npm run build` lists them)
+Open: none
 
 ## Stages
-- [x] 1. Landing route — `#home` route, first-visit rule with a persisted "entered the app" flag, shell hides top bar/tab bar on the landing; landing view as a plain placeholder
-- [x] 2. Atlas-hero view — study G: hero copy and CTAs beside the illustrative map card (cities, Lisbon readout and fan chart), four steps below, theme toggle; phone layout; reduced motion; preview + deploy on approval. (Study C was built, verified and previewed as v23 first, then replaced at the user's call — evidence in `docs/evidence/stage-2-study-c/`.)
+- [ ] 1. Photo pipeline — `npm run photos` (Commons API + sharp → WebP), per-city photo data and tests, the five pilot cities, a contact sheet
+- [ ] 2. Gallery + odds badge — design A mosaic in the profile, odds badge with home comparison, full-size view with the odds pill, phone layout, both themes, reduced motion; preview; stop for review
+- [ ] 3. Photos: Europe — the other 31 European picks, contact sheet, preview
+- [ ] 4. Photos: Americas — the other 29 Latin American picks, contact sheet, preview
+- [ ] 5. Photos: Asia/Africa + launch — the other 10 picks; a test now requires photos for all 75; preview; deploy on approval
 
 ## Decisions
-- 2026-11-07 · Landing is study G, "The Atlas is the chart", replacing study C after the user saw C on preview v23 — user: "let's go with option G here instead". C's decisions below (body copy, decorative paths, seed, label halo) are superseded.
-- 2026-11-07 · G's map numbers stay illustrative as drawn (labelled "Illustrative numbers"), not an engine snapshot or a live run — user's choice.
-- 2026-11-07 · G's copy is used as drawn: headline, paragraph, CTAs and the four step blurbs — user's choice, replacing the earlier verbatim copy.
-- 2026-11-07 · G's city dots and label percentages use the app's `--ramp-*` outcome scale (light hexes differ slightly from the board's); the Breaks→Holds key uses the same tokens — matches "coloured by the app's holds scale".
-- 2026-11-07 · G's map labels on phones (≤520px): five labels (New York dropped) at a larger size so they render 11–12.5px without overlapping; all six as drawn from 521px up, bumped to 28 units at 901–1199px. CTAs stack full width ≤520px. The landing header keeps the theme toggle though G's board doesn't draw one — builder's calls after the PM flagged 6px labels, kept.
-- 2026-11-07 · G's map labels carry a halo in the card's opaque colour so the graticule never runs through them (light-theme Austin/New York had dropped to 4.23:1); Bangkok's phone label sits 12 units lower to clear Lisbon's — autopilot fixes after verification.
-- 2026-11-07 · (superseded) Landing is study C, "Escape velocity" — user chose it from five studies (A–E) on the canvas.
-- 2026-11-07 · Shown on first visit only: the bare URL shows it until the visitor has entered the app once; share links and route hashes go straight to the app; the wordmark brings it back (`#home`) — user picked the recommended option.
-- 2026-11-07 · Follows the site theme: paper with deeper green/brass/coral paths in light, ink with glowing paths in dark — user asked to see the light variant, then chose "follow the theme".
-- 2026-11-07 · Paths are decorative and seeded (deterministic), not engine output — user chose decorative over real simulation paths.
-- 2026-11-07 · Body copy, verbatim from the user: "A portfolio that grows faster than the loan against it never has to be sold. Spend the loan, keep the shares, leave them to your heirs. eVelo runs your plan through thousands of real market histories and counts how many actually reach escape velocity."
-- 2026-11-07 · The landing is full-bleed with its own slim header (wordmark, theme toggle, "Open the planner"); the app's top bar and phone tab bar are hidden on it — the study's composition depends on it; defaulted.
-- 2026-11-07 · Bare URL meaning is settled once per page load, so Back from the planner to the bare entry still shows the landing; unknown hashes are treated like the bare URL; the bare URL after entering opens `plan` (phones land on the Plan tab, was Outlook) — builder's calls inside the plan's intent, kept.
-- 2026-11-07 · A plan saved before the flag existed counts as having entered (checked once per device and recorded as `evelo:v2:entered` = `'1'`/`'0'`), so existing users aren't shown the landing; a plan saved from the landing (theme toggle) never counts — autopilot fix after verification flagged returning users.
-- 2026-11-07 · Landing field seed is 2815, not the study's 7: seed 7 yields no broken paths (57 hold, 7 bruised), so it can't show "a few break through"; 2815 gives 53/8/3 with the broken ends right of the text. Paths use `pathLength=1` so long paths finish drawing (the study's fixed 1800 dasharray clipped them) — builder's calls, kept.
-- 2026-11-07 · The margin-call label is drawn after the paths with a background-colour halo, so a coral path crossing it (seed 2815 at 1440px) never hides it — autopilot fix after verification.
-- 2026-11-07 · Stage evidence commits its screenshots (as earlier plans did); the verifier's `docs/evidence/.gitignore` was dropped.
+- 2026-11-07 · Layout is design A, the cover mosaic: one large photo plus four small ones above the profile text, "All 5 photos" button, tap to enlarge — the user's number-one pick of four (A mosaic, B reasons, C carousel, D rail) on the canvas.
+- 2026-11-07 · The plan's odds ride on the photos: a badge on the mosaic's large photo and a pill in the full-size view's top bar, each with the home comparison ("+6 pts vs 76% in Austin") — user asked for the odds "as I'm viewing them" and for the home comparison, on both.
+- 2026-11-07 · The badge reuses the profile's existing numbers (`row.successRate`, `home.successRate`, `oddsVsHome`, `successTextColor`), so it updates with the plan; while the Atlas is ranking it shows a skeleton, never a stale number — proposed with the mock-up, user approved.
+- 2026-11-07 · Photos are real and openly licensed: Wikimedia Commons first (CC0, public domain, CC BY, CC BY-SA), each credited with author and licence in the full-size view and as a credit line under the mosaic. No AI-generated images. Unsplash only where Commons has no good photo, and logged here when used — user accepted the defaults.
+- 2026-11-07 · Photos are self-hosted, not hotlinked: downloaded once by `npm run photos` and committed as WebP — user accepted the defaults. Hotlinking would break or be blocked.
+- 2026-11-07 · Exactly five photos per city, each tied to a reason the profile gives (old town, waterfront, food, landscape, getting around), with a one-line caption — the mosaic's layout needs five; user accepted.
+- 2026-11-07 · One size per photo, about 1280 px wide, quality chosen to stay under 200 kB (~375 files, about 40–60 MB in the repo). The browser loads them only when a profile opens. Two sizes would double the file count past the preview Artifact's 511-file limit — builder's call.
+- 2026-11-07 · Photos and their data live in `src/data/photos/<cityId>/` and load through `import.meta.glob(..., { query: '?url' })`, like the profiles; adding a city's photos needs no edit elsewhere — builder's call, mirrors `src/data/profiles/`.
+- 2026-11-07 · `sharp` is added as a dev dependency for resizing (no image tool is installed on this machine); it is never in the shipped bundle — builder's call.
+- 2026-11-07 · The preview gets the photos in two or more publishes (at most 255 files each), then a file listing confirms every manifest path — the Artifact limits; the full-manifest rule still applies.
+- 2026-11-07 · Every photo is looked at before it ships, and each batch saves a contact sheet to its evidence — Commons titles can be wrong or mislabelled, and the user was told this is the slow part.
 
 ## Open questions
-- WebKit's touch path (iPhone) is untested until the user tries it.
+- WebKit's touch path (iPhone) is untested until the user tries it; the full-size view's swipe adds to it — user, when they try it.
 
 ## Standing decisions
 - 2026-11-06 · React + Vite + TS, hand-built SVG charts (d3-scale/shape/geo), static hosting — full design control, no backend. (from [eVelo v2 build](plans/2026-11-06-evelo-v2-build.md))
@@ -56,6 +62,10 @@ All stages done. Stage 1 ([evidence](evidence/stage-1/report.md)) and stage 2, s
 - 2026-11-07 · Pan bounds are the inhabited band (Hawaii to the dateline, 79°N–57°S) plus the region's own fit, not the sphere's bounding box — its corners are empty ocean. (from [Pan and zoom map](plans/2026-11-07-map-pan-zoom.md))
 - 2026-11-07 · Touch pans on a horizontal one-finger drag (same intent rule as the sliders) and on two fingers; vertical one-finger swipes stay page scrolls — keeps the page scrollable past the map, which the user has prioritised. (from [Pan and zoom map](plans/2026-11-07-map-pan-zoom.md))
 - 2026-11-07 · Tapped city card floats beside its dot on tablets and wider (map ≥ 560px), like the mouse bubble; phones keep it docked below the map — user chose this after trying a compact phone bubble. (from [Pan and zoom map](plans/2026-11-07-map-pan-zoom.md))
+- 2026-11-07 · Landing is study G, "The Atlas is the chart", replacing study C after the user saw C on preview v23 — user: "let's go with option G here instead". (from [Landing page](plans/2026-11-07-landing-page.md))
+- 2026-11-07 · Shown on first visit only: the bare URL shows it until the visitor has entered the app once; share links and route hashes go straight to the app; the wordmark brings it back (`#home`) — user picked the recommended option. (from [Landing page](plans/2026-11-07-landing-page.md))
+- 2026-11-07 · A plan saved before the flag existed counts as having entered (checked once per device and recorded as `evelo:v2:entered` = `'1'`/`'0'`), so existing users aren't shown the landing; a plan saved from the landing (theme toggle) never counts — autopilot fix after verification flagged returning users. (from [Landing page](plans/2026-11-07-landing-page.md))
+- 2026-11-07 · Stage evidence commits its screenshots (as earlier plans did); the verifier's `docs/evidence/.gitignore` was dropped. (from [Landing page](plans/2026-11-07-landing-page.md))
 
 ## Shipped
 - 2026-11-06 · eVelo v2 build: BBD planner with engine, plan inputs, outlook charts, Atlas and methodology, live on GitHub Pages — [plan](plans/2026-11-06-evelo-v2-build.md)
@@ -64,3 +74,4 @@ All stages done. Stage 1 ([evidence](evidence/stage-1/report.md)) and stage 2, s
 - 2026-11-06 · Saved portfolios: save/apply/rename/delete holdings mixes, Atlas on the plan's full path count, info bubbles kept on screen — [plan](plans/2026-11-06-saved-portfolios.md)
 - 2026-11-07 · Mobile slider gestures: touch-safe sliders, expat price premium relabel with local/tourist ends — [plan](plans/2026-11-06-mobile-slider-gestures.md)
 - 2026-11-07 · Pan and zoom map: mouse, trackpad and touch pan/zoom on the Atlas map, zoom buttons, hover fix and tablet tap bubbles, live on GitHub Pages — [plan](plans/2026-11-07-map-pan-zoom.md) · [evidence](plans/2026-11-07-map-pan-zoom/evidence/)
+- 2026-11-07 · Landing page: first-visit landing (study G, "The Atlas is the chart") with the illustrative odds map and four steps, live on GitHub Pages — [plan](plans/2026-11-07-landing-page.md) · [evidence](plans/2026-11-07-landing-page/evidence/)
