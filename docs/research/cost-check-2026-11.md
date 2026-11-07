@@ -238,3 +238,20 @@ Caveats:
 - Phuket and Taipei fell on col and groceries. The old estimates looked high next to Bangkok's Numbeo row (42/19/46/30).
 - Livingcost's Mexico City page is at `/cost/mexico/mexico` (its title reads "Mexico City"), not `/cost/mexico/mexico-city`, which returns 404.
 - Re-read all eleven from Numbeo once it stops rate-limiting, and replace these records if the rows exist.
+
+# Placencia, Belize (2026-11-06)
+
+Placencia (`placencia`) was added to the dataset for evaluation. Its record is `confidence: 'low'`, `source: 'Mapped to nearby Belize rows'`.
+
+- **Numbeo:** https://www.numbeo.com/cost-of-living/in/Placencia was tried once and returned HTTP 429.
+- **livingcost.org:** it has no Placencia page. `/cost/belize/placencia` and `/cost/belize/sc/placencia` return 404, and the Belize country page (`/cost/belize`, "Updated: June 21, 2026") lists only Belize City, Belmopan, Caye Caulker, San Ignacio and San Pedro Town.
+- **Mapping used:** the midpoint of the dataset's Cayo row (50/10/56/30) and Ambergris Caye row (61/27/88/36), rounded half up: **56/19/72/33** (col/rent/groceries/restaurants). The reasoning: Placencia is a beach and tourist village, dearer than inland Cayo, but it is supplied by road, unlike the island. This is a judgment mapping, not a measurement.
+- **Why not livingcost's neighbours:** the Stage 5 method applied to livingcost's San Ignacio and San Pedro Town pages gives the figures below. The two pages are nearly identical except for rent, and San Ignacio's restaurants come out above San Pedro's. Its lunch is $15 against San Pedro's $8.56, which is implausible. Belize's livingcost data looks too thin to price a third town from, so it was not used.
+
+| Page | Without rent | 1BR centre | Food | Lunch | Dinner for 2 | Scaled col/rent/groc/rest | Dataset row |
+|---|---|---|---|---|---|---|---|
+| San Ignacio (`/cost/belize/san-ignacio`) | 604 | 541 | 437 | 15.0 | 44.8 | 44/14/50/57 | Cayo 50/10/56/30 |
+| San Pedro Town (`/cost/belize/san-pedro-town`) | 622 | 753 | 438 | 8.56 | 33.9 | 45/20/50/37 | Ambergris 61/27/88/36 |
+
+- **Healthcare factor:** 0.4, which is Belize's 0.35 plus the same override as Ambergris Caye. The village has only a polyclinic, whose night staffing has been questioned. The nearest hospital (public, Dangriga) is 1¼–1¾ h by road, and private hospitals are in Belize City, 3½ h by road or reached by a daytime flight. Evacuation cover is needed, as it is for Ambergris (docs/research/bbd-ranking-2026-11.md, Appendix C, Placencia).
+- Re-read from Numbeo once it stops rate-limiting, if a Placencia row with enough contributors exists.

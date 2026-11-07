@@ -567,6 +567,11 @@ const latamCities: City[] = [
   mk(BZ, 'ambergris-caye', 'Ambergris Caye (San Pedro)', 17.92, -87.96, [61, 27, 88, 36], [
     'San Pedro has clinics but no hospital; anything more means a boat or flight to the mainland, and medevac can cost US$10,000+.',
   ], { healthcare: 0.4 }),
+  mk(BZ, 'placencia', 'Placencia', 16.51, -88.37, [56, 19, 72, 33], [
+    'A public polyclinic (opened 2024, billed as 24-hour, though a night-time visit later found it unstaffed); the nearest hospital is the public Southern Regional in Dangriga, about 1¼–1¾ hours by road. Private hospitals are in Belize City, 3½ hours by road or a short flight from the airstrip.',
+    'Tropic Air and Maya Island Air fly from the Placencia airstrip to Belize City\'s international airport many times a day; it has year-round US nonstops to Atlanta, Dallas, Houston, Los Angeles and Miami.',
+    'A low, exposed peninsula: Hurricane Iris (2001) damaged about 95% of the village\'s buildings. Hurricane season runs June–November.',
+  ], { healthcare: 0.4 }),
   mk(DO, 'las-terrenas', 'Las Terrenas', 19.31, -69.54, [42, 16, 40, 46], [
     'Private clinics only; complex cases go to Santo Domingo or Santiago, 2–3 hours by road or by helicopter.',
   ], { healthcare: 0.35 }),
@@ -740,6 +745,12 @@ const VERIFIED: Record<string, CityVerification> = {
     url: 'https://www.numbeo.com/cost-of-living/in/Belmopan',
     confidence: 'low',
     note: 'Numbeo\'s San Ignacio page could not be read (rate-limited). Derived from Numbeo\'s raw prices for Belmopan (30 km east; 32 entries from 1 contributor, May 2025) vs NYC. Very thin; treat as rough.',
+  }),
+  placencia: v({
+    source: 'Mapped to nearby Belize rows',
+    url: 'https://www.numbeo.com/cost-of-living/in/Placencia',
+    confidence: 'low',
+    note: 'No usable source: Numbeo\'s Placencia page returned HTTP 429 and livingcost.org has no Placencia page. Set to the midpoint of the Cayo (50/10/56/30) and Ambergris Caye (61/27/88/36) rows, rounded half up: a beach village dearer than inland Cayo but supplied by road, unlike the island. A judgment mapping, not measured.',
   }),
   // Stage 5: picks newly in the top 50, priced from livingcost.org because Numbeo was rate-limiting (HTTP 429).
   // See docs/research/cost-check-2026-11.md, Stage 5.

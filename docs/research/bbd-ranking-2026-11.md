@@ -158,6 +158,7 @@ This is the draft Stage 5 reranks, once costs, healthcare factors and the engine
 | Rome | Italy's IVAFE and 26% dividend tax as for Florence; Florence carries Italy in the 50. |
 | Cartagena | Colombia's wealth, dividend and inheritance taxes as for Medellín, with weaker hospitals. |
 | Ambergris Caye | No hospital on the island; everything beyond a clinic means a boat or flight out. Cayo carries Belize in the 50. |
+| Placencia | No hospital on the peninsula: Southern Regional (Dangriga) is 1¼–1¾ h by road and private care 3½ h away in Belize City; the village polyclinic was found unstaffed at night (Oct 2024); hurricane-exposed (Iris, 2001). Same QRP tax profile as Cayo, which carries Belize in the 50. Researched in Appendix C at the user's request. |
 | Cebu | The Philippines' 6% estate tax on residents' worldwide estate; no confirmed JCI hospital. |
 | Dumaguete | Same 6% worldwide estate tax; Negros reported at US Level 3; domestic flights only. |
 | Buenos Aires | Argentina's worldwide wealth tax (Bienes Personales) from ~US$249k, plus 5–35% on foreign dividends. |
@@ -167,7 +168,7 @@ This is the draft Stage 5 reranks, once costs, healthcare factors and the engine
 
 Accounted for: all of the shipped 25, the seven LIOS #4–10 picks, both Belize cities, the Stage 1 surfaced adds (Cyprus, Malta, Paraguay, Philippines), and the Stage 2 candidates.
 - 50 are ranked.
-- 16 are outside with a reason.
+- 17 are outside with a reason (Placencia added after the user asked about it).
 
 ## Unverified items to carry as caveats
 
@@ -690,6 +691,39 @@ Regional quick charts (PwC): inheritance tax rates are at https://taxsummaries.p
   - https://www.riotimesonline.com/healthcare-belize-expats-2026/
 - **BBD verdict:** QRP is tax-perfect for BBD (all foreign income exempt, investment accounts accepted, only US$2k/mo). Healthcare is the dealbreaker: budget for international cover with evacuation.
 - **City notes:** Cayo is closer to Guatemala and Belmopan. Ambergris Caye means a boat or flight for anything beyond a clinic.
+
+### Placencia (Belize)
+
+Researched 2026-11-06. Country facts (QRP, tax, inheritance, healthcare in general) are in the Belize section above; this covers what differs at city level.
+
+- **Tax, residency, estate:** same as Belize above (QRP exempts all foreign-source income; investment accounts qualify; QRP members exempt from inheritance tax). Nothing city-level changes the BBD tax profile.
+- **Healthcare:**
+  - **Placencia Polyclinic** (public; Ministry of Health and Wellness with the Belize Tourism Board) opened 15 May 2024 near the airstrip: consultation and triage rooms, pharmacy, laboratory, shock/trauma rooms and a donated ambulance. It serves Placencia Village, Seine Bight and nearby communities. https://www.belizetourismboard.org/?p=39983
+  - The Health Minister said it would run 24 hours, but in October 2024 a parent who arrived with a feverish child in the early hours found it **deserted**, with no staff or security. No official reply was reported. https://www.greaterbelize.com/is-the-placencia-polyclinic-truly-open-24-7/
+  - **Nearest hospital: yes, Southern Regional Hospital, Dangriga** (public; general, maternity, intensive and surgical care). It is the only Stann Creek facility on the UK's medical list (last updated June 2021). https://www.gov.uk/government/publications/belize-list-of-medical-facilities/belize-medical-facilities
+  - Dangriga is **about 1¼–1¾ h by road**: shuttle 1 h 15 min, bus 1 h 21 min (https://www.rome2rio.com/s/Placencia/Dangriga); 1 h 45 min (https://www.belizehub.com/?p=26828). Road distance was not read from a source; the 21-mile peninsula road (Moon, below) plus the Southern Highway leg suggests roughly 80 km (*my estimate*).
+  - **Private care** is in Belize City: Belize Medical Associates and Belize Health Care Partners (24-hour emergency, CT) and Buttonwood Bay Medical & Cardiology. https://www.gov.uk/government/publications/belize-list-of-medical-facilities/belize-medical-facilities That is about 3½ h by road (https://www.belizehub.com/?p=26828), or a daytime flight from the airstrip (Access, below).
+  - **Evacuation:** Tropic Air runs medical transfers 24 h a day only from San Pedro and Caye Caulker to Belize City; its regional transfers go to Mérida, Cancún, San Pedro Sula and Guatemala City. Placencia is **not** listed as an origin, and passengers must be stable and need no in-flight care. https://www.tropicair.com/medical-transfer/ Wings of Hope Belize, a domestic air ambulance, flies from Punta Gorda, Dangriga, the cayes and other districts to Belize City; Placencia is not named. https://rainforestrealty.com/?p=29084 Serious cases otherwise follow the national route: Belize City, then Mérida, Guatemala City or Miami (Belize section above).
+  - Net: worse than Cayo (which has a community hospital, a private hospital in Santa Elena and Belmopan's regional hospital about 30 km away), and comparable to Ambergris Caye (a clinic plus a boat or flight), with a longer road leg to private care.
+- **Safety:**
+  - US: **Level 2** (Exercise Increased Caution) for crime, updated 12 March 2026; Southside Belize City is **Level 3**, and the advisory warns against driving between cities after dark. Stann Creek and Placencia are not singled out. (Read via the report https://www.greaterbelize.com/?p=86159 ; travel.state.gov returned HTTP 403.)
+  - UK: "Belize has one of the highest per capita murder rates in the world"; gang violence is concentrated in Belize City's Southside. Placencia is named with San Pedro, Caye Caulker and San Ignacio as a place where tourists are "vulnerable to theft". It warns of flooded temporary bridges and causeways in severe weather, "particularly in Stann Creek and Toledo". https://www.gov.uk/foreign-travel-advice/belize/safety-and-security
+- **Retiree community:**
+  - Small. The village had 1,512 people (2010 census), the peninsula 3,458 including expats; a 2024 estimate puts the village under 2,000. https://en.wikipedia.org/wiki/Placencia No expat headcount was found; promotional pages say "thousands of retirees and expatriates" have discovered it, with no count. https://www.belizehub.com/?p=18565
+  - Areas: Placencia Village at the tip (the hub, one main street); **Maya Beach**, a small community midway up the peninsula with homes, small resorts, two small grocery stores and restaurants; and **Seine Bight**, a historic Garifuna village next to Maya Beach. https://en.wikipedia.org/wiki/Placencia ; "a healthy number of expats", with resorts in Seine Bight and Maya Beach north of the village. https://www.afar.com/places/placencia-peninsula-stann-creek-district
+  - English: Belize is the only Central American country with English as the official language. https://en.wikipedia.org/wiki/Belize
+- **Access:**
+  - Placencia airstrip (PLJ): a 650 m asphalt runway, served by Maya Island Air and Tropic Air to Belize City (international and municipal), Dangriga and Punta Gorda. https://en.wikipedia.org/wiki/Placencia_Airport Moon counts **more than 20 daily flights** at the airstrip; planes usually run Belize City → Dangriga → Placencia → Punta Gorda. https://www.moontravelguides.com/travel/planning/getting-to-and-around-belizes-placencia-village/ Tropic Air flies "multiple times a day"; flight time was not stated on the pages read. https://www.tropicair.com/destinations/placencia/
+  - Road to BZE: **about 3½ h** (https://www.belizehub.com/?p=26828); "three or four hours" from Belize City via the Hummingbird and Southern Highways and the 21-mile peninsula road, paved in 2010 (Moon, above).
+  - US nonstops from BZE: year-round Atlanta (Delta), Dallas/Fort Worth and Miami (American), Houston IAH (United) and Hobby (Southwest), Los Angeles (Alaska); seasonal Charlotte, Chicago, Denver, Newark, San Francisco, Minneapolis, Seattle, Baltimore, plus BermudAir's new seasonal routes from December 2026. https://en.wikipedia.org/wiki/Philip_S._W._Goldson_International_Airport
+- **Climate:** tropical monsoon. Highs 27 °C (Dec–Jan) to 32 °C (Apr–Sep), lows 20–24 °C. Rain is heaviest June–October (290–350 mm a month; July wettest), driest Feb–Apr (66–82 mm). https://weather2travel.com/belize/placencia/climate Hurricane season is 1 June–30 November (UK, above). **Hurricane Iris** (Cat 4, 8 October 2001) made landfall at Monkey River Town just south of the peninsula and damaged nearly 95% of Placencia's buildings. https://en.wikipedia.org/wiki/Placencia ; https://en.wikipedia.org/wiki/Belize
+- **Costs:** Numbeo's Placencia page was rate-limited (HTTP 429) and livingcost.org has no Placencia page, so indices are mapped between the Cayo and Ambergris Caye rows (docs/research/cost-check-2026-11.md, Placencia).
+- **BBD-relevant differences from Cayo:**
+  - Same QRP tax treatment, so the tax and estate case is identical.
+  - Hospital access is the binding difference: a polyclinic of uncertain night staffing, 1¼–1¾ h to a public hospital and 3½ h by road to private care, versus Cayo's local hospitals.
+  - Hurricane exposure on a low coastal peninsula (Cayo is inland); property insurance and evacuation logistics cost more.
+  - Costs are higher (beach rents and restaurants), but better daily air links to BZE than Cayo has by road.
+- **Top 50?** Not on the current evidence. It has the same profile as Ambergris Caye (excluded: no hospital, everything beyond a clinic means a trip out), plus a longer road leg and hurricane exposure. Cayo carries Belize in the 50.
 
 ### Dominican Republic (Las Terrenas)
 

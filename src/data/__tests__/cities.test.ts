@@ -125,6 +125,15 @@ describe('CITIES dataset', () => {
     }
   })
 
+  it('adds Placencia with a low-confidence verified record that says what was done', () => {
+    const c = CITY_BY_ID.placencia
+    expect(c, 'placencia').toBeDefined()
+    expect(c.countryCode).toBe('BZ')
+    expect(c.verified).toBeDefined()
+    expect(c.verified!.confidence).toBe('low')
+    expect(c.verified!.note).toBeTruthy()
+  })
+
   it('verifies New York as the base at 100', () => {
     const ny = CITY_BY_ID['new-york']
     expect(ny.verified).toBeDefined()
