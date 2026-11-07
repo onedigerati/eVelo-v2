@@ -7,20 +7,30 @@ Find the best places to retire for someone living on buy-borrow-die: a portfolio
 2026-11-06 · tests: 107 pass (12 files) · typecheck: clean · build: ok (main chunk 354.0 kB)
 
 ## Now
-Stage 4 of 6 · Local taxes
-Scope: per-country (and per-region, for Spain) wealth and inheritance tax parameters in `src/data/localTaxes.ts`, sourced from the research doc and attached to each city.
+Stage 5 of 6 · BBD ranking
+Scope: the Atlas picks become the draft top 50 from `docs/research/bbd-ranking-2026-11.md`, each with a sourced profile page.
 
-The kernel applies both:
-- **Wealth tax:** charged at each year-end after the move, on real net worth (portfolio − loan), or on gross portfolio value where the law says so (Italy's IVAFE). Thresholds are held constant in real terms. BBD borrows the tax; the sell strategy sells to pay it.
-- **Inheritance tax:** applied at the horizon to both the BBD estate and the sell estate. The assumed heirs are two US-resident children; heir-based regimes (Spain, Thailand, Vietnam) don't reach US assets passing to them.
+Changes to the profile model:
+- Three BBD scores join the six existing ones:
+  - **Tax on holdings:** wealth tax, plus tax on dividends and foreign income.
+  - **Estate:** inheritance tax reaching US assets left to US-resident children.
+  - **Lending:** broker and margin access for residents.
+- "Visa" becomes **Residency**, scored on routes that accept assets or passive income.
+- Profiles gain **Estate** and **Lending** facts, and the tax fact is rewritten for BBD.
+- Scores use the rubric in `src/data/expatPicks.ts`.
+- Profiles move to one file per city in `src/data/profiles/`.
 
-Results report the median cumulative wealth tax and the median inheritance tax. The Atlas odds pick the taxes up through the shared kernel. The Method page explains the model and its simplifications: Spain's 60% cap is ignored, there are no treaty credits (the US exemption is $15M), and each country's rates are the current-law schedule.
-Risk: high — money logic in the engine (user approved 2026-11-06); keel:review with a security pass
+Who builds what:
+- The 23 returning picks get refreshed facts and scores; the 27 newcomers get new profiles.
+- A foundation builder changes the model, the ranking and the UI. Then four builders write profiles in parallel, in separate worktrees.
+
+The layout polish for 50 picks is Stage 6.
+Risk: low (curated content and data shape; engine untouched)
 Checks:
-- [x] Tests prove the tax math: an all-zero tax config reproduces the existing results exactly; wealth tax is charged only after the move, only above the threshold, on net vs gross base as configured; the inheritance bands compute the hand-worked figures; a wealth-tax country lowers success and estate vs the same city with no tax (proof: `npm test` output)
-- [x] Every country in the draft top 50 has a `localTaxes` entry, explicit "none" included, each citing a source URL from the research doc; the Spanish cities use their own region's rules (proof: test + read the data file)
-- [x] The running app shows odds and estate changing for a taxed destination (e.g. Tarragona or Medellín vs Málaga at a $5M portfolio), and the Method page explains the model (proof: Playwright run + screenshots)
-- [x] Tests green, typecheck clean, build ok, review findings triaged (proof: command output + review notes) — [evidence](evidence/stage-4/report.md)
+- [ ] `EXPAT_PICKS` has 50 picks ranked 1–50 in the research doc's order, each with a reason; the ranking method and sources name the BBD research (proof: test + read the data)
+- [ ] All 50 have a full profile: 9 scores within 1–5 following the rubric, every fact including estate and lending, drawbacks, and ≥3 sources, each a URL that was read (proof: test + spot-read 6 profiles against the research doc)
+- [ ] The running Atlas lists 50 picks and opens a profile page for pick 1, a newcomer (e.g. Paphos), and pick 50, each showing the new scores and facts with no console errors (proof: Playwright run + screenshots)
+- [ ] Tests green, typecheck clean, build ok (proof: command output)
 Open: none
 Mode: autopilot
 
