@@ -7,24 +7,14 @@ Every one of the 75 profiled Atlas picks shows five real, openly licensed photos
 2026-11-07 · tests: 214 pass (20 files) · typecheck: clean · build: ok
 
 ## Now
-Stage 5 of 5 · Photos: Asia/Africa + launch
-Risk: external services (build-time downloads from Wikimedia Commons; publishing the preview and the site), third-party content and licences
-Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (v27: all 75 cities; 404 files = the 403-file manifest + index.html, the 99 stale files removed)
-Checks:
-- [x] Each of the 10 other Asia/Africa picks (penang, langkawi, taipei, bali, grand-baie, chiang-mai, chiang-rai, bangkok, hua-hin, phuket) has 5 photos with complete, clean credits, under 200 kB, no Commons file used twice (proof: test)
-- [x] The photo test requires exactly 5 photos for every one of the 75 picks and names any city that lacks them (proof: test, plus a mutation run that removed two cities)
-- [x] A contact sheet of the 10 cities is saved, and every photo was viewed at full size by an independent reviewer, flagged ones replaced and re-viewed (proof: run the product: contact-sheet screenshot + review)
-- [x] Three profiles (bangkok, bali, grand-baie) show the mosaic and the odds badge; the build puts all 375 photos in dist/assets and the preview manifest lists them; main chunk within 2 kB of 532.79 kB (proof: run the product: screenshots; command: build and manifest)
-- [x] The preview shows all 75 cities' galleries: stale files removed so the version stays under 511 files, and every manifest path present (proof: file listing of v27 = 403 manifest files + index.html; the same build opened locally shows Madeira's gallery; the user's own look on the preview is pending)
-- [x] Deployed to GitHub Pages on the user's approval, and the live site's asset hashes match a local build (proof: command)
-Open: none — deploy run 42427469855 succeeded; live entry assets and three random photos byte-identical to the local build (evidence/stage-5/deploy.txt)
+All stages done. Evidence: [stage 1](evidence/stage-1/report.md) · [stage 2](evidence/stage-2/report.md) · [stage 3](evidence/stage-3/report.md) · [stage 4](evidence/stage-4/report.md) · [stage 5](evidence/stage-5/report.md). Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (v27, all 75 cities). Live: https://onedigerati.github.io/eVelo-v2/ — matches the local build of 948cd65 (deployed 2026-11-07, run 42427469855).
 
 ## Stages
 - [x] 1. Photo pipeline — `npm run photos` (Commons API + sharp → WebP), per-city photo data and tests, the five pilot cities, a contact sheet
 - [x] 2. Gallery + odds badge — design A mosaic in the profile, odds badge with home comparison, full-size view with the odds pill, phone layout, both themes, reduced motion; preview; stop for review
 - [x] 3. Photos: Europe — the other 31 European picks, contact sheet
 - [x] 4. Photos: Americas — the other 29 Latin American picks, contact sheet
-- [ ] 5. Photos: Asia/Africa + launch — the other 10 picks; a test now requires photos for all 75; preview (stale files pruned); deploy on approval
+- [x] 5. Photos: Asia/Africa + launch — the other 10 picks; a test now requires photos for all 75; preview (stale files pruned); deploy on approval
 
 ## Decisions
 - 2026-11-07 · Layout is design A, the cover mosaic: one large photo plus four small ones above the profile text, "All 5 photos" button, tap to enlarge — the user's number-one pick of four (A mosaic, B reasons, C carousel, D rail) on the canvas.
