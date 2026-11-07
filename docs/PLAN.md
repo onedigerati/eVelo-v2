@@ -1,31 +1,33 @@
-# Pan and zoom map plan
+# Landing page plan
 
 ## Goal
-Make the Atlas world map pannable and zoomable with mouse, trackpad and touch, without taking over page scrolling on phones. Mouse drag pans; Ctrl/⌘+scroll and trackpad pinch zoom at the cursor; touch: horizontal one-finger drag pans, vertical swipe scrolls the page, two fingers pinch/pan; + / − / reset buttons. Taps and clicks on cities still work. Done = verified on the running app (mouse and touch emulation), tests green, deployed on approval.
+Give eVelo a landing page that says what the site is before a visitor meets the planner: study C, "Escape velocity" (canvas https://claude.ai/artifact/YXsFA24Z4bXtpgNhhMouHY, boards `Escape` and `EscapeLight`). A field of decorative simulated paths draws itself across the page (most rise in green, some take a hit in brass, a few break through the margin-call line in coral) behind the logo, the headline "Reach *escape velocity.*", the agreed copy, two CTAs and the holds/bruised/broken legend. It follows the site theme (paper in light, ink in dark), works at phone width, and respects reduced motion. First-time visitors at the bare URL see it; everyone else goes straight to the app. Done = verified on the running app in both themes and on a phone viewport, tests green, previewed, and deployed on approval.
 
 ## Baseline
-2026-11-07 · tests: 173 pass (16 files) · typecheck: clean · build: ok
+2026-11-07 · tests: 189 pass (17 files) · typecheck: clean · build: ok
 
 ## Now
-All stages done. Stage 1 verified ([evidence](evidence/map-pan-zoom/report.md)); Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (v22, incl. hover fix and tablet tap bubbles; v20–v21 had a broken Method tab from a partial upload, fixed in v22). Live: https://onedigerati.github.io/eVelo-v2/ — matches v22 (deployed 2026-11-07, run 42393495769; asset hashes confirmed against a local build).
+Stage 1 of 2 · Landing route
+Risk: UI only
+Checks:
+- [ ] A first visit to the bare URL (no saved state, no hash) shows the landing; the app's top bar and tab bar are not shown on it (proof: test + run the product)
+- [ ] After entering the app once (CTA, nav or any app route), reloading the bare URL opens the planner, not the landing (proof: test + run the product)
+- [ ] Share links (`#p=…`) and route hashes (`#atlas`, `#method`, `#outlook`, `#plan`) never show the landing, even on a first visit (proof: test)
+- [ ] `#home` always shows the landing, and the wordmark in the app links there (proof: run the product)
+- [ ] Tests, typecheck and build pass
+Open: none
 
 ## Stages
-- [x] 1. Pan and zoom — pure view helpers (zoom-at-point, pinch, clamp) with tests; gestures and controls in `WorldMap`
-  - [x] Mouse drag pans the map; a click after a drag does not choose a city; a plain click still does
-  - [x] Ctrl/⌘+wheel zooms at the cursor; a plain wheel scrolls the page (with a hint)
-  - [x] Touch: horizontal drag pans, vertical swipe scrolls the page, two-finger pinch zooms; a tap still opens the city card
-  - [x] + / − / reset buttons work; region chips still fly to their region; pan is clamped to the world
-  - [x] Hover bubbles still appear, including after a mouse press released off the map (fix after deploy)
-  - [x] Touch tap opens the floating bubble beside the dot on tablets and wider; phones keep the card docked below the map (user request after deploy)
-  - [x] Tests, typecheck and build pass
+- [ ] 1. Landing route — `#home` route, first-visit rule with a persisted "entered the app" flag, shell hides top bar/tab bar on the landing; landing view as a plain placeholder
+- [ ] 2. Escape-velocity view — theme-aware hero from study C: seeded decorative paths with draw-in animation, margin-call line, logo, copy, CTAs (Launch my plan → planner, What is Buy-Borrow-Die? → Method), legend, theme toggle; phone layout; reduced motion; preview + deploy on approval
 
 ## Decisions
-- 2026-11-07 · Pan bounds are the inhabited band (Hawaii to the dateline, 79°N–57°S) plus the region's own fit, not the sphere's bounding box — its corners are empty ocean.
-- 2026-11-07 · Touch pans on a horizontal one-finger drag (same intent rule as the sliders) and on two fingers; vertical one-finger swipes stay page scrolls — keeps the page scrollable past the map, which the user has prioritised.
-
-- 2026-11-07 · User approved push and deploy — "push it".
-
-- 2026-11-07 · Tapped city card floats beside its dot on tablets and wider (map ≥ 560px), like the mouse bubble; phones keep it docked below the map — user tried a compact phone bubble in discussion, then chose: "keep the current card below the map on phones and use floating bubbles only on tablets".
+- 2026-11-07 · Landing is study C, "Escape velocity" — user chose it from five studies (A–E) on the canvas.
+- 2026-11-07 · Shown on first visit only: the bare URL shows it until the visitor has entered the app once; share links and route hashes go straight to the app; the wordmark brings it back (`#home`) — user picked the recommended option.
+- 2026-11-07 · Follows the site theme: paper with deeper green/brass/coral paths in light, ink with glowing paths in dark — user asked to see the light variant, then chose "follow the theme".
+- 2026-11-07 · Paths are decorative and seeded (deterministic), not engine output — user chose decorative over real simulation paths.
+- 2026-11-07 · Body copy, verbatim from the user: "A portfolio that grows faster than the loan against it never has to be sold. Spend the loan, keep the shares, leave them to your heirs. eVelo runs your plan through thousands of real market histories and counts how many actually reach escape velocity."
+- 2026-11-07 · The landing is full-bleed with its own slim header (wordmark, theme toggle, "Open the planner"); the app's top bar and phone tab bar are hidden on it — the study's composition depends on it; defaulted.
 
 ## Open questions
 - WebKit's touch path (iPhone) is untested until the user tries it.
@@ -48,6 +50,9 @@ All stages done. Stage 1 verified ([evidence](evidence/map-pan-zoom/report.md));
 - 2026-11-06 · Saved portfolios live in localStorage under their own key (`evelo:v2:portfolios`), separate from the plan, and are not part of share links — user agreed to browser-only, holdings-only. (from [Saved portfolios](plans/2026-11-06-saved-portfolios.md))
 - 2026-11-06 · Touch sliders decide drag vs scroll from the first ~8px of movement (`classifyTouch`); a vertical swipe on a slider scrolls the page — user: "Yes proceed please". (from [Mobile slider gestures](plans/2026-11-06-mobile-slider-gestures.md))
 - 2026-11-07 · Premium slider labelled "Expat price premium", ends "Live like a local" / "Live like a tourist", default 35%. (from [Mobile slider gestures](plans/2026-11-06-mobile-slider-gestures.md))
+- 2026-11-07 · Pan bounds are the inhabited band (Hawaii to the dateline, 79°N–57°S) plus the region's own fit, not the sphere's bounding box — its corners are empty ocean. (from [Pan and zoom map](plans/2026-11-07-map-pan-zoom.md))
+- 2026-11-07 · Touch pans on a horizontal one-finger drag (same intent rule as the sliders) and on two fingers; vertical one-finger swipes stay page scrolls — keeps the page scrollable past the map, which the user has prioritised. (from [Pan and zoom map](plans/2026-11-07-map-pan-zoom.md))
+- 2026-11-07 · Tapped city card floats beside its dot on tablets and wider (map ≥ 560px), like the mouse bubble; phones keep it docked below the map — user chose this after trying a compact phone bubble. (from [Pan and zoom map](plans/2026-11-07-map-pan-zoom.md))
 
 ## Shipped
 - 2026-11-06 · eVelo v2 build: BBD planner with engine, plan inputs, outlook charts, Atlas and methodology, live on GitHub Pages — [plan](plans/2026-11-06-evelo-v2-build.md)
@@ -55,3 +60,4 @@ All stages done. Stage 1 verified ([evidence](evidence/map-pan-zoom/report.md));
 - 2026-11-06 · Profiles 16–25: full profiles for picks 16–25, plus the new escape-velocity logo and Geist wordmark — [plan](plans/2026-11-06-profiles-16-25.md)
 - 2026-11-06 · Saved portfolios: save/apply/rename/delete holdings mixes, Atlas on the plan's full path count, info bubbles kept on screen — [plan](plans/2026-11-06-saved-portfolios.md)
 - 2026-11-07 · Mobile slider gestures: touch-safe sliders, expat price premium relabel with local/tourist ends — [plan](plans/2026-11-06-mobile-slider-gestures.md)
+- 2026-11-07 · Pan and zoom map: mouse, trackpad and touch pan/zoom on the Atlas map, zoom buttons, hover fix and tablet tap bubbles, live on GitHub Pages — [plan](plans/2026-11-07-map-pan-zoom.md) · [evidence](plans/2026-11-07-map-pan-zoom/evidence/)
