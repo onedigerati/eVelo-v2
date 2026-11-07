@@ -216,3 +216,4 @@ CO
 Medellín
 Colombia
 Colombia was 2nd in Expat Insider 2025 and is 15th
+ERRORS []
