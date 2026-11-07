@@ -7,20 +7,7 @@ Give eVelo a landing page that says what the site is before a visitor meets the 
 2026-11-07 · tests: 189 pass (17 files) · typecheck: clean · build: ok
 
 ## Now
-Stage 2 of 2 · Atlas-hero view
-Mode: paused — preview v24 published (https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth); waiting on the user's review, then approval to deploy to GitHub Pages
-Risk: UI only
-Scope: replace the study C landing (committed in ad98a0e, superseded) with study G (boards `AtlasHero`/`AtlasHeroDark`), copy and illustrative numbers exactly as drawn; remove C's path field. Then preview and, on approval, deploy.
-Checks:
-- [x] The landing shows G's content as drawn: header (wordmark → `#home`, nav "How it works" / "Atlas" / "Method", theme toggle, "Open the planner"), eyebrow, "Live off your portfolio *without ever selling it.*", G's paragraph, "Stress-test my plan" (→ planner) and "Explore the Atlas" (→ Atlas), the no-sign-up line, and the four steps Buy / Borrow / Live anywhere / Die (proof: run the product)
-- [x] The map card shows the 33 cities at their positions coloured by the app's holds scale, the six labels with their percentages, Lisbon ringed with its 88% readout ("vs 63% staying in Austin…") and its fan chart (bands, median, loan, dashed margin-call line), the Breaks→Holds key and "Illustrative numbers" (proof: test + run the product)
-- [x] "How it works" scrolls to the steps without leaving the landing or changing the route; "Atlas" and "Method" open those tabs (proof: run the product)
-- [x] It follows the site theme: paper in light, ink in dark, the landing's toggle switches it live; all text meets 4.5:1, map labels included (proof: run the product, both themes)
-- [x] At phone width (390px) the hero stacks (copy, then card), the nav folds away, the steps go to one column, there is no horizontal scroll, and controls are ≥44px touch targets; tablet (820px) stacks cleanly too (proof: run the product)
-- [x] With reduced motion the Lisbon ring doesn't pulse (proof: run the product)
-- [x] Tests, typecheck and build pass; no console errors on the landing; study C's path field is gone from the code
-- [x] Previewed on the preview artifact, and deployed to GitHub Pages on the user's approval (proof: run the product)
-Open: none
+All stages done. Stage 1 ([evidence](evidence/stage-1/report.md)) and stage 2, study G ([evidence](evidence/stage-2/report.md); study C's in [stage-2-study-c](evidence/stage-2-study-c/report.md)). Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (v24). Live: https://onedigerati.github.io/eVelo-v2/ — matches v24 (deployed 2026-11-07, run 42407271640; asset hashes confirmed against a local build).
 
 ## Stages
 - [x] 1. Landing route — `#home` route, first-visit rule with a persisted "entered the app" flag, shell hides top bar/tab bar on the landing; landing view as a plain placeholder
