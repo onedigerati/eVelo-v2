@@ -23,7 +23,7 @@ Checks:
 - [x] Tests green, typecheck clean, build ok; fresh review triaged (proof: command output + review notes) — [evidence](evidence/stage-8/report.md)
 - [ ] Preview republished; deploy done on the user's approval (proof: preview URL + live site check)
 Open: none
-Mode: autopilot
+Mode: paused — preview v15 published; ready to run `git push origin main` (deploys the top-75 build to GitHub Pages), held by the keel hook for the user’s word
 
 ## Stages
 - [x] 1. BBD research — country tax, residency, lending and healthcare facts for every candidate, sourced; new top-25 draft
