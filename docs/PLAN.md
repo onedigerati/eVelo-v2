@@ -20,6 +20,7 @@ All stages done. Live: https://onedigerati.github.io/eVelo-v2/ (deployed 2026-11
 - 2026-11-06 · Fix in the shared `Slider` with JS intent detection (option B) rather than thumb-only touch targets — keeps tap-to-set; user: "Yes proceed please". The native input stays for keyboard and screen readers but no longer takes pointer input; the control handles pointers itself.
 - 2026-11-07 · User approved push and deploy — "push it".
 - 2026-11-07 · "Lifestyle abroad" slider relabelled "Expat price premium" (ends "Local prices" / "Home prices"; tooltip, Method page, profile and card notes reworded). The model is unchanged: the city indices price the same standard of living, so the slider sets what that lifestyle costs, not the lifestyle itself — the old labels implied the opposite. Default stays 35% — user: "go ahead with the relabel, keep the default".
+- 2026-11-07 · Premium slider ends now read "Live like a local" / "Live like a tourist", with a tooltip spelling out both ends (same standard of living; 0% local prices, 100% home prices) — user asked.
 
 ## Open questions
 - Verified with Chromium touch emulation only; WebKit's touch path (iPhone) is untested until the user tries it.

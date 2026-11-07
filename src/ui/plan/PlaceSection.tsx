@@ -104,9 +104,10 @@ function ExpatPanel({ destId }: { destId: string }) {
           tone="bruised"
           aside={
             <InfoTip label="What is the expat price premium?">
-              Your lifestyle stays the same either way; this sets what it costs. At the left you pay local prices for the same
-              standard of living. Newcomers often pay more — imported groceries, expat-area rents, international hospitals — and at
-              the right those extras use up every saving, so things cost what they do at home.
+              How much extra you pay abroad for the same standard of living. <b>Live like a local</b> (0%): you rent, shop and
+              eat where locals do and pay local prices, so you keep the full saving. <b>Live like a tourist</b> (100%): expat-area
+              rents, imported groceries, Western restaurants and international clinics cost what they do at home, so the move saves
+              you nothing. Most newcomers land in between. Your spending below and your odds update as you move it.
             </InfoTip>
           }
           value={expat}
@@ -117,8 +118,8 @@ function ExpatPanel({ destId }: { destId: string }) {
           onChange={(v) => setInput('expatFactor', v)}
         />
         <div className="scale-ends" aria-hidden="true">
-          <span>Local prices</span>
-          <span>Home prices</span>
+          <span>Live like a local</span>
+          <span>Live like a tourist</span>
         </div>
       </div>
 
