@@ -7,13 +7,16 @@ Find the best places to retire for someone living on buy-borrow-die: a portfolio
 2026-11-06 · tests: 107 pass (12 files) · typecheck: clean · build: ok (main chunk 354.0 kB)
 
 ## Now
-Stage 1 of 5 · BBD research
-Risk: none (research notes only)
+Stage 2 of 5 · New cities
+Scope: add 12 cities to `src/data/cities.ts` — Crete (Chania), Hua Hin, Kotor, Paphos, Limassol, Sliema, Cayo (San Ignacio), Ambergris Caye (San Pedro), Gascony (Auch), Tarragona, Las Terrenas, Asunción — with new country bases for Cyprus, Malta, Montenegro, Belize, Dominican Republic, Paraguay (currency, FX fallback, fxVol, healthcare factor, 1–3 notes from the Stage 1 research), costs checked against Numbeo with a `verified` record (low confidence + note where thin), and a cost-check section in `docs/research/cost-check-2026-11.md`. Profiles and ranking are Stage 4.
+Risk: low (data only; no money logic changes)
 Checks:
-- [x] `docs/research/bbd-ranking-2026-11.md` covers every candidate (current 25, Cayo, Ambergris Caye, Gascony, Crete, Tarragona, Hua Hin, Kotor, Las Terrenas, plus any the research surfaces) with a sourced row per country: wealth tax, inheritance/estate tax on residents and the US treaty position, tax on dividends/interest/foreign income, asset-based residency routes, broker/margin access for residents, healthcare cost and insurance age limits (proof: read the doc; every row cites a URL actually read) — [evidence](evidence/stage-1/report.md)
-- [x] Each candidate dropped from the top 25 has a written reason (proof: read the doc) — [evidence](evidence/stage-1/report.md)
+- [ ] All 12 cities are in `CITIES`, each with a `verified` record citing the Numbeo page read, and listed with their indices and healthcare factor in `docs/research/cost-check-2026-11.md` (proof: test asserting the ids + verified, and read the doc)
+- [ ] Healthcare factors for the six new countries are set on the existing scale (US = 1) with the basis written down (proof: read the doc)
+- [ ] The new cities appear and run in the Atlas (proof: screenshot of the running dev app with a new city selected)
+- [ ] Tests green, typecheck clean, build ok (proof: command output)
 Open: none
-Mode: autopilot
+Mode: paused — Stage 2 risk line tripped the money gate (false positive: data only); Stage 3 (engine wealth/inheritance tax) is money logic and needs the user’s go
 
 ## Stages
 - [x] 1. BBD research — country tax, residency, lending and healthcare facts for every candidate, sourced; new top-25 draft
