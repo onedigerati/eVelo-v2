@@ -7,30 +7,20 @@ Find the best places to retire for someone living on buy-borrow-die: a portfolio
 2026-11-06 · tests: 107 pass (12 files) · typecheck: clean · build: ok (main chunk 354.0 kB)
 
 ## Now
-Stage 5 of 6 · BBD ranking
-Scope: the Atlas picks become the draft top 50 from `docs/research/bbd-ranking-2026-11.md`, each with a sourced profile page.
+Stage 6 of 6 · Atlas & verify
+Scope:
+- "Your plan here" on each profile shows what the destination's local taxes take: median wealth tax over the plan, and median inheritance tax, with the estate after tax. Where a country has none, it says "No wealth or inheritance tax modelled for <country>".
+- Cities in countries with no local-tax data (outside the researched set) are labelled as such in the Atlas list and profile, so "untaxed" isn't implied.
+- The top-picks section and list read well with 50 picks.
+- Checked on phone and desktop in light and dark.
+- Then the run pauses for the preview publish and the deploy, both outward-facing and yours to approve.
 
-Changes to the profile model:
-- Three BBD scores join the six existing ones:
-  - **Tax on holdings:** wealth tax, plus tax on dividends and foreign income.
-  - **Estate:** inheritance tax reaching US assets left to US-resident children.
-  - **Lending:** broker and margin access for residents.
-- "Visa" becomes **Residency**, scored on routes that accept assets or passive income.
-- Profiles gain **Estate** and **Lending** facts, and the tax fact is rewritten for BBD.
-- Scores use the rubric in `src/data/expatPicks.ts`.
-- Profiles move to one file per city in `src/data/profiles/`.
-
-Who builds what:
-- The 23 returning picks get refreshed facts and scores; the 27 newcomers get new profiles.
-- A foundation builder changes the model, the ranking and the UI. Then four builders write profiles in parallel, in separate worktrees.
-
-The layout polish for 50 picks is Stage 6.
-Risk: low (curated content and data shape; engine untouched)
+Risk: low (UI over existing engine results)
 Checks:
-- [x] `EXPAT_PICKS` has 50 picks ranked 1–50 in the research doc's order, each with a reason; the ranking method and sources name the BBD research (proof: test + read the data)
-- [x] All 50 have a full profile: 9 scores within 1–5 following the rubric, every fact including estate and lending, drawbacks, and ≥3 sources, each a URL that was read (proof: test + spot-read 6 profiles against the research doc)
-- [x] The running Atlas lists 50 picks and opens a profile page for pick 1, a newcomer (e.g. Paphos), and pick 50, each showing the new scores and facts with no console errors (proof: Playwright run + screenshots)
-- [x] Tests green, typecheck clean, build ok (proof: command output) — [evidence](evidence/stage-5/report.md)
+- [ ] "Your plan here" shows wealth and inheritance tax lines for a taxed destination (Tarragona, Nice), a clear "none" line for an untaxed one (Paphos), and the not-modelled label for a city without tax data (e.g. Zurich) (proof: Playwright + screenshots)
+- [ ] Atlas and profile pages work on phone (390px) and desktop, in light and dark, with no horizontal scroll and no console errors (proof: screenshots of 4 combinations + scroll-width check)
+- [ ] Tests green, typecheck clean, build ok; fresh review of stages 5–6 UI triaged (proof: command output + review notes)
+- [ ] Preview published and deploy done on the user's approval (proof: preview URL + live site check)
 Open: none
 Mode: autopilot
 
