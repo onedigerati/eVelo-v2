@@ -7,7 +7,7 @@ On phones, scrolling the page past a slider must never change its value. Sliders
 2026-11-06 · tests: 163 pass (15 files) · typecheck: clean · build: ok
 
 ## Now
-All stages done. Live: https://onedigerati.github.io/eVelo-v2/ (deployed 2026-11-07, run 42385209688). Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (v16).
+All stages done. Live: https://onedigerati.github.io/eVelo-v2/ (deployed 2026-11-07, run 42388426652, incl. expat price premium relabel). Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (v17).
 
 ## Stages
 - [x] 1. Touch-intent sliders — `Slider` stops reacting to touch-down; it decides drag vs scroll from the first ~8px of movement and commits taps on lift. Pure gesture/value helpers with tests. Shared by `Slider` and the holdings weight rows (`useSliderPointer`).
