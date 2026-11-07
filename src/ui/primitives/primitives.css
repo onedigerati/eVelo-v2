@@ -126,6 +126,14 @@
   height: var(--tap);
   display: flex;
   align-items: center;
+  cursor: pointer;
+  /* Vertical swipes scroll the page; the control decides when a touch is a drag (Slider.tsx). */
+  touch-action: pan-y;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.slider.is-disabled .slider__control {
+  cursor: not-allowed;
 }
 .slider__track {
   position: absolute;
@@ -156,8 +164,8 @@
   background: transparent;
   appearance: none;
   -webkit-appearance: none;
-  cursor: pointer;
-  touch-action: pan-y;
+  /* Keyboard and screen readers use the input; pointers go to .slider__control. */
+  pointer-events: none;
 }
 .slider__input:focus-visible {
   outline: none;
@@ -195,7 +203,7 @@
     inset 0 0 0 5px var(--track-c);
   transition: transform var(--dur-2) var(--ease-spring);
 }
-.slider__input:hover::-webkit-slider-thumb {
+.slider__control:hover .slider__input::-webkit-slider-thumb {
   transform: scale(1.08);
 }
 .slider.is-active .slider__input::-webkit-slider-thumb {
@@ -219,9 +227,6 @@
     0 0 0 5.5px var(--focus),
     inset 0 0 0 5px var(--track-c);
   transform: scale(1.08);
-}
-.slider__input:disabled {
-  cursor: not-allowed;
 }
 .slider.is-disabled {
   opacity: 0.5;

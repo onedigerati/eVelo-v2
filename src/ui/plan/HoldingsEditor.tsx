@@ -4,7 +4,7 @@ import type { Holding } from '../../engine/types'
 import { useStore } from '../../state/store'
 import { number, parseLoose, percent } from '../format'
 import { ease } from '../motion'
-import { cx, Sparkline, StackBar } from '../primitives'
+import { cx, Sparkline, StackBar, useSliderPointer } from '../primitives'
 import { assetMeta, GROUP_LABEL } from './marketIndex'
 import { usePlanUi, slotColor } from './planUi'
 import { PortfolioLibrary } from './PortfolioLibrary'
@@ -121,6 +121,7 @@ function HoldingRow({ h, color, locked, movable, canRemove, onWeight, onLock, on
   const m = assetMeta(h.symbol)
   const disabled = locked || !movable
   const short = m && m.years < 10
+  const weightPointer = useSliderPointer({ value: h.weight, min: 0, max: 1, step: 0.005, onChange: onWeight, disabled })
   return (
     <div className={cx('hrow', locked && 'is-locked')} style={{ '--c': color } as CSSProperties}>
       <div className="hrow__top">
@@ -143,14 +144,15 @@ function HoldingRow({ h, color, locked, movable, canRemove, onWeight, onLock, on
       </div>
       <div className="hrow__bottom">
         <div
-          className={cx('slider', 'slider--compact', disabled && 'is-disabled')}
+          className={cx('slider', 'slider--compact', weightPointer.active && 'is-active', disabled && 'is-disabled')}
           style={{ '--pct': h.weight, '--track-c': color } as CSSProperties}
         >
-          <div className="slider__control">
+          <div className="slider__control" ref={weightPointer.controlRef} {...weightPointer.handlers}>
             <div className="slider__track" aria-hidden="true">
               <div className="slider__fill" />
             </div>
             <input
+              ref={weightPointer.inputRef}
               className="slider__input"
               type="range"
               min={0}

@@ -1,0 +1,14 @@
+sliders on first view: 14
+PASS [holding weight VTI weight] vertical swipe up from track-left — value 0.5→0.5, scrollY 169→343
+PASS [holding weight VTI weight] vertical swipe up from track-right — value 0.5→0.5, scrollY 169→347
+PASS [holding weight VTI weight] vertical swipe up from thumb — value 0.5→0.5, scrollY 169→348
+PASS horizontal drag — value 0.5→0.95, scrollY 169→169
+PASS tap on track — before 0.025, while held 0.025, after lift 0.5
+PASS [Slider Cost basis] vertical swipe up from track-left — value 0.4→0.4, scrollY 906→1151
+PASS [Slider Cost basis] vertical swipe up from track-right — value 0.4→0.4, scrollY 987→1163
+PASS [Slider Cost basis] vertical swipe up from thumb — value 0.4→0.4, scrollY 987→1164
+PASS horizontal drag — value 0.4→0.97, scrollY 987→987
+PASS tap on track — before 0.01, while held 0.01, after lift 0.5
+page errors: none
+[.slider--compact .slider__input] PASS desktop mouse click 0.5→0.82, drag →0.23, focused true, ArrowRight →0.235
+[.slider:not(.slider--compact) .slider__input] PASS desktop mouse click 0.4→0.82, drag →0.23, focused true, ArrowRight →0.24

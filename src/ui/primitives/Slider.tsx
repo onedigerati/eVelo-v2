@@ -1,6 +1,7 @@
-import { useId, useState, type CSSProperties, type ReactNode } from 'react'
+import { useId, type CSSProperties, type ReactNode } from 'react'
 import { formatValue, type FormatKind } from '../format'
 import { cx } from './cx'
+import { useSliderPointer } from './useSliderPointer'
 
 export interface SliderTick {
   value: number
@@ -30,6 +31,11 @@ export interface SliderProps {
 /**
  * Native <input type="range"> (full keyboard + screen-reader support for free) with a custom
  * track, a filled portion, a value bubble that appears while dragging/focused, and ticks.
+ *
+ * Pointers are handled by the control, not the input: a native range jumps to the finger on
+ * touch-down, so scrolling a page past a slider on a phone used to change it. Touches here wait
+ * for a horizontal drag (or a tap, committed on lift); vertical swipes scroll the page.
+ * Mouse and pen act at once, as a native range does. See `useSliderPointer`.
  */
 export function Slider({
   label,
@@ -50,7 +56,7 @@ export function Slider({
   const uid = useId()
   const inputId = id ?? `${uid}-range`
   const hintId = hint ? `${uid}-hint` : undefined
-  const [active, setActive] = useState(false)
+  const { active, controlRef, inputRef, handlers } = useSliderPointer({ value, min, max, step, onChange, disabled })
   const pct = max > min ? Math.min(1, Math.max(0, (value - min) / (max - min))) : 0
   const text = formatValue(value, format)
   const style = { '--pct': pct } as CSSProperties
@@ -66,12 +72,17 @@ export function Slider({
           {text}
         </output>
       </div>
-      <div className="slider__control">
+      <div
+        className="slider__control"
+        ref={controlRef}
+        {...handlers}
+      >
         <div className="slider__track" aria-hidden="true">
           <div className="slider__fill" />
         </div>
         <input
           id={inputId}
+          ref={inputRef}
           className="slider__input"
           type="range"
           min={min}
@@ -82,10 +93,6 @@ export function Slider({
           aria-valuetext={text}
           aria-describedby={hintId}
           onChange={(e) => onChange(Number(e.currentTarget.value))}
-          onPointerDown={() => setActive(true)}
-          onPointerUp={() => setActive(false)}
-          onPointerCancel={() => setActive(false)}
-          onBlur={() => setActive(false)}
         />
         <div className="slider__bubble num" aria-hidden="true">
           {text}

@@ -1,57 +1,26 @@
-# BBD destinations plan
+# Mobile slider gestures plan
 
 ## Goal
-Find the best places to retire for someone living on buy-borrow-die: a portfolio that is never sold, spending funded by borrowing against it, and the estate passed on with a step-up. The ranking and the simulation weigh what actually matters for that: the destination's wealth tax and inheritance tax (now modeled in the engine), tax on dividends and foreign income, residency routes that accept assets rather than a pension, whether a US broker will still lend to a resident there, and healthcare cost and quality into the late 70s and beyond, alongside cost, safety, climate and flights. Belize and the other places skipped last time (LIOS 2026 #4–10) are added with verified costs, and the candidate pool is not limited to cities already in the dataset. Done = the live Atlas ranks the new top 75 with BBD-specific scores and a sourced profile page for each of the 75, each city's odds and estate reflect its local taxes, tests are green, and it works on phone and desktop in both themes.
+On phones, scrolling the page past a slider must never change its value. Sliders change only on a horizontal drag or a plain tap (committed on lift); a vertical swipe that starts on a slider just scrolls. Mouse and keyboard keep working as before, and screen readers still get the native range input. Done = verified with touch emulation on the running app, tests green, deployed on approval.
 
 ## Baseline
-2026-11-06 · tests: 107 pass (12 files) · typecheck: clean · build: ok (main chunk 354.0 kB)
+2026-11-06 · tests: 163 pass (15 files) · typecheck: clean · build: ok
 
 ## Now
-All stages done. Live: https://onedigerati.github.io/eVelo-v2/ (deployed 2026-11-07, run 42341374541). Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (v15).
+Stage 1 built and verified (Chromium touch emulation, docs/evidence/slider-gestures/); awaiting the user's review, then preview + deploy on approval.
 
 ## Stages
-- [x] 1. BBD research — country tax, residency, lending and healthcare facts for every candidate, sourced; new top-25 draft
-- [x] 2. Research for 26–50 — more candidates and any new countries, sourced the same way; draft top 50
-- [x] 3. New cities — add Belize (Cayo, Ambergris Caye), the other skipped LIOS picks and every research add for the top 50, with verified costs and healthcare factors
-- [x] 4. Local taxes — wealth and inheritance tax per country in the engine, with tests; odds and estate reflect them; Method page explains
-- [x] 5. BBD ranking — rerank the top 50 with new tax/estate and lending factors; profile pages for all 50 (new ones for newcomers and 26–50, refreshed facts for the rest)
-- [x] 6. Atlas & verify — tax lines in "Your plan here", the Atlas list and profile pages handle 50 picks, phone + both themes, preview
-- [x] 7. Research for 51–75 — the 17 outside candidates plus ≥15 more (retiree towns in covered countries, new countries, unweighed dataset cities), sourced the same way; new cities added with costs, healthcare factors and local-tax data; draft top 75
-- [x] 8. Profiles 51–75 & ship — profile pages for 51–75, UI for 75 picks, verify phone + both themes, fresh review, preview, deploy on approval
+- [x] 1. Touch-intent sliders — `Slider` stops reacting to touch-down; it decides drag vs scroll from the first ~8px of movement and commits taps on lift. Pure gesture/value helpers with tests. Shared by `Slider` and the holdings weight rows (`useSliderPointer`).
+  - [x] A vertical swipe starting on a slider track or thumb scrolls the page and leaves the value unchanged (touch emulation)
+  - [x] A horizontal drag on a slider moves it and holds the page still
+  - [x] A tap on the track sets the value on lift
+  - [x] Mouse click/drag and arrow keys still change the value; tests, typecheck and build pass
 
 ## Decisions
-- 2026-11-06 · Belize and LIOS 2026 #4–10 (Gascony, Crete, Tarragona, Cayo, Hua Hin, Kotor, Las Terrenas) are added — last round silently ranked only cities already in the dataset, breaking its own "add it rather than skip it" rule; user asked to add them.
-- 2026-11-06 · Candidates are not limited to the dataset; every candidate dropped from the top 25 gets a written reason.
-- 2026-11-06 · Ranking is judged for buy-borrow-die retirees (tax on holding and passing on a portfolio, asset-based residency, US-broker lending abroad, healthcare into old age) — user: "that's kind of the whole point".
-- 2026-11-06 · The simulation applies each destination's annual wealth tax and inheritance tax — user's choice over score-only, so odds and estates reflect what the plan really keeps.
-
-- 2026-11-06 · Research surfaced Cyprus (Paphos, Limassol) and Malta (Sliema) as strong BBD fits and they enter the draft top 25; Paraguay (Asunción) and the Philippines were considered and dropped with reasons — autopilot call within the "not limited to the dataset" decision.
-- 2026-11-06 · Broker/margin facts rest on secondary sources (IBKR and Schwab International pages refuse automated fetch; a shell workaround was declined as bot-check circumvention) — marked secondary in the doc and carried as a caveat, not a ranking driver.
-
-- 2026-11-06 · Profile pages for the top 50, not just the top 25 — user asked to expand; adds a research stage for picks 26–50 before the new-cities stage, and profiles for all 50 in the ranking stage.
-
-- 2026-11-06 · User gave the go for the revised 6-stage plan, including Stage 4's engine wealth/inheritance tax (money logic) — "Go".
-- 2026-11-06 · Draft top 50 adds Cascais, Madrid, Antalya, Antigua Guatemala, Tbilisi, Ajijic, Coronado, Atenas, Alicante, Phuket, Santiago, Prague, Istanbul, Mexico City, Budapest, Taipei, Lima, Oaxaca, Playa del Carmen, and brings back Asunción, Las Terrenas, Medellín, Florence, Cuenca and Nice at 42–50. 16 candidates sit outside, each with a reason. Turkey's Law 7582 (20-year foreign-income exemption) was checked against EY's alert before it lifted Antalya to #19 — autopilot call.
-- 2026-11-06 · User approved building Stage 4 (engine wealth/inheritance tax) with the stated assumptions (two US-resident children as heirs; heir-based regimes don't reach them) — "Go ahead please".
-- 2026-11-06 · Local-tax thresholds convert at the bundled fx.json rates (review fix), so they drift slightly with `npm run data:fx`; FX_FALLBACK refreshed to match. Share-link and persisted inputs are clamped to the plan UI's own limits (review security fix). Ireland/Japan inheritance reach is read as strictly more than 5/10 years' residence.
-- 2026-11-06 · Lending scores: 5 needs confirmed margin access for residents (none confirmed yet), 4 = Schwab International reported outside the EU plus IBKR, 3 = EU or IBKR only — normalised across the four profile builders, who read the rubric differently.
-- 2026-11-06 · 11 picks newly in the top 50 (Madrid, Tbilisi, Phuket, Santiago, Prague, Istanbul, Mexico City, Budapest, Taipei, Lima, Playa del Carmen) get costs from livingcost.org scaled to Numbeo, low confidence — Numbeo rate-limited every fetch.
-- 2026-11-06 · Estate rubric: a regime whose reach over US assets left to US-resident heirs is only inferred scores one point lower (Spain 4) — review triage. Medellín tax score corrected to 1.
-- 2026-11-06 · Placencia (Belize) added as a candidate — user asked; it had never been evaluated because the plan fixed Belize as Cayo and Ambergris Caye and neither research pass revisited Belize.
-- 2026-11-06 · Profile pages expand to the top 75 — user asked; candidates ranked 51–75 include the 17 now outside the 50 (low-ranked with their drawbacks stated rather than excluded) plus ≥15 new candidates; two stages added (7 research and data, 8 profiles and ship), deploy moved to Stage 8.
-- 2026-11-06 · Draft top 75: the 50 keep their relative order; Tavira (#14), Grand Baie, Mauritius (#20), Torrevieja (#33), La Paz (#37) and Hopkins (#40) are inserted on merit, and the rest fill 51–75; 13 candidates sit outside with reasons. Stage 7's dataset check was narrowed to the 75 ranked cities (outside candidates never needed city entries). Austria's yearly tax on non-registered funds and South Africa's CGT at death are noted, not modelled.
-- 2026-11-06 · User approved publishing and deploying the top-75 build — "Please go ahead and publish when ready".
+- 2026-11-06 · Fix in the shared `Slider` with JS intent detection (option B) rather than thumb-only touch targets — keeps tap-to-set; user: "Yes proceed please". The native input stays for keyboard and screen readers but no longer takes pointer input; the control handles pointers itself.
 
 ## Open questions
-- Two livingcost-derived restaurant indices look high (Vienna 92 vs Paris 80; Tavira 62 vs Lisbon 58) — re-check when Numbeo is reachable.
-- Georgia: the IRS may still apply the 1973 US–USSR income tax treaty to Georgia; profiles say "no US–Georgia income tax treaty" — confirm against the IRS treaty table.
-- Re-read Numbeo for the 11 livingcost-derived cities, the 5 Stage-3 cities mapped to nearby rows, and the noisy Belize pages once the rate limit lifts.
-- Local-tax bands filled from statutory scales where the research doc gives only ranges (Spanish regional steps, solidarity breakpoints, France, Japan, Ecuador's middle brackets — each note says so); thresholds are per person, not per couple; Turkey's 1% applies though US assets to US heirs may be out of scope.
-- Countries outside the top 50 without research (UK, Netherlands, Germany, Switzerland, UAE, South Africa, Singapore, South Korea, Canada, Australia, New Zealand) carry no local-tax data, so the Atlas treats them as untaxed (Switzerland's wealth tax, the UK's inheritance tax not modelled) — Stage 6 should label this.
-- Malta's Global Residence Programme terms are kept to 2031 only for applications filed by 31 Dec 2026 — time-sensitive for the user personally, not for the app.
-- Some 2026 single-stock months are very large (INTC +114% Apr 2026; MU/SNOW/DDOG ~+87% May 2026); match Yahoo raw bars but unverified against a second source.
-- In-browser fetch of arbitrary tickers needs a CORS proxy or serverless function — user decides on hosting later; not blocking.
-- Phuket keeps a 0.4 healthcare override while Thailand is now 0.3 — not a pick; re-check if it becomes one.
+- Verified with Chromium touch emulation only; WebKit's touch path (iPhone) is untested until the user tries it.
 
 ## Standing decisions
 - 2026-11-06 · React + Vite + TS, hand-built SVG charts (d3-scale/shape/geo), static hosting — full design control, no backend. (from [eVelo v2 build](plans/2026-11-06-evelo-v2-build.md))
