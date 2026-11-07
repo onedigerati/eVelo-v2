@@ -134,6 +134,25 @@ describe('CITIES dataset', () => {
     expect(c.verified!.note).toBeTruthy()
   })
 
+  it('adds the 15 Stage 7 cities, each with a low-confidence verified record that says what was done', () => {
+    const added = [
+      'tavira', 'torrevieja', 'la-paz', 'hopkins', 'corozal', 'chiang-rai', 'langkawi', 'volcan', 'panajachel', 'mazatlan',
+      'grand-baie', 'plovdiv', 'sarande', 'roatan', 'vienna',
+    ]
+    expect(new Set(added).size).toBe(15)
+    for (const id of added) {
+      const v = CITY_BY_ID[id]?.verified
+      expect(v, id).toBeDefined()
+      expect(v!.confidence, id).toBe('low')
+      expect(v!.note, id).toBeTruthy()
+      expect(v!.url, id).toMatch(/^https:\/\/livingcost\.org\/cost\//)
+    }
+    expect(CITY_BY_ID.plovdiv.currency).toBe('EUR') // Bulgaria joined the euro on 1 Jan 2026
+    // Overrides where care is far: an island with no public hospital, no private hospital, no hospital in town.
+    expect(CITY_BY_ID.roatan.healthcare).toBe(0.4)
+    for (const id of ['langkawi', 'sarande', 'panajachel']) expect(CITY_BY_ID[id].healthcare, id).toBe(0.35)
+  })
+
   it('verifies New York as the base at 100', () => {
     const ny = CITY_BY_ID['new-york']
     expect(ny.verified).toBeDefined()

@@ -255,3 +255,96 @@ Placencia (`placencia`) was added to the dataset for evaluation. Its record is `
 
 - **Healthcare factor:** 0.4, which is Belize's 0.35 plus the same override as Ambergris Caye. The village has only a polyclinic, whose night staffing has been questioned. The nearest hospital (public, Dangriga) is 1¼–1¾ h by road, and private hospitals are in Belize City, 3½ h by road or reached by a daytime flight. Evacuation cover is needed, as it is for Ambergris (docs/research/bbd-ranking-2026-11.md, Appendix C, Placencia).
 - Re-read from Numbeo once it stops rate-limiting, if a Placencia row with enough contributors exists.
+
+# Stage 7: new cities (2026-11-06)
+
+Fifteen Stage 7 candidates were added to `src/data/cities.ts`. Numbeo was tried once (`https://www.numbeo.com/cost-of-living/in/Vienna`) and returned HTTP 429, so every city uses the Stage 5 livingcost.org method (same New York page, same factors: col 1.072, rent 0.973, groceries 0.960, restaurants 0.980; all pages "Updated: June 21, 2026", read 2026-11-06) or, where livingcost.org has no page, a stated mapping. Every record is `confidence: 'low'`. Indices are col excl. rent / rent / groceries / restaurants, NYC = 100.
+
+| City | col | rent | groc | rest | Method | Healthcare | URL read |
+|---|---|---|---|---|---|---|---|
+| Tavira | 39 | 28 | 43 | 62 | livingcost, scaled | 0.25 (PT) | https://livingcost.org/cost/portugal/tavira |
+| Torrevieja | 41 | 17 | 47 | 59 | livingcost, scaled | 0.25 (ES) | https://livingcost.org/cost/spain/torrevieja |
+| La Paz (BCS) | 46 | 17 | 50 | 58 | livingcost, scaled (page title "La Paz, Mexico") | 0.25 (MX) | https://livingcost.org/cost/mexico/la-paz |
+| Mazatlán | 43 | 16 | 46 | 45 | livingcost, scaled | 0.25 (MX) | https://livingcost.org/cost/mexico/mazatlan |
+| Chiang Rai | 23 | 6 | 25 | 13 | livingcost, scaled | 0.3 (TH) | https://livingcost.org/cost/thailand/chiang-rai |
+| Langkawi | 24 | 7 | 27 | 18 | livingcost, scaled | **0.35** override | https://livingcost.org/cost/malaysia/langkawi |
+| Lake Atitlán (Panajachel) | 38 | 10 | 44 | 37 | livingcost, scaled | **0.35** override | https://livingcost.org/cost/guatemala/panajachel |
+| Plovdiv | 35 | 12 | 40 | 41 | livingcost, scaled | 0.25 (BG) | https://livingcost.org/cost/bulgaria/plovdiv |
+| Sarandë | 43 | 21 | 48 | 53 | livingcost, scaled | **0.35** override | https://livingcost.org/cost/albania/sarande |
+| Vienna | 78 | 31 | 76 | 92 | livingcost, scaled | 0.45 (AT) | https://livingcost.org/cost/austria/vienna |
+| Grand Baie | 36 | 15 | 35 | 37 | no Grand Baie page (404; not on the Mauritius page). Port Louis scaled (34/12/35/32), then col +5%, rent +25%, restaurants +15% for a resort town with an expat rental market | 0.35 (MU) | https://livingcost.org/cost/mauritius/port-louis |
+| Roatán | 43 | 20 | 42 | 36 | no Roatán, West End or Coxen Hole page (404). Tegucigalpa scaled (37/10/35/29), then col +15%, rent +100%, groceries +20%, restaurants +25% for an island resort with imported goods. Cross-check: livingcost's San Pedro Town (Ambergris Caye) scales to 45/20/50/37. La Ceiba (29/4/33/22) was read but not used: its rent is below the dataset floor and the mainland port says little about island prices | **0.4** override | https://livingcost.org/cost/honduras/tegucigalpa ; https://livingcost.org/cost/belize/san-pedro-town ; https://livingcost.org/cost/honduras/la-ceiba |
+| Hopkins | 56 | 15 | 72 | 33 | no page (404; not on the Belize page). Dataset Placencia row (56/19/72/33, itself a mapping) with rent -20% for a smaller, less developed village | 0.35 (BZ) | https://livingcost.org/cost/belize |
+| Corozal | 50 | 10 | 50 | 30 | no page (404). Dataset Cayo row (50/10/56/30) with groceries -10% for shopping in Chetumal | 0.35 (BZ) | https://livingcost.org/cost/belize |
+| Volcán | 40 | 14 | 52 | 27 | no Volcán or Boquete page (404; the Panama page lists David). Dataset Boquete row (42/18/52/30, low confidence) with col -5%, rent -20%, restaurants -10%. livingcost's David scales to 34/9/40/29, for reference | 0.25 (PA) | https://livingcost.org/cost/panama ; https://livingcost.org/cost/panama/david |
+
+Raw livingcost figures (one person, USD/month; lunch and dinner-for-2 in USD):
+
+| Page | Without rent | 1BR centre | Food | Lunch | Dinner for 2 |
+|---|---|---|---|---|---|
+| Tavira | 544 | 1066 | 380 | 13.9 | 58.1 |
+| Torrevieja | 571 | 662 | 408 | 15.6 | 46.3 |
+| La Paz | 635 | 656 | 437 | 14.2 | 49.3 |
+| Mazatlán | 597 | 595 | 407 | 13.9 | 28.0 |
+| Chiang Rai | 316 | 212 | 217 | 2.13 | 15.2 |
+| Langkawi | 336 | 280 | 241 | 3.34 | 19.7 |
+| Panajachel | 521 | 392 | 388 | 6.07 | 42.9 |
+| Plovdiv | 483 | 447 | 350 | 8.70 | 40.2 |
+| Sarandë | 602 | 794 | 421 | 10.6 | 54.4 |
+| Vienna | 1083 | 1167 | 669 | 20.8 | 86.0 |
+| Port Louis | 465 | 451 | 307 | 5.91 | 35.8 |
+| Tegucigalpa | 515 | 396 | 309 | 7.34 | 24.8 |
+| La Ceiba | 399 | 147 | 292 | 3.95 | 23.9 |
+| San Pedro Town | 622 | 753 | 438 | 8.56 | 33.9 |
+| David | 470 | 332 | 349 | 5.27 | 32.2 |
+
+Caveats:
+- Sarandë scales above Plovdiv and close to Mazatlán; its dinner-for-2 ($54) and rent ($794) look high for the town and may reflect summer tourist pricing.
+- Chiang Rai and Langkawi rents (6 and 7) sit near the dataset floor of 5.
+- Singapore and Cape Town were not re-priced (they keep their rough estimates and have no verified record). For reference, their livingcost pages (`/cost/singapore/singapore`, `/cost/south-africa/cape-town`) scale to 72/68/65/53 and 44/25/41/53, against the dataset's 84/82/82/52 and 40/18/36/34.
+- Bulgaria uses the euro: it joined on 1 Jan 2026 and the lev stopped being legal tender on 1 Feb 2026 (https://en.wikipedia.org/wiki/Bulgaria_and_the_euro), so Plovdiv is priced in EUR.
+- Re-read all fifteen from Numbeo once it stops rate-limiting.
+
+## Healthcare factors for the new countries
+
+Same method as Stage 1 (US = 1.0; midpoint of local or public cover and an international plan, plus out-of-pocket; rounded to 0.05). Sources are in `docs/research/bbd-ranking-2026-11.md`, Appendices I, J and K.
+
+- **Mauritius: 0.35.** Public hospital care is described as free, but whether non-citizen residents get it is unverified. Private care is C-Care (a Grand Baie site, with the larger Wellkin and Darné hospitals 45–60 minutes away), and complex cases are often sent to South Africa or France, so an international plan with evacuation is the realistic cover. Set like Belize and Indonesia (0.35), at the international-plan end. Grand Baie has a local private hospital, so no override.
+- **Bulgaria: 0.25.** The public NHIF costs a self-insured person 8% of a minimum base, about €50/month, and the permit's required private cover (≥€30,000) runs €300–1,200/yr locally. That cheap local leg puts it with Greece, Spain and Cyprus (0.25), a notch under Hungary (0.28). Plovdiv has Eurohospital, with Sofia 1.5–2 hours away, so no override.
+- **Albania: 0.3, Sarandë 0.35.** No public-system figures for foreign retirees were found and the permit needs private cover, so the midpoint leans to the international plan. Set like Montenegro (0.3). Sarandë adds 0.05: no hospital on the UK's English-speaking list, with serious care in Tirana (4–5 hours) or Corfu by ferry.
+- **Honduras: 0.3, Roatán 0.4.** Cover is private or international, with evacuation advised; set like Guatemala (0.3). Roatán adds 0.1, like Ambergris Caye and Placencia over Belize's base: its only public hospital burned in April 2024, private care on the island is very limited (and possibly closed), and serious cases fly to San Pedro Sula or the US.
+- **Austria: 0.45.** Public ÖGK self-insurance costs €565.25/month per person (2026), about US$15k a year for a couple, after a 6-month wait, and the permit needs all-risk private cover first. The public leg is dearer than an international plan, so the midpoint sits with the UK and Ireland (0.45), a notch under Germany and the Netherlands (0.5).
+
+City overrides in existing countries:
+- **Langkawi: 0.35** (Malaysia 0.3). The only hospital is the public Hospital Sultanah Maliha; there is no private hospital, so private care means a flight to Penang.
+- **Lake Atitlán (Panajachel): 0.35** (Guatemala 0.3). No hospital in town; specialist care is about 3 hours away in Guatemala City, and helicopter evacuation is sometimes used.
+- **Volcán: 0.25, no override.** The local hospital is basic, but David's private hospitals are 40 minutes to an hour away, about the same as Boquete's (no override) and closer than Coronado's 1–1.5 hours to Panama City (no override).
+- **Hopkins: 0.35, no override.** The public Southern Regional Hospital in Dangriga is about 30 minutes away, against Placencia's 1¼–1¾ hours (0.4); private care is 2.5 hours away in Belize City, which Belize's base factor already assumes.
+- **Corozal: 0.35, no override.** A community hospital in town and private care in Chetumal, 26 minutes away, is the best access in Belize outside Belize City and Cayo.
+- **Tavira, Torrevieja, La Paz, Mazatlán, Chiang Rai, Plovdiv, Vienna, Grand Baie:** country factor; each has a private or regional hospital in town or within about 40 minutes.
+
+# Stage 7: four ranked cities without checked costs (2026-11-06)
+
+Four cities in the draft top 75 (`docs/research/bbd-ranking-2026-11.md`) had rough-estimate indices and no verified record. They were priced by the Stage 5 livingcost.org method (same New York page and factors; pages "Updated: June 21, 2026", read 2026-11-06). Numbeo was not tried because it was rate-limiting. The records are `confidence: 'low'`, `source: 'livingcost.org'`. Indices are col excl. rent / rent / groceries / restaurants, NYC = 100.
+
+| City | Old | New | URL read |
+|---|---|---|---|
+| Rome | 64/30/56/64 | 63/33/60/69 | https://livingcost.org/cost/italy/lz/rome (`/cost/italy/rome` is a 404; the slug is from https://livingcost.org/cost/italy) |
+| Barcelona | 58/38/48/54 | 59/37/58/72 | https://livingcost.org/cost/spain/barcelona |
+| Cartagena | 34/13/34/28 | 41/23/41/45 | https://livingcost.org/cost/colombia/cartagena |
+| Batumi | not in the dataset (row added) | 33/11/36/37 | https://livingcost.org/cost/georgia/batumi |
+
+Raw livingcost figures (one person, USD/month; lunch and dinner-for-2 in USD):
+
+| Page | Without rent | 1BR centre | Food | Lunch | Dinner for 2 |
+|---|---|---|---|---|---|
+| Rome | 873 | 1246 | 525 | 15.9 | 63.4 |
+| Barcelona | 821 | 1418 | 510 | 17.3 | 64.1 |
+| Cartagena | 564 | 861 | 363 | 6.86 | 55.9 |
+| Batumi | 463 | 405 | 319 | 9.37 | 29.9 |
+
+Caveats:
+- Batumi had no row in `src/data/cities.ts`; the coordinator added one (41.64, 41.63) with these indices and a `livingcost('georgia/batumi')` record. Healthcare factor: Georgia's base.
+- Cartagena's rent (+77%) and restaurants (+61%) are the largest changes. Its dinner-for-2 ($55.9) is close to Barcelona's, which may reflect tourist pricing in the old city.
+- Restaurants rise for all three, as they did for most Stage 5 cities.
+- Re-read from Numbeo once it stops rate-limiting.

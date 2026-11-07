@@ -14,8 +14,8 @@ import { localTaxFor } from './localTaxes'
 export const COL_AS_OF = '2026-11-06'
 
 export const COL_SOURCES: string[] = [
-  'Cost indices (col excl. rent, rent, groceries, restaurants; NYC = 100): for verified cities (the 25 expat picks, US cities with a full Numbeo row and the 20 BBD destinations added in Stage 3), Numbeo\'s current cost-of-living index by city, read 2026-11-06, rounded, and cross-checked against Numbeo\'s 2026 Mid-Year edition and livingcost.org. Places without a Numbeo index are marked low confidence and either derived from Numbeo\'s raw prices vs New York or mapped to a nearby city row; each record\'s note says which. Eleven picks added later (Madrid, Tbilisi, Phuket, Santiago, Prague, Istanbul, Mexico City, Budapest, Taipei, Lima, Playa del Carmen) are low confidence, derived from livingcost.org prices vs New York and scaled to Numbeo with per-index factors fitted on four cities that have Numbeo rows. Every other city is a rough estimate modeled on the same kind of index, not checked against a current source.',
-  'Healthcare factor (US = 1.0): midpoint of local private or public cover and an international plan (Cigna Global / Allianz, age 60) plus estimated out-of-pocket costs for a couple at 60, relative to a 2026 US benchmark-silver marketplace plan for a couple at 60 (~$35.9k/yr including ~$4k out-of-pocket). Sources: KFF 2026 average marketplace premiums, plus insurer and broker quotes; rounded to 0.05. Checked for the 16 countries of the expat picks and set on the same basis for Cyprus, Malta, Montenegro, Belize, the Dominican Republic, Paraguay and Guatemala (docs/research/cost-check-2026-11.md); other countries are rough estimates. City overrides add cost where hospitals are far or evacuation cover is needed.',
+  'Cost indices (col excl. rent, rent, groceries, restaurants; NYC = 100): for verified cities (the 25 expat picks, US cities with a full Numbeo row and the 20 BBD destinations added in Stage 3), Numbeo\'s current cost-of-living index by city, read 2026-11-06, rounded, and cross-checked against Numbeo\'s 2026 Mid-Year edition and livingcost.org. Places without a Numbeo index are marked low confidence and either derived from Numbeo\'s raw prices vs New York or mapped to a nearby city row; each record\'s note says which. Eleven picks added later (Madrid, Tbilisi, Phuket, Santiago, Prague, Istanbul, Mexico City, Budapest, Taipei, Lima, Playa del Carmen) are low confidence, derived from livingcost.org prices vs New York and scaled to Numbeo with per-index factors fitted on four cities that have Numbeo rows. The fifteen Stage 7 additions are low confidence too: livingcost.org by the same method, or a stated mapping to a nearby row where it has no page. Rome, Barcelona and Cartagena are low confidence by the same livingcost.org method. Every other city is a rough estimate modeled on the same kind of index, not checked against a current source.',
+  'Healthcare factor (US = 1.0): midpoint of local private or public cover and an international plan (Cigna Global / Allianz, age 60) plus estimated out-of-pocket costs for a couple at 60, relative to a 2026 US benchmark-silver marketplace plan for a couple at 60 (~$35.9k/yr including ~$4k out-of-pocket). Sources: KFF 2026 average marketplace premiums, plus insurer and broker quotes; rounded to 0.05. Checked for the 16 countries of the expat picks and set on the same basis for Cyprus, Malta, Montenegro, Belize, the Dominican Republic, Paraguay and Guatemala, and in Stage 7 for Mauritius, Bulgaria, Albania, Honduras and Austria (docs/research/cost-check-2026-11.md); other countries are rough estimates. City overrides add cost where hospitals are far or evacuation cover is needed.',
   'FX volatility: rough annualized volatility of the real exchange rate vs USD based on recent multi-year history; 0 for USD-using economies, near 0 for hard pegs (AED).',
   'FX_FALLBACK: src/data/fx.json rates (2026-11-07) rounded, used only for a currency missing from the bundled and live rates.',
   'Notes summarize widely reported tax-residency and visa features as of late 2026. Rules change often; verify with a qualified cross-border tax adviser. Not tax or legal advice.',
@@ -65,6 +65,9 @@ export const FX_FALLBACK: Record<string, number> = {
   DOP: 60.52,
   PYG: 6110,
   GTQ: 7.651,
+  MUR: 46.99,
+  ALL: 80.99,
+  HNL: 26.91,
 }
 
 type Idx = [col: number, rent: number, groceries: number, restaurants: number]
@@ -199,7 +202,7 @@ const SG: Base = {
   country: 'Singapore', countryCode: 'SG', region: 'Asia', currency: 'SGD', fxVol: 0.05, healthcare: 0.7,
   notes: [
     'Singapore generally does not tax foreign-sourced income received by individuals and has no capital gains tax.',
-    'There is no retirement visa; long-term stays without employment or investment are difficult.',
+    'There is no retirement visa: the only passive route to permanent residence (the Global Investor Programme family-office track) needs about S$200M of investible assets.',
   ],
 }
 const JP: Base = {
@@ -242,6 +245,13 @@ const asiaCities: City[] = [
   mk(JP, 'osaka', 'Osaka', 34.69, 135.5, [56, 20, 64, 36]),
   mk(KR, 'seoul', 'Seoul', 37.57, 126.98, [70, 22, 88, 42], ['Rentals often use large "jeonse"/"wolse" deposits, which ties up capital.']),
   mk(TW, 'taipei', 'Taipei', 25.03, 121.57, [48, 18, 52, 38]),
+  // Stage 7 additions.
+  mk(TH, 'chiang-rai', 'Chiang Rai', 19.91, 99.83, [23, 6, 25, 13], [
+    'Private hospitals in town (Bangkok Hospital Chiang Rai, Overbrook); specialists are often in Chiang Mai, about 3.5 hours away. Burning-season smoke is as bad as Chiang Mai\'s.',
+  ]),
+  mk(MY, 'langkawi', 'Langkawi', 6.35, 99.8, [24, 7, 27, 18], [
+    'No private hospital on the island (only the public Hospital Sultanah Maliha); private care is a short flight away in Penang. A duty-free island with no US nonstops.',
+  ], { healthcare: 0.35 }),
 ]
 
 // ---------------------------------------------------------------- Europe
@@ -367,16 +377,38 @@ const ME: Base = {
   ],
 }
 
+const BG: Base = {
+  country: 'Bulgaria', countryCode: 'BG', region: 'Europe', currency: 'EUR', fxVol: 0.09, healthcare: 0.25,
+  notes: [
+    'Bulgaria adopted the euro on 1 Jan 2026. Residents pay a 5% final tax on dividends and 0% on EU/EEA bank interest; no wealth tax, and a foreigner\'s foreign assets are outside inheritance tax (children are exempt anyway).',
+    'The pensioner D visa needs a right to a pension (Social Security should qualify); no savings-only route was found.',
+  ],
+}
+const AL: Base = {
+  country: 'Albania', countryCode: 'AL', region: 'Europe', currency: 'ALL', fxVol: 0.08, healthcare: 0.3,
+  notes: [
+    'Residents are taxed on worldwide income: dividends 8%, interest and gains 15%. There is no wealth tax, and children inherit tax-free.',
+    'US citizens may stay a year visa-free; the pensioner permit needs about ALL 1.2m a year of pension paid into an Albanian bank.',
+  ],
+}
+const AT: Base = {
+  country: 'Austria', countryCode: 'AT', region: 'Europe', currency: 'EUR', fxVol: 0.09, healthcare: 0.45,
+  notes: [
+    'Funds not registered with Austria\'s tax office (OeKB), likely including US ETFs, are taxed every year at 27.5% on 90% of their growth, so a never-sell ETF portfolio is taxed anyway (not modelled). Dividends pay 27.5%; no wealth or inheritance tax.',
+    'The settlement permit (no work) needs about €2,617/month single or €4,128 for a couple (2026), German, and a quota place.',
+  ],
+}
+
 const europeCities: City[] = [
   mk(PT, 'lisbon', 'Lisbon', 38.72, -9.14, [53, 35, 48, 58]),
   mk(PT, 'porto', 'Porto', 41.16, -8.63, [49, 28, 46, 53]),
   mk(PT, 'algarve', 'Algarve (Faro)', 37.02, -7.93, [47, 30, 43, 46]),
   mk(PT, 'madeira', 'Madeira (Funchal)', 32.65, -16.91, [47, 36, 42, 55]),
   mk(ES, 'madrid', 'Madrid', 40.42, -3.7, [62, 37, 59, 71], ['The Madrid region applies a 100% relief on regional wealth tax, but the national solidarity wealth tax can still apply.']),
-  mk(ES, 'barcelona', 'Barcelona', 41.39, 2.17, [58, 38, 48, 54]),
+  mk(ES, 'barcelona', 'Barcelona', 41.39, 2.17, [59, 37, 58, 72]),
   mk(ES, 'valencia', 'Valencia', 39.47, -0.38, [50, 30, 45, 63]),
   mk(ES, 'malaga', 'Málaga', 36.72, -4.42, [49, 30, 46, 60]),
-  mk(IT, 'rome', 'Rome', 41.9, 12.5, [64, 30, 56, 64]),
+  mk(IT, 'rome', 'Rome', 41.9, 12.5, [63, 33, 60, 69]),
   mk(IT, 'florence', 'Florence', 43.77, 11.26, [68, 33, 70, 77]),
   mk(GR, 'athens', 'Athens', 37.98, 23.73, [54, 17, 51, 62]),
   mk(FR, 'paris', 'Paris', 48.86, 2.35, [78, 42, 78, 80]),
@@ -390,6 +422,7 @@ const europeCities: City[] = [
   mk(CH, 'zurich', 'Zurich', 47.38, 8.54, [125, 70, 130, 140]),
   mk(HR, 'split', 'Split', 43.51, 16.44, [54, 22, 48, 63], ['Summer tourism drives short-term rents up sharply; long-term leases are cheaper off-season.']),
   mk(GE, 'tbilisi', 'Tbilisi', 41.72, 44.79, [38, 17, 40, 42]),
+  mk(GE, 'batumi', 'Batumi', 41.64, 41.63, [33, 11, 36, 37], ['Black Sea resort city with Georgia'\''s tax profile; healthcare and flights are weaker than in Tbilisi.']),
   mk(TR, 'istanbul', 'Istanbul', 41.01, 28.98, [46, 24, 40, 48]),
   // Stage 3 additions (BBD destinations).
   mk(GR, 'crete', 'Crete (Chania)', 35.51, 24.02, [53, 14, 48, 57], [
@@ -414,6 +447,22 @@ const europeCities: City[] = [
   mk(TR, 'antalya', 'Antalya', 36.9, 30.7, [40, 13, 36, 45], [
     'Property residence needs US$200k, and some Antalya neighbourhoods are closed to first applications — check the DGMM list before buying.',
   ]),
+  // Stage 7 additions.
+  mk(PT, 'tavira', 'Tavira', 37.13, -7.65, [39, 28, 43, 62], [
+    'No 24-hour emergency unit in town (the nearest is in Vila Real de Santo António, about 30 minutes); Hospital de Faro and the private CUF Faro are 30–40 minutes away. Faro airport has a seasonal United nonstop to Newark.',
+  ]),
+  mk(ES, 'torrevieja', 'Torrevieja', 37.98, -0.68, [41, 17, 47, 59], [
+    'Valencian Community rules, as in Alicante (€2M wealth-tax exemption). Hospital Quirónsalud Torrevieja is JCI-accredited, and the British retiree community is large. Alicante airport is about 42 minutes away, with no US nonstops.',
+  ]),
+  mk(BG, 'plovdiv', 'Plovdiv', 42.14, 24.75, [35, 12, 40, 41], [
+    'Eurohospital Plovdiv (private) is local; serious cases go to Sofia, about 1.5–2 hours away. No US nonstop flights from Bulgaria.',
+  ]),
+  mk(AL, 'sarande', 'Sarandë', 39.88, 20.0, [43, 21, 48, 53], [
+    'No English-speaking hospital is listed in Sarandë; serious care is in Tirana (4–5 hours by road) or Corfu (by ferry), which are also the usual airports.',
+  ], { healthcare: 0.35 }),
+  mk(AT, 'vienna', 'Vienna', 48.21, 16.37, [78, 31, 76, 92], [
+    'Excellent hospitals; public ÖGK self-insurance costs €565.25/month (2026) after a 6-month wait. Nonstops to New York, Washington, Boston and Chicago.',
+  ]),
 ]
 
 // ---------------------------------------------------------------- Middle East / Africa
@@ -430,12 +479,24 @@ const ZA: Base = {
   notes: [
     'Residents are taxed on worldwide income; a retired-person visa requires a minimum monthly income.',
     'Personal security and power-supply reliability are practical considerations.',
+    'Death counts as a sale: CGT is due on gains accrued while resident, and leaving triggers an exit tax on the same gains. Neither is modelled here (estate duty is).',
+  ],
+}
+const MU: Base = {
+  country: 'Mauritius', countryCode: 'MU', region: 'Africa', currency: 'MUR', fxVol: 0.07, healthcare: 0.35,
+  notes: [
+    'Foreign income is taxed only when remitted, and there is no capital gains, wealth or inheritance tax; US dividends left in the US account and margin draws spent by card are likely untaxed locally (an inference: document what you transfer).',
+    'The Retired Non-Citizen permit (age 50+, 10 years) needs about US$2,000/month transferred in (older sources say US$1,500). Cyclone season runs November–May.',
   ],
 }
 
 const meAfricaCities: City[] = [
   mk(AE, 'dubai', 'Dubai', 25.2, 55.27, [62, 52, 56, 62]),
   mk(ZA, 'cape-town', 'Cape Town', -33.92, 18.42, [40, 18, 36, 34]),
+  // Stage 7 addition.
+  mk(MU, 'grand-baie', 'Grand Baie', -20.01, 57.58, [36, 15, 35, 37], [
+    'C-Care Grand Baie is local; the larger private hospitals (C-Care Wellkin, Darné) are about 45–60 minutes away, and complex cases often go to South Africa or France. No US nonstop flights.',
+  ]),
 ]
 
 // ---------------------------------------------------------------- Latin America
@@ -531,6 +592,14 @@ const GT: Base = {
   ],
 }
 
+const HN: Base = {
+  country: 'Honduras', countryCode: 'HN', region: 'Latin America', currency: 'HNL', fxVol: 0.03, healthcare: 0.3,
+  notes: [
+    'Honduras taxes on a territorial basis, so US dividends are untaxed, and there is no wealth or inheritance tax. A worldwide-income bill failed in May 2025 but could return.',
+    'Rentista residence needs US$2,500/month of stable foreign income (pensionado US$1,500).',
+  ],
+}
+
 const latamCities: City[] = [
   mk(MX, 'mexico-city', 'Mexico City', 19.43, -99.13, [49, 28, 51, 49], ['Altitude (~2,240 m) can matter for some health conditions.']),
   mk(MX, 'merida', 'Mérida', 20.97, -89.62, [42, 14, 42, 48]),
@@ -538,7 +607,7 @@ const latamCities: City[] = [
   mk(MX, 'san-miguel-de-allende', 'San Miguel de Allende', 20.91, -100.74, [48, 23, 54, 52]),
   mk(MX, 'playa-del-carmen', 'Playa del Carmen', 20.63, -87.08, [45, 24, 49, 50]),
   mk(CO, 'medellin', 'Medellín', 6.24, -75.58, [43, 21, 44, 38]),
-  mk(CO, 'cartagena', 'Cartagena', 10.39, -75.48, [34, 13, 34, 28]),
+  mk(CO, 'cartagena', 'Cartagena', 10.39, -75.48, [41, 23, 41, 45]),
   mk(CO, 'bogota', 'Bogotá', 4.71, -74.07, [30, 11, 30, 22], ['Altitude (~2,600 m) can matter for some health conditions.']),
   mk(PA, 'panama-city', 'Panama City', 8.98, -79.52, [49, 28, 55, 47]),
   mk(PA, 'boquete', 'Boquete', 8.78, -82.43, [42, 18, 52, 30]),
@@ -576,6 +645,28 @@ const latamCities: City[] = [
     'Private clinics only; complex cases go to Santo Domingo or Santiago, 2–3 hours by road or by helicopter.',
   ], { healthcare: 0.35 }),
   mk(PY, 'asuncion', 'Asunción', -25.26, -57.58, [32, 11, 32, 33], ['Healthcare was not researched; Asunción is the realistic base for private care in Paraguay.']),
+  // Stage 7 additions.
+  mk(MX, 'la-paz', 'La Paz (Baja California Sur)', 24.14, -110.31, [46, 17, 50, 58], [
+    'Private Hospital Fidepaz and The Medical Centre are local, with some specialist care in Guadalajara. The US rates Baja California Sur Level 2; the only US nonstop is to Los Angeles. Hurricane-exposed.',
+  ]),
+  mk(MX, 'mazatlan', 'Mazatlán', 23.24, -106.41, [43, 16, 46, 45], [
+    'The US rates Sinaloa Level 4 "Do Not Travel", Mazatlán included (the UK exempts the city). Private hospitals locally (e.g. Hospital Marina Mazatlán); several US nonstops.',
+  ]),
+  mk(BZ, 'hopkins', 'Hopkins', 16.86, -88.28, [56, 15, 72, 33], [
+    'A small Garifuna village with a public clinic; the public Southern Regional Hospital in Dangriga is about 30 minutes away, and private care is in Belize City, about 2.5 hours. Hurricane-exposed.',
+  ]),
+  mk(BZ, 'corozal', 'Corozal', 18.39, -88.39, [50, 10, 50, 30], [
+    'Corozal Community Hospital is in town, and private care is in Chetumal, Mexico, about 26 minutes across the border. US flights leave from Belize City, about 2 hours by road. Hurricane-exposed.',
+  ]),
+  mk(PA, 'volcan', 'Volcán', 8.77, -82.63, [40, 14, 52, 27], [
+    'Only a basic emergency hospital; private hospitals are in David, 40 minutes to an hour away, and specialist care means flying to Panama City. Highland climate (about 1,400 m) below Volcán Barú.',
+  ]),
+  mk(HN, 'roatan', 'Roatán', 16.32, -86.54, [43, 20, 42, 36], [
+    'The island\'s only public hospital burned in April 2024 and private care is very limited; serious cases fly to San Pedro Sula or the US, so budget evacuation cover. Nonstops to Miami, Dallas, Atlanta and Houston.',
+  ], { healthcare: 0.4 }),
+  mk(GT, 'panajachel', 'Lake Atitlán (Panajachel)', 14.74, -91.16, [38, 10, 44, 37], [
+    'No hospital in Panajachel (a 24-hour public health centre and private clinics; the public Sololá hospital is about 20 minutes uphill); specialist care is about 3 hours away in Guatemala City. The US rates Guatemala Level 3.',
+  ], { healthcare: 0.35 }),
   mk(GT, 'antigua-guatemala', 'Antigua Guatemala', 14.56, -90.73, [39, 19, 45, 42], [
     'Hospital Privado Hermano Pedro (24/7) is local; serious-care hospitals and the airport are in Guatemala City, about an hour away. Volcanic risk (Fuego).',
   ]),
@@ -768,6 +859,66 @@ const VERIFIED: Record<string, CityVerification> = {
         ['taipei', 'taiwan/taipei'],
         ['lima', 'peru/lima'],
         ['playa-del-carmen', 'mexico/playa-del-carmen'],
+      ] as const
+    ).map(([id, page]) => [id, livingcost(page)]),
+  ),
+  // Stage 7: new cities. Numbeo returned HTTP 429, so these use the Stage 5 livingcost.org method, or a stated
+  // mapping where livingcost.org has no page. See docs/research/cost-check-2026-11.md, Stage 7.
+  ...Object.fromEntries(
+    (
+      [
+        ['tavira', 'portugal/tavira'],
+        ['torrevieja', 'spain/torrevieja'],
+        ['la-paz', 'mexico/la-paz'],
+        ['mazatlan', 'mexico/mazatlan'],
+        ['chiang-rai', 'thailand/chiang-rai'],
+        ['langkawi', 'malaysia/langkawi'],
+        ['panajachel', 'guatemala/panajachel'],
+        ['plovdiv', 'bulgaria/plovdiv'],
+        ['sarande', 'albania/sarande'],
+        ['vienna', 'austria/vienna'],
+      ] as const
+    ).map(([id, page]) => [id, livingcost(page)]),
+  ),
+  'grand-baie': v({
+    source: 'livingcost.org (mapped)',
+    url: 'https://livingcost.org/cost/mauritius/port-louis',
+    confidence: 'low',
+    note: 'livingcost.org has no Grand Baie page (404) and Numbeo returned HTTP 429. Port Louis priced by the Stage 5 livingcost method (34/12/35/32), then adjusted for a resort town with an expat rental market: col +5%, rent +25%, restaurants +15%, groceries unchanged. A judgment adjustment.',
+  }),
+  roatan: v({
+    source: 'livingcost.org (mapped)',
+    url: 'https://livingcost.org/cost/honduras/tegucigalpa',
+    confidence: 'low',
+    note: 'livingcost.org has no Roatán page (404) and Numbeo returned HTTP 429. Tegucigalpa priced by the Stage 5 livingcost method (37/10/35/29), then adjusted for an island resort with imported goods and a US-expat rental market: col +15%, rent +100%, groceries +20%, restaurants +25%. A judgment adjustment; the result is close to livingcost\'s San Pedro Town (Ambergris Caye) page at 45/20/50/37.',
+  }),
+  hopkins: v({
+    source: 'Mapped to nearby Belize rows',
+    url: 'https://livingcost.org/cost/belize',
+    confidence: 'low',
+    note: 'No source page: livingcost.org has no Hopkins page (its Belize page lists none) and Numbeo was rate-limiting. Mapped to the dataset\'s Placencia row (56/19/72/33) with rent -20% for a smaller, less developed beach village; other indices unchanged. A judgment mapping on a row that is itself a mapping.',
+  }),
+  corozal: v({
+    source: 'Mapped to nearby Belize rows',
+    url: 'https://livingcost.org/cost/belize',
+    confidence: 'low',
+    note: 'No source page: livingcost.org has no Corozal page (its Belize page lists none) and Numbeo was rate-limiting. Mapped to the dataset\'s Cayo row (50/10/56/30), an inland town of similar size, with groceries -10% for shopping in Chetumal; other indices unchanged. A judgment mapping.',
+  }),
+  volcan: v({
+    source: 'Mapped to the Boquete row',
+    url: 'https://livingcost.org/cost/panama',
+    confidence: 'low',
+    note: 'No source page: livingcost.org has no Volcán or Boquete page (its Panama page lists David, not either town) and Numbeo was rate-limiting. Mapped to the dataset\'s Boquete row (42/18/52/30, itself low confidence) adjusted for a smaller, less touristy highland town: col -5%, rent -20%, restaurants -10%, groceries unchanged. A judgment mapping.',
+  }),
+  // Ranked cities that had only rough estimates, priced by the Stage 5 livingcost.org method (Numbeo rate-limiting).
+  // See docs/research/cost-check-2026-11.md, "Stage 7: four ranked cities without checked costs".
+  ...Object.fromEntries(
+    (
+      [
+        ['rome', 'italy/lz/rome'],
+        ['barcelona', 'spain/barcelona'],
+        ['cartagena', 'colombia/cartagena'],
+        ['batumi', 'georgia/batumi'],
       ] as const
     ).map(([id, page]) => [id, livingcost(page)]),
   ),

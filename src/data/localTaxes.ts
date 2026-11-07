@@ -1,7 +1,7 @@
 // Local wealth and inheritance taxes, as they reach a US citizen's US brokerage portfolio.
 //
 // Facts and source URLs come from docs/research/bbd-ranking-2026-11.md (Country summary and
-// Appendices A–H). Amounts are today's USD, converted at the bundled src/data/fx.json rates (the
+// Appendices A–J). Amounts are today's USD, converted at the bundled src/data/fx.json rates (the
 // same rates the app uses), so USD thresholds move a little with each `npm run data:fx`. Bands are marginal: `rate` applies above `from`.
 // Current-law schedules; where a law phases rates down, the steady-state schedule is used.
 //
@@ -10,8 +10,8 @@
 // modelled as zero. Treaty credits are ignored. Not tax advice.
 //
 // Countries in the city dataset with no researched tax data (UK, Netherlands, Germany,
-// Switzerland, UAE, South Africa, Singapore, South Korea, Canada, Australia, New Zealand) have no
-// entry, and the simulation applies no local tax there.
+// Switzerland, UAE, South Korea, Canada, Australia, New Zealand) have no entry, and the simulation
+// applies no local tax there.
 
 import { HEIRS } from '../engine/localTax'
 import type { LocalTax, TaxBand } from '../engine/types'
@@ -19,7 +19,7 @@ import fxJson from './fx.json'
 
 /** Units per USD for the currencies the tax schedules are written in (from fx.json). */
 const RATES = (fxJson as { rates: Record<string, number> }).rates
-export const FX = { EUR: RATES.EUR, COP: RATES.COP, ARS: RATES.ARS, JPY: RATES.JPY, PHP: RATES.PHP }
+export const FX = { EUR: RATES.EUR, COP: RATES.COP, ARS: RATES.ARS, JPY: RATES.JPY, PHP: RATES.PHP, ZAR: RATES.ZAR }
 
 const usd = (amount: number, ccy: keyof typeof FX) => Math.round(amount / FX[ccy])
 const bandsIn = (ccy: keyof typeof FX, b: [from: number, rate: number][]): TaxBand[] =>
@@ -186,6 +186,21 @@ export const LOCAL_TAX_BY_COUNTRY: Record<string, LocalTax> = {
       'https://www.ey.com/en_gl/technical/tax-alerts/turkiye-introduces-new-personal-tax-regime-including-foreign-income-exemption-inheritance-tax-relief-and-asset-repatriation-measure',
     ],
   },
+  BG: {
+    note: 'No wealth or inheritance tax on a US portfolio: Bulgaria has no wealth tax, and its municipal inheritance tax reaches a foreign national only on property in Bulgaria, with children fully exempt in any case (law-firm source; the Ministry of Finance page could not be read).',
+    sources: ['https://taxsummaries.pwc.com/bulgaria/individual/other-taxes', 'https://www.innovires.com/en/blog/danak-nasledstvo-bulgaria.html'],
+  },
+  AL: {
+    note: 'No wealth or inheritance tax on a US portfolio: Albania has no wealth tax (only a property tax on buildings), and its 15% inheritance tax exempts first- and second-degree heirs, so children pay nothing.',
+    sources: ['https://taxsummaries.pwc.com/albania/individual/other-taxes'],
+  },
+  AT: {
+    note: 'No wealth or inheritance tax: Austria has no wealth, inheritance, estate or gift tax. Not modelled: funds not registered with Austria\'s tax office (OeKB), which likely include US-domiciled ETFs, are taxed every year on a deemed distribution of 90% of their growth (minimum 10% of year-end value) at 27.5%, so a never-sell ETF portfolio pays Austrian tax each year anyway. Individual US stocks are not caught. Dividends are taxed at 27.5% as income (outside this entry).',
+    sources: [
+      'https://taxsummaries.pwc.com/austria/individual/other-taxes',
+      'https://taxsummaries.pwc.com/austria/individual/income-determination',
+    ],
+  },
   IE: {
     inheritance: { perHeirAllowance: usd(420_000, 'EUR'), bands: flat(0.33), afterYearsResident: 5 },
     note: 'Inheritance: Capital Acquisitions Tax at 33% above the €420k Group A (child) threshold. A non-domiciled decedent counts as resident only after 5 consecutive years, so it applies when the horizon is more than 5 years after the move. The US–Ireland treaty credit is ignored. No wealth tax.',
@@ -274,6 +289,10 @@ export const LOCAL_TAX_BY_COUNTRY: Record<string, LocalTax> = {
       'https://www.sii.cl/pagina/jurisprudencia/legislacion/basica/herencias_asignaciones_donaciones.doc',
     ],
   },
+  HN: {
+    note: 'No wealth or inheritance tax: PwC lists neither for Honduras and a secondary source confirms there is no wealth or separate inheritance tax; no Honduran primary source was found.',
+    sources: ['https://taxsummaries.pwc.com/honduras/individual/other-taxes', 'https://taxatlas.io/country/honduras/wealth-tax'],
+  },
   PE: {
     note: 'No wealth or inheritance tax: Peru has neither (the "none" for inheritance rests on a secondary source).',
     sources: ['https://taxsummaries.pwc.com/peru/individual/other-taxes', 'https://perugestiona.pe/herencias/impuesto-herencia-peru/'],
@@ -285,6 +304,10 @@ export const LOCAL_TAX_BY_COUNTRY: Record<string, LocalTax> = {
   },
 
   // Asia
+  SG: {
+    note: 'No wealth or inheritance tax: Singapore has no net wealth tax, and estate duty was abolished for deaths on or after 15 Feb 2008.',
+    sources: ['https://taxsummaries.pwc.com/singapore/individual/other-taxes'],
+  },
   MY: {
     note: 'No wealth or inheritance tax: Malaysia has no net wealth, inheritance, estate or gift taxes.',
     sources: ['https://taxsummaries.pwc.com/malaysia/individual/other-taxes'],
@@ -338,6 +361,30 @@ export const LOCAL_TAX_BY_COUNTRY: Record<string, LocalTax> = {
     note: 'Inheritance: up to 55% (above JPY 600m per heir\'s share) after a basic exemption of JPY 30m + 6m per heir. A foreign national\'s overseas assets come in after 10 of 15 years\' domicile, so it applies when the horizon is more than 10 years after the move. The research gives the top rate; the lower steps follow the statutory table. The US–Japan treaty credit is ignored. No wealth tax.',
     sources: ['https://taxsummaries.pwc.com/japan/individual/other-taxes'],
   },
+
+  // Africa
+  MU: {
+    note: 'No wealth or inheritance tax: Mauritius has no net wealth tax and no inheritance, estate or gift tax.',
+    sources: ['https://taxsummaries.pwc.com/mauritius/individual/other-taxes'],
+  },
+  ZA: {
+    inheritance: {
+      // Estate duty is charged on the whole estate, but the engine splits it equally across HEIRS and
+      // taxes each share. Halving the R3.5M abatement and the R30M breakpoint gives the same total:
+      // HEIRS × bandTax(estate / HEIRS − R3.5M / HEIRS) = 20% of the dutiable estate to R30M, 25% above.
+      perHeirAllowance: Math.round(usd(3_500_000, 'ZAR') / HEIRS),
+      bands: bandsIn('ZAR', [
+        [0, 0.2],
+        [30_000_000 / HEIRS, 0.25],
+      ]),
+    },
+    note: 'Inheritance: estate duty on an ordinarily resident decedent\'s worldwide estate, 20% of the dutiable estate above an R3.5M abatement and 25% above R30M dutiable, applied to the whole estate (the abatement and breakpoint are split across the modelled heirs so the total matches). Relief not modelled: s4(e) of the Estate Duty Act deducts foreign property acquired before first becoming ordinarily resident (and, per a practitioner source, its proceeds), so a portfolio held on arrival may be largely outside duty; the whole portfolio is taxed here as the cautious reading. Whether a US margin loan is deductible is unverified. Not modelled: CGT at death on gains accrued while resident (death is a deemed disposal) and the exit tax on ceasing residence. The US–South Africa estate treaty gives credit only, so no reduction is modelled. No wealth tax.',
+    sources: [
+      'https://taxsummaries.pwc.com/south-africa/individual/other-taxes',
+      'https://jutamedia2.blob.core.windows.net/jutacoza/uploads/SAIT_Compenduim_2016_Volume1/files/basic-html/page668.html',
+      'https://capitallegacy.co.za/faq/17/how-much-tax-do-you-pay-on-a-deceased-estate',
+    ],
+  },
 }
 
 /** Per-city overrides, keyed by city id. Spain has no country entry: wealth tax is regional, so
@@ -345,6 +392,7 @@ export const LOCAL_TAX_BY_COUNTRY: Record<string, LocalTax> = {
 export const LOCAL_TAX_BY_CITY: Record<string, LocalTax> = {
   valencia: ES_VALENCIA,
   alicante: ES_VALENCIA,
+  torrevieja: ES_VALENCIA,
   malaga: ES_ANDALUSIA,
   madrid: ES_MADRID,
   tarragona: ES_CATALONIA,

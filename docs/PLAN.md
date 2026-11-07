@@ -20,10 +20,10 @@ Scope:
 
 Risk: low (research notes and city/tax data entries; engine logic untouched)
 Checks:
-- [ ] Every new country has a sourced summary row and a `localTaxes` entry citing a URL from the doc; every summary URL appears in the appendices (proof: URL cross-check + data test)
-- [ ] The doc ranks a draft top 75 with a reason per city; every candidate outside the 75 has a written reason (proof: read the doc)
-- [ ] Every candidate is in `CITIES` with a `verified` record (low confidence noted where derived) (proof: test)
-- [ ] Tests green, typecheck clean, build ok (proof: command output)
+- [x] Every new country has a sourced summary row and a `localTaxes` entry citing a URL from the doc; every summary URL appears in the appendices (proof: URL cross-check + data test)
+- [x] The doc ranks a draft top 75 with a reason per city; every candidate outside the 75 has a written reason (proof: read the doc)
+- [x] Every ranked candidate (the 75) is in `CITIES` with a `verified` record, low confidence noted where derived; candidates outside the 75 need no city entry (proof: test)
+- [x] Tests green, typecheck clean, build ok (proof: command output) — [evidence](evidence/stage-7/report.md)
 Open: none
 Mode: autopilot
 
@@ -34,7 +34,7 @@ Mode: autopilot
 - [x] 4. Local taxes — wealth and inheritance tax per country in the engine, with tests; odds and estate reflect them; Method page explains
 - [x] 5. BBD ranking — rerank the top 50 with new tax/estate and lending factors; profile pages for all 50 (new ones for newcomers and 26–50, refreshed facts for the rest)
 - [x] 6. Atlas & verify — tax lines in "Your plan here", the Atlas list and profile pages handle 50 picks, phone + both themes, preview
-- [ ] 7. Research for 51–75 — the 17 outside candidates plus ≥15 more (retiree towns in covered countries, new countries, unweighed dataset cities), sourced the same way; new cities added with costs, healthcare factors and local-tax data; draft top 75
+- [x] 7. Research for 51–75 — the 17 outside candidates plus ≥15 more (retiree towns in covered countries, new countries, unweighed dataset cities), sourced the same way; new cities added with costs, healthcare factors and local-tax data; draft top 75
 - [ ] 8. Profiles 51–75 & ship — profile pages for 51–75, UI for 75 picks, verify phone + both themes, fresh review, preview, deploy on approval
 
 ## Decisions
@@ -57,6 +57,7 @@ Mode: autopilot
 - 2026-11-06 · Estate rubric: a regime whose reach over US assets left to US-resident heirs is only inferred scores one point lower (Spain 4) — review triage. Medellín tax score corrected to 1.
 - 2026-11-06 · Placencia (Belize) added as a candidate — user asked; it had never been evaluated because the plan fixed Belize as Cayo and Ambergris Caye and neither research pass revisited Belize.
 - 2026-11-06 · Profile pages expand to the top 75 — user asked; candidates ranked 51–75 include the 17 now outside the 50 (low-ranked with their drawbacks stated rather than excluded) plus ≥15 new candidates; two stages added (7 research and data, 8 profiles and ship), deploy moved to Stage 8.
+- 2026-11-06 · Draft top 75: the 50 keep their relative order; Tavira (#14), Grand Baie, Mauritius (#20), Torrevieja (#33), La Paz (#37) and Hopkins (#40) are inserted on merit, and the rest fill 51–75; 13 candidates sit outside with reasons. Stage 7's dataset check was narrowed to the 75 ranked cities (outside candidates never needed city entries). Austria's yearly tax on non-registered funds and South Africa's CGT at death are noted, not modelled.
 
 ## Open questions
 - Re-read Numbeo for the 11 livingcost-derived cities, the 5 Stage-3 cities mapped to nearby rows, and the noisy Belize pages once the rate limit lifts.

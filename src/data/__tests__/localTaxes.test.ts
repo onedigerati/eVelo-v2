@@ -35,6 +35,33 @@ describe('local taxes data', () => {
     }
   })
 
+  it('covers the seven Stage 7 countries', () => {
+    for (const cc of ['MU', 'BG', 'AL', 'HN', 'AT', 'SG', 'ZA']) expect(LOCAL_TAX_BY_COUNTRY[cc], cc).toBeDefined()
+    for (const cc of ['MU', 'BG', 'AL', 'HN', 'AT', 'SG']) {
+      expect(LOCAL_TAX_BY_COUNTRY[cc].wealth, cc).toBeUndefined()
+      expect(LOCAL_TAX_BY_COUNTRY[cc].inheritance, cc).toBeUndefined()
+    }
+    expect(LOCAL_TAX_BY_COUNTRY.AT.note).toMatch(/90% of their growth/)
+    expect(LOCAL_TAX_BY_COUNTRY.AT.note).toMatch(/27\.5%/)
+    expect(LOCAL_TAX_BY_COUNTRY.ZA.wealth).toBeUndefined()
+  })
+
+  it('South Africa: estate duty on the whole estate, not per heir (hand-worked)', () => {
+    const za = LOCAL_TAX_BY_COUNTRY.ZA.inheritance!
+    const zar = RATES.ZAR
+    // Whole-estate rule: 20% of (estate − R3.5M) up to R30M dutiable, 25% above.
+    const duty = (estateUsd: number) => {
+      const d = Math.max(0, estateUsd * zar - 3_500_000)
+      return (0.2 * Math.min(d, 30_000_000) + 0.25 * Math.max(0, d - 30_000_000)) / zar
+    }
+    for (const estate of [100_000, 1_000_000, 2_000_000, 5_000_000, 20_000_000]) {
+      expect(Math.abs(inheritanceTax(estate, za) - duty(estate)), `${estate}`).toBeLessThan(3)
+    }
+    expect(inheritanceTax(100_000, za)).toBe(0) // below the R3.5M abatement
+    expect(za.afterYearsResident).toBeUndefined()
+    expect(CITY_BY_ID['cape-town'].localTax).toBe(LOCAL_TAX_BY_COUNTRY.ZA)
+  })
+
   it('cites at least one source per entry, each URL from the research doc', () => {
     for (const [k, t] of ALL) {
       expect(t.sources.length, k).toBeGreaterThan(0)
@@ -89,7 +116,7 @@ describe('local taxes data', () => {
     }
     const first = (id: string) => CITY_BY_ID[id].localTax!.wealth!.bands[0]
     // Valencian Community: €2M exemption, 0.25% first band
-    for (const id of ['valencia', 'alicante']) expect(first(id)).toEqual({ from: EUR(2_000_000), rate: 0.0025 })
+    for (const id of ['valencia', 'alicante', 'torrevieja']) expect(first(id)).toEqual({ from: EUR(2_000_000), rate: 0.0025 })
     // Catalonia: €500k exemption, 0.21% first band
     for (const id of ['tarragona', 'barcelona']) expect(first(id)).toEqual({ from: EUR(500_000), rate: 0.0021 })
     // Andalusia and Madrid: nothing until about €3.7M, then the solidarity rates
@@ -133,9 +160,9 @@ describe('local taxes data', () => {
   })
 
   it('models heir-based and situs-only regimes as zero, decedent-based ones as taxed', () => {
-    for (const cc of ['TH', 'VN', 'TW', 'CL', 'PT', 'MX', 'PA', 'MY', 'CY', 'MT', 'GT'])
+    for (const cc of ['TH', 'VN', 'TW', 'CL', 'PT', 'MX', 'PA', 'MY', 'CY', 'MT', 'GT', 'BG', 'AL'])
       expect(LOCAL_TAX_BY_COUNTRY[cc].inheritance, cc).toBeUndefined()
-    for (const cc of ['FR', 'GR', 'IT', 'IE', 'EC', 'CO', 'DO', 'TR', 'PH', 'JP'])
+    for (const cc of ['FR', 'GR', 'IT', 'IE', 'EC', 'CO', 'DO', 'TR', 'PH', 'JP', 'ZA'])
       expect(LOCAL_TAX_BY_COUNTRY[cc].inheritance, cc).toBeDefined()
     expect(LOCAL_TAX_BY_COUNTRY.IT.wealth!.base).toBe('gross') // IVAFE on market value
     expect(LOCAL_TAX_BY_COUNTRY.CO.wealth!.bands.at(-1)!.rate).toBe(0.01) // steady state from 2027
