@@ -1,32 +1,36 @@
 # Landing page plan
 
 ## Goal
-Give eVelo a landing page that says what the site is before a visitor meets the planner: study C, "Escape velocity" (canvas https://claude.ai/artifact/YXsFA24Z4bXtpgNhhMouHY, boards `Escape` and `EscapeLight`). A field of decorative simulated paths draws itself across the page (most rise in green, some take a hit in brass, a few break through the margin-call line in coral) behind the logo, the headline "Reach *escape velocity.*", the agreed copy, two CTAs and the holds/bruised/broken legend. It follows the site theme (paper in light, ink in dark), works at phone width, and respects reduced motion. First-time visitors at the bare URL see it; everyone else goes straight to the app. Done = verified on the running app in both themes and on a phone viewport, tests green, previewed, and deployed on approval.
+Give eVelo a landing page that says what the site is before a visitor meets the planner: study G, "The Atlas is the chart" (canvas https://claude.ai/artifact/YXsFA24Z4bXtpgNhhMouHY, boards `AtlasHero` and `AtlasHeroDark`). A two-column hero (eyebrow, the headline "Live off your portfolio *without ever selling it.*", G's copy, "Stress-test my plan" and "Explore the Atlas", the no-sign-up line) beside a map card: one illustrative plan's odds city by city, Lisbon highlighted with its readout and fan chart; below, the four steps Buy / Borrow / Live anywhere / Die. It follows the site theme (paper in light, ink in dark), works at phone width, and respects reduced motion. First-time visitors at the bare URL see it; everyone else goes straight to the app. Done = verified on the running app in both themes and on a phone viewport, tests green, previewed, and deployed on approval.
 
 ## Baseline
 2026-11-07 · tests: 189 pass (17 files) · typecheck: clean · build: ok
 
 ## Now
-Stage 2 of 2 · Escape-velocity view
-Mode: paused — preview v23 published (https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth); waiting on the user's review, then approval to deploy to GitHub Pages (and to push the keel 0.5.2 commit)
+Stage 2 of 2 · Atlas-hero view
+Mode: autopilot
 Risk: UI only
-Scope: replace the Stage 1 placeholder with study C (boards `Escape`/`EscapeLight`): seeded decorative paths + margin-call line behind logo, headline, copy, CTAs and legend; follows the site theme; phone layout; reduced motion. Then preview and, on approval, deploy.
+Scope: replace the study C landing (committed in ad98a0e, superseded) with study G (boards `AtlasHero`/`AtlasHeroDark`), copy and illustrative numbers exactly as drawn; remove C's path field. Then preview and, on approval, deploy.
 Checks:
-- [x] The landing shows the logo, "Reach *escape velocity.*", the agreed body copy verbatim, "Launch my plan" (→ planner) and "What is Buy-Borrow-Die?" (→ Method), and the holds/bruised/broken legend; its header has the wordmark, theme toggle and "Open the planner" (proof: run the product)
-- [x] Behind it, seeded decorative paths draw themselves in: most rise in green, some dip in brass, a few break through the dashed margin-call line in coral and end in a dot; the picture is identical on every load (proof: test + run the product)
-- [x] It follows the site theme: paper with deeper green/brass/coral in light, ink with glowing paths in dark; the landing's toggle switches it live; text meets 4.5:1 over the paths (proof: run the product, both themes)
-- [x] At phone width (390px) it reads cleanly with no horizontal scroll, the CTAs are full-size touch targets, and the paths stay behind the text (proof: run the product)
-- [x] With reduced motion the paths appear fully drawn, with no animation (proof: run the product)
-- [x] Tests, typecheck and build pass; no console errors on the landing
+- [ ] The landing shows G's content as drawn: header (wordmark → `#home`, nav "How it works" / "Atlas" / "Method", theme toggle, "Open the planner"), eyebrow, "Live off your portfolio *without ever selling it.*", G's paragraph, "Stress-test my plan" (→ planner) and "Explore the Atlas" (→ Atlas), the no-sign-up line, and the four steps Buy / Borrow / Live anywhere / Die (proof: run the product)
+- [ ] The map card shows the 33 cities at their positions coloured by the app's holds scale, the six labels with their percentages, Lisbon ringed with its 88% readout ("vs 63% staying in Austin…") and its fan chart (bands, median, loan, dashed margin-call line), the Breaks→Holds key and "Illustrative numbers" (proof: test + run the product)
+- [ ] "How it works" scrolls to the steps without leaving the landing or changing the route; "Atlas" and "Method" open those tabs (proof: run the product)
+- [ ] It follows the site theme: paper in light, ink in dark, the landing's toggle switches it live; all text meets 4.5:1, map labels included (proof: run the product, both themes)
+- [ ] At phone width (390px) the hero stacks (copy, then card), the nav folds away, the steps go to one column, there is no horizontal scroll, and controls are ≥44px touch targets; tablet (820px) stacks cleanly too (proof: run the product)
+- [ ] With reduced motion the Lisbon ring doesn't pulse (proof: run the product)
+- [ ] Tests, typecheck and build pass; no console errors on the landing; study C's path field is gone from the code
 - [ ] Previewed on the preview artifact, and deployed to GitHub Pages on the user's approval (proof: run the product)
 Open: none
 
 ## Stages
 - [x] 1. Landing route — `#home` route, first-visit rule with a persisted "entered the app" flag, shell hides top bar/tab bar on the landing; landing view as a plain placeholder
-- [ ] 2. Escape-velocity view — theme-aware hero from study C: seeded decorative paths with draw-in animation, margin-call line, logo, copy, CTAs (Launch my plan → planner, What is Buy-Borrow-Die? → Method), legend, theme toggle; phone layout; reduced motion; preview + deploy on approval
+- [ ] 2. Atlas-hero view — study G: hero copy and CTAs beside the illustrative map card (cities, Lisbon readout and fan chart), four steps below, theme toggle; phone layout; reduced motion; preview + deploy on approval. (Study C was built, verified and previewed as v23 first, then replaced at the user's call — evidence in `docs/evidence/stage-2-study-c/`.)
 
 ## Decisions
-- 2026-11-07 · Landing is study C, "Escape velocity" — user chose it from five studies (A–E) on the canvas.
+- 2026-11-07 · Landing is study G, "The Atlas is the chart", replacing study C after the user saw C on preview v23 — user: "let's go with option G here instead". C's decisions below (body copy, decorative paths, seed, label halo) are superseded.
+- 2026-11-07 · G's map numbers stay illustrative as drawn (labelled "Illustrative numbers"), not an engine snapshot or a live run — user's choice.
+- 2026-11-07 · G's copy is used as drawn: headline, paragraph, CTAs and the four step blurbs — user's choice, replacing the earlier verbatim copy.
+- 2026-11-07 · (superseded) Landing is study C, "Escape velocity" — user chose it from five studies (A–E) on the canvas.
 - 2026-11-07 · Shown on first visit only: the bare URL shows it until the visitor has entered the app once; share links and route hashes go straight to the app; the wordmark brings it back (`#home`) — user picked the recommended option.
 - 2026-11-07 · Follows the site theme: paper with deeper green/brass/coral paths in light, ink with glowing paths in dark — user asked to see the light variant, then chose "follow the theme".
 - 2026-11-07 · Paths are decorative and seeded (deterministic), not engine output — user chose decorative over real simulation paths.
