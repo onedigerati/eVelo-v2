@@ -1,6 +1,6 @@
 # BBD destinations: ranking research (2026-11-06)
 
-Stage 1 researched 23 countries and drafted a top 25. Stage 2 added 11 countries (Appendices F–G) and city-level notes (Appendix H), and drafted the top 50 below.
+Stage 1 researched 23 countries and drafted a top 25. Stage 2 added 11 countries (Appendices F–G) and city-level notes (Appendix H), and drafted a top 50. Stage 7 added 7 countries (Appendices I–J) and 13 retiree towns (Appendix K), and drafted the top 75 below.
 
 **Who this is for:** a US citizen retiring abroad on buy-borrow-die (BBD).
 - A taxable US brokerage portfolio is never sold.
@@ -84,91 +84,117 @@ These sit alongside the existing factors: cost, safety, climate and flights.
 | Ireland | none | CAT 33% above €420k (children); non-doms in scope after 5 yrs' residence; **treaty** | remittance basis for non-doms on unremitted foreign income | Stamp 0: €50k/yr per person | IBKR (EU) | private cover with late-entry loading (2%/yr over 34, cap 70%) | https://taxsummaries.pwc.com/ireland/individual/other-taxes ; https://taxsummaries.pwc.com/ireland/individual/income-determination (App. G) |
 | Taiwan | none | estate tax 10–20% on Taiwan-situs property only for non-ROC nationals; no treaty | foreign income only in the 20% basic tax above TWD 7.5m | **no passive route** (investor visa needs US$200k business investment) | IBKR likely | excellent NHI once resident | https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340072 ; https://taxsummaries.pwc.com/taiwan/individual/other-taxes (App. G) |
 | Japan | none | up to 55%, worldwide after 10 of 15 yrs' domicile; **treaty** | non-permanent resident rules for 5 yrs, then worldwide | **no retirement visa** (Long Stay: JPY 30m savings, 1 yr max, no NHI) | IBKR likely | excellent, but not for Long Stay | https://taxsummaries.pwc.com/japan/individual/other-taxes ; https://migaku.com/blog/language-fun/retirement-visa-options-in-japan-whats-actually-available (App. G) |
+| Mauritius | none | none; no treaty | foreign income taxed only when remitted (remittance basis); no capital gains tax | retired non-citizen permit (50+), ~US$2,000/mo transferred in (older EDB figure US$1,500); Premium Visa | IBKR likely; Schwab Intl not listed | private (C-Care Wellkin, Darné); C-Care clinic in Grand Baie; cyclones | https://taxsummaries.pwc.com/mauritius/individual/income-determination ; https://taxsummaries.pwc.com/mauritius/individual/other-taxes ; https://real-estate-mauritius.mu/en/retiring-in-mauritius/ (App. I) |
+| Bulgaria | none | children exempt; a foreigner's foreign assets reported outside scope (law-firm source); no treaty | dividends 5%; EU bank interest 0%, other interest 10% | D visa needs a pension right (no savings-only ground found) | IBKR (EU); Schwab Intl not listed | public by contribution; Acibadem private in Plovdiv | https://taxsummaries.pwc.com/bulgaria/individual/taxes-on-personal-income ; https://taxsummaries.pwc.com/bulgaria/individual/other-taxes ; https://innovires.com/en/blog/viza-d-bulgaria.html (App. I) |
+| Albania | none | first- and second-degree heirs exempt; no treaty | dividends 8%; interest and gains 15% | US citizens 1 year visa-free; pensioner permit ALL 1.2m/yr; property route unclear | IBKR likely | weak in Sarandë (no English-speaking hospital listed); Tirana or Corfu for serious care | https://taxsummaries.pwc.com/albania/individual/income-determination ; https://taxsummaries.pwc.com/albania/individual/other-taxes ; https://exit.al/en/approved-law-on-foreigners-paves-way-for-pensioner-and-digital-nomad-immigrants-in-albania (App. I) |
+| Austria | none | none; **treaty** | 27.5% on dividends; **funds not registered with Austria's tax office (likely including US ETFs) are taxed yearly on 90% of their growth**, so a never-sell ETF portfolio is taxed anyway (not modelled by the engine) | settlement permit (no work) €2,616.78/mo single, €4,128.24 couple (2026), German proof, quota | IBKR (EU) | public self-insurance €565.25/mo after 6 months; excellent hospitals | https://taxsummaries.pwc.com/austria/individual/income-determination ; https://taxsummaries.pwc.com/austria/individual/other-taxes ; https://myetfjourney.com/blog/etf-investing-austria (App. I) |
+| Honduras | none | none (PwC silent; secondary); no treaty | territorial: US dividends untaxed; a worldwide-income bill failed in May 2025 but could return | rentista US$2,500/mo | IBKR reportedly (secondary) | weak on Roatán (public hospital burned Apr 2024); serious cases to San Pedro Sula or the US | https://taxsummaries.pwc.com/honduras/individual/taxes-on-personal-income ; https://taxsummaries.pwc.com/honduras/individual/other-taxes ; https://consortiumlegal.com/2021/11/15/residencia-en-honduras/ (App. J) |
+| Singapore | none | none (estate duty abolished 2008); no treaty | foreign income received by individuals generally exempt | **no retirement route**; Global Investor Programme family-office track needs S$200M | IBKR (SG entity, margin); Schwab needs Accredited Investor | excellent; no MediShield Life for non-PR | https://taxsummaries.pwc.com/singapore/individual/income-determination ; https://taxsummaries.pwc.com/singapore/individual/other-taxes ; https://www.edb.gov.sg/content/dam/edb-en/how-we-help/global-investor-programme/GIP%20Factsheet.pdf (App. J) |
+| South Africa | none | **estate duty 20%/25% on residents' worldwide estate above R3.5M, plus CGT at death on gains accrued while resident**; treaty (credit only if US tax is paid) | worldwide; foreign dividends ~20% effective; exit tax on emigration | retired-person visa R37,000/mo | IBKR unverified | very good private; late-joiner penalty for medical schemes | https://taxsummaries.pwc.com/south-africa/individual/other-taxes ; https://taxsummaries.pwc.com/south-africa/individual/income-determination ; https://capitallegacy.co.za/faq/17/how-much-tax-do-you-pay-on-a-deceased-estate (App. J) |
 
 The URLs for every row, including the ones marked "(App. X)", are in that appendix's country section.
 
-## Draft top 50 for BBD retirees
+## Draft top 75 for BBD retirees
 
-This is the draft Stage 5 reranks, once costs, healthcare factors and the engine's tax modeling exist. "Was" gives the rank in the shipped top 25; "new" means not in it. Each city's facts are in the country summary, and for cities in Appendix H also in that appendix.
+This supersedes the Stage 2 draft top 50. The 50 keep their relative order. Five Stage 7 cities strong enough to beat existing picks are inserted where they belong: Tavira, Mauritius (Grand Baie), Torrevieja, La Paz and Hopkins. The rest fill 51–75. "Was" is the rank in the top 50 shipped to the preview; "new" means not in it.
 
 | # | City | Was | Why |
 |---|---|---|---|
 | 1 | Algarve | 1 | no wealth tax; children inherit free; D7 accepts dividends; EU healthcare; safety |
-| 2 | Lisbon | 4 | same Portuguese tax profile; airport hub; international hospitals |
-| 3 | Paphos (Cyprus) | new | the best BBD tax profile in the EU (dividends and interest effectively 2.65% capped, no wealth or inheritance tax); cheap Category F residence; GeSY; large English-speaking retiree base |
-| 4 | Panama City | 3 | territorial; no estate tax; USD; top private hospitals; Copa hub. Non-pensioners need $200k in Panama |
-| 5 | Boquete | 2 | Panama's tax profile; highland climate; LIOS #1; hospitals in David, an hour away |
-| 6 | Kuala Lumpur | 10 | foreign income exempt to 2036; no estate tax; cheap excellent hospitals. MM2H capital is the cost |
-| 7 | Porto | 15 | Portuguese tax profile; cheaper than Lisbon |
-| 8 | Cascais | new | Lisbon's tax profile on the coast; close to Lisbon airport and hospitals |
-| 9 | Málaga | 6 | Andalusia: no wealth tax below ~€3.7M; heir-based inheritance with 99% relief; Spanish healthcare. Above €3.7M the wealth tax bites |
-| 10 | Madrid | new | Madrid region: no wealth tax from €700k to ~€3.7M (relief less solidarity tax), 99% inheritance relief for children, JCI hospitals, many US nonstops |
-| 11 | Athens | 9 | 5% on dividends; US estate treaty; children's inheritance ≤10% above €600k |
-| 12 | Penang | 11 | Malaysian tax profile; medical-tourism hospitals; lower cost |
-| 13 | Crete | new | Greek tax profile; LIOS #5; climate. Hospitals in Heraklion/Chania |
-| 14 | Valencia | 5 | €2M wealth-tax exemption from 2026; 99% inheritance relief. Worse than Málaga for larger portfolios |
-| 15 | Madeira | 18 | Portuguese tax profile; mildest climate; flights limited |
-| 16 | Montevideo | 20 | 11-year tax holiday on foreign capital income; no inheritance tax; good mutualista care. Needs 183+ days a year |
-| 17 | Limassol (Cyprus) | new | Cyprus tax profile; best hospitals on the island; pricier than Paphos |
-| 18 | Sliema (Malta) | new | remittance basis (leave dividends in the US account); no wealth or inheritance tax; English. IBKR only; apply by 31 Dec 2026 for the old terms |
-| 19 | Antalya (Turkey) | new | Law 7582: foreign income exempt for 20 years and 1% inheritance tax for new residents; low cost; good private hospitals. Lira volatility; US$200k property route with closed neighbourhoods |
-| 20 | Antigua Guatemala | new | territorial; inheritance tax repealed 2026; permanent residence on US$1,250/mo. Serious care is ~1 h away in Guatemala City |
-| 21 | Tbilisi (Georgia) | new | foreign-source income exempt; children inherit free; US$150k property residence. Healthcare uneven; no US tax treaty |
-| 22 | San José (CR) | 7 | territorial today, but Bill 25.796 would tax foreign passive income ~15%; demoted on that risk |
-| 23 | Lake Chapala / Ajijic | new | Mexico's largest US-retiree enclave; Guadalajara flights and hospitals. Mexican dividend tax; Jalisco advisory with a reported Chapala carve-out |
-| 24 | Chiang Mai | 12 | cheap; LTR visa exempts foreign income; insurance entry caps and loan-proceeds uncertainty |
-| 25 | Bangkok | 23 | top hospitals; same Thai tax caveats |
-| 26 | Mérida | 13 | easy residency on savings; safe; IMSS. But Mexico taxes dividends up to 35% + 10% |
-| 27 | Hua Hin | new | LIOS #8; Bangkok Hospital Hua Hin; Thai tax caveats |
-| 28 | Coronado (Panama) | new | Panama's tax profile; beach; ~4,000 expats. Hospitals 1–1.5 h away |
-| 29 | Atenas (CR) | new | ~1,500 expats; 30 min from San José airport; same Costa Rica bill risk |
-| 30 | Alicante | new | Valencian Community (€2M exemption, 99% inheritance relief); cheaper than Valencia. No US nonstops |
-| 31 | Phuket | — | Bangkok Hospital Phuket (JCI 2025–28); Thai tax caveats; no US nonstops |
-| 32 | Puerto Vallarta | 8 | direct US flights; Mexican dividend tax |
-| 33 | San Miguel de Allende | 14 | US-retiree enclave; Mexican dividend tax |
-| 34 | Kotor (Montenegro) | new | 15% on investment income; no wealth tax; inheritance tax on real estate only; property-based residence. Healthcare weak (Podgorica/Dubrovnik) |
-| 35 | Cayo (Belize) | new | QRP is tax-perfect and accepts investment income; LIOS #7; low cost. Healthcare weak: budget international cover with evacuation |
-| 36 | Santiago (Chile) | — | first 3 years foreign income untaxed; foreigners' assets abroad are outside inheritance tax; strong clinics. Worldwide tax after year 3 |
-| 37 | Prague | — | 15% on dividends; no wealth or inheritance tax for children; EU healthcare. Discretionary visa |
-| 38 | Istanbul | — | Turkey's new-resident regime; top private hospitals; hub. Cost and lira volatility |
-| 39 | Mexico City | — | ABC Medical Center (JCI); easy residency. Mexican dividend tax; altitude and safety mix |
-| 40 | Budapest | — | children inherit free; guest-investor route (€250k fund). 15% + social contribution on dividends |
-| 41 | Taipei | — | excellent healthcare and safety; estate tax on Taiwan-situs assets only. No passive residence route (US$200k business investment) |
-| 42 | Asunción (Paraguay) | new | territorial; no wealth or inheritance tax. Healthcare and the residency means test unverified |
-| 43 | Lima | — | no wealth or inheritance tax; rentista US$1,000/mo. Foreign dividends taxed up to 30% |
-| 44 | Oaxaca | new | culture and cost; Mexican dividend tax; thin hospitals |
-| 45 | Las Terrenas (DR) | new | Law 171-07 shields declared rentista income; 3% inheritance tax; remote for serious care; Schwab Intl unavailable |
-| 46 | Medellín | 16 | great hospitals and climate, but Colombia's wealth tax above ~$1.2M, dividends up to 39% and 15% on inheritances rank it low for BBD |
-| 47 | Florence | 22 | IVAFE 0.2%/yr on the portfolio and 26% on dividends rank it low; elective-residence visa and healthcare are good |
-| 48 | Playa del Carmen | — | beach and Cancún flights; small hospital, cartel incidents, hurricanes; Mexican dividend tax |
-| 49 | Cuenca | 17 | cheap, USD, easy rentista visa — but Ecuador's inheritance tax up to 35% reaches foreign assets |
-| 50 | Nice | 21 | best healthcare in the set, but France's 5–45% worldwide inheritance tax and 31.4% on dividends |
+| 2 | Lisbon | 2 | Portuguese tax profile; hub airport; international hospitals |
+| 3 | Paphos | 3 | the EU's best BBD tax profile (Cyprus non-dom); cheap Category F residence; GeSY |
+| 4 | Panama City | 4 | territorial; no estate tax; USD; top private hospitals; Copa hub |
+| 5 | Boquete | 5 | Panama's tax profile; highland climate; LIOS #1 |
+| 6 | Kuala Lumpur | 6 | foreign income exempt to 2036; no estate tax; cheap excellent hospitals |
+| 7 | Porto | 7 | Portuguese tax profile; cheaper than Lisbon |
+| 8 | Cascais | 8 | Lisbon's profile on the coast |
+| 9 | Málaga | 9 | Andalusia: no wealth tax below ~€3.7M; 99% inheritance relief |
+| 10 | Madrid | 10 | Madrid region, same wealth-tax outcome as Málaga; JCI hospitals; US nonstops |
+| 11 | Athens | 11 | 5% on dividends; US estate treaty |
+| 12 | Penang | 12 | Malaysian tax profile; medical-tourism hospitals |
+| 13 | Crete | 13 | Greek tax profile; LIOS #5 |
+| 14 | Tavira | new | Portuguese tax profile in the eastern Algarve; JCI CUF Faro 30–40 min; seasonal Faro–Newark flight; no 24 h emergency unit in town |
+| 15 | Valencia | 14 | €2M wealth-tax exemption; 99% inheritance relief |
+| 16 | Madeira | 15 | Portuguese tax profile; mildest climate |
+| 17 | Montevideo | 16 | 11-year holiday on foreign capital income; no inheritance tax |
+| 18 | Limassol | 17 | Cyprus tax profile; best hospitals on the island |
+| 19 | Sliema | 18 | Malta remittance basis; no wealth or inheritance tax |
+| 20 | Grand Baie (Mauritius) | new | remittance basis, no wealth, inheritance or capital gains tax; retired permit ~US$2,000/mo; private hospitals. Far from the US; cyclones |
+| 21 | Antalya | 19 | Turkey's 20-year foreign-income exemption; 1% inheritance tax |
+| 22 | Antigua Guatemala | 20 | territorial; inheritance tax repealed 2026 |
+| 23 | Tbilisi | 21 | foreign-source income exempt; children inherit free |
+| 24 | San José (CR) | 22 | territorial today; Bill 25.796 risk |
+| 25 | Lake Chapala / Ajijic | 23 | biggest US-retiree enclave in Mexico; Mexican dividend tax |
+| 26 | Chiang Mai | 24 | cheap; LTR exempts foreign income |
+| 27 | Bangkok | 25 | top hospitals; Thai caveats |
+| 28 | Mérida | 26 | easy residency; safe; Mexican dividend tax |
+| 29 | Hua Hin | 27 | LIOS #8; Bangkok Hospital Hua Hin |
+| 30 | Coronado | 28 | Panama's profile; hospitals 1–1.5 h |
+| 31 | Atenas | 29 | near San José; Costa Rica bill risk |
+| 32 | Alicante | 30 | Valencian rules; cheaper than Valencia |
+| 33 | Torrevieja | new | Valencian rules as Alicante; Quirónsalud Torrevieja JCI (renewed Jun 2026); large retiree community; autumn flash-flood risk |
+| 34 | Phuket | 31 | JCI hospital; Thai caveats |
+| 35 | Puerto Vallarta | 32 | direct US flights; Mexican dividend tax |
+| 36 | San Miguel de Allende | 33 | US-retiree enclave; Mexican dividend tax |
+| 37 | La Paz (BCS) | new | US Level 2, no UK warning; quiet Baja retiree city; Mexican dividend tax; only one US nonstop |
+| 38 | Kotor | 34 | 15% on investment income; property residence; weak healthcare |
+| 39 | Cayo | 35 | Belize QRP; hospitals nearby; weak healthcare overall |
+| 40 | Hopkins (Belize) | new | Belize QRP; Dangriga hospital ~30 min, the best Belize beach option for care; hurricane exposure |
+| 41 | Corozal (Belize) | new | Belize QRP; Chetumal's private care 26 min away in Mexico; hurricane history (Janet 1955) |
+| 42 | Santiago | 36 | 3 years of untaxed foreign income; strong clinics |
+| 43 | Prague | 37 | 15% on dividends; no inheritance tax for children; discretionary visa |
+| 44 | Plovdiv (Bulgaria) | new | 5% on dividends; children inherit free; Acibadem private care. Residence needs a pension |
+| 45 | Istanbul | 38 | Turkey's new-resident regime; top hospitals |
+| 46 | Mexico City | 39 | JCI ABC Medical Center; Mexican dividend tax |
+| 47 | Budapest | 40 | children inherit free; 15% + social contribution on dividends |
+| 48 | Chiang Rai | new | cheap; Thai caveats; burning-season air (AQI 269 on 2 Apr 2026) |
+| 49 | Taipei | 41 | excellent healthcare; no passive residence route |
+| 50 | Asunción | 42 | territorial; permanent residence now needs income or US$200k |
+| 51 | Lima | 43 | no wealth or inheritance tax; dividends up to 30% |
+| 52 | Oaxaca | 44 | culture and cost; thin hospitals |
+| 53 | Las Terrenas | 45 | Law 171-07; 3% inheritance tax; remote care |
+| 54 | Medellín | 46 | Colombia's wealth tax, dividend tax and 15% inheritance tax |
+| 55 | Florence | 47 | Italy's IVAFE and 26% dividends |
+| 56 | Playa del Carmen | 48 | small hospital; cartel incidents; hurricanes |
+| 57 | Cuenca | 49 | Ecuador inheritance tax up to 35% |
+| 58 | Nice | 50 | France's 5–45% worldwide inheritance tax |
+| 59 | Roatán (Honduras) | new | territorial, no inheritance tax, rentista US$2,500/mo; but the island's public hospital burned in 2024 and serious cases fly out; worldwide-income bill could return |
+| 60 | Sarandë (Albania) | new | heirs exempt; 8% on dividends; a year visa-free. Weak local healthcare; pensioner permit; property route unclear |
+| 61 | Langkawi (Malaysia) | new | Malaysian tax profile; but no private hospital on the island |
+| 62 | Volcán (Panama) | new | Panama's profile; highland town near David; small, dated healthcare data |
+| 63 | Lake Atitlán (Panajachel) | new | Guatemala's tax profile; lake setting; care in Guatemala City, ~3 h |
+| 64 | Placencia | out | Belize QRP; no hospital on the peninsula; hurricanes |
+| 65 | Ambergris Caye | out | Belize QRP; no hospital on the island |
+| 66 | Split | out | good Croatian taxes, but no residence route for a retiree |
+| 67 | Batumi | out | Georgia's profile; weaker healthcare and flights than Tbilisi |
+| 68 | Gascony | out | French inheritance tax; rural healthcare distances |
+| 69 | Rome | out | Italy's IVAFE and 26% dividends |
+| 70 | Tarragona | out | Catalonia's wealth tax from €500k |
+| 71 | Barcelona | out | Catalonia's wealth tax from €500k |
+| 72 | Cartagena | out | Colombia's taxes, weaker hospitals than Medellín |
+| 73 | Mazatlán | new | US Level 4 for Sinaloa (UK carves out Mazatlán); Mexican dividend tax |
+| 74 | Bali | out | Indonesia's worldwide tax up to 35%; limited healthcare; retirement KITAS |
+| 75 | Vienna | new | no inheritance tax and a US treaty, but 27.5% on dividends and yearly tax on unregistered funds' growth (likely US ETFs); quota-limited settlement permit |
 
-## Candidates outside the top 50, with reasons
+## Candidates outside the top 75, with reasons
 
 | City | Reason |
 |---|---|
-| Split | Croatia's taxes are good, but there is no residence ground for a retiree or property owner. |
-| Da Nang | Vietnam has no retirement visa. |
-| Ho Chi Minh City | Vietnam has no retirement visa. |
-| Bali | Indonesia taxes residents' worldwide income up to 35% with no retiree exemption; healthcare is limited (GPI #69). |
-| Gascony | France's inheritance and dividend taxes as for Nice, plus rural healthcare distances; Nice carries France in the 50. |
-| Tarragona | Catalonia's wealth tax starts at €500k, with rates to 3.48%, and inheritance relief shrinks as the estate grows. |
-| Barcelona | Same Catalan wealth and inheritance tax as Tarragona. |
-| Rome | Italy's IVAFE and 26% dividend tax as for Florence; Florence carries Italy in the 50. |
-| Cartagena | Colombia's wealth, dividend and inheritance taxes as for Medellín, with weaker hospitals. |
-| Ambergris Caye | No hospital on the island; everything beyond a clinic means a boat or flight out. Cayo carries Belize in the 50. |
-| Placencia | No hospital on the peninsula: Southern Regional (Dangriga) is 1¼–1¾ h by road and private care 3½ h away in Belize City; the village polyclinic was found unstaffed at night (Oct 2024); hurricane-exposed (Iris, 2001). Same QRP tax profile as Cayo, which carries Belize in the 50. Researched in Appendix C at the user's request. |
+| Da Nang | Vietnam has no retirement visa, so there is no legal way to retire there long-term; Bali takes the last place on the strength of its retirement KITAS. |
+| Ho Chi Minh City | No retirement visa (as Da Nang). |
+| Hoi An | No retirement visa; three floods in three weeks in late 2025; nearest major hospital not JCI. |
 | Cebu | The Philippines' 6% estate tax on residents' worldwide estate; no confirmed JCI hospital. |
-| Dumaguete | Same 6% worldwide estate tax; Negros reported at US Level 3; domestic flights only. |
-| Buenos Aires | Argentina's worldwide wealth tax (Bienes Personales) from ~US$249k, plus 5–35% on foreign dividends. |
-| Batumi | Georgia's tax profile, but weaker healthcare than Tbilisi and few flights. |
+| Dumaguete | The same 6% worldwide estate tax; Negros reported at US Level 3; domestic flights only. |
+| Buenos Aires | Argentina's worldwide wealth tax from ~US$249k, plus 5–35% on foreign dividends. |
 | Dublin | Stamp 0 needs €50k/yr per person; non-doms enter 33% inheritance tax after 5 years; high cost. |
-| Tokyo / Osaka | No retirement visa (Long Stay is 1 year at most, without NHI); 55% inheritance tax reaches worldwide assets after 10 years. |
+| Tokyo / Osaka | No retirement visa; 55% inheritance tax on worldwide assets after 10 years. |
+| Singapore | No retirement route: the only passive route to residence needs S$200M of investible assets. |
+| Cape Town | South Africa taxes gains at death (the US step-up doesn't help), adds 20–25% estate duty on the worldwide estate, and charges an exit tax on leaving. |
+| Pedasí | About 5 h 20 min from Panama City and its hospitals; M7.6 earthquake on the peninsula in October 2026. |
+| Cotacachi | Ecuador's inheritance tax up to 35% on foreign assets, as Cuenca, with care an hour away in Ibarra/Quito. |
+| Salinas (Ecuador) | UK advises against all but essential travel to Santa Elena province; US Level 3. |
 
-Accounted for: all of the shipped 25, the seven LIOS #4–10 picks, both Belize cities, the Stage 1 surfaced adds (Cyprus, Malta, Paraguay, Philippines), and the Stage 2 candidates.
-- 50 are ranked.
-- 17 are outside with a reason (Placencia added after the user asked about it).
+Accounted for: 75 ranked and 13 outside with reasons. That covers the 50 shipped to the preview, the 17 previously outside, 14 Stage 7 towns (13 sections, with Salinas separate) and the 7 Stage 7 countries' cities.
 
 ## Unverified items to carry as caveats
 
@@ -185,7 +211,10 @@ Accounted for: all of the shipped 25, the seven LIOS #4–10 picks, both Belize 
 - Georgia: US withholding on dividends with no US–Georgia income tax treaty.
 - Chile: whether the inheritance carve-out holds for a foreigner who dies while domiciled in Chile.
 - Safety: US advisory levels for Mexican states and Negros are second-hand (travel.state.gov refused fetch); gov.uk travel advice was used as the government source.
-- Hospitals: several JCI claims in Appendix H are unverified (listed there).
+- Hospitals: several JCI claims in Appendix H are unverified (listed there). Quirónsalud Torrevieja's JCI renewal (29 Jun 2026) was read directly in Stage 7.
+- Austria: whether US-domiciled ETFs count as funds not registered with Austria's tax office (likely). If so, they are taxed yearly on 90% of growth; the engine does not model it.
+- South Africa: CGT at death on gains accrued while resident is not modelled by the engine (only estate duty).
+- Mauritius: the retired-permit amount (~US,000 vs EDB's US,500) and its terms.
 - Paraguay (found while writing profiles in Stage 5): since July 2026, Resolution DNM 407/2026 makes conversion to permanent residence need proof of income-generating activity or an actual pension, so a portfolio-only retiree may need the Investor Pass ($200k in real estate or financial instruments held 2 years). https://www.imidaily.com/latam-linc/paraguay-ties-long-term-residency-to-active-income-unless-you-invest/
 
 ---
@@ -746,6 +775,8 @@ Researched 2026-11-06. Country facts (QRP, tax, inheritance, healthcare in gener
 - **City notes:** Las Terrenas is remote for serious care.
 
 ### Paraguay (added: territorial, easy residency)
+
+- **Update (Stage 5):** since July 2026, Resolution DNM 407/2026 requires proof of income-generating activity or an actual pension to convert to permanent residence; a portfolio-only retiree may need the Investor Pass (US$200k in real estate or financial instruments held 2 years). https://www.imidaily.com/latam-linc/paraguay-ties-long-term-residency-to-active-income-unless-you-invest/
 
 - **1. Wealth tax:** None ("NA"). https://taxsummaries.pwc.com/quick-charts/net-wealth-worth-tax-rates
 - **2. Inheritance/estate tax:** None ("NA"). No US treaty exists. https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates
@@ -1638,3 +1669,727 @@ Country tax and residency facts are in `docs/research/bbd-ranking-2026-11.md` an
 - **Retiree community sizes:** not sourced for Oaxaca, Playa del Carmen, Cartagena, Madrid, Barcelona, Rome, Cascais, HCMC and Cebu.
 - **Drive times:** not sourced for Ajijic to GDL, Cascais to LIS, Alicante to Torrevieja, and Oaxaca to Puebla/CDMX.
 - **Flights:** whether Vietnam Airlines' SGN–SFO service is nonstop. CUN's US route list was not fetched.
+
+
+# Appendix I
+
+**Stage 7 country research, batch A: Albania, Bulgaria, Austria, Mauritius**
+
+Researched 2026-11-06 for a US-citizen buy-borrow-die retiree: a taxable US brokerage account that is never sold, spending funded by margin, and two US-resident adult children as heirs. US estate tax and the §1014 step-up follow the citizen wherever they live (Appendix E §2 of docs/research/bbd-ranking-2026-11.md).
+
+Marking conventions: **[secondary]** means a non-government, non-Big-4 source that was read. **[unverified]** means a search snippet, general knowledge, or a page that would not load; treat it as unsourced. **[inference]** means my reading of sourced facts, not a stated rule.
+
+US tax treaties for this batch:
+- Estate and gift tax treaty: **Austria only.** Albania, Bulgaria and Mauritius have none. https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international
+- Income tax treaty: Austria and Bulgaria yes; Albania and Mauritius no. https://www.irs.gov/businesses/international-businesses/united-states-income-tax-treaties-a-to-z
+
+---
+
+### Albania (Sarandë; also Tirana)
+
+1. **Wealth tax:** PwC lists none. The only annual levy on assets is a real-estate tax on buildings: 0.05% of value for residential property, 0.2% for commercial. https://taxsummaries.pwc.com/albania/individual/other-taxes
+2. **Inheritance tax:**
+   - The rate is 15% on inheritances and gifts, with no deduction for costs.
+   - Inheritances "from/or between the legal heirs in the first and second place" are exempt, and so are transfers between siblings. Children are first-degree heirs, so in practice the children pay 0%.
+   - Other recipients get an exempt allowance of ALL 5m for immovable assets and ALL 1m for movable assets.
+   - It is a tax on the recipient (heir-based).
+   - PwC does not define whether it reaches foreign assets.
+   - There is no US estate treaty. Because the children are exempt, a treaty matters little here [inference].
+   - https://taxsummaries.pwc.com/albania/individual/other-taxes ; https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international
+3. **Tax on investment income:**
+   - Albania taxes residents on worldwide income: "Resident individuals are taxed on all sources of income in and outside the territory of Albania." https://taxsummaries.pwc.com/albania/individual/taxes-on-personal-income
+   - **Dividends 8%.** Other investment income, including interest, **15%**. https://taxsummaries.pwc.com/albania/individual/taxes-on-personal-income
+   - Capital gains on shares are taxed at 15% on the difference between sale and purchase price. https://taxsummaries.pwc.com/albania/individual/income-determination
+   - PwC lists no special regime for new residents or pensioners.
+   - A 2020 draft law would have exempted foreign pensions for EU pensioners only. Its status is unknown and it never covered dividends. https://www.tiranatimes.com/new-draft-law-proposed-by-govt-stipulates-abolition-of-pension-tax-for-foreigners-in-albania/ [secondary]
+   - Albania gives a foreign tax credit capped at the Albanian tax on the same income [secondary, via search; Eurofast and Karanović pages not fetched].
+   - There is no US–Albania income tax treaty. **[inference]** The US tax a citizen pays on US dividends (15–23.8%) exceeds 8%, so if Albania credits it, the net Albanian tax on dividends may be close to nil. This is not confirmed.
+   - Margin-loan draws are not income. Under BBD the realised gains stay at zero.
+4. **Residency routes:**
+   - **Visa-free stay of up to 1 year for US citizens.** In March 2022 the Council of Ministers restored this right. A new one-year term needs more than 90 days outside Albania first. https://exit.al/en/albanian-government-does-u-turn-on-us-residency-requirements [secondary, news]
+   - **Pensioner permit (Law on Foreigners 79/2021):**
+     - Needs an annual pension of at least **ALL 1,200,000** (~€9,800 in 2021, ~€12k at 2026 rates [inference]).
+     - The pension must be paid into an Albanian bank. Applicants also need health insurance, a notarised lease or ownership deed, and a criminal record check.
+     - The first permit is for 1 year. The article expects renewals of 2, 2 and 5 years, then permanent residence.
+     - It needs a **pension**. Portfolio income alone does not qualify.
+     - https://exit.al/en/approved-law-on-foreigners-paves-way-for-pensioner-and-digital-nomad-immigrants-in-albania ; https://www.imidaily.com/albania-pensioners-residency/ [secondary]
+   - **Property route:**
+     - IMI Daily reports a January 2026 amendment (Law 43/2025) that "some legal sources" say sets **€300k in real estate** or €100k in business or government securities. IMI has not confirmed these numbers.
+     - The initial permit is for 1 year and is renewable.
+     - Older sources say any home of at least 20 m² qualified, with no price floor.
+     - **[unverified]**: confirm the current threshold with a lawyer.
+     - https://www.imidaily.com/analysis/how-to-get-residency-in-the-balkans-through-investment/ [secondary]
+5. **Healthcare:**
+   - The UK embassy list of English-speaking facilities (updated Mar 2026) names American Hospital Tirana, German Hospital Tirana, Hygea Hospital Tirana and the public QSUT "Nënë Tereza". It also lists American Hospitals in Durrës and Fier. **It lists nothing in Sarandë.** https://www.gov.uk/government/publications/albania-list-of-medical-facilities/list-of-english-speaking-medical-facilities-for-british-nationals-in-albania--2
+   - Sarandë has a public regional hospital for stabilisation [unverified; expatexchange page blocked]. Tirana is about 4–5 h by road, and Corfu General Hospital is ~30–45 min by ferry [unverified, search snippets].
+   - No public-system figures for foreign retirees were found.
+   - Private international cover is needed for the permit anyway. Use Cigna Global, which has no upper entry age (~$6.5–9.4k/yr at 70–79, Appendix E §3).
+6. **Broker / margin:**
+   - IBKR: likely, since it reportedly serves all non-sanctioned countries (Appendix E §1).
+   - Schwab One International: Albania is not on the checked list of accepted countries, so treat it as **unknown / probably no**.
+   - Albania is not in the EU, so the EU limit on cash-out via margin may not apply. Unknown.
+
+**BBD verdict:** No wealth tax, the children inherit free, and dividends are taxed at 8% (possibly near zero after credit for US tax) with gains untaxed while unrealised. A strong BBD tax profile. The weak points are the residence route (pension-based, or a property threshold still unclear) and healthcare in Sarandë, where serious care means Tirana or Corfu.
+
+**City notes:**
+- **Safety (UK FCDO):** crimes targeting foreigners are "rare". There is petty theft in tourist areas. Terrorism "cannot be ruled out". There are occasional violent demonstrations in central Tirana. https://www.gov.uk/foreign-travel-advice/albania/safety-and-security (The US State Department page refused automated fetches.)
+- **Climate [unverified]:** Sarandë is Mediterranean, with hot dry summers and mild wet winters. Tirana has hotter summers and cooler winters.
+- **Flights:** no confirmed US nonstop for 2026. Reports of seasonal United Newark–Tirana service and a proposed Delta route could not be confirmed [unverified]. Sarandë's nearest airport for most people is Corfu (ferry), or Tirana. Search snippets suggested Corfu has no US nonstops [unverified].
+- **Expat community:** nearly 3,000 Italian pensioners had registered as Albanian residents by Oct 2023. https://top-channel.tv/english/over-three-thousand-italian-retirees-registered-as-residents-in-albania [secondary, news]. Sarandë is a known expat hub [unverified].
+
+---
+
+### Bulgaria (Plovdiv; also Sofia / Varna)
+
+1. **Wealth tax:** "There are no net wealth/worth taxes in Bulgaria." https://taxsummaries.pwc.com/bulgaria/individual/other-taxes
+2. **Inheritance tax:**
+   - It is a municipal tax under the Local Taxes and Fees Act, arts. 29–43.
+   - **The spouse and direct-line heirs (children, grandchildren) are fully exempt** under art. 31(2), whatever the value.
+   - Other heirs pay tax only above €127,823 (BGN 250,000) per heir: 0.4–0.8% for siblings and their children, 3.3–6.6% for others.
+   - **Scope:** Bulgarian nationals are taxed on assets worldwide, but **foreign nationals are taxed only on property in Bulgaria**. A US-citizen decedent's US portfolio is therefore out of scope, and the children are exempt in any case.
+   - It is heir-based. There is no US estate treaty.
+   - Sources: https://www.innovires.com/en/blog/danak-nasledstvo-bulgaria.html [secondary, law firm]. The minfin.bg/en/780 page returned 403, so the official confirmation is **[unverified]**.
+3. **Tax on investment income:**
+   - Residents are taxed on worldwide income at a 10% flat rate. https://taxsummaries.pwc.com/bulgaria/individual/taxes-on-personal-income
+   - **Dividends: 5% final**, whether Bulgarian or foreign. Foreign dividends with no Bulgarian withholding are self-assessed in the annual return.
+   - Interest: **0% on EU/EEA bank accounts** since 1 Apr 2022; **10%** on accounts outside the EU/EEA.
+   - Capital gains on shares: 10%, but **exempt** on EU/EEA regulated markets and, since 2021, on "equivalent third-country" markets.
+   - Whether NYSE/Nasdaq count as "equivalent" is **[unverified]**. It matters little under BBD because nothing is sold.
+   - Source for the three rows above: https://taxsummaries.pwc.com/bulgaria/individual/income-determination
+   - The foreign tax credit is per country, and the US is a treaty partner. https://taxsummaries.pwc.com/bulgaria/individual/foreign-tax-relief-and-tax-treaties
+   - **[inference]** The US tax a citizen pays on US dividends will usually exceed Bulgaria's 5%, so the Bulgarian tax after credit may be nil. Check how the treaty's saving clause and resourcing rule work.
+4. **Residency routes:**
+   - **Pensioner D visa leading to a residence permit**, under art. 24(1)(10) of the Foreigners Act.
+     - It needs a "right to a pension under Bulgarian or foreign law and sufficient means of subsistence". The benchmark is at least the minimum monthly wage (€620.20 in 2026) for the period of stay.
+     - Apply in person at the consulate (interview; €100 fee; up to 35 working days). The D visa lasts up to 6 months, and the residence permit is then filed in Bulgaria for up to 1 year at a time.
+     - The firm found **no ground for savings-only applicants** without a pension.
+     - The investment route needs at least BGN 600,000 (€306,775) in Bulgarian real estate.
+     - Source for the pensioner route: https://innovires.com/en/blog/viza-d-bulgaria.html [secondary, law firm]
+   - Forum posts put the proof of funds at 6 months of minimum wage (~€3,721) for the visa and 12 months (~€7,442) for the permit [unverified, search snippet].
+   - A US retiree with Social Security entitlement should fit the pension ground [inference].
+5. **Healthcare:**
+   - **NHIF (public):** self-insured people pay 8% of declared income. The minimum base is €620.20/month from 1 Aug 2026, so about **€50/month**; the maximum is about €184/month. Whether a non-working foreign pensioner *must* join is not settled in the source.
+   - Non-EU permit holders need private cover of at least €30,000 (medical plus repatriation) as a condition of the permit. Local individual plans run €300–1,200/yr; no age bands are published.
+   - Source for both points above: https://innovires.com/tax-residency/blog/bulgaria-health-insurance-foreigners.html [secondary]
+   - **Hospitals (UK embassy list):**
+     - Sofia: **Acibadem City Clinic University Hospital (JCI)** and Vita Hospital.
+     - **Plovdiv: Eurohospital Plovdiv** (private, no accreditation listed).
+     - Varna: Acibadem City Clinic Medical Centre and Eurohospital Varna (private), plus public St Marina / St Anna.
+     - https://www.gov.uk/government/publications/bulgaria-list-of-medical-facilities/bulgaria-doctors
+   - The Acibadem office in Plovdiv only coordinates patients; it is not a clinic. https://acibademinternational.com/international-offices/office-bulgaria-plovdiv/
+   - Serious cases from Plovdiv go to Sofia, ~1.5–2 h away [unverified].
+6. **Broker / margin:** Bulgaria is in the EU, so plan on IBKR margin. Schwab One International is not on the checked accepted list and reportedly bars Europe-resident customers from taking cash out through margin (Appendix E §1).
+
+**BBD verdict:** Among the best tax profiles in the EU for BBD. There is no wealth tax, foreigners' foreign assets are outside inheritance tax and the children are exempt anyway, dividends pay 5% (often fully offset by credit for US tax), EU interest is 0%, and nothing is taxed until sold. The catch is residence: the easy route requires a pension (Social Security qualifies [inference]), and healthcare outside Sofia is middling.
+
+**City notes:**
+- **Safety (UK FCDO):** petty theft mainly in resorts (Sunny Beach). Protests are mostly peaceful. Isolated hostility toward LGBT+ people has been reported in Burgas and **Plovdiv**. Driving standards are poor. https://www.gov.uk/foreign-travel-advice/bulgaria/safety-and-security
+- **Climate [unverified]:** Plovdiv and Sofia are continental, with hot summers and cold winters; Sofia sits at ~550 m. Varna is Black Sea, with milder winters.
+- **Flights:** **no Sofia–US nonstop**. A Bulgarian minister had expected GullivAir New York flights from Apr 2026, with no sign they launched [unverified, search snippets: sofiaglobe, BNR, Skyscanner]. In practice, connect via Vienna, Frankfurt, Istanbul and similar hubs.
+- **Expat community [unverified]:** moderate in Sofia and Varna, smaller in Plovdiv. The UK retiree base is mainly rural and Black Sea.
+
+---
+
+### Austria (Vienna)
+
+1. **Wealth tax:** "There is no wealth/worth tax in Austria." https://taxsummaries.pwc.com/austria/individual/other-taxes
+2. **Inheritance tax:**
+   - "There are no inheritance, estate, or gift taxes in Austria."
+   - Real-property acquisition tax still applies to gratuitous transfers of Austrian real estate: 0.5% up to €250k, 2% from €250,001 to €400k, 3.5% above that.
+   - Source for both points above: https://taxsummaries.pwc.com/austria/individual/other-taxes
+   - **A US–Austria estate and gift tax treaty exists.** https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international. With no Austrian death tax, the treaty is mostly moot; the US estate tax applies as usual.
+   - Austria's gift-notification duty (Schenkungsmeldegesetz) was not checked **[unverified]**.
+3. **Tax on investment income (KESt special rate):**
+   - Dividends, interest on listed securities, and gains on securities bought after 31 Dec 2010: **27.5%**, as a final tax.
+   - Bank deposit interest: **25%**.
+   - Income on a **foreign** account such as IBKR or Schwab "must be included in the income tax return and is taxed at a 27.5% special tax rate".
+   - Losses offset only within the same year and are never carried forward. Loan interest "cannot be offset against positive interest". Source for the rows above: https://taxsummaries.pwc.com/austria/individual/income-determination
+   - The general ban on deducting expenses tied to income taxed at the special rate (§20(2) EStG) is **[unverified]**: the RIS page returned 503. In practice margin interest gives **no Austrian deduction**.
+   - **Big BBD problem: non-reporting funds.**
+     - Funds not registered with OeKB are taxed each year on a deemed distribution: "90% of the growth in value during the year", with a minimum of 10% of year-end value, at 27.5%. https://taxsummaries.pwc.com/austria/individual/income-determination
+     - **US-domiciled ETFs (VTI, VOO, etc.) are generally not OeKB reporting funds** **[unverified, inference]**. Guides tell EU residents to hold UCITS ETFs "not US funds like VTI". https://myetfjourney.com/blog/etf-investing-austria [secondary]
+     - **A never-sell US-ETF portfolio would therefore be taxed every year at ~27.5% × 90% of its growth.** That defeats the "borrow" part of BBD.
+     - Individual US stocks are not caught; they are taxed only on dividends and on sale.
+     - The US-person PFIC rules make switching to UCITS ETFs costly as well [unverified].
+   - Austria credits foreign tax under the US treaty. https://taxsummaries.pwc.com/austria/individual/foreign-tax-relief-and-tax-treaties. **[inference]** Credit at the 15% treaty rate leaves about 12.5% Austrian tax on US dividends on top of the US tax.
+4. **Residency route: Niederlassungsbewilligung – ausgenommen Erwerbstätigkeit** (settlement permit with no right to work; NAG §44):
+   - **Income at 1 Jan 2026:**
+
+     | Household | Regular net monthly income |
+     |---|---|
+     | Single | €2,616.78 |
+     | Couple | €4,128.24 |
+     | Each child | +€403.76 |
+
+     Applicants can show "pension or pension payments, or sufficient personal assets".
+   - Other requirements: health insurance covering all risks, local-standard accommodation, and **German proof with the first application**.
+   - **Quota:** a quota place is needed for "other third-country nationals".
+   - Apply in person **abroad** at an Austrian embassy before entry. The fee is €218.
+   - Source for the points above: https://www.oesterreich.gv.at/de/themen/menschen_aus_anderen_staaten/aufenthalt/3/2/Seite.120302
+   - The Tyrol government confirms the "Privatiers" sub-quota is set each year in the Niederlassungsverordnung; no numbers given. https://www.tirol.gv.at/gesellschaft-soziales/einwanderung/welcheniederlassungsbewilligu
+   - Vienna's 2026 quota is **[unverified]**. A search snippet said Vienna had received only 14 applications to 28 Nov 2025 for its 2025 quota, so the quota is probably not binding; the PDF could not be decoded.
+   - Wien.gv.at says the permit lasts 12 months and is renewable, integration Module 1 must be done within 2 years, and permanent residence (Daueraufenthalt-EU) is possible after 5 years [search snippet; page not fetched, **unverified**].
+5. **Healthcare:**
+   - Once resident, the person can join the public **ÖGK self-insurance (Selbstversicherung)** at **€565.25/month (2026)**. A reduction is possible on application.
+   - Benefits start after a **6-month waiting period** unless the person had recent ASVG cover. The page does not mention a health questionnaire or exclusion for pre-existing conditions.
+   - Source for the two points above: https://www.oesterreich.gv.at/de/themen/gesundheit/selbstversicherung_in_der_krankenversicherung
+   - The permit itself needs all-risk private cover first. Cigna Global has no entry-age cap (Appendix E §3).
+   - Vienna's hospitals (AKH Wien, the university hospital) are excellent [unverified, general knowledge].
+6. **Broker / margin:** Austria is in the EU, so plan on IBKR. Schwab One International is not on the checked accepted list and reportedly bars Europe-resident customers from taking cash out through margin (Appendix E §1). An Austrian bank depot would withhold KESt automatically. A foreign broker means self-filing, including the deemed income on funds.
+
+**BBD verdict:** No wealth, inheritance or gift tax and a US estate treaty, but 27.5% on dividends and, crucially, annual deemed-income tax on non-OeKB funds. That makes Austria poor for an ETF-based never-sell portfolio, and only middling for one of individual stocks. The residence permit (≈€2.6k/mo single, German, quota) is workable and healthcare is first-rate.
+
+**City notes:**
+- **Safety (UK FCDO):** "Crime levels are generally low"; there is pickpocketing in city centres. Terrorism: "Terrorists are likely to try to carry out attacks in Austria", citing Vienna 2020 and Villach 2025. https://www.gov.uk/foreign-travel-advice/austria/safety-and-security
+- **Climate [unverified]:** continental: warm summers, cold grey winters.
+- **Flights:** Austrian Airlines' four North American destinations in winter 2025/26 were New York JFK, Washington Dulles, Boston and Chicago O'Hare. Boston and Chicago were paused from mid-January to February 2026. https://frankfurtflyer.de/?p=184875 [secondary]. Newark and seasonal LAX are reported but **unverified**. American Airlines plans Philadelphia–Vienna from May 2027 [unverified, search snippet].
+- **Expat community [unverified]:** large international and UN community in Vienna; English widely spoken.
+
+---
+
+### Mauritius (Grand Baie / west coast)
+
+1. **Wealth tax:** "There are no net wealth/worth taxes in Mauritius." https://taxsummaries.pwc.com/mauritius/individual/other-taxes
+2. **Inheritance tax:** "There are no inheritance, estate, or gift taxes in Mauritius." https://taxsummaries.pwc.com/mauritius/individual/other-taxes. Registration duty on inherited Mauritian property was not checked [unverified]. There is no US estate treaty, and with no local tax none is needed.
+3. **Tax on investment income (remittance basis):**
+   - Residents are taxed on worldwide income, but "income derived from outside Mauritius is taxable only to the extent that it is received in Mauritius". https://taxsummaries.pwc.com/mauritius/individual/taxes-on-personal-income
+   - **Rates from 1 Jul 2025:** 0% on the first MUR 500k, 10% on the next MUR 500k, 20% above that.
+   - **Fair Share Contribution:** 15% on income above MUR 12m, for the year beginning 1 Jul 2025 and the following two. https://taxsummaries.pwc.com/mauritius/individual/taxes-on-personal-income
+   - A secondary page shows a 35% band above MUR 12m under the "Finance Act 2026". The two may be the same thing presented differently. https://real-estate-mauritius.mu/en/retiring-in-mauritius/ [secondary]
+   - **No capital gains tax.** Foreign capital gains are untaxed. A credit for foreign tax "normally nullifies any tax incidence in Mauritius on foreign income". https://taxsummaries.pwc.com/mauritius/individual/income-determination
+   - **Premium Visa (official page):**
+     - Spending on foreign credit or debit cards "will not be deemed to have been remitted".
+     - Money deposited in a Mauritian bank is taxable, unless a declaration confirms the tax was paid in the country of origin or residence.
+     - https://residency.mu/live/mauritius-premium-visa/
+   - Tax residence starts at 183 days in the income year, or 270 days across that year and the two before. https://real-estate-mauritius.mu/en/retiring-in-mauritius/ [secondary, citing the MRA]
+   - **[inference]** Under BBD, US dividends stay in the US account and are not remitted. Spending is funded by margin draws, which are loan principal, not income, and can be spent by card. Mauritian tax could then be close to nil.
+   - **Caveat:** the retired permit *requires* monthly transfers into Mauritius. Document them as loan proceeds or US-taxed income to use the declaration exemption.
+4. **Residency routes:**
+   - **Retired Non-Citizen Residence Permit:**
+     - Age 50+, a 10-year term, renewable. Holders may not work.
+     - **The amount conflicts between sources:**
+       - The older EDB figure is **US$1,500/mo (US$18k/yr)**.
+       - Sovereign (Nov 2025) gives **US$2,000/mo or US$24,000/yr** transferred to a Mauritian bank.
+       - Real-estate-mauritius (Oct 2026, citing EDB residency.mu and the Immigration Act 2022) also gives US$24,000 or US$2,000/mo.
+       - **Treat US$2,000/mo as current [secondary].**
+     - **Permanent residence:** a 20-year permit is available after 5 years if at least US$200k was transferred.
+     - **Property route:** at least **US$375k** in qualifying real estate gives residence for as long as the property is held, with the right to work.
+     - Sources: https://www.sovereigngroup.com/news/mauritius-residency-permit-amendments-benefits-and-qualifying-requirements-update-november-2025/ [secondary, corporate-services firm] ; https://real-estate-mauritius.mu/en/retiring-in-mauritius/ [secondary]
+     - A reported cut to 5-year validity and a 180-day presence rule appear only in forum posts **[unverified]**.
+   - **Premium Visa:**
+     - Up to 1 year, renewable; free; applied for online. It covers long-stay tourists, retirees and remote workers.
+     - It needs "sufficient travel and health insurance". The holder must stay out of the local labour market, with income sourced outside Mauritius.
+     - **The official page sets no minimum income.** The US$1,500/mo figure seen on aggregator sites is not on residency.mu.
+     - https://residency.mu/live/mauritius-premium-visa/
+5. **Healthcare:**
+   - Public hospital care is described as free; private clinics charge. https://real-estate-mauritius.mu/en/retiring-in-mauritius/ [secondary, citing EDB]. Whether non-citizen residents get free public care is **[unverified]**.
+   - **Private facilities (UK FCDO list):**
+     - **North:** **C-Care Grand Baie** (Mont Choisy, Grand Baie).
+     - **Central:** **C-Care Wellkin** (Moka; formerly Apollo Bramwell; the largest private hospital) and **C-Care Darné** (Floréal), both ~45–60 min from Grand Baie [unverified drive times].
+     - **West (Tamarin):** only a C-Care GP site.
+     - https://www.gov.uk/government/publications/mauritius-list-of-doctors/list-of-english-speaking-doctors-and-medical-facilities-in-mauritius
+   - Private premiums are said to run €100–500/mo by age [unverified, search snippet].
+   - Use Cigna Global, with no entry-age cap (Appendix E §3). Serious complex cases are often sent to South Africa or France [unverified].
+6. **Broker / margin:** IBKR is likely (Appendix E §1, all non-sanctioned countries). Schwab One International: Mauritius is not on the checked accepted list, so **unknown**. As a non-EU country, the EU limit on margin cash-out would not apply if Schwab accepts it [inference].
+
+**BBD verdict:** On paper the best of this batch. There is no wealth, inheritance, gift or capital-gains tax, and foreign income is taxed only when brought in, so dividends left in the US and margin spending are effectively untaxed locally. The costs are the forced US$2k/mo transfer, which needs paperwork showing it is loan proceeds or already-taxed money, distance from the US and from top-tier care, and cyclones.
+
+**City notes:**
+- **Safety (UK FCDO):** mostly non-violent crime; petty crime is common in **Grand Baie**, Port Louis and Flic en Flac. There are some reports of sexual assault on tourists. Avoid demonstrations. Terrorism risk is low. **Cyclone season runs Nov–May.** https://www.gov.uk/foreign-travel-advice/mauritius/safety-and-security
+- **Climate [unverified]:** tropical maritime. The west coast (Flic en Flac, Tamarin) is drier and sunnier; the north (Grand Baie) is warm and sheltered.
+- **Flights [unverified]:** no US nonstop. Connect via Dubai, Paris, Johannesburg or Doha; ~20–24 h to the US East Coast.
+- **Expat community [unverified]:** sizeable French, South African and UK base in Grand Baie and the west coast; English and French are both official or widely spoken.
+
+---
+
+### Placement in the Appendix E broker table
+
+| Country | IBKR | Schwab One International | EU limit on margin cash-out |
+|---|---|---|---|
+| Albania | likely | unknown / probably no | not EU (n/a?) |
+| Bulgaria | yes (EU) | not on list | applies |
+| Austria | yes (EU) | not on list | applies |
+| Mauritius | likely | unknown | n/a |
+
+Practical read: plan on IBKR margin everywhere in this batch.
+
+
+# Appendix J
+
+**Stage 7 country research, batch B: Honduras, Singapore, South Africa**
+
+As of 2026-11-06. The profile is a US citizen doing buy-borrow-die (BBD): a large taxable US brokerage portfolio that is never sold, spending funded by margin or securities-based loans, and two US-resident adult children inheriting with the US §1014 step-up. The US estate exemption ($15M, 2026) and the US treaty list come from the ranking doc's Appendix E and are not repeated here.
+
+Every URL below was fetched and read. Tags:
+- **[secondary]**: law-firm blog, consultant, broker, expat guide or aggregator.
+- **[unverified]**: figure seen only in a search summary, or a page that could not be fully read.
+
+Rand conversions assume about R17.5 per US$ (my approximation, not sourced).
+
+---
+
+### Honduras (Roatán, Bay Islands)
+
+1. **Wealth tax:** none. PwC's Honduras "Other taxes" page (last reviewed 10 Aug 2026) lists only social security, INFOP, the housing fund and sales tax. TaxAtlas [secondary] says: "Honduras does not impose a wealth tax."
+   - https://taxsummaries.pwc.com/honduras/individual/other-taxes
+   - https://taxatlas.io/country/honduras/wealth-tax
+
+2. **Inheritance and estate tax:** none, either heir-based or decedent-based. PwC lists no inheritance or gift tax. TaxAtlas [secondary] says: "Honduras does not impose a separate inheritance tax. Inherited income may be subject to income tax under general rules."
+   - **US treaty:** none. Honduras is not on the IRS estate/gift treaty list.
+   - **Caveat:** I found no Honduran primary source (statute or SAR) confirming that no inheritance tax exists. The absence rests on PwC's silence plus a secondary page **[unverified]**. Don't confuse this with Guatemala's 2026 repeal (Decreto 6-2026).
+   - https://taxsummaries.pwc.com/honduras/individual/other-taxes
+   - https://taxatlas.io/country/honduras/wealth-tax
+   - https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international
+
+3. **Dividends, interest and foreign income:** Honduras taxes on a territorial basis. PwC (reviewed 10 Aug 2026) says: "The tax system in Honduras is based on a territorial concept of income." Residents are taxed on Honduran-source income, so US dividends and interest are outside the base.
+   - **Local income:** progressive rates of 0/15/20/25%, plus a 1.5% tax on gross income for domiciled people with HNL 10M+ gross income.
+   - **Rentista/pensionado bonus:** a law-firm summary [secondary] says these residence holders are exempt from income tax on the income tied to their permit.
+   - **Reform risk:** the "Ley de Justicia Tributaria" bill would move Honduras from territorial to worldwide income. A rushed final vote collapsed on 7 May 2025 and no article was passed (El Heraldo). As of PwC's Aug 2026 review the system is still territorial. The bill's status after late 2026 is **[unverified]**.
+   - https://taxsummaries.pwc.com/honduras/individual/taxes-on-personal-income
+   - https://consortiumlegal.com/2021/11/15/residencia-en-honduras/
+   - https://www.elheraldo.hn/honduras/congreso-nacional-somete-esta-noche-debate-final-ley-justicia-tributaria-LJ25683019
+   - https://www.elheraldo.hn/honduras/fracasa-intentona-luis-redondo-aprobar-matacaballo-ley-justicia-tributaria-OJ25683195
+
+4. **Residency on passive income** (Consortium Legal [secondary]):
+   - **Rentista:** at least US$2,500/mo of "rentas permanentes, lícitas, y estables generadas en el exterior o en el territorio nacional". Portfolio income should qualify.
+   - **Pensionado:** at least US$1,500/mo of pension from abroad.
+   - Legal base is article 21 of the Ley de Migración y Extranjería.
+   - Search summaries mention a US$300 fee, income received through a Honduran bank, and yearly renewal **[unverified]**. The official SGJD rentista checklist link returned 404.
+   - https://consortiumlegal.com/2021/11/15/residencia-en-honduras/
+
+5. **Healthcare:**
+   - **On the island:**
+     - The island's only public hospital burned down on 19 Apr 2024, and rebuilding was expected to take about 18 months (Direct Relief).
+     - The UK FCDO's facilities list (updated 29 Dec 2025) has one private hospital on the island: Hospital CEMESA Roatán (Megaplaza, French Harbour), offering emergency, surgery, radiology, OB/GYN and paediatrics.
+     - A 2026 local article seen only in search says CEMESA had closed and was relocating, and that Wood Medical Center has a stabilising ICU **[unverified; page blocked]**.
+     - Canada: "Emergency medical facilities are also very limited on the Bay Islands … Major medical procedures or surgeries may require medical evacuation."
+     - FCDO: emergency facilities "extremely limited". There is a recompression chamber on Roatán.
+   - **Serious cases** go by air to San Pedro Sula, where the FCDO lists Hospital CEMESA SPS and Hospital Del Valle, or to Tegucigalpa, or to the US. Miami is about 2 h by scheduled flight (see city notes).
+   - **Insurance:** plan on international cover with medical evacuation. Appendix E covers age caps: Cigna Global has no upper entry age (about $6.5–9.4k/yr at 70–79); GeoBlue, IMG and APRIL stop new entrants at 70–74. I found no Honduran local-insurer age caps.
+   - https://www.directrelief.org/2024/10/fire-destroyed-an-island-hospital-months-later-a-honduran-free-clinic-is-still-bridging-the-gap/amp/
+   - https://www.gov.uk/government/publications/list-of-medical-facilities-in-honduras/honduras-medical-facilities
+   - https://travel.gc.ca/destinations/honduras
+   - https://www.gov.uk/foreign-travel-advice/honduras/safety-and-security
+   - https://www.gov.uk/foreign-travel-advice/honduras/health
+
+6. **Broker and margin:**
+   - **IBKR:** a Spanish-language guide (published 17 Aug 2026, updated 19 Oct 2026) [secondary] says "Honduras aparece en la lista oficial de países y territorios admitidos por Interactive Brokers". It mentions margin as available, subject to product requirements.
+   - **Schwab One International:** not confirmed either way. Honduras was not in the Oct 2026 third-party check in Appendix E **[unverified]**.
+   - **Placement:** like Belize and Guatemala, "IBKR likely; Schwab Intl unknown".
+   - https://finantres.com/interactive-brokers-honduras/?hub_page=2
+
+**BBD verdict:** On tax, this is about as good as it gets: territorial income, no wealth tax, no inheritance tax, and rentista residence on US$2,500/mo of investment income. Two things count against it. The worldwide-income bill keeps coming back, and an island with no public hospital and thin private care means serious illness needs an evacuation.
+
+**City notes, Roatán:**
+- **Safety:**
+  - Canada says "Exercise a high degree of caution" for Honduras overall, but "The Bay Islands are generally safe." It still reports beach assaults at night and burglaries of rentals, and says to avoid Coxen Hole, Los Fuertes and Suampo after dark.
+  - The UK flags petty theft on the Bay Islands and advises checking which ATMs to use on Roatán.
+  - The US advisory is reportedly Level 3, "Reconsider Travel" (issued 25 Aug 2026), with the Bay Islands described as better policed. travel.state.gov blocked fetching, so this is **[unverified]**.
+- **Climate and storms:** hurricane season runs May–Nov (FCDO), and Hurricane Mitch hit the island in 1998. Wikipedia gives no climate data, so the climate is otherwise unsourced.
+- **Flights:** nonstops to Miami and Dallas/Fort Worth (American), Atlanta (Delta) and Houston (United), plus seasonal Minneapolis (Sun Country) and Denver (United, marked "citation needed") (Wikipedia RTB page).
+- **Expat community:** there is a long-standing North American and European settler community, concentrated in West End, West Bay and French Harbour. Population is about 110k (2020).
+- https://travel.gc.ca/destinations/honduras
+- https://www.gov.uk/foreign-travel-advice/honduras/safety-and-security
+- https://en.wikipedia.org/wiki/Juan_Manuel_Gálvez_International_Airport
+- https://en.wikipedia.org/wiki/Roatán
+
+---
+
+### Singapore (Singapore)
+
+1. **Wealth tax:** none. PwC (reviewed 2 Jul 2026) says: "There are no net wealth or net worth taxes in Singapore."
+   - https://taxsummaries.pwc.com/singapore/individual/other-taxes
+
+2. **Inheritance and estate tax:** none. PwC says: "Estate duty has been abolished for deaths occurring on or after 15 February 2008." There is no inheritance or gift tax.
+   - **US treaty:** none, and none is needed.
+   - https://taxsummaries.pwc.com/singapore/individual/other-taxes
+   - https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international
+
+3. **Dividends, interest and foreign income:** PwC (reviewed 2 Jul 2026) says "All foreign-sourced income received by individuals is exempt from tax". The exception is income a resident receives through a Singapore partnership.
+   - Singapore one-tier dividends are exempt.
+   - Interest from Singapore-approved banks is generally not taxable.
+   - So US dividends and interest are untaxed even if remitted. There is no capital gains tax (PwC is silent; it is general knowledge, not separately sourced). There is no exit tax.
+   - https://taxsummaries.pwc.com/singapore/individual/income-determination
+
+4. **Residency on passive income:** there is no retirement visa.
+   - Wise: "There is no dedicated Singapore retirement visa" [secondary].
+   - **Long-Term Visit Pass:** family-linked, for relatives of citizens, PRs or work-pass holders. Parents of a GIP PR can get one tied to the main applicant's re-entry permit (GIP factsheet).
+   - **Global Investor Programme (GIP)** gives PR. EDB factsheet updated 5 May 2025, read in full:
+     - **Option A:** S$10M into a Singapore business.
+     - **Option B:** S$25M into a GIP-select fund.
+     - **Option C:** a single family office with S$200M+ AUM, of which S$50M must be moved into Singapore and placed in EDB-specified investments within 12 months.
+     - **Who can apply:** "Family Office Principal" applicants need 5+ years of track record and **S$200M+ net investible assets**. Business-owner profiles need a company with S$200M+ turnover.
+   - **Practical reading:** a passive BBD retiree with no Singapore family qualifies only above roughly US$150M of investible assets.
+   - https://wise.com/sg/blog/retiring-in-singapore
+   - https://www.edb.gov.sg/content/dam/edb-en/how-we-help/global-investor-programme/GIP%20Factsheet.pdf
+   - https://www.withersworldwide.com/en-gb/insight/read/getting-singapore-permanent-residency-(-spr-)-status-under-the-new-enhanced-global-investor-progra
+
+5. **Healthcare:**
+   - **Quality:** FCDO: "Healthcare in Singapore is of a high quality and expensive."
+   - **Public cover:** MediShield Life "protects all Singapore Citizens and Permanent Residents" (MOH). Foreigners without PR are outside it. Search summaries say they also pay unsubsidised public-hospital rates **[unverified]**.
+   - **Local insurance for foreigners:** HSBC Life's InternationalExclusive plan has a last entry age of 80 and "no maximum expiry age for cover". Premiums at 65–75 were not found. One broker's average across all ages is US$6,855/yr **[unverified]**.
+   - **International plans:** see Appendix E (Cigna Global, no entry cap).
+   - https://www.gov.uk/foreign-travel-advice/singapore/health
+   - https://www.moh.gov.sg/managing-expenses/schemes-and-subsidies/medishield-life
+   - https://hsbc.com.sg/insurance/products/health/international
+
+6. **Broker and margin:**
+   - **IBKR:** Interactive Brokers Singapore Pte. Ltd. is MAS-licensed. Residents can open margin accounts from age 21, and US citizens supply an SSN (Wise, updated 11 May 2026) [secondary].
+   - **Schwab:** search results quoted Schwab Singapore as requiring Accredited Investor opt-in for Schwab One International ("We do not accept non-Accredited Investor applications"; MAS test, e.g. net financial assets above S$1M). schwab.com.sg blocked fetching, so this is **[unverified]**. Any GIP-eligible person would clear that test.
+   - **Placement:** "IBKR (Singapore entity); Schwab Intl yes for Accredited Investors."
+   - https://wise.com/sg/blog/ibkr-account-opening
+
+**BBD verdict:** Singapore's tax rules are a perfect fit for BBD: no tax on foreign dividends or interest, no capital gains tax, no wealth, estate or exit tax. In practice it is closed to retirees. The only passive route to PR needs S$200M of net investible assets, and foreigners get no public health cover.
+
+**City notes, Singapore:**
+- **Safety:** FCDO: "Violent crime and theft are rare in Singapore". Scams are common. Drug penalties include caning and death, even in transit. Vapes are banned. The US advisory is Level 1 per general knowledge; the State Department page was blocked **[unverified]**.
+- **Climate:** tropical rainforest (Köppen Af), typically 25–33 °C, high humidity, with monsoons Nov–Mar and Jun–Sep.
+- **Flights:** Singapore Airlines flies to Los Angeles, New York–JFK, Newark, San Francisco and Seattle (Wikipedia Changi list; nonstop status and frequencies not confirmed on the page).
+- **Expat community:** large, but mostly working expats rather than retirees, since there is no retirement route (Wise).
+- https://www.gov.uk/foreign-travel-advice/singapore/safety-and-security
+- https://en.wikipedia.org/wiki/Climate_of_Singapore
+- https://en.wikipedia.org/wiki/Singapore_Changi_Airport
+- https://wise.com/sg/blog/retiring-in-singapore
+
+---
+
+### South Africa (Cape Town)
+
+1. **Wealth tax:** none. PwC (reviewed 29 May 2026) says: "South Africa does not levy any net wealth/worth taxes."
+   - https://taxsummaries.pwc.com/south-africa/individual/other-taxes
+
+2. **Inheritance and estate tax:** estate duty, charged on the decedent's estate.
+   - **Rates (PwC):** R3.5M abatement (about US$200k), then 20% up to R30M dutiable (about US$1.7M) and 25% above that.
+   - **Scope:** worldwide for anyone ordinarily resident at death. Standard Bank: "the market value of all assets – including offshore assets – of the individual resident are included". For non-residents, only South African assets are taxed (PwC).
+   - **Main relief for an American who moves in, s4(e) of the Estate Duty Act:**
+     - Foreign property is deductible if acquired "before he became ordinarily resident in the Republic for the first time" (SAIT compendium text).
+     - A practitioner article says the profits and proceeds of such property also qualify [secondary, 2017].
+     - So a portfolio already held on arrival may be largely outside estate duty. Shares bought later with new money are in scope. How this works for a portfolio rebalanced over decades is **[unverified]**.
+   - **CGT at death too:** South Africa treats death as a disposal at market value, so capital gains tax is due as well. There is a one-off R300k exclusion, 40% of the gain is included in income, and the deceased's marginal rate applies, giving at most about 18% (40% × 45%). Assets to a surviving spouse are excluded. The CGT is deductible for estate duty [secondary: Capital Legacy; ASL].
+   - **This defeats the US step-up** as far as South African tax goes: gains accrued while resident are taxed at death, and the US gives no credit, because it levies nothing on the gain at death. Whether pre-arrival gains get a market-value base cost on becoming resident (Eighth Schedule para 12) is **[unverified]**.
+   - **Debts:** s4(b) allows debts due "to persons ordinarily resident within the Republic". Whether a margin loan from a US broker is deductible is **[unverified]**.
+   - **US estate tax treaty: yes** (IRS list, estate only). Standard Bank says South Africa credits foreign duty on foreign-situs assets (situs of shares = place of incorporation), capped at the South African duty on them.
+   - **Practical result:** below the US$15M US exemption there is no US estate tax to credit, so South African estate duty of 20–25% applies in full to any in-scope US shares.
+   - https://taxsummaries.pwc.com/south-africa/individual/other-taxes
+   - https://webtrading.standardbank.com/webtrader/downloads/Situs Tax Memo April 2016.pdf
+   - https://jutamedia2.blob.core.windows.net/jutacoza/uploads/SAIT_Compenduim_2016_Volume1/files/basic-html/page668.html
+   - https://wereldwyd.co.za/en/implications-estate-duty/
+   - https://capitallegacy.co.za/faq/17/how-much-tax-do-you-pay-on-a-deceased-estate
+   - https://www.asl.co.za/deceased-estates-and-the-various-tax-implications-applicable-on-death-2/
+   - https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international
+
+3. **Dividends, interest and foreign income:** residents are taxed on worldwide income, with a top rate of 45% from R1,878,601 (2026/27).
+   - **Foreign dividends:** "Most other foreign dividends are subject to tax at an effective rate of 20%."
+   - **Interest:** only local interest gets an exemption: the first R23,800, or R34,500 at 65+. Foreign interest is taxed at marginal rates.
+   - **Capital gains:** 40% of net gains are included in income.
+   - **US–SA income treaty, Art. 23(2):** for a US citizen resident in South Africa, South Africa credits only the US tax a non-citizen would pay, which is 15% on portfolio dividends. So US dividends cost about 5% more in South Africa on top of that, and the US credits that residual. US-source interest, which the treaty exempts for non-citizens, gets no South African credit, so South Africa taxes it in full and the US then credits it.
+   - **Exit tax, s9H:** ceasing South African residence triggers "a notional disposal of an individual's worldwide assets" on the day before, with South African immovable property excluded (PKF). For a BBD holder who later leaves, this realises the gains accrued while resident.
+   - https://taxsummaries.pwc.com/south-africa/individual/taxes-on-personal-income
+   - https://taxsummaries.pwc.com/south-africa/individual/income-determination
+   - https://www.irs.gov/pub/irs-trty/safrica.pdf
+   - https://pkf.co.za/news/2025/ceasing-south-african-tax-residency-key-tax-implications-for-emigrants/
+
+4. **Residency on passive income:**
+   - **Retired person visa (s20 of the Immigration Act):** the South African embassy in Buenos Aires notice (2026) sets a minimum of R37,000/mo (about US$2,100). It can come from a pension, irrevocable annuity or retirement account, "OR has a net worth OR a combination of assets realising a minimum monthly income". The visa lasts up to 4 years, is renewable, and permanent residence is available under s27(e).
+   - **Financially independent permanent residence, s27(f):** an immigration consultancy (11 May 2026) [secondary] puts it at "typically requires assets of at least R12 million" (about US$690k), plus a one-off R120,000 payment after approval. The money need not be brought into the country (search summary **[unverified]**). The VFS and DHA primary pages were blocked or 404.
+   - https://embajadasudafrica.org.ar/en/pdf/2026/Retired Person Visa - Section 20.pdf
+   - https://www.ibn.co.za/blog-and-news/south-africa-fi-retirement-pr-faqs/
+
+5. **Healthcare:**
+   - **Quality:** FCDO: "South Africa has a very high standard of private medical care". Public care varies.
+   - **Cape Town hospitals:** major private hospitals include Netcare Christiaan Barnard Memorial and Mediclinic Cape Town. These names come from search results only, as the expat-guide page was blocked **[unverified]**.
+   - **Local medical schemes (open enrolment):** schemes cannot refuse an applicant on age. Instead they may load a late-joiner penalty on anyone joining at 35+ with no prior South African cover; foreign schemes don't count. The bands are 5%, 25%, 50%, or 75% of the contribution for 25+ uncovered years, which is what a new 70-year-old would pay (Discovery 2025 late-joiner document, read).
+   - **Discovery Classic Comprehensive 2026:** R10,037/mo for the main member (medicalaid.com [secondary]). A 70-year-old would pay about R17,500/mo with the 75% loading, roughly US$1,000/mo or US$12k/yr. That is higher than Cigna Global's ~$6.5–9.4k (Appendix E), but cover is guaranteed with no entry-age cap.
+   - **Foreign residents joining:** whether foreign residence-visa holders can join a South African scheme was not confirmed on a scheme page **[unverified]**.
+   - https://www.gov.uk/foreign-travel-advice/south-africa/health
+   - https://lahealth.co.za/wcm/discoverycoza/assets/medical-aid/benefit-information/2025/late-joiner-penalty.pdf
+   - https://medicalaid.com/medical-aid/discovery-health/comprehensive-series/classic-comprehensive/
+
+6. **Broker and margin:**
+   - **IBKR:** no South Africa-specific source found. Under Appendix E's general finding that IBKR serves non-sanctioned countries, the placement is "IBKR likely" **[unverified]**.
+   - **Schwab One International:** South Africa is not in Appendix E's accepted list. Status unknown **[unverified]**.
+   - **Local brokers:** South African brokers (e.g. Standard Bank Webtrader) offer US shares, but nothing found shows US-style margin lending against them.
+   - https://webtrading.standardbank.com/webtrader/downloads/Situs Tax Memo April 2016.pdf
+
+**BBD verdict:** Among the three, South Africa is the worst fit for BBD.
+- **While alive:** worldwide income tax, with US dividends at about 20%.
+- **At death:** CGT on gains accrued while resident, then 20–25% estate duty on a resident's worldwide estate.
+- **On leaving:** an exit tax.
+- **What helps:** the s4(e) exclusion for foreign assets held before arrival, and the US estate treaty, soften the estate side.
+- **What doesn't:** nothing shelters the death-CGT on gains accrued while resident.
+
+Cheap residency (R37k/mo, or R12M for permanent residence) and good private care don't offset that.
+
+**City notes, Cape Town:**
+- **Safety:** FCDO describes a high crime rate, including "violent muggings, carjacking … murder".
+  - "Most violent crimes occur in townships, informal settlements".
+  - There have been attacks on airport roads (use the M3/N2, avoid the R300).
+  - There have been attacks on hikers in Table Mountain National Park, including Lion's Head and Signal Hill.
+  - The US advisory was not fetchable **[unverified]**.
+- **Climate:** hot-summer Mediterranean. Summer averages are 26/16 °C and winter 18/8.5 °C, with about 515 mm of winter rain. There was a severe water shortage in 2015–18.
+- **Flights:** United flies Newark (year-round since 2022) and Washington–Dulles; Delta flies Atlanta, with some southbound flights via Johannesburg (Wikipedia CPT).
+- **Expat community:** not researched (no source read).
+- https://www.gov.uk/foreign-travel-advice/south-africa/safety-and-security
+- https://en.wikipedia.org/wiki/Cape_Town
+- https://en.wikipedia.org/wiki/Cape_Town_International_Airport
+
+
+# Appendix K
+
+**Stage 7 town research (2026-11-06)**
+
+City-level facts only. Country tax, residency, estate and broker facts are in `docs/research/bbd-ranking-2026-11.md` (Country summary and Appendices A–F) and are not repeated here.
+
+Conventions:
+- `[secondary]` marks an expat blog, forum, aggregator or news report rather than an official or primary source.
+- `[unverified]` marks something I could not confirm from a page I read.
+- I could not read US State Department pages directly (travel.state.gov returns HTTP 403). US levels come from traveladvisory.io, which mirrors them `[secondary]`; several of its country date stamps are old (1 Oct 2023).
+- Numbeo returned HTTP 429 for every town, by curl and by WebFetch, so no Numbeo page could be confirmed. livingcost.org existence was checked by HTTP status; a made-up slug returns 404, so a 200 means the page is real.
+
+### Hopkins (Belize)
+
+- **Regional tax:** national rules apply. The QRP exempts foreign-source income (App. C, Belize).
+- **Healthcare:**
+  - The village has only a small public clinic; no facility in Hopkins is on the UK's medical list. https://www.gov.uk/government/publications/belize-list-of-medical-facilities/belize-medical-facilities
+  - **Nearest hospital: Southern Regional Hospital, Dangriga** (public). It offers general, maternity, ICU and surgical care and opened in 2000; belize.com calls it comparable to a North American community hospital. Chemotherapy is available at a small Dangriga clinic, but radiation means going abroad. https://www.gov.uk/government/publications/belize-list-of-medical-facilities/belize-medical-facilities ; https://www.belize.com/medical-care-in-belize/
+  - Dangriga is **about 20 miles (≈29 min)** by road. https://www.rome2rio.com/s/Hopkins-Belize/Dangriga
+  - Private care is in Belize City (Belize Medical Associates, Belize Healthcare Partners), **about 2.5 h** away by expat reports `[secondary, search snippet only; expatexchange pages 403]`. https://www.belize.com/medical-care-in-belize/
+  - No JCI hospital. Evacuation follows the national route (Belize City, then Mérida, Guatemala City or Miami; App. C).
+- **Safety:**
+  - US: **Level 2** (crime), updated 12 Mar 2026. Only Southside Belize City is Level 3. https://www.traveladvisory.io/advisory/belize `[secondary]`
+  - UK: no area warnings for Hopkins. Flooded bridges and causeways in severe weather are flagged "particularly in Stann Creek and Toledo". https://www.gov.uk/foreign-travel-advice/belize/safety-and-security
+- **Retiree community and access:**
+  - Village of 1,610 (2010 census), 70% Garifuna and 2.2% "Caucasian". No expat headcount was found; the community is small. https://en.wikipedia.org/wiki/Hopkins,_Belize
+  - English is the official language (App. C).
+  - Airports: Dangriga airstrip about 30 min away (domestic flights to BZE; Placencia section, App. C). BZE has year-round US nonstops to ATL, DFW, MIA, IAH, HOU and LAX (App. C, Placencia).
+- **Climate:** tropical rainforest (Af). It sits on the Caribbean shore in the hurricane belt; the village was founded in 1942 after a hurricane destroyed its predecessor. https://en.wikipedia.org/wiki/Hopkins,_Belize
+- **Costs:** no livingcost.org page (404). Numbeo could not be checked.
+- **51–75?** **Borderline yes, low 70s.** It has Placencia's QRP tax profile, but a real regional hospital is about 30 min away, against Placencia's 1¼–1¾ h. Small, hurricane-exposed and basic.
+
+### Corozal (Belize)
+
+- **Regional tax:** national rules apply (QRP).
+- **Healthcare:**
+  - **Corozal Community Hospital** (public, secondary level) covers internal medicine, general surgery, paediatrics, obstetrics and gynaecology, and orthopaedics. https://www.gov.uk/government/publications/belize-list-of-medical-facilities/belize-medical-facilities
+  - The real draw is **Chetumal, Mexico, about 15.7 miles (≈26 min)** away (https://www.rome2rio.com/s/Corozal-Town/Chetumal). belize.com says retirees pick Corozal to be "closer to better health care across the border" and that many go to Chetumal for "a wider range of medical services" (Clínica Carranza is named); Northern Medical Plaza is recommended for northern Belize. https://www.belize.com/medical-care-in-belize/
+  - No JCI hospital was found. Cross-border care needs a passport and border hours; insurer network coverage in Mexico is `[unverified]`.
+  - Mérida is the next tier (App. C).
+- **Safety:** US **Level 2** for Belize as above. The UK page does not mention Corozal or the Chetumal crossing. https://www.traveladvisory.io/advisory/belize `[secondary]` ; https://www.gov.uk/foreign-travel-advice/belize/safety-and-security
+- **Retiree community and access:**
+  - Town of about 10–13.5k (2010 census; 2017 estimate). It is 84 miles north of Belize City and 9 miles from the Mexican border. https://en.wikipedia.org/wiki/Corozal_Town
+  - Known as an expat and retiree town, but no headcount was found.
+  - Corozal airstrip (CZH) has Tropic Air to San Pedro only. https://en.wikipedia.org/wiki/Corozal_Airport
+  - Chetumal airport flies only to Mexico City, with **no US nonstops**. https://en.wikipedia.org/wiki/Chetumal_International_Airport
+  - US nonstops are from BZE (App. C). The drive to BZE (≈2 h) is `[unverified]`.
+- **Climate:** tropical savanna. Highs about 31.5 °C and about 1,355 mm of rain; June is wettest and February driest. Hurricane belt: **Hurricane Janet (1955) destroyed about 90% of the town.** https://en.wikipedia.org/wiki/Corozal_Town
+- **Costs:** no livingcost.org page (404). Numbeo could not be checked.
+- **51–75?** **Yes, 60s–70s.** QRP tax with the best hospital access in Belize outside Belize City and Cayo, because Mexican private care is 26 min away. Hurricane exposure and a 2 h drive to US flights count against it.
+
+### Mazatlán (Mexico)
+
+- **Regional tax:** national rules apply. Mexican states do not tax individuals' investment income as far as I know `[unverified]`; Sinaloa state taxes were not checked.
+- **Healthcare:**
+  - The city has private hospitals: **Hospital Marina Mazatlán**, Hospital Alhma Medical Center and Hospital Médica de la Ciudad (https://retireyoungtravelsmart.com/mazatlan-healthcare/ `[secondary, undated]`). Sharp, Bilbao and Worldclass also appear in search snippets `[unverified]`.
+  - No JCI accreditation was found.
+  - Major specialist referral goes to Guadalajara or Culiacán `[unverified]`.
+- **Safety:**
+  - UK: FCDO advises against all but essential travel to Sinaloa, **except "the cities of Los Mochis and Mazatlán"** and the 15D toll road. https://www.gov.uk/foreign-travel-advice/mexico
+  - US: Sinaloa is **Level 4 "Do Not Travel"** (May 2026 update), with Mazatlán listed at Level 4 and "tighter restrictions" for US government staff. The exact Mazatlán carve-out wording could not be read. https://latamtravellers.com/blogs/news/is-mexico-safe-in-2026-state-by-state-advisory `[secondary]` ; https://www.travelmarketreport.com/destinations/articles/us-updated-mexico-travel-advisory-2026-terrorism-crime-and-kidnapping `[secondary]`
+  - The national level is 2 (29 May 2026). https://www.traveladvisory.io/advisory/mexico
+- **Retiree community and access:**
+  - City of about 442k (2020). https://en.wikipedia.org/wiki/Mazatl%C3%A1n
+  - It has a large US and Canadian snowbird and retiree community, but no fetched headcount `[unverified]`.
+  - **MZT US nonstops:** LAX (Alaska), DFW and PHX (American), IAH (United), and seasonal MSP (Delta, Sun Country). https://en.wikipedia.org/wiki/Mazatl%C3%A1n_International_Airport
+- **Climate:** tropical savanna (Aw). Highs run from 25 °C (Jan) to 33 °C (Aug) with about 800 mm of rain, mostly July–September (https://en.wikipedia.org/wiki/Mazatl%C3%A1n). Pacific hurricane exposure: **Willa (Cat 3, Oct 2018)** made landfall south of the city and forced 30 neighbourhoods to evacuate and the airport to close. https://en.wikipedia.org/wiki/Hurricane_Willa
+- **Costs:** https://livingcost.org/cost/mexico/mazatlan exists. Numbeo could not be checked.
+- **51–75?** **Unlikely.** It carries Mexico's tax profile (worldwide income, 10% dividend tax; already ranked via PV, Mérida and SMA), and the US Level 4 state rating is a hard flag for many insurers and retirees. Include only if Mexico needs a Pacific beach city other than PV.
+
+### La Paz, Baja California Sur (Mexico)
+
+- **Regional tax:** national rules apply (same caveat as Mazatlán).
+- **Healthcare:**
+  - Private: **Hospital Fidepaz** and **The Medical Centre** (across the road). Public: Salvatierra (Secretariat of Health), IMSS, ISSSTE and naval hospitals. https://en.wikipedia.org/wiki/La_Paz,_Baja_California_Sur ; https://owl-falcon-pc56.squarespace.com/medical-options-for-foreigners `[secondary]`
+  - Some specialist treatment is unavailable, so residents go to Guadalajara (same squarespace source). A new private "Fifty Doctors" hospital is reported, but its status is `[unverified]`.
+  - No JCI. Los Cabos hospitals are about 2 h away `[unverified]`.
+- **Safety:**
+  - UK: Baja California Sur is "unaffected by these warnings". https://www.gov.uk/foreign-travel-advice/mexico
+  - US: BCS **Level 2**, "exercise increased caution" (terrorism, crime), per the May 2026 update. https://www.travelmarketreport.com/destinations/articles/us-updated-mexico-travel-advisory-2026-terrorism-crime-and-kidnapping `[secondary]`
+- **Retiree community and access:**
+  - City of about 250k (2020). https://en.wikipedia.org/wiki/La_Paz,_Baja_California_Sur
+  - INM counts 19,765 foreigners resident in all of BCS (Feb 2024), with no municipal split. https://www.posta.com.mx/mexico/aumento-de-extranjeros-en-bcs-gentrificacion-a-la-vista/vl1543433 `[secondary]`
+  - The older figure of about 3,500 US citizens in La Paz is from a forum and was not read.
+  - **LAP US nonstops: only LAX (Alaska)**, about 11.4k passengers in 2025. https://en.wikipedia.org/wiki/Manuel_M%C3%A1rquez_de_Le%C3%B3n_International_Airport SJD (≈2 h) has many more US routes `[unverified]`.
+- **Climate:** hot desert (BWh). About 185 mm of rain, peaking Aug–Sep; summer highs 34–36 °C and winters 20–25 °C. https://en.wikipedia.org/wiki/La_Paz,_Baja_California_Sur Exposed to Pacific hurricanes: **Odile (Cat 3, Sep 2014)** damaged the harbour, a stadium and the airport. https://en.wikipedia.org/wiki/Hurricane_Odile
+- **Costs:** https://livingcost.org/cost/mexico/la-paz exists (title "La Paz, Mexico"; the page names Baja California Sur). Numbeo could not be checked.
+- **51–75?** **Yes, 60s–70s.** It is the safest-rated Mexican coast here (US L2, no UK warning), but has Mexican tax, mid-tier hospitals and one US nonstop.
+
+### Tavira (Portugal)
+
+- **Regional tax:** national rules apply (App. A).
+- **Healthcare:**
+  - "Tavira has no 24-hour urgency unit." The nearest is at **Vila Real de Santo António, about 30 min east**.
+  - Hospitals are in Faro (28 km, about 30–40 min): public **Hospital de Faro** and private **Hospital CUF Faro (Gambelas, formerly HPA), described as JCI-accredited** `[secondary; JCI not checked on jointcommission.org]`.
+  - Locally there is Centro de Saúde de Tavira (public, with after-hours cover) and the private Clínica do Plaza.
+  - https://expatsi.com/cities/portugal/tavira `[secondary]` ; distance from https://en.wikipedia.org/wiki/Tavira
+- **Safety:** US **Level 1** (updated 23 Dec 2025). https://www.traveladvisory.io/advisory/portugal `[secondary]`
+- **Retiree community and access:**
+  - Municipality of about 26k (2011). https://en.wikipedia.org/wiki/Tavira
+  - The foreign community is "older and settled, mostly British, French and German", and English-speaking lawyers and doctors are easy to find. https://expatsi.com/cities/portugal/tavira
+  - FAO is 35–40 min away and has **one US nonstop: United Newark (seasonal)**; 10.4M passengers in 2025. https://en.wikipedia.org/wiki/Faro_Airport
+- **Climate:** hot-summer Mediterranean, about 3,150 h of sun, about 18 °C mean and about 480 mm of rain (https://en.wikipedia.org/wiki/Tavira ; expatsi). No hurricanes. Historic earthquake and tsunami risk (1755). Summer wildfire risk in the interior is `[unverified]`.
+- **Costs:** https://livingcost.org/cost/portugal/tavira exists. Numbeo could not be checked.
+- **51–75?** **Yes, 50s–60s.** Same tax case as the Algarve already ranked, with a quieter town, private JCI care 35 min away and a seasonal US nonstop. The main drawback is no 24 h emergency department in town.
+
+### Torrevieja (Spain)
+
+- **Regional tax:** **Valencian Community rules, identical to Valencia and Alicante.**
+  - Wealth tax exempt minimum **€2,000,000** (Ley 5/2026, assessment date 31-12-2026), with no general relief and rates of 0.25–3.5%. https://guiafiscal.es/opinion/patrimonio-2026-mapa-bonificaciones-ccaa/
+  - Inheritance: 99% relief for children (App. A and the Alicante section).
+  - The national solidarity tax applies above €3M (App. A).
+- **Healthcare:**
+  - **Hospital Quirónsalud Torrevieja** (private) **renewed JCI accreditation** (press release 29 Jun 2026, JCI 8th edition, first accredited 2023). https://euroweeklynews.com/2026/06/30/quironsalud-torrevieja-hospital-renews-its-joint-commission-international-gold-seal-reinforcing-its-leadership-in-healthcare-quality/
+  - This upgrades App. H's Alicante note from secondary to read.
+  - The public Hospital Universitario de Torrevieja is in town `[unverified, not fetched]`.
+- **Safety:** US **Level 2** (terrorism, civil unrest; updated 1 Aug 2026). https://www.traveladvisory.io/advisory/spain `[secondary]`
+- **Retiree community and access:**
+  - About 98.5k residents (1 Jan 2025). In 2012 Spanish nationals were 59.9%, with British and Russian residents each 5.6%. It was reportedly the municipality with the most British expats in Spain (2004, citation needed). https://en.wikipedia.org/wiki/Torrevieja
+  - It is the biggest English-speaking retiree enclave on this list.
+  - ALC is **26.7 mi (≈42 min)** away (https://www.rome2rio.com/s/Torrevieja/Alicante-Airport-ALC) and has **no US nonstops** (App. H, Alicante).
+- **Climate:** hot semi-arid (BSh), about 328 mm of rain with October wettest, and July–Aug highs about 32 °C. No hurricanes. Autumn DANA flash floods are a regional risk `[unverified]`. The 1829 earthquake levelled the town. https://en.wikipedia.org/wiki/Torrevieja
+- **Costs:** https://livingcost.org/cost/spain/torrevieja exists. Numbeo could not be checked.
+- **51–75?** **Yes, 50s.** It is Alicante's tax profile, with a JCI hospital in town and a huge English-speaking community. It is cheaper, more built-up and less "city" than Alicante, and has no US nonstops.
+
+### Hoi An (Vietnam)
+
+- **Regional tax:** national rules apply. Administrative note: Hội An city was dissolved in 2025 and merged into Da Nang municipality. https://en.wikipedia.org/wiki/H%E1%BB%99i_An_(city)
+- **Healthcare:**
+  - Serious care is in Da Nang: Pacific Hospital (about 30 min) and Vinmec Da Nang.
+  - **Vinmec Da Nang is not JCI-accredited** (only Vinmec Times City in Hanoi and Central Park in HCMC are; Da Nang has a 4-star GHR rating). https://www.vinmec.com/eng/medical-tourism/
+  - Complex cases go to HCMC, Bangkok or Singapore (search snippets) `[secondary]`.
+- **Safety:**
+  - US **Level 1**, but the stamp is dated 2023. https://www.traveladvisory.io/advisory/vietnam `[secondary]`
+  - UK: no area warnings for Hoi An. "Seasonal flooding occurs in October and November in central Vietnam"; tropical cyclones hit the east coast. https://www.gov.uk/foreign-travel-advice/vietnam/safety-and-security
+- **Retiree community and access:**
+  - Former city of about 152k (2018). https://en.wikipedia.org/wiki/H%E1%BB%99i_An_(city) There is a known expat community, but no headcount was found.
+  - DAD is 28 km (≈40 min) away (same source) and has **no US nonstops**; connect via Seoul, Tokyo, Taipei, Hong Kong, Singapore or Bangkok. https://en.wikipedia.org/wiki/Da_Nang_International_Airport
+- **Climate:** tropical monsoon. The rainy season (Sep–Jan) floods the old town regularly. In **2025 there were three floods in three weeks**, and on 28 Oct 2025 riverside streets were under up to 2.5 m of water, the highest at the Pagoda Bridge since 1999. https://e.vnexpress.net/photo/environment/hoi-an-floods-for-3rd-time-in-3-weeks-4965763.html Typhoon-exposed.
+- **Costs:** https://livingcost.org/cost/vietnam/hoi-an exists. Numbeo could not be checked.
+- **51–75?** **No.** Vietnam has no retirement visa (as with Da Nang and HCMC, excluded), plus severe annual flooding and no JCI hospital in the region.
+
+### Chiang Rai (Thailand)
+
+- **Regional tax:** national rules apply (App. D: LTR exempts foreign income; the remittance rules otherwise).
+- **Healthcare:**
+  - Hospitals: Overbrook (1903, mission origin), Kasemrad Sriburin, Chiang Rai Inter (private), **Bangkok Hospital Chiang Rai** (private) and Chiang Rai Prachanukroh (public). https://en.wikipedia.org/wiki/Chiang_Rai
+  - Overbrook claims to be the first JCI-accredited hospital in Chiang Rai, with no year given. https://arokago.com/providers/overbrook-hospital `[secondary; not checked on jointcommission.org]`
+  - Specialist care is often in Chiang Mai (about 200 km, about 3.5 h by bus). https://en.wikipedia.org/wiki/Chiang_Rai
+- **Safety:**
+  - US **Level 1** (2023 stamp). https://www.traveladvisory.io/advisory/thailand `[secondary]`
+  - UK warnings cover only the deep south and the Cambodia border, not Chiang Rai. https://www.gov.uk/foreign-travel-advice/thailand/warnings-and-insurance
+- **Retiree community and access:**
+  - City of about 70k (municipal district about 200k). It is smaller than Chiang Mai's expat scene; no headcount was found. https://en.wikipedia.org/wiki/Chiang_Rai
+  - CEI is domestic to Bangkok (DMK and BKK) and Phuket, with Scoot to Singapore listed. **No US nonstops.** https://en.wikipedia.org/wiki/Mae_Fah_Luang_%E2%80%93_Chiang_Rai_International_Airport
+- **Climate:** tropical wet-and-dry; April highs about 34.5 °C and about 1,723 mm of rain (https://en.wikipedia.org/wiki/Chiang_Rai). Hazards:
+  - **Burning-season smoke:** AQI 269 on 2 Apr 2026, the highest in Thailand that day and worse than Chiang Mai. https://www.nationthailand.com/news/general/40064573
+  - **Typhoon Yagi floods (Sep 2024):** at least 36 deaths in Chiang Rai province and the airport closed. https://en.wikipedia.org/wiki/Typhoon_Yagi
+- **Costs:** https://livingcost.org/cost/thailand/chiang-rai exists. Numbeo could not be checked.
+- **51–75?** **Yes, 60s–70s.** Thai tax and LTR profile, cheap, with decent private hospitals. Smoke season is as bad as Chiang Mai's and there are fewer flights and specialists.
+
+### Langkawi (Malaysia)
+
+- **Regional tax:** **income tax is national** (foreign income exempt to 2036; App. D).
+  - Langkawi is a **duty-free island (since 1987)**, which affects customs and excise on goods, not income tax. https://www.kosmo.com.my/?p=586379
+  - MM2H's state property floor for Kedah is `[unverified]` (KL's is RM1m; App. D).
+- **Healthcare:**
+  - **Hospital Sultanah Maliha** (public) is "the only hospital on the island", 7 km from Kuah. https://www.penang-traveltips.com/malaysia/kedah/langkawi/hospital-langkawi.htm
+  - **No private or specialist hospital** (Apr 2024). The tourism industry is still lobbying for one; non-emergency waits can be months, and foreigners pay foreigner rates (App. D). https://www.kosmo.com.my/?p=586379
+  - Private care means Penang (Island, Gleneagles, Pantai, Adventist), a short AirAsia or Firefly flight away. No ferry to Penang is listed. https://en.wikipedia.org/wiki/Langkawi_International_Airport ; https://en.wikipedia.org/wiki/Langkawi
+- **Safety:** US **Level 1** (22 Feb 2026); only eastern Sabah is higher. https://www.traveladvisory.io/advisory/malaysia `[secondary]`
+- **Retiree community and access:**
+  - About 65k people on the main island, and 9.7% non-Malaysians in 2010. https://en.wikipedia.org/wiki/Langkawi
+  - There is a small expat retiree community, no headcount found. English is widely used in Malaysia (App. D).
+  - LGK flies to KL, Penang, JB, Singapore, Dubai and Bengaluru; **no US nonstops**. https://en.wikipedia.org/wiki/Langkawi_International_Airport
+- **Climate:** tropical monsoon, more than 2,400 mm of rain; dry Dec–Feb and September wettest. https://en.wikipedia.org/wiki/Langkawi It is outside the typhoon belt `[unverified]`.
+- **Costs:** https://livingcost.org/cost/malaysia/langkawi exists. Numbeo could not be checked.
+- **51–75?** **Borderline, low 70s.** Malaysian tax is the region's best, but there is no private hospital on the island, so it is a weaker Penang.
+
+### Pedasí (Panama)
+
+- **Regional tax:** national rules apply (territorial; App. C).
+- **Healthcare:**
+  - Pedasí has a public health centre and a small Minsa-Capsi public hospital.
+  - **Las Tablas public hospital is about 30 min** away and **Chitré (Hospital Gustavo Nelson Collado, the Azuero hub) about 1 h**. https://www.panamaequity.com/blogs/health-insurance-and-medical-care-pedasi-panama/ `[secondary, 2019]`
+  - Private clinics are in Las Tablas and Chitré `[secondary]`.
+  - Serious care is in Panama City (Punta Pacífica, a Johns Hopkins affiliate; App. C), **about 5 h 20 min by road**. https://www.rome2rio.com/s/Pedas%C3%AD/Tocumen-International-Airport-PTY
+  - No JCI hospital nearby.
+- **Safety:**
+  - US **Level 2**; only parts of Darién and the Mosquito Gulf are Level 4 (2023 stamp). https://www.traveladvisory.io/advisory/panama `[secondary]`
+  - UK: no area warnings for Los Santos. **9 Oct 2026: M7.6 earthquake at 10 km depth, about 39 km west of Tonosí** (Los Santos, the same peninsula as Pedasí). Tsunami warnings were lifted and damage was still being assessed. https://www.gov.uk/foreign-travel-advice/panama
+- **Retiree community and access:**
+  - A small surf and fishing town; no expat headcount was found.
+  - PTY is about 5 h 20 min by car (bus about 8 h) and has about **19 US nonstop cities** on Copa and US carriers. https://en.wikipedia.org/wiki/Tocumen_International_Airport
+- **Climate:** tropical, with a dry season. The UK says hurricanes don't directly hit Panama but bring heavy rain (wettest Oct–Nov). https://www.gov.uk/foreign-travel-advice/panama/safety-and-security Earthquake-exposed, as above.
+- **Costs:** no livingcost.org page (404). Numbeo could not be checked.
+- **51–75?** **No.** Tax is excellent, but it is 5+ h from serious care and US flights, the area has only basic public hospitals, and there was a fresh M7.6 nearby. Coronado (App. H) is the better Panama beach pick.
+
+### Volcán (Panama)
+
+- **Regional tax:** national rules apply (territorial).
+- **Healthcare:**
+  - Volcán's hospital (opened 2014) is "a basic emergency care facility". Concepción is about 30 min away and **David's private hospitals (Hospital Chiriquí, Mae Lewis) about 40 min–1 h**. https://internationalliving.com/countries/panama/volcan-panama `[secondary, 2018]`
+  - Specialist care means flying to Panama City (App. C, Boquete).
+  - No JCI hospital locally.
+- **Safety:** US Level 2 as above `[secondary]`. The UK gives no Chiriquí warnings. https://www.traveladvisory.io/advisory/panama
+- **Retiree community and access:**
+  - The expat community is "just around 250 people" (2018). https://internationalliving.com/countries/panama/volcan-panama `[secondary, dated]`
+  - David airport (DAV) has only domestic flights to Panama City, with San José planned; **no US nonstops**. https://en.wikipedia.org/wiki/Enrique_Malek_International_Airport
+  - US flights are via PTY (19 US cities). https://en.wikipedia.org/wiki/Tocumen_International_Airport
+- **Climate:** highland at 4,600 ft. Days are at most about 80 °F and nights about 45 °F, with no A/C or heating needed (internationalliving, above). Outside the hurricane belt. It sits under Volcán Barú; eruption risk was `[unverified]`.
+- **Costs:** no livingcost.org page (404). Numbeo could not be checked.
+- **51–75?** **Borderline, 70s.** It is a cheaper, smaller Boquete (already ranked) with the same David hospitals a bit further away. It adds little beyond Boquete.
+
+### Cotacachi (Ecuador), with Salinas
+
+- **Regional tax:** national rules apply. Ecuador taxes worldwide income up to 37% and has an inheritance tax of up to 35% that reaches foreign assets (App. C). This dominates any town choice.
+- **Healthcare:**
+  - Local care covers minor issues.
+  - **Ibarra is about 13 mi (≈27 min)** away (https://www.rome2rio.com/s/Cotacachi/Ibarra) and has private clinics and the nearest ICU or cardiac unit (forum snippet) `[secondary]`.
+  - Quito's hospitals are about 1¼–2 h away; the rome2rio estimate to UIO is 1 h 15 min for about 55 mi. https://www.rome2rio.com/s/Cotacachi/Quito-Airport-UIO
+  - No JCI hospital locally.
+- **Safety:**
+  - US Ecuador **Level 2** (18 Aug 2026), with Imbabura not listed among higher-risk areas. https://www.traveladvisory.io/advisory/ecuador `[secondary]`
+  - UK: Imbabura is not in any warning zone. https://www.gov.uk/foreign-travel-advice/ecuador/warnings-and-insurance
+- **Retiree community and access:**
+  - Town of 10.5k (2022) at 2,418 m; "resident foreigners totaled more than 500". https://en.wikipedia.org/wiki/Cotacachi_(city)
+  - **UIO US nonstops:** MIA (American, LATAM), JFK (Avianca), ATL (Delta), IAH (United). https://en.wikipedia.org/wiki/Mariscal_Sucre_International_Airport
+- **Climate:** spring-like, with days of 21–27 °C and nights of 10–16 °C. https://en.wikipedia.org/wiki/Cotacachi_(city) No hurricanes. It lies on the flank of the dormant Cotacachi volcano. https://en.wikipedia.org/wiki/Cotacachi
+- **Costs:** no livingcost.org page (404). Numbeo could not be checked.
+- **Salinas (brief):**
+  - Santa Elena province is **US Level 3, "Reconsider Travel"** (https://www.traveladvisory.io/advisory/ecuador).
+  - The **UK advises against all but essential travel** to it, and it was under a 60-day state of emergency from 15 Sep 2026. https://www.gov.uk/foreign-travel-advice/ecuador/warnings-and-insurance
+  - City of 35k; dry (BWh, about 111 mm of rain). https://en.wikipedia.org/wiki/Salinas,_Ecuador
+  - No livingcost.org page.
+  - **Not ranked.**
+- **51–75?** **No for both.** Ecuador's worldwide income tax and 35% inheritance tax on foreign assets are already the reason Cuenca is low. Salinas also carries UK "all but essential" and US Level 3 advice.
+
+### Lake Atitlán: Panajachel / San Marcos La Laguna (Guatemala)
+
+- **Regional tax:** national rules apply. Guatemala is territorial, its inheritance tax was repealed in April 2026, and it levies only the municipal IUSI property tax (App. F).
+- **Healthcare:**
+  - **Panajachel has no hospital**, only the public CAP Panajachel (24 h per the MSPAS registry) and private clinics (Pana Med, Centro Clínico Panajachel) whose hours are unconfirmed.
+  - Hospital Nacional de Sololá (public) is about 20 min uphill `[secondary snippet]`.
+  - Hospitalito Atitlán (Santiago Atitlán, across the lake) is a non-profit with 24 h emergency care. https://livinginguatemala.com/directories/hospitals-panajachel/
+  - Specialist care is **about 3 h away in Guatemala City** (or 2 h to Xela), and helicopter evacuation is sometimes used. https://livinginguatemala.com/panajachel/ `[secondary]`
+  - **San Marcos depends on Panajachel by boat**, and public boats stop at 16:30–17:00. https://livinginguatemala.com/directories/hospitals-panajachel/
+  - No JCI hospital.
+- **Safety:**
+  - US Guatemala **Level 3, "Reconsider Travel"** (stamp 2023). Level 4 covers the **San Marcos Department** (a different place from San Marcos La Laguna, which is in Sololá), Huehuetenango, Zone 18 and Villa Nueva. https://www.traveladvisory.io/advisory/guatemala `[secondary]`
+  - UK: no area warning for Sololá, but "armed attacks or robberies on most tourist routes between Guatemala City, Antigua … and Lake Atitlán". https://www.gov.uk/foreign-travel-advice/guatemala/safety-and-security ; https://www.gov.uk/foreign-travel-advice/guatemala/warnings-and-insurance
+  - Locally: occasional night robberies on the Panajachel–Sololá road, and a lancha capsize killed two tourists in Jan 2026. https://livinginguatemala.com/panajachel/ `[secondary]`
+- **Retiree community and access:**
+  - Panajachel has 15k people (2018) at 1,597 m (https://en.wikipedia.org/wiki/Panajachel) and "a 50-year history of foreign residents", with no headcount (https://livinginguatemala.com/panajachel/).
+  - San Marcos La Laguna is a village of about 2.2–2.9k. https://en.wikipedia.org/wiki/San_Marcos_La_Laguna
+  - GUA is about 3 h away and has broad US nonstops (LAX, JFK, EWR, MIA, FLL, ATL, DFW, IAH, ORD, IAD seasonal and others). https://en.wikipedia.org/wiki/La_Aurora_International_Airport
+- **Climate:** mild highland (Aw bordering Cwa), highs about 25 °C year-round and about 1,490 mm of rain (June wettest). Mudslide-exposed: **Hurricane Stan (Oct 2005)** destroyed about 100 Panajachel homes. https://en.wikipedia.org/wiki/Panajachel The UK warns of rainy-season landslides and volcano risk. https://www.gov.uk/foreign-travel-advice/guatemala/safety-and-security
+- **Costs:** https://livingcost.org/cost/guatemala/panajachel exists. There is no San Marcos page. Numbeo could not be checked.
+- **51–75?** **Panajachel borderline (70s); San Marcos no.** Tax is excellent, but the nearest real hospital is 3 h away and the US rates Guatemala Level 3; Antigua carries Guatemala better. San Marcos adds boat-only access to the same gap.
