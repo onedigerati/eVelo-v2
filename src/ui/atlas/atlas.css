@@ -305,6 +305,86 @@
   background:
     radial-gradient(ellipse 60% 70% at 50% 45%, color-mix(in oklab, var(--holds) 5%, transparent), transparent 75%);
 }
+.wmap__stage.is-panning {
+  cursor: grabbing;
+}
+/* Zoom controls: a small glass stack in the bottom-right (the Southern Ocean). */
+.wmap__zoom {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-md);
+  background: var(--surface-glass);
+  border: 1px solid var(--hairline-strong);
+  box-shadow: var(--shadow-1, none);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  overflow: hidden;
+  cursor: default;
+}
+.wmap__zbtn {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  color: var(--ink-2);
+  transition:
+    background-color var(--dur-1),
+    color var(--dur-1);
+}
+.wmap__zbtn + .wmap__zbtn {
+  border-top: 1px solid var(--hairline);
+}
+.wmap__zbtn:hover:not(:disabled) {
+  background: var(--surface-hover);
+  color: var(--ink);
+}
+.wmap__zbtn:disabled {
+  color: var(--ink-faint);
+  cursor: default;
+}
+@media (pointer: coarse) {
+  .wmap__zbtn {
+    width: 40px;
+    height: 40px;
+  }
+}
+/* Phones: a row takes far less of the short map than a column. */
+@media (max-width: 559.98px) {
+  .wmap__zoom {
+    flex-direction: row;
+    right: 8px;
+    bottom: 8px;
+  }
+  .wmap__zbtn {
+    width: 38px;
+    height: 34px;
+  }
+  .wmap__zbtn + .wmap__zbtn {
+    border-top: 0;
+    border-left: 1px solid var(--hairline);
+  }
+}
+.wmap__hint {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  z-index: 4;
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-glass);
+  border: 1px solid var(--hairline-strong);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  font-size: var(--fs-sm);
+  color: var(--ink-2);
+  white-space: nowrap;
+  pointer-events: none;
+}
 .wmap__canvas {
   position: absolute;
   inset: 0;

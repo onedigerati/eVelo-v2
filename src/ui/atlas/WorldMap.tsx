@@ -22,12 +22,8 @@ import { outcomeRgb } from '../outcomeScale'
 import { costDelta, localCompact, inRegion, successColor, successTextColor, type Ranked, type RegionChip } from './atlasData'
 import { CodeChip } from './CodeChip'
 import { LEVELS, loadLandDots, projection, S0, toWorld, WORLD_W, type LandDots } from './landDots'
-
-interface View {
-  k: number
-  tx: number
-  ty: number
-}
+import { clampView, panBy, pinchView, sameView, wheelFactor, zoomAt, type Limits, type View } from './mapView'
+import { classifyTouch } from '../primitives/sliderGesture'
 
 /* ---------------------------------------------------------------- Geometry */
 
@@ -41,6 +37,37 @@ function fit([x0, y0, x1, y1]: [number, number, number, number], W: number, H: n
   const k = Math.min(W / (x1 - x0), H / (y1 - y0)) * pad
   return { k, tx: W / 2 - k * ((x0 + x1) / 2), ty: H / 2 - k * ((y0 + y1) / 2) }
 }
+
+function regionFit(region: RegionChip, W: number, H: number): View {
+  return fit(regionBox(region, W, H), W, H, region === 'All' ? 0.99 : 0.94)
+}
+
+/** Pan bounds: the inhabited band (Hawaii to the dateline, 79°N to 57°S), not the sphere's empty corners. */
+const PAN_BOX: [number, number, number, number] = [toWorld(-165, 0)[0], Y_TOP, WORLD_W, Y_BOT]
+
+/**
+ * Zoom range and pan bounds: zoom out to the whole world, in to ~16× that, never pan off it.
+ * The bounds also take in the region's own fit, so a fit near the edge never jumps on first drag.
+ */
+function limits(W: number, H: number, region: RegionChip): Limits {
+  const kMin = Math.min(W / WORLD_W, H / (Y_BOT - Y_TOP)) * 0.95
+  const f = regionFit(region, W, H)
+  const box: [number, number, number, number] = [
+    Math.min(PAN_BOX[0], -f.tx / f.k),
+    Math.min(PAN_BOX[1], -f.ty / f.k),
+    Math.max(PAN_BOX[2], (W - f.tx) / f.k),
+    Math.max(PAN_BOX[3], (H - f.ty) / f.k),
+  ]
+  return { kMin, kMax: Math.max(kMin * 16, f.k * 4), box }
+}
+
+const IS_MAC = typeof navigator !== 'undefined' && /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent)
+
+type Gesture =
+  | { mode: 'none' }
+  | { mode: 'pending' | 'pan'; id: number; x0: number; y0: number; v0: View }
+  | { mode: 'scroll' }
+  | { mode: 'pinch'; ids: [number, number]; p0: [[number, number], [number, number]]; v0: View }
 
 function regionBox(region: RegionChip, W: number, H: number): [number, number, number, number] {
   if (region === 'All')
@@ -294,38 +321,86 @@ export function WorldMap({ rows, homeId, destId, region, compare, onToggleCompar
     return () => ro.disconnect()
   }, [])
 
+  // Fly the view to a target (log-space scale, linear world centre); jumps when reduced motion.
+  const anim = useRef<{ stop: () => void } | null>(null)
+  const flyTo = useCallback(
+    (target: View, W: number, H: number, duration = 0.95) => {
+      anim.current?.stop()
+      anim.current = null
+      const from = viewRef.current
+      if (!from || reduce) {
+        viewRef.current = target
+        setView(target)
+        return
+      }
+      const c0 = [(W / 2 - from.tx) / from.k, (H / 2 - from.ty) / from.k]
+      const c1 = [(W / 2 - target.tx) / target.k, (H / 2 - target.ty) / target.k]
+      const l0 = Math.log(from.k)
+      const l1 = Math.log(target.k)
+      anim.current = animate(0, 1, {
+        duration,
+        ease,
+        onUpdate: (t) => {
+          const k = Math.exp(l0 + (l1 - l0) * t)
+          const cx = c0[0] + (c1[0] - c0[0]) * t
+          const cy = c0[1] + (c1[1] - c0[1]) * t
+          const v = { k, tx: W / 2 - k * cx, ty: H / 2 - k * cy }
+          viewRef.current = v
+          setView(v)
+        },
+      })
+    },
+    [reduce],
+  )
+  useEffect(() => () => anim.current?.stop(), [])
+
   // Fit: jump on resize, animate on region change.
   const lastRegion = useRef<RegionChip | null>(null)
   useEffect(() => {
     if (!size) return
-    const target = fit(regionBox(region, size.W, size.H), size.W, size.H, region === 'All' ? 0.99 : 0.94)
-    const from = viewRef.current
+    const target = regionFit(region, size.W, size.H)
     const regionChanged = lastRegion.current !== null && lastRegion.current !== region
     lastRegion.current = region
-    if (!from || !regionChanged || reduce) {
+    if (!viewRef.current || !regionChanged) {
+      anim.current?.stop()
       viewRef.current = target
       setView(target)
       return
     }
-    // Interpolate scale in log space and the screen-centre point linearly in world space.
-    const c0 = [(size.W / 2 - from.tx) / from.k, (size.H / 2 - from.ty) / from.k]
-    const c1 = [(size.W / 2 - target.tx) / target.k, (size.H / 2 - target.ty) / target.k]
-    const l0 = Math.log(from.k)
-    const l1 = Math.log(target.k)
-    const ctl = animate(0, 1, {
-      duration: 0.95,
-      ease,
-      onUpdate: (t) => {
-        const k = Math.exp(l0 + (l1 - l0) * t)
-        const cx = c0[0] + (c1[0] - c0[0]) * t
-        const cy = c0[1] + (c1[1] - c0[1]) * t
-        const v = { k, tx: size.W / 2 - k * cx, ty: size.H / 2 - k * cy }
-        viewRef.current = v
-        setView(v)
-      },
-    })
-    return () => ctl.stop()
-  }, [region, size, reduce])
+    flyTo(target, size.W, size.H)
+  }, [region, size, flyTo])
+
+  /** Apply a user pan/zoom: stops any fly-to and keeps the view inside the limits. */
+  const setUserView = useCallback(
+    (v: View) => {
+      if (!size) return
+      anim.current?.stop()
+      anim.current = null
+      const c = clampView(v, size.W, size.H, limits(size.W, size.H, region))
+      viewRef.current = c
+      setView(c)
+    },
+    [size, region],
+  )
+  const zoomBy = (f: number) => {
+    const v = viewRef.current
+    if (!v || !size) return
+    const lim = limits(size.W, size.H, region)
+    const k = Math.min(lim.kMax, Math.max(lim.kMin, v.k * f))
+    flyTo(clampView(zoomAt(v, k, size.W / 2, size.H / 2), size.W, size.H, lim), size.W, size.H, 0.35)
+  }
+  const fitTarget = size ? regionFit(region, size.W, size.H) : null
+  const canReset = !!(view && fitTarget && !sameView(view, fitTarget))
+
+  // Short hint pill ("Ctrl + scroll to zoom").
+  const [hint, setHint] = useState<string | null>(null)
+  const hintTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
+  const flashHint = useCallback((text: string) => {
+    setHint(text)
+    clearTimeout(hintTimer.current)
+    hintTimer.current = setTimeout(() => setHint(null), 1400)
+  }, [])
+  useEffect(() => () => clearTimeout(hintTimer.current), [])
 
   // Paint.
   const palRef = useRef<Palette | null>(null)
@@ -447,22 +522,95 @@ export function WorldMap({ rows, homeId, destId, region, compare, onToggleCompar
     [visible],
   )
 
+  // Pan / zoom gestures. Mouse: drag pans. Touch: a horizontal drag pans and a vertical swipe
+  // scrolls the page (the stage is `touch-action: pan-y`), two fingers pinch and pan.
+  const pts = useRef(new Map<number, [number, number]>())
+  const gesture = useRef<Gesture>({ mode: 'none' })
+  const dragged = useRef(false)
+  const [panning, setPanning] = useState(false)
+  const local = (e: { clientX: number; clientY: number }): [number, number] => {
+    const r = wrap.current!.getBoundingClientRect()
+    return [e.clientX - r.left, e.clientY - r.top]
+  }
+  const startPinch = () => {
+    const [[ia, pa], [ib, pb]] = [...pts.current.entries()]
+    gesture.current = { mode: 'pinch', ids: [ia, ib], p0: [pa, pb], v0: viewRef.current! }
+    setPanning(true)
+  }
+  const startPan = (id: number, p: [number, number]) => {
+    gesture.current = { mode: 'pan', id, x0: p[0], y0: p[1], v0: viewRef.current! }
+  }
+
+  const onDown = (e: RPointerEvent) => {
+    pointerType.current = e.pointerType
+    if (e.pointerType === 'mouse' && e.button !== 0) return
+    if (!viewRef.current) return
+    if (pts.current.size === 0) dragged.current = false
+    const p = local(e)
+    pts.current.set(e.pointerId, p)
+    if (pts.current.size === 2) startPinch()
+    else if (pts.current.size === 1) gesture.current = { mode: 'pending', id: e.pointerId, x0: p[0], y0: p[1], v0: viewRef.current }
+  }
   const onMove = (e: RPointerEvent) => {
-    if (e.pointerType !== 'mouse') return
+    const g = gesture.current
+    if (pts.current.has(e.pointerId)) {
+      const p = local(e)
+      pts.current.set(e.pointerId, p)
+      if (g.mode === 'pinch') {
+        const a = pts.current.get(g.ids[0])
+        const b = pts.current.get(g.ids[1])
+        if (a && b) setUserView(pinchView(g.v0, g.p0[0], g.p0[1], a, b))
+        return
+      }
+      if (g.mode === 'pending' && g.id === e.pointerId) {
+        const dx = p[0] - g.x0
+        const dy = p[1] - g.y0
+        const intent = e.pointerType === 'mouse' ? (Math.hypot(dx, dy) > 4 ? 'drag' : 'pending') : classifyTouch(dx, dy)
+        if (intent === 'scroll') gesture.current = { mode: 'scroll' }
+        if (intent !== 'drag') return
+        gesture.current = { ...g, mode: 'pan' }
+        dragged.current = true
+        setPanning(true)
+        setHover(null)
+        wrap.current?.setPointerCapture?.(e.pointerId)
+      }
+      const cur = gesture.current
+      if (cur.mode === 'pan' && cur.id === e.pointerId) {
+        setUserView(panBy(cur.v0, p[0] - cur.x0, p[1] - cur.y0))
+        return
+      }
+    }
+    if (e.pointerType !== 'mouse' || g.mode === 'pan') return
     const id = nearest(e)
     if (id) {
       clearTimeout(hideTimer.current)
       setHover(id)
     } else scheduleHide()
   }
+  const onUp = (e: RPointerEvent) => {
+    if (!pts.current.delete(e.pointerId)) return
+    const g = gesture.current
+    if (g.mode === 'pinch') dragged.current = true
+    if (pts.current.size === 1 && g.mode === 'pinch') {
+      // Lifting one finger of a pinch carries on as a pan with the other.
+      const [[id, p]] = [...pts.current.entries()]
+      startPan(id, p)
+      return
+    }
+    if (pts.current.size === 0) {
+      gesture.current = { mode: 'none' }
+      setPanning(false)
+    }
+  }
   const scheduleHide = () => {
     clearTimeout(hideTimer.current)
     hideTimer.current = setTimeout(() => setHover(null), 260)
   }
-  const onDown = (e: RPointerEvent) => {
-    pointerType.current = e.pointerType
-  }
   const onClick = (e: RMouseEvent) => {
+    if (dragged.current) {
+      dragged.current = false
+      return
+    }
     const id = nearest({ clientX: e.clientX, clientY: e.clientY, pointerType: pointerType.current })
     if (pointerType.current === 'mouse') {
       if (id) onChoose(id)
@@ -473,6 +621,45 @@ export function WorldMap({ rows, homeId, destId, region, compare, onToggleCompar
     if (pinned === id) onChoose(id)
     else setPinned(id)
   }
+  const onDoubleClick = (e: RMouseEvent) => {
+    const v = viewRef.current
+    if (!v || !size || nearest({ clientX: e.clientX, clientY: e.clientY })) return
+    const [px, py] = local(e)
+    const lim = limits(size.W, size.H, region)
+    flyTo(clampView(zoomAt(v, Math.min(lim.kMax, v.k * 2), px, py), size.W, size.H, lim), size.W, size.H, 0.35)
+  }
+
+  // Native listeners: wheel and touch need `passive: false` to cancel page scroll / zoom.
+  useEffect(() => {
+    const el = wrap.current
+    if (!el) return
+    const onWheel = (e: WheelEvent) => {
+      const v = viewRef.current
+      if (!v) return
+      if (!(e.ctrlKey || e.metaKey)) {
+        flashHint(`${IS_MAC ? '⌘' : 'Ctrl'} + scroll to zoom`)
+        return
+      }
+      e.preventDefault()
+      const r = el.getBoundingClientRect()
+      setUserView(zoomAt(v, v.k * wheelFactor(e.deltaY, e.deltaMode), e.clientX - r.left, e.clientY - r.top))
+    }
+    const onTouch = (e: TouchEvent) => {
+      const m = gesture.current.mode
+      if (e.touches.length >= 2 || m === 'pan' || m === 'pinch') e.preventDefault()
+    }
+    const onGesture = (e: Event) => e.preventDefault() // iOS Safari page pinch-zoom
+    el.addEventListener('wheel', onWheel, { passive: false })
+    el.addEventListener('touchstart', onTouch, { passive: false })
+    el.addEventListener('touchmove', onTouch, { passive: false })
+    el.addEventListener('gesturestart', onGesture)
+    return () => {
+      el.removeEventListener('wheel', onWheel)
+      el.removeEventListener('touchstart', onTouch)
+      el.removeEventListener('touchmove', onTouch)
+      el.removeEventListener('gesturestart', onGesture)
+    }
+  }, [setUserView, flashHint])
   useEffect(() => () => clearTimeout(hideTimer.current), [])
 
   const activeId = pinned ?? hover
@@ -489,12 +676,15 @@ export function WorldMap({ rows, homeId, destId, region, compare, onToggleCompar
     <div className={cx('wmap', !rows.length && 'is-loading')} role="group" aria-label={summary}>
       <div
         ref={wrap}
-        className="wmap__stage"
+        className={cx('wmap__stage', panning && 'is-panning')}
         style={size ? { height: size.H } : undefined}
         onPointerMove={onMove}
         onPointerDown={onDown}
-        onPointerLeave={(e) => e.pointerType === 'mouse' && scheduleHide()}
+        onPointerUp={onUp}
+        onPointerCancel={onUp}
+        onPointerLeave={(e) => e.pointerType === 'mouse' && !panning && scheduleHide()}
         onClick={onClick}
+        onDoubleClick={onDoubleClick}
       >
         <canvas
           ref={canvas}
@@ -534,6 +724,59 @@ export function WorldMap({ rows, homeId, destId, region, compare, onToggleCompar
             ))}
           </svg>
         )}
+        {view && (
+          <div
+            className="wmap__zoom"
+            onPointerDown={(e) => e.stopPropagation()}
+            onPointerMove={(e) => e.stopPropagation()}
+            onClick={(e) => e.stopPropagation()}
+            onDoubleClick={(e) => e.stopPropagation()}
+          >
+            <button type="button" className="wmap__zbtn" aria-label="Zoom in" onClick={() => zoomBy(2)}>
+              <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M8 3v10M3 8h10" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+              </svg>
+            </button>
+            <button type="button" className="wmap__zbtn" aria-label="Zoom out" onClick={() => zoomBy(0.5)}>
+              <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M3 8h10" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              className="wmap__zbtn"
+              aria-label={region === 'All' ? 'Reset map view' : `Fit ${region}`}
+              title={region === 'All' ? 'Reset view' : `Fit ${region}`}
+              disabled={!canReset}
+              onClick={() => fitTarget && size && flyTo(fitTarget, size.W, size.H, 0.6)}
+            >
+              <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true">
+                <path
+                  d="M2.5 6V2.5H6M10 2.5h3.5V6M13.5 10v3.5H10M6 13.5H2.5V10"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+        )}
+        <AnimatePresence>
+          {hint && (
+            <motion.div
+              key="hint"
+              className="wmap__hint"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.18 }}
+            >
+              {hint}
+            </motion.div>
+          )}
+        </AnimatePresence>
         {!rows.length && (
           <div className="wmap__loading">
             <span className="pulse-dot" /> Ranking {CITIES.length} cities…
