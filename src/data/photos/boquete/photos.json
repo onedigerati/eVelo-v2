@@ -1,0 +1,62 @@
+[
+  {
+    "commons": "File:Aerial view of Boquete, Panama.jpg",
+    "file": "1.webp",
+    "caption": "Boquete in its highland valley along the Caldera river, in Chiriquí",
+    "alt": "An aerial view of a small town spread along a river valley between green hills",
+    "author": "FranHogan",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_Boquete,_Panama.jpg",
+    "width": 1024,
+    "height": 673
+  },
+  {
+    "commons": "File:RVN06957.jpg",
+    "file": "2.webp",
+    "caption": "Flower gardens along the Caldera river by the bridge in Boquete",
+    "alt": "Flower beds and a path beside a rocky river, with houses and mountains behind",
+    "author": "Rob vanNostrand",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:RVN06957.jpg",
+    "width": 1024,
+    "height": 683
+  },
+  {
+    "commons": "File:Finca Lerida, Boquete, Panama.jpg",
+    "file": "3.webp",
+    "caption": "Coffee rows on the hillside at Finca Lérida, one of Boquete's coffee farms",
+    "alt": "Rows of coffee bushes on a slope around a long farm building with a blue roof",
+    "author": "Ken Mayer",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Finca_Lerida,_Boquete,_Panama.jpg",
+    "width": 1280,
+    "height": 960
+  },
+  {
+    "commons": "File:Volcan Baru up close and clouded.jpg",
+    "file": "4.webp",
+    "caption": "Cloud forest on the slopes of Volcán Barú, Panama's highest peak, above Boquete",
+    "alt": "Forested mountain ridges with clouds drifting over them under a blue sky",
+    "author": "FranHogan",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Volcan_Baru_up_close_and_clouded.jpg",
+    "width": 1152,
+    "height": 864
+  },
+  {
+    "commons": "File:Wandern in Boquete (27211055802).jpg",
+    "file": "5.webp",
+    "caption": "A grassy hillside trail under tall pines near Boquete",
+    "alt": "A grassy path along a slope with tall pine trees, a small cabin and forested hills under a blue sky",
+    "author": "dronepicr",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Wandern_in_Boquete_(27211055802).jpg",
+    "width": 1152,
+    "height": 768
+  }
+]

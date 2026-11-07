@@ -1,0 +1,62 @@
+[
+  {
+    "commons": "File:Ciudad de Panamá - Panamá.jpg",
+    "file": "1.webp",
+    "caption": "Panama City's skyline curving around the bay",
+    "alt": "Rows of high-rise towers along a curved bay shore with a park and a marina below",
+    "author": "Neoredacturus",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ciudad_de_Panam%C3%A1_-_Panam%C3%A1.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "commons": "File:Old Panama City - Casco Viejo - Panama - panoramio (21).jpg",
+    "file": "2.webp",
+    "caption": "Restored balconied houses in Casco Viejo, the old quarter where many expats live",
+    "alt": "Yellow and red colonial facades with white balustraded and iron balconies and wall lanterns",
+    "author": "David Broad",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Old_Panama_City_-_Casco_Viejo_-_Panama_-_panoramio_(21).jpg",
+    "width": 1280,
+    "height": 850
+  },
+  {
+    "commons": "File:Miraflores Locks, Panama - 11.jpg",
+    "file": "3.webp",
+    "caption": "A container ship in the Miraflores Locks of the Panama Canal, on the city's edge",
+    "alt": "A large container ship stacked with containers inside a canal lock, with green hills behind",
+    "author": "Ivo Kruusamägi",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Miraflores_Locks,_Panama_-_11.jpg",
+    "width": 1280,
+    "height": 851
+  },
+  {
+    "commons": "File:IslaPerico Causeway Amador.JPG",
+    "file": "4.webp",
+    "caption": "Boats moored at Isla Perico on the Amador Causeway",
+    "alt": "Ferries and boats on calm water in front of a row of red-roofed buildings and a green hill",
+    "author": "Ayaita",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:IslaPerico_Causeway_Amador.JPG",
+    "width": 1280,
+    "height": 853
+  },
+  {
+    "commons": "File:Plaza de la Catedral o de la independencia de Panama.JPG",
+    "file": "5.webp",
+    "caption": "Plaza de la Independencia and the cathedral in Casco Viejo",
+    "alt": "A brick-paved plaza with a white bandstand and trees, and a white cathedral bell tower to the right",
+    "author": "Isaías Montilla",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Plaza_de_la_Catedral_o_de_la_independencia_de_Panama.JPG",
+    "width": 1280,
+    "height": 855
+  }
+]

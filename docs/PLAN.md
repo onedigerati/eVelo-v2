@@ -7,19 +7,24 @@ Every one of the 75 profiled Atlas picks shows five real, openly licensed photos
 2026-11-07 · tests: 214 pass (20 files) · typecheck: clean · build: ok
 
 ## Now
-Stage 1 of 5 · Photo pipeline
-Risk: external services (build-time downloads from Wikimedia Commons), third-party content and licences
+Stage 2 of 5 · Gallery + odds badge
+Risk: UI only
 Checks:
-- [ ] `npm run photos` reads each city's photo list (Commons file titles plus captions), fetches author and licence from the Commons API, downloads each photo and writes a resized WebP under `src/data/photos/<cityId>/` (proof: run the command for lisbon twice; the second run downloads nothing)
-- [ ] A photo whose licence isn't CC0, public domain, CC BY or CC BY-SA is refused with its file title, and nothing is written (proof: test)
-- [ ] Every city with photos has exactly 5, each with a file on disk, alt text, a one-line caption, author, licence name and URL, and an https Commons source URL, with no file used twice (proof: test)
-- [ ] The five pilot cities (lisbon, algarve, panama-city, boquete, kuala-lumpur) have their photos, and each is under 200 kB (proof: test + command)
-- [ ] A contact sheet of the pilot photos with captions is saved to the evidence, and each photo was looked at and shows the place its caption names (proof: run the product: contact-sheet screenshot)
-- [ ] Photos ship through Vite as hashed files in `dist/assets`, so `scripts/artifact-page.mjs` picks them up for the preview with no change (proof: command: `npm run build` lists them)
-Open: none
+- [ ] Lisbon's profile shows design A above the lead text: one large photo and four small ones, a credit line, and an "All 5 photos" button; in light and dark themes (proof: run the product: desktop screenshots, both themes)
+- [ ] The badge on the large photo shows "Your plan here", the odds coloured by the outcome scale, a bar with a home tick, and "+N pts vs H% in <home>", with the same numbers as the "Your plan here" card (proof: run the product: read both numbers; test for the badge text)
+- [ ] While the Atlas is ranking, the badge shows a skeleton instead of a number (proof: test)
+- [ ] Tapping any photo or the button opens the full-size view at that photo; arrows, ← and → keys and swipe move through it; Esc closes the view and leaves the profile open; focus returns to the photo that was tapped (proof: run the product: scripted clicks and keys)
+- [ ] The full-size view shows the caption, the author, a licence link, a Commons link, and the odds pill with the home comparison (proof: run the product: screenshot)
+- [ ] At 390 px wide, the gallery becomes one swipeable cover photo with dots and the badge, and the page doesn't scroll sideways (proof: run the product: phone screenshot)
+- [ ] A profile without photos (paphos) looks as it did before (proof: run the product: screenshot)
+- [ ] With reduced motion on, the gallery and full-size view don't animate (proof: run the product: emulated reduced motion)
+- [ ] A photo listed but missing on disk drops only that city's gallery; the Atlas still works (proof: test)
+- [ ] Photo data stays out of the main chunk: main `index-*.js` within 2 kB of 532.79 kB (proof: command: build output)
+Open: publishing the preview needs the user's go — stage 2 pauses there
+Mode: autopilot
 
 ## Stages
-- [ ] 1. Photo pipeline — `npm run photos` (Commons API + sharp → WebP), per-city photo data and tests, the five pilot cities, a contact sheet
+- [x] 1. Photo pipeline — `npm run photos` (Commons API + sharp → WebP), per-city photo data and tests, the five pilot cities, a contact sheet
 - [ ] 2. Gallery + odds badge — design A mosaic in the profile, odds badge with home comparison, full-size view with the odds pill, phone layout, both themes, reduced motion; preview; stop for review
 - [ ] 3. Photos: Europe — the other 31 European picks, contact sheet, preview
 - [ ] 4. Photos: Americas — the other 29 Latin American picks, contact sheet, preview
@@ -36,6 +41,9 @@ Open: none
 - 2026-11-07 · Photos and their data live in `src/data/photos/<cityId>/` and load through `import.meta.glob(..., { query: '?url' })`, like the profiles; adding a city's photos needs no edit elsewhere — builder's call, mirrors `src/data/profiles/`.
 - 2026-11-07 · `sharp` is added as a dev dependency for resizing (no image tool is installed on this machine); it is never in the shipped bundle — builder's call.
 - 2026-11-07 · The preview gets the photos in two or more publishes (at most 255 files each), then a file listing confirms every manifest path — the Artifact limits; the full-manifest rule still applies.
+- 2026-11-07 · Photos step down in width (1280 → 1152 → 1024 → 896 px, quality 80 → 55) until under 200 kB; portraits fit 1280 px tall — detailed photos can't reach 200 kB at 1280 px even at quality 40 (pilot: 16 at 1280 wide + 1 portrait at 1280 tall, 5 at 1152, 2 at 1024, 1 at 896) — builder's call, kept.
+- 2026-11-07 · Lisbon's fifth photo is Praia da Rainha in Cascais, captioned as Cascais (Lisbon's beaches are a reason to live there); Cascais's own profile must use different photos, which the no-duplicate test enforces — PM's call.
+- 2026-11-07 · Stage 1 review: credits use Commons' Attribution field when the licensor sets one; placeholder authors, originals under 1000 px and downloads from anywhere but upload.wikimedia.org are refused. Stage 2 must make a missing photo skip that city instead of breaking the Atlas, and the full-size credit may say "resized" — review findings, taken.
 - 2026-11-07 · Every photo is looked at before it ships, and each batch saves a contact sheet to its evidence — Commons titles can be wrong or mislabelled, and the user was told this is the slow part.
 
 ## Open questions

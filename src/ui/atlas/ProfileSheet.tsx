@@ -9,6 +9,9 @@ import { CATEGORY_LABEL, costDelta, successColor, successTextColor, type Ranked 
 import { CodeChip } from './CodeChip'
 import { SCORE_KEYS, categoryCompare, costDataLine, oddsVsHome, type ProfiledPickView } from './picks'
 import { estateVsHome, taxLines, taxNotice, taxStatus } from './taxLines'
+// City photos (stage 2 renders them as the cover mosaic). Imported now so the build ships the
+// .webp files as hashed assets in dist/assets.
+import '../../data/photos'
 
 /** Fact labels, in display order: the BBD facts first. */
 const FACT_LABEL: Record<keyof ExpatFacts, string> = {

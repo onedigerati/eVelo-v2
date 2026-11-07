@@ -1,0 +1,30 @@
+$ ls dist/assets/*.webp; node scripts/artifact-page.mjs; check manifest
+-rw-r--r-- 1 jonah jonah 153622 Nov  7 15:34 dist/assets/1-1qCM9Oqh.webp
+-rw-r--r-- 1 jonah jonah 170998 Nov  7 15:34 dist/assets/1-Bebkjyir.webp
+-rw-r--r-- 1 jonah jonah 196180 Nov  7 15:34 dist/assets/1-CyuguQ6E.webp
+-rw-r--r-- 1 jonah jonah 155174 Nov  7 15:34 dist/assets/1-We2Z8Dc8.webp
+-rw-r--r-- 1 jonah jonah 199614 Nov  7 15:34 dist/assets/1-vPtoXROK.webp
+-rw-r--r-- 1 jonah jonah 124436 Nov  7 15:34 dist/assets/2-CUiMRVyO.webp
+-rw-r--r-- 1 jonah jonah 197590 Nov  7 15:34 dist/assets/2-Cq1U2Bl_.webp
+-rw-r--r-- 1 jonah jonah 153260 Nov  7 15:34 dist/assets/2-D2aD3u8Y.webp
+-rw-r--r-- 1 jonah jonah 195100 Nov  7 15:34 dist/assets/2-DjLEUWEl.webp
+-rw-r--r-- 1 jonah jonah 197400 Nov  7 15:34 dist/assets/2-sVufm6aC.webp
+-rw-r--r-- 1 jonah jonah 170536 Nov  7 15:34 dist/assets/3-B4PELRbo.webp
+-rw-r--r-- 1 jonah jonah 191934 Nov  7 15:34 dist/assets/3-BBhbFJP9.webp
+-rw-r--r-- 1 jonah jonah 124478 Nov  7 15:34 dist/assets/3-CLaqiNF4.webp
+-rw-r--r-- 1 jonah jonah 190576 Nov  7 15:34 dist/assets/3-DY1nhrhO.webp
+-rw-r--r-- 1 jonah jonah 199558 Nov  7 15:34 dist/assets/3-y_8PEDIS.webp
+-rw-r--r-- 1 jonah jonah 194840 Nov  7 15:34 dist/assets/4-9SRVqMhE.webp
+-rw-r--r-- 1 jonah jonah 199274 Nov  7 15:34 dist/assets/4-BRtcYt2N.webp
+-rw-r--r-- 1 jonah jonah  41518 Nov  7 15:34 dist/assets/4-CT8ltbMq.webp
+-rw-r--r-- 1 jonah jonah 189632 Nov  7 15:34 dist/assets/4-S1PSa2kB.webp
+-rw-r--r-- 1 jonah jonah 195344 Nov  7 15:34 dist/assets/4-swO8Tnp2.webp
+-rw-r--r-- 1 jonah jonah 171580 Nov  7 15:34 dist/assets/5-4Q2OSyfG.webp
+-rw-r--r-- 1 jonah jonah 191974 Nov  7 15:34 dist/assets/5-B2kQkjrH.webp
+-rw-r--r-- 1 jonah jonah 170696 Nov  7 15:34 dist/assets/5-CPsOkqQc.webp
+-rw-r--r-- 1 jonah jonah 192078 Nov  7 15:34 dist/assets/5-UwLJ5Pvf.webp
+-rw-r--r-- 1 jonah jonah 129800 Nov  7 15:34 dist/assets/5-X2jp1Whm.webp
+webp in dist/assets: 25
+53 files
+exit=0
+manifest entries: 53 | webp in manifest: 25 of 25 | missing: []

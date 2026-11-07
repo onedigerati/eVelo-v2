@@ -1,0 +1,31 @@
+$ rm src/data/photos/lisbon/*.webp && npm run photos lisbon   # run 1: forced download
+npm notice run evelo@2.0.0 photos
+npm notice run node scripts/photos.mjs lisbon
+lisbon 1.webp  155 kB  1280x720  q80  CC BY 4.0  File:Alfama Rooftops and Tagus River View, Lisbon (54733698959).jpg
+lisbon 2.webp  153 kB  1280x603  q80  CC BY 4.0  File:View of Praça do Comércio from the Tagus River in Lisbon, 20250604 2038 9656.jpg
+lisbon 3.webp  192 kB  854x1280  q70  CC BY 4.0  File:Tram 28 at Largo de Santa Luzia in Lisbon, 20250606 1958 0419.jpg
+lisbon 4.webp  42 kB  1280x854  q80  CC BY 2.0  File:Pasteis de nata (Lissabon 2016) (26069956686).jpg
+lisbon 5.webp  192 kB  1280x853  q70  CC BY 2.0  File:Cascais Praia da Rainha (53890743661).jpg
+lisbon: downloaded 5, skipped 0
+exit=0
+
+$ npm run photos lisbon   # run 2
+npm notice run evelo@2.0.0 photos
+npm notice run node scripts/photos.mjs lisbon
+lisbon: all 5 photos up to date, nothing downloaded
+exit=0
+
+$ md5sum before (backup) vs after
+062301e686b6f97572b3b84776b6f86d  src/data/photos/lisbon/1.webp
+465bcefb4aebf2bbe348b081498c98b3  src/data/photos/lisbon/2.webp
+fc9df14567eb8c5d4253e183968f203b  src/data/photos/lisbon/3.webp
+c09772ab59e0be680f9a17a9df59a73b  src/data/photos/lisbon/4.webp
+819be1eafd403db7a0f6d463b62dc8fc  src/data/photos/lisbon/5.webp
+02e9c19f11cf7b7e401d4f15d75543e3  src/data/photos/lisbon/photos.json
+--- after
+062301e686b6f97572b3b84776b6f86d  src/data/photos/lisbon/1.webp
+465bcefb4aebf2bbe348b081498c98b3  src/data/photos/lisbon/2.webp
+fc9df14567eb8c5d4253e183968f203b  src/data/photos/lisbon/3.webp
+c09772ab59e0be680f9a17a9df59a73b  src/data/photos/lisbon/4.webp
+819be1eafd403db7a0f6d463b62dc8fc  src/data/photos/lisbon/5.webp
+02e9c19f11cf7b7e401d4f15d75543e3  src/data/photos/lisbon/photos.json

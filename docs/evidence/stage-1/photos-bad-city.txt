@@ -1,0 +1,5 @@
+$ npm run photos no-such-city
+npm notice run evelo@2.0.0 photos
+npm notice run node scripts/photos.mjs no-such-city
+FAILED no-such-city: no /home/jonah/repos/eVelo-v2/src/data/photos/no-such-city/photos.json
+exit=1
