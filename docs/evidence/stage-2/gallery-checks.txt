@@ -1,0 +1,114 @@
+$ node scripts/v.cjs http://localhost:4231/ docs/evidence/stage-2   # vite preview of the working-tree build
+light {"mosaicVisible":true,"coverVisible":false,"tiles":5,"leadFirst":true,"bigArea":186372,"smallAreas":[45842,45842,45842,45842],"allLoaded":true,"aboveLead":true,"credit":"Photos: Dale Cruse, Jakub Hałun, Paul Arps, Jorge Franganillo · CC BY · Wikimedia Commons","creditVisible":true,"all":"All 5 photos","badge":"YOUR PLAN HERE 69% plan holds +5 pts vs 64% in St. Louis","badgeBig":"69%","badgeVs":"+5 pts vs 64% in St. Louis","badgeTone":"oklch(0.509264 0.0959297 165.165)","badgeBar":"68.85%","badgeHome":"63.9%","cardBig":"69%","cardTone":"oklch(0.509264 0.0959297 165.165)","cardSub":"+5 pts vs 64% in St. Louis","cardMark":"63.9%","badgeRect":{"x":229,"y":123.421875,"width":212,"height":119.828125,"top":123.421875,"right":441,"bottom":243.25,"left":229},"leadRect":{"x":213,"y":107.421875,"width":501,"height":372,"top":107.421875,"right":714,"bottom":479.421875,"left":213},"hscroll":false}
+PASS  [light] mosaic visible: 5 tiles, first is-lead and largest, all images loaded
+PASS  [light] gallery sits above .prof__lead
+PASS  [light] credit line: Photos: Dale Cruse, Jakub Hałun, Paul Arps, Jorge Franganillo · CC BY · Wikimedia Commons
+PASS  [light] button: "All 5 photos"
+PASS  [light] badge text: YOUR PLAN HERE 69% plan holds +5 pts vs 64% in St. Louis
+PASS  [light] badge % 69% == card % 69%; colours oklch(0.509264 0.0959297 165.165) == oklch(0.509264 0.0959297 165.165)
+PASS  [light] badge "+5 pts vs 64% in St. Louis" vs card sub "+5 pts vs 64% in St. Louis"
+PASS  [light] home tick at 63.9% == card mark 63.9%
+PASS  [light] no horizontal scroll at 1440
+light badge contrast [{"s":".podds__eyebrow","text":"Your plan here","fg":"94,101,95,1","bgOverWhite":"251,249,244,1","bgOverBlack":"251,249,244,1","layers":"podds","alpha":"0.95","ratio":5.7},{"s":".podds__big","text":"69%","fg":"30,119,88,1","bgOverWhite":"251,249,244,1","bgOverBlack":"251,249,244,1","layers":"podds","alpha":"0.95","ratio":5.2},{"s":".podds__l","text":"plan holds","fg":"74,82,77,1","bgOverWhite":"251,249,244,1","bgOverBlack":"251,249,244,1","layers":"podds","alpha":"0.95","ratio":7.66},{"s":".podds__vs","text":"+5 pts vs 64% in St. Louis","fg":"74,82,77,1","bgOverWhite":"251,249,244,1","bgOverBlack":"251,249,244,1","layers":"podds","alpha":"0.95","ratio":7.66},{"s":".podds__vs b","text":"+5 pts","fg":"10,110,77,1","bgOverWhite":"251,249,244,1","bgOverBlack":"251,249,244,1","layers":"podds","alpha":"0.95","ratio":5.96}]
+PASS  [light] badge .podds__eyebrow contrast 5.7:1 (worst of card over a white or black photo)
+PASS  [light] badge .podds__big contrast 5.2:1 (worst of card over a white or black photo)
+PASS  [light] badge .podds__l contrast 7.66:1 (worst of card over a white or black photo)
+PASS  [light] badge .podds__vs contrast 7.66:1 (worst of card over a white or black photo)
+PASS  [light] badge .podds__vs b contrast 5.96:1 (worst of card over a white or black photo)
+light button/credit contrast [{"s":".pgal__all","text":"All 5 photos","fg":"20,24,21,1","bgOverWhite":"251,249,244,1","bgOverBlack":"251,249,244,1","layers":"pgal__all","alpha":"0.94","ratio":17.04},{"s":"> .pgal__credit","text":"Photos: Dale Cruse, Jakub Hałun, Paul Ar","fg":"94,101,95,1","bgOverWhite":"251,249,244,1","bgOverBlack":"251,249,244,1","layers":"opaque","alpha":"","ratio":5.7}]
+light focus [{"cls":"pgal__tile is-lead","fv":true,"outline":"solid 2px rgb(11, 122, 86)","offset":"-3px","shadow":"none"},{"cls":"pgal__tile","fv":true,"outline":"solid 2px rgb(11, 122, 86)","offset":"-3px","shadow":"none"},{"cls":"pgal__tile","fv":true,"outline":"solid 2px rgb(11, 122, 86)","offset":"-3px","shadow":"none"},{"cls":"pgal__tile","fv":true,"outline":"solid 2px rgb(11, 122, 86)","offset":"-3px","shadow":"none"},{"cls":"pgal__tile","fv":true,"outline":"solid 2px rgb(11, 122, 86)","offset":"-3px","shadow":"none"},{"cls":"pgal__all","fv":true,"outline":"solid 2px rgb(11, 122, 86)","offset":"2px","shadow":"rgba(0, 0, 0, 0.18) 0px 2px 10px 0px"}]
+PASS  [light] keyboard focus ring on 5 tiles and the button
+dark {"mosaicVisible":true,"coverVisible":false,"tiles":5,"leadFirst":true,"bigArea":186372,"smallAreas":[45842,45842,45842,45842],"allLoaded":true,"aboveLead":true,"credit":"Photos: Dale Cruse, Jakub Hałun, Paul Arps, Jorge Franganillo · CC BY · Wikimedia Commons","creditVisible":true,"all":"All 5 photos","badge":"YOUR PLAN HERE 69% plan holds +5 pts vs 64% in St. Louis","badgeBig":"69%","badgeVs":"+5 pts vs 64% in St. Louis","badgeTone":"oklch(0.833186 0.0879255 165.266)","badgeBar":"68.85%","badgeHome":"63.9%","cardBig":"69%","cardTone":"oklch(0.833186 0.0879255 165.266)","cardSub":"+5 pts vs 64% in St. Louis","cardMark":"63.9%","badgeRect":{"x":229,"y":123.421875,"width":212,"height":119.828125,"top":123.421875,"right":441,"bottom":243.25,"left":229},"leadRect":{"x":213,"y":107.421875,"width":501,"height":372,"top":107.421875,"right":714,"bottom":479.421875,"left":213},"hscroll":false}
+PASS  [dark] mosaic visible: 5 tiles, first is-lead and largest, all images loaded
+PASS  [dark] gallery sits above .prof__lead
+PASS  [dark] credit line: Photos: Dale Cruse, Jakub Hałun, Paul Arps, Jorge Franganillo · CC BY · Wikimedia Commons
+PASS  [dark] button: "All 5 photos"
+PASS  [dark] badge text: YOUR PLAN HERE 69% plan holds +5 pts vs 64% in St. Louis
+PASS  [dark] badge % 69% == card % 69%; colours oklch(0.833186 0.0879255 165.266) == oklch(0.833186 0.0879255 165.266)
+PASS  [dark] badge "+5 pts vs 64% in St. Louis" vs card sub "+5 pts vs 64% in St. Louis"
+PASS  [dark] home tick at 63.9% == card mark 63.9%
+PASS  [dark] no horizontal scroll at 1440
+dark badge contrast [{"s":".podds__eyebrow","text":"Your plan here","fg":"132,145,139,1","bgOverWhite":"17,23,21,1","bgOverBlack":"17,23,21,1","layers":"podds","alpha":"0.95","ratio":5.53},{"s":".podds__big","text":"69%","fg":"144,219,186,1","bgOverWhite":"17,23,21,1","bgOverBlack":"17,23,21,1","layers":"podds","alpha":"0.95","ratio":11.26},{"s":".podds__l","text":"plan holds","fg":"169,181,175,1","bgOverWhite":"17,23,21,1","bgOverBlack":"17,23,21,1","layers":"podds","alpha":"0.95","ratio":8.57},{"s":".podds__vs","text":"+5 pts vs 64% in St. Louis","fg":"169,181,175,1","bgOverWhite":"17,23,21,1","bgOverBlack":"17,23,21,1","layers":"podds","alpha":"0.95","ratio":8.57},{"s":".podds__vs b","text":"+5 pts","fg":"91,227,176,1","bgOverWhite":"17,23,21,1","bgOverBlack":"17,23,21,1","layers":"podds","alpha":"0.95","ratio":11.29}]
+PASS  [dark] badge .podds__eyebrow contrast 5.53:1 (worst of card over a white or black photo)
+PASS  [dark] badge .podds__big contrast 11.26:1 (worst of card over a white or black photo)
+PASS  [dark] badge .podds__l contrast 8.57:1 (worst of card over a white or black photo)
+PASS  [dark] badge .podds__vs contrast 8.57:1 (worst of card over a white or black photo)
+PASS  [dark] badge .podds__vs b contrast 11.29:1 (worst of card over a white or black photo)
+dark button/credit contrast [{"s":".pgal__all","text":"All 5 photos","fg":"236,241,238,1","bgOverWhite":"17,23,21,1","bgOverBlack":"17,23,21,1","layers":"pgal__all","alpha":"0.94","ratio":15.89},{"s":"> .pgal__credit","text":"Photos: Dale Cruse, Jakub Hałun, Paul Ar","fg":"132,145,139,1","bgOverWhite":"17,23,21,1","bgOverBlack":"17,23,21,1","layers":"opaque","alpha":"","ratio":5.53}]
+dark focus [{"cls":"pgal__tile is-lead","fv":true,"outline":"solid 2px rgb(91, 227, 176)","offset":"-3px","shadow":"none"},{"cls":"pgal__tile","fv":true,"outline":"solid 2px rgb(91, 227, 176)","offset":"-3px","shadow":"none"},{"cls":"pgal__tile","fv":true,"outline":"solid 2px rgb(91, 227, 176)","offset":"-3px","shadow":"none"},{"cls":"pgal__tile","fv":true,"outline":"solid 2px rgb(91, 227, 176)","offset":"-3px","shadow":"none"},{"cls":"pgal__tile","fv":true,"outline":"solid 2px rgb(91, 227, 176)","offset":"-3px","shadow":"none"},{"cls":"pgal__all","fv":true,"outline":"solid 2px rgb(91, 227, 176)","offset":"2px","shadow":"rgba(0, 0, 0, 0.18) 0px 2px 10px 0px"}]
+PASS  [dark] keyboard focus ring on 5 tiles and the button
+ranking {"running":true,"skel":true,"big":false,"label":"Your plan’s odds in Lisbon: ranking…","text":"YOUR PLAN HERE"}
+PASS  ranking state: skeleton, no number (label "Your plan’s odds in Lisbon: ranking…", card shows "undefined")
+PASS  ranking state: pill also a skeleton
+PASS  tile 1 opens at "Lisbon · 1 of 5"
+PASS  tile 1: Esc closes view only, sheet open, focus back on "Open photo 1 of 5: Alfama's rooftops above the Tagus river, in Lisbon's oldest quarter"
+PASS  tile 2 opens at "Lisbon · 2 of 5"
+PASS  tile 2: Esc closes view only, sheet open, focus back on "Open photo 2 of 5: Praça do Comércio, the riverfront square at the foot of the Baixa, seen from the Tagus"
+PASS  tile 3 opens at "Lisbon · 3 of 5"
+PASS  tile 3: Esc closes view only, sheet open, focus back on "Open photo 3 of 5: Tram 28 at Largo de Santa Luzia, on the historic tram line through the old town"
+PASS  tile 4 opens at "Lisbon · 4 of 5"
+PASS  tile 4: Esc closes view only, sheet open, focus back on "Open photo 4 of 5: A pastel de nata, the custard tart sold in bakeries across Lisbon"
+PASS  tile 5 opens at "Lisbon · 5 of 5"
+PASS  tile 5: Esc closes view only, sheet open, focus back on "Open photo 5 of 5: Praia da Rainha in Cascais, at the end of the coastal train line from Lisbon"
+PASS  "All 5 photos" opens at "Lisbon · 1 of 5"
+PASS  keys → → ← ← ← go 2,3,2,1,5 (expect 2,3,2,1,5 wrap)
+PASS  arrow buttons: Lisbon · 1 of 5 / Lisbon · 2 of 5 / Lisbon · 1 of 5
+viewer {"role":"dialog","modal":"true","title":"Lisbon · 3 of 5","cap":"Tram 28 at Largo de Santa Luzia, on the historic tram line through the old town","credit":"Photo: Jakub Hałun · CC BY 4.0 · Wikimedia Commons · resized","links":[{"t":"CC BY 4.0","href":"https://creativecommons.org/licenses/by/4.0","target":"_blank","rel":"noopener noreferrer license"},{"t":"Wikimedia Commons","href":"https://commons.wikimedia.org/wiki/File:Tram_28_at_Largo_de_Santa_Luzia_in_Lisbon,_20250606_1958_0419.jpg","target":"_blank","rel":"noopener noreferrer"}],"pill":"PLAN HOLDS 69% +5 pts vs 64% in St. Louis","pillBig":"69%","pillVs":"+5 pts vs 64% in St. Louis","cardBig":"69%","imgW":1264,"imgH":843,"natural":854,"alt":"A yellow vintage tram on a narrow street beside old buildings"}
+PASS  view is role=dialog aria-modal
+PASS  caption: "Tram 28 at Largo de Santa Luzia, on the historic tram line through the old town"
+PASS  author in credit: "Photo: Jakub Hałun · CC BY 4.0 · Wikimedia Commons · resized"
+PASS  licence link + Commons link: https://creativecommons.org/licenses/by/4.0 , https://commons.wikimedia.org/wiki/File:Tram_28_at_Largo_de_Santa_Luzia_in_Lisbon,_20250606_1958_0419.jpg
+PASS  odds pill "PLAN HOLDS 69% +5 pts vs 64% in St. Louis" matches card 69%
+PASS  image shown 1264x843 (natural 854)
+viewer contrast [{"s":".pview__title","text":"Lisbon · 3 of 5","fg":"236,241,238,1","bgOverWhite":"10,13,12,1","bgOverBlack":"10,13,12,1","layers":"opaque","alpha":"","ratio":17.09},{"s":".pview__caption","text":"Tram 28 at Largo de Santa Luzia, on the ","fg":"236,241,238,1","bgOverWhite":"10,13,12,1","bgOverBlack":"10,13,12,1","layers":"opaque","alpha":"","ratio":17.09},{"s":".pview__credit","text":"Photo: Jakub Hałun · CC BY 4.0 · Wikimed","fg":"169,181,175,1","bgOverWhite":"10,13,12,1","bgOverBlack":"10,13,12,1","layers":"opaque","alpha":"","ratio":9.22},{"s":".pview__credit a","text":"CC BY 4.0","fg":"236,241,238,1","bgOverWhite":"10,13,12,1","bgOverBlack":"10,13,12,1","layers":"opaque","alpha":"","ratio":17.09},{"s":".ppill__l","text":"Plan holds","fg":"169,181,175,1","bgOverWhite":"29,32,31,1","bgOverBlack":"29,32,31,1","layers":"ppill","alpha":"0.08","ratio":7.75},{"s":".ppill__big","text":"69%","fg":"144,219,186,1","bgOverWhite":"29,32,31,1","bgOverBlack":"29,32,31,1","layers":"ppill","alpha":"0.08","ratio":10.19},{"s":".ppill__vs","text":"+5 pts vs 64% in St. Louis","fg":"169,181,175,1","bgOverWhite":"29,32,31,1","bgOverBlack":"29,32,31,1","layers":"ppill","alpha":"0.08","ratio":7.75},{"s":".pview__hint","text":"← → keys · swipe on touch","fg":"169,181,175,1","bgOverWhite":"10,13,12,1","bgOverBlack":"10,13,12,1","layers":"opaque","alpha":"","ratio":9.22}]
+PASS  view .pview__title contrast 17.09:1
+PASS  view .pview__caption contrast 17.09:1
+PASS  view .pview__credit contrast 9.22:1
+PASS  view .pview__credit a contrast 17.09:1
+PASS  view .ppill__l contrast 7.75:1
+PASS  view .ppill__big contrast 10.19:1
+PASS  view .ppill__vs contrast 7.75:1
+PASS  view .pview__hint contrast 9.22:1
+viewer focus {"cls":"pview__btn pview__next","fv":true,"outline":"solid 2px rgb(91, 227, 176)"}
+PASS  viewer button focus ring: solid 2px rgb(91, 227, 176)
+PASS  Tab x9 stays inside the view
+PASS  All-button Esc: view closed, sheet open, focus "All 5 photos" (opener was the button)
+swipe Lisbon · 2 of 5 | Lisbon · 3 of 5 | Lisbon · 2 of 5 | Lisbon · 2 of 5
+PASS  swipe left → 3, swipe right → 2, vertical swipe stays (2 of, 3 of, 2 of, 2 of)
+phone light {"mosaic":false,"cover":true,"slides":5,"dots":5,"count":"1 / 5","badge":"YOUR PLAN HERE 69% plan holds +5 pts vs 64% in St. Louis","trackOverflow":true,"snap":"x mandatory","coverW":388,"docW":390,"bodyW":390,"iw":390,"sheetOverflow":[],"dotSize":[22,22]}
+PASS  [phone light] one cover, 5 slides, 5 dots, count 1 / 5, badge "YOUR PLAN HERE 69% plan holds +5 pts vs 64% in St. Louis"
+PASS  [phone light] no sideways page scroll (doc 390, body 390, vw 390)
+PASS  [phone light] nothing in the sheet sticks out past 390: []
+phone swipe {"count":"2 / 5","sl":388,"on":1,"cap":"Praça do Comércio, the riverfront square at the foot of the Baixa, seen from the Tagus","docW":390,"sx":0}
+PASS  [phone] swipe moves the cover to 2/5, dot 2 on, page not scrolled sideways (scrollX 0)
+PASS  [phone] dot 4 → 4 / 5
+PASS  [phone] tapping the cover opens the view at Lisbon · 4 of 5
+PASS  [phone] view top bar fits (pill right 374, close right 374)
+phone viewer contrast [{"s":".ppill__big","text":"69%","fg":"144,219,186,1","bgOverWhite":"29,32,31,1","bgOverBlack":"29,32,31,1","layers":"ppill","alpha":"0.08","ratio":10.19},{"s":".ppill__vs","text":"+5 pts vs 64% in St. Louis","fg":"169,181,175,1","bgOverWhite":"29,32,31,1","bgOverBlack":"29,32,31,1","layers":"ppill","alpha":"0.08","ratio":7.75},{"s":".pview__credit","text":"Photo: Paul Arps · CC BY 2.0 · Wikimedia","fg":"169,181,175,1","bgOverWhite":"10,13,12,1","bgOverBlack":"10,13,12,1","layers":"opaque","alpha":"","ratio":9.22}]
+phone badge contrast light [{"s":".podds__eyebrow","text":"Your plan here","fg":"94,101,95,1","bgOverWhite":"251,249,244,1","bgOverBlack":"251,249,244,1","layers":"podds podds--compact","alpha":"0.95","ratio":5.7},{"s":".podds__big","text":"69%","fg":"30,119,88,1","bgOverWhite":"251,249,244,1","bgOverBlack":"251,249,244,1","layers":"podds podds--compact","alpha":"0.95","ratio":5.2},{"s":".podds__l","text":"plan holds","fg":"74,82,77,1","bgOverWhite":"251,249,244,1","bgOverBlack":"251,249,244,1","layers":"podds podds--compact","alpha":"0.95","ratio":7.66},{"s":".podds__vs","text":"+5 pts vs 64% in St. Louis","fg":"74,82,77,1","bgOverWhite":"251,249,244,1","bgOverBlack":"251,249,244,1","layers":"podds podds--compact","alpha":"0.95","ratio":7.66}]
+PASS  [phone light] compact badge .podds__eyebrow contrast 5.7:1
+PASS  [phone light] compact badge .podds__big contrast 5.2:1
+PASS  [phone light] compact badge .podds__l contrast 7.66:1
+PASS  [phone light] compact badge .podds__vs contrast 7.66:1
+phone dark {"mosaic":false,"cover":true,"slides":5,"dots":5,"count":"1 / 5","badge":"YOUR PLAN HERE 69% plan holds +5 pts vs 64% in St. Louis","trackOverflow":true,"snap":"x mandatory","coverW":388,"docW":390,"bodyW":390,"iw":390,"sheetOverflow":[],"dotSize":[22,22]}
+PASS  [phone dark] one cover, 5 slides, 5 dots, count 1 / 5, badge "YOUR PLAN HERE 69% plan holds +5 pts vs 64% in St. Louis"
+PASS  [phone dark] no sideways page scroll (doc 390, body 390, vw 390)
+PASS  [phone dark] nothing in the sheet sticks out past 390: []
+phone badge contrast dark [{"s":".podds__eyebrow","text":"Your plan here","fg":"132,145,139,1","bgOverWhite":"17,23,21,1","bgOverBlack":"17,23,21,1","layers":"podds podds--compact","alpha":"0.95","ratio":5.53},{"s":".podds__big","text":"69%","fg":"144,219,186,1","bgOverWhite":"17,23,21,1","bgOverBlack":"17,23,21,1","layers":"podds podds--compact","alpha":"0.95","ratio":11.26},{"s":".podds__l","text":"plan holds","fg":"169,181,175,1","bgOverWhite":"17,23,21,1","bgOverBlack":"17,23,21,1","layers":"podds podds--compact","alpha":"0.95","ratio":8.57},{"s":".podds__vs","text":"+5 pts vs 64% in St. Louis","fg":"169,181,175,1","bgOverWhite":"17,23,21,1","bgOverBlack":"17,23,21,1","layers":"podds podds--compact","alpha":"0.95","ratio":8.57}]
+PASS  [phone dark] compact badge .podds__eyebrow contrast 5.53:1
+PASS  [phone dark] compact badge .podds__big contrast 11.26:1
+PASS  [phone dark] compact badge .podds__l contrast 8.57:1
+PASS  [phone dark] compact badge .podds__vs contrast 8.57:1
+reduced {"s":{"tileImg":"1e-06s none","dot":"1e-06s","track":"auto","bar":"68.85%"},"tf":"none","first":["1",["0","1","1","1","1","1","1","1","1","1","1","1"]],"imgs":["1"],"gone":true}
+PASS  [reduced] tile image transition: 1e-06s none
+PASS  [reduced] no hover zoom (transform none)
+PASS  [reduced] dots transition 1e-06s, track scroll-behavior auto
+PASS  [reduced] view has no fade: no in-between opacity on any frame, at most the mount frame at 0 (1; samples 0,1,1,1,1,1,1,1,1,1,1,1)
+PASS  [reduced] photo swap has no crossfade (img opacities next frame: 1)
+PASS  [reduced] Esc removes the view within two frames (no exit fade)
+control (motion on) {"first":["0","0.398079","0.649835","0.794809","0.879504","0.95983","0.97787","0.988557","0.994671","0.997896","0.99991","1"],"imgs":["0.429308","0.570692"]}
+PASS  [control] with motion on, the same probes do see a fade (probe is sensitive)
+
+console errors/warnings: none
+
+0 failing

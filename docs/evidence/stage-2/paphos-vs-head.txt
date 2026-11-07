@@ -1,0 +1,6 @@
+$ node paphos.cjs  # HEAD 58932cf build on :4232 vs working tree build on :4231; React useId values normalised
+PASS  paphos desktop light: sheet HTML identical to HEAD=true (len 24087/24087), .pgal present=false, differing pixels=0 of 1440000, errors=0
+PASS  paphos desktop dark: sheet HTML identical to HEAD=true (len 24087/24087), .pgal present=false, differing pixels=0 of 1440000, errors=0
+PASS  paphos phone light: sheet HTML identical to HEAD=true (len 24087/24087), .pgal present=false, differing pixels=0 of 329160, errors=0
+PASS  paphos phone dark: sheet HTML identical to HEAD=true (len 24087/24087), .pgal present=false, differing pixels=0 of 329160, errors=0
+0 failing

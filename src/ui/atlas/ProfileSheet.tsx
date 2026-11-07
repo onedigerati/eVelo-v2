@@ -9,9 +9,10 @@ import { CATEGORY_LABEL, costDelta, successColor, successTextColor, type Ranked 
 import { CodeChip } from './CodeChip'
 import { SCORE_KEYS, categoryCompare, costDataLine, oddsVsHome, type ProfiledPickView } from './picks'
 import { estateVsHome, taxLines, taxNotice, taxStatus } from './taxLines'
-// City photos (stage 2 renders them as the cover mosaic). Imported now so the build ships the
-// .webp files as hashed assets in dist/assets.
-import '../../data/photos'
+// Photo data is imported only here, in the lazy Atlas chunk, so it stays out of the main chunk.
+import { photosFor } from '../../data/photos'
+import { oddsBadge } from './gallery'
+import { PhotoGallery } from './PhotoGallery'
 
 /** Fact labels, in display order: the BBD facts first. */
 const FACT_LABEL: Record<keyof ExpatFacts, string> = {
@@ -53,9 +54,23 @@ export function ProfileSheet({ view, home, inputs, onClose, onChoose }: ProfileS
         )
       }
     >
-      {view && <ProfileBody view={view} home={home} inputs={inputs} onChoose={onChoose} />}
+      {view && (
+        <>
+          <ProfileGallery view={view} home={home} />
+          <ProfileBody view={view} home={home} inputs={inputs} onChoose={onChoose} />
+        </>
+      )}
     </Sheet>
   )
+}
+
+/** Design A cover mosaic with the odds badge; nothing at all for a city without photos. */
+function ProfileGallery({ view, home }: { view: ProfiledPickView<Ranked>; home?: Ranked }) {
+  const { city, row } = view
+  const photos = photosFor(city.id)
+  if (!photos.length) return null
+  const badge = oddsBadge(row, home && { cityId: home.cityId, successRate: home.successRate, name: home.city.name }, city.name)
+  return <PhotoGallery cityName={city.name} photos={photos} badge={badge} />
 }
 
 function ProfileBody({

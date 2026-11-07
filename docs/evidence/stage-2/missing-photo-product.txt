@@ -1,0 +1,6 @@
+$ rm src/data/photos/lisbon/3.webp (in a scratch copy of the working tree) && vite build && vite preview --port 4233 && node broken.cjs
+Atlas ranked, pick cards: 6
+Lisbon (3.webp deleted): {"pgal":false,"tiles":0,"card":"69%"}
+Algarve (untouched): {"pgal":true,"tiles":5,"card":"73%"}
+console: warning: photos: lisbon lists 3.webp but the file is missing; showing no photos for lisbon
+PASS  missing file drops only Lisbon's gallery; Atlas ranks and other galleries work

@@ -3,7 +3,7 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import sharp from 'sharp'
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import { doCity } from '../../../scripts/photos.mjs'
 import {
   MAX_BYTES,
@@ -22,7 +22,7 @@ import {
   validateHandFields,
 } from '../../../scripts/photos-lib.mjs'
 import { EXPAT_PICKS } from '../expatPicks'
-import { PHOTO_CITY_IDS, photosFor } from '../photos'
+import { PHOTO_CITY_IDS, buildPhotoIndex, photosFor, type CityPhotoEntry } from '../photos'
 
 const PHOTOS_DIR = fileURLToPath(new URL('../photos/', import.meta.url))
 const PILOTS = ['lisbon', 'algarve', 'panama-city', 'boquete', 'kuala-lumpur']
@@ -92,6 +92,56 @@ describe('city photos data', () => {
     for (const id of PHOTO_CITY_IDS) {
       const webps = readdirSync(`${PHOTOS_DIR}${id}`).filter((f) => f.endsWith('.webp')).sort()
       expect(webps, id).toEqual(photosFor(id).map((p) => p.file).sort())
+    }
+  })
+})
+
+describe('photo index (buildPhotoIndex)', () => {
+  const entry = (file: string): CityPhotoEntry => ({
+    commons: `File:${file}.jpg`,
+    file,
+    caption: 'A place',
+    alt: 'A view',
+    author: 'Ann',
+    license: 'CC BY 4.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by/4.0',
+    source: `https://commons.wikimedia.org/wiki/File:${file}.jpg`,
+    width: 1280,
+    height: 720,
+  })
+  const files = ['1.webp', '2.webp', '3.webp', '4.webp', '5.webp']
+  const lists = {
+    './photos/okville/photos.json': files.map(entry),
+    './photos/brokenville/photos.json': files.map(entry),
+  }
+  const urlsFor = (city: string, skip?: string) =>
+    Object.fromEntries(files.filter((f) => f !== skip).map((f) => [`./photos/${city}/${f}`, `/assets/${city}-${f}`]))
+
+  it('drops only the city whose listed file is missing, with one warning', () => {
+    const warnings: string[] = []
+    const index = buildPhotoIndex(lists, { ...urlsFor('okville'), ...urlsFor('brokenville', '3.webp') }, (m) => warnings.push(m))
+    expect(Object.keys(index)).toEqual(['okville'])
+    expect(index.okville.map((p) => p.src)).toEqual(files.map((f) => `/assets/okville-${f}`))
+    expect(index.brokenville).toBeUndefined()
+    expect(warnings).toHaveLength(1)
+    expect(warnings[0]).toMatch(/brokenville/)
+    expect(warnings[0]).toMatch(/3\.webp/)
+  })
+
+  it('does not throw and warns nothing when every file is there', () => {
+    const warn = vi.fn()
+    const index = buildPhotoIndex(lists, { ...urlsFor('okville'), ...urlsFor('brokenville') }, warn)
+    expect(Object.keys(index).sort()).toEqual(['brokenville', 'okville'])
+    expect(warn).not.toHaveBeenCalled()
+  })
+
+  it('warns through console.warn by default', () => {
+    const spy = vi.spyOn(console, 'warn').mockImplementation(() => {})
+    try {
+      expect(() => buildPhotoIndex(lists, {})).not.toThrow()
+      expect(spy).toHaveBeenCalledTimes(2)
+    } finally {
+      spy.mockRestore()
     }
   })
 })

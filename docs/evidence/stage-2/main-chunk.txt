@@ -1,0 +1,7 @@
+$ npm run build  # working tree vs HEAD 58932cf (git archive into scratch, same node_modules)
+working tree: dist/assets/index-DOoOwa46.js                                   532.80 kB │ gzip: 174.32 kB
+HEAD 58932cf: dist/assets/index-B6N_muBn.js  532.79 kB │ gzip: 174.31 kB
+delta: +0.01 kB (limit 2 kB)
+
+$ grep -l "Dale Cruse" dist/assets/*.js   # photo credits live only in the lazy Atlas chunk
+dist/assets/AtlasView-D7nOxkhG.js
