@@ -7,15 +7,18 @@ Give eVelo a landing page that says what the site is before a visitor meets the 
 2026-11-07 · tests: 189 pass (17 files) · typecheck: clean · build: ok
 
 ## Now
-Stage 1 of 2 · Landing route
-Mode: autopilot
+Stage 2 of 2 · Escape-velocity view
+Mode: paused — needs approval to publish the preview artifact, then deploy to GitHub Pages (and push the keel 0.5.2 commit)
 Risk: UI only
+Scope: replace the Stage 1 placeholder with study C (boards `Escape`/`EscapeLight`): seeded decorative paths + margin-call line behind logo, headline, copy, CTAs and legend; follows the site theme; phone layout; reduced motion. Then preview and, on approval, deploy.
 Checks:
-- [x] A first visit to the bare URL (no saved state, no hash) shows the landing; the app's top bar and tab bar are not shown on it (proof: test + run the product)
-- [x] After entering the app once (CTA, nav or any app route), reloading the bare URL opens the planner, not the landing (proof: test + run the product)
-- [x] Share links (`#p=…`) and route hashes (`#atlas`, `#method`, `#outlook`, `#plan`) never show the landing, even on a first visit (proof: test)
-- [x] `#home` always shows the landing, and the wordmark in the app links there (proof: run the product)
-- [x] Tests, typecheck and build pass
+- [x] The landing shows the logo, "Reach *escape velocity.*", the agreed body copy verbatim, "Launch my plan" (→ planner) and "What is Buy-Borrow-Die?" (→ Method), and the holds/bruised/broken legend; its header has the wordmark, theme toggle and "Open the planner" (proof: run the product)
+- [x] Behind it, seeded decorative paths draw themselves in: most rise in green, some dip in brass, a few break through the dashed margin-call line in coral and end in a dot; the picture is identical on every load (proof: test + run the product)
+- [x] It follows the site theme: paper with deeper green/brass/coral in light, ink with glowing paths in dark; the landing's toggle switches it live; text meets 4.5:1 over the paths (proof: run the product, both themes)
+- [x] At phone width (390px) it reads cleanly with no horizontal scroll, the CTAs are full-size touch targets, and the paths stay behind the text (proof: run the product)
+- [x] With reduced motion the paths appear fully drawn, with no animation (proof: run the product)
+- [x] Tests, typecheck and build pass; no console errors on the landing
+- [ ] Previewed on the preview artifact, and deployed to GitHub Pages on the user's approval (proof: run the product)
 Open: none
 
 ## Stages
@@ -31,6 +34,8 @@ Open: none
 - 2026-11-07 · The landing is full-bleed with its own slim header (wordmark, theme toggle, "Open the planner"); the app's top bar and phone tab bar are hidden on it — the study's composition depends on it; defaulted.
 - 2026-11-07 · Bare URL meaning is settled once per page load, so Back from the planner to the bare entry still shows the landing; unknown hashes are treated like the bare URL; the bare URL after entering opens `plan` (phones land on the Plan tab, was Outlook) — builder's calls inside the plan's intent, kept.
 - 2026-11-07 · A plan saved before the flag existed counts as having entered (checked once per device and recorded as `evelo:v2:entered` = `'1'`/`'0'`), so existing users aren't shown the landing; a plan saved from the landing (theme toggle) never counts — autopilot fix after verification flagged returning users.
+- 2026-11-07 · Landing field seed is 2815, not the study's 7: seed 7 yields no broken paths (57 hold, 7 bruised), so it can't show "a few break through"; 2815 gives 53/8/3 with the broken ends right of the text. Paths use `pathLength=1` so long paths finish drawing (the study's fixed 1800 dasharray clipped them) — builder's calls, kept.
+- 2026-11-07 · The margin-call label is drawn after the paths with a background-colour halo, so a coral path crossing it (seed 2815 at 1440px) never hides it — autopilot fix after verification.
 - 2026-11-07 · Stage evidence commits its screenshots (as earlier plans did); the verifier's `docs/evidence/.gitignore` was dropped.
 
 ## Open questions

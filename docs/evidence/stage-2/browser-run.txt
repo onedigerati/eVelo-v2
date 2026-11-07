@@ -1,0 +1,323 @@
+$ node docs/evidence/stage-2/drive.cjs   # vite preview --port 4181 of the current build
+
+================ CHECK 1 · content, header, CTA routes ================
+
+[d1280] fresh context, bare URL
+  {"hash":"","logo":96,"h1":"Reach escape velocity.","em":"escape velocity.","body":"A portfolio that grows faster than the loan against it never has to be sold. Spend the loan, keep the shares, leave them to your heirs. eVelo runs your plan through thousands of real market histories and counts how many actually reach escape velocity.","ctas":[["Launch my plan","#plan"],["What is Buy-Borrow-Die?","#method"]],"legend":["Holds: the loan never forces a sale","Bruised: a crash forced a sale, then recovered","Broken: the debt caught up"],"wordmark":"eVelo","toggle":["Color theme","System theme","Light theme","Dark theme"],"open":["Open the planner","#plan"],"topbar":false,"tabbar":false}
+  OK   logo rendered (96px wide)
+  OK   headline "Reach *escape velocity.*" with em on "escape velocity."
+  OK   body copy equals the plan Decisions copy exactly (whitespace-normalised)
+  OK   CTA labels
+  OK   legend holds / bruised / broken
+  OK   header wordmark
+  OK   theme toggle present (Color theme | System theme | Light theme | Dark theme)
+  OK   header "Open the planner"
+  OK   app top bar / tab bar hidden
+  click "Launch my plan" -> {"hash":"#plan","landing":false,"topbar":true,"method":false,"h1":"Your terms"}
+  OK   "Launch my plan" routes to #plan and leaves the landing
+  click "What is Buy-Borrow-Die?" -> {"hash":"#method","landing":false,"topbar":true,"method":true,"h1":"How the futures are made"}
+  OK   "What is Buy-Borrow-Die?" routes to #method and leaves the landing
+  OK   Method view rendered
+  click "Open the planner" -> {"hash":"#plan","landing":false,"topbar":true,"method":false,"h1":"Your terms"}
+  OK   "Open the planner" routes to #plan and leaves the landing
+
+[d1440] fresh context, bare URL
+  {"hash":"","logo":96,"h1":"Reach escape velocity.","em":"escape velocity.","body":"A portfolio that grows faster than the loan against it never has to be sold. Spend the loan, keep the shares, leave them to your heirs. eVelo runs your plan through thousands of real market histories and counts how many actually reach escape velocity.","ctas":[["Launch my plan","#plan"],["What is Buy-Borrow-Die?","#method"]],"legend":["Holds: the loan never forces a sale","Bruised: a crash forced a sale, then recovered","Broken: the debt caught up"],"wordmark":"eVelo","toggle":["Color theme","System theme","Light theme","Dark theme"],"open":["Open the planner","#plan"],"topbar":false,"tabbar":false}
+  OK   logo rendered (96px wide)
+  OK   headline "Reach *escape velocity.*" with em on "escape velocity."
+  OK   body copy equals the plan Decisions copy exactly (whitespace-normalised)
+  OK   CTA labels
+  OK   legend holds / bruised / broken
+  OK   header wordmark
+  OK   theme toggle present (Color theme | System theme | Light theme | Dark theme)
+  OK   header "Open the planner"
+  OK   app top bar / tab bar hidden
+  click "Launch my plan" -> {"hash":"#plan","landing":false,"topbar":true,"method":false,"h1":"Your terms"}
+  OK   "Launch my plan" routes to #plan and leaves the landing
+  click "What is Buy-Borrow-Die?" -> {"hash":"#method","landing":false,"topbar":true,"method":true,"h1":"How the futures are made"}
+  OK   "What is Buy-Borrow-Die?" routes to #method and leaves the landing
+  OK   Method view rendered
+  click "Open the planner" -> {"hash":"#plan","landing":false,"topbar":true,"method":false,"h1":"Your terms"}
+  OK   "Open the planner" routes to #plan and leaves the landing
+
+[p390] fresh context, bare URL
+  {"hash":"","logo":72,"h1":"Reach escape velocity.","em":"escape velocity.","body":"A portfolio that grows faster than the loan against it never has to be sold. Spend the loan, keep the shares, leave them to your heirs. eVelo runs your plan through thousands of real market histories and counts how many actually reach escape velocity.","ctas":[["Launch my plan","#plan"],["What is Buy-Borrow-Die?","#method"]],"legend":["Holds: the loan never forces a sale","Bruised: a crash forced a sale, then recovered","Broken: the debt caught up"],"wordmark":"eVelo","toggle":["System theme — switch to light theme"],"open":["Open the planner","#plan"],"topbar":false,"tabbar":false}
+  OK   logo rendered (72px wide)
+  OK   headline "Reach *escape velocity.*" with em on "escape velocity."
+  OK   body copy equals the plan Decisions copy exactly (whitespace-normalised)
+  OK   CTA labels
+  OK   legend holds / bruised / broken
+  OK   header wordmark
+  OK   theme toggle present (System theme — switch to light theme)
+  OK   header "Open the planner"
+  OK   app top bar / tab bar hidden
+  click "Launch my plan" -> {"hash":"#plan","landing":false,"topbar":true,"method":false,"h1":"Your terms"}
+  OK   "Launch my plan" routes to #plan and leaves the landing
+  click "What is Buy-Borrow-Die?" -> {"hash":"#method","landing":false,"topbar":true,"method":true,"h1":"How the futures are made"}
+  OK   "What is Buy-Borrow-Die?" routes to #method and leaves the landing
+  OK   Method view rendered
+  click "Open the planner" -> {"hash":"#plan","landing":false,"topbar":true,"method":false,"h1":"Your terms"}
+  OK   "Open the planner" routes to #plan and leaves the landing
+
+================ CHECK 2 · seeded paths draw in ================
+  paths 64 · by class {"holds":53,"broken":3,"bruised":8}
+  computed strokes {"holds":"rgb(11, 122, 86) @0.34 w1.3px","broken":"rgb(210, 69, 47) @0.8 w1.4px","bruised":"rgb(168, 122, 31) @0.6 w1.3px"}
+  threshold y=829.2 stroke rgb(210, 69, 47) dasharray "4px, 6px" label "margin-call line"
+  coral end dots [{"x":1404,"y":838,"fill":"rgb(210, 69, 47)"},{"x":828,"y":847.2,"fill":"rgb(210, 69, 47)"},{"x":840,"y":840.8,"fill":"rgb(210, 69, 47)"}]
+  broken paths' last points ["1404.0 838.0","828.0 847.2","840.0 840.8"]
+  animation landing-draw 3.2s dasharray "1px, 2px" pathLength=1
+  dashoffset mid-animation (first 64): min 0.242 max 1.000; finished: max 0.000
+  OK   64 path strokes
+  OK   most hold (53)
+  OK   some bruised (8)
+  OK   a few broken (3)
+  OK   one coral end dot per broken path
+  OK   every end dot lies past (below) the margin-call line
+  OK   each broken path ends exactly on its dot
+  OK   margin-call line is dashed
+  OK   draw-in animation applied
+  OK   paths still drawing ~0.9 s after load (mid-animation)
+  OK   all paths fully drawn after ~6 s
+  OK   second fresh load: all 64 d attributes identical
+  OK   phone load: d attributes identical
+  OK   two loads at 1440x900 give byte-identical screenshots
+
+================ CHECK 3 · follows the theme, live toggle, contrast ================
+
+[d1280] system theme, OS light: {"theme":"system","bg":"rgb(245, 242, 234)","holds":"rgb(11, 122, 86)","ink":"rgb(20, 24, 21)"}
+  OK   theme preference is system on first visit
+  OK   body is paper #f5f2ea
+  OK   holds paths deeper green #0b7a56
+  contrast d1280 system→light:
+    headline       text rgb(20, 24, 21) op 1  worst 15.19 (bg rgb(239,236,228)) · p1 15.33 · median 15.60 · 20748 px
+    accent         text rgb(10, 110, 77) op 1  worst 5.13 (bg rgb(232,233,225)) · p1 5.36 · median 5.45 · 49020 px
+    body           text rgb(74, 82, 77) op 1  worst 6.23 (bg rgb(229,226,218)) · p1 6.49 · median 6.95 · 53925 px
+    ctaPrimary     text rgb(255, 255, 255) op 1  worst 5.34 (bg rgb(11,122,86)) · p1 5.34 · median 5.41 · 2541 px
+    ctaLink        text rgb(20, 24, 21) op 1  worst 13.98 (bg rgb(237,225,217)) · p1 14.24 · median 15.46 · 3306 px
+    open           text rgb(20, 24, 21) op 1  worst 14.95 (bg rgb(235,235,226)) · p1 14.99 · median 15.40 · 2016 px
+    wordmark       text rgb(20, 24, 21) op 1  worst 15.19 (bg rgb(239,236,228)) · p1 15.33 · median 15.60 · 1770 px
+    legend         text rgb(74, 82, 77) op 1  worst 6.77 (bg rgb(238,235,228)) · p1 6.89 · median 7.02 · 10744 px
+    thresholdLabel text rgb(181, 54, 31) op 1  worst 1.68 (bg rgb(214,102,84)) · p1 2.40 · median 5.20 · 1248 px  [decorative SVG label, not counted]
+  -> minimum over text: 5.13
+
+[d1280] system theme, OS dark: {"theme":"system","bg":"rgb(10, 13, 12)","holds":"rgb(91, 227, 176)","ink":"rgb(236, 241, 238)"}
+  OK   theme preference is system on first visit
+  OK   body is ink #0a0d0c
+  OK   holds paths glowing #5be3b0
+  contrast d1280 system→dark:
+    headline       text rgb(236, 241, 238) op 1  worst 17.09 (bg rgb(10,13,12)) · p1 17.09 · median 17.09 · 20748 px
+    accent         text rgb(91, 227, 176) op 1  worst 11.44 (bg rgb(13,22,19)) · p1 12.14 · median 12.14 · 49020 px
+    body           text rgb(169, 181, 175) op 1  worst 7.88 (bg rgb(17,33,28)) · p1 8.42 · median 9.22 · 53925 px
+    ctaPrimary     text rgb(4, 20, 13) op 1  worst 11.75 (bg rgb(91,227,176)) · p1 11.77 · median 11.77 · 2541 px
+    ctaLink        text rgb(236, 241, 238) op 1  worst 15.23 (bg rgb(31,25,19)) · p1 15.79 · median 17.09 · 3306 px
+    open           text rgb(236, 241, 238) op 1  worst 16.69 (bg rgb(11,17,15)) · p1 16.69 · median 16.87 · 2016 px
+    wordmark       text rgb(236, 241, 238) op 1  worst 17.09 (bg rgb(10,13,12)) · p1 17.09 · median 17.09 · 1770 px
+    legend         text rgb(169, 181, 175) op 1  worst 9.16 (bg rgb(11,14,13)) · p1 9.16 · median 9.22 · 10744 px
+    thresholdLabel text rgb(255, 122, 106) op 0.8  worst 1.59 (bg rgb(194,84,71)) · p1 2.42 · median 5.20 · 1248 px  [decorative SVG label, not counted]
+  -> minimum over text: 7.88
+
+[d1440] system theme, OS light: {"theme":"system","bg":"rgb(245, 242, 234)","holds":"rgb(11, 122, 86)","ink":"rgb(20, 24, 21)"}
+  OK   theme preference is system on first visit
+  OK   body is paper #f5f2ea
+  OK   holds paths deeper green #0b7a56
+  contrast d1440 system→light:
+    headline       text rgb(20, 24, 21) op 1  worst 15.16 (bg rgb(238,236,228)) · p1 15.33 · median 15.60 · 24875 px
+    accent         text rgb(10, 110, 77) op 1  worst 5.13 (bg rgb(232,233,225)) · p1 5.31 · median 5.45 · 58500 px
+    body           text rgb(74, 82, 77) op 1  worst 6.21 (bg rgb(231,225,217)) · p1 6.47 · median 6.95 · 53925 px
+    ctaPrimary     text rgb(255, 255, 255) op 1  worst 5.34 (bg rgb(11,122,86)) · p1 5.34 · median 5.41 · 2541 px
+    ctaLink        text rgb(20, 24, 21) op 1  worst 13.98 (bg rgb(237,225,217)) · p1 14.26 · median 15.46 · 3306 px
+    open           text rgb(20, 24, 21) op 1  worst 14.99 (bg rgb(236,235,227)) · p1 15.12 · median 15.40 · 2016 px
+    wordmark       text rgb(20, 24, 21) op 1  worst 15.19 (bg rgb(239,236,228)) · p1 15.33 · median 15.60 · 1770 px
+    legend         text rgb(74, 82, 77) op 1  worst 6.77 (bg rgb(238,235,228)) · p1 6.89 · median 7.02 · 10744 px
+    thresholdLabel text rgb(181, 54, 31) op 1  worst 1.68 (bg rgb(214,102,84)) · p1 2.38 · median 5.20 · 1568 px  [decorative SVG label, not counted]
+  -> minimum over text: 5.13
+
+[d1440] system theme, OS dark: {"theme":"system","bg":"rgb(10, 13, 12)","holds":"rgb(91, 227, 176)","ink":"rgb(236, 241, 238)"}
+  OK   theme preference is system on first visit
+  OK   body is ink #0a0d0c
+  OK   holds paths glowing #5be3b0
+  contrast d1440 system→dark:
+    headline       text rgb(236, 241, 238) op 1  worst 17.09 (bg rgb(10,13,12)) · p1 17.09 · median 17.09 · 24875 px
+    accent         text rgb(91, 227, 176) op 1  worst 11.35 (bg rgb(14,23,19)) · p1 11.84 · median 12.14 · 58500 px
+    body           text rgb(169, 181, 175) op 1  worst 7.71 (bg rgb(30,33,24)) · p1 8.40 · median 9.22 · 53925 px
+    ctaPrimary     text rgb(4, 20, 13) op 1  worst 11.75 (bg rgb(91,227,176)) · p1 11.77 · median 11.77 · 2541 px
+    ctaLink        text rgb(236, 241, 238) op 1  worst 15.12 (bg rgb(28,27,19)) · p1 15.74 · median 17.09 · 3306 px
+    open           text rgb(236, 241, 238) op 1  worst 16.69 (bg rgb(11,17,15)) · p1 16.78 · median 16.87 · 2016 px
+    wordmark       text rgb(236, 241, 238) op 1  worst 17.09 (bg rgb(10,13,12)) · p1 17.09 · median 17.09 · 1770 px
+    legend         text rgb(169, 181, 175) op 1  worst 9.16 (bg rgb(11,14,13)) · p1 9.16 · median 9.22 · 10744 px
+    thresholdLabel text rgb(255, 122, 106) op 0.8  worst 1.58 (bg rgb(195,85,72)) · p1 2.39 · median 5.20 · 1568 px  [decorative SVG label, not counted]
+  -> minimum over text: 7.71
+
+[p390] system theme, OS light: {"theme":"system","bg":"rgb(245, 242, 234)","holds":"rgb(11, 122, 86)","ink":"rgb(20, 24, 21)"}
+  OK   theme preference is system on first visit
+  OK   body is paper #f5f2ea
+  OK   holds paths deeper green #0b7a56
+  contrast p390 system→light:
+    headline       text rgb(20, 24, 21) op 1  worst 14.66 (bg rgb(232,233,225)) · p1 14.95 · median 15.60 · 6300 px
+    accent         text rgb(10, 110, 77) op 1  worst 4.94 (bg rgb(225,230,220)) · p1 5.18 · median 5.44 · 15372 px
+    body           text rgb(74, 82, 77) op 1  worst 5.94 (bg rgb(214,224,213)) · p1 6.27 · median 6.95 · 42262 px
+    ctaPrimary     text rgb(255, 255, 255) op 1  worst 5.34 (bg rgb(11,122,86)) · p1 5.34 · median 5.41 · 2541 px
+    ctaLink        text rgb(20, 24, 21) op 1  worst 12.44 (bg rgb(230,212,195)) · p1 13.56 · median 15.60 · 3306 px
+    open           text rgb(20, 24, 21) op 1  worst 15.19 (bg rgb(239,236,228)) · p1 15.33 · median 15.60 · 2016 px
+    wordmark       text rgb(20, 24, 21) op 1  worst 15.16 (bg rgb(238,236,228)) · p1 15.19 · median 15.57 · 1770 px
+    legend         text rgb(74, 82, 77) op 1  worst 6.72 (bg rgb(238,234,227)) · p1 6.82 · median 6.95 · 10744 px
+    thresholdLabel: not found
+  -> minimum over text: 4.94
+
+[p390] system theme, OS dark: {"theme":"system","bg":"rgb(10, 13, 12)","holds":"rgb(91, 227, 176)","ink":"rgb(236, 241, 238)"}
+  OK   theme preference is system on first visit
+  OK   body is ink #0a0d0c
+  OK   holds paths glowing #5be3b0
+  contrast p390 system→dark:
+    headline       text rgb(236, 241, 238) op 1  worst 16.11 (bg rgb(13,22,19)) · p1 16.36 · median 17.09 · 6300 px
+    accent         text rgb(91, 227, 176) op 1  worst 10.69 (bg rgb(16,30,25)) · p1 11.53 · median 12.14 · 15372 px
+    body           text rgb(169, 181, 175) op 1  worst 7.24 (bg rgb(20,41,34)) · p1 8.03 · median 9.22 · 42262 px
+    ctaPrimary     text rgb(4, 20, 13) op 1  worst 11.75 (bg rgb(91,227,176)) · p1 11.77 · median 11.77 · 2541 px
+    ctaLink        text rgb(236, 241, 238) op 1  worst 12.57 (bg rgb(54,39,27)) · p1 14.25 · median 17.09 · 3306 px
+    open           text rgb(236, 241, 238) op 1  worst 17.08 (bg rgb(10,13,13)) · p1 17.08 · median 17.09 · 2016 px
+    wordmark       text rgb(236, 241, 238) op 1  worst 16.98 (bg rgb(11,14,13)) · p1 16.98 · median 17.09 · 1770 px
+    legend         text rgb(169, 181, 175) op 1  worst 9.10 (bg rgb(12,15,13)) · p1 9.10 · median 9.16 · 10744 px
+    thresholdLabel: not found
+  -> minimum over text: 7.24
+
+[d1280] live toggle on the landing
+  start  {"marker":1,"theme":"system","bg":"rgb(245, 242, 234)","holds":"rgb(11, 122, 86)","broken":"rgb(210, 69, 47)","bruised":"rgb(168, 122, 31)","h1":"rgb(20, 24, 21)","landing":true}
+  Dark theme   {"marker":1,"theme":"dark","bg":"rgb(10, 13, 12)","holds":"rgb(91, 227, 176)","broken":"rgb(255, 107, 90)","bruised":"rgb(227, 178, 98)","h1":"rgb(236, 241, 238)","landing":true}
+  OK   no reload, still on the landing
+  OK   dark: ink bg, glowing green/brass/coral
+  Light theme  {"marker":1,"theme":"light","bg":"rgb(245, 242, 234)","holds":"rgb(11, 122, 86)","broken":"rgb(210, 69, 47)","bruised":"rgb(168, 122, 31)","h1":"rgb(20, 24, 21)","landing":true}
+  OK   no reload, still on the landing
+  OK   light: paper bg, deeper green/brass/coral
+  System theme {"marker":1,"theme":"system","bg":"rgb(245, 242, 234)","holds":"rgb(11, 122, 86)","broken":"rgb(210, 69, 47)","bruised":"rgb(168, 122, 31)","h1":"rgb(20, 24, 21)","landing":true}
+  OK   no reload, still on the landing
+  OK   toggling on the landing does not count as entering (flag=0)
+
+[p390] live toggle on the landing
+  start  {"marker":1,"theme":"system","bg":"rgb(245, 242, 234)","holds":"rgb(11, 122, 86)","broken":"rgb(210, 69, 47)","bruised":"rgb(168, 122, 31)","h1":"rgb(20, 24, 21)","landing":true}
+  cycle        {"marker":1,"theme":"light","bg":"rgb(245, 242, 234)","holds":"rgb(11, 122, 86)","broken":"rgb(210, 69, 47)","bruised":"rgb(168, 122, 31)","h1":"rgb(20, 24, 21)","landing":true}
+  OK   no reload, still on the landing
+  OK   light: paper bg, deeper green/brass/coral
+  cycle        {"marker":1,"theme":"dark","bg":"rgb(10, 13, 12)","holds":"rgb(91, 227, 176)","broken":"rgb(255, 107, 90)","bruised":"rgb(227, 178, 98)","h1":"rgb(236, 241, 238)","landing":true}
+  OK   no reload, still on the landing
+  OK   dark: ink bg, glowing green/brass/coral
+  cycle        {"marker":1,"theme":"system","bg":"rgb(245, 242, 234)","holds":"rgb(11, 122, 86)","broken":"rgb(210, 69, 47)","bruised":"rgb(168, 122, 31)","h1":"rgb(20, 24, 21)","landing":true}
+  OK   no reload, still on the landing
+  OK   toggling on the landing does not count as entering (flag=0)
+  contrast d1280 explicit Light theme (OS opposite):
+    headline       text rgb(20, 24, 21) op 1  worst 15.19 (bg rgb(239,236,228)) · p1 15.33 · median 15.60 · 20748 px
+    accent         text rgb(10, 110, 77) op 1  worst 5.13 (bg rgb(232,233,225)) · p1 5.36 · median 5.45 · 49020 px
+    body           text rgb(74, 82, 77) op 1  worst 6.23 (bg rgb(229,226,218)) · p1 6.49 · median 6.95 · 53925 px
+    ctaPrimary     text rgb(255, 255, 255) op 1  worst 5.34 (bg rgb(11,122,86)) · p1 5.34 · median 5.41 · 2541 px
+    ctaLink        text rgb(20, 24, 21) op 1  worst 13.98 (bg rgb(237,225,217)) · p1 14.24 · median 15.46 · 3306 px
+    open           text rgb(20, 24, 21) op 1  worst 14.95 (bg rgb(235,235,226)) · p1 14.99 · median 15.40 · 2016 px
+    wordmark       text rgb(20, 24, 21) op 1  worst 15.19 (bg rgb(239,236,228)) · p1 15.33 · median 15.60 · 1770 px
+    legend         text rgb(74, 82, 77) op 1  worst 6.77 (bg rgb(238,235,228)) · p1 6.89 · median 7.02 · 10744 px
+    thresholdLabel text rgb(181, 54, 31) op 1  worst 1.68 (bg rgb(214,102,84)) · p1 2.40 · median 5.20 · 1248 px  [decorative SVG label, not counted]
+  -> minimum over text: 5.13
+  contrast d1280 explicit Dark theme (OS opposite):
+    headline       text rgb(236, 241, 238) op 1  worst 17.09 (bg rgb(10,13,12)) · p1 17.09 · median 17.09 · 20748 px
+    accent         text rgb(91, 227, 176) op 1  worst 11.44 (bg rgb(13,22,19)) · p1 12.14 · median 12.14 · 49020 px
+    body           text rgb(169, 181, 175) op 1  worst 7.88 (bg rgb(17,33,28)) · p1 8.42 · median 9.22 · 53925 px
+    ctaPrimary     text rgb(4, 20, 13) op 1  worst 11.75 (bg rgb(91,227,176)) · p1 11.77 · median 11.77 · 2541 px
+    ctaLink        text rgb(236, 241, 238) op 1  worst 15.23 (bg rgb(31,25,19)) · p1 15.79 · median 17.09 · 3306 px
+    open           text rgb(236, 241, 238) op 1  worst 16.69 (bg rgb(11,17,15)) · p1 16.69 · median 16.87 · 2016 px
+    wordmark       text rgb(236, 241, 238) op 1  worst 17.09 (bg rgb(10,13,12)) · p1 17.09 · median 17.09 · 1770 px
+    legend         text rgb(169, 181, 175) op 1  worst 9.16 (bg rgb(11,14,13)) · p1 9.16 · median 9.22 · 10744 px
+    thresholdLabel text rgb(255, 122, 106) op 0.8  worst 1.59 (bg rgb(194,84,71)) · p1 2.42 · median 5.20 · 1248 px  [decorative SVG label, not counted]
+  -> minimum over text: 7.88
+
+================ CHECK 4 · phone width ================
+
+[p390 light] {"innerWidth":390,"scrollWidth":390,"bodySW":390,"primary":{"w":350,"h":52,"l":20,"r":370},"link":{"w":350,"h":44,"l":20,"r":370},"open":{"w":146,"h":44,"l":224,"r":370},"toggle":{"w":44,"h":44,"l":168,"r":212},"hitTest":[[".landing__headline",""],[".landing__body","landing__body"],[".landing__cta--primary","landing__cta landing__cta--primary"],[".landing__cta--link","landing__cta landing__cta--link"],[".landing__legend .landing__key","landing__key"]],"fieldPointer":"none","fieldZ":"auto","overflowing":[]}
+  OK   no horizontal scroll (scrollWidth 390 <= 390)
+  OK   no landing element extends past the viewport edges
+  OK   CTAs >= 44px tall (52, 44)
+  OK   primary CTA spans the column (350px)
+  OK   header targets >= 44px (open 44, toggle 44x44)
+  OK   text and CTAs sit above the field (hit-test never lands on the SVG)
+
+[p390 dark] {"innerWidth":390,"scrollWidth":390,"bodySW":390,"primary":{"w":350,"h":52,"l":20,"r":370},"link":{"w":350,"h":44,"l":20,"r":370},"open":{"w":146,"h":44,"l":224,"r":370},"toggle":{"w":44,"h":44,"l":168,"r":212},"hitTest":[[".landing__headline",""],[".landing__body","landing__body"],[".landing__cta--primary","landing__cta landing__cta--primary"],[".landing__cta--link","landing__cta landing__cta--link"],[".landing__legend .landing__key","landing__key"]],"fieldPointer":"none","fieldZ":"auto","overflowing":[]}
+  OK   no horizontal scroll (scrollWidth 390 <= 390)
+  OK   no landing element extends past the viewport edges
+  OK   CTAs >= 44px tall (52, 44)
+  OK   primary CTA spans the column (350px)
+  OK   header targets >= 44px (open 44, toggle 44x44)
+  OK   text and CTAs sit above the field (hit-test never lands on the SVG)
+
+[p360 light] {"innerWidth":360,"scrollWidth":360,"bodySW":360,"primary":{"w":320,"h":52,"l":20,"r":340},"link":{"w":320,"h":44,"l":20,"r":340},"open":{"w":146,"h":44,"l":194,"r":340},"toggle":{"w":44,"h":44,"l":138,"r":182},"hitTest":[[".landing__headline",""],[".landing__body","landing__body"],[".landing__cta--primary","landing__cta landing__cta--primary"],[".landing__cta--link","landing__cta landing__cta--link"],[".landing__legend .landing__key","landing__key"]],"fieldPointer":"none","fieldZ":"auto","overflowing":[]}
+  OK   no horizontal scroll (scrollWidth 360 <= 360)
+  OK   no landing element extends past the viewport edges
+  OK   CTAs >= 44px tall (52, 44)
+  OK   primary CTA spans the column (320px)
+  OK   header targets >= 44px (open 44, toggle 44x44)
+  OK   text and CTAs sit above the field (hit-test never lands on the SVG)
+
+[p360 dark] {"innerWidth":360,"scrollWidth":360,"bodySW":360,"primary":{"w":320,"h":52,"l":20,"r":340},"link":{"w":320,"h":44,"l":20,"r":340},"open":{"w":146,"h":44,"l":194,"r":340},"toggle":{"w":44,"h":44,"l":138,"r":182},"hitTest":[[".landing__headline",""],[".landing__body","landing__body"],[".landing__cta--primary","landing__cta landing__cta--primary"],[".landing__cta--link","landing__cta landing__cta--link"],[".landing__legend .landing__key","landing__key"]],"fieldPointer":"none","fieldZ":"auto","overflowing":[]}
+  OK   no horizontal scroll (scrollWidth 360 <= 360)
+  OK   no landing element extends past the viewport edges
+  OK   CTAs >= 44px tall (52, 44)
+  OK   primary CTA spans the column (320px)
+  OK   header targets >= 44px (open 44, toggle 44x44)
+  OK   text and CTAs sit above the field (hit-test never lands on the SVG)
+
+================ CHECK 5 · reduced motion ================
+  [d1280 light] {"names":["none"],"dash":["none"],"offs":["0px"],"running":0}
+  OK   animation-name none on every path
+  OK   stroke-dasharray none (fully drawn)
+  OK   no landing-draw animations running
+    reduced-at-load vs animated-after-6s: 15/1024000 px differ by >8 (max channel diff 18)
+  OK   reduced-motion picture at load matches the finished animated picture
+  [d1280 dark] {"names":["none"],"dash":["none"],"offs":["0px"],"running":0}
+  OK   animation-name none on every path
+  OK   stroke-dasharray none (fully drawn)
+  OK   no landing-draw animations running
+    reduced-at-load vs animated-after-6s: 19/1024000 px differ by >8 (max channel diff 24)
+  OK   reduced-motion picture at load matches the finished animated picture
+  [p390 light] {"names":["none"],"dash":["none"],"offs":["0px"],"running":0}
+  OK   animation-name none on every path
+  OK   stroke-dasharray none (fully drawn)
+  OK   no landing-draw animations running
+    reduced-at-load vs animated-after-6s: 69/329160 px differ by >8 (max channel diff 54)
+  OK   reduced-motion picture at load matches the finished animated picture
+
+================ Stage 1 routing regression ================
+  [d1280] first visit bare: {"hash":"","landing":true,"topbar":false,"tabbar":false,"flag":"0"}
+  OK   first visit to bare URL shows the landing
+  [d1280] after CTA: {"hash":"#plan","landing":false,"topbar":true,"tabbar":false,"flag":"1"}
+  OK   CTA enters the app (#plan, top bar, flag set)
+  [d1280] reload bare: {"hash":"","landing":false,"topbar":true,"tabbar":false,"flag":"1"}
+  OK   bare URL after entering opens the planner
+  [d1280] #home: {"hash":"#home","landing":true,"topbar":false,"tabbar":false,"flag":"1"}
+  OK   #home brings the landing back
+  [d1280] first visit #atlas: {"landing":false,"hash":"#atlas"}
+  OK   route hash on first visit goes straight to the app
+  [p390] first visit bare: {"hash":"","landing":true,"topbar":false,"tabbar":false,"flag":"0"}
+  OK   first visit to bare URL shows the landing
+  [p390] after CTA: {"hash":"#plan","landing":false,"topbar":true,"tabbar":true,"flag":"1"}
+  OK   CTA enters the app (#plan, top bar, flag set)
+  OK   phone tab bar present
+  [p390] reload bare: {"hash":"","landing":false,"topbar":true,"tabbar":true,"flag":"1"}
+  OK   bare URL after entering opens the planner
+  [p390] #home: {"hash":"#home","landing":true,"topbar":false,"tabbar":false,"flag":"1"}
+  OK   #home brings the landing back
+  [p390] first visit #atlas: {"landing":false,"hash":"#atlas"}
+  OK   route hash on first visit goes straight to the app
+
+================ CHECK 6 · console ================
+  landing loads: 41; console errors / page errors: 0
+  OK   no console errors
+
+================ contrast minima ================
+  d1280 light                      5.13
+  d1280 dark                       7.88
+  d1440 light                      5.13
+  d1440 dark                       7.71
+  p390 light                       4.94
+  p390 dark                        7.24
+  d1280 explicit Light theme       5.13
+  d1280 explicit Dark theme        7.88
+  p390 light (phone)               4.94
+  p390 dark (phone)                7.24
+  overall minimum: 4.94
+
+FAILS: 0

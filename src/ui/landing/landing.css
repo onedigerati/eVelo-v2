@@ -1,11 +1,142 @@
-/* ============ Landing (#home) ============ */
-/* Full-bleed: replaces the app shell, so it owns the whole viewport and its own header. */
+/* ============ Landing (#home) — study C, "Escape velocity" ============ */
+/* Full-bleed: replaces the app shell, so it owns the whole viewport and its own header.
+ * Colours are theme tokens (holds/bruised/broken, ink, bg, accent) plus a few landing-only knobs
+ * below, re-declared per theme with the same selectors as tokens.css — no JS colour switching. */
+
 .landing {
+  /* Light (paper): deeper paths, slightly stronger (EscapeLight board). */
+  --lp-o-holds: 0.34;
+  --lp-o-bruised: 0.6;
+  --lp-o-broken: 0.8;
+  --lp-w: 1.3;
+  --lp-w-broken: 1.4;
+  --lp-threshold-o: 0.55;
+  --lp-label-o: 1;
+  --lp-scrim-0: 97%;
+  --lp-scrim-1: 88%;
+  --lp-pad: 32px;
+
+  position: relative;
   min-height: 100dvh;
+  overflow: clip;
+  /* Transparent: the body's paper/ink and its two glows show through (they match the study). */
+  color: var(--ink);
+}
+[data-theme='dark'] .landing {
+  /* Dark (ink): glowing paths (Escape board). */
+  --lp-o-holds: 0.32;
+  --lp-o-bruised: 0.55;
+  --lp-o-broken: 0.75;
+  --lp-w: 1.2;
+  --lp-threshold-o: 0.5;
+  --lp-label-o: 0.8;
+  --lp-scrim-0: 96%;
+  --lp-scrim-1: 86%;
+}
+@media (prefers-color-scheme: dark) {
+  [data-theme='system'] .landing {
+    --lp-o-holds: 0.32;
+    --lp-o-bruised: 0.55;
+    --lp-o-broken: 0.75;
+    --lp-w: 1.2;
+    --lp-threshold-o: 0.5;
+    --lp-label-o: 0.8;
+    --lp-scrim-0: 96%;
+    --lp-scrim-1: 86%;
+  }
+}
+
+/* ---------- The field ---------- */
+.landing__field {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.landing__threshold {
+  stroke: var(--broken);
+  stroke-opacity: var(--lp-threshold-o);
+  stroke-width: 1;
+  stroke-dasharray: 4 6;
+}
+.landing__threshold-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  fill: var(--broken-text);
+  fill-opacity: var(--lp-label-o);
+  stroke: var(--bg);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+  paint-order: stroke;
+}
+.landing__path {
+  fill: none;
+  stroke-width: var(--lp-w);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  /* pathLength="1": the dash covers any path length (the study's fixed 1800 clipped long walks). */
+  stroke-dasharray: 1 2;
+  animation: landing-draw 3.2s var(--ease-out) both;
+}
+.landing__path--holds {
+  stroke: var(--holds);
+  stroke-opacity: var(--lp-o-holds);
+}
+.landing__path--bruised {
+  stroke: var(--bruised);
+  stroke-opacity: var(--lp-o-bruised);
+}
+.landing__path--broken {
+  stroke: var(--broken);
+  stroke-opacity: var(--lp-o-broken);
+  stroke-width: var(--lp-w-broken);
+}
+.landing__end {
+  fill: var(--broken);
+}
+.landing__start {
+  fill: var(--ink);
+}
+@keyframes landing-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .landing__path {
+    animation: none;
+    stroke-dasharray: none;
+  }
+}
+
+/* Legibility scrim: solid behind the text column, fading out to the right. The column's right
+ * edge is computed so the text sits on >= --lp-scrim-1 of the background at any width. */
+.landing__scrim {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  --lp-text-end: calc(max(0px, (100% - 1280px) / 2) + var(--lp-pad) + 600px);
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--bg) var(--lp-scrim-0), transparent) 0%,
+    color-mix(in srgb, var(--bg) var(--lp-scrim-1), transparent) var(--lp-text-end),
+    color-mix(in srgb, var(--bg) 0%, transparent) calc(var(--lp-text-end) + 26%)
+  );
+}
+
+/* ---------- Content ---------- */
+.landing__frame {
+  position: relative;
+  max-width: 1280px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  padding: var(--safe-top) max(var(--lp-pad), var(--safe-right)) var(--safe-bottom) max(var(--lp-pad), var(--safe-left));
   display: flex;
   flex-direction: column;
-  background: var(--bg);
-  color: var(--ink);
 }
 
 .landing__header {
@@ -13,60 +144,212 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--space-4);
-  height: var(--topbar-h);
-  margin-top: var(--safe-top);
-  padding: 0 max(var(--gutter), var(--safe-right)) 0 max(var(--gutter), var(--safe-left));
+  min-height: 72px;
 }
 .landing__actions {
   display: flex;
   align-items: center;
   gap: var(--space-3);
 }
+.landing__actions .seg,
+.landing__actions .icon-btn {
+  background-color: color-mix(in srgb, var(--bg) 72%, transparent);
+}
 .landing__open {
   display: inline-flex;
   align-items: center;
-  min-height: var(--tap);
-  padding: 0 4px;
-  border-radius: var(--radius-sm);
-  font-size: var(--fs-sm);
-  font-weight: 550;
-  color: var(--ink-2);
+  height: 40px;
+  padding: 0 18px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--hairline-strong);
+  /* Paths can reach the top-right corner: keep the label on a mostly opaque chip. */
+  background: color-mix(in srgb, var(--bg) 72%, transparent);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  font-size: 14px;
+  color: var(--ink);
   white-space: nowrap;
+  transition: background-color var(--dur-2) var(--ease-out);
 }
 .landing__open:hover {
-  color: var(--ink);
+  background: var(--surface-solid);
 }
 
 .landing__stage {
-  flex: 1 1 auto;
+  flex: 1 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  gap: var(--space-6);
-  padding: var(--space-8) max(var(--gutter), var(--safe-right)) calc(var(--space-8) + var(--safe-bottom))
-    max(var(--gutter), var(--safe-left));
-  text-align: center;
+  gap: 28px;
+  max-width: 600px;
+  padding: var(--space-8) 0 var(--space-10);
 }
 .landing__stage:focus-visible {
   outline: none;
 }
+.landing__mark {
+  display: block;
+  flex: none;
+}
 .landing__headline {
   margin: 0;
   font-family: var(--font-display);
-  font-size: var(--fs-display);
-  line-height: var(--lh-tight);
-  letter-spacing: var(--tracking-display);
   font-weight: 400;
+  font-size: clamp(3rem, 1.5rem + 5vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
 }
+.landing__headline em {
+  color: var(--holds-text);
+}
+.landing__body {
+  margin: 0;
+  font-size: 1.1875rem; /* 19px */
+  line-height: 1.55;
+  color: var(--ink-2);
+  text-wrap: pretty;
+}
+
 .landing__ctas {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  align-items: center;
   gap: var(--space-3);
 }
 .landing__cta {
-  height: 48px;
-  padding: 0 24px;
-  font-size: var(--fs-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+}
+.landing__cta--primary {
+  padding: 0 26px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    0 6px 20px -8px var(--holds-line);
+  transition: background-color var(--dur-2) var(--ease-out);
+}
+.landing__cta--primary:hover {
+  background: color-mix(in oklab, var(--accent) 88%, var(--ink));
+  color: var(--accent-ink);
+}
+.landing__cta--primary svg {
+  transition: transform var(--dur-2) var(--ease-out);
+}
+.landing__cta--primary:hover svg {
+  transform: translateX(2px);
+}
+.landing__cta--link {
+  padding: 0 22px;
+  font-size: 15px;
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--ink-faint);
+  text-underline-offset: 4px;
+}
+.landing__cta--link:hover {
+  text-decoration-color: currentColor;
+}
+.landing__cta:focus-visible,
+.landing__open:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: var(--radius-pill);
+}
+
+.landing__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  padding: 24px 0 32px;
+  border-top: 1px solid var(--hairline);
+  font-size: var(--fs-sm);
+  color: var(--ink-2);
+}
+.landing__key {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.landing__swatch {
+  flex: none;
+  width: 18px;
+  height: 2px;
+}
+.landing__swatch--holds {
+  background: var(--holds);
+}
+.landing__swatch--bruised {
+  background: var(--bruised);
+}
+.landing__swatch--broken {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--broken);
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1099.98px) {
+  .landing {
+    --lp-pad: 24px;
+  }
+}
+
+/* ---------- Phone ---------- */
+@media (max-width: 699.98px) {
+  .landing {
+    --lp-pad: 20px;
+  }
+  /* The text spans the whole width, so the scrim runs top to bottom and stays strong behind
+   * all of it; the paths still read as a field, just quieter. */
+  .landing__scrim {
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--bg) var(--lp-scrim-0), transparent) 0%,
+      color-mix(in srgb, var(--bg) var(--lp-scrim-1), transparent) 40%,
+      color-mix(in srgb, var(--bg) 72%, transparent) 100%
+    );
+  }
+  .landing__header {
+    min-height: 64px;
+  }
+  .landing__open {
+    height: var(--tap);
+    padding: 0 16px;
+  }
+  .landing__stage {
+    gap: 22px;
+    padding: var(--space-6) 0 var(--space-8);
+  }
+  .landing__mark {
+    width: 72px;
+    height: 72px;
+  }
+  .landing__body {
+    font-size: 1.0625rem; /* 17px */
+  }
+  .landing__ctas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .landing__cta {
+    min-height: 52px;
+  }
+  .landing__cta--link {
+    min-height: var(--tap);
+  }
+  .landing__legend {
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 0 24px;
+  }
 }
