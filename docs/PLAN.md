@@ -7,23 +7,7 @@ Find the best places to retire for someone living on buy-borrow-die: a portfolio
 2026-11-06 · tests: 107 pass (12 files) · typecheck: clean · build: ok (main chunk 354.0 kB)
 
 ## Now
-Stage 8 of 8 · Profiles 51–75 & ship
-Scope:
-- `EXPAT_PICKS` becomes the research doc's draft top 75, with ranks and reasons.
-- 25 new profile files, one per new pick: Tavira, Grand Baie, Torrevieja, La Paz, Hopkins, Corozal, Plovdiv, Chiang Rai, Roatán, Sarandë, Langkawi, Volcán, Panajachel, Placencia, Ambergris Caye, Split, Batumi, Gascony, Rome, Tarragona, Barcelona, Cartagena, Mazatlán, Bali, Vienna. They follow `src/data/profiles/README.md` and the rubric.
-- The Atlas handles 75 picks: "Top pick N of 75", and the top-picks section and list stay readable.
-- Then verify, run a fresh review and republish the preview.
-- Then pause for the user's deploy approval.
-
-Risk: low (curated content and UI; engine untouched)
-Checks:
-- [x] `EXPAT_PICKS` has 75 picks ranked 1–75 in the doc's order, each with a reason (proof: test)
-- [x] All 75 have a full profile per the rubric (9 scores, all facts, drawbacks, ≥3 read sources, no TODO) (proof: test + spot-read 5 new profiles against the doc)
-- [x] Atlas opens profiles for picks 1, 51 and 75 on phone and desktop, in light and dark, with no horizontal scroll and no console errors (proof: Playwright + screenshots)
-- [x] Tests green, typecheck clean, build ok; fresh review triaged (proof: command output + review notes) — [evidence](evidence/stage-8/report.md)
-- [ ] Preview republished; deploy done on the user's approval (proof: preview URL + live site check)
-Open: none
-Mode: paused — preview v15 published; ready to run `git push origin main` (deploys the top-75 build to GitHub Pages), held by the keel hook for the user’s word
+All stages done. Live: https://onedigerati.github.io/eVelo-v2/ (deployed 2026-11-07, run 42341374541). Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (v15).
 
 ## Stages
 - [x] 1. BBD research — country tax, residency, lending and healthcare facts for every candidate, sourced; new top-25 draft
@@ -33,7 +17,7 @@ Mode: paused — preview v15 published; ready to run `git push origin main` (dep
 - [x] 5. BBD ranking — rerank the top 50 with new tax/estate and lending factors; profile pages for all 50 (new ones for newcomers and 26–50, refreshed facts for the rest)
 - [x] 6. Atlas & verify — tax lines in "Your plan here", the Atlas list and profile pages handle 50 picks, phone + both themes, preview
 - [x] 7. Research for 51–75 — the 17 outside candidates plus ≥15 more (retiree towns in covered countries, new countries, unweighed dataset cities), sourced the same way; new cities added with costs, healthcare factors and local-tax data; draft top 75
-- [ ] 8. Profiles 51–75 & ship — profile pages for 51–75, UI for 75 picks, verify phone + both themes, fresh review, preview, deploy on approval
+- [x] 8. Profiles 51–75 & ship — profile pages for 51–75, UI for 75 picks, verify phone + both themes, fresh review, preview, deploy on approval
 
 ## Decisions
 - 2026-11-06 · Belize and LIOS 2026 #4–10 (Gascony, Crete, Tarragona, Cayo, Hua Hin, Kotor, Las Terrenas) are added — last round silently ranked only cities already in the dataset, breaking its own "add it rather than skip it" rule; user asked to add them.

@@ -1,0 +1,21 @@
+desktop-light atlas: scrollWidth 1400 <= 1400 OK bg=rgb(245, 242, 234)
+  Algarve: Top pick 1 for expat retirees: open the Algarve (Faro) profile | TOP PICK 1 OF 75 | tax lines: true | scroll OK
+  Lima: Top pick 51 for expat retirees: open the Lima profile | TOP PICK 51 OF 75 | tax lines: true | scroll OK
+  Vienna: Top pick 75 for expat retirees: open the Vienna profile | TOP PICK 75 OF 75 | tax lines: true | scroll OK
+  show-all controls: ["Show all top 15","Show 26–75"]
+desktop-dark atlas: scrollWidth 1400 <= 1400 OK bg=rgb(10, 13, 12)
+  Algarve: Top pick 1 for expat retirees: open the Algarve (Faro) profile | TOP PICK 1 OF 75 | tax lines: true | scroll OK
+  Lima: Top pick 51 for expat retirees: open the Lima profile | TOP PICK 51 OF 75 | tax lines: true | scroll OK
+  Vienna: Top pick 75 for expat retirees: open the Vienna profile | TOP PICK 75 OF 75 | tax lines: true | scroll OK
+  show-all controls: ["Show all top 15","Show 26–75"]
+phone-light atlas: scrollWidth 390 <= 390 OK bg=rgb(245, 242, 234)
+  Algarve: Top pick 1 for expat retirees: open the Algarve (Faro) profile | TOP PICK 1 OF 75 | tax lines: true | scroll OK
+  Lima: Top pick 51 for expat retirees: open the Lima profile | TOP PICK 51 OF 75 | tax lines: true | scroll OK
+  Vienna: Top pick 75 for expat retirees: open the Vienna profile | TOP PICK 75 OF 75 | tax lines: true | scroll OK
+  show-all controls: ["Show 26–75"]
+phone-dark atlas: scrollWidth 390 <= 390 OK bg=rgb(10, 13, 12)
+  Algarve: Top pick 1 for expat retirees: open the Algarve (Faro) profile | TOP PICK 1 OF 75 | tax lines: true | scroll OK
+  Lima: Top pick 51 for expat retirees: open the Lima profile | TOP PICK 51 OF 75 | tax lines: true | scroll OK
+  Vienna: Top pick 75 for expat retirees: open the Vienna profile | TOP PICK 75 OF 75 | tax lines: true | scroll OK
+  show-all controls: ["Show 26–75"]
+ERRORS []
