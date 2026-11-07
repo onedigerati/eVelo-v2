@@ -13,8 +13,8 @@ import type { City, CityVerification } from '../engine/types'
 export const COL_AS_OF = '2026-11-06'
 
 export const COL_SOURCES: string[] = [
-  'Cost indices (col excl. rent, rent, groceries, restaurants; NYC = 100): for verified cities (the 25 expat picks and US cities with a full Numbeo row), Numbeo\'s current cost-of-living index by city, read 2026-11-06, rounded, and cross-checked against Numbeo\'s 2026 Mid-Year edition and livingcost.org. Every other city is a rough estimate modeled on the same kind of index, not checked against a current source.',
-  'Healthcare factor (US = 1.0): midpoint of local private or public cover and an international plan (Cigna Global / Allianz, age 60) plus estimated out-of-pocket costs for a couple at 60, relative to a 2026 US benchmark-silver marketplace plan for a couple at 60 (~$35.9k/yr including ~$4k out-of-pocket). Sources: KFF 2026 average marketplace premiums, plus insurer and broker quotes; rounded to 0.05. Checked for the 16 countries of the expat picks; other countries are rough estimates.',
+  'Cost indices (col excl. rent, rent, groceries, restaurants; NYC = 100): for verified cities (the 25 expat picks, US cities with a full Numbeo row and the 20 BBD destinations added in Stage 3), Numbeo\'s current cost-of-living index by city, read 2026-11-06, rounded, and cross-checked against Numbeo\'s 2026 Mid-Year edition and livingcost.org. Places without a Numbeo index are marked low confidence and either derived from Numbeo\'s raw prices vs New York or mapped to a nearby city row; each record\'s note says which. Every other city is a rough estimate modeled on the same kind of index, not checked against a current source.',
+  'Healthcare factor (US = 1.0): midpoint of local private or public cover and an international plan (Cigna Global / Allianz, age 60) plus estimated out-of-pocket costs for a couple at 60, relative to a 2026 US benchmark-silver marketplace plan for a couple at 60 (~$35.9k/yr including ~$4k out-of-pocket). Sources: KFF 2026 average marketplace premiums, plus insurer and broker quotes; rounded to 0.05. Checked for the 16 countries of the expat picks and set on the same basis for Cyprus, Malta, Montenegro, Belize, the Dominican Republic, Paraguay and Guatemala (docs/research/cost-check-2026-11.md); other countries are rough estimates. City overrides add cost where hospitals are far or evacuation cover is needed.',
   'FX volatility: rough annualized volatility of the real exchange rate vs USD based on recent multi-year history; 0 for USD-using economies, near 0 for hard pegs (AED).',
   'FX_FALLBACK: approximate late-2026 spot rates, used only when live rates are unavailable.',
   'Notes summarize widely reported tax-residency and visa features as of late 2026. Rules change often; verify with a qualified cross-border tax adviser. Not tax or legal advice.',
@@ -60,6 +60,10 @@ export const FX_FALLBACK: Record<string, number> = {
   AUD: 1.52,
   NZD: 1.73,
   ZAR: 17.6,
+  BZD: 2,
+  DOP: 60.5,
+  PYG: 6100,
+  GTQ: 7.65,
 }
 
 type Idx = [col: number, rent: number, groceries: number, restaurants: number]
@@ -223,6 +227,7 @@ const asiaCities: City[] = [
   mk(TH, 'bangkok', 'Bangkok', 13.76, 100.5, [42, 19, 46, 30]),
   mk(TH, 'chiang-mai', 'Chiang Mai', 18.79, 98.98, [32, 11, 38, 19], ['Seasonal air pollution ("burning season", roughly Feb–Apr) is a health consideration.']),
   mk(TH, 'phuket', 'Phuket', 7.88, 98.39, [42, 18, 52, 26], [], { healthcare: 0.4 }),
+  mk(TH, 'hua-hin', 'Hua Hin', 12.57, 99.96, [34, 18, 41, 23], ['Bangkok Hospital Hua Hin is the local private hospital; top-tier care is in Bangkok.']),
   mk(MY, 'kuala-lumpur', 'Kuala Lumpur', 3.14, 101.69, [37, 13, 42, 29]),
   mk(MY, 'penang', 'Penang (George Town)', 5.41, 100.33, [33, 9, 40, 24]),
   mk(VN, 'ho-chi-minh-city', 'Ho Chi Minh City', 10.82, 106.63, [32, 13, 38, 14]),
@@ -335,7 +340,29 @@ const TR: Base = {
   country: 'Turkey', countryCode: 'TR', region: 'Europe', currency: 'TRY', fxVol: 0.2, healthcare: 0.25,
   notes: [
     'High inflation and lira depreciation make USD-denominated costs unpredictable.',
-    'Residents are generally taxed on worldwide income — check current rules.',
+    'Law 7582 (2026): new residents with no Turkish residence in the prior 3 years can claim a 20-year exemption on foreign-source income (certificate needed in the first year), with inheritance tax cut to 1% meanwhile; otherwise residents are taxed on worldwide income.',
+  ],
+}
+
+const CY: Base = {
+  country: 'Cyprus', countryCode: 'CY', region: 'Europe', currency: 'EUR', fxVol: 0.09, healthcare: 0.25,
+  notes: [
+    'Non-domiciled residents pay no Special Defence Contribution on dividends and interest for 17 of 20 years, leaving only the 2.65% GeSY health levy (capped at about €4.8k a year); there is no wealth or inheritance tax and no tax on share gains.',
+    'Category F permanent residence needs about €9.6k a year of secured foreign income (dividends and interest count) and gives access to the GeSY public health system.',
+  ],
+}
+const MT: Base = {
+  country: 'Malta', countryCode: 'MT', region: 'Europe', currency: 'EUR', fxVol: 0.09, healthcare: 0.3,
+  notes: [
+    'Resident non-doms are taxed on the remittance basis: foreign income left abroad is untaxed (a €5,000 minimum tax applies once it reaches €35k) and foreign capital gains are untaxed even if remitted; no wealth or inheritance tax.',
+    'The Global Residence Programme closes after 31 Dec 2026: applications filed by then keep its terms (15%, €15k minimum tax) to 2031, while the 2027 rules raise the minimum to €35k. Non-EU residents must hold private health cover.',
+  ],
+}
+const ME: Base = {
+  country: 'Montenegro', countryCode: 'ME', region: 'Europe', currency: 'EUR', fxVol: 0.09, healthcare: 0.3,
+  notes: [
+    'Dividends, interest and gains are taxed at 15%, plus a municipal surtax (13% in Kotor) that may not apply to capital income; no wealth tax, and inheritance tax applies only to real estate.',
+    'Temporary residence by owning property assessed at €150k+ (since Jan 2026), renewed yearly; Montenegro uses the euro but is not in the EU or Schengen.',
   ],
 }
 
@@ -363,6 +390,29 @@ const europeCities: City[] = [
   mk(HR, 'split', 'Split', 43.51, 16.44, [54, 22, 48, 63], ['Summer tourism drives short-term rents up sharply; long-term leases are cheaper off-season.']),
   mk(GE, 'tbilisi', 'Tbilisi', 41.72, 44.79, [32, 14, 34, 30]),
   mk(TR, 'istanbul', 'Istanbul', 41.01, 28.98, [38, 14, 36, 30]),
+  // Stage 3 additions (BBD destinations).
+  mk(GR, 'crete', 'Crete (Chania)', 35.51, 24.02, [53, 14, 48, 57], [
+    'Serious care is in Chania or Heraklion; from 2026 ENFIA property tax is halved on main homes in small villages (Athens is excluded).',
+  ]),
+  mk(CY, 'paphos', 'Paphos', 34.77, 32.42, [53, 27, 48, 55], ['The more retiree-oriented and cheaper of the two Cyprus picks; both share the national regime.']),
+  mk(CY, 'limassol', 'Limassol', 34.68, 33.04, [62, 36, 55, 69], ['Pricier and more business-oriented than Paphos, with the best hospitals on the island.']),
+  mk(MT, 'sliema', 'Sliema', 35.91, 14.5, [61, 38, 57, 70], ['Sliema is in the full-price property tier; GRP thresholds are lower in the south of Malta and on Gozo.']),
+  mk(ME, 'kotor', 'Kotor', 42.42, 18.77, [49, 19, 39, 64], ['Public healthcare is weak; serious care is in Podgorica or across the border in Dubrovnik.']),
+  mk(FR, 'gascony', 'Gascony (Auch)', 43.65, 0.59, [64, 14, 71, 64], [
+    'In rural Gers costs are low and the IFI real-estate wealth tax is unlikely, but specialists are sparser; the nearest major hospitals are in Toulouse.',
+  ]),
+  mk(ES, 'tarragona', 'Tarragona', 41.12, 1.25, [49, 19, 40, 57], [
+    'Catalonia taxes wealth above only €500,000 (rates to 3.48%, no relief) and its inheritance relief for children thins out on large estates — the weakest Spanish region for a large portfolio.',
+  ]),
+  mk(ES, 'alicante', 'Alicante', 38.35, -0.48, [49, 24, 50, 56], [
+    'Valencian Community: the wealth-tax exemption rises to €2M from 2026, with 99% inheritance relief for children. No US nonstop flights.',
+  ]),
+  mk(PT, 'cascais', 'Cascais', 38.7, -9.42, [51, 47, 44, 52], [
+    'Hospital CUF Cascais (private) and the public Hospital de Cascais are local; Lisbon and its airport are reached by the A5 or commuter train.',
+  ]),
+  mk(TR, 'antalya', 'Antalya', 36.9, 30.7, [40, 13, 36, 45], [
+    'Property residence needs US$200k, and some Antalya neighbourhoods are closed to first applications — check the DGMM list before buying.',
+  ]),
 ]
 
 // ---------------------------------------------------------------- Middle East / Africa
@@ -451,6 +501,35 @@ const PE: Base = {
   ],
 }
 
+const BZ: Base = {
+  country: 'Belize', countryCode: 'BZ', region: 'Latin America', currency: 'BZD', fxVol: 0.01, healthcare: 0.35,
+  notes: [
+    'The Qualified Retired Persons (QRP) program (age 40+, US$2,000/month of foreign income; investment accounts qualify) exempts all foreign-source income from Belizean tax. The Belize dollar is pegged 2:1 to the US dollar.',
+    'Healthcare is weak: serious cases go to Belize City, then by air to Mérida, Guatemala City or Miami. Budget international cover with medical evacuation.',
+  ],
+}
+const DO: Base = {
+  country: 'Dominican Republic', countryCode: 'DO', region: 'Latin America', currency: 'DOP', fxVol: 0.06, healthcare: 0.3,
+  notes: [
+    'Taxation is territorial, but foreign investment income is taxed after a resident\'s third year; Law 171-07 exempts the declared income of rentista and pensionado residents (confirm it covers dividends above that amount). Inheritance tax is 3%.',
+    'The rentista visa needs US$2,000/month of stable foreign income (pensionado US$1,500).',
+  ],
+}
+const PY: Base = {
+  country: 'Paraguay', countryCode: 'PY', region: 'Latin America', currency: 'PYG', fxVol: 0.07, healthcare: 0.3,
+  notes: [
+    'Personal income tax applies only to Paraguayan-source income, so foreign dividends and interest appear untaxed (confirm locally); there is no wealth or inheritance tax.',
+    'Temporary residence (up to 2 years) leads to permanent residence; no means test is published.',
+  ],
+}
+const GT: Base = {
+  country: 'Guatemala', countryCode: 'GT', region: 'Latin America', currency: 'GTQ', fxVol: 0.02, healthcare: 0.3,
+  notes: [
+    'Guatemala taxes only Guatemalan-source income, and repealed its inheritance and gift tax from April 2026 (Decreto 6-2026); there is no wealth tax.',
+    'Rentista/pensionado permanent residence needs US$1,250/month of foreign income (+US$300 per dependent). The public IGSS system does not cover retirees: budget private or international cover with evacuation.',
+  ],
+}
+
 const latamCities: City[] = [
   mk(MX, 'mexico-city', 'Mexico City', 19.43, -99.13, [42, 22, 42, 36], ['Altitude (~2,240 m) can matter for some health conditions.']),
   mk(MX, 'merida', 'Mérida', 20.97, -89.62, [42, 14, 42, 48]),
@@ -468,6 +547,32 @@ const latamCities: City[] = [
   mk(AR, 'buenos-aires', 'Buenos Aires', -34.6, -58.38, [44, 12, 38, 40]),
   mk(CL, 'santiago', 'Santiago', -33.45, -70.67, [46, 16, 46, 40]),
   mk(PE, 'lima', 'Lima', -12.05, -77.04, [38, 14, 38, 28]),
+  // Stage 3 additions (BBD destinations).
+  mk(MX, 'lake-chapala', 'Lake Chapala / Ajijic', 20.3, -103.26, [35, 19, 38, 39], [
+    'Mexico\'s largest US-retiree enclave; local clinics only, with serious care and wide US nonstop service in Guadalajara, about 55 km north.',
+  ]),
+  mk(MX, 'oaxaca', 'Oaxaca', 17.07, -96.73, [36, 14, 41, 40], [
+    'No JCI hospital in the city (private: Hospital Ángeles, Centro Médico de Oaxaca); severe cases may need transfer to Puebla or Mexico City. Altitude ~1,555 m.',
+  ], { healthcare: 0.3 }),
+  mk(PA, 'coronado', 'Coronado', 8.53, -79.89, [47, 23, 55, 44], [
+    'About 4,000 expats; local private clinics, with serious care (e.g. Hospital Punta Pacífica) in Panama City, 1–1.5 hours away.',
+  ]),
+  mk(CR, 'atenas', 'Atenas', 9.98, -84.38, [55, 20, 65, 50], [
+    'A 24-hour clinic in town; Hospital CIMA and Clínica Bíblica are under an hour away, and SJO airport about 30–45 minutes.',
+  ]),
+  mk(BZ, 'cayo', 'Cayo (San Ignacio)', 17.16, -89.07, [50, 10, 56, 30], [
+    'San Ignacio has a community hospital, with the private La Loma Luz in Santa Elena and the regional hospital in Belmopan.',
+  ]),
+  mk(BZ, 'ambergris-caye', 'Ambergris Caye (San Pedro)', 17.92, -87.96, [61, 27, 88, 36], [
+    'San Pedro has clinics but no hospital; anything more means a boat or flight to the mainland, and medevac can cost US$10,000+.',
+  ], { healthcare: 0.4 }),
+  mk(DO, 'las-terrenas', 'Las Terrenas', 19.31, -69.54, [42, 16, 40, 46], [
+    'Private clinics only; complex cases go to Santo Domingo or Santiago, 2–3 hours by road or by helicopter.',
+  ], { healthcare: 0.35 }),
+  mk(PY, 'asuncion', 'Asunción', -25.26, -57.58, [32, 11, 32, 33], ['Healthcare was not researched; Asunción is the realistic base for private care in Paraguay.']),
+  mk(GT, 'antigua-guatemala', 'Antigua Guatemala', 14.56, -90.73, [39, 19, 45, 42], [
+    'Hospital Privado Hermano Pedro (24/7) is local; serious-care hospitals and the airport are in Guatemala City, about an hour away. Volcanic risk (Fuego).',
+  ]),
 ]
 
 // ---------------------------------------------------------------- Canada
@@ -554,6 +659,77 @@ const VERIFIED: Record<string, CityVerification> = {
   bali: v({
     url: 'https://www.numbeo.com/cost-of-living/in/Bali',
     note: 'Uses Numbeo\'s "Bali, Indonesia" row, which reflects expat areas such as Canggu and Seminyak; rent is set between that row and Ubud. Denpasar proper is much cheaper.',
+  }),
+  // Stage 3 additions. Rows in Numbeo's current table are high confidence; the rest are low, with the method noted.
+  // "Derived" means: Numbeo's raw prices for the place vs New York, priced through a fixed basket per index
+  // (groceries, restaurants, and those two plus transport, utilities, leisure and clothing for col), then scaled by
+  // a per-index factor fitted on 16 cities that have both a page and a table row (mean error 2–6% per index).
+  crete: v({ note: 'Uses Numbeo\'s Chania row.' }),
+  'hua-hin': v(),
+  paphos: v(),
+  limassol: v(),
+  sliema: v(),
+  alicante: v(),
+  asuncion: v(),
+  antalya: v(),
+  cascais: v({
+    url: 'https://www.numbeo.com/cost-of-living/in/Cascais',
+    confidence: 'low',
+    note: 'Not in Numbeo\'s table (14 contributors). Col and rent are the page\'s own index figures (48.7% and 53.4% below New York); groceries and restaurants are derived from its raw prices vs NYC.',
+  }),
+  tarragona: v({
+    url: 'https://www.numbeo.com/cost-of-living/in/Tarragona',
+    confidence: 'low',
+    note: 'No Numbeo index (33 contributors in 18 months, some prices estimated by Numbeo); all four values derived from its raw prices vs NYC.',
+  }),
+  gascony: v({
+    url: 'https://www.numbeo.com/cost-of-living/in/Toulouse',
+    confidence: 'low',
+    note: 'Numbeo has no page for Auch or Gers. Mapped to Numbeo\'s Toulouse row (67/19/71/71) adjusted down for a rural market town: rent -25%, col -5%, restaurants -10%, groceries unchanged. A judgment adjustment, not measured.',
+  }),
+  'lake-chapala': v({
+    url: 'https://www.numbeo.com/cost-of-living/in/Ajijic',
+    confidence: 'low',
+    note: 'No Numbeo index for Ajijic (26 contributors in 18 months, some prices estimated by Numbeo); derived from its raw prices vs NYC. Numbeo has no Chapala page.',
+  }),
+  'antigua-guatemala': v({
+    url: 'https://www.numbeo.com/cost-of-living/in/Antigua-Guatemala',
+    confidence: 'low',
+    note: 'No Numbeo index (30 contributors in 18 months, some prices estimated by Numbeo); derived from its raw prices vs NYC.',
+  }),
+  'ambergris-caye': v({
+    url: 'https://www.numbeo.com/cost-of-living/in/San-Pedro-Belize',
+    confidence: 'low',
+    note: 'Very thin: Numbeo\'s San Pedro page has 13 entries from 1 contributor (Mar 2026) and no index; derived from those raw prices vs NYC, with col built from the items present. Treat as rough.',
+  }),
+  'las-terrenas': v({
+    url: 'https://www.numbeo.com/cost-of-living/in/Santo-Domingo',
+    confidence: 'low',
+    note: 'Numbeo has no Las Terrenas page. Mapped to Numbeo\'s Santo Domingo row (39/14/37/40) adjusted up for an expat beach town with imported goods: col +8%, rent +15%, groceries +10%, restaurants +15%. A judgment adjustment, not measured.',
+  }),
+  kotor: v({
+    url: 'https://www.numbeo.com/cost-of-living/in/Budva',
+    confidence: 'low',
+    note: 'Numbeo has a Kotor page but it could not be read (rate-limited). Mapped unadjusted to Numbeo\'s Budva row (a similar coastal resort about 20 km away).',
+  }),
+  oaxaca: v({
+    url: 'https://www.numbeo.com/cost-of-living/in/Guadalajara',
+    confidence: 'low',
+    note: 'Numbeo\'s Oaxaca page could not be read (rate-limited) and Oaxaca has no table row. Mapped to Numbeo\'s Guadalajara row (41/18/43/47) adjusted down for a smaller, cheaper city: col -10%, rent -20%, groceries -5%, restaurants -15%. A judgment adjustment.',
+  }),
+  coronado: v({
+    url: 'https://www.numbeo.com/cost-of-living/in/Panama-City',
+    confidence: 'low',
+    note: 'Numbeo\'s Coronado page could not be read (rate-limited) and it has no index. Mapped to Numbeo\'s Panama City row (49/28/55/47) adjusted: rent -20%, col -3%, restaurants -5%, groceries unchanged. A judgment adjustment.',
+  }),
+  atenas: v({
+    confidence: 'low',
+    note: 'Numbeo\'s Atenas page could not be read (rate-limited) and it has no index. Mapped to the San José, Costa Rica table row (58/25/65/56) adjusted: rent -20%, col -5%, restaurants -10%, groceries unchanged. A judgment adjustment.',
+  }),
+  cayo: v({
+    url: 'https://www.numbeo.com/cost-of-living/in/Belmopan',
+    confidence: 'low',
+    note: 'Numbeo\'s San Ignacio page could not be read (rate-limited). Derived from Numbeo\'s raw prices for Belmopan (30 km east; 32 entries from 1 contributor, May 2025) vs NYC. Very thin; treat as rough.',
   }),
   // US home cities with a full Numbeo row (Scottsdale, Asheville and Sarasota have none and stay estimates).
   'new-york': v({ note: 'Base city: every index is 100 by definition.' }),

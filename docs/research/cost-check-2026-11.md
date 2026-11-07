@@ -111,3 +111,59 @@ Notes:
 - Country healthcare factors apply to every city in that country, including unverified ones (e.g. Paris, Madrid, Barcelona, Rome, Mexico City, Playa del Carmen). Phuket keeps its own override of 0.4 (Thailand is now 0.3); it is not a pick and was left as an estimate.
 - Boquete's old city override (0.3) was removed so it uses Panama's checked factor (0.25).
 - US home cities matter because comparisons are destination ÷ home: e.g. St. Louis restaurants 66 → 70 and groceries 67 → 84 shift every St. Louis-based ratio.
+
+# Stage 3: new cities (2026-11-06)
+
+Twenty BBD destinations were added to `src/data/cities.ts`. Indices are NYC = 100 (col excl. rent / rent / groceries / restaurants), read 2026-11-06.
+
+How the values were set:
+- **Table row** (high confidence): the city's row in Numbeo's current table (https://www.numbeo.com/cost-of-living/rankings_current.jsp), rounded half-up.
+- **Derived** (low): Numbeo's raw prices on the city page vs New York's, priced through a fixed basket per index (17 grocery items; 8 restaurant items; for col, those plus transport, utilities, phone/internet, leisure, clothing, haircuts and cleaning), converted at the bundled `fx.json` rates, then scaled by a per-index factor (col 0.920, rent 0.983, groceries 0.926, restaurants 1.023) fitted on 16 cities that have both a page and a table row (Chania, Paphos, Limassol, Sliema, Alicante, Toulouse, Podgorica, Budva, Hua Hin, Antalya, Asunción, Guadalajara, Santo Domingo, Panama City, Lisbon, Barcelona). On those 16 the fitted method's mean error is 3.8% (col), 1.7% (rent), 6.2% (groceries) and 2.7% (restaurants); the worst single miss is about 11%.
+- **Mapped** (low): the nearest city row, adjusted by stated percentages (a judgment call, not a measurement).
+- Numbeo started returning HTTP 429 partway through, so the Kotor, Oaxaca, San Ignacio, Coronado and Atenas pages could not be read; those five are mapped to rows that were read. Numbeo has no page at all for Auch, Chapala or Las Terrenas.
+
+| City | col | rent | groc | rest | Confidence | Method | Healthcare | Numbeo page read |
+|---|---|---|---|---|---|---|---|---|
+| Crete (Chania) | 53 | 14 | 48 | 57 | high | table row (Chania) | 0.25 (GR) | rankings_current.jsp; /in/Chania |
+| Hua Hin | 34 | 18 | 41 | 23 | high | table row | 0.3 (TH) | rankings_current.jsp; /in/Hua-Hin |
+| Paphos | 53 | 27 | 48 | 55 | high | table row | 0.25 (CY) | rankings_current.jsp; /in/Paphos |
+| Limassol | 62 | 36 | 55 | 69 | high | table row | 0.25 (CY) | rankings_current.jsp; /in/Limassol |
+| Sliema | 61 | 38 | 57 | 70 | high | table row | 0.3 (MT) | rankings_current.jsp; /in/Sliema |
+| Alicante | 49 | 24 | 50 | 56 | high | table row | 0.25 (ES) | rankings_current.jsp; /in/Alicante |
+| Asunción | 32 | 11 | 32 | 33 | high | table row | 0.3 (PY) | rankings_current.jsp; /in/Asuncion |
+| Antalya | 40 | 13 | 36 | 45 | high | table row | 0.25 (TR) | rankings_current.jsp; /in/Antalya |
+| Cascais | 51 | 47 | 44 | 52 | low | page's own col/rent figures (14 contributors); groceries and restaurants derived | 0.25 (PT) | /in/Cascais |
+| Tarragona | 49 | 19 | 40 | 57 | low | derived (33 contributors, some prices estimated by Numbeo) | 0.25 (ES) | /in/Tarragona |
+| Lake Chapala / Ajijic | 35 | 19 | 38 | 39 | low | derived from Ajijic (26 contributors, some estimated) | 0.25 (MX) | /in/Ajijic |
+| Antigua Guatemala | 39 | 19 | 45 | 42 | low | derived (30 contributors, some estimated) | 0.3 (GT) | /in/Antigua-Guatemala |
+| Ambergris Caye (San Pedro) | 61 | 27 | 88 | 36 | low | derived from 13 entries by 1 contributor (Mar 2026) | **0.4** override | /in/San-Pedro-Belize |
+| Cayo (San Ignacio) | 50 | 10 | 56 | 30 | low | derived from Belmopan, 30 km east (32 entries, 1 contributor, May 2025) | 0.35 (BZ) | /in/Belmopan |
+| Gascony (Auch) | 64 | 14 | 71 | 64 | low | Toulouse row: rent -25%, col -5%, restaurants -10% | 0.25 (FR) | rankings_current.jsp; /in/Toulouse |
+| Kotor | 49 | 19 | 39 | 64 | low | Budva row, unadjusted | 0.3 (ME) | rankings_current.jsp; /in/Budva |
+| Oaxaca | 36 | 14 | 41 | 40 | low | Guadalajara row: col -10%, rent -20%, groceries -5%, restaurants -15% | **0.3** override | rankings_current.jsp; /in/Guadalajara |
+| Coronado | 47 | 23 | 55 | 44 | low | Panama City row: rent -20%, col -3%, restaurants -5% | 0.25 (PA) | rankings_current.jsp; /in/Panama-City |
+| Atenas | 55 | 20 | 65 | 50 | low | San José (CR) row: rent -20%, col -5%, restaurants -10% | 0.25 (CR) | rankings_current.jsp |
+| Las Terrenas | 42 | 16 | 40 | 46 | low | Santo Domingo row: col +8%, rent +15%, groceries +10%, restaurants +15% | **0.35** override | rankings_current.jsp; /in/Santo-Domingo |
+
+Page URLs are `https://www.numbeo.com/cost-of-living/in/<page>`.
+
+Caveats:
+- The Belize figures rest on single-contributor pages and look noisy (San Pedro groceries at 88, Belmopan col at 50 driven by utilities and gym prices). Re-read San Ignacio and San Pedro when Numbeo allows, or replace them with a non-Numbeo source.
+- The Ajijic page gives a lower col than Guadalajara's table row (35 vs 41), which is the reverse of the usual expat view; the page has some Numbeo-estimated prices.
+
+## Healthcare factors for the new countries
+
+Same method as Stage 1 (US = 1.0 = a 2026 benchmark-silver couple at 60, ~$35.9k/yr; midpoint of local/public cover and an international plan such as Cigna Global, about $3.6–5.9k per person at 60–69, plus out-of-pocket; rounded to 0.05). Sources are in `docs/research/bbd-ranking-2026-11.md`, Appendices B, C and F.
+
+- **Cyprus: 0.25.** Category F holders can join GeSY, whose levy (2.65% of income, capped at about €4.8k) is the local leg, with private plans as a top-up. On a par with Greece and Spain.
+- **Malta: 0.3.** Non-EU residents must hold qualifying private cover (MPRP, GRP); public care depends on social-security contributions, so the local leg is a private plan, not a public scheme. Set like Italy, a notch above the 0.25 countries.
+- **Montenegro: 0.3.** Health insurance is a residence condition, access to the public fund for property-permit holders is unverified, and serious care is in Podgorica or Dubrovnik. Without a usable public leg the midpoint leans toward the international plan.
+- **Belize: 0.35, Ambergris Caye 0.4.** Care "does not meet US standards" (US Embassy); serious cases go to Belize City and then by air to Mérida, Guatemala City or Miami, with medevac from US$10k. An international plan with evacuation is effectively mandatory, so the factor sits at the international-plan end (like Indonesia, 0.35). Ambergris Caye adds 0.05 because it has clinics only and every hospital visit is a boat or flight. Cayo stays at the country factor: San Ignacio has a community hospital, La Loma Luz is in Santa Elena and the regional hospital is in Belmopan.
+- **Dominican Republic: 0.3, Las Terrenas 0.35.** Private hospitals in Santo Domingo and Santiago are adequate, but care is limited outside them and local ARS age caps are unverified. Las Terrenas adds 0.05 for 2–3 hour transfers (or a helicopter) for anything complex.
+- **Paraguay: 0.3.** Not researched (App. C); an estimate assuming private care in Asunción plus an international plan. Treat as rough.
+- **Guatemala: 0.3.** The public IGSS system does not cover retirees who never worked for a Guatemalan employer, so cover is private or international, with evacuation advised. Antigua has a 24/7 private hospital and is about an hour from the Guatemala City hospitals, so no city override.
+
+City overrides in existing countries:
+- **Oaxaca: 0.3** (Mexico 0.25). It has no JCI hospital and severe cases may need transfer to Puebla or Mexico City.
+- **Coronado: 0.25, no override.** Panama City's hospitals are 1–1.5 h away, which is the same as Boquete's hour to David; Boquete's override was removed in Stage 1, so Coronado follows it.
+- **Hua Hin, Lake Chapala, Atenas, Cascais, Crete, Gascony, Alicante, Tarragona, Antalya:** country factor. Each is within about an hour of a private or regional hospital (Bangkok Hospital Hua Hin, Guadalajara, CIMA, CUF Cascais, Chania/Heraklion, Toulouse, Alicante, Tarragona, Antalya).

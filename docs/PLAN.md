@@ -20,17 +20,17 @@ Each city gets:
 Profiles and ranking are Stage 5.
 Risk: low (city dataset only; engine untouched)
 Checks:
-- [ ] All 20 cities are in `CITIES`, each with a `verified` record citing the Numbeo page read, and listed with their indices and healthcare factor in `docs/research/cost-check-2026-11.md` (proof: test asserting the ids + verified, and read the doc)
-- [ ] Healthcare factors for the seven new countries are set on the existing scale (US = 1), with the basis written down (proof: read the doc)
-- [ ] The new cities appear and run in the Atlas (proof: screenshot of the running dev app with a new city selected)
-- [ ] Tests green, typecheck clean, build ok (proof: command output)
+- [x] All 20 cities are in `CITIES`, each with a `verified` record citing the Numbeo page read, and listed with their indices and healthcare factor in `docs/research/cost-check-2026-11.md` (proof: test asserting the ids + verified, and read the doc)
+- [x] Healthcare factors for the seven new countries are set on the existing scale (US = 1), with the basis written down (proof: read the doc)
+- [x] The new cities appear and run in the Atlas (proof: screenshot of the running dev app with a new city selected)
+- [x] Tests green, typecheck clean, build ok (proof: command output) — [evidence](evidence/stage-3/report.md)
 Open: none
 Mode: autopilot
 
 ## Stages
 - [x] 1. BBD research — country tax, residency, lending and healthcare facts for every candidate, sourced; new top-25 draft
 - [x] 2. Research for 26–50 — more candidates and any new countries, sourced the same way; draft top 50
-- [ ] 3. New cities — add Belize (Cayo, Ambergris Caye), the other skipped LIOS picks and every research add for the top 50, with verified costs and healthcare factors
+- [x] 3. New cities — add Belize (Cayo, Ambergris Caye), the other skipped LIOS picks and every research add for the top 50, with verified costs and healthcare factors
 - [ ] 4. Local taxes — wealth and inheritance tax per country in the engine, with tests; odds and estate reflect them; Method page explains
 - [ ] 5. BBD ranking — rerank the top 50 with new tax/estate and lending factors; profile pages for all 50 (new ones for newcomers and 26–50, refreshed facts for the rest)
 - [ ] 6. Atlas & verify — tax lines in "Your plan here", the Atlas list and profile pages handle 50 picks, phone + both themes, preview, deploy on approval

@@ -109,6 +109,22 @@ describe('CITIES dataset', () => {
     for (const id of ['medellin', 'bali', 'algarve', 'madeira', 'penang']) expect(CITY_BY_ID[id].verified?.note, id).toBeTruthy()
   })
 
+  it('adds the 20 Stage 3 destinations, each with a verified record', () => {
+    const added = [
+      'crete', 'hua-hin', 'kotor', 'paphos', 'limassol', 'sliema', 'cayo', 'ambergris-caye', 'gascony', 'tarragona',
+      'las-terrenas', 'asuncion', 'cascais', 'alicante', 'coronado', 'atenas', 'lake-chapala', 'oaxaca',
+      'antigua-guatemala', 'antalya',
+    ]
+    expect(new Set(added).size).toBe(20)
+    for (const id of added) {
+      const v = CITY_BY_ID[id]?.verified
+      expect(v, id).toBeDefined()
+      expect(v!.url, id).toMatch(/^https:\/\/www\.numbeo\.com\//)
+      // Low-confidence records must say what was done.
+      if (v!.confidence === 'low') expect(v!.note, id).toBeTruthy()
+    }
+  })
+
   it('verifies New York as the base at 100', () => {
     const ny = CITY_BY_ID['new-york']
     expect(ny.verified).toBeDefined()
