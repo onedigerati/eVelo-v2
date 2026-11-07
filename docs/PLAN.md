@@ -1,29 +1,28 @@
 # BBD destinations plan
 
 ## Goal
-Find the best places to retire for someone living on buy-borrow-die: a portfolio that is never sold, spending funded by borrowing against it, and the estate passed on with a step-up. The ranking and the simulation weigh what actually matters for that: the destination's wealth tax and inheritance tax (now modeled in the engine), tax on dividends and foreign income, residency routes that accept assets rather than a pension, whether a US broker will still lend to a resident there, and healthcare cost and quality into the late 70s and beyond, alongside cost, safety, climate and flights. Belize and the other places skipped last time (LIOS 2026 #4–10) are added with verified costs, and the candidate pool is not limited to cities already in the dataset. Done = the live Atlas ranks the new top 25 with BBD-specific scores and sourced profiles, each city's odds and estate reflect its local taxes, tests are green, and it works on phone and desktop in both themes.
+Find the best places to retire for someone living on buy-borrow-die: a portfolio that is never sold, spending funded by borrowing against it, and the estate passed on with a step-up. The ranking and the simulation weigh what actually matters for that: the destination's wealth tax and inheritance tax (now modeled in the engine), tax on dividends and foreign income, residency routes that accept assets rather than a pension, whether a US broker will still lend to a resident there, and healthcare cost and quality into the late 70s and beyond, alongside cost, safety, climate and flights. Belize and the other places skipped last time (LIOS 2026 #4–10) are added with verified costs, and the candidate pool is not limited to cities already in the dataset. Done = the live Atlas ranks the new top 50 with BBD-specific scores and a sourced profile page for each of the 50, each city's odds and estate reflect its local taxes, tests are green, and it works on phone and desktop in both themes.
 
 ## Baseline
 2026-11-06 · tests: 107 pass (12 files) · typecheck: clean · build: ok (main chunk 354.0 kB)
 
 ## Now
-Stage 2 of 5 · New cities
-Scope: add 12 cities to `src/data/cities.ts` — Crete (Chania), Hua Hin, Kotor, Paphos, Limassol, Sliema, Cayo (San Ignacio), Ambergris Caye (San Pedro), Gascony (Auch), Tarragona, Las Terrenas, Asunción — with new country bases for Cyprus, Malta, Montenegro, Belize, Dominican Republic, Paraguay (currency, FX fallback, fxVol, healthcare factor, 1–3 notes from the Stage 1 research), costs checked against Numbeo with a `verified` record (low confidence + note where thin), and a cost-check section in `docs/research/cost-check-2026-11.md`. Profiles and ranking are Stage 4.
-Risk: low (data only; no money logic changes)
+Stage 2 of 6 · Research for picks 26–50
+Scope: extend `docs/research/bbd-ranking-2026-11.md` so it ranks a top 50. The 13 cities dropped in Stage 1 become candidates for 26–50; add at least 15 more candidates, drawn from cities already in the dataset in researched countries (e.g. Phuket, Playa del Carmen, Mexico City, Cartagena, Madrid, Barcelona, Rome, Ho Chi Minh City, Cebu), cities in countries not yet researched (e.g. Tbilisi, Buenos Aires, Santiago, Lima, Budapest, Prague, Istanbul, Taipei, Dublin), and well-known retiree towns not yet in the dataset (e.g. Lake Chapala/Ajijic, Oaxaca, Cascais, Alicante, Antigua Guatemala, Coronado, Atenas, Dumaguete). New countries get the same sourced row as Stage 1.
+Risk: none (research notes only)
 Checks:
-- [ ] All 12 cities are in `CITIES`, each with a `verified` record citing the Numbeo page read, and listed with their indices and healthcare factor in `docs/research/cost-check-2026-11.md` (proof: test asserting the ids + verified, and read the doc)
-- [ ] Healthcare factors for the six new countries are set on the existing scale (US = 1) with the basis written down (proof: read the doc)
-- [ ] The new cities appear and run in the Atlas (proof: screenshot of the running dev app with a new city selected)
-- [ ] Tests green, typecheck clean, build ok (proof: command output)
+- [ ] Every new country has a sourced row in the summary (wealth tax, inheritance/estate tax and US treaty position, dividends/interest/foreign income, asset-based residency, broker/margin, healthcare and insurance age), and every summary URL appears in the sourced appendices (proof: read the doc; URL cross-check script)
+- [ ] The doc ranks a draft top 50 with a reason per city, and every candidate outside the 50 has a written reason (proof: read the doc)
 Open: none
-Mode: paused — Stage 2 risk line tripped the money gate (false positive: data only); Stage 3 (engine wealth/inheritance tax) is money logic and needs the user’s go
+Mode: paused — user expanded the plan to profiles for the top 50 (2026-11-06); waiting on the user's go for the revised plan, including Stage 4 (engine wealth/inheritance tax = money logic)
 
 ## Stages
 - [x] 1. BBD research — country tax, residency, lending and healthcare facts for every candidate, sourced; new top-25 draft
-- [ ] 2. New cities — add Belize (Cayo, Ambergris Caye), the other skipped LIOS picks and any research adds, with verified costs and healthcare factors
-- [ ] 3. Local taxes — wealth and inheritance tax per country in the engine, with tests; odds and estate reflect them; Method page explains
-- [ ] 4. BBD ranking — rerank the top 25 with new tax/estate and lending factors; profiles for newcomers, refreshed facts for the rest
-- [ ] 5. Atlas & verify — tax lines in "Your plan here", phone + both themes, preview, deploy on approval
+- [ ] 2. Research for 26–50 — more candidates and any new countries, sourced the same way; draft top 50
+- [ ] 3. New cities — add Belize (Cayo, Ambergris Caye), the other skipped LIOS picks and every research add for the top 50, with verified costs and healthcare factors
+- [ ] 4. Local taxes — wealth and inheritance tax per country in the engine, with tests; odds and estate reflect them; Method page explains
+- [ ] 5. BBD ranking — rerank the top 50 with new tax/estate and lending factors; profile pages for all 50 (new ones for newcomers and 26–50, refreshed facts for the rest)
+- [ ] 6. Atlas & verify — tax lines in "Your plan here", the Atlas list and profile pages handle 50 picks, phone + both themes, preview, deploy on approval
 
 ## Decisions
 - 2026-11-06 · Belize and LIOS 2026 #4–10 (Gascony, Crete, Tarragona, Cayo, Hua Hin, Kotor, Las Terrenas) are added — last round silently ranked only cities already in the dataset, breaking its own "add it rather than skip it" rule; user asked to add them.
@@ -33,6 +32,8 @@ Mode: paused — Stage 2 risk line tripped the money gate (false positive: data 
 
 - 2026-11-06 · Research surfaced Cyprus (Paphos, Limassol) and Malta (Sliema) as strong BBD fits and they enter the draft top 25; Paraguay (Asunción) and the Philippines were considered and dropped with reasons — autopilot call within the "not limited to the dataset" decision.
 - 2026-11-06 · Broker/margin facts rest on secondary sources (IBKR and Schwab International pages refuse automated fetch; a shell workaround was declined as bot-check circumvention) — marked secondary in the doc and carried as a caveat, not a ranking driver.
+
+- 2026-11-06 · Profile pages for the top 50, not just the top 25 — user asked to expand; adds a research stage for picks 26–50 before the new-cities stage, and profiles for all 50 in the ranking stage.
 
 ## Open questions
 - Malta's Global Residence Programme terms are kept to 2031 only for applications filed by 31 Dec 2026 — time-sensitive for the user personally, not for the app.
