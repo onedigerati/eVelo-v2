@@ -1,0 +1,25 @@
+$ node docs/evidence/stage-4/scripts/profiles.cjs http://localhost:4197/ docs/evidence/stage-4 'Mexico City=mexico-city' 'Cuenca=cuenca' 'Ambergris=ambergris-caye'   (vite preview of the build above)
+PASS  Mexico City: found in the "Also worth a look" list
+Mexico City: opened via "Also worth a look" row (rank 46, .also__main button)
+mexico-city {"pickOdds":"73%","tiles":5,"loaded":5,"srcs":["1-PHOhBOyW.webp","2-B5gaC6kC.webp","3-CKh6BajV.webp","4-DGhNyfzw.webp","5-BVlXHUq-.webp"],"badge":"YOUR PLAN HERE 73% plan holds +9 pts vs 64% in St. Louis","badgeBig":"73%","badgeVs":"+9 pts vs 64% in St. Louis","cardBig":"73%","cardSub":"+9 pts vs 64% in St. Louis","badgeHome":"63.9%","cardMark":"63.9%","credit":"Photos: Alejandro Islas Photograph AC, Daniel Case, ProtoplasmaKid, Juan Carlos Fonseca Mata · CC BY / CC BY-SA · Wikimedia Commons"}
+PASS  Mexico City: mosaic has 5 tiles, 5 images loaded
+PASS  Mexico City: badge 73% == card 73% (top-picks list shows 73%)
+PASS  Mexico City: badge "+9 pts vs 64% in St. Louis" within card sub "+9 pts vs 64% in St. Louis"
+PASS  Mexico City: home tick 63.9% == card mark 63.9%
+PASS  Cuenca: found in the "Also worth a look" list
+Cuenca: opened via "Also worth a look" row (rank 57, .also__main button)
+cuenca {"pickOdds":"86%","tiles":5,"loaded":5,"srcs":["1-CtWDrRj8.webp","2-C186kT3V.webp","3-ChnGx_kl.webp","4-XKvgSQFZ.webp","5-BZB5JqPL.webp"],"badge":"YOUR PLAN HERE 86% plan holds +22 pts vs 64% in St. Louis","badgeBig":"86%","badgeVs":"+22 pts vs 64% in St. Louis","cardBig":"86%","cardSub":"+22 pts vs 64% in St. Louis","badgeHome":"63.9%","cardMark":"63.9%","credit":"Photos: Pablo Zuñiga, Bernard Gagnon, Arabsalam · CC BY / CC BY-SA · Wikimedia Commons"}
+PASS  Cuenca: mosaic has 5 tiles, 5 images loaded
+PASS  Cuenca: badge 86% == card 86% (top-picks list shows 86%)
+PASS  Cuenca: badge "+22 pts vs 64% in St. Louis" within card sub "+22 pts vs 64% in St. Louis"
+PASS  Cuenca: home tick 63.9% == card mark 63.9%
+PASS  Ambergris: found in the "Also worth a look" list
+Ambergris: opened via "Also worth a look" row (rank 65, .also__main button)
+ambergris-caye {"pickOdds":"69%","tiles":5,"loaded":5,"srcs":["1-Bzi3-dpi.webp","2-DEKuN6t7.webp","3-Dl098Bqd.webp","4-BofijPcF.webp","5-CNPrjdsw.webp"],"badge":"YOUR PLAN HERE 69% plan holds +5 pts vs 64% in St. Louis","badgeBig":"69%","badgeVs":"+5 pts vs 64% in St. Louis","cardBig":"69%","cardSub":"+5 pts vs 64% in St. Louis","badgeHome":"63.9%","cardMark":"63.9%","credit":"Photos: Asteiner, Pgbk87, Elizabeth Albert, Anatmavada · CC BY-SA / CC BY · Wikimedia Commons"}
+PASS  Ambergris: mosaic has 5 tiles, 5 images loaded
+PASS  Ambergris: badge 69% == card 69% (top-picks list shows 69%)
+PASS  Ambergris: badge "+5 pts vs 64% in St. Louis" within card sub "+5 pts vs 64% in St. Louis"
+PASS  Ambergris: home tick 63.9% == card mark 63.9%
+console errors/warnings: none
+ALL PASS
+exit 0

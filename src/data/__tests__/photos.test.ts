@@ -26,7 +26,6 @@ import { EXPAT_PICKS } from '../expatPicks'
 import { PHOTO_CITY_IDS, buildPhotoIndex, photosFor, type CityPhotoEntry } from '../photos'
 
 const PHOTOS_DIR = fileURLToPath(new URL('../photos/', import.meta.url))
-const PILOTS = ['lisbon', 'algarve', 'panama-city', 'boquete', 'kuala-lumpur']
 const PICK_IDS = new Set(EXPAT_PICKS.map((p) => p.cityId))
 
 describe('city photos data', () => {
@@ -42,8 +41,10 @@ describe('city photos data', () => {
     for (const id of PHOTO_CITY_IDS) expect(PICK_IDS.has(id), id).toBe(true)
   })
 
-  it('has the five pilot cities', () => {
-    for (const id of PILOTS) expect(photosFor(id), id).toHaveLength(PHOTOS_PER_CITY)
+  it('has exactly 5 photos for every pick', () => {
+    const missing = [...PICK_IDS].filter((id) => photosFor(id).length !== PHOTOS_PER_CITY)
+    expect(missing, `picks without ${PHOTOS_PER_CITY} photos`).toEqual([])
+    expect(PHOTO_CITY_IDS).toEqual([...PICK_IDS].sort())
   })
 
   it('returns an empty list for a city without photos', () => {
@@ -332,6 +333,22 @@ describe('photo metadata helpers', () => {
     ['User:Darwinek', 'Darwinek'],
     ['Wknight94 talk', 'Wknight94'],
     ['Hendrik Dacquin from gent, Belgium', 'Hendrik Dacquin'],
+    ['Flickr user Walter Rodriguez', 'Walter Rodriguez'],
+    ['Flickr-user Walter Rodriguez', 'Walter Rodriguez'],
+    ['Flickr: Walter Rodriguez', 'Walter Rodriguez'],
+    ['flickr user: Ann Lee', 'Ann Lee'],
+    ['CEphoto, Uwe Aranas or alternatively © CEphoto, Uwe Aranas', 'CEphoto, Uwe Aranas'],
+    ['Jane Roe or alternatively Someone Else', 'Jane Roe'],
+    ['Jane Roe or © Jane Roe', 'Jane Roe'],
+    ['Jane Roe alternatively Jane Roe', 'Jane Roe'],
+    ['Prayitno / Thank you for (12 millions +) view', 'Prayitno'],
+    ['Ann - thanks for 5k views', 'Ann'],
+    ['No machine-readable author provided. Maral10 assumed (based on copyright claims).', 'Maral10'],
+    ['(WT-shared) CONOCER at wts wikivoyage', 'CONOCER'],
+    ['(WT-en) Ann Lee at wikivoyage', 'Ann Lee'],
+    ['Mariordo ((Mario Roberto Durán Ortiz)', 'Mariordo (Mario Roberto Durán Ortiz)'],
+    ['"dronepicr"', 'dronepicr'],
+    ['“Ann Lee”', 'Ann Lee'],
   ])('strips link and platform noise: %s', (raw, clean) => {
     expect(cleanAuthor(raw)).toBe(clean)
     expect(hasCreditNoise(clean)).toBe(false)
@@ -350,6 +367,11 @@ describe('photo metadata helpers', () => {
     'Fry72, Karel Frydrýšek',
     'Marc Ryckaert (MJJR)',
     'Jean-Pol GRANDMONT',
+    'Tom or Jerry',
+    'Ann Orr',
+    'Ximonic (Simo Räsänen)',
+    'Alejandro Islas Photograph AC',
+    'Río Secreto',
   ])('keeps a real name intact: %s', (name) => {
     expect(cleanAuthor(name)).toBe(name)
     expect(hasCreditNoise(name)).toBe(false)
@@ -361,7 +383,11 @@ describe('photo metadata helpers', () => {
       licenseUrl: 'https://creativecommons.org/licenses/by/4.0', source: commonsPageUrl('File:A.jpg'), width: 1280, height: 853,
     }
     expect(validateEntry({ ...e, author: 'Ann Lee' }, 1)).toEqual([])
-    for (const bad of ['Ann, Wikimedia Commons', 'Ann via Flickr', 'Ann https://x.org', 'Ann www.ann.de', 'Ann annphoto.com']) {
+    for (const bad of [
+      'Ann, Wikimedia Commons', 'Ann via Flickr', 'Ann https://x.org', 'Ann www.ann.de', 'Ann annphoto.com',
+      'Ann / Thank you for views', 'Ann 1M views', 'No machine-readable author provided. Ann assumed', 'Ann at wikivoyage',
+      '(WT-shared) Ann', 'Ann ((Lee)', 'Ann (Lee', 'Ann Lee)', 'Ann [[Lee]]', '"Ann"', '‘Ann’',
+    ]) {
       expect(validateEntry({ ...e, author: bad }, 1).join(), bad).toMatch(/link, domain or platform/)
     }
   })

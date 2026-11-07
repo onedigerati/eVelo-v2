@@ -102,18 +102,47 @@ const SEP = '[\\/,\\-–—|@•·:;]'
 const BARE_DOMAIN =
   /(?<![\w.@-])(?:www\.)?[a-z0-9-]+(?:\.[a-z0-9-]+)*\.(?:com|net|org|info|biz|io|co|me|eu|de|at|ch|nl|be|fr|es|it|pt|pl|cz|sk|hu|ro|bg|hr|si|rs|gr|cy|mt|tr|ge|al|uk|ie|dk|se|no|fi|ru|ua|ar|br|mx|cl|pa|us|ca|au|nz|jp|my|th|vn|id|photo|photos|photography|art|studio)(?![\w-])(?:\/\S*)?/g
 const URL_RE = /\bhttps?:\/\/\S+/gi
-const PLATFORM = '(?:wikimedia commons|wikimedia|commons|wikipedia|flickr|flikr|panoramio|instagram)'
+const PLATFORM = '(?:wikimedia commons|wikimedia|commons|wikipedia|wikivoyage|flickr|flikr|panoramio|instagram)'
 
 /** True when a credit still carries a link, a domain, or a platform name. */
 export function hasCreditNoise(s) {
   const t = String(s ?? '')
-  return /https?:\/\/|\bwww\./i.test(t) || new RegExp(BARE_DOMAIN.source).test(t) || /wikimedia commons|\bflickr\b|\bflikr\b/i.test(t)
+  const count = (re) => (t.match(re) ?? []).length
+  return (
+    /https?:\/\/|\bwww\./i.test(t) ||
+    new RegExp(BARE_DOMAIN.source).test(t) ||
+    /wikimedia commons|\bflickr\b|\bflikr\b|wikivoyage|\bWT-\w+/i.test(t) ||
+    /thank(s| you)\b|\bviews?\b|no machine-readable|\bassumed\b/i.test(t) ||
+    /\(\(|\)\)|\[\[|\]\]/.test(t) ||
+    count(/\(/g) !== count(/\)/g) ||
+    count(/\[/g) !== count(/\]/g) ||
+    /^["“”'‘’«].*["“”'‘’»]$/.test(t)
+  )
 }
 
 /** Strips credit prefixes ("This photo was taken by", "By:", "I,", "User:"), links and platform names. */
 function stripCreditNoise(input) {
   let s = input
-  s = s.replace(/^(©|\(c\)|copyright)\s*/i, '')
+  // "A or alternatively © A": keep the first form. A bare "or"/"alternatively" only when it repeats.
+  const alt = s.split(/\s+or\s+alternatively\s+/i)
+  if (alt.length > 1 && alt[0].trim()) s = alt[0]
+  else {
+    const m = s.match(/^(.+?)\s+(?:or|alternatively)\s+(.+)$/i)
+    const norm = (x) => x.replace(/^(©|\(c\)|copyright)\s*/i, '').replace(/\s+/g, ' ').trim().toLowerCase()
+    if (m && norm(m[1]) === norm(m[2])) s = m[1]
+  }
+  s = s.trim().replace(/^(©|\(c\)|copyright)\s*/i, '')
+  // Commons boilerplate: "No machine-readable author provided. X assumed (based on …)".
+  s = s.replace(/^no machine-readable author provided\.?\s*(.+?)\s+assumed\b.*$/i, '$1')
+  // Wikivoyage imports: "(WT-shared) X at wts wikivoyage".
+  s = s.replace(/^\(\s*WT-[\w-]+\s*\)\s*/i, '').replace(/\s+at\s+(?:wts\s+|\w{2,3}\s+)?wikivoyage\b.*$/i, '')
+  // Flickr thank-you text: "X / Thank you for (12 millions +) view".
+  s = s.replace(new RegExp(`^(.*?\\S)(?:\\s*${SEP})?\\s+thank(?:s| you)\\b.*$`, 'i'), '$1')
+  // Doubled brackets and wrapping quotes.
+  s = s.replace(/\(\(+/g, '(').replace(/\)\)+/g, ')').replace(/\[\[+/g, '[').replace(/\]\]+/g, ']')
+  s = s.trim().replace(/^["“”'‘’«]+(.+?)["“”'‘’»]+$/, '$1').trim()
+  // "Flickr user X", "Flickr-user X", "Flickr: X" → "X".
+  s = s.replace(/^(?:flickr|flikr)(?:[\s-]*user\b)?\s*:?\s*(?=\S)/i, '')
   s = s.replace(/^(this\s+)?(photo(graph)?|picture|image)(\s+was)?(\s+taken)?\s*(by|from|:)\s*:?\s*/i, '')
   s = s.replace(/^by\s*:\s*/i, '').replace(/^I,\s+/, '').replace(/^user:\s*/i, '')
   s = s.replace(URL_RE, ' ').replace(BARE_DOMAIN, ' ')

@@ -11,10 +11,10 @@ Stage 4 of 5 · Photos: Americas
 Risk: external services (build-time downloads from Wikimedia Commons), third-party content and licences
 Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (v25, stage 2: gallery with the 5 pilot cities)
 Checks:
-- [ ] Each of the 29 other Latin American picks (lake-chapala, merida, puerto-vallarta, san-miguel-de-allende, la-paz, mexico-city, oaxaca, playa-del-carmen, mazatlan, antigua-guatemala, panajachel, san-jose-cr, atenas, cayo, hopkins, corozal, placencia, ambergris-caye, roatan, las-terrenas, montevideo, santiago, asuncion, lima, medellin, cuenca, cartagena, coronado, volcan) has 5 photos with complete, clean credits, under 200 kB, no Commons file used twice (proof: test)
-- [ ] A contact sheet of the 29 cities is saved to the evidence, and every photo was viewed at full size by an independent reviewer and shows the place its caption names, with nothing watermarked, blurred, mislabelled or dominated by crowds, ads or swimwear (proof: run the product: contact-sheet screenshot + review)
-- [ ] Captions are one factual line tied to a reason the city's profile gives, with no invented prices, times, dates or rankings (proof: review against the profiles)
-- [ ] Three profiles (mexico-city, cuenca, ambergris-caye) show the mosaic and the odds badge in the app, and the main chunk stays within 2 kB of 532.79 kB (proof: run the product: screenshots; command: build output)
+- [x] Each of the 29 other Latin American picks (lake-chapala, merida, puerto-vallarta, san-miguel-de-allende, la-paz, mexico-city, oaxaca, playa-del-carmen, mazatlan, antigua-guatemala, panajachel, san-jose-cr, atenas, cayo, hopkins, corozal, placencia, ambergris-caye, roatan, las-terrenas, montevideo, santiago, asuncion, lima, medellin, cuenca, cartagena, coronado, volcan) has 5 photos with complete, clean credits, under 200 kB, no Commons file used twice (proof: test)
+- [x] A contact sheet of the 29 cities is saved to the evidence, and every photo was viewed at full size by an independent reviewer and shows the place its caption names, with nothing watermarked, blurred, mislabelled or dominated by crowds, ads or swimwear (proof: run the product: contact-sheet screenshot + review)
+- [x] Captions are one factual line tied to a reason the city's profile gives, with no invented prices, times, dates or rankings (proof: review against the profiles)
+- [x] Three profiles (mexico-city, cuenca, ambergris-caye) show the mosaic and the odds badge in the app, and the main chunk stays within 2 kB of 532.79 kB (proof: run the product: screenshots; command: build output)
 Open: none
 Mode: autopilot
 
@@ -22,7 +22,7 @@ Mode: autopilot
 - [x] 1. Photo pipeline — `npm run photos` (Commons API + sharp → WebP), per-city photo data and tests, the five pilot cities, a contact sheet
 - [x] 2. Gallery + odds badge — design A mosaic in the profile, odds badge with home comparison, full-size view with the odds pill, phone layout, both themes, reduced motion; preview; stop for review
 - [x] 3. Photos: Europe — the other 31 European picks, contact sheet
-- [ ] 4. Photos: Americas — the other 29 Latin American picks, contact sheet
+- [x] 4. Photos: Americas — the other 29 Latin American picks, contact sheet
 - [ ] 5. Photos: Asia/Africa + launch — the other 10 picks; a test now requires photos for all 75; preview (stale files pruned); deploy on approval
 
 ## Decisions
@@ -47,6 +47,9 @@ Mode: autopilot
 - 2026-11-07 · Each photo batch gets independent full-size review (one reviewer per builder batch) and a fix round; the European review replaced 17 of 155 (crowds, ads, swimwear foregrounds, weak lead photos, HDR) — keeps the bar the user asked for; PM's call.
 - 2026-11-07 · Credits are cleaned of platform names, URLs and "Photo by"-style prefixes, and the data test refuses any that remain; `npm run photos -- --recredit` re-applies it offline — the stage 3 verifier found credit lines like "Jorge Royan / http://www.royan.com.ar"; PM's call.
 - 2026-11-07 · Stage 4 builders started while stage 3's final review ran (disjoint folders; stage 3 committed before any stage 4 folder existed) — user asked what was taking the time; PM's call.
+- 2026-11-07 · Stage 5's 10 cities (two builders: Thailand; Penang, Langkawi, Taipei, Bali, Grand Baie) started alongside stage 4's three, five builders at once; stage 4 still closes first. Not more: image-viewing limits hit one European builder, and Commons requests stay polite — user asked to run more in parallel; PM's call on how many.
+- 2026-11-07 · Where Commons coverage is thin (Hopkins, Corozal, Coronado, Grand Baie), the best available honest photo stays even if weaker, nearby places are allowed when the caption names them, and review stops after one re-review round — five photos are required, and the alternatives were checked and found worse; PM's call.
+- 2026-11-07 · The photo test now requires exactly 5 photos for every one of the 75 picks and no folder for a non-pick (replaces the pilot-city check) — stage 5's completeness check.
 - 2026-11-07 · Every photo is looked at before it ships, and each batch saves a contact sheet to its evidence — Commons titles can be wrong or mislabelled, and the user was told this is the slow part.
 
 ## Open questions

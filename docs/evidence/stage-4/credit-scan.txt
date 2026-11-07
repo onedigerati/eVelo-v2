@@ -1,0 +1,18 @@
+$ node -e <scan every photos.json author for parentheses, quotes, ellipsis, "thank", "view", "machine", "assumed", "wiki", "shared", "/">
+atenas 1.webp "Mariordo (Mario Roberto Durán Ortiz)" File:Atenas CRI 07 2016 7532.jpg
+budapest 3.webp "Marc Ryckaert (MJJR)" File:Budapest Széchenyi Baths R01.jpg
+grand-baie 1.webp "\"dronepicr\"" File:Aerial view of the Mon Choisy Beach and Trou aux Biches Beach in Mauritius (53698215480).jpg
+grand-baie 3.webp "No machine-readable author provided. Maral10 assumed (based on copyright claims…" File:Grand baie.jpg
+medellin 2.webp "Steffen Schmitz (Carschten)" File:Medellín, Plaza Botero, 2023-07 CN-01.jpg
+medellin 5.webp "(WT-shared) CONOCER at wts wikivoyage" File:Orquideorama Jardin Botanico 4.jpg
+roatan 2.webp "Prayitno / Thank you for (12 millions +) view" File:West End ~ Isla Roatan (31037299240).jpg
+roatan 5.webp "Prayitno / Thank you for (12 millions +) view" File:OAK RIDGE Fishing Village (32128175631).jpg
+rome 1.webp "Wiki leylek" File:Colosseum Rome 2023 02.jpg
+san-jose-cr 1.webp "Mariordo (Mario Roberto Durán Ortiz)" File:Aerial Central Valley Sabana CRI 01 2020 2184.jpg
+san-jose-cr 2.webp "Mariordo ((Mario Roberto Durán Ortiz)" File:Teatro Nacional CRI 07 2019 8963.jpg
+san-jose-cr 4.webp "Mariordo (Mario Roberto Durán Ortiz)" File:General view Plaza de la Democracia Museo Nacional CRI 01 2020 4465.jpg
+torrevieja 4.webp "Ximonic (Simo Räsänen)" File:Playa de los Locos beach in Torrevieja, Alicante, Spain, 2022 January.jpg
+torrevieja 5.webp "Ximonic (Simo Räsänen)" File:Iglesia Arciprestal de la Inmaculada Concepción in Torrevieja, Alicante, Spain, 2022 January.jpg
+vienna 5.webp "Ma49wiki" File:Weingarten Blick auf Wien.jpg
+
+Not clean (verifier judgment): roatan 2+5 (\"/ Thank you for (12 millions +) view\" is Flickr view-count noise), san-jose-cr 2 (doubled paren), medellin 5 (\"(WT-shared) ... at wts wikivoyage\" is platform noise), grand-baie 3 (Commons boilerplate sentence, not an author), grand-baie 1 (stray quotes, minor). Others are name + handle in parentheses, fine.

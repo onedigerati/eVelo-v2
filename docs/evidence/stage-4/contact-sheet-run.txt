@@ -1,0 +1,5 @@
+$ npm run photos:sheet -- lake-chapala merida puerto-vallarta san-miguel-de-allende la-paz mexico-city oaxaca playa-del-carmen mazatlan antigua-guatemala panajachel san-jose-cr atenas cayo hopkins corozal placencia ambergris-caye roatan las-terrenas montevideo santiago asuncion lima medellin cuenca cartagena coronado volcan docs/evidence/stage-4/contact-sheet.html
+npm notice run evelo@2.0.0 photos:sheet
+npm notice run node scripts/photo-sheet.mjs lake-chapala merida puerto-vallarta san-miguel-de-allende la-paz mexico-city oaxaca playa-del-carmen mazatlan antigua-guatemala panajachel san-jose-cr atenas cayo hopkins corozal placencia ambergris-caye roatan las-terrenas montevideo santiago asuncion lima medellin cuenca cartagena coronado volcan docs/evidence/stage-4/contact-sheet.html
+wrote docs/evidence/stage-4/contact-sheet.html: 145 photos, 29 cities
+exit 0

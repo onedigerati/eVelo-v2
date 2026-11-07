@@ -1,0 +1,63 @@
+[
+  {
+    "commons": "File:Santiago en invierno.jpg",
+    "file": "1.webp",
+    "caption": "Snow on the Andes above Santiago's apartment blocks on a clear winter day",
+    "alt": "A wide view over city towers and apartment blocks with a long snow-covered mountain range behind under a clear blue sky",
+    "focus": "50% 60%",
+    "author": "victor san martin",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Santiago_en_invierno.jpg",
+    "width": 1024,
+    "height": 773
+  },
+  {
+    "commons": "File:Catedral Metropolitana de Santiago de Chile, desde la torre del Museo Histórico Nacional, en la Plaza de Armas.jpg",
+    "file": "2.webp",
+    "caption": "The Metropolitan Cathedral on the Plaza de Armas, Santiago's historic main square",
+    "alt": "A pale stone cathedral with two bell towers and a dome beside a paved square, a street with yellow taxis and a glass office tower",
+    "author": "CARLOS TEIXIDOR CADENAS",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Catedral_Metropolitana_de_Santiago_de_Chile,_desde_la_torre_del_Museo_Hist%C3%B3rico_Nacional,_en_la_Plaza_de_Armas.jpg",
+    "width": 1280,
+    "height": 960
+  },
+  {
+    "commons": "File:Fuente Neptuno en la Terraza del Cerro Santa Lucía.jpg",
+    "file": "3.webp",
+    "caption": "The Neptune Fountain terrace on Cerro Santa Lucía, a hilltop park in central Santiago",
+    "alt": "A curved ochre arcade with columns and a fountain, framed by willow branches, with a domed pavilion and palm trees above",
+    "author": "Rjcastillo",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Fuente_Neptuno_en_la_Terraza_del_Cerro_Santa_Luc%C3%ADa.jpg",
+    "width": 1024,
+    "height": 683
+  },
+  {
+    "commons": "File:Santiago-24.jpg",
+    "file": "4.webp",
+    "caption": "Lunch tables under the iron roof of the Mercado Central, Santiago's central market hall",
+    "alt": "A busy market hall with an ornate iron roof, flags and restaurant tables full of diners",
+    "author": "Almonroth",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Santiago-24.jpg",
+    "width": 1280,
+    "height": 853
+  },
+  {
+    "commons": "File:Parque Bicentenario, Vitacura, Santiago 20200314 02.jpg",
+    "file": "5.webp",
+    "caption": "Ponds and lawns of Parque Bicentenario in Vitacura, with the towers of the business district behind",
+    "alt": "A clear pond with water plants and a boardwalk, green lawns and trees, and glass skyscrapers under a blue sky",
+    "author": "Carlos Figueroa Rojas",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Parque_Bicentenario,_Vitacura,_Santiago_20200314_02.jpg",
+    "width": 1280,
+    "height": 853
+  }
+]

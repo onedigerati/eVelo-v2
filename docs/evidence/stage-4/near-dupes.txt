@@ -1,0 +1,3 @@
+$ node docs/evidence/stage-4/scripts/near-dupes.mjs
+375 photos hashed; pairs within 10 of 64 bits: 0
+exit 0

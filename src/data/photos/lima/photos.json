@@ -1,0 +1,62 @@
+[
+  {
+    "commons": "File:Lima, Peru - Barranco Skyline.jpg",
+    "file": "1.webp",
+    "caption": "The Pacific shore below the clifftop district of Barranco, in Lima",
+    "alt": "A curving coastline with blue sea and breaking waves, a coast road and beach at the foot of sandy cliffs topped by apartment buildings",
+    "author": "Avodrocc",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lima,_Peru_-_Barranco_Skyline.jpg",
+    "width": 1280,
+    "height": 848
+  },
+  {
+    "commons": "File:Lima - Plaza Mayor - Fontaine.jpg",
+    "file": "2.webp",
+    "caption": "The bronze fountain and yellow colonial buildings of Lima's Plaza Mayor",
+    "alt": "A tall dark bronze fountain on a paved square, with palm trees and yellow buildings with carved wooden balconies behind",
+    "author": "PA",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lima_-_Plaza_Mayor_-_Fontaine.jpg",
+    "width": 1280,
+    "height": 824
+  },
+  {
+    "commons": "File:Lima, Peru - Larcomar & Miraflores Skyline.jpg",
+    "file": "3.webp",
+    "caption": "Apartment towers on the green clifftops of Miraflores, above the coast road",
+    "alt": "Tall white apartment blocks along the top of a steep sandy cliff, with a shopping terrace built into the cliff and a road below",
+    "author": "Avodrocc",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lima,_Peru_-_Larcomar_%26_Miraflores_Skyline.jpg",
+    "width": 1280,
+    "height": 848
+  },
+  {
+    "commons": "File:Canta Rana, Barranco, Lima, Peru.jpg",
+    "file": "4.webp",
+    "caption": "Ceviche at Canta Rana, a restaurant in Barranco",
+    "alt": "A plate of ceviche, a bowl of soup and toasted corn on a table in a restaurant whose walls are covered with framed photos",
+    "author": "S. Sasaki",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Canta_Rana,_Barranco,_Lima,_Peru.jpg",
+    "width": 1280,
+    "height": 854
+  },
+  {
+    "commons": "File:Huaca Pucllana Miraflores.jpg",
+    "file": "5.webp",
+    "caption": "Huaca Pucllana, an adobe pyramid ruin among the streets of Miraflores",
+    "alt": "A wide stepped wall of small mud bricks stacked in layers under a deep blue sky",
+    "author": "McKay Savage",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Huaca_Pucllana_Miraflores.jpg",
+    "width": 1280,
+    "height": 853
+  }
+]

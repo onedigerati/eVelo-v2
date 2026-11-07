@@ -1,0 +1,62 @@
+[
+  {
+    "commons": "File:Antigua Guatemala - Cityscape.jpg",
+    "file": "1.webp",
+    "caption": "Antigua's tiled roofs and cobbled streets below Volcán de Agua",
+    "alt": "An aerial view down a cobbled street lined with low tiled-roof houses, with a large green volcano under a blue sky behind",
+    "author": "Juan Francisco",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Antigua_Guatemala_-_Cityscape.jpg",
+    "width": 1280,
+    "height": 719
+  },
+  {
+    "commons": "File:Santa Catalina Arch - Antigua Guatemala Feb 2020.jpg",
+    "file": "2.webp",
+    "caption": "The Santa Catalina Arch on 5th Avenue North, one of Antigua's colonial landmarks",
+    "alt": "A yellow arch with a clock tower spanning a cobbled street of colourful houses, with a volcano behind",
+    "author": "Chad Davis",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Santa_Catalina_Arch_-_Antigua_Guatemala_Feb_2020.jpg",
+    "width": 1280,
+    "height": 854
+  },
+  {
+    "commons": "File:Antigua Guatemala Feb 2020 La Merced - 02.jpg",
+    "file": "3.webp",
+    "caption": "The carved yellow-and-white façade of La Merced church in Antigua",
+    "alt": "A yellow church front covered in white stucco ornament, columns and statues, under a blue sky with clouds",
+    "author": "Bruno Rijsman",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Antigua_Guatemala_Feb_2020_La_Merced_-_02.jpg",
+    "width": 1280,
+    "height": 853
+  },
+  {
+    "commons": "File:Antigua Guatemala Mercado Feb 2020 - 01.jpg",
+    "file": "4.webp",
+    "caption": "Fruit stalls in Antigua's market",
+    "alt": "Heaps of oranges, bananas, apples, mangoes and papayas on green-lined baskets, with a vendor behind them",
+    "author": "Bruno Rijsman",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Antigua_Guatemala_Mercado_Feb_2020_-_01.jpg",
+    "width": 1280,
+    "height": 853
+  },
+  {
+    "commons": "File:Santuario San Francisco el Grande.jpg",
+    "file": "5.webp",
+    "caption": "A garden among the colonial ruins at San Francisco el Grande in Antigua",
+    "alt": "A strip of lawn and plants between crumbling brick and stone walls, leading to a blue door under a blue sky",
+    "author": "Chad Davis",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Santuario_San_Francisco_el_Grande.jpg",
+    "width": 1024,
+    "height": 683
+  }
+]

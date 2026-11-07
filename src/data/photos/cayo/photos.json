@@ -1,0 +1,63 @@
+[
+  {
+    "commons": "File:Hawkesworth Bridge 2017.jpg",
+    "file": "1.webp",
+    "caption": "The Hawkesworth suspension bridge over the Macal River at San Ignacio",
+    "alt": "A long suspension bridge with an orange tower crossing a green river between wooded banks, with houses on a hill behind",
+    "author": "Kaldari",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Hawkesworth_Bridge_2017.jpg",
+    "width": 1280,
+    "height": 960
+  },
+  {
+    "commons": "File:El Castillo, Xunantunich, Cayo, Belize.jpg",
+    "file": "2.webp",
+    "caption": "El Castillo, the main pyramid at the Maya site of Xunantunich near San Ignacio",
+    "alt": "A tall stepped stone pyramid with a wide stairway above a sunlit lawn where a small group of visitors stands, under white clouds",
+    "focus": "70% 50%",
+    "author": "cjuneau",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:El_Castillo,_Xunantunich,_Cayo,_Belize.jpg",
+    "width": 1280,
+    "height": 853
+  },
+  {
+    "commons": "File:Macal River at San Ignacio.jpg",
+    "file": "3.webp",
+    "caption": "The Macal River seen from the Hawkesworth Bridge in San Ignacio",
+    "alt": "A wide calm brown river between banks of large shade trees under a blue sky with small white clouds",
+    "author": "Kaldari",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Macal_River_at_San_Ignacio.jpg",
+    "width": 1280,
+    "height": 853
+  },
+  {
+    "commons": "File:San Ignacio Laslovarga016.JPG",
+    "file": "4.webp",
+    "caption": "San Ignacio's houses among trees, with farmland and forested hills beyond",
+    "alt": "A view over low houses with coloured roofs among palms and trees, fields and a long wooded ridge behind under a grey sky",
+    "author": "Laslovarga",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:San_Ignacio_Laslovarga016.JPG",
+    "width": 1280,
+    "height": 960
+  },
+  {
+    "commons": "File:Big Rock Falls Belize.jpg",
+    "file": "5.webp",
+    "caption": "Big Rock Falls in the Mountain Pine Ridge reserve, in the Cayo District",
+    "alt": "A waterfall pouring through a rocky gorge between green slopes and pine trees, into pools among boulders",
+    "author": "Russell Harrison Photography",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Big_Rock_Falls_Belize.jpg",
+    "width": 896,
+    "height": 672
+  }
+]

@@ -1,0 +1,34 @@
+$ node docs/evidence/stage-4/scripts/check-photos.mjs lake-chapala merida puerto-vallarta san-miguel-de-allende la-paz mexico-city oaxaca playa-del-carmen mazatlan antigua-guatemala panajachel san-jose-cr atenas cayo hopkins corozal placencia ambergris-caye roatan las-terrenas montevideo santiago asuncion lima medellin cuenca cartagena coronado volcan
+ok   lake-chapala           webp=5 json=5 max=197008 B 
+ok   merida                 webp=5 json=5 max=197164 B 
+ok   puerto-vallarta        webp=5 json=5 max=196410 B 
+ok   san-miguel-de-allende  webp=5 json=5 max=198046 B 
+ok   la-paz                 webp=5 json=5 max=192448 B 
+ok   mexico-city            webp=5 json=5 max=193006 B 
+ok   oaxaca                 webp=5 json=5 max=197954 B 
+ok   playa-del-carmen       webp=5 json=5 max=197776 B 
+ok   mazatlan               webp=5 json=5 max=196120 B 
+ok   antigua-guatemala      webp=5 json=5 max=196914 B 
+ok   panajachel             webp=5 json=5 max=195248 B 
+ok   san-jose-cr            webp=5 json=5 max=196068 B 
+ok   atenas                 webp=5 json=5 max=199950 B 
+ok   cayo                   webp=5 json=5 max=199980 B 
+ok   hopkins                webp=5 json=5 max=199182 B 
+ok   corozal                webp=5 json=5 max=192434 B 
+ok   placencia              webp=5 json=5 max=196110 B 
+ok   ambergris-caye         webp=5 json=5 max=186802 B 
+ok   roatan                 webp=5 json=5 max=199068 B 
+ok   las-terrenas           webp=5 json=5 max=194626 B 
+ok   montevideo             webp=5 json=5 max=160190 B 
+ok   santiago               webp=5 json=5 max=193688 B 
+ok   asuncion               webp=5 json=5 max=197050 B 
+ok   lima                   webp=5 json=5 max=194688 B 
+ok   medellin               webp=5 json=5 max=197510 B 
+ok   cuenca                 webp=5 json=5 max=194866 B 
+ok   cartagena              webp=5 json=5 max=182744 B 
+ok   coronado               webp=5 json=5 max=189426 B 
+ok   volcan                 webp=5 json=5 max=197838 B 
+
+Commons files across all cities: 375, used more than once: 0 []
+29 cities checked, 0 failing
+exit 0

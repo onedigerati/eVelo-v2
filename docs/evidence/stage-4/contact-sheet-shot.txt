@@ -1,0 +1,10 @@
+$ NODE_PATH=/home/jonah/repos/eVelo/node_modules node docs/evidence/stage-4/scripts/sheet-shot.cjs docs/evidence/stage-4
+images 145, broken 0, natural size != listed size 0, portrait 2
+portrait ../../../src/data/photos/atenas/4.webp
+portrait ../../../src/data/photos/cartagena/5.webp
+contact-sheet-1.png: sections 1-6
+contact-sheet-2.png: sections 7-12
+contact-sheet-3.png: sections 13-18
+contact-sheet-4.png: sections 19-24
+contact-sheet-5.png: sections 25-29
+exit 0

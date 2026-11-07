@@ -1,0 +1,63 @@
+[
+  {
+    "commons": "File:Ajijic Malecon Sunset.jpg",
+    "file": "1.webp",
+    "caption": "Ajijic's malecón and lakeside park along Lake Chapala at sunset",
+    "alt": "An aerial view at sunset of a lakeshore town with a palm-lined promenade, green mountains behind and the lake reflecting an orange sky",
+    "focus": "70% 50%",
+    "author": "SimonVelazquez",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ajijic_Malecon_Sunset.jpg",
+    "width": 1280,
+    "height": 853
+  },
+  {
+    "commons": "File:Ajijic Kiosk.jpg",
+    "file": "2.webp",
+    "caption": "The kiosk and mosaic-paved plaza at the heart of Ajijic",
+    "alt": "An overhead view of a square with a green octagonal kiosk, patterned paving, round trees and café umbrellas",
+    "author": "SimonVelazquez",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ajijic_Kiosk.jpg",
+    "width": 1152,
+    "height": 769
+  },
+  {
+    "commons": "File:The beach at Chapala Malecon.JPG",
+    "file": "3.webp",
+    "caption": "The palm-lined lakeside promenade on Chapala's malecón",
+    "alt": "A paved promenade with palms, benches and flower pots beside the lake, with small boats and a pier under a blue sky",
+    "author": "Cyberjack",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:The_beach_at_Chapala_Malecon.JPG",
+    "width": 1280,
+    "height": 960
+  },
+  {
+    "commons": "File:Ajijic023.JPG",
+    "file": "4.webp",
+    "caption": "Tile murals of lake fishermen on the municipal building in Ajijic",
+    "alt": "An orange building with a balcony and painted tile panels of fishermen with nets and children playing, around a green arched door",
+    "author": "AlejandroLinaresGarcia",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ajijic023.JPG",
+    "width": 1280,
+    "height": 851
+  },
+  {
+    "commons": "File:Chapala by the Malecon.JPG",
+    "file": "5.webp",
+    "caption": "Twin church spires above a red-brick house at the main corner of Chapala's malecón",
+    "alt": "Two tall stone church towers with golden spires behind a red-brick building with two turrets, palms and parked cars in front",
+    "author": "Cyberjack",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Chapala_by_the_Malecon.JPG",
+    "width": 1280,
+    "height": 960
+  }
+]
