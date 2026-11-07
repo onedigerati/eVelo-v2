@@ -7,7 +7,7 @@ Make the Atlas world map pannable and zoomable with mouse, trackpad and touch, w
 2026-11-07 · tests: 173 pass (16 files) · typecheck: clean · build: ok
 
 ## Now
-All stages done. Stage 1 verified ([evidence](evidence/map-pan-zoom/report.md)); Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (v19). Awaiting the user's review before push/deploy.
+All stages done. Stage 1 verified ([evidence](evidence/map-pan-zoom/report.md)); Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (v19). Live: https://onedigerati.github.io/eVelo-v2/ (deployed 2026-11-07, run 42391330188).
 
 ## Stages
 - [x] 1. Pan and zoom — pure view helpers (zoom-at-point, pinch, clamp) with tests; gestures and controls in `WorldMap`
@@ -20,6 +20,8 @@ All stages done. Stage 1 verified ([evidence](evidence/map-pan-zoom/report.md));
 ## Decisions
 - 2026-11-07 · Pan bounds are the inhabited band (Hawaii to the dateline, 79°N–57°S) plus the region's own fit, not the sphere's bounding box — its corners are empty ocean.
 - 2026-11-07 · Touch pans on a horizontal one-finger drag (same intent rule as the sliders) and on two fingers; vertical one-finger swipes stay page scrolls — keeps the page scrollable past the map, which the user has prioritised.
+
+- 2026-11-07 · User approved push and deploy — "push it".
 
 ## Open questions
 - WebKit's touch path (iPhone) is untested until the user tries it.
