@@ -1,5 +1,5 @@
 import { AnimatePresence, m as motion } from 'framer-motion'
-import { useId, useMemo, useState } from 'react'
+import { useId, useMemo, useRef, useState } from 'react'
 import { EXPAT_AS_OF, EXPAT_RANKING_METHOD, EXPAT_RANKING_SOURCES, EXPAT_SCORE_LABELS, EXPAT_SCORE_RUBRIC } from '../../data/expatPicks'
 import { currency, currencyCompact, percent } from '../format'
 import { useBreakpoint } from '../hooks'
@@ -152,9 +152,18 @@ function AlsoList({
   onChoose: (cityId: string) => void
 }) {
   const [all, setAll] = useState(false)
+  const ref = useRef<HTMLElement>(null)
   const shown = all ? views : views.slice(0, FIRST_ROWS)
+  const hidden = views.slice(FIRST_ROWS)
+  const toggle = () => {
+    // Collapsing from the bottom of 35 rows would leave the reader far below the list: bring its
+    // heading back into view if it has scrolled off.
+    const el = ref.current
+    if (all && el && el.getBoundingClientRect().top < 0) requestAnimationFrame(() => el.scrollIntoView({ block: 'start', behavior: 'instant' }))
+    setAll((x) => !x)
+  }
   return (
-    <section className="also" aria-labelledby="also-h">
+    <section className="also" aria-labelledby="also-h" ref={ref}>
       <div className="also__h">
         <h3 id="also-h" className="t-eyebrow">
           Also worth a look · {views[0].pick.rank}–{views[views.length - 1].pick.rank}
@@ -201,10 +210,10 @@ function AlsoList({
           )
         })}
       </ol>
-      {views.length > FIRST_ROWS && (
+      {hidden.length > 0 && (
         <div className="picks__more">
-          <button type="button" className="chip-btn" aria-expanded={all} onClick={() => setAll((x) => !x)}>
-            {all ? 'Show fewer' : `Show all ${views.length}`}
+          <button type="button" className="chip-btn" aria-expanded={all} onClick={toggle}>
+            {all ? 'Show fewer' : `Show ${hidden[0].pick.rank}–${hidden[hidden.length - 1].pick.rank}`}
             <Chevron open={all} />
           </button>
         </div>

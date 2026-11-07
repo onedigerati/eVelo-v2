@@ -4,7 +4,7 @@
 // Lower-priority work never blocks a fresh simulate: if the worker is still busy with anything
 // from an older generation when new inputs arrive, it is terminated and respawned.
 
-import { useEffect } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import type { AtlasEntry, PlanInputs, SimulationResult, SolveResult, WorkerRequest, WorkerResponse } from '../engine/types'
 import { useStore } from './store'
 
@@ -103,6 +103,11 @@ class SimClient {
       this.pending.set(id, { resolve: resolve as (v: unknown) => void, reject })
       w.postMessage({ id, ...body } as WorkerRequest)
     })
+  }
+
+  /** Cached result for these exact inputs, if the main pipeline already ran them. */
+  peek(inputs: PlanInputs): SimulationResult | undefined {
+    return this.simCache.get(inputsKey(inputs))
   }
 
   async simulate(inputs: PlanInputs): Promise<SimulationResult> {
@@ -255,6 +260,163 @@ export async function runAtlas(cityIds: string[]): Promise<AtlasEntry[]> {
     if (!isCancelled(e)) useStore.getState().setAtlasRunning(false)
     throw e
   }
+}
+
+/**
+ * One-off destination runs for the profile sheet: the plan with a given city as the destination,
+ * plus the same plan staying home (for the estate comparison). Own worker, so it never queues
+ * behind or cancels the main pipeline or the Atlas ranking. Only the latest request matters: a new
+ * one, or cancel(), terminates whatever is in flight.
+ */
+class DestinationClient {
+  private worker: Worker | null = null
+  private cache = new Lru<SimulationResult>()
+  private pending = new Map<number, Pending>()
+  private nextId = 1
+  private users = 0
+  private idle: ReturnType<typeof setTimeout> | undefined
+
+  /** Cached here, or already run by the main pipeline (its home baseline, or this destination when
+   *  it is the plan's). A plan with no destination is the same run as its home variant. */
+  peek(inputs: PlanInputs): SimulationResult | undefined {
+    const hit = this.cache.get(inputsKey(inputs)) ?? sim.peek(inputs)
+    if (hit || inputs.destCityId) return hit
+    const st = useStore.getState().inputs
+    return !st.destCityId && inputsKey(homeVariant(st)) === inputsKey(inputs) ? sim.peek(st) : undefined
+  }
+
+  cancel() {
+    if (!this.worker || this.pending.size === 0) return
+    this.worker.terminate()
+    this.worker = null
+    for (const p of this.pending.values()) p.reject(new Cancelled())
+    this.pending.clear()
+  }
+
+  /** A profile sheet is showing; the worker may stay up while it is. */
+  acquire() {
+    this.users++
+    clearTimeout(this.idle)
+  }
+
+  /** The profile sheet closed: drop the worker once nothing uses it. */
+  release() {
+    this.users = Math.max(0, this.users - 1)
+    if (this.users === 0) this.shutdown()
+  }
+
+  private shutdown() {
+    clearTimeout(this.idle)
+    this.cancel()
+    this.worker?.terminate()
+    this.worker = null
+  }
+
+  /** Terminate the worker after a quiet spell even while a sheet stays open. */
+  private touch() {
+    clearTimeout(this.idle)
+    this.idle = setTimeout(() => this.pending.size === 0 && this.shutdown(), DEST_IDLE_MS)
+  }
+
+  private spawn(): Worker {
+    if (this.worker) return this.worker
+    const w = new Worker(new URL('../engine/worker.ts', import.meta.url), { type: 'module' })
+    w.onmessage = (ev: MessageEvent<WorkerResponse>) => {
+      const res = ev.data
+      const p = this.pending.get(res.id)
+      if (!p) return
+      this.pending.delete(res.id)
+      if (res.kind === 'simulate') p.resolve(res.result)
+      else p.reject(new Error(res.kind === 'error' ? res.message : 'Unexpected response'))
+    }
+    w.onerror = (ev) => {
+      ev.preventDefault()
+      const err = new Error(ev.message || 'Simulation worker failed')
+      for (const p of this.pending.values()) p.reject(err)
+      this.pending.clear()
+      this.worker?.terminate()
+      this.worker = null
+    }
+    this.worker = w
+    return w
+  }
+
+  async simulate(inputs: PlanInputs): Promise<SimulationResult> {
+    const hit = this.peek(inputs)
+    if (hit) return hit
+    const w = this.spawn()
+    const id = this.nextId++
+    clearTimeout(this.idle)
+    try {
+      const r = await new Promise<SimulationResult>((resolve, reject) => {
+        this.pending.set(id, { resolve: resolve as (v: unknown) => void, reject })
+        w.postMessage({ id, kind: 'simulate', inputs } as WorkerRequest)
+      })
+      this.cache.set(inputsKey(inputs), r)
+      return r
+    } finally {
+      if (this.worker) this.touch()
+    }
+  }
+
+  /** For tests and checks: whether a destination worker is alive. */
+  get alive() {
+    return this.worker != null
+  }
+}
+
+export const destinationClient = new DestinationClient()
+
+/** Delay before a profile's run starts, so flicking through profiles doesn't start a run per open. */
+export const DEST_DEBOUNCE_MS = 220
+/** The destination worker is terminated after this long with nothing to do. */
+const DEST_IDLE_MS = 30_000
+
+export type DestinationSim =
+  | { status: 'loading' }
+  | { status: 'empty' }
+  | { status: 'error'; message: string }
+  | { status: 'ready'; dest: SimulationResult; home: SimulationResult }
+
+/**
+ * The plan with `cityId` as the destination, and staying home, for the profile sheet. Debounced on
+ * open; closing the profile or changing the plan cancels the run in flight. Results are cached.
+ */
+export function useDestinationSim(inputs: PlanInputs, cityId: string | null): DestinationSim {
+  const pair = useMemo(() => (cityId ? { dest: { ...inputs, destCityId: cityId }, home: homeVariant(inputs) } : null), [inputs, cityId])
+  const key = pair ? inputsKey(pair.dest) : ''
+  const [done, setDone] = useState<{ key: string; sim: DestinationSim } | null>(null)
+  const cached = useMemo(() => {
+    if (!pair) return null
+    const dest = destinationClient.peek(pair.dest)
+    const home = destinationClient.peek(pair.home)
+    return dest && home ? ({ status: 'ready', dest, home } as const) : null
+  }, [pair])
+
+  useEffect(() => {
+    destinationClient.acquire()
+    return () => destinationClient.release()
+  }, [])
+
+  useEffect(() => {
+    if (!pair || cached || !hasHoldings(pair.dest)) return
+    let alive = true
+    const t = setTimeout(() => {
+      Promise.all([destinationClient.simulate(pair.dest), destinationClient.simulate(pair.home)]).then(
+        ([dest, home]) => alive && setDone({ key, sim: { status: 'ready', dest, home } }),
+        (e) => alive && !isCancelled(e) && setDone({ key, sim: { status: 'error', message: e instanceof Error ? e.message : String(e) } }),
+      )
+    }, DEST_DEBOUNCE_MS)
+    return () => {
+      alive = false
+      clearTimeout(t)
+      destinationClient.cancel()
+    }
+  }, [pair, cached, key])
+
+  if (!pair || !hasHoldings(pair.dest)) return { status: 'empty' }
+  if (cached) return cached
+  return done?.key === key ? done.sim : { status: 'loading' }
 }
 
 /** Mount once (App): runs the engine now and on every inputs change. */

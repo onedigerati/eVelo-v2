@@ -8,6 +8,7 @@ import { CodeChip } from './CodeChip'
 import { expatPickFor } from '../../data/expatPicks'
 import { VerifiedMark } from './VerifiedMark'
 import { verifiedLabel } from './picks'
+import { taxStatus } from './taxLines'
 
 type SortKey = 'odds' | 'cost' | 'name'
 
@@ -123,7 +124,8 @@ export function CityList({ rows, homeId, destId, region, compare, onToggleCompar
         )}
         <p className="clist__count t-small ink-3">
           {shown.length === rows.length ? `All ${rows.length} cities` : `${shown.length} of ${rows.length} cities`} · ranked by the share of
-          simulated futures where the plan never forces a sale.
+          simulated futures where the plan never forces a sale. Cities marked “tax not modelled” are in countries eVelo hasn’t
+          researched for wealth and inheritance tax: their odds and estates carry none, which isn’t the same as there being none.
         </p>
       </section>
     </div>
@@ -160,11 +162,14 @@ function Row({
   const risk = fxRisk(r.city)
   const top = r.rank <= 3
   const vl = verifiedLabel(r.city)
+  const noTax = taxStatus(r.city) === 'unmodelled'
+  const taxTitle = `Local wealth and inheritance tax not modelled for ${r.city.country}: not researched, so the odds here assume none.`
+  const taxSpoken = noTax ? `; local wealth and inheritance tax not modelled for ${r.city.country}` : ''
   const pick = expatPickFor(r.cityId)
   const profiled = pick?.profile && onOpenPick ? pick : undefined
   const label = isHome
-    ? `${r.city.name}, your home: plan holds in ${percent(r.successRate)} of futures; ${vl.spoken}.${destId ? ' Choose to stay home.' : ''}`
-    : `${isDest ? 'Your destination' : 'Make destination'}: ${r.city.name}, ${r.city.country}. Plan holds in ${percent(r.successRate)}, rank ${r.rank}, ${currency(r.spendUsd)} a year, ${costDelta(r.costRatio)} vs home; ${vl.spoken}.`
+    ? `${r.city.name}, your home: plan holds in ${percent(r.successRate)} of futures; ${vl.spoken}${taxSpoken}.${destId ? ' Choose to stay home.' : ''}`
+    : `${isDest ? 'Your destination' : 'Make destination'}: ${r.city.name}, ${r.city.country}. Plan holds in ${percent(r.successRate)}, rank ${r.rank}, ${currency(r.spendUsd)} a year, ${costDelta(r.costRatio)} vs home; ${vl.spoken}${taxSpoken}.`
   return (
     <motion.li
       layout={pinnedRow ? false : 'position'}
@@ -181,7 +186,17 @@ function Row({
               {(isHome || isDest) && <em className="crow__role">{isHome ? 'Home · ' : 'Destination · '}</em>}
               {r.city.country}
               <VerifiedMark label={vl} className="crow__vmark" />
+              {noTax && (
+                <span className="taxmark" aria-hidden="true" title={taxTitle}>
+                  tax not modelled
+                </span>
+              )}
             </span>
+            {noTax && (
+              <span className="taxmark taxmark--line" aria-hidden="true" title={taxTitle}>
+                Tax not modelled
+              </span>
+            )}
           </span>
           {isHome && <span className="crow__tag">Home</span>}
           {isDest && <span className="crow__tag is-dest">Destination</span>}

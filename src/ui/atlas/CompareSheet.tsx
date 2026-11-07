@@ -19,6 +19,7 @@ import {
 } from './atlasData'
 import { CodeChip } from './CodeChip'
 import { verifiedLabel } from './picks'
+import { taxCompareText, taxStatus } from './taxLines'
 import { VerifiedMark } from './VerifiedMark'
 import { CityNotes, ExpatCaveats, SourcesLine } from './ThingsToCheck'
 
@@ -187,6 +188,18 @@ export function CompareSheet({ open, onClose, rows, inputs, onChoose, onRemove }
                 <div key={r.cityId} className="vs__cell">
                   <VerifiedMark label={vl} spoken />
                   <span className="vs__sub">{r.city.verified ? r.city.verified.source : 'Not yet checked'}</span>
+                </div>
+              )
+            })}
+          </Metric>
+          <Metric label="Local taxes" hint="Wealth and inheritance tax on a US portfolio, as modelled">
+            {rows.map((r) => {
+              const t = taxCompareText(r.city)
+              const s = taxStatus(r.city)
+              return (
+                <div key={r.cityId} className="vs__cell">
+                  <span className={cx('vs__val', s === 'unmodelled' && 'vs__val--unmodelled')}>{t.main}</span>
+                  <span className="vs__sub">{t.sub}</span>
                 </div>
               )
             })}

@@ -1709,6 +1709,7 @@
 
 /* Also worth a look */
 .also {
+  scroll-margin-top: 84px;
   margin-top: var(--space-7);
 }
 .also__h {
@@ -2409,6 +2410,95 @@
   line-height: 1.45;
   color: var(--ink-3);
 }
+/* "Local tax & estate" in Your plan here */
+.ptax {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--hairline);
+}
+.ptax__head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.ptax__notice {
+  margin: 0;
+  font-size: var(--fs-sm);
+  line-height: 1.45;
+  color: var(--ink-3);
+}
+.ptax__notice.is-unmodelled {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  border: 1px dashed var(--hairline-strong);
+  color: var(--ink-2);
+}
+.ptax__rows {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+.ptax__row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+  align-items: baseline;
+  gap: var(--space-3);
+  padding: 7px 0;
+  font-size: var(--fs-sm);
+}
+.ptax__row + .ptax__row {
+  border-top: 1px solid var(--hairline);
+}
+.ptax__row dt {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: var(--ink-2);
+}
+.ptax__row dt small {
+  font-size: var(--fs-xs);
+  color: var(--ink-3);
+}
+.ptax__row dd {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+  margin: 0;
+  text-align: right;
+  min-width: 0;
+}
+.ptax__row dd > b {
+  font-size: 1.05rem;
+  font-weight: 560;
+}
+.ptax__row dd > span {
+  font-size: var(--fs-xs);
+  line-height: 1.4;
+  color: var(--ink-3);
+}
+.ptax__row dd > span b {
+  font-weight: 650;
+  color: var(--ink-2);
+}
+.ptax__row dd > span b.is-down {
+  color: var(--holds-text);
+}
+.ptax__row dd > span b.is-up {
+  color: var(--broken-text);
+}
+.ptax__row.is-muted dd > b {
+  color: var(--ink-3);
+}
+.ptax__skel-v {
+  display: flex;
+  justify-content: flex-end;
+}
+.ptax__row--estate dd > b {
+  font-size: 1.2rem;
+}
 .pplan__cta {
   display: flex;
 }
@@ -2494,4 +2584,42 @@
 .vs__cell .fxchip,
 .vs__cell .vmark {
   align-self: flex-start;
+}
+
+/* "tax not modelled" hint in list rows: same weight as the provenance mark */
+.taxmark {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 6px;
+  font-size: 10.5px;
+  font-weight: 520;
+  font-style: italic;
+  letter-spacing: 0.01em;
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+.taxmark::before {
+  content: '·';
+  margin-right: 5px;
+  font-style: normal;
+  color: var(--ink-faint);
+}
+.crow__name .taxmark--line {
+  display: none;
+}
+@media (max-width: 699.98px) {
+  .crow__name .taxmark {
+    display: none;
+  }
+  .crow__name .taxmark--line {
+    display: block;
+    margin-left: 0;
+  }
+  .crow__name .taxmark--line::before {
+    display: none;
+  }
+}
+.vs__val--unmodelled {
+  font-style: italic;
+  color: var(--ink-2);
 }

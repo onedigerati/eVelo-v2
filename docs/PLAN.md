@@ -17,9 +17,9 @@ Scope:
 
 Risk: low (UI over existing engine results)
 Checks:
-- [ ] "Your plan here" shows wealth and inheritance tax lines for a taxed destination (Tarragona, Nice), a clear "none" line for an untaxed one (Paphos), and the not-modelled label for a city without tax data (e.g. Zurich) (proof: Playwright + screenshots)
-- [ ] Atlas and profile pages work on phone (390px) and desktop, in light and dark, with no horizontal scroll and no console errors (proof: screenshots of 4 combinations + scroll-width check)
-- [ ] Tests green, typecheck clean, build ok; fresh review of stages 5–6 UI triaged (proof: command output + review notes)
+- [x] "Your plan here" shows wealth and inheritance tax lines for a taxed destination (Tarragona, Nice), a clear "none" line for an untaxed one (Paphos), and the not-modelled label for a city without tax data (e.g. Zurich) (proof: Playwright + screenshots)
+- [x] Atlas and profile pages work on phone (390px) and desktop, in light and dark, with no horizontal scroll and no console errors (proof: screenshots of 4 combinations + scroll-width check)
+- [x] Tests green, typecheck clean, build ok; fresh review of stages 5–6 UI triaged (proof: command output + review notes) — [evidence](evidence/stage-6/report.md)
 - [ ] Preview published and deploy done on the user's approval (proof: preview URL + live site check)
 Open: none
 Mode: autopilot
@@ -49,6 +49,7 @@ Mode: autopilot
 - 2026-11-06 · Local-tax thresholds convert at the bundled fx.json rates (review fix), so they drift slightly with `npm run data:fx`; FX_FALLBACK refreshed to match. Share-link and persisted inputs are clamped to the plan UI's own limits (review security fix). Ireland/Japan inheritance reach is read as strictly more than 5/10 years' residence.
 - 2026-11-06 · Lending scores: 5 needs confirmed margin access for residents (none confirmed yet), 4 = Schwab International reported outside the EU plus IBKR, 3 = EU or IBKR only — normalised across the four profile builders, who read the rubric differently.
 - 2026-11-06 · 11 picks newly in the top 50 (Madrid, Tbilisi, Phuket, Santiago, Prague, Istanbul, Mexico City, Budapest, Taipei, Lima, Playa del Carmen) get costs from livingcost.org scaled to Numbeo, low confidence — Numbeo rate-limited every fetch.
+- 2026-11-06 · Estate rubric: a regime whose reach over US assets left to US-resident heirs is only inferred scores one point lower (Spain 4) — review triage. Medellín tax score corrected to 1.
 
 ## Open questions
 - Re-read Numbeo for the 11 livingcost-derived cities, the 5 Stage-3 cities mapped to nearby rows, and the noisy Belize pages once the rate limit lifts.

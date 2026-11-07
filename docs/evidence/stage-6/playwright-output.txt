@@ -1,0 +1,86 @@
+desktop-light atlas: scrollWidth 1400 <= 1400 OK theme=light
+desktop-light Nice: at 150ms busy=true status0="Calculating local tax and estate for Nice…" | status="Local tax and estate for Nice ready." | Local tax and estate for Nice ready. | LOCAL TAX & ESTATE | Wealth tax | None on a portfolio | Inheritance tax at 85 | $9.2M | median, two US-resident children as heirs | Estate at 85 | median, after local tax | $13M | −$8.8M vs $21M staying in St. Louis | Today’s dollars, from 4,000 simulated futures of your plan with Nice as the destination.
+desktop-light Nice: workers while open = 3
+desktop-light estate rubric bubble: {"l":399,"r":679,"t":190,"b":357,"w":1400,"h":900} ON SCREEN
+desktop-light profile Nice: scrollWidth 1400 <= 1400 OK theme=light
+desktop-light Nice: workers after close = 2
+desktop-light Paphos: at 150ms busy=true status0="Calculating local tax and estate for Paphos…" | status="Local tax and estate for Paphos ready." | Local tax and estate for Paphos ready. | LOCAL TAX & ESTATE | No wealth or inheritance tax modelled for Cyprus: none reaches a US portfolio. | Estate at 85 | median, borrow and never sell | $22M | +$965K vs $21M staying in St. Louis | Today’s dollars, from 4,000 simulated futures of your plan with Paphos as the destination.
+desktop-light Paphos: workers while open = 3
+desktop-light profile Paphos: scrollWidth 1400 <= 1400 OK theme=light
+desktop-light Paphos: workers after close = 2
+desktop-light Valencia: at 150ms busy=true status0="Calculating local tax and estate for Valencia…" | status="Local tax and estate for Valencia ready." | Local tax and estate for Valencia ready. | LOCAL TAX & ESTATE | Wealth tax, whole plan | $4.5M | median total, borrowed as it falls due | Inheritance tax | None on what US-resident heirs inherit | Estate at 85 | median, after local tax | $14M | −$7.4M vs $21M staying in St. Louis | Today’s dollars, from 4,000 simulated futures of your plan with Valencia as the destination.
+desktop-light Valencia: workers while open = 3
+desktop-light profile Valencia: scrollWidth 1400 <= 1400 OK theme=light
+desktop-light Valencia: workers after close = 2
+desktop-light Tarragona row: 113 | ES | Tarragona | Spain | Verified | Nov 2026 | · thin data | 61% | $86,384 | −21% | vs home | EUR | Medium | aria: Make destination: Tarragona, Spain. Plan holds in 61%, rank 113, $86,384 a year, −21% vs home; cost data verified Nov 2026 from Numbeo current city index, low confidence.
+desktop-light Zurich row: 114 | CH | Zurich | Switzerland | Estimatetax not modelled | 58% | $195,364 | +78% | vs home | CHF | Medium | aria: Make destination: Zurich, Switzerland. Plan holds in 58%, rank 114, $195,364 a year, +78% vs home; cost data is a rough estimate; local wealth and inheritance tax not modelled for Switzerland.
+desktop-light compare: Local taxes | Wealth and inheritance tax on a US portfolio, as modelled | Wealth tax | Included in the odds and estate | Not modelled | Switzerland not researched: not the same as none
+desktop-light compare: scrollWidth 1400 <= 1400 OK theme=light
+desktop-light footnote: All 116 cities · ranked by the share of simulated futures where the plan never forces a sale. Cities marked “tax not modelled” are in countries eVelo hasn’t researched for wealth and inheritance tax: their odds and estates carry none, which isn’t the same as there being none.
+desktop-dark atlas: scrollWidth 1400 <= 1400 OK theme=dark
+desktop-dark Nice: at 150ms busy=true status0="Calculating local tax and estate for Nice…" | status="Local tax and estate for Nice ready." | Local tax and estate for Nice ready. | LOCAL TAX & ESTATE | Wealth tax | None on a portfolio | Inheritance tax at 85 | $9.2M | median, two US-resident children as heirs | Estate at 85 | median, after local tax | $13M | −$8.8M vs $21M staying in St. Louis | Today’s dollars, from 4,000 simulated futures of your plan with Nice as the destination.
+desktop-dark Nice: workers while open = 3
+desktop-dark estate rubric bubble: {"l":399,"r":679,"t":190,"b":357,"w":1400,"h":900} ON SCREEN
+desktop-dark profile Nice: scrollWidth 1400 <= 1400 OK theme=dark
+desktop-dark Nice: workers after close = 2
+desktop-dark Paphos: at 150ms busy=true status0="Calculating local tax and estate for Paphos…" | status="Local tax and estate for Paphos ready." | Local tax and estate for Paphos ready. | LOCAL TAX & ESTATE | No wealth or inheritance tax modelled for Cyprus: none reaches a US portfolio. | Estate at 85 | median, borrow and never sell | $22M | +$965K vs $21M staying in St. Louis | Today’s dollars, from 4,000 simulated futures of your plan with Paphos as the destination.
+desktop-dark Paphos: workers while open = 3
+desktop-dark profile Paphos: scrollWidth 1400 <= 1400 OK theme=dark
+desktop-dark Paphos: workers after close = 2
+desktop-dark Valencia: at 150ms busy=true status0="Calculating local tax and estate for Valencia…" | status="Local tax and estate for Valencia ready." | Local tax and estate for Valencia ready. | LOCAL TAX & ESTATE | Wealth tax, whole plan | $4.5M | median total, borrowed as it falls due | Inheritance tax | None on what US-resident heirs inherit | Estate at 85 | median, after local tax | $14M | −$7.4M vs $21M staying in St. Louis | Today’s dollars, from 4,000 simulated futures of your plan with Valencia as the destination.
+desktop-dark Valencia: workers while open = 3
+desktop-dark profile Valencia: scrollWidth 1400 <= 1400 OK theme=dark
+desktop-dark Valencia: workers after close = 2
+desktop-dark Tarragona row: 113 | ES | Tarragona | Spain | Verified | Nov 2026 | · thin data | 61% | $86,384 | −21% | vs home | EUR | Medium | aria: Make destination: Tarragona, Spain. Plan holds in 61%, rank 113, $86,384 a year, −21% vs home; cost data verified Nov 2026 from Numbeo current city index, low confidence.
+desktop-dark Zurich row: 114 | CH | Zurich | Switzerland | Estimatetax not modelled | 58% | $195,364 | +78% | vs home | CHF | Medium | aria: Make destination: Zurich, Switzerland. Plan holds in 58%, rank 114, $195,364 a year, +78% vs home; cost data is a rough estimate; local wealth and inheritance tax not modelled for Switzerland.
+desktop-dark compare: Local taxes | Wealth and inheritance tax on a US portfolio, as modelled | Wealth tax | Included in the odds and estate | Not modelled | Switzerland not researched: not the same as none
+desktop-dark compare: scrollWidth 1400 <= 1400 OK theme=dark
+desktop-dark footnote: All 116 cities · ranked by the share of simulated futures where the plan never forces a sale. Cities marked “tax not modelled” are in countries eVelo hasn’t researched for wealth and inheritance tax: their odds and estates carry none, which isn’t the same as there being none.
+phone-light atlas: scrollWidth 390 <= 390 OK theme=light
+phone-light Nice: at 150ms busy=true status0="Calculating local tax and estate for Nice…" | status="Local tax and estate for Nice ready." | Local tax and estate for Nice ready. | LOCAL TAX & ESTATE | Wealth tax | None on a portfolio | Inheritance tax at 85 | $9.2M | median, two US-resident children as heirs | Estate at 85 | median, after local tax | $13M | −$8.8M vs $21M staying in St. Louis | Today’s dollars, from 4,000 simulated futures of your plan with Nice as the destination.
+phone-light Nice: workers while open = 3
+phone-light estate rubric bubble: {"l":9,"r":289,"t":308,"b":475,"w":390,"h":844} ON SCREEN
+phone-light profile Nice: scrollWidth 390 <= 390 OK theme=light
+phone-light Nice: workers after close = 2
+phone-light Paphos: at 150ms busy=true status0="Calculating local tax and estate for Paphos…" | status="Local tax and estate for Paphos ready." | Local tax and estate for Paphos ready. | LOCAL TAX & ESTATE | No wealth or inheritance tax modelled for Cyprus: none reaches a US portfolio. | Estate at 85 | median, borrow and never sell | $22M | +$965K vs $21M staying in St. Louis | Today’s dollars, from 4,000 simulated futures of your plan with Paphos as the destination.
+phone-light Paphos: workers while open = 3
+phone-light profile Paphos: scrollWidth 390 <= 390 OK theme=light
+phone-light Paphos: workers after close = 2
+phone-light Valencia: at 150ms busy=true status0="Calculating local tax and estate for Valencia…" | status="Local tax and estate for Valencia ready." | Local tax and estate for Valencia ready. | LOCAL TAX & ESTATE | Wealth tax, whole plan | $4.5M | median total, borrowed as it falls due | Inheritance tax | None on what US-resident heirs inherit | Estate at 85 | median, after local tax | $14M | −$7.4M vs $21M staying in St. Louis | Today’s dollars, from 4,000 simulated futures of your plan with Valencia as the destination.
+phone-light Valencia: workers while open = 3
+phone-light profile Valencia: scrollWidth 390 <= 390 OK theme=light
+phone-light Valencia: workers after close = 2
+phone-light Tarragona row: 113 | Tarragona | Spain | Nov 2026 | 61% | $86K | −21% | vs home | EUR | Medium | aria: Make destination: Tarragona, Spain. Plan holds in 61%, rank 113, $86,384 a year, −21% vs home; cost data verified Nov 2026 from Numbeo current city index, low confidence.
+phone-light Zurich row: 114 | Zurich | Switzerland | Estimate | Tax not modelled | 58% | $195K | +78% | vs home | CHF | Medium | aria: Make destination: Zurich, Switzerland. Plan holds in 58%, rank 114, $195,364 a year, +78% vs home; cost data is a rough estimate; local wealth and inheritance tax not modelled for Switzerland.
+phone-light compare: Local taxes | Wealth and inheritance tax on a US portfolio, as modelled | Wealth tax | Included in the odds and estate | Not modelled | Switzerland not researched: not the same as none
+phone-light compare: scrollWidth 390 <= 390 OK theme=light
+phone-light footnote: All 116 cities · ranked by the share of simulated futures where the plan never forces a sale. Cities marked “tax not modelled” are in countries eVelo hasn’t researched for wealth and inheritance tax: their odds and estates carry none, which isn’t the same as there being none.
+phone-dark atlas: scrollWidth 390 <= 390 OK theme=dark
+phone-dark Nice: at 150ms busy=true status0="Calculating local tax and estate for Nice…" | status="Local tax and estate for Nice ready." | Local tax and estate for Nice ready. | LOCAL TAX & ESTATE | Wealth tax | None on a portfolio | Inheritance tax at 85 | $9.2M | median, two US-resident children as heirs | Estate at 85 | median, after local tax | $13M | −$8.8M vs $21M staying in St. Louis | Today’s dollars, from 4,000 simulated futures of your plan with Nice as the destination.
+phone-dark Nice: workers while open = 3
+phone-dark estate rubric bubble: {"l":9,"r":289,"t":308,"b":475,"w":390,"h":844} ON SCREEN
+phone-dark profile Nice: scrollWidth 390 <= 390 OK theme=dark
+phone-dark Nice: workers after close = 2
+phone-dark Paphos: at 150ms busy=true status0="Calculating local tax and estate for Paphos…" | status="Local tax and estate for Paphos ready." | Local tax and estate for Paphos ready. | LOCAL TAX & ESTATE | No wealth or inheritance tax modelled for Cyprus: none reaches a US portfolio. | Estate at 85 | median, borrow and never sell | $22M | +$965K vs $21M staying in St. Louis | Today’s dollars, from 4,000 simulated futures of your plan with Paphos as the destination.
+phone-dark Paphos: workers while open = 3
+phone-dark profile Paphos: scrollWidth 390 <= 390 OK theme=dark
+phone-dark Paphos: workers after close = 2
+phone-dark Valencia: at 150ms busy=true status0="Calculating local tax and estate for Valencia…" | status="Local tax and estate for Valencia ready." | Local tax and estate for Valencia ready. | LOCAL TAX & ESTATE | Wealth tax, whole plan | $4.5M | median total, borrowed as it falls due | Inheritance tax | None on what US-resident heirs inherit | Estate at 85 | median, after local tax | $14M | −$7.4M vs $21M staying in St. Louis | Today’s dollars, from 4,000 simulated futures of your plan with Valencia as the destination.
+phone-dark Valencia: workers while open = 3
+phone-dark profile Valencia: scrollWidth 390 <= 390 OK theme=dark
+phone-dark Valencia: workers after close = 2
+phone-dark Tarragona row: 113 | Tarragona | Spain | Nov 2026 | 61% | $86K | −21% | vs home | EUR | Medium | aria: Make destination: Tarragona, Spain. Plan holds in 61%, rank 113, $86,384 a year, −21% vs home; cost data verified Nov 2026 from Numbeo current city index, low confidence.
+phone-dark Zurich row: 114 | Zurich | Switzerland | Estimate | Tax not modelled | 58% | $195K | +78% | vs home | CHF | Medium | aria: Make destination: Zurich, Switzerland. Plan holds in 58%, rank 114, $195,364 a year, +78% vs home; cost data is a rough estimate; local wealth and inheritance tax not modelled for Switzerland.
+phone-dark compare: Local taxes | Wealth and inheritance tax on a US portfolio, as modelled | Wealth tax | Included in the odds and estate | Not modelled | Switzerland not researched: not the same as none
+phone-dark compare: scrollWidth 390 <= 390 OK theme=dark
+phone-dark footnote: All 116 cities · ranked by the share of simulated futures where the plan never forces a sale. Cities marked “tax not modelled” are in countries eVelo hasn’t researched for wealth and inheritance tax: their odds and estates carry none, which isn’t the same as there being none.
+ERRORS []
+desktop buttons ["Show all 15","Show 26–50"]
+desktop rows after expand 35 button Show fewer
+desktop rows after collapse 10 section top 84 sw true
+phone buttons ["Show 26–50"]
+phone rows after expand 35 button Show fewer
+phone rows after collapse 10 section top 84 sw true
+skeleton busy true loading rows aria-hidden true
+no-move: Local tax and estate for Valencia ready. | LOCAL TAX & ESTATE | Local tax | You don’t move within the plan, so no local tax applies | Estate at 85 | median, after local tax | $21M | same vs $21M staying in St. Louis | Today’s dollars, from 4,000 simulated futures of your plan with Valencia as the destination.
+ERRORS []

@@ -1,0 +1,5 @@
+ Test Files  15 passed (15)
+      Tests  159 passed (159)
+typecheck exit 0
+[plugin builtin:vite-reporter] 
+✓ built in 1.20s

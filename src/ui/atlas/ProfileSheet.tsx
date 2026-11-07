@@ -1,12 +1,14 @@
 import { m as motion } from 'framer-motion'
 import { EXPAT_PICKS, EXPAT_SCORE_LABELS, EXPAT_SCORE_RUBRIC, type ExpatFacts } from '../../data/expatPicks'
-import type { PlanInputs } from '../../engine/types'
+import type { City, PlanInputs } from '../../engine/types'
+import { useDestinationSim } from '../../state/sim'
 import { currency, currencyCompact, percent } from '../format'
 import { ease } from '../motion'
 import { Button, InfoTip, Sheet, Skeleton, cx } from '../primitives'
 import { CATEGORY_LABEL, costDelta, successColor, successTextColor, type Ranked } from './atlasData'
 import { CodeChip } from './CodeChip'
 import { SCORE_KEYS, categoryCompare, costDataLine, oddsVsHome, type ProfiledPickView } from './picks'
+import { estateVsHome, taxLines, taxNotice, taxStatus } from './taxLines'
 
 /** Fact labels, in display order: the BBD facts first. */
 const FACT_LABEL: Record<keyof ExpatFacts, string> = {
@@ -239,6 +241,8 @@ function ProfileBody({
             {inputs.ratioOverrides && Object.keys(inputs.ratioOverrides).length > 0 ? ' and your category overrides' : ''}.
           </p>
 
+          <PlanTaxes city={city} inputs={inputs} homeName={homeName} />
+
           <div className="pplan__cta">
             {isDest ? (
               <span className="crow__tag is-dest">Your destination</span>
@@ -266,5 +270,89 @@ function ProfileBody({
         </div>
       </aside>
     </div>
+  )
+}
+
+/** "Taxes & estate" block of "Your plan here": local wealth/inheritance tax on this destination and
+ *  the estate left, from a run of the plan with this city as the destination. */
+function PlanTaxes({ city, inputs, homeName }: { city: City; inputs: PlanInputs; homeName: string }) {
+  const sim = useDestinationSim(inputs, city.id)
+  const status = taxStatus(city)
+  const notice = taxNotice(city)
+  const endAge = Math.round(inputs.age + inputs.horizonYears)
+  if (sim.status === 'empty') return null
+  const ready = sim.status === 'ready' ? sim : null
+  const loading = sim.status === 'loading'
+  const lines = ready?.dest.localTax ? taxLines(city, ready.dest.localTax, inputs) : []
+  const estate = ready?.dest.estate.bbdMedian
+  const homeEstate = ready?.home.estate.bbdMedian
+  const better = estate != null && homeEstate != null ? estate - homeEstate : 0
+  const announce = loading ? `Calculating local tax and estate for ${city.name}…` : ready ? `Local tax and estate for ${city.name} ready.` : ''
+
+  return (
+    <section className="ptax" aria-labelledby="prof-tax" aria-busy={loading}>
+      <span className="sr-only" role="status">
+        {announce}
+      </span>
+      <div className="ptax__head">
+        <span id="prof-tax" className="pplan__l">
+          Local tax & estate
+        </span>
+        {city.localTax && (
+          <InfoTip label={`How ${city.country}’s local taxes are modelled`}>{city.localTax.note}</InfoTip>
+        )}
+      </div>
+
+      {notice && <p className={cx('ptax__notice', status === 'unmodelled' && 'is-unmodelled')}>{notice}</p>}
+
+      {sim.status === 'error' ? (
+        <p className="ptax__notice">Couldn’t run this plan here: {sim.message}</p>
+      ) : loading ? (
+        <div className="ptax__rows" aria-hidden="true">
+          {Array.from({ length: status === 'taxed' ? 3 : 1 }, (_, i) => (
+            <div key={i} className="ptax__row">
+              <span>
+                <Skeleton width={110} height={11} />
+              </span>
+              <span className="ptax__skel-v">
+                <Skeleton width={64} height={18} radius={4} />
+              </span>
+            </div>
+          ))}
+        </div>
+      ) : (
+        ready &&
+        estate != null &&
+        homeEstate != null && (
+          <dl className="ptax__rows">
+            {lines.map((l) => (
+              <div key={l.key} className={cx('ptax__row', l.muted && 'is-muted')}>
+                <dt>{l.label}</dt>
+                <dd>
+                  {l.value != null && <b className="num">{l.value}</b>}
+                  <span>{l.sub}</span>
+                </dd>
+              </div>
+            ))}
+            <div className="ptax__row ptax__row--estate">
+              <dt>
+                Estate at {endAge}
+                <small>{status === 'taxed' ? 'median, after local tax' : 'median, borrow and never sell'}</small>
+              </dt>
+              <dd>
+                <b className="num">{currencyCompact(estate)}</b>
+                <span>
+                  <b className={cx(better > Math.abs(homeEstate) * 0.005 && 'is-down', better < -Math.abs(homeEstate) * 0.005 && 'is-up')}>
+                    {estateVsHome(estate, homeEstate)}
+                  </b>{' '}
+                  vs {currencyCompact(homeEstate)} staying in {homeName}
+                </span>
+              </dd>
+            </div>
+          </dl>
+        )
+      )}
+      <p className="pplan__note">Today’s dollars, from {inputs.paths.toLocaleString('en-US')} simulated futures of your plan with {city.name} as the destination.</p>
+    </section>
   )
 }
