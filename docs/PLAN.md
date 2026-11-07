@@ -9,16 +9,16 @@ Every one of the 75 profiled Atlas picks shows five real, openly licensed photos
 ## Now
 Stage 5 of 5 · Photos: Asia/Africa + launch
 Risk: external services (build-time downloads from Wikimedia Commons; publishing the preview and the site), third-party content and licences
-Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (v25, stage 2: gallery with the 5 pilot cities)
+Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (v27: all 75 cities; 404 files = the 403-file manifest + index.html, the 99 stale files removed)
 Checks:
 - [x] Each of the 10 other Asia/Africa picks (penang, langkawi, taipei, bali, grand-baie, chiang-mai, chiang-rai, bangkok, hua-hin, phuket) has 5 photos with complete, clean credits, under 200 kB, no Commons file used twice (proof: test)
 - [x] The photo test requires exactly 5 photos for every one of the 75 picks and names any city that lacks them (proof: test, plus a mutation run that removed two cities)
 - [x] A contact sheet of the 10 cities is saved, and every photo was viewed at full size by an independent reviewer, flagged ones replaced and re-viewed (proof: run the product: contact-sheet screenshot + review)
 - [x] Three profiles (bangkok, bali, grand-baie) show the mosaic and the odds badge; the build puts all 375 photos in dist/assets and the preview manifest lists them; main chunk within 2 kB of 532.79 kB (proof: run the product: screenshots; command: build and manifest)
-- [ ] The preview shows all 75 cities' galleries: stale files removed so the version stays under 511 files, and every manifest path present (proof: run the product: file listing + opening profiles on the preview)
+- [x] The preview shows all 75 cities' galleries: stale files removed so the version stays under 511 files, and every manifest path present (proof: file listing of v27 = 403 manifest files + index.html; the same build opened locally shows Madeira's gallery; the user's own look on the preview is pending)
 - [ ] Deployed to GitHub Pages on the user's approval, and the live site's asset hashes match a local build (proof: command)
-Open: publish the preview with all 75 cities — waiting on the user's go; then deploy — waiting on the user's go
-Mode: paused — preview publish is outward-facing; needs the user's go
+Open: deploy to GitHub Pages — waiting on the user's go
+Mode: paused — deploy is outward-facing; needs the user's go
 
 ## Stages
 - [x] 1. Photo pipeline — `npm run photos` (Commons API + sharp → WebP), per-city photo data and tests, the five pilot cities, a contact sheet
@@ -52,6 +52,7 @@ Mode: paused — preview publish is outward-facing; needs the user's go
 - 2026-11-07 · Stage 5's 10 cities (two builders: Thailand; Penang, Langkawi, Taipei, Bali, Grand Baie) started alongside stage 4's three, five builders at once; stage 4 still closes first. Not more: image-viewing limits hit one European builder, and Commons requests stay polite — user asked to run more in parallel; PM's call on how many.
 - 2026-11-07 · Where Commons coverage is thin (Hopkins, Corozal, Coronado, Grand Baie), the best available honest photo stays even if weaker, nearby places are allowed when the caption names them, and review stops after one re-review round — five photos are required, and the alternatives were checked and found worse; PM's call.
 - 2026-11-07 · The photo test now requires exactly 5 photos for every one of the 75 picks and no folder for a non-pick (replaces the pilot-city check) — stage 5's completeness check.
+- 2026-11-07 · Preview v26–v27 published with all 75 cities in two publishes; 99 stale files from earlier builds removed with null entries — user: "yes, publish the preview" (after the user saw v25 lacked photos past the pilot cities).
 - 2026-11-07 · Every photo is looked at before it ships, and each batch saves a contact sheet to its evidence — Commons titles can be wrong or mislabelled, and the user was told this is the slow part.
 
 ## Open questions
