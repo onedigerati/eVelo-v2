@@ -23,7 +23,7 @@ Checks:
 - [x] Placencia (Belize) researched, added to the dataset, and ranked in the 50 with a profile or listed outside with a reason (proof: research doc + test + Playwright) — kept outside the 50 with a reason; [run](evidence/stage-6/placencia-run.txt)
 - [ ] Preview published and deploy done on the user's approval (proof: preview URL + live site check)
 Open: none
-Mode: autopilot
+Mode: paused — preview republished with Placencia (version 14, https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth); waiting on the user to approve the deploy (push to main → GitHub Pages)
 
 ## Stages
 - [x] 1. BBD research — country tax, residency, lending and healthcare facts for every candidate, sourced; new top-25 draft
