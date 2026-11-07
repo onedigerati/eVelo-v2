@@ -1,0 +1,5 @@
+Deploy 2026-11-07: git push origin main (4173cfc..948cd65), GitHub Actions "Deploy to GitHub Pages" run 42427469855: success (npm ci, npm test, npm run build, Pages deploy).
+Live https://onedigerati.github.io/eVelo-v2/ vs local build of 948cd65:
+  index.html assets — live: SwitchLayoutGroupContext-CWUgHHbR.js, index-CDU6ngVr.css, index-rHsK7jqR.js; local: the same → MATCH
+  assets/AtlasView-DF8MI45v.js → HTTP 200, 683459 bytes (same as local)
+  3 random photos, md5 live = local: 2-CBJBGzyN.webp 92efc5ea, 3-BBhbFJP9.webp fc9df145, 1-BrjyuiJ6.webp 0f47052e
