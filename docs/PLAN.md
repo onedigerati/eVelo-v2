@@ -8,17 +8,18 @@ Give eVelo a landing page that says what the site is before a visitor meets the 
 
 ## Now
 Stage 1 of 2 · Landing route
+Mode: autopilot
 Risk: UI only
 Checks:
-- [ ] A first visit to the bare URL (no saved state, no hash) shows the landing; the app's top bar and tab bar are not shown on it (proof: test + run the product)
-- [ ] After entering the app once (CTA, nav or any app route), reloading the bare URL opens the planner, not the landing (proof: test + run the product)
-- [ ] Share links (`#p=…`) and route hashes (`#atlas`, `#method`, `#outlook`, `#plan`) never show the landing, even on a first visit (proof: test)
-- [ ] `#home` always shows the landing, and the wordmark in the app links there (proof: run the product)
-- [ ] Tests, typecheck and build pass
+- [x] A first visit to the bare URL (no saved state, no hash) shows the landing; the app's top bar and tab bar are not shown on it (proof: test + run the product)
+- [x] After entering the app once (CTA, nav or any app route), reloading the bare URL opens the planner, not the landing (proof: test + run the product)
+- [x] Share links (`#p=…`) and route hashes (`#atlas`, `#method`, `#outlook`, `#plan`) never show the landing, even on a first visit (proof: test)
+- [x] `#home` always shows the landing, and the wordmark in the app links there (proof: run the product)
+- [x] Tests, typecheck and build pass
 Open: none
 
 ## Stages
-- [ ] 1. Landing route — `#home` route, first-visit rule with a persisted "entered the app" flag, shell hides top bar/tab bar on the landing; landing view as a plain placeholder
+- [x] 1. Landing route — `#home` route, first-visit rule with a persisted "entered the app" flag, shell hides top bar/tab bar on the landing; landing view as a plain placeholder
 - [ ] 2. Escape-velocity view — theme-aware hero from study C: seeded decorative paths with draw-in animation, margin-call line, logo, copy, CTAs (Launch my plan → planner, What is Buy-Borrow-Die? → Method), legend, theme toggle; phone layout; reduced motion; preview + deploy on approval
 
 ## Decisions
@@ -28,6 +29,9 @@ Open: none
 - 2026-11-07 · Paths are decorative and seeded (deterministic), not engine output — user chose decorative over real simulation paths.
 - 2026-11-07 · Body copy, verbatim from the user: "A portfolio that grows faster than the loan against it never has to be sold. Spend the loan, keep the shares, leave them to your heirs. eVelo runs your plan through thousands of real market histories and counts how many actually reach escape velocity."
 - 2026-11-07 · The landing is full-bleed with its own slim header (wordmark, theme toggle, "Open the planner"); the app's top bar and phone tab bar are hidden on it — the study's composition depends on it; defaulted.
+- 2026-11-07 · Bare URL meaning is settled once per page load, so Back from the planner to the bare entry still shows the landing; unknown hashes are treated like the bare URL; the bare URL after entering opens `plan` (phones land on the Plan tab, was Outlook) — builder's calls inside the plan's intent, kept.
+- 2026-11-07 · A plan saved before the flag existed counts as having entered (checked once per device and recorded as `evelo:v2:entered` = `'1'`/`'0'`), so existing users aren't shown the landing; a plan saved from the landing (theme toggle) never counts — autopilot fix after verification flagged returning users.
+- 2026-11-07 · Stage evidence commits its screenshots (as earlier plans did); the verifier's `docs/evidence/.gitignore` was dropped.
 
 ## Open questions
 - WebKit's touch path (iPhone) is untested until the user tries it.

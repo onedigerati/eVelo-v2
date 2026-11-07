@@ -1,0 +1,8 @@
+[A legacy saved plan, bare URL] {"landing":false,"topbar":true,"flag":"1"}
+  OK   legacy user opens the planner
+[B first visit] {"landing":true,"topbar":false,"flag":"0"}
+  OK   first visit shows landing
+  saved plan present before reload: true
+[B reload after theme toggle] {"landing":true,"topbar":false,"flag":"0"}
+  OK   theme toggle on landing does not count as entering
+checks failed: 0

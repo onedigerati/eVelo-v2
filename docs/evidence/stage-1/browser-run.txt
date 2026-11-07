@@ -1,0 +1,124 @@
+$ node drive.cjs  (playwright-core 1.57 headless Chromium against vite preview http://localhost:4180/)
+
+=== desktop 1280x800 ===
+
+[check 1] first visit to bare URL (fresh context)
+  {"hash":"","landing":true,"topbar":false,"tabbar":false,"app":false,"plan":false,"outlook":false,"h1":"Reach escape velocity.","flag":"0","theme":"system","bg":"rgb(245, 242, 234)"}
+  OK   landing shown, no .topbar/.tabbar/.app
+  OK   flag not set by viewing the landing
+
+[check 2a] enter via CTA "Launch my plan", then reload bare URL
+  after CTA {"hash":"#plan","landing":false,"topbar":true,"tabbar":false,"app":true,"plan":true,"outlook":true,"h1":"Your terms","flag":"1","theme":"system","bg":"rgb(245, 242, 234)"}
+  OK   CTA opens #plan with top bar
+  OK   flag set after entering
+  after Back {"hash":"","landing":true,"topbar":false,"tabbar":false,"app":false,"plan":false,"outlook":false,"h1":"Reach escape velocity.","flag":"1","theme":"system","bg":"rgb(245, 242, 234)"}
+  OK   Back from planner returns to landing
+  bare URL after entering {"hash":"","landing":false,"topbar":true,"tabbar":false,"app":true,"plan":true,"outlook":true,"h1":"Your terms","flag":"1","theme":"system","bg":"rgb(245, 242, 234)"}
+  OK   bare URL opens planner after entering
+  after reload {"hash":"","landing":false,"topbar":true,"tabbar":false,"app":true,"plan":true,"outlook":true,"h1":"Your terms","flag":"1","theme":"system","bg":"rgb(245, 242, 234)"}
+  OK   reload of bare URL still opens planner
+
+[check 4] wordmark -> #home, #home always landing
+  wordmark href=#home
+  OK   app wordmark href is #home
+  after wordmark click {"hash":"#home","landing":true,"topbar":false,"tabbar":false,"app":false,"plan":false,"outlook":false,"h1":"Reach escape velocity.","flag":"1","theme":"system","bg":"rgb(245, 242, 234)"}
+  OK   wordmark click shows landing, no bars
+  OK   #home loaded directly (entered) shows landing, flag kept
+  OK   "Open the planner" header link enters #plan
+  fresh #home {"hash":"#home","landing":true,"topbar":false,"tabbar":false,"app":false,"plan":false,"outlook":false,"h1":"Reach escape velocity.","flag":"0","theme":"system","bg":"rgb(245, 242, 234)"}
+  OK   #home on first visit shows landing, flag unset
+
+[check 2b] enter via app route (#method), then bare URL
+  OK   #method enters app and sets flag
+  bare after #method {"hash":"","landing":false,"topbar":true,"tabbar":false,"app":true,"plan":true,"outlook":true,"h1":"Your terms","flag":"1","theme":"system","bg":"rgb(245, 242, 234)"}
+  OK   bare URL opens planner
+
+[check 2c] enter via header nav, new tab bare URL
+  OK   new tab bare URL opens planner after header nav
+
+[check 3] route hashes on a first visit (fresh context each)
+  #atlas {"hash":"#atlas","landing":false,"topbar":true,"flag":"1"}
+  OK   #atlas first visit: app, not landing
+  #method {"hash":"#method","landing":false,"topbar":true,"flag":"1"}
+  OK   #method first visit: app, not landing
+  #outlook {"hash":"#outlook","landing":false,"topbar":true,"flag":"1"}
+  OK   #outlook first visit: app, not landing
+  #plan {"hash":"#plan","landing":false,"topbar":true,"flag":"1"}
+  OK   #plan first visit: app, not landing
+
+[check 3] real share link from the app's share button
+  share link: http://localhost:4180/#p=eyJ2IjoxLCJkIjp7fX0… (44 chars)
+  fresh share link {"hash":"#outlook…","landing":false,"topbar":true,"flag":"1"}
+  OK   share link first visit: app, not landing; flag set
+
+[themes] landing in both themes
+  system light: theme=system bg=rgb(245, 242, 234) landing=true h1=Reach escape velocity.
+  OK   landing renders with system light
+  system dark: theme=system bg=rgb(10, 13, 12) landing=true h1=Reach escape velocity.
+  OK   landing renders with system dark
+  toggle on landing: bg rgb(245, 242, 234) -> rgb(10, 13, 12), theme=dark, landing=true
+  OK   landing still shown after theme toggle
+
+=== phone 390x844 ===
+
+[check 1] first visit to bare URL (fresh context)
+  {"hash":"","landing":true,"topbar":false,"tabbar":false,"app":false,"plan":false,"outlook":false,"h1":"Reach escape velocity.","flag":"0","theme":"system","bg":"rgb(245, 242, 234)"}
+  OK   landing shown, no .topbar/.tabbar/.app
+  OK   flag not set by viewing the landing
+
+[check 2a] enter via CTA "Launch my plan", then reload bare URL
+  after CTA {"hash":"#plan","landing":false,"topbar":true,"tabbar":true,"app":true,"plan":true,"outlook":false,"h1":"Your terms","flag":"1","theme":"system","bg":"rgb(245, 242, 234)"}
+  OK   CTA opens #plan with top bar
+  OK   flag set after entering
+  OK   phone tab bar present in app
+  after Back {"hash":"","landing":true,"topbar":false,"tabbar":false,"app":false,"plan":false,"outlook":false,"h1":"Reach escape velocity.","flag":"1","theme":"system","bg":"rgb(245, 242, 234)"}
+  OK   Back from planner returns to landing
+  bare URL after entering {"hash":"","landing":false,"topbar":true,"tabbar":true,"app":true,"plan":true,"outlook":false,"h1":"Your terms","flag":"1","theme":"system","bg":"rgb(245, 242, 234)"}
+  OK   bare URL opens planner after entering
+  after reload {"hash":"","landing":false,"topbar":true,"tabbar":true,"app":true,"plan":true,"outlook":false,"h1":"Your terms","flag":"1","theme":"system","bg":"rgb(245, 242, 234)"}
+  OK   reload of bare URL still opens planner
+
+[check 4] wordmark -> #home, #home always landing
+  wordmark href=#home
+  OK   app wordmark href is #home
+  after wordmark click {"hash":"#home","landing":true,"topbar":false,"tabbar":false,"app":false,"plan":false,"outlook":false,"h1":"Reach escape velocity.","flag":"1","theme":"system","bg":"rgb(245, 242, 234)"}
+  OK   wordmark click shows landing, no bars
+  OK   #home loaded directly (entered) shows landing, flag kept
+  OK   "Open the planner" header link enters #plan
+  fresh #home {"hash":"#home","landing":true,"topbar":false,"tabbar":false,"app":false,"plan":false,"outlook":false,"h1":"Reach escape velocity.","flag":"0","theme":"system","bg":"rgb(245, 242, 234)"}
+  OK   #home on first visit shows landing, flag unset
+
+[check 2b] enter via app route (#method), then bare URL
+  OK   #method enters app and sets flag
+  bare after #method {"hash":"","landing":false,"topbar":true,"tabbar":true,"app":true,"plan":true,"outlook":false,"h1":"Your terms","flag":"1","theme":"system","bg":"rgb(245, 242, 234)"}
+  OK   bare URL opens planner
+
+[check 2c] enter via header nav, new tab bare URL
+  OK   new tab bare URL opens planner after header nav
+
+[check 3] route hashes on a first visit (fresh context each)
+  #atlas {"hash":"#atlas","landing":false,"topbar":true,"flag":"1"}
+  OK   #atlas first visit: app, not landing
+  #method {"hash":"#method","landing":false,"topbar":true,"flag":"1"}
+  OK   #method first visit: app, not landing
+  #outlook {"hash":"#outlook","landing":false,"topbar":true,"flag":"1"}
+  OK   #outlook first visit: app, not landing
+  #plan {"hash":"#plan","landing":false,"topbar":true,"flag":"1"}
+  OK   #plan first visit: app, not landing
+
+[check 3] real share link from the app's share button
+  share link: http://localhost:4180/#p=eyJ2IjoxLCJkIjp7fX0… (44 chars)
+  fresh share link {"hash":"#outlook…","landing":false,"topbar":true,"flag":"1"}
+  OK   share link first visit: app, not landing; flag set
+
+[themes] landing in both themes
+  system light: theme=system bg=rgb(245, 242, 234) landing=true h1=Reach escape velocity.
+  OK   landing renders with system light
+  system dark: theme=system bg=rgb(10, 13, 12) landing=true h1=Reach escape velocity.
+  OK   landing renders with system dark
+  toggle on landing: bg rgb(245, 242, 234) -> rgb(245, 242, 234), theme=light, landing=true
+  OK   landing still shown after theme toggle
+
+=== console errors (0) ===
+
+checks failed: 0

@@ -1,6 +1,5 @@
 import { useEffect, useSyncExternalStore } from 'react'
-import { useStore, type ThemePref } from '../state/store'
-import { parseHash } from '../state/router'
+import { routeFromHash, useStore, type ThemePref } from '../state/store'
 
 export function useMediaQuery(query: string): boolean {
   return useSyncExternalStore(
@@ -59,7 +58,7 @@ export function applyTheme(pref: ThemePref) {
 export function useHashRoute() {
   const setRoute = useStore((s) => s.setRoute)
   useEffect(() => {
-    const on = () => setRoute(parseHash(window.location.hash).route)
+    const on = () => setRoute(routeFromHash(window.location.hash))
     window.addEventListener('hashchange', on)
     return () => window.removeEventListener('hashchange', on)
   }, [setRoute])

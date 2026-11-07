@@ -1,0 +1,22 @@
+$ npx vitest run src/state/__tests__/landing.test.ts src/state/__tests__/entered.test.ts --reporter=verbose
+npm notice run evelo@2.0.0 npx
+npm notice run 'vitest' run src/state/__tests__/landing.test.ts src/state/__tests__/entered.test.ts --reporter=verbose
+
+ RUN  v5.1.0 /home/jonah/repos/eVelo-v2
+
+ ✓ src/state/__tests__/entered.test.ts > entered-the-app flag > is unset on a first visit and persists under evelo:v2:entered once marked 5ms
+ ✓ src/state/__tests__/entered.test.ts > entered-the-app flag > reads as unset when storage is blocked, and marking does not throw 1ms
+ ✓ src/state/__tests__/landing.test.ts > first-visit rule (resolveRoute) > shows the landing on a first visit to the bare URL, without setting the flag 2ms
+ ✓ src/state/__tests__/landing.test.ts > first-visit rule (resolveRoute) > opens the planner at the bare URL once the app has been entered 0ms
+ ✓ src/state/__tests__/landing.test.ts > first-visit rule (resolveRoute) > sends route hashes straight to the app on a first visit, and counts as entering 0ms
+ ✓ src/state/__tests__/landing.test.ts > first-visit rule (resolveRoute) > reads the legacy slash forms as app routes 0ms
+ ✓ src/state/__tests__/landing.test.ts > first-visit rule (resolveRoute) > never shows the landing for a share link, in any form 0ms
+ ✓ src/state/__tests__/landing.test.ts > first-visit rule (resolveRoute) > always shows the landing for #home, leaving the flag as it was 0ms
+ ✓ src/state/__tests__/landing.test.ts > first-visit rule (resolveRoute) > treats an unknown hash like the bare URL 0ms
+ ✓ src/state/__tests__/landing.test.ts > first-visit rule (resolveRoute) > writes #home for the landing 0ms
+
+ Test Files  2 passed (2)
+      Tests  10 passed (10)
+   Start at  11:42:09
+   Duration  137ms (transform 35%, import 30%, tests 24%, worker 11%)
+

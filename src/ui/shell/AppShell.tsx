@@ -3,6 +3,7 @@ import { lazy, Suspense, useEffect, useRef } from 'react'
 import { navigate } from '../../state/router'
 import { useStore } from '../../state/store'
 import { useBreakpoint, type Breakpoint } from '../hooks'
+import { LandingView } from '../landing/LandingView'
 import { ease } from '../motion'
 import { OutlookCanvas } from '../outlook/OutlookCanvas'
 import { PlanRail } from '../plan/PlanRail'
@@ -84,6 +85,16 @@ export function AppShell() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior })
   }, [view])
+
+  // The landing is full-bleed with its own header: no top bar, no phone tab bar.
+  if (route === 'home') {
+    return (
+      <>
+        <LandingView bp={bp} />
+        <Toaster />
+      </>
+    )
+  }
 
   return (
     <div className={`app app--${bp}`}>

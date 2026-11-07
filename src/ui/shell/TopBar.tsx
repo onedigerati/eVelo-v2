@@ -1,5 +1,5 @@
 import { m as motion } from 'framer-motion'
-import { NAV_ROUTES, type Route } from '../../state/router'
+import { hrefFor, NAV_ROUTES, type Route } from '../../state/router'
 import { useStore } from '../../state/store'
 import type { Breakpoint } from '../hooks'
 import { Mark } from '../icons'
@@ -8,9 +8,10 @@ import { cx } from '../primitives'
 import { ShareButton } from './ShareButton'
 import { ThemeCycleButton, ThemeToggle } from './ThemeToggle'
 
+/** The logo + name; links to the landing page (`#home`). */
 export function Wordmark() {
   return (
-    <a href="#outlook" className="wordmark" aria-label="eVelo — home">
+    <a href={hrefFor('home')} className="wordmark" aria-label="eVelo — home">
       <Mark size={28} />
       <span className="wordmark__text">eVelo</span>
     </a>
@@ -19,7 +20,7 @@ export function Wordmark() {
 
 /** Which nav item is lit for a route. On desktop, plan + outlook share a screen. */
 function activeFor(route: Route): Route | null {
-  return route === 'styleguide' ? null : route
+  return route === 'styleguide' || route === 'home' ? null : route
 }
 
 export function TopBar({ bp }: { bp: Breakpoint }) {

@@ -1,0 +1,2 @@
+$ node legacy.cjs  (fresh context: open #plan, delete evelo:v2:entered, ensure saved state under evelo:v2 exists, reload bare URL)
+saved plan in evelo:v2: true; entered flag removed; bare URL shows landing: true
