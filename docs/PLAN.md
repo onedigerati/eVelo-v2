@@ -7,7 +7,7 @@ Make the Atlas world map pannable and zoomable with mouse, trackpad and touch, w
 2026-11-07 · tests: 173 pass (16 files) · typecheck: clean · build: ok
 
 ## Now
-All stages done. Stage 1 verified ([evidence](evidence/map-pan-zoom/report.md)); Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (v22, incl. hover fix and tablet tap bubbles — not yet deployed; v20–v21 had a broken Method tab from a partial upload, fixed in v22). Live: https://onedigerati.github.io/eVelo-v2/ (deployed 2026-11-07, run 42391330188).
+All stages done. Stage 1 verified ([evidence](evidence/map-pan-zoom/report.md)); Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (v22, incl. hover fix and tablet tap bubbles; v20–v21 had a broken Method tab from a partial upload, fixed in v22). Live: https://onedigerati.github.io/eVelo-v2/ — matches v22 (deployed 2026-11-07, run 42393495769; asset hashes confirmed against a local build).
 
 ## Stages
 - [x] 1. Pan and zoom — pure view helpers (zoom-at-point, pinch, clamp) with tests; gestures and controls in `WorldMap`
