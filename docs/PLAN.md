@@ -22,7 +22,7 @@ Checks:
 - [ ] The running app shows odds and estate changing for a taxed destination (e.g. Tarragona or Medellín vs Málaga at a $5M portfolio), and the Method page explains the model (proof: Playwright run + screenshots)
 - [ ] Tests green, typecheck clean, build ok, review findings triaged (proof: command output + review notes)
 Open: none
-Mode: autopilot
+Mode: paused — Stage 4 (engine wealth/inheritance tax, money logic) waits on the user’s word before building
 
 ## Stages
 - [x] 1. BBD research — country tax, residency, lending and healthcare facts for every candidate, sourced; new top-25 draft
