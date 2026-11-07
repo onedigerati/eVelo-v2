@@ -19,12 +19,12 @@ Checks:
 - [x] At phone width (390px) the hero stacks (copy, then card), the nav folds away, the steps go to one column, there is no horizontal scroll, and controls are ≥44px touch targets; tablet (820px) stacks cleanly too (proof: run the product)
 - [x] With reduced motion the Lisbon ring doesn't pulse (proof: run the product)
 - [x] Tests, typecheck and build pass; no console errors on the landing; study C's path field is gone from the code
-- [ ] Previewed on the preview artifact, and deployed to GitHub Pages on the user's approval (proof: run the product)
+- [x] Previewed on the preview artifact, and deployed to GitHub Pages on the user's approval (proof: run the product)
 Open: none
 
 ## Stages
 - [x] 1. Landing route — `#home` route, first-visit rule with a persisted "entered the app" flag, shell hides top bar/tab bar on the landing; landing view as a plain placeholder
-- [ ] 2. Atlas-hero view — study G: hero copy and CTAs beside the illustrative map card (cities, Lisbon readout and fan chart), four steps below, theme toggle; phone layout; reduced motion; preview + deploy on approval. (Study C was built, verified and previewed as v23 first, then replaced at the user's call — evidence in `docs/evidence/stage-2-study-c/`.)
+- [x] 2. Atlas-hero view — study G: hero copy and CTAs beside the illustrative map card (cities, Lisbon readout and fan chart), four steps below, theme toggle; phone layout; reduced motion; preview + deploy on approval. (Study C was built, verified and previewed as v23 first, then replaced at the user's call — evidence in `docs/evidence/stage-2-study-c/`.)
 
 ## Decisions
 - 2026-11-07 · Landing is study G, "The Atlas is the chart", replacing study C after the user saw C on preview v23 — user: "let's go with option G here instead". C's decisions below (body copy, decorative paths, seed, label halo) are superseded.

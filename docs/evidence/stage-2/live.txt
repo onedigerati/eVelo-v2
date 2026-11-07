@@ -1,0 +1,8 @@
+[1440] first visit {"landing":true,"topbar":false,"h1":"Live off your portfolio without ever selling it.","dots":34}
+  OK   1440: bare URL first visit shows the G landing
+  OK   1440: #atlas on a first visit goes straight to the app
+[390] first visit {"landing":true,"topbar":false,"h1":"Live off your portfolio without ever selling it.","dots":34}
+  OK   390: bare URL first visit shows the G landing
+  OK   390: #atlas on a first visit goes straight to the app
+console errors: 0 []
+checks failed: 0
