@@ -1,0 +1,8 @@
+images 155, broken 0, natural size != listed size 0, portrait 1
+portrait ../../../src/data/photos/barcelona/2.webp
+contact-sheet-1.png: sections 1-6
+contact-sheet-2.png: sections 7-12
+contact-sheet-3.png: sections 13-18
+contact-sheet-4.png: sections 19-24
+contact-sheet-5.png: sections 25-30
+contact-sheet-6.png: sections 31-31

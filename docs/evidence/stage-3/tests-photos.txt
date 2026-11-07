@@ -1,0 +1,63 @@
+$ npx vitest run src/data/__tests__/photos.test.ts --reporter=verbose
+npm notice run evelo@2.0.0 npx
+npm notice run 'vitest' run src/data/__tests__/photos.test.ts --reporter=verbose
+
+ RUN  v5.1.0 /home/jonah/repos/eVelo-v2
+
+ ✓ src/data/__tests__/photos.test.ts > city photos data > loads every city folder that has a photos.json 2ms
+ ✓ src/data/__tests__/photos.test.ts > city photos data > only has photos for profiled picks 1ms
+ ✓ src/data/__tests__/photos.test.ts > city photos data > has the five pilot cities 1ms
+ ✓ src/data/__tests__/photos.test.ts > city photos data > returns an empty list for a city without photos 0ms
+ ✓ src/data/__tests__/photos.test.ts > city photos data > gives every city exactly 5 complete, credited photos under 200 kB 24ms
+ ✓ src/data/__tests__/photos.test.ts > city photos data > stores entries that pass the full entry check (no placeholder authors) 3ms
+ ✓ src/data/__tests__/photos.test.ts > city photos data > never uses a Commons file twice 0ms
+ ✓ src/data/__tests__/photos.test.ts > city photos data > has no stray image files 1ms
+ ✓ src/data/__tests__/photos.test.ts > photo index (buildPhotoIndex) > drops only the city whose listed file is missing, with one warning 1ms
+ ✓ src/data/__tests__/photos.test.ts > photo index (buildPhotoIndex) > does not throw and warns nothing when every file is there 1ms
+ ✓ src/data/__tests__/photos.test.ts > photo index (buildPhotoIndex) > warns through console.warn by default 1ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > allows CC0 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > allows CC0 1.0 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > allows Public domain 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > allows PD-self 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > allows CC BY 2.0 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > allows CC BY 4.0 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > allows CC BY-SA 3.0 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > allows CC BY-SA 4.0 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > allows CC BY-SA 3.0 at 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > allows CC BY-SA 3.0 IGO 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > allows CC BY-SA 3.0 igo 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > allows PD-old-70 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > allows CC BY 2.5 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > refuses "CC BY-NC 2.0" naming the file 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > refuses "CC BY-ND 4.0" naming the file 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > refuses "CC BY-NC-SA 4.0" naming the file 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > refuses "CC BY-SA 2.5,2.0,1.0" naming the file 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > refuses "Attribution" naming the file 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > refuses "Fair use" naming the file 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > refuses "GFDL" naming the file 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > refuses "" naming the file 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > refuses a missing licence 0ms
+ ✓ src/data/__tests__/photos.test.ts > npm run photos (doCity, network stubbed) > refuses a non-free licence with the file title, before downloading, and writes nothing 18ms
+ ✓ src/data/__tests__/photos.test.ts > npm run photos (doCity, network stubbed) > refuses a file that is not on Commons 15ms
+ ✓ src/data/__tests__/photos.test.ts > npm run photos (doCity, network stubbed) > refuses a placeholder author 14ms
+ ✓ src/data/__tests__/photos.test.ts > npm run photos (doCity, network stubbed) > refuses a missing author 15ms
+ ✓ src/data/__tests__/photos.test.ts > npm run photos (doCity, network stubbed) > refuses an author that decodes to markup 14ms
+ ✓ src/data/__tests__/photos.test.ts > npm run photos (doCity, network stubbed) > refuses a too-small original before downloading 10ms
+ ✓ src/data/__tests__/photos.test.ts > npm run photos (doCity, network stubbed) > refuses an image URL that is not https on upload.wikimedia.org 10ms
+ ✓ src/data/__tests__/photos.test.ts > npm run photos (doCity, network stubbed) > writes nothing when an image fails to encode after every licence passed 199ms
+ ✓ src/data/__tests__/photos.test.ts > npm run photos (doCity, network stubbed) > fills the entries, then skips them on a second run without any network call 251ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > cleans Commons author HTML to short plain text 1ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > drops out-of-range entities and invisible/bidi controls 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > treats placeholder authors as missing 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > prefers Attribution, then Artist, then Credit, and refuses none or markup 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > builds https licence URLs 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > checks original size and image host 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > normalises Commons titles and catches duplicates that differ only in form 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > builds the Commons file page URL from the title 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > flags bad hand-written fields 0ms
+
+ Test Files  1 passed (1)
+      Tests  51 passed (51)
+   Start at  16:31:52
+   Duration  2.07s (transform 58%, tests 30%, import 13%)
+

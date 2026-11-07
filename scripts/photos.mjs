@@ -1,5 +1,6 @@
 // Fetches each city's photos from Wikimedia Commons into src/data/photos/<cityId>/.
 // Usage: npm run photos [cityId ...]   (no ids = every city that has a photos.json)
+//        npm run photos -- --recredit [cityId ...]   (re-clean stored authors offline)
 //
 // Per city, photos.json lists 5 entries with hand-written `commons` (file title), `caption`, `alt`
 // and optional `focus`. For each entry the script reads author and licence from the Commons API,
@@ -17,6 +18,7 @@ import {
   TARGET_WIDTH,
   authorFrom,
   checkImageUrl,
+  cleanAuthor,
   checkLicense,
   checkOriginalSize,
   commonsPageUrl,
@@ -155,14 +157,44 @@ export async function doCity(cityId, { root = ROOT, get = httpGet, log = console
   return { downloaded: images.length, skipped: entries.length - images.length }
 }
 
+/**
+ * Re-cleans stored authors with the current cleanAuthor, offline: no network, no .webp touched.
+ * An author that would become empty is kept and reported.
+ */
+export function recredit(cityId, { root = ROOT, log = console.log } = {}) {
+  const jsonPath = join(root, cityId, 'photos.json')
+  const entries = JSON.parse(readFileSync(jsonPath, 'utf8'))
+  let changed = 0
+  entries.forEach((e, i) => {
+    if (typeof e.author !== 'string') return
+    const next = cleanAuthor(e.author)
+    if (!next) log(`${cityId} #${i + 1}: KEPT "${e.author}" (cleanup would leave it empty)`)
+    else if (next !== e.author) {
+      log(`${cityId} #${i + 1}: "${e.author}" -> "${next}"`)
+      e.author = next
+      changed++
+    }
+  })
+  if (changed) writeFileSync(jsonPath, `${JSON.stringify(entries.map(orderKeys), null, 2)}\n`)
+  return changed
+}
+
 async function main() {
-  const ids = process.argv.slice(2)
+  const args = process.argv.slice(2)
+  const recreditMode = args.includes('--recredit')
+  const ids = args.filter((a) => a !== '--recredit')
   const cities = ids.length
     ? ids
     : readdirSync(ROOT, { withFileTypes: true })
         .filter((d) => d.isDirectory() && existsSync(join(ROOT, d.name, 'photos.json')))
         .map((d) => d.name)
         .sort()
+  if (recreditMode) {
+    let total = 0
+    for (const id of cities) total += recredit(id)
+    console.log(`recredit: ${total} author(s) changed, no network, no images touched`)
+    return
+  }
   let failed = 0
   for (const id of cities) {
     try {

@@ -1,0 +1,62 @@
+[
+  {
+    "commons": "File:Prague (6365119737).jpg",
+    "file": "1.webp",
+    "caption": "Charles Bridge over the Vltava, with Malá Strana and Prague Castle beyond",
+    "alt": "A stone bridge full of people crossing a river toward red-roofed houses and a hilltop castle with a Gothic cathedral, in warm evening light",
+    "author": "Moyan Brenn",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Prague_(6365119737).jpg",
+    "width": 1280,
+    "height": 761
+  },
+  {
+    "commons": "File:Prague, Old Town Square, COVID.jpg",
+    "file": "2.webp",
+    "caption": "Old Town Square and the twin spires of the Týn Church",
+    "alt": "A wide cobbled square ringed by pastel townhouses, with a Gothic church with two spiky towers rising behind",
+    "author": "Tadeáš Gregor",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Prague,_Old_Town_Square,_COVID.jpg",
+    "width": 1280,
+    "height": 960
+  },
+  {
+    "commons": "File:Rooftop view from the back entrance to the Castle, Prague - 9478.jpg",
+    "file": "3.webp",
+    "caption": "Malá Strana's red roofs and terraced gardens below Prague Castle in autumn",
+    "alt": "A hillside garden with yellow autumn trees above a district of red tiled roofs, with the river and city spreading beyond",
+    "author": "Jorge Royan",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Rooftop_view_from_the_back_entrance_to_the_Castle,_Prague_-_9478.jpg",
+    "width": 1024,
+    "height": 659
+  },
+  {
+    "commons": "File:Tram on the street, Prague - 8491.jpg",
+    "file": "4.webp",
+    "caption": "A tram passing a Neo-Renaissance facade in central Prague",
+    "alt": "A red and white tram passing an ornate stone building on a city street",
+    "author": "Jorge Royan",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Tram_on_the_street,_Prague_-_8491.jpg",
+    "width": 1280,
+    "height": 853
+  },
+  {
+    "commons": "File:Vyšehrad, z přívozu P5.jpg",
+    "file": "5.webp",
+    "caption": "Vyšehrad's church above the Vltava, seen from one of the city's river ferries",
+    "alt": "A river in the foreground with houses on the far bank and a church with two dark spires on a wooded rock, under a blue sky with white clouds",
+    "author": "ŠJů",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Vy%C5%A1ehrad,_z_p%C5%99%C3%ADvozu_P5.jpg",
+    "width": 1280,
+    "height": 960
+  }
+]

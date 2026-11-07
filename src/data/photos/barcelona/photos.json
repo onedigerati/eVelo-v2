@@ -1,0 +1,62 @@
+[
+  {
+    "commons": "File:Barcelona skyline.jpg",
+    "file": "1.webp",
+    "caption": "Barcelona's rooftops stretching to the Mediterranean, with the Torre Glòries on the skyline",
+    "alt": "A dense grid of city blocks under a blue sky, with a bullet-shaped tower and the sea on the horizon",
+    "author": "frank müller",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Barcelona_skyline.jpg",
+    "width": 1280,
+    "height": 850
+  },
+  {
+    "commons": "File:Sagrada Familia 03.jpg",
+    "file": "2.webp",
+    "caption": "The Sagrada Família, Gaudí's basilica in the Eixample",
+    "alt": "Tall, spired stone towers of a basilica with an intricately carved facade against a blue sky",
+    "author": "Bernard Gagnon",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Sagrada_Familia_03.jpg",
+    "width": 960,
+    "height": 1280
+  },
+  {
+    "commons": "File:Park Güell - 50030738311.jpg",
+    "file": "3.webp",
+    "caption": "The mosaic terrace of Park Güell, looking over the city to the Mediterranean",
+    "alt": "A curving bench covered in colourful broken-tile mosaic, with Gaudí pavilions and the city and sea beyond",
+    "author": "Jorge Franganillo",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Park_G%C3%BCell_-_50030738311.jpg",
+    "width": 1280,
+    "height": 853
+  },
+  {
+    "commons": "File:Promenade and beach, Platja de la Barceloneta, Barcelona, 2015.jpg",
+    "file": "4.webp",
+    "caption": "The beach and palm-lined promenade at Barceloneta, the city's seafront",
+    "alt": "A wide sandy beach beside a paved seaside promenade lined with palm trees, with a tall sail-shaped hotel in the distance",
+    "author": "DimiTalen",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Promenade_and_beach,_Platja_de_la_Barceloneta,_Barcelona,_2015.jpg",
+    "width": 1280,
+    "height": 851
+  },
+  {
+    "commons": "File:Boqueria, Barcelona (P1170747).jpg",
+    "file": "5.webp",
+    "caption": "A stall in La Boqueria, the food market off La Rambla",
+    "alt": "A brightly lit market stall hung with strings of dried red peppers, under a market hall roof",
+    "author": "Matti Blume",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Boqueria,_Barcelona_(P1170747).jpg",
+    "width": 1280,
+    "height": 1024
+  }
+]

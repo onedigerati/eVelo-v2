@@ -1,0 +1,62 @@
+[
+  {
+    "commons": "File:Florence Cathedral seen from Piazzale Michelangelo dllu.jpg",
+    "file": "1.webp",
+    "caption": "Brunelleschi's dome and Giotto's bell tower over Florence, from Piazzale Michelangelo",
+    "alt": "A huge red-tiled cathedral dome and a striped bell tower rising above old rooftops, with hills behind at dusk",
+    "author": "Dllu",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Florence_Cathedral_seen_from_Piazzale_Michelangelo_dllu.jpg",
+    "width": 1280,
+    "height": 960
+  },
+  {
+    "commons": "File:Ponte Vecchio Arno Florence.jpg",
+    "file": "2.webp",
+    "caption": "The Ponte Vecchio across the Arno, lined with the goldsmiths' shops built onto it",
+    "alt": "An old stone bridge with small ochre buildings along it, reflected in a calm river under a blue sky",
+    "author": "Jebulon",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Ponte_Vecchio_Arno_Florence.jpg",
+    "width": 1280,
+    "height": 852
+  },
+  {
+    "commons": "File:Mercato di sant'ambrogio, ortofrutta 02.JPG",
+    "file": "3.webp",
+    "caption": "Fruit and vegetable stalls at the Sant'Ambrogio market, a neighbourhood market in Florence",
+    "alt": "Crates of peaches, apricots, grapes and watermelon under a covered market roof, shoppers between the stalls",
+    "author": "Sailko",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Mercato_di_sant'ambrogio,_ortofrutta_02.JPG",
+    "width": 1280,
+    "height": 960
+  },
+  {
+    "commons": "File:Jardín de Bóboli, Florencia, Italia, 2022-09-19, DD 26.jpg",
+    "file": "4.webp",
+    "caption": "The Boboli Gardens behind the Pitti Palace, on the Oltrarno side of the river",
+    "alt": "A large stone palace facing a lawned amphitheatre with an obelisk, clipped hedges in the foreground",
+    "author": "Diego Delso",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Jard%C3%ADn_de_B%C3%B3boli,_Florencia,_Italia,_2022-09-19,_DD_26.jpg",
+    "width": 1152,
+    "height": 768
+  },
+  {
+    "commons": "File:Firenze - Comune di Firenze - 2023-09-30 13-19-12 001.jpeg",
+    "file": "5.webp",
+    "caption": "Florence and its cathedral dome in the Arno valley, seen from the wooded hills above the city",
+    "alt": "Cypress trees and villas on a green hillside in front of a wide pale city with a cathedral dome, hills on the horizon",
+    "author": "Echorec",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Firenze_-_Comune_di_Firenze_-_2023-09-30_13-19-12_001.jpeg",
+    "width": 1280,
+    "height": 853
+  }
+]

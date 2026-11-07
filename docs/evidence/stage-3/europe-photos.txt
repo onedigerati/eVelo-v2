@@ -1,0 +1,36 @@
+$ node docs/evidence/stage-3/scripts/check-europe.mjs
+ok   paphos      webp=5 json=5 max=198480 B 
+ok   porto       webp=5 json=5 max=197282 B 
+ok   cascais     webp=5 json=5 max=193690 B 
+ok   malaga      webp=5 json=5 max=195352 B 
+ok   madrid      webp=5 json=5 max=189020 B 
+ok   athens      webp=5 json=5 max=198918 B 
+ok   crete       webp=5 json=5 max=198238 B 
+ok   tavira      webp=5 json=5 max=192414 B 
+ok   valencia    webp=5 json=5 max=196198 B 
+ok   madeira     webp=5 json=5 max=195914 B 
+ok   limassol    webp=5 json=5 max=196304 B 
+ok   sliema      webp=5 json=5 max=194552 B 
+ok   antalya     webp=5 json=5 max=193820 B 
+ok   tbilisi     webp=5 json=5 max=198172 B 
+ok   alicante    webp=5 json=5 max=198052 B 
+ok   torrevieja  webp=5 json=5 max=197880 B 
+ok   kotor       webp=5 json=5 max=196272 B 
+ok   prague      webp=5 json=5 max=198218 B 
+ok   plovdiv     webp=5 json=5 max=198682 B 
+ok   istanbul    webp=5 json=5 max=199376 B 
+ok   budapest    webp=5 json=5 max=197104 B 
+ok   florence    webp=5 json=5 max=194778 B 
+ok   nice        webp=5 json=5 max=195302 B 
+ok   sarande     webp=5 json=5 max=198838 B 
+ok   split       webp=5 json=5 max=197710 B 
+ok   batumi      webp=5 json=5 max=190686 B 
+ok   gascony     webp=5 json=5 max=198802 B 
+ok   rome        webp=5 json=5 max=195340 B 
+ok   tarragona   webp=5 json=5 max=198490 B 
+ok   barcelona   webp=5 json=5 max=195168 B 
+ok   vienna      webp=5 json=5 max=193212 B 
+
+Commons files across all cities: 180, used more than once: 0 []
+31 cities checked, 0 failing
+exit 0

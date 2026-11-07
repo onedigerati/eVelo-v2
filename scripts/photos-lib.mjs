@@ -87,14 +87,44 @@ export function cleanAuthor(html) {
     .replace(/&(#x?[0-9a-f]+|\w+);/gi, decodeEntity)
     .replace(INVISIBLE, '')
   s = s.split('\n').map((l) => l.trim()).find(Boolean) ?? ''
-  s = s.replace(/\s+/g, ' ').replace(/^(©|\(c\)|copyright)\s*/i, '')
-  s = s.replace(/^(photo(graph)?|picture)\s*(by|from|:)\s*/i, '').trim()
+  s = s.replace(/\s+/g, ' ').trim()
+  s = stripCreditNoise(s)
   // Flickr imports read "<user> from <place>"; keep the user.
-  s = s.replace(/^(.+?\S)\s+from\s+[A-Z][^]*$/, '$1').trim()
+  s = s.replace(/^(.+?\S)\s+from\s+\S.*$/, '$1').trim()
   // Flickr display names sometimes carry a view-count boast: "Name - 10M views".
   s = s.replace(/\s*[-–—|,]\s*[\d.,]+\s*[KkMm]?\+?\s*views?$/i, '').trim()
   if (s.length > 80) s = `${s.slice(0, 79).trimEnd()}…`
   return isPlaceholderAuthor(s) ? '' : s
+}
+
+const SEP = '[\\/,\\-–—|@•·:;]'
+/** Bare domain such as "www.foto-tw.de" or "studiolemontree.com" (lower-case, known TLD). */
+const BARE_DOMAIN =
+  /(?<![\w.@-])(?:www\.)?[a-z0-9-]+(?:\.[a-z0-9-]+)*\.(?:com|net|org|info|biz|io|co|me|eu|de|at|ch|nl|be|fr|es|it|pt|pl|cz|sk|hu|ro|bg|hr|si|rs|gr|cy|mt|tr|ge|al|uk|ie|dk|se|no|fi|ru|ua|ar|br|mx|cl|pa|us|ca|au|nz|jp|my|th|vn|id|photo|photos|photography|art|studio)(?![\w-])(?:\/\S*)?/g
+const URL_RE = /\bhttps?:\/\/\S+/gi
+const PLATFORM = '(?:wikimedia commons|wikimedia|commons|wikipedia|flickr|flikr|panoramio|instagram)'
+
+/** True when a credit still carries a link, a domain, or a platform name. */
+export function hasCreditNoise(s) {
+  const t = String(s ?? '')
+  return /https?:\/\/|\bwww\./i.test(t) || new RegExp(BARE_DOMAIN.source).test(t) || /wikimedia commons|\bflickr\b|\bflikr\b/i.test(t)
+}
+
+/** Strips credit prefixes ("This photo was taken by", "By:", "I,", "User:"), links and platform names. */
+function stripCreditNoise(input) {
+  let s = input
+  s = s.replace(/^(©|\(c\)|copyright)\s*/i, '')
+  s = s.replace(/^(this\s+)?(photo(graph)?|picture|image)(\s+was)?(\s+taken)?\s*(by|from|:)\s*:?\s*/i, '')
+  s = s.replace(/^by\s*:\s*/i, '').replace(/^I,\s+/, '').replace(/^user:\s*/i, '')
+  s = s.replace(URL_RE, ' ').replace(BARE_DOMAIN, ' ')
+  s = s.replace(new RegExp(`\\s*${SEP}\\s*@?${PLATFORM}\\b.*$`, 'i'), '')
+  s = s.replace(new RegExp(`^@?${PLATFORM}\\s*${SEP}\\s*`, 'i'), '')
+  s = s.replace(/\(\s*\)/g, ' ').replace(/\s+\(?talk\)?$/i, '')
+  s = s.replace(/\s+/g, ' ').trim()
+  s = s.replace(new RegExp(`(\\s*${SEP})+$`), '').replace(new RegExp(`^(${SEP}\\s*)+`), '').trim()
+  // A trailing period left behind once noise is removed ("Mike Peel (www.mikepeel.net).").
+  if (s !== input.trim()) s = s.replace(/\s*\.+$/, '').trim()
+  return s
 }
 
 /**
@@ -121,6 +151,9 @@ export function checkOriginalSize(width, height, title) {
 }
 
 /** Throws, naming the file, unless the image URL is https on upload.wikimedia.org. */
+/** Hosts Wikimedia serves Commons originals and thumbnails from. */
+const IMAGE_HOSTS = ['upload.wikimedia.org', 'thumb.wikimedia.org']
+
 export function checkImageUrl(url, title) {
   let u
   try {
@@ -128,9 +161,11 @@ export function checkImageUrl(url, title) {
   } catch {
     throw new Error(`${title}: bad image URL "${url}"`)
   }
-  if (u.protocol !== 'https:' || u.hostname !== 'upload.wikimedia.org') {
-    throw new Error(`${title}: image URL must be https on upload.wikimedia.org, got "${url}"`)
+  if (u.protocol !== 'https:' || !IMAGE_HOSTS.includes(u.hostname)) {
+    throw new Error(`${title}: image URL must be https on ${IMAGE_HOSTS.join(' or ')}, got "${url}"`)
   }
+  // Commons appends tracking parameters (utm_*) to thumbnail URLs; they aren't needed.
+  for (const k of [...u.searchParams.keys()]) if (k.startsWith('utm_')) u.searchParams.delete(k)
   return u.href
 }
 
@@ -177,6 +212,8 @@ export function validateEntry(e, n) {
   if (e?.file !== `${n}.webp`) errs.push(`${at}: file must be ${n}.webp`)
   if (typeof e?.author !== 'string' || isPlaceholderAuthor(e.author) || /[<>\n]/.test(e.author)) {
     errs.push(`${at}: author missing, a placeholder, or not plain text`)
+  } else if (hasCreditNoise(e.author)) {
+    errs.push(`${at}: author "${e.author}" carries a link, domain or platform name`)
   }
   if (!allowedLicense(e?.license)) errs.push(`${at}: licence "${e?.license}" not allowed`)
   if (!/^https:\/\/\S+$/.test(e?.licenseUrl ?? '')) errs.push(`${at}: licenseUrl must be https`)

@@ -18,3 +18,4 @@ export function authorFrom(meta: Record<string, { value?: unknown } | undefined>
 export function checkOriginalSize(width: unknown, height: unknown, title: string): void
 export function checkImageUrl(url: unknown, title: string): string
 export function normalizeTitle(title: unknown): string
+export function hasCreditNoise(s: unknown): boolean

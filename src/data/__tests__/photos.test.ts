@@ -15,6 +15,7 @@ import {
   checkOriginalSize,
   cleanAuthor,
   commonsPageUrl,
+  hasCreditNoise,
   isPlaceholderAuthor,
   licenseUrlFor,
   normalizeTitle,
@@ -311,6 +312,60 @@ describe('photo metadata helpers', () => {
     expect(cleanAuthor('© Jane Doe')).toBe('Jane Doe')
   })
 
+  it.each([
+    ['ŠJů, Wikimedia Commons', 'ŠJů'],
+    ['Marcin Konsek / Wikimedia Commons', 'Marcin Konsek'],
+    ['Jorge Royan / http://www.royan.com.ar', 'Jorge Royan'],
+    ['Thomas Wolf, www.foto-tw.de', 'Thomas Wolf'],
+    ['Plamen Matanski,Flikr', 'Plamen Matanski'],
+    ['Plamen Agov • studiolemontree.com', 'Plamen Agov'],
+    ['Artur Malinowski - @Flickr: https://www.flickr.com/photos/am1974/', 'Artur Malinowski'],
+    ['Mike Peel (www.mikepeel.net).', 'Mike Peel'],
+    ['Anna | Panoramio', 'Anna'],
+    ['Ben – Wikipedia', 'Ben'],
+    ['Cara - Commons', 'Cara'],
+    ['Dan @ Flickr', 'Dan'],
+    ['https://example.org/me Eve', 'Eve'],
+    ['By:Amanda Truscott', 'Amanda Truscott'],
+    ['This photo was taken by Anton Zelenov.', 'Anton Zelenov'],
+    ['I, Sailko', 'Sailko'],
+    ['User:Darwinek', 'Darwinek'],
+    ['Wknight94 talk', 'Wknight94'],
+    ['Hendrik Dacquin from gent, Belgium', 'Hendrik Dacquin'],
+  ])('strips link and platform noise: %s', (raw, clean) => {
+    expect(cleanAuthor(raw)).toBe(clean)
+    expect(hasCreditNoise(clean)).toBe(false)
+  })
+
+  it.each([
+    'Bernard Spragg. NZ',
+    'Dale Cruse',
+    'Diego Delso',
+    'Isaías Montilla',
+    'Joachim Schulz Emsland',
+    'Concierge.2C',
+    'Chainwit.',
+    'A.Savin',
+    'H. Zell',
+    'Fry72, Karel Frydrýšek',
+    'Marc Ryckaert (MJJR)',
+    'Jean-Pol GRANDMONT',
+  ])('keeps a real name intact: %s', (name) => {
+    expect(cleanAuthor(name)).toBe(name)
+    expect(hasCreditNoise(name)).toBe(false)
+  })
+
+  it('refuses a stored author that still carries a link, domain or platform', () => {
+    const e = {
+      commons: 'File:A.jpg', file: '1.webp', caption: 'A place', alt: 'A view', license: 'CC BY 4.0',
+      licenseUrl: 'https://creativecommons.org/licenses/by/4.0', source: commonsPageUrl('File:A.jpg'), width: 1280, height: 853,
+    }
+    expect(validateEntry({ ...e, author: 'Ann Lee' }, 1)).toEqual([])
+    for (const bad of ['Ann, Wikimedia Commons', 'Ann via Flickr', 'Ann https://x.org', 'Ann www.ann.de', 'Ann annphoto.com']) {
+      expect(validateEntry({ ...e, author: bad }, 1).join(), bad).toMatch(/link, domain or platform/)
+    }
+  })
+
   it('treats placeholder authors as missing', () => {
     for (const s of ['Own work', 'own work.', 'Unknown', 'Unknown author', 'Flickr', 'Anonymous', 'See below', '', '  ', '?']) {
       expect(isPlaceholderAuthor(s), s).toBe(true)
@@ -341,7 +396,10 @@ describe('photo metadata helpers', () => {
     expect(() => checkOriginalSize(999, 700, 'File:S.jpg')).toThrow('File:S.jpg')
     expect(() => checkOriginalSize(700, 1000, 'File:S.jpg')).not.toThrow()
     expect(checkImageUrl('https://upload.wikimedia.org/a.jpg', 'File:S.jpg')).toBe('https://upload.wikimedia.org/a.jpg')
-    for (const u of ['http://upload.wikimedia.org/a.jpg', 'https://upload.wikimedia.org.evil.com/a.jpg', 'https://example.com/a.jpg', 'nope']) {
+    expect(checkImageUrl('https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/S.jpg/1920px-S.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo', 'File:S.jpg')).toBe(
+      'https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/S.jpg/1920px-S.jpg',
+    )
+    for (const u of ['http://upload.wikimedia.org/a.jpg', 'https://upload.wikimedia.org.evil.com/a.jpg', 'https://thumb.wikimedia.org.evil.com/a.jpg', 'https://example.com/a.jpg', 'nope']) {
       expect(() => checkImageUrl(u, 'File:S.jpg'), u).toThrow('File:S.jpg')
     }
   })

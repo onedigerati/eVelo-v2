@@ -1,0 +1,23 @@
+$ node docs/evidence/stage-3/scripts/profiles.cjs http://localhost:4199/ docs/evidence/stage-3
+Porto: opened via top-pick card .pick__open, after "Show all top N"
+porto {"pickOdds":"74%","tiles":5,"loaded":5,"srcs":["1-CScp3jYS.webp","2-CYKF56fn.webp","3-BBuoqnW2.webp","4-G_Rd4vOg.webp","5-C_Y3C46e.webp"],"badge":"YOUR PLAN HERE 74% plan holds +10 pts vs 64% in St. Louis","badgeBig":"74%","badgeVs":"+10 pts vs 64% in St. Louis","cardBig":"74%","cardSub":"+10 pts vs 64% in St. Louis","badgeHome":"63.9%","cardMark":"63.9%","credit":"Photos: Dale Cruse, Krzysztof Golik, Güldem Üstün, Marek Slusarczyk, Bex Walton · CC BY / CC BY-SA · Wikimedia Commons"}
+PASS  Porto: mosaic has 5 tiles, 5 images loaded
+PASS  Porto: badge 74% == card 74% (top-picks list shows 74%)
+PASS  Porto: badge "+10 pts vs 64% in St. Louis" within card sub "+10 pts vs 64% in St. Louis"
+PASS  Porto: home tick 63.9% == card mark 63.9%
+PASS  Prague: found in the "Also worth a look" list
+Prague: opened via "Also worth a look" row (rank 43, .also__main button)
+prague {"pickOdds":"72%","tiles":5,"loaded":5,"srcs":["1-D2XGGY_n.webp","2-D9eAmKGl.webp","3-Co-9uvF9.webp","4-DxEv0yg2.webp","5-DvUmTRRF.webp"],"badge":"YOUR PLAN HERE 72% plan holds +8 pts vs 64% in St. Louis","badgeBig":"72%","badgeVs":"+8 pts vs 64% in St. Louis","cardBig":"72%","cardSub":"+8 pts vs 64% in St. Louis","badgeHome":"63.9%","cardMark":"63.9%","credit":"Photos: Moyan Brenn, Tadeáš Gregor, Jorge Royan / http://www.royan.com.ar, ŠJů, Wikimedia Commons · CC BY / CC BY-SA · Wikimedia Commons"}
+PASS  Prague: mosaic has 5 tiles, 5 images loaded
+PASS  Prague: badge 72% == card 72% (top-picks list shows 72%)
+PASS  Prague: badge "+8 pts vs 64% in St. Louis" within card sub "+8 pts vs 64% in St. Louis"
+PASS  Prague: home tick 63.9% == card mark 63.9%
+PASS  Split: found in the "Also worth a look" list
+Split: opened via "Also worth a look" row (rank 66, .also__main button)
+split {"pickOdds":"75%","tiles":5,"loaded":5,"srcs":["1-CdY2MTTh.webp","2-BdTULgWr.webp","3-BdRP4O8e.webp","4-DFrAFxXS.webp","5-cfH5pUsp.webp"],"badge":"YOUR PLAN HERE 75% plan holds +11 pts vs 64% in St. Louis","badgeBig":"75%","badgeVs":"+11 pts vs 64% in St. Louis","cardBig":"75%","cardSub":"+11 pts vs 64% in St. Louis","badgeHome":"63.9%","cardMark":"63.9%","credit":"Photos: dronepicr, Jazzmaster1997, Marjanko1103 · CC BY / CC0 / CC BY-SA · Wikimedia Commons"}
+PASS  Split: mosaic has 5 tiles, 5 images loaded
+PASS  Split: badge 75% == card 75% (top-picks list shows 75%)
+PASS  Split: badge "+11 pts vs 64% in St. Louis" within card sub "+11 pts vs 64% in St. Louis"
+PASS  Split: home tick 63.9% == card mark 63.9%
+console errors/warnings: none
+ALL PASS

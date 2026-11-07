@@ -1,0 +1,62 @@
+[
+  {
+    "commons": "File:St. Stephen's cathedral, Vienna, from Hotel Lamée.jpg",
+    "file": "1.webp",
+    "caption": "St. Stephen's Cathedral and its patterned tile roof, at the heart of Vienna's old town",
+    "alt": "A Gothic cathedral with a tall spire and a steep roof of zigzag coloured tiles rising above city rooftops, under dramatic clouds",
+    "author": "Herzi Pinki",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:St._Stephen's_cathedral,_Vienna,_from_Hotel_Lam%C3%A9e.jpg",
+    "width": 1280,
+    "height": 897
+  },
+  {
+    "commons": "File:Schloss Schönbrunn Wien 2014 (Zuschnitt 2).jpg",
+    "file": "2.webp",
+    "caption": "Schönbrunn Palace and its formal gardens, with the city stretching beyond",
+    "alt": "A long yellow baroque palace behind geometric flower beds and lawns, with rows of trees and the city and hills in the distance",
+    "author": "Thomas Wolf",
+    "license": "CC BY-SA 3.0 de",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Schloss_Sch%C3%B6nbrunn_Wien_2014_(Zuschnitt_2).jpg",
+    "width": 1152,
+    "height": 722
+  },
+  {
+    "commons": "File:Wien-Mariahilf, der Naschmarkt-4.JPG",
+    "file": "3.webp",
+    "caption": "Fruit and vegetable stalls at the Naschmarkt, the open-air market near Karlsplatz",
+    "alt": "A long row of market stalls piled with crates of fruit and vegetables under awnings, with shoppers along the lane",
+    "author": "Dguendel",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Wien-Mariahilf,_der_Naschmarkt-4.JPG",
+    "width": 1280,
+    "height": 853
+  },
+  {
+    "commons": "File:Wien Linie 01 15 Dr.-Karl-Renner-Ring a.jpg",
+    "file": "4.webp",
+    "caption": "A tram on the Ringstrasse passing the Austrian Parliament",
+    "alt": "A red and white tram on a wide boulevard in front of a large neoclassical building with columns, under a blue sky",
+    "author": "Peter Gugerell",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Wien_Linie_01_15_Dr.-Karl-Renner-Ring_a.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "commons": "File:Weingarten Blick auf Wien.jpg",
+    "file": "5.webp",
+    "caption": "Vineyards on a hillside above Vienna, looking out over the city",
+    "alt": "Rows of green grapevines on a slope, with trees and a wide city panorama under a bright sky",
+    "author": "Ma49wiki",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Weingarten_Blick_auf_Wien.jpg",
+    "width": 1280,
+    "height": 688
+  }
+]
