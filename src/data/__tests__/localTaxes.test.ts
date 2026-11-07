@@ -3,18 +3,22 @@ import { fileURLToPath } from 'node:url'
 import { describe, expect, it } from 'vitest'
 import { inheritanceTax, wealthTax } from '../../engine/localTax'
 import { CITIES, CITY_BY_ID, FX_FALLBACK } from '../cities'
+import { EXPAT_PICKS } from '../expatPicks'
 import fxJson from '../fx.json'
 import { FX, LOCAL_TAX_BY_CITY, LOCAL_TAX_BY_COUNTRY, localTaxFor } from '../localTaxes'
 
 const DOC = readFileSync(fileURLToPath(new URL('../../../docs/research/bbd-ranking-2026-11.md', import.meta.url)), 'utf8')
 
-/** The draft top 50 in docs/research/bbd-ranking-2026-11.md, as city ids. */
-const TOP50 = [
+/** The draft top 75 in docs/research/bbd-ranking-2026-11.md, as city ids. */
+const TOP75 = [
   'algarve', 'lisbon', 'paphos', 'panama-city', 'boquete', 'kuala-lumpur', 'porto', 'cascais', 'malaga', 'madrid',
-  'athens', 'penang', 'crete', 'valencia', 'madeira', 'montevideo', 'limassol', 'sliema', 'antalya', 'antigua-guatemala',
-  'tbilisi', 'san-jose-cr', 'lake-chapala', 'chiang-mai', 'bangkok', 'merida', 'hua-hin', 'coronado', 'atenas', 'alicante',
-  'phuket', 'puerto-vallarta', 'san-miguel-de-allende', 'kotor', 'cayo', 'santiago', 'prague', 'istanbul', 'mexico-city', 'budapest',
-  'taipei', 'asuncion', 'lima', 'oaxaca', 'las-terrenas', 'medellin', 'florence', 'playa-del-carmen', 'cuenca', 'nice',
+  'athens', 'penang', 'crete', 'tavira', 'valencia', 'madeira', 'montevideo', 'limassol', 'sliema', 'grand-baie',
+  'antalya', 'antigua-guatemala', 'tbilisi', 'san-jose-cr', 'lake-chapala', 'chiang-mai', 'bangkok', 'merida', 'hua-hin', 'coronado',
+  'atenas', 'alicante', 'torrevieja', 'phuket', 'puerto-vallarta', 'san-miguel-de-allende', 'la-paz', 'kotor', 'cayo', 'hopkins',
+  'corozal', 'santiago', 'prague', 'plovdiv', 'istanbul', 'mexico-city', 'budapest', 'chiang-rai', 'taipei', 'asuncion',
+  'lima', 'oaxaca', 'las-terrenas', 'medellin', 'florence', 'playa-del-carmen', 'cuenca', 'nice', 'roatan', 'sarande',
+  'langkawi', 'volcan', 'panajachel', 'placencia', 'ambergris-caye', 'split', 'batumi', 'gascony', 'rome', 'tarragona',
+  'barcelona', 'cartagena', 'mazatlan', 'bali', 'vienna',
 ]
 
 const ALL = [...Object.entries(LOCAL_TAX_BY_COUNTRY), ...Object.entries(LOCAL_TAX_BY_CITY)]
@@ -22,10 +26,11 @@ const RATES = fxJson.rates as Record<string, number>
 const EUR = (x: number) => Math.round(x / RATES.EUR)
 
 describe('local taxes data', () => {
-  it('covers every country in the draft top 50', () => {
-    expect(new Set(TOP50).size).toBe(50)
+  it('covers every country in the draft top 75', () => {
+    expect(new Set(TOP75).size).toBe(75)
+    expect(EXPAT_PICKS.map((p) => p.cityId)).toEqual(TOP75)
     expect(LOCAL_TAX_BY_COUNTRY.ES).toBeUndefined()
-    for (const id of TOP50) {
+    for (const id of TOP75) {
       const c = CITY_BY_ID[id]
       expect(c, id).toBeDefined()
       // Spain is covered by region overrides only (its wealth tax is regional).

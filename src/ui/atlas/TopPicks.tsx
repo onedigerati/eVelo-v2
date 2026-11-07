@@ -156,7 +156,7 @@ function AlsoList({
   const shown = all ? views : views.slice(0, FIRST_ROWS)
   const hidden = views.slice(FIRST_ROWS)
   const toggle = () => {
-    // Collapsing from the bottom of 35 rows would leave the reader far below the list: bring its
+    // Collapsing from the bottom of 60 rows would leave the reader far below the list: bring its
     // heading back into view if it has scrolled off.
     const el = ref.current
     if (all && el && el.getBoundingClientRect().top < 0) requestAnimationFrame(() => el.scrollIntoView({ block: 'start', behavior: 'instant' }))

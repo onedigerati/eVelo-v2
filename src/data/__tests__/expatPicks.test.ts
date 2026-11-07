@@ -16,19 +16,26 @@ import {
 const SCORE_KEYS: ExpatScoreKey[] = ['cost', 'healthcare', 'safety', 'visa', 'climate', 'community', 'tax', 'estate', 'lending']
 const FACT_KEYS = ['healthcare', 'safety', 'visa', 'tax', 'estate', 'lending', 'climate', 'community', 'access'] as const
 const BBD = 'eVelo BBD destinations research'
-const N = 50
+const N = 75
 const HTTP = /^https?:\/\/\S+$/
 
 describe('EXPAT_PICKS', () => {
-  it('has 50 unique picks ranked 1..50 in order', () => {
+  it('has 75 unique picks ranked 1..75 in order', () => {
     expect(EXPAT_PICKS).toHaveLength(N)
     expect(EXPAT_PICKS.map((p) => p.rank)).toEqual(Array.from({ length: N }, (_, i) => i + 1))
     expect(new Set(EXPAT_PICKS.map((p) => p.cityId)).size).toBe(N)
   })
 
-  it('follows the research doc\'s draft top 50 at the ends', () => {
+  it('follows the research doc\'s draft top 75 at the ends and the inserted picks', () => {
     expect(EXPAT_PICKS.slice(0, 5).map((p) => p.cityId)).toEqual(['algarve', 'lisbon', 'paphos', 'panama-city', 'boquete'])
-    expect(EXPAT_PICKS[N - 1].cityId).toBe('nice')
+    expect(EXPAT_PICKS[N - 1].cityId).toBe('vienna')
+    // Stage 7 cities inserted among the old 50, and the old 50th.
+    expect(expatPickFor('tavira')?.rank).toBe(14)
+    expect(expatPickFor('grand-baie')?.rank).toBe(20)
+    expect(expatPickFor('torrevieja')?.rank).toBe(33)
+    expect(expatPickFor('la-paz')?.rank).toBe(37)
+    expect(expatPickFor('hopkins')?.rank).toBe(40)
+    expect(expatPickFor('nice')?.rank).toBe(58)
   })
 
   it('cites the BBD research for every pick', () => {
@@ -146,12 +153,12 @@ describe('helpers', () => {
   it('finds a pick by city id', () => {
     expect(expatPickFor('algarve')?.rank).toBe(1)
     expect(expatPickFor('paphos')?.rank).toBe(3)
-    expect(expatPickFor('nice')?.rank).toBe(50)
-    expect(expatPickFor('bali')).toBeUndefined()
+    expect(expatPickFor('vienna')?.rank).toBe(75)
+    expect(expatPickFor('da-nang')).toBeUndefined()
     expect(expatPickFor('st-louis')).toBeUndefined()
   })
 
-  it('returns all 50 profiled picks in rank order', () => {
+  it('returns all 75 profiled picks in rank order', () => {
     const top = topProfiles()
     expect(top).toHaveLength(N)
     expect(top.map((p) => p.rank)).toEqual(Array.from({ length: N }, (_, i) => i + 1))

@@ -1,6 +1,6 @@
 # Pick profiles: one file per city
 
-Each of the 50 picks in `EXPAT_PICKS` (`src/data/expatPicks.ts`) has one profile file here, `<cityId>.ts`.
+Each of the 75 picks in `EXPAT_PICKS` (`src/data/expatPicks.ts`) has one profile file here, `<cityId>.ts`.
 `expatPicks.ts` loads every `*.ts` file in this folder with `import.meta.glob`, keyed by file name. So adding or editing a profile needs **no edit anywhere else**.
 
 - Files starting with `_` are skipped by the glob. `_shared.ts` holds source entries (`S`) used by several of the moved profiles.
@@ -35,7 +35,7 @@ const profile: ExpatProfile = {
 export default profile
 ```
 
-For the style, read a moved profile such as `algarve.ts` or `panama-city.ts`. Their healthcare, safety, climate, community, access, drawbacks and summary show the voice to match. Their tax and visa facts are pre-BBD and are being rewritten, so don't copy those.
+For the style, read finished profiles such as `algarve.ts`, `paphos.ts`, `panama-city.ts`, `cayo.ts` or `florence.ts` (a pick ranked low for its taxes). Match their voice in every fact, the summary and the drawbacks.
 
 ## Score rubric (1–5, 5 = best for a US retiree on buy-borrow-die)
 
@@ -50,13 +50,14 @@ The source of truth is `EXPAT_SCORE_RUBRIC` in `expatPicks.ts`, and the UI shows
 | `climate` (Climate) | 5 = mild and pleasant most of the year; 3 = comfortable with a hard season; 1 = hard climate much of the year. |
 | `community` (Community) | 5 = large, established English-speaking expat/retiree community; 3 = modest; 1 = few English-speaking foreigners. |
 | `tax` (Tax on holdings) | 5 = no wealth tax, and foreign dividends/interest untaxed or ≤5% (territorial, non-dom or exempt regime); 4 = no wealth tax and ≤15% on dividends, or a long exemption window; 3 = no wealth tax and 19–30% on dividends; 2 = a wealth tax above a high threshold (≥ ~$2M), or dividends taxed above 30% with surcharges; 1 = a wealth tax from a low threshold or on the gross portfolio. |
-| `estate` (Estate) | 5 = no inheritance tax reaching US assets left to US-resident children; 4 = ≤5%, or an allowance ≥ $1M per child; 3 = top rate ≤10%; 2 = top rate 11–35%; 1 = top rate above 35% on the worldwide estate. |
-| `lending` (Lending) | 5 = IBKR and Schwab International both reported to accept residents, no known margin restriction; 4 = Schwab International reported to accept (outside the EU) plus IBKR; 3 = IBKR only, or EU residence where Schwab reportedly restricts cash-out by margin; 2 = IBKR only, and even that uncertain; 1 = no known US broker. |
+| `estate` (Estate) | 5 = no inheritance tax reaching US assets left to US-resident children; 4 = ≤5%, or an allowance ≥ $1M per child; 3 = top rate ≤10%; 2 = top rate 11–35%; 1 = top rate above 35% on the worldwide estate. A regime whose reach over US assets left to US-resident heirs is only inferred, not confirmed, scores one point lower. |
+| `lending` (Lending) | 5 = margin borrowing for residents confirmed by IBKR and Schwab International (none confirmed as of 2026-11); 4 = Schwab International reported to accept residents (outside the EU) plus IBKR, margin terms unconfirmed; 3 = IBKR only, or EU residence where Schwab reportedly restricts cash-out by margin; 2 = IBKR only, and even that uncertain; 1 = no known US broker. |
 
 Notes on applying it:
 - Score the **city**, not just the country. Regional rules count: Spanish wealth and inheritance tax differ by region (Andalusia, Madrid, Valencian Community).
 - Where a rule is pending or unverified (Costa Rica's Bill 25.796, Thailand's loan-proceeds question, Malta's 2027 rules), score today's rule and say what's pending in the fact or a drawback.
-- The scores should use the whole range across the 50. Don't default to 3.
+- The scores should use the whole range across the 75. Don't default to 3.
+- Score a new pick consistently with existing picks in the same country (e.g. Tavira with `algarve.ts`, Torrevieja with `alicante.ts`, Volcán with `boquete.ts`, Langkawi with `penang.ts`, Batumi with `tbilisi.ts`, Rome with `florence.ts`, Gascony with `nice.ts`, Cartagena with `medellin.ts`, the Belize towns with `cayo.ts`); differ only where the city differs (healthcare, cost, climate, community, access).
 
 ## Fact-writing rules
 
@@ -74,36 +75,40 @@ Notes on applying it:
 
 All in `docs/research/bbd-ranking-2026-11.md`:
 - **Facts that apply everywhere:** US estate tax, treaties, the broker landscape and insurance age caps.
-- **Country summary table:** wealth tax, inheritance and treaty, dividends, residency route, broker access and healthcare for each of the 34 countries, with lead URLs.
-- **Draft top 50 table:** the "Why" behind each rank. Your profile should agree with it.
-- **Appendix A** (Portugal, Spain, France), **B** (Greece, Italy, Croatia, Montenegro, Cyprus, Malta), **C** (Panama, Costa Rica, Mexico, Colombia, Ecuador, Uruguay, Belize, Dominican Republic, Paraguay), **D** (Malaysia, Thailand, Vietnam, Indonesia, Philippines), **F** (Argentina, Chile, Peru, Guatemala) and **G** (Georgia, Hungary, Czech Republic, Turkey, Ireland, Taiwan, Japan): sourced country notes with URLs.
+- **Country summary table:** wealth tax, inheritance and treaty, dividends, residency route, broker access and healthcare for each of the 41 countries, with lead URLs.
+- **Draft top 75 table:** the "Why" behind each rank. Your profile should agree with it, and with the pick's `why` in `expatPicks.ts`.
+- **Appendix A** (Portugal, Spain incl. Tarragona, France incl. Gascony), **B** (Greece, Italy, Croatia incl. Split, Montenegro, Cyprus, Malta), **C** (Panama, Costa Rica, Mexico, Colombia, Ecuador, Uruguay, Belize incl. Ambergris Caye, and a Placencia section, Dominican Republic, Paraguay), **D** (Malaysia, Thailand, Vietnam, Indonesia incl. Bali, Philippines), **F** (Argentina, Chile, Peru, Guatemala incl. Lake Atitlán) and **G** (Georgia incl. Batumi, Hungary, Czech Republic, Turkey, Ireland, Taiwan, Japan): sourced country notes with URLs.
 - **Appendix E:** broker and lending access (§1 and its per-country table), US estate tax (§2) and international health insurance at 65–75 (§3).
-- **Appendix H:** city-level notes (hospitals, safety, climate, flights, expat numbers) for the newer cities, such as Lake Chapala, Oaxaca, Playa del Carmen, Mexico City, Madrid, Alicante, Cascais, Phuket, Coronado and Atenas.
+- **Appendix H:** city-level notes (hospitals, safety, climate, flights, expat numbers), including Cartagena, Barcelona and Rome.
+- **Appendix I:** Albania (Sarandë), Bulgaria (Plovdiv), Austria (Vienna) and Mauritius (Grand Baie), plus their placement in the broker table.
+- **Appendix J:** Honduras (Roatán), Singapore and South Africa (the last two are not picks).
+- **Appendix K:** the 13 retiree towns: Hopkins, Corozal, Mazatlán, La Paz, Tavira, Torrevieja, Hoi An, Chiang Rai, Langkawi, Pedasí, Volcán, Cotacachi and Panajachel (Hoi An, Pedasí and Cotacachi are not picks).
 - **Unverified items to carry as caveats:** hedge these in the facts.
+- The Atlas also shows each city's modelled local wealth and inheritance tax from `src/data/localTaxes.ts` (its `note` fields summarise the rules). Your `tax` and `estate` facts must not contradict it.
 
-## Refreshing a returning pick
+## Stage 8: the 25 new profiles (picks 51–75 and the five inserted above them)
 
-The 22 returning picks were moved here unchanged, with placeholders marked `// TODO(stage5)`. To refresh one:
-1. Rewrite `tax` for BBD: wealth tax, dividends and interest, any newcomer regime (the old text was about pensions and NHR).
-2. Rewrite `visa` as residency on assets or passive income, and re-check every amount against the research doc (e.g. Panama's Friendly Nations and Qualified Investor amounts, Mexico's 2026 thresholds, the D7, Spain's €28,800/yr, MM2H).
-3. Write `estate` and `lending`, replacing the `'TODO'` strings.
-4. Set `tax`, `estate` and `lending` from the rubric (they are placeholder 3s), and re-check `visa` against the Residency rubric.
-5. Re-read the summary, tagline and drawbacks so that they don't contradict the BBD facts (e.g. "easy passive-income visa" or "foreign income untaxed"). Add sources for the new facts; keep ≥3.
-6. Remove the `// TODO(stage5)` comments.
+Every new pick gets a new file named after its city id. These were all researched in Stage 7 (or earlier) and have verified costs in `src/data/cities.ts`.
 
-## Newcomers
+**Picks ranked low for stated reasons.** Split, Bali, Rome, Gascony, Tarragona, Barcelona, Cartagena and Ambergris Caye are in the top 75 but near its foot on purpose. Their profiles must say why plainly, in the summary, the relevant fact and a drawback, and their scores must show it:
+- **Split:** good Croatian taxes, but no residence route for a retiree (`visa` 1).
+- **Bali:** Indonesia's worldwide tax up to 35% (exemption not for retirees), limited healthcare, retirement KITAS 55+.
+- **Rome:** Italy's 0.2% yearly IVAFE on foreign financial assets and 26% on dividends (match `florence.ts`).
+- **Gascony:** France's 5–45% worldwide inheritance tax and long distances to rural healthcare (match `nice.ts` on tax and estate).
+- **Tarragona and Barcelona:** Catalonia's wealth tax from €500k.
+- **Cartagena:** Colombia's wealth, dividend and inheritance taxes, with weaker hospitals than Medellín (match `medellin.ts` on tax and estate).
+- **Ambergris Caye:** Belize's QRP, but no hospital on the island.
 
-Newcomers get a new file named after the city id. They are: paphos, cascais, madrid, crete, limassol, sliema, antalya, antigua-guatemala, tbilisi, lake-chapala, hua-hin, coronado, atenas, alicante, phuket, kotor, cayo, santiago, prague, istanbul, mexico-city, budapest, taipei, asuncion, lima, oaxaca, las-terrenas and playa-del-carmen.
+Split and Bali had pre-BBD profiles before commit `176adc2`. See them with `git show 176adc2^:src/data/expatPicks.ts` (search for `cityId: 'split'` and `cityId: 'bali'`). Use them as a starting point for healthcare, safety, climate, community and access, re-check them, and rewrite tax, visa, estate, lending, scores, summary and drawbacks for BBD.
 
-## Suggested split for four builders
+## Suggested split for three builders
 
-By research appendix, so that each builder reads the fewest sections (R = returning, N = new):
+| Builder | Cities | Read |
+|---|---|---|
+| 1 Europe (11) | tavira, torrevieja, plovdiv, sarande, split, batumi, gascony, rome, tarragona, barcelona, vienna | App. A (Portugal, Spain, France), B (Italy, Croatia), G (Georgia), H (Barcelona, Rome), I (Albania, Bulgaria, Austria), K (Tavira, Torrevieja) |
+| 2 Americas (9) | la-paz, mazatlan, hopkins, corozal, roatan, volcan, panajachel, placencia, ambergris-caye | App. C (Mexico, Panama, Belize, Placencia section), F (Guatemala), J (Honduras), K (La Paz, Mazatlán, Hopkins, Corozal, Volcán, Panajachel) |
+| 3 Asia/Africa and Cartagena (5) | grand-baie, chiang-rai, langkawi, bali, cartagena | App. C (Colombia), D (Malaysia, Thailand, Indonesia), H (Cartagena), I (Mauritius), K (Chiang Rai, Langkawi) |
 
-| Builder | Cities |
-|---|---|
-| 1 Iberia, France, Italy, Czechia (12) | algarve R, lisbon R, porto R, madeira R, cascais N, malaga R, madrid N, valencia R, alicante N, florence R, nice R, prague N |
-| 2 East Med, Balkans, Turkey, Caucasus, Taiwan (11) | paphos N, limassol N, sliema N, athens R, crete N, kotor N, antalya N, istanbul N, tbilisi N, budapest N, taipei N |
-| 3 Central and South America (14) | panama-city R, boquete R, coronado N, san-jose-cr R, atenas N, antigua-guatemala N, cayo N, las-terrenas N, montevideo R, asuncion N, santiago N, lima N, medellin R, cuenca R |
-| 4 Mexico and Southeast Asia (13) | lake-chapala N, merida R, puerto-vallarta R, san-miguel-de-allende R, mexico-city N, oaxaca N, playa-del-carmen N, kuala-lumpur R, penang R, chiang-mai R, bangkok R, hua-hin N, phuket N |
+Every builder also reads the "Facts that apply everywhere" section, the country summary rows and Appendix E for their countries.
 
-Check your work with `npx vitest run src/data/__tests__/expatPicks.test.ts`. Until every builder has finished, the completeness tests fail only for the other builders' cities.
+Check your work with `npx vitest run src/data/__tests__/expatPicks.test.ts src/ui/atlas/__tests__/picks.test.ts`. Until every builder has finished, the completeness tests fail only for the other builders' cities (and the card-grid test fails until `tavira.ts`, rank 14, exists).

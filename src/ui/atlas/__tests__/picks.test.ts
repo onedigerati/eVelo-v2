@@ -42,7 +42,7 @@ describe('pickViews', () => {
 
   it('profiles every pick', () => {
     const views = pickViews([])
-    expect(views.filter(isProfiled)).toHaveLength(50)
+    expect(views.filter(isProfiled)).toHaveLength(75)
   })
 
   it('drops picks whose city is missing', () => {
@@ -52,11 +52,11 @@ describe('pickViews', () => {
 })
 
 describe('splitPicks', () => {
-  it('puts ranks 1–15 in the card grid and 16–50 in the compact rows', () => {
+  it('puts ranks 1–15 in the card grid and 16–75 in the compact rows', () => {
     expect(CARD_PICKS).toBe(15)
     const { cards, rest } = splitPicks(pickViews([]))
     expect(cards.map((v) => v.pick.rank)).toEqual(Array.from({ length: 15 }, (_, i) => i + 1))
-    expect(rest.map((v) => v.pick.rank)).toEqual(Array.from({ length: 35 }, (_, i) => i + 16))
+    expect(rest.map((v) => v.pick.rank)).toEqual(Array.from({ length: 60 }, (_, i) => i + 16))
     // Compact rows carry profiles too, so a tap can open them.
     expect(rest.every(isProfiled)).toBe(true)
   })
