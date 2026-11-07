@@ -143,7 +143,7 @@ This supersedes the Stage 2 draft top 50. The 50 keep their relative order. Five
 | 41 | Corozal (Belize) | new | Belize QRP; Chetumal's private care 26 min away in Mexico; hurricane history (Janet 1955) |
 | 42 | Santiago | 36 | 3 years of untaxed foreign income; strong clinics |
 | 43 | Prague | 37 | 15% on dividends; no inheritance tax for children; discretionary visa |
-| 44 | Plovdiv (Bulgaria) | new | 5% on dividends; children inherit free; Acibadem private care. Residence needs a pension |
+| 44 | Plovdiv (Bulgaria) | new | 5% on dividends; children inherit free. Residence needs a pension; private care thinner than Sofia (the Acibadem office in Plovdiv coordinates patients rather than treating them) |
 | 45 | Istanbul | 38 | Turkey's new-resident regime; top hospitals |
 | 46 | Mexico City | 39 | JCI ABC Medical Center; Mexican dividend tax |
 | 47 | Budapest | 40 | children inherit free; 15% + social contribution on dividends |

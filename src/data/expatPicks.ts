@@ -451,7 +451,7 @@ const RANKING: Ranked[] = [
   {
     rank: 44,
     cityId: 'plovdiv',
-    why: 'Bulgaria taxes dividends at 5%, children inherit free and Acibadem runs private care in the city, but residence needs a pension.',
+    why: 'Bulgaria taxes dividends at 5%, children inherit free and Plovdiv has private care at Eurohospital, but residence needs a pension and serious cases go to Sofia.',
     sourceRefs: [BBD],
   },
   {
