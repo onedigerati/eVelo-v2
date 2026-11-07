@@ -7,18 +7,29 @@ Find the best places to retire for someone living on buy-borrow-die: a portfolio
 2026-11-06 · tests: 107 pass (12 files) · typecheck: clean · build: ok (main chunk 354.0 kB)
 
 ## Now
-Stage 2 of 6 · Research for picks 26–50
-Scope: extend `docs/research/bbd-ranking-2026-11.md` so it ranks a top 50. The 13 cities dropped in Stage 1 become candidates for 26–50; add at least 15 more candidates, drawn from cities already in the dataset in researched countries (e.g. Phuket, Playa del Carmen, Mexico City, Cartagena, Madrid, Barcelona, Rome, Ho Chi Minh City, Cebu), cities in countries not yet researched (e.g. Tbilisi, Buenos Aires, Santiago, Lima, Budapest, Prague, Istanbul, Taipei, Dublin), and well-known retiree towns not yet in the dataset (e.g. Lake Chapala/Ajijic, Oaxaca, Cascais, Alicante, Antigua Guatemala, Coronado, Atenas, Dumaguete). New countries get the same sourced row as Stage 1.
-Risk: none (research notes only)
+Stage 3 of 6 · New cities
+Scope: add 20 cities to `src/data/cities.ts`:
+- From the draft top 50: Crete (Chania), Hua Hin, Kotor, Paphos, Limassol, Sliema, Cayo (San Ignacio), Las Terrenas, Asunción, Cascais, Alicante, Coronado, Atenas, Lake Chapala/Ajijic, Oaxaca, Antigua Guatemala and Antalya.
+- Also added, though outside the 50: Ambergris Caye, Gascony (Auch) and Tarragona — the plan's Belize and LIOS adds.
+
+Each city gets:
+- new country bases where needed: Cyprus, Malta, Montenegro, Belize, Dominican Republic, Paraguay, Guatemala (currency, FX fallback, fxVol, healthcare factor, 1–3 notes from the research doc);
+- costs checked against Numbeo, with a `verified` record (low confidence plus a note where data is thin);
+- a cost-check section in `docs/research/cost-check-2026-11.md`.
+
+Profiles and ranking are Stage 5.
+Risk: low (city dataset only; engine untouched)
 Checks:
-- [ ] Every new country has a sourced row in the summary (wealth tax, inheritance/estate tax and US treaty position, dividends/interest/foreign income, asset-based residency, broker/margin, healthcare and insurance age), and every summary URL appears in the sourced appendices (proof: read the doc; URL cross-check script)
-- [ ] The doc ranks a draft top 50 with a reason per city, and every candidate outside the 50 has a written reason (proof: read the doc)
+- [ ] All 20 cities are in `CITIES`, each with a `verified` record citing the Numbeo page read, and listed with their indices and healthcare factor in `docs/research/cost-check-2026-11.md` (proof: test asserting the ids + verified, and read the doc)
+- [ ] Healthcare factors for the seven new countries are set on the existing scale (US = 1), with the basis written down (proof: read the doc)
+- [ ] The new cities appear and run in the Atlas (proof: screenshot of the running dev app with a new city selected)
+- [ ] Tests green, typecheck clean, build ok (proof: command output)
 Open: none
-Mode: paused — user expanded the plan to profiles for the top 50 (2026-11-06); waiting on the user's go for the revised plan, including Stage 4 (engine wealth/inheritance tax = money logic)
+Mode: autopilot
 
 ## Stages
 - [x] 1. BBD research — country tax, residency, lending and healthcare facts for every candidate, sourced; new top-25 draft
-- [ ] 2. Research for 26–50 — more candidates and any new countries, sourced the same way; draft top 50
+- [x] 2. Research for 26–50 — more candidates and any new countries, sourced the same way; draft top 50
 - [ ] 3. New cities — add Belize (Cayo, Ambergris Caye), the other skipped LIOS picks and every research add for the top 50, with verified costs and healthcare factors
 - [ ] 4. Local taxes — wealth and inheritance tax per country in the engine, with tests; odds and estate reflect them; Method page explains
 - [ ] 5. BBD ranking — rerank the top 50 with new tax/estate and lending factors; profile pages for all 50 (new ones for newcomers and 26–50, refreshed facts for the rest)
@@ -34,6 +45,9 @@ Mode: paused — user expanded the plan to profiles for the top 50 (2026-11-06);
 - 2026-11-06 · Broker/margin facts rest on secondary sources (IBKR and Schwab International pages refuse automated fetch; a shell workaround was declined as bot-check circumvention) — marked secondary in the doc and carried as a caveat, not a ranking driver.
 
 - 2026-11-06 · Profile pages for the top 50, not just the top 25 — user asked to expand; adds a research stage for picks 26–50 before the new-cities stage, and profiles for all 50 in the ranking stage.
+
+- 2026-11-06 · User gave the go for the revised 6-stage plan, including Stage 4's engine wealth/inheritance tax (money logic) — "Go".
+- 2026-11-06 · Draft top 50 adds Cascais, Madrid, Antalya, Antigua Guatemala, Tbilisi, Ajijic, Coronado, Atenas, Alicante, Phuket, Santiago, Prague, Istanbul, Mexico City, Budapest, Taipei, Lima, Oaxaca, Playa del Carmen, and brings back Asunción, Las Terrenas, Medellín, Florence, Cuenca and Nice at 42–50. 16 candidates sit outside, each with a reason. Turkey's Law 7582 (20-year foreign-income exemption) was checked against EY's alert before it lifted Antalya to #19 — autopilot call.
 
 ## Open questions
 - Malta's Global Residence Programme terms are kept to 2031 only for applications filed by 31 Dec 2026 — time-sensitive for the user personally, not for the app.

@@ -1,5 +1,7 @@
 # BBD destinations: ranking research (2026-11-06)
 
+Stage 1 researched 23 countries and drafted a top 25. Stage 2 added 11 countries (Appendices F–G) and city-level notes (Appendix H), and drafted the top 50 below.
+
 **Who this is for:** a US citizen retiring abroad on buy-borrow-die (BBD).
 - A taxable US brokerage portfolio is never sold.
 - Spending comes from margin or securities-based loans against it.
@@ -71,12 +73,23 @@ These sit alongside the existing factors: cost, safety, climate and flights.
 | Vietnam | none | 10% on recipient; no treaty | worldwide, 5% dividends | **no retirement visa** | IBKR only | private OK in big cities | (App. D, Vietnam section) |
 | Indonesia | none | none; no treaty | worldwide up to 35%; exemption not for retirees | Second Home $130k deposit; retirement KITAS 55+ | IBKR; Schwab Intl yes | limited in Bali | (App. D, Indonesia section) |
 | Philippines | none | **6% on residents' worldwide estate** | worldwide | SRRV $15–30k deposit | IBKR likely | unverified | (App. D, Philippines section) |
+| Guatemala | none (municipal IUSI only) | **repealed** (Decreto 6-2026, in force 2 Apr 2026); no treaty | territorial: foreign investment income not taxed | rentista/pensionado permanent residence, US$1,250/mo + US$300 per dependant | IBKR likely; Schwab Intl unknown | public system doesn't cover retirees; private care in Guatemala City (~1 h from Antigua) | https://taxsummaries.pwc.com/guatemala/individual/other-taxes ; https://lexlatin.com/opinion/decreto-6-2026-guatemala-elimina-impuesto-herencias-legados-donaciones-muerte ; https://consortiumlegal.com/en/2026/01/16/permanent-residence-as-a-rentier-or-pensioner-in-central-america/ (App. F) |
+| Chile | none (2026 bill pending) | 1–25% per heir, but a foreigner's assets abroad are excluded unless bought with money from Chile (Law 16.271 art. 1); no estate treaty | first 3 years Chilean-source only (extendable); then worldwide, dividends up to ~40% | rentista visa, no fixed minimum (~US$1,000/mo in practice) | IBKR likely | strong private clinics in Santiago | https://taxsummaries.pwc.com/chile/individual/other-taxes ; https://taxsummaries.pwc.com/chile/individual/income-determination ; https://beckerabogados.cl/en/blog/how-to-apply-for-a-retiree-visa-in-chile (App. F) |
+| Peru | none | none (blog source; PwC silent); no treaty | worldwide; foreign dividends up to 30%, no newcomer relief | rentista US$1,000/mo | IBKR likely | private clinics in Lima; local entry caps reported <65 (anecdote) | https://taxsummaries.pwc.com/peru/individual/foreign-tax-relief-and-tax-treaties ; https://perugestiona.pe/herencias/impuesto-herencia-peru/ (App. F) |
+| Argentina | **Bienes Personales on worldwide assets > ~US$249k, 0.5–1.0% (FY2025), falling to 0.25% by 2027** | Buenos Aires Province only, not the city; no treaty | foreign dividends and interest 5–35% | rentista/pensionado 5× minimum wage (~US$1,290/mo) | IBKR likely | prepagas; good Buenos Aires hospitals | https://taxsummaries.pwc.com/argentina/individual/other-taxes ; https://taxsummaries.pwc.com/argentina/individual/income-determination (App. F) |
+| Georgia | none | children and second-line heirs exempt; no treaty | individuals' foreign-source income exempt; no US income treaty (30% US withholding on dividends, unverified) | property residence ≥ US$150k (since 1 Mar 2026) | IBKR likely | private hospitals in Tbilisi; uneven | https://taxsummaries.pwc.com/georgia/individual/other-taxes ; https://eurofast.eu/understanding-individual-taxes-in-georgia/ ; https://eiglaw.com/georgia-to-increase-real-estate-investment-threshold-for-residence-permits-effective-march-1-2026/ (App. G) |
+| Turkey | none | 1–30% normally; **1% during the new-resident exemption**; no treaty | **Law 7582 (4 Jun 2026): 20-year exemption on foreign-source income for residents from 2026 with no Turkish residence in the prior 3 years** (certificate needed in year 1) | property residence US$200k; many neighbourhoods closed to first applications | IBKR likely | good private hospitals; SGK enrolment | https://www.ey.com/en_gl/technical/tax-alerts/turkiye-introduces-new-personal-tax-regime-including-foreign-income-exemption-inheritance-tax-relief-and-asset-repatriation-measure ; https://taxsummaries.pwc.com/turkey/individual/other-taxes ; https://www.legal500.com/intelligence/turkey/real-estate-and-construction/residence-permit-in-turkey-by-buying-real-estate-%E2%80%93-legal-advice (App. G) |
+| Czech Republic | none | none for children; no treaty | foreign dividends/interest 15% flat option; securities gains exempt after 3 yrs | long-term visa "other purposes" (discretionary) | IBKR (EU) | good public/private; PVZP monopoly for non-EU ended | https://taxsummaries.pwc.com/czech-republic/individual/income-determination ; https://mzv.gov.cz/telaviv/en/visa_and_consular_services/visas/long_term_visas_and_residence_permits/long_term_visa_for_other_purposes.html (App. G) |
+| Hungary | none | children exempt; no treaty | 15% PIT + up to 13% social contribution (capped) | guest investor: €250k in a real-estate fund | IBKR (EU) | public by contribution; private in Budapest | https://taxsummaries.pwc.com/hungary/individual/other-taxes ; https://oif.gov.hu/factsheets/residence-permit-for-guest-investor (App. G) |
+| Ireland | none | CAT 33% above €420k (children); non-doms in scope after 5 yrs' residence; **treaty** | remittance basis for non-doms on unremitted foreign income | Stamp 0: €50k/yr per person | IBKR (EU) | private cover with late-entry loading (2%/yr over 34, cap 70%) | https://taxsummaries.pwc.com/ireland/individual/other-taxes ; https://taxsummaries.pwc.com/ireland/individual/income-determination (App. G) |
+| Taiwan | none | estate tax 10–20% on Taiwan-situs property only for non-ROC nationals; no treaty | foreign income only in the 20% basic tax above TWD 7.5m | **no passive route** (investor visa needs US$200k business investment) | IBKR likely | excellent NHI once resident | https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340072 ; https://taxsummaries.pwc.com/taiwan/individual/other-taxes (App. G) |
+| Japan | none | up to 55%, worldwide after 10 of 15 yrs' domicile; **treaty** | non-permanent resident rules for 5 yrs, then worldwide | **no retirement visa** (Long Stay: JPY 30m savings, 1 yr max, no NHI) | IBKR likely | excellent, but not for Long Stay | https://taxsummaries.pwc.com/japan/individual/other-taxes ; https://migaku.com/blog/language-fun/retirement-visa-options-in-japan-whats-actually-available (App. G) |
 
 The URLs for every row, including the ones marked "(App. X)", are in that appendix's country section.
 
-## Draft top 25 for BBD retirees
+## Draft top 50 for BBD retirees
 
-This is the draft that Stage 4 reranks once costs, healthcare factors and the engine's tax modeling exist. "New" means not in the current 25.
+This is the draft Stage 5 reranks, once costs, healthcare factors and the engine's tax modeling exist. "Was" gives the rank in the shipped top 25; "new" means not in it. Each city's facts are in the country summary, and for cities in Appendix H also in that appendix.
 
 | # | City | Was | Why |
 |---|---|---|---|
@@ -87,46 +100,76 @@ This is the draft that Stage 4 reranks once costs, healthcare factors and the en
 | 5 | Boquete | 2 | Panama's tax profile; highland climate; LIOS #1; hospitals in David, an hour away |
 | 6 | Kuala Lumpur | 10 | foreign income exempt to 2036; no estate tax; cheap excellent hospitals. MM2H capital is the cost |
 | 7 | Porto | 15 | Portuguese tax profile; cheaper than Lisbon |
-| 8 | Málaga | 6 | Andalusia: no wealth tax below ~€3.7M; heir-based inheritance with 99% relief; Spanish healthcare. Above €3.7M the wealth tax bites |
-| 9 | Athens | 9 | 5% on dividends; US estate treaty; children's inheritance ≤10% above €600k |
-| 10 | Penang | 11 | Malaysian tax profile; medical-tourism hospitals; lower cost |
-| 11 | Crete | new | Greek tax profile; LIOS #5; climate. Hospitals in Heraklion/Chania |
-| 12 | Valencia | 5 | €2M wealth-tax exemption from 2026; 99% inheritance relief. Worse than Málaga for larger portfolios |
-| 13 | Madeira | 18 | Portuguese tax profile; mildest climate; flights limited |
-| 14 | Montevideo | 20 | 11-year tax holiday on foreign capital income; no inheritance tax; good mutualista care. Needs 183+ days a year |
-| 15 | Limassol (Cyprus) | new | Cyprus tax profile; best hospitals on the island; pricier than Paphos |
-| 16 | Sliema (Malta) | new | remittance basis (leave dividends in the US account); no wealth or inheritance tax; English. IBKR only; apply by 31 Dec 2026 for the old terms |
-| 17 | San José (CR) | 7 | territorial today, but Bill 25.796 would tax foreign passive income ~15%; demoted on that risk |
-| 18 | Chiang Mai | 12 | cheap; LTR visa exempts foreign income; insurance entry caps and loan-proceeds uncertainty |
-| 19 | Bangkok | 23 | top hospitals; same Thai tax caveats |
-| 20 | Mérida | 13 | easy residency on savings; safe; IMSS. But Mexico taxes dividends up to 35% + 10% |
-| 21 | Hua Hin | new | LIOS #8; Bangkok Hospital Hua Hin; Thai tax caveats |
-| 22 | Puerto Vallarta | 8 | direct US flights; Mexican dividend tax |
-| 23 | San Miguel de Allende | 14 | US-retiree enclave; Mexican dividend tax |
-| 24 | Kotor (Montenegro) | new | 15% on investment income; no wealth tax; inheritance tax on real estate only; property-based residence. Healthcare weak (Podgorica/Dubrovnik) |
-| 25 | Cayo (Belize) | new | QRP is tax-perfect and accepts investment income; LIOS #7; low cost. Healthcare weak: budget international cover with evacuation |
+| 8 | Cascais | new | Lisbon's tax profile on the coast; close to Lisbon airport and hospitals |
+| 9 | Málaga | 6 | Andalusia: no wealth tax below ~€3.7M; heir-based inheritance with 99% relief; Spanish healthcare. Above €3.7M the wealth tax bites |
+| 10 | Madrid | new | Madrid region: no wealth tax from €700k to ~€3.7M (relief less solidarity tax), 99% inheritance relief for children, JCI hospitals, many US nonstops |
+| 11 | Athens | 9 | 5% on dividends; US estate treaty; children's inheritance ≤10% above €600k |
+| 12 | Penang | 11 | Malaysian tax profile; medical-tourism hospitals; lower cost |
+| 13 | Crete | new | Greek tax profile; LIOS #5; climate. Hospitals in Heraklion/Chania |
+| 14 | Valencia | 5 | €2M wealth-tax exemption from 2026; 99% inheritance relief. Worse than Málaga for larger portfolios |
+| 15 | Madeira | 18 | Portuguese tax profile; mildest climate; flights limited |
+| 16 | Montevideo | 20 | 11-year tax holiday on foreign capital income; no inheritance tax; good mutualista care. Needs 183+ days a year |
+| 17 | Limassol (Cyprus) | new | Cyprus tax profile; best hospitals on the island; pricier than Paphos |
+| 18 | Sliema (Malta) | new | remittance basis (leave dividends in the US account); no wealth or inheritance tax; English. IBKR only; apply by 31 Dec 2026 for the old terms |
+| 19 | Antalya (Turkey) | new | Law 7582: foreign income exempt for 20 years and 1% inheritance tax for new residents; low cost; good private hospitals. Lira volatility; US$200k property route with closed neighbourhoods |
+| 20 | Antigua Guatemala | new | territorial; inheritance tax repealed 2026; permanent residence on US$1,250/mo. Serious care is ~1 h away in Guatemala City |
+| 21 | Tbilisi (Georgia) | new | foreign-source income exempt; children inherit free; US$150k property residence. Healthcare uneven; no US tax treaty |
+| 22 | San José (CR) | 7 | territorial today, but Bill 25.796 would tax foreign passive income ~15%; demoted on that risk |
+| 23 | Lake Chapala / Ajijic | new | Mexico's largest US-retiree enclave; Guadalajara flights and hospitals. Mexican dividend tax; Jalisco advisory with a reported Chapala carve-out |
+| 24 | Chiang Mai | 12 | cheap; LTR visa exempts foreign income; insurance entry caps and loan-proceeds uncertainty |
+| 25 | Bangkok | 23 | top hospitals; same Thai tax caveats |
+| 26 | Mérida | 13 | easy residency on savings; safe; IMSS. But Mexico taxes dividends up to 35% + 10% |
+| 27 | Hua Hin | new | LIOS #8; Bangkok Hospital Hua Hin; Thai tax caveats |
+| 28 | Coronado (Panama) | new | Panama's tax profile; beach; ~4,000 expats. Hospitals 1–1.5 h away |
+| 29 | Atenas (CR) | new | ~1,500 expats; 30 min from San José airport; same Costa Rica bill risk |
+| 30 | Alicante | new | Valencian Community (€2M exemption, 99% inheritance relief); cheaper than Valencia. No US nonstops |
+| 31 | Phuket | — | Bangkok Hospital Phuket (JCI 2025–28); Thai tax caveats; no US nonstops |
+| 32 | Puerto Vallarta | 8 | direct US flights; Mexican dividend tax |
+| 33 | San Miguel de Allende | 14 | US-retiree enclave; Mexican dividend tax |
+| 34 | Kotor (Montenegro) | new | 15% on investment income; no wealth tax; inheritance tax on real estate only; property-based residence. Healthcare weak (Podgorica/Dubrovnik) |
+| 35 | Cayo (Belize) | new | QRP is tax-perfect and accepts investment income; LIOS #7; low cost. Healthcare weak: budget international cover with evacuation |
+| 36 | Santiago (Chile) | — | first 3 years foreign income untaxed; foreigners' assets abroad are outside inheritance tax; strong clinics. Worldwide tax after year 3 |
+| 37 | Prague | — | 15% on dividends; no wealth or inheritance tax for children; EU healthcare. Discretionary visa |
+| 38 | Istanbul | — | Turkey's new-resident regime; top private hospitals; hub. Cost and lira volatility |
+| 39 | Mexico City | — | ABC Medical Center (JCI); easy residency. Mexican dividend tax; altitude and safety mix |
+| 40 | Budapest | — | children inherit free; guest-investor route (€250k fund). 15% + social contribution on dividends |
+| 41 | Taipei | — | excellent healthcare and safety; estate tax on Taiwan-situs assets only. No passive residence route (US$200k business investment) |
+| 42 | Asunción (Paraguay) | new | territorial; no wealth or inheritance tax. Healthcare and the residency means test unverified |
+| 43 | Lima | — | no wealth or inheritance tax; rentista US$1,000/mo. Foreign dividends taxed up to 30% |
+| 44 | Oaxaca | new | culture and cost; Mexican dividend tax; thin hospitals |
+| 45 | Las Terrenas (DR) | new | Law 171-07 shields declared rentista income; 3% inheritance tax; remote for serious care; Schwab Intl unavailable |
+| 46 | Medellín | 16 | great hospitals and climate, but Colombia's wealth tax above ~$1.2M, dividends up to 39% and 15% on inheritances rank it low for BBD |
+| 47 | Florence | 22 | IVAFE 0.2%/yr on the portfolio and 26% on dividends rank it low; elective-residence visa and healthcare are good |
+| 48 | Playa del Carmen | — | beach and Cancún flights; small hospital, cartel incidents, hurricanes; Mexican dividend tax |
+| 49 | Cuenca | 17 | cheap, USD, easy rentista visa — but Ecuador's inheritance tax up to 35% reaches foreign assets |
+| 50 | Nice | 21 | best healthcare in the set, but France's 5–45% worldwide inheritance tax and 31.4% on dividends |
 
-## Candidates dropped from the top 25, with reasons
+## Candidates outside the top 50, with reasons
 
-| City | Was | Reason |
-|---|---|---|
-| Medellín | 16 | Colombia charges a wealth tax on worldwide assets above ~$1.2M (up to 1.5%), taxes dividends worldwide up to 39% and inheritances at 15%, and the rentista visa doesn't lead to permanent residence. Hostile at every BBD step. |
-| Cuenca | 17 | Ecuador's inheritance tax runs up to 35% and reaches residents' foreign assets. With no US treaty, that is double tax on US stocks at death. Worldwide income tax up to 37%. |
-| Da Nang | 19 | Vietnam has no retirement visa; the residency route itself is missing. |
-| Nice | 21 | France: inheritance tax of 5–45% on the worldwide estate (the treaty gives credits only), 31.4% on dividends plus PUMa, and Schwab International won't take French residents. |
-| Florence | 22 | Italy: IVAFE of 0.2% a year on the whole US portfolio, 26% on foreign dividends, and a disputed US credit. The 7% regime excludes Florence. |
-| Split | 24 | Croatia's taxes are good, but there is no residence ground for a retiree or property owner. |
-| Bali | 25 | Indonesia taxes residents' worldwide income up to 35% with no retiree exemption; healthcare is limited (GPI #69). |
-| Gascony | LIOS #4 | Same French inheritance and dividend taxes as Nice; rural healthcare distances. |
-| Tarragona | LIOS #6 | Catalonia's wealth tax starts at €500k, with rates to 3.48%, and inheritance relief shrinks as the estate grows. The worst Spanish region for a BBD portfolio. |
-| Ambergris Caye | Belize | No hospital on the island; everything beyond a clinic means a boat or flight out. Cayo carries Belize's tax advantages with better access. |
-| Las Terrenas | LIOS #10 | The Dominican Republic taxes foreign financial income after year 3 (only declared rentista income is exempt), charges 3% inheritance tax, has remote healthcare, and Schwab International won't take DR residents. |
-| Asunción (Paraguay) | surfaced | The best tax profile on paper (territorial, no wealth or inheritance tax), but healthcare and the residency means test went unresearched. Revisit if verified. |
-| Philippines (Dumaguete etc.) | surfaced | Cheap SRRV residence, but a 6% estate tax on residents' worldwide estate hits the "die" step; healthcare unverified. |
+| City | Reason |
+|---|---|
+| Split | Croatia's taxes are good, but there is no residence ground for a retiree or property owner. |
+| Da Nang | Vietnam has no retirement visa. |
+| Ho Chi Minh City | Vietnam has no retirement visa. |
+| Bali | Indonesia taxes residents' worldwide income up to 35% with no retiree exemption; healthcare is limited (GPI #69). |
+| Gascony | France's inheritance and dividend taxes as for Nice, plus rural healthcare distances; Nice carries France in the 50. |
+| Tarragona | Catalonia's wealth tax starts at €500k, with rates to 3.48%, and inheritance relief shrinks as the estate grows. |
+| Barcelona | Same Catalan wealth and inheritance tax as Tarragona. |
+| Rome | Italy's IVAFE and 26% dividend tax as for Florence; Florence carries Italy in the 50. |
+| Cartagena | Colombia's wealth, dividend and inheritance taxes as for Medellín, with weaker hospitals. |
+| Ambergris Caye | No hospital on the island; everything beyond a clinic means a boat or flight out. Cayo carries Belize in the 50. |
+| Cebu | The Philippines' 6% estate tax on residents' worldwide estate; no confirmed JCI hospital. |
+| Dumaguete | Same 6% worldwide estate tax; Negros reported at US Level 3; domestic flights only. |
+| Buenos Aires | Argentina's worldwide wealth tax (Bienes Personales) from ~US$249k, plus 5–35% on foreign dividends. |
+| Batumi | Georgia's tax profile, but weaker healthcare than Tbilisi and few flights. |
+| Dublin | Stamp 0 needs €50k/yr per person; non-doms enter 33% inheritance tax after 5 years; high cost. |
+| Tokyo / Osaka | No retirement visa (Long Stay is 1 year at most, without NHI); 55% inheritance tax reaches worldwide assets after 10 years. |
 
-All seven LIOS #4–10 picks and both Belize cities are accounted for. Four entered the top 25: Crete, Cayo, Hua Hin and Kotor. Five were dropped with reasons above: Gascony, Tarragona, Las Terrenas, Ambergris Caye and Asunción. Cyprus and Malta surfaced in the research and entered.
+Accounted for: all of the shipped 25, the seven LIOS #4–10 picks, both Belize cities, the Stage 1 surfaced adds (Cyprus, Malta, Paraguay, Philippines), and the Stage 2 candidates.
+- 50 are ranked.
+- 16 are outside with a reason.
 
-## Unverified items Stage 3/4 should carry as caveats
+## Unverified items to carry as caveats
 
 - Thailand: whether bringing in loan proceeds counts as taxable foreign income.
 - Malta: whether bringing in margin-loan proceeds counts as a remittance.
@@ -137,6 +180,11 @@ All seven LIOS #4–10 picks and both Belize cities are accounted for. Four ente
 - Panama: that the US is on the Friendly Nations list.
 - Spain: that US-resident heirs are outside inheritance tax (inference; adviser confirmation needed).
 - Greece: whether the 7% regime covers investment income.
+- Turkey: whether the 1% inheritance rate keys off the decedent or the heir, and whether foreign capital gains fall within the exemption.
+- Georgia: US withholding on dividends with no US–Georgia income tax treaty.
+- Chile: whether the inheritance carve-out holds for a foreigner who dies while domiciled in Chile.
+- Safety: US advisory levels for Mexican states and Negros are second-hand (travel.state.gov refused fetch); gov.uk travel advice was used as the government source.
+- Hospitals: several JCI claims in Appendix H are unverified (listed there).
 
 ---
 
@@ -1072,3 +1120,486 @@ Sources for the table: https://yourtaxbase.com/blog/charles-schwab-for-expats ; 
   - https://www.expatica.com/global/healthcare/healthcare-basics/allianz-care-health-insurance-review-2173537
 - **Rule of thumb from these sources:** about US$4–7k per year at 65 and US$7–12k+ per year at 75 for ex-US comprehensive cover. Adding US cover roughly doubles or triples the cost. Treat this as an order of magnitude; get real quotes.
 - **Planning implication:** buy before 74 to keep GeoBlue, IMG, April and (per secondary sources) Allianz available. Only Cigna, and reportedly Bupa Global, accept new applicants with no upper age.
+
+
+# Appendix F
+
+**Stage 2 research: Latin America (Argentina, Chile, Peru, Guatemala)**
+
+Profile: US citizen, buy-borrow-die (large taxable US brokerage account that is never sold, spending paid from margin or securities-based loans, heirs get the US step-up). Facts are as of 2026-11-06.
+USD conversions use the repo's `src/data/fx.json` (as of 2026-11-06, open.er-api.com): ARS 1,545, CLP 966, PEN 3.45 per USD. GTQ is not in that file.
+`[secondary]` means the source is a blog, broker or news site, not the law, the government or a Big-4/law firm. `[unverified]` means I could not read it in a fetched page.
+
+**US estate/gift tax treaties:** none of the four countries has one. The IRS list covers only Australia, Austria, Denmark, France, Germany, Japan, the UK, Canada, Finland, Greece, Ireland, Italy, the Netherlands, South Africa and Switzerland. https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international
+**US income tax treaties:** of the four, only Chile has one. https://www.irs.gov/businesses/international-businesses/united-states-income-tax-treaties-a-to-z
+
+### Argentina (Buenos Aires)
+
+- **Wealth tax:** Bienes Personales applies to residents' assets "both in Argentina and abroad". FY2025 (filed and paid mid-2026):
+  - Allowance (mínimo no imponible): ARS 384.7M (about US$249k). The primary home is exempt up to ARS 1,346.5M.
+  - Standard scale: 0.50% up to ARS 52.7M, 0.75% up to ARS 114.1M, then 1.00% above (about US$74k).
+  - "Good taxpayer" scale: 0% / 0.25% / 0.50%, but only for people compliant for 2020–22, so a newcomer can't use it.
+  - Rates fall toward 0.25% by 2027 (Law 27.743).
+  - In practice a US$10M US brokerage account would pay roughly 1% a year (about US$100k), shrinking as rates fall.
+  - REIBP (one-off advance payment covering 2023–2027, with stability to 2038) was open only to people who were Argentine tax residents on 31 Dec 2023. A new arrival can't use it.
+  - The FY2026 scale (0.5–0.75%?) is `[unverified]`.
+  - https://taxsummaries.pwc.com/argentina/individual/other-taxes ; https://www.iprofesional.com/impuestos/455917-bienes-personales-que-bienes-estan-alcanzados-y-cuales-quedan-afuera `[secondary]`
+- **Inheritance/estate tax:** there is no federal tax. Only Buenos Aires *Province* (ITGB) levies one; the City of Buenos Aires (CABA) does not.
+  - PBA scale for children/spouse: about 1.6%–7.0% (2024 law, indexed yearly).
+  - 2026 allowance for parents/children/spouse: ARS 23.3M per a search snippet `[unverified]`.
+  - How PBA treats a CABA resident's foreign assets is `[unverified]`, but a person domiciled in CABA should be outside it.
+  - No US estate treaty.
+  - https://taxsummaries.pwc.com/argentina/individual/other-taxes ; https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates ; https://www.iprofesional.com/impuestos/414613-cuanto-es-maximo-se-puede-heredar-sin-pagar-impuestos `[secondary, Oct 2024 figures]`
+- **Income tax (worldwide):** residents are taxed on worldwide income, with a foreign tax credit.
+  - Non-working foreigners become resident from their 13th month in Argentina.
+  - Foreign dividends and foreign interest are taxed at the progressive scale of 5–35%. The 35% rate starts above ARS 53.2M of taxable income (FY2025), about US$34k.
+  - Gains on shares are taxed at 15% (schedular). This doesn't matter for BBD because nothing is sold.
+  - There is no new-resident exemption.
+  - Whether margin interest is deductible against foreign dividends is `[unverified]`.
+  - https://taxsummaries.pwc.com/argentina/individual/taxes-on-personal-income ; https://taxsummaries.pwc.com/argentina/individual/income-determination ; https://taxsummaries.pwc.com/argentina/individual/residence
+- **Residency:**
+  - Rentista: 5× the SMVM minimum wage. Pensionado: 5× SMVM *per month* (Disposición DNM 1732/2023).
+  - Temporary residence lasts up to 3 years and can be extended.
+  - SMVM for Nov 2026 is ARS 398,800, so 5× = ARS 1.99M/month, about US$1,290.
+  - PwC mentions investment-based citizenship under Law 27,802; the amount is `[unverified]`.
+  - https://www.argentina.gob.ar/normativa/nacional/norma-384788/texto ; https://www.iprofesional.com/impuestos/463576-se-oficializaron-los-nuevos-montos-del-salario-minimo-vital-y-movil-hasta-abril-de-2027 `[secondary]` ; https://taxsummaries.pwc.com/argentina/individual/residence
+- **Healthcare:**
+  - Private prepagas cannot refuse anyone because of age. Age-band premiums are capped at 3× the youngest band, and people with 10+ years in the same plan get no age increases.
+  - OSDE, Swiss Medical, Galeno, Sancor, Omint and others accept people over 70.
+  - Early-2025 prices for 64+: Swiss Medical SMG20 ARS 785k/month with VAT; Galeno 65+ ARS 497k. Roughly US$350–700/month today `[secondary; prices inflate monthly]`.
+  - Top hospitals (Hospital Italiano, Hospital Alemán, Sanatorio Otamendi, Fundación Favaloro) are named from general knowledge `[unverified]`.
+  - https://www.iprofesional.com/salud/426756-cuanto-cuesta-prepaga-mayores-60-anos-hoy `[secondary]` ; https://www.iprofesional.com/salud/401754-que-prepagas-aceptan-adultos-mayores-70-anos-precios `[secondary]`
+- **BBD verdict:** **Poor.** A worldwide wealth tax of about 1% (falling to 0.25% by 2027) plus foreign dividends taxed at up to 35% makes it expensive for a large portfolio, and newcomers can't use REIBP. The upside is no inheritance tax in CABA, and estate planning is otherwise clean.
+- **City notes:** Live in CABA, not Province suburbs, to stay outside the PBA inheritance tax. Healthcare is first-world for the region. Policy whiplash is a real risk (fiscal-stability promises depend on the government in power).
+
+### Chile (Santiago)
+
+- **Wealth tax:** none. "There are no net wealth/worth taxes in Chile." A wealth tax has been proposed repeatedly but not enacted; a 2026 bill's status is `[unverified]`. https://taxsummaries.pwc.com/chile/individual/other-taxes
+- **Inheritance/estate tax:** yes, levied on each heir's share.
+  - Scale (Law 16.271 art. 2): 1% up to 960 UTM, rising through 2.5 / 5 / 7.5 / 10 / 15 / 20% to **25% above 14,400 UTM** (about US$1M+ per heir; UTM value approximate).
+  - Children and spouse: no surcharge, and the first 50 UTA (about CLP 42M, about US$43k) of each share is exempt. Collateral relatives pay a 20% surcharge, others 40%.
+  - Scope, the key point: residents generally include worldwide assets, **but art. 1: "en las sucesiones de extranjeros los bienes situados en el exterior deberán colacionarse en el inventario sólo cuando se hubieren adquirido con recursos provenientes del país"**. So a foreign national's US brokerage, bought with non-Chilean money, is outside the tax. Chilean-situs assets are taxed.
+  - Foreign estate tax paid on included assets is credited.
+  - No US estate treaty.
+  - Whether this holds when the foreigner dies while domiciled in Chile, and how margin-loan-funded spending is traced, is `[unverified]` (the statute says "sucesiones de extranjeros" without a domicile qualifier).
+  - https://www.sii.cl/preguntas_frecuentes/herencias/001_160_6164.htm ; https://www.sii.cl/preguntas_frecuentes/herencias/001_160_0334.htm ; https://www.sii.cl/pagina/jurisprudencia/legislacion/basica/herencias_asignaciones_donaciones.doc ; https://www.sii.cl/preguntas_frecuentes/herencias/001_160_1486.htm
+- **Income tax:** residents are taxed on worldwide income.
+  - A foreigner who takes up domicile or residence is taxed **only on Chilean-source income for the first 3 years from entry**. The SII Director Regional can extend this "en casos calificados", where lack of intent to settle weighs heavily.
+  - After that, foreign dividends and interest go into the progressive Global Complementario. PwC shows 35.5% at the top using 2017 figures. The current SII second-category monthly scale tops out at 40% (Nov 2026: above CLP 22.46M/month, about US$23k), and the Global Complementario annual scale mirrors it at 40% `[GC table itself unverified]`.
+  - Only "real" (inflation-adjusted) interest is taxed.
+  - US–Chile income tax treaty exists.
+  - https://taxsummaries.pwc.com/chile/individual/taxes-on-personal-income ; https://taxsummaries.pwc.com/chile/individual/income-determination ; https://www.sii.cl/normativa_legislacion/jurisprudencia_administrativa/ley_impuesto_renta/2016/ja2405.htm ; https://www.sii.cl/valores_y_fechas/impuesto_2da_categoria/impuesto2026.htm
+- **Residency:**
+  - Temporary residence as a rentista or pensionado/jubilado. There is **no fixed minimum**; in practice show more than about US$1,000/month.
+  - The first permit is about 1 year, renewable. Permanent residence is possible after 2 years, with no more than 180 days abroad.
+  - https://beckerabogados.cl/en/blog/how-to-apply-for-a-retiree-visa-in-chile (law firm, Sep 2024)
+- **Healthcare:**
+  - Public FONASA: retirees with no Chilean taxable income can qualify for Group A with no contribution.
+  - Private Isapres price by age and health declaration. Pre-existing conditions can be excluded (typically for 18 months). Older entrants face steep premiums or are "captive" (can't switch).
+  - International plans cost about US$200–800+/month per person depending on age. One vendor claims local insurers usually stop new members at 65 and its own plans accept to 75 `[secondary]`.
+  - Santiago has the region's best private clinics: Clínica Alemana, Clínica Las Condes, Clínica Indisa, Clínica Santa María, and UC Christus (UC Christus from general knowledge).
+  - https://www.riotimesonline.com/healthcare-chile-expats-2026/ `[secondary]` ; https://www.expat.cl/healthcare/isapre-private-healthcare-complete-guide/ `[secondary]` ; https://www.expat.cl/healthcare/healthcare-costs-budget-planning/ `[secondary]`
+- **BBD verdict:** **Good for the first 3 years, then fair.** There is no wealth tax, foreign-source income is exempt for 3 years (possibly longer), and a foreigner's non-Chilean-funded US assets are outside the 25% inheritance tax. After year 3, US dividends are taxed at up to 40%, so a dividend-light (growth) portfolio matters.
+- **City notes:** Santiago (Las Condes, Vitacura, Providencia) has top hospitals, stable institutions and high living costs for the region. Air pollution in winter. Earthquake risk.
+
+### Peru (Lima)
+
+- **Wealth tax:** none found. PwC's "Other taxes" lists social security, VAT, municipal property tax (predial) and excise only. https://taxsummaries.pwc.com/peru/individual/other-taxes
+- **Inheritance/estate tax:** none. "Perú no tiene impuesto a la herencia." Transfers by inheritance are also outside alcabala (property transfer tax). PwC lists inheritance tax as "NP" (not provided), so the "none" is `[secondary]`. No US estate treaty.
+  - https://perugestiona.pe/herencias/impuesto-herencia-peru/ `[secondary]` ; https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates ; https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international
+- **Income tax:** domiciled individuals are taxed on worldwide income. Domicile normally means 183+ days in 12 months (from search results; PwC's residence page was not fetched) `[secondary]`.
+  - Net foreign-source income (for example US dividends) is **added to work income and taxed at the progressive 8/14/17/20/30%**. 30% applies above 45 UIT; UIT 2026 = PEN 5,500, so 45 UIT ≈ PEN 247.5k ≈ US$72k. The first 7 UIT are exempt.
+  - Peruvian-source dividends and interest are taxed at 5%. A foreign tax credit applies, limited to Peru's average rate.
+  - No US income tax treaty.
+  - https://taxsummaries.pwc.com/peru/individual/taxes-on-personal-income ; https://taxsummaries.pwc.com/peru/individual/income-determination ; https://taxsummaries.pwc.com/peru/individual/foreign-tax-relief-and-tax-treaties ; https://www.ey.com/es_pe/newsroom/2024/03/aspectos-clave-ingresos-extranjero (EY Peru)
+- **Residency:**
+  - Rentista: prove permanent income of **US$1,000/month** (from a pension or foreign income). The status is indefinite while the income continues and does not allow work.
+  - An investor route exists, but its amount is `[unverified]`.
+  - https://gestion.pe/tendencias/extranjeros-que-desean-establecer-negocios-en-el-peru-que-aspectos-deben-tomar-en-cuenta-noticia/ `[secondary, 2023 news]`
+- **Healthcare:**
+  - Public EsSalud voluntary "+Salud" for 60+ costs about PEN 215/month (about US$62), but has long waits (up to 5 months for appointments, over a year for surgery). SIS Independiente costs about PEN 40–50.
+  - Private EPS plans for 60+ cost about PEN 580–630/month, but need employment.
+  - Retirees mostly buy local private insurance (Rímac, Pacífico) or an international plan. A forum anecdote says Pacífico takes new members up to 65 and renews for life `[unverified]`.
+  - Lima private clinics: Clínica Anglo Americana, Clínica Internacional, Clínica San Felipe, Clínica Delgado.
+  - https://www.riotimesonline.com/healthcare-peru-expats-2026/ `[secondary]`
+- **BBD verdict:** **Fair.** There are no wealth or inheritance taxes and the rentista visa is cheap and easy. But worldwide taxation puts US dividends and interest at up to 30% with no treaty and no newcomer holiday, so a large dividend stream is costly.
+- **City notes:** Lima (Miraflores, San Isidro, Barranco) has good private clinics and a mild but grey climate (garúa, a winter fog-drizzle). Political instability is chronic. Earthquake risk.
+
+### Guatemala (Antigua Guatemala; Lake Atitlán)
+
+- **Wealth tax:** none found. PwC lists only a municipal real-estate tax (IUSI, about 0.2–0.9% of declared value). https://taxsummaries.pwc.com/guatemala/individual/other-taxes
+- **Inheritance/estate tax:** **repealed in 2026.**
+  - Decreto 6-2026 (published 2 Mar 2026, in force 2 Apr 2026) repealed Decreto 431 (the inheritance, legacy and gift tax, previously 1–25%).
+  - Transfers at death are no longer taxed and are expressly exempt from income tax and VAT.
+  - A May 2026 report mentions follow-up fixes to legal gaps `[unverified]`.
+  - No US estate treaty.
+  - https://lexlatin.com/opinion/decreto-6-2026-guatemala-elimina-impuesto-herencias-legados-donaciones-muerte ; https://lahora.gt/nacionales/hloarca/2026/03/02/decreto-que-pone-fin-al-cobro-de-impuesto-sobre-herencias-entrara-en-vigencia-en-abril/ `[news]`
+- **Income tax (territorial):** only Guatemalan-source income is taxed: "Capital gains and investment income from outside the country are not taxed by Guatemala."
+  - Local rates are 5% / 7%. Local interest has 10% withheld.
+  - US dividends, interest and margin-loan proceeds are not taxed. No US income tax treaty.
+  - https://taxsummaries.pwc.com/guatemala/individual/income-determination ; https://taxsummaries.pwc.com/guatemala/individual/taxes-on-personal-income
+- **Residency:**
+  - Rentista or pensionado permanent residence for verifiable foreign income of **at least US$1,250/month, plus US$300 per dependent** (Acuerdo IGM-16-2025).
+  - Fees of about US$25 to apply plus US$400 are `[secondary]`.
+  - https://consortiumlegal.com/en/2026/01/16/permanent-residence-as-a-rentier-or-pensioner-in-central-america/ (Consortium Legal, Jan 2026)
+- **Healthcare:**
+  - The public IGSS system does **not** cover retirees who never worked for a Guatemalan employer, so the options are local private insurance, an international plan, or cash.
+  - Neither source found published premiums or age caps; budget for an international plan (about US$300–800+/month at 65–75 `[unverified]`) plus medical evacuation cover.
+  - Antigua: Hospital Privado Hermano Pedro (24/7).
+  - Guatemala City (Zona 10, about 1 hour away): Herrera Llerandi, Hospital Universitario Esperanza, Centro Médico. These are the serious-care hospitals.
+  - https://livinginguatemala.com/retire-in-guatemala/healthcare-for-retirees/ `[secondary]`
+- **BBD verdict:** **Excellent on tax.** It is territorial (US income untaxed), has no wealth tax, and inheritance tax has been gone since April 2026; residency at US$1,250/month is easy. The weak points are healthcare depth and security, so plan around Guatemala City hospitals and evacuation insurance.
+- **City notes:**
+  - Antigua: colonial and expat-friendly, about an hour from Guatemala City hospitals and the airport, with a spring-like climate at 1,500 m. Volcanic risk (Fuego).
+  - Lake Atitlán (Panajachel, San Marcos and nearby towns): beautiful but 2.5–3+ hours from Guatemala City. No confirmed 24/7 private hospital; Hospitalito Atitlán (Santiago Atitlán) is a non-profit offering 24/7 emergency care, obstetric and gynaecological surgery only. Treat it as a poor fit for health risks at 70+.
+
+
+# Appendix G
+
+**Stage 2 research: Eurasia (Georgia, Hungary, Czechia, Turkey, Ireland, Taiwan, Japan)**
+
+Researched 2026-11-06 for a US citizen on buy-borrow-die (BBD): a taxable US brokerage portfolio that is never sold, spending funded by margin or securities-based loans, and heirs taking a US step-up.
+
+Every URL below was fetched and read. Items marked **[secondary]** come from a law-firm blog, broker or expat guide rather than a government or Big 4 source. Items marked **[unverified]** are my inference or knowledge that I could not confirm from a fetched page.
+
+Shared notes:
+- **US estate tax treaties** (IRS list): estate and gift treaties with Japan (plus Australia, Austria, Denmark, France, Germany, UK). Estate-only treaties with Ireland (plus Canada, Finland, Greece, Italy, Netherlands, South Africa, Switzerland). There is no treaty with Georgia, Hungary, Czechia, Turkey or Taiwan. https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international
+- **Private international health insurance benchmark at 65–69** **[secondary]**: one 2026 broker quote (Feather Standard, March 2026) is about €335/mo in Mexico or Costa Rica, €559/mo in Spain or Portugal, and €1,676/mo with US cover. Many insurers set maximum entry ages of 60, 65 or 70. https://feather-insurance.com/en-ww/blog/international-health-insurance-senior
+- **BBD mechanics** (applies to all seven): margin loan proceeds are not income anywhere surveyed. What matters is how dividends and interest are taxed while you hold, and whether the country's estate tax reaches US-situs securities at death.
+
+### Georgia (Tbilisi; also Batumi)
+
+1. **Wealth tax:** none. Georgia has an annual property tax on real estate, cars and yachts, but only for families with income over GEL 40,000; income that is exempt (foreign income) is presumably excluded **[unverified]**. https://www.legal500.com/intelligence/georgia/tax/georgia-tax-card-2025 ; https://taxsummaries.pwc.com/georgia/individual/other-taxes
+2. **Inheritance/estate tax:** none as a separate tax. Property inherited or gifted by first- and second-line heirs (children, spouse, parents, siblings, grandchildren) is exempt from personal income tax. Gifts up to GEL 1,000 a year are also exempt. There is no US estate tax treaty. https://www.legal500.com/intelligence/georgia/tax/georgia-tax-card-2025 ; https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international
+3. **Dividends, interest and foreign income:** income of residents from foreign sources is exempt. PwC: "Resident individuals are exempt from tax on income that does not have a Georgian source." The flat PIT rate is 20%. Georgian-source dividends and interest are taxed at 5% final withholding. US dividends would therefore carry only the US 30% non-resident withholding, since there is no US–Georgia income tax treaty **[unverified]**. https://taxsummaries.pwc.com/georgia/individual/taxes-on-personal-income ; https://www.legal500.com/intelligence/georgia/tax/georgia-tax-card-2025
+   - Caution: one Big-4-adjacent guide (Eurofast) says residents are taxed on "global income". PwC and the 2025 tax card both list foreign-source income as exempt. https://eurofast.eu/understanding-individual-taxes-in-georgia/
+4. **Residency routes:** a temporary residence permit by real estate. The threshold rose from **USD 100k to USD 150k (market value) on 1 Mar 2026**, and multiple properties can be combined. The permit renews annually and covers the spouse and children. Holders under the old USD 100k rule can keep renewing. A USD 300k investment track leads to a 5-year and then a permanent permit **[secondary, not confirmed on an official page]**. Most nationalities, including the US, get 1 year visa-free **[unverified]**. https://eiglaw.com/georgia-to-increase-real-estate-investment-threshold-for-residence-permits-effective-march-1-2026/ **[secondary]**
+5. **Healthcare:** public coverage is limited. Private Tbilisi hospitals (American Hospital Tbilisi and others) are modern and English-speaking, but quality falls off outside the capital. Local policies are cheaper than international ones. No age-specific pricing was found, so budget the international benchmark of roughly €4–7k/yr at 65–69. https://www.april-international.com/en/destinations/asia-pacific/health-insurance-in-georgia **[secondary]**
+- **BBD verdict:** Near-ideal on tax: foreign income is exempt, there is no inheritance tax for children, and there is no wealth tax, so the only tax drag is US withholding on dividends. The weak points are healthcare depth for 70+ serious care and geopolitical and stability risk.
+- **City notes:** Tbilisi has the best hospitals and most expats. Batumi is a Black Sea resort city with weaker medical care and a property market (the residence route) with an oversupply of new builds **[unverified]**.
+
+### Hungary (Budapest)
+
+1. **Wealth tax:** "There are no net wealth/worth taxes in Hungary." https://taxsummaries.pwc.com/hungary/individual/other-taxes
+2. **Inheritance/estate tax:** the general rate is 18%, or 9% for residential property. Transfers between lineal relatives (children) and to a surviving spouse are **exempt**. PwC does not detail how far the tax reaches foreign assets of a resident; with the lineal exemption this is moot for children. There is no US estate tax treaty. https://taxsummaries.pwc.com/hungary/individual/other-taxes
+3. **Dividends, interest and foreign income:** residents are taxed on worldwide income. PIT is 15% on almost everything, with dividends and interest taxed separately. On top of that comes a **13% social contribution tax (szocho)** on interest and on dividends, except dividends from EEA-listed companies. US-listed dividends are therefore in scope. The szocho base is capped at 24× the monthly minimum wage, about HUF 7.75m in 2026 (my calculation), reduced by other szocho-liable income. The effective rate is up to about 28% until the cap, then 15%. https://taxsummaries.pwc.com/hungary/individual/taxes-on-personal-income ; https://taxsummaries.pwc.com/hungary/individual/other-taxes
+4. **Residency routes:** the guest investor residence permit takes ≥ EUR 250k in an MNB-registered real estate fund held 5 years, or a ≥ EUR 1m donation to a higher-education institution. It is valid up to 10 years and renewable for 10 more, comes with a family reunification permit, and takes 21 days to process. Direct property purchase is not listed. https://oif.gov.hu/factsheets/residence-permit-for-guest-investor
+5. **Healthcare:** public cover depends on employment, contributions and residency. Without a TAJ card you pay full private rates even in public hospitals. A reader reported a non-EU resident refused a TAJ card four times **[anecdotal]**. Private GP visits cost HUF 20–35k. Public waits are long but emergency care is "generally reliable". Plan on international private insurance at the benchmark above. https://dailynewshungary.com/moving-to-hungary-expats-healthcare-insurance **[secondary]**
+- **BBD verdict:** Inheritance to children is tax-free, but holding is expensive: 15% PIT plus up to 13% szocho on US dividends and interest. That is a moderate drag, and the €250k fund lock-up is the cost of entry.
+- **City notes:** Budapest is the only realistic base, with the best private clinics, an international airport and EU Schengen access.
+
+### Czech Republic (Prague)
+
+1. **Wealth tax:** "no net wealth/worth taxes in the Czech Republic." https://taxsummaries.pwc.com/czech-republic/individual/other-taxes
+2. **Inheritance/estate tax:** "There is no inheritance tax." Gifts are taxed as income, with an exemption for gifts from close relatives. There is no US estate tax treaty. https://taxsummaries.pwc.com/czech-republic/individual/other-taxes
+3. **Dividends, interest and foreign income:** residents are taxed on worldwide income. Foreign dividends and bond interest can go in a **separate tax base at a flat 15%**, or be taxed at the 15%/23% progressive rates (23% above CZK 1,762,812). A credit for US withholding is presumably available under the US–CZ treaty **[unverified]**. Capital gains on securities are exempt after 3 years of holding, and the CZK 40m annual cap was abolished from 1 Jan 2026. That helps if BBD ever sells. https://taxsummaries.pwc.com/czech-republic/individual/taxes-on-personal-income ; https://taxsummaries.pwc.com/czech-republic/individual/income-determination
+4. **Residency routes:** there is no retirement or investor visa. The route is a long-term visa for "other purposes" (up to 12 months, decided by the Ministry of the Interior in 90–120 days). It requires a written purpose statement, proof of funds of 15× the CZK 3,130 subsistence minimum plus 2× per extra month, accommodation, and comprehensive health insurance of at least EUR 400k per event with no co-pay. This is the Tel Aviv embassy's list; other embassies are similar. Renewal into a long-term residence permit is discretionary **[unverified]**. https://mzv.gov.cz/telaviv/en/visa_and_consular_services/visas/long_term_visas_and_residence_permits/long_term_visa_for_other_purposes.html
+5. **Healthcare:** non-EU residents without employment must buy commercial "comprehensive" insurance. Since Sept 2023 the market is open beyond PVZP, and the limit for long-term residents is EUR 400k. No age-banded premiums were found; PVZP is said to be the most expensive. Hospital quality in Prague is good **[unverified]**. https://expats.cz/czech-news/article/pavel-signs-law-ending-pvzp-health-monopoly-for-non-eu-foreigners **[secondary]**
+- **BBD verdict:** Clean on estate (no inheritance tax), with a flat 15% option on US dividends and interest and a 3-year capital gains exemption. The main friction is the discretionary "other purposes" visa and getting senior-age insurance.
+- **City notes:** Prague has the best hospitals and expat services and a good airport. Brno is a cheaper fallback.
+
+### Turkey (Istanbul; also Antalya)
+
+1. **Wealth tax:** "There are no national wealth taxes in Turkey." A high-value residence tax applies to Turkish homes worth over TRY 17.711m in 2026, at 0.3–1.0% of the excess. https://taxsummaries.pwc.com/turkey/individual/other-taxes
+2. **Inheritance/estate tax:** inheritance and gift tax is 1–30%, with foreign tax paid deductible from the base. **New (Law 7582, gazetted 4 Jun 2026):** people using the foreign-income exemption pay a reduced 1% on inheritances during the 20-year period. Sources disagree on whether this keys off the decedent or the heir. Under Turkish law the tax reaches Turkish citizens' worldwide property plus property in Turkey; a foreign resident's US securities left to US heirs are likely out of scope **[secondary/unverified]**. The 2026 exemption for children is about TRY 2.9m per heir **[unverified, LinkedIn only]**. There is no US estate tax treaty. https://taxsummaries.pwc.com/turkey/individual/other-taxes ; https://www.ey.com/en_gl/technical/tax-alerts/turkiye-introduces-new-personal-tax-regime-including-foreign-income-exemption-inheritance-tax-relief-and-asset-repatriation-measure ; https://www.ibanet.org/New-tax-developments-in-Turkey-2026
+3. **Dividends, interest and foreign income:** residents (more than 6 months a year) are normally taxed on worldwide income at 15–40%, and foreign dividends and interest over TRY 22k must be declared. **Law 7582** gives a **20-year income tax exemption on foreign-source income** for people becoming resident on or after 1 Jan 2026. Conditions:
+   - no Turkish residence or tax liability in the prior 3 calendar years;
+   - apply to the tax office for an exemption certificate by the end of the year residence starts, or by end-February if residence starts in November or December;
+   - exempt income is not reported, and no foreign tax credit is given.
+   Whether foreign capital gains are covered is not stated explicitly; the "income and gains derived from abroad" wording suggests yes. https://taxsummaries.pwc.com/turkey/individual/income-determination ; https://taxsummaries.pwc.com/turkey/individual/residence ; https://www.legal500.com/intelligence/turkey/tax/turkiyes-new-foreign-income-exemption-a-regime-for-relocating-individuals **[law firm]**
+4. **Residency routes:** a short-term residence permit by property ownership needs **≥ USD 200k** assessed value for purchases from 16 Oct 2023 (older titles: USD 75k metro, 50k elsewhere). It lasts 1–2 years and is renewable while you own the property. First applications are banned in 1,169 "closed" neighborhoods in 15 provinces. Applicants aged 18–64 must show health insurance. Permanent residence is possible after 8 years, citizenship after 5. https://www.legal500.com/intelligence/turkey/real-estate-and-construction/residence-permit-in-turkey-by-buying-real-estate-%E2%80%93-legal-advice **[law firm]**
+5. **Healthcare:** after 1 year of residence foreigners can join SGK/GSS voluntarily at 24% of the minimum wage. Over-65s are exempt from the private insurance requirement for the permit. Since 2017 SGK excludes pre-existing conditions for these enrollees, so top-up cover is advised. Private hospitals in Istanbul and Antalya are major medical-tourism hubs **[unverified]**. https://ikamet.com/health-care-services-for-foreigners-in-turkey/ **[secondary]**
+- **BBD verdict:** Newly attractive: a 20-year foreign-income exemption from 2026 makes US dividends untaxed locally, and inheritance exposure on US assets looks minimal. The risks are an untested regime, the lira and inflation, and policy volatility. You must file for the certificate in year 1.
+- **City notes:** Istanbul has the best hospitals, but many districts are closed to new residence permits. Antalya is a cheaper coastal base with good private hospitals, though some neighborhoods are closed too. Check the DGMM list before buying.
+
+### Ireland (Dublin)
+
+1. **Wealth tax:** "currently no net wealth/worth taxes on individuals in Ireland." https://taxsummaries.pwc.com/ireland/individual/other-taxes
+2. **Inheritance/estate tax:** Capital Acquisitions Tax (CAT) is **33%** above the Group A (child) threshold, which is **€420,000 for gifts or inheritances on or after 7 Oct 2026** (€400k from 2 Oct 2024 to 6 Oct 2026). CAT applies if the disponer or the beneficiary is resident or ordinarily resident, regardless of domicile. A **non-domiciled** person counts as resident only after **5 consecutive years** of residence. After year 5, a US decedent's worldwide estate passing to US children falls into CAT. The **US–Ireland estate tax treaty** gives credit relief. https://www.revenue.ie/en/gains-gifts-and-inheritance/cat-thresholds-rates-and-aggregation-rules/cat-thresholds.aspx ; https://taxsummaries.pwc.com/ireland/individual/other-taxes ; https://www.irishtimes.com/business/personal-finance/what-are-the-tax-rules-on-bringing-money-back-into-ireland-1.4773102 **[secondary, quoting Revenue rule]** ; https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international
+3. **Dividends, interest and foreign income:** non-domiciled residents are taxed on foreign investment income and foreign gains **only to the extent remitted** to Ireland. A US citizen normally keeps a US domicile of origin. Remitted income is taxed at marginal rates up to 40% plus USC **[unverified]**. Capital gains tax is 33%, and 40% on certain fund interests. Remitting loan proceeds secured on unremitted foreign income may be treated as a remittance; this needs advice **[unverified]**. Residence is 183 days a year or 280 days over two years. https://taxsummaries.pwc.com/ireland/individual/income-determination ; https://taxsummaries.pwc.com/ireland/individual/residence
+4. **Residency routes:** **Stamp 0** (retirement / independent means) requires at least €50k a year per person (€100k for a couple) from pensions or savings ("speculative investments generally not considered"). You also need a lump sum for emergencies, full private health insurance and an accountant's certification. It is granted for 1 year and renewed annually, with no access to State benefits. https://www.lewissilkin.com/en-ie/insights/2025/08/07/stamp-0irelands-visa-for-retirees-or-persons-of-independent-means **[law firm]**
+5. **Healthcare:** Stamp 0 holders must hold private cover, which is community-rated (no age pricing and no entry-age cap). First-time buyers over 34 pay a **Lifetime Community Rating loading of 2% per year over 34, capped at 70%** (age 69+), for up to 10 years. A 9-month grace period applies only to people abroad on 1 May 2015 who later return. Hospital quality is high, but public waits are long. https://www.layahealthcare.ie/questions/findoutaboutlcr/
+- **BBD verdict:** Workable for the first 5 years: the remittance basis lets income stay offshore and CAT doesn't apply yet. After 5 years of residence, 33% CAT hits the worldwide estate, with only treaty credit against US estate tax. Leave before year 5 or plan for it.
+- **City notes:** Dublin has the best hospitals and is very expensive. Cork and Galway are cheaper, and the tax treatment is the same.
+
+### Taiwan (Taipei)
+
+1. **Wealth tax:** none ("no net wealth or net worth tax"). https://taxsummaries.pwc.com/taiwan/individual/other-taxes
+2. **Inheritance/estate tax:** the estate tax is 10% / 15% / 20%, with the top rate above TWD 112.42m of net estate. The exemption is TWD 13.33m, plus a TWD 560k deduction per lineal descendant. **For non-ROC nationals the estate tax reaches only property located in Taiwan** (Estate and Gift Tax Act Art. 1). Worldwide reach applies only to ROC nationals habitually resident, including more than 365 days' residence in the 2 years before death (Art. 4). A US citizen's US brokerage account is therefore outside Taiwan estate tax. There is no US estate tax treaty. https://taxsummaries.pwc.com/taiwan/individual/other-taxes ; https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340072
+3. **Dividends, interest and foreign income:** regular income tax is territorial (Taiwan-source only). Residents (183+ days) are subject to the **Income Basic Tax (AMT)**:
+   - foreign-source income is added back only if it is ≥ TWD 1m;
+   - the tax is (basic income − TWD 7.5m) × 20%, payable only to the extent it exceeds regular tax;
+   - a foreign tax credit is allowed, so US withholding offsets it.
+   Up to about TWD 7.5m (roughly USD 230k) of foreign income a year is effectively untaxed **[FX unverified]**. https://taxsummaries.pwc.com/taiwan/individual/taxes-on-personal-income ; https://taxsummaries.pwc.com/taiwan/individual/residence
+4. **Residency routes:** there is no retirement or passive-income visa, and none was found in any source. The **Resident Visa for Investment** requires a minimum investment of **USD 200,000** proven by ROC authorities (MOEA-approved, i.e. a business investment, not a portfolio). You cannot switch to it after entering visa-free. An ARC is issued within 30 days of arrival. Other routes: the Employment Gold Card or the Entrepreneur visa **[not researched]**. https://www.roc-taiwan.org/uploads/sites/76/2023/04/14.-Resident-Visas-for-Investment-20240731-updated.pdf (TECO, updated 2024-07-31)
+5. **Healthcare:** ARC holders without an employer join the NHI after 6 months of continuous residence (one trip under 30 days allowed). The premium is about 4.69% of the insured-salary basis when self-paid, and you keep paying while abroad. Hospital quality is high **[unverified]**. https://taiwangoldcard.com/goldcard-holders-faq/health-insurance/ **[secondary]**
+- **BBD verdict:** Excellent on estate (only Taiwan-situs assets are taxed for foreigners) and mild on income (20% AMT only above TWD 7.5m, with foreign tax credit). The NHI is cheap and good. The obstacle is immigration: there is no passive route, so you need a USD 200k business investment or a Gold Card.
+- **City notes:** Taipei has the top hospitals (NTUH, Taipei Veterans General), good transit and moderate costs **[unverified]**.
+
+### Japan (Tokyo / Osaka)
+
+1. **Wealth tax:** "There are currently no net wealth/worth taxes in Japan." https://taxsummaries.pwc.com/japan/individual/other-taxes
+2. **Inheritance/estate tax:** inheritance and gift tax runs up to **55%** (above JPY 600m of taxable amount). The basic exemption is JPY 30m plus JPY 6m per statutory heir. **Foreign nationals** are exempt on overseas assets only if they have had a Japan domicile for **less than 10 of the last 15 years** and hold a "Table 1" status (work-type or designated activities). PwC notes that permanent residents and spouses or children of permanent residents or Japanese nationals are not Table 1. After 10 years, worldwide assets are taxed at up to 55%. The **US–Japan estate and gift tax treaty** gives credit relief. Japan also has an exit tax on securities **[unverified, not fetched]**. https://taxsummaries.pwc.com/japan/individual/other-taxes ; https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international
+3. **Dividends, interest and foreign income:**
+   - **Non-permanent residents** (foreigners resident 5 years or less of the last 10) pay tax on foreign-source income only to the extent it is paid in or remitted to Japan. How remittances funded by borrowing are treated needs advice **[unverified]**.
+   - Permanent residents are taxed on worldwide income. Listed-share dividends and capital gains (including foreign-listed shares) can be taxed at a flat 20.315%. Offshore interest is taxed at progressive rates up to 45% plus 2.1% surtax plus 10% inhabitant tax.
+   https://taxsummaries.pwc.com/japan/individual/residence ; https://taxsummaries.pwc.com/japan/individual/taxes-on-personal-income ; https://taxsummaries.pwc.com/japan/individual/income-determination
+4. **Residency routes:** **there is no retirement visa.**
+   - **Long Stay for sightseeing and recreation (Designated Activities):** age 18+, savings above JPY 30m (JPY 60m for a couple applying separately), private medical travel insurance. Stay is 6 months, extendable once to 12 months maximum. You must then leave and can reapply from abroad. It does not count toward permanent residence. https://www.vfsglobal.com/one-pager/japan/singapore/english/pdf/Designated-activities-Long-Stay-Updated.pdf (Embassy requirements via VFS, 26 Sep 2025) ; https://migaku.com/blog/language-fun/retirement-visa-options-in-japan-whats-actually-available **[secondary]**
+   - **Business Manager:** from 16 Oct 2025 it requires JPY 30m capital, at least 1 full-time employee and 3 years of management experience or a degree. That is not passive. https://www.morganlewis.com/fr/pubs/2025/09/japanese-government-to-tighten-requirements-for-business-manager-work-permit
+5. **Healthcare:** Long Stay holders cannot join National Health Insurance and must carry private insurance for the whole stay. International plans have entry-age caps around 65–70 for many insurers (benchmark above). Hospital quality is world-class **[unverified]**. https://migaku.com/blog/language-fun/retirement-visa-options-in-japan-whats-actually-available **[secondary]**
+- **BBD verdict:** Only practical as a 6–12 month repeat-visit base: there is no long-term passive visa. A true resident becomes exposed to 55% inheritance tax on worldwide assets after 10 years. While resident, NPR status keeps unremitted US income untaxed for 5 years.
+- **City notes:** Tokyo has the deepest English-speaking medical care. Osaka is cheaper with good hospitals. On Long Stay neither city offers NHI, so private insurance cost and age limits are the binding constraint.
+
+
+# Appendix H
+
+**Stage 2 city research: candidates for picks 26–50 (2026-11-06)**
+
+Country tax and residency facts are in `docs/research/bbd-ranking-2026-11.md` and are not repeated here. These notes add city-level facts only.
+
+**Source caveats, read first**
+- **US State Department advisories:** travel.state.gov, the US Embassy Mexico site and the JCI directory all refused automated fetches (HTTP 403). Every US advisory level below is therefore **secondary**: it comes from traveladvisory.io, which restates State Department levels and dates, or from travel press.
+- **UK advice instead:** the UK FCDO pages (gov.uk) did load. They are used as the government safety source, with each page's "still current at 7 November 2026" date.
+- **JCI status:** JCI accreditation is taken from the hospital's own site where it loaded. Otherwise it is marked *secondary* or *unverified*.
+- **Wikipedia:** used for climate, airport routes and population. It is *secondary*, and route lists include announced or seasonal flights.
+
+---
+
+### Lake Chapala / Ajijic (Mexico)
+- **Regional tax:** Mexico's national rules apply (worldwide income, 10% extra dividend tax, no estate tax). No state or municipal wrinkle relevant to BBD was found.
+- **Healthcare:**
+  - Locally there are clinics with short-stay beds: Ajijic Hospital (surgery room, about 20 specialists visiting from Guadalajara), Maskaras Clinic (24/7) and Lakeside Medical Group. Medicare is not accepted locally. https://www.accesslakechapala.com/guide/health-care/information/
+  - Serious care is in Guadalajara, about 55 km north. https://en.wikipedia.org/wiki/Ajijic
+  - Centro Médico Puerta de Hierro (Guadalajara) joined the Mayo Clinic Care Network in Feb 2019. Its JCI status is **unverified**: no Guadalajara hospital was confirmed JCI. https://theguadalajarareporter.net/index.php/news/news/guadalajara/53148-centro-medico-puerta-de-hierro-joins-mayo-clinic-care-network
+- **Safety:**
+  - US: Jalisco is reported at **Level 3 (Reconsider Travel)**, with no restrictions on US government staff for the Guadalajara metro area, Chapala and Ajijic. *Secondary*: travel press and blog; the State Department page was not loadable. https://blog.jetpacglobal.com/blog/is-it-safe-to-travel-to-mexico-right-now/
+  - Mexico overall is Level 2 (29 May 2026), *secondary*. https://www.traveladvisory.io/advisory/mexico
+  - UK FCDO advises against all but essential travel to "the areas south and south-west of Lake Chapala" to the Colima border. The lake's north shore (Chapala and Ajijic) is not in that zone (updated 20 Oct 2026). https://www.gov.uk/foreign-travel-advice/mexico
+- **Retiree community:**
+  - The largest classic US/Canadian retiree enclave in Mexico. "Many retired Americans and Canadians live in Ajijic," and foreigners are said to be over half the winter population (USA Today, 2018, via Wikipedia, *secondary*). The 2020 census population was 11,439. https://en.wikipedia.org/wiki/Ajijic
+  - Jalisco had 1,515 new US temporary residents in the first nine months of 2022, concentrated in Puerto Vallarta, Guadalajara and Chapala. https://mexiconewsdaily.com/news/us-citizens-moving-to-mx-record-numbers/
+- **Access:** Guadalajara (GDL) has very wide US nonstop service: AA (DFW), Delta (ATL), United (IAH), Alaska (LAX), Aeroméxico (LAX, SLC and seasonal routes), and Volaris (about 28 US cities). https://en.wikipedia.org/wiki/Guadalajara_International_Airport
+  - The airport's distance from Ajijic was not sourced (it lies between Guadalajara and the lake; about 30–45 min is *unverified*).
+- **Climate:** spring-like all year. The basin averages about 19 °C, May highs are 27–32 °C, and the rains fall June–October, mostly at night. https://en.wikipedia.org/wiki/Ajijic
+- **26–50?** Yes, as Mexico's best retiree infrastructure and flights. It shares Mexico's dividend-tax drag with San Miguel and Puerto Vallarta (#20–23), so it ranks just below or alongside them.
+
+### Oaxaca (Mexico)
+- **Regional tax:** national rules apply.
+- **Healthcare:**
+  - Private: Hospital Ángeles, Clínica de Especialidades and Centro Médico de Oaxaca. Public: Hospital Regional de Alta Especialidad. Severe cases may need medical evacuation. *Secondary*. https://360nations.com/north-america/mexico/regions/oaxaca/healthcare.html
+  - No JCI hospital is in the city. Hospital Ángeles' JCI list names Pedregal, Lomas, Puebla, Universidad and Acoxpa/Querétaro, not Oaxaca. https://en.hospitalangeles.com/joint-commission-international
+  - Nearest JCI care is Puebla or Mexico City, hours away by road (*unverified* drive time).
+- **Safety:**
+  - US: Oaxaca state is reported at Level 2 (*secondary*). https://blog.jetpacglobal.com/blog/is-it-safe-to-travel-to-mexico-right-now/
+  - The UK names no Oaxaca no-go areas. It flags protests that block access to Oaxaca airport. https://www.gov.uk/foreign-travel-advice/mexico ; https://www.gov.uk/foreign-travel-advice/mexico/safety-and-security
+- **Retiree community:** popular with Americans and foreigners in general, but no residency figures were found. https://mexiconewsdaily.com/news/us-citizens-moving-to-mx-record-numbers/
+  - The community is smaller than Chapala's or San Miguel's (*unverified* size).
+- **Access:** Oaxaca (OAX) has nonstops to Dallas (AA), Houston (United Express) and Los Angeles (Volaris). https://en.wikipedia.org/wiki/Oaxaca_International_Airport
+- **Climate:** 1,555 m altitude. Warm, dry days (Dec highs about 27 °C, April about 33 °C), cool nights (Jan lows about 9 °C), and rain May–Oct. https://en.wikipedia.org/wiki/Oaxaca_City
+- **26–50?** Borderline. It has culture and climate, but hospital depth is weak for older retirees and it carries Mexico's dividend tax. Upper 40s at best.
+
+### Playa del Carmen (Mexico)
+- **Regional tax:** national rules apply.
+- **Healthcare:**
+  - Hospiten Riviera Maya (Playa del Carmen) has 23 beds and 2 ICU beds, with 24 h emergency. No JCI is claimed on its page. https://hospiten.com/en/hospitals/hospiten-riviera-maya
+  - Larger hospitals are in Cancún, about 70 km away. Galenia Cancún is described as JCI-accredited in older, *secondary* listings; that is **unverified**. https://en.wikipedia.org/wiki/Playa_del_Carmen
+- **Safety:**
+  - US: Quintana Roo is reported at Level 2 (*secondary*). https://blog.jetpacglobal.com/blog/is-it-safe-to-travel-to-mexico-right-now/
+  - UK: "Rival criminal gangs have clashed in popular Cancun tourist destinations and surrounding areas", and there have been assaults on travellers in Cancún, Tulum and Playa del Carmen. https://www.gov.uk/foreign-travel-advice/mexico/safety-and-security
+- **Retiree community:** Quintana Roo is among the top states for new US temporary residents (no figure given). https://mexiconewsdaily.com/news/us-citizens-moving-to-mx-record-numbers/
+  - The community is more remote workers and tourists than retirees (*unverified*).
+- **Access:** Cancún airport (CUN) is about 70 km away. https://en.wikipedia.org/wiki/Playa_del_Carmen
+  - CUN has very wide US service. The route list was not fetched (*unverified*, but CUN is Mexico's largest US gateway).
+- **Climate:** hot all year. Highs run about 28 °C in winter to 33 °C in late summer, with rain June–Nov and a hurricane exposure (Wilma, 2005). https://en.wikipedia.org/wiki/Playa_del_Carmen
+- **26–50?** Possibly in the 40s for beach lovers. Thin local hospitals, cartel friction and hurricanes argue against it for older BBD retirees.
+
+### Mexico City (Mexico)
+- **Regional tax:** national rules apply.
+- **Healthcare:** the best in Mexico.
+  - ABC Medical Center is JCI-accredited at both its Observatorio and Santa Fe campuses (fifth consecutive year in 2021). https://pulsenewsmexico.com/2021/05/21/abc-medical-center-gets-jci-accreditation-for-fifth-year/
+  - Hospital Ángeles Pedregal and Lomas hold the JCI Gold Seal. https://en.hospitalangeles.com/joint-commission-international
+- **Safety:**
+  - US: CDMX is reported at Level 2 (*secondary*). https://blog.jetpacglobal.com/blog/is-it-safe-to-travel-to-mexico-right-now/
+  - UK: "Street crime is a serious issue" in major cities, with robberies by unlicensed taxis, including in Mexico City. https://www.gov.uk/foreign-travel-advice/mexico/safety-and-security
+- **Retiree community:** large US population, but skewed to remote workers. CDMX took the largest share of new US temporary residents (1,619, or 19%, in Jan–Sep 2022). https://mexiconewsdaily.com/news/us-citizens-moving-to-mx-record-numbers/
+- **Access:** MEX has nonstops to about 28+ US cities on Aeroméxico, AA and Delta, plus United (route list truncated). https://en.wikipedia.org/wiki/Mexico_City_International_Airport
+- **Climate:** 2,240 m subtropical highland (Cwb). Mild all year, with a summer rainy season and a history of air-pollution problems (improved). https://en.wikipedia.org/wiki/Mexico_City
+- **26–50?** Yes, for healthcare and flights (top in Mexico). Big-city stress, altitude and Mexican dividend tax keep it mid-pack.
+
+### Cartagena (Colombia)
+- **Regional tax:** national rules apply. Colombia's wealth tax on worldwide assets over about $1.2M, worldwide dividend tax to 39% and 15% inheritance tax all apply in full. Bolívar has no local relief.
+- **Healthcare:**
+  - Hospital Serena del Mar, operated by Fundación Santa Fe de Bogotá, is "the only high-complexity hospital in Cartagena", 15 min from the old city. https://www.hospitalserenadelmar.com/en/international-certifications-and-recognitions
+  - Its About page says it is "certified … by the Joint Commission International (JCI)". Whether that covers this hospital or the Bogotá parent is ambiguous, and its certifications page lists no JCI, so it is **unverified**. https://www.hospitalserenadelmar.com/en/about-us
+- **Safety:**
+  - US: Colombia is **Level 3** (31 Mar 2026). Bolívar is not among the reported Level 4 departments (*secondary*). https://www.traveladvisory.io/advisory/colombia
+  - UK advises against all but essential travel only to "the southern part of Bolívar Department", which excludes Cartagena (updated 30 Oct 2026). https://www.gov.uk/foreign-travel-advice/colombia
+- **Retiree community:** no reliable size found (*unverified*).
+- **Access:** CTG has nonstops to Miami (AA), JFK and Fort Lauderdale (JetBlue) and Atlanta (Delta). Houston/Dulles (United) and Orlando (Frontier) start Dec 2026. https://en.wikipedia.org/wiki/Rafael_N%C3%BA%C3%B1ez_International_Airport
+- **Climate:** hot and humid. It averages about 30 °C with about 80% humidity, and rain May–Nov. https://en.wikipedia.org/wiki/Cartagena,_Colombia
+- **26–50?** **No.** Colombia's wealth, dividend and inheritance taxes are hostile at every BBD step, the same reason Medellín was dropped.
+
+### Madrid (Spain)
+- **Regional tax (Community of Madrid):**
+  - **Wealth tax:** €700k state exemption. Madrid's historic **100% relief** became **variable from 2023 while the solidarity tax (ITSGF) exists**. It is reduced by the ITSGF amount, so the solidarity-level tax is collected by Madrid as wealth tax instead of by the State. https://www.cuatrecasas.com/es/spain/fiscalidad/art/itsgf-medidas-adoptadas-ccaa (26 Mar 2026)
+  - In practice Madrid residents pay **nothing between €700k and about €3.7M** net wealth. Above that they pay about the solidarity-tax rates (1.7–3.5%) to Madrid. This is the same outcome as Andalusia. https://guiafiscal.es/opinion/patrimonio-2026-mapa-bonificaciones-ccaa/
+  - Margin debt is deductible and the 60%/80% cap applies (App. A).
+  - **Inheritance:** a **99% relief** for spouse and children (Groups I–II). A €200k test case owes €63.89. https://guiafiscal.es/actualidad/mapa-sucesiones-2026-donde-se-paga-mas/ (cut-off 1 Nov 2026)
+  - US-resident heirs inheriting US assets appear out of scope anyway (App. A inference).
+- **Healthcare:** top tier.
+  - Hospital Universitario Quirónsalud Madrid is JCI (2022). https://alicanteplaza.es/alicanteplaza/quironsaludprimergrupohospitalarioprivadodelmundoenobtenerlaacreditacionjointcommissioninternationalenterprise2
+  - Hospital Sanitas Virgen del Mar renewed JCI in Nov 2025. https://www.redaccionmedica.com/ultimas-noticias/20251120/el-hospital-sanitas-virgen-del-mar-renueva-la-acreditacion-de-jointcommission-international/132684_0.html
+  - Public access by payment is available after one year (App. A).
+- **Safety:** US Spain Level 2 (terrorism, unrest; 1 Aug 2026), *secondary*. https://www.traveladvisory.io/advisory/spain
+- **Retiree community:** large international population, but a US-retiree community size was not sourced (*unverified*).
+- **Access:** MAD has nonstops on Iberia (BOS, ORD, DFW, LAX, MIA, JFK, MCO, IAD, plus seasonal EWR and SFO), AA (CLT, DFW, MIA, JFK, PHL), Delta (ATL, JFK) and Air Europa (MIA, JFK). https://en.wikipedia.org/wiki/Adolfo_Su%C3%A1rez_Madrid%E2%80%93Barajas_Airport
+- **Climate:** hot summers (July highs about 33 °C) and cool winters with frequent frost (Jan nights about 1–3 °C). https://en.wikipedia.org/wiki/Climate_of_Madrid
+- **26–50?** **Yes, likely high (26–30).** Its tax profile is as good as Málaga's (#8) up to about €3.7M, with 99% inheritance relief, the best Spanish hospitals and a flight hub. Its winters are colder than the coast.
+
+### Barcelona (Spain)
+- **Regional tax (Catalonia):**
+  - Wealth tax exemption is only **€500k**, with rates 0.21–3.48% and **0% relief**. Catalan wealth tax paid is deducted from the ITSGF, so the taxpayer pays the Catalan tax first and then the State only for the difference. https://guiafiscal.es/opinion/patrimonio-2026-mapa-bonificaciones-ccaa/
+  - Inheritance relief for children is **sliding**. A €200k case is €0 only if the home is kept 5 years, and about €3,825 without a home. https://guiafiscal.es/actualidad/mapa-sucesiones-2026-donde-se-paga-mas/
+  - This is the same profile that dropped Tarragona (App. A).
+- **Healthcare:** excellent.
+  - Centro Médico Teknon has held JCI continuously since 2002 (fifth renewal in Sep 2016). https://www.redaccionmedica.com/empresas/sanidad-privada/20161011/teknon-unico-hospital-de-espana-en-acreditar-su-calidad-por-quinta-vez/22872_0.html
+  - Teknon, Hospital Quirónsalud Barcelona and Hospital Universitari Dexeus were JCI in Oct 2022. https://alicanteplaza.es/alicanteplaza/quironsaludprimergrupohospitalarioprivadodelmundoenobtenerlaacreditacionjointcommissioninternationalenterprise2
+- **Safety:** US Spain Level 2, *secondary*. https://www.traveladvisory.io/advisory/spain
+  - Barcelona's pickpocketing reputation is not sourced here.
+- **Retiree community:** large international community, size *unverified*.
+- **Access:** BCN has nonstops on AA (MIA, PHL, plus seasonal CLT, ORD, DFW, JFK), Delta (ATL, JFK, plus seasonal BOS, SEA), United (EWR, IAD, plus seasonal ORD, SFO) and Level (BOS, MIA, JFK, plus seasonal LAX, SFO). https://en.wikipedia.org/wiki/Josep_Tarradellas_Barcelona%E2%80%93El_Prat_Airport
+- **Climate:** Mediterranean. Summer highs are about 28–29 °C and winter days about 15 °C. https://en.wikipedia.org/wiki/Climate_of_Barcelona
+- **26–50?** **No, or bottom of the list.** Catalonia's wealth tax from €500k is the worst in Spain for a BBD portfolio.
+
+### Alicante (Spain)
+- **Regional tax (Valencian Community, same as Valencia, #12):** wealth tax exemption is **€2,000,000** from the 31-12-2026 assessment, with no general relief and rates of 0.25–3.5%. https://guiafiscal.es/opinion/patrimonio-2026-mapa-bonificaciones-ccaa/
+  - The guiafiscal page cites Ley 5/2026, dated 31 Jul 2026, in an article updated 17 May 2026. The inconsistency is noted; App. A's Cuatrecasas source confirms the €2M.
+  - **Inheritance:** €100k reduction plus a 99% relief for children. https://guiafiscal.es/actualidad/mapa-sucesiones-2026-donde-se-paga-mas/
+- **Healthcare:**
+  - Hospital Quirónsalud Torrevieja (about 50 km south, *unverified* distance) has renewed JCI per its own press release. The release was seen only as a search snippet (page 403), so this is *secondary*.
+  - Alicante city hospitals' JCI status was not verified.
+- **Safety:** US Spain Level 2, *secondary*. https://www.traveladvisory.io/advisory/spain
+- **Retiree community:**
+  - About 27% of residents are foreign-born (2024), led by Latin Americans and North Africans. https://en.wikipedia.org/wiki/Alicante
+  - The airport's top market is the UK. https://en.wikipedia.org/wiki/Alicante%E2%80%93Elche_Miguel_Hern%C3%A1ndez_Airport
+  - So the English-speaking community is mainly British, and large on the Costa Blanca.
+- **Access:** ALC (19.95M passengers in 2025) has **no US nonstops**; connect via Madrid or other European hubs. https://en.wikipedia.org/wiki/Alicante%E2%80%93Elche_Miguel_Hern%C3%A1ndez_Airport
+- **Climate:** one of Europe's driest cities, with about 285 mm of rain, about 3,000 hours of sun, mild winters and hot summers. https://en.wikipedia.org/wiki/Alicante
+- **26–50?** **Yes (30s).** It has Valencia's tax profile, is cheaper and sunnier, and has a big English-speaking community. It has no US nonstops and is worse than Madrid or Málaga above €2M.
+
+### Rome (Italy)
+- **Regional tax:** **national rules apply**: IVAFE 0.2% a year on the foreign portfolio, 26% on foreign dividends, and the US estate treaty (App. B).
+  - No Lazio-specific wealth or inheritance wrinkle was found. The regional and municipal income surtaxes apply to ordinary income, not to the 26% flat-rate capital income (*unverified* for this file).
+  - The 7% southern pensioner regime excludes Rome (App. B, by population and region).
+- **Healthcare:**
+  - Campus Bio-Medico University Hospital received JCI in Sep 2014; its current status is *unverified*. https://www.unicampus.it/en/news/quality-polyclinic-in-healthcare/
+  - The US Embassy Rome keeps lists of English-speaking doctors and hospitals (archived 2021 copy, *secondary*).
+  - Rome American Hospital's JCI status was not found.
+- **Safety:** US Italy Level 2 (terrorism, crime; 10 Sep 2026), with petty crime in tourist areas and on transport (*secondary*). https://www.traveladvisory.io/advisory/italy
+- **Retiree community:** size *unverified*.
+- **Access:** FCO has nonstops on ITA (BOS, IAH, LAX, MIA, JFK, SFO, IAD), Delta (ATL, BOS, DTW, MSP, JFK), United (ORD, EWR, IAD) and AA (DFW, PHL, plus seasonal routes). https://en.wikipedia.org/wiki/Rome_Fiumicino_Airport
+- **Climate:** Mediterranean. July–Aug highs are about 31–33 °C, January highs about 12 °C and lows about 3 °C. https://en.wikipedia.org/wiki/Climate_of_Rome
+- **26–50?** **No, or bottom.** It carries the same Italian IVAFE plus 26% drag that dropped Florence. The treaty and flights don't offset an annual 0.2% on the whole portfolio.
+
+### Cascais (Portugal)
+- **Regional tax:** **national rules apply** (no wealth tax, children inherit free, 28% on dividends; App. A). No municipal wrinkle relevant to BBD.
+- **Healthcare:**
+  - Hospital CUF Cascais (private) is in Cascais. CUF Tejo and CUF Descobertas are in Lisbon. CUF's JCI reference is to CUF Porto only. https://cuf.pt/en/cuf-services/internacional-cuf/where-find-us
+  - The public Hospital de Cascais Dr. José de Almeida (SNS, run as a PPP) won IHF silver in Oct 2026. Its board cites periodic JCI reviews, but current JCI accreditation is *unverified*. https://www.dn.pt/sociedade/hospital-de-cascais-recebe-prata-em-prmio-internacional-e-integra-grupo-de-oito-finalistas
+- **Safety:** US Portugal **Level 1** (23 Dec 2025), *secondary*. https://www.traveladvisory.io/advisory/portugal
+- **Retiree community:** no figure found. The many international schools suggest a large international population. https://en.wikipedia.org/wiki/Cascais
+- **Access:**
+  - Lisbon (LIS) has nonstops on TAP (BOS, ORD, LAX, MIA, EWR, JFK, SFO, IAD, plus MCO from Oct 2026), United (EWR, IAD), Delta (BOS, JFK) and AA (PHL). https://en.wikipedia.org/wiki/Lisbon_Airport
+  - Cascais connects to Lisbon by the A5 and commuter trains (the drive of about 30–40 min to LIS is *unverified*). https://en.wikipedia.org/wiki/Cascais
+- **Climate:** warm-summer Mediterranean, with cool wet winters and warm dry summers. https://en.wikipedia.org/wiki/Cascais
+- **26–50?** **Yes, high (26–30).** It has the same tax profile as Lisbon (#2) with a coastal lifestyle. Its cost is higher than Lisbon's.
+
+### Phuket (Thailand)
+- **Regional tax:** national rules apply (LTR exemption; whether loan proceeds count as remitted income is still unverified; App. D).
+- **Healthcare:** Bangkok Hospital Phuket has been **JCI since 2009, with the 6th cycle covering 2025–2028**. https://www.bangkokhospital.com/en/phuket/about-us/awards-accreditations/joint-commission-international-accreditation-jci
+  - Other private hospitals are Phuket International Hospital and Mission Hospital. The public hospital is Vachira Phuket. https://en.wikipedia.org/wiki/Phuket_province
+  - Thai insurers' entry caps of about 60–65 apply (App. D).
+- **Safety:**
+  - US Thailand is Level 1. Its Level 2 areas are only the Cambodia border and the far-south provinces (*secondary*; the page shows a stale 2023 date). https://www.traveladvisory.io/advisory/thailand
+  - The UK names Pattani, Yala, Narathiwat and parts of Songkhla, not Phuket (updated 12 Oct 2026). https://www.gov.uk/foreign-travel-advice/thailand
+- **Retiree community:** large foreign population. The 2010 census counted about 116k "expatriates" (21%), a figure Wikipedia flags as possibly inaccurate. https://en.wikipedia.org/wiki/Phuket_province
+- **Access:** HKT has **no US nonstops**. One-stop routes run via Dubai, Abu Dhabi, Singapore, Seoul, Hong Kong or Istanbul. https://en.wikipedia.org/wiki/Phuket_International_Airport
+- **Climate:** tropical monsoon. Highs are about 32 °C, it is dry Dec–Mar, and rain is about 2,200 mm, peaking in September. https://en.wikipedia.org/wiki/Phuket_province
+- **26–50?** **Yes (30s).** It has a JCI hospital and beach lifestyle, and the same Thai tax caveats as Hua Hin (#21). It has no US nonstops.
+
+### Ho Chi Minh City (Vietnam)
+- **Regional tax:** national rules apply (worldwide income, 10% inheritance tax on recipients, **no retirement visa**; App. D).
+- **Healthcare:** FV Hospital is **JCI-accredited, with its 4th consecutive cycle in May 2025**. https://www.fvhospital.com/en/fv-hospital-achieves-fourth-consecutive-jci-accreditation-reaffirming-commitment-to-international-standard-care-at-only-50-of-the-cost-compared-to-leading-hospitals-in-the-region/
+- **Safety:** US Vietnam Level 1 (*secondary*; the page date is stale, 2023). https://www.traveladvisory.io/advisory/vietnam
+  - The UK has no area restrictions noted (updated 21 Sep 2026). https://www.gov.uk/foreign-travel-advice/vietnam
+- **Retiree community:** size *unverified*.
+- **Access:** Vietnam Airlines lists San Francisco. Whether it is nonstop is not stated on the page (*secondary*). https://en.wikipedia.org/wiki/Tan_Son_Nhat_International_Airport
+- **Climate:** hot (average about 28 °C), with rain May–Nov and recurring flooding from tides, rain and subsidence. https://en.wikipedia.org/wiki/Ho_Chi_Minh_City
+- **26–50?** **No.** There is no retirement visa, the same reason Da Nang was dropped, despite FV's JCI hospital.
+
+### Cebu (Philippines)
+- **Regional tax:** national rules apply, including the **6% estate tax on residents' worldwide estate** (App. D).
+- **Healthcare:**
+  - Chong Hua Hospital (660 beds, Cebu City) was JCI in 2009 and "kept its agency accreditation until 2015". https://en.wikipedia.org/wiki/Chong_Hua_Hospital
+  - A Sept 2026 check of the JCI Philippines directory found no Cebu hospital. The only JCI sites were in Metro Manila and Clark. https://www.clinicfinderph.com/blog/jci-accredited-hospitals-philippines
+  - So there is **no confirmed JCI hospital in Cebu**.
+- **Safety:**
+  - US Philippines Level 2 (1 Sep 2026). Cebu is not named in the Level 3/4 areas (Mindanao, Marawi, Sulu, Negros, Leyte, Samar, Mindoro) (*secondary*). https://www.traveladvisory.io/advisory/philippines
+  - The UK restricts only Mindanao and Sulu, and warns of typhoons June–Nov. https://www.gov.uk/foreign-travel-advice/philippines
+- **Retiree community:** size *unverified*.
+- **Access:** Mactan-Cebu (CEB) has **no US nonstops**. Connections run via Tokyo-Narita, Seoul, Singapore, Hong Kong or Taipei, and Guam is seasonal. https://en.wikipedia.org/wiki/Mactan%E2%80%93Cebu_International_Airport
+- **Climate:** tropical monsoon, about 27–29 °C all year. It has about 1,700 mm of rain, a short Mar–Apr dry season and typhoon exposure. https://en.wikipedia.org/wiki/Cebu_City
+- **26–50?** **No, or 45–50 at best.** The 6% worldwide estate tax hits the "die" step, and there is no current JCI hospital.
+
+### Dumaguete (Philippines)
+- **Regional tax:** national rules apply (6% worldwide estate tax).
+- **Healthcare:** four tertiary hospitals: Holy Child, Negros Oriental Provincial, ACE Dumaguete Doctors, and Silliman University Medical Center (affiliated with St. Luke's Manila). None is JCI. https://en.wikipedia.org/wiki/Dumaguete
+  - Serious care would mean flying to Cebu or Manila (inference).
+- **Safety:**
+  - US: **Negros island is listed at Level 3** for insurgent activity. Dumaguete is in Negros Oriental (*secondary*). https://www.traveladvisory.io/advisory/philippines
+  - The UK places no restriction on Negros. https://www.gov.uk/foreign-travel-advice/philippines
+- **Retiree community:** the Philippine Retirement Authority named it the "Best Place to Retire in the Philippines for 2018". https://en.wikipedia.org/wiki/Dumaguete
+  - Community size *unverified*.
+- **Access:** Dumaguete–Sibulan is domestic only (Manila, Cebu, Iloilo), so a US trip takes 2+ stops. https://en.wikipedia.org/wiki/Dumaguete
+- **Climate:** tropical monsoon. Highs about 31 °C, lows about 25 °C, humidity about 81%, wet June–Nov and dry Dec–May. https://en.wikipedia.org/wiki/Dumaguete
+- **26–50?** **No.** It has the estate tax, a US Level 3 island advisory, weak hospitals and poor access.
+
+### Coronado (Panama)
+- **Regional tax:** national rules apply (territorial, no estate tax; App. C). No local wrinkle found.
+- **Healthcare:**
+  - Local private clinics plus Clinical Hospital San Fernando. Panama City is about 1 h away; a second source says about 90 min. https://www.expatra.com/living-in-coronado-panama/ ; https://www.residepanama.com/en/reside-panama-blog/healthcare-in-panama-an-expat-guide-to-hospitals-insurance-costs-2026
+  - For serious care there is Hospital Punta Pacífica (Panama City), which has an international affiliation with Johns Hopkins Medicine. Its JCI status is not stated. https://www.residepanama.com/en/reside-panama-blog/healthcare-in-panama-an-expat-guide-to-hospitals-insurance-costs-2026
+- **Safety:**
+  - US Panama is Level 2 (crime). Its Level 4 areas are parts of Darién and the Mosquito Gulf, not Coronado (*secondary*; the page date is stale). https://www.traveladvisory.io/advisory/panama
+  - The UK names no Coronado restriction (updated 9 Oct 2026). https://www.gov.uk/foreign-travel-advice/panama
+- **Retiree community:** about **4,000 expats** in a town of about 10,000, many of them retirees (Expatra, 2025, *secondary*). https://www.expatra.com/living-in-coronado-panama/
+- **Access:** Panama City's Tocumen airport (about 1.5 h away) has about 20 US destinations, mostly on Copa (18), plus AA (MIA), Delta (ATL) and United (IAH, EWR). https://en.wikipedia.org/wiki/Tocumen_International_Airport ; https://www.expatra.com/living-in-coronado-panama/
+  - Río Hato airport (about 30 km away) has only some Canadian charters.
+- **Climate:** tropical but drier coast. It is about 22–32 °C, with a dry season Jan–Apr and rain May–Dec. https://www.expatra.com/living-in-coronado-panama/
+- **26–50?** **Yes (high 20s or 30s).** It has Panama's top-5 tax profile, a large retiree community and beach life. Hospitals are an hour or more away, and the non-pensioner residency needs $200k (App. C).
+
+### Atenas (Costa Rica)
+- **Regional tax:** national rules apply (territorial today; Bill 25.796 risk; App. C).
+- **Healthcare:**
+  - Atenas has a 24-hour clinic. https://internationalliving.com/we-test-drove-atenas-for-retirement
+  - For serious care there are Hospital CIMA (Escazú; "accredited by the Joint Commission International", Wikipedia, *secondary*) and Clínica Bíblica, both under 1 h away with English-speaking staff. https://en.wikipedia.org/wiki/Hospital_CIMA ; https://www.expatra.com/what-its-like-living-in-atenas-costa-rica-as-an-expat/
+- **Safety:** US Costa Rica Level 2 (crime; 2 Apr 2026), *secondary*. https://www.traveladvisory.io/advisory/costa-rica
+  - The UK page was updated 19 May 2026. Its regional crime detail was not read. https://www.gov.uk/foreign-travel-advice/costa-rica
+- **Retiree community:** over 1,500 expats (Expatra, 2025, *secondary*). https://www.expatra.com/what-its-like-living-in-atenas-costa-rica-as-an-expat/
+- **Access:** Juan Santamaría airport (SJO, Alajuela) is about 30 min away, or 45 min per International Living. https://www.expatra.com/what-its-like-living-in-atenas-costa-rica-as-an-expat/ ; https://internationalliving.com/we-test-drove-atenas-for-retirement
+  - SJO has broad US nonstops: AA (CLT, DFW, MIA), United (IAH, EWR, SFO, plus seasonal routes), Delta (ATL), Southwest (HOU, MCO), JetBlue (FLL, JFK), Alaska (LAX) and Avianca (MIA, JFK, IAD). https://en.wikipedia.org/wiki/Juan_Santamar%C3%ADa_International_Airport
+- **Climate:** marketed as "the best climate in the world". Days run in the 70s–80s °F and nights in the 60s. https://internationalliving.com/we-test-drove-atenas-for-retirement ; https://www.expatra.com/what-its-like-living-in-atenas-costa-rica-as-an-expat/
+- **26–50?** **Yes (high 20s or 30s),** close behind San José (#17). It has the best airport access of any small town on this list, but carries the same Bill 25.796 risk.
+
+---
+
+### Unverified items
+- **US State Department levels:** all are secondary (travel.state.gov returned 403). Re-check: Jalisco Level 3 with the Chapala/Ajijic carve-out, Oaxaca, Quintana Roo and CDMX at Level 2, and Negros at Level 3.
+- **JCI status not confirmed:**
+  - Puerta de Hierro (Guadalajara), Galenia (Cancún) and Serena del Mar (Cartagena; the claim may refer to its parent)
+  - Chong Hua (Cebu; reported lapsed 2015), Campus Bio-Medico (Rome; 2014 only) and Hospital de Cascais
+  - Quirónsalud Torrevieja (snippet only) and CIMA (Wikipedia only)
+- **Retiree community sizes:** not sourced for Oaxaca, Playa del Carmen, Cartagena, Madrid, Barcelona, Rome, Cascais, HCMC and Cebu.
+- **Drive times:** not sourced for Ajijic to GDL, Cascais to LIS, Alicante to Torrevieja, and Oaxaca to Puebla/CDMX.
+- **Flights:** whether Vietnam Airlines' SGN–SFO service is nonstop. CUN's US route list was not fetched.
