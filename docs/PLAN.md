@@ -17,8 +17,8 @@ Checks:
 - [x] Three profiles (bangkok, bali, grand-baie) show the mosaic and the odds badge; the build puts all 375 photos in dist/assets and the preview manifest lists them; main chunk within 2 kB of 532.79 kB (proof: run the product: screenshots; command: build and manifest)
 - [x] The preview shows all 75 cities' galleries: stale files removed so the version stays under 511 files, and every manifest path present (proof: file listing of v27 = 403 manifest files + index.html; the same build opened locally shows Madeira's gallery; the user's own look on the preview is pending)
 - [ ] Deployed to GitHub Pages on the user's approval, and the live site's asset hashes match a local build (proof: command)
-Open: deploy to GitHub Pages — waiting on the user's go
-Mode: paused — deploy is outward-facing; needs the user's go
+Open: user runs `git push origin main` (deploy approved 2026-11-07); then confirm the live site
+Mode: paused — git push origin main (deploys via GitHub Actions) is held by the keel hook; the user approved the deploy and will run the push
 
 ## Stages
 - [x] 1. Photo pipeline — `npm run photos` (Commons API + sharp → WebP), per-city photo data and tests, the five pilot cities, a contact sheet
