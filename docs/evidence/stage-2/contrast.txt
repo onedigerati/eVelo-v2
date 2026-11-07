@@ -1,0 +1,826 @@
+node docs/evidence/stage-2/drive.cjs (contrast section): every visible text run on the landing; foreground = computed color/fill × opacity,
+background = full-page screenshot with all landing text made transparent (and the Lisbon pulse ring removed; reduced motion),
+sampled across each text run's client rects. Columns: lowest ratio over glyph pixels (pixels that change when the text is hidden), then over the whole line box context class font-size text colour opacity
+
+glyph-min 4.81 (glyph p01 4.85, 1451 glyph px) · box: worst 4.80, p05 4.89, median 4.95 · 360 system-light .landing__eyebrow 11px "Buy · Borrow · Die — anywhere in the wor" rgba(94,101,95,1) op 1
+glyph-min 4.85 (glyph p01 4.85, 1452 glyph px) · box: worst 4.80, p05 4.89, median 4.95 · 390 system-light .landing__eyebrow 11px "Buy · Borrow · Die — anywhere in the wor" rgba(94,101,95,1) op 1
+glyph-min 4.85 (glyph p01 4.85, 1452 glyph px) · box: worst 4.80, p05 4.89, median 4.95 · 390 explicit-light (on dark system) .landing__eyebrow 11px "Buy · Borrow · Die — anywhere in the wor" rgba(94,101,95,1) op 1
+glyph-min 4.95 (glyph p01 4.99, 2102 glyph px) · box: worst 4.95, p05 5.03, median 5.09 · 360 system-light .landing__fine 13px "Free · No sign-up · Runs in your browser" rgba(94,101,95,1) op 1
+glyph-min 4.95 (glyph p01 5.01, 1452 glyph px) · box: worst 4.91, p05 5.02, median 5.12 · 820 system-light .landing__eyebrow 11px "Buy · Borrow · Die — anywhere in the wor" rgba(94,101,95,1) op 1
+glyph-min 4.98 (glyph p01 5.02, 166 glyph px) · box: worst 4.98, p05 5.02, median 5.11 · 390 system-light .landing__label-pct 46px "63" rgba(138,99,18,1) op 1
+glyph-min 4.98 (glyph p01 5.02, 166 glyph px) · box: worst 4.98, p05 5.02, median 5.11 · 390 system-light .landing__label-pct 46px "%" rgba(138,99,18,1) op 1
+glyph-min 4.98 (glyph p01 4.98, 146 glyph px) · box: worst 4.98, p05 5.02, median 5.11 · 360 system-light .landing__label-pct 46px "63" rgba(138,99,18,1) op 1
+glyph-min 4.98 (glyph p01 4.98, 146 glyph px) · box: worst 4.98, p05 5.02, median 5.11 · 360 system-light .landing__label-pct 46px "%" rgba(138,99,18,1) op 1
+glyph-min 4.98 (glyph p01 5.02, 166 glyph px) · box: worst 4.98, p05 5.02, median 5.11 · 390 explicit-light (on dark system) .landing__label-pct 46px "63" rgba(138,99,18,1) op 1
+glyph-min 4.98 (glyph p01 5.02, 166 glyph px) · box: worst 4.98, p05 5.02, median 5.11 · 390 explicit-light (on dark system) .landing__label-pct 46px "%" rgba(138,99,18,1) op 1
+glyph-min 4.99 (glyph p01 5.04, 2102 glyph px) · box: worst 4.99, p05 5.08, median 5.17 · 1280 system-light .landing__fine 13px "Free · No sign-up · Runs in your browser" rgba(94,101,95,1) op 1
+glyph-min 4.99 (glyph p01 5.04, 2102 glyph px) · box: worst 4.95, p05 5.04, median 5.16 · 1000 system-light .landing__fine 13px "Free · No sign-up · Runs in your browser" rgba(94,101,95,1) op 1
+glyph-min 5.01 (glyph p01 5.02, 1452 glyph px) · box: worst 4.98, p05 5.07, median 5.17 · 1000 system-light .landing__eyebrow 11px "Buy · Borrow · Die — anywhere in the wor" rgba(94,101,95,1) op 1
+glyph-min 5.02 (glyph p01 5.02, 145 glyph px) · box: worst 4.98, p05 5.02, median 5.11 · 1440 system-light .landing__label-pct 24px "63" rgba(138,99,18,1) op 1
+glyph-min 5.02 (glyph p01 5.02, 145 glyph px) · box: worst 4.98, p05 5.02, median 5.11 · 1440 system-light .landing__label-pct 24px "%" rgba(138,99,18,1) op 1
+glyph-min 5.02 (glyph p01 5.02, 145 glyph px) · box: worst 5.02, p05 5.06, median 5.11 · 1280 system-light .landing__label-pct 24px "63" rgba(138,99,18,1) op 1
+glyph-min 5.02 (glyph p01 5.02, 145 glyph px) · box: worst 5.02, p05 5.06, median 5.11 · 1280 system-light .landing__label-pct 24px "%" rgba(138,99,18,1) op 1
+glyph-min 5.02 (glyph p01 5.02, 116 glyph px) · box: worst 4.63, p05 5.02, median 5.11 · 1000 system-light .landing__label-pct 28px "63" rgba(138,99,18,1) op 1
+glyph-min 5.02 (glyph p01 5.02, 116 glyph px) · box: worst 4.63, p05 5.02, median 5.11 · 1000 system-light .landing__label-pct 28px "%" rgba(138,99,18,1) op 1
+glyph-min 5.02 (glyph p01 5.02, 224 glyph px) · box: worst 5.02, p05 5.02, median 5.11 · 820 system-light .landing__label-pct 24px "63" rgba(138,99,18,1) op 1
+glyph-min 5.02 (glyph p01 5.02, 224 glyph px) · box: worst 5.02, p05 5.02, median 5.11 · 820 system-light .landing__label-pct 24px "%" rgba(138,99,18,1) op 1
+glyph-min 5.02 (glyph p01 5.02, 145 glyph px) · box: worst 4.98, p05 5.02, median 5.11 · 1440 explicit-light (on dark system) .landing__label-pct 24px "63" rgba(138,99,18,1) op 1
+glyph-min 5.02 (glyph p01 5.02, 145 glyph px) · box: worst 4.98, p05 5.02, median 5.11 · 1440 explicit-light (on dark system) .landing__label-pct 24px "%" rgba(138,99,18,1) op 1
+glyph-min 5.08 (glyph p01 5.12, 1452 glyph px) · box: worst 5.08, p05 5.12, median 5.22 · 1440 system-light .landing__eyebrow 11px "Buy · Borrow · Die — anywhere in the wor" rgba(94,101,95,1) op 1
+glyph-min 5.08 (glyph p01 5.12, 2102 glyph px) · box: worst 5.08, p05 5.12, median 5.22 · 1440 system-light .landing__fine 13px "Free · No sign-up · Runs in your browser" rgba(94,101,95,1) op 1
+glyph-min 5.08 (glyph p01 5.12, 1452 glyph px) · box: worst 5.08, p05 5.12, median 5.22 · 1280 system-light .landing__eyebrow 11px "Buy · Borrow · Die — anywhere in the wor" rgba(94,101,95,1) op 1
+glyph-min 5.08 (glyph p01 5.12, 2102 glyph px) · box: worst 5.08, p05 5.12, median 5.22 · 820 system-light .landing__fine 13px "Free · No sign-up · Runs in your browser" rgba(94,101,95,1) op 1
+glyph-min 5.08 (glyph p01 5.12, 2102 glyph px) · box: worst 5.08, p05 5.12, median 5.22 · 390 system-light .landing__fine 13px "Free · No sign-up · Runs in your browser" rgba(94,101,95,1) op 1
+glyph-min 5.08 (glyph p01 5.12, 1452 glyph px) · box: worst 5.08, p05 5.12, median 5.22 · 1440 explicit-light (on dark system) .landing__eyebrow 11px "Buy · Borrow · Die — anywhere in the wor" rgba(94,101,95,1) op 1
+glyph-min 5.08 (glyph p01 5.12, 2102 glyph px) · box: worst 5.08, p05 5.12, median 5.22 · 1440 explicit-light (on dark system) .landing__fine 13px "Free · No sign-up · Runs in your browser" rgba(94,101,95,1) op 1
+glyph-min 5.08 (glyph p01 5.12, 2102 glyph px) · box: worst 5.08, p05 5.12, median 5.22 · 390 explicit-light (on dark system) .landing__fine 13px "Free · No sign-up · Runs in your browser" rgba(94,101,95,1) op 1
+glyph-min 5.13 (glyph p01 5.18, 4549 glyph px) · box: worst 5.09, p05 5.19, median 5.29 · 390 system-light .EM 44px "without ever selling it." rgba(10,110,77,1) op 1
+glyph-min 5.13 (glyph p01 5.18, 4549 glyph px) · box: worst 5.09, p05 5.19, median 5.29 · 390 explicit-light (on dark system) .EM 44px "without ever selling it." rgba(10,110,77,1) op 1
+glyph-min 5.14 (glyph p01 5.19, 4474 glyph px) · box: worst 5.14, p05 5.23, median 5.33 · 360 system-light .EM 44px "without ever selling it." rgba(10,110,77,1) op 1
+glyph-min 5.16 (glyph p01 5.16, 146 glyph px) · box: worst 4.63, p05 5.16, median 5.26 · 1440 system-light .landing__label-pct 24px "38" rgba(165,80,29,1) op 1
+glyph-min 5.16 (glyph p01 5.16, 146 glyph px) · box: worst 4.63, p05 5.16, median 5.26 · 1440 system-light .landing__label-pct 24px "%" rgba(165,80,29,1) op 1
+glyph-min 5.16 (glyph p01 5.16, 146 glyph px) · box: worst 4.63, p05 5.16, median 5.26 · 1280 system-light .landing__label-pct 24px "38" rgba(165,80,29,1) op 1
+glyph-min 5.16 (glyph p01 5.16, 146 glyph px) · box: worst 4.63, p05 5.16, median 5.26 · 1280 system-light .landing__label-pct 24px "%" rgba(165,80,29,1) op 1
+glyph-min 5.16 (glyph p01 5.16, 117 glyph px) · box: worst 4.94, p05 5.16, median 5.26 · 1000 system-light .landing__label-pct 28px "38" rgba(165,80,29,1) op 1
+glyph-min 5.16 (glyph p01 5.16, 117 glyph px) · box: worst 4.94, p05 5.16, median 5.26 · 1000 system-light .landing__label-pct 28px "%" rgba(165,80,29,1) op 1
+glyph-min 5.16 (glyph p01 5.16, 223 glyph px) · box: worst 5.16, p05 5.16, median 5.26 · 820 system-light .landing__label-pct 24px "38" rgba(165,80,29,1) op 1
+glyph-min 5.16 (glyph p01 5.16, 223 glyph px) · box: worst 5.16, p05 5.16, median 5.26 · 820 system-light .landing__label-pct 24px "%" rgba(165,80,29,1) op 1
+glyph-min 5.16 (glyph p01 5.16, 146 glyph px) · box: worst 4.63, p05 5.16, median 5.26 · 1440 explicit-light (on dark system) .landing__label-pct 24px "38" rgba(165,80,29,1) op 1
+glyph-min 5.16 (glyph p01 5.16, 146 glyph px) · box: worst 4.63, p05 5.16, median 5.26 · 1440 explicit-light (on dark system) .landing__label-pct 24px "%" rgba(165,80,29,1) op 1
+glyph-min 5.17 (glyph p01 5.17, 88 glyph px) · box: worst 5.13, p05 5.18, median 5.26 · 1280 system-light .landing__step-n 12px "01" rgba(10,110,77,1) op 1
+glyph-min 5.22 (glyph p01 5.31, 6819 glyph px) · box: worst 5.22, p05 5.35, median 5.44 · 820 system-light .EM 60.2px "without ever selling it." rgba(10,110,77,1) op 1
+glyph-min 5.25 (glyph p01 5.25, 88 glyph px) · box: worst 5.25, p05 5.30, median 5.36 · 1440 system-light .landing__step-n 12px "01" rgba(10,110,77,1) op 1
+glyph-min 5.25 (glyph p01 5.25, 88 glyph px) · box: worst 5.25, p05 5.30, median 5.36 · 1440 explicit-light (on dark system) .landing__step-n 12px "01" rgba(10,110,77,1) op 1
+glyph-min 5.31 (glyph p01 5.36, 10957 glyph px) · box: worst 5.31, p05 5.36, median 5.45 · 1440 system-light .EM 80px "without ever selling it." rgba(10,110,77,1) op 1
+glyph-min 5.31 (glyph p01 5.36, 10956 glyph px) · box: worst 5.31, p05 5.36, median 5.45 · 1280 system-light .EM 80px "without ever selling it." rgba(10,110,77,1) op 1
+glyph-min 5.31 (glyph p01 5.36, 8463 glyph px) · box: worst 5.25, p05 5.36, median 5.45 · 1000 system-light .EM 69.2px "without ever selling it." rgba(10,110,77,1) op 1
+glyph-min 5.31 (glyph p01 5.36, 101 glyph px) · box: worst 5.31, p05 5.41, median 5.45 · 820 system-light .landing__step-n 12px "02" rgba(10,110,77,1) op 1
+glyph-min 5.31 (glyph p01 5.36, 105 glyph px) · box: worst 5.31, p05 5.36, median 5.45 · 820 system-light .landing__step-n 12px "04" rgba(10,110,77,1) op 1
+glyph-min 5.31 (glyph p01 5.36, 10957 glyph px) · box: worst 5.31, p05 5.36, median 5.45 · 1440 explicit-light (on dark system) .EM 80px "without ever selling it." rgba(10,110,77,1) op 1
+glyph-min 5.34 (glyph p01 5.34, 1107 glyph px) · box: worst 5.34, p05 5.41, median 5.41 · 1440 system-light .landing__cta 16px "Stress-test my plan" rgba(255,255,255,1) op 1
+glyph-min 5.34 (glyph p01 5.34, 1108 glyph px) · box: worst 5.34, p05 5.41, median 5.41 · 1280 system-light .landing__cta 16px "Stress-test my plan" rgba(255,255,255,1) op 1
+glyph-min 5.34 (glyph p01 5.34, 1107 glyph px) · box: worst 5.34, p05 5.41, median 5.41 · 1000 system-light .landing__cta 16px "Stress-test my plan" rgba(255,255,255,1) op 1
+glyph-min 5.34 (glyph p01 5.34, 1106 glyph px) · box: worst 5.34, p05 5.41, median 5.41 · 820 system-light .landing__cta 16px "Stress-test my plan" rgba(255,255,255,1) op 1
+glyph-min 5.34 (glyph p01 5.34, 1106 glyph px) · box: worst 5.34, p05 5.41, median 5.41 · 390 system-light .landing__cta 16px "Stress-test my plan" rgba(255,255,255,1) op 1
+glyph-min 5.34 (glyph p01 5.34, 1105 glyph px) · box: worst 5.34, p05 5.41, median 5.41 · 360 system-light .landing__cta 16px "Stress-test my plan" rgba(255,255,255,1) op 1
+glyph-min 5.34 (glyph p01 5.34, 1107 glyph px) · box: worst 5.34, p05 5.41, median 5.41 · 1440 explicit-light (on dark system) .landing__cta 16px "Stress-test my plan" rgba(255,255,255,1) op 1
+glyph-min 5.34 (glyph p01 5.34, 1106 glyph px) · box: worst 5.34, p05 5.41, median 5.41 · 390 explicit-light (on dark system) .landing__cta 16px "Stress-test my plan" rgba(255,255,255,1) op 1
+glyph-min 5.35 (glyph p01 5.36, 101 glyph px) · box: worst 5.31, p05 5.36, median 5.42 · 1280 system-light .landing__step-n 12px "02" rgba(10,110,77,1) op 1
+glyph-min 5.36 (glyph p01 5.36, 101 glyph px) · box: worst 5.36, p05 5.36, median 5.45 · 1440 system-light .landing__step-n 12px "02" rgba(10,110,77,1) op 1
+glyph-min 5.36 (glyph p01 5.36, 106 glyph px) · box: worst 5.36, p05 5.36, median 5.45 · 1440 system-light .landing__step-n 12px "03" rgba(10,110,77,1) op 1
+glyph-min 5.36 (glyph p01 5.36, 105 glyph px) · box: worst 5.36, p05 5.41, median 5.45 · 1440 system-light .landing__step-n 12px "04" rgba(10,110,77,1) op 1
+glyph-min 5.36 (glyph p01 5.36, 106 glyph px) · box: worst 5.36, p05 5.41, median 5.45 · 1280 system-light .landing__step-n 12px "03" rgba(10,110,77,1) op 1
+glyph-min 5.36 (glyph p01 5.36, 105 glyph px) · box: worst 5.36, p05 5.36, median 5.45 · 1280 system-light .landing__step-n 12px "04" rgba(10,110,77,1) op 1
+glyph-min 5.36 (glyph p01 5.36, 88 glyph px) · box: worst 5.31, p05 5.36, median 5.45 · 1000 system-light .landing__step-n 12px "01" rgba(10,110,77,1) op 1
+glyph-min 5.36 (glyph p01 5.36, 101 glyph px) · box: worst 5.36, p05 5.41, median 5.45 · 1000 system-light .landing__step-n 12px "02" rgba(10,110,77,1) op 1
+glyph-min 5.36 (glyph p01 5.36, 106 glyph px) · box: worst 5.36, p05 5.36, median 5.45 · 1000 system-light .landing__step-n 12px "03" rgba(10,110,77,1) op 1
+glyph-min 5.36 (glyph p01 5.36, 105 glyph px) · box: worst 5.36, p05 5.36, median 5.45 · 1000 system-light .landing__step-n 12px "04" rgba(10,110,77,1) op 1
+glyph-min 5.36 (glyph p01 5.36, 88 glyph px) · box: worst 5.36, p05 5.36, median 5.45 · 820 system-light .landing__step-n 12px "01" rgba(10,110,77,1) op 1
+glyph-min 5.36 (glyph p01 5.36, 106 glyph px) · box: worst 5.36, p05 5.36, median 5.45 · 820 system-light .landing__step-n 12px "03" rgba(10,110,77,1) op 1
+glyph-min 5.36 (glyph p01 5.36, 101 glyph px) · box: worst 5.36, p05 5.36, median 5.45 · 1440 explicit-light (on dark system) .landing__step-n 12px "02" rgba(10,110,77,1) op 1
+glyph-min 5.36 (glyph p01 5.36, 106 glyph px) · box: worst 5.36, p05 5.36, median 5.45 · 1440 explicit-light (on dark system) .landing__step-n 12px "03" rgba(10,110,77,1) op 1
+glyph-min 5.36 (glyph p01 5.36, 105 glyph px) · box: worst 5.36, p05 5.41, median 5.45 · 1440 explicit-light (on dark system) .landing__step-n 12px "04" rgba(10,110,77,1) op 1
+glyph-min 5.50 (glyph p01 5.55, 839 glyph px) · box: worst 5.50, p05 5.55, median 5.65 · 1440 system-light .landing__card-plan 12px "$2.5M · $80k/yr in Austin" rgba(94,101,95,1) op 1
+glyph-min 5.50 (glyph p01 5.55, 839 glyph px) · box: worst 5.50, p05 5.55, median 5.65 · 1280 system-light .landing__card-plan 12px "$2.5M · $80k/yr in Austin" rgba(94,101,95,1) op 1
+glyph-min 5.50 (glyph p01 5.55, 248 glyph px) · box: worst 5.50, p05 5.55, median 5.65 · 820 system-light .landing__key 12px "Breaks" rgba(94,101,95,1) op 1
+glyph-min 5.50 (glyph p01 5.55, 839 glyph px) · box: worst 5.50, p05 5.55, median 5.65 · 1440 explicit-light (on dark system) .landing__card-plan 12px "$2.5M · $80k/yr in Austin" rgba(94,101,95,1) op 1
+glyph-min 5.50 (glyph p01 5.55, 683 glyph px) · box: worst 5.50, p05 5.56, median 5.65 · 390 system-light .landing__eyebrow 11px "One plan · every city" rgba(94,101,95,1) op 1
+glyph-min 5.50 (glyph p01 5.55, 839 glyph px) · box: worst 5.50, p05 5.60, median 5.65 · 390 system-light .landing__card-plan 12px "$2.5M · $80k/yr in Austin" rgba(94,101,95,1) op 1
+glyph-min 5.50 (glyph p01 5.55, 683 glyph px) · box: worst 5.50, p05 5.56, median 5.65 · 390 explicit-light (on dark system) .landing__eyebrow 11px "One plan · every city" rgba(94,101,95,1) op 1
+glyph-min 5.50 (glyph p01 5.55, 839 glyph px) · box: worst 5.50, p05 5.60, median 5.65 · 390 explicit-light (on dark system) .landing__card-plan 12px "$2.5M · $80k/yr in Austin" rgba(94,101,95,1) op 1
+glyph-min 5.51 (glyph p01 5.56, 630 glyph px) · box: worst 5.51, p05 5.56, median 5.66 · 1440 system-light .landing__eyebrow 11px "Lisbon, Portugal" rgba(94,101,95,1) op 1
+glyph-min 5.51 (glyph p01 5.56, 201 glyph px) · box: worst 5.51, p05 5.56, median 5.66 · 1440 system-light .landing__key 12px "Holds" rgba(94,101,95,1) op 1
+glyph-min 5.51 (glyph p01 5.56, 658 glyph px) · box: worst 5.51, p05 5.56, median 5.66 · 1440 system-light .SPAN 12px "Illustrative numbers" rgba(94,101,95,1) op 1
+glyph-min 5.51 (glyph p01 5.56, 630 glyph px) · box: worst 5.51, p05 5.56, median 5.66 · 1280 system-light .landing__eyebrow 11px "Lisbon, Portugal" rgba(94,101,95,1) op 1
+glyph-min 5.51 (glyph p01 5.56, 658 glyph px) · box: worst 5.51, p05 5.56, median 5.66 · 1280 system-light .SPAN 12px "Illustrative numbers" rgba(94,101,95,1) op 1
+glyph-min 5.51 (glyph p01 5.56, 630 glyph px) · box: worst 5.51, p05 5.56, median 5.66 · 1000 system-light .landing__eyebrow 11px "Lisbon, Portugal" rgba(94,101,95,1) op 1
+glyph-min 5.51 (glyph p01 5.56, 658 glyph px) · box: worst 5.51, p05 5.61, median 5.66 · 1000 system-light .SPAN 12px "Illustrative numbers" rgba(94,101,95,1) op 1
+glyph-min 5.51 (glyph p01 5.56, 683 glyph px) · box: worst 5.51, p05 5.56, median 5.66 · 820 system-light .landing__eyebrow 11px "One plan · every city" rgba(94,101,95,1) op 1
+glyph-min 5.51 (glyph p01 5.56, 839 glyph px) · box: worst 5.51, p05 5.56, median 5.66 · 820 system-light .landing__card-plan 12px "$2.5M · $80k/yr in Austin" rgba(94,101,95,1) op 1
+glyph-min 5.51 (glyph p01 5.56, 658 glyph px) · box: worst 5.51, p05 5.56, median 5.66 · 820 system-light .SPAN 12px "Illustrative numbers" rgba(94,101,95,1) op 1
+glyph-min 5.51 (glyph p01 5.51, 683 glyph px) · box: worst 5.46, p05 5.55, median 5.65 · 360 system-light .landing__eyebrow 11px "One plan · every city" rgba(94,101,95,1) op 1
+glyph-min 5.51 (glyph p01 5.51, 839 glyph px) · box: worst 5.46, p05 5.55, median 5.61 · 360 system-light .landing__card-plan 12px "$2.5M · $80k/yr in Austin" rgba(94,101,95,1) op 1
+glyph-min 5.51 (glyph p01 5.56, 630 glyph px) · box: worst 5.51, p05 5.56, median 5.66 · 360 system-light .landing__eyebrow 11px "Lisbon, Portugal" rgba(94,101,95,1) op 1
+glyph-min 5.51 (glyph p01 5.56, 630 glyph px) · box: worst 5.51, p05 5.56, median 5.66 · 1440 explicit-light (on dark system) .landing__eyebrow 11px "Lisbon, Portugal" rgba(94,101,95,1) op 1
+glyph-min 5.51 (glyph p01 5.56, 201 glyph px) · box: worst 5.51, p05 5.56, median 5.66 · 1440 explicit-light (on dark system) .landing__key 12px "Holds" rgba(94,101,95,1) op 1
+glyph-min 5.51 (glyph p01 5.56, 658 glyph px) · box: worst 5.51, p05 5.56, median 5.66 · 1440 explicit-light (on dark system) .SPAN 12px "Illustrative numbers" rgba(94,101,95,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 654 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 1440 system-dark .landing__eyebrow 11px "One plan · every city" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 809 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 1440 system-dark .landing__card-plan 12px "$2.5M · $80k/yr in Austin" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 601 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 1440 system-dark .landing__eyebrow 11px "Lisbon, Portugal" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 195 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 1440 system-dark .landing__key 12px "Holds" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 644 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 1440 system-dark .SPAN 12px "Illustrative numbers" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 653 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 1280 system-dark .landing__eyebrow 11px "One plan · every city" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 809 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 1280 system-dark .landing__card-plan 12px "$2.5M · $80k/yr in Austin" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 600 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 1280 system-dark .landing__eyebrow 11px "Lisbon, Portugal" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 644 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 1280 system-dark .SPAN 12px "Illustrative numbers" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 650 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 1000 system-dark .landing__eyebrow 11px "One plan · every city" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 810 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 1000 system-dark .landing__card-plan 12px "$2.5M · $80k/yr in Austin" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 601 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 1000 system-dark .landing__eyebrow 11px "Lisbon, Portugal" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 238 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 1000 system-dark .landing__key 12px "Breaks" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 195 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 1000 system-dark .landing__key 12px "Holds" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 645 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 1000 system-dark .SPAN 12px "Illustrative numbers" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 651 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 820 system-dark .landing__eyebrow 11px "One plan · every city" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 809 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 820 system-dark .landing__card-plan 12px "$2.5M · $80k/yr in Austin" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 601 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 820 system-dark .landing__eyebrow 11px "Lisbon, Portugal" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 644 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 820 system-dark .SPAN 12px "Illustrative numbers" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 654 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 390 system-dark .landing__eyebrow 11px "One plan · every city" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 809 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 390 system-dark .landing__card-plan 12px "$2.5M · $80k/yr in Austin" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 601 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 390 system-dark .landing__eyebrow 11px "Lisbon, Portugal" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 195 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 390 system-dark .landing__key 12px "Holds" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 644 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 390 system-dark .SPAN 12px "Illustrative numbers" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 651 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 360 system-dark .landing__eyebrow 11px "One plan · every city" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 810 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 360 system-dark .landing__card-plan 12px "$2.5M · $80k/yr in Austin" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 601 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 360 system-dark .landing__eyebrow 11px "Lisbon, Portugal" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 654 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 1440 explicit-dark (on light system) .landing__eyebrow 11px "One plan · every city" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 809 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 1440 explicit-dark (on light system) .landing__card-plan 12px "$2.5M · $80k/yr in Austin" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 601 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 1440 explicit-dark (on light system) .landing__eyebrow 11px "Lisbon, Portugal" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 195 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 1440 explicit-dark (on light system) .landing__key 12px "Holds" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 644 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 1440 explicit-dark (on light system) .SPAN 12px "Illustrative numbers" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 654 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 390 explicit-dark (on light system) .landing__eyebrow 11px "One plan · every city" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 809 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 390 explicit-dark (on light system) .landing__card-plan 12px "$2.5M · $80k/yr in Austin" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 601 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 390 explicit-dark (on light system) .landing__eyebrow 11px "Lisbon, Portugal" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 195 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 390 explicit-dark (on light system) .landing__key 12px "Holds" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 644 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 390 explicit-dark (on light system) .SPAN 12px "Illustrative numbers" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 238 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 1440 system-dark .landing__key 12px "Breaks" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 238 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 1280 system-dark .landing__key 12px "Breaks" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 195 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 1280 system-dark .landing__key 12px "Holds" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 239 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 820 system-dark .landing__key 12px "Breaks" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 195 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 820 system-dark .landing__key 12px "Holds" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 239 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 390 system-dark .landing__key 12px "Breaks" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 238 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 1440 explicit-dark (on light system) .landing__key 12px "Breaks" rgba(132,145,139,1) op 1
+glyph-min 5.53 (glyph p01 5.53, 239 glyph px) · box: worst 5.53, p05 5.54, median 5.58 · 390 explicit-dark (on light system) .landing__key 12px "Breaks" rgba(132,145,139,1) op 1
+glyph-min 5.55 (glyph p01 5.55, 683 glyph px) · box: worst 5.55, p05 5.55, median 5.65 · 1280 system-light .landing__eyebrow 11px "One plan · every city" rgba(94,101,95,1) op 1
+glyph-min 5.55 (glyph p01 5.55, 201 glyph px) · box: worst 5.55, p05 5.60, median 5.65 · 820 system-light .landing__key 12px "Holds" rgba(94,101,95,1) op 1
+glyph-min 5.55 (glyph p01 5.55, 683 glyph px) · box: worst 5.50, p05 5.55, median 5.65 · 1440 system-light .landing__eyebrow 11px "One plan · every city" rgba(94,101,95,1) op 1
+glyph-min 5.55 (glyph p01 5.55, 682 glyph px) · box: worst 5.50, p05 5.55, median 5.65 · 1000 system-light .landing__eyebrow 11px "One plan · every city" rgba(94,101,95,1) op 1
+glyph-min 5.55 (glyph p01 5.55, 839 glyph px) · box: worst 5.50, p05 5.55, median 5.65 · 1000 system-light .landing__card-plan 12px "$2.5M · $80k/yr in Austin" rgba(94,101,95,1) op 1
+glyph-min 5.55 (glyph p01 5.55, 683 glyph px) · box: worst 5.50, p05 5.55, median 5.65 · 1440 explicit-light (on dark system) .landing__eyebrow 11px "One plan · every city" rgba(94,101,95,1) op 1
+glyph-min 5.56 (glyph p01 5.56, 248 glyph px) · box: worst 5.56, p05 5.56, median 5.66 · 1440 system-light .landing__key 12px "Breaks" rgba(94,101,95,1) op 1
+glyph-min 5.56 (glyph p01 5.56, 248 glyph px) · box: worst 5.56, p05 5.56, median 5.66 · 1280 system-light .landing__key 12px "Breaks" rgba(94,101,95,1) op 1
+glyph-min 5.56 (glyph p01 5.56, 201 glyph px) · box: worst 5.56, p05 5.56, median 5.66 · 1280 system-light .landing__key 12px "Holds" rgba(94,101,95,1) op 1
+glyph-min 5.56 (glyph p01 5.56, 248 glyph px) · box: worst 5.56, p05 5.56, median 5.66 · 1000 system-light .landing__key 12px "Breaks" rgba(94,101,95,1) op 1
+glyph-min 5.56 (glyph p01 5.56, 201 glyph px) · box: worst 5.56, p05 5.56, median 5.66 · 1000 system-light .landing__key 12px "Holds" rgba(94,101,95,1) op 1
+glyph-min 5.56 (glyph p01 5.56, 630 glyph px) · box: worst 5.51, p05 5.56, median 5.66 · 820 system-light .landing__eyebrow 11px "Lisbon, Portugal" rgba(94,101,95,1) op 1
+glyph-min 5.56 (glyph p01 5.56, 630 glyph px) · box: worst 5.51, p05 5.56, median 5.66 · 390 system-light .landing__eyebrow 11px "Lisbon, Portugal" rgba(94,101,95,1) op 1
+glyph-min 5.56 (glyph p01 5.56, 248 glyph px) · box: worst 5.56, p05 5.56, median 5.66 · 390 system-light .landing__key 12px "Breaks" rgba(94,101,95,1) op 1
+glyph-min 5.56 (glyph p01 5.56, 201 glyph px) · box: worst 5.51, p05 5.61, median 5.66 · 390 system-light .landing__key 12px "Holds" rgba(94,101,95,1) op 1
+glyph-min 5.56 (glyph p01 5.56, 658 glyph px) · box: worst 5.51, p05 5.56, median 5.66 · 390 system-light .SPAN 12px "Illustrative numbers" rgba(94,101,95,1) op 1
+glyph-min 5.56 (glyph p01 5.56, 248 glyph px) · box: worst 5.56, p05 5.56, median 5.66 · 1440 explicit-light (on dark system) .landing__key 12px "Breaks" rgba(94,101,95,1) op 1
+glyph-min 5.56 (glyph p01 5.56, 630 glyph px) · box: worst 5.51, p05 5.56, median 5.66 · 390 explicit-light (on dark system) .landing__eyebrow 11px "Lisbon, Portugal" rgba(94,101,95,1) op 1
+glyph-min 5.56 (glyph p01 5.56, 248 glyph px) · box: worst 5.56, p05 5.56, median 5.66 · 390 explicit-light (on dark system) .landing__key 12px "Breaks" rgba(94,101,95,1) op 1
+glyph-min 5.56 (glyph p01 5.56, 201 glyph px) · box: worst 5.51, p05 5.61, median 5.66 · 390 explicit-light (on dark system) .landing__key 12px "Holds" rgba(94,101,95,1) op 1
+glyph-min 5.56 (glyph p01 5.56, 658 glyph px) · box: worst 5.51, p05 5.56, median 5.66 · 390 explicit-light (on dark system) .SPAN 12px "Illustrative numbers" rgba(94,101,95,1) op 1
+glyph-min 5.56 (glyph p01 5.57, 1423 glyph px) · box: worst 5.56, p05 5.57, median 5.65 · 390 system-dark .landing__eyebrow 11px "Buy · Borrow · Die — anywhere in the wor" rgba(132,145,139,1) op 1
+glyph-min 5.56 (glyph p01 5.57, 1422 glyph px) · box: worst 5.52, p05 5.57, median 5.65 · 360 system-dark .landing__eyebrow 11px "Buy · Borrow · Die — anywhere in the wor" rgba(132,145,139,1) op 1
+glyph-min 5.56 (glyph p01 5.57, 1423 glyph px) · box: worst 5.56, p05 5.57, median 5.65 · 390 explicit-dark (on light system) .landing__eyebrow 11px "Buy · Borrow · Die — anywhere in the wor" rgba(132,145,139,1) op 1
+glyph-min 5.58 (glyph p01 5.58, 235 glyph px) · box: worst 5.58, p05 5.58, median 5.58 · 360 system-dark .landing__key 12px "Breaks" rgba(132,145,139,1) op 1
+glyph-min 5.58 (glyph p01 5.58, 195 glyph px) · box: worst 5.58, p05 5.58, median 5.58 · 360 system-dark .landing__key 12px "Holds" rgba(132,145,139,1) op 1
+glyph-min 5.58 (glyph p01 5.58, 640 glyph px) · box: worst 5.58, p05 5.58, median 5.58 · 360 system-dark .SPAN 12px "Illustrative numbers" rgba(132,145,139,1) op 1
+glyph-min 5.60 (glyph p01 5.60, 88 glyph px) · box: worst 5.60, p05 5.60, median 5.60 · 390 system-light .landing__step-n 12px "01" rgba(10,110,77,1) op 1
+glyph-min 5.60 (glyph p01 5.60, 101 glyph px) · box: worst 5.60, p05 5.60, median 5.60 · 390 system-light .landing__step-n 12px "02" rgba(10,110,77,1) op 1
+glyph-min 5.60 (glyph p01 5.60, 106 glyph px) · box: worst 5.60, p05 5.60, median 5.60 · 390 system-light .landing__step-n 12px "03" rgba(10,110,77,1) op 1
+glyph-min 5.60 (glyph p01 5.60, 105 glyph px) · box: worst 5.60, p05 5.60, median 5.60 · 390 system-light .landing__step-n 12px "04" rgba(10,110,77,1) op 1
+glyph-min 5.60 (glyph p01 5.60, 88 glyph px) · box: worst 5.60, p05 5.60, median 5.60 · 360 system-light .landing__step-n 12px "01" rgba(10,110,77,1) op 1
+glyph-min 5.60 (glyph p01 5.60, 101 glyph px) · box: worst 5.60, p05 5.60, median 5.60 · 360 system-light .landing__step-n 12px "02" rgba(10,110,77,1) op 1
+glyph-min 5.60 (glyph p01 5.60, 106 glyph px) · box: worst 5.60, p05 5.60, median 5.60 · 360 system-light .landing__step-n 12px "03" rgba(10,110,77,1) op 1
+glyph-min 5.60 (glyph p01 5.60, 105 glyph px) · box: worst 5.60, p05 5.60, median 5.60 · 360 system-light .landing__step-n 12px "04" rgba(10,110,77,1) op 1
+glyph-min 5.60 (glyph p01 5.60, 88 glyph px) · box: worst 5.60, p05 5.60, median 5.60 · 390 explicit-light (on dark system) .landing__step-n 12px "01" rgba(10,110,77,1) op 1
+glyph-min 5.60 (glyph p01 5.60, 101 glyph px) · box: worst 5.60, p05 5.60, median 5.60 · 390 explicit-light (on dark system) .landing__step-n 12px "02" rgba(10,110,77,1) op 1
+glyph-min 5.60 (glyph p01 5.60, 106 glyph px) · box: worst 5.60, p05 5.60, median 5.60 · 390 explicit-light (on dark system) .landing__step-n 12px "03" rgba(10,110,77,1) op 1
+glyph-min 5.60 (glyph p01 5.60, 105 glyph px) · box: worst 5.60, p05 5.60, median 5.60 · 390 explicit-light (on dark system) .landing__step-n 12px "04" rgba(10,110,77,1) op 1
+glyph-min 5.73 (glyph p01 5.77, 1423 glyph px) · box: worst 5.73, p05 5.77, median 5.88 · 820 system-dark .landing__eyebrow 11px "Buy · Borrow · Die — anywhere in the wor" rgba(132,145,139,1) op 1
+glyph-min 5.75 (glyph p01 5.75, 152 glyph px) · box: worst 5.30, p05 5.39, median 5.91 · 1440 system-light .landing__label-pct 24px "88" rgba(10,110,77,1) op 1
+glyph-min 5.75 (glyph p01 5.75, 152 glyph px) · box: worst 5.30, p05 5.39, median 5.91 · 1440 system-light .landing__label-pct 24px "%" rgba(10,110,77,1) op 1
+glyph-min 5.75 (glyph p01 5.80, 143 glyph px) · box: worst 5.15, p05 5.25, median 5.91 · 1440 system-light .landing__label-pct 24px "92" rgba(10,110,77,1) op 1
+glyph-min 5.75 (glyph p01 5.80, 143 glyph px) · box: worst 5.15, p05 5.25, median 5.91 · 1440 system-light .landing__label-pct 24px "%" rgba(10,110,77,1) op 1
+glyph-min 5.75 (glyph p01 5.80, 143 glyph px) · box: worst 5.75, p05 5.80, median 5.91 · 1280 system-light .landing__label-pct 24px "92" rgba(10,110,77,1) op 1
+glyph-min 5.75 (glyph p01 5.80, 143 glyph px) · box: worst 5.75, p05 5.80, median 5.91 · 1280 system-light .landing__label-pct 24px "%" rgba(10,110,77,1) op 1
+glyph-min 5.75 (glyph p01 5.80, 129 glyph px) · box: worst 5.44, p05 5.75, median 5.91 · 1000 system-light .landing__label-pct 28px "88" rgba(10,110,77,1) op 1
+glyph-min 5.75 (glyph p01 5.80, 129 glyph px) · box: worst 5.44, p05 5.75, median 5.91 · 1000 system-light .landing__label-pct 28px "%" rgba(10,110,77,1) op 1
+glyph-min 5.75 (glyph p01 5.75, 143 glyph px) · box: worst 5.42, p05 5.66, median 5.91 · 360 system-light .landing__label-pct 46px "92" rgba(10,110,77,1) op 1
+glyph-min 5.75 (glyph p01 5.75, 143 glyph px) · box: worst 5.42, p05 5.66, median 5.91 · 360 system-light .landing__label-pct 46px "%" rgba(10,110,77,1) op 1
+glyph-min 5.75 (glyph p01 5.75, 152 glyph px) · box: worst 5.30, p05 5.39, median 5.91 · 1440 explicit-light (on dark system) .landing__label-pct 24px "88" rgba(10,110,77,1) op 1
+glyph-min 5.75 (glyph p01 5.75, 152 glyph px) · box: worst 5.30, p05 5.39, median 5.91 · 1440 explicit-light (on dark system) .landing__label-pct 24px "%" rgba(10,110,77,1) op 1
+glyph-min 5.75 (glyph p01 5.80, 143 glyph px) · box: worst 5.15, p05 5.25, median 5.91 · 1440 explicit-light (on dark system) .landing__label-pct 24px "92" rgba(10,110,77,1) op 1
+glyph-min 5.75 (glyph p01 5.80, 143 glyph px) · box: worst 5.15, p05 5.25, median 5.91 · 1440 explicit-light (on dark system) .landing__label-pct 24px "%" rgba(10,110,77,1) op 1
+glyph-min 5.76 (glyph p01 5.81, 670 glyph px) · box: worst 5.76, p05 5.81, median 5.92 · 1440 system-light .landing__read-pct 48px "88" rgba(10,110,77,1) op 1
+glyph-min 5.76 (glyph p01 5.81, 402 glyph px) · box: worst 5.76, p05 5.81, median 5.92 · 1440 system-light .landing__read-pct 48px "%" rgba(10,110,77,1) op 1
+glyph-min 5.76 (glyph p01 5.81, 402 glyph px) · box: worst 5.76, p05 5.81, median 5.92 · 1280 system-light .landing__read-pct 48px "%" rgba(10,110,77,1) op 1
+glyph-min 5.76 (glyph p01 5.81, 402 glyph px) · box: worst 5.76, p05 5.81, median 5.92 · 1000 system-light .landing__read-pct 48px "%" rgba(10,110,77,1) op 1
+glyph-min 5.76 (glyph p01 5.81, 670 glyph px) · box: worst 5.76, p05 5.87, median 5.92 · 390 system-light .landing__read-pct 48px "88" rgba(10,110,77,1) op 1
+glyph-min 5.76 (glyph p01 5.81, 670 glyph px) · box: worst 5.76, p05 5.81, median 5.92 · 360 system-light .landing__read-pct 48px "88" rgba(10,110,77,1) op 1
+glyph-min 5.76 (glyph p01 5.81, 670 glyph px) · box: worst 5.76, p05 5.81, median 5.92 · 1440 explicit-light (on dark system) .landing__read-pct 48px "88" rgba(10,110,77,1) op 1
+glyph-min 5.76 (glyph p01 5.81, 402 glyph px) · box: worst 5.76, p05 5.81, median 5.92 · 1440 explicit-light (on dark system) .landing__read-pct 48px "%" rgba(10,110,77,1) op 1
+glyph-min 5.76 (glyph p01 5.81, 670 glyph px) · box: worst 5.76, p05 5.87, median 5.92 · 390 explicit-light (on dark system) .landing__read-pct 48px "88" rgba(10,110,77,1) op 1
+glyph-min 5.79 (glyph p01 5.83, 2063 glyph px) · box: worst 5.79, p05 5.83, median 5.87 · 360 system-dark .landing__fine 13px "Free · No sign-up · Runs in your browser" rgba(132,145,139,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 149 glyph px) · box: worst 5.39, p05 5.80, median 5.91 · 1440 system-light .landing__label-pct 24px "93" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 149 glyph px) · box: worst 5.39, p05 5.80, median 5.91 · 1440 system-light .landing__label-pct 24px "%" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 143 glyph px) · box: worst 5.80, p05 5.85, median 5.91 · 1440 system-light .landing__label-pct 24px "92" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 143 glyph px) · box: worst 5.80, p05 5.85, median 5.91 · 1440 system-light .landing__label-pct 24px "%" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 152 glyph px) · box: worst 5.30, p05 5.39, median 5.91 · 1280 system-light .landing__label-pct 24px "88" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 152 glyph px) · box: worst 5.30, p05 5.39, median 5.91 · 1280 system-light .landing__label-pct 24px "%" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 143 glyph px) · box: worst 5.15, p05 5.25, median 5.91 · 1280 system-light .landing__label-pct 24px "92" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 143 glyph px) · box: worst 5.15, p05 5.25, median 5.91 · 1280 system-light .landing__label-pct 24px "%" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 149 glyph px) · box: worst 5.44, p05 5.85, median 5.91 · 1280 system-light .landing__label-pct 24px "93" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 149 glyph px) · box: worst 5.44, p05 5.85, median 5.91 · 1280 system-light .landing__label-pct 24px "%" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 114 glyph px) · box: worst 5.79, p05 5.80, median 5.91 · 1000 system-light .landing__label-pct 28px "92" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 114 glyph px) · box: worst 5.79, p05 5.80, median 5.91 · 1000 system-light .landing__label-pct 28px "%" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 119 glyph px) · box: worst 5.56, p05 5.80, median 5.91 · 1000 system-light .landing__label-pct 28px "93" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 119 glyph px) · box: worst 5.56, p05 5.80, median 5.91 · 1000 system-light .landing__label-pct 28px "%" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 110 glyph px) · box: worst 5.56, p05 5.80, median 5.91 · 1000 system-light .landing__label-pct 28px "92" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 110 glyph px) · box: worst 5.56, p05 5.80, median 5.91 · 1000 system-light .landing__label-pct 28px "%" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 244 glyph px) · box: worst 5.07, p05 5.16, median 5.91 · 820 system-light .landing__label-pct 24px "88" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 244 glyph px) · box: worst 5.07, p05 5.16, median 5.91 · 820 system-light .landing__label-pct 24px "%" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 225 glyph px) · box: worst 5.03, p05 5.44, median 5.91 · 820 system-light .landing__label-pct 24px "92" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 225 glyph px) · box: worst 5.03, p05 5.44, median 5.91 · 820 system-light .landing__label-pct 24px "%" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 229 glyph px) · box: worst 5.16, p05 5.80, median 5.91 · 820 system-light .landing__label-pct 24px "93" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 229 glyph px) · box: worst 5.16, p05 5.80, median 5.91 · 820 system-light .landing__label-pct 24px "%" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 225 glyph px) · box: worst 5.80, p05 5.81, median 5.91 · 820 system-light .landing__label-pct 24px "92" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 225 glyph px) · box: worst 5.80, p05 5.81, median 5.91 · 820 system-light .landing__label-pct 24px "%" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 670 glyph px) · box: worst 5.75, p05 5.81, median 5.91 · 820 system-light .landing__read-pct 48px "88" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 402 glyph px) · box: worst 5.80, p05 5.81, median 5.91 · 820 system-light .landing__read-pct 48px "%" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 185 glyph px) · box: worst 5.45, p05 5.80, median 5.91 · 390 system-light .landing__label-pct 46px "88" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 185 glyph px) · box: worst 5.45, p05 5.80, median 5.91 · 390 system-light .landing__label-pct 46px "%" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 166 glyph px) · box: worst 5.50, p05 5.80, median 5.91 · 390 system-light .landing__label-pct 46px "92" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 166 glyph px) · box: worst 5.50, p05 5.80, median 5.91 · 390 system-light .landing__label-pct 46px "%" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 170 glyph px) · box: worst 5.50, p05 5.80, median 5.91 · 390 system-light .landing__label-pct 46px "93" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 170 glyph px) · box: worst 5.50, p05 5.80, median 5.91 · 390 system-light .landing__label-pct 46px "%" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 166 glyph px) · box: worst 5.12, p05 5.51, median 5.90 · 390 system-light .landing__label-pct 46px "92" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 166 glyph px) · box: worst 5.12, p05 5.51, median 5.90 · 390 system-light .landing__label-pct 46px "%" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 157 glyph px) · box: worst 5.56, p05 5.80, median 5.91 · 360 system-light .landing__label-pct 46px "88" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 157 glyph px) · box: worst 5.56, p05 5.80, median 5.91 · 360 system-light .landing__label-pct 46px "%" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 143 glyph px) · box: worst 5.62, p05 5.80, median 5.91 · 360 system-light .landing__label-pct 46px "92" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 143 glyph px) · box: worst 5.62, p05 5.80, median 5.91 · 360 system-light .landing__label-pct 46px "%" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 148 glyph px) · box: worst 5.71, p05 5.80, median 5.91 · 360 system-light .landing__label-pct 46px "93" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 148 glyph px) · box: worst 5.71, p05 5.80, median 5.91 · 360 system-light .landing__label-pct 46px "%" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 149 glyph px) · box: worst 5.39, p05 5.80, median 5.91 · 1440 explicit-light (on dark system) .landing__label-pct 24px "93" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 149 glyph px) · box: worst 5.39, p05 5.80, median 5.91 · 1440 explicit-light (on dark system) .landing__label-pct 24px "%" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 143 glyph px) · box: worst 5.80, p05 5.85, median 5.91 · 1440 explicit-light (on dark system) .landing__label-pct 24px "92" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 143 glyph px) · box: worst 5.80, p05 5.85, median 5.91 · 1440 explicit-light (on dark system) .landing__label-pct 24px "%" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 185 glyph px) · box: worst 5.45, p05 5.80, median 5.91 · 390 explicit-light (on dark system) .landing__label-pct 46px "88" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 185 glyph px) · box: worst 5.45, p05 5.80, median 5.91 · 390 explicit-light (on dark system) .landing__label-pct 46px "%" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 166 glyph px) · box: worst 5.50, p05 5.80, median 5.91 · 390 explicit-light (on dark system) .landing__label-pct 46px "92" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 166 glyph px) · box: worst 5.50, p05 5.80, median 5.91 · 390 explicit-light (on dark system) .landing__label-pct 46px "%" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 170 glyph px) · box: worst 5.50, p05 5.80, median 5.91 · 390 explicit-light (on dark system) .landing__label-pct 46px "93" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 170 glyph px) · box: worst 5.50, p05 5.80, median 5.91 · 390 explicit-light (on dark system) .landing__label-pct 46px "%" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 166 glyph px) · box: worst 5.12, p05 5.51, median 5.90 · 390 explicit-light (on dark system) .landing__label-pct 46px "92" rgba(10,110,77,1) op 1
+glyph-min 5.80 (glyph p01 5.80, 166 glyph px) · box: worst 5.12, p05 5.51, median 5.90 · 390 explicit-light (on dark system) .landing__label-pct 46px "%" rgba(10,110,77,1) op 1
+glyph-min 5.81 (glyph p01 5.81, 1423 glyph px) · box: worst 5.77, p05 5.85, median 5.92 · 1000 system-dark .landing__eyebrow 11px "Buy · Borrow · Die — anywhere in the wor" rgba(132,145,139,1) op 1
+glyph-min 5.81 (glyph p01 5.81, 248 glyph px) · box: worst 5.81, p05 5.81, median 5.81 · 360 system-light .landing__key 12px "Breaks" rgba(94,101,95,1) op 1
+glyph-min 5.81 (glyph p01 5.81, 201 glyph px) · box: worst 5.81, p05 5.81, median 5.81 · 360 system-light .landing__key 12px "Holds" rgba(94,101,95,1) op 1
+glyph-min 5.81 (glyph p01 5.81, 658 glyph px) · box: worst 5.81, p05 5.81, median 5.81 · 360 system-light .SPAN 12px "Illustrative numbers" rgba(94,101,95,1) op 1
+glyph-min 5.81 (glyph p01 5.81, 670 glyph px) · box: worst 5.76, p05 5.81, median 5.92 · 1280 system-light .landing__read-pct 48px "88" rgba(10,110,77,1) op 1
+glyph-min 5.81 (glyph p01 5.81, 670 glyph px) · box: worst 5.76, p05 5.81, median 5.92 · 1000 system-light .landing__read-pct 48px "88" rgba(10,110,77,1) op 1
+glyph-min 5.81 (glyph p01 5.81, 402 glyph px) · box: worst 5.76, p05 5.81, median 5.92 · 390 system-light .landing__read-pct 48px "%" rgba(10,110,77,1) op 1
+glyph-min 5.81 (glyph p01 5.81, 402 glyph px) · box: worst 5.76, p05 5.81, median 5.92 · 360 system-light .landing__read-pct 48px "%" rgba(10,110,77,1) op 1
+glyph-min 5.81 (glyph p01 5.81, 402 glyph px) · box: worst 5.76, p05 5.81, median 5.92 · 390 explicit-light (on dark system) .landing__read-pct 48px "%" rgba(10,110,77,1) op 1
+glyph-min 5.83 (glyph p01 5.83, 2063 glyph px) · box: worst 5.83, p05 5.83, median 5.91 · 1000 system-dark .landing__fine 13px "Free · No sign-up · Runs in your browser" rgba(132,145,139,1) op 1
+glyph-min 5.83 (glyph p01 5.87, 2063 glyph px) · box: worst 5.83, p05 5.87, median 5.92 · 1280 system-dark .landing__fine 13px "Free · No sign-up · Runs in your browser" rgba(132,145,139,1) op 1
+glyph-min 5.91 (glyph p01 5.95, 2061 glyph px) · box: worst 5.91, p05 5.95, median 5.95 · 390 system-dark .landing__fine 13px "Free · No sign-up · Runs in your browser" rgba(132,145,139,1) op 1
+glyph-min 5.91 (glyph p01 5.95, 2061 glyph px) · box: worst 5.91, p05 5.95, median 5.95 · 390 explicit-dark (on light system) .landing__fine 13px "Free · No sign-up · Runs in your browser" rgba(132,145,139,1) op 1
+glyph-min 5.95 (glyph p01 5.95, 1423 glyph px) · box: worst 5.95, p05 5.95, median 5.95 · 1440 system-dark .landing__eyebrow 11px "Buy · Borrow · Die — anywhere in the wor" rgba(132,145,139,1) op 1
+glyph-min 5.95 (glyph p01 5.95, 2062 glyph px) · box: worst 5.95, p05 5.95, median 5.95 · 1440 system-dark .landing__fine 13px "Free · No sign-up · Runs in your browser" rgba(132,145,139,1) op 1
+glyph-min 5.95 (glyph p01 5.95, 1423 glyph px) · box: worst 5.95, p05 5.95, median 5.95 · 1280 system-dark .landing__eyebrow 11px "Buy · Borrow · Die — anywhere in the wor" rgba(132,145,139,1) op 1
+glyph-min 5.95 (glyph p01 5.95, 2062 glyph px) · box: worst 5.95, p05 5.95, median 5.95 · 820 system-dark .landing__fine 13px "Free · No sign-up · Runs in your browser" rgba(132,145,139,1) op 1
+glyph-min 5.95 (glyph p01 5.95, 1423 glyph px) · box: worst 5.95, p05 5.95, median 5.95 · 1440 explicit-dark (on light system) .landing__eyebrow 11px "Buy · Borrow · Die — anywhere in the wor" rgba(132,145,139,1) op 1
+glyph-min 5.95 (glyph p01 5.95, 2062 glyph px) · box: worst 5.95, p05 5.95, median 5.95 · 1440 explicit-dark (on light system) .landing__fine 13px "Free · No sign-up · Runs in your browser" rgba(132,145,139,1) op 1
+glyph-min 6.46 (glyph p01 6.51, 347 glyph px) · box: worst 6.46, p05 6.53, median 6.64 · 1000 system-light .A 14px "Method" rgba(74,82,77,1) op 1
+glyph-min 6.53 (glyph p01 6.59, 347 glyph px) · box: worst 6.53, p05 6.60, median 6.71 · 1280 system-light .A 14px "Method" rgba(74,82,77,1) op 1
+glyph-min 6.53 (glyph p01 6.53, 221 glyph px) · box: worst 6.53, p05 6.59, median 6.65 · 1000 system-light .A 14px "Atlas" rgba(74,82,77,1) op 1
+glyph-min 6.59 (glyph p01 6.60, 493 glyph px) · box: worst 6.59, p05 6.66, median 6.73 · 1000 system-light .A 14px "How it works" rgba(74,82,77,1) op 1
+glyph-min 6.60 (glyph p01 6.60, 348 glyph px) · box: worst 6.60, p05 6.66, median 6.77 · 1440 system-light .A 14px "Method" rgba(74,82,77,1) op 1
+glyph-min 6.60 (glyph p01 6.60, 221 glyph px) · box: worst 6.60, p05 6.66, median 6.78 · 1280 system-light .A 14px "Atlas" rgba(74,82,77,1) op 1
+glyph-min 6.60 (glyph p01 6.60, 348 glyph px) · box: worst 6.60, p05 6.66, median 6.77 · 1440 explicit-light (on dark system) .A 14px "Method" rgba(74,82,77,1) op 1
+glyph-min 6.65 (glyph p01 6.71, 2850 glyph px) · box: worst 6.65, p05 6.77, median 6.90 · 1440 system-light .landing__step-body 15px "Hold assets that grow. Never sell them, " rgba(74,82,77,1) op 1
+glyph-min 6.65 (glyph p01 6.71, 2850 glyph px) · box: worst 6.65, p05 6.77, median 6.90 · 1440 explicit-light (on dark system) .landing__step-body 15px "Hold assets that grow. Never sell them, " rgba(74,82,77,1) op 1
+glyph-min 6.67 (glyph p01 6.68, 222 glyph px) · box: worst 6.67, p05 6.72, median 6.80 · 1440 system-light .A 14px "Atlas" rgba(74,82,77,1) op 1
+glyph-min 6.67 (glyph p01 6.69, 494 glyph px) · box: worst 6.67, p05 6.74, median 6.86 · 1280 system-light .A 14px "How it works" rgba(74,82,77,1) op 1
+glyph-min 6.67 (glyph p01 6.68, 222 glyph px) · box: worst 6.67, p05 6.72, median 6.80 · 1440 explicit-light (on dark system) .A 14px "Atlas" rgba(74,82,77,1) op 1
+glyph-min 6.68 (glyph p01 6.80, 12532 glyph px) · box: worst 6.68, p05 6.81, median 6.95 · 390 system-light .landing__body 17px "Borrow against your shares for living mo" rgba(74,82,77,1) op 1
+glyph-min 6.68 (glyph p01 6.80, 12532 glyph px) · box: worst 6.68, p05 6.81, median 6.95 · 390 explicit-light (on dark system) .landing__body 17px "Borrow against your shares for living mo" rgba(74,82,77,1) op 1
+glyph-min 6.74 (glyph p01 6.75, 495 glyph px) · box: worst 6.70, p05 6.80, median 6.88 · 1440 system-light .A 14px "How it works" rgba(74,82,77,1) op 1
+glyph-min 6.74 (glyph p01 6.75, 495 glyph px) · box: worst 6.70, p05 6.80, median 6.88 · 1440 explicit-light (on dark system) .A 14px "How it works" rgba(74,82,77,1) op 1
+glyph-min 6.77 (glyph p01 6.88, 12542 glyph px) · box: worst 6.76, p05 6.89, median 7.02 · 360 system-light .landing__body 17px "Borrow against your shares for living mo" rgba(74,82,77,1) op 1
+glyph-min 6.83 (glyph p01 6.89, 13589 glyph px) · box: worst 6.83, p05 6.89, median 7.02 · 1440 system-light .landing__body 18px "Borrow against your shares for living mo" rgba(74,82,77,1) op 1
+glyph-min 6.83 (glyph p01 6.89, 3670 glyph px) · box: worst 6.83, p05 6.89, median 7.02 · 1440 system-light .landing__step-body 15px "Live on a line of credit secured by the " rgba(74,82,77,1) op 1
+glyph-min 6.83 (glyph p01 6.89, 3837 glyph px) · box: worst 6.83, p05 6.89, median 7.02 · 1440 system-light .landing__step-body 15px "Spend the loan where life costs less. A " rgba(74,82,77,1) op 1
+glyph-min 6.83 (glyph p01 6.89, 3457 glyph px) · box: worst 6.83, p05 6.89, median 7.02 · 1440 system-light .landing__step-body 15px "Heirs inherit at a stepped-up basis. The" rgba(74,82,77,1) op 1
+glyph-min 6.83 (glyph p01 6.89, 13590 glyph px) · box: worst 6.83, p05 6.89, median 7.02 · 1280 system-light .landing__body 18px "Borrow against your shares for living mo" rgba(74,82,77,1) op 1
+glyph-min 6.83 (glyph p01 6.89, 2862 glyph px) · box: worst 6.83, p05 6.89, median 7.02 · 1280 system-light .landing__step-body 15px "Hold assets that grow. Never sell them, " rgba(74,82,77,1) op 1
+glyph-min 6.83 (glyph p01 6.89, 3671 glyph px) · box: worst 6.83, p05 6.89, median 7.02 · 1280 system-light .landing__step-body 15px "Live on a line of credit secured by the " rgba(74,82,77,1) op 1
+glyph-min 6.83 (glyph p01 6.89, 3840 glyph px) · box: worst 6.83, p05 6.89, median 7.02 · 1280 system-light .landing__step-body 15px "Spend the loan where life costs less. A " rgba(74,82,77,1) op 1
+glyph-min 6.83 (glyph p01 6.89, 3455 glyph px) · box: worst 6.83, p05 6.89, median 7.02 · 1280 system-light .landing__step-body 15px "Heirs inherit at a stepped-up basis. The" rgba(74,82,77,1) op 1
+glyph-min 6.83 (glyph p01 6.89, 13594 glyph px) · box: worst 6.83, p05 6.89, median 7.02 · 1000 system-light .landing__body 18px "Borrow against your shares for living mo" rgba(74,82,77,1) op 1
+glyph-min 6.83 (glyph p01 6.89, 2864 glyph px) · box: worst 6.83, p05 6.89, median 7.02 · 1000 system-light .landing__step-body 15px "Hold assets that grow. Never sell them, " rgba(74,82,77,1) op 1
+glyph-min 6.83 (glyph p01 6.89, 3676 glyph px) · box: worst 6.83, p05 6.89, median 7.02 · 1000 system-light .landing__step-body 15px "Live on a line of credit secured by the " rgba(74,82,77,1) op 1
+glyph-min 6.83 (glyph p01 6.89, 3838 glyph px) · box: worst 6.83, p05 6.89, median 7.02 · 1000 system-light .landing__step-body 15px "Spend the loan where life costs less. A " rgba(74,82,77,1) op 1
+glyph-min 6.83 (glyph p01 6.89, 3456 glyph px) · box: worst 6.83, p05 6.89, median 7.02 · 1000 system-light .landing__step-body 15px "Heirs inherit at a stepped-up basis. The" rgba(74,82,77,1) op 1
+glyph-min 6.83 (glyph p01 6.89, 13588 glyph px) · box: worst 6.83, p05 6.89, median 7.02 · 820 system-light .landing__body 18px "Borrow against your shares for living mo" rgba(74,82,77,1) op 1
+glyph-min 6.83 (glyph p01 6.89, 2861 glyph px) · box: worst 6.83, p05 6.89, median 7.02 · 820 system-light .landing__step-body 15px "Hold assets that grow. Never sell them, " rgba(74,82,77,1) op 1
+glyph-min 6.83 (glyph p01 6.89, 3676 glyph px) · box: worst 6.83, p05 6.89, median 7.02 · 820 system-light .landing__step-body 15px "Live on a line of credit secured by the " rgba(74,82,77,1) op 1
+glyph-min 6.83 (glyph p01 6.89, 3839 glyph px) · box: worst 6.83, p05 6.89, median 7.02 · 820 system-light .landing__step-body 15px "Spend the loan where life costs less. A " rgba(74,82,77,1) op 1
+glyph-min 6.83 (glyph p01 6.89, 3456 glyph px) · box: worst 6.83, p05 6.89, median 7.02 · 820 system-light .landing__step-body 15px "Heirs inherit at a stepped-up basis. The" rgba(74,82,77,1) op 1
+glyph-min 6.83 (glyph p01 6.89, 13589 glyph px) · box: worst 6.83, p05 6.89, median 7.02 · 1440 explicit-light (on dark system) .landing__body 18px "Borrow against your shares for living mo" rgba(74,82,77,1) op 1
+glyph-min 6.83 (glyph p01 6.89, 3670 glyph px) · box: worst 6.83, p05 6.89, median 7.02 · 1440 explicit-light (on dark system) .landing__step-body 15px "Live on a line of credit secured by the " rgba(74,82,77,1) op 1
+glyph-min 6.83 (glyph p01 6.89, 3837 glyph px) · box: worst 6.83, p05 6.89, median 7.02 · 1440 explicit-light (on dark system) .landing__step-body 15px "Spend the loan where life costs less. A " rgba(74,82,77,1) op 1
+glyph-min 6.83 (glyph p01 6.89, 3457 glyph px) · box: worst 6.83, p05 6.89, median 7.02 · 1440 explicit-light (on dark system) .landing__step-body 15px "Heirs inherit at a stepped-up basis. The" rgba(74,82,77,1) op 1
+glyph-min 7.21 (glyph p01 7.21, 2867 glyph px) · box: worst 7.21, p05 7.21, median 7.21 · 390 system-light .landing__step-body 15px "Hold assets that grow. Never sell them, " rgba(74,82,77,1) op 1
+glyph-min 7.21 (glyph p01 7.21, 3683 glyph px) · box: worst 7.21, p05 7.21, median 7.21 · 390 system-light .landing__step-body 15px "Live on a line of credit secured by the " rgba(74,82,77,1) op 1
+glyph-min 7.21 (glyph p01 7.21, 3848 glyph px) · box: worst 7.21, p05 7.21, median 7.21 · 390 system-light .landing__step-body 15px "Spend the loan where life costs less. A " rgba(74,82,77,1) op 1
+glyph-min 7.21 (glyph p01 7.21, 3458 glyph px) · box: worst 7.21, p05 7.21, median 7.21 · 390 system-light .landing__step-body 15px "Heirs inherit at a stepped-up basis. The" rgba(74,82,77,1) op 1
+glyph-min 7.21 (glyph p01 7.21, 2867 glyph px) · box: worst 7.21, p05 7.21, median 7.21 · 360 system-light .landing__step-body 15px "Hold assets that grow. Never sell them, " rgba(74,82,77,1) op 1
+glyph-min 7.21 (glyph p01 7.21, 3683 glyph px) · box: worst 7.21, p05 7.21, median 7.21 · 360 system-light .landing__step-body 15px "Live on a line of credit secured by the " rgba(74,82,77,1) op 1
+glyph-min 7.21 (glyph p01 7.21, 3847 glyph px) · box: worst 7.21, p05 7.21, median 7.21 · 360 system-light .landing__step-body 15px "Spend the loan where life costs less. A " rgba(74,82,77,1) op 1
+glyph-min 7.21 (glyph p01 7.21, 3458 glyph px) · box: worst 7.21, p05 7.21, median 7.21 · 360 system-light .landing__step-body 15px "Heirs inherit at a stepped-up basis. The" rgba(74,82,77,1) op 1
+glyph-min 7.21 (glyph p01 7.21, 2867 glyph px) · box: worst 7.21, p05 7.21, median 7.21 · 390 explicit-light (on dark system) .landing__step-body 15px "Hold assets that grow. Never sell them, " rgba(74,82,77,1) op 1
+glyph-min 7.21 (glyph p01 7.21, 3683 glyph px) · box: worst 7.21, p05 7.21, median 7.21 · 390 explicit-light (on dark system) .landing__step-body 15px "Live on a line of credit secured by the " rgba(74,82,77,1) op 1
+glyph-min 7.21 (glyph p01 7.21, 3848 glyph px) · box: worst 7.21, p05 7.21, median 7.21 · 390 explicit-light (on dark system) .landing__step-body 15px "Spend the loan where life costs less. A " rgba(74,82,77,1) op 1
+glyph-min 7.21 (glyph p01 7.21, 3458 glyph px) · box: worst 7.21, p05 7.21, median 7.21 · 390 explicit-light (on dark system) .landing__step-body 15px "Heirs inherit at a stepped-up basis. The" rgba(74,82,77,1) op 1
+glyph-min 7.40 (glyph p01 7.46, 363 glyph px) · box: worst 6.08, p05 6.93, median 7.59 · 1440 system-light .landing__label 24px "Lisbon" rgba(74,82,77,1) op 1
+glyph-min 7.40 (glyph p01 7.46, 349 glyph px) · box: worst 6.16, p05 6.75, median 7.59 · 1440 system-light .landing__label 24px "Tbilisi" rgba(74,82,77,1) op 1
+glyph-min 7.40 (glyph p01 7.46, 451 glyph px) · box: worst 6.93, p05 7.46, median 7.59 · 1440 system-light .landing__label 24px "Bangkok" rgba(74,82,77,1) op 1
+glyph-min 7.40 (glyph p01 7.46, 455 glyph px) · box: worst 6.89, p05 7.48, median 7.59 · 1440 system-light .landing__label 24px "Medellín" rgba(74,82,77,1) op 1
+glyph-min 7.40 (glyph p01 7.46, 428 glyph px) · box: worst 6.69, p05 7.46, median 7.59 · 1440 system-light .landing__label 24px "New York" rgba(74,82,77,1) op 1
+glyph-min 7.40 (glyph p01 7.46, 363 glyph px) · box: worst 6.14, p05 6.93, median 7.59 · 1280 system-light .landing__label 24px "Lisbon" rgba(74,82,77,1) op 1
+glyph-min 7.40 (glyph p01 7.46, 349 glyph px) · box: worst 6.16, p05 6.75, median 7.59 · 1280 system-light .landing__label 24px "Tbilisi" rgba(74,82,77,1) op 1
+glyph-min 7.40 (glyph p01 7.46, 451 glyph px) · box: worst 6.87, p05 7.46, median 7.59 · 1280 system-light .landing__label 24px "Bangkok" rgba(74,82,77,1) op 1
+glyph-min 7.40 (glyph p01 7.46, 455 glyph px) · box: worst 6.75, p05 7.46, median 7.59 · 1280 system-light .landing__label 24px "Medellín" rgba(74,82,77,1) op 1
+glyph-min 7.40 (glyph p01 7.46, 354 glyph px) · box: worst 6.87, p05 7.46, median 7.59 · 1280 system-light .landing__label 24px "Austin" rgba(74,82,77,1) op 1
+glyph-min 7.40 (glyph p01 7.46, 305 glyph px) · box: worst 6.89, p05 7.34, median 7.59 · 1000 system-light .landing__label 28px "Lisbon" rgba(74,82,77,1) op 1
+glyph-min 7.40 (glyph p01 7.46, 286 glyph px) · box: worst 6.83, p05 7.46, median 7.59 · 1000 system-light .landing__label 28px "Tbilisi" rgba(74,82,77,1) op 1
+glyph-min 7.40 (glyph p01 7.46, 369 glyph px) · box: worst 7.08, p05 7.46, median 7.59 · 1000 system-light .landing__label 28px "Bangkok" rgba(74,82,77,1) op 1
+glyph-min 7.40 (glyph p01 7.46, 371 glyph px) · box: worst 6.97, p05 7.46, median 7.59 · 1000 system-light .landing__label 28px "Medellín" rgba(74,82,77,1) op 1
+glyph-min 7.40 (glyph p01 7.46, 737 glyph px) · box: worst 6.64, p05 7.46, median 7.59 · 820 system-light .landing__label 24px "Medellín" rgba(74,82,77,1) op 1
+glyph-min 7.40 (glyph p01 7.46, 689 glyph px) · box: worst 6.64, p05 7.46, median 7.59 · 820 system-light .landing__label 24px "New York" rgba(74,82,77,1) op 1
+glyph-min 7.40 (glyph p01 7.46, 584 glyph px) · box: worst 7.40, p05 7.48, median 7.61 · 820 system-light .landing__read-unit 14px "of futures hold" rgba(74,82,77,1) op 1
+glyph-min 7.40 (glyph p01 7.46, 2474 glyph px) · box: worst 7.40, p05 7.48, median 7.59 · 820 system-light .landing__read-note 13px "% staying in Austin. The same life costs" rgba(74,82,77,1) op 1
+glyph-min 7.40 (glyph p01 7.46, 429 glyph px) · box: worst 2.56, p05 7.46, median 7.59 · 390 system-light .landing__label 46px "Lisbon" rgba(74,82,77,1) op 1
+glyph-min 7.40 (glyph p01 7.46, 520 glyph px) · box: worst 7.07, p05 7.46, median 7.59 · 390 system-light .landing__label 46px "Bangkok" rgba(74,82,77,1) op 1
+glyph-min 7.40 (glyph p01 7.46, 411 glyph px) · box: worst 2.04, p05 7.46, median 7.59 · 390 system-light .landing__label 46px "Austin" rgba(74,82,77,1) op 1
+glyph-min 7.40 (glyph p01 7.46, 344 glyph px) · box: worst 7.09, p05 7.46, median 7.59 · 360 system-light .landing__label 46px "Tbilisi" rgba(74,82,77,1) op 1
+glyph-min 7.40 (glyph p01 7.46, 457 glyph px) · box: worst 6.90, p05 7.28, median 7.59 · 360 system-light .landing__label 46px "Medellín" rgba(74,82,77,1) op 1
+glyph-min 7.40 (glyph p01 7.46, 348 glyph px) · box: worst 2.04, p05 7.46, median 7.59 · 360 system-light .landing__label 46px "Austin" rgba(74,82,77,1) op 1
+glyph-min 7.40 (glyph p01 7.46, 363 glyph px) · box: worst 6.08, p05 6.93, median 7.59 · 1440 explicit-light (on dark system) .landing__label 24px "Lisbon" rgba(74,82,77,1) op 1
+glyph-min 7.40 (glyph p01 7.46, 349 glyph px) · box: worst 6.16, p05 6.75, median 7.59 · 1440 explicit-light (on dark system) .landing__label 24px "Tbilisi" rgba(74,82,77,1) op 1
+glyph-min 7.40 (glyph p01 7.46, 451 glyph px) · box: worst 6.93, p05 7.46, median 7.59 · 1440 explicit-light (on dark system) .landing__label 24px "Bangkok" rgba(74,82,77,1) op 1
+glyph-min 7.40 (glyph p01 7.46, 455 glyph px) · box: worst 6.89, p05 7.48, median 7.59 · 1440 explicit-light (on dark system) .landing__label 24px "Medellín" rgba(74,82,77,1) op 1
+glyph-min 7.40 (glyph p01 7.46, 428 glyph px) · box: worst 6.69, p05 7.46, median 7.59 · 1440 explicit-light (on dark system) .landing__label 24px "New York" rgba(74,82,77,1) op 1
+glyph-min 7.40 (glyph p01 7.46, 429 glyph px) · box: worst 2.56, p05 7.46, median 7.59 · 390 explicit-light (on dark system) .landing__label 46px "Lisbon" rgba(74,82,77,1) op 1
+glyph-min 7.40 (glyph p01 7.46, 520 glyph px) · box: worst 7.07, p05 7.46, median 7.59 · 390 explicit-light (on dark system) .landing__label 46px "Bangkok" rgba(74,82,77,1) op 1
+glyph-min 7.40 (glyph p01 7.46, 411 glyph px) · box: worst 2.04, p05 7.46, median 7.59 · 390 explicit-light (on dark system) .landing__label 46px "Austin" rgba(74,82,77,1) op 1
+glyph-min 7.41 (glyph p01 7.48, 584 glyph px) · box: worst 7.41, p05 7.54, median 7.61 · 1440 system-light .landing__read-unit 14px "of futures hold" rgba(74,82,77,1) op 1
+glyph-min 7.41 (glyph p01 7.48, 2473 glyph px) · box: worst 7.41, p05 7.48, median 7.61 · 1440 system-light .landing__read-note 13px "% staying in Austin. The same life costs" rgba(74,82,77,1) op 1
+glyph-min 7.41 (glyph p01 7.48, 584 glyph px) · box: worst 7.41, p05 7.48, median 7.61 · 1280 system-light .landing__read-unit 14px "of futures hold" rgba(74,82,77,1) op 1
+glyph-min 7.41 (glyph p01 7.48, 2473 glyph px) · box: worst 7.41, p05 7.48, median 7.61 · 1280 system-light .landing__read-note 13px "% staying in Austin. The same life costs" rgba(74,82,77,1) op 1
+glyph-min 7.41 (glyph p01 7.48, 584 glyph px) · box: worst 7.41, p05 7.48, median 7.61 · 1000 system-light .landing__read-unit 14px "of futures hold" rgba(74,82,77,1) op 1
+glyph-min 7.41 (glyph p01 7.41, 77 glyph px) · box: worst 7.41, p05 7.48, median 7.61 · 1000 system-light .landing__read-note 13px "vs" rgba(74,82,77,1) op 1
+glyph-min 7.41 (glyph p01 7.48, 2473 glyph px) · box: worst 7.41, p05 7.48, median 7.61 · 1000 system-light .landing__read-note 13px "% staying in Austin. The same life costs" rgba(74,82,77,1) op 1
+glyph-min 7.41 (glyph p01 7.48, 584 glyph px) · box: worst 7.41, p05 7.48, median 7.61 · 390 system-light .landing__read-unit 14px "of futures hold" rgba(74,82,77,1) op 1
+glyph-min 7.41 (glyph p01 7.48, 2474 glyph px) · box: worst 7.41, p05 7.48, median 7.61 · 390 system-light .landing__read-note 13px "% staying in Austin. The same life costs" rgba(74,82,77,1) op 1
+glyph-min 7.41 (glyph p01 7.48, 584 glyph px) · box: worst 7.41, p05 7.48, median 7.61 · 360 system-light .landing__read-unit 14px "of futures hold" rgba(74,82,77,1) op 1
+glyph-min 7.41 (glyph p01 7.48, 2474 glyph px) · box: worst 7.41, p05 7.48, median 7.61 · 360 system-light .landing__read-note 13px "% staying in Austin. The same life costs" rgba(74,82,77,1) op 1
+glyph-min 7.41 (glyph p01 7.48, 584 glyph px) · box: worst 7.41, p05 7.54, median 7.61 · 1440 explicit-light (on dark system) .landing__read-unit 14px "of futures hold" rgba(74,82,77,1) op 1
+glyph-min 7.41 (glyph p01 7.48, 2473 glyph px) · box: worst 7.41, p05 7.48, median 7.61 · 1440 explicit-light (on dark system) .landing__read-note 13px "% staying in Austin. The same life costs" rgba(74,82,77,1) op 1
+glyph-min 7.41 (glyph p01 7.48, 584 glyph px) · box: worst 7.41, p05 7.48, median 7.61 · 390 explicit-light (on dark system) .landing__read-unit 14px "of futures hold" rgba(74,82,77,1) op 1
+glyph-min 7.41 (glyph p01 7.48, 2474 glyph px) · box: worst 7.41, p05 7.48, median 7.61 · 390 explicit-light (on dark system) .landing__read-note 13px "% staying in Austin. The same life costs" rgba(74,82,77,1) op 1
+glyph-min 7.46 (glyph p01 7.46, 354 glyph px) · box: worst 6.87, p05 7.46, median 7.59 · 1440 system-light .landing__label 24px "Austin" rgba(74,82,77,1) op 1
+glyph-min 7.46 (glyph p01 7.46, 428 glyph px) · box: worst 6.69, p05 7.46, median 7.59 · 1280 system-light .landing__label 24px "New York" rgba(74,82,77,1) op 1
+glyph-min 7.46 (glyph p01 7.46, 351 glyph px) · box: worst 6.83, p05 7.46, median 7.59 · 1000 system-light .landing__label 28px "New York" rgba(74,82,77,1) op 1
+glyph-min 7.46 (glyph p01 7.46, 292 glyph px) · box: worst 6.05, p05 7.46, median 7.59 · 1000 system-light .landing__label 28px "Austin" rgba(74,82,77,1) op 1
+glyph-min 7.46 (glyph p01 7.46, 599 glyph px) · box: worst 5.75, p05 6.64, median 7.59 · 820 system-light .landing__label 24px "Lisbon" rgba(74,82,77,1) op 1
+glyph-min 7.46 (glyph p01 7.46, 569 glyph px) · box: worst 6.40, p05 7.01, median 7.59 · 820 system-light .landing__label 24px "Tbilisi" rgba(74,82,77,1) op 1
+glyph-min 7.46 (glyph p01 7.46, 734 glyph px) · box: worst 6.46, p05 7.46, median 7.59 · 820 system-light .landing__label 24px "Bangkok" rgba(74,82,77,1) op 1
+glyph-min 7.46 (glyph p01 7.46, 569 glyph px) · box: worst 6.58, p05 7.46, median 7.59 · 820 system-light .landing__label 24px "Austin" rgba(74,82,77,1) op 1
+glyph-min 7.46 (glyph p01 7.46, 77 glyph px) · box: worst 7.40, p05 7.46, median 7.59 · 820 system-light .landing__read-note 13px "vs" rgba(74,82,77,1) op 1
+glyph-min 7.46 (glyph p01 7.46, 114 glyph px) · box: worst 7.40, p05 7.46, median 7.59 · 820 system-light .landing__read-note 13px "63" rgba(74,82,77,1) op 1
+glyph-min 7.46 (glyph p01 7.46, 409 glyph px) · box: worst 7.08, p05 7.46, median 7.59 · 390 system-light .landing__label 46px "Tbilisi" rgba(74,82,77,1) op 1
+glyph-min 7.46 (glyph p01 7.46, 514 glyph px) · box: worst 6.58, p05 7.07, median 7.59 · 390 system-light .landing__label 46px "Medellín" rgba(74,82,77,1) op 1
+glyph-min 7.46 (glyph p01 7.46, 368 glyph px) · box: worst 5.74, p05 7.46, median 7.59 · 360 system-light .landing__label 46px "Lisbon" rgba(74,82,77,1) op 1
+glyph-min 7.46 (glyph p01 7.46, 448 glyph px) · box: worst 7.15, p05 7.46, median 7.59 · 360 system-light .landing__label 46px "Bangkok" rgba(74,82,77,1) op 1
+glyph-min 7.46 (glyph p01 7.46, 354 glyph px) · box: worst 6.87, p05 7.46, median 7.59 · 1440 explicit-light (on dark system) .landing__label 24px "Austin" rgba(74,82,77,1) op 1
+glyph-min 7.46 (glyph p01 7.46, 409 glyph px) · box: worst 7.08, p05 7.46, median 7.59 · 390 explicit-light (on dark system) .landing__label 46px "Tbilisi" rgba(74,82,77,1) op 1
+glyph-min 7.46 (glyph p01 7.46, 514 glyph px) · box: worst 6.58, p05 7.07, median 7.59 · 390 explicit-light (on dark system) .landing__label 46px "Medellín" rgba(74,82,77,1) op 1
+glyph-min 7.48 (glyph p01 7.48, 77 glyph px) · box: worst 7.48, p05 7.48, median 7.61 · 1440 system-light .landing__read-note 13px "vs" rgba(74,82,77,1) op 1
+glyph-min 7.48 (glyph p01 7.48, 114 glyph px) · box: worst 7.48, p05 7.48, median 7.61 · 1440 system-light .landing__read-note 13px "63" rgba(74,82,77,1) op 1
+glyph-min 7.48 (glyph p01 7.48, 77 glyph px) · box: worst 7.48, p05 7.48, median 7.61 · 1280 system-light .landing__read-note 13px "vs" rgba(74,82,77,1) op 1
+glyph-min 7.48 (glyph p01 7.48, 114 glyph px) · box: worst 7.48, p05 7.48, median 7.61 · 1280 system-light .landing__read-note 13px "63" rgba(74,82,77,1) op 1
+glyph-min 7.48 (glyph p01 7.48, 114 glyph px) · box: worst 7.48, p05 7.48, median 7.61 · 1000 system-light .landing__read-note 13px "63" rgba(74,82,77,1) op 1
+glyph-min 7.48 (glyph p01 7.48, 77 glyph px) · box: worst 7.48, p05 7.48, median 7.61 · 390 system-light .landing__read-note 13px "vs" rgba(74,82,77,1) op 1
+glyph-min 7.48 (glyph p01 7.48, 114 glyph px) · box: worst 7.48, p05 7.48, median 7.61 · 390 system-light .landing__read-note 13px "63" rgba(74,82,77,1) op 1
+glyph-min 7.48 (glyph p01 7.48, 114 glyph px) · box: worst 7.48, p05 7.54, median 7.61 · 360 system-light .landing__read-note 13px "63" rgba(74,82,77,1) op 1
+glyph-min 7.48 (glyph p01 7.48, 77 glyph px) · box: worst 7.48, p05 7.48, median 7.61 · 1440 explicit-light (on dark system) .landing__read-note 13px "vs" rgba(74,82,77,1) op 1
+glyph-min 7.48 (glyph p01 7.48, 114 glyph px) · box: worst 7.48, p05 7.48, median 7.61 · 1440 explicit-light (on dark system) .landing__read-note 13px "63" rgba(74,82,77,1) op 1
+glyph-min 7.48 (glyph p01 7.48, 77 glyph px) · box: worst 7.48, p05 7.48, median 7.61 · 390 explicit-light (on dark system) .landing__read-note 13px "vs" rgba(74,82,77,1) op 1
+glyph-min 7.48 (glyph p01 7.48, 114 glyph px) · box: worst 7.48, p05 7.48, median 7.61 · 390 explicit-light (on dark system) .landing__read-note 13px "63" rgba(74,82,77,1) op 1
+glyph-min 7.54 (glyph p01 7.54, 77 glyph px) · box: worst 7.41, p05 7.54, median 7.61 · 360 system-light .landing__read-note 13px "vs" rgba(74,82,77,1) op 1
+glyph-min 7.91 (glyph p01 7.92, 144 glyph px) · box: worst 7.13, p05 7.92, median 7.98 · 1440 system-dark .landing__label-pct 24px "38" rgba(245,146,94,1) op 1
+glyph-min 7.91 (glyph p01 7.92, 144 glyph px) · box: worst 7.13, p05 7.92, median 7.98 · 1440 system-dark .landing__label-pct 24px "%" rgba(245,146,94,1) op 1
+glyph-min 7.91 (glyph p01 7.92, 144 glyph px) · box: worst 7.13, p05 7.92, median 7.98 · 1440 explicit-dark (on light system) .landing__label-pct 24px "38" rgba(245,146,94,1) op 1
+glyph-min 7.91 (glyph p01 7.92, 144 glyph px) · box: worst 7.13, p05 7.92, median 7.98 · 1440 explicit-dark (on light system) .landing__label-pct 24px "%" rgba(245,146,94,1) op 1
+glyph-min 7.92 (glyph p01 7.92, 146 glyph px) · box: worst 7.15, p05 7.92, median 7.98 · 1280 system-dark .landing__label-pct 24px "38" rgba(245,146,94,1) op 1
+glyph-min 7.92 (glyph p01 7.92, 146 glyph px) · box: worst 7.15, p05 7.92, median 7.98 · 1280 system-dark .landing__label-pct 24px "%" rgba(245,146,94,1) op 1
+glyph-min 7.92 (glyph p01 7.92, 116 glyph px) · box: worst 7.62, p05 7.92, median 7.98 · 1000 system-dark .landing__label-pct 28px "38" rgba(245,146,94,1) op 1
+glyph-min 7.92 (glyph p01 7.92, 116 glyph px) · box: worst 7.62, p05 7.92, median 7.98 · 1000 system-dark .landing__label-pct 28px "%" rgba(245,146,94,1) op 1
+glyph-min 7.92 (glyph p01 7.92, 219 glyph px) · box: worst 7.90, p05 7.92, median 7.98 · 820 system-dark .landing__label-pct 24px "38" rgba(245,146,94,1) op 1
+glyph-min 7.92 (glyph p01 7.92, 219 glyph px) · box: worst 7.90, p05 7.92, median 7.98 · 820 system-dark .landing__label-pct 24px "%" rgba(245,146,94,1) op 1
+glyph-min 8.55 (glyph p01 8.55, 349 glyph px) · box: worst 8.55, p05 8.61, median 8.69 · 1000 system-dark .A 14px "Method" rgba(169,181,175,1) op 1
+glyph-min 8.55 (glyph p01 8.57, 578 glyph px) · box: worst 8.55, p05 8.57, median 8.63 · 1440 system-dark .landing__read-unit 14px "of futures hold" rgba(169,181,175,1) op 1
+glyph-min 8.55 (glyph p01 8.55, 75 glyph px) · box: worst 8.55, p05 8.57, median 8.63 · 1440 system-dark .landing__read-note 13px "vs" rgba(169,181,175,1) op 1
+glyph-min 8.55 (glyph p01 8.57, 113 glyph px) · box: worst 8.55, p05 8.57, median 8.63 · 1440 system-dark .landing__read-note 13px "63" rgba(169,181,175,1) op 1
+glyph-min 8.55 (glyph p01 8.57, 2469 glyph px) · box: worst 8.55, p05 8.57, median 8.63 · 1440 system-dark .landing__read-note 13px "% staying in Austin. The same life costs" rgba(169,181,175,1) op 1
+glyph-min 8.55 (glyph p01 8.57, 580 glyph px) · box: worst 8.55, p05 8.57, median 8.63 · 1280 system-dark .landing__read-unit 14px "of futures hold" rgba(169,181,175,1) op 1
+glyph-min 8.55 (glyph p01 8.57, 112 glyph px) · box: worst 8.55, p05 8.57, median 8.63 · 1280 system-dark .landing__read-note 13px "63" rgba(169,181,175,1) op 1
+glyph-min 8.55 (glyph p01 8.57, 2472 glyph px) · box: worst 8.55, p05 8.57, median 8.63 · 1280 system-dark .landing__read-note 13px "% staying in Austin. The same life costs" rgba(169,181,175,1) op 1
+glyph-min 8.55 (glyph p01 8.57, 579 glyph px) · box: worst 8.55, p05 8.57, median 8.63 · 1000 system-dark .landing__read-unit 14px "of futures hold" rgba(169,181,175,1) op 1
+glyph-min 8.55 (glyph p01 8.55, 112 glyph px) · box: worst 8.55, p05 8.57, median 8.63 · 1000 system-dark .landing__read-note 13px "63" rgba(169,181,175,1) op 1
+glyph-min 8.55 (glyph p01 8.57, 2463 glyph px) · box: worst 8.55, p05 8.57, median 8.63 · 1000 system-dark .landing__read-note 13px "% staying in Austin. The same life costs" rgba(169,181,175,1) op 1
+glyph-min 8.55 (glyph p01 8.57, 579 glyph px) · box: worst 8.55, p05 8.57, median 8.63 · 820 system-dark .landing__read-unit 14px "of futures hold" rgba(169,181,175,1) op 1
+glyph-min 8.55 (glyph p01 8.57, 112 glyph px) · box: worst 8.55, p05 8.57, median 8.63 · 820 system-dark .landing__read-note 13px "63" rgba(169,181,175,1) op 1
+glyph-min 8.55 (glyph p01 8.57, 2473 glyph px) · box: worst 8.55, p05 8.57, median 8.63 · 820 system-dark .landing__read-note 13px "% staying in Austin. The same life costs" rgba(169,181,175,1) op 1
+glyph-min 8.55 (glyph p01 8.57, 577 glyph px) · box: worst 8.55, p05 8.57, median 8.63 · 390 system-dark .landing__read-unit 14px "of futures hold" rgba(169,181,175,1) op 1
+glyph-min 8.55 (glyph p01 8.57, 2467 glyph px) · box: worst 8.55, p05 8.57, median 8.63 · 390 system-dark .landing__read-note 13px "% staying in Austin. The same life costs" rgba(169,181,175,1) op 1
+glyph-min 8.55 (glyph p01 8.57, 112 glyph px) · box: worst 8.55, p05 8.57, median 8.63 · 360 system-dark .landing__read-note 13px "63" rgba(169,181,175,1) op 1
+glyph-min 8.55 (glyph p01 8.57, 2461 glyph px) · box: worst 8.55, p05 8.57, median 8.63 · 360 system-dark .landing__read-note 13px "% staying in Austin. The same life costs" rgba(169,181,175,1) op 1
+glyph-min 8.55 (glyph p01 8.57, 578 glyph px) · box: worst 8.55, p05 8.57, median 8.63 · 1440 explicit-dark (on light system) .landing__read-unit 14px "of futures hold" rgba(169,181,175,1) op 1
+glyph-min 8.55 (glyph p01 8.55, 75 glyph px) · box: worst 8.55, p05 8.57, median 8.63 · 1440 explicit-dark (on light system) .landing__read-note 13px "vs" rgba(169,181,175,1) op 1
+glyph-min 8.55 (glyph p01 8.57, 113 glyph px) · box: worst 8.55, p05 8.57, median 8.63 · 1440 explicit-dark (on light system) .landing__read-note 13px "63" rgba(169,181,175,1) op 1
+glyph-min 8.55 (glyph p01 8.57, 2469 glyph px) · box: worst 8.55, p05 8.57, median 8.63 · 1440 explicit-dark (on light system) .landing__read-note 13px "% staying in Austin. The same life costs" rgba(169,181,175,1) op 1
+glyph-min 8.55 (glyph p01 8.57, 577 glyph px) · box: worst 8.55, p05 8.57, median 8.63 · 390 explicit-dark (on light system) .landing__read-unit 14px "of futures hold" rgba(169,181,175,1) op 1
+glyph-min 8.55 (glyph p01 8.57, 2467 glyph px) · box: worst 8.55, p05 8.57, median 8.63 · 390 explicit-dark (on light system) .landing__read-note 13px "% staying in Austin. The same life costs" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 359 glyph px) · box: worst 7.11, p05 8.01, median 8.65 · 1440 system-dark .landing__label 24px "Lisbon" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 450 glyph px) · box: worst 7.91, p05 8.58, median 8.65 · 1440 system-dark .landing__label 24px "Bangkok" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 453 glyph px) · box: worst 7.90, p05 8.58, median 8.65 · 1440 system-dark .landing__label 24px "Medellín" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 424 glyph px) · box: worst 7.72, p05 8.57, median 8.65 · 1440 system-dark .landing__label 24px "New York" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 353 glyph px) · box: worst 7.92, p05 8.58, median 8.65 · 1440 system-dark .landing__label 24px "Austin" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 360 glyph px) · box: worst 7.20, p05 8.01, median 8.65 · 1280 system-dark .landing__label 24px "Lisbon" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 450 glyph px) · box: worst 7.91, p05 8.58, median 8.65 · 1280 system-dark .landing__label 24px "Bangkok" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 454 glyph px) · box: worst 7.81, p05 8.58, median 8.65 · 1280 system-dark .landing__label 24px "Medellín" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 352 glyph px) · box: worst 7.94, p05 8.57, median 8.65 · 1280 system-dark .landing__label 24px "Austin" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.57, 77 glyph px) · box: worst 8.55, p05 8.57, median 8.63 · 1280 system-dark .landing__read-note 13px "vs" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 301 glyph px) · box: worst 7.93, p05 8.49, median 8.65 · 1000 system-dark .landing__label 28px "Lisbon" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 364 glyph px) · box: worst 8.10, p05 8.57, median 8.65 · 1000 system-dark .landing__label 28px "Bangkok" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 364 glyph px) · box: worst 7.99, p05 8.57, median 8.65 · 1000 system-dark .landing__label 28px "Medellín" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 351 glyph px) · box: worst 7.99, p05 8.57, median 8.65 · 1000 system-dark .landing__label 28px "New York" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 289 glyph px) · box: worst 5.84, p05 8.57, median 8.65 · 1000 system-dark .landing__label 28px "Austin" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.57, 77 glyph px) · box: worst 8.55, p05 8.57, median 8.63 · 1000 system-dark .landing__read-note 13px "vs" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.57, 596 glyph px) · box: worst 6.49, p05 7.55, median 8.65 · 820 system-dark .landing__label 24px "Lisbon" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 560 glyph px) · box: worst 7.46, p05 8.06, median 8.65 · 820 system-dark .landing__label 24px "Tbilisi" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 731 glyph px) · box: worst 7.64, p05 8.58, median 8.65 · 820 system-dark .landing__label 24px "Bangkok" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 737 glyph px) · box: worst 7.72, p05 8.58, median 8.65 · 820 system-dark .landing__label 24px "Medellín" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 689 glyph px) · box: worst 7.72, p05 8.58, median 8.65 · 820 system-dark .landing__label 24px "New York" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 566 glyph px) · box: worst 7.55, p05 8.58, median 8.65 · 820 system-dark .landing__label 24px "Austin" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.57, 75 glyph px) · box: worst 8.55, p05 8.57, median 8.63 · 820 system-dark .landing__read-note 13px "vs" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 421 glyph px) · box: worst 1.41, p05 8.57, median 8.65 · 390 system-dark .landing__label 46px "Lisbon" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 405 glyph px) · box: worst 8.18, p05 8.58, median 8.65 · 390 system-dark .landing__label 46px "Tbilisi" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 514 glyph px) · box: worst 8.18, p05 8.57, median 8.65 · 390 system-dark .landing__label 46px "Bangkok" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 512 glyph px) · box: worst 7.65, p05 8.16, median 8.65 · 390 system-dark .landing__label 46px "Medellín" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 415 glyph px) · box: worst 1.07, p05 8.57, median 8.65 · 390 system-dark .landing__label 46px "Austin" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.57, 75 glyph px) · box: worst 8.55, p05 8.57, median 8.63 · 390 system-dark .landing__read-note 13px "vs" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.57, 113 glyph px) · box: worst 8.57, p05 8.57, median 8.63 · 390 system-dark .landing__read-note 13px "63" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 366 glyph px) · box: worst 5.44, p05 8.57, median 8.65 · 360 system-dark .landing__label 46px "Lisbon" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 341 glyph px) · box: worst 8.18, p05 8.58, median 8.65 · 360 system-dark .landing__label 46px "Tbilisi" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 446 glyph px) · box: worst 8.18, p05 8.58, median 8.65 · 360 system-dark .landing__label 46px "Bangkok" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 454 glyph px) · box: worst 8.00, p05 8.41, median 8.65 · 360 system-dark .landing__label 46px "Medellín" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 347 glyph px) · box: worst 1.08, p05 8.57, median 8.65 · 360 system-dark .landing__label 46px "Austin" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.57, 578 glyph px) · box: worst 8.55, p05 8.57, median 8.63 · 360 system-dark .landing__read-unit 14px "of futures hold" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.57, 76 glyph px) · box: worst 8.55, p05 8.57, median 8.63 · 360 system-dark .landing__read-note 13px "vs" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 359 glyph px) · box: worst 7.11, p05 8.01, median 8.65 · 1440 explicit-dark (on light system) .landing__label 24px "Lisbon" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 450 glyph px) · box: worst 7.91, p05 8.58, median 8.65 · 1440 explicit-dark (on light system) .landing__label 24px "Bangkok" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 453 glyph px) · box: worst 7.90, p05 8.58, median 8.65 · 1440 explicit-dark (on light system) .landing__label 24px "Medellín" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 424 glyph px) · box: worst 7.72, p05 8.57, median 8.65 · 1440 explicit-dark (on light system) .landing__label 24px "New York" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 353 glyph px) · box: worst 7.92, p05 8.58, median 8.65 · 1440 explicit-dark (on light system) .landing__label 24px "Austin" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 421 glyph px) · box: worst 1.41, p05 8.57, median 8.65 · 390 explicit-dark (on light system) .landing__label 46px "Lisbon" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 405 glyph px) · box: worst 8.18, p05 8.58, median 8.65 · 390 explicit-dark (on light system) .landing__label 46px "Tbilisi" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 514 glyph px) · box: worst 8.18, p05 8.57, median 8.65 · 390 explicit-dark (on light system) .landing__label 46px "Bangkok" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 512 glyph px) · box: worst 7.65, p05 8.16, median 8.65 · 390 explicit-dark (on light system) .landing__label 46px "Medellín" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.58, 415 glyph px) · box: worst 1.07, p05 8.57, median 8.65 · 390 explicit-dark (on light system) .landing__label 46px "Austin" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.57, 75 glyph px) · box: worst 8.55, p05 8.57, median 8.63 · 390 explicit-dark (on light system) .landing__read-note 13px "vs" rgba(169,181,175,1) op 1
+glyph-min 8.57 (glyph p01 8.57, 113 glyph px) · box: worst 8.57, p05 8.57, median 8.63 · 390 explicit-dark (on light system) .landing__read-note 13px "63" rgba(169,181,175,1) op 1
+glyph-min 8.58 (glyph p01 8.58, 348 glyph px) · box: worst 7.23, p05 7.83, median 8.65 · 1440 system-dark .landing__label 24px "Tbilisi" rgba(169,181,175,1) op 1
+glyph-min 8.58 (glyph p01 8.58, 347 glyph px) · box: worst 7.23, p05 7.81, median 8.65 · 1280 system-dark .landing__label 24px "Tbilisi" rgba(169,181,175,1) op 1
+glyph-min 8.58 (glyph p01 8.58, 427 glyph px) · box: worst 7.75, p05 8.58, median 8.65 · 1280 system-dark .landing__label 24px "New York" rgba(169,181,175,1) op 1
+glyph-min 8.58 (glyph p01 8.58, 284 glyph px) · box: worst 7.92, p05 8.57, median 8.65 · 1000 system-dark .landing__label 28px "Tbilisi" rgba(169,181,175,1) op 1
+glyph-min 8.58 (glyph p01 8.58, 348 glyph px) · box: worst 7.23, p05 7.83, median 8.65 · 1440 explicit-dark (on light system) .landing__label 24px "Tbilisi" rgba(169,181,175,1) op 1
+glyph-min 8.69 (glyph p01 8.69, 225 glyph px) · box: worst 8.68, p05 8.75, median 8.75 · 1000 system-dark .A 14px "Atlas" rgba(169,181,175,1) op 1
+glyph-min 8.75 (glyph p01 8.75, 351 glyph px) · box: worst 8.69, p05 8.75, median 8.81 · 1280 system-dark .A 14px "Method" rgba(169,181,175,1) op 1
+glyph-min 8.76 (glyph p01 8.81, 505 glyph px) · box: worst 8.75, p05 8.81, median 8.88 · 1000 system-dark .A 14px "How it works" rgba(169,181,175,1) op 1
+glyph-min 8.81 (glyph p01 8.81, 349 glyph px) · box: worst 8.76, p05 8.81, median 8.88 · 1440 system-dark .A 14px "Method" rgba(169,181,175,1) op 1
+glyph-min 8.81 (glyph p01 8.83, 224 glyph px) · box: worst 8.81, p05 8.87, median 8.88 · 1280 system-dark .A 14px "Atlas" rgba(169,181,175,1) op 1
+glyph-min 8.81 (glyph p01 8.81, 349 glyph px) · box: worst 8.76, p05 8.81, median 8.88 · 1440 explicit-dark (on light system) .A 14px "Method" rgba(169,181,175,1) op 1
+glyph-min 8.94 (glyph p01 8.94, 226 glyph px) · box: worst 8.94, p05 8.94, median 8.99 · 1440 system-dark .A 14px "Atlas" rgba(169,181,175,1) op 1
+glyph-min 8.94 (glyph p01 8.94, 505 glyph px) · box: worst 8.94, p05 8.94, median 9.00 · 1280 system-dark .A 14px "How it works" rgba(169,181,175,1) op 1
+glyph-min 8.94 (glyph p01 8.94, 226 glyph px) · box: worst 8.94, p05 8.94, median 8.99 · 1440 explicit-dark (on light system) .A 14px "Atlas" rgba(169,181,175,1) op 1
+glyph-min 8.94 (glyph p01 8.99, 12733 glyph px) · box: worst 8.94, p05 9.05, median 9.17 · 390 system-dark .landing__body 17px "Borrow against your shares for living mo" rgba(169,181,175,1) op 1
+glyph-min 8.94 (glyph p01 8.99, 12733 glyph px) · box: worst 8.94, p05 9.05, median 9.17 · 390 explicit-dark (on light system) .landing__body 17px "Borrow against your shares for living mo" rgba(169,181,175,1) op 1
+glyph-min 8.97 (glyph p01 9.02, 2867 glyph px) · box: worst 8.97, p05 9.02, median 9.10 · 1440 system-dark .landing__step-body 15px "Hold assets that grow. Never sell them, " rgba(169,181,175,1) op 1
+glyph-min 8.97 (glyph p01 9.02, 2867 glyph px) · box: worst 8.97, p05 9.02, median 9.10 · 1440 explicit-dark (on light system) .landing__step-body 15px "Hold assets that grow. Never sell them, " rgba(169,181,175,1) op 1
+glyph-min 8.99 (glyph p01 8.99, 506 glyph px) · box: worst 8.99, p05 8.99, median 9.06 · 1440 system-dark .A 14px "How it works" rgba(169,181,175,1) op 1
+glyph-min 8.99 (glyph p01 8.99, 506 glyph px) · box: worst 8.99, p05 8.99, median 9.06 · 1440 explicit-dark (on light system) .A 14px "How it works" rgba(169,181,175,1) op 1
+glyph-min 9.11 (glyph p01 9.11, 12719 glyph px) · box: worst 9.11, p05 9.16, median 9.22 · 360 system-dark .landing__body 17px "Borrow against your shares for living mo" rgba(169,181,175,1) op 1
+glyph-min 9.16 (glyph p01 9.16, 13666 glyph px) · box: worst 9.16, p05 9.22, median 9.22 · 1000 system-dark .landing__body 18px "Borrow against your shares for living mo" rgba(169,181,175,1) op 1
+glyph-min 9.22 (glyph p01 9.22, 13670 glyph px) · box: worst 9.22, p05 9.22, median 9.22 · 1440 system-dark .landing__body 18px "Borrow against your shares for living mo" rgba(169,181,175,1) op 1
+glyph-min 9.22 (glyph p01 9.22, 3676 glyph px) · box: worst 9.22, p05 9.22, median 9.22 · 1440 system-dark .landing__step-body 15px "Live on a line of credit secured by the " rgba(169,181,175,1) op 1
+glyph-min 9.22 (glyph p01 9.22, 3839 glyph px) · box: worst 9.22, p05 9.22, median 9.22 · 1440 system-dark .landing__step-body 15px "Spend the loan where life costs less. A " rgba(169,181,175,1) op 1
+glyph-min 9.22 (glyph p01 9.22, 3446 glyph px) · box: worst 9.22, p05 9.22, median 9.22 · 1440 system-dark .landing__step-body 15px "Heirs inherit at a stepped-up basis. The" rgba(169,181,175,1) op 1
+glyph-min 9.22 (glyph p01 9.22, 13669 glyph px) · box: worst 9.22, p05 9.22, median 9.22 · 1280 system-dark .landing__body 18px "Borrow against your shares for living mo" rgba(169,181,175,1) op 1
+glyph-min 9.22 (glyph p01 9.22, 2865 glyph px) · box: worst 9.22, p05 9.22, median 9.22 · 1280 system-dark .landing__step-body 15px "Hold assets that grow. Never sell them, " rgba(169,181,175,1) op 1
+glyph-min 9.22 (glyph p01 9.22, 3675 glyph px) · box: worst 9.22, p05 9.22, median 9.22 · 1280 system-dark .landing__step-body 15px "Live on a line of credit secured by the " rgba(169,181,175,1) op 1
+glyph-min 9.22 (glyph p01 9.22, 3836 glyph px) · box: worst 9.22, p05 9.22, median 9.22 · 1280 system-dark .landing__step-body 15px "Spend the loan where life costs less. A " rgba(169,181,175,1) op 1
+glyph-min 9.22 (glyph p01 9.22, 3449 glyph px) · box: worst 9.22, p05 9.22, median 9.22 · 1280 system-dark .landing__step-body 15px "Heirs inherit at a stepped-up basis. The" rgba(169,181,175,1) op 1
+glyph-min 9.22 (glyph p01 9.22, 2857 glyph px) · box: worst 9.22, p05 9.22, median 9.22 · 1000 system-dark .landing__step-body 15px "Hold assets that grow. Never sell them, " rgba(169,181,175,1) op 1
+glyph-min 9.22 (glyph p01 9.22, 3680 glyph px) · box: worst 9.22, p05 9.22, median 9.22 · 1000 system-dark .landing__step-body 15px "Live on a line of credit secured by the " rgba(169,181,175,1) op 1
+glyph-min 9.22 (glyph p01 9.22, 3839 glyph px) · box: worst 9.22, p05 9.22, median 9.22 · 1000 system-dark .landing__step-body 15px "Spend the loan where life costs less. A " rgba(169,181,175,1) op 1
+glyph-min 9.22 (glyph p01 9.22, 3452 glyph px) · box: worst 9.22, p05 9.22, median 9.22 · 1000 system-dark .landing__step-body 15px "Heirs inherit at a stepped-up basis. The" rgba(169,181,175,1) op 1
+glyph-min 9.22 (glyph p01 9.22, 13675 glyph px) · box: worst 9.22, p05 9.22, median 9.22 · 820 system-dark .landing__body 18px "Borrow against your shares for living mo" rgba(169,181,175,1) op 1
+glyph-min 9.22 (glyph p01 9.22, 2864 glyph px) · box: worst 9.22, p05 9.22, median 9.22 · 820 system-dark .landing__step-body 15px "Hold assets that grow. Never sell them, " rgba(169,181,175,1) op 1
+glyph-min 9.22 (glyph p01 9.22, 3677 glyph px) · box: worst 9.22, p05 9.22, median 9.22 · 820 system-dark .landing__step-body 15px "Live on a line of credit secured by the " rgba(169,181,175,1) op 1
+glyph-min 9.22 (glyph p01 9.22, 3843 glyph px) · box: worst 9.22, p05 9.22, median 9.22 · 820 system-dark .landing__step-body 15px "Spend the loan where life costs less. A " rgba(169,181,175,1) op 1
+glyph-min 9.22 (glyph p01 9.22, 3448 glyph px) · box: worst 9.22, p05 9.22, median 9.22 · 820 system-dark .landing__step-body 15px "Heirs inherit at a stepped-up basis. The" rgba(169,181,175,1) op 1
+glyph-min 9.22 (glyph p01 9.22, 2845 glyph px) · box: worst 9.22, p05 9.22, median 9.22 · 390 system-dark .landing__step-body 15px "Hold assets that grow. Never sell them, " rgba(169,181,175,1) op 1
+glyph-min 9.22 (glyph p01 9.22, 3660 glyph px) · box: worst 9.22, p05 9.22, median 9.22 · 390 system-dark .landing__step-body 15px "Live on a line of credit secured by the " rgba(169,181,175,1) op 1
+glyph-min 9.22 (glyph p01 9.22, 3825 glyph px) · box: worst 9.22, p05 9.22, median 9.22 · 390 system-dark .landing__step-body 15px "Spend the loan where life costs less. A " rgba(169,181,175,1) op 1
+glyph-min 9.22 (glyph p01 9.22, 3427 glyph px) · box: worst 9.22, p05 9.22, median 9.22 · 390 system-dark .landing__step-body 15px "Heirs inherit at a stepped-up basis. The" rgba(169,181,175,1) op 1
+glyph-min 9.22 (glyph p01 9.22, 2845 glyph px) · box: worst 9.22, p05 9.22, median 9.22 · 360 system-dark .landing__step-body 15px "Hold assets that grow. Never sell them, " rgba(169,181,175,1) op 1
+glyph-min 9.22 (glyph p01 9.22, 3660 glyph px) · box: worst 9.22, p05 9.22, median 9.22 · 360 system-dark .landing__step-body 15px "Live on a line of credit secured by the " rgba(169,181,175,1) op 1
+glyph-min 9.22 (glyph p01 9.22, 3824 glyph px) · box: worst 9.22, p05 9.22, median 9.22 · 360 system-dark .landing__step-body 15px "Spend the loan where life costs less. A " rgba(169,181,175,1) op 1
+glyph-min 9.22 (glyph p01 9.22, 3427 glyph px) · box: worst 9.22, p05 9.22, median 9.22 · 360 system-dark .landing__step-body 15px "Heirs inherit at a stepped-up basis. The" rgba(169,181,175,1) op 1
+glyph-min 9.22 (glyph p01 9.22, 13670 glyph px) · box: worst 9.22, p05 9.22, median 9.22 · 1440 explicit-dark (on light system) .landing__body 18px "Borrow against your shares for living mo" rgba(169,181,175,1) op 1
+glyph-min 9.22 (glyph p01 9.22, 3676 glyph px) · box: worst 9.22, p05 9.22, median 9.22 · 1440 explicit-dark (on light system) .landing__step-body 15px "Live on a line of credit secured by the " rgba(169,181,175,1) op 1
+glyph-min 9.22 (glyph p01 9.22, 3839 glyph px) · box: worst 9.22, p05 9.22, median 9.22 · 1440 explicit-dark (on light system) .landing__step-body 15px "Spend the loan where life costs less. A " rgba(169,181,175,1) op 1
+glyph-min 9.22 (glyph p01 9.22, 3446 glyph px) · box: worst 9.22, p05 9.22, median 9.22 · 1440 explicit-dark (on light system) .landing__step-body 15px "Heirs inherit at a stepped-up basis. The" rgba(169,181,175,1) op 1
+glyph-min 9.22 (glyph p01 9.22, 2845 glyph px) · box: worst 9.22, p05 9.22, median 9.22 · 390 explicit-dark (on light system) .landing__step-body 15px "Hold assets that grow. Never sell them, " rgba(169,181,175,1) op 1
+glyph-min 9.22 (glyph p01 9.22, 3660 glyph px) · box: worst 9.22, p05 9.22, median 9.22 · 390 explicit-dark (on light system) .landing__step-body 15px "Live on a line of credit secured by the " rgba(169,181,175,1) op 1
+glyph-min 9.22 (glyph p01 9.22, 3825 glyph px) · box: worst 9.22, p05 9.22, median 9.22 · 390 explicit-dark (on light system) .landing__step-body 15px "Spend the loan where life costs less. A " rgba(169,181,175,1) op 1
+glyph-min 9.22 (glyph p01 9.22, 3427 glyph px) · box: worst 9.22, p05 9.22, median 9.22 · 390 explicit-dark (on light system) .landing__step-body 15px "Heirs inherit at a stepped-up basis. The" rgba(169,181,175,1) op 1
+glyph-min 9.34 (glyph p01 9.36, 144 glyph px) · box: worst 9.34, p05 9.36, median 9.43 · 1280 system-dark .landing__label-pct 24px "63" rgba(227,178,98,1) op 1
+glyph-min 9.34 (glyph p01 9.36, 144 glyph px) · box: worst 9.34, p05 9.36, median 9.43 · 1280 system-dark .landing__label-pct 24px "%" rgba(227,178,98,1) op 1
+glyph-min 9.34 (glyph p01 9.34, 170 glyph px) · box: worst 9.34, p05 9.36, median 9.43 · 390 system-dark .landing__label-pct 46px "63" rgba(227,178,98,1) op 1
+glyph-min 9.34 (glyph p01 9.34, 170 glyph px) · box: worst 9.34, p05 9.36, median 9.43 · 390 system-dark .landing__label-pct 46px "%" rgba(227,178,98,1) op 1
+glyph-min 9.34 (glyph p01 9.34, 145 glyph px) · box: worst 9.34, p05 9.36, median 9.43 · 360 system-dark .landing__label-pct 46px "63" rgba(227,178,98,1) op 1
+glyph-min 9.34 (glyph p01 9.34, 145 glyph px) · box: worst 9.34, p05 9.36, median 9.43 · 360 system-dark .landing__label-pct 46px "%" rgba(227,178,98,1) op 1
+glyph-min 9.34 (glyph p01 9.34, 170 glyph px) · box: worst 9.34, p05 9.36, median 9.43 · 390 explicit-dark (on light system) .landing__label-pct 46px "63" rgba(227,178,98,1) op 1
+glyph-min 9.34 (glyph p01 9.34, 170 glyph px) · box: worst 9.34, p05 9.36, median 9.43 · 390 explicit-dark (on light system) .landing__label-pct 46px "%" rgba(227,178,98,1) op 1
+glyph-min 9.36 (glyph p01 9.36, 144 glyph px) · box: worst 9.34, p05 9.36, median 9.43 · 1440 system-dark .landing__label-pct 24px "63" rgba(227,178,98,1) op 1
+glyph-min 9.36 (glyph p01 9.36, 144 glyph px) · box: worst 9.34, p05 9.36, median 9.43 · 1440 system-dark .landing__label-pct 24px "%" rgba(227,178,98,1) op 1
+glyph-min 9.36 (glyph p01 9.36, 113 glyph px) · box: worst 8.81, p05 9.35, median 9.43 · 1000 system-dark .landing__label-pct 28px "63" rgba(227,178,98,1) op 1
+glyph-min 9.36 (glyph p01 9.36, 113 glyph px) · box: worst 8.81, p05 9.35, median 9.43 · 1000 system-dark .landing__label-pct 28px "%" rgba(227,178,98,1) op 1
+glyph-min 9.36 (glyph p01 9.36, 222 glyph px) · box: worst 9.34, p05 9.36, median 9.43 · 820 system-dark .landing__label-pct 24px "63" rgba(227,178,98,1) op 1
+glyph-min 9.36 (glyph p01 9.36, 222 glyph px) · box: worst 9.34, p05 9.36, median 9.43 · 820 system-dark .landing__label-pct 24px "%" rgba(227,178,98,1) op 1
+glyph-min 9.36 (glyph p01 9.36, 144 glyph px) · box: worst 9.34, p05 9.36, median 9.43 · 1440 explicit-dark (on light system) .landing__label-pct 24px "63" rgba(227,178,98,1) op 1
+glyph-min 9.36 (glyph p01 9.36, 144 glyph px) · box: worst 9.34, p05 9.36, median 9.43 · 1440 explicit-dark (on light system) .landing__label-pct 24px "%" rgba(227,178,98,1) op 1
+glyph-min 11.27 (glyph p01 11.27, 394 glyph px) · box: worst 11.27, p05 11.29, median 11.37 · 1440 system-dark .landing__read-pct 48px "%" rgba(91,227,176,1) op 1
+glyph-min 11.27 (glyph p01 11.29, 654 glyph px) · box: worst 11.27, p05 11.29, median 11.37 · 1280 system-dark .landing__read-pct 48px "88" rgba(91,227,176,1) op 1
+glyph-min 11.27 (glyph p01 11.27, 392 glyph px) · box: worst 11.27, p05 11.29, median 11.37 · 1280 system-dark .landing__read-pct 48px "%" rgba(91,227,176,1) op 1
+glyph-min 11.27 (glyph p01 11.29, 655 glyph px) · box: worst 11.27, p05 11.29, median 11.37 · 1000 system-dark .landing__read-pct 48px "88" rgba(91,227,176,1) op 1
+glyph-min 11.27 (glyph p01 11.29, 392 glyph px) · box: worst 11.27, p05 11.29, median 11.37 · 1000 system-dark .landing__read-pct 48px "%" rgba(91,227,176,1) op 1
+glyph-min 11.27 (glyph p01 11.29, 394 glyph px) · box: worst 11.27, p05 11.29, median 11.37 · 820 system-dark .landing__read-pct 48px "%" rgba(91,227,176,1) op 1
+glyph-min 11.27 (glyph p01 11.29, 657 glyph px) · box: worst 11.27, p05 11.29, median 11.37 · 390 system-dark .landing__read-pct 48px "88" rgba(91,227,176,1) op 1
+glyph-min 11.27 (glyph p01 11.29, 394 glyph px) · box: worst 11.27, p05 11.29, median 11.37 · 390 system-dark .landing__read-pct 48px "%" rgba(91,227,176,1) op 1
+glyph-min 11.27 (glyph p01 11.29, 658 glyph px) · box: worst 11.27, p05 11.29, median 11.37 · 360 system-dark .landing__read-pct 48px "88" rgba(91,227,176,1) op 1
+glyph-min 11.27 (glyph p01 11.29, 393 glyph px) · box: worst 11.27, p05 11.29, median 11.37 · 360 system-dark .landing__read-pct 48px "%" rgba(91,227,176,1) op 1
+glyph-min 11.27 (glyph p01 11.27, 394 glyph px) · box: worst 11.27, p05 11.29, median 11.37 · 1440 explicit-dark (on light system) .landing__read-pct 48px "%" rgba(91,227,176,1) op 1
+glyph-min 11.27 (glyph p01 11.29, 657 glyph px) · box: worst 11.27, p05 11.29, median 11.37 · 390 explicit-dark (on light system) .landing__read-pct 48px "88" rgba(91,227,176,1) op 1
+glyph-min 11.27 (glyph p01 11.29, 394 glyph px) · box: worst 11.27, p05 11.29, median 11.37 · 390 explicit-dark (on light system) .landing__read-pct 48px "%" rgba(91,227,176,1) op 1
+glyph-min 11.29 (glyph p01 11.29, 149 glyph px) · box: worst 10.43, p05 10.55, median 11.39 · 1440 system-dark .landing__label-pct 24px "88" rgba(91,227,176,1) op 1
+glyph-min 11.29 (glyph p01 11.29, 149 glyph px) · box: worst 10.43, p05 10.55, median 11.39 · 1440 system-dark .landing__label-pct 24px "%" rgba(91,227,176,1) op 1
+glyph-min 11.29 (glyph p01 11.29, 656 glyph px) · box: worst 11.27, p05 11.29, median 11.37 · 1440 system-dark .landing__read-pct 48px "88" rgba(91,227,176,1) op 1
+glyph-min 11.29 (glyph p01 11.30, 141 glyph px) · box: worst 11.29, p05 11.30, median 11.39 · 1280 system-dark .landing__label-pct 24px "92" rgba(91,227,176,1) op 1
+glyph-min 11.29 (glyph p01 11.30, 141 glyph px) · box: worst 11.29, p05 11.30, median 11.39 · 1280 system-dark .landing__label-pct 24px "%" rgba(91,227,176,1) op 1
+glyph-min 11.29 (glyph p01 11.30, 125 glyph px) · box: worst 10.63, p05 11.18, median 11.39 · 1000 system-dark .landing__label-pct 28px "88" rgba(91,227,176,1) op 1
+glyph-min 11.29 (glyph p01 11.30, 125 glyph px) · box: worst 10.63, p05 11.18, median 11.39 · 1000 system-dark .landing__label-pct 28px "%" rgba(91,227,176,1) op 1
+glyph-min 11.29 (glyph p01 11.30, 243 glyph px) · box: worst 9.82, p05 9.94, median 11.39 · 820 system-dark .landing__label-pct 24px "88" rgba(91,227,176,1) op 1
+glyph-min 11.29 (glyph p01 11.30, 243 glyph px) · box: worst 9.82, p05 9.94, median 11.39 · 820 system-dark .landing__label-pct 24px "%" rgba(91,227,176,1) op 1
+glyph-min 11.29 (glyph p01 11.30, 225 glyph px) · box: worst 10.17, p05 11.30, median 11.39 · 820 system-dark .landing__label-pct 24px "93" rgba(91,227,176,1) op 1
+glyph-min 11.29 (glyph p01 11.30, 225 glyph px) · box: worst 10.17, p05 11.30, median 11.39 · 820 system-dark .landing__label-pct 24px "%" rgba(91,227,176,1) op 1
+glyph-min 11.29 (glyph p01 11.29, 655 glyph px) · box: worst 11.27, p05 11.29, median 11.37 · 820 system-dark .landing__read-pct 48px "88" rgba(91,227,176,1) op 1
+glyph-min 11.29 (glyph p01 11.30, 163 glyph px) · box: worst 10.77, p05 11.30, median 11.39 · 390 system-dark .landing__label-pct 46px "92" rgba(91,227,176,1) op 1
+glyph-min 11.29 (glyph p01 11.30, 163 glyph px) · box: worst 10.77, p05 11.30, median 11.39 · 390 system-dark .landing__label-pct 46px "%" rgba(91,227,176,1) op 1
+glyph-min 11.29 (glyph p01 11.30, 141 glyph px) · box: worst 11.09, p05 11.30, median 11.39 · 360 system-dark .landing__label-pct 46px "92" rgba(91,227,176,1) op 1
+glyph-min 11.29 (glyph p01 11.30, 141 glyph px) · box: worst 11.09, p05 11.30, median 11.39 · 360 system-dark .landing__label-pct 46px "%" rgba(91,227,176,1) op 1
+glyph-min 11.29 (glyph p01 11.30, 147 glyph px) · box: worst 11.09, p05 11.30, median 11.39 · 360 system-dark .landing__label-pct 46px "93" rgba(91,227,176,1) op 1
+glyph-min 11.29 (glyph p01 11.30, 147 glyph px) · box: worst 11.09, p05 11.30, median 11.39 · 360 system-dark .landing__label-pct 46px "%" rgba(91,227,176,1) op 1
+glyph-min 11.29 (glyph p01 11.30, 141 glyph px) · box: worst 10.75, p05 11.08, median 11.39 · 360 system-dark .landing__label-pct 46px "92" rgba(91,227,176,1) op 1
+glyph-min 11.29 (glyph p01 11.30, 141 glyph px) · box: worst 10.75, p05 11.08, median 11.39 · 360 system-dark .landing__label-pct 46px "%" rgba(91,227,176,1) op 1
+glyph-min 11.29 (glyph p01 11.29, 149 glyph px) · box: worst 10.43, p05 10.55, median 11.39 · 1440 explicit-dark (on light system) .landing__label-pct 24px "88" rgba(91,227,176,1) op 1
+glyph-min 11.29 (glyph p01 11.29, 149 glyph px) · box: worst 10.43, p05 10.55, median 11.39 · 1440 explicit-dark (on light system) .landing__label-pct 24px "%" rgba(91,227,176,1) op 1
+glyph-min 11.29 (glyph p01 11.29, 656 glyph px) · box: worst 11.27, p05 11.29, median 11.37 · 1440 explicit-dark (on light system) .landing__read-pct 48px "88" rgba(91,227,176,1) op 1
+glyph-min 11.29 (glyph p01 11.30, 163 glyph px) · box: worst 10.77, p05 11.30, median 11.39 · 390 explicit-dark (on light system) .landing__label-pct 46px "92" rgba(91,227,176,1) op 1
+glyph-min 11.29 (glyph p01 11.30, 163 glyph px) · box: worst 10.77, p05 11.30, median 11.39 · 390 explicit-dark (on light system) .landing__label-pct 46px "%" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 141 glyph px) · box: worst 10.17, p05 10.38, median 11.39 · 1440 system-dark .landing__label-pct 24px "92" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 141 glyph px) · box: worst 10.17, p05 10.38, median 11.39 · 1440 system-dark .landing__label-pct 24px "%" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.31, 148 glyph px) · box: worst 10.52, p05 11.30, median 11.39 · 1440 system-dark .landing__label-pct 24px "93" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.31, 148 glyph px) · box: worst 10.52, p05 11.30, median 11.39 · 1440 system-dark .landing__label-pct 24px "%" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 141 glyph px) · box: worst 11.29, p05 11.30, median 11.39 · 1440 system-dark .landing__label-pct 24px "92" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 141 glyph px) · box: worst 11.29, p05 11.30, median 11.39 · 1440 system-dark .landing__label-pct 24px "%" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 149 glyph px) · box: worst 10.43, p05 10.55, median 11.39 · 1280 system-dark .landing__label-pct 24px "88" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 149 glyph px) · box: worst 10.43, p05 10.55, median 11.39 · 1280 system-dark .landing__label-pct 24px "%" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 142 glyph px) · box: worst 10.17, p05 10.31, median 11.39 · 1280 system-dark .landing__label-pct 24px "92" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 142 glyph px) · box: worst 10.17, p05 10.31, median 11.39 · 1280 system-dark .landing__label-pct 24px "%" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 147 glyph px) · box: worst 10.63, p05 11.31, median 11.39 · 1280 system-dark .landing__label-pct 24px "93" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 147 glyph px) · box: worst 10.63, p05 11.31, median 11.39 · 1280 system-dark .landing__label-pct 24px "%" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 112 glyph px) · box: worst 11.20, p05 11.30, median 11.39 · 1000 system-dark .landing__label-pct 28px "92" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 112 glyph px) · box: worst 11.20, p05 11.30, median 11.39 · 1000 system-dark .landing__label-pct 28px "%" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 115 glyph px) · box: worst 10.87, p05 11.30, median 11.39 · 1000 system-dark .landing__label-pct 28px "93" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 115 glyph px) · box: worst 10.87, p05 11.30, median 11.39 · 1000 system-dark .landing__label-pct 28px "%" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 107 glyph px) · box: worst 10.87, p05 11.29, median 11.39 · 1000 system-dark .landing__label-pct 28px "92" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 107 glyph px) · box: worst 10.87, p05 11.29, median 11.39 · 1000 system-dark .landing__label-pct 28px "%" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 221 glyph px) · box: worst 9.82, p05 10.61, median 11.39 · 820 system-dark .landing__label-pct 24px "92" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 221 glyph px) · box: worst 9.82, p05 10.61, median 11.39 · 820 system-dark .landing__label-pct 24px "%" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 221 glyph px) · box: worst 11.29, p05 11.31, median 11.39 · 820 system-dark .landing__label-pct 24px "92" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 221 glyph px) · box: worst 11.29, p05 11.31, median 11.39 · 820 system-dark .landing__label-pct 24px "%" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 178 glyph px) · box: worst 10.75, p05 11.30, median 11.39 · 390 system-dark .landing__label-pct 46px "88" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 178 glyph px) · box: worst 10.75, p05 11.30, median 11.39 · 390 system-dark .landing__label-pct 46px "%" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 164 glyph px) · box: worst 10.77, p05 11.29, median 11.39 · 390 system-dark .landing__label-pct 46px "93" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 164 glyph px) · box: worst 10.77, p05 11.29, median 11.39 · 390 system-dark .landing__label-pct 46px "%" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 162 glyph px) · box: worst 10.07, p05 10.79, median 11.39 · 390 system-dark .landing__label-pct 46px "92" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 162 glyph px) · box: worst 10.07, p05 10.79, median 11.39 · 390 system-dark .landing__label-pct 46px "%" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 156 glyph px) · box: worst 10.88, p05 11.30, median 11.39 · 360 system-dark .landing__label-pct 46px "88" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 156 glyph px) · box: worst 10.88, p05 11.30, median 11.39 · 360 system-dark .landing__label-pct 46px "%" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 141 glyph px) · box: worst 10.17, p05 10.38, median 11.39 · 1440 explicit-dark (on light system) .landing__label-pct 24px "92" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 141 glyph px) · box: worst 10.17, p05 10.38, median 11.39 · 1440 explicit-dark (on light system) .landing__label-pct 24px "%" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.31, 148 glyph px) · box: worst 10.52, p05 11.30, median 11.39 · 1440 explicit-dark (on light system) .landing__label-pct 24px "93" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.31, 148 glyph px) · box: worst 10.52, p05 11.30, median 11.39 · 1440 explicit-dark (on light system) .landing__label-pct 24px "%" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 141 glyph px) · box: worst 11.29, p05 11.30, median 11.39 · 1440 explicit-dark (on light system) .landing__label-pct 24px "92" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 141 glyph px) · box: worst 11.29, p05 11.30, median 11.39 · 1440 explicit-dark (on light system) .landing__label-pct 24px "%" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 178 glyph px) · box: worst 10.75, p05 11.30, median 11.39 · 390 explicit-dark (on light system) .landing__label-pct 46px "88" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 178 glyph px) · box: worst 10.75, p05 11.30, median 11.39 · 390 explicit-dark (on light system) .landing__label-pct 46px "%" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 164 glyph px) · box: worst 10.77, p05 11.29, median 11.39 · 390 explicit-dark (on light system) .landing__label-pct 46px "93" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 164 glyph px) · box: worst 10.77, p05 11.29, median 11.39 · 390 explicit-dark (on light system) .landing__label-pct 46px "%" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 162 glyph px) · box: worst 10.07, p05 10.79, median 11.39 · 390 explicit-dark (on light system) .landing__label-pct 46px "92" rgba(91,227,176,1) op 1
+glyph-min 11.30 (glyph p01 11.30, 162 glyph px) · box: worst 10.07, p05 10.79, median 11.39 · 390 explicit-dark (on light system) .landing__label-pct 46px "%" rgba(91,227,176,1) op 1
+glyph-min 11.53 (glyph p01 11.61, 4555 glyph px) · box: worst 11.53, p05 11.68, median 11.77 · 390 system-dark .EM 44px "without ever selling it." rgba(91,227,176,1) op 1
+glyph-min 11.53 (glyph p01 11.61, 4555 glyph px) · box: worst 11.53, p05 11.68, median 11.77 · 390 explicit-dark (on light system) .EM 44px "without ever selling it." rgba(91,227,176,1) op 1
+glyph-min 11.62 (glyph p01 11.70, 4481 glyph px) · box: worst 11.61, p05 11.70, median 11.86 · 360 system-dark .EM 44px "without ever selling it." rgba(91,227,176,1) op 1
+glyph-min 11.75 (glyph p01 11.77, 1040 glyph px) · box: worst 11.75, p05 11.77, median 11.77 · 1440 system-dark .landing__cta 16px "Stress-test my plan" rgba(4,20,13,1) op 1
+glyph-min 11.75 (glyph p01 11.77, 1041 glyph px) · box: worst 11.75, p05 11.77, median 11.77 · 1280 system-dark .landing__cta 16px "Stress-test my plan" rgba(4,20,13,1) op 1
+glyph-min 11.75 (glyph p01 11.77, 1040 glyph px) · box: worst 11.75, p05 11.77, median 11.77 · 1000 system-dark .landing__cta 16px "Stress-test my plan" rgba(4,20,13,1) op 1
+glyph-min 11.75 (glyph p01 11.77, 1040 glyph px) · box: worst 11.75, p05 11.77, median 11.77 · 820 system-dark .landing__cta 16px "Stress-test my plan" rgba(4,20,13,1) op 1
+glyph-min 11.75 (glyph p01 11.77, 1043 glyph px) · box: worst 11.75, p05 11.77, median 11.77 · 390 system-dark .landing__cta 16px "Stress-test my plan" rgba(4,20,13,1) op 1
+glyph-min 11.75 (glyph p01 11.77, 1040 glyph px) · box: worst 11.75, p05 11.77, median 11.77 · 1440 explicit-dark (on light system) .landing__cta 16px "Stress-test my plan" rgba(4,20,13,1) op 1
+glyph-min 11.75 (glyph p01 11.77, 1043 glyph px) · box: worst 11.75, p05 11.77, median 11.77 · 390 explicit-dark (on light system) .landing__cta 16px "Stress-test my plan" rgba(4,20,13,1) op 1
+glyph-min 11.77 (glyph p01 11.77, 1040 glyph px) · box: worst 11.75, p05 11.77, median 11.77 · 360 system-dark .landing__cta 16px "Stress-test my plan" rgba(4,20,13,1) op 1
+glyph-min 11.77 (glyph p01 11.77, 89 glyph px) · box: worst 11.69, p05 11.78, median 11.80 · 1280 system-dark .landing__step-n 12px "01" rgba(91,227,176,1) op 1
+glyph-min 11.91 (glyph p01 11.99, 6801 glyph px) · box: worst 11.86, p05 11.99, median 12.14 · 820 system-dark .EM 60.2px "without ever selling it." rgba(91,227,176,1) op 1
+glyph-min 11.97 (glyph p01 11.97, 89 glyph px) · box: worst 11.97, p05 11.97, median 11.98 · 1440 system-dark .landing__step-n 12px "01" rgba(91,227,176,1) op 1
+glyph-min 11.97 (glyph p01 11.97, 89 glyph px) · box: worst 11.97, p05 11.97, median 11.98 · 1440 explicit-dark (on light system) .landing__step-n 12px "01" rgba(91,227,176,1) op 1
+glyph-min 12.06 (glyph p01 12.06, 102 glyph px) · box: worst 12.06, p05 12.06, median 12.07 · 1280 system-dark .landing__step-n 12px "02" rgba(91,227,176,1) op 1
+glyph-min 12.06 (glyph p01 12.08, 8442 glyph px) · box: worst 11.99, p05 12.14, median 12.14 · 1000 system-dark .EM 69.2px "without ever selling it." rgba(91,227,176,1) op 1
+glyph-min 12.14 (glyph p01 12.14, 10929 glyph px) · box: worst 12.14, p05 12.14, median 12.14 · 1440 system-dark .EM 80px "without ever selling it." rgba(91,227,176,1) op 1
+glyph-min 12.14 (glyph p01 12.14, 102 glyph px) · box: worst 12.14, p05 12.14, median 12.14 · 1440 system-dark .landing__step-n 12px "02" rgba(91,227,176,1) op 1
+glyph-min 12.14 (glyph p01 12.14, 110 glyph px) · box: worst 12.14, p05 12.14, median 12.14 · 1440 system-dark .landing__step-n 12px "03" rgba(91,227,176,1) op 1
+glyph-min 12.14 (glyph p01 12.14, 100 glyph px) · box: worst 12.14, p05 12.14, median 12.14 · 1440 system-dark .landing__step-n 12px "04" rgba(91,227,176,1) op 1
+glyph-min 12.14 (glyph p01 12.14, 10929 glyph px) · box: worst 12.14, p05 12.14, median 12.14 · 1280 system-dark .EM 80px "without ever selling it." rgba(91,227,176,1) op 1
+glyph-min 12.14 (glyph p01 12.14, 110 glyph px) · box: worst 12.14, p05 12.14, median 12.14 · 1280 system-dark .landing__step-n 12px "03" rgba(91,227,176,1) op 1
+glyph-min 12.14 (glyph p01 12.14, 100 glyph px) · box: worst 12.14, p05 12.14, median 12.14 · 1280 system-dark .landing__step-n 12px "04" rgba(91,227,176,1) op 1
+glyph-min 12.14 (glyph p01 12.14, 89 glyph px) · box: worst 12.14, p05 12.14, median 12.14 · 1000 system-dark .landing__step-n 12px "01" rgba(91,227,176,1) op 1
+glyph-min 12.14 (glyph p01 12.14, 102 glyph px) · box: worst 12.14, p05 12.14, median 12.14 · 1000 system-dark .landing__step-n 12px "02" rgba(91,227,176,1) op 1
+glyph-min 12.14 (glyph p01 12.14, 110 glyph px) · box: worst 12.14, p05 12.14, median 12.14 · 1000 system-dark .landing__step-n 12px "03" rgba(91,227,176,1) op 1
+glyph-min 12.14 (glyph p01 12.14, 100 glyph px) · box: worst 12.14, p05 12.14, median 12.14 · 1000 system-dark .landing__step-n 12px "04" rgba(91,227,176,1) op 1
+glyph-min 12.14 (glyph p01 12.14, 89 glyph px) · box: worst 12.14, p05 12.14, median 12.14 · 820 system-dark .landing__step-n 12px "01" rgba(91,227,176,1) op 1
+glyph-min 12.14 (glyph p01 12.14, 102 glyph px) · box: worst 12.14, p05 12.14, median 12.14 · 820 system-dark .landing__step-n 12px "02" rgba(91,227,176,1) op 1
+glyph-min 12.14 (glyph p01 12.14, 110 glyph px) · box: worst 12.14, p05 12.14, median 12.14 · 820 system-dark .landing__step-n 12px "03" rgba(91,227,176,1) op 1
+glyph-min 12.14 (glyph p01 12.14, 100 glyph px) · box: worst 12.14, p05 12.14, median 12.14 · 820 system-dark .landing__step-n 12px "04" rgba(91,227,176,1) op 1
+glyph-min 12.14 (glyph p01 12.14, 89 glyph px) · box: worst 12.14, p05 12.14, median 12.14 · 390 system-dark .landing__step-n 12px "01" rgba(91,227,176,1) op 1
+glyph-min 12.14 (glyph p01 12.14, 102 glyph px) · box: worst 12.14, p05 12.14, median 12.14 · 390 system-dark .landing__step-n 12px "02" rgba(91,227,176,1) op 1
+glyph-min 12.14 (glyph p01 12.14, 110 glyph px) · box: worst 12.14, p05 12.14, median 12.14 · 390 system-dark .landing__step-n 12px "03" rgba(91,227,176,1) op 1
+glyph-min 12.14 (glyph p01 12.14, 100 glyph px) · box: worst 12.14, p05 12.14, median 12.14 · 390 system-dark .landing__step-n 12px "04" rgba(91,227,176,1) op 1
+glyph-min 12.14 (glyph p01 12.14, 89 glyph px) · box: worst 12.14, p05 12.14, median 12.14 · 360 system-dark .landing__step-n 12px "01" rgba(91,227,176,1) op 1
+glyph-min 12.14 (glyph p01 12.14, 102 glyph px) · box: worst 12.14, p05 12.14, median 12.14 · 360 system-dark .landing__step-n 12px "02" rgba(91,227,176,1) op 1
+glyph-min 12.14 (glyph p01 12.14, 110 glyph px) · box: worst 12.14, p05 12.14, median 12.14 · 360 system-dark .landing__step-n 12px "03" rgba(91,227,176,1) op 1
+glyph-min 12.14 (glyph p01 12.14, 100 glyph px) · box: worst 12.14, p05 12.14, median 12.14 · 360 system-dark .landing__step-n 12px "04" rgba(91,227,176,1) op 1
+glyph-min 12.14 (glyph p01 12.14, 10929 glyph px) · box: worst 12.14, p05 12.14, median 12.14 · 1440 explicit-dark (on light system) .EM 80px "without ever selling it." rgba(91,227,176,1) op 1
+glyph-min 12.14 (glyph p01 12.14, 102 glyph px) · box: worst 12.14, p05 12.14, median 12.14 · 1440 explicit-dark (on light system) .landing__step-n 12px "02" rgba(91,227,176,1) op 1
+glyph-min 12.14 (glyph p01 12.14, 110 glyph px) · box: worst 12.14, p05 12.14, median 12.14 · 1440 explicit-dark (on light system) .landing__step-n 12px "03" rgba(91,227,176,1) op 1
+glyph-min 12.14 (glyph p01 12.14, 100 glyph px) · box: worst 12.14, p05 12.14, median 12.14 · 1440 explicit-dark (on light system) .landing__step-n 12px "04" rgba(91,227,176,1) op 1
+glyph-min 12.14 (glyph p01 12.14, 89 glyph px) · box: worst 12.14, p05 12.14, median 12.14 · 390 explicit-dark (on light system) .landing__step-n 12px "01" rgba(91,227,176,1) op 1
+glyph-min 12.14 (glyph p01 12.14, 102 glyph px) · box: worst 12.14, p05 12.14, median 12.14 · 390 explicit-dark (on light system) .landing__step-n 12px "02" rgba(91,227,176,1) op 1
+glyph-min 12.14 (glyph p01 12.14, 110 glyph px) · box: worst 12.14, p05 12.14, median 12.14 · 390 explicit-dark (on light system) .landing__step-n 12px "03" rgba(91,227,176,1) op 1
+glyph-min 12.14 (glyph p01 12.14, 100 glyph px) · box: worst 12.14, p05 12.14, median 12.14 · 390 explicit-dark (on light system) .landing__step-n 12px "04" rgba(91,227,176,1) op 1
+glyph-min 14.10 (glyph p01 14.21, 762 glyph px) · box: worst 14.10, p05 14.33, median 14.46 · 360 system-light .landing__open 14px "Open the planner" rgba(20,24,21,1) op 1
+glyph-min 14.21 (glyph p01 14.33, 762 glyph px) · box: worst 14.21, p05 14.36, median 14.59 · 1000 system-light .landing__open 14px "Open the planner" rgba(20,24,21,1) op 1
+glyph-min 14.21 (glyph p01 14.23, 762 glyph px) · box: worst 14.21, p05 14.33, median 14.59 · 390 system-light .landing__open 14px "Open the planner" rgba(20,24,21,1) op 1
+glyph-min 14.21 (glyph p01 14.23, 762 glyph px) · box: worst 14.21, p05 14.33, median 14.59 · 390 explicit-light (on dark system) .landing__open 14px "Open the planner" rgba(20,24,21,1) op 1
+glyph-min 14.23 (glyph p01 14.34, 762 glyph px) · box: worst 14.23, p05 14.45, median 14.63 · 1440 system-light .landing__open 14px "Open the planner" rgba(20,24,21,1) op 1
+glyph-min 14.23 (glyph p01 14.34, 762 glyph px) · box: worst 14.23, p05 14.45, median 14.63 · 1440 explicit-light (on dark system) .landing__open 14px "Open the planner" rgba(20,24,21,1) op 1
+glyph-min 14.33 (glyph p01 14.33, 762 glyph px) · box: worst 14.23, p05 14.45, median 14.63 · 1280 system-light .landing__open 14px "Open the planner" rgba(20,24,21,1) op 1
+glyph-min 14.33 (glyph p01 14.37, 606 glyph px) · box: worst 14.23, p05 14.46, median 14.63 · 360 system-light .wordmark__text 23px "eVelo" rgba(20,24,21,1) op 1
+glyph-min 14.37 (glyph p01 14.37, 762 glyph px) · box: worst 14.37, p05 14.49, median 14.75 · 820 system-light .landing__open 14px "Open the planner" rgba(20,24,21,1) op 1
+glyph-min 14.37 (glyph p01 14.49, 606 glyph px) · box: worst 14.37, p05 14.49, median 14.75 · 390 system-light .wordmark__text 23px "eVelo" rgba(20,24,21,1) op 1
+glyph-min 14.37 (glyph p01 14.49, 606 glyph px) · box: worst 14.37, p05 14.49, median 14.75 · 390 explicit-light (on dark system) .wordmark__text 23px "eVelo" rgba(20,24,21,1) op 1
+glyph-min 14.53 (glyph p01 14.66, 4040 glyph px) · box: worst 14.40, p05 14.79, median 14.95 · 390 system-light .landing__headline 44px "Live off your portfolio" rgba(20,24,21,1) op 1
+glyph-min 14.53 (glyph p01 14.66, 4040 glyph px) · box: worst 14.40, p05 14.79, median 14.95 · 390 explicit-light (on dark system) .landing__headline 44px "Live off your portfolio" rgba(20,24,21,1) op 1
+glyph-min 14.57 (glyph p01 14.82, 4195 glyph px) · box: worst 14.53, p05 14.82, median 15.09 · 360 system-light .landing__headline 44px "Live off your portfolio" rgba(20,24,21,1) op 1
+glyph-min 14.86 (glyph p01 15.02, 5842 glyph px) · box: worst 14.73, p05 15.13, median 15.46 · 820 system-light .landing__headline 60.2px "Live off your portfolio" rgba(20,24,21,1) op 1
+glyph-min 14.93 (glyph p01 14.93, 488 glyph px) · box: worst 14.91, p05 15.06, median 15.31 · 1440 system-light .landing__step-title 32px "Buy" rgba(20,24,21,1) op 1
+glyph-min 14.93 (glyph p01 14.93, 488 glyph px) · box: worst 14.91, p05 15.06, median 15.31 · 1440 explicit-light (on dark system) .landing__step-title 32px "Buy" rgba(20,24,21,1) op 1
+glyph-min 14.94 (glyph p01 15.08, 760 glyph px) · box: worst 14.94, p05 15.21, median 15.46 · 360 system-light .landing__cta 15px "Explore the Atlas" rgba(20,24,21,1) op 1
+glyph-min 14.99 (glyph p01 15.02, 606 glyph px) · box: worst 14.98, p05 15.12, median 15.30 · 820 system-light .wordmark__text 23px "eVelo" rgba(20,24,21,1) op 1
+glyph-min 15.16 (glyph p01 15.33, 7756 glyph px) · box: worst 15.02, p05 15.33, median 15.60 · 1000 system-light .landing__headline 69.2px "Live off your portfolio" rgba(20,24,21,1) op 1
+glyph-min 15.19 (glyph p01 15.33, 10161 glyph px) · box: worst 15.19, p05 15.33, median 15.60 · 1440 system-light .landing__headline 80px "Live off your portfolio" rgba(20,24,21,1) op 1
+glyph-min 15.19 (glyph p01 15.33, 807 glyph px) · box: worst 15.19, p05 15.33, median 15.60 · 1440 system-light .landing__step-title 32px "Borrow" rgba(20,24,21,1) op 1
+glyph-min 15.19 (glyph p01 15.33, 1500 glyph px) · box: worst 15.19, p05 15.33, median 15.60 · 1440 system-light .landing__step-title 32px "Live anywhere" rgba(20,24,21,1) op 1
+glyph-min 15.19 (glyph p01 15.33, 10161 glyph px) · box: worst 15.19, p05 15.33, median 15.60 · 1280 system-light .landing__headline 80px "Live off your portfolio" rgba(20,24,21,1) op 1
+glyph-min 15.19 (glyph p01 15.33, 760 glyph px) · box: worst 15.19, p05 15.46, median 15.60 · 1280 system-light .landing__cta 15px "Explore the Atlas" rgba(20,24,21,1) op 1
+glyph-min 15.19 (glyph p01 15.33, 807 glyph px) · box: worst 15.19, p05 15.33, median 15.60 · 1280 system-light .landing__step-title 32px "Borrow" rgba(20,24,21,1) op 1
+glyph-min 15.19 (glyph p01 15.19, 606 glyph px) · box: worst 15.19, p05 15.33, median 15.56 · 1000 system-light .wordmark__text 23px "eVelo" rgba(20,24,21,1) op 1
+glyph-min 15.19 (glyph p01 15.33, 760 glyph px) · box: worst 15.19, p05 15.33, median 15.60 · 1000 system-light .landing__cta 15px "Explore the Atlas" rgba(20,24,21,1) op 1
+glyph-min 15.19 (glyph p01 15.33, 488 glyph px) · box: worst 15.19, p05 15.33, median 15.60 · 1000 system-light .landing__step-title 32px "Buy" rgba(20,24,21,1) op 1
+glyph-min 15.19 (glyph p01 15.33, 807 glyph px) · box: worst 15.19, p05 15.33, median 15.60 · 1000 system-light .landing__step-title 32px "Borrow" rgba(20,24,21,1) op 1
+glyph-min 15.19 (glyph p01 15.33, 1500 glyph px) · box: worst 15.19, p05 15.33, median 15.60 · 1000 system-light .landing__step-title 32px "Live anywhere" rgba(20,24,21,1) op 1
+glyph-min 15.19 (glyph p01 15.33, 760 glyph px) · box: worst 15.19, p05 15.33, median 15.60 · 820 system-light .landing__cta 15px "Explore the Atlas" rgba(20,24,21,1) op 1
+glyph-min 15.19 (glyph p01 15.33, 401 glyph px) · box: worst 15.19, p05 15.33, median 15.60 · 820 system-light .landing__step-title 32px "Die" rgba(20,24,21,1) op 1
+glyph-min 15.19 (glyph p01 15.33, 760 glyph px) · box: worst 15.19, p05 15.33, median 15.60 · 390 system-light .landing__cta 15px "Explore the Atlas" rgba(20,24,21,1) op 1
+glyph-min 15.19 (glyph p01 15.33, 10161 glyph px) · box: worst 15.19, p05 15.33, median 15.60 · 1440 explicit-light (on dark system) .landing__headline 80px "Live off your portfolio" rgba(20,24,21,1) op 1
+glyph-min 15.19 (glyph p01 15.33, 807 glyph px) · box: worst 15.19, p05 15.33, median 15.60 · 1440 explicit-light (on dark system) .landing__step-title 32px "Borrow" rgba(20,24,21,1) op 1
+glyph-min 15.19 (glyph p01 15.33, 1500 glyph px) · box: worst 15.19, p05 15.33, median 15.60 · 1440 explicit-light (on dark system) .landing__step-title 32px "Live anywhere" rgba(20,24,21,1) op 1
+glyph-min 15.19 (glyph p01 15.33, 760 glyph px) · box: worst 15.19, p05 15.33, median 15.60 · 390 explicit-light (on dark system) .landing__cta 15px "Explore the Atlas" rgba(20,24,21,1) op 1
+glyph-min 15.33 (glyph p01 15.33, 606 glyph px) · box: worst 15.19, p05 15.33, median 15.60 · 1440 system-light .wordmark__text 23px "eVelo" rgba(20,24,21,1) op 1
+glyph-min 15.33 (glyph p01 15.33, 760 glyph px) · box: worst 15.19, p05 15.33, median 15.60 · 1440 system-light .landing__cta 15px "Explore the Atlas" rgba(20,24,21,1) op 1
+glyph-min 15.33 (glyph p01 15.33, 401 glyph px) · box: worst 15.33, p05 15.33, median 15.60 · 1440 system-light .landing__step-title 32px "Die" rgba(20,24,21,1) op 1
+glyph-min 15.33 (glyph p01 15.33, 606 glyph px) · box: worst 15.19, p05 15.33, median 15.60 · 1280 system-light .wordmark__text 23px "eVelo" rgba(20,24,21,1) op 1
+glyph-min 15.33 (glyph p01 15.33, 488 glyph px) · box: worst 15.19, p05 15.33, median 15.60 · 1280 system-light .landing__step-title 32px "Buy" rgba(20,24,21,1) op 1
+glyph-min 15.33 (glyph p01 15.33, 1500 glyph px) · box: worst 15.19, p05 15.33, median 15.60 · 1280 system-light .landing__step-title 32px "Live anywhere" rgba(20,24,21,1) op 1
+glyph-min 15.33 (glyph p01 15.33, 401 glyph px) · box: worst 15.19, p05 15.46, median 15.60 · 1280 system-light .landing__step-title 32px "Die" rgba(20,24,21,1) op 1
+glyph-min 15.33 (glyph p01 15.33, 401 glyph px) · box: worst 15.19, p05 15.46, median 15.60 · 1000 system-light .landing__step-title 32px "Die" rgba(20,24,21,1) op 1
+glyph-min 15.33 (glyph p01 15.33, 488 glyph px) · box: worst 15.19, p05 15.33, median 15.60 · 820 system-light .landing__step-title 32px "Buy" rgba(20,24,21,1) op 1
+glyph-min 15.33 (glyph p01 15.33, 807 glyph px) · box: worst 15.19, p05 15.33, median 15.60 · 820 system-light .landing__step-title 32px "Borrow" rgba(20,24,21,1) op 1
+glyph-min 15.33 (glyph p01 15.33, 1500 glyph px) · box: worst 15.19, p05 15.33, median 15.60 · 820 system-light .landing__step-title 32px "Live anywhere" rgba(20,24,21,1) op 1
+glyph-min 15.33 (glyph p01 15.33, 606 glyph px) · box: worst 15.19, p05 15.33, median 15.60 · 1440 explicit-light (on dark system) .wordmark__text 23px "eVelo" rgba(20,24,21,1) op 1
+glyph-min 15.33 (glyph p01 15.33, 760 glyph px) · box: worst 15.19, p05 15.33, median 15.60 · 1440 explicit-light (on dark system) .landing__cta 15px "Explore the Atlas" rgba(20,24,21,1) op 1
+glyph-min 15.33 (glyph p01 15.33, 401 glyph px) · box: worst 15.33, p05 15.33, median 15.60 · 1440 explicit-light (on dark system) .landing__step-title 32px "Die" rgba(20,24,21,1) op 1
+glyph-min 15.58 (glyph p01 15.59, 783 glyph px) · box: worst 15.58, p05 15.71, median 15.85 · 390 system-dark .landing__open 14px "Open the planner" rgba(236,241,238,1) op 1
+glyph-min 15.58 (glyph p01 15.58, 783 glyph px) · box: worst 15.58, p05 15.59, median 15.74 · 360 system-dark .landing__open 14px "Open the planner" rgba(236,241,238,1) op 1
+glyph-min 15.58 (glyph p01 15.59, 783 glyph px) · box: worst 15.58, p05 15.71, median 15.85 · 390 explicit-dark (on light system) .landing__open 14px "Open the planner" rgba(236,241,238,1) op 1
+glyph-min 15.70 (glyph p01 15.71, 783 glyph px) · box: worst 15.58, p05 15.73, median 15.86 · 1000 system-dark .landing__open 14px "Open the planner" rgba(236,241,238,1) op 1
+glyph-min 15.73 (glyph p01 15.73, 783 glyph px) · box: worst 15.71, p05 15.85, median 15.97 · 1440 system-dark .landing__open 14px "Open the planner" rgba(236,241,238,1) op 1
+glyph-min 15.73 (glyph p01 15.73, 783 glyph px) · box: worst 15.70, p05 15.85, median 15.97 · 1280 system-dark .landing__open 14px "Open the planner" rgba(236,241,238,1) op 1
+glyph-min 15.73 (glyph p01 15.73, 783 glyph px) · box: worst 15.71, p05 15.85, median 15.97 · 1440 explicit-dark (on light system) .landing__open 14px "Open the planner" rgba(236,241,238,1) op 1
+glyph-min 15.74 (glyph p01 15.85, 629 glyph px) · box: worst 15.73, p05 15.86, median 15.97 · 360 system-dark .wordmark__text 23px "eVelo" rgba(236,241,238,1) op 1
+glyph-min 15.85 (glyph p01 15.86, 783 glyph px) · box: worst 15.85, p05 15.87, median 16.00 · 820 system-dark .landing__open 14px "Open the planner" rgba(236,241,238,1) op 1
+glyph-min 15.85 (glyph p01 15.86, 629 glyph px) · box: worst 15.85, p05 15.87, median 16.09 · 390 system-dark .wordmark__text 23px "eVelo" rgba(236,241,238,1) op 1
+glyph-min 15.85 (glyph p01 15.86, 629 glyph px) · box: worst 15.85, p05 15.87, median 16.09 · 390 explicit-dark (on light system) .wordmark__text 23px "eVelo" rgba(236,241,238,1) op 1
+glyph-min 16.03 (glyph p01 16.03, 488 glyph px) · box: worst 16.03, p05 16.03, median 16.03 · 390 system-light .landing__step-title 32px "Buy" rgba(20,24,21,1) op 1
+glyph-min 16.03 (glyph p01 16.03, 807 glyph px) · box: worst 16.03, p05 16.03, median 16.03 · 390 system-light .landing__step-title 32px "Borrow" rgba(20,24,21,1) op 1
+glyph-min 16.03 (glyph p01 16.03, 1500 glyph px) · box: worst 16.03, p05 16.03, median 16.03 · 390 system-light .landing__step-title 32px "Live anywhere" rgba(20,24,21,1) op 1
+glyph-min 16.03 (glyph p01 16.03, 401 glyph px) · box: worst 16.03, p05 16.03, median 16.03 · 390 system-light .landing__step-title 32px "Die" rgba(20,24,21,1) op 1
+glyph-min 16.03 (glyph p01 16.03, 488 glyph px) · box: worst 16.03, p05 16.03, median 16.03 · 360 system-light .landing__step-title 32px "Buy" rgba(20,24,21,1) op 1
+glyph-min 16.03 (glyph p01 16.03, 807 glyph px) · box: worst 16.03, p05 16.03, median 16.03 · 360 system-light .landing__step-title 32px "Borrow" rgba(20,24,21,1) op 1
+glyph-min 16.03 (glyph p01 16.03, 1500 glyph px) · box: worst 16.03, p05 16.03, median 16.03 · 360 system-light .landing__step-title 32px "Live anywhere" rgba(20,24,21,1) op 1
+glyph-min 16.03 (glyph p01 16.03, 401 glyph px) · box: worst 16.03, p05 16.03, median 16.03 · 360 system-light .landing__step-title 32px "Die" rgba(20,24,21,1) op 1
+glyph-min 16.03 (glyph p01 16.03, 488 glyph px) · box: worst 16.03, p05 16.03, median 16.03 · 390 explicit-light (on dark system) .landing__step-title 32px "Buy" rgba(20,24,21,1) op 1
+glyph-min 16.03 (glyph p01 16.03, 807 glyph px) · box: worst 16.03, p05 16.03, median 16.03 · 390 explicit-light (on dark system) .landing__step-title 32px "Borrow" rgba(20,24,21,1) op 1
+glyph-min 16.03 (glyph p01 16.03, 1500 glyph px) · box: worst 16.03, p05 16.03, median 16.03 · 390 explicit-light (on dark system) .landing__step-title 32px "Live anywhere" rgba(20,24,21,1) op 1
+glyph-min 16.03 (glyph p01 16.03, 401 glyph px) · box: worst 16.03, p05 16.03, median 16.03 · 390 explicit-light (on dark system) .landing__step-title 32px "Die" rgba(20,24,21,1) op 1
+glyph-min 16.11 (glyph p01 16.22, 4154 glyph px) · box: worst 16.11, p05 16.22, median 16.46 · 390 system-dark .landing__headline 44px "Live off your portfolio" rgba(236,241,238,1) op 1
+glyph-min 16.11 (glyph p01 16.22, 4154 glyph px) · box: worst 16.11, p05 16.22, median 16.46 · 390 explicit-dark (on light system) .landing__headline 44px "Live off your portfolio" rgba(236,241,238,1) op 1
+glyph-min 16.22 (glyph p01 16.34, 4315 glyph px) · box: worst 16.12, p05 16.34, median 16.57 · 360 system-dark .landing__headline 44px "Live off your portfolio" rgba(236,241,238,1) op 1
+glyph-min 16.58 (glyph p01 16.67, 5882 glyph px) · box: worst 16.46, p05 16.67, median 16.98 · 820 system-dark .landing__headline 60.2px "Live off your portfolio" rgba(236,241,238,1) op 1
+glyph-min 16.67 (glyph p01 16.70, 629 glyph px) · box: worst 16.67, p05 16.78, median 16.79 · 820 system-dark .wordmark__text 23px "eVelo" rgba(236,241,238,1) op 1
+glyph-min 16.75 (glyph p01 16.75, 504 glyph px) · box: worst 16.73, p05 16.75, median 16.85 · 1440 system-dark .landing__step-title 32px "Buy" rgba(236,241,238,1) op 1
+glyph-min 16.75 (glyph p01 16.75, 504 glyph px) · box: worst 16.73, p05 16.75, median 16.85 · 1440 explicit-dark (on light system) .landing__step-title 32px "Buy" rgba(236,241,238,1) op 1
+glyph-min 16.87 (glyph p01 16.87, 801 glyph px) · box: worst 16.87, p05 16.87, median 16.98 · 360 system-dark .landing__cta 15px "Explore the Atlas" rgba(236,241,238,1) op 1
+glyph-min 16.98 (glyph p01 16.98, 629 glyph px) · box: worst 16.89, p05 16.98, median 17.01 · 1000 system-dark .wordmark__text 23px "eVelo" rgba(236,241,238,1) op 1
+glyph-min 16.98 (glyph p01 16.98, 7791 glyph px) · box: worst 16.88, p05 17.00, median 17.09 · 1000 system-dark .landing__headline 69.2px "Live off your portfolio" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 629 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 1440 system-dark .wordmark__text 23px "eVelo" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 10220 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 1440 system-dark .landing__headline 80px "Live off your portfolio" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 801 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 1440 system-dark .landing__cta 15px "Explore the Atlas" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 866 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 1440 system-dark .landing__step-title 32px "Borrow" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 1616 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 1440 system-dark .landing__step-title 32px "Live anywhere" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 421 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 1440 system-dark .landing__step-title 32px "Die" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 629 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 1280 system-dark .wordmark__text 23px "eVelo" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 10219 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 1280 system-dark .landing__headline 80px "Live off your portfolio" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 801 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 1280 system-dark .landing__cta 15px "Explore the Atlas" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 504 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 1280 system-dark .landing__step-title 32px "Buy" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 866 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 1280 system-dark .landing__step-title 32px "Borrow" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 1616 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 1280 system-dark .landing__step-title 32px "Live anywhere" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 421 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 1280 system-dark .landing__step-title 32px "Die" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 801 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 1000 system-dark .landing__cta 15px "Explore the Atlas" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 504 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 1000 system-dark .landing__step-title 32px "Buy" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 866 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 1000 system-dark .landing__step-title 32px "Borrow" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 1616 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 1000 system-dark .landing__step-title 32px "Live anywhere" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 421 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 1000 system-dark .landing__step-title 32px "Die" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 801 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 820 system-dark .landing__cta 15px "Explore the Atlas" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 504 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 820 system-dark .landing__step-title 32px "Buy" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 866 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 820 system-dark .landing__step-title 32px "Borrow" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 1616 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 820 system-dark .landing__step-title 32px "Live anywhere" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 421 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 820 system-dark .landing__step-title 32px "Die" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 801 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 390 system-dark .landing__cta 15px "Explore the Atlas" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 504 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 390 system-dark .landing__step-title 32px "Buy" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 866 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 390 system-dark .landing__step-title 32px "Borrow" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 1616 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 390 system-dark .landing__step-title 32px "Live anywhere" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 421 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 390 system-dark .landing__step-title 32px "Die" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 504 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 360 system-dark .landing__step-title 32px "Buy" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 866 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 360 system-dark .landing__step-title 32px "Borrow" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 1616 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 360 system-dark .landing__step-title 32px "Live anywhere" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 421 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 360 system-dark .landing__step-title 32px "Die" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 629 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 1440 explicit-dark (on light system) .wordmark__text 23px "eVelo" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 10220 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 1440 explicit-dark (on light system) .landing__headline 80px "Live off your portfolio" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 801 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 1440 explicit-dark (on light system) .landing__cta 15px "Explore the Atlas" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 866 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 1440 explicit-dark (on light system) .landing__step-title 32px "Borrow" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 1616 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 1440 explicit-dark (on light system) .landing__step-title 32px "Live anywhere" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 421 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 1440 explicit-dark (on light system) .landing__step-title 32px "Die" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 801 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 390 explicit-dark (on light system) .landing__cta 15px "Explore the Atlas" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 504 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 390 explicit-dark (on light system) .landing__step-title 32px "Buy" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 866 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 390 explicit-dark (on light system) .landing__step-title 32px "Borrow" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 1616 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 390 explicit-dark (on light system) .landing__step-title 32px "Live anywhere" rgba(236,241,238,1) op 1
+glyph-min 17.09 (glyph p01 17.09, 421 glyph px) · box: worst 17.09, p05 17.09, median 17.09 · 390 explicit-dark (on light system) .landing__step-title 32px "Die" rgba(236,241,238,1) op 1

@@ -1,0 +1,553 @@
+eVelo v2 · Stage 2 (study G landing) · 2026-11-07T18:45:32.953Z · http://localhost:4191/
+
+[check 1] content as drawn @1440 light
+  OK   wordmark "eVelo" → #home
+  OK   nav texts ["How it works","Atlas","Method"]
+  OK   nav hrefs #how #atlas #method
+  info nav visible: true,true,true (expected true)
+  OK   nav visible > 900px
+  OK   theme toggle present: ["System theme","Light theme","Dark theme"]
+  OK   "Open the planner" → #plan
+  OK   eyebrow "Buy · Borrow · Die — anywhere in the world"
+  OK   h1 "Live off your portfolio without ever selling it." em "without ever selling it."
+  OK   body paragraph exact (257 chars)
+  OK   CTA1 "Stress-test my plan" → #plan
+  OK   CTA2 "Explore the Atlas" → #atlas
+  OK   fine "Free · No sign-up · Runs in your browser, nothing leaves your device"
+  OK   card head "One plan · every city" / "$2.5M · $80k/yr in Austin"
+  OK   readout "Lisbon, Portugal" / "88% of futures hold" / "vs 63% staying in Austin. The same life costs about 38% less, so you borrow less."
+  OK   foot ["Breaks Holds","Illustrative numbers"]
+  OK   steps ["Buy","Borrow","Live anywhere","Die"] with blurbs exact
+  OK   steps section id how
+  OK   app top bar / tab bar hidden on landing
+
+[check 1] content as drawn @1280 light
+  OK   wordmark "eVelo" → #home
+  OK   nav texts ["How it works","Atlas","Method"]
+  OK   nav hrefs #how #atlas #method
+  info nav visible: true,true,true (expected true)
+  OK   nav visible > 900px
+  OK   theme toggle present: ["System theme","Light theme","Dark theme"]
+  OK   "Open the planner" → #plan
+  OK   eyebrow "Buy · Borrow · Die — anywhere in the world"
+  OK   h1 "Live off your portfolio without ever selling it." em "without ever selling it."
+  OK   body paragraph exact (257 chars)
+  OK   CTA1 "Stress-test my plan" → #plan
+  OK   CTA2 "Explore the Atlas" → #atlas
+  OK   fine "Free · No sign-up · Runs in your browser, nothing leaves your device"
+  OK   card head "One plan · every city" / "$2.5M · $80k/yr in Austin"
+  OK   readout "Lisbon, Portugal" / "88% of futures hold" / "vs 63% staying in Austin. The same life costs about 38% less, so you borrow less."
+  OK   foot ["Breaks Holds","Illustrative numbers"]
+  OK   steps ["Buy","Borrow","Live anywhere","Die"] with blurbs exact
+  OK   steps section id how
+  OK   app top bar / tab bar hidden on landing
+
+[check 1] content as drawn @1000 light
+  OK   wordmark "eVelo" → #home
+  OK   nav texts ["How it works","Atlas","Method"]
+  OK   nav hrefs #how #atlas #method
+  info nav visible: true,true,true (expected true)
+  OK   nav visible > 900px
+  OK   theme toggle present: ["System theme — switch to light theme"]
+  OK   "Open the planner" → #plan
+  OK   eyebrow "Buy · Borrow · Die — anywhere in the world"
+  OK   h1 "Live off your portfolio without ever selling it." em "without ever selling it."
+  OK   body paragraph exact (257 chars)
+  OK   CTA1 "Stress-test my plan" → #plan
+  OK   CTA2 "Explore the Atlas" → #atlas
+  OK   fine "Free · No sign-up · Runs in your browser, nothing leaves your device"
+  OK   card head "One plan · every city" / "$2.5M · $80k/yr in Austin"
+  OK   readout "Lisbon, Portugal" / "88% of futures hold" / "vs 63% staying in Austin. The same life costs about 38% less, so you borrow less."
+  OK   foot ["Breaks Holds","Illustrative numbers"]
+  OK   steps ["Buy","Borrow","Live anywhere","Die"] with blurbs exact
+  OK   steps section id how
+  OK   app top bar / tab bar hidden on landing
+
+[check 1] content as drawn @820 light
+  OK   wordmark "eVelo" → #home
+  OK   nav texts ["How it works","Atlas","Method"]
+  OK   nav hrefs #how #atlas #method
+  info nav visible: false,false,false (expected false)
+  OK   nav folded away ≤ 900px
+  OK   theme toggle present: ["System theme — switch to light theme"]
+  OK   "Open the planner" → #plan
+  OK   eyebrow "Buy · Borrow · Die — anywhere in the world"
+  OK   h1 "Live off your portfolio without ever selling it." em "without ever selling it."
+  OK   body paragraph exact (257 chars)
+  OK   CTA1 "Stress-test my plan" → #plan
+  OK   CTA2 "Explore the Atlas" → #atlas
+  OK   fine "Free · No sign-up · Runs in your browser, nothing leaves your device"
+  OK   card head "One plan · every city" / "$2.5M · $80k/yr in Austin"
+  OK   readout "Lisbon, Portugal" / "88% of futures hold" / "vs 63% staying in Austin. The same life costs about 38% less, so you borrow less."
+  OK   foot ["Breaks Holds","Illustrative numbers"]
+  OK   steps ["Buy","Borrow","Live anywhere","Die"] with blurbs exact
+  OK   steps section id how
+  OK   app top bar / tab bar hidden on landing
+
+[check 1] content as drawn @390 light
+  OK   wordmark "eVelo" → #home
+  OK   nav texts ["How it works","Atlas","Method"]
+  OK   nav hrefs #how #atlas #method
+  info nav visible: false,false,false (expected false)
+  OK   nav folded away ≤ 900px
+  OK   theme toggle present: ["System theme — switch to light theme"]
+  OK   "Open the planner" → #plan
+  OK   eyebrow "Buy · Borrow · Die — anywhere in the world"
+  OK   h1 "Live off your portfolio without ever selling it." em "without ever selling it."
+  OK   body paragraph exact (257 chars)
+  OK   CTA1 "Stress-test my plan" → #plan
+  OK   CTA2 "Explore the Atlas" → #atlas
+  OK   fine "Free · No sign-up · Runs in your browser, nothing leaves your device"
+  OK   card head "One plan · every city" / "$2.5M · $80k/yr in Austin"
+  OK   readout "Lisbon, Portugal" / "88% of futures hold" / "vs 63% staying in Austin. The same life costs about 38% less, so you borrow less."
+  OK   foot ["Breaks Holds","Illustrative numbers"]
+  OK   steps ["Buy","Borrow","Live anywhere","Die"] with blurbs exact
+  OK   steps section id how
+  OK   app top bar / tab bar hidden on landing
+
+[check 1] content as drawn @360 light
+  OK   wordmark "eVelo" → #home
+  OK   nav texts ["How it works","Atlas","Method"]
+  OK   nav hrefs #how #atlas #method
+  info nav visible: false,false,false (expected false)
+  OK   nav folded away ≤ 900px
+  OK   theme toggle present: ["System theme — switch to light theme"]
+  OK   "Open the planner" → #plan
+  OK   eyebrow "Buy · Borrow · Die — anywhere in the world"
+  OK   h1 "Live off your portfolio without ever selling it." em "without ever selling it."
+  OK   body paragraph exact (257 chars)
+  OK   CTA1 "Stress-test my plan" → #plan
+  OK   CTA2 "Explore the Atlas" → #atlas
+  OK   fine "Free · No sign-up · Runs in your browser, nothing leaves your device"
+  OK   card head "One plan · every city" / "$2.5M · $80k/yr in Austin"
+  OK   readout "Lisbon, Portugal" / "88% of futures hold" / "vs 63% staying in Austin. The same life costs about 38% less, so you borrow less."
+  OK   foot ["Breaks Holds","Illustrative numbers"]
+  OK   steps ["Buy","Borrow","Live anywhere","Die"] with blurbs exact
+  OK   steps section id how
+  OK   app top bar / tab bar hidden on landing
+
+[check 1] CTA / header link destinations (click)
+  OK   @1440 click .landing__cta--primary → hash #plan, landing gone=true
+  OK   @1440 click .landing__cta--ghost → hash #atlas, landing gone=true
+  OK   @1440 click .landing__open → hash #plan, landing gone=true
+  OK   @390 click .landing__cta--primary → hash #plan, landing gone=true
+  OK   @390 click .landing__cta--ghost → hash #atlas, landing gone=true
+  OK   wordmark click → #home, landing shown=true
+
+[check 2] map card @1440 light
+  OK   dots: 33
+  OK   33 dots at board positions (x=(lon+180)*4, y=(72-lat)*4), r 8 / Lisbon 11 
+  OK   dot fills = var(--ramp-N) for the board's band (80/65/45/35) 
+  info ramp tokens (light): rgb(210, 69, 47) | rgb(200, 102, 43) | rgb(168, 122, 31) | rgb(61, 151, 118) | rgb(11, 122, 86)
+  info dots whose fill differs from the app's interpolated outcomeColor(pct): 6
+    Zürich 41%: landing rgb(200, 102, 43) vs app outcomeColor oklch(0.608555 0.153389 43.8196)
+    London 52%: landing rgb(168, 122, 31) vs app outcomeColor oklch(0.613583 0.130599 62.7864)
+    Tokyo 72%: landing rgb(61, 151, 118) vs app outcomeColor oklch(0.566718 0.103474 164.895)
+    Sydney 55%: landing rgb(168, 122, 31) vs app outcomeColor oklch(0.612391 0.125169 69.002)
+    New York 38%: landing rgb(200, 102, 43) vs app outcomeColor oklch(0.602703 0.160962 40.4836)
+    Miami 55%: landing rgb(168, 122, 31) vs app outcomeColor oklch(0.612391 0.125169 69.002)
+  OK   visible labels ["Austin 63%","Bangkok 93%","Lisbon 88%","Medellín 92%","New York 38%","Tbilisi 92%"]
+  info label size: 24 units × 0.476 = 11.4,11.4,11.4,11.4,11.4,11.4 px
+  OK   label % fills = var(--ramp-N-text) 
+  OK   labels don't overlap each other 
+  OK   labels inside the map's width 
+  info label boxes touching dot boxes: none
+  OK   Lisbon ring at (683.6, 133.2) stroke rgb(11, 122, 86) (= --holds rgb(11, 122, 86))
+  OK   fan paths present: band1 d=1435 w=293, band2 d=1428 w=293, median d=719 w=293, loan d=719 w=293, margin d=719 w=293
+  OK   margin-call line dashed (8px, 8px, stroke rgb(210, 69, 47))
+  OK   bands filled (color(srgb 0.0431373 0.478431 0.337255 / 0.1) / color(srgb 0.0431373 0.478431 0.337255 / 0.18)), median stroke rgb(11, 122, 86), loan rgb(85, 101, 116)
+  OK   key "Breaks Holds | Illustrative numbers", ramp bar 120px: linear-gradient(90deg, rgb(210, 69, 47), rgb(200, 102, 43), rgb(168, 122, 31) 64%, rgb(61, 151, 118) 65%, rgb(11, 122, 86))
+
+[check 2] map card @1440 dark
+  OK   dots: 33
+  OK   33 dots at board positions (x=(lon+180)*4, y=(72-lat)*4), r 8 / Lisbon 11 
+  OK   dot fills = var(--ramp-N) for the board's band (80/65/45/35) 
+  info ramp tokens (dark): rgb(255, 107, 90) | rgb(245, 146, 94) | rgb(227, 178, 98) | rgb(158, 216, 190) | rgb(91, 227, 176)
+  info dots whose fill differs from the app's interpolated outcomeColor(pct): 6
+    Zürich 41%: landing rgb(245, 146, 94) vs app outcomeColor oklch(0.74178 0.149893 42.5821)
+    London 52%: landing rgb(227, 178, 98) vs app outcomeColor oklch(0.771611 0.126258 61.8279)
+    Tokyo 72%: landing rgb(158, 216, 190) vs app outcomeColor oklch(0.83158 0.102667 165.231)
+    Sydney 55%: landing rgb(227, 178, 98) vs app outcomeColor oklch(0.779238 0.121446 67.9604)
+    New York 38%: landing rgb(245, 146, 94) vs app outcomeColor oklch(0.732774 0.15918 38.8922)
+    Miami 55%: landing rgb(227, 178, 98) vs app outcomeColor oklch(0.779238 0.121446 67.9604)
+  OK   visible labels ["Austin 63%","Bangkok 93%","Lisbon 88%","Medellín 92%","New York 38%","Tbilisi 92%"]
+  info label size: 24 units × 0.476 = 11.4,11.4,11.4,11.4,11.4,11.4 px
+  OK   label % fills = var(--ramp-N-text) 
+  OK   labels don't overlap each other 
+  OK   labels inside the map's width 
+  info label boxes touching dot boxes: none
+  OK   Lisbon ring at (683.6, 133.2) stroke rgb(91, 227, 176) (= --holds rgb(91, 227, 176))
+  OK   fan paths present: band1 d=1435 w=293, band2 d=1428 w=293, median d=719 w=293, loan d=719 w=293, margin d=719 w=293
+  OK   margin-call line dashed (8px, 8px, stroke rgb(255, 107, 90))
+  OK   bands filled (color(srgb 0.356863 0.890196 0.690196 / 0.1) / color(srgb 0.356863 0.890196 0.690196 / 0.18)), median stroke rgb(91, 227, 176), loan rgb(138, 154, 168)
+  OK   key "Breaks Holds | Illustrative numbers", ramp bar 120px: linear-gradient(90deg, rgb(255, 107, 90), rgb(245, 146, 94), rgb(227, 178, 98) 64%, rgb(158, 216, 190) 65%, rgb(91, 227, 176))
+
+[check 2] map card @1280 light
+  OK   dots: 33
+  OK   33 dots at board positions (x=(lon+180)*4, y=(72-lat)*4), r 8 / Lisbon 11 
+  OK   dot fills = var(--ramp-N) for the board's band (80/65/45/35) 
+  info ramp tokens (light): rgb(210, 69, 47) | rgb(200, 102, 43) | rgb(168, 122, 31) | rgb(61, 151, 118) | rgb(11, 122, 86)
+  info dots whose fill differs from the app's interpolated outcomeColor(pct): 6
+    Zürich 41%: landing rgb(200, 102, 43) vs app outcomeColor oklch(0.608555 0.153389 43.8196)
+    London 52%: landing rgb(168, 122, 31) vs app outcomeColor oklch(0.613583 0.130599 62.7864)
+    Tokyo 72%: landing rgb(61, 151, 118) vs app outcomeColor oklch(0.566718 0.103474 164.895)
+    Sydney 55%: landing rgb(168, 122, 31) vs app outcomeColor oklch(0.612391 0.125169 69.002)
+    New York 38%: landing rgb(200, 102, 43) vs app outcomeColor oklch(0.602703 0.160962 40.4836)
+    Miami 55%: landing rgb(168, 122, 31) vs app outcomeColor oklch(0.612391 0.125169 69.002)
+  OK   visible labels ["Austin 63%","Bangkok 93%","Lisbon 88%","Medellín 92%","New York 38%","Tbilisi 92%"]
+  info label size: 24 units × 0.476 = 11.4,11.4,11.4,11.4,11.4,11.4 px
+  OK   label % fills = var(--ramp-N-text) 
+  OK   labels don't overlap each other 
+  OK   labels inside the map's width 
+  info label boxes touching dot boxes: none
+  OK   Lisbon ring at (683.6, 133.2) stroke rgb(11, 122, 86) (= --holds rgb(11, 122, 86))
+  OK   fan paths present: band1 d=1435 w=293, band2 d=1428 w=293, median d=719 w=293, loan d=719 w=293, margin d=719 w=293
+  OK   margin-call line dashed (8px, 8px, stroke rgb(210, 69, 47))
+  OK   bands filled (color(srgb 0.0431373 0.478431 0.337255 / 0.1) / color(srgb 0.0431373 0.478431 0.337255 / 0.18)), median stroke rgb(11, 122, 86), loan rgb(85, 101, 116)
+  OK   key "Breaks Holds | Illustrative numbers", ramp bar 120px: linear-gradient(90deg, rgb(210, 69, 47), rgb(200, 102, 43), rgb(168, 122, 31) 64%, rgb(61, 151, 118) 65%, rgb(11, 122, 86))
+
+[check 2] map card @1280 dark
+  OK   dots: 33
+  OK   33 dots at board positions (x=(lon+180)*4, y=(72-lat)*4), r 8 / Lisbon 11 
+  OK   dot fills = var(--ramp-N) for the board's band (80/65/45/35) 
+  info ramp tokens (dark): rgb(255, 107, 90) | rgb(245, 146, 94) | rgb(227, 178, 98) | rgb(158, 216, 190) | rgb(91, 227, 176)
+  info dots whose fill differs from the app's interpolated outcomeColor(pct): 6
+    Zürich 41%: landing rgb(245, 146, 94) vs app outcomeColor oklch(0.74178 0.149893 42.5821)
+    London 52%: landing rgb(227, 178, 98) vs app outcomeColor oklch(0.771611 0.126258 61.8279)
+    Tokyo 72%: landing rgb(158, 216, 190) vs app outcomeColor oklch(0.83158 0.102667 165.231)
+    Sydney 55%: landing rgb(227, 178, 98) vs app outcomeColor oklch(0.779238 0.121446 67.9604)
+    New York 38%: landing rgb(245, 146, 94) vs app outcomeColor oklch(0.732774 0.15918 38.8922)
+    Miami 55%: landing rgb(227, 178, 98) vs app outcomeColor oklch(0.779238 0.121446 67.9604)
+  OK   visible labels ["Austin 63%","Bangkok 93%","Lisbon 88%","Medellín 92%","New York 38%","Tbilisi 92%"]
+  info label size: 24 units × 0.476 = 11.4,11.4,11.4,11.4,11.4,11.4 px
+  OK   label % fills = var(--ramp-N-text) 
+  OK   labels don't overlap each other 
+  OK   labels inside the map's width 
+  info label boxes touching dot boxes: none
+  OK   Lisbon ring at (683.6, 133.2) stroke rgb(91, 227, 176) (= --holds rgb(91, 227, 176))
+  OK   fan paths present: band1 d=1435 w=293, band2 d=1428 w=293, median d=719 w=293, loan d=719 w=293, margin d=719 w=293
+  OK   margin-call line dashed (8px, 8px, stroke rgb(255, 107, 90))
+  OK   bands filled (color(srgb 0.356863 0.890196 0.690196 / 0.1) / color(srgb 0.356863 0.890196 0.690196 / 0.18)), median stroke rgb(91, 227, 176), loan rgb(138, 154, 168)
+  OK   key "Breaks Holds | Illustrative numbers", ramp bar 120px: linear-gradient(90deg, rgb(255, 107, 90), rgb(245, 146, 94), rgb(227, 178, 98) 64%, rgb(158, 216, 190) 65%, rgb(91, 227, 176))
+
+[check 2] map card @1000 light
+  OK   dots: 33
+  OK   33 dots at board positions (x=(lon+180)*4, y=(72-lat)*4), r 8 / Lisbon 11 
+  OK   dot fills = var(--ramp-N) for the board's band (80/65/45/35) 
+  info ramp tokens (light): rgb(210, 69, 47) | rgb(200, 102, 43) | rgb(168, 122, 31) | rgb(61, 151, 118) | rgb(11, 122, 86)
+  info dots whose fill differs from the app's interpolated outcomeColor(pct): 6
+    Zürich 41%: landing rgb(200, 102, 43) vs app outcomeColor oklch(0.608555 0.153389 43.8196)
+    London 52%: landing rgb(168, 122, 31) vs app outcomeColor oklch(0.613583 0.130599 62.7864)
+    Tokyo 72%: landing rgb(61, 151, 118) vs app outcomeColor oklch(0.566718 0.103474 164.895)
+    Sydney 55%: landing rgb(168, 122, 31) vs app outcomeColor oklch(0.612391 0.125169 69.002)
+    New York 38%: landing rgb(200, 102, 43) vs app outcomeColor oklch(0.602703 0.160962 40.4836)
+    Miami 55%: landing rgb(168, 122, 31) vs app outcomeColor oklch(0.612391 0.125169 69.002)
+  OK   visible labels ["Austin 63%","Bangkok 93%","Lisbon 88%","Medellín 92%","New York 38%","Tbilisi 92%"]
+  info label size: 28 units × 0.3523 = 9.9,9.9,9.9,9.9,9.9,9.9 px
+  OK   label % fills = var(--ramp-N-text) 
+  OK   labels don't overlap each other 
+  OK   labels inside the map's width 
+  info label boxes touching dot boxes: Austin 63% × Miami
+  OK   Lisbon ring at (683.6, 133.2) stroke rgb(11, 122, 86) (= --holds rgb(11, 122, 86))
+  OK   fan paths present: band1 d=1435 w=214, band2 d=1428 w=214, median d=719 w=214, loan d=719 w=214, margin d=719 w=214
+  OK   margin-call line dashed (8px, 8px, stroke rgb(210, 69, 47))
+  OK   bands filled (color(srgb 0.0431373 0.478431 0.337255 / 0.1) / color(srgb 0.0431373 0.478431 0.337255 / 0.18)), median stroke rgb(11, 122, 86), loan rgb(85, 101, 116)
+  OK   key "Breaks Holds | Illustrative numbers", ramp bar 120px: linear-gradient(90deg, rgb(210, 69, 47), rgb(200, 102, 43), rgb(168, 122, 31) 64%, rgb(61, 151, 118) 65%, rgb(11, 122, 86))
+
+[check 2] map card @1000 dark
+  OK   dots: 33
+  OK   33 dots at board positions (x=(lon+180)*4, y=(72-lat)*4), r 8 / Lisbon 11 
+  OK   dot fills = var(--ramp-N) for the board's band (80/65/45/35) 
+  info ramp tokens (dark): rgb(255, 107, 90) | rgb(245, 146, 94) | rgb(227, 178, 98) | rgb(158, 216, 190) | rgb(91, 227, 176)
+  info dots whose fill differs from the app's interpolated outcomeColor(pct): 6
+    Zürich 41%: landing rgb(245, 146, 94) vs app outcomeColor oklch(0.74178 0.149893 42.5821)
+    London 52%: landing rgb(227, 178, 98) vs app outcomeColor oklch(0.771611 0.126258 61.8279)
+    Tokyo 72%: landing rgb(158, 216, 190) vs app outcomeColor oklch(0.83158 0.102667 165.231)
+    Sydney 55%: landing rgb(227, 178, 98) vs app outcomeColor oklch(0.779238 0.121446 67.9604)
+    New York 38%: landing rgb(245, 146, 94) vs app outcomeColor oklch(0.732774 0.15918 38.8922)
+    Miami 55%: landing rgb(227, 178, 98) vs app outcomeColor oklch(0.779238 0.121446 67.9604)
+  OK   visible labels ["Austin 63%","Bangkok 93%","Lisbon 88%","Medellín 92%","New York 38%","Tbilisi 92%"]
+  info label size: 28 units × 0.3523 = 9.9,9.9,9.9,9.9,9.9,9.9 px
+  OK   label % fills = var(--ramp-N-text) 
+  OK   labels don't overlap each other 
+  OK   labels inside the map's width 
+  info label boxes touching dot boxes: Austin 63% × Miami
+  OK   Lisbon ring at (683.6, 133.2) stroke rgb(91, 227, 176) (= --holds rgb(91, 227, 176))
+  OK   fan paths present: band1 d=1435 w=214, band2 d=1428 w=214, median d=719 w=214, loan d=719 w=214, margin d=719 w=214
+  OK   margin-call line dashed (8px, 8px, stroke rgb(255, 107, 90))
+  OK   bands filled (color(srgb 0.356863 0.890196 0.690196 / 0.1) / color(srgb 0.356863 0.890196 0.690196 / 0.18)), median stroke rgb(91, 227, 176), loan rgb(138, 154, 168)
+  OK   key "Breaks Holds | Illustrative numbers", ramp bar 120px: linear-gradient(90deg, rgb(255, 107, 90), rgb(245, 146, 94), rgb(227, 178, 98) 64%, rgb(158, 216, 190) 65%, rgb(91, 227, 176))
+
+[check 2] map card @820 light
+  OK   dots: 33
+  OK   33 dots at board positions (x=(lon+180)*4, y=(72-lat)*4), r 8 / Lisbon 11 
+  OK   dot fills = var(--ramp-N) for the board's band (80/65/45/35) 
+  info ramp tokens (light): rgb(210, 69, 47) | rgb(200, 102, 43) | rgb(168, 122, 31) | rgb(61, 151, 118) | rgb(11, 122, 86)
+  info dots whose fill differs from the app's interpolated outcomeColor(pct): 6
+    Zürich 41%: landing rgb(200, 102, 43) vs app outcomeColor oklch(0.608555 0.153389 43.8196)
+    London 52%: landing rgb(168, 122, 31) vs app outcomeColor oklch(0.613583 0.130599 62.7864)
+    Tokyo 72%: landing rgb(61, 151, 118) vs app outcomeColor oklch(0.566718 0.103474 164.895)
+    Sydney 55%: landing rgb(168, 122, 31) vs app outcomeColor oklch(0.612391 0.125169 69.002)
+    New York 38%: landing rgb(200, 102, 43) vs app outcomeColor oklch(0.602703 0.160962 40.4836)
+    Miami 55%: landing rgb(168, 122, 31) vs app outcomeColor oklch(0.612391 0.125169 69.002)
+  OK   visible labels ["Austin 63%","Bangkok 93%","Lisbon 88%","Medellín 92%","New York 38%","Tbilisi 92%"]
+  info label size: 24 units × 0.6293 = 15.1,15.1,15.1,15.1,15.1,15.1 px
+  OK   label % fills = var(--ramp-N-text) 
+  OK   labels don't overlap each other 
+  OK   labels inside the map's width 
+  info label boxes touching dot boxes: none
+  OK   Lisbon ring at (683.6, 133.2) stroke rgb(11, 122, 86) (= --holds rgb(11, 122, 86))
+  OK   fan paths present: band1 d=1435 w=390, band2 d=1428 w=390, median d=719 w=390, loan d=719 w=390, margin d=719 w=390
+  OK   margin-call line dashed (8px, 8px, stroke rgb(210, 69, 47))
+  OK   bands filled (color(srgb 0.0431373 0.478431 0.337255 / 0.1) / color(srgb 0.0431373 0.478431 0.337255 / 0.18)), median stroke rgb(11, 122, 86), loan rgb(85, 101, 116)
+  OK   key "Breaks Holds | Illustrative numbers", ramp bar 120px: linear-gradient(90deg, rgb(210, 69, 47), rgb(200, 102, 43), rgb(168, 122, 31) 64%, rgb(61, 151, 118) 65%, rgb(11, 122, 86))
+
+[check 2] map card @820 dark
+  OK   dots: 33
+  OK   33 dots at board positions (x=(lon+180)*4, y=(72-lat)*4), r 8 / Lisbon 11 
+  OK   dot fills = var(--ramp-N) for the board's band (80/65/45/35) 
+  info ramp tokens (dark): rgb(255, 107, 90) | rgb(245, 146, 94) | rgb(227, 178, 98) | rgb(158, 216, 190) | rgb(91, 227, 176)
+  info dots whose fill differs from the app's interpolated outcomeColor(pct): 6
+    Zürich 41%: landing rgb(245, 146, 94) vs app outcomeColor oklch(0.74178 0.149893 42.5821)
+    London 52%: landing rgb(227, 178, 98) vs app outcomeColor oklch(0.771611 0.126258 61.8279)
+    Tokyo 72%: landing rgb(158, 216, 190) vs app outcomeColor oklch(0.83158 0.102667 165.231)
+    Sydney 55%: landing rgb(227, 178, 98) vs app outcomeColor oklch(0.779238 0.121446 67.9604)
+    New York 38%: landing rgb(245, 146, 94) vs app outcomeColor oklch(0.732774 0.15918 38.8922)
+    Miami 55%: landing rgb(227, 178, 98) vs app outcomeColor oklch(0.779238 0.121446 67.9604)
+  OK   visible labels ["Austin 63%","Bangkok 93%","Lisbon 88%","Medellín 92%","New York 38%","Tbilisi 92%"]
+  info label size: 24 units × 0.6293 = 15.1,15.1,15.1,15.1,15.1,15.1 px
+  OK   label % fills = var(--ramp-N-text) 
+  OK   labels don't overlap each other 
+  OK   labels inside the map's width 
+  info label boxes touching dot boxes: none
+  OK   Lisbon ring at (683.6, 133.2) stroke rgb(91, 227, 176) (= --holds rgb(91, 227, 176))
+  OK   fan paths present: band1 d=1435 w=390, band2 d=1428 w=390, median d=719 w=390, loan d=719 w=390, margin d=719 w=390
+  OK   margin-call line dashed (8px, 8px, stroke rgb(255, 107, 90))
+  OK   bands filled (color(srgb 0.356863 0.890196 0.690196 / 0.1) / color(srgb 0.356863 0.890196 0.690196 / 0.18)), median stroke rgb(91, 227, 176), loan rgb(138, 154, 168)
+  OK   key "Breaks Holds | Illustrative numbers", ramp bar 120px: linear-gradient(90deg, rgb(255, 107, 90), rgb(245, 146, 94), rgb(227, 178, 98) 64%, rgb(158, 216, 190) 65%, rgb(91, 227, 176))
+
+[check 2] map card @390 light
+  OK   dots: 33
+  OK   33 dots at board positions (x=(lon+180)*4, y=(72-lat)*4), r 8 / Lisbon 11 
+  OK   dot fills = var(--ramp-N) for the board's band (80/65/45/35) 
+  info ramp tokens (light): rgb(210, 69, 47) | rgb(200, 102, 43) | rgb(168, 122, 31) | rgb(61, 151, 118) | rgb(11, 122, 86)
+  info dots whose fill differs from the app's interpolated outcomeColor(pct): 6
+    Zürich 41%: landing rgb(200, 102, 43) vs app outcomeColor oklch(0.608555 0.153389 43.8196)
+    London 52%: landing rgb(168, 122, 31) vs app outcomeColor oklch(0.613583 0.130599 62.7864)
+    Tokyo 72%: landing rgb(61, 151, 118) vs app outcomeColor oklch(0.566718 0.103474 164.895)
+    Sydney 55%: landing rgb(168, 122, 31) vs app outcomeColor oklch(0.612391 0.125169 69.002)
+    New York 38%: landing rgb(200, 102, 43) vs app outcomeColor oklch(0.602703 0.160962 40.4836)
+    Miami 55%: landing rgb(168, 122, 31) vs app outcomeColor oklch(0.612391 0.125169 69.002)
+  OK   visible labels ["Austin 63%","Bangkok 93%","Lisbon 88%","Medellín 92%","Tbilisi 92%"] (phone set: New York dropped)
+  info label size: 46 units × 0.2724 = 12.5,12.5,12.5,12.5,12.5 px
+  OK   label % fills = var(--ramp-N-text) 
+  OK   labels don't overlap each other 
+  OK   labels inside the map's width 
+  info label boxes touching dot boxes: Lisbon 88% × Lisbon; Lisbon 88% × Athens; Austin 63% × New York; Austin 63% × Miami
+  OK   Lisbon ring at (683.6, 133.2) stroke rgb(11, 122, 86) (= --holds rgb(11, 122, 86))
+  OK   fan paths present: band1 d=1435 w=316, band2 d=1428 w=316, median d=719 w=316, loan d=719 w=316, margin d=719 w=316
+  OK   margin-call line dashed (8px, 8px, stroke rgb(210, 69, 47))
+  OK   bands filled (color(srgb 0.0431373 0.478431 0.337255 / 0.1) / color(srgb 0.0431373 0.478431 0.337255 / 0.18)), median stroke rgb(11, 122, 86), loan rgb(85, 101, 116)
+  OK   key "Breaks Holds | Illustrative numbers", ramp bar 120px: linear-gradient(90deg, rgb(210, 69, 47), rgb(200, 102, 43), rgb(168, 122, 31) 64%, rgb(61, 151, 118) 65%, rgb(11, 122, 86))
+
+[check 2] map card @390 dark
+  OK   dots: 33
+  OK   33 dots at board positions (x=(lon+180)*4, y=(72-lat)*4), r 8 / Lisbon 11 
+  OK   dot fills = var(--ramp-N) for the board's band (80/65/45/35) 
+  info ramp tokens (dark): rgb(255, 107, 90) | rgb(245, 146, 94) | rgb(227, 178, 98) | rgb(158, 216, 190) | rgb(91, 227, 176)
+  info dots whose fill differs from the app's interpolated outcomeColor(pct): 6
+    Zürich 41%: landing rgb(245, 146, 94) vs app outcomeColor oklch(0.74178 0.149893 42.5821)
+    London 52%: landing rgb(227, 178, 98) vs app outcomeColor oklch(0.771611 0.126258 61.8279)
+    Tokyo 72%: landing rgb(158, 216, 190) vs app outcomeColor oklch(0.83158 0.102667 165.231)
+    Sydney 55%: landing rgb(227, 178, 98) vs app outcomeColor oklch(0.779238 0.121446 67.9604)
+    New York 38%: landing rgb(245, 146, 94) vs app outcomeColor oklch(0.732774 0.15918 38.8922)
+    Miami 55%: landing rgb(227, 178, 98) vs app outcomeColor oklch(0.779238 0.121446 67.9604)
+  OK   visible labels ["Austin 63%","Bangkok 93%","Lisbon 88%","Medellín 92%","Tbilisi 92%"] (phone set: New York dropped)
+  info label size: 46 units × 0.2724 = 12.5,12.5,12.5,12.5,12.5 px
+  OK   label % fills = var(--ramp-N-text) 
+  OK   labels don't overlap each other 
+  OK   labels inside the map's width 
+  info label boxes touching dot boxes: Lisbon 88% × Lisbon; Lisbon 88% × Athens; Austin 63% × New York; Austin 63% × Miami
+  OK   Lisbon ring at (683.6, 133.2) stroke rgb(91, 227, 176) (= --holds rgb(91, 227, 176))
+  OK   fan paths present: band1 d=1435 w=316, band2 d=1428 w=316, median d=719 w=316, loan d=719 w=316, margin d=719 w=316
+  OK   margin-call line dashed (8px, 8px, stroke rgb(255, 107, 90))
+  OK   bands filled (color(srgb 0.356863 0.890196 0.690196 / 0.1) / color(srgb 0.356863 0.890196 0.690196 / 0.18)), median stroke rgb(91, 227, 176), loan rgb(138, 154, 168)
+  OK   key "Breaks Holds | Illustrative numbers", ramp bar 120px: linear-gradient(90deg, rgb(255, 107, 90), rgb(245, 146, 94), rgb(227, 178, 98) 64%, rgb(158, 216, 190) 65%, rgb(91, 227, 176))
+
+[check 2] map card @360 light
+  OK   dots: 33
+  OK   33 dots at board positions (x=(lon+180)*4, y=(72-lat)*4), r 8 / Lisbon 11 
+  OK   dot fills = var(--ramp-N) for the board's band (80/65/45/35) 
+  info ramp tokens (light): rgb(210, 69, 47) | rgb(200, 102, 43) | rgb(168, 122, 31) | rgb(61, 151, 118) | rgb(11, 122, 86)
+  info dots whose fill differs from the app's interpolated outcomeColor(pct): 6
+    Zürich 41%: landing rgb(200, 102, 43) vs app outcomeColor oklch(0.608555 0.153389 43.8196)
+    London 52%: landing rgb(168, 122, 31) vs app outcomeColor oklch(0.613583 0.130599 62.7864)
+    Tokyo 72%: landing rgb(61, 151, 118) vs app outcomeColor oklch(0.566718 0.103474 164.895)
+    Sydney 55%: landing rgb(168, 122, 31) vs app outcomeColor oklch(0.612391 0.125169 69.002)
+    New York 38%: landing rgb(200, 102, 43) vs app outcomeColor oklch(0.602703 0.160962 40.4836)
+    Miami 55%: landing rgb(168, 122, 31) vs app outcomeColor oklch(0.612391 0.125169 69.002)
+  OK   visible labels ["Austin 63%","Bangkok 93%","Lisbon 88%","Medellín 92%","Tbilisi 92%"] (phone set: New York dropped)
+  info label size: 46 units × 0.2465 = 11.3,11.3,11.3,11.3,11.3 px
+  OK   label % fills = var(--ramp-N-text) 
+  OK   labels don't overlap each other 
+  OK   labels inside the map's width 
+  info label boxes touching dot boxes: Lisbon 88% × Lisbon; Lisbon 88% × Athens; Austin 63% × New York; Austin 63% × Miami
+  OK   Lisbon ring at (683.6, 133.2) stroke rgb(11, 122, 86) (= --holds rgb(11, 122, 86))
+  OK   fan paths present: band1 d=1435 w=286, band2 d=1428 w=286, median d=719 w=286, loan d=719 w=286, margin d=719 w=286
+  OK   margin-call line dashed (8px, 8px, stroke rgb(210, 69, 47))
+  OK   bands filled (color(srgb 0.0431373 0.478431 0.337255 / 0.1) / color(srgb 0.0431373 0.478431 0.337255 / 0.18)), median stroke rgb(11, 122, 86), loan rgb(85, 101, 116)
+  OK   key "Breaks Holds | Illustrative numbers", ramp bar 120px: linear-gradient(90deg, rgb(210, 69, 47), rgb(200, 102, 43), rgb(168, 122, 31) 64%, rgb(61, 151, 118) 65%, rgb(11, 122, 86))
+
+[check 2] map card @360 dark
+  OK   dots: 33
+  OK   33 dots at board positions (x=(lon+180)*4, y=(72-lat)*4), r 8 / Lisbon 11 
+  OK   dot fills = var(--ramp-N) for the board's band (80/65/45/35) 
+  info ramp tokens (dark): rgb(255, 107, 90) | rgb(245, 146, 94) | rgb(227, 178, 98) | rgb(158, 216, 190) | rgb(91, 227, 176)
+  info dots whose fill differs from the app's interpolated outcomeColor(pct): 6
+    Zürich 41%: landing rgb(245, 146, 94) vs app outcomeColor oklch(0.74178 0.149893 42.5821)
+    London 52%: landing rgb(227, 178, 98) vs app outcomeColor oklch(0.771611 0.126258 61.8279)
+    Tokyo 72%: landing rgb(158, 216, 190) vs app outcomeColor oklch(0.83158 0.102667 165.231)
+    Sydney 55%: landing rgb(227, 178, 98) vs app outcomeColor oklch(0.779238 0.121446 67.9604)
+    New York 38%: landing rgb(245, 146, 94) vs app outcomeColor oklch(0.732774 0.15918 38.8922)
+    Miami 55%: landing rgb(227, 178, 98) vs app outcomeColor oklch(0.779238 0.121446 67.9604)
+  OK   visible labels ["Austin 63%","Bangkok 93%","Lisbon 88%","Medellín 92%","Tbilisi 92%"] (phone set: New York dropped)
+  info label size: 46 units × 0.2465 = 11.3,11.3,11.3,11.3,11.3 px
+  OK   label % fills = var(--ramp-N-text) 
+  OK   labels don't overlap each other 
+  OK   labels inside the map's width 
+  info label boxes touching dot boxes: Lisbon 88% × Lisbon; Lisbon 88% × Athens; Austin 63% × New York; Austin 63% × Miami
+  OK   Lisbon ring at (683.6, 133.2) stroke rgb(91, 227, 176) (= --holds rgb(91, 227, 176))
+  OK   fan paths present: band1 d=1435 w=286, band2 d=1428 w=286, median d=719 w=286, loan d=719 w=286, margin d=719 w=286
+  OK   margin-call line dashed (8px, 8px, stroke rgb(255, 107, 90))
+  OK   bands filled (color(srgb 0.356863 0.890196 0.690196 / 0.1) / color(srgb 0.356863 0.890196 0.690196 / 0.18)), median stroke rgb(91, 227, 176), loan rgb(138, 154, 168)
+  OK   key "Breaks Holds | Illustrative numbers", ramp bar 120px: linear-gradient(90deg, rgb(255, 107, 90), rgb(245, 146, 94), rgb(227, 178, 98) 64%, rgb(158, 216, 190) 65%, rgb(91, 227, 176))
+
+[check 3] "How it works" @1440
+  OK   hash unchanged ("" → ""), url http://localhost:4191/
+  OK   landing still shown, no reload
+  OK   scrolled 0 → 100, steps top at 648px of 900 (bottom 900); focus on #how
+  OK   nav "Atlas" → #atlas, landing gone=true, view rendered=true, current tab "Atlas"
+  OK   nav "Method" → #method, landing gone=true, view rendered=true, current tab "Method"
+
+[check 3] "How it works" @1280
+  OK   hash unchanged ("" → ""), url http://localhost:4191/
+  OK   landing still shown, no reload
+  OK   scrolled 0 → 200, steps top at 548px of 800 (bottom 800); focus on #how
+  OK   nav "Atlas" → #atlas, landing gone=true, view rendered=true, current tab "Atlas"
+  OK   nav "Method" → #method, landing gone=true, view rendered=true, current tab "Method"
+
+[check 3] "How it works" @1000
+  OK   hash unchanged ("" → ""), url http://localhost:4191/
+  OK   landing still shown, no reload
+  OK   scrolled 0 → 248, steps top at 524px of 800 (bottom 800); focus on #how
+  OK   nav "Atlas" → #atlas, landing gone=true, view rendered=true, current tab "Atlas"
+  OK   nav "Method" → #method, landing gone=true, view rendered=true, current tab "Method"
+
+[check 3] "How it works" @1280 reduced motion
+  OK   hash unchanged ("" → ""), url http://localhost:4191/
+  OK   landing still shown, no reload
+  OK   scrolled 0 → 200, steps top at 548px of 800 (bottom 800); focus on #how
+  OK   nav "Atlas" → #atlas, landing gone=true, view rendered=true, current tab "Atlas"
+  OK   nav "Method" → #method, landing gone=true, view rendered=true, current tab "Method"
+
+[check 4] theme + contrast
+  OK   @1440 system light: data-theme=system, body bg rgb(245, 242, 234) (paper #f5f2ea), text rgb(20, 24, 21), card rgba(255, 253, 248, 0.86)
+  OK   @1440 system dark: data-theme=system, body bg rgb(10, 13, 12) (ink #0a0d0c), text rgb(236, 241, 238), card rgba(17, 23, 21, 0.92)
+  OK   @1280 system light: data-theme=system, body bg rgb(245, 242, 234) (paper #f5f2ea), text rgb(20, 24, 21), card rgba(255, 253, 248, 0.86)
+  OK   @1280 system dark: data-theme=system, body bg rgb(10, 13, 12) (ink #0a0d0c), text rgb(236, 241, 238), card rgba(17, 23, 21, 0.92)
+  OK   @1000 system light: data-theme=system, body bg rgb(245, 242, 234) (paper #f5f2ea), text rgb(20, 24, 21), card rgba(255, 253, 248, 0.86)
+  OK   @1000 system dark: data-theme=system, body bg rgb(10, 13, 12) (ink #0a0d0c), text rgb(236, 241, 238), card rgba(17, 23, 21, 0.92)
+  OK   @820 system light: data-theme=system, body bg rgb(245, 242, 234) (paper #f5f2ea), text rgb(20, 24, 21), card rgba(255, 253, 248, 0.86)
+  OK   @820 system dark: data-theme=system, body bg rgb(10, 13, 12) (ink #0a0d0c), text rgb(236, 241, 238), card rgba(17, 23, 21, 0.92)
+  OK   @390 system light: data-theme=system, body bg rgb(245, 242, 234) (paper #f5f2ea), text rgb(20, 24, 21), card rgba(255, 253, 248, 0.86)
+  OK   @390 system dark: data-theme=system, body bg rgb(10, 13, 12) (ink #0a0d0c), text rgb(236, 241, 238), card rgba(17, 23, 21, 0.92)
+  OK   @360 system light: data-theme=system, body bg rgb(245, 242, 234) (paper #f5f2ea), text rgb(20, 24, 21), card rgba(255, 253, 248, 0.86)
+  OK   @360 system dark: data-theme=system, body bg rgb(10, 13, 12) (ink #0a0d0c), text rgb(236, 241, 238), card rgba(17, 23, 21, 0.92)
+  OK   @1440 system light → toggle to dark: data-theme system → dark, body bg rgb(245, 242, 234) → rgb(10, 13, 12), no reload (marker kept), still on landing, hash ""
+  OK   @1440 system dark → toggle to light: data-theme system → light, body bg rgb(10, 13, 12) → rgb(245, 242, 234), no reload (marker kept), still on landing, hash ""
+  OK   @390 system light → toggle to dark: data-theme system → dark, body bg rgb(245, 242, 234) → rgb(10, 13, 12), no reload (marker kept), still on landing, hash ""
+  OK   @390 system dark → toggle to light: data-theme system → light, body bg rgb(10, 13, 12) → rgb(245, 242, 234), no reload (marker kept), still on landing, hash ""
+  info measured 822 text runs (0 with no glyph pixels found: ); 15 lowest glyph-pixel contrasts:
+    glyph-min 4.81 (glyph p01 4.85, 1451 glyph px) · box: worst 4.80, p05 4.89, median 4.95 · 360 system-light .landing__eyebrow 11px "Buy · Borrow · Die — anywhere in the wor" rgba(94,101,95,1) op 1
+    glyph-min 4.85 (glyph p01 4.85, 1452 glyph px) · box: worst 4.80, p05 4.89, median 4.95 · 390 system-light .landing__eyebrow 11px "Buy · Borrow · Die — anywhere in the wor" rgba(94,101,95,1) op 1
+    glyph-min 4.85 (glyph p01 4.85, 1452 glyph px) · box: worst 4.80, p05 4.89, median 4.95 · 390 explicit-light (on dark system) .landing__eyebrow 11px "Buy · Borrow · Die — anywhere in the wor" rgba(94,101,95,1) op 1
+    glyph-min 4.95 (glyph p01 4.99, 2102 glyph px) · box: worst 4.95, p05 5.03, median 5.09 · 360 system-light .landing__fine 13px "Free · No sign-up · Runs in your browser" rgba(94,101,95,1) op 1
+    glyph-min 4.95 (glyph p01 5.01, 1452 glyph px) · box: worst 4.91, p05 5.02, median 5.12 · 820 system-light .landing__eyebrow 11px "Buy · Borrow · Die — anywhere in the wor" rgba(94,101,95,1) op 1
+    glyph-min 4.98 (glyph p01 5.02, 166 glyph px) · box: worst 4.98, p05 5.02, median 5.11 · 390 system-light .landing__label-pct 46px "63" rgba(138,99,18,1) op 1
+    glyph-min 4.98 (glyph p01 5.02, 166 glyph px) · box: worst 4.98, p05 5.02, median 5.11 · 390 system-light .landing__label-pct 46px "%" rgba(138,99,18,1) op 1
+    glyph-min 4.98 (glyph p01 4.98, 146 glyph px) · box: worst 4.98, p05 5.02, median 5.11 · 360 system-light .landing__label-pct 46px "63" rgba(138,99,18,1) op 1
+    glyph-min 4.98 (glyph p01 4.98, 146 glyph px) · box: worst 4.98, p05 5.02, median 5.11 · 360 system-light .landing__label-pct 46px "%" rgba(138,99,18,1) op 1
+    glyph-min 4.98 (glyph p01 5.02, 166 glyph px) · box: worst 4.98, p05 5.02, median 5.11 · 390 explicit-light (on dark system) .landing__label-pct 46px "63" rgba(138,99,18,1) op 1
+    glyph-min 4.98 (glyph p01 5.02, 166 glyph px) · box: worst 4.98, p05 5.02, median 5.11 · 390 explicit-light (on dark system) .landing__label-pct 46px "%" rgba(138,99,18,1) op 1
+    glyph-min 4.99 (glyph p01 5.04, 2102 glyph px) · box: worst 4.99, p05 5.08, median 5.17 · 1280 system-light .landing__fine 13px "Free · No sign-up · Runs in your browser" rgba(94,101,95,1) op 1
+    glyph-min 4.99 (glyph p01 5.04, 2102 glyph px) · box: worst 4.95, p05 5.04, median 5.16 · 1000 system-light .landing__fine 13px "Free · No sign-up · Runs in your browser" rgba(94,101,95,1) op 1
+    glyph-min 5.01 (glyph p01 5.02, 1452 glyph px) · box: worst 4.98, p05 5.07, median 5.17 · 1000 system-light .landing__eyebrow 11px "Buy · Borrow · Die — anywhere in the wor" rgba(94,101,95,1) op 1
+    glyph-min 5.02 (glyph p01 5.02, 145 glyph px) · box: worst 4.98, p05 5.02, median 5.11 · 1440 system-light .landing__label-pct 24px "63" rgba(138,99,18,1) op 1
+  info map labels: lowest glyph-min 4.98 (glyph p01 5.02, 166 glyph px) · box: worst 4.98, p05 5.02, median 5.11 · 390 system-light .landing__label-pct 46px "63" rgba(138,99,18,1) op 1
+  info lowest median contrast: glyph-min 4.85 (glyph p01 4.85, 1452 glyph px) · box: worst 4.80, p05 4.89, median 4.95 · 390 system-light .landing__eyebrow 11px "Buy · Borrow · Die — anywhere in the wor" rgba(94,101,95,1) op 1
+  OK   every text run ≥ 4.5:1 against the background under every one of its glyph pixels (min 4.81; lowest glyph p01 4.85 "Buy · Borrow · Die — anywhere in the wor" 390 system-light)
+  info box-based (whole line box, not just glyphs): lowest p05 4.89 "Buy · Borrow · Die — anywhere in the wor" 390 system-light; lowest worst-pixel 1.07
+
+[check 5] layout @1440
+  OK   no horizontal scroll: scrollWidth 1440 / body 1440 vs innerWidth 1440; elements past right edge: []
+  OK   two columns: copy 112–678, card 734–1328
+  OK   steps in 4 column(s) (want 4); readout grid 2 col
+  info controls ≥ 44×44: eVelo — home 103×44 · How it works 82×44 · Atlas 44×44 · Method 49×44 · System theme 36×30 · Light theme 36×30 · Dark theme 36×30 · Open the planner 153×44 · Stress-test my plan 225×52 · Explore the Atlas 164×52 — under 44: System theme, Light theme, Dark theme
+
+[check 5] layout @1280
+  OK   no horizontal scroll: scrollWidth 1280 / body 1280 vs innerWidth 1280; elements past right edge: []
+  OK   two columns: copy 32–598, card 654–1248
+  OK   steps in 4 column(s) (want 4); readout grid 2 col
+  info controls ≥ 44×44: eVelo — home 103×44 · How it works 82×44 · Atlas 44×44 · Method 49×44 · System theme 36×30 · Light theme 36×30 · Dark theme 36×30 · Open the planner 153×44 · Stress-test my plan 225×52 · Explore the Atlas 164×52 — under 44: System theme, Light theme, Dark theme
+
+[check 5] layout @1000
+  OK   no horizontal scroll: scrollWidth 1000 / body 1000 vs innerWidth 1000; elements past right edge: []
+  OK   two columns: copy 32–461, card 517–968
+  OK   steps in 4 column(s) (want 4); readout grid 2 col
+  info controls ≥ 44×44: eVelo — home 103×44 · How it works 82×44 · Atlas 44×44 · Method 49×44 · System theme — switch to light 44×44 · Open the planner 153×44 · Stress-test my plan 225×52 · Explore the Atlas 164×52
+
+[check 5] layout @820
+  OK   no horizontal scroll: scrollWidth 820 / body 820 vs innerWidth 820; elements past right edge: []
+  OK   hero stacks: copy 112–535, card 575–1170 (card 24–796)
+  OK   nav folded away (display none)
+  OK   steps in 2 column(s) (want 2); readout grid 2 col
+  OK   controls ≥ 44×44: eVelo — home 103×44 · System theme — switch to light 44×44 · Open the planner 153×44 · Stress-test my plan 225×52 · Explore the Atlas 164×52
+
+[check 5] layout @390
+  OK   no horizontal scroll: scrollWidth 390 / body 390 vs innerWidth 390; elements past right edge: []
+  OK   hero stacks: copy 92–598, card 638–1224 (card 20–370)
+  OK   nav folded away (display none)
+  OK   steps in 1 column(s) (want 1); readout grid 1 col
+  OK   CTAs stacked full width: 350,350 px (copy 350px, column)
+  OK   controls ≥ 44×44: eVelo — home 103×44 · System theme — switch to light 44×44 · Open the planner 149×44 · Stress-test my plan 350×52 · Explore the Atlas 350×52
+
+[check 5] layout @360
+  OK   no horizontal scroll: scrollWidth 360 / body 360 vs innerWidth 360; elements past right edge: []
+  OK   hero stacks: copy 92–684, card 724–1284 (card 20–340)
+  OK   nav folded away (display none)
+  OK   steps in 1 column(s) (want 1); readout grid 1 col
+  OK   CTAs stacked full width: 320,320 px (copy 320px, column)
+  OK   controls ≥ 44×44: eVelo — home 103×44 · System theme — switch to light 44×44 · Open the planner 149×44 · Stress-test my plan 320×52 · Explore the Atlas 320×52
+
+[check 6] Lisbon ring @1280
+  OK   no-preference: animation landing-pulse 2.4s, r over 1.4s 14.2543px → 19.6257px → 24.2929px → 27.7333px, opacity 0.599836 → 0.395213 → 0.217414 → 0.0863521
+  OK   reduce: animation none, r 9px, opacity 0, visibility hidden
+
+[check 6] Lisbon ring @390
+  OK   no-preference: animation landing-pulse 2.4s, r over 1.4s 13.8247px → 19.256px → 23.8417px → 27.4122px, opacity 0.616204 → 0.409296 → 0.234603 → 0.0985832
+  OK   reduce: animation none, r 9px, opacity 0, visibility hidden
+
+[stage 1] routing re-run
+  OK   @1440 first visit bare URL → landing (hash "")
+  OK   @1440 CTA → app (#plan)
+  OK   @1440 reload bare URL after entering → planner, no landing (hash "", entered=1)
+  OK   @1440 #home → landing (hash "#home")
+  OK   @390 first visit bare URL → landing (hash "")
+  OK   @390 CTA → app (#plan)
+  OK   @390 reload bare URL after entering → planner, no landing (hash "", entered=1)
+  OK   @390 #home → landing (hash "#home")
+
+[check 7] console errors across 64 page loads: 0
+  OK   no console errors / page errors
+
+TOTAL FAILS: 0

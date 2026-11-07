@@ -8,17 +8,17 @@ Give eVelo a landing page that says what the site is before a visitor meets the 
 
 ## Now
 Stage 2 of 2 · Atlas-hero view
-Mode: autopilot
+Mode: paused — study G verified and committed; waiting on the user's approval to publish preview v24, then to deploy to GitHub Pages (and to push the keel 0.5.2 commit)
 Risk: UI only
 Scope: replace the study C landing (committed in ad98a0e, superseded) with study G (boards `AtlasHero`/`AtlasHeroDark`), copy and illustrative numbers exactly as drawn; remove C's path field. Then preview and, on approval, deploy.
 Checks:
-- [ ] The landing shows G's content as drawn: header (wordmark → `#home`, nav "How it works" / "Atlas" / "Method", theme toggle, "Open the planner"), eyebrow, "Live off your portfolio *without ever selling it.*", G's paragraph, "Stress-test my plan" (→ planner) and "Explore the Atlas" (→ Atlas), the no-sign-up line, and the four steps Buy / Borrow / Live anywhere / Die (proof: run the product)
-- [ ] The map card shows the 33 cities at their positions coloured by the app's holds scale, the six labels with their percentages, Lisbon ringed with its 88% readout ("vs 63% staying in Austin…") and its fan chart (bands, median, loan, dashed margin-call line), the Breaks→Holds key and "Illustrative numbers" (proof: test + run the product)
-- [ ] "How it works" scrolls to the steps without leaving the landing or changing the route; "Atlas" and "Method" open those tabs (proof: run the product)
-- [ ] It follows the site theme: paper in light, ink in dark, the landing's toggle switches it live; all text meets 4.5:1, map labels included (proof: run the product, both themes)
-- [ ] At phone width (390px) the hero stacks (copy, then card), the nav folds away, the steps go to one column, there is no horizontal scroll, and controls are ≥44px touch targets; tablet (820px) stacks cleanly too (proof: run the product)
-- [ ] With reduced motion the Lisbon ring doesn't pulse (proof: run the product)
-- [ ] Tests, typecheck and build pass; no console errors on the landing; study C's path field is gone from the code
+- [x] The landing shows G's content as drawn: header (wordmark → `#home`, nav "How it works" / "Atlas" / "Method", theme toggle, "Open the planner"), eyebrow, "Live off your portfolio *without ever selling it.*", G's paragraph, "Stress-test my plan" (→ planner) and "Explore the Atlas" (→ Atlas), the no-sign-up line, and the four steps Buy / Borrow / Live anywhere / Die (proof: run the product)
+- [x] The map card shows the 33 cities at their positions coloured by the app's holds scale, the six labels with their percentages, Lisbon ringed with its 88% readout ("vs 63% staying in Austin…") and its fan chart (bands, median, loan, dashed margin-call line), the Breaks→Holds key and "Illustrative numbers" (proof: test + run the product)
+- [x] "How it works" scrolls to the steps without leaving the landing or changing the route; "Atlas" and "Method" open those tabs (proof: run the product)
+- [x] It follows the site theme: paper in light, ink in dark, the landing's toggle switches it live; all text meets 4.5:1, map labels included (proof: run the product, both themes)
+- [x] At phone width (390px) the hero stacks (copy, then card), the nav folds away, the steps go to one column, there is no horizontal scroll, and controls are ≥44px touch targets; tablet (820px) stacks cleanly too (proof: run the product)
+- [x] With reduced motion the Lisbon ring doesn't pulse (proof: run the product)
+- [x] Tests, typecheck and build pass; no console errors on the landing; study C's path field is gone from the code
 - [ ] Previewed on the preview artifact, and deployed to GitHub Pages on the user's approval (proof: run the product)
 Open: none
 
@@ -30,6 +30,9 @@ Open: none
 - 2026-11-07 · Landing is study G, "The Atlas is the chart", replacing study C after the user saw C on preview v23 — user: "let's go with option G here instead". C's decisions below (body copy, decorative paths, seed, label halo) are superseded.
 - 2026-11-07 · G's map numbers stay illustrative as drawn (labelled "Illustrative numbers"), not an engine snapshot or a live run — user's choice.
 - 2026-11-07 · G's copy is used as drawn: headline, paragraph, CTAs and the four step blurbs — user's choice, replacing the earlier verbatim copy.
+- 2026-11-07 · G's city dots and label percentages use the app's `--ramp-*` outcome scale (light hexes differ slightly from the board's); the Breaks→Holds key uses the same tokens — matches "coloured by the app's holds scale".
+- 2026-11-07 · G's map labels on phones (≤520px): five labels (New York dropped) at a larger size so they render 11–12.5px without overlapping; all six as drawn from 521px up, bumped to 28 units at 901–1199px. CTAs stack full width ≤520px. The landing header keeps the theme toggle though G's board doesn't draw one — builder's calls after the PM flagged 6px labels, kept.
+- 2026-11-07 · G's map labels carry a halo in the card's opaque colour so the graticule never runs through them (light-theme Austin/New York had dropped to 4.23:1); Bangkok's phone label sits 12 units lower to clear Lisbon's — autopilot fixes after verification.
 - 2026-11-07 · (superseded) Landing is study C, "Escape velocity" — user chose it from five studies (A–E) on the canvas.
 - 2026-11-07 · Shown on first visit only: the bare URL shows it until the visitor has entered the app once; share links and route hashes go straight to the app; the wordmark brings it back (`#home`) — user picked the recommended option.
 - 2026-11-07 · Follows the site theme: paper with deeper green/brass/coral paths in light, ink with glowing paths in dark — user asked to see the light variant, then chose "follow the theme".

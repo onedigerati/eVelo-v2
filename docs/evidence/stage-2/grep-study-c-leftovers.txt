@@ -1,0 +1,11 @@
+$ grep -rnE 'PathKind|FieldPath|\bField\b|FIELD_W|FIELD_H|FIELD_SEED|makeField|\bFIELD\b|landing__(field|path|scrim|stage|threshold|swatch|legend|start|end|mark)|landing/paths|\./paths' src/ ; ls src/ui/landing src/ui/landing/__tests__
+src/ui/primitives/primitives.css:82:/* ---------- Field basics ---------- */
+grep exit 0 (1 = no matches)
+src/ui/landing:
+LandingView.tsx
+__tests__
+atlasCard.ts
+landing.css
+
+src/ui/landing/__tests__:
+atlasCard.test.ts

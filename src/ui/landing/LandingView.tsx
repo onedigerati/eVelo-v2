@@ -1,94 +1,192 @@
-import { memo } from 'react'
+import { memo, type MouseEvent } from 'react'
 import { hrefFor } from '../../state/router'
 import type { Breakpoint } from '../hooks'
-import { Mark } from '../icons'
 import { ThemeCycleButton, ThemeToggle } from '../shell/ThemeToggle'
 import { Wordmark } from '../shell/TopBar'
-import { FIELD } from './paths'
+import { AUSTIN, CITIES, FAN, FAN_H, FAN_W, LISBON, MAP_LABELS, MAP_VIEWBOX, MERIDIANS, PARALLELS, PHONE_LABELS, type MapLabel } from './atlasCard'
 import './landing.css'
 
+const STEPS_ID = 'how'
+
 /**
- * The landing page (`#home`), study C "Escape velocity". Full-bleed, with its own slim header in
- * place of the app's top bar. Behind the copy, a seeded field of decorative paths draws itself in
- * (holds in green, bruised in brass, broken in coral through the margin-call line). Colours come
- * from theme tokens in landing.css, so the site theme (and the landing's toggle) restyles it live.
+ * Scroll to the steps without touching the hash: `#how` would be read by the router as an unknown
+ * route. Jumps (no smooth scroll) when the visitor prefers reduced motion; focus follows.
+ */
+function scrollToSteps(e: MouseEvent<HTMLAnchorElement>) {
+  const target = document.getElementById(STEPS_ID)
+  if (!target) return
+  e.preventDefault()
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' })
+  target.focus({ preventScroll: true })
+}
+
+/**
+ * The landing page (`#home`), study G "The Atlas is the chart". Full-bleed, with its own header in
+ * place of the app's top bar: the hero copy beside a map card (one illustrative plan's odds city by
+ * city, Lisbon highlighted with its fan chart), then the four steps. Colours are theme tokens
+ * (landing.css), so the site theme and the landing's toggle restyle it live.
  */
 export function LandingView({ bp }: { bp: Breakpoint }) {
-  const phone = bp === 'phone'
   return (
     <div className={`landing landing--${bp}`}>
-      <PathField />
-      <div className="landing__scrim" aria-hidden="true" />
       <div className="landing__frame">
         <header className="landing__header">
           <Wordmark />
+          <nav className="landing__nav" aria-label="Primary">
+            <a href={`#${STEPS_ID}`} onClick={scrollToSteps}>
+              How it works
+            </a>
+            <a href={hrefFor('atlas')}>Atlas</a>
+            <a href={hrefFor('method')}>Method</a>
+          </nav>
           <div className="landing__actions">
-            {phone ? <ThemeCycleButton /> : <ThemeToggle />}
+            {bp === 'desktop' ? <ThemeToggle /> : <ThemeCycleButton />}
             <a href={hrefFor('plan')} className="landing__open">
               Open the planner
             </a>
           </div>
         </header>
-        <main id="main" tabIndex={-1} className="landing__stage">
-          <Mark size={96} className="landing__mark" />
-          <h1 className="landing__headline">
-            Reach <em>escape velocity.</em>
-          </h1>
-          <p className="landing__body">
-            A portfolio that grows faster than the loan against it never has to be sold. Spend the loan, keep the
-            shares, leave them to your heirs. eVelo runs your plan through thousands of real market histories and
-            counts how many actually reach escape velocity.
-          </p>
-          <div className="landing__ctas">
-            <a href={hrefFor('plan')} className="landing__cta landing__cta--primary">
-              Launch my plan
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M3 8h10M9 4l4 4-4 4" />
-              </svg>
-            </a>
-            <a href={hrefFor('method')} className="landing__cta landing__cta--link">
-              What is Buy-Borrow-Die?
-            </a>
-          </div>
+
+        <main id="main" tabIndex={-1} className="landing__main">
+          <section className="landing__hero" aria-labelledby="landing-title">
+            <div className="landing__copy">
+              <p className="landing__eyebrow">Buy · Borrow · Die — anywhere in the world</p>
+              <h1 id="landing-title" className="landing__headline">
+                Live off your portfolio <em>without ever selling it.</em>
+              </h1>
+              <p className="landing__body">
+                Borrow against your shares for living money, let them keep compounding, and pass them on with the
+                gains never taxed. eVelo replays your plan through thousands of real market histories, then
+                re-prices it city by city to show where in the world it holds best.
+              </p>
+              <div className="landing__ctas">
+                <a href={hrefFor('plan')} className="landing__cta landing__cta--primary">
+                  Stress-test my plan
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M3 8h10M9 4l4 4-4 4" />
+                  </svg>
+                </a>
+                <a href={hrefFor('atlas')} className="landing__cta landing__cta--ghost">
+                  Explore the Atlas
+                </a>
+              </div>
+              <p className="landing__fine">Free · No sign-up · Runs in your browser, nothing leaves your device</p>
+            </div>
+            <AtlasCard />
+          </section>
+
+          <section id={STEPS_ID} tabIndex={-1} className="landing__steps" aria-label="How it works">
+            <Step n="01" title="Buy">
+              Hold assets that grow. Never sell them, so the gains are never taxed.
+            </Step>
+            <Step n="02" title="Borrow">
+              Live on a line of credit secured by the portfolio. The loan grows; so, usually, do the shares.
+            </Step>
+            <Step n="03" title="Live anywhere">
+              Spend the loan where life costs less. A smaller loan gives the portfolio an easier race to win.
+            </Step>
+            <Step n="04" title="Die">
+              Heirs inherit at a stepped-up basis. The estate repays the loan and keeps the rest.
+            </Step>
+          </section>
         </main>
-        <footer className="landing__legend">
-          <span className="landing__key">
-            <span className="landing__swatch landing__swatch--holds" aria-hidden="true" />
-            Holds: the loan never forces a sale
-          </span>
-          <span className="landing__key">
-            <span className="landing__swatch landing__swatch--bruised" aria-hidden="true" />
-            Bruised: a crash forced a sale, then recovered
-          </span>
-          <span className="landing__key">
-            <span className="landing__swatch landing__swatch--broken" aria-hidden="true" />
-            Broken: the debt caught up
-          </span>
-        </footer>
       </div>
     </div>
   )
 }
 
-/** The decorative field. Static (paths computed once at module load), so it never re-renders. */
-const PathField = memo(function PathField() {
-  const { width, height, paths, startY, thresholdY } = FIELD
+function Step({ n, title, children }: { n: string; title: string; children: string }) {
   return (
-    <svg className="landing__field" viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
-      <line className="landing__threshold" x1="0" y1={thresholdY} x2={width} y2={thresholdY} />
-      {paths.map((p, i) => (
-        <path key={i} className={`landing__path landing__path--${p.kind}`} d={p.d} pathLength={1} style={{ animationDelay: `${p.delay}s` }} />
-      ))}
-      {paths
-        .filter((p) => p.kind === 'broken')
-        .map((p, i) => (
-          <circle key={i} className="landing__end" cx={p.end.x} cy={p.end.y} r="3.5" />
+    <div className="landing__step">
+      <span className="landing__step-n">{n}</span>
+      <h2 className="landing__step-title">{title}</h2>
+      <p className="landing__step-body">{children}</p>
+    </div>
+  )
+}
+
+/** The map card. Static (data computed once in atlasCard.ts), so it never re-renders. */
+const AtlasCard = memo(function AtlasCard() {
+  const clipId = 'landing-fan-clip'
+  const { x, y, width, height } = MAP_VIEWBOX
+  return (
+    <figure className="landing__card">
+      <div className="landing__card-head">
+        <span className="landing__eyebrow">One plan · every city</span>
+        <span className="landing__card-plan">$2.5M · $80k/yr in Austin</span>
+      </div>
+      <svg
+        className="landing__map"
+        viewBox={`${x} ${y} ${width} ${height}`}
+        role="img"
+        aria-label="Map of cities coloured by how often the same illustrative plan holds there; Lisbon is highlighted at 88 percent"
+      >
+        <g className="landing__grid">
+          {MERIDIANS.map((m) => (
+            <line key={`m${m}`} x1={m} y1={y} x2={m} y2={y + height} />
+          ))}
+          {PARALLELS.map((p) => (
+            <line key={`p${p}`} x1={x} y1={p} x2={x + width} y2={p} />
+          ))}
+        </g>
+        <circle className="landing__pulse" cx={LISBON.x} cy={LISBON.y} r="9" />
+        {CITIES.map((c) => (
+          <circle key={c.name} className={`landing__dot landing__dot--${c.band}`} cx={c.x} cy={c.y} r={c.r} />
         ))}
-      <circle className="landing__start" cx="0" cy={startY} r="5" />
-      {/* Drawn last, with a halo, so a path crossing it never hides the words. */}
-      <text className="landing__threshold-label" x={width - 32} y={thresholdY - 8} textAnchor="end">
-        margin-call line
-      </text>
-    </svg>
+        {/* Two label sets; CSS shows one: all six as drawn, or the narrow-card set (larger type). */}
+        <MapLabels labels={MAP_LABELS} variant="wide" />
+        <MapLabels labels={PHONE_LABELS} variant="narrow" />
+      </svg>
+      <div className="landing__read">
+        <div className="landing__read-text">
+          <span className="landing__eyebrow">Lisbon, Portugal</span>
+          <span className="landing__read-pct">
+            {LISBON.pct}% <span className="landing__read-unit">of futures hold</span>
+          </span>
+          <span className="landing__read-note">
+            vs {AUSTIN.pct}% staying in Austin. The same life costs about 38% less, so you borrow less.
+          </span>
+        </div>
+        <svg
+          className="landing__fan"
+          viewBox={`0 0 ${FAN_W} ${FAN_H}`}
+          role="img"
+          aria-label="Lisbon fan chart: the portfolio stays well above the loan and the margin-call line"
+        >
+          <defs>
+            <clipPath id={clipId}>
+              <rect x="0" y="0" width={FAN_W} height={FAN_H} />
+            </clipPath>
+          </defs>
+          <line className="landing__fan-base" x1="0" y1={FAN_H} x2={FAN_W} y2={FAN_H} />
+          <g clipPath={`url(#${clipId})`}>
+            <path className="landing__fan-band1" d={FAN.band1} />
+            <path className="landing__fan-band2" d={FAN.band2} />
+            <path className="landing__fan-median" d={FAN.median} />
+            <path className="landing__fan-margin" d={FAN.margin} />
+            <path className="landing__fan-loan" d={FAN.loan} />
+          </g>
+        </svg>
+      </div>
+      <div className="landing__card-foot">
+        <span className="landing__key">
+          Breaks <span className="landing__ramp" aria-hidden="true" /> Holds
+        </span>
+        <span>Illustrative numbers</span>
+      </div>
+    </figure>
   )
 })
+
+function MapLabels({ labels, variant }: { labels: readonly MapLabel[]; variant: 'wide' | 'narrow' }) {
+  return (
+    <g className={`landing__labels landing__labels--${variant}`}>
+      {labels.map((l) => (
+        <text key={l.name} className="landing__label" x={l.x} y={l.y} textAnchor={l.anchor}>
+          {l.name} <tspan className={`landing__label-pct landing__label-pct--${l.band}`}>{l.pct}%</tspan>
+        </text>
+      ))}
+    </g>
+  )
+}

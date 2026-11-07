@@ -1,0 +1,11 @@
+npm notice run evelo@2.0.0 npx
+npm notice run 'vitest' run src/ui/landing
+
+ RUN  v5.1.0 /home/jonah/repos/eVelo-v2
+
+
+ Test Files  1 passed (1)
+      Tests  13 passed (13)
+   Start at  12:48:29
+   Duration  105ms (tests 43%, import 29%, transform 21%, worker 7%)
+
