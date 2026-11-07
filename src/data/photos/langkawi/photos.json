@@ -1,0 +1,65 @@
+[
+  {
+    "commons": "File:Langkawi - aerial view.jpg",
+    "file": "1.webp",
+    "caption": "Turquoise bays and small islands off Langkawi, seen from a mountain top",
+    "alt": "A high view over green forested headlands, a small yacht marina and a turquoise sea dotted with wooded islets under white clouds",
+    "focus": "50% 60%",
+    "author": "Jakub Michankow",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Langkawi_-_aerial_view.jpg",
+    "width": 1200,
+    "height": 794
+  },
+  {
+    "commons": "File:Langkawi Sky Bridge (November 2016).jpg",
+    "file": "2.webp",
+    "caption": "The Langkawi Sky Bridge, a curved walkway hung from a single pylon above the rainforest",
+    "alt": "A curved steel footbridge with walkers, hung by cables from one tall green pylon over jungle-covered peaks, with the sea beyond",
+    "focus": "45% 50%",
+    "author": "Engin Akyurt",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Langkawi_Sky_Bridge_(November_2016).jpg",
+    "width": 1280,
+    "height": 854
+  },
+  {
+    "commons": "File:Cenang Beach view, Langkawi.jpg",
+    "file": "3.webp",
+    "caption": "Pantai Cenang, the long sandy beach on Langkawi's west coast",
+    "alt": "A wide pale sand beach with grey rocks, palm trees and calm turquoise water, with mountains on the far horizon",
+    "focus": "40% 60%",
+    "author": "NickLubushko",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Cenang_Beach_view,_Langkawi.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "commons": "File:Kuah Langkawi Malaysia Al-Hana-Mosque-04.jpg",
+    "file": "4.webp",
+    "caption": "Masjid Al Hana, the town mosque of Kuah, Langkawi's main town",
+    "alt": "A white mosque with golden domes and many slender minarets topped with onion domes, behind a paved forecourt under a blue sky",
+    "author": "CEphoto, Uwe Aranas",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kuah_Langkawi_Malaysia_Al-Hana-Mosque-04.jpg",
+    "width": 1280,
+    "height": 853
+  },
+  {
+    "commons": "File:Kilim Geoforest Park, Langkawi.jpg",
+    "file": "5.webp",
+    "caption": "Limestone cliffs and mangroves along a river in Kilim Geoforest Park",
+    "alt": "A tall rock cliff covered in trees rising from green water, with a line of mangrove trees running into the distance",
+    "author": "Dcpeets",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kilim_Geoforest_Park,_Langkawi.jpg",
+    "width": 1152,
+    "height": 864
+  }
+]

@@ -1,0 +1,6 @@
+$ NODE_PATH=/home/jonah/repos/eVelo/node_modules node docs/evidence/stage-4/scripts/sheet-shot.cjs docs/evidence/stage-5
+images 50, broken 0, natural size != listed size 0, portrait 1
+portrait ../../../src/data/photos/chiang-rai/5.webp
+contact-sheet-1.png: sections 1-6
+contact-sheet-2.png: sections 7-10
+exit 0

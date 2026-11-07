@@ -1,0 +1,11 @@
+$ node -e <compare dist/artifact-files.json with ls dist/assets/*.webp>
+manifest entries: 403
+manifest .webp entries: 375
+dist/assets .webp: 375
+webp missing from manifest: 0 []
+sample: [
+  'assets/1-1qCM9Oqh.webp',
+  'assets/1-4DVcfqQ-.webp',
+  'assets/1-9OfKJMBQ.webp'
+] [ 'assets/1-1qCM9Oqh.webp', 'assets/1-4DVcfqQ-.webp' ]
+entries whose source file is missing: 0 []

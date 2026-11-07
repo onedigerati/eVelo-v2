@@ -1,0 +1,3 @@
+$ node scripts/artifact-page.mjs
+403 files
+exit 0

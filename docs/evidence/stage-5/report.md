@@ -1,0 +1,24 @@
+# Stage 5 · Photos: Asia/Africa + launch — evidence
+Verified 2026-11-07 on e037a69, plus uncommitted changes (photos for 39 cities, photos-lib.mjs credit cleaning, photos.test.ts, PLAN.md). Independent verifier; built nothing.
+
+| Check | Result | Evidence |
+|---|---|---|
+| Each of the 10 Asia/Africa picks, plus kuala-lumpur, has 5 photos with clean credits under 200 kB | **fail** (credits) | [asia-africa-photos.txt](asia-africa-photos.txt): 11/11 have 5 webp + 5 complete entries, max 199,950 B, 0 Commons files reused; but [credit-scan.txt](credit-scan.txt): grand-baie 3's author is `No machine-readable author provided. Maral10 assumed (based on copyright claims…` (Commons boilerplate; should be `Maral10`), and grand-baie 1's is `"dronepicr"` with literal quotes. Both pass the test's placeholder/noise check |
+| The photo test requires exactly 5 photos for every one of the 75 EXPAT_PICKS, names missing cities, and passes | pass | [tests-photos.txt](tests-photos.txt): 93/93 incl. "has exactly 5 photos for every pick" (iterates all 75 EXPAT_PICKS ids, and asserts the photo folders equal the pick ids); 75 unique cityIds in expatPicks.ts = 75 photo folders; [photo-test-mutation.txt](photo-test-mutation.txt): in a scratch copy with bangkok cut to 4 and volcan deleted, it fails with `picks without 5 photos: expected [ 'bangkok', 'volcan' ] to deeply equal []` |
+| Contact sheet of the 10 cities saved and screenshotted | pass | [contact-sheet.html](contact-sheet.html), [contact-sheet-run.txt](contact-sheet-run.txt) (50 photos, 10 cities); [contact-sheet-1.png](contact-sheet-1.png), [contact-sheet-2.png](contact-sheet-2.png); [contact-sheet-shot.txt](contact-sheet-shot.txt): 50 images, 0 broken, 0 mismatches, 1 portrait (chiang-rai 5, a clock tower). Nothing glaring on a glance; full-size review was the separate reviewers' |
+| bangkok, bali and grand-baie profiles show the mosaic and badge | pass | [profiles.txt](profiles.txt): ranks 27, 74, 20 via "Also worth a look", 5 tiles / 5 loaded, badge = card (80%, 79%, 82%), no console errors; [bangkok-mosaic.png](bangkok-mosaic.png), [bangkok-profile.png](bangkok-profile.png), [bali-mosaic.png](bali-mosaic.png), [bali-profile.png](bali-profile.png), [grand-baie-mosaic.png](grand-baie-mosaic.png) (credit line visibly shows the boilerplate author), [grand-baie-profile.png](grand-baie-profile.png) |
+| `npm run build` puts 375 .webp in dist/assets and `node scripts/artifact-page.mjs` lists them all in dist/artifact-files.json | pass | [build.txt](build.txt); [artifact-page.txt](artifact-page.txt): "403 files"; [manifest.txt](manifest.txt): 403 entries, 375 .webp = 375 in dist/assets, 0 missing, 0 entries with a missing source |
+| `npm run photos -- <all 75 ids>` downloads nothing | pass | [photos-rerun.txt](photos-rerun.txt): 75 × "all 5 photos up to date, nothing downloaded", exit 0 |
+
+Project checks: type check pass ([typecheck.txt](typecheck.txt)) · tests 318/318, 22 files ([tests.txt](tests.txt)) · build pass, main chunk 532.80 kB ([main-chunk.txt](main-chunk.txt))
+Audit: `npm audit --omit=dev` and full `npm audit`: 0 vulnerabilities ([audit.txt](audit.txt))
+
+Scripts live in ../stage-4/scripts/ (check-photos.mjs, sheet-shot.cjs, profiles.cjs, near-dupes.mjs).
+
+## History
+- 2026-11-07 · Clean-credits check failed: grand-baie 3 author is Commons boilerplate, grand-baie 1 has stray quotes. Not fixed (verifier only).
+
+## Credit fix after verification — re-checked by the PM
+The "clean credits" failure is fixed: `cleanAuthor` strips view-count thank-yous, Commons "No machine-readable author provided. X assumed" boilerplate, wikivoyage (WT-shared) tags, doubled brackets and wrapping quotes, and `hasCreditNoise` now flags all of them so the data test refuses any that come back. `npm run photos -- --recredit` changed 6 authors (roatan 2, 5 → "Prayitno"; grand-baie 3 → "Maral10"; grand-baie 1 → "dronepicr"; medellin 5 → "CONOCER"; san-jose-cr 2 → "Mariordo (Mario Roberto Durán Ortiz)"); no .webp changed (md5). A scan of all 375 authors flags nothing else. Re-run: [tests.txt](tests.txt) 329/329 in 22 files; typecheck clean; build ok, 375 .webp in dist/assets, main index-*.js 532.80 kB. Credits check: pass.
+
+Photo review behind checks 2–3 (by the PM, from the reviewers' reports): every photo in these stages was viewed at full size by an independent reviewer (one per builder batch); flagged photos were replaced and every replacement viewed again by a further independent reviewer; the last four replacements (las-terrenas 3, panajachel 5, coronado 3, hua-hin 5) were viewed by the PM. Builders confirmed place claims against Commons descriptions, categories or GPS; panajachel 2 and 5 turned out to be other lake towns and were replaced. Thin-coverage cities (Hopkins, Corozal, Coronado, Grand Baie) keep the best honest photos available, nearby places named in captions.

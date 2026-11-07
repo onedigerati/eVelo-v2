@@ -1,0 +1,45 @@
+$ (in a scratch copy of the repo, with bangkok cut to 4 photos and the volcan folder deleted) npx vitest run src/data/__tests__/photos.test.ts
+npm notice run evelo@2.0.0 npx
+npm notice run 'vitest' run src/data/__tests__/photos.test.ts
+ RUN  v5.1.0 /tmp/claude-1000/-home-jonah-repos-eVelo-v2/9fb17dce-697c-43fb-b2f4-989e3e046b71/scratchpad/mut
+ ❯ src/data/__tests__/photos.test.ts (93 tests | 2 failed) 559ms
+   ❯ city photos data (8)
+     × has exactly 5 photos for every pick 6ms
+     × gives every city exactly 5 complete, credited photos under 200 kB 14ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/data/__tests__/photos.test.ts > city photos data > has exactly 5 photos for every pick
+AssertionError: picks without 5 photos: expected [ 'bangkok', 'volcan' ] to deeply equal []
+- Expected
++ Received
+- []
++ [
++   "bangkok",
++   "volcan",
++ ]
+ ❯ src/data/__tests__/photos.test.ts:46:64
+     44|   it('has exactly 5 photos for every pick', () => {
+     45|     const missing = [...PICK_IDS].filter((id) => photosFor(id).length …
+     46|     expect(missing, `picks without ${PHOTOS_PER_CITY} photos`).toEqual…
+       |                                                                ^
+     47|     expect(PHOTO_CITY_IDS).toEqual([...PICK_IDS].sort())
+     48|   })
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+ FAIL  src/data/__tests__/photos.test.ts > city photos data > gives every city exactly 5 complete, credited photos under 200 kB
+AssertionError: bangkok: expected [ { …(12) }, { …(12) }, …(2) ] to have a length of 5 but got 4
+- Expected
++ Received
+- 5
++ 4
+ ❯ src/data/__tests__/photos.test.ts:57:24
+     55|     for (const id of PHOTO_CITY_IDS) {
+     56|       const list = photosFor(id)
+     57|       expect(list, id).toHaveLength(PHOTOS_PER_CITY)
+       |                        ^
+     58|       expect(validateHandFields(list), id).toEqual([])
+     59|       list.forEach((p, i) => {
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+ Test Files  1 failed (1)
+      Tests  2 failed | 91 passed (93)
+   Start at  17:21:31
+   Duration  3.61s (transform 75%, tests 16%, import 9%)
+exit 1

@@ -1,0 +1,5 @@
+$ npm run photos:sheet -- penang langkawi taipei bali grand-baie chiang-mai chiang-rai bangkok hua-hin phuket docs/evidence/stage-5/contact-sheet.html
+npm notice run evelo@2.0.0 photos:sheet
+npm notice run node scripts/photo-sheet.mjs penang langkawi taipei bali grand-baie chiang-mai chiang-rai bangkok hua-hin phuket docs/evidence/stage-5/contact-sheet.html
+wrote docs/evidence/stage-5/contact-sheet.html: 50 photos, 10 cities
+exit 0

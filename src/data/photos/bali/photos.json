@@ -1,0 +1,64 @@
+[
+  {
+    "commons": "File:Rice terraces, Ubud, Bali.jpg",
+    "file": "1.webp",
+    "caption": "The Tegallalang rice terraces in the hills north of Ubud",
+    "alt": "Steep green rice terraces stepping down a hillside, framed by coconut palms and dense tropical forest",
+    "author": "Vyacheslav Argenberg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Rice_terraces,_Ubud,_Bali.jpg",
+    "width": 1024,
+    "height": 683
+  },
+  {
+    "commons": "File:Pura Taman Saraswati, Ubud, Bali, 20220823 0840 0249.jpg",
+    "file": "2.webp",
+    "caption": "Pura Taman Saraswati, a water-garden temple in the centre of Ubud",
+    "alt": "A carved red-brick temple gateway behind a pond covered in lily pads, with frangipani trees and a few visitors on the steps",
+    "focus": "50% 40%",
+    "author": "Jakub Hałun",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Pura_Taman_Saraswati,_Ubud,_Bali,_20220823_0840_0249.jpg",
+    "width": 1024,
+    "height": 684
+  },
+  {
+    "commons": "File:Jukung.JPG",
+    "file": "3.webp",
+    "caption": "Traditional jukung outrigger boats drawn up on the beach at Sanur",
+    "alt": "Painted wooden outrigger fishing boats in white, green, red and yellow, with curved bamboo outriggers, resting on a sandy beach by calm water under a cloudy sky",
+    "author": "Dajobimi",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Jukung.JPG",
+    "width": 1280,
+    "height": 851
+  },
+  {
+    "commons": "File:Offerings on the street of Ubud, Bali, 20220823 0836 0242.jpg",
+    "file": "4.webp",
+    "caption": "Daily canang sari offerings left on stone steps in Ubud",
+    "alt": "Small square palm-leaf trays holding flowers, leaves and incense sticks laid out on mossy grey stone steps",
+    "author": "Jakub Hałun",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Offerings_on_the_street_of_Ubud,_Bali,_20220823_0836_0242.jpg",
+    "width": 1280,
+    "height": 843
+  },
+  {
+    "commons": "File:Aerial picture of Campuhan Ridge Walk , Scenic Green Valley in Ubud Bali. Drone photo. (46112155712).jpg",
+    "file": "5.webp",
+    "caption": "The Campuhan Ridge Walk, a paved path along a grassy ridge just outside Ubud",
+    "alt": "An aerial view of a narrow paved path winding along a green grassy ridge between two forested valleys, with a few walkers",
+    "focus": "50% 45%",
+    "author": "Artem Beliaikin",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Aerial_picture_of_Campuhan_Ridge_Walk_,_Scenic_Green_Valley_in_Ubud_Bali._Drone_photo._(46112155712).jpg",
+    "width": 1280,
+    "height": 959
+  }
+]

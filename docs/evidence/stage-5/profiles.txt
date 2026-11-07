@@ -1,0 +1,25 @@
+$ node docs/evidence/stage-4/scripts/profiles.cjs http://localhost:4197/ docs/evidence/stage-5 'Bangkok=bangkok' 'Bali=bali' 'Grand Baie=grand-baie'   (vite preview of the build above)
+PASS  Bangkok: found in the "Also worth a look" list
+Bangkok: opened via "Also worth a look" row (rank 27, .also__main button)
+bangkok {"pickOdds":"80%","tiles":5,"loaded":5,"srcs":["1-D1d3yJWB.webp","2-6ohfOtsx.webp","3-DstrxkRq.webp","4-DWKSC51x.webp","5-CeWz7X7_.webp"],"badge":"YOUR PLAN HERE 80% plan holds +16 pts vs 64% in St. Louis","badgeBig":"80%","badgeVs":"+16 pts vs 64% in St. Louis","cardBig":"80%","cardSub":"+16 pts vs 64% in St. Louis","badgeHome":"63.9%","cardMark":"63.9%","credit":"Photos: Sergei Gussev, Fabio Achilli, Arthur Taksin, Marcin Konsek · CC BY / CC BY-SA · Wikimedia Commons"}
+PASS  Bangkok: mosaic has 5 tiles, 5 images loaded
+PASS  Bangkok: badge 80% == card 80% (top-picks list shows 80%)
+PASS  Bangkok: badge "+16 pts vs 64% in St. Louis" within card sub "+16 pts vs 64% in St. Louis"
+PASS  Bangkok: home tick 63.9% == card mark 63.9%
+PASS  Bali: found in the "Also worth a look" list
+Bali: opened via "Also worth a look" row (rank 74, .also__main button)
+bali {"pickOdds":"79%","tiles":5,"loaded":5,"srcs":["1-B3IRq8Sm.webp","2-BWxeiaG7.webp","3-8pJtNPC9.webp","4-ClD-gOgc.webp","5-Cdfsd_CX.webp"],"badge":"YOUR PLAN HERE 79% plan holds +15 pts vs 64% in St. Louis","badgeBig":"79%","badgeVs":"+15 pts vs 64% in St. Louis","cardBig":"79%","cardSub":"+15 pts vs 64% in St. Louis","badgeHome":"63.9%","cardMark":"63.9%","credit":"Photos: Vyacheslav Argenberg, Jakub Hałun, Dajobimi, Artem Beliaikin · CC BY / CC BY-SA / Public domain / CC0 · Wikimedia Commons"}
+PASS  Bali: mosaic has 5 tiles, 5 images loaded
+PASS  Bali: badge 79% == card 79% (top-picks list shows 79%)
+PASS  Bali: badge "+15 pts vs 64% in St. Louis" within card sub "+15 pts vs 64% in St. Louis"
+PASS  Bali: home tick 63.9% == card mark 63.9%
+PASS  Grand Baie: found in the "Also worth a look" list
+Grand Baie: opened via "Also worth a look" row (rank 20, .also__main button)
+grand-baie {"pickOdds":"82%","tiles":5,"loaded":5,"srcs":["1-DNE9H8V-.webp","2-CMJRT3sE.webp","3-CHIUD0rf.webp","4-DACUjvMI.webp","5-CQnZD_SN.webp"],"badge":"YOUR PLAN HERE 82% plan holds +18 pts vs 64% in St. Louis","badgeBig":"82%","badgeVs":"+18 pts vs 64% in St. Louis","cardBig":"82%","cardSub":"+18 pts vs 64% in St. Louis","badgeHome":"63.9%","cardMark":"63.9%","credit":"Photos: \"dronepicr\", ZoschH, No machine-readable author provided. Maral10 assumed (based on copyright claims…, gailhampshire · CC BY / CC BY-SA / Public domain · Wikimedia Commons"}
+PASS  Grand Baie: mosaic has 5 tiles, 5 images loaded
+PASS  Grand Baie: badge 82% == card 82% (top-picks list shows 82%)
+PASS  Grand Baie: badge "+18 pts vs 64% in St. Louis" within card sub "+18 pts vs 64% in St. Louis"
+PASS  Grand Baie: home tick 63.9% == card mark 63.9%
+console errors/warnings: none
+ALL PASS
+exit 0

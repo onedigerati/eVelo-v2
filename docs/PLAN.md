@@ -7,16 +7,18 @@ Every one of the 75 profiled Atlas picks shows five real, openly licensed photos
 2026-11-07 · tests: 214 pass (20 files) · typecheck: clean · build: ok
 
 ## Now
-Stage 4 of 5 · Photos: Americas
-Risk: external services (build-time downloads from Wikimedia Commons), third-party content and licences
+Stage 5 of 5 · Photos: Asia/Africa + launch
+Risk: external services (build-time downloads from Wikimedia Commons; publishing the preview and the site), third-party content and licences
 Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (v25, stage 2: gallery with the 5 pilot cities)
 Checks:
-- [x] Each of the 29 other Latin American picks (lake-chapala, merida, puerto-vallarta, san-miguel-de-allende, la-paz, mexico-city, oaxaca, playa-del-carmen, mazatlan, antigua-guatemala, panajachel, san-jose-cr, atenas, cayo, hopkins, corozal, placencia, ambergris-caye, roatan, las-terrenas, montevideo, santiago, asuncion, lima, medellin, cuenca, cartagena, coronado, volcan) has 5 photos with complete, clean credits, under 200 kB, no Commons file used twice (proof: test)
-- [x] A contact sheet of the 29 cities is saved to the evidence, and every photo was viewed at full size by an independent reviewer and shows the place its caption names, with nothing watermarked, blurred, mislabelled or dominated by crowds, ads or swimwear (proof: run the product: contact-sheet screenshot + review)
-- [x] Captions are one factual line tied to a reason the city's profile gives, with no invented prices, times, dates or rankings (proof: review against the profiles)
-- [x] Three profiles (mexico-city, cuenca, ambergris-caye) show the mosaic and the odds badge in the app, and the main chunk stays within 2 kB of 532.79 kB (proof: run the product: screenshots; command: build output)
-Open: none
-Mode: autopilot
+- [x] Each of the 10 other Asia/Africa picks (penang, langkawi, taipei, bali, grand-baie, chiang-mai, chiang-rai, bangkok, hua-hin, phuket) has 5 photos with complete, clean credits, under 200 kB, no Commons file used twice (proof: test)
+- [x] The photo test requires exactly 5 photos for every one of the 75 picks and names any city that lacks them (proof: test, plus a mutation run that removed two cities)
+- [x] A contact sheet of the 10 cities is saved, and every photo was viewed at full size by an independent reviewer, flagged ones replaced and re-viewed (proof: run the product: contact-sheet screenshot + review)
+- [x] Three profiles (bangkok, bali, grand-baie) show the mosaic and the odds badge; the build puts all 375 photos in dist/assets and the preview manifest lists them; main chunk within 2 kB of 532.79 kB (proof: run the product: screenshots; command: build and manifest)
+- [ ] The preview shows all 75 cities' galleries: stale files removed so the version stays under 511 files, and every manifest path present (proof: run the product: file listing + opening profiles on the preview)
+- [ ] Deployed to GitHub Pages on the user's approval, and the live site's asset hashes match a local build (proof: command)
+Open: publish the preview with all 75 cities — waiting on the user's go; then deploy — waiting on the user's go
+Mode: paused — preview publish is outward-facing; needs the user's go
 
 ## Stages
 - [x] 1. Photo pipeline — `npm run photos` (Commons API + sharp → WebP), per-city photo data and tests, the five pilot cities, a contact sheet

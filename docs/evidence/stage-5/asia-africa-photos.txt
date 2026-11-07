@@ -1,0 +1,16 @@
+$ node docs/evidence/stage-4/scripts/check-photos.mjs penang langkawi taipei bali grand-baie chiang-mai chiang-rai bangkok hua-hin phuket kuala-lumpur
+ok   penang                 webp=5 json=5 max=198568 B 
+ok   langkawi               webp=5 json=5 max=198058 B 
+ok   taipei                 webp=5 json=5 max=199724 B 
+ok   bali                   webp=5 json=5 max=193512 B 
+ok   grand-baie             webp=5 json=5 max=193154 B 
+ok   chiang-mai             webp=5 json=5 max=199542 B 
+ok   chiang-rai             webp=5 json=5 max=199950 B 
+ok   bangkok                webp=5 json=5 max=199934 B 
+ok   hua-hin                webp=5 json=5 max=187256 B 
+ok   phuket                 webp=5 json=5 max=196954 B 
+ok   kuala-lumpur           webp=5 json=5 max=199558 B 
+
+Commons files across all cities: 375, used more than once: 0 []
+11 cities checked, 0 failing
+exit 0
