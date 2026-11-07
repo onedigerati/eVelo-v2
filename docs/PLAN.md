@@ -22,7 +22,7 @@ Checks:
 - [x] Tests green, typecheck clean, build ok; fresh review of stages 5–6 UI triaged (proof: command output + review notes) — [evidence](evidence/stage-6/report.md)
 - [ ] Preview published and deploy done on the user's approval (proof: preview URL + live site check)
 Open: none
-Mode: autopilot
+Mode: paused — waiting on the user to approve publishing the preview Artifact and deploying (push to main → GitHub Pages)
 
 ## Stages
 - [x] 1. BBD research — country tax, residency, lending and healthcare facts for every candidate, sourced; new top-25 draft
