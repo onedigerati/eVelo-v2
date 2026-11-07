@@ -167,3 +167,74 @@ City overrides in existing countries:
 - **Oaxaca: 0.3** (Mexico 0.25). It has no JCI hospital and severe cases may need transfer to Puebla or Mexico City.
 - **Coronado: 0.25, no override.** Panama City's hospitals are 1–1.5 h away, which is the same as Boquete's hour to David; Boquete's override was removed in Stage 1, so Coronado follows it.
 - **Hua Hin, Lake Chapala, Atenas, Cascais, Crete, Gascony, Alicante, Tarragona, Antalya:** country factor. Each is within about an hour of a private or regional hospital (Bangkok Hospital Hua Hin, Guadalajara, CIMA, CUF Cascais, Chania/Heraklion, Toulouse, Alicante, Tarragona, Antalya).
+
+# Stage 5: costs for picks newly in the top 50 (2026-11-06)
+
+Eleven Atlas picks had rough-estimate indices and no verified record. Numbeo was rate-limiting (HTTP 429), so these were priced from livingcost.org (all pages "Updated: June 21, 2026", read 2026-11-06). Every record is `confidence: 'low'`, `source: 'livingcost.org'`.
+
+## Method
+
+1. Read New York (`https://livingcost.org/cost/united-states/ny/new-york`) and each city page. One-person figures in USD.
+2. Raw ratios vs New York, ×100:
+   - **col:** "Without rent" monthly total (NY $1,485);
+   - **rent:** 1-bedroom apartment in city centre (NY $3,692);
+   - **groceries:** monthly "Food" (NY $842);
+   - **restaurants:** mean of the Lunch Menu ratio (NY $22.6) and the Dinner-for-2 ratio (NY $90). Lunch alone fit badly (mean error 34%, max 42%: Bangkok's $3.36 lunch gives 15 against Numbeo's 30), and dinner alone came to 16% mean, 28% max. The mean of the two fit at 10%.
+3. Calibration on four cities with high-confidence Numbeo rows (Lisbon, Athens, Bangkok, Montevideo): the factor per index is the simple mean of numbeo / raw over the four cities.
+
+| Index | Factor | Mean abs. error | Max error | Per city (Lis / Ath / Bkk / Mvd) |
+|---|---|---|---|---|
+| col | 1.072 | 5.4% | 11.6% | -4 / -3 / -3 / +12% |
+| rent | 0.973 | 9.1% | 15.9% | +6 / +4 / -16 / +11% |
+| groceries | 0.960 | 14.7% | 23.6% | +6 / +12 / -24 / +17% |
+| restaurants | 0.980 | 10.0% | 13.1% | +9 / +13 / -10 / -8% |
+
+Calibration pages: `/cost/portugal/lisbon`, `/cost/greece/athens`, `/cost/thailand/bangkok`, `/cost/uruguay/montevideo`.
+
+The fit is rough. Groceries is the weakest index, because livingcost's "Food" is a total monthly food spend rather than a grocery basket, and it under-reads Bangkok. Expect errors of about ±15% on groceries and ±10% on the other three.
+
+## Results
+
+New = round(factor × raw). Changes above 10% are in bold.
+
+| City | Old (col/rent/groc/rest) | New (col/rent/groc/rest) | Change | URL read |
+|---|---|---|---|---|
+| Madrid | 55/34/46/50 | 62/37/59/71 | **+13%**, +9%, **+28%**, **+42%** | https://livingcost.org/cost/spain/madrid |
+| Tbilisi | 32/14/34/30 | 38/17/40/42 | **+19%**, **+21%**, **+18%**, **+40%** | https://livingcost.org/cost/georgia/tbilisi |
+| Phuket | 42/18/52/26 | 33/17/37/35 | **-21%**, -6%, **-29%**, **+35%** | https://livingcost.org/cost/thailand/phuket |
+| Santiago | 46/16/46/40 | 47/16/44/52 | +2%, 0%, -4%, **+30%** | https://livingcost.org/cost/chile/santiago |
+| Prague | 52/24/48/42 | 52/29/51/49 | 0%, **+21%**, +6%, **+17%** | https://livingcost.org/cost/czech-republic/prague |
+| Istanbul | 38/14/36/30 | 46/24/40/48 | **+21%**, **+71%**, **+11%**, **+60%** | https://livingcost.org/cost/turkey/istanbul |
+| Mexico City | 42/22/42/36 | 49/28/51/49 | **+17%**, **+27%**, **+21%**, **+36%** | https://livingcost.org/cost/mexico/mexico |
+| Budapest | 46/18/44/36 | 56/22/54/67 | **+22%**, **+22%**, **+23%**, **+86%** | https://livingcost.org/cost/hungary/budapest |
+| Taipei | 60/20/72/30 | 48/18/52/38 | **-20%**, -10%, **-28%**, **+27%** | https://livingcost.org/cost/taiwan/taipei |
+| Lima | 38/14/38/28 | 41/17/34/25 | +8%, **+21%**, **-11%**, **-11%** | https://livingcost.org/cost/peru/lima |
+| Playa del Carmen | 44/22/44/40 | 45/24/49/50 | +2%, +9%, **+11%**, **+25%** | https://livingcost.org/cost/mexico/playa-del-carmen |
+
+Raw livingcost figures (one person, USD/month; lunch and dinner-for-2 in USD):
+
+| City | Without rent | 1BR centre | Food | Lunch | Dinner for 2 |
+|---|---|---|---|---|---|
+| New York | 1485 | 3692 | 842 | 22.6 | 90 |
+| Madrid | 858 | 1411 | 517 | 17.6 | 60.1 |
+| Tbilisi | 526 | 628 | 351 | 10.5 | 34.8 |
+| Phuket | 455 | 650 | 325 | 5.76 | 40.6 |
+| Santiago | 647 | 612 | 390 | 11.3 | 50.1 |
+| Prague | 717 | 1089 | 451 | 10.6 | 48.1 |
+| Istanbul | 641 | 894 | 354 | 10.0 | 47.9 |
+| Mexico City | 682 | 1061 | 447 | 11.6 | 44.0 |
+| Budapest | 770 | 839 | 474 | 13.9 | 67.1 |
+| Taipei | 662 | 684 | 454 | 5.53 | 47.4 |
+| Lima | 568 | 660 | 297 | 4.53 | 28.4 |
+| Playa del Carmen | 617 | 898 | 428 | 13.9 | 37.2 |
+| Lisbon (cal.) | 707 | 1406 | 446 | 14.7 | 57.4 |
+| Athens (cal.) | 726 | 668 | 500 | 16.5 | 63.0 |
+| Bangkok (cal.) | 562 | 606 | 308 | 3.36 | 36.3 |
+| Montevideo (cal.) | 850 | 674 | 535 | 15.6 | 45.8 |
+
+Caveats:
+- Restaurants rose for most cities, because the old estimates sat well below livingcost's prices. Budapest (+86%) and Istanbul (+60%) are the largest moves. Budapest's dinner-for-2 ($67) is higher than Lisbon's or Athens's.
+- Istanbul's rent rose 71% (14 → 24), which is consistent with Turkish rent inflation since the estimate was set.
+- Phuket and Taipei fell on col and groceries. The old estimates looked high next to Bangkok's Numbeo row (42/19/46/30).
+- Livingcost's Mexico City page is at `/cost/mexico/mexico` (its title reads "Mexico City"), not `/cost/mexico/mexico-city`, which returns 404.
+- Re-read all eleven from Numbeo once it stops rate-limiting, and replace these records if the rows exist.

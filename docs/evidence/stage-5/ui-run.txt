@@ -1,0 +1,41 @@
+desktop: pick buttons in city list = 67
+desktop Algarve: Top pick 1 for expat retirees: open the Algarve (Faro) profile
+   No. 1 Algarve (Faro) | PT | TOP PICK 1 OF 50 · PORTUGAL | Sunny coast, big English-speaking retiree scene | For a buy-borrow-die retiree, Portugal has no wealth tax, children inherit free and the D7 visa accepts dividend income, and the Algarve adds about 300 days of sun and an established English-speaking retiree community. Portugal is 7th in the Global Peace Index, Live and Invest Overseas has the Algarve 2nd for 2026, and International Living has Portugal 4th. | HOW IT SCORES · out of 5, for a US retiree on buy-borrow-die | Tax on holdings | 3 | out of 5 | Estate | 5 | out of 5 | Lending | 
+   has "Tax on holdings": true
+   has "Estate": true
+   has "Lending": true
+   has "Residency": true
+desktop Paphos: Top pick 3 for expat retirees: open the Paphos profile
+   No. 3 Paphos | CY | TOP PICK 3 OF 50 · CYPRUS | The EU's lightest tax on a US portfolio, in a British retiree hub | Cyprus has the best BBD tax profile in the EU: a non-domiciled resident's dividends and interest carry only the capped 2.65% health contribution for 17 years, with no wealth or inheritance tax. Category F gives permanent residence on about €9,600 a year of foreign income, and Paphos is the island's most retiree-oriented town, cheaper than Limassol. | HOW IT SCORES · out of 5, for a US retiree on buy-borrow-die | Tax on holdings | 5 | out of 5 | Estate | 5 | out of 5 | Lending | 3
+   has "Tax on holdings": true
+   has "Estate": true
+   has "Lending": true
+   has "Residency": true
+desktop Nice: Top pick 50 for expat retirees: open the Nice profile
+   No. 50 Nice | FR | TOP PICK 50 OF 50 · FRANCE | Riviera city with France's top-rated healthcare | France is 7th in International Living's 2026 index and scored best of all for healthcare, and Nice adds the Riviera's mild winters, a big English-speaking community and a year-round New York nonstop. For buy-borrow-die it ranks last of the 50: France taxes a resident's worldwide estate at up to 45% when it passes to children, and dividends pay 31.4%. | HOW IT SCORES · out of 5, for a US retiree on buy-borrow-die | Tax on holdings | 2 | out of 5 | Estate | 1 | out of 5 | Lending | 3 | out of 5 | Re
+   has "Tax on holdings": true
+   has "Estate": true
+   has "Lending": true
+   has "Residency": true
+desktop: show-all controls = 2
+phone: pick buttons in city list = 76
+phone Algarve: Top pick 1 for expat retirees: open the Algarve (Faro) profile
+   No. 1 Algarve (Faro) | PT | TOP PICK 1 OF 50 · PORTUGAL | Sunny coast, big English-speaking retiree scene | For a buy-borrow-die retiree, Portugal has no wealth tax, children inherit free and the D7 visa accepts dividend income, and the Algarve adds about 300 days of sun and an established English-speaking retiree community. Portugal is 7th in the Global Peace Index, Live and Invest Overseas has the Algarve 2nd for 2026, and International Living has Portugal 4th. | HOW IT SCORES · out of 5, for a US retiree on buy-borrow-die | Tax on holdings | 3 | out of 5 | Estate | 5 | out of 5 | Lending | 
+   has "Tax on holdings": true
+   has "Estate": true
+   has "Lending": true
+   has "Residency": true
+phone Paphos: Top pick 3 for expat retirees: open the Paphos profile
+   No. 3 Paphos | CY | TOP PICK 3 OF 50 · CYPRUS | The EU's lightest tax on a US portfolio, in a British retiree hub | Cyprus has the best BBD tax profile in the EU: a non-domiciled resident's dividends and interest carry only the capped 2.65% health contribution for 17 years, with no wealth or inheritance tax. Category F gives permanent residence on about €9,600 a year of foreign income, and Paphos is the island's most retiree-oriented town, cheaper than Limassol. | HOW IT SCORES · out of 5, for a US retiree on buy-borrow-die | Tax on holdings | 5 | out of 5 | Estate | 5 | out of 5 | Lending | 3
+   has "Tax on holdings": true
+   has "Estate": true
+   has "Lending": true
+   has "Residency": true
+phone Nice: Top pick 50 for expat retirees: open the Nice profile
+   No. 50 Nice | FR | TOP PICK 50 OF 50 · FRANCE | Riviera city with France's top-rated healthcare | France is 7th in International Living's 2026 index and scored best of all for healthcare, and Nice adds the Riviera's mild winters, a big English-speaking community and a year-round New York nonstop. For buy-borrow-die it ranks last of the 50: France taxes a resident's worldwide estate at up to 45% when it passes to children, and dividends pay 31.4%. | HOW IT SCORES · out of 5, for a US retiree on buy-borrow-die | Tax on holdings | 2 | out of 5 | Estate | 1 | out of 5 | Lending | 3 | out of 5 | Re
+   has "Tax on holdings": true
+   has "Estate": true
+   has "Lending": true
+   has "Residency": true
+phone: show-all controls = 1
+ERRORS []

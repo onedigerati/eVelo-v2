@@ -14,7 +14,7 @@ import { localTaxFor } from './localTaxes'
 export const COL_AS_OF = '2026-11-06'
 
 export const COL_SOURCES: string[] = [
-  'Cost indices (col excl. rent, rent, groceries, restaurants; NYC = 100): for verified cities (the 25 expat picks, US cities with a full Numbeo row and the 20 BBD destinations added in Stage 3), Numbeo\'s current cost-of-living index by city, read 2026-11-06, rounded, and cross-checked against Numbeo\'s 2026 Mid-Year edition and livingcost.org. Places without a Numbeo index are marked low confidence and either derived from Numbeo\'s raw prices vs New York or mapped to a nearby city row; each record\'s note says which. Every other city is a rough estimate modeled on the same kind of index, not checked against a current source.',
+  'Cost indices (col excl. rent, rent, groceries, restaurants; NYC = 100): for verified cities (the 25 expat picks, US cities with a full Numbeo row and the 20 BBD destinations added in Stage 3), Numbeo\'s current cost-of-living index by city, read 2026-11-06, rounded, and cross-checked against Numbeo\'s 2026 Mid-Year edition and livingcost.org. Places without a Numbeo index are marked low confidence and either derived from Numbeo\'s raw prices vs New York or mapped to a nearby city row; each record\'s note says which. Eleven picks added later (Madrid, Tbilisi, Phuket, Santiago, Prague, Istanbul, Mexico City, Budapest, Taipei, Lima, Playa del Carmen) are low confidence, derived from livingcost.org prices vs New York and scaled to Numbeo with per-index factors fitted on four cities that have Numbeo rows. Every other city is a rough estimate modeled on the same kind of index, not checked against a current source.',
   'Healthcare factor (US = 1.0): midpoint of local private or public cover and an international plan (Cigna Global / Allianz, age 60) plus estimated out-of-pocket costs for a couple at 60, relative to a 2026 US benchmark-silver marketplace plan for a couple at 60 (~$35.9k/yr including ~$4k out-of-pocket). Sources: KFF 2026 average marketplace premiums, plus insurer and broker quotes; rounded to 0.05. Checked for the 16 countries of the expat picks and set on the same basis for Cyprus, Malta, Montenegro, Belize, the Dominican Republic, Paraguay and Guatemala (docs/research/cost-check-2026-11.md); other countries are rough estimates. City overrides add cost where hospitals are far or evacuation cover is needed.',
   'FX volatility: rough annualized volatility of the real exchange rate vs USD based on recent multi-year history; 0 for USD-using economies, near 0 for hard pegs (AED).',
   'FX_FALLBACK: src/data/fx.json rates (2026-11-07) rounded, used only for a currency missing from the bundled and live rates.',
@@ -227,7 +227,7 @@ const TW: Base = {
 const asiaCities: City[] = [
   mk(TH, 'bangkok', 'Bangkok', 13.76, 100.5, [42, 19, 46, 30]),
   mk(TH, 'chiang-mai', 'Chiang Mai', 18.79, 98.98, [32, 11, 38, 19], ['Seasonal air pollution ("burning season", roughly Feb–Apr) is a health consideration.']),
-  mk(TH, 'phuket', 'Phuket', 7.88, 98.39, [42, 18, 52, 26], [], { healthcare: 0.4 }),
+  mk(TH, 'phuket', 'Phuket', 7.88, 98.39, [33, 17, 37, 35], [], { healthcare: 0.4 }),
   mk(TH, 'hua-hin', 'Hua Hin', 12.57, 99.96, [34, 18, 41, 23], ['Bangkok Hospital Hua Hin is the local private hospital; top-tier care is in Bangkok.']),
   mk(MY, 'kuala-lumpur', 'Kuala Lumpur', 3.14, 101.69, [37, 13, 42, 29]),
   mk(MY, 'penang', 'Penang (George Town)', 5.41, 100.33, [33, 9, 40, 24]),
@@ -241,7 +241,7 @@ const asiaCities: City[] = [
   mk(JP, 'tokyo', 'Tokyo', 35.68, 139.69, [62, 30, 70, 40]),
   mk(JP, 'osaka', 'Osaka', 34.69, 135.5, [56, 20, 64, 36]),
   mk(KR, 'seoul', 'Seoul', 37.57, 126.98, [70, 22, 88, 42], ['Rentals often use large "jeonse"/"wolse" deposits, which ties up capital.']),
-  mk(TW, 'taipei', 'Taipei', 25.03, 121.57, [60, 20, 72, 30]),
+  mk(TW, 'taipei', 'Taipei', 25.03, 121.57, [48, 18, 52, 38]),
 ]
 
 // ---------------------------------------------------------------- Europe
@@ -372,7 +372,7 @@ const europeCities: City[] = [
   mk(PT, 'porto', 'Porto', 41.16, -8.63, [49, 28, 46, 53]),
   mk(PT, 'algarve', 'Algarve (Faro)', 37.02, -7.93, [47, 30, 43, 46]),
   mk(PT, 'madeira', 'Madeira (Funchal)', 32.65, -16.91, [47, 36, 42, 55]),
-  mk(ES, 'madrid', 'Madrid', 40.42, -3.7, [55, 34, 46, 50], ['The Madrid region applies a 100% relief on regional wealth tax, but the national solidarity wealth tax can still apply.']),
+  mk(ES, 'madrid', 'Madrid', 40.42, -3.7, [62, 37, 59, 71], ['The Madrid region applies a 100% relief on regional wealth tax, but the national solidarity wealth tax can still apply.']),
   mk(ES, 'barcelona', 'Barcelona', 41.39, 2.17, [58, 38, 48, 54]),
   mk(ES, 'valencia', 'Valencia', 39.47, -0.38, [50, 30, 45, 63]),
   mk(ES, 'malaga', 'Málaga', 36.72, -4.42, [49, 30, 46, 60]),
@@ -385,12 +385,12 @@ const europeCities: City[] = [
   mk(IE, 'dublin', 'Dublin', 53.35, -6.26, [78, 62, 66, 84]),
   mk(NL, 'amsterdam', 'Amsterdam', 52.37, 4.9, [80, 56, 66, 88]),
   mk(DE, 'berlin', 'Berlin', 52.52, 13.41, [66, 36, 58, 64]),
-  mk(CZ, 'prague', 'Prague', 50.08, 14.44, [52, 24, 48, 42]),
-  mk(HU, 'budapest', 'Budapest', 47.5, 19.04, [46, 18, 44, 36]),
+  mk(CZ, 'prague', 'Prague', 50.08, 14.44, [52, 29, 51, 49]),
+  mk(HU, 'budapest', 'Budapest', 47.5, 19.04, [56, 22, 54, 67]),
   mk(CH, 'zurich', 'Zurich', 47.38, 8.54, [125, 70, 130, 140]),
   mk(HR, 'split', 'Split', 43.51, 16.44, [54, 22, 48, 63], ['Summer tourism drives short-term rents up sharply; long-term leases are cheaper off-season.']),
-  mk(GE, 'tbilisi', 'Tbilisi', 41.72, 44.79, [32, 14, 34, 30]),
-  mk(TR, 'istanbul', 'Istanbul', 41.01, 28.98, [38, 14, 36, 30]),
+  mk(GE, 'tbilisi', 'Tbilisi', 41.72, 44.79, [38, 17, 40, 42]),
+  mk(TR, 'istanbul', 'Istanbul', 41.01, 28.98, [46, 24, 40, 48]),
   // Stage 3 additions (BBD destinations).
   mk(GR, 'crete', 'Crete (Chania)', 35.51, 24.02, [53, 14, 48, 57], [
     'Serious care is in Chania or Heraklion; from 2026 ENFIA property tax is halved on main homes in small villages (Athens is excluded).',
@@ -532,11 +532,11 @@ const GT: Base = {
 }
 
 const latamCities: City[] = [
-  mk(MX, 'mexico-city', 'Mexico City', 19.43, -99.13, [42, 22, 42, 36], ['Altitude (~2,240 m) can matter for some health conditions.']),
+  mk(MX, 'mexico-city', 'Mexico City', 19.43, -99.13, [49, 28, 51, 49], ['Altitude (~2,240 m) can matter for some health conditions.']),
   mk(MX, 'merida', 'Mérida', 20.97, -89.62, [42, 14, 42, 48]),
   mk(MX, 'puerto-vallarta', 'Puerto Vallarta', 20.65, -105.23, [46, 23, 49, 53]),
   mk(MX, 'san-miguel-de-allende', 'San Miguel de Allende', 20.91, -100.74, [48, 23, 54, 52]),
-  mk(MX, 'playa-del-carmen', 'Playa del Carmen', 20.63, -87.08, [44, 22, 44, 40]),
+  mk(MX, 'playa-del-carmen', 'Playa del Carmen', 20.63, -87.08, [45, 24, 49, 50]),
   mk(CO, 'medellin', 'Medellín', 6.24, -75.58, [43, 21, 44, 38]),
   mk(CO, 'cartagena', 'Cartagena', 10.39, -75.48, [34, 13, 34, 28]),
   mk(CO, 'bogota', 'Bogotá', 4.71, -74.07, [30, 11, 30, 22], ['Altitude (~2,600 m) can matter for some health conditions.']),
@@ -546,8 +546,8 @@ const latamCities: City[] = [
   mk(EC, 'cuenca', 'Cuenca', -2.9, -79.0, [30, 11, 34, 28]),
   mk(UY, 'montevideo', 'Montevideo', -34.9, -56.16, [55, 16, 52, 64]),
   mk(AR, 'buenos-aires', 'Buenos Aires', -34.6, -58.38, [44, 12, 38, 40]),
-  mk(CL, 'santiago', 'Santiago', -33.45, -70.67, [46, 16, 46, 40]),
-  mk(PE, 'lima', 'Lima', -12.05, -77.04, [38, 14, 38, 28]),
+  mk(CL, 'santiago', 'Santiago', -33.45, -70.67, [47, 16, 44, 52]),
+  mk(PE, 'lima', 'Lima', -12.05, -77.04, [41, 17, 34, 25]),
   // Stage 3 additions (BBD destinations).
   mk(MX, 'lake-chapala', 'Lake Chapala / Ajijic', 20.3, -103.26, [35, 19, 38, 39], [
     'Mexico\'s largest US-retiree enclave; local clinics only, with serious care and wide US nonstop service in Guadalajara, about 55 km north.',
@@ -620,8 +620,17 @@ const oceaniaCities: City[] = [
 const NUMBEO = 'Numbeo current city index'
 const NUMBEO_TABLE = 'https://www.numbeo.com/cost-of-living/rankings_current.jsp'
 
-type V = Partial<Omit<CityVerification, 'source' | 'asOf'>>
+type V = Partial<Omit<CityVerification, 'asOf'>>
 const v = (o: V = {}): CityVerification => ({ source: NUMBEO, url: NUMBEO_TABLE, asOf: COL_AS_OF, confidence: 'high', ...o })
+
+/** A low-confidence record priced from livingcost.org (`page` is the path after /cost/). */
+const livingcost = (page: string): CityVerification =>
+  v({
+    source: 'livingcost.org',
+    url: `https://livingcost.org/cost/${page}`,
+    confidence: 'low',
+    note: 'Derived from livingcost.org prices vs New York, scaled to Numbeo with factors fitted on Lisbon, Athens, Bangkok and Montevideo; Numbeo was rate-limiting.',
+  })
 
 /** Cities whose indices were checked against a current published source (see COL_SOURCES). */
 const VERIFIED: Record<string, CityVerification> = {
@@ -732,6 +741,25 @@ const VERIFIED: Record<string, CityVerification> = {
     confidence: 'low',
     note: 'Numbeo\'s San Ignacio page could not be read (rate-limited). Derived from Numbeo\'s raw prices for Belmopan (30 km east; 32 entries from 1 contributor, May 2025) vs NYC. Very thin; treat as rough.',
   }),
+  // Stage 5: picks newly in the top 50, priced from livingcost.org because Numbeo was rate-limiting (HTTP 429).
+  // See docs/research/cost-check-2026-11.md, Stage 5.
+  ...Object.fromEntries(
+    (
+      [
+        ['madrid', 'spain/madrid'],
+        ['tbilisi', 'georgia/tbilisi'],
+        ['phuket', 'thailand/phuket'],
+        ['santiago', 'chile/santiago'],
+        ['prague', 'czech-republic/prague'],
+        ['istanbul', 'turkey/istanbul'],
+        ['mexico-city', 'mexico/mexico'],
+        ['budapest', 'hungary/budapest'],
+        ['taipei', 'taiwan/taipei'],
+        ['lima', 'peru/lima'],
+        ['playa-del-carmen', 'mexico/playa-del-carmen'],
+      ] as const
+    ).map(([id, page]) => [id, livingcost(page)]),
+  ),
   // US home cities with a full Numbeo row (Scottsdale, Asheville and Sarasota have none and stay estimates).
   'new-york': v({ note: 'Base city: every index is 100 by definition.' }),
   ...Object.fromEntries(

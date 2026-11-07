@@ -185,6 +185,7 @@ Accounted for: all of the shipped 25, the seven LIOS #4–10 picks, both Belize 
 - Chile: whether the inheritance carve-out holds for a foreigner who dies while domiciled in Chile.
 - Safety: US advisory levels for Mexican states and Negros are second-hand (travel.state.gov refused fetch); gov.uk travel advice was used as the government source.
 - Hospitals: several JCI claims in Appendix H are unverified (listed there).
+- Paraguay (found while writing profiles in Stage 5): since July 2026, Resolution DNM 407/2026 makes conversion to permanent residence need proof of income-generating activity or an actual pension, so a portfolio-only retiree may need the Investor Pass ($200k in real estate or financial instruments held 2 years). https://www.imidaily.com/latam-linc/paraguay-ties-long-term-residency-to-active-income-unless-you-invest/
 
 ---
 

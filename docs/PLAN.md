@@ -27,10 +27,10 @@ Who builds what:
 The layout polish for 50 picks is Stage 6.
 Risk: low (curated content and data shape; engine untouched)
 Checks:
-- [ ] `EXPAT_PICKS` has 50 picks ranked 1–50 in the research doc's order, each with a reason; the ranking method and sources name the BBD research (proof: test + read the data)
-- [ ] All 50 have a full profile: 9 scores within 1–5 following the rubric, every fact including estate and lending, drawbacks, and ≥3 sources, each a URL that was read (proof: test + spot-read 6 profiles against the research doc)
-- [ ] The running Atlas lists 50 picks and opens a profile page for pick 1, a newcomer (e.g. Paphos), and pick 50, each showing the new scores and facts with no console errors (proof: Playwright run + screenshots)
-- [ ] Tests green, typecheck clean, build ok (proof: command output)
+- [x] `EXPAT_PICKS` has 50 picks ranked 1–50 in the research doc's order, each with a reason; the ranking method and sources name the BBD research (proof: test + read the data)
+- [x] All 50 have a full profile: 9 scores within 1–5 following the rubric, every fact including estate and lending, drawbacks, and ≥3 sources, each a URL that was read (proof: test + spot-read 6 profiles against the research doc)
+- [x] The running Atlas lists 50 picks and opens a profile page for pick 1, a newcomer (e.g. Paphos), and pick 50, each showing the new scores and facts with no console errors (proof: Playwright run + screenshots)
+- [x] Tests green, typecheck clean, build ok (proof: command output) — [evidence](evidence/stage-5/report.md)
 Open: none
 Mode: autopilot
 
@@ -39,7 +39,7 @@ Mode: autopilot
 - [x] 2. Research for 26–50 — more candidates and any new countries, sourced the same way; draft top 50
 - [x] 3. New cities — add Belize (Cayo, Ambergris Caye), the other skipped LIOS picks and every research add for the top 50, with verified costs and healthcare factors
 - [x] 4. Local taxes — wealth and inheritance tax per country in the engine, with tests; odds and estate reflect them; Method page explains
-- [ ] 5. BBD ranking — rerank the top 50 with new tax/estate and lending factors; profile pages for all 50 (new ones for newcomers and 26–50, refreshed facts for the rest)
+- [x] 5. BBD ranking — rerank the top 50 with new tax/estate and lending factors; profile pages for all 50 (new ones for newcomers and 26–50, refreshed facts for the rest)
 - [ ] 6. Atlas & verify — tax lines in "Your plan here", the Atlas list and profile pages handle 50 picks, phone + both themes, preview, deploy on approval
 
 ## Decisions
@@ -57,8 +57,11 @@ Mode: autopilot
 - 2026-11-06 · Draft top 50 adds Cascais, Madrid, Antalya, Antigua Guatemala, Tbilisi, Ajijic, Coronado, Atenas, Alicante, Phuket, Santiago, Prague, Istanbul, Mexico City, Budapest, Taipei, Lima, Oaxaca, Playa del Carmen, and brings back Asunción, Las Terrenas, Medellín, Florence, Cuenca and Nice at 42–50. 16 candidates sit outside, each with a reason. Turkey's Law 7582 (20-year foreign-income exemption) was checked against EY's alert before it lifted Antalya to #19 — autopilot call.
 - 2026-11-06 · User approved building Stage 4 (engine wealth/inheritance tax) with the stated assumptions (two US-resident children as heirs; heir-based regimes don't reach them) — "Go ahead please".
 - 2026-11-06 · Local-tax thresholds convert at the bundled fx.json rates (review fix), so they drift slightly with `npm run data:fx`; FX_FALLBACK refreshed to match. Share-link and persisted inputs are clamped to the plan UI's own limits (review security fix). Ireland/Japan inheritance reach is read as strictly more than 5/10 years' residence.
+- 2026-11-06 · Lending scores: 5 needs confirmed margin access for residents (none confirmed yet), 4 = Schwab International reported outside the EU plus IBKR, 3 = EU or IBKR only — normalised across the four profile builders, who read the rubric differently.
+- 2026-11-06 · 11 picks newly in the top 50 (Madrid, Tbilisi, Phuket, Santiago, Prague, Istanbul, Mexico City, Budapest, Taipei, Lima, Playa del Carmen) get costs from livingcost.org scaled to Numbeo, low confidence — Numbeo rate-limited every fetch.
 
 ## Open questions
+- Re-read Numbeo for the 11 livingcost-derived cities, the 5 Stage-3 cities mapped to nearby rows, and the noisy Belize pages once the rate limit lifts.
 - Local-tax bands filled from statutory scales where the research doc gives only ranges (Spanish regional steps, solidarity breakpoints, France, Japan, Ecuador's middle brackets — each note says so); thresholds are per person, not per couple; Turkey's 1% applies though US assets to US heirs may be out of scope.
 - Countries outside the top 50 without research (UK, Netherlands, Germany, Switzerland, UAE, South Africa, Singapore, South Korea, Canada, Australia, New Zealand) carry no local-tax data, so the Atlas treats them as untaxed (Switzerland's wealth tax, the UK's inheritance tax not modelled) — Stage 6 should label this.
 - Malta's Global Residence Programme terms are kept to 2031 only for applications filed by 31 Dec 2026 — time-sensitive for the user personally, not for the app.
