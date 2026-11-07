@@ -7,28 +7,23 @@ Every one of the 75 profiled Atlas picks shows five real, openly licensed photos
 2026-11-07 · tests: 214 pass (20 files) · typecheck: clean · build: ok
 
 ## Now
-Stage 2 of 5 · Gallery + odds badge
-Risk: UI only
+Stage 3 of 5 · Photos: Europe
+Risk: external services (build-time downloads from Wikimedia Commons), third-party content and licences
+Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (v25, stage 2: gallery with the 5 pilot cities; 53 manifest files confirmed present)
 Checks:
-- [x] Lisbon's profile shows design A above the lead text: one large photo and four small ones, a credit line, and an "All 5 photos" button; in light and dark themes (proof: run the product: desktop screenshots, both themes)
-- [x] The badge on the large photo shows "Your plan here", the odds coloured by the outcome scale, a bar with a home tick, and "+N pts vs H% in <home>", with the same numbers as the "Your plan here" card (proof: run the product: read both numbers; test for the badge text)
-- [x] While the Atlas is ranking, the badge shows a skeleton instead of a number (proof: test)
-- [x] Tapping any photo or the button opens the full-size view at that photo; arrows, ← and → keys and swipe move through it; Esc closes the view and leaves the profile open; focus returns to the photo that was tapped (proof: run the product: scripted clicks and keys)
-- [x] The full-size view shows the caption, the author, a licence link, a Commons link, and the odds pill with the home comparison (proof: run the product: screenshot)
-- [x] At 390 px wide, the gallery becomes one swipeable cover photo with dots and the badge, and the page doesn't scroll sideways (proof: run the product: phone screenshot)
-- [x] A profile without photos (paphos) looks as it did before (proof: run the product: screenshot)
-- [x] With reduced motion on, the gallery and full-size view don't animate (proof: run the product: emulated reduced motion)
-- [x] A photo listed but missing on disk drops only that city's gallery; the Atlas still works (proof: test)
-- [x] Photo data stays out of the main chunk: main `index-*.js` within 2 kB of 532.79 kB (proof: command: build output)
-Open: publish the preview (Artifact v25, all manifest files in two publishes) — waiting on the user's go
-Mode: paused — preview publish is outward-facing; needs the user's go
+- [ ] Each of the 31 other European picks (paphos, porto, cascais, malaga, madrid, athens, crete, tavira, valencia, madeira, limassol, sliema, antalya, tbilisi, alicante, torrevieja, kotor, prague, plovdiv, istanbul, budapest, florence, nice, sarande, split, batumi, gascony, rome, tarragona, barcelona, vienna) has 5 photos with complete credits, under 200 kB, no Commons file used twice (proof: test)
+- [ ] A contact sheet of the 31 cities is saved to the evidence, and every photo was looked at and shows the place its caption names, with nothing watermarked, blurred or mislabelled (proof: run the product: contact-sheet screenshot)
+- [ ] Captions are one factual line tied to a reason the city's profile gives, with no invented prices, times or rankings (proof: review of the contact sheet against the profiles)
+- [ ] Three European profiles (porto, prague, split) show the mosaic and the odds badge in the app, and the main chunk stays within 2 kB of 532.79 kB (proof: run the product: screenshots; command: build output)
+Open: none
+Mode: autopilot
 
 ## Stages
 - [x] 1. Photo pipeline — `npm run photos` (Commons API + sharp → WebP), per-city photo data and tests, the five pilot cities, a contact sheet
 - [x] 2. Gallery + odds badge — design A mosaic in the profile, odds badge with home comparison, full-size view with the odds pill, phone layout, both themes, reduced motion; preview; stop for review
-- [ ] 3. Photos: Europe — the other 31 European picks, contact sheet, preview
-- [ ] 4. Photos: Americas — the other 29 Latin American picks, contact sheet, preview
-- [ ] 5. Photos: Asia/Africa + launch — the other 10 picks; a test now requires photos for all 75; preview; deploy on approval
+- [ ] 3. Photos: Europe — the other 31 European picks, contact sheet
+- [ ] 4. Photos: Americas — the other 29 Latin American picks, contact sheet
+- [ ] 5. Photos: Asia/Africa + launch — the other 10 picks; a test now requires photos for all 75; preview (stale files pruned); deploy on approval
 
 ## Decisions
 - 2026-11-07 · Layout is design A, the cover mosaic: one large photo plus four small ones above the profile text, "All 5 photos" button, tap to enlarge — the user's number-one pick of four (A mosaic, B reasons, C carousel, D rail) on the canvas.
@@ -45,6 +40,9 @@ Mode: paused — preview publish is outward-facing; needs the user's go
 - 2026-11-07 · Lisbon's fifth photo is Praia da Rainha in Cascais, captioned as Cascais (Lisbon's beaches are a reason to live there); Cascais's own profile must use different photos, which the no-duplicate test enforces — PM's call.
 - 2026-11-07 · Stage 1 review: credits use Commons' Attribution field when the licensor sets one; placeholder authors, originals under 1000 px and downloads from anywhere but upload.wikimedia.org are refused. Stage 2 must make a missing photo skip that city instead of breaking the Atlas, and the full-size credit may say "resized" — review findings, taken.
 - 2026-11-07 · Gallery builder's calls, kept: the phone cover replaces the mosaic below 560 px (an existing breakpoint); both layouts are in the DOM and CSS shows one; the full-size view is portalled with `data-theme="dark"` so it uses dark tokens; when the city is home or home has no row, the badge shows only the odds; credits name each photo's source from its URL and add "resized".
+- 2026-11-07 · Preview v25 published (stage 2 gallery, 5 pilot cities) — user: "yes, publish the preview".
+- 2026-11-07 · Stages 3 and 4 don't publish a preview; stage 5 publishes once with all 75 cities, removing stale files (the preview holds 149 files of a 511 limit, and ~350 photos are coming), then pauses for deploy — one approval instead of three; PM's call.
+- 2026-11-07 · Photo batches run as parallel builders in the main tree, not worktrees: each owns disjoint `src/data/photos/<city>/` folders and always passes its city ids to `npm run photos`; worktrees would each need sharp installed — PM's call.
 - 2026-11-07 · Every photo is looked at before it ships, and each batch saves a contact sheet to its evidence — Commons titles can be wrong or mislabelled, and the user was told this is the slow part.
 
 ## Open questions
