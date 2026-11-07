@@ -7,23 +7,21 @@ Find the best places to retire for someone living on buy-borrow-die: a portfolio
 2026-11-06 · tests: 107 pass (12 files) · typecheck: clean · build: ok (main chunk 354.0 kB)
 
 ## Now
-Stage 7 of 8 · Research for 51–75
+Stage 8 of 8 · Profiles 51–75 & ship
 Scope:
-- Extend `docs/research/bbd-ranking-2026-11.md` to a draft top 75.
-- **Candidates:** the 17 cities now outside the 50 (Split, Da Nang, Ho Chi Minh City, Bali, Gascony, Tarragona, Barcelona, Rome, Cartagena, Ambergris Caye, Placencia, Cebu, Dumaguete, Buenos Aires, Batumi, Dublin, Tokyo) plus at least 15 more:
-  - retiree towns in covered countries: Hopkins and Corozal (Belize), Mazatlán and La Paz (Mexico), Tavira (Portugal), Torrevieja (Spain), Hoi An (Vietnam), Chiang Rai (Thailand), Langkawi (Malaysia), Pedasí and Volcán (Panama), Salinas or Cotacachi (Ecuador), Lake Atitlán (Guatemala);
-  - new countries: Albania (Sarandë), Bulgaria (Plovdiv), Honduras (Roatán), Mauritius;
-  - dataset cities not yet weighed: Vienna, Singapore, Cape Town.
-- New countries get the same sourced summary row as Stage 1, plus `src/data/localTaxes.ts` entries.
-- New cities go into `src/data/cities.ts` with costs (Numbeo, or the livingcost.org method if it is still rate-limited) and healthcare factors.
-- Profiles are Stage 8.
+- `EXPAT_PICKS` becomes the research doc's draft top 75, with ranks and reasons.
+- 25 new profile files, one per new pick: Tavira, Grand Baie, Torrevieja, La Paz, Hopkins, Corozal, Plovdiv, Chiang Rai, Roatán, Sarandë, Langkawi, Volcán, Panajachel, Placencia, Ambergris Caye, Split, Batumi, Gascony, Rome, Tarragona, Barcelona, Cartagena, Mazatlán, Bali, Vienna. They follow `src/data/profiles/README.md` and the rubric.
+- The Atlas handles 75 picks: "Top pick N of 75", and the top-picks section and list stay readable.
+- Then verify, run a fresh review and republish the preview.
+- Then pause for the user's deploy approval.
 
-Risk: low (research notes and city/tax data entries; engine logic untouched)
+Risk: low (curated content and UI; engine untouched)
 Checks:
-- [x] Every new country has a sourced summary row and a `localTaxes` entry citing a URL from the doc; every summary URL appears in the appendices (proof: URL cross-check + data test)
-- [x] The doc ranks a draft top 75 with a reason per city; every candidate outside the 75 has a written reason (proof: read the doc)
-- [x] Every ranked candidate (the 75) is in `CITIES` with a `verified` record, low confidence noted where derived; candidates outside the 75 need no city entry (proof: test)
-- [x] Tests green, typecheck clean, build ok (proof: command output) — [evidence](evidence/stage-7/report.md)
+- [ ] `EXPAT_PICKS` has 75 picks ranked 1–75 in the doc's order, each with a reason (proof: test)
+- [ ] All 75 have a full profile per the rubric (9 scores, all facts, drawbacks, ≥3 read sources, no TODO) (proof: test + spot-read 5 new profiles against the doc)
+- [ ] Atlas opens profiles for picks 1, 51 and 75 on phone and desktop, in light and dark, with no horizontal scroll and no console errors (proof: Playwright + screenshots)
+- [ ] Tests green, typecheck clean, build ok; fresh review triaged (proof: command output + review notes)
+- [ ] Preview republished; deploy done on the user's approval (proof: preview URL + live site check)
 Open: none
 Mode: autopilot
 
