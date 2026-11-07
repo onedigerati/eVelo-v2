@@ -7,23 +7,20 @@ Find the best places to retire for someone living on buy-borrow-die: a portfolio
 2026-11-06 · tests: 107 pass (12 files) · typecheck: clean · build: ok (main chunk 354.0 kB)
 
 ## Now
-Stage 3 of 6 · New cities
-Scope: add 20 cities to `src/data/cities.ts`:
-- From the draft top 50: Crete (Chania), Hua Hin, Kotor, Paphos, Limassol, Sliema, Cayo (San Ignacio), Las Terrenas, Asunción, Cascais, Alicante, Coronado, Atenas, Lake Chapala/Ajijic, Oaxaca, Antigua Guatemala and Antalya.
-- Also added, though outside the 50: Ambergris Caye, Gascony (Auch) and Tarragona — the plan's Belize and LIOS adds.
+Stage 4 of 6 · Local taxes
+Scope: per-country (and per-region, for Spain) wealth and inheritance tax parameters in `src/data/localTaxes.ts`, sourced from the research doc and attached to each city.
 
-Each city gets:
-- new country bases where needed: Cyprus, Malta, Montenegro, Belize, Dominican Republic, Paraguay, Guatemala (currency, FX fallback, fxVol, healthcare factor, 1–3 notes from the research doc);
-- costs checked against Numbeo, with a `verified` record (low confidence plus a note where data is thin);
-- a cost-check section in `docs/research/cost-check-2026-11.md`.
+The kernel applies both:
+- **Wealth tax:** charged at each year-end after the move, on real net worth (portfolio − loan), or on gross portfolio value where the law says so (Italy's IVAFE). Thresholds are held constant in real terms. BBD borrows the tax; the sell strategy sells to pay it.
+- **Inheritance tax:** applied at the horizon to both the BBD estate and the sell estate. The assumed heirs are two US-resident children; heir-based regimes (Spain, Thailand, Vietnam) don't reach US assets passing to them.
 
-Profiles and ranking are Stage 5.
-Risk: low (city dataset only; engine untouched)
+Results report the median cumulative wealth tax and the median inheritance tax. The Atlas odds pick the taxes up through the shared kernel. The Method page explains the model and its simplifications: Spain's 60% cap is ignored, there are no treaty credits (the US exemption is $15M), and each country's rates are the current-law schedule.
+Risk: high — money logic in the engine (user approved 2026-11-06); keel:review with a security pass
 Checks:
-- [x] All 20 cities are in `CITIES`, each with a `verified` record citing the Numbeo page read, and listed with their indices and healthcare factor in `docs/research/cost-check-2026-11.md` (proof: test asserting the ids + verified, and read the doc)
-- [x] Healthcare factors for the seven new countries are set on the existing scale (US = 1), with the basis written down (proof: read the doc)
-- [x] The new cities appear and run in the Atlas (proof: screenshot of the running dev app with a new city selected)
-- [x] Tests green, typecheck clean, build ok (proof: command output) — [evidence](evidence/stage-3/report.md)
+- [ ] Tests prove the tax math: an all-zero tax config reproduces the existing results exactly; wealth tax is charged only after the move, only above the threshold, on net vs gross base as configured; the inheritance bands compute the hand-worked figures; a wealth-tax country lowers success and estate vs the same city with no tax (proof: `npm test` output)
+- [ ] Every country in the draft top 50 has a `localTaxes` entry, explicit "none" included, each citing a source URL from the research doc; the Spanish cities use their own region's rules (proof: test + read the data file)
+- [ ] The running app shows odds and estate changing for a taxed destination (e.g. Tarragona or Medellín vs Málaga at a $5M portfolio), and the Method page explains the model (proof: Playwright run + screenshots)
+- [ ] Tests green, typecheck clean, build ok, review findings triaged (proof: command output + review notes)
 Open: none
 Mode: autopilot
 
