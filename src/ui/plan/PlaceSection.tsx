@@ -100,12 +100,13 @@ function ExpatPanel({ destId }: { destId: string }) {
     <div className="expat">
       <div className="expat__slider">
         <Slider
-          label="Lifestyle abroad"
+          label="Expat price premium"
           tone="bruised"
           aside={
-            <InfoTip label="What is the expat factor?">
-              Expats rarely capture all of a city’s savings — imported groceries, international schools, western rents. At the left you
-              spend like a local; at the right, local savings vanish and things cost what they do at home.
+            <InfoTip label="What is the expat price premium?">
+              Your lifestyle stays the same either way; this sets what it costs. At the left you pay local prices for the same
+              standard of living. Newcomers often pay more — imported groceries, expat-area rents, international hospitals — and at
+              the right those extras use up every saving, so things cost what they do at home.
             </InfoTip>
           }
           value={expat}
@@ -116,8 +117,8 @@ function ExpatPanel({ destId }: { destId: string }) {
           onChange={(v) => setInput('expatFactor', v)}
         />
         <div className="scale-ends" aria-hidden="true">
-          <span>Live like a local</span>
-          <span>Keep my home lifestyle</span>
+          <span>Local prices</span>
+          <span>Home prices</span>
         </div>
       </div>
 

@@ -142,7 +142,7 @@ export interface PlanInputs {
   destCityId: string | null
   /** Years from now when the move happens (0 = immediately). */
   moveInYears: number
-  /** 0 = live like a local, 1 = full home-country lifestyle (no savings on local-price categories). */
+  /** Expat price premium, for the same lifestyle: 0 = local prices, 1 = home prices (no savings on local-price categories). */
   expatFactor: number
   /** Optional per-category ratio overrides (dest cost / home cost). */
   ratioOverrides?: Partial<Record<BudgetCategory, number>>

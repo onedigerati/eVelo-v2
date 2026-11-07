@@ -374,7 +374,7 @@ export function CostBody({ result }: { result: SimulationResult }) {
         })}
       </div>
       <p className="t-small ink-3 col__note">
-        First-year spend after the move, today’s dollars, with your expat factor applied. Local currency at{' '}
+        First-year spend after the move, today’s dollars, with your expat price premium applied. Local currency at{' '}
         {fx ? `${fx.toLocaleString('en-US', { maximumSignificantDigits: 5 })} ${destCity.currency}` : '—'} per dollar (rates as of {fxAsOf}).
       </p>
     </div>

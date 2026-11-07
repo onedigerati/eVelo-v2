@@ -470,11 +470,12 @@ export function MethodView() {
               Travel stays the same anywhere.
             </p>
             <p>
-              Newcomers rarely live exactly like locals, so the{" "}
-              <b>expat factor</b> claws back part of every saving. Categories
+              The indices price the same standard of living in both cities, but
+              newcomers rarely pay exactly local prices for it, so the{" "}
+              <b>expat price premium</b> claws back part of every saving. Categories
               that are dearer abroad stay dearer:
             </p>
-            <Formula note="r = destination index ÷ home index, e = expat factor (0 lives like a local, 1 keeps home prices).">
+            <Formula note="r = destination index ÷ home index, e = expat price premium (0 pays local prices, 1 pays home prices, for the same lifestyle).">
               ratio used = r + (1 − r) × e, when r is below 1
             </Formula>
             <div
@@ -485,7 +486,7 @@ export function MethodView() {
             >
               <table className="mtable">
                 <caption>
-                  {ABROAD.home} → {ABROAD.dest}, expat factor {pct(DEF.expat)}{" "}
+                  {ABROAD.home} → {ABROAD.dest}, expat price premium {pct(DEF.expat)}{" "}
                   (cost as a share of home)
                 </caption>
                 <thead>
@@ -495,7 +496,7 @@ export function MethodView() {
                       Local prices
                     </th>
                     <th scope="col" className="r">
-                      With expat factor
+                      With the premium
                     </th>
                   </tr>
                 </thead>

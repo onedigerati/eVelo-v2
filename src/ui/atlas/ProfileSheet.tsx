@@ -237,7 +237,7 @@ function ProfileBody({
             </ul>
           </div>
           <p className="pplan__note">
-            Your {homeName} budget at local prices, with your “lifestyle abroad” setting ({percent(inputs.expatFactor)})
+            Your {homeName} budget at local prices, with your expat price premium ({percent(inputs.expatFactor)})
             {inputs.ratioOverrides && Object.keys(inputs.ratioOverrides).length > 0 ? ' and your category overrides' : ''}.
           </p>
 
