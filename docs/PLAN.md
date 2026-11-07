@@ -8,7 +8,7 @@ Give eVelo a landing page that says what the site is before a visitor meets the 
 
 ## Now
 Stage 2 of 2 · Atlas-hero view
-Mode: paused — study G verified and committed; waiting on the user's approval to publish preview v24, then to deploy to GitHub Pages (and to push the keel 0.5.2 commit)
+Mode: paused — preview v24 published (https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth); waiting on the user's review, then approval to deploy to GitHub Pages
 Risk: UI only
 Scope: replace the study C landing (committed in ad98a0e, superseded) with study G (boards `AtlasHero`/`AtlasHeroDark`), copy and illustrative numbers exactly as drawn; remove C's path field. Then preview and, on approval, deploy.
 Checks:
