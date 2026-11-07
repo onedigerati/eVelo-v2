@@ -1669,7 +1669,7 @@
   text-align: center;
 }
 
-/* Score glyph: six factors x five dots. */
+/* Score glyph: nine factors (3x3) x five dots. */
 .scores {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1886,6 +1886,26 @@
 .howr__more {
   margin-right: 10px;
   font-size: var(--fs-xs);
+}
+.howr__h {
+  margin-top: var(--space-2);
+  color: var(--ink-3);
+}
+.howr__rubric {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  font-size: var(--fs-sm);
+  line-height: 1.45;
+}
+.howr__rubric dt {
+  font-weight: 600;
+  color: var(--ink-2);
+}
+.howr__rubric dd {
+  margin: 0;
+  color: var(--ink-3);
 }
 
 /* Phone: picks become a swipeable row. */
@@ -2117,13 +2137,26 @@
 }
 .pscores__row {
   display: grid;
-  grid-template-columns: 92px minmax(0, 1fr) 1.5ch;
+  grid-template-columns: 136px minmax(0, 1fr) 1.5ch;
   align-items: center;
   gap: var(--space-3);
   font-size: var(--fs-sm);
 }
 .pscores__k {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  min-width: 0;
   color: var(--ink-2);
+  white-space: nowrap;
+}
+.pscores__k .infotip__btn {
+  width: 20px;
+  height: 20px;
+}
+.pscores__k .tip__bubble {
+  white-space: normal;
+  text-transform: none;
 }
 .pscores__track {
   display: grid;

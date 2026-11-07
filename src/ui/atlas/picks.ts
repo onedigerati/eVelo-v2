@@ -13,8 +13,14 @@ import { BUDGET_CATEGORIES, categoryRatios } from '../../engine/cost'
 import type { AtlasEntry, BudgetCategory, City, PlanInputs } from '../../engine/types'
 import { percent } from '../format'
 
-/** Score keys in display order. */
-export const SCORE_KEYS: ExpatScoreKey[] = ['cost', 'healthcare', 'safety', 'visa', 'climate', 'community']
+/** Score keys in display order: the three BBD scores and residency first (a 3×3 grid). */
+export const SCORE_KEYS: ExpatScoreKey[] = ['tax', 'estate', 'lending', 'visa', 'healthcare', 'cost', 'safety', 'climate', 'community']
+
+/** Short labels for the compact score glyph on cards; the profile uses EXPAT_SCORE_LABELS. */
+export const SCORE_SHORT: Record<ExpatScoreKey, string> = {
+  ...EXPAT_SCORE_LABELS,
+  tax: 'Tax',
+}
 
 /** Minimal row shape the picks need from the Atlas ranking (Ranked satisfies it). */
 export type PickRow = AtlasEntry & { city: City; rank: number }

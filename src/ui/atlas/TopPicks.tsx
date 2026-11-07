@@ -1,16 +1,18 @@
 import { AnimatePresence, m as motion } from 'framer-motion'
 import { useId, useMemo, useState } from 'react'
-import { EXPAT_AS_OF, EXPAT_RANKING_METHOD, EXPAT_RANKING_SOURCES } from '../../data/expatPicks'
+import { EXPAT_AS_OF, EXPAT_RANKING_METHOD, EXPAT_RANKING_SOURCES, EXPAT_SCORE_LABELS, EXPAT_SCORE_RUBRIC } from '../../data/expatPicks'
 import { currency, currencyCompact, percent } from '../format'
 import { useBreakpoint } from '../hooks'
 import { ease } from '../motion'
 import { Card, Chevron, Skeleton, cx } from '../primitives'
 import { costDelta, successColor, successTextColor, type Ranked } from './atlasData'
 import { CodeChip } from './CodeChip'
-import { isProfiled, longDate, pickViews, splitPicks, type PickView, type ProfiledPickView } from './picks'
+import { SCORE_KEYS, isProfiled, longDate, pickViews, splitPicks, type PickView, type ProfiledPickView } from './picks'
 import { ScoreDots } from './ScoreDots'
 
 const FIRST = 6
+/** Compact rows shown before "Show all". */
+const FIRST_ROWS = 10
 
 export interface TopPicksProps {
   rows: Ranked[]
@@ -39,7 +41,7 @@ export function TopPicks({ rows, homeId, destId, onOpen, onChoose }: TopPicksPro
           Where retirees <em>thrive</em>
         </>
       }
-      subtitle="Ranked from the main retirement indexes and expat surveys, then weighed for a US retiree: visas, tax, healthcare and flights home. Your plan’s odds are shown for each."
+      subtitle="Ranked for a US retiree living on buy-borrow-die: tax on holding and passing on a portfolio, residency on assets, US-broker lending abroad and healthcare, on top of the main retirement indexes and expat surveys. Your plan’s odds are shown for each."
     >
       <ol className={cx('picks', scroller && 'picks--scroll')} aria-label={`Top ${profiled.length} picks`}>
         <AnimatePresence initial={false}>
@@ -149,6 +151,8 @@ function AlsoList({
   onOpen: (cityId: string) => void
   onChoose: (cityId: string) => void
 }) {
+  const [all, setAll] = useState(false)
+  const shown = all ? views : views.slice(0, FIRST_ROWS)
   return (
     <section className="also" aria-labelledby="also-h">
       <div className="also__h">
@@ -158,7 +162,7 @@ function AlsoList({
         <span className="t-small ink-3">Tap one for its profile.</span>
       </div>
       <ol className="also__list">
-        {views.map((v) => {
+        {shown.map((v) => {
           const { pick, city, row } = v
           const isDest = pick.cityId === destId
           const isHome = pick.cityId === homeId
@@ -197,6 +201,14 @@ function AlsoList({
           )
         })}
       </ol>
+      {views.length > FIRST_ROWS && (
+        <div className="picks__more">
+          <button type="button" className="chip-btn" aria-expanded={all} onClick={() => setAll((x) => !x)}>
+            {all ? 'Show fewer' : `Show all ${views.length}`}
+            <Chevron open={all} />
+          </button>
+        </div>
+      )}
     </section>
   )
 }
@@ -239,6 +251,15 @@ function HowRanked() {
                   </li>
                 ))}
               </ul>
+              <h4 className="t-eyebrow howr__h">What the scores mean</h4>
+              <dl className="howr__rubric">
+                {SCORE_KEYS.map((k) => (
+                  <div key={k}>
+                    <dt>{EXPAT_SCORE_LABELS[k]}</dt>
+                    <dd>{EXPAT_SCORE_RUBRIC[k]}</dd>
+                  </div>
+                ))}
+              </dl>
               <p className="t-small ink-3">
                 Researched {longDate(EXPAT_AS_OF)}. Visa and tax rules change often: each profile is a starting point, not legal or tax advice.
               </p>

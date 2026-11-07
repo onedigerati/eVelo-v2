@@ -19,7 +19,7 @@ export interface CityListProps {
   compare: string[]
   onToggleCompare: (id: string) => void
   onChoose: (id: string) => void
-  /** Open an expat pick's profile (any of the 25 picks that carries one). */
+  /** Open an expat pick's profile (any of the 50 picks that carries one). */
   onOpenPick?: (id: string) => void
 }
 

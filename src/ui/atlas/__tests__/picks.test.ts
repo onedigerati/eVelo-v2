@@ -42,7 +42,7 @@ describe('pickViews', () => {
 
   it('profiles every pick', () => {
     const views = pickViews([])
-    expect(views.filter(isProfiled)).toHaveLength(25)
+    expect(views.filter(isProfiled)).toHaveLength(50)
   })
 
   it('drops picks whose city is missing', () => {
@@ -52,11 +52,11 @@ describe('pickViews', () => {
 })
 
 describe('splitPicks', () => {
-  it('puts ranks 1–15 in the card grid and 16–25 in the compact rows', () => {
+  it('puts ranks 1–15 in the card grid and 16–50 in the compact rows', () => {
     expect(CARD_PICKS).toBe(15)
     const { cards, rest } = splitPicks(pickViews([]))
     expect(cards.map((v) => v.pick.rank)).toEqual(Array.from({ length: 15 }, (_, i) => i + 1))
-    expect(rest.map((v) => v.pick.rank)).toEqual(Array.from({ length: 10 }, (_, i) => i + 16))
+    expect(rest.map((v) => v.pick.rank)).toEqual(Array.from({ length: 35 }, (_, i) => i + 16))
     // Compact rows carry profiles too, so a tap can open them.
     expect(rest.every(isProfiled)).toBe(true)
   })
@@ -75,9 +75,11 @@ describe('splitPicks', () => {
 })
 
 describe('scoreLabel', () => {
-  it('reads all six factors in order, out of 5', () => {
-    expect(scoreLabel({ cost: 3, healthcare: 3, safety: 5, visa: 4, climate: 5, community: 5 })).toBe(
-      'Scores out of 5: Cost 3, Healthcare 3, Safety 5, Visa 4, Climate 5, Community 5',
+  it('reads all nine factors in display order, out of 5', () => {
+    expect(
+      scoreLabel({ cost: 3, healthcare: 3, safety: 5, visa: 4, climate: 5, community: 5, tax: 2, estate: 5, lending: 3 }),
+    ).toBe(
+      'Scores out of 5: Tax on holdings 2, Estate 5, Lending 3, Residency 4, Healthcare 3, Cost 3, Safety 5, Climate 5, Community 5',
     )
   })
 })

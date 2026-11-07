@@ -48,7 +48,7 @@ export function SourcesLine() {
     <div className="sources">
       <p className="sources__line">
         <b>Estimates, not tax or legal advice.</b> Cost indices for verified cities checked {longDate(COL_AS_OF)}, others rough estimates; exchange rates{' '}
-        {fxSource === 'live' ? 'live' : 'bundled'}, as of {fxAsOf}; expat picks ranked from {EXPAT_RANKING_SOURCES.length} published indexes and surveys (
+        {fxSource === 'live' ? 'live' : 'bundled'}, as of {fxAsOf}; expat picks ranked for buy-borrow-die from eVelo’s research and {EXPAT_RANKING_SOURCES.length - 1} published indexes and surveys (
         {monthYear(EXPAT_AS_OF)}).{' '}
         <button type="button" className="link-btn" aria-expanded={open} onClick={() => setOpen((v) => !v)}>
           {open ? 'Hide sources' : 'Sources'}

@@ -1,18 +1,21 @@
 import { m as motion } from 'framer-motion'
-import { EXPAT_PICKS, EXPAT_SCORE_LABELS, type ExpatFacts } from '../../data/expatPicks'
+import { EXPAT_PICKS, EXPAT_SCORE_LABELS, EXPAT_SCORE_RUBRIC, type ExpatFacts } from '../../data/expatPicks'
 import type { PlanInputs } from '../../engine/types'
 import { currency, currencyCompact, percent } from '../format'
 import { ease } from '../motion'
-import { Button, Sheet, Skeleton, cx } from '../primitives'
+import { Button, InfoTip, Sheet, Skeleton, cx } from '../primitives'
 import { CATEGORY_LABEL, costDelta, successColor, successTextColor, type Ranked } from './atlasData'
 import { CodeChip } from './CodeChip'
 import { SCORE_KEYS, categoryCompare, costDataLine, oddsVsHome, type ProfiledPickView } from './picks'
 
+/** Fact labels, in display order: the BBD facts first. */
 const FACT_LABEL: Record<keyof ExpatFacts, string> = {
+  tax: 'Tax on holdings',
+  estate: 'Estate & inheritance',
+  lending: 'Lending & brokers',
+  visa: 'Residency',
   healthcare: 'Healthcare',
   safety: 'Safety',
-  visa: 'Visa & residency',
-  tax: 'Tax',
   climate: 'Climate',
   community: 'Community',
   access: 'Getting there',
@@ -81,12 +84,15 @@ function ProfileBody({
 
         <section className="prof__sec" aria-labelledby="prof-scores">
           <h3 id="prof-scores" className="t-eyebrow prof__h">
-            How it scores <span className="prof__h-note">· out of 5, for a US retiree</span>
+            How it scores <span className="prof__h-note">· out of 5, for a US retiree on buy-borrow-die</span>
           </h3>
           <ul className="pscores">
             {SCORE_KEYS.map((k, i) => (
               <li key={k} className="pscores__row">
-                <span className="pscores__k">{EXPAT_SCORE_LABELS[k]}</span>
+                <span className="pscores__k">
+                  {EXPAT_SCORE_LABELS[k]}
+                  <InfoTip label={`What the ${EXPAT_SCORE_LABELS[k]} score means`}>{EXPAT_SCORE_RUBRIC[k]}</InfoTip>
+                </span>
                 <span className="pscores__track" aria-hidden="true">
                   {[1, 2, 3, 4, 5].map((n) => (
                     <motion.i
