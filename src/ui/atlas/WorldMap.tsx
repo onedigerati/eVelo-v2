@@ -552,6 +552,15 @@ export function WorldMap({ rows, homeId, destId, region, compare, onToggleCompar
     else if (pts.current.size === 1) gesture.current = { mode: 'pending', id: e.pointerId, x0: p[0], y0: p[1], v0: viewRef.current }
   }
   const onMove = (e: RPointerEvent) => {
+    // A mouse press released outside the map never reaches onUp; a move with no button held
+    // means it is over — drop it, or every later move reads as a drag and hover bubbles stop.
+    if (e.pointerType === 'mouse' && e.buttons === 0 && pts.current.has(e.pointerId)) {
+      pts.current.delete(e.pointerId)
+      if (pts.current.size === 0) {
+        gesture.current = { mode: 'none' }
+        setPanning(false)
+      }
+    }
     const g = gesture.current
     if (pts.current.has(e.pointerId)) {
       const p = local(e)

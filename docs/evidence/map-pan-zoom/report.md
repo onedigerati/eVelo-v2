@@ -7,6 +7,7 @@ Verified 2026-11-07 on d6b2d37, plus uncommitted changes (this stage)
 | Ctrl/⌘+wheel zooms at the cursor; a plain wheel scrolls the page (with a hint) | pass | [drive.txt](drive.txt) (×2.82, 1.6px drift at whole-pixel cursor, no page scroll; plain wheel scrolled 120px and showed "Ctrl + scroll to zoom"), [desktop-zoomed.png](desktop-zoomed.png) |
 | Touch: horizontal drag pans, vertical swipe scrolls the page, two-finger pinch zooms; a tap still opens the city card | pass | [drive.txt](drive.txt) (Chromium touch emulation, 390px), [phone-pinched.png](phone-pinched.png), [phone-card.png](phone-card.png) |
 | + / − / reset buttons work; region chips still fly to their region; pan is clamped to the world | pass | [drive.txt](drive.txt), [desktop-europe.png](desktop-europe.png), [desktop-clamped.png](desktop-clamped.png) |
+| Hover bubbles still appear (fresh load, after a drag, after clicks, after a press released off the map) | pass | [hover.txt](hover.txt), [hover-live.png](hover-live.png), scripts [hover-drive.mjs](hover-drive.mjs), [hover-release-outside.mjs](hover-release-outside.mjs) |
 | Tests, typecheck and build pass | pass | [tests.txt](tests.txt), [typecheck.txt](typecheck.txt), [build.txt](build.txt) |
 
 Project checks: type check pass · lint n/a (no config) · tests 185/185 ([tests.txt](tests.txt); 12 new in `mapView.test.ts`) · build pass ([build.txt](build.txt))
@@ -15,3 +16,4 @@ Drive script: [map-drive.mjs](map-drive.mjs). WebKit (iPhone) touch untested.
 
 ## History
 - 2026-11-07 · Pan clamped to the sphere's bounding box let the view drift to its empty corners (desktop-clamped). Fixed: bounds are now the inhabited band (Hawaii→dateline, 79°N–57°S) united with the region's own fit.
+- 2026-11-07 · After deploy, the user asked whether hover bubbles had gone. They worked, but a mouse press on the map released off it left a stale press, after which every move read as a drag and no bubble showed (reproduced on the live site). Fixed: a mouse move with no button held drops the stale press.
