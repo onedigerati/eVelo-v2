@@ -8,9 +8,10 @@ Verified 2026-11-07 on d6b2d37, plus uncommitted changes (this stage)
 | Touch: horizontal drag pans, vertical swipe scrolls the page, two-finger pinch zooms; a tap still opens the city card | pass | [drive.txt](drive.txt) (Chromium touch emulation, 390px), [phone-pinched.png](phone-pinched.png), [phone-card.png](phone-card.png) |
 | + / − / reset buttons work; region chips still fly to their region; pan is clamped to the world | pass | [drive.txt](drive.txt), [desktop-europe.png](desktop-europe.png), [desktop-clamped.png](desktop-clamped.png) |
 | Hover bubbles still appear (fresh load, after a drag, after clicks, after a press released off the map) | pass | [hover.txt](hover.txt), [hover-live.png](hover-live.png), scripts [hover-drive.mjs](hover-drive.mjs), [hover-release-outside.mjs](hover-release-outside.mjs) |
+| Touch tap: tablets and wider get the floating bubble beside the dot; phones keep the card docked below the map; × closes, a second tap chooses, a tap on empty map closes | pass | [tap.txt](tap.txt), [tap-tablet-top-half.png](tap-tablet-top-half.png), [tap-tablet-bottom-half.png](tap-tablet-bottom-half.png), [tap-phone-top-half.png](tap-phone-top-half.png), [tap-phone-bottom-half.png](tap-phone-bottom-half.png), script [tap-drive.mjs](tap-drive.mjs) |
 | Tests, typecheck and build pass | pass | [tests.txt](tests.txt), [typecheck.txt](typecheck.txt), [build.txt](build.txt) |
 
-Project checks: type check pass · lint n/a (no config) · tests 185/185 ([tests.txt](tests.txt); 12 new in `mapView.test.ts`) · build pass ([build.txt](build.txt))
+Project checks: type check pass · lint n/a (no config) · tests 189/189 ([tests.txt](tests.txt); 16 new in `mapView.test.ts`) · build pass ([build.txt](build.txt))
 Audit: `npm audit --omit=dev`: 0 vulnerabilities ([audit.txt](audit.txt))
 Drive script: [map-drive.mjs](map-drive.mjs). WebKit (iPhone) touch untested.
 

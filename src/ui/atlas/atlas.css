@@ -515,7 +515,7 @@
   white-space: nowrap;
 }
 
-/* City card (hover tooltip; docked sheet on touch) */
+/* City card (hover bubble; on touch a tap bubble, docked below the map on phones) */
 .city-card {
   position: absolute;
   z-index: 5;

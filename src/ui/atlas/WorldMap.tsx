@@ -22,7 +22,7 @@ import { outcomeRgb } from '../outcomeScale'
 import { costDelta, localCompact, inRegion, successColor, successTextColor, type Ranked, type RegionChip } from './atlasData'
 import { CodeChip } from './CodeChip'
 import { LEVELS, loadLandDots, projection, S0, toWorld, WORLD_W, type LandDots } from './landDots'
-import { clampView, panBy, pinchView, sameView, wheelFactor, zoomAt, type Limits, type View } from './mapView'
+import { cardPlacement, clampView, panBy, pinchView, sameView, wheelFactor, zoomAt, type Limits, type View } from './mapView'
 import { classifyTouch } from '../primitives/sliderGesture'
 
 /* ---------------------------------------------------------------- Geometry */
@@ -672,7 +672,10 @@ export function WorldMap({ rows, homeId, destId, region, compare, onToggleCompar
   useEffect(() => () => clearTimeout(hideTimer.current), [])
 
   const activeId = pinned ?? hover
-  const active = activeId ? (markers.find((m) => m.city.id === activeId) ?? null) : null
+  // A floating card hides when its city is panned off the map; a docked one (phones) stays.
+  const activeMarker = activeId ? (markers.find((m) => m.city.id === activeId) ?? null) : null
+  const docksBelow = pinned != null && !!size && size.W < 560
+  const active = activeMarker && (docksBelow || visible.includes(activeMarker)) ? activeMarker : null
 
   const summary = rows.length
     ? `World map of ${rows.length} cities colored by how often your plan holds. Best: ${rows
@@ -799,7 +802,7 @@ export function WorldMap({ rows, homeId, destId, region, compare, onToggleCompar
             m={active}
             W={size.W}
             H={size.H}
-            docked={pinned != null}
+            pinned={pinned != null}
             homeId={homeId}
             destId={destId}
             homeSpend={homeSpend}
@@ -868,7 +871,7 @@ function CityCard({
   m,
   W,
   H,
-  docked,
+  pinned,
   homeId,
   destId,
   homeSpend,
@@ -883,7 +886,8 @@ function CityCard({
   m: Marker
   W: number
   H: number
-  docked: boolean
+  /** Opened by a tap (touch/pen): stays until closed, with a close button. */
+  pinned: boolean
   homeId: string
   destId: string | null
   homeSpend: number
@@ -901,15 +905,24 @@ function CityCard({
   const isDest = city.id === destId
   const fx = rate(city.currency)
   const spend = row?.spendUsd ?? homeSpend
+  // A tapped city on a phone-width map docks its card below the map (the map is narrower than
+  // card + dot and shorter than the card); elsewhere the card floats beside the dot.
+  const docked = pinned && W < 560
+  // Measure the card so a floating card placed above its dot lands exactly; 260 until measured.
+  const ref = useRef<HTMLDivElement>(null)
+  const [CH, setCH] = useState(260)
+  useLayoutEffect(() => {
+    const h = ref.current?.offsetHeight
+    if (h && h !== CH) setCH(h)
+  }, [CH, city.id, row, compared])
   let style: CSSProperties | undefined
   if (!docked) {
-    const right = m.x + m.r + 16 + CW < W
-    const left = right ? m.x + m.r + 14 : Math.max(8, m.x - m.r - 14 - CW)
-    const top = Math.min(Math.max(8, m.y - 70), Math.max(8, H - 200))
+    const { left, top } = cardPlacement(m.x, m.y, m.r, W, H, CW, CH)
     style = { left, top, width: CW }
   }
   return (
     <motion.div
+      ref={ref}
       className={cx('city-card', docked && 'is-docked')}
       style={style}
       initial={{ opacity: 0, y: docked ? 12 : 4, scale: docked ? 1 : 0.97 }}
@@ -932,7 +945,7 @@ function CityCard({
             #{row.rank}
           </span>
         )}
-        {docked && (
+        {pinned && (
           <button type="button" className="icon-btn city-card__close" aria-label="Close" onClick={onClose}>
             <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true">
               <path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
@@ -997,7 +1010,9 @@ function CityCard({
           </button>
         )}
       </div>
-      {!docked && !isHome && !isDest && <div className="city-card__hint">or click the dot</div>}
+      {!docked && !isHome && !isDest && (
+        <div className="city-card__hint">{pinned ? 'or tap the dot again' : 'or click the dot'}</div>
+      )}
     </motion.div>
   )
 }

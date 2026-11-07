@@ -81,3 +81,33 @@ export function wheelFactor(deltaY: number, deltaMode: number): number {
 export function sameView(a: View, b: View): boolean {
   return Math.abs(a.k / b.k - 1) < 0.01 && Math.abs(a.tx - b.tx) < 1 && Math.abs(a.ty - b.ty) < 1
 }
+
+/**
+ * Where the city card goes for a marker at (x, y) with radius r on a W×H map: beside the dot
+ * when there's room on either side; otherwise (phones) centred over it, below the dot if the
+ * card fits there, else above, else on the roomier side, so it never covers the dot it describes. `top` may be negative or run past H — the card overhangs the map.
+ */
+export function cardPlacement(
+  x: number,
+  y: number,
+  r: number,
+  W: number,
+  H: number,
+  CW: number,
+  CH: number,
+): { left: number; top: number } {
+  const gap = 14
+  if (x + r + gap + CW <= W - 2) return { left: x + r + gap, top: sideTop(y, H, CH) }
+  if (x - r - gap - CW >= 2) return { left: x - r - gap - CW, top: sideTop(y, H, CH) }
+  const left = Math.min(Math.max(8, x - CW / 2), Math.max(8, W - CW - 8))
+  const below = y + r + gap
+  const above = y - r - gap - CH
+  // Below if it fits inside the map, else above if that fits, else whichever side has more room.
+  if (below + CH <= H) return { left, top: below }
+  if (above >= 0) return { left, top: above }
+  return { left, top: H - y > y ? below : above }
+}
+
+function sideTop(y: number, H: number, CH: number): number {
+  return Math.min(Math.max(8, y - 70), Math.max(8, H - CH - 8))
+}

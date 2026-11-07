@@ -9,7 +9,7 @@ PASS click on a city still chooses it — dest now lisbon
 PASS region chip flies to its region — Lisbon at 258.3,323.2
 PASS pan is clamped to the world — second huge drag changed nothing: true; painted px in lower-right quadrant 141056
 PASS touch: horizontal drag pans the map — lisbon dx 30.0, scrollY 2661→2661
-PASS touch: vertical swipe scrolls the page, map stays — scrollY 2661→2814, lisbon moved 0.00px
+PASS touch: vertical swipe scrolls the page, map stays — scrollY 2661→2815, lisbon moved 0.00px
 PASS touch: two-finger pinch zooms — madeira–madrid distance ×3.01 (finger spread 60→180 px, ×3.0), scrollY 2661→2661
 PASS touch: tap on a city opens its card — tapped madeira, cards 1
 PASS no page errors — none

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { clampView, panBy, pinchView, sameView, wheelFactor, zoomAt, type Limits, type View } from '../mapView'
+import { cardPlacement, clampView, panBy, pinchView, sameView, wheelFactor, zoomAt, type Limits, type View } from '../mapView'
 
 const toScreen = (v: View, x: number, y: number) => [x * v.k + v.tx, y * v.k + v.ty]
 
@@ -91,5 +91,36 @@ describe('panBy / sameView', () => {
   it('treats sub-pixel differences as the same view', () => {
     expect(sameView({ k: 2, tx: 10, ty: 10 }, { k: 2.001, tx: 10.4, ty: 9.7 })).toBe(true)
     expect(sameView({ k: 2, tx: 10, ty: 10 }, { k: 2, tx: 14, ty: 10 })).toBe(false)
+  })
+})
+
+describe('cardPlacement', () => {
+  const CW = 264
+  const CH = 260
+  it('sits right of the dot when there is room, else left', () => {
+    expect(cardPlacement(100, 150, 6, 1100, 500, CW, CH).left).toBe(120)
+    expect(cardPlacement(1000, 150, 6, 1100, 500, CW, CH).left).toBe(1000 - 6 - 14 - CW)
+  })
+  it('keeps a side card inside the map vertically', () => {
+    expect(cardPlacement(100, 10, 6, 1100, 500, CW, CH).top).toBe(8)
+    expect(cardPlacement(100, 490, 6, 1100, 500, CW, CH).top).toBe(500 - CH - 8)
+  })
+  it('on a narrow map, goes below the dot if it fits, else above, else the roomier side', () => {
+    const W = 370
+    const H = 246
+    const below = cardPlacement(180, 60, 8, W, H, CW, CH)
+    expect(below.top).toBe(60 + 8 + 14)
+    expect(below.left).toBe(180 - CW / 2)
+    const above = cardPlacement(180, 200, 8, W, H, CW, CH)
+    expect(above.top + CH).toBe(200 - 8 - 14)
+    // A compact 140px card: fits below a dot at y=70 (70+22+140 = 232 ≤ 246)…
+    expect(cardPlacement(180, 70, 8, W, H, CW, 140).top).toBe(92)
+    // …and above a dot at y=170 (170−22−140 = 8).
+    expect(cardPlacement(180, 170, 8, W, H, CW, 140).top).toBe(8)
+  })
+  it('keeps a centred card on the map when the dot is near an edge (no room either side)', () => {
+    // Neither side fits for 82 < x < 288 on a 370px map.
+    expect(cardPlacement(90, 60, 8, 370, 246, CW, CH)).toEqual({ left: 8, top: 82 })
+    expect(cardPlacement(280, 60, 8, 370, 246, CW, CH).left).toBe(370 - CW - 8)
   })
 })

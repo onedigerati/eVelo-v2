@@ -1,4 +1,4 @@
-$ node hover-release-outside.mjs http://localhost:4317/ . ; node hover-drive.mjs http://localhost:4317/ .  # after fix
+$ node hover-release-outside.mjs http://localhost:4317/ . ; node hover-drive.mjs http://localhost:4317/ .
 BUBBLE fresh load, hover Lisbon: Lisbon
 BUBBLE after press on map + release outside, hover Lisbon: Lisbon
 map moved without a button held: [525.3,153] → [525.3,153]

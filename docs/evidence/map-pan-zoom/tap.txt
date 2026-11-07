@@ -1,0 +1,14 @@
+$ node docs/evidence/map-pan-zoom/tap-drive.mjs http://localhost:4317/ docs/evidence/map-pan-zoom
+PASS phone: tap a top half dot opens the card docked below the map — tapped plovdiv, card "Plovdiv", position relative, card top 548 vs map bottom 536
+PASS phone: close button closes it (top half) — 
+PASS phone: tap a bottom half dot opens the card docked below the map — tapped cape-town, card "Cape Town", position relative, card top 548 vs map bottom 536
+PASS phone: close button closes it (bottom half) — 
+PASS phone: second tap on the same dot chooses it — hint "null", dest now plovdiv (tapped plovdiv)
+PASS phone: tap on empty map closes the bubble — 
+PASS tablet: tap a top half dot opens a floating bubble beside it — tapped london, card "London", position absolute, covers dot false, card x 528–792 y 487–774, dot 512,557
+PASS tablet: close button closes it (top half) — 
+PASS tablet: tap a bottom half dot opens a floating bubble beside it — tapped cape-town, card "Cape Town", position absolute, covers dot false, card x 579–843 y 606–894, dot 557,813
+PASS tablet: close button closes it (bottom half) — 
+PASS tablet: second tap on the same dot chooses it — hint "or tap the dot again", dest now london (tapped london)
+PASS tablet: tap on empty map closes the bubble — 
+PASS no page errors — none
