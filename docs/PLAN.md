@@ -7,7 +7,7 @@ On phones, scrolling the page past a slider must never change its value. Sliders
 2026-11-06 · tests: 163 pass (15 files) · typecheck: clean · build: ok
 
 ## Now
-Stage 1 built and verified (Chromium touch emulation, docs/evidence/slider-gestures/); awaiting the user's review, then preview + deploy on approval.
+Stage 1 built and verified (Chromium touch emulation, docs/evidence/slider-gestures/); preview v16 published (https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth); awaiting the user's review, then push + deploy on approval.
 
 ## Stages
 - [x] 1. Touch-intent sliders — `Slider` stops reacting to touch-down; it decides drag vs scroll from the first ~8px of movement and commits taps on lift. Pure gesture/value helpers with tests. Shared by `Slider` and the holdings weight rows (`useSliderPointer`).
