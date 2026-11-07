@@ -8,7 +8,7 @@ Give eVelo a landing page that says what the site is before a visitor meets the 
 
 ## Now
 Stage 2 of 2 · Escape-velocity view
-Mode: paused — needs approval to publish the preview artifact, then deploy to GitHub Pages (and push the keel 0.5.2 commit)
+Mode: paused — preview v23 published (https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth); waiting on the user's review, then approval to deploy to GitHub Pages (and to push the keel 0.5.2 commit)
 Risk: UI only
 Scope: replace the Stage 1 placeholder with study C (boards `Escape`/`EscapeLight`): seeded decorative paths + margin-call line behind logo, headline, copy, CTAs and legend; follows the site theme; phone layout; reduced motion. Then preview and, on approval, deploy.
 Checks:
