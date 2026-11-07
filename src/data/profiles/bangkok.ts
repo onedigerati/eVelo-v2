@@ -5,7 +5,7 @@ const profile: ExpatProfile = {
   tagline: 'World-class private hospitals, big-city Asian hub',
   summary:
     'Thailand is 9th in International Living\'s 2026 index and 3rd in Expat Insider 2026, and Bangkok\'s private hospitals are among Asia\'s leading medical-tourism centres. It has the same 50+ retirement visa as Chiang Mai, plus a 10-year LTR visa that exempts remitted foreign income; there is no wealth tax and heirs abroad are outside inheritance tax.',
-  scores: { cost: 4, healthcare: 4, safety: 3, visa: 4, climate: 3, community: 4, tax: 4, estate: 5, lending: 5 },
+  scores: { cost: 4, healthcare: 4, safety: 3, visa: 4, climate: 3, community: 4, tax: 4, estate: 5, lending: 4 },
   facts: {
     healthcare:
       'Internationally accredited private hospitals (Bumrungrad, Bangkok Hospital, Samitivej, Medpark) with English-speaking, often US-trained specialists, well below US prices; foreigners are outside the public schemes, and most Thai insurers take new applicants only under 60–65 (Pacific Cross to 75).',

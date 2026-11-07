@@ -4,7 +4,7 @@ const profile: ExpatProfile = {
   tagline: 'Low-cost Andean city, US dollar, steep inheritance tax',
   summary:
     'Ecuador is 11th in International Living\'s 2026 index and uses the US dollar. Its rentista visa takes investment income at about $1,446 a month, and Cuenca is a long-established US retiree base with some of the lowest costs on this list. For BBD it ranks near the bottom: worldwide income is taxed at up to 37%, and an inheritance tax of up to 35% reaches residents\' foreign assets.',
-  scores: { cost: 5, healthcare: 3, safety: 3, visa: 5, climate: 4, community: 4, tax: 2, estate: 2, lending: 5 },
+  scores: { cost: 5, healthcare: 3, safety: 3, visa: 5, climate: 4, community: 4, tax: 2, estate: 2, lending: 4 },
   facts: {
     healthcare:
       'Private hospitals such as Hospital Universitario del Río, Santa Inés and Monte Sinaí give good care at low prices (consultations $20–50); residents with a cédula can join IESS voluntarily at 17.6% of declared income, minimum $84.86/month (2026), and complex cases may go to Quito or Guayaquil.',

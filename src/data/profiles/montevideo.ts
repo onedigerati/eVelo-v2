@@ -4,7 +4,7 @@ const profile: ExpatProfile = {
   tagline: 'Stable capital with an 11-year tax holiday on foreign income',
   summary:
     'Uruguay is 13th in International Living\'s 2026 index and 43rd in the 2026 Global Peace Index, the highest in Latin America. New residents can exempt foreign capital income for the arrival year plus 10, and there is no inheritance tax. Montevideo is a calm, mid-priced capital with good private health cooperatives. It is far from the US, its homicide rate has been rising, and the holiday needs 183 or more days a year there.',
-  scores: { cost: 3, healthcare: 4, safety: 3, visa: 4, climate: 3, community: 3, tax: 4, estate: 5, lending: 5 },
+  scores: { cost: 3, healthcare: 4, safety: 3, visa: 4, climate: 3, community: 3, tax: 4, estate: 5, lending: 4 },
   facts: {
     healthcare:
       'Private nonprofit cooperatives (mutualistas such as Hospital Británico, Asociación Española, Médica Uruguaya, CASMU) give full coverage for about $90–140 per adult a month (2026), with age-based admission rules and senior surcharges; the public ASSE serves the rest, and Montevideo holds most specialty care.',

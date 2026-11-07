@@ -5,7 +5,7 @@ const profile: ExpatProfile = {
   tagline: 'Lakeside villages, Mexico\'s largest US-retiree enclave',
   summary:
     'Ajijic and Chapala form Mexico\'s biggest classic US and Canadian retiree enclave, with a spring-like climate and Guadalajara\'s hospitals and wide US nonstop service close by. Residency on savings is easy and there is no estate tax, but Mexico taxes residents\' dividends at up to 35% plus a separate 10%, so a low-yield portfolio matters.',
-  scores: { cost: 4, healthcare: 3, safety: 3, visa: 5, climate: 5, community: 5, tax: 2, estate: 5, lending: 5 },
+  scores: { cost: 4, healthcare: 3, safety: 3, visa: 5, climate: 5, community: 5, tax: 2, estate: 5, lending: 4 },
   facts: {
     healthcare:
       'Local clinics with short-stay beds (Ajijic Hospital, with about 20 specialists visiting from Guadalajara; Maskaras Clinic, open 24/7; Lakeside Medical Group); serious care is in Guadalajara, about 55 km north, where Centro Médico Puerta de Hierro is in the Mayo Clinic Care Network (its JCI status is unverified); Medicare is not accepted, and IMSS voluntary cover is about MXN 21,500/yr at 70–79 (2026).',

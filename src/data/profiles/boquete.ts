@@ -5,7 +5,7 @@ const profile: ExpatProfile = {
   tagline: 'Cool highland town, big North American community',
   summary:
     'Live and Invest Overseas ranked Boquete 1st for 2026, and Panama is 2nd in International Living\'s 2026 index and 1st in Expat Insider. It brings Panama\'s BBD tax profile to a spring-like mountain town: territorial tax, so US dividends are untaxed, and no wealth or inheritance tax. Private hospitals are in David, about an hour away.',
-  scores: { cost: 4, healthcare: 3, safety: 4, visa: 3, climate: 4, community: 4, tax: 5, estate: 5, lending: 5 },
+  scores: { cost: 4, healthcare: 3, safety: 4, visa: 3, climate: 4, community: 4, tax: 5, estate: 5, lending: 4 },
   facts: {
     healthcare:
       'Town clinics handle routine care (visits often $20–40); private hospitals (Hospital Chiriquí, Mae Lewis) are under an hour away in David, and specialist cases fly to Panama City, about an hour; most expats insure privately, as the public CSS is tied to payroll contributions.',

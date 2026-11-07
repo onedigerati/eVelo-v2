@@ -103,7 +103,7 @@ export const EXPAT_SCORE_RUBRIC: Record<ExpatScoreKey, string> = {
   estate:
     '5 = no inheritance tax reaching US assets left to US-resident children; 4 = ≤5%, or an allowance ≥ $1M per child; 3 = top rate ≤10%; 2 = top rate 11–35%; 1 = top rate above 35% on the worldwide estate.',
   lending:
-    '5 = IBKR and Schwab International both reported to accept residents, with no known margin restriction; 4 = Schwab International reported to accept (outside the EU) plus IBKR; 3 = IBKR only, or EU residence where Schwab reportedly restricts cash-out by margin; 2 = IBKR only, and even that uncertain; 1 = no known US broker.',
+    '5 = margin borrowing for residents confirmed by IBKR and Schwab International (none confirmed as of 2026-11); 4 = Schwab International reported to accept residents (outside the EU) plus IBKR, margin terms unconfirmed; 3 = IBKR only, or EU residence where Schwab reportedly restricts cash-out by margin; 2 = IBKR only, and even that uncertain; 1 = no known US broker.',
 }
 
 const IL = 'International Living Global Retirement Index'

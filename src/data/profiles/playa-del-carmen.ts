@@ -5,7 +5,7 @@ const profile: ExpatProfile = {
   tagline: 'Caribbean beach town near Cancún\'s flights',
   summary:
     'Playa del Carmen is a Riviera Maya beach town about 70 km from Cancún, the busiest international airport in Mexico. Residency on savings is easy and there is no estate tax, but its own hospital is small, gang clashes have reached the tourist areas, hurricanes are a risk and Mexico taxes dividends at up to 35% plus 10%.',
-  scores: { cost: 3, healthcare: 3, safety: 2, visa: 5, climate: 3, community: 3, tax: 2, estate: 5, lending: 5 },
+  scores: { cost: 3, healthcare: 3, safety: 2, visa: 5, climate: 3, community: 3, tax: 2, estate: 5, lending: 4 },
   facts: {
     healthcare:
       'Hospiten Riviera Maya has 23 beds, 2 ICU beds and 24-hour emergency care, with no JCI accreditation claimed; larger private hospitals are in Cancún, about 70 km away (Galenia\'s reported JCI status is unverified); IMSS voluntary cover is about MXN 21,500/yr at 70–79 (2026).',

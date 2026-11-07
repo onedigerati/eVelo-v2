@@ -5,7 +5,7 @@ const profile: ExpatProfile = {
   tagline: 'Spring-like Central Valley, tax-free today, a bill pending',
   summary:
     'Costa Rica is 3rd in International Living\'s 2026 index. The Central Valley around San José (Escazú, Santa Ana) pairs mild weather all year with the country\'s best private hospitals. Today there is no wealth or inheritance tax and foreign dividends are untaxed. Bill 25.796, filed in September 2026, would tax residents\' foreign dividends and interest at about 15%, so it ranks lower on that risk.',
-  scores: { cost: 2, healthcare: 4, safety: 3, visa: 4, climate: 5, community: 4, tax: 5, estate: 5, lending: 5 },
+  scores: { cost: 2, healthcare: 4, safety: 3, visa: 4, climate: 5, community: 4, tax: 5, estate: 5, lending: 4 },
   facts: {
     healthcare:
       'Residents must join the CCSS ("Caja") public system at a share of declared income (reported at $200–400/month on $1,500–2,500 in 2022); private Hospital Clínica Bíblica is JCI-accredited and on Newsweek\'s 2026 list of Latin America\'s top private hospitals, with CIMA and Metropolitano also nearby.',

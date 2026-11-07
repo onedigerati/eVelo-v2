@@ -5,7 +5,7 @@ const profile: ExpatProfile = {
   tagline: 'Dollarized hub city with top private hospitals',
   summary:
     'Panama is 2nd in International Living\'s 2026 index and 1st in Expat Insider 2025 and 2026. Its territorial system leaves US dividends and interest untaxed, and it has no wealth or inheritance tax. The capital adds Central America\'s strongest private hospitals and Copa\'s hub, with nonstops to dozens of US cities. The catch for a portfolio-only retiree is residency, which needs a pension or about $200k placed in Panama.',
-  scores: { cost: 3, healthcare: 4, safety: 3, visa: 3, climate: 3, community: 4, tax: 5, estate: 5, lending: 5 },
+  scores: { cost: 3, healthcare: 4, safety: 3, visa: 3, climate: 3, community: 4, tax: 5, estate: 5, lending: 4 },
   facts: {
     healthcare:
       'Strong private hospitals (Hospital Punta Pacífica, affiliated with Johns Hopkins Medicine; Pacífica Salud, Hospital Nacional, Paitilla), often with US-trained doctors; pensionados get 15–20% off medical bills, and local private cover runs about $350–700+/month in your 60s, so most expats insure privately.',

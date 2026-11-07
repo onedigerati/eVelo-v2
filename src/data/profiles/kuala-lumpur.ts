@@ -5,7 +5,7 @@ const profile: ExpatProfile = {
   tagline: 'Modern, English-friendly city, tax-free foreign income',
   summary:
     'Malaysia is 12th in the 2026 Global Peace Index and 10th in International Living\'s 2026 index, and it is the best BBD tax fit in Asia: no wealth, estate or gift tax, and residents\' foreign income exempt through 2036. Kuala Lumpur adds first-rate private hospitals and widespread English at a fraction of US costs, but MM2H\'s deposit and forced home purchase are the cost of entry.',
-  scores: { cost: 4, healthcare: 4, safety: 4, visa: 3, climate: 3, community: 4, tax: 5, estate: 5, lending: 5 },
+  scores: { cost: 4, healthcare: 4, safety: 4, visa: 3, climate: 3, community: 4, tax: 5, estate: 5, lending: 4 },
   facts: {
     healthcare:
       'Excellent, affordable private hospitals (Gleneagles, Prince Court, Sunway) with English-speaking, often Western-trained doctors; foreigners get no public subsidy, and since July 2025 private hospitals add 6% service tax for foreign patients (whether MM2H holders are carved out is unconfirmed).',

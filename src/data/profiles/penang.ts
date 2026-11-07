@@ -5,7 +5,7 @@ const profile: ExpatProfile = {
   tagline: 'Island food capital with medical-tourism hospitals',
   summary:
     'Penang has Malaysia\'s BBD strengths (no wealth, estate or gift tax, foreign income exempt through 2036, 12th in the Global Peace Index, wide use of English) on a smaller, cheaper island. Its private hospitals are a regional medical-tourism hub; the cost of entry is MM2H\'s deposit and forced home purchase.',
-  scores: { cost: 5, healthcare: 4, safety: 4, visa: 3, climate: 3, community: 4, tax: 5, estate: 5, lending: 5 },
+  scores: { cost: 5, healthcare: 4, safety: 4, visa: 3, climate: 3, community: 4, tax: 5, estate: 5, lending: 4 },
   facts: {
     healthcare:
       'Accredited private hospitals (Island Hospital, Gleneagles Penang, Loh Guan Lye) draw medical tourists, at a fraction of US prices; since July 2025 private hospitals add 6% service tax for foreign patients (whether MM2H holders are carved out is unconfirmed).',

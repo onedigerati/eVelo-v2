@@ -5,7 +5,7 @@ const profile: ExpatProfile = {
   tagline: 'Colonial capital in Mexico\'s safest state',
   summary:
     'Mérida, on Forbes\' 2026 list, is a large, low-cost colonial city in Yucatán, reportedly the only Mexican state the US State Department rates at Level 1, and the Yucatán Peninsula\'s medical hub. Residency on savings is easy and there is no estate tax, but Mexico taxes residents\' dividends at up to 35% plus a separate 10%.',
-  scores: { cost: 4, healthcare: 4, safety: 4, visa: 5, climate: 2, community: 4, tax: 2, estate: 5, lending: 5 },
+  scores: { cost: 4, healthcare: 4, safety: 4, visa: 5, climate: 2, community: 4, tax: 2, estate: 5, lending: 4 },
   facts: {
     healthcare:
       'The regional medical centre for the Yucatán Peninsula, where even Belize sends serious cases, with private hospitals (Star Médica, Faro del Mayab, Clínica de Mérida) well below US prices; IMSS voluntary cover is about MXN 21,500/yr at 70–79 (2026), with limits.',

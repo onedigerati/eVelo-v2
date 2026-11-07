@@ -5,7 +5,7 @@ const profile: ExpatProfile = {
   tagline: 'Very low cost, easy 50+ retirement visa',
   summary:
     'Thailand is 9th in International Living\'s 2026 index and 3rd in Expat Insider 2026, and Chiang Mai is one of the cheapest well-served retiree cities anywhere. For BBD there is no wealth tax, heirs abroad are outside inheritance tax and the LTR visa exempts remitted foreign income, but whether brought-in loan proceeds are taxable is unconfirmed and insurers cap entry ages.',
-  scores: { cost: 5, healthcare: 3, safety: 3, visa: 4, climate: 3, community: 5, tax: 4, estate: 5, lending: 5 },
+  scores: { cost: 5, healthcare: 3, safety: 3, visa: 4, climate: 3, community: 5, tax: 4, estate: 5, lending: 4 },
   facts: {
     healthcare:
       'Good, low-cost private hospitals (Bangkok Hospital Chiang Mai, Chiang Mai Ram); complex care is often referred to Bangkok; foreigners are outside the public schemes, and most Thai insurers take new applicants only under 60–65 (Pacific Cross to 75).',

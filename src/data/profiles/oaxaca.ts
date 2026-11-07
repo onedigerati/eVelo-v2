@@ -5,7 +5,7 @@ const profile: ExpatProfile = {
   tagline: 'Colonial culture capital in the southern highlands',
   summary:
     'Oaxaca is a culture-rich colonial city with a warm, dry highland climate, low costs and nonstops to Dallas, Houston and Los Angeles. It shares Mexico\'s easy residency on savings and absence of estate tax, but also its dividend tax, and its hospitals are thin for older retirees, with the nearest JCI care in Puebla or Mexico City.',
-  scores: { cost: 4, healthcare: 2, safety: 3, visa: 5, climate: 4, community: 3, tax: 2, estate: 5, lending: 5 },
+  scores: { cost: 4, healthcare: 2, safety: 3, visa: 5, climate: 4, community: 3, tax: 2, estate: 5, lending: 4 },
   facts: {
     healthcare:
       'Private hospitals (Hospital Ángeles, Clínica de Especialidades, Centro Médico de Oaxaca) and a public high-specialty regional hospital, none JCI-accredited; the nearest JCI care is in Puebla or Mexico City, hours away by road, and severe cases may need medical evacuation (secondary source).',

@@ -5,7 +5,7 @@ const profile: ExpatProfile = {
   tagline: 'Highland capital with Mexico\'s best hospitals',
   summary:
     'Mexico City has the country\'s strongest hospitals, including JCI-accredited ABC Medical Center and Hospital Ángeles Pedregal and Lomas, nonstops to about 28 US cities and a mild highland climate. Residency on savings is easy and there is no estate tax, but Mexico taxes dividends at up to 35% plus 10%, and big-city crime, altitude and a US community skewed to remote workers keep it mid-pack.',
-  scores: { cost: 4, healthcare: 4, safety: 3, visa: 5, climate: 4, community: 4, tax: 2, estate: 5, lending: 5 },
+  scores: { cost: 4, healthcare: 4, safety: 3, visa: 5, climate: 4, community: 4, tax: 2, estate: 5, lending: 4 },
   facts: {
     healthcare:
       'The best in Mexico: ABC Medical Center is JCI-accredited at its Observatorio and Santa Fe campuses (a fifth consecutive accreditation in 2021), and Hospital Ángeles Pedregal and Lomas hold the JCI Gold Seal; Medicare is generally not accepted, and IMSS voluntary cover is about MXN 21,500/yr at 70–79 (2026).',

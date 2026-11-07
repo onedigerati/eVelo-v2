@@ -4,7 +4,7 @@ const profile: ExpatProfile = {
   tagline: 'Spring-like climate and great hospitals, but costly taxes for BBD',
   summary:
     'Colombia was 2nd in Expat Insider 2025 and is 15th in International Living\'s 2026 index, and Medellín pairs a mild climate all year with some of Latin America\'s best private hospitals at low cost. For a BBD retiree it ranks low: residents pay a worldwide wealth tax above about $1.2M, dividends are taxed at up to 39%, and inheritances at 15%. Safety is also weak, with Colombia 141st of 163 in the 2026 Global Peace Index.',
-  scores: { cost: 4, healthcare: 4, safety: 2, visa: 3, climate: 5, community: 4, tax: 2, estate: 2, lending: 5 },
+  scores: { cost: 4, healthcare: 4, safety: 2, visa: 3, climate: 5, community: 4, tax: 2, estate: 2, lending: 4 },
   facts: {
     healthcare:
       'Private hospitals Pablo Tobón Uribe, San Vicente Fundación, Clínica Medellín and Las Américas were all in Newsweek\'s Colombia top 25 (2023 edition); EPS access depends on visa type, and private "medicina prepagada" plans have product-specific entry ages (one SURA plan requires entry under 70).',

@@ -5,7 +5,7 @@ const profile: ExpatProfile = {
   tagline: 'Small Central Valley town near the airport',
   summary:
     'Atenas is a small Central Valley town with over 1,500 expats, marketed for decades as having "the best climate in the world". San José\'s airport is about 30–45 minutes away and its top private hospitals under an hour. It shares Costa Rica\'s BBD profile: no wealth or inheritance tax, and foreign dividends untaxed today. It also shares the risk of Bill 25.796, which would tax them at about 15%.',
-  scores: { cost: 3, healthcare: 4, safety: 3, visa: 4, climate: 5, community: 4, tax: 5, estate: 5, lending: 5 },
+  scores: { cost: 3, healthcare: 4, safety: 3, visa: 4, climate: 5, community: 4, tax: 5, estate: 5, lending: 4 },
   facts: {
     healthcare:
       'Atenas has a 24-hour clinic; Hospital CIMA in Escazú (JCI-accredited per a secondary source) and JCI-accredited Clínica Bíblica are under an hour away with English-speaking staff; residents must also join the CCSS ("Caja") public system at a share of declared income.',

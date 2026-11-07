@@ -4,7 +4,7 @@ const profile: ExpatProfile = {
   tagline: 'Safe, efficient Asian capital, no retiree visa',
   summary:
     'Taipei pairs very low crime, strong teaching hospitals and the National Health Insurance with a mild BBD tax profile: no wealth tax, foreign income taxed only above a high threshold, and estate tax that reaches only Taiwan-sited assets for foreigners. The obstacle is residency: there is no retirement or passive-income visa, so it ranks low for a portfolio retiree.',
-  scores: { cost: 3, healthcare: 5, safety: 4, visa: 1, climate: 3, community: 2, tax: 5, estate: 5, lending: 5 },
+  scores: { cost: 3, healthcare: 5, safety: 4, visa: 1, climate: 3, community: 2, tax: 5, estate: 5, lending: 4 },
   facts: {
     healthcare:
       'National Taiwan University Hospital, the country\'s largest public hospital (about 2,400 beds), and other major teaching hospitals are in the city; ARC holders without an employer join National Health Insurance after 6 months of continuous residence (one trip under 30 days allowed), paying about 4.69% of the insured-salary basis, and keep paying while abroad (secondary source).',

@@ -5,7 +5,7 @@ const profile: ExpatProfile = {
   tagline: 'Island resort life with an accredited hospital',
   summary:
     'Phuket pairs a beach-island lifestyle and a large foreign community with Bangkok Hospital Phuket, JCI-accredited since 2009. Thailand\'s profile is workable for BBD (no wealth tax, heirs abroad outside inheritance tax, LTR exemption on remitted foreign income), but there are no US nonstops and insurance entry ages bite after 65.',
-  scores: { cost: 4, healthcare: 4, safety: 3, visa: 4, climate: 3, community: 4, tax: 4, estate: 5, lending: 5 },
+  scores: { cost: 4, healthcare: 4, safety: 3, visa: 4, climate: 3, community: 4, tax: 4, estate: 5, lending: 4 },
   facts: {
     healthcare:
       'Bangkok Hospital Phuket has been JCI-accredited since 2009 (its 6th cycle covers 2025–2028), with Phuket International Hospital and Mission Hospital as other private options and Vachira Phuket as the public hospital; foreigners rely on private insurance, and most Thai insurers take new applicants only under 60–65 (Pacific Cross to 75).',

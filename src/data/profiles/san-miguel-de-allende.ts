@@ -5,7 +5,7 @@ const profile: ExpatProfile = {
   tagline: 'Highland arts town, Mexico\'s classic American enclave',
   summary:
     'San Miguel de Allende is on Forbes\' 2026 list and is one of the towns most often reported as home by foreign residents in Mexico News Daily\'s 2026 survey. It offers a dry highland climate, a walkable colonial centre, a deep English-speaking community and easy residency on savings, against Mexico\'s dividend tax and a state with high crime.',
-  scores: { cost: 3, healthcare: 3, safety: 2, visa: 5, climate: 4, community: 5, tax: 2, estate: 5, lending: 5 },
+  scores: { cost: 3, healthcare: 3, safety: 2, visa: 5, climate: 4, community: 5, tax: 2, estate: 5, lending: 4 },
   facts: {
     healthcare:
       'Two local private hospitals (including H+ and MAC) cover routine and moderate care; major procedures usually mean Querétaro, about an hour away, or Mexico City, about 3 hours; private local cover runs about MXN 96,000/yr for a healthy 62-year-old, and IMSS voluntary cover about MXN 21,500/yr at 70–79 (2026).',

@@ -5,7 +5,7 @@ const profile: ExpatProfile = {
   tagline: 'Bay-front resort town, easy US nonstops',
   summary:
     'Live and Invest Overseas ranked Puerto Vallarta 3rd for 2026, and Mexico is 2nd in Expat Insider 2026 and 5th in International Living. It pairs a big English-speaking snowbird community and easy residency on savings with short nonstop flights home, but Mexico taxes residents\' dividends at up to 35% plus 10%, and Jalisco\'s cartel violence reached the city in February 2026.',
-  scores: { cost: 3, healthcare: 3, safety: 2, visa: 5, climate: 3, community: 5, tax: 2, estate: 5, lending: 5 },
+  scores: { cost: 3, healthcare: 3, safety: 2, visa: 5, climate: 3, community: 5, tax: 2, estate: 5, lending: 4 },
   facts: {
     healthcare:
       'Good private hospitals for a city its size (CMQ, San Javier, Amerimed) at well below US prices; the most complex care is in Guadalajara, and IMSS voluntary cover (about MXN 21,500/yr at 70–79 in 2026) has pre-existing-condition limits.',

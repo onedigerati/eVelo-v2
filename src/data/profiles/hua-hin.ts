@@ -5,7 +5,7 @@ const profile: ExpatProfile = {
   tagline: 'Quiet royal beach town, Thailand\'s retiree coast',
   summary:
     'Live and Invest Overseas ranks Hua Hin 8th for 2026: a calm, low-cost beach town about 200 km south of Bangkok, with a large, retiree-heavy expat community and a JCI-accredited Bangkok Hospital branch. It shares Thailand\'s BBD profile (no wealth tax, heirs abroad outside inheritance tax, LTR exemption on remitted foreign income) and its caveats on loan proceeds and insurance ages.',
-  scores: { cost: 4, healthcare: 3, safety: 3, visa: 4, climate: 3, community: 4, tax: 4, estate: 5, lending: 5 },
+  scores: { cost: 4, healthcare: 3, safety: 3, visa: 4, climate: 3, community: 4, tax: 4, estate: 5, lending: 4 },
   facts: {
     healthcare:
       'Bangkok Hospital Hua Hin is JCI-accredited (from 1 March 2024) and San Paulo Hua Hin is a cheaper private option; serious cases often go to Bangkok, 2.5–3 hours by road; foreigners are outside the public schemes, and most Thai insurers take new applicants only under 60–65 (Pacific Cross to 75).',

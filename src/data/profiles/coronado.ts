@@ -5,7 +5,7 @@ const profile: ExpatProfile = {
   tagline: 'Pacific beach town with Panama\'s tax profile',
   summary:
     'Coronado brings Panama\'s BBD profile to the beach: territorial tax, so US dividends are untaxed, no wealth or inheritance tax, and the US dollar. About 4,000 expats live in a town of about 10,000, many of them retirees. Serious hospital care and Tocumen\'s US flights are 1–1.5 hours away in Panama City.',
-  scores: { cost: 4, healthcare: 3, safety: 4, visa: 3, climate: 3, community: 4, tax: 5, estate: 5, lending: 5 },
+  scores: { cost: 4, healthcare: 3, safety: 4, visa: 3, climate: 3, community: 4, tax: 5, estate: 5, lending: 4 },
   facts: {
     healthcare:
       'Local private clinics plus Clinical Hospital San Fernando; serious care is in Panama City, about 1–1.5 hours away, at hospitals such as Punta Pacífica (affiliated with Johns Hopkins Medicine); local private cover runs about $350–700+/month in your 60s.',
