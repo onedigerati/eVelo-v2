@@ -1,6 +1,6 @@
 import { AnimatePresence, m as motion } from 'framer-motion'
 import { useId, useMemo, useRef, useState } from 'react'
-import { EXPAT_AS_OF, EXPAT_RANKING_METHOD, EXPAT_RANKING_SOURCES, EXPAT_SCORE_LABELS, EXPAT_SCORE_RUBRIC } from '../../data/expatPicks'
+import { EXPAT_AS_OF, EXPAT_PICKS, EXPAT_RANKING_METHOD, EXPAT_RANKING_SOURCES, EXPAT_SCORE_LABELS, EXPAT_SCORE_RUBRIC } from '../../data/expatPicks'
 import { currency, currencyCompact, percent } from '../format'
 import { useBreakpoint } from '../hooks'
 import { ease } from '../motion'
@@ -43,7 +43,7 @@ export function TopPicks({ rows, homeId, destId, onOpen, onChoose }: TopPicksPro
       }
       subtitle="Ranked for a US retiree living on buy-borrow-die: tax on holding and passing on a portfolio, residency on assets, US-broker lending abroad and healthcare, on top of the main retirement indexes and expat surveys. Your plan’s odds are shown for each."
     >
-      <ol className={cx('picks', scroller && 'picks--scroll')} aria-label={`Top ${profiled.length} picks`}>
+      <ol className={cx('picks', scroller && 'picks--scroll')} aria-label={`Top ${profiled.length} of ${EXPAT_PICKS.length} picks`}>
         <AnimatePresence initial={false}>
           {shown.map((v, i) => (
             <PickCard key={v.pick.cityId} v={v} i={i % FIRST} homeId={homeId} destId={destId} onOpen={onOpen} />
@@ -53,12 +53,12 @@ export function TopPicks({ rows, homeId, destId, onOpen, onChoose }: TopPicksPro
       {!scroller && profiled.length > FIRST && (
         <div className="picks__more">
           <button type="button" className="chip-btn" aria-expanded={all} onClick={() => setAll((x) => !x)}>
-            {all ? 'Show fewer' : `Show all ${profiled.length}`}
+            {all ? 'Show fewer' : `Show all top ${profiled.length}`}
             <Chevron open={all} />
           </button>
         </div>
       )}
-      {scroller && <p className="picks__swipe t-small ink-3">Swipe for all {profiled.length} picks.</p>}
+      {scroller && <p className="picks__swipe t-small ink-3">Swipe for the top {profiled.length}.</p>}
 
       {rest.length > 0 && <AlsoList views={rest} homeId={homeId} destId={destId} onOpen={onOpen} onChoose={onChoose} />}
       <HowRanked />

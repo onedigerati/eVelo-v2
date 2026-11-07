@@ -17,10 +17,10 @@ Scope:
 
 Risk: low (curated content and UI; engine untouched)
 Checks:
-- [ ] `EXPAT_PICKS` has 75 picks ranked 1–75 in the doc's order, each with a reason (proof: test)
-- [ ] All 75 have a full profile per the rubric (9 scores, all facts, drawbacks, ≥3 read sources, no TODO) (proof: test + spot-read 5 new profiles against the doc)
-- [ ] Atlas opens profiles for picks 1, 51 and 75 on phone and desktop, in light and dark, with no horizontal scroll and no console errors (proof: Playwright + screenshots)
-- [ ] Tests green, typecheck clean, build ok; fresh review triaged (proof: command output + review notes)
+- [x] `EXPAT_PICKS` has 75 picks ranked 1–75 in the doc's order, each with a reason (proof: test)
+- [x] All 75 have a full profile per the rubric (9 scores, all facts, drawbacks, ≥3 read sources, no TODO) (proof: test + spot-read 5 new profiles against the doc)
+- [x] Atlas opens profiles for picks 1, 51 and 75 on phone and desktop, in light and dark, with no horizontal scroll and no console errors (proof: Playwright + screenshots)
+- [x] Tests green, typecheck clean, build ok; fresh review triaged (proof: command output + review notes) — [evidence](evidence/stage-8/report.md)
 - [ ] Preview republished; deploy done on the user's approval (proof: preview URL + live site check)
 Open: none
 Mode: autopilot
@@ -56,8 +56,11 @@ Mode: autopilot
 - 2026-11-06 · Placencia (Belize) added as a candidate — user asked; it had never been evaluated because the plan fixed Belize as Cayo and Ambergris Caye and neither research pass revisited Belize.
 - 2026-11-06 · Profile pages expand to the top 75 — user asked; candidates ranked 51–75 include the 17 now outside the 50 (low-ranked with their drawbacks stated rather than excluded) plus ≥15 new candidates; two stages added (7 research and data, 8 profiles and ship), deploy moved to Stage 8.
 - 2026-11-06 · Draft top 75: the 50 keep their relative order; Tavira (#14), Grand Baie, Mauritius (#20), Torrevieja (#33), La Paz (#37) and Hopkins (#40) are inserted on merit, and the rest fill 51–75; 13 candidates sit outside with reasons. Stage 7's dataset check was narrowed to the 75 ranked cities (outside candidates never needed city entries). Austria's yearly tax on non-registered funds and South Africa's CGT at death are noted, not modelled.
+- 2026-11-06 · User approved publishing and deploying the top-75 build — "Please go ahead and publish when ready".
 
 ## Open questions
+- Two livingcost-derived restaurant indices look high (Vienna 92 vs Paris 80; Tavira 62 vs Lisbon 58) — re-check when Numbeo is reachable.
+- Georgia: the IRS may still apply the 1973 US–USSR income tax treaty to Georgia; profiles say "no US–Georgia income tax treaty" — confirm against the IRS treaty table.
 - Re-read Numbeo for the 11 livingcost-derived cities, the 5 Stage-3 cities mapped to nearby rows, and the noisy Belize pages once the rate limit lifts.
 - Local-tax bands filled from statutory scales where the research doc gives only ranges (Spanish regional steps, solidarity breakpoints, France, Japan, Ecuador's middle brackets — each note says so); thresholds are per person, not per couple; Turkey's 1% applies though US assets to US heirs may be out of scope.
 - Countries outside the top 50 without research (UK, Netherlands, Germany, Switzerland, UAE, South Africa, Singapore, South Korea, Canada, Australia, New Zealand) carry no local-tax data, so the Atlas treats them as untaxed (Switzerland's wealth tax, the UK's inheritance tax not modelled) — Stage 6 should label this.

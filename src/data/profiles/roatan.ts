@@ -14,7 +14,7 @@ const profile: ExpatProfile = {
       'Rentista residence on at least $2,500/month of stable income from abroad or in Honduras, which portfolio income should meet, or pensionado on a $1,500/month foreign pension (Ley de Migración y Extranjería, art. 21; secondary source); a Honduran bank account and yearly renewal are reported but unverified.',
     tax: 'No wealth tax; Honduras taxes only Honduran-source income (PwC, reviewed August 2026), so US dividends and interest are outside its tax; a "Ley de Justicia Tributaria" to tax worldwide income collapsed in May 2025 without passing, but could return.',
     estate:
-      'No inheritance, estate or gift tax is listed by PwC, and a secondary source confirms none, though no Honduran statute was found; there is no US estate treaty, and US estate tax applies above the $15M exemption (2026).',
+      'No inheritance, estate or gift tax is listed by PwC, and a secondary source confirms none, though no Honduran statute was found and the same source says inherited income may be subject to income tax under general rules; there is no US estate treaty, and US estate tax applies above the $15M exemption (2026).',
     lending:
       'Interactive Brokers reportedly lists Honduras among admitted countries, with margin subject to product rules (secondary source); whether Schwab One International accepts Honduras is unknown, and Fidelity and Vanguard open no new accounts for residents abroad.',
     climate:
