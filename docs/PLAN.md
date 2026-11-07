@@ -10,12 +10,13 @@ Find the best places to retire for someone living on buy-borrow-die: a portfolio
 Stage 1 of 5 · BBD research
 Risk: none (research notes only)
 Checks:
-- [ ] `docs/research/bbd-ranking-2026-11.md` covers every candidate (current 25, Cayo, Ambergris Caye, Gascony, Crete, Tarragona, Hua Hin, Kotor, Las Terrenas, plus any the research surfaces) with a sourced row per country: wealth tax, inheritance/estate tax on residents and the US treaty position, tax on dividends/interest/foreign income, asset-based residency routes, broker/margin access for residents, healthcare cost and insurance age limits (proof: read the doc; every row cites a URL actually read)
-- [ ] Each candidate dropped from the top 25 has a written reason (proof: read the doc)
+- [x] `docs/research/bbd-ranking-2026-11.md` covers every candidate (current 25, Cayo, Ambergris Caye, Gascony, Crete, Tarragona, Hua Hin, Kotor, Las Terrenas, plus any the research surfaces) with a sourced row per country: wealth tax, inheritance/estate tax on residents and the US treaty position, tax on dividends/interest/foreign income, asset-based residency routes, broker/margin access for residents, healthcare cost and insurance age limits (proof: read the doc; every row cites a URL actually read) — [evidence](evidence/stage-1/report.md)
+- [x] Each candidate dropped from the top 25 has a written reason (proof: read the doc) — [evidence](evidence/stage-1/report.md)
 Open: none
+Mode: autopilot
 
 ## Stages
-- [ ] 1. BBD research — country tax, residency, lending and healthcare facts for every candidate, sourced; new top-25 draft
+- [x] 1. BBD research — country tax, residency, lending and healthcare facts for every candidate, sourced; new top-25 draft
 - [ ] 2. New cities — add Belize (Cayo, Ambergris Caye), the other skipped LIOS picks and any research adds, with verified costs and healthcare factors
 - [ ] 3. Local taxes — wealth and inheritance tax per country in the engine, with tests; odds and estate reflect them; Method page explains
 - [ ] 4. BBD ranking — rerank the top 25 with new tax/estate and lending factors; profiles for newcomers, refreshed facts for the rest
@@ -27,7 +28,11 @@ Open: none
 - 2026-11-06 · Ranking is judged for buy-borrow-die retirees (tax on holding and passing on a portfolio, asset-based residency, US-broker lending abroad, healthcare into old age) — user: "that's kind of the whole point".
 - 2026-11-06 · The simulation applies each destination's annual wealth tax and inheritance tax — user's choice over score-only, so odds and estates reflect what the plan really keeps.
 
+- 2026-11-06 · Research surfaced Cyprus (Paphos, Limassol) and Malta (Sliema) as strong BBD fits and they enter the draft top 25; Paraguay (Asunción) and the Philippines were considered and dropped with reasons — autopilot call within the "not limited to the dataset" decision.
+- 2026-11-06 · Broker/margin facts rest on secondary sources (IBKR and Schwab International pages refuse automated fetch; a shell workaround was declined as bot-check circumvention) — marked secondary in the doc and carried as a caveat, not a ranking driver.
+
 ## Open questions
+- Malta's Global Residence Programme terms are kept to 2031 only for applications filed by 31 Dec 2026 — time-sensitive for the user personally, not for the app.
 - Some 2026 single-stock months are very large (INTC +114% Apr 2026; MU/SNOW/DDOG ~+87% May 2026); match Yahoo raw bars but unverified against a second source.
 - In-browser fetch of arbitrary tickers needs a CORS proxy or serverless function — user decides on hosting later; not blocking.
 - Phuket keeps a 0.4 healthcare override while Thailand is now 0.3 — not a pick; re-check if it becomes one.
