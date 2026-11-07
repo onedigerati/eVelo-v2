@@ -74,6 +74,44 @@ export interface City {
    * contributors, derived values); `note` explains mappings or blends.
    */
   verified?: CityVerification
+  /**
+   * The destination's annual wealth tax and inheritance tax as they reach a US
+   * citizen's US brokerage portfolio. Absent for US cities and for countries
+   * without researched tax data (src/data/localTaxes.ts).
+   */
+  localTax?: LocalTax
+}
+
+/**
+ * One marginal band: `rate` applies to the part of the amount above `from`
+ * (up to the next band's `from`). Amounts are today's USD.
+ */
+export interface TaxBand {
+  from: number
+  rate: number
+}
+
+/** Local wealth and inheritance tax for a destination. Amounts are today's USD. */
+export interface LocalTax {
+  /** Annual wealth tax, charged at each year-end after the move. */
+  wealth?: {
+    /** 'net' = portfolio minus loan; 'gross' = portfolio value (e.g. Italy's IVAFE). */
+    base: 'net' | 'gross'
+    bands: TaxBand[]
+  }
+  /** Inheritance tax at the horizon, computed per heir on an equal share. */
+  inheritance?: {
+    /** Tax-free amount per heir, subtracted from each share before the bands. */
+    perHeirAllowance: number
+    bands: TaxBand[]
+    /**
+     * The tax reaches the worldwide estate only when the years resident at the
+     * horizon are strictly more than this (Ireland 5, Japan 10). Omitted = from the move.
+     */
+    afterYearsResident?: number
+  }
+  note: string
+  sources: string[]
 }
 
 export interface CityVerification {
@@ -172,7 +210,8 @@ export interface SimulationResult {
   /** Effective per-category ratio applied to the destination. */
   categoryRatios: Record<BudgetCategory, number> | null
 
-  /** Estate at horizon (real USD), BBD with step-up vs selling to fund spending. */
+  /** Estate at horizon (real USD), BBD with step-up vs selling to fund spending. Both are after the
+   *  destination's inheritance tax, if any. */
   estate: {
     bbdMedian: number
     sellMedian: number
@@ -181,6 +220,22 @@ export interface SimulationResult {
     /** Median cumulative capital-gains tax paid by the sell strategy (real). */
     sellTaxMedian: number
   }
+
+  /** The destination's local taxes on the borrow plan (real USD), or null when there is no
+   *  destination or it has no local tax data. A destination with data but no tax that reaches the
+   *  portfolio reports zeros. */
+  localTax: {
+    /** Median cumulative wealth tax paid (borrowed) over the horizon. */
+    wealthTaxMedian: number
+    /** Median inheritance tax on the BBD estate at the horizon. */
+    inheritanceTaxMedian: number
+    /** Median BBD estate before inheritance tax (estate.bbdMedian is after it). These are medians of
+     *  separate per-future figures: bbdEstateBeforeTaxMedian − inheritanceTaxMedian is not bbdMedian. */
+    bbdEstateBeforeTaxMedian: number
+    /** True when the destination's inheritance tax reaches the estate at this horizon (both estate
+     *  figures are then after it), even if the median tax is zero. */
+    inheritanceApplies: boolean
+  } | null
 
   /** Expected portfolio stats (annualized) under the model. expReturn / cagrMedian are nominal;
    *  the *Real variants are deflated by CPI (calendar CPI for expReturnReal, each path's CPI for

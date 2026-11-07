@@ -1,0 +1,49 @@
+== malaga
+THE VERDICT · 30 YEARS, AGE 55 → 85 | Your plan mostly holds: it gets through | 73 | 73% | % | of futures. | Over 30 years, age 55 to 85, living in Málaga from age 55. In 73 of every 100 simulated markets you never face a forced sale and stay solvent to 85. | St. Louis 86% | → | Málaga 73% | −13 pts | HOLDS | 73% | 73% | Never forced to sell | BRUISED | 23% | 23% | Margin call, survived | BROKEN | 4% | 4% | Loan overtook assets | NET WORTH · TODAY’S DOLLARS | The range of futures | In the median future net worth grows from $5.0M to $16M by 85; the unluckiest 5% end near $352K. | Net worth | Portfolio | Loan | Loan-to-value | $0 | $10M | $20M | $30M | $40M | $50M | INCOME STARTS | 55 | 60 | 6
+-- estate ctx:  ESTATE · TODAY’S DOLLARS | Borrow vs. sell | Borrowing leaves heirs $2.8M more in the median future, and comes out ahead in 70% of all futures. 
+== tarragona
+THE VERDICT · 30 YEARS, AGE 55 → 85 | Your plan is fragile: it holds in only | 61 | 61% | % | of futures. | Over 30 years, age 55 to 85, living in Tarragona from age 55. In 61 of every 100 simulated markets you never face a forced sale and stay solvent to 85. | St. Louis 86% | → | Tarragona 61% | −25 pts | HOLDS | 61% | 61% | Never forced to sell | BRUISED | 35% | 35% | Margin call, survived | BROKEN | 4% | 4% | Loan overtook assets | NET WORTH · TODAY’S DOLLARS | The range of futures | In the median future net worth grows from $5.0M to $14M by 85; the unluckiest 5% end near $131K. | Net worth | Portfolio | Loan | Loan-to-value | $0 | $10M | $20M | $30M | $40M | $50M | INCOME STARTS | 55 | 6
+-- estate ctx:  ESTATE · TODAY’S DOLLARS | Borrow vs. sell | Borrowing leaves heirs $2.9M more in the median future, and comes out ahead in 62% of all futures. 
+== medellin
+THE VERDICT · 30 YEARS, AGE 55 → 85 | Your plan holds in | 81 | 81% | % | of futures. | Over 30 years, age 55 to 85, living in Medellín from age 55. In 81 of every 100 simulated markets you never face a forced sale and stay solvent to 85. | St. Louis 86% | → | Medellín 81% | −5 pts | HOLDS | 81% | 81% | Never forced to sell | BRUISED | 15% | 15% | Margin call, survived | BROKEN | 4% | 4% | Loan overtook assets | NET WORTH · TODAY’S DOLLARS | The range of futures | In the median future net worth grows from $5.0M to $19M by 85; the unluckiest 5% end near $430K. | Net worth | Portfolio | Loan | Loan-to-value | $0 | $10M | $20M | $30M | $40M | $50M | $60M | INCOME STARTS | 55 | 60 | 65 | 70 | 75
+-- estate ctx:  ESTATE · TODAY’S DOLLARS | Borrow vs. sell | Borrowing leaves heirs $3.7M more in the median future, and comes out ahead in 77% of all futures. 
+-- inh ctx:  the median future, and comes out ahead in 77% of all futures. | BORROW, NEVER SELL | $16M | $16M | SELL AS YOU GO | $12M | $12M | BORROWING WINS IN | 77% | 77% | of futures | TAX THE SELLER PAYS | $1.1M | $1.1M | median, capital gains | Median estate at 85, today’s dollars, after the destination’s inheritance tax. At death your heirs inherit at a stepped-up basis: the gains you borrowed against are never taxed, and 
+== nice
+THE VERDICT · 30 YEARS, AGE 55 → 85 | Your plan holds in | 87 | 87% | % | of futures. | Over 30 years, age 55 to 85, living in Nice from age 55. In 87 of every 100 simulated markets you never face a forced sale and stay solvent to 85. | St. Louis 86% | → | Nice 87% | +1 pts | HOLDS | 87% | 87% | Never forced to sell | BRUISED | 9% | 9% | Margin call, survived | BROKEN | 4% | 4% | Loan overtook assets | NET WORTH · TODAY’S DOLLARS | The range of futures | In the median future net worth grows from $5.0M to $22M by 85; the unluckiest 5% end near $557K. | Net worth | Portfolio | Loan | Loan-to-value | $0 | $10M | $20M | $30M | $40M | $50M | $60M | INCOME STARTS | 55 | 60 | 65 | 70 | 75 | 80 | 85
+-- estate ctx:  ESTATE · TODAY’S DOLLARS | Borrow vs. sell | Borrowing leaves heirs $2.1M more in the median future, and comes out ahead in 83% of all futures. 
+-- inh ctx:  the median future, and comes out ahead in 83% of all futures. | BORROW, NEVER SELL | $13M | $13M | SELL AS YOU GO | $10M | $10M | BORROWING WINS IN | 83% | 83% | of futures | TAX THE SELLER PAYS | $542K | $542K | median, capital gains | Median estate at 85, today’s dollars, after the destination’s inheritance tax. At death your heirs inherit at a stepped-up basis: the gains you borrowed against are never taxed, and 
+== method
+Local wealth and inheritance tax
+09
+Borrow vs. sell
+10
+What it leaves out
+01
+Buy, borrow, die
+
+A way to live off a portfolio without selling it.
+
+Buy assets that grow and hold them. Borrow against them for living money, with a securities-backed line of credit, instead of selling shares and paying capital-gains tax each time. The loan grows with interest; the portfolio, untouched, keeps compounding. Die holding them: under US law your heirs inherit the shares with a stepped-up cost basis, their value on the day you die, so the gains you borrowed against are never taxed. The estate repays the loan and passes on the rest.
+
+It works when the portfolio grows faster than the loan. It fails in one specific way, and that is what eVelo is built to measure.
+
+The failure mode of Buy-Borrow-Die is not a bad year. It is being forced to sell in one.
+02
+What “holds” means
+
+Every simulated future ends in one of three ways.
+
+Holds
+
+The loan never reaches the lender’s margin-call line and the portfolio is still worth more than the loan at the end of your horizon. This is the headline number.
+
+Bruised
+
+At least one margin call forced a sale, usually after a crash, but the plan got through. You survived; you also sold at a bad time and paid tax to do it.
+
+Broken
+
+The debt caught up with the assets: the loan reached the portfolio’s value, or a margin call could not be met even by selling everything.
+
+The verdict reads the share of futures that hold. At 80% or more the plan holds; from 65% it most
+ERRORS []

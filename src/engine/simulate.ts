@@ -1,5 +1,6 @@
 import { applyRatios, budgetTotal, categoryRatios } from './cost'
 import { createRecorder, runPaths, type KernelConfig } from './kernel'
+import { HEIRS, packBands } from './localTax'
 import { prepare, type Prepared } from './prepare'
 import { generateScenarios, type Scenarios } from './scenarios'
 import type { Bands, BudgetCategory, City, MarketData, PlanInputs, SimulationResult } from './types'
@@ -30,6 +31,14 @@ export function kernelConfig(inputs: PlanInputs, dest: Destination, budgetMultip
   const homeAnnual = budgetTotal(inputs.budget) * budgetMultiplier
   const hasDest = dest.city != null && dest.annual != null
   const fxVol = hasDest && dest.city!.currency !== 'USD' ? dest.city!.fxVol || 0 : 0
+  const moveMonth = hasDest ? Math.max(0, Math.round(inputs.moveInYears * 12)) : T
+  const lt = hasDest ? dest.city!.localTax : undefined
+  const wealth = lt?.wealth && lt.wealth.bands.length ? lt.wealth : null
+  const inh = lt?.inheritance && lt.inheritance.bands.length ? lt.inheritance : null
+  // A regime that reaches the worldwide estate only after N years' residence applies if the years
+  // lived there by the horizon (T - moveMonth months) are strictly more than N (Ireland: after 5
+  // years; Japan: more than 10 of 15).
+  const inhApplies = inh != null && moveMonth < T && T - moveMonth > 12 * (inh.afterYearsResident ?? 0)
   return {
     T,
     portfolio: inputs.portfolio,
@@ -41,10 +50,12 @@ export function kernelConfig(inputs: PlanInputs, dest: Destination, budgetMultip
     tax: inputs.capGainsRate,
     homeMonthly: homeAnnual / 12,
     destMonthly: hasDest ? (dest.annual! * budgetMultiplier) / 12 : homeAnnual / 12,
-    moveMonth: hasDest ? Math.max(0, Math.round(inputs.moveInYears * 12)) : T,
+    moveMonth,
     fxSigmaM: fxVol / Math.sqrt(12),
     incomeMonthly: inputs.otherIncome / 12,
     incomeStartMonth: Math.max(0, Math.ceil((inputs.incomeStartAge - inputs.age) * 12 - 1e-9)),
+    wealthTax: wealth && moveMonth < T ? { gross: wealth.base === 'gross', bands: packBands(wealth.bands) } : null,
+    inheritance: inhApplies ? { heirs: HEIRS, perHeirAllowance: inh.perHeirAllowance, bands: packBands(inh.bands) } : null,
   }
 }
 
@@ -147,6 +158,15 @@ export function simulate(market: MarketData, cities: City[], rawInputs: PlanInpu
       bbdWins: wins / paths,
       sellTaxMedian: median(rec.sellTax),
     },
+    localTax:
+      dest.city?.localTax
+        ? {
+            wealthTaxMedian: median(rec.wealthTax),
+            inheritanceTaxMedian: median(rec.inheritanceTax),
+            bbdEstateBeforeTaxMedian: median(rec.bbdEstateBeforeTax),
+            inheritanceApplies: cfg.inheritance != null,
+          }
+        : null,
     stats: {
       expReturn: prep.expReturn,
       volatility: prep.volatility,

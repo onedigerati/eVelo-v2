@@ -8,6 +8,7 @@
 // user-overridable in the UI.
 
 import type { City, CityVerification } from '../engine/types'
+import { localTaxFor } from './localTaxes'
 
 /** Date the verified cities' indices were read from their source (ISO). */
 export const COL_AS_OF = '2026-11-06'
@@ -16,7 +17,7 @@ export const COL_SOURCES: string[] = [
   'Cost indices (col excl. rent, rent, groceries, restaurants; NYC = 100): for verified cities (the 25 expat picks, US cities with a full Numbeo row and the 20 BBD destinations added in Stage 3), Numbeo\'s current cost-of-living index by city, read 2026-11-06, rounded, and cross-checked against Numbeo\'s 2026 Mid-Year edition and livingcost.org. Places without a Numbeo index are marked low confidence and either derived from Numbeo\'s raw prices vs New York or mapped to a nearby city row; each record\'s note says which. Every other city is a rough estimate modeled on the same kind of index, not checked against a current source.',
   'Healthcare factor (US = 1.0): midpoint of local private or public cover and an international plan (Cigna Global / Allianz, age 60) plus estimated out-of-pocket costs for a couple at 60, relative to a 2026 US benchmark-silver marketplace plan for a couple at 60 (~$35.9k/yr including ~$4k out-of-pocket). Sources: KFF 2026 average marketplace premiums, plus insurer and broker quotes; rounded to 0.05. Checked for the 16 countries of the expat picks and set on the same basis for Cyprus, Malta, Montenegro, Belize, the Dominican Republic, Paraguay and Guatemala (docs/research/cost-check-2026-11.md); other countries are rough estimates. City overrides add cost where hospitals are far or evacuation cover is needed.',
   'FX volatility: rough annualized volatility of the real exchange rate vs USD based on recent multi-year history; 0 for USD-using economies, near 0 for hard pegs (AED).',
-  'FX_FALLBACK: approximate late-2026 spot rates, used only when live rates are unavailable.',
+  'FX_FALLBACK: src/data/fx.json rates (2026-11-07) rounded, used only for a currency missing from the bundled and live rates.',
   'Notes summarize widely reported tax-residency and visa features as of late 2026. Rules change often; verify with a qualified cross-border tax adviser. Not tax or legal advice.',
 ]
 
@@ -29,41 +30,41 @@ export const EXPAT_CAVEATS: string[] = [
   'Tax treaties, local wealth/inheritance taxes and estate rules can interact with the US step-up in basis. Not tax advice.',
 ]
 
-/** Units of currency per 1 USD, approximate late-2026 levels. */
+/** Units of currency per 1 USD: src/data/fx.json (2026-11-07) rounded to 3–4 figures. */
 export const FX_FALLBACK: Record<string, number> = {
   USD: 1,
-  EUR: 0.87,
-  GBP: 0.76,
-  CHF: 0.8,
-  CZK: 21.3,
-  HUF: 335,
-  GEL: 2.7,
-  TRY: 45,
+  EUR: 0.8961,
+  GBP: 0.7477,
+  CHF: 0.8199,
+  CZK: 21.78,
+  HUF: 325.5,
+  GEL: 2.595,
+  TRY: 50.18,
   AED: 3.6725,
-  JPY: 150,
-  KRW: 1400,
-  TWD: 31,
-  SGD: 1.3,
-  THB: 32.5,
-  MYR: 4.2,
-  VND: 26300,
-  IDR: 16600,
-  PHP: 58,
-  MXN: 18.6,
-  COP: 3900,
-  CRC: 505,
-  UYU: 40,
-  ARS: 1500,
-  CLP: 940,
-  PEN: 3.45,
-  CAD: 1.39,
-  AUD: 1.52,
-  NZD: 1.73,
-  ZAR: 17.6,
+  JPY: 158.4,
+  KRW: 1360,
+  TWD: 32.84,
+  SGD: 1.282,
+  THB: 33.55,
+  MYR: 4.057,
+  VND: 25600,
+  IDR: 18100,
+  PHP: 63.08,
+  MXN: 18.66,
+  COP: 3240,
+  CRC: 454.3,
+  UYU: 40.27,
+  ARS: 1550,
+  CLP: 974.3,
+  PEN: 3.435,
+  CAD: 1.41,
+  AUD: 1.455,
+  NZD: 1.804,
+  ZAR: 16.51,
   BZD: 2,
-  DOP: 60.5,
-  PYG: 6100,
-  GTQ: 7.65,
+  DOP: 60.52,
+  PYG: 6110,
+  GTQ: 7.651,
 }
 
 type Idx = [col: number, rent: number, groceries: number, restaurants: number]
@@ -745,6 +746,13 @@ const VERIFIED: Record<string, CityVerification> = {
 
 const withVerified = (c: City): City => (VERIFIED[c.id] ? { ...c, verified: VERIFIED[c.id] } : c)
 
+/** Local wealth/inheritance tax (src/data/localTaxes.ts): a city override (Spain's regions) or the
+ *  country entry. US cities, and countries without researched data, get none. */
+const withLocalTax = (c: City): City => {
+  const localTax = c.countryCode === 'US' ? undefined : localTaxFor(c.id, c.countryCode)
+  return localTax ? { ...c, localTax } : c
+}
+
 export const CITIES: City[] = [
   ...usCities,
   ...canadaCities,
@@ -753,6 +761,8 @@ export const CITIES: City[] = [
   ...asiaCities,
   ...meAfricaCities,
   ...oceaniaCities,
-].map(withVerified)
+]
+  .map(withVerified)
+  .map(withLocalTax)
 
 export const CITY_BY_ID: Record<string, City> = Object.fromEntries(CITIES.map((c) => [c.id, c]))

@@ -170,7 +170,8 @@ export function EstateBody({ result }: { result: SimulationResult }) {
         </div>
       </dl>
       <p className="estate__note">
-        Median estate at {endAge}, today’s dollars. At death your heirs inherit at a <em>stepped-up basis</em>: the gains you borrowed
+        Median estate at {endAge}, today’s dollars
+        {result.localTax?.inheritanceApplies ? ', after the destination’s inheritance tax' : ''}. At death your heirs inherit at a <em>stepped-up basis</em>: the gains you borrowed
         against are never taxed, and the loan is repaid from the estate.
       </p>
     </div>

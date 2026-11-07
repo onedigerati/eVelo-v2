@@ -17,18 +17,18 @@ The kernel applies both:
 Results report the median cumulative wealth tax and the median inheritance tax. The Atlas odds pick the taxes up through the shared kernel. The Method page explains the model and its simplifications: Spain's 60% cap is ignored, there are no treaty credits (the US exemption is $15M), and each country's rates are the current-law schedule.
 Risk: high — money logic in the engine (user approved 2026-11-06); keel:review with a security pass
 Checks:
-- [ ] Tests prove the tax math: an all-zero tax config reproduces the existing results exactly; wealth tax is charged only after the move, only above the threshold, on net vs gross base as configured; the inheritance bands compute the hand-worked figures; a wealth-tax country lowers success and estate vs the same city with no tax (proof: `npm test` output)
-- [ ] Every country in the draft top 50 has a `localTaxes` entry, explicit "none" included, each citing a source URL from the research doc; the Spanish cities use their own region's rules (proof: test + read the data file)
-- [ ] The running app shows odds and estate changing for a taxed destination (e.g. Tarragona or Medellín vs Málaga at a $5M portfolio), and the Method page explains the model (proof: Playwright run + screenshots)
-- [ ] Tests green, typecheck clean, build ok, review findings triaged (proof: command output + review notes)
+- [x] Tests prove the tax math: an all-zero tax config reproduces the existing results exactly; wealth tax is charged only after the move, only above the threshold, on net vs gross base as configured; the inheritance bands compute the hand-worked figures; a wealth-tax country lowers success and estate vs the same city with no tax (proof: `npm test` output)
+- [x] Every country in the draft top 50 has a `localTaxes` entry, explicit "none" included, each citing a source URL from the research doc; the Spanish cities use their own region's rules (proof: test + read the data file)
+- [x] The running app shows odds and estate changing for a taxed destination (e.g. Tarragona or Medellín vs Málaga at a $5M portfolio), and the Method page explains the model (proof: Playwright run + screenshots)
+- [x] Tests green, typecheck clean, build ok, review findings triaged (proof: command output + review notes) — [evidence](evidence/stage-4/report.md)
 Open: none
-Mode: paused — Stage 4 (engine wealth/inheritance tax, money logic) waits on the user’s word before building
+Mode: autopilot
 
 ## Stages
 - [x] 1. BBD research — country tax, residency, lending and healthcare facts for every candidate, sourced; new top-25 draft
 - [x] 2. Research for 26–50 — more candidates and any new countries, sourced the same way; draft top 50
 - [x] 3. New cities — add Belize (Cayo, Ambergris Caye), the other skipped LIOS picks and every research add for the top 50, with verified costs and healthcare factors
-- [ ] 4. Local taxes — wealth and inheritance tax per country in the engine, with tests; odds and estate reflect them; Method page explains
+- [x] 4. Local taxes — wealth and inheritance tax per country in the engine, with tests; odds and estate reflect them; Method page explains
 - [ ] 5. BBD ranking — rerank the top 50 with new tax/estate and lending factors; profile pages for all 50 (new ones for newcomers and 26–50, refreshed facts for the rest)
 - [ ] 6. Atlas & verify — tax lines in "Your plan here", the Atlas list and profile pages handle 50 picks, phone + both themes, preview, deploy on approval
 
@@ -45,8 +45,12 @@ Mode: paused — Stage 4 (engine wealth/inheritance tax, money logic) waits on t
 
 - 2026-11-06 · User gave the go for the revised 6-stage plan, including Stage 4's engine wealth/inheritance tax (money logic) — "Go".
 - 2026-11-06 · Draft top 50 adds Cascais, Madrid, Antalya, Antigua Guatemala, Tbilisi, Ajijic, Coronado, Atenas, Alicante, Phuket, Santiago, Prague, Istanbul, Mexico City, Budapest, Taipei, Lima, Oaxaca, Playa del Carmen, and brings back Asunción, Las Terrenas, Medellín, Florence, Cuenca and Nice at 42–50. 16 candidates sit outside, each with a reason. Turkey's Law 7582 (20-year foreign-income exemption) was checked against EY's alert before it lifted Antalya to #19 — autopilot call.
+- 2026-11-06 · User approved building Stage 4 (engine wealth/inheritance tax) with the stated assumptions (two US-resident children as heirs; heir-based regimes don't reach them) — "Go ahead please".
+- 2026-11-06 · Local-tax thresholds convert at the bundled fx.json rates (review fix), so they drift slightly with `npm run data:fx`; FX_FALLBACK refreshed to match. Share-link and persisted inputs are clamped to the plan UI's own limits (review security fix). Ireland/Japan inheritance reach is read as strictly more than 5/10 years' residence.
 
 ## Open questions
+- Local-tax bands filled from statutory scales where the research doc gives only ranges (Spanish regional steps, solidarity breakpoints, France, Japan, Ecuador's middle brackets — each note says so); thresholds are per person, not per couple; Turkey's 1% applies though US assets to US heirs may be out of scope.
+- Countries outside the top 50 without research (UK, Netherlands, Germany, Switzerland, UAE, South Africa, Singapore, South Korea, Canada, Australia, New Zealand) carry no local-tax data, so the Atlas treats them as untaxed (Switzerland's wealth tax, the UK's inheritance tax not modelled) — Stage 6 should label this.
 - Malta's Global Residence Programme terms are kept to 2031 only for applications filed by 31 Dec 2026 — time-sensitive for the user personally, not for the app.
 - Some 2026 single-stock months are very large (INTC +114% Apr 2026; MU/SNOW/DDOG ~+87% May 2026); match Yahoo raw bars but unverified against a second source.
 - In-browser fetch of arbitrary tickers needs a CORS proxy or serverless function — user decides on hosting later; not blocking.

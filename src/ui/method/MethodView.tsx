@@ -28,6 +28,7 @@ const SECTIONS = [
   { id: "taming", title: "Taming lucky histories" },
   { id: "borrowing", title: "Borrowing mechanics" },
   { id: "abroad", title: "Living abroad" },
+  { id: "localtax", title: "Local wealth and inheritance tax" },
   { id: "estate", title: "Borrow vs. sell" },
   { id: "limits", title: "What it leaves out" },
 ] as const;
@@ -528,6 +529,50 @@ export function MethodView() {
             </p>
           </Sec>
 
+          <Sec id="localtax" lead="What the destination takes from the portfolio itself.">
+            <p>
+              Some destinations tax the portfolio itself. When nothing is ever
+              sold, these taxes cost more than tax on gains. Each destination
+              carries its current-law schedule from sourced research, converted
+              to today’s dollars. Spain’s cities use their own region’s rules.
+            </p>
+            <ul className="mlist">
+              <li>
+                <b>Wealth tax, every year.</b> At each year-end after the move,
+                the marginal bands are applied to your real net worth (portfolio
+                minus loan) or, where the law taxes the gross value (Italy’s
+                IVAFE), to the portfolio. Because the bands are in today’s
+                dollars, the thresholds hold steady in real terms. The borrow
+                plan adds the tax to the loan, before that month’s margin check;
+                the sell plan sells shares to pay it, with capital-gains tax on
+                the sale.
+              </li>
+              <li>
+                <b>Inheritance tax, at the end.</b> At the horizon both estates
+                are split equally between two heirs, assumed to be US-resident
+                adult children. Each share, less its allowance, runs through the
+                bands, and the tax comes off the estate.
+              </li>
+              <li>
+                <b>Who the tax reaches.</b> Where the tax falls on the heir by
+                the heir’s residence (Spain, Thailand, Vietnam), US assets
+                passing to US-resident children are out of scope, so nothing is
+                charged. Where it falls on the estate of a resident (France,
+                Greece, Italy, Ecuador, Colombia, the Philippines and others), it
+                applies. Where a law exempts a foreigner’s assets abroad
+                (Taiwan, Chile), it does not.
+              </li>
+            </ul>
+            <p>
+              The simplifications: Spain’s cap on income plus wealth tax (60% of
+              the income-tax base) is ignored, so is every treaty credit, and
+              there is no US estate tax (the 2026 exemption is $15 million, so it
+              rarely applies). Thresholds are per person, as for a single owner.
+              Phased-in rate cuts use the rate the law settles on. None of this
+              is tax advice.
+            </p>
+          </Sec>
+
           <Sec id="estate" lead="What your heirs get, either way.">
             <p>
               Every future also runs a second, simpler plan on the same markets:{" "}
@@ -550,8 +595,9 @@ export function MethodView() {
               Borrowing wins when the portfolio’s return beats the loan rate:
               the tax you never paid keeps compounding. It loses when rates are
               high, returns are low, or margin calls force sales at the bottom.
-              The Outlook reports both medians and the share of futures in which
-              borrowing comes out ahead.
+              Both estates are after any local inheritance tax. The Outlook
+              reports both medians and the share of futures in which borrowing
+              comes out ahead.
             </p>
           </Sec>
 
@@ -563,7 +609,7 @@ export function MethodView() {
                 against your savings.
               </li>
               <li>
-                <b>Taxes are simplified.</b> There is no estate tax: the 2026
+                <b>Taxes are simplified.</b> There is no US estate tax: the 2026
                 federal exemption is $15 million per person, and estates above
                 it can owe up to 40%. No state income or estate taxes. Capital
                 gains use one flat rate; dividend tax is a flat drag.

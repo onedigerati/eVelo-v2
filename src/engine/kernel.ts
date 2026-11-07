@@ -6,6 +6,10 @@
 //   3. need = spending_t - otherIncome_t (both inflated by the path's CPI; destination spending
 //      also × exp(X_t)). need > 0 is borrowed; a surplus repays the loan, and any leftover is
 //      reinvested in the portfolio (cost basis += leftover).
+//   3b. Local wealth tax (destinations that have one): at each year-end month ((t+1) % 12 === 0)
+//      with t >= moveMonth, tax = bands(real base), base = (V - L)/P (net) or V/P (gross). The
+//      bands are today's USD, so thresholds stay constant in real terms. The tax is borrowed:
+//      L += tax · P, before this month's solvency and margin checks.
 //   4. Insolvent if portfolio <= loan (or <= 0): the path is "broken" for good — the lender
 //      liquidates, so portfolio/loan/net worth are 0 and LTV is recorded as 1 thereafter.
 //   5. If loan/portfolio > maxLtv: forced sale of S so that (L - S(1 - g·tax)) / (V - S) = target,
@@ -15,7 +19,32 @@
 //   An insolvency is itself a forced liquidation, so the month a path breaks is recorded as its
 //   first forced-sale month if no earlier margin call happened (feeds marginCallByYear).
 // The sell strategy (recording mode only) runs on the same returns: spending net of income is
-// funded by selling shares (gross S = need / (1 - g·tax)), surplus is reinvested, no loan.
+// funded by selling shares (gross S = need / (1 - g·tax)), surplus is reinvested, no loan. It pays
+// the same year-end wealth tax by selling shares with the same capital-gains gross-up.
+// Inheritance tax (recording mode only) is applied at the horizon to both real estates: each of
+// `heirs` equal shares, less the per-heir allowance, runs through the bands.
+
+/** Marginal tax bands as parallel arrays sorted by `from` (built by packBands in localTax.ts). Plain
+ *  number arrays, defined here next to the loop: typed arrays, or a band function imported from
+ *  another module, slowed the whole loop by up to ~35% in a vitest benchmark. */
+export interface PackedBands {
+  from: number[]
+  rate: number[]
+}
+
+/** Marginal-band tax on `amount` (no allocation). */
+export function bandTaxPacked(amount: number, b: PackedBands): number {
+  let x = amount
+  let tax = 0
+  for (let i = b.from.length - 1; i >= 0; i--) {
+    const f = b.from[i]
+    if (x > f) {
+      tax += (x - f) * b.rate[i]
+      x = f
+    }
+  }
+  return tax
+}
 
 export interface KernelConfig {
   T: number
@@ -35,6 +64,10 @@ export interface KernelConfig {
   fxSigmaM: number
   incomeMonthly: number
   incomeStartMonth: number
+  /** Annual wealth tax from moveMonth on (bands in real today's USD); null/absent = none. */
+  wealthTax?: { gross: boolean; bands: PackedBands } | null
+  /** Inheritance tax at the horizon (real today's USD); null/absent = none. */
+  inheritance?: { heirs: number; perHeirAllowance: number; bands: PackedBands } | null
 }
 
 export interface Recorder {
@@ -51,6 +84,11 @@ export interface Recorder {
   bbdEstate: Float64Array
   sellEstate: Float64Array
   sellTax: Float64Array
+  /** Cumulative real wealth tax paid (borrowed) on the BBD path. */
+  wealthTax: Float64Array
+  /** Inheritance tax on the BBD estate (bbdEstate is after it). */
+  inheritanceTax: Float64Array
+  bbdEstateBeforeTax: Float64Array
   cagr: Float64Array
   cagrReal: Float64Array
 }
@@ -68,6 +106,9 @@ export function createRecorder(paths: number, years: number): Recorder {
     bbdEstate: new Float64Array(paths),
     sellEstate: new Float64Array(paths),
     sellTax: new Float64Array(paths),
+    wealthTax: new Float64Array(paths),
+    inheritanceTax: new Float64Array(paths),
+    bbdEstateBeforeTax: new Float64Array(paths),
     cagr: new Float64Array(paths),
     cagrReal: new Float64Array(paths),
   }
@@ -81,6 +122,16 @@ export function runPaths(
 ): number {
   const { T, dragM, loanRateM, maxLtv, targetLtv, tax, moveMonth, fxSigmaM } = cfg
   const fxDrift = -0.5 * fxSigmaM * fxSigmaM
+  const wt = cfg.wealthTax ?? null
+  const wGross = wt !== null && wt.gross
+  // First wealth-tax month: the first year-end month ((t + 1) % 12 === 0) at or after the move;
+  // T (never) without a wealth tax, so the untaxed loop does one integer compare a month.
+  const firstTaxMonth = wt === null ? T : moveMonth + ((((11 - moveMonth) % 12) + 12) % 12)
+  const inh = rec ? (cfg.inheritance ?? null) : null
+  const inhTax = (estate: number) =>
+    inh === null || !(estate > 0)
+      ? 0
+      : inh.heirs * bandTaxPacked(Math.max(0, estate / inh.heirs - inh.perHeirAllowance), inh.bands)
   const paths = sc.paths
   let clean = 0
   for (let p = 0; p < paths; p++) {
@@ -96,6 +147,8 @@ export function runPaths(
     let Vs = V
     let Bs = B
     let taxReal = 0
+    let wtReal = 0
+    let taxMonth = firstTaxMonth
     let growth = 1
     if (rec) {
       rec.port[p] = V
@@ -110,6 +163,8 @@ export function runPaths(
       const spend =
         t >= moveMonth ? cfg.destMonthly * P * (fxSigmaM > 0 ? Math.exp(X) : 1) : cfg.homeMonthly * P
       const need = spend - (t >= cfg.incomeStartMonth ? cfg.incomeMonthly * P : 0)
+      const taxNow = t === taxMonth
+      if (taxNow) taxMonth += 12
 
       if (!broken) {
         V *= 1 + r
@@ -122,6 +177,14 @@ export function runPaths(
             V += surplus - L
             B += surplus - L
             L = 0
+          }
+        }
+        if (taxNow) {
+          const base = (wGross ? V : V - L) / P
+          if (base > 0) {
+            const w = bandTaxPacked(base, wt!.bands)
+            L += w * P
+            wtReal += w
           }
         }
         if (V <= 0 || V <= L) {
@@ -159,6 +222,21 @@ export function runPaths(
             Vs -= need
             Bs -= need
           }
+          if (taxNow && Vs > 0) {
+            const w = bandTaxPacked(Vs / P, wt!.bands) * P
+            if (w > 0) {
+              const g = Bs < Vs ? 1 - Bs / Vs : 0
+              const S = w / (1 - g * tax)
+              if (S >= Vs) {
+                Vs = 0
+                Bs = 0
+              } else {
+                taxReal += (S * g * tax) / P
+                Bs *= 1 - S / Vs
+                Vs -= S
+              }
+            }
+          }
         }
         if ((t + 1) % 12 === 0) {
           const k = ((t + 1) / 12) * paths + p
@@ -181,8 +259,14 @@ export function runPaths(
     if (rec) {
       rec.outcome[p] = outcome
       rec.firstCall[p] = called
-      rec.bbdEstate[p] = broken ? 0 : (V - L) / P
-      rec.sellEstate[p] = Vs / P
+      const bbd = broken ? 0 : (V - L) / P
+      const bbdInh = inhTax(bbd)
+      const sell = Vs / P
+      rec.bbdEstate[p] = bbd - bbdInh
+      rec.bbdEstateBeforeTax[p] = bbd
+      rec.inheritanceTax[p] = bbdInh
+      rec.wealthTax[p] = wtReal
+      rec.sellEstate[p] = sell - inhTax(sell)
       rec.sellTax[p] = taxReal
       rec.cagr[p] = Math.pow(Math.max(growth, 0), 12 / T) - 1
       rec.cagrReal[p] = Math.pow(Math.max(growth / P, 0), 12 / T) - 1

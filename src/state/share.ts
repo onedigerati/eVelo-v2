@@ -52,6 +52,35 @@ export function sanitizeHoldings(v: unknown): Holding[] {
     .map((h) => ({ symbol: h.symbol, weight: h.weight }))
 }
 
+const clamp = (v: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, v))
+
+/** Numeric ranges the plan UI itself allows (the sliders and fields in src/ui/plan), so a plan made
+ *  in the app is never altered and a hostile link cannot feed the engine nonsense (e.g. a
+ *  capital-gains rate of 5 makes the sell gross-up 1/(1 − g·tax) negative). */
+export const INPUT_LIMITS = {
+  portfolio: [0, 1e10],
+  basisFraction: [0, 1],
+  age: [30, 85],
+  horizonYears: [10, 40],
+  moveInYears: [0, 40],
+  expatFactor: [0, 1],
+  otherIncome: [0, 1_000_000],
+  incomeStartAge: [50, 80],
+  loanRate: [0.02, 0.12],
+  maxLtv: [0.3, 0.8],
+  targetLtvAfterCall: [0.1, 0.75], // and at most maxLtv − 0.05 (BorrowingSection's GAP)
+  capGainsRate: [0, 0.6],
+  dividendTaxDrag: [0, 0.015],
+  blockMonths: [6, 60],
+  seed: [0, 2 ** 31 - 1],
+} as const satisfies Partial<Record<keyof PlanInputs, readonly [number, number]>>
+
+/** Path counts the model section offers. */
+export const PATH_OPTIONS = [1000, 4000, 10000]
+const LTV_GAP = 0.05
+const BUDGET_MAX = 1e9
+const RATIO_LIMITS = [0.05, 5] as const
+
 export function sanitizeInputs(raw: unknown): PlanInputs {
   const base: PlanInputs = structuredClone(DEFAULT_INPUTS)
   if (!raw || typeof raw !== 'object') return base
@@ -82,6 +111,14 @@ export function sanitizeInputs(raw: unknown): PlanInputs {
       }
     }
   }
+  // Numbers within the UI's own ranges.
+  const nums = base as unknown as Record<string, number>
+  for (const [k, [lo, hi]] of Object.entries(INPUT_LIMITS)) nums[k] = clamp(nums[k], lo, hi)
+  base.targetLtvAfterCall = Math.min(base.targetLtvAfterCall, Math.round((base.maxLtv - LTV_GAP) * 100) / 100)
+  base.seed = Math.round(base.seed)
+  if (!PATH_OPTIONS.includes(base.paths)) base.paths = DEFAULT_INPUTS.paths
+  for (const c of Object.keys(base.budget) as (keyof PlanInputs['budget'])[]) base.budget[c] = clamp(base.budget[c], 0, BUDGET_MAX)
+  base.holdings = base.holdings.map((h) => ({ ...h, weight: clamp(h.weight, 0, 1) }))
   // Enumerations must be known values.
   if (base.method !== 'bootstrap' && base.method !== 'fat-tail') base.method = DEFAULT_INPUTS.method
   if (!['historical', 'balanced', 'conservative'].includes(base.outlook)) base.outlook = DEFAULT_INPUTS.outlook
@@ -89,7 +126,8 @@ export function sanitizeInputs(raw: unknown): PlanInputs {
   const ro = src.ratioOverrides
   if (ro && typeof ro === 'object' && !Array.isArray(ro)) {
     const clean: Record<string, number> = {}
-    for (const [ck, cv] of Object.entries(ro)) if (ck in base.budget && typeof cv === 'number' && Number.isFinite(cv)) clean[ck] = cv
+    for (const [ck, cv] of Object.entries(ro))
+      if (ck in base.budget && typeof cv === 'number' && Number.isFinite(cv)) clean[ck] = clamp(cv, RATIO_LIMITS[0], RATIO_LIMITS[1])
     if (Object.keys(clean).length) base.ratioOverrides = clean
   }
   // Moving to where you already live is staying home.
