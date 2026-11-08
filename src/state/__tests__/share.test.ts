@@ -121,4 +121,45 @@ describe('share links', () => {
       expect(loanOf({ portfolio: 1e12, existingLoan: 1e12 })).toBe(1e10 - 1)
     })
   })
+
+  describe('amountOverrides', () => {
+    const enc = (d: object) => btoa(JSON.stringify({ v: 1, d })).replace(/=+$/, '').replace(/\+/g, '-').replace(/\//g, '_')
+    const ao = (raw: unknown) => sanitizeInputs({ ...DEFAULT_INPUTS, amountOverrides: raw }).amountOverrides
+
+    it('round-trips through a share link and the saved plan', () => {
+      const inputs = { ...DEFAULT_INPUTS, destCityId: 'lisbon', amountOverrides: { lisbon: { housing: 24_000, dining: 0 }, 'st-louis': { travel: 5000 } } }
+      expect(decodeInputs(encodeInputs(inputs))).toEqual(inputs)
+      // store.ts saves inputs as JSON and reloads them through sanitizeInputs
+      expect(sanitizeInputs(JSON.parse(JSON.stringify(inputs)))).toEqual(inputs)
+    })
+    it('drops unknown cities and categories, and empty maps', () => {
+      expect(ao({ atlantis: { housing: 1 }, lisbon: { housing: 1, yachts: 2 } })).toEqual({ lisbon: { housing: 1 } })
+      expect(ao({ lisbon: { yachts: 2 } })).toBeUndefined()
+      expect(ao({ lisbon: {} })).toBeUndefined()
+      expect(ao({})).toBeUndefined()
+      expect(ao([{ housing: 1 }])).toBeUndefined()
+      expect(ao('lisbon')).toBeUndefined()
+      expect(ao({ lisbon: [1, 2] })).toBeUndefined()
+      expect('amountOverrides' in sanitizeInputs({ ...DEFAULT_INPUTS })).toBe(false)
+    })
+    it('keeps only finite numbers, clamped to [0, BUDGET_MAX]', () => {
+      expect(ao({ lisbon: { housing: '9', dining: NaN, travel: Infinity, healthcare: null, groceries: -50, transport: 1e30 } })).toEqual({
+        lisbon: { groceries: 0, transport: 1e9 },
+      })
+      // NaN / Infinity arrive as null through JSON
+      const out = decodeInputs(enc({ amountOverrides: { lisbon: { housing: -1, dining: 1e12, travel: null } } }))!
+      expect(out.amountOverrides).toEqual({ lisbon: { housing: 0, dining: 1e9 } })
+    })
+    it('ignores prototype-pollution keys', () => {
+      const raw = JSON.parse('{"__proto__":{"housing":1},"constructor":{"housing":2},"lisbon":{"__proto__":{"x":1},"constructor":3,"housing":4}}')
+      const out = ao(raw)!
+      expect(out).toEqual({ lisbon: { housing: 4 } })
+      expect(Object.keys(out)).toEqual(['lisbon'])
+      expect(Object.getPrototypeOf(out)).toBe(Object.prototype)
+      expect(Object.getPrototypeOf(out.lisbon)).toBe(Object.prototype)
+      expect(({} as Record<string, unknown>).housing).toBeUndefined()
+      // the same guard now covers ratio overrides
+      expect(sanitizeInputs({ ...DEFAULT_INPUTS, ratioOverrides: { constructor: 2, housing: 1 } }).ratioOverrides).toEqual({ housing: 1 })
+    })
+  })
 })

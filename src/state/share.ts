@@ -5,8 +5,10 @@
 // back onto DEFAULT_INPUTS, ignoring unknown keys and values of the wrong type, so a
 // malformed or hostile link can never put the store into an invalid shape.
 
+import { CITY_BY_ID } from '../data/cities'
+import { BUDGET_CATEGORIES } from '../engine/cost'
 import { DEFAULT_INPUTS } from '../engine/defaults'
-import type { Holding, PlanInputs } from '../engine/types'
+import type { BudgetCategory, Holding, PlanInputs } from '../engine/types'
 import { clampExistingLoan } from '../ui/plan/existingLoan'
 import { assetMeta } from '../ui/plan/marketIndex'
 
@@ -82,6 +84,9 @@ export const PATH_OPTIONS = [1000, 4000, 10000]
 const LTV_GAP = 0.05
 const BUDGET_MAX = 1e9
 const RATIO_LIMITS = [0.05, 5] as const
+/** Own keys only: `'constructor' in {}` is true, so `in` would let prototype names through. */
+const isCategory = (k: string): k is BudgetCategory => (BUDGET_CATEGORIES as string[]).includes(k)
+const isCityId = (k: string) => Object.hasOwn(CITY_BY_ID, k)
 
 export function sanitizeInputs(raw: unknown): PlanInputs {
   const base: PlanInputs = structuredClone(DEFAULT_INPUTS)
@@ -107,7 +112,7 @@ export function sanitizeInputs(raw: unknown): PlanInputs {
       if (v && typeof v === 'object' && !Array.isArray(v)) {
         const merged: Record<string, unknown> = { ...(dv as object) }
         for (const [ck, cv] of Object.entries(v)) {
-          if (typeof cv === 'number' && Number.isFinite(cv) && (ck in merged || k === 'ratioOverrides')) merged[ck] = cv
+          if (typeof cv === 'number' && Number.isFinite(cv) && Object.hasOwn(merged, ck)) merged[ck] = cv
         }
         out[k] = merged
       }
@@ -131,8 +136,22 @@ export function sanitizeInputs(raw: unknown): PlanInputs {
   if (ro && typeof ro === 'object' && !Array.isArray(ro)) {
     const clean: Record<string, number> = {}
     for (const [ck, cv] of Object.entries(ro))
-      if (ck in base.budget && typeof cv === 'number' && Number.isFinite(cv)) clean[ck] = clamp(cv, RATIO_LIMITS[0], RATIO_LIMITS[1])
+      if (isCategory(ck) && typeof cv === 'number' && Number.isFinite(cv)) clean[ck] = clamp(cv, RATIO_LIMITS[0], RATIO_LIMITS[1])
     if (Object.keys(clean).length) base.ratioOverrides = clean
+  }
+  // Fixed destination amounts: known city ids -> known categories -> finite USD in [0, BUDGET_MAX].
+  // Fresh objects with only allowed keys copied, so `__proto__`/`constructor` can't get in.
+  const ao = src.amountOverrides
+  if (ao && typeof ao === 'object' && !Array.isArray(ao)) {
+    const clean: Record<string, Partial<Record<BudgetCategory, number>>> = {}
+    for (const [city, cats] of Object.entries(ao)) {
+      if (!isCityId(city) || !cats || typeof cats !== 'object' || Array.isArray(cats)) continue
+      const row: Partial<Record<BudgetCategory, number>> = {}
+      for (const [ck, cv] of Object.entries(cats))
+        if (isCategory(ck) && typeof cv === 'number' && Number.isFinite(cv)) row[ck] = clamp(cv, 0, BUDGET_MAX)
+      if (Object.keys(row).length) clean[city] = row
+    }
+    if (Object.keys(clean).length) base.amountOverrides = clean
   }
   // Moving to where you already live is staying home.
   if (base.destCityId === base.homeCityId) base.destCityId = null
