@@ -7,9 +7,8 @@ In the "Spending in <city>" card, a user who has researched a real price ("a con
 2026-11-08 · tests: 501 pass · typecheck: clean · build: ok (after 5e26be1)
 
 ## Now
-Stage 2 of 2 · Card editing and tip
+All stages done · Set your own spending
 Risk: UI only
-Mode: autopilot
 Agents: wide — confirmed 2026-11-08 17:23
 Checks:
 - [x] Tapping a row's amount lets you type dollars; Enter sets it, Esc cancels; the %, bar, card total, delta chip and odds update, and the card total equals the Outlook's destination spend (proof: run the product, a test can't judge the live card)
@@ -17,7 +16,7 @@ Checks:
 - [x] A fixed row keeps its dollars when the home budget or the premium slider moves; a percentage row follows; a $0 home row shows dollars only (proof: run the product, screenshots before/after)
 - [x] The ⓘ tip says what the % compares against (your home city's spending), that you can set the % or the $, that a typed $ stays fixed, and how to undo (proof: run the product, screenshot)
 - [x] Keyboard and screen reader can reach and edit both fields, labelled per category; it looks right in light, dark and at phone width (proof: run the product, screenshots + accessibility tree)
-Open: preview v39 published (all 29 manifest files present); deploy awaits the user's approval
+Open: none — preview v39 reviewed (user: "This looks great. Please deploy."); deployed by run 42537620954, live bundle checked
 
 ## Stages
 - [x] 1. Fixed amounts in the engine — per-city fixed dollar overrides through cost model, sim, solver, Atlas, outlook rows, share link, with tests
