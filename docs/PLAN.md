@@ -7,22 +7,25 @@ Every city in the Atlas has a full profile with the five-photo cover mosaic, not
 2026-11-07 · tests: 329 pass (22 files) · typecheck: clean · build: ok
 
 ## Now
-Stage 4 of 6 · Canada + South America
+Stage 5 of 6 · US West + South
 Risk: content only (profile text, scores and photos; no code).
-Scope: Montréal, Toronto, Vancouver, Bogotá, Buenos Aires — profile + 5 photos each. Builders are checking or rewriting the stopped builders' drafts and adding photos; then an independent content review. The commit takes only these paths.
+Scope: San Francisco, Los Angeles, San Diego, Seattle, Portland, Honolulu, Denver, Boise, Salt Lake City, Phoenix, Scottsdale, Las Vegas, Dallas, Houston, Miami, Tampa, Orlando, Sarasota — profile + 5 photos each, in the US style (README "## US cities", Austin pilot). All 18 are built; Pacific is reviewed; Mountain and Texas + Florida need their independent reviews. The commit takes only these paths.
 Checks:
-- [x] Each of the 5 has a profile to the README's standard, with sources, scored on the 1–5 rubric, and passes an independent content review with its findings applied (proof: test + review notes)
-- [x] Each has exactly 5 openly licensed photos with credits, checked on a contact sheet (proof: test + contact sheet)
-- [x] In a clean tree holding only stages 1–4 paths: type check, tests and build pass (proof: test)
-- [x] Each of the 5 opens from its list "Profile" chip with 5 photos loaded, "Profile · <country>" in the eyebrow, and stays out of the top picks; both themes and a phone (proof: run the product)
-- [x] Preview republished with stage 4's 25 photos added to the asset store (proof: run the product on the preview build)
+- [ ] Each of the 18 has a profile to the README's US standard, with sources, scored on the 1–5 rubric, and passes an independent content review with its findings applied (proof: test + review notes)
+- [ ] Each has exactly 5 openly licensed photos with credits, checked on a contact sheet (proof: test + contact sheet)
+- [ ] In a clean tree holding only stages 1–5 paths: type check, tests and build pass (proof: test)
+- [ ] Each of the 18 opens from its list "Profile" chip with 5 photos loaded, "Profile · United States" in the eyebrow, and stays out of the top picks; both themes and a phone (proof: run the product)
+- [ ] Preview republished with stage 5's 90 photos added to the asset store (proof: run the product on the preview build)
 Open: none
-Mode: autopilot — resumed 2026-11-07 on the user's pre-approval; stages 1–3 closed. Builders running: Canada, South America (stage 4); US Pacific + Hawaii, US Mountain (stage 5).
-Notes:
-- Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (v30, stage 1). `.preview/photo-assets.json` (gitignored, keep it) records every upload. Build previews in a clean worktree so in-progress cities stay out.
+Mode: paused — clean break so the user can clear context and resume in a fresh session (cheaper than continuing this long one). Run `/keel:resume`, then carry on under autopilot (the user pre-approved autopilot on resume, 2026-11-07).
+Resume notes (2026-11-07, after stage 4):
+- Next steps, in order: (1) independent content reviews for Mountain and Texas + Florida — brief each reviewer with the builder's "Unsure" list in `docs/evidence/stage-5/build-*.md` and save findings as `review-*.md` there (see `review-pacific.md` for the shape); (2) verify stage 5 like stages 2–4 (clean worktree from HEAD + only the stage 5 paths; typecheck, tests, build; product run of the 18 cities in both themes and a phone; `npm run build:preview` there, upload the pending batches with the Artifact tool, `--record`, publish with every `dist/artifact-files.json` entry and null the previous version's stale chunk paths; run that build locally with `docs/evidence/stage-1/blobserve.js`); report, tick, commit only stage 5 paths. Scripts to reuse: `docs/evidence/stage-4/s4.js` (product run; swap the city list and screenshot ids) and `s2v31.js` (preview-build run).
+- Stage 6: the East Coast builder (New York City, Boston, Philadelphia, Pittsburgh, Washington DC, Charlotte, Raleigh) was running when this session paused — check `src/data/profiles/` and `docs/evidence/stage-6/east/` for its output; if incomplete, finish or redo. Not started: Midwest + South (Atlanta, Asheville, Nashville, Chicago, Minneapolis, Kansas City, St. Louis). Stage 6 also adds a test requiring a profile and 5 photos for all 133 cities, the full preview, and deploy on the user's approval.
+- Builders work in the main tree, each owning only its cities' files; cap about 5 agents at once. Builder and reviewer briefs that worked: see this plan's Decisions and the `build-*.md` / `review-*.md` notes.
+- Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (v33, stages 1–4, 505 photos). `.preview/photo-assets.json` (gitignored, keep it) records every upload. The hosted page can't be driven from here (login; Chrome control unsupported in WSL), so previews are proven by running the preview build locally against `blobserve.js`.
+- Playwright: NODE_PATH=/home/jonah/.npm/_npx/e41f203b7505f1fb/node_modules, chromium executablePath /home/jonah/.cache/ms-playwright/chromium_headless_shell-1248/chrome-headless-shell-linux-arm64/chrome-headless-shell. Don't `pkill -f` a pattern that appears in the same command line (it kills the shell); stop servers with `fuser -k <port>/tcp`.
 - Deploy: unpushed commits; push (GitHub Pages) only when the user says.
-- Not started: Texas + Florida (Dallas, Houston, Miami, Tampa, Orlando, Sarasota; stage 5) and the 14 US East + Midwest cities (stage 6).
-- Open from reviews: Seoul (and London, Amsterdam, Berlin) have no `localTaxes.ts` entry, so the Atlas says "not modelled"; adding one is money logic and needs tests. The photo credit cleaner misses "upload on <date>" suffixes.
+- Open from reviews: Seoul, London, Amsterdam and Berlin have no `localTaxes.ts` entry, so the Atlas says "not modelled"; adding one is money logic and needs tests (ask the user). The photo credit cleaner misses "upload on <date>" suffixes.
 
 ## Stages
 - [x] 1. Unranked profiles + preview assets — profiles for non-picks, list chip and map-card profile link, US profile style, Tokyo + Austin pilots, preview photos via the asset store; preview; stop for review
