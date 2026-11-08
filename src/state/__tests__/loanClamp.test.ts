@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { DEFAULT_INPUTS } from '../../engine/defaults'
 import type { PlanInputs } from '../../engine/types'
-import { clampAfterPatch, clampAfterReplace, clampAfterSet, keepLoanUnderPortfolio, loanLoweredNotice } from '../loanClamp'
+import { clampAfterPatch, clampAfterReplace, clampAfterSet, keepLoanUnderPortfolio, loanLoweredNotice, loanToastRun } from '../loanClamp'
 
 const plan = (over: Partial<PlanInputs> = {}): PlanInputs => ({ ...DEFAULT_INPUTS, portfolio: 3_000_000, existingLoan: 500_000, ...over })
 
@@ -80,5 +80,64 @@ describe('loanLoweredNotice', () => {
       message: 'Loan balance lowered to $299,999',
       detail: 'It was $500,000; it has to stay below the portfolio.',
     })
+  })
+})
+
+describe('loanToastRun', () => {
+  /** A fake toast stack: show pushes, dismiss removes, and `expire` stands in for a timeout. */
+  function fakeToasts() {
+    const live = new Map<number, string>()
+    let next = 1
+    const api = {
+      show: (_m: string, detail: string) => (live.set(next, detail), next++),
+      dismiss: (id: number) => void live.delete(id),
+      isLive: (id: number) => live.has(id),
+    }
+    return { api, live, expire: () => live.clear(), details: () => [...live.values()] }
+  }
+
+  /** Lowers the portfolio through `ports`, clamping the plan's balance at each step. */
+  function stepDown(show: ReturnType<typeof loanToastRun>, inputs: PlanInputs, ports: number[]): PlanInputs {
+    for (const portfolio of ports) {
+      const c = clampAfterSet(inputs, 'portfolio', portfolio)
+      if (c.lowered) show(c.lowered)
+      inputs = c.inputs
+    }
+    return inputs
+  }
+
+  it('keeps the original balance as "It was" through a run of arrow-key steps', () => {
+    const t = fakeToasts()
+    const show = loanToastRun(t.api)
+    const after = stepDown(show, plan({ existingLoan: 500_000 }), [490_000, 480_000, 470_000, 460_000])
+    expect(after.existingLoan).toBe(459_999)
+    // one toast on screen, the latest, still naming the balance the user entered
+    expect(t.live.size).toBe(1)
+    expect(t.details()).toEqual(['It was $500,000; it has to stay below the portfolio.'])
+  })
+
+  it('starts a new run once the toast has timed out or been dismissed', () => {
+    const t = fakeToasts()
+    const show = loanToastRun(t.api)
+    const p = stepDown(show, plan({ existingLoan: 500_000 }), [490_000, 480_000])
+    t.expire()
+    stepDown(show, p, [470_000])
+    expect(t.details()).toEqual(['It was $479,999; it has to stay below the portfolio.'])
+  })
+
+  it('starts a new run when the balance changed in between', () => {
+    const t = fakeToasts()
+    const show = loanToastRun(t.api)
+    let p = stepDown(show, plan({ existingLoan: 500_000 }), [490_000])
+    // the user enters a new balance under the portfolio, then lowers the portfolio below it
+    p = clampAfterSet(p, 'existingLoan', 400_000).inputs
+    stepDown(show, p, [300_000])
+    expect(t.details()).toEqual(['It was $400,000; it has to stay below the portfolio.'])
+  })
+
+  it('reads as before for a single clamp', () => {
+    const t = fakeToasts()
+    stepDown(loanToastRun(t.api), plan({ existingLoan: 500_000 }), [300_000])
+    expect(t.details()).toEqual(['It was $500,000; it has to stay below the portfolio.'])
   })
 })

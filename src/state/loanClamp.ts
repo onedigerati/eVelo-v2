@@ -53,3 +53,32 @@ export function loanLoweredNotice(l: LoanLowered): { message: string; detail: st
     detail: `It was ${currency(l.from)}; it has to stay below the portfolio.`,
   }
 }
+
+/** What the run tracker needs from the toast system. */
+export interface LoanToastApi {
+  show(message: string, detail: string): number
+  dismiss(id: number): void
+  /** Still on screen: not dismissed, timed out or pushed off the stack. */
+  isLive(id: number): boolean
+}
+
+/**
+ * Shows "loan balance lowered" toasts, one at a time. Successive clamps while the toast is live
+ * (stepping the portfolio down by arrow keys) form a run: each replaces the last, and "It was"
+ * keeps the balance from before the run's first clamp, the one the user actually entered. A run
+ * ends when its toast goes away, or when the next clamp doesn't start from the last one's result.
+ */
+export function loanToastRun(api: LoanToastApi): (l: LoanLowered) => void {
+  let id: number | null = null
+  let first = 0
+  let last = 0
+  return (l) => {
+    const live = id !== null && api.isLive(id)
+    const continues = live && l.from === last
+    if (id !== null && live) api.dismiss(id)
+    if (!continues) first = l.from
+    last = l.to
+    const { message, detail } = loanLoweredNotice({ from: first, to: l.to })
+    id = api.show(message, detail)
+  }
+}

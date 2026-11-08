@@ -7,7 +7,7 @@ import { SegmentedControl } from '../primitives'
 import { cityName, startNetWorth } from './cards'
 import { ChartFrame } from './ChartFrame'
 import { FAN_METRICS, FanChart, bandsFor, type FanMarker, type FanMetric } from './FanChart'
-import { openingSaleOf } from './openingSale'
+import { BROKEN_AT_START, openingBrokenOf, openingSaleOf } from './openingSale'
 
 const EYEBROW: Record<FanMetric, string> = {
   networth: 'Net worth · today’s dollars',
@@ -40,6 +40,8 @@ const TITLE: Record<FanMetric, ReactNode> = {
 }
 
 export function fanCaption(r: SimulationResult, m: FanMetric): string {
+  // Broken from the start: every path is liquidated before month 0, so the bands are flat zeros.
+  if (openingBrokenOf(r)) return BROKEN_AT_START
   const b = bandsFor(r, m)
   const n = b.p50.length - 1
   const a = r.inputs.age
@@ -54,7 +56,16 @@ export function fanCaption(r: SimulationResult, m: FanMetric): string {
     return `In the median future net worth grows from ${currencyCompact(b.p50[0])} to ${currencyCompact(b.p50[n])} by ${end}; the unluckiest 5% end ${low <= tiny ? 'with almost nothing' : `near ${currencyCompact(low)}`}.`
   }
   const sale = openingSaleOf(r)
+  // Broken paths are recorded as zeros, so a median portfolio that starts above 0 and ends at 0
+  // means the median plan was liquidated; say when, not "compounds to $0".
+  const lost = medianLiquidatedAt(r)
   if (m === 'portfolio') {
+    if (lost !== null) {
+      const by = `the lender liquidates the portfolio by about ${a + lost}`
+      return sale
+        ? `The plan opens with a forced sale of ${currencyCompact(sale.sold)} today, paying ${currencyCompact(sale.taxPaid)} in tax; in the median future ${by}.`
+        : `In the median future ${by}.`
+    }
     const grows = `the median portfolio compounds to ${currencyCompact(b.p50[n])} by ${end}, carrying the loan on top.`
     if (sale)
       return `The plan opens with a forced sale of ${currencyCompact(sale.sold)} today, paying ${currencyCompact(sale.taxPaid)} in tax; after that, nothing more is sold to fund your life, and ${grows}`
@@ -63,9 +74,22 @@ export function fanCaption(r: SimulationResult, m: FanMetric): string {
   if (m === 'loan') {
     const bal = r.inputs.existingLoan ?? 0
     const from = bal > 0 ? `from your existing ${currencyCompact(bal)} balance, ${sale ? `cut to ${currencyCompact(b.p50[0])} by the opening sale, ` : ''}` : ''
-    return `Borrowing compounds: ${from}the median loan reaches ${currencyCompact(b.p50[n])} by ${end}, and ${currencyCompact(b.p95[n])} in the costliest 5% of futures.`
+    const costliest = `${currencyCompact(b.p95[n])} in the costliest 5% of futures`
+    if (lost !== null)
+      return `Borrowing compounds: ${from}the median plan is liquidated by about ${a + lost}${b.p95[n] > 0 ? `, and the loan reaches ${costliest}` : ''}.`
+    return `Borrowing compounds: ${from}the median loan reaches ${currencyCompact(b.p50[n])} by ${end}, and ${costliest}.`
   }
   return ltvCaption(r, b.p50, b.p95, sale !== null)
+}
+
+/** Years from now until the median portfolio first reaches 0, when the median plan is liquidated
+ *  (starts above 0, ends at 0); null when the median survives. */
+export function medianLiquidatedAt(r: SimulationResult): number | null {
+  const p = r.portfolioValue.p50
+  const n = p.length - 1
+  if (n < 1 || !(p[0] > 0) || p[n] > 0) return null
+  const i = p.findIndex((v, k) => k > 0 && v <= 0)
+  return i > 0 ? i : n
 }
 
 /** Where a loan-to-value sits against the call line. */
@@ -84,14 +108,21 @@ function ltvCaption(r: SimulationResult, p50: number[], p95: number[], opening: 
   const worst = cross === 0 ? 'the worst 5% start at or past it' : cross > 0 ? `the worst 5% touch it by ${a + cross}` : 'even the worst 5% never reach it'
   const p0 = p50[0]
   const peakAt = `peaks at ${percent(p50[peak])} around ${a + peak}, ${relToLine(p50[peak], max)} ${line}`
-  // A peak at year 0 (above zero) means a starting balance the plan then pays down relative to growth.
-  const startsAtPeak = peak === 0 && p0 > 0
+  // A peak at year 0 (above zero) means a starting balance the plan then pays down relative to growth,
+  // but only if the median actually falls; a year-0 value it never leaves is flat, not a peak.
+  const falls = p50.some((v, i) => i > 0 && v < p0)
+  const startsAtPeak = peak === 0 && p0 > 0 && falls
+  const flat = peak === 0 && p0 > 0 && !falls
+  const at0 = `${percent(p0)} (${relToLine(p0, max)} ${line})`
   let head: string
   if (opening)
     head = startsAtPeak
-      ? `A forced sale today brings loan-to-value to ${percent(p0)} (${relToLine(p0, max)} ${line}), and the median falls from there`
-      : `A forced sale today brings loan-to-value to ${percent(p0)}; the median then ${peakAt}`
-  else if (startsAtPeak) head = `Median loan-to-value starts at its peak, ${percent(p0)} (${relToLine(p0, max)} ${line}), and falls from there`
+      ? `A forced sale today brings loan-to-value to ${at0}, and the median falls from there`
+      : flat
+        ? `A forced sale today brings loan-to-value to ${at0}, and the median stays there`
+        : `A forced sale today brings loan-to-value to ${percent(p0)}; the median then ${peakAt}`
+  else if (startsAtPeak) head = `Median loan-to-value starts at its peak, ${at0}, and falls from there`
+  else if (flat) head = `Median loan-to-value stays at ${at0}`
   else head = `Median loan-to-value ${peakAt}`
   return `${head}; ${worst}.`
 }

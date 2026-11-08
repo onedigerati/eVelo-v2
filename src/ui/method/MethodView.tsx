@@ -421,7 +421,13 @@ export function MethodView() {
                 annual rate ({pct1(DEF.loanRate)} by default). You never pay
                 interest out of pocket; it is added to the balance and
                 compounds. The loan starts at any balance you have already
-                drawn (zero if none), which accrues at the same rate.
+                drawn (zero if none), which accrues at the same rate. If that
+                balance is already above the margin-call line, the lender forces
+                a sale today, before the first month: it brings the loan to the
+                target and pays capital-gains tax, like any forced sale below,
+                and the odds are judged from there. That opening sale isn’t
+                counted as a margin call. A balance the sale can’t cover after
+                tax fails at once.
               </li>
               <li>
                 <b>You draw what you need.</b> This month’s spending, grown with
@@ -585,7 +591,9 @@ export function MethodView() {
               plan starts with the portfolio minus that balance and no debt:
               had you sold instead, those shares would already be spent, and
               both plans start from the same net worth. (It ignores the tax and
-              interest already paid, which roughly offset.) At the end of the
+              interest already paid, which roughly offset.) If the balance
+              forces an opening sale, its tax falls on the borrow plan only,
+              so borrowing starts that much behind. At the end of the
               horizon eVelo compares, in today’s dollars:
             </p>
             <ul className="mlist">

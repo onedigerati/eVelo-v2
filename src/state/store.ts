@@ -4,9 +4,9 @@
 import { create } from 'zustand'
 import { DEFAULT_INPUTS } from '../engine/defaults'
 import type { AtlasEntry, PlanInputs, SimulationResult, SolveResult } from '../engine/types'
-import { dismissToast, toast } from '../ui/primitives/Toast'
+import { dismissToast, isToastLive, toast } from '../ui/primitives/Toast'
 import { markEntered, readEntered } from './entered'
-import { clampAfterPatch, clampAfterReplace, clampAfterSet, loanLoweredNotice, type LoanClamp } from './loanClamp'
+import { clampAfterPatch, clampAfterReplace, clampAfterSet, loanToastRun, type LoanClamp } from './loanClamp'
 import { parseHash, resolveRoute, type Route } from './router'
 import { decodeInputs, sanitizeInputs } from './share'
 
@@ -82,16 +82,16 @@ function writePersisted(p: { inputs: PlanInputs; theme: ThemePref }) {
   }
 }
 
-/** The open "loan balance lowered" toast, so a newer one replaces it instead of stacking. */
-let loanToast: number | null = null
+/** "Loan balance lowered" toasts: a newer one replaces the open one, and a run keeps the first "It was". */
+const showLoanLowered = loanToastRun({
+  show: (message, detail) => toast(message, { detail, tone: 'bruised' }),
+  dismiss: dismissToast,
+  isLive: isToastLive,
+})
 
 /** Takes a clamped update's inputs; tells the user when the clamp lowered a balance they didn't just enter. */
 function clampLoan(c: LoanClamp): PlanInputs {
-  if (c.lowered) {
-    const { message, detail } = loanLoweredNotice(c.lowered)
-    if (loanToast !== null) dismissToast(loanToast)
-    loanToast = toast(message, { detail, tone: 'bruised' })
-  }
+  if (c.lowered) showLoanLowered(c.lowered)
   return c.inputs
 }
 

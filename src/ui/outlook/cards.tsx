@@ -8,6 +8,7 @@ import { useStore } from '../../state/store'
 import { currency, currencyCompact, number, percent } from '../format'
 import { ease } from '../motion'
 import { AnimatedNumber, Button, Skeleton, cx, toast } from '../primitives'
+import { openingBrokenOf, openingSaleOf } from './openingSale'
 
 export const cityName = (id: string | null | undefined) => (id ? (CITY_BY_ID[id]?.name ?? id) : '')
 
@@ -143,7 +144,12 @@ export function estateCaption(r: SimulationResult): string {
 export function sellStartNote(r: SimulationResult): string | null {
   const bal = r.inputs.existingLoan ?? 0
   if (bal <= 0) return null
-  return `Selling as you go starts at the portfolio less your existing ${currencyCompact(bal)} loan, with no debt, so both start from the same net worth.`
+  const start = `Selling as you go starts at the portfolio less your existing ${currencyCompact(bal)} loan, with no debt`
+  if (openingBrokenOf(r)) return `${start}; the borrowing side fails at once, as a forced sale can’t cover that balance after tax.`
+  const sale = openingSaleOf(r)
+  if (sale && sale.taxPaid >= 1)
+    return `${start}, so both start from the same net worth, but the opening sale’s ${currencyCompact(sale.taxPaid)} tax comes off the borrowing side first.`
+  return `${start}, so both start from the same net worth.`
 }
 
 export function EstateBody({ result }: { result: SimulationResult }) {
