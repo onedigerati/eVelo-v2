@@ -18,7 +18,10 @@ Checks:
 - [ ] The preview build points photo URLs at the preview artifact's asset store and publishes only app files. A test batch of uploaded photos shows in the preview, and the store's total limit is confirmed to hold about 665 photos (~80 MB), or the fallback is raised with the user (proof: run the product on the preview)
 - [ ] Preview published with all 77 profiled cities' photos served from the asset store; both themes and a phone viewport checked; stop for review (proof: run the product)
 Open: none
-Mode: autopilot
+Mode: paused — user out of token budget (2026-11-07). Resume notes:
+- Preview v29 (https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth) runs the stage 1 app with the `assets` capability; 175 of 385 photos uploaded and recorded in `.preview/photo-assets.json` (gitignored, keep it). Next: rebuild with `npm run build:preview` from a clean checkout of the stage 1 commit (a worktree, so in-progress cities stay out), upload the 9 pending batches (`node scripts/artifact-page.mjs --pending`), record with `--record`, publish `dist/artifact.html` + `photo-assets.json`, then have the user check it. Store limit confirmed: 1 GiB / 5,000 files.
+- Uncommitted content in the tree. Reviewed and fixed: Amsterdam, Berlin, Dublin, London, Paris, Zurich, Dubai, Cape Town, Osaka, Seoul, Singapore, Manila, Cebu, Da Nang, Hanoi, Ho Chi Minh City (plus France treaty fixes in nice.ts, gascony.ts and the France note in localTaxes.ts). Written, not yet reviewed: Auckland, Melbourne, Sydney. Partial, from stopped builders, to check or redo: Montréal, Toronto, Vancouver, Bogotá, Buenos Aires, and US Pacific, Mountain, Florida, Texas + Hawaii cities. Not started: the 14 US East + Midwest cities.
+- Open from reviews: Seoul (and London, Amsterdam, Berlin) have no `localTaxes.ts` entry, so the Atlas says "not modelled"; adding one is money logic and needs tests. The photo credit cleaner misses "upload on <date>" suffixes.
 
 ## Stages
 - [ ] 1. Unranked profiles + preview assets — profiles for non-picks, list chip and map-card profile link, US profile style, Tokyo + Austin pilots, preview photos via the asset store; preview; stop for review
