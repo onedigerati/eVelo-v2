@@ -406,6 +406,9 @@ describe('performance', () => {
 
   it('atlas over 80 cities in < 2500 ms', () => {
     const many = Array.from({ length: 80 }, (_, i) => ({ ...(i % 2 ? BKK : STL), id: `c${i}`, idx: { ...BKK.idx, rent: 15 + i } }))
+    // Warm the kernel first, as the app does (the worker runs the Outlook's simulate before the
+    // Atlas), so this times the loop's throughput rather than the JIT's first pass.
+    runAtlas(market, [STL, ...many.slice(0, 4)], DEFAULT_INPUTS, many.slice(0, 4).map((c) => c.id))
     const t0 = performance.now()
     const a = runAtlas(market, [STL, ...many], DEFAULT_INPUTS, many.map((c) => c.id))
     const ms = performance.now() - t0
