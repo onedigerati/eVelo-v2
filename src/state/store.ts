@@ -4,6 +4,7 @@
 import { create } from 'zustand'
 import { DEFAULT_INPUTS } from '../engine/defaults'
 import type { AtlasEntry, PlanInputs, SimulationResult, SolveResult } from '../engine/types'
+import { clampExistingLoan } from '../ui/plan/existingLoan'
 import { markEntered, readEntered } from './entered'
 import { parseHash, resolveRoute, type Route } from './router'
 import { decodeInputs, sanitizeInputs } from './share'
@@ -80,6 +81,12 @@ function writePersisted(p: { inputs: PlanInputs; theme: ThemePref }) {
   }
 }
 
+/** Lowering the portfolio below an existing loan keeps the loan just under it (as sanitizeInputs does). */
+function keepLoanUnderPortfolio(inputs: PlanInputs): PlanInputs {
+  const existingLoan = clampExistingLoan(inputs.existingLoan, inputs.portfolio)
+  return existingLoan === inputs.existingLoan ? inputs : { ...inputs, existingLoan }
+}
+
 const isTheme = (t: unknown): t is ThemePref => t === 'system' || t === 'light' || t === 'dark'
 
 /**
@@ -132,13 +139,13 @@ export const useStore = create<AppState>()((set) => ({
 
   setInput: (key, value) =>
     set((s) => {
-      const inputs = { ...s.inputs, [key]: value }
+      const inputs = keepLoanUnderPortfolio({ ...s.inputs, [key]: value })
       // A destination equal to home means staying home.
       if (inputs.destCityId && inputs.destCityId === inputs.homeCityId) inputs.destCityId = null
       return { inputs }
     }),
-  patchInputs: (patch) => set((s) => ({ inputs: { ...s.inputs, ...patch } })),
-  replaceInputs: (inputs) => set({ inputs }),
+  patchInputs: (patch) => set((s) => ({ inputs: keepLoanUnderPortfolio({ ...s.inputs, ...patch }) })),
+  replaceInputs: (inputs) => set({ inputs: keepLoanUnderPortfolio(inputs) }),
   resetInputs: () => set({ inputs: structuredClone(DEFAULT_INPUTS) }),
   setTheme: (theme) => set({ theme }),
   setRoute: (route) => {
