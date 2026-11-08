@@ -7,6 +7,7 @@ import { FX_RISK_LABEL, costDelta, fxRisk, inRegion, successColor, successTextCo
 import { CodeChip } from './CodeChip'
 import { expatPickFor, hasProfile } from '../../data/expatPicks'
 import { VerifiedMark } from './VerifiedMark'
+import { ListRegionChips } from './RegionChips'
 import { verifiedLabel } from './picks'
 import { taxStatus } from './taxLines'
 
@@ -88,6 +89,7 @@ export function CityList({ rows, homeId, destId, region, compare, onToggleCompar
             { value: 'name', label: 'A–Z' },
           ]}
         />
+        <ListRegionChips rows={rows} query={query} />
       </div>
 
       {pinned.length > 0 && (
