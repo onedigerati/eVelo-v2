@@ -10,14 +10,15 @@ Every city in the Atlas has a full profile with the five-photo cover mosaic, not
 Stage 1 of 6 · Unranked profiles + preview assets
 Risk: UI only (plus preview tooling that uploads to the claude.ai asset store)
 Checks:
-- [ ] A profiled city that isn't a pick shows a "Profile" chip in its city-list row where picks show "Top pick #N"; the chip opens the same profile sheet. Its eyebrow drops "Top pick N of 75" for "Profile · <country>", and it never appears in the top-picks list (proof: test + run the product)
-- [ ] The map's city card (hover bubble, tapped card, and the docked card on phones) has a "View profile" link beside the choose button for every profiled city, picks included, and it opens the profile sheet (proof: run the product, mouse and touch)
-- [ ] Profile files can be named after any city id, not only picks; a file named after an id that isn't in `cities.ts` still fails the tests (proof: test)
-- [ ] Pilot profiles and photos for Tokyo and Austin (one foreign, one US) are written to the README's standard, with sources, and their photos are checked on a contact sheet (proof: test + contact sheet)
-- [ ] The photo test lets any profiled city have photos, and requires exactly 5 for every profiled city (proof: test)
+- [x] A profiled city that isn't a pick shows a "Profile" chip in its city-list row where picks show "Top pick #N"; the chip opens the same profile sheet. Its eyebrow drops "Top pick N of 75" for "Profile · <country>", and it never appears in the top-picks list (proof: test + run the product)
+- [x] The map's city card (hover bubble, tapped card, and the docked card on phones) has a "View profile" link (on a footer line under the choose button: the 264 px card has no room beside it) for every profiled city, picks included, and it opens the profile sheet (proof: run the product, mouse and touch)
+- [x] Profile files can be named after any city id, not only picks; a file named after an id that isn't in `cities.ts` still fails the tests (proof: test)
+- [x] Pilot profiles and photos for Tokyo and Austin (one foreign, one US) are written to the README's standard, with sources, and their photos are checked on a contact sheet (proof: test + contact sheet)
+- [x] The photo test lets any profiled city have photos, and requires exactly 5 for every profiled city (proof: test)
 - [ ] The preview build points photo URLs at the preview artifact's asset store and publishes only app files. A test batch of uploaded photos shows in the preview, and the store's total limit is confirmed to hold about 665 photos (~80 MB), or the fallback is raised with the user (proof: run the product on the preview)
 - [ ] Preview published with all 77 profiled cities' photos served from the asset store; both themes and a phone viewport checked; stop for review (proof: run the product)
 Open: none
+Mode: autopilot
 
 ## Stages
 - [ ] 1. Unranked profiles + preview assets — profiles for non-picks, list chip and map-card profile link, US profile style, Tokyo + Austin pilots, preview photos via the asset store; preview; stop for review
@@ -38,6 +39,9 @@ Open: none
 - 2026-11-07 · The 32 US cities after the Austin pilot split by region into two stages (18 West + South, 14 East + Midwest, the second also closing the plan): 32 profiles and 160 photos are too much for one sitting — PM's call.
 
 - 2026-11-07 · Profiles open from a "Profile" chip in the city list for non-picks (picks keep their "Top pick #N" badge), and from a new "View profile" link on the map's city card for every profiled city, picks included. Until now a profile opened only from the Top picks list or a pick's badge, and the map had no way in — user: "Add both to stage 1".
+- 2026-11-07 · Content builders for stages 2–3 start while stage 1 is verified: four builders of four cities each, in the main tree, each owning only its cities' profile and photo files. Stages still close in order, and each stage's commit takes only its own paths. The earlier cap of about five builders at once still holds, because of image-viewing limits and keeping Commons requests polite — user: "Don't be afraid to spawn more subagents if needed".
+- 2026-11-07 · Cities the ranking research already ruled out (Cebu, Da Nang and others) still get profiles; builders start from `docs/research/bbd-ranking-2026-11.md` where it covers a city — user: "keep them" (after asking why Cebu and Da Nang were being researched again).
+- 2026-11-07 · Upload the photo test batch and publish the stage 1 preview — user: "yes, upload and publish the preview".
 
 ## Open questions
 - WebKit's touch path (iPhone) is untested until the user tries it; the full-size view's swipe adds to it — user, when they try it.

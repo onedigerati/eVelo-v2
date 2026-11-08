@@ -1,11 +1,12 @@
-# Pick profiles: one file per city
+# City profiles: one file per city
 
-Each of the 75 picks in `EXPAT_PICKS` (`src/data/expatPicks.ts`) has one profile file here, `<cityId>.ts`.
-`expatPicks.ts` loads every `*.ts` file in this folder with `import.meta.glob`, keyed by file name. So adding or editing a profile needs **no edit anywhere else**.
+Any city in the Atlas can have a profile: one file here, `<cityId>.ts`. The 75 ranked picks in `EXPAT_PICKS` (`src/data/expatPicks.ts`) each have one; other cities get one too (all 133 by the end of the all-city profiles plan), but they don't join the ranked list, which stays at 75.
+`expatPicks.ts` loads every `*.ts` file in this folder with `import.meta.glob`, keyed by file name, and exposes them as `profileFor(cityId)`, `hasProfile(cityId)` and `PROFILED_CITY_IDS`. So adding or editing a profile needs **no edit anywhere else**: the Atlas shows a "Profile" chip in the city list and a "View profile" link on the map card for every profiled city, and picks keep their "Top pick #N" badge.
 
 - Files starting with `_` are skipped by the glob. `_shared.ts` holds source entries (`S`) used by several of the moved profiles.
 - **Parallel builders: don't edit `_shared.ts`, `expatPicks.ts` or another builder's files.** You may *use* `S.xxx` entries. Put any new source inline in your own file, even if another city might use it too.
-- The file name must be the city's id in `src/data/cities.ts` (e.g. `antigua-guatemala.ts`, `san-jose-cr.ts`, `lake-chapala.ts`). A file whose name is not a pick fails the tests.
+- The file name must be the city's id in `src/data/cities.ts` (e.g. `antigua-guatemala.ts`, `san-jose-cr.ts`, `lake-chapala.ts`, `tokyo.ts`). A file whose name is not a city id fails the tests.
+- Every profiled city also needs exactly 5 photos in `src/data/photos/<cityId>/` (the photos test checks it).
 
 ## File shape
 
@@ -56,8 +57,19 @@ The source of truth is `EXPAT_SCORE_RUBRIC` in `expatPicks.ts`, and the UI shows
 Notes on applying it:
 - Score the **city**, not just the country. Regional rules count: Spanish wealth and inheritance tax differ by region (Andalusia, Madrid, Valencian Community).
 - Where a rule is pending or unverified (Costa Rica's Bill 25.796, Thailand's loan-proceeds question, Malta's 2027 rules), score today's rule and say what's pending in the fact or a drawback.
-- The scores should use the whole range across the 75. Don't default to 3.
+- The scores should use the whole range across all profiles. Don't default to 3.
 - Score a new pick consistently with existing picks in the same country (e.g. Tavira with `algarve.ts`, Torrevieja with `alicante.ts`, Volcán with `boquete.ts`, Langkawi with `penang.ts`, Batumi with `tbilisi.ts`, Rome with `florence.ts`, Gascony with `nice.ts`, Cartagena with `medellin.ts`, the Belize towns with `cayo.ts`); differ only where the city differs (healthcare, cost, climate, community, access).
+
+## US cities
+
+US profiles use the same file shape and rubric, written for a US citizen who would live there. The summary says why a BBD retiree would **base** there (not move abroad there): what the city offers for a retiree who keeps a taxable US portfolio, borrows against it and leaves it to heirs.
+
+- `visa` (Residency): "No visa needed: a US citizen can live there without any residency process." Score **5**.
+- `tax` (Tax on holdings): the **state** income tax on dividends, interest and realized gains (none in Texas, Florida, Washington for dividends, etc.), plus any city income tax and any state tax on capital gains (e.g. Washington's 7% on long-term gains above a threshold). Federal tax is the same everywhere in the US (and follows a citizen abroad), so leave it out except as context. Score with the rubric's own thresholds applied to the state plus city rate: none or ≤5% = 5, up to 15% = 4 (e.g. California's 13.3% top rate), and so on.
+- `estate` (Estate): the **state** estate or inheritance tax (e.g. Washington, Oregon, Massachusetts, New York, Pennsylvania's inheritance tax, Maryland's both), with its exemption and top rate; the federal estate tax and its exemption apply everywhere. Score with the rubric: no state estate or inheritance tax = 5; an exemption ≥ $1M or a rate ≤5% for children = 4 (most state estate taxes, Pennsylvania's 4.5% inheritance tax); and so on.
+- `lending` (Lending): full US broker access, margin and securities-based lines included. Score **5**.
+- `healthcare`, `safety`, `climate`, `community`, `access`, `cost`: scored as for any city. Community means retirees and newcomers generally (there is no "expat" community at home); access means the airport and nonstop reach.
+- Sources: the state revenue department's pages for income and estate tax, plus city sources for the rest.
 
 ## Fact-writing rules
 

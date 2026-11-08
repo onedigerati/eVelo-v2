@@ -8,8 +8,13 @@ import {
   EXPAT_RANKING_SOURCES,
   EXPAT_SCORE_LABELS,
   EXPAT_SCORE_RUBRIC,
+  PROFILED_CITY_IDS,
+  buildProfileIndex,
   expatPickFor,
+  hasProfile,
+  profileFor,
   topProfiles,
+  unknownProfileIds,
   type ExpatScoreKey,
 } from '../expatPicks'
 
@@ -60,37 +65,37 @@ describe('EXPAT_PICKS', () => {
     }
   })
 
-  it('has a profile file for every pick, and no profile without a pick', () => {
+  it('has a profile file for every pick', () => {
     const missing = EXPAT_PICKS.filter((p) => !p.profile).map((p) => p.cityId)
     expect(missing, `no profile yet: ${missing.join(', ')}`).toEqual([])
-    const orphans = Object.keys(EXPAT_PROFILES).filter((id) => !expatPickFor(id))
-    expect(orphans, 'profile files with no pick').toEqual([])
   })
 
-  it('gives every profiled pick a full profile', () => {
-    for (const p of EXPAT_PICKS) {
-      const pr = p.profile
-      if (!pr) continue
-      expect(pr.tagline.trim(), p.cityId).not.toBe('')
-      expect(pr.summary.trim(), p.cityId).not.toBe('')
+  it('names every profile file after a city id in cities.ts', () => {
+    expect(unknownProfileIds(PROFILED_CITY_IDS, (id) => id in CITY_BY_ID), 'profile files with no city').toEqual([])
+  })
+
+  it('gives every profile, pick or not, a full profile', () => {
+    for (const [cityId, pr] of Object.entries(EXPAT_PROFILES)) {
+      expect(pr.tagline.trim(), cityId).not.toBe('')
+      expect(pr.summary.trim(), cityId).not.toBe('')
       expect(Object.keys(pr.scores).sort()).toEqual([...SCORE_KEYS].sort())
       for (const k of SCORE_KEYS) {
         const s = pr.scores[k]
-        expect(Number.isInteger(s), `${p.cityId}.${k}`).toBe(true)
-        expect(s, `${p.cityId}.${k}`).toBeGreaterThanOrEqual(1)
-        expect(s, `${p.cityId}.${k}`).toBeLessThanOrEqual(5)
+        expect(Number.isInteger(s), `${cityId}.${k}`).toBe(true)
+        expect(s, `${cityId}.${k}`).toBeGreaterThanOrEqual(1)
+        expect(s, `${cityId}.${k}`).toBeLessThanOrEqual(5)
       }
-      expect(Object.keys(pr.facts).sort(), p.cityId).toEqual([...FACT_KEYS].sort())
+      expect(Object.keys(pr.facts).sort(), cityId).toEqual([...FACT_KEYS].sort())
       for (const k of FACT_KEYS) {
-        expect(pr.facts[k]?.trim(), `${p.cityId}.${k}`).toBeTruthy()
-        expect(pr.facts[k], `${p.cityId}.${k}`).not.toMatch(/\n/)
+        expect(pr.facts[k]?.trim(), `${cityId}.${k}`).toBeTruthy()
+        expect(pr.facts[k], `${cityId}.${k}`).not.toMatch(/\n/)
       }
-      expect(pr.drawbacks.length, p.cityId).toBeGreaterThanOrEqual(2)
-      expect(pr.drawbacks.length, p.cityId).toBeLessThanOrEqual(3)
-      for (const d of pr.drawbacks) expect(d.trim(), p.cityId).not.toBe('')
-      expect(pr.sources.length, p.cityId).toBeGreaterThanOrEqual(3)
+      expect(pr.drawbacks.length, cityId).toBeGreaterThanOrEqual(2)
+      expect(pr.drawbacks.length, cityId).toBeLessThanOrEqual(3)
+      for (const d of pr.drawbacks) expect(d.trim(), cityId).not.toBe('')
+      expect(pr.sources.length, cityId).toBeGreaterThanOrEqual(3)
       // Sources are keyed by url in the profile sheet.
-      expect(new Set(pr.sources.map((s) => s.url)).size, p.cityId).toBe(pr.sources.length)
+      expect(new Set(pr.sources.map((s) => s.url)).size, cityId).toBe(pr.sources.length)
     }
   })
 
@@ -105,7 +110,7 @@ describe('EXPAT_PICKS', () => {
   })
 
   it('has no internal research markers in the prose', () => {
-    const text = JSON.stringify(EXPAT_PICKS)
+    const text = JSON.stringify([EXPAT_PICKS, EXPAT_PROFILES])
     expect(text).not.toMatch(/\(unconfirmed\)|paradise/i)
     expect(text).not.toMatch(/\bNOT\b/)
   })
@@ -119,7 +124,7 @@ describe('sources and method', () => {
       expect(s.edition.trim(), s.name).not.toBe('')
       expect(s.whatItRanks.trim(), s.name).not.toBe('')
     }
-    for (const p of EXPAT_PICKS) for (const s of p.profile?.sources ?? []) expect(s.url, `${p.cityId}: ${s.name}`).toMatch(HTTP)
+    for (const [id, pr] of Object.entries(EXPAT_PROFILES)) for (const s of pr.sources) expect(s.url, `${id}: ${s.name}`).toMatch(HTTP)
   })
 
   it('has unique ranking source names', () => {
@@ -162,5 +167,40 @@ describe('helpers', () => {
     const top = topProfiles()
     expect(top).toHaveLength(N)
     expect(top.map((p) => p.rank)).toEqual(Array.from({ length: N }, (_, i) => i + 1))
+  })
+
+  it('looks up a profile for any profiled city, pick or not', () => {
+    expect(profileFor('algarve')).toBe(expatPickFor('algarve')?.profile)
+    expect(hasProfile('algarve')).toBe(true)
+    expect(profileFor('no-such-city')).toBeUndefined()
+    expect(hasProfile('no-such-city')).toBe(false)
+    expect(profileFor('toString')).toBeUndefined()
+    expect(PROFILED_CITY_IDS).toEqual(Object.keys(EXPAT_PROFILES).sort())
+    for (const p of EXPAT_PICKS) expect(PROFILED_CITY_IDS, p.cityId).toContain(p.cityId)
+    // Unranked profiles never become picks: the ranked list stays at 75.
+    for (const id of PROFILED_CITY_IDS) if (!expatPickFor(id)) expect(EXPAT_PICKS.some((p) => p.cityId === id), id).toBe(false)
+  })
+})
+
+describe('profile files (buildProfileIndex + unknownProfileIds)', () => {
+  const isCity = (id: string) => id in CITY_BY_ID
+  const fake = { tagline: 'x' }
+
+  it('keys profiles by file name', () => {
+    expect(Object.keys(buildProfileIndex({ './profiles/algarve.ts': fake, './profiles/san-jose-cr.ts': fake }))).toEqual(['algarve', 'san-jose-cr'])
+  })
+
+  it('accepts a profile file named after any city id, picks or not', () => {
+    const nonPicks = Object.keys(CITY_BY_ID).filter((id) => !expatPickFor(id))
+    expect(nonPicks.length).toBeGreaterThan(0)
+    expect(nonPicks).toContain('tokyo')
+    expect(nonPicks).toContain('austin')
+    const modules = Object.fromEntries(Object.keys(CITY_BY_ID).map((id) => [`./profiles/${id}.ts`, fake]))
+    expect(unknownProfileIds(Object.keys(buildProfileIndex(modules)), isCity)).toEqual([])
+  })
+
+  it('fails a profile file named after an id that is not in cities.ts', () => {
+    const index = buildProfileIndex({ './profiles/tokyo.ts': fake, './profiles/atlantis.ts': fake, './profiles/Lisbon.ts': fake })
+    expect(unknownProfileIds(Object.keys(index), isCity)).toEqual(['Lisbon', 'atlantis'])
   })
 })

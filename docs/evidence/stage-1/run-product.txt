@@ -1,0 +1,94 @@
+$ node verify.js /tmp/claude-1000/-home-jonah-repos-eVelo-v2/bdbca126-a723-4663-bb63-47755a7f05bf/scratchpad/shots http://localhost:4173/
+== desktop 1440 light (home St. Louis)
+  [atlas] horizontal scroll: scrollWidth=1440 innerWidth=1440 -> ok
+  row Tokyo: chips=["Profile [Open the Tokyo profile]"]
+  sheet from Tokyo chip: {"title":"Tokyo","eyebrow":"JP Profile · Japan","imgs":5,"loaded":5,"srcs":["http://localhost:4173/assets/1-sYtnxD5s.webp","http://localhost:4173/assets/2-CP8vHzt_.webp","http://localhost:4173/assets/3-kya4C9LJ.webp","http://localhost:4173/assets/4-C3IWc4oF.webp","http://localhost:4173/assets/5-BZxq19_8.webp"],"badge":"Your plan in Tokyo holds in 69% of simulated futures, +5 pts vs 64% in St. Louis","badgeText":"Your plan here69%plan holds+5 pts vs 64% in St. Louis"}
+  [sheet Tokyo] horizontal scroll: scrollWidth=1440 innerWidth=1440 -> ok
+  row Austin: chips=["Profile [Open the Austin profile]"]
+  sheet from Austin chip: {"title":"Austin","eyebrow":"US Profile · United States","imgs":5,"loaded":5,"srcs":["http://localhost:4173/assets/1-D3avXjA0.webp","http://localhost:4173/assets/2-OSgjdkZ4.webp","http://localhost:4173/assets/3-DFR9oGh4.webp","http://localhost:4173/assets/4-DQDcH6Qq.webp","http://localhost:4173/assets/5-Pv3Bi7-Y.webp"],"badge":"Your plan in Austin holds in 54% of simulated futures, −10 pts vs 64% in St. Louis","badgeText":"Your plan here54%plan holds−10 pts vs 64% in St. Louis"}
+  [sheet Austin] horizontal scroll: scrollWidth=1440 innerWidth=1440 -> ok
+  row Lisbon: chips=["Top pick #2 [Top pick 2 for expat retirees: open the Lisbon profile]"]
+  sheet from Lisbon chip: {"title":"No. 2 Lisbon","eyebrow":"PT Top pick 2 of 75 · Portugal","imgs":5,"loaded":5,"srcs":["http://localhost:4173/assets/1-We2Z8Dc8.webp","http://localhost:4173/assets/2-D2aD3u8Y.webp","http://localhost:4173/assets/3-BBhbFJP9.webp","http://localhost:4173/assets/4-CT8ltbMq.webp","http://localhost:4173/assets/5-UwLJ5Pvf.webp"],"badge":"Your plan in Lisbon holds in 69% of simulated futures, +5 pts vs 64% in St. Louis","badgeText":"Your plan here69%plan holds+5 pts vs 64% in St. Louis"}
+  [sheet Lisbon] horizontal scroll: scrollWidth=1440 innerWidth=1440 -> ok
+  row Seoul: chips=[]
+  top picks contains (collapsed) {"tokyo":false,"austin":false}; (expanded "all") {"tokyo":false,"austin":false,"items":16}
+  hover tokyo: {"text":"View profile →or click the dot","name":"JPTokyoJapan#7069%of futures hold with n","link":true}
+  hover tokyo -> View profile: sheet title=Tokyo eyebrow=JP Profile · Japan imgs=5/5
+   destination before="Your destinationTHBangkok8080%+16 pts vs staying home" after="Your destinationTHBangkok8080%+16 pts vs staying home"
+  hover austin: {"text":"View profile →or click the dot","name":"USAustinUnited States#10554%of futures h","link":true}
+  hover lisbon: {"text":"View profile →or click the dot","name":"PTLisbonPortugal#6969%of futures hold wi","link":true}
+  hover lisbon -> View profile: sheet title=No. 2 Lisbon eyebrow=PT Top pick 2 of 75 · Portugal imgs=5/5
+   destination before="Your destinationTHBangkok8080%+16 pts vs staying home" after="Your destinationTHBangkok8080%+16 pts vs staying home"
+  hover seoul: {"text":"or click the dot","name":"KRSeoulSouth Korea#6670%of futures hold ","link":false}
+== touch 1024 light
+  tapped tokyo card: JPTokyoJapan#7069%of futures hold with no forced saleA year$103,176≈ 16M JPYVs home−6%$6.8K less+ CompareMake destinationView profile →or tap the dot again
+  tap View profile -> sheet Tokyo | JP Profile · Japan; dest before="Your destinationTHBangkok8080%+16 pts vs staying home" after="Your destinationTHBangkok8080%+16 pts vs staying home"
+  tap-tap tokyo dot -> dest="Your destinationJPTokyo6969%+5 pts vs staying home"
+== phone 390 light
+  [atlas phone] horizontal scroll: scrollWidth=390 innerWidth=390 -> ok
+  row Tokyo: ["Profile"]
+  phone sheet Tokyo: {"title":"Tokyo","eyebrow":"JP Profile · Japan","imgs":5,"loaded":5,"srcs":["http://localhost:4173/assets/1-sYtnxD5s.webp","http://localhost:4173/assets/2-CP8vHzt_.webp","http://localhost:4173/assets/3-kya4C9LJ.webp","http://localhost:4173/assets/4-C3IWc4oF.webp","http://localhost:4173/assets/5-BZxq19_8.webp"],"badge":"Your plan in Tokyo holds in 69% of simulated futures, +5 pts vs 64% in St. Louis","badgeText":"Your plan here69%plan holds+5 pts vs 64% in St. Louis"}
+  [phone sheet Tokyo] horizontal scroll: scrollWidth=390 innerWidth=390 -> ok
+  row Austin: ["Profile"]
+  phone sheet Austin: {"title":"Austin","eyebrow":"US Profile · United States","imgs":5,"loaded":5,"srcs":["http://localhost:4173/assets/1-D3avXjA0.webp","http://localhost:4173/assets/2-OSgjdkZ4.webp","http://localhost:4173/assets/3-DFR9oGh4.webp","http://localhost:4173/assets/4-DQDcH6Qq.webp","http://localhost:4173/assets/5-Pv3Bi7-Y.webp"],"badge":"Your plan in Austin holds in 54% of simulated futures, −10 pts vs 64% in St. Louis","badgeText":"Your plan here54%plan holds−10 pts vs 64% in St. Louis"}
+  [phone sheet Austin] horizontal scroll: scrollWidth=390 innerWidth=390 -> ok
+  phone tap tokyo: {"docked":"city-card is-docked","head":"JPTokyoJapan#7069%of futures hold with no forced s","link":true}
+  [phone card tokyo] horizontal scroll: scrollWidth=390 innerWidth=390 -> ok
+  phone tap View profile -> Tokyo | JP Profile · Japan; dest before="Your destinationTHBangkok8080%+16 pts vs staying home" after="Your destinationTHBangkok8080%+16 pts vs staying home"
+  phone tap austin: {"docked":"city-card is-docked","head":"USAustinUnited States#10554%of futures hold with n","link":true}
+  [phone card austin] horizontal scroll: scrollWidth=390 innerWidth=390 -> ok
+  phone tap lisbon: {"docked":"city-card is-docked","head":"PTLisbonPortugal#6969%of futures hold with no forc","link":true}
+  [phone card lisbon] horizontal scroll: scrollWidth=390 innerWidth=390 -> ok
+  phone tap-tap tokyo -> dest="Your destinationJPTokyo6969%+5 pts vs staying home"
+== home=Austin desktop light
+  Austin home row chips: ["Profile"] rowText="103USAustinHome · United StatesVerified Nov 2026HomeProfile64%$110,000$110K—USD—"
+  Austin(home) sheet: {"title":"Austin","eyebrow":"US Profile · United States","imgs":5,"loaded":5,"srcs":["http://localhost:4173/assets/1-D3avXjA0.webp","http://localhost:4173/assets/2-OSgjdkZ4.webp","http://localhost:4173/assets/3-DFR9oGh4.webp","http://localhost:4173/assets/4-DQDcH6Qq.webp","http://localhost:4173/assets/5-Pv3Bi7-Y.webp"],"badge":"Your plan in Austin holds in 64% of simulated futures","badgeText":"Your plan here64%plan holds"}
+  Tokyo sheet with home Austin: badge="Your plan in Tokyo holds in 73% of simulated futures, +9 pts vs 64% in Austin"
+  hover Austin(home) card: USAustinUnited States#10364%of futures hold with no forced saleA year$110,000Vs homehome$110K+ CompareYour homeView profile →
+== desktop 1440 dark (home St. Louis)
+  [atlas] horizontal scroll: scrollWidth=1440 innerWidth=1440 -> ok
+  row Tokyo: chips=["Profile [Open the Tokyo profile]"]
+  sheet from Tokyo chip: {"title":"Tokyo","eyebrow":"JP Profile · Japan","imgs":5,"loaded":5,"srcs":["http://localhost:4173/assets/1-sYtnxD5s.webp","http://localhost:4173/assets/2-CP8vHzt_.webp","http://localhost:4173/assets/3-kya4C9LJ.webp","http://localhost:4173/assets/4-C3IWc4oF.webp","http://localhost:4173/assets/5-BZxq19_8.webp"],"badge":"Your plan in Tokyo holds in 69% of simulated futures, +5 pts vs 64% in St. Louis","badgeText":"Your plan here69%plan holds+5 pts vs 64% in St. Louis"}
+  [sheet Tokyo] horizontal scroll: scrollWidth=1440 innerWidth=1440 -> ok
+  row Austin: chips=["Profile [Open the Austin profile]"]
+  sheet from Austin chip: {"title":"Austin","eyebrow":"US Profile · United States","imgs":5,"loaded":5,"srcs":["http://localhost:4173/assets/1-D3avXjA0.webp","http://localhost:4173/assets/2-OSgjdkZ4.webp","http://localhost:4173/assets/3-DFR9oGh4.webp","http://localhost:4173/assets/4-DQDcH6Qq.webp","http://localhost:4173/assets/5-Pv3Bi7-Y.webp"],"badge":"Your plan in Austin holds in 54% of simulated futures, −10 pts vs 64% in St. Louis","badgeText":"Your plan here54%plan holds−10 pts vs 64% in St. Louis"}
+  [sheet Austin] horizontal scroll: scrollWidth=1440 innerWidth=1440 -> ok
+  row Lisbon: chips=["Top pick #2 [Top pick 2 for expat retirees: open the Lisbon profile]"]
+  sheet from Lisbon chip: {"title":"No. 2 Lisbon","eyebrow":"PT Top pick 2 of 75 · Portugal","imgs":5,"loaded":5,"srcs":["http://localhost:4173/assets/1-We2Z8Dc8.webp","http://localhost:4173/assets/2-D2aD3u8Y.webp","http://localhost:4173/assets/3-BBhbFJP9.webp","http://localhost:4173/assets/4-CT8ltbMq.webp","http://localhost:4173/assets/5-UwLJ5Pvf.webp"],"badge":"Your plan in Lisbon holds in 69% of simulated futures, +5 pts vs 64% in St. Louis","badgeText":"Your plan here69%plan holds+5 pts vs 64% in St. Louis"}
+  [sheet Lisbon] horizontal scroll: scrollWidth=1440 innerWidth=1440 -> ok
+  row Seoul: chips=[]
+  top picks contains (collapsed) {"tokyo":false,"austin":false}; (expanded "all") {"tokyo":false,"austin":false,"items":16}
+  hover tokyo: {"text":"View profile →or click the dot","name":"JPTokyoJapan#7069%of futures hold with n","link":true}
+  hover tokyo -> View profile: sheet title=Tokyo eyebrow=JP Profile · Japan imgs=5/5
+   destination before="Your destinationTHBangkok8080%+16 pts vs staying home" after="Your destinationTHBangkok8080%+16 pts vs staying home"
+  hover austin: {"text":"View profile →or click the dot","name":"USAustinUnited States#10554%of futures h","link":true}
+  hover lisbon: {"text":"View profile →or click the dot","name":"PTLisbonPortugal#6969%of futures hold wi","link":true}
+  hover lisbon -> View profile: sheet title=No. 2 Lisbon eyebrow=PT Top pick 2 of 75 · Portugal imgs=5/5
+   destination before="Your destinationTHBangkok8080%+16 pts vs staying home" after="Your destinationTHBangkok8080%+16 pts vs staying home"
+  hover seoul: {"text":"or click the dot","name":"KRSeoulSouth Korea#6670%of futures hold ","link":false}
+== touch 1024 dark
+  tapped tokyo card: JPTokyoJapan#7069%of futures hold with no forced saleA year$103,176≈ 16M JPYVs home−6%$6.8K less+ CompareMake destinationView profile →or tap the dot again
+  tap View profile -> sheet Tokyo | JP Profile · Japan; dest before="Your destinationTHBangkok8080%+16 pts vs staying home" after="Your destinationTHBangkok8080%+16 pts vs staying home"
+  tap-tap tokyo dot -> dest="Your destinationJPTokyo6969%+5 pts vs staying home"
+== phone 390 dark
+  [atlas phone] horizontal scroll: scrollWidth=390 innerWidth=390 -> ok
+  row Tokyo: ["Profile"]
+  phone sheet Tokyo: {"title":"Tokyo","eyebrow":"JP Profile · Japan","imgs":5,"loaded":5,"srcs":["http://localhost:4173/assets/1-sYtnxD5s.webp","http://localhost:4173/assets/2-CP8vHzt_.webp","http://localhost:4173/assets/3-kya4C9LJ.webp","http://localhost:4173/assets/4-C3IWc4oF.webp","http://localhost:4173/assets/5-BZxq19_8.webp"],"badge":"Your plan in Tokyo holds in 69% of simulated futures, +5 pts vs 64% in St. Louis","badgeText":"Your plan here69%plan holds+5 pts vs 64% in St. Louis"}
+  [phone sheet Tokyo] horizontal scroll: scrollWidth=390 innerWidth=390 -> ok
+  row Austin: ["Profile"]
+  phone sheet Austin: {"title":"Austin","eyebrow":"US Profile · United States","imgs":5,"loaded":5,"srcs":["http://localhost:4173/assets/1-D3avXjA0.webp","http://localhost:4173/assets/2-OSgjdkZ4.webp","http://localhost:4173/assets/3-DFR9oGh4.webp","http://localhost:4173/assets/4-DQDcH6Qq.webp","http://localhost:4173/assets/5-Pv3Bi7-Y.webp"],"badge":"Your plan in Austin holds in 54% of simulated futures, −10 pts vs 64% in St. Louis","badgeText":"Your plan here54%plan holds−10 pts vs 64% in St. Louis"}
+  [phone sheet Austin] horizontal scroll: scrollWidth=390 innerWidth=390 -> ok
+  phone tap tokyo: {"docked":"city-card is-docked","head":"JPTokyoJapan#7069%of futures hold with no forced s","link":true}
+  [phone card tokyo] horizontal scroll: scrollWidth=390 innerWidth=390 -> ok
+  phone tap View profile -> Tokyo | JP Profile · Japan; dest before="Your destinationTHBangkok8080%+16 pts vs staying home" after="Your destinationTHBangkok8080%+16 pts vs staying home"
+  phone tap austin: {"docked":"city-card is-docked","head":"USAustinUnited States#10554%of futures hold with n","link":true}
+  [phone card austin] horizontal scroll: scrollWidth=390 innerWidth=390 -> ok
+  phone tap lisbon: {"docked":"city-card is-docked","head":"PTLisbonPortugal#6969%of futures hold with no forc","link":true}
+  [phone card lisbon] horizontal scroll: scrollWidth=390 innerWidth=390 -> ok
+  phone tap-tap tokyo -> dest="Your destinationJPTokyo6969%+5 pts vs staying home"
+== home=Austin desktop dark
+  Austin home row chips: ["Profile"] rowText="103USAustinHome · United StatesVerified Nov 2026HomeProfile64%$110,000$110K—USD—"
+  Austin(home) sheet: {"title":"Austin","eyebrow":"US Profile · United States","imgs":5,"loaded":5,"srcs":["http://localhost:4173/assets/1-D3avXjA0.webp","http://localhost:4173/assets/2-OSgjdkZ4.webp","http://localhost:4173/assets/3-DFR9oGh4.webp","http://localhost:4173/assets/4-DQDcH6Qq.webp","http://localhost:4173/assets/5-Pv3Bi7-Y.webp"],"badge":"Your plan in Austin holds in 64% of simulated futures","badgeText":"Your plan here64%plan holds"}
+  Tokyo sheet with home Austin: badge="Your plan in Tokyo holds in 73% of simulated futures, +9 pts vs 64% in Austin"
+  hover Austin(home) card: USAustinUnited States#10364%of futures hold with no forced saleA year$110,000Vs homehome$110K+ CompareYour homeView profile →
+== console errors/warnings/photo-assets requests: none

@@ -12,6 +12,7 @@ import {
   type PointerEvent as RPointerEvent,
 } from 'react'
 import { CITIES } from '../../data/cities'
+import { hasProfile } from '../../data/expatPicks'
 import type { City } from '../../engine/types'
 import { rate } from '../../state/fx'
 import { currency, currencyCompact, percent } from '../format'
@@ -258,6 +259,8 @@ export interface WorldMapProps {
   compare: string[]
   onToggleCompare: (id: string) => void
   onChoose: (id: string) => void
+  /** Open a profiled city's profile sheet (the card's "View profile" link). */
+  onOpenProfile?: (id: string) => void
   homeSpend: number
 }
 
@@ -270,7 +273,7 @@ interface Marker {
   cheaper: boolean
 }
 
-export function WorldMap({ rows, homeId, destId, region, compare, onToggleCompare, onChoose, homeSpend }: WorldMapProps) {
+export function WorldMap({ rows, homeId, destId, region, compare, onToggleCompare, onChoose, onOpenProfile, homeSpend }: WorldMapProps) {
   const wrap = useRef<HTMLDivElement>(null)
   const canvas = useRef<HTMLCanvasElement>(null)
   const [size, setSize] = useState<{ W: number; H: number } | null>(null)
@@ -813,6 +816,15 @@ export function WorldMap({ rows, homeId, destId, region, compare, onToggleCompar
               onChoose(active.city.id)
               setPinned(null)
             }}
+            onOpenProfile={
+              onOpenProfile && hasProfile(active.city.id)
+                ? () => {
+                    onOpenProfile(active.city.id)
+                    setPinned(null)
+                    setHover(null)
+                  }
+                : undefined
+            }
             onClose={() => setPinned(null)}
             onEnter={() => clearTimeout(hideTimer.current)}
             onLeave={scheduleHide}
@@ -879,6 +891,7 @@ function CityCard({
   compareFull,
   onToggleCompare,
   onChoose,
+  onOpenProfile,
   onClose,
   onEnter,
   onLeave,
@@ -895,6 +908,8 @@ function CityCard({
   compareFull: boolean
   onToggleCompare: () => void
   onChoose: () => void
+  /** Set only for a profiled city: shows the "View profile" link. */
+  onOpenProfile?: () => void
   onClose: () => void
   onEnter: () => void
   onLeave: () => void
@@ -908,6 +923,8 @@ function CityCard({
   // A tapped city on a phone-width map docks its card below the map (the map is narrower than
   // card + dot and shorter than the card); elsewhere the card floats beside the dot.
   const docked = pinned && W < 560
+  // "or click the dot": only beside a floating card whose city can still be chosen.
+  const hint = !docked && !isHome && !isDest
   // Measure the card so a floating card placed above its dot lands exactly; 260 until measured.
   const ref = useRef<HTMLDivElement>(null)
   const [CH, setCH] = useState(260)
@@ -1010,8 +1027,20 @@ function CityCard({
           </button>
         )}
       </div>
-      {!docked && !isHome && !isDest && (
-        <div className="city-card__hint">{pinned ? 'or tap the dot again' : 'or click the dot'}</div>
+      {(hint || onOpenProfile) && (
+        <div className="city-card__foot">
+          {onOpenProfile && (
+            <button
+              type="button"
+              className="link-btn city-card__profile"
+              onClick={onOpenProfile}
+              aria-label={`View the ${city.name} profile`}
+            >
+              View profile →
+            </button>
+          )}
+          {hint && <span className="city-card__hint">{pinned ? 'or tap the dot again' : 'or click the dot'}</span>}
+        </div>
       )}
     </motion.div>
   )

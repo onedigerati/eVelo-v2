@@ -1,5 +1,6 @@
 import { m as motion } from 'framer-motion'
-import { EXPAT_PICKS, EXPAT_SCORE_LABELS, EXPAT_SCORE_RUBRIC, type ExpatFacts } from '../../data/expatPicks'
+import { useSyncExternalStore } from 'react'
+import { EXPAT_SCORE_LABELS, EXPAT_SCORE_RUBRIC, type ExpatFacts } from '../../data/expatPicks'
 import type { City, PlanInputs } from '../../engine/types'
 import { useDestinationSim } from '../../state/sim'
 import { currency, currencyCompact, percent } from '../format'
@@ -7,10 +8,10 @@ import { ease } from '../motion'
 import { Button, InfoTip, Sheet, Skeleton, cx } from '../primitives'
 import { CATEGORY_LABEL, costDelta, successColor, successTextColor, type Ranked } from './atlasData'
 import { CodeChip } from './CodeChip'
-import { SCORE_KEYS, categoryCompare, costDataLine, oddsVsHome, type ProfiledPickView } from './picks'
+import { SCORE_KEYS, categoryCompare, costDataLine, oddsVsHome, profileEyebrow, type ProfileView } from './picks'
 import { estateVsHome, taxLines, taxNotice, taxStatus } from './taxLines'
 // Photo data is imported only here, in the lazy Atlas chunk, so it stays out of the main chunk.
-import { photosFor } from '../../data/photos'
+import { photosFor, subscribePhotos } from '../../data/photos'
 import { oddsBadge } from './gallery'
 import { PhotoGallery } from './PhotoGallery'
 
@@ -29,8 +30,8 @@ const FACT_LABEL: Record<keyof ExpatFacts, string> = {
 const FACT_KEYS = Object.keys(FACT_LABEL) as (keyof ExpatFacts)[]
 
 export interface ProfileSheetProps {
-  /** The pick to show; null = closed. */
-  view: ProfiledPickView<Ranked> | null
+  /** The profiled city to show (a ranked pick or not); null = closed. */
+  view: ProfileView<Ranked> | null
   home?: Ranked
   inputs: PlanInputs
   onClose: () => void
@@ -47,7 +48,7 @@ export function ProfileSheet({ view, home, inputs, onClose, onChoose }: ProfileS
       title={
         view ? (
           <>
-            <span className="prof__no">No. {view.pick.rank}</span> {view.city.name}
+            {view.pick && <span className="prof__no">No. {view.pick.rank}</span>} {view.city.name}
           </>
         ) : (
           ''
@@ -64,10 +65,15 @@ export function ProfileSheet({ view, home, inputs, onClose, onChoose }: ProfileS
   )
 }
 
+/** A city's photos; re-renders if the preview's asset map swaps their URLs after load. */
+function usePhotos(cityId: string) {
+  return useSyncExternalStore(subscribePhotos, () => photosFor(cityId))
+}
+
 /** Design A cover mosaic with the odds badge; nothing at all for a city without photos. */
-function ProfileGallery({ view, home }: { view: ProfiledPickView<Ranked>; home?: Ranked }) {
+function ProfileGallery({ view, home }: { view: ProfileView<Ranked>; home?: Ranked }) {
   const { city, row } = view
-  const photos = photosFor(city.id)
+  const photos = usePhotos(city.id)
   if (!photos.length) return null
   const badge = oddsBadge(row, home && { cityId: home.cityId, successRate: home.successRate, name: home.city.name }, city.name)
   return <PhotoGallery cityName={city.name} photos={photos} badge={badge} />
@@ -79,24 +85,26 @@ function ProfileBody({
   inputs,
   onChoose,
 }: {
-  view: ProfiledPickView<Ranked>
+  view: ProfileView<Ranked>
   home?: Ranked
   inputs: PlanInputs
   onChoose: (cityId: string) => void
 }) {
-  const { pick, city, row } = view
-  const p = pick.profile
+  const { city, row, profile: p } = view
   const isDest = inputs.destCityId === city.id
   const cats = categoryCompare(inputs, city)
   const catMax = Math.max(1, ...cats.flatMap((c) => [c.home, c.here]))
   const homeName = home?.city.name ?? 'home'
+  // The profiled city is home: show it as home, never compared with itself.
+  const isHome = !!home && home.cityId === city.id
+  const vs = isHome ? undefined : home
 
   return (
     <div className="prof">
       <div className="prof__main">
         <div className="prof__lead">
           <div className="prof__eyebrow t-eyebrow">
-            <CodeChip code={city.countryCode} /> Top pick {pick.rank} of {EXPAT_PICKS.length} · {city.country}
+            <CodeChip code={city.countryCode} /> {profileEyebrow(view)}
           </div>
           <p className="prof__tagline">{p.tagline}</p>
           <p className="prof__summary">{p.summary}</p>
@@ -176,15 +184,19 @@ function ProfileBody({
                 <Skeleton width={70} height={36} radius={8} />
               )}
               <span className="pplan__sub">
-                {row && home ? (
-                  <>
-                    <b className={cx(row.successRate > home.successRate + 0.005 ? 'is-down' : row.successRate < home.successRate - 0.005 && 'is-up')}>
-                      {oddsVsHome(row.successRate, home.successRate)}
-                    </b>{' '}
-                    vs {percent(home.successRate)} in {homeName}
-                  </>
-                ) : (
+                {!row ? (
                   'Ranking…'
+                ) : vs ? (
+                  <>
+                    <b className={cx(row.successRate > vs.successRate + 0.005 ? 'is-down' : row.successRate < vs.successRate - 0.005 && 'is-up')}>
+                      {oddsVsHome(row.successRate, vs.successRate)}
+                    </b>{' '}
+                    vs {percent(vs.successRate)} in {homeName}
+                  </>
+                ) : isHome ? (
+                  'This is your home'
+                ) : (
+                  ' '
                 )}
               </span>
               {row && (
@@ -195,7 +207,7 @@ function ProfileBody({
                     transition={{ duration: 0.8, ease, delay: 0.15 }}
                     style={{ background: successColor(row.successRate) }}
                   />
-                  {home && <span className="pplan__mark" style={{ left: `${home.successRate * 100}%` }} title={`${homeName}: ${percent(home.successRate)}`} />}
+                  {vs && <span className="pplan__mark" style={{ left: `${vs.successRate * 100}%` }} title={`${homeName}: ${percent(vs.successRate)}`} />}
                 </span>
               )}
             </div>
@@ -203,11 +215,13 @@ function ProfileBody({
               <span className="pplan__l">A year here</span>
               <span className="pplan__val num">{row ? currency(row.spendUsd) : '—'}</span>
               <span className="pplan__sub">
-                {row && home ? (
+                {row && vs ? (
                   <>
                     <b className={cx(row.costRatio < 0.995 && 'is-down', row.costRatio > 1.005 && 'is-up')}>{costDelta(row.costRatio)}</b> vs{' '}
-                    {currency(home.spendUsd)} in {homeName}
+                    {currency(vs.spendUsd)} in {homeName}
                   </>
+                ) : isHome ? (
+                  'Your budget as you set it'
                 ) : (
                   ' '
                 )}
@@ -219,26 +233,38 @@ function ProfileBody({
             <div className="pcats__head" aria-hidden="true">
               <span>By category</span>
               <span className="pcats__key">
-                <i className="is-home" /> {homeName}
-                <i className="is-here" /> {city.name}
+                {isHome ? (
+                  <>
+                    <i className="is-here" /> {city.name} · home
+                  </>
+                ) : (
+                  <>
+                    <i className="is-home" /> {homeName}
+                    <i className="is-here" /> {city.name}
+                  </>
+                )}
               </span>
             </div>
             <ul className="pcats__list" aria-label={`Spend by category, first year in today’s dollars`}>
               {cats.map((c, i) => (
                 <li key={c.cat} className="pcats__row">
                   <span className="sr-only">
-                    {CATEGORY_LABEL[c.cat]}: {currencyCompact(c.here)} here vs {currencyCompact(c.home)} in {homeName}, {costDelta(c.ratio)}.
+                    {isHome
+                      ? `${CATEGORY_LABEL[c.cat]}: ${currencyCompact(c.here)} a year.`
+                      : `${CATEGORY_LABEL[c.cat]}: ${currencyCompact(c.here)} here vs ${currencyCompact(c.home)} in ${homeName}, ${costDelta(c.ratio)}.`}
                   </span>
                   <span className="pcats__k" aria-hidden="true">
                     {CATEGORY_LABEL[c.cat]}
                   </span>
                   <span className="pcats__bars" aria-hidden="true">
-                    <motion.i
-                      className="is-home"
-                      initial={{ width: 0 }}
-                      animate={{ width: `${(c.home / catMax) * 100}%` }}
-                      transition={{ duration: 0.6, ease, delay: 0.2 + i * 0.03 }}
-                    />
+                    {!isHome && (
+                      <motion.i
+                        className="is-home"
+                        initial={{ width: 0 }}
+                        animate={{ width: `${(c.home / catMax) * 100}%` }}
+                        transition={{ duration: 0.6, ease, delay: 0.2 + i * 0.03 }}
+                      />
+                    )}
                     <motion.i
                       className={cx('is-here', c.ratio < 0.995 && 'is-down', c.ratio > 1.005 && 'is-up')}
                       initial={{ width: 0 }}
@@ -248,21 +274,27 @@ function ProfileBody({
                   </span>
                   <span className="pcats__v num" aria-hidden="true">
                     {currencyCompact(c.here)}
-                    <small className={cx(c.ratio < 0.995 && 'is-down', c.ratio > 1.005 && 'is-up')}>{costDelta(c.ratio)}</small>
+                    {!isHome && <small className={cx(c.ratio < 0.995 && 'is-down', c.ratio > 1.005 && 'is-up')}>{costDelta(c.ratio)}</small>}
                   </span>
                 </li>
               ))}
             </ul>
           </div>
-          <p className="pplan__note">
-            Your {homeName} budget at local prices, with your expat price premium ({percent(inputs.expatFactor)})
-            {inputs.ratioOverrides && Object.keys(inputs.ratioOverrides).length > 0 ? ' and your category overrides' : ''}.
-          </p>
+          {isHome ? (
+            <p className="pplan__note">Your budget at {homeName} prices, as you set it in the plan.</p>
+          ) : (
+            <p className="pplan__note">
+              Your {homeName} budget at local prices, with your expat price premium ({percent(inputs.expatFactor)})
+              {inputs.ratioOverrides && Object.keys(inputs.ratioOverrides).length > 0 ? ' and your category overrides' : ''}.
+            </p>
+          )}
 
-          <PlanTaxes city={city} inputs={inputs} homeName={homeName} />
+          <PlanTaxes city={city} inputs={inputs} homeName={homeName} isHome={isHome} />
 
           <div className="pplan__cta">
-            {isDest ? (
+            {isHome ? (
+              <span className="crow__tag">Your home</span>
+            ) : isDest ? (
               <span className="crow__tag is-dest">Your destination</span>
             ) : (
               <Button variant="primary" onClick={() => onChoose(city.id)}>
@@ -293,7 +325,7 @@ function ProfileBody({
 
 /** "Taxes & estate" block of "Your plan here": local wealth/inheritance tax on this destination and
  *  the estate left, from a run of the plan with this city as the destination. */
-function PlanTaxes({ city, inputs, homeName }: { city: City; inputs: PlanInputs; homeName: string }) {
+function PlanTaxes({ city, inputs, homeName, isHome }: { city: City; inputs: PlanInputs; homeName: string; isHome: boolean }) {
   const sim = useDestinationSim(inputs, city.id)
   const status = taxStatus(city)
   const notice = taxNotice(city)
@@ -359,18 +391,25 @@ function PlanTaxes({ city, inputs, homeName }: { city: City; inputs: PlanInputs;
               </dt>
               <dd>
                 <b className="num">{currencyCompact(estate)}</b>
-                <span>
-                  <b className={cx(better > Math.abs(homeEstate) * 0.005 && 'is-down', better < -Math.abs(homeEstate) * 0.005 && 'is-up')}>
-                    {estateVsHome(estate, homeEstate)}
-                  </b>{' '}
-                  vs {currencyCompact(homeEstate)} staying in {homeName}
-                </span>
+                {isHome ? (
+                  <span>staying in {homeName}</span>
+                ) : (
+                  <span>
+                    <b className={cx(better > Math.abs(homeEstate) * 0.005 && 'is-down', better < -Math.abs(homeEstate) * 0.005 && 'is-up')}>
+                      {estateVsHome(estate, homeEstate)}
+                    </b>{' '}
+                    vs {currencyCompact(homeEstate)} staying in {homeName}
+                  </span>
+                )}
               </dd>
             </div>
           </dl>
         )
       )}
-      <p className="pplan__note">Today’s dollars, from {inputs.paths.toLocaleString('en-US')} simulated futures of your plan with {city.name} as the destination.</p>
+      <p className="pplan__note">
+        Today’s dollars, from {inputs.paths.toLocaleString('en-US')} simulated futures of your plan{' '}
+        {isHome ? `staying in ${city.name}` : `with ${city.name} as the destination`}.
+      </p>
     </section>
   )
 }

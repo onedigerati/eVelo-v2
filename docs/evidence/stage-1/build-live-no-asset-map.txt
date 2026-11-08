@@ -1,0 +1,9 @@
+$ grep -rl "photo-assets" dist/   # normal build
+(grep exit 1 — 1 means no match)
+
+$ node assets.js <shots> http://localhost:4173/ live   # normal build served by vite preview :4173; logs every photo-assets/.webp request
+[live] Tokyo: {"n":5,"loaded":5,"srcs":["http://localhost:4173/assets/1-C6oy9Khi.webp","http://localhost:4173/assets/2-CP8vHzt_.webp","http://localhost:4173/assets/3-B7_OVpg_.webp","http://localhost:4173/assets/4-C3IWc4oF.webp","http://localhost:4173/assets/5-BZxq19_8.webp"]}
+[live] Austin: {"n":5,"loaded":5,"srcs":["http://localhost:4173/assets/1-D3avXjA0.webp","http://localhost:4173/assets/2-OSgjdkZ4.webp","http://localhost:4173/assets/3-DFR9oGh4.webp","http://localhost:4173/assets/4-DQDcH6Qq.webp","http://localhost:4173/assets/5-Pv3Bi7-Y.webp"]}
+[live] Lisbon: {"n":5,"loaded":5,"srcs":["http://localhost:4173/assets/1-We2Z8Dc8.webp","http://localhost:4173/assets/2-D2aD3u8Y.webp","http://localhost:4173/assets/3-BBhbFJP9.webp","http://localhost:4173/assets/4-CT8ltbMq.webp","http://localhost:4173/assets/5-UwLJ5Pvf.webp"]}
+[live] requests: ["assets/1-C6oy9Khi.webp","assets/2-CP8vHzt_.webp","assets/3-B7_OVpg_.webp","assets/4-C3IWc4oF.webp","assets/5-BZxq19_8.webp","assets/1-D3avXjA0.webp","assets/2-OSgjdkZ4.webp","assets/3-DFR9oGh4.webp","assets/4-DQDcH6Qq.webp","assets/5-Pv3Bi7-Y.webp","assets/1-We2Z8Dc8.webp","assets/2-D2aD3u8Y.webp","assets/3-BBhbFJP9.webp","assets/4-CT8ltbMq.webp","assets/5-UwLJ5Pvf.webp"]
+[live] console: ["warning: photos: london lists 1.webp, 2.webp, 3.webp, 4.webp, 5.webp but the file is missing; showing no photos for london"]

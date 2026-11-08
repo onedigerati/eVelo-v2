@@ -1,0 +1,38 @@
+$ node -e "<inspect dist/ after npm run build:preview>"
+artifact-files.json entries: 29 | .webp entries: 0 | has photo-assets.json: true
+assets/AtlasView-KQK4doLW.css
+assets/AtlasView-s37OdwgW.js
+assets/MethodView-DIZaZpEk.css
+assets/MethodView-DQbvBhVD.js
+assets/Styleguide-CHhTlwvm.js
+assets/Styleguide-CbO0jxed.css
+assets/SwitchLayoutGroupContext-CWUgHHbR.js
+assets/geist-cyrillic-ext-wght-normal-DjL33-gN.woff2
+assets/geist-cyrillic-wght-normal-BEAKL7Jp.woff2
+assets/geist-latin-ext-wght-normal-DC-KSUi6.woff2
+assets/geist-latin-wght-normal-BgDaEnEv.woff2
+assets/geist-mono-cyrillic-ext-wght-normal-X_5orZeX.woff2
+assets/geist-mono-cyrillic-wght-normal-DiZS0aHC.woff2
+assets/geist-mono-latin-ext-wght-normal-Bwz-egvJ.woff2
+assets/geist-mono-latin-wght-normal-XN7g48iV.woff2
+assets/geist-mono-symbols2-wght-normal-CO5SzqOn.woff2
+assets/geist-mono-vietnamese-wght-normal-DadHysG0.woff2
+assets/geist-vietnamese-wght-normal-6IgcOCM7.woff2
+assets/index-CDU6ngVr.css
+assets/index-YXIA2D0-.js
+assets/instrument-serif-latin-400-italic-DKMiL14s.woff2
+assets/instrument-serif-latin-400-italic-u__WvvIK.woff
+assets/instrument-serif-latin-400-normal-BVbkICAY.woff
+assets/instrument-serif-latin-400-normal-DnYpCC2O.woff2
+assets/land-110m-BK2aCDID.js
+assets/motionFeatures-BTop_Bvg.js
+assets/views-CxSpT-RT.css
+assets/worker-B6xV0oz2.js
+photo-assets.json
+pending: count 385 batches 16 batch sizes 25,25,25,25,25,25,25,25,25,25,25,25,25,25,25,10
+first batch sample: ["src/data/photos/algarve/1.webp","src/data/photos/algarve/2.webp","src/data/photos/algarve/3.webp","src/data/photos/algarve/4.webp","src/data/photos/algarve/5.webp","src/data/photos/alicante/1.webp","src/data/photos/alicante/2.webp","src/data/photos/alicante/3.webp","src/data/photos/alicante/4.webp
+photo-assets.json: {}
+dist/assets .webp files present locally: 385
+
+$ grep -l photo-assets.json dist/assets/*.js   # artifact build fetches it
+dist/assets/AtlasView-s37OdwgW.js

@@ -5,6 +5,8 @@ import { CITY_BY_ID } from '../../data/cities'
 import {
   EXPAT_PICKS,
   EXPAT_SCORE_LABELS,
+  expatPickFor,
+  profileFor,
   type ExpatPick,
   type ExpatProfile,
   type ExpatScoreKey,
@@ -46,6 +48,38 @@ export function pickViews<R extends PickRow>(rows: R[], picks: ExpatPick[] = EXP
 }
 
 export const isProfiled = <R extends PickRow>(v: PickView<R>): v is ProfiledPickView<R> => v.pick.profile !== undefined
+
+/**
+ * What the profile sheet shows: any profiled city, a ranked pick or not. `pick` is set only for
+ * the ranked 75 (they keep "Top pick N of 75"); an unranked profile says "Profile · <country>".
+ */
+export interface ProfileView<R extends PickRow = PickRow> {
+  city: City
+  profile: ExpatProfile
+  pick?: ExpatPick
+  /** The city's ranking row; undefined while the Atlas is still ranking. */
+  row?: R
+}
+
+/** The profile view for a city, or null when the city is unknown or has no profile. */
+export function profileView<R extends PickRow>(
+  cityId: string,
+  rows: R[],
+  lookup: { profile: (id: string) => ExpatProfile | undefined; pick: (id: string) => ExpatPick | undefined } = {
+    profile: profileFor,
+    pick: expatPickFor,
+  },
+): ProfileView<R> | null {
+  const city = CITY_BY_ID[cityId]
+  const profile = city && lookup.profile(cityId)
+  if (!city || !profile) return null
+  return { city, profile, pick: lookup.pick(cityId), row: rows.find((r) => r.cityId === cityId) }
+}
+
+/** The profile sheet's eyebrow text after the country chip. */
+export function profileEyebrow(v: Pick<ProfileView, 'city' | 'pick'>, pickCount: number = EXPAT_PICKS.length): string {
+  return v.pick ? `Top pick ${v.pick.rank} of ${pickCount} · ${v.city.country}` : `Profile · ${v.city.country}`
+}
 
 /** How many picks get a full card in the Top picks grid; the rest are compact rows. */
 export const CARD_PICKS = 15

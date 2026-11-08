@@ -1,0 +1,22 @@
+$ cp src/data/profiles/tokyo.ts src/data/profiles/atlantis.ts && npx vitest run src/data/__tests__/expatPicks.test.ts   # mutation: profile file named after an id not in cities.ts
+     × names every profile file after a city id in cities.ts 9ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/data/__tests__/expatPicks.test.ts > EXPAT_PICKS > names every profile file after a city id in cities.ts
+AssertionError: profile files with no city: expected [ 'atlantis' ] to deeply equal []
+- Expected
++ Received
+- []
++ [
++   "atlantis",
++ ]
+      Tests  1 failed | 21 passed (22)
+
+# restored (atlantis.ts removed); rerun:
+ Test Files  2 passed (2)
+      Tests  41 passed (41)
+
+# tokyo and austin are not picks but have profile files (accepted):
+ ✓ src/data/__tests__/expatPicks.test.ts > EXPAT_PICKS > names every profile file after a city id in cities.ts 1ms
+ ✓ src/data/__tests__/expatPicks.test.ts > profile files (buildProfileIndex + unknownProfileIds) > accepts a profile file named after any city id, picks or not 1ms
+ ✓ src/data/__tests__/expatPicks.test.ts > profile files (buildProfileIndex + unknownProfileIds) > fails a profile file named after an id that is not in cities.ts 0ms
+      Tests  3 passed | 19 skipped (22)

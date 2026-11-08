@@ -23,7 +23,7 @@ import {
 import { CityList } from './CityList'
 import { CodeChip } from './CodeChip'
 import { CompareSheet } from './CompareSheet'
-import { isProfiled, pickViews } from './picks'
+import { profileView as toProfileView } from './picks'
 import { ProfileSheet } from './ProfileSheet'
 import { TopPicks } from './TopPicks'
 import { SourcesLine } from './ThingsToCheck'
@@ -101,11 +101,7 @@ export function AtlasView() {
     if (cmpOpen && cmpRows.length === 0) setCmpOpen(false)
   }, [cmpOpen, cmpRows.length])
 
-  const profileView = useMemo(() => {
-    if (!profileId) return null
-    const v = pickViews(rows).find((x) => x.pick.cityId === profileId)
-    return v && isProfiled(v) ? v : null
-  }, [profileId, rows])
+  const profileView = useMemo(() => (profileId ? toProfileView(profileId, rows) : null), [profileId, rows])
   const closeProfile = useCallback(() => setProfileId(null), [])
 
   const best = rows[0]
@@ -180,6 +176,7 @@ export function AtlasView() {
             compare={compare}
             onToggleCompare={toggleCompare}
             onChoose={choose}
+            onOpenProfile={setProfileId}
             homeSpend={homeSpend}
           />
           <Legend />
@@ -206,7 +203,7 @@ export function AtlasView() {
               compare={compare}
               onToggleCompare={toggleCompare}
               onChoose={choose}
-              onOpenPick={setProfileId}
+              onOpenProfile={setProfileId}
             />
           ) : (
             <div className="clist__skel" aria-busy="true">

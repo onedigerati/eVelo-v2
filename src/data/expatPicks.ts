@@ -8,7 +8,8 @@
 // starting point, not legal or tax advice.
 //
 // Profiles live one per city in ./profiles/<cityId>.ts (see ./profiles/README.md) and are
-// picked up by the glob below, so adding a profile needs no edit here.
+// picked up by the glob below, so adding a profile needs no edit here. Any Atlas city may have
+// a profile (profileFor / PROFILED_CITY_IDS); only the ranked 75 below are picks.
 
 export type ExpatScoreKey =
   | 'cost'
@@ -182,10 +183,29 @@ const PROFILE_MODULES = import.meta.glob<ExpatProfile>(['./profiles/*.ts', '!./p
   import: 'default',
 })
 
-/** Profiles keyed by city id (the file name). */
-export const EXPAT_PROFILES: Record<string, ExpatProfile> = Object.fromEntries(
-  Object.entries(PROFILE_MODULES).map(([path, profile]) => [path.replace(/^.*\/([^/]+)\.ts$/, '$1'), profile]),
-)
+/** Profiles keyed by city id: each glob path's file name ("./profiles/da-nang.ts" -> "da-nang"). */
+export function buildProfileIndex<P>(modules: Record<string, P>): Record<string, P> {
+  return Object.fromEntries(Object.entries(modules).map(([path, profile]) => [path.replace(/^.*\/([^/]+)\.ts$/, '$1'), profile]))
+}
+
+/** Profile ids that aren't a known city id (a misnamed file), sorted; empty when all are fine. */
+export function unknownProfileIds(profileIds: Iterable<string>, isCity: (id: string) => boolean): string[] {
+  return [...profileIds].filter((id) => !isCity(id)).sort()
+}
+
+/** Profiles keyed by city id (the file name): every profiled city, picks and unranked alike. */
+export const EXPAT_PROFILES: Record<string, ExpatProfile> = buildProfileIndex(PROFILE_MODULES)
+
+/** Ids of every city with a profile, sorted. */
+export const PROFILED_CITY_IDS: string[] = Object.keys(EXPAT_PROFILES).sort()
+
+/** A city's profile (pick or not), or undefined when it has none. */
+export function profileFor(cityId: string): ExpatProfile | undefined {
+  return Object.hasOwn(EXPAT_PROFILES, cityId) ? EXPAT_PROFILES[cityId] : undefined
+}
+
+/** Whether a city has a profile. */
+export const hasProfile = (cityId: string): boolean => profileFor(cityId) !== undefined
 
 type Ranked = Omit<ExpatPick, 'profile'>
 
@@ -642,7 +662,8 @@ const RANKING: Ranked[] = [
   },
 ]
 
-export const EXPAT_PICKS: ExpatPick[] = RANKING.map((p) => ({ ...p, profile: EXPAT_PROFILES[p.cityId] }))
+/** The ranked top 75, each with its profile. Profiled cities outside this list are not picks. */
+export const EXPAT_PICKS: ExpatPick[] = RANKING.map((p) => ({ ...p, profile: profileFor(p.cityId) }))
 
 const PICK_BY_CITY: Record<string, ExpatPick> = Object.fromEntries(EXPAT_PICKS.map((p) => [p.cityId, p]))
 

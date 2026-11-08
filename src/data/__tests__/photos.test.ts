@@ -22,11 +22,22 @@ import {
   validateEntry,
   validateHandFields,
 } from '../../../scripts/photos-lib.mjs'
-import { EXPAT_PICKS } from '../expatPicks'
-import { PHOTO_CITY_IDS, buildPhotoIndex, photosFor, type CityPhotoEntry } from '../photos'
+import { PROFILED_CITY_IDS } from '../expatPicks'
+import {
+  PHOTO_CITY_IDS,
+  buildPhotoIndex,
+  loadPhotoAssets,
+  parsePhotoAssets,
+  photoKey,
+  photosFor,
+  remapPhotoIndex,
+  subscribePhotos,
+  type CityPhoto,
+  type CityPhotoEntry,
+} from '../photos'
 
 const PHOTOS_DIR = fileURLToPath(new URL('../photos/', import.meta.url))
-const PICK_IDS = new Set(EXPAT_PICKS.map((p) => p.cityId))
+const PROFILED = new Set(PROFILED_CITY_IDS)
 
 describe('city photos data', () => {
   it('loads every city folder that has a photos.json', () => {
@@ -37,18 +48,21 @@ describe('city photos data', () => {
     expect(PHOTO_CITY_IDS).toEqual(dirs)
   })
 
-  it('only has photos for profiled picks', () => {
-    for (const id of PHOTO_CITY_IDS) expect(PICK_IDS.has(id), id).toBe(true)
+  it('only has photos for profiled cities', () => {
+    for (const id of PHOTO_CITY_IDS) expect(PROFILED.has(id), id).toBe(true)
   })
 
-  it('has exactly 5 photos for every pick', () => {
-    const missing = [...PICK_IDS].filter((id) => photosFor(id).length !== PHOTOS_PER_CITY)
-    expect(missing, `picks without ${PHOTOS_PER_CITY} photos`).toEqual([])
-    expect(PHOTO_CITY_IDS).toEqual([...PICK_IDS].sort())
+  it('has exactly 5 photos for every profiled city', () => {
+    const missing = PROFILED_CITY_IDS.filter((id) => photosFor(id).length !== PHOTOS_PER_CITY)
+    expect(missing, `profiled cities without ${PHOTOS_PER_CITY} photos`).toEqual([])
+    expect(PHOTO_CITY_IDS).toEqual(PROFILED_CITY_IDS)
   })
 
-  it('returns an empty list for a city without photos', () => {
+  it('returns an empty list for a city without photos, the same one each call', () => {
     expect(photosFor('no-such-city')).toEqual([])
+    // useSyncExternalStore needs a stable snapshot, or the profile sheet loops.
+    expect(photosFor('no-such-city')).toBe(photosFor('other-city'))
+    expect(photosFor('algarve')).toBe(photosFor('algarve'))
   })
 
   it('gives every city exactly 5 complete, credited photos under 200 kB', () => {
@@ -144,6 +158,108 @@ describe('photo index (buildPhotoIndex)', () => {
       expect(spy).toHaveBeenCalledTimes(2)
     } finally {
       spy.mockRestore()
+    }
+  })
+})
+
+describe('preview photo URLs (photoKey, parsePhotoAssets, remapPhotoIndex)', () => {
+  const photo = (city: string, n: number): CityPhoto => ({
+    commons: `File:${city} ${n}.jpg`,
+    file: `${n}.webp`,
+    caption: 'A place',
+    alt: 'A view',
+    author: 'Ann',
+    license: 'CC BY 4.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by/4.0',
+    source: `https://commons.wikimedia.org/wiki/File:${city}_${n}.jpg`,
+    width: 1280,
+    height: 720,
+    src: `./assets/${n}-H${city}${n}.webp`,
+  })
+  const index = {
+    okville: [1, 2, 3, 4, 5].map((n) => photo('okville', n)),
+    halfville: [1, 2, 3, 4, 5].map((n) => photo('halfville', n)),
+  }
+  const assetsFor = (city: string, upTo = 5) =>
+    Object.fromEntries([1, 2, 3, 4, 5].slice(0, upTo).map((n) => [`${city}/${n}-H${city}${n}.webp`, `https://assets.example/${city}${n}`]))
+
+  it('keys a photo by city and built file name, ignoring path, query and hash', () => {
+    expect(photoKey('tokyo', './assets/1-B2xQ9aZk.webp')).toBe('tokyo/1-B2xQ9aZk.webp')
+    expect(photoKey('tokyo', '/eVelo-v2/assets/1-B2xQ9aZk.webp?v=2#x')).toBe('tokyo/1-B2xQ9aZk.webp')
+  })
+
+  it('keys every real photo by its own city and file', () => {
+    for (const id of PHOTO_CITY_IDS) for (const p of photosFor(id)) expect(photoKey(id, p.src)).toMatch(new RegExp(`^${id}/[^/]+\\.webp$`))
+  })
+
+  it('keeps the bundled URLs when there is no asset map', () => {
+    const warn = vi.fn()
+    expect(remapPhotoIndex(index, null, warn)).toBe(index)
+    expect(warn).not.toHaveBeenCalled()
+  })
+
+  it('swaps in uploaded URLs, and drops only a city with a missing upload, with one warning', () => {
+    const warnings: string[] = []
+    const out = remapPhotoIndex(index, { ...assetsFor('okville'), ...assetsFor('halfville', 4) }, (m) => warnings.push(m))
+    expect(Object.keys(out)).toEqual(['okville'])
+    expect(out.okville.map((p) => p.src)).toEqual([1, 2, 3, 4, 5].map((n) => `https://assets.example/okville${n}`))
+    expect(out.okville[0].caption).toBe('A place')
+    expect(warnings).toHaveLength(1)
+    expect(warnings[0]).toMatch(/1 city has .*halfville \(1 of 5\)/)
+    // The input index is untouched.
+    expect(index.okville[0].src).toBe('./assets/1-Hokville1.webp')
+  })
+
+  it('warns once in total, however many cities lack uploads', () => {
+    const many = Object.fromEntries(Array.from({ length: 20 }, (_, i) => [`c${i}`, index.okville]))
+    const warn = vi.fn()
+    expect(remapPhotoIndex(many, {}, warn)).toEqual({})
+    expect(warn).toHaveBeenCalledTimes(1)
+    expect(warn.mock.calls[0][0]).toMatch(/^photos: 20 cities have .*and 8 more$/)
+  })
+
+  it('accepts only https or relative asset URLs from photo-assets.json', () => {
+    expect(
+      parsePhotoAssets({
+        'a/1.webp': 'https://claude.ai/x/1',
+        'a/2.webp': 'assets/abc',
+        'a/3.webp': './abc',
+        'a/4.webp': 'javascript:alert(1)',
+        'a/5.webp': 'http://insecure/x',
+        'a/6.webp': '//evil.example/x',
+        'a/7.webp': 'data:image/webp;base64,AAAA',
+        'a/8.webp': 42,
+        'a/9.webp': 'https://x/a b',
+      }),
+    ).toEqual({ 'a/1.webp': 'https://claude.ai/x/1', 'a/2.webp': 'assets/abc', 'a/3.webp': './abc' })
+    for (const bad of [null, 'x', [], 3]) expect(parsePhotoAssets(bad)).toEqual({})
+  })
+
+  it('loadPhotoAssets keeps bundled URLs when the map fails to load, and notifies after a good one', async () => {
+    const id = PHOTO_CITY_IDS[0]
+    const before = photosFor(id)
+    const info = vi.spyOn(console, 'info').mockImplementation(() => {})
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {})
+    const seen = vi.fn()
+    const off = subscribePhotos(seen)
+    try {
+      await loadPhotoAssets(async () => {
+        throw new Error('HTTP 404')
+      })
+      expect(photosFor(id)).toBe(before)
+      expect(seen).not.toHaveBeenCalled()
+      const map = Object.fromEntries(before.map((p, i) => [photoKey(id, p.src), `https://assets.example/${i}`]))
+      await loadPhotoAssets(async () => map)
+      expect(seen).toHaveBeenCalledTimes(1)
+      expect(photosFor(id).map((p) => p.src)).toEqual(before.map((_, i) => `https://assets.example/${i}`))
+    } finally {
+      off()
+      info.mockRestore()
+      warn.mockRestore()
+      // Restore the bundled index for the other tests: an empty map would drop every city.
+      await loadPhotoAssets(async () => {
+        throw new Error('reset')
+      })
     }
   })
 })
@@ -348,6 +464,13 @@ describe('photo metadata helpers', () => {
     ['(WT-en) Ann Lee at wikivoyage', 'Ann Lee'],
     ['Mariordo ((Mario Roberto Durán Ortiz)', 'Mariordo (Mario Roberto Durán Ortiz)'],
     ['"dronepicr"', 'dronepicr'],
+    ['Julian Herzog (Website)', 'Julian Herzog'],
+    ['<a href="//commons.wikimedia.org/wiki/User:J">Julian Herzog</a> (<a href="https://julianherzog.com">Website</a>)', 'Julian Herzog'],
+    ['Ann Lee (website)', 'Ann Lee'],
+    ['Ann Lee (homepage)', 'Ann Lee'],
+    ['Ann Lee (talk)', 'Ann Lee'],
+    ['Ann Lee (contribs)', 'Ann Lee'],
+    ['Ann Lee (talk | contribs)', 'Ann Lee'],
     ['“Ann Lee”', 'Ann Lee'],
   ])('strips link and platform noise: %s', (raw, clean) => {
     expect(cleanAuthor(raw)).toBe(clean)
@@ -386,7 +509,7 @@ describe('photo metadata helpers', () => {
     for (const bad of [
       'Ann, Wikimedia Commons', 'Ann via Flickr', 'Ann https://x.org', 'Ann www.ann.de', 'Ann annphoto.com',
       'Ann / Thank you for views', 'Ann 1M views', 'No machine-readable author provided. Ann assumed', 'Ann at wikivoyage',
-      '(WT-shared) Ann', 'Ann ((Lee)', 'Ann (Lee', 'Ann Lee)', 'Ann [[Lee]]', '"Ann"', '‘Ann’',
+      '(WT-shared) Ann', 'Ann ((Lee)', 'Julian Herzog (Website)', 'Ann (website)', 'Ann (homepage)', 'Ann (talk)', 'Ann (contribs)', 'Ann (talk | contribs)', 'Ann (Lee', 'Ann Lee)', 'Ann [[Lee]]', '"Ann"', '‘Ann’',
     ]) {
       expect(validateEntry({ ...e, author: bad }, 1).join(), bad).toMatch(/link, domain or platform/)
     }

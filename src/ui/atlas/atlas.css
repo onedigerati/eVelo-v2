@@ -651,8 +651,39 @@
 .city-card__tag.is-dest {
   color: var(--accent-text);
 }
-.city-card__hint {
+.city-card__foot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   margin-top: -4px;
+}
+.city-card__profile {
+  position: relative;
+  font-size: var(--fs-xs);
+}
+.city-card__profile:focus-visible {
+  outline: none;
+  border-radius: 4px;
+  box-shadow: var(--focus-ring);
+}
+@media (pointer: coarse) {
+  /* A 40px-tall tap target (WCAG 2.5.8 asks ≥24) that keeps the text where it was: negative block
+     margins cancel the extra height, so the card doesn't grow and the link stays clear of the
+     Compare chip above (the foot's top margin opens the gap the margin reaches into). */
+  .city-card__foot {
+    margin-top: 2px;
+  }
+  .city-card__profile {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    margin-block: -11.5px;
+    padding-inline: 4px;
+    margin-inline: -4px;
+  }
+}
+.city-card__hint {
+  margin-left: auto;
   font-size: 10.5px;
   color: var(--ink-3);
   text-align: right;
@@ -935,6 +966,23 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+/* Subtitle: the country (with "Home ·"/"Destination ·" on phones) always shows, ellipsized only
+   if it alone is too long; the provenance and tax marks show only when they fit whole. They wrap
+   to a second line that the one-line height clips, instead of cutting into the country. */
+.crow__name .crow__sub {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 1.25em;
+  overflow: hidden;
+}
+.crow__sub > * {
+  flex-shrink: 0;
+}
+.crow__sub > .crow__country {
+  flex-shrink: 1;
+  min-width: 0;
 }
 .crow.is-top .crow__name b {
   font-weight: 640;
@@ -2116,6 +2164,10 @@
   outline: none;
   box-shadow: var(--focus-ring);
 }
+/* Unranked profiled city: same chip, label only (kept on phones, where picks drop to "#N"). */
+.pickbadge--profile .pickbadge__l {
+  margin-right: 0;
+}
 @media (pointer: coarse) {
   .pickbadge::before {
     content: '';
@@ -2127,7 +2179,7 @@
   .crow__who {
     grid-area: main;
   }
-  .pickbadge__l {
+  .pickbadge:not(.pickbadge--profile) .pickbadge__l {
     display: none;
   }
   .vmark__low {

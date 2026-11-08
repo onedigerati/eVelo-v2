@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { CITIES, CITY_BY_ID } from '../../../data/cities'
-import { EXPAT_PICKS } from '../../../data/expatPicks'
+import { EXPAT_PICKS, expatPickFor, type ExpatProfile } from '../../../data/expatPicks'
 import { categoryRatios } from '../../../engine/cost'
 import { DEFAULT_INPUTS } from '../../../engine/defaults'
 import {
@@ -12,6 +12,8 @@ import {
   monthYear,
   oddsVsHome,
   pickViews,
+  profileEyebrow,
+  profileView,
   scoreLabel,
   splitPicks,
   verifiedLabel,
@@ -159,5 +161,42 @@ describe('categoryCompare', () => {
     const out = categoryCompare(inputs, CITY_BY_ID[inputs.homeCityId])
     expect(out.every((c) => c.ratio === 1 && c.here === c.home)).toBe(true)
     expect(out.some((c) => c.cat === 'travel')).toBe(false)
+  })
+})
+
+describe('profileView / profileEyebrow (any profiled city)', () => {
+  const fakeProfile = { tagline: 'Test' } as ExpatProfile
+  // Stands in for an unranked profile (e.g. Tokyo) whether or not its file exists yet.
+  const lookup = {
+    profile: (id: string) => (id === 'tokyo' ? fakeProfile : EXPAT_PICKS.find((p) => p.cityId === id)?.profile),
+    pick: expatPickFor,
+  }
+
+  it('opens a pick with its rank and row', () => {
+    const v = profileView('algarve', [row('algarve', 0.9, 2)])!
+    expect(v.pick?.rank).toBe(1)
+    expect(v.profile).toBe(expatPickFor('algarve')!.profile)
+    expect(v.row?.successRate).toBe(0.9)
+    expect(profileEyebrow(v)).toBe('Top pick 1 of 75 · Portugal')
+  })
+
+  it('opens an unranked profiled city without a pick, and says "Profile · <country>"', () => {
+    const v = profileView('tokyo', [row('tokyo', 0.7, 40)], lookup)!
+    expect(v).not.toBeNull()
+    expect(v.pick).toBeUndefined()
+    expect(v.profile).toBe(fakeProfile)
+    expect(v.row?.rank).toBe(40)
+    expect(profileEyebrow(v)).toBe('Profile · Japan')
+  })
+
+  it('returns null for a city with no profile or an unknown id', () => {
+    expect(profileView('st-louis', [], { profile: () => undefined, pick: () => undefined })).toBeNull()
+    expect(profileView('atlantis', [], lookup)).toBeNull()
+  })
+
+  it('never adds an unranked profile to the top-picks list', () => {
+    const views = pickViews([row('tokyo', 0.99, 1)])
+    expect(views.some((v) => v.pick.cityId === 'tokyo')).toBe(false)
+    expect(views).toHaveLength(75)
   })
 })

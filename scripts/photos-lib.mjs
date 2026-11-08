@@ -102,6 +102,9 @@ const SEP = '[\\/,\\-–—|@•·:;]'
 const BARE_DOMAIN =
   /(?<![\w.@-])(?:www\.)?[a-z0-9-]+(?:\.[a-z0-9-]+)*\.(?:com|net|org|info|biz|io|co|me|eu|de|at|ch|nl|be|fr|es|it|pt|pl|cz|sk|hu|ro|bg|hr|si|rs|gr|cy|mt|tr|ge|al|uk|ie|dk|se|no|fi|ru|ua|ar|br|mx|cl|pa|us|ca|au|nz|jp|my|th|vn|id|photo|photos|photography|art|studio)(?![\w-])(?:\/\S*)?/g
 const URL_RE = /\bhttps?:\/\/\S+/gi
+/** Commons/MediaWiki link labels left behind when the link markup is stripped: "Julian Herzog (Website)". */
+const LINK_LABEL = '(?:web\\s?site|home\\s?page|talk|contribs|contributions|blog|e-?mail|contact|portfolio)'
+const LINK_LABELS_RE = new RegExp(`\\s*\\(\\s*${LINK_LABEL}(?:\\s*[|·•,/]\\s*${LINK_LABEL})*\\s*\\)`, 'gi')
 const PLATFORM = '(?:wikimedia commons|wikimedia|commons|wikipedia|wikivoyage|flickr|flikr|panoramio|instagram)'
 
 /** True when a credit still carries a link, a domain, or a platform name. */
@@ -114,6 +117,7 @@ export function hasCreditNoise(s) {
     /wikimedia commons|\bflickr\b|\bflikr\b|wikivoyage|\bWT-\w+/i.test(t) ||
     /thank(s| you)\b|\bviews?\b|no machine-readable|\bassumed\b/i.test(t) ||
     /\(\(|\)\)|\[\[|\]\]/.test(t) ||
+    new RegExp(LINK_LABELS_RE.source, 'i').test(t) ||
     count(/\(/g) !== count(/\)/g) ||
     count(/\[/g) !== count(/\]/g) ||
     /^["“”'‘’«].*["“”'‘’»]$/.test(t)
@@ -132,6 +136,8 @@ function stripCreditNoise(input) {
     if (m && norm(m[1]) === norm(m[2])) s = m[1]
   }
   s = s.trim().replace(/^(©|\(c\)|copyright)\s*/i, '')
+  // Link labels: "Julian Herzog (Website)", "Ann (talk | contribs)".
+  s = s.replace(LINK_LABELS_RE, '').trim()
   // Commons boilerplate: "No machine-readable author provided. X assumed (based on …)".
   s = s.replace(/^no machine-readable author provided\.?\s*(.+?)\s+assumed\b.*$/i, '$1')
   // Wikivoyage imports: "(WT-shared) X at wts wikivoyage".

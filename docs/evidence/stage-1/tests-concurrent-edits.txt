@@ -1,0 +1,14 @@
+# 18:52:54 — after another agent began adding photo folders (amsterdam, berlin, dublin, london) to the same working tree, outside stage 1
+$ npm test
+     × loads every city folder that has a photos.json 12ms
+     × only has photos for profiled cities 2ms
+     × has exactly 5 photos for every profiled city 1ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/data/__tests__/photos.test.ts > city photos data > loads every city folder that has a photos.json
+AssertionError: expected [ 'algarve', 'alicante', …(78) ] to deeply equal [ 'algarve', 'alicante', …(79) ]
+ FAIL  src/data/__tests__/photos.test.ts > city photos data > only has photos for profiled cities
+AssertionError: amsterdam: expected false to be true // Object.is equality
+ FAIL  src/data/__tests__/photos.test.ts > city photos data > has exactly 5 photos for every profiled city
+AssertionError: profiled cities without 5 photos: expected [ 'paris' ] to deeply equal []
+ Test Files  1 failed | 22 passed (23)
+      Tests  3 failed | 346 passed (349)
