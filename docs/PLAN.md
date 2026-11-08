@@ -19,7 +19,7 @@ Checks:
 - [x] Preview republished with stage 6's 70 photos added (all 133 cities), proven on the preview build locally (proof: run the product on the preview build)
 - [ ] Deployed to GitHub Pages on the user's approval, live site checked (proof: run the product)
 Open: before deploy, recheck Florida Amendment 3 and Colorado Amendment 87 certification (Decisions).
-Mode: paused — stage 6 is built, verified and on preview v35; the deploy to GitHub Pages (push) waits for the user's approval.
+Mode: autopilot (user approved the deploy 2026-11-07).
 Notes:
 - Reviews: East in `docs/evidence/stage-6/review-east.md`; Midwest + South reviewer writes `review-midwest-south.md` there.
 - Verify like stage 5 (`docs/evidence/stage-5/report.md`): scripts `stage-5/s5.js` (run as `.cjs`, city list as JSON) and `s5v34.js` + `blobserve.js` for the preview build. Upload batches with the Artifact tool from main-tree paths, `--record`, copy `.preview/photo-assets.json` back to the main tree if recorded in a worktree, publish every `dist/artifact-files.json` entry and null the previous version's stale chunk paths.
@@ -37,6 +37,7 @@ Notes:
 - [ ] 6. US East + Midwest + launch — New York City, Boston, Philadelphia, Pittsburgh, Washington DC, Atlanta, Charlotte, Raleigh, Asheville, Nashville, Chicago, Minneapolis, Kansas City, St. Louis; a test requires a profile and 5 photos for all 133; full preview; deploy on approval
 
 ## Decisions
+- 2026-11-07 · Deploy stage 6 (all 133 cities) to GitHub Pages — user: "Deploy".
 - 2026-11-07 · Houston cost 3 → 2: every other US city scores 2, and Houston's indexes (62 groceries, 38 rent) aren't clearly below Kansas City's (66, 29) or St. Louis's (71, 25); flagged by the Midwest + South review. Lands with stage 6 — PM's call.
 - 2026-11-07 · St. Louis safety stays 2 (≈50 homicides per 100k in the city proper, like Cape Town's 2; retirees mostly live in the county; only Mazatlán, under a top-level advisory, scores 1) — PM's call on the reviewer's recommendation.
 - 2026-11-07 · Florida's Amendment 3 stays "(unofficial results)" in the four Florida profiles until the state certifies it; recheck in stage 6 before deploy — PM's call.
