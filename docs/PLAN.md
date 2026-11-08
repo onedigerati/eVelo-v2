@@ -16,8 +16,8 @@ Checks:
 - [x] A saved plan or share link without the field loads as 0; hostile values are clamped below the portfolio; lowering the portfolio below the balance clamps it and shows the "Loan balance lowered to …" notice with the original balance; the Portfolio hint mentions the balance (proof: test; run the product for the notice)
 - [x] Outlook captions (portfolio, loan, LTV, margin-call, estate) and the Method tab describe the starting balance, the opening sale, a plan that fails at once, and the sell offset; they read correctly on real $500k, $2.1M and $2.7M plans; at balance 0 they're unchanged apart from the intended "close to" / "above" / "first year" wording fixes (proof: test; screenshots, a test can't judge them against real engine output)
 - [x] Works in both themes and at phone width, with no console errors (proof: screenshots, light/dark × desktop/phone)
-- [ ] Preview published to the one preview Artifact after the user's go; deploy on the user's approval (proof: the published URL and the Actions run)
-Open: preview v37 published to https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (all 29 manifest files present); waiting for the user's review and deploy approval
+- [x] Preview published to the one preview Artifact after the user's go; deploy on the user's approval (proof: the published URL and the Actions run)
+Open: none — preview v37 reviewed; deployed by run 42523233104
 
 ## Stages
 - [x] 1. Engine starting loan — `existingLoan` in `PlanInputs` (default 0) through `kernelConfig` to the kernel: BBD starts at L = balance, sell starts at V − balance with pro-rata basis, year-0 recording, header comment; engine tests

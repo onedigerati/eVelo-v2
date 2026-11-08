@@ -40,3 +40,8 @@ Independent re-check of fix round 3 (8c91a3b, merged 589d3b0) on the running pro
 | Overflow and console | pass: horizontal overflow is 0 px on #plan, #outlook and #method at 390 and 1400 px, light and dark, with a $2.57M balance. No console errors, warnings or page errors in any run. | [r3-product-run-overflow.txt](r3-product-run-overflow.txt), [r3-outlook-2.57m-light-phone.png](r3-outlook-2.57m-light-phone.png), [r3-outlook-2.57m-dark-phone.png](r3-outlook-2.57m-dark-phone.png) |
 
 Not from round 3, and not blocking (logged as an open question): on a $2.7M plan the fan y-axis has all-zero data and labels its ticks "$1 $1 $1 $0 $0 $0" (same on 376bf3b, [c2-2.7m-breaks-fan-portfolio.png](c2-2.7m-breaks-fan-portfolio.png)); at $2.57M the warning says "$3.0M sold" on a $3.0M portfolio because $2.996M rounds up.
+
+## Preview and deploy (check 6)
+| Check | Result | Evidence |
+|---|---|---|
+| Preview published to the one preview Artifact after the user's go; deploy on the user's approval (proof: the published URL and the Actions run) | pass | Preview v37 at https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (all 29 manifest files present), reviewed by the user ("Looks good"). Deploy: runs 42520090721 and 42522708318 failed on the Atlas timing test (see the plan's decisions); run 42523233104 built and deployed (Atlas 2720 ms under the raised 3500 ms budget). Live check on https://onedigerati.github.io/eVelo-v2/ with a `#p=` link carrying a $2.1M balance: at 1280px the Borrowing field and the forced-sale warning show; at 1280px and 390px (touch) net worth "falls from $637K" and the estate note names the opening sale's $263K tax; 0px horizontal overflow; 0 page errors. [live-1280.png](live-1280.png), [live-390.png](live-390.png) |
