@@ -205,6 +205,10 @@ export interface SimulationResult {
   marginCallByYear: number[]
   /** Cumulative P(any forced sale by end of year y). */
   marginCallCumulative: number[]
+  /** The opening forced sale today (today's USD), when the existing balance starts above the
+   *  margin-call LTV and the sale can cover it; null otherwise (no sale, or broken from the start).
+   *  Not a margin call: it isn't counted in marginCallByYear or the bruised rate. */
+  openingSale: { sold: number; taxPaid: number } | null
 
   /** First-year spending in USD after the move (today's dollars), and home spending. */
   spendHome: number

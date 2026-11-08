@@ -3,6 +3,7 @@ import marketJson from '../../data/market.json'
 import { runAtlas } from '../atlas'
 import { DEFAULT_INPUTS } from '../defaults'
 import { createRecorder, runPaths, type KernelConfig } from '../kernel'
+import { openingSale } from '../openingSale'
 import { prepare } from '../prepare'
 import { findCity, kernelConfig, makeScenarios, normalizeInputs, resolveDestination, simulate } from '../simulate'
 import { solveSpending } from '../solve'
@@ -85,32 +86,105 @@ describe('existing loan: sell strategy', () => {
   })
 })
 
-describe('existing loan: margin calls and insolvency', () => {
-  it('a balance above maxLtv × portfolio forces a sale in month 0 that lands at targetLtv', () => {
+describe('existing loan: opening forced sale', () => {
+  it('a balance above maxLtv × portfolio is sold down today, before month 0, landing at targetLtv in year 0', () => {
     const rec = createRecorder(1, 1)
     const clean = runPaths(flat(12), { ...base, initialLoan: 70 }, rec)
-    expect(clean).toBe(0)
-    expect(rec.outcome[0]).toBe(1)
-    expect(rec.firstCall[0]).toBe(0)
+    // not a margin call or a failure: flat returns and no spending keep it clean
+    expect(clean).toBe(1)
+    expect(rec.outcome[0]).toBe(0)
+    expect(rec.firstCall[0]).toBe(-1)
     const g = 0.6
     const S = (70 - 0.45 * 100) / (1 - g * 0.238 - 0.45)
-    expect(rec.port[1]).toBeCloseTo(100 - S, 8)
-    expect(rec.loan[1]).toBeCloseTo(70 - S * (1 - g * 0.238), 8)
-    expect(rec.ltv[1]).toBeCloseTo(0.45, 8)
+    for (const k of [0, 1]) {
+      expect(rec.port[k]).toBeCloseTo(100 - S, 8)
+      expect(rec.loan[k]).toBeCloseTo(70 - S * (1 - g * 0.238), 8)
+      expect(rec.nw[k]).toBeCloseTo(100 - S - (70 - S * (1 - g * 0.238)), 8)
+      expect(rec.ltv[k]).toBeCloseTo(0.45, 8)
+    }
+    // the sell strategy is unchanged: today's V − balance, no opening sale
+    expect(rec.sellEstate[0]).toBeCloseTo(30, 10)
   })
 
-  it('counts that month-0 forced sale in year 0 of marginCallByYear', () => {
-    const r = simulate(market, CITIES_FIX, withInputs({ existingLoan: 2_400_000, paths: 600 }))
-    expect(r.marginCallByYear[0]).toBeCloseTo(1, 9)
-    expect(r.successRate).toBe(0)
+  it('matches the closed form for the sale and its tax, and basis falls pro rata', () => {
+    const V = 100, B = 40, L = 70, tax = 0.238, tgt = 0.45
+    const g = 1 - B / V
+    const S = (L - tgt * V) / (1 - g * tax - tgt)
+    const o = openingSale(V, B, L, 0.6, tgt, tax)
+    expect(o).not.toBeNull()
+    if (!o || o.broken) throw new Error('expected a sale')
+    expect(o.sold).toBeCloseTo(S, 12)
+    expect(o.taxPaid).toBeCloseTo(S * g * tax, 12)
+    expect(o.port).toBeCloseTo(V - S, 12)
+    expect(o.loan).toBeCloseTo(L - S * (1 - g * tax), 12)
+    expect(o.basis).toBeCloseTo(B * (1 - S / V), 12)
+    expect(o.loan / o.port).toBeCloseTo(tgt, 12)
+    // the basis keeps the embedded-gain fraction
+    expect(1 - o.basis / o.port).toBeCloseTo(g, 12)
   })
 
-  it('a balance the forced sale cannot cover (above V · (1 − g·tax)) breaks in month 0', () => {
+  it('no sale at or under maxLtv × portfolio; broken at or above the portfolio, whatever maxLtv says', () => {
+    expect(openingSale(100, 40, 0, 0.6, 0.45, 0.238)).toBeNull()
+    expect(openingSale(100, 40, 60, 0.6, 0.45, 0.238)).toBeNull()
+    expect(openingSale(100, 40, 100, 0.6, 0.45, 0.238)).toEqual({ broken: true })
+    expect(openingSale(100, 40, 100, 1.2, 0.45, 0.238)).toEqual({ broken: true })
+    expect(openingSale(0, 0, 1, 0.6, 0.45, 0.238)).toEqual({ broken: true })
+    expect(openingSale(0, 0, 0, 0.6, 0.45, 0.238)).toBeNull()
+    // a non-positive denominator (1 − g·tax − target <= 0) can't reach the target: broken
+    expect(openingSale(100, 0, 80, 0.7, 0.6, 0.5)).toEqual({ broken: true })
+  })
+
+  it('the opening sale is not counted in marginCallByYear; $2.1M on the $3M defaults still has real odds', () => {
+    // 70% LTV on defaults (maxLtv 0.6): opens with a sale to 45%.
+    const inputs = withInputs({ existingLoan: 2_100_000, paths: 1500 })
+    const r = simulate(market, CITIES_FIX, inputs)
+    const without = simulate(market, CITIES_FIX, withInputs({ existingLoan: 0, paths: 1500 }))
+    expect(r.openingSale).not.toBeNull()
+    expect(r.ltv.p5[0]).toBeCloseTo(inputs.targetLtvAfterCall, 8)
+    expect(r.ltv.p95[0]).toBeCloseTo(inputs.targetLtvAfterCall, 8)
+    // only the later, real margin calls count, so year 0 is far from every path
+    expect(r.marginCallByYear[0]).toBeLessThan(0.5)
+    // The old month-0 call bruised or broke every path (0% odds, $0 max spend at any target). From
+    // the post-sale position ($1.16M portfolio, $0.52M loan) the default ~$87K budget rarely holds,
+    // but the odds are non-zero, the plan holds more often than not with no spending, and the
+    // solver finds a spend at a 50% target (the app's 90% target is out of reach).
+    expect(r.successRate).toBeGreaterThan(0.02)
+    expect(r.successRate).toBeLessThan(without.successRate)
+    const prep = prepare(market, inputs.holdings, inputs.outlook)
+    const sc = makeScenarios(prep, inputs, inputs.paths)
+    const dest = resolveDestination(inputs, findCity(CITIES_FIX, inputs.homeCityId), findCity(CITIES_FIX, inputs.destCityId))
+    expect(runPaths(sc, kernelConfig(inputs, dest, 0), null) / sc.paths).toBeGreaterThan(0.4)
+    const s = solveSpending(market, CITIES_FIX, inputs, 0.5)
+    expect(s.maxSpendHome).toBeGreaterThan(1_000)
+    // the year-0 bands are the post-sale position
+    const g = 1 - DEFAULT_INPUTS.basisFraction
+    const tgt = Math.min(inputs.targetLtvAfterCall, inputs.maxLtv)
+    const S = (2_100_000 - tgt * 3_000_000) / (1 - g * inputs.capGainsRate - tgt)
+    expect(r.openingSale!.sold).toBeCloseTo(S, 4)
+    expect(r.openingSale!.taxPaid).toBeCloseTo(S * g * inputs.capGainsRate, 4)
+    expect(r.portfolioValue.p50[0]).toBeCloseTo(3_000_000 - S, 4)
+  })
+
+  it('no opening sale is reported for balances at or under the margin-call LTV', () => {
+    expect(simulate(market, CITIES_FIX, withInputs({ existingLoan: 0, paths: 50 })).openingSale).toBeNull()
+    expect(simulate(market, CITIES_FIX, withInputs({ existingLoan: 1_800_000, paths: 50 })).openingSale).toBeNull()
+  })
+
+  it('a balance the sale cannot cover after tax (above V · (1 − g·tax)) breaks at once', () => {
     // g = 0.6, tax 0.238: the sale reaches the target only while L < V (1 - g·tax) = 85.72.
     const rec = createRecorder(1, 1)
-    runPaths(flat(12), { ...base, initialLoan: 90 }, rec)
+    const up = flat(12)
+    up.ret.fill(0.05)
+    runPaths(up, { ...base, initialLoan: 90 }, rec)
     expect(rec.outcome[0]).toBe(2)
     expect(rec.firstCall[0]).toBe(0)
+    for (const k of [0, 1]) {
+      expect(rec.port[k]).toBe(0)
+      expect(rec.ltv[k]).toBe(1)
+    }
+    const r = simulate(market, CITIES_FIX, withInputs({ existingLoan: 2_700_000, paths: 200 }))
+    expect(r.brokenRate).toBe(1)
+    expect(r.openingSale).toBeNull()
   })
 
   it('a balance at or above the portfolio breaks the path at once, with no negatives or NaN', () => {
@@ -136,6 +210,18 @@ describe('existing loan: margin calls and insolvency', () => {
     expect(r.brokenRate).toBe(1)
     expect(r.marginCallByYear[0]).toBeCloseTo(1, 9)
     expect(r.estate.sellMedian).toBe(0)
+  })
+
+  it('treats an infinite or NaN balance as none, in the kernel and in simulate', () => {
+    for (const bad of [Infinity, -Infinity, Number.NaN]) {
+      const a = createRecorder(1, 1)
+      const b = createRecorder(1, 1)
+      runPaths(flat(12), { ...base, homeMonthly: 1, destMonthly: 1 }, a)
+      runPaths(flat(12), { ...base, homeMonthly: 1, destMonthly: 1, initialLoan: bad }, b)
+      expect(b).toEqual(a)
+      const inputs = normalizeInputs(withInputs({ existingLoan: bad }))
+      expect(kernelConfig(inputs, resolveDestination(inputs, null, null)).initialLoan).toBe(0)
+    }
   })
 })
 
@@ -174,18 +260,15 @@ describe('existing loan: odds, solver and atlas', () => {
     expect(s1.maxSpendDest!).toBeLessThan(s0.maxSpendDest!)
   })
 
-  it('reaches every Atlas city: odds are lower or equal per city, and lower for at least one', () => {
+  it('reaches every Atlas city: each city’s odds are strictly lower with a large balance', () => {
     const ids = CITIES_FIX.map((c) => c.id)
     const without = runAtlas(market, CITIES_FIX, { ...inp, existingLoan: 0 }, ids)
-    const withLoan = runAtlas(market, CITIES_FIX, { ...inp, existingLoan: 500_000 }, ids)
+    const withLoan = runAtlas(market, CITIES_FIX, { ...inp, existingLoan: 1_200_000 }, ids)
     expect(withLoan.length).toBe(ids.length)
-    let differs = 0
     for (const id of ids) {
       const a = without.find((e) => e.cityId === id)!.successRate
       const b = withLoan.find((e) => e.cityId === id)!.successRate
-      expect(b).toBeLessThanOrEqual(a)
-      if (b < a) differs++
+      expect(b, id).toBeLessThan(a)
     }
-    expect(differs).toBeGreaterThan(0)
   })
 })
