@@ -7,20 +7,20 @@ A user who has already borrowed on their line of credit to live can enter that b
 2026-11-08 · tests: 387 pass (25 files) · typecheck: clean · build: ok
 
 ## Now
-Stage 1 of 2 · Engine starting loan
-Risk: money
+Stage 2 of 2 · Input, copy + launch
+Risk: user input, money
 Agents: wide — confirmed 2026-11-08 12:27
 Checks:
-- [x] With a $500k balance on a $3M plan, every path records year 0 as loan $500k, LTV 16.7%, net worth $2.5M (proof: test)
-- [x] The balance accrues at `loanRate`: with no spending and flat returns, the loan after 12 months is balance × (1 + rate/12)^12 (proof: test)
-- [x] The sell strategy starts at portfolio − balance with no debt and basis scaled pro rata; with zero loan rate, no spending and flat returns, the two estates match before tax (proof: test)
-- [x] A balance above `maxLtv` × portfolio forces an opening sale today, before any month runs, that brings the loan to `targetLtvAfterCall` and pays capital-gains tax; year 0 shows the position after it, and it doesn't count as a margin call or a failure. A balance that sale can't cover after tax, or one at or above the portfolio, breaks the path at once (proof: test)
-- [x] A balance of 0, or a plan without the field, gives results identical to today's for the same seed (proof: test)
-- [x] Up to the margin-call line, a larger balance lowers the success rate and the solver's max sustainable spend; the balance reaches every Atlas city (proof: test)
-Open: none
+- [ ] The Borrowing section shows "Existing loan balance" first; with $500k on a $3M plan, the Outlook's year-0 loan is $500k, LTV ~17%, and the LTV meter shows 17% today (proof: run the product, screenshot — a test can't judge the rendered chart)
+- [ ] A balance over the margin-call LTV ($2.1M on $3M defaults) shows the forced-sale warning with the amount sold, the tax, the resulting LTV and the net worth left, and the Outlook's year 0 shows the post-sale position; a balance the sale can't cover ($2.7M) shows "fails at once"; the field can't reach the portfolio (proof: test for `src/ui/plan/existingLoan.ts`, incl. the grid against `simulate`; screenshots for the pills and the year-0 fan)
+- [ ] A saved plan or share link without the field loads as 0; hostile values are clamped below the portfolio; lowering the portfolio below the balance clamps it and shows the "Loan balance lowered to …" notice with the original balance; the Portfolio hint mentions the balance (proof: test; run the product for the notice)
+- [ ] Outlook captions (portfolio, loan, LTV, margin-call, estate) and the Method tab describe the starting balance, the opening sale, a plan that fails at once, and the sell offset; they read correctly on real $500k, $2.1M and $2.7M plans; at balance 0 they're unchanged apart from the intended "close to" / "above" / "first year" wording fixes (proof: test; screenshots, a test can't judge them against real engine output)
+- [ ] Works in both themes and at phone width, with no console errors (proof: screenshots, light/dark × desktop/phone)
+- [ ] Preview published to the one preview Artifact after the user's go; deploy on the user's approval (proof: the published URL and the Actions run)
+Open: preview publish and deploy wait for the user
 
 ## Stages
-- [ ] 1. Engine starting loan — `existingLoan` in `PlanInputs` (default 0) through `kernelConfig` to the kernel: BBD starts at L = balance, sell starts at V − balance with pro-rata basis, year-0 recording, header comment; engine tests
+- [x] 1. Engine starting loan — `existingLoan` in `PlanInputs` (default 0) through `kernelConfig` to the kernel: BBD starts at L = balance, sell starts at V − balance with pro-rata basis, year-0 recording, header comment; engine tests
 - [ ] 2. Input, copy + launch — "Existing loan balance" field in Borrowing with the over-limit warning and the below-portfolio block (pure helper with tests), share-link and saved-plan sanitizing, LTV meter shows today's LTV, outlook and Method copy for the starting balance and the sell offset; preview; deploy on approval
 
 ## Decisions
