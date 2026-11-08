@@ -11,11 +11,11 @@ Stage 2 of 2 · Input, copy + launch
 Risk: user input, money
 Agents: wide — confirmed 2026-11-08 12:27
 Checks:
-- [ ] The Borrowing section shows "Existing loan balance" first; with $500k on a $3M plan, the Outlook's year-0 loan is $500k, LTV ~17%, and the LTV meter shows 17% today (proof: run the product, screenshot — a test can't judge the rendered chart)
-- [ ] A balance over the margin-call LTV ($2.1M on $3M defaults) shows the forced-sale warning with the amount sold, the tax, the resulting LTV and the net worth left, and the Outlook's year 0 shows the post-sale position; a balance the sale can't cover ($2.7M) shows "fails at once"; the field can't reach the portfolio (proof: test for `src/ui/plan/existingLoan.ts`, incl. the grid against `simulate`; screenshots for the pills and the year-0 fan)
-- [ ] A saved plan or share link without the field loads as 0; hostile values are clamped below the portfolio; lowering the portfolio below the balance clamps it and shows the "Loan balance lowered to …" notice with the original balance; the Portfolio hint mentions the balance (proof: test; run the product for the notice)
-- [ ] Outlook captions (portfolio, loan, LTV, margin-call, estate) and the Method tab describe the starting balance, the opening sale, a plan that fails at once, and the sell offset; they read correctly on real $500k, $2.1M and $2.7M plans; at balance 0 they're unchanged apart from the intended "close to" / "above" / "first year" wording fixes (proof: test; screenshots, a test can't judge them against real engine output)
-- [ ] Works in both themes and at phone width, with no console errors (proof: screenshots, light/dark × desktop/phone)
+- [x] The Borrowing section shows "Existing loan balance" first; with $500k on a $3M plan, the Outlook's year-0 loan is $500k, LTV ~17%, and the LTV meter shows 17% today (proof: run the product, screenshot — a test can't judge the rendered chart)
+- [x] A balance over the margin-call LTV ($2.1M on $3M defaults) shows the forced-sale warning with the amount sold, the tax, the resulting LTV and the net worth left, and the Outlook's year 0 shows the post-sale position; a balance the sale can't cover ($2.7M) shows "fails at once"; the field can't reach the portfolio (proof: test for `src/ui/plan/existingLoan.ts`, incl. the grid against `simulate`; screenshots for the pills and the year-0 fan)
+- [x] A saved plan or share link without the field loads as 0; hostile values are clamped below the portfolio; lowering the portfolio below the balance clamps it and shows the "Loan balance lowered to …" notice with the original balance; the Portfolio hint mentions the balance (proof: test; run the product for the notice)
+- [x] Outlook captions (portfolio, loan, LTV, margin-call, estate) and the Method tab describe the starting balance, the opening sale, a plan that fails at once, and the sell offset; they read correctly on real $500k, $2.1M and $2.7M plans; at balance 0 they're unchanged apart from the intended "close to" / "above" / "first year" wording fixes (proof: test; screenshots, a test can't judge them against real engine output)
+- [x] Works in both themes and at phone width, with no console errors (proof: screenshots, light/dark × desktop/phone)
 - [ ] Preview published to the one preview Artifact after the user's go; deploy on the user's approval (proof: the published URL and the Actions run)
 Open: preview publish and deploy wait for the user
 
@@ -43,6 +43,7 @@ Open: preview publish and deploy wait for the user
 - 2026-11-08 · Both money stages approved for building; stages 1 and 2 built in parallel worktrees on the shared `existingLoan` field — user: "Yes please go ahead and build both stages."
 
 ## Open questions
+- A plan that fails at once draws its fan y-axis as "$1 $1 $1 $0 $0 $0" (all-zero data), and the sale warning can say "$3.0M sold" on a $3.0M portfolio from rounding (pre-existing / cosmetic; from the stage 2 re-check) — later.
 - The LTV caption reads "peaks at 100%" when the median path breaks, because broken paths are recorded with LTV 1 (pre-existing; deferred from the round 2 review) — later.
 - Plans opened from a share link replace the recipient's own plan, including any existing loan balance, without a flag in the UI (`OPENED_FROM_LINK` exists); pre-existing for every input — from the stage review, later.
 - Seoul, London, Amsterdam and Berlin have no `localTaxes.ts` entry (money logic, needs tests) — user's call, a later plan.

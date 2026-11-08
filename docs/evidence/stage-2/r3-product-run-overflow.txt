@@ -1,0 +1,14 @@
+$ node r3.mjs docs/evidence/stage-2 overflow  (playwright-core, chromium 1200, vite preview :4317, HEAD 589d3b0; $3M defaults)
+overflow light 1400 #plan: 0px
+overflow light 1400 #outlook: 0px
+overflow light 1400 #method: 0px
+overflow light 390 #plan: 0px
+overflow light 390 #outlook: 0px
+overflow light 390 #method: 0px
+overflow dark 1400 #plan: 0px
+overflow dark 1400 #outlook: 0px
+overflow dark 1400 #method: 0px
+overflow dark 390 #plan: 0px
+overflow dark 390 #outlook: 0px
+overflow dark 390 #method: 0px
+ERRORS/WARNINGS: none

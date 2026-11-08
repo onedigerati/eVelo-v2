@@ -1,12 +1,12 @@
-$ npx vitest run   (npm test)
-npm notice run evelo@2.0.0 npx
-npm notice run 'vitest' run
+npm notice run evelo@2.0.0 test
+npm notice run vitest run
 
  RUN  v5.1.0 /home/jonah/repos/eVelo-v2
 
 
  Test Files  31 passed (31)
-      Tests  467 passed (467)
-   Start at  13:23:55
-   Duration  9.77s (transform 58%, tests 24%, import 18%)
+      Tests  479 passed (479)
+   Start at  13:32:44
+   Duration  6.06s (transform 65%, tests 24%, import 11%)
 
+exit 0

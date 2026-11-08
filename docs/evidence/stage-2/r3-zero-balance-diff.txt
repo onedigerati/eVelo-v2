@@ -1,0 +1,28 @@
+$ balance-0 captions: product-run-c4.txt (376bf3b, "c4 zero HEAD" lines) vs r3-product-run-caps.txt (589d3b0, "0 ..." lines, title prefix stripped); diff + cmp
+--- 376bf3b
+fan Net worth: NET WORTH · TODAY’S DOLLARS The range of futures In the median future net worth grows from $3.0M to $12M by 85; the unluckiest 5% end with almost nothing.
+fan Portfolio: PORTFOLIO VALUE · TODAY’S DOLLARS The portfolio, untouched Nothing is sold to fund your life: the median portfolio compounds to $16M by 85, carrying the loan on top.
+fan Loan: LOAN BALANCE · TODAY’S DOLLARS The loan, compounding Borrowing compounds: the median loan reaches $2.9M by 85, and $4.7M in the costliest 5% of futures.
+fan Loan-to-value: LOAN-TO-VALUE How close to the line Median loan-to-value peaks at 22% around 76, well under the 60% call line; the worst 5% touch it by 82.
+card: LOAN-TO-VALUE How close to the line Median loan-to-value peaks at 22% around 76, well under the 60% call line; the worst 5% touch it by 82.
+card: MARGIN CALLS · FIRST FORCED SALE When the risk arrives Risk is spread out: most forced sales fall between ages 63 and 75; 20% of futures face one by 85.
+card: SAFE SPENDING · 90% CONFIDENCE What you could spend To reach 90% confidence, trim $26K a year (24%) from your lifestyle.
+card: ESTATE · TODAY’S DOLLARS Borrow vs. sell Borrowing leaves heirs $3.0M more in the median future, and comes out ahead in 77% of all futures.
+card: PORTFOLIO LENS What you own VTI and QQQ move almost as one (0.85); GLD is the real diversifier, averaging 0.13 against the rest.
+card: COST OF LIVING · ST. LOUIS VS BANGKOK The same life, abroad Bangkok cuts your annual spend by 24%; healthcare and other save the most.
+card: ESTATE NOTE: Median estate at 85, today’s dollars. At death your heirs inherit at a stepped-up basis: the gains you borrowed against are never taxed, and the loan is repaid from the estate.
+--- 589d3b0
+fan Net worth: NET WORTH · TODAY’S DOLLARS The range of futures In the median future net worth grows from $3.0M to $12M by 85; the unluckiest 5% end with almost nothing.
+fan Portfolio: PORTFOLIO VALUE · TODAY’S DOLLARS The portfolio, untouched Nothing is sold to fund your life: the median portfolio compounds to $16M by 85, carrying the loan on top.
+fan Loan: LOAN BALANCE · TODAY’S DOLLARS The loan, compounding Borrowing compounds: the median loan reaches $2.9M by 85, and $4.7M in the costliest 5% of futures.
+fan Loan-to-value: LOAN-TO-VALUE How close to the line Median loan-to-value peaks at 22% around 76, well under the 60% call line; the worst 5% touch it by 82.
+card: LOAN-TO-VALUE How close to the line Median loan-to-value peaks at 22% around 76, well under the 60% call line; the worst 5% touch it by 82.
+card: MARGIN CALLS · FIRST FORCED SALE When the risk arrives Risk is spread out: most forced sales fall between ages 63 and 75; 20% of futures face one by 85.
+card: SAFE SPENDING · 90% CONFIDENCE What you could spend To reach 90% confidence, trim $26K a year (24%) from your lifestyle.
+card: ESTATE · TODAY’S DOLLARS Borrow vs. sell Borrowing leaves heirs $3.0M more in the median future, and comes out ahead in 77% of all futures.
+card: PORTFOLIO LENS What you own VTI and QQQ move almost as one (0.85); GLD is the real diversifier, averaging 0.13 against the rest.
+card: COST OF LIVING · ST. LOUIS VS BANGKOK The same life, abroad Bangkok cuts your annual spend by 24%; healthcare and other save the most.
+card: ESTATE NOTE: Median estate at 85, today’s dollars. At death your heirs inherit at a stepped-up basis: the gains you borrowed against are never taxed, and the loan is repaid from the estate.
+--- diff
+no differences
+cmp: byte-identical (11 lines)

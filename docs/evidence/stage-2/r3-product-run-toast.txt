@@ -1,0 +1,8 @@
+$ node r3.mjs docs/evidence/stage-2 toast  (playwright-core, chromium 1200, vite preview :4317, HEAD 589d3b0; $3M defaults)
+toast light-desktop: text="Loan balance lowered to $1,999,999 It was $2,500,000; it has to stay below the portfolio." metrics={"w":379,"h":63,"radius":"32px","pill":true,"detailLines":1,"msgLines":1,"detailOverflow":0,"fitsViewport":true} field=1,999,999
+toast light-desktop after typing balance 1,800,000 then portfolio 1,500,000: field=1,499,999 toasts=["Loan balance lowered to $1,499,999 It was $1,800,000; it has to stay below the portfolio."]
+toast light-desktop then portfolio 1,000,000 (run continues): field=999,999 toasts=["Loan balance lowered to $999,999 It was $1,800,000; it has to stay below the portfolio."]
+toast dark-phone: text="Loan balance lowered to $1,999,999 It was $2,500,000; it has to stay below the portfolio." metrics={"w":358,"h":84,"radius":"32px","pill":false,"detailLines":2,"msgLines":1,"detailOverflow":0,"fitsViewport":true} field=1,999,999
+toast dark-phone after typing balance 1,800,000 then portfolio 1,500,000: field=1,499,999 toasts=["Loan balance lowered to $1,499,999 It was $1,800,000; it has to stay below the portfolio."]
+toast dark-phone then portfolio 1,000,000 (run continues): field=999,999 toasts=["Loan balance lowered to $999,999 It was $1,800,000; it has to stay below the portfolio."]
+ERRORS/WARNINGS: none

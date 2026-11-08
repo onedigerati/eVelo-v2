@@ -1,0 +1,82 @@
+$ node r3.mjs docs/evidence/stage-2 caps  (playwright-core, chromium 1200, vite preview :4317, HEAD 589d3b0; $3M defaults)
+== balance 0: field=0 warn=(none)
+0 fan Net worth: title="The range of futures" | NET WORTH · TODAY’S DOLLARS The range of futures In the median future net worth grows from $3.0M to $12M by 85; the unluckiest 5% end with almost nothing.
+0 fan Net worth readout start: Age 55 year 0 Median $3.0M Middle half $3.0M–$3.0M 90% of futures $3.0M–$3.0M | end: Age 85 year 30 Median $12M Middle half $5.3M–$23M 90% of futures $0–$50M
+0 fan Portfolio: title="The portfolio, untouched" | PORTFOLIO VALUE · TODAY’S DOLLARS The portfolio, untouched Nothing is sold to fund your life: the median portfolio compounds to $16M by 85, carrying the loan on top.
+0 fan Portfolio readout start: Age 55 year 0 Median $3.0M Middle half $3.0M–$3.0M 90% of futures $3.0M–$3.0M | end: Age 85 year 30 Median $16M Middle half $8.3M–$27M 90% of futures $0–$54M
+0 fan Loan: title="The loan, compounding" | LOAN BALANCE · TODAY’S DOLLARS The loan, compounding Borrowing compounds: the median loan reaches $2.9M by 85, and $4.7M in the costliest 5% of futures.
+0 fan Loan readout start: Age 55 year 0 Median $0 Middle half $0–$0 90% of futures $0–$0 | end: Age 85 year 30 Median $2.9M Middle half $2.2M–$3.6M 90% of futures $0–$4.7M
+0 fan Loan-to-value: title="How close to the line" | LOAN-TO-VALUE How close to the line Median loan-to-value peaks at 22% around 76, well under the 60% call line; the worst 5% touch it by 82.
+0 fan Loan-to-value readout start: Age 55 year 0 Median 0% Middle half 0%–0% 90% of futures 0%–0% | end: Age 85 year 30 Median 21% Middle half 12%–34% 90% of futures 6%–100%
+0 card: LOAN-TO-VALUE How close to the line Median loan-to-value peaks at 22% around 76, well under the 60% call line; the worst 5% touch it by 82.
+0 card: MARGIN CALLS · FIRST FORCED SALE When the risk arrives Risk is spread out: most forced sales fall between ages 63 and 75; 20% of futures face one by 85.
+0 card: SAFE SPENDING · 90% CONFIDENCE What you could spend To reach 90% confidence, trim $26K a year (24%) from your lifestyle.
+0 card: ESTATE · TODAY’S DOLLARS Borrow vs. sell Borrowing leaves heirs $3.0M more in the median future, and comes out ahead in 77% of all futures.
+0 card: PORTFOLIO LENS What you own VTI and QQQ move almost as one (0.85); GLD is the real diversifier, averaging 0.13 against the rest.
+0 card: COST OF LIVING · ST. LOUIS VS BANGKOK The same life, abroad Bangkok cuts your annual spend by 24%; healthcare and other save the most.
+0 card: ESTATE NOTE: Median estate at 85, today’s dollars. At death your heirs inherit at a stepped-up basis: the gains you borrowed against are never taxed, and the loan is repaid from the estate.
+== balance 500k: field=500,000 warn=(none)
+500k fan Net worth: title="The range of futures" | NET WORTH · TODAY’S DOLLARS The range of futures In the median future net worth grows from $2.5M to $9.7M by 85; the unluckiest 5% end with almost nothing.
+500k fan Net worth readout start: Age 55 year 0 Median $2.5M Middle half $2.5M–$2.5M 90% of futures $2.5M–$2.5M | end: Age 85 year 30 Median $9.7M Middle half $1.3M–$22M 90% of futures $0–$49M
+500k fan Portfolio: title="The portfolio, untouched" | PORTFOLIO VALUE · TODAY’S DOLLARS The portfolio, untouched Nothing is sold to fund your life: the median portfolio compounds to $14M by 85, carrying the loan on top.
+500k fan Portfolio readout start: Age 55 year 0 Median $3.0M Middle half $3.0M–$3.0M 90% of futures $3.0M–$3.0M | end: Age 85 year 30 Median $14M Middle half $2.3M–$26M 90% of futures $0–$54M
+500k fan Loan: title="The loan, compounding" | LOAN BALANCE · TODAY’S DOLLARS The loan, compounding Borrowing compounds: from your existing $500K balance, the median loan reaches $3.8M by 85, and $5.9M in the costliest 5% of futures.
+500k fan Loan readout start: Age 55 year 0 Median $500K Middle half $500K–$500K 90% of futures $500K–$500K | end: Age 85 year 30 Median $3.8M Middle half $910K–$4.7M 90% of futures $0–$5.9M
+500k fan Loan-to-value: title="How close to the line" | LOAN-TO-VALUE How close to the line Median loan-to-value peaks at 33% around 68, well under the 60% call line; the worst 5% touch it by 70.
+500k fan Loan-to-value readout start: Age 55 year 0 Median 17% Middle half 17%–17% 90% of futures 17%–17% | end: Age 85 year 30 Median 29% Middle half 17%–46% 90% of futures 9%–100%
+500k card: LOAN-TO-VALUE How close to the line Median loan-to-value peaks at 33% around 68, well under the 60% call line; the worst 5% touch it by 70.
+500k card: MARGIN CALLS · FIRST FORCED SALE When the risk arrives Risk is spread out: most forced sales fall between ages 60 and 71; 42% of futures face one by 85.
+500k card: SAFE SPENDING · 90% CONFIDENCE What you could spend To reach 90% confidence, trim $71K a year (65%) from your lifestyle.
+500k card: ESTATE · TODAY’S DOLLARS Borrow vs. sell Borrowing leaves heirs $3.0M more in the median future, and comes out ahead in 62% of all futures.
+500k card: PORTFOLIO LENS What you own VTI and QQQ move almost as one (0.85); GLD is the real diversifier, averaging 0.13 against the rest.
+500k card: COST OF LIVING · ST. LOUIS VS BANGKOK The same life, abroad Bangkok cuts your annual spend by 24%; healthcare and other save the most.
+500k card: ESTATE NOTE: Median estate at 85, today’s dollars. At death your heirs inherit at a stepped-up basis: the gains you borrowed against are never taxed, and the loan is repaid from the estate. Selling as you go starts at the portfolio less your existing $500K loan, with no debt, so both start from the same net worth.
+== balance 2.1m: field=2,100,000 warn=Above your margin-call LTV: the lender forces a sale today — about $1.8M sold, $263K in tax — bringing the loan to 45% LTV and leaving about $637K of net worth. [neutral] {color=rgb(138, 99, 18) bg=rgba(168, 122, 31, 0.12) weight=400}
+2.1m fan Net worth: title="The range of futures" | NET WORTH · TODAY’S DOLLARS The range of futures In the median future the loan consumes everything by about 62: net worth falls from $637K to $0, and only the luckiest 5% end above $4.3M.
+2.1m fan Net worth readout start: Age 55 year 0 Median $637K Middle half $637K–$637K 90% of futures $637K–$637K | end: Age 85 year 30 Median $0 Middle half $0–$0 90% of futures $0–$4.3M
+2.1m fan Portfolio: title="The portfolio, after today’s forced sale" | PORTFOLIO VALUE · TODAY’S DOLLARS The portfolio, after today’s forced sale The plan opens with a forced sale of $1.8M today, paying $263K in tax; in the median future the lender liquidates the portfolio by about 62.
+2.1m fan Portfolio readout start: Age 55 year 0 Median $1.2M Middle half $1.2M–$1.2M 90% of futures $1.2M–$1.2M | end: Age 85 year 30 Median $0 Middle half $0–$0 90% of futures $0–$6.2M
+2.1m fan Loan: title="The loan, compounding" | LOAN BALANCE · TODAY’S DOLLARS The loan, compounding Borrowing compounds: from your existing $2.1M balance, cut to $521K by the opening sale, the median plan is liquidated by about 62.
+2.1m fan Loan readout start: Age 55 year 0 Median $521K Middle half $521K–$521K 90% of futures $521K–$521K | end: Age 85 year 30 Median $0 Middle half $0–$0 90% of futures $0–$1.8M
+2.1m fan Loan-to-value: title="How close to the line" | LOAN-TO-VALUE How close to the line A forced sale today brings loan-to-value to 45%; the median then peaks at 100% around 62, above the 60% call line; the worst 5% touch it by 58.
+2.1m fan Loan-to-value readout start: Age 55 year 0 Median 45% Middle half 45%–45% 90% of futures 45%–45% | end: Age 85 year 30 Median 100% Middle half 100%–100% 90% of futures 32%–100%
+2.1m card: LOAN-TO-VALUE How close to the line A forced sale today brings loan-to-value to 45%; the median then peaks at 100% around 62, above the 60% call line; the worst 5% touch it by 58.
+2.1m card: MARGIN CALLS · FIRST FORCED SALE When the risk arrives Risk is concentrated early: 80% of forced sales happen in the first 5 years (ages 55 to 60), when a crash can hit while the loan is still near the call line after the opening sale. The opening sale today isn’t counted.
+2.1m card: SAFE SPENDING · 90% CONFIDENCE What you could spend Even a token budget misses 90% confidence: on these terms any loan outgrows the portfolio in too many futures. A lower loan rate, more growth or more income would change that.
+2.1m card: ESTATE · TODAY’S DOLLARS Borrow vs. sell In the median future neither strategy leaves an estate: spending and the loan (or the taxes of selling) use up the portfolio first.
+2.1m card: PORTFOLIO LENS What you own VTI and QQQ move almost as one (0.85); GLD is the real diversifier, averaging 0.13 against the rest.
+2.1m card: COST OF LIVING · ST. LOUIS VS BANGKOK The same life, abroad Bangkok cuts your annual spend by 24%; healthcare and other save the most.
+2.1m card: ESTATE NOTE: Median estate at 85, today’s dollars. At death your heirs inherit at a stepped-up basis: the gains you borrowed against are never taxed, and the loan is repaid from the estate. Selling as you go starts at the portfolio less your existing $2.1M loan, with no debt, so both start from the same net worth, but the opening sale’s $263K tax comes off the borrowing side first.
+== balance 2.57m: field=2,570,000 warn=Above your margin-call LTV: the lender forces a sale today — about $3.0M sold, $428K in tax — bringing the loan to 45% LTV and leaving about $2.2K of net worth — less than a year of spending. [is-broken] {color=rgb(181, 54, 31) bg=rgba(210, 69, 47, 0.1) weight=500}
+2.57m fan Net worth: title="The range of futures" | NET WORTH · TODAY’S DOLLARS The range of futures In the median future the loan consumes everything by about 56: net worth falls from $2.2K to $0.
+2.57m fan Net worth readout start: Age 55 year 0 Median $2.2K Middle half $2.2K–$2.2K 90% of futures $2.2K–$2.2K | end: Age 85 year 30 Median $0 Middle half $0–$0 90% of futures $0–$0
+2.57m fan Portfolio: title="The portfolio, after today’s forced sale" | PORTFOLIO VALUE · TODAY’S DOLLARS The portfolio, after today’s forced sale The plan opens with a forced sale of $3.0M today, paying $428K in tax; in the median future the lender liquidates the portfolio by about 56.
+2.57m fan Portfolio readout start: Age 55 year 0 Median $3.9K Middle half $3.9K–$3.9K 90% of futures $3.9K–$3.9K | end: Age 85 year 30 Median $0 Middle half $0–$0 90% of futures $0–$0
+2.57m fan Loan: title="The loan, compounding" | LOAN BALANCE · TODAY’S DOLLARS The loan, compounding Borrowing compounds: from your existing $2.6M balance, cut to $1.8K by the opening sale, the median plan is liquidated by about 56.
+2.57m fan Loan readout start: Age 55 year 0 Median $1.8K Middle half $1.8K–$1.8K 90% of futures $1.8K–$1.8K | end: Age 85 year 30 Median $0 Middle half $0–$0 90% of futures $0–$0
+2.57m fan Loan-to-value: title="How close to the line" | LOAN-TO-VALUE How close to the line A forced sale today brings loan-to-value to 45%; the median then peaks at 100% around 56, above the 60% call line; the worst 5% touch it by 56.
+2.57m fan Loan-to-value readout start: Age 55 year 0 Median 45% Middle half 45%–45% 90% of futures 45%–45% | end: Age 85 year 30 Median 100% Middle half 100%–100% 90% of futures 100%–100%
+2.57m card: LOAN-TO-VALUE How close to the line A forced sale today brings loan-to-value to 45%; the median then peaks at 100% around 56, above the 60% call line; the worst 5% touch it by 56.
+2.57m card: MARGIN CALLS · FIRST FORCED SALE When the risk arrives Risk is concentrated early: 80% of forced sales happen in the first year (ages 55 to 56), when the little the opening sale leaves is spent within the first year. The opening sale today isn’t counted.
+2.57m card: SAFE SPENDING · 90% CONFIDENCE What you could spend Even a token budget misses 90% confidence: on these terms any loan outgrows the portfolio in too many futures. A lower loan rate, more growth or more income would change that.
+2.57m card: ESTATE · TODAY’S DOLLARS Borrow vs. sell In the median future neither strategy leaves an estate: spending and the loan (or the taxes of selling) use up the portfolio first.
+2.57m card: PORTFOLIO LENS What you own VTI and QQQ move almost as one (0.85); GLD is the real diversifier, averaging 0.13 against the rest.
+2.57m card: COST OF LIVING · ST. LOUIS VS BANGKOK The same life, abroad Bangkok cuts your annual spend by 24%; healthcare and other save the most.
+2.57m card: ESTATE NOTE: Median estate at 85, today’s dollars. At death your heirs inherit at a stepped-up basis: the gains you borrowed against are never taxed, and the loan is repaid from the estate. Selling as you go starts at the portfolio less your existing $2.6M loan, with no debt, so both start from the same net worth, but the opening sale’s $428K tax comes off the borrowing side first.
+== balance 2.7m: field=2,700,000 warn=The forced sale can’t cover this after tax: the plan fails at once. [is-broken] {color=rgb(181, 54, 31) bg=rgba(210, 69, 47, 0.1) weight=500}
+2.7m fan Net worth: title="The range of futures" | NET WORTH · TODAY’S DOLLARS The range of futures This plan fails at once: after tax, a forced sale can’t cover the existing balance.
+2.7m fan Net worth readout start: Age 55 year 0 Median $0 Middle half $0–$0 90% of futures $0–$0 | end: Age 85 year 30 Median $0 Middle half $0–$0 90% of futures $0–$0
+2.7m fan Portfolio: title="The portfolio" | PORTFOLIO VALUE · TODAY’S DOLLARS The portfolio This plan fails at once: after tax, a forced sale can’t cover the existing balance.
+2.7m fan Portfolio readout start: Age 55 year 0 Median $0 Middle half $0–$0 90% of futures $0–$0 | end: Age 85 year 30 Median $0 Middle half $0–$0 90% of futures $0–$0
+2.7m fan Loan: title="The loan, compounding" | LOAN BALANCE · TODAY’S DOLLARS The loan, compounding This plan fails at once: after tax, a forced sale can’t cover the existing balance.
+2.7m fan Loan readout start: Age 55 year 0 Median $0 Middle half $0–$0 90% of futures $0–$0 | end: Age 85 year 30 Median $0 Middle half $0–$0 90% of futures $0–$0
+2.7m fan Loan-to-value: title="How close to the line" | LOAN-TO-VALUE How close to the line This plan fails at once: after tax, a forced sale can’t cover the existing balance.
+2.7m fan Loan-to-value readout start: Age 55 year 0 Median 100% Middle half 100%–100% 90% of futures 100%–100% | end: Age 85 year 30 Median 100% Middle half 100%–100% 90% of futures 100%–100%
+2.7m card: LOAN-TO-VALUE How close to the line This plan fails at once: after tax, a forced sale can’t cover the existing balance.
+2.7m card: MARGIN CALLS · FIRST FORCED SALE When the risk arrives This plan fails at once: after tax, a forced sale can’t cover the existing balance.
+2.7m card: SAFE SPENDING · 90% CONFIDENCE What you could spend Even a token budget misses 90% confidence: on these terms any loan outgrows the portfolio in too many futures. A lower loan rate, more growth or more income would change that.
+2.7m card: ESTATE · TODAY’S DOLLARS Borrow vs. sell In the median future neither strategy leaves an estate: spending and the loan (or the taxes of selling) use up the portfolio first.
+2.7m card: PORTFOLIO LENS What you own VTI and QQQ move almost as one (0.85); GLD is the real diversifier, averaging 0.13 against the rest.
+2.7m card: COST OF LIVING · ST. LOUIS VS BANGKOK The same life, abroad Bangkok cuts your annual spend by 24%; healthcare and other save the most.
+2.7m card: ESTATE NOTE: Median estate at 85, today’s dollars. At death your heirs inherit at a stepped-up basis: the gains you borrowed against are never taxed, and the loan is repaid from the estate. Selling as you go starts at the portfolio less your existing $2.7M loan, with no debt; the borrowing side fails at once, as a forced sale can’t cover that balance after tax.
+ERRORS/WARNINGS: none

@@ -1,4 +1,3 @@
-$ npm run build
 npm notice run evelo@2.0.0 build
 npm notice run tsc -b && vite build
 vite v8.3.6 building client environment for production...
@@ -692,27 +691,19 @@ dist/assets/Styleguide-CbO0jxed.css                                 1.08 kB │ 
 dist/assets/views-CxSpT-RT.css                                      1.17 kB │ gzip:   0.51 kB
 dist/assets/MethodView-DIZaZpEk.css                                 8.66 kB │ gzip:   2.30 kB
 dist/assets/AtlasView-DiVE1rs5.css                                 54.28 kB │ gzip:  10.33 kB
-dist/assets/index-B74r0UH1.css                                     87.63 kB │ gzip:  17.53 kB
-dist/assets/Styleguide-Bdjf6JQ1.js                                  8.28 kB │ gzip:   2.88 kB
-dist/assets/MethodView-Cdgtl-NE.js                                 35.89 kB │ gzip:  12.88 kB
+dist/assets/index-DcFdO-Kk.css                                     87.61 kB │ gzip:  17.54 kB
+dist/assets/Styleguide-1r9BvovS.js                                  8.27 kB │ gzip:   2.87 kB
+dist/assets/MethodView-CB38wiME.js                                 35.89 kB │ gzip:  12.87 kB
 dist/assets/land-110m-BK2aCDID.js                                  55.28 kB │ gzip:  21.44 kB
 dist/assets/motionFeatures-BTop_Bvg.js                             63.13 kB │ gzip:  20.26 kB
 dist/assets/SwitchLayoutGroupContext-CWUgHHbR.js                   75.20 kB │ gzip:  27.27 kB
-dist/assets/index-D04nzhBc.js                                     540.10 kB │ gzip: 177.37 kB
-dist/assets/AtlasView-BzktdahS.js                               1,194.00 kB │ gzip: 338.81 kB
+dist/assets/index-8rLHSCOn.js                                     541.02 kB │ gzip: 177.65 kB
+dist/assets/AtlasView-CtYC8Tas.js                               1,193.99 kB │ gzip: 338.83 kB
 
 [plugin builtin:vite-reporter] 
 (!) Some chunks are larger than 500 kB after minification. Consider:
 - Using dynamic import() to code-split the application
 - Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
 - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
-✓ built in 3.07s
-[33m[PLUGIN_TIMINGS] [0mJavaScript callbacks ran for 2.1s of this 3.0s build (70%).
-The slowest callbacks, timed inside each callback (the wait before a callback starts is excluded, the time it awaits is included):
-  - plugin vite:worker-import-meta-url transform (57%, 1.7s, 1 call)
-Additional callback time came from the callbacks below and from callbacks under 1s.
-2 callbacks are listed without a time. Their calls overlapped, so the time inside one call includes work from other calls. To find their cost, profile the build with `node --cpu-prof`:
-  - plugin vite:asset load (665 calls)
-  - plugin vite:css transform (16 calls)
-See https://rolldown.rs/reference/InputOptions.checks#bundlertimings for more details.
-
+✓ built in 1.86s
+exit 0
