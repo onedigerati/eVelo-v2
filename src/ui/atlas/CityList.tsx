@@ -7,6 +7,8 @@ import { FX_RISK_LABEL, costDelta, fxRisk, inRegion, successColor, successTextCo
 import { CodeChip } from './CodeChip'
 import { expatPickFor, hasProfile } from '../../data/expatPicks'
 import { VerifiedMark } from './VerifiedMark'
+import { ListRegionChips } from './RegionChips'
+import { matchesQuery } from './regionCounts'
 import { verifiedLabel } from './picks'
 import { taxStatus } from './taxLines'
 import { costBands, defaultOpen, groupTiers, oddsBands, type Tier } from './tiers'
@@ -31,15 +33,8 @@ export function CityList({ rows, homeId, destId, region, compare, onToggleCompar
   const query = useDeferredValue(q.trim().toLowerCase())
 
   const shown = useMemo(() => {
-    const f = rows.filter(
-      (r) =>
-        inRegion(r.city, region) &&
-        (!query ||
-          r.city.name.toLowerCase().includes(query) ||
-          r.city.country.toLowerCase().includes(query) ||
-          r.city.currency.toLowerCase() === query ||
-          r.city.countryCode.toLowerCase() === query),
-    )
+    // One search rule with the region chips' counts (regionCounts.matchesQuery).
+    const f = rows.filter((r) => inRegion(r.city, region) && matchesQuery(r.city, query))
     if (sort === 'cost') return [...f].sort((a, b) => a.spendUsd - b.spendUsd || a.rank - b.rank)
     if (sort === 'name') return [...f].sort((a, b) => a.city.name.localeCompare(b.city.name))
     return f
@@ -113,6 +108,7 @@ export function CityList({ rows, homeId, destId, region, compare, onToggleCompar
             { value: 'name', label: 'A–Z' },
           ]}
         />
+        <ListRegionChips rows={rows} query={query} />
       </div>
 
       {pinned.length > 0 && (

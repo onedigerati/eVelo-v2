@@ -21,6 +21,7 @@ import {
   type RegionChip,
 } from './atlasData'
 import { CityList } from './CityList'
+import { RegionProvider } from './RegionChips'
 import { CodeChip } from './CodeChip'
 import { CompareSheet } from './CompareSheet'
 import { hasProfile } from '../../data/expatPicks'
@@ -198,16 +199,18 @@ export function AtlasView() {
           subtitle="Tap a city to make it your destination; tick up to three to compare side by side."
         >
           {rows.length ? (
-            <CityList
-              rows={rows}
-              homeId={homeId}
-              destId={destId}
-              region={region}
-              compare={compare}
-              onToggleCompare={toggleCompare}
-              onChoose={choose}
-              onOpenProfile={setProfileId}
-            />
+            <RegionProvider region={region} setRegion={setRegion}>
+              <CityList
+                rows={rows}
+                homeId={homeId}
+                destId={destId}
+                region={region}
+                compare={compare}
+                onToggleCompare={toggleCompare}
+                onChoose={choose}
+                onOpenProfile={setProfileId}
+              />
+            </RegionProvider>
           ) : (
             <div className="clist__skel" aria-busy="true">
               {Array.from({ length: 8 }, (_, i) => (

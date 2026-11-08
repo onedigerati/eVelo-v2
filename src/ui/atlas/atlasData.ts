@@ -14,13 +14,8 @@ export const ATLAS_DEBOUNCE_MS = 380
 
 /* ---------------------------------------------------------------- Regions */
 
-export type RegionChip = 'All' | 'North America' | 'Latin America' | 'Europe' | 'Asia' | 'Oceania' | 'Other'
-export const REGION_CHIPS: RegionChip[] = ['All', 'North America', 'Latin America', 'Europe', 'Asia', 'Oceania', 'Other']
-
-export function regionOf(c: City): Exclude<RegionChip, 'All'> {
-  return c.region === 'Middle East' || c.region === 'Africa' ? 'Other' : c.region
-}
-export const inRegion = (c: City, r: RegionChip) => r === 'All' || regionOf(c) === r
+// Pure definitions live in regionCounts.ts so tests can import them without the store.
+export { REGION_CHIPS, inRegion, regionOf, type RegionChip } from './regionCounts'
 
 /* ---------------------------------------------------------------- Outcome ramp */
 
