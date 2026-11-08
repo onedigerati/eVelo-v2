@@ -1,5 +1,11 @@
 // The monthly BBD path loop, shared by simulate (full recording), atlas and solve (success only).
 //
+// Start: the BBD path opens with the plan's existing line-of-credit balance as its loan
+// (L = initialLoan, already borrowed to live), and year 0 records portfolio V, loan L, LTV L/V and
+// net worth V - L. A balance at or above the portfolio breaks the path at once (forced sale in
+// month 0, year 0 recorded as broken). A balance above maxLtv · V but below V is handled by month
+// 0's margin check (step 5), so it counts as a forced sale in month 0.
+//
 // Month t, in order:
 //   1. portfolio *= 1 + r_t - dividendTaxDrag/12;  price level *= 1 + cpi_t;  FX walk steps.
 //   2. loan accrues interest (loanRate/12, capitalized).
@@ -18,7 +24,9 @@
 //      portfolio (S >= V, or a non-positive denominator) counts as broken, not bruised.
 //   An insolvency is itself a forced liquidation, so the month a path breaks is recorded as its
 //   first forced-sale month if no earlier margin call happened (feeds marginCallByYear).
-// The sell strategy (recording mode only) runs on the same returns: spending net of income is
+// The sell strategy (recording mode only) runs on the same returns. It starts with no debt at
+// max(0, V - initialLoan) — the balance repaid by selling up front — with cost basis scaled pro
+// rata (B · Vs/V), so the embedded-gain fraction is unchanged. Spending net of income is
 // funded by selling shares (gross S = need / (1 - g·tax)), surplus is reinvested, no loan. It pays
 // the same year-end wealth tax by selling shares with the same capital-gains gross-up.
 // Inheritance tax (recording mode only) is applied at the horizon to both real estates: each of
@@ -64,6 +72,9 @@ export interface KernelConfig {
   fxSigmaM: number
   incomeMonthly: number
   incomeStartMonth: number
+  /** Existing loan balance at month 0 (USD, already borrowed); absent = 0. The sell strategy
+   *  starts at portfolio - initialLoan with no debt. */
+  initialLoan?: number
   /** Annual wealth tax from moveMonth on (bands in real today's USD); null/absent = none. */
   wealthTax?: { gross: boolean; bands: PackedBands } | null
   /** Inheritance tax at the horizon (real today's USD); null/absent = none. */
@@ -132,29 +143,39 @@ export function runPaths(
     inh === null || !(estate > 0)
       ? 0
       : inh.heirs * bandTaxPacked(Math.max(0, estate / inh.heirs - inh.perHeirAllowance), inh.bands)
+  const L0raw = cfg.initialLoan ?? 0
+  const L0 = L0raw > 0 ? L0raw : 0 // also maps NaN to 0
   const paths = sc.paths
   let clean = 0
   for (let p = 0; p < paths; p++) {
     const o = p * sc.T
     let V = cfg.portfolio
     let B = V * cfg.basisFraction
-    let L = 0
+    let L = L0
     let P = 1
     let X = 0
-    let called = -1
-    let broken = false
-    // sell strategy
-    let Vs = V
-    let Bs = B
+    // A balance at or above the portfolio is insolvent from the start: liquidated in month 0.
+    let broken = L0 > 0 && L0 >= V
+    let called = broken ? 0 : -1
+    // sell strategy: repay the balance up front by selling, basis pro rata
+    let Vs = Math.max(0, V - L0)
+    let Bs = V > 0 ? B * (Vs / V) : 0
     let taxReal = 0
     let wtReal = 0
     let taxMonth = firstTaxMonth
     let growth = 1
     if (rec) {
-      rec.port[p] = V
-      rec.nw[p] = V
-      rec.loan[p] = 0
-      rec.ltv[p] = 0
+      if (broken) {
+        rec.port[p] = 0
+        rec.nw[p] = 0
+        rec.loan[p] = 0
+        rec.ltv[p] = 1
+      } else {
+        rec.port[p] = V
+        rec.nw[p] = V - L
+        rec.loan[p] = L
+        rec.ltv[p] = V > 0 ? L / V : 0
+      }
     }
     for (let t = 0; t < T; t++) {
       const r = sc.ret[o + t] - dragM
