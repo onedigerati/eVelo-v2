@@ -1,3 +1,5 @@
-$ node hint.mjs docs/evidence/stage-2  (vite preview :4317)
-balance 0: Portfolio hint = "Taxable brokerage assets you would borrow against. Try “2.5m”."
-balance 2500000: Portfolio hint = "Taxable brokerage assets you would borrow against. Try “2.5m”. Must stay above your $2.5M loan balance."
+$ node hint2.mjs docs/evidence/stage-2  (playwright-core, vite preview :4317)
+portfolio 3000000, balance 0: Portfolio hint = "Taxable brokerage assets you would borrow against. Try “2.5m”."
+portfolio 3000000, balance 2500000: Portfolio hint = "Taxable brokerage assets you would borrow against. Try “2.5m”. Must stay above your $2.5M loan balance."
+portfolio 2000000, balance 1999999: Portfolio hint = "Taxable brokerage assets you would borrow against. Try “2.5m”. Must stay above your $1,999,999 loan balance."
+portfolio 2000000, balance 1500000: Portfolio hint = "Taxable brokerage assets you would borrow against. Try “2.5m”. Must stay above your $1.5M loan balance."

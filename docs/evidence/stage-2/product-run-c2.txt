@@ -1,11 +1,11 @@
-$ node v3.mjs docs/evidence/stage-2 c2  (playwright-core, chromium 1200, vite preview :4317; base build e363375 on :4318)
+$ node v4.mjs docs/evidence/stage-2 c2  (playwright-core, chromium 1200, vite preview :4317; base build e363375 on :4318)
 c2 1.8m-at-line: field=1,800,000 meter=60% today warn=(none)
-c2 2.1m-over: field=2,100,000 meter=70% today warn=Above your margin-call LTV: the lender forces a sale today — about $1.8M sold, $263K in tax — bringing the loan to 45% LTV.
+c2 2.1m-over: field=2,100,000 meter=70% today warn=Above your margin-call LTV: the lender forces a sale today — about $1.8M sold, $263K in tax — bringing the loan to 45% LTV and leaving about $637K of net worth.
 c2/c4 2.1m-over fan Net worth: NET WORTH · TODAY’S DOLLARS The range of futures In the median future the loan consumes everything by 85: net worth falls from $637K to $0, and only the luckiest 5% end above $4.3M.
 c2/c4 2.1m-over fan Net worth year0: Age 55 year 0 Median $637K Middle half $637K–$637K 90% of futures $637K–$637K
-c2/c4 2.1m-over fan Portfolio: PORTFOLIO VALUE · TODAY’S DOLLARS The portfolio, untouched The plan opens with a forced sale of $1.8M today, paying $263K in tax; after that, nothing more is sold to fund your life, and the median portfolio compounds to $0 by 85, carrying the loan on top.
+c2/c4 2.1m-over fan Portfolio: PORTFOLIO VALUE · TODAY’S DOLLARS The portfolio, untouched The plan opens with a forced sale of $1.8M today, paying $263K in tax; in the median future the lender liquidates the portfolio by about 62.
 c2/c4 2.1m-over fan Portfolio year0: Age 55 year 0 Median $1.2M Middle half $1.2M–$1.2M 90% of futures $1.2M–$1.2M
-c2/c4 2.1m-over fan Loan: LOAN BALANCE · TODAY’S DOLLARS The loan, compounding Borrowing compounds: from your existing $2.1M balance, cut to $521K by the opening sale, the median loan reaches $0 by 85, and $1.8M in the costliest 5% of futures.
+c2/c4 2.1m-over fan Loan: LOAN BALANCE · TODAY’S DOLLARS The loan, compounding Borrowing compounds: from your existing $2.1M balance, cut to $521K by the opening sale, the median plan is liquidated by about 62, and the loan reaches $1.8M in the costliest 5% of futures.
 c2/c4 2.1m-over fan Loan year0: Age 55 year 0 Median $521K Middle half $521K–$521K 90% of futures $521K–$521K
 c2/c4 2.1m-over fan Loan-to-value: LOAN-TO-VALUE How close to the line A forced sale today brings loan-to-value to 45%; the median then peaks at 100% around 62, above the 60% call line; the worst 5% touch it by 58.
 c2/c4 2.1m-over fan Loan-to-value year0: Age 55 year 0 Median 45% Middle half 45%–45% 90% of futures 45%–45%
@@ -15,25 +15,41 @@ c4 2.1m-over card: SAFE SPENDING · 90% CONFIDENCE What you could spend Even a t
 c4 2.1m-over card: ESTATE · TODAY’S DOLLARS Borrow vs. sell In the median future neither strategy leaves an estate: spending and the loan (or the taxes of selling) use up the portfolio first.
 c4 2.1m-over card: PORTFOLIO LENS What you own VTI and QQQ move almost as one (0.85); GLD is the real diversifier, averaging 0.13 against the rest.
 c4 2.1m-over card: COST OF LIVING · ST. LOUIS VS BANGKOK The same life, abroad Bangkok cuts your annual spend by 24%; healthcare and other save the most.
-c4 2.1m-over card: ESTATE NOTE: Median estate at 85, today’s dollars. At death your heirs inherit at a stepped-up basis: the gains you borrowed against are never taxed, and the loan is repaid from the estate. Selling as you go starts at the portfolio less your existing $2.1M loan, with no debt, so both start from the same net worth.
+c4 2.1m-over card: ESTATE NOTE: Median estate at 85, today’s dollars. At death your heirs inherit at a stepped-up basis: the gains you borrowed against are never taxed, and the loan is repaid from the estate. Selling as you go starts at the portfolio less your existing $2.1M loan, with no debt, so both start from the same net worth, but the opening sale’s $263K tax comes off the borrowing side first.
 c2 2.1m-over verdict: THE VERDICT · 30 YEARS, AGE 55 → 85 Your plan breaks in most futures. Only 3 3% % hold. Over 30 years, age 55 to 85, living in Bangkok from age 55. Only 3 of every 100 simulated markets get through without a forced sale; in most the loan overtakes the portfolio. St. Louis 1% → Bangkok 3% +2 pts HOLD
-c2 2.57m-over: field=2,570,000 meter=86% today warn=Above your margin-call LTV: the lender forces a sale today — about $3.0M sold, $428K in tax — bringing the loan to 45% LTV.
+c2 2.57m-over: field=2,570,000 meter=86% today warn=Above your margin-call LTV: the lender forces a sale today — about $3.0M sold, $428K in tax — bringing the loan to 45% LTV and leaving about $2.2K of net worth. [is-broken]
+c2/c4 2.57m-over fan Net worth: NET WORTH · TODAY’S DOLLARS The range of futures In the median future the loan consumes everything by 85: net worth falls from $2.2K to $0.
+c2/c4 2.57m-over fan Net worth year0: Age 55 year 0 Median $2.2K Middle half $2.2K–$2.2K 90% of futures $2.2K–$2.2K
+c2/c4 2.57m-over fan Portfolio: PORTFOLIO VALUE · TODAY’S DOLLARS The portfolio, untouched The plan opens with a forced sale of $3.0M today, paying $428K in tax; in the median future the lender liquidates the portfolio by about 56.
+c2/c4 2.57m-over fan Portfolio year0: Age 55 year 0 Median $3.9K Middle half $3.9K–$3.9K 90% of futures $3.9K–$3.9K
+c2/c4 2.57m-over fan Loan: LOAN BALANCE · TODAY’S DOLLARS The loan, compounding Borrowing compounds: from your existing $2.6M balance, cut to $1.8K by the opening sale, the median plan is liquidated by about 56.
+c2/c4 2.57m-over fan Loan year0: Age 55 year 0 Median $1.8K Middle half $1.8K–$1.8K 90% of futures $1.8K–$1.8K
+c2/c4 2.57m-over fan Loan-to-value: LOAN-TO-VALUE How close to the line A forced sale today brings loan-to-value to 45%; the median then peaks at 100% around 56, above the 60% call line; the worst 5% touch it by 56.
+c2/c4 2.57m-over fan Loan-to-value year0: Age 55 year 0 Median 45% Middle half 45%–45% 90% of futures 45%–45%
+c4 2.57m-over card: LOAN-TO-VALUE How close to the line A forced sale today brings loan-to-value to 45%; the median then peaks at 100% around 56, above the 60% call line; the worst 5% touch it by 56.
+c4 2.57m-over card: MARGIN CALLS · FIRST FORCED SALE When the risk arrives Risk is concentrated early: 80% of forced sales happen in the first year (ages 55 to 56), when a crash can hit while the loan is still near the call line after the opening sale. The opening sale today isn’t counted.
+c4 2.57m-over card: SAFE SPENDING · 90% CONFIDENCE What you could spend Even a token budget misses 90% confidence: on these terms any loan outgrows the portfolio in too many futures. A lower loan rate, more growth or more income would change that.
+c4 2.57m-over card: ESTATE · TODAY’S DOLLARS Borrow vs. sell In the median future neither strategy leaves an estate: spending and the loan (or the taxes of selling) use up the portfolio first.
+c4 2.57m-over card: PORTFOLIO LENS What you own VTI and QQQ move almost as one (0.85); GLD is the real diversifier, averaging 0.13 against the rest.
+c4 2.57m-over card: COST OF LIVING · ST. LOUIS VS BANGKOK The same life, abroad Bangkok cuts your annual spend by 24%; healthcare and other save the most.
+c4 2.57m-over card: ESTATE NOTE: Median estate at 85, today’s dollars. At death your heirs inherit at a stepped-up basis: the gains you borrowed against are never taxed, and the loan is repaid from the estate. Selling as you go starts at the portfolio less your existing $2.6M loan, with no debt, so both start from the same net worth, but the opening sale’s $428K tax comes off the borrowing side first.
+c2 2.57m-over verdict: THE VERDICT · 30 YEARS, AGE 55 → 85 Your plan breaks in most futures. Only 0 0% % hold. Over 30 years, age 55 to 85, living in Bangkok from age 55. Not one in a hundred simulated markets gets through without a forced sale; in most the loan overtakes the portfolio. St. Louis 0% → Bangkok 0% 0 pts HOL
 c2 2.7m-breaks: field=2,700,000 meter=90% today warn=The forced sale can’t cover this after tax: the plan fails at once. [is-broken]
-c2/c4 2.7m-breaks fan Net worth: NET WORTH · TODAY’S DOLLARS The range of futures In the median future the loan consumes everything by 85: net worth falls from $0 to $0.
+c2/c4 2.7m-breaks fan Net worth: NET WORTH · TODAY’S DOLLARS The range of futures This plan fails at once: after tax, a forced sale can’t cover the existing balance.
 c2/c4 2.7m-breaks fan Net worth year0: Age 55 year 0 Median $0 Middle half $0–$0 90% of futures $0–$0
-c2/c4 2.7m-breaks fan Portfolio: PORTFOLIO VALUE · TODAY’S DOLLARS The portfolio, untouched Nothing is sold to fund your life: the median portfolio compounds to $0 by 85, carrying the loan on top.
+c2/c4 2.7m-breaks fan Portfolio: PORTFOLIO VALUE · TODAY’S DOLLARS The portfolio, untouched This plan fails at once: after tax, a forced sale can’t cover the existing balance.
 c2/c4 2.7m-breaks fan Portfolio year0: Age 55 year 0 Median $0 Middle half $0–$0 90% of futures $0–$0
-c2/c4 2.7m-breaks fan Loan: LOAN BALANCE · TODAY’S DOLLARS The loan, compounding Borrowing compounds: from your existing $2.7M balance, the median loan reaches $0 by 85, and $0 in the costliest 5% of futures.
+c2/c4 2.7m-breaks fan Loan: LOAN BALANCE · TODAY’S DOLLARS The loan, compounding This plan fails at once: after tax, a forced sale can’t cover the existing balance.
 c2/c4 2.7m-breaks fan Loan year0: Age 55 year 0 Median $0 Middle half $0–$0 90% of futures $0–$0
-c2/c4 2.7m-breaks fan Loan-to-value: LOAN-TO-VALUE How close to the line Median loan-to-value starts at its peak, 100% (above the 60% call line), and falls from there; the worst 5% start at or past it.
+c2/c4 2.7m-breaks fan Loan-to-value: LOAN-TO-VALUE How close to the line This plan fails at once: after tax, a forced sale can’t cover the existing balance.
 c2/c4 2.7m-breaks fan Loan-to-value year0: Age 55 year 0 Median 100% Middle half 100%–100% 90% of futures 100%–100%
-c4 2.7m-breaks card: LOAN-TO-VALUE How close to the line Median loan-to-value starts at its peak, 100% (above the 60% call line), and falls from there; the worst 5% start at or past it.
-c4 2.7m-breaks card: MARGIN CALLS · FIRST FORCED SALE When the risk arrives Risk is concentrated early: 80% of forced sales happen in the first year (ages 55 to 56), when a crash can hit while your existing balance still sits near the call line.
+c4 2.7m-breaks card: LOAN-TO-VALUE How close to the line This plan fails at once: after tax, a forced sale can’t cover the existing balance.
+c4 2.7m-breaks card: MARGIN CALLS · FIRST FORCED SALE When the risk arrives This plan fails at once: after tax, a forced sale can’t cover the existing balance.
 c4 2.7m-breaks card: SAFE SPENDING · 90% CONFIDENCE What you could spend Even a token budget misses 90% confidence: on these terms any loan outgrows the portfolio in too many futures. A lower loan rate, more growth or more income would change that.
 c4 2.7m-breaks card: ESTATE · TODAY’S DOLLARS Borrow vs. sell In the median future neither strategy leaves an estate: spending and the loan (or the taxes of selling) use up the portfolio first.
 c4 2.7m-breaks card: PORTFOLIO LENS What you own VTI and QQQ move almost as one (0.85); GLD is the real diversifier, averaging 0.13 against the rest.
 c4 2.7m-breaks card: COST OF LIVING · ST. LOUIS VS BANGKOK The same life, abroad Bangkok cuts your annual spend by 24%; healthcare and other save the most.
-c4 2.7m-breaks card: ESTATE NOTE: Median estate at 85, today’s dollars. At death your heirs inherit at a stepped-up basis: the gains you borrowed against are never taxed, and the loan is repaid from the estate. Selling as you go starts at the portfolio less your existing $2.7M loan, with no debt, so both start from the same net worth.
+c4 2.7m-breaks card: ESTATE NOTE: Median estate at 85, today’s dollars. At death your heirs inherit at a stepped-up basis: the gains you borrowed against are never taxed, and the loan is repaid from the estate. Selling as you go starts at the portfolio less your existing $2.7M loan, with no debt; the borrowing side fails at once, as a forced sale can’t cover that balance after tax.
 c2 2.7m-breaks verdict: THE VERDICT · 30 YEARS, AGE 55 → 85 Your plan breaks in most futures. Only 0 0% % hold. Over 30 years, age 55 to 85, living in Bangkok from age 55. Not one in a hundred simulated markets gets through without a forced sale; in most the loan overtakes the portfolio. St. Louis 0% → Bangkok 0% 0 pts HOL
 c2 typed "3000000" -> field=2,999,999 stored=2999999 meter=100% today warn=The forced sale can’t cover this after tax: the plan fails at once. [is-broken]
 c2 typed "5m" -> field=2,999,999 stored=2999999 meter=100% today warn=The forced sale can’t cover this after tax: the plan fails at once. [is-broken]

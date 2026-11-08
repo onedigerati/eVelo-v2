@@ -1,4 +1,4 @@
-$ node v3.mjs docs/evidence/stage-2 c5  (playwright-core, chromium 1200, vite preview :4317; base build e363375 on :4318)
+$ node v4.mjs docs/evidence/stage-2 c5  (playwright-core, chromium 1200, vite preview :4317; base build e363375 on :4318)
 c5 light desktop borrowing horizontal overflow px: 0
 c5 light desktop outlook horizontal overflow px: 0
 c5 light phone borrowing horizontal overflow px: 0
@@ -8,3 +8,4 @@ c5 dark desktop outlook horizontal overflow px: 0
 c5 dark phone borrowing horizontal overflow px: 0
 c5 dark phone outlook horizontal overflow px: 0
 ERRORS/WARNINGS: none
+phone.mjs (re-shoots c5-borrowing-*-phone.png scrolled to the field) errors: none

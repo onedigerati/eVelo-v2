@@ -1,4 +1,4 @@
-$ node v3.mjs docs/evidence/stage-2 c1  (playwright-core, chromium 1200, vite preview :4317; base build e363375 on :4318)
+$ node v4.mjs docs/evidence/stage-2 c1  (playwright-core, chromium 1200, vite preview :4317; base build e363375 on :4318)
 c1 Borrowing field labels in order: ["Existing loan balance","Loan interest rate","Margin-call threshold","LTV after a forced sale","Capital-gains tax when selling","Dividend tax drag"]
 c1 field value: 500,000 | meter: 17% today | warn: (none)
 c1 section summary: 04 Borrowing

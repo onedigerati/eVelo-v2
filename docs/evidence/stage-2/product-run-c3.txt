@@ -1,0 +1,19 @@
+$ node v4.mjs docs/evidence/stage-2 c3  (playwright-core, chromium 1200, vite preview :4317; base build e363375 on :4318)
+c3 saved plan without field: field=0 meter=0% today toasts=[]
+c3 share link without field: field=0 meter=0% today toasts=["Opened a shared plan\nChanges you make stay on this device."]
+c3 share link 1e12 on 3M: field=2,999,999 meter=100% today toasts=["Opened a shared plan\nChanges you make stay on this device."]
+c3 share link -500000: field=0 meter=0% today toasts=["Opened a shared plan\nChanges you make stay on this device."]
+c3 share link "500000" string: field=0 meter=0% today toasts=["Opened a shared plan\nChanges you make stay on this device."]
+c3 saved plan 5M on 1M: field=999,999 meter=100% today toasts=[]
+c3 saved plan NaN-ish null: field=0 meter=0% today toasts=[]
+c3 light-desktop before: portfolio=3,000,000 loan=2,500,000 portfolio field text: $
+c3 light-desktop toast detail metrics: {"scrollW":313,"clientW":313,"h":20,"whiteSpace":"normal","textOverflow":"clip","radius":"28px"}
+c3 light-desktop after portfolio=2,000,000: field=1,999,999 stored=1999999 toasts=["Loan balance lowered to $1,999,999 It was $2,500,000; it has to stay below the portfolio."] portfolio field text: $
+c3 light-desktop after portfolio=1,000,000: field=999,999 toasts=["Loan balance lowered to $999,999 It was $2,500,000; it has to stay below the portfolio."]
+c3 light-desktop typed loan 5m: field=999,999 toasts=[]
+c3 dark-phone before: portfolio=3,000,000 loan=2,500,000 portfolio field text: $
+c3 dark-phone toast detail metrics: {"scrollW":292,"clientW":292,"h":40,"whiteSpace":"normal","textOverflow":"clip","radius":"28px"}
+c3 dark-phone after portfolio=2,000,000: field=1,999,999 stored=1999999 toasts=["Loan balance lowered to $1,999,999 It was $2,500,000; it has to stay below the portfolio."] portfolio field text: $
+c3 dark-phone after portfolio=1,000,000: field=999,999 toasts=["Loan balance lowered to $999,999 It was $2,500,000; it has to stay below the portfolio."]
+c3 dark-phone typed loan 5m: field=999,999 toasts=[]
+ERRORS/WARNINGS: none

@@ -4,17 +4,7 @@ npm notice run 'vitest' run src/state/__tests__/share.test.ts src/state/__tests_
 
  RUN  v5.1.0 /home/jonah/repos/eVelo-v2
 
- ✓ src/state/__tests__/share.test.ts > share links > round-trips changed inputs 4ms
- ✓ src/state/__tests__/share.test.ts > share links > defaults encode compactly 0ms
- ✓ src/state/__tests__/share.test.ts > share links > rejects garbage and wrong types 0ms
- ✓ src/state/__tests__/share.test.ts > share links > builds a full URL whose hash decodes back to the plan 1ms
- ✓ src/state/__tests__/share.test.ts > share links > clamps hostile numbers to the UI ranges 2ms
- ✓ src/state/__tests__/share.test.ts > share links > leaves every plan inside the UI ranges unchanged 3ms
- ✓ src/state/__tests__/share.test.ts > share links > existing loan > defaults to no loan and still encodes short 0ms
- ✓ src/state/__tests__/share.test.ts > share links > existing loan > loads an old share link or saved plan without the field as 0 0ms
- ✓ src/state/__tests__/share.test.ts > share links > existing loan > round-trips a balance 1ms
- ✓ src/state/__tests__/share.test.ts > share links > existing loan > clamps hostile balances 1ms
- ✓ src/state/__tests__/loanClamp.test.ts > keepLoanUnderPortfolio > passes a balance under the portfolio through untouched (same object) 1ms
+ ✓ src/state/__tests__/loanClamp.test.ts > keepLoanUnderPortfolio > passes a balance under the portfolio through untouched (same object) 2ms
  ✓ src/state/__tests__/loanClamp.test.ts > keepLoanUnderPortfolio > lowers a balance at or above the portfolio to $1 under it, and reports it 0ms
  ✓ src/state/__tests__/loanClamp.test.ts > keepLoanUnderPortfolio > clamps an entered balance without reporting it (the Borrowing field already blocks it) 0ms
  ✓ src/state/__tests__/loanClamp.test.ts > keepLoanUnderPortfolio > lowers the balance back to 0 when the portfolio goes to 0 0ms
@@ -24,12 +14,27 @@ npm notice run 'vitest' run src/state/__tests__/share.test.ts src/state/__tests_
  ✓ src/state/__tests__/loanClamp.test.ts > store update semantics > a patch counts as entering the loan only when it carries the field 0ms
  ✓ src/state/__tests__/loanClamp.test.ts > store update semantics > replace always reports a lowered balance 1ms
  ✓ src/state/__tests__/loanClamp.test.ts > store update semantics > does not mutate the inputs it was given 0ms
- ✓ src/state/__tests__/loanClamp.test.ts > loanLoweredNotice > names the new and old balances in full dollars 19ms
+ ✓ src/state/__tests__/loanClamp.test.ts > loanLoweredNotice > names the new and old balances in full dollars 13ms
+ ✓ src/state/__tests__/loanClamp.test.ts > loanToastRun > keeps the original balance as "It was" through a run of arrow-key steps 1ms
+ ✓ src/state/__tests__/loanClamp.test.ts > loanToastRun > starts a new run once the toast has timed out or been dismissed 1ms
+ ✓ src/state/__tests__/loanClamp.test.ts > loanToastRun > starts a new run when the balance changed in between 0ms
+ ✓ src/state/__tests__/loanClamp.test.ts > loanToastRun > reads as before for a single clamp 0ms
+ ✓ src/state/__tests__/share.test.ts > share links > round-trips changed inputs 4ms
+ ✓ src/state/__tests__/share.test.ts > share links > defaults encode compactly 0ms
+ ✓ src/state/__tests__/share.test.ts > share links > rejects garbage and wrong types 1ms
+ ✓ src/state/__tests__/share.test.ts > share links > builds a full URL whose hash decodes back to the plan 1ms
+ ✓ src/state/__tests__/share.test.ts > share links > clamps hostile numbers to the UI ranges 2ms
+ ✓ src/state/__tests__/share.test.ts > share links > leaves every plan inside the UI ranges unchanged 3ms
+ ✓ src/state/__tests__/share.test.ts > share links > existing loan > defaults to no loan and still encodes short 0ms
+ ✓ src/state/__tests__/share.test.ts > share links > existing loan > loads an old share link or saved plan without the field as 0 1ms
+ ✓ src/state/__tests__/share.test.ts > share links > existing loan > round-trips a balance 1ms
+ ✓ src/state/__tests__/share.test.ts > share links > existing loan > clamps hostile balances 1ms
  ✓ src/ui/plan/__tests__/portfolioHint.test.ts > portfolioHint > is unchanged without a loan balance 1ms
  ✓ src/ui/plan/__tests__/portfolioHint.test.ts > portfolioHint > names the balance the portfolio must stay above 10ms
+ ✓ src/ui/plan/__tests__/portfolioHint.test.ts > portfolioHint > spells the balance out when it would round to the portfolio’s compact figure 1ms
 
  Test Files  3 passed (3)
-      Tests  23 passed (23)
-   Start at  13:11:06
-   Duration  280ms (import 43%, transform 40%, tests 15%, worker 2%)
+      Tests  28 passed (28)
+   Start at  13:29:02
+   Duration  352ms (import 44%, transform 40%, tests 14%, worker 2%)
 

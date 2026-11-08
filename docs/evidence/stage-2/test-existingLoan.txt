@@ -5,16 +5,18 @@ npm notice run 'vitest' run src/ui/plan/__tests__/existingLoan.test.ts --reporte
  RUN  v5.1.0 /home/jonah/repos/eVelo-v2
 
  ✓ src/ui/plan/__tests__/existingLoan.test.ts > existing loan > reports today’s LTV 2ms
- ✓ src/ui/plan/__tests__/existingLoan.test.ts > existing loan > flags a balance past the margin-call LTV, but not one exactly at it 0ms
+ ✓ src/ui/plan/__tests__/existingLoan.test.ts > existing loan > flags a balance past the margin-call LTV, but not one exactly at it 1ms
  ✓ src/ui/plan/__tests__/existingLoan.test.ts > existing loan > reports the opening sale: shares sold, tax paid, and the target LTV it lands at 0ms
- ✓ src/ui/plan/__tests__/existingLoan.test.ts > existing loan > breaks where the sale cannot cover the loan after tax, V·(1 − g·tax) 0ms
+ ✓ src/ui/plan/__tests__/existingLoan.test.ts > existing loan > breaks where the sale cannot cover the loan after tax, V·(1 − g·tax) 1ms
  ✓ src/ui/plan/__tests__/existingLoan.test.ts > existing loan > moves the break line with basis and tax 0ms
- ✓ src/ui/plan/__tests__/existingLoan.test.ts > existing loan > keeps the balance strictly under the portfolio 0ms
- ✓ src/ui/plan/__tests__/existingLoan.test.ts > existing loan > treats hostile values as no loan 0ms
- ✓ src/ui/plan/__tests__/existingLoan.test.ts > existing loan: the warning agrees with the engine > over a grid of balances, the status matches what simulate records at year 0 99ms
+ ✓ src/ui/plan/__tests__/existingLoan.test.ts > existing loan > keeps the balance strictly under the portfolio 1ms
+ ✓ src/ui/plan/__tests__/existingLoan.test.ts > existing loan > reports the net worth left: portfolio less loan, after the opening sale 0ms
+ ✓ src/ui/plan/__tests__/existingLoan.test.ts > existing loan > flags a sale that leaves less than a year of spending as thin 0ms
+ ✓ src/ui/plan/__tests__/existingLoan.test.ts > existing loan > treats hostile values as no loan 1ms
+ ✓ src/ui/plan/__tests__/existingLoan.test.ts > existing loan: the warning agrees with the engine > over a grid of balances, the status matches what simulate records at year 0 108ms
 
  Test Files  1 passed (1)
-      Tests  8 passed (8)
-   Start at  13:11:06
-   Duration  297ms (tests 48%, transform 28%, import 22%, worker 1%)
+      Tests  10 passed (10)
+   Start at  13:29:04
+   Duration  288ms (tests 54%, transform 26%, import 19%, worker 1%)
 
