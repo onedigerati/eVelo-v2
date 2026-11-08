@@ -151,6 +151,8 @@ export interface PlanInputs {
   otherIncome: number
   incomeStartAge: number
 
+  /** Existing line-of-credit balance already borrowed to live, today's USD (0 = none). BBD paths start with this loan; the sell strategy starts at portfolio − balance with no debt. */
+  existingLoan: number
   /** SBLOC annual interest rate (decimal). Interest capitalizes monthly. */
   loanRate: number
   /** Margin-call LTV threshold (decimal, e.g. 0.6). */

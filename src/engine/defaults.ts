@@ -28,6 +28,7 @@ export const DEFAULT_INPUTS: PlanInputs = {
   expatFactor: 0.35,
   otherIncome: 40000,
   incomeStartAge: 67,
+  existingLoan: 0,
   loanRate: 0.06,
   maxLtv: 0.6,
   targetLtvAfterCall: 0.45,

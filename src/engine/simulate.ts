@@ -54,6 +54,7 @@ export function kernelConfig(inputs: PlanInputs, dest: Destination, budgetMultip
     fxSigmaM: fxVol / Math.sqrt(12),
     incomeMonthly: inputs.otherIncome / 12,
     incomeStartMonth: Math.max(0, Math.ceil((inputs.incomeStartAge - inputs.age) * 12 - 1e-9)),
+    initialLoan: Math.max(0, inputs.existingLoan ?? 0),
     wealthTax: wealth && moveMonth < T ? { gross: wealth.base === 'gross', bands: packBands(wealth.bands) } : null,
     inheritance: inhApplies ? { heirs: HEIRS, perHeirAllowance: inh.perHeirAllowance, bands: packBands(inh.bands) } : null,
   }
