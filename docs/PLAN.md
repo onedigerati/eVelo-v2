@@ -7,22 +7,21 @@ Every city in the Atlas has a full profile with the five-photo cover mosaic, not
 2026-11-07 · tests: 329 pass (22 files) · typecheck: clean · build: ok
 
 ## Now
-Stage 1 of 6 · Unranked profiles + preview assets
-Risk: UI only (plus preview tooling that uploads to the claude.ai asset store)
+Stage 2 of 6 · Europe, Africa, Middle East
+Risk: content only (profile text, scores and photos; no code). The France treaty wording in `localTaxes.ts` is a note string, not a rate.
+Scope: Amsterdam, Berlin, Dublin, London, Paris, Zurich, Cape Town, Dubai — profile + 5 photos each, already written and reviewed by builders (see Decisions). Also the France treaty fixes found while reviewing Paris (nice.ts, gascony.ts, the France note in localTaxes.ts) and Tokyo's JPY 30m ≈ $190k fix. The commit takes only these paths; other cities in the tree stay uncommitted.
 Checks:
-- [x] A profiled city that isn't a pick shows a "Profile" chip in its city-list row where picks show "Top pick #N"; the chip opens the same profile sheet. Its eyebrow drops "Top pick N of 75" for "Profile · <country>", and it never appears in the top-picks list (proof: test + run the product)
-- [x] The map's city card (hover bubble, tapped card, and the docked card on phones) has a "View profile" link (on a footer line under the choose button: the 264 px card has no room beside it) for every profiled city, picks included, and it opens the profile sheet (proof: run the product, mouse and touch)
-- [x] The Atlas's Best odds and Your destination tiles have a "Profile →" link for a profiled city, opening the profile sheet: on the city-name line, or under the note in the half-width phone tiles so the name isn't truncated (proof: run the product, both themes and a phone)
-- [x] Profile files can be named after any city id, not only picks; a file named after an id that isn't in `cities.ts` still fails the tests (proof: test)
-- [x] Pilot profiles and photos for Tokyo and Austin (one foreign, one US) are written to the README's standard, with sources, and their photos are checked on a contact sheet (proof: test + contact sheet)
-- [x] The photo test lets any profiled city have photos, and requires exactly 5 for every profiled city (proof: test)
-- [x] The preview build points photo URLs at the preview artifact's asset store and publishes only app files. A test batch of uploaded photos shows in the preview, and the store's total limit is confirmed to hold about 665 photos (~80 MB), or the fallback is raised with the user (proof: run the product on the preview)
-- [x] Preview published with all 77 profiled cities' photos served from the asset store; both themes and a phone viewport checked; stop for review (proof: run the product)
+- [ ] Each of the 8 has a profile to the README's standard, with sources, scored on the 1–5 rubric, and its review findings applied (proof: test + review notes)
+- [ ] Each has exactly 5 openly licensed photos with credits, checked on a contact sheet (proof: test + contact sheet)
+- [ ] In a clean tree holding only stage 1 + stage 2 paths: type check, tests and build pass (proof: test)
+- [ ] Each of the 8 opens from its list "Profile" chip with 5 photos loaded, "Profile · <country>" in the eyebrow, and stays out of the top picks; both themes and a phone (proof: run the product)
+- [ ] Preview republished with stage 2's 40 photos added to the asset store (proof: run the product on the preview build)
 Open: none
-Mode: paused — stage 1 review: the user's look at preview v30 (the hosted claude.ai page can't be driven from here: it needs the user's login, and Chrome control isn't supported from WSL). Notes:
-- Preview v30 (https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth) is the stage 1 app at 0e50723 with all 385 photos (77 cities) in the asset store; `.preview/photo-assets.json` (gitignored, keep it) records every upload. The two preview checks pass locally ([report](evidence/stage-1/report.md)); they're ticked once the user's click-through ([preview-checklist.md](evidence/stage-1/preview-checklist.md)) passes on the hosted page. Then close stage 1 (commit) and go on to stage 2.
-- Deploy: 7+ commits are unpushed; push (GitHub Pages) only when the user says, after this review.
-- Uncommitted content in the tree. Reviewed and fixed: Amsterdam, Berlin, Dublin, London, Paris, Zurich, Dubai, Cape Town, Osaka, Seoul, Singapore, Manila, Cebu, Da Nang, Hanoi, Ho Chi Minh City (plus France treaty fixes in nice.ts, gascony.ts and the France note in localTaxes.ts). Written, not yet reviewed: Auckland, Melbourne, Sydney. Partial, from stopped builders, to check or redo: Montréal, Toronto, Vancouver, Bogotá, Buenos Aires, and US Pacific, Mountain, Florida, Texas + Hawaii cities. Not started: the 14 US East + Midwest cities.
+Mode: autopilot — resumed 2026-11-07 on the user's pre-approval; stage 1 closed on their review.
+Notes:
+- Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (v30, stage 1). `.preview/photo-assets.json` (gitignored, keep it) records every upload. Build previews in a clean worktree so in-progress cities stay out.
+- Deploy: unpushed commits; push (GitHub Pages) only when the user says.
+- Uncommitted content beyond stage 2. Written, not yet reviewed: Auckland, Melbourne, Sydney. Reviewed and fixed: Osaka, Seoul, Singapore, Manila, Cebu, Da Nang, Hanoi, Ho Chi Minh City. Partial, from stopped builders, to check or redo: Montréal, Toronto, Vancouver, Bogotá, Buenos Aires, and US Pacific, Mountain, Florida, Texas + Hawaii cities. Not started: the 14 US East + Midwest cities.
 - Open from reviews: Seoul (and London, Amsterdam, Berlin) have no `localTaxes.ts` entry, so the Atlas says "not modelled"; adding one is money logic and needs tests. The photo credit cleaner misses "upload on <date>" suffixes.
 
 ## Stages
