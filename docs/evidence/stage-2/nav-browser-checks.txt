@@ -1,0 +1,134 @@
+
+===== desktop-light (1280x900) =====
+nav on #plan: [{"t":"Plan","cur":"page","on":true,"href":"#plan"},{"t":"Atlas","cur":null,"on":false,"href":"#atlas"},{"t":"Method","cur":null,"on":false,"href":"#method"}]
+PASS desktop-light: nav items are exactly Plan/Atlas/Method (Plan/Atlas/Method)
+PASS desktop-light: #plan -> aria-current on "Plan"
+PASS desktop-light: #plan shows the workspace (rail + canvas)
+PASS desktop-light: #plan focuses the rail (existing behaviour)
+  shot nav-desktop-light-plan.png
+PASS desktop-light: #outlook -> aria-current on "Plan"
+PASS desktop-light: no Outlook item on #outlook
+PASS desktop-light: #outlook shows the same workspace
+PASS desktop-light: no drawer on desktop
+  shot nav-desktop-light-outlook.png
+PASS desktop-light: click Atlas -> #atlas, lit "Atlas", 3 items
+PASS desktop-light: Atlas view rendered (.wmap, .clist)
+PASS desktop-light: click Method -> #method, lit "Method", 3 items
+PASS desktop-light: click Plan -> #plan, lit "Plan", 3 items
+PASS desktop-light: Plan view rendered (.workspace .rail)
+PASS desktop-light: workspace only on plan routes
+PASS desktop-light: keyboard Tab to Atlas + Enter -> #atlas, lit "Atlas"
+PASS desktop-light: keyboard Tab to Method + Enter -> #method, lit "Method"
+PASS desktop-light: keyboard Tab to Plan + Enter -> #plan, lit "Plan"
+desktop-light: skip link + first 8 Tab stops: Skip to content | eVelo | Plan | Atlas | Method | System theme | Share | Reset plan to defaults | 01
+PASS desktop-light: no console errors (none)
+
+===== desktop-light: fdd4827 vs 04a5062 =====
+desktop-light #plan: nav new=Plan*/Atlas/Method  base=Plan*/Outlook/Atlas/Method
+PASS desktop-light #plan: only the nav item set differs (new drops Outlook)
+PASS desktop-light #plan: workspace below the top bar is pixel-identical to 04a5062 (0 px differ of 1068800)
+PASS desktop-light #plan: <main> DOM identical to 04a5062 (86211 vs 86211 chars)
+desktop-light #outlook: nav new=Plan*/Atlas/Method  base=Plan/Outlook*/Atlas/Method
+PASS desktop-light #outlook: only the nav item set differs (new drops Outlook)
+PASS desktop-light #outlook: workspace below the top bar is pixel-identical to 04a5062 (0 px differ of 1068800)
+PASS desktop-light #outlook: <main> DOM identical to 04a5062 (86211 vs 86211 chars)
+  shots nav-desktop-light-topbar-new.png nav-desktop-light-topbar-base.png
+
+===== tablet-light (900x1100) =====
+nav on #outlook: [{"t":"Plan","cur":null,"on":false,"href":"#plan"},{"t":"Outlook","cur":"page","on":true,"href":"#outlook"},{"t":"Atlas","cur":null,"on":false,"href":"#atlas"},{"t":"Method","cur":null,"on":false,"href":"#method"}]
+PASS tablet-light: nav items Plan/Outlook/Atlas/Method (Plan/Outlook/Atlas/Method)
+PASS tablet-light: #outlook -> lit "Outlook"
+PASS tablet-light: #outlook shows the canvas, no drawer
+  shot nav-tablet-light-outlook.png
+PASS tablet-light: click Plan -> #plan, lit "Plan"
+PASS tablet-light: Plan opens the left drawer with the plan inputs
+  shot nav-tablet-light-plan-drawer.png
+PASS tablet-light: Escape closes the drawer -> #outlook, lit "Outlook"
+PASS tablet-light: click Outlook -> #outlook
+PASS tablet-light: click Atlas -> #atlas, lit "Atlas"
+PASS tablet-light: click Method -> #method, lit "Method"
+PASS tablet-light: click Outlook -> #outlook, lit "Outlook"
+PASS tablet-light: no console errors (none)
+
+===== phone-light (390x844 touch) =====
+PASS phone-light: no top nav on phone
+tabs on #plan: [{"t":"Plan","cur":"page","href":"#plan"},{"t":"Outlook","cur":null,"href":"#outlook"},{"t":"Atlas","cur":null,"href":"#atlas"},{"t":"Method","cur":null,"href":"#method"}]
+PASS phone-light: bottom tab bar has 4 tabs Plan/Outlook/Atlas/Method
+PASS phone-light: #plan -> lit "Plan", plan inputs shown
+  shot nav-phone-light-plan.png
+PASS phone-light: tap Outlook -> #outlook, lit "Outlook"
+  shot nav-phone-light-outlook.png
+PASS phone-light: tap Atlas -> #atlas, lit "Atlas"
+PASS phone-light: tap Method -> #method, lit "Method"
+PASS phone-light: tap Plan -> #plan, lit "Plan"
+PASS phone-light: VerdictPill shown on Plan (Holds in 80% of futures. See the outlook.)
+PASS phone-light: VerdictPill tap -> #outlook, lit "Outlook", outlook canvas shown
+PASS phone-light: no console errors (none)
+
+===== desktop-dark (1280x900) =====
+nav on #plan: [{"t":"Plan","cur":"page","on":true,"href":"#plan"},{"t":"Atlas","cur":null,"on":false,"href":"#atlas"},{"t":"Method","cur":null,"on":false,"href":"#method"}]
+PASS desktop-dark: nav items are exactly Plan/Atlas/Method (Plan/Atlas/Method)
+PASS desktop-dark: #plan -> aria-current on "Plan"
+PASS desktop-dark: #plan shows the workspace (rail + canvas)
+PASS desktop-dark: #plan focuses the rail (existing behaviour)
+  shot nav-desktop-dark-plan.png
+PASS desktop-dark: #outlook -> aria-current on "Plan"
+PASS desktop-dark: no Outlook item on #outlook
+PASS desktop-dark: #outlook shows the same workspace
+PASS desktop-dark: no drawer on desktop
+  shot nav-desktop-dark-outlook.png
+PASS desktop-dark: click Atlas -> #atlas, lit "Atlas", 3 items
+PASS desktop-dark: Atlas view rendered (.wmap, .clist)
+PASS desktop-dark: click Method -> #method, lit "Method", 3 items
+PASS desktop-dark: click Plan -> #plan, lit "Plan", 3 items
+PASS desktop-dark: Plan view rendered (.workspace .rail)
+PASS desktop-dark: workspace only on plan routes
+PASS desktop-dark: keyboard Tab to Atlas + Enter -> #atlas, lit "Atlas"
+PASS desktop-dark: keyboard Tab to Method + Enter -> #method, lit "Method"
+PASS desktop-dark: keyboard Tab to Plan + Enter -> #plan, lit "Plan"
+desktop-dark: skip link + first 8 Tab stops: Skip to content | eVelo | Plan | Atlas | Method | System theme | Share | Reset plan to defaults | 01
+PASS desktop-dark: no console errors (none)
+
+===== desktop-dark: fdd4827 vs 04a5062 =====
+desktop-dark #plan: nav new=Plan*/Atlas/Method  base=Plan*/Outlook/Atlas/Method
+PASS desktop-dark #plan: only the nav item set differs (new drops Outlook)
+PASS desktop-dark #plan: workspace below the top bar is pixel-identical to 04a5062 (0 px differ of 1068800)
+PASS desktop-dark #plan: <main> DOM identical to 04a5062 (86211 vs 86211 chars)
+desktop-dark #outlook: nav new=Plan*/Atlas/Method  base=Plan/Outlook*/Atlas/Method
+PASS desktop-dark #outlook: only the nav item set differs (new drops Outlook)
+PASS desktop-dark #outlook: workspace below the top bar is pixel-identical to 04a5062 (0 px differ of 1068800)
+PASS desktop-dark #outlook: <main> DOM identical to 04a5062 (86211 vs 86211 chars)
+  shots nav-desktop-dark-topbar-new.png nav-desktop-dark-topbar-base.png
+
+===== tablet-dark (900x1100) =====
+nav on #outlook: [{"t":"Plan","cur":null,"on":false,"href":"#plan"},{"t":"Outlook","cur":"page","on":true,"href":"#outlook"},{"t":"Atlas","cur":null,"on":false,"href":"#atlas"},{"t":"Method","cur":null,"on":false,"href":"#method"}]
+PASS tablet-dark: nav items Plan/Outlook/Atlas/Method (Plan/Outlook/Atlas/Method)
+PASS tablet-dark: #outlook -> lit "Outlook"
+PASS tablet-dark: #outlook shows the canvas, no drawer
+  shot nav-tablet-dark-outlook.png
+PASS tablet-dark: click Plan -> #plan, lit "Plan"
+PASS tablet-dark: Plan opens the left drawer with the plan inputs
+  shot nav-tablet-dark-plan-drawer.png
+PASS tablet-dark: Escape closes the drawer -> #outlook, lit "Outlook"
+PASS tablet-dark: click Outlook -> #outlook
+PASS tablet-dark: click Atlas -> #atlas, lit "Atlas"
+PASS tablet-dark: click Method -> #method, lit "Method"
+PASS tablet-dark: click Outlook -> #outlook, lit "Outlook"
+PASS tablet-dark: no console errors (none)
+
+===== phone-dark (390x844 touch) =====
+PASS phone-dark: no top nav on phone
+tabs on #plan: [{"t":"Plan","cur":"page","href":"#plan"},{"t":"Outlook","cur":null,"href":"#outlook"},{"t":"Atlas","cur":null,"href":"#atlas"},{"t":"Method","cur":null,"href":"#method"}]
+PASS phone-dark: bottom tab bar has 4 tabs Plan/Outlook/Atlas/Method
+PASS phone-dark: #plan -> lit "Plan", plan inputs shown
+  shot nav-phone-dark-plan.png
+PASS phone-dark: tap Outlook -> #outlook, lit "Outlook"
+  shot nav-phone-dark-outlook.png
+PASS phone-dark: tap Atlas -> #atlas, lit "Atlas"
+PASS phone-dark: tap Method -> #method, lit "Method"
+PASS phone-dark: tap Plan -> #plan, lit "Plan"
+PASS phone-dark: VerdictPill shown on Plan (Holds in 80% of futures. See the outlook.)
+PASS phone-dark: VerdictPill tap -> #outlook, lit "Outlook", outlook canvas shown
+PASS phone-dark: no console errors (none)
+
+ALL PASS

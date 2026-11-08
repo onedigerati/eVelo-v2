@@ -1,0 +1,419 @@
+$ BASE=http://localhost:4792/ node scripts/verify.cjs   (playwright-core chromium, against vite preview of npm run build at http://localhost:4792/#atlas)
+
+===== desktop-light (light, 1280x900) =====
+body background rgb(245, 242, 234)
+list chips at rest: All 133* | North America 36 | Latin America 33 | Europe 39 | Asia 19 | Oceania 3 | Other 3
+map chips at rest:  All 133* | North America 36 | Latin America 33 | Europe 39 | Asia 19 | Oceania 3 | Other 3
+PASS desktop-light: list and map both show the 7 region chips in order
+PASS desktop-light: both start on All
+PASS desktop-light: list chip counts with no search equal the oracle per region (133/36/33/39/19/3/3)
+PASS desktop-light: list regions sum to All (133)
+  shot desktop-light-chips-rest.png
+PASS desktop-light: list chip Europe -> list on "Europe", map on "Europe"
+PASS desktop-light: after the region change only the first tier is open ([open]Holds 80%+ 4 | Mostly holds 70–79% 14 | Mostly holds 65–69% 4 | Fragile 60–64% 7 | Fragile 45–59% 7 | Breaks under 45% 3)
+PASS desktop-light: Europe tier header counts sum to the Europe chip (39)
+  shot desktop-light-europe-map.png
+  shot desktop-light-europe-list.png
+PASS desktop-light: re-pressing the current region (list chip) keeps the toggled tiers open (true,true,false,false,false,false -> true,true,false,false,false,false)
+PASS desktop-light: re-pressing the current region (map chip) keeps the toggled tiers open (true,true,false,false,false,false)
+PASS desktop-light: a compare tick keeps the toggled tiers open
+PASS desktop-light: Europe, all open: 39 rows, all European, unique (oracle 39)
+PASS desktop-light: map chip Asia -> map on "Asia", list on "Asia"
+PASS desktop-light: map-driven region change from an all-open Europe resets to only the first tier open ([open]Holds 80%+ 13 | Mostly holds 70–79% 4 | Mostly holds 65–69% 1 | Breaks under 45% 1)
+PASS desktop-light: Asia, all open: 19 rows, all Asian (oracle 19)
+  shot desktop-light-asia-from-map.png
+  shot desktop-light-asia-list-chips.png
+PASS desktop-light: map chip All -> list on All, 133 rows listed = list chip 133, only All cities
+PASS desktop-light: map chip North America -> list on North America, 36 rows listed = list chip 36, only North America cities
+PASS desktop-light: map chip Latin America -> list on Latin America, 33 rows listed = list chip 33, only Latin America cities
+PASS desktop-light: map chip Europe -> list on Europe, 39 rows listed = list chip 39, only Europe cities
+PASS desktop-light: map chip Asia -> list on Asia, 19 rows listed = list chip 19, only Asia cities
+PASS desktop-light: map chip Oceania -> list on Oceania, 3 rows listed = list chip 3, only Oceania cities
+PASS desktop-light: map chip Other -> list on Other, 3 rows listed = list chip 3, only Other cities
+PASS desktop-light: search "an": chip counts All 50, North America 10, Latin America 12, Europe 12, Asia 14, Oceania 1, Other 1 equal the oracle and sum to All
+PASS desktop-light: search "an": exactly the zero chips (not selected) are styled empty
+PASS desktop-light: search "an" + All: 50 rows listed = chip 50, all match, all tiers open, map on All
+PASS desktop-light: search "an" + North America: 10 rows listed = chip 10, all match, all tiers open, map on North America
+PASS desktop-light: search "an" + Latin America: 12 rows listed = chip 12, all match, all tiers open, map on Latin America
+PASS desktop-light: search "an" + Europe: 12 rows listed = chip 12, all match, all tiers open, map on Europe
+PASS desktop-light: search "an" + Asia: 14 rows listed = chip 14, all match, all tiers open, map on Asia
+PASS desktop-light: search "an" + Oceania: 1 rows listed = chip 1, all match, all tiers open, map on Oceania
+PASS desktop-light: search "an" + Other: 1 rows listed = chip 1, all match, all tiers open, map on Other
+  shot desktop-light-search-an-asia.png
+PASS desktop-light: search "eur": chip counts All 30, North America 0, Latin America 0, Europe 30, Asia 0, Oceania 0, Other 0 equal the oracle and sum to All
+PASS desktop-light: search "eur": exactly the zero chips (not selected) are styled empty
+PASS desktop-light: search "eur" + All: 30 rows listed = chip 30, all match, all tiers open, map on All
+PASS desktop-light: search "eur" + North America: 0 rows listed = chip 0, all match, all tiers open, map on North America
+PASS desktop-light: search "eur" + Latin America: 0 rows listed = chip 0, all match, all tiers open, map on Latin America
+PASS desktop-light: search "eur" + Europe: 30 rows listed = chip 30, all match, all tiers open, map on Europe
+PASS desktop-light: search "eur" + Asia: 0 rows listed = chip 0, all match, all tiers open, map on Asia
+PASS desktop-light: search "eur" + Oceania: 0 rows listed = chip 0, all match, all tiers open, map on Oceania
+PASS desktop-light: search "eur" + Other: 0 rows listed = chip 0, all match, all tiers open, map on Other
+PASS desktop-light: search "mx": chip counts All 9, North America 0, Latin America 9, Europe 0, Asia 0, Oceania 0, Other 0 equal the oracle and sum to All
+PASS desktop-light: search "mx": exactly the zero chips (not selected) are styled empty
+PASS desktop-light: search "mx" + All: 9 rows listed = chip 9, all match, all tiers open, map on All
+PASS desktop-light: search "mx" + North America: 0 rows listed = chip 0, all match, all tiers open, map on North America
+PASS desktop-light: search "mx" + Latin America: 9 rows listed = chip 9, all match, all tiers open, map on Latin America
+PASS desktop-light: search "mx" + Europe: 0 rows listed = chip 0, all match, all tiers open, map on Europe
+PASS desktop-light: search "mx" + Asia: 0 rows listed = chip 0, all match, all tiers open, map on Asia
+PASS desktop-light: search "mx" + Oceania: 0 rows listed = chip 0, all match, all tiers open, map on Oceania
+PASS desktop-light: search "mx" + Other: 0 rows listed = chip 0, all match, all tiers open, map on Other
+PASS desktop-light: search "united states": chip counts All 33, North America 33, Latin America 0, Europe 0, Asia 0, Oceania 0, Other 0 equal the oracle and sum to All
+PASS desktop-light: search "united states": exactly the zero chips (not selected) are styled empty
+PASS desktop-light: search "united states" + All: 33 rows listed = chip 33, all match, all tiers open, map on All
+PASS desktop-light: search "united states" + North America: 33 rows listed = chip 33, all match, all tiers open, map on North America
+PASS desktop-light: search "united states" + Latin America: 0 rows listed = chip 0, all match, all tiers open, map on Latin America
+PASS desktop-light: search "united states" + Europe: 0 rows listed = chip 0, all match, all tiers open, map on Europe
+PASS desktop-light: search "united states" + Asia: 0 rows listed = chip 0, all match, all tiers open, map on Asia
+PASS desktop-light: search "united states" + Oceania: 0 rows listed = chip 0, all match, all tiers open, map on Oceania
+PASS desktop-light: search "united states" + Other: 0 rows listed = chip 0, all match, all tiers open, map on Other
+  shot desktop-light-search-us-empty-chips.png
+PASS desktop-light: search "zzzz": chip counts All 0, North America 0, Latin America 0, Europe 0, Asia 0, Oceania 0, Other 0 equal the oracle and sum to All
+PASS desktop-light: search "zzzz": exactly the zero chips (not selected) are styled empty
+PASS desktop-light: search "zzzz" + All: 0 rows listed = chip 0, all match, all tiers open, map on All
+PASS desktop-light: search "zzzz" + North America: 0 rows listed = chip 0, all match, all tiers open, map on North America
+PASS desktop-light: search "zzzz" + Latin America: 0 rows listed = chip 0, all match, all tiers open, map on Latin America
+PASS desktop-light: search "zzzz" + Europe: 0 rows listed = chip 0, all match, all tiers open, map on Europe
+PASS desktop-light: search "zzzz" + Asia: 0 rows listed = chip 0, all match, all tiers open, map on Asia
+PASS desktop-light: search "zzzz" + Oceania: 0 rows listed = chip 0, all match, all tiers open, map on Oceania
+PASS desktop-light: search "zzzz" + Other: 0 rows listed = chip 0, all match, all tiers open, map on Other
+PASS desktop-light: back on All with no search: 133 cities, only first tier open
+media at measure: {"coarse":false,"hoverNone":false,"lchipComputed":"34px","rchipComputed":"34px"}
+chip row: scrollWidth 1086, clientWidth 1086, overflow-x visible, row 97..1183 in viewport 1280; chip heights 34/34/34/34/34/34/34
+PASS desktop-light: on desktop the chips wrap with nothing hidden (scrollWidth 1086, clientWidth 1086)
+PASS desktop-light chips: no horizontal page scroll (scrollWidth 1280 <= clientWidth 1280)
+map: 132 dots in view; target (433,415) with 64 neighbours
+PASS desktop-light: hovering a dot shows the city card
+card: {"docked":false,"bg":"rgba(245, 242, 234, 0.94)","blur":"none","name":"Miami United States","ink":"rgb(20, 24, 21)","rect":[421,322,264,276],"under":27}
+PASS desktop-light: card is floating (is-docked false)
+PASS desktop-light: card background is --surface-glass-strong (rgba(245, 242, 234, 0.94))
+PASS desktop-light: the floating card sits over 27 dots (so the screenshot tests readability over dots)
+  shot desktop-light-city-card.png
+  shot desktop-light-city-card-zoom.png
+Europe card: Nice
+France over 11 dots
+  shot desktop-light-city-card-europe.png
+PASS desktop-light: Europe-zoom card shown (11 dots under it)
+PASS desktop-light end: no horizontal page scroll (scrollWidth 1280 <= clientWidth 1280)
+PASS desktop-light: no console errors
+
+===== desktop-dark (dark, 1280x900) =====
+body background rgb(10, 13, 12)
+list chips at rest: All 133* | North America 36 | Latin America 33 | Europe 39 | Asia 19 | Oceania 3 | Other 3
+map chips at rest:  All 133* | North America 36 | Latin America 33 | Europe 39 | Asia 19 | Oceania 3 | Other 3
+PASS desktop-dark: list and map both show the 7 region chips in order
+PASS desktop-dark: both start on All
+PASS desktop-dark: list chip counts with no search equal the oracle per region (133/36/33/39/19/3/3)
+PASS desktop-dark: list regions sum to All (133)
+  shot desktop-dark-chips-rest.png
+PASS desktop-dark: list chip Europe -> list on "Europe", map on "Europe"
+PASS desktop-dark: after the region change only the first tier is open ([open]Holds 80%+ 4 | Mostly holds 70–79% 14 | Mostly holds 65–69% 4 | Fragile 60–64% 7 | Fragile 45–59% 7 | Breaks under 45% 3)
+PASS desktop-dark: Europe tier header counts sum to the Europe chip (39)
+  shot desktop-dark-europe-map.png
+  shot desktop-dark-europe-list.png
+PASS desktop-dark: re-pressing the current region (list chip) keeps the toggled tiers open (true,true,false,false,false,false -> true,true,false,false,false,false)
+PASS desktop-dark: re-pressing the current region (map chip) keeps the toggled tiers open (true,true,false,false,false,false)
+PASS desktop-dark: a compare tick keeps the toggled tiers open
+PASS desktop-dark: Europe, all open: 39 rows, all European, unique (oracle 39)
+PASS desktop-dark: map chip Asia -> map on "Asia", list on "Asia"
+PASS desktop-dark: map-driven region change from an all-open Europe resets to only the first tier open ([open]Holds 80%+ 13 | Mostly holds 70–79% 4 | Mostly holds 65–69% 1 | Breaks under 45% 1)
+PASS desktop-dark: Asia, all open: 19 rows, all Asian (oracle 19)
+  shot desktop-dark-asia-from-map.png
+  shot desktop-dark-asia-list-chips.png
+PASS desktop-dark: map chip All -> list on All, 133 rows listed = list chip 133, only All cities
+PASS desktop-dark: map chip North America -> list on North America, 36 rows listed = list chip 36, only North America cities
+PASS desktop-dark: map chip Latin America -> list on Latin America, 33 rows listed = list chip 33, only Latin America cities
+PASS desktop-dark: map chip Europe -> list on Europe, 39 rows listed = list chip 39, only Europe cities
+PASS desktop-dark: map chip Asia -> list on Asia, 19 rows listed = list chip 19, only Asia cities
+PASS desktop-dark: map chip Oceania -> list on Oceania, 3 rows listed = list chip 3, only Oceania cities
+PASS desktop-dark: map chip Other -> list on Other, 3 rows listed = list chip 3, only Other cities
+PASS desktop-dark: search "an": chip counts All 50, North America 10, Latin America 12, Europe 12, Asia 14, Oceania 1, Other 1 equal the oracle and sum to All
+PASS desktop-dark: search "an": exactly the zero chips (not selected) are styled empty
+PASS desktop-dark: search "an" + All: 50 rows listed = chip 50, all match, all tiers open, map on All
+PASS desktop-dark: search "an" + North America: 10 rows listed = chip 10, all match, all tiers open, map on North America
+PASS desktop-dark: search "an" + Latin America: 12 rows listed = chip 12, all match, all tiers open, map on Latin America
+PASS desktop-dark: search "an" + Europe: 12 rows listed = chip 12, all match, all tiers open, map on Europe
+PASS desktop-dark: search "an" + Asia: 14 rows listed = chip 14, all match, all tiers open, map on Asia
+PASS desktop-dark: search "an" + Oceania: 1 rows listed = chip 1, all match, all tiers open, map on Oceania
+PASS desktop-dark: search "an" + Other: 1 rows listed = chip 1, all match, all tiers open, map on Other
+  shot desktop-dark-search-an-asia.png
+PASS desktop-dark: search "eur": chip counts All 30, North America 0, Latin America 0, Europe 30, Asia 0, Oceania 0, Other 0 equal the oracle and sum to All
+PASS desktop-dark: search "eur": exactly the zero chips (not selected) are styled empty
+PASS desktop-dark: search "eur" + All: 30 rows listed = chip 30, all match, all tiers open, map on All
+PASS desktop-dark: search "eur" + North America: 0 rows listed = chip 0, all match, all tiers open, map on North America
+PASS desktop-dark: search "eur" + Latin America: 0 rows listed = chip 0, all match, all tiers open, map on Latin America
+PASS desktop-dark: search "eur" + Europe: 30 rows listed = chip 30, all match, all tiers open, map on Europe
+PASS desktop-dark: search "eur" + Asia: 0 rows listed = chip 0, all match, all tiers open, map on Asia
+PASS desktop-dark: search "eur" + Oceania: 0 rows listed = chip 0, all match, all tiers open, map on Oceania
+PASS desktop-dark: search "eur" + Other: 0 rows listed = chip 0, all match, all tiers open, map on Other
+PASS desktop-dark: search "mx": chip counts All 9, North America 0, Latin America 9, Europe 0, Asia 0, Oceania 0, Other 0 equal the oracle and sum to All
+PASS desktop-dark: search "mx": exactly the zero chips (not selected) are styled empty
+PASS desktop-dark: search "mx" + All: 9 rows listed = chip 9, all match, all tiers open, map on All
+PASS desktop-dark: search "mx" + North America: 0 rows listed = chip 0, all match, all tiers open, map on North America
+PASS desktop-dark: search "mx" + Latin America: 9 rows listed = chip 9, all match, all tiers open, map on Latin America
+PASS desktop-dark: search "mx" + Europe: 0 rows listed = chip 0, all match, all tiers open, map on Europe
+PASS desktop-dark: search "mx" + Asia: 0 rows listed = chip 0, all match, all tiers open, map on Asia
+PASS desktop-dark: search "mx" + Oceania: 0 rows listed = chip 0, all match, all tiers open, map on Oceania
+PASS desktop-dark: search "mx" + Other: 0 rows listed = chip 0, all match, all tiers open, map on Other
+PASS desktop-dark: search "united states": chip counts All 33, North America 33, Latin America 0, Europe 0, Asia 0, Oceania 0, Other 0 equal the oracle and sum to All
+PASS desktop-dark: search "united states": exactly the zero chips (not selected) are styled empty
+PASS desktop-dark: search "united states" + All: 33 rows listed = chip 33, all match, all tiers open, map on All
+PASS desktop-dark: search "united states" + North America: 33 rows listed = chip 33, all match, all tiers open, map on North America
+PASS desktop-dark: search "united states" + Latin America: 0 rows listed = chip 0, all match, all tiers open, map on Latin America
+PASS desktop-dark: search "united states" + Europe: 0 rows listed = chip 0, all match, all tiers open, map on Europe
+PASS desktop-dark: search "united states" + Asia: 0 rows listed = chip 0, all match, all tiers open, map on Asia
+PASS desktop-dark: search "united states" + Oceania: 0 rows listed = chip 0, all match, all tiers open, map on Oceania
+PASS desktop-dark: search "united states" + Other: 0 rows listed = chip 0, all match, all tiers open, map on Other
+  shot desktop-dark-search-us-empty-chips.png
+PASS desktop-dark: search "zzzz": chip counts All 0, North America 0, Latin America 0, Europe 0, Asia 0, Oceania 0, Other 0 equal the oracle and sum to All
+PASS desktop-dark: search "zzzz": exactly the zero chips (not selected) are styled empty
+PASS desktop-dark: search "zzzz" + All: 0 rows listed = chip 0, all match, all tiers open, map on All
+PASS desktop-dark: search "zzzz" + North America: 0 rows listed = chip 0, all match, all tiers open, map on North America
+PASS desktop-dark: search "zzzz" + Latin America: 0 rows listed = chip 0, all match, all tiers open, map on Latin America
+PASS desktop-dark: search "zzzz" + Europe: 0 rows listed = chip 0, all match, all tiers open, map on Europe
+PASS desktop-dark: search "zzzz" + Asia: 0 rows listed = chip 0, all match, all tiers open, map on Asia
+PASS desktop-dark: search "zzzz" + Oceania: 0 rows listed = chip 0, all match, all tiers open, map on Oceania
+PASS desktop-dark: search "zzzz" + Other: 0 rows listed = chip 0, all match, all tiers open, map on Other
+PASS desktop-dark: back on All with no search: 133 cities, only first tier open
+media at measure: {"coarse":false,"hoverNone":false,"lchipComputed":"34px","rchipComputed":"34px"}
+chip row: scrollWidth 1086, clientWidth 1086, overflow-x visible, row 97..1183 in viewport 1280; chip heights 34/34/34/34/34/34/34
+PASS desktop-dark: on desktop the chips wrap with nothing hidden (scrollWidth 1086, clientWidth 1086)
+PASS desktop-dark chips: no horizontal page scroll (scrollWidth 1280 <= clientWidth 1280)
+map: 132 dots in view; target (433,415) with 64 neighbours
+PASS desktop-dark: hovering a dot shows the city card
+card: {"docked":false,"bg":"rgba(10, 13, 12, 0.92)","blur":"none","name":"Miami United States","ink":"rgb(236, 241, 238)","rect":[421,322,264,276],"under":27}
+PASS desktop-dark: card is floating (is-docked false)
+PASS desktop-dark: card background is --surface-glass-strong (rgba(10, 13, 12, 0.92))
+PASS desktop-dark: the floating card sits over 27 dots (so the screenshot tests readability over dots)
+  shot desktop-dark-city-card.png
+  shot desktop-dark-city-card-zoom.png
+Europe card: Nice
+France over 11 dots
+  shot desktop-dark-city-card-europe.png
+PASS desktop-dark: Europe-zoom card shown (11 dots under it)
+PASS desktop-dark end: no horizontal page scroll (scrollWidth 1280 <= clientWidth 1280)
+PASS desktop-dark: no console errors
+
+===== phone-light (light, 390x844 touch) =====
+body background rgb(245, 242, 234)
+list chips at rest: All 133* | North America 36 | Latin America 33 | Europe 39 | Asia 19 | Oceania 3 | Other 3
+map chips at rest:  All 133* | North America 36 | Latin America 33 | Europe 39 | Asia 19 | Oceania 3 | Other 3
+PASS phone-light: list and map both show the 7 region chips in order
+PASS phone-light: both start on All
+PASS phone-light: list chip counts with no search equal the oracle per region (133/36/33/39/19/3/3)
+PASS phone-light: list regions sum to All (133)
+  shot phone-light-chips-rest.png
+at load: pointer coarse true; list chip heights 44/44/44/44/44/44/44; map chip heights 40/40/40/40/40/40/40
+PASS phone-light: at load with a coarse pointer every list chip is >=44px tall (44/44/44/44/44/44/44)
+PASS phone-light: list chip Europe -> list on "Europe", map on "Europe"
+PASS phone-light: after the region change only the first tier is open ([open]Holds 80%+ 4 | Mostly holds 70–79% 14 | Mostly holds 65–69% 4 | Fragile 60–64% 7 | Fragile 45–59% 7 | Breaks under 45% 3)
+PASS phone-light: Europe tier header counts sum to the Europe chip (39)
+  shot phone-light-europe-map.png
+  shot phone-light-europe-list.png
+PASS phone-light: re-pressing the current region (list chip) keeps the toggled tiers open (true,true,false,false,false,false -> true,true,false,false,false,false)
+PASS phone-light: re-pressing the current region (map chip) keeps the toggled tiers open (true,true,false,false,false,false)
+PASS phone-light: a compare tick keeps the toggled tiers open
+PASS phone-light: Europe, all open: 39 rows, all European, unique (oracle 39)
+PASS phone-light: map chip Asia -> map on "Asia", list on "Asia"
+PASS phone-light: map-driven region change from an all-open Europe resets to only the first tier open ([open]Holds 80%+ 13 | Mostly holds 70–79% 4 | Mostly holds 65–69% 1 | Breaks under 45% 1)
+PASS phone-light: Asia, all open: 19 rows, all Asian (oracle 19)
+  shot phone-light-asia-from-map.png
+  shot phone-light-asia-list-chips.png
+PASS phone-light: map chip All -> list on All, 133 rows listed = list chip 133, only All cities
+PASS phone-light: map chip North America -> list on North America, 36 rows listed = list chip 36, only North America cities
+PASS phone-light: map chip Latin America -> list on Latin America, 33 rows listed = list chip 33, only Latin America cities
+PASS phone-light: map chip Europe -> list on Europe, 39 rows listed = list chip 39, only Europe cities
+PASS phone-light: map chip Asia -> list on Asia, 19 rows listed = list chip 19, only Asia cities
+PASS phone-light: map chip Oceania -> list on Oceania, 3 rows listed = list chip 3, only Oceania cities
+PASS phone-light: map chip Other -> list on Other, 3 rows listed = list chip 3, only Other cities
+PASS phone-light: search "an": chip counts All 50, North America 10, Latin America 12, Europe 12, Asia 14, Oceania 1, Other 1 equal the oracle and sum to All
+PASS phone-light: search "an": exactly the zero chips (not selected) are styled empty
+PASS phone-light: search "an" + All: 50 rows listed = chip 50, all match, all tiers open, map on All
+PASS phone-light: search "an" + North America: 10 rows listed = chip 10, all match, all tiers open, map on North America
+PASS phone-light: search "an" + Latin America: 12 rows listed = chip 12, all match, all tiers open, map on Latin America
+PASS phone-light: search "an" + Europe: 12 rows listed = chip 12, all match, all tiers open, map on Europe
+PASS phone-light: search "an" + Asia: 14 rows listed = chip 14, all match, all tiers open, map on Asia
+PASS phone-light: search "an" + Oceania: 1 rows listed = chip 1, all match, all tiers open, map on Oceania
+PASS phone-light: search "an" + Other: 1 rows listed = chip 1, all match, all tiers open, map on Other
+  shot phone-light-search-an-asia.png
+PASS phone-light: search "eur": chip counts All 30, North America 0, Latin America 0, Europe 30, Asia 0, Oceania 0, Other 0 equal the oracle and sum to All
+PASS phone-light: search "eur": exactly the zero chips (not selected) are styled empty
+PASS phone-light: search "eur" + All: 30 rows listed = chip 30, all match, all tiers open, map on All
+PASS phone-light: search "eur" + North America: 0 rows listed = chip 0, all match, all tiers open, map on North America
+PASS phone-light: search "eur" + Latin America: 0 rows listed = chip 0, all match, all tiers open, map on Latin America
+PASS phone-light: search "eur" + Europe: 30 rows listed = chip 30, all match, all tiers open, map on Europe
+PASS phone-light: search "eur" + Asia: 0 rows listed = chip 0, all match, all tiers open, map on Asia
+PASS phone-light: search "eur" + Oceania: 0 rows listed = chip 0, all match, all tiers open, map on Oceania
+PASS phone-light: search "eur" + Other: 0 rows listed = chip 0, all match, all tiers open, map on Other
+PASS phone-light: search "mx": chip counts All 9, North America 0, Latin America 9, Europe 0, Asia 0, Oceania 0, Other 0 equal the oracle and sum to All
+PASS phone-light: search "mx": exactly the zero chips (not selected) are styled empty
+PASS phone-light: search "mx" + All: 9 rows listed = chip 9, all match, all tiers open, map on All
+PASS phone-light: search "mx" + North America: 0 rows listed = chip 0, all match, all tiers open, map on North America
+PASS phone-light: search "mx" + Latin America: 9 rows listed = chip 9, all match, all tiers open, map on Latin America
+PASS phone-light: search "mx" + Europe: 0 rows listed = chip 0, all match, all tiers open, map on Europe
+PASS phone-light: search "mx" + Asia: 0 rows listed = chip 0, all match, all tiers open, map on Asia
+PASS phone-light: search "mx" + Oceania: 0 rows listed = chip 0, all match, all tiers open, map on Oceania
+PASS phone-light: search "mx" + Other: 0 rows listed = chip 0, all match, all tiers open, map on Other
+PASS phone-light: search "united states": chip counts All 33, North America 33, Latin America 0, Europe 0, Asia 0, Oceania 0, Other 0 equal the oracle and sum to All
+PASS phone-light: search "united states": exactly the zero chips (not selected) are styled empty
+PASS phone-light: search "united states" + All: 33 rows listed = chip 33, all match, all tiers open, map on All
+PASS phone-light: search "united states" + North America: 33 rows listed = chip 33, all match, all tiers open, map on North America
+PASS phone-light: search "united states" + Latin America: 0 rows listed = chip 0, all match, all tiers open, map on Latin America
+PASS phone-light: search "united states" + Europe: 0 rows listed = chip 0, all match, all tiers open, map on Europe
+PASS phone-light: search "united states" + Asia: 0 rows listed = chip 0, all match, all tiers open, map on Asia
+PASS phone-light: search "united states" + Oceania: 0 rows listed = chip 0, all match, all tiers open, map on Oceania
+PASS phone-light: search "united states" + Other: 0 rows listed = chip 0, all match, all tiers open, map on Other
+  shot phone-light-search-us-empty-chips.png
+PASS phone-light: search "zzzz": chip counts All 0, North America 0, Latin America 0, Europe 0, Asia 0, Oceania 0, Other 0 equal the oracle and sum to All
+PASS phone-light: search "zzzz": exactly the zero chips (not selected) are styled empty
+PASS phone-light: search "zzzz" + All: 0 rows listed = chip 0, all match, all tiers open, map on All
+PASS phone-light: search "zzzz" + North America: 0 rows listed = chip 0, all match, all tiers open, map on North America
+PASS phone-light: search "zzzz" + Latin America: 0 rows listed = chip 0, all match, all tiers open, map on Latin America
+PASS phone-light: search "zzzz" + Europe: 0 rows listed = chip 0, all match, all tiers open, map on Europe
+PASS phone-light: search "zzzz" + Asia: 0 rows listed = chip 0, all match, all tiers open, map on Asia
+PASS phone-light: search "zzzz" + Oceania: 0 rows listed = chip 0, all match, all tiers open, map on Oceania
+PASS phone-light: search "zzzz" + Other: 0 rows listed = chip 0, all match, all tiers open, map on Other
+PASS phone-light: back on All with no search: 133 cities, only first tier open
+media at measure: {"coarse":false,"hoverNone":false,"lchipComputed":"34px","rchipComputed":"34px"}
+chip row: scrollWidth 748, clientWidth 356, overflow-x auto, row 17..373 in viewport 390; chip heights 34/34/34/34/34/34/34
+PASS phone-light: chips overflow and scroll inside their row (scrollWidth 748 > clientWidth 356)
+PASS phone-light: the chip row stays within the viewport (17..373)
+NOTE phone-light: headless Chromium now reports pointer:fine (touch emulation dropped mid-run, a harness artifact; the page cannot change it), so the 44px rule is inactive here; judged at load and in a fresh touch page instead
+PASS phone-light: every list chip is >=44px wide
+PASS phone-light chips at rest: no horizontal page scroll (scrollWidth 390 <= clientWidth 390)
+PASS phone-light: chip row scrolled to 392px
+  shot phone-light-chips-scrolled.png
+PASS phone-light chips scrolled: no horizontal page scroll (scrollWidth 390 <= clientWidth 390)
+PASS phone-light: after scrolling, the Other chip is fully on screen (272..349)
+PASS phone-light: tapping Other in the scrolled row selects it on both
+PASS phone-light: tapping a closed tier header opens it under Other
+PASS phone-light: compare tick on Grand Baie works under Other
+PASS phone-light: tapping Grand Baie under Other makes it the destination
+  shot phone-light-other-list.png
+PASS phone-light after row interactions: no horizontal page scroll (scrollWidth 390 <= clientWidth 390)
+map: 130 dots in view; target (194,528) with 130 neighbours
+PASS phone-light: tapping a dot shows the city card
+card: {"docked":true,"bg":"rgba(245, 242, 234, 0.94)","blur":"none","name":"Plovdiv Bulgaria","ink":"rgb(20, 24, 21)","rect":[33,696,324,276],"under":0}
+PASS phone-light: card is docked (is-docked true)
+PASS phone-light: card background is --surface-glass-strong (rgba(245, 242, 234, 0.94))
+  shot phone-light-city-card.png
+PASS phone-light docked card open: no horizontal page scroll (scrollWidth 390 <= clientWidth 390)
+Europe card: Torrevieja
+Spain over 0 dots
+  shot phone-light-city-card-europe.png
+PASS phone-light: Europe-zoom card shown (0 dots under it)
+PASS phone-light end: no horizontal page scroll (scrollWidth 390 <= clientWidth 390)
+PASS phone-light: no console errors
+
+===== phone-dark (dark, 390x844 touch) =====
+body background rgb(10, 13, 12)
+list chips at rest: All 133* | North America 36 | Latin America 33 | Europe 39 | Asia 19 | Oceania 3 | Other 3
+map chips at rest:  All 133* | North America 36 | Latin America 33 | Europe 39 | Asia 19 | Oceania 3 | Other 3
+PASS phone-dark: list and map both show the 7 region chips in order
+PASS phone-dark: both start on All
+PASS phone-dark: list chip counts with no search equal the oracle per region (133/36/33/39/19/3/3)
+PASS phone-dark: list regions sum to All (133)
+  shot phone-dark-chips-rest.png
+at load: pointer coarse true; list chip heights 44/44/44/44/44/44/44; map chip heights 40/40/40/40/40/40/40
+PASS phone-dark: at load with a coarse pointer every list chip is >=44px tall (44/44/44/44/44/44/44)
+PASS phone-dark: list chip Europe -> list on "Europe", map on "Europe"
+PASS phone-dark: after the region change only the first tier is open ([open]Holds 80%+ 4 | Mostly holds 70–79% 14 | Mostly holds 65–69% 4 | Fragile 60–64% 7 | Fragile 45–59% 7 | Breaks under 45% 3)
+PASS phone-dark: Europe tier header counts sum to the Europe chip (39)
+  shot phone-dark-europe-map.png
+  shot phone-dark-europe-list.png
+PASS phone-dark: re-pressing the current region (list chip) keeps the toggled tiers open (true,true,false,false,false,false -> true,true,false,false,false,false)
+PASS phone-dark: re-pressing the current region (map chip) keeps the toggled tiers open (true,true,false,false,false,false)
+PASS phone-dark: a compare tick keeps the toggled tiers open
+PASS phone-dark: Europe, all open: 39 rows, all European, unique (oracle 39)
+PASS phone-dark: map chip Asia -> map on "Asia", list on "Asia"
+PASS phone-dark: map-driven region change from an all-open Europe resets to only the first tier open ([open]Holds 80%+ 13 | Mostly holds 70–79% 4 | Mostly holds 65–69% 1 | Breaks under 45% 1)
+PASS phone-dark: Asia, all open: 19 rows, all Asian (oracle 19)
+  shot phone-dark-asia-from-map.png
+  shot phone-dark-asia-list-chips.png
+PASS phone-dark: map chip All -> list on All, 133 rows listed = list chip 133, only All cities
+PASS phone-dark: map chip North America -> list on North America, 36 rows listed = list chip 36, only North America cities
+PASS phone-dark: map chip Latin America -> list on Latin America, 33 rows listed = list chip 33, only Latin America cities
+PASS phone-dark: map chip Europe -> list on Europe, 39 rows listed = list chip 39, only Europe cities
+PASS phone-dark: map chip Asia -> list on Asia, 19 rows listed = list chip 19, only Asia cities
+PASS phone-dark: map chip Oceania -> list on Oceania, 3 rows listed = list chip 3, only Oceania cities
+PASS phone-dark: map chip Other -> list on Other, 3 rows listed = list chip 3, only Other cities
+PASS phone-dark: search "an": chip counts All 50, North America 10, Latin America 12, Europe 12, Asia 14, Oceania 1, Other 1 equal the oracle and sum to All
+PASS phone-dark: search "an": exactly the zero chips (not selected) are styled empty
+PASS phone-dark: search "an" + All: 50 rows listed = chip 50, all match, all tiers open, map on All
+PASS phone-dark: search "an" + North America: 10 rows listed = chip 10, all match, all tiers open, map on North America
+PASS phone-dark: search "an" + Latin America: 12 rows listed = chip 12, all match, all tiers open, map on Latin America
+PASS phone-dark: search "an" + Europe: 12 rows listed = chip 12, all match, all tiers open, map on Europe
+PASS phone-dark: search "an" + Asia: 14 rows listed = chip 14, all match, all tiers open, map on Asia
+PASS phone-dark: search "an" + Oceania: 1 rows listed = chip 1, all match, all tiers open, map on Oceania
+PASS phone-dark: search "an" + Other: 1 rows listed = chip 1, all match, all tiers open, map on Other
+  shot phone-dark-search-an-asia.png
+PASS phone-dark: search "eur": chip counts All 30, North America 0, Latin America 0, Europe 30, Asia 0, Oceania 0, Other 0 equal the oracle and sum to All
+PASS phone-dark: search "eur": exactly the zero chips (not selected) are styled empty
+PASS phone-dark: search "eur" + All: 30 rows listed = chip 30, all match, all tiers open, map on All
+PASS phone-dark: search "eur" + North America: 0 rows listed = chip 0, all match, all tiers open, map on North America
+PASS phone-dark: search "eur" + Latin America: 0 rows listed = chip 0, all match, all tiers open, map on Latin America
+PASS phone-dark: search "eur" + Europe: 30 rows listed = chip 30, all match, all tiers open, map on Europe
+PASS phone-dark: search "eur" + Asia: 0 rows listed = chip 0, all match, all tiers open, map on Asia
+PASS phone-dark: search "eur" + Oceania: 0 rows listed = chip 0, all match, all tiers open, map on Oceania
+PASS phone-dark: search "eur" + Other: 0 rows listed = chip 0, all match, all tiers open, map on Other
+PASS phone-dark: search "mx": chip counts All 9, North America 0, Latin America 9, Europe 0, Asia 0, Oceania 0, Other 0 equal the oracle and sum to All
+PASS phone-dark: search "mx": exactly the zero chips (not selected) are styled empty
+PASS phone-dark: search "mx" + All: 9 rows listed = chip 9, all match, all tiers open, map on All
+PASS phone-dark: search "mx" + North America: 0 rows listed = chip 0, all match, all tiers open, map on North America
+PASS phone-dark: search "mx" + Latin America: 9 rows listed = chip 9, all match, all tiers open, map on Latin America
+PASS phone-dark: search "mx" + Europe: 0 rows listed = chip 0, all match, all tiers open, map on Europe
+PASS phone-dark: search "mx" + Asia: 0 rows listed = chip 0, all match, all tiers open, map on Asia
+PASS phone-dark: search "mx" + Oceania: 0 rows listed = chip 0, all match, all tiers open, map on Oceania
+PASS phone-dark: search "mx" + Other: 0 rows listed = chip 0, all match, all tiers open, map on Other
+PASS phone-dark: search "united states": chip counts All 33, North America 33, Latin America 0, Europe 0, Asia 0, Oceania 0, Other 0 equal the oracle and sum to All
+PASS phone-dark: search "united states": exactly the zero chips (not selected) are styled empty
+PASS phone-dark: search "united states" + All: 33 rows listed = chip 33, all match, all tiers open, map on All
+PASS phone-dark: search "united states" + North America: 33 rows listed = chip 33, all match, all tiers open, map on North America
+PASS phone-dark: search "united states" + Latin America: 0 rows listed = chip 0, all match, all tiers open, map on Latin America
+PASS phone-dark: search "united states" + Europe: 0 rows listed = chip 0, all match, all tiers open, map on Europe
+PASS phone-dark: search "united states" + Asia: 0 rows listed = chip 0, all match, all tiers open, map on Asia
+PASS phone-dark: search "united states" + Oceania: 0 rows listed = chip 0, all match, all tiers open, map on Oceania
+PASS phone-dark: search "united states" + Other: 0 rows listed = chip 0, all match, all tiers open, map on Other
+  shot phone-dark-search-us-empty-chips.png
+PASS phone-dark: search "zzzz": chip counts All 0, North America 0, Latin America 0, Europe 0, Asia 0, Oceania 0, Other 0 equal the oracle and sum to All
+PASS phone-dark: search "zzzz": exactly the zero chips (not selected) are styled empty
+PASS phone-dark: search "zzzz" + All: 0 rows listed = chip 0, all match, all tiers open, map on All
+PASS phone-dark: search "zzzz" + North America: 0 rows listed = chip 0, all match, all tiers open, map on North America
+PASS phone-dark: search "zzzz" + Latin America: 0 rows listed = chip 0, all match, all tiers open, map on Latin America
+PASS phone-dark: search "zzzz" + Europe: 0 rows listed = chip 0, all match, all tiers open, map on Europe
+PASS phone-dark: search "zzzz" + Asia: 0 rows listed = chip 0, all match, all tiers open, map on Asia
+PASS phone-dark: search "zzzz" + Oceania: 0 rows listed = chip 0, all match, all tiers open, map on Oceania
+PASS phone-dark: search "zzzz" + Other: 0 rows listed = chip 0, all match, all tiers open, map on Other
+PASS phone-dark: back on All with no search: 133 cities, only first tier open
+media at measure: {"coarse":false,"hoverNone":false,"lchipComputed":"34px","rchipComputed":"34px"}
+chip row: scrollWidth 748, clientWidth 356, overflow-x auto, row 17..373 in viewport 390; chip heights 34/34/34/34/34/34/34
+PASS phone-dark: chips overflow and scroll inside their row (scrollWidth 748 > clientWidth 356)
+PASS phone-dark: the chip row stays within the viewport (17..373)
+NOTE phone-dark: headless Chromium now reports pointer:fine (touch emulation dropped mid-run, a harness artifact; the page cannot change it), so the 44px rule is inactive here; judged at load and in a fresh touch page instead
+PASS phone-dark: every list chip is >=44px wide
+PASS phone-dark chips at rest: no horizontal page scroll (scrollWidth 390 <= clientWidth 390)
+PASS phone-dark: chip row scrolled to 392px
+  shot phone-dark-chips-scrolled.png
+PASS phone-dark chips scrolled: no horizontal page scroll (scrollWidth 390 <= clientWidth 390)
+PASS phone-dark: after scrolling, the Other chip is fully on screen (272..349)
+PASS phone-dark: tapping Other in the scrolled row selects it on both
+PASS phone-dark: tapping a closed tier header opens it under Other
+PASS phone-dark: compare tick on Grand Baie works under Other
+PASS phone-dark: tapping Grand Baie under Other makes it the destination
+  shot phone-dark-other-list.png
+PASS phone-dark after row interactions: no horizontal page scroll (scrollWidth 390 <= clientWidth 390)
+map: 130 dots in view; target (194,528) with 130 neighbours
+PASS phone-dark: tapping a dot shows the city card
+card: {"docked":true,"bg":"rgba(10, 13, 12, 0.92)","blur":"none","name":"Plovdiv Bulgaria","ink":"rgb(236, 241, 238)","rect":[33,696,324,276],"under":0}
+PASS phone-dark: card is docked (is-docked true)
+PASS phone-dark: card background is --surface-glass-strong (rgba(10, 13, 12, 0.92))
+  shot phone-dark-city-card.png
+PASS phone-dark docked card open: no horizontal page scroll (scrollWidth 390 <= clientWidth 390)
+Europe card: Torrevieja
+Spain over 0 dots
+  shot phone-dark-city-card-europe.png
+PASS phone-dark: Europe-zoom card shown (0 dots under it)
+PASS phone-dark end: no horizontal page scroll (scrollWidth 390 <= clientWidth 390)
+PASS phone-dark: no console errors
+
+TOTAL FAILS: 0

@@ -1,0 +1,9 @@
+$ (scratch worktree of 04a5062 + the working-tree regionCounts.test.ts) apply each mutation to src/ui/atlas/regionCounts.ts, then npx vitest run src/ui/atlas/__tests__/regionCounts.test.ts
+MUTATION: none (control) ->      Tests  8 passed (8)
+MUTATION: Africa no longer folded into Other ->      Tests  3 failed | 5 passed (8)
+MUTATION: counts ignore the search ->      Tests  4 failed | 4 passed (8)
+MUTATION: All not incremented ->      Tests  5 failed | 3 passed (8)
+MUTATION: currency substring match ->      Tests  1 failed | 7 passed (8)
+MUTATION: country code dropped ->      Tests  3 failed | 5 passed (8)
+MUTATION: country name dropped ->      Tests  3 failed | 5 passed (8)
+MUTATION: one region never counted ->      Tests  3 failed | 5 passed (8)

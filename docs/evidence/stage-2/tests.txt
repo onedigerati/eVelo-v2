@@ -1,0 +1,13 @@
+$ npm test   (working tree: 04a5062 + uncommitted src/ui/atlas/__tests__/regionCounts.test.ts)
+npm notice run evelo@2.0.0 test
+npm notice run vitest run
+
+ RUN  v5.1.0 /home/jonah/repos/eVelo-v2
+
+
+ Test Files  25 passed (25)
+      Tests  385 passed (385)
+   Start at  11:17:14
+   Duration  7.57s (transform 76%, tests 16%, import 8%)
+
+exit 0

@@ -7,19 +7,21 @@ The Atlas ranking list of 133 cities is quick to get around instead of a long sc
 2026-11-08 · tests: 358 pass (23 files) · typecheck: clean · build: ok
 
 ## Now
-Stage 1 of 2 · Tiers in the list
+Stage 2 of 2 · Region chips + launch
 Mode: autopilot
-Risk: UI only
+Risk: UI only (preview publish and deploy are outward-facing: pause for the user)
 Checks:
-- [x] Grouping puts every listed city in exactly one tier for each sort, in sort order: odds tiers at the verdict cuts 80 / 65 / 45 on the displayed whole percent; Cheapest bands by cost vs home (under 50%, 50–70%, 70–90%, 90–110%, over 110%; a band over 40 cities splits at 10-point lines); A–Z letter groups; empty tiers dropped (proof: test)
-- [x] The tier that holds home is flagged, and a search returns only tiers with hits, all open (proof: test)
-- [x] At rest on Best odds only the first tier is open; a closed tier shows its count, first few names and spark; Open all / Close all work; changing the sort reopens only the new first tier (proof: screenshot + scripted clicks, a test can't judge the layout)
-- [x] Rows inside a tier look and behave as today (choose, compare tick, profile chip, Top pick badge) in both themes and at phone width (proof: screenshot + scripted clicks, a test can't judge the layout)
+- [x] Region chip counts are right per region, follow the search, and sum to the All count (proof: test)
+- [x] The list's region chips and the map's chips drive one region both ways; tiers follow the region; a region change resets open tiers to the default; the list search and the chip counts use one rule (proof: scripted clicks + screenshot)
+- [x] The map's city card reads cleanly over the dots in both themes, as a desktop hover card and as the phone's docked card (proof: screenshot)
+- [x] At phone width the chips scroll inside the list card with no page-level horizontal scroll and 44px touch targets, in both themes; rows and tiers still work (proof: screenshot + scripted clicks, a test can't judge the layout)
+- [x] On desktop the nav shows Plan, Atlas, Method (no Outlook), Plan is active on `#plan` and `#outlook`, and the workspace looks as before; tablet and phone keep both tabs working as today (proof: screenshot + scripted clicks at desktop, tablet and phone widths)
+- [ ] Preview published to the usual artifact for the user's review; deploy to GitHub Pages on the user's approval (proof: preview link + live site check)
 Open: none
 
 ## Stages
 - [x] 1. Tiers in the list — pure grouping helper with tests; collapsible tiers in `CityList` with peek names, spark, home flag, Open all / Close all; search opens matching tiers
-- [ ] 2. Region chips + launch — region chips with counts in the list toolbar, sharing the map's region; counts follow the search; the map's city card made less see-through so it reads cleanly over the dots; phone check; preview; deploy on approval
+- [ ] 2. Region chips + launch — region chips with counts in the list toolbar, sharing the map's region; counts follow the search; the map's city card made less see-through so it reads cleanly over the dots; one Plan tab on desktop; phone check; preview; deploy on approval
 
 ## Decisions
 - 2026-11-08 · Build variant A (odds bands) plus variant B's region chips — user: "let's go with your recommendation" after seeing four variants.
@@ -32,12 +34,16 @@ Open: none
 - 2026-11-08 · Cheapest bands over 40 cities split at 10-point lines too, by the same rule as odds (on the default plan 70–90% has 58, so it becomes 70–79% / 80–89%) — user: "split the Cheapest 70–90% band too".
 - 2026-11-08 · The map's city card (hover/tap bubble) gets its own more opaque glass token, `--surface-glass-strong` (light 0.94, dark 0.92, was 0.74 / 0.72), and keeps its blur. Other glass surfaces are unchanged. It goes in stage 2 because that stage ends in the preview — user: the bubbles are "a little bit too transparent… distracting when trying to read"; placement and opacity are PM's call.
 - 2026-11-08 · No separate preview after stage 1: stages 1 and 2 share one preview at the end of stage 2, since publishing is outward-facing and autopilot pauses for it — PM's call.
+- 2026-11-08 · On desktop the top nav shows one "Plan" tab for the shared plan + outlook workspace (the two tabs went to the same screen). Tablet keeps Plan (drawer) and Outlook, and phone keeps both tabs. `#outlook` links still work and show Plan as active on desktop. Added to stage 2 for the same preview — user: "let's go with your recommendation".
+- 2026-11-08 · Preview publish approved once stage 2 is verified; deploy still waits for the user's approval — user: "ok, publish the preview when it's ready".
+- 2026-11-08 · Fixed the glass blur missing in Chrome/Edge production builds (pre-existing): lightningcss collapses `backdrop-filter` + `-webkit-backdrop-filter` into the prefixed form when the unprefixed one comes first, so the prefixed one now comes first in all 12 pairs. It's small, it restores the intended design, and it bears on the user's city-card readability ask — PM's call.
 
 ## Open questions
 - WebKit's touch path (iPhone) is untested until the user tries it; the full-size view's swipe adds to it — user, when they try it.
 - Seoul, London, Amsterdam and Berlin have no `localTaxes.ts` entry (money logic, needs tests) — user's call, a later plan.
 - Recheck Colorado Amendment 87 (Denver tax 5 → 4 if certified) and Florida Amendment 3 ("unofficial results" in four Florida profiles) once certified — later.
 - The photo credit cleaner misses "upload on <date>" suffixes — later.
+- Region chip rows (list and map) use `role="toolbar"` without arrow-key navigation; fix both or drop the role. The list chips also read region from context while the list reads it as a prop (consistent today) — deferred from the stage 2 review, later.
 
 ## Standing decisions
 - 2026-11-06 · React + Vite + TS, hand-built SVG charts (d3-scale/shape/geo), static hosting — full design control, no backend. (from [eVelo v2 build](plans/2026-11-06-evelo-v2-build.md))

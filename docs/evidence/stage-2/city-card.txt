@@ -1,0 +1,45 @@
+$ BASE=http://localhost:4792/ node scripts/city-card.cjs   (playwright-core chromium, vite preview of npm run build, #atlas)
+
+===== desktop-light =====
+PASS desktop-light: hover on a dot in the Europe view opens the card
+  card: Porto · Portugal; docked false; 11 dots under it; map labels under it: Porto74%, Gascony (Auch), Tavira, Lisbon, Torrevieja, Málaga, Rome, Florence, Valencia, Madrid, Tarragona
+PASS desktop-light: card is floating over the map
+PASS desktop-light: the hover card covers 11 dots, so this is a real over-the-dots case
+  card bg rgba(245, 242, 234, 0.941); 16 text runs; 27 dot colours on the map
+  worst text contrast (relative to its WCAG AA need, 4.5:1 or 3:1 at >=24px) over any dot colour: 4.62:1 vs 4.5:1 ("%", rgba(23, 115, 83, 1.000), 18.72px, over rgb(20,24,21))
+PASS desktop-light: every card text run meets WCAG AA over the worst dot colour (worst 4.62:1, needs 4.5:1)
+  shot desktop-light-hover-card-2x.png
+PASS desktop-light: no console errors
+
+===== phone-light =====
+PASS phone-light: tap on a dot in the Europe view opens the card
+  card: Madeira (Funchal) · Portugal; docked true; 0 dots under it; map labels under it: none
+PASS phone-light: card is docked below the map
+  card bg rgba(245, 242, 234, 0.941); 15 text runs; 28 dot colours on the map
+  worst text contrast (relative to its WCAG AA need, 4.5:1 or 3:1 at >=24px) over the page: 4.96:1 vs 4.5:1 ("%", rgba(29, 118, 87, 1.000), 18.72px, over rgb(245,242,234))
+PASS phone-light: every card text run meets WCAG AA on the docked card (worst 4.96:1, needs 4.5:1)
+  shot phone-light-docked-card.png (viewport, card centred)
+PASS phone-light: no console errors
+
+===== desktop-dark =====
+PASS desktop-dark: hover on a dot in the Europe view opens the card
+  card: Porto · Portugal; docked false; 11 dots under it; map labels under it: Porto74%, Gascony (Auch), Tavira, Lisbon, Torrevieja, Málaga, Rome, Florence, Valencia, Madrid, Tarragona
+PASS desktop-dark: card is floating over the map
+PASS desktop-dark: the hover card covers 11 dots, so this is a real over-the-dots case
+  card bg rgba(10, 13, 12, 0.922); 16 text runs; 28 dot colours on the map
+  worst text contrast (relative to its WCAG AA need, 4.5:1 or 3:1 at >=24px) over any dot colour: 5.08:1 vs 4.5:1 ("Portugal", rgba(132, 145, 139, 1.000), 11px, over rgb(236,241,238))
+PASS desktop-dark: every card text run meets WCAG AA over the worst dot colour (worst 5.08:1, needs 4.5:1)
+  shot desktop-dark-hover-card-2x.png
+PASS desktop-dark: no console errors
+
+===== phone-dark =====
+PASS phone-dark: tap on a dot in the Europe view opens the card
+  card: Madeira (Funchal) · Portugal; docked true; 0 dots under it; map labels under it: none
+PASS phone-dark: card is docked below the map
+  card bg rgba(10, 13, 12, 0.922); 15 text runs; 29 dot colours on the map
+  worst text contrast (relative to its WCAG AA need, 4.5:1 or 3:1 at >=24px) over the page: 5.95:1 vs 4.5:1 ("Portugal", rgba(132, 145, 139, 1.000), 11px, over rgb(10,13,12))
+PASS phone-dark: every card text run meets WCAG AA on the docked card (worst 5.95:1, needs 4.5:1)
+  shot phone-dark-docked-card.png (viewport, card centred)
+PASS phone-dark: no console errors
+
+TOTAL FAILS: 0

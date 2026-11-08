@@ -1,0 +1,47 @@
+$ BASE=http://localhost:4792/ node scripts/phone-chips.cjs   (playwright-core chromium, vite preview of npm run build, #atlas)
+
+===== phone-light (390x844, isMobile, hasTouch, fresh page) =====
+  [load] pointer coarse: true
+  row 17..373 inside card 16..374 (card card--raised card--pad-md atlas__listcard); scrollWidth 748 clientWidth 356 overflow-x auto; page 390 / 390
+  chips: All 44x70 @37..107 | North America 44x136 @113..248 | Latin America 44x131 @254..385 | Europe 44x91 @391..482 | Asia 44x73 @488..561 | Oceania 44x91 @567..658 | Other 44x77 @664..741
+PASS phone-light: chips overflow their row and scroll inside it (scrollWidth 748 > clientWidth 356)
+PASS phone-light: the scrolling row is within the card's box (17..373 in 16..374)
+PASS phone-light: every chip is >=44px tall and wide on touch (44/44/44/44/44/44/44)
+PASS phone-light: no page-level horizontal scroll at rest (390 <= 390)
+  [after swipe] pointer coarse: true
+  after swipe: row scrollLeft 392; page scrollX 0; page 390 / 390
+PASS phone-light: a horizontal swipe scrolls the chip row (scrollLeft 392), not the page
+PASS phone-light: scrolled to the end, Other is fully on screen (272..349)
+  [after tapping Other] pointer coarse: true
+PASS phone-light: tapping Other selects it on list and map (Other, Other)
+PASS phone-light: Europe has 6 tiers; tapping the 2nd header opens it (2 open)
+PASS phone-light: compare tick on Crete (Chania) checks it
+PASS phone-light: tapping Crete (Chania) makes it the destination
+  [after row taps] pointer coarse: true
+PASS phone-light: no page-level horizontal scroll after the interactions (390 <= 390)
+  [after page.fill (diagnostic)] pointer coarse: false
+PASS phone-light: no console errors
+
+===== phone-dark (390x844, isMobile, hasTouch, fresh page) =====
+  [load] pointer coarse: true
+  row 17..373 inside card 16..374 (card card--raised card--pad-md atlas__listcard); scrollWidth 748 clientWidth 356 overflow-x auto; page 390 / 390
+  chips: All 44x70 @37..107 | North America 44x136 @113..248 | Latin America 44x131 @254..385 | Europe 44x91 @391..482 | Asia 44x73 @488..561 | Oceania 44x91 @567..658 | Other 44x77 @664..741
+PASS phone-dark: chips overflow their row and scroll inside it (scrollWidth 748 > clientWidth 356)
+PASS phone-dark: the scrolling row is within the card's box (17..373 in 16..374)
+PASS phone-dark: every chip is >=44px tall and wide on touch (44/44/44/44/44/44/44)
+PASS phone-dark: no page-level horizontal scroll at rest (390 <= 390)
+  [after swipe] pointer coarse: true
+  after swipe: row scrollLeft 392; page scrollX 0; page 390 / 390
+PASS phone-dark: a horizontal swipe scrolls the chip row (scrollLeft 392), not the page
+PASS phone-dark: scrolled to the end, Other is fully on screen (272..349)
+  [after tapping Other] pointer coarse: true
+PASS phone-dark: tapping Other selects it on list and map (Other, Other)
+PASS phone-dark: Europe has 6 tiers; tapping the 2nd header opens it (2 open)
+PASS phone-dark: compare tick on Crete (Chania) checks it
+PASS phone-dark: tapping Crete (Chania) makes it the destination
+  [after row taps] pointer coarse: true
+PASS phone-dark: no page-level horizontal scroll after the interactions (390 <= 390)
+  [after page.fill (diagnostic)] pointer coarse: false
+PASS phone-dark: no console errors
+
+TOTAL FAILS: 0

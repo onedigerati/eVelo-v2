@@ -1,0 +1,21 @@
+$ npx vitest run src/ui/atlas/__tests__/regionCounts.test.ts --reporter=verbose
+npm notice run evelo@2.0.0 npx
+npm notice run 'vitest' run src/ui/atlas/__tests__/regionCounts.test.ts --reporter=verbose
+
+ RUN  v5.1.0 /home/jonah/repos/eVelo-v2
+
+ ✓ src/ui/atlas/__tests__/regionCounts.test.ts > regionCounts > counts every city per region with no search, and has a key for every chip 2ms
+ ✓ src/ui/atlas/__tests__/regionCounts.test.ts > regionCounts > counts each region as the cities that match the search, for several searches 2ms
+ ✓ src/ui/atlas/__tests__/regionCounts.test.ts > regionCounts > folds the Middle East and Africa into Other 0ms
+ ✓ src/ui/atlas/__tests__/regionCounts.test.ts > regionCounts > regions sum to All, with and without a search 1ms
+ ✓ src/ui/atlas/__tests__/regionCounts.test.ts > regionCounts > applies the search filter 0ms
+ ✓ src/ui/atlas/__tests__/regionCounts.test.ts > regionCounts > matches a currency or country code exactly, not as a substring 1ms
+ ✓ src/ui/atlas/__tests__/regionCounts.test.ts > regionCounts > a search with no hits zeroes every chip 0ms
+ ✓ src/ui/atlas/__tests__/regionCounts.test.ts > matchesQuery > matches names, countries and exact codes 0ms
+
+ Test Files  1 passed (1)
+      Tests  8 passed (8)
+   Start at  11:17:22
+   Duration  120ms (transform 40%, import 35%, tests 20%, worker 6%)
+
+exit 0

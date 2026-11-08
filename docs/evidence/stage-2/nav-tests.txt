@@ -1,0 +1,14 @@
+fdd4827 Stage 2 (wip): one Plan tab on desktop
+04a5062 Stage 2 (wip): merge region chips and the more solid city card
+ M src/ui/atlas/__tests__/regionCounts.test.ts
+npm notice run evelo@2.0.0 test
+npm notice run vitest run
+
+ RUN  v5.1.0 /home/jonah/repos/eVelo-v2/.claude/worktrees/stage2-nav-verify
+
+
+ Test Files  25 passed (25)
+      Tests  387 passed (387)
+   Start at  11:06:58
+   Duration  7.26s (transform 80%, tests 14%, import 6%)
+

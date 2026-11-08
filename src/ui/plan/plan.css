@@ -520,8 +520,8 @@
   position: absolute;
   inset: 0;
   background: color-mix(in oklab, var(--bg-deep) 60%, transparent);
-  backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
 .tp {
   position: relative;

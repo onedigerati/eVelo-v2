@@ -1,0 +1,7 @@
+# Traces, archives and videos stay local. Screenshots are committed (standing decision, see stage-1 report);
+# add the image lines back (*.png *.jpg *.jpeg *.webp *.gif) to keep them local instead.
+*.zip
+*.webm
+*.mp4
+*.trace
+*.har

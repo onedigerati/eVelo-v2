@@ -334,8 +334,8 @@
   background: var(--surface-glass);
   border: 1px solid var(--hairline-strong);
   box-shadow: var(--shadow-1, none);
-  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   overflow: hidden;
   cursor: default;
 }
@@ -392,8 +392,8 @@
   border-radius: var(--radius-pill);
   background: var(--surface-glass);
   border: 1px solid var(--hairline-strong);
-  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   font-size: var(--fs-sm);
   color: var(--ink-2);
   white-space: nowrap;
@@ -522,8 +522,8 @@
   border-radius: var(--radius-pill);
   background: var(--surface-glass);
   border: 1px solid var(--hairline-strong);
-  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   font-size: var(--fs-sm);
   color: var(--ink-2);
   white-space: nowrap;
@@ -541,8 +541,8 @@
   background: var(--surface-glass-strong);
   border: 1px solid var(--hairline-strong);
   box-shadow: var(--shadow-3);
-  backdrop-filter: blur(18px) saturate(1.2);
   -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  backdrop-filter: blur(18px) saturate(1.2);
   cursor: default;
   touch-action: manipulation;
 }
@@ -1439,8 +1439,8 @@
   background: var(--surface-glass);
   border: 1px solid var(--hairline-strong);
   box-shadow: var(--shadow-3);
-  backdrop-filter: blur(18px) saturate(1.2);
   -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  backdrop-filter: blur(18px) saturate(1.2);
 }
 .app--phone .cmp-dock {
   bottom: calc(var(--tabbar-h) + var(--safe-bottom) + var(--space-3));

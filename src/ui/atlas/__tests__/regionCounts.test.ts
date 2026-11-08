@@ -2,6 +2,11 @@ import { describe, expect, it } from 'vitest'
 import { CITIES } from '../../../data/cities'
 import { REGION_CHIPS, inRegion, matchesQuery, regionCounts, type RegionChip } from '../regionCounts'
 
+// Independent oracle for the search rule (not matchesQuery): name or country contains the text, or it equals a currency / country code.
+const hit = (x: (typeof CITIES)[number], q: string) => {
+  const t = q.trim().toLowerCase()
+  return !t || x.name.toLowerCase().includes(t) || x.country.toLowerCase().includes(t) || x.currency.toLowerCase() === t || x.countryCode.toLowerCase() === t
+}
 const sumOfRegions = (c: Record<RegionChip, number>) => REGION_CHIPS.filter((r) => r !== 'All').reduce((s, r) => s + c[r], 0)
 
 describe('regionCounts', () => {
@@ -10,6 +15,13 @@ describe('regionCounts', () => {
     expect(Object.keys(c).sort()).toEqual([...REGION_CHIPS].sort())
     expect(c.All).toBe(CITIES.length)
     for (const r of REGION_CHIPS) expect(c[r]).toBe(CITIES.filter((x) => inRegion(x, r)).length)
+  })
+
+  it('counts each region as the cities that match the search, for several searches', () => {
+    for (const q of ['an', 'united states', 'eur', 'mx', 'jp', 'zzz-no-match']) {
+      const c = regionCounts(CITIES, q)
+      for (const r of REGION_CHIPS) expect(c[r], `${q} / ${r}`).toBe(CITIES.filter((x) => inRegion(x, r) && hit(x, q)).length)
+    }
   })
 
   it('folds the Middle East and Africa into Other', () => {
@@ -39,7 +51,7 @@ describe('regionCounts', () => {
 
   it('matches a currency or country code exactly, not as a substring', () => {
     const eur = regionCounts(CITIES, 'eur')
-    expect(eur.All).toBe(CITIES.filter((x) => x.currency === 'EUR' || matchesQuery(x, 'eur')).length)
+    expect(eur.All).toBe(CITIES.filter((x) => x.currency === 'EUR' || x.name.toLowerCase().includes('eur') || x.country.toLowerCase().includes('eur')).length)
     expect(eur.Europe).toBeGreaterThan(0)
     const jp = regionCounts(CITIES, 'jp')
     expect(jp.All).toBe(CITIES.filter((x) => x.countryCode === 'JP' || x.name.toLowerCase().includes('jp') || x.country.toLowerCase().includes('jp')).length)
