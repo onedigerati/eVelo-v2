@@ -62,23 +62,39 @@ export interface LoanToastApi {
   isLive(id: number): boolean
 }
 
+/** The run tracker: call it with each clamp; `reset` ends the current run. */
+export interface LoanToastRun {
+  (l: LoanLowered): void
+  /** Ends the run, so the next clamp's "It was" is the balance it starts from. The store calls it
+   *  whenever the user sets the balance directly, even to the value the last clamp left. */
+  reset(): void
+}
+
 /**
  * Shows "loan balance lowered" toasts, one at a time. Successive clamps while the toast is live
  * (stepping the portfolio down by arrow keys) form a run: each replaces the last, and "It was"
  * keeps the balance from before the run's first clamp, the one the user actually entered. A run
- * ends when its toast goes away, or when the next clamp doesn't start from the last one's result.
+ * ends when its toast goes away, when the next clamp doesn't start from the last one's result, or
+ * on `reset`.
  */
-export function loanToastRun(api: LoanToastApi): (l: LoanLowered) => void {
+export function loanToastRun(api: LoanToastApi): LoanToastRun {
   let id: number | null = null
   let first = 0
   let last = 0
-  return (l) => {
+  let broken = false
+  const show = (l: LoanLowered) => {
     const live = id !== null && api.isLive(id)
-    const continues = live && l.from === last
+    const continues = live && !broken && l.from === last
     if (id !== null && live) api.dismiss(id)
     if (!continues) first = l.from
     last = l.to
+    broken = false
     const { message, detail } = loanLoweredNotice({ from: first, to: l.to })
     id = api.show(message, detail)
   }
+  return Object.assign(show, {
+    reset: () => {
+      broken = true
+    },
+  })
 }

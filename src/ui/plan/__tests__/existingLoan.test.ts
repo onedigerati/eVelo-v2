@@ -1,10 +1,10 @@
 import { describe, expect, it } from 'vitest'
 import marketJson from '../../../data/market.json'
 import { DEFAULT_INPUTS } from '../../../engine/defaults'
-import { simulate } from '../../../engine/simulate'
+import { resolveDestination, simulate } from '../../../engine/simulate'
 import type { MarketData } from '../../../engine/types'
 import { CITIES_FIX } from '../../../engine/__tests__/fixtures'
-import { clampExistingLoan, existingLoanInfo, maxExistingLoan } from '../existingLoan'
+import { clampExistingLoan, existingLoanInfo, firstYearSpend, maxExistingLoan } from '../existingLoan'
 
 // Defaults: basis 0.4, gains tax 23.8%, call at 60%, sold back to 45% → the opening sale can't
 // cover the loan from 1 − 0.6·0.238 = 85.72% LTV.
@@ -155,5 +155,48 @@ describe('existing loan: the warning agrees with the engine', () => {
       }
     }
     expect([...seen].sort()).toEqual(['breaks', 'ok', 'over-limit'])
+  })
+})
+
+describe('firstYearSpend', () => {
+  const [STL, BKK] = CITIES_FIX
+  const home = DEFAULT_INPUTS.budget
+  const homeTotal = Object.values(home).reduce((a, b) => a + b, 0)
+  // income not started yet, so only the budget counts
+  const base = { ...DEFAULT_INPUTS, age: 55, incomeStartAge: 67, otherIncome: 40_000 }
+
+  it('uses the destination budget, priced as the engine prices it, when the move is within the first year', () => {
+    const dest = resolveDestination(base, STL, BKK).annual!
+    expect(dest).not.toBeCloseTo(homeTotal, 0)
+    expect(firstYearSpend({ ...base, destCityId: 'bangkok', moveInYears: 0 }, STL, BKK)).toBeCloseTo(dest, 6)
+    expect(firstYearSpend({ ...base, destCityId: 'bangkok', moveInYears: 0.5 }, STL, BKK)).toBeCloseTo(dest, 6)
+    // the expat factor and overrides move it, as they move the engine's figure
+    const pricey = { ...base, destCityId: 'bangkok', moveInYears: 0, expatFactor: 1, ratioOverrides: { housing: 2 } }
+    expect(firstYearSpend(pricey, STL, BKK)).toBeCloseTo(resolveDestination(pricey, STL, BKK).annual!, 6)
+  })
+
+  it('uses the home budget when the move is a year or more away, or there is no destination', () => {
+    expect(firstYearSpend({ ...base, destCityId: 'bangkok', moveInYears: 1 }, STL, BKK)).toBe(homeTotal)
+    expect(firstYearSpend({ ...base, destCityId: null, moveInYears: 0 }, STL, null)).toBe(homeTotal)
+    // a destination equal to home, or an unknown city, means staying home
+    expect(firstYearSpend({ ...base, destCityId: 'st-louis', moveInYears: 0 }, STL, STL)).toBe(homeTotal)
+    expect(firstYearSpend({ ...base, destCityId: 'nowhere', moveInYears: 0 }, STL, undefined)).toBe(homeTotal)
+  })
+
+  it('subtracts other income only once it has started, and never goes below 0', () => {
+    const stay = { ...base, destCityId: null }
+    expect(firstYearSpend({ ...stay, incomeStartAge: 55 }, STL, null)).toBe(homeTotal - 40_000)
+    expect(firstYearSpend({ ...stay, incomeStartAge: 50 }, STL, null)).toBe(homeTotal - 40_000)
+    expect(firstYearSpend({ ...stay, incomeStartAge: 56 }, STL, null)).toBe(homeTotal)
+    expect(firstYearSpend({ ...stay, incomeStartAge: 55, otherIncome: 10 * homeTotal }, STL, null)).toBe(0)
+  })
+
+  it('makes a sale thin against the first year’s draw, not the home budget', () => {
+    // the opening sale on $2.57M of $3M leaves `left` of net worth
+    const left = info(3_000_000, 2_570_000).netWorthLeft
+    const thin = (spend: number) => existingLoanInfo({ portfolio: 3_000_000, balance: 2_570_000, maxLtv: 0.6, targetLtv: 0.45, basisFraction: 0.4, capGainsRate: 0.238, annualSpend: spend }).thin
+    // income that covers the budget leaves nothing to draw: not thin
+    expect(thin(firstYearSpend({ ...base, destCityId: null, incomeStartAge: 55, otherIncome: 10 * homeTotal }, STL, null))).toBe(false)
+    expect(thin(left + 1)).toBe(true)
   })
 })

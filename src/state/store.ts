@@ -147,12 +147,17 @@ export const useStore = create<AppState>()((set, get) => ({
 
   // The clamp runs outside `set` so its toast is a side effect of the action, not of the updater.
   setInput: (key, value) => {
+    // The user setting the balance themselves ends any "loan balance lowered" run.
+    if (key === 'existingLoan') showLoanLowered.reset()
     const inputs = clampLoan(clampAfterSet(get().inputs, key, value))
     // A destination equal to home means staying home.
     if (inputs.destCityId && inputs.destCityId === inputs.homeCityId) inputs.destCityId = null
     set({ inputs })
   },
-  patchInputs: (patch) => set({ inputs: clampLoan(clampAfterPatch(get().inputs, patch)) }),
+  patchInputs: (patch) => {
+    if ('existingLoan' in patch) showLoanLowered.reset()
+    set({ inputs: clampLoan(clampAfterPatch(get().inputs, patch)) })
+  },
   replaceInputs: (inputs) => set({ inputs: clampLoan(clampAfterReplace(inputs)) }),
   resetInputs: () => set({ inputs: structuredClone(DEFAULT_INPUTS) }),
   setTheme: (theme) => set({ theme }),
