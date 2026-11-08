@@ -1,0 +1,50 @@
+$ for each mutation of a scratch copy of src/ui/atlas/tiers.ts: npx vitest run src/ui/atlas/__tests__/tiers.test.ts   (repo source untouched)
+
+== mutation: cost bands never split  [return splitBands(rows.map((r) => wholePct(r.costRatio)), COST_BANDS, max, true) -> return COST_BANDS]
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/ui/atlas/__tests__/tiers.test.ts > costBands > splits a Cheapest band over 40 at its 10-point line, low first (the default plan: 58 at 70–90%)
+ FAIL  src/ui/atlas/__tests__/tiers.test.ts > costBands > splits 90–110% at 100 (110% stays in the upper half) and never splits the open-ended top band
+ FAIL  src/ui/atlas/__tests__/tiers.test.ts > costBands > counts on the full list: a few rows from one half keep the split label
+      Tests  3 failed | 16 passed (19)
+
+== mutation: cost halves high first  [COST_BANDS, max, true) -> COST_BANDS, max, false)]
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/ui/atlas/__tests__/tiers.test.ts > costBands > splits a Cheapest band over 40 at its 10-point line, low first (the default plan: 58 at 70–90%)
+ FAIL  src/ui/atlas/__tests__/tiers.test.ts > costBands > splits 90–110% at 100 (110% stays in the upper half) and never splits the open-ended top band
+      Tests  2 failed | 17 passed (19)
+
+== mutation: split line one lower  [Math.floor((b.hi - 2) / 10) * 10 -> Math.floor((b.hi - 2) / 10) * 10 - 10]
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 6 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/ui/atlas/__tests__/tiers.test.ts > oddsBands > splits a band over 40 at its 10-point lines, top first
+ FAIL  src/ui/atlas/__tests__/tiers.test.ts > oddsBands > counts on the full list: a few rows from one half keep the split label and range
+ FAIL  src/ui/atlas/__tests__/tiers.test.ts > oddsBands > keeps splitting a huge band and stops when no 10-point line is left
+ FAIL  src/ui/atlas/__tests__/tiers.test.ts > costBands > splits a Cheapest band over 40 at its 10-point line, low first (the default plan: 58 at 70–90%)
+ FAIL  src/ui/atlas/__tests__/tiers.test.ts > costBands > splits 90–110% at 100 (110% stays in the upper half) and never splits the open-ended top band
+
+== mutation: open-ended band splits too  [|| !Number.isFinite(b.hi) -> ]
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/ui/atlas/__tests__/tiers.test.ts > groupTiers > cost: every city in exactly one tier, in sort order, no empty tiers
+ FAIL  src/ui/atlas/__tests__/tiers.test.ts > costBands > splits 90–110% at 100 (110% stays in the upper half) and never splits the open-ended top band
+      Tests  2 failed | 17 passed (19)
+
+== mutation: 90–110 upper bound exclusive of 110  [{ lo: 90, hi: 111, label -> { lo: 90, hi: 110, label]
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/ui/atlas/__tests__/tiers.test.ts > groupTiers > cheapest bands by cost vs home on the displayed percent
+ FAIL  src/ui/atlas/__tests__/tiers.test.ts > costBands > splits a Cheapest band over 40 at its 10-point line, low first (the default plan: 58 at 70–90%)
+ FAIL  src/ui/atlas/__tests__/tiers.test.ts > costBands > splits 90–110% at 100 (110% stays in the upper half) and never splits the open-ended top band
+      Tests  3 failed | 16 passed (19)
+
+== mutation: displayed percent -> floor  [Math.round(v * 100) -> Math.floor(v * 100)]
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/ui/atlas/__tests__/tiers.test.ts > groupTiers > odds tiers follow the verdict cuts on the displayed whole percent
+ FAIL  src/ui/atlas/__tests__/tiers.test.ts > groupTiers > cheapest bands by cost vs home on the displayed percent
+ FAIL  src/ui/atlas/__tests__/tiers.test.ts > costBands > splits 90–110% at 100 (110% stays in the upper half) and never splits the open-ended top band
+      Tests  3 failed | 16 passed (19)
+
+== mutation: no 40-city split at all  [if (count(b) <= max || !Number.isFinite(b.hi)) return [b] -> return [b]]
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 6 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/ui/atlas/__tests__/tiers.test.ts > oddsBands > splits a band over 40 at its 10-point lines, top first
+ FAIL  src/ui/atlas/__tests__/tiers.test.ts > oddsBands > counts on the full list: a few rows from one half keep the split label and range
+ FAIL  src/ui/atlas/__tests__/tiers.test.ts > oddsBands > keeps splitting a huge band and stops when no 10-point line is left
+ FAIL  src/ui/atlas/__tests__/tiers.test.ts > costBands > splits a Cheapest band over 40 at its 10-point line, low first (the default plan: 58 at 70–90%)
+ FAIL  src/ui/atlas/__tests__/tiers.test.ts > costBands > splits 90–110% at 100 (110% stays in the upper half) and never splits the open-ended top band

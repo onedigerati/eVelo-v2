@@ -8,23 +8,30 @@ The Atlas ranking list of 133 cities is quick to get around instead of a long sc
 
 ## Now
 Stage 1 of 2 · Tiers in the list
+Mode: autopilot
 Risk: UI only
 Checks:
-- [ ] Grouping puts every listed city in exactly one tier for each sort, in sort order: odds tiers at the verdict cuts 80 / 65 / 45 on the displayed whole percent; Cheapest bands by cost vs home (under 50%, 50–70%, 70–90%, 90–110%, over 110%); A–Z letter groups; empty tiers dropped (proof: test)
-- [ ] The tier that holds home is flagged, and a search returns only tiers with hits, all open (proof: test)
-- [ ] At rest on Best odds only the first tier is open; a closed tier shows its count, first few names and spark; Open all / Close all work; changing the sort reopens only the new first tier (proof: screenshot + scripted clicks, a test can't judge the layout)
-- [ ] Rows inside a tier look and behave as today (choose, compare tick, profile chip, Top pick badge) in both themes and at phone width (proof: screenshot + scripted clicks, a test can't judge the layout)
+- [x] Grouping puts every listed city in exactly one tier for each sort, in sort order: odds tiers at the verdict cuts 80 / 65 / 45 on the displayed whole percent; Cheapest bands by cost vs home (under 50%, 50–70%, 70–90%, 90–110%, over 110%; a band over 40 cities splits at 10-point lines); A–Z letter groups; empty tiers dropped (proof: test)
+- [x] The tier that holds home is flagged, and a search returns only tiers with hits, all open (proof: test)
+- [x] At rest on Best odds only the first tier is open; a closed tier shows its count, first few names and spark; Open all / Close all work; changing the sort reopens only the new first tier (proof: screenshot + scripted clicks, a test can't judge the layout)
+- [x] Rows inside a tier look and behave as today (choose, compare tick, profile chip, Top pick badge) in both themes and at phone width (proof: screenshot + scripted clicks, a test can't judge the layout)
 Open: none
 
 ## Stages
-- [ ] 1. Tiers in the list — pure grouping helper with tests; collapsible tiers in `CityList` with peek names, spark, home flag, Open all / Close all; search opens matching tiers
-- [ ] 2. Region chips + launch — region chips with counts in the list toolbar, sharing the map's region; counts follow the search; phone check; preview; deploy on approval
+- [x] 1. Tiers in the list — pure grouping helper with tests; collapsible tiers in `CityList` with peek names, spark, home flag, Open all / Close all; search opens matching tiers
+- [ ] 2. Region chips + launch — region chips with counts in the list toolbar, sharing the map's region; counts follow the search; the map's city card made less see-through so it reads cleanly over the dots; phone check; preview; deploy on approval
 
 ## Decisions
 - 2026-11-08 · Build variant A (odds bands) plus variant B's region chips — user: "let's go with your recommendation" after seeing four variants.
 - 2026-11-08 · Odds tiers use the app's verdict cuts (80 / 65 / 45: Holds, Mostly holds, Fragile, Breaks), not the mockup's 10-point steps, so the list speaks the Outlook's language. If a tier holds more than about 40 cities on the default plan, split it at the next 10-point line and say so — builder's call.
 - 2026-11-08 · Cheapest groups by cost relative to home, not fixed dollar bands, because budgets vary by plan — builder's call.
 - 2026-11-08 · The list's region chips and the map's chips drive one shared region, as the list already follows the map's region — builder's call.
+- 2026-11-08 · Stage 2's region chips are built in a worktree alongside stage 1, as their own component, and merged after stage 1 closes. The user asked for more parallel subagents to finish sooner — PM's call.
+- 2026-11-08 · Odds bands over 40 cities split at the highest 10-point line inside them (repeated while still over 40), counted on the full list so tiers don't shift while typing. The default plan shows 6 tiers: Holds, Mostly holds 70–79 / 65–69, Fragile 60–64 / 45–59, Breaks. Labels stay the verdict, with the range beside them — builder's call, per the decision above.
+- 2026-11-08 · Sort, search or region change resets the open tiers to the default; manual toggles last until then — builder's call.
+- 2026-11-08 · Cheapest bands over 40 cities split at 10-point lines too, by the same rule as odds (on the default plan 70–90% has 58, so it becomes 70–79% / 80–89%) — user: "split the Cheapest 70–90% band too".
+- 2026-11-08 · The map's city card (hover/tap bubble) gets its own more opaque glass token, `--surface-glass-strong` (light 0.94, dark 0.92, was 0.74 / 0.72), and keeps its blur. Other glass surfaces are unchanged. It goes in stage 2 because that stage ends in the preview — user: the bubbles are "a little bit too transparent… distracting when trying to read"; placement and opacity are PM's call.
+- 2026-11-08 · No separate preview after stage 1: stages 1 and 2 share one preview at the end of stage 2, since publishing is outward-facing and autopilot pauses for it — PM's call.
 
 ## Open questions
 - WebKit's touch path (iPhone) is untested until the user tries it; the full-size view's swipe adds to it — user, when they try it.

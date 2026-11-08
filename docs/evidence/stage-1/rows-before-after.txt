@@ -1,0 +1,37 @@
+$ node beforeafter.cjs   (same rows, HEAD ad60520 build on :4795 "before" vs working-tree build on :4791 "after"; computed row box and style)
+SAME desktop-light pick row (Chiang Rai):
+   before h=56 w=1086 grid="34px 316.062px 273.938px 104px 74px 112px 52px" bg=rgba(0, 0, 0, 0) pad=0px 12px
+   after  h=56 w=1086 grid="34px 316.062px 273.938px 104px 74px 112px 52px" bg=rgba(0, 0, 0, 0) pad=0px 12px
+SAME desktop-light chip row (Cebu):
+   before h=56 w=1086 grid="34px 316.062px 273.938px 104px 74px 112px 52px" bg=rgba(0, 0, 0, 0) pad=0px 12px
+   after  h=56 w=1086 grid="34px 316.062px 273.938px 104px 74px 112px 52px" bg=rgba(0, 0, 0, 0) pad=0px 12px
+SAME desktop-light cmp row (Hanoi):
+   before h=56 w=1086 grid="34px 316.062px 273.938px 104px 74px 112px 52px" bg=rgba(0, 0, 0, 0) pad=0px 12px
+   after  h=56 w=1086 grid="34px 316.062px 273.938px 104px 74px 112px 52px" bg=rgba(0, 0, 0, 0) pad=0px 12px
+SAME desktop-dark pick row (Chiang Rai):
+   before h=56 w=1086 grid="34px 316.062px 273.938px 104px 74px 112px 52px" bg=rgba(0, 0, 0, 0) pad=0px 12px
+   after  h=56 w=1086 grid="34px 316.062px 273.938px 104px 74px 112px 52px" bg=rgba(0, 0, 0, 0) pad=0px 12px
+SAME desktop-dark chip row (Cebu):
+   before h=56 w=1086 grid="34px 316.062px 273.938px 104px 74px 112px 52px" bg=rgba(0, 0, 0, 0) pad=0px 12px
+   after  h=56 w=1086 grid="34px 316.062px 273.938px 104px 74px 112px 52px" bg=rgba(0, 0, 0, 0) pad=0px 12px
+SAME desktop-dark cmp row (Hanoi):
+   before h=56 w=1086 grid="34px 316.062px 273.938px 104px 74px 112px 52px" bg=rgba(0, 0, 0, 0) pad=0px 12px
+   after  h=56 w=1086 grid="34px 316.062px 273.938px 104px 74px 112px 52px" bg=rgba(0, 0, 0, 0) pad=0px 12px
+SAME phone-light pick row (Chiang Rai):
+   before h=78 w=316 grid="26px 175.203px 28.7969px 40px" bg=rgba(0, 0, 0, 0) pad=10px 2px 10px 8px
+   after  h=78 w=316 grid="26px 175.203px 28.7969px 40px" bg=rgba(0, 0, 0, 0) pad=10px 2px 10px 8px
+SAME phone-light chip row (Cebu):
+   before h=78 w=316 grid="26px 175.203px 28.7969px 40px" bg=rgba(0, 0, 0, 0) pad=10px 2px 10px 8px
+   after  h=78 w=316 grid="26px 175.203px 28.7969px 40px" bg=rgba(0, 0, 0, 0) pad=10px 2px 10px 8px
+SAME phone-light cmp row (Hanoi):
+   before h=78 w=316 grid="26px 175.203px 28.7969px 40px" bg=rgba(0, 0, 0, 0) pad=10px 2px 10px 8px
+   after  h=78 w=316 grid="26px 175.203px 28.7969px 40px" bg=rgba(0, 0, 0, 0) pad=10px 2px 10px 8px
+SAME phone-dark pick row (Chiang Rai):
+   before h=78 w=316 grid="26px 175.203px 28.7969px 40px" bg=rgba(0, 0, 0, 0) pad=10px 2px 10px 8px
+   after  h=78 w=316 grid="26px 175.203px 28.7969px 40px" bg=rgba(0, 0, 0, 0) pad=10px 2px 10px 8px
+SAME phone-dark chip row (Cebu):
+   before h=78 w=316 grid="26px 175.203px 28.7969px 40px" bg=rgba(0, 0, 0, 0) pad=10px 2px 10px 8px
+   after  h=78 w=316 grid="26px 175.203px 28.7969px 40px" bg=rgba(0, 0, 0, 0) pad=10px 2px 10px 8px
+SAME phone-dark cmp row (Hanoi):
+   before h=78 w=316 grid="26px 175.203px 28.7969px 40px" bg=rgba(0, 0, 0, 0) pad=10px 2px 10px 8px
+   after  h=78 w=316 grid="26px 175.203px 28.7969px 40px" bg=rgba(0, 0, 0, 0) pad=10px 2px 10px 8px

@@ -1,0 +1,29 @@
+$ node peek-r2.cjs   (closed-tier header geometry at rest, vite preview of npm run build)
+--- 390px light · Best odds at rest
+Mostly holds 70–79%: peek left offset 28px, top 33px, peek margin-left 20px
+Mostly holds 65–69%: peek left offset 28px, top 33px, peek margin-left 20px
+Fragile 60–64% [HOME]: peek left offset 28px, top 33px, peek margin-left 20px
+Fragile 45–59%: peek left offset 28px, top 33px, peek margin-left 20px
+Breaks under 45%: peek left offset 28px, top 33px, peek margin-left 20px
+--- 390px light · Cheapest at rest
+70–79% of home: peek left offset 28px, top 33px
+80–89% of home: peek left offset 28px, top 33px
+90–110% of home [HOME]: peek left offset 28px, top 33px
+Over 110% of home: peek left offset 28px, top 33px
+--- 390px dark · Best odds at rest
+Mostly holds 70–79%: peek left offset 28px, top 33px, peek margin-left 20px
+Mostly holds 65–69%: peek left offset 28px, top 33px, peek margin-left 20px
+Fragile 60–64% [HOME]: peek left offset 28px, top 33px, peek margin-left 20px
+Fragile 45–59%: peek left offset 28px, top 33px, peek margin-left 20px
+Breaks under 45%: peek left offset 28px, top 33px, peek margin-left 20px
+--- 390px dark · Cheapest at rest
+70–79% of home: peek left offset 28px, top 33px
+80–89% of home: peek left offset 28px, top 33px
+90–110% of home [HOME]: peek left offset 28px, top 33px
+Over 110% of home: peek left offset 28px, top 33px
+--- 1280px light · Best odds at rest
+Mostly holds 70–79%: peek left offset 254px, top 15px, peek margin-left 0px
+Mostly holds 65–69%: peek left offset 249px, top 15px, peek margin-left 0px
+Fragile 60–64% [HOME]: peek left offset 279px, top 15px, peek margin-left 0px
+Fragile 45–59%: peek left offset 219px, top 15px, peek margin-left 0px
+Breaks under 45%: peek left offset 228px, top 15px, peek margin-left 0px

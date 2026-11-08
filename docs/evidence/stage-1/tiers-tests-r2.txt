@@ -1,0 +1,21 @@
+$ npx vitest run src/ui/atlas/__tests__/tiers.test.ts --reporter=verbose
+ ✓ src/ui/atlas/__tests__/tiers.test.ts > groupTiers > odds: every city in exactly one tier, in sort order, no empty tiers 2ms
+ ✓ src/ui/atlas/__tests__/tiers.test.ts > groupTiers > cost: every city in exactly one tier, in sort order, no empty tiers 0ms
+ ✓ src/ui/atlas/__tests__/tiers.test.ts > groupTiers > name: every city in exactly one tier, in sort order, no empty tiers 6ms
+ ✓ src/ui/atlas/__tests__/tiers.test.ts > groupTiers > odds tiers follow the verdict cuts on the displayed whole percent 4ms
+ ✓ src/ui/atlas/__tests__/tiers.test.ts > groupTiers > drops empty odds tiers 0ms
+ ✓ src/ui/atlas/__tests__/tiers.test.ts > groupTiers > cheapest bands by cost vs home on the displayed percent 0ms
+ ✓ src/ui/atlas/__tests__/tiers.test.ts > groupTiers > A–Z groups by first letter, accents folded 0ms
+ ✓ src/ui/atlas/__tests__/tiers.test.ts > groupTiers > flags only the tier that holds home 1ms
+ ✓ src/ui/atlas/__tests__/tiers.test.ts > groupTiers > flags no tier when home is not in the list 1ms
+ ✓ src/ui/atlas/__tests__/tiers.test.ts > groupTiers > a cost ratio of 49.49% shows as 49% and lands under 50% 0ms
+ ✓ src/ui/atlas/__tests__/tiers.test.ts > groupTiers > a search returns only tiers with hits, all open 1ms
+ ✓ src/ui/atlas/__tests__/tiers.test.ts > oddsBands > keeps the verdict bands when none holds more than 40 0ms
+ ✓ src/ui/atlas/__tests__/tiers.test.ts > oddsBands > splits a band over 40 at its 10-point lines, top first 0ms
+ ✓ src/ui/atlas/__tests__/tiers.test.ts > oddsBands > counts on the full list: a few rows from one half keep the split label and range 0ms
+ ✓ src/ui/atlas/__tests__/tiers.test.ts > oddsBands > keeps splitting a huge band and stops when no 10-point line is left 0ms
+ ✓ src/ui/atlas/__tests__/tiers.test.ts > costBands > keeps the cost bands when none holds more than 40 0ms
+ ✓ src/ui/atlas/__tests__/tiers.test.ts > costBands > splits a Cheapest band over 40 at its 10-point line, low first (the default plan: 58 at 70–90%) 1ms
+ ✓ src/ui/atlas/__tests__/tiers.test.ts > costBands > splits 90–110% at 100 (110% stays in the upper half) and never splits the open-ended top band 0ms
+ ✓ src/ui/atlas/__tests__/tiers.test.ts > costBands > counts on the full list: a few rows from one half keep the split label 0ms
+      Tests  19 passed (19)

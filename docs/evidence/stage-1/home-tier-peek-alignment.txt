@@ -1,0 +1,19 @@
+$ node peek.cjs   (closed-tier header geometry at rest, vite preview of npm run build)
+--- 390px light
+Mostly holds 70–79%: peek left offset 28px, top 33px, peek margin-left 20px
+Mostly holds 65–69%: peek left offset 28px, top 33px, peek margin-left 20px
+Fragile 60–64% [HOME]: peek left offset 8px, top 33px, peek margin-left 0px
+Fragile 45–59%: peek left offset 28px, top 33px, peek margin-left 20px
+Breaks under 45%: peek left offset 28px, top 33px, peek margin-left 20px
+--- 390px dark
+Mostly holds 70–79%: peek left offset 28px, top 33px, peek margin-left 20px
+Mostly holds 65–69%: peek left offset 28px, top 33px, peek margin-left 20px
+Fragile 60–64% [HOME]: peek left offset 8px, top 33px, peek margin-left 0px
+Fragile 45–59%: peek left offset 28px, top 33px, peek margin-left 20px
+Breaks under 45%: peek left offset 28px, top 33px, peek margin-left 20px
+--- 1280px light
+Mostly holds 70–79%: peek left offset 254px, top 15px, peek margin-left 0px
+Mostly holds 65–69%: peek left offset 249px, top 15px, peek margin-left 0px
+Fragile 60–64% [HOME]: peek left offset 279px, top 15px, peek margin-left 0px
+Fragile 45–59%: peek left offset 219px, top 15px, peek margin-left 0px
+Breaks under 45%: peek left offset 228px, top 15px, peek margin-left 0px

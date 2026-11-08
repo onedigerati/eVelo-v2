@@ -1,0 +1,61 @@
+$ for each mutation of a scratch copy of src/ui/atlas/tiers.ts: npx vitest run src/ui/atlas/__tests__/tiers.test.ts   (repo source untouched)
+$ npx vitest run src/ui/atlas/__tests__/tiers.test.ts --reporter=verbose   (unmutated, in the repo)
+ ✓ src/ui/atlas/__tests__/tiers.test.ts > groupTiers > odds: every city in exactly one tier, in sort order, no empty tiers 2ms
+ ✓ src/ui/atlas/__tests__/tiers.test.ts > groupTiers > cost: every city in exactly one tier, in sort order, no empty tiers 0ms
+ ✓ src/ui/atlas/__tests__/tiers.test.ts > groupTiers > name: every city in exactly one tier, in sort order, no empty tiers 5ms
+ ✓ src/ui/atlas/__tests__/tiers.test.ts > groupTiers > odds tiers follow the verdict cuts on the displayed whole percent 4ms
+ ✓ src/ui/atlas/__tests__/tiers.test.ts > groupTiers > drops empty odds tiers 0ms
+ ✓ src/ui/atlas/__tests__/tiers.test.ts > groupTiers > cheapest bands by cost vs home on the displayed percent 0ms
+ ✓ src/ui/atlas/__tests__/tiers.test.ts > groupTiers > A–Z groups by first letter, accents folded 0ms
+ ✓ src/ui/atlas/__tests__/tiers.test.ts > groupTiers > flags only the tier that holds home 1ms
+ ✓ src/ui/atlas/__tests__/tiers.test.ts > groupTiers > a search returns only tiers with hits, all open 1ms
+ ✓ src/ui/atlas/__tests__/tiers.test.ts > oddsBands > keeps the verdict bands when none holds more than 40 0ms
+ ✓ src/ui/atlas/__tests__/tiers.test.ts > oddsBands > splits a band over 40 at its 10-point lines, top first 0ms
+ ✓ src/ui/atlas/__tests__/tiers.test.ts > oddsBands > keeps splitting a huge band and stops when no 10-point line is left 0ms
+      Tests  12 passed (12)
+
+== mutation: displayed percent -> floor  [Math.round(v * 100) -> Math.floor(v * 100)]
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/ui/atlas/__tests__/tiers.test.ts > groupTiers > odds tiers follow the verdict cuts on the displayed whole percent
+ FAIL  src/ui/atlas/__tests__/tiers.test.ts > groupTiers > cheapest bands by cost vs home on the displayed percent
+      Tests  2 failed | 10 passed (12)
+
+== mutation: 90-110 band excludes 110  [(p) => p <= 110 -> (p) => p < 110]
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/ui/atlas/__tests__/tiers.test.ts > groupTiers > cheapest bands by cost vs home on the displayed percent
+      Tests  1 failed | 11 passed (12)
+
+== mutation: cost on raw ratio, not displayed whole pct  [const p = wholePct(r.costRatio) -> const p = r.costRatio * 100]
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/ui/atlas/__tests__/tiers.test.ts > groupTiers > cheapest bands by cost vs home on the displayed percent
+      Tests  1 failed | 11 passed (12)
+
+== mutation: search opens only first tier  [searching ? tiers.map((t) => t.key) : -> false ? tiers.map((t) => t.key) :]
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/ui/atlas/__tests__/tiers.test.ts > groupTiers > a search returns only tiers with hits, all open
+      Tests  1 failed | 11 passed (12)
+
+== mutation: home flag on every tier  [if (r.cityId === homeId) t.hasHome = true -> t.hasHome = true]
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/ui/atlas/__tests__/tiers.test.ts > groupTiers > flags only the tier that holds home
+      Tests  1 failed | 11 passed (12)
+
+== mutation: no 40-city split  [if (count(b) <= max) return [b] -> return [b]]
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/ui/atlas/__tests__/tiers.test.ts > oddsBands > splits a band over 40 at its 10-point lines, top first
+ FAIL  src/ui/atlas/__tests__/tiers.test.ts > oddsBands > keeps splitting a huge band and stops when no 10-point line is left
+      Tests  2 failed | 10 passed (12)
+
+== mutation: no accent folding  [.normalize('NFD') -> .normalize('NFC')]
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/ui/atlas/__tests__/tiers.test.ts > groupTiers > A–Z groups by first letter, accents folded
+      Tests  1 failed | 11 passed (12)
+
+== mutation: odds verdict cuts shifted (65 -> 66)  [].map((c) => Math.round(c * 100)) -> ].map((c) => Math.round(c * 100) + (c === 0.65 ? 1 : 0))]
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/ui/atlas/__tests__/tiers.test.ts > groupTiers > odds tiers follow the verdict cuts on the displayed whole percent
+ FAIL  src/ui/atlas/__tests__/tiers.test.ts > oddsBands > splits a band over 40 at its 10-point lines, top first
+      Tests  2 failed | 10 passed (12)
+
+== mutation: defensive tier re-sort removed (expected to survive: input is pre-sorted)  [if (sort === 'odds') tiers.sort -> if (false) tiers.sort]
+      Tests  12 passed (12)

@@ -1,0 +1,473 @@
+$ node verify.cjs   (playwright-core 1.57 chromium, against vite preview of npm run build at http://localhost:4791/#atlas)
+
+===== desktop-light (light, 1280x900) =====
+body background rgb(245, 242, 234)
+rest tiers: [open] Holds 80%+ · 33 cities · spark 0
+  [closed] Mostly holds 70–79% · 34 cities · Bali (Denpasar / Canggu), Santiago, La Paz (Baja California Sur) +31 · spark 34
+  [closed] Mostly holds 65–69% · 8 cities · Ambergris Caye (San Pedro), Lisbon, Tokyo +5 · spark 8
+  [closed] Fragile 60–64% · 13 cities · HOME · Málaga, Sliema, St. Louis +10 · spark 13
+  [closed] Fragile 45–59% · 32 cities · Florence, Raleigh, Las Vegas +29 · spark 32
+  [closed] Breaks under 45% · 13 cities · London, Seattle, Barcelona +10 · spark 13
+PASS desktop-light: at rest on Best odds only the first tier is open
+PASS desktop-light: aria-expanded matches open state
+PASS desktop-light: closed "Mostly holds 70–79%" shows count "34 cities", peek "Bali (Denpasar / Canggu), Santiago, La Paz (Baja California Sur) +31", spark 34 bars
+PASS desktop-light: closed "Mostly holds 65–69%" shows count "8 cities", peek "Ambergris Caye (San Pedro), Lisbon, Tokyo +5", spark 8 bars
+PASS desktop-light: closed "Fragile 60–64%" shows count "13 cities", peek "Málaga, Sliema, St. Louis +10", spark 13 bars
+PASS desktop-light: closed "Fragile 45–59%" shows count "32 cities", peek "Florence, Raleigh, Las Vegas +29", spark 32 bars
+PASS desktop-light: closed "Breaks under 45%" shows count "13 cities", peek "London, Seattle, Barcelona +10", spark 13 bars
+PASS desktop-light: exactly one tier flagged Home
+  shot desktop-light-odds-rest.png
+PASS desktop-light rest: no horizontal page scroll (scrollWidth 1280 <= clientWidth 1280)
+  act ctier__btn Mostly holds
+65–69%
+8 cities
+A
+PASS desktop-light: clicking the 3rd tier header opens it alone (first stays open)
+  act ctier__btn Mostly holds
+65–69%
+8 cities
+PASS desktop-light: clicking it again closes it
+PASS desktop-light: button reads Open all
+  act clist__openall Open all
+PASS desktop-light: Open all opens every tier
+PASS desktop-light: button now reads Close all
+PASS desktop-light odds: all open, 133 rows, 133 unique, expected 133
+PASS desktop-light odds: tier "Holds 80%+" header count "33 cities" = 33 rows
+PASS desktop-light odds: tier "Mostly holds 70–79%" header count "34 cities" = 34 rows
+PASS desktop-light odds: tier "Mostly holds 65–69%" header count "8 cities" = 8 rows
+PASS desktop-light odds: tier "Fragile 60–64%" header count "13 cities" = 13 rows
+PASS desktop-light odds: tier "Fragile 45–59%" header count "32 cities" = 32 rows
+PASS desktop-light odds: tier "Breaks under 45%" header count "13 cities" = 13 rows
+PASS desktop-light odds: every row's displayed value fits its tier
+PASS desktop-light odds: no empty tiers
+PASS desktop-light odds: rows across tiers are in sort order
+PASS desktop-light: the tier holding the home row (Fragile 60–64%) carries the Home flag
+PASS desktop-light open all: no horizontal page scroll (scrollWidth 1280 <= clientWidth 1280)
+  act clist__openall Close all
+PASS desktop-light: Close all closes every tier
+  shot desktop-light-odds-closeall.png
+  act seg__opt Cheapest
+cheapest tiers: [open] 50–70% of home · 14 cities | [closed] 70–90% of home · 58 cities | [closed] 90–110% of home · 24 cities · HOME | [closed] Over 110% of home · 37 cities
+PASS desktop-light: switching to Cheapest reopens only its first tier
+  shot desktop-light-cheapest-rest.png
+  act clist__openall Open all
+PASS desktop-light cheapest: all open, 133 rows, 133 unique, expected 133
+PASS desktop-light cheapest: tier "50–70% of home " header count "14 cities" = 14 rows
+PASS desktop-light cheapest: tier "70–90% of home " header count "58 cities" = 58 rows
+PASS desktop-light cheapest: tier "90–110% of home " header count "24 cities" = 24 rows
+PASS desktop-light cheapest: tier "Over 110% of home " header count "37 cities" = 37 rows
+PASS desktop-light cheapest: every row's displayed value fits its tier
+PASS desktop-light cheapest: no empty tiers
+PASS desktop-light cheapest: rows across tiers are in sort order
+  act seg__opt A–Z
+A–Z tiers: [open]A(13) B(11) C(13) D(5) F(1) G(2) H(6) I(1) K(3) L(11) M(13) N(3) O(3) P(15) R(3) S(16)* T(8) V(4) W(1) Z(1)
+PASS desktop-light: switching to A–Z reopens only its first tier
+PASS desktop-light: A–Z bar counts letters
+  shot desktop-light-az-rest.png
+  act clist__openall Open all
+PASS desktop-light A–Z: all open, 133 rows, 133 unique, expected 133
+PASS desktop-light A–Z: tier "A " header count "13 cities" = 13 rows
+PASS desktop-light A–Z: tier "B " header count "11 cities" = 11 rows
+PASS desktop-light A–Z: tier "C " header count "13 cities" = 13 rows
+PASS desktop-light A–Z: tier "D " header count "5 cities" = 5 rows
+PASS desktop-light A–Z: tier "F " header count "1 city" = 1 rows
+PASS desktop-light A–Z: tier "G " header count "2 cities" = 2 rows
+PASS desktop-light A–Z: tier "H " header count "6 cities" = 6 rows
+PASS desktop-light A–Z: tier "I " header count "1 city" = 1 rows
+PASS desktop-light A–Z: tier "K " header count "3 cities" = 3 rows
+PASS desktop-light A–Z: tier "L " header count "11 cities" = 11 rows
+PASS desktop-light A–Z: tier "M " header count "13 cities" = 13 rows
+PASS desktop-light A–Z: tier "N " header count "3 cities" = 3 rows
+PASS desktop-light A–Z: tier "O " header count "3 cities" = 3 rows
+PASS desktop-light A–Z: tier "P " header count "15 cities" = 15 rows
+PASS desktop-light A–Z: tier "R " header count "3 cities" = 3 rows
+PASS desktop-light A–Z: tier "S " header count "16 cities" = 16 rows
+PASS desktop-light A–Z: tier "T " header count "8 cities" = 8 rows
+PASS desktop-light A–Z: tier "V " header count "4 cities" = 4 rows
+PASS desktop-light A–Z: tier "W " header count "1 city" = 1 rows
+PASS desktop-light A–Z: tier "Z " header count "1 city" = 1 rows
+PASS desktop-light A–Z: every row's displayed value fits its tier
+PASS desktop-light A–Z: no empty tiers
+PASS desktop-light A–Z: rows across tiers are in sort order
+  act seg__opt Best odds
+PASS desktop-light: back to Best odds reopens only its first tier (manual Open all discarded)
+search "an": [open] Holds 80%+ 18 | [open] Mostly holds 70–79% 12 | [open] Mostly holds 65–69% 3 | [open] Fragile 60–64% 4 | [open] Fragile 45–59% 9 | [open] Breaks under 45% 4
+PASS desktop-light: search "an" shows only tiers with hits, all open
+  shot desktop-light-search-an.png
+PASS desktop-light: search with no hits shows no tiers, no tier bar, and the empty message
+PASS desktop-light: clearing search returns to only first tier open
+  act clist__openall Open all
+  act pickbadge Top pick
+#48
+PASS desktop-light: "Top pick #48" badge on Chiang Rai (in a tier) opens its profile
+PASS desktop-light: profile closes
+PASS desktop-light: Cebu is a non-pick row with a "Profile" chip
+  act pickbadge pickbadge--profile Profile
+PASS desktop-light: "Profile" chip on Cebu opens Cebu's profile
+  act crow__cmp 
+PASS desktop-light: compare tick on Hanoi checks the row
+PASS desktop-light: compare dock lists Hanoi
+  act crow__cmp 
+PASS desktop-light: second tick unchecks Hanoi
+  act crow__main MY
+Langkawi
+Malaysia
+Verified
+
+PASS desktop-light: tapping Langkawi in a tier makes it the destination (tier row is-dest; pinned in Your cities: St. Louis, Langkawi)
+after choose tiers: [open] Holds 80%+ 33 cities | [open] Mostly holds 70–79% 34 cities | [open] Mostly holds 65–69% 8 cities | [open] Fragile 60–64% 13 cities | [open] Fragile 45–59% 32 cities | [open] Breaks under 45% 13 cities
+PASS desktop-light after interactions: no horizontal page scroll (scrollWidth 1280 <= clientWidth 1280)
+PASS desktop-light: no console errors
+
+===== desktop-dark (dark, 1280x900) =====
+body background rgb(10, 13, 12)
+rest tiers: [open] Holds 80%+ · 33 cities · spark 0
+  [closed] Mostly holds 70–79% · 34 cities · Bali (Denpasar / Canggu), Santiago, La Paz (Baja California Sur) +31 · spark 34
+  [closed] Mostly holds 65–69% · 8 cities · Ambergris Caye (San Pedro), Lisbon, Tokyo +5 · spark 8
+  [closed] Fragile 60–64% · 13 cities · HOME · Málaga, Sliema, St. Louis +10 · spark 13
+  [closed] Fragile 45–59% · 32 cities · Florence, Raleigh, Las Vegas +29 · spark 32
+  [closed] Breaks under 45% · 13 cities · London, Seattle, Barcelona +10 · spark 13
+PASS desktop-dark: at rest on Best odds only the first tier is open
+PASS desktop-dark: aria-expanded matches open state
+PASS desktop-dark: closed "Mostly holds 70–79%" shows count "34 cities", peek "Bali (Denpasar / Canggu), Santiago, La Paz (Baja California Sur) +31", spark 34 bars
+PASS desktop-dark: closed "Mostly holds 65–69%" shows count "8 cities", peek "Ambergris Caye (San Pedro), Lisbon, Tokyo +5", spark 8 bars
+PASS desktop-dark: closed "Fragile 60–64%" shows count "13 cities", peek "Málaga, Sliema, St. Louis +10", spark 13 bars
+PASS desktop-dark: closed "Fragile 45–59%" shows count "32 cities", peek "Florence, Raleigh, Las Vegas +29", spark 32 bars
+PASS desktop-dark: closed "Breaks under 45%" shows count "13 cities", peek "London, Seattle, Barcelona +10", spark 13 bars
+PASS desktop-dark: exactly one tier flagged Home
+  shot desktop-dark-odds-rest.png
+PASS desktop-dark rest: no horizontal page scroll (scrollWidth 1280 <= clientWidth 1280)
+  act ctier__btn Mostly holds
+65–69%
+8 cities
+A
+PASS desktop-dark: clicking the 3rd tier header opens it alone (first stays open)
+  act ctier__btn Mostly holds
+65–69%
+8 cities
+PASS desktop-dark: clicking it again closes it
+PASS desktop-dark: button reads Open all
+  act clist__openall Open all
+PASS desktop-dark: Open all opens every tier
+PASS desktop-dark: button now reads Close all
+PASS desktop-dark odds: all open, 133 rows, 133 unique, expected 133
+PASS desktop-dark odds: tier "Holds 80%+" header count "33 cities" = 33 rows
+PASS desktop-dark odds: tier "Mostly holds 70–79%" header count "34 cities" = 34 rows
+PASS desktop-dark odds: tier "Mostly holds 65–69%" header count "8 cities" = 8 rows
+PASS desktop-dark odds: tier "Fragile 60–64%" header count "13 cities" = 13 rows
+PASS desktop-dark odds: tier "Fragile 45–59%" header count "32 cities" = 32 rows
+PASS desktop-dark odds: tier "Breaks under 45%" header count "13 cities" = 13 rows
+PASS desktop-dark odds: every row's displayed value fits its tier
+PASS desktop-dark odds: no empty tiers
+PASS desktop-dark odds: rows across tiers are in sort order
+PASS desktop-dark: the tier holding the home row (Fragile 60–64%) carries the Home flag
+PASS desktop-dark open all: no horizontal page scroll (scrollWidth 1280 <= clientWidth 1280)
+  act clist__openall Close all
+PASS desktop-dark: Close all closes every tier
+  shot desktop-dark-odds-closeall.png
+  act seg__opt Cheapest
+cheapest tiers: [open] 50–70% of home · 14 cities | [closed] 70–90% of home · 58 cities | [closed] 90–110% of home · 24 cities · HOME | [closed] Over 110% of home · 37 cities
+PASS desktop-dark: switching to Cheapest reopens only its first tier
+  shot desktop-dark-cheapest-rest.png
+  act clist__openall Open all
+PASS desktop-dark cheapest: all open, 133 rows, 133 unique, expected 133
+PASS desktop-dark cheapest: tier "50–70% of home " header count "14 cities" = 14 rows
+PASS desktop-dark cheapest: tier "70–90% of home " header count "58 cities" = 58 rows
+PASS desktop-dark cheapest: tier "90–110% of home " header count "24 cities" = 24 rows
+PASS desktop-dark cheapest: tier "Over 110% of home " header count "37 cities" = 37 rows
+PASS desktop-dark cheapest: every row's displayed value fits its tier
+PASS desktop-dark cheapest: no empty tiers
+PASS desktop-dark cheapest: rows across tiers are in sort order
+  act seg__opt A–Z
+A–Z tiers: [open]A(13) B(11) C(13) D(5) F(1) G(2) H(6) I(1) K(3) L(11) M(13) N(3) O(3) P(15) R(3) S(16)* T(8) V(4) W(1) Z(1)
+PASS desktop-dark: switching to A–Z reopens only its first tier
+PASS desktop-dark: A–Z bar counts letters
+  shot desktop-dark-az-rest.png
+  act clist__openall Open all
+PASS desktop-dark A–Z: all open, 133 rows, 133 unique, expected 133
+PASS desktop-dark A–Z: tier "A " header count "13 cities" = 13 rows
+PASS desktop-dark A–Z: tier "B " header count "11 cities" = 11 rows
+PASS desktop-dark A–Z: tier "C " header count "13 cities" = 13 rows
+PASS desktop-dark A–Z: tier "D " header count "5 cities" = 5 rows
+PASS desktop-dark A–Z: tier "F " header count "1 city" = 1 rows
+PASS desktop-dark A–Z: tier "G " header count "2 cities" = 2 rows
+PASS desktop-dark A–Z: tier "H " header count "6 cities" = 6 rows
+PASS desktop-dark A–Z: tier "I " header count "1 city" = 1 rows
+PASS desktop-dark A–Z: tier "K " header count "3 cities" = 3 rows
+PASS desktop-dark A–Z: tier "L " header count "11 cities" = 11 rows
+PASS desktop-dark A–Z: tier "M " header count "13 cities" = 13 rows
+PASS desktop-dark A–Z: tier "N " header count "3 cities" = 3 rows
+PASS desktop-dark A–Z: tier "O " header count "3 cities" = 3 rows
+PASS desktop-dark A–Z: tier "P " header count "15 cities" = 15 rows
+PASS desktop-dark A–Z: tier "R " header count "3 cities" = 3 rows
+PASS desktop-dark A–Z: tier "S " header count "16 cities" = 16 rows
+PASS desktop-dark A–Z: tier "T " header count "8 cities" = 8 rows
+PASS desktop-dark A–Z: tier "V " header count "4 cities" = 4 rows
+PASS desktop-dark A–Z: tier "W " header count "1 city" = 1 rows
+PASS desktop-dark A–Z: tier "Z " header count "1 city" = 1 rows
+PASS desktop-dark A–Z: every row's displayed value fits its tier
+PASS desktop-dark A–Z: no empty tiers
+PASS desktop-dark A–Z: rows across tiers are in sort order
+  act seg__opt Best odds
+PASS desktop-dark: back to Best odds reopens only its first tier (manual Open all discarded)
+search "an": [open] Holds 80%+ 18 | [open] Mostly holds 70–79% 12 | [open] Mostly holds 65–69% 3 | [open] Fragile 60–64% 4 | [open] Fragile 45–59% 9 | [open] Breaks under 45% 4
+PASS desktop-dark: search "an" shows only tiers with hits, all open
+  shot desktop-dark-search-an.png
+PASS desktop-dark: search with no hits shows no tiers, no tier bar, and the empty message
+PASS desktop-dark: clearing search returns to only first tier open
+  act clist__openall Open all
+  act pickbadge Top pick
+#48
+PASS desktop-dark: "Top pick #48" badge on Chiang Rai (in a tier) opens its profile
+PASS desktop-dark: profile closes
+PASS desktop-dark: Cebu is a non-pick row with a "Profile" chip
+  act pickbadge pickbadge--profile Profile
+PASS desktop-dark: "Profile" chip on Cebu opens Cebu's profile
+  act crow__cmp 
+PASS desktop-dark: compare tick on Hanoi checks the row
+PASS desktop-dark: compare dock lists Hanoi
+  act crow__cmp 
+PASS desktop-dark: second tick unchecks Hanoi
+  act crow__main MY
+Langkawi
+Malaysia
+Verified
+
+PASS desktop-dark: tapping Langkawi in a tier makes it the destination (tier row is-dest; pinned in Your cities: St. Louis, Langkawi)
+after choose tiers: [open] Holds 80%+ 33 cities | [open] Mostly holds 70–79% 34 cities | [open] Mostly holds 65–69% 8 cities | [open] Fragile 60–64% 13 cities | [open] Fragile 45–59% 32 cities | [open] Breaks under 45% 13 cities
+PASS desktop-dark after interactions: no horizontal page scroll (scrollWidth 1280 <= clientWidth 1280)
+PASS desktop-dark: no console errors
+
+===== phone-light (light, 390x844 touch) =====
+body background rgb(245, 242, 234)
+rest tiers: [open] Holds 80%+ · 33 cities · spark 0
+  [closed] Mostly holds 70–79% · 34 cities · Bali (Denpasar / Canggu), Santiago, La Paz (Baja California Sur) +31 · spark 34
+  [closed] Mostly holds 65–69% · 8 cities · Ambergris Caye (San Pedro), Lisbon, Tokyo +5 · spark 8
+  [closed] Fragile 60–64% · 13 cities · HOME · Málaga, Sliema, St. Louis +10 · spark 13
+  [closed] Fragile 45–59% · 32 cities · Florence, Raleigh, Las Vegas +29 · spark 32
+  [closed] Breaks under 45% · 13 cities · London, Seattle, Barcelona +10 · spark 13
+PASS phone-light: at rest on Best odds only the first tier is open
+PASS phone-light: aria-expanded matches open state
+PASS phone-light: closed "Mostly holds 70–79%" shows count "34 cities", peek "Bali (Denpasar / Canggu), Santiago, La Paz (Baja California Sur) +31", spark 34 bars
+PASS phone-light: closed "Mostly holds 65–69%" shows count "8 cities", peek "Ambergris Caye (San Pedro), Lisbon, Tokyo +5", spark 8 bars
+PASS phone-light: closed "Fragile 60–64%" shows count "13 cities", peek "Málaga, Sliema, St. Louis +10", spark 13 bars
+PASS phone-light: closed "Fragile 45–59%" shows count "32 cities", peek "Florence, Raleigh, Las Vegas +29", spark 32 bars
+PASS phone-light: closed "Breaks under 45%" shows count "13 cities", peek "London, Seattle, Barcelona +10", spark 13 bars
+PASS phone-light: exactly one tier flagged Home
+  shot phone-light-odds-rest.png
+PASS phone-light rest: no horizontal page scroll (scrollWidth 390 <= clientWidth 390)
+  act ctier__btn Mostly holds
+65–69%
+8 cities
+A
+PASS phone-light: clicking the 3rd tier header opens it alone (first stays open)
+  act ctier__btn Mostly holds
+65–69%
+8 cities
+PASS phone-light: clicking it again closes it
+PASS phone-light: button reads Open all
+  act clist__openall Open all
+PASS phone-light: Open all opens every tier
+PASS phone-light: button now reads Close all
+PASS phone-light odds: all open, 133 rows, 133 unique, expected 133
+PASS phone-light odds: tier "Holds 80%+" header count "33 cities" = 33 rows
+PASS phone-light odds: tier "Mostly holds 70–79%" header count "34 cities" = 34 rows
+PASS phone-light odds: tier "Mostly holds 65–69%" header count "8 cities" = 8 rows
+PASS phone-light odds: tier "Fragile 60–64%" header count "13 cities" = 13 rows
+PASS phone-light odds: tier "Fragile 45–59%" header count "32 cities" = 32 rows
+PASS phone-light odds: tier "Breaks under 45%" header count "13 cities" = 13 rows
+PASS phone-light odds: every row's displayed value fits its tier
+PASS phone-light odds: no empty tiers
+PASS phone-light odds: rows across tiers are in sort order
+PASS phone-light: the tier holding the home row (Fragile 60–64%) carries the Home flag
+PASS phone-light open all: no horizontal page scroll (scrollWidth 390 <= clientWidth 390)
+  act clist__openall Close all
+PASS phone-light: Close all closes every tier
+  shot phone-light-odds-closeall.png
+  act seg__opt Cheapest
+cheapest tiers: [open] 50–70% of home · 14 cities | [closed] 70–90% of home · 58 cities | [closed] 90–110% of home · 24 cities · HOME | [closed] Over 110% of home · 37 cities
+PASS phone-light: switching to Cheapest reopens only its first tier
+  shot phone-light-cheapest-rest.png
+  act clist__openall Open all
+PASS phone-light cheapest: all open, 133 rows, 133 unique, expected 133
+PASS phone-light cheapest: tier "50–70% of home " header count "14 cities" = 14 rows
+PASS phone-light cheapest: tier "70–90% of home " header count "58 cities" = 58 rows
+PASS phone-light cheapest: tier "90–110% of home " header count "24 cities" = 24 rows
+PASS phone-light cheapest: tier "Over 110% of home " header count "37 cities" = 37 rows
+PASS phone-light cheapest: every row's displayed value fits its tier
+PASS phone-light cheapest: no empty tiers
+PASS phone-light cheapest: rows across tiers are in sort order
+  act seg__opt A–Z
+A–Z tiers: [open]A(13) B(11) C(13) D(5) F(1) G(2) H(6) I(1) K(3) L(11) M(13) N(3) O(3) P(15) R(3) S(16)* T(8) V(4) W(1) Z(1)
+PASS phone-light: switching to A–Z reopens only its first tier
+PASS phone-light: A–Z bar counts letters
+  shot phone-light-az-rest.png
+  act clist__openall Open all
+PASS phone-light A–Z: all open, 133 rows, 133 unique, expected 133
+PASS phone-light A–Z: tier "A " header count "13 cities" = 13 rows
+PASS phone-light A–Z: tier "B " header count "11 cities" = 11 rows
+PASS phone-light A–Z: tier "C " header count "13 cities" = 13 rows
+PASS phone-light A–Z: tier "D " header count "5 cities" = 5 rows
+PASS phone-light A–Z: tier "F " header count "1 city" = 1 rows
+PASS phone-light A–Z: tier "G " header count "2 cities" = 2 rows
+PASS phone-light A–Z: tier "H " header count "6 cities" = 6 rows
+PASS phone-light A–Z: tier "I " header count "1 city" = 1 rows
+PASS phone-light A–Z: tier "K " header count "3 cities" = 3 rows
+PASS phone-light A–Z: tier "L " header count "11 cities" = 11 rows
+PASS phone-light A–Z: tier "M " header count "13 cities" = 13 rows
+PASS phone-light A–Z: tier "N " header count "3 cities" = 3 rows
+PASS phone-light A–Z: tier "O " header count "3 cities" = 3 rows
+PASS phone-light A–Z: tier "P " header count "15 cities" = 15 rows
+PASS phone-light A–Z: tier "R " header count "3 cities" = 3 rows
+PASS phone-light A–Z: tier "S " header count "16 cities" = 16 rows
+PASS phone-light A–Z: tier "T " header count "8 cities" = 8 rows
+PASS phone-light A–Z: tier "V " header count "4 cities" = 4 rows
+PASS phone-light A–Z: tier "W " header count "1 city" = 1 rows
+PASS phone-light A–Z: tier "Z " header count "1 city" = 1 rows
+PASS phone-light A–Z: every row's displayed value fits its tier
+PASS phone-light A–Z: no empty tiers
+PASS phone-light A–Z: rows across tiers are in sort order
+  act seg__opt Best odds
+PASS phone-light: back to Best odds reopens only its first tier (manual Open all discarded)
+search "an": [open] Holds 80%+ 18 | [open] Mostly holds 70–79% 12 | [open] Mostly holds 65–69% 3 | [open] Fragile 60–64% 4 | [open] Fragile 45–59% 9 | [open] Breaks under 45% 4
+PASS phone-light: search "an" shows only tiers with hits, all open
+  shot phone-light-search-an.png
+PASS phone-light: search with no hits shows no tiers, no tier bar, and the empty message
+PASS phone-light: clearing search returns to only first tier open
+  act clist__openall Open all
+  act pickbadge #48
+PASS phone-light: "#48" badge on Chiang Rai (in a tier) opens its profile
+PASS phone-light: profile closes
+PASS phone-light: Cebu is a non-pick row with a "Profile" chip
+  act pickbadge pickbadge--profile Profile
+PASS phone-light: "Profile" chip on Cebu opens Cebu's profile
+  act crow__cmp 
+PASS phone-light: compare tick on Hanoi checks the row
+PASS phone-light: compare dock lists Hanoi
+  act crow__cmp 
+PASS phone-light: second tick unchecks Hanoi
+  act crow__main Langkawi
+Malaysia
+Nov 2026
+PASS phone-light: tapping Langkawi in a tier makes it the destination (tier row is-dest; pinned in Your cities: St. Louis, Langkawi)
+after choose tiers: [open] Holds 80%+ 33 cities | [open] Mostly holds 70–79% 34 cities | [open] Mostly holds 65–69% 8 cities | [open] Fragile 60–64% 13 cities | [open] Fragile 45–59% 32 cities | [open] Breaks under 45% 13 cities
+PASS phone-light after interactions: no horizontal page scroll (scrollWidth 390 <= clientWidth 390)
+PASS phone-light: no console errors
+
+===== phone-dark (dark, 390x844 touch) =====
+body background rgb(10, 13, 12)
+rest tiers: [open] Holds 80%+ · 33 cities · spark 0
+  [closed] Mostly holds 70–79% · 34 cities · Bali (Denpasar / Canggu), Santiago, La Paz (Baja California Sur) +31 · spark 34
+  [closed] Mostly holds 65–69% · 8 cities · Ambergris Caye (San Pedro), Lisbon, Tokyo +5 · spark 8
+  [closed] Fragile 60–64% · 13 cities · HOME · Málaga, Sliema, St. Louis +10 · spark 13
+  [closed] Fragile 45–59% · 32 cities · Florence, Raleigh, Las Vegas +29 · spark 32
+  [closed] Breaks under 45% · 13 cities · London, Seattle, Barcelona +10 · spark 13
+PASS phone-dark: at rest on Best odds only the first tier is open
+PASS phone-dark: aria-expanded matches open state
+PASS phone-dark: closed "Mostly holds 70–79%" shows count "34 cities", peek "Bali (Denpasar / Canggu), Santiago, La Paz (Baja California Sur) +31", spark 34 bars
+PASS phone-dark: closed "Mostly holds 65–69%" shows count "8 cities", peek "Ambergris Caye (San Pedro), Lisbon, Tokyo +5", spark 8 bars
+PASS phone-dark: closed "Fragile 60–64%" shows count "13 cities", peek "Málaga, Sliema, St. Louis +10", spark 13 bars
+PASS phone-dark: closed "Fragile 45–59%" shows count "32 cities", peek "Florence, Raleigh, Las Vegas +29", spark 32 bars
+PASS phone-dark: closed "Breaks under 45%" shows count "13 cities", peek "London, Seattle, Barcelona +10", spark 13 bars
+PASS phone-dark: exactly one tier flagged Home
+  shot phone-dark-odds-rest.png
+PASS phone-dark rest: no horizontal page scroll (scrollWidth 390 <= clientWidth 390)
+  act ctier__btn Mostly holds
+65–69%
+8 cities
+A
+PASS phone-dark: clicking the 3rd tier header opens it alone (first stays open)
+  act ctier__btn Mostly holds
+65–69%
+8 cities
+PASS phone-dark: clicking it again closes it
+PASS phone-dark: button reads Open all
+  act clist__openall Open all
+PASS phone-dark: Open all opens every tier
+PASS phone-dark: button now reads Close all
+PASS phone-dark odds: all open, 133 rows, 133 unique, expected 133
+PASS phone-dark odds: tier "Holds 80%+" header count "33 cities" = 33 rows
+PASS phone-dark odds: tier "Mostly holds 70–79%" header count "34 cities" = 34 rows
+PASS phone-dark odds: tier "Mostly holds 65–69%" header count "8 cities" = 8 rows
+PASS phone-dark odds: tier "Fragile 60–64%" header count "13 cities" = 13 rows
+PASS phone-dark odds: tier "Fragile 45–59%" header count "32 cities" = 32 rows
+PASS phone-dark odds: tier "Breaks under 45%" header count "13 cities" = 13 rows
+PASS phone-dark odds: every row's displayed value fits its tier
+PASS phone-dark odds: no empty tiers
+PASS phone-dark odds: rows across tiers are in sort order
+PASS phone-dark: the tier holding the home row (Fragile 60–64%) carries the Home flag
+PASS phone-dark open all: no horizontal page scroll (scrollWidth 390 <= clientWidth 390)
+  act clist__openall Close all
+PASS phone-dark: Close all closes every tier
+  shot phone-dark-odds-closeall.png
+  act seg__opt Cheapest
+cheapest tiers: [open] 50–70% of home · 14 cities | [closed] 70–90% of home · 58 cities | [closed] 90–110% of home · 24 cities · HOME | [closed] Over 110% of home · 37 cities
+PASS phone-dark: switching to Cheapest reopens only its first tier
+  shot phone-dark-cheapest-rest.png
+  act clist__openall Open all
+PASS phone-dark cheapest: all open, 133 rows, 133 unique, expected 133
+PASS phone-dark cheapest: tier "50–70% of home " header count "14 cities" = 14 rows
+PASS phone-dark cheapest: tier "70–90% of home " header count "58 cities" = 58 rows
+PASS phone-dark cheapest: tier "90–110% of home " header count "24 cities" = 24 rows
+PASS phone-dark cheapest: tier "Over 110% of home " header count "37 cities" = 37 rows
+PASS phone-dark cheapest: every row's displayed value fits its tier
+PASS phone-dark cheapest: no empty tiers
+PASS phone-dark cheapest: rows across tiers are in sort order
+  act seg__opt A–Z
+A–Z tiers: [open]A(13) B(11) C(13) D(5) F(1) G(2) H(6) I(1) K(3) L(11) M(13) N(3) O(3) P(15) R(3) S(16)* T(8) V(4) W(1) Z(1)
+PASS phone-dark: switching to A–Z reopens only its first tier
+PASS phone-dark: A–Z bar counts letters
+  shot phone-dark-az-rest.png
+  act clist__openall Open all
+PASS phone-dark A–Z: all open, 133 rows, 133 unique, expected 133
+PASS phone-dark A–Z: tier "A " header count "13 cities" = 13 rows
+PASS phone-dark A–Z: tier "B " header count "11 cities" = 11 rows
+PASS phone-dark A–Z: tier "C " header count "13 cities" = 13 rows
+PASS phone-dark A–Z: tier "D " header count "5 cities" = 5 rows
+PASS phone-dark A–Z: tier "F " header count "1 city" = 1 rows
+PASS phone-dark A–Z: tier "G " header count "2 cities" = 2 rows
+PASS phone-dark A–Z: tier "H " header count "6 cities" = 6 rows
+PASS phone-dark A–Z: tier "I " header count "1 city" = 1 rows
+PASS phone-dark A–Z: tier "K " header count "3 cities" = 3 rows
+PASS phone-dark A–Z: tier "L " header count "11 cities" = 11 rows
+PASS phone-dark A–Z: tier "M " header count "13 cities" = 13 rows
+PASS phone-dark A–Z: tier "N " header count "3 cities" = 3 rows
+PASS phone-dark A–Z: tier "O " header count "3 cities" = 3 rows
+PASS phone-dark A–Z: tier "P " header count "15 cities" = 15 rows
+PASS phone-dark A–Z: tier "R " header count "3 cities" = 3 rows
+PASS phone-dark A–Z: tier "S " header count "16 cities" = 16 rows
+PASS phone-dark A–Z: tier "T " header count "8 cities" = 8 rows
+PASS phone-dark A–Z: tier "V " header count "4 cities" = 4 rows
+PASS phone-dark A–Z: tier "W " header count "1 city" = 1 rows
+PASS phone-dark A–Z: tier "Z " header count "1 city" = 1 rows
+PASS phone-dark A–Z: every row's displayed value fits its tier
+PASS phone-dark A–Z: no empty tiers
+PASS phone-dark A–Z: rows across tiers are in sort order
+  act seg__opt Best odds
+PASS phone-dark: back to Best odds reopens only its first tier (manual Open all discarded)
+search "an": [open] Holds 80%+ 18 | [open] Mostly holds 70–79% 12 | [open] Mostly holds 65–69% 3 | [open] Fragile 60–64% 4 | [open] Fragile 45–59% 9 | [open] Breaks under 45% 4
+PASS phone-dark: search "an" shows only tiers with hits, all open
+  shot phone-dark-search-an.png
+PASS phone-dark: search with no hits shows no tiers, no tier bar, and the empty message
+PASS phone-dark: clearing search returns to only first tier open
+  act clist__openall Open all
+  act pickbadge #48
+PASS phone-dark: "#48" badge on Chiang Rai (in a tier) opens its profile
+PASS phone-dark: profile closes
+PASS phone-dark: Cebu is a non-pick row with a "Profile" chip
+  act pickbadge pickbadge--profile Profile
+PASS phone-dark: "Profile" chip on Cebu opens Cebu's profile
+  act crow__cmp 
+PASS phone-dark: compare tick on Hanoi checks the row
+PASS phone-dark: compare dock lists Hanoi
+  act crow__cmp 
+PASS phone-dark: second tick unchecks Hanoi
+  act crow__main Langkawi
+Malaysia
+Nov 2026
+PASS phone-dark: tapping Langkawi in a tier makes it the destination (tier row is-dest; pinned in Your cities: St. Louis, Langkawi)
+after choose tiers: [open] Holds 80%+ 33 cities | [open] Mostly holds 70–79% 34 cities | [open] Mostly holds 65–69% 8 cities | [open] Fragile 60–64% 13 cities | [open] Fragile 45–59% 32 cities | [open] Breaks under 45% 13 cities
+PASS phone-dark after interactions: no horizontal page scroll (scrollWidth 390 <= clientWidth 390)
+PASS phone-dark: no console errors
+
+TOTAL FAILS: 0
