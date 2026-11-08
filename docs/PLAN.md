@@ -1,48 +1,36 @@
-# All-city profiles plan
+# City list navigation plan
 
 ## Goal
-Every city in the Atlas has a full profile with the five-photo cover mosaic, not only the 75 ranked picks. That adds the 58 cities that don't have one yet: 25 outside the US (Amsterdam, Auckland, Berlin, Bogotá, Buenos Aires, Cape Town, Cebu, Da Nang, Dubai, Dublin, Hanoi, Ho Chi Minh City, London, Manila, Melbourne, Montréal, Osaka, Paris, Seoul, Singapore, Sydney, Tokyo, Toronto, Vancouver, Zurich) and the 33 US cities. Each one gets the same profile sections, scores on the same 1–5 rubric, sources, and five checked, openly licensed photos with the odds badge and the full-size view. These cities get profiles but stay out of the ranked top-picks list. Done = all 133 cities open a profile with photos, verified in both themes and on a phone, tests green, a preview with every photo, and deployed on approval.
+The Atlas ranking list of 133 cities is quick to get around instead of a long scroll. It folds into collapsible tiers that follow the sort: odds tiers for Best odds, cost-vs-home bands for Cheapest, letter groups for A–Z. Only the first tier is open at rest; a closed tier shows its first few names, a small spark of its odds, and a flag when home is in it. Region chips with counts sit in the list's own toolbar. Approved design: variant A combined with variant B's region chips from the mockup at https://claude.ai/artifact/VBzVuQhMnkiihymxXiy5SL. Done = both in the app, working in both themes and on a phone, tests green, a preview, and deployed on approval.
 
 ## Baseline
-2026-11-07 · tests: 329 pass (22 files) · typecheck: clean · build: ok
+2026-11-08 · tests: 358 pass (23 files) · typecheck: clean · build: ok
 
 ## Now
-All stages done. Open for a next plan: Seoul, London, Amsterdam and Berlin have no `localTaxes.ts` entry (money logic, needs tests; the user's call); recheck Colorado Amendment 87 (Denver tax 5 → 4 if certified) and Florida Amendment 3 ("unofficial results" in four Florida profiles) once certified; the photo credit cleaner misses "upload on <date>" suffixes. Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (v35, all 133 cities).
+Stage 1 of 2 · Tiers in the list
+Risk: UI only
+Checks:
+- [ ] Grouping puts every listed city in exactly one tier for each sort, in sort order: odds tiers at the verdict cuts 80 / 65 / 45 on the displayed whole percent; Cheapest bands by cost vs home (under 50%, 50–70%, 70–90%, 90–110%, over 110%); A–Z letter groups; empty tiers dropped (proof: test)
+- [ ] The tier that holds home is flagged, and a search returns only tiers with hits, all open (proof: test)
+- [ ] At rest on Best odds only the first tier is open; a closed tier shows its count, first few names and spark; Open all / Close all work; changing the sort reopens only the new first tier (proof: screenshot + scripted clicks, a test can't judge the layout)
+- [ ] Rows inside a tier look and behave as today (choose, compare tick, profile chip, Top pick badge) in both themes and at phone width (proof: screenshot + scripted clicks, a test can't judge the layout)
+Open: none
 
 ## Stages
-- [x] 1. Unranked profiles + preview assets — profiles for non-picks, list chip and map-card profile link, US profile style, Tokyo + Austin pilots, preview photos via the asset store; preview; stop for review
-- [x] 2. Europe, Africa, Middle East — Amsterdam, Berlin, Dublin, London, Paris, Zurich, Cape Town, Dubai: profiles + photos, contact sheet
-- [x] 3. Asia-Pacific — Auckland, Cebu, Da Nang, Hanoi, Ho Chi Minh City, Manila, Melbourne, Osaka, Seoul, Singapore, Sydney: profiles + photos, contact sheet
-- [x] 4. Canada + South America — Montréal, Toronto, Vancouver, Bogotá, Buenos Aires: profiles + photos, contact sheet
-- [x] 5. US West + South — San Francisco, Los Angeles, San Diego, Seattle, Portland, Denver, Boise, Salt Lake City, Phoenix, Scottsdale, Las Vegas, Honolulu, Dallas, Houston, Miami, Tampa, Orlando, Sarasota: profiles + photos, contact sheet
-- [x] 6. US East + Midwest + launch — New York City, Boston, Philadelphia, Pittsburgh, Washington DC, Atlanta, Charlotte, Raleigh, Asheville, Nashville, Chicago, Minneapolis, Kansas City, St. Louis; a test requires a profile and 5 photos for all 133; full preview; deploy on approval
+- [ ] 1. Tiers in the list — pure grouping helper with tests; collapsible tiers in `CityList` with peek names, spark, home flag, Open all / Close all; search opens matching tiers
+- [ ] 2. Region chips + launch — region chips with counts in the list toolbar, sharing the map's region; counts follow the search; phone check; preview; deploy on approval
 
 ## Decisions
-- 2026-11-07 · Deploy stage 6 (all 133 cities) to GitHub Pages — user: "Deploy".
-- 2026-11-07 · Houston cost 3 → 2: every other US city scores 2, and Houston's indexes (62 groceries, 38 rent) aren't clearly below Kansas City's (66, 29) or St. Louis's (71, 25); flagged by the Midwest + South review. Lands with stage 6 — PM's call.
-- 2026-11-07 · St. Louis safety stays 2 (≈50 homicides per 100k in the city proper, like Cape Town's 2; retirees mostly live in the county; only Mazatlán, under a top-level advisory, scores 1) — PM's call on the reviewer's recommendation.
-- 2026-11-07 · Florida's Amendment 3 stays "(unofficial results)" in the four Florida profiles until the state certifies it; recheck in stage 6 before deploy — PM's call.
-- 2026-11-07 · Denver keeps tax 5 while Colorado's Amendment 87 (brackets up to 8.4% above $1M from 2027) is uncertified: profiles score today's rule and note what's pending; revisit to 4 if it's certified — PM's call.
-- 2026-11-07 · All 58 unprofiled cities get profiles, the 33 US cities included — user accepted the defaults.
-- 2026-11-07 · The new cities get profiles but don't join the ranked picks (`EXPAT_PICKS` and its ranking stay at 75) — user accepted the defaults.
-- 2026-11-07 · Staged by region, as in the photos plan — user accepted the defaults.
-- 2026-11-07 · The preview serves photos from the preview artifact's asset store, not as published files: a published version holds at most 511 files, and ~665 photos plus the app won't fit. The preview build swaps each photo's URL for its uploaded copy, and only new or changed photos are uploaded after the first time. A small test batch goes first. If the store is too small or too awkward, fall back to showing only each stage's new photos in the preview, telling the user first. The live site on GitHub Pages still serves every photo as a normal file — user chose option 1.
-- 2026-11-07 · US profiles use the same file shape and rubric, written for someone who'd live there as a US citizen: Residency is "no visa needed" (5), Tax on holdings is state income tax on dividends and gains, Estate is the state's estate or inheritance tax, Lending is full US broker access (5). Their summary says why a BBD retiree would base there, not move there — builder's call, shown to the user with the pilot.
-- 2026-11-07 · Unranked profiles say "Profile · <country>" in the eyebrow where picks say "Top pick N of 75" — builder's call; the user sees it on the stage 1 preview.
-- 2026-11-07 · Tokyo and Austin are the pilot cities, one foreign and one US, so stage 1 proves both profile styles and both photo paths — PM's call.
-- 2026-11-07 · The 32 US cities after the Austin pilot split by region into two stages (18 West + South, 14 East + Midwest, the second also closing the plan): 32 profiles and 160 photos are too much for one sitting — PM's call.
-
-- 2026-11-07 · Profiles open from a "Profile" chip in the city list for non-picks (picks keep their "Top pick #N" badge), and from a new "View profile" link on the map's city card for every profiled city, picks included. Until now a profile opened only from the Top picks list or a pick's badge, and the map had no way in — user: "Add both to stage 1".
-- 2026-11-07 · The Best odds and Your destination tiles link to the profile too (Your home doesn't) — user: "make the profile page accessible for the card for best odds and Your destination". Committed on its own, ahead of the in-progress city content.
-- 2026-11-07 · Content builders for stages 2–3 start while stage 1 is verified: four builders of four cities each, in the main tree, each owning only its cities' profile and photo files. Stages still close in order, and each stage's commit takes only its own paths. The earlier cap of about five builders at once still holds, because of image-viewing limits and keeping Commons requests polite — user: "Don't be afraid to spawn more subagents if needed".
-- 2026-11-07 · Cities the ranking research already ruled out (Cebu, Da Nang and others) still get profiles; builders start from `docs/research/bbd-ranking-2026-11.md` where it covers a city — user: "keep them" (after asking why Cebu and Da Nang were being researched again).
-- 2026-11-07 · Upload the photo test batch and publish the stage 1 preview — user: "yes, upload and publish the preview".
-- 2026-11-07 · The hosted preview is checked by the user in their own browser: a headless browser can't log in to claude.ai, and Claude in Chrome isn't supported from WSL (the user picked Chrome control first; the docs rule it out here). Locally, the v30 build runs against a stand-in for the asset store — PM's call.
-- 2026-11-07 · Stage 1 closed on the user's check of preview v30 — user: "checked the preview, all good — close stage 1".
-- 2026-11-07 · Builders for stages 4 and 5 start while stage 3 is verified: Canada, South America, US Pacific + Hawaii, US Mountain (four builders, each owning its cities' files) — user asked whether subagents were being used to go faster; PM's call on the split.
+- 2026-11-08 · Build variant A (odds bands) plus variant B's region chips — user: "let's go with your recommendation" after seeing four variants.
+- 2026-11-08 · Odds tiers use the app's verdict cuts (80 / 65 / 45: Holds, Mostly holds, Fragile, Breaks), not the mockup's 10-point steps, so the list speaks the Outlook's language. If a tier holds more than about 40 cities on the default plan, split it at the next 10-point line and say so — builder's call.
+- 2026-11-08 · Cheapest groups by cost relative to home, not fixed dollar bands, because budgets vary by plan — builder's call.
+- 2026-11-08 · The list's region chips and the map's chips drive one shared region, as the list already follows the map's region — builder's call.
 
 ## Open questions
 - WebKit's touch path (iPhone) is untested until the user tries it; the full-size view's swipe adds to it — user, when they try it.
+- Seoul, London, Amsterdam and Berlin have no `localTaxes.ts` entry (money logic, needs tests) — user's call, a later plan.
+- Recheck Colorado Amendment 87 (Denver tax 5 → 4 if certified) and Florida Amendment 3 ("unofficial results" in four Florida profiles) once certified — later.
+- The photo credit cleaner misses "upload on <date>" suffixes — later.
 
 ## Standing decisions
 - 2026-11-06 · React + Vite + TS, hand-built SVG charts (d3-scale/shape/geo), static hosting — full design control, no backend. (from [eVelo v2 build](plans/2026-11-06-evelo-v2-build.md))
@@ -87,6 +75,11 @@ All stages done. Open for a next plan: Seoul, London, Amsterdam and Berlin have 
 - 2026-11-07 · Credits are cleaned of platform names, URLs and "Photo by"-style prefixes, and the data test refuses any that remain; `npm run photos -- --recredit` re-applies it offline — the stage 3 verifier found credit lines like "Jorge Royan / http://www.royan.com.ar"; PM's call. (from [City photo galleries](plans/2026-11-07-city-photos.md))
 - 2026-11-07 · Where Commons coverage is thin (Hopkins, Corozal, Coronado, Grand Baie), the best available honest photo stays even if weaker, nearby places are allowed when the caption names them, and review stops after one re-review round — five photos are required, and the alternatives were checked and found worse; PM's call. (from [City photo galleries](plans/2026-11-07-city-photos.md))
 - 2026-11-07 · Every photo is looked at before it ships, and each batch saves a contact sheet to its evidence — Commons titles can be wrong or mislabelled, and the user was told this is the slow part. (from [City photo galleries](plans/2026-11-07-city-photos.md))
+- 2026-11-07 · The new cities get profiles but don't join the ranked picks (`EXPAT_PICKS` and its ranking stay at 75) — user accepted the defaults. (from [All-city profiles](plans/2026-11-07-all-city-profiles.md))
+- 2026-11-07 · Profiles open from a "Profile" chip in the city list for non-picks (picks keep their "Top pick #N" badge), and from a new "View profile" link on the map's city card for every profiled city, picks included. Until now a profile opened only from the Top picks list or a pick's badge, and the map had no way in — user: "Add both to stage 1". (from [All-city profiles](plans/2026-11-07-all-city-profiles.md))
+- 2026-11-07 · The preview serves photos from the preview artifact's asset store, not as published files: a published version holds at most 511 files, and ~665 photos plus the app won't fit. The preview build swaps each photo's URL for its uploaded copy, and only new or changed photos are uploaded after the first time. A small test batch goes first. If the store is too small or too awkward, fall back to showing only each stage's new photos in the preview, telling the user first. The live site on GitHub Pages still serves every photo as a normal file — user chose option 1. (from [All-city profiles](plans/2026-11-07-all-city-profiles.md))
+- 2026-11-07 · The hosted preview is checked by the user in their own browser: a headless browser can't log in to claude.ai, and Claude in Chrome isn't supported from WSL (the user picked Chrome control first; the docs rule it out here). Locally, the v30 build runs against a stand-in for the asset store — PM's call. (from [All-city profiles](plans/2026-11-07-all-city-profiles.md))
+- 2026-11-07 · US profiles use the same file shape and rubric, written for someone who'd live there as a US citizen: Residency is "no visa needed" (5), Tax on holdings is state income tax on dividends and gains, Estate is the state's estate or inheritance tax, Lending is full US broker access (5). Their summary says why a BBD retiree would base there, not move there — builder's call, shown to the user with the pilot. (from [All-city profiles](plans/2026-11-07-all-city-profiles.md))
 
 ## Shipped
 - 2026-11-06 · eVelo v2 build: BBD planner with engine, plan inputs, outlook charts, Atlas and methodology, live on GitHub Pages — [plan](plans/2026-11-06-evelo-v2-build.md)
@@ -97,4 +90,4 @@ All stages done. Open for a next plan: Seoul, London, Amsterdam and Berlin have 
 - 2026-11-07 · Pan and zoom map: mouse, trackpad and touch pan/zoom on the Atlas map, zoom buttons, hover fix and tablet tap bubbles, live on GitHub Pages — [plan](plans/2026-11-07-map-pan-zoom.md) · [evidence](plans/2026-11-07-map-pan-zoom/evidence/)
 - 2026-11-07 · Landing page: first-visit landing (study G, "The Atlas is the chart") with the illustrative odds map and four steps, live on GitHub Pages — [plan](plans/2026-11-07-landing-page.md) · [evidence](plans/2026-11-07-landing-page/evidence/)
 - 2026-11-07 · City photo galleries: five checked, openly licensed photos in a cover mosaic with the odds badge and a full-size view for all 75 picks, live on GitHub Pages — [plan](plans/2026-11-07-city-photos.md) · [evidence](plans/2026-11-07-city-photos/evidence/)
-- 2026-11-07 · City profiles for all 133: unranked profiles and 5 checked photos for every city (Europe, Africa, Middle East, Asia-Pacific, Canada, South America, 32 US cities), a coverage test, live on GitHub Pages — evidence in [stage 1–6](evidence/)
+- 2026-11-07 · City profiles for all 133: unranked profiles and 5 checked photos for every city (Europe, Africa, Middle East, Asia-Pacific, Canada, South America, 32 US cities), a coverage test, live on GitHub Pages — [plan](plans/2026-11-07-all-city-profiles.md) · [evidence](plans/2026-11-07-all-city-profiles/evidence/)
