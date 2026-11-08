@@ -159,6 +159,16 @@
   padding: var(--space-3) var(--gutter);
   background: linear-gradient(to bottom, var(--bg) 55%, transparent);
 }
+.verdict-pill-wrap.is-docked {
+  /* Pinned to the visible area while typing; translateY is set from visualViewport.offsetTop. */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-topbar);
+  margin: 0;
+  padding-top: calc(var(--space-2) + var(--safe-top));
+}
 .verdict-pill {
   --tone: var(--holds-text);
   display: inline-flex;
