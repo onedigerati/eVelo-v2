@@ -137,10 +137,24 @@
   font-size: var(--fs-md);
   min-width: 0;
 }
-.atile__city > span:last-child {
+.atile__name {
+  flex: 0 1 auto;
+  min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+.atile__profile {
+  position: relative;
+  z-index: 1;
+  margin-left: auto;
+  flex: none;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+}
+.atile__profile--foot {
+  display: none;
+  margin-left: 0;
 }
 .atile__fig {
   display: flex;
@@ -1194,6 +1208,12 @@
   }
   .atile:first-child {
     grid-column: 1 / -1;
+  }
+  .atile:not(:first-child) .atile__profile--head {
+    display: none;
+  }
+  .atile:not(:first-child) .atile__profile--foot {
+    display: inline-block;
   }
   .atile {
     padding: var(--space-4);

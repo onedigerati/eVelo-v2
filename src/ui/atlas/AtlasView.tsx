@@ -23,6 +23,7 @@ import {
 import { CityList } from './CityList'
 import { CodeChip } from './CodeChip'
 import { CompareSheet } from './CompareSheet'
+import { hasProfile } from '../../data/expatPicks'
 import { profileView as toProfileView } from './picks'
 import { ProfileSheet } from './ProfileSheet'
 import { TopPicks } from './TopPicks'
@@ -138,6 +139,7 @@ export function AtlasView() {
               ? { label: 'Make destination', onClick: () => choose(best.cityId) }
               : undefined
           }
+          onProfile={best && hasProfile(best.cityId) ? () => setProfileId(best.cityId) : undefined}
         />
         <Tile eyebrow="Your home" row={home} note={home ? `Rank ${home.rank} of ${rows.length}` : undefined} />
         <Tile
@@ -149,6 +151,7 @@ export function AtlasView() {
               ? `${dest.successRate >= home.successRate ? '+' : '−'}${Math.abs(Math.round((dest.successRate - home.successRate) * 100))} pts vs staying home`
               : undefined
           }
+          onProfile={dest && hasProfile(dest.cityId) ? () => setProfileId(dest.cityId) : undefined}
         />
       </motion.div>
 
@@ -276,12 +279,15 @@ function Tile({
   note,
   empty,
   action,
+  onProfile,
 }: {
   eyebrow: string
   row?: Ranked
   note?: string
   empty?: string
   action?: { label: string; onClick: () => void }
+  /** Set only for a profiled city: shows the "Profile" link beside the name. */
+  onProfile?: () => void
 }) {
   return (
     <div className="atile" style={row ? { ['--tone' as string]: successColor(row.successRate) } : undefined}>
@@ -290,7 +296,8 @@ function Tile({
         <>
           <div className="atile__city">
             <CodeChip code={row.city.countryCode} />
-            <span>{row.city.name}</span>
+            <span className="atile__name">{row.city.name}</span>
+            {onProfile && <ProfileLink name={row.city.name} onClick={onProfile} where="head" />}
           </div>
           <div className="atile__fig" style={{ color: successTextColor(row.successRate) }}>
             <AnimatedNumber value={Math.round(row.successRate * 100)} className="atile__num" />
@@ -298,6 +305,7 @@ function Tile({
           </div>
           <div className="atile__foot">
             {note && <span className="t-small ink-3">{note}</span>}
+            {onProfile && <ProfileLink name={row.city.name} onClick={onProfile} where="foot" />}
             {action && (
               <button type="button" className="link-btn" onClick={action.onClick}>
                 {action.label} →
@@ -314,6 +322,20 @@ function Tile({
         </div>
       )}
     </div>
+  )
+}
+
+/** Rendered twice; CSS shows the name-line copy, or the foot copy in the half-width phone tiles. */
+function ProfileLink({ name, onClick, where }: { name: string; onClick: () => void; where: 'head' | 'foot' }) {
+  return (
+    <button
+      type="button"
+      className={cx('link-btn atile__profile', `atile__profile--${where}`)}
+      onClick={onClick}
+      aria-label={`View the ${name} profile`}
+    >
+      Profile →
+    </button>
   )
 }
 
