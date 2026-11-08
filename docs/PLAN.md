@@ -7,26 +7,7 @@ Every city in the Atlas has a full profile with the five-photo cover mosaic, not
 2026-11-07 · tests: 329 pass (22 files) · typecheck: clean · build: ok
 
 ## Now
-Stage 6 of 6 · US East + Midwest + launch
-Risk: content only for the 14 profiles; the launch adds one data-coverage test and a deploy, which waits for the user.
-Scope: New York City, Boston, Philadelphia, Pittsburgh, Washington DC, Charlotte, Raleigh (built, reviewed) and Atlanta, Asheville, Nashville, Chicago, Minneapolis, Kansas City, St. Louis (built, reviewed) — profile + 5 photos each, US style. Then a test requiring a profile and 5 photos for every one of the 133 cities, the full preview, and deploy on the user's approval.
-Checks:
-- [x] Each of the 14 has a profile to the README's US standard, with sources, scored on the 1–5 rubric, and passes an independent content review with its findings applied (proof: test + review notes)
-- [x] Each has exactly 5 openly licensed photos with credits, checked on a contact sheet (proof: test + contact sheet)
-- [x] A test fails if any of the 133 cities lacks a profile or 5 photos, and passes (proof: test)
-- [x] In the full tree: type check, tests and build pass (proof: test)
-- [x] Each of the 14 opens from its list "Profile" chip with 5 photos loaded, "Profile · United States" in the eyebrow, and stays out of the top picks; both themes and a phone (proof: run the product)
-- [x] Preview republished with stage 6's 70 photos added (all 133 cities), proven on the preview build locally (proof: run the product on the preview build)
-- [ ] Deployed to GitHub Pages on the user's approval, live site checked (proof: run the product)
-Open: before deploy, recheck Florida Amendment 3 and Colorado Amendment 87 certification (Decisions).
-Mode: autopilot (user approved the deploy 2026-11-07).
-Notes:
-- Reviews: East in `docs/evidence/stage-6/review-east.md`; Midwest + South reviewer writes `review-midwest-south.md` there.
-- Verify like stage 5 (`docs/evidence/stage-5/report.md`): scripts `stage-5/s5.js` (run as `.cjs`, city list as JSON) and `s5v34.js` + `blobserve.js` for the preview build. Upload batches with the Artifact tool from main-tree paths, `--record`, copy `.preview/photo-assets.json` back to the main tree if recorded in a worktree, publish every `dist/artifact-files.json` entry and null the previous version's stale chunk paths.
-- Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (v35, all 133 cities, 665 photos). `.preview/photo-assets.json` (gitignored, keep it) records every upload. The hosted page can't be driven from here, so previews are proven locally against `blobserve.js`.
-- Playwright: NODE_PATH=/home/jonah/.npm/_npx/e41f203b7505f1fb/node_modules, chromium executablePath /home/jonah/.cache/ms-playwright/chromium_headless_shell-1248/chrome-headless-shell-linux-arm64/chrome-headless-shell. Stop servers with `fuser -k <port>/tcp`.
-- Deploy: unpushed commits; push (GitHub Pages) only when the user says.
-- Open from reviews: Seoul, London, Amsterdam and Berlin have no `localTaxes.ts` entry, so the Atlas says "not modelled"; adding one is money logic and needs tests (ask the user). The photo credit cleaner misses "upload on <date>" suffixes.
+All stages done. Open for a next plan: Seoul, London, Amsterdam and Berlin have no `localTaxes.ts` entry (money logic, needs tests; the user's call); recheck Colorado Amendment 87 (Denver tax 5 → 4 if certified) and Florida Amendment 3 ("unofficial results" in four Florida profiles) once certified; the photo credit cleaner misses "upload on <date>" suffixes. Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (v35, all 133 cities).
 
 ## Stages
 - [x] 1. Unranked profiles + preview assets — profiles for non-picks, list chip and map-card profile link, US profile style, Tokyo + Austin pilots, preview photos via the asset store; preview; stop for review
@@ -34,7 +15,7 @@ Notes:
 - [x] 3. Asia-Pacific — Auckland, Cebu, Da Nang, Hanoi, Ho Chi Minh City, Manila, Melbourne, Osaka, Seoul, Singapore, Sydney: profiles + photos, contact sheet
 - [x] 4. Canada + South America — Montréal, Toronto, Vancouver, Bogotá, Buenos Aires: profiles + photos, contact sheet
 - [x] 5. US West + South — San Francisco, Los Angeles, San Diego, Seattle, Portland, Denver, Boise, Salt Lake City, Phoenix, Scottsdale, Las Vegas, Honolulu, Dallas, Houston, Miami, Tampa, Orlando, Sarasota: profiles + photos, contact sheet
-- [ ] 6. US East + Midwest + launch — New York City, Boston, Philadelphia, Pittsburgh, Washington DC, Atlanta, Charlotte, Raleigh, Asheville, Nashville, Chicago, Minneapolis, Kansas City, St. Louis; a test requires a profile and 5 photos for all 133; full preview; deploy on approval
+- [x] 6. US East + Midwest + launch — New York City, Boston, Philadelphia, Pittsburgh, Washington DC, Atlanta, Charlotte, Raleigh, Asheville, Nashville, Chicago, Minneapolis, Kansas City, St. Louis; a test requires a profile and 5 photos for all 133; full preview; deploy on approval
 
 ## Decisions
 - 2026-11-07 · Deploy stage 6 (all 133 cities) to GitHub Pages — user: "Deploy".
@@ -116,3 +97,4 @@ Notes:
 - 2026-11-07 · Pan and zoom map: mouse, trackpad and touch pan/zoom on the Atlas map, zoom buttons, hover fix and tablet tap bubbles, live on GitHub Pages — [plan](plans/2026-11-07-map-pan-zoom.md) · [evidence](plans/2026-11-07-map-pan-zoom/evidence/)
 - 2026-11-07 · Landing page: first-visit landing (study G, "The Atlas is the chart") with the illustrative odds map and four steps, live on GitHub Pages — [plan](plans/2026-11-07-landing-page.md) · [evidence](plans/2026-11-07-landing-page/evidence/)
 - 2026-11-07 · City photo galleries: five checked, openly licensed photos in a cover mosaic with the odds badge and a full-size view for all 75 picks, live on GitHub Pages — [plan](plans/2026-11-07-city-photos.md) · [evidence](plans/2026-11-07-city-photos/evidence/)
+- 2026-11-07 · City profiles for all 133: unranked profiles and 5 checked photos for every city (Europe, Africa, Middle East, Asia-Pacific, Canada, South America, 32 US cities), a coverage test, live on GitHub Pages — evidence in [stage 1–6](evidence/)
