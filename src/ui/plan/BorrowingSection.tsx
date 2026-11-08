@@ -1,11 +1,11 @@
 import { AnimatePresence, m as motion } from 'framer-motion'
 import { useId, useState, type CSSProperties } from 'react'
-import { budgetTotal } from '../../engine/cost'
+import { CITY_BY_ID } from '../../data/cities'
 import { useStore } from '../../state/store'
 import { currencyCompact, percent } from '../format'
 import { ease } from '../motion'
 import { InfoTip, NumberField, Section, SegmentedControl, Slider } from '../primitives'
-import { existingLoanInfo } from './existingLoan'
+import { existingLoanInfo, firstYearSpend } from './existingLoan'
 
 const GAP = 0.05 // target must sit at least this far under the threshold
 const CG_PRESETS = [0.15, 0.2, 0.238]
@@ -18,7 +18,9 @@ export function BorrowingSection() {
   const maxLtv = useStore((s) => s.inputs.maxLtv)
   const target = useStore((s) => s.inputs.targetLtvAfterCall)
   const cg = useStore((s) => s.inputs.capGainsRate)
-  const budget = useStore((s) => s.inputs.budget)
+  // The plan's first-year draw (destination budget if the move is within the year, less income
+  // already started): an opening sale leaving less net worth than that gets the broken tone.
+  const annualSpend = useStore((s) => firstYearSpend(s.inputs, CITY_BY_ID[s.inputs.homeCityId], s.inputs.destCityId ? CITY_BY_ID[s.inputs.destCityId] : null))
   const drag = useStore((s) => s.inputs.dividendTaxDrag)
   const setInput = useStore((s) => s.setInput)
   const patch = useStore((s) => s.patchInputs)
@@ -26,8 +28,7 @@ export function BorrowingSection() {
   const [cgCustom, setCgCustom] = useState(!CG_PRESETS.some((p) => Math.abs(p - cg) < 1e-6))
   const isPreset = !cgCustom && CG_PRESETS.some((p) => Math.abs(p - cg) < 1e-6)
   const targetMax = Math.round((maxLtv - GAP) * 100) / 100
-  // One year of the plan's (home) budget: a sale leaving less net worth than that gets the broken tone.
-  const loan = existingLoanInfo({ portfolio, balance, maxLtv, targetLtv: target, basisFraction: basis, capGainsRate: cg, annualSpend: budgetTotal(budget) })
+  const loan = existingLoanInfo({ portfolio, balance, maxLtv, targetLtv: target, basisFraction: basis, capGainsRate: cg, annualSpend })
 
   return (
     <Section
@@ -63,7 +64,7 @@ export function BorrowingSection() {
             <span>
               {loan.status === 'breaks'
                 ? 'The forced sale can’t cover this after tax: the plan fails at once.'
-                : `Above your margin-call LTV: the lender forces a sale today — about ${currencyCompact(loan.sale?.sold ?? 0)} sold, ${currencyCompact(loan.sale?.taxPaid ?? 0)} in tax — bringing the loan to ${percent(loan.sale?.ltv ?? target)} LTV and leaving about ${currencyCompact(loan.netWorthLeft)} of net worth.`}
+                : `Above your margin-call LTV: the lender forces a sale today — about ${currencyCompact(loan.sale?.sold ?? 0)} sold, ${currencyCompact(loan.sale?.taxPaid ?? 0)} in tax — bringing the loan to ${percent(loan.sale?.ltv ?? target)} LTV and leaving about ${currencyCompact(loan.netWorthLeft)} of net worth${loan.thin ? ' — less than a year of spending' : ''}.`}
             </span>
           </div>
         )}

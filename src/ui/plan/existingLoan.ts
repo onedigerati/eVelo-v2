@@ -1,6 +1,8 @@
 // Existing line-of-credit balance: how far into the loan the plan starts.
 
+import { applyRatios, budgetTotal, categoryRatios } from '../../engine/cost'
 import { openingSale } from '../../engine/openingSale'
+import type { City, PlanInputs } from '../../engine/types'
 
 /**
  * 'ok': at or under the margin-call LTV — no sale.
@@ -70,4 +72,23 @@ export function existingLoanInfo({ portfolio, balance, maxLtv, targetLtv, basisF
     netWorthLeft,
     thin: netWorthLeft < annualSpend,
   }
+}
+
+export type FirstYearInputs = Pick<
+  PlanInputs,
+  'budget' | 'destCityId' | 'moveInYears' | 'expatFactor' | 'ratioOverrides' | 'otherIncome' | 'incomeStartAge' | 'age'
+>
+
+/**
+ * What the plan draws in its first year (today's USD): the destination's budget when the move
+ * happens within the year (priced as the engine and the Place section price it: per-category city
+ * ratios with the expat factor and overrides), else the home budget, less other income when it has
+ * already started. Never negative. `home`/`dest` are the plan's cities (null or missing when unknown);
+ * a destination equal to home means staying home, as in the engine.
+ */
+export function firstYearSpend(inputs: FirstYearInputs, home: City | null | undefined, dest: City | null | undefined): number {
+  const moved = inputs.destCityId != null && home != null && dest != null && dest.id !== home.id && inputs.moveInYears < 1
+  const spend = moved ? applyRatios(inputs.budget, categoryRatios(home, dest, inputs.expatFactor, inputs.ratioOverrides)) : budgetTotal(inputs.budget)
+  const income = inputs.incomeStartAge <= inputs.age && Number.isFinite(inputs.otherIncome) ? Math.max(0, inputs.otherIncome) : 0
+  return Math.max(0, spend - income)
 }

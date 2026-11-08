@@ -1,18 +1,30 @@
 import { scaleLinear } from 'd3-scale'
 import { curveMonotoneX, line } from 'd3-shape'
 import { useId, useMemo } from 'react'
+import { CITY_BY_ID } from '../../data/cities'
 import type { SimulationResult } from '../../engine/types'
 import { percent } from '../format'
+import { firstYearSpend } from '../plan/existingLoan'
 import { cx } from '../primitives'
 import { massWindow, useCrosshair, useSize, useTweenedSeries } from './chartKit'
 import { BROKEN_AT_START, openingBrokenOf, openingSaleOf } from './openingSale'
 
 /** Why early forced sales happen, by how the plan starts. */
+/** The opening sale leaves less net worth (year-0 median) than the plan's first-year draw. */
+export function openingSaleIsThin(r: SimulationResult): boolean {
+  const i = r.inputs
+  const left = r.netWorth.p50[0] ?? 0
+  return left < firstYearSpend(i, CITY_BY_ID[i.homeCityId], i.destCityId ? CITY_BY_ID[i.destCityId] : null)
+}
+
+/** Why early forced sales are early: the clause after "when". */
 function earlyReason(r: SimulationResult, opening: boolean): string {
-  if (opening) return 'while the loan is still near the call line after the opening sale'
+  // Spending alone exhausts what a thin opening sale leaves; no crash needed.
+  if (opening && openingSaleIsThin(r)) return 'the little the opening sale leaves is spent within the first year'
+  if (opening) return 'a crash can hit while the loan is still near the call line after the opening sale'
   const startLtv = r.inputs.portfolio > 0 ? (r.inputs.existingLoan ?? 0) / r.inputs.portfolio : 0
-  if (startLtv >= 0.5 * r.inputs.maxLtv) return 'while your existing balance still sits near the call line'
-  return 'before the portfolio has grown past the loan'
+  if (startLtv >= 0.5 * r.inputs.maxLtv) return 'a crash can hit while your existing balance still sits near the call line'
+  return 'a crash can hit before the portfolio has grown past the loan'
 }
 
 /** One-sentence reading of when forced sales happen. The opening sale, if any, isn't one of them. */
@@ -41,7 +53,7 @@ function marginCallTiming(r: SimulationResult, byYear: number[], total: number, 
   if (w80 && w80[1] - w80[0] + 1 <= Math.ceil(n / 2)) {
     const [s, e] = w80
     if (s <= 1)
-      return `Risk is concentrated early: 80% of forced sales happen in ${e === 0 ? 'the first year' : `the first ${e + 1} years`} (ages ${a} to ${a + e + 1}), when a crash can hit ${earlyReason(r, opening)}.`
+      return `Risk is concentrated early: 80% of forced sales happen in ${e === 0 ? 'the first year' : `the first ${e + 1} years`} (ages ${a} to ${a + e + 1}), when ${earlyReason(r, opening)}.`
     return `Risk is concentrated: 80% of forced sales fall between ages ${a + s} and ${a + e + 1}${firstHalf < total * 0.35 ? ', as the loan compounds faster than the portfolio' : ''}. Outside that window forced sales are rare.`
   }
   const w = massWindow(byYear, 0.6)

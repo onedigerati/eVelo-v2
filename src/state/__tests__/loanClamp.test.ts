@@ -135,6 +135,28 @@ describe('loanToastRun', () => {
     expect(t.details()).toEqual(['It was $400,000; it has to stay below the portfolio.'])
   })
 
+  it('starts a new run when the user types the clamped value back in (reset)', () => {
+    const t = fakeToasts()
+    const show = loanToastRun(t.api)
+    let p = stepDown(show, plan({ existingLoan: 500_000 }), [490_000])
+    expect(p.existingLoan).toBe(489_999)
+    // the user types the balance the clamp left; the store resets the run on any direct entry
+    show.reset()
+    p = clampAfterSet(p, 'existingLoan', 489_999).inputs
+    stepDown(show, p, [480_000])
+    expect(t.live.size).toBe(1)
+    expect(t.details()).toEqual(['It was $489,999; it has to stay below the portfolio.'])
+  })
+
+  it('a reset lasts for one clamp: the steps after it join the new run', () => {
+    const t = fakeToasts()
+    const show = loanToastRun(t.api)
+    let p = stepDown(show, plan({ existingLoan: 500_000 }), [490_000])
+    show.reset()
+    p = stepDown(show, p, [480_000, 470_000])
+    expect(t.details()).toEqual(['It was $489,999; it has to stay below the portfolio.'])
+  })
+
   it('reads as before for a single clamp', () => {
     const t = fakeToasts()
     stepDown(loanToastRun(t.api), plan({ existingLoan: 500_000 }), [300_000])

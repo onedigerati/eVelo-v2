@@ -39,6 +39,20 @@ const TITLE: Record<FanMetric, ReactNode> = {
   ),
 }
 
+/** The card's title: the portfolio isn't "untouched" when the plan opens with a forced sale or fails at once. */
+export function fanTitle(r: SimulationResult | null, m: FanMetric): ReactNode {
+  if (r && m === 'portfolio') {
+    if (openingBrokenOf(r)) return 'The portfolio'
+    if (openingSaleOf(r))
+      return (
+        <>
+          The portfolio, after today’s <em>forced sale</em>
+        </>
+      )
+  }
+  return TITLE[m]
+}
+
 export function fanCaption(r: SimulationResult, m: FanMetric): string {
   // Broken from the start: every path is liquidated before month 0, so the bands are flat zeros.
   if (openingBrokenOf(r)) return BROKEN_AT_START
@@ -46,19 +60,20 @@ export function fanCaption(r: SimulationResult, m: FanMetric): string {
   const n = b.p50.length - 1
   const a = r.inputs.age
   const end = a + n
+  // Broken paths are recorded as zeros, so a median portfolio that starts above 0 and ends at 0
+  // means the median plan was liquidated; say when, not "compounds to $0".
+  const lost = medianLiquidatedAt(r)
   if (m === 'networth') {
     const low = b.p5[n]
     const tiny = startNetWorth(r) * 0.02
-    if (b.p50[n] <= tiny)
-      return `In the median future the loan consumes everything by ${end}: net worth falls from ${currencyCompact(b.p50[0])} to ${currencyCompact(b.p50[n])}${b.p95[n] > tiny ? `, and only the luckiest 5% end above ${currencyCompact(b.p95[n])}` : ''}.`
+    // A liquidated median gives the same age as the portfolio and loan captions, not the horizon's end.
+    if (lost !== null || b.p50[n] <= tiny)
+      return `In the median future the loan consumes everything by ${lost !== null ? `about ${a + lost}` : end}: net worth falls from ${currencyCompact(b.p50[0])} to ${currencyCompact(b.p50[n])}${b.p95[n] > tiny ? `, and only the luckiest 5% end above ${currencyCompact(b.p95[n])}` : ''}.`
     if (b.p50[n] < b.p50[0])
       return `In the median future net worth shrinks from ${currencyCompact(b.p50[0])} to ${currencyCompact(b.p50[n])} by ${end}; the unluckiest 5% end ${low <= tiny ? 'with almost nothing' : `near ${currencyCompact(low)}`}.`
     return `In the median future net worth grows from ${currencyCompact(b.p50[0])} to ${currencyCompact(b.p50[n])} by ${end}; the unluckiest 5% end ${low <= tiny ? 'with almost nothing' : `near ${currencyCompact(low)}`}.`
   }
   const sale = openingSaleOf(r)
-  // Broken paths are recorded as zeros, so a median portfolio that starts above 0 and ends at 0
-  // means the median plan was liquidated; say when, not "compounds to $0".
-  const lost = medianLiquidatedAt(r)
   if (m === 'portfolio') {
     if (lost !== null) {
       const by = `the lender liquidates the portfolio by about ${a + lost}`
@@ -74,10 +89,10 @@ export function fanCaption(r: SimulationResult, m: FanMetric): string {
   if (m === 'loan') {
     const bal = r.inputs.existingLoan ?? 0
     const from = bal > 0 ? `from your existing ${currencyCompact(bal)} balance, ${sale ? `cut to ${currencyCompact(b.p50[0])} by the opening sale, ` : ''}` : ''
-    const costliest = `${currencyCompact(b.p95[n])} in the costliest 5% of futures`
-    if (lost !== null)
-      return `Borrowing compounds: ${from}the median plan is liquidated by about ${a + lost}${b.p95[n] > 0 ? `, and the loan reaches ${costliest}` : ''}.`
-    return `Borrowing compounds: ${from}the median loan reaches ${currencyCompact(b.p50[n])} by ${end}, and ${costliest}.`
+    // No "costliest 5%" once the median is liquidated: broken paths record a loan of 0, so the top
+    // band then comes from the lucky paths that survive, not the costly ones.
+    if (lost !== null) return `Borrowing compounds: ${from}the median plan is liquidated by about ${a + lost}.`
+    return `Borrowing compounds: ${from}the median loan reaches ${currencyCompact(b.p50[n])} by ${end}, and ${currencyCompact(b.p95[n])} in the costliest 5% of futures.`
   }
   return ltvCaption(r, b.p50, b.p95, sale !== null)
 }
@@ -153,7 +168,7 @@ export function FanCard() {
     <ChartFrame
       span="full"
       eyebrow={EYEBROW[metric]}
-      title={TITLE[metric]}
+      title={fanTitle(result, metric)}
       subtitle={result ? fanCaption(result, metric) : 'Median path, with the middle half and 90% of outcomes shaded.'}
       aspect="16 / 6.5"
       className="fan-card"

@@ -5,8 +5,10 @@ vi.mock('../../../state/store', () => ({ useStore: () => undefined }))
 vi.mock('../../../state/fx', () => ({ useFx: () => undefined, useRate: () => 1 }))
 import { DEFAULT_INPUTS } from '../../../engine/defaults'
 import type { SimulationResult } from '../../../engine/types'
-import { fanCaption } from '../FanCard'
-import { marginCallCaption } from '../MarginCallChart'
+import { isValidElement } from 'react'
+import { renderToStaticMarkup } from 'react-dom/server'
+import { fanCaption, fanTitle } from '../FanCard'
+import { marginCallCaption, openingSaleIsThin } from '../MarginCallChart'
 import { sellStartNote } from '../cards'
 import { BROKEN_AT_START, openingBrokenOf, openingSaleOf } from '../openingSale'
 
@@ -259,9 +261,23 @@ describe('a median plan that is liquidated', () => {
     )
   })
 
-  it('says the median plan is liquidated in the loan caption, keeping the costliest 5%', () => {
-    expect(fanCaption(broke(), 'loan')).toBe(
-      'Borrowing compounds: from your existing $800K balance, the median plan is liquidated by about 61, and the loan reaches $2.4M in the costliest 5% of futures.',
+  it('says the median plan is liquidated in the loan caption, without a "costliest 5%" from surviving paths', () => {
+    expect(fanCaption(broke(), 'loan')).toBe('Borrowing compounds: from your existing $800K balance, the median plan is liquidated by about 61.')
+  })
+
+  it('gives the net-worth caption the same liquidation age, not the horizon end', () => {
+    const x = broke() as unknown as Record<string, unknown>
+    x.netWorth = series([1_200_000, 0, 0], [1_200_000, 1_400_000, 1_600_000])
+    expect(fanCaption(x as unknown as SimulationResult, 'networth')).toBe(
+      'In the median future the loan consumes everything by about 61: net worth falls from $1.2M to $0, and only the luckiest 5% end above $1.6M.',
+    )
+  })
+
+  it('keeps the horizon end in the net-worth caption when the median survives but ends near 0', () => {
+    const x = fake(0) as unknown as Record<string, unknown>
+    x.netWorth = series([2_000_000, 1_000_000, 10_000], [2_000_000, 2_500_000, 3_000_000])
+    expect(fanCaption(x as unknown as SimulationResult, 'networth')).toBe(
+      'In the median future the loan consumes everything by 62: net worth falls from $2.0M to $10K, and only the luckiest 5% end above $3.0M.',
     )
   })
 
@@ -271,6 +287,45 @@ describe('a median plan that is liquidated', () => {
     )
     expect(fanCaption(fake(0), 'loan')).toBe(
       'Borrowing compounds: the median loan reaches $1.0M by 62, and $1.5M in the costliest 5% of futures.',
+    )
+  })
+})
+
+describe('the portfolio card title', () => {
+  const html = (t: ReturnType<typeof fanTitle>) => (isValidElement(t) ? renderToStaticMarkup(t) : String(t))
+
+  it('stays "untouched" without an opening sale, and on the other metrics', () => {
+    expect(html(fanTitle(fake(0), 'portfolio'))).toBe('The portfolio, <em>untouched</em>')
+    expect(html(fanTitle(null, 'portfolio'))).toBe('The portfolio, <em>untouched</em>')
+    expect(html(fanTitle(fake(1_500_000, { openingSale: SALE }), 'loan'))).toBe('The loan, <em>compounding</em>')
+  })
+
+  it('names the forced sale, or drops "untouched" when the plan fails at once', () => {
+    expect(html(fanTitle(fake(1_500_000, { openingSale: SALE }), 'portfolio'))).toBe('The portfolio, after today’s <em>forced sale</em>')
+    expect(html(fanTitle(fake(1_900_000, { openingBroken: true }), 'portfolio'))).toBe('The portfolio')
+  })
+})
+
+describe('early margin calls after a thin opening sale', () => {
+  // net worth left after the sale (year-0 median) against the first year's draw (defaults: the
+  // budget priced in Bangkok, moving at once, income not started; tens of thousands a year)
+  const after = (left: number) => {
+    const x = fake(1_500_000, { openingSale: SALE, byYear: years({ 0: 1 }), total: 0.1 }) as unknown as Record<string, unknown>
+    x.netWorth = series([left, left, left], [left, left, left])
+    return x as unknown as SimulationResult
+  }
+
+  it('says spending exhausts what the sale leaves when that is under a year of spending', () => {
+    expect(openingSaleIsThin(after(20_000))).toBe(true)
+    expect(marginCallCaption(after(20_000))).toBe(
+      'Risk is concentrated early: 80% of forced sales happen in the first year (ages 60 to 61), when the little the opening sale leaves is spent within the first year. The opening sale today isn’t counted.',
+    )
+  })
+
+  it('keeps the crash reading when the sale leaves more than a year', () => {
+    expect(openingSaleIsThin(after(600_000))).toBe(false)
+    expect(marginCallCaption(after(600_000))).toBe(
+      'Risk is concentrated early: 80% of forced sales happen in the first year (ages 60 to 61), when a crash can hit while the loan is still near the call line after the opening sale. The opening sale today isn’t counted.',
     )
   })
 })

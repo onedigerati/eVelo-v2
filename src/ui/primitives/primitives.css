@@ -713,8 +713,9 @@
   width: fit-content;
   max-width: 100%;
   padding: 10px 16px 10px 12px;
-  /* A pill while it fits one or two lines (≤ 56px tall); a rounded box when the detail wraps. */
-  border-radius: var(--radius-xl);
+  /* Half of a two-line toast's ~63px height (message + detail), so one- and two-line toasts stay
+     pills; only a wrapped third line reads as a rounded box. */
+  border-radius: 32px;
   background: var(--ink);
   color: var(--ink-inverse);
   box-shadow: var(--shadow-3);
