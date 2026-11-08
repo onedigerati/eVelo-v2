@@ -1,0 +1,11 @@
+$ node v30.js docs/evidence/stage-1 http://localhost:5192/ cities77.json   # v30 artifact-mode build (dist from build:preview at 0e50723), served by blobserve.js: /_blob/<id> answered from the photo uploaded under that id
+all cities: 77/77 galleries with 5/5 photos loaded from /_blob/; failures: []
+desk-light: tile→No. 48 Chiang Rai 5/5 · tile→No. 27 Bangkok 5/5 · chip→JP Profile · Japan 5/5 · horizontal overflow 0px
+desk-dark: tile→No. 48 Chiang Rai 5/5 · tile→No. 27 Bangkok 5/5 · chip→JP Profile · Japan 5/5 · horizontal overflow 0px
+phone-light: tile→No. 48 Chiang Rai 1/5 · tile→No. 27 Bangkok 1/5 · chip→JP Profile · Japan 1/5 · horizontal overflow 0px
+phone-dark: tile→No. 48 Chiang Rai 1/5 · tile→No. 27 Bangkok 1/5 · chip→JP Profile · Japan 1/5 · horizontal overflow 0px
+errors: []
+
+[exited with code 0]
+
+Note: phone rows count the desktop mosaic, which is hidden on phones (1/5 = the eagerly loaded cover). The phone carousel is counted in v30-phone-carousel.txt.

@@ -1,12 +1,12 @@
-$ npm test
+$ npm test   # clean worktree at 0e50723
 npm notice run evelo@2.0.0 test
 npm notice run vitest run
 
- RUN  v5.1.0 /home/jonah/repos/eVelo-v2
+ RUN  v5.1.0 /tmp/claude-1000/-home-jonah-repos-eVelo-v2/f454f752-8be2-4e8c-bd5d-a700db9727ea/scratchpad/pv
 
 
  Test Files  23 passed (23)
-      Tests  349 passed (349)
-   Start at  18:50:28
-   Duration  4.25s (transform 64%, tests 27%, import 9%)
+      Tests  357 passed (357)
+   Start at  22:02:00
+   Duration  7.42s (transform 76%, tests 17%, import 7%)
 

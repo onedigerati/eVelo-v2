@@ -1,0 +1,5 @@
+# Published v30 photo-assets.json (Artifact read, version 1794110486-a2b6) vs the local v30 build, and the asset store listing
+published map == local v30 map (byte-identical)
+keys 385 · unique blob ids 385 · cities 77 · every city has 5: true
+Asset store (Artifact list scope=assets): 386 files, 65,594,838 of 1,073,741,824 bytes used, limit 5,000 files.
+Published files (Artifact list scope=files, v30): 29 app files from dist/artifact-files.json + index.html, 0 .webp.

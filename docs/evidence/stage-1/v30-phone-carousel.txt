@@ -1,0 +1,7 @@
+$ node swipe.js   # phone 390x844, both themes: tap each carousel dot, count loaded /_blob/ photos
+phone-light Tokyo: 5/5 loaded after swiping through
+phone-light Volcán: 5/5 loaded after swiping through
+phone-light Lisbon: 5/5 loaded after swiping through
+phone-dark Tokyo: 5/5 loaded after swiping through
+phone-dark Volcán: 5/5 loaded after swiping through
+phone-dark Lisbon: 5/5 loaded after swiping through

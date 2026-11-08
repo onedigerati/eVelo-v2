@@ -1,0 +1,6 @@
+# Screenshots, traces and videos are committed in this repo (image lines removed on purpose).
+*.zip
+*.webm
+*.mp4
+*.trace
+*.har
