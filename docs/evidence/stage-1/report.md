@@ -1,0 +1,21 @@
+# Stage 1 · Fixed amounts in the engine — evidence
+Verified 2026-11-08 on 73906d4 (merge of 0653a07, 85b1300, aaee034), no uncommitted source changes
+
+| Check | Result | Evidence |
+|---|---|---|
+| A fixed amount for a category becomes that destination's spending for it, whatever the home budget or expat premium, while percentage overrides and untouched rows behave as before; a $0 home category can carry a fixed amount (proof: test) | pass | [tests-fixed-amounts.txt](tests-fixed-amounts.txt): `fixedAmounts.test.ts` › destinationAmounts › `a fixed amount replaces budget × ratio regardless of home budget and expat factor`, `ratio overrides and untouched rows are unchanged`, `a $0 home category can carry a fixed amount`, `ignores non-finite and negative fixed amounts; accepts 0`; › engine › `simulate reports categoryAmounts and spendDest from the fixed amount`, `the home budget does not move a fixed amount`. Mutation (fixed amount ignored) fails 7: [mutations.txt](mutations.txt) |
+| Fixed amounts belong to the city they were set for: they move the Outlook, solver and loan hint for that destination and that city's Atlas row, never other Atlas cities (proof: test) | pass | [tests-fixed-amounts.txt](tests-fixed-amounts.txt): `fixedAmounts.test.ts` › `resolveDestination uses only the destination city's own amounts`, `simulate reports categoryAmounts…` (Outlook), `solver: maxSpendDest scales the fixed-amount annual`, `atlas: an override keyed to Bangkok changes Bangkok's row only`; `existingLoan.test.ts` › firstYearSpend › `honours fixed amounts for the destination city only` (loan hint); `picks.test.ts` › `cityCosts › applies only the city's own fixed amounts`, `categoryCompare › uses a fixed amount only for its own city`. Mutations (leak to every city in engine / Atlas cityCosts; loan hint ignores amounts) each fail: [mutations.txt](mutations.txt) |
+| The Outlook's per-category cost rows show the fixed amount, not budget × ratio (proof: test) | pass | [tests-fixed-amounts.txt](tests-fixed-amounts.txt): `costRows.test.ts` › `prices each category as the engine does, and a fixed amount for the destination wins`, `ignores a fixed amount keyed by another city`, `gives no ratio (not Infinity) for a fixed amount on a $0 home category`, `keeps the caption finite when the whole home budget is $0`. Mutation (rows use budget × ratio) fails 3: [mutations.txt](mutations.txt) |
+| Share links and the saved plan round-trip fixed amounts; decoding drops unknown cities and categories and non-numbers, and clamps amounts to $0–BUDGET_MAX (proof: test) | pass | [tests-fixed-amounts.txt](tests-fixed-amounts.txt): `share.test.ts` › amountOverrides › `round-trips through a share link and the saved plan`, `drops unknown cities and categories, and empty maps`, `keeps only finite numbers, clamped to [0, BUDGET_MAX]`, `ignores prototype-pollution keys`. Mutations (unknown cities kept / no clamp / field dropped) each fail: [mutations.txt](mutations.txt) |
+
+Project checks: type check pass ([typecheck.txt](typecheck.txt)) · lint: none configured · tests 522/522, 35 files ([tests.txt](tests.txt)) · build pass, chunk-size warning only ([build.txt](build.txt))
+Audit: `npm audit --omit=dev`: 0 vulnerabilities ([audit.txt](audit.txt))
+
+## Notes on test strength
+- Check 1: independence from the expat premium is asserted at the `destinationAmounts` level (expat 0 / 0.35 / 1); through `simulate` only the home budget is varied. `resolveDestination` passes straight through `destinationAmounts`, so this is adequate but not end-to-end for the premium.
+- Check 3: `costRows` (the data the Outlook cost card renders) is tested; the `CostBody` render itself is not. Stage 2's run-the-product checks cover the live card.
+- Check 4: the saved-plan path is tested as `sanitizeInputs(JSON.parse(JSON.stringify(inputs)))`, which mirrors `store.ts` (`writePersisted` JSON + `sanitizeInputs` on load) rather than calling the store.
+- The Plan card's own total (`PlaceSection.tsx`, still `applyRatios`) ignores fixed amounts; that is the card UI, scoped to stage 2.
+
+## After verify
+- Review fix-now applied after this run: `src/state/sim.ts` `homeVariant` also clears `amountOverrides`, so $ edits don't re-key the stay-home baseline (cache only; output unchanged). Suite re-run: 522/522, typecheck clean.

@@ -1,0 +1,77 @@
+$ npx vitest run --reporter=verbose src/engine/__tests__/fixedAmounts.test.ts src/state/__tests__/share.test.ts src/ui/atlas/__tests__/picks.test.ts src/ui/outlook/__tests__/costRows.test.ts src/ui/plan/__tests__/existingLoan.test.ts
+npm notice run evelo@2.0.0 npx
+npm notice run 'vitest' run --reporter=verbose src/engine/__tests__/fixedAmounts.test.ts src/state/__tests__/share.test.ts src/ui/atlas/__tests__/picks.test.ts src/ui/outlook/__tests__/costRows.test.ts src/ui/plan/__tests__/existingLoan.test.ts
+
+ RUN  v5.1.0 /home/jonah/repos/eVelo-v2
+
+ ✓ src/state/__tests__/share.test.ts > share links > round-trips changed inputs 3ms
+ ✓ src/state/__tests__/share.test.ts > share links > defaults encode compactly 0ms
+ ✓ src/state/__tests__/share.test.ts > share links > rejects garbage and wrong types 1ms
+ ✓ src/state/__tests__/share.test.ts > share links > builds a full URL whose hash decodes back to the plan 1ms
+ ✓ src/state/__tests__/share.test.ts > share links > clamps hostile numbers to the UI ranges 1ms
+ ✓ src/state/__tests__/share.test.ts > share links > leaves every plan inside the UI ranges unchanged 10ms
+ ✓ src/state/__tests__/share.test.ts > share links > existing loan > defaults to no loan and still encodes short 0ms
+ ✓ src/state/__tests__/share.test.ts > share links > existing loan > loads an old share link or saved plan without the field as 0 0ms
+ ✓ src/state/__tests__/share.test.ts > share links > existing loan > round-trips a balance 1ms
+ ✓ src/state/__tests__/share.test.ts > share links > existing loan > clamps hostile balances 1ms
+ ✓ src/state/__tests__/share.test.ts > share links > amountOverrides > round-trips through a share link and the saved plan 1ms
+ ✓ src/state/__tests__/share.test.ts > share links > amountOverrides > drops unknown cities and categories, and empty maps 0ms
+ ✓ src/state/__tests__/share.test.ts > share links > amountOverrides > keeps only finite numbers, clamped to [0, BUDGET_MAX] 0ms
+ ✓ src/state/__tests__/share.test.ts > share links > amountOverrides > ignores prototype-pollution keys 0ms
+ ✓ src/ui/plan/__tests__/existingLoan.test.ts > existing loan > reports today’s LTV 2ms
+ ✓ src/ui/plan/__tests__/existingLoan.test.ts > existing loan > flags a balance past the margin-call LTV, but not one exactly at it 0ms
+ ✓ src/ui/plan/__tests__/existingLoan.test.ts > existing loan > reports the opening sale: shares sold, tax paid, and the target LTV it lands at 0ms
+ ✓ src/ui/plan/__tests__/existingLoan.test.ts > existing loan > breaks where the sale cannot cover the loan after tax, V·(1 − g·tax) 0ms
+ ✓ src/ui/plan/__tests__/existingLoan.test.ts > existing loan > moves the break line with basis and tax 0ms
+ ✓ src/ui/plan/__tests__/existingLoan.test.ts > existing loan > keeps the balance strictly under the portfolio 0ms
+ ✓ src/ui/plan/__tests__/existingLoan.test.ts > existing loan > reports the net worth left: portfolio less loan, after the opening sale 0ms
+ ✓ src/ui/plan/__tests__/existingLoan.test.ts > existing loan > flags a sale that leaves less than a year of spending as thin 0ms
+ ✓ src/ui/plan/__tests__/existingLoan.test.ts > existing loan > treats hostile values as no loan 0ms
+ ✓ src/ui/plan/__tests__/existingLoan.test.ts > existing loan: the warning agrees with the engine > over a grid of balances, the status matches what simulate records at year 0 126ms
+ ✓ src/ui/plan/__tests__/existingLoan.test.ts > firstYearSpend > uses the destination budget, priced as the engine prices it, when the move is within the first year 0ms
+ ✓ src/ui/plan/__tests__/existingLoan.test.ts > firstYearSpend > honours fixed amounts for the destination city only 0ms
+ ✓ src/ui/plan/__tests__/existingLoan.test.ts > firstYearSpend > uses the home budget when the move is a year or more away, or there is no destination 0ms
+ ✓ src/ui/plan/__tests__/existingLoan.test.ts > firstYearSpend > subtracts other income only once it has started, and never goes below 0 0ms
+ ✓ src/ui/plan/__tests__/existingLoan.test.ts > firstYearSpend > makes a sale thin against the first year’s draw, not the home budget 0ms
+ ✓ src/engine/__tests__/fixedAmounts.test.ts > destinationAmounts > a fixed amount replaces budget × ratio regardless of home budget and expat factor 1ms
+ ✓ src/engine/__tests__/fixedAmounts.test.ts > destinationAmounts > ratio overrides and untouched rows are unchanged 0ms
+ ✓ src/engine/__tests__/fixedAmounts.test.ts > destinationAmounts > a $0 home category can carry a fixed amount 0ms
+ ✓ src/engine/__tests__/fixedAmounts.test.ts > destinationAmounts > ignores non-finite and negative fixed amounts; accepts 0 0ms
+ ✓ src/engine/__tests__/fixedAmounts.test.ts > fixed amounts through the engine > resolveDestination uses only the destination city’s own amounts 1ms
+ ✓ src/engine/__tests__/fixedAmounts.test.ts > fixed amounts through the engine > simulate reports categoryAmounts and spendDest from the fixed amount 145ms
+ ✓ src/ui/outlook/__tests__/costRows.test.ts > costRows > prices each category as the engine does, and a fixed amount for the destination wins 2ms
+ ✓ src/ui/outlook/__tests__/costRows.test.ts > costRows > ignores a fixed amount keyed by another city 0ms
+ ✓ src/ui/outlook/__tests__/costRows.test.ts > costRows > gives no ratio (not Infinity) for a fixed amount on a $0 home category 0ms
+ ✓ src/ui/outlook/__tests__/costRows.test.ts > costRows > keeps the caption finite when the whole home budget is $0 11ms
+ ✓ src/engine/__tests__/fixedAmounts.test.ts > fixed amounts through the engine > the home budget does not move a fixed amount 25ms
+ ✓ src/engine/__tests__/fixedAmounts.test.ts > fixed amounts through the engine > atlas: an override keyed to Bangkok changes Bangkok’s row only 107ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > pickViews > joins every pick to its city and ranking row, in pick order 2ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > pickViews > profiles every pick 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > pickViews > drops picks whose city is missing 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > splitPicks > puts ranks 1–15 in the card grid and 16–75 in the compact rows 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > splitPicks > keeps an unprofiled later pick in the rows and leaves an unprofiled top pick out of the grid 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > scoreLabel > reads all nine factors in display order, out of 5 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > dates > formats ISO dates without a time-zone shift 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > verifiedLabel > labels verified cities with month and source 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > verifiedLabel > says so when confidence is low 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > verifiedLabel > labels unverified cities as estimates 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > verifiedLabel > every pick is verified 1ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > costDataLine > cites the date and source, with the low-confidence note where it applies 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > oddsVsHome > compares displayed whole percents 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > categoryCompare > prices the home budget with the plan’s expat factor and overrides 1ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > categoryCompare > is 1:1 for the home city and skips empty categories 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > categoryCompare > uses a fixed amount only for its own city 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > categoryCompare > shows a fixed amount on a $0 home category with no ratio, never Infinity or NaN 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > cityCosts > applies only the city’s own fixed amounts 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > profileView / profileEyebrow (any profiled city) > opens a pick with its rank and row 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > profileView / profileEyebrow (any profiled city) > opens an unranked profiled city without a pick, and says "Profile · <country>" 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > profileView / profileEyebrow (any profiled city) > returns null for a city with no profile or an unknown id 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > profileView / profileEyebrow (any profiled city) > never adds an unranked profile to the top-picks list 0ms
+ ✓ src/engine/__tests__/fixedAmounts.test.ts > fixed amounts through the engine > solver: maxSpendDest scales the fixed-amount annual 261ms
+
+ Test Files  5 passed (5)
+      Tests  64 passed (64)
+   Start at  17:30:07
+   Duration  744ms (tests 44%, transform 37%, import 19%, worker 1%)
+
+exit 0

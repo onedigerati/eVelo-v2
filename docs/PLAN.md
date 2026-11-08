@@ -7,27 +7,21 @@ In the "Spending in <city>" card, a user who has researched a real price ("a con
 2026-11-08 · tests: 501 pass · typecheck: clean · build: ok (after 5e26be1)
 
 ## Now
-Stage 1 of 2 · Fixed amounts in the engine
-Risk: user input (share-link decoding of a new field)
+Stage 2 of 2 · Card editing and tip
+Risk: UI only
 Mode: autopilot
 Agents: wide — confirmed 2026-11-08 17:23
 Checks:
-- [ ] A fixed amount for a category becomes that destination's spending for it, whatever the home budget or expat premium, while percentage overrides and untouched rows behave as before; a $0 home category can carry a fixed amount (proof: test)
-- [ ] Fixed amounts belong to the city they were set for: they move the Outlook, solver and loan hint for that destination and that city's Atlas row, never other Atlas cities (proof: test)
-- [ ] The Outlook's per-category cost rows show the fixed amount, not budget × ratio (proof: test)
-- [ ] Share links and the saved plan round-trip fixed amounts; decoding drops unknown cities and categories and non-numbers, and clamps amounts to $0–BUDGET_MAX (proof: test)
+- [ ] Tapping a row's amount lets you type dollars; Enter sets it, Esc cancels; the %, bar, card total, delta chip and odds update, and the card total equals the Outlook's destination spend (proof: run the product, a test can't judge the live card)
+- [ ] Setting % on a row that has a fixed amount replaces it, and vice versa; × and "Reset all" clear both kinds for this city (proof: test for the override logic; run the product)
+- [ ] A fixed row keeps its dollars when the home budget or the premium slider moves; a percentage row follows; a $0 home row shows dollars only (proof: run the product, screenshots before/after)
+- [ ] The ⓘ tip says what the % compares against (your home city's spending), that you can set the % or the $, that a typed $ stays fixed, and how to undo (proof: run the product, screenshot)
+- [ ] Keyboard and screen reader can reach and edit both fields, labelled per category; it looks right in light, dark and at phone width (proof: run the product, screenshots + accessibility tree)
 Open: none
 
 ## Stages
-- [ ] 1. Fixed amounts in the engine — per-city fixed dollar overrides through cost model, sim, solver, Atlas, outlook rows, share link, with tests
+- [x] 1. Fixed amounts in the engine — per-city fixed dollar overrides through cost model, sim, solver, Atlas, outlook rows, share link, with tests
 - [ ] 2. Card editing and tip — edit $ or % on each row, × to clear, ⓘ tip on the card, both themes and phone; preview; deploy on approval
-
-Stage 2 checks (drafted, finalised when it starts):
-- Tapping a row's amount lets you type dollars; Enter sets it, Esc cancels; the %, bar, total, −40% chip and odds update (proof: run the product, a test can't judge the live card)
-- Setting % on a row that has a fixed amount replaces it, and vice versa; × and "Reset all" clear both kinds (proof: test for the override logic; run the product)
-- A fixed row keeps its dollars when the home budget or the premium slider moves; a percentage row follows (proof: run the product)
-- The ⓘ tip says what the % compares against (your home city's spending), that you can set the % or the $, that a typed $ stays fixed, and how to undo (proof: run the product, screenshot)
-- Keyboard and screen reader can reach and edit both fields, labelled per category; it looks right in light, dark and at phone width (proof: run the product, screenshots)
 
 ## Decisions
 - 2026-11-08 · Users can set a category's destination spending in dollars as well as by percentage; a dollar entry is stored as a fixed amount and doesn't drift when the home budget changes, while percentage entries keep following the home budget — user: "yes, fixed dollar amounts". This refines the standing cost model (home budget × ratios): a fixed amount takes a category out of the ratio for that city.
@@ -37,6 +31,9 @@ Stage 2 checks (drafted, finalised when it starts):
 - 2026-11-08 · One override per category: setting a % replaces a fixed amount and vice versa; a row whose home amount is $0 shows dollars only — user accepted the proposal.
 - 2026-11-08 · An ⓘ tip on the card explains it — user asked for it.
 - 2026-11-08 · Two stages: the engine and state change with tests, then the card UI; scale check didn't fire — PM's call.
+
+- 2026-11-08 · Stage 1 verified by a fresh agent ([report](evidence/stage-1/report.md), 522 tests, mutation-checked); review found no security issue in the new share-link field and one fix-now (the stay-home baseline's cache key ignored `amountOverrides`), fixed. The reviewer's solver concern is already the decision above. Stage 2 adds "card total equals the Outlook's destination spend" because the card still totals with `applyRatios` — from the review.
+- 2026-11-08 · The share-link builder also closed a pre-existing gap: `constructor` could pass the `in` checks for `ratioOverrides` and the budget merge; both now use own-key/category checks — builder's call, tested.
 
 ## Open questions
 - Should the % override also become per-city? Today a "−33% housing" override applies to every Atlas city — user's call, later.

@@ -52,7 +52,7 @@ export const hasHoldings = (i: PlanInputs) => i.holdings.some((h) => h.weight > 
 
 /** Same plan, staying home: destination settings neutralised so the key ignores them. */
 export function homeVariant(i: PlanInputs): PlanInputs {
-  return { ...i, destCityId: null, moveInYears: 0, expatFactor: 0, ratioOverrides: undefined }
+  return { ...i, destCityId: null, moveInYears: 0, expatFactor: 0, ratioOverrides: undefined, amountOverrides: undefined }
 }
 
 class SimClient {

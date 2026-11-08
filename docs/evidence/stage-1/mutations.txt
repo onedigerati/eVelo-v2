@@ -1,0 +1,100 @@
+=== Mutation: fixed amount ignored (always budget x ratio)
+$ sed -i 's/out\[c\] = isFixedAmount(f) ? f : /out[c] = /' src/engine/cost.ts && npx vitest run src/engine/__tests__/fixedAmounts.test.ts
+ src/engine/cost.ts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+     × a fixed amount replaces budget × ratio regardless of home budget and expat factor 6ms
+     × a $0 home category can carry a fixed amount 1ms
+     × ignores non-finite and negative fixed amounts; accepts 0 0ms
+     × resolveDestination uses only the destination city’s own amounts 1ms
+     × simulate reports categoryAmounts and spendDest from the fixed amount 102ms
+     × the home budget does not move a fixed amount 32ms
+     × atlas: an override keyed to Bangkok changes Bangkok’s row only 71ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 7 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/engine/__tests__/fixedAmounts.test.ts > destinationAmounts > a fixed amount replaces budget × ratio regardless of home budget and expat factor
+ FAIL  src/engine/__tests__/fixedAmounts.test.ts > destinationAmounts > a $0 home category can carry a fixed amount
+ FAIL  src/engine/__tests__/fixedAmounts.test.ts > destinationAmounts > ignores non-finite and negative fixed amounts; accepts 0
+ FAIL  src/engine/__tests__/fixedAmounts.test.ts > fixed amounts through the engine > resolveDestination uses only the destination city’s own amounts
+ FAIL  src/engine/__tests__/fixedAmounts.test.ts > fixed amounts through the engine > simulate reports categoryAmounts and spendDest from the fixed amount
+ FAIL  src/engine/__tests__/fixedAmounts.test.ts > fixed amounts through the engine > the home budget does not move a fixed amount
+ FAIL  src/engine/__tests__/fixedAmounts.test.ts > fixed amounts through the engine > atlas: an override keyed to Bangkok changes Bangkok’s row only
+ Test Files  1 failed (1)
+      Tests  7 failed | 2 passed (9)
+=== Mutation: fixed amounts leak to every city (first city's map used)
+$ sed -i 's/inputs.amountOverrides?.\[dest.id\]/Object.values(inputs.amountOverrides ?? {})[0]/' src/engine/simulate.ts && npx vitest run src/engine/__tests__/fixedAmounts.test.ts
+ src/engine/simulate.ts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+     × resolveDestination uses only the destination city’s own amounts 8ms
+     × atlas: an override keyed to Bangkok changes Bangkok’s row only 62ms
+     × solver: maxSpendDest scales the fixed-amount annual 247ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/engine/__tests__/fixedAmounts.test.ts > fixed amounts through the engine > resolveDestination uses only the destination city’s own amounts
+ FAIL  src/engine/__tests__/fixedAmounts.test.ts > fixed amounts through the engine > atlas: an override keyed to Bangkok changes Bangkok’s row only
+ FAIL  src/engine/__tests__/fixedAmounts.test.ts > fixed amounts through the engine > solver: maxSpendDest scales the fixed-amount annual
+ Test Files  1 failed (1)
+      Tests  3 failed | 6 passed (9)
+=== Mutation: loan hint ignores fixed amounts
+$ sed -i 's/, inputs.amountOverrides?.\[dest.id\]//' src/ui/plan/existingLoan.ts && npx vitest run src/ui/plan/__tests__/existingLoan.test.ts
+ src/ui/plan/existingLoan.ts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+     × honours fixed amounts for the destination city only 4ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/ui/plan/__tests__/existingLoan.test.ts > firstYearSpend > honours fixed amounts for the destination city only
+ Test Files  1 failed (1)
+      Tests  1 failed | 14 passed (15)
+=== Mutation: Atlas cityCosts leak to every city
+$ sed -i 's/inputs.amountOverrides?.\[city.id\]/Object.values(inputs.amountOverrides ?? {})[0]/' src/ui/atlas/atlasData.ts && npx vitest run src/ui/atlas/__tests__/picks.test.ts
+ src/ui/atlas/atlasData.ts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+     × applies only the city’s own fixed amounts 4ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/ui/atlas/__tests__/picks.test.ts > cityCosts > applies only the city’s own fixed amounts
+ Test Files  1 failed (1)
+      Tests  1 failed | 21 passed (22)
+=== Mutation: Outlook rows use budget x ratio
+$ sed -i 's/const dest = r.categoryAmounts?.\[c\] ?? home \* ratios\[c\]/const dest = home * ratios[c]/' src/ui/outlook/cards.tsx && npx vitest run src/ui/outlook/__tests__/costRows.test.ts
+ src/ui/outlook/cards.tsx | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+     × prices each category as the engine does, and a fixed amount for the destination wins 4ms
+     × gives no ratio (not Infinity) for a fixed amount on a $0 home category 2ms
+     × keeps the caption finite when the whole home budget is $0 11ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/ui/outlook/__tests__/costRows.test.ts > costRows > prices each category as the engine does, and a fixed amount for the destination wins
+ FAIL  src/ui/outlook/__tests__/costRows.test.ts > costRows > gives no ratio (not Infinity) for a fixed amount on a $0 home category
+ FAIL  src/ui/outlook/__tests__/costRows.test.ts > costRows > keeps the caption finite when the whole home budget is $0
+ Test Files  1 failed (1)
+      Tests  3 failed | 1 passed (4)
+=== Mutation: share: unknown cities kept
+$ sed -i 's/if (!isCityId(city) || /if (/' src/state/share.ts && npx vitest run src/state/__tests__/share.test.ts
+ src/state/share.ts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+       × drops unknown cities and categories, and empty maps 4ms
+       × ignores prototype-pollution keys 1ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/state/__tests__/share.test.ts > share links > amountOverrides > drops unknown cities and categories, and empty maps
+ FAIL  src/state/__tests__/share.test.ts > share links > amountOverrides > ignores prototype-pollution keys
+ Test Files  1 failed (1)
+      Tests  2 failed | 12 passed (14)
+=== Mutation: share: no clamp
+$ sed -i 's/row\[ck\] = clamp(cv, 0, BUDGET_MAX)/row[ck] = cv/' src/state/share.ts && npx vitest run src/state/__tests__/share.test.ts
+ src/state/share.ts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+       × keeps only finite numbers, clamped to [0, BUDGET_MAX] 6ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/state/__tests__/share.test.ts > share links > amountOverrides > keeps only finite numbers, clamped to [0, BUDGET_MAX]
+ Test Files  1 failed (1)
+      Tests  1 failed | 13 passed (14)
+=== Mutation: share: amountOverrides dropped (no round-trip)
+$ sed -i 's/if (Object.keys(clean).length) base.amountOverrides = clean/void clean/' src/state/share.ts && npx vitest run src/state/__tests__/share.test.ts
+ src/state/share.ts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+       × round-trips through a share link and the saved plan 5ms
+       × drops unknown cities and categories, and empty maps 0ms
+       × keeps only finite numbers, clamped to [0, BUDGET_MAX] 0ms
+       × ignores prototype-pollution keys 0ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/state/__tests__/share.test.ts > share links > amountOverrides > round-trips through a share link and the saved plan
+ FAIL  src/state/__tests__/share.test.ts > share links > amountOverrides > drops unknown cities and categories, and empty maps
+ FAIL  src/state/__tests__/share.test.ts > share links > amountOverrides > keeps only finite numbers, clamped to [0, BUDGET_MAX]
+ FAIL  src/state/__tests__/share.test.ts > share links > amountOverrides > ignores prototype-pollution keys
+ Test Files  1 failed (1)
+      Tests  4 failed | 10 passed (14)
