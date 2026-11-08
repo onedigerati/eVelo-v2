@@ -17,7 +17,7 @@ Checks:
 - [x] Tablet: the same pill works over the outlook, including while the plan drawer is open (proof: run the product at tablet width, screenshot)
 - [x] It never covers a chart's hover tooltip or crosshair readout, and it looks right in light and dark themes (proof: screenshots of a chart hovered under the pill, both themes)
 - [x] Phone is unchanged: the Plan-tab pill and the keyboard docking from bf1ba98 behave as before (proof: test for keyboardDockTop stays green; run the product at phone width)
-Open: none — preview v38 reviewed; deployed by run 42532193022 (live bundle checked)
+Open: none — preview v38 reviewed; deployed by run 42532193022 (live bundle checked); user confirmed live: "this is great it works"
 
 ## Stages
 - [x] 1. Docked verdict pill — desktop/tablet pill that docks when the verdict headline leaves view, live delta, back-to-verdict, both themes; preview; deploy on approval
