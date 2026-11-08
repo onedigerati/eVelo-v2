@@ -1,4 +1,4 @@
-$ node v3.mjs docs/evidence/stage-2 c3,c4  (playwright-core, chromium 1200, vite preview :4317; base build e363375 on :4318)
+$ node v3.mjs docs/evidence/stage-2 c3,c4 (saved as product-run-c3-c4.txt)  (playwright-core, chromium 1200, vite preview :4317; base build e363375 on :4318)
 c3 saved plan without field: field=0 meter=0% today toasts=[]
 c3 share link without field: field=0 meter=0% today toasts=["Opened a shared plan\nChanges you make stay on this device."]
 c3 share link 1e12 on 3M: field=2,999,999 meter=100% today toasts=["Opened a shared plan\nChanges you make stay on this device."]
