@@ -5,7 +5,8 @@ import { VERDICT_THRESHOLDS, toneLabel } from '../verdict'
  *   odds → verdict bands (Holds ≥80 · Mostly holds ≥65 · Fragile ≥45 · Breaks), on the displayed whole percent;
  *   cost → bands of cost vs home (under 50%, 50–70%, 70–90%, 90–110%, over 110%), on the displayed whole percent;
  *   name → first-letter groups.
- * A verdict band holding more than MAX_TIER cities of the full list is split at its 10-point lines, top first.
+ * An odds or cost band holding more than MAX_TIER cities of the full list is split at its 10-point lines
+ * (odds top first, cost low first, following each sort).
  */
 
 export type TierSort = 'odds' | 'cost' | 'name'
@@ -27,11 +28,12 @@ export interface Tier<R extends TierRow = TierRow> {
   hasHome: boolean
 }
 
-/** An odds band on whole percents: lo ≤ p < hi. */
-export interface OddsBand {
+/** A band on whole percents: lo ≤ p < hi. */
+export interface Band {
   lo: number
   hi: number
 }
+export type OddsBand = Band
 
 export const MAX_TIER = 40
 
@@ -44,19 +46,26 @@ const CUTS = [VERDICT_THRESHOLDS.holds, VERDICT_THRESHOLDS.mostly, VERDICT_THRES
 export const VERDICT_BANDS: OddsBand[] = [101, ...CUTS].map((hi, i, a) => ({ lo: a[i + 1] ?? 0, hi }))
 
 /**
- * Bands for the odds sort, split from the full (unfiltered) list so tiers don't shift while searching:
- * a band with more than `max` cities splits at its highest 10-point line inside it, repeatedly.
+ * Split each band holding more than `max` of `pcts` at its highest 10-point line below its top shown value
+ * (hi − 1), repeatedly, until it fits or no line is left inside it. An open-ended band (hi = ∞) stays whole.
+ * `lowFirst` orders the halves for an ascending sort.
  */
-export function oddsBands(rows: readonly TierRow[], max = MAX_TIER): OddsBand[] {
-  const pcts = rows.map((r) => wholePct(r.successRate))
-  const count = (b: OddsBand) => pcts.filter((p) => p >= b.lo && p < b.hi).length
-  const split = (b: OddsBand): OddsBand[] => {
-    if (count(b) <= max) return [b]
-    const line = Math.ceil(Math.min(b.hi, 100) / 10) * 10 - 10 // highest 10-point line below the band's top
+export function splitBands(pcts: readonly number[], bands: readonly Band[], max = MAX_TIER, lowFirst = false): Band[] {
+  const count = (b: Band) => pcts.filter((p) => p >= b.lo && p < b.hi).length
+  const split = (b: Band): Band[] => {
+    if (count(b) <= max || !Number.isFinite(b.hi)) return [b]
+    const line = Math.floor((b.hi - 2) / 10) * 10 // highest 10-point line below the band's top shown value
     if (line <= b.lo) return [b]
-    return [...split({ lo: line, hi: b.hi }), ...split({ lo: b.lo, hi: line })]
+    const top = split({ lo: line, hi: b.hi })
+    const bottom = split({ lo: b.lo, hi: line })
+    return lowFirst ? [...bottom, ...top] : [...top, ...bottom]
   }
-  return VERDICT_BANDS.flatMap(split)
+  return bands.flatMap(split)
+}
+
+/** Bands for the odds sort, split from the full (unfiltered) list so tiers don't shift while searching. */
+export function oddsBands(rows: readonly TierRow[], max = MAX_TIER): Band[] {
+  return splitBands(rows.map((r) => wholePct(r.successRate)), VERDICT_BANDS, max)
 }
 
 function rangeText({ lo, hi }: OddsBand): string {
@@ -65,13 +74,27 @@ function rangeText({ lo, hi }: OddsBand): string {
   return `${lo}–${hi - 1}%`
 }
 
-const COST_BANDS: { key: string; label: string; test: (p: number) => boolean }[] = [
-  { key: 'cost-lt50', label: 'Under 50% of home', test: (p) => p < 50 },
-  { key: 'cost-50', label: '50–70% of home', test: (p) => p < 70 },
-  { key: 'cost-70', label: '70–90% of home', test: (p) => p < 90 },
-  { key: 'cost-90', label: '90–110% of home', test: (p) => p <= 110 },
-  { key: 'cost-gt110', label: 'Over 110% of home', test: () => true },
+/** Cheapest bands of cost vs home, low to high: under 50%, 50–70%, 70–90%, 90–110% (inclusive), over 110%. */
+const COST_BASE: (Band & { label: string })[] = [
+  { lo: 0, hi: 50, label: 'Under 50% of home' },
+  { lo: 50, hi: 70, label: '50–70% of home' },
+  { lo: 70, hi: 90, label: '70–90% of home' },
+  { lo: 90, hi: 111, label: '90–110% of home' },
+  { lo: 111, hi: Infinity, label: 'Over 110% of home' },
 ]
+export const COST_BANDS: Band[] = COST_BASE.map(({ lo, hi }) => ({ lo, hi }))
+
+/** Bands for the Cheapest sort, split by the odds rule from the full list, low first. */
+export function costBands(rows: readonly TierRow[], max = MAX_TIER): Band[] {
+  return splitBands(rows.map((r) => wholePct(r.costRatio)), COST_BANDS, max, true)
+}
+
+function costLabel(b: Band): string {
+  const base = COST_BASE.find((x) => x.lo === b.lo && x.hi === b.hi)
+  if (base) return base.label
+  if (b.lo <= 0) return `Under ${b.hi}% of home`
+  return `${b.lo}–${b.hi - 1}% of home`
+}
 
 /** First letter for A–Z groups, accents folded ("Évora" → E); anything else groups under "#". */
 export function letterOf(name: string): string {
@@ -87,7 +110,8 @@ export function groupTiers<R extends TierRow>(
   rows: readonly R[],
   sort: TierSort,
   homeId: string,
-  bands: readonly OddsBand[] = VERDICT_BANDS,
+  /** Odds or cost bands (from `oddsBands` / `costBands`); defaults to the unsplit bands for the sort. */
+  bands: readonly Band[] = sort === 'cost' ? COST_BANDS : VERDICT_BANDS,
 ): Tier<R>[] {
   const tiers: Tier<R>[] = []
   const byKey = new Map<string, Tier<R>>()
@@ -103,25 +127,32 @@ export function groupTiers<R extends TierRow>(
   }
   for (const r of rows) {
     if (sort === 'odds') {
-      const p = wholePct(r.successRate)
-      const b = bands.find((x) => p >= x.lo && p < x.hi) ?? bands[bands.length - 1]
-      add(`odds-${b.lo}-${b.hi}`, () => ({ label: toneLabel(b.lo / 100), range: rangeText(b) }), r)
+      const b = bandOf(bands, wholePct(r.successRate))
+      add(bandKey(sort, b), () => ({ label: toneLabel(b.lo / 100), range: rangeText(b) }), r)
     } else if (sort === 'cost') {
-      const p = wholePct(r.costRatio)
-      const b = COST_BANDS.find((x) => x.test(p))!
-      add(b.key, () => ({ label: b.label }), r)
+      const b = bandOf(bands, wholePct(r.costRatio))
+      add(bandKey(sort, b), () => ({ label: costLabel(b) }), r)
     } else {
       const l = letterOf(r.city.name)
       add(`name-${l}`, () => ({ label: l }), r)
     }
   }
   // Sorted input gives tiers in band order already; order by band anyway so a stray row can't reorder them.
-  if (sort === 'odds') tiers.sort((a, b) => bandIndex(bands, a.key) - bandIndex(bands, b.key))
-  if (sort === 'cost') tiers.sort((a, b) => COST_BANDS.findIndex((x) => x.key === a.key) - COST_BANDS.findIndex((x) => x.key === b.key))
+  if (sort !== 'name') {
+    const index = (key: string) => bands.findIndex((b) => bandKey(sort, b) === key)
+    tiers.sort((a, b) => index(a.key) - index(b.key))
+  }
   return tiers
 }
 
-const bandIndex = (bands: readonly OddsBand[], key: string) => bands.findIndex((b) => `odds-${b.lo}-${b.hi}` === key)
+const bandKey = (sort: TierSort, b: Band) => `${sort}-${b.lo}-${b.hi}`
+// A value outside every band (never for real odds or cost) falls to the nearest end band.
+const bandOf = (bands: readonly Band[], p: number) => {
+  const hit = bands.find((x) => p >= x.lo && p < x.hi)
+  if (hit) return hit
+  const lowest = bands.reduce((a, b) => (b.lo < a.lo ? b : a))
+  return p < lowest.lo ? lowest : bands.reduce((a, b) => (b.hi > a.hi ? b : a))
+}
 
 /** Tiers open by default: every tier while searching (only tiers with hits exist), else just the first. */
 export function defaultOpen(tiers: readonly Tier[], searching: boolean): Set<string> {

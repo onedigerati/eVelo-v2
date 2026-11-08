@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { CITIES } from '../../../data/cities'
 import { percent } from '../../format'
-import { VERDICT_BANDS, defaultOpen, groupTiers, letterOf, oddsBands, type TierRow, type TierSort } from '../tiers'
+import { COST_BANDS, VERDICT_BANDS, costBands, defaultOpen, groupTiers, letterOf, oddsBands, type TierRow, type TierSort } from '../tiers'
 
 const row = (cityId: string, name: string, successRate: number, costRatio: number): TierRow => ({
   cityId,
@@ -25,7 +25,7 @@ describe('groupTiers', () => {
   for (const sort of ['odds', 'cost', 'name'] as TierSort[]) {
     it(`${sort}: every city in exactly one tier, in sort order, no empty tiers`, () => {
       const rows = sorted(ALL, sort)
-      const tiers = groupTiers(rows, sort, HOME, sort === 'odds' ? oddsBands(ALL) : undefined)
+      const tiers = groupTiers(rows, sort, HOME, sort === 'odds' ? oddsBands(ALL) : sort === 'cost' ? costBands(ALL) : undefined)
       expect(tiers.flatMap((t) => t.rows)).toEqual(rows)
       expect(new Set(tiers.map((t) => t.key)).size).toBe(tiers.length)
       for (const t of tiers) expect(t.rows.length).toBeGreaterThan(0)
@@ -136,5 +136,58 @@ describe('oddsBands', () => {
       { lo: 90, hi: 101 },
       { lo: 80, hi: 90 },
     ])
+  })
+})
+
+describe('costBands', () => {
+  const cost = (n: number, lo: number, span: number, tag: string) =>
+    Array.from({ length: n }, (_, i) => row(`${tag}${i}`, tag, 0.5, (lo + (i % span)) / 100))
+
+  it('keeps the cost bands when none holds more than 40', () => {
+    expect(costBands([...cost(40, 70, 20, 'a'), ...cost(40, 90, 21, 'b')])).toEqual(COST_BANDS)
+  })
+
+  it('splits a Cheapest band over 40 at its 10-point line, low first (the default plan: 58 at 70–90%)', () => {
+    const mid = cost(58, 70, 20, 'm')
+    const rest = [...cost(5, 30, 20, 'u'), ...cost(20, 50, 20, 'f'), ...cost(30, 90, 21, 'n'), ...cost(20, 115, 60, 'o')]
+    const all = [...mid, ...rest]
+    const bands = costBands(all)
+    expect(bands).toEqual([
+      { lo: 0, hi: 50 },
+      { lo: 50, hi: 70 },
+      { lo: 70, hi: 80 },
+      { lo: 80, hi: 90 },
+      { lo: 90, hi: 111 },
+      { lo: 111, hi: Infinity },
+    ])
+    const tiers = groupTiers(sorted(all, 'cost'), 'cost', 'none', bands)
+    expect(tiers.map((t) => [t.label, t.rows.length])).toEqual([
+      ['Under 50% of home', 5],
+      ['50–70% of home', 20],
+      ['70–79% of home', 30],
+      ['80–89% of home', 28],
+      ['90–110% of home', 30],
+      ['Over 110% of home', 20],
+    ])
+    expect(tiers.flatMap((t) => t.rows)).toEqual(sorted(all, 'cost'))
+  })
+
+  it('splits 90–110% at 100 (110% stays in the upper half) and never splits the open-ended top band', () => {
+    const bands = costBands([...cost(50, 90, 21, 'n'), ...cost(60, 120, 80, 'o')])
+    expect(bands.slice(3)).toEqual([
+      { lo: 90, hi: 100 },
+      { lo: 100, hi: 111 },
+      { lo: 111, hi: Infinity },
+    ])
+    const tiers = groupTiers([row('a', 'A', 0.5, 0.995), row('b', 'B', 1.1, 1.1)], 'cost', 'none', bands)
+    expect(tiers.map((t) => [t.label, t.rows.map((r) => r.cityId)])).toEqual([['100–110% of home', ['a', 'b']]])
+  })
+
+  it('counts on the full list: a filtered list keeps the full list\'s split', () => {
+    const all = [...cost(58, 70, 20, 'm')]
+    const bands = costBands(all)
+    const few = sorted([all[0], all[15]], 'cost') // 70% and 85%
+    expect(groupTiers(few, 'cost', 'none', bands).map((t) => t.label)).toEqual(['70–79% of home', '80–89% of home'])
+    expect(groupTiers(few, 'cost', 'none').map((t) => t.label)).toEqual(['70–90% of home'])
   })
 })

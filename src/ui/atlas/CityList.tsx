@@ -9,7 +9,7 @@ import { expatPickFor, hasProfile } from '../../data/expatPicks'
 import { VerifiedMark } from './VerifiedMark'
 import { verifiedLabel } from './picks'
 import { taxStatus } from './taxLines'
-import { defaultOpen, groupTiers, oddsBands, type Tier } from './tiers'
+import { costBands, defaultOpen, groupTiers, oddsBands, type Tier } from './tiers'
 
 type SortKey = 'odds' | 'cost' | 'name'
 
@@ -45,8 +45,8 @@ export function CityList({ rows, homeId, destId, region, compare, onToggleCompar
     return f
   }, [rows, region, query, sort])
 
-  // Odds bands split from the full list, so tiers hold still while searching or switching region.
-  const bands = useMemo(() => oddsBands(rows), [rows])
+  // Odds and cost bands split from the full list, so tiers hold still while searching or switching region.
+  const bands = useMemo(() => (sort === 'cost' ? costBands(rows) : sort === 'odds' ? oddsBands(rows) : undefined), [rows, sort])
   const tiers = useMemo(() => groupTiers(shown, sort, homeId, bands), [shown, sort, homeId, bands])
   // Open tiers reset to the default (first tier; every tier with hits while searching) whenever the sort,
   // search or region changes; toggles only last within that context.
