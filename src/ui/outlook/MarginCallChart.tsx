@@ -5,13 +5,31 @@ import type { SimulationResult } from '../../engine/types'
 import { percent } from '../format'
 import { cx } from '../primitives'
 import { massWindow, useCrosshair, useSize, useTweenedSeries } from './chartKit'
+import { openingSaleOf } from './openingSale'
 
-/** One-sentence reading of when forced sales happen. */
+/** Why early forced sales happen, by how the plan starts. */
+function earlyReason(r: SimulationResult, opening: boolean): string {
+  if (opening) return 'while the loan is still near the call line after the opening sale'
+  const startLtv = r.inputs.portfolio > 0 ? (r.inputs.existingLoan ?? 0) / r.inputs.portfolio : 0
+  if (startLtv >= 0.5 * r.inputs.maxLtv) return 'while your existing balance still sits near the call line'
+  return 'before the portfolio has grown past the loan'
+}
+
+/** One-sentence reading of when forced sales happen. The opening sale, if any, isn't one of them. */
 export function marginCallCaption(r: SimulationResult): string {
   const byYear = r.marginCallByYear
   const total = r.marginCallCumulative[r.marginCallCumulative.length - 1] ?? 0
   const a = r.inputs.age
-  if (total < 0.005) return 'Not one simulated future in two hundred forces a sale: the loan never gets near the call line.'
+  const opening = openingSaleOf(r) !== null
+  if (total < 0.005)
+    return opening
+      ? 'Beyond the opening sale, not one simulated future in two hundred forces another: the loan never climbs back to the call line.'
+      : 'Not one simulated future in two hundred forces a sale: the loan never gets near the call line.'
+  const t = marginCallTiming(r, byYear, total, a, opening)
+  return t && opening ? `${t} The opening sale today isn’t counted.` : t
+}
+
+function marginCallTiming(r: SimulationResult, byYear: number[], total: number, a: number, opening: boolean): string {
   const n = byYear.length
   const firstHalf = byYear.slice(0, Math.ceil(n / 2)).reduce((x, y) => x + y, 0)
   // Shortest span holding 80% of first forced sales: if it covers under ~half the horizon,
@@ -19,7 +37,8 @@ export function marginCallCaption(r: SimulationResult): string {
   const w80 = massWindow(byYear, 0.8)
   if (w80 && w80[1] - w80[0] + 1 <= Math.ceil(n / 2)) {
     const [s, e] = w80
-    if (s <= 1) return `Risk is concentrated early: 80% of forced sales happen in the first ${e + 1} years (ages ${a} to ${a + e + 1}), when a crash can hit before the portfolio has grown past the loan.`
+    if (s <= 1)
+      return `Risk is concentrated early: 80% of forced sales happen in ${e === 0 ? 'the first year' : `the first ${e + 1} years`} (ages ${a} to ${a + e + 1}), when a crash can hit ${earlyReason(r, opening)}.`
     return `Risk is concentrated: 80% of forced sales fall between ages ${a + s} and ${a + e + 1}${firstHalf < total * 0.35 ? ', as the loan compounds faster than the portfolio' : ''}. Outside that window forced sales are rare.`
   }
   const w = massWindow(byYear, 0.6)
