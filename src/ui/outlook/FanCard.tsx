@@ -7,6 +7,7 @@ import { SegmentedControl } from '../primitives'
 import { cityName, startNetWorth } from './cards'
 import { ChartFrame } from './ChartFrame'
 import { FAN_METRICS, FanChart, bandsFor, type FanMarker, type FanMetric } from './FanChart'
+import { openingSaleOf } from './openingSale'
 
 const EYEBROW: Record<FanMetric, string> = {
   networth: 'Net worth · today’s dollars',
@@ -52,15 +53,47 @@ export function fanCaption(r: SimulationResult, m: FanMetric): string {
       return `In the median future net worth shrinks from ${currencyCompact(b.p50[0])} to ${currencyCompact(b.p50[n])} by ${end}; the unluckiest 5% end ${low <= tiny ? 'with almost nothing' : `near ${currencyCompact(low)}`}.`
     return `In the median future net worth grows from ${currencyCompact(b.p50[0])} to ${currencyCompact(b.p50[n])} by ${end}; the unluckiest 5% end ${low <= tiny ? 'with almost nothing' : `near ${currencyCompact(low)}`}.`
   }
-  if (m === 'portfolio')
-    return `Nothing is sold to fund your life: the median portfolio compounds to ${currencyCompact(b.p50[n])} by ${end}, carrying the loan on top.`
-  if (m === 'loan')
-    return `Borrowing compounds: ${(r.inputs.existingLoan ?? 0) > 0 ? `from your existing ${currencyCompact(r.inputs.existingLoan)} balance, ` : ''}the median loan reaches ${currencyCompact(b.p50[n])} by ${end}, and ${currencyCompact(b.p95[n])} in the costliest 5% of futures.`
+  const sale = openingSaleOf(r)
+  if (m === 'portfolio') {
+    const grows = `the median portfolio compounds to ${currencyCompact(b.p50[n])} by ${end}, carrying the loan on top.`
+    if (sale)
+      return `The plan opens with a forced sale of ${currencyCompact(sale.sold)} today, paying ${currencyCompact(sale.taxPaid)} in tax; after that, nothing more is sold to fund your life, and ${grows}`
+    return `Nothing is sold to fund your life: ${grows}`
+  }
+  if (m === 'loan') {
+    const bal = r.inputs.existingLoan ?? 0
+    const from = bal > 0 ? `from your existing ${currencyCompact(bal)} balance, ${sale ? `cut to ${currencyCompact(b.p50[0])} by the opening sale, ` : ''}` : ''
+    return `Borrowing compounds: ${from}the median loan reaches ${currencyCompact(b.p50[n])} by ${end}, and ${currencyCompact(b.p95[n])} in the costliest 5% of futures.`
+  }
+  return ltvCaption(r, b.p50, b.p95, sale !== null)
+}
+
+/** Where a loan-to-value sits against the call line. */
+function relToLine(v: number, max: number): string {
+  return v < max * 0.6 ? 'well under' : v < max ? 'close to' : 'above'
+}
+
+function ltvCaption(r: SimulationResult, p50: number[], p95: number[], opening: boolean): string {
+  const a = r.inputs.age
+  const n = p50.length - 1
   const max = r.inputs.maxLtv
+  const line = `the ${percent(max)} call line`
   let peak = 0
-  for (let i = 1; i <= n; i++) if (b.p50[i] > b.p50[peak]) peak = i
-  const cross = b.p95.findIndex((v) => v >= max)
-  return `Median loan-to-value peaks at ${percent(b.p50[peak])} around ${a + peak}, well ${b.p50[peak] < max * 0.6 ? 'under' : 'close to'} the ${percent(max)} call line; ${cross >= 0 ? `the worst 5% touch it by ${a + cross}` : 'even the worst 5% never reach it'}.`
+  for (let i = 1; i <= n; i++) if (p50[i] > p50[peak]) peak = i
+  const cross = p95.findIndex((v) => v >= max)
+  const worst = cross === 0 ? 'the worst 5% start at or past it' : cross > 0 ? `the worst 5% touch it by ${a + cross}` : 'even the worst 5% never reach it'
+  const p0 = p50[0]
+  const peakAt = `peaks at ${percent(p50[peak])} around ${a + peak}, ${relToLine(p50[peak], max)} ${line}`
+  // A peak at year 0 (above zero) means a starting balance the plan then pays down relative to growth.
+  const startsAtPeak = peak === 0 && p0 > 0
+  let head: string
+  if (opening)
+    head = startsAtPeak
+      ? `A forced sale today brings loan-to-value to ${percent(p0)} (${relToLine(p0, max)} ${line}), and the median falls from there`
+      : `A forced sale today brings loan-to-value to ${percent(p0)}; the median then ${peakAt}`
+  else if (startsAtPeak) head = `Median loan-to-value starts at its peak, ${percent(p0)} (${relToLine(p0, max)} ${line}), and falls from there`
+  else head = `Median loan-to-value ${peakAt}`
+  return `${head}; ${worst}.`
 }
 
 export function fanMarkers(r: SimulationResult): FanMarker[] {

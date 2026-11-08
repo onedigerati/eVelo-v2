@@ -4,8 +4,9 @@
 import { create } from 'zustand'
 import { DEFAULT_INPUTS } from '../engine/defaults'
 import type { AtlasEntry, PlanInputs, SimulationResult, SolveResult } from '../engine/types'
-import { clampExistingLoan } from '../ui/plan/existingLoan'
+import { dismissToast, toast } from '../ui/primitives/Toast'
 import { markEntered, readEntered } from './entered'
+import { clampAfterPatch, clampAfterReplace, clampAfterSet, loanLoweredNotice, type LoanClamp } from './loanClamp'
 import { parseHash, resolveRoute, type Route } from './router'
 import { decodeInputs, sanitizeInputs } from './share'
 
@@ -81,10 +82,17 @@ function writePersisted(p: { inputs: PlanInputs; theme: ThemePref }) {
   }
 }
 
-/** Lowering the portfolio below an existing loan keeps the loan just under it (as sanitizeInputs does). */
-function keepLoanUnderPortfolio(inputs: PlanInputs): PlanInputs {
-  const existingLoan = clampExistingLoan(inputs.existingLoan, inputs.portfolio)
-  return existingLoan === inputs.existingLoan ? inputs : { ...inputs, existingLoan }
+/** The open "loan balance lowered" toast, so a newer one replaces it instead of stacking. */
+let loanToast: number | null = null
+
+/** Takes a clamped update's inputs; tells the user when the clamp lowered a balance they didn't just enter. */
+function clampLoan(c: LoanClamp): PlanInputs {
+  if (c.lowered) {
+    const { message, detail } = loanLoweredNotice(c.lowered)
+    if (loanToast !== null) dismissToast(loanToast)
+    loanToast = toast(message, { detail, tone: 'bruised' })
+  }
+  return c.inputs
 }
 
 const isTheme = (t: unknown): t is ThemePref => t === 'system' || t === 'light' || t === 'dark'
@@ -123,7 +131,7 @@ export const OPENED_FROM_LINK = init.fromLink
 // A shared plan becomes this device's plan straight away (the URL payload is then dropped).
 if (init.fromLink) writePersisted({ inputs: init.inputs, theme: init.theme })
 
-export const useStore = create<AppState>()((set) => ({
+export const useStore = create<AppState>()((set, get) => ({
   inputs: init.inputs,
   theme: init.theme,
   route: init.route,
@@ -137,15 +145,15 @@ export const useStore = create<AppState>()((set) => ({
   baseline: null,
   solving: false,
 
-  setInput: (key, value) =>
-    set((s) => {
-      const inputs = keepLoanUnderPortfolio({ ...s.inputs, [key]: value })
-      // A destination equal to home means staying home.
-      if (inputs.destCityId && inputs.destCityId === inputs.homeCityId) inputs.destCityId = null
-      return { inputs }
-    }),
-  patchInputs: (patch) => set((s) => ({ inputs: keepLoanUnderPortfolio({ ...s.inputs, ...patch }) })),
-  replaceInputs: (inputs) => set({ inputs: keepLoanUnderPortfolio(inputs) }),
+  // The clamp runs outside `set` so its toast is a side effect of the action, not of the updater.
+  setInput: (key, value) => {
+    const inputs = clampLoan(clampAfterSet(get().inputs, key, value))
+    // A destination equal to home means staying home.
+    if (inputs.destCityId && inputs.destCityId === inputs.homeCityId) inputs.destCityId = null
+    set({ inputs })
+  },
+  patchInputs: (patch) => set({ inputs: clampLoan(clampAfterPatch(get().inputs, patch)) }),
+  replaceInputs: (inputs) => set({ inputs: clampLoan(clampAfterReplace(inputs)) }),
   resetInputs: () => set({ inputs: structuredClone(DEFAULT_INPUTS) }),
   setTheme: (theme) => set({ theme }),
   setRoute: (route) => {
