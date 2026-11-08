@@ -325,13 +325,14 @@
   background: var(--neutral-soft);
   color: var(--neutral-text);
 }
+/* Text pulled toward ink: the tone colours alone sit just under 4.5:1 on their soft tint. */
 .docked-verdict__delta.is-up {
   background: var(--holds-soft);
-  color: var(--holds-text);
+  color: color-mix(in oklab, var(--holds-text) 80%, var(--ink));
 }
 .docked-verdict__delta.is-down {
   background: var(--broken-soft);
-  color: var(--broken-text);
+  color: color-mix(in oklab, var(--broken-text) 80%, var(--ink));
 }
 .docked-verdict__back {
   display: inline-flex;
@@ -340,6 +341,23 @@
   border-left: 1px solid var(--hairline);
   color: var(--ink-3);
   transition: color var(--dur-2) var(--ease-out);
+}
+/* Tablet with the plan drawer open: fixed above the backdrop, centred in the strip of outlook
+   beside the panel (.sheet--left is min(440px, 92vw) wide). */
+.docked-verdict--drawer {
+  position: fixed;
+  top: var(--safe-top);
+  left: min(440px, 92vw);
+  right: 0;
+  z-index: calc(var(--z-sheet) + 1);
+}
+.docked-verdict--drawer .docked-verdict__slot {
+  padding: 0 var(--space-3);
+}
+@media (max-width: 899px) {
+  .docked-verdict--drawer .docked-verdict__word {
+    display: none;
+  }
 }
 .docked-verdict__back svg {
   transform: rotate(-90deg);

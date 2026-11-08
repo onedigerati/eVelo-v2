@@ -1,5 +1,7 @@
 import { AnimatePresence, m as motion } from 'framer-motion'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
+import { navigate } from '../../state/router'
 import { selectSuccess, useStore } from '../../state/store'
 import { useBreakpoint } from '../hooks'
 import { IconArrowRight } from '../icons'
@@ -106,45 +108,72 @@ function useChartYield(band: () => { top: number; bottom: number }, enabled: boo
   return yieldTo
 }
 
+/** Scroll to the verdict and put focus on its headline. */
+function backToVerdict(topBar: number) {
+  const h = document.getElementById(VERDICT_HEADLINE_ID)
+  if (!h) return
+  const top = (h.closest('section') ?? h).getBoundingClientRect().top + window.scrollY - topBar - 24
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  window.scrollTo({ top: Math.max(0, top), behavior: reduce ? 'auto' : 'smooth' })
+  h.focus({ preventScroll: true })
+}
+
 /**
  * Desktop and tablet: once the verdict's number scrolls behind the top bar, a glass pill docks at
- * the top of the results column with the live odds; it takes you back to the verdict. Phone keeps
- * its own pill on the Plan tab, so this renders nothing there.
+ * the top of the results column with the live odds; it takes you back to the verdict. On tablet,
+ * while the plan drawer is open, it floats above the drawer's backdrop beside the panel, so the
+ * odds stay readable while editing. Phone keeps its own pill on the Plan tab, so this renders
+ * nothing there.
  */
 export function DockedVerdict() {
   const bp = useBreakpoint()
   const on = bp !== 'phone'
+  const drawer = useStore((s) => bp === 'tablet' && s.route === 'plan')
   const hasResult = useStore((s) => s.result !== null)
   const success = useStore(selectSuccess)
   const running = useStore((s) => s.status === 'running')
   const delta = usePillDelta(hasResult ? success : null)
   const topBar = useTopBarBottom()
   const past = useScrolledPast(VERDICT_NUMBER_ID, topBar, on)
-  const show = on && hasResult && past
+  // The drawer's backdrop hides the verdict wherever the page is scrolled, so show it regardless.
+  const show = on && hasResult && (past || drawer)
 
   const pill = useRef<HTMLButtonElement>(null)
   const band = useCallback(() => {
     const r = pill.current?.getBoundingClientRect()
     return r ? { top: r.top - 8, bottom: r.bottom + 8 } : { top: topBar, bottom: topBar + 72 }
   }, [topBar])
-  const yielding = useChartYield(band, show)
-  // Fades out while yielding; only leaves the accessibility tree if it isn't holding focus.
-  const [focused, setFocused] = useState(false)
-  const gone = yielding && !focused
+  const yielding = useChartYield(band, show && !drawer)
+  const gone = show && yielding
 
-  const back = () => {
-    const h = document.getElementById(VERDICT_HEADLINE_ID)
-    if (!h) return
-    const top = (h.closest('section') ?? h).getBoundingClientRect().top + window.scrollY - topBar - 24
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    window.scrollTo({ top: Math.max(0, top), behavior: reduce ? 'auto' : 'smooth' })
-    h.focus({ preventScroll: true })
+  // Whenever the pill goes away while it holds focus (the verdict scrolled back into view, or it
+  // stepped aside for a chart), focus lands on the verdict headline: the thing the pill stands for.
+  const hadFocus = useRef(false)
+  // Layout effect: making a focused element inert blurs it, which would race a passive effect.
+  useLayoutEffect(() => {
+    if ((show && !gone) || !hadFocus.current) return
+    hadFocus.current = false
+    document.getElementById(VERDICT_HEADLINE_ID)?.focus({ preventScroll: true })
+  }, [show, gone])
+
+  // Drawer mode: close the drawer first, then go back once it has handed focus back.
+  const pendingBack = useRef(false)
+  useEffect(() => {
+    if (drawer || !pendingBack.current) return
+    pendingBack.current = false
+    const id = requestAnimationFrame(() => backToVerdict(topBar))
+    return () => cancelAnimationFrame(id)
+  }, [drawer, topBar])
+  const onClick = () => {
+    if (!drawer) return backToVerdict(topBar)
+    pendingBack.current = true
+    navigate('outlook')
   }
 
   if (!on) return null
   const pct = Math.round(success * 100)
-  return (
-    <div className="docked-verdict">
+  const content = (
+    <div className={cx('docked-verdict', drawer && 'docked-verdict--drawer')}>
       <AnimatePresence>
         {show && (
           <motion.div
@@ -158,18 +187,22 @@ export function DockedVerdict() {
             <button
               ref={pill}
               type="button"
-              className={cx('verdict-pill', `verdict-pill--${toneFor(success)}`, 'docked-verdict__pill', running && 'is-running', yielding && 'is-yielding')}
+              className={cx('verdict-pill', `verdict-pill--${toneFor(success)}`, 'docked-verdict__pill', running && 'is-running', gone && 'is-yielding')}
               style={{ ['--tone' as string]: outcomeTextColor(success) }}
-              aria-label={`Holds in ${pct}% of futures. Back to the verdict.`}
+              aria-label={drawer ? `Holds in ${pct}% of futures. Close the plan and go to the verdict.` : `Holds in ${pct}% of futures. Back to the verdict.`}
               aria-hidden={gone || undefined}
               inert={gone}
-              onFocus={() => setFocused(true)}
-              onBlur={() => setFocused(false)}
-              onClick={back}
+              // Outside the drawer's focus trap: pointer only while the drawer is open.
+              tabIndex={drawer ? -1 : undefined}
+              onFocus={() => (hadFocus.current = true)}
+              onBlur={() => (hadFocus.current = false)}
+              onClick={onClick}
             >
               <PillRing success={success} />
               <span className="verdict-pill__text">
-                Holds in <AnimatedNumber className="verdict-pill__num" value={success} format="percent" /> of futures
+                <span className="docked-verdict__word">Holds in </span>
+                <AnimatedNumber className="verdict-pill__num" value={success} format="percent" />
+                <span className="docked-verdict__word"> of futures</span>
               </span>
               <AnimatePresence initial={false}>
                 {delta !== null && (
@@ -194,4 +227,6 @@ export function DockedVerdict() {
       </AnimatePresence>
     </div>
   )
+  // Above the drawer (portalled to body at --z-sheet), so it has to be portalled too.
+  return drawer ? createPortal(content, document.body) : content
 }
