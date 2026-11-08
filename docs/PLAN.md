@@ -8,7 +8,7 @@ The Atlas ranking list of 133 cities is quick to get around instead of a long sc
 
 ## Now
 Stage 2 of 2 · Region chips + launch
-Mode: paused — preview v36 published (https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth); deploy to GitHub Pages waits for the user's approval
+Mode: autopilot
 Risk: UI only (preview publish and deploy are outward-facing: pause for the user)
 Checks:
 - [x] Region chip counts are right per region, follow the search, and sum to the All count (proof: test)
@@ -36,6 +36,7 @@ Open: none
 - 2026-11-08 · No separate preview after stage 1: stages 1 and 2 share one preview at the end of stage 2, since publishing is outward-facing and autopilot pauses for it — PM's call.
 - 2026-11-08 · On desktop the top nav shows one "Plan" tab for the shared plan + outlook workspace (the two tabs went to the same screen). Tablet keeps Plan (drawer) and Outlook, and phone keeps both tabs. `#outlook` links still work and show Plan as active on desktop. Added to stage 2 for the same preview — user: "let's go with your recommendation".
 - 2026-11-08 · Preview publish approved once stage 2 is verified; deploy still waits for the user's approval — user: "ok, publish the preview when it's ready".
+- 2026-11-08 · Deploy approved after the user reviewed preview v36 — user: "deploy".
 - 2026-11-08 · Fixed the glass blur missing in Chrome/Edge production builds (pre-existing): lightningcss collapses `backdrop-filter` + `-webkit-backdrop-filter` into the prefixed form when the unprefixed one comes first, so the prefixed one now comes first in all 12 pairs. It's small, it restores the intended design, and it bears on the user's city-card readability ask — PM's call.
 
 ## Open questions
