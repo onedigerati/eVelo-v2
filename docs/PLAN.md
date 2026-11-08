@@ -11,11 +11,11 @@ Stage 4 of 6 · Canada + South America
 Risk: content only (profile text, scores and photos; no code).
 Scope: Montréal, Toronto, Vancouver, Bogotá, Buenos Aires — profile + 5 photos each. Builders are checking or rewriting the stopped builders' drafts and adding photos; then an independent content review. The commit takes only these paths.
 Checks:
-- [ ] Each of the 5 has a profile to the README's standard, with sources, scored on the 1–5 rubric, and passes an independent content review with its findings applied (proof: test + review notes)
-- [ ] Each has exactly 5 openly licensed photos with credits, checked on a contact sheet (proof: test + contact sheet)
-- [ ] In a clean tree holding only stages 1–4 paths: type check, tests and build pass (proof: test)
-- [ ] Each of the 5 opens from its list "Profile" chip with 5 photos loaded, "Profile · <country>" in the eyebrow, and stays out of the top picks; both themes and a phone (proof: run the product)
-- [ ] Preview republished with stage 4's 25 photos added to the asset store (proof: run the product on the preview build)
+- [x] Each of the 5 has a profile to the README's standard, with sources, scored on the 1–5 rubric, and passes an independent content review with its findings applied (proof: test + review notes)
+- [x] Each has exactly 5 openly licensed photos with credits, checked on a contact sheet (proof: test + contact sheet)
+- [x] In a clean tree holding only stages 1–4 paths: type check, tests and build pass (proof: test)
+- [x] Each of the 5 opens from its list "Profile" chip with 5 photos loaded, "Profile · <country>" in the eyebrow, and stays out of the top picks; both themes and a phone (proof: run the product)
+- [x] Preview republished with stage 4's 25 photos added to the asset store (proof: run the product on the preview build)
 Open: none
 Mode: autopilot — resumed 2026-11-07 on the user's pre-approval; stages 1–3 closed. Builders running: Canada, South America (stage 4); US Pacific + Hawaii, US Mountain (stage 5).
 Notes:
@@ -28,7 +28,7 @@ Notes:
 - [x] 1. Unranked profiles + preview assets — profiles for non-picks, list chip and map-card profile link, US profile style, Tokyo + Austin pilots, preview photos via the asset store; preview; stop for review
 - [x] 2. Europe, Africa, Middle East — Amsterdam, Berlin, Dublin, London, Paris, Zurich, Cape Town, Dubai: profiles + photos, contact sheet
 - [x] 3. Asia-Pacific — Auckland, Cebu, Da Nang, Hanoi, Ho Chi Minh City, Manila, Melbourne, Osaka, Seoul, Singapore, Sydney: profiles + photos, contact sheet
-- [ ] 4. Canada + South America — Montréal, Toronto, Vancouver, Bogotá, Buenos Aires: profiles + photos, contact sheet
+- [x] 4. Canada + South America — Montréal, Toronto, Vancouver, Bogotá, Buenos Aires: profiles + photos, contact sheet
 - [ ] 5. US West + South — San Francisco, Los Angeles, San Diego, Seattle, Portland, Denver, Boise, Salt Lake City, Phoenix, Scottsdale, Las Vegas, Honolulu, Dallas, Houston, Miami, Tampa, Orlando, Sarasota: profiles + photos, contact sheet
 - [ ] 6. US East + Midwest + launch — New York City, Boston, Philadelphia, Pittsburgh, Washington DC, Atlanta, Charlotte, Raleigh, Asheville, Nashville, Chicago, Minneapolis, Kansas City, St. Louis; a test requires a profile and 5 photos for all 133; full preview; deploy on approval
 

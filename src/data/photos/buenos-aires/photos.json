@@ -1,0 +1,62 @@
+[
+  {
+    "commons": "File:Avenida 9 de Julio, Buenos Aires (40089810910).jpg",
+    "file": "1.webp",
+    "caption": "The Obelisco on Avenida 9 de Julio, one of the world's widest avenues",
+    "alt": "A tall white obelisk rising at the end of a broad tree-lined avenue, with traffic, billboards and apartment blocks under a pale blue sky",
+    "author": "leonardo samrani",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Avenida_9_de_Julio,_Buenos_Aires_(40089810910).jpg",
+    "width": 1280,
+    "height": 751
+  },
+  {
+    "commons": "File:Calle Caminito in La Boca, Buenos Aires-5.JPG",
+    "file": "2.webp",
+    "caption": "Painted corrugated-iron houses on Caminito in La Boca",
+    "alt": "Old houses clad in brightly painted green, red, orange and blue corrugated metal, with wooden balconies, against a pale sky",
+    "author": "Lars Curfs",
+    "license": "CC BY-SA 3.0 nl",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/nl/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Calle_Caminito_in_La_Boca,_Buenos_Aires-5.JPG",
+    "width": 1280,
+    "height": 853
+  },
+  {
+    "commons": "File:Rosedal de Palermo en Buenos Aires 2020 by Cesar Perez.jpg",
+    "file": "3.webp",
+    "caption": "The Rosedal rose garden in the Bosques de Palermo parks",
+    "alt": "Pink rose beds in the foreground of a park with red gravel paths, benches, palm and shade trees and a few strollers under a blue sky",
+    "author": "ElGuruCesar",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Rosedal_de_Palermo_en_Buenos_Aires_2020_by_Cesar_Perez.jpg",
+    "width": 1152,
+    "height": 864
+  },
+  {
+    "commons": "File:Interior del Café Tortoni 2025 04.jpg",
+    "file": "4.webp",
+    "caption": "Café Tortoni on Avenida de Mayo, open since 1858",
+    "alt": "A long wood-panelled café with marble tables, leather chairs, columns and stained-glass ceiling panels, with customers eating and talking",
+    "author": "ProtoplasmaKid",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Interior_del_Caf%C3%A9_Tortoni_2025_04.jpg",
+    "width": 1280,
+    "height": 853
+  },
+  {
+    "commons": "File:Argentina - Buenos Aires - Teatro Colón (sala) 02.JPG",
+    "file": "5.webp",
+    "caption": "The horseshoe auditorium of the Teatro Colón opera house",
+    "alt": "A grand red and gold opera auditorium with tiers of lit boxes curving round a stage with a painted backdrop",
+    "author": "Leandro Kibisz",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Argentina_-_Buenos_Aires_-_Teatro_Col%C3%B3n_(sala)_02.JPG",
+    "width": 1280,
+    "height": 853
+  }
+]

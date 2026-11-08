@@ -1,0 +1,62 @@
+[
+  {
+    "commons": "File:Sunset Toronto Skyline Panorama Crop from Snake Island.jpg",
+    "file": "1.webp",
+    "caption": "The Toronto skyline and CN Tower at dusk from the Toronto Islands",
+    "alt": "A city skyline with a tall needle-like tower, lit up at dusk across calm water",
+    "author": "Jchmrt",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Sunset_Toronto_Skyline_Panorama_Crop_from_Snake_Island.jpg",
+    "width": 1280,
+    "height": 568
+  },
+  {
+    "commons": "File:Kensington Market Toronto August 2017 01.jpg",
+    "file": "2.webp",
+    "caption": "A street corner in Kensington Market",
+    "alt": "Low brick shops with awnings and signs on a busy street corner under overhead wires",
+    "author": "Arild Vågen",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kensington_Market_Toronto_August_2017_01.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "commons": "File:Scarborough bluffs -b.jpg",
+    "file": "3.webp",
+    "caption": "The Scarborough Bluffs above Lake Ontario",
+    "alt": "Tall white clay cliffs topped with trees above clear green lake water and a rocky shore",
+    "author": "Benson Kua",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Scarborough_bluffs_-b.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "commons": "File:St. Lawrence Market interior.jpg",
+    "file": "4.webp",
+    "caption": "Deli and meat counters inside St. Lawrence Market",
+    "alt": "A crowded market hall of brightly signed food counters stacked with produce and preserves",
+    "author": "stu_spivack",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:St._Lawrence_Market_interior.jpg",
+    "width": 1280,
+    "height": 851
+  },
+  {
+    "commons": "File:TTC Flexity 4466 on route 504A King EB at Yonge.jpg",
+    "file": "5.webp",
+    "caption": "A streetcar on King Street at Yonge, downtown",
+    "alt": "A modern red and white streetcar on a downtown street lined with stone office buildings",
+    "author": "TheTrolleyPole",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:TTC_Flexity_4466_on_route_504A_King_EB_at_Yonge.jpg",
+    "width": 1280,
+    "height": 960
+  }
+]

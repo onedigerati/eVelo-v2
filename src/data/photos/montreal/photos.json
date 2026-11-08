@@ -1,0 +1,62 @@
+[
+  {
+    "commons": "File:20160903 - 02 - Montreal (Mount Royal Park).jpg",
+    "file": "1.webp",
+    "caption": "Downtown Montréal and the St. Lawrence from Mount Royal Park",
+    "alt": "A wide summer view over downtown office towers and the river beyond, with treetops in the foreground under a blue sky",
+    "author": "Andre Carrotflower",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:20160903_-_02_-_Montreal_(Mount_Royal_Park).jpg",
+    "width": 1280,
+    "height": 708
+  },
+  {
+    "commons": "File:Rue Saint-Paul, Vieux-Montréal, Montreal, Quebec (29984765891).jpg",
+    "file": "2.webp",
+    "caption": "Rue Saint-Paul, the oldest street in Old Montréal",
+    "alt": "A narrow cobbled street of 19th-century stone buildings with flags and awnings, where a bride and groom pose for photos",
+    "author": "Ken Lund",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Rue_Saint-Paul,_Vieux-Montr%C3%A9al,_Montreal,_Quebec_(29984765891).jpg",
+    "width": 1280,
+    "height": 595
+  },
+  {
+    "commons": "File:Kondiaronk Belvedere, Montreal city, Canada.jpg",
+    "file": "3.webp",
+    "caption": "A winter afternoon at the Kondiaronk lookout on Mount Royal",
+    "alt": "People in heavy winter coats stand at a snowy stone balustrade looking out over downtown towers and the frozen river",
+    "author": "Wilfredor",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Kondiaronk_Belvedere,_Montreal_city,_Canada.jpg",
+    "width": 1280,
+    "height": 862
+  },
+  {
+    "commons": "File:Jean-Talon Market MTL FruitBoxes 20060927.jpg",
+    "file": "4.webp",
+    "caption": "Berries and cherry tomatoes at the Jean-Talon Market",
+    "alt": "Rows of baskets of raspberries, blueberries, blackberries and cherry tomatoes on a market stall",
+    "author": "Niranjan Arminius",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Jean-Talon_Market_MTL_FruitBoxes_20060927.jpg",
+    "width": 896,
+    "height": 672
+  },
+  {
+    "commons": "File:Basílica de Notre-Dame, Montreal, Canadá, 2017-08-12, DD 22-24 HDR.jpg",
+    "file": "5.webp",
+    "caption": "The blue and gold interior of Notre-Dame Basilica in Old Montréal",
+    "alt": "A Gothic Revival church interior with a deep blue starred vault, rows of wooden pews and an ornate gilded altar",
+    "author": "Diego Delso",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Bas%C3%ADlica_de_Notre-Dame,_Montreal,_Canad%C3%A1,_2017-08-12,_DD_22-24_HDR.jpg",
+    "width": 1280,
+    "height": 853
+  }
+]

@@ -1,0 +1,14 @@
+$ node s2v31.js (v33 artifact-mode build of the stages 1–4 tree, served by blobserve.js on :5198; a photo counts only if loaded from /_blob/)
+v33-desk-light (overflow 0px)
+  montreal: 5/5 · "CA Profile · Canada" · in top picks: false
+  toronto: 5/5 · "CA Profile · Canada" · in top picks: false
+  vancouver: 5/5 · "CA Profile · Canada" · in top picks: false
+  bogota: 5/5 · "CO Profile · Colombia" · in top picks: false
+  buenos-aires: 5/5 · "AR Profile · Argentina" · in top picks: false
+v33-phone-dark (overflow 0px)
+  montreal: 5/5 · "CA Profile · Canada" · in top picks: false
+  toronto: 5/5 · "CA Profile · Canada" · in top picks: false
+  vancouver: 5/5 · "CA Profile · Canada" · in top picks: false
+  bogota: 5/5 · "CO Profile · Colombia" · in top picks: false
+  buenos-aires: 5/5 · "AR Profile · Argentina" · in top picks: false
+errors: []

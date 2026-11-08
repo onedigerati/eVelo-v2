@@ -1,0 +1,26 @@
+$ node s4.js docs/evidence/stage-4 http://localhost:5197/ cities-s4.json   # vite preview of the clean tree (stages 1–4 paths), live-site build
+desk-light (overflow 0px)
+  montreal: 5/5 · "CA Profile · Canada" · in top picks: false
+  toronto: 5/5 · "CA Profile · Canada" · in top picks: false
+  vancouver: 5/5 · "CA Profile · Canada" · in top picks: false
+  bogota: 5/5 · "CO Profile · Colombia" · in top picks: false
+  buenos-aires: 5/5 · "AR Profile · Argentina" · in top picks: false
+desk-dark (overflow 0px)
+  montreal: 5/5 · "CA Profile · Canada" · in top picks: false
+  toronto: 5/5 · "CA Profile · Canada" · in top picks: false
+  vancouver: 5/5 · "CA Profile · Canada" · in top picks: false
+  bogota: 5/5 · "CO Profile · Colombia" · in top picks: false
+  buenos-aires: 5/5 · "AR Profile · Argentina" · in top picks: false
+phone-light (overflow 0px)
+  montreal: 5/5 · "CA Profile · Canada" · in top picks: false
+  toronto: 5/5 · "CA Profile · Canada" · in top picks: false
+  vancouver: 5/5 · "CA Profile · Canada" · in top picks: false
+  bogota: 5/5 · "CO Profile · Colombia" · in top picks: false
+  buenos-aires: 5/5 · "AR Profile · Argentina" · in top picks: false
+phone-dark (overflow 0px)
+  montreal: 5/5 · "CA Profile · Canada" · in top picks: false
+  toronto: 5/5 · "CA Profile · Canada" · in top picks: false
+  vancouver: 5/5 · "CA Profile · Canada" · in top picks: false
+  bogota: 5/5 · "CO Profile · Colombia" · in top picks: false
+  buenos-aires: 5/5 · "AR Profile · Argentina" · in top picks: false
+errors: []

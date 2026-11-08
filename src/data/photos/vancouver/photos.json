@@ -1,0 +1,62 @@
+[
+  {
+    "commons": "File:Vancouver from Grouse Mountain at dusk.jpg",
+    "file": "1.webp",
+    "caption": "Downtown Vancouver, Canada Place and the harbour from Grouse Mountain",
+    "alt": "A long view down over a forested city and a peninsula of towers on the water, with the sail-roofed Canada Place in front",
+    "author": "Rollan Budi",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Vancouver_from_Grouse_Mountain_at_dusk.jpg",
+    "width": 1280,
+    "height": 668
+  },
+  {
+    "commons": "File:Gastown Steam Clock.jpg",
+    "file": "2.webp",
+    "caption": "The steam clock in Gastown, the city's oldest neighbourhood",
+    "alt": "An ornate bronze clock on a pillar on a brick-paved street of old red-brick buildings",
+    "author": "Abhinaba Basu",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Gastown_Steam_Clock.jpg",
+    "width": 853,
+    "height": 1280
+  },
+  {
+    "commons": "File:Vancouver (BC, Canada), Stanley Park, Stanley Park Seawall Path -- 2022 -- 2056.jpg",
+    "file": "3.webp",
+    "caption": "The Stanley Park seawall path, looking toward Canada Place",
+    "alt": "A paved waterside path with a railing curving along the shore toward a harbour with cruise ships and downtown towers",
+    "author": "Dietmar Rabich",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Vancouver_(BC,_Canada),_Stanley_Park,_Stanley_Park_Seawall_Path_--_2022_--_2056.jpg",
+    "width": 1280,
+    "height": 853
+  },
+  {
+    "commons": "File:Granville Island Public Market 1.jpg",
+    "file": "4.webp",
+    "caption": "The Granville Island Public Market under the Granville Street Bridge",
+    "alt": "A market building with striped awnings and a Public Market sign beneath the steel trusses of a bridge",
+    "author": "Ymblanter",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Granville_Island_Public_Market_1.jpg",
+    "width": 1280,
+    "height": 853
+  },
+  {
+    "commons": "File:Burrard Otter with Vancouver skyline 2.JPG",
+    "file": "5.webp",
+    "caption": "A SeaBus crossing Burrard Inlet to downtown",
+    "alt": "A white and blue passenger ferry speeding across a harbour in front of downtown glass towers",
+    "author": "Alasdair McLellan",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Burrard_Otter_with_Vancouver_skyline_2.JPG",
+    "width": 1280,
+    "height": 857
+  }
+]
