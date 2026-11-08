@@ -870,6 +870,9 @@
   display: flex;
   flex-direction: column;
 }
+.clist__rows[hidden] {
+  display: none;
+}
 
 /* Tiers: the full list folds into groups that follow the sort. */
 .clist__tierbar {

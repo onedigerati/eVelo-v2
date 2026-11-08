@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { CITIES } from '../../../data/cities'
 import { percent } from '../../format'
-import { COST_BANDS, VERDICT_BANDS, costBands, defaultOpen, groupTiers, letterOf, oddsBands, type TierRow, type TierSort } from '../tiers'
+import { COST_BANDS, VERDICT_BANDS, costBands, defaultOpen, groupTiers, letterOf, oddsBands, wholePct, type TierRow, type TierSort } from '../tiers'
 
 const row = (cityId: string, name: string, successRate: number, costRatio: number): TierRow => ({
   cityId,
@@ -92,6 +92,18 @@ describe('groupTiers', () => {
     }
   })
 
+  it('flags no tier when home is not in the list', () => {
+    for (const sort of ['odds', 'cost', 'name'] as TierSort[]) {
+      const rows = sorted(ALL.filter((r) => r.cityId !== HOME), sort)
+      expect(groupTiers(rows, sort, HOME).some((t) => t.hasHome)).toBe(false)
+    }
+  })
+
+  it('a cost ratio of 49.49% shows as 49% and lands under 50%', () => {
+    expect(percent(0.4949)).toBe('49%')
+    expect(groupTiers([row('a', 'A', 0.5, 0.4949)], 'cost', 'none').map((t) => t.label)).toEqual(['Under 50% of home'])
+  })
+
   it('a search returns only tiers with hits, all open', () => {
     const hits = sorted(ALL, 'odds').filter((r) => r.city.name.toLowerCase().includes('an'))
     const bands = oddsBands(ALL)
@@ -128,6 +140,14 @@ describe('oddsBands', () => {
     ])
     const tiers = groupTiers(sorted([...mostly, ...fragile], 'odds'), 'odds', 'none', bands)
     expect(tiers.map((t) => `${t.label} ${t.range}`)).toEqual(['Mostly holds 70–79%', 'Mostly holds 65–69%', 'Fragile 60–64%', 'Fragile 45–59%'])
+  })
+
+  it('counts on the full list: a few rows from one half keep the split label and range', () => {
+    const mostly = Array.from({ length: 42 }, (_, i) => row(`m${i}`, 'M', 0.66 + (i % 14) / 100, 1))
+    const bands = oddsBands(mostly)
+    const few = sorted(mostly.filter((r) => wholePct(r.successRate) < 70).slice(0, 3), 'odds')
+    expect(oddsBands(few)).toEqual(VERDICT_BANDS) // on their own they wouldn't split
+    expect(groupTiers(few, 'odds', 'none', bands).map((t) => `${t.label} ${t.range}`)).toEqual(['Mostly holds 65–69%'])
   })
 
   it('keeps splitting a huge band and stops when no 10-point line is left', () => {
@@ -183,11 +203,12 @@ describe('costBands', () => {
     expect(tiers.map((t) => [t.label, t.rows.map((r) => r.cityId)])).toEqual([['100–110% of home', ['a', 'b']]])
   })
 
-  it('counts on the full list: a filtered list keeps the full list\'s split', () => {
+  it('counts on the full list: a few rows from one half keep the split label', () => {
     const all = [...cost(58, 70, 20, 'm')]
     const bands = costBands(all)
-    const few = sorted([all[0], all[15]], 'cost') // 70% and 85%
-    expect(groupTiers(few, 'cost', 'none', bands).map((t) => t.label)).toEqual(['70–79% of home', '80–89% of home'])
+    const few = sorted([all[12], all[15]], 'cost') // 82% and 85%
+    expect(costBands(few)).toEqual(COST_BANDS) // on their own they wouldn't split
+    expect(groupTiers(few, 'cost', 'none', bands).map((t) => t.label)).toEqual(['80–89% of home'])
     expect(groupTiers(few, 'cost', 'none').map((t) => t.label)).toEqual(['70–90% of home'])
   })
 })

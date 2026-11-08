@@ -57,7 +57,10 @@ export function CityList({ rows, homeId, destId, region, compare, onToggleCompar
     setOpenCtx(ctx)
     setToggled(null)
   }
-  const open = (openCtx === ctx && toggled) || defaultOpen(tiers, !!query)
+  // A plan or home edit can re-split the bands under the same context: drop toggled keys that no longer
+  // exist, and fall back to the default when none are left (an explicit Close all stays closed).
+  const live = openCtx === ctx && toggled ? new Set([...toggled].filter((k) => tiers.some((t) => t.key === k))) : null
+  const open = live && (live.size > 0 || toggled?.size === 0) ? live : defaultOpen(tiers, !!query)
   const allOpen = tiers.length > 0 && tiers.every((t) => open.has(t.key))
   const setOpen = (keys: Set<string>) => setToggled(keys)
   const toggle = (key: string) => {
@@ -202,11 +205,10 @@ function TierBlock({ tier, open, onToggle, children }: { tier: Tier<Ranked>; ope
           )}
         </button>
       </h3>
-      {open && (
-        <ul className="clist__rows" role="list" id={id}>
-          {children}
-        </ul>
-      )}
+      {/* Always in the DOM so aria-controls resolves; hidden while closed. */}
+      <ul className="clist__rows" role="list" id={id} hidden={!open}>
+        {children}
+      </ul>
     </div>
   )
 }
