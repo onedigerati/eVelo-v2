@@ -1,14 +1,15 @@
 import { AnimatePresence, m as motion } from 'framer-motion'
-import { useState, type CSSProperties, type KeyboardEvent } from 'react'
+import { useEffect, useRef, useState, type CSSProperties, type KeyboardEvent } from 'react'
 import { CITY_BY_ID } from '../../data/cities'
-import { applyRatios, BUDGET_CATEGORIES, budgetTotal, categoryRatios } from '../../engine/cost'
+import { amountsTotal, BUDGET_CATEGORIES, budgetTotal, categoryRatios, destinationAmounts } from '../../engine/cost'
 import type { BudgetCategory } from '../../engine/types'
 import { useStore } from '../../state/store'
-import { currency, currencyCompact, percent } from '../format'
+import { currencyCompact, percent } from '../format'
 import { ease } from '../motion'
 import { AnimatedNumber, cx, InfoTip, Section, Select, Slider, type SelectOption } from '../primitives'
 import { catColor, CATEGORY_LABEL } from './BudgetEditor'
 import { CITY_OPTIONS, cityLabel } from './placeholderCities'
+import { clearRow, hasAnyOverride, parseAmount, parseChange, resetAll, rowOverride, setAmount, setRatio, type SpendOverrides } from './spendOverrides'
 
 const STAY = '__stay'
 
@@ -77,24 +78,26 @@ export function PlaceSection() {
 function ExpatPanel({ destId }: { destId: string }) {
   const homeId = useStore((s) => s.inputs.homeCityId)
   const expat = useStore((s) => s.inputs.expatFactor)
-  const overrides = useStore((s) => s.inputs.ratioOverrides)
+  const ratioOverrides = useStore((s) => s.inputs.ratioOverrides)
+  const amountOverrides = useStore((s) => s.inputs.amountOverrides)
   const budget = useStore((s) => s.inputs.budget)
   const setInput = useStore((s) => s.setInput)
+  const patch = useStore((s) => s.patchInputs)
   const homeCity = CITY_BY_ID[homeId]
   const destCity = CITY_BY_ID[destId]
   if (!homeCity || !destCity) return null
-  const ratios = categoryRatios(homeCity, destCity, expat, overrides)
+  const ratios = categoryRatios(homeCity, destCity, expat, ratioOverrides)
+  // Same per-category amounts the engine spends at the destination (fixed $ where set, else home × ratio).
+  const amounts = destinationAmounts(budget, ratios, amountOverrides?.[destId])
   const homeTotal = budgetTotal(budget)
-  const destTotal = applyRatios(budget, ratios)
+  const destTotal = amountsTotal(amounts)
   const delta = homeTotal > 0 ? destTotal / homeTotal - 1 : 0
-  const hasOverrides = !!overrides && Object.keys(overrides).length > 0
-
-  const setOverride = (c: BudgetCategory, ratio: number | null) => {
-    const next = { ...(overrides ?? {}) }
-    if (ratio === null) delete next[c]
-    else next[c] = Math.max(0.05, Math.min(5, ratio))
-    setInput('ratioOverrides', Object.keys(next).length ? next : undefined)
-  }
+  const current: SpendOverrides = { ratioOverrides, amountOverrides }
+  const apply = (next: SpendOverrides) =>
+    patch({
+      ratioOverrides: next.ratioOverrides,
+      amountOverrides: next.amountOverrides,
+    })
 
   return (
     <div className="expat">
@@ -104,10 +107,10 @@ function ExpatPanel({ destId }: { destId: string }) {
           tone="bruised"
           aside={
             <InfoTip label="What is the expat price premium?">
-              How much extra you pay abroad for the same standard of living. <b>Live like a local</b> (0%): you rent, shop and
-              eat where locals do and pay local prices, so you keep the full saving. <b>Live like a tourist</b> (100%): expat-area
-              rents, imported groceries, Western restaurants and international clinics cost what they do at home, so the move saves
-              you nothing. Most newcomers land in between. Your spending below and your odds update as you move it.
+              How much extra you pay abroad for the same standard of living. <b>Live like a local</b> (0%): you rent, shop and eat where
+              locals do and pay local prices, so you keep the full saving. <b>Live like a tourist</b> (100%): expat-area rents, imported
+              groceries, Western restaurants and international clinics cost what they do at home, so the move saves you nothing. Most
+              newcomers land in between. Your spending below and your odds update as you move it.
             </InfoTip>
           }
           value={expat}
@@ -125,7 +128,14 @@ function ExpatPanel({ destId }: { destId: string }) {
 
       <div className="expat__card">
         <div className="expat__total">
-          <span className="t-eyebrow">Spending in {destCity.name}</span>
+          <span className="expat__head">
+            <span className="t-eyebrow">Spending in {destCity.name}</span>
+            <InfoTip label={`How spending in ${destCity.name} is worked out`} side="bottom">
+              Each % compares {destCity.name}&rsquo;s cost for that category with what you spend on it in {homeCity.name}, after the expat
+              price premium. Tap the % or the $ to set your own. A <b>$</b> you type is your researched yearly cost: it stays put when your
+              home budget or the premium changes. A <b>%</b> follows your home budget. &times; undoes a row; Reset all undoes them all.
+            </InfoTip>
+          </span>
           <span className="expat__total-row">
             <AnimatedNumber className="expat__total-v" value={destTotal} format="currency" duration={0.6} />
             <span className="expat__total-u">/yr</span>
@@ -136,22 +146,25 @@ function ExpatPanel({ destId }: { destId: string }) {
             {destCity.fxVol > 0 ? ` · FX vol ${percent(destCity.fxVol)}` : ''}
           </span>
         </div>
-        <ul className="ratios" aria-label="Cost by category, destination versus home">
+        <ul className="ratios" aria-label={`Yearly cost by category in ${destCity.name}, versus ${homeCity.name}`}>
           {BUDGET_CATEGORIES.map((c) => (
             <RatioRow
               key={c}
               c={c}
-              ratio={ratios[c]}
-              homeAmt={budget[c]}
-              overridden={overrides?.[c] !== undefined}
-              onSet={(r) => setOverride(c, r)}
+              cityName={destCity.name}
+              amount={amounts[c]}
+              homeAmt={budget[c] || 0}
+              override={rowOverride(current, destId, c)}
+              onAmount={(v) => apply(setAmount(current, destId, c, v))}
+              onRatio={(r) => apply(setRatio(current, destId, c, r))}
+              onClear={() => apply(clearRow(current, destId, c))}
             />
           ))}
         </ul>
         <div className="ratios__foot">
-          <span className="t-small ink-3">Tap a change to set your own.</span>
-          {hasOverrides && (
-            <button type="button" className="text-btn" onClick={() => setInput('ratioOverrides', undefined)}>
+          <span className="t-small ink-3">Tap a % or $ to set your own.</span>
+          {hasAnyOverride(current, destId) && (
+            <button type="button" className="text-btn" onClick={() => apply(resetAll(current, destId))}>
               Reset all
             </button>
           )}
@@ -161,74 +174,153 @@ function ExpatPanel({ destId }: { destId: string }) {
   )
 }
 
+type Field = 'amt' | 'chg'
+
 function RatioRow({
   c,
-  ratio,
+  cityName,
+  amount,
   homeAmt,
-  overridden,
-  onSet,
+  override,
+  onAmount,
+  onRatio,
+  onClear,
 }: {
   c: BudgetCategory
-  ratio: number
+  cityName: string
+  amount: number
   homeAmt: number
-  overridden: boolean
-  onSet: (r: number | null) => void
+  override: 'amount' | 'ratio' | null
+  onAmount: (v: number) => void
+  onRatio: (r: number) => void
+  onClear: () => void
 }) {
-  const [editing, setEditing] = useState(false)
+  const [editing, setEditing] = useState<Field | null>(null)
   const [draft, setDraft] = useState('')
-  const change = ratio - 1
-  const label = Math.abs(change) < 0.005 ? '±0%' : percent(change, { signed: true })
-  const begin = () => {
-    setDraft(String(Math.round(change * 100)))
-    setEditing(true)
+  const initial = useRef('')
+  const done = useRef(false)
+  const refocus = useRef<Field | null>(null)
+  const amtBtn = useRef<HTMLButtonElement>(null)
+  const chgBtn = useRef<HTMLButtonElement>(null)
+  useEffect(() => {
+    if (editing !== null || refocus.current === null) return
+    ;(refocus.current === 'amt' ? amtBtn : chgBtn).current?.focus()
+    refocus.current = null
+  }, [editing])
+
+  const name = CATEGORY_LABEL[c]
+  const hasHome = homeAmt > 0
+  const change = hasHome ? amount / homeAmt - 1 : 0
+  const chgLabel = Math.abs(change) < 0.005 ? '±0%' : percent(change, { signed: true })
+  const amtLabel = currencyCompact(amount)
+
+  const begin = (f: Field) => {
+    const v = f === 'amt' ? String(Math.round(amount)) : String(Math.round(change * 100))
+    initial.current = v
+    done.current = false
+    setDraft(v)
+    setEditing(f)
   }
-  const commit = () => {
-    const v = parseFloat(draft.replace(/[−–]/g, '-').replace(/[%+\s]/g, ''))
-    if (Number.isFinite(v)) onSet(1 + v / 100)
-    setEditing(false)
+  const finish = (save: boolean, focusBack: boolean) => {
+    if (done.current || editing === null) return
+    done.current = true
+    // An untouched draft (tabbing through) sets nothing.
+    if (save && draft.trim() !== initial.current) {
+      if (editing === 'amt') {
+        const v = parseAmount(draft)
+        if (v !== null) onAmount(v)
+      } else {
+        const r = parseChange(draft)
+        if (r !== null) onRatio(r)
+      }
+    }
+    refocus.current = focusBack ? editing : null
+    setEditing(null)
   }
   const onKey = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === 'Enter') commit()
-    else if (e.key === 'Escape') setEditing(false)
+    if (e.key === 'Enter') {
+      e.preventDefault()
+      finish(true, true)
+    } else if (e.key === 'Escape') {
+      // Keep the Escape from closing a surrounding sheet.
+      e.stopPropagation()
+      finish(false, true)
+    }
   }
-  // Bar: ratio on a 0..2 scale, with 1 (= home) at the middle tick.
-  const w = Math.min(1, ratio / 2)
+  const input = (f: Field) => (
+    <span className={cx('ratio__edit', f === 'amt' && 'ratio__edit--amt')}>
+      {f === 'amt' && <span aria-hidden="true">$</span>}
+      <input
+        className="num"
+        autoFocus
+        inputMode={f === 'amt' ? 'text' : 'numeric'}
+        enterKeyHint="done"
+        aria-label={f === 'amt' ? `${name} in ${cityName}, dollars a year` : `${name} in ${cityName}, change versus home, percent`}
+        value={draft}
+        onChange={(e) => setDraft(e.currentTarget.value)}
+        onFocus={(e) => e.currentTarget.select()}
+        onBlur={() => finish(true, false)}
+        onKeyDown={onKey}
+      />
+      {f === 'chg' && <span aria-hidden="true">%</span>}
+    </span>
+  )
+
+  // Bar: ratio on a 0..2 scale, with 1 (= home) at the middle tick; no home amount, any $ reads as "far above".
+  const w = hasHome ? Math.min(1, amount / homeAmt / 2) : amount > 0 ? 1 : 0
   return (
-    <li className={cx('ratio', overridden && 'is-override')} style={{ '--c': catColor(c), '--w': w } as CSSProperties}>
+    <li
+      className={cx('ratio', override && 'is-override', override === 'amount' && 'is-fixed', override === 'ratio' && 'is-ratio')}
+      style={{ '--c': catColor(c), '--w': w } as CSSProperties}
+    >
       <span className="ratio__label">
         <span className="ratio__swatch" aria-hidden="true" />
-        {CATEGORY_LABEL[c]}
+        {name}
       </span>
-      <span className="ratio__bar" aria-hidden="true">
-        <i />
-      </span>
-      <span className="ratio__amt num">{currencyCompact(homeAmt * ratio)}</span>
-      {editing ? (
-        <span className="ratio__edit">
-          <input
-            className="num"
-            autoFocus
-            inputMode="numeric"
-            aria-label={`${CATEGORY_LABEL[c]} change versus home, percent`}
-            value={draft}
-            onChange={(e) => setDraft(e.currentTarget.value)}
-            onBlur={commit}
-            onKeyDown={onKey}
-          />
-          <span aria-hidden="true">%</span>
+      {editing !== 'amt' && (
+        <span className="ratio__bar" aria-hidden="true">
+          <i />
         </span>
+      )}
+      {editing === 'amt' ? (
+        input('amt')
       ) : (
         <button
+          ref={amtBtn}
           type="button"
-          className={cx('ratio__chg num', change < -0.005 ? 'is-down' : change > 0.005 ? 'is-up' : 'is-flat')}
-          onClick={begin}
-          aria-label={`${CATEGORY_LABEL[c]}: ${label} versus home (${currency(homeAmt * ratio)} a year). ${overridden ? 'Custom. ' : ''}Edit`}
+          className="ratio__amt num"
+          onClick={() => begin('amt')}
+          aria-label={`${name} in ${cityName}: ${amtLabel} a year${override === 'amount' ? ', your amount' : ''}, edit`}
         >
-          {label}
+          {amtLabel}
         </button>
       )}
-      {overridden && !editing ? (
-        <button type="button" className="ratio__reset" aria-label={`Reset ${CATEGORY_LABEL[c]} to the city estimate`} title="Reset to estimate" onClick={() => onSet(null)}>
+      {!hasHome ? (
+        <span className="ratio__chg-ph" aria-hidden="true" />
+      ) : editing === 'chg' ? (
+        input('chg')
+      ) : (
+        <button
+          ref={chgBtn}
+          type="button"
+          className={cx('ratio__chg num', change < -0.005 ? 'is-down' : change > 0.005 ? 'is-up' : 'is-flat')}
+          onClick={() => begin('chg')}
+          aria-label={`${name} in ${cityName}: ${chgLabel} versus home${override === 'ratio' ? ', your change' : ''}, edit`}
+        >
+          {chgLabel}
+        </button>
+      )}
+      {override && editing === null ? (
+        <button
+          type="button"
+          className="ratio__reset"
+          aria-label={`Reset ${name} to the city estimate`}
+          title="Reset to estimate"
+          onClick={() => {
+            onClear()
+            amtBtn.current?.focus()
+          }}
+        >
           <svg width="12" height="12" viewBox="0 0 16 16" aria-hidden="true">
             <path d="M4.5 4.5l7 7M11.5 4.5l-7 7" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
           </svg>

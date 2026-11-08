@@ -917,6 +917,11 @@
   padding-bottom: var(--space-3);
   border-bottom: 1px solid var(--hairline);
 }
+.expat__head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
 .expat__total-row {
   display: flex;
   align-items: baseline;
@@ -954,9 +959,9 @@
 }
 .ratio {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 28px 44px 54px 20px;
+  grid-template-columns: minmax(0, 1fr) 24px 58px 52px 20px;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   min-height: 36px;
 }
 .ratio__label {
@@ -1002,15 +1007,34 @@
   transition: width var(--dur-4) var(--ease-out);
 }
 .ratio__amt {
+  justify-self: end;
+  min-width: 0;
+  max-width: 100%;
+  height: 26px;
+  padding: 0 6px;
+  border-radius: var(--radius-pill);
   font-size: 12px;
-  color: var(--ink-3);
+  color: var(--ink-2);
   text-align: right;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  transition:
+    border-color var(--dur-2),
+    background-color var(--dur-2);
+}
+.ratio__amt:hover {
+  border-color: var(--hairline-strong);
+}
+.ratio__chg-ph {
+  width: 52px;
 }
 .ratio__chg {
   justify-self: end;
-  min-width: 50px;
+  min-width: 0;
+  max-width: 100%;
   height: 26px;
-  padding: 0 7px;
+  padding: 0 6px;
+  white-space: nowrap;
   border-radius: var(--radius-pill);
   font-size: 12px;
   font-weight: 600;
@@ -1032,7 +1056,8 @@
 .ratio__chg.is-flat {
   color: var(--ink-3);
 }
-.ratio.is-override .ratio__chg {
+.ratio.is-ratio .ratio__chg,
+.ratio.is-fixed .ratio__amt {
   border-color: var(--bruised-line);
   background: var(--bruised-soft);
 }
@@ -1040,15 +1065,21 @@
   display: inline-flex;
   align-items: center;
   justify-self: end;
-  width: 54px;
+  width: 52px;
   height: 28px;
-  padding: 0 6px;
+  padding: 0 5px;
+  gap: 1px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--accent);
   box-shadow: 0 0 0 3px var(--accent-soft);
   background: var(--surface-2);
   font-size: 12px;
   color: var(--ink-3);
+}
+.ratio__edit--amt {
+  /* Typing dollars needs more room than the pill: take over the bar's cell too. */
+  grid-column: 2 / 4;
+  width: 100%;
 }
 .ratio__edit input {
   width: 100%;
@@ -1094,9 +1125,10 @@
 @media (pointer: coarse) {
   .ratio {
     min-height: 44px;
-    grid-template-columns: minmax(0, 1fr) 28px 46px 58px 24px;
+    grid-template-columns: minmax(0, 1fr) 20px 58px 52px 24px;
   }
-  .ratio__chg {
+  .ratio__chg,
+  .ratio__amt {
     height: 34px;
   }
 }
