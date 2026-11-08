@@ -9,7 +9,6 @@ A user who has already borrowed on their line of credit to live can enter that b
 ## Now
 Stage 1 of 2 · Engine starting loan
 Risk: money
-Mode: paused — keel hook needs the user's go for the opening-sale fix round
 Agents: wide — confirmed 2026-11-08 12:27
 Checks:
 - [ ] With a $500k balance on a $3M plan, every path records year 0 as loan $500k, LTV 16.7%, net worth $2.5M (proof: test)
@@ -34,6 +33,7 @@ Open: none
 - 2026-11-08 · Field name `existingLoan` (today's USD); `KernelConfig` gets an optional `initialLoan` (`?? 0`) so the hand-written test configs stay valid — builder's call.
 - 2026-11-08 · Agents: wide — user: "go wide so that we can finish this quickly".
 - 2026-11-08 · A balance above the margin-call LTV triggers an opening forced sale today, before the first month (the lender acts on today's LTV): it brings the loan to the post-call target and pays capital-gains tax, and the odds, max spend and Atlas judge the plan from that reduced position; the opening sale isn't a margin call or a failure. One shared engine function computes it for the kernel and the input's warning, so they always agree. A balance the sale can't cover after tax still fails at once. Replaces the month-0 behaviour, which made every over-limit plan show 0% odds and $0 max spend — user chose "Judge after the sale" after the stage review found it.
+- 2026-11-08 · Autopilot off for the rest of this plan: the hook's money-stage hold needs the user's word on every turn, and each builder's report starts a new turn, so the run kept stopping. The PM runs the fix round, re-verification, review and close stage by stage, agents still wide, and still stops before the preview and the deploy — user: "Let's go with your recommendation."
 - 2026-11-08 · Review triage: take the Infinity guard on `initialLoan`, the warning tiers (finding 2 goes away with the opening sale), the captions that assumed zero starting debt or blamed a crash, a notice when lowering the portfolio clamps the balance, and the missing tests. Defer: a share link can hand the recipient someone else's balance (true of every input today) — PM's call.
 - 2026-11-08 · Stage 2's branches merged into main before stage 1 closed; both stages are verified and reviewed in parallel on the combined tree (stage 1's checks are engine tests, unaffected by stage 2) — PM's call, user: "continue to go wide so we can complete this quickly".
 - 2026-11-08 · A starting balance at or above portfolio × (1 − gain fraction × capital-gains rate) (≈85.7% LTV at the defaults) breaks the plan in month 0 instead of producing a forced sale: after tax, the sale can't bring the loan down to the target. This follows the kernel's existing broken rule. The input shows a stronger "fails at once" warning in that band, still allowed; only ≥ portfolio is blocked — engine finding, PM's call within the approved warning decision.
