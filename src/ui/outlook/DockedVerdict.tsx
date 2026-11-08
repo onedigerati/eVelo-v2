@@ -148,12 +148,12 @@ export function DockedVerdict() {
 
   // Whenever the pill goes away while it holds focus (the verdict scrolled back into view, or it
   // stepped aside for a chart), focus lands on the verdict headline: the thing the pill stands for.
-  const hadFocus = useRef(false)
-  // Layout effect: making a focused element inert blurs it, which would race a passive effect.
+  // Asks the DOM rather than tracking focus/blur: the pill re-mounts without a blur when it moves
+  // into or out of the drawer portal. Layout effect: the pill is still mounted (its exit animation
+  // hasn't run) and making a focused element inert blurs it, which would race a passive effect.
   useLayoutEffect(() => {
-    if ((show && !gone) || !hadFocus.current) return
-    hadFocus.current = false
-    document.getElementById(VERDICT_HEADLINE_ID)?.focus({ preventScroll: true })
+    if (show && !gone) return
+    if (pill.current && document.activeElement === pill.current) document.getElementById(VERDICT_HEADLINE_ID)?.focus({ preventScroll: true })
   }, [show, gone])
 
   // Drawer mode: close the drawer first, then go back once it has handed focus back.
@@ -194,8 +194,6 @@ export function DockedVerdict() {
               inert={gone}
               // Outside the drawer's focus trap: pointer only while the drawer is open.
               tabIndex={drawer ? -1 : undefined}
-              onFocus={() => (hadFocus.current = true)}
-              onBlur={() => (hadFocus.current = false)}
               onClick={onClick}
             >
               <PillRing success={success} />
