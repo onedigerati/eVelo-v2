@@ -7,21 +7,21 @@ Every city in the Atlas has a full profile with the five-photo cover mosaic, not
 2026-11-07 · tests: 329 pass (22 files) · typecheck: clean · build: ok
 
 ## Now
-Stage 3 of 6 · Asia-Pacific
+Stage 4 of 6 · Canada + South America
 Risk: content only (profile text, scores and photos; no code).
-Scope: Auckland, Cebu, Da Nang, Hanoi, Ho Chi Minh City, Manila, Melbourne, Osaka, Seoul, Singapore, Sydney — profile + 5 photos each. Eight are written and reviewed; Auckland, Melbourne and Sydney are written but need an independent content review first. The commit takes only these paths.
+Scope: Montréal, Toronto, Vancouver, Bogotá, Buenos Aires — profile + 5 photos each. Builders are checking or rewriting the stopped builders' drafts and adding photos; then an independent content review. The commit takes only these paths.
 Checks:
-- [x] Each of the 11 has a profile to the README's standard, with sources, scored on the 1–5 rubric; Auckland, Melbourne and Sydney pass an independent content review with its findings applied (proof: test + review notes)
-- [x] Each has exactly 5 openly licensed photos with credits, checked on a contact sheet (proof: test + contact sheet)
-- [x] In a clean tree holding only stages 1–3 paths: type check, tests and build pass (proof: test)
-- [x] Each of the 11 opens from its list "Profile" chip with 5 photos loaded, "Profile · <country>" in the eyebrow, and stays out of the top picks; both themes and a phone (proof: run the product)
-- [x] Preview republished with stage 3's 55 photos added to the asset store (proof: run the product on the preview build)
+- [ ] Each of the 5 has a profile to the README's standard, with sources, scored on the 1–5 rubric, and passes an independent content review with its findings applied (proof: test + review notes)
+- [ ] Each has exactly 5 openly licensed photos with credits, checked on a contact sheet (proof: test + contact sheet)
+- [ ] In a clean tree holding only stages 1–4 paths: type check, tests and build pass (proof: test)
+- [ ] Each of the 5 opens from its list "Profile" chip with 5 photos loaded, "Profile · <country>" in the eyebrow, and stays out of the top picks; both themes and a phone (proof: run the product)
+- [ ] Preview republished with stage 4's 25 photos added to the asset store (proof: run the product on the preview build)
 Open: none
-Mode: autopilot — resumed 2026-11-07 on the user's pre-approval; stages 1–2 closed.
+Mode: autopilot — resumed 2026-11-07 on the user's pre-approval; stages 1–3 closed. Builders running: Canada, South America (stage 4); US Pacific + Hawaii, US Mountain (stage 5).
 Notes:
 - Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (v30, stage 1). `.preview/photo-assets.json` (gitignored, keep it) records every upload. Build previews in a clean worktree so in-progress cities stay out.
 - Deploy: unpushed commits; push (GitHub Pages) only when the user says.
-- Uncommitted content beyond stage 3: partial, from stopped builders, to check or redo: Montréal, Toronto, Vancouver, Bogotá, Buenos Aires, and US Pacific, Mountain, Florida, Texas + Hawaii cities. Not started: the 14 US East + Midwest cities.
+- Not started: Texas + Florida (Dallas, Houston, Miami, Tampa, Orlando, Sarasota; stage 5) and the 14 US East + Midwest cities (stage 6).
 - Open from reviews: Seoul (and London, Amsterdam, Berlin) have no `localTaxes.ts` entry, so the Atlas says "not modelled"; adding one is money logic and needs tests. The photo credit cleaner misses "upload on <date>" suffixes.
 
 ## Stages
