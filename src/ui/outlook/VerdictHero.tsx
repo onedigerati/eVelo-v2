@@ -9,6 +9,7 @@ import { returnStats } from '../realStats'
 import { outcomeColor, outcomeTextColor } from '../outcomeScale'
 import { toneFor, VERDICT_THRESHOLDS, verdictLevel, type VerdictLevel } from '../verdict'
 import { cityName } from './cards'
+import { VERDICT_HEADLINE_ID, VERDICT_NUMBER_ID } from './DockedVerdict'
 
 /** "living in Bangkok from age 55" / "in St. Louis, moving to Lisbon at 60" / "staying in St. Louis". */
 export function placePhrase(i: PlanInputs): string {
@@ -113,7 +114,7 @@ export function VerdictHero() {
       initial="hidden"
       animate="show"
       style={toneStyle}
-      aria-labelledby="verdict-h"
+      aria-labelledby={VERDICT_HEADLINE_ID}
       aria-busy={status === 'running'}
     >
       <motion.div className="verdict__meta" variants={rise}>
@@ -135,7 +136,7 @@ export function VerdictHero() {
         </AnimatePresence>
       </motion.div>
 
-      <h1 id="verdict-h" className="verdict__headline">
+      <h1 id={VERDICT_HEADLINE_ID} className="verdict__headline" tabIndex={-1}>
         <motion.span className="verdict__lead t-display" variants={rise}>
           <AnimatePresence mode="popLayout" initial={false}>
             <motion.span key={level} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.45, ease }}>
@@ -143,7 +144,7 @@ export function VerdictHero() {
             </motion.span>
           </AnimatePresence>
         </motion.span>
-        <motion.span className="verdict__number t-hero" variants={rise}>
+        <motion.span id={VERDICT_NUMBER_ID} className="verdict__number t-hero" variants={rise}>
           {result ? (
             <>
               <AnimatedNumber value={holds} from={0} format={(v) => String(Math.round(v * 100))} duration={1.2} aria-label={percent(holds)} />
