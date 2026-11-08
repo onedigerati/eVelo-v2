@@ -16,8 +16,8 @@ Checks:
 - [x] Profile files can be named after any city id, not only picks; a file named after an id that isn't in `cities.ts` still fails the tests (proof: test)
 - [x] Pilot profiles and photos for Tokyo and Austin (one foreign, one US) are written to the README's standard, with sources, and their photos are checked on a contact sheet (proof: test + contact sheet)
 - [x] The photo test lets any profiled city have photos, and requires exactly 5 for every profiled city (proof: test)
-- [ ] The preview build points photo URLs at the preview artifact's asset store and publishes only app files. A test batch of uploaded photos shows in the preview, and the store's total limit is confirmed to hold about 665 photos (~80 MB), or the fallback is raised with the user (proof: run the product on the preview)
-- [ ] Preview published with all 77 profiled cities' photos served from the asset store; both themes and a phone viewport checked; stop for review (proof: run the product)
+- [x] The preview build points photo URLs at the preview artifact's asset store and publishes only app files. A test batch of uploaded photos shows in the preview, and the store's total limit is confirmed to hold about 665 photos (~80 MB), or the fallback is raised with the user (proof: run the product on the preview)
+- [x] Preview published with all 77 profiled cities' photos served from the asset store; both themes and a phone viewport checked; stop for review (proof: run the product)
 Open: none
 Mode: paused — stage 1 review: the user's look at preview v30 (the hosted claude.ai page can't be driven from here: it needs the user's login, and Chrome control isn't supported from WSL). Notes:
 - Preview v30 (https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth) is the stage 1 app at 0e50723 with all 385 photos (77 cities) in the asset store; `.preview/photo-assets.json` (gitignored, keep it) records every upload. The two preview checks pass locally ([report](evidence/stage-1/report.md)); they're ticked once the user's click-through ([preview-checklist.md](evidence/stage-1/preview-checklist.md)) passes on the hosted page. Then close stage 1 (commit) and go on to stage 2.
@@ -26,7 +26,7 @@ Mode: paused — stage 1 review: the user's look at preview v30 (the hosted clau
 - Open from reviews: Seoul (and London, Amsterdam, Berlin) have no `localTaxes.ts` entry, so the Atlas says "not modelled"; adding one is money logic and needs tests. The photo credit cleaner misses "upload on <date>" suffixes.
 
 ## Stages
-- [ ] 1. Unranked profiles + preview assets — profiles for non-picks, list chip and map-card profile link, US profile style, Tokyo + Austin pilots, preview photos via the asset store; preview; stop for review
+- [x] 1. Unranked profiles + preview assets — profiles for non-picks, list chip and map-card profile link, US profile style, Tokyo + Austin pilots, preview photos via the asset store; preview; stop for review
 - [ ] 2. Europe, Africa, Middle East — Amsterdam, Berlin, Dublin, London, Paris, Zurich, Cape Town, Dubai: profiles + photos, contact sheet
 - [ ] 3. Asia-Pacific — Auckland, Cebu, Da Nang, Hanoi, Ho Chi Minh City, Manila, Melbourne, Osaka, Seoul, Singapore, Sydney: profiles + photos, contact sheet
 - [ ] 4. Canada + South America — Montréal, Toronto, Vancouver, Bogotá, Buenos Aires: profiles + photos, contact sheet
@@ -49,6 +49,7 @@ Mode: paused — stage 1 review: the user's look at preview v30 (the hosted clau
 - 2026-11-07 · Cities the ranking research already ruled out (Cebu, Da Nang and others) still get profiles; builders start from `docs/research/bbd-ranking-2026-11.md` where it covers a city — user: "keep them" (after asking why Cebu and Da Nang were being researched again).
 - 2026-11-07 · Upload the photo test batch and publish the stage 1 preview — user: "yes, upload and publish the preview".
 - 2026-11-07 · The hosted preview is checked by the user in their own browser: a headless browser can't log in to claude.ai, and Claude in Chrome isn't supported from WSL (the user picked Chrome control first; the docs rule it out here). Locally, the v30 build runs against a stand-in for the asset store — PM's call.
+- 2026-11-07 · Stage 1 closed on the user's check of preview v30 — user: "checked the preview, all good — close stage 1".
 
 ## Open questions
 - WebKit's touch path (iPhone) is untested until the user tries it; the full-size view's swipe adds to it — user, when they try it.
