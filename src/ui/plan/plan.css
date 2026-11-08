@@ -1101,10 +1101,32 @@
   }
 }
 
+/* ---------- Existing loan ---------- */
+.existing-loan {
+  display: flex;
+  flex-direction: column;
+}
+.existing-loan__warn {
+  margin: var(--space-2) 0 0;
+  line-height: 1.4;
+  /* Wraps to two lines on a phone, where a full pill would bulge. */
+  border-radius: var(--radius-sm);
+}
+.existing-loan__warn svg {
+  flex: none;
+}
+.existing-loan__warn.is-broken {
+  color: var(--broken-text);
+  background: var(--broken-soft);
+  border-color: var(--broken-line);
+  font-weight: 500;
+}
+
 /* ---------- LTV meter ---------- */
 .ltv {
   --t: 0.6;
   --g: 0.45;
+  --n: 0;
   margin: 0;
   padding: var(--space-4);
   border-radius: var(--radius-md);
@@ -1178,16 +1200,33 @@
 }
 .ltv__now {
   position: absolute;
-  left: 0;
+  /* Today's LTV: the dot's left edge sits 1px in at 0% and its right edge 1px in at 100%. */
+  left: calc(var(--n) * 100%);
   top: 50%;
+  z-index: 1;
   width: 12px;
   height: 12px;
-  translate: 1px -50%;
+  translate: calc(1px - var(--n) * 14px) -50%;
   border-radius: 50%;
   background: var(--holds);
   box-shadow:
     0 0 0 3px var(--surface-solid),
     0 0 0 6px var(--holds-soft);
+  transition:
+    left var(--dur-4) var(--ease-out),
+    translate var(--dur-4) var(--ease-out);
+}
+.ltv__now--warn {
+  background: var(--bruised);
+  box-shadow:
+    0 0 0 3px var(--surface-solid),
+    0 0 0 6px var(--bruised-soft);
+}
+.ltv__now--call {
+  background: var(--broken);
+  box-shadow:
+    0 0 0 3px var(--surface-solid),
+    0 0 0 6px var(--broken-soft);
 }
 .ltv__mark {
   position: absolute;

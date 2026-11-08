@@ -7,6 +7,7 @@
 
 import { DEFAULT_INPUTS } from '../engine/defaults'
 import type { Holding, PlanInputs } from '../engine/types'
+import { clampExistingLoan } from '../ui/plan/existingLoan'
 import { assetMeta } from '../ui/plan/marketIndex'
 
 const VERSION = 1
@@ -66,6 +67,7 @@ export const INPUT_LIMITS = {
   expatFactor: [0, 1],
   otherIncome: [0, 1_000_000],
   incomeStartAge: [50, 80],
+  existingLoan: [0, 1e10 - 1], // and below the portfolio (maxExistingLoan)
   loanRate: [0.02, 0.12],
   maxLtv: [0.3, 0.8],
   targetLtvAfterCall: [0.1, 0.75], // and at most maxLtv − 0.05 (BorrowingSection's GAP)
@@ -114,6 +116,8 @@ export function sanitizeInputs(raw: unknown): PlanInputs {
   // Numbers within the UI's own ranges.
   const nums = base as unknown as Record<string, number>
   for (const [k, [lo, hi]] of Object.entries(INPUT_LIMITS)) nums[k] = clamp(nums[k], lo, hi)
+  // An existing loan can't reach the portfolio it borrows against (the UI field's own max).
+  base.existingLoan = clampExistingLoan(base.existingLoan, base.portfolio)
   base.targetLtvAfterCall = Math.min(base.targetLtvAfterCall, Math.round((base.maxLtv - LTV_GAP) * 100) / 100)
   base.seed = Math.round(base.seed)
   if (!PATH_OPTIONS.includes(base.paths)) base.paths = DEFAULT_INPUTS.paths

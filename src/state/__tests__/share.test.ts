@@ -72,11 +72,53 @@ describe('share links', () => {
       for (const v of [lo, hi]) {
         // As the UI does, keep the post-sale target 5 points under the threshold.
         const ltv = k === 'targetLtvAfterCall' ? { maxLtv: 0.8 } : k === 'maxLtv' ? { targetLtvAfterCall: Math.min(0.45, Math.round((v - 0.05) * 100) / 100) } : {}
-        const inp = { ...DEFAULT_INPUTS, [k]: v, ...ltv }
+        // An existing loan sits under the portfolio; the field's top end needs the largest portfolio.
+        const loan = k === 'existingLoan' ? { portfolio: INPUT_LIMITS.portfolio[1] } : {}
+        const inp = { ...DEFAULT_INPUTS, [k]: v, ...ltv, ...loan }
         expect(sanitizeInputs(inp), `${k}=${v}`).toEqual(inp)
       }
     }
     const edge = { ...DEFAULT_INPUTS, paths: 10000, maxLtv: 0.3, targetLtvAfterCall: 0.25, ratioOverrides: { housing: 0.05, travel: 5 } }
     expect(sanitizeInputs(edge)).toEqual(edge)
+    // A balance $1 under the portfolio, or past the margin-call LTV, is a valid plan.
+    for (const existingLoan of [500_000, 2_999_999]) {
+      const p = { ...DEFAULT_INPUTS, portfolio: 3_000_000, existingLoan }
+      expect(sanitizeInputs(p)).toEqual(p)
+    }
+  })
+
+  describe('existing loan', () => {
+    const enc = (d: object) => btoa(JSON.stringify({ v: 1, d })).replace(/=+$/, '').replace(/\+/g, '-').replace(/\//g, '_')
+    const loanOf = (d: object) => decodeInputs(enc(d))!.existingLoan
+
+    it('defaults to no loan and still encodes short', () => {
+      expect(DEFAULT_INPUTS.existingLoan).toBe(0)
+      expect(encodeInputs(DEFAULT_INPUTS).length).toBeLessThan(20)
+    })
+    it('loads an old share link or saved plan without the field as 0', () => {
+      const { existingLoan: _, ...old } = { ...DEFAULT_INPUTS, portfolio: 4_000_000, age: 58 }
+      expect('existingLoan' in old).toBe(false)
+      expect(sanitizeInputs(old).existingLoan).toBe(0)
+      expect(sanitizeInputs(old)).toEqual({ ...old, existingLoan: 0 })
+      expect(loanOf({ portfolio: 4_000_000, age: 58 })).toBe(0)
+    })
+    it('round-trips a balance', () => {
+      const inputs = { ...DEFAULT_INPUTS, portfolio: 3_000_000, existingLoan: 500_000 }
+      expect(decodeInputs(encodeInputs(inputs))).toEqual(inputs)
+    })
+    it('clamps hostile balances', () => {
+      expect(loanOf({ existingLoan: -250_000 })).toBe(0)
+      expect(loanOf({ existingLoan: 'lots' })).toBe(0)
+      expect(loanOf({ existingLoan: null })).toBe(0)
+      expect(loanOf({ existingLoan: { n: 1 } })).toBe(0)
+      expect(sanitizeInputs({ ...DEFAULT_INPUTS, existingLoan: Number.NaN }).existingLoan).toBe(0)
+      expect(sanitizeInputs({ ...DEFAULT_INPUTS, existingLoan: Infinity }).existingLoan).toBe(0)
+      // at or above the portfolio: kept $1 under it
+      expect(loanOf({ portfolio: 3_000_000, existingLoan: 3_000_000 })).toBe(2_999_999)
+      expect(loanOf({ portfolio: 3_000_000, existingLoan: 9e15 })).toBe(2_999_999)
+      // the portfolio is clamped first, then the loan under it
+      expect(loanOf({ portfolio: -1e6, existingLoan: 100 })).toBe(0)
+      expect(loanOf({ portfolio: 1e12, existingLoan: 1e12 })).toBe(1e10 - 1)
+    })
   })
 })
