@@ -9,13 +9,13 @@ A user who has already borrowed on their line of credit to live can enter that b
 ## Now
 Stage 1 of 2 · Engine starting loan
 Risk: money
-Mode: paused — review finding needs the user: does an opening forced sale count as a failed plan?
+Mode: autopilot
 Agents: wide — confirmed 2026-11-08 12:27
 Checks:
 - [ ] With a $500k balance on a $3M plan, every path records year 0 as loan $500k, LTV 16.7%, net worth $2.5M (proof: test)
 - [ ] The balance accrues at `loanRate`: with no spending and flat returns, the loan after 12 months is balance × (1 + rate/12)^12 (proof: test)
 - [ ] The sell strategy starts at portfolio − balance with no debt and basis scaled pro rata; with zero loan rate, no spending and flat returns, the two estates match before tax (proof: test)
-- [ ] A balance above `maxLtv` × portfolio triggers a forced sale in month 0, counted in year 0 of the margin-call chart; a balance at or above the portfolio breaks the path at once (proof: test)
+- [ ] A balance above `maxLtv` × portfolio forces an opening sale today, before any month runs, that brings the loan to `targetLtvAfterCall` and pays capital-gains tax; year 0 shows the position after it, and it doesn't count as a margin call or a failure. A balance that sale can't cover after tax, or one at or above the portfolio, breaks the path at once (proof: test)
 - [ ] A balance of 0, or a plan without the field, gives results identical to today's for the same seed (proof: test)
 - [ ] A larger balance lowers the success rate and the solver's max sustainable spend, and reaches every Atlas city (proof: test)
 Open: none
@@ -33,12 +33,15 @@ Open: none
 - 2026-11-08 · The sell strategy's cost basis scales pro rata with its smaller portfolio (`Bs = B × (V − balance)/V`), keeping its gain fraction equal to the BBD side's, the way every other sale in the kernel treats basis — builder's call.
 - 2026-11-08 · Field name `existingLoan` (today's USD); `KernelConfig` gets an optional `initialLoan` (`?? 0`) so the hand-written test configs stay valid — builder's call.
 - 2026-11-08 · Agents: wide — user: "go wide so that we can finish this quickly".
+- 2026-11-08 · A balance above the margin-call LTV triggers an opening forced sale today, before the first month (the lender acts on today's LTV): it brings the loan to the post-call target and pays capital-gains tax, and the odds, max spend and Atlas judge the plan from that reduced position; the opening sale isn't a margin call or a failure. One shared engine function computes it for the kernel and the input's warning, so they always agree. A balance the sale can't cover after tax still fails at once. Replaces the month-0 behaviour, which made every over-limit plan show 0% odds and $0 max spend — user chose "Judge after the sale" after the stage review found it.
+- 2026-11-08 · Review triage: take the Infinity guard on `initialLoan`, the warning tiers (finding 2 goes away with the opening sale), the captions that assumed zero starting debt or blamed a crash, a notice when lowering the portfolio clamps the balance, and the missing tests. Defer: a share link can hand the recipient someone else's balance (true of every input today) — PM's call.
 - 2026-11-08 · Stage 2's branches merged into main before stage 1 closed; both stages are verified and reviewed in parallel on the combined tree (stage 1's checks are engine tests, unaffected by stage 2) — PM's call, user: "continue to go wide so we can complete this quickly".
 - 2026-11-08 · A starting balance at or above portfolio × (1 − gain fraction × capital-gains rate) (≈85.7% LTV at the defaults) breaks the plan in month 0 instead of producing a forced sale: after tax, the sale can't bring the loan down to the target. This follows the kernel's existing broken rule. The input shows a stronger "fails at once" warning in that band, still allowed; only ≥ portfolio is blocked — engine finding, PM's call within the approved warning decision.
 - 2026-11-08 · A path that starts at or above the portfolio is recorded as broken from year 0 (zeros, LTV 1), not as a negative net worth; the sell side's opening offset carries no tax, per the sell decision above — builder's call.
 - 2026-11-08 · Both money stages approved for building; stages 1 and 2 built in parallel worktrees on the shared `existingLoan` field — user: "Yes please go ahead and build both stages."
 
 ## Open questions
+- Plans opened from a share link replace the recipient's own plan, including any existing loan balance, without a flag in the UI (`OPENED_FROM_LINK` exists); pre-existing for every input — from the stage review, later.
 - Seoul, London, Amsterdam and Berlin have no `localTaxes.ts` entry (money logic, needs tests) — user's call, a later plan.
 - Recheck Colorado Amendment 87 (Denver tax 5 → 4 if certified) and Florida Amendment 3 ("unofficial results" in four Florida profiles) once certified — later.
 - The photo credit cleaner misses "upload on <date>" suffixes — later.
