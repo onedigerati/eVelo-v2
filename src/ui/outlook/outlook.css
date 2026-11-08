@@ -279,6 +279,75 @@
   color: var(--broken-text);
 }
 
+/* ---------- Docked verdict (desktop + tablet) ---------- */
+/* Sticky at the top of .canvas with no height, so showing the pill never moves the content. */
+.docked-verdict {
+  position: sticky;
+  top: calc(var(--topbar-h) + var(--safe-top));
+  z-index: var(--z-sticky);
+  height: 0;
+}
+.docked-verdict__slot {
+  position: absolute;
+  top: var(--space-3);
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+.docked-verdict__pill {
+  pointer-events: auto;
+  font: inherit;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  padding-right: 6px;
+  cursor: pointer;
+  transition:
+    opacity var(--dur-2) var(--ease-out),
+    border-color var(--dur-2) var(--ease-out);
+}
+.docked-verdict__pill:hover {
+  border-color: color-mix(in oklab, var(--tone) 45%, var(--hairline-strong));
+}
+.docked-verdict__pill:focus-visible {
+  border-radius: var(--radius-pill);
+}
+/* A chart under the pill is hovered or focused: step aside for its crosshair and readout. */
+.docked-verdict__pill.is-yielding {
+  opacity: 0;
+  pointer-events: none;
+}
+.docked-verdict__delta {
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-xs);
+  background: var(--neutral-soft);
+  color: var(--neutral-text);
+}
+.docked-verdict__delta.is-up {
+  background: var(--holds-soft);
+  color: var(--holds-text);
+}
+.docked-verdict__delta.is-down {
+  background: var(--broken-soft);
+  color: var(--broken-text);
+}
+.docked-verdict__back {
+  display: inline-flex;
+  padding: 4px 4px 4px 10px;
+  margin-left: 2px;
+  border-left: 1px solid var(--hairline);
+  color: var(--ink-3);
+  transition: color var(--dur-2) var(--ease-out);
+}
+.docked-verdict__back svg {
+  transform: rotate(-90deg);
+}
+.docked-verdict__pill:hover .docked-verdict__back {
+  color: var(--ink);
+}
+
 /* ---------- Stale (recomputing) shimmer on cards ---------- */
 .chart-frame__plot {
   transition: opacity var(--dur-3) var(--ease-out);
