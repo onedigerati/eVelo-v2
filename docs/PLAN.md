@@ -17,10 +17,10 @@ Checks:
 - [x] Tablet: the same pill works over the outlook, including while the plan drawer is open (proof: run the product at tablet width, screenshot)
 - [x] It never covers a chart's hover tooltip or crosshair readout, and it looks right in light and dark themes (proof: screenshots of a chart hovered under the pill, both themes)
 - [x] Phone is unchanged: the Plan-tab pill and the keyboard docking from bf1ba98 behave as before (proof: test for keyboardDockTop stays green; run the product at phone width)
-Open: built and verified (all six checks, [evidence](evidence/stage-1/report.md)); preview v38 published to https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (all 29 manifest files present); waiting for the user's review and deploy approval
+Open: none — preview v38 reviewed; deployed by run 42532193022 (live bundle checked)
 
 ## Stages
-- [ ] 1. Docked verdict pill — desktop/tablet pill that docks when the verdict headline leaves view, live delta, back-to-verdict, both themes; preview; deploy on approval
+- [x] 1. Docked verdict pill — desktop/tablet pill that docks when the verdict headline leaves view, live delta, back-to-verdict, both themes; preview; deploy on approval
 
 ## Decisions
 - 2026-11-08 · Phone: the verdict pill stays in view while typing. `interactive-widget=resizes-content` in the viewport meta keeps the sticky top bar and pill on screen on Android; elsewhere (iOS) `useKeyboardDock` pins the pill to the top of the visual viewport while a text field is focused and the keyboard has shrunk it (≥120 px, not when pinch-zoomed), with a spacer so the form doesn't jump. Shipped outside a plan in bf1ba98 (Actions run 42524515083) — user asked for it and confirmed on their phone: "That was perfect."
