@@ -9,7 +9,7 @@ A user who has already borrowed on their line of credit to live can enter that b
 ## Now
 Stage 1 of 2 · Engine starting loan
 Risk: money
-Mode: paused — stage 1 touches money logic; waiting for the user's go to build it
+Mode: autopilot
 Agents: wide — confirmed 2026-11-08 12:27
 Checks:
 - [ ] With a $500k balance on a $3M plan, every path records year 0 as loan $500k, LTV 16.7%, net worth $2.5M (proof: test)
@@ -33,6 +33,7 @@ Open: none
 - 2026-11-08 · The sell strategy's cost basis scales pro rata with its smaller portfolio (`Bs = B × (V − balance)/V`), keeping its gain fraction equal to the BBD side's, the way every other sale in the kernel treats basis — builder's call.
 - 2026-11-08 · Field name `existingLoan` (today's USD); `KernelConfig` gets an optional `initialLoan` (`?? 0`) so the hand-written test configs stay valid — builder's call.
 - 2026-11-08 · Agents: wide — user: "go wide so that we can finish this quickly".
+- 2026-11-08 · Both money stages approved for building; stages 1 and 2 built in parallel worktrees on the shared `existingLoan` field — user: "Yes please go ahead and build both stages."
 
 ## Open questions
 - Seoul, London, Amsterdam and Berlin have no `localTaxes.ts` entry (money logic, needs tests) — user's call, a later plan.
