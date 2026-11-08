@@ -1,0 +1,20 @@
+$ node v3.mjs docs/evidence/stage-2 c1  (playwright-core, chromium 1200, vite preview :4317; base build e363375 on :4318)
+c1 Borrowing field labels in order: ["Existing loan balance","Loan interest rate","Margin-call threshold","LTV after a forced sale","Capital-gains tax when selling","Dividend tax drag"]
+c1 field value: 500,000 | meter: 17% today | warn: (none)
+c1 section summary: 04 Borrowing
+c1/c4 500k fan Net worth: NET WORTH · TODAY’S DOLLARS The range of futures In the median future net worth grows from $2.5M to $9.7M by 85; the unluckiest 5% end with almost nothing.
+c1/c4 500k fan Net worth year0: Age 55 year 0 Median $2.5M Middle half $2.5M–$2.5M 90% of futures $2.5M–$2.5M
+c1/c4 500k fan Portfolio: PORTFOLIO VALUE · TODAY’S DOLLARS The portfolio, untouched Nothing is sold to fund your life: the median portfolio compounds to $14M by 85, carrying the loan on top.
+c1/c4 500k fan Portfolio year0: Age 55 year 0 Median $3.0M Middle half $3.0M–$3.0M 90% of futures $3.0M–$3.0M
+c1/c4 500k fan Loan: LOAN BALANCE · TODAY’S DOLLARS The loan, compounding Borrowing compounds: from your existing $500K balance, the median loan reaches $3.8M by 85, and $5.9M in the costliest 5% of futures.
+c1/c4 500k fan Loan year0: Age 55 year 0 Median $500K Middle half $500K–$500K 90% of futures $500K–$500K
+c1/c4 500k fan Loan-to-value: LOAN-TO-VALUE How close to the line Median loan-to-value peaks at 33% around 68, well under the 60% call line; the worst 5% touch it by 70.
+c1/c4 500k fan Loan-to-value year0: Age 55 year 0 Median 17% Middle half 17%–17% 90% of futures 17%–17%
+c4 500k card: LOAN-TO-VALUE How close to the line Median loan-to-value peaks at 33% around 68, well under the 60% call line; the worst 5% touch it by 70.
+c4 500k card: MARGIN CALLS · FIRST FORCED SALE When the risk arrives Risk is spread out: most forced sales fall between ages 60 and 71; 42% of futures face one by 85.
+c4 500k card: SAFE SPENDING · 90% CONFIDENCE What you could spend To reach 90% confidence, trim $71K a year (65%) from your lifestyle.
+c4 500k card: ESTATE · TODAY’S DOLLARS Borrow vs. sell Borrowing leaves heirs $3.0M more in the median future, and comes out ahead in 62% of all futures.
+c4 500k card: PORTFOLIO LENS What you own VTI and QQQ move almost as one (0.85); GLD is the real diversifier, averaging 0.13 against the rest.
+c4 500k card: COST OF LIVING · ST. LOUIS VS BANGKOK The same life, abroad Bangkok cuts your annual spend by 24%; healthcare and other save the most.
+c4 500k card: ESTATE NOTE: Median estate at 85, today’s dollars. At death your heirs inherit at a stepped-up basis: the gains you borrowed against are never taxed, and the loan is repaid from the estate. Selling as you go starts at the portfolio less your existing $500K loan, with no debt, so both start from the same net worth.
+ERRORS/WARNINGS: none

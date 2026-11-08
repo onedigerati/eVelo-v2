@@ -1,9 +1,0 @@
-# vitest scratch probe (src/engine/__tests__/probe.test.ts in a scratch worktree at 141c72b, deleted after): simulate() with DEFAULT_INPUTS (portfolio $3M), 300 paths, edge existingLoan values
-NaN: success 0.8033333333333333 bruised 0.117 broken 0.080 mcYear0 0.000 nwP50y0 3000000 ltvP50y0 0.0000 sellMedian 9370463 bbdMedian 12252345 nonFinite false
--5: success 0.8033333333333333 bruised 0.117 broken 0.080 mcYear0 0.000 nwP50y0 3000000 ltvP50y0 0.0000 sellMedian 9370463 bbdMedian 12252345 nonFinite false
-Inf: success 0 bruised 0.000 broken 1.000 mcYear0 1.000 nwP50y0 0 ltvP50y0 1.0000 sellMedian 0 bbdMedian 0 nonFinite false
-port0+loan10: success 0 bruised 0.000 broken 1.000 mcYear0 1.000 nwP50y0 0 ltvP50y0 1.0000 sellMedian 0 bbdMedian 0 nonFinite false
-85% LTV: success 0 bruised 0.000 broken 1.000 mcYear0 1.000 nwP50y0 450000 ltvP50y0 0.8500 sellMedian 0 bbdMedian 0 nonFinite false
-86% LTV: success 0 bruised 0.000 broken 1.000 mcYear0 1.000 nwP50y0 420000 ltvP50y0 0.8600 sellMedian 0 bbdMedian 0 nonFinite false
-60.1% LTV: success 0.006666666666666667 bruised 0.297 broken 0.697 mcYear0 0.887 nwP50y0 1197000 ltvP50y0 0.6010 sellMedian 45523 bbdMedian 0 nonFinite false
-100% LTV: success 0 bruised 0.000 broken 1.000 mcYear0 1.000 nwP50y0 0 ltvP50y0 1.0000 sellMedian 0 bbdMedian 0 nonFinite false

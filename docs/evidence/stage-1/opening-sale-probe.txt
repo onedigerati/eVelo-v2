@@ -1,0 +1,105 @@
+$ (scratch worktree at 40ac23e) npx vitest run src/engine/__tests__/probe.test.ts --silent=false   # probe.test.ts is scratch only, listed below
+A in-loop call from L=50+20 : bbdEstateBeforeTax 21.2328094302554 firstCall 0 outcome 1
+A opening sale at L=70      : port-loan         21.2328094302554 loan/port 0.44999999999999996
+A diff 0
+B opening-sale vs in-loop branch: 468 states, 0 mismatches (exact ===)
+C UI helper vs simulate: 135 cases, 0 mismatches
+D target == maxLtv, 1 month interest {
+  clean: 0,
+  outcome: 1,
+  firstCall: 0,
+  y0: [ 61.11975116640746, 36.67185069984448, 24.447900466562984, 0.6 ],
+  y1: [ 53.09291385701817, 31.855748314210896, 0.5999999999999999 ]
+}
+D maxLtv 1.2, L 95 {
+  clean: 1,
+  outcome: 0,
+  firstCall: -1,
+  y0: [ 100, 95, 5, 0.95 ],
+  y1: [ 100, 95, 0.95 ]
+}
+D maxLtv 1.2, L 100 {
+  clean: 0,
+  outcome: 2,
+  firstCall: 0,
+  y0: [ 0, 0, 0, 1 ],
+  y1: [ 0, 0, 1 ]
+}
+D portfolio 0, L 0 {
+  clean: 0,
+  outcome: 2,
+  firstCall: 0,
+  y0: [ 0, 0, 0, 0 ],
+  y1: [ 0, 0, 1 ]
+}
+D L just above line 60.0001 {
+  clean: 1,
+  outcome: 0,
+  firstCall: -1,
+  y0: [ 63.1628192534381, 28.423268664047146, 34.73955058939096, 0.45 ],
+  y1: [ 63.1628192534381, 28.423268664047146, 0.45 ]
+}
+ Test Files  1 passed (1)
+      Tests  1 passed (1)
+
+----- probe.test.ts -----
+import { it } from 'vitest'
+import marketJson from '../../data/market.json'
+import { DEFAULT_INPUTS } from '../defaults'
+import { createRecorder, runPaths, type KernelConfig } from '../kernel'
+import { openingSale } from '../openingSale'
+import { simulate } from '../simulate'
+import { existingLoanInfo } from '../../ui/plan/existingLoan'
+import { CITIES_FIX } from './fixtures'
+const market = marketJson as any
+const flat = (T: number) => ({ paths: 1, T, ret: new Float32Array(T), infl: new Float32Array(T), fxz: new Float32Array(T) })
+const base: KernelConfig = { T: 1, portfolio: 100, basisFraction: 0.4, dragM: 0, loanRateM: 0, maxLtv: 0.6, targetLtv: 0.45, tax: 0.238, homeMonthly: 0, destMonthly: 0, moveMonth: 1, fxSigmaM: 0, incomeMonthly: 0, incomeStartMonth: 0 }
+const log = (...a: any[]) => console.log(...a)
+it('probe', () => {
+  // A. Same formula as the kernel's in-loop margin branch: a path that starts at L=50 and borrows 20 in
+  //    month 0 (flat returns, no interest) reaches L=70 and takes the in-loop call; a path that starts at
+  //    L=70 takes the opening sale. Both must land on the same V, L (and the in-loop one is counted as a call).
+  const a = createRecorder(1, 0); runPaths(flat(1), { ...base, homeMonthly: 20, destMonthly: 20, initialLoan: 50 }, a)
+  const o: any = openingSale(100, 40, 70, 0.6, 0.45, 0.238)
+  log('A in-loop call from L=50+20 : bbdEstateBeforeTax', a.bbdEstateBeforeTax[0], 'firstCall', a.firstCall[0], 'outcome', a.outcome[0])
+  log('A opening sale at L=70      : port-loan        ', o.port - o.loan, 'loan/port', o.loan / o.port)
+  log('A diff', Math.abs(a.bbdEstateBeforeTax[0] - (o.port - o.loan)))
+  // B. Broken rule vs in-loop: the in-loop branch breaks when S >= V or !(S > 0). Grid over L, g, tax, target.
+  let mism = 0, n = 0
+  for (const L of [55, 61, 70, 80, 85, 85.7, 85.72, 85.73, 90, 99, 99.999, 100, 120])
+    for (const bf of [0, 0.2, 0.4, 1]) for (const tax of [0, 0.238, 0.5]) for (const tgt of [0.3, 0.45, 0.6]) {
+      n++
+      const op = openingSale(100, 100 * bf, L, 0.6, tgt, tax)
+      // in-loop replica on the same state (code copied from kernel.ts step 4/5)
+      let V = 100, B = 100 * bf, LL = L, broken = false, sold = false
+      if (V <= 0 || V <= LL) broken = true
+      else if (LL > 0.6 * V) { const g = B < V ? 1 - B / V : 0; const S = (LL - tgt * V) / (1 - g * tax - tgt); if (S >= V || !(S > 0)) broken = true; else { B *= 1 - S / V; LL -= S * (1 - g * tax); V -= S; sold = true } }
+      const same = op === null ? !broken && !sold : op.broken ? broken : !broken && sold && op.port === V && op.loan === LL && op.basis === B
+      if (!same) { mism++; log('B mismatch', { L, bf, tax, tgt, op, V, LL, B, broken }) }
+    }
+  log(`B opening-sale vs in-loop branch: ${n} states, ${mism} mismatches (exact ===)`)
+  // C. UI helper (existingLoanInfo, kernelConfig clamps) vs simulate across a grid incl. out-of-range basis/target
+  let cm = 0, cn = 0
+  for (const bal of [0, 1_500_000, 1_800_000, 1_800_001, 2_100_000, 2_500_000, 2_570_000, 2_580_000, 2_999_999])
+    for (const basisFraction of [-0.2, 0, 0.4, 1, 1.3]) for (const t of [0.3, 0.45, 0.7]) {
+      cn++
+      const inp = { ...DEFAULT_INPUTS, existingLoan: bal, basisFraction, targetLtvAfterCall: t, paths: 40 }
+      const r = simulate(market, CITIES_FIX, inp)
+      const ui = existingLoanInfo({ portfolio: inp.portfolio, balance: bal, maxLtv: inp.maxLtv, targetLtv: t, basisFraction, capGainsRate: inp.capGainsRate })
+      const k = r.brokenRate === 1 && r.ltv.p50[0] === 1 ? 'breaks' : r.openingSale ? 'over-limit' : 'ok'
+      const saleMatch = ui.sale === null ? r.openingSale === null : r.openingSale !== null && ui.sale.sold === r.openingSale.sold && ui.sale.taxPaid === r.openingSale.taxPaid
+      if (k !== ui.status || !saleMatch) { cm++; log('C mismatch', { bal, basisFraction, t, ui, k, os: r.openingSale }) }
+    }
+  log(`C UI helper vs simulate: ${cn} cases, ${cm} mismatches`)
+  // D. Edge configs: target == maxLtv (sale lands on the line), maxLtv >= 1, NaN rates
+  for (const [label, cfg] of [
+    ['target == maxLtv, 1 month interest', { ...base, T: 12, targetLtv: 0.6, loanRateM: 0.005, initialLoan: 70 }],
+    ['maxLtv 1.2, L 95', { ...base, T: 12, maxLtv: 1.2, initialLoan: 95 }],
+    ['maxLtv 1.2, L 100', { ...base, T: 12, maxLtv: 1.2, initialLoan: 100 }],
+    ['portfolio 0, L 0', { ...base, T: 12, portfolio: 0, initialLoan: 0 }],
+    ['L just above line 60.0001', { ...base, T: 12, initialLoan: 60.0001 }],
+  ] as [string, KernelConfig][]) {
+    const r = createRecorder(1, 1); const clean = runPaths(flat(cfg.T), cfg, r)
+    log('D', label, { clean, outcome: r.outcome[0], firstCall: r.firstCall[0], y0: [r.port[0], r.loan[0], r.nw[0], r.ltv[0]], y1: [r.port[1], r.loan[1], r.ltv[1]] })
+  }
+})

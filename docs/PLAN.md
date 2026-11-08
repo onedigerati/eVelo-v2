@@ -11,12 +11,12 @@ Stage 1 of 2 · Engine starting loan
 Risk: money
 Agents: wide — confirmed 2026-11-08 12:27
 Checks:
-- [ ] With a $500k balance on a $3M plan, every path records year 0 as loan $500k, LTV 16.7%, net worth $2.5M (proof: test)
-- [ ] The balance accrues at `loanRate`: with no spending and flat returns, the loan after 12 months is balance × (1 + rate/12)^12 (proof: test)
-- [ ] The sell strategy starts at portfolio − balance with no debt and basis scaled pro rata; with zero loan rate, no spending and flat returns, the two estates match before tax (proof: test)
-- [ ] A balance above `maxLtv` × portfolio forces an opening sale today, before any month runs, that brings the loan to `targetLtvAfterCall` and pays capital-gains tax; year 0 shows the position after it, and it doesn't count as a margin call or a failure. A balance that sale can't cover after tax, or one at or above the portfolio, breaks the path at once (proof: test)
-- [ ] A balance of 0, or a plan without the field, gives results identical to today's for the same seed (proof: test)
-- [ ] Up to the margin-call line, a larger balance lowers the success rate and the solver's max sustainable spend; the balance reaches every Atlas city (proof: test)
+- [x] With a $500k balance on a $3M plan, every path records year 0 as loan $500k, LTV 16.7%, net worth $2.5M (proof: test)
+- [x] The balance accrues at `loanRate`: with no spending and flat returns, the loan after 12 months is balance × (1 + rate/12)^12 (proof: test)
+- [x] The sell strategy starts at portfolio − balance with no debt and basis scaled pro rata; with zero loan rate, no spending and flat returns, the two estates match before tax (proof: test)
+- [x] A balance above `maxLtv` × portfolio forces an opening sale today, before any month runs, that brings the loan to `targetLtvAfterCall` and pays capital-gains tax; year 0 shows the position after it, and it doesn't count as a margin call or a failure. A balance that sale can't cover after tax, or one at or above the portfolio, breaks the path at once (proof: test)
+- [x] A balance of 0, or a plan without the field, gives results identical to today's for the same seed (proof: test)
+- [x] Up to the margin-call line, a larger balance lowers the success rate and the solver's max sustainable spend; the balance reaches every Atlas city (proof: test)
 Open: none
 
 ## Stages

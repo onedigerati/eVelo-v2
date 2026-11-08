@@ -4,21 +4,26 @@ npm notice run 'vitest' run src/engine/__tests__/existingLoan.test.ts --reporter
 
  RUN  v5.1.0 /home/jonah/repos/eVelo-v2
 
- ✓ src/engine/__tests__/existingLoan.test.ts > existing loan: starting state > a $500k balance on a $3M plan records year 0 as loan $500k, LTV 16.7%, net worth $2.5M on every path 152ms
+ ✓ src/engine/__tests__/existingLoan.test.ts > existing loan: starting state > a $500k balance on a $3M plan records year 0 as loan $500k, LTV 16.7%, net worth $2.5M on every path 206ms
  ✓ src/engine/__tests__/existingLoan.test.ts > existing loan: starting state > the balance accrues at loanRate: after 12 months it is balance × (1 + rate/12)^12 0ms
  ✓ src/engine/__tests__/existingLoan.test.ts > existing loan: sell strategy > starts at portfolio − balance with no debt; with zero rate, no spending and flat returns the estates match 0ms
  ✓ src/engine/__tests__/existingLoan.test.ts > existing loan: sell strategy > scales the sell side basis pro rata, keeping the embedded-gain fraction 0ms
- ✓ src/engine/__tests__/existingLoan.test.ts > existing loan: margin calls and insolvency > a balance above maxLtv × portfolio forces a sale in month 0 that lands at targetLtv 0ms
- ✓ src/engine/__tests__/existingLoan.test.ts > existing loan: margin calls and insolvency > counts that month-0 forced sale in year 0 of marginCallByYear 18ms
- ✓ src/engine/__tests__/existingLoan.test.ts > existing loan: margin calls and insolvency > a balance the forced sale cannot cover (above V · (1 − g·tax)) breaks in month 0 0ms
- ✓ src/engine/__tests__/existingLoan.test.ts > existing loan: margin calls and insolvency > a balance at or above the portfolio breaks the path at once, with no negatives or NaN 17ms
- ✓ src/engine/__tests__/existingLoan.test.ts > existing loan: no balance > a balance of 0, or a plan without the field, gives identical results for the same seed 44ms
- ✓ src/engine/__tests__/existingLoan.test.ts > existing loan: odds, solver and atlas > a larger balance lowers the success rate 116ms
- ✓ src/engine/__tests__/existingLoan.test.ts > existing loan: odds, solver and atlas > a larger balance lowers the solver's max sustainable spend 244ms
- ✓ src/engine/__tests__/existingLoan.test.ts > existing loan: odds, solver and atlas > reaches every Atlas city: odds are lower or equal per city, and lower for at least one 89ms
+ ✓ src/engine/__tests__/existingLoan.test.ts > existing loan: opening forced sale > a balance above maxLtv × portfolio is sold down today, before month 0, landing at targetLtv in year 0 0ms
+ ✓ src/engine/__tests__/existingLoan.test.ts > existing loan: opening forced sale > matches the closed form for the sale and its tax, and basis falls pro rata 0ms
+ ✓ src/engine/__tests__/existingLoan.test.ts > existing loan: opening forced sale > no sale at or under maxLtv × portfolio; broken at or above the portfolio, whatever maxLtv says 0ms
+ ✓ src/engine/__tests__/existingLoan.test.ts > existing loan: opening forced sale > the opening sale is not counted in marginCallByYear; $2.1M on the $3M defaults still has real odds 732ms
+ ✓ src/engine/__tests__/existingLoan.test.ts > existing loan: opening forced sale > no opening sale is reported for balances at or under the margin-call LTV 13ms
+ ✓ src/engine/__tests__/existingLoan.test.ts > existing loan: opening forced sale > a balance the sale cannot cover after tax (above V · (1 − g·tax)) breaks at once 29ms
+ ✓ src/engine/__tests__/existingLoan.test.ts > existing loan: opening forced sale > a balance at or above the portfolio breaks the path at once, with no negatives or NaN 8ms
+ ✓ src/engine/__tests__/existingLoan.test.ts > existing loan: opening forced sale > treats an infinite or NaN balance as none, in the kernel and in simulate 2ms
+ ✓ src/engine/__tests__/existingLoan.test.ts > existing loan: no balance > a balance of 0, or a plan without the field, gives identical results for the same seed 68ms
+ ✓ src/engine/__tests__/existingLoan.test.ts > existing loan: odds, solver and atlas > a larger balance lowers the success rate 337ms
+ ✓ src/engine/__tests__/existingLoan.test.ts > existing loan: odds, solver and atlas > a larger balance lowers the solver's max sustainable spend 400ms
+ ✓ src/engine/__tests__/existingLoan.test.ts > existing loan: odds, solver and atlas > reaches every Atlas city: each city’s odds are strictly lower with a large balance 134ms
 
  Test Files  1 passed (1)
-      Tests  12 passed (12)
-   Start at  12:45:34
-   Duration  1.24s (tests 60%, transform 24%, import 16%)
+      Tests  16 passed (16)
+   Start at  13:11:54
+   Duration  2.62s (tests 89%, import 5%, transform 5%, worker 1%)
 
+exit 0

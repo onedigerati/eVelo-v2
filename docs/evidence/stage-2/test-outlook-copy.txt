@@ -1,0 +1,36 @@
+$ npx vitest run src/ui/outlook/__tests__ --reporter=verbose
+npm notice run evelo@2.0.0 npx
+npm notice run 'vitest' run src/ui/outlook/__tests__ --reporter=verbose
+
+ RUN  v5.1.0 /home/jonah/repos/eVelo-v2
+
+ ✓ src/ui/outlook/__tests__/chartKit.test.ts > massWindow > finds the shortest window holding the share of mass 2ms
+ ✓ src/ui/outlook/__tests__/chartKit.test.ts > massWindow > returns null for an empty or zero series 0ms
+ ✓ src/ui/outlook/__tests__/chartKit.test.ts > resample > keeps endpoints and interpolates linearly 0ms
+ ✓ src/ui/outlook/__tests__/chartKit.test.ts > moneyTick > formats compact axis labels 1ms
+ ✓ src/ui/outlook/__tests__/existingLoanCopy.test.ts > existing loan copy > leaves captions unchanged at a zero balance 11ms
+ ✓ src/ui/outlook/__tests__/existingLoanCopy.test.ts > existing loan copy > mentions the existing balance when there is one 1ms
+ ✓ src/ui/outlook/__tests__/existingLoanCopy.test.ts > existing loan copy > scales "almost nothing" by starting net worth, not the portfolio 0ms
+ ✓ src/ui/outlook/__tests__/existingLoanCopy.test.ts > existing loan copy > scales the "no estate" threshold by starting net worth 0ms
+ ✓ src/ui/outlook/__tests__/openingSaleCopy.test.ts > openingSaleOf > is null when the field is missing, null, or sold nothing 1ms
+ ✓ src/ui/outlook/__tests__/openingSaleCopy.test.ts > captions at a zero balance stay as they were > portfolio 11ms
+ ✓ src/ui/outlook/__tests__/openingSaleCopy.test.ts > captions at a zero balance stay as they were > loan-to-value, well under the line 0ms
+ ✓ src/ui/outlook/__tests__/openingSaleCopy.test.ts > captions at a zero balance stay as they were > loan-to-value with no borrowing at all 0ms
+ ✓ src/ui/outlook/__tests__/openingSaleCopy.test.ts > captions at a zero balance stay as they were > loan-to-value whose worst 5% touch the line 0ms
+ ✓ src/ui/outlook/__tests__/openingSaleCopy.test.ts > captions at a zero balance stay as they were > margin calls: none, early over several years, and late 0ms
+ ✓ src/ui/outlook/__tests__/openingSaleCopy.test.ts > the relation to the call line > reads "close to", never "well close to", between 60% of the line and the line 0ms
+ ✓ src/ui/outlook/__tests__/openingSaleCopy.test.ts > the relation to the call line > reads "above" at or past the line 0ms
+ ✓ src/ui/outlook/__tests__/openingSaleCopy.test.ts > a year-0 peak from an existing balance > starts at its peak and falls 0ms
+ ✓ src/ui/outlook/__tests__/openingSaleCopy.test.ts > a year-0 peak from an existing balance > blames the existing balance for early forced sales 0ms
+ ✓ src/ui/outlook/__tests__/openingSaleCopy.test.ts > a year-0 peak from an existing balance > keeps the growth explanation for a small balance 0ms
+ ✓ src/ui/outlook/__tests__/openingSaleCopy.test.ts > an over-call start (no opening sale reported) > says the worst 5% start at or past the line 0ms
+ ✓ src/ui/outlook/__tests__/openingSaleCopy.test.ts > an opening forced sale > opens the portfolio caption with the sale and its tax 0ms
+ ✓ src/ui/outlook/__tests__/openingSaleCopy.test.ts > an opening forced sale > shows the balance cut by the sale in the loan caption 0ms
+ ✓ src/ui/outlook/__tests__/openingSaleCopy.test.ts > an opening forced sale > starts the loan-to-value caption with the sale 0ms
+ ✓ src/ui/outlook/__tests__/openingSaleCopy.test.ts > an opening forced sale > leaves the opening sale out of the margin-call count 0ms
+
+ Test Files  3 passed (3)
+      Tests  24 passed (24)
+   Start at  13:11:07
+   Duration  272ms (import 70%, transform 22%, tests 7%, worker 1%)
+

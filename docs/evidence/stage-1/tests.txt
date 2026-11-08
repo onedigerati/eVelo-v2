@@ -5,9 +5,9 @@ npm notice run vitest run
  RUN  v5.1.0 /home/jonah/repos/eVelo-v2
 
 
- Test Files  28 passed (28)
-      Tests  413 passed (413)
-   Start at  12:42:57
-   Duration  9.32s (transform 74%, tests 17%, import 8%)
+ Test Files  31 passed (31)
+      Tests  448 passed (448)
+   Start at  13:11:39
+   Duration  10.95s (transform 68%, tests 23%, import 9%)
 
-exit=0
+exit 0

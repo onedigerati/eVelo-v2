@@ -1,0 +1,7 @@
+$ node probe.mjs  (base build e363375 on :4318 vs HEAD on :4317; $640K portfolio, no loan, default budget)
+http://localhost:4318/ portfolio $640K, balance 0, Portfolio: PORTFOLIO VALUE · TODAY’S DOLLARS The portfolio, untouched Nothing is sold to fund your life: the median portfolio compounds to $0 by 85, carrying the loan on top.
+http://localhost:4318/ portfolio $640K, balance 0, Loan: LOAN BALANCE · TODAY’S DOLLARS The loan, compounding Borrowing compounds: the median loan reaches $0 by 85, and $1.3M in the costliest 5% of futures.
+http://localhost:4318/ portfolio $640K, balance 0, Loan-to-value: LOAN-TO-VALUE How close to the line Median loan-to-value peaks at 100% around 64, well close to the 60% call line; the worst 5% touch it by 60.
+http://localhost:4317/ portfolio $640K, balance 0, Portfolio: PORTFOLIO VALUE · TODAY’S DOLLARS The portfolio, untouched Nothing is sold to fund your life: the median portfolio compounds to $0 by 85, carrying the loan on top.
+http://localhost:4317/ portfolio $640K, balance 0, Loan: LOAN BALANCE · TODAY’S DOLLARS The loan, compounding Borrowing compounds: the median loan reaches $0 by 85, and $1.3M in the costliest 5% of futures.
+http://localhost:4317/ portfolio $640K, balance 0, Loan-to-value: LOAN-TO-VALUE How close to the line Median loan-to-value peaks at 100% around 64, above the 60% call line; the worst 5% touch it by 60.

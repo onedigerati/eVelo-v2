@@ -1,0 +1,79 @@
+$ node v3.mjs docs/evidence/stage-2 c3,c4  (playwright-core, chromium 1200, vite preview :4317; base build e363375 on :4318)
+c3 saved plan without field: field=0 meter=0% today toasts=[]
+c3 share link without field: field=0 meter=0% today toasts=["Opened a shared plan\nChanges you make stay on this device."]
+c3 share link 1e12 on 3M: field=2,999,999 meter=100% today toasts=["Opened a shared plan\nChanges you make stay on this device."]
+c3 share link -500000: field=0 meter=0% today toasts=["Opened a shared plan\nChanges you make stay on this device."]
+c3 share link "500000" string: field=0 meter=0% today toasts=["Opened a shared plan\nChanges you make stay on this device."]
+c3 saved plan 5M on 1M: field=999,999 meter=100% today toasts=[]
+c3 saved plan NaN-ish null: field=0 meter=0% today toasts=[]
+c3 light-desktop before: portfolio=3,000,000 loan=2,500,000 portfolio field text: $
+c3 light-desktop after portfolio=2,000,000: field=1,999,999 stored=1999999 toasts=["Loan balance lowered to $1,999,999 It was $2,500,000; it has to stay below the portfolio."] portfolio field text: $
+c3 light-desktop after portfolio=1,000,000: field=999,999 toasts=["Loan balance lowered to $999,999 It was $1,999,999; it has to stay below the portfolio."]
+c3 light-desktop typed loan 5m: field=999,999 toasts=[]
+c3 dark-phone before: portfolio=3,000,000 loan=2,500,000 portfolio field text: $
+c3 dark-phone after portfolio=2,000,000: field=1,999,999 stored=1999999 toasts=["Loan balance lowered to $1,999,999 It was $2,500,000; it has to stay below the portfolio."] portfolio field text: $
+c3 dark-phone after portfolio=1,000,000: field=999,999 toasts=["Loan balance lowered to $999,999 It was $1,999,999; it has to stay below the portfolio."]
+c3 dark-phone typed loan 5m: field=999,999 toasts=[]
+c4 zero HEAD fan Net worth: NET WORTH · TODAY’S DOLLARS The range of futures In the median future net worth grows from $3.0M to $12M by 85; the unluckiest 5% end with almost nothing.
+c4 zero HEAD fan Portfolio: PORTFOLIO VALUE · TODAY’S DOLLARS The portfolio, untouched Nothing is sold to fund your life: the median portfolio compounds to $16M by 85, carrying the loan on top.
+c4 zero HEAD fan Loan: LOAN BALANCE · TODAY’S DOLLARS The loan, compounding Borrowing compounds: the median loan reaches $2.9M by 85, and $4.7M in the costliest 5% of futures.
+c4 zero HEAD fan Loan-to-value: LOAN-TO-VALUE How close to the line Median loan-to-value peaks at 22% around 76, well under the 60% call line; the worst 5% touch it by 82.
+c4 zero HEAD card: LOAN-TO-VALUE How close to the line Median loan-to-value peaks at 22% around 76, well under the 60% call line; the worst 5% touch it by 82.
+c4 zero HEAD card: MARGIN CALLS · FIRST FORCED SALE When the risk arrives Risk is spread out: most forced sales fall between ages 63 and 75; 20% of futures face one by 85.
+c4 zero HEAD card: SAFE SPENDING · 90% CONFIDENCE What you could spend To reach 90% confidence, trim $26K a year (24%) from your lifestyle.
+c4 zero HEAD card: ESTATE · TODAY’S DOLLARS Borrow vs. sell Borrowing leaves heirs $3.0M more in the median future, and comes out ahead in 77% of all futures.
+c4 zero HEAD card: PORTFOLIO LENS What you own VTI and QQQ move almost as one (0.85); GLD is the real diversifier, averaging 0.13 against the rest.
+c4 zero HEAD card: COST OF LIVING · ST. LOUIS VS BANGKOK The same life, abroad Bangkok cuts your annual spend by 24%; healthcare and other save the most.
+c4 zero HEAD card: ESTATE NOTE: Median estate at 85, today’s dollars. At death your heirs inherit at a stepped-up basis: the gains you borrowed against are never taxed, and the loan is repaid from the estate.
+c4 zero BASE e363375 fan Net worth: NET WORTH · TODAY’S DOLLARS The range of futures In the median future net worth grows from $3.0M to $12M by 85; the unluckiest 5% end with almost nothing.
+c4 zero BASE e363375 fan Portfolio: PORTFOLIO VALUE · TODAY’S DOLLARS The portfolio, untouched Nothing is sold to fund your life: the median portfolio compounds to $16M by 85, carrying the loan on top.
+c4 zero BASE e363375 fan Loan: LOAN BALANCE · TODAY’S DOLLARS The loan, compounding Borrowing compounds: the median loan reaches $2.9M by 85, and $4.7M in the costliest 5% of futures.
+c4 zero BASE e363375 fan Loan-to-value: LOAN-TO-VALUE How close to the line Median loan-to-value peaks at 22% around 76, well under the 60% call line; the worst 5% touch it by 82.
+c4 zero BASE e363375 card: LOAN-TO-VALUE How close to the line Median loan-to-value peaks at 22% around 76, well under the 60% call line; the worst 5% touch it by 82.
+c4 zero BASE e363375 card: MARGIN CALLS · FIRST FORCED SALE When the risk arrives Risk is spread out: most forced sales fall between ages 63 and 75; 20% of futures face one by 85.
+c4 zero BASE e363375 card: SAFE SPENDING · 90% CONFIDENCE What you could spend To reach 90% confidence, trim $26K a year (24%) from your lifestyle.
+c4 zero BASE e363375 card: ESTATE · TODAY’S DOLLARS Borrow vs. sell Borrowing leaves heirs $3.0M more in the median future, and comes out ahead in 77% of all futures.
+c4 zero BASE e363375 card: PORTFOLIO LENS What you own VTI and QQQ move almost as one (0.85); GLD is the real diversifier, averaging 0.13 against the rest.
+c4 zero BASE e363375 card: COST OF LIVING · ST. LOUIS VS BANGKOK The same life, abroad Bangkok cuts your annual spend by 24%; healthcare and other save the most.
+c4 zero BASE e363375 card: ESTATE NOTE: Median estate at 85, today’s dollars. At death your heirs inherit at a stepped-up basis: the gains you borrowed against are never taxed, and the loan is repaid from the estate.
+c4 method (500k): eVelo replays real market history in thousands of different orders, borrows against your portfolio to fund your life, and counts how often the lender never has to sell. Here is every step, in plain language, with the numbers the model actually uses.
+c4 method (500k): 01 Buy, borrow, die
+c4 method (500k): 06 Borrowing mechanics
+c4 method (500k): 09 Borrow vs. sell
+c4 method (500k): A way to live off a portfolio without selling it.
+c4 method (500k): Buy assets that grow and hold them. Borrow against them for living money, with a securities-backed line of credit, instead of selling shares and paying capital-gains tax each time. The loan grows with interest; the portfolio, untouched, keeps compounding. Die holding them: under US law your heirs inherit the shares with a stepped-up cost basis, their value on the day you die, so the gains you borrowed against are never taxed. The estate repays the loan and passes on the rest. If you have already borrowed, eVelo starts from that balance.
+c4 method (500k): The debt caught up with the assets: the loan reached the portfolio’s value, or a margin call could not be met even by selling everything.
+c4 method (500k): The key is that a whole month is drawn at once. When the future borrows October 2008, every holding gets its October 2008 return and inflation gets October 2008’s CPI. Crashes stay as deep as they were, recoveries as long, and the way your holdings fall together (or don’t) is preserved without estimating a single correlation. The portfolio is rebalanced to your weights every month, and a 0.3% a year drag stands in for tax on dividends.
+c4 method (500k): The rest of the weight goes to the prior: a 3.5% risk-free rate plus, for stocks and stock funds, beta times an equity premium of 5% (balanced) or 3.5% (conservative), with beta held between 0.5 and 2. Bonds and gold get the risk-free rate plus 0.5%; crypto gets it plus 6%. The whole series is then shifted to the blended average, so its volatility and its crashes are untouched. The “historical” outlook skips this and uses each asset’s real average as is.
+c4 method (500k): Interest capitalizes. The loan grows by a twelfth of its annual rate (6% by default). You never pay interest out of pocket; it is added to the balance and compounds. The loan starts at any balance you have already drawn (zero if none), which accrues at the same rate.
+c4 method (500k): You draw what you need. This month’s spending, grown with inflation, minus any other income (Social Security, a pension) is borrowed. If income exceeds spending, the surplus pays the loan down first.
+c4 method (500k): The lender checks. If the loan has reached the portfolio’s value, the future is broken. If the loan-to-value ratio is above the margin-call line (60% by default), there is a forced sale.
+c4 method (500k): A forced sale sells just enough to bring the ratio back to the target (45% by default). Each dollar sold carries some unrealized gain, and the tax on that gain (23.8% by default, the top federal long-term rate including the 3.8% investment-income tax) comes out of the proceeds before they reach the lender:
+c4 method (500k): If even selling everything could not reach the target, the future counts as broken, not bruised. The margin-call chart on the Outlook shows when, across all futures, the first forced sale tends to happen.
+c4 method (500k): Wealth tax, every year. At each year-end after the move, the marginal bands are applied to your real net worth (portfolio minus loan) or, where the law taxes the gross value (Italy’s IVAFE), to the portfolio. Because the bands are in today’s dollars, the thresholds hold steady in real terms. The borrow plan adds the tax to the loan, before that month’s margin check; the sell plan sells shares to pay it, with capital-gains tax on the sale.
+c4 method (500k): Every future also runs a second, simpler plan on the same markets: sell as you go. Each month it sells enough shares to cover spending, paying capital-gains tax on the gain in each share sold, and carries no loan. If you have an existing loan balance, this plan starts with the portfolio minus that balance and no debt: had you sold instead, those shares would already be spent, and both plans start from the same net worth. (It ignores the tax and interest already paid, which roughly offset.) At the end of the horizon eVelo compares, in today’s dollars:
+c4 method (500k): Borrow: the portfolio minus the loan. With the step-up in basis, no tax is due on the gains at death.
+c4 method (500k): Sell: whatever portfolio is left, having paid tax along the way.
+c4 method (500k): Borrowing wins when the portfolio’s return beats the loan rate: the tax you never paid keeps compounding. It loses when rates are high, returns are low, or margin calls force sales at the bottom. Both estates are after any local inheritance tax. The Outlook reports both medians and the share of futures in which borrowing comes out ahead.
+c4 method (500k): Not financial, tax or legal advice. eVelo is a model of one strategy. Talk to a qualified adviser before borrowing against your savings.
+c4 method (0): eVelo replays real market history in thousands of different orders, borrows against your portfolio to fund your life, and counts how often the lender never has to sell. Here is every step, in plain language, with the numbers the model actually uses.
+c4 method (0): 01 Buy, borrow, die
+c4 method (0): 06 Borrowing mechanics
+c4 method (0): 09 Borrow vs. sell
+c4 method (0): A way to live off a portfolio without selling it.
+c4 method (0): Buy assets that grow and hold them. Borrow against them for living money, with a securities-backed line of credit, instead of selling shares and paying capital-gains tax each time. The loan grows with interest; the portfolio, untouched, keeps compounding. Die holding them: under US law your heirs inherit the shares with a stepped-up cost basis, their value on the day you die, so the gains you borrowed against are never taxed. The estate repays the loan and passes on the rest. If you have already borrowed, eVelo starts from that balance.
+c4 method (0): The debt caught up with the assets: the loan reached the portfolio’s value, or a margin call could not be met even by selling everything.
+c4 method (0): The key is that a whole month is drawn at once. When the future borrows October 2008, every holding gets its October 2008 return and inflation gets October 2008’s CPI. Crashes stay as deep as they were, recoveries as long, and the way your holdings fall together (or don’t) is preserved without estimating a single correlation. The portfolio is rebalanced to your weights every month, and a 0.3% a year drag stands in for tax on dividends.
+c4 method (0): The rest of the weight goes to the prior: a 3.5% risk-free rate plus, for stocks and stock funds, beta times an equity premium of 5% (balanced) or 3.5% (conservative), with beta held between 0.5 and 2. Bonds and gold get the risk-free rate plus 0.5%; crypto gets it plus 6%. The whole series is then shifted to the blended average, so its volatility and its crashes are untouched. The “historical” outlook skips this and uses each asset’s real average as is.
+c4 method (0): Interest capitalizes. The loan grows by a twelfth of its annual rate (6% by default). You never pay interest out of pocket; it is added to the balance and compounds. The loan starts at any balance you have already drawn (zero if none), which accrues at the same rate.
+c4 method (0): You draw what you need. This month’s spending, grown with inflation, minus any other income (Social Security, a pension) is borrowed. If income exceeds spending, the surplus pays the loan down first.
+c4 method (0): The lender checks. If the loan has reached the portfolio’s value, the future is broken. If the loan-to-value ratio is above the margin-call line (60% by default), there is a forced sale.
+c4 method (0): A forced sale sells just enough to bring the ratio back to the target (45% by default). Each dollar sold carries some unrealized gain, and the tax on that gain (23.8% by default, the top federal long-term rate including the 3.8% investment-income tax) comes out of the proceeds before they reach the lender:
+c4 method (0): If even selling everything could not reach the target, the future counts as broken, not bruised. The margin-call chart on the Outlook shows when, across all futures, the first forced sale tends to happen.
+c4 method (0): Wealth tax, every year. At each year-end after the move, the marginal bands are applied to your real net worth (portfolio minus loan) or, where the law taxes the gross value (Italy’s IVAFE), to the portfolio. Because the bands are in today’s dollars, the thresholds hold steady in real terms. The borrow plan adds the tax to the loan, before that month’s margin check; the sell plan sells shares to pay it, with capital-gains tax on the sale.
+c4 method (0): Every future also runs a second, simpler plan on the same markets: sell as you go. Each month it sells enough shares to cover spending, paying capital-gains tax on the gain in each share sold, and carries no loan. If you have an existing loan balance, this plan starts with the portfolio minus that balance and no debt: had you sold instead, those shares would already be spent, and both plans start from the same net worth. (It ignores the tax and interest already paid, which roughly offset.) At the end of the horizon eVelo compares, in today’s dollars:
+c4 method (0): Borrow: the portfolio minus the loan. With the step-up in basis, no tax is due on the gains at death.
+c4 method (0): Sell: whatever portfolio is left, having paid tax along the way.
+c4 method (0): Borrowing wins when the portfolio’s return beats the loan rate: the tax you never paid keeps compounding. It loses when rates are high, returns are low, or margin calls force sales at the bottom. Both estates are after any local inheritance tax. The Outlook reports both medians and the share of futures in which borrowing comes out ahead.
+c4 method (0): Not financial, tax or legal advice. eVelo is a model of one strategy. Talk to a qualified adviser before borrowing against your savings.
+ERRORS/WARNINGS: none

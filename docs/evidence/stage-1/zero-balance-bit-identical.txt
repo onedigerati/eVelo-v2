@@ -1,16 +1,23 @@
-$ (scratch worktrees at 75ee416 and 141c72b) VARIANT=old|zero|missing OUT=<json> npx vitest run src/engine/__tests__/dump.test.ts; sha256sum old.json zero.json missing.json
-# dump.test.ts (scratch only, below) serializes simulate() minus inputs/elapsedMs, the full runPaths Recorder arrays, solveSpending and runAtlas for 10 input cases.
-# old = pre-stage engine (75ee416, no field); zero = HEAD with existingLoan: 0; missing = HEAD with the field deleted.
-95332a0b5de27dee55f390b63e3e6f97d73cf482ab56fd63fc02329b1b3f89fe  old.json
-95332a0b5de27dee55f390b63e3e6f97d73cf482ab56fd63fc02329b1b3f89fe  zero.json
-95332a0b5de27dee55f390b63e3e6f97d73cf482ab56fd63fc02329b1b3f89fe  missing.json
-14928644 missing.json
-14928644 old.json
-14928644 zero.json
+$ (scratch worktrees at 75ee416 and 40ac23e) VARIANT=old|zero|missing OUT=<json> npx vitest run src/engine/__tests__/dump.test.ts; sha256sum old.json zero.json missing.json; cmp
+# dump.test.ts (scratch only, below) serializes simulate() minus inputs/elapsedMs, the full runPaths Recorder arrays for 8 input cases (defaults, seed 7, last fixture city, each of the 3 fixture cities at seed 3, a 9%-rate/40%-maxLtv/no-income case, portfolio 0), solveSpending at targets 0.85/0.9/0.5, and runAtlas over every fixture city.
+# old = pre-stage engine (75ee416, no field); zero = HEAD 40ac23e with existingLoan: 0; missing = HEAD with the field deleted.
+# HEAD adds SimulationResult.openingSale; the dump asserts it is null in every zero/missing case before dropping it (old: 0 keys dropped; zero and missing: 8 of 8, all null).
+variant=old cases=8 openingSale keys dropped=0
+      Tests  1 passed (1)
+variant=zero cases=8 openingSale keys dropped=8
+      Tests  1 passed (1)
+variant=missing cases=8 openingSale keys dropped=8
+      Tests  1 passed (1)
+3f4e95957bf56c95f0af42cd33a12281de5240555cc272f9f1081e60da9a25c4  old.json
+3f4e95957bf56c95f0af42cd33a12281de5240555cc272f9f1081e60da9a25c4  zero.json
+3f4e95957bf56c95f0af42cd33a12281de5240555cc272f9f1081e60da9a25c4  missing.json
+14962820 old.json
+14962820 zero.json
+14962820 missing.json
 cmp: all three byte-identical
 
 ----- dump.test.ts -----
-import { it } from 'vitest'
+import { it, expect } from 'vitest'
 import { writeFileSync } from 'node:fs'
 import marketJson from '../../data/market.json'
 import { runAtlas } from '../atlas'
@@ -28,11 +35,15 @@ it('dump', () => {
     {}, { seed: 7, paths: 700 }, { destCityId: CITIES_FIX[CITIES_FIX.length - 1].id, paths: 500 },
     ...CITIES_FIX.slice(0, 6).map((c: any) => ({ destCityId: c.id, paths: 300, seed: 3 })),
     { budget: { ...DEFAULT_INPUTS.budget }, otherIncome: 0, loanRate: 0.09, maxLtv: 0.4, paths: 400 },
+    { portfolio: 0, paths: 100 },
   ]
   const out: any = { sims: [], recs: [], solve: null, atlas: null }
+  let openingSaleKeys = 0
   for (const c of cases) {
     const inp = mk(c)
     const r: any = simulate(market, CITIES_FIX, inp); delete r.elapsedMs; delete r.inputs
+    // openingSale is a field new in this stage; for no balance it must be null, then it is dropped so the rest compares with 75ee416
+    if ('openingSale' in r) { expect(r.openingSale).toBeNull(); delete r.openingSale; openingSaleKeys++ }
     out.sims.push(r)
     const inputs = normalizeInputs(inp)
     const prep = prepare(market, inputs.holdings, inputs.outlook)
@@ -46,7 +57,8 @@ it('dump', () => {
     for (const k of Object.keys(rec)) o[k] = ArrayBuffer.isView(rec[k]) ? Array.from(rec[k]) : rec[k]
     out.recs.push(o)
   }
-  out.solve = solveSpending(market, CITIES_FIX, mk({ paths: 600 }), 0.85)
+  out.solve = [0.85, 0.9, 0.5].map((t) => solveSpending(market, CITIES_FIX, mk({ paths: 600 }), t))
   out.atlas = runAtlas(market, CITIES_FIX, mk({ paths: 400 }), CITIES_FIX.map((c: any) => c.id))
   writeFileSync(process.env.OUT!, JSON.stringify(out))
+  console.log(`variant=${variant} cases=${cases.length} openingSale keys dropped=${openingSaleKeys}`)
 })
