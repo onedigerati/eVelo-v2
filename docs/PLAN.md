@@ -9,7 +9,7 @@ In the "Spending in <city>" card, a user who has researched a real price ("a con
 ## Now
 Stage 2 of 2 · Card editing and tip
 Risk: UI only
-Mode: paused — deploy needs the user's approval
+Mode: autopilot
 Agents: wide — confirmed 2026-11-08 17:23
 Checks:
 - [x] Tapping a row's amount lets you type dollars; Enter sets it, Esc cancels; the %, bar, card total, delta chip and odds update, and the card total equals the Outlook's destination spend (proof: run the product, a test can't judge the live card)
