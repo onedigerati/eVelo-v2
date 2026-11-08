@@ -9,7 +9,7 @@ On desktop and tablet, the verdict ("Your plan holds in X% of futures") stays in
 ## Now
 Stage 1 of 1 · Docked verdict pill
 Risk: UI only
-Agents: wide — confirmed 2026-11-08 12:27
+Agents: wide — confirmed 2026-11-08 15:35
 Checks:
 - [ ] Desktop: the pill is hidden while the verdict headline's number is on screen and docks at the top of the results column, below the top bar, once it has scrolled away; it fades/slides in rather than popping (proof: run the product, screenshots at two scroll positions, a test can't judge layout or motion)
 - [ ] It shows the phone pill's content (progress ring, "Holds in X% of futures", tone colour from the shared outcome scale) and updates live when a rail input changes, briefly showing the change in points ("+6 pts") (proof: test for the delta logic; run the product for the live update)
