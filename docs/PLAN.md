@@ -10,7 +10,8 @@ Every city in the Atlas has a full profile with the five-photo cover mosaic, not
 Stage 1 of 6 · Unranked profiles + preview assets
 Risk: UI only (plus preview tooling that uploads to the claude.ai asset store)
 Checks:
-- [ ] A city with a profile file that isn't a pick opens the same profile sheet from the list and the map. The eyebrow drops "Top pick N of 75" for a plain country line, and it never appears in the top-picks list (proof: test + run the product)
+- [ ] A profiled city that isn't a pick shows a "Profile" chip in its city-list row where picks show "Top pick #N"; the chip opens the same profile sheet. Its eyebrow drops "Top pick N of 75" for "Profile · <country>", and it never appears in the top-picks list (proof: test + run the product)
+- [ ] The map's city card (hover bubble, tapped card, and the docked card on phones) has a "View profile" link beside the choose button for every profiled city, picks included, and it opens the profile sheet (proof: run the product, mouse and touch)
 - [ ] Profile files can be named after any city id, not only picks; a file named after an id that isn't in `cities.ts` still fails the tests (proof: test)
 - [ ] Pilot profiles and photos for Tokyo and Austin (one foreign, one US) are written to the README's standard, with sources, and their photos are checked on a contact sheet (proof: test + contact sheet)
 - [ ] The photo test lets any profiled city have photos, and requires exactly 5 for every profiled city (proof: test)
@@ -19,7 +20,7 @@ Checks:
 Open: none
 
 ## Stages
-- [ ] 1. Unranked profiles + preview assets — profiles for non-picks, US profile style, Tokyo + Austin pilots, preview photos via the asset store; preview; stop for review
+- [ ] 1. Unranked profiles + preview assets — profiles for non-picks, list chip and map-card profile link, US profile style, Tokyo + Austin pilots, preview photos via the asset store; preview; stop for review
 - [ ] 2. Europe, Africa, Middle East — Amsterdam, Berlin, Dublin, London, Paris, Zurich, Cape Town, Dubai: profiles + photos, contact sheet
 - [ ] 3. Asia-Pacific — Auckland, Cebu, Da Nang, Hanoi, Ho Chi Minh City, Manila, Melbourne, Osaka, Seoul, Singapore, Sydney: profiles + photos, contact sheet
 - [ ] 4. Canada + South America — Montréal, Toronto, Vancouver, Bogotá, Buenos Aires: profiles + photos, contact sheet
@@ -35,6 +36,8 @@ Open: none
 - 2026-11-07 · Unranked profiles say "Profile · <country>" in the eyebrow where picks say "Top pick N of 75" — builder's call; the user sees it on the stage 1 preview.
 - 2026-11-07 · Tokyo and Austin are the pilot cities, one foreign and one US, so stage 1 proves both profile styles and both photo paths — PM's call.
 - 2026-11-07 · The 32 US cities after the Austin pilot split by region into two stages (18 West + South, 14 East + Midwest, the second also closing the plan): 32 profiles and 160 photos are too much for one sitting — PM's call.
+
+- 2026-11-07 · Profiles open from a "Profile" chip in the city list for non-picks (picks keep their "Top pick #N" badge), and from a new "View profile" link on the map's city card for every profiled city, picks included. Until now a profile opened only from the Top picks list or a pick's badge, and the map had no way in — user: "Add both to stage 1".
 
 ## Open questions
 - WebKit's touch path (iPhone) is untested until the user tries it; the full-size view's swipe adds to it — user, when they try it.
