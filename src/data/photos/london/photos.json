@@ -1,0 +1,62 @@
+[
+  {
+    "commons": "File:Palace of Westminster London 2023 01.jpg",
+    "file": "1.webp",
+    "caption": "Big Ben and the Houses of Parliament across the Thames",
+    "alt": "A Gothic clock tower and the long ornate Parliament building beside a river, framed by autumn leaves under a blue sky",
+    "author": "Julian Herzog",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Palace_of_Westminster_London_2023_01.jpg",
+    "width": 1280,
+    "height": 855
+  },
+  {
+    "commons": "File:Tower Bridge London Feb 2006.jpg",
+    "file": "2.webp",
+    "caption": "Tower Bridge at night",
+    "alt": "A Victorian bridge with two Gothic stone towers and blue suspension spans, lit up over a dark river at night",
+    "author": "Diliff",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Tower_Bridge_London_Feb_2006.jpg",
+    "width": 1280,
+    "height": 641
+  },
+  {
+    "commons": "File:Natural History Museum Main Hall, London, UK - Diliff.jpg",
+    "file": "3.webp",
+    "caption": "The main hall of the Natural History Museum, one of London's free national museums",
+    "alt": "A vast Romanesque hall with a painted ceiling, stone arches and a grand staircase, seen from the upper gallery",
+    "author": "Diliff",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Natural_History_Museum_Main_Hall,_London,_UK_-_Diliff.jpg",
+    "width": 1280,
+    "height": 970
+  },
+  {
+    "commons": "File:Flowers in front of the Palm House, Kew Gardens.jpg",
+    "file": "4.webp",
+    "caption": "The Victorian Palm House and its flower beds at Kew Gardens",
+    "alt": "A large curved glass and iron greenhouse behind formal beds of red flowers and conical shrubs on a sunny day",
+    "author": "Daniel Case",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Flowers_in_front_of_the_Palm_House,_Kew_Gardens.jpg",
+    "width": 1024,
+    "height": 721
+  },
+  {
+    "commons": "File:St James's Park Lake – East from the Blue Bridge - 2012-10-06.jpg",
+    "file": "5.webp",
+    "caption": "St James's Park lake, looking east to Horse Guards and the London Eye",
+    "alt": "A tree-lined lake reflecting the sky, with the turreted white Horse Guards buildings on the left and the London Eye wheel rising behind trees on the right",
+    "author": "Colin",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:St_James's_Park_Lake_%E2%80%93_East_from_the_Blue_Bridge_-_2012-10-06.jpg",
+    "width": 1280,
+    "height": 650
+  }
+]

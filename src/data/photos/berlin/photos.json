@@ -1,0 +1,62 @@
+[
+  {
+    "commons": "File:Brandenburger Tor abends.jpg",
+    "file": "1.webp",
+    "caption": "The Brandenburg Gate lit up at dusk",
+    "alt": "A large neoclassical stone gate with columns and a bronze chariot on top, floodlit golden against a deep blue evening sky",
+    "author": "Thomas Wolf",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Brandenburger_Tor_abends.jpg",
+    "width": 1280,
+    "height": 853
+  },
+  {
+    "commons": "File:Siegessaeule Aussicht 10-13 img4 Tiergarten.jpg",
+    "file": "2.webp",
+    "caption": "The Tiergarten from the Victory Column, looking east to the Brandenburg Gate and TV tower",
+    "alt": "A straight avenue running through a large autumn-coloured park toward a gate, with the city and a tall TV tower on the horizon",
+    "author": "A.Savin",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Siegessaeule_Aussicht_10-13_img4_Tiergarten.jpg",
+    "width": 1280,
+    "height": 853
+  },
+  {
+    "commons": "File:Berlin East Side Oberbaumbrücke.jpg",
+    "file": "3.webp",
+    "caption": "A yellow U-Bahn train crossing the Spree on the Oberbaumbrücke",
+    "alt": "A red-brick double-deck bridge with two towers over a river, with a yellow underground train on its upper deck",
+    "author": "Hans-Jürgen Neubert",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Berlin_East_Side_Oberbaumbr%C3%BCcke.jpg",
+    "width": 1280,
+    "height": 852
+  },
+  {
+    "commons": "File:Berlin Schloss Charlottenburg (S41 2558).jpg",
+    "file": "4.webp",
+    "caption": "Charlottenburg Palace from its baroque gardens",
+    "alt": "A long pale palace with a green-domed tower at the end of a lawn lined with gravel paths and clipped shrubs, under white clouds",
+    "author": "Michael.F.H.Barth",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Berlin_Schloss_Charlottenburg_(S41_2558).jpg",
+    "width": 1280,
+    "height": 859
+  },
+  {
+    "commons": "File:Schlachtensee Bootsverleih.jpg",
+    "file": "5.webp",
+    "caption": "Rowing boats on the Schlachtensee, one of the lakes in Berlin's Grunewald forest",
+    "alt": "White rowing boats moored along a wooden jetty on a blue lake ringed by forest",
+    "author": "Fridolin freudenfett",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Schlachtensee_Bootsverleih.jpg",
+    "width": 1152,
+    "height": 864
+  }
+]

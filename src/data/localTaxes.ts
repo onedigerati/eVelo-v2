@@ -117,7 +117,7 @@ export const LOCAL_TAX_BY_COUNTRY: Record<string, LocalTax> = {
         [1_805_677, 0.45],
       ]),
     },
-    note: 'Inheritance: France taxes a French-resident decedent\'s worldwide estate. Each child gets a €100k allowance, then 5% to 45% (45% above €1,805,677). The research gives the 5%, 20% and 45% bands; the €12,109 and €902,838 breakpoints follow the statutory child scale. The US–France treaty gives credits only, which are ignored. No wealth tax on a portfolio: IFI covers real estate only.',
+    note: 'Inheritance: France taxes a French-resident decedent\'s worldwide estate. Each child gets a €100k allowance, then 5% to 45% (45% above €1,805,677). The research gives the 5%, 20% and 45% bands; the €12,109 and €902,838 breakpoints follow the statutory child scale. Under the US–France estate treaty a US citizen (not French) who clearly intends to keep a US domicile and has lived in France under 5 of the last 7 years is treated as US-domiciled, so France taxes only French real estate and goods in France; after that, or for anyone settled for good, the worldwide estate is in reach and the treaty gives credits only, which are ignored. The model taxes the worldwide estate (the settled case). No wealth tax on a portfolio: IFI covers real estate only.',
     sources: [
       'https://taxsummaries.pwc.com/france/individual/other-taxes',
       'https://www.service-public.gouv.fr/particuliers/vosdroits/F14198',

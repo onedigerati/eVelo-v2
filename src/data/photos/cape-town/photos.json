@@ -1,0 +1,62 @@
+[
+  {
+    "commons": "File:Table Mountain-010.jpg",
+    "file": "1.webp",
+    "caption": "Table Mountain and the lights of Cape Town at dusk, from Bloubergstrand across Table Bay",
+    "alt": "A flat-topped mountain silhouetted against a stormy blue dusk sky, with a line of city lights at its foot across a bay",
+    "author": "Leo za1",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Table_Mountain-010.jpg",
+    "width": 1280,
+    "height": 853
+  },
+  {
+    "commons": "File:Bo-Kaap and Table Mountain.jpg",
+    "file": "2.webp",
+    "caption": "The brightly painted houses of the Bo-Kaap below Table Mountain",
+    "alt": "Rows of green, pink, turquoise and yellow houses in the foreground with a sheer grey mountain face behind",
+    "author": "Barry haynes",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Bo-Kaap_and_Table_Mountain.jpg",
+    "width": 1280,
+    "height": 828
+  },
+  {
+    "commons": "File:ChapmansPeakDrive.jpg",
+    "file": "3.webp",
+    "caption": "Chapman's Peak Drive, cut into the cliffs above the Atlantic near Hout Bay",
+    "alt": "A narrow road curving along red sandstone cliffs high above a deep blue ocean and rocky shore",
+    "author": "Martinvl",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:ChapmansPeakDrive.jpg",
+    "width": 1152,
+    "height": 768
+  },
+  {
+    "commons": "File:Kirstenbosch National Botanical Garden.jpg",
+    "file": "4.webp",
+    "caption": "Kirstenbosch National Botanical Garden on the eastern slopes of Table Mountain",
+    "alt": "A paved path through beds of aloes, grasses and fynbos plants toward rocky mountain slopes at dusk",
+    "author": "Mattias Hill",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kirstenbosch_National_Botanical_Garden.jpg",
+    "width": 1280,
+    "height": 839
+  },
+  {
+    "commons": "File:GrootConstantiaHomestead.jpg",
+    "file": "5.webp",
+    "caption": "The Cape Dutch manor at Groot Constantia, South Africa's oldest wine estate",
+    "alt": "A white thatched-roof manor house with curved gables and green shutters on a sunny day",
+    "author": "Martinvl",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:GrootConstantiaHomestead.jpg",
+    "width": 1280,
+    "height": 853
+  }
+]

@@ -1,0 +1,20 @@
+$ node s2v31.js   # v31 artifact-mode build (pv2 dist) served by blobserve.js on :5194; a photo counts only if loaded from a /_blob/ URL
+v31-desk-light (overflow 0px)
+  amsterdam: 5/5 · "NL Profile · Netherlands" · in top picks: false
+  berlin: 5/5 · "DE Profile · Germany" · in top picks: false
+  dublin: 5/5 · "IE Profile · Ireland" · in top picks: false
+  london: 5/5 · "GB Profile · United Kingdom" · in top picks: false
+  paris: 5/5 · "FR Profile · France" · in top picks: false
+  zurich: 5/5 · "CH Profile · Switzerland" · in top picks: false
+  cape-town: 5/5 · "ZA Profile · South Africa" · in top picks: false
+  dubai: 5/5 · "AE Profile · United Arab Emirates" · in top picks: false
+v31-phone-dark (overflow 0px)
+  amsterdam: 5/5 · "NL Profile · Netherlands" · in top picks: false
+  berlin: 5/5 · "DE Profile · Germany" · in top picks: false
+  dublin: 5/5 · "IE Profile · Ireland" · in top picks: false
+  london: 5/5 · "GB Profile · United Kingdom" · in top picks: false
+  paris: 5/5 · "FR Profile · France" · in top picks: false
+  zurich: 5/5 · "CH Profile · Switzerland" · in top picks: false
+  cape-town: 5/5 · "ZA Profile · South Africa" · in top picks: false
+  dubai: 5/5 · "AE Profile · United Arab Emirates" · in top picks: false
+errors: []

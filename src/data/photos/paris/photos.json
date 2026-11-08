@@ -1,0 +1,62 @@
+[
+  {
+    "commons": "File:Pont des Invalides et Tour Eiffel - 01.jpg",
+    "file": "1.webp",
+    "caption": "The Eiffel Tower lit up above the Seine and the Pont des Invalides at dusk",
+    "alt": "A golden lit iron tower rising behind a stone bridge over a river at blue dusk, with street lamps reflected in the water",
+    "author": "Carlos Delgado",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Pont_des_Invalides_et_Tour_Eiffel_-_01.jpg",
+    "width": 1280,
+    "height": 640
+  },
+  {
+    "commons": "File:Paris ile Cite ile Saint Louis pont Tournelle.jpg",
+    "file": "2.webp",
+    "caption": "Notre-Dame above the Seine, with the Île Saint-Louis and the Pont de la Tournelle",
+    "alt": "A Gothic cathedral on an island in a river, with cream stone apartment buildings, trees and a bridge in spring sunshine",
+    "author": "Myrabella",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Paris_ile_Cite_ile_Saint_Louis_pont_Tournelle.jpg",
+    "width": 1280,
+    "height": 640
+  },
+  {
+    "commons": "File:Cour Napoléon at night - Louvre.jpg",
+    "file": "3.webp",
+    "caption": "The Louvre's glass pyramid in the Cour Napoléon at night, one of the city's great museums",
+    "alt": "A lit glass pyramid in a paved courtyard surrounded by ornate palace wings at night",
+    "author": "Benh LIEU SONG",
+    "license": "CC BY 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:Cour_Napol%C3%A9on_at_night_-_Louvre.jpg",
+    "width": 1280,
+    "height": 508
+  },
+  {
+    "commons": "File:Paris Palais du Luxembourg façade&jardin 2014.jpg",
+    "file": "4.webp",
+    "caption": "Afternoon in the Jardin du Luxembourg, below the Senate's palace",
+    "alt": "People sitting on green chairs among flower beds and lawns in front of a large stone palace under a cloudy sky",
+    "author": "JLPC",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Paris_Palais_du_Luxembourg_fa%C3%A7ade%26jardin_2014.jpg",
+    "width": 1280,
+    "height": 831
+  },
+  {
+    "commons": "File:Metro station entrance (édicule Guimard) Porte Dauphine Paris 16e 002.jpg",
+    "file": "5.webp",
+    "caption": "Hector Guimard's Art Nouveau Métro entrance at Porte Dauphine; the Métro reaches all of central Paris",
+    "alt": "A green iron and glass Art Nouveau canopy marked Metropolitain over stairs leading down, among autumn trees",
+    "author": "Moonik",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Metro_station_entrance_(%C3%A9dicule_Guimard)_Porte_Dauphine_Paris_16e_002.jpg",
+    "width": 896,
+    "height": 683
+  }
+]

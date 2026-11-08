@@ -1,0 +1,62 @@
+[
+  {
+    "commons": "File:Ha'penny Bridge & River Liffey, Dublin (507194) (32094198423).jpg",
+    "file": "1.webp",
+    "caption": "The Ha'penny Bridge over the River Liffey at dusk",
+    "alt": "A white cast-iron footbridge arching over a river at dusk, its lamps lit and reflected in the water, with city buildings behind",
+    "author": "Robert Linsdell",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ha'penny_Bridge_%26_River_Liffey,_Dublin_(507194)_(32094198423).jpg",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "commons": "File:Long Room Interior, Trinity College Dublin, Ireland - Diliff.jpg",
+    "file": "2.webp",
+    "caption": "The Long Room of Trinity College's Old Library",
+    "alt": "A long, tall library hall with a barrel-vaulted wooden ceiling, two storeys of book-lined shelves and marble busts along both sides",
+    "author": "Diliff",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Long_Room_Interior,_Trinity_College_Dublin,_Ireland_-_Diliff.jpg",
+    "width": 1280,
+    "height": 967
+  },
+  {
+    "commons": "File:Georgian Dublin. Merrion Square - panoramio.jpg",
+    "file": "3.webp",
+    "caption": "Ivy-covered Georgian terraces on Merrion Square",
+    "alt": "A row of four-storey brick Georgian houses covered in green ivy, with railings and an old street lamp in front",
+    "author": "Pastor Sam",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Georgian_Dublin._Merrion_Square_-_panoramio.jpg",
+    "width": 896,
+    "height": 598
+  },
+  {
+    "commons": "File:\"Eine grüne Oase inmitten der Stadt Dublin\". 03.jpg",
+    "file": "4.webp",
+    "caption": "Flower beds in St Stephen's Green, the park at the heart of the city",
+    "alt": "Circular flower beds and a stone urn of flowers on a lawn, with tall trees and a small pavilion behind",
+    "author": "Holger Uwe Schmitt",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:%22Eine_gr%C3%BCne_Oase_inmitten_der_Stadt_Dublin%22._03.jpg",
+    "width": 896,
+    "height": 601
+  },
+  {
+    "commons": "File:Baily Lighthouse, Howth Head, Dublin, Ireland.jpg",
+    "file": "5.webp",
+    "caption": "Baily Lighthouse on Howth Head, a train ride from the centre",
+    "alt": "A lighthouse and white keeper's buildings on a dark green headland above a calm grey-blue sea, with hazy hills on the far shore",
+    "author": "Christian David",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Baily_Lighthouse,_Howth_Head,_Dublin,_Ireland.jpg",
+    "width": 1280,
+    "height": 720
+  }
+]

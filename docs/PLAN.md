@@ -11,11 +11,11 @@ Stage 2 of 6 · Europe, Africa, Middle East
 Risk: content only (profile text, scores and photos; no code). The France treaty wording in `localTaxes.ts` is a note string, not a rate.
 Scope: Amsterdam, Berlin, Dublin, London, Paris, Zurich, Cape Town, Dubai — profile + 5 photos each, already written and reviewed by builders (see Decisions). Also the France treaty fixes found while reviewing Paris (nice.ts, gascony.ts, the France note in localTaxes.ts) and Tokyo's JPY 30m ≈ $190k fix. The commit takes only these paths; other cities in the tree stay uncommitted.
 Checks:
-- [ ] Each of the 8 has a profile to the README's standard, with sources, scored on the 1–5 rubric, and its review findings applied (proof: test + review notes)
-- [ ] Each has exactly 5 openly licensed photos with credits, checked on a contact sheet (proof: test + contact sheet)
-- [ ] In a clean tree holding only stage 1 + stage 2 paths: type check, tests and build pass (proof: test)
-- [ ] Each of the 8 opens from its list "Profile" chip with 5 photos loaded, "Profile · <country>" in the eyebrow, and stays out of the top picks; both themes and a phone (proof: run the product)
-- [ ] Preview republished with stage 2's 40 photos added to the asset store (proof: run the product on the preview build)
+- [x] Each of the 8 has a profile to the README's standard, with sources, scored on the 1–5 rubric, and its review findings applied (proof: test + review notes)
+- [x] Each has exactly 5 openly licensed photos with credits, checked on a contact sheet (proof: test + contact sheet)
+- [x] In a clean tree holding only stage 1 + stage 2 paths: type check, tests and build pass (proof: test)
+- [x] Each of the 8 opens from its list "Profile" chip with 5 photos loaded, "Profile · <country>" in the eyebrow, and stays out of the top picks; both themes and a phone (proof: run the product)
+- [x] Preview republished with stage 2's 40 photos added to the asset store (proof: run the product on the preview build)
 Open: none
 Mode: autopilot — resumed 2026-11-07 on the user's pre-approval; stage 1 closed on their review.
 Notes:
@@ -26,7 +26,7 @@ Notes:
 
 ## Stages
 - [x] 1. Unranked profiles + preview assets — profiles for non-picks, list chip and map-card profile link, US profile style, Tokyo + Austin pilots, preview photos via the asset store; preview; stop for review
-- [ ] 2. Europe, Africa, Middle East — Amsterdam, Berlin, Dublin, London, Paris, Zurich, Cape Town, Dubai: profiles + photos, contact sheet
+- [x] 2. Europe, Africa, Middle East — Amsterdam, Berlin, Dublin, London, Paris, Zurich, Cape Town, Dubai: profiles + photos, contact sheet
 - [ ] 3. Asia-Pacific — Auckland, Cebu, Da Nang, Hanoi, Ho Chi Minh City, Manila, Melbourne, Osaka, Seoul, Singapore, Sydney: profiles + photos, contact sheet
 - [ ] 4. Canada + South America — Montréal, Toronto, Vancouver, Bogotá, Buenos Aires: profiles + photos, contact sheet
 - [ ] 5. US West + South — San Francisco, Los Angeles, San Diego, Seattle, Portland, Denver, Boise, Salt Lake City, Phoenix, Scottsdale, Las Vegas, Honolulu, Dallas, Houston, Miami, Tampa, Orlando, Sarasota: profiles + photos, contact sheet
