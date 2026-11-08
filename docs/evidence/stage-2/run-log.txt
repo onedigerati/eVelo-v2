@@ -1,0 +1,120 @@
+node check.cjs  (Playwright against npx vite preview --port 5231, build of 8c8486c)
+
+## START st-louis -> bangkok card $83,166$83,166 −24% outlook dest $83,166$83,166 odds 8080%%
+   Housing$22K−16%
+   Groceries$7.8K−29%
+   Dining out$5.0K−37%
+   Transportation$7.3K−27%
+   Utilities & phone$4.0K−27%
+   Healthcare$8.7K−46%
+   Travel$14K±0%
+   Everything else$14K−27%
+
+## CHECK 1: type $ / Enter / Esc
+Housing "$18k" Enter -> Housing$18K−31% [$] | card $79,222$79,222 −28% | outlook $79,222$79,222 | odds 8080%% -> 8282%% | focus Housing in Bangkok: $18K a year, your amount, edit
+  amountOverrides {"bangkok":{"housing":18000}} ratioOverrides 
+Groceries "99999" Esc -> Groceries$7.8K−29% => Groceries$7.8K−29% | focus Groceries in Bangkok: $7.8K a year, edit | amt {"bangkok":{"housing":18000}}
+Dining "18,000" Enter -> Dining out$18K+125% [$] | card $92,193$92,193 −16% | outlook $92,193$92,193 | odds 7474%% | EQUAL true
+Outlook cost card rows: ["Housing$18K−31%","Groceries$7.8K−29%","Dining out$18K+125%","Transport$7.3K−27%","Utilities$4.0K−27%","Healthcare$8.7K−46%","Travel$14K±0%","Other$14K−27%"]
+Outlook caption/save: $17,807 less to borrow every year, before inflation and currency swings.
+
+## JUNK input in $ field (Housing currently $18K)
+Utilities "abc" Enter -> Utilities & phone$4.0K−27% | amt.bangkok.utilities =  | card $92,193$92,193 | outlook $92,193$92,193
+Utilities "-5" Enter -> Utilities & phone$4.0K−27% | amt.bangkok.utilities =  | card $92,193$92,193 | outlook $92,193$92,193
+Utilities "1e12" Enter -> Utilities & phone$4.0K−27% | amt.bangkok.utilities =  | card $92,193$92,193 | outlook $92,193$92,193
+Utilities "1b" Enter -> Utilities & phone$1.0B+18,181,718% [$] | amt.bangkok.utilities = 1000000000 | card $1,000,088,153$1,000,088,153 | outlook $1,000,088,153$1,000,088,153
+Utilities "0" Enter -> Utilities & phone$0−100% [$] | amt.bangkok.utilities = 0 | card $88,153$88,153 | outlook $88,153$88,153
+
+## CHECK 2: % <-> $ replacement, ×, Reset all
+Housing (fixed) set % -20 -> Housing$21K−20% [%] | amt {"bangkok":{"dining":18000}} | ratio {"housing":0.8}
+Groceries % -50 then $5000 -> Groceries$5.0K−55% [$] | amt {"bangkok":{"dining":18000,"groceries":5000}} | ratio {"housing":0.8} | card $92,228$92,228 outlook $92,228$92,228
+× Dining -> Dining out$5.0K−37% | focus Dining out in Bangkok: $5.0K a year, edit | amt {"bangkok":{"groceries":5000}}
+× Housing (%) -> Housing$22K−16% | ratio 
+Before Reset all: amt {"bangkok":{"groceries":5000},"chiang-mai":{"housing":9000}} ratio {"transport":1.1} reset btn true
+After Reset all: amt {"chiang-mai":{"housing":9000}} ratio  reset btn shown false | card $83,166$83,166 outlook $83,166$83,166
+   Housing$22K−16%
+   Groceries$7.8K−29%
+   Dining out$5.0K−37%
+   Transportation$7.3K−27%
+   Utilities & phone$4.0K−27%
+   Healthcare$8.7K−46%
+   Travel$14K±0%
+   Everything else$14K−27%
+
+## CHECK 3: home budget + premium moves; fixed holds, % rows follow; $0 home row
+home total before $110,000
+home total after $200,000
+Home budget -> $200,000: card $125,262$125,262 outlook $125,262$125,262
+   Housing$18K−31% [$]  =>  Housing$18K−62% [$]
+   Groceries$5.5K−50% [%]  =>  Groceries$10K−50% [%]
+   Dining out$5.0K−37%  =>  Dining out$9.1K−37%
+   Transportation$7.3K−27%  =>  Transportation$13K−27%
+   Utilities & phone$4.0K−27%  =>  Utilities & phone$7.3K−27%
+   Healthcare$8.7K−46%  =>  Healthcare$16K−46%
+   Travel$14K±0%  =>  Travel$26K±0%
+   Everything else$14K−27%  =>  Everything else$26K−27%
+premium before 35%
+premium after 65%
+Premium +30 pts: card $141,664$141,664 outlook $141,664$141,664
+   Housing$18K−62% [$]  =>  Housing$18K−62% [$]
+   Groceries$10K−50% [%]  =>  Groceries$10K−50% [%]
+   Dining out$9.1K−37%  =>  Dining out$12K−20%
+   Transportation$13K−27%  =>  Transportation$16K−14%
+   Utilities & phone$7.3K−27%  =>  Utilities & phone$8.6K−14%
+   Healthcare$16K−46%  =>  Healthcare$22K−25%
+   Travel$26K±0%  =>  Travel$26K±0%
+   Everything else$26K−27%  =>  Everything else$30K−14%
+Travel home budget $0 -> Travel$0 | % button present: 0
+Travel $0-home row, type "4.5k" -> Travel$4.5K [$] | card $120,664$120,664 −31% outlook $120,664$120,664 | amt {"chiang-mai":{"housing":9000},"bangkok":{"housing":18000,"travel":4500}}
+Outlook cost rows: ["Housing$18K−62%","Groceries$10K−50%","Dining out$12K−20%","Transport$16K−14%","Utilities$8.6K−14%","Healthcare$22K−25%","Travel$4.5K","Other$30K−14%"]
+
+## per-city: switch to Chiang Mai and back
+Chiang Mai housing row: Housing$9.0K−81% [$] | card $103,226$103,226 outlook $103,226$103,226
+Back to Bangkok housing row: Housing$18K−62% [$]
+
+## CHECK 4: tip
+Tip text: The share of today’s value you originally paid. A low basis means a big embedded gain — exactly what borrowing (instead of selling) avoids realizing. || How much extra you pay abroad for the same standard of living. Live like a local (0%): you rent, shop and eat where locals do and pay local prices, so you keep the full saving. Live like a tourist (100%): expat-area rents, imported groceries, Western restaurants and international clinics cost what they do at home, so the move saves you nothing. Most newcomers land in between. Your spending below and your odds update as you move it. || Each % compares Bangkok’s cost for that category with what you spend on it in St. Louis, after the expat price premium. Tap the % or the $ to set your own. A $ you type is your researched yearly cost: it stays put when your home budget or the premium changes. A % follows your home budget. × undoes a row; Reset all undoes them all. || What you already owe on your securities-backed line of credit. The plan starts with this loan (so today’s LTV is balance ÷ portfolio) and keeps borrowing from there; the sell-instead comparison starts with the portfolio minus this balance and no debt, so both start from the same net worth. A balance above the margin-call LTV forces an opening sale today, and its capital-gains tax comes off the borrowing side first. || If the loan grows past this share of your portfolio, the lender forces a sale — usually at the worst moment. Avoiding that is what “holds” means. || The lender sells enough holdings — paying capital-gains tax on them — to bring the loan back down to this share of the portfolio. Lower means a bigger sale. || Dividends are taxed each year even if you never sell. This is the yearly hit to returns: roughly dividend yield × your dividend tax rate (e.g. 1.5% × 15% ≈ 0.25%).
+
+## CHECK 5: keyboard walk + a11y tree
+  Tab 1 button "How spending in Bangkok is worked out"
+  Tab 2 button "Housing in Bangkok: $18K a year, your amount, edit"
+  Tab 3 button "Housing in Bangkok: −62% versus home, edit"
+  Tab 4 button "Reset Housing to the city estimate"
+  Tab 5 button "Groceries in Bangkok: $10K a year, edit"
+  Tab 6 button "Groceries in Bangkok: −50% versus home, your change, edit"
+  Tab 7 button "Reset Groceries to the city estimate"
+  Tab 8 button "Dining out in Bangkok: $12K a year, edit"
+  Tab 9 button "Dining out in Bangkok: −20% versus home, edit"
+  Tab 10 button "Transportation in Bangkok: $16K a year, edit"
+  Tab 11 button "Transportation in Bangkok: −14% versus home, edit"
+  Tab 12 button "Utilities & phone in Bangkok: $8.6K a year, edit"
+  Tab 13 button "Utilities & phone in Bangkok: −14% versus home, edit"
+  Tab 14 button "Healthcare in Bangkok: $22K a year, edit"
+  Tab 15 button "Healthcare in Bangkok: −25% versus home, edit"
+  Tab 16 button "Travel in Bangkok: $4.5K a year, your amount, edit"
+  Tab 17 button "Reset Travel to the city estimate"
+  Tab 18 button "Everything else in Bangkok: $30K a year, edit"
+  Tab 19 button "Everything else in Bangkok: −14% versus home, edit"
+  Tab 20 button "Reset all"
+  Tab 21 button "04Borrowing"
+  Tab 22 button "What is the existing loan?"
+  Tab 23 input ""
+  Tab 24 input ""
+  Tab 25 button "What is a margin call?"
+  Tab 26 input ""
+  Enter on Healthcare $ -> focused Healthcare in Bangkok, dollars a year
+  typed 12,500 Enter -> row Healthcare$13K−57% [$] | focus back Healthcare in Bangkok: $13K a year, your amount, edit
+  Tab -> Healthcare in Bangkok: −57% versus home, edit
+  Space on % -> Healthcare in Bangkok, change versus home, percent
+  Tab out of % input (untouched) -> focus Travel in Bangkok: $4.5K a year, your amount, edit | row Healthcare$13K−57% [$]
+14-desktop-dark scrollWidth/innerWidth [1280,1280]
+15-phone-375-light tab bar: ["Plan","Outlook","Atlas","Method"]
+15-phone-375-light after Plan tab: hash #plan card count 1
+15-phone-375-light scrollWidth/innerWidth idle [375,375] editing [375,375] | Other row Everything else$22K−38% [$]
+15-phone-375-light scrollWidth with tip open [375,375]
+16-phone-375-dark tab bar: ["Plan","Outlook","Atlas","Method"]
+16-phone-375-dark after Plan tab: hash #plan card count 1
+16-phone-375-dark scrollWidth/innerWidth idle [375,375] editing [375,375] | Other row Everything else$22K−38% [$]
+16-phone-375-dark scrollWidth with tip open [375,375]
+
+## console/page errors: none

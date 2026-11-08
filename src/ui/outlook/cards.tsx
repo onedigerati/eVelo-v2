@@ -9,6 +9,7 @@ import { currency, currencyCompact, number, percent } from '../format'
 import { ease } from '../motion'
 import { AnimatedNumber, Button, Skeleton, cx, toast } from '../primitives'
 import { openingBrokenOf, openingSaleOf } from './openingSale'
+import { changeLabel } from '../plan/spendOverrides'
 
 export const cityName = (id: string | null | undefined) => (id ? (CITY_BY_ID[id]?.name ?? id) : '')
 
@@ -401,8 +402,10 @@ export function CostBody({ result }: { result: SimulationResult }) {
               </span>
               <span className="col__vals num">
                 {currencyCompact(x.dest)}
-                {d != null && (
-                  <span className={cx('col__delta', d < -0.005 && 'is-down', d > 0.005 && 'is-up')}>{Math.abs(d) < 0.005 ? '±0%' : percent(d, { signed: true })}</span>
+                {d != null ? (
+                  <span className={cx('col__delta', d < -0.005 && 'is-down', d > 0.005 && 'is-up')}>{changeLabel(d, (v) => percent(v, { signed: true }))}</span>
+                ) : (
+                  <span className="col__delta" />
                 )}
               </span>
             </div>

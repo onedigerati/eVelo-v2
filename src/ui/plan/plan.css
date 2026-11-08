@@ -1081,6 +1081,17 @@
   grid-column: 2 / 4;
   width: 100%;
 }
+.ratio__edit.is-invalid {
+  border-color: var(--broken-text);
+  box-shadow: 0 0 0 3px var(--broken-soft);
+}
+.ratio__hint {
+  grid-column: 1 / -1;
+  justify-self: end;
+  margin: -2px 26px 4px 0;
+  font-size: 12px;
+  color: var(--broken-text);
+}
 .ratio__edit input {
   width: 100%;
   min-width: 0;

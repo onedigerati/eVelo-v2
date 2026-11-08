@@ -16,19 +16,34 @@ export function rowOverride(o: SpendOverrides, destId: string, c: BudgetCategory
   return null
 }
 
-/** Annual dollars from "18000", "18,000", "$18k", "18.5k", "$1.2m". Null when not a number >= 0. */
+/** The most a typed yearly amount can be for one category. (Share links clamp at AMOUNT_MAX.) */
+export const TYPED_AMOUNT_MAX = 10_000_000
+
+/** Annual dollars from "18000", "18,000", "$18k", "18.5k", "$1.2m". Null when not a number in 0..$10M. */
 export function parseAmount(raw: string): number | null {
   if (/%/.test(raw)) return null
   const v = parseLoose(raw, 'currency')
-  if (v === null || v < 0) return null
-  return Math.min(AMOUNT_MAX, Math.round(v))
+  if (v === null || v < 0 || v > TYPED_AMOUNT_MAX) return null
+  return Math.round(v)
 }
 
 /** A % change versus home ("-33", "−33%", "+20") as a ratio (0.67, 1.2), clamped; null when not a number. */
 export function parseChange(raw: string): number | null {
-  const v = parseFloat(raw.replace(/[−–]/g, '-').replace(/[%+\s]/g, ''))
-  if (!Number.isFinite(v)) return null
+  const s = raw.replace(/[−–]/g, '-').replace(/[%+\s]/g, '')
+  if (!/^-?(\d+\.?\d*|\.\d+)$/.test(s)) return null
+  const v = parseFloat(s)
   return Math.max(RATIO_MIN, Math.min(RATIO_MAX, 1 + v / 100))
+}
+
+/** Inline hints for an entry that didn't parse. */
+export const AMOUNT_HINT = 'Enter a yearly amount up to $10M, like 18k'
+export const CHANGE_HINT = 'Enter a change versus home, like -20'
+
+/** The % pill text for a change (0.2 -> "+20%"); beyond ±999% it reads ">+999%" so it fits its column. */
+export function changeLabel(change: number, pct: (v: number) => string): string {
+  if (Math.abs(change) < 0.005) return '±0%'
+  if (change > 9.99) return '>+999%'
+  return pct(change)
 }
 
 function withoutRatio(r: SpendOverrides['ratioOverrides'], c: BudgetCategory): SpendOverrides['ratioOverrides'] {

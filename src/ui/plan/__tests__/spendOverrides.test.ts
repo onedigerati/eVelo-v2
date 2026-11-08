@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { clearRow, hasAnyOverride, parseAmount, parseChange, resetAll, rowOverride, setAmount, setRatio } from '../spendOverrides'
+import { changeLabel, clearRow, hasAnyOverride, parseAmount, parseChange, resetAll, rowOverride, setAmount, setRatio } from '../spendOverrides'
 
 describe('parseAmount', () => {
   it.each([
@@ -14,7 +14,8 @@ describe('parseAmount', () => {
     ['$0', 0],
   ])('%s -> %d', (raw, v) => expect(parseAmount(raw)).toBe(v))
   it.each(['', 'abc', '-500', '18%', '1.2.3', 'k'])('rejects %j', (raw) => expect(parseAmount(raw)).toBeNull())
-  it('caps at 1e9', () => expect(parseAmount('5b')).toBe(1e9))
+  it.each(['1b', '5b', '10000001', '$10.5m', '1e12', 'abc', '-5'])('rejects out-of-range or junk %j', (raw) => expect(parseAmount(raw)).toBeNull())
+  it('accepts up to $10M', () => expect(parseAmount('10m')).toBe(10_000_000))
 })
 
 describe('parseChange', () => {
@@ -27,6 +28,8 @@ describe('parseChange', () => {
     expect(parseChange('-100')).toBe(0.05)
     expect(parseChange('900')).toBe(5)
     expect(parseChange('x')).toBeNull()
+    expect(parseChange('12abc')).toBeNull()
+    expect(parseChange('')).toBeNull()
   })
 })
 
@@ -92,5 +95,16 @@ describe('override set/clear', () => {
     clearRow(start, 'bangkok', 'dining')
     resetAll(start, 'bangkok')
     expect(start).toEqual(copy)
+  })
+})
+
+describe('changeLabel', () => {
+  const pct = (v: number) => `${v > 0 ? '+' : ''}${Math.round(v * 100)}%`
+  it('formats, flattens near zero and caps huge changes', () => {
+    expect(changeLabel(0.2, pct)).toBe('+20%')
+    expect(changeLabel(-0.33, pct)).toBe('-33%')
+    expect(changeLabel(0.001, pct)).toBe('±0%')
+    expect(changeLabel(9.99, pct)).toBe('+999%')
+    expect(changeLabel(181817, pct)).toBe('>+999%')
   })
 })

@@ -1,0 +1,43 @@
+Playwright locator(".expat__card").ariaSnapshot(), desktop 1280, after the edits above
+
+- text: Spending in Bangkok
+- button "How spending in Bangkok is worked out"
+- text: $111,194 /yr −36% vs $175K in St. Louis · THB · FX vol 7%
+- list "Yearly cost by category in Bangkok, versus St. Louis":
+  - listitem:
+    - text: Housing
+    - 'button "Housing in Bangkok: $18K a year, your amount, edit"': $18K
+    - 'button "Housing in Bangkok: −62% versus home, edit"': −62%
+    - button "Reset Housing to the city estimate"
+  - listitem:
+    - text: Groceries
+    - 'button "Groceries in Bangkok: $10K a year, edit"': $10K
+    - 'button "Groceries in Bangkok: −50% versus home, your change, edit"': −50%
+    - button "Reset Groceries to the city estimate"
+  - listitem:
+    - text: Dining out
+    - 'button "Dining out in Bangkok: $12K a year, edit"': $12K
+    - 'button "Dining out in Bangkok: −20% versus home, edit"': −20%
+  - listitem:
+    - text: Transportation
+    - 'button "Transportation in Bangkok: $16K a year, edit"': $16K
+    - 'button "Transportation in Bangkok: −14% versus home, edit"': −14%
+  - listitem:
+    - text: Utilities & phone
+    - 'button "Utilities & phone in Bangkok: $8.6K a year, edit"': $8.6K
+    - 'button "Utilities & phone in Bangkok: −14% versus home, edit"': −14%
+  - listitem:
+    - text: Healthcare
+    - 'button "Healthcare in Bangkok: $13K a year, your amount, edit"': $13K
+    - 'button "Healthcare in Bangkok: −57% versus home, edit"': −57%
+    - button "Reset Healthcare to the city estimate"
+  - listitem:
+    - text: Travel
+    - 'button "Travel in Bangkok: $4.5K a year, your amount, edit"': $4.5K
+    - button "Reset Travel to the city estimate"
+  - listitem:
+    - text: Everything else
+    - 'button "Everything else in Bangkok: $30K a year, edit"': $30K
+    - 'button "Everything else in Bangkok: −14% versus home, edit"': −14%
+- text: Tap a % or $ to set your own.
+- button "Reset all"

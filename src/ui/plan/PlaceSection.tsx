@@ -1,5 +1,5 @@
 import { AnimatePresence, m as motion } from 'framer-motion'
-import { useEffect, useRef, useState, type CSSProperties, type KeyboardEvent } from 'react'
+import { useEffect, useId, useRef, useState, type CSSProperties, type KeyboardEvent } from 'react'
 import { CITY_BY_ID } from '../../data/cities'
 import { amountsTotal, BUDGET_CATEGORIES, budgetTotal, categoryRatios, destinationAmounts } from '../../engine/cost'
 import type { BudgetCategory } from '../../engine/types'
@@ -9,7 +9,7 @@ import { ease } from '../motion'
 import { AnimatedNumber, cx, InfoTip, Section, Select, Slider, type SelectOption } from '../primitives'
 import { catColor, CATEGORY_LABEL } from './BudgetEditor'
 import { CITY_OPTIONS, cityLabel } from './placeholderCities'
-import { clearRow, hasAnyOverride, parseAmount, parseChange, resetAll, rowOverride, setAmount, setRatio, type SpendOverrides } from './spendOverrides'
+import { AMOUNT_HINT, CHANGE_HINT, changeLabel, clearRow, hasAnyOverride, parseAmount, parseChange, resetAll, rowOverride, setAmount, setRatio, type SpendOverrides } from './spendOverrides'
 
 const STAY = '__stay'
 
@@ -197,58 +197,74 @@ function RatioRow({
 }) {
   const [editing, setEditing] = useState<Field | null>(null)
   const [draft, setDraft] = useState('')
+  const [invalid, setInvalid] = useState(false)
+  const hintId = useId()
   const initial = useRef('')
   const done = useRef(false)
-  const refocus = useRef<Field | null>(null)
+  // Where focus goes once the input closes: back to the field's button, or (Tab) on to the next stop.
+  const refocus = useRef<{ field: Field; next: boolean } | null>(null)
   const amtBtn = useRef<HTMLButtonElement>(null)
   const chgBtn = useRef<HTMLButtonElement>(null)
+  const resetBtn = useRef<HTMLButtonElement>(null)
   useEffect(() => {
-    if (editing !== null || refocus.current === null) return
-    ;(refocus.current === 'amt' ? amtBtn : chgBtn).current?.focus()
+    const r = refocus.current
+    if (editing !== null || r === null) return
     refocus.current = null
+    const own = (r.field === 'amt' ? amtBtn : chgBtn).current
+    if (!r.next) return own?.focus()
+    // Tab: the next stop in this row (the % after the $, else the ×), else whatever follows the row.
+    const inRow = [r.field === 'amt' ? chgBtn.current : null, resetBtn.current].find((b) => b)
+    if (inRow) return inRow.focus()
+    if (own) focusAfter(own)
   }, [editing])
 
   const name = CATEGORY_LABEL[c]
   const hasHome = homeAmt > 0
   const change = hasHome ? amount / homeAmt - 1 : 0
-  const chgLabel = Math.abs(change) < 0.005 ? '±0%' : percent(change, { signed: true })
+  const chgLabel = changeLabel(change, (v) => percent(v, { signed: true }))
   const amtLabel = currencyCompact(amount)
 
   const begin = (f: Field) => {
     const v = f === 'amt' ? String(Math.round(amount)) : String(Math.round(change * 100))
     initial.current = v
     done.current = false
+    setInvalid(false)
     setDraft(v)
     setEditing(f)
   }
-  const finish = (save: boolean, focusBack: boolean) => {
-    if (done.current || editing === null) return
-    done.current = true
+  /** Closes the input; returns false (and keeps it open, flagged) when `stayOnInvalid` and the entry doesn't parse. */
+  const finish = (save: boolean, focus: 'back' | 'next' | null, stayOnInvalid = false): boolean => {
+    if (done.current || editing === null) return true
     // An untouched draft (tabbing through) sets nothing.
     if (save && draft.trim() !== initial.current) {
-      if (editing === 'amt') {
-        const v = parseAmount(draft)
-        if (v !== null) onAmount(v)
-      } else {
-        const r = parseChange(draft)
-        if (r !== null) onRatio(r)
+      const v = editing === 'amt' ? parseAmount(draft) : parseChange(draft)
+      if (v === null && stayOnInvalid) {
+        setInvalid(true)
+        return false
       }
+      if (v !== null) (editing === 'amt' ? onAmount : onRatio)(v)
     }
-    refocus.current = focusBack ? editing : null
+    done.current = true
+    refocus.current = focus ? { field: editing, next: focus === 'next' } : null
     setEditing(null)
+    return true
   }
   const onKey = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       e.preventDefault()
-      finish(true, true)
+      finish(true, 'back', true)
+    } else if (e.key === 'Tab' && !e.shiftKey) {
+      // The × is hidden while editing, so step to it (or past the row) ourselves once the input closes.
+      e.preventDefault()
+      finish(true, 'next', true)
     } else if (e.key === 'Escape') {
       // Keep the Escape from closing a surrounding sheet.
       e.stopPropagation()
-      finish(false, true)
+      finish(false, 'back')
     }
   }
   const input = (f: Field) => (
-    <span className={cx('ratio__edit', f === 'amt' && 'ratio__edit--amt')}>
+    <span className={cx('ratio__edit', f === 'amt' && 'ratio__edit--amt', invalid && 'is-invalid')}>
       {f === 'amt' && <span aria-hidden="true">$</span>}
       <input
         className="num"
@@ -256,10 +272,15 @@ function RatioRow({
         inputMode={f === 'amt' ? 'text' : 'numeric'}
         enterKeyHint="done"
         aria-label={f === 'amt' ? `${name} in ${cityName}, dollars a year` : `${name} in ${cityName}, change versus home, percent`}
+        aria-invalid={invalid || undefined}
+        aria-describedby={invalid ? hintId : undefined}
         value={draft}
-        onChange={(e) => setDraft(e.currentTarget.value)}
+        onChange={(e) => {
+          setDraft(e.currentTarget.value)
+          setInvalid(false)
+        }}
         onFocus={(e) => e.currentTarget.select()}
-        onBlur={() => finish(true, false)}
+        onBlur={() => finish(true, null)}
         onKeyDown={onKey}
       />
       {f === 'chg' && <span aria-hidden="true">%</span>}
@@ -312,6 +333,7 @@ function RatioRow({
       )}
       {override && editing === null ? (
         <button
+          ref={resetBtn}
           type="button"
           className="ratio__reset"
           aria-label={`Reset ${name} to the city estimate`}
@@ -328,6 +350,18 @@ function RatioRow({
       ) : (
         <span className="ratio__reset-ph" aria-hidden="true" />
       )}
+      {editing !== null && invalid && (
+        <span id={hintId} className="ratio__hint" role="alert">
+          {editing === 'amt' ? AMOUNT_HINT : CHANGE_HINT}
+        </span>
+      )}
     </li>
   )
+}
+
+/** Focus the first tabbable element after `el` in document order (used when a Tab leaves an edit field). */
+function focusAfter(el: HTMLElement) {
+  const all = [...document.querySelectorAll<HTMLElement>('a[href], button:not([disabled]), input:not([disabled]), select, textarea, [tabindex]:not([tabindex="-1"])')]
+  const next = all.find((x) => el.compareDocumentPosition(x) & Node.DOCUMENT_POSITION_FOLLOWING && x.offsetParent !== null)
+  ;(next ?? el).focus()
 }
