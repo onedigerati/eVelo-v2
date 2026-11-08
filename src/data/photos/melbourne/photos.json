@@ -1,0 +1,62 @@
+[
+  {
+    "commons": "File:Princes Bridge and Melbourne skyline, southwest view 20230219 1.jpg",
+    "file": "1.webp",
+    "caption": "Princes Bridge over the Yarra, with St Paul's Cathedral and the city towers",
+    "alt": "A stone arched bridge across a calm river, with a Gothic cathedral spire and modern office towers behind",
+    "author": "DXR",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Princes_Bridge_and_Melbourne_skyline,_southwest_view_20230219_1.jpg",
+    "width": 1280,
+    "height": 801
+  },
+  {
+    "commons": "File:W8 class tram -961 operating a route 35 City Circle service on Spring Street crossing Collins Street, Melbourne.jpg",
+    "file": "2.webp",
+    "caption": "A heritage tram on the free City Circle route, part of the world's largest tram network",
+    "alt": "A green and cream vintage tram crossing a city intersection, with stone buildings, palms and bare trees behind",
+    "author": "Philip Mallis",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:W8_class_tram_-961_operating_a_route_35_City_Circle_service_on_Spring_Street_crossing_Collins_Street,_Melbourne.jpg",
+    "width": 1280,
+    "height": 853
+  },
+  {
+    "commons": "File:Lake in Melbourne Botanic Gardens 20180726-016.jpg",
+    "file": "3.webp",
+    "caption": "The ornamental lake in the Royal Botanic Gardens, a short walk from the city",
+    "alt": "A still lake reflecting palms and tall trees, with reeds in the foreground and a small cottage on the far bank",
+    "author": "Gary Houston",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Lake_in_Melbourne_Botanic_Gardens_20180726-016.jpg",
+    "width": 1152,
+    "height": 865
+  },
+  {
+    "commons": "File:Brighton bathing boxes.jpg",
+    "file": "4.webp",
+    "caption": "Bathing boxes on Brighton beach, with the city skyline across Port Phillip Bay",
+    "alt": "A sandy bay beach curving into the distance, with a row of painted wooden beach huts on the right and a faint city skyline on the horizon",
+    "author": "Misaochan2",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Brighton_bathing_boxes.jpg",
+    "width": 1280,
+    "height": 960
+  },
+  {
+    "commons": "File:Princetown (AU), Port Campbell National Park, Twelve Apostles -- 2019 -- 0969.jpg",
+    "file": "5.webp",
+    "caption": "The Twelve Apostles on the Great Ocean Road, a long day trip west",
+    "alt": "Two golden limestone stacks standing in white surf off a line of tall coastal cliffs under a cloudy sky",
+    "author": "Dietmar Rabich",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Princetown_(AU),_Port_Campbell_National_Park,_Twelve_Apostles_--_2019_--_0969.jpg",
+    "width": 1280,
+    "height": 853
+  }
+]

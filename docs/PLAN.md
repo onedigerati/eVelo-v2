@@ -11,11 +11,11 @@ Stage 3 of 6 · Asia-Pacific
 Risk: content only (profile text, scores and photos; no code).
 Scope: Auckland, Cebu, Da Nang, Hanoi, Ho Chi Minh City, Manila, Melbourne, Osaka, Seoul, Singapore, Sydney — profile + 5 photos each. Eight are written and reviewed; Auckland, Melbourne and Sydney are written but need an independent content review first. The commit takes only these paths.
 Checks:
-- [ ] Each of the 11 has a profile to the README's standard, with sources, scored on the 1–5 rubric; Auckland, Melbourne and Sydney pass an independent content review with its findings applied (proof: test + review notes)
-- [ ] Each has exactly 5 openly licensed photos with credits, checked on a contact sheet (proof: test + contact sheet)
-- [ ] In a clean tree holding only stages 1–3 paths: type check, tests and build pass (proof: test)
-- [ ] Each of the 11 opens from its list "Profile" chip with 5 photos loaded, "Profile · <country>" in the eyebrow, and stays out of the top picks; both themes and a phone (proof: run the product)
-- [ ] Preview republished with stage 3's 55 photos added to the asset store (proof: run the product on the preview build)
+- [x] Each of the 11 has a profile to the README's standard, with sources, scored on the 1–5 rubric; Auckland, Melbourne and Sydney pass an independent content review with its findings applied (proof: test + review notes)
+- [x] Each has exactly 5 openly licensed photos with credits, checked on a contact sheet (proof: test + contact sheet)
+- [x] In a clean tree holding only stages 1–3 paths: type check, tests and build pass (proof: test)
+- [x] Each of the 11 opens from its list "Profile" chip with 5 photos loaded, "Profile · <country>" in the eyebrow, and stays out of the top picks; both themes and a phone (proof: run the product)
+- [x] Preview republished with stage 3's 55 photos added to the asset store (proof: run the product on the preview build)
 Open: none
 Mode: autopilot — resumed 2026-11-07 on the user's pre-approval; stages 1–2 closed.
 Notes:
@@ -27,7 +27,7 @@ Notes:
 ## Stages
 - [x] 1. Unranked profiles + preview assets — profiles for non-picks, list chip and map-card profile link, US profile style, Tokyo + Austin pilots, preview photos via the asset store; preview; stop for review
 - [x] 2. Europe, Africa, Middle East — Amsterdam, Berlin, Dublin, London, Paris, Zurich, Cape Town, Dubai: profiles + photos, contact sheet
-- [ ] 3. Asia-Pacific — Auckland, Cebu, Da Nang, Hanoi, Ho Chi Minh City, Manila, Melbourne, Osaka, Seoul, Singapore, Sydney: profiles + photos, contact sheet
+- [x] 3. Asia-Pacific — Auckland, Cebu, Da Nang, Hanoi, Ho Chi Minh City, Manila, Melbourne, Osaka, Seoul, Singapore, Sydney: profiles + photos, contact sheet
 - [ ] 4. Canada + South America — Montréal, Toronto, Vancouver, Bogotá, Buenos Aires: profiles + photos, contact sheet
 - [ ] 5. US West + South — San Francisco, Los Angeles, San Diego, Seattle, Portland, Denver, Boise, Salt Lake City, Phoenix, Scottsdale, Las Vegas, Honolulu, Dallas, Houston, Miami, Tampa, Orlando, Sarasota: profiles + photos, contact sheet
 - [ ] 6. US East + Midwest + launch — New York City, Boston, Philadelphia, Pittsburgh, Washington DC, Atlanta, Charlotte, Raleigh, Asheville, Nashville, Chicago, Minneapolis, Kansas City, St. Louis; a test requires a profile and 5 photos for all 133; full preview; deploy on approval
@@ -49,6 +49,7 @@ Notes:
 - 2026-11-07 · Upload the photo test batch and publish the stage 1 preview — user: "yes, upload and publish the preview".
 - 2026-11-07 · The hosted preview is checked by the user in their own browser: a headless browser can't log in to claude.ai, and Claude in Chrome isn't supported from WSL (the user picked Chrome control first; the docs rule it out here). Locally, the v30 build runs against a stand-in for the asset store — PM's call.
 - 2026-11-07 · Stage 1 closed on the user's check of preview v30 — user: "checked the preview, all good — close stage 1".
+- 2026-11-07 · Builders for stages 4 and 5 start while stage 3 is verified: Canada, South America, US Pacific + Hawaii, US Mountain (four builders, each owning its cities' files) — user asked whether subagents were being used to go faster; PM's call on the split.
 
 ## Open questions
 - WebKit's touch path (iPhone) is untested until the user tries it; the full-size view's swipe adds to it — user, when they try it.

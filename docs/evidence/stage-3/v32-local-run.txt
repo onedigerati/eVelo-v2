@@ -1,0 +1,26 @@
+$ node s2v31.js (v32 artifact-mode build of the stages 1–3 tree, served by blobserve.js on :5196; a photo counts only if loaded from /_blob/)
+v32-desk-light (overflow 0px)
+  auckland: 5/5 · "NZ Profile · New Zealand" · in top picks: false
+  cebu: 5/5 · "PH Profile · Philippines" · in top picks: false
+  da-nang: 5/5 · "VN Profile · Vietnam" · in top picks: false
+  hanoi: 5/5 · "VN Profile · Vietnam" · in top picks: false
+  ho-chi-minh-city: 5/5 · "VN Profile · Vietnam" · in top picks: false
+  manila: 5/5 · "PH Profile · Philippines" · in top picks: false
+  melbourne: 5/5 · "AU Profile · Australia" · in top picks: false
+  osaka: 5/5 · "JP Profile · Japan" · in top picks: false
+  seoul: 5/5 · "KR Profile · South Korea" · in top picks: false
+  singapore: 5/5 · "SG Profile · Singapore" · in top picks: false
+  sydney: 5/5 · "AU Profile · Australia" · in top picks: false
+v32-phone-dark (overflow 0px)
+  auckland: 5/5 · "NZ Profile · New Zealand" · in top picks: false
+  cebu: 5/5 · "PH Profile · Philippines" · in top picks: false
+  da-nang: 5/5 · "VN Profile · Vietnam" · in top picks: false
+  hanoi: 5/5 · "VN Profile · Vietnam" · in top picks: false
+  ho-chi-minh-city: 5/5 · "VN Profile · Vietnam" · in top picks: false
+  manila: 5/5 · "PH Profile · Philippines" · in top picks: false
+  melbourne: 5/5 · "AU Profile · Australia" · in top picks: false
+  osaka: 5/5 · "JP Profile · Japan" · in top picks: false
+  seoul: 5/5 · "KR Profile · South Korea" · in top picks: false
+  singapore: 5/5 · "SG Profile · Singapore" · in top picks: false
+  sydney: 5/5 · "AU Profile · Australia" · in top picks: false
+errors: []

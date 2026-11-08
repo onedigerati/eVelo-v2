@@ -1,0 +1,12 @@
+$ npm test   # same tree
+npm notice run evelo@2.0.0 test
+npm notice run vitest run
+
+ RUN  v5.1.0 /tmp/claude-1000/-home-jonah-repos-eVelo-v2/f454f752-8be2-4e8c-bd5d-a700db9727ea/scratchpad/pv3
+
+
+ Test Files  23 passed (23)
+      Tests  357 passed (357)
+   Start at  22:26:22
+   Duration  7.09s (transform 77%, tests 16%, import 7%)
+

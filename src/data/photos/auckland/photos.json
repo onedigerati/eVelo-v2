@@ -1,0 +1,62 @@
+[
+  {
+    "commons": "File:Auckland skyline - May 2024.jpg",
+    "file": "1.webp",
+    "caption": "The city and the Sky Tower across the Waitematā Harbour from the North Shore",
+    "alt": "A city skyline with a tall needle-like tower across a wide harbour at sunset, with a small boat leaving a wake",
+    "author": "elpinto007",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Auckland_skyline_-_May_2024.jpg",
+    "width": 1280,
+    "height": 853
+  },
+  {
+    "commons": "File:Rangitoto Island as seen from Mount Victoria Reserve in Devonport, North Shore City 20100128 1.jpg",
+    "file": "2.webp",
+    "caption": "Devonport, a 12-minute ferry ride from the city, with the Rangitoto volcano across the channel",
+    "alt": "Low-rise houses among trees in a seaside suburb in the foreground, with a turquoise channel and a broad, gently sloping volcanic island behind",
+    "author": "DXR",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Rangitoto_Island_as_seen_from_Mount_Victoria_Reserve_in_Devonport,_North_Shore_City_20100128_1.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "commons": "File:Tāmaki Makaurau Auckland, Part IV - Auckland9603.jpg",
+    "file": "3.webp",
+    "caption": "The crater of Maungawhau / Mount Eden, one of the city's volcanic cones",
+    "alt": "A deep grassy volcanic crater in the foreground, with the city spread out behind and the Sky Tower on the horizon",
+    "author": "lumoplank",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:T%C4%81maki_Makaurau_Auckland,_Part_IV_-_Auckland9603.jpg",
+    "width": 1280,
+    "height": 853
+  },
+  {
+    "commons": "File:Lion Rock, Piha Beach.jpg",
+    "file": "4.webp",
+    "caption": "Lion Rock on Piha's black-sand surf beach, about 45 minutes west",
+    "alt": "A large rugged rock outcrop rising from a beach with white surf rolling onto dark sand",
+    "author": "russellstreet",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lion_Rock,_Piha_Beach.jpg",
+    "width": 1280,
+    "height": 761
+  },
+  {
+    "commons": "File:Waiheke Island Vineyard.jpg",
+    "file": "5.webp",
+    "caption": "Vineyards on Waiheke Island, about 40 minutes by ferry",
+    "alt": "Rows of vines on rolling green hills under a blue sky with white clouds",
+    "author": "russellstreet",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Waiheke_Island_Vineyard.jpg",
+    "width": 1280,
+    "height": 853
+  }
+]

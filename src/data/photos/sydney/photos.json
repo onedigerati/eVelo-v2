@@ -1,0 +1,62 @@
+[
+  {
+    "commons": "File:Sydney Opera House and Harbour Bridge, southeast view 20230224 1.jpg",
+    "file": "1.webp",
+    "caption": "The Opera House and Harbour Bridge across Farm Cove",
+    "alt": "The white sail-shaped roofs of the Sydney Opera House in front of the steel arch of the Harbour Bridge and the city towers, across calm water",
+    "author": "DXR",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Sydney_Opera_House_and_Harbour_Bridge,_southeast_view_20230224_1.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "commons": "File:MV Pemulwuy at Milsons Point, November 2016 (4).jpg",
+    "file": "2.webp",
+    "caption": "A harbour ferry at Milsons Point wharf, under the Harbour Bridge",
+    "alt": "A green and cream ferry tied up at a small wharf beneath the steel arch of the Harbour Bridge, with the Opera House roofs in the distance",
+    "author": "Philip Terry Graham",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:MV_Pemulwuy_at_Milsons_Point,_November_2016_(4).jpg",
+    "width": 1152,
+    "height": 857
+  },
+  {
+    "commons": "File:Sydney (AU), Coastal Cliff Walk -- 2019 -- 2334.jpg",
+    "file": "3.webp",
+    "caption": "The harbour and city skyline from the coastal walk in the eastern suburbs",
+    "alt": "Leafy harbourside suburbs and red-roofed houses in the foreground, with sailing boats on a blue harbour and the distant city skyline and bridge",
+    "author": "Dietmar Rabich",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Sydney_(AU),_Coastal_Cliff_Walk_--_2019_--_2334.jpg",
+    "width": 1280,
+    "height": 853
+  },
+  {
+    "commons": "File:Sydney (AU), Royal Botanic Gardens -- 2019 -- 3082.jpg",
+    "file": "4.webp",
+    "caption": "A jacaranda in flower in the Royal Botanic Garden",
+    "alt": "A large tree covered in purple blossom beside palms and lawns, with a curving path through a sunny garden",
+    "author": "Dietmar Rabich",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Sydney_(AU),_Royal_Botanic_Gardens_--_2019_--_3082.jpg",
+    "width": 1024,
+    "height": 683
+  },
+  {
+    "commons": "File:Blue Mountains - Three Sisters.jpg",
+    "file": "5.webp",
+    "caption": "The Three Sisters in the Blue Mountains, about two hours west by train",
+    "alt": "Three tall weathered sandstone pillars rising from a forested cliff edge above a hazy blue-green valley",
+    "author": "jkb",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Blue_Mountains_-_Three_Sisters.jpg",
+    "width": 1024,
+    "height": 768
+  }
+]

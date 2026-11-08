@@ -1,0 +1,3 @@
+$ npm run typecheck   # clean worktree: 8fba34f + stage 3 paths
+npm notice run evelo@2.0.0 typecheck
+npm notice run tsc -b
