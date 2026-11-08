@@ -1,0 +1,11 @@
+$ node walk.mjs  # 1280x800, Tab order through the rail into the results column
+rail-ish containers: ["rail scrollable=true overflowY=auto"]
+## Forward Tab walk from Share, starting at scrollY 1400 (pill shown)
+1 {"el":"BUTTON.icon-btn \"Reset plan to defaults\"","inRail":true,"inCanvas":false,"scrollY":1400,"pill":true}
+2 {"el":"BUTTON.section__head \"01Portfolio\"","inRail":true,"inCanvas":false,"scrollY":1400,"pill":true}
+3 {"el":"INPUT.numfield__input \"\"","inRail":true,"inCanvas":false,"scrollY":1400,"pill":true}
+79 {"el":"BUTTON.verdict-pill \"Holds in 80% of futures. Back to the ver\"","inRail":false,"inCanvas":true,"scrollY":1400,"pill":true}
+## Shift+Tab walk backward from the fan chart's first control at scrollY 1400
+0 {"el":"BUTTON.seg__opt \"Net worth\"","inRail":false,"inCanvas":true,"scrollY":542,"pill":true}
+1 {"el":"BUTTON.verdict-pill \"Holds in 80% of futures. Back to the ver\"","inRail":false,"inCanvas":true,"scrollY":540,"pill":true}
+2 {"el":"BUTTON.section__head \"05ModelHistory replay · Balanced · 4,000\"","inRail":true,"inCanvas":false,"scrollY":540,"pill":true}

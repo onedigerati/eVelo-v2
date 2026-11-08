@@ -1,0 +1,13 @@
+$ npx vitest run src/ui/shell/__tests__/pillDelta.test.ts
+npm notice run evelo@2.0.0 npx
+npm notice run 'vitest' run src/ui/shell/__tests__/pillDelta.test.ts
+
+ RUN  v5.1.0 /home/jonah/repos/eVelo-v2
+
+
+ Test Files  1 passed (1)
+      Tests  16 passed (16)
+   Start at  16:34:14
+   Duration  110ms (import 47%, transform 28%, tests 17%, worker 7%)
+
+exit 0

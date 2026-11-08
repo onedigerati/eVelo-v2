@@ -1,0 +1,19 @@
+$ node d3d4.mjs  # chromium 1280x800 @4x, vite preview of npm run build at a4a131d
+## D3 light: margin-call plot scrolled under the pill; pill focused by keyboard (Tab), then chart hovered
+after Tab: active BUTTON.verdict-pill | pill {"yielding":false,"opacity":"1","ariaHidden":null,"inert":false,"focusVisible":true}
+chart hovered: active H1#verdict-h.verdict__headline | pill {"yielding":true,"opacity":"0","ariaHidden":"true","inert":true,"focusVisible":false}
+next Tab goes to BUTTON.seg__opt
+pointer away: pill {"yielding":false,"opacity":"1","ariaHidden":null,"inert":false,"focusVisible":false}
+## D4 light: delta chip contrast at 4x device pixels
+down "−61 pts" css oklab(0.456694 0.111359 0.0727773) -> painted text rgb(147,51,32) on chip bg pixel rgb(238,221,213): 5.83:1 | most-contrasting glyph pixel rgb(144,50,31) 5.99:1 (4x capture 260,88)
+up "+61 pts" css oklab(0.422854 -0.0778179 0.0233879) -> painted text rgb(21,91,65) on chip bg pixel rgb(219,227,217): 6.14:1 | most-contrasting glyph pixel rgb(21,89,63) 6.32:1 (4x capture 260,88)
+console errors []
+## D3 dark: margin-call plot scrolled under the pill; pill focused by keyboard (Tab), then chart hovered
+after Tab: active BUTTON.verdict-pill | pill {"yielding":false,"opacity":"1","ariaHidden":null,"inert":false,"focusVisible":true}
+chart hovered: active H1#verdict-h.verdict__headline | pill {"yielding":true,"opacity":"0","ariaHidden":"true","inert":true,"focusVisible":false}
+next Tab goes to BUTTON.seg__opt
+pointer away: pill {"yielding":false,"opacity":"1","ariaHidden":null,"inert":false,"focusVisible":false}
+## D4 dark: delta chip contrast at 4x device pixels
+down "−61 pts" css oklab(0.776025 0.114703 0.0639755) -> painted text rgb(255,148,133) on chip bg pixel rgb(38,27,24): 7.85:1 | most-contrasting glyph pixel rgb(255,151,137) 8.02:1 (4x capture 260,88)
+up "+61 pts" css oklab(0.852704 -0.109555 0.0291954) -> painted text rgb(129,230,188) on chip bg pixel rgb(20,39,33): 10.42:1 | most-contrasting glyph pixel rgb(133,231,190) 10.56:1 (4x capture 260,88)
+console errors []

@@ -1,0 +1,6 @@
+$ node empty2.mjs  # 1280x800: remove all holdings, then reset to defaults
+## empty plan: verdict-number 0 .docked-verdict 0
+empty-state buttons: ["Add a holding"]
+after reset: verdict-number 1
+scrolled 1400 after restore: true Holds in 80% of futures. Back to the verdict. delta chip 0
+console errors []

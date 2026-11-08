@@ -1,0 +1,29 @@
+$ node edges.mjs  # resize across breakpoints, empty plan, simulated phone keyboard
+## resize between breakpoints with the page scrolled to 1400
+width 1280: pill shown at [739,76,254,44] {"y":1400,"num":-1029,"docked":1,"sheet":false}
+width 1100: pill shown at [645,76,254,44] {"y":1402,"num":-1046,"docked":1,"sheet":false}
+width 1099: pill shown at [643,12,254,44] {"y":1402,"num":-1070,"docked":1,"sheet":true}
+width 900: pill shown at [543,12,254,44] {"y":1360,"num":-1045,"docked":1,"sheet":true}
+width 700: pill shown at [501,12,138,44] {"y":1321,"num":-1024,"docked":1,"sheet":true}
+width 699: no pill {"y":0,"num":null,"docked":0,"sheet":false}
+width 390: no pill {"y":0,"num":null,"docked":0,"sheet":false}
+width 699: no pill {"y":0,"num":null,"docked":0,"sheet":false}
+width 700: pill shown at [501,12,138,44] {"y":0,"num":299,"docked":1,"sheet":true}
+width 1100: no pill {"y":0,"num":357,"docked":1,"sheet":false}
+width 1440: no pill {"y":0,"num":380,"docked":1,"sheet":false}
+1440 scrolled to 0: no pill
+1440 scrolled to 1400: pill shown at [822,76,254,44]
+topbar bottom vs pill top: [65,76]
+## empty plan: remove every holding at 1280x800
+holdings left: 0 | verdict-number: 0 | .docked-verdict: 0
+empty plan scrollY 0 (actual 0): no pill
+empty plan scrollY 600 (actual 1): no pill
+empty plan scrollY 2000 (actual 1): no pill
+after choosing "Three-fund" model: verdict-number 0
+scrolled 1400: no pill delta chip: 0
+console errors []
+## phone keyboard docking (simulated iOS: visualViewport.height 844 -> 500, offsetTop 300)
+before focus: {"style":null,"cls":"verdict-pill-wrap","top":57}
+editing + keyboard: {"style":"transform: translateY(300px);","cls":"verdict-pill-wrap is-docked","top":300}
+after blur: {"style":"","cls":"verdict-pill-wrap","top":57}
+console errors []

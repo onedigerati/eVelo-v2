@@ -1,0 +1,20 @@
+$ node charts.mjs light  # 1280x800, chart plots scrolled under the docked pill, then hovered
+data-theme light
+## fan: plot top 85, pill rect [739,76,254,44]; before hover: {"yielding":false,"pillOpacity":"1","ariaHidden":null,"inert":false}
+hover plot below the pill band: {"yielding":true,"pillOpacity":"0","ariaHidden":"true","inert":true} {"readout":[884,171,221,137],"pill":[739,76,254,44],"boxesOverlap":false,"topmostAtReadout":"chart-tick fan__clip-note","readoutOpacity":"1"}
+hover directly under the pill position: {"yielding":true,"pillOpacity":"0","ariaHidden":"true","inert":true} {"readout":[508,171,190,23],"pill":[739,76,254,44],"boxesOverlap":false,"topmostAtReadout":"fan__svg","readoutOpacity":"0"}
+pointer to top bar (off chart): {"yielding":false,"pillOpacity":"1","ariaHidden":null,"inert":false}
+pointer straight down from top bar onto the pill (pill catches it): {"yielding":false,"pillOpacity":"1","ariaHidden":null,"inert":false} {"readout":[508,171,190,23],"pill":[739,76,254,44],"boxesOverlap":false,"topmostAtReadout":"fan__svg","readoutOpacity":"0"}
+pointer away: {"yielding":false,"pillOpacity":"1","ariaHidden":null,"inert":false}
+## margincall: plot top 85, pill rect [739,76,254,44]; before hover: {"yielding":false,"pillOpacity":"1","ariaHidden":null,"inert":false}
+hover plot below the pill band: {"yielding":true,"pillOpacity":"0","ariaHidden":"true","inert":true} {"readout":[508,317,322,22],"pill":[739,76,254,44],"boxesOverlap":false,"topmostAtReadout":"","readoutOpacity":"1"}
+hover directly under the pill position: {"yielding":true,"pillOpacity":"0","ariaHidden":"true","inert":true} {"readout":[508,317,322,22],"pill":[739,76,254,44],"boxesOverlap":false,"topmostAtReadout":"","readoutOpacity":"1"}
+pointer to top bar (off chart): {"yielding":false,"pillOpacity":"1","ariaHidden":null,"inert":false}
+pointer straight down from top bar onto the pill (pill catches it): {"yielding":false,"pillOpacity":"1","ariaHidden":null,"inert":false} {"readout":[508,317,322,22],"pill":[739,76,254,44],"boxesOverlap":false,"topmostAtReadout":"mc__legend","readoutOpacity":"1"}
+pointer away: {"yielding":false,"pillOpacity":"1","ariaHidden":null,"inert":false}
+## keyboard focus on margin-call chart (plot under pill band) + ArrowRight: {"yielding":true,"pillOpacity":"0","ariaHidden":"true","inert":true}
+after blur: {"yielding":false,"pillOpacity":"1","ariaHidden":null,"inert":false}
+## pill keyboard-focused, then chart under it hovered: {"yielding":true,"pillOpacity":"0","ariaHidden":"true","inert":true} activeElement is pill: false
+## delta chip (down, "−N pts") contrast: {"chipBgPixel":[235,216,202],"chipText":[0,456694,0,111359,0,727773],"contrast":53091654.75}
+console errors []
+NOTE (recheck at b82b6e2): the chip now uses color-mix(), so getComputedStyle().color is oklab(...) and this script's rgb parse produces a meaningless contrast figure above; the pixel-measured chip contrast is in recheck-d3-d4.txt and recheck-d4-drawer.txt. In charts.mjs, 'activeElement is pill: false' means focus left the pill; where it went (#verdict-h) is shown in recheck-d3-d4.txt.

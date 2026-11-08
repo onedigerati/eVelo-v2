@@ -1,0 +1,5 @@
+$ node d4drawer.mjs  # chromium 900x1000 @4x, plan drawer open, Portfolio value edited in the drawer
+light drawer-mode down "−61 pts": painted text rgb(147,51,32) on chip bg pixel rgb(237,220,211): 5.77:1 | most-contrasting glyph pixel 5.93:1
+light drawer-mode up "+61 pts": painted text rgb(21,91,65) on chip bg pixel rgb(219,226,216): 6.1:1 | most-contrasting glyph pixel 6.27:1
+dark drawer-mode down "−61 pts": painted text rgb(255,148,133) on chip bg pixel rgb(37,24,21): 8.05:1 | most-contrasting glyph pixel 8.23:1
+dark drawer-mode up "+61 pts": painted text rgb(129,230,188) on chip bg pixel rgb(19,36,30): 10.76:1 | most-contrasting glyph pixel 10.91:1

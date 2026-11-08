@@ -1,0 +1,11 @@
+$ node phone.mjs  # 390x844, isMobile, hasTouch  # vite preview of npm run build at a4a131d
+## phone 390x844 at /#plan (Plan tab)
+docked-verdict in DOM: 0 | phone pill: {"tag":"A","href":"#outlook","label":"Holds in 80% of futures. See the outlook.","cls":"verdict-pill verdict-pill--holds","tone":"color-mix(in oklch, #0a6e4d 96.8%, #237a5c)","ring":true,"rect":[77,69,237,44],"slot":"verdict-pill-wrap","slotPos":"sticky","slotTop":"56px"}
+Plan tab scrolled 900: phone pill {"tag":"A","href":"#outlook","label":"Holds in 80% of futures. See the outlook.","cls":"verdict-pill verdict-pill--holds","tone":"color-mix(in oklch, #0a6e4d 96.8%, #237a5c)","ring":true,"rect":[77,68,237,44],"slot":"verdict-pill-wrap","slotPos":"sticky","slotTop":"56px"} | docked: 0
+after editing portfolio value on phone: phone pill {"tag":"A","href":"#outlook","label":"Holds in 60% of futures. See the outlook.","cls":"verdict-pill verdict-pill--bruised","tone":"#8a6312","ring":true,"rect":[77,69,236,44],"slot":"verdict-pill-wrap","slotPos":"sticky","slotTop":"56px"}
+## phone /#outlook: url http://localhost:4733/#outlook | verdict-number present 1
+outlook scrollY 0: .docked-verdict count 0 pill false
+outlook scrollY 600: .docked-verdict count 0 pill false
+outlook scrollY 1500: .docked-verdict count 0 pill false
+outlook scrollY 3000: .docked-verdict count 0 pill false
+console errors []

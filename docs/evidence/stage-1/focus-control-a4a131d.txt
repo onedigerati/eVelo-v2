@@ -1,0 +1,15 @@
+$ node focus-control.mjs  # chromium, vite preview of npm run build at a4a131d
+1280, Share (top bar) focused: BUTTON.btn "Share"
+  -> 900: BUTTON.btn "Share"
+  focused again, -> 1280: BUTTON.btn "Share"
+1280, "Net worth" segmented option (results column) focused: BUTTON.seg__opt "Net worth"
+  -> 900: BODY
+  focused again, -> 1280: BODY
+1280, verdict headline #verdict-h focused: H1#verdict-h.verdict__headline "Your plan holds in8080%%of futur"
+  -> 900: BODY
+  focused again, -> 1280: BODY
+## tablet 900: Share focused, Forward to #plan (drawer opens), Back (drawer closes)
+focused BUTTON.btn "Share"
+Forward: DIV.sheet "Your termsThe planYour terms01Po"
+Back (drawer closed): BUTTON.btn "Share"
+Share focused, Forward, Escape: BUTTON.btn "Share"

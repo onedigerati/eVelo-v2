@@ -1,0 +1,22 @@
+$ node a11y.mjs   # 1280x800  # vite preview of npm run build at a4a131d
+## a11y tree of .docked-verdict at top (pill hidden):
+
+pill in full-page aria snapshot at top? false
+## a11y tree of .docked-verdict scrolled to 1400 (pill shown):
+- button "Holds in 80% of futures. Back to the verdict.": Holds in 80% of futures
+## keyboard walk from top bar "Share" (scrollY 1400)
+Tab 78: BUTTON# .section__head "05ModelHistory replay · Balanced · 4,000 futures"
+Tab 79: BUTTON# .verdict-pill "Holds in 80% of futures. Back to the verdict."
+pill reached after N Tabs from Share (rail controls come first in DOM order): 79
+next Tab -> BUTTON# .seg__opt "Net worth"
+Shift+Tab back -> BUTTON# .verdict-pill "Holds in 80% of futures. Back to the verdict."
+skip link -> active MAIN#main .main "The planYour terms01PortfolioPortfolio value$Taxab" scrollY 675
+pill state while focused {"scrollY":1400,"ariaHidden":null,"inert":false}
+## after Enter on pill: scrollY samples every 100ms [1400,1352,881,306,141,74,35,32,32,32,32,32]
+active element: H1#verdict-h .verdict__headline "Your plan holds in8080%%of futures."
+verdict headline in view: {"headlineTop":149,"headlineBottom":339,"topbarBottom":65,"innerHeight":800} true
+pill after return: false
+## pill appear frames (opacity/transform every 50ms), reducedMotion=false ["0.251687/matrix(0.970068, 0, 0, 0.970068, 0, -7.48313)","0.641642/matrix(0.985666, 0, 0, 0.985666, 0, -3.58358)","0.917448/matrix(0.996698, 0, 0, 0.996698, 0, -0.825517)","0.97447/matrix(0.998979, 0, 0, 0.998979, 0, -0.255302)","0.993914/matrix(0.999757, 0, 0, 0.999757, 0, -0.0608593)"]
+## mouse click on pill -> active H1#verdict-h .verdict__headline "Your plan holds in8080%%of futures." scrollY 32
+## focused pill, then page scrolled to top (pill unmounts): active = H1#verdict-h .verdict__headline "Your plan holds in8080%%of futures."
+console errors []

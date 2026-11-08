@@ -1,0 +1,46 @@
+$ node drawer-recheck.mjs light  # chromium, vite preview of npm run build at a4a131d, tablet 900x1000 unless noted
+data-theme light
+## A. light: verdict number visible (top of page), open the drawer
+before open {"hash":"#outlook","w":900,"scrollY":0,"drawer":null,"pills":0}
+drawer open {"hash":"#plan","w":900,"scrollY":0,"drawer":440,"pills":1,"rect":[543,12,254,44],"inViewport":true,"overlapsPanel":false,"hits":["PILL","PILL","PILL"],"drawerMode":true,"portalled":true,"tabIndex":-1,"label":"Holds in 80% of futures. Close the plan and go to the verdict.","text":"Holds in 80% 80% of futures","opacity":"1","ariaHidden":null,"inert":false} active DIV.sheet "Your termsThe planYour terms01PortfolioP" inDialog=true
+## B. keyboard Tab inside the drawer: 120 Tabs forward, 30 Shift+Tabs; does focus ever leave the dialog or land on the pill?
+distinct focus stops 75 | stops outside dialog 0 | stops on pill 0
+## C. edit Portfolio value inside the drawer: pill updates live + delta chip
+set 1,000,000: before "Holds in 80% of futures. Close the plan and go to the verdict." -> chip −61 pts | after {"label":"Holds in 19% of futures. Close the plan and go to the verdict.","text":"Holds in 24% 19% of futures","hits":["PILL","PILL","PILL"]}
+set 3,000,000: before "Holds in 19% of futures. Close the plan and go to the verdict." -> chip +61 pts | after {"label":"Holds in 80% of futures. Close the plan and go to the verdict.","text":"Holds in 72% 80% of futures","hits":["PILL","PILL","PILL"]}
+## D. click the pill while the drawer is open (page at top)
+after click {"hash":"#outlook","w":900,"scrollY":8,"drawer":null,"pills":0} active H1#verdict-h.verdict__headline "Your plan holds in8080%%of futures." inDialog=false
+## E. open/close 8 times rapidly (Plan link then Escape, 150ms apart)
+settled after rapid toggles (closed) {"hash":"#outlook","w":900,"scrollY":0,"drawer":null,"pills":0} active A.topnav__link "Plan" inDialog=false
+reopen {"hash":"#plan","w":900,"scrollY":0,"drawer":440,"pills":1,"rect":[543,12,254,44],"inViewport":true,"overlapsPanel":false,"hits":["PILL","PILL","PILL"],"drawerMode":true,"portalled":true,"tabIndex":-1,"label":"Holds in 80% of futures. Close the plan and go to the verdict.","text":"Holds in 80% 80% of futures","opacity":"1","ariaHidden":null,"inert":false}
+Escape at top {"hash":"#outlook","w":900,"scrollY":0,"drawer":null,"pills":0} active A.topnav__link "Plan" inDialog=false
+## F. scrolled to 1500, open drawer, Escape, then pill click (normal docked mode)
+docked, closed {"hash":"#outlook","w":900,"scrollY":1500,"drawer":null,"pills":1,"rect":[323,76,254,44],"inViewport":true,"overlapsPanel":false,"hits":["PILL","PILL","PILL"],"drawerMode":false,"portalled":false,"tabIndex":0,"label":"Holds in 80% of futures. Back to the verdict.","text":"Holds in 80% 80% of futures","opacity":"1","ariaHidden":null,"inert":false}
+drawer open {"hash":"#plan","w":900,"scrollY":1500,"drawer":440,"pills":1,"rect":[543,12,254,44],"inViewport":true,"overlapsPanel":false,"hits":["PILL","PILL","PILL"],"drawerMode":true,"portalled":true,"tabIndex":-1,"label":"Holds in 80% of futures. Close the plan and go to the verdict.","text":"Holds in 80% 80% of futures","opacity":"1","ariaHidden":null,"inert":false}
+after Escape {"hash":"#outlook","w":900,"scrollY":1500,"drawer":null,"pills":1,"rect":[323,76,254,44],"inViewport":true,"overlapsPanel":false,"hits":["PILL","PILL","PILL"],"drawerMode":false,"portalled":false,"tabIndex":0,"label":"Holds in 80% of futures. Back to the verdict.","text":"Holds in 80% 80% of futures","opacity":"1","ariaHidden":null,"inert":false} active A.topnav__link "Plan" inDialog=false
+## G. scrolled 1500 + drawer open, pill clicked -> {"hash":"#outlook","w":900,"scrollY":8,"drawer":null,"pills":0} active H1#verdict-h.verdict__headline "Your plan holds in8080%%of futures." inDialog=false
+verdict-h rect top/bottom/innerHeight [149,307,1000]
+## H. widths with the drawer open (scrolled 1500)
+w=1099 {"rect":[643,12,254,44],"inViewport":true,"overlapsPanel":false,"hits":["PILL","PILL","PILL"],"text":"Holds in 80% 80% of futures","pills":1}
+w=1000 {"rect":[593,12,254,44],"inViewport":true,"overlapsPanel":false,"hits":["PILL","PILL","PILL"],"text":"Holds in 80% 80% of futures","pills":1}
+w=900 {"rect":[543,12,254,44],"inViewport":true,"overlapsPanel":false,"hits":["PILL","PILL","PILL"],"text":"Holds in 80% 80% of futures","pills":1}
+w=899 {"rect":[601,12,138,44],"inViewport":true,"overlapsPanel":false,"hits":["PILL","PILL","PILL"],"text":"80% 80%","pills":1}
+w=800 {"rect":[551,12,138,44],"inViewport":true,"overlapsPanel":false,"hits":["PILL","PILL","PILL"],"text":"80% 80%","pills":1}
+w=760 {"rect":[531,12,138,44],"inViewport":true,"overlapsPanel":false,"hits":["PILL","PILL","PILL"],"text":"80% 80%","pills":1}
+w=700 {"rect":[501,12,138,44],"inViewport":true,"overlapsPanel":false,"hits":["PILL","PILL","PILL"],"text":"80% 80%","pills":1}
+## I. drawer open at 900, resize to desktop 1280 and back to 900 and to phone 600
+900 open {"hash":"#plan","w":900,"scrollY":1518,"drawer":440,"pills":1,"rect":[543,12,254,44],"inViewport":true,"overlapsPanel":false,"hits":["PILL","PILL","PILL"],"drawerMode":true,"portalled":true,"tabIndex":-1,"label":"Holds in 80% of futures. Close the plan and go to the verdict.","text":"Holds in 80% 80% of futures","opacity":"1","ariaHidden":null,"inert":false}
+-> 1280 {"hash":"#plan","w":1280,"scrollY":1518,"drawer":null,"pills":1,"rect":[739,76,254,44],"inViewport":true,"overlapsPanel":false,"hits":["PILL","PILL","PILL"],"drawerMode":false,"portalled":false,"tabIndex":0,"label":"Holds in 80% of futures. Back to the verdict.","text":"Holds in 80% 80% of futures","opacity":"1","ariaHidden":null,"inert":false} active ASIDE.rail "Plan inputs" inDialog=false
+1280 scrolled 1500 {"hash":"#plan","w":1280,"scrollY":1500,"drawer":null,"pills":1,"rect":[739,76,254,44],"inViewport":true,"overlapsPanel":false,"hits":["PILL","PILL","PILL"],"drawerMode":false,"portalled":false,"tabIndex":0,"label":"Holds in 80% of futures. Back to the verdict.","text":"Holds in 80% 80% of futures","opacity":"1","ariaHidden":null,"inert":false}
+-> 900 {"hash":"#plan","w":900,"scrollY":1497,"drawer":440,"pills":1,"rect":[543,12,254,44],"inViewport":true,"overlapsPanel":false,"hits":["PILL","PILL","PILL"],"drawerMode":true,"portalled":true,"tabIndex":-1,"label":"Holds in 80% of futures. Close the plan and go to the verdict.","text":"Holds in 80% 80% of futures","opacity":"1","ariaHidden":null,"inert":false}
+-> 600 (phone) {"hash":"#plan","w":600,"scrollY":0,"drawer":null,"pills":0}
+-> 900 again {"hash":"#plan","w":900,"scrollY":0,"drawer":440,"pills":1,"rect":[543,12,254,44],"inViewport":true,"overlapsPanel":false,"hits":["PILL","PILL","PILL"],"drawerMode":true,"portalled":true,"tabIndex":-1,"label":"Holds in 80% of futures. Close the plan and go to the verdict.","text":"Holds in 80% 80% of futures","opacity":"1","ariaHidden":null,"inert":false}
+after 6 rapid 900<->1280 resizes (ends 1280) {"hash":"#plan","w":1280,"scrollY":0,"drawer":null,"pills":0}
+-> 900 {"hash":"#plan","w":900,"scrollY":0,"drawer":440,"pills":1,"rect":[543,12,254,44],"inViewport":true,"overlapsPanel":false,"hits":["PILL","PILL","PILL"],"drawerMode":true,"portalled":true,"tabIndex":-1,"label":"Holds in 80% of futures. Close the plan and go to the verdict.","text":"Holds in 80% 80% of futures","opacity":"1","ariaHidden":null,"inert":false}
+## J. stale focus: keyboard-focus the docked pill (normal mode), then the hash flips to #plan (browser Back/Forward style), Escape, then scroll to top
+focused BUTTON.verdict-pill "Holds in 80% of futures. Back to the ver" inDialog=false
+hash->plan {"hash":"#plan","w":900,"scrollY":1500,"drawer":440,"pills":1,"rect":[543,12,254,44],"inViewport":true,"overlapsPanel":false,"hits":["PILL","PILL","PILL"],"drawerMode":true,"portalled":true,"tabIndex":-1,"label":"Holds in 80% of futures. Close the plan and go to the verdict.","text":"Holds in 80% 80% of futures","opacity":"1","ariaHidden":null,"inert":false} active DIV.sheet "Your termsThe planYour terms01PortfolioP" inDialog=true
+Escape {"hash":"#outlook","w":900,"scrollY":1500,"drawer":null,"pills":1,"rect":[323,76,254,44],"inViewport":true,"overlapsPanel":false,"hits":["PILL","PILL","PILL"],"drawerMode":false,"portalled":false,"tabIndex":0,"label":"Holds in 80% of futures. Back to the verdict.","text":"Holds in 80% 80% of futures","opacity":"1","ariaHidden":null,"inert":false} active BODY
+focus moved to Share BUTTON.btn "Share" inDialog=false
+scrolled to top: active (should still be Share) BUTTON.btn "Share" inDialog=false
+console errors []

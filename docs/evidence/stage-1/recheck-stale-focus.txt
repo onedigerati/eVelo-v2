@@ -1,0 +1,20 @@
+$ node stale-focus.mjs  # chromium, vite preview of npm run build at a4a131d
+## Repro 1 (tablet 900x1000, browser Back): drawer opened+closed once, page scrolled, pill reached by Tab, then Back
+Tabs from Share to the pill: 1 | active BUTTON.verdict-pill "Holds in 80% of futures. Back to the ver"
+after browser Back: hash #plan | active DIV.sheet "Your termsThe planYour terms01PortfolioP"
+after Escape: hash #outlook | active BODY | scrollY 0
+## Repro 1b: same page; open the drawer via hash (Forward-button style) while the pill holds keyboard focus at scrollY 1500
+Tabs to pill: 1 | active BUTTON.verdict-pill "Holds in 80% of futures. Back to the ver"
+after browser Forward: hash #outlook | active BUTTON.verdict-pill "Holds in 80% of futures. Back to the ver" | scrollY 1500
+after Escape: active BUTTON.verdict-pill "Holds in 80% of futures. Back to the ver" | scrollY 1500
+user moves focus to Share: BUTTON.btn "Share"
+user wheels to the top (verdict number back on screen): active BUTTON.btn "Share" | scrollY 0
+## Repro 2 (desktop 1280x800 on #plan -> narrow to tablet): pill reached by Tab, window narrowed to 900
+Tabs to pill: 79 | active BUTTON.verdict-pill "Holds in 80% of futures. Back to the ver"
+narrowed to 900 (drawer opens): active DIV.sheet "Your termsThe planYour terms01PortfolioP"
+Escape: active BODY
+user focuses the rail Portfolio input: INPUT#_r_6m_-num.numfield__input ""
+page scrolled to top: active INPUT#_r_6m_-num.numfield__input ""
+## Control (no drawer involved): Tab to pill at 1280, Tab on to the next control, scroll to top
+after Tab past pill: BUTTON.seg__opt "Net worth"
+scrolled to top: active BUTTON.seg__opt "Net worth"

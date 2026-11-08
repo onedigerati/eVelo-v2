@@ -1,0 +1,14 @@
+$ node tablet.mjs dark  # 900x1000  # vite preview of npm run build at a4a131d
+## tablet 900x1000 loaded at /#plan: drawer {"modal":"true","rect":[0,0,440,1000]}
+after Escape: drawer null
+theme controls at tablet: ["Color theme","System theme","Light theme","Dark theme"]
+data-theme dark
+## top {"present":false,"scrollY":0,"numTop":214,"numBottom":315,"topbarBottom":65}
+## scrolled to 1500, drawer closed {"present":true,"scrollY":1500,"text":"Holds in 80%80% of futures","label":"Holds in 80% of futures. Back to the verdict.","ariaHidden":null,"inert":false,"cls":"verdict-pill verdict-pill--holds docked-verdict__pill","rect":[323,76,254,44],"topbarBottom":65,"numBottom":-1185,"canvas":[0,900],"slotOpacity":"1","slotTransform":"none","pillOpacity":"1","tone":"color-mix(in oklch, #5be3b0 96.8%, #9ed8be)","color":"rgb(236, 241, 238)","ring":true}
+## Plan nav clicked at scrollY 1500: drawer {"modal":"true","rect":[0,0,440,1000]} scrollY 1500
+pill {"present":true,"rect":[543,12,254,44],"ariaHidden":null}
+pill visibility with drawer open: {"pillRect":[543,797],"drawerRight":440,"fractionUnderDrawerPanel":0,"topmostAcrossPill":["568: PILL","619: PILL","670: PILL","721: PILL","772: PILL"],"backdrop":"blur(6px) / oklab(0.13094 -0.00479095 0.00127131 / 0.55)"}
+delta chip in DOM after editing in the drawer: −61 pts Holds in 19% of futures. Close the plan and go to the verdict.
+## drawer closed: scrollY 1547 pill Holds in 19% of futures. Back to the verdict.
+pill click -> scrollY 8 active verdict-h
+console errors []

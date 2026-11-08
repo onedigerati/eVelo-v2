@@ -1,0 +1,10 @@
+$ node delta.mjs   # 1280x800, scrolled to 1400 so the pill is docked, then edit the rail's Portfolio value
+## set portfolio value to 1,000,000 (down); pill before: Holds in 80% of futures. Back to the verdict.
+chip appeared after ~400ms {"text":"−61 pts","codepoints":"2212 36 31 20 70 74 73","cls":"docked-verdict__delta num is-down","color":"oklab(0.456694 0.111359 0.0727773)","bg":"rgba(210, 69, 47, 0.1)","pill":"72%19%"}
+chip gone after ~2900ms
+pill after: Holds in 19% of futures. Back to the verdict. verdict-pill verdict-pill--broken docked-verdict__pill tone #b5361f scrollY 1495
+## set portfolio value to 3,000,000 (up); pill before: Holds in 19% of futures. Back to the verdict.
+chip appeared after ~200ms {"text":"+61 pts","codepoints":"2b 36 31 20 70 74 73","cls":"docked-verdict__delta num is-up","color":"oklab(0.422854 -0.0778179 0.0233879)","bg":"rgba(11, 122, 86, 0.1)","pill":"29%80%"}
+chip gone after ~2700ms
+pill after: Holds in 80% of futures. Back to the verdict. verdict-pill verdict-pill--holds docked-verdict__pill tone color-mix(in oklch, #0a6e4d 96.8%, #237a5c) scrollY 1400
+console errors []

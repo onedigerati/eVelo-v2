@@ -1,0 +1,8 @@
+$ node charts2.mjs light  # 1280x800
+data-theme light
+pill before hover [739,76,254,44] verdict-pill verdict-pill--holds docked-verdict__pill
+## fan readout + crosshair positioned under the pill, pointer in the plot at the pill's x {"readout":[884,76,221,137],"crossLine":[870,70,240],"pillRect":[739,76,254,44],"readoutUnderPillBox":true,"pillOpacity":"0","yielding":true,"ariaHidden":"true","topmost":["894,84 -> svg.fan__svg","870,98 -> line."]}
+## delta chip down (−61 pts, 11px) text 0,456694,0,111359,0,727773 on sampled chip bg 235,216,202: contrast 53091654.75:1
+## delta chip up (+61 pts, 11px) text 0,422854,0,778179,0,233879 on sampled chip bg 215,221,206: contrast 44381493.68:1
+console errors []
+NOTE (recheck at b82b6e2): the chip now uses color-mix(), so getComputedStyle().color is oklab(...) and this script's rgb parse produces a meaningless contrast figure above; the pixel-measured chip contrast is in recheck-d3-d4.txt and recheck-d4-drawer.txt. In charts.mjs, 'activeElement is pill: false' means focus left the pill; where it went (#verdict-h) is shown in recheck-d3-d4.txt.

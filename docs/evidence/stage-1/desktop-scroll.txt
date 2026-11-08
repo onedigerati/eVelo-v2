@@ -1,0 +1,24 @@
+$ node desktop.mjs  # Playwright, chromium 1280x800, vite preview of npm run build  # vite preview of npm run build at a4a131d
+## 1280x800 desktop, top of page
+{"present":false,"scrollY":0,"numTop":250,"numBottom":371,"topbarBottom":65}
+## number bottom 6px below bar (still partly on screen)
+{"present":false,"scrollY":300,"numTop":-50,"numBottom":71,"topbarBottom":65}
+## number 6px behind bar: sample motion frames
+t~0ms {"present":true,"slotOpacity":"0","slotTransform":"matrix(0.96, 0, 0, 0.96, 0, -10)"}
+t~60ms {"present":true,"slotOpacity":"0.634368","slotTransform":"matrix(0.985375, 0, 0, 0.985375, 0, -3.65632)"}
+t~120ms {"present":true,"slotOpacity":"0.942311","slotTransform":"matrix(0.997692, 0, 0, 0.997692, 0, -0.576888)"}
+t~200ms {"present":true,"slotOpacity":"0.99373","slotTransform":"matrix(0.999749, 0, 0, 0.999749, 0, -0.0627015)"}
+t~400ms {"present":true,"slotOpacity":"1","slotTransform":"none"}
+## settled
+{"present":true,"scrollY":312,"text":"Holds in 80%80% of futures","label":"Holds in 80% of futures. Back to the verdict.","ariaHidden":null,"inert":false,"cls":"verdict-pill verdict-pill--holds docked-verdict__pill","rect":[739,76,254,44],"topbarBottom":65,"numBottom":59,"canvas":[483,1248],"slotOpacity":"1","slotTransform":"none","pillOpacity":"1","tone":"color-mix(in oklch, #0a6e4d 96.8%, #237a5c)","color":"rgb(20, 24, 21)","ring":true}
+## scrolled to 1400
+{"present":true,"scrollY":1400,"text":"Holds in 80%80% of futures","label":"Holds in 80% of futures. Back to the verdict.","ariaHidden":null,"inert":false,"cls":"verdict-pill verdict-pill--holds docked-verdict__pill","rect":[739,76,254,44],"topbarBottom":65,"numBottom":-1029,"canvas":[483,1248],"slotOpacity":"1","slotTransform":"none","pillOpacity":"1","tone":"color-mix(in oklch, #0a6e4d 96.8%, #237a5c)","color":"rgb(20, 24, 21)","ring":true}
+## back to top, 80ms
+{"present":true,"scrollY":1398,"text":"Holds in 80%80% of futures","label":"Holds in 80% of futures. Back to the verdict.","ariaHidden":null,"inert":false,"cls":"verdict-pill verdict-pill--holds docked-verdict__pill","rect":[739,76,254,44],"topbarBottom":65,"numBottom":-1027,"canvas":[483,1248],"slotOpacity":"1","slotTransform":"none","pillOpacity":"1","tone":"color-mix(in oklch, #0a6e4d 96.8%, #237a5c)","color":"rgb(20, 24, 21)","ring":true}
+## back to top, settled
+{"present":false,"scrollY":0,"numTop":250,"numBottom":371,"topbarBottom":65}
+## after 20 rapid jumps, ending at 2000
+{"present":true,"scrollY":1983,"text":"Holds in 80%80% of futures","label":"Holds in 80% of futures. Back to the verdict.","ariaHidden":null,"inert":false,"cls":"verdict-pill verdict-pill--holds docked-verdict__pill","rect":[739,76,254,44],"topbarBottom":65,"numBottom":-1612,"canvas":[483,1248],"slotOpacity":"1","slotTransform":"none","pillOpacity":"1","tone":"color-mix(in oklch, #0a6e4d 96.8%, #237a5c)","color":"rgb(20, 24, 21)","ring":true}
+## after wheel thrash, ending at 0
+{"present":false,"scrollY":0,"numTop":250,"numBottom":371,"topbarBottom":65}
+console errors []

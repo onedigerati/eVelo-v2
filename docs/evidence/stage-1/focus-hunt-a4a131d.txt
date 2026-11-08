@@ -1,0 +1,105 @@
+$ node focus-hunt.mjs  # chromium, vite preview of npm run build at a4a131d
+
+######## run
+## 1. desktop 1280 #outlook, pill focused (Tab), narrow to tablet 900 (no drawer: hash is #outlook)
+Tabs to pill 79
+-> 900: active BODY | drawer false
+scroll to top (legit hand-off expected): active BODY
+## 1b. same page at 900: pill focused, widen to 1280, move focus to Share, scroll to top (no steal expected)
+Tabs to pill 1
+-> 1280: active BODY
+focus Share BUTTON.btn "Share"
+scroll to top: active BUTTON.btn "Share"
+## 1c. 1280 pill focused, rapid 6x resize 1280<->900 ending 1280, then scroll top (hand-off expected if pill kept focus)
+after resizes: active BODY
+scroll top: active BODY
+## 1d. 900 #outlook pill focused, narrow to phone 600 (DockedVerdict renders nothing on phone)
+Tabs to pill 1
+-> 600: active BODY
+-> 900: active BODY
+## 2. tablet 900: repeated browser Back/Forward between #outlook and #plan with the pill focused at scrollY 1500
+history built: hash #outlook | drawer false
+Tabs to pill 1
+Forward #1: hash #plan | drawer true | scrollY 0 | active DIV.sheet "Your termsThe planYour terms01Po"
+Back #2: hash #outlook | drawer false | scrollY 1500 | active BODY
+Forward #3: hash #plan | drawer true | scrollY 0 | active DIV.sheet "Your termsThe planYour terms01Po"
+Back #4: hash #outlook | drawer false | scrollY 1500 | active BODY
+Forward #5: hash #plan | drawer true | scrollY 0 | active DIV.sheet "Your termsThe planYour terms01Po"
+Back #6: hash #outlook | drawer false | scrollY 1500 | active BODY
+focus Share BUTTON.btn "Share"
+scroll to top: active (Share expected) BUTTON.btn "Share"
+## 2b. after the round trips, pill focused again, scroll to top: DOM check still hands off
+Tabs to pill 1
+scroll to top: active H1#verdict-h.verdict__headline "Your plan holds in8080%%of futur"
+## 2c. pill focused, Forward (drawer opens), then Back (drawer closes) without Escape; then focus Share + scroll top
+Forward: hash #plan | active DIV.sheet "Your termsThe planYour terms01Po"
+Back: hash #outlook | drawer false | scrollY 1500 | active BODY
+focus Share BUTTON.btn "Share"
+scroll to top: active (Share expected) BUTTON.btn "Share"
+## 2d. Escape-after-Back case (known/deferred): pill focused, Back opens drawer, Escape
+Forward: hash #plan | active DIV.sheet "Your termsThe planYour terms01Po"
+Escape: hash #outlook | active BODY
+## 3. desktop 1280 on #plan, pill focused, narrow to 900 (drawer opens), widen to 1280 (drawer goes) without Escape
+Tabs to pill 79
+-> 900: drawer true | active DIV.sheet "Your termsThe planYour terms01Po"
+-> 1280: drawer false | active ASIDE.rail "Plan inputs"
+focus rail input INPUT#_r_6i_-num.numfield__input ""
+scroll 1500 then top: active (rail input expected) INPUT#_r_6i_-num.numfield__input ""
+## 4. tablet 900 #outlook: pill focused, chart under the pill hovered (pill yields: hand-off expected), then keyboard focus on a chart under the pill (focus must stay on the chart)
+Tabs to pill 1
+chart hovered: active H1#verdict-h.verdict__headline "Your plan holds in8080%%of futur"
+chart plot focused programmatically: true | active svg.[object "Margin-call timing, age 55 to 85" | pill {"yielding":true,"inert":true}
+ArrowRight on chart: active svg.[object "Margin-call timing, age 55 to 85"
+
+######## run [reducedMotion=reduce]
+## 1. desktop 1280 #outlook, pill focused (Tab), narrow to tablet 900 (no drawer: hash is #outlook) [reducedMotion=reduce]
+Tabs to pill 79
+-> 900: active BODY | drawer false
+scroll to top (legit hand-off expected): active BODY
+## 1b. same page at 900: pill focused, widen to 1280, move focus to Share, scroll to top (no steal expected)
+Tabs to pill 1
+-> 1280: active BODY
+focus Share BUTTON.btn "Share"
+scroll to top: active BUTTON.btn "Share"
+## 1c. 1280 pill focused, rapid 6x resize 1280<->900 ending 1280, then scroll top (hand-off expected if pill kept focus)
+after resizes: active BODY
+scroll top: active BODY
+## 1d. 900 #outlook pill focused, narrow to phone 600 (DockedVerdict renders nothing on phone)
+Tabs to pill 1
+-> 600: active BODY
+-> 900: active BODY
+## 2. tablet 900: repeated browser Back/Forward between #outlook and #plan with the pill focused at scrollY 1500 [reducedMotion=reduce]
+history built: hash #outlook | drawer false
+Tabs to pill 1
+Forward #1: hash #plan | drawer true | scrollY 0 | active DIV.sheet "Your termsThe planYour terms01Po"
+Back #2: hash #outlook | drawer false | scrollY 1500 | active BODY
+Forward #3: hash #plan | drawer true | scrollY 0 | active DIV.sheet "Your termsThe planYour terms01Po"
+Back #4: hash #outlook | drawer false | scrollY 1500 | active BODY
+Forward #5: hash #plan | drawer true | scrollY 0 | active DIV.sheet "Your termsThe planYour terms01Po"
+Back #6: hash #outlook | drawer false | scrollY 1500 | active BODY
+focus Share BUTTON.btn "Share"
+scroll to top: active (Share expected) BUTTON.btn "Share"
+## 2b. after the round trips, pill focused again, scroll to top: DOM check still hands off
+Tabs to pill 1
+scroll to top: active H1#verdict-h.verdict__headline "Your plan holds in8080%%of futur"
+## 2c. pill focused, Forward (drawer opens), then Back (drawer closes) without Escape; then focus Share + scroll top
+Forward: hash #plan | active DIV.sheet "Your termsThe planYour terms01Po"
+Back: hash #outlook | drawer false | scrollY 1500 | active BODY
+focus Share BUTTON.btn "Share"
+scroll to top: active (Share expected) BUTTON.btn "Share"
+## 2d. Escape-after-Back case (known/deferred): pill focused, Back opens drawer, Escape
+Forward: hash #plan | active DIV.sheet "Your termsThe planYour terms01Po"
+Escape: hash #outlook | active BODY
+## 3. desktop 1280 on #plan, pill focused, narrow to 900 (drawer opens), widen to 1280 (drawer goes) without Escape [reducedMotion=reduce]
+Tabs to pill 79
+-> 900: drawer true | active DIV.sheet "Your termsThe planYour terms01Po"
+-> 1280: drawer false | active ASIDE.rail "Plan inputs"
+focus rail input INPUT#_r_6m_-num.numfield__input ""
+scroll 1500 then top: active (rail input expected) INPUT#_r_6m_-num.numfield__input ""
+## 4. tablet 900 #outlook: pill focused, chart under the pill hovered (pill yields: hand-off expected), then keyboard focus on a chart under the pill (focus must stay on the chart) [reducedMotion=reduce]
+Tabs to pill 1
+chart hovered: active H1#verdict-h.verdict__headline "Your plan holds in8080%%of futur"
+chart plot focused programmatically: true | active svg.[object "Margin-call timing, age 55 to 85" | pill {"yielding":true,"inert":true}
+ArrowRight on chart: active svg.[object "Margin-call timing, age 55 to 85"
+
+console errors []
