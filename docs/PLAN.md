@@ -1,34 +1,37 @@
-# City list navigation plan
+# Existing loan balance plan
 
 ## Goal
-The Atlas ranking list of 133 cities is quick to get around instead of a long scroll. It folds into collapsible tiers that follow the sort: odds tiers for Best odds, cost-vs-home bands for Cheapest, letter groups for A–Z. Only the first tier is open at rest; a closed tier shows its first few names, a small spark of its odds, and a flag when home is in it. Region chips with counts sit in the list's own toolbar. Approved design: variant A combined with variant B's region chips from the mockup at https://claude.ai/artifact/VBzVuQhMnkiihymxXiy5SL. Done = both in the app, working in both themes and on a phone, tests green, a preview, and deployed on approval.
+A user who has already borrowed on their line of credit to live can enter that balance, and the whole model starts from it: the buy-borrow-die paths begin with the loan, its interest, its LTV and its margin-call risk, and the sell-instead comparison starts from the same net worth with no debt. Done = the input in the Borrowing section with its warning and limit, every output (odds, charts, max spend, estate, Atlas, Method copy) reflecting it, engine tests green, a preview, and deployed on approval.
 
 ## Baseline
-2026-11-08 · tests: 358 pass (23 files) · typecheck: clean · build: ok
+2026-11-08 · tests: 387 pass (25 files) · typecheck: clean · build: ok
 
 ## Now
-All stages done. Deployed 2026-11-08 (Actions run 42505074297); evidence in `docs/evidence/stage-1/` and `docs/evidence/stage-2/`.
+Stage 1 of 2 · Engine starting loan
+Risk: money
+Agents: wide — confirmed 2026-11-08 12:27
+Checks:
+- [ ] With a $500k balance on a $3M plan, every path records year 0 as loan $500k, LTV 16.7%, net worth $2.5M (proof: test)
+- [ ] The balance accrues at `loanRate`: with no spending and flat returns, the loan after 12 months is balance × (1 + rate/12)^12 (proof: test)
+- [ ] The sell strategy starts at portfolio − balance with no debt and basis scaled pro rata; with zero loan rate, no spending and flat returns, the two estates match before tax (proof: test)
+- [ ] A balance above `maxLtv` × portfolio triggers a forced sale in month 0, counted in year 0 of the margin-call chart; a balance at or above the portfolio breaks the path at once (proof: test)
+- [ ] A balance of 0, or a plan without the field, gives results identical to today's for the same seed (proof: test)
+- [ ] A larger balance lowers the success rate and the solver's max sustainable spend, and reaches every Atlas city (proof: test)
+Open: none
 
 ## Stages
-- [x] 1. Tiers in the list — pure grouping helper with tests; collapsible tiers in `CityList` with peek names, spark, home flag, Open all / Close all; search opens matching tiers
-- [x] 2. Region chips + launch — region chips with counts in the list toolbar, sharing the map's region; counts follow the search; the map's city card made less see-through so it reads cleanly over the dots; one Plan tab on desktop; phone check; preview; deploy on approval
+- [ ] 1. Engine starting loan — `existingLoan` in `PlanInputs` (default 0) through `kernelConfig` to the kernel: BBD starts at L = balance, sell starts at V − balance with pro-rata basis, year-0 recording, header comment; engine tests
+- [ ] 2. Input, copy + launch — "Existing loan balance" field in Borrowing with the over-limit warning and the below-portfolio block (pure helper with tests), share-link and saved-plan sanitizing, LTV meter shows today's LTV, outlook and Method copy for the starting balance and the sell offset; preview; deploy on approval
 
 ## Decisions
-- 2026-11-08 · Build variant A (odds bands) plus variant B's region chips — user: "let's go with your recommendation" after seeing four variants.
-- 2026-11-08 · Odds tiers use the app's verdict cuts (80 / 65 / 45: Holds, Mostly holds, Fragile, Breaks), not the mockup's 10-point steps, so the list speaks the Outlook's language. If a tier holds more than about 40 cities on the default plan, split it at the next 10-point line and say so — builder's call.
-- 2026-11-08 · Cheapest groups by cost relative to home, not fixed dollar bands, because budgets vary by plan — builder's call.
-- 2026-11-08 · The list's region chips and the map's chips drive one shared region, as the list already follows the map's region — builder's call.
-- 2026-11-08 · Stage 2's region chips are built in a worktree alongside stage 1, as their own component, and merged after stage 1 closes. The user asked for more parallel subagents to finish sooner — PM's call.
-- 2026-11-08 · Odds bands over 40 cities split at the highest 10-point line inside them (repeated while still over 40), counted on the full list so tiers don't shift while typing. The default plan shows 6 tiers: Holds, Mostly holds 70–79 / 65–69, Fragile 60–64 / 45–59, Breaks. Labels stay the verdict, with the range beside them — builder's call, per the decision above.
-- 2026-11-08 · Sort, search or region change resets the open tiers to the default; manual toggles last until then — builder's call.
-- 2026-11-08 · Cheapest bands over 40 cities split at 10-point lines too, by the same rule as odds (on the default plan 70–90% has 58, so it becomes 70–79% / 80–89%) — user: "split the Cheapest 70–90% band too".
-- 2026-11-08 · The map's city card (hover/tap bubble) gets its own more opaque glass token, `--surface-glass-strong` (light 0.94, dark 0.92, was 0.74 / 0.72), and keeps its blur. Other glass surfaces are unchanged. It goes in stage 2 because that stage ends in the preview — user: the bubbles are "a little bit too transparent… distracting when trying to read"; placement and opacity are PM's call.
-- 2026-11-08 · No separate preview after stage 1: stages 1 and 2 share one preview at the end of stage 2, since publishing is outward-facing and autopilot pauses for it — PM's call.
-- 2026-11-08 · On desktop the top nav shows one "Plan" tab for the shared plan + outlook workspace (the two tabs went to the same screen). Tablet keeps Plan (drawer) and Outlook, and phone keeps both tabs. `#outlook` links still work and show Plan as active on desktop. Added to stage 2 for the same preview — user: "let's go with your recommendation".
-- 2026-11-08 · Preview publish approved once stage 2 is verified; deploy still waits for the user's approval — user: "ok, publish the preview when it's ready".
-- 2026-11-08 · Deploy approved after the user reviewed preview v36 — user: "deploy".
-- 2026-11-08 · iPhone (WebKit touch) confirmed by the user on the live site: the city list tiers and region chips look good, and swiping through photos in the full-size view works. This closes the open question about WebKit's touch path.
-- 2026-11-08 · Fixed the glass blur missing in Chrome/Edge production builds (pre-existing): lightningcss collapses `backdrop-filter` + `-webkit-backdrop-filter` into the prefixed form when the unprefixed one comes first, so the prefixed one now comes first in all 12 pairs. It's small, it restores the intended design, and it bears on the user's city-card readability ask — PM's call.
+- 2026-11-08 · The user can enter an existing line-of-credit balance, already borrowed to live; the buy-borrow-die paths start with the loan at that balance — user request.
+- 2026-11-08 · The sell strategy starts with portfolio − balance and no debt, so both strategies start at equal net worth: had the user sold instead, those shares would already be spent. It ignores the past sales' capital-gains tax and the interest already paid, which roughly offset — user: "the second option where the sell starts with portfolio - the balance and no debt".
+- 2026-11-08 · The existing balance accrues at the plan's `loanRate`; no separate rate input — user accepted the recommendation.
+- 2026-11-08 · A balance above the margin-call LTV is allowed, with a warning by the input that the plan starts with a forced sale; a balance at or above the portfolio is blocked — user accepted the recommendation.
+- 2026-11-08 · A saved plan or share link without the field means a balance of 0; the field defaults to 0, so existing links don't change — follows from `sanitizeInputs` filling from the defaults.
+- 2026-11-08 · The sell strategy's cost basis scales pro rata with its smaller portfolio (`Bs = B × (V − balance)/V`), keeping its gain fraction equal to the BBD side's, the way every other sale in the kernel treats basis — builder's call.
+- 2026-11-08 · Field name `existingLoan` (today's USD); `KernelConfig` gets an optional `initialLoan` (`?? 0`) so the hand-written test configs stay valid — builder's call.
+- 2026-11-08 · Agents: wide — user: "go wide so that we can finish this quickly".
 
 ## Open questions
 - Seoul, London, Amsterdam and Berlin have no `localTaxes.ts` entry (money logic, needs tests) — user's call, a later plan.
@@ -84,6 +87,8 @@ All stages done. Deployed 2026-11-08 (Actions run 42505074297); evidence in `doc
 - 2026-11-07 · The preview serves photos from the preview artifact's asset store, not as published files: a published version holds at most 511 files, and ~665 photos plus the app won't fit. The preview build swaps each photo's URL for its uploaded copy, and only new or changed photos are uploaded after the first time. A small test batch goes first. If the store is too small or too awkward, fall back to showing only each stage's new photos in the preview, telling the user first. The live site on GitHub Pages still serves every photo as a normal file — user chose option 1. (from [All-city profiles](plans/2026-11-07-all-city-profiles.md))
 - 2026-11-07 · The hosted preview is checked by the user in their own browser: a headless browser can't log in to claude.ai, and Claude in Chrome isn't supported from WSL (the user picked Chrome control first; the docs rule it out here). Locally, the v30 build runs against a stand-in for the asset store — PM's call. (from [All-city profiles](plans/2026-11-07-all-city-profiles.md))
 - 2026-11-07 · US profiles use the same file shape and rubric, written for someone who'd live there as a US citizen: Residency is "no visa needed" (5), Tax on holdings is state income tax on dividends and gains, Estate is the state's estate or inheritance tax, Lending is full US broker access (5). Their summary says why a BBD retiree would base there, not move there — builder's call, shown to the user with the pilot. (from [All-city profiles](plans/2026-11-07-all-city-profiles.md))
+- 2026-11-08 · On desktop the top nav shows one "Plan" tab for the shared plan + outlook workspace (the two tabs went to the same screen). Tablet keeps Plan (drawer) and Outlook, and phone keeps both tabs. `#outlook` links still work and show Plan as active on desktop. Added to stage 2 for the same preview — user: "let's go with your recommendation". (from [City list navigation](plans/2026-11-08-city-list-navigation.md))
+- 2026-11-08 · Fixed the glass blur missing in Chrome/Edge production builds (pre-existing): lightningcss collapses `backdrop-filter` + `-webkit-backdrop-filter` into the prefixed form when the unprefixed one comes first, so the prefixed one now comes first in all 12 pairs. It's small, it restores the intended design, and it bears on the user's city-card readability ask — PM's call. (from [City list navigation](plans/2026-11-08-city-list-navigation.md))
 
 ## Shipped
 - 2026-11-06 · eVelo v2 build: BBD planner with engine, plan inputs, outlook charts, Atlas and methodology, live on GitHub Pages — [plan](plans/2026-11-06-evelo-v2-build.md)
@@ -95,3 +100,4 @@ All stages done. Deployed 2026-11-08 (Actions run 42505074297); evidence in `doc
 - 2026-11-07 · Landing page: first-visit landing (study G, "The Atlas is the chart") with the illustrative odds map and four steps, live on GitHub Pages — [plan](plans/2026-11-07-landing-page.md) · [evidence](plans/2026-11-07-landing-page/evidence/)
 - 2026-11-07 · City photo galleries: five checked, openly licensed photos in a cover mosaic with the odds badge and a full-size view for all 75 picks, live on GitHub Pages — [plan](plans/2026-11-07-city-photos.md) · [evidence](plans/2026-11-07-city-photos/evidence/)
 - 2026-11-07 · City profiles for all 133: unranked profiles and 5 checked photos for every city (Europe, Africa, Middle East, Asia-Pacific, Canada, South America, 32 US cities), a coverage test, live on GitHub Pages — [plan](plans/2026-11-07-all-city-profiles.md) · [evidence](plans/2026-11-07-all-city-profiles/evidence/)
+- 2026-11-08 · City list navigation: collapsible tiers following the sort, region chips with counts in the list toolbar, a more opaque map city card, one Plan tab on desktop, live on GitHub Pages — [plan](plans/2026-11-08-city-list-navigation.md) · [evidence](plans/2026-11-08-city-list-navigation/evidence/)
