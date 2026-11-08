@@ -7,21 +7,11 @@ The Atlas ranking list of 133 cities is quick to get around instead of a long sc
 2026-11-08 · tests: 358 pass (23 files) · typecheck: clean · build: ok
 
 ## Now
-Stage 2 of 2 · Region chips + launch
-Mode: autopilot
-Risk: UI only (preview publish and deploy are outward-facing: pause for the user)
-Checks:
-- [x] Region chip counts are right per region, follow the search, and sum to the All count (proof: test)
-- [x] The list's region chips and the map's chips drive one region both ways; tiers follow the region; a region change resets open tiers to the default; the list search and the chip counts use one rule (proof: scripted clicks + screenshot)
-- [x] The map's city card reads cleanly over the dots in both themes, as a desktop hover card and as the phone's docked card (proof: screenshot)
-- [x] At phone width the chips scroll inside the list card with no page-level horizontal scroll and 44px touch targets, in both themes; rows and tiers still work (proof: screenshot + scripted clicks, a test can't judge the layout)
-- [x] On desktop the nav shows Plan, Atlas, Method (no Outlook), Plan is active on `#plan` and `#outlook`, and the workspace looks as before; tablet and phone keep both tabs working as today (proof: screenshot + scripted clicks at desktop, tablet and phone widths)
-- [ ] Preview published to the usual artifact for the user's review; deploy to GitHub Pages on the user's approval (proof: preview link + live site check)
-Open: none
+All stages done. Deployed 2026-11-08 (Actions run 42505074297); evidence in `docs/evidence/stage-1/` and `docs/evidence/stage-2/`.
 
 ## Stages
 - [x] 1. Tiers in the list — pure grouping helper with tests; collapsible tiers in `CityList` with peek names, spark, home flag, Open all / Close all; search opens matching tiers
-- [ ] 2. Region chips + launch — region chips with counts in the list toolbar, sharing the map's region; counts follow the search; the map's city card made less see-through so it reads cleanly over the dots; one Plan tab on desktop; phone check; preview; deploy on approval
+- [x] 2. Region chips + launch — region chips with counts in the list toolbar, sharing the map's region; counts follow the search; the map's city card made less see-through so it reads cleanly over the dots; one Plan tab on desktop; phone check; preview; deploy on approval
 
 ## Decisions
 - 2026-11-08 · Build variant A (odds bands) plus variant B's region chips — user: "let's go with your recommendation" after seeing four variants.
