@@ -1,0 +1,4 @@
+$ npm run typecheck
+npm notice run evelo@2.0.0 typecheck
+npm notice run tsc -b
+exit=0

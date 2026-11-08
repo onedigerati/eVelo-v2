@@ -1,0 +1,18 @@
+$ npx vitest run src/ui/plan/__tests__/existingLoan.test.ts --reporter=verbose
+npm notice run evelo@2.0.0 npx
+npm notice run 'vitest' run src/ui/plan/__tests__/existingLoan.test.ts --reporter=verbose
+
+ RUN  v5.1.0 /home/jonah/repos/eVelo-v2
+
+ ✓ src/ui/plan/__tests__/existingLoan.test.ts > existing loan > reports today’s LTV 2ms
+ ✓ src/ui/plan/__tests__/existingLoan.test.ts > existing loan > flags a balance past the margin-call LTV, but not one exactly at it 0ms
+ ✓ src/ui/plan/__tests__/existingLoan.test.ts > existing loan > breaks at V·(1 − g·tax), the line where a full sale cannot repay the loan after tax 0ms
+ ✓ src/ui/plan/__tests__/existingLoan.test.ts > existing loan > moves the break line with basis and tax 0ms
+ ✓ src/ui/plan/__tests__/existingLoan.test.ts > existing loan > keeps the balance strictly under the portfolio 0ms
+ ✓ src/ui/plan/__tests__/existingLoan.test.ts > existing loan > treats hostile values as no loan 0ms
+
+ Test Files  1 passed (1)
+      Tests  6 passed (6)
+   Start at  12:43:31
+   Duration  101ms (import 41%, transform 26%, tests 22%, worker 10%)
+

@@ -1,0 +1,52 @@
+$ (scratch worktrees at 75ee416 and 141c72b) VARIANT=old|zero|missing OUT=<json> npx vitest run src/engine/__tests__/dump.test.ts; sha256sum old.json zero.json missing.json
+# dump.test.ts (scratch only, below) serializes simulate() minus inputs/elapsedMs, the full runPaths Recorder arrays, solveSpending and runAtlas for 10 input cases.
+# old = pre-stage engine (75ee416, no field); zero = HEAD with existingLoan: 0; missing = HEAD with the field deleted.
+95332a0b5de27dee55f390b63e3e6f97d73cf482ab56fd63fc02329b1b3f89fe  old.json
+95332a0b5de27dee55f390b63e3e6f97d73cf482ab56fd63fc02329b1b3f89fe  zero.json
+95332a0b5de27dee55f390b63e3e6f97d73cf482ab56fd63fc02329b1b3f89fe  missing.json
+14928644 missing.json
+14928644 old.json
+14928644 zero.json
+cmp: all three byte-identical
+
+----- dump.test.ts -----
+import { it } from 'vitest'
+import { writeFileSync } from 'node:fs'
+import marketJson from '../../data/market.json'
+import { runAtlas } from '../atlas'
+import { DEFAULT_INPUTS } from '../defaults'
+import { createRecorder, runPaths } from '../kernel'
+import { prepare } from '../prepare'
+import { findCity, kernelConfig, makeScenarios, normalizeInputs, resolveDestination, simulate } from '../simulate'
+import { solveSpending } from '../solve'
+import { CITIES_FIX } from './fixtures'
+const market = marketJson as any
+it('dump', () => {
+  const variant = process.env.VARIANT // 'old' | 'zero' | 'missing'
+  const mk = (o: any) => { const x: any = { ...DEFAULT_INPUTS, ...o }; if (variant === 'zero') x.existingLoan = 0; else delete x.existingLoan; return x }
+  const cases = [
+    {}, { seed: 7, paths: 700 }, { destCityId: CITIES_FIX[CITIES_FIX.length - 1].id, paths: 500 },
+    ...CITIES_FIX.slice(0, 6).map((c: any) => ({ destCityId: c.id, paths: 300, seed: 3 })),
+    { budget: { ...DEFAULT_INPUTS.budget }, otherIncome: 0, loanRate: 0.09, maxLtv: 0.4, paths: 400 },
+  ]
+  const out: any = { sims: [], recs: [], solve: null, atlas: null }
+  for (const c of cases) {
+    const inp = mk(c)
+    const r: any = simulate(market, CITIES_FIX, inp); delete r.elapsedMs; delete r.inputs
+    out.sims.push(r)
+    const inputs = normalizeInputs(inp)
+    const prep = prepare(market, inputs.holdings, inputs.outlook)
+    const home = findCity(CITIES_FIX, inputs.homeCityId)
+    const dest = resolveDestination(inputs, home, findCity(CITIES_FIX, inputs.destCityId))
+    const cfg = kernelConfig(inputs, dest)
+    const sc = makeScenarios(prep, inputs, inputs.paths)
+    const rec: any = createRecorder(sc.paths, Math.floor(cfg.T / 12))
+    const clean = runPaths(sc, cfg, rec)
+    const o: any = { clean }
+    for (const k of Object.keys(rec)) o[k] = ArrayBuffer.isView(rec[k]) ? Array.from(rec[k]) : rec[k]
+    out.recs.push(o)
+  }
+  out.solve = solveSpending(market, CITIES_FIX, mk({ paths: 600 }), 0.85)
+  out.atlas = runAtlas(market, CITIES_FIX, mk({ paths: 400 }), CITIES_FIX.map((c: any) => c.id))
+  writeFileSync(process.env.OUT!, JSON.stringify(out))
+})

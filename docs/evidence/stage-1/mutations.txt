@@ -1,0 +1,75 @@
+$ (scratch worktree at 141c72b) for each mutation: apply to source, npx vitest run src/engine/__tests__/existingLoan.test.ts, restore
+=== M1-start-loan-zero: 'let L = L0' -> 'let L = 0' (src/engine/kernel.ts)
+     × a $500k balance on a $3M plan records year 0 as loan $500k, LTV 16.7%, net worth $2.5M on every path 70ms
+     × the balance accrues at loanRate: after 12 months it is balance × (1 + rate/12)^12 1ms
+     × starts at portfolio − balance with no debt; with zero rate, no spending and flat returns the estates match 0ms
+     × a balance above maxLtv × portfolio forces a sale in month 0 that lands at targetLtv 1ms
+     × counts that month-0 forced sale in year 0 of marginCallByYear 31ms
+     × a balance the forced sale cannot cover (above V · (1 − g·tax)) breaks in month 0 1ms
+     × a larger balance lowers the success rate 117ms
+     × a larger balance lowers the solver's max sustainable spend 202ms
+     × reaches every Atlas city: odds are lower or equal per city, and lower for at least one 77ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 9 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/engine/__tests__/existingLoan.test.ts > existing loan: starting state > a $500k balance on a $3M plan records year 0 as loan $500k, LTV 16.7%, net worth $2.5M on every path
+ FAIL  src/engine/__tests__/existingLoan.test.ts > existing loan: starting state > the balance accrues at loanRate: after 12 months it is balance × (1 + rate/12)^12
+ FAIL  src/engine/__tests__/existingLoan.test.ts > existing loan: sell strategy > starts at portfolio − balance with no debt; with zero rate, no spending and flat returns the estates match
+ FAIL  src/engine/__tests__/existingLoan.test.ts > existing loan: margin calls and insolvency > a balance above maxLtv × portfolio forces a sale in month 0 that lands at targetLtv
+ FAIL  src/engine/__tests__/existingLoan.test.ts > existing loan: margin calls and insolvency > counts that month-0 forced sale in year 0 of marginCallByYear
+ FAIL  src/engine/__tests__/existingLoan.test.ts > existing loan: margin calls and insolvency > a balance the forced sale cannot cover (above V · (1 − g·tax)) breaks in month 0
+ FAIL  src/engine/__tests__/existingLoan.test.ts > existing loan: odds, solver and atlas > a larger balance lowers the success rate
+ FAIL  src/engine/__tests__/existingLoan.test.ts > existing loan: odds, solver and atlas > a larger balance lowers the solver's max sustainable spend
+ FAIL  src/engine/__tests__/existingLoan.test.ts > existing loan: odds, solver and atlas > reaches every Atlas city: odds are lower or equal per city, and lower for at least one
+      Tests  9 failed | 3 passed (12)
+=== M2-sell-no-offset: 'let Vs = Math.max(0, V - L0)' -> 'let Vs = V' (src/engine/kernel.ts)
+     × starts at portfolio − balance with no debt; with zero rate, no spending and flat returns the estates match 3ms
+     × scales the sell side basis pro rata, keeping the embedded-gain fraction 1ms
+     × a balance at or above the portfolio breaks the path at once, with no negatives or NaN 2ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/engine/__tests__/existingLoan.test.ts > existing loan: sell strategy > starts at portfolio − balance with no debt; with zero rate, no spending and flat returns the estates match
+ FAIL  src/engine/__tests__/existingLoan.test.ts > existing loan: sell strategy > scales the sell side basis pro rata, keeping the embedded-gain fraction
+ FAIL  src/engine/__tests__/existingLoan.test.ts > existing loan: margin calls and insolvency > a balance at or above the portfolio breaks the path at once, with no negatives or NaN
+      Tests  3 failed | 9 passed (12)
+=== M3-sell-basis-unscaled: 'let Bs = V > 0 ? B * (Vs / V) : 0' -> 'let Bs = B' (src/engine/kernel.ts)
+     × scales the sell side basis pro rata, keeping the embedded-gain fraction 4ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/engine/__tests__/existingLoan.test.ts > existing loan: sell strategy > scales the sell side basis pro rata, keeping the embedded-gain fraction
+      Tests  1 failed | 11 passed (12)
+=== M4-broken-not-called-month0: 'let called = broken ? 0 : -1' -> 'let called = -1' (src/engine/kernel.ts)
+     × a balance at or above the portfolio breaks the path at once, with no negatives or NaN 5ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/engine/__tests__/existingLoan.test.ts > existing loan: margin calls and insolvency > a balance at or above the portfolio breaks the path at once, with no negatives or NaN
+      Tests  1 failed | 11 passed (12)
+=== M5-year0-nw-ignores-loan: 'rec.nw[p] = V - L' -> 'rec.nw[p] = V' (src/engine/kernel.ts)
+     × a $500k balance on a $3M plan records year 0 as loan $500k, LTV 16.7%, net worth $2.5M on every path 72ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/engine/__tests__/existingLoan.test.ts > existing loan: starting state > a $500k balance on a $3M plan records year 0 as loan $500k, LTV 16.7%, net worth $2.5M on every path
+      Tests  1 failed | 11 passed (12)
+=== M6-broken-ltv0: 'rec.ltv[p] = 1
+      } else {
+        rec.port[p] = V' -> 'rec.ltv[p] = 0
+      } else {
+        rec.port[p] = V' (src/engine/kernel.ts)
+     × a balance at or above the portfolio breaks the path at once, with no negatives or NaN 5ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/engine/__tests__/existingLoan.test.ts > existing loan: margin calls and insolvency > a balance at or above the portfolio breaks the path at once, with no negatives or NaN
+      Tests  1 failed | 11 passed (12)
+=== M7-not-broken-at-V: 'let broken = L0 > 0 && L0 >= V' -> 'let broken = L0 > V' (src/engine/kernel.ts)
+     × a balance at or above the portfolio breaks the path at once, with no negatives or NaN 5ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/engine/__tests__/existingLoan.test.ts > existing loan: margin calls and insolvency > a balance at or above the portfolio breaks the path at once, with no negatives or NaN
+      Tests  1 failed | 11 passed (12)
+=== M8-config-drops-loan: 'initialLoan: Math.max(0, inputs.existingLoan ?? 0),' -> 'initialLoan: 0,' (src/engine/simulate.ts)
+     × a $500k balance on a $3M plan records year 0 as loan $500k, LTV 16.7%, net worth $2.5M on every path 7ms
+     × counts that month-0 forced sale in year 0 of marginCallByYear 38ms
+     × a balance at or above the portfolio breaks the path at once, with no negatives or NaN 16ms
+     × a larger balance lowers the success rate 123ms
+     × a larger balance lowers the solver's max sustainable spend 252ms
+     × reaches every Atlas city: odds are lower or equal per city, and lower for at least one 85ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 6 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/engine/__tests__/existingLoan.test.ts > existing loan: starting state > a $500k balance on a $3M plan records year 0 as loan $500k, LTV 16.7%, net worth $2.5M on every path
+ FAIL  src/engine/__tests__/existingLoan.test.ts > existing loan: margin calls and insolvency > counts that month-0 forced sale in year 0 of marginCallByYear
+ FAIL  src/engine/__tests__/existingLoan.test.ts > existing loan: margin calls and insolvency > a balance at or above the portfolio breaks the path at once, with no negatives or NaN
+ FAIL  src/engine/__tests__/existingLoan.test.ts > existing loan: odds, solver and atlas > a larger balance lowers the success rate
+ FAIL  src/engine/__tests__/existingLoan.test.ts > existing loan: odds, solver and atlas > a larger balance lowers the solver's max sustainable spend
+ FAIL  src/engine/__tests__/existingLoan.test.ts > existing loan: odds, solver and atlas > reaches every Atlas city: odds are lower or equal per city, and lower for at least one
+      Tests  6 failed | 6 passed (12)
