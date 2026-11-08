@@ -1,5 +1,5 @@
 import { applyRatios, budgetTotal, categoryRatios } from './cost'
-import { createRecorder, runPaths, type KernelConfig } from './kernel'
+import { createRecorder, kernelOpeningSale, runPaths, type KernelConfig } from './kernel'
 import { HEIRS, packBands } from './localTax'
 import { prepare, type Prepared } from './prepare'
 import { generateScenarios, type Scenarios } from './scenarios'
@@ -54,7 +54,8 @@ export function kernelConfig(inputs: PlanInputs, dest: Destination, budgetMultip
     fxSigmaM: fxVol / Math.sqrt(12),
     incomeMonthly: inputs.otherIncome / 12,
     incomeStartMonth: Math.max(0, Math.ceil((inputs.incomeStartAge - inputs.age) * 12 - 1e-9)),
-    initialLoan: Math.max(0, inputs.existingLoan ?? 0),
+    // finite and > 0, else 0 (Math.max would pass Infinity through)
+    initialLoan: Number.isFinite(inputs.existingLoan) && inputs.existingLoan > 0 ? inputs.existingLoan : 0,
     wealthTax: wealth && moveMonth < T ? { gross: wealth.base === 'gross', bands: packBands(wealth.bands) } : null,
     inheritance: inhApplies ? { heirs: HEIRS, perHeirAllowance: inh.perHeirAllowance, bands: packBands(inh.bands) } : null,
   }
@@ -121,6 +122,7 @@ export function simulate(market: MarketData, cities: City[], rawInputs: PlanInpu
   const years = Math.floor(cfg.T / 12)
   const rec = createRecorder(paths, years)
   runPaths(sc, cfg, rec)
+  const open = kernelOpeningSale(cfg)
 
   const counts = [0, 0, 0]
   for (let p = 0; p < paths; p++) counts[rec.outcome[p]]++
@@ -150,6 +152,7 @@ export function simulate(market: MarketData, cities: City[], rawInputs: PlanInpu
     ltv: bands(rec.ltv, paths, years),
     marginCallByYear: byYear,
     marginCallCumulative: cumulative,
+    openingSale: open !== null && !open.broken ? { sold: open.sold, taxPaid: open.taxPaid } : null,
     spendHome: budgetTotal(inputs.budget),
     spendDest: dest.annual,
     categoryRatios: dest.ratios,

@@ -24,7 +24,7 @@ export function BorrowingSection() {
   const [cgCustom, setCgCustom] = useState(!CG_PRESETS.some((p) => Math.abs(p - cg) < 1e-6))
   const isPreset = !cgCustom && CG_PRESETS.some((p) => Math.abs(p - cg) < 1e-6)
   const targetMax = Math.round((maxLtv - GAP) * 100) / 100
-  const loan = existingLoanInfo({ portfolio, balance, maxLtv, basisFraction: basis, capGainsRate: cg })
+  const loan = existingLoanInfo({ portfolio, balance, maxLtv, targetLtv: target, basisFraction: basis, capGainsRate: cg })
 
   return (
     <Section
@@ -59,7 +59,7 @@ export function BorrowingSection() {
             <span>
               {loan.status === 'breaks'
                 ? 'The forced sale can’t cover this after tax: the plan fails at once.'
-                : 'Above your margin-call LTV — the plan starts with a forced sale.'}
+                : `Above your margin-call LTV: the lender forces a sale today — about ${currencyCompact(loan.sale?.sold ?? 0)} sold, ${currencyCompact(loan.sale?.taxPaid ?? 0)} in tax — bringing the loan to ${percent(loan.sale?.ltv ?? target)} LTV.`}
             </span>
           </div>
         )}

@@ -1,10 +1,18 @@
+import { openingSale, type OpeningSale } from './openingSale'
+
 // The monthly BBD path loop, shared by simulate (full recording), atlas and solve (success only).
 //
 // Start: the BBD path opens with the plan's existing line-of-credit balance as its loan
-// (L = initialLoan, already borrowed to live), and year 0 records portfolio V, loan L, LTV L/V and
-// net worth V - L. A balance at or above the portfolio breaks the path at once (forced sale in
-// month 0, year 0 recorded as broken). A balance above maxLtv · V but below V is handled by month
-// 0's margin check (step 5), so it counts as a forced sale in month 0.
+// (L = initialLoan, already borrowed to live; non-finite or <= 0 means none). Before the first
+// month runs, the lender acts on today's LTV (openingSale.ts, computed once per run since it is
+// the same on every path):
+//   - L <= maxLtv · V: nothing happens; year 0 records portfolio V, loan L, LTV L/V, net worth V - L.
+//   - L > maxLtv · V: an opening forced sale today brings the loan to targetLtv with the step-5
+//     formula below, paying capital-gains tax; the path starts from the reduced position and
+//     year 0 records it (LTV = target). It is not a margin call: it doesn't set the first
+//     forced-sale month, so it neither bruises the path nor feeds marginCallByYear.
+//   - L >= V, or a balance that sale can't cover after tax: the path is broken from the start
+//     (year 0 recorded as broken, first forced-sale month 0).
 //
 // Month t, in order:
 //   1. portfolio *= 1 + r_t - dividendTaxDrag/12;  price level *= 1 + cpi_t;  FX walk steps.
@@ -25,8 +33,8 @@
 //   An insolvency is itself a forced liquidation, so the month a path breaks is recorded as its
 //   first forced-sale month if no earlier margin call happened (feeds marginCallByYear).
 // The sell strategy (recording mode only) runs on the same returns. It starts with no debt at
-// max(0, V - initialLoan) — the balance repaid by selling up front — with cost basis scaled pro
-// rata (B · Vs/V), so the embedded-gain fraction is unchanged. Spending net of income is
+// max(0, V - initialLoan) — the balance repaid by selling up front, V before any opening sale —
+// with cost basis scaled pro rata (B · Vs/V), so the embedded-gain fraction is unchanged. Spending net of income is
 // funded by selling shares (gross S = need / (1 - g·tax)), surplus is reinvested, no loan. It pays
 // the same year-end wealth tax by selling shares with the same capital-gains gross-up.
 // Inheritance tax (recording mode only) is applied at the horizon to both real estates: each of
@@ -72,8 +80,9 @@ export interface KernelConfig {
   fxSigmaM: number
   incomeMonthly: number
   incomeStartMonth: number
-  /** Existing loan balance at month 0 (USD, already borrowed); absent = 0. The sell strategy
-   *  starts at portfolio - initialLoan with no debt. */
+  /** Existing loan balance today (USD, already borrowed); absent, non-finite or <= 0 = none. Above
+   *  maxLtv · portfolio it triggers the opening forced sale. The sell strategy starts at
+   *  portfolio - initialLoan with no debt. */
   initialLoan?: number
   /** Annual wealth tax from moveMonth on (bands in real today's USD); null/absent = none. */
   wealthTax?: { gross: boolean; bands: PackedBands } | null
@@ -125,6 +134,17 @@ export function createRecorder(paths: number, years: number): Recorder {
   }
 }
 
+/** The existing balance the kernel uses: finite and > 0, else 0 (also maps NaN and Infinity to 0). */
+export function initialLoanOf(cfg: KernelConfig): number {
+  const L = cfg.initialLoan ?? 0
+  return Number.isFinite(L) && L > 0 ? L : 0
+}
+
+/** The opening forced sale for this config (identical across paths); see openingSale.ts. */
+export function kernelOpeningSale(cfg: KernelConfig): OpeningSale {
+  return openingSale(cfg.portfolio, cfg.portfolio * cfg.basisFraction, initialLoanOf(cfg), cfg.maxLtv, cfg.targetLtv, cfg.tax)
+}
+
 /** Runs all paths; returns the number of clean paths. Fills `rec` when given. */
 export function runPaths(
   sc: { paths: number; T: number; ret: Float32Array; infl: Float32Array; fxz: Float32Array },
@@ -143,23 +163,32 @@ export function runPaths(
     inh === null || !(estate > 0)
       ? 0
       : inh.heirs * bandTaxPacked(Math.max(0, estate / inh.heirs - inh.perHeirAllowance), inh.bands)
-  const L0raw = cfg.initialLoan ?? 0
-  const L0 = L0raw > 0 ? L0raw : 0 // also maps NaN to 0
+  const L0 = initialLoanOf(cfg)
+  const V0 = cfg.portfolio
+  const B0 = V0 * cfg.basisFraction
+  // Today's opening position (same on every path): untouched, after an opening sale, or broken.
+  const open = kernelOpeningSale(cfg)
+  const openBroken = open !== null && open.broken
+  const openV = open === null || open.broken ? V0 : open.port
+  const openB = open === null || open.broken ? B0 : open.basis
+  const openL = open === null || open.broken ? L0 : open.loan
+  // sell strategy: repay the balance up front by selling, basis pro rata (from today's V, before any opening sale)
+  const Vs0 = Math.max(0, V0 - L0)
+  const Bs0 = V0 > 0 ? B0 * (Vs0 / V0) : 0
   const paths = sc.paths
   let clean = 0
   for (let p = 0; p < paths; p++) {
     const o = p * sc.T
-    let V = cfg.portfolio
-    let B = V * cfg.basisFraction
-    let L = L0
+    let V = openV
+    let B = openB
+    let L = openL
     let P = 1
     let X = 0
-    // A balance at or above the portfolio is insolvent from the start: liquidated in month 0.
-    let broken = L0 > 0 && L0 >= V
+    // Broken from the start: liquidated before month 0. An opening sale is not a margin call.
+    let broken = openBroken
     let called = broken ? 0 : -1
-    // sell strategy: repay the balance up front by selling, basis pro rata
-    let Vs = Math.max(0, V - L0)
-    let Bs = V > 0 ? B * (Vs / V) : 0
+    let Vs = Vs0
+    let Bs = Bs0
     let taxReal = 0
     let wtReal = 0
     let taxMonth = firstTaxMonth
