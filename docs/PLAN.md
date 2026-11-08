@@ -30,7 +30,7 @@ All stages done. Deployed 2026-11-08 (Actions run 42505074297); evidence in `doc
 - 2026-11-08 · Fixed the glass blur missing in Chrome/Edge production builds (pre-existing): lightningcss collapses `backdrop-filter` + `-webkit-backdrop-filter` into the prefixed form when the unprefixed one comes first, so the prefixed one now comes first in all 12 pairs. It's small, it restores the intended design, and it bears on the user's city-card readability ask — PM's call.
 
 ## Open questions
-- WebKit's touch path (iPhone) is untested until the user tries it; the full-size view's swipe adds to it — user, when they try it.
+- WebKit's touch path (iPhone): on 2026-11-08 the user checked the deployed tiers and region chips on their phone — "it looks good". The photo full-size view's swipe hasn't been confirmed specifically — user, when they try it.
 - Seoul, London, Amsterdam and Berlin have no `localTaxes.ts` entry (money logic, needs tests) — user's call, a later plan.
 - Recheck Colorado Amendment 87 (Denver tax 5 → 4 if certified) and Florida Amendment 3 ("unofficial results" in four Florida profiles) once certified — later.
 - The photo credit cleaner misses "upload on <date>" suffixes — later.
