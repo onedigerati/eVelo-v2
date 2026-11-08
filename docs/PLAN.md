@@ -9,7 +9,7 @@ A user who has already borrowed on their line of credit to live can enter that b
 ## Now
 Stage 1 of 2 · Engine starting loan
 Risk: money
-Mode: autopilot
+Mode: paused — keel hook needs the user's go for the opening-sale fix round
 Agents: wide — confirmed 2026-11-08 12:27
 Checks:
 - [ ] With a $500k balance on a $3M plan, every path records year 0 as loan $500k, LTV 16.7%, net worth $2.5M (proof: test)
