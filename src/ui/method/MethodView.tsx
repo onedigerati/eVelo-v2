@@ -213,6 +213,7 @@ export function MethodView() {
               inherit the shares with a <em>stepped-up cost basis</em>, their
               value on the day you die, so the gains you borrowed against are
               never taxed. The estate repays the loan and passes on the rest.
+              If you have already borrowed, eVelo starts from that balance.
             </p>
             <p>
               It works when the portfolio grows faster than the loan. It fails
@@ -419,7 +420,8 @@ export function MethodView() {
                 <b>Interest capitalizes.</b> The loan grows by a twelfth of its
                 annual rate ({pct1(DEF.loanRate)} by default). You never pay
                 interest out of pocket; it is added to the balance and
-                compounds.
+                compounds. The loan starts at any balance you have already
+                drawn (zero if none), which accrues at the same rate.
               </li>
               <li>
                 <b>You draw what you need.</b> This month’s spending, grown with
@@ -579,8 +581,12 @@ export function MethodView() {
               Every future also runs a second, simpler plan on the same markets:{" "}
               <b>sell as you go</b>. Each month it sells enough shares to cover
               spending, paying capital-gains tax on the gain in each share sold,
-              and carries no loan. At the end of the horizon eVelo compares, in
-              today’s dollars:
+              and carries no loan. If you have an existing loan balance, this
+              plan starts with the portfolio minus that balance and no debt:
+              had you sold instead, those shares would already be spent, and
+              both plans start from the same net worth. (It ignores the tax and
+              interest already paid, which roughly offset.) At the end of the
+              horizon eVelo compares, in today’s dollars:
             </p>
             <ul className="mlist">
               <li>

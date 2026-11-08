@@ -121,22 +121,36 @@ export function SafeSpendBody({ result, solve, solving }: { result: SimulationRe
 
 /* ---------------------------------------------------------------- Estate */
 
+/** Net worth on day one: the portfolio less any existing loan balance (never below 0, for use as a scale). */
+export function startNetWorth(r: SimulationResult): number {
+  return Math.max(0, r.inputs.portfolio - (r.inputs.existingLoan ?? 0))
+}
+
 export function estateCaption(r: SimulationResult): string {
   const { bbdMedian, sellMedian, bbdWins } = r.estate
   const d = bbdMedian - sellMedian
-  if (Math.max(bbdMedian, sellMedian) < r.inputs.portfolio * 0.01)
+  const scale = startNetWorth(r)
+  if (Math.max(bbdMedian, sellMedian) < scale * 0.01)
     return 'In the median future neither strategy leaves an estate: spending and the loan (or the taxes of selling) use up the portfolio first.'
-  if (Math.abs(d) < r.inputs.portfolio * 0.005)
+  if (Math.abs(d) < scale * 0.005)
     return `Both strategies leave about ${currencyCompact(bbdMedian)} in the median future: there is little or nothing to borrow or sell.`
   if (d >= 0)
     return `Borrowing leaves heirs ${currencyCompact(d)} more in the median future, and comes out ahead in ${percent(bbdWins)} of all futures.`
   return `Selling as you go leaves ${currencyCompact(-d)} more in the median future here: the loan interest outruns the tax it avoids.`
 }
 
+/** With an existing loan, how the sell-as-you-go side starts; null when there is none. */
+export function sellStartNote(r: SimulationResult): string | null {
+  const bal = r.inputs.existingLoan ?? 0
+  if (bal <= 0) return null
+  return `Selling as you go starts at the portfolio less your existing ${currencyCompact(bal)} loan, with no debt, so both start from the same net worth.`
+}
+
 export function EstateBody({ result }: { result: SimulationResult }) {
   const { bbdMedian, sellMedian, bbdWins, sellTaxMedian } = result.estate
   const top = Math.max(bbdMedian, sellMedian, 1)
   const endAge = result.inputs.age + result.inputs.horizonYears
+  const sellNote = sellStartNote(result)
   return (
     <div className="estate">
       <div className="estate__pair">
@@ -173,6 +187,7 @@ export function EstateBody({ result }: { result: SimulationResult }) {
         Median estate at {endAge}, today’s dollars
         {result.localTax?.inheritanceApplies ? ', after the destination’s inheritance tax' : ''}. At death your heirs inherit at a <em>stepped-up basis</em>: the gains you borrowed
         against are never taxed, and the loan is repaid from the estate.
+        {sellNote ? ` ${sellNote}` : ''}
       </p>
     </div>
   )
