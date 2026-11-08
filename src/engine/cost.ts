@@ -58,3 +58,31 @@ export function applyRatios(b: Budget, ratios: Record<BudgetCategory, number>): 
   for (const c of BUDGET_CATEGORIES) s += (b[c] || 0) * ratios[c]
   return s
 }
+
+/** True when `x` is a usable fixed amount: a finite number >= 0. */
+export function isFixedAmount(x: unknown): x is number {
+  return typeof x === 'number' && Number.isFinite(x) && x >= 0
+}
+
+/**
+ * Destination annual spending per category, today's USD: `fixed[c]` where it is a finite number
+ * >= 0, else home budget × ratio. A category whose home budget is $0 can still carry a fixed amount.
+ */
+export function destinationAmounts(
+  b: Budget,
+  ratios: Record<BudgetCategory, number>,
+  fixed?: Partial<Record<BudgetCategory, number>>,
+): Record<BudgetCategory, number> {
+  const out = {} as Record<BudgetCategory, number>
+  for (const c of BUDGET_CATEGORIES) {
+    const f = fixed?.[c]
+    out[c] = isFixedAmount(f) ? f : (b[c] || 0) * ratios[c]
+  }
+  return out
+}
+
+export function amountsTotal(a: Record<BudgetCategory, number>): number {
+  let s = 0
+  for (const c of BUDGET_CATEGORIES) s += a[c]
+  return s
+}

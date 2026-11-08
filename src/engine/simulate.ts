@@ -1,4 +1,4 @@
-import { applyRatios, budgetTotal, categoryRatios } from './cost'
+import { amountsTotal, budgetTotal, categoryRatios, destinationAmounts } from './cost'
 import { createRecorder, kernelOpeningSale, runPaths, type KernelConfig } from './kernel'
 import { HEIRS, packBands } from './localTax'
 import { prepare, type Prepared } from './prepare'
@@ -10,6 +10,9 @@ const now = () => (typeof performance !== 'undefined' ? performance.now() : Date
 export interface Destination {
   city: City | null
   ratios: Record<BudgetCategory, number> | null
+  /** Destination annual spend per category, today's USD: fixed amounts for this city where set,
+   *  else home budget × ratio (null when staying home). */
+  amounts: Record<BudgetCategory, number> | null
   /** Annual destination spend, today's USD (null when staying home). */
   annual: number | null
 }
@@ -19,11 +22,13 @@ export function findCity(cities: City[], id: string | null): City | null {
   return cities.find((c) => c.id === id) ?? null
 }
 
-/** Resolve the destination's ratios and annual spend for a given dest city. */
+/** Resolve the destination's ratios and annual spend for a given dest city. Fixed amounts come
+ *  only from `inputs.amountOverrides[dest.id]`, so each city sees only its own. */
 export function resolveDestination(inputs: PlanInputs, home: City | null, dest: City | null): Destination {
-  if (!dest || !home || dest.id === home.id) return { city: null, ratios: null, annual: null }
+  if (!dest || !home || dest.id === home.id) return { city: null, ratios: null, amounts: null, annual: null }
   const ratios = categoryRatios(home, dest, inputs.expatFactor, inputs.ratioOverrides)
-  return { city: dest, ratios, annual: applyRatios(inputs.budget, ratios) }
+  const amounts = destinationAmounts(inputs.budget, ratios, inputs.amountOverrides?.[dest.id])
+  return { city: dest, ratios, amounts, annual: amountsTotal(amounts) }
 }
 
 export function kernelConfig(inputs: PlanInputs, dest: Destination, budgetMultiplier = 1): KernelConfig {
@@ -157,6 +162,7 @@ export function simulate(market: MarketData, cities: City[], rawInputs: PlanInpu
     spendHome: budgetTotal(inputs.budget),
     spendDest: dest.annual,
     categoryRatios: dest.ratios,
+    categoryAmounts: dest.amounts,
     estate: {
       bbdMedian: median(rec.bbdEstate),
       sellMedian: median(rec.sellEstate),

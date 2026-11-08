@@ -146,6 +146,11 @@ export interface PlanInputs {
   expatFactor: number
   /** Optional per-category ratio overrides (dest cost / home cost). */
   ratioOverrides?: Partial<Record<BudgetCategory, number>>
+  /** Optional fixed destination spending, keyed by city id then category: annual USD in today's
+   *  money. Applies only to that destination city. A finite amount >= 0 replaces home budget × ratio
+   *  for that category (it wins over any ratio override and the expat factor); it is still inflated
+   *  with CPI/FX and scaled by the max-spend solver like any destination spending. */
+  amountOverrides?: Partial<Record<string, Partial<Record<BudgetCategory, number>>>>
 
   /** Other income (Social Security, pension), today's USD/yr, starting at `incomeStartAge`. Inflation-indexed. */
   otherIncome: number
@@ -218,6 +223,9 @@ export interface SimulationResult {
   spendDest: number | null
   /** Effective per-category ratio applied to the destination. */
   categoryRatios: Record<BudgetCategory, number> | null
+  /** Destination annual spending per category, today's USD (fixed amounts where set, else
+   *  home budget × ratio). Sums to `spendDest`. Null when staying home. */
+  categoryAmounts: Record<BudgetCategory, number> | null
 
   /** Estate at horizon (real USD), BBD with step-up vs selling to fund spending. Both are after the
    *  destination's inheritance tax, if any. */

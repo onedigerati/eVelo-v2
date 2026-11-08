@@ -9,7 +9,8 @@ In the "Spending in <city>" card, a user who has researched a real price ("a con
 ## Now
 Stage 1 of 2 · Fixed amounts in the engine
 Risk: user input (share-link decoding of a new field)
-Agents: wide — confirmed 2026-11-08 17:15
+Mode: autopilot
+Agents: wide — confirmed 2026-11-08 17:23
 Checks:
 - [ ] A fixed amount for a category becomes that destination's spending for it, whatever the home budget or expat premium, while percentage overrides and untouched rows behave as before; a $0 home category can carry a fixed amount (proof: test)
 - [ ] Fixed amounts belong to the city they were set for: they move the Outlook, solver and loan hint for that destination and that city's Atlas row, never other Atlas cities (proof: test)
