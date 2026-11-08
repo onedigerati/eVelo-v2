@@ -1,4 +1,8 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
+
+// atlasData (cityCosts) imports the store and the sim client, which touch `window` on load.
+vi.mock('../../../state/store', () => ({ useStore: () => undefined }))
+vi.mock('../../../state/sim', () => ({}))
 import { CITIES, CITY_BY_ID } from '../../../data/cities'
 import { EXPAT_PICKS, expatPickFor, type ExpatProfile } from '../../../data/expatPicks'
 import { categoryRatios } from '../../../engine/cost'
@@ -19,6 +23,7 @@ import {
   verifiedLabel,
   type PickRow,
 } from '../picks'
+import { cityCosts } from '../atlasData'
 
 const row = (cityId: string, successRate: number, rank: number): PickRow => ({
   cityId,
@@ -161,6 +166,40 @@ describe('categoryCompare', () => {
     const out = categoryCompare(inputs, CITY_BY_ID[inputs.homeCityId])
     expect(out.every((c) => c.ratio === 1 && c.here === c.home)).toBe(true)
     expect(out.some((c) => c.cat === 'travel')).toBe(false)
+  })
+
+  it('uses a fixed amount only for its own city', () => {
+    const base = { ...DEFAULT_INPUTS, budget: { ...DEFAULT_INPUTS.budget, housing: 24_000 } }
+    const inputs = { ...base, amountOverrides: { lisbon: { housing: 12_000 } } }
+    const lis = categoryCompare(inputs, CITY_BY_ID.lisbon).find((c) => c.cat === 'housing')!
+    expect(lis.here).toBe(12_000)
+    expect(lis.ratio).toBeCloseTo(0.5)
+    // another city keeps its priced amount
+    expect(categoryCompare(inputs, CITY_BY_ID.bangkok)).toEqual(categoryCompare(base, CITY_BY_ID.bangkok))
+    // staying home ignores fixed amounts, even one keyed by the home city
+    const homeId = inputs.homeCityId
+    const atHome = categoryCompare({ ...base, amountOverrides: { [homeId]: { housing: 1 } } }, CITY_BY_ID[homeId])
+    expect(atHome.find((c) => c.cat === 'housing')).toMatchObject({ here: 24_000, ratio: 1 })
+  })
+
+  it('shows a fixed amount on a $0 home category with no ratio, never Infinity or NaN', () => {
+    const inputs = { ...DEFAULT_INPUTS, budget: { ...DEFAULT_INPUTS.budget, travel: 0 }, amountOverrides: { lisbon: { travel: 5_000 } } }
+    const t = categoryCompare(inputs, CITY_BY_ID.lisbon).find((c) => c.cat === 'travel')!
+    expect(t).toEqual({ cat: 'travel', home: 0, here: 5_000, ratio: null })
+    expect(categoryCompare(inputs, CITY_BY_ID.bangkok).some((c) => c.cat === 'travel')).toBe(false)
+  })
+})
+
+describe('cityCosts', () => {
+  it('applies only the city’s own fixed amounts', () => {
+    const inputs = { ...DEFAULT_INPUTS, budget: { ...DEFAULT_INPUTS.budget, dining: 0 }, amountOverrides: { lisbon: { housing: 9_000, dining: 3_000 } } }
+    const lis = cityCosts(inputs, CITY_BY_ID.lisbon)
+    expect(lis.housing).toBe(9_000)
+    expect(lis.dining).toBe(3_000)
+    const bkk = cityCosts(inputs, CITY_BY_ID.bangkok)
+    expect(bkk).toEqual(cityCosts({ ...inputs, amountOverrides: undefined }, CITY_BY_ID.bangkok))
+    expect(bkk.dining).toBe(0)
+    for (const v of Object.values(lis)) expect(Number.isFinite(v)).toBe(true)
   })
 })
 
