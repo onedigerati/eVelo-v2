@@ -1,5 +1,5 @@
 import { m as motion } from 'framer-motion'
-import { useDeferredValue, useMemo, useState } from 'react'
+import { useDeferredValue, useMemo, useState, type ReactNode } from 'react'
 import { currency, currencyCompact, percent } from '../format'
 import { ease } from '../motion'
 import { SegmentedControl, cx } from '../primitives'
@@ -9,6 +9,7 @@ import { expatPickFor, hasProfile } from '../../data/expatPicks'
 import { VerifiedMark } from './VerifiedMark'
 import { verifiedLabel } from './picks'
 import { taxStatus } from './taxLines'
+import { defaultOpen, groupTiers, oddsBands, type Tier } from './tiers'
 
 type SortKey = 'odds' | 'cost' | 'name'
 
@@ -43,6 +44,27 @@ export function CityList({ rows, homeId, destId, region, compare, onToggleCompar
     if (sort === 'name') return [...f].sort((a, b) => a.city.name.localeCompare(b.city.name))
     return f
   }, [rows, region, query, sort])
+
+  // Odds bands split from the full list, so tiers hold still while searching or switching region.
+  const bands = useMemo(() => oddsBands(rows), [rows])
+  const tiers = useMemo(() => groupTiers(shown, sort, homeId, bands), [shown, sort, homeId, bands])
+  // Open tiers reset to the default (first tier; every tier with hits while searching) whenever the sort,
+  // search or region changes; toggles only last within that context.
+  const ctx = `${sort}|${query}|${region}`
+  const [toggled, setToggled] = useState<Set<string> | null>(null)
+  const [openCtx, setOpenCtx] = useState(ctx)
+  if (openCtx !== ctx) {
+    setOpenCtx(ctx)
+    setToggled(null)
+  }
+  const open = (openCtx === ctx && toggled) || defaultOpen(tiers, !!query)
+  const allOpen = tiers.length > 0 && tiers.every((t) => open.has(t.key))
+  const setOpen = (keys: Set<string>) => setToggled(keys)
+  const toggle = (key: string) => {
+    const next = new Set(open)
+    if (!next.delete(key)) next.add(key)
+    setOpen(next)
+  }
 
   const pinned = useMemo(() => {
     const out: Ranked[] = []
@@ -102,6 +124,20 @@ export function CityList({ rows, homeId, destId, region, compare, onToggleCompar
       )}
 
       <section className="clist__group" aria-label="All cities">
+        {tiers.length > 1 && (
+          <div className="clist__tierbar">
+            <span className="t-small ink-3">
+              {tiers.length} {sort === 'name' ? 'letters' : 'tiers'}
+            </span>
+            <button
+              type="button"
+              className="clist__openall"
+              onClick={() => setOpen(allOpen ? new Set() : new Set(tiers.map((t) => t.key)))}
+            >
+              {allOpen ? 'Close all' : 'Open all'}
+            </button>
+          </div>
+        )}
         <div className="clist__head" aria-hidden="true">
           <span>#</span>
           <span>City</span>
@@ -111,11 +147,13 @@ export function CityList({ rows, homeId, destId, region, compare, onToggleCompar
           <span>Currency risk</span>
           <span className="is-c">Compare</span>
         </div>
-        <ul className="clist__rows" role="list">
-          {shown.map((r, i) => (
-            <Row key={r.cityId} r={r} i={i} {...rowProps} />
-          ))}
-        </ul>
+        {tiers.map((t) => (
+          <TierBlock key={t.key} tier={t} open={open.has(t.key)} onToggle={() => toggle(t.key)}>
+            {t.rows.map((r, i) => (
+              <Row key={r.cityId} r={r} i={i} {...rowProps} />
+            ))}
+          </TierBlock>
+        ))}
         {shown.length === 0 && (
           <p className="clist__empty">
             No cities match <b>“{q}”</b>
@@ -129,6 +167,65 @@ export function CityList({ rows, homeId, destId, region, compare, onToggleCompar
         </p>
       </section>
     </div>
+  )
+}
+
+const PEEK = 3
+
+function TierBlock({ tier, open, onToggle, children }: { tier: Tier<Ranked>; open: boolean; onToggle: () => void; children: ReactNode }) {
+  const id = `tier-${tier.key}`
+  const n = tier.rows.length
+  const peek = tier.rows.slice(0, PEEK).map((r) => r.city.name)
+  return (
+    <div className={cx('ctier', open && 'is-open')}>
+      <h3 className="ctier__h">
+        <button type="button" className="ctier__btn" aria-expanded={open} aria-controls={id} onClick={onToggle}>
+          <svg className="ctier__chev" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
+            <path d="M4 2.5L7.5 6 4 9.5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+          <span className="ctier__label">
+            <b>{tier.label}</b>
+            {tier.range && <span className="ctier__range">{tier.range}</span>}
+          </span>
+          <span className="ctier__count num">
+            {n} {n === 1 ? 'city' : 'cities'}
+          </span>
+          {tier.hasHome && <span className="crow__tag ctier__home">Home</span>}
+          {!open && (
+            <>
+              <span className="ctier__peek">
+                {peek.join(', ')}
+                {n > PEEK ? ` +${n - PEEK}` : ''}
+              </span>
+              <OddsSpark rows={tier.rows} />
+            </>
+          )}
+        </button>
+      </h3>
+      {open && (
+        <ul className="clist__rows" role="list" id={id}>
+          {children}
+        </ul>
+      )}
+    </div>
+  )
+}
+
+/** Tiny strip of the tier's odds: one bar per city, height and color by its odds. */
+function OddsSpark({ rows }: { rows: Ranked[] }) {
+  const W = 72
+  const H = 18
+  const n = rows.length
+  const step = W / Math.max(n, 1)
+  const bw = Math.max(1, Math.min(4, step - (step > 2 ? 1 : 0)))
+  return (
+    <svg className="ctier__spark" width={W} height={H} viewBox={`0 0 ${W} ${H}`} aria-hidden="true" preserveAspectRatio="none">
+      <line x1="0" x2={W} y1={H - 0.5} y2={H - 0.5} className="ctier__spark-base" />
+      {rows.map((r, i) => {
+        const h = Math.max(1.5, r.successRate * (H - 1))
+        return <rect key={r.cityId} x={i * step} y={H - 1 - h} width={bw} height={h} rx={0.5} style={{ fill: successColor(r.successRate) }} />
+      })}
+    </svg>
   )
 }
 
