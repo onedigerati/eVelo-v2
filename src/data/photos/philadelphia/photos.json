@@ -1,0 +1,62 @@
+[
+  {
+    "commons": "File:Philadelphia skyline 20240528.jpg",
+    "file": "1.webp",
+    "caption": "Center City Philadelphia's skyline",
+    "alt": "Glass skyscrapers of a city centre rising above lower buildings under a blue sky",
+    "author": "颐园居",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Philadelphia_skyline_20240528.jpg",
+    "width": 1280,
+    "height": 960
+  },
+  {
+    "commons": "File:Boathouse Row - Oct 2024.jpg",
+    "file": "2.webp",
+    "caption": "Boathouse Row on the Schuylkill River, at the edge of Fairmount Park",
+    "alt": "A row of Victorian boathouses with steep roofs along a riverbank, with trees in autumn colour",
+    "author": "Domaking9000",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Boathouse_Row_-_Oct_2024.jpg",
+    "width": 1280,
+    "height": 853
+  },
+  {
+    "commons": "File:Elfreth's Alley.JPG",
+    "file": "3.webp",
+    "caption": "Elfreth's Alley in Old City, among the oldest continuously lived-in streets in the US",
+    "alt": "A narrow cobbled lane lined with small eighteenth-century brick houses with shutters and flags",
+    "author": "Mr. Kjetil Ree",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Elfreth's_Alley.JPG",
+    "width": 1280,
+    "height": 960
+  },
+  {
+    "commons": "File:Reading Terminal Market (53587020195).jpg",
+    "file": "4.webp",
+    "caption": "Reading Terminal Market, the city's century-old indoor food market, under the old Reading Railroad train shed",
+    "alt": "A brick and stone market building with a large arched glass train shed above it on a city street",
+    "author": "ajay_suresh",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Reading_Terminal_Market_(53587020195).jpg",
+    "width": 1280,
+    "height": 960
+  },
+  {
+    "commons": "File:Exterior of the Independence Hall, Aug 2019.jpg",
+    "file": "5.webp",
+    "caption": "Independence Hall, where the Declaration of Independence and the Constitution were signed",
+    "alt": "A red-brick Georgian building with a white clock tower and steeple, with lawns in front",
+    "author": "Mys 721tx",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Exterior_of_the_Independence_Hall,_Aug_2019.jpg",
+    "width": 1280,
+    "height": 853
+  }
+]

@@ -4,7 +4,7 @@ const profile: ExpatProfile = {
   tagline: 'No state income or estate tax, next door to the world\'s largest medical centre',
   summary:
     'Texas has no state income tax (the constitution has barred one since 2019, and a capital gains tax since 2025) and no estate or inheritance tax, so a buy-borrow-die retiree based in Houston pays nothing to the state on dividends, gains or the estate, and keeps full access to US brokers and securities-based lending. Houston adds the Texas Medical Center, home of MD Anderson, the cheapest housing of the big Texas cities and a United hub with about 72 international nonstops across Houston\'s two airports. The costs come back as property tax around 2%, hurricanes and flooding, a long humid summer and high violent crime.',
-  scores: { cost: 3, healthcare: 5, safety: 2, visa: 5, climate: 2, community: 4, tax: 5, estate: 5, lending: 5 },
+  scores: { cost: 2, healthcare: 5, safety: 2, visa: 5, climate: 2, community: 4, tax: 5, estate: 5, lending: 5 },
   facts: {
     healthcare:
       'The Texas Medical Center is the largest medical complex in the world, with MD Anderson (consistently ranked at or near the top US cancer hospital), Houston Methodist, Memorial Hermann\'s Level 1 trauma centre and Baylor St. Luke\'s; Medicare applies from 65.',

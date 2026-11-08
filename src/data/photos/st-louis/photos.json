@@ -1,0 +1,62 @@
+[
+  {
+    "commons": "File:St Louis night expblend.jpg",
+    "file": "1.webp",
+    "caption": "The Gateway Arch and downtown St. Louis at night across the Mississippi",
+    "alt": "A lit steel arch and city skyline at night, reflected in a river",
+    "author": "Daniel Schwen",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:St_Louis_night_expblend.jpg",
+    "width": 1280,
+    "height": 823
+  },
+  {
+    "commons": "File:Grand basin in Forest Park, St. Louis, MIssouri.jpg",
+    "file": "2.webp",
+    "caption": "The Grand Basin in Forest Park, below the Saint Louis Art Museum",
+    "alt": "A rectangular lake with fountains below a hill topped by a classical museum",
+    "author": "AmyBautz",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Grand_basin_in_Forest_Park,_St._Louis,_MIssouri.jpg",
+    "width": 1280,
+    "height": 851
+  },
+  {
+    "commons": "File:Gfp-climatron-at-st-louis-botanical-gardens.jpg",
+    "file": "3.webp",
+    "caption": "The Climatron, a geodesic-dome greenhouse at the Missouri Botanical Garden",
+    "alt": "A geodesic glass dome behind a reflecting pool with lily pads",
+    "author": "Yinan Chen",
+    "license": "Public domain",
+    "licenseUrl": "https://web.archive.org/web/20230926203737/https://creativecommons.org/licenses/publicdomain/",
+    "source": "https://commons.wikimedia.org/wiki/File:Gfp-climatron-at-st-louis-botanical-gardens.jpg",
+    "width": 1152,
+    "height": 767
+  },
+  {
+    "commons": "File:Lafayette Avenue, Lafayette Square, St. Louis, MO.jpg",
+    "file": "4.webp",
+    "caption": "Victorian townhouses on Lafayette Avenue in Lafayette Square",
+    "alt": "A row of colourful Victorian townhouses with ornate cornices along a street",
+    "author": "w_lemay",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lafayette_Avenue,_Lafayette_Square,_St._Louis,_MO.jpg",
+    "width": 1152,
+    "height": 864
+  },
+  {
+    "commons": "File:Interior, Cathedral Basilica of St. Louis, Lindell Boulevard and Newstead Avenue, Central West End, St. Louis, MO - 53131796906.jpg",
+    "file": "5.webp",
+    "caption": "The mosaic-covered interior of the Cathedral Basilica in the Central West End",
+    "alt": "A church interior with domes and walls covered in gold and green mosaics",
+    "author": "w_lemay",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Interior,_Cathedral_Basilica_of_St._Louis,_Lindell_Boulevard_and_Newstead_Avenue,_Central_West_End,_St._Louis,_MO_-_53131796906.jpg",
+    "width": 768,
+    "height": 1024
+  }
+]

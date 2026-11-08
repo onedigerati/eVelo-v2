@@ -1,0 +1,40 @@
+$ mv src/data/profiles/chicago.ts <scratchpad> && npx vitest run src/data/__tests__/photos.test.ts -t 'gives every one of the 133 cities'   # restored right after
+npm notice run evelo@2.0.0 npx
+npm notice run 'vitest' run src/data/__tests__/photos.test.ts -t gives every one of the 133 cities
+
+ RUN  v5.1.0 /home/jonah/repos/eVelo-v2
+
+ ❯ src/data/__tests__/photos.test.ts (119 tests | 1 failed | 118 skipped) 7ms
+   ❯ city photos data (9)
+     × gives every one of the 133 cities a profile and exactly 5 photos 6ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/data/__tests__/photos.test.ts > city photos data > gives every one of the 133 cities a profile and exactly 5 photos
+AssertionError: cities without a profile: chicago: expected [ 'chicago' ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   "chicago",
++ ]
+
+ ❯ src/data/__tests__/photos.test.ts:67:76
+     65|     const noProfile = ids.filter((id) => !PROFILED.has(id))
+     66|     const noPhotos = ids.filter((id) => photosFor(id).length !== PHOTO…
+     67|     expect(noProfile, `cities without a profile: ${noProfile.join(', '…
+       |                                                                            ^
+     68|     expect(noPhotos, `cities without ${PHOTOS_PER_CITY} photos: ${noPh…
+     69|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 118 skipped (119)
+   Start at  23:29:27
+   Duration  3.74s (transform 89%, import 11%)
+
+exit 1

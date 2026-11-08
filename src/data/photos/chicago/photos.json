@@ -1,0 +1,62 @@
+[
+  {
+    "commons": "File:Chicago skyline from the North Avenue Beach Pier.jpg",
+    "file": "1.webp",
+    "caption": "Chicago's skyline from the North Avenue Beach pier on Lake Michigan",
+    "alt": "A long skyline of towers beyond a beach and the blue water of Lake Michigan",
+    "author": "Chris Rycroft",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Chicago_skyline_from_the_North_Avenue_Beach_Pier.jpg",
+    "width": 1280,
+    "height": 800
+  },
+  {
+    "commons": "File:Chicago Riverwalk (43545448735).jpg",
+    "file": "2.webp",
+    "caption": "The Chicago Riverwalk, cafés and paths along the main branch of the river downtown",
+    "alt": "A riverside walkway running beneath a steel bridge, with the river and older buildings beyond",
+    "author": "Roman Boed",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Chicago_Riverwalk_(43545448735).jpg",
+    "width": 1280,
+    "height": 855
+  },
+  {
+    "commons": "File:Lincoln Park Conservatory kz01.jpg",
+    "file": "3.webp",
+    "caption": "Lincoln Park Conservatory, an 1890s glasshouse in the lakefront park",
+    "alt": "A Victorian glass conservatory with a domed central hall",
+    "author": "Krzysztof Ziarnek, Kenraiz",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lincoln_Park_Conservatory_kz01.jpg",
+    "width": 1280,
+    "height": 853
+  },
+  {
+    "commons": "File:Art Institute of Chicago Michigan Avenue.jpg",
+    "file": "4.webp",
+    "caption": "The Art Institute of Chicago on Michigan Avenue, guarded by its bronze lions",
+    "alt": "A classical stone museum building with a bronze lion statue in front",
+    "author": "Alanscottwalker",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Art_Institute_of_Chicago_Michigan_Avenue.jpg",
+    "width": 1280,
+    "height": 881
+  },
+  {
+    "commons": "File:Cyclists on Lakefront Trail, in front of Indian Village, Chicago, 2025.jpg",
+    "file": "5.webp",
+    "caption": "Cyclists on the 18-mile Lakefront Trail, here by Edgewater's Indian Village",
+    "alt": "People cycling on a lakeside path in front of high-rise apartment buildings",
+    "author": "DimiTalen",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Cyclists_on_Lakefront_Trail,_in_front_of_Indian_Village,_Chicago,_2025.jpg",
+    "width": 1280,
+    "height": 853
+  }
+]

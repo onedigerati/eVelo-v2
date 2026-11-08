@@ -1,0 +1,162 @@
+$ npx vitest run src/data/__tests__/photos.test.ts src/data/__tests__/expatPicks.test.ts --reporter=verbose
+npm notice run evelo@2.0.0 npx
+npm notice run 'vitest' run src/data/__tests__/photos.test.ts src/data/__tests__/expatPicks.test.ts --reporter=verbose
+
+ RUN  v5.1.0 /home/jonah/repos/eVelo-v2
+
+ ✓ src/data/__tests__/expatPicks.test.ts > EXPAT_PICKS > has 75 unique picks ranked 1..75 in order 2ms
+ ✓ src/data/__tests__/expatPicks.test.ts > EXPAT_PICKS > follows the research doc's draft top 75 at the ends and the inserted picks 0ms
+ ✓ src/data/__tests__/expatPicks.test.ts > EXPAT_PICKS > cites the BBD research for every pick 1ms
+ ✓ src/data/__tests__/expatPicks.test.ts > EXPAT_PICKS > points at verified cities in the dataset 1ms
+ ✓ src/data/__tests__/expatPicks.test.ts > EXPAT_PICKS > gives every pick a one-sentence reason and known source refs 2ms
+ ✓ src/data/__tests__/expatPicks.test.ts > EXPAT_PICKS > has a profile file for every pick 0ms
+ ✓ src/data/__tests__/expatPicks.test.ts > EXPAT_PICKS > names every profile file after a city id in cities.ts 0ms
+ ✓ src/data/__tests__/expatPicks.test.ts > EXPAT_PICKS > gives every profile, pick or not, a full profile 38ms
+ ✓ src/data/__tests__/expatPicks.test.ts > EXPAT_PICKS > has no TODO placeholders left in any profile 3ms
+ ✓ src/data/__tests__/expatPicks.test.ts > EXPAT_PICKS > keeps every pick's scores on one 1–5 scale, using the whole range 0ms
+ ✓ src/data/__tests__/expatPicks.test.ts > EXPAT_PICKS > has no internal research markers in the prose 6ms
+ ✓ src/data/__tests__/expatPicks.test.ts > sources and method > uses http(s) urls everywhere 5ms
+ ✓ src/data/__tests__/expatPicks.test.ts > sources and method > has unique ranking source names 0ms
+ ✓ src/data/__tests__/expatPicks.test.ts > sources and method > exports the method, date and labels 0ms
+ ✓ src/data/__tests__/expatPicks.test.ts > sources and method > has a rubric line for every score key 0ms
+ ✓ src/data/__tests__/expatPicks.test.ts > sources and method > names the BBD research as a ranking source and in the method 0ms
+ ✓ src/data/__tests__/expatPicks.test.ts > helpers > finds a pick by city id 0ms
+ ✓ src/data/__tests__/expatPicks.test.ts > helpers > returns all 75 profiled picks in rank order 0ms
+ ✓ src/data/__tests__/expatPicks.test.ts > helpers > looks up a profile for any profiled city, pick or not 2ms
+ ✓ src/data/__tests__/expatPicks.test.ts > profile files (buildProfileIndex + unknownProfileIds) > keys profiles by file name 0ms
+ ✓ src/data/__tests__/expatPicks.test.ts > profile files (buildProfileIndex + unknownProfileIds) > accepts a profile file named after any city id, picks or not 1ms
+ ✓ src/data/__tests__/expatPicks.test.ts > profile files (buildProfileIndex + unknownProfileIds) > fails a profile file named after an id that is not in cities.ts 0ms
+stdout | src/data/__tests__/photos.test.ts > preview photo URLs (photoKey, parsePhotoAssets, remapPhotoIndex) > loadPhotoAssets keeps bundled URLs when the map fails to load, and notifies after a good one
+photos: no photo-assets.json, using bundled photo URLs Error: reset
+    at /home/jonah/repos/eVelo-v2/src/data/__tests__/photos.test.ts:271:15
+    at loadPhotoAssets (/home/jonah/repos/eVelo-v2/src/data/photos.ts:162:60)
+    at /home/jonah/repos/eVelo-v2/src/data/__tests__/photos.test.ts:270:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async file:///home/jonah/repos/eVelo-v2/node_modules/vitest/dist/chunks/run.CjdgFZiW.js:2801:20
+
+ ✓ src/data/__tests__/photos.test.ts > city photos data > loads every city folder that has a photos.json 2ms
+ ✓ src/data/__tests__/photos.test.ts > city photos data > only has photos for profiled cities 1ms
+ ✓ src/data/__tests__/photos.test.ts > city photos data > has exactly 5 photos for every profiled city 0ms
+ ✓ src/data/__tests__/photos.test.ts > city photos data > gives every one of the 133 cities a profile and exactly 5 photos 1ms
+ ✓ src/data/__tests__/photos.test.ts > city photos data > returns an empty list for a city without photos, the same one each call 0ms
+ ✓ src/data/__tests__/photos.test.ts > city photos data > gives every city exactly 5 complete, credited photos under 200 kB 59ms
+ ✓ src/data/__tests__/photos.test.ts > city photos data > stores entries that pass the full entry check (no placeholder authors) 7ms
+ ✓ src/data/__tests__/photos.test.ts > city photos data > never uses a Commons file twice 1ms
+ ✓ src/data/__tests__/photos.test.ts > city photos data > has no stray image files 3ms
+ ✓ src/data/__tests__/photos.test.ts > photo index (buildPhotoIndex) > drops only the city whose listed file is missing, with one warning 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo index (buildPhotoIndex) > does not throw and warns nothing when every file is there 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo index (buildPhotoIndex) > warns through console.warn by default 1ms
+ ✓ src/data/__tests__/photos.test.ts > preview photo URLs (photoKey, parsePhotoAssets, remapPhotoIndex) > keys a photo by city and built file name, ignoring path, query and hash 0ms
+ ✓ src/data/__tests__/photos.test.ts > preview photo URLs (photoKey, parsePhotoAssets, remapPhotoIndex) > keys every real photo by its own city and file 4ms
+ ✓ src/data/__tests__/photos.test.ts > preview photo URLs (photoKey, parsePhotoAssets, remapPhotoIndex) > keeps the bundled URLs when there is no asset map 0ms
+ ✓ src/data/__tests__/photos.test.ts > preview photo URLs (photoKey, parsePhotoAssets, remapPhotoIndex) > swaps in uploaded URLs, and drops only a city with a missing upload, with one warning 0ms
+ ✓ src/data/__tests__/photos.test.ts > preview photo URLs (photoKey, parsePhotoAssets, remapPhotoIndex) > warns once in total, however many cities lack uploads 0ms
+ ✓ src/data/__tests__/photos.test.ts > preview photo URLs (photoKey, parsePhotoAssets, remapPhotoIndex) > accepts only https or relative asset URLs from photo-assets.json 0ms
+ ✓ src/data/__tests__/photos.test.ts > preview photo URLs (photoKey, parsePhotoAssets, remapPhotoIndex) > loadPhotoAssets keeps bundled URLs when the map fails to load, and notifies after a good one 5ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > allows CC0 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > allows CC0 1.0 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > allows Public domain 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > allows PD-self 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > allows CC BY 2.0 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > allows CC BY 4.0 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > allows CC BY-SA 3.0 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > allows CC BY-SA 4.0 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > allows CC BY-SA 3.0 at 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > allows CC BY-SA 3.0 IGO 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > allows CC BY-SA 3.0 igo 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > allows PD-old-70 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > allows CC BY 2.5 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > refuses "CC BY-NC 2.0" naming the file 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > refuses "CC BY-ND 4.0" naming the file 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > refuses "CC BY-NC-SA 4.0" naming the file 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > refuses "CC BY-SA 2.5,2.0,1.0" naming the file 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > refuses "Attribution" naming the file 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > refuses "Fair use" naming the file 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > refuses "GFDL" naming the file 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > refuses "" naming the file 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo licence check > refuses a missing licence 0ms
+ ✓ src/data/__tests__/photos.test.ts > npm run photos (doCity, network stubbed) > refuses a non-free licence with the file title, before downloading, and writes nothing 19ms
+ ✓ src/data/__tests__/photos.test.ts > npm run photos (doCity, network stubbed) > refuses a file that is not on Commons 13ms
+ ✓ src/data/__tests__/photos.test.ts > npm run photos (doCity, network stubbed) > refuses a placeholder author 13ms
+ ✓ src/data/__tests__/photos.test.ts > npm run photos (doCity, network stubbed) > refuses a missing author 13ms
+ ✓ src/data/__tests__/photos.test.ts > npm run photos (doCity, network stubbed) > refuses an author that decodes to markup 11ms
+ ✓ src/data/__tests__/photos.test.ts > npm run photos (doCity, network stubbed) > refuses a too-small original before downloading 8ms
+ ✓ src/data/__tests__/photos.test.ts > npm run photos (doCity, network stubbed) > refuses an image URL that is not https on upload.wikimedia.org 8ms
+ ✓ src/data/__tests__/photos.test.ts > npm run photos (doCity, network stubbed) > writes nothing when an image fails to encode after every licence passed 181ms
+ ✓ src/data/__tests__/photos.test.ts > npm run photos (doCity, network stubbed) > fills the entries, then skips them on a second run without any network call 225ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > cleans Commons author HTML to short plain text 1ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > drops out-of-range entities and invisible/bidi controls 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: ŠJů, Wikimedia Commons 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: Marcin Konsek / Wikimedia Commons 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: Jorge Royan / http://www.royan.com.ar 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: Thomas Wolf, www.foto-tw.de 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: Plamen Matanski,Flikr 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: Plamen Agov • studiolemontree.com 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: Artur Malinowski - @Flickr: https://www.flickr.com/photos/am1974/ 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: Mike Peel (www.mikepeel.net). 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: Anna | Panoramio 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: Ben – Wikipedia 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: Cara - Commons 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: Dan @ Flickr 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: https://example.org/me Eve 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: By:Amanda Truscott 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: This photo was taken by Anton Zelenov. 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: I, Sailko 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: User:Darwinek 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: Wknight94 talk 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: Hendrik Dacquin from gent, Belgium 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: Flickr user Walter Rodriguez 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: Flickr-user Walter Rodriguez 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: Flickr: Walter Rodriguez 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: flickr user: Ann Lee 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: CEphoto, Uwe Aranas or alternatively © CEphoto, Uwe Aranas 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: Jane Roe or alternatively Someone Else 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: Jane Roe or © Jane Roe 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: Jane Roe alternatively Jane Roe 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: Prayitno / Thank you for (12 millions +) view 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: Ann - thanks for 5k views 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: No machine-readable author provided. Maral10 assumed (based on copyright claims). 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: (WT-shared) CONOCER at wts wikivoyage 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: (WT-en) Ann Lee at wikivoyage 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: Mariordo ((Mario Roberto Durán Ortiz) 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: "dronepicr" 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: Julian Herzog (Website) 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: <a href="//commons.wikimedia.org/wiki/User:J">Julian Herzog</a> (<a href="https://julianherzog.com">Website</a>) 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: Ann Lee (website) 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: Ann Lee (homepage) 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: Ann Lee (talk) 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: Ann Lee (contribs) 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: Ann Lee (talk | contribs) 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > strips link and platform noise: “Ann Lee” 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > keeps a real name intact: Bernard Spragg. NZ 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > keeps a real name intact: Dale Cruse 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > keeps a real name intact: Diego Delso 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > keeps a real name intact: Isaías Montilla 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > keeps a real name intact: Joachim Schulz Emsland 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > keeps a real name intact: Concierge.2C 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > keeps a real name intact: Chainwit. 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > keeps a real name intact: A.Savin 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > keeps a real name intact: H. Zell 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > keeps a real name intact: Fry72, Karel Frydrýšek 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > keeps a real name intact: Marc Ryckaert (MJJR) 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > keeps a real name intact: Jean-Pol GRANDMONT 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > keeps a real name intact: Tom or Jerry 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > keeps a real name intact: Ann Orr 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > keeps a real name intact: Ximonic (Simo Räsänen) 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > keeps a real name intact: Alejandro Islas Photograph AC 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > keeps a real name intact: Río Secreto 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > refuses a stored author that still carries a link, domain or platform 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > treats placeholder authors as missing 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > prefers Attribution, then Artist, then Credit, and refuses none or markup 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > builds https licence URLs 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > checks original size and image host 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > normalises Commons titles and catches duplicates that differ only in form 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > builds the Commons file page URL from the title 0ms
+ ✓ src/data/__tests__/photos.test.ts > photo metadata helpers > flags bad hand-written fields 0ms
+
+ Test Files  2 passed (2)
+      Tests  141 passed (141)
+   Start at  23:29:01
+   Duration  4.11s (transform 74%, tests 15%, import 11%)
+
+exit 0

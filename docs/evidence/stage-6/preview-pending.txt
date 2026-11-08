@@ -1,0 +1,6 @@
+$ python3: summarise dist/preview-photos-pending.json by batch and city
+count 70 · batches [25, 25, 20]
+batch 1: asheville, atlanta, boston, charlotte, chicago
+batch 2: kansas-city, minneapolis, nashville, new-york, philadelphia
+batch 3: pittsburgh, raleigh, st-louis, washington-dc
+.preview/photo-assets.json entries: 595

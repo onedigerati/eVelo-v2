@@ -1,0 +1,62 @@
+[
+  {
+    "commons": "File:Charles River Esplanade Boston May 2018 panorama.jpg",
+    "file": "1.webp",
+    "caption": "Back Bay's towers above the Charles River Esplanade",
+    "alt": "A wide river with a green park along its bank and a row of city towers behind, under a blue sky",
+    "author": "King of Hearts",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Charles_River_Esplanade_Boston_May_2018_panorama.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "commons": "File:Acorn Street, Beacon Hill, Boston.jpg",
+    "file": "2.webp",
+    "caption": "Acorn Street, a cobbled lane of nineteenth-century row houses on Beacon Hill",
+    "alt": "A narrow cobblestone street between red-brick row houses with black shutters and gas lamps",
+    "author": "R Boed",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Acorn_Street,_Beacon_Hill,_Boston.jpg",
+    "width": 1152,
+    "height": 762
+  },
+  {
+    "commons": "File:Boston Public Garden May 2018 003.jpg",
+    "file": "3.webp",
+    "caption": "The Boston Public Garden in spring, beside Boston Common",
+    "alt": "Flowering trees and lawns around a pond in a city park, with buildings beyond the trees",
+    "author": "King of Hearts",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Boston_Public_Garden_May_2018_003.jpg",
+    "width": 1152,
+    "height": 769
+  },
+  {
+    "commons": "File:Quincy Market from Custom House.jpg",
+    "file": "4.webp",
+    "caption": "Quincy Market and Faneuil Hall Marketplace, seen from the Custom House tower",
+    "alt": "A long granite market hall with a copper dome between busy pedestrian streets, seen from above",
+    "author": "Av9",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Quincy_Market_from_Custom_House.jpg",
+    "width": 1024,
+    "height": 683
+  },
+  {
+    "commons": "File:Bates Hall - Boston Public Library - edit1.jpg",
+    "file": "5.webp",
+    "caption": "Bates Hall, the barrel-vaulted reading room of the Boston Public Library",
+    "alt": "A long reading room with a coffered barrel-vaulted ceiling, arched windows and rows of tables with green lamps",
+    "author": "Hari Krishnan",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Bates_Hall_-_Boston_Public_Library_-_edit1.jpg",
+    "width": 1280,
+    "height": 853
+  }
+]

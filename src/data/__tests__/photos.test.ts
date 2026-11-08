@@ -22,6 +22,7 @@ import {
   validateEntry,
   validateHandFields,
 } from '../../../scripts/photos-lib.mjs'
+import { CITIES } from '../cities'
 import { PROFILED_CITY_IDS } from '../expatPicks'
 import {
   PHOTO_CITY_IDS,
@@ -56,6 +57,15 @@ describe('city photos data', () => {
     const missing = PROFILED_CITY_IDS.filter((id) => photosFor(id).length !== PHOTOS_PER_CITY)
     expect(missing, `profiled cities without ${PHOTOS_PER_CITY} photos`).toEqual([])
     expect(PHOTO_CITY_IDS).toEqual(PROFILED_CITY_IDS)
+  })
+
+  it('gives every one of the 133 cities a profile and exactly 5 photos', () => {
+    const ids = CITIES.map((c) => c.id)
+    expect(ids, 'city count (a shrinking list would hide gaps)').toHaveLength(133)
+    const noProfile = ids.filter((id) => !PROFILED.has(id))
+    const noPhotos = ids.filter((id) => photosFor(id).length !== PHOTOS_PER_CITY)
+    expect(noProfile, `cities without a profile: ${noProfile.join(', ')}`).toEqual([])
+    expect(noPhotos, `cities without ${PHOTOS_PER_CITY} photos: ${noPhotos.join(', ')}`).toEqual([])
   })
 
   it('returns an empty list for a city without photos, the same one each call', () => {
