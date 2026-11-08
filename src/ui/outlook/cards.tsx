@@ -1,7 +1,7 @@
 import { m as motion } from 'framer-motion'
 import { returnStats } from '../realStats'
 import { CITY_BY_ID } from '../../data/cities'
-import { BUDGET_CATEGORIES, budgetTotal } from '../../engine/cost'
+import { BUDGET_CATEGORIES, budgetTotal, isFixedAmount } from '../../engine/cost'
 import type { Budget, BudgetCategory, SimulationResult, SolveResult } from '../../engine/types'
 import { useFx, useRate } from '../../state/fx'
 import { useStore } from '../../state/store'
@@ -294,10 +294,21 @@ export function LensBody({ result }: { result: SimulationResult }) {
 
 /* ---------------------------------------------------------------- Cost of living */
 
-export function costRows(r: SimulationResult, budget: Budget) {
+/**
+ * Per-category home vs destination spend (today's USD). `dest` is the engine's `categoryAmounts`,
+ * so a fixed amount for the destination city wins. `ratio` is dest ÷ home for a fixed amount (null
+ * when its home budget is $0: no percent to show), else the city's cost ratio.
+ */
+export function costRows(r: SimulationResult, budget: Budget): { c: BudgetCategory; label: string; home: number; dest: number; ratio: number | null }[] {
   const ratios = r.categoryRatios
   if (!ratios) return []
-  return BUDGET_CATEGORIES.map((c) => ({ c, label: CATEGORY_LABEL[c], home: budget[c] || 0, dest: (budget[c] || 0) * ratios[c], ratio: ratios[c] }))
+  const fixed = r.inputs.destCityId ? r.inputs.amountOverrides?.[r.inputs.destCityId] : undefined
+  return BUDGET_CATEGORIES.map((c) => {
+    const home = budget[c] || 0
+    const dest = r.categoryAmounts?.[c] ?? home * ratios[c]
+    const ratio = isFixedAmount(fixed?.[c]) ? (home > 0 ? dest / home : null) : ratios[c]
+    return { c, label: CATEGORY_LABEL[c], home, dest, ratio }
+  })
 }
 
 export function costCaption(r: SimulationResult, budget: Budget): string {
@@ -305,6 +316,8 @@ export function costCaption(r: SimulationResult, budget: Budget): string {
   const dest = cityName(r.inputs.destCityId)
   const home = rows.reduce((a, x) => a + x.home, 0)
   const d = rows.reduce((a, x) => a + x.dest, 0)
+  // No home budget (only fixed amounts): there is no change to state as a percent.
+  if (!(home > 0)) return `${dest} costs ${currency(d)} a year at the amounts you set.`
   const ch = d / home - 1
   const sorted = [...rows].sort((a, b) => a.dest - a.home - (b.dest - b.home))
   if (ch < -0.01) {
@@ -378,7 +391,7 @@ export function CostBody({ result }: { result: SimulationResult }) {
           </span>
         </div>
         {rows.map((x) => {
-          const d = x.ratio - 1
+          const d = x.ratio == null ? null : x.ratio - 1
           return (
             <div key={x.c} className="col__row" aria-hidden="true">
               <span className="col__label">{x.label}</span>
@@ -388,7 +401,9 @@ export function CostBody({ result }: { result: SimulationResult }) {
               </span>
               <span className="col__vals num">
                 {currencyCompact(x.dest)}
-                <span className={cx('col__delta', d < -0.005 && 'is-down', d > 0.005 && 'is-up')}>{Math.abs(d) < 0.005 ? '±0%' : percent(d, { signed: true })}</span>
+                {d != null && (
+                  <span className={cx('col__delta', d < -0.005 && 'is-down', d > 0.005 && 'is-up')}>{Math.abs(d) < 0.005 ? '±0%' : percent(d, { signed: true })}</span>
+                )}
               </span>
             </div>
           )

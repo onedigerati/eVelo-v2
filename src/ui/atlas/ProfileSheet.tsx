@@ -251,7 +251,7 @@ function ProfileBody({
                   <span className="sr-only">
                     {isHome
                       ? `${CATEGORY_LABEL[c.cat]}: ${currencyCompact(c.here)} a year.`
-                      : `${CATEGORY_LABEL[c.cat]}: ${currencyCompact(c.here)} here vs ${currencyCompact(c.home)} in ${homeName}, ${costDelta(c.ratio)}.`}
+                      : `${CATEGORY_LABEL[c.cat]}: ${currencyCompact(c.here)} here vs ${currencyCompact(c.home)} in ${homeName}${c.ratio == null ? '' : `, ${costDelta(c.ratio)}`}.`}
                   </span>
                   <span className="pcats__k" aria-hidden="true">
                     {CATEGORY_LABEL[c.cat]}
@@ -266,7 +266,7 @@ function ProfileBody({
                       />
                     )}
                     <motion.i
-                      className={cx('is-here', c.ratio < 0.995 && 'is-down', c.ratio > 1.005 && 'is-up')}
+                      className={cx('is-here', c.ratio != null && c.ratio < 0.995 && 'is-down', c.ratio != null && c.ratio > 1.005 && 'is-up')}
                       initial={{ width: 0 }}
                       animate={{ width: `${(c.here / catMax) * 100}%` }}
                       transition={{ duration: 0.6, ease, delay: 0.26 + i * 0.03 }}
@@ -274,7 +274,7 @@ function ProfileBody({
                   </span>
                   <span className="pcats__v num" aria-hidden="true">
                     {currencyCompact(c.here)}
-                    {!isHome && <small className={cx(c.ratio < 0.995 && 'is-down', c.ratio > 1.005 && 'is-up')}>{costDelta(c.ratio)}</small>}
+                    {!isHome && c.ratio != null && <small className={cx(c.ratio < 0.995 && 'is-down', c.ratio > 1.005 && 'is-up')}>{costDelta(c.ratio)}</small>}
                   </span>
                 </li>
               ))}
@@ -285,7 +285,11 @@ function ProfileBody({
           ) : (
             <p className="pplan__note">
               Your {homeName} budget at local prices, with your expat price premium ({percent(inputs.expatFactor)})
-              {inputs.ratioOverrides && Object.keys(inputs.ratioOverrides).length > 0 ? ' and your category overrides' : ''}.
+              {(inputs.ratioOverrides && Object.keys(inputs.ratioOverrides).length > 0) ||
+              (inputs.amountOverrides?.[city.id] && Object.keys(inputs.amountOverrides[city.id]!).length > 0)
+                ? ' and your category overrides'
+                : ''}
+              .
             </p>
           )}
 

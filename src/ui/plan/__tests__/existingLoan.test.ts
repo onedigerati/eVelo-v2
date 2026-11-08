@@ -175,6 +175,21 @@ describe('firstYearSpend', () => {
     expect(firstYearSpend(pricey, STL, BKK)).toBeCloseTo(resolveDestination(pricey, STL, BKK).annual!, 6)
   })
 
+  it('honours fixed amounts for the destination city only', () => {
+    const moving = { ...base, destCityId: 'bangkok', moveInYears: 0 }
+    const priced = firstYearSpend(moving, STL, BKK)
+    const fixed = { ...moving, amountOverrides: { bangkok: { housing: 30_000 } } }
+    expect(firstYearSpend(fixed, STL, BKK)).toBeCloseTo(resolveDestination(fixed, STL, BKK).annual!, 6)
+    expect(firstYearSpend(fixed, STL, BKK)).not.toBeCloseTo(priced, 0)
+    // another city's fixed amount leaves this one priced
+    expect(firstYearSpend({ ...moving, amountOverrides: { zurich: { housing: 30_000 } } }, STL, BKK)).toBeCloseTo(priced, 6)
+    // a fixed amount on a $0 home category is still spent, and stays finite
+    const zeroHome = { ...moving, budget: { ...moving.budget, travel: 0 }, amountOverrides: { bangkok: { travel: 7_000 } } }
+    const z = firstYearSpend(zeroHome, STL, BKK)
+    expect(Number.isFinite(z)).toBe(true)
+    expect(z).toBeCloseTo(firstYearSpend({ ...zeroHome, amountOverrides: undefined }, STL, BKK) + 7_000, 6)
+  })
+
   it('uses the home budget when the move is a year or more away, or there is no destination', () => {
     expect(firstYearSpend({ ...base, destCityId: 'bangkok', moveInYears: 1 }, STL, BKK)).toBe(homeTotal)
     expect(firstYearSpend({ ...base, destCityId: null, moveInYears: 0 }, STL, null)).toBe(homeTotal)

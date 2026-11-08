@@ -11,7 +11,7 @@ import {
   type ExpatProfile,
   type ExpatScoreKey,
 } from '../../data/expatPicks'
-import { BUDGET_CATEGORIES, categoryRatios } from '../../engine/cost'
+import { BUDGET_CATEGORIES, categoryRatios, destinationAmounts, isFixedAmount } from '../../engine/cost'
 import type { AtlasEntry, BudgetCategory, City, PlanInputs } from '../../engine/types'
 import { percent } from '../format'
 
@@ -178,23 +178,28 @@ export interface CategoryCompare {
   cat: BudgetCategory
   home: number
   here: number
-  ratio: number
+  /** here ÷ home; null when a fixed amount sits on a $0 home budget (no percent to show). */
+  ratio: number | null
 }
 
 /**
  * First-year spend per budget category at home vs in `city` (today's USD), using the plan's
- * expat factor and overrides, the same inputs the Atlas ranking uses. Categories with no home
- * budget are left out.
+ * expat factor and overrides, the same inputs the Atlas ranking uses, plus `city`'s own fixed
+ * amounts (never another city's). Categories with nothing to spend at home or here are left out.
  */
 export function categoryCompare(inputs: PlanInputs, city: City): CategoryCompare[] {
   const home = CITY_BY_ID[inputs.homeCityId]
-  const r =
-    home && home.id !== city.id
-      ? categoryRatios(home, city, inputs.expatFactor, inputs.ratioOverrides)
-      : (Object.fromEntries(BUDGET_CATEGORIES.map((c) => [c, 1])) as Record<BudgetCategory, number>)
-  return BUDGET_CATEGORIES.filter((c) => (inputs.budget[c] || 0) > 0).map((c) => {
+  const away = !!home && home.id !== city.id
+  const r = away
+    ? categoryRatios(home, city, inputs.expatFactor, inputs.ratioOverrides)
+    : (Object.fromEntries(BUDGET_CATEGORIES.map((c) => [c, 1])) as Record<BudgetCategory, number>)
+  // Staying home never takes fixed amounts, as in the engine.
+  const fixed = away ? inputs.amountOverrides?.[city.id] : undefined
+  const here = destinationAmounts(inputs.budget, r, fixed)
+  return BUDGET_CATEGORIES.filter((c) => (inputs.budget[c] || 0) > 0 || here[c] > 0).map((c) => {
     const h = inputs.budget[c] || 0
-    return { cat: c, home: h, here: h * r[c], ratio: r[c] }
+    const ratio = isFixedAmount(fixed?.[c]) ? (h > 0 ? here[c] / h : null) : r[c]
+    return { cat: c, home: h, here: here[c], ratio }
   })
 }
 
