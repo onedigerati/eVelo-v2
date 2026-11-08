@@ -209,6 +209,9 @@ export interface SimulationResult {
    *  margin-call LTV and the sale can cover it; null otherwise (no sale, or broken from the start).
    *  Not a margin call: it isn't counted in marginCallByYear or the bruised rate. */
   openingSale: { sold: number; taxPaid: number } | null
+  /** True when the existing balance breaks the plan from the start: at or above the portfolio, or
+   *  past what an opening forced sale can cover after tax. Every BBD path then fails at month 0. */
+  openingBroken: boolean
 
   /** First-year spending in USD after the move (today's dollars), and home spending. */
   spendHome: number

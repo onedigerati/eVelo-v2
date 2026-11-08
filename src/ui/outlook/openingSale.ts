@@ -16,3 +16,12 @@ export function openingSaleOf(r: SimulationResult): OpeningSale | null {
   const s = (r as unknown as { openingSale?: OpeningSale | null }).openingSale ?? null
   return s && s.sold > 0 ? s : null
 }
+
+/** True when the plan is broken from the start: the existing balance is past what an opening sale
+ *  can cover after tax (or at the portfolio). Missing on older results means false. */
+export function openingBrokenOf(r: SimulationResult): boolean {
+  return (r as unknown as { openingBroken?: boolean }).openingBroken === true
+}
+
+/** The one sentence every caption gives for a plan broken from the start. */
+export const BROKEN_AT_START = 'This plan fails at once: after tax, a forced sale can’t cover the existing balance.'

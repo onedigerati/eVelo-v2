@@ -7,7 +7,7 @@ import { SegmentedControl } from '../primitives'
 import { cityName, startNetWorth } from './cards'
 import { ChartFrame } from './ChartFrame'
 import { FAN_METRICS, FanChart, bandsFor, type FanMarker, type FanMetric } from './FanChart'
-import { openingSaleOf } from './openingSale'
+import { BROKEN_AT_START, openingBrokenOf, openingSaleOf } from './openingSale'
 
 const EYEBROW: Record<FanMetric, string> = {
   networth: 'Net worth · today’s dollars',
@@ -40,6 +40,8 @@ const TITLE: Record<FanMetric, ReactNode> = {
 }
 
 export function fanCaption(r: SimulationResult, m: FanMetric): string {
+  // Broken from the start: every path is liquidated before month 0, so the bands are flat zeros.
+  if (openingBrokenOf(r)) return BROKEN_AT_START
   const b = bandsFor(r, m)
   const n = b.p50.length - 1
   const a = r.inputs.age
@@ -84,14 +86,21 @@ function ltvCaption(r: SimulationResult, p50: number[], p95: number[], opening: 
   const worst = cross === 0 ? 'the worst 5% start at or past it' : cross > 0 ? `the worst 5% touch it by ${a + cross}` : 'even the worst 5% never reach it'
   const p0 = p50[0]
   const peakAt = `peaks at ${percent(p50[peak])} around ${a + peak}, ${relToLine(p50[peak], max)} ${line}`
-  // A peak at year 0 (above zero) means a starting balance the plan then pays down relative to growth.
-  const startsAtPeak = peak === 0 && p0 > 0
+  // A peak at year 0 (above zero) means a starting balance the plan then pays down relative to growth,
+  // but only if the median actually falls; a year-0 value it never leaves is flat, not a peak.
+  const falls = p50.some((v, i) => i > 0 && v < p0)
+  const startsAtPeak = peak === 0 && p0 > 0 && falls
+  const flat = peak === 0 && p0 > 0 && !falls
+  const at0 = `${percent(p0)} (${relToLine(p0, max)} ${line})`
   let head: string
   if (opening)
     head = startsAtPeak
-      ? `A forced sale today brings loan-to-value to ${percent(p0)} (${relToLine(p0, max)} ${line}), and the median falls from there`
-      : `A forced sale today brings loan-to-value to ${percent(p0)}; the median then ${peakAt}`
-  else if (startsAtPeak) head = `Median loan-to-value starts at its peak, ${percent(p0)} (${relToLine(p0, max)} ${line}), and falls from there`
+      ? `A forced sale today brings loan-to-value to ${at0}, and the median falls from there`
+      : flat
+        ? `A forced sale today brings loan-to-value to ${at0}, and the median stays there`
+        : `A forced sale today brings loan-to-value to ${percent(p0)}; the median then ${peakAt}`
+  else if (startsAtPeak) head = `Median loan-to-value starts at its peak, ${at0}, and falls from there`
+  else if (flat) head = `Median loan-to-value stays at ${at0}`
   else head = `Median loan-to-value ${peakAt}`
   return `${head}; ${worst}.`
 }

@@ -5,7 +5,7 @@ import type { SimulationResult } from '../../engine/types'
 import { percent } from '../format'
 import { cx } from '../primitives'
 import { massWindow, useCrosshair, useSize, useTweenedSeries } from './chartKit'
-import { openingSaleOf } from './openingSale'
+import { BROKEN_AT_START, openingBrokenOf, openingSaleOf } from './openingSale'
 
 /** Why early forced sales happen, by how the plan starts. */
 function earlyReason(r: SimulationResult, opening: boolean): string {
@@ -17,6 +17,9 @@ function earlyReason(r: SimulationResult, opening: boolean): string {
 
 /** One-sentence reading of when forced sales happen. The opening sale, if any, isn't one of them. */
 export function marginCallCaption(r: SimulationResult): string {
+  // Broken from the start: the engine records month 0 as every path's first forced sale, which says
+  // nothing about crashes or timing.
+  if (openingBrokenOf(r)) return BROKEN_AT_START
   const byYear = r.marginCallByYear
   const total = r.marginCallCumulative[r.marginCallCumulative.length - 1] ?? 0
   const a = r.inputs.age

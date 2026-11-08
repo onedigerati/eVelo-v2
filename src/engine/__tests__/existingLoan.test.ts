@@ -187,6 +187,14 @@ describe('existing loan: opening forced sale', () => {
     expect(r.openingSale).toBeNull()
   })
 
+  it('reports openingBroken only for a balance broken from the start', () => {
+    const at = (existingLoan: number) => simulate(market, CITIES_FIX, withInputs({ existingLoan, paths: 50 }))
+    expect(at(2_700_000).openingBroken).toBe(true)
+    expect(at(2_999_999).openingBroken).toBe(true)
+    expect(at(2_100_000).openingBroken).toBe(false)
+    expect(at(0).openingBroken).toBe(false)
+  })
+
   it('a balance at or above the portfolio breaks the path at once, with no negatives or NaN', () => {
     for (const L0 of [100, 150]) {
       const rec = createRecorder(1, 1)

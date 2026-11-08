@@ -21,6 +21,9 @@ export interface ExistingLoanInput {
   /** Share of today's value that is cost basis (0–1; clamped as in the engine). */
   basisFraction: number
   capGainsRate: number
+  /** One year of the plan's spending (today's USD); an opening sale that leaves less net worth than
+   *  this is flagged `thin`. Optional: without it, nothing is thin. */
+  annualSpend?: number
 }
 
 export interface ExistingLoanInfo {
@@ -31,6 +34,11 @@ export interface ExistingLoanInfo {
   status: ExistingLoanStatus
   /** The opening forced sale ('over-limit' only, else null): shares sold, tax paid (today's USD) and the LTV it lands at. */
   sale: { sold: number; taxPaid: number; ltv: number } | null
+  /** Net worth the plan starts with: portfolio − loan, after the opening sale when there is one
+   *  (today's USD; 0 when it breaks). */
+  netWorthLeft: number
+  /** 'over-limit' only: the sale leaves less than one year of spending (`annualSpend`). */
+  thin: boolean
 }
 
 /** Largest existing balance allowed for a portfolio: $1 under it, and 0 when there is nothing to borrow against. */
@@ -44,14 +52,22 @@ export function clampExistingLoan(balance: number, portfolio: number): number {
   return Math.min(maxExistingLoan(portfolio), Math.max(0, balance))
 }
 
-export function existingLoanInfo({ portfolio, balance, maxLtv, targetLtv, basisFraction, capGainsRate }: ExistingLoanInput): ExistingLoanInfo {
+export function existingLoanInfo({ portfolio, balance, maxLtv, targetLtv, basisFraction, capGainsRate, annualSpend = 0 }: ExistingLoanInput): ExistingLoanInfo {
   const maxBalance = maxExistingLoan(portfolio)
   const b = clampExistingLoan(balance, portfolio)
   const ltv = portfolio > 0 ? b / portfolio : 0
   // Same clamps as kernelConfig: basis in [0, 1], target no higher than the threshold.
   const basis = portfolio * Math.min(1, Math.max(0, basisFraction))
   const open = openingSale(portfolio, basis, b, maxLtv, Math.min(targetLtv, maxLtv), capGainsRate)
-  if (open === null) return { ltv, maxBalance, status: 'ok', sale: null }
-  if (open.broken) return { ltv, maxBalance, status: 'breaks', sale: null }
-  return { ltv, maxBalance, status: 'over-limit', sale: { sold: open.sold, taxPaid: open.taxPaid, ltv: open.loan / open.port } }
+  if (open === null) return { ltv, maxBalance, status: 'ok', sale: null, netWorthLeft: Math.max(0, portfolio - b), thin: false }
+  if (open.broken) return { ltv, maxBalance, status: 'breaks', sale: null, netWorthLeft: 0, thin: false }
+  const netWorthLeft = Math.max(0, open.port - open.loan)
+  return {
+    ltv,
+    maxBalance,
+    status: 'over-limit',
+    sale: { sold: open.sold, taxPaid: open.taxPaid, ltv: open.loan / open.port },
+    netWorthLeft,
+    thin: netWorthLeft < annualSpend,
+  }
 }

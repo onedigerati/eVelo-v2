@@ -64,6 +64,32 @@ describe('existing loan', () => {
     expect(maxExistingLoan(0)).toBe(0)
     expect(info(1_000_000, 5_000_000).ltv).toBeLessThan(1)
   })
+  it('reports the net worth left: portfolio less loan, after the opening sale', () => {
+    expect(info(3_000_000, 0).netWorthLeft).toBe(3_000_000)
+    expect(info(3_000_000, 500_000).netWorthLeft).toBe(2_500_000)
+    // $2.1M on $3M: about $1.84M sold, $263K tax, leaving about $637K
+    const sold = info(3_000_000, 2_100_000)
+    expect(sold.netWorthLeft).toBeCloseTo(3_000_000 - 2_100_000 - sold.sale!.taxPaid, 4)
+    expect(Math.round(sold.netWorthLeft / 1000)).toBe(637)
+    // just under the break line ($2.5716M): about $3.0M sold, $428K tax, almost nothing left
+    const near = info(3_000_000, 2_570_000)
+    expect(near.status).toBe('over-limit')
+    expect(Math.round(near.sale!.taxPaid / 1000)).toBe(428)
+    expect(near.netWorthLeft).toBeGreaterThan(0)
+    expect(near.netWorthLeft).toBeLessThan(3_000)
+    expect(info(3_000_000, 2_700_000)).toMatchObject({ status: 'breaks', netWorthLeft: 0 })
+  })
+  it('flags a sale that leaves less than a year of spending as thin', () => {
+    const spend = { annualSpend: 87_000 }
+    const at = (b: number) => existingLoanInfo({ portfolio: 3_000_000, balance: b, maxLtv: 0.6, targetLtv: 0.45, basisFraction: 0.4, capGainsRate: 0.238, ...spend })
+    expect(at(2_570_000).thin).toBe(true)
+    expect(at(2_100_000).thin).toBe(false)
+    // only an opening sale is ever thin: no sale, or a break, has its own copy
+    expect(at(500_000).thin).toBe(false)
+    expect(at(2_700_000).thin).toBe(false)
+    // without a spending figure nothing is thin
+    expect(info(3_000_000, 2_570_000).thin).toBe(false)
+  })
   it('treats hostile values as no loan', () => {
     expect(clampExistingLoan(-5, 1_000_000)).toBe(0)
     expect(clampExistingLoan(Number.NaN, 1_000_000)).toBe(0)
@@ -107,7 +133,11 @@ describe('existing loan: the warning agrees with the engine', () => {
           expect(r.portfolioValue.p95[0], at).toBe(0)
           expect(r.ltv.p5[0], at).toBe(1)
           expect(r.openingSale, at).toBeNull()
+          expect(r.openingBroken, at).toBe(true)
+          expect(w.netWorthLeft, at).toBe(0)
         } else if (w.status === 'over-limit') {
+          expect(r.openingBroken, at).toBe(false)
+          expect(r.netWorth.p50[0], at).toBeCloseTo(w.netWorthLeft, 4)
           expect(r.openingSale, at).not.toBeNull()
           expect(r.openingSale!.sold, at).toBeCloseTo(w.sale!.sold, 6)
           expect(r.openingSale!.taxPaid, at).toBeCloseTo(w.sale!.taxPaid, 6)
@@ -116,6 +146,8 @@ describe('existing loan: the warning agrees with the engine', () => {
           expect(r.ltv.p95[0], at).toBeCloseTo(w.sale!.ltv, 10)
         } else {
           expect(r.openingSale, at).toBeNull()
+          expect(r.openingBroken, at).toBe(false)
+          expect(w.netWorthLeft, at).toBe(portfolio - existingLoan)
           expect(r.portfolioValue.p50[0], at).toBe(portfolio)
           expect(r.loan.p5[0], at).toBe(existingLoan)
           expect(r.loan.p95[0], at).toBe(existingLoan)

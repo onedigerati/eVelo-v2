@@ -1,5 +1,6 @@
 import { AnimatePresence, m as motion } from 'framer-motion'
 import { useId, useState, type CSSProperties } from 'react'
+import { budgetTotal } from '../../engine/cost'
 import { useStore } from '../../state/store'
 import { currencyCompact, percent } from '../format'
 import { ease } from '../motion'
@@ -17,6 +18,7 @@ export function BorrowingSection() {
   const maxLtv = useStore((s) => s.inputs.maxLtv)
   const target = useStore((s) => s.inputs.targetLtvAfterCall)
   const cg = useStore((s) => s.inputs.capGainsRate)
+  const budget = useStore((s) => s.inputs.budget)
   const drag = useStore((s) => s.inputs.dividendTaxDrag)
   const setInput = useStore((s) => s.setInput)
   const patch = useStore((s) => s.patchInputs)
@@ -24,7 +26,8 @@ export function BorrowingSection() {
   const [cgCustom, setCgCustom] = useState(!CG_PRESETS.some((p) => Math.abs(p - cg) < 1e-6))
   const isPreset = !cgCustom && CG_PRESETS.some((p) => Math.abs(p - cg) < 1e-6)
   const targetMax = Math.round((maxLtv - GAP) * 100) / 100
-  const loan = existingLoanInfo({ portfolio, balance, maxLtv, targetLtv: target, basisFraction: basis, capGainsRate: cg })
+  // One year of the plan's (home) budget: a sale leaving less net worth than that gets the broken tone.
+  const loan = existingLoanInfo({ portfolio, balance, maxLtv, targetLtv: target, basisFraction: basis, capGainsRate: cg, annualSpend: budgetTotal(budget) })
 
   return (
     <Section
@@ -40,7 +43,8 @@ export function BorrowingSection() {
             <InfoTip label="What is the existing loan?">
               What you already owe on your securities-backed line of credit. The plan starts with this loan (so today’s LTV is
               balance ÷ portfolio) and keeps borrowing from there; the sell-instead comparison starts with the portfolio minus
-              this balance and no debt.
+              this balance and no debt, so both start from the same net worth. A balance above the margin-call LTV forces an
+              opening sale today, and its capital-gains tax comes off the borrowing side first.
             </InfoTip>
           }
           value={balance}
@@ -51,7 +55,7 @@ export function BorrowingSection() {
           hint="Already borrowed on your line of credit; 0 if none."
         />
         {loan.status !== 'ok' && (
-          <div className={`hrow__warn existing-loan__warn${loan.status === 'breaks' ? ' is-broken' : ''}`} role="status">
+          <div className={`hrow__warn existing-loan__warn${loan.status === 'breaks' || loan.thin ? ' is-broken' : ''}`} role="status">
             <svg width="12" height="12" viewBox="0 0 16 16" aria-hidden="true">
               <path d="M8 2.5l6 11H2z" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" />
               <path d="M8 6.5v3.25M8 11.6v.1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
@@ -59,7 +63,7 @@ export function BorrowingSection() {
             <span>
               {loan.status === 'breaks'
                 ? 'The forced sale can’t cover this after tax: the plan fails at once.'
-                : `Above your margin-call LTV: the lender forces a sale today — about ${currencyCompact(loan.sale?.sold ?? 0)} sold, ${currencyCompact(loan.sale?.taxPaid ?? 0)} in tax — bringing the loan to ${percent(loan.sale?.ltv ?? target)} LTV.`}
+                : `Above your margin-call LTV: the lender forces a sale today — about ${currencyCompact(loan.sale?.sold ?? 0)} sold, ${currencyCompact(loan.sale?.taxPaid ?? 0)} in tax — bringing the loan to ${percent(loan.sale?.ltv ?? target)} LTV and leaving about ${currencyCompact(loan.netWorthLeft)} of net worth.`}
             </span>
           </div>
         )}

@@ -7,7 +7,8 @@ import { DEFAULT_INPUTS } from '../../../engine/defaults'
 import type { SimulationResult } from '../../../engine/types'
 import { fanCaption } from '../FanCard'
 import { marginCallCaption } from '../MarginCallChart'
-import { openingSaleOf } from '../openingSale'
+import { sellStartNote } from '../cards'
+import { BROKEN_AT_START, openingBrokenOf, openingSaleOf } from '../openingSale'
 
 type Band = { p5: number[]; p25: number[]; p50: number[]; p75: number[]; p95: number[] }
 const band = (start: number, end: number): Band => {
@@ -25,6 +26,7 @@ interface Over {
   byYear?: number[]
   total?: number
   openingSale?: { sold: number; taxPaid: number } | null
+  openingBroken?: boolean
 }
 
 // maxLtv is the default 60%; portfolio $2M at age 60; the fan bands run 3 points (to age 62).
@@ -41,6 +43,7 @@ function fake(existingLoan: number, o: Over = {}): SimulationResult {
     estate: { bbdMedian: 3_000_000, sellMedian: 2_500_000, bbdWins: 0.7, sellTaxMedian: 100_000 },
   }
   if (o.openingSale !== undefined) r.openingSale = o.openingSale
+  if (o.openingBroken !== undefined) r.openingBroken = o.openingBroken
   return r as unknown as SimulationResult
 }
 
@@ -165,5 +168,79 @@ describe('an opening forced sale', () => {
     )
     const late = years(Object.fromEntries(Array.from({ length: 10 }, (_, i) => [20 + i, 1])))
     expect(marginCallCaption(r({ byYear: late, total: 0.2 }))).toMatch(/forced sales are rare\. The opening sale today isn’t counted\.$/)
+  })
+})
+
+describe('openingBrokenOf', () => {
+  it('is true only when the engine says so', () => {
+    expect(openingBrokenOf(fake(0))).toBe(false)
+    expect(openingBrokenOf(fake(0, { openingBroken: false }))).toBe(false)
+    expect(openingBrokenOf(fake(1_900_000, { openingBroken: true }))).toBe(true)
+  })
+})
+
+describe('a plan broken from the start', () => {
+  // What simulate records: every path liquidated before month 0, all of them called in year 0.
+  const zeros = series([0, 0, 0], [0, 0, 0])
+  const r = () => {
+    const x = fake(1_900_000, {
+      openingSale: null,
+      openingBroken: true,
+      loan: zeros,
+      ltv: series([1, 1, 1], [1, 1, 1]),
+      byYear: years({ 0: 1 }),
+      total: 1,
+    }) as unknown as Record<string, unknown>
+    x.netWorth = zeros
+    x.portfolioValue = zeros
+    return x as unknown as SimulationResult
+  }
+
+  it('says so plainly in every fan caption and the margin-call caption', () => {
+    expect(BROKEN_AT_START).toBe('This plan fails at once: after tax, a forced sale can’t cover the existing balance.')
+    for (const m of ['networth', 'portfolio', 'loan', 'ltv'] as const) expect(fanCaption(r(), m)).toBe(BROKEN_AT_START)
+    expect(marginCallCaption(r())).toBe(BROKEN_AT_START)
+  })
+
+  it('says the borrowing side fails at once in the sell note', () => {
+    expect(sellStartNote(r())).toBe(
+      'Selling as you go starts at the portfolio less your existing $1.9M loan, with no debt; the borrowing side fails at once, as a forced sale can’t cover that balance after tax.',
+    )
+  })
+})
+
+describe('a flat loan-to-value is not a peak', () => {
+  it('says it stays, not that it falls', () => {
+    expect(fanCaption(fake(800_000, { ltv: series([0.4, 0.4, 0.4], [0.4, 0.45, 0.5]) }), 'ltv')).toBe(
+      'Median loan-to-value stays at 40% (close to the 60% call line); even the worst 5% never reach it.',
+    )
+    expect(fanCaption(fake(1_500_000, { openingSale: SALE, ltv: series([0.45, 0.45, 0.45], [0.45, 0.5, 0.55]) }), 'ltv')).toBe(
+      'A forced sale today brings loan-to-value to 45% (close to the 60% call line), and the median stays there; even the worst 5% never reach it.',
+    )
+  })
+})
+
+describe('the sell note', () => {
+  it('is absent with no balance', () => {
+    expect(sellStartNote(fake(0))).toBeNull()
+  })
+
+  it('claims the same starting net worth when there is no opening sale', () => {
+    expect(sellStartNote(fake(800_000, { openingSale: null, openingBroken: false }))).toBe(
+      'Selling as you go starts at the portfolio less your existing $800K loan, with no debt, so both start from the same net worth.',
+    )
+  })
+
+  it('says the opening sale’s tax comes off the borrowing side first', () => {
+    // $2.1M on $3M at the defaults: $1.84M sold, $263K tax
+    expect(sellStartNote(fake(2_100_000, { openingSale: { sold: 1_840_000, taxPaid: 263_000 } }))).toBe(
+      'Selling as you go starts at the portfolio less your existing $2.1M loan, with no debt, so both start from the same net worth, but the opening sale’s $263K tax comes off the borrowing side first.',
+    )
+  })
+
+  it('keeps the plain note when the opening sale paid no tax', () => {
+    expect(sellStartNote(fake(1_500_000, { openingSale: { sold: 900_000, taxPaid: 0 } }))).toBe(
+      'Selling as you go starts at the portfolio less your existing $1.5M loan, with no debt, so both start from the same net worth.',
+    )
   })
 })

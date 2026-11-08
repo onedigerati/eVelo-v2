@@ -22,6 +22,10 @@ export function toast(message: string, opts: { detail?: string; tone?: ToastTone
   setTimeout(() => dismissToast(id), opts.duration ?? 3200)
   return id
 }
+/** True while the toast is still showing (not dismissed, timed out or pushed off the stack). */
+export function isToastLive(id: number): boolean {
+  return useToasts.getState().items.some((t) => t.id === id)
+}
 export function dismissToast(id: number) {
   useToasts.setState((s) => ({ items: s.items.filter((t) => t.id !== id) }))
 }

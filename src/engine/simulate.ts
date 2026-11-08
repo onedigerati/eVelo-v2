@@ -153,6 +153,7 @@ export function simulate(market: MarketData, cities: City[], rawInputs: PlanInpu
     marginCallByYear: byYear,
     marginCallCumulative: cumulative,
     openingSale: open !== null && !open.broken ? { sold: open.sold, taxPaid: open.taxPaid } : null,
+    openingBroken: open !== null && open.broken,
     spendHome: budgetTotal(inputs.budget),
     spendDest: dest.annual,
     categoryRatios: dest.ratios,
