@@ -7,21 +7,12 @@ A user who has already borrowed on their line of credit to live can enter that b
 2026-11-08 · tests: 387 pass (25 files) · typecheck: clean · build: ok
 
 ## Now
-Stage 2 of 2 · Input, copy + launch
-Risk: user input, money
+All stages done. Deployed 2026-11-08 (Actions run 42523233104); evidence in `docs/evidence/stage-1/` and `docs/evidence/stage-2/`.
 Agents: wide — confirmed 2026-11-08 12:27
-Checks:
-- [x] The Borrowing section shows "Existing loan balance" first; with $500k on a $3M plan, the Outlook's year-0 loan is $500k, LTV ~17%, and the LTV meter shows 17% today (proof: run the product, screenshot — a test can't judge the rendered chart)
-- [x] A balance over the margin-call LTV ($2.1M on $3M defaults) shows the forced-sale warning with the amount sold, the tax, the resulting LTV and the net worth left, and the Outlook's year 0 shows the post-sale position; a balance the sale can't cover ($2.7M) shows "fails at once"; the field can't reach the portfolio (proof: test for `src/ui/plan/existingLoan.ts`, incl. the grid against `simulate`; screenshots for the pills and the year-0 fan)
-- [x] A saved plan or share link without the field loads as 0; hostile values are clamped below the portfolio; lowering the portfolio below the balance clamps it and shows the "Loan balance lowered to …" notice with the original balance; the Portfolio hint mentions the balance (proof: test; run the product for the notice)
-- [x] Outlook captions (portfolio, loan, LTV, margin-call, estate) and the Method tab describe the starting balance, the opening sale, a plan that fails at once, and the sell offset; they read correctly on real $500k, $2.1M and $2.7M plans; at balance 0 they're unchanged apart from the intended "close to" / "above" / "first year" wording fixes (proof: test; screenshots, a test can't judge them against real engine output)
-- [x] Works in both themes and at phone width, with no console errors (proof: screenshots, light/dark × desktop/phone)
-- [x] Preview published to the one preview Artifact after the user's go; deploy on the user's approval (proof: the published URL and the Actions run)
-Open: none — preview v37 reviewed; deployed by run 42523233104
 
 ## Stages
 - [x] 1. Engine starting loan — `existingLoan` in `PlanInputs` (default 0) through `kernelConfig` to the kernel: BBD starts at L = balance, sell starts at V − balance with pro-rata basis, year-0 recording, header comment; engine tests
-- [ ] 2. Input, copy + launch — "Existing loan balance" field in Borrowing with the over-limit warning and the below-portfolio block (pure helper with tests), share-link and saved-plan sanitizing, LTV meter shows today's LTV, outlook and Method copy for the starting balance and the sell offset; preview; deploy on approval
+- [x] 2. Input, copy + launch — "Existing loan balance" field in Borrowing with the over-limit warning and the below-portfolio block (pure helper with tests), share-link and saved-plan sanitizing, LTV meter shows today's LTV, outlook and Method copy for the starting balance and the sell offset; preview; deploy on approval
 
 ## Decisions
 - 2026-11-08 · The user can enter an existing line-of-credit balance, already borrowed to live; the buy-borrow-die paths start with the loan at that balance — user request.
