@@ -8,7 +8,7 @@ The Atlas ranking list of 133 cities is quick to get around instead of a long sc
 
 ## Now
 Stage 2 of 2 · Region chips + launch
-Mode: autopilot
+Mode: paused — preview v36 published (https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth); deploy to GitHub Pages waits for the user's approval
 Risk: UI only (preview publish and deploy are outward-facing: pause for the user)
 Checks:
 - [x] Region chip counts are right per region, follow the search, and sum to the All count (proof: test)
