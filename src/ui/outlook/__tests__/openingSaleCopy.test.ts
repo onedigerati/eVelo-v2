@@ -244,3 +244,33 @@ describe('the sell note', () => {
     )
   })
 })
+
+describe('a median plan that is liquidated', () => {
+  const broke = (o: Over = {}) => {
+    const x = fake(800_000, { loan: series([800_000, 0, 0], [800_000, 1_600_000, 2_400_000]), ...o }) as unknown as Record<string, unknown>
+    x.portfolioValue = series([2_000_000, 0, 0], [2_000_000, 3_000_000, 4_000_000])
+    return x as unknown as SimulationResult
+  }
+
+  it('says when the lender liquidates, not that the portfolio compounds to $0', () => {
+    expect(fanCaption(broke(), 'portfolio')).toBe('In the median future the lender liquidates the portfolio by about 61.')
+    expect(fanCaption(broke({ openingSale: SALE }), 'portfolio')).toBe(
+      'The plan opens with a forced sale of $900K today, paying $100K in tax; in the median future the lender liquidates the portfolio by about 61.',
+    )
+  })
+
+  it('says the median plan is liquidated in the loan caption, keeping the costliest 5%', () => {
+    expect(fanCaption(broke(), 'loan')).toBe(
+      'Borrowing compounds: from your existing $800K balance, the median plan is liquidated by about 61, and the loan reaches $2.4M in the costliest 5% of futures.',
+    )
+  })
+
+  it('leaves a surviving median alone, including at a zero balance', () => {
+    expect(fanCaption(fake(0), 'portfolio')).toBe(
+      'Nothing is sold to fund your life: the median portfolio compounds to $4.0M by 62, carrying the loan on top.',
+    )
+    expect(fanCaption(fake(0), 'loan')).toBe(
+      'Borrowing compounds: the median loan reaches $1.0M by 62, and $1.5M in the costliest 5% of futures.',
+    )
+  })
+})

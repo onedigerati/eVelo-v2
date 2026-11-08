@@ -56,7 +56,16 @@ export function fanCaption(r: SimulationResult, m: FanMetric): string {
     return `In the median future net worth grows from ${currencyCompact(b.p50[0])} to ${currencyCompact(b.p50[n])} by ${end}; the unluckiest 5% end ${low <= tiny ? 'with almost nothing' : `near ${currencyCompact(low)}`}.`
   }
   const sale = openingSaleOf(r)
+  // Broken paths are recorded as zeros, so a median portfolio that starts above 0 and ends at 0
+  // means the median plan was liquidated; say when, not "compounds to $0".
+  const lost = medianLiquidatedAt(r)
   if (m === 'portfolio') {
+    if (lost !== null) {
+      const by = `the lender liquidates the portfolio by about ${a + lost}`
+      return sale
+        ? `The plan opens with a forced sale of ${currencyCompact(sale.sold)} today, paying ${currencyCompact(sale.taxPaid)} in tax; in the median future ${by}.`
+        : `In the median future ${by}.`
+    }
     const grows = `the median portfolio compounds to ${currencyCompact(b.p50[n])} by ${end}, carrying the loan on top.`
     if (sale)
       return `The plan opens with a forced sale of ${currencyCompact(sale.sold)} today, paying ${currencyCompact(sale.taxPaid)} in tax; after that, nothing more is sold to fund your life, and ${grows}`
@@ -65,9 +74,22 @@ export function fanCaption(r: SimulationResult, m: FanMetric): string {
   if (m === 'loan') {
     const bal = r.inputs.existingLoan ?? 0
     const from = bal > 0 ? `from your existing ${currencyCompact(bal)} balance, ${sale ? `cut to ${currencyCompact(b.p50[0])} by the opening sale, ` : ''}` : ''
-    return `Borrowing compounds: ${from}the median loan reaches ${currencyCompact(b.p50[n])} by ${end}, and ${currencyCompact(b.p95[n])} in the costliest 5% of futures.`
+    const costliest = `${currencyCompact(b.p95[n])} in the costliest 5% of futures`
+    if (lost !== null)
+      return `Borrowing compounds: ${from}the median plan is liquidated by about ${a + lost}${b.p95[n] > 0 ? `, and the loan reaches ${costliest}` : ''}.`
+    return `Borrowing compounds: ${from}the median loan reaches ${currencyCompact(b.p50[n])} by ${end}, and ${costliest}.`
   }
   return ltvCaption(r, b.p50, b.p95, sale !== null)
+}
+
+/** Years from now until the median portfolio first reaches 0, when the median plan is liquidated
+ *  (starts above 0, ends at 0); null when the median survives. */
+export function medianLiquidatedAt(r: SimulationResult): number | null {
+  const p = r.portfolioValue.p50
+  const n = p.length - 1
+  if (n < 1 || !(p[0] > 0) || p[n] > 0) return null
+  const i = p.findIndex((v, k) => k > 0 && v <= 0)
+  return i > 0 ? i : n
 }
 
 /** Where a loan-to-value sits against the call line. */

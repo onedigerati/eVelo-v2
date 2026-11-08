@@ -1,12 +1,17 @@
 import { useStore } from '../../state/store'
-import { currencyCompact, percent } from '../format'
+import { currency, currencyCompact, percent } from '../format'
 import { InfoTip, NumberField, Section, Slider } from '../primitives'
 import { HoldingsEditor } from './HoldingsEditor'
 
-/** The portfolio field's hint; with a loan balance it also says the portfolio must stay above it. */
-export function portfolioHint(loan: number): string {
+/** The portfolio field's hint; with a loan balance it also says the portfolio must stay above it.
+ *  The balance is compact unless that would round it to the portfolio's own compact figure
+ *  ($1,999,999 under $2.0M reads "$2.0M"), when it is shown in full. */
+export function portfolioHint(loan: number, portfolio = Infinity): string {
   const base = 'Taxable brokerage assets you would borrow against. Try “2.5m”.'
-  return loan > 0 ? `${base} Must stay above your ${currencyCompact(loan)} loan balance.` : base
+  if (!(loan > 0)) return base
+  const compact = currencyCompact(loan)
+  const amount = Number.isFinite(portfolio) && compact === currencyCompact(portfolio) ? currency(loan) : compact
+  return `${base} Must stay above your ${amount} loan balance.`
 }
 
 export function PortfolioSection() {
@@ -30,7 +35,7 @@ export function PortfolioSection() {
         max={1e10}
         step={50_000}
         onChange={(v) => setInput('portfolio', v)}
-        hint={portfolioHint(loan)}
+        hint={portfolioHint(loan, portfolio)}
       />
       <HoldingsEditor />
       <Slider
