@@ -20,6 +20,17 @@ export const NAV_ROUTES: { route: Route; label: string; href: string }[] = [
   { route: 'method', label: 'Method', href: '#method' },
 ]
 
+/**
+ * The top bar's nav items and which one is lit. On desktop the plan rail and the outlook share one
+ * workspace, so the nav has a single Plan item, lit on `#plan` and `#outlook` (`#outlook` links
+ * still resolve). Tablet keeps Plan (the drawer) and Outlook as separate items.
+ */
+export function topNav(route: Route, desktop: boolean): { items: typeof NAV_ROUTES; active: Route | null } {
+  const items = desktop ? NAV_ROUTES.filter((n) => n.route !== 'outlook') : NAV_ROUTES
+  const active = route === 'styleguide' || route === 'home' ? null : desktop && route === 'outlook' ? 'plan' : route
+  return { items, active }
+}
+
 export function parseHash(hash: string): { route: Route; params: URLSearchParams; known: boolean } {
   const h = hash.replace(/^#/, '')
   const q = h.indexOf('?')

@@ -1,5 +1,22 @@
 import { describe, expect, it } from 'vitest'
-import { hrefFor, parseHash } from '../router'
+import { hrefFor, parseHash, topNav } from '../router'
+
+describe('top nav', () => {
+  const labels = (desktop: boolean) => topNav('plan', desktop).items.map((n) => n.label)
+  it('shows one Plan item on desktop, Plan and Outlook on tablet', () => {
+    expect(labels(true)).toEqual(['Plan', 'Atlas', 'Method'])
+    expect(labels(false)).toEqual(['Plan', 'Outlook', 'Atlas', 'Method'])
+  })
+  it('lights Plan on plan and outlook on desktop only', () => {
+    expect(topNav('plan', true).active).toBe('plan')
+    expect(topNav('outlook', true).active).toBe('plan')
+    expect(topNav('outlook', false).active).toBe('outlook')
+    expect(topNav('plan', false).active).toBe('plan')
+    expect(topNav('atlas', true).active).toBe('atlas')
+    expect(topNav('styleguide', true).active).toBeNull()
+    expect(topNav('home', false).active).toBeNull()
+  })
+})
 
 describe('hash routes', () => {
   it('reads plain and slash forms', () => {
