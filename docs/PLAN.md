@@ -27,10 +27,10 @@ All stages done. Deployed 2026-11-08 (Actions run 42505074297); evidence in `doc
 - 2026-11-08 · On desktop the top nav shows one "Plan" tab for the shared plan + outlook workspace (the two tabs went to the same screen). Tablet keeps Plan (drawer) and Outlook, and phone keeps both tabs. `#outlook` links still work and show Plan as active on desktop. Added to stage 2 for the same preview — user: "let's go with your recommendation".
 - 2026-11-08 · Preview publish approved once stage 2 is verified; deploy still waits for the user's approval — user: "ok, publish the preview when it's ready".
 - 2026-11-08 · Deploy approved after the user reviewed preview v36 — user: "deploy".
+- 2026-11-08 · iPhone (WebKit touch) confirmed by the user on the live site: the city list tiers and region chips look good, and swiping through photos in the full-size view works. This closes the open question about WebKit's touch path.
 - 2026-11-08 · Fixed the glass blur missing in Chrome/Edge production builds (pre-existing): lightningcss collapses `backdrop-filter` + `-webkit-backdrop-filter` into the prefixed form when the unprefixed one comes first, so the prefixed one now comes first in all 12 pairs. It's small, it restores the intended design, and it bears on the user's city-card readability ask — PM's call.
 
 ## Open questions
-- WebKit's touch path (iPhone): on 2026-11-08 the user checked the deployed tiers and region chips on their phone — "it looks good". The photo full-size view's swipe hasn't been confirmed specifically — user, when they try it.
 - Seoul, London, Amsterdam and Berlin have no `localTaxes.ts` entry (money logic, needs tests) — user's call, a later plan.
 - Recheck Colorado Amendment 87 (Denver tax 5 → 4 if certified) and Florida Amendment 3 ("unofficial results" in four Florida profiles) once certified — later.
 - The photo credit cleaner misses "upload on <date>" suffixes — later.
