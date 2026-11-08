@@ -1,0 +1,62 @@
+[
+  {
+    "commons": "File:Coronado, CA USA - San Diego viewed from Coronado - panoramio.jpg",
+    "file": "1.webp",
+    "caption": "Downtown San Diego across the bay from Coronado",
+    "alt": "A row of downtown towers across a wide bay under scattered white clouds, a grassy shore in the foreground",
+    "author": "MARELBU",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Coronado,_CA_USA_-_San_Diego_viewed_from_Coronado_-_panoramio.jpg",
+    "width": 1280,
+    "height": 853
+  },
+  {
+    "commons": "File:California Tower, Balboa Park.jpg",
+    "file": "2.webp",
+    "caption": "The California Tower in Balboa Park, built for the 1915 Panama-California Exposition",
+    "alt": "An ornate Spanish Colonial tower and arched building framed by palm trees under a deep blue sky",
+    "author": "MarkValen",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:California_Tower,_Balboa_Park.jpg",
+    "width": 1280,
+    "height": 960
+  },
+  {
+    "commons": "File:La Jolla Cove view.jpg",
+    "file": "3.webp",
+    "caption": "La Jolla Cove, where sea lions haul out on the rocks below the village",
+    "alt": "A rocky cove of blue water with waves breaking on dark rocks, sea lions on the shore and palms on the bluff above",
+    "author": "Dirk Hansen",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:La_Jolla_Cove_view.jpg",
+    "width": 1280,
+    "height": 853
+  },
+  {
+    "commons": "File:San Diego (California, USA), Gaslamp Quarter -- 2012 -- 5411.jpg",
+    "file": "4.webp",
+    "caption": "The Gaslamp Quarter sign over Fifth Avenue, at the gate to downtown's Victorian-era restaurant district",
+    "alt": "An arched sign with marquee-bulb letters spelling Gaslamp Quarter on a striped panel",
+    "author": "Dietmar Rabich",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:San_Diego_(California,_USA),_Gaslamp_Quarter_--_2012_--_5411.jpg",
+    "width": 1280,
+    "height": 883
+  },
+  {
+    "commons": "File:San Diego Trolley at UCSD Central Campus Station.jpg",
+    "file": "5.webp",
+    "caption": "A San Diego Trolley at UC San Diego, at the end of the Blue Line extension opened in 2021",
+    "alt": "A red light-rail train at a modern elevated station",
+    "author": "DJTechYT",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:San_Diego_Trolley_at_UCSD_Central_Campus_Station.jpg",
+    "width": 1280,
+    "height": 960
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "commons": "File:Portland skyline from Pittock Mansion May 2021 cropped.jpg",
+    "file": "1.webp",
+    "caption": "Downtown Portland from Pittock Mansion, with Mount Hood on the horizon",
+    "alt": "A compact downtown of towers among green hills, with a snow-capped volcano rising on the horizon under a blue sky",
+    "author": "Truflip99",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Portland_skyline_from_Pittock_Mansion_May_2021_cropped.jpg",
+    "width": 1280,
+    "height": 589
+  },
+  {
+    "commons": "File:Heavenly Falls - Portland Japanese Garden - Portland, Oregon - DSC08322.jpg",
+    "file": "2.webp",
+    "caption": "Heavenly Falls in the Portland Japanese Garden in Washington Park",
+    "alt": "A small waterfall tumbling over mossy rocks into a pond covered in fallen leaves, surrounded by maples",
+    "author": "Daderot",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Heavenly_Falls_-_Portland_Japanese_Garden_-_Portland,_Oregon_-_DSC08322.jpg",
+    "width": 896,
+    "height": 597
+  },
+  {
+    "commons": "File:Tilikum Crossing from Ross Island Bridge with MAX.jpg",
+    "file": "3.webp",
+    "caption": "Tilikum Crossing, a bridge for trains, buses, bikes and walkers but no cars, over the Willamette",
+    "alt": "A white cable-stayed bridge over a calm river, with a light-rail train crossing it and the city beyond",
+    "author": "Steve Morgan",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Tilikum_Crossing_from_Ross_Island_Bridge_with_MAX.jpg",
+    "width": 1280,
+    "height": 625
+  },
+  {
+    "commons": "File:Food cart pod at 3rd and Washington - Portland, Oregon.JPG",
+    "file": "4.webp",
+    "caption": "A downtown food cart pod, one of the clusters of street-food trailers the city is known for",
+    "alt": "A row of colourful food trailers along a city sidewalk",
+    "author": "M.O. Stevens",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Food_cart_pod_at_3rd_and_Washington_-_Portland,_Oregon.JPG",
+    "width": 1280,
+    "height": 683
+  },
+  {
+    "commons": "File:Crown Point Vista House - Columbia River Gorge Oregon (35476869624).jpg",
+    "file": "5.webp",
+    "caption": "Vista House on Crown Point above the Columbia River Gorge, about 30 minutes east of the city",
+    "alt": "A wide river in a forested gorge, with a small stone domed building on a cliff edge",
+    "author": "m01229",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Crown_Point_Vista_House_-_Columbia_River_Gorge_Oregon_(35476869624).jpg",
+    "width": 1280,
+    "height": 853
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "commons": "File:Los Angeles, Winter 2016.jpg",
+    "file": "1.webp",
+    "caption": "Downtown Los Angeles below the snow-capped San Gabriel Mountains in winter",
+    "alt": "A cluster of glass downtown towers in front of tall snow-covered mountains under a blue sky",
+    "author": "salewskia",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Los_Angeles,_Winter_2016.jpg",
+    "width": 1280,
+    "height": 797
+  },
+  {
+    "commons": "File:Griffith Observatory 2012 01.jpg",
+    "file": "2.webp",
+    "caption": "Griffith Observatory on Mount Hollywood, in one of the largest city parks in the US",
+    "alt": "A white art deco observatory with three domes on a brush-covered hillside under a pale sky",
+    "author": "Mike Peel",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Griffith_Observatory_2012_01.jpg",
+    "width": 1280,
+    "height": 853
+  },
+  {
+    "commons": "File:Santa Monica Pier from Santa Monica State Beach 01.jpg",
+    "file": "3.webp",
+    "caption": "Santa Monica Pier and its Ferris wheel from the beach",
+    "alt": "A wide sandy beach leading to a pier with a Ferris wheel and roller coaster over the ocean",
+    "author": "Cayambe",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Santa_Monica_Pier_from_Santa_Monica_State_Beach_01.jpg",
+    "width": 1280,
+    "height": 609
+  },
+  {
+    "commons": "File:Image-Disney Concert Hall by Carol Highsmith edit.jpg",
+    "file": "4.webp",
+    "caption": "Walt Disney Concert Hall downtown, home of the Los Angeles Philharmonic",
+    "alt": "A building of curving stainless-steel sails against a deep blue sky",
+    "author": "Carol M. Highsmith",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Image-Disney_Concert_Hall_by_Carol_Highsmith_edit.jpg",
+    "width": 1280,
+    "height": 1000
+  },
+  {
+    "commons": "File:Highsmithvenicecanals.jpg",
+    "file": "5.webp",
+    "caption": "Homes along the Venice Canals, a quiet residential pocket near the beach",
+    "alt": "A narrow canal lined with houses, gardens and palm trees, small boats moored along the banks",
+    "author": "Carol M. Highsmith",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Highsmithvenicecanals.jpg",
+    "width": 1280,
+    "height": 1009
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "commons": "File:Boise, Idaho 2021.jpg",
+    "file": "1.webp",
+    "caption": "Downtown Boise at sunset, with the Capitol at the end of the avenue and the foothills glowing behind",
+    "alt": "A small downtown of mid-rise buildings and a domed capitol at the end of a long avenue, backed by orange-lit hills",
+    "author": "Jyoni Shuler",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Boise,_Idaho_2021.jpg",
+    "width": 1280,
+    "height": 927
+  },
+  {
+    "commons": "File:Hyde Park Historic District.jpg",
+    "file": "2.webp",
+    "caption": "Hyde Park, the North End's historic shopping street of cafes and small shops",
+    "alt": "A tree-lined street of low brick shopfronts with a hanging pub sign, parked cars and bare winter trees",
+    "author": "Tamanoeconomico",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Hyde_Park_Historic_District.jpg",
+    "width": 1152,
+    "height": 768
+  },
+  {
+    "commons": "File:Hulls Gulch (23300855124).jpg",
+    "file": "3.webp",
+    "caption": "A trail through Hulls Gulch in the Boise Foothills, minutes from downtown",
+    "alt": "A narrow path winding through tall golden grass toward brown hills under a cloudy evening sky",
+    "author": "BLMIdaho",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Hulls_Gulch_(23300855124).jpg",
+    "width": 1280,
+    "height": 853
+  },
+  {
+    "commons": "File:Capital City Public Market (5).jpg",
+    "file": "4.webp",
+    "caption": "The Saturday Capital City Public Market filling downtown's 8th Street",
+    "alt": "A long row of white market tents along a downtown street lined with brick buildings, crowded with shoppers",
+    "author": "Tamanoeconomico",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Capital_City_Public_Market_(5).jpg",
+    "width": 1280,
+    "height": 853
+  },
+  {
+    "commons": "File:Idaho State Capitol building.jpg",
+    "file": "5.webp",
+    "caption": "The Idaho State Capitol, heated by geothermal water from the foothills",
+    "alt": "A domed neoclassical capitol building of pale stone with wings on each side, under a deep blue sky",
+    "author": "Quintin Soloviev",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Idaho_State_Capitol_building.jpg",
+    "width": 1280,
+    "height": 853
+  }
+]

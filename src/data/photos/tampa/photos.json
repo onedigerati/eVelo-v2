@@ -1,0 +1,62 @@
+[
+  {
+    "commons": "File:Tampa Skyline.jpg",
+    "file": "1.webp",
+    "caption": "Downtown Tampa's towers along the Hillsborough River",
+    "alt": "Office towers, including a round cylindrical one and a red-brown glass block, rising beside a calm river and a riverside walkway",
+    "author": "Sonny SideUp",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Tampa_Skyline.jpg",
+    "width": 1280,
+    "height": 853
+  },
+  {
+    "commons": "File:Columbia, Ybor City.jpg",
+    "file": "2.webp",
+    "caption": "The Columbia Restaurant in Ybor City, the old Cuban, Spanish and Italian cigar-making quarter",
+    "alt": "A white Spanish-style building with ornate tiled panels, arched doorways and a balcony, under a blue sky",
+    "author": "LittleT889",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Columbia,_Ybor_City.jpg",
+    "width": 1280,
+    "height": 960
+  },
+  {
+    "commons": "File:Fort de Soto Beach.jpg",
+    "file": "3.webp",
+    "caption": "Fort De Soto Park's mangrove keys and Gulf beach at the mouth of Tampa Bay, about 40 minutes from downtown",
+    "alt": "An aerial view of a narrow green key with mangrove lagoons, a road and a sandy beach between blue bay and open sea under white clouds",
+    "author": "Catherine Amoo",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Fort_de_Soto_Beach.jpg",
+    "width": 1280,
+    "height": 720
+  },
+  {
+    "commons": "File:Tampa Bayshore Blvd looking south01.jpg",
+    "file": "4.webp",
+    "caption": "Bayshore Boulevard, whose balustraded waterfront sidewalk is used by walkers, runners and cyclists",
+    "alt": "A long sidewalk running beside a stone balustrade along sparkling bay water, with trees and buildings in the distance",
+    "author": "Ebyabe",
+    "license": "CC BY 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:Tampa_Bayshore_Blvd_looking_south01.jpg",
+    "width": 1280,
+    "height": 960
+  },
+  {
+    "commons": "File:Henry B. Plant Museum from Tampa Riverwalk, Tampa, Florida 2024.jpg",
+    "file": "5.webp",
+    "caption": "The minarets of the 1891 Tampa Bay Hotel, now the University of Tampa and the Henry B. Plant Museum",
+    "alt": "A long building with silver Moorish minarets and domes behind palms and lawns, seen across a river",
+    "author": "Ken Lund",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Henry_B._Plant_Museum_from_Tampa_Riverwalk,_Tampa,_Florida_2024.jpg",
+    "width": 1280,
+    "height": 960
+  }
+]

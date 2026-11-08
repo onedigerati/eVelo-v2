@@ -1,0 +1,62 @@
+[
+  {
+    "commons": "File:Golden Gate Bridge as seen from Battery East.jpg",
+    "file": "1.webp",
+    "caption": "The Golden Gate Bridge from Battery East in the Presidio, with Fort Point below its south tower",
+    "alt": "A red suspension bridge spanning a strait of blue water toward green headlands, with a brick fort at its near end",
+    "author": "Frank Schulenburg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Golden_Gate_Bridge_as_seen_from_Battery_East.jpg",
+    "width": 1280,
+    "height": 800
+  },
+  {
+    "commons": "File:Painted Ladies San Francisco January 2013 panorama 2.jpg",
+    "file": "2.webp",
+    "caption": "The Painted Ladies on Alamo Square, Victorian houses below the downtown towers",
+    "alt": "A row of pastel Victorian houses beside a green park, with city towers behind them under a clear sky",
+    "author": "King of Hearts",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Painted_Ladies_San_Francisco_January_2013_panorama_2.jpg",
+    "width": 1280,
+    "height": 512
+  },
+  {
+    "commons": "File:Cable car on Hyde Street, San Francisco, California LCCN2013630203.tif",
+    "file": "3.webp",
+    "caption": "A cable car climbing Hyde Street, with Alcatraz and the bay behind",
+    "alt": "A green and cream cable car on a steep street beside a large timbered house, with the bay and an island in the distance",
+    "author": "Carol M. Highsmith",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Cable_car_on_Hyde_Street,_San_Francisco,_California_LCCN2013630203.tif",
+    "width": 1280,
+    "height": 853
+  },
+  {
+    "commons": "File:San Francisco Ferry Building (cropped).jpg",
+    "file": "4.webp",
+    "caption": "The Ferry Building on the Embarcadero, a food hall and ferry terminal, with the Bay Bridge beyond",
+    "alt": "A long arcaded building with a central clock tower on a waterfront lined with palm trees, a suspension bridge behind",
+    "author": "JaGa",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:San_Francisco_Ferry_Building_(cropped).jpg",
+    "width": 1280,
+    "height": 693
+  },
+  {
+    "commons": "File:San Francisco Skyline - Mission Dolores Park.jpg",
+    "file": "5.webp",
+    "caption": "Mission Dolores Park on a sunny day, with the downtown towers beyond",
+    "alt": "A grassy hillside park with people sitting on the lawn, palm trees and the city skyline behind",
+    "author": "Tony Webster",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:San_Francisco_Skyline_-_Mission_Dolores_Park.jpg",
+    "width": 1280,
+    "height": 853
+  }
+]

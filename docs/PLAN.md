@@ -7,23 +7,24 @@ Every city in the Atlas has a full profile with the five-photo cover mosaic, not
 2026-11-07 · tests: 329 pass (22 files) · typecheck: clean · build: ok
 
 ## Now
-Stage 5 of 6 · US West + South
-Risk: content only (profile text, scores and photos; no code).
-Scope: San Francisco, Los Angeles, San Diego, Seattle, Portland, Honolulu, Denver, Boise, Salt Lake City, Phoenix, Scottsdale, Las Vegas, Dallas, Houston, Miami, Tampa, Orlando, Sarasota — profile + 5 photos each, in the US style (README "## US cities", Austin pilot). All 18 are built; Pacific is reviewed; Mountain and Texas + Florida need their independent reviews. The commit takes only these paths.
+Stage 6 of 6 · US East + Midwest + launch
+Risk: content only for the 14 profiles; the launch adds one test (no money logic) and a deploy, which waits for the user.
+Scope: New York City, Boston, Philadelphia, Pittsburgh, Washington DC, Charlotte, Raleigh (built, reviewed) and Atlanta, Asheville, Nashville, Chicago, Minneapolis, Kansas City, St. Louis (built, review running) — profile + 5 photos each, US style. Then a test requiring a profile and 5 photos for every one of the 133 cities, the full preview, and deploy on the user's approval.
 Checks:
-- [ ] Each of the 18 has a profile to the README's US standard, with sources, scored on the 1–5 rubric, and passes an independent content review with its findings applied (proof: test + review notes)
+- [ ] Each of the 14 has a profile to the README's US standard, with sources, scored on the 1–5 rubric, and passes an independent content review with its findings applied (proof: test + review notes)
 - [ ] Each has exactly 5 openly licensed photos with credits, checked on a contact sheet (proof: test + contact sheet)
-- [ ] In a clean tree holding only stages 1–5 paths: type check, tests and build pass (proof: test)
-- [ ] Each of the 18 opens from its list "Profile" chip with 5 photos loaded, "Profile · United States" in the eyebrow, and stays out of the top picks; both themes and a phone (proof: run the product)
-- [ ] Preview republished with stage 5's 90 photos added to the asset store (proof: run the product on the preview build)
-Open: none
-Mode: paused — clean break so the user can clear context and resume in a fresh session (cheaper than continuing this long one). Run `/keel:resume`, then carry on under autopilot (the user pre-approved autopilot on resume, 2026-11-07).
-Resume notes (2026-11-07, after stage 4):
-- Next steps, in order: (1) independent content reviews for Mountain and Texas + Florida — brief each reviewer with the builder's "Unsure" list in `docs/evidence/stage-5/build-*.md` and save findings as `review-*.md` there (see `review-pacific.md` for the shape); (2) verify stage 5 like stages 2–4 (clean worktree from HEAD + only the stage 5 paths; typecheck, tests, build; product run of the 18 cities in both themes and a phone; `npm run build:preview` there, upload the pending batches with the Artifact tool, `--record`, publish with every `dist/artifact-files.json` entry and null the previous version's stale chunk paths; run that build locally with `docs/evidence/stage-1/blobserve.js`); report, tick, commit only stage 5 paths. Scripts to reuse: `docs/evidence/stage-4/s4.js` (product run; swap the city list and screenshot ids) and `s2v31.js` (preview-build run).
-- Stage 6: East Coast (New York City, Boston, Philadelphia, Pittsburgh, Washington DC, Charlotte, Raleigh) is built, not reviewed — notes and the reviewer's to-check list in `docs/evidence/stage-6/build-east.md` (Massachusetts figures came from search snippets only; mass.gov blocks fetching). The East review can start alongside the stage 5 reviews. Not started: Midwest + South (Atlanta, Asheville, Nashville, Chicago, Minneapolis, Kansas City, St. Louis). Stage 6 also adds a test requiring a profile and 5 photos for all 133 cities, the full preview, and deploy on the user's approval.
-- Builders work in the main tree, each owning only its cities' files; cap about 5 agents at once. Builder and reviewer briefs that worked: see this plan's Decisions and the `build-*.md` / `review-*.md` notes.
-- Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (v33, stages 1–4, 505 photos). `.preview/photo-assets.json` (gitignored, keep it) records every upload. The hosted page can't be driven from here (login; Chrome control unsupported in WSL), so previews are proven by running the preview build locally against `blobserve.js`.
-- Playwright: NODE_PATH=/home/jonah/.npm/_npx/e41f203b7505f1fb/node_modules, chromium executablePath /home/jonah/.cache/ms-playwright/chromium_headless_shell-1248/chrome-headless-shell-linux-arm64/chrome-headless-shell. Don't `pkill -f` a pattern that appears in the same command line (it kills the shell); stop servers with `fuser -k <port>/tcp`.
+- [ ] A test fails if any of the 133 cities lacks a profile or 5 photos, and passes (proof: test)
+- [ ] In the full tree: type check, tests and build pass (proof: test)
+- [ ] Each of the 14 opens from its list "Profile" chip with 5 photos loaded, "Profile · United States" in the eyebrow, and stays out of the top picks; both themes and a phone (proof: run the product)
+- [ ] Preview republished with stage 6's 70 photos added (all 133 cities), proven on the preview build locally (proof: run the product on the preview build)
+- [ ] Deployed to GitHub Pages on the user's approval, live site checked (proof: run the product)
+Open: before deploy, recheck Florida Amendment 3 and Colorado Amendment 87 certification (Decisions).
+Mode: autopilot (resumed 2026-11-07 on the user's pre-approval).
+Notes:
+- Reviews: East in `docs/evidence/stage-6/review-east.md`; Midwest + South reviewer writes `review-midwest-south.md` there.
+- Verify like stage 5 (`docs/evidence/stage-5/report.md`): scripts `stage-5/s5.js` (run as `.cjs`, city list as JSON) and `s5v34.js` + `blobserve.js` for the preview build. Upload batches with the Artifact tool from main-tree paths, `--record`, copy `.preview/photo-assets.json` back to the main tree if recorded in a worktree, publish every `dist/artifact-files.json` entry and null the previous version's stale chunk paths.
+- Preview: https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth (v34, stages 1–5, 595 photos). `.preview/photo-assets.json` (gitignored, keep it) records every upload. The hosted page can't be driven from here, so previews are proven locally against `blobserve.js`.
+- Playwright: NODE_PATH=/home/jonah/.npm/_npx/e41f203b7505f1fb/node_modules, chromium executablePath /home/jonah/.cache/ms-playwright/chromium_headless_shell-1248/chrome-headless-shell-linux-arm64/chrome-headless-shell. Stop servers with `fuser -k <port>/tcp`.
 - Deploy: unpushed commits; push (GitHub Pages) only when the user says.
 - Open from reviews: Seoul, London, Amsterdam and Berlin have no `localTaxes.ts` entry, so the Atlas says "not modelled"; adding one is money logic and needs tests (ask the user). The photo credit cleaner misses "upload on <date>" suffixes.
 
@@ -32,10 +33,12 @@ Resume notes (2026-11-07, after stage 4):
 - [x] 2. Europe, Africa, Middle East — Amsterdam, Berlin, Dublin, London, Paris, Zurich, Cape Town, Dubai: profiles + photos, contact sheet
 - [x] 3. Asia-Pacific — Auckland, Cebu, Da Nang, Hanoi, Ho Chi Minh City, Manila, Melbourne, Osaka, Seoul, Singapore, Sydney: profiles + photos, contact sheet
 - [x] 4. Canada + South America — Montréal, Toronto, Vancouver, Bogotá, Buenos Aires: profiles + photos, contact sheet
-- [ ] 5. US West + South — San Francisco, Los Angeles, San Diego, Seattle, Portland, Denver, Boise, Salt Lake City, Phoenix, Scottsdale, Las Vegas, Honolulu, Dallas, Houston, Miami, Tampa, Orlando, Sarasota: profiles + photos, contact sheet
+- [x] 5. US West + South — San Francisco, Los Angeles, San Diego, Seattle, Portland, Denver, Boise, Salt Lake City, Phoenix, Scottsdale, Las Vegas, Honolulu, Dallas, Houston, Miami, Tampa, Orlando, Sarasota: profiles + photos, contact sheet
 - [ ] 6. US East + Midwest + launch — New York City, Boston, Philadelphia, Pittsburgh, Washington DC, Atlanta, Charlotte, Raleigh, Asheville, Nashville, Chicago, Minneapolis, Kansas City, St. Louis; a test requires a profile and 5 photos for all 133; full preview; deploy on approval
 
 ## Decisions
+- 2026-11-07 · Florida's Amendment 3 stays "(unofficial results)" in the four Florida profiles until the state certifies it; recheck in stage 6 before deploy — PM's call.
+- 2026-11-07 · Denver keeps tax 5 while Colorado's Amendment 87 (brackets up to 8.4% above $1M from 2027) is uncertified: profiles score today's rule and note what's pending; revisit to 4 if it's certified — PM's call.
 - 2026-11-07 · All 58 unprofiled cities get profiles, the 33 US cities included — user accepted the defaults.
 - 2026-11-07 · The new cities get profiles but don't join the ranked picks (`EXPAT_PICKS` and its ranking stay at 75) — user accepted the defaults.
 - 2026-11-07 · Staged by region, as in the photos plan — user accepted the defaults.

@@ -1,0 +1,62 @@
+[
+  {
+    "commons": "File:View of Waikiki from Diamond Head.jpg",
+    "file": "1.webp",
+    "caption": "Waikiki and the Honolulu skyline from the summit of Diamond Head",
+    "alt": "Hotel towers along a curving turquoise shore under a blue sky, seen past the dry slope of a crater rim",
+    "author": "Jokazoo",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:View_of_Waikiki_from_Diamond_Head.jpg",
+    "width": 1280,
+    "height": 961
+  },
+  {
+    "commons": "File:Iolani Palace 2017.jpg",
+    "file": "2.webp",
+    "caption": "ʻIolani Palace, the 1882 residence of Hawaii's last monarchs, in downtown Honolulu",
+    "alt": "A two-storey palace with columned verandas on both floors and corner towers, under a cloudy sky",
+    "author": "Leo Carmona",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Iolani_Palace_2017.jpg",
+    "width": 1280,
+    "height": 853
+  },
+  {
+    "commons": "File:Honolulu-Chinatown-WoFat-building.JPG",
+    "file": "3.webp",
+    "caption": "The Wo Fat building in Chinatown, the old quarter of markets, lei stands and restaurants next to downtown",
+    "alt": "A three-storey corner building with a pagoda-style roof, green trim and shops at street level",
+    "author": "Joel Bradshaw",
+    "license": "Public domain",
+    "licenseUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Honolulu-Chinatown-WoFat-building.JPG",
+    "width": 1280,
+    "height": 960
+  },
+  {
+    "commons": "File:Hanauma Bay, Oahu, Hawaii, USA2.jpg",
+    "file": "4.webp",
+    "caption": "Hanauma Bay, a protected reef in a volcanic crater on the city's east side",
+    "alt": "A curved bay of turquoise water and reef inside green crater walls",
+    "author": "Diego Delso",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Hanauma_Bay,_Oahu,_Hawaii,_USA2.jpg",
+    "width": 1280,
+    "height": 853
+  },
+  {
+    "commons": "File:Skyline Lelepaua Station with eastbound train 2025-11-24.jpg",
+    "file": "5.webp",
+    "caption": "A driverless Skyline train at Lelepaua, the airport station; the line opened in 2023 and reached the airport in October 2025",
+    "alt": "A white elevated train with a coloured stripe pulling into an open-air station on concrete piers",
+    "author": "Musashi1600",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Skyline_Lelepaua_Station_with_eastbound_train_2025-11-24.jpg",
+    "width": 1280,
+    "height": 853
+  }
+]

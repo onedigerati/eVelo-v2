@@ -1,0 +1,62 @@
+[
+  {
+    "commons": "File:Seattle Skyline Kerry Park.jpg",
+    "file": "1.webp",
+    "caption": "The Space Needle and downtown Seattle from Kerry Park, with Mount Rainier on the skyline",
+    "alt": "A city skyline with a needle-shaped tower in front and a snow-covered volcano on the horizon, green trees below",
+    "author": "Sajad Mohamad",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Seattle_Skyline_Kerry_Park.jpg",
+    "width": 1280,
+    "height": 853
+  },
+  {
+    "commons": "File:Elliott bay on a gorgeous day (3524190787).jpg",
+    "file": "2.webp",
+    "caption": "A Washington State ferry leaving the downtown terminal across Elliott Bay",
+    "alt": "A large green and white ferry on blue water in front of a cluster of downtown towers",
+    "author": "Dave Nakayama",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Elliott_bay_on_a_gorgeous_day_(3524190787).jpg",
+    "width": 1280,
+    "height": 853
+  },
+  {
+    "commons": "File:Pike Place Market Seattle.jpg",
+    "file": "3.webp",
+    "caption": "Pike Place Market, the public market above the waterfront since 1907",
+    "alt": "The neon Public Market Center sign and clock above a busy market entrance",
+    "author": "Daniel Schwen",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Pike_Place_Market_Seattle.jpg",
+    "width": 1280,
+    "height": 881
+  },
+  {
+    "commons": "File:Fort Lawton West Point Lighthouse 03.jpg",
+    "file": "4.webp",
+    "caption": "West Point Lighthouse in Discovery Park, the city's largest park, on Puget Sound",
+    "alt": "A small white lighthouse and keeper's houses behind beach grass and driftwood logs",
+    "author": "Joe Mabel",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Fort_Lawton_West_Point_Lighthouse_03.jpg",
+    "width": 1280,
+    "height": 960
+  },
+  {
+    "commons": "File:Olympic Mountains from Fremont, Seattle, in residential neighborhood.jpg",
+    "file": "5.webp",
+    "caption": "A residential street in Fremont, with the Olympic Mountains across Puget Sound",
+    "alt": "A street of wooden houses and trees sloping down toward snow-capped mountains on the horizon",
+    "author": "Runner1928",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Olympic_Mountains_from_Fremont,_Seattle,_in_residential_neighborhood.jpg",
+    "width": 1280,
+    "height": 955
+  }
+]
