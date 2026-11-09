@@ -1,40 +1,37 @@
-# Set your own spending plan
+# Retire later plan
 
 ## Goal
-In the "Spending in <city>" card, a user who has researched a real price ("a condo in Bangkok is about $18K a year") can type the dollar amount for any category, not just the percentage change. The percentage, bar, card total and odds follow, and a typed amount stays fixed when the home budget or the expat price premium changes. An ⓘ tip on the card explains what the numbers compare against and how to set your own. Done = both stages verified in the running app, a preview, and deployed on approval.
+A user who isn't ready to retire today can see what retiring in 2, 4 or 5 years would look like, starting from today's portfolio. A "Retire in" setting (now to 15 years) and a "Saving while working" amount feed the whole app: until retirement nothing is withdrawn, savings go into the portfolio (paying down any existing loan first), and from retirement on the plan spends as it does today, still ending at the same age. A comparison shows odds and safe spending for retiring now, in 2, 4 and 5 years side by side. Done = the user picks a visual direction from a variations page, all stages pass verification in the running app, a preview is reviewed, and the work is deployed on approval.
 
 ## Baseline
-2026-11-08 · tests: 501 pass · typecheck: clean · build: ok (after 5e26be1)
+2026-11-08 · tests: 555 pass · typecheck: clean (after c5fc49a)
 
 ## Now
-All stages done · Set your own spending
+Stage 1 of 4 · Variations
 Risk: UI only
-Agents: wide — confirmed 2026-11-08 17:23
+Agents: wide — confirmed 2026-11-08 19:07
 Checks:
-- [x] Tapping a row's amount lets you type dollars; Enter sets it, Esc cancels; the %, bar, card total, delta chip and odds update, and the card total equals the Outlook's destination spend (proof: run the product, a test can't judge the live card)
-- [x] Setting % on a row that has a fixed amount replaces it, and vice versa; × and "Reset all" clear both kinds for this city (proof: test for the override logic; run the product)
-- [x] A fixed row keeps its dollars when the home budget or the premium slider moves; a percentage row follows; a $0 home row shows dollars only (proof: run the product, screenshots before/after)
-- [x] The ⓘ tip says what the % compares against (your home city's spending), that you can set the % or the $, that a typed $ stays fixed, and how to undo (proof: run the product, screenshot)
-- [x] Keyboard and screen reader can reach and edit both fields, labelled per category; it looks right in light, dark and at phone width (proof: run the product, screenshots + accessibility tree)
-Open: none — preview v39 reviewed (user: "This looks great. Please deploy."); deployed by run 42537620954, live bundle checked
+- [ ] A variations page shows at least four distinct ways to show the setting and the now/2/4/5-year comparison in the app's look, at desktop and phone width (proof: run the product, the published page, a test can't judge design)
+- [ ] The user picks a direction, and it's logged as a decision (proof: the user's words in this conversation)
+Open: the user's pick from the variations page
 
 ## Stages
-- [x] 1. Fixed amounts in the engine — per-city fixed dollar overrides through cost model, sim, solver, Atlas, outlook rows, share link, with tests
-- [x] 2. Card editing and tip — edit $ or % on each row, × to clear, ⓘ tip on the card, both themes and phone; preview; deploy on approval
+- [ ] 1. Variations — a variations page of ideas for the setting and the comparison; the user picks one
+- [ ] 2. Retire later in the engine — retireInYears + savingsWhileWorking through kernel, sell side, solver, Atlas, share link, defaults, with tests
+- [ ] 3. Plan inputs and outlook — Retire in + Saving inputs, verdict copy, "Retire" marker on the charts, loan warning, Method page, both themes and phone
+- [ ] 4. Retire-later comparison — the chosen comparison view (now / 2 / 4 / 5 yrs: odds and safe spending, tap to apply); preview; deploy on approval
 
 ## Decisions
-- 2026-11-08 · Users can set a category's destination spending in dollars as well as by percentage; a dollar entry is stored as a fixed amount and doesn't drift when the home budget changes, while percentage entries keep following the home budget — user: "yes, fixed dollar amounts". This refines the standing cost model (home budget × ratios): a fixed amount takes a category out of the ratio for that city.
-- 2026-11-08 · The expat price premium doesn't move a fixed amount (as it already doesn't move percentage overrides) — proposed to the user, accepted.
-- 2026-11-08 · Amounts are annual USD in today's money, like the rest of the card; the simulation still inflates them with CPI and FX volatility like any destination spending (it's today's price, not a nominal lock), and the max-spend solver scales them with the rest of the budget — PM's call, from the survey (simulate.ts, solve.ts).
-- 2026-11-08 · Fixed amounts are keyed by city (`amountOverrides[cityId][category]`), so research for Bangkok doesn't land on every Atlas city and survives switching destinations; percentage overrides keep today's behaviour (applied everywhere) — PM's call, from the survey (atlas.ts, picks.ts apply overrides to every city).
-- 2026-11-08 · One override per category: setting a % replaces a fixed amount and vice versa; a row whose home amount is $0 shows dollars only — user accepted the proposal.
-- 2026-11-08 · An ⓘ tip on the card explains it — user asked for it.
-- 2026-11-08 · Two stages: the engine and state change with tests, then the card UI; scale check didn't fire — PM's call.
-
-- 2026-11-08 · Stage 1 verified by a fresh agent ([report](evidence/stage-1/report.md), 522 tests, mutation-checked); review found no security issue in the new share-link field and one fix-now (the stay-home baseline's cache key ignored `amountOverrides`), fixed. The reviewer's solver concern is already the decision above. Stage 2 adds "card total equals the Outlook's destination spend" because the card still totals with `applyRatios` — from the review.
-- 2026-11-08 · The share-link builder also closed a pre-existing gap: `constructor` could pass the `in` checks for `ratioOverrides` and the budget merge; both now use own-key/category checks — builder's call, tested.
-- 2026-11-08 · Card editing details, builder's calls verified fresh: an untouched draft commits nothing (tabbing through creates no overrides); the $ field takes "18k", "18,000", "$18.5k"; a typed $ is capped at $10M/yr (share links keep their $1B clamp) and changes above +999% read ">+999%"; rejected input keeps the field open with an announced hint; Tab runs $ → % → × → next row; Esc doesn't close a surrounding sheet; "Reset all" clears % overrides and this city's $ amounts only.
-- 2026-11-08 · Stage 2 verified by a fresh agent, four defects fixed and re-checked by another ([report](evidence/stage-2/report.md)); no review run, the stage is UI only — PM's call.
+- 2026-11-08 · While working, the user adds a yearly amount ("Saving while working", today's $/yr, can be $0), inflated with CPI like income; it pays down an existing loan first and the rest is invested, through the kernel's existing surplus logic — user chose "Yearly amount".
+- 2026-11-08 · A "Retire in" setting that the whole app follows (verdict, charts, Atlas odds), plus a comparison of now / 2 / 4 / 5 years — user chose "Setting + comparison".
+- 2026-11-08 · The plan ends at the same age: `horizonYears` still counts from today, so retiring later means fewer drawdown years — user chose "Same end age".
+- 2026-11-08 · Show a variations page of visual ideas before building any UI — user asked for it.
+- 2026-11-08 · Agents: wide — user confirmed in this session.
+- 2026-11-08 · Before retirement there's no spending withdrawal; the existing loan keeps accruing interest; other income counts only from retirement (while working, the savings figure is the net) — PM's call, from the survey (kernel.ts step 3).
+- 2026-11-08 · The move to a destination can't come before retirement: the effective move month is max(move, retirement), so wealth tax also starts no earlier than retirement — PM's call.
+- 2026-11-08 · The max-spend solver scales retirement spending only, never the savings; the sell strategy gets the same savings, invested — PM's call, from the survey (solve.ts).
+- 2026-11-08 · "Retire in" runs 0–15 years in whole years and must stay below the horizon; default 0 and savings default $0, so saved plans and share links don't change — PM's call.
+- 2026-11-08 · Scale check didn't fire (4 stages, one release) — PM's call.
 
 ## Open questions
 - A $0 home category with no fixed amount reads "$0 ±0%" in the Outlook cost card while the plan card shows no % (cosmetic) — from the stage 2 verify, later.
@@ -67,3 +64,4 @@ Open: none — preview v39 reviewed (user: "This looks great. Please deploy."); 
 - 2026-11-08 · City list navigation: collapsible tiers following the sort, region chips with counts in the list toolbar, a more opaque map city card, one Plan tab on desktop, live on GitHub Pages — [plan](plans/2026-11-08-city-list-navigation.md) · [evidence](plans/2026-11-08-city-list-navigation/evidence/)
 - 2026-11-08 · Existing loan balance: an "Existing loan balance" input in Borrowing that every output starts from (BBD loan, opening forced sale above the call line, sell side at equal net worth), with warnings, limits and copy, live on GitHub Pages — [plan](plans/2026-11-08-existing-loan.md) · [evidence](plans/2026-11-08-existing-loan/evidence/)
 - 2026-11-08 · Docked verdict: a glass verdict pill docked at the top of the results column on desktop and tablet once the headline scrolls away, with live delta, back-to-verdict and drawer support, live on GitHub Pages — [plan](plans/2026-11-08-docked-verdict.md) · [evidence](plans/2026-11-08-docked-verdict/evidence/)
+- 2026-11-08 · Set your own spending: type a category's destination spending in $ or %, fixed amounts per city that don't drift, an ⓘ tip on the card, live on GitHub Pages — [plan](plans/2026-11-08-set-your-own-spending.md) · [evidence](plans/2026-11-08-set-your-own-spending/evidence/)
