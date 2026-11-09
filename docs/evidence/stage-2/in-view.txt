@@ -1,0 +1,24 @@
+$ node inview.mjs (Playwright 1.57 Chromium, page.clock paused; real 300ms waits let IntersectionObserver fire, clock.runFor advances animation frames)
+== 390x844
+load: {"top":638,"ratio":0.24,"scrollY":0,"max":1408} {"lead":"Gains never taxed. Loan repaid. The rest is theirs.","current":"Die","n
++5s with card {"top":638,"ratio":0.24,"scrollY":0,"max":1408}: caption "Gains never taxed. Loan repaid. The rest is theirs." (should still be resting Die)
+in view {"top":0,"ratio":1,"scrollY":638,"max":1408}: "Borrow for living money." loan 14 pts, head x=103.1
+scrolled away {"top":-770,"ratio":0.09,"scrollY":1408,"max":1408}: loan 14 pts, head x=103.1
+  +2s away: "Borrow for living money." loan 14 pts, head x=103.1
+  +4s away: "Borrow for living money." loan 14 pts, head x=103.1
+  +6s away: "Borrow for living money." loan 14 pts, head x=103.1
+  +8s away: "Borrow for living money." loan 14 pts, head x=103.1
+back {"top":0,"ratio":1,"scrollY":638,"max":1408}: "Borrow for living money." loan 14 pts, head x=103.1
+  +1s back: "Borrow for living money." loan 23 pts, head x=148.2
+console: []
+== 1280x700
+load: {"top":136,"ratio":0.8,"scrollY":0,"max":498} {"lead":"Buy, and hold.","current":"Buy","nCurrent":1,"btn":"Pause the four beat
+in view {"top":136,"ratio":0.8,"scrollY":0,"max":498}: "Borrow for living money." loan 10 pts, head x=147.4
+scrolled away {"top":-362,"ratio":0.48,"scrollY":498,"max":498}: loan 10 pts, head x=147.4
+  +2s away: "Borrow for living money." loan 29 pts, head x=357.4
+  +4s away: "Spend it where life costs less." loan 31 pts, head x=388
+  +6s away: "Spend it where life costs less." loan 31 pts, head x=388
+  +8s away: "Gains never taxed. Loan repaid. The rest is theirs." loan 31 pts, head x=388
+back {"top":-1,"ratio":1,"scrollY":137,"max":498}: "Gains never taxed. Loan repaid. The rest is theirs." loan 31 pts, head x=388
+  +1s back: "Gains never taxed. Loan repaid. The rest is theirs." loan 31 pts, head x=388
+console: []

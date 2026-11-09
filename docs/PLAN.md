@@ -7,25 +7,25 @@ A first-time visitor to the home page sees how Buy, Borrow, Die works, and why m
 2026-11-09 · tests: 624 pass (42 files) · typecheck: clean
 
 ## Now
-Stage 2 of 3 · The four beats
-Risk: UI only (motion, timing and accessibility; the model is unchanged)
+Stage 3 of 3 · Preview and ship
+Risk: UI only (removes dead landing code; deploy is outward-facing and waits for the user)
 Mode: autopilot
 Agents: wide — confirmed 2026-11-08 22:19
 Checks:
-- [ ] The card renders any time t from the model (a pure `frameAt(t)` in its own module): Buy fills the portfolio (paid + hatched gains), Borrow grows the St. Louis loan under the margin line, Live anywhere flies St. Louis → Bangkok and bends the loan flatter with the draw shrinking, Die applies the step-up and splits the estate; the odds badge only ever shows an endpoint city's figure with that city's name (no blended number), and its band comes from atlasCard's bands; one beat id type is shared by the frame and the step buttons (proof: test)
-- [ ] Play, pause and replay controls work by mouse and keyboard; the card plays twice then rests on the finished Die frame, and only plays while in view (proof: run the product, scripted clicks and screenshots mid-beat)
-- [ ] The step buttons light up with the beat on show and jump to it when pressed: the card, caption and `aria-current` always agree (proof: run the product, scripted clicks)
-- [ ] With `prefers-reduced-motion`, nothing moves: each beat shows its finished frame, and the controls and step buttons still work (proof: run the product with reduced motion emulated)
-- [ ] Screen readers hear each beat once through an aria-live region; content faded to 0 is hidden from the accessibility tree; the SVG's name describes the whole story or the current frame on purpose (proof: run the product, accessibility tree at each beat)
-- [ ] No sideways scroll and chart text at 11px or more from 360 to 1920 in every beat, light and dark, and the "Loan repaid" label clears the heirs bar on the narrow layout (proof: run the product, sweep and screenshots)
+- [ ] The old map-card code is gone: `atlasCard.ts` and its test are removed, with the two figures `story.ts` reads from it (Bangkok's map odds and the home-city odds, and `bandFor`) moved into the landing story model unchanged and still tested; no unused landing exports, CSS or tokens remain (proof: test, plus a search for leftovers)
+- [ ] The rest of the app still works: the Atlas (map, list, city profiles), the Plan and Outlook, Method and the landing's links and theme toggle load with no console errors, at 1280 and 390 (proof: run the product, screenshots)
+- [ ] A preview is published for the user to review; deploy only on their approval (proof: the user's words)
 Open: none
 
 ## Stages
 - [x] 1. Story model and card — tested illustrative model; the resting-frame card replaces the map card; step buttons; both themes and a real phone layout
-- [ ] 2. The four beats — the timeline (render at time t), play/pause/replay, step sync and jump, plays when in view, reduced motion, aria-live per beat
+- [x] 2. The four beats — the timeline (render at time t), play/pause/replay, step sync and jump, plays when in view, reduced motion, aria-live per beat
 - [ ] 3. Preview and ship — clean up the old map-card code and its test, check the Atlas and the rest of the landing still work, preview for review, deploy on approval
 
 ## Decisions
+- 2026-11-09 · Stage 2 closed: 6/6 checks pass ([evidence](evidence/stage-2/report.md)); review: 4 fix-now fixed, 3 cheap defers taken (Play counts as in view, `LandingStory` wrapper so the page doesn't re-render per frame, dead `frameCopy` lead/detail dropped), 2 deferred to open questions, 3 rejected — PM's call.
+- 2026-11-09 · Step-press scroll rule: show the chart and the pressed step together when they fit; else the whole step plus at least half the chart (1000px stacked); else (phone) the whole chart, accepting that the pressed step scrolls off screen — they can't share an 844px screen. Focus stays on the step — PM's call.
+- 2026-11-09 · Stage 2 verify notes fixed in-stage (layout shift between beats, off-screen card on phone step presses, play after a paused jump) and the review's four fix-now items (60fps re-renders while idle, hold surviving a reduced-motion switch, first-entry IntersectionObserver, StrictMode announcing Die at load) — PM's call.
 - 2026-11-08 · Stage 1 closed: 4/4 checks pass ([evidence](evidence/stage-1/report.md)); review: 1 fix-now (dead phone grid rule, removed), 6 deferred into stage 2's checks (step/card sync, one beat id type, SVG name, faded content in the a11y tree, blended odds and bands, per-frame work), 3 rejected — PM's call.
 - 2026-11-08 · Stage 1 verify found SVG text under 11px at 360–375px phones, ~573–622px and ~1145–1245px viewports, and the active step card 6px from the phone edge; both fixed inside stage 1 (the 11px floor is the check's intent, not just the two named widths) — PM's call.
 - 2026-11-08 · Stage 1 builders resumed after the hook held them — user: "Go".
@@ -44,8 +44,10 @@ Open: none
 - 2026-11-09 · The motion is split from the card (stages 1 and 2) so the resting frame and layout are reviewed before the timeline is built — PM's call.
 
 ## Open questions
+- On a phone, keyboard users swing ~684px per step press (Tab scrolls down to the next step, Enter brings the chart back): tier 3 by design — from the stage 2 verify, later if wanted.
+- `useStoryPlayback` has no hook-level tests (vitest runs in node without testing-library); its logic is covered by pure tests and the e2e verify — from the stage 2 review, later.
+- On phone, Buy shows two empty bands (reserved key rows and caption height), as the mockup does — from the stage 2 verify, later.
 - Chart text falls under 11px below 360px viewports (320: 9.67px; 340: 10.45px) — from the stage 1 verify, later.
-- The static chart parts (ghost, margin, ticks, map dots) are recomputed every render, in both SVGs; precompute them per layout before the 60fps timeline. `COPY.personChip` is unused — from the stage 1 review, stage 2.
 - The step titles were `h2` headings and are now button text, so they've left the heading outline — from the stage 1 verify, later.
 - The comparison adds up to 5 simulates + 5 solves (+5 stay-home runs) per plan change on the main worker; on a 12-core desktop the verdict and Atlas times didn't move, but on a 2–4 core phone it may slow the Atlas fill. Measure on a real phone; if needed, run the comparison only while the Outlook is visible or at fewer paths — from the stage 4 verify, later.
 - At 1100px `scrollWidth` reads 1137 because the verdict section (661px) overflows its 592px column; `overflow-x: clip` hides it, pre-existing — from the stage 4 fix, later.

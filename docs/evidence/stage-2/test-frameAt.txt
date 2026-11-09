@@ -1,0 +1,64 @@
+$ npx vitest run src/ui/landing/__tests__/storyTimeline.test.ts src/ui/landing/__tests__/storyLayout.test.ts src/ui/landing/__tests__/story.test.ts src/ui/landing/__tests__/stepScroll.test.ts --reporter=verbose
+npm notice run evelo@2.0.0 npx
+npm notice run 'vitest' run src/ui/landing/__tests__/storyTimeline.test.ts src/ui/landing/__tests__/storyLayout.test.ts src/ui/landing/__tests__/story.test.ts src/ui/landing/__tests__/stepScroll.test.ts --reporter=verbose
+
+ RUN  v5.1.0 /home/jonah/repos/eVelo-v2
+
+ ✓ src/ui/landing/__tests__/stepScroll.test.ts > step press scroll > doesn't move when the chart and the step are already on screen 1ms
+ ✓ src/ui/landing/__tests__/stepScroll.test.ts > step press scroll > stacked layout: scrolls the least that shows both, keeping the step on screen (no bounce) 0ms
+ ✓ src/ui/landing/__tests__/stepScroll.test.ts > step press scroll > gives the same answer wherever an in-flight scroll happens to be 0ms
+ ✓ src/ui/landing/__tests__/stepScroll.test.ts > step press scroll > short desktop (1000×900): when both can't fit, keeps the step fully on screen with at least half the chart 1ms
+ ✓ src/ui/landing/__tests__/stepScroll.test.ts > step press scroll > phone: when chart and step can't both fit, brings the whole chart in and says the step is off screen 0ms
+ ✓ src/ui/landing/__tests__/stepScroll.test.ts > step press scroll > keeps inside the page and shows the top of a chart taller than the screen 0ms
+ ✓ src/ui/landing/__tests__/story.test.ts > landing story: model > uses the brief: $2.5M, $1.0M basis, 7%, 30 years from 60 to 90, margin call at 50% 5ms
+ ✓ src/ui/landing/__tests__/story.test.ts > landing story: model > follows loan = (loan + spend·1.03^t)·1.06 exactly 1ms
+ ✓ src/ui/landing/__tests__/story.test.ts > landing story: model > keeps both loans under the margin-call line every year 1ms
+ ✓ src/ui/landing/__tests__/story.test.ts > landing story: model > ends with a smaller loan and more for heirs in Bangkok 1ms
+ ✓ src/ui/landing/__tests__/story.test.ts > landing story: spending > spends $80K a year in St. Louis 1ms
+ ✓ src/ui/landing/__tests__/story.test.ts > landing story: spending > derives Bangkok's spending from the app's cost data (about $47K) 1ms
+ ✓ src/ui/landing/__tests__/story.test.ts > landing story: spending > follows the data: another destination gives another figure 1ms
+ ✓ src/ui/landing/__tests__/story.test.ts > landing story: odds > reads Bangkok's 93% from today's landing map 0ms
+ ✓ src/ui/landing/__tests__/story.test.ts > landing story: odds > gives St. Louis the map's home-city figure at the same $80K (63%), lower band than Bangkok 1ms
+ ✓ src/ui/landing/__tests__/story.test.ts > landing story: copy > formats money as $2.5M / $47K 0ms
+ ✓ src/ui/landing/__tests__/story.test.ts > landing story: copy > has four beats with today's step copy 1ms
+ ✓ src/ui/landing/__tests__/story.test.ts > landing story: copy > puts the computed numbers into the captions 0ms
+ ✓ src/ui/landing/__tests__/story.test.ts > landing story: copy > names the resting frame with every key figure 0ms
+ ✓ src/ui/landing/__tests__/story.test.ts > landing story: copy > has every label, key entry and control string 2ms
+ ✓ src/ui/landing/__tests__/storyTimeline.test.ts > story timeline: beats > has one beat id type, in the step order 1ms
+ ✓ src/ui/landing/__tests__/storyTimeline.test.ts > story timeline: beats > starts each beat every four seconds and shows it until the next 1ms
+ ✓ src/ui/landing/__tests__/storyTimeline.test.ts > story timeline: frameAt > starts empty and ends on the resting (Die) frame 1ms
+ ✓ src/ui/landing/__tests__/storyTimeline.test.ts > story timeline: frameAt > never runs a part of the story backwards 49ms
+ ✓ src/ui/landing/__tests__/storyTimeline.test.ts > story timeline: frameAt > finishes each beat inside it: Buy fills, Borrow draws the St. Louis loan, Live anywhere moves, Die splits the estate 0ms
+ ✓ src/ui/landing/__tests__/storyTimeline.test.ts > story timeline: frameAt > stages each beat as the mockup does 0ms
+ ✓ src/ui/landing/__tests__/storyTimeline.test.ts > story timeline: playback > rests on the finished frame before anything plays 0ms
+ ✓ src/ui/landing/__tests__/storyTimeline.test.ts > story timeline: playback > autoplays twice, then rests on the finished Die frame 0ms
+ ✓ src/ui/landing/__tests__/storyTimeline.test.ts > story timeline: playback > does not autoplay with reduced motion 1ms
+ ✓ src/ui/landing/__tests__/storyTimeline.test.ts > story timeline: playback > pauses where it is and plays on from there 0ms
+ ✓ src/ui/landing/__tests__/storyTimeline.test.ts > story timeline: playback > play from the finished frame starts over and plays one pass 0ms
+ ✓ src/ui/landing/__tests__/storyTimeline.test.ts > story timeline: playback > replay starts over from anywhere 0ms
+ ✓ src/ui/landing/__tests__/storyTimeline.test.ts > story timeline: playback > a step jumps to its beat: the start while playing, the finished frame when paused or at rest 0ms
+ ✓ src/ui/landing/__tests__/storyTimeline.test.ts > story timeline: playback > play after a step chosen while paused plays that beat from its start, then on to the end 0ms
+ ✓ src/ui/landing/__tests__/storyTimeline.test.ts > story timeline: playback > with reduced motion > shows only finished frames: play steps one beat at a time, then rests 0ms
+ ✓ src/ui/landing/__tests__/storyTimeline.test.ts > story timeline: playback > with reduced motion > steps and replay go to finished frames, even while playing 0ms
+ ✓ src/ui/landing/__tests__/storyTimeline.test.ts > story timeline: reduced motion switched mid-play > drops any hold in either direction 0ms
+ ✓ src/ui/landing/__tests__/storyTimeline.test.ts > story timeline: reduced motion switched mid-play > a held finished beat, switched to full motion, plays on from that moment 0ms
+ ✓ src/ui/landing/__tests__/storyLayout.test.ts > story card geometry > wide: the resting frame draws the Die state inside the viewBox 3ms
+ ✓ src/ui/landing/__tests__/storyLayout.test.ts > story card geometry > wide: static parts are computed once per layout 0ms
+ ✓ src/ui/landing/__tests__/storyLayout.test.ts > story card geometry > wide: every frame stays inside the viewBox 90ms
+ ✓ src/ui/landing/__tests__/storyLayout.test.ts > story card geometry > wide: the person walks between the baseline and the x-tick labels 0ms
+ ✓ src/ui/landing/__tests__/storyLayout.test.ts > story card geometry > narrow: the resting frame draws the Die state inside the viewBox 0ms
+ ✓ src/ui/landing/__tests__/storyLayout.test.ts > story card geometry > narrow: static parts are computed once per layout 0ms
+ ✓ src/ui/landing/__tests__/storyLayout.test.ts > story card geometry > narrow: every frame stays inside the viewBox 49ms
+ ✓ src/ui/landing/__tests__/storyLayout.test.ts > story card geometry > narrow: the person walks between the baseline and the x-tick labels 0ms
+ ✓ src/ui/landing/__tests__/storyLayout.test.ts > story card geometry > the loan bends flatter during Live anywhere: from the St. Louis loan to the Bangkok loan 1ms
+ ✓ src/ui/landing/__tests__/storyLayout.test.ts > story card geometry > narrow: "Loan repaid" clears the heirs bar (split over two lines, text kept inside the viewBox) 0ms
+ ✓ src/ui/landing/__tests__/storyLayout.test.ts > story card copy at a frame > the resting frame copy is the Die beat in Bangkok, after the step-up 0ms
+ ✓ src/ui/landing/__tests__/storyLayout.test.ts > story card copy at a frame > the odds badge only ever shows an endpoint city with its own figure and band 7ms
+ ✓ src/ui/landing/__tests__/storyLayout.test.ts > story card copy at a frame > the beat on show is the one whose time it is 1ms
+ ✓ src/ui/landing/__tests__/storyLayout.test.ts > story card copy at a frame > the key follows the story: gains grow in Buy, the credit line in Borrow, St. Louis then Bangkok in Live anywhere 0ms
+
+ Test Files  4 passed (4)
+      Tests  52 passed (52)
+   Start at  00:13:21
+   Duration  332ms (tests 48%, import 27%, transform 23%, worker 2%)
+

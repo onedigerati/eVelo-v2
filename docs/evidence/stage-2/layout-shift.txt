@@ -1,0 +1,16 @@
+$ node shift.mjs (Playwright 1.57 Chromium; card height and first step's top per beat, mid-beat)
+== 390x844 (scrolled so the card is ~45% visible and the steps below it are on screen; replay then clock.runFor(t))
+t=2: {"cardVis":0.45,"cardH":844,"stepTop":461,"lead":"Buy, and hold.","btn":"Pause"}
+t=6: {"cardVis":0.45,"cardH":844,"stepTop":461,"lead":"Borrow for livin","btn":"Pause"}
+t=10: {"cardVis":0.45,"cardH":844,"stepTop":461,"lead":"Spend it where l","btn":"Pause"}
+t=14.5: {"cardVis":0.45,"cardH":844,"stepTop":461,"lead":"Gains never taxe","btn":"Pause"}
+== 360x740 (scrolled so the card is ~45% visible and the steps below it are on screen; replay then clock.runFor(t))
+t=2: {"cardVis":0.45,"cardH":809,"stepTop":445,"lead":"Buy, and hold.","btn":"Pause"}
+t=6: {"cardVis":0.45,"cardH":809,"stepTop":445,"lead":"Borrow for livin","btn":"Pause"}
+t=10: {"cardVis":0.45,"cardH":809,"stepTop":445,"lead":"Spend it where l","btn":"Pause"}
+t=14.5: {"cardVis":0.45,"cardH":809,"stepTop":445,"lead":"Gains never taxe","btn":"Pause"}
+== 1000x900 (scrolled so the card is ~45% visible and the steps below it are on screen; replay then clock.runFor(t))
+t=2: {"cardVis":0.59,"cardH":883,"stepTop":622,"lead":"Buy, and hold.","btn":"Pause"}
+t=6: {"cardVis":0.59,"cardH":883,"stepTop":622,"lead":"Borrow for livin","btn":"Pause"}
+t=10: {"cardVis":0.59,"cardH":883,"stepTop":622,"lead":"Spend it where l","btn":"Pause"}
+t=14.5: {"cardVis":0.59,"cardH":883,"stepTop":622,"lead":"Gains never taxe","btn":"Pause"}

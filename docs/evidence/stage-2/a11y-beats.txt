@@ -1,0 +1,177 @@
+$ node a11y.mjs (Playwright 1.57 Chromium; MutationObserver on the card's aria-live region during two autoplay passes; locator('.story').ariaSnapshot() mid-beat and at each beat's finished frame)
+== A. aria-live during autoplay (two passes + rest), 1280
+aria-live text changes:
+  "[initial] Step 1 of 4. Buy, and hold. A $2.5M portfolio of shares. You paid $1.0M; the other $1.5M is gains, taxed only if you sell. So you never sell."
+  "Step 2 of 4. Borrow for living money. Each year a credit line pays your $80K. The shares stay untouched and keep compounding, while the loan grows with interest. "
+  "Step 3 of 4. Spend it where life costs less. The same life in Bangkok costs $47K, not $80K. The loan grows slower, the gap widens, and the odds rise from 63% to 93%."
+  "Step 4 of 4. Gains never taxed. Loan repaid. The rest is theirs. At death, heirs inherit at a stepped-up basis. The estate repays the $5.5M loan from the top; $13.5M passes on. "
+OK   each beat announced once across two passes (4 announcements)
+
+-- buy-mid (card shows buy)
+key items (text:visibility/opacity): Gains $10.1M · taxed only if you sell:visible/1 | What you paid $1.0M:visible/1 | Credit line · shares untouched:hidden/0 | Same life in St. Louis:hidden/0 | Margin call at 50%:hidden/0
+- figure "Buy, and hold. A $2.5M portfolio of shares. You paid $1.0M; the other $1.5M is gains, taxed only if you sell. So you never sell.":
+  - text: One plan · four beats $2.5M portfolio · 30 years, age 60 to 90
+  - img "Illustrative 30-year plan. A $2.5M portfolio grows to $19.0M while a credit line pays the living costs. Moving from St. Louis to Bangkok cuts the yearly draw from $80K to $47K, so the loan ends at $5.5M instead of $9.4M, below the margin-call line, and the odds the plan holds rise from 63% to 93%. At death the gains tax is wiped out by the step-up in basis, the estate repays the loan, and heirs keep $13.5M.": St. Louis 63% Bangkok 93% $5M $10M $15M $20M Age 60 75 90
+  - list "Key":
+    - listitem: Gains $10.1M · taxed only if you sell
+    - listitem: What you paid $1.0M
+  - text: Buy, and hold. A $2.5M portfolio of shares. You paid $1.0M; the other $1.5M is gains, taxed only if you sell. So you never sell.
+  - group "Story playback":
+    - button "Pause the four beats"
+    - button "Replay from the start"
+  - text: Illustrative numbers · a typical path, not a forecast
+  - paragraph: Step 1 of 4. Buy, and hold. A $2.5M portfolio of shares. You paid $1.0M; the other $1.5M is gains, taxed only if you sell. So you never sell.
+
+-- buy-end (card shows buy)
+key items (text:visibility/opacity): Gains $18.0M · taxed only if you sell:visible/1 | What you paid $1.0M:visible/1 | Credit line · shares untouched:hidden/0 | Same life in St. Louis:hidden/0 | Margin call at 50%:hidden/0
+- figure "Buy, and hold. A $2.5M portfolio of shares. You paid $1.0M; the other $1.5M is gains, taxed only if you sell. So you never sell.":
+  - text: One plan · four beats $2.5M portfolio · 30 years, age 60 to 90
+  - img "Illustrative 30-year plan. A $2.5M portfolio grows to $19.0M while a credit line pays the living costs. Moving from St. Louis to Bangkok cuts the yearly draw from $80K to $47K, so the loan ends at $5.5M instead of $9.4M, below the margin-call line, and the odds the plan holds rise from 63% to 93%. At death the gains tax is wiped out by the step-up in basis, the estate repays the loan, and heirs keep $13.5M.": St. Louis 63% Bangkok 93% $5M $10M $15M $20M Age 60 75 90
+  - list "Key":
+    - listitem: Gains $18.0M · taxed only if you sell
+    - listitem: What you paid $1.0M
+  - text: Buy, and hold. A $2.5M portfolio of shares. You paid $1.0M; the other $1.5M is gains, taxed only if you sell. So you never sell.
+  - group "Story playback":
+    - button "Pause the four beats"
+    - button "Replay from the start"
+  - text: Illustrative numbers · a typical path, not a forecast
+  - paragraph: Step 1 of 4. Buy, and hold. A $2.5M portfolio of shares. You paid $1.0M; the other $1.5M is gains, taxed only if you sell. So you never sell.
+
+-- borrow-mid (card shows borrow)
+key items (text:visibility/opacity): Gains $18.0M · taxed only if you sell:visible/1 | What you paid $1.0M:visible/1 | Credit line · shares untouched:visible/1 | Same life in St. Louis:hidden/0 | Margin call at 50%:visible/1
+- figure "Borrow for living money. Each year a credit line pays your $80K. The shares stay untouched and keep compounding, while the loan grows with interest.":
+  - text: One plan · four beats $2.5M portfolio · 30 years, age 60 to 90
+  - img "Illustrative 30-year plan. A $2.5M portfolio grows to $19.0M while a credit line pays the living costs. Moving from St. Louis to Bangkok cuts the yearly draw from $80K to $47K, so the loan ends at $5.5M instead of $9.4M, below the margin-call line, and the odds the plan holds rise from 63% to 93%. At death the gains tax is wiped out by the step-up in basis, the estate repays the loan, and heirs keep $13.5M.": St. Louis 63% $80K/yr Bangkok 93% $5M $10M $15M $20M Age 60 75 90 $80K
+  - list "Key":
+    - listitem: Gains $18.0M · taxed only if you sell
+    - listitem: What you paid $1.0M
+    - listitem: Credit line · shares untouched
+    - listitem: Margin call at 50%
+  - text: Borrow for living money. Each year a credit line pays your $80K. The shares stay untouched and keep compounding, while the loan grows with interest.
+  - group "Story playback":
+    - button "Pause the four beats"
+    - button "Replay from the start"
+  - text: Illustrative numbers · a typical path, not a forecast
+  - paragraph: Step 2 of 4. Borrow for living money. Each year a credit line pays your $80K. The shares stay untouched and keep compounding, while the loan grows with interest.
+
+-- borrow-end (card shows borrow)
+key items (text:visibility/opacity): Gains $18.0M · taxed only if you sell:visible/1 | What you paid $1.0M:visible/1 | Credit line · shares untouched:visible/1 | Same life in St. Louis:hidden/0 | Margin call at 50%:visible/1
+- figure "Borrow for living money. Each year a credit line pays your $80K. The shares stay untouched and keep compounding, while the loan grows with interest.":
+  - text: One plan · four beats $2.5M portfolio · 30 years, age 60 to 90
+  - img "Illustrative 30-year plan. A $2.5M portfolio grows to $19.0M while a credit line pays the living costs. Moving from St. Louis to Bangkok cuts the yearly draw from $80K to $47K, so the loan ends at $5.5M instead of $9.4M, below the margin-call line, and the odds the plan holds rise from 63% to 93%. At death the gains tax is wiped out by the step-up in basis, the estate repays the loan, and heirs keep $13.5M.": St. Louis 63% $80K/yr Bangkok 93% $5M $10M $15M $20M Age 60 75 90 $80K
+  - list "Key":
+    - listitem: Gains $18.0M · taxed only if you sell
+    - listitem: What you paid $1.0M
+    - listitem: Credit line · shares untouched
+    - listitem: Margin call at 50%
+  - text: Borrow for living money. Each year a credit line pays your $80K. The shares stay untouched and keep compounding, while the loan grows with interest.
+  - group "Story playback":
+    - button "Pause the four beats"
+    - button "Replay from the start"
+  - text: Illustrative numbers · a typical path, not a forecast
+  - paragraph: Step 2 of 4. Borrow for living money. Each year a credit line pays your $80K. The shares stay untouched and keep compounding, while the loan grows with interest.
+
+-- live-mid (card shows live)
+key items (text:visibility/opacity): Gains $18.0M · taxed only if you sell:visible/1 | What you paid $1.0M:visible/1 | Loan, living in St. Louis:visible/1 | Same life in St. Louis:visible/0.142507 | Margin call at 50%:visible/1
+- figure "Spend it where life costs less. The same life in Bangkok costs $47K, not $80K. The loan grows slower, the gap widens, and the odds rise from 63% to 93%.":
+  - text: One plan · four beats $2.5M portfolio · 30 years, age 60 to 90
+  - img "Illustrative 30-year plan. A $2.5M portfolio grows to $19.0M while a credit line pays the living costs. Moving from St. Louis to Bangkok cuts the yearly draw from $80K to $47K, so the loan ends at $5.5M instead of $9.4M, below the margin-call line, and the odds the plan holds rise from 63% to 93%. At death the gains tax is wiped out by the step-up in basis, the estate repays the loan, and heirs keep $13.5M.": St. Louis 63% $80K/yr Bangkok 93% $47K/yr $5M $10M $15M $20M Age 60 75 90
+  - list "Key":
+    - listitem: Gains $18.0M · taxed only if you sell
+    - listitem: What you paid $1.0M
+    - listitem: Loan, living in St. Louis
+    - listitem: Same life in St. Louis
+    - listitem: Margin call at 50%
+  - text: Spend it where life costs less. The same life in Bangkok costs $47K, not $80K. The loan grows slower, the gap widens, and the odds rise from 63% to 93%.
+  - group "Story playback":
+    - button "Pause the four beats"
+    - button "Replay from the start"
+  - text: Illustrative numbers · a typical path, not a forecast
+  - paragraph: Step 3 of 4. Spend it where life costs less. The same life in Bangkok costs $47K, not $80K. The loan grows slower, the gap widens, and the odds rise from 63% to 93%.
+
+-- live-end (card shows live)
+key items (text:visibility/opacity): Gains $18.0M · taxed only if you sell:visible/1 | What you paid $1.0M:visible/1 | Loan, living in Bangkok:visible/1 | Same life in St. Louis:visible/1 | Margin call at 50%:visible/1
+- figure "Spend it where life costs less. The same life in Bangkok costs $47K, not $80K. The loan grows slower, the gap widens, and the odds rise from 63% to 93%.":
+  - text: One plan · four beats $2.5M portfolio · 30 years, age 60 to 90
+  - img "Illustrative 30-year plan. A $2.5M portfolio grows to $19.0M while a credit line pays the living costs. Moving from St. Louis to Bangkok cuts the yearly draw from $80K to $47K, so the loan ends at $5.5M instead of $9.4M, below the margin-call line, and the odds the plan holds rise from 63% to 93%. At death the gains tax is wiped out by the step-up in basis, the estate repays the loan, and heirs keep $13.5M.": St. Louis 63% $80K/yr Bangkok 93% $47K/yr $5M $10M $15M $20M Age 60 75 90
+  - list "Key":
+    - listitem: Gains $18.0M · taxed only if you sell
+    - listitem: What you paid $1.0M
+    - listitem: Loan, living in Bangkok
+    - listitem: Same life in St. Louis
+    - listitem: Margin call at 50%
+  - text: Spend it where life costs less. The same life in Bangkok costs $47K, not $80K. The loan grows slower, the gap widens, and the odds rise from 63% to 93%.
+  - group "Story playback":
+    - button "Pause the four beats"
+    - button "Replay from the start"
+  - text: Illustrative numbers · a typical path, not a forecast
+  - paragraph: Step 3 of 4. Spend it where life costs less. The same life in Bangkok costs $47K, not $80K. The loan grows slower, the gap widens, and the odds rise from 63% to 93%.
+
+-- die-mid (card shows die)
+key items (text:visibility/opacity): Step-up in basis: the gains tax is gone:visible/1 | What you paid $1.0M:visible/1 | Loan, living in Bangkok:visible/1 | Same life in St. Louis:visible/1 | Margin call at 50%:visible/1
+- figure "Gains never taxed. Loan repaid. The rest is theirs. At death, heirs inherit at a stepped-up basis. The estate repays the $5.5M loan from the top; $13.5M passes on.":
+  - text: One plan · four beats $2.5M portfolio · 30 years, age 60 to 90
+  - img "Illustrative 30-year plan. A $2.5M portfolio grows to $19.0M while a credit line pays the living costs. Moving from St. Louis to Bangkok cuts the yearly draw from $80K to $47K, so the loan ends at $5.5M instead of $9.4M, below the margin-call line, and the odds the plan holds rise from 63% to 93%. At death the gains tax is wiped out by the step-up in basis, the estate repays the loan, and heirs keep $13.5M.": St. Louis 63% $80K/yr Bangkok 93% $47K/yr $5M $10M $15M $20M Age 60 75 90 At 90 · $19.0M Loan repaid $5.5M
+  - list "Key":
+    - listitem: "Step-up in basis: the gains tax is gone"
+    - listitem: What you paid $1.0M
+    - listitem: Loan, living in Bangkok
+    - listitem: Same life in St. Louis
+    - listitem: Margin call at 50%
+  - text: Gains never taxed. Loan repaid. The rest is theirs. At death, heirs inherit at a stepped-up basis. The estate repays the $5.5M loan from the top; $13.5M passes on.
+  - group "Story playback":
+    - button "Pause the four beats"
+    - button "Replay from the start"
+  - text: Illustrative numbers · a typical path, not a forecast
+  - paragraph: Step 4 of 4. Gains never taxed. Loan repaid. The rest is theirs. At death, heirs inherit at a stepped-up basis. The estate repays the $5.5M loan from the top; $13.5M passes on.
+
+-- die-end (card shows die)
+key items (text:visibility/opacity): Step-up in basis: the gains tax is gone:visible/1 | What you paid $1.0M:visible/1 | Loan, living in Bangkok:visible/1 | Same life in St. Louis:visible/1 | Margin call at 50%:visible/1
+- figure "Gains never taxed. Loan repaid. The rest is theirs. At death, heirs inherit at a stepped-up basis. The estate repays the $5.5M loan from the top; $13.5M passes on.":
+  - text: One plan · four beats $2.5M portfolio · 30 years, age 60 to 90
+  - img "Illustrative 30-year plan. A $2.5M portfolio grows to $19.0M while a credit line pays the living costs. Moving from St. Louis to Bangkok cuts the yearly draw from $80K to $47K, so the loan ends at $5.5M instead of $9.4M, below the margin-call line, and the odds the plan holds rise from 63% to 93%. At death the gains tax is wiped out by the step-up in basis, the estate repays the loan, and heirs keep $13.5M.": St. Louis 63% $80K/yr Bangkok 93% $47K/yr $5M $10M $15M $20M Age 60 75 90 At 90 · $19.0M Loan repaid $5.5M Heirs $13.5M
+  - list "Key":
+    - listitem: "Step-up in basis: the gains tax is gone"
+    - listitem: What you paid $1.0M
+    - listitem: Loan, living in Bangkok
+    - listitem: Same life in St. Louis
+    - listitem: Margin call at 50%
+  - text: Gains never taxed. Loan repaid. The rest is theirs. At death, heirs inherit at a stepped-up basis. The estate repays the $5.5M loan from the top; $13.5M passes on.
+  - group "Story playback":
+    - button "Pause the four beats"
+    - button "Replay from the start"
+  - text: Illustrative numbers · a typical path, not a forecast
+  - paragraph: Step 4 of 4. Gains never taxed. Loan repaid. The rest is theirs. At death, heirs inherit at a stepped-up basis. The estate repays the $5.5M loan from the top; $13.5M passes on.
+OK   buy-mid: key entries at opacity 0 are hidden and absent from the tree (hidden: ["Credit line · shares untouched","Same life in St. Louis","Margin call at 50%"]; leaked: []; opacity 0 but visible: [])
+OK   buy-end: key entries at opacity 0 are hidden and absent from the tree (hidden: ["Credit line · shares untouched","Same life in St. Louis","Margin call at 50%"]; leaked: []; opacity 0 but visible: [])
+OK   borrow-mid: key entries at opacity 0 are hidden and absent from the tree (hidden: ["Same life in St. Louis"]; leaked: []; opacity 0 but visible: [])
+OK   borrow-end: key entries at opacity 0 are hidden and absent from the tree (hidden: ["Same life in St. Louis"]; leaked: []; opacity 0 but visible: [])
+OK   live-mid: key entries at opacity 0 are hidden and absent from the tree (hidden: []; leaked: []; opacity 0 but visible: [])
+OK   live-end: key entries at opacity 0 are hidden and absent from the tree (hidden: []; leaked: []; opacity 0 but visible: [])
+OK   die-mid: key entries at opacity 0 are hidden and absent from the tree (hidden: []; leaked: []; opacity 0 but visible: [])
+OK   die-end: key entries at opacity 0 are hidden and absent from the tree (hidden: []; leaked: []; opacity 0 but visible: [])
+OK   buy-mid: only the buy caption is in the tree (other captions found: []; figure name starts "Buy, and hold. A $2.5M portfol")
+OK   buy-end: only the buy caption is in the tree (other captions found: []; figure name starts "Buy, and hold. A $2.5M portfol")
+OK   borrow-mid: only the borrow caption is in the tree (other captions found: []; figure name starts "Borrow for living money. Each ")
+OK   borrow-end: only the borrow caption is in the tree (other captions found: []; figure name starts "Borrow for living money. Each ")
+OK   live-mid: only the live caption is in the tree (other captions found: []; figure name starts "Spend it where life costs less")
+OK   live-end: only the live caption is in the tree (other captions found: []; figure name starts "Spend it where life costs less")
+OK   die-mid: only the die caption is in the tree (other captions found: []; figure name starts "Gains never taxed. Loan repaid")
+OK   die-end: only the die caption is in the tree (other captions found: []; figure name starts "Gains never taxed. Loan repaid")
+
+SVG role=img aria-label="Illustrative 30-year plan. A $2.5M portfolio grows to $19.0M while a credit line pays the living costs. Moving from St. Louis to Bangkok cuts the yearly draw from $80K to $47K, so the loan ends at $5.5M instead of $9.4M, below the margin-call line, and the odds the plan holds rise from 63% to 93%. At death the gains tax is wiped out by the step-up in basis, the estate repays the loan, and heirs keep $13.5M."
+OK   the SVG's name is the same whole-story name at every beat (1 distinct)
+OK   odds badge (aria-hidden, "of futures hold in …") is not in the tree; the odds are read in the SVG name and the Live anywhere caption
+console: []
+
+== B. announcements on user actions
+  "Paused. "
+  "Step 2 of 4. Borrow for living money. Each year a credit lin"
+  "Step 2 of 4. Borrow for living money. Each year a credit lin"
+  "Step 4 of 4. Gains never taxed. Loan repaid. The rest is the"
+  "Playing. Step 1 of 4. Buy, and hold. A $2.5M portfolio of sh"
+  "Step 2 of 4. Borrow for living money. Each year a credit lin"
+  "Step 3 of 4. Spend it where life costs less. The same life i"
+  "Step 4 of 4. Gains never taxed. Loan repaid. The rest is the"
+
+0 failures

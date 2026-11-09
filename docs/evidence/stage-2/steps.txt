@@ -1,0 +1,31 @@
+$ node steps.mjs (Playwright 1.57 Chromium, http://localhost:4330/#home, page.clock paused and advanced with runFor)
+== A. 1280 playing: click each step
+OK   click "Live anywhere": card=live current=live n=1 btn="Pause the four beats" live="Step 3 of 4. Spend it where life costs l…"
+OK     +1.5s still live and moving (card=live current=live n=1 btn="Pause the four beats")
+OK   click "Borrow": card=borrow current=borrow n=1 btn="Pause the four beats" live="Step 2 of 4. Borrow for living money. Ea…"
+OK     +1.5s still borrow and moving (card=borrow current=borrow n=1 btn="Pause the four beats")
+OK   click "Die": card=die current=die n=1 btn="Pause the four beats" live="Step 4 of 4. Gains never taxed. Loan rep…"
+OK     +1.5s still die and moving (card=die current=die n=1 btn="Pause the four beats")
+OK   click "Buy": card=buy current=buy n=1 btn="Pause the four beats" live="Step 1 of 4. Buy, and hold. A $2.5M port…"
+OK     +1.5s still buy and moving (card=buy current=buy n=1 btn="Pause the four beats")
+OK   after jumping to Borrow, 80 samples over 16s: card/caption and aria-current agree (beats seen: borrow,live,die,buy)
+console: []
+
+== B. 1280 paused: steps show finished frames, keyboard Enter/Space
+OK   paused, click "Buy": card=buy current=buy n=1 btn="Play the four beats"; frame unchanged after 3s: true
+OK   paused, click "Borrow": card=borrow current=borrow n=1 btn="Play the four beats"; frame unchanged after 3s: true
+OK   paused, click "Live anywhere": card=live current=live n=1 btn="Play the four beats"; frame unchanged after 3s: true
+OK   paused, click "Die": card=die current=die n=1 btn="Play the four beats"; frame unchanged after 3s: true
+OK   focus "01 Buy", Enter: card=buy current=buy n=1 btn="Play the four beats"
+OK   Tab, Space on "02 Borrow": card=borrow current=borrow n=1 btn="Play the four beats"
+play after paused jump to Borrow, +1s: card=borrow current=borrow n=1 btn="Pause the four beats"
+console: []
+
+== C. 390x844: press steps from the steps section (values read 650 ms after each press, partway through the smooth scroll; the settled step-press scroll is in step-scroll.txt)
+OK   click "Buy": card=buy current=buy n=1 btn="Play the four beats"; card -347..497 (caption bottom 401) in a 844px viewport, scrollY 985
+OK   click "Borrow": card=borrow current=borrow n=1 btn="Play the four beats"; card -111..733 (caption bottom 637) in a 844px viewport, scrollY 749
+OK   click "Live anywhere": card=live current=live n=1 btn="Play the four beats"; card -445..399 (caption bottom 303) in a 844px viewport, scrollY 1083
+OK   click "Die": card=die current=die n=1 btn="Play the four beats"; card -445..399 (caption bottom 303) in a 844px viewport, scrollY 1083
+console: []
+
+0 failures

@@ -1,0 +1,41 @@
+$ node reduced.mjs (Playwright 1.57 Chromium, context reducedMotion: 'reduce', page.clock paused and advanced with runFor; a card "state" is the .story innerHTML)
+== 1280, prefers-reduced-motion: reduce
+matchMedia reduce: true
+OK   in view 20s, nothing pressed: no autoplay, 1 distinct card state (rests on Die: card=die current=die n=1 btn="Play the four beats")
+document.getAnimations(): 0
+play pressed; card changes (ms since press):
+       0ms  card=buy current=buy btn="Pause the four beats"
+    4000ms  card=borrow current=borrow btn="Pause the four beats"
+    8000ms  card=live current=live btn="Pause the four beats"
+   12000ms  card=die current=die btn="Play the four beats"
+OK   play shows Buy, Borrow, Live anywhere, Die in turn: 4 distinct card renders (one per beat, plus the button flip)
+OK   then rests with Play shown
+OK   step "Buy": card=buy current=buy, still after 3s: true (loan d 0 chars, heirs opacity 0.000)
+OK   step "Borrow": card=borrow current=borrow, still after 3s: true (loan d 343 chars, heirs opacity 0.000)
+OK   step "Live anywhere": card=live current=live, still after 3s: true (loan d 343 chars, heirs opacity 0.000)
+OK   step "Die": card=die current=die, still after 3s: true (loan d 343 chars, heirs opacity 1.000)
+OK   replay: card=buy current=buy n=1 btn="Pause the four beats", 31 bars drawn (Buy's finished frame)
+Space on play/pause: card=buy current=buy n=1 btn="Play the four beats"
+card elements with a CSS transition over 20ms or a CSS animation: []
+console: []
+== 390, prefers-reduced-motion: reduce
+matchMedia reduce: true
+OK   in view 20s, nothing pressed: no autoplay, 1 distinct card state (rests on Die: card=die current=die n=1 btn="Play the four beats")
+document.getAnimations(): 0
+play pressed; card changes (ms since press):
+       0ms  card=buy current=buy btn="Pause the four beats"
+    4000ms  card=borrow current=borrow btn="Pause the four beats"
+    8000ms  card=live current=live btn="Pause the four beats"
+   12000ms  card=die current=die btn="Play the four beats"
+OK   play shows Buy, Borrow, Live anywhere, Die in turn: 4 distinct card renders (one per beat, plus the button flip)
+OK   then rests with Play shown
+OK   step "Buy": card=buy current=buy, still after 3s: true (loan d 0 chars, heirs opacity 0.000)
+OK   step "Borrow": card=borrow current=borrow, still after 3s: true (loan d 346 chars, heirs opacity 0.000)
+OK   step "Live anywhere": card=live current=live, still after 3s: true (loan d 340 chars, heirs opacity 0.000)
+OK   step "Die": card=die current=die, still after 3s: true (loan d 340 chars, heirs opacity 1.000)
+OK   replay: card=buy current=buy n=1 btn="Pause the four beats", 31 bars drawn (Buy's finished frame)
+Space on play/pause: card=buy current=buy n=1 btn="Play the four beats"
+card elements with a CSS transition over 20ms or a CSS animation: []
+console: []
+
+0 failures

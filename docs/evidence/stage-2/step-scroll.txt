@@ -1,0 +1,303 @@
+$ node stepscroll.mjs (Playwright 1.57 Chromium, vite preview :4330; steps scrolled into view first; each press waited 1.3 s real time for the smooth scroll; "tab+enter Nms" = Tab, wait N ms, Enter)
+
+== 1280x900, mouse, start with steps at the foot; start scrollY 242, chart 96% on screen
+  Buy           before: y 242 chart 96% step 100% | after: y 242, chart 96% on screen, pressed step 100% on screen (top 701, bottom 876 of 900), focus "Buy", card buy
+OK     1280 mouse "Buy": chart >= half (96%) and the pressed step fully on screen (100%), focus kept
+  Borrow        before: y 242 chart 96% step 100% | after: y 242, chart 96% on screen, pressed step 100% on screen (top 701, bottom 876 of 900), focus "Borrow", card borrow
+OK     1280 mouse "Borrow": chart >= half (96%) and the pressed step fully on screen (100%), focus kept
+  Live anywhere before: y 242 chart 96% step 100% | after: y 242, chart 96% on screen, pressed step 100% on screen (top 701, bottom 876 of 900), focus "Live anywhere", card live
+OK     1280 mouse "Live anywhere": chart >= half (96%) and the pressed step fully on screen (100%), focus kept
+  Die           before: y 242 chart 96% step 100% | after: y 242, chart 96% on screen, pressed step 100% on screen (top 701, bottom 876 of 900), focus "Die", card die
+OK     1280 mouse "Die": chart >= half (96%) and the pressed step fully on screen (100%), focus kept
+  Borrow        before: y 242 chart 96% step 100% | after: y 242, chart 96% on screen, pressed step 100% on screen (top 701, bottom 876 of 900), focus "Borrow", card borrow
+OK     1280 mouse "Borrow": chart >= half (96%) and the pressed step fully on screen (100%), focus kept
+  scrollY after each press: 242 -> 242 -> 242 -> 242 -> 242
+OK     1280 mouse: no bounce between presses (moves [0,0,0,0])
+
+== 1280x900, tab+enter 0ms, start with steps at the foot; start scrollY 242, chart 96% on screen
+  Buy           before: y 242 chart 96% step 100% | after: y 242, chart 96% on screen, pressed step 100% on screen (top 701, bottom 876 of 900), focus "Buy", card buy
+OK     1280 tab+enter 0ms "Buy": chart >= half (96%) and the pressed step fully on screen (100%), focus kept
+  Borrow        before: y 242 chart 96% step 100% | after: y 242, chart 96% on screen, pressed step 100% on screen (top 701, bottom 876 of 900), focus "Borrow", card borrow
+OK     1280 tab+enter 0ms "Borrow": chart >= half (96%) and the pressed step fully on screen (100%), focus kept
+  Live anywhere before: y 242 chart 96% step 100% | after: y 242, chart 96% on screen, pressed step 100% on screen (top 701, bottom 876 of 900), focus "Live anywhere", card live
+OK     1280 tab+enter 0ms "Live anywhere": chart >= half (96%) and the pressed step fully on screen (100%), focus kept
+  Die           before: y 242 chart 96% step 100% | after: y 242, chart 96% on screen, pressed step 100% on screen (top 701, bottom 876 of 900), focus "Die", card die
+OK     1280 tab+enter 0ms "Die": chart >= half (96%) and the pressed step fully on screen (100%), focus kept
+  scrollY after each press: 242 -> 242 -> 242 -> 242
+OK     1280 tab+enter 0ms: no bounce between presses (moves [0,0,0])
+
+== 1280x900, tab+enter 100ms, start with steps at the foot; start scrollY 242, chart 96% on screen
+  Buy           before: y 242 chart 96% step 100% | after: y 242, chart 96% on screen, pressed step 100% on screen (top 701, bottom 876 of 900), focus "Buy", card buy
+OK     1280 tab+enter 100ms "Buy": chart >= half (96%) and the pressed step fully on screen (100%), focus kept
+  Borrow        before: y 242 chart 96% step 100% | after: y 242, chart 96% on screen, pressed step 100% on screen (top 701, bottom 876 of 900), focus "Borrow", card borrow
+OK     1280 tab+enter 100ms "Borrow": chart >= half (96%) and the pressed step fully on screen (100%), focus kept
+  Live anywhere before: y 242 chart 96% step 100% | after: y 242, chart 96% on screen, pressed step 100% on screen (top 701, bottom 876 of 900), focus "Live anywhere", card live
+OK     1280 tab+enter 100ms "Live anywhere": chart >= half (96%) and the pressed step fully on screen (100%), focus kept
+  Die           before: y 242 chart 96% step 100% | after: y 242, chart 96% on screen, pressed step 100% on screen (top 701, bottom 876 of 900), focus "Die", card die
+OK     1280 tab+enter 100ms "Die": chart >= half (96%) and the pressed step fully on screen (100%), focus kept
+  scrollY after each press: 242 -> 242 -> 242 -> 242
+OK     1280 tab+enter 100ms: no bounce between presses (moves [0,0,0])
+
+== 1280x900, tab+enter 1000ms, start with steps at the foot; start scrollY 242, chart 96% on screen
+  Buy           before: y 242 chart 96% step 100% | after: y 242, chart 96% on screen, pressed step 100% on screen (top 701, bottom 876 of 900), focus "Buy", card buy
+OK     1280 tab+enter 1000ms "Buy": chart >= half (96%) and the pressed step fully on screen (100%), focus kept
+  Borrow        before: y 242 chart 96% step 100% | after: y 242, chart 96% on screen, pressed step 100% on screen (top 701, bottom 876 of 900), focus "Borrow", card borrow
+OK     1280 tab+enter 1000ms "Borrow": chart >= half (96%) and the pressed step fully on screen (100%), focus kept
+  Live anywhere before: y 242 chart 96% step 100% | after: y 242, chart 96% on screen, pressed step 100% on screen (top 701, bottom 876 of 900), focus "Live anywhere", card live
+OK     1280 tab+enter 1000ms "Live anywhere": chart >= half (96%) and the pressed step fully on screen (100%), focus kept
+  Die           before: y 242 chart 96% step 100% | after: y 242, chart 96% on screen, pressed step 100% on screen (top 701, bottom 876 of 900), focus "Die", card die
+OK     1280 tab+enter 1000ms "Die": chart >= half (96%) and the pressed step fully on screen (100%), focus kept
+  scrollY after each press: 242 -> 242 -> 242 -> 242
+OK     1280 tab+enter 1000ms: no bounce between presses (moves [0,0,0])
+
+== 1280x900, mouse, start with steps at the top; start scrollY 298, chart 82% on screen
+  Buy           before: y 298 chart 82% step 100% | after: y 298, chart 82% on screen, pressed step 100% on screen (top 645, bottom 820 of 900), focus "Buy", card buy
+OK     1280 mouse "Buy": chart >= half (82%) and the pressed step fully on screen (100%), focus kept
+  Borrow        before: y 298 chart 82% step 100% | after: y 298, chart 82% on screen, pressed step 100% on screen (top 645, bottom 820 of 900), focus "Borrow", card borrow
+OK     1280 mouse "Borrow": chart >= half (82%) and the pressed step fully on screen (100%), focus kept
+  Live anywhere before: y 298 chart 82% step 100% | after: y 298, chart 82% on screen, pressed step 100% on screen (top 645, bottom 820 of 900), focus "Live anywhere", card live
+OK     1280 mouse "Live anywhere": chart >= half (82%) and the pressed step fully on screen (100%), focus kept
+  Die           before: y 298 chart 82% step 100% | after: y 298, chart 82% on screen, pressed step 100% on screen (top 645, bottom 820 of 900), focus "Die", card die
+OK     1280 mouse "Die": chart >= half (82%) and the pressed step fully on screen (100%), focus kept
+  Borrow        before: y 298 chart 82% step 100% | after: y 298, chart 82% on screen, pressed step 100% on screen (top 645, bottom 820 of 900), focus "Borrow", card borrow
+OK     1280 mouse "Borrow": chart >= half (82%) and the pressed step fully on screen (100%), focus kept
+  scrollY after each press: 298 -> 298 -> 298 -> 298 -> 298
+OK     1280 mouse: no bounce between presses (moves [0,0,0,0])
+
+== 1280x900, tab+enter 0ms, start with steps at the top; start scrollY 298, chart 82% on screen
+  Buy           before: y 298 chart 82% step 100% | after: y 298, chart 82% on screen, pressed step 100% on screen (top 645, bottom 820 of 900), focus "Buy", card buy
+OK     1280 tab+enter 0ms "Buy": chart >= half (82%) and the pressed step fully on screen (100%), focus kept
+  Borrow        before: y 298 chart 82% step 100% | after: y 298, chart 82% on screen, pressed step 100% on screen (top 645, bottom 820 of 900), focus "Borrow", card borrow
+OK     1280 tab+enter 0ms "Borrow": chart >= half (82%) and the pressed step fully on screen (100%), focus kept
+  Live anywhere before: y 298 chart 82% step 100% | after: y 298, chart 82% on screen, pressed step 100% on screen (top 645, bottom 820 of 900), focus "Live anywhere", card live
+OK     1280 tab+enter 0ms "Live anywhere": chart >= half (82%) and the pressed step fully on screen (100%), focus kept
+  Die           before: y 298 chart 82% step 100% | after: y 298, chart 82% on screen, pressed step 100% on screen (top 645, bottom 820 of 900), focus "Die", card die
+OK     1280 tab+enter 0ms "Die": chart >= half (82%) and the pressed step fully on screen (100%), focus kept
+  scrollY after each press: 298 -> 298 -> 298 -> 298
+OK     1280 tab+enter 0ms: no bounce between presses (moves [0,0,0])
+
+== 1280x900, tab+enter 100ms, start with steps at the top; start scrollY 298, chart 82% on screen
+  Buy           before: y 298 chart 82% step 100% | after: y 298, chart 82% on screen, pressed step 100% on screen (top 645, bottom 820 of 900), focus "Buy", card buy
+OK     1280 tab+enter 100ms "Buy": chart >= half (82%) and the pressed step fully on screen (100%), focus kept
+  Borrow        before: y 298 chart 82% step 100% | after: y 298, chart 82% on screen, pressed step 100% on screen (top 645, bottom 820 of 900), focus "Borrow", card borrow
+OK     1280 tab+enter 100ms "Borrow": chart >= half (82%) and the pressed step fully on screen (100%), focus kept
+  Live anywhere before: y 298 chart 82% step 100% | after: y 298, chart 82% on screen, pressed step 100% on screen (top 645, bottom 820 of 900), focus "Live anywhere", card live
+OK     1280 tab+enter 100ms "Live anywhere": chart >= half (82%) and the pressed step fully on screen (100%), focus kept
+  Die           before: y 298 chart 82% step 100% | after: y 298, chart 82% on screen, pressed step 100% on screen (top 645, bottom 820 of 900), focus "Die", card die
+OK     1280 tab+enter 100ms "Die": chart >= half (82%) and the pressed step fully on screen (100%), focus kept
+  scrollY after each press: 298 -> 298 -> 298 -> 298
+OK     1280 tab+enter 100ms: no bounce between presses (moves [0,0,0])
+
+== 1280x900, tab+enter 1000ms, start with steps at the top; start scrollY 298, chart 82% on screen
+  Buy           before: y 298 chart 82% step 100% | after: y 298, chart 82% on screen, pressed step 100% on screen (top 645, bottom 820 of 900), focus "Buy", card buy
+OK     1280 tab+enter 1000ms "Buy": chart >= half (82%) and the pressed step fully on screen (100%), focus kept
+  Borrow        before: y 298 chart 82% step 100% | after: y 298, chart 82% on screen, pressed step 100% on screen (top 645, bottom 820 of 900), focus "Borrow", card borrow
+OK     1280 tab+enter 1000ms "Borrow": chart >= half (82%) and the pressed step fully on screen (100%), focus kept
+  Live anywhere before: y 298 chart 82% step 100% | after: y 298, chart 82% on screen, pressed step 100% on screen (top 645, bottom 820 of 900), focus "Live anywhere", card live
+OK     1280 tab+enter 1000ms "Live anywhere": chart >= half (82%) and the pressed step fully on screen (100%), focus kept
+  Die           before: y 298 chart 82% step 100% | after: y 298, chart 82% on screen, pressed step 100% on screen (top 645, bottom 820 of 900), focus "Die", card die
+OK     1280 tab+enter 1000ms "Die": chart >= half (82%) and the pressed step fully on screen (100%), focus kept
+  scrollY after each press: 298 -> 298 -> 298 -> 298
+OK     1280 tab+enter 1000ms: no bounce between presses (moves [0,0,0])
+
+== 1000x900, mouse, start with steps at the foot; start scrollY 446, chart 53% on screen
+  Buy           before: y 446 chart 53% step 100% | after: y 446, chart 53% on screen, pressed step 100% on screen (top 678, bottom 876 of 900), focus "Buy", card buy
+OK     1000 mouse "Buy": chart >= half (53%) and the pressed step fully on screen (100%), focus kept
+  Borrow        before: y 446 chart 53% step 100% | after: y 446, chart 53% on screen, pressed step 100% on screen (top 678, bottom 876 of 900), focus "Borrow", card borrow
+OK     1000 mouse "Borrow": chart >= half (53%) and the pressed step fully on screen (100%), focus kept
+  Live anywhere before: y 446 chart 53% step 100% | after: y 446, chart 53% on screen, pressed step 100% on screen (top 678, bottom 876 of 900), focus "Live anywhere", card live
+OK     1000 mouse "Live anywhere": chart >= half (53%) and the pressed step fully on screen (100%), focus kept
+  Die           before: y 446 chart 53% step 100% | after: y 446, chart 53% on screen, pressed step 100% on screen (top 678, bottom 876 of 900), focus "Die", card die
+OK     1000 mouse "Die": chart >= half (53%) and the pressed step fully on screen (100%), focus kept
+  Borrow        before: y 446 chart 53% step 100% | after: y 446, chart 53% on screen, pressed step 100% on screen (top 678, bottom 876 of 900), focus "Borrow", card borrow
+OK     1000 mouse "Borrow": chart >= half (53%) and the pressed step fully on screen (100%), focus kept
+  scrollY after each press: 446 -> 446 -> 446 -> 446 -> 446
+OK     1000 mouse: no bounce between presses (moves [0,0,0,0])
+
+== 1000x900, tab+enter 0ms, start with steps at the foot; start scrollY 446, chart 53% on screen
+  Buy           before: y 446 chart 53% step 100% | after: y 446, chart 53% on screen, pressed step 100% on screen (top 678, bottom 876 of 900), focus "Buy", card buy
+OK     1000 tab+enter 0ms "Buy": chart >= half (53%) and the pressed step fully on screen (100%), focus kept
+  Borrow        before: y 446 chart 53% step 100% | after: y 446, chart 53% on screen, pressed step 100% on screen (top 678, bottom 876 of 900), focus "Borrow", card borrow
+OK     1000 tab+enter 0ms "Borrow": chart >= half (53%) and the pressed step fully on screen (100%), focus kept
+  Live anywhere before: y 446 chart 53% step 100% | after: y 446, chart 53% on screen, pressed step 100% on screen (top 678, bottom 876 of 900), focus "Live anywhere", card live
+OK     1000 tab+enter 0ms "Live anywhere": chart >= half (53%) and the pressed step fully on screen (100%), focus kept
+  Die           before: y 446 chart 53% step 100% | after: y 446, chart 53% on screen, pressed step 100% on screen (top 678, bottom 876 of 900), focus "Die", card die
+OK     1000 tab+enter 0ms "Die": chart >= half (53%) and the pressed step fully on screen (100%), focus kept
+  scrollY after each press: 446 -> 446 -> 446 -> 446
+OK     1000 tab+enter 0ms: no bounce between presses (moves [0,0,0])
+
+== 1000x900, tab+enter 100ms, start with steps at the foot; start scrollY 446, chart 53% on screen
+  Buy           before: y 446 chart 53% step 100% | after: y 446, chart 53% on screen, pressed step 100% on screen (top 678, bottom 876 of 900), focus "Buy", card buy
+OK     1000 tab+enter 100ms "Buy": chart >= half (53%) and the pressed step fully on screen (100%), focus kept
+  Borrow        before: y 446 chart 53% step 100% | after: y 446, chart 53% on screen, pressed step 100% on screen (top 678, bottom 876 of 900), focus "Borrow", card borrow
+OK     1000 tab+enter 100ms "Borrow": chart >= half (53%) and the pressed step fully on screen (100%), focus kept
+  Live anywhere before: y 446 chart 53% step 100% | after: y 446, chart 53% on screen, pressed step 100% on screen (top 678, bottom 876 of 900), focus "Live anywhere", card live
+OK     1000 tab+enter 100ms "Live anywhere": chart >= half (53%) and the pressed step fully on screen (100%), focus kept
+  Die           before: y 446 chart 53% step 100% | after: y 446, chart 53% on screen, pressed step 100% on screen (top 678, bottom 876 of 900), focus "Die", card die
+OK     1000 tab+enter 100ms "Die": chart >= half (53%) and the pressed step fully on screen (100%), focus kept
+  scrollY after each press: 446 -> 446 -> 446 -> 446
+OK     1000 tab+enter 100ms: no bounce between presses (moves [0,0,0])
+
+== 1000x900, tab+enter 1000ms, start with steps at the foot; start scrollY 446, chart 53% on screen
+  Buy           before: y 446 chart 53% step 100% | after: y 446, chart 53% on screen, pressed step 100% on screen (top 678, bottom 876 of 900), focus "Buy", card buy
+OK     1000 tab+enter 1000ms "Buy": chart >= half (53%) and the pressed step fully on screen (100%), focus kept
+  Borrow        before: y 446 chart 53% step 100% | after: y 446, chart 53% on screen, pressed step 100% on screen (top 678, bottom 876 of 900), focus "Borrow", card borrow
+OK     1000 tab+enter 1000ms "Borrow": chart >= half (53%) and the pressed step fully on screen (100%), focus kept
+  Live anywhere before: y 446 chart 53% step 100% | after: y 446, chart 53% on screen, pressed step 100% on screen (top 678, bottom 876 of 900), focus "Live anywhere", card live
+OK     1000 tab+enter 1000ms "Live anywhere": chart >= half (53%) and the pressed step fully on screen (100%), focus kept
+  Die           before: y 446 chart 53% step 100% | after: y 446, chart 53% on screen, pressed step 100% on screen (top 678, bottom 876 of 900), focus "Die", card die
+OK     1000 tab+enter 1000ms "Die": chart >= half (53%) and the pressed step fully on screen (100%), focus kept
+  scrollY after each press: 446 -> 446 -> 446 -> 446
+OK     1000 tab+enter 1000ms: no bounce between presses (moves [0,0,0])
+
+== 1000x900, mouse, start with steps at the top; start scrollY 502, chart 41% on screen
+  Buy           before: y 502 chart 41% step 100% | after: y 446, chart 53% on screen, pressed step 100% on screen (top 678, bottom 876 of 900), focus "Buy", card buy
+OK     1000 mouse "Buy": chart >= half (53%) and the pressed step fully on screen (100%), focus kept
+  Borrow        before: y 446 chart 53% step 100% | after: y 446, chart 53% on screen, pressed step 100% on screen (top 678, bottom 876 of 900), focus "Borrow", card borrow
+OK     1000 mouse "Borrow": chart >= half (53%) and the pressed step fully on screen (100%), focus kept
+  Live anywhere before: y 446 chart 53% step 100% | after: y 446, chart 53% on screen, pressed step 100% on screen (top 678, bottom 876 of 900), focus "Live anywhere", card live
+OK     1000 mouse "Live anywhere": chart >= half (53%) and the pressed step fully on screen (100%), focus kept
+  Die           before: y 446 chart 53% step 100% | after: y 446, chart 53% on screen, pressed step 100% on screen (top 678, bottom 876 of 900), focus "Die", card die
+OK     1000 mouse "Die": chart >= half (53%) and the pressed step fully on screen (100%), focus kept
+  Borrow        before: y 446 chart 53% step 100% | after: y 446, chart 53% on screen, pressed step 100% on screen (top 678, bottom 876 of 900), focus "Borrow", card borrow
+OK     1000 mouse "Borrow": chart >= half (53%) and the pressed step fully on screen (100%), focus kept
+  scrollY after each press: 446 -> 446 -> 446 -> 446 -> 446
+OK     1000 mouse: no bounce between presses (moves [0,0,0,0])
+
+== 1000x900, tab+enter 0ms, start with steps at the top; start scrollY 502, chart 41% on screen
+  Buy           before: y 502 chart 41% step 100% | after: y 446, chart 53% on screen, pressed step 100% on screen (top 678, bottom 876 of 900), focus "Buy", card buy
+OK     1000 tab+enter 0ms "Buy": chart >= half (53%) and the pressed step fully on screen (100%), focus kept
+  Borrow        before: y 446 chart 53% step 100% | after: y 446, chart 53% on screen, pressed step 100% on screen (top 678, bottom 876 of 900), focus "Borrow", card borrow
+OK     1000 tab+enter 0ms "Borrow": chart >= half (53%) and the pressed step fully on screen (100%), focus kept
+  Live anywhere before: y 446 chart 53% step 100% | after: y 446, chart 53% on screen, pressed step 100% on screen (top 678, bottom 876 of 900), focus "Live anywhere", card live
+OK     1000 tab+enter 0ms "Live anywhere": chart >= half (53%) and the pressed step fully on screen (100%), focus kept
+  Die           before: y 446 chart 53% step 100% | after: y 446, chart 53% on screen, pressed step 100% on screen (top 678, bottom 876 of 900), focus "Die", card die
+OK     1000 tab+enter 0ms "Die": chart >= half (53%) and the pressed step fully on screen (100%), focus kept
+  scrollY after each press: 446 -> 446 -> 446 -> 446
+OK     1000 tab+enter 0ms: no bounce between presses (moves [0,0,0])
+
+== 1000x900, tab+enter 100ms, start with steps at the top; start scrollY 502, chart 41% on screen
+  Buy           before: y 502 chart 41% step 100% | after: y 446, chart 53% on screen, pressed step 100% on screen (top 678, bottom 876 of 900), focus "Buy", card buy
+OK     1000 tab+enter 100ms "Buy": chart >= half (53%) and the pressed step fully on screen (100%), focus kept
+  Borrow        before: y 446 chart 53% step 100% | after: y 446, chart 53% on screen, pressed step 100% on screen (top 678, bottom 876 of 900), focus "Borrow", card borrow
+OK     1000 tab+enter 100ms "Borrow": chart >= half (53%) and the pressed step fully on screen (100%), focus kept
+  Live anywhere before: y 446 chart 53% step 100% | after: y 446, chart 53% on screen, pressed step 100% on screen (top 678, bottom 876 of 900), focus "Live anywhere", card live
+OK     1000 tab+enter 100ms "Live anywhere": chart >= half (53%) and the pressed step fully on screen (100%), focus kept
+  Die           before: y 446 chart 53% step 100% | after: y 446, chart 53% on screen, pressed step 100% on screen (top 678, bottom 876 of 900), focus "Die", card die
+OK     1000 tab+enter 100ms "Die": chart >= half (53%) and the pressed step fully on screen (100%), focus kept
+  scrollY after each press: 446 -> 446 -> 446 -> 446
+OK     1000 tab+enter 100ms: no bounce between presses (moves [0,0,0])
+
+== 1000x900, tab+enter 1000ms, start with steps at the top; start scrollY 502, chart 41% on screen
+  Buy           before: y 502 chart 41% step 100% | after: y 446, chart 53% on screen, pressed step 100% on screen (top 678, bottom 876 of 900), focus "Buy", card buy
+OK     1000 tab+enter 1000ms "Buy": chart >= half (53%) and the pressed step fully on screen (100%), focus kept
+  Borrow        before: y 446 chart 53% step 100% | after: y 446, chart 53% on screen, pressed step 100% on screen (top 678, bottom 876 of 900), focus "Borrow", card borrow
+OK     1000 tab+enter 1000ms "Borrow": chart >= half (53%) and the pressed step fully on screen (100%), focus kept
+  Live anywhere before: y 446 chart 53% step 100% | after: y 446, chart 53% on screen, pressed step 100% on screen (top 678, bottom 876 of 900), focus "Live anywhere", card live
+OK     1000 tab+enter 1000ms "Live anywhere": chart >= half (53%) and the pressed step fully on screen (100%), focus kept
+  Die           before: y 446 chart 53% step 100% | after: y 446, chart 53% on screen, pressed step 100% on screen (top 678, bottom 876 of 900), focus "Die", card die
+OK     1000 tab+enter 1000ms "Die": chart >= half (53%) and the pressed step fully on screen (100%), focus kept
+  scrollY after each press: 446 -> 446 -> 446 -> 446
+OK     1000 tab+enter 1000ms: no bounce between presses (moves [0,0,0])
+
+== 390x844, mouse, start with steps at the foot; start scrollY 1376, chart 0% on screen
+  Buy           before: y 1376 chart 0% step 100% | after: y 912, chart 53% on screen, pressed step 100% on screen (top 651, bottom 803 of 844), focus "Buy", card buy
+OK     390 mouse "Buy": the step whole with >= half the chart (tier 2) or the whole chart (tier 3), focus kept, card agrees
+  Borrow        before: y 912 chart 53% step 22% | after: y 724, chart 100% on screen, pressed step 0% on screen (top 999, bottom 1151 of 844), focus "Borrow", card borrow
+OK     390 mouse "Borrow": the step whole with >= half the chart (tier 2) or the whole chart (tier 3), focus kept, card agrees
+  Live anywhere before: y 724 chart 100% step 0% | after: y 724, chart 100% on screen, pressed step 0% on screen (top 1159, bottom 1312 of 844), focus "Live anywhere", card live
+OK     390 mouse "Live anywhere": the step whole with >= half the chart (tier 2) or the whole chart (tier 3), focus kept, card agrees
+  Die           before: y 724 chart 100% step 0% | after: y 724, chart 100% on screen, pressed step 0% on screen (top 1320, bottom 1472 of 844), focus "Die", card die
+OK     390 mouse "Die": the step whole with >= half the chart (tier 2) or the whole chart (tier 3), focus kept, card agrees
+  Borrow        before: y 724 chart 100% step 0% | after: y 724, chart 100% on screen, pressed step 0% on screen (top 999, bottom 1151 of 844), focus "Borrow", card borrow
+OK     390 mouse "Borrow": the step whole with >= half the chart (tier 2) or the whole chart (tier 3), focus kept, card agrees
+  scrollY after each press: 912 -> 724 -> 724 -> 724 -> 724
+  (phone, tier 3: the step is off screen after each reveal by design; each click first scrolls back down to the step)
+
+== 390x844, tab+enter 0ms, start with steps at the foot; start scrollY 1376, chart 0% on screen
+  Buy           before: y 1376 chart 0% step 100% | after: y 912, chart 53% on screen, pressed step 100% on screen (top 651, bottom 803 of 844), focus "Buy", card buy
+OK     390 tab+enter 0ms "Buy": the step whole with >= half the chart (tier 2) or the whole chart (tier 3), focus kept, card agrees
+  Borrow        before: y 912 chart 53% step 22% | after: y 724, chart 100% on screen, pressed step 0% on screen (top 999, bottom 1151 of 844), focus "Borrow", card borrow
+OK     390 tab+enter 0ms "Borrow": the step whole with >= half the chart (tier 2) or the whole chart (tier 3), focus kept, card agrees
+  Live anywhere before: y 724 chart 100% step 0% | after: y 724, chart 100% on screen, pressed step 0% on screen (top 1159, bottom 1312 of 844), focus "Live anywhere", card live
+OK     390 tab+enter 0ms "Live anywhere": the step whole with >= half the chart (tier 2) or the whole chart (tier 3), focus kept, card agrees
+  Die           before: y 724 chart 100% step 0% | after: y 724, chart 100% on screen, pressed step 0% on screen (top 1320, bottom 1472 of 844), focus "Die", card die
+OK     390 tab+enter 0ms "Die": the step whole with >= half the chart (tier 2) or the whole chart (tier 3), focus kept, card agrees
+  scrollY after each press: 912 -> 724 -> 724 -> 724
+  (phone, tier 3: the step is off screen after each reveal by design; each Tab scrolls back down to the next step)
+
+== 390x844, tab+enter 100ms, start with steps at the foot; start scrollY 1376, chart 0% on screen
+  Buy           before: y 1376 chart 0% step 100% | after: y 912, chart 53% on screen, pressed step 100% on screen (top 651, bottom 803 of 844), focus "Buy", card buy
+OK     390 tab+enter 100ms "Buy": the step whole with >= half the chart (tier 2) or the whole chart (tier 3), focus kept, card agrees
+  Borrow        before: y 1010 chart 27% step 86% | after: y 724, chart 100% on screen, pressed step 0% on screen (top 999, bottom 1151 of 844), focus "Borrow", card borrow
+OK     390 tab+enter 100ms "Borrow": the step whole with >= half the chart (tier 2) or the whole chart (tier 3), focus kept, card agrees
+  Live anywhere before: y 844 chart 71% step 0% | after: y 724, chart 100% on screen, pressed step 0% on screen (top 1159, bottom 1312 of 844), focus "Live anywhere", card live
+OK     390 tab+enter 100ms "Live anywhere": the step whole with >= half the chart (tier 2) or the whole chart (tier 3), focus kept, card agrees
+  Die           before: y 844 chart 71% step 0% | after: y 724, chart 100% on screen, pressed step 0% on screen (top 1320, bottom 1472 of 844), focus "Die", card die
+OK     390 tab+enter 100ms "Die": the step whole with >= half the chart (tier 2) or the whole chart (tier 3), focus kept, card agrees
+  scrollY after each press: 912 -> 724 -> 724 -> 724
+  (phone, tier 3: the step is off screen after each reveal by design; each Tab scrolls back down to the next step)
+
+== 390x844, tab+enter 1000ms, start with steps at the foot; start scrollY 1376, chart 0% on screen
+  Buy           before: y 1376 chart 0% step 100% | after: y 912, chart 53% on screen, pressed step 100% on screen (top 651, bottom 803 of 844), focus "Buy", card buy
+OK     390 tab+enter 1000ms "Buy": the step whole with >= half the chart (tier 2) or the whole chart (tier 3), focus kept, card agrees
+  Borrow        before: y 1031 chart 22% step 100% | after: y 724, chart 100% on screen, pressed step 0% on screen (top 999, bottom 1151 of 844), focus "Borrow", card borrow
+OK     390 tab+enter 1000ms "Borrow": the step whole with >= half the chart (tier 2) or the whole chart (tier 3), focus kept, card agrees
+  Live anywhere before: y 1408 chart 0% step 100% | after: y 724, chart 100% on screen, pressed step 0% on screen (top 1159, bottom 1312 of 844), focus "Live anywhere", card live
+OK     390 tab+enter 1000ms "Live anywhere": the step whole with >= half the chart (tier 2) or the whole chart (tier 3), focus kept, card agrees
+  Die           before: y 1408 chart 0% step 100% | after: y 724, chart 100% on screen, pressed step 0% on screen (top 1320, bottom 1472 of 844), focus "Die", card die
+OK     390 tab+enter 1000ms "Die": the step whole with >= half the chart (tier 2) or the whole chart (tier 3), focus kept, card agrees
+  scrollY after each press: 912 -> 724 -> 724 -> 724
+  (phone, tier 3: the step is off screen after each reveal by design; each Tab scrolls back down to the next step)
+
+== 390x844, mouse, start with steps at the top; start scrollY 1408, chart 0% on screen
+  Buy           before: y 1408 chart 0% step 100% | after: y 912, chart 53% on screen, pressed step 100% on screen (top 651, bottom 803 of 844), focus "Buy", card buy
+OK     390 mouse "Buy": the step whole with >= half the chart (tier 2) or the whole chart (tier 3), focus kept, card agrees
+  Borrow        before: y 912 chart 53% step 22% | after: y 724, chart 100% on screen, pressed step 0% on screen (top 999, bottom 1151 of 844), focus "Borrow", card borrow
+OK     390 mouse "Borrow": the step whole with >= half the chart (tier 2) or the whole chart (tier 3), focus kept, card agrees
+  Live anywhere before: y 724 chart 100% step 0% | after: y 724, chart 100% on screen, pressed step 0% on screen (top 1159, bottom 1312 of 844), focus "Live anywhere", card live
+OK     390 mouse "Live anywhere": the step whole with >= half the chart (tier 2) or the whole chart (tier 3), focus kept, card agrees
+  Die           before: y 724 chart 100% step 0% | after: y 724, chart 100% on screen, pressed step 0% on screen (top 1320, bottom 1472 of 844), focus "Die", card die
+OK     390 mouse "Die": the step whole with >= half the chart (tier 2) or the whole chart (tier 3), focus kept, card agrees
+  Borrow        before: y 724 chart 100% step 0% | after: y 724, chart 100% on screen, pressed step 0% on screen (top 999, bottom 1151 of 844), focus "Borrow", card borrow
+OK     390 mouse "Borrow": the step whole with >= half the chart (tier 2) or the whole chart (tier 3), focus kept, card agrees
+  scrollY after each press: 912 -> 724 -> 724 -> 724 -> 724
+  (phone, tier 3: the step is off screen after each reveal by design; each click first scrolls back down to the step)
+
+== 390x844, tab+enter 0ms, start with steps at the top; start scrollY 1408, chart 0% on screen
+  Buy           before: y 1408 chart 0% step 100% | after: y 912, chart 53% on screen, pressed step 100% on screen (top 651, bottom 803 of 844), focus "Buy", card buy
+OK     390 tab+enter 0ms "Buy": the step whole with >= half the chart (tier 2) or the whole chart (tier 3), focus kept, card agrees
+  Borrow        before: y 912 chart 53% step 22% | after: y 724, chart 100% on screen, pressed step 0% on screen (top 999, bottom 1151 of 844), focus "Borrow", card borrow
+OK     390 tab+enter 0ms "Borrow": the step whole with >= half the chart (tier 2) or the whole chart (tier 3), focus kept, card agrees
+  Live anywhere before: y 724 chart 100% step 0% | after: y 724, chart 100% on screen, pressed step 0% on screen (top 1159, bottom 1312 of 844), focus "Live anywhere", card live
+OK     390 tab+enter 0ms "Live anywhere": the step whole with >= half the chart (tier 2) or the whole chart (tier 3), focus kept, card agrees
+  Die           before: y 724 chart 100% step 0% | after: y 724, chart 100% on screen, pressed step 0% on screen (top 1320, bottom 1472 of 844), focus "Die", card die
+OK     390 tab+enter 0ms "Die": the step whole with >= half the chart (tier 2) or the whole chart (tier 3), focus kept, card agrees
+  scrollY after each press: 912 -> 724 -> 724 -> 724
+  (phone, tier 3: the step is off screen after each reveal by design; each Tab scrolls back down to the next step)
+
+== 390x844, tab+enter 100ms, start with steps at the top; start scrollY 1408, chart 0% on screen
+  Buy           before: y 1408 chart 0% step 100% | after: y 912, chart 53% on screen, pressed step 100% on screen (top 651, bottom 803 of 844), focus "Buy", card buy
+OK     390 tab+enter 100ms "Buy": the step whole with >= half the chart (tier 2) or the whole chart (tier 3), focus kept, card agrees
+  Borrow        before: y 1010 chart 27% step 86% | after: y 724, chart 100% on screen, pressed step 0% on screen (top 999, bottom 1151 of 844), focus "Borrow", card borrow
+OK     390 tab+enter 100ms "Borrow": the step whole with >= half the chart (tier 2) or the whole chart (tier 3), focus kept, card agrees
+  Live anywhere before: y 844 chart 71% step 0% | after: y 724, chart 100% on screen, pressed step 0% on screen (top 1159, bottom 1312 of 844), focus "Live anywhere", card live
+OK     390 tab+enter 100ms "Live anywhere": the step whole with >= half the chart (tier 2) or the whole chart (tier 3), focus kept, card agrees
+  Die           before: y 844 chart 71% step 0% | after: y 724, chart 100% on screen, pressed step 0% on screen (top 1320, bottom 1472 of 844), focus "Die", card die
+OK     390 tab+enter 100ms "Die": the step whole with >= half the chart (tier 2) or the whole chart (tier 3), focus kept, card agrees
+  scrollY after each press: 912 -> 724 -> 724 -> 724
+  (phone, tier 3: the step is off screen after each reveal by design; each Tab scrolls back down to the next step)
+
+== 390x844, tab+enter 1000ms, start with steps at the top; start scrollY 1408, chart 0% on screen
+  Buy           before: y 1408 chart 0% step 100% | after: y 912, chart 53% on screen, pressed step 100% on screen (top 651, bottom 803 of 844), focus "Buy", card buy
+OK     390 tab+enter 1000ms "Buy": the step whole with >= half the chart (tier 2) or the whole chart (tier 3), focus kept, card agrees
+  Borrow        before: y 1031 chart 22% step 100% | after: y 724, chart 100% on screen, pressed step 0% on screen (top 999, bottom 1151 of 844), focus "Borrow", card borrow
+OK     390 tab+enter 1000ms "Borrow": the step whole with >= half the chart (tier 2) or the whole chart (tier 3), focus kept, card agrees
+  Live anywhere before: y 1408 chart 0% step 100% | after: y 724, chart 100% on screen, pressed step 0% on screen (top 1159, bottom 1312 of 844), focus "Live anywhere", card live
+OK     390 tab+enter 1000ms "Live anywhere": the step whole with >= half the chart (tier 2) or the whole chart (tier 3), focus kept, card agrees
+  Die           before: y 1408 chart 0% step 100% | after: y 724, chart 100% on screen, pressed step 0% on screen (top 1320, bottom 1472 of 844), focus "Die", card die
+OK     390 tab+enter 1000ms "Die": the step whole with >= half the chart (tier 2) or the whole chart (tier 3), focus kept, card agrees
+  scrollY after each press: 912 -> 724 -> 724 -> 724
+  (phone, tier 3: the step is off screen after each reveal by design; each Tab scrolls back down to the next step)
+
+0 failures

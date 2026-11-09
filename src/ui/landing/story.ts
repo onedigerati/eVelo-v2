@@ -213,6 +213,7 @@ export const COPY = {
   pin: (city: StoryCity) => ({ name: city.name, odds: pct(city.odds) }),
   /** Spending chips on the map and by the person: "$80K/yr". */
   spendChip: (city: StoryCity) => `${money(city.spend)}/yr`,
+  /** The person walking under the loan during Borrow: "$80K", each year's draw. */
   personChip: money(HOME.spend),
   axis: {
     /** y ticks in $M. */
@@ -244,6 +245,8 @@ export const COPY = {
   keyLabel: 'Key',
   note: 'Illustrative numbers · a typical path, not a forecast',
   controls: {
+    /** The play/pause and replay buttons' group. */
+    group: 'Story playback',
     play: 'Play the four beats',
     pause: 'Pause the four beats',
     replay: 'Replay from the start',
@@ -253,7 +256,11 @@ export const COPY = {
   stepsLabel: 'How it works, step through the four beats',
   /** aria-live text when a step is chosen. */
   announce: (i: number) => `Step ${i + 1} of ${BEATS.length}. ${BEATS[i].lead} ${BEATS[i].detail}`,
-  /** The SVG's accessible name for the resting (Die) frame. */
+  /**
+   * The SVG's accessible name: the whole story, on purpose, at every frame. The chart is one image
+   * of one plan; the beat on show is in the visible caption and is announced once per beat through
+   * the card's aria-live region, so the name doesn't change under the reader mid-animation.
+   */
   svgLabel:
     `Illustrative ${YEARS}-year plan. A ${money(PORTFOLIO)} portfolio grows to ${money(DEST.atEnd.portfolio)} while a credit line pays the living costs. ` +
     `Moving from ${H} to ${D} cuts the yearly draw from ${money(HOME.spend)} to ${money(DEST.spend)}, so the loan ends at ${money(DEST.atEnd.loan)} instead of ${money(HOME.atEnd.loan)}, ` +

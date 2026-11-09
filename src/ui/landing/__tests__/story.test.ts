@@ -201,5 +201,15 @@ describe('landing story: copy', () => {
     expect(COPY.estate.heirs).toBe(money(DEST.atEnd.heirs))
     expect(COPY.axis.yTicks.map((t) => t.label)).toEqual(['$5M', '$10M', '$15M', '$20M'])
     expect(COPY.announce(3)).toContain('Step 4 of 4.')
+    expect(COPY.announce(0)).toBe(`Step 1 of 4. ${BEATS[0].lead} ${BEATS[0].detail}`)
+    expect(COPY.controls).toEqual({
+      group: 'Story playback',
+      play: 'Play the four beats',
+      pause: 'Pause the four beats',
+      replay: 'Replay from the start',
+      paused: 'Paused.',
+      playing: 'Playing.',
+    })
+    expect(COPY.personChip).toBe('$80K')
   })
 })

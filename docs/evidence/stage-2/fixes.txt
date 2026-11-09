@@ -1,0 +1,44 @@
+$ node fixes.mjs (Playwright 1.57 Chromium, http://localhost:4330/#home; page.clock paused and advanced with runFor; smooth scroll waited in real time)
+== 1. card height and first step position per beat (mid-beat, replay + clock.runFor; card scrolled ~45% visible so the steps are on screen)
+  360x740 t=2 buy    card 808.7px, first step top 444.8, scrollY 1169
+  360x740 t=6 borrow card 808.7px, first step top 444.8, scrollY 1169
+  360x740 t=10 live   card 808.7px, first step top 444.8, scrollY 1169
+  360x740 t=14.5 die    card 808.7px, first step top 444.8, scrollY 1169
+  360x740 t=16 die    card 808.7px, first step top 444.8, scrollY 1169
+OK   360: card height constant (808.7) and steps still (444.8) across all four beats
+  390x844 t=2 buy    card 844.1px, first step top 460.7, scrollY 1102
+  390x844 t=6 borrow card 844.1px, first step top 460.7, scrollY 1102
+  390x844 t=10 live   card 844.1px, first step top 460.7, scrollY 1102
+  390x844 t=14.5 die    card 844.1px, first step top 460.7, scrollY 1102
+  390x844 t=16 die    card 844.1px, first step top 460.7, scrollY 1102
+OK   390: card height constant (844.1) and steps still (460.7) across all four beats
+  480x900 t=2 buy    card 880.8px, first step top 476.9, scrollY 1076
+  480x900 t=6 borrow card 880.8px, first step top 476.9, scrollY 1076
+  480x900 t=10 live   card 880.8px, first step top 476.9, scrollY 1076
+  480x900 t=14.5 die    card 880.8px, first step top 476.9, scrollY 1076
+  480x900 t=16 die    card 880.8px, first step top 476.9, scrollY 1076
+OK   480: card height constant (880.8) and steps still (476.9) across all four beats
+  1000x900 t=2 buy    card 882.6px, first step top 621.6, scrollY 502
+  1000x900 t=6 borrow card 882.6px, first step top 621.6, scrollY 502
+  1000x900 t=10 live   card 882.6px, first step top 621.6, scrollY 502
+  1000x900 t=14.5 die    card 882.6px, first step top 621.6, scrollY 502
+  1000x900 t=16 die    card 882.6px, first step top 621.6, scrollY 502
+OK   1000: card height constant (882.6) and steps still (621.6) across all four beats
+  1280x900 t=2 buy    card 701.8px, first step top 644.8, scrollY 298
+  1280x900 t=6 borrow card 701.8px, first step top 644.8, scrollY 298
+  1280x900 t=10 live   card 701.8px, first step top 644.8, scrollY 298
+  1280x900 t=14.5 die    card 701.8px, first step top 644.8, scrollY 298
+  1280x900 t=16 die    card 701.8px, first step top 644.8, scrollY 298
+OK   1280: card height constant (701.8) and steps still (644.8) across all four beats
+
+== 3. pause, press Borrow, press Play
+  +0ms: card borrow, loan 0 points, live "Playing. Step 2 of 4. Borrow f"
+  +300ms: card borrow, loan 2 points, live "Playing. Step 2 of 4. Borrow f"
+  +1000ms: card borrow, loan 9 points, live "Playing. Step 2 of 4. Borrow f"
+  +2000ms: card borrow, loan 18 points, live "Playing. Step 2 of 4. Borrow f"
+  +3000ms: card borrow, loan 28 points, live "Playing. Step 2 of 4. Borrow f"
+  +4500ms: card live, loan 31 points, live "Step 3 of 4. Spend it where li"
+OK   paused Borrow showed the finished loan (31 pts); Play restarts Borrow (loan 0 -> 18 pts over 2s, still Borrow), then Live anywhere
+
+0 failures
+(Section 2, the step-press scroll, is in step-scroll.txt.)

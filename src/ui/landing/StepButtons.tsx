@@ -1,4 +1,4 @@
-import { useId } from 'react'
+import { memo, useId } from 'react'
 import { BEATS, type BeatId } from './story'
 
 /**
@@ -7,7 +7,7 @@ import { BEATS, type BeatId } from './story'
  * beat on show is marked `aria-current="step"`: it is the current step of a sequence the timeline
  * can also advance, not an on/off toggle, so `aria-pressed` would misdescribe it.
  */
-export function StepButtons({ active, onSelect }: { active: BeatId; onSelect: (id: BeatId) => void }) {
+export const StepButtons = memo(function StepButtons({ active, onSelect }: { active: BeatId; onSelect: (id: BeatId, button: HTMLElement) => void }) {
   const uid = useId()
   return (
     <ol className="landing__steps-list">
@@ -21,7 +21,7 @@ export function StepButtons({ active, onSelect }: { active: BeatId; onSelect: (i
               aria-current={b.id === active ? 'step' : undefined}
               aria-labelledby={`${id}-n ${id}-t`}
               aria-describedby={`${id}-b`}
-              onClick={() => onSelect(b.id)}
+              onClick={(e) => onSelect(b.id, e.currentTarget)}
             >
               <span id={`${id}-n`} className="landing__step-n">
                 {b.n}
@@ -38,4 +38,4 @@ export function StepButtons({ active, onSelect }: { active: BeatId; onSelect: (i
       })}
     </ol>
   )
-}
+})

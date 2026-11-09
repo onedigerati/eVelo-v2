@@ -1,0 +1,36 @@
+$ node strict.mjs (Playwright 1.57 Chromium; aria-live changes recorded from the first DOM node by an init script; npm run dev on :4331 (StrictMode) and vite preview on :4330; page clock advanced 45 s)
+== npm run dev (React StrictMode, dev build), 1280x900 (dev client: true)
+  live changes in the first 800 ms: ["[first seen] \"\"","Step 1 of 4. Buy, and hold. A $2.5M port"]
+  all live changes over 45 s: ["[first seen] \"\"","Step 1 of 4. Buy, and hold. A $2","Step 2 of 4. Borrow for living m","Step 3 of 4. Spend it where life","Step 4 of 4. Gains never taxed. "]
+OK   no "Step 4 of 4" at load
+OK   each beat announced once over two passes (4)
+== npm run dev (React StrictMode, dev build), 390x844 (dev client: true)
+  live changes in the first 800 ms: ["[first seen] \"\""]
+  all live changes over 45 s: ["[first seen] \"\""]
+OK   no "Step 4 of 4" at load
+OK   nothing announced (card below the fold)
+== npm run dev (React StrictMode, dev build), 1280x900, reduced motion (dev client: true)
+  live changes in the first 800 ms: ["[first seen] \"\""]
+  all live changes over 45 s: ["[first seen] \"\""]
+OK   no "Step 4 of 4" at load
+OK   nothing announced (reduced motion: no autoplay)
+  console: ["You have Reduced Motion enabled on your device. Animations may not appear as expected.. For more information and steps for solving, visit https://motion.dev/troubleshooting/reduced-motion-disabled"]
+== vite preview (production build), 1280x900 (dev client: false)
+  live changes in the first 800 ms: ["[first seen] \"\"","Step 1 of 4. Buy, and hold. A $2.5M port"]
+  all live changes over 45 s: ["[first seen] \"\"","Step 1 of 4. Buy, and hold. A $2","Step 2 of 4. Borrow for living m","Step 3 of 4. Spend it where life","Step 4 of 4. Gains never taxed. "]
+OK   no "Step 4 of 4" at load
+OK   each beat announced once over two passes (4)
+== vite preview (production build), 390x844 (dev client: false)
+  live changes in the first 800 ms: ["[first seen] \"\""]
+  all live changes over 45 s: ["[first seen] \"\""]
+OK   no "Step 4 of 4" at load
+OK   nothing announced (card below the fold)
+== vite preview (production build), 1280x900, reduced motion (dev client: false)
+  live changes in the first 800 ms: ["[first seen] \"\""]
+  all live changes over 45 s: ["[first seen] \"\""]
+OK   no "Step 4 of 4" at load
+OK   nothing announced (reduced motion: no autoplay)
+OK   390, card 24% on screen, Play pressed: plays (after 2 s: buy, "Pause the four beats")
+  +3 s more: borrow
+
+0 failures

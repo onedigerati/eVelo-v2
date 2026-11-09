@@ -1,0 +1,60 @@
+$ node playback.mjs (Playwright 1.57 Chromium, http://localhost:4330/#home, vite preview of npm run build; page.clock installed and paused, advanced with clock.runFor)
+== A. 1280x900, card in view at load; clock paused, advanced with page.clock.runFor
+t0 (clock paused, before any rAF): buy/buy/n=1/btn="Pause the four beats" live="Step 1 of 4. Buy, and hold. A $2.5M portfolio of shares. You paid $1.0M; the other $1.5M is gains, taxed only if you sell. So you never sell."
+beat/button transitions (ms since clock paused):
+       0ms  buy    Pause the four beats
+    4000ms  borrow Pause the four beats
+    8000ms  live   Pause the four beats
+   12000ms  die    Pause the four beats
+   19500ms  buy    Pause the four beats
+   23500ms  borrow Pause the four beats
+   27500ms  live   Pause the four beats
+   31500ms  die    Pause the four beats
+   39000ms  die    Play the four beats
+OK   two passes in order (buy,borrow,live,die,buy,borrow,live,die,die)
+OK   Buy starts exactly twice (no third pass)
+OK   rests on Die with Play shown (last: die "Play the four beats" from 39000ms)
+OK   card caption and aria-current agree at all 181 samples, exactly one aria-current
+rest frame heirs opacity: 1
+console: []
+
+== B. mouse: pause / play / replay
+at +5s: borrow/borrow/n=1/btn="Pause the four beats"
+OK   click pause -> button reads "Play the four beats", live="Paused."
+OK   paused 4s: loan path unchanged (true), still borrow
+OK   click play -> "Pause the four beats", live="Playing. Step 2 of 4. Borrow for living money. Each year a credit line pays your $80K. The shares stay untouched and keep compounding, while the loan grows with interest. "
+OK   loan path moves after play
+after +3.5s more: live/live/n=1/btn="Pause the four beats"
+OK   click replay -> back to Buy and playing (buy/buy/n=1/btn="Pause the four beats"), live="Playing. Step 1 of 4. Buy, and hold. A $2.5M portfolio of shares. You paid $1.0M; the other $1.5M is gains, taxed only if you sell. So you never sell. "
+OK   after replay's pass + hold: rests on Die (die/die/n=1/btn="Play the four beats")
+OK   10s later still resting (die/die/n=1/btn="Play the four beats")
+OK   play at rest starts over from Buy (buy/buy/n=1/btn="Pause the four beats")
+console: []
+
+== C. keyboard: Tab to the controls, Space / Enter
+tab order: eVelo — home | How it works | Atlas | Method | System theme | Open the planner | Stress-test my plan | Explore the Atlas | Pause the four beats
+OK   play/pause reachable by Tab
+focus outline: solid 2px
+OK   Space pauses (buy/buy/n=1/btn="Play the four beats"), live="Paused. "
+OK   focus stays on the toggle after its label changes ("Play the four beats")
+OK   paused: bar count unchanged over 2s
+OK   Enter plays (buy/buy/n=1/btn="Pause the four beats")
++4s: borrow/borrow/n=1/btn="Pause the four beats"
+OK   Tab -> "Replay from the start"
+OK   Enter on replay -> Buy, playing (buy/buy/n=1/btn="Pause the four beats")
+OK   Space on replay restarts again (buy/buy/n=1/btn="Pause the four beats")
+console: []
+
+== D. in view only
+card rect after scrolling down: top -162 bottom 540 viewport 900
+first sample: buy/buy/n=1/btn="Pause the four beats"
++10s out of view: live/live/n=1/btn="Pause the four beats"
+390x844: card top 638, height 844, 24% visible at load
+OK   390: 10s with card below the fold -> still resting on Die (die/die/n=1/btn="Play the four beats")
+OK   scrolled into view -> autoplay starts (buy/buy/n=1/btn="Pause the four beats")
+at ~5.5s: borrow/borrow/n=1/btn="Pause the four beats"
+OK   8s scrolled away -> back in view still in Borrow where it left (borrow/borrow/n=1/btn="Pause the four beats"; loan d length 146 -> 146)
+OK   resumes moving once back in view
+console: []
+
+0 failures
