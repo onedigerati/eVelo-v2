@@ -9,7 +9,7 @@ A user who isn't ready to retire today can see what retiring in 2, 4 or 5 years 
 ## Now
 Stage 4 of 4 · Retire-later comparison
 Risk: UI only
-Mode: autopilot
+Mode: paused — preview v40 published; waiting for the user's review and deploy approval
 Agents: wide — confirmed 2026-11-08 20:26
 Checks:
 - [x] The Outlook shows A's "When could you retire?" row: cards for Now, 2, 4 and 5 years (those below the horizon), each with an odds ring, "In N yrs · age A", the odds and safe spending; the plan's own card is highlighted, and a fifth "your plan" card appears when its retire-in isn't one of them (proof: run the product, screenshots; a test can't judge the layout)
