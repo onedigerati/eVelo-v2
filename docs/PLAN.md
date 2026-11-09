@@ -7,19 +7,22 @@ A user who isn't ready to retire today can see what retiring in 2, 4 or 5 years 
 2026-11-08 · tests: 555 pass · typecheck: clean (after c5fc49a)
 
 ## Now
-Stage 1 of 4 · Variations
-Risk: UI only
+Stage 2 of 4 · Retire later in the engine
+Risk: user input (share link fields), money logic (simulation)
 Agents: wide — confirmed 2026-11-08 19:07
 Checks:
-- [ ] A variations page shows at least four distinct ways to show the setting and the now/2/4/5-year comparison in the app's look, at desktop and phone width (proof: run the product, the published page, a test can't judge design)
-- [ ] The user picks a direction, and it's logged as a decision (proof: the user's words in this conversation)
-Open: the user's pick from the [variations page](https://claude.ai/artifact/FGJKDUPPZATHCBzvLRX2jt) (A ladder, B timeline, C ledger, D fan, E phone)
+- [ ] With retire-in N > 0, nothing is withdrawn before month 12·N and savings (CPI-inflated) go to the portfolio, paying the loan down first; from month 12·N spending starts as today; N = 0 and savings $0 give results identical to before (proof: test)
+- [ ] Other income counts only from max(income start, retirement); the move and wealth tax start no earlier than retirement; the plan still ends at the same age (proof: test)
+- [ ] Later retirement with savings raises odds and safe spending at the defaults; the solver scales retirement spending only, never savings; the sell strategy gets the same savings (proof: test)
+- [ ] Atlas odds, the stay-home baseline and cache keys follow both new inputs (proof: test)
+- [ ] Share links and saved plans carry both fields, clamped (retire-in 0–15 and below the horizon, savings 0–$1M); old links without them mean 0 (proof: test)
+Open: none
 
 ## Stages
-- [ ] 1. Variations — a variations page of ideas for the setting and the comparison; the user picks one
+- [x] 1. Variations — a variations page of ideas for the setting and the comparison; the user picks one
 - [ ] 2. Retire later in the engine — retireInYears + savingsWhileWorking through kernel, sell side, solver, Atlas, share link, defaults, with tests
-- [ ] 3. Plan inputs and outlook — Retire in + Saving inputs, verdict copy, "Retire" marker on the charts, loan warning, Method page, both themes and phone
-- [ ] 4. Retire-later comparison — the chosen comparison view (now / 2 / 4 / 5 yrs: odds and safe spending, tap to apply); preview; deploy on approval
+- [ ] 3. Plan inputs and outlook — A's Retire in segmented control + Saving field, verdict copy, D's shaded working years and Retire line on the charts, loan warning, Method page, both themes and phone
+- [ ] 4. Retire-later comparison — A's "When could you retire?" cards (now / 2 / 4 / 5 yrs: odds ring and safe spending, tap to use); preview; deploy on approval
 
 ## Decisions
 - 2026-11-08 · While working, the user adds a yearly amount ("Saving while working", today's $/yr, can be $0), inflated with CPI like income; it pays down an existing loan first and the rest is invested, through the kernel's existing surplus logic — user chose "Yearly amount".
@@ -32,6 +35,8 @@ Open: the user's pick from the [variations page](https://claude.ai/artifact/FGJK
 - 2026-11-08 · The max-spend solver scales retirement spending only, never the savings; the sell strategy gets the same savings, invested — PM's call, from the survey (solve.ts).
 - 2026-11-08 · "Retire in" runs 0–15 years in whole years and must stay below the horizon; default 0 and savings default $0, so saved plans and share links don't change — PM's call.
 - 2026-11-08 · Scale check didn't fire (4 stages, one release) — PM's call.
+- 2026-11-08 · Visual direction: variation A (a Now / 2 yrs / 4 yrs / 5 yrs / Other segmented "Retire in" control in Life & lifestyle, a "Saving while working" field, and a "When could you retire?" row of four cards with odds ring, age, odds and safe spending, the plan's own card highlighted, tap to use) plus D's shaded working years and a "Retire · <age>" line on the outlook charts; D's dashed comparison medians, B, C and E are not taken — user: "Go with A plus D's shaded working years" ([variations](https://claude.ai/artifact/FGJKDUPPZATHCBzvLRX2jt)).
+- 2026-11-08 · Stage 1 verified by a fresh agent ([report](evidence/stage-1/report.md)); its note that board A has no phone layout is covered by stage 3's phone check — PM's call.
 
 ## Open questions
 - A $0 home category with no fixed amount reads "$0 ±0%" in the Outlook cost card while the plan card shows no % (cosmetic) — from the stage 2 verify, later.

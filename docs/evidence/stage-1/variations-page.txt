@@ -1,0 +1,105 @@
+$ Artifact read https://claude.ai/artifact/FGJKDUPPZATHCBzvLRX2jt paths=project/{canvas.json,Main,Timeline,Ledger,Fan,Phone}.dc.html  (version 1794186729-26d5, type "Design")
+No secrets or personal data in the page (illustrative numbers only); nothing masked.
+
+== sha256 of files read ==
+7d99443ebbda779761511c30c3db1d65e40b785f7164696b3dc7203cfb1947d2  canvas.json
+733c76c7591fcee7184bad8ead2da88b9968a291c6e56ea7a48561177ffc1283  Fan.dc.html
+bbb8567ad58f780538d7e72ea783bcf0245e47de48367c0af6c66d5f200d5bc5  Ledger.dc.html
+990f6875ddb38d517d8635a1f51457b2c75cb4495b0dd4f0faf6f4af3b670630  Main.dc.html
+4305d6ea87ab769fe775a0569bc5385959353e91c68af317bfdbe6b75932b353  Phone.dc.html
+083efc5e609b81c55e63ffe2f1be53ecff4eafc49d0565a2a65f7a0472dbd0a2  Timeline.dc.html
+
+== project/canvas.json (verbatim) ==
+{"v":3,"createdOnFiles":{"v":1,"at":"2026-11-08T19:15:00Z"},"title":"Retire later variations","launch":{"view":"canvas"},"pages":[],"boards":{"Main.dc.html":{"x":0,"y":0,"w":1280,"h":860,"title":"A · Ladder: segmented setting + four rings"},"Timeline.dc.html":{"x":1360,"y":0,"w":1280,"h":860,"title":"B · Timeline: drag the retire marker + odds curve"},"Phone.dc.html":{"x":2720,"y":0,"w":390,"h":844,"title":"E · Phone: swipeable scenario cards"},"Ledger.dc.html":{"x":0,"y":980,"w":1280,"h":860,"title":"C · Ledger: almanac table of retire dates"},"Fan.dc.html":{"x":1360,"y":980,"w":1280,"h":860,"title":"D · Fan: working years on the chart (dark)"}},"order":["Main.dc.html","Timeline.dc.html","Phone.dc.html","Ledger.dc.html","Fan.dc.html"],"notes":{"title":{"x":0,"y":-300,"text":"Retire later — five ways to show it (illustrative numbers)","kind":"title1","maxW":3110}},"designSystems":[]}
+
+
+== Boards: size and title (from canvas.json + each file's $preview) ==
+Ledger.dc.html:"$preview":{"width":1280,"height":860}
+Phone.dc.html:"$preview":{"width":390,"height":844}
+Main.dc.html:"$preview":{"width":1280,"height":860}
+Timeline.dc.html:"$preview":{"width":1280,"height":860}
+Fan.dc.html:"$preview":{"width":1280,"height":860}
+
+== Look: colours and fonts used per board vs src/styles/tokens.css ==
+Main: bg=#f5f2ea fonts=Geist Mono Geist, Instrument Serif  colours=#0a6e4d #0b7a56 #141815 #4a524d #5e655f #a87a1f #fbf9f4 
+Timeline: bg=#f5f2ea fonts=Geist Mono Geist, Instrument Serif  colours=#0a6e4d #0b7a56 #141815 #4a524d #5e655f #8a6312 #a87a1f #fbf9f4 
+Ledger: bg=#f5f2ea fonts=Geist Mono Geist, Instrument Serif  colours=#0a6e4d #0b7a56 #141815 #4a524d #5e655f #a87a1f 
+Fan: bg=#0d1210 fonts=Geist Mono Geist, Instrument Serif  colours=#5be3b0 #e3b262 
+Phone: bg=#f5f2ea fonts=Geist Mono Geist, Instrument Serif  colours=#0a6e4d #0b7a56 #141815 #4a524d #5e655f #a87a1f 
+
+tokens.css light: --bg #f5f2ea · --ink #141815 · --ink-2 #4a524d · --ink-3 #5e655f · --surface-solid #fbf9f4 · --holds #0b7a56 · --holds-text #0a6e4d · --bruised #a87a1f · --bruised-text #8a6312
+tokens.css dark:  --bg #0a0d0c · --ink #ecf1ee · --holds #5be3b0 · --bruised #e3b262
+fonts: --font-display 'Instrument Serif' · --font-ui 'Geist Variable' · --font-mono 'Geist Mono Variable'
+Note: board D uses #0d1210 bg / #e8efe9 ink, close to but not the dark tokens #0a0d0c / #ecf1ee; its accents (#5be3b0, #e3b262) match exactly.
+
+== Per board: retire-in setting/selector and now/2/4/5 comparison (quoted text) ==
+-- A Main (1280x860, light) --
+Retire in <span style="color: #141815">at age 64
+>Now</button>
+>2 yrs</button>
+>4 yrs</button>
+>5 yrs</button>
+>Other</button>
+Saving while working
+>87%<
+When could you retire?
+Now · age 60<
+>71%<
+In 2 yrs · age 62<
+>80%<
+In 4 yrs · age 64 · your plan<
+>87%<
+In 5 yrs · age 65<
+>90%<
+-- B Timeline (1280x860, light) --
+Drag the marker to choose when you retire
+aria-label="Retire at age 64. Use arrow keys to move."
+>Now</button>
+>+2 yrs</button>
+>+4 yrs</button>
+>+5 yrs</button>
+Odds by retirement year
+aria-label="Odds the plan holds: now 71%, in 2 years 80%, in 4 years 87%, in 5 years 90%, flattening near 95% after 9 years"
+-- C Ledger (1280x860, light) --
+The cost of retiring early
+>Now</span>
+>71%</span>
+>Use</button>
+>In 2 years</span>
+>80%</span>
+>Use</button>
+>In 4 years</span>
+>87%</span>
+In use
+>In 5 years</span>
+>90%</span>
+>Use</button>
++ Add a year
+-- D Fan (1280x860, dark) --
+Compare retiring:
+>Now</button>
+>+2</button>
+>+4 · yours</button>
+>+5</button>
+Working · +$60K/yr
+Retire · 64
+Retire at 64 (your plan) · 87%
+Retire now · 71%
+Retire at 65 · 90%
+-- E Phone (390x844, light) --
+When could you retire?
+Swipe to compare. Tap "Use this" to make it your plan.
+In 4 years · age 64
+>87%<
+Your plan
+In 5 years · age 65
+>90%<
+At a glance
+>71%<
+>80%<
+>87%<
+>90%<
+<span>Now</span>
+<span>+2</span>
+>+4<
+<span>+5</span>

@@ -1,0 +1,9 @@
+$ grep -n "Visual direction" docs/PLAN.md
+35:- 2026-11-08 · Visual direction: variation A (a Now / 2 yrs / 4 yrs / 5 yrs / Other segmented "Retire in" control in Life & lifestyle, a "Saving while working" field, and a "When could you retire?" row of four cards with odds ring, age, odds and safe spending, the plan's own card highlighted, tap to use) plus D's shaded working years and a "Retire · <age>" line on the outlook charts; D's dashed comparison medians, B, C and E are not taken — user: "Go with A plus D's shaded working years" ([variations](https://claude.ai/artifact/FGJKDUPPZATHCBzvLRX2jt)).
+
+$ grep -n "^Open:" docs/PLAN.md
+16:Open: none — user picked A plus D's shaded working years
+
+User, in the main conversation (relayed by the PM agent that launched this verify): "Go with A plus D's shaded working years"
+
+The logged line matches: A (segmented Retire in control, Saving while working field, When could you retire? cards) is taken, plus D's shaded working years and Retire line; D's dashed comparison medians, B, C and E are not taken. It links the variations page.
