@@ -8,7 +8,8 @@ A user who isn't ready to retire today can see what retiring in 2, 4 or 5 years 
 
 ## Now
 Stage 2 of 4 · Retire later in the engine
-Risk: user input (share link fields), money logic (simulation)
+Risk: money (simulation logic), user input (share link fields)
+Mode: paused — stage 2 changes the money calculations; waiting for the user's word to build it
 Agents: wide — confirmed 2026-11-08 19:07
 Checks:
 - [ ] With retire-in N > 0, nothing is withdrawn before month 12·N and savings (CPI-inflated) go to the portfolio, paying the loan down first; from month 12·N spending starts as today; N = 0 and savings $0 give results identical to before (proof: test)
