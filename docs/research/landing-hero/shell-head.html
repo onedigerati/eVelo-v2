@@ -1,0 +1,78 @@
+<title>Buy Borrow Die Mockups</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one review page; a short intro, then each variation as its own full-width band with a hero-sized stage. Tokens mirror eVelo's src/styles/tokens.css. */
+:root {
+  --font-display: 'Instrument Serif', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  --font-ui: 'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --bg: #f5f2ea; --bg-deep: #ede8dc;
+  --ink: #141815; --ink-2: #4a524d; --ink-3: #5e655f; --ink-faint: rgba(20,24,21,.28);
+  --card: rgba(255,253,248,.86); --card-solid: #fdfbf6; --card-line: rgba(20,24,21,.1);
+  --card-shadow: 0 2px 6px rgba(40,32,12,.05), 0 12px 32px -12px rgba(40,32,12,.14);
+  --hairline: rgba(20,24,21,.1); --hairline-strong: rgba(20,24,21,.18);
+  --surface-3: rgba(20,24,21,.045); --surface-hover: rgba(20,24,21,.05);
+  --holds: #0b7a56; --holds-text: #0a6e4d; --holds-soft: rgba(11,122,86,.1); --holds-line: rgba(11,122,86,.32);
+  --bruised: #a87a1f; --bruised-text: #8a6312; --bruised-soft: rgba(168,122,31,.12);
+  --broken: #d2452f; --broken-text: #b5361f; --broken-soft: rgba(210,69,47,.1);
+  --ramp-0: #d2452f; --ramp-1: #c8662b; --ramp-2: #a87a1f; --ramp-3: #3d9776; --ramp-4: #0b7a56;
+  --loan: #556574; --loan-soft: rgba(85,101,116,.12);
+  --band-1: rgba(11,122,86,.1); --band-2: rgba(11,122,86,.18);
+  --grid: rgba(20,24,21,.07); --axis: #5e655f;
+  --accent-ink: #ffffff; --focus: #0b7a56;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  color-scheme: dark;
+  --bg: #0a0d0c; --bg-deep: #060807;
+  --ink: #ecf1ee; --ink-2: #a9b5af; --ink-3: #84918b; --ink-faint: rgba(236,241,238,.24);
+  --card: rgba(17,23,21,.92); --card-solid: #101614; --card-line: rgba(220,255,240,.1);
+  --card-shadow: 0 2px 6px rgba(0,0,0,.05), 0 12px 32px -12px rgba(0,0,0,.14);
+  --hairline: rgba(220,255,240,.085); --hairline-strong: rgba(220,255,240,.16);
+  --surface-3: rgba(220,255,240,.06); --surface-hover: rgba(220,255,240,.06);
+  --holds: #5be3b0; --holds-text: #5be3b0; --holds-soft: rgba(91,227,176,.1); --holds-line: rgba(91,227,176,.32);
+  --bruised: #e3b262; --bruised-text: #e3b262; --bruised-soft: rgba(227,178,98,.11);
+  --broken: #ff6b5a; --broken-text: #ff7a6a; --broken-soft: rgba(255,107,90,.1);
+  --ramp-0: #ff6b5a; --ramp-1: #f5925e; --ramp-2: #e3b262; --ramp-3: #9ed8be; --ramp-4: #5be3b0;
+  --loan: #93a4b4; --loan-soft: rgba(147,164,180,.12);
+  --band-1: rgba(91,227,176,.08); --band-2: rgba(91,227,176,.16);
+  --grid: rgba(220,255,240,.07); --axis: #84918b;
+  --accent-ink: #0a0d0c; --focus: #5be3b0;
+} }
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0a0d0c; --bg-deep: #060807;
+  --ink: #ecf1ee; --ink-2: #a9b5af; --ink-3: #84918b; --ink-faint: rgba(236,241,238,.24);
+  --card: rgba(17,23,21,.92); --card-solid: #101614; --card-line: rgba(220,255,240,.1);
+  --card-shadow: 0 2px 6px rgba(0,0,0,.05), 0 12px 32px -12px rgba(0,0,0,.14);
+  --hairline: rgba(220,255,240,.085); --hairline-strong: rgba(220,255,240,.16);
+  --surface-3: rgba(220,255,240,.06); --surface-hover: rgba(220,255,240,.06);
+  --holds: #5be3b0; --holds-text: #5be3b0; --holds-soft: rgba(91,227,176,.1); --holds-line: rgba(91,227,176,.32);
+  --bruised: #e3b262; --bruised-text: #e3b262; --bruised-soft: rgba(227,178,98,.11);
+  --broken: #ff6b5a; --broken-text: #ff7a6a; --broken-soft: rgba(255,107,90,.1);
+  --ramp-0: #ff6b5a; --ramp-1: #f5925e; --ramp-2: #e3b262; --ramp-3: #9ed8be; --ramp-4: #5be3b0;
+  --loan: #93a4b4; --loan-soft: rgba(147,164,180,.12);
+  --band-1: rgba(91,227,176,.08); --band-2: rgba(91,227,176,.16);
+  --grid: rgba(220,255,240,.07); --axis: #84918b;
+  --accent-ink: #0a0d0c; --focus: #5be3b0;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-ui); font-size: 15px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.mk-wrap { max-width: 1240px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 40px 80px; display: grid; gap: 72px; }
+.mk-intro { display: grid; gap: 14px; max-width: 46rem; }
+.mk-eyebrow { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); font-weight: 500; margin: 0; }
+.mk-intro h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(2.2rem, 1.4rem + 3vw, 3.6rem); line-height: 1; margin: 0; text-wrap: balance; }
+.mk-intro p { margin: 0; color: var(--ink-2); font-size: 17px; max-width: 40em; }
+.mk-toc { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.mk-toc a { color: var(--ink); text-decoration: none; border: 1px solid var(--hairline-strong); border-radius: 999px; padding: 6px 14px; font-size: 14px; }
+.mk-toc a:hover { background: var(--surface-hover); }
+.mk-var { display: grid; gap: 20px; scroll-margin-top: 24px; }
+.mk-var__head { display: grid; gap: 6px; border-top: 1px solid var(--hairline-strong); padding-top: 20px; }
+.mk-var__head h2 { font-family: var(--font-display); font-weight: 400; font-size: 2rem; line-height: 1.05; margin: 0; }
+.mk-var__head p { margin: 0; color: var(--ink-2); max-width: 46em; }
+.mk-var__notes { display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 13px; color: var(--ink-3); }
+.mk-var__notes b { color: var(--ink-2); font-weight: 500; }
+.mk-foot { color: var(--ink-3); font-size: 13px; border-top: 1px solid var(--hairline); padding-top: 16px; }
+</style>

@@ -1,0 +1,2291 @@
+<title>Buy Borrow Die Mockups</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one review page; a short intro, then each variation as its own full-width band with a hero-sized stage. Tokens mirror eVelo's src/styles/tokens.css. */
+:root {
+  --font-display: 'Instrument Serif', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  --font-ui: 'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --bg: #f5f2ea; --bg-deep: #ede8dc;
+  --ink: #141815; --ink-2: #4a524d; --ink-3: #5e655f; --ink-faint: rgba(20,24,21,.28);
+  --card: rgba(255,253,248,.86); --card-solid: #fdfbf6; --card-line: rgba(20,24,21,.1);
+  --card-shadow: 0 2px 6px rgba(40,32,12,.05), 0 12px 32px -12px rgba(40,32,12,.14);
+  --hairline: rgba(20,24,21,.1); --hairline-strong: rgba(20,24,21,.18);
+  --surface-3: rgba(20,24,21,.045); --surface-hover: rgba(20,24,21,.05);
+  --holds: #0b7a56; --holds-text: #0a6e4d; --holds-soft: rgba(11,122,86,.1); --holds-line: rgba(11,122,86,.32);
+  --bruised: #a87a1f; --bruised-text: #8a6312; --bruised-soft: rgba(168,122,31,.12);
+  --broken: #d2452f; --broken-text: #b5361f; --broken-soft: rgba(210,69,47,.1);
+  --ramp-0: #d2452f; --ramp-1: #c8662b; --ramp-2: #a87a1f; --ramp-3: #3d9776; --ramp-4: #0b7a56;
+  --loan: #556574; --loan-soft: rgba(85,101,116,.12);
+  --band-1: rgba(11,122,86,.1); --band-2: rgba(11,122,86,.18);
+  --grid: rgba(20,24,21,.07); --axis: #5e655f;
+  --accent-ink: #ffffff; --focus: #0b7a56;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  color-scheme: dark;
+  --bg: #0a0d0c; --bg-deep: #060807;
+  --ink: #ecf1ee; --ink-2: #a9b5af; --ink-3: #84918b; --ink-faint: rgba(236,241,238,.24);
+  --card: rgba(17,23,21,.92); --card-solid: #101614; --card-line: rgba(220,255,240,.1);
+  --card-shadow: 0 2px 6px rgba(0,0,0,.05), 0 12px 32px -12px rgba(0,0,0,.14);
+  --hairline: rgba(220,255,240,.085); --hairline-strong: rgba(220,255,240,.16);
+  --surface-3: rgba(220,255,240,.06); --surface-hover: rgba(220,255,240,.06);
+  --holds: #5be3b0; --holds-text: #5be3b0; --holds-soft: rgba(91,227,176,.1); --holds-line: rgba(91,227,176,.32);
+  --bruised: #e3b262; --bruised-text: #e3b262; --bruised-soft: rgba(227,178,98,.11);
+  --broken: #ff6b5a; --broken-text: #ff7a6a; --broken-soft: rgba(255,107,90,.1);
+  --ramp-0: #ff6b5a; --ramp-1: #f5925e; --ramp-2: #e3b262; --ramp-3: #9ed8be; --ramp-4: #5be3b0;
+  --loan: #93a4b4; --loan-soft: rgba(147,164,180,.12);
+  --band-1: rgba(91,227,176,.08); --band-2: rgba(91,227,176,.16);
+  --grid: rgba(220,255,240,.07); --axis: #84918b;
+  --accent-ink: #0a0d0c; --focus: #5be3b0;
+} }
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0a0d0c; --bg-deep: #060807;
+  --ink: #ecf1ee; --ink-2: #a9b5af; --ink-3: #84918b; --ink-faint: rgba(236,241,238,.24);
+  --card: rgba(17,23,21,.92); --card-solid: #101614; --card-line: rgba(220,255,240,.1);
+  --card-shadow: 0 2px 6px rgba(0,0,0,.05), 0 12px 32px -12px rgba(0,0,0,.14);
+  --hairline: rgba(220,255,240,.085); --hairline-strong: rgba(220,255,240,.16);
+  --surface-3: rgba(220,255,240,.06); --surface-hover: rgba(220,255,240,.06);
+  --holds: #5be3b0; --holds-text: #5be3b0; --holds-soft: rgba(91,227,176,.1); --holds-line: rgba(91,227,176,.32);
+  --bruised: #e3b262; --bruised-text: #e3b262; --bruised-soft: rgba(227,178,98,.11);
+  --broken: #ff6b5a; --broken-text: #ff7a6a; --broken-soft: rgba(255,107,90,.1);
+  --ramp-0: #ff6b5a; --ramp-1: #f5925e; --ramp-2: #e3b262; --ramp-3: #9ed8be; --ramp-4: #5be3b0;
+  --loan: #93a4b4; --loan-soft: rgba(147,164,180,.12);
+  --band-1: rgba(91,227,176,.08); --band-2: rgba(91,227,176,.16);
+  --grid: rgba(220,255,240,.07); --axis: #84918b;
+  --accent-ink: #0a0d0c; --focus: #5be3b0;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-ui); font-size: 15px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.mk-wrap { max-width: 1240px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 40px 80px; display: grid; gap: 72px; }
+.mk-intro { display: grid; gap: 14px; max-width: 46rem; }
+.mk-eyebrow { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); font-weight: 500; margin: 0; }
+.mk-intro h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(2.2rem, 1.4rem + 3vw, 3.6rem); line-height: 1; margin: 0; text-wrap: balance; }
+.mk-intro p { margin: 0; color: var(--ink-2); font-size: 17px; max-width: 40em; }
+.mk-toc { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.mk-toc a { color: var(--ink); text-decoration: none; border: 1px solid var(--hairline-strong); border-radius: 999px; padding: 6px 14px; font-size: 14px; }
+.mk-toc a:hover { background: var(--surface-hover); }
+.mk-var { display: grid; gap: 20px; scroll-margin-top: 24px; }
+.mk-var__head { display: grid; gap: 6px; border-top: 1px solid var(--hairline-strong); padding-top: 20px; }
+.mk-var__head h2 { font-family: var(--font-display); font-weight: 400; font-size: 2rem; line-height: 1.05; margin: 0; }
+.mk-var__head p { margin: 0; color: var(--ink-2); max-width: 46em; }
+.mk-var__notes { display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 13px; color: var(--ink-3); }
+.mk-var__notes b { color: var(--ink-2); font-weight: 500; }
+.mk-foot { color: var(--ink-3); font-size: 13px; border-top: 1px solid var(--hairline); padding-top: 16px; }
+</style>
+<main class="mk-wrap">
+<header class="mk-intro">
+  <p class="mk-eyebrow">eVelo · home page · hero studies</p>
+  <h1>Four ways to show Buy, Borrow, Die, and why moving helps</h1>
+  <p>Each variation tells the same story with the same illustrative plan: $2.5M at 60, $80k a year in Austin or $50k in Lisbon, a 6% credit line, 7% growth, 30 years. Each one plays when it scrolls into view. Pick the direction, or the pieces you like from each.</p>
+  <nav class="mk-toc" aria-label="Variations">
+    <a href="#var-a">A · Four-beat loop</a>
+    <a href="#var-b">B · Pick your city</a>
+    <a href="#var-c">C · Scroll story</a>
+    <a href="#var-d">D · Two lives</a>
+  </nav>
+</header>
+<section class="mk-var" id="var-a" aria-labelledby="var-a-title">
+  <div class="mk-var__head">
+    <p class="mk-eyebrow">Variation A</p>
+    <h2 id="var-a-title">The four-beat loop</h2>
+    <p>The hero card tells the whole mechanism in four short beats, Buy, Borrow, Live anywhere, Die, synced to the four step cards below it.</p>
+    <div class="mk-var__notes">
+      <span><b>Best for</b> a first-time visitor who needs the idea in one viewing</span>
+      <span><b>Cost to build</b> medium: one SVG, one timeline function, no library</span>
+      <span><b>Risk</b> a 16-second story asks for attention; the resting frame has to carry it alone</span>
+    </div>
+  </div>
+
+  <div class="va">
+    <div class="va-hero">
+      <div class="va-copy">
+        <p class="va-eyebrow">Buy · Borrow · Die, anywhere in the world</p>
+        <h1 class="va-headline">Live off your portfolio <em>without ever selling it.</em></h1>
+        <p class="va-body">Borrow against your shares for living money, let them keep compounding, and pass them on with the gains never taxed. eVelo replays your plan through thousands of real market histories, then re-prices it city by city to show where in the world it holds best.</p>
+        <div class="va-ctas">
+          <a href="#var-a" class="va-cta va-cta--primary">Stress-test my plan
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+          <a href="#var-a" class="va-cta va-cta--ghost">Explore the Atlas</a>
+        </div>
+        <p class="va-fine">Free · No sign-up · Runs in your browser, nothing leaves your device</p>
+      </div>
+
+      <figure class="va-card">
+        <div class="va-card__head">
+          <div class="va-card__plan">
+            <span class="va-eyebrow">One plan · four beats</span>
+            <span class="va-card__sub">$2.5M portfolio · 30 years, age 60 to 90</span>
+          </div>
+          <div class="va-odds" aria-hidden="true">
+            <span class="va-odds__num" data-odds>88%</span>
+            <span class="va-odds__unit">of futures hold <span data-odds-city>in Lisbon</span></span>
+          </div>
+        </div>
+
+        <div class="va-plot">
+          <svg class="va-svg" viewBox="0 0 640 444" role="img"
+            aria-label="Illustrative 30-year plan. A $2.5M portfolio grows to $19.0M while a credit line pays the living costs. Moving from Austin to Lisbon cuts the yearly draw from $80k to $50k, so the loan ends at $5.9M instead of $9.4M, far below the margin-call line, and the odds the plan holds rise from 63% to 88%. At death the gains tax is wiped out by the step-up in basis, the estate repays the loan, and heirs keep $13.2M.">
+            <defs>
+              <pattern id="va-hatch" patternUnits="userSpaceOnUse" width="5" height="5" patternTransform="rotate(45)">
+                <line class="va-hatch-line" x1="0" y1="0" x2="0" y2="5"/>
+              </pattern>
+            </defs>
+
+            <!-- Map strip -->
+            <g class="va-map">
+              <rect class="va-map__bg" x="34" y="4" width="592" height="78" rx="10"/>
+              <g class="va-map__grid" data-mapgrid></g>
+              <path class="va-arc-track" d="M150 54 Q 295 -10 440 46"/>
+              <path class="va-arc" data-arc d="M150 54 Q 295 -10 440 46" pathLength="1"/>
+              <g data-austin>
+                <circle class="va-pin va-pin--austin" cx="150" cy="54" r="5"/>
+                <text class="va-t va-t--pin" x="150" y="75" text-anchor="middle">Austin <tspan class="va-t--bruised">63%</tspan></text>
+                <g data-austin-chip>
+                  <circle class="va-coin" cx="120" cy="54" r="8"/>
+                  <text class="va-t va-t--coin" x="106" y="58" text-anchor="end">$80k/yr</text>
+                </g>
+              </g>
+              <g data-lisbon>
+                <circle class="va-pin va-pin--lisbon" cx="440" cy="46" r="5"/>
+                <circle class="va-pin-pulse" data-pulse cx="440" cy="46" r="9"/>
+                <text class="va-t va-t--pin" x="440" y="75" text-anchor="middle">Lisbon <tspan class="va-t--holds">88%</tspan></text>
+                <g data-lisbon-chip>
+                  <circle class="va-coin" cx="466" cy="46" r="5"/>
+                  <text class="va-t va-t--coin" x="476" y="50">$50k/yr</text>
+                </g>
+              </g>
+              <g data-travel opacity="0">
+                <circle class="va-coin" data-travel-coin r="8"/>
+              </g>
+            </g>
+
+            <!-- Plot -->
+            <g class="va-axes" data-axes></g>
+            <g data-bars></g>
+            <path class="va-margin" data-margin/>
+            <path class="va-loan-area" data-loan-area/>
+            <path class="va-ghost" data-ghost/>
+            <path class="va-loan" data-loan/>
+            <circle class="va-loan-head" data-loan-head r="3.5"/>
+
+            <!-- Borrow: the person and the yearly coins -->
+            <g data-coins></g>
+            <g data-person class="va-person" opacity="0">
+              <circle cx="0" cy="0" r="3.8"/>
+              <path d="M-6.5 17 C-6.5 8 6.5 8 6.5 17 Z"/>
+              <text class="va-t va-t--coin" data-person-label x="10" y="12">$80k</text>
+            </g>
+
+            <!-- Die: the estate column -->
+            <g data-estate opacity="1">
+              <text class="va-t va-t--estate" data-estate-top x="490" y="104" text-anchor="middle">At 90 · $19.0M</text>
+              <rect class="va-estate__heirs-soft" data-e-heirs-soft/>
+              <rect class="va-estate__heirs" data-e-heirs/>
+              <g data-e-slice>
+                <rect class="va-estate__slice-soft" data-e-slice-soft/>
+                <rect class="va-estate__slice" data-e-slice-rect/>
+              </g>
+              <g data-e-slice-label>
+                <text class="va-t va-t--estate va-t--slice" x="586" y="214" text-anchor="middle">Loan repaid</text>
+                <text class="va-t va-t--mono va-t--slice" x="586" y="233" text-anchor="middle">$5.9M</text>
+              </g>
+              <g data-e-heirs-label>
+                <text class="va-t va-t--inv" x="490" y="276" text-anchor="middle">Heirs</text>
+                <text class="va-t va-t--inv va-t--mono" x="490" y="297" text-anchor="middle">$13.2M</text>
+              </g>
+              <g class="va-heirs-glyph" data-heirs-glyph>
+                <g transform="translate(481 386)"><circle r="3.4"/><path d="M-5.8 15 C-5.8 7 5.8 7 5.8 15 Z"/></g>
+                <g transform="translate(499 389)"><circle r="2.8"/><path d="M-4.8 12 C-4.8 5.5 4.8 5.5 4.8 12 Z"/></g>
+              </g>
+            </g>
+          </svg>
+
+          <ul class="va-key" aria-label="Key">
+            <li data-key="gains"><span class="va-sw va-sw--gains" data-sw-gains></span><span data-gains-text>Step-up in basis: the gains tax is gone</span></li>
+            <li data-key="paid"><span class="va-sw va-sw--paid"></span><span>What you paid $1.0M</span></li>
+            <li data-key="loan"><span class="va-sw va-sw--loan"></span><span data-loan-text>Loan, living in Lisbon</span></li>
+            <li data-key="ghost"><span class="va-sw va-sw--ghost"></span><span>Same life in Austin</span></li>
+            <li data-key="margin"><span class="va-sw va-sw--margin"></span><span>Margin call at 50%</span></li>
+          </ul>
+        </div>
+
+        <figcaption class="va-cap">
+          <span class="va-cap__lead" data-cap-lead>Gains never taxed. Loan repaid. The rest is theirs.</span>
+          <span class="va-cap__detail" data-cap-detail>At death, heirs inherit at a stepped-up basis. The estate repays the $5.9M loan from the top; $13.2M passes on.</span>
+        </figcaption>
+
+        <div class="va-card__foot">
+          <div class="va-ctrl">
+            <button type="button" class="va-btn" data-play aria-label="Play the four beats">
+              <svg class="va-ic va-ic--play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9l7.5-4.5z"/></svg>
+              <svg class="va-ic va-ic--pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 3.5h2.5v9H4.5zM9 3.5h2.5v9H9z"/></svg>
+            </button>
+            <button type="button" class="va-btn" data-replay aria-label="Replay from the start">
+              <svg class="va-ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.2 8a4.8 4.8 0 1 0 1.4-3.4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M3 2.6v3h3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+          <span>Illustrative numbers · a typical path, not a forecast</span>
+        </div>
+        <p class="va-sr" aria-live="polite" data-live></p>
+      </figure>
+    </div>
+
+    <div class="va-steps" role="group" aria-label="How it works, step through the four beats">
+      <button type="button" class="va-step" data-step="0">
+        <span class="va-step__n">01</span>
+        <span class="va-step__title">Buy</span>
+        <span class="va-step__body">Hold assets that grow. Never sell them, so the gains are never taxed.</span>
+        <span class="va-step__bar" aria-hidden="true"><span data-bar></span></span>
+      </button>
+      <button type="button" class="va-step" data-step="1">
+        <span class="va-step__n">02</span>
+        <span class="va-step__title">Borrow</span>
+        <span class="va-step__body">Live on a line of credit secured by the portfolio. The loan grows; so, usually, do the shares.</span>
+        <span class="va-step__bar" aria-hidden="true"><span data-bar></span></span>
+      </button>
+      <button type="button" class="va-step" data-step="2">
+        <span class="va-step__n">03</span>
+        <span class="va-step__title">Live anywhere</span>
+        <span class="va-step__body">Spend the loan where life costs less. A smaller loan gives the portfolio an easier race to win.</span>
+        <span class="va-step__bar" aria-hidden="true"><span data-bar></span></span>
+      </button>
+      <button type="button" class="va-step" data-step="3">
+        <span class="va-step__n">04</span>
+        <span class="va-step__title">Die</span>
+        <span class="va-step__body">Heirs inherit at a stepped-up basis. The estate repays the loan and keeps the rest.</span>
+        <span class="va-step__bar" aria-hidden="true"><span data-bar></span></span>
+      </button>
+    </div>
+  </div>
+
+<style>
+.va { display: grid; gap: 8px; color: var(--ink); }
+.va .va-hero { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 48px; align-items: center; padding: 24px 0 40px; }
+.va .va-copy { display: flex; flex-direction: column; gap: 24px; }
+.va .va-eyebrow { margin: 0; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); font-weight: 500; }
+.va .va-headline { margin: 0; font-family: var(--font-display); font-weight: 400; font-size: clamp(2.6rem, 1.2rem + 4.2vw, 4.6rem); line-height: .98; letter-spacing: -.02em; text-wrap: balance; }
+.va .va-headline em { color: var(--holds-text); }
+.va .va-body { margin: 0; max-width: 34em; font-size: 18px; line-height: 1.55; color: var(--ink-2); text-wrap: pretty; }
+.va .va-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+.va .va-cta { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 52px; border-radius: 999px; white-space: nowrap; text-decoration: none; }
+.va .va-cta--primary { padding: 0 24px; background: var(--holds); color: var(--card-solid); font-weight: 500; font-size: 16px; }
+.va .va-cta--ghost { padding: 0 22px; border: 1px solid var(--hairline); font-size: 15px; color: var(--ink); }
+.va .va-fine { margin: 0; font-size: 13px; color: var(--ink-3); }
+
+.va .va-card { margin: 0; background: var(--card); border: 1px solid var(--card-line); box-shadow: var(--card-shadow); border-radius: 20px; padding: 20px 22px 16px; display: grid; gap: 12px; min-width: 0; }
+.va .va-card__head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+.va .va-card__plan { display: grid; gap: 4px; }
+.va .va-card__sub { font-size: 13px; color: var(--ink-2); }
+.va .va-odds { display: grid; justify-items: end; text-align: right; }
+.va .va-odds__num { font-family: var(--font-display); font-size: 40px; line-height: 1; color: var(--holds-text); font-variant-numeric: tabular-nums; transition: color .4s; }
+.va .va-odds__num.is-mid { color: var(--bruised); }
+.va .va-odds__unit { font-size: 12px; color: var(--ink-3); }
+
+.va .va-plot { position: relative; }
+.va .va-svg { display: block; width: 100%; height: auto; overflow: visible; }
+.va .va-t { font-family: var(--font-ui); font-size: 12px; fill: var(--ink-2); }
+.va .va-t--pin { font-size: 12.5px; fill: var(--ink); font-weight: 500; }
+.va .va-t--coin { font-family: var(--font-mono); font-size: 11.5px; fill: var(--ink-2); }
+.va .va-t--mono { font-family: var(--font-mono); font-size: 12.5px; fill: var(--ink); }
+.va .va-t--estate { font-size: 12.5px; fill: var(--ink); font-weight: 500; }
+.va .va-t--inv { fill: var(--card-solid); font-size: 13px; font-weight: 600; }
+.va .va-t--bruised { fill: var(--bruised); }
+.va .va-t--holds { fill: var(--holds-text); }
+.va .va-t--tick { font-family: var(--font-mono); font-size: 10.5px; fill: var(--axis); }
+.va .va-map__bg { fill: none; stroke: var(--hairline); }
+.va .va-map__grid circle { fill: var(--grid); }
+.va .va-arc-track { fill: none; stroke: var(--hairline); stroke-width: 1.5; stroke-dasharray: 2 5; stroke-linecap: round; }
+.va .va-arc { fill: none; stroke: var(--holds); stroke-width: 2; stroke-linecap: round; stroke-dasharray: 1 1; }
+.va .va-pin { stroke: var(--card-solid); stroke-width: 2; }
+.va .va-pin--austin { fill: var(--bruised); }
+.va .va-pin--lisbon { fill: var(--holds); }
+.va .va-pin-pulse { fill: none; stroke: var(--holds); stroke-width: 1.5; }
+.va .va-coin { fill: var(--bruised); stroke: var(--card-solid); stroke-width: 1.5; }
+.va .va-grid-line { stroke: var(--grid); }
+.va .va-baseline { stroke: var(--axis); stroke-width: 1; }
+.va .va-hatch-line { stroke: var(--holds); stroke-width: 1.3; }
+.va .va-bar-paid { fill: var(--holds); }
+.va .va-bar-soft { fill: var(--holds-soft); }
+.va .va-bar-hatch { fill: url(#va-hatch); }
+.va .va-bar-stepped { fill: var(--band-2); }
+.va .va-margin { fill: none; stroke: var(--broken); stroke-width: 1.6; stroke-dasharray: 5 5; }
+.va .va-loan-area { fill: var(--loan-soft); }
+.va .va-loan { fill: none; stroke: var(--loan); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+.va .va-ghost { fill: none; stroke: var(--loan); stroke-width: 1.4; stroke-dasharray: 3 4; }
+.va .va-loan-head { fill: var(--loan); stroke: var(--card-solid); stroke-width: 1.5; }
+.va .va-person, .va .va-heirs-glyph { fill: var(--ink-2); }
+.va .va-person text { stroke: none; }
+.va .va-estate__heirs-soft { fill: var(--band-2); stroke: var(--holds); stroke-width: 1; }
+.va .va-estate__heirs { fill: var(--holds); }
+.va .va-estate__slice-soft { fill: var(--band-2); }
+.va .va-estate__slice { fill: var(--loan); }
+
+.va .va-key { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; font-size: 12.5px; color: var(--ink-2); position: absolute; left: 9.5%; top: 25.5%; pointer-events: none; }
+.va .va-key li { display: flex; align-items: center; gap: 8px; transition: opacity .3s; }
+.va .va-key li span:last-child { background: var(--card-solid); border-radius: 4px; padding: 0 3px; }
+.va .va-sw { flex: none; width: 16px; height: 10px; border-radius: 2px; }
+.va .va-sw--gains { background: repeating-linear-gradient(45deg, var(--holds) 0 1.3px, var(--holds-soft) 1.3px 3.5px); }
+.va .va-sw--gains.is-stepped { background: var(--band-2); outline: 1px solid var(--holds); outline-offset: -1px; }
+.va .va-sw--paid { background: var(--holds); }
+.va .va-sw--loan { height: 3px; background: var(--loan); border-radius: 2px; }
+.va .va-sw--ghost { height: 0; border-top: 1.5px dashed var(--loan); border-radius: 0; }
+.va .va-sw--margin { height: 0; border-top: 1.6px dashed var(--broken); border-radius: 0; }
+
+.va .va-cap { display: grid; gap: 4px; min-height: 4.6em; border-top: 1px solid var(--hairline); padding-top: 12px; }
+.va .va-cap__lead { font-family: var(--font-display); font-size: 24px; line-height: 1.15; color: var(--ink); }
+.va .va-cap__detail { font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+.va .va-card__foot { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 12px; color: var(--ink-3); }
+.va .va-ctrl { display: flex; gap: 8px; }
+.va .va-btn { width: 44px; height: 44px; border-radius: 999px; border: 1px solid var(--hairline); background: transparent; color: var(--ink); display: inline-grid; place-items: center; cursor: pointer; }
+.va .va-btn:hover { background: var(--holds-soft); }
+.va .va-btn:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.va .va-ic { width: 16px; height: 16px; fill: currentColor; }
+.va .va-btn .va-ic--pause { display: none; }
+.va .va-btn.is-playing .va-ic--pause { display: block; }
+.va .va-btn.is-playing .va-ic--play { display: none; }
+.va .va-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; margin: -1px; }
+
+.va .va-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; border-top: 1px solid var(--hairline); padding-top: 24px; }
+.va .va-step { position: relative; display: flex; flex-direction: column; gap: 8px; text-align: left; font: inherit; color: inherit; background: transparent; border: 1px solid transparent; border-radius: 14px; padding: 16px 16px 20px; cursor: pointer; transition: background-color .35s, border-color .35s; }
+.va .va-step:hover { background: var(--holds-soft); }
+.va .va-step:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.va .va-step.is-active { background: var(--card); border-color: var(--card-line); box-shadow: var(--card-shadow); }
+.va .va-step__n { font-family: var(--font-mono); font-size: 12px; color: var(--holds-text); }
+.va .va-step__title { font-family: var(--font-display); font-size: 30px; line-height: 1.1; }
+.va .va-step__body { font-size: 15px; line-height: 1.55; color: var(--ink-2); }
+.va .va-step__bar { position: absolute; left: 16px; right: 16px; bottom: 9px; height: 2px; border-radius: 2px; background: var(--hairline); overflow: hidden; }
+.va .va-step__bar span { display: block; height: 100%; background: var(--holds); transform-origin: left; transform: scaleX(0); }
+
+@media (max-width: 900px) {
+  .va .va-hero { grid-template-columns: minmax(0, 1fr); gap: 32px; padding: 16px 0 32px; }
+  .va .va-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .va .va-card { padding: 16px 14px 12px; border-radius: 16px; }
+  .va .va-odds__num { font-size: 32px; }
+  .va .va-key { position: static; margin-top: 10px; grid-template-columns: minmax(0, 1fr); }
+  .va .va-key li span:last-child { background: none; padding: 0; }
+  .va .va-t { font-size: 21px; }
+  .va .va-t--pin { font-size: 23px; }
+  .va .va-t--coin { font-size: 20px; }
+  .va .va-t--estate, .va .va-t--mono { font-size: 21px; }
+  .va .va-t--inv { font-size: 20px; }
+  .va .va-t--slice { font-size: 18px; }
+  .va .va-t--tick { font-size: 19px; }
+  .va .va-cap__lead { font-size: 21px; }
+  .va .va-ctas { flex-direction: column; align-items: stretch; }
+  .va .va-steps { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .va .va-step { padding: 12px 12px 18px; }
+  .va .va-step__title { font-size: 26px; }
+  .va .va-body { font-size: 17px; }
+}
+</style>
+
+<script>
+(function () {
+  var root = document.getElementById('var-a');
+  if (!root) return;
+  var $ = function (s) { return root.querySelector(s); };
+  var NS = 'http://www.w3.org/2000/svg';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  // ---------- Illustrative model ----------
+  var YEARS = 30, P = [], LA = [], LL = [];
+  (function () {
+    var a = 0, l = 0;
+    for (var t = 0; t <= YEARS; t++) {
+      P.push(2.5 * Math.pow(1.07, t)); LA.push(a); LL.push(l);
+      a = (a + 0.08 * Math.pow(1.03, t)) * 1.06;   // Austin $80k/yr, inflating 3%, 6% interest capitalised
+      l = (l + 0.05 * Math.pow(1.03, t)) * 1.06;   // Lisbon $50k/yr
+    }
+  })();
+  var BASIS = 1.0, FINAL = P[YEARS], LOAN_END = LL[YEARS];
+
+  // ---------- Geometry ----------
+  var X0 = 46, X1 = 420, YT = 100, YB = 372, VMAX = 20;
+  var x = function (k) { return X0 + k * (X1 - X0) / YEARS; };
+  var y = function (v) { return YB - v * (YB - YT) / VMAX; };
+  var BW = 8.6, EX = 450, EW = 80;
+
+  function el(tag, attrs, parent) {
+    var n = document.createElementNS(NS, tag);
+    for (var k in attrs) n.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(n);
+    return n;
+  }
+
+  // Axes
+  var axes = $('[data-axes]');
+  [5, 10, 15, 20].forEach(function (v) {
+    el('line', { 'class': 'va-grid-line', x1: X0 - 6, x2: X1 + 6, y1: y(v), y2: y(v) }, axes);
+    var t = el('text', { 'class': 'va-t va-t--tick', x: 34, y: y(v) + 4, 'text-anchor': 'end' }, axes);
+    t.textContent = '$' + v + 'M';
+  });
+  el('line', { 'class': 'va-baseline', x1: X0 - 6, x2: EX + EW + 4, y1: YB, y2: YB }, axes);
+  [[0, 'Age 60', 'start'], [15, '75', 'middle'], [30, '90', 'middle']].forEach(function (d) {
+    var t = el('text', { 'class': 'va-t va-t--tick', x: d[0] === 0 ? X0 - 6 : x(d[0]), y: 436, 'text-anchor': d[2] }, axes);
+    t.textContent = d[1];
+  });
+
+  // Map grid dots (a faint world-map texture)
+  var mg = $('[data-mapgrid]');
+  for (var gx = 50; gx < 620; gx += 16) for (var gy = 14; gy < 80; gy += 14) {
+    var land = (gx < 250 && gy > 20 && gy < 70) || (gx > 400 && gx < 560 && gy > 18 && gy < 66);
+    if (land) el('circle', { cx: gx, cy: gy, r: 1.3 }, mg);
+  }
+
+  // Bars
+  var barsG = $('[data-bars]'), bars = [];
+  for (var k = 0; k <= YEARS; k++) {
+    var g = el('g', {}, barsG);
+    bars.push({
+      g: g,
+      soft: el('rect', { 'class': 'va-bar-soft', x: x(k) - BW / 2, width: BW }, g),
+      hatch: el('rect', { 'class': 'va-bar-hatch', x: x(k) - BW / 2, width: BW }, g),
+      step: el('rect', { 'class': 'va-bar-stepped', x: x(k) - BW / 2, width: BW }, g),
+      paid: el('rect', { 'class': 'va-bar-paid', x: x(k) - BW / 2, width: BW }, g)
+    });
+  }
+
+  // Coins (beat 2): one every two years
+  var coinsG = $('[data-coins]'), coins = [];
+  for (var c = 0; c < 15; c++) coins.push(el('circle', { 'class': 'va-coin', r: 5, opacity: 0 }, coinsG));
+
+  // Estate column static geometry
+  var eHeirsTop = y(FINAL - LOAN_END), eTop = y(FINAL);
+  function setRect(r, x0, y0, w, h) { r.setAttribute('x', x0); r.setAttribute('y', y0); r.setAttribute('width', w); r.setAttribute('height', Math.max(0, h)); }
+  setRect($('[data-e-heirs-soft]'), EX, eHeirsTop, EW, YB - eHeirsTop);
+  setRect($('[data-e-heirs]'), EX, eHeirsTop, EW, YB - eHeirsTop);
+  setRect($('[data-e-slice-soft]'), EX, eTop, EW, eHeirsTop - eTop);
+  setRect($('[data-e-slice-rect]'), EX, eTop, EW, eHeirsTop - eTop);
+  $('[data-margin]').setAttribute('d', P.map(function (v, i) { return (i ? 'L' : 'M') + x(i).toFixed(1) + ' ' + y(v * 0.5).toFixed(1); }).join(''));
+  $('[data-ghost]').setAttribute('d', LA.map(function (v, i) { return (i ? 'L' : 'M') + x(i).toFixed(1) + ' ' + y(v).toFixed(1); }).join(''));
+
+  var arc = $('[data-arc]');
+  var arcLen = arc.getTotalLength();
+
+  // ---------- Easing helpers ----------
+  var clamp = function (v) { return v < 0 ? 0 : v > 1 ? 1 : v; };
+  var ease = function (v) { v = clamp(v); return v < .5 ? 4 * v * v * v : 1 - Math.pow(-2 * v + 2, 3) / 2; };
+  var out = function (v) { v = clamp(v); return 1 - Math.pow(1 - v, 3); };
+  var seg = function (t, a, d) { return clamp((t - a) / d); };
+  var fmtM = function (v) { return '$' + v.toFixed(1) + 'M'; };
+  var op = function (n, v) { n.setAttribute('opacity', v.toFixed(3)); };
+
+  var CAPS = [
+    ['Buy, and hold.', 'A $2.5M portfolio of shares. You paid $1.0M; the other $1.5M is gains, taxed only if you sell. So you never sell.'],
+    ['Borrow for living money.', 'Each year a credit line pays your $80k. The shares stay untouched and keep compounding, while the loan grows with interest.'],
+    ['Spend it where life costs less.', 'The same life in Lisbon costs $50k, not $80k. The loan grows slower, the gap widens, and the odds rise from 63% to 88%.'],
+    ['Gains never taxed. Loan repaid. The rest is theirs.', 'At death, heirs inherit at a stepped-up basis. The estate repays the $5.9M loan from the top; $13.2M passes on.']
+  ];
+
+  var D = 4, TOTAL = 16;
+  var capLead = $('[data-cap-lead]'), capDetail = $('[data-cap-detail]');
+  var oddsN = $('[data-odds]'), oddsCity = $('[data-odds-city]');
+  var gainsText = $('[data-gains-text]'), swGains = $('[data-sw-gains]'), loanText = $('[data-loan-text]');
+  var keys = {}; root.querySelectorAll('[data-key]').forEach(function (n) { keys[n.getAttribute('data-key')] = n; });
+  var steps = Array.prototype.slice.call(root.querySelectorAll('[data-step]'));
+  var stepBars = steps.map(function (s) { return s.querySelector('[data-bar]'); });
+  var loanP = $('[data-loan]'), loanA = $('[data-loan-area]'), loanHead = $('[data-loan-head]');
+  var person = $('[data-person]'), personLabel = $('[data-person-label]');
+  var lastBeat = -1;
+
+  function loanAt(k, m) { return LA[k] * (1 - m) + LL[k] * m; }
+
+  // ---------- The whole story as a function of time t in [0, 16] ----------
+  function render(t) {
+    t = Math.max(0, Math.min(TOTAL, t));
+    var beat = Math.min(3, Math.floor(t / D));
+
+    // Beat 1: the portfolio fills, year by year
+    var grow = ease(seg(t, 0.2, 3.2)) * (YEARS + 1.6);
+    // Beat 2: the loan draws, coins drop
+    var lp = seg(t, 4.2, 3.2), ly = lp * YEARS;
+    // Beat 3: flight, smaller coin, flatter loan, odds tick
+    var a = ease(seg(t, 8.2, 1.5)), m = ease(seg(t, 9.4, 2.1));
+    // Beat 4: step-up, estate, loan lifts off, heirs
+    var d1 = ease(seg(t, 12.1, 1.0)), e = ease(seg(t, 12.4, 0.8)), s = ease(seg(t, 13.3, 1.1)), h = ease(seg(t, 14.2, 0.9));
+
+    // Bars
+    var curYear = 0;
+    for (var k = 0; k <= YEARS; k++) {
+      var p = out(grow - k);
+      if (p > 0) curYear = k;
+      var hv = P[k] * p, paid = Math.min(hv, BASIS), gain = Math.max(0, hv - BASIS);
+      var b = bars[k];
+      setRect(b.paid, x(k) - BW / 2, y(paid), BW, YB - y(paid));
+      [b.soft, b.hatch, b.step].forEach(function (r) { setRect(r, x(k) - BW / 2, y(paid + gain), BW, y(paid) - y(paid + gain)); });
+      op(b.hatch, 1 - d1); op(b.soft, 1 - d1); op(b.step, d1);
+      op(b.g, 1 - 0.55 * e);
+    }
+
+    // Loan path
+    var L = [];
+    var n = Math.floor(ly);
+    for (var i = 0; i <= n; i++) L.push([x(i), y(loanAt(i, m))]);
+    if (ly > n && n < YEARS) {
+      var f = ly - n, v = loanAt(n, m) * (1 - f) + loanAt(n + 1, m) * f;
+      L.push([x(n + f), y(v)]);
+    }
+    var on = lp > 0;
+    if (on) {
+      var d = L.map(function (pt, i) { return (i ? 'L' : 'M') + pt[0].toFixed(1) + ' ' + pt[1].toFixed(1); }).join('');
+      loanP.setAttribute('d', d);
+      var last = L[L.length - 1];
+      loanA.setAttribute('d', d + 'L' + last[0].toFixed(1) + ' ' + YB + 'L' + X0 + ' ' + YB + 'Z');
+      loanHead.setAttribute('cx', last[0]); loanHead.setAttribute('cy', last[1]);
+    }
+    op(loanP, on ? 1 : 0); op(loanA, on ? 1 : 0);
+    op(loanHead, on ? (1 - e) : 0);
+    op($('[data-margin]'), seg(t, 4.0, 0.6) * 0.9);
+    op($('[data-ghost]'), m * 0.75);
+
+    // Person and coins (beat 2)
+    var pv = seg(t, 4.0, 0.3) * (1 - seg(t, 8.0, 0.5));
+    op(person, pv);
+    var px = on ? L[L.length - 1][0] : X0;
+    person.setAttribute('transform', 'translate(' + px.toFixed(1) + ' 384)');
+    coins.forEach(function (cn, ci) {
+      var yr = ci * 2, t0 = 4.2 + (yr / YEARS) * 3.2, q = seg(t, t0, 0.55);
+      if (q <= 0 || q >= 1) { op(cn, 0); return; }
+      var cy0 = y(LA[yr]), cy1 = 386;
+      cn.setAttribute('cx', x(yr)); cn.setAttribute('cy', (cy0 + (cy1 - cy0) * q * q).toFixed(1));
+      op(cn, q < .8 ? 1 : (1 - q) / .2);
+    });
+
+    // Map: Austin chip from beat 2, arc + travelling coin in beat 3
+    op($('[data-austin-chip]'), seg(t, 4.0, 0.4) * (1 - 0.5 * a));
+    op($('[data-austin]'), 1 - 0.35 * m);
+    arc.style.strokeDashoffset = (1 - a).toFixed(3);
+    op(arc, a > 0 ? 1 : 0);
+    var tr = $('[data-travel]'), tc = $('[data-travel-coin]');
+    if (a > 0 && a < 1) {
+      var pt = arc.getPointAtLength(a * arcLen);
+      tc.setAttribute('cx', pt.x); tc.setAttribute('cy', pt.y - 9);
+      tc.setAttribute('r', (8 - 3 * a).toFixed(2));
+      op(tr, 1);
+    } else op(tr, 0);
+    op($('[data-lisbon]'), 0.35 + 0.65 * seg(t, 9.4, 0.5));
+    op($('[data-lisbon-chip]'), seg(t, 9.5, 0.5));
+    var pulse = $('[data-pulse]');
+    var pq = seg(t, 9.4, 1.4);
+    pulse.setAttribute('r', (6 + 10 * pq).toFixed(1));
+    op(pulse, pq > 0 && pq < 1 ? (1 - pq) * 0.8 : 0);
+
+    // Odds
+    var odds = Math.round(63 + 25 * m);
+    oddsN.textContent = odds + '%';
+    oddsN.classList.toggle('is-mid', odds < 75);
+    oddsCity.textContent = m > 0.5 ? 'in Lisbon' : 'in Austin';
+
+    // Key
+    keys.loan.style.opacity = seg(t, 4.0, 0.5);
+    keys.ghost.style.opacity = m;
+    keys.margin.style.opacity = seg(t, 4.0, 0.5);
+    var gainNow = P[Math.min(YEARS, curYear)] - BASIS;
+    gainsText.textContent = d1 > 0.5 ? 'Step-up in basis: the gains tax is gone' : 'Gains ' + fmtM(Math.max(1.5, gainNow)) + ' · taxed only if you sell';
+    swGains.classList.toggle('is-stepped', d1 > 0.5);
+    loanText.textContent = m > 0.5 ? 'Loan, living in Lisbon' : (t < 8 ? 'Credit line · shares untouched' : 'Loan, living in Austin');
+
+    // Estate
+    op($('[data-estate]'), e);
+    op($('[data-estate-top]'), e);
+    $('[data-e-slice]').setAttribute('transform', 'translate(' + (96 * s).toFixed(1) + ' 0)');
+    op($('[data-e-slice-rect]'), s);
+    op($('[data-e-slice-label]'), seg(t, 14.0, 0.5));
+    op($('[data-e-heirs]'), h);
+    op($('[data-e-heirs-label]'), h);
+    op($('[data-heirs-glyph]'), h);
+
+    // Steps + caption
+    steps.forEach(function (st, si) {
+      st.classList.toggle('is-active', si === beat);
+      if (si === beat) st.setAttribute('aria-current', 'step'); else st.removeAttribute('aria-current');
+      stepBars[si].style.transform = 'scaleX(' + clamp((t - si * D) / D).toFixed(3) + ')';
+    });
+    if (beat !== lastBeat) {
+      capLead.textContent = CAPS[beat][0];
+      capDetail.textContent = CAPS[beat][1];
+      lastBeat = beat;
+    }
+  }
+
+  // ---------- Playback ----------
+  var playBtn = $('[data-play]'), replayBtn = $('[data-replay]'), live = $('[data-live]');
+  var t = TOTAL, playing = false, inView = false, raf = 0, prev = 0, cycles = 0, hold = 0;
+
+  function setPlaying(v) {
+    playing = v;
+    playBtn.classList.toggle('is-playing', v);
+    playBtn.setAttribute('aria-label', v ? 'Pause the four beats' : 'Play the four beats');
+    tick.kick();
+  }
+  function frame(now) {
+    raf = 0;
+    if (!playing || !inView) return;
+    var dt = Math.max(0, Math.min(0.05, (now - prev) / 1000)); prev = now;
+    if (reduce.matches) {
+      // No motion: step a whole beat at a time, showing each beat's finished frame.
+      hold += dt;
+      if (hold >= D) { hold = 0; var nb = Math.floor(t / D) + 1; if (nb > 3) { t = TOTAL; render(t); setPlaying(false); return; } t = nb * D + D - 0.001; if (nb === 3) t = TOTAL; render(t); }
+    } else if (t < TOTAL) {
+      t = Math.min(TOTAL, t + dt); render(t);
+    } else {
+      hold += dt;
+      if (hold > 3.5) {
+        hold = 0; cycles++;
+        if (cycles >= 2) { setPlaying(false); return; }
+        t = 0; render(t);
+      }
+    }
+    raf = requestAnimationFrame(frame);
+  }
+  var tick = { kick: function () { if (playing && inView && !raf) { prev = performance.now(); raf = requestAnimationFrame(frame); } } };
+
+  function jump(beat, userInitiated) {
+    hold = 0;
+    if (reduce.matches || !playing) t = beat === 3 ? TOTAL : beat * D + D - 0.001;
+    else t = beat * D;
+    render(t);
+    if (userInitiated) live.textContent = 'Step ' + (beat + 1) + ' of 4. ' + CAPS[beat][0] + ' ' + CAPS[beat][1];
+  }
+
+  steps.forEach(function (st, i) { st.addEventListener('click', function () { jump(i, true); }); });
+  playBtn.addEventListener('click', function () {
+    if (playing) { setPlaying(false); live.textContent = 'Paused.'; return; }
+    cycles = 1; hold = 0;
+    if (t >= TOTAL) { t = reduce.matches ? D - 0.001 : 0; render(t); }
+    setPlaying(true);
+    live.textContent = 'Playing.';
+  });
+  replayBtn.addEventListener('click', function () {
+    cycles = 1; hold = 0;
+    t = reduce.matches ? D - 0.001 : 0;
+    render(t);
+    live.textContent = 'Replaying from step 1. ' + CAPS[0][0];
+    setPlaying(true);
+  });
+
+  // Resting frame first (complete without any animation)
+  render(TOTAL);
+
+  var started = false;
+  var io = new IntersectionObserver(function (entries) {
+    inView = entries[0].isIntersecting;
+    if (inView && !started && !reduce.matches) { started = true; t = 0; render(0); setPlaying(true); }
+    tick.kick();
+  }, { threshold: 0.35 });
+  io.observe($('.va-card'));
+})();
+</script>
+</section>
+<section class="mk-var" id="var-b" aria-labelledby="var-b-title">
+  <div class="mk-var__head">
+    <p class="mk-eyebrow">Variation B</p>
+    <h2 id="var-b-title">Pick your city</h2>
+    <p>The race chart is the hero: tap a city and the loan line glides to that city's spending, while the odds and what your heirs inherit at 90 update beside it.</p>
+    <div class="mk-var__notes">
+      <span><b>Best for</b> visitors who learn by poking; the geographic lever is one tap away.</span>
+      <span><b>Cost to build</b> medium: one SVG chart, a tween, a radiogroup.</span>
+      <span><b>Risk</b> a single median path can read as a promise; the odds chip carries the uncertainty.</span>
+    </div>
+  </div>
+
+  <div class="vb">
+    <div class="vb-stage">
+      <div class="vb-copy">
+        <p class="vb-eyebrow">Buy · Borrow · Die, anywhere in the world</p>
+        <h3 class="vb-headline">Live off your portfolio <em>without ever selling it.</em></h3>
+        <p class="vb-body">Borrow against your shares for living money and let them keep compounding. Where you spend it changes the race. Pick a city: where life costs less, you borrow less, and the loan stays far from the line where the lender steps in.</p>
+        <p class="vb-body vb-body--small">Your heirs inherit at a stepped-up basis. The estate repays the loan, they keep the rest, and the gains are never taxed.</p>
+        <div class="vb-ctas">
+          <a href="#var-b" class="vb-cta vb-cta--primary">Stress-test my plan
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+          <a href="#var-b" class="vb-cta vb-cta--ghost">Explore the Atlas</a>
+        </div>
+        <p class="vb-fine">Free · No sign-up · Runs in your browser, nothing leaves your device</p>
+      </div>
+
+      <figure class="vb-card">
+        <div class="vb-card-head">
+          <span class="vb-eyebrow" id="vb-pick-label">Same $2.5M plan · where do you live?</span>
+          <span class="vb-hint" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 2v8M3.5 6.5 7 10l3.5-3.5"/></svg>
+            Tap a city
+          </span>
+        </div>
+
+        <div class="vb-chips-wrap">
+          <div class="vb-chips" role="radiogroup" aria-labelledby="vb-pick-label">
+            <button type="button" role="radio" class="vb-chip" data-city="ny" aria-checked="false" tabindex="-1">New York</button>
+            <button type="button" role="radio" class="vb-chip" data-city="lon" aria-checked="false" tabindex="-1">London</button>
+            <button type="button" role="radio" class="vb-chip" data-city="aus" aria-checked="true" tabindex="0">Austin <span class="vb-home">home</span></button>
+            <button type="button" role="radio" class="vb-chip" data-city="lis" aria-checked="false" tabindex="-1">Lisbon</button>
+            <button type="button" role="radio" class="vb-chip" data-city="med" aria-checked="false" tabindex="-1">Medellín</button>
+            <button type="button" role="radio" class="vb-chip" data-city="cm" aria-checked="false" tabindex="-1">Chiang Mai</button>
+          </div>
+          <svg class="vb-flight" aria-hidden="true"><path class="vb-flight-path" d=""/><circle class="vb-flight-dot" r="3.5" cx="-20" cy="-20"/></svg>
+        </div>
+
+        <div class="vb-chart-wrap">
+          <svg class="vb-chart" role="img" aria-label=""></svg>
+        </div>
+
+        <div class="vb-read">
+          <div class="vb-summary">
+            <span class="vb-city-name">Austin</span>
+            <div class="vb-stats">
+              <div class="vb-stat">
+                <span class="vb-stat-k">Living money</span>
+                <span class="vb-stat-v" data-out="spend">$80k<small>/yr</small></span>
+              </div>
+              <div class="vb-stat">
+                <span class="vb-stat-k">Futures that hold</span>
+                <span class="vb-stat-v vb-odds" data-out="odds">63%</span>
+              </div>
+            </div>
+            <p class="vb-note" data-out="note"></p>
+          </div>
+          <dl class="vb-ledger" aria-label="At age 90">
+            <div class="vb-ledger-title">At 90</div>
+            <div class="vb-row"><dt>Portfolio</dt><dd data-out="p90">$19.0M</dd></div>
+            <div class="vb-row"><dt><span class="vb-op" aria-hidden="true">−</span>Loan repaid</dt><dd data-out="l90">$9.4M</dd></div>
+            <div class="vb-row vb-row--total"><dt><span class="vb-op" aria-hidden="true">=</span>To your heirs</dt><dd data-out="heirs">$9.6M</dd></div>
+            <div class="vb-row vb-row--tax"><dt>Capital-gains tax if sold</dt><dd><s data-out="tax">$3.6M</s> <span aria-hidden="true">→</span> <b>$0</b> <span class="vb-step">step-up</span></dd></div>
+          </dl>
+        </div>
+
+        <div class="vb-foot">
+          <span class="vb-key"><i class="vb-sw vb-sw--p"></i>Portfolio</span>
+          <span class="vb-key"><i class="vb-sw vb-sw--l"></i>Loan</span>
+          <span class="vb-key"><i class="vb-sw vb-sw--m"></i>Margin call</span>
+          <span class="vb-foot-spacer"></span>
+          <span>Illustrative numbers · typical path</span>
+          <button type="button" class="vb-replay" aria-label="Replay the city demo">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 7a4.5 4.5 0 1 0 1.4-3.3"/><path d="M2.5 1.8v2.5H5"/></svg>
+            Replay
+          </button>
+        </div>
+        <p class="vb-sr" aria-live="polite" data-out="live"></p>
+      </figure>
+    </div>
+  </div>
+
+  <style>
+    .vb { container-type: inline-size; }
+    .vb .vb-stage {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      gap: 48px;
+      align-items: center;
+      padding: 40px 0 48px;
+    }
+    .vb .vb-copy { display: flex; flex-direction: column; gap: 22px; }
+    .vb .vb-eyebrow {
+      margin: 0; font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--ink-3); font-weight: 500;
+    }
+    .vb .vb-headline {
+      margin: 0; font-family: var(--font-display); font-weight: 400;
+      font-size: clamp(2.6rem, 1.2rem + 4vw, 4.6rem); line-height: .98; letter-spacing: -.02em;
+      text-wrap: balance;
+    }
+    .vb .vb-headline em { color: var(--holds-text); }
+    .vb .vb-body { margin: 0; max-width: 34em; font-size: 18px; line-height: 1.55; color: var(--ink-2); text-wrap: pretty; }
+    .vb .vb-body--small { font-size: 15px; color: var(--ink-3); }
+    .vb .vb-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+    .vb .vb-cta {
+      display: inline-flex; align-items: center; gap: 10px; height: 52px; border-radius: 999px;
+      text-decoration: none; white-space: nowrap; transition: background-color .2s, transform .2s;
+    }
+    .vb .vb-cta--primary { padding: 0 24px; background: var(--holds); color: var(--card-solid); font-weight: 500; font-size: 16px; }
+    .vb .vb-cta--primary:hover svg { transform: translateX(2px); }
+    .vb .vb-cta--primary svg { transition: transform .2s; }
+    .vb .vb-cta--ghost { padding: 0 22px; border: 1px solid var(--hairline); color: var(--ink); font-size: 15px; }
+    .vb .vb-cta--ghost:hover { background: var(--holds-soft); }
+    .vb .vb-fine { margin: 0; font-size: 13px; color: var(--ink-3); }
+
+    /* Card */
+    .vb .vb-card {
+      margin: 0; position: relative; display: grid; gap: 14px; padding: 22px 22px 16px;
+      background: var(--card); border: 1px solid var(--card-line); border-radius: 22px;
+      box-shadow: var(--card-shadow); min-width: 0;
+    }
+    .vb .vb-card-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 22px; }
+    .vb .vb-hint {
+      display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--holds-text);
+      font-weight: 500; opacity: 0; transform: translateY(-4px); transition: opacity .4s, transform .4s;
+      white-space: nowrap;
+    }
+    .vb .vb-hint.is-on { opacity: 1; transform: none; }
+    .vb .vb-hint svg { animation: vb-nudge 1.6s ease-in-out infinite; }
+    @keyframes vb-nudge { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(2px); } }
+
+    .vb .vb-chips-wrap { position: relative; }
+    .vb .vb-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+    .vb .vb-chip {
+      appearance: none; font: inherit; font-size: 13.5px; color: var(--ink-2); cursor: pointer;
+      display: inline-flex; align-items: center; gap: 5px; min-height: 40px; padding: 0 12px;
+      border-radius: 999px; border: 1px solid var(--hairline); background: transparent;
+      transition: background-color .25s, border-color .25s, color .25s, transform .25s;
+    }
+    .vb .vb-chip:hover { color: var(--ink); border-color: var(--ink-3); }
+    .vb .vb-chip[aria-checked="true"] { color: var(--ink); background: var(--holds-soft); border-color: var(--holds); font-weight: 500; }
+    .vb .vb-chip:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+    .vb .vb-chip.is-land { animation: vb-land .5s ease-out; }
+    @keyframes vb-land { 0% { transform: scale(1); } 40% { transform: scale(1.07); } 100% { transform: scale(1); } }
+    .vb .vb-home {
+      font-size: 9.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3);
+      border: 1px solid var(--hairline); border-radius: 999px; padding: 1px 6px; font-weight: 500;
+    }
+    .vb .vb-flight { position: absolute; left: 0; top: -36px; width: 100%; height: calc(100% + 36px); overflow: visible; pointer-events: none; }
+    .vb .vb-flight-path { fill: none; stroke: var(--holds); stroke-width: 1.5; stroke-linecap: round; opacity: .8; }
+    .vb .vb-flight-dot { fill: var(--holds); }
+
+    .vb .vb-chart-wrap { min-width: 0; }
+    .vb .vb-chart { display: block; width: 100%; height: auto; overflow: visible; }
+    .vb .vb-chart text { font-family: var(--font-ui); font-size: 11px; fill: var(--ink-3); }
+    .vb .vb-chart .vb-grid { stroke: var(--grid); }
+    .vb .vb-chart .vb-axis { stroke: var(--axis); opacity: .5; }
+    .vb .vb-chart .vb-band { fill: var(--band-1); }
+    .vb .vb-chart .vb-heirs { fill: var(--holds-soft); }
+    .vb .vb-chart .vb-loanarea { fill: var(--loan-soft); }
+    .vb .vb-chart .vb-pline { fill: none; stroke: var(--holds); stroke-width: 2.25; stroke-linejoin: round; }
+    .vb .vb-chart .vb-lline { fill: none; stroke: var(--loan); stroke-width: 2.25; stroke-linejoin: round; }
+    .vb .vb-chart .vb-ghost { fill: none; stroke: var(--ink-3); stroke-width: 1.25; stroke-dasharray: 1 4; stroke-linecap: round; opacity: .85; transition: opacity .4s; }
+    .vb .vb-chart .vb-mline { fill: none; stroke: var(--broken); stroke-width: 1.25; stroke-dasharray: 6 4; opacity: .75; }
+    .vb .vb-chart .vb-t-p { fill: var(--holds-text); font-weight: 600; font-family: var(--font-mono); }
+    .vb .vb-chart .vb-t-l { fill: var(--loan); font-weight: 600; font-family: var(--font-mono); }
+    .vb .vb-chart .vb-t-m { fill: var(--broken); font-size: 10.5px; }
+    .vb .vb-chart .vb-t-heirs { fill: var(--holds-text); font-weight: 500; font-size: 12px; }
+    .vb .vb-chart .vb-t-ghost { font-size: 10px; }
+    .vb .vb-chart .vb-cross { fill: var(--card-solid); stroke: var(--broken); stroke-width: 2; }
+    .vb .vb-chart .vb-t-cross { fill: var(--broken); font-size: 10.5px; font-weight: 500; }
+    .vb .vb-chart .vb-halo { stroke: var(--card-solid); stroke-width: 4; stroke-linejoin: round; paint-order: stroke; }
+
+    /* Readout */
+    .vb .vb-read { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 18px; border-top: 1px solid var(--hairline); padding-top: 14px; }
+    .vb .vb-summary { display: grid; gap: 8px; align-content: start; }
+    .vb .vb-city-name { font-family: var(--font-display); font-size: 28px; line-height: 1; }
+    .vb .vb-stats { display: flex; gap: 22px; flex-wrap: wrap; }
+    .vb .vb-stat { display: grid; gap: 2px; }
+    .vb .vb-stat-k { font-size: 12px; color: var(--ink-3); }
+    .vb .vb-stat-v { font-family: var(--font-mono); font-size: 22px; font-weight: 500; color: var(--ink); font-variant-numeric: tabular-nums; line-height: 1.1; }
+    .vb .vb-stat-v small { font-size: 13px; color: var(--ink-3); font-weight: 400; }
+    .vb .vb-odds { transition: color .5s; }
+    .vb .vb-odds[data-band="0"] { color: var(--ramp-0); }
+    .vb .vb-odds[data-band="1"] { color: var(--ramp-1); }
+    .vb .vb-odds[data-band="2"] { color: var(--ramp-2); }
+    .vb .vb-odds[data-band="3"] { color: var(--ramp-3); }
+    .vb .vb-odds[data-band="4"] { color: var(--ramp-4); }
+    .vb .vb-note { margin: 0; font-size: 13px; color: var(--ink-2); line-height: 1.45; text-wrap: pretty; }
+    .vb .vb-note.is-warn { color: var(--broken); }
+
+    .vb .vb-ledger { margin: 0; display: grid; gap: 4px; font-size: 14px; background: var(--holds-soft); border-radius: 14px; padding: 12px 14px; align-content: start; }
+    .vb .vb-ledger-title { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); font-weight: 500; margin-bottom: 2px; }
+    .vb .vb-row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+    .vb .vb-row dt { color: var(--ink-2); display: inline-flex; gap: 6px; }
+    .vb .vb-row dd { margin: 0; font-family: var(--font-mono); font-variant-numeric: tabular-nums; color: var(--ink); white-space: nowrap; }
+    .vb .vb-op { display: inline-block; width: 1ch; color: var(--ink-3); font-family: var(--font-mono); }
+    .vb .vb-row--total { border-top: 1px solid var(--hairline); padding-top: 4px; }
+    .vb .vb-row--total dt { color: var(--ink); font-weight: 500; }
+    .vb .vb-row--total dd { color: var(--holds-text); font-weight: 600; font-size: 16px; }
+    .vb .vb-row--tax { font-size: 12.5px; flex-wrap: wrap; row-gap: 0; margin-top: 4px; }
+    .vb .vb-row--tax dt { color: var(--ink-3); }
+    .vb .vb-row--tax dd { font-size: 12.5px; color: var(--ink-2); }
+    .vb .vb-row--tax s { color: var(--ink-3); text-decoration-color: var(--broken); text-decoration-thickness: 1.5px; }
+    .vb .vb-row--tax b { color: var(--holds-text); font-weight: 600; }
+    .vb .vb-step { font-family: var(--font-ui); font-size: 11px; color: var(--holds-text); border: 1px solid var(--holds); border-radius: 999px; padding: 0 6px; margin-left: 2px; }
+
+    .vb .vb-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px; font-size: 12px; color: var(--ink-3); border-top: 1px solid var(--hairline); padding-top: 10px; }
+    .vb .vb-foot-spacer { flex: 1; }
+    .vb .vb-key { display: inline-flex; align-items: center; gap: 6px; }
+    .vb .vb-sw { display: inline-block; width: 14px; height: 0; border-top: 2px solid var(--holds); }
+    .vb .vb-sw--l { border-top-color: var(--loan); }
+    .vb .vb-sw--m { border-top: 1.5px dashed var(--broken); }
+    .vb .vb-replay {
+      appearance: none; font: inherit; font-size: 12px; color: var(--ink-2); background: transparent; cursor: pointer;
+      display: inline-flex; align-items: center; gap: 6px; min-height: 32px; padding: 0 10px;
+      border: 1px solid var(--hairline); border-radius: 999px;
+    }
+    .vb .vb-replay:hover { color: var(--ink); border-color: var(--ink-3); }
+    .vb .vb-replay:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+    .vb .vb-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; margin: -1px; }
+
+    @container (max-width: 900px) {
+      .vb .vb-stage { grid-template-columns: minmax(0, 1fr); gap: 36px; padding-top: 16px; }
+    }
+    @container (max-width: 520px) {
+      .vb .vb-card { padding: 16px 14px 12px; border-radius: 18px; }
+      .vb .vb-read { grid-template-columns: minmax(0, 1fr); }
+      .vb .vb-body { font-size: 16px; }
+      .vb .vb-chip { padding: 0 12px; font-size: 13.5px; }
+      .vb .vb-foot-spacer { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .vb .vb-hint svg, .vb .vb-chip.is-land { animation: none; }
+      .vb .vb-hint, .vb .vb-odds, .vb .vb-chip, .vb .vb-chart .vb-ghost { transition: none; }
+    }
+  </style>
+
+  <script>
+  (function () {
+    var root = document.getElementById('var-b');
+    if (!root) return;
+    var NS = 'http://www.w3.org/2000/svg';
+    var card = root.querySelector('.vb-card');
+    var svg = root.querySelector('.vb-chart');
+    var chips = Array.prototype.slice.call(root.querySelectorAll('.vb-chip'));
+    var hint = root.querySelector('.vb-hint');
+    var flight = root.querySelector('.vb-flight');
+    var fPath = root.querySelector('.vb-flight-path');
+    var fDot = root.querySelector('.vb-flight-dot');
+    var replayBtn = root.querySelector('.vb-replay');
+    var cityName = root.querySelector('.vb-city-name');
+    function out(k) { return root.querySelector('[data-out="' + k + '"]'); }
+    var oSpend = out('spend'), oOdds = out('odds'), oNote = out('note'), oP90 = out('p90'),
+        oL90 = out('l90'), oHeirs = out('heirs'), oTax = out('tax'), oLive = out('live');
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    /* ---- Illustrative model (shared brief) ---- */
+    var P0 = 2.5e6, BASIS = 1.0e6, G = 0.07, R = 0.06, INF = 0.03, YEARS = 30, AGE0 = 60, MARGIN = 0.5, TAX = 0.2;
+    var CITIES = {
+      ny:  { name: 'New York',   place: 'New York',   spend: 118000, pct: 38 },
+      lon: { name: 'London',     place: 'London',     spend: 96000,  pct: 52 },
+      aus: { name: 'Austin',     place: 'Austin',     spend: 80000,  pct: 63 },
+      lis: { name: 'Lisbon',     place: 'Lisbon',     spend: 50000,  pct: 88 },
+      med: { name: 'Medellín',   place: 'Medellín',   spend: 42000,  pct: 92 },
+      cm:  { name: 'Chiang Mai', place: 'Chiang Mai', spend: 36000,  pct: 95 }
+    };
+    function bandFor(p) { return p >= 80 ? 4 : p >= 65 ? 3 : p >= 45 ? 2 : p >= 35 ? 1 : 0; }
+    var port = [];
+    for (var t = 0; t <= YEARS; t++) port.push(P0 * Math.pow(1 + G, t));
+    function loanFor(spend) {
+      var L = [0];
+      for (var t = 0; t < YEARS; t++) L.push((L[t] + spend * Math.pow(1 + INF, t)) * (1 + R));
+      return L;
+    }
+    Object.keys(CITIES).forEach(function (k) { CITIES[k].loan = loanFor(CITIES[k].spend); });
+    var P90 = port[YEARS], TAX90 = (P90 - BASIS) * TAX;
+
+    function fmt(v) {
+      if (v >= 1e6) return '$' + (v / 1e6).toFixed(1) + 'M';
+      return '$' + Math.round(v / 1e3) + 'k';
+    }
+    function crossing(L) {
+      for (var t = 1; t <= YEARS; t++) {
+        var a = L[t - 1] / port[t - 1] - MARGIN, b = L[t] / port[t] - MARGIN;
+        if (a < 0 && b >= 0) { var f = -a / (b - a); return t - 1 + f; }
+      }
+      return null;
+    }
+
+    /* ---- State ---- */
+    var cur = CITIES.aus.loan.slice();
+    var selected = 'aus';
+    var shown = { spend: CITIES.aus.spend, pct: CITIES.aus.pct };
+    var tweenRaf = 0;
+
+    /* ---- Chart ---- */
+    var W = 560, H = 320, M = { l: 44, r: 62, t: 14, b: 28 }, YMAX = 27e6;
+    function x(age) { return M.l + (age - AGE0) / YEARS * (W - M.l - M.r); }
+    function y(v) { return M.t + (1 - Math.min(v, YMAX) / YMAX) * (H - M.t - M.b); }
+    function el(name, attrs, parent) {
+      var n = document.createElementNS(NS, name);
+      for (var k in attrs) n.setAttribute(k, attrs[k]);
+      if (parent) parent.appendChild(n);
+      return n;
+    }
+    function line(arr) {
+      var d = '';
+      for (var t = 0; t < arr.length; t++) d += (t ? 'L' : 'M') + x(AGE0 + t).toFixed(1) + ',' + y(arr[t]).toFixed(1);
+      return d;
+    }
+    function rev(arr) {
+      var d = '';
+      for (var t = arr.length - 1; t >= 0; t--) d += 'L' + x(AGE0 + t).toFixed(1) + ',' + y(arr[t]).toFixed(1);
+      return d;
+    }
+    var nodes = {};
+    function build() {
+      var w = svg.clientWidth || 560;
+      W = Math.max(300, Math.round(w));
+      var narrow = W < 460;
+      H = narrow ? Math.round(W * 0.78) : Math.round(Math.min(340, W * 0.56));
+      M = narrow ? { l: 36, r: 50, t: 12, b: 26 } : { l: 44, r: 62, t: 14, b: 28 };
+      svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+      svg.setAttribute('height', H);
+      while (svg.firstChild) svg.removeChild(svg.firstChild);
+      var g = el('g', {}, svg);
+      [0, 5e6, 10e6, 15e6, 20e6, 25e6].forEach(function (v) {
+        el('line', { 'class': v ? 'vb-grid' : 'vb-axis', x1: M.l, x2: W - M.r, y1: y(v), y2: y(v) }, g);
+        var tx = el('text', { x: M.l - 8, y: y(v) + 4, 'text-anchor': 'end' }, g);
+        tx.textContent = v ? '$' + v / 1e6 + 'M' : '$0';
+      });
+      [60, 65, 70, 75, 80, 85, 90].forEach(function (a) {
+        if (narrow && (a % 10 === 5)) return;
+        var tx = el('text', { x: x(a), y: H - 8, 'text-anchor': 'middle' }, g);
+        tx.textContent = a === 60 ? 'Age 60' : a;
+      });
+      // Soft band around the portfolio's typical path
+      var up = port.map(function (v, t) { return v * Math.exp(0.06 * Math.sqrt(t)); });
+      var lo = port.map(function (v, t) { return v * Math.exp(-0.06 * Math.sqrt(t)); });
+      el('path', { 'class': 'vb-band', d: line(up) + rev(lo) + 'Z' }, g);
+      nodes.loanArea = el('path', { 'class': 'vb-loanarea' }, g);
+      nodes.heirs = el('path', { 'class': 'vb-heirs' }, g);
+      var margin = port.map(function (v) { return v * MARGIN; });
+      el('path', { 'class': 'vb-mline', d: line(margin) }, g);
+      nodes.ghost = el('path', { 'class': 'vb-ghost', d: line(CITIES.aus.loan) }, g);
+      el('path', { 'class': 'vb-pline', d: line(port) }, g);
+      nodes.lline = el('path', { 'class': 'vb-lline' }, g);
+      // Margin label along the dashed line
+      var ma = narrow ? 76 : 72;
+      var mt = el('text', { 'class': 'vb-t-m vb-halo', x: x(ma), y: y(port[ma - AGE0] * MARGIN) + 14, 'text-anchor': 'start' }, g);
+      mt.textContent = narrow ? 'Margin call' : 'Margin call: loan hits 50%';
+      // End labels
+      var pt = el('text', { 'class': 'vb-t-p', x: W - M.r + 6, y: y(P90) + 4 }, g);
+      pt.textContent = fmt(P90);
+      nodes.lt = el('text', { 'class': 'vb-t-l', x: W - M.r + 6 }, g);
+      nodes.gt = el('text', { 'class': 'vb-t-ghost', x: W - M.r + 6 }, g);
+      nodes.gt.textContent = 'Austin';
+      nodes.heirsT = el('text', { 'class': 'vb-t-heirs vb-halo', 'text-anchor': 'middle' }, g);
+      nodes.heirsT.textContent = narrow ? 'Heirs inherit' : 'What your heirs inherit';
+      nodes.cross = el('circle', { 'class': 'vb-cross', r: 4.5 }, g);
+      nodes.crossT = el('text', { 'class': 'vb-t-cross vb-halo', 'text-anchor': 'end' }, g);
+      draw();
+    }
+    function draw() {
+      if (!nodes.lline) return;
+      var ld = line(cur);
+      nodes.lline.setAttribute('d', ld);
+      nodes.loanArea.setAttribute('d', ld + 'L' + x(AGE0 + YEARS) + ',' + y(0) + 'L' + x(AGE0) + ',' + y(0) + 'Z');
+      nodes.heirs.setAttribute('d', line(port) + rev(cur) + 'Z');
+      var l90 = cur[YEARS];
+      var ly = y(l90) + 4;
+      nodes.lt.setAttribute('y', ly);
+      nodes.lt.textContent = fmt(l90);
+      var gy = y(CITIES.aus.loan[YEARS]) + 4;
+      var ghostOn = selected !== 'aus';
+      nodes.ghost.style.opacity = ghostOn ? '' : '0';
+      nodes.gt.style.opacity = ghostOn && Math.abs(gy - ly) > 13 ? '1' : '0';
+      nodes.gt.setAttribute('y', gy);
+      // Heirs label in the gap, near age 80
+      var ha = 80, hp = port[ha - AGE0], hl = Math.max(cur[ha - AGE0], hp * MARGIN);
+      var hy = (y(hp) + y(hl)) / 2 + 4;
+      nodes.heirsT.setAttribute('x', x(ha));
+      nodes.heirsT.setAttribute('y', hy);
+      nodes.heirsT.style.opacity = (y(hl) - y(hp)) > 20 ? '1' : '0';
+      var c = crossing(cur);
+      if (c !== null) {
+        var i = Math.floor(c), f = c - i;
+        var cv = cur[i] + (cur[Math.min(i + 1, YEARS)] - cur[i]) * f;
+        nodes.cross.setAttribute('cx', x(AGE0 + c)); nodes.cross.setAttribute('cy', y(cv));
+        nodes.cross.style.opacity = '1';
+        nodes.crossT.setAttribute('x', x(AGE0 + c) - 8); nodes.crossT.setAttribute('y', y(cv) - 9);
+        nodes.crossT.textContent = 'Margin call near ' + Math.round(AGE0 + c);
+        nodes.crossT.style.opacity = '1';
+      } else {
+        nodes.cross.style.opacity = '0'; nodes.crossT.style.opacity = '0';
+      }
+    }
+
+    /* ---- Readout ---- */
+    function renderNumbers(spend, pct) {
+      oSpend.innerHTML = fmt(spend) + '<small>/yr</small>';
+      oOdds.textContent = Math.round(pct) + '%';
+      var l90 = cur[YEARS];
+      oL90.textContent = fmt(l90);
+      oHeirs.textContent = fmt(Math.max(0, P90 - l90));
+    }
+    function renderFinal(key) {
+      var c = CITIES[key];
+      cityName.textContent = c.name + (key === 'aus' ? ', home' : '');
+      oOdds.setAttribute('data-band', bandFor(c.pct));
+      var peak = Math.round(c.loan[YEARS] / P90 * 100);
+      var cr = crossing(c.loan);
+      var diff = Math.round((1 - c.spend / CITIES.aus.spend) * 100);
+      var note;
+      if (cr !== null) {
+        note = 'The loan crosses the margin-call line near age ' + Math.round(AGE0 + cr) + '. The lender would sell shares for you, at the worst time.';
+        oNote.classList.add('is-warn');
+      } else {
+        oNote.classList.remove('is-warn');
+        if (key === 'aus') note = 'The loan ends at ' + peak + '% of the portfolio. The lender calls at 50%, so there is little room for a bad decade.';
+        else note = 'The same life costs about ' + diff + '% less than Austin. The loan ends at ' + peak + '% of the portfolio, well clear of the 50% call.';
+      }
+      oNote.textContent = note;
+      var heirs = fmt(Math.max(0, P90 - c.loan[YEARS]));
+      svg.setAttribute('aria-label', 'Race chart, ages 60 to 90, living in ' + c.name + ': the portfolio grows from $2.5M to ' + fmt(P90) +
+        ', the loan grows to ' + fmt(c.loan[YEARS]) + (cr !== null ? ', crossing the margin-call line near age ' + Math.round(AGE0 + cr) : ', staying under the margin-call line') +
+        '. Heirs inherit about ' + heirs + '.');
+      oLive.textContent = c.name + ': ' + fmt(c.spend) + ' a year, ' + c.pct + '% of futures hold, heirs inherit about ' + heirs + ' at 90.';
+    }
+
+    function ease(t) { return t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+    function select(key, opts) {
+      opts = opts || {};
+      if (!CITIES[key]) return;
+      selected = key;
+      chips.forEach(function (b) {
+        var on = b.getAttribute('data-city') === key;
+        b.setAttribute('aria-checked', on ? 'true' : 'false');
+        b.tabIndex = on ? 0 : -1;
+      });
+      if (opts.focus) chipFor(key).focus();
+      var to = CITIES[key];
+      var from = cur.slice(), s0 = shown.spend, p0 = shown.pct;
+      cancelAnimationFrame(tweenRaf);
+      renderFinal(key);
+      if (reduce.matches) {
+        cur = to.loan.slice(); shown = { spend: to.spend, pct: to.pct };
+        draw(); renderNumbers(to.spend, to.pct);
+        return;
+      }
+      var start = performance.now(), DUR = 620;
+      (function step(now) {
+        var k = ease(Math.min(1, (now - start) / DUR));
+        for (var t = 0; t <= YEARS; t++) cur[t] = from[t] + (to.loan[t] - from[t]) * k;
+        shown = { spend: s0 + (to.spend - s0) * k, pct: p0 + (to.pct - p0) * k };
+        draw(); renderNumbers(shown.spend, shown.pct);
+        if (k < 1) tweenRaf = requestAnimationFrame(step);
+      })(start);
+    }
+    function chipFor(key) { return chips.filter(function (b) { return b.getAttribute('data-city') === key; })[0]; }
+
+    /* ---- Demo: Austin, then a flight to Lisbon ---- */
+    var demoTimer = 0, demoRaf = 0, demoState = 'idle'; // idle | waiting | flying | done
+    function cancelDemo() {
+      clearTimeout(demoTimer); cancelAnimationFrame(demoRaf);
+      fPath.setAttribute('d', ''); fDot.setAttribute('cx', -20); fDot.style.opacity = '0';
+      if (demoState !== 'idle') demoState = 'done';
+    }
+    function showHint() { hint.classList.add('is-on'); }
+    function fly(fromKey, toKey, done) {
+      var a = chipFor(fromKey), b = chipFor(toKey);
+      var fr = flight.getBoundingClientRect(), ra = a.getBoundingClientRect(), rb = b.getBoundingClientRect();
+      var ax = ra.left + ra.width / 2 - fr.left, ay = ra.top - fr.top + 2;
+      var bx = rb.left + rb.width / 2 - fr.left, by = rb.top - fr.top + 2;
+      var cx = (ax + bx) / 2, cy = Math.min(ay, by) - 30;
+      fPath.setAttribute('d', 'M' + ax + ',' + ay + ' Q' + cx + ',' + cy + ' ' + bx + ',' + by);
+      var len = fPath.getTotalLength();
+      fPath.style.strokeDasharray = len; fPath.style.strokeDashoffset = len; fPath.style.opacity = '.8';
+      fDot.style.opacity = '1';
+      var start = performance.now(), DUR = 780, landed = false;
+      (function step(now) {
+        var p = Math.min(1, (now - start) / DUR), k = ease(p);
+        fPath.style.strokeDashoffset = len * (1 - k);
+        var pt = fPath.getPointAtLength(len * k);
+        fDot.setAttribute('cx', pt.x); fDot.setAttribute('cy', pt.y);
+        if (p >= 1 && !landed) { landed = true; done(); }
+        if (p < 1) { demoRaf = requestAnimationFrame(step); return; }
+        // Fade out the trail
+        var fs = performance.now();
+        (function fade(n2) {
+          var q = Math.min(1, (n2 - fs) / 500);
+          fPath.style.opacity = String(.8 * (1 - q)); fDot.style.opacity = String(1 - q);
+          if (q < 1) demoRaf = requestAnimationFrame(fade);
+        })(fs);
+      })(start);
+    }
+    function runDemo() {
+      cancelDemo();
+      hint.classList.remove('is-on');
+      demoState = 'waiting';
+      if (selected !== 'aus') select('aus');
+      demoTimer = setTimeout(function () {
+        demoState = 'flying';
+        fly('aus', 'lis', function () {
+          select('lis');
+          var c = chipFor('lis'); c.classList.remove('is-land'); void c.offsetWidth; c.classList.add('is-land');
+          demoState = 'done';
+          demoTimer = setTimeout(showHint, 700);
+        });
+      }, 1500);
+    }
+
+    /* ---- Interaction ---- */
+    function userPick(key, focus) {
+      if (demoState === 'waiting' || demoState === 'flying') cancelDemo();
+      demoState = 'done';
+      hint.classList.remove('is-on');
+      if (key !== selected) select(key, { focus: focus });
+      else if (focus) chipFor(key).focus();
+    }
+    chips.forEach(function (b, i) {
+      b.addEventListener('click', function () { userPick(b.getAttribute('data-city'), false); });
+      b.addEventListener('keydown', function (e) {
+        var n = chips.length, j = null;
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') j = (i + 1) % n;
+        else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') j = (i - 1 + n) % n;
+        else if (e.key === 'Home') j = 0;
+        else if (e.key === 'End') j = n - 1;
+        if (j === null) return;
+        e.preventDefault();
+        userPick(chips[j].getAttribute('data-city'), true);
+      });
+    });
+    replayBtn.addEventListener('click', function () {
+      if (reduce.matches) { select(selected === 'lis' ? 'aus' : 'lis'); return; }
+      runDemo();
+    });
+
+    /* ---- Boot ---- */
+    build();
+    if (reduce.matches) {
+      // Still frame: the most informative one, Lisbon against Austin's dotted loan.
+      select('lis');
+      replayBtn.lastChild.textContent = ' Compare';
+      replayBtn.setAttribute('aria-label', 'Switch between Austin and Lisbon');
+      showHint();
+    } else {
+      select('aus');
+    }
+    var lastW = svg.clientWidth;
+    if ('ResizeObserver' in window) {
+      new ResizeObserver(function () {
+        var w = svg.clientWidth;
+        if (Math.abs(w - lastW) > 1) { lastW = w; build(); }
+      }).observe(svg.parentNode);
+    }
+    if (!reduce.matches && 'IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) {
+            if (demoState === 'idle') runDemo();
+          } else if (demoState === 'waiting') {
+            // Left view before the flight: try again next time it is seen.
+            clearTimeout(demoTimer); demoState = 'idle';
+          }
+        });
+      }, { threshold: 0.45 }).observe(card);
+    } else if (!reduce.matches) {
+      runDemo();
+    }
+  })();
+  </script>
+</section>
+<section class="mk-var" id="var-c" aria-labelledby="var-c-title">
+  <div class="mk-var__head">
+    <p class="mk-eyebrow">Variation C</p>
+    <h2 id="var-c-title">Scroll story</h2>
+    <p>The hero hands off to a scrollytelling section: four short panels scroll past one sticky chart, and the chart advances a step each time a panel reaches the middle of the screen.</p>
+    <div class="mk-var__notes">
+      <span><b>Best for</b> visitors who scroll; it teaches the whole mechanism in four beats with no clicks.</span>
+      <span><b>Cost to build</b> the most work of the set: a sticky layout, scroll observers, a tweened chart and a phone layout of its own.</span>
+      <span><b>Risk</b> the riskiest on phones: the sticky chart takes nearly half the screen, mobile address bars shift the trigger line, and a fast flick can skip a beat.</span>
+    </div>
+  </div>
+
+  <div class="vc">
+    <header class="vc__hero">
+      <p class="vc__eyebrow">Buy · Borrow · Die, anywhere in the world</p>
+      <h3 class="vc__headline">Live off your portfolio <em>without ever selling it.</em></h3>
+      <p class="vc__body">Borrow against your shares for living money, let them keep compounding, and pass them on with the gains never taxed. eVelo replays your plan through thousands of real market histories, then re-prices it city by city to show where in the world it holds best.</p>
+      <div class="vc__ctas">
+        <a class="vc__cta" href="#var-c-story">
+          See how it works
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4"/></svg>
+        </a>
+        <span class="vc__fine">Scroll for the four steps · Illustrative numbers</span>
+      </div>
+    </header>
+
+    <div class="vc__story" id="var-c-story" tabindex="-1">
+      <div class="vc__visual">
+        <div class="vc__card">
+          <ol class="vc__rail" aria-label="Story steps">
+            <li><button type="button" data-go="0" aria-label="Step 1, Buy">Buy</button></li>
+            <li><button type="button" data-go="1" aria-label="Step 2, Borrow">Borrow</button></li>
+            <li><button type="button" data-go="2" aria-label="Step 3, Live anywhere"><span class="vc__long">Live anywhere</span><span class="vc__short">Anywhere</span></button></li>
+            <li><button type="button" data-go="3" aria-label="Step 4, Die">Die</button></li>
+          </ol>
+          <div class="vc__track" aria-hidden="true"><span class="vc__track-fill"></span></div>
+
+          <div class="vc__readout" aria-hidden="true">
+            <div class="vc__age"><span class="vc__age-n" data-r="age">Age 90</span><span class="vc__age-y" data-r="year">Year 30</span></div>
+            <dl class="vc__stats">
+              <div><dt>Portfolio</dt><dd data-r="port">$19.0M</dd></div>
+              <div class="vc__stat-loan"><dt>Loan</dt><dd data-r="loan">$0</dd></div>
+              <div class="vc__stat-ltv"><dt data-r="ltvk">Loan / value</dt><dd data-r="ltv">0%</dd></div>
+            </dl>
+          </div>
+
+          <div class="vc__chart">
+            <svg class="vc__svg" role="img" aria-label="Illustrative chart: a $2.5M portfolio compounding over 30 years, from age 60 to 90."></svg>
+          </div>
+
+          <div class="vc__legend" aria-hidden="true">
+            <span class="vc__lg vc__lg--basis"><i></i>Cost basis</span>
+            <span class="vc__lg vc__lg--gains"><i></i>Untaxed gains</span>
+            <span class="vc__lg vc__lg--loan"><i></i>Loan</span>
+            <span class="vc__lg vc__lg--margin"><i></i>Margin call, 50%</span>
+            <span class="vc__lg vc__lg--ghost"><i></i>Austin loan</span>
+          </div>
+          <p class="vc__caption" aria-live="polite">Buy: $2.5M of shares, $1.0M of it what you paid. Left alone at 7% a year, it reaches about $19.0M by 90.</p>
+          <p class="vc__foot">Illustrative numbers · one typical future, not a forecast</p>
+        </div>
+      </div>
+
+      <div class="vc__panels">
+        <article class="vc__panel" data-step="0">
+          <div class="vc__panel-in">
+            <span class="vc__n">01 · Buy</span>
+            <h4>Buy, and never sell.</h4>
+            <p>Start with $2.5M of shares. You paid $1.0M for them, so $1.5M is gain you would be taxed on if you sold.</p>
+            <p>You don't sell. At 7% a year the shares compound to about <b data-v="p30">$19.0M</b> by age 90, and the hatched gains are never taxed.</p>
+          </div>
+        </article>
+        <article class="vc__panel" data-step="1">
+          <div class="vc__panel-in">
+            <span class="vc__n">02 · Borrow</span>
+            <h4>Borrow your living money.</h4>
+            <p>Each year you draw what you spend from a credit line secured by the shares: $80k in Austin, rising 3% a year. Interest at 6% is added to the loan.</p>
+            <p>The loan grows, but the shares grow faster. The lender calls when the loan passes half the portfolio. In Austin the loan ends at <b data-v="aLtv">49%</b>, almost touching that line.</p>
+          </div>
+        </article>
+        <article class="vc__panel" data-step="2">
+          <div class="vc__panel-in">
+            <span class="vc__n">03 · Live anywhere</span>
+            <h4>Spend it where life costs less.</h4>
+            <p>The same life in Lisbon costs about $50k a year, 38% less. A smaller draw every year bends the loan flatter: <b data-v="lLoan">$5.9M</b> at 90 instead of <b data-v="aLoan">$9.4M</b>.</p>
+            <p>The loan stays far below the margin-call line. Across many futures, that is 88% of plans holding in Lisbon against 63% in Austin.</p>
+          </div>
+        </article>
+        <article class="vc__panel" data-step="3">
+          <div class="vc__panel-in">
+            <span class="vc__n">04 · Die</span>
+            <h4>Pass it on, gains untaxed.</h4>
+            <p>At death the shares step up to their market value, so <b data-v="gains">$18.0M</b> of gains are never taxed.</p>
+            <p>The estate repays the loan from the portfolio. Your heirs keep the rest: about <b data-v="heirs">$13.2M</b>.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+
+<style>
+.vc { display: grid; gap: 56px; color: var(--ink); }
+.vc .vc__hero { display: grid; gap: 22px; max-width: 46rem; padding: 40px 0 8px; }
+.vc .vc__eyebrow { margin: 0; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); font-weight: 500; }
+.vc .vc__headline { margin: 0; font-family: var(--font-display); font-weight: 400; font-size: clamp(2.6rem, 1.2rem + 4.6vw, 4.6rem); line-height: .98; letter-spacing: -.02em; text-wrap: balance; }
+.vc .vc__headline em { color: var(--holds-text); }
+.vc .vc__body { margin: 0; max-width: 34em; font-size: 18px; line-height: 1.55; color: var(--ink-2); text-wrap: pretty; }
+.vc .vc__ctas { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; }
+.vc .vc__cta { display: inline-flex; align-items: center; gap: 10px; height: 52px; padding: 0 24px; border-radius: 999px; background: var(--holds); color: var(--bg); font-weight: 500; font-size: 16px; text-decoration: none; }
+.vc .vc__cta:hover { background: var(--holds-text); }
+.vc .vc__cta:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+.vc .vc__fine { font-size: 13px; color: var(--ink-3); }
+
+/* Story: panels left, sticky chart right */
+.vc .vc__story { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); grid-template-areas: "panels visual"; gap: 48px; outline: none; scroll-margin-top: 24px; }
+.vc .vc__visual { grid-area: visual; position: sticky; top: 24px; align-self: start; }
+.vc .vc__panels { grid-area: panels; }
+.vc .vc__card { background: var(--card); border: 1px solid var(--card-line); box-shadow: var(--card-shadow); border-radius: 16px; padding: 16px 18px 14px; display: grid; gap: 10px; }
+
+.vc .vc__rail { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; }
+.vc .vc__rail button { width: 100%; min-height: 40px; border: 0; background: none; padding: 4px 2px; font: inherit; font-size: 13px; font-weight: 500; color: var(--ink-3); cursor: pointer; border-radius: 8px; text-align: left; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; transition: color .3s; }
+.vc .vc__short { display: none; }
+.vc .vc__rail button:hover { color: var(--ink); }
+.vc .vc__rail button[aria-current="step"] { color: var(--ink); }
+.vc .vc__rail button:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+.vc .vc__track { height: 2px; background: var(--hairline); border-radius: 2px; overflow: hidden; margin-top: -8px; }
+.vc .vc__track-fill { display: block; height: 100%; width: 100%; background: var(--holds); transform-origin: left; transform: scaleX(.25); transition: transform .7s cubic-bezier(.65, 0, .35, 1); }
+
+.vc .vc__readout { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; flex-wrap: wrap; padding-top: 4px; }
+.vc .vc__age { display: flex; align-items: baseline; gap: 10px; }
+.vc .vc__age-n { font-family: var(--font-display); font-size: 30px; line-height: 1; }
+.vc .vc__age-y { font-family: var(--font-mono); font-size: 12px; color: var(--ink-3); }
+.vc .vc__stats { display: flex; gap: 18px; margin: 0; }
+.vc .vc__stats div { display: grid; gap: 1px; }
+.vc .vc__stats dt { font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); }
+.vc .vc__stats dd { margin: 0; font-family: var(--font-mono); font-size: 14px; font-variant-numeric: tabular-nums; color: var(--ink); min-width: 6ch; }
+.vc .vc__stats dd.is-hot { color: var(--bruised-text); }
+.vc .vc__stats dd.is-heirs { color: var(--holds-text); }
+.vc .vc__stats .is-dim { opacity: .35; }
+
+.vc .vc__chart { position: relative; }
+.vc .vc__svg { display: block; width: 100%; height: 400px; overflow: visible; }
+
+.vc .vc__legend { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 12px; color: var(--ink-2); min-height: 18px; }
+.vc .vc__lg { display: inline-flex; align-items: center; gap: 6px; transition: opacity .5s; }
+.vc .vc__lg.is-off { display: none; }
+.vc .vc__lg i { display: inline-block; width: 14px; height: 10px; border-radius: 2px; }
+.vc .vc__lg--basis i { background: var(--band-2); }
+.vc .vc__lg--gains i { background: repeating-linear-gradient(135deg, var(--holds) 0 1px, var(--holds-soft) 1px 4px); }
+.vc .vc__lg--loan i { height: 2px; background: var(--loan); }
+.vc .vc__lg--margin i { height: 0; border-top: 1.5px dashed var(--broken); border-radius: 0; }
+.vc .vc__lg--ghost i { height: 0; border-top: 1.5px dashed var(--loan); opacity: .6; border-radius: 0; }
+.vc .vc__caption { margin: 0; font-size: 14px; color: var(--ink-2); min-height: 2.9em; }
+.vc .vc__foot { margin: 0; font-size: 12px; color: var(--ink-3); }
+
+/* Panels */
+.vc .vc__panel { min-height: 70vh; display: flex; align-items: center; }
+.vc .vc__panel:first-child { min-height: 50vh; align-items: flex-start; padding-top: 12vh; }
+.vc .vc__panel:last-child { min-height: 80vh; }
+.vc .vc__panel-in { display: grid; gap: 12px; max-width: 26rem; opacity: .4; transition: opacity .5s; }
+.vc .vc__panel.is-active .vc__panel-in { opacity: 1; }
+.vc .vc__n { font-family: var(--font-mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--holds-text); }
+.vc .vc__panel h4 { margin: 0; font-family: var(--font-display); font-weight: 400; font-size: clamp(1.9rem, 1.2rem + 1.6vw, 2.5rem); line-height: 1.04; text-wrap: balance; }
+.vc .vc__panel p { margin: 0; font-size: 16px; line-height: 1.6; color: var(--ink-2); text-wrap: pretty; }
+.vc .vc__panel b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+
+/* SVG parts */
+.vc .vc-grid line { stroke: var(--grid); stroke-width: 1; }
+.vc .vc-axis-t { font-family: var(--font-mono); font-size: 10.5px; fill: var(--ink-3); }
+.vc .vc-base { stroke: var(--axis); stroke-width: 1; opacity: .5; }
+.vc .vc-gratic line, .vc .vc-gratic path { stroke: var(--ink-3); stroke-width: .75; opacity: .22; fill: none; }
+.vc .vc-arc { fill: none; stroke: var(--holds); stroke-width: 1.75; stroke-linecap: round; }
+.vc .vc-city-a { fill: var(--ramp-2); }
+.vc .vc-city-l { fill: var(--ramp-4); }
+.vc .vc-pulse { fill: none; stroke: var(--ramp-4); stroke-width: 1.5; }
+.vc .vc-city-t { font-family: var(--font-ui); font-size: 12px; font-weight: 500; fill: var(--ink-2); paint-order: stroke; stroke: var(--card-solid); stroke-width: 4px; stroke-linejoin: round; }
+.vc .vc-city-t tspan { font-family: var(--font-mono); font-weight: 400; fill: var(--ink-3); }
+.vc .vc-basis { fill: var(--band-2); }
+.vc .vc-gains { fill: url(#vc-hatch); }
+.vc .vc-gains-solid { fill: var(--band-1); }
+.vc .vc-hatch-bg { fill: var(--holds-soft); }
+.vc .vc-hatch-ln { stroke: var(--holds); stroke-width: 1; opacity: .5; }
+.vc .vc-port { fill: none; stroke: var(--holds); stroke-width: 2.25; stroke-linejoin: round; }
+.vc .vc-margin { fill: none; stroke: var(--broken); stroke-width: 1.25; stroke-dasharray: 5 4; }
+.vc .vc-loanfill { fill: var(--loan-soft); }
+.vc .vc-ghost { fill: none; stroke: var(--loan); stroke-width: 1.5; stroke-dasharray: 3 4; }
+.vc .vc-loan { fill: none; stroke: var(--loan); stroke-width: 2.25; stroke-linejoin: round; }
+.vc .vc-draw { fill: var(--loan); }
+.vc .vc-strip-t { font-family: var(--font-ui); font-size: 10.5px; fill: var(--ink-3); }
+.vc .vc-end { font-family: var(--font-mono); font-size: 11px; paint-order: stroke; stroke: var(--card-solid); stroke-width: 3px; stroke-linejoin: round; }
+.vc .vc-end--p { fill: var(--holds-text); }
+.vc .vc-end--l, .vc .vc-end--g { fill: var(--loan); }
+.vc .vc-end--name { font-family: var(--font-ui); font-size: 10.5px; fill: var(--ink-3); }
+.vc .vc-brk-l { stroke: var(--loan); stroke-width: 3; stroke-linecap: round; }
+.vc .vc-brk-h { stroke: var(--holds); stroke-width: 3; stroke-linecap: round; }
+.vc .vc-die-k, .vc .vc-die-h, .vc .vc-die-s { paint-order: stroke; stroke: var(--card-solid); stroke-width: 4px; stroke-linejoin: round; }
+.vc .vc-die-k { font-family: var(--font-ui); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; fill: var(--ink-3); }
+.vc .vc-die-h { font-family: var(--font-display); font-size: 30px; fill: var(--ink); }
+.vc .vc-die-h tspan { fill: var(--holds-text); }
+.vc .vc-die-s { font-family: var(--font-ui); font-size: 13px; fill: var(--ink-2); }
+
+/* Phone: the chart sticks to the top, shorter, and the panels scroll beneath it */
+@media (max-width: 760px) {
+  .vc { gap: 32px; }
+  .vc .vc__hero { padding-top: 8px; gap: 18px; }
+  .vc .vc__body { font-size: 16px; }
+  .vc .vc__story { grid-template-columns: minmax(0, 1fr); grid-template-areas: "visual" "panels"; gap: 0; }
+  .vc .vc__visual { top: 0; z-index: 2; background: var(--bg); padding: 8px 0 6px; margin: 0 -16px; padding-inline: 16px; box-shadow: 0 10px 12px -10px var(--bg); }
+  .vc .vc__card { padding: 8px 12px 10px; gap: 6px; border-radius: 12px; }
+  .vc .vc__rail button { font-size: 12px; min-height: 36px; text-align: center; }
+  .vc .vc__track { margin-top: -6px; }
+  .vc .vc__long { display: none; }
+  .vc .vc__short { display: inline; }
+  .vc .vc__age-n { font-size: 22px; }
+  .vc .vc__stats { gap: 12px; }
+  .vc .vc__stats dt { font-size: 10px; }
+  .vc .vc__stats dd { font-size: 12.5px; }
+  .vc .vc__legend { font-size: 11px; gap: 2px 10px; }
+  .vc .vc__caption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .vc .vc__foot { display: none; }
+  .vc .vc__panel, .vc .vc__panel:first-child { min-height: 70vh; align-items: flex-start; padding-top: 24px; }
+  .vc .vc__panel:last-child { min-height: 75vh; }
+  .vc .vc__panel-in { opacity: .45; }
+  .vc .vc__panel h4 { font-size: 1.75rem; }
+  .vc .vc__panel p { font-size: 15.5px; }
+  .vc .vc-die-h { font-size: 21px; }
+  .vc .vc-die-s { font-size: 11.5px; }
+  .vc .vc-city-t { font-size: 11px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vc .vc__track-fill, .vc .vc__panel-in, .vc .vc__rail button, .vc .vc__lg { transition: none; }
+}
+</style>
+
+<script>
+(function () {
+  var root = document.getElementById('var-c');
+  if (!root) return;
+  var NS = 'http://www.w3.org/2000/svg';
+  var svg = root.querySelector('.vc__svg');
+  var story = root.querySelector('.vc__story');
+  var visual = root.querySelector('.vc__visual');
+  var panels = Array.prototype.slice.call(root.querySelectorAll('.vc__panel'));
+  var railBtns = Array.prototype.slice.call(root.querySelectorAll('.vc__rail button'));
+  var trackFill = root.querySelector('.vc__track-fill');
+  var caption = root.querySelector('.vc__caption');
+  var R = {}; Array.prototype.forEach.call(root.querySelectorAll('[data-r]'), function (n) { R[n.getAttribute('data-r')] = n; });
+  var reduceMq = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var phoneMq = window.matchMedia('(max-width: 760px)');
+
+  /* ---------- Illustrative model ---------- */
+  var YEARS = 30, P0 = 2.5e6, BASIS = 1e6, G = 0.07, RATE = 0.06, INF = 0.03, AUS = 80e3, LIS = 50e3, YMAX = 20e6;
+  function loanSeries(spend) { var a = [0]; for (var t = 1; t <= YEARS; t++) a.push((a[t - 1] + spend * Math.pow(1 + INF, t - 1)) * (1 + RATE)); return a; }
+  var LA = loanSeries(AUS), LL = loanSeries(LIS);
+  function port(t) { return P0 * Math.pow(1 + G, t); }
+  function interp(a, t) { var i = Math.min(YEARS - 1, Math.floor(t)), f = t - i; return a[i] + (a[i + 1] - a[i]) * f; }
+  function loanAt(t, mix) { return interp(LA, t) * (1 - mix) + interp(LL, t) * mix; }
+  var P30 = port(YEARS), HEIRS = P30 - LL[YEARS], GAINS = P30 - BASIS;
+  function money(v) { if (v >= 1e6) return '$' + (v / 1e6).toFixed(1) + 'M'; if (v >= 1e3) return '$' + Math.round(v / 1e3) + 'k'; return '$' + Math.round(v); }
+  var vals = { p30: money(P30), aLtv: Math.round(LA[YEARS] / P30 * 100) + '%', aLoan: money(LA[YEARS]), lLoan: money(LL[YEARS]), gains: money(GAINS), heirs: money(HEIRS) };
+  Array.prototype.forEach.call(root.querySelectorAll('[data-v]'), function (n) { n.textContent = vals[n.getAttribute('data-v')]; });
+
+  /* ---------- Story states ---------- */
+  var KEYS = ['port', 'loan', 'draws', 'margin', 'mix', 'map', 'ghost', 'die'];
+  var STATES = [
+    { port: 30, loan: 0, draws: 0, margin: 0, mix: 0, map: 0, ghost: 0, die: 0 },
+    { port: 30, loan: 30, draws: 1, margin: 1, mix: 0, map: 0, ghost: 0, die: 0 },
+    { port: 30, loan: 30, draws: 1, margin: 1, mix: 1, map: 1, ghost: 1, die: 0 },
+    { port: 30, loan: 30, draws: 0, margin: 0.35, mix: 1, map: 0, ghost: 0, die: 1 }
+  ];
+  var CAPTIONS = [
+    'Buy: $2.5M of shares, $1.0M of it what you paid. Left alone at 7% a year, it reaches about ' + vals.p30 + ' by 90.',
+    'Borrow: an $80k draw each year in Austin, plus 6% interest, grows the loan to ' + vals.aLoan + ', ' + vals.aLtv + ' of the portfolio, just under the 50% margin call.',
+    'Live anywhere: in Lisbon the draw is $50k, so the loan ends at ' + vals.lLoan + ' instead of ' + vals.aLoan + '. The dashed line is the Austin loan.',
+    'Die: the shares step up in basis, so ' + vals.gains + ' of gains are never taxed. The estate repays the ' + vals.lLoan + ' loan and heirs keep ' + vals.heirs + '.'
+  ];
+  var LEGEND = [['basis', 'gains'], ['basis', 'gains', 'loan', 'margin'], ['basis', 'gains', 'loan', 'margin', 'ghost'], ['loan']];
+  var cur = Object.assign({}, STATES[0]);
+  var step = 0, entered = false;
+
+  /* ---------- SVG skeleton ---------- */
+  function el(tag, attrs, parent) { var n = document.createElementNS(NS, tag); for (var k in attrs) n.setAttribute(k, attrs[k]); (parent || svg).appendChild(n); return n; }
+  var defs = el('defs', {});
+  var pat = el('pattern', { id: 'vc-hatch', width: 6, height: 6, patternUnits: 'userSpaceOnUse', patternTransform: 'rotate(45)' }, defs);
+  el('rect', { width: 6, height: 6, 'class': 'vc-hatch-bg' }, pat);
+  el('line', { x1: 0, y1: 0, x2: 0, y2: 6, 'class': 'vc-hatch-ln' }, pat);
+  var clip = el('clipPath', { id: 'vc-clip' }, defs);
+  var clipRect = el('rect', {}, clip);
+
+  var gGrid = el('g', { 'class': 'vc-grid' });
+  var gMap = el('g', { 'class': 'vc-map' });
+  var gGratic = el('g', { 'class': 'vc-gratic' }, gMap);
+  var gPlot = el('g', { 'clip-path': 'url(#vc-clip)' });
+  var pBasis = el('path', { 'class': 'vc-basis' }, gPlot);
+  var pGains = el('path', { 'class': 'vc-gains' }, gPlot);
+  var pGainsS = el('path', { 'class': 'vc-gains-solid' }, gPlot);
+  var pLoanFill = el('path', { 'class': 'vc-loanfill' }, gPlot);
+  var pMargin = el('path', { 'class': 'vc-margin' }, gPlot);
+  var pGhost = el('path', { 'class': 'vc-ghost' }, gPlot);
+  var pLoan = el('path', { 'class': 'vc-loan' }, gPlot);
+  var pPort = el('path', { 'class': 'vc-port' }, gPlot);
+  var base = el('line', { 'class': 'vc-base' });
+  var gDraws = el('g', {});
+  var stripT = el('text', { 'class': 'vc-strip-t' }); stripT.textContent = 'Yearly draw';
+  var gAxis = el('g', {});
+  /* map foreground: arc + cities, above the curves */
+  var gCities = el('g', {});
+  var arc = el('path', { 'class': 'vc-arc' }, gCities);
+  var pulse = el('circle', { 'class': 'vc-pulse', r: 6 }, gCities);
+  var dotA = el('circle', { 'class': 'vc-city-a', r: 4.5 }, gCities);
+  var dotL = el('circle', { 'class': 'vc-city-l', r: 5 }, gCities);
+  var tA = el('text', { 'class': 'vc-city-t', 'text-anchor': 'middle' }, gCities);
+  tA.innerHTML = 'Austin <tspan>$80k/yr</tspan>';
+  var tL = el('text', { 'class': 'vc-city-t', 'text-anchor': 'middle' }, gCities);
+  tL.innerHTML = 'Lisbon <tspan>$50k/yr</tspan>';
+  /* end labels */
+  var ePort = el('text', { 'class': 'vc-end vc-end--p' });
+  var eLoan = el('text', { 'class': 'vc-end vc-end--l' });
+  var eLoanN = el('text', { 'class': 'vc-end vc-end--name' });
+  var eGhost = el('text', { 'class': 'vc-end vc-end--g' });
+  var eGhostN = el('text', { 'class': 'vc-end vc-end--name' }); eGhostN.textContent = 'Austin';
+  /* die */
+  var gDie = el('g', {});
+  var brkL = el('line', { 'class': 'vc-brk-l' }, gDie);
+  var brkH = el('line', { 'class': 'vc-brk-h' }, gDie);
+  var bLk = el('text', { 'class': 'vc-end vc-end--name' }, gDie); bLk.textContent = 'Repaid';
+  var bLv = el('text', { 'class': 'vc-end vc-end--l' }, gDie); bLv.textContent = vals.lLoan;
+  var bHk = el('text', { 'class': 'vc-end vc-end--name' }, gDie); bHk.textContent = 'Heirs';
+  var bHv = el('text', { 'class': 'vc-end vc-end--p' }, gDie); bHv.textContent = vals.heirs;
+  var dK = el('text', { 'class': 'vc-die-k' }, gDie); dK.textContent = 'At 90, the estate';
+  var dH = el('text', { 'class': 'vc-die-h' }, gDie); dH.innerHTML = 'Heirs keep <tspan>' + vals.heirs + '</tspan>';
+  var dS1 = el('text', { 'class': 'vc-die-s' }, gDie); dS1.textContent = 'Step-up: ' + vals.gains + ' of gains, never taxed';
+  var dS2 = el('text', { 'class': 'vc-die-s' }, gDie); dS2.textContent = 'Loan of ' + vals.lLoan + ' repaid from the shares';
+  var draws = [];
+  for (var k = 0; k < YEARS; k++) draws.push(el('rect', { 'class': 'vc-draw', rx: 0.75 }, gDraws));
+
+  var L = {};
+  function layout() {
+    var W = Math.max(280, svg.clientWidth || 600);
+    var phone = phoneMq.matches;
+    var H = phone ? Math.round(Math.min(220, Math.max(190, W * 0.58))) : Math.round(Math.max(280, Math.min(W * 0.6, window.innerHeight - 330, 420)));
+    svg.style.height = H + 'px';
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    var pl = phone ? 34 : 44, pr = phone ? 56 : 76, pt = 10, pb = phone ? 44 : 52;
+    L = { W: W, H: H, pl: pl, pr: pr, pt: pt, yb: H - pb, pw: W - pl - pr, stripB: H - (phone ? 18 : 22), stripH: phone ? 14 : 20, phone: phone };
+    L.ph = L.yb - pt;
+    clipRect.setAttribute('x', pl - 2); clipRect.setAttribute('y', 0); clipRect.setAttribute('width', L.pw + 4); clipRect.setAttribute('height', L.yb + 1);
+    gGrid.innerHTML = ''; gAxis.innerHTML = ''; gGratic.innerHTML = '';
+    var step = phone ? 10e6 : 5e6;
+    for (var v = 0; v <= YMAX; v += step) {
+      if (v > 0) el('line', { x1: pl, x2: pl + L.pw, y1: Y(v), y2: Y(v) }, gGrid);
+      var t = el('text', { 'class': 'vc-axis-t', x: pl - 6, y: Y(v) + 3.5, 'text-anchor': 'end' }, gAxis); t.textContent = v === 0 ? '$0' : '$' + v / 1e6 + 'M';
+    }
+    [0, 10, 20, 30].forEach(function (yr) {
+      var a = el('text', { 'class': 'vc-axis-t', x: X(yr), y: L.H - 3, 'text-anchor': yr === 0 ? 'start' : yr === 30 ? 'end' : 'middle' }, gAxis); a.textContent = 'Age ' + (60 + yr);
+    });
+    base.setAttribute('x1', pl); base.setAttribute('x2', pl + L.pw); base.setAttribute('y1', L.yb); base.setAttribute('y2', L.yb);
+    stripT.setAttribute('x', pl - 6); stripT.setAttribute('y', L.stripB - 1); stripT.setAttribute('text-anchor', 'end');
+    stripT.textContent = 'Draws';
+    /* World graticule across the plot: lon -130..20, lat 62..-10 */
+    function MX(lon) { return pl + (lon + 130) / 150 * L.pw; }
+    function MY(lat) { return pt + (62 - lat) / 72 * L.ph; }
+    L.MX = MX; L.MY = MY;
+    for (var lon = -120; lon <= 15; lon += 15) el('line', { x1: MX(lon), x2: MX(lon), y1: MY(62), y2: MY(-10) }, gGratic);
+    for (var lat = 60; lat >= -10; lat -= 15) el('line', { x1: MX(-130), x2: MX(20), y1: MY(lat), y2: MY(lat) }, gGratic);
+    var ax = MX(-97.7), ay = MY(30.3), lx = MX(-9.1), ly = MY(38.7);
+    var cx = (ax + lx) / 2, cy = Math.min(ay, ly) - L.ph * 0.26;
+    arc.setAttribute('d', 'M' + ax + ',' + ay + ' Q' + cx + ',' + cy + ' ' + lx + ',' + ly);
+    L.arcLen = arc.getTotalLength();
+    arc.style.strokeDasharray = L.arcLen;
+    dotA.setAttribute('cx', ax); dotA.setAttribute('cy', ay); dotL.setAttribute('cx', lx); dotL.setAttribute('cy', ly);
+    pulse.setAttribute('cx', lx); pulse.setAttribute('cy', ly);
+    tA.setAttribute('x', ax); tA.setAttribute('y', ay + 18); tL.setAttribute('x', lx); tL.setAttribute('y', ly - 12);
+    /* die text block, top-left of the plot */
+    dS1.textContent = phone ? 'Step-up: ' + vals.gains + ' of gains untaxed' : 'Step-up: ' + vals.gains + ' of gains, never taxed';
+    dS2.textContent = phone ? 'Loan of ' + vals.lLoan + ' repaid' : 'Loan of ' + vals.lLoan + ' repaid from the shares';
+    var dx = pl + (phone ? 8 : 16), dy = pt + (phone ? 16 : 26);
+    dK.setAttribute('x', dx); dK.setAttribute('y', dy);
+    dH.setAttribute('x', dx); dH.setAttribute('y', dy + (phone ? 24 : 34));
+    dS1.setAttribute('x', dx); dS1.setAttribute('y', dy + (phone ? 42 : 58));
+    dS2.setAttribute('x', dx); dS2.setAttribute('y', dy + (phone ? 57 : 77));
+    var bw = Math.max(1.5, L.pw / YEARS * 0.45);
+    draws.forEach(function (r) { r.setAttribute('width', bw); });
+    L.bw = bw;
+    render();
+  }
+  function X(t) { return L.pl + t / YEARS * L.pw; }
+  function Y(v) { return L.yb - v / YMAX * L.ph; }
+  function samples(tEnd) { var a = []; for (var t = 0; t < tEnd; t++) a.push(t); a.push(tEnd); return a; }
+  function line(ts, f) { return ts.map(function (t, i) { return (i ? 'L' : 'M') + X(t).toFixed(1) + ',' + Y(f(t)).toFixed(1); }).join(''); }
+  function band(ts, lo, hi) {
+    var up = ts.map(function (t, i) { return (i ? 'L' : 'M') + X(t).toFixed(1) + ',' + Y(hi(t)).toFixed(1); }).join('');
+    var dn = ts.slice().reverse().map(function (t) { return 'L' + X(t).toFixed(1) + ',' + Y(lo(t)).toFixed(1); }).join('');
+    return up + dn + 'Z';
+  }
+  function op(n, v) { n.style.opacity = Math.max(0, Math.min(1, v)).toFixed(3); n.style.visibility = v < 0.005 ? 'hidden' : 'visible'; }
+  function txt(n, x, y, s) { n.setAttribute('x', x.toFixed(1)); n.setAttribute('y', y.toFixed(1)); if (s != null) n.textContent = s; }
+
+  function render() {
+    if (!L.W) return;
+    var c = cur, pe = Math.max(0.0001, c.port), le = Math.max(0.0001, c.loan);
+    var tsP = samples(pe), tsL = samples(le);
+    function loanF(t) { return loanAt(t, c.mix); }
+    pBasis.setAttribute('d', band(tsP, function () { return 0; }, function () { return BASIS; }));
+    pGains.setAttribute('d', band(tsP, function () { return BASIS; }, port));
+    pGainsS.setAttribute('d', band(tsP, function () { return BASIS; }, port));
+    pPort.setAttribute('d', line(tsP, port));
+    op(pGains, 1 - c.die); op(pGainsS, c.die); op(pBasis, 1 - c.die * 0.6);
+    pMargin.setAttribute('d', line(samples(30), function (t) { return port(t) * 0.5; })); op(pMargin, c.margin);
+    var show = c.loan > 0.02 ? 1 : 0;
+    pLoan.setAttribute('d', line(tsL, loanF)); op(pLoan, show);
+    pLoanFill.setAttribute('d', band(tsL, function () { return 0; }, loanF)); op(pLoanFill, c.die);
+    pGhost.setAttribute('d', line(samples(30), function (t) { return interp(LA, t); })); op(pGhost, c.ghost * 0.75);
+    /* draws strip */
+    var spend = AUS * (1 - c.mix) + LIS * c.mix, maxD = AUS * Math.pow(1 + INF, YEARS - 1);
+    draws.forEach(function (r, k) {
+      var on = c.draws > 0.01 && k <= c.loan - 0.5;
+      var h = on ? Math.max(1, spend * Math.pow(1 + INF, k) / maxD * L.stripH * Math.min(1, c.draws)) : 0;
+      r.setAttribute('x', (X(k + 0.5) - L.bw / 2).toFixed(1)); r.setAttribute('y', (L.stripB - h).toFixed(1)); r.setAttribute('height', h.toFixed(1));
+    });
+    op(stripT, Math.min(1, c.draws * 1.5));
+    /* map */
+    op(gGratic, c.map); op(gCities, c.map);
+    arc.style.strokeDashoffset = (L.arcLen * (1 - c.map)).toFixed(1);
+    op(tL, Math.max(0, c.map * 2 - 1)); op(dotL, Math.max(0, c.map * 2 - 1)); op(pulse, Math.max(0, c.map * 2 - 1) * 0.5);
+    /* end labels */
+    var ex = L.pl + L.pw + 6, endFade = 1 - c.die;
+    var py = Y(port(pe));
+    txt(ePort, X(pe) + 6, Math.max(L.pt + 10, py + 4), money(port(pe))); op(ePort, endFade);
+    var ly = Y(loanF(le)), gy = Y(LA[YEARS]);
+    var lyT = ly + 4, gyT = gy + 4;
+    if (c.ghost > 0.05) { gyT = Math.min(gyT, lyT - 26); }
+    txt(eLoan, X(le) + 6, lyT, money(loanF(le))); op(eLoan, show * endFade);
+    txt(eLoanN, X(le) + 6, lyT - 12, c.mix > 0.5 ? 'Lisbon' : 'Loan'); op(eLoanN, show * endFade * (c.loan > 29 ? 1 : 0));
+    txt(eGhost, ex, gyT, vals.aLoan); txt(eGhostN, ex, gyT - 12); op(eGhost, c.ghost * endFade); op(eGhostN, c.ghost * endFade);
+    /* die: bracket on the right edge, text block top-left */
+    var bx = ex + 2, yL = Y(LL[YEARS]), yP = Y(P30);
+    brkL.setAttribute('x1', bx); brkL.setAttribute('x2', bx); brkL.setAttribute('y1', L.yb); brkL.setAttribute('y2', L.yb - (L.yb - yL) * c.die);
+    brkH.setAttribute('x1', bx); brkH.setAttribute('x2', bx); brkH.setAttribute('y1', yL - 3); brkH.setAttribute('y2', (yL - 3) - (yL - 3 - yP) * c.die);
+    var mH = (yL + yP) / 2, mL = (yL + L.yb) / 2;
+    txt(bHk, bx + 8, mH - 4); txt(bHv, bx + 8, mH + 10); txt(bLk, bx + 8, mL - 4); txt(bLv, bx + 8, mL + 10);
+    op(gDie, c.die);
+    /* readout */
+    var yr = step === 0 ? c.port : step === 1 ? c.loan : 30;
+    yr = Math.round(yr);
+    R.age.textContent = 'Age ' + (60 + yr); R.year.textContent = 'Year ' + yr;
+    var P = port(yr), Lv = c.loan > 0.02 ? loanAt(Math.min(yr, c.loan), c.mix) : 0;
+    R.port.textContent = money(P);
+    R.loan.textContent = Lv ? money(Lv) : '$0';
+    R.loan.parentNode.classList.toggle('is-dim', !Lv);
+    if (step === 3 && c.die > 0.5) {
+      R.ltvk.textContent = 'Heirs'; R.ltv.textContent = vals.heirs; R.ltv.className = 'is-heirs';
+    } else {
+      var ltv = Lv / P * 100;
+      R.ltvk.textContent = 'Loan / value'; R.ltv.textContent = Math.round(ltv) + '%'; R.ltv.className = ltv >= 45 ? 'is-hot' : '';
+    }
+    R.ltv.parentNode.classList.toggle('is-dim', !Lv && step !== 3);
+  }
+
+  /* ---------- Tweening ---------- */
+  var raf = 0, from = null, t0 = 0;
+  var DUR = { port: 1700, loan: 1600, draws: 900, margin: 900, mix: 1300, map: 1300, ghost: 900, die: 1200 };
+  var DELAY = { die: 0, mix: 250, ghost: 0 };
+  function ease(x) { return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; }
+  function scrub(x) { return x < .5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2; }
+  function go(n) {
+    if (n === step && entered) return;
+    var first = !entered; entered = true; step = n;
+    var target = STATES[n];
+    ui(n);
+    if (reduceMq.matches) { cancelAnimationFrame(raf); cur = Object.assign({}, target); render(); return; }
+    if (first && n === 0) cur.port = 0;
+    if (n === 1 && cur.loan > 29.5 && first) cur.loan = 0;
+    from = Object.assign({}, cur); t0 = performance.now();
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(tick);
+  }
+  function ui(n) {
+    panels.forEach(function (p, i) { p.classList.toggle('is-active', i === n); });
+    railBtns.forEach(function (b, i) { if (i === n) b.setAttribute('aria-current', 'step'); else b.removeAttribute('aria-current'); });
+    trackFill.style.transform = 'scaleX(' + ((n + 1) / 4) + ')';
+    caption.textContent = CAPTIONS[n];
+    var on = LEGEND[n];
+    Array.prototype.forEach.call(root.querySelectorAll('.vc__lg'), function (s) { s.classList.toggle('is-off', on.indexOf(s.className.match(/vc__lg--(\w+)/)[1]) < 0); });
+    svg.setAttribute('aria-label', 'Illustrative chart. ' + CAPTIONS[n]);
+  }
+  function tick(now) {
+    var done = true, target = STATES[step];
+    KEYS.forEach(function (k) {
+      var d = DUR[k], dl = DELAY[k] || 0;
+      var x = Math.max(0, Math.min(1, (now - t0 - dl) / d));
+      if (x < 1) done = false;
+      var e = (k === 'port' || k === 'loan') ? scrub(x) : ease(x);
+      cur[k] = from[k] + (target[k] - from[k]) * e;
+    });
+    render();
+    if (!done) raf = requestAnimationFrame(tick);
+  }
+
+  /* ---------- Scroll observation (no scroll-jacking) ---------- */
+  var io = null;
+  function observe() {
+    if (io) io.disconnect();
+    var vh = window.innerHeight || 800;
+    var topFrac = 0.5;
+    if (phoneMq.matches) { var vhgt = visual.getBoundingClientRect().height; topFrac = Math.min(0.85, (vhgt + (vh - vhgt) * 0.35) / vh); }
+    var top = Math.round(topFrac * 100), bottom = 100 - top - 1;
+    io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) go(+e.target.getAttribute('data-step')); });
+    }, { rootMargin: '-' + top + '% 0px -' + bottom + '% 0px', threshold: 0 });
+    panels.forEach(function (p) { io.observe(p); });
+  }
+  railBtns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var n = +b.getAttribute('data-go'), p = panels[n];
+      var vh = window.innerHeight, rect = p.getBoundingClientRect();
+      var offset = phoneMq.matches ? visual.getBoundingClientRect().height + 8 : vh * 0.5 - Math.min(rect.height, vh) * 0.3;
+      window.scrollTo({ top: window.scrollY + rect.top - offset + (phoneMq.matches ? 0 : 0), behavior: reduceMq.matches ? 'auto' : 'smooth' });
+      go(n);
+    });
+  });
+
+  var rt = 0;
+  function onResize() { clearTimeout(rt); rt = setTimeout(function () { layout(); observe(); }, 120); }
+  if (window.ResizeObserver) new ResizeObserver(onResize).observe(story); else window.addEventListener('resize', onResize);
+  layout();
+  /* First still frame: Buy, fully drawn. */
+  ui(0);
+  observe();
+})();
+</script>
+</section>
+<section class="mk-var" id="var-d" aria-labelledby="var-d-title">
+  <div class="mk-var__head">
+    <p class="mk-eyebrow">Variation D</p>
+    <h2 id="var-d-title">Two lives, one portfolio</h2>
+    <p>A split comparison: the same $2.5M at 60, sold to live in Austin on the left, borrowed against in Lisbon on the right, driven by one shared year scrubber.</p>
+    <div class="mk-var__notes">
+      <span><b>Best for</b> making the contrast the message; one drag shows what selling costs</span>
+      <span><b>Cost to build</b> medium: one SVG per panel, yearly series, no chart axes</span>
+      <span><b>Risk</b> two panels need width; on phones they stack, so the side-by-side punch softens</span>
+    </div>
+  </div>
+
+  <div class="vd">
+    <div class="vd-hero">
+      <div class="vd-copy">
+        <p class="vd-eyebrow">Buy · Borrow · Die, anywhere in the world</p>
+        <h3 class="vd-headline">Live off your portfolio <em>without ever selling it.</em></h3>
+        <p class="vd-body">Same $2.5M at 60. Same markets. One retiree sells shares each year to pay the bills. The other borrows against them, lets them compound, and lives where life costs less. Drag the years and watch who keeps the shares.</p>
+        <div class="vd-ctas">
+          <a class="vd-cta vd-cta--primary" href="#var-d">Stress-test my plan
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+          <a class="vd-cta vd-cta--ghost" href="#var-d">Explore the Atlas</a>
+        </div>
+        <p class="vd-fine">Illustrative numbers: 7% growth, 6% credit line, 3% inflation, 20% tax on gains. A typical path, not a forecast.</p>
+      </div>
+
+      <div class="vd-card">
+        <div class="vd-panels">
+          <article class="vd-panel vd-panel--sell" aria-labelledby="vd-sell-h">
+            <header class="vd-ph">
+              <div class="vd-ph__row"><p class="vd-ph__kicker vd-ph__kicker--sell">Sell to live</p></div>
+              <h4 class="vd-ph__city" id="vd-sell-h">Austin</h4>
+              <p class="vd-ph__sub">Each year, sell shares for $80k of living and pay tax on the gain.</p>
+            </header>
+            <div class="vd-badge is-same"><span>Stays put. Every sale is a taxable event.</span></div>
+            <svg class="vd-svg" data-vd="sell" viewBox="0 0 300 262" role="img" aria-label="Selling in Austin: the share stack, with outlines for shares sold, and a column of tax paid."></svg>
+            <dl class="vd-stats">
+              <div><dt>Portfolio</dt><dd data-vd="s-port">$2.5M</dd></div>
+              <div><dt>Tax paid</dt><dd data-vd="s-tax" class="vd-tax">$0</dd></div>
+              <div><dt>Shares kept</dt><dd data-vd="s-shares">100%</dd></div>
+            </dl>
+          </article>
+
+          <article class="vd-panel vd-panel--borrow" aria-labelledby="vd-borrow-h">
+            <header class="vd-ph">
+              <div class="vd-ph__row">
+                <p class="vd-ph__kicker vd-ph__kicker--borrow">Borrow to live</p>
+                <div class="vd-seg" role="group" aria-label="Where the borrower lives">
+                  <button type="button" data-city="lisbon" aria-pressed="true">Lisbon</button>
+                  <button type="button" data-city="austin" aria-pressed="false">Austin</button>
+                </div>
+              </div>
+              <h4 class="vd-ph__city" id="vd-borrow-h" data-vd="b-city">Lisbon</h4>
+              <p class="vd-ph__sub" data-vd="b-sub">Never sell. Borrow the year's spending; interest adds to the loan.</p>
+            </header>
+            <div class="vd-badge" data-vd="badge">
+              <svg viewBox="0 0 64 22" width="44" height="15" aria-hidden="true">
+                <path class="vd-badge__arc" d="M5 17 Q32 -4 59 17"/>
+                <circle class="vd-badge__dot" cx="5" cy="17" r="2.6"/>
+                <circle class="vd-badge__dot vd-badge__dot--to" cx="59" cy="17" r="2.6"/>
+                <path class="vd-badge__plane" d="M0 -2.4 L4.2 0 L0 2.4 L1 0 Z"/>
+              </svg>
+              <span data-vd="badge-t">Austin → Lisbon, life costs 38% less</span>
+            </div>
+            <svg class="vd-svg" data-vd="borrow" viewBox="0 0 300 262" role="img" aria-label="Borrowing: the share stack, never sold, and a loan column half its width. If the loan column grows taller than the stack, the lender calls."></svg>
+            <dl class="vd-stats">
+              <div><dt>Portfolio</dt><dd data-vd="b-port">$2.5M</dd></div>
+              <div><dt>Loan</dt><dd data-vd="b-loan" class="vd-loan">$0</dd></div>
+              <div><dt>Loan to value</dt><dd data-vd="b-ltv">0%<small> of 50%</small></dd></div>
+            </dl>
+          </article>
+        </div>
+
+        <div class="vd-controls">
+          <button type="button" class="vd-play" data-vd="play" aria-label="Play the 30 years">
+            <svg class="vd-ico vd-ico--play" viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 3v10l8.5-5z"/></svg>
+            <svg class="vd-ico vd-ico--pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 3h3v10H4zM9 3h3v10H9z"/></svg>
+            <svg class="vd-ico vd-ico--replay" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3a5 5 0 1 1-4.6 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M2 2.5v4h4z"/></svg>
+          </button>
+          <div class="vd-scrub">
+            <label class="vd-age" for="vd-range">Age <b data-vd="age">90</b></label>
+            <input id="vd-range" class="vd-range" type="range" min="60" max="90" step="1" value="90" aria-valuetext="Age 90">
+            <div class="vd-ticks" aria-hidden="true"><span>60</span><span>70</span><span>80</span><span>90</span></div>
+          </div>
+        </div>
+
+        <ul class="vd-legend" aria-label="Key">
+          <li><i class="vd-sw vd-sw--share"></i>Shares, each block $250k</li>
+          <li><i class="vd-sw vd-sw--ghost"></i>Shares sold to live</li>
+          <li><i class="vd-sw vd-sw--tax"></i>Tax paid</li>
+          <li><i class="vd-sw vd-sw--loan"></i>Loan</li>
+          <li><i class="vd-sw vd-sw--repay"></i>Repaid from the estate</li>
+        </ul>
+
+        <div class="vd-end" data-vd="end">
+          <div class="vd-end__cell">
+            <p class="vd-end__k">At 90, selling</p>
+            <p class="vd-end__v">Heirs get <b data-vd="e-sell">$5.8M</b></p>
+            <p class="vd-end__n">Gains taxed along the way: <span data-vd="e-tax">$778k</span></p>
+          </div>
+          <div class="vd-end__cell vd-end__cell--win">
+            <p class="vd-end__k">At 90, borrowing in <span data-vd="e-city">Lisbon</span></p>
+            <p class="vd-end__v">Heirs get <b data-vd="e-borrow">$13.2M</b></p>
+            <p class="vd-end__n">Step-up: gains never taxed. The estate repays the <span data-vd="e-loan">$5.9M</span> loan.<span data-vd="e-warn"></span></p>
+          </div>
+        </div>
+        <p class="vd-sr" aria-live="polite" data-vd="live"></p>
+      </div>
+    </div>
+  </div>
+
+<style>
+.vd { --vd-pitch: 21px; color: var(--ink); font-family: var(--font-ui); }
+.vd .vd-hero { display: grid; gap: 40px; align-items: center; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 1100px) { .vd .vd-hero { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 48px; } }
+.vd .vd-copy { display: grid; gap: 20px; max-width: 34rem; }
+.vd .vd-eyebrow { margin: 0; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); font-weight: 500; }
+.vd .vd-headline { margin: 0; font-family: var(--font-display); font-weight: 400; font-size: clamp(2.6rem, 1.2rem + 4.2vw, 4.6rem); line-height: .98; letter-spacing: -.02em; text-wrap: balance; }
+.vd .vd-headline em { color: var(--holds-text); }
+.vd .vd-body { margin: 0; font-size: 17px; line-height: 1.55; color: var(--ink-2); text-wrap: pretty; }
+.vd .vd-ctas { display: flex; flex-wrap: wrap; gap: 10px; }
+.vd .vd-cta { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 999px; font-size: 15px; font-weight: 500; text-decoration: none; }
+.vd .vd-cta--primary { background: var(--ink); color: var(--bg); }
+.vd .vd-cta--primary svg { transition: transform .2s ease; }
+.vd .vd-cta--primary:hover svg { transform: translateX(3px); }
+.vd .vd-cta--ghost { color: var(--ink); border: 1px solid var(--card-line); }
+.vd .vd-cta--ghost:hover { background: var(--surface-hover); }
+.vd .vd-fine { margin: 0; font-size: 13px; color: var(--ink-3); }
+
+.vd .vd-card { background: var(--card); border: 1px solid var(--card-line); border-radius: 20px; box-shadow: var(--card-shadow); padding: 18px; display: grid; gap: 14px; min-width: 0; }
+.vd .vd-panels { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; }
+@media (min-width: 620px) { .vd .vd-panels { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+.vd .vd-panel { position: relative; display: grid; gap: 8px; align-content: start; padding: 14px; border-radius: 14px; border: 1px solid var(--hairline); background: var(--card-solid); min-width: 0; }
+.vd .vd-ph { display: grid; gap: 2px; min-height: 92px; align-content: start; }
+.vd .vd-ph__row { min-height: 34px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 10px; }
+.vd .vd-ph__kicker { margin: 0; font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; font-weight: 600; }
+.vd .vd-ph__kicker--sell { color: var(--bruised-text); }
+.vd .vd-ph__kicker--borrow { color: var(--holds-text); }
+.vd .vd-ph__city { margin: 0; font-family: var(--font-display); font-weight: 400; font-size: 30px; line-height: 1.05; }
+.vd .vd-ph__sub { min-height: 2.8em; margin: 0; font-size: 13px; color: var(--ink-2); line-height: 1.4; }
+
+.vd .vd-seg { display: inline-flex; border: 1px solid var(--hairline-strong); border-radius: 999px; padding: 2px; }
+.vd .vd-seg button { font: 500 12px/1 var(--font-ui); color: var(--ink-2); background: none; border: 0; border-radius: 999px; padding: 6px 10px; cursor: pointer; min-height: 28px; }
+.vd .vd-seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+.vd .vd-seg button:hover:not([aria-pressed="true"]) { background: var(--surface-hover); }
+
+.vd .vd-badge { min-height: 26px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--holds-text); background: var(--holds-soft); border-radius: 999px; padding: 3px 12px 3px 6px; justify-self: start; max-width: 100%; transition: opacity .3s ease; }
+.vd .vd-badge.is-same { color: var(--ink-3); background: var(--surface-3); }
+.vd .vd-badge svg { flex: none; overflow: visible; }
+.vd .vd-badge__arc { fill: none; stroke: currentColor; stroke-width: 1.3; stroke-dasharray: 2.5 2.5; }
+.vd .vd-badge__dot { fill: var(--ink-3); }
+.vd .vd-badge__dot--to { fill: currentColor; }
+.vd .vd-badge__plane { fill: currentColor; }
+.vd .vd-badge.is-same { padding-left: 12px; }
+.vd .vd-badge.is-same svg { display: none; }
+.vd .vd-badge span { overflow: hidden; text-overflow: ellipsis; }
+
+.vd .vd-svg { display: block; width: 100%; height: auto; overflow: visible; }
+.vd .vd-svg .vd-ground { stroke: var(--axis); stroke-width: 1; }
+.vd .vd-svg .vd-lab { font: 500 10.5px var(--font-ui); fill: var(--ink-3); letter-spacing: .04em; text-transform: uppercase; }
+.vd .vd-svg .vd-lab--tax { fill: var(--bruised-text); }
+.vd .vd-svg .vd-lab--loan { fill: var(--loan); }
+.vd .vd-svg .vd-num { font: 500 11px var(--font-mono); fill: var(--ink-2); }
+.vd .vd-svg .vd-slot { fill: none; stroke: var(--ink-3); stroke-width: 1; stroke-dasharray: 2.5 2; opacity: 0; }
+.vd .vd-svg .vd-slot.is-ghost { opacity: .55; }
+.vd .vd-svg .vd-fill--share { fill: var(--holds); }
+.vd .vd-svg .vd-fill--tax { fill: var(--bruised); }
+.vd .vd-svg .vd-fill--loan { fill: var(--loan); }
+.vd .vd-svg .vd-repay { fill: url(#vd-hatch); opacity: 0; }
+.vd .vd-svg .vd-hatch-bg { fill: var(--card-solid); opacity: .35; }
+.vd .vd-svg .vd-hatch-ln { stroke: var(--loan); stroke-width: 2.2; }
+.vd .vd-svg .vd-margin { stroke: var(--broken); stroke-width: 1.4; stroke-dasharray: 4 3; }
+.vd .vd-svg .vd-margin-t { font: 500 10px var(--font-ui); fill: var(--broken-text); }
+.vd .vd-svg .vd-chip--tax { fill: var(--bruised); }
+.vd .vd-svg .vd-chip--loan { fill: var(--loan); }
+.vd .vd-svg .vd-bank { fill: none; stroke: var(--loan); stroke-width: 1.2; }
+
+.vd .vd-stats { margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; border-top: 1px solid var(--hairline); padding-top: 10px; }
+.vd .vd-stats div { min-width: 0; }
+.vd .vd-stats dt { font-size: 11px; color: var(--ink-3); letter-spacing: .02em; }
+.vd .vd-stats dd { margin: 0; font: 500 16px/1.25 var(--font-mono); font-variant-numeric: tabular-nums; color: var(--ink); white-space: nowrap; }
+.vd .vd-stats dd small { font-size: 11px; color: var(--ink-3); }
+.vd .vd-stats .vd-tax { color: var(--bruised-text); }
+.vd .vd-stats .vd-loan { color: var(--loan); }
+.vd .vd-stats dd.is-hot { color: var(--broken-text); }
+
+.vd .vd-controls { display: flex; align-items: center; gap: 14px; padding: 4px 2px 0; }
+.vd .vd-play { flex: none; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--hairline-strong); background: var(--card-solid); color: var(--ink); display: grid; place-items: center; cursor: pointer; }
+.vd .vd-play:hover { background: var(--surface-hover); }
+.vd .vd-ico { width: 16px; height: 16px; fill: currentColor; display: none; }
+.vd .vd-play[data-state="play"] .vd-ico--play, .vd .vd-play[data-state="pause"] .vd-ico--pause, .vd .vd-play[data-state="replay"] .vd-ico--replay { display: block; }
+.vd .vd-scrub { flex: 1; min-width: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; column-gap: 14px; }
+.vd .vd-age { font-size: 13px; color: var(--ink-3); white-space: nowrap; min-width: 4.6em; }
+.vd .vd-age b { font: 500 20px var(--font-mono); color: var(--ink); font-variant-numeric: tabular-nums; }
+.vd .vd-range { width: 100%; margin: 0; accent-color: var(--holds); height: 28px; cursor: pointer; }
+.vd .vd-ticks { grid-column: 2; display: flex; justify-content: space-between; font: 11px var(--font-mono); color: var(--ink-3); padding: 0 2px; }
+
+.vd .vd-legend { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 12px; color: var(--ink-3); }
+.vd .vd-legend li { display: inline-flex; align-items: center; gap: 6px; }
+.vd .vd-sw { width: 11px; height: 11px; border-radius: 2px; display: inline-block; }
+.vd .vd-sw--share { background: var(--holds); }
+.vd .vd-sw--ghost { border: 1px dashed var(--ink-3); }
+.vd .vd-sw--tax { background: var(--bruised); }
+.vd .vd-sw--loan { background: var(--loan); }
+.vd .vd-sw--repay { background: repeating-linear-gradient(45deg, var(--loan) 0 2px, transparent 2px 4px); }
+
+.vd .vd-end { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; transition: opacity .5s ease, transform .5s ease; }
+@media (min-width: 620px) { .vd .vd-end { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+.vd .vd-end.is-pending { opacity: .35; transform: translateY(4px); }
+.vd .vd-end__cell { border-radius: 14px; padding: 12px 14px; background: var(--surface-3); display: grid; gap: 2px; }
+.vd .vd-end__cell--win { background: var(--holds-soft); }
+.vd .vd-end__k { margin: 0; font-size: 11.5px; color: var(--ink-3); letter-spacing: .06em; text-transform: uppercase; }
+.vd .vd-end__v { margin: 0; font-family: var(--font-display); font-size: 26px; line-height: 1.1; }
+.vd .vd-end__v b { font-weight: 400; }
+.vd .vd-end__cell--win .vd-end__v b { color: var(--holds-text); }
+.vd .vd-end__n { margin: 0; font-size: 13px; color: var(--ink-2); }
+.vd .vd-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; margin: -1px; }
+
+@media (max-width: 619px) {
+  .vd .vd-card { padding: 12px; }
+  .vd .vd-ph { min-height: 0; }
+  .vd .vd-scrub { column-gap: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vd .vd-end, .vd .vd-badge, .vd .vd-cta--primary svg { transition: none; }
+}
+</style>
+
+<script>
+(function () {
+  var root = document.getElementById('var-d');
+  if (!root) return;
+  var q = function (s) { return root.querySelector(s); };
+  var NS = 'http://www.w3.org/2000/svg';
+  var BLOCK = 250000, YEARS = 30, PITCH = 21, SIZE = 18, GROUND = 228;
+  var STACK_X = 14, COL_X = 200, STACK_COLS = 8, COL_COLS = 4, ROWS = 10;
+  var SPEND = { austin: 80000, lisbon: 50000 };
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Yearly series, index t = 0..30 (age 60..90). Spending is drawn at the start of each year, then markets move.
+  function sellSeries(spend) {
+    var V = 2.5e6, B = 1e6, tax = 0, price = 1, units = 2.5e6;
+    var out = { V: [V], tax: [0], kept: [1] };
+    for (var t = 0; t < YEARS; t++) {
+      var S = spend * Math.pow(1.03, t);
+      var gainShare = Math.max(0, (V - B) / V);
+      var gross = S / (1 - 0.2 * gainShare);
+      tax += gross - S;
+      B -= B * gross / V;
+      units -= gross / price;
+      V = (V - gross) * 1.07; price *= 1.07;
+      out.V.push(V); out.tax.push(tax); out.kept.push(units / 2.5e6);
+    }
+    return out;
+  }
+  function borrowSeries(spend) {
+    var V = 2.5e6, L = 0, out = { V: [V], L: [0] };
+    for (var t = 0; t < YEARS; t++) {
+      L = (L + spend * Math.pow(1.03, t)) * 1.06;
+      V *= 1.07;
+      out.V.push(V); out.L.push(L);
+    }
+    return out;
+  }
+  var SELL = sellSeries(SPEND.austin);
+  var BORROW = { austin: borrowSeries(SPEND.austin), lisbon: borrowSeries(SPEND.lisbon) };
+  function at(arr, t) { t = Math.max(0, t); var i = Math.floor(t), f = t - i; return i >= YEARS ? arr[YEARS] : arr[i] + (arr[i + 1] - arr[i]) * f; }
+
+  function fmt(v) {
+    if (v >= 1e6) return '$' + (v / 1e6).toFixed(1) + 'M';
+    if (v >= 1e3) return '$' + Math.round(v / 1e3) + 'k';
+    return '$' + Math.round(v);
+  }
+  function el(name, attrs, parent) {
+    var n = document.createElementNS(NS, name);
+    for (var k in attrs) n.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(n);
+    return n;
+  }
+  function slotXY(x0, cols, i) {
+    return { x: x0 + (i % cols) * PITCH, yb: GROUND - Math.floor(i / cols) * PITCH };
+  }
+  function buildGrid(svg, x0, cols, n, kind, withSlot, withRepay) {
+    var g = el('g', {}, svg), cells = [];
+    for (var i = 0; i < n; i++) {
+      var p = slotXY(x0, cols, i), c = {};
+      if (withSlot) c.slot = el('rect', { 'class': 'vd-slot', x: p.x + .5, y: p.yb - SIZE + .5, width: SIZE - 1, height: SIZE - 1, rx: 2.5 }, g);
+      c.fill = el('rect', { 'class': 'vd-fill--' + kind, x: p.x, y: p.yb, width: SIZE, height: 0, rx: 2.5 }, g);
+      if (withRepay) c.repay = el('rect', { 'class': 'vd-repay', x: p.x, y: p.yb - SIZE, width: SIZE, height: SIZE, rx: 2.5 }, g);
+      c.yb = p.yb; cells.push(c);
+    }
+    return cells;
+  }
+  function setFill(cells, count) {
+    for (var i = 0; i < cells.length; i++) {
+      var f = Math.max(0, Math.min(1, count - i)), h = f * SIZE;
+      cells[i].fill.setAttribute('y', cells[i].yb - h);
+      cells[i].fill.setAttribute('height', h);
+    }
+  }
+  function frame(svg) {
+    el('line', { 'class': 'vd-ground', x1: 4, x2: 296, y1: GROUND + 3.5, y2: GROUND + 3.5 }, svg);
+  }
+
+  // Sell panel
+  var sSvg = q('[data-vd="sell"]');
+  frame(sSvg);
+  var sStack = buildGrid(sSvg, STACK_X, STACK_COLS, 80, 'share', true, false);
+  var sTax = buildGrid(sSvg, COL_X, COL_COLS, 40, 'tax', false, false);
+  el('text', { 'class': 'vd-lab', x: STACK_X, y: GROUND + 22 }, sSvg).textContent = 'Shares';
+  el('text', { 'class': 'vd-lab vd-lab--tax', x: COL_X, y: GROUND + 22 }, sSvg).textContent = 'Tax paid';
+  var sTaxNum = el('text', { 'class': 'vd-num', x: COL_X, y: GROUND - 6 }, sSvg);
+  var sChips = el('g', {}, sSvg);
+
+  // Borrow panel
+  var bSvg = q('[data-vd="borrow"]');
+  var defs = el('defs', {}, bSvg);
+  var pat = el('pattern', { id: 'vd-hatch', width: 5, height: 5, patternUnits: 'userSpaceOnUse', patternTransform: 'rotate(45)' }, defs);
+  el('rect', { 'class': 'vd-hatch-bg', width: 5, height: 5 }, pat);
+  el('line', { 'class': 'vd-hatch-ln', x1: 0, y1: 0, x2: 0, y2: 5 }, pat);
+  frame(bSvg);
+  var bStack = buildGrid(bSvg, STACK_X, STACK_COLS, 80, 'share', false, true);
+  var bLoan = buildGrid(bSvg, COL_X, COL_COLS, 40, 'loan', false, false);
+  el('text', { 'class': 'vd-lab', x: STACK_X, y: GROUND + 22 }, bSvg).textContent = 'Shares';
+  el('text', { 'class': 'vd-lab vd-lab--loan', x: COL_X, y: GROUND + 22 }, bSvg).textContent = 'Loan';
+  var bMargin = el('line', { 'class': 'vd-margin', x1: COL_X - 4, x2: COL_X + COL_COLS * PITCH + 1 }, bSvg);
+  var bMarginT = el('text', { 'class': 'vd-margin-t', x: COL_X + COL_COLS * PITCH + 1, 'text-anchor': 'end' }, bSvg);
+  bMarginT.textContent = 'margin call';
+  var bChips = el('g', {}, bSvg);
+
+  // State
+  var city = 'lisbon', t = YEARS, playing = false, raf = 0, startT = 0, startTime = 0, lastYear = YEARS, ended = true, autoplayed = false, inView = false;
+  var DURATION = 8000;
+  var range = q('#vd-range'), ageOut = q('[data-vd="age"]'), playBtn = q('[data-vd="play"]'), endRow = q('[data-vd="end"]'), live = q('[data-vd="live"]');
+
+  function render() {
+    var B = BORROW[city];
+    var vs = at(SELL.V, t), tax = at(SELL.tax, t), kept = at(SELL.kept, t);
+    var vb = at(B.V, t), loan = at(B.L, t);
+    // Sell: solid shares left, dashed outlines for what selling gave up (the unsold portfolio's size)
+    var sc = vs / BLOCK, gc = vb / BLOCK;
+    setFill(sStack, sc);
+    for (var i = 0; i < sStack.length; i++) sStack[i].slot.setAttribute('class', 'vd-slot' + (i < gc && i + 1 > sc ? ' is-ghost' : ''));
+    var tc = tax / BLOCK;
+    setFill(sTax, tc);
+    sTaxNum.setAttribute('y', GROUND - Math.ceil(Math.max(tc, .01) / COL_COLS) * PITCH - 2);
+    sTaxNum.textContent = fmt(tax);
+    // Borrow: the stack keeps every share; the loan column is half the stack's width, so equal height means loan = 50%
+    var bc = vb / BLOCK, lc = loan / BLOCK;
+    setFill(bStack, bc);
+    setFill(bLoan, lc);
+    var my = GROUND - (bc / STACK_COLS) * PITCH + 3;
+    bMargin.setAttribute('y1', my); bMargin.setAttribute('y2', my);
+    var loanTop = GROUND - Math.ceil(Math.max(lc, .01) / COL_COLS) * PITCH + 3;
+    bMarginT.setAttribute('y', Math.min(my - 5, loanTop - 6));
+    // Die: near 90 the top of the stack that repays the loan takes a hatch
+    var fin = Math.max(0, Math.min(1, (t - (YEARS - 1)) / 1));
+    var repayFrom = bc - lc;
+    for (var j = 0; j < bStack.length; j++) bStack[j].repay.style.opacity = (j + 0.5 >= repayFrom && j < bc) ? fin : 0;
+
+    var ltv = vb ? loan / vb : 0;
+    q('[data-vd="s-port"]').textContent = fmt(vs);
+    q('[data-vd="s-tax"]').textContent = fmt(tax);
+    q('[data-vd="s-shares"]').textContent = Math.round(kept * 100) + '%';
+    q('[data-vd="b-port"]').textContent = fmt(vb);
+    q('[data-vd="b-loan"]').textContent = fmt(loan);
+    var ltvEl = q('[data-vd="b-ltv"]');
+    ltvEl.innerHTML = Math.round(ltv * 100) + '%<small> of 50%</small>';
+    ltvEl.classList.toggle('is-hot', ltv > 0.42);
+
+    var age = Math.round(60 + t);
+    ageOut.textContent = age;
+    if (!range.matches(':active')) range.value = age;
+    range.setAttribute('aria-valuetext', 'Age ' + age);
+    endRow.classList.toggle('is-pending', t < YEARS - 0.001);
+  }
+  function setEnd() {
+    var B = BORROW[city];
+    q('[data-vd="e-sell"]').textContent = fmt(SELL.V[YEARS]);
+    q('[data-vd="e-tax"]').textContent = fmt(SELL.tax[YEARS]);
+    q('[data-vd="e-borrow"]').textContent = fmt(B.V[YEARS] - B.L[YEARS]);
+    q('[data-vd="e-loan"]').textContent = fmt(B.L[YEARS]);
+    q('[data-vd="e-city"]').textContent = city === 'lisbon' ? 'Lisbon' : 'Austin';
+    q('[data-vd="e-warn"]').textContent = city === 'lisbon' ? '' : ' But the loan ends at ' + Math.round(B.L[YEARS] / B.V[YEARS] * 100) + '% of the portfolio, one bad decade from a margin call.';
+  }
+  function describe() {
+    var B = BORROW[city], i = Math.round(t), name = city === 'lisbon' ? 'Lisbon' : 'Austin';
+    if (i >= YEARS) {
+      live.textContent = 'Age 90. Selling in Austin: heirs get ' + fmt(SELL.V[YEARS]) + ', after ' + fmt(SELL.tax[YEARS]) + ' in tax on gains. Borrowing in ' + name + ': heirs get ' + fmt(B.V[YEARS] - B.L[YEARS]) + ', the gains never taxed and the loan repaid from the estate.';
+    } else {
+      live.textContent = 'Age ' + (60 + i) + '. Selling: portfolio ' + fmt(SELL.V[i]) + ', ' + fmt(SELL.tax[i]) + ' tax paid, ' + Math.round(SELL.kept[i] * 100) + '% of shares kept. Borrowing in ' + name + ': portfolio ' + fmt(B.V[i]) + ', loan ' + fmt(B.L[i]) + ', ' + Math.round(B.L[i] / B.V[i] * 100) + '% of value; the lender calls at 50%.';
+    }
+  }
+
+  function chip(svg, g, cls, from, to) {
+    if (reduce || !g.animate) return;
+    var r = el('rect', { 'class': cls, x: -4, y: -4, width: 8, height: 8, rx: 1.5 }, g);
+    var mid = { x: (from.x + to.x) / 2, y: Math.min(from.y, to.y) - 26 };
+    var a = r.animate([
+      { transform: 'translate(' + from.x + 'px,' + from.y + 'px) scale(.6)', opacity: 0 },
+      { transform: 'translate(' + mid.x + 'px,' + mid.y + 'px) scale(1) rotate(90deg)', opacity: 1, offset: .45 },
+      { transform: 'translate(' + to.x + 'px,' + to.y + 'px) scale(.8) rotate(180deg)', opacity: 0 }
+    ], { duration: 620, easing: 'cubic-bezier(.3,.6,.4,1)' });
+    a.onfinish = function () { r.remove(); };
+  }
+  function yearTick(y) {
+    var B = BORROW[city];
+    var sTop = GROUND - (SELL.V[y] / BLOCK / STACK_COLS) * PITCH;
+    var taxTop = GROUND - Math.max(1, SELL.tax[y] / BLOCK / COL_COLS) * PITCH;
+    chip(sSvg, sChips, 'vd-chip--tax', { x: STACK_X + 150, y: sTop - 4 }, { x: COL_X + 40, y: taxTop + 8 });
+    var lTop = GROUND - (B.L[y] / BLOCK / COL_COLS) * PITCH;
+    chip(bSvg, bChips, 'vd-chip--loan', { x: COL_X + 70, y: 6 }, { x: COL_X + 40, y: lTop + 6 });
+  }
+
+  function ease(x) { return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; }
+  function setPlayState() {
+    var s = playing ? 'pause' : (t >= YEARS ? 'replay' : 'play');
+    playBtn.dataset.state = s;
+    playBtn.setAttribute('aria-label', s === 'pause' ? 'Pause' : s === 'replay' ? 'Replay the 30 years' : 'Play the 30 years');
+  }
+  function step(now) {
+    var p = Math.max(0, Math.min(1, (now - startTime) / DURATION));
+    t = startT + (YEARS - startT) * ease(p);
+    var y = Math.floor(t);
+    while (lastYear < y) { lastYear++; if (lastYear < YEARS) yearTick(lastYear); }
+    render();
+    if (p < 1) raf = requestAnimationFrame(step);
+    else { playing = false; t = YEARS; render(); setPlayState(); describe(); }
+  }
+  function play(fromStart) {
+    if (reduce) { t = YEARS; render(); setPlayState(); describe(); return; }
+    if (fromStart || t >= YEARS) t = 0;
+    startT = t; lastYear = Math.floor(t);
+    // remaining share of the 8s so a resumed play keeps the same pace
+    DURATION = 8000 * Math.max(.15, (YEARS - startT) / YEARS);
+    startTime = performance.now();
+    playing = true; setPlayState();
+    cancelAnimationFrame(raf); raf = requestAnimationFrame(step);
+  }
+  function pause() { playing = false; cancelAnimationFrame(raf); setPlayState(); describe(); }
+
+  playBtn.addEventListener('click', function () { if (playing) pause(); else play(false); });
+  range.addEventListener('input', function () {
+    if (playing) pause();
+    t = Number(range.value) - 60; render(); setPlayState();
+  });
+  range.addEventListener('change', describe);
+  root.querySelectorAll('.vd-seg button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      city = b.dataset.city;
+      root.querySelectorAll('.vd-seg button').forEach(function (o) { o.setAttribute('aria-pressed', String(o === b)); });
+      var lis = city === 'lisbon';
+      q('[data-vd="b-city"]').textContent = lis ? 'Lisbon' : 'Austin';
+      var badge = q('[data-vd="badge"]');
+      badge.classList.toggle('is-same', !lis);
+      q('[data-vd="badge-t"]').textContent = lis ? 'Austin → Lisbon, life costs 38% less' : 'Same city as the left. Only borrowing differs.';
+      setEnd(); render(); describe();
+    });
+  });
+
+  // Plane rides the arc in the badge (static at the destination when motion is reduced)
+  var plane = q('.vd-badge__plane');
+  function placePlane(u) {
+    var x = (1 - u) * (1 - u) * 5 + 2 * (1 - u) * u * 32 + u * u * 59;
+    var y = (1 - u) * (1 - u) * 17 + 2 * (1 - u) * u * -4 + u * u * 17;
+    var dx = 2 * (1 - u) * 27 + 2 * u * 27, dy = 2 * (1 - u) * -21 + 2 * u * 21;
+    plane.setAttribute('transform', 'translate(' + x.toFixed(2) + ' ' + y.toFixed(2) + ') rotate(' + (Math.atan2(dy, dx) * 180 / Math.PI).toFixed(1) + ')');
+  }
+  placePlane(.5);
+
+  setEnd(); render(); setPlayState(); describe();
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        inView = e.isIntersecting;
+        if (inView && !autoplayed && !reduce) { autoplayed = true; play(true); }
+        else if (!inView && playing) pause();
+      });
+    }, { threshold: 0.45 });
+    io.observe(q('.vd-card'));
+  }
+})();
+</script>
+</section>
+<footer class="mk-foot">Illustrative numbers, a typical future rather than a forecast. Throwaway mockups for review; none of this is in the app yet.</footer>
+</main>

@@ -1,0 +1,827 @@
+<title>Recommended Hero Mockup</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one review page; a short intro, then each variation as its own full-width band with a hero-sized stage. Tokens mirror eVelo's src/styles/tokens.css. */
+:root {
+  --font-display: 'Instrument Serif', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  --font-ui: 'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --bg: #f5f2ea; --bg-deep: #ede8dc;
+  --ink: #141815; --ink-2: #4a524d; --ink-3: #5e655f; --ink-faint: rgba(20,24,21,.28);
+  --card: rgba(255,253,248,.86); --card-solid: #fdfbf6; --card-line: rgba(20,24,21,.1);
+  --card-shadow: 0 2px 6px rgba(40,32,12,.05), 0 12px 32px -12px rgba(40,32,12,.14);
+  --hairline: rgba(20,24,21,.1); --hairline-strong: rgba(20,24,21,.18);
+  --surface-3: rgba(20,24,21,.045); --surface-hover: rgba(20,24,21,.05);
+  --holds: #0b7a56; --holds-text: #0a6e4d; --holds-soft: rgba(11,122,86,.1); --holds-line: rgba(11,122,86,.32);
+  --bruised: #a87a1f; --bruised-text: #8a6312; --bruised-soft: rgba(168,122,31,.12);
+  --broken: #d2452f; --broken-text: #b5361f; --broken-soft: rgba(210,69,47,.1);
+  --ramp-0: #d2452f; --ramp-1: #c8662b; --ramp-2: #a87a1f; --ramp-3: #3d9776; --ramp-4: #0b7a56;
+  --loan: #556574; --loan-soft: rgba(85,101,116,.12);
+  --band-1: rgba(11,122,86,.1); --band-2: rgba(11,122,86,.18);
+  --grid: rgba(20,24,21,.07); --axis: #5e655f;
+  --accent-ink: #ffffff; --focus: #0b7a56;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  color-scheme: dark;
+  --bg: #0a0d0c; --bg-deep: #060807;
+  --ink: #ecf1ee; --ink-2: #a9b5af; --ink-3: #84918b; --ink-faint: rgba(236,241,238,.24);
+  --card: rgba(17,23,21,.92); --card-solid: #101614; --card-line: rgba(220,255,240,.1);
+  --card-shadow: 0 2px 6px rgba(0,0,0,.05), 0 12px 32px -12px rgba(0,0,0,.14);
+  --hairline: rgba(220,255,240,.085); --hairline-strong: rgba(220,255,240,.16);
+  --surface-3: rgba(220,255,240,.06); --surface-hover: rgba(220,255,240,.06);
+  --holds: #5be3b0; --holds-text: #5be3b0; --holds-soft: rgba(91,227,176,.1); --holds-line: rgba(91,227,176,.32);
+  --bruised: #e3b262; --bruised-text: #e3b262; --bruised-soft: rgba(227,178,98,.11);
+  --broken: #ff6b5a; --broken-text: #ff7a6a; --broken-soft: rgba(255,107,90,.1);
+  --ramp-0: #ff6b5a; --ramp-1: #f5925e; --ramp-2: #e3b262; --ramp-3: #9ed8be; --ramp-4: #5be3b0;
+  --loan: #93a4b4; --loan-soft: rgba(147,164,180,.12);
+  --band-1: rgba(91,227,176,.08); --band-2: rgba(91,227,176,.16);
+  --grid: rgba(220,255,240,.07); --axis: #84918b;
+  --accent-ink: #0a0d0c; --focus: #5be3b0;
+} }
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0a0d0c; --bg-deep: #060807;
+  --ink: #ecf1ee; --ink-2: #a9b5af; --ink-3: #84918b; --ink-faint: rgba(236,241,238,.24);
+  --card: rgba(17,23,21,.92); --card-solid: #101614; --card-line: rgba(220,255,240,.1);
+  --card-shadow: 0 2px 6px rgba(0,0,0,.05), 0 12px 32px -12px rgba(0,0,0,.14);
+  --hairline: rgba(220,255,240,.085); --hairline-strong: rgba(220,255,240,.16);
+  --surface-3: rgba(220,255,240,.06); --surface-hover: rgba(220,255,240,.06);
+  --holds: #5be3b0; --holds-text: #5be3b0; --holds-soft: rgba(91,227,176,.1); --holds-line: rgba(91,227,176,.32);
+  --bruised: #e3b262; --bruised-text: #e3b262; --bruised-soft: rgba(227,178,98,.11);
+  --broken: #ff6b5a; --broken-text: #ff7a6a; --broken-soft: rgba(255,107,90,.1);
+  --ramp-0: #ff6b5a; --ramp-1: #f5925e; --ramp-2: #e3b262; --ramp-3: #9ed8be; --ramp-4: #5be3b0;
+  --loan: #93a4b4; --loan-soft: rgba(147,164,180,.12);
+  --band-1: rgba(91,227,176,.08); --band-2: rgba(91,227,176,.16);
+  --grid: rgba(220,255,240,.07); --axis: #84918b;
+  --accent-ink: #0a0d0c; --focus: #5be3b0;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-ui); font-size: 15px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.mk-wrap { max-width: 1240px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 40px 80px; display: grid; gap: 72px; }
+.mk-intro { display: grid; gap: 14px; max-width: 46rem; }
+.mk-eyebrow { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); font-weight: 500; margin: 0; }
+.mk-intro h1 { font-family: var(--font-display); font-weight: 400; font-size: clamp(2.2rem, 1.4rem + 3vw, 3.6rem); line-height: 1; margin: 0; text-wrap: balance; }
+.mk-intro p { margin: 0; color: var(--ink-2); font-size: 17px; max-width: 40em; }
+.mk-toc { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.mk-toc a { color: var(--ink); text-decoration: none; border: 1px solid var(--hairline-strong); border-radius: 999px; padding: 6px 14px; font-size: 14px; }
+.mk-toc a:hover { background: var(--surface-hover); }
+.mk-var { display: grid; gap: 20px; scroll-margin-top: 24px; }
+.mk-var__head { display: grid; gap: 6px; border-top: 1px solid var(--hairline-strong); padding-top: 20px; }
+.mk-var__head h2 { font-family: var(--font-display); font-weight: 400; font-size: 2rem; line-height: 1.05; margin: 0; }
+.mk-var__head p { margin: 0; color: var(--ink-2); max-width: 46em; }
+.mk-var__notes { display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 13px; color: var(--ink-3); }
+.mk-var__notes b { color: var(--ink-2); font-weight: 500; }
+.mk-foot { color: var(--ink-3); font-size: 13px; border-top: 1px solid var(--hairline); padding-top: 16px; }
+</style>
+<main class="mk-wrap">
+<header class="mk-intro">
+  <p class="mk-eyebrow">eVelo · home page · recommended hero</p>
+  <h1>The recommended hero, A's story with D's contrast</h1>
+  <p>This keeps A's four-beat loop and its synced step cards. Beat two now asks D's question on the same chart: a dashed line shows what selling would leave, while tax chips peel off into a running tally. Beat four ends on D's result row, so the visitor sees both outcomes side by side. A quiet switch under the chart sets the borrower in Austin instead of Lisbon. That separates what borrowing does from what moving does. All numbers are illustrative, computed from one simple model, and are not engine output.</p>
+</header>
+<section class="mk-var" id="var-r" aria-labelledby="var-r-title">
+  <div class="mk-var__head">
+    <p class="mk-eyebrow">Recommendation</p>
+    <h2 id="var-r-title">Loop + contrast</h2>
+    <p>The four-beat loop from A, with beat two rebuilt around D's question: sell the shares to live, or borrow against them?</p>
+    <div class="mk-var__notes">
+      <span><b>Best for</b> a first-time visitor: why borrow, why move, and what heirs get, in one viewing</span>
+      <span><b>Cost to build</b> medium: one SVG, one timeline function, one small switch, no library</span>
+      <span><b>Risk</b> beat two carries two stories at once; it needs the caption to land</span>
+    </div>
+  </div>
+
+  <div class="vr">
+    <div class="vr-hero">
+      <div class="vr-copy">
+        <p class="vr-eyebrow">Buy · Borrow · Die, anywhere in the world</p>
+        <h3 class="vr-headline">Live off your portfolio <em>without ever selling it.</em></h3>
+        <p class="vr-body">Borrow against your shares for living money, let them keep compounding, and pass them on with the gains never taxed. eVelo replays your plan through thousands of real market histories, then re-prices it city by city to show where in the world it holds best.</p>
+        <div class="vr-ctas">
+          <a href="#var-r" class="vr-cta vr-cta--primary">Stress-test my plan
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+          <a href="#var-r" class="vr-cta vr-cta--ghost">Explore the Atlas</a>
+        </div>
+        <p class="vr-fine">Free · No sign-up · Runs in your browser, nothing leaves your device</p>
+      </div>
+
+      <figure class="vr-card">
+        <div class="vr-card__head">
+          <div class="vr-card__plan">
+            <span class="vr-eyebrow">One plan · four beats</span>
+            <span class="vr-card__sub" data-sub>$2.5M portfolio · 30 years, age 60 to 90</span>
+          </div>
+          <div class="vr-odds" aria-hidden="true">
+            <span class="vr-odds__num" data-odds>88%</span>
+            <span class="vr-odds__unit">of futures hold <span data-odds-city>in Lisbon</span></span>
+          </div>
+        </div>
+
+        <div class="vr-plot">
+          <svg class="vr-svg" viewBox="0 0 640 444" role="img" aria-label="">
+            <defs>
+              <pattern id="vr-hatch" patternUnits="userSpaceOnUse" width="5" height="5" patternTransform="rotate(45)">
+                <line class="vr-hatch-line" x1="0" y1="0" x2="0" y2="5"/>
+              </pattern>
+            </defs>
+
+            <!-- Map strip -->
+            <g class="vr-map">
+              <rect class="vr-map__bg" x="34" y="4" width="592" height="78" rx="10"/>
+              <g class="vr-map__grid" data-mapgrid></g>
+              <path class="vr-arc-track" data-arc-track d="M150 54 Q 295 -10 440 46"/>
+              <path class="vr-arc" data-arc d="M150 54 Q 295 -10 440 46" pathLength="1"/>
+              <g data-austin>
+                <circle class="vr-pin vr-pin--austin" cx="150" cy="54" r="5"/>
+                <text class="vr-t vr-t--pin" x="150" y="75" text-anchor="middle">Austin <tspan class="vr-t--bruised">63%</tspan></text>
+                <g data-austin-chip>
+                  <circle class="vr-coin" cx="120" cy="54" r="8"/>
+                  <text class="vr-t vr-t--coin vr-t--minor" x="106" y="58" text-anchor="end">$80k/yr</text>
+                </g>
+              </g>
+              <g data-lisbon>
+                <circle class="vr-pin vr-pin--lisbon" cx="440" cy="46" r="5"/>
+                <circle class="vr-pin-pulse" data-pulse cx="440" cy="46" r="9"/>
+                <text class="vr-t vr-t--pin" x="440" y="75" text-anchor="middle">Lisbon <tspan class="vr-t--holds">88%</tspan></text>
+                <g data-lisbon-chip>
+                  <circle class="vr-coin" cx="466" cy="46" r="5"/>
+                  <text class="vr-t vr-t--coin vr-t--minor" x="476" y="50">$50k/yr</text>
+                </g>
+              </g>
+              <g data-travel opacity="0">
+                <circle class="vr-coin" data-travel-coin r="8"/>
+              </g>
+            </g>
+
+            <!-- Plot -->
+            <g class="vr-axes" data-axes></g>
+            <g data-bars></g>
+            <path class="vr-margin" data-margin/>
+            <path class="vr-loan-area" data-loan-area/>
+            <path class="vr-ghost" data-ghost/>
+            <g data-sell>
+              <path class="vr-sell-halo" data-sell-halo/>
+              <path class="vr-sell" data-sell-line/>
+            </g>
+            <path class="vr-loan" data-loan/>
+            <circle class="vr-loan-head" data-loan-head r="3.5"/>
+
+            <!-- Sell or borrow: the tally of what selling would cost -->
+            <g data-tally transform="translate(58 128)">
+              <line class="vr-sell-sw" x1="0" y1="-5" x2="20" y2="-5"/>
+              <text class="vr-t vr-t--sellhead" x="28" y="0">If you sold instead</text>
+              <text class="vr-t" data-tally-l1 x="0" y="26">Tax paid <tspan class="vr-t--mono vr-t--tax" data-tally-tax>$0</tspan></text>
+              <text class="vr-t" data-tally-l2 x="0" y="50">Shares left <tspan class="vr-t--mono" data-tally-left>$2.5M</tspan></text>
+            </g>
+            <g data-chips></g>
+
+            <!-- Borrow: the person and the yearly coins -->
+            <g data-coins></g>
+            <g data-person class="vr-person" opacity="0">
+              <circle cx="0" cy="0" r="3.8"/>
+              <path d="M-6.5 17 C-6.5 8 6.5 8 6.5 17 Z"/>
+              <text class="vr-t vr-t--coin" data-person-label x="10" y="12">$80k</text>
+            </g>
+
+            <!-- Die: the estate column -->
+            <g data-estate opacity="1">
+              <text class="vr-t vr-t--estate vr-t--minor" data-estate-top x="490" y="104" text-anchor="middle">At 90</text>
+              <rect class="vr-estate__heirs-soft" data-e-heirs-soft/>
+              <rect class="vr-estate__heirs" data-e-heirs/>
+              <g data-e-slice>
+                <rect class="vr-estate__slice-soft" data-e-slice-soft/>
+                <rect class="vr-estate__slice" data-e-slice-rect/>
+              </g>
+              <g data-e-slice-label>
+                <text class="vr-t vr-t--estate vr-t--slice" data-e-slice-k x="586" text-anchor="middle">Loan repaid</text>
+                <text class="vr-t vr-t--mono vr-t--slice" data-e-slice-v x="586" text-anchor="middle"></text>
+              </g>
+              <g data-e-heirs-label>
+                <text class="vr-t vr-t--inv" data-e-heirs-k x="490" text-anchor="middle">Heirs</text>
+                <text class="vr-t vr-t--inv vr-t--mono" data-e-heirs-v x="490" text-anchor="middle"></text>
+              </g>
+              <g class="vr-heirs-glyph" data-heirs-glyph>
+                <g transform="translate(481 386)"><circle r="3.4"/><path d="M-5.8 15 C-5.8 7 5.8 7 5.8 15 Z"/></g>
+                <g transform="translate(499 389)"><circle r="2.8"/><path d="M-4.8 12 C-4.8 5.5 4.8 5.5 4.8 12 Z"/></g>
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <ul class="vr-key" aria-label="Key">
+          <li data-key="paid"><span class="vr-sw vr-sw--paid"></span><span>What you paid $1.0M</span></li>
+          <li data-key="gains"><span class="vr-sw vr-sw--gains" data-sw-gains></span><span data-gains-text>Gains, taxed only if you sell</span></li>
+          <li data-key="sell"><span class="vr-sw vr-sw--sell"></span><span>If you sold instead</span></li>
+          <li data-key="loan"><span class="vr-sw vr-sw--loan"></span><span data-loan-text>Loan</span></li>
+          <li data-key="margin"><span class="vr-sw vr-sw--margin"></span><span>Margin call at 50%</span></li>
+          <li data-key="ghost"><span class="vr-sw vr-sw--ghost"></span><span>Same life in Austin</span></li>
+        </ul>
+
+        <figcaption class="vr-cap">
+          <span class="vr-cap__lead" data-cap-lead></span>
+          <span class="vr-cap__detail" data-cap-detail></span>
+        </figcaption>
+
+        <div class="vr-end" data-end>
+          <div class="vr-end__cell">
+            <p class="vr-end__k">Sold in Austin</p>
+            <p class="vr-end__v">Heirs get <b data-end-sell></b></p>
+            <p class="vr-end__n"><span data-end-tax></span> of gains taxed along the way.</p>
+          </div>
+          <div class="vr-end__cell vr-end__cell--win">
+            <p class="vr-end__k">Borrowed in <span data-end-city>Lisbon</span></p>
+            <p class="vr-end__v">Heirs get <b data-end-borrow></b></p>
+            <p class="vr-end__n">Gains never taxed. Loan repaid from the estate.<span class="vr-end__warn" data-end-warn></span></p>
+          </div>
+        </div>
+
+        <div class="vr-card__foot">
+          <div class="vr-ctrl">
+            <button type="button" class="vr-btn" data-play aria-label="Play the four beats">
+              <svg class="vr-ic vr-ic--play" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9l7.5-4.5z"/></svg>
+              <svg class="vr-ic vr-ic--pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 3.5h2.5v9H4.5zM9 3.5h2.5v9H9z"/></svg>
+            </button>
+            <button type="button" class="vr-btn" data-replay aria-label="Replay from the start">
+              <svg class="vr-ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.2 8a4.8 4.8 0 1 0 1.4-3.4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M3 2.6v3h3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+          <div class="vr-show" role="group" aria-labelledby="vr-show-label">
+            <span id="vr-show-label" class="vr-show__k">Borrow in</span>
+            <div class="vr-seg">
+              <button type="button" data-dest="lis" aria-pressed="true">Lisbon</button>
+              <button type="button" data-dest="aus" aria-pressed="false">Austin</button>
+            </div>
+          </div>
+          <span class="vr-foot__note">Illustrative numbers · a typical path, not a forecast</span>
+        </div>
+        <p class="vr-sr" aria-live="polite" data-live></p>
+      </figure>
+    </div>
+
+    <div class="vr-steps" role="group" aria-label="How it works, step through the four beats">
+      <button type="button" class="vr-step" data-step="0">
+        <span class="vr-step__n">01</span>
+        <span class="vr-step__title">Buy</span>
+        <span class="vr-step__body">Hold assets that grow. Never sell them, so the gains are never taxed.</span>
+        <span class="vr-step__bar" aria-hidden="true"><span data-bar></span></span>
+      </button>
+      <button type="button" class="vr-step" data-step="1">
+        <span class="vr-step__n">02</span>
+        <span class="vr-step__title">Borrow, don't sell</span>
+        <span class="vr-step__body">Selling shrinks the shares and taxes each sale. A credit line pays the bills and the shares keep compounding.</span>
+        <span class="vr-step__bar" aria-hidden="true"><span data-bar></span></span>
+      </button>
+      <button type="button" class="vr-step" data-step="2">
+        <span class="vr-step__n">03</span>
+        <span class="vr-step__title">Live anywhere</span>
+        <span class="vr-step__body">Spend the loan where life costs less. A smaller loan gives the portfolio an easier race to win.</span>
+        <span class="vr-step__bar" aria-hidden="true"><span data-bar></span></span>
+      </button>
+      <button type="button" class="vr-step" data-step="3">
+        <span class="vr-step__n">04</span>
+        <span class="vr-step__title">Die</span>
+        <span class="vr-step__body">Heirs inherit at a stepped-up basis. The estate repays the loan and keeps the rest.</span>
+        <span class="vr-step__bar" aria-hidden="true"><span data-bar></span></span>
+      </button>
+    </div>
+  </div>
+
+<style>
+.vr { display: grid; gap: 8px; color: var(--ink); }
+.vr .vr-hero { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 48px; align-items: center; padding: 24px 0 40px; }
+.vr .vr-copy { display: flex; flex-direction: column; gap: 24px; }
+.vr .vr-eyebrow { margin: 0; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); font-weight: 500; }
+.vr .vr-headline { margin: 0; font-family: var(--font-display); font-weight: 400; font-size: clamp(2.6rem, 1.2rem + 4.2vw, 4.6rem); line-height: .98; letter-spacing: -.02em; text-wrap: balance; }
+.vr .vr-headline em { color: var(--holds-text); }
+.vr .vr-body { margin: 0; max-width: 34em; font-size: 18px; line-height: 1.55; color: var(--ink-2); text-wrap: pretty; }
+.vr .vr-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+.vr .vr-cta { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 52px; border-radius: 999px; white-space: nowrap; text-decoration: none; }
+.vr .vr-cta--primary { padding: 0 24px; background: var(--holds); color: var(--card-solid); font-weight: 500; font-size: 16px; }
+.vr .vr-cta--ghost { padding: 0 22px; border: 1px solid var(--hairline-strong); font-size: 15px; color: var(--ink); }
+.vr .vr-cta--ghost:hover { background: var(--surface-hover); }
+.vr .vr-fine { margin: 0; font-size: 13px; color: var(--ink-3); }
+
+.vr .vr-card { margin: 0; background: var(--card); border: 1px solid var(--card-line); box-shadow: var(--card-shadow); border-radius: 20px; padding: 20px 22px 16px; display: grid; gap: 12px; min-width: 0; }
+.vr .vr-card__head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+.vr .vr-card__plan { display: grid; gap: 4px; }
+.vr .vr-card__sub { font-size: 13px; color: var(--ink-2); }
+.vr .vr-odds { display: grid; justify-items: end; text-align: right; }
+.vr .vr-odds__num { font-family: var(--font-display); font-size: 40px; line-height: 1; color: var(--holds-text); font-variant-numeric: tabular-nums; transition: color .4s; }
+.vr .vr-odds__num.is-mid { color: var(--bruised-text); }
+.vr .vr-odds__unit { font-size: 12px; color: var(--ink-3); }
+
+.vr .vr-plot { position: relative; }
+.vr .vr-svg { display: block; width: 100%; height: auto; overflow: visible; }
+.vr .vr-t { font-family: var(--font-ui); font-size: 12px; fill: var(--ink-2); }
+.vr .vr-t--pin { font-size: 12.5px; fill: var(--ink); font-weight: 500; }
+.vr .vr-t--coin { font-family: var(--font-mono); font-size: 11.5px; fill: var(--ink-2); }
+.vr .vr-t--mono { font-family: var(--font-mono); font-size: 12.5px; fill: var(--ink); }
+.vr .vr-t--estate { font-size: 12.5px; fill: var(--ink); font-weight: 500; }
+.vr .vr-t--inv { fill: var(--card-solid); font-size: 13px; font-weight: 600; }
+.vr .vr-t--bruised { fill: var(--bruised-text); }
+.vr .vr-t--holds { fill: var(--holds-text); }
+.vr .vr-t--tick { font-family: var(--font-mono); font-size: 10.5px; fill: var(--axis); }
+.vr .vr-t--sellhead { font-size: 12.5px; font-weight: 600; fill: var(--bruised-text); }
+.vr .vr-t--tax { fill: var(--bruised-text); font-weight: 500; }
+.vr .vr-map__bg { fill: none; stroke: var(--hairline); }
+.vr .vr-map__grid circle { fill: var(--grid); }
+.vr .vr-arc-track { fill: none; stroke: var(--hairline); stroke-width: 1.5; stroke-dasharray: 2 5; stroke-linecap: round; }
+.vr .vr-arc { fill: none; stroke: var(--holds); stroke-width: 2; stroke-linecap: round; stroke-dasharray: 1 1; }
+.vr .vr-pin { stroke: var(--card-solid); stroke-width: 2; }
+.vr .vr-pin--austin { fill: var(--bruised); }
+.vr .vr-pin--lisbon { fill: var(--holds); }
+.vr .vr-pin-pulse { fill: none; stroke: var(--holds); stroke-width: 1.5; }
+.vr .vr-coin { fill: var(--bruised); stroke: var(--card-solid); stroke-width: 1.5; }
+.vr .vr-chip { fill: var(--bruised); stroke: var(--card-solid); stroke-width: 1; }
+.vr .vr-grid-line { stroke: var(--grid); }
+.vr .vr-baseline { stroke: var(--axis); stroke-width: 1; }
+.vr .vr-hatch-line { stroke: var(--holds); stroke-width: 1.3; }
+.vr .vr-bar-paid { fill: var(--holds); }
+.vr .vr-bar-soft { fill: var(--holds-soft); }
+.vr .vr-bar-hatch { fill: url(#vr-hatch); }
+.vr .vr-bar-stepped { fill: var(--band-2); }
+.vr .vr-margin { fill: none; stroke: var(--broken); stroke-width: 1.6; stroke-dasharray: 5 5; }
+.vr .vr-loan-area { fill: var(--loan-soft); }
+.vr .vr-loan { fill: none; stroke: var(--loan); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+.vr .vr-ghost { fill: none; stroke: var(--loan); stroke-width: 1.4; stroke-dasharray: 3 4; }
+.vr .vr-sell { fill: none; stroke: var(--bruised); stroke-width: 2.2; stroke-dasharray: 6 4; stroke-linecap: round; stroke-linejoin: round; }
+.vr .vr-sell-halo { fill: none; stroke: var(--card-solid); stroke-width: 5.5; stroke-linejoin: round; opacity: .85; }
+.vr .vr-sell-sw { stroke: var(--bruised); stroke-width: 2.2; stroke-dasharray: 6 4; }
+.vr .vr-loan-head { fill: var(--loan); stroke: var(--card-solid); stroke-width: 1.5; }
+.vr .vr-person, .vr .vr-heirs-glyph { fill: var(--ink-2); }
+.vr .vr-estate__heirs-soft { fill: var(--band-2); stroke: var(--holds); stroke-width: 1; }
+.vr .vr-estate__heirs { fill: var(--holds); }
+.vr .vr-estate__slice-soft { fill: var(--band-2); }
+.vr .vr-estate__slice { fill: var(--loan); }
+
+.vr .vr-key { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 12.5px; color: var(--ink-2); }
+.vr .vr-key li { display: inline-flex; align-items: center; gap: 7px; transition: opacity .3s; }
+.vr .vr-sw { flex: none; width: 16px; height: 10px; border-radius: 2px; }
+.vr .vr-sw--gains { background: repeating-linear-gradient(45deg, var(--holds) 0 1.3px, var(--holds-soft) 1.3px 3.5px); }
+.vr .vr-sw--gains.is-stepped { background: var(--band-2); outline: 1px solid var(--holds); outline-offset: -1px; }
+.vr .vr-sw--paid { background: var(--holds); }
+.vr .vr-sw--loan { height: 3px; background: var(--loan); }
+.vr .vr-sw--sell { height: 0; border-top: 2px dashed var(--bruised); border-radius: 0; }
+.vr .vr-sw--ghost { height: 0; border-top: 1.5px dashed var(--loan); border-radius: 0; }
+.vr .vr-sw--margin { height: 0; border-top: 1.6px dashed var(--broken); border-radius: 0; }
+
+.vr .vr-cap { display: grid; gap: 4px; min-height: 5.2em; border-top: 1px solid var(--hairline); padding-top: 12px; }
+.vr .vr-cap__lead { font-family: var(--font-display); font-size: 24px; line-height: 1.15; color: var(--ink); text-wrap: balance; }
+.vr .vr-cap__detail { font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+
+.vr .vr-end { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; transition: opacity .5s ease, transform .5s ease; }
+.vr .vr-end.is-pending { opacity: .38; transform: translateY(3px); }
+.vr .vr-end__cell { border-radius: 14px; padding: 12px 14px; background: var(--surface-3); display: grid; gap: 2px; align-content: start; }
+.vr .vr-end__cell--win { background: var(--holds-soft); }
+.vr .vr-end__k { margin: 0; font-size: 11.5px; color: var(--ink-3); letter-spacing: .06em; text-transform: uppercase; }
+.vr .vr-end__v { margin: 0; font-family: var(--font-display); font-size: 26px; line-height: 1.1; }
+.vr .vr-end__v b { font-weight: 400; font-variant-numeric: tabular-nums; }
+.vr .vr-end__cell--win .vr-end__v b { color: var(--holds-text); }
+.vr .vr-end__n { margin: 0; font-size: 13px; color: var(--ink-2); line-height: 1.45; }
+.vr .vr-end__warn { color: var(--bruised-text); }
+
+.vr .vr-card__foot { display: flex; justify-content: space-between; align-items: center; gap: 10px 16px; flex-wrap: wrap; font-size: 12px; color: var(--ink-3); border-top: 1px solid var(--hairline); padding-top: 12px; }
+.vr .vr-ctrl { display: flex; gap: 8px; }
+.vr .vr-btn { width: 44px; height: 44px; border-radius: 999px; border: 1px solid var(--hairline-strong); background: transparent; color: var(--ink); display: inline-grid; place-items: center; cursor: pointer; }
+.vr .vr-btn:hover { background: var(--surface-hover); }
+.vr .vr-btn:focus-visible, .vr .vr-seg button:focus-visible, .vr .vr-step:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.vr .vr-ic { width: 16px; height: 16px; fill: currentColor; }
+.vr .vr-btn .vr-ic--pause { display: none; }
+.vr .vr-btn.is-playing .vr-ic--pause { display: block; }
+.vr .vr-btn.is-playing .vr-ic--play { display: none; }
+.vr .vr-show { display: inline-flex; align-items: center; gap: 8px; }
+.vr .vr-show__k { font-size: 12px; color: var(--ink-3); }
+.vr .vr-seg { display: inline-flex; border: 1px solid var(--hairline-strong); border-radius: 999px; padding: 2px; }
+.vr .vr-seg button { font: 500 12px/1 var(--font-ui); color: var(--ink-2); background: none; border: 0; border-radius: 999px; padding: 0 12px; min-height: 32px; cursor: pointer; }
+.vr .vr-seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+.vr .vr-seg button:hover:not([aria-pressed="true"]) { background: var(--surface-hover); }
+.vr .vr-foot__note { margin-left: auto; }
+.vr .vr-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; margin: -1px; }
+
+.vr .vr-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; border-top: 1px solid var(--hairline); padding-top: 24px; }
+.vr .vr-step { position: relative; display: flex; flex-direction: column; gap: 8px; text-align: left; font: inherit; color: inherit; background: transparent; border: 1px solid transparent; border-radius: 14px; padding: 16px 16px 20px; cursor: pointer; transition: background-color .35s, border-color .35s; }
+.vr .vr-step:hover { background: var(--surface-hover); }
+.vr .vr-step.is-active { background: var(--card); border-color: var(--card-line); box-shadow: var(--card-shadow); }
+.vr .vr-step__n { font-family: var(--font-mono); font-size: 12px; color: var(--holds-text); }
+.vr .vr-step__title { font-family: var(--font-display); font-size: 30px; line-height: 1.1; }
+.vr .vr-step__body { font-size: 15px; line-height: 1.55; color: var(--ink-2); }
+.vr .vr-step__bar { position: absolute; left: 16px; right: 16px; bottom: 9px; height: 2px; border-radius: 2px; background: var(--hairline); overflow: hidden; }
+.vr .vr-step__bar span { display: block; height: 100%; background: var(--holds); transform-origin: left; transform: scaleX(0); }
+
+@media (max-width: 900px) {
+  .vr .vr-hero { grid-template-columns: minmax(0, 1fr); gap: 32px; padding: 16px 0 32px; }
+  .vr .vr-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .vr .vr-card { padding: 16px 14px 12px; border-radius: 16px; }
+  .vr .vr-odds__num { font-size: 32px; }
+  /* SVG units scale by about 0.52 at phone width: these sizes render at 11-12px. */
+  .vr .vr-t { font-size: 23px; }
+  .vr .vr-t--pin { font-size: 24px; }
+  .vr .vr-t--coin { font-size: 22px; }
+  .vr .vr-t--estate, .vr .vr-t--mono, .vr .vr-t--sellhead { font-size: 23px; }
+  .vr .vr-t--inv { font-size: 23px; }
+  .vr .vr-t--slice { font-size: 20px; }
+  .vr .vr-t--tick { font-size: 22px; }
+  .vr .vr-t--minor { display: none; }
+  .vr .vr-cap__lead { font-size: 21px; }
+  .vr .vr-end { grid-template-columns: minmax(0, 1fr); }
+  .vr .vr-end__v { font-size: 23px; }
+  .vr .vr-foot__note { margin-left: 0; flex-basis: 100%; }
+  .vr .vr-ctas { flex-direction: column; align-items: stretch; }
+  .vr .vr-steps { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .vr .vr-step { padding: 12px 12px 18px; }
+  .vr .vr-step__title { font-size: 26px; }
+  .vr .vr-body { font-size: 17px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vr .vr-end, .vr .vr-key li, .vr .vr-odds__num, .vr .vr-step { transition: none; }
+}
+</style>
+
+<script>
+(function () {
+  var root = document.getElementById('var-r');
+  if (!root) return;
+  var $ = function (s) { return root.querySelector(s); };
+  var NS = 'http://www.w3.org/2000/svg';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var phone = window.matchMedia('(max-width: 560px)');
+
+  // ---------- Illustrative model ($M) ----------
+  var YEARS = 30, P0 = 2.5, BASIS = 1.0, G = 0.07, RATE = 0.06, INF = 0.03, TAXR = 0.2;
+  var SPEND = { aus: 0.08, lis: 0.05 }, ODDS = { aus: 63, lis: 88 };
+  var P = [], LA = [], LL = [], SV = [], STAX = [];
+  (function () {
+    var a = 0, l = 0, v = P0, b = BASIS, tax = 0;
+    for (var t = 0; t <= YEARS; t++) {
+      P.push(P0 * Math.pow(1 + G, t)); LA.push(a); LL.push(l); SV.push(v); STAX.push(tax);
+      var ia = Math.pow(1 + INF, t);
+      a = (a + SPEND.aus * ia) * (1 + RATE);
+      l = (l + SPEND.lis * ia) * (1 + RATE);
+      // Selling instead: raise the year's spending by selling shares, 20% tax on the gain share.
+      var s = SPEND.aus * ia, gs = Math.max(0, (v - b) / v), gross = s / (1 - TAXR * gs);
+      tax += gross - s; b -= b * gross / v; v = (v - gross) * (1 + G);
+    }
+  })();
+  var FINAL = P[YEARS], SELL_END = SV[YEARS], TAX_END = STAX[YEARS];
+  var fmtM = function (v) { return '$' + v.toFixed(1) + 'M'; };
+  var fmtMoney = function (v) { return v >= 1 ? fmtM(v) : '$' + Math.round(v * 1000) + 'k'; };
+  var pct = function (v) { return Math.round(v * 100) + '%'; };
+
+  // ---------- Geometry ----------
+  var X0 = 46, X1 = 420, YT = 100, YB = 372, VMAX = 20;
+  var x = function (k) { return X0 + k * (X1 - X0) / YEARS; };
+  var y = function (v) { return YB - v * (YB - YT) / VMAX; };
+  var BW = 8.6, EX = 450, EW = 80;
+  var TALLY = { x: 58, y: 128 };
+
+  function el(tag, attrs, parent) {
+    var n = document.createElementNS(NS, tag);
+    for (var k in attrs) n.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(n);
+    return n;
+  }
+  function pathOf(arr, n, frac, f) {
+    var d = '';
+    for (var i = 0; i <= n; i++) d += (i ? 'L' : 'M') + x(i).toFixed(1) + ' ' + y(f ? f(i) : arr[i]).toFixed(1);
+    if (frac > 0 && n < YEARS) {
+      var a = f ? f(n) : arr[n], b = f ? f(n + 1) : arr[n + 1];
+      d += 'L' + x(n + frac).toFixed(1) + ' ' + y(a + (b - a) * frac).toFixed(1);
+    }
+    return d;
+  }
+
+  // Axes
+  var axes = $('[data-axes]');
+  [5, 10, 15, 20].forEach(function (v) {
+    el('line', { 'class': 'vr-grid-line', x1: X0 - 6, x2: X1 + 6, y1: y(v), y2: y(v) }, axes);
+    var t = el('text', { 'class': 'vr-t vr-t--tick' + (v % 10 ? ' vr-t--minor' : ''), x: 38, y: y(v) + 4, 'text-anchor': 'end' }, axes);
+    t.textContent = '$' + v + 'M';
+  });
+  el('line', { 'class': 'vr-baseline', x1: X0 - 6, x2: EX + EW + 4, y1: YB, y2: YB }, axes);
+  [[0, 'Age 60', 'start'], [15, '75', 'middle'], [30, '90', 'middle']].forEach(function (d) {
+    var t = el('text', { 'class': 'vr-t vr-t--tick', x: d[0] === 0 ? X0 - 6 : x(d[0]), y: 436, 'text-anchor': d[2] }, axes);
+    t.textContent = d[1];
+  });
+
+  // Map grid dots
+  var mg = $('[data-mapgrid]');
+  for (var gx = 50; gx < 620; gx += 16) for (var gy = 14; gy < 80; gy += 14) {
+    var land = (gx < 250 && gy > 20 && gy < 70) || (gx > 400 && gx < 560 && gy > 18 && gy < 66);
+    if (land) el('circle', { cx: gx, cy: gy, r: 1.3 }, mg);
+  }
+
+  // Bars
+  var barsG = $('[data-bars]'), bars = [];
+  for (var k = 0; k <= YEARS; k++) {
+    var g = el('g', {}, barsG);
+    bars.push({
+      g: g,
+      soft: el('rect', { 'class': 'vr-bar-soft', x: x(k) - BW / 2, width: BW }, g),
+      hatch: el('rect', { 'class': 'vr-bar-hatch', x: x(k) - BW / 2, width: BW }, g),
+      step: el('rect', { 'class': 'vr-bar-stepped', x: x(k) - BW / 2, width: BW }, g),
+      paid: el('rect', { 'class': 'vr-bar-paid', x: x(k) - BW / 2, width: BW }, g)
+    });
+  }
+
+  // Living-money coins (to the person) and tax chips (to the tally), one every two years
+  var coinsG = $('[data-coins]'), coins = [], chipsG = $('[data-chips]'), chips = [];
+  for (var c = 0; c < 15; c++) {
+    coins.push(el('circle', { 'class': 'vr-coin', r: 5, opacity: 0 }, coinsG));
+    chips.push(el('rect', { 'class': 'vr-chip', width: 7, height: 7, rx: 1.5, opacity: 0 }, chipsG));
+  }
+
+  function setRect(r, x0, y0, w, h) { r.setAttribute('x', x0); r.setAttribute('y', y0); r.setAttribute('width', w); r.setAttribute('height', Math.max(0, h)); }
+  $('[data-margin]').setAttribute('d', pathOf(P.map(function (v) { return v * 0.5; }), YEARS, 0));
+  $('[data-ghost]').setAttribute('d', pathOf(LA, YEARS, 0));
+  $('[data-estate-top]').textContent = 'At 90 · ' + fmtM(FINAL);
+  $('[data-end-sell]').textContent = fmtM(SELL_END);
+  $('[data-end-tax]').textContent = fmtMoney(TAX_END);
+
+  var arc = $('[data-arc]');
+  var arcLen = arc.getTotalLength();
+
+  // ---------- Destination (the Lisbon | Austin switch) ----------
+  var dest = 'lis', LT = LL, LT_END = LL[YEARS], CAPS = [];
+  function setDest(d) {
+    dest = d; LT = d === 'lis' ? LL : LA; LT_END = LT[YEARS];
+    var heirs = FINAL - LT_END, ltv = LT_END / FINAL;
+    var eHeirsTop = y(heirs), eTop = y(FINAL);
+    setRect($('[data-e-heirs-soft]'), EX, eHeirsTop, EW, YB - eHeirsTop);
+    setRect($('[data-e-heirs]'), EX, eHeirsTop, EW, YB - eHeirsTop);
+    setRect($('[data-e-slice-soft]'), EX, eTop, EW, eHeirsTop - eTop);
+    setRect($('[data-e-slice-rect]'), EX, eTop, EW, eHeirsTop - eTop);
+    var big = phone.matches ? 1.8 : 1;
+    $('[data-tally-l1]').setAttribute('y', 26 * big); $('[data-tally-l2]').setAttribute('y', 50 * big);
+    $('[data-e-slice-k]').setAttribute('y', (eHeirsTop + 22 * big).toFixed(1));
+    $('[data-e-slice-v]').setAttribute('y', (eHeirsTop + 42 * big).toFixed(1));
+    $('[data-e-slice-v]').textContent = fmtM(LT_END);
+    var mid = (eHeirsTop + YB) / 2;
+    $('[data-e-heirs-k]').setAttribute('y', (mid - 6 * big).toFixed(1));
+    $('[data-e-heirs-v]').setAttribute('y', (mid + 15 * big).toFixed(1));
+    $('[data-e-heirs-v]').textContent = fmtM(heirs);
+    $('[data-end-city]').textContent = d === 'lis' ? 'Lisbon' : 'Austin';
+    $('[data-end-borrow]').textContent = fmtM(heirs);
+    $('[data-end-warn]').textContent = d === 'lis' ? '' : ' But the loan ends at ' + pct(ltv) + ' of the portfolio, one bad decade from a margin call.';
+    root.querySelectorAll('[data-dest]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-dest') === d)); });
+
+    CAPS = [
+      ['Buy, and hold.', 'A ' + fmtM(P0) + ' portfolio of shares. You paid ' + fmtM(BASIS) + '; the other ' + fmtM(P0 - BASIS) + ' is gains, taxed only if you sell. So you never sell.'],
+      ['Sell, and every sale is taxed. Borrow, and every share keeps working.', 'Selling to fund $80k a year in Austin pays ' + fmtMoney(TAX_END) + ' in tax and leaves ' + fmtM(SELL_END) + ' of shares by 90. Borrowing keeps every share; the loan grows with interest instead.'],
+      d === 'lis'
+        ? ['Spend it where life costs less.', 'The same life in Lisbon costs $50k, not $80k. The loan ends at ' + fmtM(LL[YEARS]) + ' instead of ' + fmtM(LA[YEARS]) + ', far from the margin call, and the odds rise from ' + ODDS.aus + '% to ' + ODDS.lis + '%.']
+        : ['Or stay in Austin.', 'At $80k a year the loan reaches ' + fmtM(LA[YEARS]) + ' by 90, ' + pct(LA[YEARS] / FINAL) + ' of the portfolio, just under the 50% margin call. The odds stay at ' + ODDS.aus + '%.'],
+      ['Gains never taxed. Loan repaid. The rest is theirs.', 'At death, heirs inherit at a stepped-up basis. The estate repays the ' + fmtM(LT_END) + ' loan from the top; ' + fmtM(heirs) + ' passes on, against ' + fmtM(SELL_END) + ' had you sold.']
+    ];
+    $('.vr-svg').setAttribute('aria-label', 'Illustrative 30-year plan. A ' + fmtM(P0) + ' portfolio grows to ' + fmtM(FINAL) + ' while a credit line pays the living costs. Selling shares instead would pay ' + fmtMoney(TAX_END) + ' in tax and leave ' + fmtM(SELL_END) + '. ' +
+      (d === 'lis' ? 'Moving from Austin to Lisbon cuts the yearly draw from $80k to $50k, so the loan ends at ' + fmtM(LL[YEARS]) + ' instead of ' + fmtM(LA[YEARS]) + ' and the odds rise from 63% to 88%. ' : 'Staying in Austin, the loan ends at ' + fmtM(LA[YEARS]) + ', ' + pct(LA[YEARS] / FINAL) + ' of the portfolio. ') +
+      'At death the step-up wipes out the gains tax, the estate repays the loan, and heirs keep ' + fmtM(heirs) + '.');
+    lastBeat = -1;
+  }
+
+  // ---------- Easing helpers ----------
+  var clamp = function (v) { return v < 0 ? 0 : v > 1 ? 1 : v; };
+  var ease = function (v) { v = clamp(v); return v < .5 ? 4 * v * v * v : 1 - Math.pow(-2 * v + 2, 3) / 2; };
+  var out = function (v) { v = clamp(v); return 1 - Math.pow(1 - v, 3); };
+  var seg = function (t, a, d) { return clamp((t - a) / d); };
+  var op = function (n, v) { n.setAttribute('opacity', v.toFixed(3)); };
+
+  var D = 4, TOTAL = 16;
+  var capLead = $('[data-cap-lead]'), capDetail = $('[data-cap-detail]');
+  var oddsN = $('[data-odds]'), oddsCity = $('[data-odds-city]');
+  var gainsText = $('[data-gains-text]'), swGains = $('[data-sw-gains]'), loanText = $('[data-loan-text]');
+  var keys = {}; root.querySelectorAll('[data-key]').forEach(function (n) { keys[n.getAttribute('data-key')] = n; });
+  var steps = Array.prototype.slice.call(root.querySelectorAll('[data-step]'));
+  var stepBars = steps.map(function (s) { return s.querySelector('[data-bar]'); });
+  var loanP = $('[data-loan]'), loanA = $('[data-loan-area]'), loanHead = $('[data-loan-head]');
+  var sellG = $('[data-sell]'), sellLine = $('[data-sell-line]'), sellHalo = $('[data-sell-halo]');
+  var tally = $('[data-tally]'), tallyTax = $('[data-tally-tax]'), tallyLeft = $('[data-tally-left]');
+  var person = $('[data-person]'), endRow = $('[data-end]');
+  var lastBeat = -1;
+
+  function loanAt(k, m) { return LA[k] * (1 - m) + LT[k] * m; }
+  function interp(arr, v) { var i = Math.min(YEARS, Math.floor(v)), f = v - i; return i >= YEARS ? arr[YEARS] : arr[i] + (arr[i + 1] - arr[i]) * f; }
+
+  // ---------- The whole story as a function of time t in [0, 16] ----------
+  function render(t) {
+    t = Math.max(0, Math.min(TOTAL, t));
+    var beat = Math.min(3, Math.floor(t / D));
+    var lis = dest === 'lis' ? 1 : 0;
+
+    // Beat 1: the portfolio fills, year by year
+    var grow = ease(seg(t, 0.2, 3.2)) * (YEARS + 1.6);
+    // Beat 2: the loan and the sell path draw together; coins drop, tax chips peel off
+    var lp = seg(t, 4.2, 3.2), ly = lp * YEARS;
+    // Beat 3: flight, smaller coin, flatter loan, odds tick; the sell path recedes
+    var a = ease(seg(t, 8.2, 1.5)) * lis, m = ease(seg(t, 9.4, 2.1)), recede = ease(seg(t, 8.2, 1.0));
+    // Beat 4: step-up, estate, loan lifts off, heirs
+    var d1 = ease(seg(t, 12.1, 1.0)), e = ease(seg(t, 12.4, 0.8)), s = ease(seg(t, 13.3, 1.1)), h = ease(seg(t, 14.2, 0.9));
+
+    // Bars
+    var curYear = 0;
+    for (var k = 0; k <= YEARS; k++) {
+      var p = out(grow - k);
+      if (p > 0) curYear = k;
+      var hv = P[k] * p, paid = Math.min(hv, BASIS), gain = Math.max(0, hv - BASIS);
+      var b = bars[k];
+      setRect(b.paid, x(k) - BW / 2, y(paid), BW, YB - y(paid));
+      [b.soft, b.hatch, b.step].forEach(function (r) { setRect(r, x(k) - BW / 2, y(paid + gain), BW, y(paid) - y(paid + gain)); });
+      op(b.hatch, 1 - d1); op(b.soft, 1 - d1); op(b.step, d1);
+      op(b.g, 1 - 0.55 * e);
+    }
+
+    // Loan and sell paths
+    var n = Math.floor(ly), f = ly - n, on = lp > 0;
+    if (on) {
+      var ld = pathOf(null, n, f, function (i) { return loanAt(i, m); });
+      loanP.setAttribute('d', ld);
+      var lastX = x(Math.min(YEARS, n + f)), lastV = n >= YEARS ? loanAt(YEARS, m) : loanAt(n, m) + (loanAt(n + 1, m) - loanAt(n, m)) * f;
+      loanA.setAttribute('d', ld + 'L' + lastX.toFixed(1) + ' ' + YB + 'L' + X0 + ' ' + YB + 'Z');
+      loanHead.setAttribute('cx', lastX); loanHead.setAttribute('cy', y(lastV));
+      var sd = pathOf(SV, n, f);
+      sellLine.setAttribute('d', sd); sellHalo.setAttribute('d', sd);
+    }
+    op(loanP, on ? 1 : 0); op(loanA, on ? 1 : 0);
+    op(loanHead, on ? (1 - e) : 0);
+    op($('[data-margin]'), seg(t, 4.0, 0.6) * 0.9);
+    op($('[data-ghost]'), m * 0.75 * lis);
+    op(sellG, on ? 1 - 0.72 * recede : 0);
+    op(tally, seg(t, 4.0, 0.4) * (1 - 0.55 * recede));
+    tallyTax.textContent = fmtMoney(interp(STAX, ly));
+    tallyLeft.textContent = fmtM(interp(SV, ly));
+
+    // Person, coins and tax chips (beat 2)
+    var pv = seg(t, 4.0, 0.3) * (1 - seg(t, 8.0, 0.5));
+    op(person, pv);
+    person.setAttribute('transform', 'translate(' + (on ? x(Math.min(YEARS, ly)) : X0).toFixed(1) + ' 384)');
+    var big2 = phone.matches ? 1.8 : 1, tx = TALLY.x + (phone.matches ? 190 : 100), ty = TALLY.y + 20 * big2;
+    for (var ci = 0; ci < coins.length; ci++) {
+      var yr = ci * 2, t0 = 4.2 + (yr / YEARS) * 3.2;
+      var q = seg(t, t0, 0.55), cn = coins[ci];
+      if (q <= 0 || q >= 1) op(cn, 0);
+      else {
+        var cy0 = y(LA[yr]), cy1 = 386;
+        cn.setAttribute('cx', x(yr)); cn.setAttribute('cy', (cy0 + (cy1 - cy0) * q * q).toFixed(1));
+        op(cn, q < .8 ? 1 : (1 - q) / .2);
+      }
+      var r = seg(t, t0, 0.75), ch = chips[ci];
+      if (r <= 0 || r >= 1) op(ch, 0);
+      else {
+        var sx = x(yr), sy = y(SV[yr]), cx = (sx + tx) / 2, cyc = Math.min(sy, ty) - 50, u = 1 - r;
+        var px = u * u * sx + 2 * u * r * cx + r * r * tx, py = u * u * sy + 2 * u * r * cyc + r * r * ty;
+        ch.setAttribute('x', (px - 3.5).toFixed(1)); ch.setAttribute('y', (py - 3.5).toFixed(1));
+        op(ch, r < .85 ? 1 : (1 - r) / .15);
+      }
+    }
+
+    // Map: Austin chip from beat 2, arc + travelling coin in beat 3
+    op($('[data-austin-chip]'), seg(t, 4.0, 0.4) * (1 - 0.5 * a));
+    op($('[data-austin]'), 1 - 0.35 * m * lis);
+    arc.style.strokeDashoffset = (1 - a).toFixed(3);
+    op(arc, a > 0 ? 1 : 0);
+    var tr = $('[data-travel]'), tc = $('[data-travel-coin]');
+    if (a > 0 && a < 1) {
+      var pt = arc.getPointAtLength(a * arcLen);
+      tc.setAttribute('cx', pt.x); tc.setAttribute('cy', pt.y - 9);
+      tc.setAttribute('r', (8 - 3 * a).toFixed(2));
+      op(tr, 1);
+    } else op(tr, 0);
+    op($('[data-lisbon]'), 0.35 + 0.65 * seg(t, 9.4, 0.5) * lis);
+    op($('[data-lisbon-chip]'), seg(t, 9.5, 0.5) * lis);
+    var pulse = $('[data-pulse]'), pq = seg(t, 9.4, 1.4);
+    pulse.setAttribute('r', (6 + 10 * pq).toFixed(1));
+    op(pulse, lis && pq > 0 && pq < 1 ? (1 - pq) * 0.8 : 0);
+
+    // Odds
+    var odds = Math.round(ODDS.aus + (ODDS[dest] - ODDS.aus) * m);
+    oddsN.textContent = odds + '%';
+    oddsN.classList.toggle('is-mid', odds < 75);
+    oddsCity.textContent = (m > 0.5 && lis) ? 'in Lisbon' : 'in Austin';
+
+    // Key
+    keys.sell.style.opacity = seg(t, 4.0, 0.5) * (1 - 0.5 * recede);
+    keys.loan.style.opacity = seg(t, 4.0, 0.5);
+    keys.ghost.style.opacity = m * lis;
+    keys.margin.style.opacity = seg(t, 4.0, 0.5);
+    gainsText.textContent = d1 > 0.5 ? 'Step-up in basis: the gains tax is gone' : 'Gains ' + fmtM(Math.max(P0 - BASIS, P[Math.min(YEARS, curYear)] - BASIS)) + ', taxed only if you sell';
+    swGains.classList.toggle('is-stepped', d1 > 0.5);
+    loanText.textContent = t < 8 ? 'Credit line · shares untouched' : (m > 0.5 && lis ? 'Loan, living in Lisbon' : 'Loan, living in Austin');
+
+    // Estate
+    op($('[data-estate]'), e);
+    $('[data-e-slice]').setAttribute('transform', 'translate(' + (96 * s).toFixed(1) + ' 0)');
+    op($('[data-e-slice-rect]'), s);
+    op($('[data-e-slice-label]'), seg(t, 14.0, 0.5));
+    op($('[data-e-heirs]'), h);
+    op($('[data-e-heirs-label]'), h);
+    op($('[data-heirs-glyph]'), h);
+    endRow.classList.toggle('is-pending', t < 12.2);
+
+    // Steps + caption
+    steps.forEach(function (st, si) {
+      st.classList.toggle('is-active', si === beat);
+      if (si === beat) st.setAttribute('aria-current', 'step'); else st.removeAttribute('aria-current');
+      stepBars[si].style.transform = 'scaleX(' + clamp((t - si * D) / D).toFixed(3) + ')';
+    });
+    if (beat !== lastBeat) {
+      capLead.textContent = CAPS[beat][0];
+      capDetail.textContent = CAPS[beat][1];
+      lastBeat = beat;
+    }
+  }
+
+  // ---------- Playback ----------
+  var playBtn = $('[data-play]'), replayBtn = $('[data-replay]'), live = $('[data-live]');
+  var t = TOTAL, playing = false, inView = false, raf = 0, prev = 0, cycles = 0, hold = 0;
+
+  function setPlaying(v) {
+    playing = v;
+    playBtn.classList.toggle('is-playing', v);
+    playBtn.setAttribute('aria-label', v ? 'Pause the four beats' : 'Play the four beats');
+    kick();
+  }
+  function frame(now) {
+    raf = 0;
+    if (!playing || !inView) return;
+    var dt = Math.max(0, Math.min(0.05, (now - prev) / 1000)); prev = now;
+    if (reduce.matches) {
+      // No motion: step a whole beat at a time, showing each beat's finished frame.
+      hold += dt;
+      if (hold >= D) {
+        hold = 0;
+        var nb = Math.floor(t / D) + 1;
+        if (nb > 3) { t = TOTAL; render(t); setPlaying(false); return; }
+        t = nb === 3 ? TOTAL : nb * D + D - 0.001; render(t);
+      }
+    } else if (t < TOTAL) {
+      t = Math.min(TOTAL, t + dt); render(t);
+    } else {
+      hold += dt;
+      if (hold > 3.5) {
+        hold = 0; cycles++;
+        if (cycles >= 2) { setPlaying(false); return; }
+        t = 0; render(t);
+      }
+    }
+    raf = requestAnimationFrame(frame);
+  }
+  function kick() { if (playing && inView && !raf) { prev = performance.now(); raf = requestAnimationFrame(frame); } }
+
+  function jump(beat) {
+    hold = 0;
+    if (reduce.matches || !playing) t = beat === 3 ? TOTAL : beat * D + D - 0.001;
+    else t = beat * D;
+    render(t);
+    live.textContent = 'Step ' + (beat + 1) + ' of 4. ' + CAPS[beat][0] + ' ' + CAPS[beat][1];
+  }
+
+  steps.forEach(function (st, i) { st.addEventListener('click', function () { jump(i); }); });
+  playBtn.addEventListener('click', function () {
+    if (playing) { setPlaying(false); live.textContent = 'Paused.'; return; }
+    cycles = 1; hold = 0;
+    if (t >= TOTAL) { t = reduce.matches ? D - 0.001 : 0; render(t); }
+    setPlaying(true);
+    live.textContent = 'Playing.';
+  });
+  replayBtn.addEventListener('click', function () {
+    cycles = 1; hold = 0;
+    t = reduce.matches ? D - 0.001 : 0;
+    render(t);
+    live.textContent = 'Replaying from step 1. ' + CAPS[0][0];
+    setPlaying(true);
+  });
+  root.querySelectorAll('[data-dest]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      setDest(btn.getAttribute('data-dest'));
+      render(t);
+      var c = CAPS[3];
+      live.textContent = 'Borrowing in ' + (dest === 'lis' ? 'Lisbon' : 'Austin') + '. ' + c[1];
+    });
+  });
+  phone.addEventListener && phone.addEventListener('change', function () { setDest(dest); render(t); });
+
+  // Resting frame first (complete without any animation)
+  setDest('lis');
+  render(TOTAL);
+
+  // Hook for review screenshots: render a given moment of the story.
+  root.setAttribute('data-ready', '1');
+  root.__vrRender = function (v) { playing = false; t = v; lastBeat = -1; render(v); };
+
+  var started = false;
+  var io = new IntersectionObserver(function (entries) {
+    inView = entries[0].isIntersecting;
+    if (inView && !started && !reduce.matches) { started = true; t = 0; render(0); setPlaying(true); }
+    kick();
+  }, { threshold: 0.35 });
+  io.observe($('.vr-card'));
+})();
+</script>
+</section>
+<footer class="mk-foot">Illustrative numbers, a typical future rather than a forecast. Throwaway mockups for review; none of this is in the app yet.</footer>
+</main>
