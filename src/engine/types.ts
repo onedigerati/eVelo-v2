@@ -142,6 +142,15 @@ export interface PlanInputs {
   destCityId: string | null
   /** Years from now when the move happens (0 = immediately). */
   moveInYears: number
+  /** Whole years from today until retirement (0 = retire now). Before then nothing is withdrawn
+   *  for spending, other income isn't counted, and `savingsWhileWorking` goes in instead; the move
+   *  can't come before it. `horizonYears` still counts from today, so the plan ends at the same age.
+   *  Sanitized to a whole number in [0, 15], below `horizonYears`. */
+  retireInYears: number
+  /** Saving while working, today's USD/yr (CPI-inflated, so constant in real terms), added each
+   *  month before retirement: it pays down any existing loan first and the rest is invested.
+   *  Never scaled by the max-spend solver. 0..1,000,000. */
+  savingsWhileWorking: number
   /** Expat price premium, for the same lifestyle: 0 = local prices, 1 = home prices (no savings on local-price categories). */
   expatFactor: number
   /** Optional per-category ratio overrides (dest cost / home cost). */

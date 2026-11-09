@@ -1,0 +1,9 @@
+# Break 2: src/engine/simulate.ts line 71 savingsMonthly multiplied by budgetMultiplier (solver scales savings too)
+$ npx vitest run src/engine/__tests__/retireLater.test.ts
+     × the solver scales retirement spending only, never the savings 6ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/engine/__tests__/retireLater.test.ts > retire later: odds, solver and atlas > the solver scales retirement spending only, never the savings
+AssertionError: expected +0 to be 4166.666666666667 // Object.is equality
+- Expected
++ Received
+      Tests  1 failed | 16 passed (17)

@@ -1,0 +1,9 @@
+# Break 4: src/engine/kernel.ts line 172 move-not-before-retirement guard removed (`const moveMonth = cfg.moveMonth`)
+$ npx vitest run src/engine/__tests__/retireLater.test.ts
+     × the move and wealth tax start no earlier than retirement, even in a hand-written config 22ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/engine/__tests__/retireLater.test.ts > retire later: the working phase in the kernel > the move and wealth tax start no earlier than retirement, even in a hand-written config
+AssertionError: expected { years: 4, …(14) } to deeply equal { years: 4, …(14) }
+- Expected
++ Received
+      Tests  1 failed | 16 passed (17)

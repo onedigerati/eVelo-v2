@@ -1,0 +1,58 @@
+$ npx vitest run --reporter=verbose src/engine/__tests__/retireLater.test.ts src/state/__tests__/simKeys.test.ts src/state/__tests__/share.test.ts
+npm notice run evelo@2.0.0 npx
+npm notice run 'vitest' run --reporter=verbose src/engine/__tests__/retireLater.test.ts src/state/__tests__/simKeys.test.ts src/state/__tests__/share.test.ts
+
+ RUN  v5.1.0 /home/jonah/repos/eVelo-v2
+
+ ✓ src/state/__tests__/share.test.ts > share links > round-trips changed inputs 3ms
+ ✓ src/state/__tests__/share.test.ts > share links > defaults encode compactly 0ms
+ ✓ src/state/__tests__/share.test.ts > share links > rejects garbage and wrong types 1ms
+ ✓ src/state/__tests__/share.test.ts > share links > builds a full URL whose hash decodes back to the plan 1ms
+ ✓ src/state/__tests__/share.test.ts > share links > clamps hostile numbers to the UI ranges 1ms
+ ✓ src/state/__tests__/share.test.ts > share links > leaves every plan inside the UI ranges unchanged 6ms
+ ✓ src/state/__tests__/share.test.ts > share links > existing loan > defaults to no loan and still encodes short 0ms
+ ✓ src/state/__tests__/share.test.ts > share links > existing loan > loads an old share link or saved plan without the field as 0 0ms
+ ✓ src/state/__tests__/share.test.ts > share links > existing loan > round-trips a balance 1ms
+ ✓ src/state/__tests__/share.test.ts > share links > existing loan > clamps hostile balances 1ms
+ ✓ src/state/__tests__/share.test.ts > share links > retire later > uses the engine’s limits 0ms
+ ✓ src/state/__tests__/share.test.ts > share links > retire later > defaults to retiring now with no savings, and still encodes short 0ms
+ ✓ src/state/__tests__/share.test.ts > share links > retire later > round-trips both fields through a share link and the saved plan 0ms
+ ✓ src/state/__tests__/share.test.ts > share links > retire later > loads an old share link or saved plan without them as 0 0ms
+ ✓ src/state/__tests__/share.test.ts > share links > retire later > clamps retire-in to whole years in 0–15, below the horizon 0ms
+ ✓ src/state/__tests__/share.test.ts > share links > retire later > clamps savings to $0–$1M 1ms
+ ✓ src/state/__tests__/share.test.ts > share links > retire later > treats hostile values as 0 1ms
+ ✓ src/state/__tests__/share.test.ts > share links > retire later > agrees with the engine’s normalizeInputs on anything it lets through 0ms
+ ✓ src/state/__tests__/share.test.ts > share links > amountOverrides > round-trips through a share link and the saved plan 0ms
+ ✓ src/state/__tests__/share.test.ts > share links > amountOverrides > drops unknown cities and categories, and empty maps 0ms
+ ✓ src/state/__tests__/share.test.ts > share links > amountOverrides > keeps only finite numbers, clamped to [0, BUDGET_MAX] 0ms
+ ✓ src/state/__tests__/share.test.ts > share links > amountOverrides > ignores prototype-pollution keys 0ms
+ ✓ src/state/__tests__/simKeys.test.ts > cache keys follow retire-in and savings > inputsKey and atlasKey change when either changes 2ms
+ ✓ src/state/__tests__/simKeys.test.ts > cache keys follow retire-in and savings > simulate and solve rerun for either; the same inputs hit the cache 2ms
+ ✓ src/state/__tests__/simKeys.test.ts > cache keys follow retire-in and savings > Atlas odds rerun for either 1ms
+ ✓ src/state/__tests__/simKeys.test.ts > cache keys follow retire-in and savings > profile-sheet destination runs rerun for either 0ms
+ ✓ src/state/__tests__/simKeys.test.ts > stay-home baseline > drops the destination but keeps retire-in and savings 1ms
+ ✓ src/state/__tests__/simKeys.test.ts > stay-home baseline > the pipeline runs the baseline with both fields and keys it to the plan 153ms
+ ✓ src/engine/__tests__/retireLater.test.ts > retire later: the working phase in the kernel > withdraws nothing before month 12·N; CPI-inflated savings pay the loan down first, then are invested 1ms
+ ✓ src/engine/__tests__/retireLater.test.ts > retire later: the working phase in the kernel > a loan keeps accruing interest while working (no savings, no withdrawals) 0ms
+ ✓ src/engine/__tests__/retireLater.test.ts > retire later: the working phase in the kernel > savings raise the cost basis: a forced sale at retirement pays tax on the smaller gain fraction (BBD) 0ms
+ ✓ src/engine/__tests__/retireLater.test.ts > retire later: the working phase in the kernel > the sell strategy gets the same savings, invested with basis 0ms
+ ✓ src/engine/__tests__/retireLater.test.ts > retire later: the working phase in the kernel > other income counts only from max(income start, retirement) 0ms
+ ✓ src/engine/__tests__/retireLater.test.ts > retire later: the working phase in the kernel > the move and wealth tax start no earlier than retirement, even in a hand-written config 1ms
+ ✓ src/engine/__tests__/retireLater.test.ts > retire later: the working phase in the kernel > retireMonth 0 and savingsMonthly 0 match a config without the fields; savings alone do nothing when retired today 0ms
+ ✓ src/engine/__tests__/retireLater.test.ts > retire later: kernelConfig and normalizeInputs > retireMonth is 12·N; the move month is max(move, retirement); savings are monthly 1ms
+ ✓ src/engine/__tests__/retireLater.test.ts > retire later: kernelConfig and normalizeInputs > the plan still ends at the same age: the horizon counts from today 32ms
+ ✓ src/engine/__tests__/retireLater.test.ts > retire later: kernelConfig and normalizeInputs > the inheritance residence test uses the effective move month 0ms
+ ✓ src/engine/__tests__/retireLater.test.ts > retire later: kernelConfig and normalizeInputs > the wealth tax starts no earlier than retirement in simulate 38ms
+ ✓ src/engine/__tests__/retireLater.test.ts > retire later: kernelConfig and normalizeInputs > sanitizes retireInYears and savingsWhileWorking 0ms
+ ✓ src/engine/__tests__/retireLater.test.ts > retire later: kernelConfig and normalizeInputs > retire-in 0 with savings $0 gives identical results to a plan without the fields 74ms
+ ✓ src/engine/__tests__/retireLater.test.ts > retire later: odds, solver and atlas > retiring later with savings raises the odds at the defaults 155ms
+ ✓ src/engine/__tests__/retireLater.test.ts > retire later: odds, solver and atlas > retiring later with savings raises safe spending 457ms
+ ✓ src/engine/__tests__/retireLater.test.ts > retire later: odds, solver and atlas > the solver scales retirement spending only, never the savings 107ms
+ ✓ src/engine/__tests__/retireLater.test.ts > retire later: odds, solver and atlas > Atlas odds follow retire-in and savings, and match simulate 263ms
+
+ Test Files  3 passed (3)
+      Tests  45 passed (45)
+   Start at  19:32:36
+   Duration  1.29s (tests 87%, transform 7%, import 5%)
+
+exit 0

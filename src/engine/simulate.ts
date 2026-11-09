@@ -36,7 +36,11 @@ export function kernelConfig(inputs: PlanInputs, dest: Destination, budgetMultip
   const homeAnnual = budgetTotal(inputs.budget) * budgetMultiplier
   const hasDest = dest.city != null && dest.annual != null
   const fxVol = hasDest && dest.city!.currency !== 'USD' ? dest.city!.fxVol || 0 : 0
-  const moveMonth = hasDest ? Math.max(0, Math.round(inputs.moveInYears * 12)) : T
+  // Working months before retirement: whole months, within the horizon (non-finite = retire now).
+  const retireRaw = Math.round(inputs.retireInYears * 12)
+  const retireMonth = Number.isFinite(retireRaw) ? Math.min(T, Math.max(0, retireRaw)) : 0
+  // The move can't come before retirement, so the wealth tax and the residence test start no earlier.
+  const moveMonth = hasDest ? Math.max(0, Math.round(inputs.moveInYears * 12), retireMonth) : T
   const lt = hasDest ? dest.city!.localTax : undefined
   const wealth = lt?.wealth && lt.wealth.bands.length ? lt.wealth : null
   const inh = lt?.inheritance && lt.inheritance.bands.length ? lt.inheritance : null
@@ -59,6 +63,11 @@ export function kernelConfig(inputs: PlanInputs, dest: Destination, budgetMultip
     fxSigmaM: fxVol / Math.sqrt(12),
     incomeMonthly: inputs.otherIncome / 12,
     incomeStartMonth: Math.max(0, Math.ceil((inputs.incomeStartAge - inputs.age) * 12 - 1e-9)),
+    retireMonth,
+    // Savings while working, today's USD/month: never scaled by budgetMultiplier (the solver scales
+    // retirement spending only). Finite and > 0, else 0.
+    savingsMonthly:
+      Number.isFinite(inputs.savingsWhileWorking) && inputs.savingsWhileWorking > 0 ? inputs.savingsWhileWorking / 12 : 0,
     // finite and > 0, else 0 (Math.max would pass Infinity through)
     initialLoan: Number.isFinite(inputs.existingLoan) && inputs.existingLoan > 0 ? inputs.existingLoan : 0,
     wealthTax: wealth && moveMonth < T ? { gross: wealth.base === 'gross', bands: packBands(wealth.bands) } : null,
@@ -109,10 +118,23 @@ export function outcomeDots(rates: [number, number, number]): (0 | 1 | 2)[] {
   return dots.slice(0, 100)
 }
 
-/** Horizon is modelled in whole years (bands are yearly). */
+export const MAX_RETIRE_IN_YEARS = 15
+export const MAX_SAVINGS_WHILE_WORKING = 1_000_000
+
+/** Horizon is modelled in whole years (bands are yearly). Retire-in is a whole number of years in
+ *  [0, 15] and below the horizon; savings are in [0, 1M]; non-finite (or missing) values are 0.
+ *  Returns `inputs` itself when nothing changes. */
 export function normalizeInputs(inputs: PlanInputs): PlanInputs {
   const horizonYears = Math.max(1, Math.round(inputs.horizonYears))
-  return horizonYears === inputs.horizonYears ? inputs : { ...inputs, horizonYears }
+  const ry = Math.round(inputs.retireInYears)
+  const retireInYears = Number.isFinite(ry) ? Math.max(0, Math.min(ry, MAX_RETIRE_IN_YEARS, horizonYears - 1)) : 0
+  const sw = inputs.savingsWhileWorking
+  const savingsWhileWorking = Number.isFinite(sw) ? Math.min(MAX_SAVINGS_WHILE_WORKING, Math.max(0, sw)) : 0
+  return horizonYears === inputs.horizonYears &&
+    retireInYears === inputs.retireInYears &&
+    savingsWhileWorking === inputs.savingsWhileWorking
+    ? inputs
+    : { ...inputs, horizonYears, retireInYears, savingsWhileWorking }
 }
 
 export function simulate(market: MarketData, cities: City[], rawInputs: PlanInputs): SimulationResult {

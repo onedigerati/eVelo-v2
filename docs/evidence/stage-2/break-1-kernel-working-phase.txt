@@ -1,0 +1,31 @@
+# Break 1: src/engine/kernel.ts line 232 `t < retireMonth` -> `t < 0` (working phase ignored: spending withdrawn from month 0, no savings)
+$ npx vitest run src/engine/__tests__/retireLater.test.ts src/state/__tests__/simKeys.test.ts
+     × withdraws nothing before month 12·N; CPI-inflated savings pay the loan down first, then are invested 11ms
+     × a loan keeps accruing interest while working (no savings, no withdrawals) 1ms
+     × savings raise the cost basis: a forced sale at retirement pays tax on the smaller gain fraction (BBD) 0ms
+     × the sell strategy gets the same savings, invested with basis 0ms
+     × other income counts only from max(income start, retirement) 1ms
+     × retiring later with savings raises the odds at the defaults 99ms
+     × retiring later with savings raises safe spending 481ms
+     × the solver scales retirement spending only, never the savings 120ms
+     × Atlas odds follow retire-in and savings, and match simulate 213ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 9 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/engine/__tests__/retireLater.test.ts > retire later: the working phase in the kernel > withdraws nothing before month 12·N; CPI-inflated savings pay the loan down first, then are invested
+AssertionError: expected 25.397604206380993 to be +0 // Object.is equality
+ FAIL  src/engine/__tests__/retireLater.test.ts > retire later: the working phase in the kernel > a loan keeps accruing interest while working (no savings, no withdrawals)
+AssertionError: expected 23.950753314516675 to be close to 11.268250301319698, received difference is 12.682503013196976, but expected 5e-10
+ FAIL  src/engine/__tests__/retireLater.test.ts > retire later: the working phase in the kernel > savings raise the cost basis: a forced sale at retirement pays tax on the smaller gain fraction (BBD)
+AssertionError: expected +0 to be close to 23.067455621301775, received difference is 23.067455621301775, but expected 5e-10
+ FAIL  src/engine/__tests__/retireLater.test.ts > retire later: the working phase in the kernel > the sell strategy gets the same savings, invested with basis
+AssertionError: expected 100 to be close to 112, received difference is 12, but expected 5e-10
+ FAIL  src/engine/__tests__/retireLater.test.ts > retire later: the working phase in the kernel > other income counts only from max(income start, retirement)
+AssertionError: expected 106 to be 100 // Object.is equality
+ FAIL  src/engine/__tests__/retireLater.test.ts > retire later: odds, solver and atlas > retiring later with savings raises the odds at the defaults
+AssertionError: expected 0.7593333333333333 to be greater than 0.81
+ FAIL  src/engine/__tests__/retireLater.test.ts > retire later: odds, solver and atlas > retiring later with savings raises safe spending
+AssertionError: expected 90254.5166015625 to be greater than 100862.4267578125
+ FAIL  src/engine/__tests__/retireLater.test.ts > retire later: odds, solver and atlas > the solver scales retirement spending only, never the savings
+AssertionError: expected 74671.630859375 to be greater than 112007.4462890625
+ FAIL  src/engine/__tests__/retireLater.test.ts > retire later: odds, solver and atlas > Atlas odds follow retire-in and savings, and match simulate
+AssertionError: st-louis: expected 0.6313333333333333 not to be 0.6313333333333333 // Object.is equality
+      Tests  9 failed | 14 passed (23)

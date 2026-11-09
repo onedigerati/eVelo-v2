@@ -55,6 +55,11 @@ export function sanitizeHoldings(v: unknown): Holding[] {
     .map((h) => ({ symbol: h.symbol, weight: h.weight }))
 }
 
+/** The engine's MAX_RETIRE_IN_YEARS / MAX_SAVINGS_WHILE_WORKING (engine/simulate.ts), restated so the
+ *  main bundle doesn't pull in the simulation module; a test keeps them equal. */
+export const MAX_RETIRE_IN_YEARS = 15
+export const MAX_SAVINGS_WHILE_WORKING = 1_000_000
+
 const clamp = (v: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, v))
 
 /** Numeric ranges the plan UI itself allows (the sliders and fields in src/ui/plan), so a plan made
@@ -66,6 +71,8 @@ export const INPUT_LIMITS = {
   age: [30, 85],
   horizonYears: [10, 40],
   moveInYears: [0, 40],
+  retireInYears: [0, MAX_RETIRE_IN_YEARS], // whole years, and below the horizon
+  savingsWhileWorking: [0, MAX_SAVINGS_WHILE_WORKING],
   expatFactor: [0, 1],
   otherIncome: [0, 1_000_000],
   incomeStartAge: [50, 80],
@@ -125,6 +132,8 @@ export function sanitizeInputs(raw: unknown): PlanInputs {
   base.existingLoan = clampExistingLoan(base.existingLoan, base.portfolio)
   base.targetLtvAfterCall = Math.min(base.targetLtvAfterCall, Math.round((base.maxLtv - LTV_GAP) * 100) / 100)
   base.seed = Math.round(base.seed)
+  // Retire-in is whole years and ends before the plan does (as the engine's normalizeInputs keeps it).
+  base.retireInYears = Math.max(0, Math.min(Math.round(base.retireInYears), Math.round(base.horizonYears) - 1))
   if (!PATH_OPTIONS.includes(base.paths)) base.paths = DEFAULT_INPUTS.paths
   for (const c of Object.keys(base.budget) as (keyof PlanInputs['budget'])[]) base.budget[c] = clamp(base.budget[c], 0, BUDGET_MAX)
   base.holdings = base.holdings.map((h) => ({ ...h, weight: clamp(h.weight, 0, 1) }))

@@ -25,6 +25,8 @@ export const DEFAULT_INPUTS: PlanInputs = {
   homeCityId: 'st-louis',
   destCityId: 'bangkok',
   moveInYears: 0,
+  retireInYears: 0,
+  savingsWhileWorking: 0,
   expatFactor: 0.35,
   otherIncome: 40000,
   incomeStartAge: 67,

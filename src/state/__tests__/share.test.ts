@@ -1,7 +1,9 @@
 import { describe, expect, it } from 'vitest'
 import { DEFAULT_INPUTS } from '../../engine/defaults'
 import { parseHash } from '../router'
-import { baseUrl, decodeInputs, encodeInputs, INPUT_LIMITS, sanitizeInputs, shareUrl } from '../share'
+import * as engineSim from '../../engine/simulate'
+import { normalizeInputs } from '../../engine/simulate'
+import { baseUrl, decodeInputs, encodeInputs, INPUT_LIMITS, MAX_RETIRE_IN_YEARS, MAX_SAVINGS_WHILE_WORKING, sanitizeInputs, shareUrl } from '../share'
 
 describe('share links', () => {
   it('round-trips changed inputs', () => {
@@ -119,6 +121,80 @@ describe('share links', () => {
       // the portfolio is clamped first, then the loan under it
       expect(loanOf({ portfolio: -1e6, existingLoan: 100 })).toBe(0)
       expect(loanOf({ portfolio: 1e12, existingLoan: 1e12 })).toBe(1e10 - 1)
+    })
+  })
+
+  describe('retire later', () => {
+    const enc = (d: object) => btoa(JSON.stringify({ v: 1, d })).replace(/=+$/, '').replace(/\+/g, '-').replace(/\//g, '_')
+    const dec = (d: object) => decodeInputs(enc(d))!
+
+    it('uses the engine’s limits', () => {
+      expect(MAX_RETIRE_IN_YEARS).toBe(engineSim.MAX_RETIRE_IN_YEARS)
+      expect(MAX_SAVINGS_WHILE_WORKING).toBe(engineSim.MAX_SAVINGS_WHILE_WORKING)
+    })
+    it('defaults to retiring now with no savings, and still encodes short', () => {
+      expect(DEFAULT_INPUTS.retireInYears).toBe(0)
+      expect(DEFAULT_INPUTS.savingsWhileWorking).toBe(0)
+      expect(encodeInputs(DEFAULT_INPUTS).length).toBeLessThan(20)
+    })
+    it('round-trips both fields through a share link and the saved plan', () => {
+      const inputs = { ...DEFAULT_INPUTS, retireInYears: 4, savingsWhileWorking: 85_000, destCityId: 'lisbon' }
+      expect(decodeInputs(encodeInputs(inputs))).toEqual(inputs)
+      expect(sanitizeInputs(JSON.parse(JSON.stringify(inputs)))).toEqual(inputs)
+      // each on its own too
+      for (const d of [{ retireInYears: 15 }, { savingsWhileWorking: 1_000_000 }]) {
+        const one = { ...DEFAULT_INPUTS, ...d }
+        expect(decodeInputs(encodeInputs(one))).toEqual(one)
+      }
+    })
+    it('loads an old share link or saved plan without them as 0', () => {
+      const { retireInYears: _r, savingsWhileWorking: _s, ...old } = { ...DEFAULT_INPUTS, portfolio: 4_000_000, age: 58 }
+      expect('retireInYears' in old || 'savingsWhileWorking' in old).toBe(false)
+      expect(sanitizeInputs(old)).toEqual({ ...old, retireInYears: 0, savingsWhileWorking: 0 })
+      expect(dec({ portfolio: 4_000_000, age: 58 })).toMatchObject({ retireInYears: 0, savingsWhileWorking: 0 })
+    })
+    it('clamps retire-in to whole years in 0–15, below the horizon', () => {
+      expect(dec({ retireInYears: -3 }).retireInYears).toBe(0)
+      expect(dec({ retireInYears: 99 }).retireInYears).toBe(15)
+      expect(dec({ retireInYears: 9e300 }).retireInYears).toBe(15)
+      expect(dec({ retireInYears: 3.4 }).retireInYears).toBe(3)
+      expect(dec({ retireInYears: 4.6 }).retireInYears).toBe(5)
+      // the horizon (itself clamped first) caps it: retirement comes before the plan ends
+      expect(dec({ horizonYears: 10, retireInYears: 12 }).retireInYears).toBe(9)
+      expect(dec({ horizonYears: 3, retireInYears: 12 }).retireInYears).toBe(9)
+      expect(dec({ horizonYears: 12.4, retireInYears: 15 }).retireInYears).toBe(11)
+      expect(dec({ horizonYears: 40, retireInYears: 15 }).retireInYears).toBe(15)
+    })
+    it('clamps savings to $0–$1M', () => {
+      expect(dec({ savingsWhileWorking: -50_000 }).savingsWhileWorking).toBe(0)
+      expect(dec({ savingsWhileWorking: 5e9 }).savingsWhileWorking).toBe(1_000_000)
+      expect(dec({ savingsWhileWorking: 1e308 }).savingsWhileWorking).toBe(1_000_000)
+      expect(dec({ savingsWhileWorking: 12_345.5 }).savingsWhileWorking).toBe(12_345.5)
+    })
+    it('treats hostile values as 0', () => {
+      for (const bad of ['5', 'lots', null, true, [4], { n: 4 }, { valueOf: 4 }]) {
+        expect(dec({ retireInYears: bad, savingsWhileWorking: bad }), JSON.stringify(bad)).toMatchObject({ retireInYears: 0, savingsWhileWorking: 0 })
+      }
+      for (const bad of [Number.NaN, Infinity, -Infinity]) {
+        const out = sanitizeInputs({ ...DEFAULT_INPUTS, retireInYears: bad, savingsWhileWorking: bad })
+        expect(out.retireInYears, String(bad)).toBe(0)
+        expect(out.savingsWhileWorking, String(bad)).toBe(0)
+      }
+      // a JSON number too big for a double parses as Infinity: dropped, not clamped to the top
+      const huge = btoa('{"v":1,"d":{"retireInYears":1e999,"savingsWhileWorking":1e999}}').replace(/=+$/, '')
+      expect(decodeInputs(huge)).toMatchObject({ retireInYears: 0, savingsWhileWorking: 0 })
+      // prototype-style keys are ignored and leave the plan intact
+      const proto = btoa('{"v":1,"d":{"constructor":{"retireInYears":9},"__proto__":{"retireInYears":9,"savingsWhileWorking":9},"retireInYears":2}}').replace(/=+$/, '')
+      const out = decodeInputs(proto)!
+      expect(out).toEqual({ ...DEFAULT_INPUTS, retireInYears: 2 })
+      expect(Object.getPrototypeOf(out)).toBe(Object.prototype)
+      expect(({} as Record<string, unknown>).retireInYears).toBeUndefined()
+    })
+    it('agrees with the engine’s normalizeInputs on anything it lets through', () => {
+      for (const d of [{ retireInYears: 7.5, horizonYears: 12 }, { retireInYears: 40, savingsWhileWorking: 2e6 }, { retireInYears: -1, savingsWhileWorking: -1 }]) {
+        const out = dec(d)
+        expect(normalizeInputs(out), JSON.stringify(d)).toBe(out) // already normal: returned as is
+      }
     })
   })
 

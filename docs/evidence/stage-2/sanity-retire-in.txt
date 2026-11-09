@@ -1,0 +1,40 @@
+$ npx vitest run --config <scratchpad>/vitest.config.mjs   (scratch test sanity.test.ts: simulate + solveSpending, bundled market.json + CITIES, DEFAULT_INPUTS with retireInYears/savingsWhileWorking varied)
+DEFAULT_INPUTS: age 55, portfolio 3000000, horizon 30y, home st-louis, dest bangkok, move-in 0y, paths 4000, seed 7; solver target 0.9
+retireIn | savings/yr | success | p50 net worth end | solver maxSpendHome | maxSpendDest
+0 | 0 | 79.5% | 12361586 | 83675 | 63263
+2 | 0 | 85.2% | 12865965 | 96337 | 72836
+4 | 0 | 90.3% | 13316933 | 111208 | 84079
+5 | 0 | 92.0% | 13515146 | 119715 | 90511
+0 | 60000 | 79.5% | 12361586 | 83675 | 63263
+2 | 60000 | 86.4% | 13473931 | 99869 | 75506
+4 | 60000 | 91.7% | 14492486 | 117217 | 88623
+5 | 60000 | 93.5% | 14946148 | 128013 | 96785
+
+--- script ---
+import { it } from 'vitest'
+import { writeFileSync } from 'node:fs'
+import marketJson from '/home/jonah/repos/eVelo-v2/src/data/market.json'
+import { CITIES } from '/home/jonah/repos/eVelo-v2/src/data/cities'
+import { DEFAULT_INPUTS } from '/home/jonah/repos/eVelo-v2/src/engine/defaults'
+import { simulate } from '/home/jonah/repos/eVelo-v2/src/engine/simulate'
+import { solveSpending } from '/home/jonah/repos/eVelo-v2/src/engine/solve'
+import type { MarketData } from '/home/jonah/repos/eVelo-v2/src/engine/types'
+
+const SOLVE_TARGET = 0.9 // = src/state/sim.ts SOLVE_TARGET
+it('sanity', () => {
+  const market = marketJson as unknown as MarketData
+  const d = DEFAULT_INPUTS
+  const lines = [
+    `DEFAULT_INPUTS: age ${d.age}, portfolio ${d.portfolio}, horizon ${d.horizonYears}y, home ${d.homeCityId}, dest ${d.destCityId}, move-in ${d.moveInYears}y, paths ${d.paths}, seed ${d.seed}; solver target ${SOLVE_TARGET}`,
+    'retireIn | savings/yr | success | p50 net worth end | solver maxSpendHome | maxSpendDest',
+  ]
+  for (const savings of [0, 60000]) for (const n of [0, 2, 4, 5]) {
+    const inp = { ...d, retireInYears: n, savingsWhileWorking: savings }
+    const r = simulate(market, CITIES, inp)
+    const s = solveSpending(market, CITIES, inp, SOLVE_TARGET)
+    lines.push(`${n} | ${savings} | ${(r.successRate * 100).toFixed(1)}% | ${Math.round(r.netWorth.p50.at(-1)!)} | ${Math.round(s.maxSpendHome)} | ${s.maxSpendDest == null ? '-' : Math.round(s.maxSpendDest)}`)
+  }
+  const out = lines.join('\n')
+  console.log(out)
+  writeFileSync('<scratchpad>/sanity-out.txt', out + '\n')
+}, 600000)

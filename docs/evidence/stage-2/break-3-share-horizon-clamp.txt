@@ -1,0 +1,9 @@
+# Break 3: src/state/share.ts line 136 horizon cap removed (`horizonYears - 1` -> `horizonYears + 100`)
+$ npx vitest run src/state/__tests__/share.test.ts
+       × clamps retire-in to whole years in 0–15, below the horizon 6ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/state/__tests__/share.test.ts > share links > retire later > clamps retire-in to whole years in 0–15, below the horizon
+AssertionError: expected 12 to be 9 // Object.is equality
+- Expected
++ Received
+      Tests  1 failed | 21 passed (22)

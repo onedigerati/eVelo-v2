@@ -14,12 +14,22 @@ import { openingSale, type OpeningSale } from './openingSale'
 //   - L >= V, or a balance that sale can't cover after tax: the path is broken from the start
 //     (year 0 recorded as broken, first forced-sale month 0).
 //
+// Working phase: months t < retireMonth (0 = retired today, the default) are working months.
+// Nothing is withdrawn for spending and other income isn't counted; instead need = -savings · P
+// (savings while working, today's USD, CPI-inflated), so step 3's surplus logic pays the loan down
+// first and invests the rest (basis += invested); the loan keeps accruing interest. From
+// retireMonth on, step 3 is as below, so income effectively starts at max(incomeStart, retirement).
+// kernelConfig keeps moveMonth >= retireMonth (the move, and so the wealth tax, can't come first);
+// the kernel also enforces it for hand-written configs. The sell strategy gets the same savings.
+// The opening forced sale happens today, before any savings arrive (the lender acts on today's
+// LTV), so savings never prevent it.
+//
 // Month t, in order:
 //   1. portfolio *= 1 + r_t - dividendTaxDrag/12;  price level *= 1 + cpi_t;  FX walk steps.
 //   2. loan accrues interest (loanRate/12, capitalized).
 //   3. need = spending_t - otherIncome_t (both inflated by the path's CPI; destination spending
-//      also × exp(X_t)). need > 0 is borrowed; a surplus repays the loan, and any leftover is
-//      reinvested in the portfolio (cost basis += leftover).
+//      also × exp(X_t)), or -savings_t while working. need > 0 is borrowed; a surplus repays the
+//      loan, and any leftover is reinvested in the portfolio (cost basis += leftover).
 //   3b. Local wealth tax (destinations that have one): at each year-end month ((t+1) % 12 === 0)
 //      with t >= moveMonth, tax = bands(real base), base = (V - L)/P (net) or V/P (gross). The
 //      bands are today's USD, so thresholds stay constant in real terms. The tax is borrowed:
@@ -80,6 +90,11 @@ export interface KernelConfig {
   fxSigmaM: number
   incomeMonthly: number
   incomeStartMonth: number
+  /** First retirement month (0-based); earlier months are working months: no spending, no income,
+   *  savingsMonthly added instead. Absent = 0 (retired today). */
+  retireMonth?: number
+  /** Savings while working, today's USD per month (CPI-inflated on the path). Absent = 0. */
+  savingsMonthly?: number
   /** Existing loan balance today (USD, already borrowed); absent, non-finite or <= 0 = none. Above
    *  maxLtv · portfolio it triggers the opening forced sale. The sell strategy starts at
    *  portfolio - initialLoan with no debt. */
@@ -151,7 +166,12 @@ export function runPaths(
   cfg: KernelConfig,
   rec: Recorder | null,
 ): number {
-  const { T, dragM, loanRateM, maxLtv, targetLtv, tax, moveMonth, fxSigmaM } = cfg
+  const { T, dragM, loanRateM, maxLtv, targetLtv, tax, fxSigmaM } = cfg
+  const retireMonth = cfg.retireMonth ?? 0
+  const savingsM = cfg.savingsMonthly ?? 0
+  // The move can't come before retirement (kernelConfig already ensures it; this guards hand-written
+  // configs and leaves retireMonth 0 untouched).
+  const moveMonth = retireMonth > 0 && retireMonth > cfg.moveMonth ? retireMonth : cfg.moveMonth
   const fxDrift = -0.5 * fxSigmaM * fxSigmaM
   const wt = cfg.wealthTax ?? null
   const wGross = wt !== null && wt.gross
@@ -210,9 +230,11 @@ export function runPaths(
       const r = sc.ret[o + t] - dragM
       P *= 1 + sc.infl[o + t]
       if (fxSigmaM > 0) X += fxDrift + fxSigmaM * sc.fxz[o + t]
-      const spend =
-        t >= moveMonth ? cfg.destMonthly * P * (fxSigmaM > 0 ? Math.exp(X) : 1) : cfg.homeMonthly * P
-      const need = spend - (t >= cfg.incomeStartMonth ? cfg.incomeMonthly * P : 0)
+      const need =
+        t < retireMonth
+          ? -savingsM * P
+          : (t >= moveMonth ? cfg.destMonthly * P * (fxSigmaM > 0 ? Math.exp(X) : 1) : cfg.homeMonthly * P) -
+            (t >= cfg.incomeStartMonth ? cfg.incomeMonthly * P : 0)
       const taxNow = t === taxMonth
       if (taxNow) taxMonth += 12
 
@@ -255,7 +277,9 @@ export function runPaths(
 
       if (rec) {
         growth *= 1 + r
-        if (Vs > 0) {
+        // A sell side at 0 still takes deposits while working (portfolio 0, or a loan >= it);
+        // once retired, one that ran dry stays at 0.
+        if (Vs > 0 || (need < 0 && t < retireMonth)) {
           Vs *= 1 + r
           if (need > 0) {
             const g = Bs < Vs ? 1 - Bs / Vs : 0

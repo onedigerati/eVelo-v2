@@ -1,0 +1,4 @@
+$ npx vitest run src/engine/__tests__/retireLater.test.ts --reporter=verbose
+ ✓ src/engine/__tests__/retireLater.test.ts > retire later: the working phase in the kernel > the sell strategy gets the same savings, invested with basis 1ms
+ ✓ src/engine/__tests__/retireLater.test.ts > retire later: the working phase in the kernel > a sell side that starts at $0 still gets the savings (portfolio 0, or a loan >= portfolio) 1ms
+      Tests  18 passed (18)
