@@ -202,15 +202,17 @@ export function FanChart({ result, metric, markers }: { result: SimulationResult
             </filter>
           </defs>
 
-          {/* grid + y labels (labels sit above their line, inside the plot) */}
+          {/* grid lines; their labels are drawn later, over the bands and marker lines */}
           <g className="fan__grid">
             {yTicks.map((v) => (
-              <g key={v} transform={`translate(0, ${Math.round(y(v)) + 0.5})`}>
-                <line x1={m.l} x2={m.l + iw} stroke={v === 0 ? 'var(--chart-grid-strong)' : 'var(--chart-grid)'} />
-                <text x={m.l} y={-6} className="chart-tick">
-                  {ratio ? percent(v) : moneyTick(v)}
-                </text>
-              </g>
+              <line
+                key={v}
+                x1={m.l}
+                x2={m.l + iw}
+                y1={Math.round(y(v)) + 0.5}
+                y2={Math.round(y(v)) + 0.5}
+                stroke={v === 0 ? 'var(--chart-grid-strong)' : 'var(--chart-grid)'}
+              />
             ))}
           </g>
 
@@ -248,6 +250,16 @@ export function FanChart({ result, metric, markers }: { result: SimulationResult
               </text>
             </g>
           ))}
+
+          {/* y labels sit above their line, inside the plot. Drawn over the working band and the marker
+              lines with a halo, so a retire line near the left edge (a short wait on a phone) passes behind them. */}
+          <g className="fan__ticks" aria-hidden="true">
+            {yTicks.map((v) => (
+              <text key={v} x={m.l} y={Math.round(y(v)) + 0.5 - 6} className="chart-tick fan__tick">
+                {ratio ? percent(v) : moneyTick(v)}
+              </text>
+            ))}
+          </g>
 
           {/* x axis */}
           <g transform={`translate(0, ${m.t + ih})`}>

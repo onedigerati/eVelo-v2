@@ -35,6 +35,10 @@ export function LifeSection() {
   const retirePresets = PRESET_RETIRE.filter((y) => y <= retireMax)
   const [otherOpen, setOtherOpen] = useState(!PRESET_RETIRE.includes(retireIn))
   const other = retireMax >= 1 && (otherOpen || !retirePresets.includes(retireIn))
+  // Other (and Custom below) name their value only once it differs from every preset on show, so the
+  // open segment never reads "4 yrs" beside an unselected "4 yrs" preset.
+  const otherShowsValue = other && !retirePresets.includes(retireIn)
+  const customShowsValue = custom && !PRESET_HORIZONS.includes(horizon)
   const summary = [`Age ${age}`, retireIn > 0 && `retire ${age + retireIn}`, `${horizon} yrs`, `${currencyCompact(total)}/yr`].filter(Boolean).join(' · ')
 
   return (
@@ -73,8 +77,8 @@ export function LifeSection() {
               ? [
                   {
                     value: 'other' as const,
-                    label: other ? `${retireIn} yrs` : 'Other',
-                    ariaLabel: other ? `Other: ${retireIn} ${retireIn === 1 ? 'year' : 'years'}` : 'Other',
+                    label: otherShowsValue ? `${retireIn} yrs` : 'Other',
+                    ariaLabel: otherShowsValue ? `Other: ${retireIn} ${retireIn === 1 ? 'year' : 'years'}` : 'Other',
                   },
                 ]
               : []),
@@ -150,7 +154,7 @@ export function LifeSection() {
           }}
           options={[
             ...PRESET_HORIZONS.map((y) => ({ value: y, label: `${y} yrs` })),
-            { value: 'custom' as const, label: custom ? `${horizon} yrs` : 'Custom' },
+            { value: 'custom' as const, label: customShowsValue ? `${horizon} yrs` : 'Custom' },
           ]}
         />
         <AnimatePresence initial={false}>

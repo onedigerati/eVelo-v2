@@ -76,6 +76,16 @@ export function useTweenedSeries(target: number[][] | null, opts: { duration?: n
   return shown
 }
 
+/**
+ * The value at index `i` of a (possibly tweened) series, clamped to its ends. A tweened series lags its
+ * target by a render, so it can be shorter than the current horizon: never hand back undefined.
+ */
+export function seriesAt(s: readonly number[], i: number, fallback = 0): number {
+  if (s.length === 0) return fallback
+  const v = s[Math.max(0, Math.min(s.length - 1, Math.round(i)))]
+  return Number.isFinite(v) ? v : fallback
+}
+
 /** Index-based crosshair driven by pointer (mouse + touch) and keyboard. */
 export function useCrosshair(count: number, indexAt: (clientX: number, rect: DOMRect) => number) {
   const [index, setIndex] = useState<number | null>(null)

@@ -538,7 +538,10 @@
   font-weight: 600;
   fill: var(--bruised-text);
 }
-/* Wider than the band: a halo lets it cut cleanly across the retire line. */
+/* Wider than the band: a halo lets it cut cleanly across the retire line. The y tick labels wear the
+   same halo so marker lines and the band edge pass behind them (the margin-call chart's ticks too). */
+.fan__tick,
+.mc__tick,
 .fan__working-label.is-over {
   paint-order: stroke;
   stroke: var(--bg);

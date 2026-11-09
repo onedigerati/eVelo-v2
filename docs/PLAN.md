@@ -7,23 +7,22 @@ A user who isn't ready to retire today can see what retiring in 2, 4 or 5 years 
 2026-11-08 · tests: 555 pass · typecheck: clean (after c5fc49a)
 
 ## Now
-Stage 3 of 4 · Plan inputs and outlook
+Stage 4 of 4 · Retire-later comparison
 Risk: UI only
 Mode: autopilot
 Agents: wide — confirmed 2026-11-08 19:07
 Checks:
-- [ ] Life & lifestyle shows A's "Retire in" control (Now / 2 yrs / 4 yrs / 5 yrs / Other up to 15, "at age N"), and a "Saving while working" $/yr field shown when retire-in > 0; changing either updates the verdict, charts and Atlas odds (proof: run the product, screenshots; a test can't judge the live app)
-- [ ] Retire-in is capped below the horizon in the UI and re-clamped in the store when the horizon drops (proof: test for the store clamp; run the product)
-- [ ] The verdict sentence names the retirement age when retire-in > 0, and the move age everywhere uses max(move, retirement) (proof: test for the copy helpers; run the product)
-- [ ] The fan and margin-call charts shade the working years and draw a "Retire · <age>" line, as in variation D (proof: run the product, screenshots)
-- [ ] The existing-loan "thin" warning and the Borrowing first-year spend account for the working years (proof: test)
-- [ ] The Method page explains retiring later and saving while working; everything looks right in light, dark and at phone width, keyboard and screen reader reach both controls with labels (proof: run the product, screenshots + accessibility tree)
+- [ ] The Outlook shows A's "When could you retire?" row: cards for Now, 2, 4 and 5 years (those below the horizon), each with an odds ring, "In N yrs · age A", the odds and safe spending; the plan's own card is highlighted, and a fifth "your plan" card appears when its retire-in isn't one of them (proof: run the product, screenshots; a test can't judge the layout)
+- [ ] Each card's odds and safe spending equal what the main verdict and max-spend show when that retire-in is chosen (same paths and seed), computed off the main thread, and the row shows a loading state while it computes (proof: test for the comparison runner; run the product)
+- [ ] Tapping a card sets retire-in to it, and the verdict, charts and the highlight follow; the cards are buttons a keyboard and screen reader can reach, each named with its age, odds and spending (proof: run the product, accessibility tree)
+- [ ] It looks right in light, dark and at phone width (2×2 grid) (proof: run the product, screenshots)
+- [ ] A preview is published for the user to review; deploy only on their approval (proof: the user's words)
 Open: none
 
 ## Stages
 - [x] 1. Variations — a variations page of ideas for the setting and the comparison; the user picks one
 - [x] 2. Retire later in the engine — retireInYears + savingsWhileWorking through kernel, sell side, solver, Atlas, share link, defaults, with tests
-- [ ] 3. Plan inputs and outlook — A's Retire in segmented control + Saving field (re-clamped when the horizon drops), verdict copy and move age, loan warning's first-year spend, D's shaded working years and Retire line on the charts, loan warning, Method page, both themes and phone
+- [x] 3. Plan inputs and outlook — A's Retire in segmented control + Saving field (re-clamped when the horizon drops), verdict copy and move age, loan warning's first-year spend, D's shaded working years and Retire line on the charts, loan warning, Method page, both themes and phone
 - [ ] 4. Retire-later comparison — A's "When could you retire?" cards (now / 2 / 4 / 5 yrs: odds ring and safe spending, tap to use); preview; deploy on approval
 
 ## Decisions
@@ -42,6 +41,9 @@ Open: none
 - 2026-11-08 · Engine builder's calls: the move is also held at or after retirement inside the kernel (only when retireMonth > 0, so old hand-written configs behave the same); the FX walk keeps stepping in working months, as it already does before a later move; the sell side doesn't revive from 0 with savings (existing behaviour); the limits are exported as `MAX_RETIRE_IN_YEARS` / `MAX_SAVINGS_WHILE_WORKING` — builder's call.
 - 2026-11-08 · Share links restate the two limits rather than import simulate.ts (keeps the engine out of the main bundle), with a test that they equal the engine's; cache keys and the stay-home baseline already follow every input through `inputsKey`/spread, now proven by tests; the store doesn't re-clamp retire-in when the horizon drops (the engine normalizes; stage 3's control caps it) — builder's call.
 - 2026-11-08 · For stage 3: `firstYearSpend` (existingLoan.ts, the loan "thin" warning) assumes spending in year one; the move age in FanCard.tsx and VerdictHero.tsx uses `moveInYears`, not max(move, retirement) — from the state builder.
+- 2026-11-08 · Stage 3 verified by fresh agents ([report](evidence/stage-3/report.md)); two fix rounds for the Retire line crossing tick labels at retire-in 1–2 (fan, then margin-call), both now drawn under haloed labels; the margin-call chart's pre-existing `translate(…, undefined)` console error on horizon change is fixed (`seriesAt`); "Other"/"Custom" read "Other" until the value differs from every preset. No review run: the stage is UI only — PM's call.
+- 2026-11-08 · Stage 4 layout: the comparison row sits under the verdict as in A; presets at or beyond the horizon are dropped; a fifth "your plan" card appears when the plan's retire-in isn't 0/2/4/5; odds and safe spending run in the worker with the plan's paths and seed so they match the verdict exactly — PM's call.
+- 2026-11-08 · Stage 3 builders' calls: verdict sentences when retiring later — "working in <home> until <age> and retiring there", "…until <age>, then living in <dest>" (move at or before retirement), "working until <age>, then in <home>, moving to <dest> at <age>" (later move); "Other" from Now starts at 1 year; presets above min(15, horizon − 1) are hidden; the store re-clamps retire-in silently (no toast) in `clampAfterSet/Patch/Replace`; the first-year draw is 0 while working, so the "thin" opening-sale warning doesn't fire then; the fan and margin-call charts (the only age-axis charts) get the band and line, the move marker uses max(move, retirement) and "Income starts" max(income age, retirement age), and events in the retirement year join its label ("Retire · move to Bangkok · 59"); on the margin-call chart the "Working" label is a legend swatch so early bars don't hide it; `chartKit.workingYears` and `src/ui/retire.ts` both compute the retirement age (built in parallel; dedupe later) — builders' calls.
 - 2026-11-08 · Stage 2 verified by a fresh agent ([report](evidence/stage-2/report.md), 586 tests, four mutation breaks caught; at the defaults retiring in 0/2/4/5 years with $60K savings gives 79.5/86.4/91.7/93.5%). Security review: nothing found. Correctness review triage — fix now: the sell strategy skipped savings when it started at $0 (portfolio $0, or loan ≥ portfolio); a misplaced comment. Into stage 3 (its scope): the loan "thin" warning's first-year spend, the move age labels, and re-clamping retire-in when the horizon drops (as `loanClamp.ts` does for the loan). Logged, not changed: the opening forced sale happens today, before any savings arrive (the lender acts on today's LTV); the "identical" tests compare with and without the fields rather than against cc192a6, which the unchanged existing suite covers; a hot-loop benchmark showed no measurable slowdown (0–7%, noise) — PM's call.
 - 2026-11-08 · Stage 1 verified by a fresh agent ([report](evidence/stage-1/report.md)); its note that board A has no phone layout is covered by stage 3's phone check — PM's call.
 

@@ -1,0 +1,37 @@
+$ node recheck.cjs (recheck2)   (Playwright vs vite preview :5294, production build of the working tree; script in session scratchpad v5/)
+base inputs {"holdings":[{"symbol":"VTI","weight":0.5},{"symbol":"QQQ","weight":0.2},{"symbol":"SCHD","weight":0.15},{"symbol":"BND","weight":0.1},{"symbol":"GLD","weight":0.05}],"portfolio":3000000,"basisFraction":0.4,"age":55,"horizonYears":30,"budget":{"housing":26000,"groceries":11000,"dining":8000,"transport":10000,"utilities":5500,"healthcare":16000,"travel":14000,"other":19500},"homeCityId":"st-louis","destCityId":"bangkok","moveInYears":0,"retireInYears":2,"savingsWhileWorking":0,"expatFactor":0.35,"otherIncome":40000,"incomeStartAge":67,"existingLoan":0,"loanRate":0.06,"maxLtv":0.6,"targetLtvAfterCall":0.45,"capGainsRate":0.238,"dividendTaxDrag":0.0025,"method":"bootstrap","outlook":"balanced","blockMonths":24,"paths":4000,"seed":7}
+r1-light-desktop fan {"lineX":24,"labels":["Retire · move to Bangkok · 56","Working"],"hits":["line x crosses \"$10M\" [chart-tick fan__tick]","line x crosses \"$15M\" [chart-tick fan__tick]","line x crosses \"$20M\" [chart-tick fan__tick]","line x crosses \"$25M\" [chart-tick fan__tick]","line x crosses \"$30M\" [chart-tick fan__tick]","line x crosses \"Working\" [fan__working-label is-over]","text overlap \"$13M\" / \"median\""],"clipped":[]}
+r1-light-desktop mc  {"lineX":12,"labels":["Retire · 56"],"hits":["line x crosses \"0.5%\" [chart-tick mc__tick]","line x crosses \"1%\" [chart-tick mc__tick]"],"clipped":[]}
+r1-light-phone fan {"lineX":13,"labels":["Retire · move to Bangkok · 56","Working"],"hits":["line x crosses \"$0\" [chart-tick fan__tick]","line x crosses \"$10M\" [chart-tick fan__tick]","line x crosses \"$20M\" [chart-tick fan__tick]","line x crosses \"$30M\" [chart-tick fan__tick]","line x crosses \"Working\" [fan__working-label is-over]"],"clipped":[]}
+r1-light-phone mc  {"lineX":12,"labels":["Retire · 56"],"hits":["line x crosses \"0.5%\" [chart-tick mc__tick]","line x crosses \"1%\" [chart-tick mc__tick]"],"clipped":[]}
+r1-dark-desktop fan {"lineX":24,"labels":["Retire · move to Bangkok · 56","Working"],"hits":["line x crosses \"$10M\" [chart-tick fan__tick]","line x crosses \"$15M\" [chart-tick fan__tick]","line x crosses \"$20M\" [chart-tick fan__tick]","line x crosses \"$25M\" [chart-tick fan__tick]","line x crosses \"$30M\" [chart-tick fan__tick]","line x crosses \"Working\" [fan__working-label is-over]","text overlap \"$13M\" / \"median\""],"clipped":[]}
+r1-dark-desktop mc  {"lineX":12,"labels":["Retire · 56"],"hits":["line x crosses \"0.5%\" [chart-tick mc__tick]","line x crosses \"1%\" [chart-tick mc__tick]"],"clipped":[]}
+r1-dark-phone fan {"lineX":13,"labels":["Retire · move to Bangkok · 56","Working"],"hits":["line x crosses \"$0\" [chart-tick fan__tick]","line x crosses \"$10M\" [chart-tick fan__tick]","line x crosses \"$20M\" [chart-tick fan__tick]","line x crosses \"$30M\" [chart-tick fan__tick]","line x crosses \"Working\" [fan__working-label is-over]"],"clipped":[]}
+r1-dark-phone mc  {"lineX":12,"labels":["Retire · 56"],"hits":["line x crosses \"0.5%\" [chart-tick mc__tick]","line x crosses \"1%\" [chart-tick mc__tick]"],"clipped":[]}
+r2-light-desktop fan {"lineX":45,"labels":["Retire · move to Bangkok · 57","Working"],"hits":["line x crosses \"Working\" [fan__working-label is-over]","text overlap \"$13M\" / \"median\""],"clipped":[]}
+r2-light-desktop mc  {"lineX":21,"labels":["Retire · 57"],"hits":["line x crosses \"0.5%\" [chart-tick mc__tick]"],"clipped":[]}
+r2-light-phone fan {"lineX":23,"labels":["Retire · move to Bangkok · 57","Working"],"hits":["line x crosses \"$10M\" [chart-tick fan__tick]","line x crosses \"$20M\" [chart-tick fan__tick]","line x crosses \"$30M\" [chart-tick fan__tick]","line x crosses \"Working\" [fan__working-label is-over]"],"clipped":[]}
+r2-light-phone mc  {"lineX":21,"labels":["Retire · 57"],"hits":["line x crosses \"0.5%\" [chart-tick mc__tick]"],"clipped":[]}
+r2-dark-desktop fan {"lineX":45,"labels":["Retire · move to Bangkok · 57","Working"],"hits":["line x crosses \"Working\" [fan__working-label is-over]","text overlap \"$13M\" / \"median\""],"clipped":[]}
+r2-dark-desktop mc  {"lineX":21,"labels":["Retire · 57"],"hits":["line x crosses \"0.5%\" [chart-tick mc__tick]"],"clipped":[]}
+r2-dark-phone fan {"lineX":23,"labels":["Retire · move to Bangkok · 57","Working"],"hits":["line x crosses \"$10M\" [chart-tick fan__tick]","line x crosses \"$20M\" [chart-tick fan__tick]","line x crosses \"$30M\" [chart-tick fan__tick]","line x crosses \"Working\" [fan__working-label is-over]"],"clipped":[]}
+r2-dark-phone mc  {"lineX":21,"labels":["Retire · 57"],"hits":["line x crosses \"0.5%\" [chart-tick mc__tick]"],"clipped":[]}
+r4-light-desktop fan {"lineX":88,"labels":["Retire · 59","Move to Bangkok","Working · +$60K/yr"],"hits":["line x crosses \"Working · +$60K/yr\" [fan__working-label is-over]","text overlap \"$14M\" / \"median\""],"clipped":[]}
+r4-light-desktop mc  {"lineX":40,"labels":["Retire · 59"],"hits":[],"clipped":[]}
+r4-light-phone fan {"lineX":43,"labels":["Retire · 59","Move to Bangkok","Working · +$60K/yr"],"hits":["line x crosses \"Working · +$60K/yr\" [fan__working-label is-over]"],"clipped":[]}
+r4-light-phone mc  {"lineX":39,"labels":["Retire · 59"],"hits":[],"clipped":[]}
+r4-dark-desktop fan {"lineX":88,"labels":["Retire · 59","Move to Bangkok","Working · +$60K/yr"],"hits":["line x crosses \"Working · +$60K/yr\" [fan__working-label is-over]","text overlap \"$14M\" / \"median\""],"clipped":[]}
+r4-dark-desktop mc  {"lineX":40,"labels":["Retire · 59"],"hits":[],"clipped":[]}
+r4-dark-phone fan {"lineX":43,"labels":["Retire · 59","Move to Bangkok","Working · +$60K/yr"],"hits":["line x crosses \"Working · +$60K/yr\" [fan__working-label is-over]"],"clipped":[]}
+r4-dark-phone mc  {"lineX":39,"labels":["Retire · 59"],"hits":[],"clipped":[]}
+r12-light-desktop fan {"lineX":257,"labels":["Retire · move to Bangkok · income starts","Working · +$150K/yr"],"hits":["text overlap \"$20M\" / \"median\""],"clipped":[]}
+r12-light-desktop mc  {"lineX":114,"labels":["Retire · 67"],"hits":[],"clipped":[]}
+r12-light-phone fan {"lineX":123,"labels":["Retire · 67","Working · +$150K/yr"],"hits":[],"clipped":[]}
+r12-light-phone mc  {"lineX":111,"labels":["Retire · 67"],"hits":[],"clipped":[]}
+r12-dark-desktop fan {"lineX":257,"labels":["Retire · move to Bangkok · income starts","Working · +$150K/yr"],"hits":["text overlap \"$20M\" / \"median\""],"clipped":[]}
+r12-dark-desktop mc  {"lineX":114,"labels":["Retire · 67"],"hits":[],"clipped":[]}
+r12-dark-phone fan {"lineX":123,"labels":["Retire · 67","Working · +$150K/yr"],"hits":[],"clipped":[]}
+r12-dark-phone mc  {"lineX":111,"labels":["Retire · 67"],"hits":[],"clipped":[]}
+horizon 15 yrs -> 30 yrs -> 20 yrs -> 15 yrs -> 30 yrs -> 20 yrs with retire-in 0: horizon now 20, new errors []
+horizon 15 yrs -> 30 yrs -> 20 yrs -> 15 yrs -> 30 yrs -> 20 yrs with retire-in 4: horizon now 20, new errors []
+errors (all) []

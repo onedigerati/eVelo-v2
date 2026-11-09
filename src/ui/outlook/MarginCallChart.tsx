@@ -6,7 +6,7 @@ import type { SimulationResult } from '../../engine/types'
 import { percent } from '../format'
 import { firstYearSpend } from '../plan/existingLoan'
 import { cx } from '../primitives'
-import { markerLabelWidth, massWindow, useCrosshair, useSize, useTweenedSeries, workingYears, workingYearsSentence } from './chartKit'
+import { markerLabelWidth, massWindow, seriesAt, useCrosshair, useSize, useTweenedSeries, workingYears, workingYearsSentence } from './chartKit'
 import { BROKEN_AT_START, openingBrokenOf, openingSaleOf } from './openingSale'
 
 /** Why early forced sales happen, by how the plan starts. */
@@ -128,15 +128,16 @@ export function MarginCallChart({ result }: { result: SimulationResult }) {
           {work && (
             <rect className="mc__working" x={x(0)} y={m.t} width={Math.max(0, retireX - x(0))} height={ih} aria-hidden="true" />
           )}
+          {/* grid lines; their labels are drawn later, over the bars and the retire line */}
           {yTicks.map((v) => (
-            <g key={v} transform={`translate(0, ${Math.round(yb(v)) + 0.5})`}>
-              <line x1={m.l} x2={m.l + iw} stroke={v === 0 ? 'var(--chart-grid-strong)' : 'var(--chart-grid)'} />
-              {v > 0 && (
-                <text x={m.l} y={-5} className="chart-tick">
-                  {percent(v, { digits: v < 0.01 ? 1 : 0 })}
-                </text>
-              )}
-            </g>
+            <line
+              key={v}
+              x1={m.l}
+              x2={m.l + iw}
+              y1={Math.round(yb(v)) + 0.5}
+              y2={Math.round(yb(v)) + 0.5}
+              stroke={v === 0 ? 'var(--chart-grid-strong)' : 'var(--chart-grid)'}
+            />
           ))}
           {bars.map((v, i) => {
             const inWin = win ? i >= win[0] && i <= win[1] : false
@@ -161,9 +162,20 @@ export function MarginCallChart({ result }: { result: SimulationResult }) {
               </text>
             </g>
           )}
+          {/* y labels sit above their line, inside the plot. Drawn after the retire line with a halo, so a
+              retire line near the left edge (retiring in a year or two) passes behind them. */}
+          <g className="mc__ticks" aria-hidden="true">
+            {yTicks
+              .filter((v) => v > 0)
+              .map((v) => (
+                <text key={v} x={m.l} y={Math.round(yb(v)) + 0.5 - 5} className="chart-tick mc__tick">
+                  {percent(v, { digits: v < 0.01 ? 1 : 0 })}
+                </text>
+              ))}
+          </g>
           <path d={cumFull} className="mc__cum" />
           {cline.length > 0 && (
-            <g transform={`translate(${x(n)}, ${yc(cline[n - 1])})`}>
+            <g transform={`translate(${x(n)}, ${yc(seriesAt(cline, n - 1))})`}>
               <circle r={3.5} className="mc__cum-dot" />
               <text x={7} y={4} className="mc__cum-label">
                 {percent(cum[n - 1] ?? 0)}
@@ -180,7 +192,7 @@ export function MarginCallChart({ result }: { result: SimulationResult }) {
           {hi !== null && (
             <g transform={`translate(${x(hi + 0.5)}, 0)`} className="mc__cross">
               <line y1={m.t} y2={m.t + ih} />
-              <circle cy={yc(cline[hi])} r={3.5} />
+              <circle cy={yc(seriesAt(cline, hi))} r={3.5} />
             </g>
           )}
         </svg>

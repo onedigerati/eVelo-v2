@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { massWindow, moneyTick, resample } from '../chartKit'
+import { massWindow, moneyTick, resample, seriesAt } from '../chartKit'
 
 describe('massWindow', () => {
   it('finds the shortest window holding the share of mass', () => {
@@ -29,5 +29,21 @@ describe('moneyTick', () => {
     expect(moneyTick(2_500_000)).toBe('$2.5M')
     expect(moneyTick(35_000_000)).toBe('$35M')
     expect(moneyTick(-1_000_000)).toBe('−$1M')
+  })
+})
+
+describe('seriesAt', () => {
+  it('reads in-range values', () => {
+    expect(seriesAt([0.1, 0.2, 0.3], 1)).toBe(0.2)
+  })
+  it('clamps to the last value when the series lags a longer horizon', () => {
+    // A tweened 15-year series still on screen while the horizon is already 30.
+    const stale = Array.from({ length: 15 }, (_, i) => i / 100)
+    expect(seriesAt(stale, 29)).toBe(0.14)
+    expect(seriesAt(stale, -1)).toBe(0)
+  })
+  it('falls back for empty or non-finite series', () => {
+    expect(seriesAt([], 3)).toBe(0)
+    expect(seriesAt([NaN], 0, 0.5)).toBe(0.5)
   })
 })

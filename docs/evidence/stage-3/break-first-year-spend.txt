@@ -1,0 +1,10 @@
+$ (working-years guard in firstYearSpend disabled) npx vitest run src/ui/plan/__tests__/existingLoan.test.ts
+     × draws nothing in the first year while still working (savings go in instead) 5ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/ui/plan/__tests__/existingLoan.test.ts > firstYearSpend > draws nothing in the first year while still working (savings go in instead)
+    209|   it('draws nothing in the first year while still working (savings go …
+      Tests  1 failed | 15 passed (16)
+
+$ (restored) npx vitest run src/ui/plan/__tests__/existingLoan.test.ts src/state/__tests__/retireClamp.test.ts src/ui/__tests__/retire.test.ts src/ui/outlook/__tests__/workingYears.test.ts
+ Test Files  4 passed (4)
+      Tests  37 passed (37)

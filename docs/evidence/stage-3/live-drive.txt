@@ -1,0 +1,120 @@
+$ node drive.cjs   (Playwright vs vite preview :5290, 1280x1000 light; script kept in session scratchpad)
+## A. Defaults (retire now)
+verdict {"number":"7980%%","lede":"Over 30 years, age 55 to 85, living in Bangkok from age 55. In 80 of every 100 simulated markets you never face a forced sale and stay solvent to 85.","compare":"St. Louis 64%→Bangkok 80%+16 pts"}
+atlas ["Top pick 1: Algarve (Faro), Portugal. Sunny coast, big English-speaking retiree scene. Plan holds in 73% of futures ther","Top pick 2: Lisbon, Portugal. Capital city amenities, best US flight links. Plan holds in 69% of futures there, $102,877","Top pick 3: Paphos, Cyprus. The EU's lightest tax on a US portfolio, in a British retiree hub. Plan holds in 73% of futu","Top pick 4: Panama City, Panama. Dollarized hub city with top private hospitals. Plan holds in 73% of futures there, $94"]
+## B. Click "4 yrs" in Life & lifestyle
+retire-age label 55
+verdict {"number":"9090%%","lede":"Over 30 years, age 55 to 85, working in St. Louis until 59, then living in Bangkok. In 90 of every 100 simulated markets you never face a forced sale and stay solvent to 85.","compare":"St. Louis 80%→Bangkok 90%+10 pts"}
+atlas ["Top pick 1: Algarve (Faro), Portugal. Sunny coast, big English-speaking retiree scene. Plan holds in 85% of futures ther","Top pick 2: Lisbon, Portugal. Capital city amenities, best US flight links. Plan holds in 82% of futures there, $102,877","Top pick 3: Paphos, Cyprus. The EU's lightest tax on a US portfolio, in a British retiree hub. Plan holds in 86% of futu","Top pick 4: Panama City, Panama. Dollarized hub city with top private hospitals. Plan holds in 87% of futures there, $94"]
+## C. Type 60000 into "Saving while working"
+savings field value 60,000 $60,000
+verdict {"number":"9292%%","lede":"Over 30 years, age 55 to 85, working in St. Louis until 59, then living in Bangkok. In 92 of every 100 simulated markets you never face a forced sale and stay solvent to 85.","compare":"St. Louis 83%→Bangkok 92%+9 pts"}
+atlas ["Top pick 1: Algarve (Faro), Portugal. Sunny coast, big English-speaking retiree scene. Plan holds in 87% of futures ther","Top pick 2: Lisbon, Portugal. Capital city amenities, best US flight links. Plan holds in 85% of futures there, $102,877","Top pick 3: Paphos, Cyprus. The EU's lightest tax on a US portfolio, in a British retiree hub. Plan holds in 87% of futu","Top pick 4: Panama City, Panama. Dollarized hub city with top private hospitals. Plan holds in 89% of futures there, $94"]
+## D. Move slider to 8 years (later than retirement at 4)
+move slider In 8 years
+verdict {"number":"9090%%","lede":"Over 30 years, age 55 to 85, working until 59, then in St. Louis, moving to Bangkok at 63. In 90 of every 100 simulated markets you never face a forced sale and stay solvent to 85.","compare":"St. Louis 83%→Bangkok 90%+7 pts"}
+## E. Move 2 years (before retirement at 4: effective move = 4)
+move slider In 2 years
+verdict {"number":"9292%%","lede":"Over 30 years, age 55 to 85, working in St. Louis until 59, then living in Bangkok. In 92 of every 100 simulated markets you never face a forced sale and stay solvent to 85.","compare":"St. Louis 83%→Bangkok 92%+9 pts"}
+## F. Horizon clamp: horizon Custom 40, retire-in Other 15, then horizon 10
+horizon null
+at horizon 40 {"retireSlider":null,"retireSliderMax":null,"otherSegment":"Other: 15 years","otherSegmentText":"15 yrs","retireAgeLabel":"55","summary":"02Life & lifestyle","stored":{"retireInYears":15,"horizonYears":40},"verdictEyebrow":"The verdict · 40 years, age 55 → 95"}
+verdict {"number":"9999%%","lede":"Over 40 years, age 55 to 95, working in St. Louis until 70, then living in Bangkok. In 99 of every 100 simulated markets you never face a forced sale and stay solvent to 95.","compare":"St. Louis 98%→Bangkok 99%+1 pts"}
+horizon now null
+at horizon 10 {"retireSlider":null,"retireSliderMax":null,"otherSegment":"Other: 9 years","otherSegmentText":"9 yrs","retireAgeLabel":"55","summary":"02Life & lifestyle","stored":{"retireInYears":9,"horizonYears":10},"verdictEyebrow":"The verdict · 10 years, age 55 → 65"}
+verdict {"number":"100100%%","lede":"Over 10 years, age 55 to 65, working in St. Louis until 64, then living in Bangkok. In 100 of every 100 simulated markets you never face a forced sale and stay solvent to 65.","compare":"St. Louis 100%→Bangkok 100%0 pts"}
+## G. Accessibility tree + keyboard
+aria: Retire in group
+- radiogroup "Retire in at age 59":
+  - radio "Now"
+  - radio "2 years": 2 yrs
+  - radio "4 years" [checked]: 4 yrs
+  - radio "5 years": 5 yrs
+  - radio "Other"
+aria: savings field
+- spinbutton "Saving while working": 60,000
+aria: whole Life section
+- heading "02 Life & lifestyle" [level=3]:
+  - button "02 Life & lifestyle" [expanded]
+- text: Your age
+- slider "Your age": "55"
+- text: Retire in at age 59
+- radiogroup "Retire in at age 59":
+  - radio "Now"
+  - radio "2 years": 2 yrs
+  - radio "4 years" [checked]: 4 yrs
+  - radio "5 years": 5 yrs
+  - radio "Other"
+- text: Saving while working
+- spinbutton "Saving while working": 60,000
+- button "Decrease"
+- button "Increase"
+- paragraph: Per year, today’s dollars. Added to the portfolio each year until you retire. Pays down your loan first.
+- text: Horizon to age 85
+- radiogroup "Horizon":
+  - radio "15 yrs"
+  - radio "20 yrs"
+  - radio "30 yrs" [checked]
+  - radio "Custom"
+- text: Lifestyle budget
+- radiogroup "Show amounts per":
+  - radio "Monthly"
+  - radio "Annual" [checked]
+- textbox "Total lifestyle budget per year": $110,000
+- text: per year, today’s dollars, at home · type your own amount; categories keep their mix
+- 'img "Budget mix: Housing 24%, Groceries 10%, Dining out 7%, Transportation 9%, Utilities & phone 5%, Healthcare 15%, Travel 13%, Everything else 18%"'
+- list "Lifestyle budget":
+  - listitem:
+    - text: Housing
+    - textbox "Housing": $26,000
+  - listitem:
+    - text: Groceries
+    - textbox "Groceries": $11,000
+  - listitem:
+    - text: Dining out
+    - textbox "Dining out": $8,000
+  - listitem:
+    - text: Transportation
+    - textbox "Transportation": $10,000
+  - listitem:
+    - text: Utilities & phone
+    - textbox "Utilities & phone": $5,500
+  - listitem:
+    - text: Healthcare
+    - textbox "Healthcare": $16,000
+  - listitem:
+    - text: Travel
+    - textbox "Travel": $14,000
+  - listitem:
+    - text: Everything else
+    - textbox "Everything else": $19,500
+- group "Budget presets":
+  - button "Lean $70k"
+  - button "Comfortable $110k" [pressed]
+  - button "Generous $180k"
+- text: Social Security & pensions
+- spinbutton "Social Security & pensions": 40,000
+- button "Decrease"
+- button "Increase"
+- paragraph: Per year, today’s dollars, inflation-indexed. Reduces what you borrow.
+- text: Income starts at
+- slider "Income starts at": "67"
+- paragraph: Starts in 12 years.
+tab order from "Your age":
+  button role=radio name="4 years" checked=true
+  input role=spinbutton name="Saving while working" checked=null
+  button role=radio name="30 yrs" checked=true
+  button role=radio name="Annual" checked=true
+  input role= name="Total lifestyle budget per year" checked=null
+  input role= name="Housing" checked=null
+  input role= name="Groceries" checked=null
+  input role= name="Dining out" checked=null
+after ArrowRight on "4 years": focused= 5 years retire label= 55
+after ArrowLeft: focused= 4 years retire label= 55
+savings ArrowUp: 60000 -> 61000
+## console/network errors ["requestfailed https://open.er-api.com/v6/latest/USD","console Error: <g> attribute transform: Trailing garbage, \"…slate(278.40625, undefined)\".","console Error: <g> attribute transform: Trailing garbage, \"…slate(278.40625, undefined)\"."]
+
+$ node extra.cjs   (live horizon clamp, inputs read from the controls)
+live: horizon 40, Other End {"retireName":"Retire in at age 70","other":"Other: 15 years","sliderValue":"15","sliderMax":"15","horizon":"40","stored":[40,15],"lede":"Over 40 years, age 55 to 95, working in St. Louis until 70, then living in Bangkok. In 98 of every 100 simulated markets you never face a forced sale and stay solvent to 95."}
+live: then horizon Home (10) {"retireName":"Retire in at age 64","other":"Other: 9 years","sliderValue":"9","sliderMax":"9","horizon":"10","stored":[10,9],"lede":"Over 10 years, age 55 to 65, working in St. Louis until 64, then living in Bangkok. In 100 of every 100 simulated markets you never face a forced sale and stay solvent to 65."}
+console errors during clamp drive ["Error: <g> attribute transform: Trailing garbage, \"…slate(278.40625, undefined)\"."]
