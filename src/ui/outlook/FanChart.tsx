@@ -4,7 +4,7 @@ import { useId, useMemo, useRef } from 'react'
 import type { Bands, SimulationResult } from '../../engine/types'
 import { currencyCompact, percent } from '../format'
 import { cx } from '../primitives'
-import { moneyTick, useCrosshair, useSize, useTweenedSeries } from './chartKit'
+import { markerLabelWidth, markerRows, moneyTick, useCrosshair, useSize, useTweenedSeries, workingYears, workingYearsSentence } from './chartKit'
 
 export type FanMetric = 'networth' | 'portfolio' | 'loan' | 'ltv'
 
@@ -25,6 +25,10 @@ const isRatio = (m: FanMetric) => m === 'ltv'
 export interface FanMarker {
   age: number
   label: string
+  /** 'retire' draws the retirement line (dashed, in the holds colour). */
+  kind?: 'retire'
+  /** A shorter label for when `label` doesn't fit beside its line (phone widths). */
+  short?: string
 }
 
 function targetDomain(b: Bands, m: FanMetric, maxLtv: number): { lo: number; hi: number; clipped: boolean; rawHi: number } {
@@ -112,15 +116,55 @@ export function FanChart({ result, metric, markers }: { result: SimulationResult
   const threshold = ratio ? inputs.maxLtv : null
   const thrY = threshold !== null ? y(threshold) : 0
 
-  const summary = ratio
-    ? `Loan-to-value fan chart, age ${age0} to ${age0 + span}. Median ${percent(bands.p50[Math.round(span / 2)])} at age ${age0 + Math.round(span / 2)} and ${percent(endVal)} at ${age0 + span}; worst 5% reach ${percent(bands.p95[n - 1])}. Margin call at ${percent(inputs.maxLtv)}.`
-    : `${FAN_METRICS.find((f) => f.value === metric)?.label} fan chart in today's dollars, age ${age0} to ${age0 + span}. Median ${currencyCompact(bands.p50[0])} today, ${currencyCompact(endVal)} at ${age0 + span}; middle half ${currencyCompact(bands.p25[n - 1])} to ${currencyCompact(bands.p75[n - 1])}; 90% range ${currencyCompact(bands.p5[n - 1])} to ${currencyCompact(bands.p95[n - 1])}.`
+  const work = workingYears(inputs)
+  const workX = work ? x(work.to) : 0
 
-  // Marker labels: alternate rows if two are close together.
-  const placed = markers
+  const summary = ratio
+    ? `Loan-to-value fan chart, age ${age0} to ${age0 + span}. Median ${percent(bands.p50[Math.round(span / 2)])} at age ${age0 + Math.round(span / 2)} and ${percent(endVal)} at ${age0 + span}; worst 5% reach ${percent(bands.p95[n - 1])}. Margin call at ${percent(inputs.maxLtv)}.${workingYearsSentence(work)}`
+    : `${FAN_METRICS.find((f) => f.value === metric)?.label} fan chart in today's dollars, age ${age0} to ${age0 + span}. Median ${currencyCompact(bands.p50[0])} today, ${currencyCompact(endVal)} at ${age0 + span}; middle half ${currencyCompact(bands.p25[n - 1])} to ${currencyCompact(bands.p75[n - 1])}; 90% range ${currencyCompact(bands.p5[n - 1])} to ${currencyCompact(bands.p95[n - 1])}.${workingYearsSentence(work)}`
+
+  // Marker labels sit above the plot; one that would run into its neighbour (or into the top y tick,
+  // whose label shares that row) drops to a second row just inside the plot.
+  const sorted = markers
     .filter((mk) => mk.age > age0 && mk.age < age0 + span)
     .sort((a, b) => a.age - b.age)
-    .map((mk, i, arr) => ({ ...mk, x: x(mk.age), row: i > 0 && x(mk.age) - x(arr[i - 1].age) < 120 ? 1 : 0 }))
+    .map((mk) => {
+      const mx = x(mk.age)
+      // Right of the line, or left of it near the right edge; a label that fits neither way takes its
+      // short form, and failing that is pulled inside the chart.
+      const fit = (label: string) => {
+        const w = markerLabelWidth(label)
+        if (mx + 6 + w <= width && mx <= width - 120) return { label, flip: false, x0: mx + 6, x1: mx + 6 + w }
+        if (mx - 6 - w >= 0) return { label, flip: true, x0: mx - 6 - w, x1: mx - 6 }
+        return null
+      }
+      const short = mk.short ?? mk.label
+      const f = fit(mk.label) ?? fit(short)
+      if (f) return { ...mk, ...f, x: mx, tx: f.flip ? -6 : 6 }
+      const w = markerLabelWidth(short)
+      const x0 = Math.max(0, Math.min(mx + 6, width - w))
+      return { ...mk, label: short, flip: false, x: mx, x0, x1: x0 + w, tx: x0 - mx }
+    })
+  const topTick = yTicks[yTicks.length - 1]
+  const topTickW = topTick !== undefined && y(topTick) < m.t + 18 ? m.l + markerLabelWidth(ratio ? percent(topTick) : moneyTick(topTick)) : -Infinity
+  const rows = markerRows(sorted, 10, topTickW)
+  const placed = sorted.map((mk, i) => ({ ...mk, row: rows[i] }))
+
+  // The working-years label sits inside the band, under the marker rows. Drawn over the markers with a
+  // halo, so when the band is narrower than the label (a short wait, or a phone) it cuts the retire line.
+  // The y tick labels share the band's left edge: take the first baseline whose text clears them all.
+  const workLabelY = (() => {
+    const boxes = yTicks.map((v) => [y(v) - 17, y(v) - 2])
+    for (let b = m.t + 20; b < m.t + ih - 4; b += 2) if (!boxes.some(([t, u]) => b - 12 < u && b + 3 > t)) return b
+    return m.t + 20
+  })()
+  // The clip note shares the top-right corner with second-row marker labels: step it down past them.
+  const clipNote = `Luckiest 5% reach ${currencyCompact(dom.rawHi)} ↑`
+  const clipX0 = m.l + iw - clipNote.length * 6.8
+  const workLabelEnd = work ? m.l + 8 + work.label.length * 6.6 : -Infinity
+  const workOver = work !== null && workLabelEnd > workX - 4
+  let clipY = m.t + 14 + (placed.some((mk) => mk.row === 1 && mk.x1 > clipX0 - 8) ? 16 : 0)
+  if (workLabelEnd > clipX0 - 8 && Math.abs(clipY - workLabelY) < 14) clipY = workLabelY + 16
 
   const readLeft = hi !== null && hx > m.l + iw * 0.58
 
@@ -170,6 +214,10 @@ export function FanChart({ result, metric, markers }: { result: SimulationResult
             ))}
           </g>
 
+          {work && (
+            <rect className="fan__working" x={m.l} y={m.t} width={Math.max(0, workX - m.l)} height={ih} aria-hidden="true" />
+          )}
+
           {threshold !== null && thrY > m.t && (
             <rect x={m.l} y={m.t} width={iw} height={Math.max(0, thrY - m.t)} fill={`url(#${uid}-danger)`} />
           )}
@@ -193,9 +241,9 @@ export function FanChart({ result, metric, markers }: { result: SimulationResult
           )}
 
           {placed.map((mk) => (
-            <g key={mk.label} className="fan__marker" transform={`translate(${Math.round(mk.x) + 0.5}, 0)`}>
+            <g key={mk.label} className={cx('fan__marker', mk.kind === 'retire' && 'is-retire')} transform={`translate(${Math.round(mk.x) + 0.5}, 0)`}>
               <line y1={m.t - 4 + mk.row * 14} y2={m.t + ih} />
-              <text y={m.t - 10 + mk.row * 14} x={mk.x > width - 120 ? -6 : 6} textAnchor={mk.x > width - 120 ? 'end' : 'start'}>
+              <text y={m.t - 10 + mk.row * 14} x={mk.tx} textAnchor={mk.flip ? 'end' : 'start'}>
                 {mk.label}
               </text>
             </g>
@@ -212,8 +260,14 @@ export function FanChart({ result, metric, markers }: { result: SimulationResult
           </g>
 
           {dom.clipped && !ratio && (
-            <text x={m.l + iw} y={m.t + 14} textAnchor="end" className="chart-tick fan__clip-note">
-              Luckiest 5% reach {currencyCompact(dom.rawHi)} ↑
+            <text x={m.l + iw} y={clipY} textAnchor="end" className="chart-tick fan__clip-note">
+              {clipNote}
+            </text>
+          )}
+
+          {work && (
+            <text className={cx('fan__working-label', workOver && 'is-over')} x={m.l + 8} y={workLabelY} aria-hidden="true">
+              {work.label}
             </text>
           )}
 
@@ -258,7 +312,10 @@ export function FanChart({ result, metric, markers }: { result: SimulationResult
           <>
             <div className="fan__readout-age">
               Age <b>{age0 + hi}</b>
-              <span>year {hi}</span>
+              <span>
+                year {hi}
+                {work && hi < work.years ? ' · working' : ''}
+              </span>
             </div>
             <div className="fan__readout-row">
               <span className="fan__key fan__key--median" />

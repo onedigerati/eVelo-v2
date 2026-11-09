@@ -161,3 +161,50 @@ export function massWindow(w: number[], share = 0.6): [number, number] | null {
   }
   return best
 }
+
+/** The working years before retirement on a chart that runs from today, as ages. */
+export interface WorkingYears {
+  /** Today's age. */
+  from: number
+  /** Retirement age. */
+  to: number
+  years: number
+  /** Yearly savings while working, today's $ (0 when none). */
+  savings: number
+  /** "Working · +$60K/yr", or "Working" when nothing is saved. */
+  label: string
+}
+
+/** The working years, or null when the plan retires now. Capped below the horizon, as the engine does. */
+export function workingYears(i: { age: number; horizonYears: number; retireInYears?: number; savingsWhileWorking?: number }): WorkingYears | null {
+  const ry = Math.round(i.retireInYears ?? 0)
+  const years = Number.isFinite(ry) ? Math.min(ry, Math.round(i.horizonYears) - 1) : 0
+  if (!(years > 0)) return null
+  const s = i.savingsWhileWorking ?? 0
+  const savings = Number.isFinite(s) && s > 0 ? s : 0
+  return { from: i.age, to: i.age + years, years, savings, label: savings > 0 ? `Working · +${moneyTick(savings)}/yr` : 'Working' }
+}
+
+/** A sentence for a chart's accessible description (with a leading space); '' when the plan retires now. */
+export function workingYearsSentence(w: WorkingYears | null): string {
+  if (!w) return ''
+  const save = w.savings > 0 ? `, saving ${moneyTick(w.savings)} a year` : ''
+  return ` Working years, age ${w.from} to ${w.to}, are shaded${save}; a dashed line marks retirement at ${w.to}.`
+}
+
+/**
+ * Two label rows for event markers along an x axis. Each label spans [x0, x1] (sorted by x0); a label
+ * takes row 0 unless it would run into the previous label there, then row 1, else whichever row ends
+ * sooner. `reserved0` is the right edge of anything already in row 0 at the left (the top y-axis tick).
+ */
+export function markerRows(spans: { x0: number; x1: number }[], pad = 8, reserved0 = -Infinity): number[] {
+  const ends = [reserved0, -Infinity]
+  return spans.map((s) => {
+    const r = s.x0 >= ends[0] + pad ? 0 : s.x0 >= ends[1] + pad ? 1 : ends[0] <= ends[1] ? 0 : 1
+    ends[r] = Math.max(ends[r], s.x1)
+    return r
+  })
+}
+
+/** Rough width of a marker label (10px uppercase UI text, 0.1em tracking). */
+export const markerLabelWidth = (s: string) => s.length * 7
