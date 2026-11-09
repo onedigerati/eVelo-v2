@@ -1,8 +1,9 @@
-// Keeps the existing loan balance strictly below the portfolio, and says when that lowered it.
+// Keeps the existing loan balance strictly below the portfolio (and retire-in below the horizon), and says when the loan was lowered.
 
 import type { PlanInputs } from '../engine/types'
 import { clampExistingLoan } from '../ui/plan/existingLoan'
 import { currency } from '../ui/format'
+import { keepRetireBeforeHorizon } from './retireClamp'
 
 export interface LoanLowered {
   /** The balance before the clamp. */
@@ -31,19 +32,22 @@ export function keepLoanUnderPortfolio(inputs: PlanInputs, enteredLoan: boolean)
   return { inputs: { ...inputs, existingLoan }, lowered }
 }
 
+// Every store update also keeps retire-in below the horizon (keepRetireBeforeHorizon), so a lower
+// horizon pulls retirement in with it; that one is silent, as the Life section shows the new value.
+
 /** The store's setInput: entering the balance itself never notifies. */
 export function clampAfterSet<K extends keyof PlanInputs>(inputs: PlanInputs, key: K, value: PlanInputs[K]): LoanClamp {
-  return keepLoanUnderPortfolio({ ...inputs, [key]: value }, key === 'existingLoan')
+  return keepLoanUnderPortfolio(keepRetireBeforeHorizon({ ...inputs, [key]: value }), key === 'existingLoan')
 }
 
 /** The store's patchInputs: a patch that carries the balance counts as entering it. */
 export function clampAfterPatch(inputs: PlanInputs, patch: Partial<PlanInputs>): LoanClamp {
-  return keepLoanUnderPortfolio({ ...inputs, ...patch }, 'existingLoan' in patch)
+  return keepLoanUnderPortfolio(keepRetireBeforeHorizon({ ...inputs, ...patch }), 'existingLoan' in patch)
 }
 
 /** The store's replaceInputs: a whole new plan always notifies when its balance is lowered. */
 export function clampAfterReplace(inputs: PlanInputs): LoanClamp {
-  return keepLoanUnderPortfolio(inputs, false)
+  return keepLoanUnderPortfolio(keepRetireBeforeHorizon(inputs), false)
 }
 
 /** The toast for a lowered balance. */

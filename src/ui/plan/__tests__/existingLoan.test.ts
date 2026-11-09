@@ -206,6 +206,20 @@ describe('firstYearSpend', () => {
     expect(firstYearSpend({ ...stay, incomeStartAge: 55, otherIncome: 10 * homeTotal }, STL, null)).toBe(0)
   })
 
+  it('draws nothing in the first year while still working (savings go in instead)', () => {
+    // even with income already started and a move "now", the working years come first
+    expect(firstYearSpend({ ...base, destCityId: 'bangkok', moveInYears: 0, retireInYears: 2 }, STL, BKK)).toBe(0)
+    expect(firstYearSpend({ ...base, destCityId: null, retireInYears: 1 }, STL, null)).toBe(0)
+    expect(firstYearSpend({ ...base, destCityId: null, retireInYears: 5 }, STL, null)).toBe(0)
+    // retiring now: unchanged
+    expect(firstYearSpend({ ...base, destCityId: null, retireInYears: 0 }, STL, null)).toBe(homeTotal)
+    // non-finite retire-in counts as now (as the engine treats it)
+    expect(firstYearSpend({ ...base, destCityId: null, retireInYears: NaN }, STL, null)).toBe(homeTotal)
+    // so an opening sale is never thin while working
+    const thin = existingLoanInfo({ portfolio: 3_000_000, balance: 2_570_000, maxLtv: 0.6, targetLtv: 0.45, basisFraction: 0.4, capGainsRate: 0.238, annualSpend: firstYearSpend({ ...base, retireInYears: 3 }, STL, BKK) }).thin
+    expect(thin).toBe(false)
+  })
+
   it('makes a sale thin against the first year’s draw, not the home budget', () => {
     // the opening sale on $2.57M of $3M leaves `left` of net worth
     const left = info(3_000_000, 2_570_000).netWorthLeft
