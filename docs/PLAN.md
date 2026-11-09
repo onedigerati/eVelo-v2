@@ -9,7 +9,8 @@ A first-time visitor to the home page sees how Buy, Borrow, Die works, and why m
 ## Now
 Stage 1 of 3 · Story model and card
 Risk: UI only (illustrative money figures, proven by tests)
-Agents: wide — confirmed 2026-11-08 20:26
+Mode: paused — stage 1 risk line names money (illustrative figures); waiting for the user's word
+Agents: wide — confirmed 2026-11-08 22:19
 Checks:
 - [ ] A pure model module computes the story's series and figures: $2.5M portfolio ($1.0M basis) at 7%, loan = (loan + spend·1.03^t)·1.06 over 30 years, margin call at 50% of the portfolio, St. Louis spending $80k/yr, Bangkok spending derived from the app's cost data for the two cities (about $47k/yr, not hard-coded), loan and heirs at 90 for both cities, and the illustrative odds (Bangkok 93%, as on today's map; St. Louis an illustrative figure from the same bands) (proof: test)
 - [ ] The home page hero shows the new card's finished resting frame (the Die state) in place of the map card, hero copy unchanged; every label, caption and the SVG's accessible name come from the model; the "Illustrative numbers" note stays (proof: run the product, screenshots; a test can't judge the layout)
