@@ -1,0 +1,92 @@
+$ node verify/run.mjs (Playwright 1.57, Chromium; http://localhost:4320/#home via vite preview) -- locator("#how").ariaSnapshot(), locator("figure.story").ariaSnapshot(), Tab walk from page top
+
+===== viewport 390px =====
+--- steps region ---
+- region "How it works, step through the four beats":
+  - list:
+    - listitem:
+      - button "01 Buy": 01 Buy Hold assets that grow. Never sell them, so the gains are never taxed.
+    - listitem:
+      - button "02 Borrow": 02 Borrow Live on a line of credit secured by the portfolio. The loan grows; so, usually, do the shares.
+    - listitem:
+      - button "03 Live anywhere": 03 Live anywhere Spend the loan where life costs less. A smaller loan gives the portfolio an easier race to win.
+    - listitem:
+      - button "04 Die": 04 Die Heirs inherit at a stepped-up basis. The estate repays the loan and keeps the rest.
+--- story figure ---
+- figure "Gains never taxed. Loan repaid. The rest is theirs. At death, heirs inherit at a stepped-up basis. The estate repays the $5.5M loan from the top; $13.5M passes on.":
+  - text: One plan · four beats $2.5M portfolio · 30 years, age 60 to 90
+  - img "Illustrative 30-year plan. A $2.5M portfolio grows to $19.0M while a credit line pays the living costs. Moving from St. Louis to Bangkok cuts the yearly draw from $80K to $47K, so the loan ends at $5.5M instead of $9.4M, below the margin-call line, and the odds the plan holds rise from 63% to 93%. At death the gains tax is wiped out by the step-up in basis, the estate repays the loan, and heirs keep $13.5M.": St. Louis 63% $80K/yr Bangkok 93% $47K/yr $5M $10M $15M $20M Age 60 75 90 At 90 · $19.0M Loan repaid $5.5M Heirs $13.5M
+  - list "Key":
+    - listitem: "Step-up in basis: the gains tax is gone"
+    - listitem: What you paid $1.0M
+    - listitem: Loan, living in Bangkok
+    - listitem: Same life in St. Louis
+    - listitem: Margin call at 50%
+  - text: Gains never taxed. Loan repaid. The rest is theirs. At death, heirs inherit at a stepped-up basis. The estate repays the $5.5M loan from the top; $13.5M passes on. Illustrative numbers · a typical path, not a forecast
+--- getByRole("img",{name: COPY.svgLabel, exact}) count: 1
+--- step buttons by role ---
+button "01 Buy" count=1 aria-current=null description="Hold assets that grow. Never sell them, so the gains are never taxed."
+button "02 Borrow" count=1 aria-current=null description="Live on a line of credit secured by the portfolio. The loan grows; so, usually, do the shares."
+button "03 Live anywhere" count=1 aria-current=null description="Spend the loan where life costs less. A smaller loan gives the portfolio an easier race to win."
+button "04 Die" count=1 aria-current=step description="Heirs inherit at a stepped-up basis. The estate repays the loan and keeps the rest."
+--- Tab order from page top ---
+1. a "eVelo — home" focus-visible=true
+2. button "System theme — switch to light theme" focus-visible=true
+3. a "Open the planner" focus-visible=true
+4. a "Stress-test my plan" focus-visible=true
+5. a "Explore the Atlas" focus-visible=true
+6. button "01 Buy" focus-visible=true
+7. button "02 Borrow" focus-visible=true
+8. button "03 Live anywhere" focus-visible=true
+9. button "04 Die" aria-current=step focus-visible=true
+10. body "eVeloHow it worksAtlasMethodOpen the pla" focus-visible=false
+--- Enter on "01 Buy": aria-current per button = ["step",null,null,null]
+--- Space on "03 Live anywhere": [null,null,"step",null]
+--- card caption after selecting (stage 1 card stays on rest frame): "Gains never taxed. Loan repaid. The rest is theirs."
+
+===== viewport 1280px =====
+--- steps region ---
+- region "How it works, step through the four beats":
+  - list:
+    - listitem:
+      - button "01 Buy": 01 Buy Hold assets that grow. Never sell them, so the gains are never taxed.
+    - listitem:
+      - button "02 Borrow": 02 Borrow Live on a line of credit secured by the portfolio. The loan grows; so, usually, do the shares.
+    - listitem:
+      - button "03 Live anywhere": 03 Live anywhere Spend the loan where life costs less. A smaller loan gives the portfolio an easier race to win.
+    - listitem:
+      - button "04 Die": 04 Die Heirs inherit at a stepped-up basis. The estate repays the loan and keeps the rest.
+--- story figure ---
+- figure "Gains never taxed. Loan repaid. The rest is theirs. At death, heirs inherit at a stepped-up basis. The estate repays the $5.5M loan from the top; $13.5M passes on.":
+  - text: One plan · four beats $2.5M portfolio · 30 years, age 60 to 90
+  - img "Illustrative 30-year plan. A $2.5M portfolio grows to $19.0M while a credit line pays the living costs. Moving from St. Louis to Bangkok cuts the yearly draw from $80K to $47K, so the loan ends at $5.5M instead of $9.4M, below the margin-call line, and the odds the plan holds rise from 63% to 93%. At death the gains tax is wiped out by the step-up in basis, the estate repays the loan, and heirs keep $13.5M.": St. Louis 63% $80K/yr Bangkok 93% $47K/yr $5M $10M $15M $20M Age 60 75 90 At 90 · $19.0M Loan repaid $5.5M Heirs $13.5M
+  - list "Key":
+    - listitem: "Step-up in basis: the gains tax is gone"
+    - listitem: What you paid $1.0M
+    - listitem: Loan, living in Bangkok
+    - listitem: Same life in St. Louis
+    - listitem: Margin call at 50%
+  - text: Gains never taxed. Loan repaid. The rest is theirs. At death, heirs inherit at a stepped-up basis. The estate repays the $5.5M loan from the top; $13.5M passes on. Illustrative numbers · a typical path, not a forecast
+--- getByRole("img",{name: COPY.svgLabel, exact}) count: 1
+--- step buttons by role ---
+button "01 Buy" count=1 aria-current=null description="Hold assets that grow. Never sell them, so the gains are never taxed."
+button "02 Borrow" count=1 aria-current=null description="Live on a line of credit secured by the portfolio. The loan grows; so, usually, do the shares."
+button "03 Live anywhere" count=1 aria-current=null description="Spend the loan where life costs less. A smaller loan gives the portfolio an easier race to win."
+button "04 Die" count=1 aria-current=step description="Heirs inherit at a stepped-up basis. The estate repays the loan and keeps the rest."
+--- Tab order from page top ---
+1. a "eVelo — home" focus-visible=true
+2. a "How it works" focus-visible=true
+3. a "Atlas" focus-visible=true
+4. a "Method" focus-visible=true
+5. button "System theme" focus-visible=true
+6. a "Open the planner" focus-visible=true
+7. a "Stress-test my plan" focus-visible=true
+8. a "Explore the Atlas" focus-visible=true
+9. button "01 Buy" focus-visible=true
+10. button "02 Borrow" focus-visible=true
+11. button "03 Live anywhere" focus-visible=true
+12. button "04 Die" aria-current=step focus-visible=true
+13. body "eVeloHow it worksAtlasMethodOpen the pla" focus-visible=false
+--- Enter on "01 Buy": aria-current per button = ["step",null,null,null]
+--- Space on "03 Live anywhere": [null,null,"step",null]
+--- card caption after selecting (stage 1 card stays on rest frame): "Gains never taxed. Loan repaid. The rest is theirs."

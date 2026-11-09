@@ -73,7 +73,7 @@ export interface StoryLayout {
   sliceLabelDy: [number, number]
 }
 
-/** Desktop and tablet: a 600-unit viewBox (text 12+ units). */
+/** Desktop and tablet: a 600-unit viewBox (text 13.5+ units, shown from a 490px card so it renders at 11px+). */
 export const WIDE: StoryLayout = {
   id: 'wide',
   width: 600,
@@ -92,17 +92,17 @@ export const WIDE: StoryLayout = {
   sliceLabelDy: [22, 42],
 }
 
-/** Phone: a narrow viewBox drawn near 1:1 at 390px, so 12-unit text renders at 11px or more. */
+/** Phone: a narrow viewBox drawn near 1:1 at 390px, so 13-unit text renders at 11px or more from a 360px screen. */
 export const NARROW: StoryLayout = {
   id: 'narrow',
   width: 336,
   height: 372,
   map: { x: 2, y: 4, w: 332, h: 76, home: { x: 98, y: 44 }, dest: { x: 236, y: 50 }, labelY: 70, arcLift: 50, homeCoin: -24, destCoin: 20 },
-  X0: 40,
+  X0: 44,
   X1: 190,
   YT: 116,
   YB: 336,
-  tickX: 32,
+  tickX: 34,
   xTickY: 362,
   EX: 200,
   EW: 56,

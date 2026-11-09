@@ -1,0 +1,29 @@
+$ node verify/overlap.mjs -- in the visible story SVG: gaps (viewBox units) between "Loan repaid"/"$5.5M" and the heirs bar, and any overlapping pairs of text bboxes
+360px story__svg--narrow
+  Loan repaid: left 257.5 vs heirs right 256.0 -> gap 1.5; right 330.5 vs viewBox 336
+  $5.5M: left 273.7 vs heirs right 256.0 -> gap 17.7; right 314.3 vs viewBox 336
+  overlapping text pairs: "Bangkok 93%" x "$47K/yr"
+375px story__svg--narrow
+  Loan repaid: left 257.1 vs heirs right 256.0 -> gap 1.1; right 330.9 vs viewBox 336
+  $5.5M: left 274.7 vs heirs right 256.0 -> gap 18.7; right 313.3 vs viewBox 336
+  overlapping text pairs: "Bangkok 93%" x "$47K/yr"
+390px story__svg--narrow
+  Loan repaid: left 257.8 vs heirs right 256.0 -> gap 1.8; right 330.2 vs viewBox 336
+  $5.5M: left 275.6 vs heirs right 256.0 -> gap 19.6; right 312.4 vs viewBox 336
+  overlapping text pairs: "Bangkok 93%" x "$47K/yr"
+600px story__svg--wide
+  Loan repaid: left 510.1 vs heirs right 494.0 -> gap 16.1; right 585.9 vs viewBox 600
+  $5.5M: left 527.2 vs heirs right 494.0 -> gap 33.2; right 568.8 vs viewBox 600
+  overlapping text pairs: "Bangkok 93%" x "$47K/yr"
+1000px story__svg--narrow
+  Loan repaid: left 258.3 vs heirs right 256.0 -> gap 2.3; right 329.7 vs viewBox 336
+  $5.5M: left 275.3 vs heirs right 256.0 -> gap 19.3; right 312.7 vs viewBox 336
+  overlapping text pairs: "Bangkok 93%" x "$47K/yr"
+1200px story__svg--wide
+  Loan repaid: left 509.6 vs heirs right 494.0 -> gap 15.6; right 586.4 vs viewBox 600
+  $5.5M: left 527.3 vs heirs right 494.0 -> gap 33.3; right 568.7 vs viewBox 600
+  overlapping text pairs: "Bangkok 93%" x "$47K/yr"
+1280px story__svg--wide
+  Loan repaid: left 510.2 vs heirs right 494.0 -> gap 16.2; right 585.8 vs viewBox 600
+  $5.5M: left 528.8 vs heirs right 494.0 -> gap 34.8; right 567.2 vs viewBox 600
+  overlapping text pairs: "Bangkok 93%" x "$47K/yr"

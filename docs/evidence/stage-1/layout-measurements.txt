@@ -1,0 +1,86 @@
+$ node verify/run.mjs (Playwright 1.57 Chromium, deviceScaleFactor 2, http://localhost:4320/#home, vite preview of npm run build) -- per viewport: document scrollWidth, visible story SVG and its scale, smallest rendered SVG text, text bboxes vs viewBox and screen, key position, card parts inside the card, step-button edges
+console errors/warnings across all runs: []
+
+== 1280-light
+viewport 1280px, documentElement.scrollWidth 1280, body.scrollWidth 1280 -> no sideways scroll
+card 594.2px wide, 653.8px from left edge, 32px from right edge
+visible SVG: story__svg story__svg--wide viewBox 600x394, rendered 548.2x360, scale 0.914 (the other SVG is display:none)
+smallest rendered SVG text: 12.33px ("$80K/yr", CSS 13.5px x 0.914)
+SVG texts < 11px: none
+SVG text bboxes outside the viewBox: none (of 16); off screen: none
+key: position static; ancestors story__key:static > story:static; key top 599.5 vs plot bottom 587.5 -> below the chart, in normal flow
+card parts outside the card or overflowing: none (of 13)
+step buttons (left gap / right gap to viewport edge, * = aria-current): 18/958.5  331.5/645  645/331.5  958.5/18*
+all SVG texts: "St. Louis 63%"=12.79px, "$80K/yr"=12.33px, "Bangkok 93%"=12.79px, "$47K/yr"=12.33px, "$5M"=12.33px, "$10M"=12.33px, "$15M"=12.33px, "$20M"=12.33px, "Age 60"=12.33px, "75"=12.33px, "90"=12.33px, "At 90 · $19.0M"=12.33px, "Loan repaid"=12.33px, "$5.5M"=12.33px, "Heirs"=12.79px, "$13.5M"=12.79px
+
+== 1280-dark
+viewport 1280px, documentElement.scrollWidth 1280, body.scrollWidth 1280 -> no sideways scroll
+card 594.2px wide, 653.8px from left edge, 32px from right edge
+visible SVG: story__svg story__svg--wide viewBox 600x394, rendered 548.2x360, scale 0.914 (the other SVG is display:none)
+smallest rendered SVG text: 12.33px ("$80K/yr", CSS 13.5px x 0.914)
+SVG texts < 11px: none
+SVG text bboxes outside the viewBox: none (of 16); off screen: none
+key: position static; ancestors story__key:static > story:static; key top 599.5 vs plot bottom 587.5 -> below the chart, in normal flow
+card parts outside the card or overflowing: none (of 13)
+step buttons (left gap / right gap to viewport edge, * = aria-current): 18/958.5  331.5/645  645/331.5  958.5/18*
+all SVG texts: "St. Louis 63%"=12.79px, "$80K/yr"=12.33px, "Bangkok 93%"=12.79px, "$47K/yr"=12.33px, "$5M"=12.33px, "$10M"=12.33px, "$15M"=12.33px, "$20M"=12.33px, "Age 60"=12.33px, "75"=12.33px, "90"=12.33px, "At 90 · $19.0M"=12.33px, "Loan repaid"=12.33px, "$5.5M"=12.33px, "Heirs"=12.79px, "$13.5M"=12.79px
+
+== 390-light
+viewport 390px, documentElement.scrollWidth 390, body.scrollWidth 390 -> no sideways scroll
+card 350px wide, 20px from left edge, 20px from right edge
+visible SVG: story__svg story__svg--narrow viewBox 336x372, rendered 320x354.3, scale 0.952 (the other SVG is display:none)
+smallest rendered SVG text: 12.38px ("$80K/yr", CSS 13px x 0.952)
+SVG texts < 11px: none
+SVG text bboxes outside the viewBox: none (of 16); off screen: none
+key: position static; ancestors story__key:static > story:static; key top 539.1 vs plot bottom 527.1 -> below the chart, in normal flow
+card parts outside the card or overflowing: none (of 13)
+step buttons (left gap / right gap to viewport edge, * = aria-current): 12/12  12/12  12/12  12/12*
+all SVG texts: "St. Louis 63%"=12.86px, "$80K/yr"=12.38px, "Bangkok 93%"=12.86px, "$47K/yr"=12.38px, "$5M"=12.38px, "$10M"=12.38px, "$15M"=12.38px, "$20M"=12.38px, "Age 60"=12.38px, "75"=12.38px, "90"=12.38px, "At 90 · $19.0M"=12.38px, "Loan repaid"=12.38px, "$5.5M"=12.38px, "Heirs"=12.38px, "$13.5M"=12.38px
+
+== 390-dark
+viewport 390px, documentElement.scrollWidth 390, body.scrollWidth 390 -> no sideways scroll
+card 350px wide, 20px from left edge, 20px from right edge
+visible SVG: story__svg story__svg--narrow viewBox 336x372, rendered 320x354.3, scale 0.952 (the other SVG is display:none)
+smallest rendered SVG text: 12.38px ("$80K/yr", CSS 13px x 0.952)
+SVG texts < 11px: none
+SVG text bboxes outside the viewBox: none (of 16); off screen: none
+key: position static; ancestors story__key:static > story:static; key top 539.1 vs plot bottom 527.1 -> below the chart, in normal flow
+card parts outside the card or overflowing: none (of 13)
+step buttons (left gap / right gap to viewport edge, * = aria-current): 12/12  12/12  12/12  12/12*
+all SVG texts: "St. Louis 63%"=12.86px, "$80K/yr"=12.38px, "Bangkok 93%"=12.86px, "$47K/yr"=12.38px, "$5M"=12.38px, "$10M"=12.38px, "$15M"=12.38px, "$20M"=12.38px, "Age 60"=12.38px, "75"=12.38px, "90"=12.38px, "At 90 · $19.0M"=12.38px, "Loan repaid"=12.38px, "$5.5M"=12.38px, "Heirs"=12.38px, "$13.5M"=12.38px
+
+== 600-light
+viewport 600px, documentElement.scrollWidth 600, body.scrollWidth 600 -> no sideways scroll
+card 552px wide, 24px from left edge, 24px from right edge
+visible SVG: story__svg story__svg--wide viewBox 600x394, rendered 506x332.3, scale 0.843 (the other SVG is display:none)
+smallest rendered SVG text: 11.38px ("$80K/yr", CSS 13.5px x 0.843)
+SVG texts < 11px: none
+SVG text bboxes outside the viewBox: none (of 16); off screen: none
+key: position static; ancestors story__key:static > story:static; key top 709 vs plot bottom 697 -> below the chart, in normal flow
+card parts outside the card or overflowing: none (of 13)
+step buttons (left gap / right gap to viewport edge, * = aria-current): 10/305  305/10  10/305  305/10*
+all SVG texts: "St. Louis 63%"=11.81px, "$80K/yr"=11.38px, "Bangkok 93%"=11.81px, "$47K/yr"=11.38px, "$5M"=11.38px, "$10M"=11.38px, "$15M"=11.38px, "$20M"=11.38px, "Age 60"=11.38px, "75"=11.38px, "90"=11.38px, "At 90 · $19.0M"=11.38px, "Loan repaid"=11.38px, "$5.5M"=11.38px, "Heirs"=11.81px, "$13.5M"=11.81px
+
+== 768-light
+viewport 768px, documentElement.scrollWidth 768, body.scrollWidth 768 -> no sideways scroll
+card 720px wide, 24px from left edge, 24px from right edge
+visible SVG: story__svg story__svg--wide viewBox 600x394, rendered 674x442.6, scale 1.123 (the other SVG is display:none)
+smallest rendered SVG text: 15.16px ("$80K/yr", CSS 13.5px x 1.123)
+SVG texts < 11px: none
+SVG text bboxes outside the viewBox: none (of 16); off screen: none
+key: position static; ancestors story__key:static > story:static; key top 832.8 vs plot bottom 820.8 -> below the chart, in normal flow
+card parts outside the card or overflowing: none (of 13)
+step buttons (left gap / right gap to viewport edge, * = aria-current): 10/389  389/10  10/389  389/10*
+all SVG texts: "St. Louis 63%"=15.73px, "$80K/yr"=15.16px, "Bangkok 93%"=15.73px, "$47K/yr"=15.16px, "$5M"=15.16px, "$10M"=15.16px, "$15M"=15.16px, "$20M"=15.16px, "Age 60"=15.16px, "75"=15.16px, "90"=15.16px, "At 90 · $19.0M"=15.16px, "Loan repaid"=15.16px, "$5.5M"=15.16px, "Heirs"=15.73px, "$13.5M"=15.73px
+
+== 1000-light
+viewport 1000px, documentElement.scrollWidth 1000, body.scrollWidth 1000 -> no sideways scroll
+card 450.7px wide, 517.3px from left edge, 32px from right edge
+visible SVG: story__svg story__svg--narrow viewBox 336x372, rendered 404.7x448.1, scale 1.205 (the other SVG is display:none)
+smallest rendered SVG text: 15.66px ("$80K/yr", CSS 13px x 1.205)
+SVG texts < 11px: none
+SVG text bboxes outside the viewBox: none (of 16); off screen: none
+key: position static; ancestors story__key:static > story:static; key top 543.7 vs plot bottom 531.7 -> below the chart, in normal flow
+card parts outside the card or overflowing: none (of 13)
+step buttons (left gap / right gap to viewport edge, * = aria-current): 18/748.5  261.5/505  505/261.5  748.5/18*
+all SVG texts: "St. Louis 63%"=16.26px, "$80K/yr"=15.66px, "Bangkok 93%"=16.26px, "$47K/yr"=15.66px, "$5M"=15.66px, "$10M"=15.66px, "$15M"=15.66px, "$20M"=15.66px, "Age 60"=15.66px, "75"=15.66px, "90"=15.66px, "At 90 · $19.0M"=15.66px, "Loan repaid"=15.66px, "$5.5M"=15.66px, "Heirs"=15.66px, "$13.5M"=15.66px

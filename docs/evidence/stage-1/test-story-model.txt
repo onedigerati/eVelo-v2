@@ -1,0 +1,13 @@
+$ npx vitest run src/ui/landing/__tests__/story  (story.test.ts + storyLayout.test.ts)
+npm notice run evelo@2.0.0 npx
+npm notice run 'vitest' run src/ui/landing/__tests__/story
+
+ RUN  v5.1.0 /home/jonah/repos/eVelo-v2
+
+
+ Test Files  2 passed (2)
+      Tests  17 passed (17)
+   Start at  23:00:07
+   Duration  121ms (import 51%, transform 32%, tests 13%, worker 4%)
+
+exit 0

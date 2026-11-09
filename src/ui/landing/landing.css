@@ -327,13 +327,12 @@
     align-items: stretch;
   }
   .landing__steps {
-    grid-template-columns: minmax(0, 1fr);
-  }
-  .landing__steps {
     padding-bottom: 56px;
   }
+  /* A smaller outset on phone, so the active card's border has room inside the screen edge. */
   .landing__steps-list {
     grid-template-columns: minmax(0, 1fr);
     gap: 8px;
+    margin: 0 -8px;
   }
 }

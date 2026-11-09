@@ -1,0 +1,234 @@
+{
+  "390": {
+    "stepsAria": "- region \"How it works, step through the four beats\":\n  - list:\n    - listitem:\n      - button \"01 Buy\": 01 Buy Hold assets that grow. Never sell them, so the gains are never taxed.\n    - listitem:\n      - button \"02 Borrow\": 02 Borrow Live on a line of credit secured by the portfolio. The loan grows; so, usually, do the shares.\n    - listitem:\n      - button \"03 Live anywhere\": 03 Live anywhere Spend the loan where life costs less. A smaller loan gives the portfolio an easier race to win.\n    - listitem:\n      - button \"04 Die\": 04 Die Heirs inherit at a stepped-up basis. The estate repays the loan and keeps the rest.",
+    "figureAria": "- figure \"Gains never taxed. Loan repaid. The rest is theirs. At death, heirs inherit at a stepped-up basis. The estate repays the $5.5M loan from the top; $13.5M passes on.\":\n  - text: One plan · four beats $2.5M portfolio · 30 years, age 60 to 90\n  - img \"Illustrative 30-year plan. A $2.5M portfolio grows to $19.0M while a credit line pays the living costs. Moving from St. Louis to Bangkok cuts the yearly draw from $80K to $47K, so the loan ends at $5.5M instead of $9.4M, below the margin-call line, and the odds the plan holds rise from 63% to 93%. At death the gains tax is wiped out by the step-up in basis, the estate repays the loan, and heirs keep $13.5M.\": St. Louis 63% $80K/yr Bangkok 93% $47K/yr $5M $10M $15M $20M Age 60 75 90 At 90 · $19.0M Loan repaid $5.5M Heirs $13.5M\n  - list \"Key\":\n    - listitem: \"Step-up in basis: the gains tax is gone\"\n    - listitem: What you paid $1.0M\n    - listitem: Loan, living in Bangkok\n    - listitem: Same life in St. Louis\n    - listitem: Margin call at 50%\n  - text: Gains never taxed. Loan repaid. The rest is theirs. At death, heirs inherit at a stepped-up basis. The estate repays the $5.5M loan from the top; $13.5M passes on. Illustrative numbers · a typical path, not a forecast",
+    "visibleSvgAccName": "Illustrative 30-year plan. A $2.5M portfolio grows to $19.0M while a credit line pays the living costs. Moving from St. Louis to Bangkok cuts the yearly draw from $80K to $47K, so the loan ends at $5.5M instead of $9.4M, below the margin-call line, and the odds the plan holds rise from 63% to 93%. At death the gains tax is wiped out by the step-up in basis, the estate repays the loan, and heirs keep $13.5M.",
+    "svgRoleImgByName": 1,
+    "buttonsByRole": [
+      {
+        "name": "01 Buy",
+        "count": 1,
+        "description": "Hold assets that grow. Never sell them, so the gains are never taxed.",
+        "current": null
+      },
+      {
+        "name": "02 Borrow",
+        "count": 1,
+        "description": "Live on a line of credit secured by the portfolio. The loan grows; so, usually, do the shares.",
+        "current": null
+      },
+      {
+        "name": "03 Live anywhere",
+        "count": 1,
+        "description": "Spend the loan where life costs less. A smaller loan gives the portfolio an easier race to win.",
+        "current": null
+      },
+      {
+        "name": "04 Die",
+        "count": 1,
+        "description": "Heirs inherit at a stepped-up basis. The estate repays the loan and keeps the rest.",
+        "current": "step"
+      }
+    ],
+    "tabOrder": [
+      {
+        "tag": "a",
+        "name": "eVelo — home",
+        "current": null,
+        "focusVisible": true
+      },
+      {
+        "tag": "button",
+        "name": "System theme — switch to light theme",
+        "current": null,
+        "focusVisible": true
+      },
+      {
+        "tag": "a",
+        "name": "Open the planner",
+        "current": null,
+        "focusVisible": true
+      },
+      {
+        "tag": "a",
+        "name": "Stress-test my plan",
+        "current": null,
+        "focusVisible": true
+      },
+      {
+        "tag": "a",
+        "name": "Explore the Atlas",
+        "current": null,
+        "focusVisible": true
+      },
+      {
+        "tag": "button",
+        "name": "01 Buy",
+        "current": null,
+        "focusVisible": true
+      },
+      {
+        "tag": "button",
+        "name": "02 Borrow",
+        "current": null,
+        "focusVisible": true
+      },
+      {
+        "tag": "button",
+        "name": "03 Live anywhere",
+        "current": null,
+        "focusVisible": true
+      },
+      {
+        "tag": "button",
+        "name": "04 Die",
+        "current": "step",
+        "focusVisible": true
+      },
+      {
+        "tag": "body",
+        "name": "eVeloHow it worksAtlasMethodOpen the pla",
+        "current": null,
+        "focusVisible": false
+      }
+    ],
+    "afterEnterOnBuy": [
+      "step",
+      null,
+      null,
+      null
+    ],
+    "afterSpaceOnLive": [
+      null,
+      null,
+      "step",
+      null
+    ],
+    "cardCaptionAfterSelect": "Gains never taxed. Loan repaid. The rest is theirs."
+  },
+  "1280": {
+    "stepsAria": "- region \"How it works, step through the four beats\":\n  - list:\n    - listitem:\n      - button \"01 Buy\": 01 Buy Hold assets that grow. Never sell them, so the gains are never taxed.\n    - listitem:\n      - button \"02 Borrow\": 02 Borrow Live on a line of credit secured by the portfolio. The loan grows; so, usually, do the shares.\n    - listitem:\n      - button \"03 Live anywhere\": 03 Live anywhere Spend the loan where life costs less. A smaller loan gives the portfolio an easier race to win.\n    - listitem:\n      - button \"04 Die\": 04 Die Heirs inherit at a stepped-up basis. The estate repays the loan and keeps the rest.",
+    "figureAria": "- figure \"Gains never taxed. Loan repaid. The rest is theirs. At death, heirs inherit at a stepped-up basis. The estate repays the $5.5M loan from the top; $13.5M passes on.\":\n  - text: One plan · four beats $2.5M portfolio · 30 years, age 60 to 90\n  - img \"Illustrative 30-year plan. A $2.5M portfolio grows to $19.0M while a credit line pays the living costs. Moving from St. Louis to Bangkok cuts the yearly draw from $80K to $47K, so the loan ends at $5.5M instead of $9.4M, below the margin-call line, and the odds the plan holds rise from 63% to 93%. At death the gains tax is wiped out by the step-up in basis, the estate repays the loan, and heirs keep $13.5M.\": St. Louis 63% $80K/yr Bangkok 93% $47K/yr $5M $10M $15M $20M Age 60 75 90 At 90 · $19.0M Loan repaid $5.5M Heirs $13.5M\n  - list \"Key\":\n    - listitem: \"Step-up in basis: the gains tax is gone\"\n    - listitem: What you paid $1.0M\n    - listitem: Loan, living in Bangkok\n    - listitem: Same life in St. Louis\n    - listitem: Margin call at 50%\n  - text: Gains never taxed. Loan repaid. The rest is theirs. At death, heirs inherit at a stepped-up basis. The estate repays the $5.5M loan from the top; $13.5M passes on. Illustrative numbers · a typical path, not a forecast",
+    "visibleSvgAccName": "Illustrative 30-year plan. A $2.5M portfolio grows to $19.0M while a credit line pays the living costs. Moving from St. Louis to Bangkok cuts the yearly draw from $80K to $47K, so the loan ends at $5.5M instead of $9.4M, below the margin-call line, and the odds the plan holds rise from 63% to 93%. At death the gains tax is wiped out by the step-up in basis, the estate repays the loan, and heirs keep $13.5M.",
+    "svgRoleImgByName": 1,
+    "buttonsByRole": [
+      {
+        "name": "01 Buy",
+        "count": 1,
+        "description": "Hold assets that grow. Never sell them, so the gains are never taxed.",
+        "current": null
+      },
+      {
+        "name": "02 Borrow",
+        "count": 1,
+        "description": "Live on a line of credit secured by the portfolio. The loan grows; so, usually, do the shares.",
+        "current": null
+      },
+      {
+        "name": "03 Live anywhere",
+        "count": 1,
+        "description": "Spend the loan where life costs less. A smaller loan gives the portfolio an easier race to win.",
+        "current": null
+      },
+      {
+        "name": "04 Die",
+        "count": 1,
+        "description": "Heirs inherit at a stepped-up basis. The estate repays the loan and keeps the rest.",
+        "current": "step"
+      }
+    ],
+    "tabOrder": [
+      {
+        "tag": "a",
+        "name": "eVelo — home",
+        "current": null,
+        "focusVisible": true
+      },
+      {
+        "tag": "a",
+        "name": "How it works",
+        "current": null,
+        "focusVisible": true
+      },
+      {
+        "tag": "a",
+        "name": "Atlas",
+        "current": null,
+        "focusVisible": true
+      },
+      {
+        "tag": "a",
+        "name": "Method",
+        "current": null,
+        "focusVisible": true
+      },
+      {
+        "tag": "button",
+        "name": "System theme",
+        "current": null,
+        "focusVisible": true
+      },
+      {
+        "tag": "a",
+        "name": "Open the planner",
+        "current": null,
+        "focusVisible": true
+      },
+      {
+        "tag": "a",
+        "name": "Stress-test my plan",
+        "current": null,
+        "focusVisible": true
+      },
+      {
+        "tag": "a",
+        "name": "Explore the Atlas",
+        "current": null,
+        "focusVisible": true
+      },
+      {
+        "tag": "button",
+        "name": "01 Buy",
+        "current": null,
+        "focusVisible": true
+      },
+      {
+        "tag": "button",
+        "name": "02 Borrow",
+        "current": null,
+        "focusVisible": true
+      },
+      {
+        "tag": "button",
+        "name": "03 Live anywhere",
+        "current": null,
+        "focusVisible": true
+      },
+      {
+        "tag": "button",
+        "name": "04 Die",
+        "current": "step",
+        "focusVisible": true
+      },
+      {
+        "tag": "body",
+        "name": "eVeloHow it worksAtlasMethodOpen the pla",
+        "current": null,
+        "focusVisible": false
+      }
+    ],
+    "afterEnterOnBuy": [
+      "step",
+      null,
+      null,
+      null
+    ],
+    "afterSpaceOnLive": [
+      null,
+      null,
+      "step",
+      null
+    ],
+    "cardCaptionAfterSelect": "Gains never taxed. Loan repaid. The rest is theirs."
+  }
+}

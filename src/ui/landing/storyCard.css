@@ -63,7 +63,9 @@
 .story__svg--narrow {
   display: none;
 }
-@container story (max-width: 480px) {
+/* Wide's smallest text is 13.5 units: at 490px it renders at 11px, so below that the narrow
+ * layout takes over (its smallest text, 13 units on 336, reaches 11px from a 285px card). */
+@container story (width < 490px) {
   .story__svg--wide {
     display: none;
   }
@@ -74,17 +76,17 @@
 
 .story__t {
   font-family: var(--font-ui);
-  font-size: 13px;
+  font-size: 13.5px;
   fill: var(--ink-2);
 }
 .story__t--pin {
-  font-size: 13.5px;
+  font-size: 14px;
   font-weight: 500;
   fill: var(--ink);
 }
 .story__t--coin {
   font-family: var(--font-mono);
-  font-size: 12.5px;
+  font-size: 13.5px;
 }
 .story__t--mono {
   font-family: var(--font-mono);
@@ -111,20 +113,20 @@
 }
 .story__t--tick {
   font-family: var(--font-mono);
-  font-size: 12.5px;
+  font-size: 13.5px;
   fill: var(--chart-axis);
 }
-/* Phone layout: a viewBox drawn near 1:1, so 12 units ≈ 11.4px at 390px. */
+/* Phone layout: a 336-unit viewBox, so 13 units render at 11px from a 285px card (360px screen). */
 .story__svg--narrow .story__t {
-  font-size: 12.5px;
+  font-size: 13px;
 }
 .story__svg--narrow .story__t--pin {
-  font-size: 13px;
+  font-size: 13.5px;
 }
 .story__svg--narrow .story__t--coin,
 .story__svg--narrow .story__t--tick,
 .story__svg--narrow .story__t--slice {
-  font-size: 12px;
+  font-size: 13px;
 }
 .story__svg--narrow .story__t--inv {
   font-size: 13px;

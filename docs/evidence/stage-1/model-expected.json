@@ -1,0 +1,66 @@
+{
+  "eyebrow": "One plan · four beats",
+  "sub": "$2.5M portfolio · 30 years, age 60 to 90",
+  "odds": "93%",
+  "oddsUnit": "of futures hold in Bangkok",
+  "key": [
+    "Step-up in basis: the gains tax is gone",
+    "What you paid $1.0M",
+    "Loan, living in Bangkok",
+    "Same life in St. Louis",
+    "Margin call at 50%"
+  ],
+  "keyLabel": "Key",
+  "lead": "Gains never taxed. Loan repaid. The rest is theirs.",
+  "detail": "At death, heirs inherit at a stepped-up basis. The estate repays the $5.5M loan from the top; $13.5M passes on.",
+  "note": "Illustrative numbers · a typical path, not a forecast",
+  "svgLabel": "Illustrative 30-year plan. A $2.5M portfolio grows to $19.0M while a credit line pays the living costs. Moving from St. Louis to Bangkok cuts the yearly draw from $80K to $47K, so the loan ends at $5.5M instead of $9.4M, below the margin-call line, and the odds the plan holds rise from 63% to 93%. At death the gains tax is wiped out by the step-up in basis, the estate repays the loan, and heirs keep $13.5M.",
+  "stepsLabel": "How it works, step through the four beats",
+  "svgTexts": [
+    "St. Louis 63%",
+    "$80K/yr",
+    "Bangkok 93%",
+    "$47K/yr",
+    "$5M",
+    "$10M",
+    "$15M",
+    "$20M",
+    "Age 60",
+    "75",
+    "90",
+    "At 90 · $19.0M",
+    "Loan repaid",
+    "$5.5M",
+    "Heirs",
+    "$13.5M"
+  ],
+  "steps": [
+    {
+      "name": "01 Buy",
+      "body": "Hold assets that grow. Never sell them, so the gains are never taxed."
+    },
+    {
+      "name": "02 Borrow",
+      "body": "Live on a line of credit secured by the portfolio. The loan grows; so, usually, do the shares."
+    },
+    {
+      "name": "03 Live anywhere",
+      "body": "Spend the loan where life costs less. A smaller loan gives the portfolio an easier race to win."
+    },
+    {
+      "name": "04 Die",
+      "body": "Heirs inherit at a stepped-up basis. The estate repays the loan and keeps the rest."
+    }
+  ],
+  "figures": {
+    "homeSpend": 80000,
+    "destSpend": 47323.94366197183,
+    "homeLoan90": 9373873.130205363,
+    "destLoan90": 5545108.048853876,
+    "homeHeirs90": 9656764.476449743,
+    "destHeirs90": 13485529.55780123,
+    "portfolio90": 19030637.606655106,
+    "homeOdds": 63,
+    "destOdds": 93
+  }
+}

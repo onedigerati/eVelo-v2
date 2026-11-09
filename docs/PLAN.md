@@ -7,23 +7,28 @@ A first-time visitor to the home page sees how Buy, Borrow, Die works, and why m
 2026-11-09 · tests: 624 pass (42 files) · typecheck: clean
 
 ## Now
-Stage 1 of 3 · Story model and card
-Risk: UI only (illustrative money figures, proven by tests)
-Mode: paused — keel hook still holds stage 1 (money risk line) for builder writes; needs the user's word again
+Stage 2 of 3 · The four beats
+Risk: UI only (motion, timing and accessibility; the model is unchanged)
+Mode: autopilot
 Agents: wide — confirmed 2026-11-08 22:19
 Checks:
-- [ ] A pure model module computes the story's series and figures: $2.5M portfolio ($1.0M basis) at 7%, loan = (loan + spend·1.03^t)·1.06 over 30 years, margin call at 50% of the portfolio, St. Louis spending $80k/yr, Bangkok spending derived from the app's cost data for the two cities (about $47k/yr, not hard-coded), loan and heirs at 90 for both cities, and the illustrative odds (Bangkok 93%, as on today's map; St. Louis an illustrative figure from the same bands) (proof: test)
-- [ ] The home page hero shows the new card's finished resting frame (the Die state) in place of the map card, hero copy unchanged; every label, caption and the SVG's accessible name come from the model; the "Illustrative numbers" note stays (proof: run the product, screenshots; a test can't judge the layout)
-- [ ] The static steps row is replaced by four step buttons (Buy / Borrow / Live anywhere / Die, today's copy), reachable by keyboard and named for screen readers (proof: run the product, accessibility tree)
-- [ ] Light, dark and phone width (390px) look right: the phone layout has its own chart sizing so SVG text renders at 11px or more, the key sits in normal layout (not a percentage overlay), nothing clips and the page doesn't scroll sideways (proof: run the product, screenshots at 1280 and 390 in both themes)
+- [ ] The card renders any time t from the model (a pure `frameAt(t)` in its own module): Buy fills the portfolio (paid + hatched gains), Borrow grows the St. Louis loan under the margin line, Live anywhere flies St. Louis → Bangkok and bends the loan flatter with the draw shrinking, Die applies the step-up and splits the estate; the odds badge only ever shows an endpoint city's figure with that city's name (no blended number), and its band comes from atlasCard's bands; one beat id type is shared by the frame and the step buttons (proof: test)
+- [ ] Play, pause and replay controls work by mouse and keyboard; the card plays twice then rests on the finished Die frame, and only plays while in view (proof: run the product, scripted clicks and screenshots mid-beat)
+- [ ] The step buttons light up with the beat on show and jump to it when pressed: the card, caption and `aria-current` always agree (proof: run the product, scripted clicks)
+- [ ] With `prefers-reduced-motion`, nothing moves: each beat shows its finished frame, and the controls and step buttons still work (proof: run the product with reduced motion emulated)
+- [ ] Screen readers hear each beat once through an aria-live region; content faded to 0 is hidden from the accessibility tree; the SVG's name describes the whole story or the current frame on purpose (proof: run the product, accessibility tree at each beat)
+- [ ] No sideways scroll and chart text at 11px or more from 360 to 1920 in every beat, light and dark, and the "Loan repaid" label clears the heirs bar on the narrow layout (proof: run the product, sweep and screenshots)
 Open: none
 
 ## Stages
-- [ ] 1. Story model and card — tested illustrative model; the resting-frame card replaces the map card; step buttons; both themes and a real phone layout
+- [x] 1. Story model and card — tested illustrative model; the resting-frame card replaces the map card; step buttons; both themes and a real phone layout
 - [ ] 2. The four beats — the timeline (render at time t), play/pause/replay, step sync and jump, plays when in view, reduced motion, aria-live per beat
 - [ ] 3. Preview and ship — clean up the old map-card code and its test, check the Atlas and the rest of the landing still work, preview for review, deploy on approval
 
 ## Decisions
+- 2026-11-08 · Stage 1 closed: 4/4 checks pass ([evidence](evidence/stage-1/report.md)); review: 1 fix-now (dead phone grid rule, removed), 6 deferred into stage 2's checks (step/card sync, one beat id type, SVG name, faded content in the a11y tree, blended odds and bands, per-frame work), 3 rejected — PM's call.
+- 2026-11-08 · Stage 1 verify found SVG text under 11px at 360–375px phones, ~573–622px and ~1145–1245px viewports, and the active step card 6px from the phone edge; both fixed inside stage 1 (the 11px floor is the check's intent, not just the two named widths) — PM's call.
+- 2026-11-08 · Stage 1 builders resumed after the hook held them — user: "Go".
 - 2026-11-08 · The card's resting (Die) frame shows the step-up as the mockup does: hatch faded, gains in a plain fill, key reads the step-up line — PM's call.
 - 2026-11-08 · Stage 1 leaves built in the main tree, not worktrees: the keel hook's money-risk clearance didn't reach worktree builders (both refused at their first write); split by file region instead — PM's call.
 - 2026-11-08 · Bangkok spending = $80K × the cost-of-living ratio from `categoryRatios(stl, bkk, 0)` (index 42/71 → $47,324), as the decision above names; the app's default expat factor (0.35) would give $60.5K. St. Louis odds read as the map's home-city figure (63%, band 2). `story.ts` imports these from `atlasCard.ts`, so stage 3's cleanup must keep or move them — PM's call.
@@ -39,6 +44,9 @@ Open: none
 - 2026-11-09 · The motion is split from the card (stages 1 and 2) so the resting frame and layout are reviewed before the timeline is built — PM's call.
 
 ## Open questions
+- Chart text falls under 11px below 360px viewports (320: 9.67px; 340: 10.45px) — from the stage 1 verify, later.
+- The static chart parts (ghost, margin, ticks, map dots) are recomputed every render, in both SVGs; precompute them per layout before the 60fps timeline. `COPY.personChip` is unused — from the stage 1 review, stage 2.
+- The step titles were `h2` headings and are now button text, so they've left the heading outline — from the stage 1 verify, later.
 - The comparison adds up to 5 simulates + 5 solves (+5 stay-home runs) per plan change on the main worker; on a 12-core desktop the verdict and Atlas times didn't move, but on a 2–4 core phone it may slow the Atlas fill. Measure on a real phone; if needed, run the comparison only while the Outlook is visible or at fewer paths — from the stage 4 verify, later.
 - At 1100px `scrollWidth` reads 1137 because the verdict section (661px) overflows its 592px column; `overflow-x: clip` hides it, pre-existing — from the stage 4 fix, later.
 - `chartKit.workingYears` and `src/ui/retire.ts` both compute the retirement age (built in parallel); dedupe — later.

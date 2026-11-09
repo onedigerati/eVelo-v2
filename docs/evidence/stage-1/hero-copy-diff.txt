@@ -1,0 +1,43 @@
+$ diff <(hero landing__copy block of git show 71acca2:src/ui/landing/LandingView.tsx) <(same block of HEAD src/ui/landing/LandingView.tsx)
+IDENTICAL (exit 0): hero copy block unchanged, 23 lines
+
+--- block (both versions) ---
+            <div className="landing__copy">
+              <p className="landing__eyebrow">Buy · Borrow · Die — anywhere in the world</p>
+              <h1 id="landing-title" className="landing__headline">
+                Live off your portfolio <em>without ever selling it.</em>
+              </h1>
+              <p className="landing__body">
+                Borrow against your shares for living money, let them keep compounding, and pass them on with the
+                gains never taxed. eVelo replays your plan through thousands of real market histories, then
+                re-prices it city by city to show where in the world it holds best.
+              </p>
+              <div className="landing__ctas">
+                <a href={hrefFor('plan')} className="landing__cta landing__cta--primary">
+                  Stress-test my plan
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M3 8h10M9 4l4 4-4 4" />
+                  </svg>
+                </a>
+                <a href={hrefFor('atlas')} className="landing__cta landing__cta--ghost">
+                  Explore the Atlas
+                </a>
+              </div>
+              <p className="landing__fine">Free · No sign-up · Runs in your browser, nothing leaves your device</p>
+            </div>
+
+--- old steps copy at 71acca2 (compare to BEATS[].body in story.ts) ---
+          <section id={STEPS_ID} tabIndex={-1} className="landing__steps" aria-label="How it works">
+            <Step n="01" title="Buy">
+              Hold assets that grow. Never sell them, so the gains are never taxed.
+            </Step>
+            <Step n="02" title="Borrow">
+              Live on a line of credit secured by the portfolio. The loan grows; so, usually, do the shares.
+            </Step>
+            <Step n="03" title="Live anywhere">
+              Spend the loan where life costs less. A smaller loan gives the portfolio an easier race to win.
+            </Step>
+            <Step n="04" title="Die">
+              Heirs inherit at a stepped-up basis. The estate repays the loan and keeps the rest.
+            </Step>
+          </section>
