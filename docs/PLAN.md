@@ -9,7 +9,7 @@ A first-time visitor to the home page sees how Buy, Borrow, Die works, and why m
 ## Now
 Stage 1 of 3 · Story model and card
 Risk: UI only (illustrative money figures, proven by tests)
-Mode: autopilot
+Mode: paused — keel hook still holds stage 1 (money risk line) for builder writes; needs the user's word again
 Agents: wide — confirmed 2026-11-08 22:19
 Checks:
 - [ ] A pure model module computes the story's series and figures: $2.5M portfolio ($1.0M basis) at 7%, loan = (loan + spend·1.03^t)·1.06 over 30 years, margin call at 50% of the portfolio, St. Louis spending $80k/yr, Bangkok spending derived from the app's cost data for the two cities (about $47k/yr, not hard-coded), loan and heirs at 90 for both cities, and the illustrative odds (Bangkok 93%, as on today's map; St. Louis an illustrative figure from the same bands) (proof: test)
@@ -24,6 +24,8 @@ Open: none
 - [ ] 3. Preview and ship — clean up the old map-card code and its test, check the Atlas and the rest of the landing still work, preview for review, deploy on approval
 
 ## Decisions
+- 2026-11-08 · The card's resting (Die) frame shows the step-up as the mockup does: hatch faded, gains in a plain fill, key reads the step-up line — PM's call.
+- 2026-11-08 · Stage 1 leaves built in the main tree, not worktrees: the keel hook's money-risk clearance didn't reach worktree builders (both refused at their first write); split by file region instead — PM's call.
 - 2026-11-08 · Bangkok spending = $80K × the cost-of-living ratio from `categoryRatios(stl, bkk, 0)` (index 42/71 → $47,324), as the decision above names; the app's default expat factor (0.35) would give $60.5K. St. Louis odds read as the map's home-city figure (63%, band 2). `story.ts` imports these from `atlasCard.ts`, so stage 3's cleanup must keep or move them — PM's call.
 - 2026-11-08 · Stage 1 cleared to build despite its risk line naming money (illustrative figures only, tested model) — user: "Go ahead, build stage 1 as planned".
 - 2026-11-09 · Visual direction: variation A, the four-beat loop, as it stands (no sell-versus-borrow beat, no result row); B, C, D and the A+D hybrid are not taken — user: "Let's go with option A" ([variations](https://claude.ai/artifact/QeAKiE7ZvvnSK665sCeSHf)).
