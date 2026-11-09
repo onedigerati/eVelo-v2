@@ -9,7 +9,7 @@ A first-time visitor to the home page sees how Buy, Borrow, Die works, and why m
 ## Now
 Stage 3 of 3 · Preview and ship
 Risk: UI only (removes dead landing code; deploy is outward-facing and waits for the user)
-Mode: autopilot
+Mode: paused — git push origin main to deploy preview v41 via GitHub Pages (user approved "Deploy"; the keel hook holds the push)
 Agents: wide — confirmed 2026-11-08 22:19
 Checks:
 - [x] The old map-card code is gone: `atlasCard.ts` and its test are removed, with the two figures `story.ts` reads from it (Bangkok's map odds and the home-city odds, and `bandFor`) moved into the landing story model unchanged and still tested; no unused landing exports, CSS or tokens remain (proof: test, plus a search for leftovers)
