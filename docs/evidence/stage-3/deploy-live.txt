@@ -1,0 +1,5 @@
+$ git push origin main (7dc6fdd..8da670b) ; gh run view 42615948629 ; curl live entry bundle and grep
+completed success
+build success 2026-11-09T12:18:47Z 2026-11-09T12:19:31Z
+deploy success 2026-11-09T12:19:34Z 2026-11-09T12:19:43Z
+live https://onedigerati.github.io/eVelo-v2/ entry assets/index-CPFBFz0v.js: 'Story playback' 1, 'Loan repaid' 2, 'Bangkok' 5, 'landing__map' 0 (old map card gone)
