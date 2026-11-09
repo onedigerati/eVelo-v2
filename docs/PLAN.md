@@ -17,7 +17,7 @@ Checks:
 - [x] Tapping a card sets retire-in to it, and the verdict, charts and the highlight follow; the cards are buttons a keyboard and screen reader can reach, each named with its age, odds and spending (proof: run the product, accessibility tree)
 - [x] It looks right in light, dark and at phone width (2×2 grid) (proof: run the product, screenshots)
 - [ ] A preview is published for the user to review; deploy only on their approval (proof: the user's words)
-Open: none
+Open: the user's review of [preview v40](https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth) and approval to deploy
 
 ## Stages
 - [x] 1. Variations — a variations page of ideas for the setting and the comparison; the user picks one
