@@ -16,6 +16,7 @@ import {
   shrinkWeight,
 } from "../../engine/prepare";
 import { T_DF } from "../../engine/scenarios";
+import { MAX_RETIRE_IN_YEARS } from "../../engine/simulate";
 import { SOLVE_MAX_PATHS } from "../../engine/solve";
 import type { AssetClass, Outlook } from "../../engine/types";
 import { SOLVE_TARGET } from "../../state/sim";
@@ -81,6 +82,11 @@ export const DEF = {
   paths: DEFAULT_INPUTS.paths,
   expat: DEFAULT_INPUTS.expatFactor,
   incomeStartAge: DEFAULT_INPUTS.incomeStartAge,
+  /** Years until retirement (0 = retire today) and its cap. */
+  retireInYears: DEFAULT_INPUTS.retireInYears,
+  maxRetireInYears: MAX_RETIRE_IN_YEARS,
+  /** Saving while working, today's $/yr. */
+  savingsWhileWorking: DEFAULT_INPUTS.savingsWhileWorking,
   tDf: T_DF,
   solvePaths: SOLVE_MAX_PATHS,
   solveTarget: SOLVE_TARGET,

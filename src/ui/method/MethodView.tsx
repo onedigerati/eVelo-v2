@@ -1,7 +1,7 @@
 import { m as motion } from "framer-motion";
 import { useEffect, useState, type ReactNode } from "react";
 import { navigate } from "../../state/router";
-import { number, percent } from "../format";
+import { currency, number, percent } from "../format";
 import { rise, stagger } from "../motion";
 import { Button, cx } from "../primitives";
 import { BlockBootstrap, LtvRatchet, ShrinkCurves } from "./diagrams";
@@ -464,6 +464,25 @@ export function MethodView() {
               Outlook shows when, across all futures, the first forced sale
               tends to happen.
             </p>
+            <p>
+              <b>Retiring later.</b> You can retire{" "}
+              {DEF.retireInYears === 0
+                ? "today (the default)"
+                : `in ${DEF.retireInYears} years (the default)`}{" "}
+              or in up to {DEF.maxRetireInYears} whole years. Until then each
+              month is a working month: nothing is drawn for spending and other
+              income isn’t counted. Instead your <b>savings while working</b>{" "}
+              ({currency(DEF.savingsWhileWorking)} a year by default, kept level
+              with inflation) go in. They pay down any loan first and the rest
+              is invested, raising the cost basis. The loan still accrues
+              interest and the lender still checks every month. An opening
+              forced sale still happens today, before any savings arrive. From
+              retirement on, the months run as above, and other income starts
+              then, or at its own start age if that is later. The plan still
+              ends at the same age, so retiring later leaves fewer years of
+              drawing. The safe-spending search scales retirement spending only,
+              never the savings.
+            </p>
           </Sec>
 
           <Sec id="abroad" lead="The same life, priced somewhere else.">
@@ -528,7 +547,8 @@ export function MethodView() {
               {ABROAD.dest}; zero for dollar economies), and centered so it
               neither drifts up nor down on average. Some futures get a strong
               dollar and a cheap life; others the opposite, for decades. The
-              move can happen today or years from now.
+              move can happen today or years from now, but never before you
+              retire.
             </p>
             <p>
               All of this is an <em>estimate</em>. Cost indices are rounded
@@ -587,7 +607,8 @@ export function MethodView() {
               Every future also runs a second, simpler plan on the same markets:{" "}
               <b>sell as you go</b>. Each month it sells enough shares to cover
               spending, paying capital-gains tax on the gain in each share sold,
-              and carries no loan. If you have an existing loan balance, this
+              and carries no loan; while you work, it invests the same savings.
+              If you have an existing loan balance, this
               plan starts with the portfolio minus that balance and no debt:
               had you sold instead, those shares would already be spent, and
               both plans start from the same net worth. (It ignores the tax and
@@ -641,8 +662,8 @@ export function MethodView() {
               </li>
               <li>
                 <b>Social Security is simplified:</b> one inflation-indexed
-                amount from a start age ({DEF.incomeStartAge} by default),
-                untaxed, with no claiming rules or spousal benefits.
+                amount from a start age ({DEF.incomeStartAge} by default, or
+                retirement if later), untaxed, with no claiming rules or spousal benefits.
               </li>
               <li>
                 <b>History is the raw material.</b> {DATA.years} years is a lot
