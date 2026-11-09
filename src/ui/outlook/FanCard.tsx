@@ -5,6 +5,7 @@ import { currencyCompact, percent } from '../format'
 import { useBreakpoint } from '../hooks'
 import { SegmentedControl } from '../primitives'
 import { cityName, startNetWorth } from './cards'
+import { workingYears } from './chartKit'
 import { ChartFrame } from './ChartFrame'
 import { FAN_METRICS, FanChart, bandsFor, type FanMarker, type FanMetric } from './FanChart'
 import { BROKEN_AT_START, openingBrokenOf, openingSaleOf } from './openingSale'
@@ -142,11 +143,27 @@ function ltvCaption(r: SimulationResult, p50: number[], p95: number[], opening: 
   return `${head}; ${worst}.`
 }
 
+/** Event markers on the fan. The move can't come before retirement, and other income counts only from
+ *  retirement, so both are drawn no earlier than it; events that land on the retirement year join its
+ *  label ("Retire · move to Bangkok · 64") rather than stacking a second line on the same x. */
 export function fanMarkers(r: SimulationResult): FanMarker[] {
   const i = r.inputs
+  const work = workingYears(i)
+  const retireAge = work ? work.to : i.age
   const out: FanMarker[] = []
-  if (i.destCityId && i.moveInYears > 0) out.push({ age: i.age + i.moveInYears, label: `Move to ${cityName(i.destCityId)}` })
-  if (i.otherIncome > 0) out.push({ age: i.incomeStartAge, label: 'Income starts' })
+  const atRetire: string[] = []
+  const moveAge = i.age + Math.max(i.moveInYears, work ? work.years : 0)
+  if (i.destCityId && moveAge > i.age) {
+    const city = cityName(i.destCityId)
+    if (work && moveAge === retireAge) atRetire.push(`move to ${city}`)
+    else out.push({ age: moveAge, label: `Move to ${city}` })
+  }
+  if (i.otherIncome > 0) {
+    const incomeAge = Math.max(i.incomeStartAge, retireAge)
+    if (work && incomeAge === retireAge) atRetire.push('income starts')
+    else out.push({ age: incomeAge, label: 'Income starts' })
+  }
+  if (work) out.push({ age: retireAge, label: ['Retire', ...atRetire, String(retireAge)].join(' · '), short: `Retire · ${retireAge}`, kind: 'retire' })
   return out
 }
 

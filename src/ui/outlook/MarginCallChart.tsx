@@ -6,7 +6,7 @@ import type { SimulationResult } from '../../engine/types'
 import { percent } from '../format'
 import { firstYearSpend } from '../plan/existingLoan'
 import { cx } from '../primitives'
-import { massWindow, useCrosshair, useSize, useTweenedSeries } from './chartKit'
+import { markerLabelWidth, massWindow, useCrosshair, useSize, useTweenedSeries, workingYears, workingYearsSentence } from './chartKit'
 import { BROKEN_AT_START, openingBrokenOf, openingSaleOf } from './openingSale'
 
 /** Why early forced sales happen, by how the plan starts. */
@@ -107,14 +107,28 @@ export function MarginCallChart({ result }: { result: SimulationResult }) {
   for (let a = Math.ceil(age0 / stepX) * stepX; a <= age0 + n; a += stepX) xs.push(a)
 
   const peak = by.reduce((b, v, i) => (v > by[b] ? i : b), 0)
-  const aria = `Margin-call timing, age ${age0} to ${age0 + n}. ${percent(total)} of futures face a forced sale; the riskiest single year is age ${age0 + peak} at ${percent(by[peak] ?? 0, { digits: 1 })}.`
+  const work = workingYears(result.inputs)
+  const aria = `Margin-call timing, age ${age0} to ${age0 + n}. ${percent(total)} of futures face a forced sale; the riskiest single year is age ${age0 + peak} at ${percent(by[peak] ?? 0, { digits: 1 })}.${workingYearsSentence(work)}`
+
+  // Retirement line: bar i is year i, so retiring after `years` years sits at x(years). Its label runs
+  // above the plot, clear of the top tick's label at the left edge.
+  const yTicks = yb.ticks(3)
+  const topTick = yTicks[yTicks.length - 1]
+  const retireX = work ? x(work.years) : 0
+  const retireLabel = work ? `Retire · ${work.to}` : ''
+  const tickEnd = topTick > 0 && yb(topTick) < m.t + 14 ? m.l + markerLabelWidth(percent(topTick, { digits: topTick < 0.01 ? 1 : 0 })) + 8 : -Infinity
+  const retireFlip = retireX + 6 + markerLabelWidth(retireLabel) > width
+  const retireTx = retireFlip ? -6 : Math.max(6, tickEnd - retireX)
 
   return (
     <div className="mc">
       <div ref={wrap} style={{ height }}>
       {width > 0 && (
         <svg width={width} height={height} role="img" aria-label={aria} tabIndex={0} aria-describedby={`${uid}-read`} {...ch.handlers} className="mc__svg">
-          {yb.ticks(3).map((v) => (
+          {work && (
+            <rect className="mc__working" x={x(0)} y={m.t} width={Math.max(0, retireX - x(0))} height={ih} aria-hidden="true" />
+          )}
+          {yTicks.map((v) => (
             <g key={v} transform={`translate(0, ${Math.round(yb(v)) + 0.5})`}>
               <line x1={m.l} x2={m.l + iw} stroke={v === 0 ? 'var(--chart-grid-strong)' : 'var(--chart-grid)'} />
               {v > 0 && (
@@ -139,6 +153,14 @@ export function MarginCallChart({ result }: { result: SimulationResult }) {
               />
             )
           })}
+          {work && (
+            <g className="mc__retire" transform={`translate(${Math.round(retireX) + 0.5}, 0)`} aria-hidden="true">
+              <line y1={m.t - 4} y2={m.t + ih} />
+              <text y={m.t - 9} x={retireTx} textAnchor={retireFlip ? 'end' : 'start'}>
+                {retireLabel}
+              </text>
+            </g>
+          )}
           <path d={cumFull} className="mc__cum" />
           {cline.length > 0 && (
             <g transform={`translate(${x(n)}, ${yc(cline[n - 1])})`}>
@@ -173,11 +195,17 @@ export function MarginCallChart({ result }: { result: SimulationResult }) {
             <span>
               <i className="mc__key mc__key--cum" /> Cumulative
             </span>
+            {work && (
+              <span>
+                <i className="mc__key mc__key--working" /> {work.label}
+              </span>
+            )}
           </>
         ) : (
           <>
             <span>
               Age <b>{age0 + hi}</b>
+              {work && hi < work.years ? ' · working' : ''}
             </span>
             <span>
               <i className="mc__key mc__key--bar" /> <b>{percent(by[hi], { digits: 1 })}</b> first sale

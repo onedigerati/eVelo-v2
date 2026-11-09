@@ -509,6 +509,42 @@
   text-transform: uppercase;
   fill: var(--ink-3);
 }
+/* Retirement: a dashed line in the holds colour (variation D). */
+.fan__marker.is-retire line,
+.mc__retire line {
+  stroke: var(--holds);
+  stroke-width: 1.5;
+  stroke-dasharray: 5 4;
+}
+.fan__marker.is-retire text,
+.mc__retire text {
+  fill: var(--holds-text);
+}
+.mc__retire text {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+/* Working years, today to retirement: a soft brass band. */
+.fan__working,
+.mc__working {
+  fill: var(--bruised-soft);
+}
+.fan__working-label {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  fill: var(--bruised-text);
+}
+/* Wider than the band: a halo lets it cut cleanly across the retire line. */
+.fan__working-label.is-over {
+  paint-order: stroke;
+  stroke: var(--bg);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
 .fan__cross line {
   stroke: var(--chart-crosshair);
   stroke-width: 1;
@@ -686,6 +722,10 @@
   height: 2px;
   width: 14px;
   background: var(--chart-threshold);
+}
+.mc__key--working {
+  background: var(--bruised-soft);
+  box-shadow: inset 0 0 0 1px var(--bruised-line);
 }
 
 /* ---------- Safe spending ---------- */
