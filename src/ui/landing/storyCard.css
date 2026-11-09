@@ -1,0 +1,318 @@
+/* ============ Landing hero: the story card (variation A, four beats) ============ */
+/* Theme tokens only (tokens.css plus landing.css's --lp-card / --lp-halo knobs). The card is a
+ * size container: on a narrow card (phone) it swaps the wide SVG for the narrow layout, so chart
+ * text renders at 11px or more, and the key is ordinary HTML flow under the chart. */
+
+.story {
+  container: story / inline-size;
+  margin: 0;
+  padding: 20px 22px 16px;
+  border-radius: var(--radius-lg);
+  background: var(--lp-card);
+  border: 1px solid var(--lp-card-line);
+  box-shadow: var(--lp-card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  color: var(--ink);
+}
+.story__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+.story__plan {
+  display: grid;
+  gap: 4px;
+}
+.story__sub {
+  font-size: 13px;
+  color: var(--ink-2);
+}
+.story__odds {
+  display: grid;
+  justify-items: end;
+  text-align: right;
+}
+.story__odds-num {
+  font-family: var(--font-display);
+  font-size: 40px;
+  line-height: 1;
+  color: var(--holds-text);
+  font-variant-numeric: tabular-nums;
+}
+.story__odds-num.is-mid {
+  color: var(--bruised-text);
+}
+.story__odds-unit {
+  font-size: 12px;
+  color: var(--ink-3);
+}
+
+/* ---------- Chart ---------- */
+.story__plot {
+  min-width: 0;
+}
+.story__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.story__svg--narrow {
+  display: none;
+}
+@container story (max-width: 480px) {
+  .story__svg--wide {
+    display: none;
+  }
+  .story__svg--narrow {
+    display: block;
+  }
+}
+
+.story__t {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  fill: var(--ink-2);
+}
+.story__t--pin {
+  font-size: 13.5px;
+  font-weight: 500;
+  fill: var(--ink);
+}
+.story__t--coin {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+}
+.story__t--mono {
+  font-family: var(--font-mono);
+  fill: var(--ink);
+}
+.story__t--estate {
+  font-weight: 500;
+  fill: var(--ink);
+}
+.story__t--inv {
+  font-size: 14px;
+  font-weight: 600;
+  fill: var(--lp-halo);
+}
+.story__t--inv-mono {
+  font-family: var(--font-mono);
+  font-weight: 500;
+}
+.story__t--bruised {
+  fill: var(--bruised-text);
+}
+.story__t--holds {
+  fill: var(--holds-text);
+}
+.story__t--tick {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  fill: var(--chart-axis);
+}
+/* Phone layout: a viewBox drawn near 1:1, so 12 units ≈ 11.4px at 390px. */
+.story__svg--narrow .story__t {
+  font-size: 12.5px;
+}
+.story__svg--narrow .story__t--pin {
+  font-size: 13px;
+}
+.story__svg--narrow .story__t--coin,
+.story__svg--narrow .story__t--tick,
+.story__svg--narrow .story__t--slice {
+  font-size: 12px;
+}
+.story__svg--narrow .story__t--inv {
+  font-size: 13px;
+}
+
+.story__map-bg {
+  fill: none;
+  stroke: var(--hairline);
+}
+.story__map-dots {
+  fill: var(--chart-grid-strong);
+}
+.story__arc-track {
+  fill: none;
+  stroke: var(--hairline-strong);
+  stroke-width: 1.5;
+  stroke-dasharray: 2 5;
+  stroke-linecap: round;
+}
+.story__arc {
+  fill: none;
+  stroke: var(--holds);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+.story__pin {
+  stroke: var(--lp-halo);
+  stroke-width: 2;
+}
+.story__pin--home {
+  fill: var(--bruised);
+}
+.story__pin--dest {
+  fill: var(--holds);
+}
+.story__coin {
+  fill: var(--bruised);
+  stroke: var(--lp-halo);
+  stroke-width: 1.5;
+}
+.story__grid {
+  stroke: var(--chart-grid);
+}
+.story__baseline {
+  stroke: var(--chart-axis);
+}
+.story__hatch-line {
+  stroke: var(--holds);
+  stroke-width: 1.3;
+}
+.story__bar-paid {
+  fill: var(--holds);
+}
+.story__bar-soft {
+  fill: var(--holds-soft);
+}
+.story__bar-stepped {
+  fill: var(--chart-band-2);
+}
+.story__margin {
+  fill: none;
+  stroke: var(--broken);
+  stroke-width: 1.6;
+  stroke-dasharray: 5 5;
+}
+.story__loan-area {
+  fill: color-mix(in srgb, var(--chart-line-2) 12%, transparent);
+}
+.story__loan {
+  fill: none;
+  stroke: var(--chart-line-2);
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.story__ghost {
+  fill: none;
+  stroke: var(--chart-line-2);
+  stroke-width: 1.4;
+  stroke-dasharray: 3 4;
+}
+.story__loan-head {
+  fill: var(--chart-line-2);
+  stroke: var(--lp-halo);
+  stroke-width: 1.5;
+}
+.story__heirs-soft {
+  fill: var(--chart-band-2);
+  stroke: var(--holds);
+}
+.story__heirs {
+  fill: var(--holds);
+}
+.story__slice-soft {
+  fill: var(--chart-band-2);
+}
+.story__slice {
+  fill: var(--chart-line-2);
+}
+.story__glyph {
+  fill: var(--lp-halo);
+}
+
+/* ---------- Key (normal flow) ---------- */
+.story__key {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  font-size: 12.5px;
+  color: var(--ink-2);
+}
+.story__key li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.story__sw {
+  flex: none;
+  width: 16px;
+  height: 10px;
+  border-radius: 2px;
+}
+.story__sw--gains {
+  background: repeating-linear-gradient(45deg, var(--holds) 0 1.3px, var(--holds-soft) 1.3px 3.5px);
+}
+.story__sw--gains.is-stepped {
+  background: var(--chart-band-2);
+  outline: 1px solid var(--holds);
+  outline-offset: -1px;
+}
+.story__sw--paid {
+  background: var(--holds);
+}
+.story__sw--loan {
+  height: 3px;
+  background: var(--chart-line-2);
+}
+.story__sw--ghost {
+  height: 0;
+  border-top: 1.5px dashed var(--chart-line-2);
+  border-radius: 0;
+}
+.story__sw--margin {
+  height: 0;
+  border-top: 1.6px dashed var(--broken);
+  border-radius: 0;
+}
+
+/* ---------- Caption and foot ---------- */
+.story__cap {
+  display: grid;
+  gap: 4px;
+  border-top: 1px solid var(--lp-card-line);
+  padding-top: 12px;
+}
+.story__cap-lead {
+  font-family: var(--font-display);
+  font-size: 24px;
+  line-height: 1.15;
+  color: var(--ink);
+}
+.story__cap-detail {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.story__foot {
+  font-size: 12px;
+  color: var(--ink-3);
+}
+
+@container story (max-width: 480px) {
+  .story__key {
+    flex-direction: column;
+  }
+  .story__odds-num {
+    font-size: 32px;
+  }
+  .story__cap-lead {
+    font-size: 21px;
+  }
+}
+@media (max-width: 520px) {
+  .story {
+    padding: 16px 14px 12px;
+    border-radius: var(--radius-md);
+  }
+}
