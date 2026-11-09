@@ -6,17 +6,16 @@ import { percent, points } from '../format'
 import { ease, rise, stagger } from '../motion'
 import { AnimatedNumber, Badge, Skeleton, Stat, cx } from '../primitives'
 import { returnStats } from '../realStats'
+import { placePhraseFor } from '../retire'
 import { outcomeColor, outcomeTextColor } from '../outcomeScale'
 import { toneFor, VERDICT_THRESHOLDS, verdictLevel, type VerdictLevel } from '../verdict'
 import { cityName } from './cards'
 import { VERDICT_HEADLINE_ID, VERDICT_NUMBER_ID } from './DockedVerdict'
 
-/** "living in Bangkok from age 55" / "in St. Louis, moving to Lisbon at 60" / "staying in St. Louis". */
+/** "living in Bangkok from age 55" / "in St. Louis, moving to Lisbon at 60" / "staying in St. Louis",
+ *  led by the working years when retirement is later (see placePhraseFor). */
 export function placePhrase(i: PlanInputs): string {
-  const home = cityName(i.homeCityId)
-  if (!i.destCityId) return `staying in ${home}`
-  const dest = cityName(i.destCityId)
-  return i.moveInYears > 0 ? `in ${home}, moving to ${dest} at ${i.age + i.moveInYears}` : `living in ${dest} from age ${i.age}`
+  return placePhraseFor(i, cityName(i.homeCityId), i.destCityId ? cityName(i.destCityId) : null)
 }
 
 function headline(level: VerdictLevel): { lead: ReactNode; tail: ReactNode } {

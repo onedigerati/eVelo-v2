@@ -3,6 +3,7 @@
 import { amountsTotal, budgetTotal, categoryRatios, destinationAmounts } from '../../engine/cost'
 import { openingSale } from '../../engine/openingSale'
 import type { City, PlanInputs } from '../../engine/types'
+import { effectiveMoveInYears, retireInYearsOf } from '../retire'
 
 /**
  * 'ok': at or under the margin-call LTV — no sale.
@@ -76,18 +77,31 @@ export function existingLoanInfo({ portfolio, balance, maxLtv, targetLtv, basisF
 
 export type FirstYearInputs = Pick<
   PlanInputs,
-  'budget' | 'destCityId' | 'moveInYears' | 'expatFactor' | 'ratioOverrides' | 'amountOverrides' | 'otherIncome' | 'incomeStartAge' | 'age'
+  | 'budget'
+  | 'destCityId'
+  | 'moveInYears'
+  | 'retireInYears'
+  | 'expatFactor'
+  | 'ratioOverrides'
+  | 'amountOverrides'
+  | 'otherIncome'
+  | 'incomeStartAge'
+  | 'age'
 >
 
 /**
- * What the plan draws in its first year (today's USD): the destination's budget when the move
- * happens within the year (priced as the engine and the Place section price it: per-category city
+ * What the plan draws in its first year (today's USD). While still working (retireInYears > 0)
+ * nothing is drawn — savings go in instead — so it is 0. Otherwise: the destination's budget when the
+ * (effective) move happens within the year (priced as the engine and the Place section price it: per-category city
  * ratios with the expat factor and overrides, and that city's fixed amounts), else the home budget, less other income when it has
  * already started. Never negative. `home`/`dest` are the plan's cities (null or missing when unknown);
  * a destination equal to home means staying home, as in the engine.
  */
 export function firstYearSpend(inputs: FirstYearInputs, home: City | null | undefined, dest: City | null | undefined): number {
-  const moved = inputs.destCityId != null && home != null && dest != null && dest.id !== home.id && inputs.moveInYears < 1
+  // Working years come first: no withdrawals, so no first-year draw (the engine's retireMonth > 0).
+  if (retireInYearsOf(inputs) > 0) return 0
+  const moved =
+    inputs.destCityId != null && home != null && dest != null && dest.id !== home.id && effectiveMoveInYears(inputs) < 1
   const spend = moved
     ? amountsTotal(destinationAmounts(inputs.budget, categoryRatios(home, dest, inputs.expatFactor, inputs.ratioOverrides), inputs.amountOverrides?.[dest.id]))
     : budgetTotal(inputs.budget)
