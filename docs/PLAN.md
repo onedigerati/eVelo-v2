@@ -7,23 +7,22 @@ A user who isn't ready to retire today can see what retiring in 2, 4 or 5 years 
 2026-11-08 · tests: 555 pass · typecheck: clean (after c5fc49a)
 
 ## Now
-Stage 4 of 4 · Retire-later comparison
+All stages done · Retire later
 Risk: UI only
-Mode: autopilot
 Agents: wide — confirmed 2026-11-08 20:26
 Checks:
 - [x] The Outlook shows A's "When could you retire?" row: cards for Now, 2, 4 and 5 years (those below the horizon), each with an odds ring, "In N yrs · age A", the odds and safe spending; the plan's own card is highlighted, and a fifth "your plan" card appears when its retire-in isn't one of them (proof: run the product, screenshots; a test can't judge the layout)
 - [x] Each card's odds and safe spending equal what the main verdict and max-spend show when that retire-in is chosen (same paths and seed), computed off the main thread, and the row shows a loading state while it computes (proof: test for the comparison runner; run the product)
 - [x] Tapping a card sets retire-in to it, and the verdict, charts and the highlight follow; the cards are buttons a keyboard and screen reader can reach, each named with its age, odds and spending (proof: run the product, accessibility tree)
 - [x] It looks right in light, dark and at phone width (2×2 grid) (proof: run the product, screenshots)
-- [ ] A preview is published for the user to review; deploy only on their approval (proof: the user's words)
-Open: the user's review of [preview v40](https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth) and approval to deploy
+- [x] A preview is published for the user to review; deploy only on their approval (proof: the user's words)
+Open: none — preview v40 reviewed (user: "Yes please deploy this to the live site."); deployed by run 42560607680 after two GitHub Pages stalls, live bundle checked
 
 ## Stages
 - [x] 1. Variations — a variations page of ideas for the setting and the comparison; the user picks one
 - [x] 2. Retire later in the engine — retireInYears + savingsWhileWorking through kernel, sell side, solver, Atlas, share link, defaults, with tests
 - [x] 3. Plan inputs and outlook — A's Retire in segmented control + Saving field (re-clamped when the horizon drops), verdict copy and move age, loan warning's first-year spend, D's shaded working years and Retire line on the charts, loan warning, Method page, both themes and phone
-- [ ] 4. Retire-later comparison — A's "When could you retire?" cards (now / 2 / 4 / 5 yrs: odds ring and safe spending, tap to use); preview; deploy on approval
+- [x] 4. Retire-later comparison — A's "When could you retire?" cards (now / 2 / 4 / 5 yrs: odds ring and safe spending, tap to use); preview; deploy on approval
 
 ## Decisions
 - 2026-11-08 · While working, the user adds a yearly amount ("Saving while working", today's $/yr, can be $0), inflated with CPI like income; it pays down an existing loan first and the rest is invested, through the kernel's existing surplus logic — user chose "Yearly amount".
@@ -42,6 +41,7 @@ Open: the user's review of [preview v40](https://claude.ai/artifact/BQo8DhTKwyWA
 - 2026-11-08 · Share links restate the two limits rather than import simulate.ts (keeps the engine out of the main bundle), with a test that they equal the engine's; cache keys and the stay-home baseline already follow every input through `inputsKey`/spread, now proven by tests; the store doesn't re-clamp retire-in when the horizon drops (the engine normalizes; stage 3's control caps it) — builder's call.
 - 2026-11-08 · For stage 3: `firstYearSpend` (existingLoan.ts, the loan "thin" warning) assumes spending in year one; the move age in FanCard.tsx and VerdictHero.tsx uses `moveInYears`, not max(move, retirement) — from the state builder.
 - 2026-11-08 · Preview v40 reviewed and deploy approved — user: "Yes please deploy this to the live site."
+- 2026-11-09 · Deployed: run 42560607680 succeeded in under a minute (build 38 s, deploy 9 s); the live bundle carries the new controls and the same worker build as preview v40 ([evidence](evidence/stage-4/deploy-live.txt)).
 - 2026-11-09 · Deploy retried at ~04:12 UTC by a fresh push — user: "Yes, retry in 20 minutes".
 - 2026-11-09 · Deploy run 42556512215: build passed; the deploy-pages step stalled at "syncing_files" and timed out twice (03:28–03:38 and 03:39–03:49 UTC), cancelling itself each time, so the live site still serves the previous build. The Pages artifact is the same size as the last good deploy (113.4 MB vs 113.4 MB) and githubstatus shows no incident — treated as a GitHub-side stall; retries stopped after two — PM's call.
 - 2026-11-08 · Stage 4 builder's calls: no new worker request — each card is the plan with only `retireInYears` changed, run through the existing `sim.simulate`/`sim.solve` caches after the main runs (simulates, then solves, then stay-home baselines), so a tapped card's numbers are the main results (`CACHE_MAX` 24 → 32, `peekSolve`); safe spending shows `maxSpendHome` like the main card; the ring uses the verdict's `outcomeColor`; "Your plan" is an `aria-hidden` badge with "(your plan)" in the accessible name; the plan's own card does nothing when tapped. The layout follows the row's width (container queries), keeping cards ≥ ~168px: five cards go 3 + 2 below 888px, four go 2×2 below 708px, two per row below 528px; the ring shrinks to 44px in narrow cards — from the stage 4 verify's badge overflow, builder's call.

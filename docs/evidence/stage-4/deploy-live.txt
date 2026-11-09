@@ -1,0 +1,6 @@
+$ gh run view 42560607680 (jobs) ; curl live bundle and grep
+completed success
+build success 2026-11-09T04:13:33Z 2026-11-09T04:14:11Z
+deploy success 2026-11-09T04:14:15Z 2026-11-09T04:14:24Z
+live entry assets/index-BgmjMS6g.js: 'Saving while working' 1, 'Retire in' 1, 'Each card reruns your plan' 1; worker-CkjO8T6v.js (same hash as preview v40) contains retireMonth/savingsWhileWorking
+Earlier run 42556512215: build ok, deploy-pages stalled at syncing_files and timed out twice (03:38, 03:49 UTC); live site unchanged until this run.
