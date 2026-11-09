@@ -13,7 +13,7 @@ Agents: wide — confirmed 2026-11-08 19:07
 Checks:
 - [ ] A variations page shows at least four distinct ways to show the setting and the now/2/4/5-year comparison in the app's look, at desktop and phone width (proof: run the product, the published page, a test can't judge design)
 - [ ] The user picks a direction, and it's logged as a decision (proof: the user's words in this conversation)
-Open: the user's pick from the variations page
+Open: the user's pick from the [variations page](https://claude.ai/artifact/FGJKDUPPZATHCBzvLRX2jt) (A ladder, B timeline, C ledger, D fan, E phone)
 
 ## Stages
 - [ ] 1. Variations — a variations page of ideas for the setting and the comparison; the user picks one
