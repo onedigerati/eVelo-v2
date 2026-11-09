@@ -9,13 +9,13 @@ A first-time visitor to the home page sees how Buy, Borrow, Die works, and why m
 ## Now
 Stage 3 of 3 · Preview and ship
 Risk: UI only (removes dead landing code; deploy is outward-facing and waits for the user)
-Mode: paused — preview v41 published; waiting for the user's review and deploy approval
+Mode: autopilot
 Agents: wide — confirmed 2026-11-08 22:19
 Checks:
 - [x] The old map-card code is gone: `atlasCard.ts` and its test are removed, with the two figures `story.ts` reads from it (Bangkok's map odds and the home-city odds, and `bandFor`) moved into the landing story model unchanged and still tested; no unused landing exports, CSS or tokens remain (proof: test, plus a search for leftovers)
 - [x] The rest of the app still works: the Atlas (map, list, city profiles), the Plan and Outlook, Method and the landing's links and theme toggle load with no console errors, at 1280 and 390 (proof: run the product, screenshots)
-- [ ] A preview is published for the user to review; deploy only on their approval (proof: the user's words)
-Open: preview v41 (https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth) awaits the user's review; deploy on approval
+- [x] A preview is published for the user to review; deploy only on their approval (proof: the user's words)
+Open: none — preview v41 reviewed (user: "Deploy"); deploying
 
 ## Stages
 - [x] 1. Story model and card — tested illustrative model; the resting-frame card replaces the map card; step buttons; both themes and a real phone layout
@@ -23,6 +23,7 @@ Open: preview v41 (https://claude.ai/artifact/BQo8DhTKwyWAasaXHLBoth) awaits the
 - [ ] 3. Preview and ship — clean up the old map-card code and its test, check the Atlas and the rest of the landing still work, preview for review, deploy on approval
 
 ## Decisions
+- 2026-11-09 · Preview v41 reviewed and deploy approved — user: "Deploy".
 - 2026-11-09 · Stage 3 checks 1–2 pass ([evidence](evidence/stage-3/report.md)); the verify's three leftover exports fixed by the PM. Preview v41 published with the full `dist/artifact-files.json` manifest (all 29 paths confirmed present) — PM's call.
 - 2026-11-09 · Stage 2 closed: 6/6 checks pass ([evidence](evidence/stage-2/report.md)); review: 4 fix-now fixed, 3 cheap defers taken (Play counts as in view, `LandingStory` wrapper so the page doesn't re-render per frame, dead `frameCopy` lead/detail dropped), 2 deferred to open questions, 3 rejected — PM's call.
 - 2026-11-09 · Step-press scroll rule: show the chart and the pressed step together when they fit; else the whole step plus at least half the chart (1000px stacked); else (phone) the whole chart, accepting that the pressed step scrolls off screen — they can't share an 844px screen. Focus stays on the step — PM's call.
