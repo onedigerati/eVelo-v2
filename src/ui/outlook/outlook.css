@@ -1222,3 +1222,168 @@
 .verdict__empty-cta {
   margin-top: var(--space-6);
 }
+
+/* ---------- When could you retire? (retire-in comparison) ---------- */
+.rc {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  /* The card grid follows the row's own width (it sits beside the plan rail on desktop), not the viewport. */
+  container: rc / inline-size;
+}
+.rc__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+.rc__title {
+  margin: 0;
+}
+.rc__hint {
+  color: var(--ink-3);
+}
+.rc__grid {
+  display: grid;
+  grid-template-columns: repeat(var(--rc-n, 4), minmax(0, 1fr));
+  gap: var(--space-3);
+}
+/*
+ * Cards stay at least ~168px wide (ring, "Your plan" badge and the labels on one line each).
+ * Five in a row needs 5 x 168 + 4 gaps = 888px; narrower, they go 3 + 2 with the second row
+ * centred (a six-column grid, each card two columns wide). Four in a row needs 708px and three
+ * 528px; narrower, the cards go two to a row.
+ */
+@container rc (max-width: 887.98px) {
+  .rc__grid[data-n='5'] {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+  .rc__grid[data-n='5'] > .rc-card {
+    grid-column: span 2;
+  }
+  .rc__grid[data-n='5'] > .rc-card:nth-child(4) {
+    grid-column: 2 / span 2;
+  }
+}
+@container rc (max-width: 707.98px) {
+  .rc__grid[data-n='4'] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@container rc (max-width: 527.98px) {
+  .rc__grid[data-n] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .rc__grid[data-n] > .rc-card:nth-child(n) {
+    grid-column: auto;
+  }
+}
+.rc-card {
+  font: inherit;
+  color: var(--ink);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  min-width: 0;
+  container: rc-card / inline-size;
+  padding: var(--space-5);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  background: var(--surface-1);
+  cursor: pointer;
+  transition:
+    background var(--dur-2) var(--ease-out),
+    border-color var(--dur-2) var(--ease-out);
+}
+.rc-card:hover {
+  background: var(--surface-hover);
+  border-color: var(--hairline-strong);
+}
+.rc-card:active {
+  background: var(--surface-press);
+}
+.rc-card.is-plan {
+  cursor: default;
+  padding: calc(var(--space-5) - 1px);
+  border: 2px solid var(--accent);
+  background: var(--accent-soft);
+}
+.rc-card__top {
+  display: flex;
+  flex-wrap: wrap; /* last resort: on a card too narrow for both, the badge drops under the ring */
+  align-self: stretch;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+.rc-card__ring {
+  display: block;
+  flex: none;
+}
+/*
+ * Narrow cards (five in a row near the breakpoint, a small phone's 2 x 2): a smaller ring keeps the
+ * badge beside it. Queried on the card's content box (ring 56 + gap 8 + badge ~67 = 131px); the plan
+ * card's 2px border and 1px-less padding give it the same content width as the others.
+ */
+@container rc-card (max-width: 130.98px) {
+  .rc-card__ring {
+    width: 44px;
+    height: 44px;
+  }
+}
+.rc-card__mine {
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-pill);
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.rc-card__label {
+  font-size: var(--fs-sm);
+  color: var(--ink-3);
+  line-height: 1.35;
+}
+.rc-card.is-plan .rc-card__label {
+  color: var(--accent-text);
+  font-weight: 600;
+}
+.rc-card__odds {
+  font-family: var(--font-display);
+  font-size: 40px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.rc-card__odds-skel {
+  display: block;
+  height: 40px;
+}
+.rc-card__spend {
+  font-size: var(--fs-sm);
+  color: var(--ink-2);
+}
+.rc-card__spend b {
+  font-weight: 500;
+  color: var(--ink);
+}
+.rc__note {
+  margin: 0;
+  color: var(--ink-3);
+}
+@media (max-width: 699.98px) {
+  .rc-card {
+    padding: var(--space-4);
+    gap: var(--space-2);
+  }
+  .rc-card.is-plan {
+    padding: calc(var(--space-4) - 1px);
+  }
+  .rc-card__odds {
+    font-size: 34px;
+  }
+}

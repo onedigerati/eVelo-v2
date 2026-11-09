@@ -7,6 +7,7 @@ import type { AtlasEntry, PlanInputs, SimulationResult, SolveResult } from '../e
 import { dismissToast, isToastLive, toast } from '../ui/primitives/Toast'
 import { markEntered, readEntered } from './entered'
 import { clampAfterPatch, clampAfterReplace, clampAfterSet, loanToastRun, type LoanClamp } from './loanClamp'
+import type { CompareEntry } from './retireCompare'
 import { parseHash, resolveRoute, type Route } from './router'
 import { decodeInputs, sanitizeInputs } from './share'
 
@@ -34,6 +35,8 @@ export interface AppState {
   baseline: Baseline | null
   /** True while the safe-spend solver is running for the current inputs. */
   solving: boolean
+  /** "When could you retire?" figures, keyed by each card's inputsKey (the plan with that retire-in). */
+  compare: Record<string, CompareEntry>
 
   setInput: <K extends keyof PlanInputs>(key: K, value: PlanInputs[K]) => void
   patchInputs: (patch: Partial<PlanInputs>) => void
@@ -50,6 +53,7 @@ export interface AppState {
   setStatus: (s: Status, error?: string | null) => void
   setBaseline: (b: Baseline | null) => void
   setSolving: (v: boolean) => void
+  setCompare: (c: Record<string, CompareEntry>) => void
 }
 
 export interface Baseline {
@@ -144,6 +148,7 @@ export const useStore = create<AppState>()((set, get) => ({
   error: null,
   baseline: null,
   solving: false,
+  compare: {},
 
   // The clamp runs outside `set` so its toast is a side effect of the action, not of the updater.
   setInput: (key, value) => {
@@ -175,6 +180,7 @@ export const useStore = create<AppState>()((set, get) => ({
   setStatus: (status, error = null) => set({ status, error }),
   setBaseline: (baseline) => set({ baseline }),
   setSolving: (solving) => set({ solving }),
+  setCompare: (compare) => set({ compare }),
 }))
 
 // Persist inputs + theme (debounced so slider drags don't thrash storage).

@@ -1,0 +1,48 @@
+$ node rerun3.cjs (sections A-E), then FROM_F=1 node rerun3.cjs (F, charts, loan, method; first run stopped at F on a script selector, fixed to "Custom horizon"), then node method.cjs (element shots)  vs :5296
+A defaults verdict {"number":"80%","lede":"Over 30 years, age 55 to 85, living in Bangkok from age 55. In 80 of every 100 simulated markets you never face a forced sale and stay solvent to 85."}
+B retire 4 verdict {"number":"90%","lede":"Over 30 years, age 55 to 85, working in St. Louis until 59, then living in Bangkok. In 90 of every 100 simulated markets you never face a forced sale and stay solvent to 85."}
+C savings 60000 verdict {"number":"92%","lede":"Over 30 years, age 55 to 85, working in St. Louis until 59, then living in Bangkok. In 92 of every 100 simulated markets you never face a forced sale and stay solvent to 85."} field 60,000
+G aria Retire in
+- radiogroup "Retire in at age 59":
+  - radio "Now"
+  - radio "2 years": 2 yrs
+  - radio "4 years" [checked]: 4 yrs
+  - radio "5 years": 5 yrs
+  - radio "Other"
+G aria savings
+- spinbutton "Saving while working": 60,000
+G tab order ["radio 4 years","spinbutton ","radio 30 yrs"]
+Atlas top picks defaults ["Algarve (Faro) 73%","Lisbon 69%","Paphos 73%","Panama City 73%"]
+Atlas top picks retire 4 ["Algarve (Faro) 85%","Lisbon 82%","Paphos 86%","Panama City 87%"]
+Atlas top picks retire 4 + 60K ["Algarve (Faro) 87%","Lisbon 85%","Paphos 87%","Panama City 89%"]
+D/E retire 4 move 8 {"number":"90%","lede":"Over 30 years, age 55 to 85, working until 59, then in St. Louis, moving to Bangkok at 63. In 90 of every 100 simulated markets you never face a forced sale and stay solvent to 85."}
+D/E retire 4 move 2 {"number":"92%","lede":"Over 30 years, age 55 to 85, working in St. Louis until 59, then living in Bangkok. In 92 of every 100 simulated markets you never face a forced sale and stay solvent to 85."}
+F before {"h":40,"r":15} Over 40 years, age 55 to 95, working in St. Louis until 70, then living in Bangkok. In 98 of every 100 simulated markets you never face a forced sale and stay solvent to 95.
+
+locator.focus: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('slider', { name: /Horizon/ })[22m
+
+  name: 'TimeoutError'
+}
+
+Node.js v22.23.2
+--- second run (FROM_F=1)
+F before {"h":40,"r":15} Over 40 years, age 55 to 95, working in St. Louis until 70, then living in Bangkok. In 98 of every 100 simulated markets you never face a forced sale and stay solvent to 95.
+F after Home {"h":10,"r":9} Over 10 years, age 55 to 65, working in St. Louis until 64, then living in Bangkok. In 100 of every 100 simulated markets you never face a forced sale and stay solvent to 65. Other seg Now2 yrs4 yrs5 yrs9 yrs
+chart fan r2 light Working years, age 55 to 57, are shaded; a dashed line marks retirement at 57. ["Retire · move to Bangkok · 57","Working"]
+chart mc r2 light Working years, age 55 to 57, are shaded; a dashed line marks retirement at 57. ["Retire · 57"]
+phone r2 light scrollWidth 390
+chart fan r2 dark Working years, age 55 to 57, are shaded; a dashed line marks retirement at 57. ["Retire · move to Bangkok · 57","Working"]
+chart mc r2 dark Working years, age 55 to 57, are shaded; a dashed line marks retirement at 57. ["Retire · 57"]
+phone r2 dark scrollWidth 390
+chart fan r12 light Working years, age 55 to 67, are shaded, saving $150K a year; a dashed line marks retirement at 67. ["Retire · 67","Working · +$150K/yr"]
+chart mc r12 light Working years, age 55 to 67, are shaded, saving $150K a year; a dashed line marks retirement at 67. ["Retire · 67"]
+phone r12 light scrollWidth 390
+chart fan r12 dark Working years, age 55 to 67, are shaded, saving $150K a year; a dashed line marks retirement at 67. ["Retire · 67","Working · +$150K/yr"]
+chart mc r12 dark Working years, age 55 to 67, are shaded, saving $150K a year; a dashed line marks retirement at 67. ["Retire · 67"]
+phone r12 dark scrollWidth 390
+loan 2.57M r3 {"cls":"hrow__warn existing-loan__warn","text":"Above your margin-call LTV: the lender forces a sale today — about $3.0M sold, $428K in tax — bringing the loan to 45% LTV and leaving about $2.2K of net worth."}
+loan 2.57M r0 {"cls":"hrow__warn existing-loan__warn is-broken","text":"Above your margin-call LTV: the lender forces a sale today — about $3.0M sold, $428K in tax — bringing the loan to 45% LTV and leaving about $2.2K of net worth — less than a year of spending."}
+method paragraph Retiring later. You can retire today (the default) or in up to 15 whole years. Until then each month is a working month: nothing is drawn for spending and other income isn’t counted. Instead your savings while working ($0 a year by default, kept level with inflation) go in. They pay down any loan first and the rest is invested, raising the cost basis. The loan still accrues interest and the lender still checks every month. An opening forced sale still happens today, before any savings arrive. From retirement on, the months run as above, and other income starts then, or at its own start age if that is later. The plan still ends at the same age, so retiring later leaves fewer years of drawing. The safe-spending search scales retirement spending only, never the savings.
+ERRORS []

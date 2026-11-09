@@ -11,6 +11,7 @@ import { ChartFrame } from './ChartFrame'
 import { DockedVerdict } from './DockedVerdict'
 import { FanCard } from './FanCard'
 import { MarginCallChart, marginCallCaption } from './MarginCallChart'
+import { RetireCompare } from './RetireCompare'
 import { VerdictHero } from './VerdictHero'
 import './outlook.css'
 
@@ -69,6 +70,7 @@ function OutlookBody({ onEditPlan }: { onEditPlan?: () => void }) {
             </Button>
           </div>
         )}
+        <RetireCompare />
         <motion.div className="outlook__grid" variants={stagger(0.07, 0.35)} initial="hidden" animate="show">
           <FanCard />
 

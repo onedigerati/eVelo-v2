@@ -1,0 +1,13 @@
+$ node probe.cjs   (DOM probe: the plan card's "Your plan" badge vs its card, five-card row, widths 1024-1920; overflowPx > 0 = badge sticks out past the card border)
+w=1024 retireIn=3 {"cards":5,"cardW":173,"cardRight":598,"badgeRight":578,"overflowPx":-20,"badgeOverlapsRing":false,"label":17.546875}
+w=1024 retireIn=7 {"cards":5,"cardW":173,"cardRight":968,"badgeRight":947,"overflowPx":-20,"badgeOverlapsRing":false,"label":17.546875}
+w=1024 retireIn=10 {"cards":5,"cardW":173,"cardRight":968,"badgeRight":947,"overflowPx":-20,"badgeOverlapsRing":false,"label":17.546875}
+w=1280 retireIn=3 {"cards":5,"cardW":143,"cardRight":937,"badgeRight":946,"overflowPx":10,"badgeOverlapsRing":false,"label":17.546875}
+w=1280 retireIn=7 {"cards":5,"cardW":143,"cardRight":1248,"badgeRight":1257,"overflowPx":10,"badgeOverlapsRing":false,"label":17.546875}
+w=1280 retireIn=10 {"cards":5,"cardW":143,"cardRight":1248,"badgeRight":1257,"overflowPx":10,"badgeOverlapsRing":false,"label":35.09375}
+w=1440 retireIn=3 {"cards":5,"cardW":174,"cardRight":1036,"badgeRight":1015,"overflowPx":-20,"badgeOverlapsRing":false,"label":17.546875}
+w=1440 retireIn=7 {"cards":5,"cardW":174,"cardRight":1408,"badgeRight":1387,"overflowPx":-20,"badgeOverlapsRing":false,"label":17.546875}
+w=1440 retireIn=10 {"cards":5,"cardW":174,"cardRight":1408,"badgeRight":1387,"overflowPx":-20,"badgeOverlapsRing":false,"label":17.546875}
+w=1920 retireIn=3 {"cards":5,"cardW":187,"cardRight":1290,"badgeRight":1269,"overflowPx":-20,"badgeOverlapsRing":false,"label":17.546875}
+w=1920 retireIn=7 {"cards":5,"cardW":187,"cardRight":1688,"badgeRight":1667,"overflowPx":-20,"badgeOverlapsRing":false,"label":17.546875}
+w=1920 retireIn=10 {"cards":5,"cardW":187,"cardRight":1688,"badgeRight":1667,"overflowPx":-20,"badgeOverlapsRing":false,"label":17.546875}

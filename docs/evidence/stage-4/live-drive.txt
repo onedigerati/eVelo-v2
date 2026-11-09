@@ -1,0 +1,75 @@
+$ node verify.cjs   (Playwright vs vite preview :5296, production build of c7229ea + uncommitted stage 4; script in session scratchpad)
+LOADING (first paint) ["Now · age 55 busy=true odds=80% spend=null","In 2 yrs · age 57 busy=true odds=null spend=null","In 4 yrs · age 59 busy=true odds=null spend=null","In 5 yrs · age 60 busy=true odds=null spend=null"]
+light DEFAULT cards [{"name":"Retire now, at age 55 (your plan): 80% of futures hold, safe spending $84K a year","pressed":"true","busy":"false","label":"Now · age 55","odds":"80%","spend":"$84K"},{"name":"Retire in 2 years, at age 57: 85% of futures hold, safe spending $96K a year","pressed":"false","busy":"false","label":"In 2 yrs · age 57","odds":"85%","spend":"$96K"},{"name":"Retire in 4 years, at age 59: 90% of futures hold, safe spending $111K a year","pressed":"false","busy":"false","label":"In 4 yrs · age 59","odds":"90%","spend":"$111K"},{"name":"Retire in 5 years, at age 60: 92% of futures hold, safe spending $120K a year","pressed":"false","busy":"false","label":"In 5 yrs · age 60","odds":"92%","spend":"$120K"}]
+light DEFAULT main {"verdict":"80%","safe":"$83,675","lede":"Over 30 years, age 55 to 85, living in Bangkok from age 55. In 80 of every 100 simulated markets you never face a forced sale and stay solvent to 85.","fan":"Net worth fan chart in today's dollars, age 55 to 85. Median $3.0M today, $12M at 85; middle half $5.3M to $23M; 90% range $0 to $50M.","retireMarker":[]}
+ARIA (defaults)
+- region "When could you retire?":
+  - heading "When could you retire?" [level=2]:
+    - text: When could you
+    - emphasis: retire?
+  - text: Tap one to use it
+  - 'button "Retire now, at age 55 (your plan): 80% of futures hold, safe spending $84K a year" [pressed]': Now · age 55 80% Safe spending $84K
+  - 'button "Retire in 2 years, at age 57: 85% of futures hold, safe spending $96K a year"': In 2 yrs · age 57 85% Safe spending $96K
+  - 'button "Retire in 4 years, at age 59: 90% of futures hold, safe spending $111K a year"': In 4 yrs · age 59 90% Safe spending $111K
+  - 'button "Retire in 5 years, at age 60: 92% of futures hold, safe spending $120K a year"': In 5 yrs · age 60 92% Safe spending $120K
+  - paragraph: Each card reruns your plan with the same portfolio, budget and savings. Only the retirement date changes.
+TAP 4 yrs: card {"label":"In 4 yrs · age 59","odds":"90%","spend":"$111K"} -> main {"verdict":"90%","safe":"$111,208","safeCompact":"$111K"} MATCH true verdict in 258 ms
+  after: lede Over 30 years, age 55 to 85, working in St. Louis until 59, then living in Bangkok. In 90 of every 100 simulated markets you never face a forced sale and stay solvent to 85.
+  retire markers ["Retire · move to Bangkok · 59","Retire · 59"]
+  fan Net worth fan chart in today's dollars, age 55 to 85. Median $3.0M today, $13M at 85; middle half $6.8M to $24M; 90% range $651K to $51M. Working years, age 55 
+  pressed Now · age 55=false, In 2 yrs · age 57=false, In 4 yrs · age 59=true, In 5 yrs · age 60=false
+ARIA (after tap 4)
+- region "When could you retire?":
+  - heading "When could you retire?" [level=2]:
+    - text: When could you
+    - emphasis: retire?
+  - text: Tap one to use it
+  - 'button "Retire now, at age 55: 80% of futures hold, safe spending $84K a year"': Now · age 55 80% Safe spending $84K
+  - 'button "Retire in 2 years, at age 57: 85% of futures hold, safe spending $96K a year"': In 2 yrs · age 57 85% Safe spending $96K
+  - 'button "Retire in 4 years, at age 59 (your plan): 90% of futures hold, safe spending $111K a year" [pressed]': In 4 yrs · age 59 90% Safe spending $111K
+  - 'button "Retire in 5 years, at age 60: 92% of futures hold, safe spending $120K a year"': In 5 yrs · age 60 92% Safe spending $120K
+  - paragraph: Each card reruns your plan with the same portfolio, budget and savings. Only the retirement date changes.
+TAP 2 yrs: card {"label":"In 2 yrs · age 57","odds":"85%","spend":"$96K"} -> main {"verdict":"85%","safe":"$96,337","safeCompact":"$96K"} MATCH true verdict in 228 ms
+  after: lede Over 30 years, age 55 to 85, working in St. Louis until 57, then living in Bangkok. In 85 of every 100 simulated markets you never face a forced sale and stay solvent to 85.
+  retire markers ["Retire · move to Bangkok · 57","Retire · 57"]
+  fan Net worth fan chart in today's dollars, age 55 to 85. Median $3.0M today, $13M at 85; middle half $6.2M to $24M; 90% range $143K to $51M. Working years, age 55 
+  pressed Now · age 55=false, In 2 yrs · age 57=true, In 4 yrs · age 59=false, In 5 yrs · age 60=false
+TAP Now: card {"label":"Now · age 55","odds":"80%","spend":"$84K"} -> main {"verdict":"80%","safe":"$83,675","safeCompact":"$84K"} MATCH true verdict in 239 ms
+  after: lede Over 30 years, age 55 to 85, living in Bangkok from age 55. In 80 of every 100 simulated markets you never face a forced sale and stay solvent to 85.
+  retire markers []
+  fan Net worth fan chart in today's dollars, age 55 to 85. Median $3.0M today, $12M at 85; middle half $5.3M to $23M; 90% range $0 to $50M.
+  pressed Now · age 55=true, In 2 yrs · age 57=false, In 4 yrs · age 59=false, In 5 yrs · age 60=false
+LOADING after horizon 20 ["Now · age 55 busy=true odds=null spend=null","In 2 yrs · age 57 busy=true odds=null spend=null","In 4 yrs · age 59 busy=true odds=null spend=null","In 5 yrs · age 60 busy=true odds=null spend=null"]
+horizon20 cards [{"name":"Retire now, at age 55 (your plan): 88% of futures hold, safe spending $108K a year","pressed":"true","busy":"false","label":"Now · age 55","odds":"88%","spend":"$108K"},{"name":"Retire in 2 years, at age 57: 93% of futures hold, safe spending $128K a year","pressed":"false","busy":"false","label":"In 2 yrs · age 57","odds":"93%","spend":"$128K"},{"name":"Retire in 4 years, at age 59: 96% of futures hold, safe spending $152K a year","pressed":"false","busy":"false","label":"In 4 yrs · age 59","odds":"96%","spend":"$152K"},{"name":"Retire in 5 years, at age 60: 97% of futures hold, safe spending $168K a year","pressed":"false","busy":"false","label":"In 5 yrs · age 60","odds":"97%","spend":"$168K"}]
+horizon20 main {"verdict":"88%","safe":"$107,643","lede":"Over 20 years, age 55 to 75, living in Bangkok from age 55. In 88 of every 100 simulated markets you never face a forced sale and stay solvent to 75.","fan":"Net worth fan chart in today's dollars, age 55 to 75. Median $3.0M today, $7.4M at 75; middle half $4.1M to $12M; 90% range $477K to $22M.","retireMarker":[]}
+TAP 5 yrs @ horizon 20: card {"label":"In 5 yrs · age 60","odds":"97%","spend":"$168K"} -> main {"verdict":"97%","safe":"$167,565","safeCompact":"$168K"} MATCH true verdict in 247 ms
+  after: lede Over 20 years, age 55 to 75, working in St. Louis until 60, then living in Bangkok. In 97 of every 100 simulated markets you never face a forced sale and stay solvent to 75.
+  retire markers ["Retire · move to Bangkok · 60","Retire · 60"]
+  fan Net worth fan chart in today's dollars, age 55 to 75. Median $3.0M today, $8.2M at 75; middle half $4.8M to $13M; 90% range $1.8M to $23M. Working years, age 55
+  pressed Now · age 55=false, In 2 yrs · age 57=false, In 4 yrs · age 59=false, In 5 yrs · age 60=true
+KEYBOARD tab order ["Retire now, at age 55: 88% of futures hold, safe spending $108K a year","rc-card | Retire in 2 years, at age 57: 93% of futures hold, safe spending $128K a year","rc-card | Retire in 4 years, at age 59: 96% of futures hold, safe spending $152K a year","rc-card is-plan | Retire in 5 years, at age 60 (your plan): 97% of futures hold, safe spending $168K a year","seg__opt is-selected | null"]
+after Enter on card 3 Now · age 55=false, In 2 yrs · age 57=false, In 4 yrs · age 59=true, In 5 yrs · age 60=false 96%
+after Space on card 1 Now · age 55=true, In 2 yrs · age 57=false, In 4 yrs · age 59=false, In 5 yrs · age 60=false 88%
+TAPS all match [true,true,true,true]
+dark DEFAULT cards [{"name":"Retire now, at age 55 (your plan): 80% of futures hold, safe spending $84K a year","pressed":"true","busy":"false","label":"Now · age 55","odds":"80%","spend":"$84K"},{"name":"Retire in 2 years, at age 57: 85% of futures hold, safe spending $96K a year","pressed":"false","busy":"false","label":"In 2 yrs · age 57","odds":"85%","spend":"$96K"},{"name":"Retire in 4 years, at age 59: 90% of futures hold, safe spending $111K a year","pressed":"false","busy":"false","label":"In 4 yrs · age 59","odds":"90%","spend":"$111K"},{"name":"Retire in 5 years, at age 60: 92% of futures hold, safe spending $120K a year","pressed":"false","busy":"false","label":"In 5 yrs · age 60","odds":"92%","spend":"$120K"}]
+dark DEFAULT main {"verdict":"80%","safe":"$83,675","lede":"Over 30 years, age 55 to 85, living in Bangkok from age 55. In 80 of every 100 simulated markets you never face a forced sale and stay solvent to 85.","fan":"Net worth fan chart in today's dollars, age 55 to 85. Median $3.0M today, $12M at 85; middle half $5.3M to $23M; 90% range $0 to $50M.","retireMarker":[]}
+phone light card rects [[16,227,173,186],[201,227,173,186],[16,425,173,186],[201,425,173,186]] scrollWidth 390
+phone dark card rects [[16,227,173,186],[201,227,173,186],[16,425,173,186],[201,425,173,186]] scrollWidth 390
+FIVE r7 cards [{"name":"Retire now, at age 55: 80% of futures hold, safe spending $84K a year","pressed":"false","busy":"false","label":"Now · age 55","odds":"80%","spend":"$84K"},{"name":"Retire in 2 years, at age 57: 86% of futures hold, safe spending $100K a year","pressed":"false","busy":"false","label":"In 2 yrs · age 57","odds":"86%","spend":"$100K"},{"name":"Retire in 4 years, at age 59: 92% of futures hold, safe spending $117K a year","pressed":"false","busy":"false","label":"In 4 yrs · age 59","odds":"92%","spend":"$117K"},{"name":"Retire in 5 years, at age 60: 93% of futures hold, safe spending $128K a year","pressed":"false","busy":"false","label":"In 5 yrs · age 60","odds":"93%","spend":"$128K"},{"name":"Retire in 7 years, at age 62 (your plan): 96% of futures hold, safe spending $153K a year","pressed":"true","busy":"false","label":"In 7 yrs · age 62","odds":"96%","spend":"$153K"}]
+FIVE r7 main {"verdict":"96%","safe":"$153,043","safeCompact":"$153K"}
+FIVE r7 plan card matches main true
+TAP 5 yrs from plan 7: card {"label":"In 5 yrs · age 60","odds":"93%","spend":"$128K"} -> main {"verdict":"93%","safe":"$128,013","safeCompact":"$128K"} MATCH true verdict in 265 ms
+  after: lede Over 30 years, age 55 to 85, working in St. Louis until 60, then living in Bangkok. In 93 of every 100 simulated markets you never face a forced sale and stay solvent to 85.
+  retire markers ["Retire · move to Bangkok · 60","Retire · 60"]
+  fan Net worth fan chart in today's dollars, age 55 to 85. Median $3.0M today, $15M at 85; middle half $7.9M to $27M; 90% range $1.5M to $56M. Working years, age 55 
+  pressed Now · age 55=false, In 2 yrs · age 57=false, In 4 yrs · age 59=false, In 5 yrs · age 60=true
+cards after leaving 7 ["Now · age 55","In 2 yrs · age 57","In 4 yrs · age 59","In 5 yrs · age 60"]
+phone r7 light scrollWidth 390
+phone r7 dark scrollWidth 390
+FIVE r10 cards [{"name":"Retire now, at age 55: 80% of futures hold, safe spending $84K a year","pressed":"false","busy":"false","label":"Now · age 55","odds":"80%","spend":"$84K"},{"name":"Retire in 2 years, at age 57: 86% of futures hold, safe spending $100K a year","pressed":"false","busy":"false","label":"In 2 yrs · age 57","odds":"86%","spend":"$100K"},{"name":"Retire in 4 years, at age 59: 92% of futures hold, safe spending $117K a year","pressed":"false","busy":"false","label":"In 4 yrs · age 59","odds":"92%","spend":"$117K"},{"name":"Retire in 5 years, at age 60: 93% of futures hold, safe spending $128K a year","pressed":"false","busy":"false","label":"In 5 yrs · age 60","odds":"93%","spend":"$128K"},{"name":"Retire in 10 years, at age 65 (your plan): 99% of futures hold, safe spending $196K a year","pressed":"true","busy":"false","label":"In 10 yrs · age 65","odds":"99%","spend":"$196K"}]
+FIVE r10 main {"verdict":"99%","safe":"$196,213","safeCompact":"$196K"}
+FIVE r10 plan card matches main true
+phone r10 light scrollWidth 390
+phone r10 dark scrollWidth 390
+horizon 4 cards ["Now · age 55 98% $183K","In 2 yrs · age 57 99% $241K","In 4 yrs · age 59 100% $339K","In 5 yrs · age 60 100% $422K"]
+ERRORS []

@@ -1,16 +1,19 @@
 // Simulation client: one Web Worker, request ids, debounced input sync, stale-response dropping.
 //
-// On every inputs change (debounced): simulate → (destination set) home-baseline simulate → solve.
+// On every inputs change (debounced): simulate → (destination set) home-baseline simulate → solve,
+// then the "When could you retire?" comparison: the same plan at each compared retire-in, through the
+// same simulate/solve caches, so a card's figures are the main runs' results for that date.
 // Lower-priority work never blocks a fresh simulate: if the worker is still busy with anything
 // from an older generation when new inputs arrive, it is terminated and respawned.
 
 import { useEffect, useMemo, useState } from 'react'
 import type { AtlasEntry, PlanInputs, SimulationResult, SolveResult, WorkerRequest, WorkerResponse } from '../engine/types'
+import { compareYears, withRetireIn, type CompareEntry } from './retireCompare'
 import { useStore } from './store'
 
 export const DEBOUNCE_MS = 180
 export const SOLVE_TARGET = 0.9
-const CACHE_MAX = 24
+const CACHE_MAX = 32
 
 type Kind = WorkerRequest['kind']
 type ResultOf<K extends Kind> = K extends 'simulate' ? SimulationResult : K extends 'solve' ? SolveResult : AtlasEntry[]
@@ -62,6 +65,7 @@ class SimClient {
   private gen = 0
   private simCache = new Lru<SimulationResult>()
   private solveCache = new Lru<SolveResult>()
+  private compareFailed = new Set<string>()
   private timer: ReturnType<typeof setTimeout> | undefined
 
   private spawn(): Worker {
@@ -119,8 +123,27 @@ class SimClient {
     return r
   }
 
+  /** Cached safe-spending solve for these exact inputs, if one ran. */
+  peekSolve(inputs: PlanInputs, target = SOLVE_TARGET): SolveResult | undefined {
+    return this.solveCache.get(solveKey(inputs, target))
+  }
+
+  /** The comparison cards' figures for these plans, from whatever the caches hold now. */
+  compareEntries(plans: PlanInputs[]): Record<string, CompareEntry> {
+    const out: Record<string, CompareEntry> = {}
+    for (const p of plans) {
+      const k = inputsKey(p)
+      out[k] = {
+        successRate: this.peek(p)?.successRate ?? null,
+        maxSpend: this.peekSolve(p)?.maxSpendHome ?? null,
+        ...(this.compareFailed.has(k) && { failed: true }),
+      }
+    }
+    return out
+  }
+
   async solve(inputs: PlanInputs, target = SOLVE_TARGET): Promise<SolveResult> {
-    const k = `${target}|${inputsKey(inputs)}`
+    const k = solveKey(inputs, target)
     const hit = this.solveCache.get(k)
     if (hit) return hit
     const r = await this.request({ kind: 'solve', inputs, target })
@@ -141,7 +164,11 @@ class SimClient {
     const st = useStore.getState()
     const inputs = st.inputs
     const live = () => gen === this.gen
+    // The plan at each compared retire-in (the plan's own date is `inputs` itself).
+    const plans = compareYears(inputs).map((y) => withRetireIn(inputs, y))
+    const publish = () => live() && st.setCompare(this.compareEntries(plans))
     if (!hasHoldings(inputs)) {
+      st.setCompare({})
       // Nothing to simulate: the UI shows an "add a holding" prompt instead of a verdict.
       st.setResult(null)
       st.setBaseline(null)
@@ -152,11 +179,13 @@ class SimClient {
     }
     st.setStatus('running')
     st.setSolving(true)
+    publish()
     try {
       const result = await this.simulate(inputs)
       if (!live()) return
       st.setResult(result)
       st.setStatus('idle')
+      publish()
 
       if (inputs.destCityId) {
         const home = await this.simulate(homeVariant(inputs))
@@ -170,13 +199,55 @@ class SimClient {
       if (!live()) return
       st.setSolve(solve)
       st.setSolving(false)
+      publish()
+
+      await this.runCompare(inputs, plans, live, publish)
     } catch (e) {
       if (e instanceof Cancelled || !live()) return
       st.setStatus('error', e instanceof Error ? e.message : String(e))
       st.setSolving(false)
     }
   }
+
+  /**
+   * After the main runs: each compared plan's simulate (odds first, so every card's number lands
+   * soon), then each solve, then (with a destination) each stay-home baseline, so tapping a card
+   * finds all three of the main pipeline's runs cached. Lowest priority: new inputs cancel it.
+   */
+  private async runCompare(inputs: PlanInputs, plans: PlanInputs[], live: () => boolean, publish: () => void) {
+    try {
+      for (const p of plans) {
+        if (this.peek(p)) continue
+        await this.simulate(p)
+        if (!live()) return
+        publish()
+      }
+      for (const p of plans) {
+        if (this.peekSolve(p)) continue
+        await this.solve(p)
+        if (!live()) return
+        publish()
+      }
+      if (inputs.destCityId) {
+        for (const p of plans) {
+          await this.simulate(homeVariant(p))
+          if (!live()) return
+        }
+      }
+    } catch (e) {
+      if (e instanceof Cancelled || !live()) return
+      // The main verdict stands; only the cards still computing say they couldn't.
+      for (const p of plans) {
+        const k = inputsKey(p)
+        if (!this.peek(p) || !this.peekSolve(p)) this.compareFailed.add(k)
+      }
+      publish()
+      for (const p of plans) this.compareFailed.delete(inputsKey(p))
+    }
+  }
 }
+
+const solveKey = (inputs: PlanInputs, target: number) => `${target}|${inputsKey(inputs)}`
 
 export const sim = new SimClient()
 

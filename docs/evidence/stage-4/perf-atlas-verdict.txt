@@ -1,0 +1,35 @@
+$ node perf.cjs 5   (fresh browser context per run, builds alternated; :5296 = this stage, :5297 = c7229ea worktree build; A = Horizon 20 yrs click -> verdict number changes on #plan; B = Horizon 20 yrs click, then #atlas -> "Ranked"; C = Retire in 4 years click, then #atlas -> "Ranked"; ms; 12-core machine)
+A 5296 {"before":"80%","ms":323,"v":"88%"}
+B 5296 {"ms":2074,"top":"83%"}
+C 5296 {"ms":3225,"top":"85%"}
+A 5297 {"before":"80%","ms":340,"v":"88%"}
+B 5297 {"ms":2057,"top":"83%"}
+C 5297 {"ms":3235,"top":"85%"}
+A 5297 {"before":"80%","ms":336,"v":"88%"}
+B 5297 {"ms":2115,"top":"83%"}
+C 5297 {"ms":6208,"top":"85%"}
+A 5296 {"before":"80%","ms":323,"v":"88%"}
+B 5296 {"ms":2099,"top":"83%"}
+C 5296 {"ms":3130,"top":"85%"}
+A 5296 {"before":"80%","ms":304,"v":"88%"}
+B 5296 {"ms":2099,"top":"83%"}
+C 5296 {"ms":6674,"top":"85%"}
+A 5297 {"before":"80%","ms":331,"v":"88%"}
+B 5297 {"ms":2049,"top":"83%"}
+C 5297 {"ms":3182,"top":"85%"}
+A 5297 {"before":"80%","ms":338,"v":"88%"}
+B 5297 {"ms":2074,"top":"83%"}
+C 5297 {"ms":3099,"top":"85%"}
+A 5296 {"before":"80%","ms":303,"v":"88%"}
+B 5296 {"ms":2065,"top":"83%"}
+C 5296 {"ms":3177,"top":"85%"}
+A 5296 {"before":"80%","ms":312,"v":"88%"}
+B 5296 {"ms":2107,"top":"83%"}
+C 5296 {"ms":3185,"top":"85%"}
+A 5297 {"before":"80%","ms":315,"v":"88%"}
+B 5297 {"ms":5697,"top":"83%"}
+C 5297 {"ms":3129,"top":"85%"}
+A median stage4 312 baseline 336 all {"5296":[323,323,304,303,312],"5297":[340,336,331,338,315]}
+B median stage4 2099 baseline 2074 all {"5296":[2074,2099,2099,2065,2107],"5297":[2057,2115,2049,2074,5697]}
+C median stage4 3185 baseline 3182 all {"5296":[3225,3130,6674,3177,3185],"5297":[3235,6208,3182,3099,3129]}
+errors []

@@ -20,7 +20,7 @@ vi.mock('../store', () => {
       return state.inputs
     },
     ...Object.fromEntries(
-      ['setResult', 'setBaseline', 'setSolve', 'setSolving', 'setStatus', 'setAtlas', 'setAtlasRunning'].map((n) => [n, setter(n)]),
+      ['setResult', 'setBaseline', 'setSolve', 'setSolving', 'setStatus', 'setCompare', 'setAtlas', 'setAtlasRunning'].map((n) => [n, setter(n)]),
     ),
   }
   return { useStore: Object.assign(() => undefined, { getState: () => st, subscribe: () => () => {} }) }
@@ -133,7 +133,8 @@ describe('stay-home baseline', () => {
       sim.schedule(true)
       await vi.waitFor(() => expect(state.set.setSolving).toBe(false))
       state.set.setSolving = undefined
-      const sims = posted.slice(before).filter((r) => r.kind === 'simulate')
+      // The main pipeline's two runs come first (the retire-in comparison follows them).
+      const sims = posted.slice(before).filter((r) => r.kind === 'simulate').slice(0, 2)
       expect(sims.map((r) => r.inputs.destCityId)).toEqual(['lisbon', null])
       expect(sims[1].inputs).toMatchObject({ retireInYears, savingsWhileWorking })
       expect(state.baseline).toEqual({
