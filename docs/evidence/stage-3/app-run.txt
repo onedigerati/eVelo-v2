@@ -1,0 +1,44 @@
+$ node app.mjs (Playwright 1.57 Chromium, vite preview of npm run build at http://localhost:4350/; console errors and warnings, page errors, failed requests and HTTP >= 400 collected for every page)
+
+===== 1280x900
+OK   landing: the card is playing ("Pause the four beats", caption "Buy, and hold.")
+landing links: eVelo -> #home | How it works -> #how | Atlas -> #atlas | Method -> #method | Open the planner -> #plan | Stress-test my plan -> #plan | Explore the Atlas -> #atlas
+OK   landing: no sideways scroll (1280/1280)
+theme control (Dark / Light / System): ["system","rgb(245, 242, 234)"] -> dark ["dark","rgb(10, 13, 12)"] -> light ["light","rgb(245, 242, 234)"] -> system ["system","rgb(245, 242, 234)"]
+OK   landing: the theme control switches dark and light
+OK   "How it works": hash stays #home, scrolled to 298 of max 298 (steps top 612px), focus on #how
+OK   "Explore the Atlas" -> #atlas
+"Stress-test my plan" -> #plan
+"Open the planner" -> #plan
+atlas: {"svgs":298,"rows":135,"mapPaths":266,"sw":1280}
+OK   atlas: map drawn (266 SVG paths) and list rows (135)
+OK   atlas: "Open the St. Louis profile" opens a profile ( St. Louis)
+OK   plan: {"h":"#plan","svgs":49,"inputs":31,"text":"THE PLAN Your terms 01 Portfolio Portfolio value $ Taxable brokerage assets you","sw":1280}
+OK   outlook: {"h":"#outlook","svgs":49,"inputs":31,"text":"THE PLAN Your terms 01 Portfolio Portfolio value $ Taxable brokerage assets you","sw":1280}
+OK   method: {"h1":"How the futures are made","svgs":8,"sw":1280}
+OK   console errors/warnings, page errors, failed requests at 1280: none
+
+===== 390x844
+OK   landing: the card is playing ("Pause the four beats", caption "Buy, and hold.")
+landing links: eVelo -> #home | How it works -> #how | Atlas -> #atlas | Method -> #method | Open the planner -> #plan | Stress-test my plan -> #plan | Explore the Atlas -> #atlas
+OK   landing: no sideways scroll (390/390)
+theme cycle button: ["system","rgb(245, 242, 234)"] -> ["light","rgb(245, 242, 234)"] -> ["dark","rgb(10, 13, 12)"] -> ["system","rgb(245, 242, 234)"]
+OK   landing: the theme button cycles light, dark and back to system
+"How it works" not visible at this width
+OK   "Explore the Atlas" -> #atlas
+"Stress-test my plan" -> #plan
+"Open the planner" -> #plan
+atlas: {"svgs":299,"rows":135,"mapPaths":270,"sw":390}
+OK   atlas: map drawn (270 SVG paths) and list rows (135)
+OK   atlas: "Open the St. Louis profile" opens a profile ( St. Louis)
+OK   plan: {"h":"#plan","svgs":47,"inputs":31,"text":"Holds in 80% 80% of futures THE PLAN Your terms 01 Portfolio Portfolio value $ ","sw":390}
+OK   outlook: {"h":"#outlook","svgs":14,"inputs":0,"text":"THE VERDICT · 30 YEARS, AGE 55 → 85 Your plan holds in 80 80% % of futures. Ove","sw":390}
+OK   method: {"h1":"How the futures are made","svgs":10,"sw":390}
+OK   console errors/warnings, page errors, failed requests at 390: none
+
+0 failures
+
+$ node map.mjs (the Atlas world map itself: .wmap__svg size, city dots and labels, then screenshots of the map and the list)
+1280 {"w":1102,"h":513,"dots":137,"labels":4,"canvas":true} errors []
+390 {"w":340,"h":227,"dots":136,"labels":4,"canvas":true} errors []
+(Note: the "SVG paths" count in the atlas lines above is every path on the page, including icons; the map's own measure is this one.)

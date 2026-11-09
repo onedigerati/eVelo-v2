@@ -1,9 +1,11 @@
 import { describe, expect, it } from 'vitest'
 import { CITY_BY_ID } from '../../../data/cities'
 import { categoryRatios } from '../../../engine/cost'
-import { CITIES as MAP_CITIES, bandFor } from '../atlasCard'
 import {
   BASIS,
+  bandFor,
+  DEST_ODDS,
+  HOME_ODDS,
   BEATS,
   COPY,
   DEST,
@@ -97,15 +99,20 @@ describe('landing story: spending', () => {
 })
 
 describe('landing story: odds', () => {
-  it("reads Bangkok's 93% from today's landing map", () => {
+  it("keeps Bangkok at the map's 93% (band 4)", () => {
+    expect(DEST_ODDS).toBe(93)
     expect(DEST.odds).toBe(93)
-    expect(DEST.odds).toBe(MAP_CITIES.find((c) => c.name === 'Bangkok')!.pct)
   })
 
   it("gives St. Louis the map's home-city figure at the same $80K (63%), lower band than Bangkok", () => {
+    expect(HOME_ODDS).toBe(63)
     expect(HOME.odds).toBe(63)
     expect(bandFor(HOME.odds)).toBe(2)
     expect(bandFor(DEST.odds)).toBe(4)
+  })
+
+  it('classifies on the 80 / 65 / 45 / 35 thresholds', () => {
+    expect([100, 80, 79, 65, 64, 45, 44, 35, 34, 0].map(bandFor)).toEqual([4, 4, 3, 3, 2, 2, 1, 1, 0, 0])
   })
 })
 

@@ -1,6 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { bandFor } from '../atlasCard'
-import { BEATS, COPY, DEST, HOME, YEARS } from '../story'
+import { bandFor, BEATS, COPY, DEST, HOME, YEARS } from '../story'
 import { chartGeometry, frameCopy, frameGeometry, NARROW, REST_FRAME, sliceLabelLines, staticGeometry, VMAX, WIDE } from '../storyLayout'
 import { BEAT_IDS, beatFinish, beatIndex, beatStart, frameAt, TOTAL } from '../storyTimeline'
 

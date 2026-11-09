@@ -22,7 +22,7 @@ const IN_VIEW = 0.35
 /** Longest step per animation frame, so a stalled tab doesn't skip a beat. */
 const MAX_DT = 0.05
 
-export interface StoryPlayback {
+interface StoryPlayback {
   frame: StoryFrame
   beat: BeatId
   playing: boolean

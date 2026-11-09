@@ -5,15 +5,14 @@
 
 import { scaleLinear } from 'd3-scale'
 import { line } from 'd3-shape'
-import { bandFor, type Band } from './atlasCard'
-import { COPY, DEST, HOME, MARGIN_LTV, YEARS, type StoryCity } from './story'
+import { bandFor, COPY, DEST, HOME, MARGIN_LTV, YEARS, type Band, type StoryCity } from './story'
 import { beatIndex, COIN_YEARS, easeOut, REST_FRAME, type StoryFrame } from './storyTimeline'
 
 export { REST_FRAME, type StoryFrame } from './storyTimeline'
 
 /* ---------- Layouts ---------- */
 
-export interface Pt {
+interface Pt {
   x: number
   y: number
 }
@@ -97,7 +96,7 @@ export const NARROW: StoryLayout = {
 /** Value axis top: the highest y tick ($20M). */
 export const VMAX = Math.max(...COPY.axis.yTicks.map((t) => t.value))
 
-export interface Rect {
+interface Rect {
   x: number
   y: number
   width: number
@@ -105,7 +104,7 @@ export interface Rect {
 }
 
 /** The parts that never move: computed once per layout. */
-export interface StaticGeometry {
+interface StaticGeometry {
   barX: number[]
   barWidth: number
   ghost: string
@@ -122,7 +121,7 @@ export interface StaticGeometry {
 }
 
 /** The parts that move: computed per frame. */
-export interface FrameGeometry {
+interface FrameGeometry {
   bars: { k: number; paid: Rect; gains: Rect }[]
   loan: string
   loanArea: string
@@ -137,7 +136,7 @@ export interface FrameGeometry {
   sliceLabel: Pt[]
 }
 
-export type ChartGeometry = StaticGeometry & FrameGeometry
+type ChartGeometry = StaticGeometry & FrameGeometry
 
 const rect = (x: number, y0: number, width: number, y1: number): Rect => ({ x, y: y0, width, height: Math.max(0, y1 - y0) })
 
@@ -152,7 +151,7 @@ const path = line<[number, number]>()
 const d = (pts: [number, number][]) => path(pts) ?? ''
 
 /** A point on the flight arc (a quadratic Bézier from home to destination) at parameter a. */
-export function arcPoint(L: StoryLayout, a: number): Pt {
+function arcPoint(L: StoryLayout, a: number): Pt {
   const { home, dest, arcLift } = L.map
   const c = { x: (home.x + dest.x) / 2, y: Math.min(home.y, dest.y) - arcLift }
   const u = 1 - a
@@ -203,7 +202,7 @@ export function staticGeometry(L: StoryLayout): StaticGeometry {
 }
 
 /** The loan at year k, blending home and destination by `move` (the line bends flatter as you move). */
-export const loanAt = (k: number, move: number) => HOME.series.loan[k] * (1 - move) + DEST.series.loan[k] * move
+const loanAt = (k: number, move: number) => HOME.series.loan[k] * (1 - move) + DEST.series.loan[k] * move
 
 /** The animated parts at a frame. */
 export function frameGeometry(L: StoryLayout, f: StoryFrame = REST_FRAME): FrameGeometry {
@@ -261,7 +260,7 @@ export function chartGeometry(L: StoryLayout, f: StoryFrame = REST_FRAME): Chart
 }
 
 /** A faint dot texture for the map strip: two rough land masses around the two pins. */
-export function mapDots(L: StoryLayout): Pt[] {
+function mapDots(L: StoryLayout): Pt[] {
   const { x, y, w, h, home, dest } = L.map
   const step = L.id === 'wide' ? 16 : 12
   const out: Pt[] = []
@@ -285,7 +284,7 @@ export function frameCopy(f: StoryFrame): {
   /** The odds shown: always one endpoint city's own figure, never a blend. */
   odds: number
   oddsCity: StoryCity
-  /** atlasCard's outcome band for the odds (the badge's colour). */
+  /** The story's outcome band for the odds (the badge's colour). */
   oddsBand: Band
   gains: string
   loan: string

@@ -1,0 +1,29 @@
+$ git show e4d579e:src/ui/landing/atlasCard.ts | grep -n (bandFor, Bangkok, Austin, HOME)  vs  grep -n in src/ui/landing/story.ts
+--- before (e4d579e:src/ui/landing/atlasCard.ts)
+18:export type Band = 0 | 1 | 2 | 3 | 4
+19:export function bandFor(pct: number): Band {
+20:  return pct >= 80 ? 4 : pct >= 65 ? 3 : pct >= 45 ? 2 : pct >= 35 ? 1 : 0
+28:  ['Bangkok', 13.75, 100.5, 93], ['Chiang Mai', 18.8, 99.0, 95], ['Kuala Lumpur', 3.1, 101.7, 92], ['Bali', -8.65, 115.2, 91],
+32:  ['New York', 40.7, -74.0, 38], ['Austin', 30.3, -97.7, 63], ['San Francisco', 37.8, -122.4, 30], ['Miami', 25.8, -80.2, 55],
+37:export const HOME = 'Austin'
+--- e4d579e:src/ui/landing/story.ts (how the figures were read)
+51:const mapPct = (name: string) => {
+58:export const DEST_ODDS = mapPct('Bangkok')
+63:export const HOME_ODDS = mapPct(MAP_HOME)
+144:export const HOME: StoryCity = storyCity(HOME_ID, HOME_SPEND, HOME_ODDS)
+145:export const DEST: StoryCity = storyCity(DEST_ID, DEST_SPEND, DEST_ODDS)
+--- now (src/ui/landing/story.ts)
+51:export type Band = 0 | 1 | 2 | 3 | 4
+52:export function bandFor(pct: number): Band {
+53:  return pct >= 80 ? 4 : pct >= 65 ? 3 : pct >= 45 ? 2 : pct >= 35 ? 1 : 0
+60:export const DEST_ODDS = 93
+65:export const HOME_ODDS = 63
+--- tests asserting them (src/ui/landing/__tests__/story.test.ts)
+6:  bandFor,
+7:  DEST_ODDS,
+8:  HOME_ODDS,
+103:    expect(DEST_ODDS).toBe(93)
+108:    expect(HOME_ODDS).toBe(63)
+110:    expect(bandFor(HOME.odds)).toBe(2)
+111:    expect(bandFor(DEST.odds)).toBe(4)
+115:    expect([100, 80, 79, 65, 64, 45, 44, 35, 34, 0].map(bandFor)).toEqual([4, 4, 3, 3, 2, 2, 1, 1, 0, 0])

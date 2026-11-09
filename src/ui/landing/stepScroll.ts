@@ -2,12 +2,12 @@
 // positions are in document coordinates (rect.top + scrollY), so a scroll already in flight (the
 // page scrolls smoothly; a Tab moves focus and scrolls too) doesn't change the answer.
 
-export interface Span {
+interface Span {
   top: number
   bottom: number
 }
 
-export interface StepScrollInput {
+interface StepScrollInput {
   /** Current scroll position (may be mid-flight). */
   scrollY: number
   /** Viewport height. */
@@ -21,7 +21,7 @@ export interface StepScrollInput {
   margin?: number
 }
 
-export interface StepScrollTarget {
+interface StepScrollTarget {
   /** Scroll position to go to (equal to scrollY when nothing needs to move). */
   top: number
   /** Whether the pressed step is at least partly on screen there. */
@@ -31,7 +31,7 @@ export interface StepScrollTarget {
 const clamp = (v: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, v))
 
 /** Least share of the chart that must show beside the pressed step when the whole chart can't. */
-export const CHART_MIN_SHARE = 0.5
+const CHART_MIN_SHARE = 0.5
 
 /**
  * The smallest scroll from where the page is that shows:

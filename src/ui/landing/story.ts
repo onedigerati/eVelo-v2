@@ -9,22 +9,21 @@
 import { CITY_BY_ID } from '../../data/cities'
 import { categoryRatios } from '../../engine/cost'
 import { currencyCompact } from '../format'
-import { CITIES as MAP_CITIES, HOME as MAP_HOME } from './atlasCard'
 
 /* ---------- Assumptions (the brief) ---------- */
 
-export const START_AGE = 60
+const START_AGE = 60
 export const YEARS = 30
-export const END_AGE = START_AGE + YEARS
+const END_AGE = START_AGE + YEARS
 export const PORTFOLIO = 2_500_000
 export const BASIS = 1_000_000
-export const GROWTH = 0.07
-export const LOAN_RATE = 0.06
-export const INFLATION = 0.03
+const GROWTH = 0.07
+const LOAN_RATE = 0.06
+const INFLATION = 0.03
 /** The lender calls when the loan exceeds this share of the portfolio. */
 export const MARGIN_LTV = 0.5
-export const HOME_ID = 'st-louis'
-export const DEST_ID = 'bangkok'
+const HOME_ID = 'st-louis'
+const DEST_ID = 'bangkok'
 /** St. Louis spending, today's USD a year. */
 export const HOME_SPEND = 80_000
 
@@ -46,25 +45,28 @@ export function destinationSpend(homeSpend: number, homeId = HOME_ID, destId = D
 /** Bangkok spending, today's USD a year (~$47K). */
 export const DEST_SPEND = destinationSpend(HOME_SPEND)
 
-/* ---------- Odds (illustrative, as on the landing map) ---------- */
+/* ---------- Odds (illustrative) ---------- */
 
-const mapPct = (name: string) => {
-  const c = MAP_CITIES.find((m) => m.name === name)
-  if (!c) throw new Error(`story: ${name} is not on the landing map`)
-  return c.pct
+/** Outcome band for a success percentage: 0 breaks … 4 holds (thresholds 80 / 65 / 45 / 35). */
+export type Band = 0 | 1 | 2 | 3 | 4
+export function bandFor(pct: number): Band {
+  return pct >= 80 ? 4 : pct >= 65 ? 3 : pct >= 45 ? 2 : pct >= 35 ? 1 : 0
 }
 
-/** Bangkok's illustrative odds, read from today's landing map (93%). */
-export const DEST_ODDS = mapPct('Bangkok')
 /**
- * St. Louis isn't on the map. Its figure is the map's home city at the same $80K a year (Austin,
+ * Bangkok's illustrative odds, as on the landing's former map card (93%, band 4). The figures
+ * are illustrative, not engine output; the map card itself was retired in favour of this story.
+ */
+export const DEST_ODDS = 93
+/**
+ * St. Louis wasn't on that map. Its figure is the map's home city at the same $80K a year (Austin,
  * 63%, band 2 on the 80 / 65 / 45 / 35 bands): same spending, same illustrative plan.
  */
-export const HOME_ODDS = mapPct(MAP_HOME)
+export const HOME_ODDS = 63
 
 /* ---------- Series ---------- */
 
-export interface CitySeries {
+interface CitySeries {
   /** Ages START_AGE..END_AGE, one per year (31 entries). */
   age: number[]
   portfolio: number[]
@@ -80,7 +82,7 @@ export interface CitySeries {
 }
 
 /** The portfolio at year t: $2.5M growing 7% a year. */
-export const portfolioAt = (t: number) => PORTFOLIO * Math.pow(1 + GROWTH, t)
+const portfolioAt = (t: number) => PORTFOLIO * Math.pow(1 + GROWTH, t)
 
 /**
  * Loan by year: loan[0] = 0, loan[t+1] = (loan[t] + spend·1.03^t)·1.06. Each year's spending is
@@ -92,7 +94,7 @@ export function loanSeries(spend: number, years = YEARS): number[] {
   return out
 }
 
-export function citySeries(spend: number): CitySeries {
+function citySeries(spend: number): CitySeries {
   const age: number[] = []
   const portfolio: number[] = []
   for (let t = 0; t <= YEARS; t++) {
@@ -153,7 +155,7 @@ export function money(v: number): string {
 export const pct = (n: number) => `${Math.round(n)}%`
 
 export type BeatId = 'buy' | 'borrow' | 'live' | 'die'
-export interface Beat {
+interface Beat {
   id: BeatId
   /** Step number as shown, "01".."04". */
   n: string

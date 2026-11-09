@@ -1,0 +1,116 @@
+$ node leftovers.mjs (scripts/leftovers.mjs: name search; landing exports matched against import statements naming the module; CSS class and token uses)
+== 1. Old map-card names in src/, scripts/ and index.html
+  atlasCard        none
+  MAP_VIEWBOX      none
+  projectX         none
+  projectY         none
+  MAP_LABELS       none
+  PHONE_LABEL      none
+  MERIDIANS        none
+  PARALLELS        none
+  HIGHLIGHT        none
+  LISBON           none
+  AUSTIN           none
+  MapCity          none
+  MapLabel         none
+  FAN_W            none
+  FAN_H            none
+  fanMedian        none
+  fanQuantile      none
+  fanLoan          none
+  fanMargin        none
+  fanLine          none
+  fanBand          none
+  landing__card    none
+  landing__map     none
+  landing__fan     none
+  landing__city    none
+  landing__pin     none
+  landing__label   none
+  landing__odds    none
+  landing__legend  none
+  landing__meridian none
+  landing__grat    none
+  mapCard          none
+  MapCard          none
+  AtlasCard        none
+
+== 2. Exports in src/ui/landing (non-test files) and where else they are used
+  src/ui/landing/LandingStory.tsx: LandingStory -> used by LandingView.tsx
+  src/ui/landing/LandingView.tsx: LandingView -> used by AppShell.tsx
+  src/ui/landing/StepButtons.tsx: StepButtons -> used by LandingStory.tsx
+  src/ui/landing/StoryCard.tsx: StoryCard -> used by LandingStory.tsx
+  src/ui/landing/stepScroll.ts: stepScrollTarget -> used by LandingStory.tsx
+  src/ui/landing/story.ts: YEARS -> used by storyLayout.ts, storyTimeline.ts
+  src/ui/landing/story.ts: PORTFOLIO -> TEST ONLY (story.test.ts)
+  src/ui/landing/story.ts: BASIS -> TEST ONLY (story.test.ts)
+  src/ui/landing/story.ts: MARGIN_LTV -> used by storyLayout.ts
+  src/ui/landing/story.ts: HOME_SPEND -> TEST ONLY (story.test.ts)
+  src/ui/landing/story.ts: destinationSpend -> TEST ONLY (story.test.ts)
+  src/ui/landing/story.ts: DEST_SPEND -> TEST ONLY (story.test.ts)
+  src/ui/landing/story.ts: Band -> used by storyLayout.ts
+  src/ui/landing/story.ts: bandFor -> used by storyLayout.ts
+  src/ui/landing/story.ts: DEST_ODDS -> TEST ONLY (story.test.ts)
+  src/ui/landing/story.ts: HOME_ODDS -> TEST ONLY (story.test.ts)
+  src/ui/landing/story.ts: loanSeries -> TEST ONLY (story.test.ts)
+  src/ui/landing/story.ts: StoryCity -> used by StoryCard.tsx, storyLayout.ts
+  src/ui/landing/story.ts: HOME -> used by StoryCard.tsx, storyLayout.ts
+  src/ui/landing/story.ts: DEST -> used by StoryCard.tsx, storyLayout.ts
+  src/ui/landing/story.ts: money -> TEST ONLY (story.test.ts)
+  src/ui/landing/story.ts: pct -> used by StoryCard.tsx
+  src/ui/landing/story.ts: BeatId -> used by LandingStory.tsx, StepButtons.tsx, storyTimeline.ts, useStoryPlayback.ts
+  src/ui/landing/story.ts: BEATS -> used by StepButtons.tsx, StoryCard.tsx, storyTimeline.ts
+  src/ui/landing/story.ts: COPY -> used by LandingStory.tsx, StoryCard.tsx, storyLayout.ts, useStoryPlayback.ts
+  src/ui/landing/storyLayout.ts: StoryLayout -> used by StoryCard.tsx
+  src/ui/landing/storyLayout.ts: WIDE -> used by StoryCard.tsx
+  src/ui/landing/storyLayout.ts: NARROW -> used by StoryCard.tsx
+  src/ui/landing/storyLayout.ts: VMAX -> TEST ONLY (storyLayout.test.ts)
+  src/ui/landing/storyLayout.ts: staticGeometry -> used by StoryCard.tsx
+  src/ui/landing/storyLayout.ts: frameGeometry -> used by StoryCard.tsx
+  src/ui/landing/storyLayout.ts: chartGeometry -> TEST ONLY (storyLayout.test.ts)
+  src/ui/landing/storyLayout.ts: sliceLabelLines -> used by StoryCard.tsx
+  src/ui/landing/storyLayout.ts: frameCopy -> used by StoryCard.tsx
+  src/ui/landing/storyTimeline.ts: BEAT_DURATION -> TEST ONLY (storyTimeline.test.ts)
+  src/ui/landing/storyTimeline.ts: TOTAL -> TEST ONLY (storyLayout.test.ts, storyTimeline.test.ts)
+  src/ui/landing/storyTimeline.ts: END_HOLD -> TEST ONLY (storyTimeline.test.ts)
+  src/ui/landing/storyTimeline.ts: BEAT_IDS -> TEST ONLY (storyLayout.test.ts, storyTimeline.test.ts)
+  src/ui/landing/storyTimeline.ts: beatIndex -> used by storyLayout.ts, useStoryPlayback.ts
+  src/ui/landing/storyTimeline.ts: beatStart -> TEST ONLY (storyLayout.test.ts, storyTimeline.test.ts)
+  src/ui/landing/storyTimeline.ts: beatFinish -> TEST ONLY (storyLayout.test.ts, storyTimeline.test.ts)
+  src/ui/landing/storyTimeline.ts: beatAt -> used by useStoryPlayback.ts
+  src/ui/landing/storyTimeline.ts: easeOut -> used by storyLayout.ts
+  src/ui/landing/storyTimeline.ts: COIN_YEARS -> used by storyLayout.ts
+  src/ui/landing/storyTimeline.ts: GROW_END -> TEST ONLY (storyTimeline.test.ts)
+  src/ui/landing/storyTimeline.ts: StoryFrame -> used by storyLayout.ts, useStoryPlayback.ts
+  src/ui/landing/storyTimeline.ts: frameAt -> used by useStoryPlayback.ts
+  src/ui/landing/storyTimeline.ts: REST_FRAME -> used by storyLayout.ts
+  src/ui/landing/storyTimeline.ts: Playback -> used by useStoryPlayback.ts
+  src/ui/landing/storyTimeline.ts: AT_REST -> used by useStoryPlayback.ts
+  src/ui/landing/storyTimeline.ts: autoplay -> used by useStoryPlayback.ts
+  src/ui/landing/storyTimeline.ts: play -> used by useStoryPlayback.ts
+  src/ui/landing/storyTimeline.ts: pause -> used by useStoryPlayback.ts
+  src/ui/landing/storyTimeline.ts: replay -> used by useStoryPlayback.ts
+  src/ui/landing/storyTimeline.ts: jump -> used by useStoryPlayback.ts
+  src/ui/landing/storyTimeline.ts: setReduced -> used by useStoryPlayback.ts
+  src/ui/landing/storyTimeline.ts: tick -> used by useStoryPlayback.ts
+  src/ui/landing/useStoryPlayback.ts: useStoryPlayback -> used by LandingStory.tsx
+  -> 58 exports: 0 unused anywhere, 18 used only by tests
+
+== 3. Class selectors in landing.css and storyCard.css not referenced from any .tsx/.ts
+  landing.css: 25 classes; not found literally: none; dead: none
+  storyCard.css: 65 classes; not found literally: story__svg--narrow (built from `story__svg--${…}`); dead: none
+
+== 4. Custom properties defined in landing.css / storyCard.css and their uses across src/
+  landing.css: --lp-card used 4x
+  landing.css: --lp-card-line used 2x
+  landing.css: --lp-card-shadow used 1x
+  landing.css: --lp-halo used 5x
+  landing.css: --lp-pad used 2x
+  storyCard.css: defines no custom properties
+
+== 5. var(--x) used in landing.css / storyCard.css but defined nowhere in src/
+  landing.css: 30 tokens used; undefined: none
+  storyCard.css: 36 tokens used; undefined: none
+
+== 6. git grep -n atlasCard (whole tree, excluding docs/)
+  none

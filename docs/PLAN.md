@@ -12,8 +12,8 @@ Risk: UI only (removes dead landing code; deploy is outward-facing and waits for
 Mode: autopilot
 Agents: wide — confirmed 2026-11-08 22:19
 Checks:
-- [ ] The old map-card code is gone: `atlasCard.ts` and its test are removed, with the two figures `story.ts` reads from it (Bangkok's map odds and the home-city odds, and `bandFor`) moved into the landing story model unchanged and still tested; no unused landing exports, CSS or tokens remain (proof: test, plus a search for leftovers)
-- [ ] The rest of the app still works: the Atlas (map, list, city profiles), the Plan and Outlook, Method and the landing's links and theme toggle load with no console errors, at 1280 and 390 (proof: run the product, screenshots)
+- [x] The old map-card code is gone: `atlasCard.ts` and its test are removed, with the two figures `story.ts` reads from it (Bangkok's map odds and the home-city odds, and `bandFor`) moved into the landing story model unchanged and still tested; no unused landing exports, CSS or tokens remain (proof: test, plus a search for leftovers)
+- [x] The rest of the app still works: the Atlas (map, list, city profiles), the Plan and Outlook, Method and the landing's links and theme toggle load with no console errors, at 1280 and 390 (proof: run the product, screenshots)
 - [ ] A preview is published for the user to review; deploy only on their approval (proof: the user's words)
 Open: none
 

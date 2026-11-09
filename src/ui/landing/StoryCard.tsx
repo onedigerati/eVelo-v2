@@ -23,7 +23,7 @@ const fade = (v: number) => ({ opacity: op(v), visibility: v <= 0 ? ('hidden' as
 /** The same for HTML (the key): keeps its place in the layout but leaves the accessibility tree at 0. */
 const fadeStyle = (v: number): CSSProperties => ({ opacity: clamp(v), visibility: v <= 0 ? 'hidden' : undefined })
 
-export interface StoryCardProps {
+interface StoryCardProps {
   frame?: StoryFrame
   playing?: boolean
   /** Text for the card's aria-live region. */

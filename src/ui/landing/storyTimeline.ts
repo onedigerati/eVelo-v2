@@ -14,7 +14,7 @@ export const TOTAL = BEATS.length * BEAT_DURATION
 /** Seconds the finished frame holds before the second pass starts. */
 export const END_HOLD = 3.5
 /** Passes autoplay makes before it rests on the finished frame. */
-export const PASSES = 2
+const PASSES = 2
 
 /** The beat ids in order (Buy, Borrow, Live anywhere, Die): the one beat id type, shared by frames and step buttons. */
 export const BEAT_IDS: readonly BeatId[] = BEATS.map((b) => b.id)
@@ -45,9 +45,9 @@ const clampT = (t: number) => (t < 0 ? 0 : t > TOTAL ? TOTAL : Number.isFinite(t
 
 /* ---------- Easing (the mockup's) ---------- */
 
-export const clamp01 = (v: number) => (v < 0 ? 0 : v > 1 ? 1 : v)
+const clamp01 = (v: number) => (v < 0 ? 0 : v > 1 ? 1 : v)
 /** Cubic ease in-out. */
-export const ease = (v: number) => {
+const ease = (v: number) => {
   v = clamp01(v)
   return v < 0.5 ? 4 * v * v * v : 1 - Math.pow(-2 * v + 2, 3) / 2
 }
