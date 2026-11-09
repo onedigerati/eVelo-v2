@@ -1,9 +1,11 @@
-import { memo, type MouseEvent } from 'react'
+import { memo, useState, type MouseEvent } from 'react'
 import { hrefFor } from '../../state/router'
 import type { Breakpoint } from '../hooks'
 import { ThemeCycleButton, ThemeToggle } from '../shell/ThemeToggle'
 import { Wordmark } from '../shell/TopBar'
 import { AUSTIN, CITIES, FAN, FAN_H, FAN_W, LISBON, MAP_LABELS, MAP_VIEWBOX, MERIDIANS, PARALLELS, PHONE_LABELS, type MapLabel } from './atlasCard'
+import { StepButtons } from './StepButtons'
+import { COPY, type BeatId } from './story'
 import './landing.css'
 
 const STEPS_ID = 'how'
@@ -28,6 +30,8 @@ function scrollToSteps(e: MouseEvent<HTMLAnchorElement>) {
  * (landing.css), so the site theme and the landing's toggle restyle it live.
  */
 export function LandingView({ bp }: { bp: Breakpoint }) {
+  // The beat the story card shows; rests on 'die' (the finished frame). Stage 2 drives it from the timeline.
+  const [beat, setBeat] = useState<BeatId>('die')
   return (
     <div className={`landing landing--${bp}`}>
       <div className="landing__frame">
@@ -76,32 +80,11 @@ export function LandingView({ bp }: { bp: Breakpoint }) {
             <AtlasCard />
           </section>
 
-          <section id={STEPS_ID} tabIndex={-1} className="landing__steps" aria-label="How it works">
-            <Step n="01" title="Buy">
-              Hold assets that grow. Never sell them, so the gains are never taxed.
-            </Step>
-            <Step n="02" title="Borrow">
-              Live on a line of credit secured by the portfolio. The loan grows; so, usually, do the shares.
-            </Step>
-            <Step n="03" title="Live anywhere">
-              Spend the loan where life costs less. A smaller loan gives the portfolio an easier race to win.
-            </Step>
-            <Step n="04" title="Die">
-              Heirs inherit at a stepped-up basis. The estate repays the loan and keeps the rest.
-            </Step>
+          <section id={STEPS_ID} tabIndex={-1} className="landing__steps" aria-label={COPY.stepsLabel}>
+            <StepButtons active={beat} onSelect={setBeat} />
           </section>
         </main>
       </div>
-    </div>
-  )
-}
-
-function Step({ n, title, children }: { n: string; title: string; children: string }) {
-  return (
-    <div className="landing__step">
-      <span className="landing__step-n">{n}</span>
-      <h2 className="landing__step-title">{title}</h2>
-      <p className="landing__step-body">{children}</p>
     </div>
   )
 }

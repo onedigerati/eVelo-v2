@@ -400,17 +400,73 @@
 
 /* ---------- Steps ---------- */
 .landing__steps {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 24px;
   padding: 32px 0 80px;
   border-top: 1px solid var(--hairline);
   scroll-margin-top: 24px;
 }
-.landing__step {
+/* The buttons are inset by their padding; the negative margin keeps the text on the page's edge. */
+.landing__steps-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0 -14px;
+  padding: 0;
+  list-style: none;
+}
+.landing__step-item {
   display: flex;
+  min-width: 0;
+}
+.landing__step {
+  position: relative;
+  display: flex;
+  flex: 1;
   flex-direction: column;
   gap: 8px;
+  min-width: 0;
+  margin: 0;
+  padding: 16px 14px 18px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    background-color var(--dur-2) var(--ease-out),
+    border-color var(--dur-2) var(--ease-out);
+}
+/* The beat on show: a filled card with a "holds" bar along its top edge. */
+.landing__step::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 14px;
+  right: 14px;
+  height: 2px;
+  border-radius: var(--radius-pill);
+  background: var(--holds);
+  opacity: 0;
+  transition: opacity var(--dur-2) var(--ease-out);
+}
+.landing__step:hover {
+  background: var(--surface-hover);
+}
+.landing__step:active {
+  background: var(--surface-press);
+}
+.landing__step[aria-current='step'] {
+  background: var(--surface-2);
+  border-color: var(--hairline);
+}
+.landing__step[aria-current='step']::before {
+  opacity: 1;
+}
+.landing__step:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
 }
 .landing__step-n {
   font-family: var(--font-mono);
@@ -444,9 +500,9 @@
     gap: 40px;
     padding: 40px 0 56px;
   }
-  .landing__steps {
+  .landing__steps-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 32px 24px;
+    gap: 12px 10px;
   }
 }
 
@@ -489,7 +545,10 @@
     grid-template-columns: minmax(0, 1fr);
   }
   .landing__steps {
-    gap: 28px;
     padding-bottom: 56px;
+  }
+  .landing__steps-list {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
   }
 }
