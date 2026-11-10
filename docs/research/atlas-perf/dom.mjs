@@ -1,0 +1,12 @@
+import { chromium } from '/home/jonah/.npm/_npx/e41f203b7505f1fb/node_modules/playwright-core/index.mjs'
+const browser = await chromium.launch({ executablePath: '/home/jonah/.cache/ms-playwright/chromium_headless_shell-1248/chrome-headless-shell-linux-arm64/chrome-headless-shell' })
+const page = await (await browser.newContext({ viewport: { width: 1440, height: 900 } })).newPage()
+await page.goto('http://localhost:4317/#atlas'); await page.waitForSelector('.pick__open'); await page.waitForTimeout(3500)
+console.log('page nodes before', await page.evaluate(() => document.querySelectorAll('*').length))
+console.log('map svg nodes', await page.evaluate(() => [...document.querySelectorAll('svg')].map(s=>s.querySelectorAll('*').length).sort((a,b)=>b-a).slice(0,3)))
+await page.locator('.pick__open').first().click(); await page.waitForTimeout(1500)
+console.log('dialog nodes', await page.evaluate(() => document.querySelector('[role=dialog]').querySelectorAll('*').length))
+console.log('dialog height', await page.evaluate(() => document.querySelector('.sheet__body')?.scrollHeight))
+console.log('tile rendered px', await page.evaluate(() => [...document.querySelectorAll('.pgal__tile img')].map(i => `${i.clientWidth}x${i.clientHeight} of ${i.naturalWidth}`)))
+console.log('backdrop-filter', await page.evaluate(() => [...document.querySelectorAll('*')].filter(e => { const s = getComputedStyle(e); return s.backdropFilter !== 'none' || s.filter.includes('blur') }).map(e => e.className.toString().slice(0,40))))
+await browser.close()

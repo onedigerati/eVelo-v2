@@ -1,27 +1,44 @@
-# Dark by default plan
+# Atlas speed plan
 
 ## Goal
-The site opens in dark mode. Visitors with nothing saved start in Dark, and visitors whose saved theme is System are switched to Dark once; anyone who picked Light keeps it, and anyone who picks System after the switch keeps that. The toggle keeps its three options (System, Light, Dark). There's no flash of the light theme before the app loads. Done = the stage passes verification in the running app and the work is deployed on approval.
+The Atlas feels fast. City odds show up in well under half the time they take today: the ranking is split across several workers, the last ranking is saved in the browser so a return visit shows it at once, and the ranking starts at idle before the user opens the Atlas. Profiles download a fraction of today's photo bytes: a 640px copy of every photo for the small tiles and the phone cover, picked by `srcset`/`sizes`, and the photos start loading when the user hovers, focuses or presses a profile button. Done = both stages pass verification against the running build, with before/after numbers from the same measurement script; deploy waits for the user's go.
 
 ## Baseline
-2026-11-09 · tests: 659 pass (44 files) · typecheck: clean
+2026-11-09 · tests: 688 pass (45 files) · typecheck: clean · build: ok (AtlasView chunk 1,194 KB / 339 KB gz, worker 615 KB)
+Perf (local `vite preview`, headless Chromium, [raw](research/atlas-perf/baseline.txt); scripts in [research/atlas-perf/](research/atlas-perf/) (`node docs/research/atlas-perf/measure.mjs http://localhost:<port>/` against `vite preview`)): Atlas odds (profile buttons) ~3.0 s after `#atlas` on a 12-core desktop; ranking worker posts at ~530 ms and answers ~2.45 s later. A profile downloads 700–910 KB of photos (five 1280px WebPs) into tiles drawn at 501×372 and 251×183; on 10 Mbps + 4× CPU the lead photo lands 500–700 ms after the dialog.
 
 ## Now
-All stages done
-Agents: wide — confirmed 2026-11-09 20:40
+Stage 1 of 2 · Parallel Atlas
+Mode: autopilot
+Agents: wide — confirmed 2026-11-09 23:33
+Risk: personal data (plan inputs are part of the saved-ranking key in browser storage; parsing what's stored)
+Checks:
+- [ ] A ranking split across N workers returns exactly the entries (order, rates, spend) a single run returns, for the default plan, a plan with an existing loan and a retire-later plan (proof: test)
+- [ ] A fresh `#atlas` load on the desktop profile shows the odds in ≤ 1.5 s, median of 3, against ~3.0 s at baseline (proof: run the measure script, a test can't time a real browser)
+- [ ] The saved ranking is keyed by the plan inputs and the data version: a reload with the same plan shows the odds without running the ranking, and a changed plan, a changed data version or a corrupt stored value never shows a saved ranking (proof: test, plus a run for the reload)
+- [ ] With the app open on the landing for 5 s, going to `#atlas` shows the odds at once, with no running state (proof: run, it spans page navigation in a real browser)
+- [ ] The engine's Atlas time budget test still passes (proof: test)
+Open: none
 
 ## Stages
-- [x] 1. Dark by default — Dark as the starting theme, one-time switch of saved System, matching pre-paint script
+- [ ] 1. Parallel Atlas — rank across several workers, save the last ranking, start at idle
+- [ ] 2. Lighter photos — 640px copies with srcset/sizes, preload on hover/focus/press
+
+Stage 2 checks (moved into `## Now` when it starts):
+- Every listed photo has a 640px copy beside it, and the photo coverage test fails when one is missing (proof: test)
+- Opening a profile on the desktop profile downloads ≤ 400 KB of photos, against 700–910 KB at baseline (proof: run the measure script)
+- Hovering a profile button 300 ms before the click, the lead photo is ready within 150 ms of the dialog on the 10 Mbps + 4× CPU profile (proof: run)
+- The full-size viewer still shows the 1280px originals (proof: run, naturalWidth in a real browser)
+- The preview build's photo asset map includes the 640px copies (proof: test)
 
 ## Decisions
-- 2026-11-09 · Deployed: run 42753362297 succeeded (9m15s, the Pages deploy step was slow); the live site serves the same bundle as the local build and opens dark ([evidence](evidence/stage-1/deploy-live.txt)).
-- 2026-11-09 · Deploy when the stage passes, no preview — user: "Go ahead and deploy when ready."
-- 2026-11-09 · Stage 1 closed: 3/3 checks pass ([evidence](evidence/stage-1/report.md)), verified by a fresh agent briefed to return its report for the main session to save. Tests also run the real `index.html` pre-paint script against the same cases, so the two rules can't drift. No `keel:review`: UI only, a theme default with tests — PM's call.
-- 2026-11-09 · Dark is the default theme — user: "Let's now have the site default to dark mode."
-- 2026-11-09 · Visitors saved on System are switched to Dark once; Light is kept — user picked "Everyone on System".
-- 2026-11-09 · The toggle keeps System, Light and Dark — user picked "Keep System".
-- 2026-11-09 · The switch is marked by a `themeV: 2` field in the saved `evelo:v2` object: a saved System without it reads as Dark, with it as System. The pre-paint script in `index.html` applies the same rule — PM's call.
-- 2026-11-09 · Scale check didn't fire (1 stage, one release) — PM's call.
+- 2026-11-09 · Do findings 1 and 2 of the Atlas perf measurement only (parallel/saved/idle ranking; 640px photos + preload); profile code splitting and the blur/DOM experiment wait — user: "Proceed with 1 and 2 only, on autopilot and go wide."
+- 2026-11-09 · Agents: wide — user: "go wide".
+- 2026-11-09 · One extra photo size (640px, +~36 MB in the repo), not a full ladder: tiles draw at 251–501 CSS px, so 640 covers 1× lead and 2× small tiles; 1280 stays for the lead at 2× and the viewer — PM's call.
+- 2026-11-09 · The 640px copies are made offline from the stored 1280px WebPs (no network, no re-download from Commons) — PM's call.
+- 2026-11-09 · Worker count is min(cores − 1, 4), at least 1; every shard builds the same common random scenarios, so results match a single run exactly — PM's call.
+- 2026-11-09 · Deploy waits for the user's go after both stages pass — PM's call (no deploy instruction for this plan).
+- 2026-11-09 · Scale check didn't fire (2 stages, one release) — PM's call.
 
 ## Open questions
 - On a phone, keyboard users swing ~684px per step press (Tab scrolls down to the next step, Enter brings the chart back): tier 3 by design — from the stage 2 verify, later if wanted.
@@ -47,6 +64,7 @@ Agents: wide — confirmed 2026-11-09 20:40
 - Region chip rows (list and map) use `role="toolbar"` without arrow-key navigation; fix both or drop the role. The list chips also read region from context while the list reads it as a prop (consistent today) — later.
 
 ## Standing decisions
+## Standing decisions
 - Standing decisions from earlier plans are in [decisions.md](decisions.md).
 
 ## Shipped
@@ -66,3 +84,4 @@ Agents: wide — confirmed 2026-11-09 20:40
 - 2026-11-09 · Retire later: a "Retire in" setting and "Saving while working" amount across the engine and app, shaded working years and a Retire line on the charts, and a "When could you retire?" comparison, live on GitHub Pages — [plan](plans/2026-11-09-retire-later.md) · [evidence](plans/2026-11-09-retire-later/evidence/)
 - 2026-11-09 · Landing hero: the four-beat story card (Buy, Borrow, Live anywhere, Die; St. Louis to Bangkok) with play/pause, step sync and reduced motion, replacing the map card, live on GitHub Pages — [plan](plans/2026-11-09-landing-hero.md) · [evidence](plans/2026-11-09-landing-hero/evidence/)
 - 2026-11-09 · Landing default: the plain URL shows the landing on every visit, the first-visit flag removed, live on GitHub Pages — [plan](plans/2026-11-09-landing-default.md) · [evidence](plans/2026-11-09-landing-default/evidence/)
+- 2026-11-09 · Dark by default: the site opens in dark mode, saved System switched to Dark once, no light flash, live on GitHub Pages — [plan](plans/2026-11-09-dark-by-default.md) · [evidence](plans/2026-11-09-dark-by-default/evidence/)
