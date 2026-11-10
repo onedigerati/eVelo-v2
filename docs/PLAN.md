@@ -7,25 +7,28 @@ The three tiles at the top of the Atlas (Best odds, Your home, Your destination)
 2026-11-10 · tests: 744 pass (51 files) · typecheck: clean
 
 ## Now
-Stage 1 of 1 · Clickable tiles
-Mode: autopilot
+All stages done
 Agents: wide — confirmed 2026-11-10 08:19
 Risk: UI only
 Checks:
-- [ ] Clicking anywhere on the Best odds, Your home or Your destination tile (name, number, note) opens that city's profile; a tile whose city has no profile, the empty destination tile and the loading tile don't (proof: test)
-- [ ] "Make destination" on Best odds makes it the destination without opening the profile (proof: test)
-- [ ] Each clickable tile is one keyboard stop with an accessible name naming the city and "open profile", with a visible focus ring on the tile (proof: test)
-- [ ] In the running app, hovering a tile lifts it and deepens its shadow like a top-pick card, and the cursor is a pointer across the tile, in dark and light, phone and desktop (proof: screenshot, a test can't judge the look)
+- [x] Clicking anywhere on the Best odds, Your home or Your destination tile (name, number, note) opens that city's profile; a tile whose city has no profile, the empty destination tile and the loading tile don't (proof: test)
+- [x] "Make destination" on Best odds makes it the destination without opening the profile (proof: test)
+- [x] Each clickable tile is one keyboard stop with an accessible name naming the city and "open profile", with a visible focus ring on the tile (proof: test)
+- [x] In the running app, hovering a tile lifts it and deepens its shadow like a top-pick card, and the cursor is a pointer across the tile, in dark and light, phone and desktop (proof: screenshot, a test can't judge the look)
 Open: none
 
 ## Stages
-- [ ] 1. Clickable tiles — whole-tile click and pick-card hover on the three atlas tiles
+- [x] 1. Clickable tiles — whole-tile click and pick-card hover on the three atlas tiles
 
 ## Decisions
 - 2026-11-10 · A tile is clickable only when its city has a profile (option 1) — user: "Go with option 1".
 - 2026-11-10 · Your home opens its profile like the other tiles, without "Make destination" — user's request.
 - 2026-11-10 · Agents: wide; run on autopilot — user: "Let's go autopilot and let's go wide."
 - 2026-11-10 · Scale check didn't fire (1 stage, one release) — PM's call.
+- 2026-11-10 · Correction: every city has a profile (St. Louis included), so in practice all three tiles are clickable; the no-profile path stays, tested — PM's call.
+- 2026-11-10 · The tile's city name is the one stretched button; "Profile →" is decoration, as on pick cards; `Tile` moved to `AtlasTile.tsx` to test it — builder's approach, PM's call.
+- 2026-11-10 · Stage 1 closed: 4/4 checks pass ([evidence](evidence/stage-1/report.md)), verified by a fresh agent on the production build; risk line UI only confirmed against the diff; no `keel:review` (UI only, with tests) — PM's call.
+- 2026-11-10 · All stages done; deploy waits for the user's go — PM's call.
 
 ## Open questions
 - The profile's tinted % marker overhangs the spending list's right edge by 4px (cosmetic, not clipped) — from the stage 1 verify, later.

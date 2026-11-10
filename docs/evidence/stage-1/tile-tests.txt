@@ -1,0 +1,17 @@
+$ npx vitest run src/ui/atlas/__tests__/atlasTile.test.ts --reporter=verbose
+npm notice run evelo@2.0.0 npx
+npm notice run 'vitest' run src/ui/atlas/__tests__/atlasTile.test.ts --reporter=verbose
+
+ RUN  v5.1.0 /home/jonah/repos/eVelo-v2
+
+ ✓ src/ui/atlas/__tests__/atlasTile.test.ts > Tile > a profiled tile renders exactly one button, the stretched open button, which opens the profile 23ms
+ ✓ src/ui/atlas/__tests__/atlasTile.test.ts > Tile > names the city and "open profile" in the accessible name, and hides the "Profile →" decoration 2ms
+ ✓ src/ui/atlas/__tests__/atlasTile.test.ts > Tile > a tile without a profile, the empty destination and the loading tile render no open button and no link styling 2ms
+ ✓ src/ui/atlas/__tests__/atlasTile.test.ts > Tile > "Make destination" is its own button above the overlay: it chooses, it does not open 1ms
+ ✓ src/ui/atlas/__tests__/atlasTile.test.ts > Tile > the open button stretches over the whole tile, with Make destination stacked above it (atlas.css) 1ms
+
+ Test Files  1 passed (1)
+      Tests  5 passed (5)
+   Start at  08:22:49
+   Duration  5.05s (transform 88%, import 11%, tests 1%)
+

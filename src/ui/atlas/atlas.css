@@ -117,6 +117,22 @@
     inset 0 1px 0 0 var(--highlight),
     var(--shadow-1);
   overflow: hidden;
+  transition:
+    border-color var(--dur-2),
+    box-shadow var(--dur-3) var(--ease-out),
+    translate var(--dur-3) var(--ease-out);
+}
+/* A profiled tile opens the profile from anywhere on it, like a top-pick card. */
+.atile--link:hover {
+  border-color: var(--hairline-strong);
+  box-shadow:
+    inset 0 1px 0 0 var(--highlight),
+    var(--shadow-2);
+  translate: 0 -2px;
+}
+.atile--link:has(.atile__open:focus-visible) {
+  border-color: var(--focus);
+  box-shadow: var(--focus-ring);
 }
 .atile::after {
   content: '';
@@ -144,15 +160,37 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.atile__profile {
+.atile__open {
+  text-align: left;
+}
+/* The stretched overlay: the whole tile is the button's hit area. */
+.atile__open::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+.atile__open:focus-visible {
+  outline: none;
+}
+/* The tile's own action stays clickable above the overlay. */
+.atile__action {
   position: relative;
-  z-index: 1;
+  z-index: 3;
+}
+.atile__go {
   margin-left: auto;
   flex: none;
   font-size: var(--fs-sm);
-  font-weight: 500;
+  font-weight: 560;
+  color: var(--accent-text);
+  white-space: nowrap;
+  transition: translate var(--dur-2) var(--ease-out);
 }
-.atile__profile--foot {
+.atile--link:hover .atile__go {
+  translate: 3px 0;
+}
+.atile__go--foot {
   display: none;
   margin-left: 0;
 }
@@ -1314,10 +1352,10 @@
   .atile:first-child {
     grid-column: 1 / -1;
   }
-  .atile:not(:first-child) .atile__profile--head {
+  .atile:not(:first-child) .atile__go--head {
     display: none;
   }
-  .atile:not(:first-child) .atile__profile--foot {
+  .atile:not(:first-child) .atile__go--foot {
     display: inline-block;
   }
   .atile {
@@ -2200,7 +2238,8 @@
   .picks--scroll .pick {
     scroll-snap-align: start;
   }
-  .pick:hover {
+  .pick:hover,
+  .atile--link:hover {
     translate: none;
   }
   .also__list {
