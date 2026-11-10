@@ -1,0 +1,3 @@
+Run 42751960076: success (https://github.com/onedigerati/eVelo-v2/actions/runs/42751960076), commit 60f8192
+Live https://onedigerati.github.io/eVelo-v2/ serves assets/index-jC8qsOwX.js, the same hash as the local build of 60f8192
+grep -c 'evelo:v2:entered' on the live bundle: 0

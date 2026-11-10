@@ -7,13 +7,14 @@ Every visitor who opens the site's plain URL sees the landing page, every visit,
 2026-11-09 · tests: 664 pass (45 files) · typecheck: clean
 
 ## Now
-All stages done · deploying
+All stages done
 Agents: wide — confirmed 2026-11-09 20:40
 
 ## Stages
 - [x] 1. Landing by default — plain URL always shows the landing; drop the entered flag and its tests
 
 ## Decisions
+- 2026-11-09 · Deployed: run 42751960076 succeeded; the live site serves the same bundle as the local build and no longer carries the entered flag ([evidence](evidence/stage-1/deploy-live.txt)).
 - 2026-11-09 · Deploy without a preview — user: "go ahead and deploy".
 - 2026-11-09 · Stage 1 closed: 4/4 checks pass ([evidence](evidence/stage-1/report.md)), verified by a fresh agent; its report write was blocked for subagents, so the main session saved it — user: "Yes, please save the agent's report". No `keel:review`: UI only, routing change of a few lines with tests — PM's call.
 - 2026-11-09 · The landing is the default page: the plain URL shows it on every visit, replacing the first-visit-only rule — user: "Let's make the landing page the default page."
