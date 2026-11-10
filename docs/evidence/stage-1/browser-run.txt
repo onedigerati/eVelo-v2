@@ -1,0 +1,105 @@
+$ node verify.cjs http://localhost:4793/  (Playwright 1.65 driving Chromium 1248, against 'npx vite preview --port 4793 --strictPort' of the npm run build output)
+
+== Fresh context, light OS, landing (http://localhost:4793/)
+  first paint {"when":"body-inserted","theme":"dark","htmlBg":"rgba(0, 0, 0, 0)","bodyBg":"rgba(0, 0, 0, 0)","rootChildren":0,"metas":["#0A0D0C","#0A0D0C"]}
+  first paint {"when":"first-frame","theme":"dark","htmlBg":"rgba(0, 0, 0, 0)","bodyBg":"rgb(10, 13, 12)","rootChildren":0,"metas":["#0A0D0C","#0A0D0C"]}
+  first paint {"when":"DOMContentLoaded","theme":"dark","htmlBg":"rgba(0, 0, 0, 0)","bodyBg":"rgb(10, 13, 12)","rootChildren":0,"metas":["#0A0D0C","#0A0D0C"]}
+PASS landing first-frame theme: got "dark" want "dark"
+PASS landing DOMContentLoaded theme: got "dark" want "dark"
+PASS landing first-frame body bg is dark (rgb(10, 13, 12)): got true want true
+  settled {"theme":"dark","bodyBg":"rgb(10, 13, 12)","metas":["#0A0D0C","#0A0D0C"],"saved":null,"toggle":["System theme=false","Light theme=false","Dark theme=true"],"cycle":[]}
+PASS landing settled theme: got "dark" want "dark"
+PASS landing settled bg dark: got true want true
+PASS landing theme-color metas: got "#0A0D0C,#0A0D0C" want "#0A0D0C,#0A0D0C"
+PASS landing toggle shows Dark: got true want true
+
+== Fresh context, light OS, plan (http://localhost:4793/#plan)
+  first paint {"when":"body-inserted","theme":"dark","htmlBg":"rgba(0, 0, 0, 0)","bodyBg":"rgba(0, 0, 0, 0)","rootChildren":0,"metas":["#0A0D0C","#0A0D0C"]}
+  first paint {"when":"first-frame","theme":"dark","htmlBg":"rgba(0, 0, 0, 0)","bodyBg":"rgb(10, 13, 12)","rootChildren":0,"metas":["#0A0D0C","#0A0D0C"]}
+  first paint {"when":"DOMContentLoaded","theme":"dark","htmlBg":"rgba(0, 0, 0, 0)","bodyBg":"rgb(10, 13, 12)","rootChildren":0,"metas":["#0A0D0C","#0A0D0C"]}
+PASS plan first-frame theme: got "dark" want "dark"
+PASS plan DOMContentLoaded theme: got "dark" want "dark"
+PASS plan first-frame body bg is dark (rgb(10, 13, 12)): got true want true
+  settled {"theme":"dark","bodyBg":"rgb(10, 13, 12)","metas":["#0A0D0C","#0A0D0C"],"saved":null,"toggle":["System theme=false","Light theme=false","Dark theme=true"],"cycle":[]}
+PASS plan settled theme: got "dark" want "dark"
+PASS plan settled bg dark: got true want true
+PASS plan theme-color metas: got "#0A0D0C,#0A0D0C" want "#0A0D0C,#0A0D0C"
+PASS plan toggle shows Dark: got true want true
+
+== App JS blocked (pre-paint only), light OS, saved=null
+   {"theme":"dark","htmlBg":"rgba(0, 0, 0, 0)","bodyBg":"rgb(10, 13, 12)","root":0,"metas":["#0A0D0C","#0A0D0C"]}
+PASS prepaint fresh app not mounted: got 0 want 0
+PASS prepaint fresh theme: got "dark" want "dark"
+PASS prepaint fresh bg dark?: got true want true
+
+== App JS blocked (pre-paint only), light OS, saved={"theme":"system"}
+   {"theme":"dark","htmlBg":"rgba(0, 0, 0, 0)","bodyBg":"rgb(10, 13, 12)","root":0,"metas":["#0A0D0C","#0A0D0C"]}
+PASS prepaint old-system app not mounted: got 0 want 0
+PASS prepaint old-system theme: got "dark" want "dark"
+PASS prepaint old-system bg dark?: got true want true
+
+== App JS blocked (pre-paint only), light OS, saved={"theme":"light","themeV":2}
+   {"theme":"light","htmlBg":"rgba(0, 0, 0, 0)","bodyBg":"rgb(245, 242, 234)","root":0,"metas":["#F5F2EA","#F5F2EA"]}
+PASS prepaint light app not mounted: got 0 want 0
+PASS prepaint light theme: got "light" want "light"
+PASS prepaint light bg dark?: got false want false
+  (nothing saved on a fresh visit; picking Light then Dark to trigger a real save)
+
+== Captured real save from a fresh #plan: {"inputs":{"holdings":[{"symbol":"VTI","weight":0.5},{"symbol":"QQQ","weight":0.2},{"symbol":"SCHD","weight":0.15},{"symbol":"BND","weight":0.1},{"symbol":"GLD","weight":0.05}],"portfolio":3000000,"ba…
+PASS fresh save writes themeV 2: got 2 want 2
+
+== Old save without themeV, light OS: evelo:v2 = {"theme":"system","inputs":{"holdings":[{"symbol":"VTI","weight":0.5},{"symbol":"QQQ","weight":0.2},{"symbol":"SCHD","we…
+  first paint {"when":"body-inserted","theme":"dark","htmlBg":"rgba(0, 0, 0, 0)","bodyBg":"rgba(0, 0, 0, 0)","rootChildren":0,"metas":["#0A0D0C","#0A0D0C"]}
+  first paint {"when":"first-frame","theme":"dark","htmlBg":"rgba(0, 0, 0, 0)","bodyBg":"rgb(10, 13, 12)","rootChildren":0,"metas":["#0A0D0C","#0A0D0C"]}
+  first paint {"when":"DOMContentLoaded","theme":"dark","htmlBg":"rgba(0, 0, 0, 0)","bodyBg":"rgb(10, 13, 12)","rootChildren":0,"metas":["#0A0D0C","#0A0D0C"]}
+PASS old-system first-frame theme: got "dark" want "dark"
+PASS old-system DOMContentLoaded theme: got "dark" want "dark"
+  settled {"theme":"dark","bodyBg":"rgb(10, 13, 12)","metas":["#0A0D0C","#0A0D0C"],"saved":"outlook\":\"balanced\",\"blockMonths\":24,\"paths\":4000,\"seed\":7}}","toggle":["System theme=false","Light theme=false","Dark theme=true"],"cycle":[]}
+PASS old-system settled theme: got "dark" want "dark"
+PASS old-system bg dark: got true want true
+PASS old-system toggle shows Dark: got true want true
+
+== Pick Light, reload
+  after click saved: light themeV 2
+  first paint {"when":"body-inserted","theme":"light","htmlBg":"rgba(0, 0, 0, 0)","bodyBg":"rgba(0, 0, 0, 0)","rootChildren":0,"metas":["#F5F2EA","#F5F2EA"]}
+  first paint {"when":"first-frame","theme":"light","htmlBg":"rgba(0, 0, 0, 0)","bodyBg":"rgb(245, 242, 234)","rootChildren":0,"metas":["#F5F2EA","#F5F2EA"]}
+  first paint {"when":"DOMContentLoaded","theme":"light","htmlBg":"rgba(0, 0, 0, 0)","bodyBg":"rgb(245, 242, 234)","rootChildren":0,"metas":["#F5F2EA","#F5F2EA"]}
+  settled {"theme":"light","bodyBg":"rgb(245, 242, 234)","metas":["#F5F2EA","#F5F2EA"],"saved":"onths\":24,\"paths\":4000,\"seed\":7},\"theme\":\"light\",\"themeV\":2}","toggle":["System theme=false","Light theme=true","Dark theme=false"],"cycle":[]}
+PASS light after reload theme: got "light" want "light"
+PASS light after reload bg light: got false want false
+PASS light toggle shows Light: got true want true
+PASS light metas: got "#F5F2EA,#F5F2EA" want "#F5F2EA,#F5F2EA"
+
+== Pick System (light OS), reload
+  after click saved: system themeV 2
+  first paint {"when":"body-inserted","theme":"system","htmlBg":"rgba(0, 0, 0, 0)","bodyBg":"rgb(245, 242, 234)","rootChildren":0,"metas":["#F5F2EA","#0A0D0C"]}
+  first paint {"when":"DOMContentLoaded","theme":"system","htmlBg":"rgba(0, 0, 0, 0)","bodyBg":"rgb(245, 242, 234)","rootChildren":0,"metas":["#F5F2EA","#0A0D0C"]}
+  first paint {"when":"first-frame","theme":"system","htmlBg":"rgba(0, 0, 0, 0)","bodyBg":"rgb(245, 242, 234)","rootChildren":0,"metas":["#F5F2EA","#0A0D0C"]}
+  settled {"theme":"system","bodyBg":"rgb(245, 242, 234)","metas":["#F5F2EA","#0A0D0C"],"saved":"nths\":24,\"paths\":4000,\"seed\":7},\"theme\":\"system\",\"themeV\":2}","toggle":["System theme=true","Light theme=false","Dark theme=false"],"cycle":[]}
+PASS system after reload theme: got "system" want "system"
+PASS system (light OS) renders light: got false want false
+PASS system toggle shows System: got true want true
+
+== Same saved System, OS switched to dark, reload
+  first paint {"when":"body-inserted","theme":"system","htmlBg":"rgba(0, 0, 0, 0)","bodyBg":"rgb(10, 13, 12)","rootChildren":0,"metas":["#F5F2EA","#0A0D0C"]}
+  first paint {"when":"first-frame","theme":"system","htmlBg":"rgba(0, 0, 0, 0)","bodyBg":"rgb(10, 13, 12)","rootChildren":0,"metas":["#F5F2EA","#0A0D0C"]}
+  first paint {"when":"DOMContentLoaded","theme":"system","htmlBg":"rgba(0, 0, 0, 0)","bodyBg":"rgb(10, 13, 12)","rootChildren":0,"metas":["#F5F2EA","#0A0D0C"]}
+  settled {"theme":"system","bodyBg":"rgb(10, 13, 12)","metas":["#F5F2EA","#0A0D0C"],"saved":"nths\":24,\"paths\":4000,\"seed\":7},\"theme\":\"system\",\"themeV\":2}","toggle":["System theme=true","Light theme=false","Dark theme=false"],"cycle":[]}
+PASS system (dark OS) theme: got "system" want "system"
+PASS system (dark OS) renders dark: got true want true
+
+== Phone 390x844, fresh, light OS, plain URL
+  first paint {"when":"body-inserted","theme":"dark","htmlBg":"rgba(0, 0, 0, 0)","bodyBg":"rgba(0, 0, 0, 0)","rootChildren":0,"metas":["#0A0D0C","#0A0D0C"]}
+  first paint {"when":"first-frame","theme":"dark","htmlBg":"rgba(0, 0, 0, 0)","bodyBg":"rgb(10, 13, 12)","rootChildren":0,"metas":["#0A0D0C","#0A0D0C"]}
+  first paint {"when":"DOMContentLoaded","theme":"dark","htmlBg":"rgba(0, 0, 0, 0)","bodyBg":"rgb(10, 13, 12)","rootChildren":0,"metas":["#0A0D0C","#0A0D0C"]}
+PASS phone first-frame theme: got "dark" want "dark"
+PASS phone DOMContentLoaded theme: got "dark" want "dark"
+  settled {"theme":"dark","bodyBg":"rgb(10, 13, 12)","metas":["#0A0D0C","#0A0D0C"],"saved":null,"toggle":[],"cycle":["Dark theme — switch to system theme"]}
+PASS phone theme: got "dark" want "dark"
+PASS phone bg dark: got true want true
+PASS phone cycle button says Dark: got true want true
+PASS phone no horizontal scroll: got true want true
+
+== Console errors: none
+
+0 failing assertion(s)

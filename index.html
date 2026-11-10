@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="system">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content" />
@@ -18,10 +18,20 @@
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
     <script>
-      // Apply the saved theme before first paint (no flash). Mirrors src/state/store.ts.
+      // Apply the saved theme before first paint (no flash). Dark by default; a System saved
+      // before the switch to dark (no themeV) reads as Dark. Mirrors src/state/theme.ts.
       try {
-        var t = JSON.parse(localStorage.getItem('evelo:v2') || '{}').theme
-        if (t === 'light' || t === 'dark' || t === 'system') document.documentElement.dataset.theme = t
+        var s = JSON.parse(localStorage.getItem('evelo:v2') || '{}') || {}
+        var t = s.theme
+        if (t === 'light' || t === 'dark' || (t === 'system' && s.themeV === 2)) document.documentElement.dataset.theme = t
+      } catch (e) {}
+      // An explicit theme sets the browser chrome color too (src/ui/hooks.ts does the same later).
+      try {
+        var d = document.documentElement.dataset.theme
+        if (d !== 'system') {
+          var c = d === 'dark' ? '#0A0D0C' : '#F5F2EA'
+          document.querySelectorAll('meta[name="theme-color"]').forEach(function (m) { m.content = c })
+        }
       } catch (e) {}
     </script>
   </head>

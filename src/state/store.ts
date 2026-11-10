@@ -8,9 +8,10 @@ import { dismissToast, isToastLive, toast } from '../ui/primitives/Toast'
 import { clampAfterPatch, clampAfterReplace, clampAfterSet, loanToastRun, type LoanClamp } from './loanClamp'
 import type { CompareEntry } from './retireCompare'
 import { parseHash, resolveRoute, type Route } from './router'
+import { themeFromSaved, withThemeVersion, type ThemePref } from './theme'
 import { decodeInputs, sanitizeInputs } from './share'
 
-export type ThemePref = 'system' | 'light' | 'dark'
+export type { ThemePref }
 export type Status = 'idle' | 'running' | 'error'
 
 /** Shown in the verdict until the engine produces a result. */
@@ -67,6 +68,7 @@ const LS_KEY = 'evelo:v2'
 interface Persisted {
   inputs?: unknown
   theme?: unknown
+  themeV?: unknown
 }
 
 function readPersisted(): Persisted {
@@ -79,7 +81,7 @@ function readPersisted(): Persisted {
 }
 function writePersisted(p: { inputs: PlanInputs; theme: ThemePref }) {
   try {
-    window.localStorage.setItem(LS_KEY, JSON.stringify(p))
+    window.localStorage.setItem(LS_KEY, JSON.stringify(withThemeVersion(p)))
   } catch {
     /* storage blocked or full — the app works without it */
   }
@@ -98,8 +100,6 @@ function clampLoan(c: LoanClamp): PlanInputs {
   return c.inputs
 }
 
-const isTheme = (t: unknown): t is ThemePref => t === 'system' || t === 'light' || t === 'dark'
-
 /** Initial state: shared link (#p=, or legacy #/?p=) wins over localStorage, which wins over defaults. */
 function initial(): { inputs: PlanInputs; theme: ThemePref; route: Route; fromLink: boolean } {
   const persisted = readPersisted()
@@ -109,7 +109,7 @@ function initial(): { inputs: PlanInputs; theme: ThemePref; route: Route; fromLi
   const shared = p ? decodeInputs(p) : null
   return {
     inputs: shared ?? (persisted.inputs ? sanitizeInputs(persisted.inputs) : structuredClone(DEFAULT_INPUTS)),
-    theme: isTheme(persisted.theme) ? persisted.theme : 'system',
+    theme: themeFromSaved(persisted),
     route,
     fromLink: !!shared,
   }

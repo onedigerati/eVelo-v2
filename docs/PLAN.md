@@ -7,19 +7,15 @@ The site opens in dark mode. Visitors with nothing saved start in Dark, and visi
 2026-11-09 · tests: 659 pass (44 files) · typecheck: clean
 
 ## Now
-Stage 1 of 1 · Dark by default
-Risk: UI only
+All stages done · deploying
 Agents: wide — confirmed 2026-11-09 20:40
-Checks:
-- [ ] The starting theme is Dark with nothing saved, unreadable storage, or a saved System from before the switch; a saved Light or Dark is kept, and a System saved after the switch is kept (proof: test)
-- [ ] Saving the plan records that the switch has happened, so a later System choice survives a reload (proof: test)
-- [ ] In the running app, a fresh browser opens the landing and the planner in dark with no light flash at first paint; an old saved System opens dark; Light survives a reload; picking System after the switch survives a reload (proof: run the product, a test can't see first paint or real storage)
-Open: none
 
 ## Stages
-- [ ] 1. Dark by default — Dark as the starting theme, one-time switch of saved System, matching pre-paint script
+- [x] 1. Dark by default — Dark as the starting theme, one-time switch of saved System, matching pre-paint script
 
 ## Decisions
+- 2026-11-09 · Deploy when the stage passes, no preview — user: "Go ahead and deploy when ready."
+- 2026-11-09 · Stage 1 closed: 3/3 checks pass ([evidence](evidence/stage-1/report.md)), verified by a fresh agent briefed to return its report for the main session to save. Tests also run the real `index.html` pre-paint script against the same cases, so the two rules can't drift. No `keel:review`: UI only, a theme default with tests — PM's call.
 - 2026-11-09 · Dark is the default theme — user: "Let's now have the site default to dark mode."
 - 2026-11-09 · Visitors saved on System are switched to Dark once; Light is kept — user picked "Everyone on System".
 - 2026-11-09 · The toggle keeps System, Light and Dark — user picked "Keep System".

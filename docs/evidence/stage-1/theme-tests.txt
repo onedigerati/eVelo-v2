@@ -1,0 +1,42 @@
+$ npx vitest run src/state/__tests__/theme.test.ts --reporter=verbose
+npm notice run evelo@2.0.0 npx
+npm notice run 'vitest' run src/state/__tests__/theme.test.ts --reporter=verbose
+
+ RUN  v5.1.0 /home/jonah/repos/eVelo-v2
+
+ ✓ src/state/__tests__/theme.test.ts > starting theme (themeFromSaved) > saved null starts as dark 1ms
+ ✓ src/state/__tests__/theme.test.ts > starting theme (themeFromSaved) > saved {} starts as dark 0ms
+ ✓ src/state/__tests__/theme.test.ts > starting theme (themeFromSaved) > saved null starts as dark 0ms
+ ✓ src/state/__tests__/theme.test.ts > starting theme (themeFromSaved) > saved not json starts as dark 0ms
+ ✓ src/state/__tests__/theme.test.ts > starting theme (themeFromSaved) > saved {"inputs":{}} starts as dark 0ms
+ ✓ src/state/__tests__/theme.test.ts > starting theme (themeFromSaved) > saved {"theme":"system"} starts as dark 0ms
+ ✓ src/state/__tests__/theme.test.ts > starting theme (themeFromSaved) > saved {"theme":"system","themeV":1} starts as dark 0ms
+ ✓ src/state/__tests__/theme.test.ts > starting theme (themeFromSaved) > saved {"theme":"system","themeV":2} starts as system 0ms
+ ✓ src/state/__tests__/theme.test.ts > starting theme (themeFromSaved) > saved {"theme":"light"} starts as light 1ms
+ ✓ src/state/__tests__/theme.test.ts > starting theme (themeFromSaved) > saved {"theme":"light","themeV":2} starts as light 0ms
+ ✓ src/state/__tests__/theme.test.ts > starting theme (themeFromSaved) > saved {"theme":"dark"} starts as dark 0ms
+ ✓ src/state/__tests__/theme.test.ts > starting theme (themeFromSaved) > saved {"theme":"dark","themeV":2} starts as dark 0ms
+ ✓ src/state/__tests__/theme.test.ts > starting theme (themeFromSaved) > saved {"theme":"purple","themeV":2} starts as dark 0ms
+ ✓ src/state/__tests__/theme.test.ts > starting theme (themeFromSaved) > keeps a System chosen after the switch, once saved 0ms
+ ✓ src/state/__tests__/theme.test.ts > index.html pre-paint script > saved null paints as dark, like the app 1ms
+ ✓ src/state/__tests__/theme.test.ts > index.html pre-paint script > saved {} paints as dark, like the app 0ms
+ ✓ src/state/__tests__/theme.test.ts > index.html pre-paint script > saved null paints as dark, like the app 0ms
+ ✓ src/state/__tests__/theme.test.ts > index.html pre-paint script > saved not json paints as dark, like the app 1ms
+ ✓ src/state/__tests__/theme.test.ts > index.html pre-paint script > saved {"inputs":{}} paints as dark, like the app 1ms
+ ✓ src/state/__tests__/theme.test.ts > index.html pre-paint script > saved {"theme":"system"} paints as dark, like the app 0ms
+ ✓ src/state/__tests__/theme.test.ts > index.html pre-paint script > saved {"theme":"system","themeV":1} paints as dark, like the app 1ms
+ ✓ src/state/__tests__/theme.test.ts > index.html pre-paint script > saved {"theme":"system","themeV":2} paints as system, like the app 0ms
+ ✓ src/state/__tests__/theme.test.ts > index.html pre-paint script > saved {"theme":"light"} paints as light, like the app 0ms
+ ✓ src/state/__tests__/theme.test.ts > index.html pre-paint script > saved {"theme":"light","themeV":2} paints as light, like the app 1ms
+ ✓ src/state/__tests__/theme.test.ts > index.html pre-paint script > saved {"theme":"dark"} paints as dark, like the app 1ms
+ ✓ src/state/__tests__/theme.test.ts > index.html pre-paint script > saved {"theme":"dark","themeV":2} paints as dark, like the app 0ms
+ ✓ src/state/__tests__/theme.test.ts > index.html pre-paint script > saved {"theme":"purple","themeV":2} paints as dark, like the app 1ms
+ ✓ src/state/__tests__/theme.test.ts > index.html pre-paint script > paints dark when storage is blocked 0ms
+ ✓ src/state/__tests__/theme.test.ts > index.html pre-paint script > sets the browser chrome color for an explicit theme, and leaves it to the OS for System 2ms
+
+ Test Files  1 passed (1)
+      Tests  29 passed (29)
+   Start at  22:00:27
+   Duration  132ms (tests 44%, import 30%, transform 19%, worker 7%)
+
+exit 0
