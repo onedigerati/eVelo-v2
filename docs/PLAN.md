@@ -7,13 +7,14 @@ The site opens in dark mode. Visitors with nothing saved start in Dark, and visi
 2026-11-09 · tests: 659 pass (44 files) · typecheck: clean
 
 ## Now
-All stages done · deploying
+All stages done
 Agents: wide — confirmed 2026-11-09 20:40
 
 ## Stages
 - [x] 1. Dark by default — Dark as the starting theme, one-time switch of saved System, matching pre-paint script
 
 ## Decisions
+- 2026-11-09 · Deployed: run 42753362297 succeeded (9m15s, the Pages deploy step was slow); the live site serves the same bundle as the local build and opens dark ([evidence](evidence/stage-1/deploy-live.txt)).
 - 2026-11-09 · Deploy when the stage passes, no preview — user: "Go ahead and deploy when ready."
 - 2026-11-09 · Stage 1 closed: 3/3 checks pass ([evidence](evidence/stage-1/report.md)), verified by a fresh agent briefed to return its report for the main session to save. Tests also run the real `index.html` pre-paint script against the same cases, so the two rules can't drift. No `keel:review`: UI only, a theme default with tests — PM's call.
 - 2026-11-09 · Dark is the default theme — user: "Let's now have the site default to dark mode."
