@@ -7,6 +7,7 @@ import { FX_RISK_LABEL, costDelta, fxRisk, inRegion, successColor, successTextCo
 import { CodeChip } from './CodeChip'
 import { expatPickFor, hasProfile } from '../../data/expatPicks'
 import { VerifiedMark } from './VerifiedMark'
+import { preloadOnIntent } from './photoLoad'
 import { ListRegionChips } from './RegionChips'
 import { matchesQuery } from './regionCounts'
 import { verifiedLabel } from './picks'
@@ -305,6 +306,7 @@ function Row({
             type="button"
             className="pickbadge"
             onClick={() => onOpenProfile!(r.cityId)}
+            {...preloadOnIntent(r.cityId)}
             aria-label={`Top pick ${profiled.rank} for expat retirees: open the ${r.city.name} profile`}
             title={`Top pick #${profiled.rank} for expat retirees · open profile`}
           >
@@ -316,6 +318,7 @@ function Row({
             type="button"
             className="pickbadge pickbadge--profile"
             onClick={() => onOpenProfile!(r.cityId)}
+            {...preloadOnIntent(r.cityId)}
             aria-label={`Open the ${r.city.name} profile`}
             title={`${r.city.name} profile · not a ranked pick`}
           >

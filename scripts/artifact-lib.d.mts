@@ -16,3 +16,4 @@ export function mergeUploadResults(
   results: Record<string, string> | { path?: string; file?: string; key?: string; url?: string }[],
 ): { cache: Record<string, string>; added: string[]; skipped: string[] }
 export function artifactFiles(distAssets: string[], opts: { assetPhotos: boolean }): Record<string, string>
+export function photoSources(dir: string): { path: string; cityId: string; hash: string }[]

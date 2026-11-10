@@ -1,14 +1,19 @@
+import { fileURLToPath } from 'node:url'
 import { describe, expect, it } from 'vitest'
+import { smallFileName } from '../../../scripts/photos-lib.mjs'
 import {
   UPLOAD_BATCH,
   artifactFiles,
   mergeUploadResults,
   pendingUploads,
   photoKey as scriptKey,
+  photoSources,
   planPreviewPhotos,
   publishedMap,
 } from '../../../scripts/artifact-lib.mjs'
-import { photoKey } from '../photos'
+import { PHOTO_CITY_IDS, photoKey, photosFor } from '../photos'
+
+const PHOTOS_DIR = fileURLToPath(new URL('../photos', import.meta.url))
 
 describe('preview photo mode (scripts/artifact-lib.mjs)', () => {
   const sources = [
@@ -75,5 +80,25 @@ describe('preview photo mode (scripts/artifact-lib.mjs)', () => {
       'photo-assets.json': 'dist/photo-assets.json',
     })
     expect(Object.keys(artifactFiles(assets, { assetPhotos: false }))).toEqual(['assets/index-X.js', 'assets/index-Y.css', 'assets/1-Aaaa1111.webp'])
+  })
+
+  it('maps the 640px copies as well as the originals (the real photo folder)', () => {
+    const sources = photoSources(PHOTOS_DIR)
+    const paths = new Set(sources.map((s) => s.path))
+    const missing = PHOTO_CITY_IDS.flatMap((id) =>
+      photosFor(id)
+        .flatMap((p) => [p.file, smallFileName(p.file)])
+        .map((f) => `${PHOTOS_DIR}/${id}/${f}`)
+        .filter((path) => !paths.has(path)),
+    )
+    expect(missing).toEqual([])
+    expect(sources.every((s) => /^[0-9a-f]{64}$/.test(s.hash) && s.path.startsWith(`${PHOTOS_DIR}/${s.cityId}/`))).toBe(true)
+    // Built names keep the source name before the hash, so each copy gets its own key.
+    const dist = sources.map((s, i) => ({ name: `${s.path.split('/').pop()!.replace('.webp', '')}-H${i}.webp`, hash: s.hash }))
+    const plan = planPreviewPhotos(sources, dist)
+    expect(plan.unmatched).toEqual([])
+    const keys = plan.photos.map((p) => p.key)
+    expect(new Set(keys).size).toBe(sources.length)
+    expect(keys.filter((k) => /\/\d+-640-H\d+\.webp$/.test(k))).toHaveLength(PHOTO_CITY_IDS.length * 5)
   })
 })

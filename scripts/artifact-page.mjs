@@ -14,7 +14,7 @@
 //   1. npm run build:preview
 //        = tsc -b && vite build --mode artifact && node scripts/artifact-page.mjs --asset-photos
 //      Writes dist/artifact.html, dist/artifact-files.json (app files + photo-assets.json, no .webp),
-//      dist/preview-photos.json (every photo: { key, path }), dist/photo-assets.json (the cache
+//      dist/preview-photos.json (every photo and its 640px copy: { key, path }), dist/photo-assets.json (the cache
 //      entries this build uses) and dist/preview-photos-pending.json (photos with no uploaded copy
 //      in the local cache .preview/photo-assets.json, as batches of up to 25 local paths).
 //   2. For each batch in dist/preview-photos-pending.json, upload with the Artifact tool:
@@ -31,7 +31,7 @@
 // `--pending` alone (after a build) just reprints what still needs uploading.
 import { createHash } from 'node:crypto'
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs'
-import { artifactFiles, mergeUploadResults, pendingUploads, planPreviewPhotos, publishedMap } from './artifact-lib.mjs'
+import { artifactFiles, mergeUploadResults, pendingUploads, photoSources, planPreviewPhotos, publishedMap } from './artifact-lib.mjs'
 
 const CACHE = '.preview/photo-assets.json'
 const PHOTOS_DIR = 'src/data/photos'
@@ -63,13 +63,8 @@ if (assetPhotos) {
     process.exit(1)
   }
   const sha = (path) => createHash('sha256').update(readFileSync(path)).digest('hex')
-  const sources = readdirSync(PHOTOS_DIR, { withFileTypes: true })
-    .filter((d) => d.isDirectory())
-    .flatMap((d) =>
-      readdirSync(`${PHOTOS_DIR}/${d.name}`)
-        .filter((f) => f.endsWith('.webp'))
-        .map((f) => ({ path: `${PHOTOS_DIR}/${d.name}/${f}`, cityId: d.name, hash: sha(`${PHOTOS_DIR}/${d.name}/${f}`) })),
-    )
+  // Originals and their 640px copies: the mosaic shows the copies, the full-size view the originals.
+  const sources = photoSources(PHOTOS_DIR)
   const dist = distAssets.filter((f) => f.endsWith('.webp')).map((name) => ({ name, hash: sha(`dist/assets/${name}`) }))
   const { photos, unmatched } = planPreviewPhotos(sources, dist)
   if (unmatched.length) console.warn(`No built copy of ${unmatched.length} photo(s), left out: ${unmatched.join(', ')}`)

@@ -4,10 +4,14 @@ import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import sharp from 'sharp'
 import { describe, expect, it, vi } from 'vitest'
-import { doCity } from '../../../scripts/photos.mjs'
+import { doCity, makeSmallCopies } from '../../../scripts/photos.mjs'
 import {
   MAX_BYTES,
   PHOTOS_PER_CITY,
+  SMALL_BOX,
+  isSmallFile,
+  smallFileName,
+  smallSize,
   allowedLicense,
   authorFrom,
   checkImageUrl,
@@ -32,6 +36,8 @@ import {
   photoKey,
   photosFor,
   remapPhotoIndex,
+  smallFileOf,
+  smallSizeOf,
   subscribePhotos,
   type CityPhoto,
   type CityPhotoEntry,
@@ -114,13 +120,67 @@ describe('city photos data', () => {
     expect(new Set(titles).size).toBe(titles.length)
   })
 
-  it('has no stray image files', () => {
+  it('has no stray image files (only the listed photos and their 640px copies)', () => {
     for (const id of PHOTO_CITY_IDS) {
       const webps = readdirSync(`${PHOTOS_DIR}${id}`).filter((f) => f.endsWith('.webp')).sort()
-      expect(webps, id).toEqual(photosFor(id).map((p) => p.file).sort())
+      expect(webps, id).toEqual(photosFor(id).flatMap((p) => [p.file, smallFileName(p.file)]).sort())
     }
   })
+
+  it('gives every listed photo a 640px copy beside it, at its real size, used as srcSmall', async () => {
+    const missing = PHOTO_CITY_IDS.flatMap((id) => missingSmallCopies(id, photosFor(id)))
+    expect(missing, `photos without a ${SMALL_BOX}px copy (run npm run photos -- --small)`).toEqual([])
+    let bytes = 0
+    for (const id of PHOTO_CITY_IDS) {
+      for (const p of photosFor(id)) {
+        const at = `${id}/${p.file}`
+        const path = `${PHOTOS_DIR}${id}/${smallFileName(p.file)}`
+        const size = statSync(path).size
+        bytes += size
+        expect(size, `${at} small copy size`).toBeLessThanOrEqual(100_000)
+        const meta = await sharp(path).metadata()
+        expect(meta.format, at).toBe('webp')
+        expect({ width: meta.width, height: meta.height }, `${at} small copy box`).toEqual(smallSize(p.width, p.height))
+        expect(Math.max(meta.width ?? 0, meta.height ?? 0), at).toBe(Math.min(SMALL_BOX, Math.max(p.width, p.height)))
+        expect(p.srcSmall, at).not.toBe(p.src)
+        expect(p.srcSmall, at).toMatch(/-640.*\.webp/)
+        expect({ width: p.smallWidth, height: p.smallHeight }, at).toEqual({ width: meta.width, height: meta.height })
+      }
+    }
+    // Roughly 40–70 kB each on average (the 1280 originals average ~180 kB).
+    expect(bytes / (PHOTO_CITY_IDS.length * PHOTOS_PER_CITY)).toBeLessThan(70_000)
+  }, 60_000)
+
+  it('fails coverage when a listed photo has no 640px copy', () => {
+    const dir = mkdtempSync(join(tmpdir(), 'evelo-small-'))
+    try {
+      mkdirSync(join(dir, 'testville'))
+      for (const f of ['1.webp', '1-640.webp', '2.webp']) writeFileSync(join(dir, 'testville', f), 'x')
+      const list = [{ file: '1.webp' }, { file: '2.webp' }]
+      expect(missingSmallCopies('testville', list, `${dir}/`)).toEqual(['testville/2-640.webp'])
+    } finally {
+      rmSync(dir, { recursive: true, force: true })
+    }
+  })
+
+  it('names and sizes the small copy the same way in the app and the script', () => {
+    for (const f of ['1.webp', '5.webp', '12.webp']) expect(smallFileOf(f)).toBe(smallFileName(f))
+    expect(isSmallFile('3-640.webp')).toBe(true)
+    expect(isSmallFile('3.webp')).toBe(false)
+    for (const [w, h] of [[1280, 853], [854, 1280], [896, 625], [1280, 427], [600, 400], [640, 640], [1152, 864]]) {
+      expect(smallSizeOf(w, h), `${w}x${h}`).toEqual(smallSize(w, h))
+    }
+    expect(smallSize(1280, 853), '426.5 rounds to even, as libvips does').toEqual({ width: 640, height: 426 })
+    expect(smallSize(1280, 755)).toEqual({ width: 640, height: 378 })
+    expect(smallSize(854, 1280)).toEqual({ width: 427, height: 640 })
+    expect(smallSize(600, 400), 'never upscaled').toEqual({ width: 600, height: 400 })
+  })
 })
+
+/** Listed photos of a city whose <n>-640.webp is not on disk, as "<cityId>/<file>". */
+function missingSmallCopies(cityId: string, list: { file: string }[], dir = PHOTOS_DIR): string[] {
+  return list.map((p) => `${cityId}/${smallFileName(p.file)}`).filter((f) => !existsSync(`${dir}${f}`))
+}
 
 describe('photo index (buildPhotoIndex)', () => {
   const entry = (file: string): CityPhotoEntry => ({
@@ -161,6 +221,22 @@ describe('photo index (buildPhotoIndex)', () => {
     expect(warn).not.toHaveBeenCalled()
   })
 
+  it('gives each photo its 640px copy as srcSmall, never listing the copy as a photo', () => {
+    const small = (city: string) => Object.fromEntries(files.map((f) => [`./photos/${city}/${f.replace('.webp', '-640.webp')}`, `/assets/${city}-small-${f}`]))
+    const warn = vi.fn()
+    const index = buildPhotoIndex({ './photos/okville/photos.json': files.map(entry) }, { ...urlsFor('okville'), ...small('okville') }, warn)
+    expect(index.okville.map((p) => p.file)).toEqual(files)
+    expect(index.okville[0]).toMatchObject({ src: '/assets/okville-1.webp', srcSmall: '/assets/okville-small-1.webp', smallWidth: 640, smallHeight: 360 })
+    expect(warn).not.toHaveBeenCalled()
+  })
+
+  it('falls back to the original when a small copy is missing', () => {
+    const warn = vi.fn()
+    const index = buildPhotoIndex({ './photos/okville/photos.json': files.map(entry) }, urlsFor('okville'), warn)
+    expect(index.okville[2]).toMatchObject({ src: '/assets/okville-3.webp', srcSmall: '/assets/okville-3.webp', smallWidth: 1280, smallHeight: 720 })
+    expect(warn).not.toHaveBeenCalled()
+  })
+
   it('warns through console.warn by default', () => {
     const spy = vi.spyOn(console, 'warn').mockImplementation(() => {})
     try {
@@ -185,13 +261,23 @@ describe('preview photo URLs (photoKey, parsePhotoAssets, remapPhotoIndex)', () 
     width: 1280,
     height: 720,
     src: `./assets/${n}-H${city}${n}.webp`,
+    srcSmall: `./assets/${n}-640-S${city}${n}.webp`,
+    smallWidth: 640,
+    smallHeight: 360,
   })
   const index = {
     okville: [1, 2, 3, 4, 5].map((n) => photo('okville', n)),
     halfville: [1, 2, 3, 4, 5].map((n) => photo('halfville', n)),
   }
   const assetsFor = (city: string, upTo = 5) =>
-    Object.fromEntries([1, 2, 3, 4, 5].slice(0, upTo).map((n) => [`${city}/${n}-H${city}${n}.webp`, `https://assets.example/${city}${n}`]))
+    Object.fromEntries(
+      [1, 2, 3, 4, 5]
+        .slice(0, upTo)
+        .flatMap((n) => [
+          [`${city}/${n}-H${city}${n}.webp`, `https://assets.example/${city}${n}`],
+          [`${city}/${n}-640-S${city}${n}.webp`, `https://assets.example/${city}${n}-small`],
+        ]),
+    )
 
   it('keys a photo by city and built file name, ignoring path, query and hash', () => {
     expect(photoKey('tokyo', './assets/1-B2xQ9aZk.webp')).toBe('tokyo/1-B2xQ9aZk.webp')
@@ -213,11 +299,30 @@ describe('preview photo URLs (photoKey, parsePhotoAssets, remapPhotoIndex)', () 
     const out = remapPhotoIndex(index, { ...assetsFor('okville'), ...assetsFor('halfville', 4) }, (m) => warnings.push(m))
     expect(Object.keys(out)).toEqual(['okville'])
     expect(out.okville.map((p) => p.src)).toEqual([1, 2, 3, 4, 5].map((n) => `https://assets.example/okville${n}`))
+    expect(out.okville.map((p) => p.srcSmall)).toEqual([1, 2, 3, 4, 5].map((n) => `https://assets.example/okville${n}-small`))
     expect(out.okville[0].caption).toBe('A place')
     expect(warnings).toHaveLength(1)
     expect(warnings[0]).toMatch(/1 city has .*halfville \(1 of 5\)/)
     // The input index is untouched.
     expect(index.okville[0].src).toBe('./assets/1-Hokville1.webp')
+  })
+
+  it('maps the 640px copies too, falling back to the uploaded original when a copy has none', () => {
+    const assets = assetsFor('okville')
+    delete assets['okville/2-640-Sokville2.webp']
+    const warn = vi.fn()
+    const out = remapPhotoIndex({ okville: index.okville }, assets, warn)
+    expect(out.okville[0]).toMatchObject({ srcSmall: 'https://assets.example/okville1-small', smallWidth: 640 })
+    expect(out.okville[1]).toMatchObject({ src: 'https://assets.example/okville2', srcSmall: 'https://assets.example/okville2', smallWidth: 1280, smallHeight: 720 })
+    expect(warn).not.toHaveBeenCalled()
+  })
+
+  it('keys every real 640px copy by its own city, apart from its original', () => {
+    for (const id of PHOTO_CITY_IDS)
+      for (const p of photosFor(id)) {
+        expect(photoKey(id, p.srcSmall)).toMatch(new RegExp(`^${id}/[^/]*-640[^/]*\\.webp$`))
+        expect(photoKey(id, p.srcSmall)).not.toBe(photoKey(id, p.src))
+      }
   })
 
   it('warns once in total, however many cities lack uploads', () => {
@@ -258,10 +363,16 @@ describe('preview photo URLs (photoKey, parsePhotoAssets, remapPhotoIndex)', () 
       })
       expect(photosFor(id)).toBe(before)
       expect(seen).not.toHaveBeenCalled()
-      const map = Object.fromEntries(before.map((p, i) => [photoKey(id, p.src), `https://assets.example/${i}`]))
+      const map = Object.fromEntries(
+        before.flatMap((p, i) => [
+          [photoKey(id, p.src), `https://assets.example/${i}`],
+          [photoKey(id, p.srcSmall), `https://assets.example/${i}-small`],
+        ]),
+      )
       await loadPhotoAssets(async () => map)
       expect(seen).toHaveBeenCalledTimes(1)
       expect(photosFor(id).map((p) => p.src)).toEqual(before.map((_, i) => `https://assets.example/${i}`))
+      expect(photosFor(id).map((p) => p.srcSmall)).toEqual(before.map((_, i) => `https://assets.example/${i}-small`))
     } finally {
       off()
       info.mockRestore()
@@ -411,9 +522,38 @@ describe('npm run photos (doCity, network stubbed)', () => {
       expect(list[1]).toMatchObject({ author: 'Credit Person', license: 'CC0', licenseUrl: 'https://creativecommons.org/publicdomain/zero/1.0/' })
       expect(list[2]).toMatchObject({ license: 'Public domain', licenseUrl: 'https://creativecommons.org/publicdomain/mark/1.0/' })
       expect(Object.keys(list[0])).toEqual(['commons', 'file', 'caption', 'alt', 'author', 'license', 'licenseUrl', 'source', 'width', 'height'])
+      // Each photo gets its 640px copy (1600x1000 -> 1280x800 -> 640x400).
+      expect(readdirSync(join(root, 'testville')).sort()).toEqual(
+        ['1', '2', '3', '4', '5'].flatMap((n) => [`${n}-640.webp`, `${n}.webp`]).concat('photos.json').sort(),
+      )
+      expect(await sharp(join(root, 'testville', '1-640.webp')).metadata()).toMatchObject({ format: 'webp', width: 640, height: 400 })
       const n = calls.length
       expect(await doCity('testville', { root, get, log: () => {} })).toEqual({ downloaded: 0, skipped: 5 })
       expect(calls.length).toBe(n)
+    } finally {
+      rmSync(root, { recursive: true, force: true })
+    }
+  })
+})
+
+describe('npm run photos -- --small (makeSmallCopies, offline)', () => {
+  it('writes only missing copies, 640 on the long side, never upscaling, and rewrites all with force', async () => {
+    const root = mkdtempSync(join(tmpdir(), 'evelo-small-'))
+    try {
+      const dir = join(root, 'smallville')
+      mkdirSync(dir)
+      const make = (w: number, h: number) => sharp({ create: { width: w, height: h, channels: 3, background: '#a73' } }).webp().toBuffer()
+      writeFileSync(join(dir, '1.webp'), await make(1280, 853))
+      writeFileSync(join(dir, '2.webp'), await make(854, 1280))
+      writeFileSync(join(dir, '3.webp'), await make(500, 400))
+      writeFileSync(join(dir, '3-640.webp'), 'old')
+      writeFileSync(join(dir, 'photos.json'), JSON.stringify([{ file: '1.webp' }, { file: '2.webp' }, { file: '3.webp' }]))
+      expect(await makeSmallCopies('smallville', { root, log: () => {} })).toBe(2)
+      expect(await sharp(join(dir, '1-640.webp')).metadata()).toMatchObject({ width: 640, height: 426 })
+      expect(await sharp(join(dir, '2-640.webp')).metadata()).toMatchObject({ width: 427, height: 640 })
+      expect(readFileSync(join(dir, '3-640.webp'), 'utf8'), 'existing copy kept').toBe('old')
+      expect(await makeSmallCopies('smallville', { root, force: true, log: () => {} })).toBe(3)
+      expect(await sharp(join(dir, '3-640.webp')).metadata(), 'never upscaled').toMatchObject({ width: 500, height: 400 })
     } finally {
       rmSync(root, { recursive: true, force: true })
     }

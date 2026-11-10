@@ -1,20 +1,27 @@
 // Fetches each city's photos from Wikimedia Commons into src/data/photos/<cityId>/.
 // Usage: npm run photos [cityId ...]   (no ids = every city that has a photos.json)
 //        npm run photos -- --recredit [cityId ...]   (re-clean stored authors offline)
+//        npm run photos -- --small [cityId ...]   (write missing <n>-640.webp copies offline)
+//        npm run photos -- --small --force [cityId ...]   (rewrite every small copy)
 //
 // Per city, photos.json lists 5 entries with hand-written `commons` (file title), `caption`, `alt`
 // and optional `focus`. For each entry the script reads author and licence from the Commons API,
 // refuses anything not CC0 / public domain / CC BY / CC BY-SA (writing nothing for that city),
 // downloads a 1600px rendition, resizes it to 1280px wide (a portrait to 1280px tall; never
 // upscaling), encodes WebP under 200 kB (stepping quality, then size, down) as <n>.webp, and
-// writes the filled-in fields back. Entries already filled for the same title with their .webp
-// on disk are skipped without any network call.
+// writes the filled-in fields back. Each photo also gets a small copy, <n>-640.webp (640px on the
+// long side, ~44 kB, under 70 kB unless quality 55 can't get there), for the profile mosaic; --small makes missing ones from the stored
+// 1280px WebP with no network. Entries already filled for the same title with their .webp on disk
+// are skipped without any network call (their small copy is still written if missing).
 import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
 import sharp from 'sharp'
 import {
   MAX_BYTES,
+  SMALL_BOX,
+  SMALL_MAX_BYTES,
+  SMALL_QUALITIES,
   TARGET_WIDTH,
   authorFrom,
   checkImageUrl,
@@ -25,6 +32,7 @@ import {
   isFilled,
   licenseUrlFor,
   orderKeys,
+  smallFileName,
   validateEntry,
   validateHandFields,
 } from './photos-lib.mjs'
@@ -103,6 +111,43 @@ async function encode(buf, title) {
 }
 
 /**
+ * The small copy for the profile mosaic: fit SMALL_BOX x SMALL_BOX (a portrait 640 tall; never
+ * upscaled), WebP stepping quality down until it is under SMALL_MAX_BYTES (else the smallest try).
+ */
+export async function encodeSmall(buf) {
+  let best
+  for (const q of SMALL_QUALITIES) {
+    const { data, info } = await sharp(buf)
+      .resize({ width: SMALL_BOX, height: SMALL_BOX, fit: 'inside', withoutEnlargement: true })
+      .webp({ quality: q, effort: 6 })
+      .toBuffer({ resolveWithObject: true })
+    best = { data, width: info.width, height: info.height, q }
+    if (data.length <= SMALL_MAX_BYTES) break
+  }
+  return best
+}
+
+/**
+ * Writes <n>-640.webp next to each listed <n>.webp that lacks one (all of them with `force`),
+ * offline, from the stored 1280px file. Returns the number written.
+ */
+export async function makeSmallCopies(cityId, { root = ROOT, force = false, log = console.log } = {}) {
+  const dir = join(root, cityId)
+  const entries = JSON.parse(readFileSync(join(dir, 'photos.json'), 'utf8'))
+  let written = 0
+  for (const e of entries) {
+    if (typeof e.file !== 'string' || !existsSync(join(dir, e.file))) continue
+    const small = join(dir, smallFileName(e.file))
+    if (!force && existsSync(small)) continue
+    const img = await encodeSmall(readFileSync(join(dir, e.file)))
+    writeFileSync(small, img.data)
+    written++
+    log(`${cityId} ${smallFileName(e.file)}  ${(img.data.length / 1000).toFixed(0)} kB  ${img.width}x${img.height}  q${img.q}`)
+  }
+  return written
+}
+
+/**
  * Fills one city's photos. Validates every hand-written field and every licence, then downloads
  * and encodes, and only then writes the .webp files and photos.json, so a refusal writes nothing.
  * `get` and `root` are injectable for tests.
@@ -119,6 +164,7 @@ export async function doCity(cityId, { root = ROOT, get = httpGet, log = console
     .map((e, i) => ({ e, n: i + 1 }))
     .filter(({ e, n }) => !(isFilled(e, n) && existsSync(join(dir, `${n}.webp`))))
   if (!todo.length) {
+    await makeSmallCopies(cityId, { root, log })
     log(`${cityId}: all ${entries.length} photos up to date, nothing downloaded`)
     return { downloaded: 0, skipped: entries.length }
   }
@@ -131,7 +177,8 @@ export async function doCity(cityId, { root = ROOT, get = httpGet, log = console
   for (const { e, n, info } of infos) {
     const buf = Buffer.from(await (await get(info.thumb)).arrayBuffer())
     const img = await encode(buf, e.commons)
-    images.push({ n, info, img })
+    const small = await encodeSmall(img.data)
+    images.push({ n, info, img, small })
     log(`${cityId} ${n}.webp  ${(img.data.length / 1000).toFixed(0)} kB  ${img.width}x${img.height}  q${img.q}  ${info.license}  ${e.commons}`)
   }
 
@@ -151,8 +198,12 @@ export async function doCity(cityId, { root = ROOT, get = httpGet, log = console
   const errs = out.flatMap((e, i) => validateEntry(e, i + 1))
   if (errs.length) throw new Error(`${cityId}:\n  ${errs.join('\n  ')}`)
 
-  for (const { n, img } of images) writeFileSync(join(dir, `${n}.webp`), img.data)
+  for (const { n, img, small } of images) {
+    writeFileSync(join(dir, `${n}.webp`), img.data)
+    writeFileSync(join(dir, smallFileName(`${n}.webp`)), small.data)
+  }
   writeFileSync(jsonPath, `${JSON.stringify(out, null, 2)}\n`)
+  await makeSmallCopies(cityId, { root, log })
   log(`${cityId}: downloaded ${images.length}, skipped ${entries.length - images.length}`)
   return { downloaded: images.length, skipped: entries.length - images.length }
 }
@@ -182,7 +233,9 @@ export function recredit(cityId, { root = ROOT, log = console.log } = {}) {
 async function main() {
   const args = process.argv.slice(2)
   const recreditMode = args.includes('--recredit')
-  const ids = args.filter((a) => a !== '--recredit')
+  const smallMode = args.includes('--small')
+  const force = args.includes('--force')
+  const ids = args.filter((a) => !a.startsWith('--'))
   const cities = ids.length
     ? ids
     : readdirSync(ROOT, { withFileTypes: true })
@@ -193,6 +246,12 @@ async function main() {
     let total = 0
     for (const id of cities) total += recredit(id)
     console.log(`recredit: ${total} author(s) changed, no network, no images touched`)
+    return
+  }
+  if (smallMode) {
+    let total = 0
+    for (const id of cities) total += await makeSmallCopies(id, { force })
+    console.log(`small: wrote ${total} ${SMALL_BOX}px cop${total === 1 ? 'y' : 'ies'}, no network`)
     return
   }
   let failed = 0

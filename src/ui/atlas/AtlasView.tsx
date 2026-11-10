@@ -26,6 +26,7 @@ import { CodeChip } from './CodeChip'
 import { CompareSheet } from './CompareSheet'
 import { hasProfile } from '../../data/expatPicks'
 import { profileView as toProfileView } from './picks'
+import { preloadOnIntent } from './photoLoad'
 import { ProfileSheet } from './ProfileSheet'
 import { TopPicks } from './TopPicks'
 import { SourcesLine } from './ThingsToCheck'
@@ -300,7 +301,7 @@ function Tile({
           <div className="atile__city">
             <CodeChip code={row.city.countryCode} />
             <span className="atile__name">{row.city.name}</span>
-            {onProfile && <ProfileLink name={row.city.name} onClick={onProfile} where="head" />}
+            {onProfile && <ProfileLink cityId={row.cityId} name={row.city.name} onClick={onProfile} where="head" />}
           </div>
           <div className="atile__fig" style={{ color: successTextColor(row.successRate) }}>
             <AnimatedNumber value={Math.round(row.successRate * 100)} className="atile__num" />
@@ -308,7 +309,7 @@ function Tile({
           </div>
           <div className="atile__foot">
             {note && <span className="t-small ink-3">{note}</span>}
-            {onProfile && <ProfileLink name={row.city.name} onClick={onProfile} where="foot" />}
+            {onProfile && <ProfileLink cityId={row.cityId} name={row.city.name} onClick={onProfile} where="foot" />}
             {action && (
               <button type="button" className="link-btn" onClick={action.onClick}>
                 {action.label} →
@@ -329,12 +330,13 @@ function Tile({
 }
 
 /** Rendered twice; CSS shows the name-line copy, or the foot copy in the half-width phone tiles. */
-function ProfileLink({ name, onClick, where }: { name: string; onClick: () => void; where: 'head' | 'foot' }) {
+function ProfileLink({ cityId, name, onClick, where }: { cityId: string; name: string; onClick: () => void; where: 'head' | 'foot' }) {
   return (
     <button
       type="button"
       className={cx('link-btn atile__profile', `atile__profile--${where}`)}
       onClick={onClick}
+      {...preloadOnIntent(cityId)}
       aria-label={`View the ${name} profile`}
     >
       Profile →

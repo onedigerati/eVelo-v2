@@ -19,3 +19,9 @@ export function checkOriginalSize(width: unknown, height: unknown, title: string
 export function checkImageUrl(url: unknown, title: string): string
 export function normalizeTitle(title: unknown): string
 export function hasCreditNoise(s: unknown): boolean
+export const SMALL_BOX: number
+export const SMALL_MAX_BYTES: number
+export const SMALL_QUALITIES: number[]
+export function smallFileName(file: string): string
+export function isSmallFile(file: string): boolean
+export function smallSize(width: number, height: number): { width: number; height: number }
