@@ -1,34 +1,29 @@
-# Premium scales overrides plan
+# Hero tile glow plan
 
 ## Goal
-Typed spending (a `$` amount or a `%` change on a destination category) stops freezing the "Expat price premium" slider. A typed value is pinned to the premium at the moment it was typed, and when the slider moves it scales the way eVelo's own estimate for that row moves: `value(e) = typed × model(e) / model(e_typed)`, capped at the larger of the home price and the typed value. Typed values read exactly as typed at their own premium and return to it when slid back. Rows the premium doesn't touch (pricier than home, Travel) don't move, and home-budget changes still don't move a `$`. Done = both stages pass verification in the running build, every view (plan card, Outlook, Atlas, profiles, simulation) shows the same numbers, and saved plans and share links from before load unchanged.
+On the Atlas, the three hero tiles (Best odds, Your home, Your destination) color a soft glow by the city's odds, like the top-pick cards, but the glow sits in the top-right corner while the odds figure sits bottom-left, so the glow reads as decoration behind "Profile →". Option B: the glow moves to sit behind the odds figure, so the color belongs to the number again. Nothing else on the tiles changes (layout, "Profile →", footer, hover, click behaviour). Done = the stage passes verification in the running build; deploy waits for the user's go.
 
 ## Baseline
-2026-11-10 · tests: 766 pass · typecheck: clean
+2026-11-10 · tests: 818 pass (57 files) · typecheck: clean
 
 ## Now
-All stages done
-Agents: wide — confirmed 2026-11-10 10:25
+Stage 1 of 1 · Glow behind the figure
+Mode: autopilot
+Agents: wide — confirmed 2026-11-10 12:27
+Risk: UI only
+Checks:
+- [ ] On each hero tile with a city, the tone glow is centred on the odds figure (its centre within the figure's box, horizontally and vertically) and no glow remains in the top-right corner; the glow's color still follows the odds (green 87%, rust 43%, between for 75%) (proof: running app, computed geometry + screenshot)
+- [ ] The glow sits behind the figure and never covers text or catches clicks: the figure, city name, "Profile →" and "Make destination" stay readable and clickable, and the glow is clipped by the tile's rounded edge (proof: running app, elementFromPoint + screenshot)
+- [ ] It holds in light and dark, at 1280px and at phone width (390px, where the tiles reflow), in the empty, loading and re-ranking (dimmed) states (proof: screenshots)
+- [ ] Tests and typecheck stay green; the top-pick cards are unchanged (proof: test run + screenshot)
+Open: none
 
 ## Stages
-- [x] 1. Scaling engine — anchors stored with each override, the scaling formula in one shared function used everywhere, migration and share-link sanitizing
-- [x] 2. Premium UI — overridden rows note they scale with the premium, info tip and Method copy updated, checked in the running app. From the stage 1 review: the plan card's ⓘ tip (`PlaceSection.tsx` ~141) still says a typed `$` "stays put when … the premium changes", and the profile's "your amount"/"your change" markers now sit on scaled numbers; both need the scaling note (plus the cap limit in Decisions)
+- [ ] 1. Glow behind the figure — move the hero tiles' tone glow from the top-right corner to behind the odds figure, CSS only, checked in the running app
 
 ## Decisions
-- 2026-11-10 · A typed number means "a real price I found", not "my final spend": the premium still applies on top — user: "Meaning 2, go with option B and plan it".
-- 2026-11-10 · Option B: pin a typed value to the premium when typed and scale it by the model's relative change, capped at max(home, typed); same for `$` and `%` — user chose option B. Replaces the standing 2026-11-08 decision that the premium doesn't move fixed amounts.
-- 2026-11-10 · Agents: wide; run on autopilot — user: "Go wide and on autopilot."
-- 2026-11-10 · Scale check didn't fire (2 stages, one release) — PM's call.
-- 2026-11-10 · Anchors are stored beside the overrides (one premium per `%` category; one per city and category for `$`), not by changing the existing value types, so old share links and saved plans keep decoding — PM's call (default).
-- 2026-11-10 · An override with no anchor (saved before this plan) takes the plan's own saved premium as its anchor at load, so nothing a user saved changes until they move the slider — PM's call (default).
-- 2026-11-10 · Typing a new value re-anchors that row at the current premium; × and Reset all drop the anchors with the overrides — PM's call (default).
-- 2026-11-10 · Stage 1's risk line drops "money": this is the planner's spending estimate (no payments, no real funds), which the same-shaped Set your own spending plan marked UI only; the formula is still proven by tests and the share-link decoding still gets the security pass — PM's call.
-- 2026-11-10 · "Changing the home budget doesn't move a `$`" holds while the cap isn't reached; once a typed `$` hits max(home, typed), a lower home budget lowers it, never below what was typed. That follows from the agreed formula, so it stays; Stage 2's copy may mention it — PM's call.
-- 2026-11-10 · Stage 1 closed: 5/5 checks pass in tests and the running build ([evidence](evidence/stage-1/report.md)); review found 0 fix-now, 2 deferred into Stage 2, security pass on anchor decoding clean — PM.
-- 2026-11-10 · Stage 2 closed: 4/4 checks pass in the running build at 390px and 1280px ([evidence](evidence/stage-2/report.md)); review found 0 fix-now; two Method sentences it deferred were fixed in the stage (home-budget rule, what "typed" means for a %), one moved to Open questions — PM.
-- 2026-11-10 · The plan card and city profiles share one "does this row scale" rule (`destinationSpend().scales`) and one "scales with premium" string (`src/ui/format.ts`); the plan card also skips a % row on a $0 home amount, which the profile never shows — PM's call.
-- 2026-11-10 · Deployed: pushed main (ade0a0f), Pages run 42862747316 build and deploy succeeded; live bundles carry the new Method sentence and the "scales with premium" note — user: "yes, push and deploy".
-- 2026-11-10 · No per-row lock control ("final number, don't touch") for now — PM's call (default), revisit if asked.
+- 2026-11-10 · Option B from the mockup (https://claude.ai/artifact/HaQZtnzaomJAoLAdEr25gJ): the glow follows the number; layout otherwise unchanged — user: "Let's go with option B and let's do this on autopilot and wide."
+- 2026-11-10 · Agents: wide; run on autopilot — user: "on autopilot and wide."
 
 ## Open questions
 - A hand-edited share link can carry an anchor off the slider's 0.05 steps (e.g. 0.37); it's clamped but not snapped, so "returns exactly when you slide back" can't be reached for that row. Snap anchors to the slider step in `share.ts` — from the stage 2 review, later.
@@ -87,3 +82,4 @@ Agents: wide — confirmed 2026-11-10 10:25
 - 2026-11-10 · Your spending on profiles: user-set spending rows marked "your amount"/"your change" on city profiles, named in the note, live on GitHub Pages — [plan](plans/2026-11-10-spending-markers.md) · [evidence](plans/2026-11-10-spending-markers/evidence/)
 - 2026-11-10 · Clickable atlas tiles: Best odds, Your home and Your destination tiles open the city profile from anywhere on the tile, with pick-card hover, live on GitHub Pages — [plan](plans/2026-11-10-clickable-tiles.md) · [evidence](plans/2026-11-10-clickable-tiles/evidence/)
 - 2026-11-10 · Country on city cards: muted country name beside the city on atlas tiles and top-pick cards, and swipe-down to close phone sheets, live on GitHub Pages — [plan](plans/2026-11-10-country-label.md) · [evidence](plans/2026-11-10-country-label/evidence/)
+- 2026-11-10 · Premium scales overrides: typed `$`/`%` spending pinned to the premium when typed and scaled with the slider, with a "scales with premium" note, tip and Method copy, live on GitHub Pages — [plan](plans/2026-11-10-premium-scales.md) · [evidence](plans/2026-11-10-premium-scales/evidence/)
