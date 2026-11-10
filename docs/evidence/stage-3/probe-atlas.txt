@@ -1,0 +1,135 @@
+$ OUT=docs/evidence/stage-3 node probe.cjs atlas   (working tree after the overlap change, vite dev on :5199; phones isMobile+hasTouch with real taps; desktop/tablet mouse)
+
+## Check 1 · d1280 · light
+scrollY 0: {"pillPresent":false,"tiles":{"t":318,"b":501},"topbarBottom":65}
+tiles bottom 2px below top bar: {"scrollY":434,"tiles":{"t":-116,"b":67},"pillPresent":false}
+tiles bottom 2px behind top bar: {"scrollY":438,"vw":1280,"topbarBottom":65,"tabbarTop":null,"tiles":{"t":-120,"b":63},"pillPresent":true,"wrapperClass":"docked-verdict docked-verdict--atlas","hScroll":false,"text":"Holds in 80% 80% of futures · Bangkok","aria":"Holds in 80% of futures in Bangkok. Back to the top of the atlas.","pillClass":"verdict-pill verdict-pill--holds docked-verdict__pill","pill":{"l":480,"r":800,"t":76,"b":120,"w":320,"h":44},"city":{"l":681,"r":742,"t":88,"b":108,"w":61,"h":20},"num":{"l":579,"r":612,"t":83,"b":112,"w":33,"h":29},"cityText":"· Bangkok","cityTruncated":false,"numInsidePill":true,"pillInsideViewport":true,"gapBelowTopbar":11,"clearOfTabbar":null,"yielding":false,"inert":false}
+store: {"dest":"bangkok","home":"st-louis","mainSuccess":0.79525,"mainPct":80,"atlasRowSuccessForCity":0.79525} pill % matches main simulation: true
+mid page: {"scrollY":2946,"pillPresent":true,"gapBelowTopbar":11,"pill":{"l":480,"r":800,"t":76,"b":120,"w":320,"h":44},"yielding":false}
+scrolled back, tiles bottom 2px below top bar: {"scrollY":434,"tiles":{"t":-116,"b":67},"topbarBottom":65,"pillPresent":false}
+scrolled back to top: {"pillPresent":false}
+Outlook verdict number (same session): {"text":"8080%%","aria":"Your plan holds in8080%%of futures."} main pct: 80
+ranking row set to 11% (main stays): {"cityId":"bangkok","rankingRowNow":0.11,"pillText":"Holds in 80% 80% of futures · Bangkok","tiles":["Best oddsTHChiang RaiThailandProfile →8989%41% cheaper than homeProfile →Make de","Your homeUSSt. LouisUnited StatesProfile →6464%Rank 78 of 133Profile →","Your destinationTHBangkokThailandProfile →1111%−53 pts vs staying homeProfile →"]}
+
+## Check 1 · d1280 · dark
+scrollY 0: {"pillPresent":false,"tiles":{"t":318,"b":501},"topbarBottom":65}
+tiles bottom 2px below top bar: {"scrollY":434,"tiles":{"t":-116,"b":67},"pillPresent":false}
+tiles bottom 2px behind top bar: {"scrollY":438,"vw":1280,"topbarBottom":65,"tabbarTop":null,"tiles":{"t":-120,"b":63},"pillPresent":true,"wrapperClass":"docked-verdict docked-verdict--atlas","hScroll":false,"text":"Holds in 80% 80% of futures · Bangkok","aria":"Holds in 80% of futures in Bangkok. Back to the top of the atlas.","pillClass":"verdict-pill verdict-pill--holds docked-verdict__pill","pill":{"l":480,"r":800,"t":76,"b":120,"w":320,"h":44},"city":{"l":681,"r":742,"t":88,"b":108,"w":61,"h":20},"num":{"l":579,"r":612,"t":83,"b":112,"w":33,"h":29},"cityText":"· Bangkok","cityTruncated":false,"numInsidePill":true,"pillInsideViewport":true,"gapBelowTopbar":11,"clearOfTabbar":null,"yielding":false,"inert":false}
+store: {"dest":"bangkok","home":"st-louis","mainSuccess":0.79525,"mainPct":80,"atlasRowSuccessForCity":0.79525} pill % matches main simulation: true
+mid page: {"scrollY":2946,"pillPresent":true,"gapBelowTopbar":11,"pill":{"l":480,"r":800,"t":76,"b":120,"w":320,"h":44},"yielding":false}
+scrolled back, tiles bottom 2px below top bar: {"scrollY":434,"tiles":{"t":-116,"b":67},"topbarBottom":65,"pillPresent":false}
+scrolled back to top: {"pillPresent":false}
+Outlook verdict number (same session): {"text":"8080%%","aria":"Your plan holds in8080%%of futures."} main pct: 80
+ranking row set to 11% (main stays): {"cityId":"bangkok","rankingRowNow":0.11,"pillText":"Holds in 80% 80% of futures · Bangkok","tiles":["Best oddsTHChiang RaiThailandProfile →8989%41% cheaper than homeProfile →Make de","Your homeUSSt. LouisUnited StatesProfile →6464%Rank 78 of 133Profile →","Your destinationTHBangkokThailandProfile →1111%−53 pts vs staying homeProfile →"]}
+
+## Check 1 · t800 · light
+scrollY 0: {"pillPresent":false,"tiles":{"t":296,"b":516},"topbarBottom":65}
+tiles bottom 2px below top bar: {"scrollY":449,"tiles":{"t":-153,"b":67},"pillPresent":false}
+tiles bottom 2px behind top bar: {"scrollY":453,"vw":800,"topbarBottom":65,"tabbarTop":null,"tiles":{"t":-157,"b":63},"pillPresent":true,"wrapperClass":"docked-verdict docked-verdict--atlas","hScroll":false,"text":"Holds in 80% 80% of futures · Bangkok","aria":"Holds in 80% of futures in Bangkok. Back to the top of the atlas.","pillClass":"verdict-pill verdict-pill--holds docked-verdict__pill","pill":{"l":240,"r":560,"t":76,"b":120,"w":320,"h":44},"city":{"l":441,"r":502,"t":88,"b":108,"w":61,"h":20},"num":{"l":339,"r":372,"t":83,"b":112,"w":33,"h":29},"cityText":"· Bangkok","cityTruncated":false,"numInsidePill":true,"pillInsideViewport":true,"gapBelowTopbar":11,"clearOfTabbar":null,"yielding":false,"inert":false}
+store: {"dest":"bangkok","home":"st-louis","mainSuccess":0.79525,"mainPct":80,"atlasRowSuccessForCity":0.79525} pill % matches main simulation: true
+mid page: {"scrollY":3250,"pillPresent":true,"gapBelowTopbar":11,"pill":{"l":240,"r":560,"t":76,"b":120,"w":320,"h":44},"yielding":false}
+scrolled back, tiles bottom 2px below top bar: {"scrollY":449,"tiles":{"t":-153,"b":67},"topbarBottom":65,"pillPresent":false}
+scrolled back to top: {"pillPresent":false}
+Outlook verdict number (same session): {"text":"8080%%","aria":"Your plan holds in8080%%of futures."} main pct: 80
+ranking row set to 11% (main stays): {"cityId":"bangkok","rankingRowNow":0.11,"pillText":"Holds in 80% 80% of futures · Bangkok","tiles":["Best oddsTHChiang RaiThailandProfile →8989%41% cheaper than homeProfile →Make de","Your homeUSSt. LouisUnited StatesProfile →6464%Rank 78 of 133Profile →","Your destinationTHBangkokThailandProfile →1111%−53 pts vs staying homeProfile →"]}
+
+## Check 1 · t800 · dark
+scrollY 0: {"pillPresent":false,"tiles":{"t":296,"b":516},"topbarBottom":65}
+tiles bottom 2px below top bar: {"scrollY":449,"tiles":{"t":-153,"b":67},"pillPresent":false}
+tiles bottom 2px behind top bar: {"scrollY":453,"vw":800,"topbarBottom":65,"tabbarTop":null,"tiles":{"t":-157,"b":63},"pillPresent":true,"wrapperClass":"docked-verdict docked-verdict--atlas","hScroll":false,"text":"Holds in 80% 80% of futures · Bangkok","aria":"Holds in 80% of futures in Bangkok. Back to the top of the atlas.","pillClass":"verdict-pill verdict-pill--holds docked-verdict__pill","pill":{"l":240,"r":560,"t":76,"b":120,"w":320,"h":44},"city":{"l":441,"r":502,"t":88,"b":108,"w":61,"h":20},"num":{"l":339,"r":372,"t":83,"b":112,"w":33,"h":29},"cityText":"· Bangkok","cityTruncated":false,"numInsidePill":true,"pillInsideViewport":true,"gapBelowTopbar":11,"clearOfTabbar":null,"yielding":false,"inert":false}
+store: {"dest":"bangkok","home":"st-louis","mainSuccess":0.79525,"mainPct":80,"atlasRowSuccessForCity":0.79525} pill % matches main simulation: true
+mid page: {"scrollY":3250,"pillPresent":true,"gapBelowTopbar":11,"pill":{"l":240,"r":560,"t":76,"b":120,"w":320,"h":44},"yielding":false}
+scrolled back, tiles bottom 2px below top bar: {"scrollY":449,"tiles":{"t":-153,"b":67},"topbarBottom":65,"pillPresent":false}
+scrolled back to top: {"pillPresent":false}
+Outlook verdict number (same session): {"text":"8080%%","aria":"Your plan holds in8080%%of futures."} main pct: 80
+ranking row set to 11% (main stays): {"cityId":"bangkok","rankingRowNow":0.11,"pillText":"Holds in 80% 80% of futures · Bangkok","tiles":["Best oddsTHChiang RaiThailandProfile →8989%41% cheaper than homeProfile →Make de","Your homeUSSt. LouisUnited StatesProfile →6464%Rank 78 of 133Profile →","Your destinationTHBangkokThailandProfile →1111%−53 pts vs staying homeProfile →"]}
+
+## Check 1 · p390 · light
+scrollY 0: {"pillPresent":false,"tiles":{"t":346,"b":744},"topbarBottom":57}
+tiles bottom 2px below top bar: {"scrollY":685,"tiles":{"t":-339,"b":59},"pillPresent":false}
+tiles bottom 2px behind top bar: {"scrollY":689,"vw":390,"topbarBottom":57,"tabbarTop":780,"tiles":{"t":-343,"b":55},"pillPresent":true,"wrapperClass":"docked-verdict docked-verdict--atlas docked-verdict--phone","hScroll":false,"text":"Holds in 80% 80% of futures · Bangkok","aria":"Holds in 80% of futures in Bangkok. Back to the top of the atlas.","pillClass":"verdict-pill verdict-pill--holds docked-verdict__pill","pill":{"l":49,"r":342,"t":68,"b":112,"w":293,"h":44},"city":{"l":246,"r":307,"t":80,"b":100,"w":61,"h":20},"num":{"l":144,"r":177,"t":75,"b":104,"w":33,"h":29},"cityText":"· Bangkok","cityTruncated":false,"numInsidePill":true,"pillInsideViewport":true,"gapBelowTopbar":11,"clearOfTabbar":true,"yielding":false,"inert":false}
+store: {"dest":"bangkok","home":"st-louis","mainSuccess":0.79525,"mainPct":80,"atlasRowSuccessForCity":0.79525} pill % matches main simulation: true
+mid page: {"scrollY":3709,"pillPresent":true,"gapBelowTopbar":11,"pill":{"l":49,"r":342,"t":68,"b":112,"w":293,"h":44},"yielding":false}
+scrolled back, tiles bottom 2px below top bar: {"scrollY":685,"tiles":{"t":-339,"b":59},"topbarBottom":57,"pillPresent":false}
+scrolled back to top: {"pillPresent":false}
+Outlook verdict number (same session): {"text":"8080%%","aria":"Your plan holds in8080%%of futures."} main pct: 80
+ranking row set to 11% (main stays): {"cityId":"bangkok","rankingRowNow":0.11,"pillText":"Holds in 80% 80% of futures · Bangkok","tiles":["Best oddsTHChiang RaiThailandProfile →8989%41% cheaper than homeProfile →Make de","Your homeUSSt. LouisUnited StatesProfile →6464%Rank 78 of 133Profile →","Your destinationTHBangkokThailandProfile →1111%−53 pts vs staying homeProfile →"]}
+
+## Check 1 · p390 · dark
+scrollY 0: {"pillPresent":false,"tiles":{"t":346,"b":744},"topbarBottom":57}
+tiles bottom 2px below top bar: {"scrollY":685,"tiles":{"t":-339,"b":59},"pillPresent":false}
+tiles bottom 2px behind top bar: {"scrollY":689,"vw":390,"topbarBottom":57,"tabbarTop":780,"tiles":{"t":-343,"b":55},"pillPresent":true,"wrapperClass":"docked-verdict docked-verdict--atlas docked-verdict--phone","hScroll":false,"text":"Holds in 80% 80% of futures · Bangkok","aria":"Holds in 80% of futures in Bangkok. Back to the top of the atlas.","pillClass":"verdict-pill verdict-pill--holds docked-verdict__pill","pill":{"l":49,"r":342,"t":68,"b":112,"w":293,"h":44},"city":{"l":246,"r":307,"t":80,"b":100,"w":61,"h":20},"num":{"l":144,"r":177,"t":75,"b":104,"w":33,"h":29},"cityText":"· Bangkok","cityTruncated":false,"numInsidePill":true,"pillInsideViewport":true,"gapBelowTopbar":11,"clearOfTabbar":true,"yielding":false,"inert":false}
+store: {"dest":"bangkok","home":"st-louis","mainSuccess":0.79525,"mainPct":80,"atlasRowSuccessForCity":0.79525} pill % matches main simulation: true
+mid page: {"scrollY":3709,"pillPresent":true,"gapBelowTopbar":11,"pill":{"l":49,"r":342,"t":68,"b":112,"w":293,"h":44},"yielding":false}
+scrolled back, tiles bottom 2px below top bar: {"scrollY":685,"tiles":{"t":-339,"b":59},"topbarBottom":57,"pillPresent":false}
+scrolled back to top: {"pillPresent":false}
+Outlook verdict number (same session): {"text":"8080%%","aria":"Your plan holds in8080%%of futures."} main pct: 80
+ranking row set to 11% (main stays): {"cityId":"bangkok","rankingRowNow":0.11,"pillText":"Holds in 80% 80% of futures · Bangkok","tiles":["Best oddsTHChiang RaiThailandProfile →8989%41% cheaper than homeProfile →Make de","Your homeUSSt. LouisUnited StatesProfile →6464%Rank 78 of 133Profile →","Your destinationTHBangkokThailandProfile →1111%−53 pts vs staying homeProfile →"]}
+
+## Check 1 · p320 · light
+scrollY 0: {"pillPresent":false,"tiles":{"t":371,"b":814},"topbarBottom":57}
+tiles bottom 2px below top bar: {"scrollY":755,"tiles":{"t":-384,"b":59},"pillPresent":false}
+tiles bottom 2px behind top bar: {"scrollY":759,"vw":320,"topbarBottom":57,"tabbarTop":576,"tiles":{"t":-388,"b":55},"pillPresent":true,"wrapperClass":"docked-verdict docked-verdict--atlas docked-verdict--phone","hScroll":false,"text":"Holds in 80% 80% of futures · Bangkok","aria":"Holds in 80% of futures in Bangkok. Back to the top of the atlas.","pillClass":"verdict-pill verdict-pill--holds docked-verdict__pill","pill":{"l":16,"r":304,"t":68,"b":112,"w":288,"h":44},"city":{"l":213,"r":269,"t":80,"b":100,"w":56,"h":20},"num":{"l":111,"r":144,"t":75,"b":104,"w":33,"h":29},"cityText":"· Bangkok","cityTruncated":true,"numInsidePill":true,"pillInsideViewport":true,"gapBelowTopbar":11,"clearOfTabbar":true,"yielding":false,"inert":false}
+store: {"dest":"bangkok","home":"st-louis","mainSuccess":0.79525,"mainPct":80,"atlasRowSuccessForCity":0.79525} pill % matches main simulation: true
+mid page: {"scrollY":3997,"pillPresent":true,"gapBelowTopbar":11,"pill":{"l":16,"r":304,"t":68,"b":112,"w":288,"h":44},"yielding":false}
+scrolled back, tiles bottom 2px below top bar: {"scrollY":755,"tiles":{"t":-384,"b":59},"topbarBottom":57,"pillPresent":false}
+scrolled back to top: {"pillPresent":false}
+Outlook verdict number (same session): {"text":"8080%%","aria":"Your plan holds in8080%%of futures."} main pct: 80
+ranking row set to 11% (main stays): {"cityId":"bangkok","rankingRowNow":0.11,"pillText":"Holds in 80% 80% of futures · Bangkok","tiles":["Best oddsTHChiang RaiThailandProfile →8989%41% cheaper than homeProfile →Make de","Your homeUSSt. LouisUnited StatesProfile →6464%Rank 78 of 133Profile →","Your destinationTHBangkokThailandProfile →1111%−53 pts vs staying homeProfile →"]}
+
+## Check 1 · p320 · dark
+scrollY 0: {"pillPresent":false,"tiles":{"t":371,"b":814},"topbarBottom":57}
+tiles bottom 2px below top bar: {"scrollY":755,"tiles":{"t":-384,"b":59},"pillPresent":false}
+tiles bottom 2px behind top bar: {"scrollY":759,"vw":320,"topbarBottom":57,"tabbarTop":576,"tiles":{"t":-388,"b":55},"pillPresent":true,"wrapperClass":"docked-verdict docked-verdict--atlas docked-verdict--phone","hScroll":false,"text":"Holds in 80% 80% of futures · Bangkok","aria":"Holds in 80% of futures in Bangkok. Back to the top of the atlas.","pillClass":"verdict-pill verdict-pill--holds docked-verdict__pill","pill":{"l":16,"r":304,"t":68,"b":112,"w":288,"h":44},"city":{"l":213,"r":269,"t":80,"b":100,"w":56,"h":20},"num":{"l":111,"r":144,"t":75,"b":104,"w":33,"h":29},"cityText":"· Bangkok","cityTruncated":true,"numInsidePill":true,"pillInsideViewport":true,"gapBelowTopbar":11,"clearOfTabbar":true,"yielding":false,"inert":false}
+store: {"dest":"bangkok","home":"st-louis","mainSuccess":0.79525,"mainPct":80,"atlasRowSuccessForCity":0.79525} pill % matches main simulation: true
+mid page: {"scrollY":3997,"pillPresent":true,"gapBelowTopbar":11,"pill":{"l":16,"r":304,"t":68,"b":112,"w":288,"h":44},"yielding":false}
+scrolled back, tiles bottom 2px below top bar: {"scrollY":755,"tiles":{"t":-384,"b":59},"topbarBottom":57,"pillPresent":false}
+scrolled back to top: {"pillPresent":false}
+Outlook verdict number (same session): {"text":"8080%%","aria":"Your plan holds in8080%%of futures."} main pct: 80
+ranking row set to 11% (main stays): {"cityId":"bangkok","rankingRowNow":0.11,"pillText":"Holds in 80% 80% of futures · Bangkok","tiles":["Best oddsTHChiang RaiThailandProfile →8989%41% cheaper than homeProfile →Make de","Your homeUSSt. LouisUnited StatesProfile →6464%Rank 78 of 133Profile →","Your destinationTHBangkokThailandProfile →1111%−53 pts vs staying homeProfile →"]}
+
+## Check 2 · d1280
+before tap: {"scrollY":4124,"yielding":false,"text":"Holds in 80% 80% of futures · Bangkok"}
+tap pill: {"scrollYBefore":4124,"pillWas":"Holds in 80% 80% of futures · Bangkok","scrollY":270,"activeId":"atlas-tiles","tilesTop":48,"tilesBottom":231,"topbarBottom":65,"tilesFullyVisible":false,"pillPresent":true}
+1 s later: {"scrollY":229,"pillPresent":false,"activeId":"atlas-tiles"}
+list: pill before choose: {"present":true,"text":"Holds in 80% 80% of futures · Bangkok"}
+list choose Lisbon: {"seen":{"running":true,"texts":["· Lisbon"],"delta":{"text":"−11 pts","cls":"docked-verdict__delta num is-down"}},"text":"Holds in 69% 69% of futures · Lisbon −11 pts","aria":"Holds in 69% of futures in Lisbon. Back to the top of the atlas.","mainPctBefore":80,"mainPctAfter":69,"dest":"lisbon","pillMatchesMain":true}
+map: pill before: {"present":true,"text":"Holds in 69% 69% of futures · Lisbon"}
+marker porto {"x":614.2999877929688,"y":354.84686279296875}
+city card after marker tap: {"name":"PortoPortugal"}
+map choose porto : {"seen":{"running":true,"texts":["· Lisbon","· Porto"],"delta":{"text":"+5 pts","cls":"docked-verdict__delta num is-up"}},"text":"Holds in 74% 74% of futures · Porto +5 pts","yielding":false,"dest":"porto","mainPct":74,"pillMatchesMain":true}
+
+## Check 2 · t800
+before tap: {"scrollY":4550,"yielding":false,"text":"Holds in 80% 80% of futures · Bangkok"}
+tap pill: {"scrollYBefore":4550,"pillWas":"Holds in 80% 80% of futures · Bangkok","scrollY":272,"activeId":"atlas-tiles","tilesTop":24,"tilesBottom":244,"topbarBottom":65,"tilesFullyVisible":false,"pillPresent":true}
+1 s later: {"scrollY":207,"pillPresent":false,"activeId":"atlas-tiles"}
+list: pill before choose: {"present":true,"text":"Holds in 80% 80% of futures · Bangkok"}
+list choose Lisbon: {"seen":{"running":true,"texts":["· Lisbon"],"delta":{"text":"−11 pts","cls":"docked-verdict__delta num is-down"}},"text":"Holds in 69% 69% of futures · Lisbon −11 pts","aria":"Holds in 69% of futures in Lisbon. Back to the top of the atlas.","mainPctBefore":80,"mainPctAfter":69,"dest":"lisbon","pillMatchesMain":true}
+map: pill before: {"present":true,"text":"Holds in 69% 69% of futures · Lisbon"}
+marker porto {"x":384.3999938964844,"y":332.484375}
+city card after marker tap: {"name":"PortoPortugal"}
+map choose porto : {"seen":{"running":true,"texts":["· Lisbon","· Porto"],"delta":{"text":"+5 pts","cls":"docked-verdict__delta num is-up"}},"text":"Holds in 74% 74% of futures · Porto +5 pts","yielding":false,"dest":"porto","mainPct":74,"pillMatchesMain":true}
+
+## Check 2 · p390
+before tap: {"scrollY":5193,"yielding":false,"text":"Holds in 80% 80% of futures · Bangkok"}
+tap pill: {"scrollYBefore":5193,"pillWas":"Holds in 80% 80% of futures · Bangkok","scrollY":357,"activeId":"atlas-tiles","tilesTop":-11,"tilesBottom":387,"topbarBottom":57,"tilesFullyVisible":false,"pillPresent":true}
+1 s later: {"scrollY":265,"pillPresent":false,"activeId":"atlas-tiles"}
+list: pill before choose: {"present":true,"text":"Holds in 80% 80% of futures · Bangkok"}
+list choose Lisbon: {"seen":{"running":true,"texts":["· Lisbon"],"delta":{"text":"−11 pts","cls":"docked-verdict__delta num is-down"}},"text":"Holds in 69% 69% of futures · Lisbon −11 pts","aria":"Holds in 69% of futures in Lisbon. Back to the top of the atlas.","mainPctBefore":80,"mainPctAfter":69,"dest":"lisbon","pillMatchesMain":true}
+map: pill before: {"present":true,"text":"Holds in 69% 69% of futures · Lisbon"}
+marker porto {"x":160.60000610351562,"y":272.2437438964844}
+city card after marker tap: {"name":"PortoPortugal","btn":"Make destination"}
+map choose porto : {"seen":{"running":true,"texts":["· Lisbon","· Porto"],"delta":{"text":"+5 pts","cls":"docked-verdict__delta num is-up"}},"text":"Holds in 74% 74% of futures · Porto +5 pts","yielding":false,"dest":"porto","mainPct":74,"pillMatchesMain":true}
+
+## Check 2 · p320
+before tap: {"scrollY":5596,"yielding":false,"text":"Holds in 80% 80% of futures · Bangkok"}
+tap pill: {"scrollYBefore":5596,"pillWas":"Holds in 80% 80% of futures · Bangkok","scrollY":420,"activeId":"atlas-tiles","tilesTop":-49,"tilesBottom":394,"topbarBottom":57,"tilesFullyVisible":false,"pillPresent":true}
+1 s later: {"scrollY":290,"pillPresent":false,"activeId":"atlas-tiles"}
+list: pill before choose: {"present":true,"text":"Holds in 80% 80% of futures · Bangkok"}
+list choose Lisbon: {"seen":{"running":true,"texts":["· Lisbon"],"delta":{"text":"−11 pts","cls":"docked-verdict__delta num is-down"}},"text":"Holds in 69% 69% of futures · Lisbon −11 pts","aria":"Holds in 69% of futures in Lisbon. Back to the top of the atlas.","mainPctBefore":80,"mainPctAfter":69,"dest":"lisbon","pillMatchesMain":true}
+map: pill before: {"present":true,"text":"Holds in 69% 69% of futures · Lisbon"}
+marker porto {"x":132.6999969482422,"y":257.4562530517578}
+city card after marker tap: {"name":"PortoPortugal","btn":"Make destination"}
+map choose porto : {"seen":{"running":true,"texts":["· Lisbon","· Porto"],"delta":{"text":"+5 pts","cls":"docked-verdict__delta num is-up"}},"text":"Holds in 74% 74% of futures · Porto +5 pts","yielding":true,"dest":"porto","mainPct":74,"pillMatchesMain":true}
+
+console errors: none

@@ -29,8 +29,24 @@ import { TopPicks } from './TopPicks'
 import { Tile } from './AtlasTile'
 import { SourcesLine } from './ThingsToCheck'
 import { WorldMap } from './WorldMap'
+import { DockedVerdict, type DockTarget } from '../outlook/DockedVerdict'
 import '../views.css'
 import './atlas.css'
+
+/** The hero tiles: the docked pill shows once they scroll behind the top bar, and goes back to them. */
+const ATLAS_TILES_ID = 'atlas-tiles'
+const ATLAS_TARGET: DockTarget = {
+  watch: ATLAS_TILES_ID,
+  focus: ATLAS_TILES_ID,
+  action: 'atlas',
+  // The map (its hover card, drag and zoom buttons) can sit in the band under the pill.
+  yieldTo: '.wmap',
+  // Zoom buttons and the open city card step it aside even on touch, where nothing hovers.
+  yieldUnder: '.wmap__zoom, .city-card',
+  // The tablet Plan drawer only opens over the Outlook.
+  drawer: false,
+  className: 'docked-verdict--atlas',
+}
 
 function chooseDestination(id: string, rows: Ranked[]) {
   const st = useStore.getState()
@@ -112,171 +128,181 @@ export function AtlasView() {
   const line = insight(rows, inputs)
 
   return (
-    <motion.div className={cx('page page--atlas atlas', running && 'is-running')} variants={stagger(0.07)} initial="hidden" animate="show">
-      <motion.header className="atlas__header" variants={rise}>
-        <div className="atlas__meta">
-          <span className="t-eyebrow">Where your money goes furthest</span>
-          <span className={cx('atlas__status', running ? 'is-running' : 'is-done')} role="status" aria-live="polite">
-            <span className="pulse-dot" aria-hidden="true" />
-            {running || !atlasAt ? `Ranking ${CITIES.length} cities…` : `Ranked ${when}`}
-          </span>
-        </div>
-        <h1 className="t-display atlas__title">
-          The <em>atlas</em>
-        </h1>
-        <p className="t-lede atlas__lede">
-          {lifestyleCaption(inputs)}, ranked by how often your plan holds there: same portfolio, same loan, local prices and currency risk.
-        </p>
-      </motion.header>
+    <>
+      <DockedVerdict target={ATLAS_TARGET} />
+      <motion.div className={cx('page page--atlas atlas', running && 'is-running')} variants={stagger(0.07)} initial="hidden" animate="show">
+        <motion.header className="atlas__header" variants={rise}>
+          <div className="atlas__meta">
+            <span className="t-eyebrow">Where your money goes furthest</span>
+            <span className={cx('atlas__status', running ? 'is-running' : 'is-done')} role="status" aria-live="polite">
+              <span className="pulse-dot" aria-hidden="true" />
+              {running || !atlasAt ? `Ranking ${CITIES.length} cities…` : `Ranked ${when}`}
+            </span>
+          </div>
+          <h1 className="t-display atlas__title">
+            The <em>atlas</em>
+          </h1>
+          <p className="t-lede atlas__lede">
+            {lifestyleCaption(inputs)}, ranked by how often your plan holds there: same portfolio, same loan, local prices and currency risk.
+          </p>
+        </motion.header>
 
-      <motion.div className="atlas__tiles" variants={rise}>
-        <Tile
-          eyebrow="Best odds"
-          row={best}
-          note={best && home && best.cityId !== homeId ? `${percent(1 - best.costRatio)} cheaper than home` : undefined}
-          action={
-            best && best.cityId !== destId && best.cityId !== homeId
-              ? { label: 'Make destination', onClick: () => choose(best.cityId) }
-              : undefined
-          }
-          onProfile={best && hasProfile(best.cityId) ? () => setProfileId(best.cityId) : undefined}
-        />
-        <Tile
-          eyebrow="Your home"
-          row={home}
-          note={home ? `Rank ${home.rank} of ${rows.length}` : undefined}
-          onProfile={home && hasProfile(home.cityId) ? () => setProfileId(home.cityId) : undefined}
-        />
-        <Tile
-          eyebrow="Your destination"
-          row={dest}
-          empty={!destId ? 'Staying home. Tap any city to price a move.' : undefined}
-          note={
-            dest && home
-              ? `${dest.successRate >= home.successRate ? '+' : '−'}${Math.abs(Math.round((dest.successRate - home.successRate) * 100))} pts vs staying home`
-              : undefined
-          }
-          onProfile={dest && hasProfile(dest.cityId) ? () => setProfileId(dest.cityId) : undefined}
-        />
-      </motion.div>
-
-      <motion.div variants={rise}>
-        <TopPicks rows={rows} homeId={homeId} destId={destId} onOpen={setProfileId} onChoose={choose} />
-      </motion.div>
-
-      <motion.div variants={rise}>
-        <Card
-          className="atlas__mapcard"
-          eyebrow={`World map · ${CITIES.length} cities`}
-          title={
-            <>
-              Where your plan <em>holds</em>
-            </>
-          }
-          subtitle={line ?? 'Every city priced at your lifestyle, then simulated with the same futures.'}
+        <motion.div
+          id={ATLAS_TILES_ID}
+          className="atlas__tiles"
+          variants={rise}
+          role="group"
+          aria-label="Best odds, your home and your destination"
+          tabIndex={-1}
         >
-          <RegionChips value={region} onChange={setRegion} counts={counts} />
-          <WorldMap
-            rows={rows}
-            homeId={homeId}
-            destId={destId}
-            region={region}
-            compare={compare}
-            onToggleCompare={toggleCompare}
-            onChoose={choose}
-            onOpenProfile={setProfileId}
-            homeSpend={homeSpend}
+          <Tile
+            eyebrow="Best odds"
+            row={best}
+            note={best && home && best.cityId !== homeId ? `${percent(1 - best.costRatio)} cheaper than home` : undefined}
+            action={
+              best && best.cityId !== destId && best.cityId !== homeId
+                ? { label: 'Make destination', onClick: () => choose(best.cityId) }
+                : undefined
+            }
+            onProfile={best && hasProfile(best.cityId) ? () => setProfileId(best.cityId) : undefined}
           />
-          <Legend />
-        </Card>
-      </motion.div>
+          <Tile
+            eyebrow="Your home"
+            row={home}
+            note={home ? `Rank ${home.rank} of ${rows.length}` : undefined}
+            onProfile={home && hasProfile(home.cityId) ? () => setProfileId(home.cityId) : undefined}
+          />
+          <Tile
+            eyebrow="Your destination"
+            row={dest}
+            empty={!destId ? 'Staying home. Tap any city to price a move.' : undefined}
+            note={
+              dest && home
+                ? `${dest.successRate >= home.successRate ? '+' : '−'}${Math.abs(Math.round((dest.successRate - home.successRate) * 100))} pts vs staying home`
+                : undefined
+            }
+            onProfile={dest && hasProfile(dest.cityId) ? () => setProfileId(dest.cityId) : undefined}
+          />
+        </motion.div>
 
-      <motion.div variants={rise}>
-        <Card
-          className="atlas__listcard"
-          eyebrow={region === 'All' ? 'Ranking · every city' : `Ranking · ${region}`}
-          title={
-            <>
-              Cities, best odds <em>first</em>
-            </>
-          }
-          subtitle="Tap a city to make it your destination; tick up to three to compare side by side."
-        >
-          {rows.length ? (
-            <RegionProvider region={region} setRegion={setRegion}>
-              <CityList
-                rows={rows}
-                homeId={homeId}
-                destId={destId}
-                region={region}
-                compare={compare}
-                onToggleCompare={toggleCompare}
-                onChoose={choose}
-                onOpenProfile={setProfileId}
-              />
-            </RegionProvider>
-          ) : (
-            <div className="clist__skel" aria-busy="true">
-              {Array.from({ length: 8 }, (_, i) => (
-                <div key={i} className="clist__skel-row">
-                  <Skeleton width={22} height={12} />
-                  <Skeleton width={`${38 - i * 2}%`} height={14} />
-                  <Skeleton width={90} height={10} radius={99} style={{ marginLeft: 'auto' }} />
-                </div>
-              ))}
-            </div>
-          )}
-        </Card>
-      </motion.div>
+        <motion.div variants={rise}>
+          <TopPicks rows={rows} homeId={homeId} destId={destId} onOpen={setProfileId} onChoose={choose} />
+        </motion.div>
 
-      <motion.div variants={rise}>
-        <p className="atlas__paths">
-          Each city is ranked on the same {inputs.paths.toLocaleString('en-US')} simulated futures as the Outlook, so a
-          city’s odds here match the Outlook with that city as your destination.
-        </p>
-        <SourcesLine />
-      </motion.div>
-
-      <AnimatePresence>
-        {cmpRows.length > 0 && !cmpOpen && (
-          <motion.div
-            className="cmp-dock"
-            initial={{ y: 40, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: 40, opacity: 0 }}
-            transition={springSoft}
+        <motion.div variants={rise}>
+          <Card
+            className="atlas__mapcard"
+            eyebrow={`World map · ${CITIES.length} cities`}
+            title={
+              <>
+                Where your plan <em>holds</em>
+              </>
+            }
+            subtitle={line ?? 'Every city priced at your lifestyle, then simulated with the same futures.'}
           >
-            <div className="cmp-dock__chips">
-              {cmpRows.map((r) => (
-                <span key={r.cityId} className="cmp-dock__chip">
-                  <i style={{ background: successColor(r.successRate) }} />
-                  {r.city.name}
-                  <button type="button" aria-label={`Remove ${r.city.name}`} onClick={() => toggleCompare(r.cityId)}>
-                    ×
-                  </button>
-                </span>
-              ))}
-            </div>
-            <Button variant="primary" size="sm" onClick={() => setCmpOpen(true)}>
-              Compare {cmpRows.length}
-            </Button>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            <RegionChips value={region} onChange={setRegion} counts={counts} />
+            <WorldMap
+              rows={rows}
+              homeId={homeId}
+              destId={destId}
+              region={region}
+              compare={compare}
+              onToggleCompare={toggleCompare}
+              onChoose={choose}
+              onOpenProfile={setProfileId}
+              homeSpend={homeSpend}
+            />
+            <Legend />
+          </Card>
+        </motion.div>
 
-      <CompareSheet
-        open={cmpOpen}
-        onClose={() => setCmpOpen(false)}
-        rows={cmpRows}
-        inputs={inputs}
-        onChoose={(id) => {
-          choose(id)
-        }}
-        onRemove={toggleCompare}
-      />
+        <motion.div variants={rise}>
+          <Card
+            className="atlas__listcard"
+            eyebrow={region === 'All' ? 'Ranking · every city' : `Ranking · ${region}`}
+            title={
+              <>
+                Cities, best odds <em>first</em>
+              </>
+            }
+            subtitle="Tap a city to make it your destination; tick up to three to compare side by side."
+          >
+            {rows.length ? (
+              <RegionProvider region={region} setRegion={setRegion}>
+                <CityList
+                  rows={rows}
+                  homeId={homeId}
+                  destId={destId}
+                  region={region}
+                  compare={compare}
+                  onToggleCompare={toggleCompare}
+                  onChoose={choose}
+                  onOpenProfile={setProfileId}
+                />
+              </RegionProvider>
+            ) : (
+              <div className="clist__skel" aria-busy="true">
+                {Array.from({ length: 8 }, (_, i) => (
+                  <div key={i} className="clist__skel-row">
+                    <Skeleton width={22} height={12} />
+                    <Skeleton width={`${38 - i * 2}%`} height={14} />
+                    <Skeleton width={90} height={10} radius={99} style={{ marginLeft: 'auto' }} />
+                  </div>
+                ))}
+              </div>
+            )}
+          </Card>
+        </motion.div>
 
-      <ProfileSheet view={profileView} home={home} inputs={inputs} onClose={closeProfile} onChoose={choose} />
-    </motion.div>
+        <motion.div variants={rise}>
+          <p className="atlas__paths">
+            Each city is ranked on the same {inputs.paths.toLocaleString('en-US')} simulated futures as the Outlook, so a
+            city’s odds here match the Outlook with that city as your destination.
+          </p>
+          <SourcesLine />
+        </motion.div>
+
+        <AnimatePresence>
+          {cmpRows.length > 0 && !cmpOpen && (
+            <motion.div
+              className="cmp-dock"
+              initial={{ y: 40, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 40, opacity: 0 }}
+              transition={springSoft}
+            >
+              <div className="cmp-dock__chips">
+                {cmpRows.map((r) => (
+                  <span key={r.cityId} className="cmp-dock__chip">
+                    <i style={{ background: successColor(r.successRate) }} />
+                    {r.city.name}
+                    <button type="button" aria-label={`Remove ${r.city.name}`} onClick={() => toggleCompare(r.cityId)}>
+                      ×
+                    </button>
+                  </span>
+                ))}
+              </div>
+              <Button variant="primary" size="sm" onClick={() => setCmpOpen(true)}>
+                Compare {cmpRows.length}
+              </Button>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        <CompareSheet
+          open={cmpOpen}
+          onClose={() => setCmpOpen(false)}
+          rows={cmpRows}
+          inputs={inputs}
+          onChoose={(id) => {
+            choose(id)
+          }}
+          onRemove={toggleCompare}
+        />
+
+        <ProfileSheet view={profileView} home={home} inputs={inputs} onClose={closeProfile} onChoose={choose} />
+      </motion.div>
+    </>
   )
 }
 

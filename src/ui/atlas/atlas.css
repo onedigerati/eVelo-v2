@@ -5,6 +5,16 @@
   padding-bottom: calc(var(--space-11) + 40px);
 }
 
+/* The docked pill (outlook/DockedVerdict, styles in outlook.css, which the shell loads up front)
+   sits in a zero-height sticky slot before the page; keep it inside the gutters. */
+.docked-verdict--atlas .docked-verdict__slot {
+  padding: 0 var(--gutter);
+}
+/* Focused by the pill's "back": the tiles are the target, not a control, so no ring. */
+.atlas__tiles:focus:not(:focus-visible) {
+  outline: none;
+}
+
 /* ---------- Header ---------- */
 .atlas__header {
   position: relative;

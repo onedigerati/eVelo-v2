@@ -25,10 +25,12 @@ describe('pillLabel', () => {
     expect(pillLabel(0.684, 'Bangkok', 'outlook')).toBe('Holds in 68% of futures in Bangkok. See the outlook.')
     expect(pillLabel(0.684, 'Bangkok', 'verdict')).toBe('Holds in 68% of futures in Bangkok. Back to the verdict.')
     expect(pillLabel(0.684, 'Bangkok', 'drawer')).toBe('Holds in 68% of futures in Bangkok. Close the plan and go to the verdict.')
+    expect(pillLabel(0.684, 'Bangkok', 'atlas')).toBe('Holds in 68% of futures in Bangkok. Back to the top of the atlas.')
   })
   it('keeps the old label without a city', () => {
     expect(pillLabel(0.684, null, 'outlook')).toBe('Holds in 68% of futures. See the outlook.')
     expect(pillLabel(0.5, null, 'verdict')).toBe('Holds in 50% of futures. Back to the verdict.')
     expect(pillLabel(0.5, null, 'drawer')).toBe('Holds in 50% of futures. Close the plan and go to the verdict.')
+    expect(pillLabel(0.5, null, 'atlas')).toBe('Holds in 50% of futures. Back to the top of the atlas.')
   })
 })

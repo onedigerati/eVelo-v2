@@ -1,0 +1,83 @@
+$ OUT=docs/evidence/stage-3/rerun-stage-2 node docs/evidence/stage-2/probe.cjs phone   (stage 2 probe, unchanged, against the working tree on :5199)
+
+## Phone 390px, #outlook, light
+[bangkok] at top: {"scrollY":0,"pillPresent":false,"verdictNumber":{"t":182,"b":268},"topbarBottom":57}
+[bangkok] number bottom 2px below top bar: {"scrollY":209,"verdictNumber":{"t":-27,"b":59},"pillPresent":false}
+[bangkok] number bottom 2px behind top bar: {"scrollY":213,"vw":390,"topbarBottom":57,"tabbarTop":780,"verdictNumber":{"t":-31,"b":55},"pillPresent":true,"wrapperClass":"docked-verdict docked-verdict--phone","text":"Holds in 80% 80% of futures · Bangkok","aria":"Holds in 80% of futures in Bangkok. Back to the verdict.","pillClass":"verdict-pill verdict-pill--holds docked-verdict__pill","pill":{"l":49,"r":342,"t":68,"b":112,"w":293,"h":44},"city":{"l":246,"r":307,"t":80,"b":100,"w":61,"h":20},"num":{"l":144,"r":177,"t":75,"b":104,"w":33,"h":29},"cityText":"· Bangkok","cityTruncated":false,"numInsidePill":true,"gapBelowTopbar":11,"centerOffset":0,"gutters":{"padL":"16px","padR":"16px"},"clearOfTabbar":true,"opacity":"1"}
+[lapaz] at top: {"scrollY":0,"pillPresent":false,"verdictNumber":{"t":223,"b":309},"topbarBottom":57}
+[lapaz] number bottom 2px below top bar: {"scrollY":250,"verdictNumber":{"t":-27,"b":59},"pillPresent":false}
+[lapaz] number bottom 2px behind top bar: {"scrollY":254,"vw":390,"topbarBottom":57,"tabbarTop":780,"verdictNumber":{"t":-31,"b":55},"pillPresent":true,"wrapperClass":"docked-verdict docked-verdict--phone","text":"Holds in 79% 79% of futures · La Paz (Baja California Sur)","aria":"Holds in 79% of futures in La Paz (Baja California Sur). Back to the verdict.","pillClass":"verdict-pill verdict-pill--holds docked-verdict__pill","pill":{"l":16,"r":374,"t":68,"b":112,"w":358,"h":44},"city":{"l":210,"r":339,"t":80,"b":100,"w":129,"h":20},"num":{"l":111,"r":141,"t":75,"b":104,"w":30,"h":29},"cityText":"· La Paz (Baja California Sur)","cityTruncated":true,"numInsidePill":true,"gapBelowTopbar":11,"centerOffset":0,"gutters":{"padL":"16px","padR":"16px"},"clearOfTabbar":true,"opacity":"1"}
+[home] at top: {"scrollY":0,"pillPresent":false,"verdictNumber":{"t":223,"b":309},"topbarBottom":57}
+[home] number bottom 2px below top bar: {"scrollY":250,"verdictNumber":{"t":-27,"b":59},"pillPresent":false}
+[home] number bottom 2px behind top bar: {"scrollY":254,"vw":390,"topbarBottom":57,"tabbarTop":780,"verdictNumber":{"t":-31,"b":55},"pillPresent":true,"wrapperClass":"docked-verdict docked-verdict--phone","text":"Holds in 64% 64% of futures · St. Louis","aria":"Holds in 64% of futures in St. Louis. Back to the verdict.","pillClass":"verdict-pill verdict-pill--bruised docked-verdict__pill","pill":{"l":50,"r":340,"t":68,"b":112,"w":290,"h":44},"city":{"l":245,"r":305,"t":80,"b":100,"w":60,"h":20},"num":{"l":145,"r":176,"t":75,"b":104,"w":31,"h":29},"cityText":"· St. Louis","cityTruncated":false,"numInsidePill":true,"gapBelowTopbar":11,"centerOffset":0,"gutters":{"padL":"16px","padR":"16px"},"clearOfTabbar":true,"opacity":"1"}
+
+## Phone 390px, #outlook, dark
+[bangkok] at top: {"scrollY":0,"pillPresent":false,"verdictNumber":{"t":182,"b":268},"topbarBottom":57}
+[bangkok] number bottom 2px below top bar: {"scrollY":209,"verdictNumber":{"t":-27,"b":59},"pillPresent":false}
+[bangkok] number bottom 2px behind top bar: {"scrollY":213,"vw":390,"topbarBottom":57,"tabbarTop":780,"verdictNumber":{"t":-31,"b":55},"pillPresent":true,"wrapperClass":"docked-verdict docked-verdict--phone","text":"Holds in 80% 80% of futures · Bangkok","aria":"Holds in 80% of futures in Bangkok. Back to the verdict.","pillClass":"verdict-pill verdict-pill--holds docked-verdict__pill","pill":{"l":49,"r":342,"t":68,"b":112,"w":293,"h":44},"city":{"l":246,"r":307,"t":80,"b":100,"w":61,"h":20},"num":{"l":144,"r":177,"t":75,"b":104,"w":33,"h":29},"cityText":"· Bangkok","cityTruncated":false,"numInsidePill":true,"gapBelowTopbar":11,"centerOffset":0,"gutters":{"padL":"16px","padR":"16px"},"clearOfTabbar":true,"opacity":"1"}
+[lapaz] at top: {"scrollY":0,"pillPresent":false,"verdictNumber":{"t":223,"b":309},"topbarBottom":57}
+[lapaz] number bottom 2px below top bar: {"scrollY":250,"verdictNumber":{"t":-27,"b":59},"pillPresent":false}
+[lapaz] number bottom 2px behind top bar: {"scrollY":254,"vw":390,"topbarBottom":57,"tabbarTop":780,"verdictNumber":{"t":-31,"b":55},"pillPresent":true,"wrapperClass":"docked-verdict docked-verdict--phone","text":"Holds in 79% 79% of futures · La Paz (Baja California Sur)","aria":"Holds in 79% of futures in La Paz (Baja California Sur). Back to the verdict.","pillClass":"verdict-pill verdict-pill--holds docked-verdict__pill","pill":{"l":16,"r":374,"t":68,"b":112,"w":358,"h":44},"city":{"l":210,"r":339,"t":80,"b":100,"w":129,"h":20},"num":{"l":111,"r":141,"t":75,"b":104,"w":30,"h":29},"cityText":"· La Paz (Baja California Sur)","cityTruncated":true,"numInsidePill":true,"gapBelowTopbar":11,"centerOffset":0,"gutters":{"padL":"16px","padR":"16px"},"clearOfTabbar":true,"opacity":"1"}
+[home] at top: {"scrollY":0,"pillPresent":false,"verdictNumber":{"t":223,"b":309},"topbarBottom":57}
+[home] number bottom 2px below top bar: {"scrollY":250,"verdictNumber":{"t":-27,"b":59},"pillPresent":false}
+[home] number bottom 2px behind top bar: {"scrollY":254,"vw":390,"topbarBottom":57,"tabbarTop":780,"verdictNumber":{"t":-31,"b":55},"pillPresent":true,"wrapperClass":"docked-verdict docked-verdict--phone","text":"Holds in 64% 64% of futures · St. Louis","aria":"Holds in 64% of futures in St. Louis. Back to the verdict.","pillClass":"verdict-pill verdict-pill--bruised docked-verdict__pill","pill":{"l":50,"r":340,"t":68,"b":112,"w":290,"h":44},"city":{"l":245,"r":305,"t":80,"b":100,"w":60,"h":20},"num":{"l":145,"r":176,"t":75,"b":104,"w":31,"h":29},"cityText":"· St. Louis","cityTruncated":false,"numInsidePill":true,"gapBelowTopbar":11,"centerOffset":0,"gutters":{"padL":"16px","padR":"16px"},"clearOfTabbar":true,"opacity":"1"}
+
+## Phone 320px, #outlook, light
+[bangkok] at top: {"scrollY":0,"pillPresent":false,"verdictNumber":{"t":182,"b":268},"topbarBottom":57}
+[bangkok] number bottom 2px below top bar: {"scrollY":209,"verdictNumber":{"t":-27,"b":59},"pillPresent":false}
+[bangkok] number bottom 2px behind top bar: {"scrollY":213,"vw":320,"topbarBottom":57,"tabbarTop":780,"verdictNumber":{"t":-31,"b":55},"pillPresent":true,"wrapperClass":"docked-verdict docked-verdict--phone","text":"Holds in 80% 80% of futures · Bangkok","aria":"Holds in 80% of futures in Bangkok. Back to the verdict.","pillClass":"verdict-pill verdict-pill--holds docked-verdict__pill","pill":{"l":16,"r":304,"t":68,"b":112,"w":288,"h":44},"city":{"l":213,"r":269,"t":80,"b":100,"w":56,"h":20},"num":{"l":111,"r":144,"t":75,"b":104,"w":33,"h":29},"cityText":"· Bangkok","cityTruncated":true,"numInsidePill":true,"gapBelowTopbar":11,"centerOffset":0,"gutters":{"padL":"16px","padR":"16px"},"clearOfTabbar":true,"opacity":"1"}
+[lapaz] at top: {"scrollY":0,"pillPresent":false,"verdictNumber":{"t":223,"b":309},"topbarBottom":57}
+[lapaz] number bottom 2px below top bar: {"scrollY":250,"verdictNumber":{"t":-27,"b":59},"pillPresent":false}
+[lapaz] number bottom 2px behind top bar: {"scrollY":254,"vw":320,"topbarBottom":57,"tabbarTop":780,"verdictNumber":{"t":-31,"b":55},"pillPresent":true,"wrapperClass":"docked-verdict docked-verdict--phone","text":"Holds in 79% 79% of futures · La Paz (Baja California Sur)","aria":"Holds in 79% of futures in La Paz (Baja California Sur). Back to the verdict.","pillClass":"verdict-pill verdict-pill--holds docked-verdict__pill","pill":{"l":16,"r":304,"t":68,"b":112,"w":288,"h":44},"city":{"l":210,"r":269,"t":80,"b":100,"w":59,"h":20},"num":{"l":111,"r":141,"t":75,"b":104,"w":30,"h":29},"cityText":"· La Paz (Baja California Sur)","cityTruncated":true,"numInsidePill":true,"gapBelowTopbar":11,"centerOffset":0,"gutters":{"padL":"16px","padR":"16px"},"clearOfTabbar":true,"opacity":"1"}
+[home] at top: {"scrollY":0,"pillPresent":false,"verdictNumber":{"t":223,"b":309},"topbarBottom":57}
+[home] number bottom 2px below top bar: {"scrollY":250,"verdictNumber":{"t":-27,"b":59},"pillPresent":false}
+[home] number bottom 2px behind top bar: {"scrollY":254,"vw":320,"topbarBottom":57,"tabbarTop":780,"verdictNumber":{"t":-31,"b":55},"pillPresent":true,"wrapperClass":"docked-verdict docked-verdict--phone","text":"Holds in 64% 64% of futures · St. Louis","aria":"Holds in 64% of futures in St. Louis. Back to the verdict.","pillClass":"verdict-pill verdict-pill--bruised docked-verdict__pill","pill":{"l":16,"r":304,"t":68,"b":112,"w":288,"h":44},"city":{"l":211,"r":269,"t":80,"b":100,"w":58,"h":20},"num":{"l":111,"r":142,"t":75,"b":104,"w":31,"h":29},"cityText":"· St. Louis","cityTruncated":true,"numInsidePill":true,"gapBelowTopbar":11,"centerOffset":0,"gutters":{"padL":"16px","padR":"16px"},"clearOfTabbar":true,"opacity":"1"}
+
+## Phone 320px, #outlook, dark
+[bangkok] at top: {"scrollY":0,"pillPresent":false,"verdictNumber":{"t":182,"b":268},"topbarBottom":57}
+[bangkok] number bottom 2px below top bar: {"scrollY":209,"verdictNumber":{"t":-27,"b":59},"pillPresent":false}
+[bangkok] number bottom 2px behind top bar: {"scrollY":213,"vw":320,"topbarBottom":57,"tabbarTop":780,"verdictNumber":{"t":-31,"b":55},"pillPresent":true,"wrapperClass":"docked-verdict docked-verdict--phone","text":"Holds in 80% 80% of futures · Bangkok","aria":"Holds in 80% of futures in Bangkok. Back to the verdict.","pillClass":"verdict-pill verdict-pill--holds docked-verdict__pill","pill":{"l":16,"r":304,"t":68,"b":112,"w":288,"h":44},"city":{"l":213,"r":269,"t":80,"b":100,"w":56,"h":20},"num":{"l":111,"r":144,"t":75,"b":104,"w":33,"h":29},"cityText":"· Bangkok","cityTruncated":true,"numInsidePill":true,"gapBelowTopbar":11,"centerOffset":0,"gutters":{"padL":"16px","padR":"16px"},"clearOfTabbar":true,"opacity":"1"}
+[lapaz] at top: {"scrollY":0,"pillPresent":false,"verdictNumber":{"t":223,"b":309},"topbarBottom":57}
+[lapaz] number bottom 2px below top bar: {"scrollY":250,"verdictNumber":{"t":-27,"b":59},"pillPresent":false}
+[lapaz] number bottom 2px behind top bar: {"scrollY":254,"vw":320,"topbarBottom":57,"tabbarTop":780,"verdictNumber":{"t":-31,"b":55},"pillPresent":true,"wrapperClass":"docked-verdict docked-verdict--phone","text":"Holds in 79% 79% of futures · La Paz (Baja California Sur)","aria":"Holds in 79% of futures in La Paz (Baja California Sur). Back to the verdict.","pillClass":"verdict-pill verdict-pill--holds docked-verdict__pill","pill":{"l":16,"r":304,"t":68,"b":112,"w":288,"h":44},"city":{"l":210,"r":269,"t":80,"b":100,"w":59,"h":20},"num":{"l":111,"r":141,"t":75,"b":104,"w":30,"h":29},"cityText":"· La Paz (Baja California Sur)","cityTruncated":true,"numInsidePill":true,"gapBelowTopbar":11,"centerOffset":0,"gutters":{"padL":"16px","padR":"16px"},"clearOfTabbar":true,"opacity":"1"}
+[home] at top: {"scrollY":0,"pillPresent":false,"verdictNumber":{"t":223,"b":309},"topbarBottom":57}
+[home] number bottom 2px below top bar: {"scrollY":250,"verdictNumber":{"t":-27,"b":59},"pillPresent":false}
+[home] number bottom 2px behind top bar: {"scrollY":254,"vw":320,"topbarBottom":57,"tabbarTop":780,"verdictNumber":{"t":-31,"b":55},"pillPresent":true,"wrapperClass":"docked-verdict docked-verdict--phone","text":"Holds in 64% 64% of futures · St. Louis","aria":"Holds in 64% of futures in St. Louis. Back to the verdict.","pillClass":"verdict-pill verdict-pill--bruised docked-verdict__pill","pill":{"l":16,"r":304,"t":68,"b":112,"w":288,"h":44},"city":{"l":211,"r":269,"t":80,"b":100,"w":58,"h":20},"num":{"l":111,"r":142,"t":75,"b":104,"w":31,"h":29},"cityText":"· St. Louis","cityTruncated":true,"numInsidePill":true,"gapBelowTopbar":11,"centerOffset":0,"gutters":{"padL":"16px","padR":"16px"},"clearOfTabbar":true,"opacity":"1"}
+
+## Phone 390px, #outlook, behaviour (real taps)
+scrolled past: true
+scrolled back to top: false
+mid page: {"scrollY":2352,"pill":{"l":49,"r":342,"t":68,"b":112,"w":293,"h":44},"gapBelowTopbar":11,"tabbarTop":780,"clearOfTabbar":true}
+page bottom: {"scrollY":3859,"pill":{"l":49,"r":342,"t":68,"b":112,"w":293,"h":44},"gapBelowTopbar":11,"tabbarTop":780,"clearOfTabbar":true}
+elementFromPoint: {"slot":{"l":16,"r":374,"t":68,"b":112},"leftOfPill":{"x":45,"y":90,"el":"svg","inDocked":false},"rightOfPill":{"x":346,"y":90,"el":"svg","inDocked":false},"below":{"x":195,"y":116,"el":"svg","inDocked":false},"below12":{"x":195,"y":124,"el":"svg","inDocked":false},"aboveInGap":{"x":195,"y":64,"el":"svg","inDocked":false},"insidePill":{"x":195,"y":90,"el":"span.docked-verdict__word","inDocked":true}}
+taps beside/below pill reached: [{"inDocked":false,"t":"svg.[object.SVGAnimatedString]"},{"inDocked":false,"t":"svg.[object.SVGAnimatedString]"},{"inDocked":false,"t":"svg.[object.SVGAnimatedString]"}] scrollY after: 1568
+elementFromPoint at tab bar centre: tabbar
+after taps: focus + pill state: {"active":"svg.fan__svg","activeInPlot":true,"pillYielding":true,"pillInert":true}
+after scrolling 400px on: {"pillYielding":false,"pillInert":false,"activeInPlot":true}
+tap pill: {"scrollYBefore":1968,"scrollY":0,"active":"verdict-h","headlineTop":141,"topbarBottom":57,"numberVisible":true,"pillPresent":false}
+live change (setDestination(null)) on phone pill: {"running":true,"delta":{"text":"−16 pts","cls":"docked-verdict__delta num is-down"}} {"text":"Holds in 64% 64% of futures · St. Louis −16 pts","pill":{"l":17,"r":373,"t":68,"b":112,"w":356,"h":44}}
+running ring not captured: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('.docked-verdict__pill.is-running') to be visible[22m
+
+live change (setDestination(bangkok)): {"running":true,"delta":{"text":"+16 pts","cls":"docked-verdict__delta num is-up"}}
+
+## Phone 320px, #outlook, behaviour (real taps)
+scrolled past: true
+scrolled back to top: false
+mid page: {"scrollY":2566,"pill":{"l":16,"r":304,"t":68,"b":112,"w":288,"h":44},"gapBelowTopbar":11,"tabbarTop":780,"clearOfTabbar":true}
+page bottom: {"scrollY":4287,"pill":{"l":16,"r":304,"t":68,"b":112,"w":288,"h":44},"gapBelowTopbar":11,"tabbarTop":780,"clearOfTabbar":true}
+elementFromPoint: {"slot":{"l":16,"r":304,"t":68,"b":112},"leftOfPill":{"x":12,"y":90,"el":"div.canvas","inDocked":false},"rightOfPill":{"x":308,"y":90,"el":"div.canvas","inDocked":false},"below":{"x":160,"y":116,"el":"svg","inDocked":false},"below12":{"x":160,"y":124,"el":"svg","inDocked":false},"aboveInGap":{"x":160,"y":64,"el":"text","inDocked":false},"insidePill":{"x":160,"y":90,"el":"span.docked-verdict__word","inDocked":true}}
+taps beside/below pill reached: [{"inDocked":true,"t":"button.verdict-pill.verdict-pill--holds.docked-verdict__pill"},{"inDocked":true,"t":"button.verdict-pill.verdict-pill--holds.docked-verdict__pill"},{"inDocked":false,"t":"span.cmp__city.cmp__city--dest"}] scrollY after: 93
+elementFromPoint at tab bar centre: tabbar
+after taps: focus + pill state: {"active":"main.main","activeInPlot":false,"pillYielding":false,"pillInert":false}
+after scrolling 400px on: {"pillYielding":false,"pillInert":false,"activeInPlot":false}
+tap pill: {"scrollYBefore":407,"scrollY":0,"active":"verdict-h","headlineTop":141,"topbarBottom":57,"numberVisible":true,"pillPresent":false}
+live change (setDestination(null)) on phone pill: {"running":true,"delta":{"text":"−16 pts","cls":"docked-verdict__delta num is-down"}} {"text":"Holds in 64% 64% of futures · St. Louis −16 pts","pill":{"l":16,"r":304,"t":68,"b":112,"w":288,"h":44}}
+running ring not captured: page.waitForSelector: Timeout 10000ms exceeded.
+Call log:
+[2m  - waiting for locator('.docked-verdict__pill.is-running') to be visible[22m
+
+live change (setDestination(bangkok)): {"running":true,"delta":{"text":"+16 pts","cls":"docked-verdict__delta num is-up"}}
+
+console errors: none

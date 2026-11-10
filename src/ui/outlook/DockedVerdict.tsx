@@ -9,7 +9,7 @@ import { ease } from '../motion'
 import { outcomeTextColor } from '../outcomeScale'
 import { AnimatedNumber, cx } from '../primitives'
 import { PillRing } from '../shell/PillRing'
-import { pillCity, pillLabel } from '../shell/pillCity'
+import { pillCity, pillLabel, type PillAction } from '../shell/pillCity'
 import { deltaLabel, usePillDelta } from '../shell/pillDelta'
 import { toneFor } from '../verdict'
 import { cityName } from './cards'
@@ -20,6 +20,33 @@ export const VERDICT_NUMBER_ID = 'verdict-number'
 
 /** Every chart's plot (the box its crosshair and readout live in). */
 const PLOT = '.chart-frame__plot'
+
+/** What a docked pill stands for: what it watches and where it takes you back to. */
+export interface DockTarget {
+  /** Element id whose scrolling behind the top bar shows the pill. */
+  watch: string
+  /** Element id the pill scrolls back to (its enclosing section, if any) and focuses. Needs a tabIndex. */
+  focus: string
+  /** Spoken action (see pillLabel). */
+  action: PillAction
+  /** Selector for what the pill steps aside for while hovered or focused under it. */
+  yieldTo: string
+  /** Selector for controls the pill steps aside for whenever they sit under it (touch can't hover). */
+  yieldUnder?: string
+  /** Tablet: float above the Plan drawer while it is open (only where the drawer opens over this page). */
+  drawer: boolean
+  /** Extra class on the slot, for page-specific placement. */
+  className?: string
+}
+
+/** The Outlook: watches the verdict's number, goes back to its headline, yields to chart plots. */
+export const VERDICT_TARGET: DockTarget = {
+  watch: VERDICT_NUMBER_ID,
+  focus: VERDICT_HEADLINE_ID,
+  action: 'verdict',
+  yieldTo: PLOT,
+  drawer: true,
+}
 
 /** Bottom edge of the sticky top bar in viewport px (top bar height + safe area), kept current on resize. */
 function useTopBarBottom(): number {
@@ -53,9 +80,12 @@ function useScrolledPast(id: string, topBar: number, enabled: boolean): boolean 
  * True while the pointer is over, or keyboard focus is in, a chart plot that reaches into the
  * band the pill covers. Chart readouts sit inside their card (not portalled), so they can't be
  * layered above a sticky pill; the pill steps aside instead. The crosshair spans the whole plot
- * height, so any plot overlapping the band counts.
+ * height, so any plot overlapping the band counts. `controls` (optional) are stepped aside for
+ * whenever they reach into the band, hovered or not.
  */
-function useChartYield(band: () => { top: number; bottom: number }, enabled: boolean): boolean {
+type Band = { top: number; bottom: number; left?: number; right?: number }
+
+function useChartYield(band: () => Band, enabled: boolean, selector: string, controls?: string): boolean {
   const [yieldTo, setYield] = useState(false)
   useEffect(() => {
     if (!enabled) return setYield(false)
@@ -69,8 +99,17 @@ function useChartYield(band: () => { top: number; bottom: number }, enabled: boo
       const b = band()
       return r.top < b.bottom && r.bottom > b.top
     }
-    const update = () => setYield(under(hovered) || under(focused))
-    const plotOf = (t: EventTarget | null) => (t instanceof Element ? t.closest(PLOT) : null)
+    // Controls need real overlap with the pill's box (plus the margin), not just its row.
+    const overlaps = (el: Element) => {
+      const r = el.getBoundingClientRect()
+      const b = band()
+      const left = b.left ?? -Infinity
+      const right = b.right ?? Infinity
+      return r.top < b.bottom && r.bottom > b.top && r.left < right && r.right > left
+    }
+    const covered = () => !!controls && [...document.querySelectorAll(controls)].some(overlaps)
+    const update = () => setYield(under(hovered) || under(focused) || covered())
+    const plotOf = (t: EventTarget | null) => (t instanceof Element ? t.closest(selector) : null)
     const onMove = (e: PointerEvent) => {
       if (e.pointerType === 'touch') return
       px = e.clientX
@@ -94,6 +133,17 @@ function useChartYield(band: () => { top: number; bottom: number }, enabled: boo
       focused = null
       update()
     }
+    // A tap can open a control under the pill (the map's city card) without any scroll.
+    let raf = 0
+    const onUp = () => {
+      cancelAnimationFrame(raf)
+      raf = requestAnimationFrame(update)
+    }
+    if (controls) {
+      update()
+      document.addEventListener('pointerup', onUp, { passive: true })
+      window.addEventListener('resize', update)
+    }
     document.addEventListener('pointermove', onMove, { passive: true })
     document.addEventListener('pointerout', onOut, { passive: true })
     document.addEventListener('focusin', onFocus)
@@ -105,14 +155,17 @@ function useChartYield(band: () => { top: number; bottom: number }, enabled: boo
       document.removeEventListener('focusin', onFocus)
       document.removeEventListener('focusout', onBlur)
       window.removeEventListener('scroll', onScroll)
+      document.removeEventListener('pointerup', onUp)
+      window.removeEventListener('resize', update)
+      cancelAnimationFrame(raf)
     }
-  }, [band, enabled])
+  }, [band, enabled, selector, controls])
   return yieldTo
 }
 
-/** Scroll to the verdict and put focus on its headline. */
-function backToVerdict(topBar: number) {
-  const h = document.getElementById(VERDICT_HEADLINE_ID)
+/** Scroll to the target (its section, if it has one) and put focus on it. */
+function backTo(id: string, topBar: number) {
+  const h = document.getElementById(id)
   if (!h) return
   const top = (h.closest('section') ?? h).getBoundingClientRect().top + window.scrollY - topBar - 24
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -125,55 +178,56 @@ function backToVerdict(topBar: number) {
  * the top of the results column with the live odds; it takes you back to the verdict. On tablet,
  * while the plan drawer is open, it floats above the drawer's backdrop beside the panel, so the
  * odds stay readable while editing. Phone: the same pill floats just under the sticky top bar,
- * centred within the gutters (the Plan tab keeps its own VerdictPill).
+ * centred within the gutters (the Plan tab keeps its own VerdictPill). The Atlas mounts the same
+ * pill with its own target (its hero tiles); it always shows the main simulation's odds.
  */
-export function DockedVerdict() {
+export function DockedVerdict({ target = VERDICT_TARGET }: { target?: DockTarget }) {
   const bp = useBreakpoint()
-  const drawer = useStore((s) => bp === 'tablet' && s.route === 'plan')
+  const drawer = useStore((s) => target.drawer && bp === 'tablet' && s.route === 'plan')
   const hasResult = useStore((s) => s.result !== null)
   const success = useStore(selectSuccess)
   const running = useStore((s) => s.status === 'running')
   const city = useStore((s) => pillCity(s.inputs, cityName))
   const delta = usePillDelta(hasResult ? success : null)
   const topBar = useTopBarBottom()
-  const past = useScrolledPast(VERDICT_NUMBER_ID, topBar, true)
+  const past = useScrolledPast(target.watch, topBar, true)
   // The drawer's backdrop hides the verdict wherever the page is scrolled, so show it regardless.
   const show = hasResult && (past || drawer)
 
   const pill = useRef<HTMLButtonElement>(null)
   const band = useCallback(() => {
     const r = pill.current?.getBoundingClientRect()
-    return r ? { top: r.top - 8, bottom: r.bottom + 8 } : { top: topBar, bottom: topBar + 72 }
+    return r ? { top: r.top - 8, bottom: r.bottom + 8, left: r.left - 8, right: r.right + 8 } : { top: topBar, bottom: topBar + 72 }
   }, [topBar])
-  const yielding = useChartYield(band, show && !drawer)
+  const yielding = useChartYield(band, show && !drawer, target.yieldTo, target.yieldUnder)
   const gone = show && yielding
 
   // Whenever the pill goes away while it holds focus (the verdict scrolled back into view, or it
-  // stepped aside for a chart), focus lands on the verdict headline: the thing the pill stands for.
+  // stepped aside for a chart), focus lands on its target (the verdict headline): what it stands for.
   // Asks the DOM rather than tracking focus/blur: the pill re-mounts without a blur when it moves
   // into or out of the drawer portal. Layout effect: the pill is still mounted (its exit animation
   // hasn't run) and making a focused element inert blurs it, which would race a passive effect.
   useLayoutEffect(() => {
     if (show && !gone) return
-    if (pill.current && document.activeElement === pill.current) document.getElementById(VERDICT_HEADLINE_ID)?.focus({ preventScroll: true })
-  }, [show, gone])
+    if (pill.current && document.activeElement === pill.current) document.getElementById(target.focus)?.focus({ preventScroll: true })
+  }, [show, gone, target.focus])
 
   // Drawer mode: close the drawer first, then go back once it has handed focus back.
   const pendingBack = useRef(false)
   useEffect(() => {
     if (drawer || !pendingBack.current) return
     pendingBack.current = false
-    const id = requestAnimationFrame(() => backToVerdict(topBar))
+    const id = requestAnimationFrame(() => backTo(target.focus, topBar))
     return () => cancelAnimationFrame(id)
-  }, [drawer, topBar])
+  }, [drawer, topBar, target.focus])
   const onClick = () => {
-    if (!drawer) return backToVerdict(topBar)
+    if (!drawer) return backTo(target.focus, topBar)
     pendingBack.current = true
     navigate('outlook')
   }
 
   const content = (
-    <div className={cx('docked-verdict', drawer && 'docked-verdict--drawer', bp === 'phone' && 'docked-verdict--phone')}>
+    <div className={cx('docked-verdict', target.className, drawer && 'docked-verdict--drawer', bp === 'phone' && 'docked-verdict--phone')}>
       <AnimatePresence>
         {show && (
           <motion.div
@@ -189,7 +243,7 @@ export function DockedVerdict() {
               type="button"
               className={cx('verdict-pill', `verdict-pill--${toneFor(success)}`, 'docked-verdict__pill', running && 'is-running', gone && 'is-yielding')}
               style={{ ['--tone' as string]: outcomeTextColor(success) }}
-              aria-label={pillLabel(success, city, drawer ? 'drawer' : 'verdict')}
+              aria-label={pillLabel(success, city, drawer ? 'drawer' : target.action)}
               aria-hidden={gone || undefined}
               inert={gone}
               // Outside the drawer's focus trap: pointer only while the drawer is open.

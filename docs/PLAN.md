@@ -7,21 +7,20 @@ The verdict pill ("Holds in 68% of futures") tells you the odds but not which ci
 2026-11-10 · tests: 818 pass · typecheck: clean
 
 ## Now
-Stage 3 of 3 · Atlas pill
-Mode: autopilot
+All stages done
 Agents: wide — confirmed 2026-11-10 14:35
 Risk: UI only
 Checks:
-- [ ] On the Atlas, at 1280px, tablet width and a 390px phone, no pill shows while the hero tiles are in view; once they scroll behind the top bar the pill appears just under it, reading "Holds in N% of futures · <city>" with the main simulation's odds (the same number as the Outlook verdict), and hides again on scroll back (proof: running app, scroll + DOM + screenshot)
-- [ ] Tapping the Atlas pill scrolls back to the hero tiles and puts focus there; making another city the destination from the list or map while the pill shows updates it live (city, odds, running ring, "±N pts") (proof: running app, scripted taps + DOM)
-- [ ] The pill never covers the tab bar, open sheets (city profile, compare) or the map's own controls, and doesn't catch taps outside its box; it holds at 320px and 390px, light and dark, with a long city name (proof: running app, elementFromPoint + screenshots, a test can't judge layout)
-- [ ] The Outlook, phone Plan and tablet drawer pills behave as before; tests and typecheck stay green (proof: screenshots compared to ded840e + test run)
+- [x] On the Atlas, at 1280px, tablet width and a 390px phone, no pill shows while the hero tiles are in view; once they scroll behind the top bar the pill appears just under it, reading "Holds in N% of futures · <city>" with the main simulation's odds (the same number as the Outlook verdict), and hides again on scroll back (proof: running app, scroll + DOM + screenshot)
+- [x] Tapping the Atlas pill scrolls back to the hero tiles and puts focus there; making another city the destination from the list or map while the pill shows updates it live (city, odds, running ring, "±N pts") (proof: running app, scripted taps + DOM)
+- [x] The pill never covers the tab bar, open sheets (city profile, compare) or the map's own controls, and doesn't catch taps outside its box; it holds at 320px and 390px, light and dark, with a long city name (proof: running app, elementFromPoint + screenshots, a test can't judge layout)
+- [x] The Outlook, phone Plan and tablet drawer pills behave as before; tests and typecheck stay green (proof: screenshots compared to ded840e + test run)
 Open: none
 
 ## Stages
 - [x] 1. City on the pills — name the destination (else home) on the phone Plan pill and the desktop/tablet docked pill, with ellipsis and spoken label
 - [x] 2. Phone Outlook pill — turn on the docked pill on phone Outlook under the top bar once the number scrolls away, tap back to the verdict, without blocking the tab bar or chart touches
-- [ ] 3. Atlas pill — the same floating pill on the Atlas, all breakpoints, once the hero tiles scroll away; tap scrolls back to the tiles
+- [x] 3. Atlas pill — the same floating pill on the Atlas, all breakpoints, once the hero tiles scroll away; tap scrolls back to the tiles
 
 ## Decisions
 - 2026-11-10 · Pill city = destination, else home city; with no city (can't happen today: home is always set) the pill stays as it is; long names get "…", the % is never cut; the spoken label includes the city — user: "Yes this matches. Please plan it and run on autopilot."
@@ -36,8 +35,13 @@ Open: none
 - 2026-11-10 · Stage 2 closed: 4/4 checks pass in the running app, verified by a fresh agent; other pills byte-identical to b11905d ([evidence](evidence/stage-2/report.md)) — PM.
 - 2026-11-10 · Stage 3 added before the push: the Atlas gets the same pill once its tiles scroll away, all breakpoints; tapping scrolls back to the tiles; the pill shows the main simulation's odds, not the Atlas ranking's — user: "Go, scroll back to the tiles and use the main number".
 - 2026-11-10 · Stage 3 reuses the docked pill with a configurable target rather than a copy — PM's call: Outlook and Atlas can't drift apart.
+- 2026-11-10 · Stage 3: on the Atlas the pill also steps aside while the map's zoom buttons or city card overlap its box (touch has no hover), and while the pointer is over the map, like the Outlook charts; the first verify found it yielding on vertical overlap alone (blinked out at 1280), fixed to need overlap in both axes and re-verified — PM.
+- 2026-11-10 · No keel:review for stage 3: UI-only, a target prop on one component plus CSS; risk line matches the diff — PM's call.
+- 2026-11-10 · Stage 3 closed: 4/4 checks pass, stage 1–2 checks re-run green, other pills byte-identical to ded840e ([evidence](evidence/stage-3/report.md)) — PM.
 
 ## Open questions
+- At 320px the map city card's "+ Compare" chip wraps onto two lines (pre-existing) — from the stage 3 verify, later.
+- On touch, a tap within ~4px outside a pill's edge triggers it (browser touch adjustment, 16px gutters) — from the stage 2–3 verify, later if it bothers anyone.
 - On a 390px phone, the fan chart's readout runs past the right edge of the screen (pre-existing chart code) — from the stage 2 verify, later.
 - A hand-edited share link can carry an anchor off the slider's 0.05 steps (e.g. 0.37); it's clamped but not snapped, so "returns exactly when you slide back" can't be reached for that row. Snap anchors to the slider step in `share.ts` — from the stage 2 review, later.
 - Touch-dragging the tablet's left Plan drawer doesn't close it (fails the same before stage 2; likely needs `touch-action: pan-y` on side sheets) — from the stage 2 build, later.

@@ -15,12 +15,13 @@ export function pillCity(
 }
 
 /** What the pill does when activated, spoken after the odds. */
-export type PillAction = 'outlook' | 'verdict' | 'drawer'
+export type PillAction = 'outlook' | 'verdict' | 'drawer' | 'atlas'
 
 const ACTION: Record<PillAction, string> = {
   outlook: 'See the outlook.',
   verdict: 'Back to the verdict.',
   drawer: 'Close the plan and go to the verdict.',
+  atlas: 'Back to the top of the atlas.',
 }
 
 /** Spoken label: "Holds in 68% of futures in Bangkok. See the outlook." (no " in …" without a city). */
