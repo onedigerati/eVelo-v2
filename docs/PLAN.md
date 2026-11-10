@@ -12,23 +12,25 @@ Mode: autopilot
 Agents: wide — confirmed 2026-11-10 07:52
 Risk: UI only
 Checks:
-- [ ] On a non-home profile, a category with a typed $ for that city is marked "your amount", a category with a typed % is marked "your change", and other rows, other cities' $ and the home profile carry no mark (proof: test)
-- [ ] The note under the list names the changed categories, and says nothing about overrides when there are none (proof: test)
-- [ ] Each marked row's screen-reader line says "your amount" or "your change" (proof: test)
-- [ ] On the destination's profile in the running app, marked rows show a subtle marker, legible in dark and light, phone and desktop (proof: screenshot, a test can't judge the look)
+- [x] On a non-home profile, a category with a typed $ for that city is marked "your amount", a category with a typed % is marked "your change", and other rows, other cities' $ and the home profile carry no mark (proof: test)
+- [x] The note under the list names the changed categories, and says nothing about overrides when there are none (proof: test)
+- [x] Each marked row's screen-reader line says "your amount" or "your change" (proof: test)
+- [x] On the destination's profile in the running app, marked rows show a subtle marker, legible in dark and light, phone and desktop (proof: screenshot, a test can't judge the look)
 Open: none
 
 ## Stages
-- [ ] 1. Override markers — mark user-set spending rows on profiles, name them in the note
+- [x] 1. Override markers — mark user-set spending rows on profiles, name them in the note
 
 ## Decisions
 - 2026-11-10 · Mark an override on every profile where it applies (typed $ only on its own city, typed % on every non-home city), not only the destination's — user: "Mark it everywhere the override applies, go ahead".
 - 2026-11-10 · Agents: wide; run on autopilot — user: "Let's go wide and autopilot."
 - 2026-11-10 · The marker follows the Plan card's override styling (`is-override`) so it reads as the same thing — PM's call.
 - 2026-11-10 · Deploy (push to main) waits for the user's go after the stage passes — PM's call (no deploy instruction for this plan).
+- 2026-11-10 · Stage 1 closed: 4/4 checks pass ([evidence](evidence/stage-1/report.md)), verified by a fresh agent on the production build; no `keel:review`: UI only, with tests — PM's call.
 - 2026-11-10 · Scale check didn't fire (1 stage, one release) — PM's call.
 
 ## Open questions
+- The profile's tinted % marker overhangs the spending list's right edge by 4px (cosmetic, not clipped) — from the stage 1 verify, later.
 - The preview build (claude.ai artifact) needs the 665 new 640px copies uploaded to its asset store before preview galleries use them; until then they fall back to the originals — from stage 2, next preview publish.
 - Phones don't save photo bytes (DPR 3 needs the 1280); a 960px step or AVIF would — from the stage 2 verify, later.
 - The Atlas worker pool (up to 6) stays alive for the page's life, and every superseding plan edit respawns all of it (each re-parses the 615 KB worker and rebuilds scenarios); shut it down after idle like `DestinationClient`, and keep idle workers on cancel — from the fix-round review, later.

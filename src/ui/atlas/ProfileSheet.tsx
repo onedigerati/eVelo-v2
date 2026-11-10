@@ -14,6 +14,7 @@ import { estateVsHome, taxLines, taxNotice, taxStatus } from './taxLines'
 import { photosFor, subscribePhotos } from '../../data/photos'
 import { oddsBadge } from './gallery'
 import { PhotoGallery } from './PhotoGallery'
+import { OVERRIDE_TITLE, spendNote, spendRowSpoken } from './profileSpend'
 
 /** Fact labels, in display order: the BBD facts first. */
 const FACT_LABEL: Record<keyof ExpatFacts, string> = {
@@ -247,12 +248,8 @@ function ProfileBody({
             </div>
             <ul className="pcats__list" aria-label={`Spend by category, first year in today’s dollars`}>
               {cats.map((c, i) => (
-                <li key={c.cat} className="pcats__row">
-                  <span className="sr-only">
-                    {isHome
-                      ? `${CATEGORY_LABEL[c.cat]}: ${currencyCompact(c.here)} a year.`
-                      : `${CATEGORY_LABEL[c.cat]}: ${currencyCompact(c.here)} here vs ${currencyCompact(c.home)} in ${homeName}${c.ratio == null ? '' : `, ${costDelta(c.ratio)}`}.`}
-                  </span>
+                <li key={c.cat} className={cx('pcats__row', c.override && `is-${c.override}`)}>
+                  <span className="sr-only">{spendRowSpoken(c, homeName, isHome)}</span>
                   <span className="pcats__k" aria-hidden="true">
                     {CATEGORY_LABEL[c.cat]}
                   </span>
@@ -272,26 +269,15 @@ function ProfileBody({
                       transition={{ duration: 0.6, ease, delay: 0.26 + i * 0.03 }}
                     />
                   </span>
-                  <span className="pcats__v num" aria-hidden="true">
-                    {currencyCompact(c.here)}
+                  <span className="pcats__v num" aria-hidden="true" title={c.override ? OVERRIDE_TITLE[c.override] : undefined}>
+                    <span className="pcats__amt">{currencyCompact(c.here)}</span>
                     {!isHome && c.ratio != null && <small className={cx(c.ratio < 0.995 && 'is-down', c.ratio > 1.005 && 'is-up')}>{costDelta(c.ratio)}</small>}
                   </span>
                 </li>
               ))}
             </ul>
           </div>
-          {isHome ? (
-            <p className="pplan__note">Your budget at {homeName} prices, as you set it in the plan.</p>
-          ) : (
-            <p className="pplan__note">
-              Your {homeName} budget at local prices, with your expat price premium ({percent(inputs.expatFactor)})
-              {(inputs.ratioOverrides && Object.keys(inputs.ratioOverrides).length > 0) ||
-              (inputs.amountOverrides?.[city.id] && Object.keys(inputs.amountOverrides[city.id]!).length > 0)
-                ? ' and your category overrides'
-                : ''}
-              .
-            </p>
-          )}
+          <p className="pplan__note">{spendNote(cats, homeName, inputs.expatFactor, isHome)}</p>
 
           <PlanTaxes city={city} inputs={inputs} homeName={homeName} isHome={isHome} />
 

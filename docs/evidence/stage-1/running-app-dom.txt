@@ -1,0 +1,475 @@
+$ npm run build && npx vite preview --port 4391 --strictPort & node docs/evidence/stage-1/shots.mjs http://localhost:4391/ docs/evidence/stage-1  # seeded evelo:v2 = {destCityId: bangkok, amountOverrides: {bangkok: {housing: 9000}}, ratioOverrides: {dining: 0.6}}
+[
+ {
+  "shot": "bangkok-desktop-dark.png",
+  "rows": [
+   {
+    "cls": "pcats__row is-amount",
+    "h": 32,
+    "vRight": 1126,
+    "sr": "Housing: $9.0K here vs $26K in St. Louis, −65%, your amount."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 1126,
+    "sr": "Groceries: $7.8K here vs $11K in St. Louis, −29%."
+   },
+   {
+    "cls": "pcats__row is-ratio",
+    "h": 32,
+    "vRight": 1126,
+    "sr": "Dining out: $4.8K here vs $8.0K in St. Louis, −40%, your change."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 1126,
+    "sr": "Transport: $7.3K here vs $10K in St. Louis, −27%."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 1126,
+    "sr": "Utilities: $4.0K here vs $5.5K in St. Louis, −27%."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 1126,
+    "sr": "Healthcare: $8.7K here vs $16K in St. Louis, −46%."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 1126,
+    "sr": "Travel: $14K here vs $14K in St. Louis, same."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 1126,
+    "sr": "Other: $14K here vs $20K in St. Louis, −27%."
+   }
+  ],
+  "note": "Your St. Louis budget at local prices, with your expat price premium (35%), your own amount for Housing and your change for Dining out.",
+  "docOverflow": 0,
+  "listScroll": 4,
+  "overflowEls": 8
+ },
+ {
+  "shot": "chiangrai-desktop-dark.png",
+  "rows": [
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 1126,
+    "sr": "Housing: $13K here vs $26K in St. Louis, −49%."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 1126,
+    "sr": "Groceries: $6.0K here vs $11K in St. Louis, −46%."
+   },
+   {
+    "cls": "pcats__row is-ratio",
+    "h": 32,
+    "vRight": 1126,
+    "sr": "Dining out: $4.8K here vs $8.0K in St. Louis, −40%, your change."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 1126,
+    "sr": "Transport: $5.6K here vs $10K in St. Louis, −44%."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 1126,
+    "sr": "Utilities: $3.1K here vs $5.5K in St. Louis, −44%."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 1126,
+    "sr": "Healthcare: $8.7K here vs $16K in St. Louis, −46%."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 1126,
+    "sr": "Travel: $14K here vs $14K in St. Louis, same."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 1126,
+    "sr": "Other: $11K here vs $20K in St. Louis, −44%."
+   }
+  ],
+  "note": "Your St. Louis budget at local prices, with your expat price premium (35%) and your change for Dining out.",
+  "docOverflow": 0,
+  "listScroll": 4,
+  "overflowEls": 8
+ },
+ {
+  "ctx": "desktop-dark",
+  "consoleErrors": []
+ },
+ {
+  "shot": "bangkok-phone-dark.png",
+  "rows": [
+   {
+    "cls": "pcats__row is-amount",
+    "h": 32,
+    "vRight": 352,
+    "sr": "Housing: $9.0K here vs $26K in St. Louis, −65%, your amount."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 352,
+    "sr": "Groceries: $7.8K here vs $11K in St. Louis, −29%."
+   },
+   {
+    "cls": "pcats__row is-ratio",
+    "h": 32,
+    "vRight": 352,
+    "sr": "Dining out: $4.8K here vs $8.0K in St. Louis, −40%, your change."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 352,
+    "sr": "Transport: $7.3K here vs $10K in St. Louis, −27%."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 352,
+    "sr": "Utilities: $4.0K here vs $5.5K in St. Louis, −27%."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 352,
+    "sr": "Healthcare: $8.7K here vs $16K in St. Louis, −46%."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 352,
+    "sr": "Travel: $14K here vs $14K in St. Louis, same."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 352,
+    "sr": "Other: $14K here vs $20K in St. Louis, −27%."
+   }
+  ],
+  "note": "Your St. Louis budget at local prices, with your expat price premium (35%), your own amount for Housing and your change for Dining out.",
+  "docOverflow": 0,
+  "listScroll": 4,
+  "overflowEls": 8
+ },
+ {
+  "shot": "chiangrai-phone-dark.png",
+  "rows": [
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 352,
+    "sr": "Housing: $13K here vs $26K in St. Louis, −49%."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 352,
+    "sr": "Groceries: $6.0K here vs $11K in St. Louis, −46%."
+   },
+   {
+    "cls": "pcats__row is-ratio",
+    "h": 32,
+    "vRight": 352,
+    "sr": "Dining out: $4.8K here vs $8.0K in St. Louis, −40%, your change."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 352,
+    "sr": "Transport: $5.6K here vs $10K in St. Louis, −44%."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 352,
+    "sr": "Utilities: $3.1K here vs $5.5K in St. Louis, −44%."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 352,
+    "sr": "Healthcare: $8.7K here vs $16K in St. Louis, −46%."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 352,
+    "sr": "Travel: $14K here vs $14K in St. Louis, same."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 352,
+    "sr": "Other: $11K here vs $20K in St. Louis, −44%."
+   }
+  ],
+  "note": "Your St. Louis budget at local prices, with your expat price premium (35%) and your change for Dining out.",
+  "docOverflow": 0,
+  "listScroll": 4,
+  "overflowEls": 8
+ },
+ {
+  "ctx": "phone-dark",
+  "consoleErrors": []
+ },
+ {
+  "shot": "bangkok-desktop-light.png",
+  "rows": [
+   {
+    "cls": "pcats__row is-amount",
+    "h": 32,
+    "vRight": 1126,
+    "sr": "Housing: $9.0K here vs $26K in St. Louis, −65%, your amount."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 1126,
+    "sr": "Groceries: $7.8K here vs $11K in St. Louis, −29%."
+   },
+   {
+    "cls": "pcats__row is-ratio",
+    "h": 32,
+    "vRight": 1126,
+    "sr": "Dining out: $4.8K here vs $8.0K in St. Louis, −40%, your change."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 1126,
+    "sr": "Transport: $7.3K here vs $10K in St. Louis, −27%."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 1126,
+    "sr": "Utilities: $4.0K here vs $5.5K in St. Louis, −27%."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 1126,
+    "sr": "Healthcare: $8.7K here vs $16K in St. Louis, −46%."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 1126,
+    "sr": "Travel: $14K here vs $14K in St. Louis, same."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 1126,
+    "sr": "Other: $14K here vs $20K in St. Louis, −27%."
+   }
+  ],
+  "note": "Your St. Louis budget at local prices, with your expat price premium (35%), your own amount for Housing and your change for Dining out.",
+  "docOverflow": 0,
+  "listScroll": 4,
+  "overflowEls": 8
+ },
+ {
+  "shot": "chiangrai-desktop-light.png",
+  "rows": [
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 1126,
+    "sr": "Housing: $13K here vs $26K in St. Louis, −49%."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 1126,
+    "sr": "Groceries: $6.0K here vs $11K in St. Louis, −46%."
+   },
+   {
+    "cls": "pcats__row is-ratio",
+    "h": 32,
+    "vRight": 1126,
+    "sr": "Dining out: $4.8K here vs $8.0K in St. Louis, −40%, your change."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 1126,
+    "sr": "Transport: $5.6K here vs $10K in St. Louis, −44%."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 1126,
+    "sr": "Utilities: $3.1K here vs $5.5K in St. Louis, −44%."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 1126,
+    "sr": "Healthcare: $8.7K here vs $16K in St. Louis, −46%."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 1126,
+    "sr": "Travel: $14K here vs $14K in St. Louis, same."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 1126,
+    "sr": "Other: $11K here vs $20K in St. Louis, −44%."
+   }
+  ],
+  "note": "Your St. Louis budget at local prices, with your expat price premium (35%) and your change for Dining out.",
+  "docOverflow": 0,
+  "listScroll": 4,
+  "overflowEls": 8
+ },
+ {
+  "ctx": "desktop-light",
+  "consoleErrors": []
+ },
+ {
+  "shot": "bangkok-phone-light.png",
+  "rows": [
+   {
+    "cls": "pcats__row is-amount",
+    "h": 32,
+    "vRight": 352,
+    "sr": "Housing: $9.0K here vs $26K in St. Louis, −65%, your amount."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 352,
+    "sr": "Groceries: $7.8K here vs $11K in St. Louis, −29%."
+   },
+   {
+    "cls": "pcats__row is-ratio",
+    "h": 32,
+    "vRight": 352,
+    "sr": "Dining out: $4.8K here vs $8.0K in St. Louis, −40%, your change."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 352,
+    "sr": "Transport: $7.3K here vs $10K in St. Louis, −27%."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 352,
+    "sr": "Utilities: $4.0K here vs $5.5K in St. Louis, −27%."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 352,
+    "sr": "Healthcare: $8.7K here vs $16K in St. Louis, −46%."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 352,
+    "sr": "Travel: $14K here vs $14K in St. Louis, same."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 352,
+    "sr": "Other: $14K here vs $20K in St. Louis, −27%."
+   }
+  ],
+  "note": "Your St. Louis budget at local prices, with your expat price premium (35%), your own amount for Housing and your change for Dining out.",
+  "docOverflow": 0,
+  "listScroll": 4,
+  "overflowEls": 8
+ },
+ {
+  "shot": "chiangrai-phone-light.png",
+  "rows": [
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 352,
+    "sr": "Housing: $13K here vs $26K in St. Louis, −49%."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 352,
+    "sr": "Groceries: $6.0K here vs $11K in St. Louis, −46%."
+   },
+   {
+    "cls": "pcats__row is-ratio",
+    "h": 32,
+    "vRight": 352,
+    "sr": "Dining out: $4.8K here vs $8.0K in St. Louis, −40%, your change."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 352,
+    "sr": "Transport: $5.6K here vs $10K in St. Louis, −44%."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 352,
+    "sr": "Utilities: $3.1K here vs $5.5K in St. Louis, −44%."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 352,
+    "sr": "Healthcare: $8.7K here vs $16K in St. Louis, −46%."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 352,
+    "sr": "Travel: $14K here vs $14K in St. Louis, same."
+   },
+   {
+    "cls": "pcats__row",
+    "h": 32,
+    "vRight": 352,
+    "sr": "Other: $11K here vs $20K in St. Louis, −44%."
+   }
+  ],
+  "note": "Your St. Louis budget at local prices, with your expat price premium (35%) and your change for Dining out.",
+  "docOverflow": 0,
+  "listScroll": 4,
+  "overflowEls": 8
+ },
+ {
+  "ctx": "phone-light",
+  "consoleErrors": []
+ }
+]

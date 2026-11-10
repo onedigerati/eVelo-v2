@@ -180,6 +180,9 @@ export interface CategoryCompare {
   here: number
   /** here ÷ home; null when a fixed amount sits on a $0 home budget (no percent to show). */
   ratio: number | null
+  /** What the user typed for this row and city: a $ for this city (`amount`), a % for every city
+   *  away from home (`ratio`), or nothing. Always null on the home profile. */
+  override: 'amount' | 'ratio' | null
 }
 
 /**
@@ -198,8 +201,10 @@ export function categoryCompare(inputs: PlanInputs, city: City): CategoryCompare
   const here = destinationAmounts(inputs.budget, r, fixed)
   return BUDGET_CATEGORIES.filter((c) => (inputs.budget[c] || 0) > 0 || here[c] > 0).map((c) => {
     const h = inputs.budget[c] || 0
-    const ratio = isFixedAmount(fixed?.[c]) ? (h > 0 ? here[c] / h : null) : r[c]
-    return { cat: c, home: h, here: here[c], ratio }
+    const isFixed = isFixedAmount(fixed?.[c])
+    const ratio = isFixed ? (h > 0 ? here[c] / h : null) : r[c]
+    const override = isFixed ? 'amount' : away && inputs.ratioOverrides?.[c] !== undefined ? 'ratio' : null
+    return { cat: c, home: h, here: here[c], ratio, override }
   })
 }
 

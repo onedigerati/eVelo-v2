@@ -185,7 +185,7 @@ describe('categoryCompare', () => {
   it('shows a fixed amount on a $0 home category with no ratio, never Infinity or NaN', () => {
     const inputs = { ...DEFAULT_INPUTS, budget: { ...DEFAULT_INPUTS.budget, travel: 0 }, amountOverrides: { lisbon: { travel: 5_000 } } }
     const t = categoryCompare(inputs, CITY_BY_ID.lisbon).find((c) => c.cat === 'travel')!
-    expect(t).toEqual({ cat: 'travel', home: 0, here: 5_000, ratio: null })
+    expect(t).toEqual({ cat: 'travel', home: 0, here: 5_000, ratio: null, override: 'amount' })
     expect(categoryCompare(inputs, CITY_BY_ID.bangkok).some((c) => c.cat === 'travel')).toBe(false)
   })
 })

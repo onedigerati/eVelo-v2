@@ -2678,6 +2678,20 @@
 .pcats__v small.is-up {
   color: var(--broken-text);
 }
+/* A value the user typed in the plan: the same brass tint the Plan card puts on the field they set
+   (the $ for a typed amount, the % for a typed change). Negative margin keeps the column aligned. */
+.pcats__row.is-amount .pcats__amt,
+.pcats__row.is-ratio .pcats__v small {
+  margin: -1px -4px;
+  padding: 0 3px;
+  border: 1px solid var(--bruised-line);
+  border-radius: 5px;
+  background: var(--bruised-soft);
+}
+.pcats__row.is-amount .pcats__v,
+.pcats__row.is-ratio .pcats__v {
+  cursor: help;
+}
 .pplan__note {
   font-size: var(--fs-xs);
   line-height: 1.45;

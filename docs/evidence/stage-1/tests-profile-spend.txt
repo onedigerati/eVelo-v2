@@ -1,0 +1,45 @@
+$ npx vitest run src/ui/atlas/__tests__/profileSpend.test.ts src/ui/atlas/__tests__/picks.test.ts --reporter=verbose
+npm notice run evelo@2.0.0 npx
+npm notice run 'vitest' run src/ui/atlas/__tests__/profileSpend.test.ts src/ui/atlas/__tests__/picks.test.ts --reporter=verbose
+
+ RUN  v5.1.0 /home/jonah/repos/eVelo-v2
+
+ ✓ src/ui/atlas/__tests__/picks.test.ts > pickViews > joins every pick to its city and ranking row, in pick order 2ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > pickViews > profiles every pick 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > pickViews > drops picks whose city is missing 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > splitPicks > puts ranks 1–15 in the card grid and 16–75 in the compact rows 1ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > splitPicks > keeps an unprofiled later pick in the rows and leaves an unprofiled top pick out of the grid 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > scoreLabel > reads all nine factors in display order, out of 5 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > dates > formats ISO dates without a time-zone shift 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > verifiedLabel > labels verified cities with month and source 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > verifiedLabel > says so when confidence is low 1ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > verifiedLabel > labels unverified cities as estimates 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > verifiedLabel > every pick is verified 1ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > costDataLine > cites the date and source, with the low-confidence note where it applies 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > oddsVsHome > compares displayed whole percents 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > categoryCompare > prices the home budget with the plan’s expat factor and overrides 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > categoryCompare > is 1:1 for the home city and skips empty categories 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > categoryCompare > uses a fixed amount only for its own city 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > categoryCompare > shows a fixed amount on a $0 home category with no ratio, never Infinity or NaN 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > cityCosts > applies only the city’s own fixed amounts 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > profileView / profileEyebrow (any profiled city) > opens a pick with its rank and row 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > profileView / profileEyebrow (any profiled city) > opens an unranked profiled city without a pick, and says "Profile · <country>" 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > profileView / profileEyebrow (any profiled city) > returns null for a city with no profile or an unknown id 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > profileView / profileEyebrow (any profiled city) > never adds an unranked profile to the top-picks list 0ms
+ ✓ src/ui/atlas/__tests__/profileSpend.test.ts > categoryCompare override marks > marks this city’s typed $ as amount and a typed % as ratio, nothing else 1ms
+ ✓ src/ui/atlas/__tests__/profileSpend.test.ts > categoryCompare override marks > marks the typed % on every non-home city, and each city’s own $ only there 0ms
+ ✓ src/ui/atlas/__tests__/profileSpend.test.ts > categoryCompare override marks > a typed $ wins over a typed % in the same category 0ms
+ ✓ src/ui/atlas/__tests__/profileSpend.test.ts > categoryCompare override marks > the home profile carries no mark, even with a $ keyed by the home city 0ms
+ ✓ src/ui/atlas/__tests__/profileSpend.test.ts > categoryCompare override marks > no overrides, no marks 0ms
+ ✓ src/ui/atlas/__tests__/profileSpend.test.ts > spendNote > names the categories with a typed $ and a typed % 12ms
+ ✓ src/ui/atlas/__tests__/profileSpend.test.ts > spendNote > lists several categories of one kind 0ms
+ ✓ src/ui/atlas/__tests__/profileSpend.test.ts > spendNote > says nothing about overrides when none apply here 0ms
+ ✓ src/ui/atlas/__tests__/profileSpend.test.ts > spendRowSpoken > ends a typed $ row with "your amount" and a typed % row with "your change" 1ms
+ ✓ src/ui/atlas/__tests__/profileSpend.test.ts > spendRowSpoken > leaves other rows and the home profile unmarked 1ms
+
+ Test Files  2 passed (2)
+      Tests  32 passed (32)
+   Start at  07:59:21
+   Duration  418ms (transform 71%, import 25%, tests 4%, worker 1%)
+
+exit 0
