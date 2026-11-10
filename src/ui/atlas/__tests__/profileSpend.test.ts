@@ -7,7 +7,7 @@ import { CITY_BY_ID } from '../../../data/cities'
 import { DEFAULT_INPUTS } from '../../../engine/defaults'
 import type { BudgetCategory, PlanInputs } from '../../../engine/types'
 import { categoryCompare } from '../picks'
-import { spendNote, spendRowSpoken } from '../profileSpend'
+import { overrideMarker, overrideTitle, spendNote, spendRowSpoken } from '../profileSpend'
 
 const HOME = DEFAULT_INPUTS.homeCityId
 const inputs: PlanInputs = {
@@ -57,14 +57,14 @@ describe('spendNote', () => {
 
   it('names the categories with a typed $ and a typed %', () => {
     expect(note(inputs, 'lisbon')).toBe(
-      'Your St. Louis budget at local prices, with your expat price premium (35%), your own amount for Housing and your change for Dining out.',
+      'Your St. Louis budget at local prices, with your expat price premium (35%), your own amount for Housing and your change for Dining out. Dining out follows the Expat price premium from where it was typed.',
     )
   })
 
   it('lists several categories of one kind', () => {
     const i = { ...DEFAULT_INPUTS, ratioOverrides: { dining: 0.6, travel: 1.2, other: 0.9 } }
     expect(note(i, 'lisbon')).toBe(
-      'Your St. Louis budget at local prices, with your expat price premium (35%) and your changes for Dining out, Travel and Other.',
+      'Your St. Louis budget at local prices, with your expat price premium (35%) and your changes for Dining out, Travel and Other. Dining out and Other follow the Expat price premium from where they were typed.',
     )
     const j = { ...DEFAULT_INPUTS, amountOverrides: { lisbon: { housing: 12_000, groceries: 4_000 } } }
     expect(note(j, 'lisbon')).toContain('and your own amounts for Housing and Groceries.')
@@ -84,14 +84,73 @@ describe('spendRowSpoken', () => {
   const rows = categoryCompare(inputs, CITY_BY_ID.lisbon)
   const row = (c: BudgetCategory) => rows.find((r) => r.cat === c)!
 
-  it('ends a typed $ row with "your amount" and a typed % row with "your change"', () => {
+  it('ends a typed $ row with "your amount" and a typed % row with "your change" (plus the premium where it moves the row)', () => {
     expect(spendRowSpoken(row('housing'), 'St. Louis', false)).toMatch(/^Housing: \$12K here vs .+ in St\. Louis, .+, your amount\.$/)
-    expect(spendRowSpoken(row('dining'), 'St. Louis', false)).toMatch(/^Dining out: .+, −40%, your change\.$/)
+    expect(spendRowSpoken(row('dining'), 'St. Louis', false)).toMatch(/^Dining out: .+, −40%, your change, scales with premium\.$/)
   })
 
   it('leaves other rows and the home profile unmarked', () => {
     const s = spendRowSpoken(row('groceries'), 'St. Louis', false)
     expect(s).not.toMatch(/your (amount|change)/)
     for (const r of categoryCompare(inputs, CITY_BY_ID[HOME])) expect(spendRowSpoken(r, 'St. Louis', true)).not.toMatch(/your (amount|change)/)
+  })
+})
+
+describe('rows the premium can move', () => {
+  // Mérida is cheaper than St. Louis in every category the premium touches; Travel is always 1.
+  // Lisbon's housing is pricier than St. Louis's, so the premium can't move it.
+  const anchored: PlanInputs = {
+    ...DEFAULT_INPUTS,
+    ratioOverrides: { dining: 0.6, travel: 0.8 },
+    ratioOverrideAt: { dining: 0.35, travel: 0.35 },
+    amountOverrides: { merida: { housing: 12_000 }, lisbon: { housing: 30_000 } },
+    amountOverrideAt: { merida: { housing: 0.35 }, lisbon: { housing: 0.35 } },
+  }
+  const rows = categoryCompare(anchored, CITY_BY_ID.merida)
+  const row = (c: BudgetCategory) => rows.find((r) => r.cat === c)!
+
+  it('categoryCompare flags typed rows the premium moves, never Travel, unmarked or home rows', () => {
+    expect(row('housing').scales).toBe(true)
+    expect(row('dining').scales).toBe(true)
+    expect(row('travel').scales).toBe(false)
+    expect(row('groceries').scales).toBe(false)
+    expect(categoryCompare(anchored, CITY_BY_ID[HOME]).every((r) => !r.scales)).toBe(true)
+    // a typed value with no anchor is pinned at the current premium: it still moves
+    expect(categoryCompare(inputs, CITY_BY_ID.merida).find((r) => r.cat === 'dining')!.scales).toBe(true)
+    // pricier than home: marked, but not moved
+    const lis = categoryCompare(anchored, CITY_BY_ID.lisbon).find((r) => r.cat === 'housing')!
+    expect(lis.override).toBe('amount')
+    expect(lis.scales).toBe(false)
+    expect(overrideMarker(lis)).toBe('your amount')
+  })
+
+  it('the marker adds "scales with premium" only where the premium can move the row', () => {
+    expect(overrideMarker(row('housing'))).toBe('your amount · scales with premium')
+    expect(overrideMarker(row('dining'))).toBe('your change · scales with premium')
+    expect(overrideMarker(row('travel'))).toBe('your change')
+    expect(overrideMarker(row('groceries'))).toBeNull()
+    expect(overrideTitle(row('housing'))).toBe(
+      'Your amount, typed in the plan for this city; it scales with the Expat price premium from where you typed it.',
+    )
+    expect(overrideTitle(row('travel'))).toBe('Your change versus home, typed in the plan for every city.')
+    expect(overrideTitle(row('groceries'))).toBeUndefined()
+  })
+
+  it('the spoken line ends in the marker', () => {
+    expect(spendRowSpoken(row('housing'), 'St. Louis', false)).toMatch(/, your amount, scales with premium\.$/)
+    expect(spendRowSpoken(row('travel'), 'St. Louis', false)).toMatch(/, your change\.$/)
+  })
+
+  it('the note says the moving rows follow the premium from where they were typed', () => {
+    const note = (i: PlanInputs) => spendNote(categoryCompare(i, CITY_BY_ID.merida), 'St. Louis', i.expatFactor, false)
+    const noTravel = { ...anchored, ratioOverrides: { dining: 0.6 } }
+    expect(note(noTravel)).toBe(
+      'Your St. Louis budget at local prices, with your expat price premium (35%), your own amount for Housing and your change for Dining out. These follow the Expat price premium from where they were typed.',
+    )
+    expect(note(anchored)).toMatch(/ Housing and Dining out follow the Expat price premium from where they were typed\.$/)
+    const one = { ...anchored, ratioOverrides: {} }
+    expect(note(one)).toMatch(/your own amount for Housing\. It follows the Expat price premium from where it was typed\.$/)
+    const travelOnly = { ...anchored, ratioOverrides: { travel: 0.8 }, amountOverrides: {} }
+    expect(note(travelOnly)).not.toMatch(/follow/)
   })
 })

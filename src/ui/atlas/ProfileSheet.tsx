@@ -14,7 +14,7 @@ import { estateVsHome, taxLines, taxNotice, taxStatus } from './taxLines'
 import { photosFor, subscribePhotos } from '../../data/photos'
 import { oddsBadge } from './gallery'
 import { PhotoGallery } from './PhotoGallery'
-import { OVERRIDE_TITLE, spendNote, spendRowSpoken } from './profileSpend'
+import { overrideMarker, overrideTitle, spendNote, spendRowSpoken } from './profileSpend'
 
 /** Fact labels, in display order: the BBD facts first. */
 const FACT_LABEL: Record<keyof ExpatFacts, string> = {
@@ -269,10 +269,15 @@ function ProfileBody({
                       transition={{ duration: 0.6, ease, delay: 0.26 + i * 0.03 }}
                     />
                   </span>
-                  <span className="pcats__v num" aria-hidden="true" title={c.override ? OVERRIDE_TITLE[c.override] : undefined}>
+                  <span className="pcats__v num" aria-hidden="true" title={overrideTitle(c)}>
                     <span className="pcats__amt">{currencyCompact(c.here)}</span>
                     {!isHome && c.ratio != null && <small className={cx(c.ratio < 0.995 && 'is-down', c.ratio > 1.005 && 'is-up')}>{costDelta(c.ratio)}</small>}
                   </span>
+                  {c.scales && (
+                    <span className="pcats__mark" aria-hidden="true">
+                      {overrideMarker(c)}
+                    </span>
+                  )}
                 </li>
               ))}
             </ul>
