@@ -1,25 +1,27 @@
 # Pill destination plan
 
 ## Goal
-The verdict pill ("Holds in 68% of futures") tells you the odds but not which city they're for, and on a phone the Outlook has no pill at all once the big headline scrolls away. Two changes: (1) every verdict pill names the city the odds are for: the destination, else the home city ("Holds in 68% of futures · Bangkok"); a long name gets cut off with "…" and the percentage never does; the spoken label adds "in <city>". This covers the phone Plan pill and the desktop/tablet docked pill. (2) On a phone, the Outlook gets the same floating pill once the verdict's number scrolls behind the top bar, with the same look and tap-back-to-verdict as desktop. Done = both stages pass verification in the running build; deploy waits for the user's go.
+The verdict pill ("Holds in 68% of futures") tells you the odds but not which city they're for, and on a phone the Outlook has no pill at all once the big headline scrolls away. Two changes: (1) every verdict pill names the city the odds are for: the destination, else the home city ("Holds in 68% of futures · Bangkok"); a long name gets cut off with "…" and the percentage never does; the spoken label adds "in <city>". This covers the phone Plan pill and the desktop/tablet docked pill. (2) On a phone, the Outlook gets the same floating pill once the verdict's number scrolls behind the top bar, with the same look and tap-back-to-verdict as desktop. (3) The Atlas page gets the same floating pill on every breakpoint once its three hero tiles scroll behind the top bar; tapping it scrolls back to the tiles. Done = all stages pass verification in the running build; deploy waits for the user's go.
 
 ## Baseline
 2026-11-10 · tests: 818 pass · typecheck: clean
 
 ## Now
-All stages done
+Stage 3 of 3 · Atlas pill
+Mode: autopilot
 Agents: wide — confirmed 2026-11-10 14:35
 Risk: UI only
 Checks:
-- [x] On a phone (390px), Outlook shows no pill while the verdict's number is in view; once it scrolls behind the top bar the pill appears just under the top bar, showing "Holds in N% of futures · <city>", and hides again when you scroll back up (proof: running app, scroll + DOM + screenshot)
-- [x] Tapping the phone pill scrolls back to the verdict and puts focus on its headline; the pill never covers the bottom tab bar, doesn't block taps on the content below it beyond its own box, and live changes (running ring, delta) still show (proof: running app, scripted taps + elementFromPoint)
-- [x] It holds at 320px and 390px, light and dark, with a long city name, and the phone Plan tab and desktop/tablet pills are unchanged (proof: screenshots, a test can't judge layout)
-- [x] Tests and typecheck stay green (proof: test run)
+- [ ] On the Atlas, at 1280px, tablet width and a 390px phone, no pill shows while the hero tiles are in view; once they scroll behind the top bar the pill appears just under it, reading "Holds in N% of futures · <city>" with the main simulation's odds (the same number as the Outlook verdict), and hides again on scroll back (proof: running app, scroll + DOM + screenshot)
+- [ ] Tapping the Atlas pill scrolls back to the hero tiles and puts focus there; making another city the destination from the list or map while the pill shows updates it live (city, odds, running ring, "±N pts") (proof: running app, scripted taps + DOM)
+- [ ] The pill never covers the tab bar, open sheets (city profile, compare) or the map's own controls, and doesn't catch taps outside its box; it holds at 320px and 390px, light and dark, with a long city name (proof: running app, elementFromPoint + screenshots, a test can't judge layout)
+- [ ] The Outlook, phone Plan and tablet drawer pills behave as before; tests and typecheck stay green (proof: screenshots compared to ded840e + test run)
 Open: none
 
 ## Stages
 - [x] 1. City on the pills — name the destination (else home) on the phone Plan pill and the desktop/tablet docked pill, with ellipsis and spoken label
 - [x] 2. Phone Outlook pill — turn on the docked pill on phone Outlook under the top bar once the number scrolls away, tap back to the verdict, without blocking the tab bar or chart touches
+- [ ] 3. Atlas pill — the same floating pill on the Atlas, all breakpoints, once the hero tiles scroll away; tap scrolls back to the tiles
 
 ## Decisions
 - 2026-11-10 · Pill city = destination, else home city; with no city (can't happen today: home is always set) the pill stays as it is; long names get "…", the % is never cut; the spoken label includes the city — user: "Yes this matches. Please plan it and run on autopilot."
@@ -32,6 +34,8 @@ Open: none
 - 2026-11-10 · Stage 2: phone gets a tighter pill (smaller padding and delta chip, plain arrow like the Plan pill) because the desktop pill's back section spilled ~30px at 320px; the chart-yield rule (pill steps aside while a chart under it has focus) now applies on phone too — builder's call, accepted by PM.
 - 2026-11-10 · No keel:review for stage 2: UI-only, one component's breakpoint gate and CSS; risk line matches the diff — PM's call.
 - 2026-11-10 · Stage 2 closed: 4/4 checks pass in the running app, verified by a fresh agent; other pills byte-identical to b11905d ([evidence](evidence/stage-2/report.md)) — PM.
+- 2026-11-10 · Stage 3 added before the push: the Atlas gets the same pill once its tiles scroll away, all breakpoints; tapping scrolls back to the tiles; the pill shows the main simulation's odds, not the Atlas ranking's — user: "Go, scroll back to the tiles and use the main number".
+- 2026-11-10 · Stage 3 reuses the docked pill with a configurable target rather than a copy — PM's call: Outlook and Atlas can't drift apart.
 
 ## Open questions
 - On a 390px phone, the fan chart's readout runs past the right edge of the screen (pre-existing chart code) — from the stage 2 verify, later.
