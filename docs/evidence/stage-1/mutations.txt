@@ -1,0 +1,77 @@
+$ for each mutation (applied with sed in a throwaway git worktree of HEAD): npx vitest run src/engine/__tests__/scaleOverrides.test.ts src/state/__tests__/share.test.ts src/ui/__tests__/spendParity.test.ts; then restore the file from HEAD
+=== MUTATION: scaleTyped always returns typed (no scaling)
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+     × is exact when the model has not moved, scales by mNow/mAt, and caps at max(cap, typed) 5ms
+     × reads exactly as typed at e0, scales at e, and is exact again back at e0 1ms
+     × caps at max(home amount, typed) 2ms
+     × each city scales by its own model ratio 0ms
+     × caps at max(1, typed) and returns exactly to typed at e0 1ms
+     × real Atlas cities each scale by their own model ratio 1ms
+     × destination spending equals amountsTotal(destinationSpend(...).amounts) with anchored overrides at a moved premium 104ms
+     × the plan really scales: typed values moved with the premium 3ms
+     × another Atlas city gets its own scaled values 1ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 9 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/engine/__tests__/scaleOverrides.test.ts > scaleTyped > is exact when the model has not moved, scales by mNow/mAt, and caps at max(cap, typed)
+ FAIL  src/engine/__tests__/scaleOverrides.test.ts > destinationSpend: typed $ scales with the premium > reads exactly as typed at e0, scales at e, and is exact again back at e0
+ FAIL  src/engine/__tests__/scaleOverrides.test.ts > destinationSpend: typed $ scales with the premium > caps at max(home amount, typed)
+ FAIL  src/engine/__tests__/scaleOverrides.test.ts > destinationSpend: typed % scales per city > each city scales by its own model ratio
+ FAIL  src/engine/__tests__/scaleOverrides.test.ts > destinationSpend: typed % scales per city > caps at max(1, typed) and returns exactly to typed at e0
+
+=== MUTATION: scaleTyped without the cap
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+     × is exact when the model has not moved, scales by mNow/mAt, and caps at max(cap, typed) 5ms
+     × caps at max(home amount, typed) 0ms
+     × caps at max(1, typed) and returns exactly to typed at e0 1ms
+     × real Atlas cities each scale by their own model ratio 1ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/engine/__tests__/scaleOverrides.test.ts > scaleTyped > is exact when the model has not moved, scales by mNow/mAt, and caps at max(cap, typed)
+ FAIL  src/engine/__tests__/scaleOverrides.test.ts > destinationSpend: typed $ scales with the premium > caps at max(home amount, typed)
+ FAIL  src/engine/__tests__/scaleOverrides.test.ts > destinationSpend: typed % scales per city > caps at max(1, typed) and returns exactly to typed at e0
+ FAIL  src/engine/__tests__/scaleOverrides.test.ts > destinationSpend: typed % scales per city > real Atlas cities each scale by their own model ratio
+      Tests  4 failed | 42 passed (46)
+
+=== MUTATION: no guard for a zero anchor model ratio
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+     × returns typed (finite) when the anchor model ratio is 0 or not finite 4ms
+     × a model ratio of 0 at e0 does not divide by zero 1ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/engine/__tests__/scaleOverrides.test.ts > scaleTyped > returns typed (finite) when the anchor model ratio is 0 or not finite
+ FAIL  src/engine/__tests__/scaleOverrides.test.ts > destinationSpend: rows the premium does not touch, zero ratio, missing anchors > a model ratio of 0 at e0 does not divide by zero
+      Tests  2 failed | 44 passed (46)
+
+=== MUTATION: premium also moves rows with raw ratio >= 1
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+     × raw ratio ≥ 1 and Travel do not move with the slider 5ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/engine/__tests__/scaleOverrides.test.ts > destinationSpend: rows the premium does not touch, zero ratio, missing anchors > raw ratio ≥ 1 and Travel do not move with the slider
+      Tests  1 failed | 45 passed (46)
+
+=== MUTATION: missing anchors default to premium 0 instead of the saved premium
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+       × an old share link without anchors loads anchored at its own saved premium, numbers unchanged 9ms
+       × an old saved plan without anchors loads anchored at its own saved premium, numbers unchanged 2ms
+       × fills from the premium after it is clamped, and only the missing anchors 1ms
+       × sanitizes hostile anchors 0ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/state/__tests__/share.test.ts > share links > override anchors > an old share link without anchors loads anchored at its own saved premium, numbers unchanged
+ FAIL  src/state/__tests__/share.test.ts > share links > override anchors > an old saved plan without anchors loads anchored at its own saved premium, numbers unchanged
+ FAIL  src/state/__tests__/share.test.ts > share links > override anchors > fills from the premium after it is clamped, and only the missing anchors
+ FAIL  src/state/__tests__/share.test.ts > share links > override anchors > sanitizes hostile anchors
+      Tests  4 failed | 42 passed (46)
+
+=== MUTATION: anchors not clamped to 0..1
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+       × sanitizes hostile anchors 6ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/state/__tests__/share.test.ts > share links > override anchors > sanitizes hostile anchors
+      Tests  1 failed | 45 passed (46)
+
+=== MUTATION: Atlas cityCosts reverts to the old unscaled pricing
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+     × simulation, Atlas odds, picks, Outlook cost card, existing-loan check and plan card all agree 50ms
+     × another Atlas city gets its own scaled values 1ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/ui/__tests__/spendParity.test.ts > every view prices destination spending through destinationSpend > simulation, Atlas odds, picks, Outlook cost card, existing-loan check and plan card all agree
+ FAIL  src/ui/__tests__/spendParity.test.ts > every view prices destination spending through destinationSpend > another Atlas city gets its own scaled values
+      Tests  2 failed | 44 passed (46)
+

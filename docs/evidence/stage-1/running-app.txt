@@ -1,0 +1,81 @@
+node docs/evidence/stage-1/verify-app.cjs http://localhost:4317/ http://localhost:4318/ docs/evidence/stage-1   (Playwright, headless Chromium, 1280×1000, against npx vite preview of the production build; old = 6a137cd built the same way)
+
+## A. St. Louis -> Bangkok, premium 35%. Type $6000 on Housing and -50% on Dining out (both rows cheaper in Bangkok, so the premium touches them)
+before typing: {"planTotal":"$83,166$83,166","outlookDest":"$83,166$83,166","odds":"8080%%"}
+after typing at 35%: {"planTotal":"$66,193$66,193","outlookDest":"$66,193$66,193","odds":"8989%%"}
+  stored: amountOverrides {"bangkok":{"housing":6000}} amountOverrideAt {"bangkok":{"housing":0.35}} ratioOverrides {"dining":0.5} ratioOverrideAt {"dining":0.35}
+  plan card rows:
+     Housing$6.0K−77% [$]
+     Groceries$7.8K−29%
+     Dining out$4.0K−50% [%]
+     Transportation$7.3K−27%
+     Utilities & phone$4.0K−27%
+     Healthcare$8.7K−46%
+     Travel$14K±0%
+     Everything else$14K−27%
+  Outlook housing 6000 dining 4000
+
+## B. Slide the premium 35% -> 65% (6 steps of 5)
+at 65%: {"planTotal":"$76,938$76,938","outlookDest":"$76,938$76,938","odds":"8383%%"}
+  plan card rows:
+     Housing$6.5K−75% [$]
+     Groceries$9.3K−16%
+     Dining out$5.1K−36% [%]
+     Transportation$8.6K−14%
+     Utilities & phone$4.7K−14%
+     Healthcare$12K−25%
+     Travel$14K±0%
+     Everything else$17K−14%
+  Outlook housing 6512 expected 6000 × m(.65)/m(.35) = 6511.85 | cap max(26000, 6000) not reached
+  Outlook dining 5091 expected 8000 × 0.5 × m(.65)/m(.35) = 5090.91
+  stored anchors unchanged: {"bangkok":{"housing":0.35}} {"dining":0.35}
+
+## C. Bangkok profile at 65%
+     Housing: $6.5K here vs $26K in St. Louis, −75%, your amount.
+     Groceries: $9.3K here vs $11K in St. Louis, −16%.
+     Dining out: $5.1K here vs $8.0K in St. Louis, −36%, your change.
+     Transport: $8.6K here vs $10K in St. Louis, −14%.
+     Utilities: $4.7K here vs $5.5K in St. Louis, −14%.
+     Healthcare: $12K here vs $16K in St. Louis, −25%.
+     Travel: $14K here vs $14K in St. Louis, same.
+     Other: $17K here vs $20K in St. Louis, −14%.
+  profile housing Housing: $6.5K here vs $26K in St. Louis, −75%, your amount. | plan card housing Housing$6.5K−75% [$] | compact of expected $6.5K
+
+## D. Slide back 65% -> 35%
+back at 35%: {"planTotal":"$66,193$66,193","outlookDest":"$66,193$66,193","odds":"8989%%"}
+  plan card rows:
+     Housing$6.0K−77% [$]
+     Groceries$7.8K−29%
+     Dining out$4.0K−50% [%]
+     Transportation$7.3K−27%
+     Utilities & phone$4.0K−27%
+     Healthcare$8.7K−46%
+     Travel$14K±0%
+     Everything else$14K−27%
+  Outlook housing 6000 dining 4000
+  profile at 35%: Housing: $6.0K here vs $26K in St. Louis, −77%, your amount. | Dining out: $4.0K here vs $8.0K in St. Louis, −50%, your change.
+
+## E. Old-style share link: overrides, no anchors, premium 50%
+payload {"homeCityId":"st-louis","destCityId":"bangkok","expatFactor":0.5,"ratioOverrides":{"dining":0.5},"amountOverrides":{"bangkok":{"housing":6000}}}
+link hash #p=eyJ2IjoxLCJkIjp7ImhvbWVDaXR5SWQiOiJzdC1sb3VpcyIsImRlc3RDaXR5SWQiOiJiYW5na29rIiwiZXhwYXRGYWN0b3IiOjAuNSwicmF0aW9PdmVycmlkZXMiOnsiZGluaW5nIjowLjV9LCJhbW91bnRPdmVycmlkZXMiOnsiYmFuZ2tvayI6eyJob3VzaW5nIjo2MDAwfX19fQ
+old build (6a137cd, before the stage) {"planTotal":"$70,764$70,764","outlookDest":"$70,764$70,764","odds":"8686%%"}
+  outlook rows: Housing: $26,000 at home, $6,000 in Bangkok; Groceries: $11,000 at home, $8,512 in Bangkok; Dining out: $8,000 at home, $4,000 in Bangkok; Transport: $10,000 at home, $7,958 in Bangkok; Utilities: $5,500 at home, $4,377 in Bangkok; Healthcare: $16,000 at home, $10,400 in Bangkok; Travel: $14,000 at home, $14,000 in Bangkok; Other: $19,500 at home, $15,518 in Bangkok
+new build (this branch) {"planTotal":"$70,764$70,764","outlookDest":"$70,764$70,764","odds":"8686%%","amountOverrideAt":{"bangkok":{"housing":0.5}},"ratioOverrideAt":{"dining":0.5}}
+  outlook rows: Housing: $26,000 at home, $6,000 in Bangkok; Groceries: $11,000 at home, $8,512 in Bangkok; Dining out: $8,000 at home, $4,000 in Bangkok; Transport: $10,000 at home, $7,958 in Bangkok; Utilities: $5,500 at home, $4,377 in Bangkok; Healthcare: $16,000 at home, $10,400 in Bangkok; Travel: $14,000 at home, $14,000 in Bangkok; Other: $19,500 at home, $15,518 in Bangkok
+  new build, slid 50% -> 60%: housing 6164 expected 6163.64 | plan total $74,295$74,295 outlook $74,295$74,295
+
+## RESULTS
+PASS housing $ moved with the slider
+PASS dining % moved with the slider
+PASS plan card total == Outlook dest total at 65%
+PASS profile housing shows the scaled $ (same as plan card)
+PASS profile dining shows the scaled % (same as plan card)
+PASS back at 35%: housing exactly $6,000
+PASS back at 35%: dining exactly 50% of $8,000
+PASS back at 35%: totals identical to before sliding
+PASS profile back at 35%: housing $6.0K
+PASS old link: anchored at its own premium, then moves with the slider
+PASS old link: back at 50% equals the loaded numbers
+PASS old link: same plan total, Outlook rows and odds on old and new builds
+PASS old link: $ reads as typed ($6,000) and % as typed (50% of $8,000)
+console/page errors: none
