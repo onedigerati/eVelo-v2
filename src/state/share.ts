@@ -162,6 +162,29 @@ export function sanitizeInputs(raw: unknown): PlanInputs {
     }
     if (Object.keys(clean).length) base.amountOverrides = clean
   }
+  // Premiums (0..1) the overrides were typed at, kept only beside an override that survived above.
+  // An override with no anchor (saved before anchors existed) takes the plan's own saved premium, so
+  // an old link or saved plan loads with unchanged numbers.
+  const anchor = (v: unknown, fallback: number) => (typeof v === 'number' && Number.isFinite(v) ? clamp(v, 0, 1) : fallback)
+  const isMap = (v: unknown): v is Record<string, unknown> => !!v && typeof v === 'object' && !Array.isArray(v)
+  if (base.ratioOverrides) {
+    const ra = isMap(src.ratioOverrideAt) ? src.ratioOverrideAt : {}
+    const clean: Partial<Record<BudgetCategory, number>> = {}
+    for (const c of Object.keys(base.ratioOverrides) as BudgetCategory[])
+      clean[c] = anchor(Object.hasOwn(ra, c) ? ra[c] : undefined, base.expatFactor)
+    base.ratioOverrideAt = clean
+  }
+  if (base.amountOverrides) {
+    const aa = isMap(src.amountOverrideAt) ? src.amountOverrideAt : {}
+    const clean: Record<string, Partial<Record<BudgetCategory, number>>> = {}
+    for (const [city, cats] of Object.entries(base.amountOverrides)) {
+      const rawRow = Object.hasOwn(aa, city) && isMap(aa[city]) ? (aa[city] as Record<string, unknown>) : {}
+      const row: Partial<Record<BudgetCategory, number>> = {}
+      for (const c of Object.keys(cats ?? {}) as BudgetCategory[]) row[c] = anchor(Object.hasOwn(rawRow, c) ? rawRow[c] : undefined, base.expatFactor)
+      clean[city] = row
+    }
+    base.amountOverrideAt = clean
+  }
   // Moving to where you already live is staying home.
   if (base.destCityId === base.homeCityId) base.destCityId = null
   return base

@@ -122,6 +122,19 @@ describe('stay-home baseline', () => {
     expect(inputsKey(homeVariant({ ...plan, savingsWhileWorking: 0 }))).not.toBe(inputsKey(home))
   })
 
+  it('clears the overrides and their anchors', () => {
+    const plan: PlanInputs = {
+      ...base,
+      ratioOverrides: { dining: 0.5 },
+      ratioOverrideAt: { dining: 0.2 },
+      amountOverrides: { lisbon: { housing: 1000 } },
+      amountOverrideAt: { lisbon: { housing: 0.2 } },
+    }
+    const home = homeVariant(plan)
+    expect([home.ratioOverrides, home.ratioOverrideAt, home.amountOverrides, home.amountOverrideAt]).toEqual([undefined, undefined, undefined, undefined])
+    expect(inputsKey(home)).toBe(inputsKey(homeVariant(base)))
+  })
+
   it('the pipeline runs the baseline with both fields and keys it to the plan', async () => {
     for (const [retireInYears, savingsWhileWorking] of [
       [0, 0],

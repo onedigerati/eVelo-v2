@@ -1,5 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { DEFAULT_INPUTS } from '../../engine/defaults'
+import { destinationSpend } from '../../engine/cost'
+import { CITY_BY_ID } from '../../data/cities'
 import { parseHash } from '../router'
 import * as engineSim from '../../engine/simulate'
 import { normalizeInputs } from '../../engine/simulate'
@@ -80,7 +82,7 @@ describe('share links', () => {
         expect(sanitizeInputs(inp), `${k}=${v}`).toEqual(inp)
       }
     }
-    const edge = { ...DEFAULT_INPUTS, paths: 10000, maxLtv: 0.3, targetLtvAfterCall: 0.25, ratioOverrides: { housing: 0.05, travel: 5 } }
+    const edge = { ...DEFAULT_INPUTS, paths: 10000, maxLtv: 0.3, targetLtvAfterCall: 0.25, ratioOverrides: { housing: 0.05, travel: 5 }, ratioOverrideAt: { housing: 0, travel: 1 } }
     expect(sanitizeInputs(edge)).toEqual(edge)
     // A balance $1 under the portfolio, or past the margin-call LTV, is a valid plan.
     for (const existingLoan of [500_000, 2_999_999]) {
@@ -203,7 +205,12 @@ describe('share links', () => {
     const ao = (raw: unknown) => sanitizeInputs({ ...DEFAULT_INPUTS, amountOverrides: raw }).amountOverrides
 
     it('round-trips through a share link and the saved plan', () => {
-      const inputs = { ...DEFAULT_INPUTS, destCityId: 'lisbon', amountOverrides: { lisbon: { housing: 24_000, dining: 0 }, 'st-louis': { travel: 5000 } } }
+      const inputs = {
+        ...DEFAULT_INPUTS,
+        destCityId: 'lisbon',
+        amountOverrides: { lisbon: { housing: 24_000, dining: 0 }, 'st-louis': { travel: 5000 } },
+        amountOverrideAt: { lisbon: { housing: 0.2, dining: 0.35 }, 'st-louis': { travel: 0 } },
+      }
       expect(decodeInputs(encodeInputs(inputs))).toEqual(inputs)
       // store.ts saves inputs as JSON and reloads them through sanitizeInputs
       expect(sanitizeInputs(JSON.parse(JSON.stringify(inputs)))).toEqual(inputs)
@@ -236,6 +243,93 @@ describe('share links', () => {
       expect(({} as Record<string, unknown>).housing).toBeUndefined()
       // the same guard now covers ratio overrides
       expect(sanitizeInputs({ ...DEFAULT_INPUTS, ratioOverrides: { constructor: 2, housing: 1 } }).ratioOverrides).toEqual({ housing: 1 })
+    })
+  })
+
+  describe('override anchors', () => {
+    const enc = (d: object) => btoa(JSON.stringify({ v: 1, d })).replace(/=+$/, '').replace(/\+/g, '-').replace(/\//g, '_')
+    const old = {
+      ...DEFAULT_INPUTS,
+      expatFactor: 0.6,
+      destCityId: 'lisbon',
+      ratioOverrides: { dining: 0.5, groceries: 1.4 },
+      amountOverrides: { lisbon: { housing: 24_000 }, bangkok: { dining: 3000, travel: 9000 } },
+    }
+    const ownPremium = {
+      ratioOverrideAt: { dining: 0.6, groceries: 0.6 },
+      amountOverrideAt: { lisbon: { housing: 0.6 }, bangkok: { dining: 0.6, travel: 0.6 } },
+    }
+    const home = CITY_BY_ID[DEFAULT_INPUTS.homeCityId]!
+
+    it('an old share link without anchors loads anchored at its own saved premium, numbers unchanged', () => {
+      const out = decodeInputs(encodeInputs(old))!
+      expect(out).toEqual({ ...old, ...ownPremium })
+      for (const id of ['lisbon', 'bangkok']) expect(destinationSpend(out, home, CITY_BY_ID[id]!)).toEqual(destinationSpend(old, home, CITY_BY_ID[id]!))
+    })
+    it('an old saved plan without anchors loads anchored at its own saved premium, numbers unchanged', () => {
+      // store.ts saves inputs as JSON and reloads them through sanitizeInputs
+      const out = sanitizeInputs(JSON.parse(JSON.stringify(old)))
+      expect(out).toEqual({ ...old, ...ownPremium })
+      for (const id of ['lisbon', 'bangkok']) expect(destinationSpend(out, home, CITY_BY_ID[id]!)).toEqual(destinationSpend(old, home, CITY_BY_ID[id]!))
+    })
+    it('fills from the premium after it is clamped, and only the missing anchors', () => {
+      const out = decodeInputs(
+        enc({ expatFactor: 7, ratioOverrides: { dining: 0.5, housing: 2 }, ratioOverrideAt: { housing: 0.1 }, amountOverrides: { lisbon: { housing: 1, dining: 2 } }, amountOverrideAt: { lisbon: { dining: 0.25 } } }),
+      )!
+      expect(out.expatFactor).toBe(1)
+      expect(out.ratioOverrideAt).toEqual({ dining: 1, housing: 0.1 })
+      expect(out.amountOverrideAt).toEqual({ lisbon: { housing: 1, dining: 0.25 } })
+    })
+    it('round-trips anchors through a share link and the saved plan', () => {
+      const inputs = {
+        ...old,
+        ratioOverrideAt: { dining: 0.1, groceries: 0 },
+        amountOverrideAt: { lisbon: { housing: 1 }, bangkok: { dining: 0.35, travel: 0.5 } },
+      }
+      const s = encodeInputs(inputs)
+      expect(JSON.parse(new TextDecoder().decode(Uint8Array.from(atob(s.replace(/-/g, '+').replace(/_/g, '/')), (ch) => ch.charCodeAt(0)))).d).toMatchObject({
+        ratioOverrideAt: inputs.ratioOverrideAt,
+        amountOverrideAt: inputs.amountOverrideAt,
+      })
+      expect(decodeInputs(s)).toEqual(inputs)
+      expect(sanitizeInputs(JSON.parse(JSON.stringify(inputs)))).toEqual(inputs)
+    })
+    it('sanitizes hostile anchors', () => {
+      const out = sanitizeInputs({
+        ...DEFAULT_INPUTS,
+        expatFactor: 0.3,
+        ratioOverrides: { dining: 0.5, housing: 1.2, groceries: 0.9, transport: 1 },
+        ratioOverrideAt: { dining: -0.5, housing: 3, groceries: NaN, transport: '0.2', yachts: 0.5, travel: 0.4, constructor: 0.1 },
+        amountOverrides: { lisbon: { housing: 1, dining: 2, travel: 3 }, bangkok: { housing: 4 } },
+        amountOverrideAt: {
+          lisbon: { housing: Infinity, dining: 0.7, travel: null, yachts: 0.2, healthcare: 0.5 },
+          bangkok: '0.4',
+          atlantis: { housing: 0.5 },
+          'st-louis': { housing: 0.5 },
+          __proto__: { housing: 0.9 },
+        },
+      })
+      // out of range clamps; NaN / string / unknown category fall back to the plan's premium; anchors without an override drop
+      expect(out.ratioOverrideAt).toEqual({ dining: 0, housing: 1, groceries: 0.3, transport: 0.3 })
+      expect(out.amountOverrideAt).toEqual({ lisbon: { housing: 0.3, dining: 0.7, travel: 0.3 }, bangkok: { housing: 0.3 } })
+      expect(Object.getPrototypeOf(out.amountOverrideAt)).toBe(Object.prototype)
+      // NaN / Infinity arrive as null through JSON
+      const dec = decodeInputs(enc({ expatFactor: 0.5, ratioOverrides: { dining: 1 }, ratioOverrideAt: { dining: null }, amountOverrides: { lisbon: { housing: 1 } }, amountOverrideAt: { lisbon: { housing: 1e309 } } }))!
+      expect(dec.ratioOverrideAt).toEqual({ dining: 0.5 })
+      expect(dec.amountOverrideAt).toEqual({ lisbon: { housing: 0.5 } })
+    })
+    it('drops anchors whose override is missing or was dropped', () => {
+      const out = sanitizeInputs({
+        ...DEFAULT_INPUTS,
+        ratioOverrides: { yachts: 2 },
+        ratioOverrideAt: { dining: 0.5, yachts: 0.5 },
+        amountOverrides: { atlantis: { housing: 1 } },
+        amountOverrideAt: { atlantis: { housing: 0.5 }, lisbon: { housing: 0.5 } },
+      })
+      expect('ratioOverrideAt' in out).toBe(false)
+      expect('amountOverrideAt' in out).toBe(false)
+      expect('ratioOverrideAt' in sanitizeInputs({ ...DEFAULT_INPUTS, ratioOverrideAt: 'x', amountOverrideAt: [1] })).toBe(false)
+      expect(encodeInputs(DEFAULT_INPUTS).length).toBeLessThan(20)
     })
   })
 })

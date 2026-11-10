@@ -108,3 +108,81 @@ describe('changeLabel', () => {
     expect(changeLabel(181817, pct)).toBe('>+999%')
   })
 })
+
+describe('override anchors', () => {
+  it('typing a $ anchors it at the current premium and drops the % and its anchor', () => {
+    const o = setAmount({ ratioOverrides: { housing: 0.5, dining: 0.8 }, ratioOverrideAt: { housing: 0.1, dining: 0.2 } }, 'bangkok', 'housing', 18000, 0.4)
+    expect(o).toEqual({
+      ratioOverrides: { dining: 0.8 },
+      ratioOverrideAt: { dining: 0.2 },
+      amountOverrides: { bangkok: { housing: 18000 } },
+      amountOverrideAt: { bangkok: { housing: 0.4 } },
+    })
+  })
+  it('typing a % anchors it at the current premium and drops this city’s $ and its anchor', () => {
+    const o = setRatio(
+      { amountOverrides: { bangkok: { housing: 1 }, lisbon: { housing: 2 } }, amountOverrideAt: { bangkok: { housing: 0.1 }, lisbon: { housing: 0.2 } } },
+      'bangkok',
+      'housing',
+      0.6,
+      0.35,
+    )
+    expect(o).toEqual({
+      ratioOverrides: { housing: 0.6 },
+      ratioOverrideAt: { housing: 0.35 },
+      amountOverrides: { lisbon: { housing: 2 } },
+      amountOverrideAt: { lisbon: { housing: 0.2 } },
+    })
+    expect(setRatio({ amountOverrides: { bangkok: { housing: 1 } }, amountOverrideAt: { bangkok: { housing: 0.1 } } }, 'bangkok', 'housing', 1, 0).amountOverrideAt).toBeUndefined()
+  })
+  it('typing again re-anchors at the new premium', () => {
+    const a = setAmount(setAmount({}, 'bangkok', 'housing', 1000, 0.2), 'bangkok', 'housing', 1200, 0.7)
+    expect(a.amountOverrideAt).toEqual({ bangkok: { housing: 0.7 } })
+    const r = setRatio(setRatio({}, 'bangkok', 'dining', 0.5, 0.2), 'bangkok', 'dining', 0.6, 0.9)
+    expect(r.ratioOverrideAt).toEqual({ dining: 0.9 })
+  })
+  it('clamps the anchor to 0..1; without a finite premium the row is left unanchored', () => {
+    expect(setAmount({}, 'b', 'housing', 1, 3).amountOverrideAt).toEqual({ b: { housing: 1 } })
+    expect(setRatio({}, 'b', 'housing', 1, -0.5).ratioOverrideAt).toEqual({ housing: 0 })
+    const stale = { amountOverrides: { b: { housing: 1 } }, amountOverrideAt: { b: { housing: 0.3 } }, ratioOverrides: { dining: 1 }, ratioOverrideAt: { dining: 0.3 } }
+    expect(setAmount(stale, 'b', 'housing', 5).amountOverrideAt).toBeUndefined()
+    expect(setRatio(stale, 'b', 'dining', 2, NaN).ratioOverrideAt).toBeUndefined()
+  })
+  it('× drops the row’s anchor with its override, pruning empty maps', () => {
+    const start = {
+      ratioOverrides: { dining: 0.8, groceries: 1.1 },
+      ratioOverrideAt: { dining: 0.1, groceries: 0.2 },
+      amountOverrides: { bangkok: { housing: 1 } },
+      amountOverrideAt: { bangkok: { housing: 0.3 } },
+    }
+    expect(clearRow(start, 'bangkok', 'housing')).toEqual({
+      ratioOverrides: start.ratioOverrides,
+      ratioOverrideAt: start.ratioOverrideAt,
+      amountOverrides: undefined,
+      amountOverrideAt: undefined,
+    })
+    const o = clearRow(start, 'bangkok', 'dining')
+    expect(o.ratioOverrideAt).toEqual({ groceries: 0.2 })
+    expect(clearRow(o, 'bangkok', 'groceries').ratioOverrideAt).toBeUndefined()
+  })
+  it('Reset all drops every % anchor and this city’s $ anchors, keeping other cities’', () => {
+    const start = {
+      ratioOverrides: { dining: 0.8 },
+      ratioOverrideAt: { dining: 0.1 },
+      amountOverrides: { bangkok: { housing: 1 }, lisbon: { housing: 2 } },
+      amountOverrideAt: { bangkok: { housing: 0.3 }, lisbon: { housing: 0.4 } },
+    }
+    const copy = structuredClone(start)
+    expect(resetAll(start, 'bangkok')).toEqual({
+      ratioOverrides: undefined,
+      ratioOverrideAt: undefined,
+      amountOverrides: { lisbon: { housing: 2 } },
+      amountOverrideAt: { lisbon: { housing: 0.4 } },
+    })
+    expect(resetAll({ amountOverrides: { bangkok: { housing: 1 } }, amountOverrideAt: { bangkok: { housing: 0.3 } } }, 'bangkok').amountOverrideAt).toBeUndefined()
+    setAmount(start, 'bangkok', 'dining', 5, 0.5)
+    setRatio(start, 'bangkok', 'housing', 2, 0.5)
+    clearRow(start, 'lisbon', 'housing')
+    expect(start).toEqual(copy)
+  })
+})
