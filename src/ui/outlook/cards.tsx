@@ -296,17 +296,19 @@ export function LensBody({ result }: { result: SimulationResult }) {
 /* ---------------------------------------------------------------- Cost of living */
 
 /**
- * Per-category home vs destination spend (today's USD). `dest` is the engine's `categoryAmounts`,
- * so a fixed amount for the destination city wins. `ratio` is dest ÷ home for a fixed amount (null
- * when its home budget is $0: no percent to show), else the city's cost ratio.
+ * Per-category home vs destination spend (today's USD). `dest` is the engine's `categoryAmounts`
+ * (destinationSpend: a typed $ or % scaled from its anchor with the premium), so every row is what
+ * the simulation spends. `ratio` is dest ÷ home for a typed $ (null when its home budget is $0: no
+ * percent to show), else the city's (scaled) cost ratio.
  */
 export function costRows(r: SimulationResult, budget: Budget): { c: BudgetCategory; label: string; home: number; dest: number; ratio: number | null }[] {
   const ratios = r.categoryRatios
-  if (!ratios) return []
+  const amounts = r.categoryAmounts
+  if (!ratios || !amounts) return []
   const fixed = r.inputs.destCityId ? r.inputs.amountOverrides?.[r.inputs.destCityId] : undefined
   return BUDGET_CATEGORIES.map((c) => {
     const home = budget[c] || 0
-    const dest = r.categoryAmounts?.[c] ?? home * ratios[c]
+    const dest = amounts[c]
     const ratio = isFixedAmount(fixed?.[c]) ? (home > 0 ? dest / home : null) : ratios[c]
     return { c, label: CATEGORY_LABEL[c], home, dest, ratio }
   })

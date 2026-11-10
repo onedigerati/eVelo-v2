@@ -1,6 +1,6 @@
 // Existing line-of-credit balance: how far into the loan the plan starts.
 
-import { amountsTotal, budgetTotal, categoryRatios, destinationAmounts } from '../../engine/cost'
+import { amountsTotal, budgetTotal, destinationSpend } from '../../engine/cost'
 import { openingSale } from '../../engine/openingSale'
 import type { City, PlanInputs } from '../../engine/types'
 import { effectiveMoveInYears, retireInYearsOf } from '../retire'
@@ -83,7 +83,9 @@ export type FirstYearInputs = Pick<
   | 'retireInYears'
   | 'expatFactor'
   | 'ratioOverrides'
+  | 'ratioOverrideAt'
   | 'amountOverrides'
+  | 'amountOverrideAt'
   | 'otherIncome'
   | 'incomeStartAge'
   | 'age'
@@ -92,8 +94,8 @@ export type FirstYearInputs = Pick<
 /**
  * What the plan draws in its first year (today's USD). While still working (retireInYears > 0)
  * nothing is drawn — savings go in instead — so it is 0. Otherwise: the destination's budget when the
- * (effective) move happens within the year (priced as the engine and the Place section price it: per-category city
- * ratios with the expat factor and overrides, and that city's fixed amounts), else the home budget, less other income when it has
+ * (effective) move happens within the year (priced by `destinationSpend`, as the engine and the Place section price it:
+ * per-category city ratios with the expat factor, typed overrides scaled from their anchors), else the home budget, less other income when it has
  * already started. Never negative. `home`/`dest` are the plan's cities (null or missing when unknown);
  * a destination equal to home means staying home, as in the engine.
  */
@@ -103,7 +105,7 @@ export function firstYearSpend(inputs: FirstYearInputs, home: City | null | unde
   const moved =
     inputs.destCityId != null && home != null && dest != null && dest.id !== home.id && effectiveMoveInYears(inputs) < 1
   const spend = moved
-    ? amountsTotal(destinationAmounts(inputs.budget, categoryRatios(home, dest, inputs.expatFactor, inputs.ratioOverrides), inputs.amountOverrides?.[dest.id]))
+    ? amountsTotal(destinationSpend(inputs, home, dest).amounts)
     : budgetTotal(inputs.budget)
   const income = inputs.incomeStartAge <= inputs.age && Number.isFinite(inputs.otherIncome) ? Math.max(0, inputs.otherIncome) : 0
   return Math.max(0, spend - income)

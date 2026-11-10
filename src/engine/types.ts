@@ -153,13 +153,24 @@ export interface PlanInputs {
   savingsWhileWorking: number
   /** Expat price premium, for the same lifestyle: 0 = local prices, 1 = home prices (no savings on local-price categories). */
   expatFactor: number
-  /** Optional per-category ratio overrides (dest cost / home cost). */
+  /** Optional per-category ratio overrides (dest cost / home cost), for every destination city, as
+   *  typed at the premium in `ratioOverrideAt`. */
   ratioOverrides?: Partial<Record<BudgetCategory, number>>
   /** Optional fixed destination spending, keyed by city id then category: annual USD in today's
-   *  money. Applies only to that destination city. A finite amount >= 0 replaces home budget × ratio
-   *  for that category (it wins over any ratio override and the expat factor); it is still inflated
+   *  money, as typed at the premium in `amountOverrideAt`. Applies only to that destination city. A
+   *  finite amount >= 0 replaces home budget × ratio for that category (it wins over any ratio
+   *  override; it scales with the expat premium from its anchor, see `amountOverrideAt`); it is still inflated
    *  with CPI/FX and scaled by the max-spend solver like any destination spending. */
   amountOverrides?: Partial<Record<string, Partial<Record<BudgetCategory, number>>>>
+  /** The expat price premium (0..1) each `ratioOverrides[c]` was typed at. The typed % scales with
+   *  eVelo's own model ratio for that category and city: typed × model(e) / model(anchor), capped at
+   *  max(1, typed). A missing anchor means "no scaling" (the share/persist sanitizer fills missing
+   *  anchors with the plan's own `expatFactor`). See `destinationSpend` in engine/cost.ts. */
+  ratioOverrideAt?: Partial<Record<BudgetCategory, number>>
+  /** The expat price premium (0..1) each `amountOverrides[cityId][c]` was typed at, keyed like
+   *  `amountOverrides`. The typed $ scales as typed × model(e) / model(anchor), capped at
+   *  max(home budget for c, typed). A missing anchor means "no scaling". */
+  amountOverrideAt?: Partial<Record<string, Partial<Record<BudgetCategory, number>>>>
 
   /** Other income (Social Security, pension), today's USD/yr, starting at `incomeStartAge`. Inflation-indexed. */
   otherIncome: number

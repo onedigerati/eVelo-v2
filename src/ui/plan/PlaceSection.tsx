@@ -1,7 +1,7 @@
 import { AnimatePresence, m as motion } from 'framer-motion'
 import { useEffect, useId, useRef, useState, type CSSProperties, type KeyboardEvent } from 'react'
 import { CITY_BY_ID } from '../../data/cities'
-import { amountsTotal, BUDGET_CATEGORIES, budgetTotal, categoryRatios, destinationAmounts } from '../../engine/cost'
+import { BUDGET_CATEGORIES } from '../../engine/cost'
 import type { BudgetCategory } from '../../engine/types'
 import { useStore } from '../../state/store'
 import { currencyCompact, percent } from '../format'
@@ -9,6 +9,7 @@ import { ease } from '../motion'
 import { AnimatedNumber, cx, InfoTip, Section, Select, Slider, type SelectOption } from '../primitives'
 import { catColor, CATEGORY_LABEL } from './BudgetEditor'
 import { CITY_OPTIONS, cityLabel } from './placeholderCities'
+import { planCardSpend } from './planCardSpend'
 import { AMOUNT_HINT, CHANGE_HINT, changeLabel, clearRow, hasAnyOverride, parseAmount, parseChange, resetAll, rowOverride, setAmount, setRatio, type SpendOverrides } from './spendOverrides'
 
 const STAY = '__stay'
@@ -80,23 +81,28 @@ function ExpatPanel({ destId }: { destId: string }) {
   const expat = useStore((s) => s.inputs.expatFactor)
   const ratioOverrides = useStore((s) => s.inputs.ratioOverrides)
   const amountOverrides = useStore((s) => s.inputs.amountOverrides)
+  const ratioOverrideAt = useStore((s) => s.inputs.ratioOverrideAt)
+  const amountOverrideAt = useStore((s) => s.inputs.amountOverrideAt)
   const budget = useStore((s) => s.inputs.budget)
   const setInput = useStore((s) => s.setInput)
   const patch = useStore((s) => s.patchInputs)
   const homeCity = CITY_BY_ID[homeId]
   const destCity = CITY_BY_ID[destId]
   if (!homeCity || !destCity) return null
-  const ratios = categoryRatios(homeCity, destCity, expat, ratioOverrides)
-  // Same per-category amounts the engine spends at the destination (fixed $ where set, else home × ratio).
-  const amounts = destinationAmounts(budget, ratios, amountOverrides?.[destId])
-  const homeTotal = budgetTotal(budget)
-  const destTotal = amountsTotal(amounts)
-  const delta = homeTotal > 0 ? destTotal / homeTotal - 1 : 0
-  const current: SpendOverrides = { ratioOverrides, amountOverrides }
+  // Same per-category amounts the engine spends at the destination (destinationSpend: typed values
+  // scaled from their anchors with the premium, else home × ratio).
+  const { amounts, homeTotal, destTotal, delta } = planCardSpend(
+    { budget, expatFactor: expat, ratioOverrides, ratioOverrideAt, amountOverrides, amountOverrideAt },
+    homeCity,
+    destCity,
+  )
+  const current: SpendOverrides = { ratioOverrides, amountOverrides, ratioOverrideAt, amountOverrideAt }
   const apply = (next: SpendOverrides) =>
     patch({
       ratioOverrides: next.ratioOverrides,
       amountOverrides: next.amountOverrides,
+      ratioOverrideAt: next.ratioOverrideAt,
+      amountOverrideAt: next.amountOverrideAt,
     })
 
   return (
@@ -155,8 +161,8 @@ function ExpatPanel({ destId }: { destId: string }) {
               amount={amounts[c]}
               homeAmt={budget[c] || 0}
               override={rowOverride(current, destId, c)}
-              onAmount={(v) => apply(setAmount(current, destId, c, v))}
-              onRatio={(r) => apply(setRatio(current, destId, c, r))}
+              onAmount={(v) => apply(setAmount(current, destId, c, v, expat))}
+              onRatio={(r) => apply(setRatio(current, destId, c, r, expat))}
               onClear={() => apply(clearRow(current, destId, c))}
             />
           ))}

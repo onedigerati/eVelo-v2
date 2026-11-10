@@ -2,8 +2,8 @@ import { isFixedAmount } from '../../engine/cost'
 import type { BudgetCategory, PlanInputs } from '../../engine/types'
 import { parseLoose } from '../format'
 
-/** The two override maps a "Spending in <city>" row can write. */
-export type SpendOverrides = Pick<PlanInputs, 'ratioOverrides' | 'amountOverrides'>
+/** The override maps a "Spending in <city>" row can write: the typed values and the premiums they were typed at. */
+export type SpendOverrides = Pick<PlanInputs, 'ratioOverrides' | 'amountOverrides' | 'ratioOverrideAt' | 'amountOverrideAt'>
 
 export const RATIO_MIN = 0.05
 export const RATIO_MAX = 5
@@ -46,14 +46,17 @@ export function changeLabel(change: number, pct: (v: number) => string): string 
   return pct(change)
 }
 
-function withoutRatio(r: SpendOverrides['ratioOverrides'], c: BudgetCategory): SpendOverrides['ratioOverrides'] {
+type CatMap = Partial<Record<BudgetCategory, number>>
+type CityMap = Partial<Record<string, CatMap>>
+
+function withoutRatio<T extends CatMap | undefined>(r: T, c: BudgetCategory): T | undefined {
   if (!r || r[c] === undefined) return r
   const next = { ...r }
   delete next[c]
   return Object.keys(next).length ? next : undefined
 }
 
-function withoutAmount(a: SpendOverrides['amountOverrides'], destId: string, c: BudgetCategory): SpendOverrides['amountOverrides'] {
+function withoutAmount<T extends CityMap | undefined>(a: T, destId: string, c: BudgetCategory): T | undefined {
   const row = a?.[destId]
   if (!a || !row || row[c] === undefined) return a
   const nextRow = { ...row }
@@ -64,46 +67,75 @@ function withoutAmount(a: SpendOverrides['amountOverrides'], destId: string, c: 
   return Object.keys(next).length ? next : undefined
 }
 
-/** A typed $ for this city: sets `amountOverrides[destId][c]` and drops the global % for `c`. */
-export function setAmount(o: SpendOverrides, destId: string, c: BudgetCategory, amount: number): SpendOverrides {
+function withoutCity<T extends CityMap | undefined>(a: T, destId: string): T | undefined {
+  if (!a || a[destId] === undefined) return a
+  const next = { ...a }
+  delete next[destId]
+  return Object.keys(next).length ? next : undefined
+}
+
+/** The premium a typed value is anchored at: a finite number clamped to 0..1, or null (no anchor). */
+const anchorOf = (premium: number | undefined) =>
+  typeof premium === 'number' && Number.isFinite(premium) ? Math.max(0, Math.min(1, premium)) : null
+
+/**
+ * A typed $ for this city: sets `amountOverrides[destId][c]`, anchors it at `premium` (the current
+ * `expatFactor`) in `amountOverrideAt[destId][c]`, and drops the global % for `c` with its anchor.
+ * Without a premium the row is left unanchored (the engine then doesn't scale it).
+ */
+export function setAmount(o: SpendOverrides, destId: string, c: BudgetCategory, amount: number, premium?: number): SpendOverrides {
   const v = Math.max(0, Math.min(AMOUNT_MAX, amount))
+  const at = anchorOf(premium)
   return {
     ratioOverrides: withoutRatio(o.ratioOverrides, c),
+    ratioOverrideAt: withoutRatio(o.ratioOverrideAt, c),
     amountOverrides: {
       ...(o.amountOverrides ?? {}),
       [destId]: { ...(o.amountOverrides?.[destId] ?? {}), [c]: v },
     },
+    amountOverrideAt:
+      at === null
+        ? withoutAmount(o.amountOverrideAt, destId, c)
+        : { ...(o.amountOverrideAt ?? {}), [destId]: { ...(o.amountOverrideAt?.[destId] ?? {}), [c]: at } },
   }
 }
 
-/** A typed %: sets `ratioOverrides[c]` and drops this city's fixed $ for `c`. */
-export function setRatio(o: SpendOverrides, destId: string, c: BudgetCategory, ratio: number): SpendOverrides {
+/**
+ * A typed %: sets `ratioOverrides[c]`, anchors it at `premium` (the current `expatFactor`) in
+ * `ratioOverrideAt[c]`, and drops this city's fixed $ for `c` with its anchor.
+ * Without a premium the row is left unanchored (the engine then doesn't scale it).
+ */
+export function setRatio(o: SpendOverrides, destId: string, c: BudgetCategory, ratio: number, premium?: number): SpendOverrides {
+  const at = anchorOf(premium)
   return {
     ratioOverrides: {
       ...(o.ratioOverrides ?? {}),
       [c]: Math.max(RATIO_MIN, Math.min(RATIO_MAX, ratio)),
     },
+    ratioOverrideAt: at === null ? withoutRatio(o.ratioOverrideAt, c) : { ...(o.ratioOverrideAt ?? {}), [c]: at },
     amountOverrides: withoutAmount(o.amountOverrides, destId, c),
+    amountOverrideAt: withoutAmount(o.amountOverrideAt, destId, c),
   }
 }
 
-/** The row's ×: clears whichever override the row has. */
+/** The row's ×: clears whichever override the row has, with its anchor. */
 export function clearRow(o: SpendOverrides, destId: string, c: BudgetCategory): SpendOverrides {
   return {
     ratioOverrides: withoutRatio(o.ratioOverrides, c),
+    ratioOverrideAt: withoutRatio(o.ratioOverrideAt, c),
     amountOverrides: withoutAmount(o.amountOverrides, destId, c),
+    amountOverrideAt: withoutAmount(o.amountOverrideAt, destId, c),
   }
 }
 
-/** "Reset all": every % override, and this city's fixed amounts (other cities' research stays). */
+/** "Reset all": every % override, and this city's fixed amounts (other cities' research stays), with their anchors. */
 export function resetAll(o: SpendOverrides, destId: string): SpendOverrides {
-  let a = o.amountOverrides
-  if (a && a[destId] !== undefined) {
-    a = { ...a }
-    delete a[destId]
-    if (!Object.keys(a).length) a = undefined
+  return {
+    ratioOverrides: undefined,
+    ratioOverrideAt: undefined,
+    amountOverrides: withoutCity(o.amountOverrides, destId),
+    amountOverrideAt: withoutCity(o.amountOverrideAt, destId),
   }
-  return { ratioOverrides: undefined, amountOverrides: a }
 }
 
 /** True when the card has anything for "Reset all" to clear. */

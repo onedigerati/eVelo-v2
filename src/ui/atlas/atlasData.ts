@@ -3,7 +3,7 @@
 
 import { useEffect } from 'react'
 import { CITIES, CITY_BY_ID } from '../../data/cities'
-import { BUDGET_CATEGORIES, budgetTotal, categoryRatios, destinationAmounts } from '../../engine/cost'
+import { BUDGET_CATEGORIES, budgetTotal, destinationSpend } from '../../engine/cost'
 import type { AtlasEntry, BudgetCategory, City, PlanInputs } from '../../engine/types'
 import { atlasClient, hasHoldings, isCancelled, runAtlas } from '../../state/sim'
 import { useStore } from '../../state/store'
@@ -48,7 +48,7 @@ export const CATEGORY_LABEL: Record<BudgetCategory, string> = {
 }
 
 /** Per-category first-year spend (today's USD) if the user lived in `city`; only that city's own
- *  fixed amounts (`amountOverrides[city.id]`) apply. */
+ *  fixed amounts (`amountOverrides[city.id]`) apply. Priced by `destinationSpend`, as the engine does. */
 export function cityCosts(inputs: PlanInputs, city: City): Record<BudgetCategory, number> {
   const home = CITY_BY_ID[inputs.homeCityId]
   const out = {} as Record<BudgetCategory, number>
@@ -56,7 +56,7 @@ export function cityCosts(inputs: PlanInputs, city: City): Record<BudgetCategory
     for (const c of BUDGET_CATEGORIES) out[c] = inputs.budget[c] || 0
     return out
   }
-  return destinationAmounts(inputs.budget, categoryRatios(home, city, inputs.expatFactor, inputs.ratioOverrides), inputs.amountOverrides?.[city.id])
+  return destinationSpend(inputs, home, city).amounts
 }
 
 /** "−38%", "+12%", "same". */

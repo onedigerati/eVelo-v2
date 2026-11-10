@@ -1,4 +1,4 @@
-import { amountsTotal, budgetTotal, categoryRatios, destinationAmounts } from './cost'
+import { amountsTotal, budgetTotal, destinationSpend } from './cost'
 import { createRecorder, kernelOpeningSale, runPaths, type KernelConfig } from './kernel'
 import { HEIRS, packBands } from './localTax'
 import { prepare, type Prepared } from './prepare'
@@ -22,12 +22,12 @@ export function findCity(cities: City[], id: string | null): City | null {
   return cities.find((c) => c.id === id) ?? null
 }
 
-/** Resolve the destination's ratios and annual spend for a given dest city. Fixed amounts come
- *  only from `inputs.amountOverrides[dest.id]`, so each city sees only its own. */
+/** Resolve the destination's ratios and annual spend for a given dest city via `destinationSpend`:
+ *  typed overrides scale with the expat premium from their anchors. Fixed amounts come only from
+ *  `inputs.amountOverrides[dest.id]`, so each city sees only its own. */
 export function resolveDestination(inputs: PlanInputs, home: City | null, dest: City | null): Destination {
   if (!dest || !home || dest.id === home.id) return { city: null, ratios: null, amounts: null, annual: null }
-  const ratios = categoryRatios(home, dest, inputs.expatFactor, inputs.ratioOverrides)
-  const amounts = destinationAmounts(inputs.budget, ratios, inputs.amountOverrides?.[dest.id])
+  const { ratios, amounts } = destinationSpend(inputs, home, dest)
   return { city: dest, ratios, amounts, annual: amountsTotal(amounts) }
 }
 
