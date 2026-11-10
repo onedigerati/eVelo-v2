@@ -96,11 +96,13 @@ function ExpatPanel({ destId }: { destId: string }) {
     homeCity,
     destCity,
   )
-  const current: SpendOverrides = { ratioOverrides, amountOverrides }
+  const current: SpendOverrides = { ratioOverrides, amountOverrides, ratioOverrideAt, amountOverrideAt }
   const apply = (next: SpendOverrides) =>
     patch({
       ratioOverrides: next.ratioOverrides,
       amountOverrides: next.amountOverrides,
+      ratioOverrideAt: next.ratioOverrideAt,
+      amountOverrideAt: next.amountOverrideAt,
     })
 
   return (
@@ -159,8 +161,8 @@ function ExpatPanel({ destId }: { destId: string }) {
               amount={amounts[c]}
               homeAmt={budget[c] || 0}
               override={rowOverride(current, destId, c)}
-              onAmount={(v) => apply(setAmount(current, destId, c, v))}
-              onRatio={(r) => apply(setRatio(current, destId, c, r))}
+              onAmount={(v) => apply(setAmount(current, destId, c, v, expat))}
+              onRatio={(r) => apply(setRatio(current, destId, c, r, expat))}
               onClear={() => apply(clearRow(current, destId, c))}
             />
           ))}
