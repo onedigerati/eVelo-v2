@@ -1,33 +1,31 @@
-# Hero tile glow plan
+# Pill destination plan
 
 ## Goal
-On the Atlas, the three hero tiles (Best odds, Your home, Your destination) color a soft glow by the city's odds, like the top-pick cards, but the glow sits in the top-right corner while the odds figure sits bottom-left, so the glow reads as decoration behind "Profile →". Option B: the glow moves to sit behind the odds figure, so the color belongs to the number again. Nothing else on the tiles changes (layout, "Profile →", footer, hover, click behaviour). Done = the stage passes verification in the running build; deploy waits for the user's go.
+The verdict pill ("Holds in 68% of futures") tells you the odds but not which city they're for, and on a phone the Outlook has no pill at all once the big headline scrolls away. Two changes: (1) every verdict pill names the city the odds are for: the destination, else the home city ("Holds in 68% of futures · Bangkok"); a long name gets cut off with "…" and the percentage never does; the spoken label adds "in <city>". This covers the phone Plan pill and the desktop/tablet docked pill. (2) On a phone, the Outlook gets the same floating pill once the verdict's number scrolls behind the top bar, with the same look and tap-back-to-verdict as desktop. Done = both stages pass verification in the running build; deploy waits for the user's go.
 
 ## Baseline
-2026-11-10 · tests: 818 pass (57 files) · typecheck: clean
+2026-11-10 · tests: 818 pass · typecheck: clean
 
 ## Now
-All stages done
-Agents: wide — confirmed 2026-11-10 12:27
+Stage 1 of 2 · City on the pills
+Mode: autopilot
+Agents: wide
 Risk: UI only
 Checks:
-- [x] On each hero tile with a city, the tone glow is centred on the odds figure (its centre within the figure's box, horizontally and vertically) and no glow remains in the top-right corner; the glow's color still follows the odds (green 87%, rust 43%, between for 75%) (proof: running app, computed geometry + screenshot)
-- [x] The glow sits behind the figure and never covers text or catches clicks: the figure, city name, "Profile →" and "Make destination" stay readable and clickable, and the glow is clipped by the tile's rounded edge (proof: running app, elementFromPoint + screenshot)
-- [x] It holds in light and dark, at 1280px and at phone width (390px, where the tiles reflow), in the empty, loading and re-ranking (dimmed) states (proof: screenshots)
-- [x] Tests and typecheck stay green; the top-pick cards are unchanged (proof: test run + screenshot)
+- [ ] A pure helper picks the pill's city (the destination, else home) and builds the spoken label "Holds in N% of futures in <city>…"; staying home names the home city (proof: test)
+- [ ] The phone Plan pill and the desktop/tablet docked pill show "· <city>" after "of futures", update when the destination changes, and screen readers hear "in <city>" (proof: running app, DOM + screenshot)
+- [ ] A long city name gets cut off with "…" and the % stays whole, at 390px and 320px, and in the tablet drawer pill (proof: running app, computed geometry + screenshot, a test can't judge layout)
+- [ ] Light and dark, empty-holdings pill unchanged, delta flash and running ring still work; tests and typecheck green (proof: screenshots + test run)
 Open: none
 
 ## Stages
-- [x] 1. Glow behind the figure — move the hero tiles' tone glow from the top-right corner to behind the odds figure, CSS only, checked in the running app
+- [ ] 1. City on the pills — name the destination (else home) on the phone Plan pill and the desktop/tablet docked pill, with ellipsis and spoken label
+- [ ] 2. Phone Outlook pill — turn on the docked pill on phone Outlook under the top bar once the number scrolls away, tap back to the verdict, without blocking the tab bar or chart touches
 
 ## Decisions
-- 2026-11-10 · Option B from the mockup (https://claude.ai/artifact/HaQZtnzaomJAoLAdEr25gJ): the glow follows the number; layout otherwise unchanged — user: "Let's go with option B and let's do this on autopilot and wide."
-- 2026-11-10 · Agents: wide; run on autopilot — user: "on autopilot and wide."
-
-- 2026-11-10 · No keel:review run: a CSS-only, UI-only stage (one rule moved, 21+/11−); risk line matches the diff — PM's call.
-- 2026-11-10 · The glow keeps today's size and strength (180px, 22% tone) and is clipped by the tile's left edge where the figure sits close to it; it reads as a soft fade in the screenshots — PM's call.
-- 2026-11-10 · Stage 1 closed: 4/4 checks pass in the running build, light and dark, 1280 and 390px, empty/loading/re-ranking states, pick cards byte-identical ([evidence](evidence/stage-1/report.md)) — PM.
-- 2026-11-10 · Deployed: pushed main (df862d2), Pages run 42880921727 build and deploy succeeded; the live AtlasView CSS carries `.atile__fig:before` and no `.atile:after` — user: "Push and deploy please."
+- 2026-11-10 · Pill city = destination, else home city; with no city (can't happen today: home is always set) the pill stays as it is; long names get "…", the % is never cut; the spoken label includes the city — user: "Yes this matches. Please plan it and run on autopilot."
+- 2026-11-10 · Phone Outlook reuses DockedVerdict (same look, delta, tap-back-to-verdict) rather than a second component — PM's call: one pill for three breakpoints.
+- 2026-11-10 · Run on autopilot — user: "run on autopilot." The Agents line carries over as wide; it counts as balanced until confirmed in this session.
 
 ## Open questions
 - A hand-edited share link can carry an anchor off the slider's 0.05 steps (e.g. 0.37); it's clamped but not snapped, so "returns exactly when you slide back" can't be reached for that row. Snap anchors to the slider step in `share.ts` — from the stage 2 review, later.
@@ -87,3 +85,4 @@ Open: none
 - 2026-11-10 · Clickable atlas tiles: Best odds, Your home and Your destination tiles open the city profile from anywhere on the tile, with pick-card hover, live on GitHub Pages — [plan](plans/2026-11-10-clickable-tiles.md) · [evidence](plans/2026-11-10-clickable-tiles/evidence/)
 - 2026-11-10 · Country on city cards: muted country name beside the city on atlas tiles and top-pick cards, and swipe-down to close phone sheets, live on GitHub Pages — [plan](plans/2026-11-10-country-label.md) · [evidence](plans/2026-11-10-country-label/evidence/)
 - 2026-11-10 · Premium scales overrides: typed `$`/`%` spending pinned to the premium when typed and scaled with the slider, with a "scales with premium" note, tip and Method copy, live on GitHub Pages — [plan](plans/2026-11-10-premium-scales.md) · [evidence](plans/2026-11-10-premium-scales/evidence/)
+- 2026-11-10 · Hero tile glow: the Atlas hero tiles' odds-tone glow sits behind the odds figure instead of the top-right corner, live on GitHub Pages — [plan](plans/2026-11-10-hero-tile-glow.md) · [evidence](plans/2026-11-10-hero-tile-glow/evidence/)
