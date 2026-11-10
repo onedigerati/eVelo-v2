@@ -24,6 +24,7 @@ Open: none
 
 ## Fixes
 - 2026-11-10 · Atlas hero tiles reordered: your destination first (full-width on phone, left on desktop), then home, then best odds; with no destination, that tile suggests the best-odds city with "Move to <city> →"; half-width phone tiles wrap a two-word city name instead of trimming it — typecheck + 823 tests green; screenshots at 1280/390/320, light and dark, with and without a destination, and the suggestion tapped
+- 2026-11-10 · With no destination, the top Atlas card names the city as "your best odds" and the best-odds card drops its duplicate "Make destination" (it returns once a destination is set) — typecheck + 823 tests green; screenshots at 1280/390/320, light and dark, with and without a destination
 
 ## Decisions
 - 2026-11-10 · Pill city = destination, else home city; with no city (can't happen today: home is always set) the pill stays as it is; long names get "…", the % is never cut; the spoken label includes the city — user: "Yes this matches. Please plan it and run on autopilot."

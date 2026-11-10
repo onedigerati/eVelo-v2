@@ -160,7 +160,7 @@ export function AtlasView() {
           <Tile
             eyebrow="Your destination"
             row={dest}
-            empty={!destId ? (suggest ? `Staying home. ${suggest.city.name} holds in ${Math.round(suggest.successRate * 100)}% of futures.` : 'Staying home. Tap any city to price a move.') : undefined}
+            empty={!destId ? (suggest ? `Staying home. ${suggest.city.name} has your best odds, ${Math.round(suggest.successRate * 100)}% of futures.` : 'Staying home. Tap any city to price a move.') : undefined}
             action={!destId && suggest ? { label: `Move to ${suggest.city.name}`, onClick: () => choose(suggest.cityId) } : undefined}
             note={
               dest && home
@@ -180,7 +180,8 @@ export function AtlasView() {
             row={best}
             note={best && home && best.cityId !== homeId ? `${percent(1 - best.costRatio)} cheaper than home` : undefined}
             action={
-              best && best.cityId !== destId && best.cityId !== homeId
+              // Hidden while the destination tile is already suggesting this city.
+              best && destId && best.cityId !== destId && best.cityId !== homeId
                 ? { label: 'Make destination', onClick: () => choose(best.cityId) }
                 : undefined
             }
