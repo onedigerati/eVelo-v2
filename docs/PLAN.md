@@ -27,6 +27,7 @@ Agents: wide — confirmed 2026-11-10 10:25
 - 2026-11-10 · Stage 1 closed: 5/5 checks pass in tests and the running build ([evidence](evidence/stage-1/report.md)); review found 0 fix-now, 2 deferred into Stage 2, security pass on anchor decoding clean — PM.
 - 2026-11-10 · Stage 2 closed: 4/4 checks pass in the running build at 390px and 1280px ([evidence](evidence/stage-2/report.md)); review found 0 fix-now; two Method sentences it deferred were fixed in the stage (home-budget rule, what "typed" means for a %), one moved to Open questions — PM.
 - 2026-11-10 · The plan card and city profiles share one "does this row scale" rule (`destinationSpend().scales`) and one "scales with premium" string (`src/ui/format.ts`); the plan card also skips a % row on a $0 home amount, which the profile never shows — PM's call.
+- 2026-11-10 · Deployed: pushed main (ade0a0f), Pages run 42862747316 build and deploy succeeded; live bundles carry the new Method sentence and the "scales with premium" note — user: "yes, push and deploy".
 - 2026-11-10 · No per-row lock control ("final number, don't touch") for now — PM's call (default), revisit if asked.
 
 ## Open questions
