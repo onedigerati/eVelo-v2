@@ -2,10 +2,12 @@ import { useLayoutEffect, useRef, type ReactNode } from 'react'
 import { hasHoldings } from '../../state/sim'
 import { selectSuccess, useStore } from '../../state/store'
 import { IconArrowRight } from '../icons'
+import { cityName } from '../outlook/cards'
 import { AnimatedNumber, cx } from '../primitives'
 import { outcomeTextColor } from '../outcomeScale'
 import { toneFor } from '../verdict'
 import { useKeyboardDock } from './keyboardDock'
+import { pillCity, pillLabel } from './pillCity'
 import { PillRing } from './PillRing'
 
 /**
@@ -40,6 +42,7 @@ export function VerdictPill() {
   const success = useStore(selectSuccess)
   const status = useStore((s) => s.status)
   const empty = useStore((s) => !hasHoldings(s.inputs))
+  const city = useStore((s) => pillCity(s.inputs, cityName))
   const tone = toneFor(success)
   if (empty)
     return (
@@ -55,12 +58,13 @@ export function VerdictPill() {
         href="#outlook"
         className={cx('verdict-pill', `verdict-pill--${tone}`, status === 'running' && 'is-running')}
         style={{ ['--tone' as string]: outcomeTextColor(success) }}
-        aria-label={`Holds in ${Math.round(success * 100)}% of futures. See the outlook.`}
+        aria-label={pillLabel(success, city, 'outlook')}
       >
         <PillRing success={success} />
         <span className="verdict-pill__text">
           Holds in <AnimatedNumber className="verdict-pill__num" value={success} format="percent" /> of futures
         </span>
+        {city && <span className="verdict-pill__city">· {city}</span>}
         <IconArrowRight size={16} className="verdict-pill__go" />
       </a>
     </PillSlot>

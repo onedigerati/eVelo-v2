@@ -187,6 +187,26 @@
   font-size: var(--fs-sm);
   font-weight: 500;
   color: var(--ink);
+  /* Never wider than its row: a long city name ellipsizes instead (see __city). */
+  max-width: 100%;
+  min-width: 0;
+}
+.verdict-pill > * {
+  flex-shrink: 0;
+}
+.verdict-pill__text {
+  white-space: nowrap;
+}
+/* The city the odds are for. The only part that gives way: it shrinks to "…" before the
+   percent, ring, delta or arrow are touched. Sits closer to the words than the pill's gap. */
+.verdict-pill > .verdict-pill__city {
+  flex-shrink: 1;
+  min-width: 0;
+  margin-left: -5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--ink-3);
 }
 .verdict-pill--bruised {
   --tone: var(--bruised-text);

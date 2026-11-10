@@ -7,25 +7,28 @@ The verdict pill ("Holds in 68% of futures") tells you the odds but not which ci
 2026-11-10 · tests: 818 pass · typecheck: clean
 
 ## Now
-Stage 1 of 2 · City on the pills
+Stage 2 of 2 · Phone Outlook pill
 Mode: autopilot
 Agents: wide
 Risk: UI only
 Checks:
-- [ ] A pure helper picks the pill's city (the destination, else home) and builds the spoken label "Holds in N% of futures in <city>…"; staying home names the home city (proof: test)
-- [ ] The phone Plan pill and the desktop/tablet docked pill show "· <city>" after "of futures", update when the destination changes, and screen readers hear "in <city>" (proof: running app, DOM + screenshot)
-- [ ] A long city name gets cut off with "…" and the % stays whole, at 390px and 320px, and in the tablet drawer pill (proof: running app, computed geometry + screenshot, a test can't judge layout)
-- [ ] Light and dark, empty-holdings pill unchanged, delta flash and running ring still work; tests and typecheck green (proof: screenshots + test run)
+- [ ] On a phone (390px), Outlook shows no pill while the verdict's number is in view; once it scrolls behind the top bar the pill appears just under the top bar, showing "Holds in N% of futures · <city>", and hides again when you scroll back up (proof: running app, scroll + DOM + screenshot)
+- [ ] Tapping the phone pill scrolls back to the verdict and puts focus on its headline; the pill never covers the bottom tab bar, doesn't block taps on the content below it beyond its own box, and live changes (running ring, delta) still show (proof: running app, scripted taps + elementFromPoint)
+- [ ] It holds at 320px and 390px, light and dark, with a long city name, and the phone Plan tab and desktop/tablet pills are unchanged (proof: screenshots, a test can't judge layout)
+- [ ] Tests and typecheck stay green (proof: test run)
 Open: none
 
 ## Stages
-- [ ] 1. City on the pills — name the destination (else home) on the phone Plan pill and the desktop/tablet docked pill, with ellipsis and spoken label
+- [x] 1. City on the pills — name the destination (else home) on the phone Plan pill and the desktop/tablet docked pill, with ellipsis and spoken label
 - [ ] 2. Phone Outlook pill — turn on the docked pill on phone Outlook under the top bar once the number scrolls away, tap back to the verdict, without blocking the tab bar or chart touches
 
 ## Decisions
 - 2026-11-10 · Pill city = destination, else home city; with no city (can't happen today: home is always set) the pill stays as it is; long names get "…", the % is never cut; the spoken label includes the city — user: "Yes this matches. Please plan it and run on autopilot."
 - 2026-11-10 · Phone Outlook reuses DockedVerdict (same look, delta, tap-back-to-verdict) rather than a second component — PM's call: one pill for three breakpoints.
 - 2026-11-10 · Run on autopilot — user: "run on autopilot." The Agents line carries over as wide; it counts as balanced until confirmed in this session.
+- 2026-11-10 · Stage 1: the city gives way first, so at 320px even short names cut ("· Bang…"); accepted, the % is never cut — PM's call.
+- 2026-11-10 · No keel:review for stage 1: UI-only, a label helper with tests and CSS; risk line matches the diff — PM's call.
+- 2026-11-10 · Stage 1 closed: 4/4 checks pass in the running app, verified by a fresh agent ([evidence](evidence/stage-1/report.md)) — PM.
 
 ## Open questions
 - A hand-edited share link can carry an anchor off the slider's 0.05 steps (e.g. 0.37); it's clamped but not snapped, so "returns exactly when you slide back" can't be reached for that row. Snap anchors to the slider step in `share.ts` — from the stage 2 review, later.

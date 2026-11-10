@@ -9,8 +9,10 @@ import { ease } from '../motion'
 import { outcomeTextColor } from '../outcomeScale'
 import { AnimatedNumber, cx } from '../primitives'
 import { PillRing } from '../shell/PillRing'
+import { pillCity, pillLabel } from '../shell/pillCity'
 import { deltaLabel, usePillDelta } from '../shell/pillDelta'
 import { toneFor } from '../verdict'
+import { cityName } from './cards'
 
 /** Ids VerdictHero puts on its headline (focus target) and its number (what the observer watches). */
 export const VERDICT_HEADLINE_ID = 'verdict-h'
@@ -132,6 +134,7 @@ export function DockedVerdict() {
   const hasResult = useStore((s) => s.result !== null)
   const success = useStore(selectSuccess)
   const running = useStore((s) => s.status === 'running')
+  const city = useStore((s) => pillCity(s.inputs, cityName))
   const delta = usePillDelta(hasResult ? success : null)
   const topBar = useTopBarBottom()
   const past = useScrolledPast(VERDICT_NUMBER_ID, topBar, on)
@@ -171,7 +174,6 @@ export function DockedVerdict() {
   }
 
   if (!on) return null
-  const pct = Math.round(success * 100)
   const content = (
     <div className={cx('docked-verdict', drawer && 'docked-verdict--drawer')}>
       <AnimatePresence>
@@ -189,7 +191,7 @@ export function DockedVerdict() {
               type="button"
               className={cx('verdict-pill', `verdict-pill--${toneFor(success)}`, 'docked-verdict__pill', running && 'is-running', gone && 'is-yielding')}
               style={{ ['--tone' as string]: outcomeTextColor(success) }}
-              aria-label={drawer ? `Holds in ${pct}% of futures. Close the plan and go to the verdict.` : `Holds in ${pct}% of futures. Back to the verdict.`}
+              aria-label={pillLabel(success, city, drawer ? 'drawer' : 'verdict')}
               aria-hidden={gone || undefined}
               inert={gone}
               // Outside the drawer's focus trap: pointer only while the drawer is open.
@@ -202,6 +204,7 @@ export function DockedVerdict() {
                 <AnimatedNumber className="verdict-pill__num" value={success} format="percent" />
                 <span className="docked-verdict__word"> of futures</span>
               </span>
+              {city && <span className="verdict-pill__city">· {city}</span>}
               <AnimatePresence initial={false}>
                 {delta !== null && (
                   <motion.span

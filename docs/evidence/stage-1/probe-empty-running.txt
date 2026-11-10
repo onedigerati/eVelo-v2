@@ -1,0 +1,17 @@
+$ BASE=<server> LABEL=<working-tree|HEAD-7417b82> node probe2.cjs  (working tree on :5199; HEAD 7417b82 in a temporary git worktree on :5198)
+phone 390 running ring after setDestination('lisbon'): {"sawRunningClass":true,"transitions":["idle:false","running:true","idle:false"],"cityAfter":"· Lisbon"}
+working-tree empty pill 390px light: {"html":"<span class=\"verdict-pill verdict-pill--empty\" role=\"status\"><span class=\"verdict-pill__text\">Add a holding to see your verdict</span></span>","rect":[82,69,226,44],"color":"rgb(20, 24, 21)","bg":"rgba(245, 242, 234, 0.74)","maxWidth":"100%","textWhiteSpace":"nowrap"}
+working-tree empty pill 390px dark: {"html":"<span class=\"verdict-pill verdict-pill--empty\" role=\"status\"><span class=\"verdict-pill__text\">Add a holding to see your verdict</span></span>","rect":[82,69,226,44],"color":"rgb(236, 241, 238)","bg":"rgba(10, 13, 12, 0.72)","maxWidth":"100%","textWhiteSpace":"nowrap"}
+working-tree empty pill 320px light: {"html":"<span class=\"verdict-pill verdict-pill--empty\" role=\"status\"><span class=\"verdict-pill__text\">Add a holding to see your verdict</span></span>","rect":[47,69,226,44],"color":"rgb(20, 24, 21)","bg":"rgba(245, 242, 234, 0.74)","maxWidth":"100%","textWhiteSpace":"nowrap"}
+working-tree empty pill 320px dark: {"html":"<span class=\"verdict-pill verdict-pill--empty\" role=\"status\"><span class=\"verdict-pill__text\">Add a holding to see your verdict</span></span>","rect":[47,69,226,44],"color":"rgb(236, 241, 238)","bg":"rgba(10, 13, 12, 0.72)","maxWidth":"100%","textWhiteSpace":"nowrap"}
+working-tree console errors: none
+# HEAD rerun with vite fs.allow for the symlinked node_modules (first HEAD run 403ed on fonts)
+HEAD-7417b82 empty pill 390px light: {"html":"<span class=\"verdict-pill verdict-pill--empty\" role=\"status\"><span class=\"verdict-pill__text\">Add a holding to see your verdict</span></span>","rect":[82,69,226,44],"color":"rgb(20, 24, 21)","bg":"rgba(245, 242, 234, 0.74)","maxWidth":"none","textWhiteSpace":"normal"}
+HEAD-7417b82 empty pill 390px dark: {"html":"<span class=\"verdict-pill verdict-pill--empty\" role=\"status\"><span class=\"verdict-pill__text\">Add a holding to see your verdict</span></span>","rect":[82,69,226,44],"color":"rgb(236, 241, 238)","bg":"rgba(10, 13, 12, 0.72)","maxWidth":"none","textWhiteSpace":"normal"}
+HEAD-7417b82 empty pill 320px light: {"html":"<span class=\"verdict-pill verdict-pill--empty\" role=\"status\"><span class=\"verdict-pill__text\">Add a holding to see your verdict</span></span>","rect":[47,69,226,44],"color":"rgb(20, 24, 21)","bg":"rgba(245, 242, 234, 0.74)","maxWidth":"none","textWhiteSpace":"normal"}
+HEAD-7417b82 empty pill 320px dark: {"html":"<span class=\"verdict-pill verdict-pill--empty\" role=\"status\"><span class=\"verdict-pill__text\">Add a holding to see your verdict</span></span>","rect":[47,69,226,44],"color":"rgb(236, 241, 238)","bg":"rgba(10, 13, 12, 0.72)","maxWidth":"none","textWhiteSpace":"normal"}
+HEAD-7417b82 console errors: none
+390-light identical
+390-dark identical
+320-light identical
+320-dark identical
