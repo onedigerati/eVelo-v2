@@ -68,6 +68,16 @@ export function scaleTyped(typed: number, mNow: number, mAt: number, cap: number
   return Math.min(typed * (mNow / mAt), Math.max(cap, typed))
 }
 
+/**
+ * Can the Expat price premium move a value typed for a row with raw ratio `r`, pinned at premium
+ * `anchor`? Yes only where the premium touches the row (r < 1; never Travel or a row pricier than
+ * home) and eVelo's model ratio at the anchor is > 0 (nothing to scale from otherwise), as
+ * `scaleTyped` treats them. `destinationSpend` passes the plan's current premium for a missing anchor.
+ */
+export function premiumMovesTyped(r: number, anchor: number): boolean {
+  return r < 1 && Number.isFinite(anchor) && modelAt(r, anchor) > 0
+}
+
 /** The plan fields `destinationSpend` reads. */
 export type SpendInputs = {
   budget: Budget
@@ -88,6 +98,9 @@ export interface DestinationSpend {
   amounts: Record<BudgetCategory, number>
   /** Which override each category carries for this city: a $ (`amount`), a % (`ratio`), or none. */
   override: Record<BudgetCategory, 'amount' | 'ratio' | null>
+  /** Whether the premium slider can move this row's typed value (`premiumMovesTyped`); false on
+   *  rows with no override. */
+  scales: Record<BudgetCategory, boolean>
 }
 
 /**
@@ -108,6 +121,7 @@ export function destinationSpend(inputs: SpendInputs, home: City, dest: City): D
   const ratios = {} as Record<BudgetCategory, number>
   const amounts = {} as Record<BudgetCategory, number>
   const override = {} as Record<BudgetCategory, 'amount' | 'ratio' | null>
+  const scales = {} as Record<BudgetCategory, boolean>
   const anchorOf = (a: number | undefined) => (typeof a === 'number' && Number.isFinite(a) ? a : e)
   for (const c of BUDGET_CATEGORIES) {
     const r = raw[c]
@@ -121,12 +135,14 @@ export function destinationSpend(inputs: SpendInputs, home: City, dest: City): D
     if (isFixedAmount(f)) {
       amounts[c] = scaleTyped(f, m, modelAt(r, anchorOf(fixedAt?.[c])), home$)
       override[c] = 'amount'
+      scales[c] = premiumMovesTyped(r, anchorOf(fixedAt?.[c]))
     } else {
       amounts[c] = home$ * ratios[c]
       override[c] = hasRatio ? 'ratio' : null
+      scales[c] = hasRatio && premiumMovesTyped(r, anchorOf(inputs.ratioOverrideAt?.[c]))
     }
   }
-  return { model, ratios, amounts, override }
+  return { model, ratios, amounts, override, scales }
 }
 
 export function budgetTotal(b: Budget): number {

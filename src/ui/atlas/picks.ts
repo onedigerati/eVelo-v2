@@ -183,6 +183,10 @@ export interface CategoryCompare {
   /** What the user typed for this row and city: a $ for this city (`amount`), a % for every city
    *  away from home (`ratio`), or nothing. Always null on the home profile. */
   override: 'amount' | 'ratio' | null
+  /** The typed value moves with the Expat price premium from where it was typed (see
+   *  `premiumMovesTyped`); false on rows the premium can't move (Travel, pricier than home) and
+   *  on rows with no override. */
+  scales: boolean
 }
 
 /**
@@ -200,9 +204,10 @@ export function categoryCompare(inputs: PlanInputs, city: City): CategoryCompare
     const h = inputs.budget[c] || 0
     const v = spend ? spend.amounts[c] : h
     const override = spend ? spend.override[c] : null
+    const scales = spend ? spend.scales[c] : false
     // A typed $ shows here ÷ home (none on a $0 home budget); else the (scaled) ratio.
     const ratio = !spend ? 1 : override === 'amount' ? (h > 0 ? v / h : null) : spend.ratios[c]
-    return { cat: c, home: h, here: v, ratio, override }
+    return { cat: c, home: h, here: v, ratio, override, scales }
   })
 }
 

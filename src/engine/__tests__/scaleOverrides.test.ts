@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import marketJson from '../../data/market.json'
 import { CITY_BY_ID } from '../../data/cities'
-import { amountsTotal, BUDGET_CATEGORIES, categoryRatios, destinationSpend, scaleTyped, type SpendInputs } from '../cost'
+import { amountsTotal, BUDGET_CATEGORIES, categoryRatios, destinationSpend, premiumMovesTyped, scaleTyped, type SpendInputs } from '../cost'
 import { DEFAULT_INPUTS } from '../defaults'
 import { simulate } from '../simulate'
 import type { Budget, City, MarketData, PlanInputs } from '../types'
@@ -204,6 +204,50 @@ describe('destinationSpend: rows the premium does not touch, zero ratio, missing
     expect(s.ratios).toEqual(r)
     expect(s.model).toEqual(r)
     for (const c of BUDGET_CATEGORIES) expect(s.amounts[c]).toBeCloseTo((budget[c] || 0) * r[c], 9)
+  })
+})
+
+describe('premiumMovesTyped: can the premium move a typed row', () => {
+  it('yes below home prices with an anchor whose model ratio is > 0', () => {
+    expect(premiumMovesTyped(0.5, 0.35)).toBe(true)
+    expect(premiumMovesTyped(0.5, 0)).toBe(true)
+    expect(premiumMovesTyped(0, 0.2)).toBe(true) // model 0.2 at the anchor
+    expect(premiumMovesTyped(0.99, 1)).toBe(true)
+  })
+
+  it('no at or above home prices (Travel is always 1), with a non-finite anchor, or a 0 model at the anchor', () => {
+    expect(premiumMovesTyped(1, 0.35)).toBe(false)
+    expect(premiumMovesTyped(2, 0)).toBe(false)
+    expect(premiumMovesTyped(0.5, NaN)).toBe(false)
+    expect(premiumMovesTyped(0, 0)).toBe(false)
+    expect(premiumMovesTyped(NaN, 0.35)).toBe(false)
+  })
+
+  it('agrees with destinationSpend: a row flagged `scales` moves with the slider, an unflagged one does not', () => {
+    const o = {
+      ratioOverrides: { housing: 0.4, travel: 0.5, dining: 0.9 },
+      ratioOverrideAt: { housing: 0.35, travel: 0.35 },
+      amountOverrides: { half: { groceries: 1000 }, pricey: { housing: 30000 }, free: { housing: 5000 } },
+      amountOverrideAt: { half: { groceries: 0.35 }, pricey: { housing: 0.35 }, free: { housing: 0 } },
+    }
+    for (const dest of [HALF, PRICEY, FREE, QUARTER]) {
+      const a = destinationSpend(plan({ ...o, expatFactor: 0.35 }), HOME, dest)
+      const b = destinationSpend(plan({ ...o, expatFactor: 0.9 }), HOME, dest)
+      for (const c of BUDGET_CATEGORIES) {
+        if (!a.override[c]) expect(a.scales[c]).toBe(false)
+        else if (!a.scales[c]) expect(b.amounts[c]).toBeCloseTo(a.amounts[c], 9)
+        else expect(b.amounts[c]).not.toBeCloseTo(a.amounts[c], 6)
+      }
+    }
+    const h = destinationSpend(plan({ ...o, expatFactor: 0.35 }), HOME, HALF)
+    expect(h.scales.housing).toBe(true) // typed %, raw 0.5
+    expect(h.scales.groceries).toBe(false) // typed $, but groceries raw ratio is 1 here
+    expect(h.scales.travel).toBe(false)
+    expect(h.scales.dining).toBe(false) // dining raw ratio is 1 here
+    expect(destinationSpend(plan(o), HOME, QUARTER).scales.housing).toBe(true)
+    expect(destinationSpend(plan({ ...o, expatFactor: 0.9 }), HOME, HALF).amounts.housing).not.toBeCloseTo(h.amounts.housing, 3)
+    expect(destinationSpend(plan(o), HOME, PRICEY).scales.housing).toBe(false)
+    expect(destinationSpend(plan(o), HOME, FREE).scales.housing).toBe(false) // model 0 at anchor 0
   })
 })
 
