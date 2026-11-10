@@ -1,0 +1,20 @@
+$ npx vitest run src/state/__tests__/landing.test.ts --reporter=verbose
+npm notice run evelo@2.0.0 npx
+npm notice run 'vitest' run src/state/__tests__/landing.test.ts --reporter=verbose
+
+ RUN  v5.1.0 /home/jonah/repos/eVelo-v2
+
+ ✓ src/state/__tests__/landing.test.ts > default-page rule (resolveRoute) > shows the landing for the bare URL, on every visit 1ms
+ ✓ src/state/__tests__/landing.test.ts > default-page rule (resolveRoute) > treats an unknown hash like the bare URL 0ms
+ ✓ src/state/__tests__/landing.test.ts > default-page rule (resolveRoute) > sends route hashes straight to the app 0ms
+ ✓ src/state/__tests__/landing.test.ts > default-page rule (resolveRoute) > reads the legacy slash forms as app routes 0ms
+ ✓ src/state/__tests__/landing.test.ts > default-page rule (resolveRoute) > never shows the landing for a share link, in any form 0ms
+ ✓ src/state/__tests__/landing.test.ts > default-page rule (resolveRoute) > shows the landing for #home in any form 0ms
+ ✓ src/state/__tests__/landing.test.ts > default-page rule (resolveRoute) > writes #home for the landing 0ms
+
+ Test Files  1 passed (1)
+      Tests  7 passed (7)
+   Start at  20:41:43
+   Duration  92ms (import 43%, transform 29%, tests 17%, worker 10%)
+
+exit=0

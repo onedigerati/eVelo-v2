@@ -5,7 +5,6 @@ import { create } from 'zustand'
 import { DEFAULT_INPUTS } from '../engine/defaults'
 import type { AtlasEntry, PlanInputs, SimulationResult, SolveResult } from '../engine/types'
 import { dismissToast, isToastLive, toast } from '../ui/primitives/Toast'
-import { markEntered, readEntered } from './entered'
 import { clampAfterPatch, clampAfterReplace, clampAfterSet, loanToastRun, type LoanClamp } from './loanClamp'
 import type { CompareEntry } from './retireCompare'
 import { parseHash, resolveRoute, type Route } from './router'
@@ -101,24 +100,11 @@ function clampLoan(c: LoanClamp): PlanInputs {
 
 const isTheme = (t: unknown): t is ThemePref => t === 'system' || t === 'light' || t === 'dark'
 
-/**
- * What the bare URL means for the rest of this page load: settled at load, so pressing Back from
- * the planner to the bare entry still shows the landing the visitor started on.
- */
-let bareEntered = false
-
-/** The route for a hash during this page load (see resolveRoute for the rule). */
-export function routeFromHash(hash: string): Route {
-  return resolveRoute(hash, bareEntered).route
-}
-
 /** Initial state: shared link (#p=, or legacy #/?p=) wins over localStorage, which wins over defaults. */
 function initial(): { inputs: PlanInputs; theme: ThemePref; route: Route; fromLink: boolean } {
   const persisted = readPersisted()
   const { params } = parseHash(window.location.hash)
-  const { route, entered } = resolveRoute(window.location.hash, readEntered())
-  bareEntered = entered
-  if (entered) markEntered()
+  const route = resolveRoute(window.location.hash)
   const p = params.get('p')
   const shared = p ? decodeInputs(p) : null
   return {
@@ -166,11 +152,7 @@ export const useStore = create<AppState>()((set, get) => ({
   replaceInputs: (inputs) => set({ inputs: clampLoan(clampAfterReplace(inputs)) }),
   resetInputs: () => set({ inputs: structuredClone(DEFAULT_INPUTS) }),
   setTheme: (theme) => set({ theme }),
-  setRoute: (route) => {
-    // Any navigation into the app counts as having entered it.
-    if (route !== 'home') markEntered()
-    set({ route })
-  },
+  setRoute: (route) => set({ route }),
   setResult: (result) => set({ result }),
   setAtlas: (atlas, at = Date.now()) => set({ atlas, atlasAt: atlas ? at : null }),
   setAtlasRunning: (atlasRunning) => set({ atlasRunning }),

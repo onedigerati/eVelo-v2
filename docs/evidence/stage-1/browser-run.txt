@@ -1,0 +1,27 @@
+$ npx vite preview --port 4791 --strictPort  (production build from npm run build) ; node drive.cjs http://localhost:4791  (Playwright 1.65, headless Chromium)
+PASS planner use saved a plan to localStorage (before null, after 788 chars)
+state at #plan: {"hash":"#plan","landing":false,"app":true,"h1":"Your terms"}
+fresh load of plain URL: {"hash":"","landing":true,"app":false,"h1":"Live off your portfolio without ever selling it."}
+PASS fresh load of plain URL after using the planner shows the landing
+reload of plain URL with evelo:v2:entered=1: {"hash":"","landing":true,"app":false,"h1":"Live off your portfolio without ever selling it."}
+PASS stale evelo:v2:entered=1 is ignored; plain URL shows the landing
+evelo:v2:entered after load (left as seeded, not written by app): 1
+PASS fresh load of /# shows the landing
+PASS fresh load of /#/ shows the landing
+PASS fresh load of /#nope shows the landing
+after wordmark click from #plan: {"hash":"#home","landing":true,"app":false,"h1":"Live off your portfolio without ever selling it."}
+PASS wordmark click from #plan shows the landing (#home)
+after landing CTA click: {"hash":"#plan","landing":false,"app":true,"h1":"Your terms"}
+PASS landing "Stress-test my plan" opens the planner (#plan)
+after browser Back: {"hash":"","landing":true,"app":false,"h1":"Live off your portfolio without ever selling it."}
+PASS browser Back from the planner returns to the landing
+share link from the app (truncated): http://localhost:4791/#p=eyJ2IjoxLCJk…
+PASS app share button produced a #p= link
+share link opened: {"hash":"#outlook…","landing":false,"app":true,"h1":"Your terms"}
+PASS share link opens the app, not the landing
+PASS share link opens the app in a fresh browser with empty storage
+phone 390 plain URL: {"hash":"","landing":true,"app":false,"h1":"Live off your portfolio without ever selling it."} scrollWidth 390
+PASS phone 390px: plain URL shows the landing after visiting #plan
+PASS phone 390px: no horizontal overflow (scrollWidth 390)
+console errors: none
+summary: 0 failure(s)

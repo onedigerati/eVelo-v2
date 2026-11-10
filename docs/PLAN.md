@@ -7,25 +7,21 @@ Every visitor who opens the site's plain URL sees the landing page, every visit,
 2026-11-09 · tests: 664 pass (45 files) · typecheck: clean
 
 ## Now
-Stage 1 of 1 · Landing by default
-Risk: UI only
-Agents: wide — confirmed 2026-11-08 22:19
-Checks:
-- [ ] The bare URL, `#`, `#/` and an unknown hash resolve to the landing, whatever the visitor did before (proof: test)
-- [ ] Route hashes (`#plan`, `#/atlas`, …), `#home` and share links in every form resolve as before (proof: test)
-- [ ] Nothing reads or writes `evelo:v2:entered` any more (proof: command, a search of `src/`)
-- [ ] In the running app, after using the planner, a fresh load of the plain URL shows the landing; the wordmark and Back return to it (proof: run the product, a test can't drive real reloads with storage)
-Open: none
+All stages done · deploying
+Agents: wide — confirmed 2026-11-09 20:40
 
 ## Stages
-- [ ] 1. Landing by default — plain URL always shows the landing; drop the entered flag and its tests
+- [x] 1. Landing by default — plain URL always shows the landing; drop the entered flag and its tests
 
 ## Decisions
+- 2026-11-09 · Deploy without a preview — user: "go ahead and deploy".
+- 2026-11-09 · Stage 1 closed: 4/4 checks pass ([evidence](evidence/stage-1/report.md)), verified by a fresh agent; its report write was blocked for subagents, so the main session saved it — user: "Yes, please save the agent's report". No `keel:review`: UI only, routing change of a few lines with tests — PM's call.
 - 2026-11-09 · The landing is the default page: the plain URL shows it on every visit, replacing the first-visit-only rule — user: "Let's make the landing page the default page."
 - 2026-11-09 · Share links still open straight into the planner with the shared plan — user: "For the first item, yes, that's correct."
 - 2026-11-09 · The wordmark takes you to the landing (`#home`, already the case) — user: "eval logo should take you to the landing page".
 - 2026-11-09 · The `evelo:v2:entered` flag is removed rather than left unused; a stale value in visitors' storage is harmless — PM's call.
 - 2026-11-09 · Scale check didn't fire (1 stage, one release) — PM's call.
+- 2026-11-09 · Agents: wide confirmed for this plan — user picked "Wide, start now".
 
 ## Open questions
 - On a phone, keyboard users swing ~684px per step press (Tab scrolls down to the next step, Enter brings the chart back): tier 3 by design — from the stage 2 verify, later if wanted.

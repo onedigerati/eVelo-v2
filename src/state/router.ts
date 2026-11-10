@@ -4,8 +4,8 @@
 // `#/plan` and `#outlook` render the same two-column layout on desktop; on phones they are
 // separate tabs. A shared plan rides in the hash as `p=` (see share.ts): `#p=…`, `#plan?p=…`
 // and the legacy `#/?p=…` all work.
-// `#home` is the landing page. The bare URL shows it until the visitor has entered the app once
-// (see resolveRoute); after that the bare URL opens the planner.
+// `#home` is the landing page, and the default: the bare URL shows it on every visit (see
+// resolveRoute).
 
 export type Route = 'home' | 'outlook' | 'plan' | 'atlas' | 'method' | 'styleguide'
 
@@ -48,17 +48,14 @@ export function parseHash(hash: string): { route: Route; params: URLSearchParams
 }
 
 /**
- * The first-visit rule. Given the hash and whether this browser has entered the app before:
- * - `#home` → the landing, always (the flag is left as it was);
- * - a known app route (`#plan`, `#atlas`, `#/atlas`, …) or a share link (`#p=…`, `#/?p=…`) → that
- *   route, and the visitor has now entered the app;
- * - anything else (no hash, `#/`, an unknown hash) → the planner once entered, else the landing.
+ * The default-page rule:
+ * - a known route (`#home`, `#plan`, `#atlas`, `#/atlas`, …) → that route;
+ * - a share link (`#p=…`, `#/?p=…`) → the app (the Outlook, or the route it names);
+ * - anything else (no hash, `#/`, an unknown hash) → the landing.
  */
-export function resolveRoute(hash: string, entered: boolean): { route: Route; entered: boolean } {
+export function resolveRoute(hash: string): Route {
   const { route, params, known } = parseHash(hash)
-  if (known && route === 'home') return { route, entered }
-  if (known || params.has('p')) return { route, entered: true }
-  return entered ? { route: 'plan', entered } : { route: 'home', entered }
+  return known || params.has('p') ? route : 'home'
 }
 
 export function hrefFor(route: Route): string {
