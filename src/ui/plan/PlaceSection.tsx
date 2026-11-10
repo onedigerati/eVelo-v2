@@ -10,6 +10,7 @@ import { AnimatedNumber, cx, InfoTip, Section, Select, Slider, type SelectOption
 import { catColor, CATEGORY_LABEL } from './BudgetEditor'
 import { CITY_OPTIONS, cityLabel } from './placeholderCities'
 import { planCardSpend } from './planCardSpend'
+import { scaleNotes, spendTip, type ScaleNote } from './scaleNote'
 import { AMOUNT_HINT, CHANGE_HINT, changeLabel, clearRow, hasAnyOverride, parseAmount, parseChange, resetAll, rowOverride, setAmount, setRatio, type SpendOverrides } from './spendOverrides'
 
 const STAY = '__stay'
@@ -91,11 +92,9 @@ function ExpatPanel({ destId }: { destId: string }) {
   if (!homeCity || !destCity) return null
   // Same per-category amounts the engine spends at the destination (destinationSpend: typed values
   // scaled from their anchors with the premium, else home × ratio).
-  const { amounts, homeTotal, destTotal, delta } = planCardSpend(
-    { budget, expatFactor: expat, ratioOverrides, ratioOverrideAt, amountOverrides, amountOverrideAt },
-    homeCity,
-    destCity,
-  )
+  const spendInputs = { budget, expatFactor: expat, ratioOverrides, ratioOverrideAt, amountOverrides, amountOverrideAt }
+  const { amounts, homeTotal, destTotal, delta } = planCardSpend(spendInputs, homeCity, destCity)
+  const notes = scaleNotes(spendInputs, homeCity, destCity)
   const current: SpendOverrides = { ratioOverrides, amountOverrides, ratioOverrideAt, amountOverrideAt }
   const apply = (next: SpendOverrides) =>
     patch({
@@ -137,9 +136,7 @@ function ExpatPanel({ destId }: { destId: string }) {
           <span className="expat__head">
             <span className="t-eyebrow">Spending in {destCity.name}</span>
             <InfoTip label={`How spending in ${destCity.name} is worked out`} side="bottom">
-              Each % compares {destCity.name}&rsquo;s cost for that category with what you spend on it in {homeCity.name}, after the expat
-              price premium. Tap the % or the $ to set your own. A <b>$</b> you type is your researched yearly cost: it stays put when your
-              home budget or the premium changes. A <b>%</b> follows your home budget. &times; undoes a row; Reset all undoes them all.
+              {spendTip(destCity.name, homeCity.name)}
             </InfoTip>
           </span>
           <span className="expat__total-row">
@@ -161,6 +158,7 @@ function ExpatPanel({ destId }: { destId: string }) {
               amount={amounts[c]}
               homeAmt={budget[c] || 0}
               override={rowOverride(current, destId, c)}
+              scale={notes[c]}
               onAmount={(v) => apply(setAmount(current, destId, c, v, expat))}
               onRatio={(r) => apply(setRatio(current, destId, c, r, expat))}
               onClear={() => apply(clearRow(current, destId, c))}
@@ -188,6 +186,7 @@ function RatioRow({
   amount,
   homeAmt,
   override,
+  scale,
   onAmount,
   onRatio,
   onClear,
@@ -197,6 +196,8 @@ function RatioRow({
   amount: number
   homeAmt: number
   override: 'amount' | 'ratio' | null
+  /** The typed row's premium note (scaleNotes), or null. */
+  scale: ScaleNote | null
   onAmount: (v: number) => void
   onRatio: (r: number) => void
   onClear: () => void
@@ -355,6 +356,12 @@ function RatioRow({
         </button>
       ) : (
         <span className="ratio__reset-ph" aria-hidden="true" />
+      )}
+      {scale && !(editing !== null && invalid) && (
+        <span className="ratio__note">
+          {scale.note}
+          {scale.typed && <> · {scale.typed}</>}
+        </span>
       )}
       {editing !== null && invalid && (
         <span id={hintId} className="ratio__hint" role="alert">

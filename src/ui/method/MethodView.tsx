@@ -553,8 +553,33 @@ export function MethodView() {
             <p>
               All of this is an <em>estimate</em>. Cost indices are rounded
               approximations of public city indices, healthcare and currency
-              figures are planning numbers, and every category ratio can be
-              overridden in the plan.
+              figures are planning numbers, and every category can be
+              overridden in the plan: a dollar amount for one city, or a
+              percentage change that applies to every city.
+            </p>
+            <p>
+              A typed number is read as a real price you found, not as your
+              final spend, so the premium still applies on top. It is pinned
+              to the premium it was typed at, and when the slider moves it
+              scales the way eVelo’s own estimate for that category and city
+              moves:
+            </p>
+            <Formula note="m(e) = r + (1 − r) × e, eVelo’s own ratio for that category and city; e₀ = the premium the value was typed at, e = the premium now; for a %, typed = the share of home the change gives (−50% → 50%).">
+              value = typed × m(e) ÷ m(e₀), capped at the larger of the home
+              amount (or 100%) and what was typed
+            </Formula>
+            <p>
+              For example, {currency(ABROAD.typed.amount)} a year of housing in{" "}
+              {ABROAD.dest}, typed at a {pct(ABROAD.typed.at)} premium, reads{" "}
+              {currency(ABROAD.typed.value)} at {pct(ABROAD.typed.now)}: the
+              model’s housing ratio rises from {pct(ABROAD.typed.mAt)} to{" "}
+              {pct(ABROAD.typed.mNow)} of {ABROAD.home}’s. A typed value reads
+              exactly as typed at its own premium and returns to it when the
+              slider comes back. Categories the premium doesn’t touch (dearer
+              than home, and travel) never move. Changing the home budget
+              doesn’t move a typed amount either, unless the home amount is
+              below it: the cap then holds it at the home amount, never below
+              what was typed.
             </p>
           </Sec>
 

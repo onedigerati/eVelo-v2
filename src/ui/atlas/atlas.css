@@ -2794,6 +2794,16 @@
 .pcats__row.is-ratio .pcats__v {
   cursor: help;
 }
+/* "your amount · scales with premium" under a typed row the premium can move: a muted line across
+   the row, right-aligned under the value, ending at the list's edge (no overhang). */
+.pcats__mark {
+  grid-column: 1 / -1;
+  margin-top: calc(2px - var(--space-3)); /* sits just under the value, not a full row gap away */
+  font-size: var(--fs-xs);
+  line-height: 1.3;
+  color: var(--ink-3);
+  text-align: right;
+}
 .pplan__note {
   font-size: var(--fs-xs);
   line-height: 1.45;

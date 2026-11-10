@@ -1,0 +1,7 @@
+Mutation check for the ⓘ tip test (src/ui/plan/scaleNote.ts restored afterwards; git status clean)
+$ sed -i 's/What you type scales with the premium from where you typed it, the way eVelo’s estimate for that row moves, and /A typed $ stays put when the premium changes, and /' src/ui/plan/scaleNote.ts
+$ npx vitest run src/ui/plan/__tests__/scaleNote.test.ts
+     × says typed values scale from where they were typed, return exactly, and are capped
+     × no longer says typed values stay put when the premium changes
+      Tests  2 failed | 12 passed (14)
+$ cp <backup> src/ui/plan/scaleNote.ts   # restored

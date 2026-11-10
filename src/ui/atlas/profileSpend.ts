@@ -1,4 +1,4 @@
-import { currencyCompact, percent } from '../format'
+import { currencyCompact, percent, SCALES_WITH_PREMIUM } from '../format'
 import { CATEGORY_LABEL, costDelta } from './atlasData'
 import type { CategoryCompare } from './picks'
 
@@ -8,6 +8,20 @@ export const OVERRIDE_TITLE = {
   amount: 'Your amount, typed in the plan for this city',
   ratio: 'Your change versus home, typed in the plan for every city',
 } as const
+
+/** The row's marker as words: "your amount · scales with premium", or just "your amount" where the
+ *  premium can't move the row (Travel, pricier than home). Null on rows with no override. */
+export function overrideMarker(c: Pick<CategoryCompare, 'override' | 'scales'>): string | null {
+  if (!c.override) return null
+  return c.scales ? `${OVERRIDE_SPOKEN[c.override]} · ${SCALES_WITH_PREMIUM}` : OVERRIDE_SPOKEN[c.override]
+}
+
+/** Tooltip on a marked row's value. */
+export function overrideTitle(c: Pick<CategoryCompare, 'override' | 'scales'>): string | undefined {
+  if (!c.override) return undefined
+  const base = OVERRIDE_TITLE[c.override]
+  return c.scales ? `${base}; it scales with the Expat price premium from where you typed it.` : `${base}.`
+}
 
 /** "A", "A and B", "A, B and C". */
 function listOf(items: string[]): string {
@@ -30,14 +44,25 @@ export function spendNote(cats: CategoryCompare[], homeName: string, expatFactor
   const chg = names(cats, 'ratio')
   if (amt.length) parts.push(`your own ${amt.length > 1 ? 'amounts' : 'amount'} for ${listOf(amt)}`)
   if (chg.length) parts.push(`your ${chg.length > 1 ? 'changes' : 'change'} for ${listOf(chg)}`)
-  return `Your ${homeName} budget at local prices, with ${listOf(parts)}.`
+  const note = `Your ${homeName} budget at local prices, with ${listOf(parts)}.`
+  const marked = cats.filter((c) => c.override)
+  const moving = marked.filter((c) => c.scales)
+  if (!moving.length) return note
+  // All the named rows move: "These follow…"; only some: name them.
+  const who =
+    moving.length === marked.length
+      ? moving.length > 1 ? 'These follow' : 'It follows'
+      : `${listOf(moving.map((c) => CATEGORY_LABEL[c.cat]))} ${moving.length > 1 ? 'follow' : 'follows'}`
+  return `${note} ${who} the Expat price premium from where ${moving.length > 1 ? 'they were' : 'it was'} typed.`
 }
 
-/** Screen-reader line for one category row; marked rows end in "your amount" / "your change". */
+/** Screen-reader line for one category row; marked rows end in "your amount" / "your change",
+ *  plus ", scales with premium" where the premium can move them. */
 export function spendRowSpoken(c: CategoryCompare, homeName: string, isHome: boolean): string {
   const label = CATEGORY_LABEL[c.cat]
   if (isHome) return `${label}: ${currencyCompact(c.here)} a year.`
   const delta = c.ratio == null ? '' : `, ${costDelta(c.ratio)}`
-  const mark = c.override ? `, ${OVERRIDE_SPOKEN[c.override]}` : ''
+  const m = overrideMarker(c)
+  const mark = m ? `, ${m.replace(' · ', ', ')}` : ''
   return `${label}: ${currencyCompact(c.here)} here vs ${currencyCompact(c.home)} in ${homeName}${delta}${mark}.`
 }
