@@ -1,0 +1,21 @@
+$ node viewer.mjs http://localhost:4361/   # served: vite preview of worktree 5d6bf4d build
+desktop pick1 photo1: 1-CyuguQ6E.webp natural 1280x853, listed original 1280x853, srcset none -> OK
+desktop pick1 photo2: 2-Cq1U2Bl_.webp natural 1152x864, listed original 1152x864, srcset none -> OK
+desktop pick1 photo3: 3-B4PELRbo.webp natural 1280x857, listed original 1280x857, srcset none -> OK
+desktop pick1 photo4: 4-DkQ0kUi9.webp natural 1152x864, listed original 1152x864, srcset none -> OK
+desktop pick1 photo5: 5-CPsOkqQc.webp natural 1280x966, listed original 1280x966, srcset none -> OK
+desktop pick2 photo1: 1-We2Z8Dc8.webp natural 1280x720, listed original 1280x720, srcset none -> OK
+desktop pick2 photo2: 2-D2aD3u8Y.webp natural 1280x603, listed original 1280x603, srcset none -> OK
+desktop pick2 photo3: 3-BBhbFJP9.webp natural 854x1280, listed original 854x1280, srcset none -> OK
+desktop pick2 photo4: 4-CT8ltbMq.webp natural 1280x854, listed original 1280x854, srcset none -> OK
+desktop pick2 photo5: 5-UwLJ5Pvf.webp natural 1280x853, listed original 1280x853, srcset none -> OK
+phone pick1 photo1: 1-CyuguQ6E.webp natural 1280x853, listed original 1280x853, srcset none -> OK
+phone pick1 photo2: 2-Cq1U2Bl_.webp natural 1152x864, listed original 1152x864, srcset none -> OK
+phone pick1 photo3: 3-B4PELRbo.webp natural 1280x857, listed original 1280x857, srcset none -> OK
+phone pick1 photo4: 4-DkQ0kUi9.webp natural 1152x864, listed original 1152x864, srcset none -> OK
+phone pick1 photo5: 5-CPsOkqQc.webp natural 1280x966, listed original 1280x966, srcset none -> OK
+phone pick2 photo1: 1-We2Z8Dc8.webp natural 1280x720, listed original 1280x720, srcset none -> OK
+phone pick2 photo2: 2-D2aD3u8Y.webp natural 1280x603, listed original 1280x603, srcset none -> OK
+phone pick2 photo3: 3-BBhbFJP9.webp natural 854x1280, listed original 854x1280, srcset none -> OK
+phone pick2 photo4: 4-CT8ltbMq.webp natural 1280x854, listed original 1280x854, srcset none -> OK
+phone pick2 photo5: 5-UwLJ5Pvf.webp natural 1280x853, listed original 1280x853, srcset none -> OK

@@ -1,0 +1,114 @@
+$ mv src/data/photos/lisbon/3-640.webp <scratch>/ && npx vitest run src/data/__tests__/photos.test.ts src/data/__tests__/artifactPhotos.test.ts   # copy restored afterwards
+npm notice run evelo@2.0.0 npx
+npm notice run 'vitest' run src/data/__tests__/photos.test.ts src/data/__tests__/artifactPhotos.test.ts
+
+ RUN  v5.1.0 /home/jonah/repos/eVelo-v2/.claude/worktrees/agent-a78543d7f8d6aaaaa
+
+ ❯ src/data/__tests__/artifactPhotos.test.ts (6 tests | 1 failed) 408ms
+   ❯ preview photo mode (scripts/artifact-lib.mjs) (6)
+     × maps the 640px copies as well as the originals (the real photo folder) 403ms
+ ❯ src/data/__tests__/photos.test.ts (127 tests | 3 failed) 1451ms
+   ❯ city photos data (12)
+     × has no stray image files (only the listed photos and their 640px copies) 17ms
+     × gives every listed photo a 640px copy beside it, at its real size, used as srcSmall 5ms
+   ❯ preview photo URLs (photoKey, parsePhotoAssets, remapPhotoIndex) (9)
+     × keys every real 640px copy by its own city, apart from its original 6ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/data/__tests__/artifactPhotos.test.ts > preview photo mode (scripts/artifact-lib.mjs) > maps the 640px copies as well as the originals (the real photo folder)
+AssertionError: expected [ Array(1) ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   "/home/jonah/repos/eVelo-v2/.claude/worktrees/agent-a78543d7f8d6aaaaa/src/data/photos/lisbon/3-640.webp",
++ ]
+
+ ❯ src/data/__tests__/artifactPhotos.test.ts:94:21
+     92|         .filter((path) => !paths.has(path)),
+     93|     )
+     94|     expect(missing).toEqual([])
+       |                     ^
+     95|     expect(sources.every((s) => /^[0-9a-f]{64}$/.test(s.hash) && s.pat…
+     96|     // Built names keep the source name before the hash, so each copy …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  src/data/__tests__/photos.test.ts > city photos data > has no stray image files (only the listed photos and their 640px copies)
+AssertionError: lisbon: expected [ '1-640.webp', '1.webp', …(7) ] to deeply equal [ '1-640.webp', '1.webp', …(8) ]
+
+- Expected
++ Received
+
+@@ -1,11 +1,10 @@
+  [
+    "1-640.webp",
+    "1.webp",
+    "2-640.webp",
+    "2.webp",
+-   "3-640.webp",
+    "3.webp",
+    "4-640.webp",
+    "4.webp",
+    "5-640.webp",
+    "5.webp",
+
+ ❯ src/data/__tests__/photos.test.ts:126:25
+    124|     for (const id of PHOTO_CITY_IDS) {
+    125|       const webps = readdirSync(`${PHOTOS_DIR}${id}`).filter((f) => f.…
+    126|       expect(webps, id).toEqual(photosFor(id).flatMap((p) => [p.file, …
+       |                         ^
+    127|     }
+    128|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  src/data/__tests__/photos.test.ts > city photos data > gives every listed photo a 640px copy beside it, at its real size, used as srcSmall
+AssertionError: photos without a 640px copy (run npm run photos -- --small): expected [ 'lisbon/3-640.webp' ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   "lisbon/3-640.webp",
++ ]
+
+ ❯ src/data/__tests__/photos.test.ts:132:93
+    130|   it('gives every listed photo a 640px copy beside it, at its real siz…
+    131|     const missing = PHOTO_CITY_IDS.flatMap((id) => missingSmallCopies(…
+    132|     expect(missing, `photos without a ${SMALL_BOX}px copy (run npm run…
+       |                                                                                             ^
+    133|     let bytes = 0
+    134|     for (const id of PHOTO_CITY_IDS) {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  src/data/__tests__/photos.test.ts > preview photo URLs (photoKey, parsePhotoAssets, remapPhotoIndex) > keys every real 640px copy by its own city, apart from its original
+AssertionError: expected 'lisbon/3.webp' to match /^lisbon\/[^/]*-640[^/]*\.webp$/[^
+
+- Expected:
+/^lisbon\/[^/]*-640[^/]*\.webp$/
+
++ Received:
+"lisbon/3.webp"
+
+ ❯ src/data/__tests__/photos.test.ts:323:42
+    321|     for (const id of PHOTO_CITY_IDS)
+    322|       for (const p of photosFor(id)) {
+    323|         expect(photoKey(id, p.srcSmall)).toMatch(new RegExp(`^${id}/[^…
+       |                                          ^
+    324|         expect(photoKey(id, p.srcSmall)).not.toBe(photoKey(id, p.src))
+    325|       }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  4 failed | 129 passed (133)
+   Start at  02:21:54
+   Duration  9.37s (transform 80%, tests 11%, import 10%)
+

@@ -1,0 +1,2 @@
+$ git status --short   # after restoring lisbon/3-640.webp (empty = clean)
+[end]

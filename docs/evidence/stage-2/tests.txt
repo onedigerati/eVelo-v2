@@ -1,0 +1,12 @@
+$ npm test (worktree 5d6bf4d)
+npm notice run evelo@2.0.0 test
+npm notice run vitest run
+
+ RUN  v5.1.0 /home/jonah/repos/eVelo-v2/.claude/worktrees/agent-a78543d7f8d6aaaaa
+
+
+ Test Files  46 passed (46)
+      Tests  705 passed (705)
+   Start at  02:21:04
+   Duration  16.13s (transform 65%, tests 23%, import 11%)
+

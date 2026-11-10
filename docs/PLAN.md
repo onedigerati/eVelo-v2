@@ -8,28 +8,21 @@ The Atlas feels fast. City odds show up in well under half the time they take to
 Perf (local `vite preview`, headless Chromium, [raw](research/atlas-perf/baseline.txt); scripts in [research/atlas-perf/](research/atlas-perf/) (`node docs/research/atlas-perf/measure.mjs http://localhost:<port>/` against `vite preview`)): Atlas odds (profile buttons) ~3.0 s after `#atlas` on a 12-core desktop; ranking worker posts at ~530 ms and answers ~2.45 s later. A profile downloads 700–910 KB of photos (five 1280px WebPs) into tiles drawn at 501×372 and 251×183; on 10 Mbps + 4× CPU the lead photo lands 500–700 ms after the dialog.
 
 ## Now
-Stage 1 of 2 · Parallel Atlas
+Stage 2 of 2 · Lighter photos
 Mode: autopilot
 Agents: wide — confirmed 2026-11-09 23:33
-Risk: user input (a saved ranking read back from browser storage is parsed and validated; it stores a hash of the plan, never the plan's inputs)
+Risk: UI only
 Checks:
-- [x] A ranking split across N workers returns exactly the entries (order, rates, spend) a single run returns, for the default plan, a plan with an existing loan and a retire-later plan (proof: test)
-- [x] A fresh `#atlas` load on the desktop profile shows the odds at least 40% faster than the ~3.0 s baseline (≤ 1.8 s), median of 5 on the full measure script (proof: run the measure script, a test can't time a real browser)
-- [x] The saved ranking is keyed by the plan inputs and the data version: a reload with the same plan shows the odds without running the ranking, and a changed plan, a changed data version or a corrupt stored value never shows a saved ranking (proof: test, plus a run for the reload)
-- [x] With the app open on the landing for 5 s, going to `#atlas` shows the odds at once, with no running state (proof: run, it spans page navigation in a real browser)
-- [x] The engine's Atlas time budget test still passes (proof: test)
+- [x] Every listed photo has a 640px copy beside it, and the photo coverage test fails when one is missing (proof: test)
+- [x] Opening a profile on the desktop profile downloads ≤ 400 KB of photos, against 700–910 KB at baseline (proof: run the measure script)
+- [x] Hovering a profile button 300 ms before the click, the lead photo is ready within 150 ms of the dialog on the 10 Mbps + 4× CPU profile (proof: run)
+- [x] The full-size viewer still shows the 1280px originals (proof: run, naturalWidth in a real browser)
+- [x] The preview build's photo asset map includes the 640px copies (proof: test)
 Open: none
 
 ## Stages
 - [x] 1. Parallel Atlas — rank across several workers, save the last ranking, start at idle
-- [ ] 2. Lighter photos — 640px copies with srcset/sizes, preload on hover/focus/press
-
-Stage 2 checks (moved into `## Now` when it starts):
-- Every listed photo has a 640px copy beside it, and the photo coverage test fails when one is missing (proof: test)
-- Opening a profile on the desktop profile downloads ≤ 400 KB of photos, against 700–910 KB at baseline (proof: run the measure script)
-- Hovering a profile button 300 ms before the click, the lead photo is ready within 150 ms of the dialog on the 10 Mbps + 4× CPU profile (proof: run)
-- The full-size viewer still shows the 1280px originals (proof: run, naturalWidth in a real browser)
-- The preview build's photo asset map includes the 640px copies (proof: test)
+- [x] 2. Lighter photos — 640px copies with srcset/sizes, preload on hover/focus/press
 
 ## Decisions
 - 2026-11-09 · Do findings 1 and 2 of the Atlas perf measurement only (parallel/saved/idle ranking; 640px photos + preload); profile code splitting and the blur/DOM experiment wait — user: "Proceed with 1 and 2 only, on autopilot and go wide."
@@ -48,9 +41,12 @@ Stage 2 checks (moved into `## Now` when it starts):
 - 2026-11-10 · ~~Check 2: odds in ≤ 1.5 s, median of 3~~ → at least 40% faster than the ~3.0 s baseline (≤ 1.8 s), median of 5 on the full measure script: its desktop run is always the first page in a fresh browser, which this machine makes slow whatever the code does — user picked "Accept 2× as the bar".
 - 2026-11-10 · Path-blocking review: exact (checked against unblocked `runPaths` at 700 paths on 4 plans); add that comparison as a test so a future kernel change can't silently break it — PM's call.
 - 2026-11-10 · Stage 1 closed: 5/5 checks pass after two fix rounds ([evidence](evidence/stage-1/report.md)): fresh `#atlas` odds median 1193 ms vs ~3.0 s; same-plan reload 0 ranking posts, odds ~400 ms; landing → Atlas shows odds without running. Verified by fresh agents; reviewed three times (correctness + security pass on the stored value) — PM's call.
+- 2026-11-10 · Stage 2 closed: 5/5 checks pass ([evidence](evidence/stage-2/report.md)), verified by a fresh agent on its branch; merged onto stage 1, 734 tests pass and one merged-build run keeps both gains (odds 1103 ms; profiles 178–256 KB of photos, [measure-merged.txt](evidence/stage-2/measure-merged.txt)). 665 copies, 29 MB, avg 44 KB. Phones (DPR 3) still load the 1280 files, as designed; at DPR 1 the lead tile is a hair softer at 2× zoom, not at 1:1. No `keel:review`: UI only, with tests — PM's call.
 - 2026-11-09 · Scale check didn't fire (2 stages, one release) — PM's call.
 
 ## Open questions
+- The preview build (claude.ai artifact) needs the 665 new 640px copies uploaded to its asset store before preview galleries use them; until then they fall back to the originals — from stage 2, next preview publish.
+- Phones don't save photo bytes (DPR 3 needs the 1280); a 960px step or AVIF would — from the stage 2 verify, later.
 - The Atlas worker pool (up to 6) stays alive for the page's life, and every superseding plan edit respawns all of it (each re-parses the 615 KB worker and rebuilds scenarios); shut it down after idle like `DestinationClient`, and keep idle workers on cancel — from the fix-round review, later.
 - Scenario generation is paid once per Atlas worker; time `makeScenarios` against a shard's `runPaths` on a low-end phone before claiming the phone speedup — from the fix-round review, later.
 - The idle prewarm starts the full-path ranking on up to 4 workers while the retire-in comparison still runs on the sim worker; each Atlas worker builds its own scenarios (~23 MB at 4,000 paths × 40 years, ~115 MB at 20k), so on a 4-core phone it may slow the comparison cards and raise memory. Measure on a real phone — from the stage 1 review, later.

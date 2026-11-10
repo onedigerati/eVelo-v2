@@ -1,0 +1,4 @@
+$ node sharpness.mjs docs/evidence/stage-2   # base (main adec1d7) vs stage2 (5d6bf4d) screenshots
+desktop-dpr1 1014x373: mean abs gray diff 10.44/255; lead (left half): Laplacian energy base 1800.0 vs stage2 1498.7; small tiles (right half): Laplacian energy base 1602.9 vs stage2 1596.1
+desktop-dpr2 2028x746: mean abs gray diff 2.14/255; lead (left half): Laplacian energy base 1742.4 vs stage2 1742.4; small tiles (right half): Laplacian energy base 1476.4 vs stage2 1320.5
+phone-dpr3 1164x819: mean abs gray diff 0.00/255; whole: Laplacian energy base 1559.1 vs stage2 1559.1

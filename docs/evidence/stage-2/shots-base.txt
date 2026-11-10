@@ -1,0 +1,4 @@
+$ node shots.mjs http://localhost:4361/ <dir> base   # main HEAD adec1d7 build, scratch worktree
+base desktop-dpr1: 1-CyuguQ6E.webp 1280px->501css | 2-Cq1U2Bl_.webp 1152px->251css | 3-B4PELRbo.webp 1280px->251css | 4-DkQ0kUi9.webp 1152px->251css | 5-CPsOkqQc.webp 1280px->251css
+base desktop-dpr2: 1-CyuguQ6E.webp 1280px->501css | 2-Cq1U2Bl_.webp 1152px->251css | 3-B4PELRbo.webp 1280px->251css | 4-DkQ0kUi9.webp 1152px->251css | 5-CPsOkqQc.webp 1280px->251css
+base phone-dpr3: 1-CyuguQ6E.webp 1280px->388css | 2-Cq1U2Bl_.webp 1152px->388css | 3-B4PELRbo.webp 1280px->388css | 4-DkQ0kUi9.webp 1152px->388css | 5-CPsOkqQc.webp 1280px->388css

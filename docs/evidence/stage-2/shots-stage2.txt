@@ -1,0 +1,4 @@
+$ node shots.mjs http://localhost:4361/ <dir> stage2   # worktree 5d6bf4d build
+stage2 desktop-dpr1: 1-640-Blv3cKdF.webp 501px->501css | 2-640-Zh282Ggm.webp 250px->251css | 3-640-BaZ8C9Bd.webp 250px->251css | 4-640-CH4h7A-O.webp 250px->251css | 5-640-cP3SXuRz.webp 250px->251css
+stage2 desktop-dpr2: 1-CyuguQ6E.webp 501px->501css | 2-640-Zh282Ggm.webp 250px->251css | 3-640-BaZ8C9Bd.webp 250px->251css | 4-640-CH4h7A-O.webp 250px->251css | 5-640-cP3SXuRz.webp 250px->251css
+stage2 phone-dpr3: 1-CyuguQ6E.webp 390px->388css | 2-Cq1U2Bl_.webp 390px->388css | 3-B4PELRbo.webp 390px->388css | 4-DkQ0kUi9.webp 390px->388css | 5-CPsOkqQc.webp 390px->388css

@@ -1,0 +1,3 @@
+$ node -e (count keys in dist/preview-photos.json after npm run build:preview)
+entries 1330 640px copies 665 originals 665
+sample lisbon/1-640-BNU4RELQ.webp lisbon/1-We2Z8Dc8.webp lisbon/2-640-BYzcRcaz.webp lisbon/2-D2aD3u8Y.webp lisbon/3-640-CJm7ZYm2.webp lisbon/3-BBhbFJP9.webp lisbon/4-640-C6nuhiHi.webp lisbon/4-CT8ltbMq.webp lisbon/5-640-CB8PdnI0.webp lisbon/5-UwLJ5Pvf.webp
