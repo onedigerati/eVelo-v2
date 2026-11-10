@@ -9,7 +9,7 @@ Perf (local `vite preview`, headless Chromium, [raw](research/atlas-perf/baselin
 
 ## Now
 Stage 2 of 2 · Lighter photos
-Mode: paused — push to main to deploy (run the GitHub Pages workflow), both stages verified
+Mode: autopilot
 Agents: wide — confirmed 2026-11-09 23:33
 Risk: UI only
 Checks:
@@ -42,6 +42,7 @@ Open: none
 - 2026-11-10 · Path-blocking review: exact (checked against unblocked `runPaths` at 700 paths on 4 plans); add that comparison as a test so a future kernel change can't silently break it — PM's call.
 - 2026-11-10 · Stage 1 closed: 5/5 checks pass after two fix rounds ([evidence](evidence/stage-1/report.md)): fresh `#atlas` odds median 1193 ms vs ~3.0 s; same-plan reload 0 ranking posts, odds ~400 ms; landing → Atlas shows odds without running. Verified by fresh agents; reviewed three times (correctness + security pass on the stored value) — PM's call.
 - 2026-11-10 · Stage 2 closed: 5/5 checks pass ([evidence](evidence/stage-2/report.md)), verified by a fresh agent on its branch; merged onto stage 1, 734 tests pass and one merged-build run keeps both gains (odds 1103 ms; profiles 178–256 KB of photos, [measure-merged.txt](evidence/stage-2/measure-merged.txt)). 665 copies, 29 MB, avg 44 KB. Phones (DPR 3) still load the 1280 files, as designed; at DPR 1 the lead tile is a hair softer at 2× zoom, not at 1:1. No `keel:review`: UI only, with tests — PM's call.
+- 2026-11-10 · Push to main to deploy — user: "Push and deploy".
 - 2026-11-09 · Scale check didn't fire (2 stages, one release) — PM's call.
 
 ## Open questions
