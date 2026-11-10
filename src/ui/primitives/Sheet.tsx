@@ -1,9 +1,11 @@
-import { AnimatePresence, m as motion, useDragControls, type PanInfo } from 'framer-motion'
+import { AnimatePresence, m as motion, useDragControls, useMotionValue, type PanInfo } from 'framer-motion'
 import { useEffect, useId, useRef, type ReactNode } from 'react'
 import { createPortal } from 'react-dom'
 import { useScrollLock } from '../hooks'
 import { ease } from '../motion'
 import { cx } from './cx'
+import { shouldCloseSheet } from './sheetGesture'
+import { SHEET_SPRING, useSheetSwipe } from './useSheetSwipe'
 
 export interface SheetProps {
   open: boolean
@@ -20,7 +22,8 @@ export interface SheetProps {
 const FOCUSABLE = 'a[href],button:not([disabled]),input:not([disabled]),select,textarea,[tabindex]:not([tabindex="-1"])'
 
 /**
- * Modal sheet/drawer. Drag the handle (bottom) or the panel (sides) to dismiss; Escape and
+ * Modal sheet/drawer. Drag the handle (bottom) or the panel (sides) to dismiss — on a bottom
+ * sheet a downward touch swipe on content already scrolled to the top does too; Escape and
  * the backdrop close it; focus is trapped while open and restored on close.
  */
 export function Sheet({ open, onClose, side = 'bottom', title, hideTitle, children, className }: SheetProps) {
@@ -28,7 +31,9 @@ export function Sheet({ open, onClose, side = 'bottom', title, hideTitle, childr
   const panel = useRef<HTMLDivElement>(null)
   const restore = useRef<HTMLElement | null>(null)
   const drag = useDragControls()
+  const y = useMotionValue(0)
   useScrollLock(open)
+  useSheetSwipe(panel, open && side === 'bottom', y, onClose)
 
   useEffect(() => {
     if (!open) return
@@ -63,7 +68,7 @@ export function Sheet({ open, onClose, side = 'bottom', title, hideTitle, childr
   const onDragEnd = (_: unknown, info: PanInfo) => {
     const d = side === 'bottom' ? info.offset.y : side === 'left' ? -info.offset.x : info.offset.x
     const v = side === 'bottom' ? info.velocity.y : side === 'left' ? -info.velocity.x : info.velocity.x
-    if (d > 110 || v > 550) onClose()
+    if (shouldCloseSheet(d, v)) onClose()
   }
 
   return createPortal(
@@ -89,7 +94,8 @@ export function Sheet({ open, onClose, side = 'bottom', title, hideTitle, childr
             initial={off}
             animate={{ x: 0, y: 0 }}
             exit={{ ...off, transition: { duration: 0.28, ease: [0.4, 0, 1, 1] } }}
-            transition={{ type: 'spring', stiffness: 380, damping: 40 }}
+            style={side === 'bottom' ? { y } : undefined}
+            transition={SHEET_SPRING}
             drag={axis}
             dragListener={side !== 'bottom'}
             dragControls={drag}
