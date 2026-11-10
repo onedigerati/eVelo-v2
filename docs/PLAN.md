@@ -7,19 +7,18 @@ The atlas city cards (the Best odds, Your home and Your destination tiles, and t
 2026-11-10 · tests: 749 pass · typecheck: clean
 
 ## Now
-Stage 2 of 2 · Swipe to close
-Mode: autopilot
+All stages done
 Agents: wide — confirmed 2026-11-10 08:45
 Risk: UI only
 Checks:
-- [ ] On a phone-size bottom sheet with its content scrolled to the top, a downward touch swipe on the content drags the sheet with the finger; releasing past 110px or faster than 550px/s down closes it, a shorter or paused swipe springs back (proof: test)
-- [ ] With the content scrolled down, a downward swipe scrolls it and never moves the sheet; upward swipes scroll; sideways swipes (photo carousel) and taps work as before (proof: test)
-- [ ] In the running app on a touch phone: swipe-down at top closes the city profile, the cases above hold, and the handle, ×, Escape and backdrop still close it; side drawers are unchanged (proof: scripted touch run, a unit test can't drive real scrolling and touch)
+- [x] On a phone-size bottom sheet with its content scrolled to the top, a downward touch swipe on the content drags the sheet with the finger; releasing past 110px or faster than 550px/s down closes it, a shorter or paused swipe springs back (proof: test)
+- [x] With the content scrolled down, a downward swipe scrolls it and never moves the sheet; upward swipes scroll; sideways swipes (photo carousel) and taps work as before (proof: test)
+- [x] In the running app on a touch phone: swipe-down at top closes the city profile, the cases above hold, and the handle, ×, Escape and backdrop still close it; side drawers are unchanged (proof: scripted touch run, a unit test can't drive real scrolling and touch)
 Open: none
 
 ## Stages
 - [x] 1. Country label — muted country name beside the city on atlas tiles and top-pick cards
-- [ ] 2. Swipe to close — swipe down on a phone sheet's content at scroll top closes it, like the handle
+- [x] 2. Swipe to close — swipe down on a phone sheet's content at scroll top closes it, like the handle
 
 ## Decisions
 - 2026-11-10 · Agents: wide; run on autopilot — user: "Let's go wide and on autopilot."
@@ -31,6 +30,8 @@ Open: none
 - 2026-11-10 · Swipe-down to close joins this plan as stage 2 (shared Sheet, so every phone sheet gets it), shipped in the same deploy — user chose "Stage 2 of this plan".
 - 2026-11-10 · Fix round 2: re-verify passed stubs/hidden (0/133) but the 340px container query stacked every desktop tile at 1280 (+18px). Replaced by a content rule: the country wraps under the name only when it doesn't fit beside it — PM's call.
 - 2026-11-10 · Stage 1 closed: 3/3 checks pass after two fix rounds ([evidence](evidence/stage-1/report.md)), verified by a fresh agent on the production build; risk line UI only confirmed against the diff (CSS/TSX/tests); no `keel:review` (UI only, with tests) — PM's call.
+- 2026-11-10 · Stage 2 closed: 3/3 checks pass ([evidence](evidence/stage-2/report.md)), built in a worktree in parallel with stage 1's fixes, verified by a fresh agent on the production build (25/25 scripted touch cases); risk line UI only confirmed (Sheet primitive + touch hook); no `keel:review` (UI only, with tests) — PM's call.
+- 2026-11-10 · All stages done; pushing to deploy per the user's earlier go — PM's call.
 - 2026-11-10 · The code chip stays; the country is extra, not a replacement — PM's call (default).
 
 ## Open questions

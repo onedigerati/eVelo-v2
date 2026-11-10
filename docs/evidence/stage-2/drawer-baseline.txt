@@ -1,0 +1,11 @@
+# node docs/evidence/stage-2/drawer-baseline.mjs <port>: touch drag-left on the tablet #plan drawer, HEAD (5241) vs pre-stage build a435410^ = 22971f7 (5242)
+== HEAD c0a9722
+right-40,y+120 svg.[object SVGAnimatedString] mid x 0 closed false
+right-40,y+200 BUTTON. mid x 0 closed false
+mid,y+400 DIV.hrow mid x 0 closed false
+right-60,y+600 DIV.hrow mid x 0 closed false
+== pre-stage 22971f7
+right-40,y+120 svg.[object SVGAnimatedString] mid x 0 closed false
+right-40,y+200 BUTTON. mid x 0 closed false
+mid,y+400 DIV.hrow mid x 0 closed false
+right-60,y+600 DIV.hrow mid x 0 closed false

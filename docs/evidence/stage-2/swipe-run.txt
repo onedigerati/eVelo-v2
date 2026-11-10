@@ -1,0 +1,30 @@
+$ node docs/evidence/stage-2/verify-swipe.mjs docs/evidence/stage-2   # against vite preview --port 5241 (npm run build output at HEAD c0a9722)
+sheet open; touch point {"x":195,"y":369} body scrollTop 0 y 0
+PASS  slow 80px swipe at top drags with finger  -- mid-drag y=80
+PASS  ...and springs back on release  -- after y=0
+PASS  100px drag then 300ms pause springs back  -- y=0
+PASS  upward swipe scrolls content, sheet stays  -- scrollTop 0->214, sheet y max 0
+PASS  scrolled down: downward swipe scrolls content, sheet never moves  -- scrollTop 500->324, sheet y max 0
+PASS  scroll reaching top mid-gesture never moves the sheet  -- scrollTop ->0, sheet y max 0
+PASS  sideways swipe on carousel changes photo, sheet stays  -- scrollLeft 0->388
+PASS  tapping carousel dots navigates  -- last dot ->1552, first dot ->0
+PASS  tap on a content button fires its click  -- button "Make Algarve (Faro) my destination"
+PASS  long 220px swipe at top closes
+PASS  page behind did not scroll during sheet gestures  -- before {"win":674} after {"win":674}
+PASS  reopen after swipe-close: sheet at rest  -- y=0 scrollTop=0
+PASS  slow 60px drag (~100px/s) springs back  -- y=0
+PASS  fast 60px flick (~1500px/s) closes
+PASS  handle drag closes
+PASS  × closes
+PASS  Escape closes
+PASS  backdrop tap closes
+PASS  Compare sheet: swipe down at top drags and closes  -- mid y=110
+PASS  tablet left drawer: downward swipe does not close or move it  -- x=0 y=0
+INFO  tablet left drawer: touch drag-left closes = false (same as pre-stage build; see drawer-baseline.txt)
+PASS  desktop: mouse drag on profile content does not move or close the sheet  -- y max 0
+PASS  desktop: mouse drag on the handle still closes
+PASS  desktop styleguide drawer: mouse drag left still closes
+PASS  desktop styleguide bottom sheet: mouse drag on body does not move it  -- y max 0
+PASS  no page errors or console errors
+25/25 passed
+ALL PASS
