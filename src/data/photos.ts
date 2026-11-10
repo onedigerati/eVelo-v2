@@ -1,5 +1,6 @@
-// City photos: ./photos/<cityId>/photos.json (5 entries) plus <n>.webp, filled by
-// `npm run photos` (scripts/photos.mjs) from Wikimedia Commons. Adding a city's photos needs no
+// City photos: ./photos/<cityId>/photos.json (5 entries) plus <n>.webp (1280px) and its small copy
+// <n>-640.webp (640px, for the profile mosaic), filled by `npm run photos` (scripts/photos.mjs)
+// from Wikimedia Commons. Adding a city's photos needs no
 // edit here. The .webp files load as URLs, so Vite emits them as hashed files in dist/assets.
 // The claude.ai preview build (--mode artifact) swaps those URLs for asset-store copies listed in
 // a published photo-assets.json; see loadPhotoAssets and scripts/artifact-page.mjs.
@@ -30,13 +31,51 @@ export interface CityPhotoEntry {
 export interface CityPhoto extends CityPhotoEntry {
   /** URL of the WebP image (hashed asset in a build). */
   src: string
+  /**
+   * URL of the small copy (<n>-640.webp), for the mosaic tiles. Equals `src` when the copy is
+   * missing, so callers fall back to the original.
+   */
+  srcSmall: string
+  /** Real size of the small copy (the original's size when it is missing or not smaller). */
+  smallWidth: number
+  smallHeight: number
+}
+
+/** Long side of the small copy, in px. Same as SMALL_BOX in scripts/photos-lib.mjs. */
+export const SMALL_BOX = 640
+
+/** "3.webp" -> "3-640.webp" (same rule as smallFileName in scripts/photos-lib.mjs). */
+export function smallFileOf(file: string): string {
+  return file.replace(/\.webp$/, `-${SMALL_BOX}.webp`)
+}
+
+/** Round to nearest, ties to even (426.5 -> 426, 377.5 -> 378), as libvips sizes a resize. */
+function roundHalfEven(x: number): number {
+  const f = Math.floor(x)
+  const d = x - f
+  if (Math.abs(d - 0.5) > 1e-9) return Math.round(x)
+  return f % 2 === 0 ? f : f + 1
+}
+
+/**
+ * The small copy's size for a width x height photo: fit inside 640 x 640, never upscaled, the short
+ * side rounded half to even as libvips does (same rule as smallSize in scripts/photos-lib.mjs; a test checks the real files).
+ */
+export function smallSizeOf(width: number, height: number): { width: number; height: number } {
+  const scale = Math.min(1, SMALL_BOX / Math.max(width, height))
+  if (scale === 1) return { width, height }
+  return width >= height
+    ? { width: SMALL_BOX, height: Math.max(1, roundHalfEven(height * scale)) }
+    : { width: Math.max(1, roundHalfEven(width * scale)), height: SMALL_BOX }
 }
 
 /**
  * Builds the per-city photo index from Vite glob results: `lists` maps
  * "./photos/<cityId>/photos.json" to its entries, `urls` maps "./photos/<cityId>/<n>.webp" to the
- * image URL. A city with a listed file missing from `urls` gets no gallery (and one warning)
- * rather than taking the whole Atlas down; the other cities still load.
+ * image URL (small copies "./photos/<cityId>/<n>-640.webp" included; they are looked up for their
+ * listed photo, never listed themselves). A city with a listed file missing from `urls` gets no
+ * gallery (and one warning) rather than taking the whole Atlas down; the other cities still load.
+ * A missing small copy falls back to the original (the coverage test catches it).
  */
 export function buildPhotoIndex(
   lists: Record<string, CityPhotoEntry[]>,
@@ -51,10 +90,12 @@ export function buildPhotoIndex(
       warn(`photos: ${cityId} lists ${missing.join(', ')} but the file is missing; showing no photos for ${cityId}`)
       continue
     }
-    out[cityId] = list.map((p) => ({
-      ...p,
-      src: urls[`./photos/${cityId}/${p.file}`],
-    }))
+    out[cityId] = list.map((p) => {
+      const src = urls[`./photos/${cityId}/${p.file}`]
+      const small = urls[`./photos/${cityId}/${smallFileOf(p.file)}`]
+      const size = small ? smallSizeOf(p.width, p.height) : { width: p.width, height: p.height }
+      return { ...p, src, srcSmall: small ?? src, smallWidth: size.width, smallHeight: size.height }
+    })
   }
   return out
 }
@@ -82,7 +123,8 @@ export function parsePhotoAssets(json: unknown): Record<string, string> {
 
 /**
  * Points each city's photos at their uploaded copies (preview build). A city gets the uploaded
- * URLs only when every one of its photos has one; a city with some missing gets no gallery (one
+ * URLs only when every one of its photos has one; a small copy with no upload falls back to the
+ * photo's uploaded original (its size with it); a city with some missing gets no gallery (one
  * summary warning for all such cities), since the preview doesn't publish the bundled files. A null map (none published, or
  * it failed to load) keeps the bundled URLs.
  */
@@ -100,7 +142,13 @@ export function remapPhotoIndex(
       skipped.push(`${cityId} (${missing.length} of ${list.length})`)
       continue
     }
-    out[cityId] = list.map((p) => ({ ...p, src: assets[photoKey(cityId, p.src)] }))
+    out[cityId] = list.map((p) => {
+      const src = assets[photoKey(cityId, p.src)]
+      const smallKey = photoKey(cityId, p.srcSmall)
+      return p.srcSmall !== p.src && Object.hasOwn(assets, smallKey)
+        ? { ...p, src, srcSmall: assets[smallKey] }
+        : { ...p, src, srcSmall: src, smallWidth: p.width, smallHeight: p.height }
+    })
   }
   // One summary line, not one per city (a fresh preview may have none uploaded yet).
   if (skipped.length) {

@@ -5,6 +5,44 @@ export const PHOTOS_PER_CITY = 5
 /** "Under 200 kB", counting a kB as 1000 bytes so the limit holds either way. */
 export const MAX_BYTES = 200_000
 export const TARGET_WIDTH = 1280
+/**
+ * The small copy beside each photo, for the profile mosaic: <n>-640.webp, boxed like the 1280
+ * (640 on the long side, a portrait 640 tall, never upscaled), WebP under SMALL_MAX_BYTES.
+ */
+export const SMALL_BOX = 640
+export const SMALL_MAX_BYTES = 70_000
+/** WebP qualities tried for the small copy, best first, until it fits SMALL_MAX_BYTES. */
+export const SMALL_QUALITIES = [75, 70, 65, 60, 55]
+
+/** "3.webp" -> "3-640.webp". Same rule as smallFileOf in src/data/photos.ts. */
+export function smallFileName(file) {
+  return String(file).replace(/\.webp$/, `-${SMALL_BOX}.webp`)
+}
+
+/** True for a small copy's file name ("3-640.webp"), not a photo in its own right. */
+export function isSmallFile(file) {
+  return new RegExp(`-${SMALL_BOX}\\.webp$`).test(String(file))
+}
+
+/** Round to nearest, ties to even (426.5 -> 426, 377.5 -> 378), as libvips sizes a resize. */
+function roundHalfEven(x) {
+  const f = Math.floor(x)
+  const d = x - f
+  if (Math.abs(d - 0.5) > 1e-9) return Math.round(x)
+  return f % 2 === 0 ? f : f + 1
+}
+
+/**
+ * Size of the small copy of a width x height photo: fit inside SMALL_BOX x SMALL_BOX, never
+ * upscaled, the short side rounded half to even, as libvips (sharp) rounds it. Same rule as smallSizeOf in src/data/photos.ts.
+ */
+export function smallSize(width, height) {
+  const scale = Math.min(1, SMALL_BOX / Math.max(width, height))
+  if (scale === 1) return { width, height }
+  return width >= height
+    ? { width: SMALL_BOX, height: Math.max(1, roundHalfEven(height * scale)) }
+    : { width: Math.max(1, roundHalfEven(width * scale)), height: SMALL_BOX }
+}
 /** Smallest allowed long side of the Commons original, in px. */
 export const MIN_ORIGINAL_SIDE = 1000
 

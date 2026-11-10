@@ -1,12 +1,30 @@
-// Pure helpers for scripts/artifact-page.mjs's preview photo mode (tested in
+// Helpers (pure, apart from photoSources reading the photo folder) for scripts/artifact-page.mjs's preview photo mode (tested in
 // src/data/__tests__/artifactPhotos.test.ts). Keys match photoKey() in src/data/photos.ts:
 // "<cityId>/<built file name>", where Vite's built name carries the photo's content hash.
+import { createHash } from 'node:crypto'
+import { readdirSync, readFileSync } from 'node:fs'
 
 /** Max files per Artifact asset upload call. */
 export const UPLOAD_BATCH = 25
 
 /** Photo key for a city and a built asset file name ("1-B2xQ9aZk.webp"). */
 export const photoKey = (cityId, distName) => `${cityId}/${distName}`
+
+/**
+ * Every photo file to map in the preview: each city folder's .webp files, the 1280px originals
+ * and their 640px copies (<n>-640.webp) alike, as [{ path, cityId, hash }] (sha256 of the bytes).
+ */
+export function photoSources(dir) {
+  const sha = (path) => createHash('sha256').update(readFileSync(path)).digest('hex')
+  return readdirSync(dir, { withFileTypes: true })
+    .filter((d) => d.isDirectory())
+    .flatMap((d) =>
+      readdirSync(`${dir}/${d.name}`)
+        .filter((f) => f.endsWith('.webp'))
+        .sort()
+        .map((f) => ({ path: `${dir}/${d.name}/${f}`, cityId: d.name, hash: sha(`${dir}/${d.name}/${f}`) })),
+    )
+}
 
 /**
  * Matches each source photo to the built file with the same bytes.

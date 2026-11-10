@@ -22,6 +22,7 @@ import { cx } from '../primitives'
 import { outcomeRgb } from '../outcomeScale'
 import { costDelta, localCompact, inRegion, successColor, successTextColor, type Ranked, type RegionChip } from './atlasData'
 import { CodeChip } from './CodeChip'
+import { preloadOnIntent } from './photoLoad'
 import { LEVELS, loadLandDots, projection, S0, toWorld, WORLD_W, type LandDots } from './landDots'
 import { cardPlacement, clampView, panBy, pinchView, sameView, wheelFactor, zoomAt, type Limits, type View } from './mapView'
 import { classifyTouch } from '../primitives/sliderGesture'
@@ -1034,6 +1035,7 @@ function CityCard({
               type="button"
               className="link-btn city-card__profile"
               onClick={onOpenProfile}
+              {...preloadOnIntent(city.id)}
               aria-label={`View the ${city.name} profile`}
             >
               View profile →

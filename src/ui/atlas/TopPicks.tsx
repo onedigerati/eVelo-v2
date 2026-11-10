@@ -9,6 +9,7 @@ import { costDelta, successColor, successTextColor, type Ranked } from './atlasD
 import { CodeChip } from './CodeChip'
 import { SCORE_KEYS, isProfiled, longDate, pickViews, splitPicks, type PickView, type ProfiledPickView } from './picks'
 import { ScoreDots } from './ScoreDots'
+import { preloadOnIntent } from './photoLoad'
 
 const FIRST = 6
 /** Compact rows shown before "Show all". */
@@ -114,7 +115,7 @@ function PickCard({
       </div>
       <div className="pick__city">
         <CodeChip code={city.countryCode} />
-        <button type="button" className="pick__open" onClick={() => onOpen(pick.cityId)} aria-label={label}>
+        <button type="button" className="pick__open" onClick={() => onOpen(pick.cityId)} {...preloadOnIntent(pick.cityId)} aria-label={label}>
           {city.name}
         </button>
         {isDest && <span className="crow__tag is-dest">Destination</span>}
@@ -185,6 +186,7 @@ function AlsoList({
                 type="button"
                 className="also__main"
                 onClick={() => (hasProfile ? onOpen : onChoose)(pick.cityId)}
+                {...preloadOnIntent(hasProfile ? pick.cityId : undefined)}
                 aria-label={
                   hasProfile
                     ? `Top pick ${pick.rank}: ${city.name}, ${city.country}.${status}${row ? ` Plan holds in ${percent(row.successRate)}.` : ''} ${pick.why} Open profile.`

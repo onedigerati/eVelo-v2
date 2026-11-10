@@ -9,3 +9,5 @@ export function doCity(
   opts?: { root?: string; get?: (url: string | URL) => Promise<FetchLike>; log?: (msg: string) => void },
 ): Promise<{ downloaded: number; skipped: number }>
 export function recredit(cityId: string, opts?: { root?: string; log?: (msg: string) => void }): number
+export function encodeSmall(buf: Buffer): Promise<{ data: Buffer; width: number; height: number; q: number }>
+export function makeSmallCopies(cityId: string, opts?: { root?: string; force?: boolean; log?: (msg: string) => void }): Promise<number>

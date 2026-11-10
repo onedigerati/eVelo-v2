@@ -6,6 +6,7 @@ import { ease } from '../motion'
 import { Skeleton, cx } from '../primitives'
 import { classifyTouch, type TouchIntent } from '../primitives/sliderGesture'
 import { photoCredit, sourceLabel, type OddsBadgeModel } from './gallery'
+import { leadSizes, photoSrcSet, smallSizes } from './photoLoad'
 
 /**
  * Design A, the cover mosaic: one large photo and four small ones above the profile, the odds
@@ -43,7 +44,9 @@ export function PhotoGallery({ cityName, photos, badge }: { cityName: string; ph
     })
   }
 
-  const tile = (p: CityPhoto, i: number, cls: string, lazy: boolean) => (
+  // Tiles and slides load the 640px copy or the 1280px original, whichever the tile needs at this
+  // viewport and DPR (see photoLoad.ts); the full-size view always shows the original.
+  const tile = (p: CityPhoto, i: number, cls: string, lazy: boolean, sizes: string) => (
     <button
       key={p.file}
       type="button"
@@ -53,6 +56,8 @@ export function PhotoGallery({ cityName, photos, badge }: { cityName: string; ph
     >
       <img
         src={p.src}
+        srcSet={photoSrcSet(p)}
+        sizes={photoSrcSet(p) ? sizes : undefined}
         alt={p.alt}
         width={p.width}
         height={p.height}
@@ -69,7 +74,7 @@ export function PhotoGallery({ cityName, photos, badge }: { cityName: string; ph
     <section className="pgal" aria-label={`Photos of ${cityName}`}>
       {/* Desktop and tablet: the mosaic */}
       <div className="pgal__mosaic">
-        {photos.slice(0, 5).map((p, i) => tile(p, i, cx('pgal__tile', i === 0 && 'is-lead'), i > 0))}
+        {photos.slice(0, 5).map((p, i) => tile(p, i, cx('pgal__tile', i === 0 && 'is-lead'), i > 0, i === 0 ? leadSizes(p) : smallSizes(p)))}
         <OddsCard badge={badge} />
         <button type="button" className="pgal__all" onClick={(e) => open(0, e.currentTarget)}>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
@@ -86,7 +91,7 @@ export function PhotoGallery({ cityName, photos, badge }: { cityName: string; ph
       {/* Phones: one swipeable cover */}
       <div className="pgal__cover">
         <div className="pgal__track" ref={track} onScroll={onTrackScroll}>
-          {photos.map((p, i) => tile(p, i, 'pgal__slide', i > 0))}
+          {photos.map((p, i) => tile(p, i, 'pgal__slide', i > 0, leadSizes(p)))}
         </div>
         <OddsCard badge={badge} compact />
         <span className="pgal__count num" aria-hidden="true">
