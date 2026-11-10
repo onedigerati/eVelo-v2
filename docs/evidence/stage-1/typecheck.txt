@@ -1,0 +1,4 @@
+npm run typecheck   # on 996bc5c + uncommitted stage-1 changes
+npm notice run evelo@2.0.0 typecheck
+npm notice run tsc -b
+EXIT 0

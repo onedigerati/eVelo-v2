@@ -1,0 +1,13 @@
+npm test   # on 996bc5c + uncommitted stage-1 changes
+npm notice run evelo@2.0.0 test
+npm notice run vitest run
+
+ RUN  v5.1.0 /home/jonah/repos/eVelo-v2
+
+
+ Test Files  53 passed (53)
+      Tests  754 passed (754)
+   Start at  09:24:54
+   Duration  15.53s (transform 67%, tests 25%, import 8%)
+
+EXIT 0

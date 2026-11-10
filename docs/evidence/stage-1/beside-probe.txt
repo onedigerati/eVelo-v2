@@ -1,0 +1,12 @@
+node docs/evidence/stage-1/beside-probe.mjs   # vite preview of npm run build, port 5231
+360 p Prague / Czech Republic: BESIDE lines=1 countryW=92.3 scrollW=92 nameRight=149.1 countryLeft=155.1 countryRight=247.4 titleRight=247.4 rowRight=250.5 goLeft=n/a
+360 t2 Taipei / Taiwan: BESIDE lines=1 countryW=41.4 scrollW=41 nameRight=108.8 countryLeft=114.8 countryRight=156.2 titleRight=156.2 rowRight=157.0 goLeft=n/a
+360 t New York City / United States: BESIDE lines=1 countryW=80.4 scrollW=80 nameRight=166.6 countryLeft=172.6 countryRight=253.0 titleRight=253.0 rowRight=327.0 goLeft=272.7
+390 t2 Lisbon / Portugal: BESIDE lines=1 countryW=50.3 scrollW=50 nameRight=113.9 countryLeft=119.9 countryRight=170.2 titleRight=170.2 rowRight=172.0 goLeft=n/a
+390 p Dubai / United Arab Emirates: BESIDE lines=1 countryW=125.1 scrollW=125 nameRight=138.2 countryLeft=144.2 countryRight=269.3 titleRight=269.3 rowRight=275.1 goLeft=n/a
+768 t Madrid / Spain: BESIDE lines=1 countryW=34.0 scrollW=34 nameRight=128.8 countryLeft=134.8 countryRight=168.8 titleRight=168.8 rowRight=232.3 goLeft=178.0
+768 t Taipei / Taiwan: BESIDE lines=1 countryW=41.4 scrollW=41 nameRight=120.8 countryLeft=126.8 countryRight=168.2 titleRight=168.2 rowRight=232.3 goLeft=178.0
+1024 t Dubai / United Arab Emirates: BESIDE lines=1 countryW=125.1 scrollW=125 nameRight=120.0 countryLeft=126.0 countryRight=251.1 titleRight=251.1 rowRight=317.7 goLeft=263.4
+1024 t Los Angeles / United States: BESIDE lines=1 countryW=80.4 scrollW=80 nameRight=165.7 countryLeft=171.7 countryRight=252.1 titleRight=252.1 rowRight=317.7 goLeft=263.4
+1280 t Las Terrenas / Dominican Republic: BESIDE lines=1 countryW=118.5 scrollW=118 nameRight=217.2 countryLeft=223.2 countryRight=341.7 titleRight=341.7 rowRight=419.0 goLeft=364.7
+1280 p Lake Atitlán (Panajachel) / Guatemala: BESIDE lines=1 countryW=64.1 scrollW=64 nameRight=351.0 countryLeft=357.0 countryRight=421.0 titleRight=421.0 rowRight=427.3 goLeft=n/a

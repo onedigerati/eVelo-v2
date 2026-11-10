@@ -1,0 +1,96 @@
+node docs/evidence/stage-1/verify1.mjs docs/evidence/stage-1   # vite preview of npm run build, port 5231; measurements, screenshots, click on country, console errors
+== desktop dark tiles
+Chiang Rai [15px 560 rgb(236, 241, 238)] | "Thailand" [13px 400 rgb(132, 145, 139)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=105.5
+St. Louis [15px 560 rgb(236, 241, 238)] | "United States" [13px 400 rgb(132, 145, 139)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=90.3
+Bangkok [15px 560 rgb(236, 241, 238)] | "Thailand" [13px 400 rgb(132, 145, 139)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=118.5
+== desktop dark picks
+Algarve (Faro) [17px 620 rgb(236, 241, 238)] | "Portugal" [13px 400 rgb(132, 145, 139)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Lisbon [17px 620 rgb(236, 241, 238)] | "Portugal" [13px 400 rgb(132, 145, 139)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Paphos [17px 620 rgb(236, 241, 238)] | "Cyprus" [13px 400 rgb(132, 145, 139)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Panama City [17px 620 rgb(236, 241, 238)] | "Panama" [13px 400 rgb(132, 145, 139)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Boquete [17px 620 rgb(236, 241, 238)] | "Panama" [13px 400 rgb(132, 145, 139)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Kuala Lumpur [17px 620 rgb(236, 241, 238)] | "Malaysia" [13px 400 rgb(132, 145, 139)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+== desktop light tiles
+Chiang Rai [15px 560 rgb(20, 24, 21)] | "Thailand" [13px 400 rgb(94, 101, 95)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=105.5
+St. Louis [15px 560 rgb(20, 24, 21)] | "United States" [13px 400 rgb(94, 101, 95)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=90.3
+Bangkok [15px 560 rgb(20, 24, 21)] | "Thailand" [13px 400 rgb(94, 101, 95)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=118.5
+== desktop light picks
+Algarve (Faro) [17px 620 rgb(20, 24, 21)] | "Portugal" [13px 400 rgb(94, 101, 95)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Lisbon [17px 620 rgb(20, 24, 21)] | "Portugal" [13px 400 rgb(94, 101, 95)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Paphos [17px 620 rgb(20, 24, 21)] | "Cyprus" [13px 400 rgb(94, 101, 95)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Panama City [17px 620 rgb(20, 24, 21)] | "Panama" [13px 400 rgb(94, 101, 95)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Boquete [17px 620 rgb(20, 24, 21)] | "Panama" [13px 400 rgb(94, 101, 95)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Kuala Lumpur [17px 620 rgb(20, 24, 21)] | "Malaysia" [13px 400 rgb(94, 101, 95)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+== tablet dark tiles
+Chiang Rai [15px 560 rgb(236, 241, 238)] | "Thailand" [13px 400 rgb(132, 145, 139)] VISIBLE UNDER-name nameTrim=false countryTrim=false gapToProfile=22.9
+St. Louis [15px 560 rgb(236, 241, 238)] | "United States" [13px 400 rgb(132, 145, 139)] VISIBLE UNDER-name nameTrim=false countryTrim=false gapToProfile=18.6
+Bangkok [15px 560 rgb(236, 241, 238)] | "Thailand" [13px 400 rgb(132, 145, 139)] VISIBLE UNDER-name nameTrim=false countryTrim=false gapToProfile=35.9
+== tablet dark picks
+Algarve (Faro) [17px 620 rgb(236, 241, 238)] | "Portugal" [13px 400 rgb(132, 145, 139)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Lisbon [17px 620 rgb(236, 241, 238)] | "Portugal" [13px 400 rgb(132, 145, 139)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Paphos [17px 620 rgb(236, 241, 238)] | "Cyprus" [13px 400 rgb(132, 145, 139)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Panama City [17px 620 rgb(236, 241, 238)] | "Panama" [13px 400 rgb(132, 145, 139)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Boquete [17px 620 rgb(236, 241, 238)] | "Panama" [13px 400 rgb(132, 145, 139)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Kuala Lumpur [17px 620 rgb(236, 241, 238)] | "Malaysia" [13px 400 rgb(132, 145, 139)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+== tablet light tiles
+Chiang Rai [15px 560 rgb(20, 24, 21)] | "Thailand" [13px 400 rgb(94, 101, 95)] VISIBLE UNDER-name nameTrim=false countryTrim=false gapToProfile=22.9
+St. Louis [15px 560 rgb(20, 24, 21)] | "United States" [13px 400 rgb(94, 101, 95)] VISIBLE UNDER-name nameTrim=false countryTrim=false gapToProfile=18.6
+Bangkok [15px 560 rgb(20, 24, 21)] | "Thailand" [13px 400 rgb(94, 101, 95)] VISIBLE UNDER-name nameTrim=false countryTrim=false gapToProfile=35.9
+== tablet light picks
+Algarve (Faro) [17px 620 rgb(20, 24, 21)] | "Portugal" [13px 400 rgb(94, 101, 95)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Lisbon [17px 620 rgb(20, 24, 21)] | "Portugal" [13px 400 rgb(94, 101, 95)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Paphos [17px 620 rgb(20, 24, 21)] | "Cyprus" [13px 400 rgb(94, 101, 95)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Panama City [17px 620 rgb(20, 24, 21)] | "Panama" [13px 400 rgb(94, 101, 95)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Boquete [17px 620 rgb(20, 24, 21)] | "Panama" [13px 400 rgb(94, 101, 95)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Kuala Lumpur [17px 620 rgb(20, 24, 21)] | "Malaysia" [13px 400 rgb(94, 101, 95)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+== phone dark tiles
+Chiang Rai [15px 560 rgb(236, 241, 238)] | "Thailand" [13px 400 rgb(132, 145, 139)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=103.5
+St. Louis [15px 560 rgb(236, 241, 238)] | "United States" [13px 400 rgb(132, 145, 139)] VISIBLE UNDER-name nameTrim=false countryTrim=false gapToProfile=n/a
+Bangkok [15px 560 rgb(236, 241, 238)] | "Thailand" [13px 400 rgb(132, 145, 139)] VISIBLE UNDER-name nameTrim=false countryTrim=false gapToProfile=n/a
+== phone dark picks
+Algarve (Faro) [17px 620 rgb(236, 241, 238)] | "Portugal" [13px 400 rgb(132, 145, 139)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Lisbon [17px 620 rgb(236, 241, 238)] | "Portugal" [13px 400 rgb(132, 145, 139)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Paphos [17px 620 rgb(236, 241, 238)] | "Cyprus" [13px 400 rgb(132, 145, 139)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Panama City [17px 620 rgb(236, 241, 238)] | "Panama" [13px 400 rgb(132, 145, 139)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Boquete [17px 620 rgb(236, 241, 238)] | "Panama" [13px 400 rgb(132, 145, 139)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Kuala Lumpur [17px 620 rgb(236, 241, 238)] | "Malaysia" [13px 400 rgb(132, 145, 139)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Porto [17px 620 rgb(236, 241, 238)] | "Portugal" [13px 400 rgb(132, 145, 139)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Cascais [17px 620 rgb(236, 241, 238)] | "Portugal" [13px 400 rgb(132, 145, 139)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Málaga [17px 620 rgb(236, 241, 238)] | "Spain" [13px 400 rgb(132, 145, 139)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Madrid [17px 620 rgb(236, 241, 238)] | "Spain" [13px 400 rgb(132, 145, 139)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Athens [17px 620 rgb(236, 241, 238)] | "Greece" [13px 400 rgb(132, 145, 139)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Penang (George Town) [17px 620 rgb(236, 241, 238)] | "Malaysia" [13px 400 rgb(132, 145, 139)] VISIBLE UNDER-name nameTrim=false countryTrim=false gapToProfile=n/a
+Crete (Chania) [17px 620 rgb(236, 241, 238)] | "Greece" [13px 400 rgb(132, 145, 139)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Tavira [17px 620 rgb(236, 241, 238)] | "Portugal" [13px 400 rgb(132, 145, 139)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Valencia [17px 620 rgb(236, 241, 238)] | "Spain" [13px 400 rgb(132, 145, 139)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+== phone light tiles
+Chiang Rai [15px 560 rgb(20, 24, 21)] | "Thailand" [13px 400 rgb(94, 101, 95)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=103.5
+St. Louis [15px 560 rgb(20, 24, 21)] | "United States" [13px 400 rgb(94, 101, 95)] VISIBLE UNDER-name nameTrim=false countryTrim=false gapToProfile=n/a
+Bangkok [15px 560 rgb(20, 24, 21)] | "Thailand" [13px 400 rgb(94, 101, 95)] VISIBLE UNDER-name nameTrim=false countryTrim=false gapToProfile=n/a
+== phone light picks
+Algarve (Faro) [17px 620 rgb(20, 24, 21)] | "Portugal" [13px 400 rgb(94, 101, 95)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Lisbon [17px 620 rgb(20, 24, 21)] | "Portugal" [13px 400 rgb(94, 101, 95)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Paphos [17px 620 rgb(20, 24, 21)] | "Cyprus" [13px 400 rgb(94, 101, 95)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Panama City [17px 620 rgb(20, 24, 21)] | "Panama" [13px 400 rgb(94, 101, 95)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Boquete [17px 620 rgb(20, 24, 21)] | "Panama" [13px 400 rgb(94, 101, 95)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Kuala Lumpur [17px 620 rgb(20, 24, 21)] | "Malaysia" [13px 400 rgb(94, 101, 95)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Porto [17px 620 rgb(20, 24, 21)] | "Portugal" [13px 400 rgb(94, 101, 95)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Cascais [17px 620 rgb(20, 24, 21)] | "Portugal" [13px 400 rgb(94, 101, 95)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Málaga [17px 620 rgb(20, 24, 21)] | "Spain" [13px 400 rgb(94, 101, 95)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Madrid [17px 620 rgb(20, 24, 21)] | "Spain" [13px 400 rgb(94, 101, 95)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Athens [17px 620 rgb(20, 24, 21)] | "Greece" [13px 400 rgb(94, 101, 95)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Penang (George Town) [17px 620 rgb(20, 24, 21)] | "Malaysia" [13px 400 rgb(94, 101, 95)] VISIBLE UNDER-name nameTrim=false countryTrim=false gapToProfile=n/a
+Crete (Chania) [17px 620 rgb(20, 24, 21)] | "Greece" [13px 400 rgb(94, 101, 95)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Tavira [17px 620 rgb(20, 24, 21)] | "Portugal" [13px 400 rgb(94, 101, 95)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+Valencia [17px 620 rgb(20, 24, 21)] | "Spain" [13px 400 rgb(94, 101, 95)] VISIBLE ON-name-line nameTrim=false countryTrim=false gapToProfile=n/a
+1280 click .atile__country[0] "Thailand" hit=atile__name atile__open -> No. 48 Chiang Rai
+1280 click .atile__country[1] "United States" hit=atile__name atile__open ->  St. Louis
+1280 click .atile__country[2] "Thailand" hit=atile__name atile__open -> No. 27 Bangkok
+1280 click .pick__country[0] "Portugal" hit=pick__open -> No. 1 Algarve (Faro)
+1280 click .pick__country[1] "Portugal" hit=pick__open -> No. 2 Lisbon
+390 click .atile__country[0] "Thailand" hit=atile__name atile__open -> No. 48 Chiang Rai
+390 click .atile__country[1] "United States" hit=atile__name atile__open ->  St. Louis
+390 click .atile__country[2] "Thailand" hit=atile__name atile__open -> No. 27 Bangkok
+390 click .pick__country[0] "Portugal" hit=pick__open -> No. 1 Algarve (Faro)
+390 click .pick__country[1] "Portugal" hit=pick__open -> No. 2 Lisbon
+console errors: none

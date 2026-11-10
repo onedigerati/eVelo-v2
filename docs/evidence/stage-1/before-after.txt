@@ -1,0 +1,27 @@
+node docs/evidence/stage-1/heights.mjs <port>   # 5232 = HEAD 996bc5c build (git archive copy), 5231 = working-tree build; card heights px, tile name trimmed?
+-- HEAD 996bc5c
+1280 {"tiles":[182,182,182],"pick":327,"tileNameTrim":[false,false,false]}
+1024 {"tiles":[179,179,179],"pick":327,"tileNameTrim":[false,false,false]}
+768 {"tiles":[202,202,202],"pick":327,"tileNameTrim":[false,false,false]}
+390 {"tiles":[160,208,208],"pick":349,"tileNameTrim":[false,false,false]}
+360 {"tiles":[160,225,225],"pick":371,"tileNameTrim":[false,false,false]}
+-- working tree
+1280 {"tiles":[182,182,182],"pick":327,"tileNameTrim":[false,false,false]}
+1024 {"tiles":[179,179,179],"pick":327,"tileNameTrim":[false,false,false]}
+768 {"tiles":[219,219,219],"pick":327,"tileNameTrim":[false,false,false]}
+390 {"tiles":[160,226,226],"pick":367,"tileNameTrim":[false,false,false]}
+360 {"tiles":[160,243,243],"pick":371,"tileNameTrim":[false,false,false]}
+
+node docs/evidence/stage-1/nametrim.mjs <port> <scratchpad>/cities.json   # names trimmed across all 133 cities, before vs after
+-- HEAD 996bc5c
+1280 tile1 nameTrim=0 | tile2 nameTrim=0 | pick nameTrim=0
+1024 tile1 nameTrim=3 | tile2 nameTrim=3 | pick nameTrim=0
+768 tile1 nameTrim=22 | tile2 nameTrim=22 | pick nameTrim=0
+390 tile1 nameTrim=0 | tile2 nameTrim=15 | pick nameTrim=4
+360 tile1 nameTrim=0 | tile2 nameTrim=22 | pick nameTrim=7
+-- working tree
+1280 tile1 nameTrim=0 | tile2 nameTrim=0 | pick nameTrim=0
+1024 tile1 nameTrim=3 | tile2 nameTrim=3 | pick nameTrim=0
+768 tile1 nameTrim=22 | tile2 nameTrim=22 | pick nameTrim=0
+390 tile1 nameTrim=0 | tile2 nameTrim=15 | pick nameTrim=4
+360 tile1 nameTrim=0 | tile2 nameTrim=22 | pick nameTrim=7

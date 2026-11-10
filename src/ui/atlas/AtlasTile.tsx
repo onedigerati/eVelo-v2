@@ -33,19 +33,26 @@ export function Tile({ eyebrow, row, note, empty, action, onProfile }: TileProps
         <>
           <div className="atile__city">
             <CodeChip code={row.city.countryCode} />
-            {open ? (
-              <button
-                type="button"
-                className="atile__name atile__open"
-                onClick={open}
-                {...preloadOnIntent(row.cityId)}
-                aria-label={tileOpenLabel(eyebrow, row, note)}
-              >
-                {row.city.name}
-              </button>
-            ) : (
-              <span className="atile__name">{row.city.name}</span>
-            )}
+            {/* Name and country: the country trims before the name does. */}
+            <span className="atile__title">
+              {open ? (
+                <button
+                  type="button"
+                  className="atile__name atile__open"
+                  onClick={open}
+                  {...preloadOnIntent(row.cityId)}
+                  aria-label={tileOpenLabel(eyebrow, row, note)}
+                >
+                  {row.city.name}
+                </button>
+              ) : (
+                <span className="atile__name">{row.city.name}</span>
+              )}
+              {/* The open button's label already names the country; the plain tile reads it here. */}
+              <span className="atile__country" aria-hidden={open ? 'true' : undefined}>
+                {row.city.country}
+              </span>
+            </span>
             {open && <ProfileGo where="head" />}
           </div>
           <div className="atile__fig" style={{ color: successTextColor(row.successRate) }}>

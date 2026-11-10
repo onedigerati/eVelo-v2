@@ -1,0 +1,16 @@
+node docs/evidence/stage-1/fitcheck.mjs <scratchpad>/cities.json   # vite preview of npm run build, port 5231; 133 cities. room = widest the title can be (row minus what follows it, 8px gaps) minus name minus 6px gap; need = the country's one-line width (a nowrap clone in the title)
+1280 tile1: wrappedButWouldFit=0 besideButOverflows=0 maxBaselineOffset=0.0 maxChipOffFromNameLine=0.0 maxProfileGoOffFromNameLine=1.4
+1280 tile2: wrappedButWouldFit=0 besideButOverflows=0 maxBaselineOffset=0.0 maxChipOffFromNameLine=0.0 maxProfileGoOffFromNameLine=1.4
+1280 pick: wrappedButWouldFit=0 besideButOverflows=0 maxBaselineOffset=0.0 maxChipOffFromNameLine=0.0 maxProfileGoOffFromNameLine=n/a
+1024 tile1: wrappedButWouldFit=0 besideButOverflows=0 maxBaselineOffset=0.0 maxChipOffFromNameLine=0.0 maxProfileGoOffFromNameLine=1.4
+1024 tile2: wrappedButWouldFit=0 besideButOverflows=0 maxBaselineOffset=0.0 maxChipOffFromNameLine=0.0 maxProfileGoOffFromNameLine=1.4
+1024 pick: wrappedButWouldFit=0 besideButOverflows=0 maxBaselineOffset=0.0 maxChipOffFromNameLine=0.0 maxProfileGoOffFromNameLine=n/a
+768 tile1: wrappedButWouldFit=0 besideButOverflows=0 maxBaselineOffset=0.0 maxChipOffFromNameLine=0.0 maxProfileGoOffFromNameLine=1.4
+768 tile2: wrappedButWouldFit=0 besideButOverflows=0 maxBaselineOffset=0.0 maxChipOffFromNameLine=0.0 maxProfileGoOffFromNameLine=1.4
+768 pick: wrappedButWouldFit=0 besideButOverflows=0 maxBaselineOffset=0.0 maxChipOffFromNameLine=0.0 maxProfileGoOffFromNameLine=n/a
+390 tile1: wrappedButWouldFit=0 besideButOverflows=0 maxBaselineOffset=0.0 maxChipOffFromNameLine=0.0 maxProfileGoOffFromNameLine=1.4
+390 tile2: wrappedButWouldFit=0 besideButOverflows=0 maxBaselineOffset=0.0 maxChipOffFromNameLine=0.0 maxProfileGoOffFromNameLine=n/a
+390 pick: wrappedButWouldFit=0 besideButOverflows=0 maxBaselineOffset=0.0 maxChipOffFromNameLine=0.0 maxProfileGoOffFromNameLine=n/a
+360 tile1: wrappedButWouldFit=0 besideButOverflows=0 maxBaselineOffset=0.0 maxChipOffFromNameLine=0.0 maxProfileGoOffFromNameLine=1.4
+360 tile2: wrappedButWouldFit=0 besideButOverflows=0 maxBaselineOffset=0.0 maxChipOffFromNameLine=0.0 maxProfileGoOffFromNameLine=n/a
+360 pick: wrappedButWouldFit=0 besideButOverflows=0 maxBaselineOffset=0.0 maxChipOffFromNameLine=0.0 maxProfileGoOffFromNameLine=n/a

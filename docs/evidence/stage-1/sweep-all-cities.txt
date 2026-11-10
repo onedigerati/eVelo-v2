@@ -1,0 +1,33 @@
+node docs/evidence/stage-1/sweep1.mjs <scratchpad>/cities.json   # vite preview of npm run build, port 5231; 133 cities; fix round 2
+1280 tile-full(best): onLine=129 under=4 hidden=0 stub=0 nameTrim=0 minGapToProfile=21.4
+1280 tile-2nd(home): onLine=129 under=4 hidden=0 stub=0 nameTrim=0 minGapToProfile=21.4
+1280 tile-3rd: onLine=129 under=4 hidden=0 stub=0 nameTrim=0 minGapToProfile=21.4
+1280 pick: onLine=133 under=0 hidden=0 stub=0 nameTrim=0 minGapToProfile=n/a
+1024 tile-full(best): onLine=119 under=14 hidden=0 stub=0 nameTrim=3 minGapToProfile=8.0
+   name trimmed: Ambergris Caye (San Pedro); La Paz (Baja California Sur); Bali (Denpasar / Canggu)
+1024 tile-2nd(home): onLine=119 under=14 hidden=0 stub=0 nameTrim=3 minGapToProfile=8.0
+   name trimmed: Ambergris Caye (San Pedro); La Paz (Baja California Sur); Bali (Denpasar / Canggu)
+1024 tile-3rd: onLine=119 under=14 hidden=0 stub=0 nameTrim=3 minGapToProfile=8.0
+   name trimmed: Ambergris Caye (San Pedro); La Paz (Baja California Sur); Bali (Denpasar / Canggu)
+1024 pick: onLine=133 under=0 hidden=0 stub=0 nameTrim=0 minGapToProfile=n/a
+768 tile-full(best): onLine=10 under=123 hidden=0 stub=0 nameTrim=22 minGapToProfile=8.0
+   name trimmed: New York City; San Francisco; Washington, DC; Salt Lake City; Puerto Vallarta; San Miguel de Allende; Playa del Carmen; Buenos Aires; Lake Chapala / Ajijic; Cayo (San Ignacio); Ambergris Caye (San Pedro); La Paz (Baja California Sur); Lake Atitlán (Panajachel); Antigua Guatemala; Algarve (Faro); Madeira (Funchal); Crete (Chania); Gascony (Auch); Kuala Lumpur; Penang (George Town); Ho Chi Minh City; Bali (Denpasar / Canggu)
+768 tile-2nd(home): onLine=10 under=123 hidden=0 stub=0 nameTrim=22 minGapToProfile=8.0
+   name trimmed: New York City; San Francisco; Washington, DC; Salt Lake City; Puerto Vallarta; San Miguel de Allende; Playa del Carmen; Buenos Aires; Lake Chapala / Ajijic; Cayo (San Ignacio); Ambergris Caye (San Pedro); La Paz (Baja California Sur); Lake Atitlán (Panajachel); Antigua Guatemala; Algarve (Faro); Madeira (Funchal); Crete (Chania); Gascony (Auch); Kuala Lumpur; Penang (George Town); Ho Chi Minh City; Bali (Denpasar / Canggu)
+768 tile-3rd: onLine=10 under=123 hidden=0 stub=0 nameTrim=22 minGapToProfile=8.0
+   name trimmed: New York City; San Francisco; Washington, DC; Salt Lake City; Puerto Vallarta; San Miguel de Allende; Playa del Carmen; Buenos Aires; Lake Chapala / Ajijic; Cayo (San Ignacio); Ambergris Caye (San Pedro); La Paz (Baja California Sur); Lake Atitlán (Panajachel); Antigua Guatemala; Algarve (Faro); Madeira (Funchal); Crete (Chania); Gascony (Auch); Kuala Lumpur; Penang (George Town); Ho Chi Minh City; Bali (Denpasar / Canggu)
+768 pick: onLine=129 under=4 hidden=0 stub=0 nameTrim=0 minGapToProfile=n/a
+390 tile-full(best): onLine=129 under=4 hidden=0 stub=0 nameTrim=0 minGapToProfile=19.4
+390 tile-2nd(home): onLine=33 under=100 hidden=0 stub=0 nameTrim=15 minGapToProfile=n/a
+   name trimmed: Washington, DC; Puerto Vallarta; San Miguel de Allende; Playa del Carmen; Lake Chapala / Ajijic; Cayo (San Ignacio); Ambergris Caye (San Pedro); La Paz (Baja California Sur); Lake Atitlán (Panajachel); Antigua Guatemala; Madeira (Funchal); Gascony (Auch); Penang (George Town); Ho Chi Minh City; Bali (Denpasar / Canggu)
+390 tile-3rd: onLine=33 under=100 hidden=0 stub=0 nameTrim=15 minGapToProfile=n/a
+   name trimmed: Washington, DC; Puerto Vallarta; San Miguel de Allende; Playa del Carmen; Lake Chapala / Ajijic; Cayo (San Ignacio); Ambergris Caye (San Pedro); La Paz (Baja California Sur); Lake Atitlán (Panajachel); Antigua Guatemala; Madeira (Funchal); Gascony (Auch); Penang (George Town); Ho Chi Minh City; Bali (Denpasar / Canggu)
+390 pick: onLine=112 under=21 hidden=0 stub=0 nameTrim=4 minGapToProfile=n/a
+   name trimmed: Ambergris Caye (San Pedro); La Paz (Baja California Sur); Lake Atitlán (Panajachel); Bali (Denpasar / Canggu)
+360 tile-full(best): onLine=124 under=9 hidden=0 stub=0 nameTrim=0 minGapToProfile=8.0
+360 tile-2nd(home): onLine=10 under=123 hidden=0 stub=0 nameTrim=22 minGapToProfile=n/a
+   name trimmed: New York City; San Francisco; Washington, DC; Salt Lake City; Puerto Vallarta; San Miguel de Allende; Playa del Carmen; Buenos Aires; Lake Chapala / Ajijic; Cayo (San Ignacio); Ambergris Caye (San Pedro); La Paz (Baja California Sur); Lake Atitlán (Panajachel); Antigua Guatemala; Algarve (Faro); Madeira (Funchal); Crete (Chania); Gascony (Auch); Kuala Lumpur; Penang (George Town); Ho Chi Minh City; Bali (Denpasar / Canggu)
+360 tile-3rd: onLine=10 under=123 hidden=0 stub=0 nameTrim=22 minGapToProfile=n/a
+   name trimmed: New York City; San Francisco; Washington, DC; Salt Lake City; Puerto Vallarta; San Miguel de Allende; Playa del Carmen; Buenos Aires; Lake Chapala / Ajijic; Cayo (San Ignacio); Ambergris Caye (San Pedro); La Paz (Baja California Sur); Lake Atitlán (Panajachel); Antigua Guatemala; Algarve (Faro); Madeira (Funchal); Crete (Chania); Gascony (Auch); Kuala Lumpur; Penang (George Town); Ho Chi Minh City; Bali (Denpasar / Canggu)
+360 pick: onLine=92 under=41 hidden=0 stub=0 nameTrim=7 minGapToProfile=n/a
+   name trimmed: San Miguel de Allende; Lake Chapala / Ajijic; Ambergris Caye (San Pedro); La Paz (Baja California Sur); Lake Atitlán (Panajachel); Penang (George Town); Bali (Denpasar / Canggu)

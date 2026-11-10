@@ -147,14 +147,27 @@
 }
 .atile__city {
   display: flex;
-  align-items: center;
+  /* Everything lines up with the name's first line, also when the country wraps under it. */
+  align-items: baseline;
   gap: 8px;
   font-weight: 560;
   font-size: var(--fs-md);
   min-width: 0;
 }
-.atile__name {
+/* Name + country, sharing a baseline. The country sits beside the name when it fits whole, and
+   otherwise wraps onto its own line under the name (a very long country wraps its own text there),
+   so it is never cut to a stub. The name never shrinks; it trims only once it alone is too wide. */
+.atile__title {
   flex: 0 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 6px;
+}
+.atile__name {
+  flex: 0 0 auto;
+  max-width: 100%;
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -162,6 +175,22 @@
 }
 .atile__open {
   text-align: left;
+}
+/* The country: quieter than the city, and never trimmed (it wraps under the name instead). */
+.atile__country {
+  flex: 0 0 auto;
+  max-width: 100%;
+  white-space: normal;
+  text-wrap: balance;
+  line-height: 1.35;
+  font-size: var(--fs-sm);
+  font-weight: 400;
+  color: var(--ink-3);
+}
+/* The chip is centred on the name's line box (font size x body line height), not on the block. */
+.atile__city > .code-chip {
+  align-self: flex-start;
+  margin-top: calc((var(--fs-md) * var(--lh-body) - 18px) / 2);
 }
 /* The stretched overlay: the whole tile is the button's hit area. */
 .atile__open::after {
@@ -1901,11 +1930,25 @@
 }
 .pick__city {
   display: flex;
-  align-items: center;
+  /* Everything lines up with the name's first line, also when the country wraps under it. */
+  align-items: baseline;
   gap: 8px;
   min-width: 0;
 }
+/* Name + country, as in the atlas tiles: the country sits beside the name when it fits whole, else
+   wraps under it; the name trims only once it alone is too wide. */
+.pick__title {
+  flex: 0 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 6px;
+  font-size: var(--fs-lg);
+}
 .pick__open {
+  flex: 0 0 auto;
+  max-width: 100%;
   min-width: 0;
   font-size: var(--fs-lg);
   font-weight: 620;
@@ -1915,6 +1958,26 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+/* The country: quieter than the city, and never trimmed (it wraps under the name instead). */
+.pick__country {
+  flex: 0 0 auto;
+  max-width: 100%;
+  white-space: normal;
+  text-wrap: balance;
+  line-height: 1.35;
+  font-size: var(--fs-sm);
+  font-weight: 400;
+  color: var(--ink-3);
+}
+/* Chip and Destination/Home tags are centred on the name's line box, not on the block. */
+.pick__city > .code-chip {
+  align-self: flex-start;
+  margin-top: calc((var(--fs-lg) * var(--lh-body) - 18px) / 2);
+}
+.pick__city > .crow__tag {
+  align-self: flex-start;
+  margin-top: calc((var(--fs-lg) * var(--lh-body) - 20px) / 2);
 }
 /* The whole card opens the profile. */
 .pick__open::after {

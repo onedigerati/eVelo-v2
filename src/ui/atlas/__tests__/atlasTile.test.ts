@@ -100,4 +100,81 @@ describe('Tile', () => {
     expect(z(rule('.atile__action'))).toBeGreaterThan(z(overlay))
     expect(rule('.atile--link:has(.atile__open:focus-visible)')).toMatch(/box-shadow: var\(--focus-ring\)/)
   })
+
+  it('shows the country beside the city name, after the name, quiet and hidden from AT only when the open button names it', () => {
+    const country = (m: string) => m.match(/<span class="atile__country"([^>]*)>([^<]*)<\/span>/)
+    const nameLine = (m: string) => m.match(/<div class="atile__city">(.*?)<\/div>/)?.[1] ?? ''
+    // Profiled tile: decoration beside the stretched button, whose label already carries the country.
+    const linked = { eyebrow: 'Best odds', row: lisbon, note: 'Rank 1 of 133', onProfile: () => {} }
+    const m1 = html(linked)
+    const c1 = country(m1)!
+    expect(c1[2]).toBe('Portugal')
+    expect(c1[1]).toContain('aria-hidden="true"')
+    const line1 = nameLine(m1)
+    expect(line1.indexOf('atile__country')).toBeGreaterThan(line1.indexOf('atile__open'))
+    expect(line1.indexOf('atile__country')).toBeLessThan(line1.indexOf('atile__go--head'))
+    expect(String(openButton(linked)!.props['aria-label'])).toBe(
+      'Best odds: Lisbon, Portugal. Plan holds in 82% of futures, Rank 1 of 133. Open profile.',
+    )
+    expect(openButton(linked)!.props.children).toBe('Lisbon')
+    expect(buttons(linked)).toHaveLength(1)
+    // Plain tile: readable text right after the name.
+    const m2 = html({ eyebrow: 'Your home', row: lisbon, note: 'Rank 1 of 133' })
+    const c2 = country(m2)!
+    expect(c2[2]).toBe('Portugal')
+    expect(c2[1]).not.toContain('aria-hidden')
+    expect(nameLine(m2)).toMatch(
+      /<span class="atile__title"><span class="atile__name">Lisbon<\/span><span class="atile__country">Portugal<\/span><\/span>/,
+    )
+  })
+
+  it('the country reads quieter than the name and is never a stub: beside the name when it fits whole, else under it (atlas.css)', () => {
+    const css = readFileSync(new URL('../atlas.css', import.meta.url), 'utf8')
+    const rule = (sel: string) => css.match(new RegExp(`(?:^|\\n)${sel.replace(/[.:()>-]/g, '\\$&')} \\{([^}]*)\\}`))?.[1] ?? ''
+    for (const [c, title, name, country, fs] of [
+      ['atile', '.atile__title', '.atile__name', '.atile__country', '--fs-md'],
+      ['pick', '.pick__title', '.pick__open', '.pick__country', '--fs-lg'],
+    ] as const) {
+      // The title shrinks with the line and wraps the country under the name when it doesn't fit
+      // beside it. No fixed height and no clip: a wrapped country is shown, not hidden.
+      const t = rule(title)
+      expect(t).toMatch(/flex: 0 1 auto/)
+      expect(t).toMatch(/min-width: 0/)
+      expect(t).toMatch(/display: flex/)
+      expect(t).toMatch(/flex-wrap: wrap/)
+      expect(t).toMatch(/align-items: baseline/)
+      expect(t).toMatch(/column-gap: 6px/)
+      expect(t).not.toMatch(/height|overflow|position|z-index/)
+      // The name never shrinks; it trims only once it alone is wider than the title.
+      expect(rule(name)).toMatch(/flex: 0 0 auto/)
+      expect(rule(name)).toMatch(/max-width: 100%/)
+      expect(rule(name)).toMatch(/text-overflow: ellipsis/)
+      // The country never shrinks and is never ellipsized; a very long one wraps its own text.
+      const k = rule(country)
+      expect(k).toMatch(/flex: 0 0 auto/)
+      expect(k).toMatch(/max-width: 100%/)
+      expect(k).toMatch(/white-space: normal/)
+      expect(k).not.toMatch(/ellipsis|nowrap|min-width: 0|overflow|flex-shrink: 1|flex: 0 1/)
+      expect(k).toMatch(/font-size: var\(--fs-sm\)/)
+      expect(k).toMatch(/font-weight: 400/)
+      expect(k).toMatch(/color: var\(--ink-3\)/)
+      expect(k).not.toMatch(/position|z-index/)
+      // The row lines up with the name's first line: baseline, and the chip centred on that line.
+      expect(rule(`.${c}__city`)).toMatch(/align-items: baseline/)
+      const chip = rule(`.${c}__city > .code-chip`)
+      expect(chip).toMatch(/align-self: flex-start/)
+      expect(chip).toMatch(new RegExp(`margin-top: calc\\(\\(var\\(${fs}\\) \\* var\\(--lh-body\\) - 18px\\) / 2\\)`))
+    }
+    expect(rule('.pick__title')).toMatch(/font-size: var\(--fs-lg\)/)
+    expect(rule('.atile__city')).toMatch(/font-size: var\(--fs-md\)/)
+    expect(rule('.atile__city')).toMatch(/font-weight: 560/)
+    expect(rule('.pick__open')).toMatch(/font-size: var\(--fs-lg\)/)
+  })
+
+  it('no width-based stacking rules: no container queries and no viewport rules for the name line (atlas.css)', () => {
+    const css = readFileSync(new URL('../atlas.css', import.meta.url), 'utf8')
+    expect(css).not.toMatch(/@container|container-type|container:/)
+    expect(css).not.toMatch(/\.atile:not\(:first-child\) \.atile__(title|country|city)/)
+    expect(css).not.toMatch(/\n {2,}\.(atile|pick)__(title|country) \{/)
+  })
 })

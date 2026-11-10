@@ -1,32 +1,39 @@
 # Country on city cards plan
 
 ## Goal
-The atlas city cards (the Best odds, Your home and Your destination tiles, and the Top picks cards) show the country next to the city name, quietly enough that the city name still leads: smaller, lighter and muted, so the code chip is no longer the only hint of the country. Done = the stage passes verification in the running build; deploy waits for the user's go.
+The atlas city cards (the Best odds, Your home and Your destination tiles, and the Top picks cards) show the country next to the city name, quietly enough that the city name still leads: smaller, lighter and muted, so the code chip is no longer the only hint of the country. Then (stage 2) on a phone, a sheet such as the city profile closes with a swipe down anywhere on it once its content is scrolled to the top, as well as by the handle and ×. Done = both stages pass verification in the running build; deploy waits for the user's go.
 
 ## Baseline
 2026-11-10 · tests: 749 pass · typecheck: clean
 
 ## Now
-Stage 1 of 1 · Country label
+Stage 1 of 2 · Country label
 Mode: autopilot
 Agents: wide — confirmed 2026-11-10 08:45
 Risk: UI only
 Checks:
-- [ ] Each of the three atlas tiles with a city and each Top picks card shows that city's country name beside the city name (proof: test)
-- [ ] The country reads quieter than the city (smaller, regular weight, muted ink); a long name keeps the city whole and trims the country first, and the whole-card click and accessible names are unchanged (proof: test)
-- [ ] In the running app the country sits on the name line, subtle, without crowding "Profile →" or wrapping, in dark and light, phone and desktop (proof: screenshot, a test can't judge the look)
+- [x] Each of the three atlas tiles with a city and each Top picks card shows that city's country name beside the city name (proof: test)
+- [x] The country reads quieter than the city (smaller, regular weight, muted ink); a long name keeps the city whole and the country shows whole or not at all (never a trimmed stub), stacking under the name on the phone's half-width tiles; and the whole-card click and accessible names are unchanged (proof: test)
+- [x] In the running app the country sits on the name line when it fits whole beside the name and wraps under the name when it doesn't (no width breakpoints), shown whole on every city, subtle, without crowding "Profile →" or showing a trimmed stub, in dark and light, phone and desktop (proof: screenshot, a test can't judge the look)
 Open: none
 
 ## Stages
 - [ ] 1. Country label — muted country name beside the city on atlas tiles and top-pick cards
+- [ ] 2. Swipe to close — swipe down on a phone sheet's content at scroll top closes it, like the handle
 
 ## Decisions
 - 2026-11-10 · Agents: wide; run on autopilot — user: "Let's go wide and on autopilot."
 - 2026-11-10 · Scale check didn't fire (1 stage, one release) — PM's call.
 - 2026-11-10 · The country goes inline after the city name in a smaller, regular-weight, muted face (as the "also worth a look" rows and the city list already show it), not on its own line, so the cards keep their height and look — PM's call (default).
+- 2026-11-10 · Push to main and deploy once the stage passes — user: "Push and deploy when ready."
+- 2026-11-10 · The country shows whole or not at all (wraps to a clipped line, as the city list's subtitle does), and stacks under the name on the phone's half-width tiles, after "Unit…" showed on St. Louis at 390px — PM's call.
+- 2026-11-10 · Fix round 1: verify failed checks 2–3 (stubs like "Dominican Repu…" on phone half-width tiles; country hidden on 123/133 tiles at 768). Stacking now keys off the card's own width (container queries) and the stacked country wraps instead of trimming — PM's call.
+- 2026-11-10 · Swipe-down to close joins this plan as stage 2 (shared Sheet, so every phone sheet gets it), shipped in the same deploy — user chose "Stage 2 of this plan".
+- 2026-11-10 · Fix round 2: re-verify passed stubs/hidden (0/133) but the 340px container query stacked every desktop tile at 1280 (+18px). Replaced by a content rule: the country wraps under the name only when it doesn't fit beside it — PM's call.
 - 2026-11-10 · The code chip stays; the country is extra, not a replacement — PM's call (default).
 
 ## Open questions
+- Touch-dragging the tablet's left Plan drawer doesn't close it (fails the same before stage 2; likely needs `touch-action: pan-y` on side sheets) — from the stage 2 build, later.
 - The profile's tinted % marker overhangs the spending list's right edge by 4px (cosmetic, not clipped) — from the stage 1 verify, later.
 - The preview build (claude.ai artifact) needs the 665 new 640px copies uploaded to its asset store before preview galleries use them; until then they fall back to the originals — from stage 2, next preview publish.
 - Phones don't save photo bytes (DPR 3 needs the 1280); a 960px step or AVIF would — from the stage 2 verify, later.

@@ -67,7 +67,7 @@ export function TopPicks({ rows, homeId, destId, onOpen, onChoose }: TopPicksPro
   )
 }
 
-function PickCard({
+export function PickCard({
   v,
   i,
   homeId,
@@ -115,9 +115,16 @@ function PickCard({
       </div>
       <div className="pick__city">
         <CodeChip code={city.countryCode} />
-        <button type="button" className="pick__open" onClick={() => onOpen(pick.cityId)} {...preloadOnIntent(pick.cityId)} aria-label={label}>
-          {city.name}
-        </button>
+        {/* Name and country: the country trims before the name does. */}
+        <span className="pick__title">
+          <button type="button" className="pick__open" onClick={() => onOpen(pick.cityId)} {...preloadOnIntent(pick.cityId)} aria-label={label}>
+            {city.name}
+          </button>
+          {/* Decoration: the open button's label already names the country. */}
+          <span className="pick__country" aria-hidden="true">
+            {city.country}
+          </span>
+        </span>
         {isDest && <span className="crow__tag is-dest">Destination</span>}
         {isHome && <span className="crow__tag">Home</span>}
       </div>
