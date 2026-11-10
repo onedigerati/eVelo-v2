@@ -124,6 +124,8 @@ export function AtlasView() {
   const best = rows[0]
   const home = rows.find((r) => r.cityId === homeId)
   const dest = destId ? rows.find((r) => r.cityId === destId) : undefined
+  // With no destination, the hero tile suggests the best-odds city, when that isn't home.
+  const suggest = !destId && best && best.cityId !== homeId ? best : undefined
   const counts = useMemo(() => Object.fromEntries(REGION_CHIPS.map((r) => [r, CITIES.filter((c) => inRegion(c, r)).length])), [])
   const line = insight(rows, inputs)
 
@@ -152,9 +154,27 @@ export function AtlasView() {
           className="atlas__tiles"
           variants={rise}
           role="group"
-          aria-label="Best odds, your home and your destination"
+          aria-label="Your destination, your home and best odds"
           tabIndex={-1}
         >
+          <Tile
+            eyebrow="Your destination"
+            row={dest}
+            empty={!destId ? (suggest ? `Staying home. ${suggest.city.name} holds in ${Math.round(suggest.successRate * 100)}% of futures.` : 'Staying home. Tap any city to price a move.') : undefined}
+            action={!destId && suggest ? { label: `Move to ${suggest.city.name}`, onClick: () => choose(suggest.cityId) } : undefined}
+            note={
+              dest && home
+                ? `${dest.successRate >= home.successRate ? '+' : '−'}${Math.abs(Math.round((dest.successRate - home.successRate) * 100))} pts vs staying home`
+                : undefined
+            }
+            onProfile={dest && hasProfile(dest.cityId) ? () => setProfileId(dest.cityId) : undefined}
+          />
+          <Tile
+            eyebrow="Your home"
+            row={home}
+            note={home ? `Rank ${home.rank} of ${rows.length}` : undefined}
+            onProfile={home && hasProfile(home.cityId) ? () => setProfileId(home.cityId) : undefined}
+          />
           <Tile
             eyebrow="Best odds"
             row={best}
@@ -165,23 +185,6 @@ export function AtlasView() {
                 : undefined
             }
             onProfile={best && hasProfile(best.cityId) ? () => setProfileId(best.cityId) : undefined}
-          />
-          <Tile
-            eyebrow="Your home"
-            row={home}
-            note={home ? `Rank ${home.rank} of ${rows.length}` : undefined}
-            onProfile={home && hasProfile(home.cityId) ? () => setProfileId(home.cityId) : undefined}
-          />
-          <Tile
-            eyebrow="Your destination"
-            row={dest}
-            empty={!destId ? 'Staying home. Tap any city to price a move.' : undefined}
-            note={
-              dest && home
-                ? `${dest.successRate >= home.successRate ? '+' : '−'}${Math.abs(Math.round((dest.successRate - home.successRate) * 100))} pts vs staying home`
-                : undefined
-            }
-            onProfile={dest && hasProfile(dest.cityId) ? () => setProfileId(dest.cityId) : undefined}
           />
         </motion.div>
 

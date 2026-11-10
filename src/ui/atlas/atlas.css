@@ -1407,6 +1407,11 @@
   .atile:not(:first-child) .atile__go--foot {
     display: inline-block;
   }
+  /* Half-width tiles: a two-word city ("Chiang Rai") wraps at its space rather than trimming. */
+  .atile:not(:first-child) .atile__name {
+    white-space: normal;
+    text-wrap: balance;
+  }
   .atile {
     padding: var(--space-4);
   }

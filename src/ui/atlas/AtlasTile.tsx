@@ -1,4 +1,4 @@
-// The three tiles at the top of the Atlas: Best odds, Your home, Your destination.
+// The three tiles at the top of the Atlas: Your destination, Your home, Best odds.
 //
 // A tile whose city has a profile works like a top-pick card: the city name is the one button
 // (a stretched link, its ::after covers the tile), so a click anywhere on the tile opens the
@@ -70,7 +70,16 @@ export function Tile({ eyebrow, row, note, empty, action, onProfile }: TileProps
           </div>
         </>
       ) : empty ? (
-        <p className="atile__empty">{empty}</p>
+        <>
+          <p className="atile__empty">{empty}</p>
+          {action && (
+            <div className="atile__foot">
+              <button type="button" className="link-btn atile__action" onClick={action.onClick}>
+                {action.label} →
+              </button>
+            </div>
+          )}
+        </>
       ) : (
         <div className="atile__skel">
           <Skeleton width="60%" height={14} />

@@ -22,6 +22,9 @@ Open: none
 - [x] 2. Phone Outlook pill — turn on the docked pill on phone Outlook under the top bar once the number scrolls away, tap back to the verdict, without blocking the tab bar or chart touches
 - [x] 3. Atlas pill — the same floating pill on the Atlas, all breakpoints, once the hero tiles scroll away; tap scrolls back to the tiles
 
+## Fixes
+- 2026-11-10 · Atlas hero tiles reordered: your destination first (full-width on phone, left on desktop), then home, then best odds; with no destination, that tile suggests the best-odds city with "Move to <city> →"; half-width phone tiles wrap a two-word city name instead of trimming it — typecheck + 823 tests green; screenshots at 1280/390/320, light and dark, with and without a destination, and the suggestion tapped
+
 ## Decisions
 - 2026-11-10 · Pill city = destination, else home city; with no city (can't happen today: home is always set) the pill stays as it is; long names get "…", the % is never cut; the spoken label includes the city — user: "Yes this matches. Please plan it and run on autopilot."
 - 2026-11-10 · Phone Outlook reuses DockedVerdict (same look, delta, tap-back-to-verdict) rather than a second component — PM's call: one pill for three breakpoints.
