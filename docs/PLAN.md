@@ -1,34 +1,30 @@
-# Your spending on profiles plan
+# Clickable atlas tiles plan
 
 ## Goal
-City profiles show where the numbers are the user's own. Every spending row on a profile already uses the plan's overrides; now each row the user set gets a subtle marker beside its value — "your amount" for a typed $ for that city, "your change" for a typed % (which applies to every non-home city) — with matching screen-reader text, and the note under the list names the categories the user changed. Done = the stage passes verification in the running build; deploy waits for the user's go.
+The three tiles at the top of the Atlas (Best odds, Your home, Your destination) behave like the top-pick cards: clicking anywhere on a tile opens that city's profile, and on hover the tile lifts, deepens its shadow and nudges its "Profile →". Your home gets this too (it had no profile link). A tile is clickable only when its city has a profile (today all 133 do). "Make destination" on Best odds stays its own button and doesn't open the profile. Done = the stage passes verification in the running build; deploy waits for the user's go.
 
 ## Baseline
-2026-11-10 · tests: 734 pass (50 files) · typecheck: clean
+2026-11-10 · tests: 744 pass (51 files) · typecheck: clean
 
 ## Now
-All stages done
-Agents: wide — confirmed 2026-11-10 07:52
+Stage 1 of 1 · Clickable tiles
+Mode: autopilot
+Agents: wide — confirmed 2026-11-10 08:19
 Risk: UI only
 Checks:
-- [x] On a non-home profile, a category with a typed $ for that city is marked "your amount", a category with a typed % is marked "your change", and other rows, other cities' $ and the home profile carry no mark (proof: test)
-- [x] The note under the list names the changed categories, and says nothing about overrides when there are none (proof: test)
-- [x] Each marked row's screen-reader line says "your amount" or "your change" (proof: test)
-- [x] On the destination's profile in the running app, marked rows show a subtle marker, legible in dark and light, phone and desktop (proof: screenshot, a test can't judge the look)
+- [ ] Clicking anywhere on the Best odds, Your home or Your destination tile (name, number, note) opens that city's profile; a tile whose city has no profile, the empty destination tile and the loading tile don't (proof: test)
+- [ ] "Make destination" on Best odds makes it the destination without opening the profile (proof: test)
+- [ ] Each clickable tile is one keyboard stop with an accessible name naming the city and "open profile", with a visible focus ring on the tile (proof: test)
+- [ ] In the running app, hovering a tile lifts it and deepens its shadow like a top-pick card, and the cursor is a pointer across the tile, in dark and light, phone and desktop (proof: screenshot, a test can't judge the look)
 Open: none
 
 ## Stages
-- [x] 1. Override markers — mark user-set spending rows on profiles, name them in the note
+- [ ] 1. Clickable tiles — whole-tile click and pick-card hover on the three atlas tiles
 
 ## Decisions
-- 2026-11-10 · Mark an override on every profile where it applies (typed $ only on its own city, typed % on every non-home city), not only the destination's — user: "Mark it everywhere the override applies, go ahead".
-- 2026-11-10 · Agents: wide; run on autopilot — user: "Let's go wide and autopilot."
-- 2026-11-10 · The marker follows the Plan card's override styling (`is-override`) so it reads as the same thing — PM's call.
-- 2026-11-10 · Deploy (push to main) waits for the user's go after the stage passes — PM's call (no deploy instruction for this plan).
-- 2026-11-10 · Stage 1 closed: 4/4 checks pass ([evidence](evidence/stage-1/report.md)), verified by a fresh agent on the production build; no `keel:review`: UI only, with tests — PM's call.
-- 2026-11-10 · All stages done; deploy waits for the user's go — PM's call.
-- 2026-11-10 · Push to main to deploy — user: "deploy when it's verified" (stage 1 verified).
-- 2026-11-10 · Deployed: run 42830605611 succeeded; the live bundle carries the new note wording ("your own amount") — PM's call.
+- 2026-11-10 · A tile is clickable only when its city has a profile (option 1) — user: "Go with option 1".
+- 2026-11-10 · Your home opens its profile like the other tiles, without "Make destination" — user's request.
+- 2026-11-10 · Agents: wide; run on autopilot — user: "Let's go autopilot and let's go wide."
 - 2026-11-10 · Scale check didn't fire (1 stage, one release) — PM's call.
 
 ## Open questions
@@ -83,3 +79,4 @@ Open: none
 - 2026-11-09 · Landing default: the plain URL shows the landing on every visit, the first-visit flag removed, live on GitHub Pages — [plan](plans/2026-11-09-landing-default.md) · [evidence](plans/2026-11-09-landing-default/evidence/)
 - 2026-11-09 · Dark by default: the site opens in dark mode, saved System switched to Dark once, no light flash, live on GitHub Pages — [plan](plans/2026-11-09-dark-by-default.md) · [evidence](plans/2026-11-09-dark-by-default/evidence/)
 - 2026-11-10 · Atlas speed: city odds split across workers, saved last ranking and an idle start (odds ~1.1 s vs ~3.0 s), 640px photo copies with srcset and hover preload (profiles 178–256 KB vs 700–910 KB), live on GitHub Pages — [plan](plans/2026-11-10-atlas-speed.md) · [evidence](plans/2026-11-10-atlas-speed/evidence/)
+- 2026-11-10 · Your spending on profiles: user-set spending rows marked "your amount"/"your change" on city profiles, named in the note, live on GitHub Pages — [plan](plans/2026-11-10-spending-markers.md) · [evidence](plans/2026-11-10-spending-markers/evidence/)
