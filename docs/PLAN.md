@@ -28,6 +28,7 @@ Open: none
 - 2026-11-10 · Stage 1 closed: 4/4 checks pass ([evidence](evidence/stage-1/report.md)), verified by a fresh agent on the production build; no `keel:review`: UI only, with tests — PM's call.
 - 2026-11-10 · All stages done; deploy waits for the user's go — PM's call.
 - 2026-11-10 · Push to main to deploy — user: "deploy when it's verified" (stage 1 verified).
+- 2026-11-10 · Deployed: run 42830605611 succeeded; the live bundle carries the new note wording ("your own amount") — PM's call.
 - 2026-11-10 · Scale check didn't fire (1 stage, one release) — PM's call.
 
 ## Open questions
