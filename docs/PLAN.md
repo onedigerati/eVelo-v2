@@ -9,8 +9,8 @@ Typed spending (a `$` amount or a `%` change on a destination category) stops fr
 ## Now
 Stage 1 of 2 · Scaling engine
 Mode: autopilot
-Agents: wide — confirmed 2026-11-10 10:13
-Risk: user input (share-link and saved-plan decoding of the new anchors), money (destination spending model)
+Agents: wide — confirmed 2026-11-10 10:25
+Risk: user input (share-link and saved-plan decoding of the new anchors)
 Checks:
 - [ ] A `$` typed at premium e0 reads exactly as typed at e0; at another premium e it equals typed × model(e)/model(e0), capped at max(home amount, typed); back at e0 it's exact again (proof: test)
 - [ ] A `%` override scales the same way, per city: each Atlas city scales by its own model ratio (proof: test)
@@ -31,6 +31,7 @@ Open: none
 - 2026-11-10 · Anchors are stored beside the overrides (one premium per `%` category; one per city and category for `$`), not by changing the existing value types, so old share links and saved plans keep decoding — PM's call (default).
 - 2026-11-10 · An override with no anchor (saved before this plan) takes the plan's own saved premium as its anchor at load, so nothing a user saved changes until they move the slider — PM's call (default).
 - 2026-11-10 · Typing a new value re-anchors that row at the current premium; × and Reset all drop the anchors with the overrides — PM's call (default).
+- 2026-11-10 · Stage 1's risk line drops "money": this is the planner's spending estimate (no payments, no real funds), which the same-shaped Set your own spending plan marked UI only; the formula is still proven by tests and the share-link decoding still gets the security pass — PM's call.
 - 2026-11-10 · No per-row lock control ("final number, don't touch") for now — PM's call (default), revisit if asked.
 
 ## Open questions
