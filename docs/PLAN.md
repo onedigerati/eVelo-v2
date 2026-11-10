@@ -1,43 +1,31 @@
-# Landing hero plan
+# Landing default plan
 
 ## Goal
-A first-time visitor to the home page sees how Buy, Borrow, Die works, and why moving somewhere cheaper helps, in one viewing. The hero's map card is replaced by variation A's four-beat card ([mockup](research/landing-hero/variation-a.html)). Buy: the portfolio fills, what you paid plus hatched gains. Borrow: a credit line pays each year's living money and the loan creeps up under the margin-call line. Live anywhere: a flight from St. Louis to Bangkok, the yearly draw shrinks, the loan bends flatter and the illustrative odds rise. Die: the step-up removes the gains tax, the estate repays the loan and heirs keep the rest. The four step cards under the hero light up with the beats and jump to them. The card is a React component with hand-built SVG and theme tokens. Its numbers come from one tested illustrative model, not the engine. Done = all stages pass verification in the running app, a preview is reviewed, and the work is deployed on approval.
+Every visitor who opens the site's plain URL sees the landing page, every visit, not only the first. Links that name a page (`#plan`, `#outlook`, `#atlas`, `#method`) and share links (`#p=…`) still open the app directly, and the wordmark keeps taking you to the landing. The "has entered the app" flag that used to send returning visitors to the planner is removed. Done = the stage passes verification in the running app, a preview is reviewed, and the work is deployed on approval.
 
 ## Baseline
-2026-11-09 · tests: 624 pass (42 files) · typecheck: clean
+2026-11-09 · tests: 664 pass (45 files) · typecheck: clean
 
 ## Now
-All stages done
+Stage 1 of 1 · Landing by default
+Risk: UI only
 Agents: wide — confirmed 2026-11-08 22:19
+Checks:
+- [ ] The bare URL, `#`, `#/` and an unknown hash resolve to the landing, whatever the visitor did before (proof: test)
+- [ ] Route hashes (`#plan`, `#/atlas`, …), `#home` and share links in every form resolve as before (proof: test)
+- [ ] Nothing reads or writes `evelo:v2:entered` any more (proof: command, a search of `src/`)
+- [ ] In the running app, after using the planner, a fresh load of the plain URL shows the landing; the wordmark and Back return to it (proof: run the product, a test can't drive real reloads with storage)
+Open: none
 
 ## Stages
-- [x] 1. Story model and card — tested illustrative model; the resting-frame card replaces the map card; step buttons; both themes and a real phone layout
-- [x] 2. The four beats — the timeline (render at time t), play/pause/replay, step sync and jump, plays when in view, reduced motion, aria-live per beat
-- [x] 3. Preview and ship — clean up the old map-card code and its test, check the Atlas and the rest of the landing still work, preview for review, deploy on approval
+- [ ] 1. Landing by default — plain URL always shows the landing; drop the entered flag and its tests
 
 ## Decisions
-- 2026-11-09 · Deployed: push held by the keel hook until the user's "Push"; run 42615948629 succeeded (build 44 s, deploy 9 s); the live bundle carries the story card ([evidence](evidence/stage-3/deploy-live.txt)).
-- 2026-11-09 · Preview v41 reviewed and deploy approved — user: "Deploy".
-- 2026-11-09 · Stage 3 checks 1–2 pass ([evidence](evidence/stage-3/report.md)); the verify's three leftover exports fixed by the PM. Preview v41 published with the full `dist/artifact-files.json` manifest (all 29 paths confirmed present) — PM's call.
-- 2026-11-09 · Stage 2 closed: 6/6 checks pass ([evidence](evidence/stage-2/report.md)); review: 4 fix-now fixed, 3 cheap defers taken (Play counts as in view, `LandingStory` wrapper so the page doesn't re-render per frame, dead `frameCopy` lead/detail dropped), 2 deferred to open questions, 3 rejected — PM's call.
-- 2026-11-09 · Step-press scroll rule: show the chart and the pressed step together when they fit; else the whole step plus at least half the chart (1000px stacked); else (phone) the whole chart, accepting that the pressed step scrolls off screen — they can't share an 844px screen. Focus stays on the step — PM's call.
-- 2026-11-09 · Stage 2 verify notes fixed in-stage (layout shift between beats, off-screen card on phone step presses, play after a paused jump) and the review's four fix-now items (60fps re-renders while idle, hold surviving a reduced-motion switch, first-entry IntersectionObserver, StrictMode announcing Die at load) — PM's call.
-- 2026-11-08 · Stage 1 closed: 4/4 checks pass ([evidence](evidence/stage-1/report.md)); review: 1 fix-now (dead phone grid rule, removed), 6 deferred into stage 2's checks (step/card sync, one beat id type, SVG name, faded content in the a11y tree, blended odds and bands, per-frame work), 3 rejected — PM's call.
-- 2026-11-08 · Stage 1 verify found SVG text under 11px at 360–375px phones, ~573–622px and ~1145–1245px viewports, and the active step card 6px from the phone edge; both fixed inside stage 1 (the 11px floor is the check's intent, not just the two named widths) — PM's call.
-- 2026-11-08 · Stage 1 builders resumed after the hook held them — user: "Go".
-- 2026-11-08 · The card's resting (Die) frame shows the step-up as the mockup does: hatch faded, gains in a plain fill, key reads the step-up line — PM's call.
-- 2026-11-08 · Stage 1 leaves built in the main tree, not worktrees: the keel hook's money-risk clearance didn't reach worktree builders (both refused at their first write); split by file region instead — PM's call.
-- 2026-11-08 · Bangkok spending = $80K × the cost-of-living ratio from `categoryRatios(stl, bkk, 0)` (index 42/71 → $47,324), as the decision above names; the app's default expat factor (0.35) would give $60.5K. St. Louis odds read as the map's home-city figure (63%, band 2). `story.ts` imports these from `atlasCard.ts`, so stage 3's cleanup must keep or move them — PM's call.
-- 2026-11-08 · Stage 1 cleared to build despite its risk line naming money (illustrative figures only, tested model) — user: "Go ahead, build stage 1 as planned".
-- 2026-11-09 · Visual direction: variation A, the four-beat loop, as it stands (no sell-versus-borrow beat, no result row); B, C, D and the A+D hybrid are not taken — user: "Let's go with option A" ([variations](https://claude.ai/artifact/QeAKiE7ZvvnSK665sCeSHf)).
-- 2026-11-09 · Home city St. Louis, destination Bangkok, Thailand, in place of Austin and Lisbon — user: "I want the home city to be St. Louis and the destination city to be Bangkok, Thailand".
-- 2026-11-09 · The four-beat card replaces the current hero map card, and the odds are illustrative, not engine output — user: "replace the current hero map card and the odds should just be illustrative".
-- 2026-11-09 · Agents: wide carries over from the last plan, confirmed in this session — PM's call.
-- 2026-11-09 · Scale check didn't fire (3 stages, one release) — PM's call.
-- 2026-11-09 · The illustrative model follows the mockups' brief ([brief](research/landing-hero/brief.md)): $2.5M, $1.0M basis, 7% growth, 6% credit line with interest added to the loan, spending up 3% a year, ages 60 to 90, margin call at 50% LTV, St. Louis $80k/yr. Bangkok's figure is derived from the cost data (`src/engine/cost.ts` ratios over `src/data/cities.ts`, cost-of-living index 71 vs 42), so it follows the app's data — PM's call.
-- 2026-11-09 · Fixes for the mockup's known weak spots: a real phone layout for the chart (its text was ~9–10px at 390px), the key in normal layout (the percentage overlay was fragile), and play twice then rest on the finished frame (as the mockup does) — PM's call.
-- 2026-11-09 · Must keep from the mockup: a complete resting frame before any motion, `prefers-reduced-motion` (finished frames only), play/pause/replay, play only while in view, aria-live per beat — PM's call.
-- 2026-11-09 · The motion is split from the card (stages 1 and 2) so the resting frame and layout are reviewed before the timeline is built — PM's call.
+- 2026-11-09 · The landing is the default page: the plain URL shows it on every visit, replacing the first-visit-only rule — user: "Let's make the landing page the default page."
+- 2026-11-09 · Share links still open straight into the planner with the shared plan — user: "For the first item, yes, that's correct."
+- 2026-11-09 · The wordmark takes you to the landing (`#home`, already the case) — user: "eval logo should take you to the landing page".
+- 2026-11-09 · The `evelo:v2:entered` flag is removed rather than left unused; a stale value in visitors' storage is harmless — PM's call.
+- 2026-11-09 · Scale check didn't fire (1 stage, one release) — PM's call.
 
 ## Open questions
 - On a phone, keyboard users swing ~684px per step press (Tab scrolls down to the next step, Enter brings the chart back): tier 3 by design — from the stage 2 verify, later if wanted.
@@ -80,3 +68,4 @@ Agents: wide — confirmed 2026-11-08 22:19
 - 2026-11-08 · Docked verdict: a glass verdict pill docked at the top of the results column on desktop and tablet once the headline scrolls away, with live delta, back-to-verdict and drawer support, live on GitHub Pages — [plan](plans/2026-11-08-docked-verdict.md) · [evidence](plans/2026-11-08-docked-verdict/evidence/)
 - 2026-11-08 · Set your own spending: type a category's destination spending in $ or %, fixed amounts per city that don't drift, an ⓘ tip on the card, live on GitHub Pages — [plan](plans/2026-11-08-set-your-own-spending.md) · [evidence](plans/2026-11-08-set-your-own-spending/evidence/)
 - 2026-11-09 · Retire later: a "Retire in" setting and "Saving while working" amount across the engine and app, shaded working years and a Retire line on the charts, and a "When could you retire?" comparison, live on GitHub Pages — [plan](plans/2026-11-09-retire-later.md) · [evidence](plans/2026-11-09-retire-later/evidence/)
+- 2026-11-09 · Landing hero: the four-beat story card (Buy, Borrow, Live anywhere, Die; St. Louis to Bangkok) with play/pause, step sync and reduced motion, replacing the map card, live on GitHub Pages — [plan](plans/2026-11-09-landing-hero.md) · [evidence](plans/2026-11-09-landing-hero/evidence/)
