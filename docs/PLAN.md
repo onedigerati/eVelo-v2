@@ -1,49 +1,32 @@
-# Atlas speed plan
+# Your spending on profiles plan
 
 ## Goal
-The Atlas feels fast. City odds show up in well under half the time they take today: the ranking is split across several workers, the last ranking is saved in the browser so a return visit shows it at once, and the ranking starts at idle before the user opens the Atlas. Profiles download a fraction of today's photo bytes: a 640px copy of every photo for the small tiles and the phone cover, picked by `srcset`/`sizes`, and the photos start loading when the user hovers, focuses or presses a profile button. Done = both stages pass verification against the running build, with before/after numbers from the same measurement script; deploy waits for the user's go.
+City profiles show where the numbers are the user's own. Every spending row on a profile already uses the plan's overrides; now each row the user set gets a subtle marker beside its value — "your amount" for a typed $ for that city, "your change" for a typed % (which applies to every non-home city) — with matching screen-reader text, and the note under the list names the categories the user changed. Done = the stage passes verification in the running build; deploy waits for the user's go.
 
 ## Baseline
-2026-11-09 · tests: 688 pass (45 files) · typecheck: clean · build: ok (AtlasView chunk 1,194 KB / 339 KB gz, worker 615 KB)
-Perf (local `vite preview`, headless Chromium, [raw](research/atlas-perf/baseline.txt); scripts in [research/atlas-perf/](research/atlas-perf/) (`node docs/research/atlas-perf/measure.mjs http://localhost:<port>/` against `vite preview`)): Atlas odds (profile buttons) ~3.0 s after `#atlas` on a 12-core desktop; ranking worker posts at ~530 ms and answers ~2.45 s later. A profile downloads 700–910 KB of photos (five 1280px WebPs) into tiles drawn at 501×372 and 251×183; on 10 Mbps + 4× CPU the lead photo lands 500–700 ms after the dialog.
+2026-11-10 · tests: 734 pass (50 files) · typecheck: clean
 
 ## Now
-Stage 2 of 2 · Lighter photos
+Stage 1 of 1 · Override markers
 Mode: autopilot
-Agents: wide — confirmed 2026-11-09 23:33
+Agents: wide — confirmed 2026-11-10 07:52
 Risk: UI only
 Checks:
-- [x] Every listed photo has a 640px copy beside it, and the photo coverage test fails when one is missing (proof: test)
-- [x] Opening a profile on the desktop profile downloads ≤ 400 KB of photos, against 700–910 KB at baseline (proof: run the measure script)
-- [x] Hovering a profile button 300 ms before the click, the lead photo is ready within 150 ms of the dialog on the 10 Mbps + 4× CPU profile (proof: run)
-- [x] The full-size viewer still shows the 1280px originals (proof: run, naturalWidth in a real browser)
-- [x] The preview build's photo asset map includes the 640px copies (proof: test)
+- [ ] On a non-home profile, a category with a typed $ for that city is marked "your amount", a category with a typed % is marked "your change", and other rows, other cities' $ and the home profile carry no mark (proof: test)
+- [ ] The note under the list names the changed categories, and says nothing about overrides when there are none (proof: test)
+- [ ] Each marked row's screen-reader line says "your amount" or "your change" (proof: test)
+- [ ] On the destination's profile in the running app, marked rows show a subtle marker, legible in dark and light, phone and desktop (proof: screenshot, a test can't judge the look)
 Open: none
 
 ## Stages
-- [x] 1. Parallel Atlas — rank across several workers, save the last ranking, start at idle
-- [x] 2. Lighter photos — 640px copies with srcset/sizes, preload on hover/focus/press
+- [ ] 1. Override markers — mark user-set spending rows on profiles, name them in the note
 
 ## Decisions
-- 2026-11-09 · Do findings 1 and 2 of the Atlas perf measurement only (parallel/saved/idle ranking; 640px photos + preload); profile code splitting and the blur/DOM experiment wait — user: "Proceed with 1 and 2 only, on autopilot and go wide."
-- 2026-11-09 · Agents: wide — user: "go wide".
-- 2026-11-09 · One extra photo size (640px, +~36 MB in the repo), not a full ladder: tiles draw at 251–501 CSS px, so 640 covers 1× lead and 2× small tiles; 1280 stays for the lead at 2× and the viewer — PM's call.
-- 2026-11-09 · The 640px copies are made offline from the stored 1280px WebPs (no network, no re-download from Commons) — PM's call.
-- 2026-11-09 · Worker count is min(cores − 1, 4), at least 1; every shard builds the same common random scenarios, so results match a single run exactly — PM's call.
-- ~~2026-11-09 · Deploy waits for the user's go after both stages pass — PM's call (no deploy instruction for this plan).~~ Replaced below.
-- 2026-11-10 · Deploy (push to main) once both stages pass verification — user: "Deploy when ready".
-- 2026-11-09 · The saved ranking stores only a hash of the ranking key (plan inputs + data version) and each city's odds, spend and cost ratio (review: the home city's spend equals the plan's budget total), never the inputs themselves, so it adds no personal data to the browser beyond the plan the app already saves; risk line set to user input (stored-value parsing) — PM's call.
-- 2026-11-09 · Stage 2 (photos) touches nothing stage 1 does, so it's built in parallel in its own worktree and verified and committed after stage 1 — PM's call.
-- 2026-11-09 · Stage 1 review: 2 fix-now (saved-ranking path and storage failures untested; the split test depended on the machine's core count) plus two cheap guards (a sync `new Worker`/`postMessage` throw, empty city list) sent back to the builder; 2 deferred to open questions; 6 rejected with reasons — PM's call.
-- 2026-11-10 · Fix round 1 (check 2 missed: 1627 ms): chunk queue over min(cores − 1, 6) workers, spare re-runs of the oldest outstanding chunk, per-worker scenario memo — PM's call, inside the plan's intent.
-- 2026-11-10 · Fix-round review: no correctness bug; fix now the doubled memory peak on a memo miss, plus cheap guards (`messageerror` → fail; skip the prewarm under Save-Data or ≤ 2 cores); 2 deferred to open questions — PM's call.
-- 2026-11-10 · Fix round 2: review items fixed (memo freed before rebuild, `messageerror` → fail, no prewarm under Save-Data or ≤ 2 cores); two chunks queued per worker, and `runAtlas` runs each chunk's cities over 256-path blocks (exact: clean-path counts are integers). Builder's numbers: in-page odds ~0.8 s, desktop-only run ~1.0 s, full measure script median 1635 / 1670 ms — still above 1.5 s. Paused for the user — PM's call.
-- 2026-11-10 · ~~Check 2: odds in ≤ 1.5 s, median of 3~~ → at least 40% faster than the ~3.0 s baseline (≤ 1.8 s), median of 5 on the full measure script: its desktop run is always the first page in a fresh browser, which this machine makes slow whatever the code does — user picked "Accept 2× as the bar".
-- 2026-11-10 · Path-blocking review: exact (checked against unblocked `runPaths` at 700 paths on 4 plans); add that comparison as a test so a future kernel change can't silently break it — PM's call.
-- 2026-11-10 · Stage 1 closed: 5/5 checks pass after two fix rounds ([evidence](evidence/stage-1/report.md)): fresh `#atlas` odds median 1193 ms vs ~3.0 s; same-plan reload 0 ranking posts, odds ~400 ms; landing → Atlas shows odds without running. Verified by fresh agents; reviewed three times (correctness + security pass on the stored value) — PM's call.
-- 2026-11-10 · Stage 2 closed: 5/5 checks pass ([evidence](evidence/stage-2/report.md)), verified by a fresh agent on its branch; merged onto stage 1, 734 tests pass and one merged-build run keeps both gains (odds 1103 ms; profiles 178–256 KB of photos, [measure-merged.txt](evidence/stage-2/measure-merged.txt)). 665 copies, 29 MB, avg 44 KB. Phones (DPR 3) still load the 1280 files, as designed; at DPR 1 the lead tile is a hair softer at 2× zoom, not at 1:1. No `keel:review`: UI only, with tests — PM's call.
-- 2026-11-10 · Push to main to deploy — user: "Push and deploy".
-- 2026-11-09 · Scale check didn't fire (2 stages, one release) — PM's call.
+- 2026-11-10 · Mark an override on every profile where it applies (typed $ only on its own city, typed % on every non-home city), not only the destination's — user: "Mark it everywhere the override applies, go ahead".
+- 2026-11-10 · Agents: wide; run on autopilot — user: "Let's go wide and autopilot."
+- 2026-11-10 · The marker follows the Plan card's override styling (`is-override`) so it reads as the same thing — PM's call.
+- 2026-11-10 · Deploy (push to main) waits for the user's go after the stage passes — PM's call (no deploy instruction for this plan).
+- 2026-11-10 · Scale check didn't fire (1 stage, one release) — PM's call.
 
 ## Open questions
 - The preview build (claude.ai artifact) needs the 665 new 640px copies uploaded to its asset store before preview galleries use them; until then they fall back to the originals — from stage 2, next preview publish.
@@ -95,3 +78,4 @@ Open: none
 - 2026-11-09 · Landing hero: the four-beat story card (Buy, Borrow, Live anywhere, Die; St. Louis to Bangkok) with play/pause, step sync and reduced motion, replacing the map card, live on GitHub Pages — [plan](plans/2026-11-09-landing-hero.md) · [evidence](plans/2026-11-09-landing-hero/evidence/)
 - 2026-11-09 · Landing default: the plain URL shows the landing on every visit, the first-visit flag removed, live on GitHub Pages — [plan](plans/2026-11-09-landing-default.md) · [evidence](plans/2026-11-09-landing-default/evidence/)
 - 2026-11-09 · Dark by default: the site opens in dark mode, saved System switched to Dark once, no light flash, live on GitHub Pages — [plan](plans/2026-11-09-dark-by-default.md) · [evidence](plans/2026-11-09-dark-by-default/evidence/)
+- 2026-11-10 · Atlas speed: city odds split across workers, saved last ranking and an idle start (odds ~1.1 s vs ~3.0 s), 640px photo copies with srcset and hover preload (profiles 178–256 KB vs 700–910 KB), live on GitHub Pages — [plan](plans/2026-11-10-atlas-speed.md) · [evidence](plans/2026-11-10-atlas-speed/evidence/)
