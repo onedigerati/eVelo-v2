@@ -9,7 +9,7 @@ Perf (local `vite preview`, headless Chromium, [raw](research/atlas-perf/baselin
 
 ## Now
 Stage 2 of 2 · Lighter photos
-Mode: autopilot
+Mode: paused — push to main to deploy (run the GitHub Pages workflow), both stages verified
 Agents: wide — confirmed 2026-11-09 23:33
 Risk: UI only
 Checks:
