@@ -1,28 +1,30 @@
-# Landing default plan
+# Dark by default plan
 
 ## Goal
-Every visitor who opens the site's plain URL sees the landing page, every visit, not only the first. Links that name a page (`#plan`, `#outlook`, `#atlas`, `#method`) and share links (`#p=…`) still open the app directly, and the wordmark keeps taking you to the landing. The "has entered the app" flag that used to send returning visitors to the planner is removed. Done = the stage passes verification in the running app, a preview is reviewed, and the work is deployed on approval.
+The site opens in dark mode. Visitors with nothing saved start in Dark, and visitors whose saved theme is System are switched to Dark once; anyone who picked Light keeps it, and anyone who picks System after the switch keeps that. The toggle keeps its three options (System, Light, Dark). There's no flash of the light theme before the app loads. Done = the stage passes verification in the running app and the work is deployed on approval.
 
 ## Baseline
-2026-11-09 · tests: 664 pass (45 files) · typecheck: clean
+2026-11-09 · tests: 659 pass (44 files) · typecheck: clean
 
 ## Now
-All stages done
+Stage 1 of 1 · Dark by default
+Risk: UI only
 Agents: wide — confirmed 2026-11-09 20:40
+Checks:
+- [ ] The starting theme is Dark with nothing saved, unreadable storage, or a saved System from before the switch; a saved Light or Dark is kept, and a System saved after the switch is kept (proof: test)
+- [ ] Saving the plan records that the switch has happened, so a later System choice survives a reload (proof: test)
+- [ ] In the running app, a fresh browser opens the landing and the planner in dark with no light flash at first paint; an old saved System opens dark; Light survives a reload; picking System after the switch survives a reload (proof: run the product, a test can't see first paint or real storage)
+Open: none
 
 ## Stages
-- [x] 1. Landing by default — plain URL always shows the landing; drop the entered flag and its tests
+- [ ] 1. Dark by default — Dark as the starting theme, one-time switch of saved System, matching pre-paint script
 
 ## Decisions
-- 2026-11-09 · Deployed: run 42751960076 succeeded; the live site serves the same bundle as the local build and no longer carries the entered flag ([evidence](evidence/stage-1/deploy-live.txt)).
-- 2026-11-09 · Deploy without a preview — user: "go ahead and deploy".
-- 2026-11-09 · Stage 1 closed: 4/4 checks pass ([evidence](evidence/stage-1/report.md)), verified by a fresh agent; its report write was blocked for subagents, so the main session saved it — user: "Yes, please save the agent's report". No `keel:review`: UI only, routing change of a few lines with tests — PM's call.
-- 2026-11-09 · The landing is the default page: the plain URL shows it on every visit, replacing the first-visit-only rule — user: "Let's make the landing page the default page."
-- 2026-11-09 · Share links still open straight into the planner with the shared plan — user: "For the first item, yes, that's correct."
-- 2026-11-09 · The wordmark takes you to the landing (`#home`, already the case) — user: "eval logo should take you to the landing page".
-- 2026-11-09 · The `evelo:v2:entered` flag is removed rather than left unused; a stale value in visitors' storage is harmless — PM's call.
+- 2026-11-09 · Dark is the default theme — user: "Let's now have the site default to dark mode."
+- 2026-11-09 · Visitors saved on System are switched to Dark once; Light is kept — user picked "Everyone on System".
+- 2026-11-09 · The toggle keeps System, Light and Dark — user picked "Keep System".
+- 2026-11-09 · The switch is marked by a `themeV: 2` field in the saved `evelo:v2` object: a saved System without it reads as Dark, with it as System. The pre-paint script in `index.html` applies the same rule — PM's call.
 - 2026-11-09 · Scale check didn't fire (1 stage, one release) — PM's call.
-- 2026-11-09 · Agents: wide confirmed for this plan — user picked "Wide, start now".
 
 ## Open questions
 - On a phone, keyboard users swing ~684px per step press (Tab scrolls down to the next step, Enter brings the chart back): tier 3 by design — from the stage 2 verify, later if wanted.
@@ -66,3 +68,4 @@ Agents: wide — confirmed 2026-11-09 20:40
 - 2026-11-08 · Set your own spending: type a category's destination spending in $ or %, fixed amounts per city that don't drift, an ⓘ tip on the card, live on GitHub Pages — [plan](plans/2026-11-08-set-your-own-spending.md) · [evidence](plans/2026-11-08-set-your-own-spending/evidence/)
 - 2026-11-09 · Retire later: a "Retire in" setting and "Saving while working" amount across the engine and app, shaded working years and a Retire line on the charts, and a "When could you retire?" comparison, live on GitHub Pages — [plan](plans/2026-11-09-retire-later.md) · [evidence](plans/2026-11-09-retire-later/evidence/)
 - 2026-11-09 · Landing hero: the four-beat story card (Buy, Borrow, Live anywhere, Die; St. Louis to Bangkok) with play/pause, step sync and reduced motion, replacing the map card, live on GitHub Pages — [plan](plans/2026-11-09-landing-hero.md) · [evidence](plans/2026-11-09-landing-hero/evidence/)
+- 2026-11-09 · Landing default: the plain URL shows the landing on every visit, the first-visit flag removed, live on GitHub Pages — [plan](plans/2026-11-09-landing-default.md) · [evidence](plans/2026-11-09-landing-default/evidence/)
