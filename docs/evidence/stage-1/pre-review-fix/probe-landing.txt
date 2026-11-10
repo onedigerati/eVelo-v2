@@ -1,0 +1,12 @@
+$ node docs/evidence/stage-1/probe-stage1.mjs http://localhost:4331/ landing docs/evidence/stage-1   # stage-1 build
+cores 12
+
+-- landing, 5 s after goto (bare URL)
+{"hash":"","oddsAt":null,"runningSeen":false,"doneAt":null,"firstTile":null,"atlasPosts":4,"atlasRecvs":[1850,1852,1911,1994],"status":null,"statusClass":null,"best":null,"bestCity":null,"saved":{"bytes":13782,"keys":["f","h","at","entries"],"h":"1718s4qlx6l.3qsd5nh3gt","n":133,"hasInputs":false}}
+  worker log: 266 post simulate, 654 recv simulate←simulate, 655 post simulate, 853 recv simulate←simulate, 854 post solve, 1068 recv solve←solve, 1068 post simulate, 1085 post atlas(34 cities), 1085 post atlas(33 cities), 1085 post atlas(33 cities), 1085 post atlas(33 cities), 1302 recv simulate←simulate, 1303 post simulate, 1573 recv simulate←simulate, 1573 post simulate, 1812 recv simulate←simulate, 1812 post solve, 1850 recv atlas←atlas, 1852 recv atlas←atlas, 1911 recv atlas←atlas, 1970 recv solve←solve, 1970 post solve, 1994 recv atlas←atlas, 2117 recv solve←solve, 2117 post solve, 2259 recv solve←solve, 2259 post simulate, 2429 recv simulate←simulate, 2429 post simulate, 2603 recv simulate←simulate, 2604 post simulate, 2788 recv simulate←simulate
+
+-- in-page hash change to #atlas: odds visible 691ms (odds node first seen 399ms after the hash change); atlas posts after the change: 0; is-running ever seen: false
+{"hash":"#atlas","oddsAt":5829,"runningSeen":false,"doneAt":5829,"firstTile":{"t":5829,"tile":"Best odds"},"atlasPosts":4,"atlasRecvs":[1850,1852,1911,1994],"status":"Ranked just now","statusClass":"atlas__status is-done","best":"8989","bestCity":"Chiang Rai","saved":{"bytes":13782,"keys":["f","h","at","entries"],"h":"1718s4qlx6l.3qsd5nh3gt","n":133,"hasInputs":false}}
+  worker log: 266 post simulate, 654 recv simulate←simulate, 655 post simulate, 853 recv simulate←simulate, 854 post solve, 1068 recv solve←solve, 1068 post simulate, 1085 post atlas(34 cities), 1085 post atlas(33 cities), 1085 post atlas(33 cities), 1085 post atlas(33 cities), 1302 recv simulate←simulate, 1303 post simulate, 1573 recv simulate←simulate, 1573 post simulate, 1812 recv simulate←simulate, 1812 post solve, 1850 recv atlas←atlas, 1852 recv atlas←atlas, 1911 recv atlas←atlas, 1970 recv solve←solve, 1970 post solve, 1994 recv atlas←atlas, 2117 recv solve←solve, 2117 post solve, 2259 recv solve←solve, 2259 post simulate, 2429 recv simulate←simulate, 2429 post simulate, 2603 recv simulate←simulate, 2604 post simulate, 2788 recv simulate←simulate
+
+page errors: none

@@ -1,0 +1,39 @@
+$ (scratch git worktree at HEAD + the stage-1 files copied in; each mutation applied with sed, tests run, file restored) npx vitest run <files>
+== M0 unmutated
+      Tests  22 passed (22)
+== M1 mergeShards without the position tie-break  (sed 's/compareAtlas(a, b) || at(a) - at(b)/compareAtlas(a, b)/' src/engine/atlas.ts)
+     × full ties keep the requested city order, as the single run does 4ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/engine/__tests__/atlasShards.test.ts > sharded Atlas ranking > full ties keep the requested city order, as the single run does
+AssertionError: expected [ 'a', 'b', 'c' ] to deeply equal [ 'c', 'a', 'b' ]
+      Tests  1 failed | 4 passed (5)
+== M2 each shard's scenarios depend on its city list (seed + cityIds.length) in runAtlas
+     × default plan: N = 1..5 workers return exactly the single run's entries 549ms
+     × existing loan: N = 1..5 workers return exactly the single run's entries 435ms
+     × retire later: N = 1..5 workers return exactly the single run's entries 348ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/engine/__tests__/atlasShards.test.ts > sharded Atlas ranking > default plan: N = 1..5 workers return exactly the single run's entries
+AssertionError: N = 2: expected [ …(133) ] to deeply equal [ …(133) ]
+ FAIL  src/engine/__tests__/atlasShards.test.ts > sharded Atlas ranking > existing loan: N = 1..5 workers return exactly the single run's entries
+AssertionError: N = 2: expected [ …(133) ] to deeply equal [ …(133) ]
+ FAIL  src/engine/__tests__/atlasShards.test.ts > sharded Atlas ranking > retire later: N = 1..5 workers return exactly the single run's entries
+AssertionError: N = 2: expected [ { cityId: 'cuenca', …(3) }, …(132) ] to deeply equal [ { cityId: 'cuenca', …(3) }, …(132) ]
+== M3 decodeSaved skips the hash check (plan + data version)
+     × a changed plan never shows the saved ranking 4ms
+     × a changed data version never shows the saved ranking 1ms
+     × a corrupt or malformed value never shows a saved ranking 1ms
+     × a fresh client reads the saved ranking back without posting; a changed plan does not 6ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/state/__tests__/atlasClient.test.ts > saved ranking > a fresh client reads the saved ranking back without posting; a changed plan does not
+AssertionError: expected { entries: [ { …(4) }, …(7) ], …(1) } to be null
+ FAIL  src/state/__tests__/atlasSaved.test.ts > saved Atlas ranking > a changed plan never shows the saved ranking
+AssertionError: {"seed":8}: expected { entries: [ { …(4) }, …(2) ], …(1) } to be null
+ FAIL  src/state/__tests__/atlasSaved.test.ts > saved Atlas ranking > a changed data version never shows the saved ranking
+== M4 AtlasClient.peek never reads the saved ranking
+     × a fresh client reads the saved ranking back without posting; a changed plan does not 5ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/state/__tests__/atlasClient.test.ts > saved ranking > a fresh client reads the saved ranking back without posting; a changed plan does not
+AssertionError: expected undefined to deeply equal [ { cityId: 'hanoi', …(3) }, …(7) ]
+      Tests  1 failed | 10 passed (11)
+== restored
+      Tests  22 passed (22)

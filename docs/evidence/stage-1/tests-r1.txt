@@ -1,0 +1,15 @@
+$ npm test
+npm notice run evelo@2.0.0 test
+npm notice run vitest run
+
+ RUN  v5.1.0 /home/jonah/repos/eVelo-v2
+
+
+ Test Files  48 passed (48)
+      Tests  712 passed (712)
+   Start at  01:22:35
+   Duration  12.32s (transform 51%, tests 32%, import 16%)
+
+    Isolate  48 workers spawned · ~208ms startup each (spawn + environment, per file)
+             at least ~698ms faster with isolate: false — reuses workers across files instead of one per file
+

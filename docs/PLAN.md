@@ -11,17 +11,17 @@ Perf (local `vite preview`, headless Chromium, [raw](research/atlas-perf/baselin
 Stage 1 of 2 · Parallel Atlas
 Mode: autopilot
 Agents: wide — confirmed 2026-11-09 23:33
-Risk: personal data (plan inputs are part of the saved-ranking key in browser storage; parsing what's stored)
+Risk: user input (a saved ranking read back from browser storage is parsed and validated; it stores a hash of the plan, never the plan's inputs)
 Checks:
-- [ ] A ranking split across N workers returns exactly the entries (order, rates, spend) a single run returns, for the default plan, a plan with an existing loan and a retire-later plan (proof: test)
-- [ ] A fresh `#atlas` load on the desktop profile shows the odds in ≤ 1.5 s, median of 3, against ~3.0 s at baseline (proof: run the measure script, a test can't time a real browser)
-- [ ] The saved ranking is keyed by the plan inputs and the data version: a reload with the same plan shows the odds without running the ranking, and a changed plan, a changed data version or a corrupt stored value never shows a saved ranking (proof: test, plus a run for the reload)
-- [ ] With the app open on the landing for 5 s, going to `#atlas` shows the odds at once, with no running state (proof: run, it spans page navigation in a real browser)
-- [ ] The engine's Atlas time budget test still passes (proof: test)
+- [x] A ranking split across N workers returns exactly the entries (order, rates, spend) a single run returns, for the default plan, a plan with an existing loan and a retire-later plan (proof: test)
+- [x] A fresh `#atlas` load on the desktop profile shows the odds at least 40% faster than the ~3.0 s baseline (≤ 1.8 s), median of 5 on the full measure script (proof: run the measure script, a test can't time a real browser)
+- [x] The saved ranking is keyed by the plan inputs and the data version: a reload with the same plan shows the odds without running the ranking, and a changed plan, a changed data version or a corrupt stored value never shows a saved ranking (proof: test, plus a run for the reload)
+- [x] With the app open on the landing for 5 s, going to `#atlas` shows the odds at once, with no running state (proof: run, it spans page navigation in a real browser)
+- [x] The engine's Atlas time budget test still passes (proof: test)
 Open: none
 
 ## Stages
-- [ ] 1. Parallel Atlas — rank across several workers, save the last ranking, start at idle
+- [x] 1. Parallel Atlas — rank across several workers, save the last ranking, start at idle
 - [ ] 2. Lighter photos — 640px copies with srcset/sizes, preload on hover/focus/press
 
 Stage 2 checks (moved into `## Now` when it starts):
@@ -37,10 +37,24 @@ Stage 2 checks (moved into `## Now` when it starts):
 - 2026-11-09 · One extra photo size (640px, +~36 MB in the repo), not a full ladder: tiles draw at 251–501 CSS px, so 640 covers 1× lead and 2× small tiles; 1280 stays for the lead at 2× and the viewer — PM's call.
 - 2026-11-09 · The 640px copies are made offline from the stored 1280px WebPs (no network, no re-download from Commons) — PM's call.
 - 2026-11-09 · Worker count is min(cores − 1, 4), at least 1; every shard builds the same common random scenarios, so results match a single run exactly — PM's call.
-- 2026-11-09 · Deploy waits for the user's go after both stages pass — PM's call (no deploy instruction for this plan).
+- ~~2026-11-09 · Deploy waits for the user's go after both stages pass — PM's call (no deploy instruction for this plan).~~ Replaced below.
+- 2026-11-10 · Deploy (push to main) once both stages pass verification — user: "Deploy when ready".
+- 2026-11-09 · The saved ranking stores only a hash of the ranking key (plan inputs + data version) and each city's odds, spend and cost ratio (review: the home city's spend equals the plan's budget total), never the inputs themselves, so it adds no personal data to the browser beyond the plan the app already saves; risk line set to user input (stored-value parsing) — PM's call.
+- 2026-11-09 · Stage 2 (photos) touches nothing stage 1 does, so it's built in parallel in its own worktree and verified and committed after stage 1 — PM's call.
+- 2026-11-09 · Stage 1 review: 2 fix-now (saved-ranking path and storage failures untested; the split test depended on the machine's core count) plus two cheap guards (a sync `new Worker`/`postMessage` throw, empty city list) sent back to the builder; 2 deferred to open questions; 6 rejected with reasons — PM's call.
+- 2026-11-10 · Fix round 1 (check 2 missed: 1627 ms): chunk queue over min(cores − 1, 6) workers, spare re-runs of the oldest outstanding chunk, per-worker scenario memo — PM's call, inside the plan's intent.
+- 2026-11-10 · Fix-round review: no correctness bug; fix now the doubled memory peak on a memo miss, plus cheap guards (`messageerror` → fail; skip the prewarm under Save-Data or ≤ 2 cores); 2 deferred to open questions — PM's call.
+- 2026-11-10 · Fix round 2: review items fixed (memo freed before rebuild, `messageerror` → fail, no prewarm under Save-Data or ≤ 2 cores); two chunks queued per worker, and `runAtlas` runs each chunk's cities over 256-path blocks (exact: clean-path counts are integers). Builder's numbers: in-page odds ~0.8 s, desktop-only run ~1.0 s, full measure script median 1635 / 1670 ms — still above 1.5 s. Paused for the user — PM's call.
+- 2026-11-10 · ~~Check 2: odds in ≤ 1.5 s, median of 3~~ → at least 40% faster than the ~3.0 s baseline (≤ 1.8 s), median of 5 on the full measure script: its desktop run is always the first page in a fresh browser, which this machine makes slow whatever the code does — user picked "Accept 2× as the bar".
+- 2026-11-10 · Path-blocking review: exact (checked against unblocked `runPaths` at 700 paths on 4 plans); add that comparison as a test so a future kernel change can't silently break it — PM's call.
+- 2026-11-10 · Stage 1 closed: 5/5 checks pass after two fix rounds ([evidence](evidence/stage-1/report.md)): fresh `#atlas` odds median 1193 ms vs ~3.0 s; same-plan reload 0 ranking posts, odds ~400 ms; landing → Atlas shows odds without running. Verified by fresh agents; reviewed three times (correctness + security pass on the stored value) — PM's call.
 - 2026-11-09 · Scale check didn't fire (2 stages, one release) — PM's call.
 
 ## Open questions
+- The Atlas worker pool (up to 6) stays alive for the page's life, and every superseding plan edit respawns all of it (each re-parses the 615 KB worker and rebuilds scenarios); shut it down after idle like `DestinationClient`, and keep idle workers on cancel — from the fix-round review, later.
+- Scenario generation is paid once per Atlas worker; time `makeScenarios` against a shard's `runPaths` on a low-end phone before claiming the phone speedup — from the fix-round review, later.
+- The idle prewarm starts the full-path ranking on up to 4 workers while the retire-in comparison still runs on the sim worker; each Atlas worker builds its own scenarios (~23 MB at 4,000 paths × 40 years, ~115 MB at 20k), so on a 4-core phone it may slow the comparison cards and raise memory. Measure on a real phone — from the stage 1 review, later.
+- `peek()` re-parses the saved ranking (~15 KB JSON + two hashes) on every cache miss, e.g. each slider tick; cache the decoded value if profiling shows it — from the stage 1 review, later.
 - On a phone, keyboard users swing ~684px per step press (Tab scrolls down to the next step, Enter brings the chart back): tier 3 by design — from the stage 2 verify, later if wanted.
 - `useStoryPlayback` has no hook-level tests (vitest runs in node without testing-library); its logic is covered by pure tests and the e2e verify — from the stage 2 review, later.
 - On phone, Buy shows two empty bands (reserved key rows and caption height), as the mockup does — from the stage 2 verify, later.
@@ -63,7 +77,6 @@ Stage 2 checks (moved into `## Now` when it starts):
 - The photo credit cleaner misses "upload on <date>" suffixes — later.
 - Region chip rows (list and map) use `role="toolbar"` without arrow-key navigation; fix both or drop the role. The list chips also read region from context while the list reads it as a prop (consistent today) — later.
 
-## Standing decisions
 ## Standing decisions
 - Standing decisions from earlier plans are in [decisions.md](decisions.md).
 

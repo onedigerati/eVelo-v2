@@ -1,0 +1,16 @@
+$ node docs/evidence/stage-1/probe-stage1.mjs http://localhost:4331/ reload docs/evidence/stage-1   # stage-1 build
+cores 12
+
+-- fresh #atlas load (empty storage)
+{"hash":"#atlas","oddsAt":988,"runningSeen":true,"doneAt":988,"firstTile":{"t":988,"tile":"Best odds"},"atlasPosts":4,"atlasRecvs":[871,900,926,940],"status":"Ranked just now","statusClass":"atlas__status is-done","best":"8989","bestCity":"Chiang Rai","saved":{"bytes":13782,"keys":["f","h","at","entries"],"h":"1718s4qlx6l.3qsd5nh3gt","n":133,"hasInputs":false}}
+  worker log: 118 post simulate, 119 post atlas(34 cities), 120 post atlas(33 cities), 120 post atlas(33 cities), 120 post atlas(33 cities), 396 recv simulate←simulate, 396 post simulate, 621 recv simulate←simulate, 622 post solve, 831 recv solve←solve, 832 post simulate, 871 recv atlas←atlas, 900 recv atlas←atlas, 926 recv atlas←atlas, 940 recv atlas←atlas, 1058 recv simulate←simulate, 1058 post simulate, 1270 recv simulate←simulate, 1270 post simulate, 1487 recv simulate←simulate, 1487 post solve, 1632 recv solve←solve, 1632 post solve, 1759 recv solve←solve, 1759 post solve, 1892 recv solve←solve, 1892 post simulate, 2045 recv simulate←simulate, 2045 post simulate, 2195 recv simulate←simulate, 2196 post simulate, 2350 recv simulate←simulate
+
+-- same-plan reload 1: odds visible 681ms after reload()
+{"hash":"#atlas","oddsAt":433,"runningSeen":false,"doneAt":433,"firstTile":{"t":433,"tile":"Best odds"},"atlasPosts":0,"atlasRecvs":[],"status":"Ranked just now","statusClass":"atlas__status is-done","best":"8989","bestCity":"Chiang Rai","saved":{"bytes":13782,"keys":["f","h","at","entries"],"h":"1718s4qlx6l.3qsd5nh3gt","n":133,"hasInputs":false}}
+  worker log: 64 post simulate, 283 recv simulate←simulate, 283 post simulate, 512 recv simulate←simulate, 512 post solve, 738 recv solve←solve, 738 post simulate, 950 recv simulate←simulate, 950 post simulate, 1192 recv simulate←simulate, 1192 post simulate, 1444 recv simulate←simulate, 1444 post solve, 1592 recv solve←solve, 1592 post solve, 1724 recv solve←solve, 1724 post solve, 1862 recv solve←solve, 1862 post simulate, 2019 recv simulate←simulate, 2019 post simulate, 2173 recv simulate←simulate, 2173 post simulate, 2329 recv simulate←simulate
+
+-- same-plan reload 2: odds visible 588ms after reload()
+{"hash":"#atlas","oddsAt":401,"runningSeen":false,"doneAt":401,"firstTile":{"t":401,"tile":"Best odds"},"atlasPosts":0,"atlasRecvs":[],"status":"Ranked just now","statusClass":"atlas__status is-done","best":"8989","bestCity":"Chiang Rai","saved":{"bytes":13782,"keys":["f","h","at","entries"],"h":"1718s4qlx6l.3qsd5nh3gt","n":133,"hasInputs":false}}
+  worker log: 49 post simulate, 261 recv simulate←simulate, 262 post simulate, 464 recv simulate←simulate, 464 post solve, 671 recv solve←solve, 672 post simulate, 873 recv simulate←simulate, 873 post simulate, 1075 recv simulate←simulate, 1075 post simulate, 1258 recv simulate←simulate, 1258 post solve, 1395 recv solve←solve, 1395 post solve, 1523 recv solve←solve, 1523 post solve, 1653 recv solve←solve, 1653 post simulate, 1808 recv simulate←simulate, 1808 post simulate, 1960 recv simulate←simulate, 1961 post simulate, 2113 recv simulate←simulate
+
+page errors: none

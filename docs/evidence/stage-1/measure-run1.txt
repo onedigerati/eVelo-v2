@@ -1,0 +1,49 @@
+$ node docs/research/atlas-perf/measure.mjs http://localhost:4331/   # run 1, stage-1 build (tree hash 0e41c7ec)
+
+== desktop-fast
+atlas: profile buttons -9ms, fill done 3021ms, network idle 3025ms; 19 reqs 729 KB {"css":34,"http://localhost:4331/":1,"1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>":0,"woff2":95,"js":597,"com/v6/latest/USD":2}
+  long tasks: 8, total 1487ms, max 381ms
+    329 KB AtlasView-D7UZAzY3.js
+    126 KB index-BahdinpH.js
+    62 KB d3-array-BmLNhODT.js
+    29 KB geist-latin-wght-normal-BgDaEnEv.woff2
+    27 KB SwitchLayoutGroupContext-CWUgHHbR.js
+    23 KB geist-mono-latin-wght-normal-XN7g48iV.woff2
+  open "Top pick 1: Algarve (Faro), Portugal. Sunny coast, big English-speaking retiree scene. Plan holds in 73% of futures there, $94,437 a year, −14% vs home. Open profile.": dialog 315ms, lead img 322ms, all mosaic imgs 325ms; click INP <16ms; 5 webp 912 KB, other 0 KB; longtasks max 137ms
+    close 895ms; key INP 432ms
+  open "Top pick 2: Lisbon, Portugal. Capital city amenities, best US flight links. Plan holds in 69% of futures there, $102,877 a year, −6% vs home. Open profile.": dialog 520ms, lead img 529ms, all mosaic imgs 546ms; click INP <16ms; 5 webp 718 KB, other 16 KB; longtasks max 265ms
+    close 428ms; key INP 504ms
+  open "Top pick 3: Paphos, Cyprus. The EU's lightest tax on a US portfolio, in a British retiree hub. Plan holds in 73% of futures there, $94,334 a year, −14% vs home. Open profile.": dialog 154ms, lead img 157ms, all mosaic imgs 161ms; click INP 192ms (handler 0); 5 webp 888 KB, other 0 KB; longtasks max 0ms
+    close 372ms; key INP 184ms
+
+== desktop-4g-cpu4x
+atlas: profile buttons 5255ms, fill done 8654ms, network idle 8656ms; 19 reqs 729 KB {"css":34,"http://localhost:4331/":1,"1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>":0,"js":597,"woff2":95,"com/v6/latest/USD":2}
+  long tasks: 17, total 3602ms, max 713ms
+    329 KB AtlasView-D7UZAzY3.js
+    126 KB index-BahdinpH.js
+    62 KB d3-array-BmLNhODT.js
+    29 KB geist-latin-wght-normal-BgDaEnEv.woff2
+    27 KB SwitchLayoutGroupContext-CWUgHHbR.js
+    23 KB geist-mono-latin-wght-normal-XN7g48iV.woff2
+  open "Top pick 1: Algarve (Faro), Portugal. Sunny coast, big English-speaking retiree scene. Plan holds in 73% of futures there, $94,437 a year, −14% vs home. Open profile.": dialog 915ms, lead img 1421ms, all mosaic imgs 1737ms; click INP 960ms (handler 11); 5 webp 912 KB, other 0 KB; longtasks max 602ms
+    close 557ms; key INP 304ms
+  open "Top pick 2: Lisbon, Portugal. Capital city amenities, best US flight links. Plan holds in 69% of futures there, $102,877 a year, −6% vs home. Open profile.": dialog 662ms, lead img 841ms, all mosaic imgs 1084ms; click INP 432ms (handler 1); 5 webp 718 KB, other 16 KB; longtasks max 167ms
+    close 564ms; key INP 392ms
+  open "Top pick 3: Paphos, Cyprus. The EU's lightest tax on a US portfolio, in a British retiree hub. Plan holds in 73% of futures there, $94,334 a year, −14% vs home. Open profile.": dialog 378ms, lead img 1048ms, all mosaic imgs 1276ms; click INP 320ms (handler 2); 5 webp 888 KB, other 0 KB; longtasks max 188ms
+    close 589ms; key INP 288ms
+
+== phone-4g-cpu4x
+atlas: profile buttons 4108ms, fill done 7139ms, network idle 7141ms; 19 reqs 729 KB {"http://localhost:4331/":1,"css":34,"1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>":0,"js":597,"woff2":95,"com/v6/latest/USD":2}
+  long tasks: 13, total 2288ms, max 517ms
+    329 KB AtlasView-D7UZAzY3.js
+    126 KB index-BahdinpH.js
+    62 KB d3-array-BmLNhODT.js
+    29 KB geist-latin-wght-normal-BgDaEnEv.woff2
+    27 KB SwitchLayoutGroupContext-CWUgHHbR.js
+    23 KB geist-mono-latin-wght-normal-XN7g48iV.woff2
+  open "Top pick 1: Algarve (Faro), Portugal. Sunny coast, big English-speaking retiree scene. Plan holds in 73% of futures there, $94,437 a year, −14% vs home. Open profile.": dialog 476ms, lead img 853ms, all mosaic imgs 55040ms; click INP 344ms (handler 2); 3 webp 552 KB, other 0 KB; longtasks max 265ms
+    close 720ms; key INP 560ms
+  open "Top pick 2: Lisbon, Portugal. Capital city amenities, best US flight links. Plan holds in 69% of futures there, $102,877 a year, −6% vs home. Open profile.": dialog 528ms, lead img 856ms, all mosaic imgs 55111ms; click INP 352ms (handler 3); 3 webp 489 KB, other 0 KB; longtasks max 280ms
+    close 536ms; key INP 432ms
+  open "Top pick 3: Paphos, Cyprus. The EU's lightest tax on a US portfolio, in a British retiree hub. Plan holds in 73% of futures there, $94,334 a year, −14% vs home. Open profile.": dialog 647ms, lead img 930ms, all mosaic imgs 55114ms; click INP 336ms (handler 3); 3 webp 516 KB, other 0 KB; longtasks max 263ms
+    close 553ms; key INP 416ms

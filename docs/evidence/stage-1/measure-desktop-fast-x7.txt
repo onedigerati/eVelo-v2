@@ -1,0 +1,15 @@
+$ for i in 1..7: node docs/evidence/stage-1/measure-desktop-fast.mjs http://localhost:4331/ (stage-1) then http://localhost:4332/ (baseline HEAD adec1d7), interleaved; 'profile buttons' lines only
+stage1   run 1: atlas: profile buttons 1753ms, fill done 1836ms, network idle 1836ms
+baseline run 1: atlas: profile buttons 3130ms, fill done 6161ms, network idle 6162ms
+stage1   run 2: atlas: profile buttons 1542ms, fill done 4566ms, network idle 4567ms
+baseline run 2: atlas: profile buttons 2622ms, fill done 5637ms, network idle 5638ms
+stage1   run 3: atlas: profile buttons 1091ms, fill done 1174ms, network idle 1175ms
+baseline run 3: atlas: profile buttons 3056ms, fill done 6066ms, network idle 6067ms
+stage1   run 4: atlas: profile buttons 1151ms, fill done 4161ms, network idle 4162ms
+baseline run 4: atlas: profile buttons 3009ms, fill done 6039ms, network idle 6040ms
+stage1   run 5: atlas: profile buttons 1077ms, fill done 4106ms, network idle 4107ms
+baseline run 5: atlas: profile buttons 3099ms, fill done 6146ms, network idle 6147ms
+stage1   run 6: atlas: profile buttons 1072ms, fill done 4094ms, network idle 4095ms
+baseline run 6: atlas: profile buttons 3074ms, fill done 6090ms, network idle 6091ms
+stage1   run 7: atlas: profile buttons 1117ms, fill done 4192ms, network idle 4193ms
+baseline run 7: atlas: profile buttons 3053ms, fill done 6064ms, network idle 6065ms

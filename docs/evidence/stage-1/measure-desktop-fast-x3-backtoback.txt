@@ -1,0 +1,4 @@
+$ for i in 1..3: node docs/evidence/stage-1/measure-desktop-fast.mjs http://localhost:4331/   # back-to-back, no baseline interleave
+stage1 run 1: atlas: profile buttons 1810ms, fill done 4820ms, network idle 4821ms
+stage1 run 2: atlas: profile buttons 1187ms, fill done 4205ms, network idle 4206ms
+stage1 run 3: atlas: profile buttons 1120ms, fill done 4130ms, network idle 4131ms

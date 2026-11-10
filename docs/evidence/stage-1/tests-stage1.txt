@@ -1,0 +1,68 @@
+$ npx vitest run src/engine/__tests__/atlasShards.test.ts src/state/__tests__/atlasSaved.test.ts src/state/__tests__/atlasClient.test.ts src/engine/__tests__/engine.test.ts --reporter=verbose
+npm notice run evelo@2.0.0 npx
+npm notice run 'vitest' run src/engine/__tests__/atlasShards.test.ts src/state/__tests__/atlasSaved.test.ts src/state/__tests__/atlasClient.test.ts src/engine/__tests__/engine.test.ts --reporter=verbose
+
+ RUN  v5.1.0 /home/jonah/repos/eVelo-v2
+
+ ✓ src/state/__tests__/atlasSaved.test.ts > saved Atlas ranking > the same plan and data version read back exactly 3ms
+ ✓ src/state/__tests__/atlasSaved.test.ts > saved Atlas ranking > stores a hash, never the plan inputs 1ms
+ ✓ src/state/__tests__/atlasSaved.test.ts > saved Atlas ranking > a changed plan never shows the saved ranking 2ms
+ ✓ src/state/__tests__/atlasSaved.test.ts > saved Atlas ranking > a changed data version never shows the saved ranking 1ms
+ ✓ src/state/__tests__/atlasSaved.test.ts > saved Atlas ranking > a corrupt or malformed value never shows a saved ranking 2ms
+ ✓ src/state/__tests__/atlasSaved.test.ts > saved Atlas ranking > drops extra fields on the way in 0ms
+ ✓ src/state/__tests__/atlasClient.test.ts > atlas worker count > is cores − 1, at most 4, at least 1 3ms
+ ✓ src/state/__tests__/atlasClient.test.ts > AtlasClient > splits across 4 workers and merges into the single-run order 3ms
+ ✓ src/state/__tests__/atlasClient.test.ts > AtlasClient > the same request joins the one in flight; a newer one cancels it 12ms
+ ✓ src/state/__tests__/atlasClient.test.ts > AtlasClient > a partly answered request cancelled by a newer one rejects, and late answers are ignored 2ms
+ ✓ src/state/__tests__/atlasClient.test.ts > AtlasClient > a worker error rejects, and the next request still runs 1ms
+ ✓ src/state/__tests__/atlasClient.test.ts > AtlasClient > an engine error reply rejects 1ms
+ ✓ src/state/__tests__/atlasClient.test.ts > AtlasClient > a synchronous postMessage throw rejects and leaves nothing in flight 4ms
+ ✓ src/state/__tests__/atlasClient.test.ts > AtlasClient > no cities: answers at once, posts nothing, is never running 0ms
+ ✓ src/state/__tests__/atlasClient.test.ts > saved ranking > a fresh client reads the saved ranking back without posting; a changed plan does not 2ms
+ ✓ src/state/__tests__/atlasClient.test.ts > saved ranking > a corrupt stored value is ignored and the ranking runs 1ms
+ ✓ src/state/__tests__/atlasClient.test.ts > saved ranking > storage that throws on read or write: still ranks and caches 1ms
+ ✓ src/engine/__tests__/engine.test.ts > block bootstrap > preserves cross-asset correlation (same month index for all assets) 54ms
+ ✓ src/engine/__tests__/engine.test.ts > block bootstrap > portfolio variance from scenarios matches the correlated historical variance 35ms
+ ✓ src/engine/__tests__/engine.test.ts > block bootstrap > fat-tail draws match variance and have heavy tails 85ms
+ ✓ src/engine/__tests__/engine.test.ts > prepare > backfills a 5-year asset to the full calendar with beta ≈ generating beta 3ms
+ ✓ src/engine/__tests__/engine.test.ts > prepare > 'historical' keeps the real-history mean; 'balanced' moves it toward the prior 1ms
+ ✓ src/engine/__tests__/engine.test.ts > outlook on a long-lived winner > 100% NVDA: balanced median CAGR roughly 8-16%, conservative < balanced < historical 611ms
+ ✓ src/engine/__tests__/atlasShards.test.ts > sharded Atlas ranking > default plan: N = 1..5 workers return exactly the single run's entries 975ms
+ ✓ src/engine/__tests__/engine.test.ts > outlook on a long-lived winner > clamps beta in the prior 1ms
+ ✓ src/engine/__tests__/engine.test.ts > backfill co-movement and non-equity priors > co-moving young assets keep their correlation in the backfilled span (shared donor months) 2ms
+ ✓ src/engine/__tests__/engine.test.ts > backfill co-movement and non-equity priors > bonds, real estate and commodities shrink toward explicit priors 2ms
+ ✓ src/engine/__tests__/engine.test.ts > margin call > fires when LTV crosses maxLtv and the forced sale lands at targetLtv incl. tax 0ms
+ ✓ src/engine/__tests__/engine.test.ts > margin call > does not fire below maxLtv 0ms
+ ✓ src/engine/__tests__/engine.test.ts > margin call > is broken when the portfolio falls below the loan 0ms
+ ✓ src/engine/__tests__/engine.test.ts > margin call > failure rate equals cumulative forced-sale probability 49ms
+ ✓ src/engine/__tests__/engine.test.ts > cities > categoryRatios maps indices and applies the expat factor 0ms
+ ✓ src/engine/__tests__/engine.test.ts > cities > a cheaper destination raises success; a pricier one lowers it 196ms
+ ✓ src/engine/__tests__/engine.test.ts > cities > expatFactor = 1 removes the savings on local-price categories 110ms
+ ✓ src/engine/__tests__/engine.test.ts > cities > later move is between staying and moving now 185ms
+ ✓ src/engine/__tests__/engine.test.ts > cities > atlas ranks cities with common random numbers 51ms
+ ✓ src/engine/__tests__/engine.test.ts > cities > atlas odds equal the Outlook for every city, at the full path count 382ms
+ ✓ src/engine/__tests__/atlasShards.test.ts > sharded Atlas ranking > existing loan: N = 1..5 workers return exactly the single run's entries 816ms
+ ✓ src/engine/__tests__/engine.test.ts > results > outcomeDots sums to 100 and is sorted 3ms
+ ✓ src/engine/__tests__/engine.test.ts > results > is deterministic for equal seeds and differs for different seeds 87ms
+ ✓ src/engine/__tests__/engine.test.ts > results > sell strategy pays capital-gains tax; BBD estate benefits from step-up 54ms
+ ✓ src/engine/__tests__/engine.test.ts > results > reports real stats below nominal and rounds the horizon to whole years 10ms
+ ✓ src/engine/__tests__/engine.test.ts > results > fat-tail method runs end to end 85ms
+ ✓ src/engine/__tests__/engine.test.ts > solver > solved spend meets the target and +10% does not 166ms
+ ✓ src/engine/__tests__/engine.test.ts > solver > reports destination spend for a move 141ms
+stdout | src/engine/__tests__/engine.test.ts > performance > 4000 paths x 30y in < 1500 ms
+simulate 4000x30y: 113 ms, success 81.2%
+
+ ✓ src/engine/__tests__/engine.test.ts > performance > 4000 paths x 30y in < 1500 ms 121ms
+ ✓ src/engine/__tests__/atlasShards.test.ts > sharded Atlas ranking > retire later: N = 1..5 workers return exactly the single run's entries 735ms
+ ✓ src/engine/__tests__/atlasShards.test.ts > sharded Atlas ranking > splits into at most N non-empty shards covering every city once 1ms
+ ✓ src/engine/__tests__/atlasShards.test.ts > sharded Atlas ranking > full ties keep the requested city order, as the single run does 0ms
+stdout | src/engine/__tests__/engine.test.ts > performance > atlas over 80 cities in < 3500 ms
+atlas 80 cities: 984 ms
+
+ ✓ src/engine/__tests__/engine.test.ts > performance > atlas over 80 cities in < 3500 ms 1088ms
+
+ Test Files  4 passed (4)
+      Tests  50 passed (50)
+   Start at  00:50:47
+   Duration  3.77s (tests 91%, transform 5%, import 3%)
+

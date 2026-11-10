@@ -8,6 +8,12 @@
 
 import { useEffect, useMemo, useState } from 'react'
 import type { AtlasEntry, PlanInputs, SimulationResult, SolveResult, WorkerRequest, WorkerResponse } from '../engine/types'
+import { atlasChunkSize, chunkCities, mergeShards } from '../engine/atlas'
+// The bundled worker's URL: content-hashed in builds, so it changes whenever the engine, the
+// market data or the city data it bundles change.
+import WORKER_URL from '../engine/worker.ts?worker&url'
+import { CITIES } from '../data/cities'
+import { ATLAS_SAVED_KEY, decodeSaved, encodeSaved, type SavedRanking } from './atlasSaved'
 import { compareYears, withRetireIn, type CompareEntry } from './retireCompare'
 import { useStore } from './store'
 
@@ -70,7 +76,7 @@ class SimClient {
 
   private spawn(): Worker {
     if (this.worker) return this.worker
-    const w = new Worker(new URL('../engine/worker.ts', import.meta.url), { type: 'module' })
+    const w = new Worker(WORKER_URL, { type: 'module' })
     w.onmessage = (ev: MessageEvent<WorkerResponse>) => {
       const res = ev.data
       const p = this.pending.get(res.id)
@@ -200,6 +206,8 @@ class SimClient {
       st.setSolve(solve)
       st.setSolving(false)
       publish()
+      // The Outlook's own runs are done: the Atlas ranking can warm up now (once per load).
+      prewarmAtlas()
 
       await this.runCompare(inputs, plans, live, publish)
     } catch (e) {
@@ -256,62 +264,222 @@ export const atlasKey = (i: PlanInputs, cityIds: string[]) => `${cityIds.join(',
 
 export const isCancelled = (e: unknown) => e instanceof Cancelled
 
+/** Every city, in the order the Atlas ranks them. */
+export const ATLAS_CITY_IDS = CITIES.map((c) => c.id)
+
 /**
- * City rankings run on their own worker so they never queue behind (or get cancelled by) the
- * main simulate → solve pipeline. A request for new inputs supersedes one in flight.
+ * Data version for the saved ranking: the built worker's URL, whose content hash covers the
+ * engine, market data and cities. The dev server's worker URL has no hash, so dev never saves.
  */
-class AtlasClient {
-  private worker: Worker | null = null
-  private cache = new Lru<{ entries: AtlasEntry[]; at: number }>()
-  private inflight: { key: string; promise: Promise<{ entries: AtlasEntry[]; at: number }>; reject: (e: Error) => void } | null = null
+const DATA_VERSION: string | null = import.meta.env.PROD && typeof window !== 'undefined' ? WORKER_URL : null
+
+/**
+ * How many workers a city ranking is split across: cores − 1 (the page keeps one), at most 6.
+ * Each worker loads its own copy of the engine + market data and builds its own scenarios for the
+ * plan (~17 MB at 4000 paths × 30 years, freed a few seconds after the ranking), so 6 workers
+ * cost ~100 MB at peak; a 2–4 core phone gets 1–3.
+ */
+export function atlasWorkerCount(cores = typeof navigator !== 'undefined' ? navigator.hardwareConcurrency : 0): number {
+  const c = Number.isFinite(cores) && cores > 0 ? Math.floor(cores) : 2
+  return Math.max(1, Math.min(c - 1, 6))
+}
+
+type Ranking = SavedRanking
+
+/**
+ * City rankings run on their own workers so they never queue behind (or get cancelled by) the
+ * main simulate → solve pipeline. Each ranking is split across atlasWorkerCount() workers and
+ * merged into the single-run order. A request for new inputs supersedes (terminates) the one in
+ * flight; the same request joins it. The latest ranking is also saved in the browser.
+ */
+export class AtlasClient {
+  /** `dataVersion` null disables the saved ranking; both are injectable for tests. */
+  constructor(
+    private dataVersion: string | null = DATA_VERSION,
+    private storage: () => Pick<Storage, 'getItem' | 'setItem'> = () => window.localStorage,
+  ) {}
+
+  private workers: Worker[] = []
+  private cache = new Lru<Ranking>()
+  private inflight: { key: string; promise: Promise<Ranking>; cancel: () => void } | null = null
   private nextId = 1
+  /** The stored value (undefined until first read). */
+  private savedRaw: string | null | undefined
 
-  /** Cached ranking for these inputs, if any. */
-  peek(inputs: PlanInputs, cityIds: string[]) {
-    return this.cache.get(atlasKey(inputs, cityIds)) ?? null
-  }
-
-  rank(inputs: PlanInputs, cityIds: string[]): Promise<{ entries: AtlasEntry[]; at: number }> {
+  /** Cached (or saved) ranking for these inputs, if any. */
+  peek(inputs: PlanInputs, cityIds: string[]): Ranking | null {
     const key = atlasKey(inputs, cityIds)
     const hit = this.cache.get(key)
+    if (hit) return hit
+    const saved = this.readSaved(key, cityIds)
+    if (saved) this.cache.set(key, saved)
+    return saved
+  }
+
+  /** True while a ranking for exactly these inputs is running. */
+  running(inputs: PlanInputs, cityIds: string[]): boolean {
+    return this.inflight?.key === atlasKey(inputs, cityIds)
+  }
+
+  rank(inputs: PlanInputs, cityIds: string[]): Promise<Ranking> {
+    const key = atlasKey(inputs, cityIds)
+    const hit = this.peek(inputs, cityIds)
     if (hit) return Promise.resolve(hit)
     if (this.inflight?.key === key) return this.inflight.promise
-    if (this.inflight) {
-      this.inflight.reject(new Cancelled())
-      this.inflight = null
-      this.worker?.terminate()
-      this.worker = null
-    }
-    const w = (this.worker ??= new Worker(new URL('../engine/worker.ts', import.meta.url), { type: 'module' }))
-    const id = this.nextId++
-    let reject!: (e: Error) => void
-    const promise = new Promise<{ entries: AtlasEntry[]; at: number }>((res, rej) => {
-      reject = rej
-      w.onmessage = (ev: MessageEvent<WorkerResponse>) => {
-        const r = ev.data
-        if (r.id !== id) return
+    this.inflight?.cancel()
+    const nw = Math.min(atlasWorkerCount(), cityIds.length)
+    const chunks = chunkCities(cityIds, atlasChunkSize(cityIds.length, nw))
+    // Nothing to rank: answer at once, never in flight.
+    if (chunks.length === 0) return Promise.resolve(this.store(key, { entries: [], at: Date.now() }))
+    let settled = false
+    let cancel!: () => void
+    const promise = new Promise<Ranking>((resolve, reject) => {
+      const workers = this.workers
+      const done = () => {
+        settled = true
         if (this.inflight?.key === key) this.inflight = null
-        if (r.kind === 'atlas') {
-          const v = { entries: r.result, at: Date.now() }
-          this.cache.set(key, v)
-          res(v)
-        } else rej(new Error(r.kind === 'error' ? r.message : 'Unexpected atlas response'))
       }
-      w.onerror = (ev) => {
-        ev.preventDefault()
-        if (this.inflight?.key === key) this.inflight = null
-        this.worker?.terminate()
-        this.worker = null
-        rej(new Error(ev.message || 'Atlas worker failed'))
+      const fail = (e: unknown) => {
+        if (settled) return
+        done()
+        // Chunks still running belong to this request: stop them (fresh workers next time).
+        if (this.workers === workers) this.workers = []
+        for (const w of workers) w.terminate()
+        reject(e instanceof Error ? e : new Error(String(e)))
       }
-      w.postMessage({ id, kind: 'atlas', inputs, cityIds } as WorkerRequest)
+      cancel = () => fail(new Cancelled())
+      // A work queue, two chunks deep per worker: a worker always has its next chunk queued, so it
+      // never idles while the page's main thread is busy (rendering) before handling a reply.
+      // Once the queue is empty, a worker with nothing left re-runs the oldest chunk still out
+      // (results are deterministic, so the first answer wins): a slow worker never holds the ranking.
+      const results: AtlasEntry[][] = []
+      const chunkOf = new Map<number, number>() // request id → chunk index
+      const copies = new Array<number>(chunks.length).fill(0)
+      const busy = new Map<Worker, number>() // chunks queued on each worker
+      let next = 0
+      let left = chunks.length
+      const dispatch = (w: Worker) => {
+        if (settled) return
+        let i = next < chunks.length ? next++ : -1
+        if (i < 0 && !busy.get(w)) i = copies.findIndex((c, j) => c === 1 && !results[j])
+        if (i < 0) return
+        copies[i]++
+        busy.set(w, (busy.get(w) ?? 0) + 1)
+        const id = this.nextId++
+        chunkOf.set(id, i)
+        w.postMessage({ id, kind: 'atlas', inputs, cityIds: chunks[i] } as WorkerRequest)
+      }
+      try {
+        // `new Worker` / postMessage can throw synchronously (CSP, file://, uncloneable data).
+        while (workers.length < nw) workers.push(new Worker(WORKER_URL, { type: 'module' }))
+        for (const w of workers.slice(0, nw)) {
+          w.onmessage = (ev: MessageEvent<WorkerResponse>) => {
+            const r = ev.data
+            const i = chunkOf.get(r.id)
+            if (i === undefined || settled) return
+            chunkOf.delete(r.id)
+            busy.set(w, (busy.get(w) ?? 1) - 1)
+            if (r.kind !== 'atlas') return fail(new Error(r.kind === 'error' ? r.message : 'Unexpected atlas response'))
+            if (!results[i]) {
+              results[i] = r.result
+              left--
+            }
+            if (left === 0) {
+              done()
+              resolve(this.store(key, { entries: mergeShards(cityIds, results), at: Date.now() }))
+              return
+            }
+            try {
+              dispatch(w)
+            } catch (e) {
+              fail(e)
+            }
+          }
+          w.onerror = (ev) => {
+            ev.preventDefault()
+            fail(new Error(ev.message || 'Atlas worker failed'))
+          }
+          // A reply that can't be deserialized would otherwise leave its chunk unanswered forever.
+          w.onmessageerror = () => fail(new Error('Atlas worker reply could not be read'))
+        }
+        for (const w of workers.slice(0, nw)) dispatch(w)
+        for (const w of workers.slice(0, nw)) dispatch(w)
+      } catch (e) {
+        fail(e)
+      }
     })
-    this.inflight = { key, promise, reject }
+    // A request that already failed synchronously is not in flight.
+    if (!settled) this.inflight = { key, promise, cancel }
     return promise
+  }
+
+  private store(key: string, v: Ranking): Ranking {
+    this.cache.set(key, v)
+    if (this.dataVersion && v.entries.length) {
+      const raw = encodeSaved(key, this.dataVersion, v)
+      this.savedRaw = raw
+      try {
+        this.storage().setItem(ATLAS_SAVED_KEY, raw)
+      } catch {
+        /* storage blocked or full — the in-memory cache still has it */
+      }
+    }
+    return v
+  }
+
+  private readSaved(key: string, cityIds: string[]): Ranking | null {
+    if (!this.dataVersion) return null
+    if (this.savedRaw === undefined) {
+      try {
+        this.savedRaw = this.storage().getItem(ATLAS_SAVED_KEY)
+      } catch {
+        this.savedRaw = null
+      }
+    }
+    const ids = new Set(cityIds)
+    return decodeSaved(this.savedRaw, key, this.dataVersion, (id) => ids.has(id))
   }
 }
 
 export const atlasClient = new AtlasClient()
+
+let prewarmed = false
+
+/** Start (or join) the ranking for the current plan if none is cached or saved. */
+function startAtlas() {
+  try {
+    const inputs = useStore.getState().inputs
+    if (!hasHoldings(inputs) || atlasClient.peek(inputs, ATLAS_CITY_IDS)) return
+    atlasClient.rank(inputs, ATLAS_CITY_IDS).catch(() => {
+      /* cancelled by a newer ranking, or failed: the Atlas view reports its own run */
+    })
+  } catch {
+    /* a best-effort head start: never let it break the effect that called it */
+  }
+}
+
+/**
+ * Opening the Atlas: start the ranking now rather than when its lazy view chunk has loaded and
+ * mounted (~0.4 s later on a fresh load); the view's own request joins this one.
+ */
+function rankForAtlasRoute() {
+  if (typeof window !== 'undefined' && useStore.getState().route === 'atlas') startAtlas()
+}
+
+/**
+ * Start the city ranking at idle once the main pipeline has its first simulate + solve, so the
+ * Atlas opens with odds already there. Once per page load; skipped when a cached or saved ranking
+ * already matches. It only fills the cache: an Atlas mounting meanwhile joins the in-flight run.
+ */
+function prewarmAtlas() {
+  if (prewarmed || typeof window === 'undefined') return
+  prewarmed = true
+  // Not on Save-Data or a 1–2 core device: the user may never open the Atlas.
+  const nav = navigator as Navigator & { connection?: { saveData?: boolean } }
+  if (nav.connection?.saveData || (nav.hardwareConcurrency > 0 && nav.hardwareConcurrency <= 2)) return
+  if (typeof window.requestIdleCallback === 'function') window.requestIdleCallback(startAtlas, { timeout: 1000 })
+  else setTimeout(startAtlas, 200)
+}
 
 /** Rank cities at the current lifestyle. Fills store.atlas (+ atlasAt / atlasRunning). */
 export async function runAtlas(cityIds: string[]): Promise<AtlasEntry[]> {
@@ -391,7 +559,7 @@ class DestinationClient {
 
   private spawn(): Worker {
     if (this.worker) return this.worker
-    const w = new Worker(new URL('../engine/worker.ts', import.meta.url), { type: 'module' })
+    const w = new Worker(WORKER_URL, { type: 'module' })
     w.onmessage = (ev: MessageEvent<WorkerResponse>) => {
       const res = ev.data
       const p = this.pending.get(res.id)
@@ -494,8 +662,10 @@ export function useDestinationSim(inputs: PlanInputs, cityId: string | null): De
 export function useSimulationSync() {
   useEffect(() => {
     sim.schedule(true)
+    rankForAtlasRoute()
     return useStore.subscribe((s, prev) => {
       if (s.inputs !== prev.inputs) sim.schedule()
+      if (s.route !== prev.route) rankForAtlasRoute()
     })
   }, [])
 }

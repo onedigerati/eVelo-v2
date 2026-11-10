@@ -9,6 +9,7 @@ import { atlasClient, hasHoldings, isCancelled, runAtlas } from '../../state/sim
 import { useStore } from '../../state/store'
 import { currencyCompact, number, percent } from '../format'
 
+// Same ids, same order as ATLAS_CITY_IDS in state/sim (the idle prewarm ranks those).
 export const CITY_IDS = CITIES.map((c) => c.id)
 export const ATLAS_DEBOUNCE_MS = 380
 
