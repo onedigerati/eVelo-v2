@@ -1092,6 +1092,15 @@
   font-size: 12px;
   color: var(--broken-text);
 }
+.ratio__note {
+  /* A typed row's "scales with premium" line, under the label (indented past the swatch). */
+  grid-column: 1 / -1;
+  justify-self: start;
+  margin: -6px 0 4px 14px;
+  font-size: var(--fs-xs);
+  line-height: 1.35;
+  color: var(--ink-3);
+}
 .ratio__edit input {
   width: 100%;
   min-width: 0;
