@@ -1,0 +1,49 @@
+$ node corner.mjs  (pixel RGB at each tile's top-right corner, this change ('new') vs a HEAD build ('head'), with and without the glow pseudo-elements; tile0 Best odds, tile1 Your home, tile2 Your destination)
+new dark-1280 as shipped         tile0 topRight(w-22,22)=30,42,34  (w-50,40)=26,37,31
+new dark-1280 as shipped         tile1 topRight(w-22,22)=16,20,19  (w-50,40)=16,20,19
+new dark-1280 as shipped         tile2 topRight(w-22,22)=16,20,19  (w-50,40)=16,20,19
+new dark-1280 all glows hidden   tile0 topRight(w-22,22)=30,42,34  (w-50,40)=26,37,31
+new dark-1280 all glows hidden   tile1 topRight(w-22,22)=16,20,19  (w-50,40)=16,20,19
+new dark-1280 all glows hidden   tile2 topRight(w-22,22)=16,20,19  (w-50,40)=16,20,19
+head dark-1280 as shipped         tile0 topRight(w-22,22)=41,75,59  (w-50,40)=36,67,54
+head dark-1280 as shipped         tile1 topRight(w-22,22)=55,49,34  (w-50,40)=49,45,32
+head dark-1280 as shipped         tile2 topRight(w-22,22)=30,58,48  (w-50,40)=28,53,44
+head dark-1280 all glows hidden   tile0 topRight(w-22,22)=30,42,34  (w-50,40)=26,37,31
+head dark-1280 all glows hidden   tile1 topRight(w-22,22)=16,20,19  (w-50,40)=16,20,19
+head dark-1280 all glows hidden   tile2 topRight(w-22,22)=16,20,19  (w-50,40)=16,20,19
+new dark-390 as shipped         tile0 topRight(w-22,22)=16,20,19  (w-50,40)=16,20,19
+new dark-390 as shipped         tile1 topRight(w-22,22)=16,20,19  (w-50,40)=16,20,19
+new dark-390 as shipped         tile2 topRight(w-22,22)=16,20,19  (w-50,40)=16,20,19
+new dark-390 all glows hidden   tile0 topRight(w-22,22)=16,20,19  (w-50,40)=16,20,19
+new dark-390 all glows hidden   tile1 topRight(w-22,22)=16,20,19  (w-50,40)=16,20,19
+new dark-390 all glows hidden   tile2 topRight(w-22,22)=16,20,19  (w-50,40)=16,20,19
+head dark-390 as shipped         tile0 topRight(w-22,22)=30,58,48  (w-50,40)=29,53,45
+head dark-390 as shipped         tile1 topRight(w-22,22)=54,49,34  (w-50,40)=50,46,31
+head dark-390 as shipped         tile2 topRight(w-22,22)=30,58,48  (w-50,40)=29,53,45
+head dark-390 all glows hidden   tile0 topRight(w-22,22)=16,20,19  (w-50,40)=16,20,19
+head dark-390 all glows hidden   tile1 topRight(w-22,22)=16,20,19  (w-50,40)=16,20,19
+head dark-390 all glows hidden   tile2 topRight(w-22,22)=16,20,19  (w-50,40)=16,20,19
+new light-1280 as shipped         tile0 topRight(w-22,22)=238,238,229  (w-50,40)=241,241,233
+new light-1280 as shipped         tile1 topRight(w-22,22)=246,244,238  (w-50,40)=246,244,238
+new light-1280 as shipped         tile2 topRight(w-22,22)=247,245,239  (w-50,40)=247,245,239
+new light-1280 all glows hidden   tile0 topRight(w-22,22)=238,238,229  (w-50,40)=241,241,233
+new light-1280 all glows hidden   tile1 topRight(w-22,22)=246,244,238  (w-50,40)=246,244,238
+new light-1280 all glows hidden   tile2 topRight(w-22,22)=247,245,239  (w-50,40)=247,245,239
+head light-1280 as shipped         tile0 topRight(w-22,22)=197,217,203  (w-50,40)=205,222,209
+head light-1280 as shipped         tile1 topRight(w-22,22)=231,221,201  (w-50,40)=233,224,206
+head light-1280 as shipped         tile2 topRight(w-22,22)=205,222,211  (w-50,40)=210,225,215
+head light-1280 all glows hidden   tile0 topRight(w-22,22)=238,238,229  (w-50,40)=241,241,233
+head light-1280 all glows hidden   tile1 topRight(w-22,22)=246,244,238  (w-50,40)=246,244,238
+head light-1280 all glows hidden   tile2 topRight(w-22,22)=247,245,239  (w-50,40)=247,245,239
+new light-390 as shipped         tile0 topRight(w-22,22)=248,246,240  (w-50,40)=246,244,238
+new light-390 as shipped         tile1 topRight(w-22,22)=247,245,239  (w-50,40)=246,244,238
+new light-390 as shipped         tile2 topRight(w-22,22)=246,244,238  (w-50,40)=247,245,239
+new light-390 all glows hidden   tile0 topRight(w-22,22)=248,246,240  (w-50,40)=246,244,238
+new light-390 all glows hidden   tile1 topRight(w-22,22)=247,245,239  (w-50,40)=246,244,238
+new light-390 all glows hidden   tile2 topRight(w-22,22)=246,244,238  (w-50,40)=247,245,239
+head light-390 as shipped         tile0 topRight(w-22,22)=206,224,212  (w-50,40)=210,224,215
+head light-390 as shipped         tile1 topRight(w-22,22)=232,222,202  (w-50,40)=233,224,206
+head light-390 as shipped         tile2 topRight(w-22,22)=205,222,212  (w-50,40)=210,226,215
+head light-390 all glows hidden   tile0 topRight(w-22,22)=248,246,240  (w-50,40)=246,244,238
+head light-390 all glows hidden   tile1 topRight(w-22,22)=247,245,239  (w-50,40)=246,244,238
+head light-390 all glows hidden   tile2 topRight(w-22,22)=246,244,238  (w-50,40)=247,245,239

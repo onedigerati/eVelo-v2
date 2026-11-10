@@ -134,17 +134,6 @@
   border-color: var(--focus);
   box-shadow: var(--focus-ring);
 }
-.atile::after {
-  content: '';
-  position: absolute;
-  right: -40px;
-  top: -40px;
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  background: radial-gradient(closest-side, color-mix(in oklab, var(--tone) 22%, transparent), transparent);
-  pointer-events: none;
-}
 .atile__city {
   display: flex;
   /* Everything lines up with the name's first line, also when the country wraps under it. */
@@ -224,6 +213,12 @@
   margin-left: 0;
 }
 .atile__fig {
+  /* Shrinks to the digits so the glow below centres on the number, not the tile's width. Its own
+     stacking context keeps the glow behind the digits and above the tile's background, also while
+     the figure is dimmed during a re-rank. */
+  position: relative;
+  isolation: isolate;
+  align-self: flex-start;
   display: flex;
   align-items: flex-start;
   font-family: var(--font-display);
@@ -231,6 +226,21 @@
   line-height: 1;
   letter-spacing: -0.02em;
   font-variant-numeric: lining-nums tabular-nums;
+}
+/* The odds glow, centred behind the figure (as a top-pick card's sits behind its score); the
+   tile's overflow clips it to the rounded edge. Only tiles with a city draw a figure. */
+.atile__fig::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: -1;
+  width: 180px;
+  height: 180px;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, color-mix(in oklab, var(--tone) 22%, transparent), transparent);
+  pointer-events: none;
 }
 .atile__fig i {
   font-size: 0.45em;

@@ -1,0 +1,15 @@
+$ git diff --stat; git diff -U0 | grep -nE "^[+-]" | grep -iE "pick"   (does the change touch any .pick rule?)
+ src/ui/atlas/atlas.css | 32 +++++++++++++++++++++-----------
+ 1 file changed, 21 insertions(+), 11 deletions(-)
+--- changed lines mentioning 'pick':
++/* The odds glow, centred behind the figure (as a top-pick card's sits behind its score); the
+--- hunk headers:
+@@ -137,11 +136,0 @@
+@@ -226,0 +216,6 @@
+@@ -234,0 +230,15 @@
+
+$ cmp picks-<theme>-<width>-new.png picks-<theme>-<width>-head.png   (this change vs a build of HEAD e463262, same inputs)
+dark-1280: byte-identical (333588 bytes)
+dark-390: byte-identical (92330 bytes)
+light-1280: byte-identical (333879 bytes)
+light-390: byte-identical (94686 bytes)

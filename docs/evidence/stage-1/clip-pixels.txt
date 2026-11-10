@@ -1,0 +1,33 @@
+$ node clip.mjs  (default state; tile0 Best odds, tile1 Your home, tile2 Your destination)
+dark-1280 tile0 glow box overshoots left edge by 39px | 3px outside: shown=10,13,12 hidden=10,13,12 SAME (clipped) | 3px inside: shown=25,43,37 hidden=16,20,19
+dark-1280 tile0 glow box overshoots bottom edge by 13px | 3px outside: shown=10,13,12 hidden=10,13,12 SAME (clipped) | 3px inside: shown=19,29,25 hidden=16,20,19
+dark-1280 tile0 overflow=hidden border-radius=20px
+dark-1280 tile1 glow box overshoots left edge by 40px | 3px outside: shown=16,20,17 hidden=16,20,17 SAME (clipped) | 3px inside: shown=45,44,33 hidden=22,27,24
+dark-1280 tile1 glow box overshoots bottom edge by 13px | 3px outside: shown=10,13,12 hidden=10,13,12 SAME (clipped) | 3px inside: shown=24,27,22 hidden=16,20,19
+dark-1280 tile1 overflow=hidden border-radius=20px
+dark-1280 tile2 glow box overshoots left edge by 38px | 3px outside: shown=10,13,12 hidden=10,13,12 SAME (clipped) | 3px inside: shown=24,42,36 hidden=16,20,19
+dark-1280 tile2 glow box overshoots bottom edge by 13px | 3px outside: shown=10,13,12 hidden=10,13,12 SAME (clipped) | 3px inside: shown=19,28,25 hidden=16,20,19
+dark-1280 tile2 overflow=hidden border-radius=20px
+dark-390 tile0 glow box overshoots left edge by 51px | 3px outside: shown=10,13,12 hidden=10,13,12 SAME (clipped) | 3px inside: shown=27,49,41 hidden=16,20,19
+dark-390 tile0 glow box overshoots bottom edge by 24px | 3px outside: shown=10,13,12 hidden=10,13,12 SAME (clipped) | 3px inside: shown=21,33,29 hidden=16,20,19
+dark-390 tile0 overflow=hidden border-radius=20px
+dark-390 tile1 glow box overshoots left edge by 51px | 3px outside: shown=10,13,12 hidden=10,13,12 SAME (clipped) | 3px inside: shown=45,42,31 hidden=16,20,19
+dark-390 tile1 overflow=hidden border-radius=20px
+dark-390 tile2 glow box overshoots left edge by 50px | 3px outside: shown=10,13,12 hidden=10,13,12 SAME (clipped) | 3px inside: shown=26,48,40 hidden=16,20,19
+dark-390 tile2 overflow=hidden border-radius=20px
+light-1280 tile0 glow box overshoots left edge by 39px | 3px outside: shown=242,239,231 hidden=242,239,231 SAME (clipped) | 3px inside: shown=221,231,222 hidden=246,244,238
+light-1280 tile0 glow box overshoots bottom edge by 13px | 3px outside: shown=242,239,231 hidden=242,239,231 SAME (clipped) | 3px inside: shown=237,240,233 hidden=246,244,238
+light-1280 tile0 overflow=hidden border-radius=20px
+light-1280 tile1 glow box overshoots left edge by 40px | 3px outside: shown=234,234,223 hidden=234,234,223 SAME (clipped) | 3px inside: shown=236,230,213 hidden=244,243,235
+light-1280 tile1 glow box overshoots bottom edge by 13px | 3px outside: shown=242,239,231 hidden=242,239,231 SAME (clipped) | 3px inside: shown=242,239,230 hidden=246,244,238
+light-1280 tile1 overflow=hidden border-radius=20px
+light-1280 tile2 glow box overshoots left edge by 38px | 3px outside: shown=241,238,230 hidden=241,238,230 SAME (clipped) | 3px inside: shown=224,234,225 hidden=248,246,240
+light-1280 tile2 glow box overshoots bottom edge by 13px | 3px outside: shown=242,239,231 hidden=242,239,231 SAME (clipped) | 3px inside: shown=237,239,232 hidden=246,244,238
+light-1280 tile2 overflow=hidden border-radius=20px
+light-390 tile0 glow box overshoots left edge by 51px | 3px outside: shown=241,238,230 hidden=241,238,230 SAME (clipped) | 3px inside: shown=215,228,219 hidden=246,244,238
+light-390 tile0 glow box overshoots bottom edge by 24px | 3px outside: shown=243,240,232 hidden=243,240,232 SAME (clipped) | 3px inside: shown=233,238,230 hidden=248,246,240
+light-390 tile0 overflow=hidden border-radius=20px
+light-390 tile1 glow box overshoots left edge by 51px | 3px outside: shown=240,237,229 hidden=240,237,229 SAME (clipped) | 3px inside: shown=235,228,211 hidden=246,244,238
+light-390 tile1 overflow=hidden border-radius=20px
+light-390 tile2 glow box overshoots left edge by 50px | 3px outside: shown=241,238,230 hidden=241,238,230 SAME (clipped) | 3px inside: shown=216,228,218 hidden=247,245,239
+light-390 tile2 overflow=hidden border-radius=20px

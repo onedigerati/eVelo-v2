@@ -1,0 +1,124 @@
+$ node probe.mjs  (Playwright on vite preview :4318; full data in probe.json)
+
+Console errors/warnings from the app: none (the probe’s own Canvas2D readback warnings excluded)
+
+dark-1280 default   Best odds        Chiang Rai 8989% | --tone #5be3b0 | fig 59.7x56.0 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok, action ok
+dark-1280 default   Your home        St. Louis 6464% | --tone #e3b262 | fig 57.7x56.0 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok
+dark-1280 default   Your destination Bangkok 8080% | --tone color-mix(in oklch, #5be3b0 96.8%, #9ed8be) | fig 62.7x56.0 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok
+   pixels (digits hidden) Best odds: glow centre 33,67,55 | 0.45r out 19,27,25 | top-right corner 30,42,34
+   pixels (digits hidden) Your home: glow centre 68,59,41 | 0.45r out 24,28,24 | top-right corner 16,20,19
+   pixels (digits hidden) Your destination: glow centre 34,66,55 | 0.45r out 18,24,22 | top-right corner 16,20,19
+dark-1280 dest-75   Best odds        Chiang Rai 8989% | --tone #5be3b0 | fig 59.7x56.0 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok, action ok
+dark-1280 dest-75   Your home        St. Louis 6464% | --tone #e3b262 | fig 57.7x56.0 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok
+dark-1280 dest-75   Your destination Bogotá 7575% | --tone color-mix(in oklch, #5be3b0 68.2%, #9ed8be) | fig 52.7x56.0 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok
+   pixels (digits hidden) Best odds: glow centre 33,67,55 | 0.45r out 19,27,25 | top-right corner 30,42,34
+   pixels (digits hidden) Your home: glow centre 68,59,41 | 0.45r out 24,28,24 | top-right corner 16,20,19
+   pixels (digits hidden) Your destination: glow centre 39,65,55 | 0.45r out 18,24,23 | top-right corner 16,20,19
+dark-1280 dest-42   Best odds        Chiang Rai 8989% | --tone #5be3b0 | fig 59.7x56.0 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok, action ok
+dark-1280 dest-42   Your home        St. Louis 6464% | --tone #e3b262 | fig 57.7x56.0 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok
+dark-1280 dest-42   Your destination London 4242% | --tone color-mix(in oklch, #f5925e 81.0%, #ff6b5a) | fig 57.7x56.0 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok
+   pixels (digits hidden) Best odds: glow centre 33,67,55 | 0.45r out 19,27,25 | top-right corner 30,42,34
+   pixels (digits hidden) Your home: glow centre 68,59,41 | 0.45r out 24,28,24 | top-right corner 16,20,19
+   pixels (digits hidden) Your destination: glow centre 68,47,36 | 0.45r out 21,22,20 | top-right corner 16,20,19
+dark-1280 clicks: click on Best-odds figure opens profile dialog: true ("No. 48 Chiang Rai"); click "Make destination" -> destination tile now Chiang Rai
+dark-1280 empty     Best odds        Chiang Rai 8989% | --tone #5be3b0 | fig 59.7x56.0 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok, action ok
+dark-1280 empty     Your home        St. Louis 6464% | --tone #e3b262 | fig 57.7x56.0 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok
+dark-1280 empty     Your destination empty note; no figure, no glow; tile ::after content=none
+   pixels (digits hidden) Best odds: glow centre 33,67,55 | 0.45r out 19,28,25 | top-right corner 30,42,34
+   pixels (digits hidden) Your home: glow centre 68,59,41 | 0.45r out 24,28,24 | top-right corner 16,20,19
+dark-1280 reranking Best odds        Chiang Rai 8989% | --tone #5be3b0 | fig 59.7x56.0 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 0.55 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok, action ok
+dark-1280 reranking Your home        St. Louis 6464% | --tone #e3b262 | fig 57.7x56.0 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 0.55 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok
+dark-1280 reranking Your destination Bogotá 7575% | --tone color-mix(in oklch, #5be3b0 68.2%, #9ed8be) | fig 52.7x56.0 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 0.55 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok
+dark-1280 loading   Best odds        skeleton; no figure, no glow; tile ::after content=none | status "Ranking 133 cities…"
+dark-1280 loading   Your home        skeleton; no figure, no glow; tile ::after content=none | status "Ranking 133 cities…"
+dark-1280 loading   Your destination skeleton; no figure, no glow; tile ::after content=none | status "Ranking 133 cities…"
+dark-390 default   Best odds        Chiang Rai 8989% | --tone #5be3b0 | fig 44.3x41.6 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok, action ok
+dark-390 default   Your home        St. Louis 6464% | --tone #e3b262 | fig 43.3x41.6 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(foot) ok
+dark-390 default   Your destination Bangkok 8080% | --tone color-mix(in oklch, #5be3b0 96.8%, #9ed8be) | fig 46.3x41.6 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(foot) ok
+   pixels (digits hidden) Best odds: glow centre 33,67,54 | 0.45r out 18,24,22 | top-right corner 16,20,19
+   pixels (digits hidden) Your home: glow centre 63,55,37 | 0.45r out 21,24,22 | top-right corner 16,20,19
+   pixels (digits hidden) Your destination: glow centre 34,66,54 | 0.45r out 18,24,22 | top-right corner 16,20,19
+dark-390 dest-75   Best odds        Chiang Rai 8989% | --tone #5be3b0 | fig 44.3x41.6 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok, action ok
+dark-390 dest-75   Your home        St. Louis 6464% | --tone #e3b262 | fig 43.3x41.6 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(foot) ok
+dark-390 dest-75   Your destination Bogotá 7575% | --tone color-mix(in oklch, #5be3b0 68.2%, #9ed8be) | fig 39.3x41.6 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(foot) ok
+   pixels (digits hidden) Best odds: glow centre 33,67,54 | 0.45r out 18,24,22 | top-right corner 16,20,19
+   pixels (digits hidden) Your home: glow centre 63,55,37 | 0.45r out 21,24,22 | top-right corner 16,20,19
+   pixels (digits hidden) Your destination: glow centre 39,66,56 | 0.45r out 18,24,22 | top-right corner 16,20,19
+dark-390 dest-42   Best odds        Chiang Rai 8989% | --tone #5be3b0 | fig 44.3x41.6 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok, action ok
+dark-390 dest-42   Your home        St. Louis 6464% | --tone #e3b262 | fig 43.3x41.6 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(foot) ok
+dark-390 dest-42   Your destination London 4242% | --tone color-mix(in oklch, #f5925e 81.0%, #ff6b5a) | fig 43.3x41.6 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(foot) ok
+   pixels (digits hidden) Best odds: glow centre 33,67,54 | 0.45r out 18,24,22 | top-right corner 16,20,19
+   pixels (digits hidden) Your home: glow centre 63,55,37 | 0.45r out 21,24,22 | top-right corner 16,20,19
+   pixels (digits hidden) Your destination: glow centre 68,47,36 | 0.45r out 21,22,20 | top-right corner 16,20,19
+dark-390 clicks: click on Best-odds figure opens profile dialog: true ("No. 48 Chiang Rai"); click "Make destination" -> destination tile now Chiang Rai
+dark-390 empty     Best odds        Chiang Rai 8989% | --tone #5be3b0 | fig 44.3x41.6 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok, action ok
+dark-390 empty     Your home        St. Louis 6464% | --tone #e3b262 | fig 43.3x41.6 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(foot) ok
+dark-390 empty     Your destination empty note; no figure, no glow; tile ::after content=none
+   pixels (digits hidden) Best odds: glow centre 33,67,54 | 0.45r out 18,24,22 | top-right corner 16,20,19
+   pixels (digits hidden) Your home: glow centre 63,55,37 | 0.45r out 21,24,22 | top-right corner 15,19,18
+dark-390 reranking Best odds        Chiang Rai 8989% | --tone #5be3b0 | fig 44.3x41.6 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 0.55 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok, action ok
+dark-390 reranking Your home        St. Louis 6464% | --tone #e3b262 | fig 43.3x41.6 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 0.55 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(foot) ok
+dark-390 reranking Your destination Bogotá 7575% | --tone color-mix(in oklch, #5be3b0 68.2%, #9ed8be) | fig 39.3x41.6 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 0.55 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(foot) ok
+dark-390 loading   Best odds        skeleton; no figure, no glow; tile ::after content=none | status "Ranking 133 cities…"
+dark-390 loading   Your home        skeleton; no figure, no glow; tile ::after content=none | status "Ranking 133 cities…"
+dark-390 loading   Your destination skeleton; no figure, no glow; tile ::after content=none | status "Ranking 133 cities…"
+light-1280 default   Best odds        Chiang Rai 8989% | --tone #0b7a56 | fig 59.7x56.0 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok, action ok
+light-1280 default   Your home        St. Louis 6464% | --tone #a87a1f | fig 57.7x56.0 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok
+light-1280 default   Your destination Bangkok 8080% | --tone color-mix(in oklch, #0b7a56 96.8%, #3d9776) | fig 62.7x56.0 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok
+   pixels (digits hidden) Best odds: glow centre 196,217,205 | 0.45r out 241,241,234 | top-right corner 238,238,229
+   pixels (digits hidden) Your home: glow centre 227,216,190 | 0.45r out 244,240,232 | top-right corner 246,244,238
+   pixels (digits hidden) Your destination: glow centre 197,218,206 | 0.45r out 243,243,237 | top-right corner 247,245,239
+light-1280 dest-75   Best odds        Chiang Rai 8989% | --tone #0b7a56 | fig 59.7x56.0 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok, action ok
+light-1280 dest-75   Your home        St. Louis 6464% | --tone #a87a1f | fig 57.7x56.0 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok
+light-1280 dest-75   Your destination Bogotá 7575% | --tone color-mix(in oklch, #0b7a56 68.2%, #3d9776) | fig 52.7x56.0 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok
+   pixels (digits hidden) Best odds: glow centre 196,217,205 | 0.45r out 241,241,234 | top-right corner 238,238,229
+   pixels (digits hidden) Your home: glow centre 227,216,190 | 0.45r out 244,240,232 | top-right corner 246,244,238
+   pixels (digits hidden) Your destination: glow centre 198,218,206 | 0.45r out 244,244,237 | top-right corner 247,245,239
+light-1280 dest-42   Best odds        Chiang Rai 8989% | --tone #0b7a56 | fig 59.7x56.0 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok, action ok
+light-1280 dest-42   Your home        St. Louis 6464% | --tone #a87a1f | fig 57.7x56.0 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok
+light-1280 dest-42   Your destination London 4242% | --tone color-mix(in oklch, #c8662b 81.0%, #d2452f) | fig 57.7x56.0 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok
+   pixels (digits hidden) Best odds: glow centre 196,217,205 | 0.45r out 241,241,234 | top-right corner 238,238,229
+   pixels (digits hidden) Your home: glow centre 227,216,190 | 0.45r out 244,240,232 | top-right corner 246,244,238
+   pixels (digits hidden) Your destination: glow centre 237,212,196 | 0.45r out 247,243,236 | top-right corner 247,245,239
+light-1280 clicks: click on Best-odds figure opens profile dialog: true ("No. 48 Chiang Rai"); click "Make destination" -> destination tile now Chiang Rai
+light-1280 empty     Best odds        Chiang Rai 8989% | --tone #0b7a56 | fig 59.7x56.0 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok, action ok
+light-1280 empty     Your home        St. Louis 6464% | --tone #a87a1f | fig 57.7x56.0 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok
+light-1280 empty     Your destination empty note; no figure, no glow; tile ::after content=none
+   pixels (digits hidden) Best odds: glow centre 196,217,205 | 0.45r out 241,242,234 | top-right corner 237,238,229
+   pixels (digits hidden) Your home: glow centre 227,216,190 | 0.45r out 244,240,232 | top-right corner 246,244,238
+light-1280 reranking Best odds        Chiang Rai 8989% | --tone #0b7a56 | fig 59.7x56.0 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 0.55 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok, action ok
+light-1280 reranking Your home        St. Louis 6464% | --tone #a87a1f | fig 57.7x56.0 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 0.55 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok
+light-1280 reranking Your destination Bogotá 7575% | --tone color-mix(in oklch, #0b7a56 68.2%, #3d9776) | fig 52.7x56.0 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 0.55 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok
+light-1280 loading   Best odds        skeleton; no figure, no glow; tile ::after content=none | status "Ranking 133 cities…"
+light-1280 loading   Your home        skeleton; no figure, no glow; tile ::after content=none | status "Ranking 133 cities…"
+light-1280 loading   Your destination skeleton; no figure, no glow; tile ::after content=none | status "Ranking 133 cities…"
+light-390 default   Best odds        Chiang Rai 8989% | --tone #0b7a56 | fig 44.3x41.6 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok, action ok
+light-390 default   Your home        St. Louis 6464% | --tone #a87a1f | fig 43.3x41.6 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(foot) ok
+light-390 default   Your destination Bangkok 8080% | --tone color-mix(in oklch, #0b7a56 96.8%, #3d9776) | fig 46.3x41.6 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(foot) ok
+   pixels (digits hidden) Best odds: glow centre 196,217,206 | 0.45r out 241,241,235 | top-right corner 248,246,240
+   pixels (digits hidden) Your home: glow centre 229,217,194 | 0.45r out 244,241,234 | top-right corner 247,245,239
+   pixels (digits hidden) Your destination: glow centre 196,217,206 | 0.45r out 241,241,235 | top-right corner 246,244,238
+light-390 dest-75   Best odds        Chiang Rai 8989% | --tone #0b7a56 | fig 44.3x41.6 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok, action ok
+light-390 dest-75   Your home        St. Louis 6464% | --tone #a87a1f | fig 43.3x41.6 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(foot) ok
+light-390 dest-75   Your destination Bogotá 7575% | --tone color-mix(in oklch, #0b7a56 68.2%, #3d9776) | fig 39.3x41.6 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(foot) ok
+   pixels (digits hidden) Best odds: glow centre 196,217,206 | 0.45r out 241,241,235 | top-right corner 248,246,240
+   pixels (digits hidden) Your home: glow centre 229,217,194 | 0.45r out 244,241,234 | top-right corner 247,245,239
+   pixels (digits hidden) Your destination: glow centre 200,220,207 | 0.45r out 242,242,236 | top-right corner 246,244,238
+light-390 dest-42   Best odds        Chiang Rai 8989% | --tone #0b7a56 | fig 44.3x41.6 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok, action ok
+light-390 dest-42   Your home        St. Louis 6464% | --tone #a87a1f | fig 43.3x41.6 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(foot) ok
+light-390 dest-42   Your destination London 4242% | --tone color-mix(in oklch, #c8662b 81.0%, #d2452f) | fig 43.3x41.6 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(foot) ok
+   pixels (digits hidden) Best odds: glow centre 196,217,206 | 0.45r out 241,241,235 | top-right corner 248,246,240
+   pixels (digits hidden) Your home: glow centre 229,217,194 | 0.45r out 244,241,234 | top-right corner 247,245,239
+   pixels (digits hidden) Your destination: glow centre 236,212,195 | 0.45r out 246,242,235 | top-right corner 246,244,238
+light-390 clicks: click on Best-odds figure opens profile dialog: true ("No. 48 Chiang Rai"); click "Make destination" -> destination tile now Chiang Rai
+light-390 empty     Best odds        Chiang Rai 8989% | --tone #0b7a56 | fig 44.3x41.6 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok, action ok
+light-390 empty     Your home        St. Louis 6464% | --tone #a87a1f | fig 43.3x41.6 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 1 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(foot) ok
+light-390 empty     Your destination empty note; no figure, no glow; tile ::after content=none
+   pixels (digits hidden) Best odds: glow centre 196,217,206 | 0.45r out 241,241,235 | top-right corner 248,246,240
+   pixels (digits hidden) Your home: glow centre 229,217,194 | 0.45r out 244,241,234 | top-right corner 247,245,239
+light-390 reranking Best odds        Chiang Rai 8989% | --tone #0b7a56 | fig 44.3x41.6 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 0.55 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(head) ok, action ok
+light-390 reranking Your home        St. Louis 6464% | --tone #a87a1f | fig 43.3x41.6 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 0.55 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(foot) ok
+light-390 reranking Your destination Bogotá 7575% | --tone color-mix(in oklch, #0b7a56 68.2%, #3d9776) | fig 39.3x41.6 | glow 180x180 centre offset from fig centre (0,0) inFig=true z-index -1 pointer-events none | fig opacity 0.55 | tile ::after none | hits figure ok, glow-centre ok, name ok, profile-go(foot) ok
+light-390 loading   Best odds        skeleton; no figure, no glow; tile ::after content=none | status "Ranking 133 cities…"
+light-390 loading   Your home        skeleton; no figure, no glow; tile ::after content=none | status "Ranking 133 cities…"
+light-390 loading   Your destination skeleton; no figure, no glow; tile ::after content=none | status "Ranking 133 cities…"

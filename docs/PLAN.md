@@ -7,23 +7,26 @@ On the Atlas, the three hero tiles (Best odds, Your home, Your destination) colo
 2026-11-10 · tests: 818 pass (57 files) · typecheck: clean
 
 ## Now
-Stage 1 of 1 · Glow behind the figure
-Mode: autopilot
+All stages done
 Agents: wide — confirmed 2026-11-10 12:27
 Risk: UI only
 Checks:
-- [ ] On each hero tile with a city, the tone glow is centred on the odds figure (its centre within the figure's box, horizontally and vertically) and no glow remains in the top-right corner; the glow's color still follows the odds (green 87%, rust 43%, between for 75%) (proof: running app, computed geometry + screenshot)
-- [ ] The glow sits behind the figure and never covers text or catches clicks: the figure, city name, "Profile →" and "Make destination" stay readable and clickable, and the glow is clipped by the tile's rounded edge (proof: running app, elementFromPoint + screenshot)
-- [ ] It holds in light and dark, at 1280px and at phone width (390px, where the tiles reflow), in the empty, loading and re-ranking (dimmed) states (proof: screenshots)
-- [ ] Tests and typecheck stay green; the top-pick cards are unchanged (proof: test run + screenshot)
+- [x] On each hero tile with a city, the tone glow is centred on the odds figure (its centre within the figure's box, horizontally and vertically) and no glow remains in the top-right corner; the glow's color still follows the odds (green 87%, rust 43%, between for 75%) (proof: running app, computed geometry + screenshot)
+- [x] The glow sits behind the figure and never covers text or catches clicks: the figure, city name, "Profile →" and "Make destination" stay readable and clickable, and the glow is clipped by the tile's rounded edge (proof: running app, elementFromPoint + screenshot)
+- [x] It holds in light and dark, at 1280px and at phone width (390px, where the tiles reflow), in the empty, loading and re-ranking (dimmed) states (proof: screenshots)
+- [x] Tests and typecheck stay green; the top-pick cards are unchanged (proof: test run + screenshot)
 Open: none
 
 ## Stages
-- [ ] 1. Glow behind the figure — move the hero tiles' tone glow from the top-right corner to behind the odds figure, CSS only, checked in the running app
+- [x] 1. Glow behind the figure — move the hero tiles' tone glow from the top-right corner to behind the odds figure, CSS only, checked in the running app
 
 ## Decisions
 - 2026-11-10 · Option B from the mockup (https://claude.ai/artifact/HaQZtnzaomJAoLAdEr25gJ): the glow follows the number; layout otherwise unchanged — user: "Let's go with option B and let's do this on autopilot and wide."
 - 2026-11-10 · Agents: wide; run on autopilot — user: "on autopilot and wide."
+
+- 2026-11-10 · No keel:review run: a CSS-only, UI-only stage (one rule moved, 21+/11−); risk line matches the diff — PM's call.
+- 2026-11-10 · The glow keeps today's size and strength (180px, 22% tone) and is clipped by the tile's left edge where the figure sits close to it; it reads as a soft fade in the screenshots — PM's call.
+- 2026-11-10 · Stage 1 closed: 4/4 checks pass in the running build, light and dark, 1280 and 390px, empty/loading/re-ranking states, pick cards byte-identical ([evidence](evidence/stage-1/report.md)) — PM.
 
 ## Open questions
 - A hand-edited share link can carry an anchor off the slider's 0.05 steps (e.g. 0.37); it's clamped but not snapped, so "returns exactly when you slide back" can't be reached for that row. Snap anchors to the slider step in `share.ts` — from the stage 2 review, later.
