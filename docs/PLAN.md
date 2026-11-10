@@ -1,39 +1,37 @@
-# Country on city cards plan
+# Premium scales overrides plan
 
 ## Goal
-The atlas city cards (the Best odds, Your home and Your destination tiles, and the Top picks cards) show the country next to the city name, quietly enough that the city name still leads: smaller, lighter and muted, so the code chip is no longer the only hint of the country. Then (stage 2) on a phone, a sheet such as the city profile closes with a swipe down anywhere on it once its content is scrolled to the top, as well as by the handle and ×. Done = both stages pass verification in the running build; deploy waits for the user's go.
+Typed spending (a `$` amount or a `%` change on a destination category) stops freezing the "Expat price premium" slider. A typed value is pinned to the premium at the moment it was typed, and when the slider moves it scales the way eVelo's own estimate for that row moves: `value(e) = typed × model(e) / model(e_typed)`, capped at the larger of the home price and the typed value. Typed values read exactly as typed at their own premium and return to it when slid back. Rows the premium doesn't touch (pricier than home, Travel) don't move, and home-budget changes still don't move a `$`. Done = both stages pass verification in the running build, every view (plan card, Outlook, Atlas, profiles, simulation) shows the same numbers, and saved plans and share links from before load unchanged.
 
 ## Baseline
-2026-11-10 · tests: 749 pass · typecheck: clean
+2026-11-10 · tests: 766 pass · typecheck: clean
 
 ## Now
-All stages done
-Agents: wide — confirmed 2026-11-10 08:45
-Risk: UI only
+Stage 1 of 2 · Scaling engine
+Mode: autopilot
+Agents: wide — confirmed 2026-11-10 10:13
+Risk: user input (share-link and saved-plan decoding of the new anchors), money (destination spending model)
 Checks:
-- [x] On a phone-size bottom sheet with its content scrolled to the top, a downward touch swipe on the content drags the sheet with the finger; releasing past 110px or faster than 550px/s down closes it, a shorter or paused swipe springs back (proof: test)
-- [x] With the content scrolled down, a downward swipe scrolls it and never moves the sheet; upward swipes scroll; sideways swipes (photo carousel) and taps work as before (proof: test)
-- [x] In the running app on a touch phone: swipe-down at top closes the city profile, the cases above hold, and the handle, ×, Escape and backdrop still close it; side drawers are unchanged (proof: scripted touch run, a unit test can't drive real scrolling and touch)
+- [ ] A `$` typed at premium e0 reads exactly as typed at e0; at another premium e it equals typed × model(e)/model(e0), capped at max(home amount, typed); back at e0 it's exact again (proof: test)
+- [ ] A `%` override scales the same way, per city: each Atlas city scales by its own model ratio (proof: test)
+- [ ] Rows the premium doesn't touch (model ratio ≥ 1, Travel) don't move with the slider; changing the home budget doesn't move a `$`; a model ratio of 0 at e0 doesn't divide by zero (proof: test)
+- [ ] A saved plan or share link with overrides but no anchors loads with anchors = its own saved premium, so its numbers are unchanged; anchors from a share link are sanitized (known cities/categories, finite, clamped to 0–1) (proof: test)
+- [ ] The simulation, Atlas odds, picks/profile spending, Outlook cost card, existing-loan check and plan card all compute from one shared function and agree (proof: test)
 Open: none
 
 ## Stages
-- [x] 1. Country label — muted country name beside the city on atlas tiles and top-pick cards
-- [x] 2. Swipe to close — swipe down on a phone sheet's content at scroll top closes it, like the handle
+- [ ] 1. Scaling engine — anchors stored with each override, the scaling formula in one shared function used everywhere, migration and share-link sanitizing
+- [ ] 2. Premium UI — overridden rows note they scale with the premium, info tip and Method copy updated, checked in the running app
 
 ## Decisions
-- 2026-11-10 · Agents: wide; run on autopilot — user: "Let's go wide and on autopilot."
-- 2026-11-10 · Scale check didn't fire (1 stage, one release) — PM's call.
-- 2026-11-10 · The country goes inline after the city name in a smaller, regular-weight, muted face (as the "also worth a look" rows and the city list already show it), not on its own line, so the cards keep their height and look — PM's call (default).
-- 2026-11-10 · Push to main and deploy once the stage passes — user: "Push and deploy when ready."
-- 2026-11-10 · The country shows whole or not at all (wraps to a clipped line, as the city list's subtitle does), and stacks under the name on the phone's half-width tiles, after "Unit…" showed on St. Louis at 390px — PM's call.
-- 2026-11-10 · Fix round 1: verify failed checks 2–3 (stubs like "Dominican Repu…" on phone half-width tiles; country hidden on 123/133 tiles at 768). Stacking now keys off the card's own width (container queries) and the stacked country wraps instead of trimming — PM's call.
-- 2026-11-10 · Swipe-down to close joins this plan as stage 2 (shared Sheet, so every phone sheet gets it), shipped in the same deploy — user chose "Stage 2 of this plan".
-- 2026-11-10 · Fix round 2: re-verify passed stubs/hidden (0/133) but the 340px container query stacked every desktop tile at 1280 (+18px). Replaced by a content rule: the country wraps under the name only when it doesn't fit beside it — PM's call.
-- 2026-11-10 · Stage 1 closed: 3/3 checks pass after two fix rounds ([evidence](evidence/stage-1/report.md)), verified by a fresh agent on the production build; risk line UI only confirmed against the diff (CSS/TSX/tests); no `keel:review` (UI only, with tests) — PM's call.
-- 2026-11-10 · Stage 2 closed: 3/3 checks pass ([evidence](evidence/stage-2/report.md)), built in a worktree in parallel with stage 1's fixes, verified by a fresh agent on the production build (25/25 scripted touch cases); risk line UI only confirmed (Sheet primitive + touch hook); no `keel:review` (UI only, with tests) — PM's call.
-- 2026-11-10 · All stages done; pushing to deploy per the user's earlier go — PM's call.
-- 2026-11-10 · Deployed: run 42846911488 succeeded; the live bundle hashes (index-5PbBVrvj, AtlasView-BtXCW-mV, d3-array-DHSKwmig) match a local build of b213dcf, and the live Atlas chunk carries `atile__country` — PM's call.
-- 2026-11-10 · The code chip stays; the country is extra, not a replacement — PM's call (default).
+- 2026-11-10 · A typed number means "a real price I found", not "my final spend": the premium still applies on top — user: "Meaning 2, go with option B and plan it".
+- 2026-11-10 · Option B: pin a typed value to the premium when typed and scale it by the model's relative change, capped at max(home, typed); same for `$` and `%` — user chose option B. Replaces the standing 2026-11-08 decision that the premium doesn't move fixed amounts.
+- 2026-11-10 · Agents: wide; run on autopilot — user: "Go wide and on autopilot."
+- 2026-11-10 · Scale check didn't fire (2 stages, one release) — PM's call.
+- 2026-11-10 · Anchors are stored beside the overrides (one premium per `%` category; one per city and category for `$`), not by changing the existing value types, so old share links and saved plans keep decoding — PM's call (default).
+- 2026-11-10 · An override with no anchor (saved before this plan) takes the plan's own saved premium as its anchor at load, so nothing a user saved changes until they move the slider — PM's call (default).
+- 2026-11-10 · Typing a new value re-anchors that row at the current premium; × and Reset all drop the anchors with the overrides — PM's call (default).
+- 2026-11-10 · No per-row lock control ("final number, don't touch") for now — PM's call (default), revisit if asked.
 
 ## Open questions
 - Touch-dragging the tablet's left Plan drawer doesn't close it (fails the same before stage 2; likely needs `touch-action: pan-y` on side sheets) — from the stage 2 build, later.
@@ -90,3 +88,4 @@ Open: none
 - 2026-11-10 · Atlas speed: city odds split across workers, saved last ranking and an idle start (odds ~1.1 s vs ~3.0 s), 640px photo copies with srcset and hover preload (profiles 178–256 KB vs 700–910 KB), live on GitHub Pages — [plan](plans/2026-11-10-atlas-speed.md) · [evidence](plans/2026-11-10-atlas-speed/evidence/)
 - 2026-11-10 · Your spending on profiles: user-set spending rows marked "your amount"/"your change" on city profiles, named in the note, live on GitHub Pages — [plan](plans/2026-11-10-spending-markers.md) · [evidence](plans/2026-11-10-spending-markers/evidence/)
 - 2026-11-10 · Clickable atlas tiles: Best odds, Your home and Your destination tiles open the city profile from anywhere on the tile, with pick-card hover, live on GitHub Pages — [plan](plans/2026-11-10-clickable-tiles.md) · [evidence](plans/2026-11-10-clickable-tiles/evidence/)
+- 2026-11-10 · Country on city cards: muted country name beside the city on atlas tiles and top-pick cards, and swipe-down to close phone sheets, live on GitHub Pages — [plan](plans/2026-11-10-country-label.md) · [evidence](plans/2026-11-10-country-label/evidence/)
