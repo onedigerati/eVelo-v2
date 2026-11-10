@@ -1,9 +1,16 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
+
+// picks imports atlasData, which imports the store and the sim client (they touch `window` on load).
+vi.mock('../../../state/store', () => ({ useStore: () => undefined }))
+vi.mock('../../../state/sim', () => ({}))
 import { CITY_BY_ID } from '../../../data/cities'
 import { DEFAULT_INPUTS } from '../../../engine/defaults'
-import type { City } from '../../../engine/types'
+import type { BudgetCategory, City, PlanInputs } from '../../../engine/types'
+import { categoryCompare } from '../../atlas/picks'
+import { overrideMarker } from '../../atlas/profileSpend'
 import type { SpendInputs } from '../../../engine/cost'
-import { premiumLabel, scaleNotes, SCALES_NOTE, spendTip } from '../scaleNote'
+import { SCALES_WITH_PREMIUM } from '../../format'
+import { premiumLabel, scaleNotes, spendTip } from '../scaleNote'
 
 const HOME = CITY_BY_ID['st-louis']
 const DEST = CITY_BY_ID['lisbon']
@@ -28,13 +35,13 @@ describe('scaleNotes', () => {
 
   it('a $ at its own premium scales but shows nothing typed', () => {
     const n = scaleNotes(base({ amountOverrides: { [DEST.id]: { groceries: 6000 } }, amountOverrideAt: { [DEST.id]: { groceries: 0.35 } } }), HOME, DEST)
-    expect(n.groceries).toEqual({ note: SCALES_NOTE, typed: null })
+    expect(n.groceries).toEqual({ note: SCALES_WITH_PREMIUM, typed: null })
     expect(n.housing).toBeNull()
   })
 
   it('a $ with no anchor takes the current premium: nothing typed to show', () => {
     const n = scaleNotes(base({ amountOverrides: { [DEST.id]: { groceries: 6000 } } }), HOME, DEST)
-    expect(n.groceries).toEqual({ note: SCALES_NOTE, typed: null })
+    expect(n.groceries).toEqual({ note: SCALES_WITH_PREMIUM, typed: null })
   })
 
   it('a $ after the slider moved shows what was typed, and where', () => {
@@ -43,7 +50,7 @@ describe('scaleNotes', () => {
       HOME,
       DEST,
     )
-    expect(n.groceries).toEqual({ note: SCALES_NOTE, typed: 'you typed $6,000 at 35%' })
+    expect(n.groceries).toEqual({ note: SCALES_WITH_PREMIUM, typed: 'you typed $6,000 at 35%' })
   })
 
   it('a $ for another city leaves this one alone', () => {
@@ -53,7 +60,7 @@ describe('scaleNotes', () => {
 
   it('a % after the slider moved shows the typed change with a true minus', () => {
     const n = scaleNotes(base({ expatFactor: 0.6, ratioOverrides: { dining: 0.5 }, ratioOverrideAt: { dining: 0.35 } }), HOME, DEST)
-    expect(n.dining).toEqual({ note: SCALES_NOTE, typed: 'you typed −50% at 35%' })
+    expect(n.dining).toEqual({ note: SCALES_WITH_PREMIUM, typed: 'you typed −50% at 35%' })
   })
 
   it('moved but held at the cap reads as typed: no "you typed"', () => {
@@ -64,7 +71,7 @@ describe('scaleNotes', () => {
       HOME,
       DEST,
     )
-    expect(n.groceries).toEqual({ note: SCALES_NOTE, typed: null })
+    expect(n.groceries).toEqual({ note: SCALES_WITH_PREMIUM, typed: null })
   })
 
   it('rows the premium never moves (Travel, pricier than home) make no claim', () => {
@@ -101,6 +108,29 @@ describe('scaleNotes', () => {
       DEST,
     )
     expect(n.groceries?.typed).toBe('you typed $6,000 at 20%')
+  })
+})
+
+describe('plan card and city profile agree on which rows scale', () => {
+  it('notes and markers name the same rows for $ and % rows, Travel and a pricier-than-home row', () => {
+    const plan: PlanInputs = {
+      ...DEFAULT_INPUTS,
+      homeCityId: HOME.id,
+      expatFactor: 0.6,
+      ratioOverrides: { dining: 0.5, travel: 0.8 },
+      ratioOverrideAt: { dining: 0.35, travel: 0.1 },
+      amountOverrides: { [PRICEY.id]: { groceries: 6000, housing: 9000 } },
+      amountOverrideAt: { [PRICEY.id]: { groceries: 0.2, housing: 0.1 } },
+    }
+    const notes = scaleNotes(plan, HOME, PRICEY)
+    const rows = categoryCompare(plan, PRICEY)
+    const marked = (c: BudgetCategory) => overrideMarker(rows.find((r) => r.cat === c)!)?.includes(SCALES_WITH_PREMIUM) ?? false
+    for (const r of rows) expect([r.cat, notes[r.cat] !== null]).toEqual([r.cat, marked(r.cat)])
+    const scaling = rows.filter((r) => notes[r.cat] !== null).map((r) => r.cat).sort()
+    expect(scaling).toEqual(['dining', 'groceries'])
+    // Travel and the pricier housing carry a typed value but neither note nor marker.
+    expect(rows.find((r) => r.cat === 'travel')!.override).toBe('ratio')
+    expect(rows.find((r) => r.cat === 'housing')!.override).toBe('amount')
   })
 })
 

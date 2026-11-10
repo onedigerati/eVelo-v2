@@ -1,6 +1,10 @@
 // Number formatting. All formatters are cached Intl.NumberFormat instances.
 // Minus signs use U+2212 for typographic correctness in tabular figures.
 
+/** The short note on a typed spending row the Expat price premium can move: the plan card's row note
+ *  (`scaleNotes`) and the city profile's marker (`overrideMarker`) both say it. */
+export const SCALES_WITH_PREMIUM = 'scales with premium'
+
 const cache = new Map<string, Intl.NumberFormat>()
 function nf(locale: string | undefined, opts: Intl.NumberFormatOptions): Intl.NumberFormat {
   const key = `${locale ?? ''}|${JSON.stringify(opts)}`

@@ -3,17 +3,14 @@
 
 import { BUDGET_CATEGORIES, destinationSpend, isFixedAmount, type SpendInputs } from '../../engine/cost'
 import type { BudgetCategory, City } from '../../engine/types'
-import { currency, percent } from '../format'
+import { currency, percent, SCALES_WITH_PREMIUM } from '../format'
 import { changeLabel } from './spendOverrides'
-
-/** The short note on a typed row the premium can move (shared wording with the city profile). */
-export const SCALES_NOTE = 'scales with premium'
 
 /** The premium as the slider shows it: 0.35 -> "35%". */
 export const premiumLabel = (e: number) => `${Math.round(e * 100)}%`
 
 export interface ScaleNote {
-  /** Always SCALES_NOTE. */
+  /** Always SCALES_WITH_PREMIUM (the city profile's marker says the same). */
   note: string
   /** "you typed $6,000 at 35%" / "you typed −50% at 35%" once the row has moved off what was typed; else null. */
   typed: string | null
@@ -23,20 +20,19 @@ const anchorOr = (a: number | undefined, e: number) => (typeof a === 'number' &&
 
 /**
  * Per category, the note for a typed row (`$` for this city, else a `%`) that the premium can move,
- * or null: no typed value, a row the premium never touches (pricier than home, Travel: eVelo's model
- * is the same at 0% and 100%), or a `%` on a row with no home amount (nothing to scale). `typed` is
- * set only when the premium now differs from the row's anchor and the value differs from what was typed.
+ * or null. "Can move" is `destinationSpend(...).scales` (`premiumMovesTyped`), the same rule the city
+ * profile's markers use: null with no typed value or on a row the premium never touches (pricier than
+ * home, Travel). Also null for a `%` on a row with no home amount: the card shows that row as $0 with
+ * no change, which no premium moves (the profile leaves such a row out). `typed` is set only when the
+ * premium now differs from the row's anchor and the value differs from what was typed.
  */
 export function scaleNotes(inputs: SpendInputs, home: City, dest: City): Record<BudgetCategory, ScaleNote | null> {
   const e = inputs.expatFactor
   const now = destinationSpend(inputs, home, dest)
-  const at0 = destinationSpend({ ...inputs, expatFactor: 0 }, home, dest).model
-  const at1 = destinationSpend({ ...inputs, expatFactor: 1 }, home, dest).model
   const out = {} as Record<BudgetCategory, ScaleNote | null>
   for (const c of BUDGET_CATEGORIES) {
     const kind = now.override[c]
-    const movable = Math.abs(at1[c] - at0[c]) > 1e-9
-    if (!kind || !movable || (kind === 'ratio' && !((inputs.budget[c] || 0) > 0))) {
+    if (!kind || !now.scales[c] || (kind === 'ratio' && !((inputs.budget[c] || 0) > 0))) {
       out[c] = null
       continue
     }
@@ -52,7 +48,7 @@ export function scaleNotes(inputs: SpendInputs, home: City, dest: City): Record<
       if (typeof t === 'number' && at !== e && Math.abs(now.ratios[c] - t) >= 0.00005)
         typed = `you typed ${changeLabel(t - 1, (v) => percent(v, { signed: true }))} at ${premiumLabel(at)}`
     }
-    out[c] = { note: SCALES_NOTE, typed }
+    out[c] = { note: SCALES_WITH_PREMIUM, typed }
   }
   return out
 }

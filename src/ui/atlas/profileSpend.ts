@@ -1,4 +1,4 @@
-import { currencyCompact, percent } from '../format'
+import { currencyCompact, percent, SCALES_WITH_PREMIUM } from '../format'
 import { CATEGORY_LABEL, costDelta } from './atlasData'
 import type { CategoryCompare } from './picks'
 
@@ -9,14 +9,11 @@ export const OVERRIDE_TITLE = {
   ratio: 'Your change versus home, typed in the plan for every city',
 } as const
 
-/** Added to a marker on a row the Expat price premium can move (the plan card uses the same words). */
-export const SCALES_MARK = 'scales with premium'
-
 /** The row's marker as words: "your amount · scales with premium", or just "your amount" where the
  *  premium can't move the row (Travel, pricier than home). Null on rows with no override. */
 export function overrideMarker(c: Pick<CategoryCompare, 'override' | 'scales'>): string | null {
   if (!c.override) return null
-  return c.scales ? `${OVERRIDE_SPOKEN[c.override]} · ${SCALES_MARK}` : OVERRIDE_SPOKEN[c.override]
+  return c.scales ? `${OVERRIDE_SPOKEN[c.override]} · ${SCALES_WITH_PREMIUM}` : OVERRIDE_SPOKEN[c.override]
 }
 
 /** Tooltip on a marked row's value. */
