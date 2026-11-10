@@ -1,0 +1,141 @@
+node docs/evidence/stage-2/verify-app.cjs http://localhost:4331/ docs/evidence/stage-2   (Playwright, headless Chromium, 1280×1000 and 390×844, against npx vite preview of the production build)
+
+######## desktop: 1280px ########
+## A. Type at 35%: Housing $40000 (pricier than home), Groceries $6000, Healthcare -40, Travel -50, Dining out +10 (pricier)
+stored: {"expatFactor":0.35,"amountOverrides":{"london":{"housing":40000,"groceries":6000}},"amountOverrideAt":{"london":{"housing":0.35,"groceries":0.35}},"ratioOverrides":{"healthcare":0.6,"travel":0.5,"dining":1.1},"ratioOverrideAt":{"healthcare":0.35,"travel":0.35,"dining":0.35}}
+   Housing | note: null | Housing in London: $40K a year, your amount, edit
+   Groceries | note: scales with premium | Groceries in London: $6.0K a year, your amount, edit
+   Dining out | note: null | Dining out in London: $8.8K a year, edit
+   Transportation | note: null | Transportation in London: $11K a year, edit
+   Utilities & phone | note: null | Utilities & phone in London: $6.2K a year, edit
+   Healthcare | note: scales with premium | Healthcare in London: $9.6K a year, edit
+   Travel | note: null | Travel in London: $7.0K a year, edit
+   Everything else | note: null | Everything else in London: $22K a year, edit
+page width {"scrollW":1280,"clientW":1280}
+## B. ⓘ tip
+tip open: true | rect {"x":109.734375,"y":439.796875,"width":280,"height":298.65625,"top":439.796875,"right":389.734375,"bottom":738.453125,"left":109.734375} | viewport 1280
+tip text: Each % compares London’s cost for that category with what you spend on it in St. Louis, after the expat price premium. Tap the % or the $ to set your own: a $ is a yearly price you found, a % a change on your home budget. What you type scales with the premium from where you typed it, the way eVelo’s estimate for that row moves, and returns exactly to what you typed when you slide back. It never rises above the larger of your home amount and what you typed. Rows the premium doesn’t move (pricier than home, Travel) stay as typed. × undoes a row; Reset all undoes them all.
+## C. Slide 35% -> 65%
+slider now 65% null
+   Housing | note: null | Housing in London: $40K a year, your amount, edit
+   Groceries | note: scales with premium · you typed $6,000 at 35% | Groceries in London: $6.6K a year, your amount, edit
+   Dining out | note: null | Dining out in London: $8.8K a year, edit
+   Transportation | note: null | Transportation in London: $11K a year, edit
+   Utilities & phone | note: null | Utilities & phone in London: $6.2K a year, edit
+   Healthcare | note: scales with premium · you typed −40% at 35% | Healthcare in London: $12K a year, edit
+   Travel | note: null | Travel in London: $7.0K a year, edit
+   Everything else | note: null | Everything else in London: $22K a year, edit
+expected Groceries 6568.15 Healthcare 12065.37
+## D. London profile at 65%
+   Housing: $40K here vs $26K in St. Louis, +54%, your amount. | mark: null | title: Your amount, typed in the plan for this city.
+   Groceries: $6.6K here vs $11K in St. Louis, −40%, your amount, scales with premium. | mark: your amount · scales with premium | title: Your amount, typed in the plan for this city; it scales with the Expat price premium from where you typed it.
+   Dining out: $8.8K here vs $8.0K in St. Louis, +10%, your change. | mark: null | title: Your change versus home, typed in the plan for every city.
+   Transport: $11K here vs $10K in St. Louis, +13%. | mark: null | title: null
+   Utilities: $6.2K here vs $5.5K in St. Louis, +13%. | mark: null | title: null
+   Healthcare: $12K here vs $16K in St. Louis, −25%, your change, scales with premium. | mark: your change · scales with premium | title: Your change versus home, typed in the plan for every city; it scales with the Expat price premium from where you typed it.
+   Travel: $7.0K here vs $14K in St. Louis, −50%, your change. | mark: null | title: Your change versus home, typed in the plan for every city.
+   Other: $22K here vs $20K in St. Louis, +13%. | mark: null | title: null
+  profile note: Your St. Louis budget at local prices, with your expat price premium (65%), your own amounts for Housing and Groceries and your changes for Dining out, Healthcare and Travel. Groceries and Healthcare follow the Expat price premium from where they were typed.
+## E. Back to 35%
+## F. Method page, "Living abroad"
+method text: A typed number is read as a real price you found, not as your final spend, so the premium still applies on top. It is pinned to the premium it was typed at, and when the slider moves it scales the way eVelo’s own estimate for that category and city moves:value = typed × m(e) ÷ m(e₀), capped at the larger of the home amount (or 100%) and what was typedm(e) = r + (1 − r) × e, eVelo’s own ratio for that category and city; e₀ = the premium the value was typed at, e = the premium now.For example, $6,000 a year of housing in Bangkok, typed at a 35% premium, reads $6,512 at 65%: the model’s housing ratio rises from 84% to 92% of St. Louis’s. A typed value reads exactly as typed at its own premium and returns to it when the slider comes back. Categories the premium doesn’t touch (dearer than home, and travel) never move. Changing the home budget doesn’t move a typed amount either, unless it sits at the cap: then a lower home budget lowers it, never below what was typed.
+desktop console/page errors: none
+
+######## phone: 390px ########
+## A. Type at 35%: Housing $40000 (pricier than home), Groceries $6000, Healthcare -40, Travel -50, Dining out +10 (pricier)
+stored: {"expatFactor":0.35,"amountOverrides":{"london":{"housing":40000,"groceries":6000}},"amountOverrideAt":{"london":{"housing":0.35,"groceries":0.35}},"ratioOverrides":{"healthcare":0.6,"travel":0.5,"dining":1.1},"ratioOverrideAt":{"healthcare":0.35,"travel":0.35,"dining":0.35}}
+   Housing | note: null | Housing in London: $40K a year, your amount, edit
+   Groceries | note: scales with premium | Groceries in London: $6.0K a year, your amount, edit
+   Dining out | note: null | Dining out in London: $8.8K a year, edit
+   Transportation | note: null | Transportation in London: $11K a year, edit
+   Utilities & phone | note: null | Utilities & phone in London: $6.2K a year, edit
+   Healthcare | note: scales with premium | Healthcare in London: $9.6K a year, edit
+   Travel | note: null | Travel in London: $7.0K a year, edit
+   Everything else | note: null | Everything else in London: $22K a year, edit
+page width {"scrollW":390,"clientW":390}
+## B. ⓘ tip
+tip open: true | rect {"x":59.734375,"y":329.203125,"width":280,"height":298.65625,"top":329.203125,"right":339.734375,"bottom":627.859375,"left":59.734375} | viewport 390
+tip text: Each % compares London’s cost for that category with what you spend on it in St. Louis, after the expat price premium. Tap the % or the $ to set your own: a $ is a yearly price you found, a % a change on your home budget. What you type scales with the premium from where you typed it, the way eVelo’s estimate for that row moves, and returns exactly to what you typed when you slide back. It never rises above the larger of your home amount and what you typed. Rows the premium doesn’t move (pricier than home, Travel) stay as typed. × undoes a row; Reset all undoes them all.
+## C. Slide 35% -> 65%
+slider now 65% null
+   Housing | note: null | Housing in London: $40K a year, your amount, edit
+   Groceries | note: scales with premium · you typed $6,000 at 35% | Groceries in London: $6.6K a year, your amount, edit
+   Dining out | note: null | Dining out in London: $8.8K a year, edit
+   Transportation | note: null | Transportation in London: $11K a year, edit
+   Utilities & phone | note: null | Utilities & phone in London: $6.2K a year, edit
+   Healthcare | note: scales with premium · you typed −40% at 35% | Healthcare in London: $12K a year, edit
+   Travel | note: null | Travel in London: $7.0K a year, edit
+   Everything else | note: null | Everything else in London: $22K a year, edit
+expected Groceries 6568.15 Healthcare 12065.37
+## D. London profile at 65%
+   Housing: $40K here vs $26K in St. Louis, +54%, your amount. | mark: null | title: Your amount, typed in the plan for this city.
+   Groceries: $6.6K here vs $11K in St. Louis, −40%, your amount, scales with premium. | mark: your amount · scales with premium | title: Your amount, typed in the plan for this city; it scales with the Expat price premium from where you typed it.
+   Dining out: $8.8K here vs $8.0K in St. Louis, +10%, your change. | mark: null | title: Your change versus home, typed in the plan for every city.
+   Transport: $11K here vs $10K in St. Louis, +13%. | mark: null | title: null
+   Utilities: $6.2K here vs $5.5K in St. Louis, +13%. | mark: null | title: null
+   Healthcare: $12K here vs $16K in St. Louis, −25%, your change, scales with premium. | mark: your change · scales with premium | title: Your change versus home, typed in the plan for every city; it scales with the Expat price premium from where you typed it.
+   Travel: $7.0K here vs $14K in St. Louis, −50%, your change. | mark: null | title: Your change versus home, typed in the plan for every city.
+   Other: $22K here vs $20K in St. Louis, +13%. | mark: null | title: null
+  profile note: Your St. Louis budget at local prices, with your expat price premium (65%), your own amounts for Housing and Groceries and your changes for Dining out, Healthcare and Travel. Groceries and Healthcare follow the Expat price premium from where they were typed.
+## E. Back to 35%
+## F. Method page, "Living abroad"
+method text: A typed number is read as a real price you found, not as your final spend, so the premium still applies on top. It is pinned to the premium it was typed at, and when the slider moves it scales the way eVelo’s own estimate for that category and city moves:value = typed × m(e) ÷ m(e₀), capped at the larger of the home amount (or 100%) and what was typedm(e) = r + (1 − r) × e, eVelo’s own ratio for that category and city; e₀ = the premium the value was typed at, e = the premium now.For example, $6,000 a year of housing in Bangkok, typed at a 35% premium, reads $6,512 at 65%: the model’s housing ratio rises from 84% to 92% of St. Louis’s. A typed value reads exactly as typed at its own premium and returns to it when the slider comes back. Categories the premium doesn’t touch (dearer than home, and travel) never move. Changing the home budget doesn’t move a typed amount either, unless it sits at the cap: then a lower home budget lowers it, never below what was typed.
+phone console/page errors: none
+
+## RESULTS
+PASS desktop 35%: Groceries and Healthcare say "scales with premium" (no "you typed" yet)
+PASS desktop 35%: Housing (pricier), Travel, Dining out (pricier) carry no note
+PASS desktop 35%: Groceries reads $6,000, Housing $40,000
+PASS desktop plan page: no horizontal scroll at 35%
+PASS desktop tip is open and fits the viewport
+PASS desktop tip says scales from where typed, returns exactly, capped at larger of home and typed; no "stays put"
+PASS desktop 65%: Groceries note "scales with premium · you typed $6,000 at 35%"
+PASS desktop 65%: Healthcare note "scales with premium · you typed −40% at 35%"
+PASS desktop 65%: Housing, Travel, Dining out still no note and unchanged
+PASS desktop 65%: Groceries amount moved to the formula
+PASS desktop 65%: Healthcare amount moved to the formula
+PASS desktop plan page: no horizontal scroll at 65%
+PASS desktop profile Groceries: visible marker "your amount · scales with premium"; agrees with the plan card note
+PASS desktop profile Groceries: same number as the plan card ($6.6K)
+PASS desktop profile Healthcare: visible marker "your change · scales with premium"; agrees with the plan card note
+PASS desktop profile Healthcare: same number as the plan card ($12K)
+PASS desktop profile Housing: no "scales" marker, spoken "your amount." only; agrees with the plan card note
+PASS desktop profile Housing: same number as the plan card ($40K)
+PASS desktop profile Travel: no "scales" marker, spoken "your change." only; agrees with the plan card note
+PASS desktop profile Travel: same number as the plan card ($7.0K)
+PASS desktop profile Dining out: no "scales" marker, spoken "your change." only; agrees with the plan card note
+PASS desktop profile Dining out: same number as the plan card ($8.8K)
+PASS desktop profile note names only the scaling rows
+PASS desktop atlas/profile: no horizontal scroll
+PASS desktop back at 35%: every row reads as typed, "you typed" gone
+PASS desktop Method "Living abroad" explains typed spending scales with the premium (formula, cap, returns exactly, untouched rows)
+PASS desktop method page: no horizontal scroll
+PASS desktop no console or page errors
+PASS phone 35%: Groceries and Healthcare say "scales with premium" (no "you typed" yet)
+PASS phone 35%: Housing (pricier), Travel, Dining out (pricier) carry no note
+PASS phone 35%: Groceries reads $6,000, Housing $40,000
+PASS phone plan page: no horizontal scroll at 35%
+PASS phone tip is open and fits the viewport
+PASS phone tip says scales from where typed, returns exactly, capped at larger of home and typed; no "stays put"
+PASS phone 65%: Groceries note "scales with premium · you typed $6,000 at 35%"
+PASS phone 65%: Healthcare note "scales with premium · you typed −40% at 35%"
+PASS phone 65%: Housing, Travel, Dining out still no note and unchanged
+PASS phone 65%: Groceries amount moved to the formula
+PASS phone 65%: Healthcare amount moved to the formula
+PASS phone plan page: no horizontal scroll at 65%
+PASS phone profile Groceries: visible marker "your amount · scales with premium"; agrees with the plan card note
+PASS phone profile Groceries: same number as the plan card ($6.6K)
+PASS phone profile Healthcare: visible marker "your change · scales with premium"; agrees with the plan card note
+PASS phone profile Healthcare: same number as the plan card ($12K)
+PASS phone profile Housing: no "scales" marker, spoken "your amount." only; agrees with the plan card note
+PASS phone profile Housing: same number as the plan card ($40K)
+PASS phone profile Travel: no "scales" marker, spoken "your change." only; agrees with the plan card note
+PASS phone profile Travel: same number as the plan card ($7.0K)
+PASS phone profile Dining out: no "scales" marker, spoken "your change." only; agrees with the plan card note
+PASS phone profile Dining out: same number as the plan card ($8.8K)
+PASS phone profile note names only the scaling rows
+PASS phone atlas/profile: no horizontal scroll
+PASS phone back at 35%: every row reads as typed, "you typed" gone
+PASS phone Method "Living abroad" explains typed spending scales with the premium (formula, cap, returns exactly, untouched rows)
+PASS phone method page: no horizontal scroll
+PASS phone no console or page errors

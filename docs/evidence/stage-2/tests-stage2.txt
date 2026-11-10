@@ -1,0 +1,58 @@
+$ npx vitest run src/ui/plan/__tests__/scaleNote.test.ts src/ui/atlas/__tests__/profileSpend.test.ts src/engine/__tests__/scaleOverrides.test.ts --reporter=verbose
+npm notice run evelo@2.0.0 npx
+npm notice run 'vitest' run src/ui/plan/__tests__/scaleNote.test.ts src/ui/atlas/__tests__/profileSpend.test.ts src/engine/__tests__/scaleOverrides.test.ts --reporter=verbose
+
+ RUN  v5.1.0 /home/jonah/repos/eVelo-v2
+
+ ✓ src/engine/__tests__/scaleOverrides.test.ts > scaleTyped > is exact when the model has not moved, scales by mNow/mAt, and caps at max(cap, typed) 2ms
+ ✓ src/engine/__tests__/scaleOverrides.test.ts > scaleTyped > returns typed (finite) when the anchor model ratio is 0 or not finite 0ms
+ ✓ src/engine/__tests__/scaleOverrides.test.ts > destinationSpend: typed $ scales with the premium > reads exactly as typed at e0, scales at e, and is exact again back at e0 1ms
+ ✓ src/engine/__tests__/scaleOverrides.test.ts > destinationSpend: typed $ scales with the premium > caps at max(home amount, typed) 0ms
+ ✓ src/engine/__tests__/scaleOverrides.test.ts > destinationSpend: typed $ scales with the premium > applies only to its own city 0ms
+ ✓ src/engine/__tests__/scaleOverrides.test.ts > destinationSpend: typed $ scales with the premium > changing the home budget does not move a $ (cap not binding) 0ms
+ ✓ src/engine/__tests__/scaleOverrides.test.ts > destinationSpend: typed % scales per city > reads as typed at e0 in every city 0ms
+ ✓ src/engine/__tests__/scaleOverrides.test.ts > destinationSpend: typed % scales per city > each city scales by its own model ratio 0ms
+ ✓ src/engine/__tests__/scaleOverrides.test.ts > destinationSpend: typed % scales per city > caps at max(1, typed) and returns exactly to typed at e0 1ms
+ ✓ src/engine/__tests__/scaleOverrides.test.ts > destinationSpend: typed % scales per city > real Atlas cities each scale by their own model ratio 1ms
+ ✓ src/engine/__tests__/scaleOverrides.test.ts > destinationSpend: rows the premium does not touch, zero ratio, missing anchors > raw ratio ≥ 1 and Travel do not move with the slider 0ms
+ ✓ src/engine/__tests__/scaleOverrides.test.ts > destinationSpend: rows the premium does not touch, zero ratio, missing anchors > a model ratio of 0 at e0 does not divide by zero 0ms
+ ✓ src/engine/__tests__/scaleOverrides.test.ts > destinationSpend: rows the premium does not touch, zero ratio, missing anchors > a missing anchor means no scaling 0ms
+ ✓ src/engine/__tests__/scaleOverrides.test.ts > destinationSpend: rows the premium does not touch, zero ratio, missing anchors > with no overrides it matches categoryRatios × budget 1ms
+ ✓ src/engine/__tests__/scaleOverrides.test.ts > premiumMovesTyped: can the premium move a typed row > yes below home prices with an anchor whose model ratio is > 0 0ms
+ ✓ src/engine/__tests__/scaleOverrides.test.ts > premiumMovesTyped: can the premium move a typed row > no at or above home prices (Travel is always 1), with a non-finite anchor, or a 0 model at the anchor 0ms
+ ✓ src/engine/__tests__/scaleOverrides.test.ts > premiumMovesTyped: can the premium move a typed row > agrees with destinationSpend: a row flagged `scales` moves with the slider, an unflagged one does not 1ms
+ ✓ src/engine/__tests__/scaleOverrides.test.ts > simulate uses destinationSpend > destination spending equals amountsTotal(destinationSpend(...).amounts) with anchored overrides at a moved premium 115ms
+ ✓ src/ui/atlas/__tests__/profileSpend.test.ts > categoryCompare override marks > marks this city’s typed $ as amount and a typed % as ratio, nothing else 2ms
+ ✓ src/ui/atlas/__tests__/profileSpend.test.ts > categoryCompare override marks > marks the typed % on every non-home city, and each city’s own $ only there 0ms
+ ✓ src/ui/atlas/__tests__/profileSpend.test.ts > categoryCompare override marks > a typed $ wins over a typed % in the same category 0ms
+ ✓ src/ui/atlas/__tests__/profileSpend.test.ts > categoryCompare override marks > the home profile carries no mark, even with a $ keyed by the home city 0ms
+ ✓ src/ui/atlas/__tests__/profileSpend.test.ts > categoryCompare override marks > no overrides, no marks 0ms
+ ✓ src/ui/atlas/__tests__/profileSpend.test.ts > spendNote > names the categories with a typed $ and a typed % 14ms
+ ✓ src/ui/atlas/__tests__/profileSpend.test.ts > spendNote > lists several categories of one kind 0ms
+ ✓ src/ui/atlas/__tests__/profileSpend.test.ts > spendNote > says nothing about overrides when none apply here 0ms
+ ✓ src/ui/atlas/__tests__/profileSpend.test.ts > spendRowSpoken > ends a typed $ row with "your amount" and a typed % row with "your change" (plus the premium where it moves the row) 1ms
+ ✓ src/ui/atlas/__tests__/profileSpend.test.ts > spendRowSpoken > leaves other rows and the home profile unmarked 1ms
+ ✓ src/ui/atlas/__tests__/profileSpend.test.ts > rows the premium can move > categoryCompare flags typed rows the premium moves, never Travel, unmarked or home rows 0ms
+ ✓ src/ui/atlas/__tests__/profileSpend.test.ts > rows the premium can move > the marker adds "scales with premium" only where the premium can move the row 0ms
+ ✓ src/ui/atlas/__tests__/profileSpend.test.ts > rows the premium can move > the spoken line ends in the marker 0ms
+ ✓ src/ui/atlas/__tests__/profileSpend.test.ts > rows the premium can move > the note says the moving rows follow the premium from where they were typed 0ms
+ ✓ src/ui/plan/__tests__/scaleNote.test.ts > premiumLabel > shows the slider value 1ms
+ ✓ src/ui/plan/__tests__/scaleNote.test.ts > scaleNotes > no typed values: no notes 0ms
+ ✓ src/ui/plan/__tests__/scaleNote.test.ts > scaleNotes > a $ at its own premium scales but shows nothing typed 1ms
+ ✓ src/ui/plan/__tests__/scaleNote.test.ts > scaleNotes > a $ with no anchor takes the current premium: nothing typed to show 0ms
+ ✓ src/ui/plan/__tests__/scaleNote.test.ts > scaleNotes > a $ after the slider moved shows what was typed, and where 26ms
+ ✓ src/ui/plan/__tests__/scaleNote.test.ts > scaleNotes > a $ for another city leaves this one alone 0ms
+ ✓ src/ui/plan/__tests__/scaleNote.test.ts > scaleNotes > a % after the slider moved shows the typed change with a true minus 0ms
+ ✓ src/ui/plan/__tests__/scaleNote.test.ts > scaleNotes > moved but held at the cap reads as typed: no "you typed" 0ms
+ ✓ src/ui/plan/__tests__/scaleNote.test.ts > scaleNotes > rows the premium never moves (Travel, pricier than home) make no claim 1ms
+ ✓ src/ui/plan/__tests__/scaleNote.test.ts > scaleNotes > a % on a row with no home amount has nothing to scale 0ms
+ ✓ src/ui/plan/__tests__/scaleNote.test.ts > scaleNotes > a $ wins over a % on the same row 0ms
+ ✓ src/ui/plan/__tests__/scaleNote.test.ts > plan card and city profile agree on which rows scale > notes and markers name the same rows for $ and % rows, Travel and a pricier-than-home row 1ms
+ ✓ src/ui/plan/__tests__/scaleNote.test.ts > spendTip > says typed values scale from where they were typed, return exactly, and are capped 0ms
+ ✓ src/ui/plan/__tests__/scaleNote.test.ts > spendTip > no longer says typed values stay put when the premium changes 0ms
+
+ Test Files  3 passed (3)
+      Tests  46 passed (46)
+   Start at  10:57:46
+   Duration  657ms (transform 59%, import 27%, tests 13%, worker 1%)
+

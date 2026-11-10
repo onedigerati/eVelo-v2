@@ -7,20 +7,12 @@ Typed spending (a `$` amount or a `%` change on a destination category) stops fr
 2026-11-10 · tests: 766 pass · typecheck: clean
 
 ## Now
-Stage 2 of 2 · Premium UI
-Mode: autopilot
+All stages done
 Agents: wide — confirmed 2026-11-10 10:25
-Risk: none (copy and display only; no new input parsing)
-Checks:
-- [ ] On the plan card, a row with a typed `$` or `%` says it scales with the premium, and once the slider has moved from where it was typed, shows what was typed; readable at phone (390px) and desktop widths (proof: screenshot)
-- [ ] The plan card's ⓘ tip says typed values scale with the premium from where they were typed, return exactly when slid back, and are capped at the larger of the home amount and what was typed; it no longer says they stay put when the premium changes (proof: test + screenshot)
-- [ ] City profiles' "your amount"/"your change" rows say the number scales with the premium, consistent with the plan card (proof: screenshot)
-- [ ] The Method page describes how typed spending scales with the premium (proof: screenshot)
-Open: none
 
 ## Stages
 - [x] 1. Scaling engine — anchors stored with each override, the scaling formula in one shared function used everywhere, migration and share-link sanitizing
-- [ ] 2. Premium UI — overridden rows note they scale with the premium, info tip and Method copy updated, checked in the running app. From the stage 1 review: the plan card's ⓘ tip (`PlaceSection.tsx` ~141) still says a typed `$` "stays put when … the premium changes", and the profile's "your amount"/"your change" markers now sit on scaled numbers; both need the scaling note (plus the cap limit in Decisions)
+- [x] 2. Premium UI — overridden rows note they scale with the premium, info tip and Method copy updated, checked in the running app. From the stage 1 review: the plan card's ⓘ tip (`PlaceSection.tsx` ~141) still says a typed `$` "stays put when … the premium changes", and the profile's "your amount"/"your change" markers now sit on scaled numbers; both need the scaling note (plus the cap limit in Decisions)
 
 ## Decisions
 - 2026-11-10 · A typed number means "a real price I found", not "my final spend": the premium still applies on top — user: "Meaning 2, go with option B and plan it".
@@ -33,9 +25,12 @@ Open: none
 - 2026-11-10 · Stage 1's risk line drops "money": this is the planner's spending estimate (no payments, no real funds), which the same-shaped Set your own spending plan marked UI only; the formula is still proven by tests and the share-link decoding still gets the security pass — PM's call.
 - 2026-11-10 · "Changing the home budget doesn't move a `$`" holds while the cap isn't reached; once a typed `$` hits max(home, typed), a lower home budget lowers it, never below what was typed. That follows from the agreed formula, so it stays; Stage 2's copy may mention it — PM's call.
 - 2026-11-10 · Stage 1 closed: 5/5 checks pass in tests and the running build ([evidence](evidence/stage-1/report.md)); review found 0 fix-now, 2 deferred into Stage 2, security pass on anchor decoding clean — PM.
+- 2026-11-10 · Stage 2 closed: 4/4 checks pass in the running build at 390px and 1280px ([evidence](evidence/stage-2/report.md)); review found 0 fix-now; two Method sentences it deferred were fixed in the stage (home-budget rule, what "typed" means for a %), one moved to Open questions — PM.
+- 2026-11-10 · The plan card and city profiles share one "does this row scale" rule (`destinationSpend().scales`) and one "scales with premium" string (`src/ui/format.ts`); the plan card also skips a % row on a $0 home amount, which the profile never shows — PM's call.
 - 2026-11-10 · No per-row lock control ("final number, don't touch") for now — PM's call (default), revisit if asked.
 
 ## Open questions
+- A hand-edited share link can carry an anchor off the slider's 0.05 steps (e.g. 0.37); it's clamped but not snapped, so "returns exactly when you slide back" can't be reached for that row. Snap anchors to the slider step in `share.ts` — from the stage 2 review, later.
 - Touch-dragging the tablet's left Plan drawer doesn't close it (fails the same before stage 2; likely needs `touch-action: pan-y` on side sheets) — from the stage 2 build, later.
 - The profile's tinted % marker overhangs the spending list's right edge by 4px (cosmetic, not clipped) — from the stage 1 verify, later.
 - The preview build (claude.ai artifact) needs the 665 new 640px copies uploaded to its asset store before preview galleries use them; until then they fall back to the originals — from stage 2, next preview publish.
