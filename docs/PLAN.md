@@ -1,36 +1,30 @@
-# Clickable atlas tiles plan
+# Country on city cards plan
 
 ## Goal
-The three tiles at the top of the Atlas (Best odds, Your home, Your destination) behave like the top-pick cards: clicking anywhere on a tile opens that city's profile, and on hover the tile lifts, deepens its shadow and nudges its "Profile →". Your home gets this too (it had no profile link). A tile is clickable only when its city has a profile (today all 133 do). "Make destination" on Best odds stays its own button and doesn't open the profile. Done = the stage passes verification in the running build; deploy waits for the user's go.
+The atlas city cards (the Best odds, Your home and Your destination tiles, and the Top picks cards) show the country next to the city name, quietly enough that the city name still leads: smaller, lighter and muted, so the code chip is no longer the only hint of the country. Done = the stage passes verification in the running build; deploy waits for the user's go.
 
 ## Baseline
-2026-11-10 · tests: 744 pass (51 files) · typecheck: clean
+2026-11-10 · tests: 749 pass · typecheck: clean
 
 ## Now
-All stages done
-Agents: wide — confirmed 2026-11-10 08:19
+Stage 1 of 1 · Country label
+Mode: autopilot
+Agents: wide — confirmed 2026-11-10 08:45
 Risk: UI only
 Checks:
-- [x] Clicking anywhere on the Best odds, Your home or Your destination tile (name, number, note) opens that city's profile; a tile whose city has no profile, the empty destination tile and the loading tile don't (proof: test)
-- [x] "Make destination" on Best odds makes it the destination without opening the profile (proof: test)
-- [x] Each clickable tile is one keyboard stop with an accessible name naming the city and "open profile", with a visible focus ring on the tile (proof: test)
-- [x] In the running app, hovering a tile lifts it and deepens its shadow like a top-pick card, and the cursor is a pointer across the tile, in dark and light, phone and desktop (proof: screenshot, a test can't judge the look)
+- [ ] Each of the three atlas tiles with a city and each Top picks card shows that city's country name beside the city name (proof: test)
+- [ ] The country reads quieter than the city (smaller, regular weight, muted ink); a long name keeps the city whole and trims the country first, and the whole-card click and accessible names are unchanged (proof: test)
+- [ ] In the running app the country sits on the name line, subtle, without crowding "Profile →" or wrapping, in dark and light, phone and desktop (proof: screenshot, a test can't judge the look)
 Open: none
 
 ## Stages
-- [x] 1. Clickable tiles — whole-tile click and pick-card hover on the three atlas tiles
+- [ ] 1. Country label — muted country name beside the city on atlas tiles and top-pick cards
 
 ## Decisions
-- 2026-11-10 · A tile is clickable only when its city has a profile (option 1) — user: "Go with option 1".
-- 2026-11-10 · Your home opens its profile like the other tiles, without "Make destination" — user's request.
-- 2026-11-10 · Agents: wide; run on autopilot — user: "Let's go autopilot and let's go wide."
+- 2026-11-10 · Agents: wide; run on autopilot — user: "Let's go wide and on autopilot."
 - 2026-11-10 · Scale check didn't fire (1 stage, one release) — PM's call.
-- 2026-11-10 · Correction: every city has a profile (St. Louis included), so in practice all three tiles are clickable; the no-profile path stays, tested — PM's call.
-- 2026-11-10 · The tile's city name is the one stretched button; "Profile →" is decoration, as on pick cards; `Tile` moved to `AtlasTile.tsx` to test it — builder's approach, PM's call.
-- 2026-11-10 · Stage 1 closed: 4/4 checks pass ([evidence](evidence/stage-1/report.md)), verified by a fresh agent on the production build; risk line UI only confirmed against the diff; no `keel:review` (UI only, with tests) — PM's call.
-- 2026-11-10 · All stages done; deploy waits for the user's go — PM's call.
-- 2026-11-10 · Push to main to deploy — user: "Please push to main and deploy."
-- 2026-11-10 · Deployed: run 42835158257 succeeded; the live Atlas chunk carries the new tile button (`atile__open`) — PM's call.
+- 2026-11-10 · The country goes inline after the city name in a smaller, regular-weight, muted face (as the "also worth a look" rows and the city list already show it), not on its own line, so the cards keep their height and look — PM's call (default).
+- 2026-11-10 · The code chip stays; the country is extra, not a replacement — PM's call (default).
 
 ## Open questions
 - The profile's tinted % marker overhangs the spending list's right edge by 4px (cosmetic, not clipped) — from the stage 1 verify, later.
@@ -85,3 +79,4 @@ Open: none
 - 2026-11-09 · Dark by default: the site opens in dark mode, saved System switched to Dark once, no light flash, live on GitHub Pages — [plan](plans/2026-11-09-dark-by-default.md) · [evidence](plans/2026-11-09-dark-by-default/evidence/)
 - 2026-11-10 · Atlas speed: city odds split across workers, saved last ranking and an idle start (odds ~1.1 s vs ~3.0 s), 640px photo copies with srcset and hover preload (profiles 178–256 KB vs 700–910 KB), live on GitHub Pages — [plan](plans/2026-11-10-atlas-speed.md) · [evidence](plans/2026-11-10-atlas-speed/evidence/)
 - 2026-11-10 · Your spending on profiles: user-set spending rows marked "your amount"/"your change" on city profiles, named in the note, live on GitHub Pages — [plan](plans/2026-11-10-spending-markers.md) · [evidence](plans/2026-11-10-spending-markers/evidence/)
+- 2026-11-10 · Clickable atlas tiles: Best odds, Your home and Your destination tiles open the city profile from anywhere on the tile, with pick-card hover, live on GitHub Pages — [plan](plans/2026-11-10-clickable-tiles.md) · [evidence](plans/2026-11-10-clickable-tiles/evidence/)
