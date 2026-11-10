@@ -32,6 +32,7 @@ Open: none
 - 2026-11-10 · Stage 1 closed: 3/3 checks pass after two fix rounds ([evidence](evidence/stage-1/report.md)), verified by a fresh agent on the production build; risk line UI only confirmed against the diff (CSS/TSX/tests); no `keel:review` (UI only, with tests) — PM's call.
 - 2026-11-10 · Stage 2 closed: 3/3 checks pass ([evidence](evidence/stage-2/report.md)), built in a worktree in parallel with stage 1's fixes, verified by a fresh agent on the production build (25/25 scripted touch cases); risk line UI only confirmed (Sheet primitive + touch hook); no `keel:review` (UI only, with tests) — PM's call.
 - 2026-11-10 · All stages done; pushing to deploy per the user's earlier go — PM's call.
+- 2026-11-10 · Deployed: run 42846911488 succeeded; the live bundle hashes (index-5PbBVrvj, AtlasView-BtXCW-mV, d3-array-DHSKwmig) match a local build of b213dcf, and the live Atlas chunk carries `atile__country` — PM's call.
 - 2026-11-10 · The code chip stays; the country is extra, not a replacement — PM's call (default).
 
 ## Open questions
