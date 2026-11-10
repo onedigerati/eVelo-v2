@@ -27,6 +27,7 @@ Open: none
 - 2026-11-10 · No keel:review run: a CSS-only, UI-only stage (one rule moved, 21+/11−); risk line matches the diff — PM's call.
 - 2026-11-10 · The glow keeps today's size and strength (180px, 22% tone) and is clipped by the tile's left edge where the figure sits close to it; it reads as a soft fade in the screenshots — PM's call.
 - 2026-11-10 · Stage 1 closed: 4/4 checks pass in the running build, light and dark, 1280 and 390px, empty/loading/re-ranking states, pick cards byte-identical ([evidence](evidence/stage-1/report.md)) — PM.
+- 2026-11-10 · Deployed: pushed main (df862d2), Pages run 42880921727 build and deploy succeeded; the live AtlasView CSS carries `.atile__fig:before` and no `.atile:after` — user: "Push and deploy please."
 
 ## Open questions
 - A hand-edited share link can carry an anchor off the slider's 0.05 steps (e.g. 0.37); it's clamped but not snapped, so "returns exactly when you slide back" can't be reached for that row. Snap anchors to the slider step in `share.ts` — from the stage 2 review, later.
