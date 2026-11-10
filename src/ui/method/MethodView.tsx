@@ -564,7 +564,7 @@ export function MethodView() {
               scales the way eVelo’s own estimate for that category and city
               moves:
             </p>
-            <Formula note="m(e) = r + (1 − r) × e, eVelo’s own ratio for that category and city; e₀ = the premium the value was typed at, e = the premium now.">
+            <Formula note="m(e) = r + (1 − r) × e, eVelo’s own ratio for that category and city; e₀ = the premium the value was typed at, e = the premium now; for a %, typed = the share of home the change gives (−50% → 50%).">
               value = typed × m(e) ÷ m(e₀), capped at the larger of the home
               amount (or 100%) and what was typed
             </Formula>
@@ -577,8 +577,9 @@ export function MethodView() {
               exactly as typed at its own premium and returns to it when the
               slider comes back. Categories the premium doesn’t touch (dearer
               than home, and travel) never move. Changing the home budget
-              doesn’t move a typed amount either, unless it sits at the cap:
-              then a lower home budget lowers it, never below what was typed.
+              doesn’t move a typed amount either, unless the home amount is
+              below it: the cap then holds it at the home amount, never below
+              what was typed.
             </p>
           </Sec>
 
