@@ -7,8 +7,7 @@ City profiles show where the numbers are the user's own. Every spending row on a
 2026-11-10 · tests: 734 pass (50 files) · typecheck: clean
 
 ## Now
-Stage 1 of 1 · Override markers
-Mode: autopilot
+All stages done
 Agents: wide — confirmed 2026-11-10 07:52
 Risk: UI only
 Checks:
@@ -27,6 +26,7 @@ Open: none
 - 2026-11-10 · The marker follows the Plan card's override styling (`is-override`) so it reads as the same thing — PM's call.
 - 2026-11-10 · Deploy (push to main) waits for the user's go after the stage passes — PM's call (no deploy instruction for this plan).
 - 2026-11-10 · Stage 1 closed: 4/4 checks pass ([evidence](evidence/stage-1/report.md)), verified by a fresh agent on the production build; no `keel:review`: UI only, with tests — PM's call.
+- 2026-11-10 · All stages done; deploy waits for the user's go — PM's call.
 - 2026-11-10 · Scale check didn't fire (1 stage, one release) — PM's call.
 
 ## Open questions
