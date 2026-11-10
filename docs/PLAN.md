@@ -38,6 +38,7 @@ Open: none
 - 2026-11-10 · Stage 3: on the Atlas the pill also steps aside while the map's zoom buttons or city card overlap its box (touch has no hover), and while the pointer is over the map, like the Outlook charts; the first verify found it yielding on vertical overlap alone (blinked out at 1280), fixed to need overlap in both axes and re-verified — PM.
 - 2026-11-10 · No keel:review for stage 3: UI-only, a target prop on one component plus CSS; risk line matches the diff — PM's call.
 - 2026-11-10 · Stage 3 closed: 4/4 checks pass, stage 1–2 checks re-run green, other pills byte-identical to ded840e ([evidence](evidence/stage-3/report.md)) — PM.
+- 2026-11-10 · Deployed: pushed main (5836dd9), Pages run 42910837286 build and deploy succeeded; the live index bundle (index-Crfp_Q99.js) carries `verdict-pill__city` and "Back to the top of the atlas" — user: "Push and deploy please."
 
 ## Open questions
 - At 320px the map city card's "+ Compare" chip wraps onto two lines (pre-existing) — from the stage 3 verify, later.
