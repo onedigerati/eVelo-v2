@@ -121,15 +121,14 @@ function backToVerdict(topBar: number) {
 }
 
 /**
- * Desktop and tablet: once the verdict's number scrolls behind the top bar, a glass pill docks at
+ * Once the verdict's number scrolls behind the top bar, a glass pill docks at
  * the top of the results column with the live odds; it takes you back to the verdict. On tablet,
  * while the plan drawer is open, it floats above the drawer's backdrop beside the panel, so the
- * odds stay readable while editing. Phone keeps its own pill on the Plan tab, so this renders
- * nothing there.
+ * odds stay readable while editing. Phone: the same pill floats just under the sticky top bar,
+ * centred within the gutters (the Plan tab keeps its own VerdictPill).
  */
 export function DockedVerdict() {
   const bp = useBreakpoint()
-  const on = bp !== 'phone'
   const drawer = useStore((s) => bp === 'tablet' && s.route === 'plan')
   const hasResult = useStore((s) => s.result !== null)
   const success = useStore(selectSuccess)
@@ -137,9 +136,9 @@ export function DockedVerdict() {
   const city = useStore((s) => pillCity(s.inputs, cityName))
   const delta = usePillDelta(hasResult ? success : null)
   const topBar = useTopBarBottom()
-  const past = useScrolledPast(VERDICT_NUMBER_ID, topBar, on)
+  const past = useScrolledPast(VERDICT_NUMBER_ID, topBar, true)
   // The drawer's backdrop hides the verdict wherever the page is scrolled, so show it regardless.
-  const show = on && hasResult && (past || drawer)
+  const show = hasResult && (past || drawer)
 
   const pill = useRef<HTMLButtonElement>(null)
   const band = useCallback(() => {
@@ -173,9 +172,8 @@ export function DockedVerdict() {
     navigate('outlook')
   }
 
-  if (!on) return null
   const content = (
-    <div className={cx('docked-verdict', drawer && 'docked-verdict--drawer')}>
+    <div className={cx('docked-verdict', drawer && 'docked-verdict--drawer', bp === 'phone' && 'docked-verdict--phone')}>
       <AnimatePresence>
         {show && (
           <motion.div

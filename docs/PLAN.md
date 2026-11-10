@@ -7,20 +7,19 @@ The verdict pill ("Holds in 68% of futures") tells you the odds but not which ci
 2026-11-10 · tests: 818 pass · typecheck: clean
 
 ## Now
-Stage 2 of 2 · Phone Outlook pill
-Mode: autopilot
-Agents: wide
+All stages done
+Agents: wide — confirmed 2026-11-10 14:35
 Risk: UI only
 Checks:
-- [ ] On a phone (390px), Outlook shows no pill while the verdict's number is in view; once it scrolls behind the top bar the pill appears just under the top bar, showing "Holds in N% of futures · <city>", and hides again when you scroll back up (proof: running app, scroll + DOM + screenshot)
-- [ ] Tapping the phone pill scrolls back to the verdict and puts focus on its headline; the pill never covers the bottom tab bar, doesn't block taps on the content below it beyond its own box, and live changes (running ring, delta) still show (proof: running app, scripted taps + elementFromPoint)
-- [ ] It holds at 320px and 390px, light and dark, with a long city name, and the phone Plan tab and desktop/tablet pills are unchanged (proof: screenshots, a test can't judge layout)
-- [ ] Tests and typecheck stay green (proof: test run)
+- [x] On a phone (390px), Outlook shows no pill while the verdict's number is in view; once it scrolls behind the top bar the pill appears just under the top bar, showing "Holds in N% of futures · <city>", and hides again when you scroll back up (proof: running app, scroll + DOM + screenshot)
+- [x] Tapping the phone pill scrolls back to the verdict and puts focus on its headline; the pill never covers the bottom tab bar, doesn't block taps on the content below it beyond its own box, and live changes (running ring, delta) still show (proof: running app, scripted taps + elementFromPoint)
+- [x] It holds at 320px and 390px, light and dark, with a long city name, and the phone Plan tab and desktop/tablet pills are unchanged (proof: screenshots, a test can't judge layout)
+- [x] Tests and typecheck stay green (proof: test run)
 Open: none
 
 ## Stages
 - [x] 1. City on the pills — name the destination (else home) on the phone Plan pill and the desktop/tablet docked pill, with ellipsis and spoken label
-- [ ] 2. Phone Outlook pill — turn on the docked pill on phone Outlook under the top bar once the number scrolls away, tap back to the verdict, without blocking the tab bar or chart touches
+- [x] 2. Phone Outlook pill — turn on the docked pill on phone Outlook under the top bar once the number scrolls away, tap back to the verdict, without blocking the tab bar or chart touches
 
 ## Decisions
 - 2026-11-10 · Pill city = destination, else home city; with no city (can't happen today: home is always set) the pill stays as it is; long names get "…", the % is never cut; the spoken label includes the city — user: "Yes this matches. Please plan it and run on autopilot."
@@ -29,8 +28,13 @@ Open: none
 - 2026-11-10 · Stage 1: the city gives way first, so at 320px even short names cut ("· Bang…"); accepted, the % is never cut — PM's call.
 - 2026-11-10 · No keel:review for stage 1: UI-only, a label helper with tests and CSS; risk line matches the diff — PM's call.
 - 2026-11-10 · Stage 1 closed: 4/4 checks pass in the running app, verified by a fresh agent ([evidence](evidence/stage-1/report.md)) — PM.
+- 2026-11-10 · Agents: wide, confirmed for this plan — user: "yes we want to go wide."
+- 2026-11-10 · Stage 2: phone gets a tighter pill (smaller padding and delta chip, plain arrow like the Plan pill) because the desktop pill's back section spilled ~30px at 320px; the chart-yield rule (pill steps aside while a chart under it has focus) now applies on phone too — builder's call, accepted by PM.
+- 2026-11-10 · No keel:review for stage 2: UI-only, one component's breakpoint gate and CSS; risk line matches the diff — PM's call.
+- 2026-11-10 · Stage 2 closed: 4/4 checks pass in the running app, verified by a fresh agent; other pills byte-identical to b11905d ([evidence](evidence/stage-2/report.md)) — PM.
 
 ## Open questions
+- On a 390px phone, the fan chart's readout runs past the right edge of the screen (pre-existing chart code) — from the stage 2 verify, later.
 - A hand-edited share link can carry an anchor off the slider's 0.05 steps (e.g. 0.37); it's clamped but not snapped, so "returns exactly when you slide back" can't be reached for that row. Snap anchors to the slider step in `share.ts` — from the stage 2 review, later.
 - Touch-dragging the tablet's left Plan drawer doesn't close it (fails the same before stage 2; likely needs `touch-action: pan-y` on side sheets) — from the stage 2 build, later.
 - The profile's tinted % marker overhangs the spending list's right edge by 4px (cosmetic, not clipped) — from the stage 1 verify, later.

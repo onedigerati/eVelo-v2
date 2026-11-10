@@ -279,7 +279,7 @@
   color: var(--broken-text);
 }
 
-/* ---------- Docked verdict (desktop + tablet) ---------- */
+/* ---------- Docked verdict (desktop, tablet, phone Outlook) ---------- */
 /* Sticky at the top of .canvas with no height, so showing the pill never moves the content. */
 .docked-verdict {
   position: sticky;
@@ -358,6 +358,24 @@
   .docked-verdict--drawer .docked-verdict__word {
     display: none;
   }
+}
+/* Phone Outlook: the same sticky slot, inside the canvas's gutters, just under the top bar. The
+   row is narrow (288px at 320), so the pill tightens: smaller gaps, and a bare arrow in place of
+   the divided back button (as on the Plan tab's pill), leaving the city room to show. */
+.docked-verdict--phone .docked-verdict__pill {
+  gap: 6px;
+  padding: 0 12px 0 10px;
+}
+.docked-verdict--phone .verdict-pill > .verdict-pill__city {
+  margin-left: -1px;
+}
+.docked-verdict--phone .docked-verdict__delta {
+  padding: 2px 6px;
+}
+.docked-verdict--phone .docked-verdict__back {
+  padding: 0;
+  margin-left: 0;
+  border-left: 0;
 }
 .docked-verdict__back svg {
   transform: rotate(-90deg);
