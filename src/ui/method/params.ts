@@ -3,7 +3,7 @@
 
 import { CITIES, CITY_BY_ID, COL_AS_OF } from "../../data/cities";
 import fxJson from "../../data/fx.json";
-import { categoryRatios } from "../../engine/cost";
+import { categoryRatios, scaleTyped } from "../../engine/cost";
 import { DEFAULT_INPUTS } from "../../engine/defaults";
 import {
   BOND_PREMIUM,
@@ -164,4 +164,22 @@ export const ABROAD = {
   rows: (["housing", "groceries", "dining", "healthcare"] as const).map(
     (c) => ({ c, raw: raw[c], eff: eff[c] }),
   ),
+  typed: typedExample(),
 };
+
+/** A typed destination housing amount, entered at the default premium and read at a higher one. */
+function typedExample() {
+  const amount = 6000;
+  const at = DEFAULT_INPUTS.expatFactor;
+  const now = 0.65;
+  const mAt = categoryRatios(home, dest, at).housing;
+  const mNow = categoryRatios(home, dest, now).housing;
+  return {
+    amount,
+    at,
+    now,
+    mAt,
+    mNow,
+    value: scaleTyped(amount, mNow, mAt, DEFAULT_INPUTS.budget.housing),
+  };
+}
