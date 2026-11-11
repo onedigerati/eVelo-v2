@@ -30,11 +30,17 @@ export interface LandDots {
 let cache: Promise<LandDots> | null = null
 
 export function loadLandDots(): Promise<LandDots> {
-  cache ??= import('world-atlas/land-110m.json').then((mod) => {
-    const topo = (mod.default ?? mod) as unknown as Topology<{ land: GeometryCollection }>
-    const land = feature(topo, topo.objects.land) as unknown as FeatureCollection
-    return sample(land)
-  })
+  cache ??= import('world-atlas/land-110m.json')
+    .then((mod) => {
+      const topo = (mod.default ?? mod) as unknown as Topology<{ land: GeometryCollection }>
+      const land = feature(topo, topo.objects.land) as unknown as FeatureCollection
+      return sample(land)
+    })
+    .catch((e: unknown) => {
+      // Don't keep a failure (network blip, chunk 404): the next map mount tries again.
+      cache = null
+      throw e
+    })
   return cache
 }
 

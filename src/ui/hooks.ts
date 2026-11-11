@@ -1,4 +1,4 @@
-import { useEffect, useSyncExternalStore } from 'react'
+import { useEffect, useLayoutEffect, useSyncExternalStore } from 'react'
 import { resolveRoute } from '../state/router'
 import { useStore, type ThemePref } from '../state/store'
 
@@ -35,7 +35,10 @@ export function useResolvedTheme(): 'light' | 'dark' {
 export function useThemeEffect() {
   const pref = useStore((s) => s.theme)
   const resolved = useResolvedTheme()
-  useEffect(() => {
+  // Layout effect: React runs child effects before this (root) one, so with a passive effect a
+  // canvas that reads theme colors on a theme change (the Atlas map) read the old theme's tokens.
+  // Layout effects all run before any passive effect, so <html data-theme> is current by then.
+  useLayoutEffect(() => {
     applyTheme(pref)
   }, [pref])
   useEffect(() => {
