@@ -61,11 +61,16 @@ export function LandingView({ bp }: { bp: Breakpoint }) {
                   Live off your portfolio <em>without ever selling it.</em>
                 </h1>
                 <p className="landing__kicker">Find your escape velocity with eVelo.</p>
-                <p className="landing__body">
-                  Borrow against your shares for living money, let them keep compounding, and pass them on with the
-                  gains never taxed. eVelo replays your plan through thousands of real market histories, then
-                  re-prices it city by city to show where in the world it holds best.
-                </p>
+                <div className="landing__body">
+                  <p>
+                    <strong>Escape velocity is the point where your portfolio grows faster than you borrow from it.</strong>{' '}
+                    Reach it before you retire, and the loan never catches up.
+                  </p>
+                  <p>
+                    eVelo shows how far you are from that line, and which move gets you over it: a different city, a
+                    smaller draw, a bigger portfolio or a later start.
+                  </p>
+                </div>
                 <div className="landing__ctas">
                   <a href={hrefFor('plan')} className="landing__cta landing__cta--primary">
                     Find your eVelo

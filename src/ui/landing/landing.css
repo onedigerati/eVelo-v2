@@ -148,6 +148,15 @@
   line-height: 1.55;
   color: var(--ink-2);
   text-wrap: pretty;
+  display: grid;
+  gap: 14px;
+}
+.landing__body p {
+  margin: 0;
+}
+.landing__body strong {
+  color: var(--ink);
+  font-weight: 500;
 }
 .landing__ctas {
   display: flex;
