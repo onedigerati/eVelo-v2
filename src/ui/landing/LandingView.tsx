@@ -54,10 +54,13 @@ export function LandingView({ bp }: { bp: Breakpoint }) {
             stepsId={STEPS_ID}
             copy={
               <div className="landing__copy">
-                <p className="landing__eyebrow">Buy · Borrow · Die — anywhere in the world</p>
+                <p className="landing__eyebrow">
+                  eVelo · <span className="landing__eyebrow-accent">escape velocity</span>
+                </p>
                 <h1 id="landing-title" className="landing__headline">
                   Live off your portfolio <em>without ever selling it.</em>
                 </h1>
+                <p className="landing__kicker">Find your escape velocity with eVelo.</p>
                 <p className="landing__body">
                   Borrow against your shares for living money, let them keep compounding, and pass them on with the
                   gains never taxed. eVelo replays your plan through thousands of real market histories, then
@@ -65,7 +68,7 @@ export function LandingView({ bp }: { bp: Breakpoint }) {
                 </p>
                 <div className="landing__ctas">
                   <a href={hrefFor('plan')} className="landing__cta landing__cta--primary">
-                    Stress-test my plan
+                    How far am I from escape velocity?
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                       <path d="M3 8h10M9 4l4 4-4 4" />
                     </svg>

@@ -129,6 +129,18 @@
 .landing__headline em {
   color: var(--holds-text);
 }
+.landing__eyebrow-accent {
+  color: var(--holds-text);
+}
+.landing__kicker {
+  margin: -12px 0 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.625rem, 1rem + 2vw, 2.5rem);
+  line-height: 1.05;
+  color: var(--ink-2);
+  text-wrap: balance;
+}
 .landing__body {
   margin: 0;
   max-width: 34em;
@@ -148,13 +160,14 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  height: 52px;
+  min-height: 52px;
   border-radius: var(--radius-pill);
-  white-space: nowrap;
+  text-align: center;
+  text-wrap: balance;
   transition: background-color var(--dur-2) var(--ease-out);
 }
 .landing__cta--primary {
-  padding: 0 24px;
+  padding: 12px 24px;
   background: var(--accent);
   color: var(--accent-ink);
   font-weight: 500;
@@ -165,6 +178,7 @@
   color: var(--accent-ink);
 }
 .landing__cta--primary svg {
+  flex-shrink: 0;
   transition: transform var(--dur-2) var(--ease-out);
 }
 .landing__cta--primary:hover svg {
