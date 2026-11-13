@@ -27,6 +27,7 @@ Open: none
 - 2026-11-10 · With no destination, the top Atlas card names the city as "your best odds" and the best-odds card drops its duplicate "Make destination" (it returns once a destination is set) — typecheck + 823 tests green; screenshots at 1280/390/320, light and dark, with and without a destination
 - 2026-11-10 · Atlas map no longer loses its land and globe after a theme switch (it read the old theme's colours; the theme now applies before the map repaints), and a failed land-shape load retries on the next visit instead of staying blank — new retry test, typecheck + 824 tests green; browser probe switching Dark↔Light at 1280 and 390, canvas colours match a fresh reload, screenshots both themes
 - 2026-11-13 · Landing hero copy from the escape-velocity tagline study: eyebrow "eVelo · escape velocity", a kicker "Find your escape velocity with eVelo." under the headline, primary button "How far am I from escape velocity?" (button labels now wrap at 320px) — typecheck + 824 tests green; screenshots at 1280/390/320, light and dark
+- 2026-11-13 · Landing primary button now reads "Find your eVelo" — typecheck + 824 tests green; screenshots at 1280/390/320, light and dark
 
 ## Decisions
 - 2026-11-10 · Pill city = destination, else home city; with no city (can't happen today: home is always set) the pill stays as it is; long names get "…", the % is never cut; the spoken label includes the city — user: "Yes this matches. Please plan it and run on autopilot."
