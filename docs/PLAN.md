@@ -7,17 +7,7 @@ Every city profile makes claims a retiree could act on: the tax on holding a por
 2026-11-15 · tests: 982 pass · typecheck: clean
 
 ## Now
-Stage 8 of 8 · Model and report
-Scope: (a) `src/data/localTaxes.ts` brought in line with the ledger's 32 `modelMismatch` entries: each regime the engine's two shapes can express (a yearly wealth tax on the portfolio; an estate or inheritance tax at the horizon) is modelled or corrected, with its note and sources; a regime they can't express (tax on gains at death, exit taxes, Box 3's deemed return if it doesn't fit) keeps no entry and is named in the entry's note or the file header and in the report. (b) The research doc `docs/research/bbd-ranking-2026-11.md` carries the corrected tax and estate facts, and the profiles show that the five facts were re-checked on 15 November 2026. (c) The five scores are checked on one scale across all 133 profiles by the rubric. (d) `docs/research/fact-check-2026-11/what-changed.md`: what changed, city by city, with every `rankFlag` and the questions for the user. Two builder batches run one after the other: (a)+(b), then (c)+(d).
-Risk: money (the simulation's wealth, estate and inheritance tax amounts)
-Checks:
-- [x] Every `modelMismatch` in the ledger is either modelled in `localTaxes.ts` (thresholds and rates as the ledger states them) or named as not modelled with the reason, and tests compute the tax at sample amounts for each new or changed entry (proof: test)
-- [x] A plan run in the running build for a city with a newly modelled tax shows the tax in the outcome, and one with no change shows the same result as before (proof: run the product)
-- [x] Profiles in one country share the estate, lending and residency scores unless the profile says why, and each score matches the rubric for its checked facts; a test holds the cross-profile consistency (proof: test)
-- [x] The research doc agrees with the corrected facts, and the profiles show the 15 November re-check date (proof: test)
-- [x] `what-changed.md` lists every corrected claim from every ledger file by city, with old and new wording and any score change, plus every `rankFlag` and open question for the user; a test checks that every corrected id appears (proof: test)
-Open: none
-Mode: autopilot — unattended
+All stages done. The fact check is complete; deploy waits for the user's go.
 Agents: lean
 
 ## Stages
