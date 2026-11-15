@@ -7,7 +7,7 @@ const profile: ExpatProfile = {
   scores: { cost: 2, healthcare: 5, safety: 2, visa: 5, climate: 3, community: 4, tax: 5, estate: 5, lending: 5 },
   facts: {
     healthcare:
-      'UT Southwestern Medical Center (an academic centre with an NCI-designated cancer centre), Parkland Memorial (the county\'s Level 1 trauma centre) and the Baylor Scott & White and Texas Health networks are all in the city; Medicare applies from 65.',
+      'UT Southwestern Medical Center (an academic centre with an NCI-designated cancer centre), Parkland Memorial (one of five Level 1 trauma centres in Dallas) and the Baylor Scott & White and Texas Health networks are all in the city; Medicare applies from 65.',
     safety:
       'The US is 134th of 163 in the 2026 Global Peace Index; Dallas police counted 141 homicides in 2025, down from 184 in 2024 but still about 10 per 100,000 people, roughly double Austin\'s rate, and safety varies sharply by neighbourhood.',
     visa: 'No visa needed: a US citizen can live there without any residency process.',
@@ -29,6 +29,7 @@ const profile: ExpatProfile = {
     'Violent crime roughly double Austin\'s rate, uneven across the city',
   ],
   sources: [
+    { name: 'Texas DSHS: Texas trauma facilities (current as of 28 October 2026)', url: 'https://dshs.texas.gov/dshs-ems-trauma-systems/trauma-system-development/texas-trauma-facilities', edition: '2026' },
     {
       name: 'Ballotpedia: Texas Prohibit State Personal Income Tax Amendment (2019)',
       url: 'https://ballotpedia.org/Texas_Prohibit_State_Personal_Income_Tax_Amendment_(2019)',

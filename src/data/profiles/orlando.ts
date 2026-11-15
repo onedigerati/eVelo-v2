@@ -25,7 +25,7 @@ const profile: ExpatProfile = {
   },
   drawbacks: [
     'Home insurance two to three times the US average (Florida averages roughly $4,000–6,000 a year by private estimates, 2026), though rates began to fall in 2026',
-    'Property tax of about 1.8% of assessed value inside the city (about 18 mills, 2025); homesteads get about $50k off and a 3% yearly cap on assessed value, and voters approved Amendment 3 on 3 November 2026 (about 61%, unofficial results) to raise the exemption from non-school tax to $150k in 2027 and $250k in 2028, though owners who were not Florida residents on 31 December 2026 get the larger exemption only from their fifth year of eligibility',
+    'Property tax of about 1.8% of assessed value inside the city (about 18 mills, 2025); homesteads get about $50k off and a 3% yearly cap on assessed value, and voters approved Amendment 3 on 3 November 2026 (about 62%, unofficial results; the state certifies on 17 November) to raise the exemption from non-school tax to $150k in 2027 and $250k in 2028, though owners who were not Florida residents on 31 December 2026 get the larger exemption only from their fifth year of eligibility',
     'Hot, humid summers, hurricane winds and tourist crowds and traffic',
   ],
   sources: [
@@ -40,6 +40,16 @@ const profile: ExpatProfile = {
     {
       name: 'CBS12: how Amendment 3 works (2027 homestead exemption, new residents)',
       url: 'https://cbs12.com/news/florida/florida-homeowners-could-pay-less-under-amendment-3-heres-how-it-works-homestead-exemption-2027-reduce-assessment-cap-property-tax-florida-value',
+      edition: '2026',
+    },
+    {
+      name: 'NBC 6 South Florida: voters approve property tax cut (Amendment 3, 62%)',
+      url: 'https://www.nbcmiami.com/news/local/voters-approve-property-tax-cut-reject-other-ballot-measures/3883289/',
+      edition: '2026',
+    },
+    {
+      name: 'Brennan Center: Florida 2026 certification guide (state certifies on 17 November)',
+      url: 'https://www.brennancenter.org/es/node/12531',
       edition: '2026',
     },
     {

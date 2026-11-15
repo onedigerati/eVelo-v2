@@ -7,7 +7,7 @@ const profile: ExpatProfile = {
   scores: { cost: 2, healthcare: 3, safety: 3, visa: 5, climate: 4, community: 5, tax: 5, estate: 5, lending: 5 },
   facts: {
     healthcare:
-      'Mission Hospital (owned by HCA since 2019) is the region\'s referral centre and, since December 2025, western North Carolina\'s only Level 1 trauma centre, alongside AdventHealth and Pardee; federal inspectors have placed Mission in "immediate jeopardy" three times since 2019 (most recently lifted in November 2025, with Medicare compliance issues still open), and for the most specialised care many patients travel to Charlotte (about 2 hours) or Duke and UNC (about 4 hours); Medicare applies from 65.',
+      'Mission Hospital (owned by HCA since 2019) is the region\'s referral centre and, since December 2025, western North Carolina\'s only Level 1 trauma centre, alongside AdventHealth and Pardee; federal inspectors have placed Mission in "immediate jeopardy" four times since 2019 (the latest in January 2026, lifted in March), and CMS found it back in substantial compliance in August 2026, and for the most specialised care many patients travel to Charlotte (about 2 hours) or Duke and UNC (about 4 hours); Medicare applies from 65.',
     safety:
       'The US is 134th of 163 in the 2026 Global Peace Index; Asheville police reported 451 violent crimes in 2025, down 24% from 2024, and six homicides, but property crime rose 10% (to 4,038 incidents) and downtown homelessness is visible.',
     visa: 'No visa needed: a US citizen can live there without any residency process.',
@@ -29,6 +29,16 @@ const profile: ExpatProfile = {
     'A small airport with few nonstops',
   ],
   sources: [
+    {
+      name: 'North Carolina Health News: Mission Hospital\'s fourth immediate jeopardy and the HCA purchase agreement',
+      url: 'https://www.northcarolinahealthnews.org/2026/07/28/mission-hospital-immediate-jeopardy-hca-sale-contract/',
+      edition: '2026',
+    },
+    {
+      name: 'WLOS: Mission Hospital in compliance with CMS requirements, CEO says',
+      url: 'https://wlos.com/news/local/mission-hospital-cms-compliance-enhanced-plan-correction-immediate-jeopardy-ceo-greg-lowe-centers-medicare-medicaid-services',
+      edition: '2026',
+    },
     { name: 'NC Department of Revenue: tax rate schedules', url: 'https://www.ncdor.gov/taxes-forms/tax-rate-schedules', edition: '2026' },
     {
       name: 'EY Tax News: North Carolina law progressively lowers personal income tax rate',

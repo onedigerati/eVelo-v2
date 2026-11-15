@@ -7,11 +7,11 @@ const profile: ExpatProfile = {
   scores: { cost: 2, healthcare: 5, safety: 4, visa: 5, climate: 2, community: 5, tax: 5, estate: 5, lending: 5 },
   facts: {
     healthcare:
-      'HonorHealth Scottsdale Osborn is a Level 1 trauma centre, Mayo Clinic has a large outpatient campus in Scottsdale and its hospital (part of Mayo\'s NCI-designated comprehensive cancer centre) about 20 minutes north in Phoenix, and Phoenix\'s other big hospitals are close by; Medicare applies from 65.',
+      'HonorHealth Scottsdale Osborn is a Level 1 trauma centre, Mayo Clinic has a large outpatient campus in Scottsdale and its hospital (part of Mayo\'s NCI-designated comprehensive cancer centre) in north Phoenix, 14 miles from the Scottsdale campus, and Phoenix\'s other big hospitals are close by; Medicare applies from 65.',
     safety:
       'The US is 134th of 163 in the 2026 Global Peace Index, but Scottsdale is among the safest large US cities (its police cite a top-15 ranking among cities over 100,000): the most serious (NIBRS Group A) offences fell 24% in 2025, though homicides reached a five-year high of six (secondary source).',
     visa: 'No visa needed: a US citizen can live there without any residency process.',
-    tax: 'Arizona taxes all income, dividends, interest and realised gains included, at a flat 2.5% (since 2023), and exempts Social Security; Scottsdale levies no city income tax.',
+    tax: 'Arizona taxes all income, dividends, interest and realised gains included, at a flat 2.5% (since 2023), after subtracting 25% of net long-term gains on assets bought after 2011, and exempts Social Security; Scottsdale levies no city income tax.',
     estate:
       'No state estate or inheritance tax: Arizona\'s estate tax was a pick-up of the federal state death tax credit and was repealed in 2006, so heirs owe only the federal estate tax above the $15M exemption (2026).',
     lending:
@@ -29,6 +29,7 @@ const profile: ExpatProfile = {
     'Colorado River cuts that are likely to raise water costs across the Phoenix area',
   ],
   sources: [
+    { name: 'Arizona Revised Statutes §43-1022: subtractions (25% of net long-term capital gain)', url: 'https://www.azleg.gov/ars/43/01022.htm' },
     { name: 'Arizona Revised Statutes §43-1011: taxes and tax rates', url: 'https://www.azleg.gov/ars/43/01011.01.htm' },
     { name: 'Arizona Department of Revenue: 2025 Form 140EZ booklet (2.5% rate)', url: 'https://azdor.gov/sites/default/files/document/FORMS_INDIVIDUAL_2025_140EZBooklet.pdf', edition: '2025' },
     { name: 'Arizona Department of Revenue: Publication 10 (estate tax repeal)', url: 'https://www.azdor.gov:443/sites/default/files/2023-03/PUBLICATION_10.pdf' },
@@ -42,6 +43,8 @@ const profile: ExpatProfile = {
       name: 'City of Scottsdale: police department highlights a year of safety',
       url: 'https://www.scottsdaleaz.gov/news/details/scottsdale-police-department-highlights-a-year-of-safety-innovation-and-community-trust',
     },
+    { name: 'Mayo Clinic College of Medicine: Arizona campus locations', url: 'https://college.mayo.edu/campus-and-community/arizona/locations' },
+    { name: 'HonorHealth: Level I trauma centers', url: 'https://honorhealth.com/medical-services/emergency-services/level-i-trauma-centers' },
     { name: 'National Weather Service Phoenix: 2025 year in review', url: 'https://www.weather.gov/psr/yearinreview2025', edition: '2025' },
     {
       name: 'KUNC: Colorado River cuts won\'t make Phoenix taps go dry, but the backup plan will cost billions',

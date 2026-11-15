@@ -11,10 +11,10 @@ Stage 7 of 8 · United States
 Scope: 33 US cities in one ledger file (`united-states.json`): state income tax on dividends, interest and gains, state estate and inheritance tax, lending (US broker access), the visa line, and each city's healthcare, by the method in `docs/research/fact-check-2026-11/README.md`; Colorado's Amendment 87 and Florida's Amendment 3 settled if certified. Three builder batches run one after the other (West; Central and South; East and Florida).
 Risk: UI only (profile copy and scores; the research reads public web pages)
 Checks:
-- [ ] The ledger holds every claim in the five facts of the 33 profiles, each with a verdict, a source URL and the date it was read; none is left pending, and `CHECKED_COUNTRIES` names the United States (proof: test)
-- [ ] For every corrected claim, the old wording is gone from those profiles and the new wording is in them (proof: test)
-- [ ] A fresh re-read of 12 ledger sources, from 12 different states and spread across tax, estate and healthcare, finds each page says what the ledger says it says (proof: run, a test can't read the web)
-- [ ] Three open profiles in the running build, from three states, show the corrected facts, with scores, summary and drawbacks that agree with them (proof: run the product, a test can't judge the rendered page)
+- [x] The ledger holds every claim in the five facts of the 33 profiles, each with a verdict, a source URL and the date it was read; none is left pending, and `CHECKED_COUNTRIES` names the United States (proof: test)
+- [x] For every corrected claim, the old wording is gone from those profiles and the new wording is in them (proof: test)
+- [x] A fresh re-read of 12 ledger sources, from 12 different states and spread across tax, estate and healthcare, finds each page says what the ledger says it says (proof: run, a test can't read the web)
+- [x] Three open profiles in the running build, from three states, show the corrected facts, with scores, summary and drawbacks that agree with them (proof: run the product, a test can't judge the rendered page)
 Open: none
 Mode: autopilot — unattended
 Agents: lean
@@ -26,7 +26,7 @@ Agents: lean
 - [x ] 4. Mexico, Central America, Caribbean — Mexico (9), Belize (5), Panama (4), Costa Rica (2), Guatemala (2), Honduras, Dominican Republic: 24 cities — [evidence](evidence/stage-4/report.md)
 - [x ] 5. South America and Canada — Colombia (3), Canada (3), Ecuador, Peru, Chile, Argentina, Uruguay, Paraguay: 12 cities — [evidence](evidence/stage-5/report.md)
 - [x ] 6. Asia-Pacific — Thailand (5), Malaysia (3), Vietnam (3), Philippines (2), Japan (2), Australia (2), Indonesia, Taiwan, South Korea, Singapore, New Zealand: 22 cities — [evidence](evidence/stage-6/report.md)
-- [ ] 7. United States — 33 cities: state income tax on dividends and gains, state estate and inheritance tax, and each city's healthcare
+- [x] 7. United States — 33 cities: state income tax on dividends and gains, state estate and inheritance tax, and each city's healthcare — [evidence](evidence/stage-7/report.md)
 - [ ] 8. Model and report — `localTaxes.ts` brought in line with the corrected tax and estate facts (risky: money), the research doc and the as-of date updated, scores checked on one scale across all 133, and the city-by-city report of what changed
 
 ## Decisions
@@ -49,8 +49,14 @@ Agents: lean
 - 2026-11-15 · Montenegro and Albania keep Lending 3 and get no EU IBKR correction: neither is in the EU, and Schwab reportedly doesn't take their residents, so "IBKR only" scores 3 whether or not Schwab's "within Europe" clause reaches them — consistent with the London/Zurich decision; builder's call, PM agreed. Dubai keeps 4 (Schwab reportedly accepts residents outside Europe).
 - 2026-11-15 · Guatemala's Lending goes 3 → 4 (Schwab's online form reportedly accepted Guatemala on 23 Oct 2026, plus IBKR, outside Europe: the rubric's 4), matching Mexico; Honduras stays 3 (Schwab reportedly declines it). Mexico's "margin-loan proceeds are not income" is corrected to add that loans above MXN 600,000 a year must be reported or are taxed as income — builders' calls by the rubric and the statute, PM agreed.
 - 2026-11-15 · Peru, Chile and Paraguay's Lending goes 3 → 4 on the same Schwab list as Guatemala (re-read 2026-11-15); Montréal keeps Residency 2 against Toronto's and Vancouver's 1 (Quebec's Investor Program is open, but needs CAD 2M, French and management experience) — builder's calls by the rubric, PM agreed.
+- 2026-11-15 · User resumed stage 7 under autopilot, Agents lean ("Jbit autopilot lean."). The stopped West builder's uncommitted edits to 9 profiles have no ledger behind them; batch 1's builder re-checks each against a page read and keeps only what a page supports.
+- 2026-11-15 · (unattended) Washington DC's tax fact keeps the builder's added clause on the Wealth Proceeds Tax (a 3% surtax on investment income above $400k, heard by the Council in October 2026, not passed): the method's "check for a bill" lesson asks for pending changes, and the tax score stays 4 either way.
+- 2026-11-15 · (unattended) Minneapolis's healthcare fact doesn't add HCMC's 2026 financial crisis (closure warning, one year of state aid): it would be a new claim, not a correction. Logged as an open question.
+- 2026-11-15 · Denver keeps Tax 5 and the Florida picks keep their scores: today's law is scored, and Amendment 87 (pending certification by 30 November) would take Denver to 4 — builders' calls by the rubric, PM agreed.
 
 ## Open questions
+- For stage 8 (model), from stage 7: `localTaxes.ts` has no US entries, so state estate and inheritance taxes are not modelled: Washington ($3M, 10–20%), Oregon ($1M, 10–16%), Hawaii ($5.49M, 10–20%), Minnesota ($3M, 13–16%), Illinois ($4M threshold, up to 16%), Massachusetts ($2M), New York ($7.35M, with the cliff), DC ($4.99M), Pennsylvania's inheritance tax (4.5% to children). The figures are in `united-states.json` (`modelMismatch`).
+- From stage 7, for the user at the final report: HCMC (Minneapolis's Level 1 safety-net hospital) warned in 2026 that it could close and got one year of state aid; the profile doesn't mention it. Add a line?
 - For stage 8 (model), from stage 6: `localTaxes.ts` has no entry for Australia (gains tax at death on shares to heirs abroad), New Zealand (FIF, up to 1.95% of value a year after 4 years) or Korea (10–50% worldwide inheritance, 2027 exit tax); Japan's entry brings overseas assets in only after 10 years, though a permanent resident or spouse is taxed worldwide from arrival, and its exit tax isn't modelled; the Philippines' estate model leaves out the family-home deduction (to PHP 10m) and its note still says "Wealth tax not verified" — each in the country file's `modelMismatch`.
 - From stage 6: Chiang Rai's healthcare fact now puts Chiang Mai "about 2–3 hours away (secondary source)", while its Getting there fact (out of scope) says 3–4 hours by road — reconcile at the next local-note pass. A New Zealand bill (Sep 2026) would raise the FIF threshold to NZD 100,000; Vietnam's proposed golden visa has no legal basis yet — recheck later.
 - For stage 8 (model), from stage 5: `localTaxes.ts` has no Canada entry (tax on accrued gains at death up to 26.8%, 26.7% in Quebec; probate Ontario 1.5% above CAD 50k, BC about 1.4%), and Argentina's entry uses the steady-state 0.25% Bienes Personales rate while 2026 is 0.5–0.75%, with debts not deductible (`canada.json`, `argentina.json` `modelMismatch`).

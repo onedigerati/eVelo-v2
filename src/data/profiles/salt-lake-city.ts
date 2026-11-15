@@ -11,7 +11,7 @@ const profile: ExpatProfile = {
     safety:
       'The US is 134th of 163 in the 2026 Global Peace Index; Salt Lake City police reported overall crime down 4.6% and homicides down 27% in 2025, but property crime and homelessness downtown remain the everyday concerns, and the suburbs are calmer.',
     visa: 'No visa needed: a US citizen can live there without any residency process.',
-    tax: 'Utah taxes all income, dividends, interest and realised gains included, at a flat 4.45% from 2026 (cut from 4.5% by SB 60, retroactive to 1 January 2026); Utah allows no city or county income tax.',
+    tax: 'Utah taxes all income, dividends, interest and realised gains included, at a flat 4.45% from 2026 (cut from 4.5% by SB 60, retroactive to 1 January 2026); there is no city or county income tax in Utah.',
     estate:
       'No state estate or inheritance tax: Utah\'s inheritance tax was a pick-up of the federal state death tax credit and ended after 2004, and the Tax Commission requires no returns, so heirs owe only the federal estate tax above the $15M exemption (2026).',
     lending:
@@ -36,6 +36,7 @@ const profile: ExpatProfile = {
       edition: '2026',
     },
     { name: 'Utah Legislature: SB 60 (2026), enrolled', url: 'https://le.utah.gov/Session/2026/bills/enrolled/SB0060.pdf', edition: '2026' },
+    { name: 'Tax Foundation: state individual income tax rates and brackets, 2026', url: 'https://taxfoundation.org/data/all/state/state-income-tax-rates-2026/', edition: '2026' },
     { name: 'Utah State Tax Commission: inheritance tax', url: 'https://tax.utah.gov/utah-taxes/inheritance-tax' },
     {
       name: 'Spokesman-Review: US falls again in global peace rankings',

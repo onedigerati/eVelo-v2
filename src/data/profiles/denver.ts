@@ -3,7 +3,7 @@ import type { ExpatProfile } from '../expatPicks'
 const profile: ExpatProfile = {
   tagline: 'A low flat state tax and top-tier hospitals at the foot of the Rockies',
   summary:
-    'Colorado taxes dividends, interest and gains at a flat 4.4% (a graduated tax with up to 8.4% above $500k, Amendment 87, is narrowly ahead in the uncertified November 2026 count) and has no estate or inheritance tax, so a buy-borrow-die retiree based in Denver keeps most of the portfolio\'s income and passes it on untouched by the state, with full access to US brokers and securities-based lending. Denver adds two Level 1 trauma centres, an NCI comprehensive cancer centre on the Anschutz campus, the mountains an hour away and one of the world\'s busiest airports. The costs are housing well above the US average, thin air at 5,280 ft and summer hail and wildfire smoke.',
+    'Colorado taxes dividends, interest and gains at a flat 4.4% (a graduated tax with up to 8.4% above $500k, Amendment 87, passed on the AP\'s call in November 2026 but is not yet certified) and has no estate or inheritance tax, so a buy-borrow-die retiree based in Denver keeps most of the portfolio\'s income and passes it on untouched by the state, with full access to US brokers and securities-based lending. Denver adds several Level 1 trauma centres, an NCI comprehensive cancer centre on the Anschutz campus, the mountains an hour away and one of the world\'s busiest airports. The costs are housing well above the US average, thin air at 5,280 ft and summer hail and wildfire smoke.',
   scores: { cost: 2, healthcare: 5, safety: 3, visa: 5, climate: 4, community: 4, tax: 5, estate: 5, lending: 5 },
   facts: {
     healthcare:
@@ -11,7 +11,7 @@ const profile: ExpatProfile = {
     safety:
       'The US is 134th of 163 in the 2026 Global Peace Index; Denver recorded 37 homicides in 2025, down from 70 in 2024 and 96 in 2021, though the count rose again in 2026 (up about 37% by 1 July), and car theft and property crime are the everyday concerns.',
     visa: 'No visa needed: a US citizen can live there without any residency process.',
-    tax: 'Colorado taxes all income, dividends, interest and realised gains included, at a flat 4.4% (2025 and 2026; TABOR surpluses can trigger a temporary cut, as to 4.25% for 2024); Amendment 87, narrowly ahead but not yet certified after the November 2026 vote, would from 2027 replace it with six brackets from 3.7% to 4.4% up to $500k of income and 7.4%, 7.9% and 8.4% above $500k, $750k and $1M; Denver levies no income tax on investment income, only an occupational privilege tax of $5.75 a month on employees\' wages.',
+    tax: 'Colorado taxes all income, dividends, interest and realised gains included, at a flat 4.4% (2025 and 2026; TABOR surpluses can trigger a temporary cut, as to 4.25% for 2024); Amendment 87, which passed on the AP\'s call (about 51.4% yes) in the November 2026 vote but is not yet certified, would from 2027 replace it with six brackets from 3.7% to 4.4% up to $500k of income and 7.4%, 7.9% and 8.4% above $500k, $750k and $1M; Denver levies no income tax on investment income, only an occupational privilege tax of $5.75 a month on employees\' wages.',
     estate:
       'No state estate or inheritance tax: Colorado\'s estate tax was a pick-up of the federal state death tax credit and has been zero for deaths after 2004, so heirs owe only the federal estate tax above the $15M exemption (2026).',
     lending:
@@ -41,6 +41,7 @@ const profile: ExpatProfile = {
       name: 'City and County of Denver: business taxes (occupational privilege tax)',
       url: 'https://denvergov.org/Government/Agencies-Departments-Offices/Agencies-Departments-Offices-Directory/Department-of-Finance/Our-Divisions/Treasury/Business-Tax-Information',
     },
+    { name: 'CDPHE: trauma center designation (open data layer)', url: 'https://www.cohealthmaps.dphe.state.co.us/arcgis/rest/services/OPEN_DATA/cdphe_trauma_center_designation/MapServer/0' },
     { name: 'Colorado Legislative Council: estate tax', url: 'https://leg.colorado.gov/agencies/legislative-council-staff/estate-tax' },
     {
       name: 'Spokesman-Review: US falls again in global peace rankings',
@@ -73,8 +74,8 @@ const profile: ExpatProfile = {
       edition: '2026',
     },
     {
-      name: 'Colorado Politics: tiered income tax initiative still too close to call',
-      url: 'https://www.coloradopolitics.com/2026/11/04/colorados-tiered-income-tax-initiative-still-too-close-to-call/',
+      name: 'HPPR: Colorado voters approve Amendment 87, imposing higher income taxes on top earners',
+      url: 'https://www.hppr.org/hppr-news/2026-11-09/colorado-voters-approve-amendment-87-imposing-higher-income-taxes-on-top-earners',
       edition: '2026',
     },
     {

@@ -1,0 +1,409 @@
+$ node docs/evidence/stage-7/verify7.mjs http://localhost:4327  (production build, npx vite preview)
+
+===== desktop · Denver =====
+Denver
+YOUR PLAN HERE
+53%
+plan holds
+−11 pts vs 64% in St. Louis
+All 5 photos
+Photos: David Herrera, Sdkb, Jesse Goodier, Missvain, Sarbjit Bahga · CC BY / CC BY-SA / Public domain · Wikimedia Commons
+US
+PROFILE · UNITED STATES
+A low flat state tax and top-tier hospitals at the foot of the Rockies
+Colorado taxes dividends, interest and gains at a flat 4.4% (a graduated tax with up to 8.4% above $500k, Amendment 87, passed on the AP's call in November 2026 but is not yet certified) and has no estate or inheritance tax, so a buy-borrow-die retiree based in Denver keeps most of the portfolio's income and passes it on untouched by the state, with full access to US brokers and securities-based lending. Denver adds several Level 1 trauma centres, an NCI comprehensive cancer centre on the Anschutz campus, the mountains an hour away and one of the world's busiest airports. The costs are housing well above the US average, thin air at 5,280 ft and summer hail and wildfire smoke.
+HOW IT SCORES · out of 5, for a US retiree on buy-borrow-die
+Tax on holdings
+5
+out of 5
+Estate
+5
+out of 5
+Lending
+5
+out of 5
+Residency
+5
+out of 5
+Healthcare
+5
+out of 5
+Cost
+2
+out of 5
+Safety
+3
+out of 5
+Climate
+4
+out of 5
+Community
+4
+out of 5
+THE ESSENTIALS
+TAX ON HOLDINGS
+Colorado taxes all income, dividends, interest and realised gains included, at a flat 4.4% (2025 and 2026; TABOR surpluses can trigger a temporary cut, as to 4.25% for 2024); Amendment 87, which passed on the AP's call (about 51.4% yes) in the November 2026 vote but is not yet certified, would from 2027 replace it with six brackets from 3.7% to 4.4% up to $500k of income and 7.4%, 7.9% and 8.4% above $500k, $750k and $1M; Denver levies no income tax on investment income, only an occupational privilege tax of $5.75 a month on employees' wages.
+ESTATE & INHERITANCE
+No state estate or inheritance tax: Colorado's estate tax was a pick-up of the federal state death tax credit and has been zero for deaths after 2004, so heirs owe only the federal estate tax above the $15M exemption (2026).
+LENDING & BROKERS
+Full US broker access: every major broker (Schwab, Fidelity, IBKR and others) offers margin and securities-based lines to Colorado residents.
+RESIDENCY
+No visa needed: a US citizen can live there without any residency process.
+HEALTHCARE
+UCHealth University of Colorado Hospital on the Anschutz Medical Campus in Aurora (Level 1 trauma, home of the NCI-designated CU Cancer Center) and Denver Health (Level 1 trauma) lead the region, with National Jewish Health for lung disease; Medicare applies from 65.
+SAFETY
+The US is 134th of 163 in the 2026 Global Peace Index; Denver recorded 37 homicides in 2025, down from 70 in 2024 and 96 in 2021, though the count rose again in 2026 (up about 37% by 1 July), and car theft and property crime are the everyday concerns.
+CLIMATE
+High, dry and sunny at 5,280 ft (1,609 m): summer highs near 90 °F (32 °C) with afternoon storms and hail, winter snow that usually melts within days; wildfire smoke and ozone alerts recur in summer, and the altitude can tax heart and lungs.
+COMMUNITY
+A big draw for newcomers from other states; retirees tend to settle in the southern and western suburbs (Highlands Ranch, Littleton, Lakewood) and the foothill towns, with the ski areas and hiking within 1–2 hours.
+GETTING THERE
+From St. Louis (STL): nonstop to Denver (DEN), about 2–3 h.
+Denver International (DEN), a major hub about 40 km north-east of downtown, is linked to Union Station by the A Line commuter train.
+Routes as of Nov 2026; flying times are estimates.
+WORTH KNOWING
+Housing and living costs well above the US average
+Altitude, summer hail and wildfire smoke
+Amendment 87, if certified, would tax income above $500k at 7.4–8.4% from 2027
+YOUR PLAN HERE
+PLAN HOLDS
+53
+%
+−11 pts vs 64% in St. Louis
+A YEAR HERE
+$130,311
++18% vs $110,000 in St. Louis
+BY CATEGORY
+St. Louis
+Denver
+Housing: $44K here vs $26K in St. Louis, +68%.
+Housing
+$44K
++68%
+Groceries: $11K here vs $11K in St. Louis, −2%.
+Groceries
+$11K
+−2%
+Dining out: $8.9K here vs $8.0K in St. Louis, +11%.
+Dining out
+$8.9K
++11%
+Transport: $11K here vs $10K in St. Louis, +6%.
+Transport
+$11K
++6%
+Utilities: $5.8K here vs $5.5K in St. Louis, +6%.
+Utilities
+$5.8K
++6%
+Healthcare: $16K here vs $16K in St. Louis, same.
+Healthcare
+$16K
+same
+Travel: $14K here vs $14K in St. Louis, same.
+Travel
+$14K
+same
+Other: $21K here vs $20K in St. Louis, +6%.
+Other
+$21K
++6%
+Your St. Louis budget at local prices, with your expat price premium (35%).
+Local tax and estate for Denver ready.
+LOCAL TAX & ESTATE
+No state or federal estate tax is modelled for US cities.
+Estate at 85
+median, borrow and never sell
+$7.9M
+−$2.5M vs $10M staying in St. Louis
+Today’s dollars, from 4,000 simulated futures of your plan with Denver as the destination.
+Make Denver my destination
+SOURCES
+Colorado Department of Revenue: individual income tax guide (rates by year)
+Thomson Reuters: Colorado temporary income tax rate reductions in revised TABOR refund mechanisms
+City and County of Denver: business taxes (occupational privilege tax)
+CDPHE: trauma center designation (open data layer)
+Colorado Legislative Council: estate tax
+Spokesman-Review: US falls again in global peace rankings · 2026
+CBS Colorado: Denver homicides fell 48% in 2025 · 2026
+Axios Denver: Denver crime keeps falling, except for homicides · 2026
+Denver Gazette: homicides up in Denver while other crime falls · 2026
+Tax Foundation: Colorado Amendment 87 and Proposition 136 · 2026
+Chalkbeat Colorado: 2026 voter guide to Amendment 87 · 2026
+HPPR: Colorado voters approve Amendment 87, imposing higher income taxes on top earners · 2026
+Denver Gazette: Denver airport takes No. 1 spot for most domestic destinations · 2025
+Denver7: United announces daily nonstop Denver–Paris from May 2027
+Cost indices verified November 6, 2026 from Numbeo current city index. Not tax or legal advice.
+
+===== desktop · Las Vegas =====
+Las Vegas
+YOUR PLAN HERE
+59%
+plan holds
+−5 pts vs 64% in St. Louis
+All 5 photos
+Photos: King of Hearts, Downtown Summerlin, Sixflashphoto, matze_ott, June H. Johns · CC BY-SA / CC BY · Wikimedia Commons
+US
+PROFILE · UNITED STATES
+No state income or estate tax, with big retiree suburbs and a world-class airport
+Nevada's constitution bars a personal income tax and the state has no estate or inheritance tax, so a buy-borrow-die retiree based in Las Vegas pays nothing to the state on dividends, gains or the estate, and keeps full access to US brokers and securities-based lending. The valley adds large retiree suburbs (Summerlin, Henderson), lower housing costs than California and nonstops worldwide. The costs are thin specialist care, summers that reached 120 °F in 2024 and a water supply that leans on a falling Lake Mead.
+HOW IT SCORES · out of 5, for a US retiree on buy-borrow-die
+Tax on holdings
+5
+out of 5
+Estate
+5
+out of 5
+Lending
+5
+out of 5
+Residency
+5
+out of 5
+Healthcare
+3
+out of 5
+Cost
+2
+out of 5
+Safety
+3
+out of 5
+Climate
+2
+out of 5
+Community
+4
+out of 5
+THE ESSENTIALS
+TAX ON HOLDINGS
+No state income tax on dividends, interest or realised gains: the Nevada constitution (Art. 10, §1) bars any income tax on the personal income of natural persons, and there is no city income tax, so only federal tax applies.
+ESTATE & INHERITANCE
+No state estate or inheritance tax: Nevada's estate tax was a pick-up of the federal state death tax credit, needs no filing for deaths from 2005 and is no longer collected, so heirs owe only the federal estate tax above the $15M exemption (2026).
+LENDING & BROKERS
+Full US broker access: every major broker (Schwab, Fidelity, IBKR and others) offers margin and securities-based lines to Nevada residents.
+RESIDENCY
+No visa needed: a US citizen can live there without any residency process.
+HEALTHCARE
+University Medical Center and Sunrise Hospital (since April 2026) are Nevada's two Level 1 trauma centres, alongside the Valley Health and Dignity Health hospitals and Cleveland Clinic's Lou Ruvo brain-health centre, but Nevada reportedly had the fewest primary-care doctors per capita of any state in 2025 KFF data, and many residents reportedly travel to Los Angeles, Salt Lake City or Phoenix for complex care; Medicare applies from 65.
+SAFETY
+The US is 134th of 163 in the 2026 Global Peace Index; Las Vegas Metro police recorded 90 homicides in 2025, down about 21% and the first year under 100 since 2019, though the 2026 count was running about 21% ahead of 2025 by late August; the Strip and some central areas see more crime than the suburbs.
+CLIMATE
+Extreme desert heat: an all-time record 120 °F (49 °C) on 7 July 2024 and a record 36 summer days at 110 °F (43 °C) or more that year, against 9 in 2025 and an average of about 10; winters are mild and sunny, with cold nights.
+COMMUNITY
+Large retiree communities in Summerlin, Henderson and the Sun City developments, with many newcomers from California; daily life in the suburbs is far from the Strip.
+GETTING THERE
+From St. Louis (STL): nonstop to Las Vegas (LAS), about 3–4 h.
+Harry Reid International (LAS) sits next to the south end of the Strip, a short drive from downtown, and reaches about two dozen international markets besides most of the country.
+Routes as of Nov 2026; flying times are estimates.
+WORTH KNOWING
+Thin specialist care; complex cases often go out of state
+Very hot summers, with a record 120 °F in 2024
+About 90% of the valley's water comes from Lake Mead, under a Colorado River shortage
+YOUR PLAN HERE
+PLAN HOLDS
+59
+%
+−5 pts vs 64% in St. Louis
+A YEAR HERE
+$118,982
++8% vs $110,000 in St. Louis
+BY CATEGORY
+St. Louis
+Las Vegas
+Housing: $34K here vs $26K in St. Louis, +32%.
+Housing
+$34K
++32%
+Groceries: $9.5K here vs $11K in St. Louis, −14%.
+Groceries
+$9.5K
+−14%
+Dining out: $11K here vs $8.0K in St. Louis, +31%.
+Dining out
+$11K
++31%
+Transport: $9.9K here vs $10K in St. Louis, −1%.
+Transport
+$9.9K
+−1%
+Utilities: $5.4K here vs $5.5K in St. Louis, −1%.
+Utilities
+$5.4K
+−1%
+Healthcare: $16K here vs $16K in St. Louis, same.
+Healthcare
+$16K
+same
+Travel: $14K here vs $14K in St. Louis, same.
+Travel
+$14K
+same
+Other: $19K here vs $20K in St. Louis, −1%.
+Other
+$19K
+−1%
+Your St. Louis budget at local prices, with your expat price premium (35%).
+Local tax and estate for Las Vegas ready.
+LOCAL TAX & ESTATE
+No state or federal estate tax is modelled for US cities.
+Estate at 85
+median, borrow and never sell
+$9.3M
+−$1.1M vs $10M staying in St. Louis
+Today’s dollars, from 4,000 simulated futures of your plan with Las Vegas as the destination.
+Make Las Vegas my destination
+SOURCES
+Nevada DPBH: NVTrauma, designated trauma centers · 2026
+Ballotpedia: Article 10, Nevada Constitution
+Nevada Department of Taxation: estate tax FAQs
+Nevada Department of Taxation: notice of intent to adopt regulation R045-24 (estate tax not collected) · 2024
+Becker's Hospital Review: primary care and specialist physicians per capita by state · 2025
+Spokesman-Review: US falls again in global peace rankings · 2026
+Las Vegas Review-Journal: as Metro shootings drop, the sheriff discusses goals for 2026 · 2026
+News 3 Las Vegas: homicides up 21% as Las Vegas murder total reaches 73 · 2026
+Las Vegas Review-Journal: summer 2025 was hot in Las Vegas, but not like 2024 · 2025
+Southern Nevada Water Authority: drought and shortage
+The Points Guy: Qantas launches Las Vegas nonstop flights · 2026
+Cost indices verified November 6, 2026 from Numbeo current city index. Not tax or legal advice.
+
+===== phone · Miami =====
+Miami
+YOUR PLAN HERE
+38%
+plan holds
+−26 pts vs 64% in St. Louis
+1 / 5
+Downtown Miami's towers across Biscayne Bay
+P. Hughes · CC BY-SA 4.0
+US
+PROFILE · UNITED STATES
+No state income or estate tax, in the US capital of Latin America
+Florida has no state income tax and no estate or inheritance tax, so a buy-borrow-die retiree based in Miami pays nothing to the state on dividends, gains or the estate, and keeps full access to US brokers and securities-based lending. Miami adds big academic hospitals, a subtropical winter, beaches and the main US airport for Latin America and the Caribbean. It is also the dearest city in Florida: housing, home insurance and flood risk cost far more than elsewhere in the state, and hurricanes are a real threat.
+HOW IT SCORES · out of 5, for a US retiree on buy-borrow-die
+Tax on holdings
+5
+out of 5
+Estate
+5
+out of 5
+Lending
+5
+out of 5
+Residency
+5
+out of 5
+Healthcare
+5
+out of 5
+Cost
+1
+out of 5
+Safety
+3
+out of 5
+Climate
+3
+out of 5
+Community
+4
+out of 5
+THE ESSENTIALS
+TAX ON HOLDINGS
+No state income tax on dividends, interest or realised gains: Florida's constitution (Art. VII, s. 5) bars a state income tax on natural persons, and the Department of Revenue administers no personal income tax; there is no city income tax either, so only federal tax applies.
+ESTATE & INHERITANCE
+No state estate or inheritance tax: Florida's estate tax ended for deaths after 31 December 2004, when the federal credit it was tied to was phased out, and the constitution bars any inheritance tax beyond that credit, so heirs owe only the federal estate tax above the $15M exemption (2026).
+LENDING & BROKERS
+Full US broker access: every major broker (Schwab, Fidelity, IBKR and others) offers margin and securities-based lines to Florida residents.
+RESIDENCY
+No visa needed: a US citizen can live there without any residency process.
+HEALTHCARE
+Jackson Memorial (with the Ryder Trauma Center, a Level 1 centre), University of Miami Health and its Sylvester cancer centre, Baptist Health South Florida and Mount Sinai are all in the metro, with Cleveland Clinic Florida in nearby Weston; Medicare applies from 65.
+SAFETY
+The US is 134th of 163 in the 2026 Global Peace Index; the City of Miami recorded 27 homicides in both 2024 and 2025, close to its record low of 24, and 8 in the first half of 2026 against 16 a year earlier, though property crime and some neighbourhoods remain a concern.
+CLIMATE
+Warm and dry from November to April, then hot, humid and rainy from May to October; hurricane season runs June to November, and low-lying areas already see tidal 'sunny-day' flooding as sea levels rise.
+COMMUNITY
+A large, international metro where about 54% of the county's residents were born abroad (2024) and Spanish is as common as English; retirees and newcomers from the Northeast cluster in Coral Gables, Brickell, the beaches and Broward and Palm Beach to the north.
+GETTING THERE
+From St. Louis (STL): nonstop to Miami (MIA), about 2–4 h.
+Miami International (MIA), the main gateway to Latin America and the Caribbean, is about 13 km west of downtown, linked by Metrorail; Fort Lauderdale (FLL), about 45 km north, adds low-cost routes.
+Routes as of Nov 2026; flying times are estimates.
+WORTH KNOWING
+Home insurance among the dearest in the US (roughly $6,000 a year for a typical Miami-Dade house by private estimates, 2026), plus flood cover; Citizens cut Miami-Dade rates about 14% from June 2026
+Property tax of about 2% of assessed value inside the city (20.0 mills, 2025); homesteads get about $50k off and a 3% yearly cap on assessed value, and voters approved Amendment 3 on 3 November 2026 (about 62%, unofficial results; the state certifies on 17 November) to raise the exemption from non-school tax to $150k in 2027 and $250k in 2028, though owners who were not Florida residents on 31 December 2026 get the larger exemption only from their fifth year of eligibility
+Hurricanes, sea-level rise and the highest housing costs in Florida
+YOUR PLAN HERE
+PLAN HOLDS
+38
+%
+−26 pts vs 64% in St. Louis
+A YEAR HERE
+$162,327
++48% vs $110,000 in St. Louis
+BY CATEGORY
+St. Louis
+Miami
+Housing: $69K here vs $26K in St. Louis, +164%.
+Housing
+$69K
++164%
+Groceries: $11K here vs $11K in St. Louis, same.
+Groceries
+$11K
+same
+Dining out: $12K here vs $8.0K in St. Louis, +47%.
+Dining out
+$12K
++47%
+Transport: $12K here vs $10K in St. Louis, +17%.
+Transport
+$12K
++17%
+Utilities: $6.4K here vs $5.5K in St. Louis, +17%.
+Utilities
+$6.4K
++17%
+Healthcare: $16K here vs $16K in St. Louis, same.
+Healthcare
+$16K
+same
+Travel: $14K here vs $14K in St. Louis, same.
+Travel
+$14K
+same
+Other: $23K here vs $20K in St. Louis, +17%.
+Other
+$23K
++17%
+Your St. Louis budget at local prices, with your expat price premium (35%).
+Local tax and estate for Miami ready.
+LOCAL TAX & ESTATE
+No state or federal estate tax is modelled for US cities.
+Estate at 85
+median, borrow and never sell
+$1.9M
+−$8.5M vs $10M staying in St. Louis
+Today’s dollars, from 4,000 simulated futures of your plan with Miami as the destination.
+Make Miami my destination
+SOURCES
+Florida Department of Revenue: estate tax
+Florida Department of Revenue: taxes and fees administered
+Florida Senate: Florida Constitution (Art. VII, s. 5)
+Jones Walker: Florida's super homestead exemption approved by voters · 2026
+CBS12: how Amendment 3 works (2027 homestead exemption, new residents) · 2026
+NBC 6 South Florida: voters approve property tax cut (Amendment 3, 62%) · 2026
+Brennan Center: Florida 2026 certification guide (state certifies on 17 November) · 2026
+WFLX: Florida homeowners to see insurance premium cuts starting spring 2026 · 2026
+Spokesman-Review: US falls again in global peace rankings · 2026
+Miami-Dade Property Appraiser: 2025 adopted millage chart · 2025
+Insurance News Net: most Citizens customers in South Florida could see rates fall by more than 11% in 2026 · 2026
+Major Cities Chiefs Association: violent crime report, 2025 and 2024 year-end · 2026
+Major Cities Chiefs Association: violent crime report, 2026 and 2025 midyear · 2026
+Officer.com: Miami police report 20% decrease in homicides for first half of 2025 (record low of 24) · 2025
+Data USA: Miami-Dade County, FL · 2024
+Miami International Airport: about MIA
+MIA passenger brochure 2025 · 2025
+Cost indices verified November 6, 2026 from Numbeo current city index. Not tax or legal advice.
+
+console errors: none

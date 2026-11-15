@@ -13,7 +13,7 @@ const profile: ExpatProfile = {
     visa: 'No visa needed: a US citizen can live there without any residency process.',
     tax: 'Minnesota taxes dividends, interest and realised gains as ordinary income at 5.35–9.85% (9.85% above $203,150 single or $337,930 joint, 2026), plus a 1% net investment income tax on investment income above $1M (from 2024), so about 10.85% at the top; there is no city income tax.',
     estate:
-      'Minnesota estate tax applies above a $3M exclusion (2026; not indexed), at rates rising to 16%, with gifts made in the three years before death added back; it reaches Minnesota residents\' estates wherever the US assets are held, so heirs can owe state tax well below the federal $15M exemption (2026).',
+      'Minnesota estate tax applies above a $3M exclusion (2026; not indexed), at rates rising to 16%, with gifts made in the three years before death added back; it reaches a Minnesota resident\'s securities wherever they are held (real estate and tangible property located outside Minnesota are excluded), so heirs can owe state tax well below the federal $15M exemption (2026).',
     lending:
       'Full US broker access: every major broker (Schwab, Fidelity, IBKR and others) offers margin and securities-based lines to Minnesota residents.',
     climate:
@@ -39,6 +39,11 @@ const profile: ExpatProfile = {
     {
       name: 'Minnesota Statutes §291.016: $3,000,000 exclusion from 2020, three-year gift addback',
       url: 'https://www.revisor.mn.gov/statutes/cite/291.016',
+      edition: '2026',
+    },
+    {
+      name: 'Minnesota Statutes §291.005: Minnesota gross estate and the situs of property',
+      url: 'https://www.revisor.mn.gov/statutes/cite/291.005',
       edition: '2026',
     },
     {

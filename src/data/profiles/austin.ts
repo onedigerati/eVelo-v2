@@ -7,7 +7,7 @@ const profile: ExpatProfile = {
   scores: { cost: 2, healthcare: 4, safety: 3, visa: 5, climate: 3, community: 4, tax: 5, estate: 5, lending: 5 },
   facts: {
     healthcare:
-      'Dell Seton Medical Center (UT Austin\'s teaching hospital) is the only adult Level 1 trauma centre in the 11-county Central Texas region, alongside the St. David\'s and Ascension Seton networks; Medicare applies from 65, and the nearest top-tier cancer centre (MD Anderson) is in Houston, about 2.5 hours away.',
+      'Dell Seton Medical Center (UT Austin\'s teaching hospital) is the only adult Level 1 trauma centre in the 11-county Central Texas region, alongside the St. David\'s and Ascension Seton networks; Medicare applies from 65, and the nearest NCI comprehensive cancer centre (MD Anderson) is in Houston, about 2.5–3 hours away (UT Health San Antonio\'s NCI-designated Mays Cancer Center is closer).',
     safety:
       'The US is 134th of 163 in the 2026 Global Peace Index; Austin recorded 55 homicides in 2025, down from about 90 in 2021, and property crime and homelessness downtown are the everyday concerns.',
     visa: 'No visa needed: a US citizen can live there without any residency process.',
@@ -29,6 +29,8 @@ const profile: ExpatProfile = {
     'Housing and living costs well above the rest of Texas, even after the metro median fell about 22% from its May 2022 peak to about $430k',
   ],
   sources: [
+    { name: 'Texas DSHS: Texas trauma facilities (current as of 28 October 2026)', url: 'https://dshs.texas.gov/dshs-ems-trauma-systems/trauma-system-development/texas-trauma-facilities', edition: '2026' },
+    { name: 'National Cancer Institute: find an NCI-designated cancer center', url: 'https://www.cancer.gov/research/infrastructure/cancer-centers/find', edition: '2026' },
     {
       name: 'Ballotpedia: Texas Prohibit State Personal Income Tax Amendment (2019)',
       url: 'https://ballotpedia.org/Texas_Prohibit_State_Personal_Income_Tax_Amendment_(2019)',

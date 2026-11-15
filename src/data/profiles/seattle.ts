@@ -7,7 +7,7 @@ const profile: ExpatProfile = {
   scores: { cost: 1, healthcare: 5, safety: 3, visa: 5, climate: 3, community: 3, tax: 4, estate: 4, lending: 5 },
   facts: {
     healthcare:
-      'UW Medicine (UW Medical Center and Harborview, the only Level 1 adult trauma centre for Washington, Alaska, Montana and Idaho), Fred Hutch\'s comprehensive cancer centre, Virginia Mason and Swedish make Seattle one of the strongest medical cities in the US; Medicare applies from 65.',
+      'UW Medicine (UW Medical Center and Harborview, the only Level 1 adult trauma centre for Washington, Wyoming, Alaska, Montana and Idaho), Fred Hutch\'s comprehensive cancer centre, Virginia Mason and Swedish make Seattle one of the strongest medical cities in the US; Medicare applies from 65.',
     safety:
       'The US is 134th of 163 in the 2026 Global Peace Index; Seattle recorded 37 homicides in 2025, down 36% and the fewest since before the pandemic, but property crime, car prowls and visible homelessness downtown remain the everyday concerns.',
     visa: 'No visa needed: a US citizen can live there without any residency process.',
@@ -51,6 +51,7 @@ const profile: ExpatProfile = {
       url: 'https://www.portseattle.org/news/sea-airport-welcomes-alaska-airlines-new-services-london-reykjavik-2026',
     },
     { name: 'Axios Seattle: Ferguson signs Washington income tax targeting millionaires', url: 'https://www.axios.com/local/seattle/2026/03/30/bob-ferguson-washington-income-tax-millionaires-2028-law', edition: '2026' },
+    { name: 'UW Medicine: Harborview Medical Center, Department of Surgery', url: 'https://www.washington.edu/hmcsurged' },
     { name: 'SPD Blotter: 2025 SPD year in review', url: 'https://spdblotter.seattle.gov/2026/02/02/2025-spd-year-in-review/', edition: '2026' },
     {
       name: 'Axios Seattle: air quality predicted to worsen due to wildfire smoke',

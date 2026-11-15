@@ -1,0 +1,19 @@
+$ npx vitest run
+npm notice run evelo@2.0.0 npx
+npm notice run 'vitest' run
+
+ RUN  v5.1.0 /home/jonah/repos/eVelo-v2
+
+
+ Test Files  64 passed (64)
+      Tests  1062 passed (1062)
+   Start at  16:57:11
+   Duration  17.41s (transform 67%, tests 24%, import 10%)
+
+$ npx vitest run src/data/__tests__/factCheck.test.ts src/data/__tests__/expatPicks.test.ts
+
+ Test Files  2 passed (2)
+      Tests  102 passed (102)
+   Start at  16:57:30
+   Duration  1.21s (transform 68%, tests 19%, import 13%)
+

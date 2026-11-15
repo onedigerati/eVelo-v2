@@ -7,7 +7,7 @@ const profile: ExpatProfile = {
   scores: { cost: 2, healthcare: 3, safety: 4, visa: 5, climate: 3, community: 4, tax: 4, estate: 5, lending: 5 },
   facts: {
     healthcare:
-      'Saint Alphonsus Regional Medical Center (ACS-verified Level 2 trauma, the highest level in the Treasure Valley) and St. Luke\'s Boise (with St. Luke\'s Children\'s, a Level 2 paediatric trauma centre) are the main hospitals, but Idaho has no Level 1 trauma centre (the nearest is in Salt Lake City, about 340 miles away) and had the fewest specialists per capita of any state in 2025 KFF data; Medicare applies from 65.',
+      'Saint Alphonsus Regional Medical Center (ACS-verified Level 2 trauma, the highest level in the Treasure Valley) and St. Luke\'s Boise (with St. Luke\'s Children\'s, a Level 2 paediatric trauma centre) are the main hospitals, but Idaho has no Level 1 trauma centre (the nearest is in Salt Lake City, about 340 miles away) and reportedly had the fewest specialists per capita of any state in 2025 KFF data; Medicare applies from 65.',
     safety:
       'The US is 134th of 163 in the 2026 Global Peace Index, but Boise is one of the safest US cities of its size: police report the combined violent and property crime rate at a 25-year low (2025), and FBI figures show 3 murders in 2024 (secondary source).',
     visa: 'No visa needed: a US citizen can live there without any residency process.',
@@ -29,6 +29,7 @@ const profile: ExpatProfile = {
     'Domestic-only airport and late-summer wildfire smoke',
   ],
   sources: [
+    { name: 'Idaho TSE: trauma facility designations', url: 'https://ems.idaho.gov/idaho-tse-system/tse-facility-designations/', edition: '2026' },
     {
       name: 'Idaho State Tax Commission: individual income tax rate schedule',
       url: 'https://tax.idaho.gov/taxes/income-tax/individual-income/individual-income-tax-rate-schedule/',

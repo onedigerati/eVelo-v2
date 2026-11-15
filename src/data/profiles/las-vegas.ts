@@ -7,7 +7,7 @@ const profile: ExpatProfile = {
   scores: { cost: 2, healthcare: 3, safety: 3, visa: 5, climate: 2, community: 4, tax: 5, estate: 5, lending: 5 },
   facts: {
     healthcare:
-      'University Medical Center is Nevada\'s only Level 1 trauma centre, alongside the Sunrise, Valley Health and Dignity Health hospitals and Cleveland Clinic\'s Lou Ruvo brain-health centre, but Nevada had the fewest primary-care doctors per capita of any state in 2025 KFF data, and many residents travel to Los Angeles, Salt Lake City or Phoenix for complex care; Medicare applies from 65.',
+      'University Medical Center and Sunrise Hospital (since April 2026) are Nevada\'s two Level 1 trauma centres, alongside the Valley Health and Dignity Health hospitals and Cleveland Clinic\'s Lou Ruvo brain-health centre, but Nevada reportedly had the fewest primary-care doctors per capita of any state in 2025 KFF data, and many residents reportedly travel to Los Angeles, Salt Lake City or Phoenix for complex care; Medicare applies from 65.',
     safety:
       'The US is 134th of 163 in the 2026 Global Peace Index; Las Vegas Metro police recorded 90 homicides in 2025, down about 21% and the first year under 100 since 2019, though the 2026 count was running about 21% ahead of 2025 by late August; the Strip and some central areas see more crime than the suburbs.',
     visa: 'No visa needed: a US citizen can live there without any residency process.',
@@ -29,6 +29,7 @@ const profile: ExpatProfile = {
     'About 90% of the valley\'s water comes from Lake Mead, under a Colorado River shortage',
   ],
   sources: [
+    { name: 'Nevada DPBH: NVTrauma, designated trauma centers', url: 'https://dpbh.nv.gov/Programs/NVTrauma/NVTrauma_-_Home/', edition: '2026' },
     { name: 'Ballotpedia: Article 10, Nevada Constitution', url: 'https://ballotpedia.org/Article_10,_Nevada_Constitution' },
     { name: 'Nevada Department of Taxation: estate tax FAQs', url: 'https://tax.nv.gov/faqs/estate-tax-faqs' },
     {

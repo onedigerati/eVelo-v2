@@ -11,7 +11,7 @@ const profile: ExpatProfile = {
     safety:
       'The US is 134th of 163 in the 2026 Global Peace Index; Phoenix police counted 84 homicides from January to September 2025, against 111 in the same months of 2024 and 137 in 2023, and property crime and uneven neighbourhoods are the everyday concerns.',
     visa: 'No visa needed: a US citizen can live there without any residency process.',
-    tax: 'Arizona taxes all income, dividends, interest and realised gains included, at a flat 2.5% (since 2023), and exempts Social Security; Phoenix levies no city income tax.',
+    tax: 'Arizona taxes all income, dividends, interest and realised gains included, at a flat 2.5% (since 2023), after subtracting 25% of net long-term gains on assets bought after 2011, and exempts Social Security; Phoenix levies no city income tax.',
     estate:
       'No state estate or inheritance tax: Arizona\'s estate tax was a pick-up of the federal state death tax credit and was repealed in 2006, so heirs owe only the federal estate tax above the $15M exemption (2026).',
     lending:
@@ -29,6 +29,7 @@ const profile: ExpatProfile = {
     'Car-dependent sprawl and uneven neighbourhoods',
   ],
   sources: [
+    { name: 'Arizona Revised Statutes §43-1022: subtractions (25% of net long-term capital gain)', url: 'https://www.azleg.gov/ars/43/01022.htm' },
     { name: 'Arizona Revised Statutes §43-1011: taxes and tax rates', url: 'https://www.azleg.gov/ars/43/01011.01.htm' },
     { name: 'Arizona Department of Revenue: 2025 Form 140EZ booklet (2.5% rate)', url: 'https://azdor.gov/sites/default/files/document/FORMS_INDIVIDUAL_2025_140EZBooklet.pdf', edition: '2025' },
     { name: 'Arizona JLBC: 2025 tax handbook', url: 'https://www.azjlbc.gov/revenues/25taxbk.pdf', edition: '2025' },

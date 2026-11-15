@@ -11,7 +11,7 @@ const profile: ExpatProfile = {
     safety:
       'The US is 134th of 163 in the 2026 Global Peace Index; the District recorded 127 homicides in 2025, down 32% from 2024 and from 274 in 2023, but that is still about 18 per 100,000, concentrated east of the Anacostia River; the federal law-enforcement surge from August 2025 and disputes over crime data are part of the picture.',
     visa: 'No visa needed: a US citizen can live there without any residency process.',
-    tax: 'The District taxes dividends, interest and realised gains as ordinary income at 4% to 10.75%: 8.5% from $60,000, 9.25% from $250,000, 9.75% from $500,000 and 10.75% above $1M of taxable income, with no lower rate for long-term gains; there is no separate state tax on top.',
+    tax: 'The District taxes dividends, interest and realised gains as ordinary income at 4% to 10.75%: 8.5% from $60,000, 9.25% from $250,000, 9.75% from $500,000 and 10.75% above $1M of taxable income, with no lower rate for long-term gains; there is no separate state tax on top; a bill for a 3% surtax on investment income above $400,000 of income ($500,000 joint), the Wealth Proceeds Tax, had its Council hearing in October 2026 and has not passed.',
     estate:
       'DC estate tax: $4,988,400 exclusion for deaths in 2026, with rates from 11.2% on the first dollar above it to 16% above $10M; no cliff, and the D.C. Code makes no provision for portability between spouses, so couples generally need a bypass trust; no inheritance tax; heirs also face the federal estate tax above the $15M exemption (2026).',
     lending:
@@ -30,6 +30,11 @@ const profile: ExpatProfile = {
   ],
   sources: [
     { name: 'DC Office of Tax and Revenue: individual and fiduciary income tax rates', url: 'https://otr.cfo.dc.gov/page/dc-individual-and-fiduciary-income-tax-rates' },
+    {
+      name: 'Arent Fox Schiff: DC Council holds hearing on revenue proposals (Wealth Proceeds Tax)',
+      url: 'https://www.afslaw.com/perspectives/alerts/dc-council-holds-hearing-revenue-proposals',
+      edition: '2026',
+    },
     { name: 'DC Office of Tax and Revenue: real property tax rates', url: 'https://otr.cfo.dc.gov/page/real-property-tax-rates' },
     {
       name: 'DC Office of Tax and Revenue: 2026 Form D-76 estate tax instructions ($4,988,400 exclusion)',

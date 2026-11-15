@@ -11,7 +11,7 @@ const profile: ExpatProfile = {
     safety:
       'The US is 134th of 163 in the 2026 Global Peace Index; San Francisco recorded 28 homicides in 2025, the fewest since 1954, and overall crime fell about 25%, though car break-ins, shoplifting and street disorder around downtown and the Tenderloin remain the everyday concerns.',
     visa: 'No visa needed: a US citizen can live there without any residency process.',
-    tax: 'California taxes dividends, interest and realised gains as ordinary income, with no lower rate for long-term gains: 1% to 12.3% (12.3% above $742,953 single or $1,485,906 joint, 2025), plus a 1% Behavioral Health Services Tax on taxable income over $1M, so 13.3% at the top; there is no city income tax, and Prop 40, a one-time 5% tax on the net worth of billionaires only, was trailing well behind in the count of the 3 November 2026 vote.',
+    tax: 'California taxes dividends, interest and realised gains as ordinary income, with no lower rate for long-term gains: 1% to 12.3% (12.3% above $742,953 single or $1,485,906 joint, 2025), plus a 1% Behavioral Health Services Tax on taxable income over $1M, so 13.3% at the top; there is no city income tax, and Prop 40, a one-time 5% tax on the net worth of billionaires only, was rejected by voters on 3 November 2026.',
     estate:
       'No state estate or inheritance tax: California repealed its inheritance tax in 1982 and its pick-up estate tax has not applied to deaths since 2005, so heirs owe only the federal estate tax above the $15M exemption (2026); since Prop 19 (2021) a house passed to children keeps its low Prop 13 tax base only if they live in it, and only up to a cap.',
     lending:
@@ -32,11 +32,8 @@ const profile: ExpatProfile = {
     { name: 'California FTB: 2025 California tax rate schedules', url: 'https://www.ftb.ca.gov/forms/2025/2025-540-tax-rate-schedules.pdf', edition: '2025' },
     { name: 'California FTB: capital gains and losses', url: 'https://www.ftb.ca.gov/file/personal/income-types/capital-gains-and-losses.html' },
     { name: 'California State Controller: California estate tax', url: 'https://sco.ca.gov/ardtax_estate_tax.html' },
-    {
-      name: 'Ballotpedia: California Proposition 5, Gift and Inheritance Tax Initiative (June 1982)',
-      url: 'https://ballotpedia.org/California_Proposition_5,_Gift_and_Inheritance_Tax_Initiative_(June_1982)',
-    },
-    { name: 'KPBS: California billionaire tax trailing in early returns', url: 'https://www.kpbs.org/news/politics/2026/11/03/california-billionaire-tax-trailing-in-early-returns', edition: '2026' },
+    { name: 'UC Law SF ballot propositions: Proposition 6 (1982), gift and inheritance taxes', url: 'https://repository.uclawsf.edu/ca_ballot_props/901' },
+    { name: 'FOX 10 Phoenix (AP): California Prop. 40 fails, voters reject one-time 5% wealth tax on billionaires', url: 'https://www.fox10phoenix.com/news/prop-40-fails-california-voters-reject-billionaire-wealth-tax', edition: '2026' },
     {
       name: 'SFPD: lowest homicide rate in 70 years, declines across all major crime categories in 2025',
       url: 'https://www.sanfranciscopolice.org/node/50891',

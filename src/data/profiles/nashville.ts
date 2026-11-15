@@ -11,7 +11,7 @@ const profile: ExpatProfile = {
     safety:
       'The US is 134th of 163 in the 2026 Global Peace Index; Nashville recorded 74 homicides in 2025, down about 27% from 103 in 2024 and the fewest since 2014 (about 10 per 100,000), and car break-ins downtown are the everyday concern.',
     visa: 'No visa needed: a US citizen can live there without any residency process.',
-    tax: 'No state income tax on dividends, interest or realised gains: the Hall income tax on investment income was phased down from 6% and repealed for tax periods from 1 January 2021, and Tennessee has never taxed wages; there is no city income tax, though the combined sales tax in Nashville is 9.75% (since February 2025, after the transit referendum).',
+    tax: 'No state income tax on dividends, interest or realised gains: the Hall income tax on investment income was phased down from 6% and repealed for tax periods from 1 January 2021, and since 2014 the state constitution has barred any income tax on wages and salaries; there is no city income tax, though the combined sales tax in Nashville is 9.75% (since February 2025, after the transit referendum).',
     estate:
       'No state estate or inheritance tax: Tennessee\'s inheritance tax is not imposed on deaths after 31 December 2015, so heirs owe only the federal estate tax above the $15M exemption (2026).',
     lending:
@@ -29,6 +29,11 @@ const profile: ExpatProfile = {
     'Severe storms and tornadoes in spring',
   ],
   sources: [
+    {
+      name: 'Tax Foundation: Tennessee\'s Hall tax phase-out and the 2014 ban on taxing wages',
+      url: 'https://taxfoundation.org/blog/governor-bill-lee-tennessee-privilege-tax/',
+      edition: '2023',
+    },
     { name: 'Tennessee Department of Revenue: Hall income tax (repealed from 2021)', url: 'https://www.tn.gov/revenue/taxes/hall-income-tax.html' },
     { name: 'Tennessee Department of Revenue: inheritance tax', url: 'https://www.tn.gov/revenue/taxes/inheritance-tax.html' },
     {

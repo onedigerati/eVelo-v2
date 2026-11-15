@@ -11,7 +11,7 @@ const profile: ExpatProfile = {
     safety:
       'The US is 134th of 163 in the 2026 Global Peace Index; Portland recorded about 51 homicides in 2025, down from 68, and shootings fell 30% to a six-year low, but at about 8 per 100,000 the homicide rate is still above Seattle\'s or San Francisco\'s, and property crime and homelessness are visible concerns.',
     visa: 'No visa needed: a US citizen can live there without any residency process.',
-    tax: 'Oregon taxes dividends, interest and realised gains as ordinary income at 4.75% to 9.9% (9.9% above $125,000 single or $250,000 joint); Portland residents also pay Metro\'s 1% supportive-housing tax above $128,000 single or $205,000 joint (2026) and Multnomah County\'s Preschool for All tax of 1.5% above $125,000 single or $200,000 joint and 3% above $250,000 or $400,000 (rising by 0.8 points in 2028), so up to 13.9% in all, plus a $35 arts tax.',
+    tax: 'Oregon taxes dividends, interest and realised gains as ordinary income at 4.75% to 9.9% (9.9% above $125,000 single or $250,000 joint); Portland residents also pay Metro\'s 1% supportive-housing tax above $128,000 single or $205,000 joint (2026) and Multnomah County\'s Preschool for All tax of 1.5% above $125,000 single or $200,000 joint and 3% above $250,000 or $400,000 (rising by 0.8 points in 2028), so up to 13.9% in all, plus an arts tax of $50 a person (2026).',
     estate:
       'Oregon estate tax: a $1M exemption (not indexed for inflation), then 10% rising to 16% above $9.5M, paid by the estate; no inheritance tax; heirs also face the federal estate tax above the $15M exemption (2026).',
     lending:
@@ -29,6 +29,8 @@ const profile: ExpatProfile = {
     'Visible homelessness and property crime downtown',
   ],
   sources: [
+    { name: 'City of Portland Revenue Division: Arts Tax', url: 'https://www.portland.gov/revenue/arts-tax', edition: '2026' },
+    { name: 'Mirage News (OHSU): Portland stands out for lack of access to primary care', url: 'https://www.miragenews.com/portland-stands-out-for-lack-of-access-to-1634529/', edition: '2026' },
     { name: 'Oregon DOR: personal income tax', url: 'https://www.oregon.gov/dor/programs/individuals/Pages/PIT.aspx' },
     { name: 'Oregon DOR: estate transfer and fiduciary income taxes', url: 'https://www.oregon.gov/dor/programs/businesses/pages/estate.aspx' },
     { name: 'Oregon DOR: 2026 Form OR-706 instructions', url: 'https://www.oregon.gov/dor/forms/FormsPubs/form-or-706-inst_104-001-1_2026.pdf', edition: '2026' },

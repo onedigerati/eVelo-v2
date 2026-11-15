@@ -32,6 +32,8 @@ const profile: ExpatProfile = {
     { name: 'Hawaii Department of Taxation: Form M-6 instructions (estate tax)', url: 'https://files.hawaii.gov/tax/forms/current/m6ins.pdf', edition: '2025' },
     { name: 'Hawaii Department of Taxation: 2025 Form M-6', url: 'https://files.hawaii.gov/tax/forms/2025/m6_i.pdf', edition: '2025' },
     { name: 'Tax Foundation: Hawaii', url: 'https://taxfoundation.org/state/hawaii/' },
+    { name: 'Hawaii Revised Statutes §235-2.3 (IRC section 86, Social Security, not operative)', url: 'https://data.capitol.hawaii.gov/hrscurrent/Vol04_Ch0201-0257/HRS0235/HRS_0235-0002_0003.htm' },
+    { name: 'University of Hawaii: Hawaii patients spent more than $230M on out-of-state cancer care', url: 'https://www.hawaii.edu/news/2026/07/02/out-of-state-cancer-care-costs/', edition: '2026' },
     {
       name: 'Hawaii Legislature: SB 3125 CD1 (2026), the 13% bracket enacted as Act 24',
       url: 'https://data.capitol.hawaii.gov/sessions/session2026/bills/SB3125_CD1_.HTM',
