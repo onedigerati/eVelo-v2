@@ -1,0 +1,471 @@
+{
+  "country": "Australia",
+  "cities": [
+    "sydney",
+    "melbourne"
+  ],
+  "claims": [
+    {
+      "id": "au-tax-no-wealth",
+      "fact": "tax",
+      "cities": [
+        "sydney",
+        "melbourne"
+      ],
+      "claim": "Australia has no wealth tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: quick chart, net wealth/worth tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/net-wealth-worth-tax-rates",
+          "read": "2026-11-15",
+          "says": "Australia (30 June 2026), Japan (07 August 2026), New Zealand (06 July 2026), Singapore (02 July 2026), Taiwan (20 August 2026) and the Republic of Korea (04 June 2026) are all \"NA\": \"the territory does not have the indicated tax\"."
+        }
+      ]
+    },
+    {
+      "id": "au-tax-temporary-resident",
+      "fact": "tax",
+      "cities": [
+        "sydney",
+        "melbourne"
+      ],
+      "claim": "A temporary resident (temporary visa, no Australian-resident spouse) is taxed only on Australian income and gains on Australian real property, so US dividends, interest and share gains go untaxed while the visa lasts",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Australia, residence",
+          "url": "https://taxsummaries.pwc.com/australia/individual/residence",
+          "read": "2026-11-15",
+          "says": "Last reviewed 12 October 2026. A temporary resident is broadly an individual who \"holds a temporary visa granted under the Migration Act 1958\", is not an Australian resident under the Social Security Act and \"does not have an Australian spouse\"; \"A temporary resident will be exempt from Australian tax on foreign source income.\""
+        },
+        {
+          "name": "PwC: Australia, income determination",
+          "url": "https://taxsummaries.pwc.com/australia/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Reviewed October 2026. For assets held at least 12 months, disposals up to 30 June 2027 include 50% of the nominal gain; from 1 July 2027 the discount is replaced by cost base indexation with a minimum 30% tax on post-1 July 2027 gains. Non-residents get no discount on gains accrued after 7:30 pm AEST on 8 May 2012. Temporary residents are excluded from the rule taxing residents on gains from assets wherever located, and are generally exempt on foreign-source income."
+        }
+      ]
+    },
+    {
+      "id": "au-tax-resident-rates",
+      "fact": "tax",
+      "cities": [
+        "sydney",
+        "melbourne"
+      ],
+      "claim": "A permanent resident is taxed on worldwide income at up to 45% plus the 2% Medicare levy",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Australia, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/australia/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "2026/27 resident rates: 45% over AUD 190,000; \"The above tables do not include the Medicare levy of an additional 2% of taxable income\"; \"A resident individual is subject to Australian income tax on a worldwide basis\", except \"certain foreign income and gains of temporary residents\"."
+        }
+      ]
+    },
+    {
+      "id": "au-tax-cgt-discount-2027",
+      "fact": "tax",
+      "cities": [
+        "sydney",
+        "melbourne"
+      ],
+      "claim": "Half of a gain on assets held over a year is taxed until June 2027, when indexation and a 30% minimum tax replace the discount, as proposed in the 2026 budget",
+      "verdict": "corrected",
+      "oldWording": "(as proposed in the 2026 budget)",
+      "newWording": "(under a law passed in June 2026)",
+      "sources": [
+        {
+          "name": "KPMG TaxNewsFlash: Australia, CGT legislation passes Parliament with amendments",
+          "url": "https://kpmg.com/us/en/taxnewsflash/news/2026/06/tnf-australia-legislation-amending-capital-gains-tax-and-introduce-new-tax-reform-measures-passes-parliament-with-amendments.html",
+          "read": "2026-11-15",
+          "says": "Dated June 26, 2026. Parliament passed the Treasury Laws Amendment (Tax Reform No. 1) Bill 2026, which \"replaces the 50% CGT discount for individuals, trusts and partnerships with cost base indexation\" and introduces a 30% minimum tax, \"effective for all capital gains accruing on and after July 1, 2027\"."
+        },
+        {
+          "name": "PwC: Australia, income determination",
+          "url": "https://taxsummaries.pwc.com/australia/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Reviewed October 2026. For assets held at least 12 months, disposals up to 30 June 2027 include 50% of the nominal gain; from 1 July 2027 the discount is replaced by cost base indexation with a minimum 30% tax on post-1 July 2027 gains. Non-residents get no discount on gains accrued after 7:30 pm AEST on 8 May 2012. Temporary residents are excluded from the rule taxing residents on gains from assets wherever located, and are generally exempt on foreign-source income."
+        }
+      ],
+      "also": [
+        "sources: replaced BDO's budget page with KPMG's note on the law's passage"
+      ],
+      "note": "The 50% discount to June 2027 and the replacement are confirmed; what was wrong is \"proposed\": the Treasury Laws Amendment (Tax Reform No. 1) Bill 2026 passed Parliament on 26 June 2026. Tax scores unchanged (4), which rest on the temporary-resident exemption."
+    },
+    {
+      "id": "au-tax-nonresident-discount",
+      "fact": "tax",
+      "cities": [
+        "sydney",
+        "melbourne"
+      ],
+      "claim": "Non-residents get no CGT discount on gains after May 2012",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Australia, income determination",
+          "url": "https://taxsummaries.pwc.com/australia/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Reviewed October 2026. For assets held at least 12 months, disposals up to 30 June 2027 include 50% of the nominal gain; from 1 July 2027 the discount is replaced by cost base indexation with a minimum 30% tax on post-1 July 2027 gains. Non-residents get no discount on gains accrued after 7:30 pm AEST on 8 May 2012. Temporary residents are excluded from the rule taxing residents on gains from assets wherever located, and are generally exempt on foreign-source income."
+        }
+      ]
+    },
+    {
+      "id": "au-estate-none",
+      "fact": "estate",
+      "cities": [
+        "sydney",
+        "melbourne"
+      ],
+      "claim": "Australia has no inheritance, estate or gift tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: quick chart, inheritance and gift tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates",
+          "read": "2026-11-15",
+          "says": "Inheritance / gift entries: Australia \"NA\"/\"NA\" (30 June 2026); Japan 55/55 (07 August 2026); New Zealand \"NA\"/\"NA\" (06 July 2026); Singapore \"NA\"/\"NA\" (02 July 2026); Taiwan 20/20 (20 August 2026); Republic of Korea 50/50 (04 June 2026). \"NA\" = \"the territory does not have the indicated tax\"."
+        }
+      ]
+    },
+    {
+      "id": "au-estate-k3",
+      "fact": "estate",
+      "cities": [
+        "sydney",
+        "melbourne"
+      ],
+      "claim": "When an Australian resident dies leaving shares or other non-Australian-property assets to a non-resident heir, CGT event K3 taxes the unrealised gain in the final return as if sold",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Atlas Wealth: deceased estates with overseas connections",
+          "url": "https://atlaswealth.com/news/deceased-estates-with-overseas-connections/",
+          "read": "2026-11-15",
+          "says": "Dated February 17, 2026. CGT event K3 applies where \"A resident estate transfers an asset (e.g. property, shares) to a non-resident beneficiary\" and the gain \"would not otherwise be taxed in Australia\"; the tax is payable by the estate."
+        },
+        {
+          "name": "Bristax: CGT event K3",
+          "url": "https://bristax.com.au/cgt-articles/cgt-event-k3/",
+          "read": "2026-11-15",
+          "says": "Undated. K3 applies when the beneficiary is \"A foreign resident\" (or an exempt entity or complying super fund), the deceased was a tax resident and the asset is not taxable Australian property; \"The trustee of the deceased estate must include any net capital gain in the date of death tax return.\""
+        }
+      ],
+      "note": "The ATO's CGT guide page on deceased estates (https://www.ato.gov.au/forms-and-instructions/capital-gains-tax-guide-2026/about-capital-gains-tax/deceased-estates) returned HTTP 403, so this rests on two secondary pages; Bristax names the date-of-death return.",
+      "modelMismatch": "localTaxes.ts has no Australia entry, so no tax at death is modelled. A permanent resident who leaves shares to US-resident children triggers CGT event K3 on the unrealised gain in the date-of-death return (marginal rates up to 45% + 2% Medicare levy, with the 50% discount on gains accrued to June 2027 and indexation plus a 30% minimum tax after)."
+    },
+    {
+      "id": "au-estate-k3-temporary",
+      "fact": "estate",
+      "cities": [
+        "sydney",
+        "melbourne"
+      ],
+      "claim": "A temporary resident's foreign assets are outside Australian CGT, so K3 reaches mainly permanent residents",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Australia, income determination",
+          "url": "https://taxsummaries.pwc.com/australia/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Reviewed October 2026. For assets held at least 12 months, disposals up to 30 June 2027 include 50% of the nominal gain; from 1 July 2027 the discount is replaced by cost base indexation with a minimum 30% tax on post-1 July 2027 gains. Non-residents get no discount on gains accrued after 7:30 pm AEST on 8 May 2012. Temporary residents are excluded from the rule taxing residents on gains from assets wherever located, and are generally exempt on foreign-source income."
+        }
+      ],
+      "note": "PwC says temporary residents are excluded from the rule taxing residents on gains from assets wherever located. Whether K3 itself is disapplied for a temporary-resident decedent is not stated on any page read; the profile's \"(check)\" stays."
+    },
+    {
+      "id": "au-estate-us-treaty",
+      "fact": "estate",
+      "cities": [
+        "sydney",
+        "melbourne"
+      ],
+      "claim": "A US estate and gift tax treaty exists",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-with",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "All 13 countries are in the table (see us-estate-treaty-list). Estate & Gift: Australia, Austria, France, Germany, Japan, United Kingdom. Estate only: Greece, Ireland, Italy, Netherlands, South Africa, Switzerland, and Canada by Article XXIX B of the income tax treaty."
+        }
+      ],
+      "note": "Wording: \"the US–Australia estate and gift tax treaty applies\"."
+    },
+    {
+      "id": "au-estate-us-exemption",
+      "fact": "estate",
+      "cities": [
+        "sydney",
+        "melbourne"
+      ],
+      "claim": "The $15M US estate exemption (2026) applies to a US citizen living here as anywhere",
+      "verdict": "confirmed",
+      "shared": "us-estate-exemption-2026",
+      "sources": [
+        {
+          "name": "IRS: What's new, estate and gift tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax",
+          "read": "2026-11-15",
+          "says": "The table \"Basic exclusion amount for year of death\" has the row 2026: $15,000,000 (2025: $13,990,000). The page says the Working Families Tax Cuts, Public Law 119-21, signed July 4, 2025, \"amends § 2010(c)(3) by increasing the basic exclusion amount to $15,000,000 for calendar year 2026\". Page last reviewed or updated 03-Nov-2026."
+        },
+        {
+          "name": "IRS: Some nonresidents with U.S. assets must file estate tax returns",
+          "url": "https://www.irs.gov/individuals/international-taxpayers/some-nonresidents-with-us-assets-must-file-estate-tax-returns",
+          "read": "2026-11-15",
+          "says": "\"U.S. citizens are subject to U.S. estate taxation with respect to their worldwide assets\"; Form 706 is required when worldwide assets plus adjusted taxable gifts exceed the basic exclusion amount in effect on the date of death. By contrast a nonresident who is not a citizen files when US-situated assets exceed $60,000. Page last reviewed or updated 27-Jun-2026."
+        }
+      ],
+      "note": "Wording: \"the $15M US exemption (2026) applies as anywhere\"."
+    },
+    {
+      "id": "au-lending-ibkr",
+      "fact": "lending",
+      "cities": [
+        "sydney",
+        "melbourne"
+      ],
+      "claim": "Interactive Brokers serves Australia residents through Interactive Brokers Australia",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly serves Australia residents through Interactive Brokers Australia",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Japan, Australia, Taiwan, South Korea, Singapore and New Zealand. It names no IBKR entity for them; it says \"In Australia, India, Japan, Hong Kong, or Singapore, the respective financial authorities regulate local entities.\""
+        },
+        {
+          "name": "Your Tax Base: best brokerage for US expats",
+          "url": "https://yourtaxbase.com/blog/best-brokerage-for-us-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. Quotes Fidelity's FAQ: \"we do not open accounts for any new customers residing outside the United States\"; Vanguard requires US citizenship or permanent residence \"with a U.S. mailing address\". Quotes IBKR: accounts accepted from residents of all countries except sanctioned or \"higher risk\" ones, and \"US Citizens who reside in Australia, Canada, Hong Kong, Japan, Singapore and India can not open an IRA account\"."
+        }
+      ],
+      "note": "IBKR's own sites (interactivebrokers.com.au, .co.jp, .com.sg) returned HTTP 403 on 2026-11-15, so acceptance stays reported (rule 3)."
+    },
+    {
+      "id": "au-lending-schwab",
+      "fact": "lending",
+      "cities": [
+        "sydney",
+        "melbourne"
+      ],
+      "claim": "Schwab International's online application accepted Australia residents in Oct 2026",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab International's online application reportedly accepts Australia residents (Oct 2026)",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published and last modified October 23, 2026; country check run that day through Schwab's international application. Accepted (51): ... Australia ... Singapore, South Korea ... Taiwan ...; named as not accepted: Canada, Croatia, Dominican Republic, France, Italy, Japan, Malta, New Zealand, Philippines, South Africa, Turkey, Vietnam. Only margin restriction quoted: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds\"."
+        }
+      ],
+      "note": "Agrees with the dated list. Schwab's own sites were not retried for this country (stage 1 found them blocked). Stays reported (rule 3).",
+      "also": [
+        "summary: \"and Schwab International access\" -> \"and reported Schwab International access\" (hedge added to the same claim stated flat)"
+      ]
+    },
+    {
+      "id": "au-lending-margin-unknown",
+      "fact": "lending",
+      "cities": [
+        "sydney",
+        "melbourne"
+      ],
+      "claim": "Margin terms for residents of this country are not reported",
+      "verdict": "cant-confirm",
+      "hedge": "unconfirmed",
+      "wording": "margin terms by country of residence are unconfirmed",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published and last modified October 23, 2026; country check run that day through Schwab's international application. Accepted (51): ... Australia ... Singapore, South Korea ... Taiwan ...; named as not accepted: Canada, Croatia, Dominican Republic, France, Italy, Japan, Malta, New Zealand, Philippines, South Africa, Turkey, Vietnam. Only margin restriction quoted: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds\"."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Japan, Australia, Taiwan, South Korea, Singapore and New Zealand. It names no IBKR entity for them; it says \"In Australia, India, Japan, Hong Kong, or Singapore, the respective financial authorities regulate local entities.\""
+        }
+      ],
+      "note": "A statement of what is not known; nothing read gives margin terms for residents of this country."
+    },
+    {
+      "id": "au-lending-fidelity-vanguard",
+      "fact": "lending",
+      "cities": [
+        "sydney",
+        "melbourne"
+      ],
+      "claim": "Fidelity and Vanguard open no accounts for residents abroad",
+      "verdict": "cant-confirm",
+      "hedge": "reportedly",
+      "oldWording": "and Fidelity and Vanguard open no accounts for residents abroad",
+      "wording": "Fidelity and Vanguard reportedly open no new accounts for residents abroad",
+      "sources": [
+        {
+          "name": "Your Tax Base: best brokerage for US expats",
+          "url": "https://yourtaxbase.com/blog/best-brokerage-for-us-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. Quotes Fidelity's FAQ: \"we do not open accounts for any new customers residing outside the United States\"; Vanguard requires US citizenship or permanent residence \"with a U.S. mailing address\". Quotes IBKR: accounts accepted from residents of all countries except sanctioned or \"higher risk\" ones, and \"US Citizens who reside in Australia, Canada, Hong Kong, Japan, Singapore and India can not open an IRA account\"."
+        }
+      ],
+      "also": [
+        "hedge added: \"reportedly\", and \"no accounts\" narrowed to \"no new accounts\" as Fidelity's quoted FAQ says",
+        "sources: added Your Tax Base, best brokerage for US expats"
+      ],
+      "note": "A broker claim resting on a secondary page stays reported (rule 3); Fidelity's FAQ was not retried (HTTP 403 in stage 4). Worded as in the Thailand, Peru and Chile ledgers."
+    },
+    {
+      "id": "au-visa-405-410-closed",
+      "fact": "visa",
+      "cities": [
+        "sydney",
+        "melbourne"
+      ],
+      "claim": "The Investor Retirement (405) and Retirement (410) visas are closed to new applicants; existing holders can renew",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "NSW Government: Investor Retirement visa (subclass 405)",
+          "url": "https://www.nsw.gov.au/visas-and-migration/business-and-investor-visas/subclass-405",
+          "read": "2026-11-15",
+          "says": "Undated state government page. \"This visa is closed to new applicants.\" Only \"an existing Investor Retirement visa (subclass 405) holder\" may apply."
+        },
+        {
+          "name": "Widen: retire to Australia, visa options",
+          "url": "https://www.widen.com.au/retire-to-australia-visa-options/",
+          "read": "2026-11-15",
+          "says": "\"Reviewed October 2026\". Subclass 410 \"closed to new applicants in 2005\" and 405 in 2018; holders \"can continue to apply for further visas in the same subclass\". The Business Innovation and Investment Program \"closed to new applications in July 2024 with no replacement for investors\". The Sponsored Parent (Temporary) 870 allows \"three or five years at a time, up to a total of ten years\", \"no Medicare and a requirement to hold health insurance\"; the 143 queue \"currently runs many years\". Visitor stays \"of up to 12 months\" with no \"more than 12 months in Australia in any 18-month period\"."
+        }
+      ],
+      "note": "immi.homeaffairs.gov.au (405, 410 and the repealed-visas pages) returned HTTP 403. Searched for a 2026 replacement retiree visa or bill (November 2026): none found."
+    },
+    {
+      "id": "au-visa-biip-closed",
+      "fact": "visa",
+      "cities": [
+        "sydney",
+        "melbourne"
+      ],
+      "claim": "The business and investor programme closed in July 2024",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Widen: retire to Australia, visa options",
+          "url": "https://www.widen.com.au/retire-to-australia-visa-options/",
+          "read": "2026-11-15",
+          "says": "\"Reviewed October 2026\". Subclass 410 \"closed to new applicants in 2005\" and 405 in 2018; holders \"can continue to apply for further visas in the same subclass\". The Business Innovation and Investment Program \"closed to new applications in July 2024 with no replacement for investors\". The Sponsored Parent (Temporary) 870 allows \"three or five years at a time, up to a total of ten years\", \"no Medicare and a requirement to hold health insurance\"; the 143 queue \"currently runs many years\". Visitor stays \"of up to 12 months\" with no \"more than 12 months in Australia in any 18-month period\"."
+        }
+      ]
+    },
+    {
+      "id": "au-visa-parent",
+      "fact": "visa",
+      "cities": [
+        "sydney",
+        "melbourne"
+      ],
+      "claim": "Parent visas need a child settled in Australia; the temporary Sponsored Parent 870 gives 3 or 5 years at a time, up to 10, with no Medicare; the permanent queues run many years",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Widen: retire to Australia, visa options",
+          "url": "https://www.widen.com.au/retire-to-australia-visa-options/",
+          "read": "2026-11-15",
+          "says": "\"Reviewed October 2026\". Subclass 410 \"closed to new applicants in 2005\" and 405 in 2018; holders \"can continue to apply for further visas in the same subclass\". The Business Innovation and Investment Program \"closed to new applications in July 2024 with no replacement for investors\". The Sponsored Parent (Temporary) 870 allows \"three or five years at a time, up to a total of ten years\", \"no Medicare and a requirement to hold health insurance\"; the 143 queue \"currently runs many years\". Visitor stays \"of up to 12 months\" with no \"more than 12 months in Australia in any 18-month period\"."
+        }
+      ]
+    },
+    {
+      "id": "au-visa-visitor",
+      "fact": "visa",
+      "cities": [
+        "sydney",
+        "melbourne"
+      ],
+      "claim": "Most retirees are left with a visitor visa of up to 12 months, generally no more than 12 months in any 18",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Widen: retire to Australia, visa options",
+          "url": "https://www.widen.com.au/retire-to-australia-visa-options/",
+          "read": "2026-11-15",
+          "says": "\"Reviewed October 2026\". Subclass 410 \"closed to new applicants in 2005\" and 405 in 2018; holders \"can continue to apply for further visas in the same subclass\". The Business Innovation and Investment Program \"closed to new applications in July 2024 with no replacement for investors\". The Sponsored Parent (Temporary) 870 allows \"three or five years at a time, up to a total of ten years\", \"no Medicare and a requirement to hold health insurance\"; the 143 queue \"currently runs many years\". Visitor stays \"of up to 12 months\" with no \"more than 12 months in Australia in any 18-month period\"."
+        }
+      ],
+      "note": "Already hedged \"(secondary source)\"; Home Affairs' visitor page was not tried after its other pages returned 403."
+    },
+    {
+      "id": "au-health-sydney-rpa",
+      "fact": "healthcare",
+      "cities": [
+        "sydney"
+      ],
+      "claim": "Royal Prince Alfred is in Newsweek's 2026 world top 100",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Alfred Health: The Alfred named one of the world's best hospitals",
+          "url": "https://www.alfredhealth.org.au/news/the-alfred-named-one-of-the-worlds-best-hospitals",
+          "read": "2026-11-15",
+          "says": "Dated 27 February 2026. The Alfred is in Newsweek's \"global top 50\" and \"the highest-ranked hospital in Australia on the list\"; the Royal Melbourne Hospital and Royal Prince Alfred Hospital were \"recognised in the list's top 100\"."
+        }
+      ]
+    },
+    {
+      "id": "au-health-melbourne-alfred",
+      "fact": "healthcare",
+      "cities": [
+        "melbourne"
+      ],
+      "claim": "The Alfred is Australia's highest-ranked hospital and in the world top 50 in Newsweek's 2026 list; the Royal Melbourne is a leading teaching hospital",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Alfred Health: The Alfred named one of the world's best hospitals",
+          "url": "https://www.alfredhealth.org.au/news/the-alfred-named-one-of-the-worlds-best-hospitals",
+          "read": "2026-11-15",
+          "says": "Dated 27 February 2026. The Alfred is in Newsweek's \"global top 50\" and \"the highest-ranked hospital in Australia on the list\"; the Royal Melbourne Hospital and Royal Prince Alfred Hospital were \"recognised in the list's top 100\"."
+        }
+      ]
+    },
+    {
+      "id": "au-health-medicare-visitors",
+      "fact": "healthcare",
+      "cities": [
+        "sydney",
+        "melbourne"
+      ],
+      "claim": "Medicare covers citizens and permanent residents; the US has no reciprocal health agreement, so a visitor or temporary-visa retiree pays in full and needs private overseas visitors cover",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "nib: reciprocal health care agreements for visitors to Australia",
+          "url": "https://www.nib.com.au/the-checkup/reciprocal-health-care-agreements-for-visitors-to-australia",
+          "read": "2026-11-15",
+          "says": "© 2026, undated. Australia's RHCA countries: Belgium, Finland, Italy, Malta, the Netherlands, New Zealand, Norway, Ireland, Slovenia, Sweden and the UK (not the US); visitors from non-RHCA countries may have to pay their own medical costs and are pointed to private cover that \"meets your visa requirements\"."
+        },
+        {
+          "name": "Widen: retire to Australia, visa options",
+          "url": "https://www.widen.com.au/retire-to-australia-visa-options/",
+          "read": "2026-11-15",
+          "says": "\"Reviewed October 2026\". Subclass 410 \"closed to new applicants in 2005\" and 405 in 2018; holders \"can continue to apply for further visas in the same subclass\". The Business Innovation and Investment Program \"closed to new applications in July 2024 with no replacement for investors\". The Sponsored Parent (Temporary) 870 allows \"three or five years at a time, up to a total of ten years\", \"no Medicare and a requirement to hold health insurance\"; the 143 queue \"currently runs many years\". Visitor stays \"of up to 12 months\" with no \"more than 12 months in Australia in any 18-month period\"."
+        }
+      ],
+      "note": "servicesaustralia.gov.au timed out twice; nib's list of 11 RHCA countries leaves out the US, and Widen says the 870 carries no Medicare and needs insurance."
+    }
+  ]
+}

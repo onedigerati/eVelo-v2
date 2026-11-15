@@ -1,0 +1,622 @@
+{
+  "country": "Indonesia",
+  "cities": [
+    "bali"
+  ],
+  "claims": [
+    {
+      "id": "id-tax-no-wealth",
+      "fact": "tax",
+      "cities": [
+        "bali"
+      ],
+      "claim": "Indonesia has no wealth tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: quick chart, net wealth/worth tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/net-wealth-worth-tax-rates",
+          "read": "2026-11-15",
+          "says": "Headline net wealth/worth tax rate \"NA\" (\"the territory does not have the indicated tax\") for Thailand (last reviewed 24 August 2026), Malaysia (16 June 2026), Vietnam (23 September 2026), Indonesia (11 June 2026) and the Philippines (01 August 2026)."
+        }
+      ]
+    },
+    {
+      "id": "id-tax-residence-183",
+      "fact": "tax",
+      "cities": [
+        "bali"
+      ],
+      "claim": "Residents include those present 183+ days",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Indonesia, residence",
+          "url": "https://taxsummaries.pwc.com/indonesia/individual/residence",
+          "read": "2026-11-15",
+          "says": "Last reviewed 11 June 2026. Resident if the individual \"Resides in Indonesia\", \"Is present in Indonesia for more than 183 days in any 12-month period\" or \"Is present in Indonesia during a fiscal year and intends to reside in Indonesia\". KITAS and KITAP are not mentioned."
+        },
+        {
+          "name": "DJP (Indonesian tax office): tax returns for foreign citizens",
+          "url": "https://pajak.go.id/en/artikel/tax-return-reporting-foreign-citizens-indonesia",
+          "read": "2026-11-15",
+          "says": "Dated 8 April 2025 (an officer's article, marked as personal opinion). A foreigner is a domestic tax subject if staying \"more than 183 (one hundred and eighty-three) days within a period of 12 (twelve) months\", or present in a tax year with intent to reside; \"All income earned in Indonesia and worldwide income must be reported and taxed\"."
+        }
+      ]
+    },
+    {
+      "id": "id-tax-residence-kitas",
+      "fact": "tax",
+      "cities": [
+        "bali"
+      ],
+      "claim": "A KITAS is read as intent to reside, making its holder resident",
+      "verdict": "cant-confirm",
+      "hedge": "removed",
+      "oldWording": "or a KITAS read as intent to reside",
+      "sources": [
+        {
+          "name": "PwC: Indonesia, residence",
+          "url": "https://taxsummaries.pwc.com/indonesia/individual/residence",
+          "read": "2026-11-15",
+          "says": "Last reviewed 11 June 2026. Resident if the individual \"Resides in Indonesia\", \"Is present in Indonesia for more than 183 days in any 12-month period\" or \"Is present in Indonesia during a fiscal year and intends to reside in Indonesia\". KITAS and KITAP are not mentioned."
+        },
+        {
+          "name": "DJP (Indonesian tax office): tax returns for foreign citizens",
+          "url": "https://pajak.go.id/en/artikel/tax-return-reporting-foreign-citizens-indonesia",
+          "read": "2026-11-15",
+          "says": "Dated 8 April 2025 (an officer's article, marked as personal opinion). A foreigner is a domestic tax subject if staying \"more than 183 (one hundred and eighty-three) days within a period of 12 (twelve) months\", or present in a tax year with intent to reside; \"All income earned in Indonesia and worldwide income must be reported and taxed\"."
+        }
+      ],
+      "also": [
+        "tax: replaced with the statutory test as PwC words it, \"(183+ days in 12 months, or present in the year with intent to reside)\""
+      ],
+      "note": "Both pages give the intent-to-reside test but neither ties it to a KITAS."
+    },
+    {
+      "id": "id-tax-worldwide-rates",
+      "fact": "tax",
+      "cities": [
+        "bali"
+      ],
+      "claim": "Residents are taxed on worldwide income at 5–35%",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Indonesia, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/indonesia/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 11 June 2026. \"A tax resident is generally taxed on worldwide income\"; progressive rates from 5% to 35%; foreigners who become tax residents may be taxed only on Indonesian-sourced income \"if they meet certain skill requirements\", \"only available for the first four years they become tax resident\"."
+        },
+        {
+          "name": "DJP (Indonesian tax office): tax returns for foreign citizens",
+          "url": "https://pajak.go.id/en/artikel/tax-return-reporting-foreign-citizens-indonesia",
+          "read": "2026-11-15",
+          "says": "Dated 8 April 2025 (an officer's article, marked as personal opinion). A foreigner is a domestic tax subject if staying \"more than 183 (one hundred and eighty-three) days within a period of 12 (twelve) months\", or present in a tax year with intent to reside; \"All income earned in Indonesia and worldwide income must be reported and taxed\"."
+        }
+      ]
+    },
+    {
+      "id": "id-tax-foreign-dividends",
+      "fact": "tax",
+      "cities": [
+        "bali"
+      ],
+      "claim": "Foreign dividends are ordinary income taxed yearly whether or not they are remitted",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Indonesia, income determination",
+          "url": "https://taxsummaries.pwc.com/indonesia/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 11 June 2026. \"Other types of investment income are generally assessable at normal tax rates\"; capital gains likewise, except Indonesian land and buildings and IDX-listed shares; foreign active business income is exempt if invested in Indonesia. No remittance basis is described."
+        },
+        {
+          "name": "PwC: Indonesia, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/indonesia/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 11 June 2026. \"A tax resident is generally taxed on worldwide income\"; progressive rates from 5% to 35%; foreigners who become tax residents may be taxed only on Indonesian-sourced income \"if they meet certain skill requirements\", \"only available for the first four years they become tax resident\"."
+        }
+      ],
+      "note": "PwC taxes worldwide income and other investment income at normal rates, with no remittance basis. Not settled here: search results (not read) describe an exemption for foreign listed-company dividends to the extent they are reinvested in Indonesia for three years (PMK 18/2021), which does not help a borrow-and-hold retiree."
+    },
+    {
+      "id": "id-tax-expert-exemption",
+      "fact": "tax",
+      "cities": [
+        "bali"
+      ],
+      "claim": "The 4-year foreign-income exemption is only for foreigners with certain expertise, with no retiree category",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Indonesia, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/indonesia/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 11 June 2026. \"A tax resident is generally taxed on worldwide income\"; progressive rates from 5% to 35%; foreigners who become tax residents may be taxed only on Indonesian-sourced income \"if they meet certain skill requirements\", \"only available for the first four years they become tax resident\"."
+        }
+      ]
+    },
+    {
+      "id": "id-tax-treaty",
+      "fact": "tax",
+      "cities": [
+        "bali"
+      ],
+      "claim": "A US–Indonesia income tax treaty applies",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IRS: United States income tax treaties, A to Z",
+          "url": "https://www.irs.gov/businesses/international-businesses/united-states-income-tax-treaties-a-to-z",
+          "read": "2026-11-15",
+          "says": "Page last reviewed or updated 03-Jan-2026. The A-to-Z list includes Indonesia, the Philippines and Thailand; Vietnam and Malaysia are not on it."
+        }
+      ]
+    },
+    {
+      "id": "id-estate-none",
+      "fact": "estate",
+      "cities": [
+        "bali"
+      ],
+      "claim": "No inheritance, estate or gift tax, so US assets pass to US-resident children with no Indonesian tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: quick chart, inheritance and gift tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates",
+          "read": "2026-11-15",
+          "says": "Thailand (24 August 2026): inheritance 10, gift 5; Malaysia (16 June 2026): NA, NA; Vietnam (23 September 2026): 10, 10; Indonesia (11 June 2026): NA, NA; Philippines (01 August 2026): \"There is no inheritance tax in the Philippines.\" \"an estate tax of 6% is imposed on the assets of the decedent taxpayer.\""
+        }
+      ],
+      "note": "localTaxes.ts (ID) agrees."
+    },
+    {
+      "id": "id-estate-no-treaty",
+      "fact": "estate",
+      "cities": [
+        "bali"
+      ],
+      "claim": "There is no US estate treaty",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-without",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list); none of the 37 countries named in this claim is among them."
+        }
+      ],
+      "note": "Wording: \"there is no US estate treaty, but nothing to double-tax\"."
+    },
+    {
+      "id": "id-estate-us-exemption",
+      "fact": "estate",
+      "cities": [
+        "bali"
+      ],
+      "claim": "US estate tax applies above the $15M exemption (2026): \"US estate tax applies only above the $15M exemption (2026)\"",
+      "verdict": "confirmed",
+      "shared": "us-estate-exemption-2026",
+      "sources": [
+        {
+          "name": "IRS: What's new, estate and gift tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax",
+          "read": "2026-11-15",
+          "says": "The table \"Basic exclusion amount for year of death\" has the row 2026: $15,000,000 (2025: $13,990,000). The page says the Working Families Tax Cuts, Public Law 119-21, signed July 4, 2025, \"amends § 2010(c)(3) by increasing the basic exclusion amount to $15,000,000 for calendar year 2026\". Page last reviewed or updated 03-Nov-2026."
+        },
+        {
+          "name": "IRS: Estate tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-tax",
+          "read": "2026-11-15",
+          "says": "A return is required when the gross estate, plus adjusted taxable gifts and specific exemption, is more than the filing threshold for the year of death; the table gives 2026: $15,000,000. Page last reviewed or updated 23-Oct-2026."
+        },
+        {
+          "name": "IRS news release IR-2025-103: tax inflation adjustments for tax year 2026",
+          "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill",
+          "read": "2026-11-15",
+          "says": "\"Estates of decedents who die during 2026 have a basic exclusion amount of $15,000,000\", up from $13,990,000 for 2025; the release (October 9, 2025) cites Revenue Procedure 2025-32 and is marked as an archival document."
+        },
+        {
+          "name": "IRS: Some nonresidents with U.S. assets must file estate tax returns",
+          "url": "https://www.irs.gov/individuals/international-taxpayers/some-nonresidents-with-us-assets-must-file-estate-tax-returns",
+          "read": "2026-11-15",
+          "says": "\"U.S. citizens are subject to U.S. estate taxation with respect to their worldwide assets\"; Form 706 is required when worldwide assets plus adjusted taxable gifts exceed the basic exclusion amount in effect on the date of death. By contrast a nonresident who is not a citizen files when US-situated assets exceed $60,000. Page last reviewed or updated 27-Jun-2026."
+        }
+      ]
+    },
+    {
+      "id": "id-lending-ibkr",
+      "fact": "lending",
+      "cities": [
+        "bali"
+      ],
+      "claim": "Interactive Brokers accepts Indonesia residents",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly accepts Indonesia residents (IBKR Pro)",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Indonesia, Malaysia, the Philippines, Thailand and Vietnam; it names no IBKR entity for them, and says the default account type outside the US is IBKR PRO."
+        },
+        {
+          "name": "Your Tax Base: best brokerage for US expats",
+          "url": "https://yourtaxbase.com/blog/best-brokerage-for-us-expats",
+          "read": "2026-11-15",
+          "says": "Dated October 23, 2026. Quotes Fidelity's FAQ: \"we do not open accounts for any new customers residing outside the United States\"; Vanguard requires US citizenship or permanent residence \"with a U.S. mailing address\". Quotes IBKR's account page: \"Accounts are accepted from citizens or residents of all countries\", except sanctioned countries or those \"determined to be higher risk\". Says nothing country-specific on IBKR for Thailand, Malaysia, Vietnam, Indonesia or the Philippines."
+        }
+      ],
+      "note": "IBKR's country list (https://www.interactivebrokers.com/en/accounts/open-account-country-list.php) returned HTTP 403 again on 2026-11-15, so acceptance stays reported (rule 3)."
+    },
+    {
+      "id": "id-lending-schwab",
+      "fact": "lending",
+      "cities": [
+        "bali"
+      ],
+      "claim": "Schwab One International accepted Indonesia residents in Oct 2026",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab One International's online form reportedly accepted Indonesia in Oct 2026",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. On that day the author ran every entry in Schwab's international account selector through the application: it accepted residents of 51 of 263 countries and regions: Argentina, Australia, Austria, the Bahamas, Belgium, Bermuda, Brazil, the British Virgin Islands, the Cayman Islands, Chile, China, Colombia, Costa Rica, the Czech Republic, Denmark, Ecuador, Finland, Germany, Greece, Guatemala, Hong Kong, Iceland, India, Indonesia, Ireland, Israel, Jersey, Luxembourg, Malaysia, the Marshall Islands, Mexico, the Netherlands, Norway, Panama, Paraguay, Peru, Poland, Portugal, Qatar, Singapore, South Korea, Spain, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Turks and Caicos, the United Arab Emirates, the United Kingdom and Uruguay. Named as not accepted: Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam; for the rest the application said \"Schwab currently cannot open accounts for residents of your country/region.\" The test covers new applicants on that day only."
+        },
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026 (country check run that day). Online application open to residents: Thailand \"Yes\"; Malaysia and Indonesia in the list of 51 accepted; Vietnam \"No\"; Philippines \"No\". The only margin restriction quoted: \"Customers residing within Europe are restricted from using their Available Margin Loan Value\" to withdraw funds; nothing on Asia."
+        }
+      ],
+      "note": "Agrees with the dated list (re-read 2026-11-15). Schwab's own sites were not retried; stage 1 found them blocked (HTTP 403 or an error page). Stays reported (rule 3)."
+    },
+    {
+      "id": "id-lending-margin-unreported",
+      "fact": "lending",
+      "cities": [
+        "bali"
+      ],
+      "claim": "Margin terms for Indonesia residents are not reported",
+      "verdict": "cant-confirm",
+      "hedge": "unreported",
+      "wording": "margin by country of residence is unreported",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026 (country check run that day). Online application open to residents: Thailand \"Yes\"; Malaysia and Indonesia in the list of 51 accepted; Vietnam \"No\"; Philippines \"No\". The only margin restriction quoted: \"Customers residing within Europe are restricted from using their Available Margin Loan Value\" to withdraw funds; nothing on Asia."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Indonesia, Malaysia, the Philippines, Thailand and Vietnam; it names no IBKR entity for them, and says the default account type outside the US is IBKR PRO."
+        }
+      ],
+      "note": "A statement of what is not known; nothing read gives margin terms for residents of this country."
+    },
+    {
+      "id": "id-lending-fidelity-vanguard",
+      "fact": "lending",
+      "cities": [
+        "bali"
+      ],
+      "claim": "Fidelity and Vanguard open no accounts for residents abroad",
+      "verdict": "cant-confirm",
+      "hedge": "reportedly",
+      "oldWording": "and Fidelity and Vanguard open no accounts for residents abroad",
+      "wording": "Fidelity and Vanguard reportedly open no new accounts for residents abroad",
+      "sources": [
+        {
+          "name": "Your Tax Base: best brokerage for US expats",
+          "url": "https://yourtaxbase.com/blog/best-brokerage-for-us-expats",
+          "read": "2026-11-15",
+          "says": "Dated October 23, 2026. Quotes Fidelity's FAQ: \"we do not open accounts for any new customers residing outside the United States\"; Vanguard requires US citizenship or permanent residence \"with a U.S. mailing address\". Quotes IBKR's account page: \"Accounts are accepted from citizens or residents of all countries\", except sanctioned countries or those \"determined to be higher risk\". Says nothing country-specific on IBKR for Thailand, Malaysia, Vietnam, Indonesia or the Philippines."
+        }
+      ],
+      "also": [
+        "hedge added: \"reportedly\", and \"no accounts\" narrowed to \"no new accounts\" as Fidelity's quoted FAQ says"
+      ],
+      "note": "A broker claim resting on a secondary page stays reported (rule 3); Fidelity's FAQ returned HTTP 403 in stage 4 and was not retried. Worded as in the Guatemala, Peru and Chile ledgers."
+    },
+    {
+      "id": "id-visa-e33",
+      "fact": "visa",
+      "cities": [
+        "bali"
+      ],
+      "claim": "Second Home Visa (E33): about USD 130,000 (IDR 2bn) on deposit at a state-owned bank, or a USD 1m apartment, for 5 or 10 years",
+      "verdict": "corrected",
+      "oldWording": "about USD 130,000 (IDR 2bn) on deposit at a state-owned bank, or a USD 1m apartment, for 5 or 10 years",
+      "newWording": "USD 130,000 on deposit at a state-owned bank, or a USD 1m apartment, for up to 5 years and 10 in all",
+      "sources": [
+        {
+          "name": "Directorate General of Immigration: E33 second home visa",
+          "url": "https://www.imigrasi.go.id/wna/daftar-visa-indonesia/E33",
+          "read": "2026-11-15",
+          "says": "Undated (© 2026). Funds commitment \"senilai paling sedikit US$130.000\" in the applicant's account at a state-owned bank, or an apartment or condominium \"senilai paling sedikit US$1.000.000\"; first stay permit \"masa berlaku paling lama 5 tahun\", extendable, total \"tidak lebih dari 10 (sepuluh) tahun\". No age limit stated."
+        },
+        {
+          "name": "IMI Daily: Indonesia second home visa",
+          "url": "https://www.imidaily.com/indonesia-second-home-visa/",
+          "read": "2026-11-15",
+          "says": "Undated (© 2026; newest linked story 21 August 2026). US$130,000 at a state-owned bank; \"Older references to an IDR 2 billion threshold do not reflect the current official requirement\"; or a condominium worth at least US$1,000,000; first ITAS up to five years, total stay \"may not exceed ten years\"; no age floor."
+        }
+      ],
+      "also": [
+        "sources: added the Directorate General of Immigration's E33, E33E and E33F pages"
+      ],
+      "note": "The official figure is USD 130,000, not the older IDR 2bn; the visa is not a choice of 5 or 10 years but a first permit of up to 5 years, extendable to 10 in total. Searched the second home and retirement visas with the current month: no pending change found (a November 2026 report on its document list was not read). No score change."
+    },
+    {
+      "id": "id-visa-e33-no-age",
+      "fact": "visa",
+      "cities": [
+        "bali"
+      ],
+      "claim": "The E33 has no age limit",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Directorate General of Immigration: E33 second home visa",
+          "url": "https://www.imigrasi.go.id/wna/daftar-visa-indonesia/E33",
+          "read": "2026-11-15",
+          "says": "Undated (© 2026). Funds commitment \"senilai paling sedikit US$130.000\" in the applicant's account at a state-owned bank, or an apartment or condominium \"senilai paling sedikit US$1.000.000\"; first stay permit \"masa berlaku paling lama 5 tahun\", extendable, total \"tidak lebih dari 10 (sepuluh) tahun\". No age limit stated."
+        },
+        {
+          "name": "IMI Daily: Indonesia second home visa",
+          "url": "https://www.imidaily.com/indonesia-second-home-visa/",
+          "read": "2026-11-15",
+          "says": "Undated (© 2026; newest linked story 21 August 2026). US$130,000 at a state-owned bank; \"Older references to an IDR 2 billion threshold do not reflect the current official requirement\"; or a condominium worth at least US$1,000,000; first ITAS up to five years, total stay \"may not exceed ten years\"; no age floor."
+        }
+      ]
+    },
+    {
+      "id": "id-visa-e33e",
+      "fact": "visa",
+      "cities": [
+        "bali"
+      ],
+      "claim": "Silver Hair (E33E): 5 years on a USD 50,000 deposit",
+      "verdict": "corrected",
+      "oldWording": "Silver Hair (E33E): 5 years on a USD 50,000 deposit",
+      "newWording": "Silver Hair (E33E): 5 years (10 in all) from age 55 on a USD 50,000 deposit plus USD 3,000/month of income, with no sponsor",
+      "sources": [
+        {
+          "name": "Directorate General of Immigration: E33E second home visa for the elderly (5 years)",
+          "url": "https://www.imigrasi.go.id/wna/daftar-visa-indonesia/E33E",
+          "read": "2026-11-15",
+          "says": "Undated (© 2026). \"diperuntukkan bagi orang asing berusia 55 tahun atau lebih\"; a commitment to keep \"paling sedikit US$50.000\" at a state-owned bank; \"Bukti penghasilan atau tunjangan dengan nilai sekurang-kurangnya US$3.000\" a month; \"Anda tidak membutuhkan penjamin/sponsor\"; first stay up to 5 years, 10 in total."
+        },
+        {
+          "name": "Emerhub: Indonesia retirement visa",
+          "url": "https://emerhub.com/indonesia/visas/retirement-visa/",
+          "read": "2026-11-15",
+          "says": "Undated (© 2026; document set \"in October 2026\"). E33F and E33E: minimum age 55 for both after a 2024 change from 60, though \"One part of the E33F listing still says 60\"; USD 3,000 a month; E33F needs a sponsor and is renewed yearly. No household-worker requirement mentioned."
+        }
+      ],
+      "note": "The deposit is right, but the profile left out the age (55+) and the USD 3,000 monthly income the visa also needs."
+    },
+    {
+      "id": "id-visa-e33f-age",
+      "fact": "visa",
+      "cities": [
+        "bali"
+      ],
+      "claim": "The retirement KITAS (E33F) is for ages 55+ (some listings say 60)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Emerhub: Indonesia retirement visa",
+          "url": "https://emerhub.com/indonesia/visas/retirement-visa/",
+          "read": "2026-11-15",
+          "says": "Undated (© 2026; document set \"in October 2026\"). E33F and E33E: minimum age 55 for both after a 2024 change from 60, though \"One part of the E33F listing still says 60\"; USD 3,000 a month; E33F needs a sponsor and is renewed yearly. No household-worker requirement mentioned."
+        },
+        {
+          "name": "Directorate General of Immigration: E33E second home visa for the elderly (5 years)",
+          "url": "https://www.imigrasi.go.id/wna/daftar-visa-indonesia/E33E",
+          "read": "2026-11-15",
+          "says": "Undated (© 2026). \"diperuntukkan bagi orang asing berusia 55 tahun atau lebih\"; a commitment to keep \"paling sedikit US$50.000\" at a state-owned bank; \"Bukti penghasilan atau tunjangan dengan nilai sekurang-kurangnya US$3.000\" a month; \"Anda tidak membutuhkan penjamin/sponsor\"; first stay up to 5 years, 10 in total."
+        }
+      ],
+      "note": "The E33F page gives no age; the E33E page and Emerhub give 55, and Emerhub notes one part of the E33F listing still says 60."
+    },
+    {
+      "id": "id-visa-e33f-yearly-sponsor",
+      "fact": "visa",
+      "cities": [
+        "bali"
+      ],
+      "claim": "The E33F is renewed yearly and needs a sponsor",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Directorate General of Immigration: E33F second home visa for the elderly (1 year)",
+          "url": "https://www.imigrasi.go.id/wna/daftar-visa-indonesia/E33F",
+          "read": "2026-11-15",
+          "says": "Undated (© 2026). \"Anda membutuhkan penjamin/sponsor\"; a 3-month bank statement of at least USD 2,000; \"Bukti penghasilan atau tunjangan dengan nilai sekurang-kurangnya US$3.000 (tiga ribu dolar Amerika Serikat) per bulan\"; stay of 1 year, extended online. No age and no household-worker requirement on the page."
+        },
+        {
+          "name": "Emerhub: Indonesia retirement visa",
+          "url": "https://emerhub.com/indonesia/visas/retirement-visa/",
+          "read": "2026-11-15",
+          "says": "Undated (© 2026; document set \"in October 2026\"). E33F and E33E: minimum age 55 for both after a 2024 change from 60, though \"One part of the E33F listing still says 60\"; USD 3,000 a month; E33F needs a sponsor and is renewed yearly. No household-worker requirement mentioned."
+        }
+      ]
+    },
+    {
+      "id": "id-visa-e33f-income",
+      "fact": "visa",
+      "cities": [
+        "bali"
+      ],
+      "claim": "Sources disagree on the E33F's income bar (USD 1,500 or 3,000/month)",
+      "verdict": "corrected",
+      "oldWording": "and sources disagree on its income bar (USD 1,500 or 3,000/month)",
+      "newWording": "needs a sponsor and USD 3,000/month of income",
+      "sources": [
+        {
+          "name": "Directorate General of Immigration: E33F second home visa for the elderly (1 year)",
+          "url": "https://www.imigrasi.go.id/wna/daftar-visa-indonesia/E33F",
+          "read": "2026-11-15",
+          "says": "Undated (© 2026). \"Anda membutuhkan penjamin/sponsor\"; a 3-month bank statement of at least USD 2,000; \"Bukti penghasilan atau tunjangan dengan nilai sekurang-kurangnya US$3.000 (tiga ribu dolar Amerika Serikat) per bulan\"; stay of 1 year, extended online. No age and no household-worker requirement on the page."
+        },
+        {
+          "name": "Emerhub: Indonesia retirement visa",
+          "url": "https://emerhub.com/indonesia/visas/retirement-visa/",
+          "read": "2026-11-15",
+          "says": "Undated (© 2026; document set \"in October 2026\"). E33F and E33E: minimum age 55 for both after a 2024 change from 60, though \"One part of the E33F listing still says 60\"; USD 3,000 a month; E33F needs a sponsor and is renewed yearly. No household-worker requirement mentioned."
+        },
+        {
+          "name": "Liberty Mundo: retire in Indonesia, the E33F visa and residency guide (2026)",
+          "url": "https://www.libertymundo.com/retire-in-indonesia/",
+          "read": "2026-11-15",
+          "says": "Undated (© 2026; image April 2026). E33F: age 55, about USD 1,500 a month, sponsored; holders \"must employ at least one Indonesian national as household staff\". International cover for 55–70: \"Expect to pay USD 2,500 to USD 6,000 per person annually\"; BPJS Kesehatan is optional, roughly USD 12 a month; Siloam and BIMC have English-speaking physicians."
+        }
+      ],
+      "note": "The immigration directorate's page settles it at USD 3,000 a month; Liberty Mundo's USD 1,500 is out of date."
+    },
+    {
+      "id": "id-visa-e33f-household-worker",
+      "fact": "visa",
+      "cities": [
+        "bali"
+      ],
+      "claim": "The E33F needs a hired Indonesian household worker",
+      "verdict": "cant-confirm",
+      "hedge": "reportedly",
+      "oldWording": "needs a sponsor and a hired Indonesian household worker",
+      "wording": "reportedly a hired Indonesian household worker",
+      "sources": [
+        {
+          "name": "Liberty Mundo: retire in Indonesia, the E33F visa and residency guide (2026)",
+          "url": "https://www.libertymundo.com/retire-in-indonesia/",
+          "read": "2026-11-15",
+          "says": "Undated (© 2026; image April 2026). E33F: age 55, about USD 1,500 a month, sponsored; holders \"must employ at least one Indonesian national as household staff\". International cover for 55–70: \"Expect to pay USD 2,500 to USD 6,000 per person annually\"; BPJS Kesehatan is optional, roughly USD 12 a month; Siloam and BIMC have English-speaking physicians."
+        },
+        {
+          "name": "Directorate General of Immigration: E33F second home visa for the elderly (1 year)",
+          "url": "https://www.imigrasi.go.id/wna/daftar-visa-indonesia/E33F",
+          "read": "2026-11-15",
+          "says": "Undated (© 2026). \"Anda membutuhkan penjamin/sponsor\"; a 3-month bank statement of at least USD 2,000; \"Bukti penghasilan atau tunjangan dengan nilai sekurang-kurangnya US$3.000 (tiga ribu dolar Amerika Serikat) per bulan\"; stay of 1 year, extended online. No age and no household-worker requirement on the page."
+        },
+        {
+          "name": "Emerhub: Indonesia retirement visa",
+          "url": "https://emerhub.com/indonesia/visas/retirement-visa/",
+          "read": "2026-11-15",
+          "says": "Undated (© 2026; document set \"in October 2026\"). E33F and E33E: minimum age 55 for both after a 2024 change from 60, though \"One part of the E33F listing still says 60\"; USD 3,000 a month; E33F needs a sponsor and is renewed yearly. No household-worker requirement mentioned."
+        }
+      ],
+      "also": [
+        "hedge added: \"reportedly\""
+      ],
+      "note": "Only Liberty Mundo states it; the official E33F page and Emerhub do not mention it."
+    },
+    {
+      "id": "id-health-private",
+      "fact": "healthcare",
+      "cities": [
+        "bali"
+      ],
+      "claim": "Private hospitals (BIMC, Siloam) handle routine and emergency care with English-speaking staff",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "APRIL International: healthcare options for digital nomads in Bali",
+          "url": "https://www.april-international.com/en/long-term-international-health-insurance/guide/healthcare-options-for-digital-nomads-in-bali",
+          "read": "2026-11-15",
+          "says": "\"Updated on 9/4/2026\". For serious cases \"local hospitals are often not equipped to the standard needed\", and medical evacuation to Singapore or Bangkok \"is typically the expected next step\"; BIMC Hospital and Siloam Hospitals have English-speaking staff and \"the ability to handle routine care and many emergencies\". Jakarta is not mentioned."
+        },
+        {
+          "name": "Liberty Mundo: retire in Indonesia, the E33F visa and residency guide (2026)",
+          "url": "https://www.libertymundo.com/retire-in-indonesia/",
+          "read": "2026-11-15",
+          "says": "Undated (© 2026; image April 2026). E33F: age 55, about USD 1,500 a month, sponsored; holders \"must employ at least one Indonesian national as household staff\". International cover for 55–70: \"Expect to pay USD 2,500 to USD 6,000 per person annually\"; BPJS Kesehatan is optional, roughly USD 12 a month; Siloam and BIMC have English-speaking physicians."
+        }
+      ]
+    },
+    {
+      "id": "id-health-evacuation",
+      "fact": "healthcare",
+      "cities": [
+        "bali"
+      ],
+      "claim": "Complex cases are usually evacuated to Jakarta or Singapore",
+      "verdict": "corrected",
+      "oldWording": "complex cases are usually evacuated to Jakarta or Singapore",
+      "newWording": "complex cases are usually evacuated to Singapore or Bangkok",
+      "sources": [
+        {
+          "name": "APRIL International: healthcare options for digital nomads in Bali",
+          "url": "https://www.april-international.com/en/long-term-international-health-insurance/guide/healthcare-options-for-digital-nomads-in-bali",
+          "read": "2026-11-15",
+          "says": "\"Updated on 9/4/2026\". For serious cases \"local hospitals are often not equipped to the standard needed\", and medical evacuation to Singapore or Bangkok \"is typically the expected next step\"; BIMC Hospital and Siloam Hospitals have English-speaking staff and \"the ability to handle routine care and many emergencies\". Jakarta is not mentioned."
+        },
+        {
+          "name": "BIMC Hospital Bali: emergency medical evacuation program",
+          "url": "https://bimcbali.com/medical-evacuation-program",
+          "read": "2026-11-15",
+          "says": "Undated. BIMC coordinates transfers, sometimes to \"a facility in another country better suited to the patient's needs\", by airline, helicopter or air ambulance. Jakarta and Singapore are not named."
+        }
+      ],
+      "also": [
+        "drawback 2 reworded: \"Serious medical care usually means evacuation to Singapore or Bangkok\"",
+        "sources: added APRIL International, healthcare options in Bali (2026)"
+      ],
+      "note": "The dated insurer page that names destinations gives Singapore and Bangkok, not Jakarta; BIMC's own page speaks only of \"a facility in another country\". The healthcare score (2) and the summary's \"Healthcare is limited\" stand. A blog page (ecommerceparadise.com, 2026) said the same but is not cited, because its name trips the profile tests' word filter."
+    },
+    {
+      "id": "id-health-insurance-cost",
+      "fact": "healthcare",
+      "cities": [
+        "bali"
+      ],
+      "claim": "International cover runs about USD 2,500–6,000 a year at 55–70",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Liberty Mundo: retire in Indonesia, the E33F visa and residency guide (2026)",
+          "url": "https://www.libertymundo.com/retire-in-indonesia/",
+          "read": "2026-11-15",
+          "says": "Undated (© 2026; image April 2026). E33F: age 55, about USD 1,500 a month, sponsored; holders \"must employ at least one Indonesian national as household staff\". International cover for 55–70: \"Expect to pay USD 2,500 to USD 6,000 per person annually\"; BPJS Kesehatan is optional, roughly USD 12 a month; Siloam and BIMC have English-speaking physicians."
+        }
+      ]
+    },
+    {
+      "id": "id-health-bpjs",
+      "fact": "healthcare",
+      "cities": [
+        "bali"
+      ],
+      "claim": "Optional public BPJS cover costs about USD 12 a month",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Liberty Mundo: retire in Indonesia, the E33F visa and residency guide (2026)",
+          "url": "https://www.libertymundo.com/retire-in-indonesia/",
+          "read": "2026-11-15",
+          "says": "Undated (© 2026; image April 2026). E33F: age 55, about USD 1,500 a month, sponsored; holders \"must employ at least one Indonesian national as household staff\". International cover for 55–70: \"Expect to pay USD 2,500 to USD 6,000 per person annually\"; BPJS Kesehatan is optional, roughly USD 12 a month; Siloam and BIMC have English-speaking physicians."
+        }
+      ],
+      "note": "The page calls it optional and does not address foreigners' eligibility; no BPJS page was read."
+    }
+  ]
+}

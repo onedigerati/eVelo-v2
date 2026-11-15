@@ -7,15 +7,15 @@ const profile: ExpatProfile = {
   scores: { cost: 2, healthcare: 4, safety: 5, visa: 3, climate: 4, community: 4, tax: 2, estate: 5, lending: 3 },
   facts: {
     healthcare:
-      'Auckland City Hospital is New Zealand\'s largest public hospital, with private surgery at Southern Cross hospitals; public care is free to resident-visa holders (Parent Retirement residents included), while a Temporary Retirement Visitor is not eligible and must hold health insurance for the whole stay, and international plans often stop taking new members around 65–70.',
+      'Auckland City Hospital is New Zealand\'s largest public hospital, with private surgery at Southern Cross hospitals; public care is free to resident-visa holders (Parent Retirement residents included), while a Temporary Retirement Visitor is not eligible and must hold health insurance for the whole stay, and some international plans take new members only up to about 75 (Allianz Care, secondary source), while Cigna Global sets no upper age limit.',
     safety:
       'New Zealand is 2nd of 163 in the 2026 Global Peace Index; violent crime is low, and the natural hazards are storms and floods (record flash floods hit Auckland in January 2023).',
     visa: 'Temporary Retirement Visitor Visa from age 66: NZD 750,000 in acceptable New Zealand investments for 2 years, plus NZD 500,000 to live on, NZD 60,000 a year of income and health insurance; it gives 2 years at a time and can be renewed, but never leads to residence; the Parent Retirement Resident Visa (NZD 1M invested for 4 years, same funds and income) needs an adult child who is a New Zealand citizen or resident, and Active Investor Plus residence needs NZD 5M (Growth, 3 years) or NZD 10M (Balanced, 5 years).',
-    tax: 'No wealth tax and no general capital gains tax; new residents get a once-only, roughly 4-year transitional exemption on most foreign income, dividends, interest and FIF income included; after it, foreign shares and ETFs costing over NZD 50,000 fall under the FIF rules, usually taxed on a deemed 5% of opening market value (fair dividend rate) at up to 39%, or on the actual return in a weaker year, whether or not anything is sold, which works like a yearly charge of up to about 2% of the portfolio; a US citizen who became resident on or after 1 April 2024, after at least 5 years abroad and once out of the transitional exemption, can instead opt into the revenue account method (enacted March 2026), taxing dividends and 70% of realised gains at marginal rates (check the exit rules on leaving).',
+    tax: 'No wealth tax and no general capital gains tax; new residents get a once-only, roughly 4-year transitional exemption on most foreign income, dividends, interest and FIF income included; after it, foreign shares and ETFs costing over NZD 50,000 fall under the FIF rules, usually taxed on a deemed 5% of opening market value (fair dividend rate) at up to 39%, or on the actual return in a weaker year, whether or not anything is sold, which works like a yearly charge of up to about 2% of the portfolio; a US citizen who became resident on or after 1 April 2024, after at least 5 years abroad and once out of the transitional exemption, can instead opt into the revenue account method (enacted March 2026), taxing dividends and 70% of realised gains at marginal rates (check the exit rules on leaving); a bill introduced in September 2026 would raise the FIF threshold to NZD 100,000 and open the revenue account method to all residents.',
     estate:
       'No inheritance or estate tax (estate duty ended in 1992) and no gift duty since October 2011, so US assets left to US-resident children pay nothing in New Zealand; there is no US–New Zealand estate tax treaty, and the $15M US exemption (2026) applies as anywhere.',
     lending:
-      'IBKR reportedly accepts New Zealand residents on IBKR Pro, margin included, while Schwab International\'s online application reportedly does not (Oct 2026); margin terms by country of residence are unconfirmed, and Fidelity and Vanguard open no accounts for residents abroad.',
+      'IBKR reportedly accepts New Zealand residents on IBKR Pro, margin included, while Schwab International\'s online application reportedly does not (Oct 2026); margin terms by country of residence are unconfirmed, and Fidelity and Vanguard reportedly open no new accounts for residents abroad.',
     climate:
       'Mild, humid and changeable oceanic climate: warm summers (February highs about 24 °C / 76 °F) and mild, wet winters (July highs about 15 °C / 58 °F), with about 1,100 mm of rain spread through the year and frequent wind.',
     community:
@@ -26,7 +26,7 @@ const profile: ExpatProfile = {
   drawbacks: [
     'The retiree visa needs NZD 1.25M in New Zealand plus NZD 60,000 a year, renews every 2 years and never leads to residence',
     'After 4 exempt years, US shares and funds are taxed on a deemed 5% return each year at up to 39%',
-    'Expensive housing, a long way from the US, and no Schwab International access',
+    'Expensive housing, a long way from the US, and reportedly no Schwab International access',
   ],
   sources: [
     { name: 'Immigration New Zealand: Temporary Retirement Visitor Visa', url: 'https://www.immigration.govt.nz/visas/temporary-retirement-visitor-visa/' },
@@ -64,6 +64,15 @@ const profile: ExpatProfile = {
     { name: 'Stats NZ: 2023 Census, Auckland region infographic', url: 'https://www.stats.govt.nz/assets/2023-Census/Detailed-regional-infographics/English-copy-of-Detailed-infographic-about-the-Auckland-region.pdf', edition: '2023' },
     { name: 'Wikipedia: American New Zealanders', url: 'https://en.wikipedia.org/wiki/American_New_Zealanders' },
     { name: 'Wikipedia: Auckland Airport', url: 'https://en.wikipedia.org/wiki/Auckland_Airport' },
+    { name: 'Deloitte: the fifth wave, the FIF reforms continue (Sep 2026)', url: 'https://www.deloitte.com/nz/en/services/tax/perspectives/the-fifth-wave-the-fif-reforms-continue.html', edition: '2026' },
+    { name: 'Inland Revenue (tax policy): compliance simplification Act, Royal assent 30 March 2026', url: 'https://www.taxpolicy.ird.govt.nz/news/2026/ac-compliance-simplication-act', edition: '2026' },
+    { name: 'Immigration New Zealand: who can get public health care', url: 'https://www.immigration.govt.nz/live/setting-up-your-life-in-new-zealand/getting-health-care-and-finding-a-doctor/who-can-get-public-health-care/' },
+    { name: 'Going NZ: retiring to New Zealand, the real visa options (Jul 2026)', url: 'https://goingnz.com/moving-to-new-zealand/retiring-to-new-zealand/', edition: '2026' },
+    { name: 'Healthpoint: Auckland City Hospital', url: 'https://healthpoint.co.nz/auckland-city-hospital/print' },
+    { name: 'Southern Cross Healthcare: Brightside Hospital', url: 'https://healthcare.southerncross.co.nz/brightside-hospital' },
+    { name: 'Cigna Global: international health plans (no upper age limit)', url: 'https://cignaglobal.com/international-health-plans' },
+    { name: 'Expatica: Allianz Care health insurance review (entry to age 75)', url: 'https://www.expatica.com/global/healthcare/healthcare-basics/allianz-care-health-insurance-review-2173537', edition: '2026' },
+    { name: 'Your Tax Base: best brokerage for US expats (Oct 2026)', url: 'https://yourtaxbase.com/blog/best-brokerage-for-us-expats', edition: '2026' },
   ],
 }
 

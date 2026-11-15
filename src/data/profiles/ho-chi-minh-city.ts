@@ -10,12 +10,12 @@ const profile: ExpatProfile = {
       'FV Hospital (JCI-accredited for a fourth consecutive cycle in 2025) and Vinmec Central Park (JCI) lead a deep private sector at well below US prices; plan on private or international insurance, since public-insurance access for foreigners was not confirmed.',
     safety:
       'Vietnam is 41st of 163 in the 2026 Global Peace Index; violent crime against foreigners is rare, but the UK warns that bag-snatching from passing motorbikes is common and that road safety is poor.',
-    visa: 'No retirement or passive-income visa: US citizens use the 90-day e-visa (USD 25 single, USD 50 multiple entry), which cannot be extended without a Vietnamese sponsor and leads to no residence card, so long stays mean leaving and reapplying (secondary sources); a temporary residence card needs work, marriage to a Vietnamese citizen or an active business investment of VND 3bn or more (about $115k), which gives a card of up to 3 years, not a portfolio.',
+    visa: 'No retirement or passive-income visa: US citizens use the 90-day e-visa (USD 25 single, USD 50 multiple entry), which cannot be extended without a Vietnamese sponsor and leads to no residence card, so long stays mean leaving and reapplying (secondary sources); a temporary residence card needs work, marriage to a Vietnamese citizen or an active business investment of VND 3bn or more (about $115k), which gives a card of up to 3 years, not a portfolio; a proposed 5–10-year golden visa that would include retirees has no legal basis yet (Nov 2026).',
     tax: 'No wealth tax; a resident (183+ days in a year, or a rented home on a fixed-term lease) is taxed on worldwide income, and the new Personal Income Tax Law (Law 109/2025/QH15, in force 1 Jul 2026) keeps 5% on dividends and interest (bank-deposit interest exempt) and 0.1% of the price on securities sales, though gains on US-listed shares might instead be taxed as other capital transfers, at 20% of the gain (Art. 13(1)); there is no US income tax treaty.',
     estate:
       'No estate tax: inheritances above VND 20m are taxed as income of the recipient at 10%, covering inherited securities (US brokerage holdings included), business stakes, real estate and registered assets, but US-resident heirs receiving US assets are likely outside it (inferred, not confirmed); there is no US estate treaty, and the $15M US exemption (2026) applies as anywhere.',
     lending:
-      'IBKR reportedly accepts residents of almost every country outside sanctions lists, while Schwab One International reportedly does not accept Vietnam residents (Oct 2026); margin terms by country of residence are unreported, and Fidelity and Vanguard open no accounts for residents abroad.',
+      'IBKR reportedly accepts residents of almost every country outside sanctions lists, while Schwab One International reportedly does not accept Vietnam residents (Oct 2026); margin terms by country of residence are unreported, and Fidelity and Vanguard reportedly open no new accounts for residents abroad.',
     climate:
       'Tropical savanna: hot all year (about 28 °C on average, April highs about 34.5 °C), a May–November rainy season with about 1,800–1,970 mm of rain, and street flooding from downpours and tides; the Saigon River set record high tides in Nov 2025.',
     community:
@@ -33,10 +33,11 @@ const profile: ExpatProfile = {
     { name: 'PwC: Vietnam, residence', url: 'https://taxsummaries.pwc.com/vietnam/individual/residence' },
     { name: 'PwC: Vietnam, other taxes', url: 'https://taxsummaries.pwc.com/vietnam/individual/other-taxes' },
     { name: 'PwC: Vietnam, income determination', url: 'https://taxsummaries.pwc.com/vietnam/individual/income-determination' },
-    { name: 'Law on Personal Income Tax No. 109/2025/QH15 (English translation)', url: 'https://lawfirm.vn/wp-content/uploads/2026/01/109_2025_QH15_687756.doc', edition: '2025' },
+    { name: 'Law on Personal Income Tax No. 109/2025/QH15 (English translation)', url: 'https://vnlawfirm.vn/wp-content/uploads/2026/01/109_2025_QH15_687756.doc', edition: '2025' },
     { name: 'PwC: Vietnam, significant developments', url: 'https://taxsummaries.pwc.com/vietnam/individual/significant-developments', edition: '2026' },
     { name: 'IRS: United States income tax treaties, A to Z', url: 'https://www.irs.gov/businesses/international-businesses/united-states-income-tax-treaties-a-to-z' },
     { name: 'GetWhereNext: Vietnam retirement visa, the honest truth', url: 'https://getwherenext.com/blog/vietnam-retirement-visa-2026-honest-truth', edition: '2026' },
+    { name: 'Viet An Law: Vietnam\'s proposed 10-year golden visa', url: 'https://vietanlaw.com/vietnams-new-10-year-golden-visa/', edition: '2026' },
     { name: 'Emerhub: how to retire in Vietnam as a foreign expat', url: 'https://emerhub.com/vietnam/how-to-retire-in-vietnam-as-a-foreign-expat/', edition: '2026' },
     {
       name: 'FV Hospital: fourth consecutive JCI accreditation',

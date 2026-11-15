@@ -8,15 +8,15 @@ const profile: ExpatProfile = {
   scores: { cost: 5, healthcare: 3, safety: 3, visa: 4, climate: 3, community: 5, tax: 4, estate: 5, lending: 4 },
   facts: {
     healthcare:
-      'Good, low-cost private hospitals (Bangkok Hospital Chiang Mai, Chiang Mai Ram); complex care is often referred to Bangkok; foreigners are outside the public schemes, and most Thai insurers take new applicants only under 60–65 (Pacific Cross to 75).',
+      'Good, low-cost private hospitals (Bangkok Hospital Chiang Mai, Chiang Mai Ram); complex care is reportedly often referred to Bangkok; foreigners are outside the public schemes, and most Thai insurers take new applicants only under 60–65 (Pacific Cross to 75).',
     safety:
       'Thailand scores 2.089 in the 2026 Global Peace Index, 8th in Southeast Asia (its global rank could not be confirmed; it was 86th in 2025); street crime is low, but road safety is poor.',
-    visa: 'Retirement (Non-O or O-A, age 50+): THB 800,000 in a Thai bank or THB 65,000/month of income, renewed yearly with 90-day reporting; O-A needs USD 100k health cover (or a USD 100k deposit), the in-country Non-O extension none; the 10-year LTR Wealthy Pensioner (50+) needs USD 80,000/year of passive income that you must actually show (or USD 40,000 plus USD 250,000 invested in Thailand).',
+    visa: 'Retirement (Non-O or O-A, age 50+): THB 800,000 in a Thai bank or THB 65,000/month of income, renewed yearly with 90-day reporting; O-A needs USD 100k health cover (or, if insurers refuse you, a USD 100k deposit), the in-country Non-O extension none; the 10-year LTR Wealthy Pensioner (50+) needs USD 80,000/year of passive income that you must actually show (or USD 40,000 plus USD 250,000 invested in Thailand).',
     tax: 'No wealth tax; since 2024, residents present 180+ days a year pay up to 35% on foreign income arising from 2024 when it is brought into Thailand, so dividends left in the US account are untaxed; LTR holders are exempt on remitted foreign income (Royal Decree 743), relief for others is unenacted (Oct 2026), and whether remitted margin-loan proceeds count is unverified (they are probably not assessable income).',
     estate:
       'Inheritance tax (5% for descendants above THB 100m per heir) is paid by the heir and reaches non-Thai heirs living abroad only on property in Thailand, so US assets left to US-resident children are outside it; there is no US estate treaty.',
     lending:
-      'IBKR reportedly accepts Thailand residents (IBKR Pro), and Schwab One International\'s online form reportedly accepted Thailand in Oct 2026; margin by country of residence is unreported, and Fidelity and Vanguard open no accounts for residents abroad.',
+      'IBKR reportedly accepts Thailand residents (IBKR Pro), and Schwab One International\'s online form reportedly accepted Thailand in Oct 2026; margin by country of residence is unreported, and Fidelity and Vanguard reportedly open no new accounts for residents abroad.',
     climate: 'A pleasant cool season (November–February), then a hot, smoky burning season (roughly February–April) with some of the world\'s worst air quality.',
     community: 'A large, long-standing Western retiree and digital-nomad community, with many English-language clubs and services.',
     access: 'Chiang Mai airport is about 4 km from the old city; Bangkok is about an hour by air or an overnight train ride.',

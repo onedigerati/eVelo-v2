@@ -1,0 +1,480 @@
+{
+  "country": "Philippines",
+  "cities": [
+    "manila",
+    "cebu"
+  ],
+  "claims": [
+    {
+      "id": "ph-tax-no-wealth",
+      "fact": "tax",
+      "cities": [
+        "manila",
+        "cebu"
+      ],
+      "claim": "The Philippines has no wealth tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: quick chart, net wealth/worth tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/net-wealth-worth-tax-rates",
+          "read": "2026-11-15",
+          "says": "Headline net wealth/worth tax rate \"NA\" (\"the territory does not have the indicated tax\") for Thailand (last reviewed 24 August 2026), Malaysia (16 June 2026), Vietnam (23 September 2026), Indonesia (11 June 2026) and the Philippines (01 August 2026)."
+        }
+      ],
+      "modelMismatch": "localTaxes.ts (PH) note says \"Wealth tax not verified; none modelled\". PwC's quick chart now verifies there is none; the model is right, only the note's \"not verified\" can go in stage 8."
+    },
+    {
+      "id": "ph-tax-sec23",
+      "fact": "tax",
+      "cities": [
+        "manila",
+        "cebu"
+      ],
+      "claim": "The Tax Code (Sec. 23) taxes an alien, resident or not, only on Philippine-source income, so US dividends, interest, gains and loan draws are untaxed locally",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "ChanRobles: National Internal Revenue Code, Sec. 23",
+          "url": "https://www.chanrobles.com/legal6title3.htm",
+          "read": "2026-11-15",
+          "says": "Section 23(D): \"An alien individual, whether a resident or not of the Philippines,\" \"is taxable only on income derived from sources within the Philippines;\"."
+        },
+        {
+          "name": "PwC: Philippines, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/philippines/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 02 July 2026. Non-resident citizens and aliens are \"taxed only on income from sources within the Philippines\"; resident citizens on worldwide income. The page does not state the scope for resident aliens."
+        }
+      ],
+      "note": "The statute is read on ChanRobles' copy, not a government site; the BIR's pages carry no text on it. PwC confirms it for non-resident aliens and is silent on resident aliens."
+    },
+    {
+      "id": "ph-tax-local-rates",
+      "fact": "tax",
+      "cities": [
+        "manila",
+        "cebu"
+      ],
+      "claim": "Philippine dividends pay 10% and local interest 20%",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Philippines, income determination",
+          "url": "https://taxsummaries.pwc.com/philippines/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 02 July 2026. \"Dividend income received from a domestic corporation is taxed at 10% for resident aliens\"; \"Philippine-source interest and royalties are taxed at 20%\"; some FCDU interest 15%."
+        }
+      ]
+    },
+    {
+      "id": "ph-tax-treaty",
+      "fact": "tax",
+      "cities": [
+        "manila",
+        "cebu"
+      ],
+      "claim": "A US–Philippines income tax treaty exists",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IRS: United States income tax treaties, A to Z",
+          "url": "https://www.irs.gov/businesses/international-businesses/united-states-income-tax-treaties-a-to-z",
+          "read": "2026-11-15",
+          "says": "Page last reviewed or updated 03-Jan-2026. The A-to-Z list includes Indonesia, the Philippines and Thailand; Vietnam and Malaysia are not on it."
+        }
+      ]
+    },
+    {
+      "id": "ph-estate-rate",
+      "fact": "estate",
+      "cities": [
+        "manila",
+        "cebu"
+      ],
+      "claim": "A flat 6% estate tax on the net estate, after a PHP 5m standard deduction and up to PHP 10m for the family home",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Respicio & Co.: estate tax computation in the Philippines",
+          "url": "https://www.respicio.ph/commentaries/estate-tax-computation-guidelines-in-the-philippines",
+          "read": "2026-11-15",
+          "says": "Dated January 12, 2026. \"Under the TRAIN Law, the estate tax is a flat 6% on the net estate\"; standard deduction \"PHP 5,000,000 (fixed under TRAIN Law)\"; family home up to PHP 10 million; the tax applies to \"The worldwide estate of Filipino citizens and resident aliens\", and for non-resident aliens to \"Only properties situated in the Philippines\"."
+        },
+        {
+          "name": "PwC: quick chart, inheritance and gift tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates",
+          "read": "2026-11-15",
+          "says": "Thailand (24 August 2026): inheritance 10, gift 5; Malaysia (16 June 2026): NA, NA; Vietnam (23 September 2026): 10, 10; Indonesia (11 June 2026): NA, NA; Philippines (01 August 2026): \"There is no inheritance tax in the Philippines.\" \"an estate tax of 6% is imposed on the assets of the decedent taxpayer.\""
+        }
+      ],
+      "note": "The BIR's estate-tax page (bir.gov.ph/estate-tax) loaded with only its heading.",
+      "modelMismatch": "localTaxes.ts (PH) models the 6% after the PHP 5m standard deduction only; the family-home deduction (up to PHP 10m) is not modelled. For stage 8 to judge; it overstates the tax only where the family home is in the estate."
+    },
+    {
+      "id": "ph-estate-resident-alien",
+      "fact": "estate",
+      "cities": [
+        "manila",
+        "cebu"
+      ],
+      "claim": "It reaches the worldwide estate of resident aliens, US brokerage accounts included; a non-resident alien is taxed only on Philippine assets",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Respicio & Co.: estate tax computation in the Philippines",
+          "url": "https://www.respicio.ph/commentaries/estate-tax-computation-guidelines-in-the-philippines",
+          "read": "2026-11-15",
+          "says": "Dated January 12, 2026. \"Under the TRAIN Law, the estate tax is a flat 6% on the net estate\"; standard deduction \"PHP 5,000,000 (fixed under TRAIN Law)\"; family home up to PHP 10 million; the tax applies to \"The worldwide estate of Filipino citizens and resident aliens\", and for non-resident aliens to \"Only properties situated in the Philippines\"."
+        }
+      ]
+    },
+    {
+      "id": "ph-estate-srrv-resident",
+      "fact": "estate",
+      "cities": [
+        "manila",
+        "cebu"
+      ],
+      "claim": "An SRRV holder living in the Philippines would be a resident alien",
+      "verdict": "cant-confirm",
+      "hedge": "likely",
+      "wording": "which an SRRV holder living here would likely be",
+      "sources": [
+        {
+          "name": "Hans Goldstein: Philippines SRRV pension requirement",
+          "url": "https://hansgoldstein.com/moving-abroad/philippines-srrv-pension-requirement/",
+          "read": "2026-11-15",
+          "says": "Updated October 2026. SRRV Classic is \"a permanent, multiple-entry residence visa\"; deposits 40–49 USD 25,000 (pensioner) or 50,000, 50+ USD 15,000 or 30,000; pension USD 800/month single, USD 1,000 with dependents; USD 1,500 application fee, USD 360 annual fee covering the principal and two dependents. No pending change mentioned."
+        },
+        {
+          "name": "Respicio & Co.: estate tax computation in the Philippines",
+          "url": "https://www.respicio.ph/commentaries/estate-tax-computation-guidelines-in-the-philippines",
+          "read": "2026-11-15",
+          "says": "Dated January 12, 2026. \"Under the TRAIN Law, the estate tax is a flat 6% on the net estate\"; standard deduction \"PHP 5,000,000 (fixed under TRAIN Law)\"; family home up to PHP 10 million; the tax applies to \"The worldwide estate of Filipino citizens and resident aliens\", and for non-resident aliens to \"Only properties situated in the Philippines\"."
+        }
+      ],
+      "note": "Neither page says how residence for estate tax is decided for an SRRV holder; the inference stands with its hedge."
+    },
+    {
+      "id": "ph-estate-no-treaty",
+      "fact": "estate",
+      "cities": [
+        "manila",
+        "cebu"
+      ],
+      "claim": "There is no US estate treaty",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-without",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list); none of the 37 countries named in this claim is among them."
+        }
+      ],
+      "note": "Wording: \"there is no US estate treaty to relieve it\"."
+    },
+    {
+      "id": "ph-estate-us-exemption",
+      "fact": "estate",
+      "cities": [
+        "manila",
+        "cebu"
+      ],
+      "claim": "US estate tax applies above the $15M exemption (2026): \"the $15M US exemption (2026) applies as anywhere\"",
+      "verdict": "confirmed",
+      "shared": "us-estate-exemption-2026",
+      "sources": [
+        {
+          "name": "IRS: What's new, estate and gift tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax",
+          "read": "2026-11-15",
+          "says": "The table \"Basic exclusion amount for year of death\" has the row 2026: $15,000,000 (2025: $13,990,000). The page says the Working Families Tax Cuts, Public Law 119-21, signed July 4, 2025, \"amends § 2010(c)(3) by increasing the basic exclusion amount to $15,000,000 for calendar year 2026\". Page last reviewed or updated 03-Nov-2026."
+        },
+        {
+          "name": "IRS: Estate tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-tax",
+          "read": "2026-11-15",
+          "says": "A return is required when the gross estate, plus adjusted taxable gifts and specific exemption, is more than the filing threshold for the year of death; the table gives 2026: $15,000,000. Page last reviewed or updated 23-Oct-2026."
+        },
+        {
+          "name": "IRS news release IR-2025-103: tax inflation adjustments for tax year 2026",
+          "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill",
+          "read": "2026-11-15",
+          "says": "\"Estates of decedents who die during 2026 have a basic exclusion amount of $15,000,000\", up from $13,990,000 for 2025; the release (October 9, 2025) cites Revenue Procedure 2025-32 and is marked as an archival document."
+        },
+        {
+          "name": "IRS: Some nonresidents with U.S. assets must file estate tax returns",
+          "url": "https://www.irs.gov/individuals/international-taxpayers/some-nonresidents-with-us-assets-must-file-estate-tax-returns",
+          "read": "2026-11-15",
+          "says": "\"U.S. citizens are subject to U.S. estate taxation with respect to their worldwide assets\"; Form 706 is required when worldwide assets plus adjusted taxable gifts exceed the basic exclusion amount in effect on the date of death. By contrast a nonresident who is not a citizen files when US-situated assets exceed $60,000. Page last reviewed or updated 27-Jun-2026."
+        }
+      ]
+    },
+    {
+      "id": "ph-lending-ibkr",
+      "fact": "lending",
+      "cities": [
+        "manila",
+        "cebu"
+      ],
+      "claim": "Interactive Brokers accepts Philippine residents",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly accepts residents of almost every country outside sanctions lists",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Indonesia, Malaysia, the Philippines, Thailand and Vietnam; it names no IBKR entity for them, and says the default account type outside the US is IBKR PRO."
+        },
+        {
+          "name": "Your Tax Base: best brokerage for US expats",
+          "url": "https://yourtaxbase.com/blog/best-brokerage-for-us-expats",
+          "read": "2026-11-15",
+          "says": "Dated October 23, 2026. Quotes Fidelity's FAQ: \"we do not open accounts for any new customers residing outside the United States\"; Vanguard requires US citizenship or permanent residence \"with a U.S. mailing address\". Quotes IBKR's account page: \"Accounts are accepted from citizens or residents of all countries\", except sanctioned countries or those \"determined to be higher risk\". Says nothing country-specific on IBKR for Thailand, Malaysia, Vietnam, Indonesia or the Philippines."
+        }
+      ],
+      "note": "IBKR's country list (https://www.interactivebrokers.com/en/accounts/open-account-country-list.php) returned HTTP 403 again on 2026-11-15, so acceptance stays reported (rule 3)."
+    },
+    {
+      "id": "ph-lending-schwab",
+      "fact": "lending",
+      "cities": [
+        "manila",
+        "cebu"
+      ],
+      "claim": "Schwab One International does not accept Philippine residents (Oct 2026)",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab One International reportedly does not accept Philippine residents (Oct 2026)",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. On that day the author ran every entry in Schwab's international account selector through the application: it accepted residents of 51 of 263 countries and regions: Argentina, Australia, Austria, the Bahamas, Belgium, Bermuda, Brazil, the British Virgin Islands, the Cayman Islands, Chile, China, Colombia, Costa Rica, the Czech Republic, Denmark, Ecuador, Finland, Germany, Greece, Guatemala, Hong Kong, Iceland, India, Indonesia, Ireland, Israel, Jersey, Luxembourg, Malaysia, the Marshall Islands, Mexico, the Netherlands, Norway, Panama, Paraguay, Peru, Poland, Portugal, Qatar, Singapore, South Korea, Spain, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Turks and Caicos, the United Arab Emirates, the United Kingdom and Uruguay. Named as not accepted: Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam; for the rest the application said \"Schwab currently cannot open accounts for residents of your country/region.\" The test covers new applicants on that day only."
+        },
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026 (country check run that day). Online application open to residents: Thailand \"Yes\"; Malaysia and Indonesia in the list of 51 accepted; Vietnam \"No\"; Philippines \"No\". The only margin restriction quoted: \"Customers residing within Europe are restricted from using their Available Margin Loan Value\" to withdraw funds; nothing on Asia."
+        }
+      ],
+      "note": "Agrees with the dated list (re-read 2026-11-15). Schwab's own sites were not retried; stage 1 found them blocked (HTTP 403 or an error page). Stays reported (rule 3)."
+    },
+    {
+      "id": "ph-lending-margin-unreported",
+      "fact": "lending",
+      "cities": [
+        "manila",
+        "cebu"
+      ],
+      "claim": "Margin terms for Philippine residents are not reported",
+      "verdict": "cant-confirm",
+      "hedge": "unreported",
+      "wording": "margin terms by country of residence are unreported",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026 (country check run that day). Online application open to residents: Thailand \"Yes\"; Malaysia and Indonesia in the list of 51 accepted; Vietnam \"No\"; Philippines \"No\". The only margin restriction quoted: \"Customers residing within Europe are restricted from using their Available Margin Loan Value\" to withdraw funds; nothing on Asia."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Indonesia, Malaysia, the Philippines, Thailand and Vietnam; it names no IBKR entity for them, and says the default account type outside the US is IBKR PRO."
+        }
+      ],
+      "note": "A statement of what is not known; nothing read gives margin terms for residents of this country."
+    },
+    {
+      "id": "ph-lending-fidelity-vanguard",
+      "fact": "lending",
+      "cities": [
+        "manila",
+        "cebu"
+      ],
+      "claim": "Fidelity and Vanguard open no accounts for residents abroad",
+      "verdict": "cant-confirm",
+      "hedge": "reportedly",
+      "oldWording": "and Fidelity and Vanguard open no accounts for residents abroad",
+      "wording": "Fidelity and Vanguard reportedly open no new accounts for residents abroad",
+      "sources": [
+        {
+          "name": "Your Tax Base: best brokerage for US expats",
+          "url": "https://yourtaxbase.com/blog/best-brokerage-for-us-expats",
+          "read": "2026-11-15",
+          "says": "Dated October 23, 2026. Quotes Fidelity's FAQ: \"we do not open accounts for any new customers residing outside the United States\"; Vanguard requires US citizenship or permanent residence \"with a U.S. mailing address\". Quotes IBKR's account page: \"Accounts are accepted from citizens or residents of all countries\", except sanctioned countries or those \"determined to be higher risk\". Says nothing country-specific on IBKR for Thailand, Malaysia, Vietnam, Indonesia or the Philippines."
+        }
+      ],
+      "also": [
+        "hedge added: \"reportedly\", and \"no accounts\" narrowed to \"no new accounts\" as Fidelity's quoted FAQ says"
+      ],
+      "note": "A broker claim resting on a secondary page stays reported (rule 3); Fidelity's FAQ returned HTTP 403 in stage 4 and was not retried. Worded as in the Guatemala, Peru and Chile ledgers."
+    },
+    {
+      "id": "ph-visa-srrv-deposits",
+      "fact": "visa",
+      "cities": [
+        "manila",
+        "cebu"
+      ],
+      "claim": "SRRV Classic from 50: USD 30,000 deposit with no pension needed, USD 15,000 with a pension; ages 40–49 USD 50,000 or 25,000",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Philippine Retirement Authority: Expanded SRRV program",
+          "url": "https://pra.gov.ph/Uploads/Files/Expanded%20SRRV%20Program.pdf",
+          "read": "2026-11-15",
+          "says": "Text recovered from the PDF's compressed streams; undated. SRRV Classic deposits: 40 to 49 years, non-pensioner USD 50,000, pensioner USD 25,000; 50 years and above, non-pensioner USD 30,000, pensioner USD 15,000. PRA Annual Fee, SRRV Classic: USD 360, \"Additional USD100.00 for each additional dependent in excess of 2\"."
+        },
+        {
+          "name": "Hans Goldstein: Philippines SRRV pension requirement",
+          "url": "https://hansgoldstein.com/moving-abroad/philippines-srrv-pension-requirement/",
+          "read": "2026-11-15",
+          "says": "Updated October 2026. SRRV Classic is \"a permanent, multiple-entry residence visa\"; deposits 40–49 USD 25,000 (pensioner) or 50,000, 50+ USD 15,000 or 30,000; pension USD 800/month single, USD 1,000 with dependents; USD 1,500 application fee, USD 360 annual fee covering the principal and two dependents. No pending change mentioned."
+        }
+      ],
+      "note": "Searched the SRRV with the current month (November 2026): no PRA announcement of a change was found."
+    },
+    {
+      "id": "ph-visa-srrv-pension",
+      "fact": "visa",
+      "cities": [
+        "manila",
+        "cebu"
+      ],
+      "claim": "The pension needed is USD 800/month single or USD 1,000 with family",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Hans Goldstein: Philippines SRRV pension requirement",
+          "url": "https://hansgoldstein.com/moving-abroad/philippines-srrv-pension-requirement/",
+          "read": "2026-11-15",
+          "says": "Updated October 2026. SRRV Classic is \"a permanent, multiple-entry residence visa\"; deposits 40–49 USD 25,000 (pensioner) or 50,000, 50+ USD 15,000 or 30,000; pension USD 800/month single, USD 1,000 with dependents; USD 1,500 application fee, USD 360 annual fee covering the principal and two dependents. No pending change mentioned."
+        }
+      ],
+      "note": "The PRA PDF's pension figures were not in its recoverable text."
+    },
+    {
+      "id": "ph-visa-srrv-fees",
+      "fact": "visa",
+      "cities": [
+        "manila",
+        "cebu"
+      ],
+      "claim": "A USD 1,500 application fee and USD 360 a year",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Philippine Retirement Authority: Expanded SRRV program",
+          "url": "https://pra.gov.ph/Uploads/Files/Expanded%20SRRV%20Program.pdf",
+          "read": "2026-11-15",
+          "says": "Text recovered from the PDF's compressed streams; undated. SRRV Classic deposits: 40 to 49 years, non-pensioner USD 50,000, pensioner USD 25,000; 50 years and above, non-pensioner USD 30,000, pensioner USD 15,000. PRA Annual Fee, SRRV Classic: USD 360, \"Additional USD100.00 for each additional dependent in excess of 2\"."
+        },
+        {
+          "name": "Hans Goldstein: Philippines SRRV pension requirement",
+          "url": "https://hansgoldstein.com/moving-abroad/philippines-srrv-pension-requirement/",
+          "read": "2026-11-15",
+          "says": "Updated October 2026. SRRV Classic is \"a permanent, multiple-entry residence visa\"; deposits 40–49 USD 25,000 (pensioner) or 50,000, 50+ USD 15,000 or 30,000; pension USD 800/month single, USD 1,000 with dependents; USD 1,500 application fee, USD 360 annual fee covering the principal and two dependents. No pending change mentioned."
+        }
+      ]
+    },
+    {
+      "id": "ph-visa-srrv-indefinite",
+      "fact": "visa",
+      "cities": [
+        "manila",
+        "cebu"
+      ],
+      "claim": "It gives indefinite, multiple-entry residence and covers two dependants",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Hans Goldstein: Philippines SRRV pension requirement",
+          "url": "https://hansgoldstein.com/moving-abroad/philippines-srrv-pension-requirement/",
+          "read": "2026-11-15",
+          "says": "Updated October 2026. SRRV Classic is \"a permanent, multiple-entry residence visa\"; deposits 40–49 USD 25,000 (pensioner) or 50,000, 50+ USD 15,000 or 30,000; pension USD 800/month single, USD 1,000 with dependents; USD 1,500 application fee, USD 360 annual fee covering the principal and two dependents. No pending change mentioned."
+        },
+        {
+          "name": "Philippine Retirement Authority: Expanded SRRV program",
+          "url": "https://pra.gov.ph/Uploads/Files/Expanded%20SRRV%20Program.pdf",
+          "read": "2026-11-15",
+          "says": "Text recovered from the PDF's compressed streams; undated. SRRV Classic deposits: 40 to 49 years, non-pensioner USD 50,000, pensioner USD 25,000; 50 years and above, non-pensioner USD 30,000, pensioner USD 15,000. PRA Annual Fee, SRRV Classic: USD 360, \"Additional USD100.00 for each additional dependent in excess of 2\"."
+        }
+      ]
+    },
+    {
+      "id": "ph-health-manila-jci",
+      "fact": "healthcare",
+      "cities": [
+        "manila"
+      ],
+      "claim": "Five JCI-accredited hospitals in Metro Manila (Sept 2026); the country's only other JCI site is The Medical City Clark",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "ClinicFinder PH: JCI-accredited hospitals in the Philippines",
+          "url": "https://www.clinicfinderph.com/blog/jci-accredited-hospitals-philippines",
+          "read": "2026-11-15",
+          "says": "Dated and \"Last checked: 25 September 2026\". Six JCI hospital sites: Makati Medical Center; Asian Hospital and Medical Center (Muntinlupa); St. Luke's Quezon City; St. Luke's Global City (Taguig); The Medical City (Pasig); The Medical City Clark (Mabalacat). Chong Hua is \"widely described online\" as JCI-accredited since 2009 but \"did not appear in JCI's Philippines-filtered directory results\"."
+        }
+      ]
+    },
+    {
+      "id": "ph-health-cebu-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "cebu"
+      ],
+      "claim": "Chong Hua (Cebu City and Mandaue) and Cebu Doctors' University Hospital lead the private sector",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "3D Universal: healthcare and senior support in Cebu, a guide for retirees",
+          "url": "https://3d-universal.com/en/blogs/healthcare-senior-support-in-cebu-a-guide-for-retirees.html",
+          "read": "2026-11-15",
+          "says": "Published July 19, 2025, updated July 30, 2026. Among the most trusted: \"Chong Hua Hospital (Fuente & Mandaue)\", \"Known for cardiology, oncology, and diagnostics\", and Cebu Doctors' University Hospital, \"A premier facility with English-speaking staff and a wide range of specialists\"."
+        }
+      ]
+    },
+    {
+      "id": "ph-health-cebu-jci",
+      "fact": "healthcare",
+      "cities": [
+        "cebu"
+      ],
+      "claim": "Chong Hua was JCI-accredited from 2009 but was not in JCI's directory in Sept 2026, and the country's six JCI sites are all in Metro Manila and Clark",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "ClinicFinder PH: JCI-accredited hospitals in the Philippines",
+          "url": "https://www.clinicfinderph.com/blog/jci-accredited-hospitals-philippines",
+          "read": "2026-11-15",
+          "says": "Dated and \"Last checked: 25 September 2026\". Six JCI hospital sites: Makati Medical Center; Asian Hospital and Medical Center (Muntinlupa); St. Luke's Quezon City; St. Luke's Global City (Taguig); The Medical City (Pasig); The Medical City Clark (Mabalacat). Chong Hua is \"widely described online\" as JCI-accredited since 2009 but \"did not appear in JCI's Philippines-filtered directory results\"."
+        },
+        {
+          "name": "Wikipedia: Chong Hua Hospital",
+          "url": "https://en.wikipedia.org/wiki/Chong_Hua_Hospital",
+          "read": "2026-11-15",
+          "says": "Chong Hua became \"the first hospital outside Luzon\" to earn JCI accreditation, in 2009, and \"kept its agency accreditation until 2015\"."
+        }
+      ]
+    }
+  ]
+}

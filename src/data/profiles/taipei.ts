@@ -7,7 +7,7 @@ const profile: ExpatProfile = {
   scores: { cost: 3, healthcare: 5, safety: 4, visa: 1, climate: 3, community: 2, tax: 5, estate: 5, lending: 4 },
   facts: {
     healthcare:
-      'National Taiwan University Hospital, the country\'s largest public hospital (about 2,400 beds), and other major teaching hospitals are in the city; ARC holders without an employer join National Health Insurance after 6 months of continuous residence (one trip under 30 days allowed), paying about 4.69% of the insured-salary basis, and keep paying while abroad (secondary source).',
+      'National Taiwan University Hospital, the country\'s largest public hospital (about 2,400 beds), and other major teaching hospitals are in the city; ARC holders without an employer join National Health Insurance after 6 months of continuous residence (one trip under 30 days allowed), paying 5.17% of the insured-salary basis, and keep paying through trips abroad of under 6 months (secondary source).',
     safety:
       'Taiwan is 42nd of 163 in the 2026 Global Peace Index (25th on societal safety), held back by regional military tension; the UK says crime rates are extremely low, and the risks are earthquakes, typhoons and scooter-heavy traffic.',
     visa: 'No retirement or passive-income visa: the Resident Visa for Investment needs a USD 200,000 business investment approved by the Ministry of Economic Affairs (a portfolio does not count) and cannot be switched to after visa-free entry; other routes, such as the Employment Gold Card, need work credentials.',
@@ -15,7 +15,7 @@ const profile: ExpatProfile = {
     estate:
       'Estate tax of 10–20% (exemption TWD 13.33m) reaches only property located in Taiwan for non-ROC nationals (Estate and Gift Tax Act Art. 1), so a US citizen\'s US brokerage account is outside it; there is no US estate treaty, and US estate tax applies above the $15M exemption (2026).',
     lending:
-      'IBKR reportedly serves Taiwan residents (IBKR Pro), and Schwab One International\'s online form reportedly accepted Taiwan in Oct 2026; margin by country of residence is unreported, and Fidelity and Vanguard open no accounts for residents abroad.',
+      'IBKR reportedly serves Taiwan residents (IBKR Pro), and Schwab One International\'s online form reportedly accepted Taiwan in Oct 2026; margin by country of residence is unreported, and Fidelity and Vanguard reportedly open no new accounts for residents abroad.',
     climate:
       'Humid subtropical: mild, damp winters (January about 14–19 °C) and hot, humid summers (July highs about 35 °C), about 1,900 mm of rain a year, and typhoons from roughly May to November.',
     community:
@@ -44,6 +44,11 @@ const profile: ExpatProfile = {
     { name: 'Wikipedia: Taipei', url: 'https://en.wikipedia.org/wiki/Taipei' },
     { name: 'Wikipedia: Taoyuan International Airport', url: 'https://en.wikipedia.org/wiki/Taoyuan_International_Airport' },
     { name: 'YourTaxBase: Charles Schwab for expats (country list, Oct 2026)', url: 'https://yourtaxbase.com/blog/charles-schwab-for-expats' },
+    { name: 'Bureau of Consular Affairs: resident visa for investment', url: 'https://www.boca.gov.tw/cp-166-278-9b20e-2.html', edition: '2024' },
+    { name: 'Taipei Times: NHI premium rate to stay at 5.17 percent', url: 'https://www.taipeitimes.com/News/taiwan/archives/2025/11/20/2003847537', edition: '2025' },
+    { name: 'FAQs.tw: Taiwan NHI for foreigners, how much it costs (2026 rates)', url: 'https://faqs.tw/en/health-insurance', edition: '2026' },
+    { name: 'Banker on Wheels: Interactive Brokers review (country availability)', url: 'https://www.bankeronwheels.com/interactive-brokers-review/', edition: '2026' },
+    { name: 'Your Tax Base: best brokerage for US expats (Oct 2026)', url: 'https://yourtaxbase.com/blog/best-brokerage-for-us-expats', edition: '2026' },
   ],
 }
 

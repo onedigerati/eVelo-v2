@@ -1,0 +1,422 @@
+{
+  "country": "Taiwan",
+  "cities": [
+    "taipei"
+  ],
+  "claims": [
+    {
+      "id": "tw-tax-no-wealth",
+      "fact": "tax",
+      "cities": [
+        "taipei"
+      ],
+      "claim": "Taiwan has no wealth tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Taiwan, other taxes",
+          "url": "https://taxsummaries.pwc.com/taiwan/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 20 August 2026. \"There are no net wealth/worth taxes in Taiwan.\" Estate tax (from January 2025): 10% to TWD 56.21m, 15% to TWD 112.42m, 20% above; exemption \"TWD 13.33 million for each decedent\"."
+        },
+        {
+          "name": "PwC: quick chart, net wealth/worth tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/net-wealth-worth-tax-rates",
+          "read": "2026-11-15",
+          "says": "Australia (30 June 2026), Japan (07 August 2026), New Zealand (06 July 2026), Singapore (02 July 2026), Taiwan (20 August 2026) and the Republic of Korea (04 June 2026) are all \"NA\": \"the territory does not have the indicated tax\"."
+        }
+      ]
+    },
+    {
+      "id": "tw-tax-territorial",
+      "fact": "tax",
+      "cities": [
+        "taipei"
+      ],
+      "claim": "Regular income tax is territorial",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Taiwan, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/taiwan/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 20 August 2026. \"Individual income tax (IIT) is levied on Taiwan-sourced income of both resident and non-resident individuals.\" Income basic tax: a 20% flat-rate minimum tax for residents (183+ days); foreign-sourced income counts if it is at least TWD 1 million; IBT = (income subject to IBT - TWD 7.5 million) x 20%, paid only to the extent it exceeds regular income tax; foreign taxes paid on foreign income can generally be credited."
+        }
+      ]
+    },
+    {
+      "id": "tw-tax-ibt",
+      "fact": "tax",
+      "cities": [
+        "taipei"
+      ],
+      "claim": "Residents (183+ days) owe the Income Basic Tax only when foreign income is TWD 1m or more, at 20% of basic income above TWD 7.5m and only to the extent it exceeds regular tax, with a foreign tax credit, so up to about TWD 7.5m a year of foreign dividends and interest is effectively untaxed",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Taiwan, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/taiwan/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 20 August 2026. \"Individual income tax (IIT) is levied on Taiwan-sourced income of both resident and non-resident individuals.\" Income basic tax: a 20% flat-rate minimum tax for residents (183+ days); foreign-sourced income counts if it is at least TWD 1 million; IBT = (income subject to IBT - TWD 7.5 million) x 20%, paid only to the extent it exceeds regular income tax; foreign taxes paid on foreign income can generally be credited."
+        }
+      ],
+      "note": "\"roughly $230k\" is TWD 7.5m at about 32.5 to the dollar."
+    },
+    {
+      "id": "tw-estate-rates",
+      "fact": "estate",
+      "cities": [
+        "taipei"
+      ],
+      "claim": "Estate tax runs 10–20% with a TWD 13.33m exemption",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Taiwan, other taxes",
+          "url": "https://taxsummaries.pwc.com/taiwan/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 20 August 2026. \"There are no net wealth/worth taxes in Taiwan.\" Estate tax (from January 2025): 10% to TWD 56.21m, 15% to TWD 112.42m, 20% above; exemption \"TWD 13.33 million for each decedent\"."
+        },
+        {
+          "name": "PwC: quick chart, inheritance and gift tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates",
+          "read": "2026-11-15",
+          "says": "Inheritance / gift entries: Australia \"NA\"/\"NA\" (30 June 2026); Japan 55/55 (07 August 2026); New Zealand \"NA\"/\"NA\" (06 July 2026); Singapore \"NA\"/\"NA\" (02 July 2026); Taiwan 20/20 (20 August 2026); Republic of Korea 50/50 (04 June 2026). \"NA\" = \"the territory does not have the indicated tax\"."
+        }
+      ],
+      "note": "The statute's base amounts (NT$12m exemption, NT$50m/100m brackets) are inflation-indexed; PwC gives the 2025 amounts."
+    },
+    {
+      "id": "tw-estate-non-roc",
+      "fact": "estate",
+      "cities": [
+        "taipei"
+      ],
+      "claim": "For non-ROC nationals estate tax reaches only property in Taiwan (Art. 1), so a US citizen's US brokerage account is outside it",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Laws & Regulations Database of the ROC: Estate and Gift Tax Act",
+          "url": "https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=G0340072",
+          "read": "2026-11-15",
+          "says": "Amended 2021-01-20. Art. 1: for \"non-R.O.C. nationals, who, upon death, leave property within the territory of the R.O.C., the estate tax shall be levied on the estate within the territory of the R.O.C.\"; worldwide reach applies to R.O.C. nationals habitually resident (Art. 4: domicile within two years, or over 365 days' residence in the two years before death)."
+        }
+      ],
+      "note": "localTaxes.ts (TW) agrees."
+    },
+    {
+      "id": "tw-estate-us-treaty",
+      "fact": "estate",
+      "cities": [
+        "taipei"
+      ],
+      "claim": "There is no US estate treaty",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-without",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list); none of the 37 countries named in this claim is among them."
+        }
+      ],
+      "note": "Wording: \"there is no US estate treaty\"."
+    },
+    {
+      "id": "tw-estate-us-exemption",
+      "fact": "estate",
+      "cities": [
+        "taipei"
+      ],
+      "claim": "The $15M US estate exemption (2026) applies to a US citizen living here as anywhere",
+      "verdict": "confirmed",
+      "shared": "us-estate-exemption-2026",
+      "sources": [
+        {
+          "name": "IRS: What's new, estate and gift tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax",
+          "read": "2026-11-15",
+          "says": "The table \"Basic exclusion amount for year of death\" has the row 2026: $15,000,000 (2025: $13,990,000). The page says the Working Families Tax Cuts, Public Law 119-21, signed July 4, 2025, \"amends § 2010(c)(3) by increasing the basic exclusion amount to $15,000,000 for calendar year 2026\". Page last reviewed or updated 03-Nov-2026."
+        },
+        {
+          "name": "IRS: Some nonresidents with U.S. assets must file estate tax returns",
+          "url": "https://www.irs.gov/individuals/international-taxpayers/some-nonresidents-with-us-assets-must-file-estate-tax-returns",
+          "read": "2026-11-15",
+          "says": "\"U.S. citizens are subject to U.S. estate taxation with respect to their worldwide assets\"; Form 706 is required when worldwide assets plus adjusted taxable gifts exceed the basic exclusion amount in effect on the date of death. By contrast a nonresident who is not a citizen files when US-situated assets exceed $60,000. Page last reviewed or updated 27-Jun-2026."
+        }
+      ],
+      "note": "Wording: \"US estate tax applies above the $15M exemption (2026)\"."
+    },
+    {
+      "id": "tw-lending-ibkr",
+      "fact": "lending",
+      "cities": [
+        "taipei"
+      ],
+      "claim": "Interactive Brokers serves Taiwan residents (IBKR Pro)",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly serves Taiwan residents (IBKR Pro)",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Japan, Australia, Taiwan, South Korea, Singapore and New Zealand. It names no IBKR entity for them; it says \"In Australia, India, Japan, Hong Kong, or Singapore, the respective financial authorities regulate local entities.\""
+        },
+        {
+          "name": "Your Tax Base: best brokerage for US expats",
+          "url": "https://yourtaxbase.com/blog/best-brokerage-for-us-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. Quotes Fidelity's FAQ: \"we do not open accounts for any new customers residing outside the United States\"; Vanguard requires US citizenship or permanent residence \"with a U.S. mailing address\". Quotes IBKR: accounts accepted from residents of all countries except sanctioned or \"higher risk\" ones, and \"US Citizens who reside in Australia, Canada, Hong Kong, Japan, Singapore and India can not open an IRA account\"."
+        }
+      ],
+      "note": "IBKR's country list was not retried (HTTP 403 on its other sites the same day). Banker on Wheels lists Taiwan and says the default account outside the US is IBKR PRO. Stays reported (rule 3).",
+      "also": [
+        "sources: added Banker on Wheels"
+      ]
+    },
+    {
+      "id": "tw-lending-schwab",
+      "fact": "lending",
+      "cities": [
+        "taipei"
+      ],
+      "claim": "Schwab One International's online form accepted Taiwan residents in Oct 2026",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab One International's online form reportedly accepted Taiwan in Oct 2026",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published and last modified October 23, 2026; country check run that day through Schwab's international application. Accepted (51): ... Australia ... Singapore, South Korea ... Taiwan ...; named as not accepted: Canada, Croatia, Dominican Republic, France, Italy, Japan, Malta, New Zealand, Philippines, South Africa, Turkey, Vietnam. Only margin restriction quoted: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds\"."
+        }
+      ],
+      "note": "Agrees with the dated list. Schwab's own sites were not retried for this country (stage 1 found them blocked). Stays reported (rule 3)."
+    },
+    {
+      "id": "tw-lending-margin-unknown",
+      "fact": "lending",
+      "cities": [
+        "taipei"
+      ],
+      "claim": "Margin terms for residents of this country are not reported",
+      "verdict": "cant-confirm",
+      "hedge": "unreported",
+      "wording": "margin by country of residence is unreported",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published and last modified October 23, 2026; country check run that day through Schwab's international application. Accepted (51): ... Australia ... Singapore, South Korea ... Taiwan ...; named as not accepted: Canada, Croatia, Dominican Republic, France, Italy, Japan, Malta, New Zealand, Philippines, South Africa, Turkey, Vietnam. Only margin restriction quoted: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds\"."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Japan, Australia, Taiwan, South Korea, Singapore and New Zealand. It names no IBKR entity for them; it says \"In Australia, India, Japan, Hong Kong, or Singapore, the respective financial authorities regulate local entities.\""
+        }
+      ],
+      "note": "A statement of what is not known; nothing read gives margin terms for residents of this country."
+    },
+    {
+      "id": "tw-lending-fidelity-vanguard",
+      "fact": "lending",
+      "cities": [
+        "taipei"
+      ],
+      "claim": "Fidelity and Vanguard open no accounts for residents abroad",
+      "verdict": "cant-confirm",
+      "hedge": "reportedly",
+      "oldWording": "and Fidelity and Vanguard open no accounts for residents abroad",
+      "wording": "Fidelity and Vanguard reportedly open no new accounts for residents abroad",
+      "sources": [
+        {
+          "name": "Your Tax Base: best brokerage for US expats",
+          "url": "https://yourtaxbase.com/blog/best-brokerage-for-us-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. Quotes Fidelity's FAQ: \"we do not open accounts for any new customers residing outside the United States\"; Vanguard requires US citizenship or permanent residence \"with a U.S. mailing address\". Quotes IBKR: accounts accepted from residents of all countries except sanctioned or \"higher risk\" ones, and \"US Citizens who reside in Australia, Canada, Hong Kong, Japan, Singapore and India can not open an IRA account\"."
+        }
+      ],
+      "also": [
+        "hedge added: \"reportedly\", and \"no accounts\" narrowed to \"no new accounts\" as Fidelity's quoted FAQ says",
+        "sources: added Your Tax Base, best brokerage for US expats"
+      ],
+      "note": "A broker claim resting on a secondary page stays reported (rule 3); Fidelity's FAQ was not retried (HTTP 403 in stage 4). Worded as in the Thailand, Peru and Chile ledgers."
+    },
+    {
+      "id": "tw-visa-no-retirement",
+      "fact": "visa",
+      "cities": [
+        "taipei"
+      ],
+      "claim": "Taiwan has no retirement or passive-income visa",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "LottaLingo: retirement route (no dedicated visa), Taiwan (2026)",
+          "url": "https://lottalingo.com/research/visas/taiwan-retirement-resident",
+          "read": "2026-11-15",
+          "says": "© 2026. Headed \"Retirement Route (No Dedicated Visa) — Taiwan (2026)\": \"Qualify via an existing category instead: Gold Card (historical salary accepted), investor visa, or joining family\"."
+        },
+        {
+          "name": "Bureau of Consular Affairs: resident visa for investment",
+          "url": "https://www.boca.gov.tw/cp-166-278-9b20e-2.html",
+          "read": "2026-11-15",
+          "says": "Updated 2024-05-01. \"a minimum investment amount of 200,000.00 USD is required\" under the MOEA's regulations for foreign investors, with \"proof of investment issued by competent authorities of central government\"; applicants who entered \"without a visa or with a landing visa\" \"may not apply for a Resident Visa on the ground of investment\"."
+        }
+      ],
+      "note": "Searched for a 2026 retirement route: none found on any page read; a commercial page claiming a pension-based retirement visa cites no government source."
+    },
+    {
+      "id": "tw-visa-investment",
+      "fact": "visa",
+      "cities": [
+        "taipei"
+      ],
+      "claim": "The Resident Visa for Investment needs a USD 200,000 business investment approved under the Ministry of Economic Affairs (a portfolio does not count) and cannot be switched to after visa-free entry",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Bureau of Consular Affairs: resident visa for investment",
+          "url": "https://www.boca.gov.tw/cp-166-278-9b20e-2.html",
+          "read": "2026-11-15",
+          "says": "Updated 2024-05-01. \"a minimum investment amount of 200,000.00 USD is required\" under the MOEA's regulations for foreign investors, with \"proof of investment issued by competent authorities of central government\"; applicants who entered \"without a visa or with a landing visa\" \"may not apply for a Resident Visa on the ground of investment\"."
+        },
+        {
+          "name": "IMI Daily: Taiwan investor visa",
+          "url": "https://www.imidaily.com/taiwan-investor-visa/",
+          "read": "2026-11-15",
+          "says": "© 2026. The programme \"requires a minimum US$200,000 business investment in a registered Taiwanese company\", \"approved by competent central government authorities and made before application\"."
+        }
+      ],
+      "note": "\"a portfolio does not count\" follows from \"business investment in a registered Taiwanese company\"; no page says it in those words."
+    },
+    {
+      "id": "tw-visa-gold-card",
+      "fact": "visa",
+      "cities": [
+        "taipei"
+      ],
+      "claim": "Other routes, such as the Employment Gold Card, need work credentials",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Taiwan Gold Card Office: Employment Gold Card",
+          "url": "https://goldcard.nat.gov.tw/en/",
+          "read": "2026-11-15",
+          "says": "\"a combined open work permit, residence permit and visa for skilled professionals\"; \"Professionals from ten different fields are eligible to apply\"."
+        }
+      ]
+    },
+    {
+      "id": "tw-health-ntuh",
+      "fact": "healthcare",
+      "cities": [
+        "taipei"
+      ],
+      "claim": "National Taiwan University Hospital, the largest public hospital (about 2,400 beds), and other teaching hospitals are in the city",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Wikipedia: National Taiwan University Hospital",
+          "url": "https://en.wikipedia.org/wiki/National_Taiwan_University_Hospital",
+          "read": "2026-11-15",
+          "says": "Infobox: 2,400 beds; the hospital \"is also the largest public hospital in the country\"."
+        }
+      ],
+      "note": "Wikipedia, undated; no hospital or ministry page on bed counts was found."
+    },
+    {
+      "id": "tw-health-nhi-six-months",
+      "fact": "healthcare",
+      "cities": [
+        "taipei"
+      ],
+      "claim": "ARC holders without an employer join National Health Insurance after 6 months of continuous residence (one trip under 30 days allowed)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Taiwan Gold Card community: health insurance FAQ",
+          "url": "https://taiwangoldcard.com/goldcard-holders-faq/health-insurance/",
+          "read": "2026-11-15",
+          "says": "Last updated September 18, 2026. Without an employer you must \"reside in Taiwan for a consecutive six-month period (or leave only once for less than 30 days)\"; gives the rate as \"4.69% since January 1, 2016\"; \"Once enrolled, you must continue to pay your NHI bill, even if you're abroad.\""
+        },
+        {
+          "name": "FAQs.tw: Taiwan NHI for foreigners, how much it costs",
+          "url": "https://faqs.tw/en/health-insurance",
+          "read": "2026-11-15",
+          "says": "© 2026, undated. \"Based on 2026 NHI rate of 5.17%\"; unemployed ARC holders enrol \"After 6 consecutive months of residency\"; \"If you leave for less than 6 months, your NHI continues and you keep paying premiums\"; a longer absence can suspend it."
+        }
+      ],
+      "note": "nhi.gov.tw returned HTTP 403."
+    },
+    {
+      "id": "tw-health-nhi-rate",
+      "fact": "healthcare",
+      "cities": [
+        "taipei"
+      ],
+      "claim": "Self-paid NHI members pay about 4.69% of the insured-salary basis",
+      "verdict": "corrected",
+      "oldWording": "paying about 4.69% of the insured-salary basis",
+      "newWording": "paying 5.17% of the insured-salary basis",
+      "sources": [
+        {
+          "name": "Taipei Times: NHI premium rate",
+          "url": "https://www.taipeitimes.com/News/taiwan/archives/2025/11/20/2003847537",
+          "read": "2026-11-15",
+          "says": "Dated November 20, 2025. \"The general premium rate would stay at 5.17 percent\" for 2026."
+        },
+        {
+          "name": "FAQs.tw: Taiwan NHI for foreigners, how much it costs",
+          "url": "https://faqs.tw/en/health-insurance",
+          "read": "2026-11-15",
+          "says": "© 2026, undated. \"Based on 2026 NHI rate of 5.17%\"; unemployed ARC holders enrol \"After 6 consecutive months of residency\"; \"If you leave for less than 6 months, your NHI continues and you keep paying premiums\"; a longer absence can suspend it."
+        },
+        {
+          "name": "Taiwan Gold Card community: health insurance FAQ",
+          "url": "https://taiwangoldcard.com/goldcard-holders-faq/health-insurance/",
+          "read": "2026-11-15",
+          "says": "Last updated September 18, 2026. Without an employer you must \"reside in Taiwan for a consecutive six-month period (or leave only once for less than 30 days)\"; gives the rate as \"4.69% since January 1, 2016\"; \"Once enrolled, you must continue to pay your NHI bill, even if you're abroad.\""
+        }
+      ],
+      "also": [
+        "sources: added Taipei Times and FAQs.tw"
+      ],
+      "note": "4.69% was the rate from 2016; it has been 5.17% since January 2021 and stays there for 2026 (Taipei Times). The Gold Card community page still shows 4.69%."
+    },
+    {
+      "id": "tw-health-nhi-abroad",
+      "fact": "healthcare",
+      "cities": [
+        "taipei"
+      ],
+      "claim": "Members keep paying NHI while abroad",
+      "verdict": "corrected",
+      "oldWording": "and keep paying while abroad (secondary source)",
+      "newWording": "and keep paying through trips abroad of under 6 months (secondary source)",
+      "sources": [
+        {
+          "name": "FAQs.tw: Taiwan NHI for foreigners, how much it costs",
+          "url": "https://faqs.tw/en/health-insurance",
+          "read": "2026-11-15",
+          "says": "© 2026, undated. \"Based on 2026 NHI rate of 5.17%\"; unemployed ARC holders enrol \"After 6 consecutive months of residency\"; \"If you leave for less than 6 months, your NHI continues and you keep paying premiums\"; a longer absence can suspend it."
+        },
+        {
+          "name": "Taiwan Gold Card community: health insurance FAQ",
+          "url": "https://taiwangoldcard.com/goldcard-holders-faq/health-insurance/",
+          "read": "2026-11-15",
+          "says": "Last updated September 18, 2026. Without an employer you must \"reside in Taiwan for a consecutive six-month period (or leave only once for less than 30 days)\"; gives the rate as \"4.69% since January 1, 2016\"; \"Once enrolled, you must continue to pay your NHI bill, even if you're abroad.\""
+        }
+      ],
+      "note": "FAQs.tw says cover and premiums continue for absences under 6 months and can be suspended for longer ones; the Gold Card page says only that you keep paying while abroad. \"(secondary source)\" kept."
+    }
+  ]
+}

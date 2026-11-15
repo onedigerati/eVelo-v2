@@ -1,0 +1,491 @@
+{
+  "country": "South Korea",
+  "cities": [
+    "seoul"
+  ],
+  "claims": [
+    {
+      "id": "kr-tax-no-wealth",
+      "fact": "tax",
+      "cities": [
+        "seoul"
+      ],
+      "claim": "Korea has no wealth tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Korea, other taxes",
+          "url": "https://taxsummaries.pwc.com/republic-of-korea/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 04 June 2026 (quick chart date). \"No net wealth/worth taxes exist in Korea at this time.\" Inheritance tax rates \"range from 10% to 50%, excluding local income tax\"; \"No estate tax separate from inheritance tax exists in Korea.\""
+        },
+        {
+          "name": "PwC: quick chart, net wealth/worth tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/net-wealth-worth-tax-rates",
+          "read": "2026-11-15",
+          "says": "Australia (30 June 2026), Japan (07 August 2026), New Zealand (06 July 2026), Singapore (02 July 2026), Taiwan (20 August 2026) and the Republic of Korea (04 June 2026) are all \"NA\": \"the territory does not have the indicated tax\"."
+        }
+      ]
+    },
+    {
+      "id": "kr-tax-five-year-remittance",
+      "fact": "tax",
+      "cities": [
+        "seoul"
+      ],
+      "claim": "A foreign resident living in Korea 5 years or less of the last 10 is taxed on foreign-source income only when paid by a Korean entity or transferred to Korea; after that, worldwide",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Korea, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/republic-of-korea/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 02 July 2026. Top rate 45% on taxable income of KRW 1 billion and above; local income tax \"at a rate of 10% of the PIT rates\". Foreign residents with 5 years or less of residence in the last 10 are \"taxed on Korea-source income\"; foreign-source income is reportable only if a Korean entity pays it or it is transferred to Korea."
+        },
+        {
+          "name": "PwC: Korea, residence",
+          "url": "https://taxsummaries.pwc.com/republic-of-korea/individual/residence",
+          "read": "2026-11-15",
+          "says": "Last reviewed 02 July 2026. Residents are \"Any individuals having a domicile in Korea, having a residence within Korea for 183 days or more in a tax year.\""
+        }
+      ]
+    },
+    {
+      "id": "kr-tax-financial-income",
+      "fact": "tax",
+      "cities": [
+        "seoul"
+      ],
+      "claim": "Interest and dividends above KRW 20m a year join the progressive scale up to 45% plus 10% local tax (about 49.5%)",
+      "verdict": "corrected",
+      "oldWording": "(dividends above KRW 20m at up to about 49.5%)",
+      "newWording": "and foreign dividends and interest not withheld in Korea can be taxed this way below KRW 20m too",
+      "sources": [
+        {
+          "name": "PwC: Korea, income determination",
+          "url": "https://taxsummaries.pwc.com/republic-of-korea/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 02 July 2026. Most Korean-source dividends and interest are withheld at 15.4%; \"Financial income over KRW 20 million a year is included in global income.\" Gains on foreign shares are carved out of its foreign-assets rule and given no rate."
+        },
+        {
+          "name": "PwC: Korea, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/republic-of-korea/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 02 July 2026. Top rate 45% on taxable income of KRW 1 billion and above; local income tax \"at a rate of 10% of the PIT rates\". Foreign residents with 5 years or less of residence in the last 10 are \"taxed on Korea-source income\"; foreign-source income is reportable only if a Korean entity pays it or it is transferred to Korea."
+        },
+        {
+          "name": "Toss Bank: comprehensive taxation of financial income",
+          "url": "https://www.tossbank.com/articles/comprehensive-taxation-of-financial-income",
+          "read": "2026-11-15",
+          "says": "Cites NTS sources accessed 2026.04.03. \"원천 징수되지 않은 금융소득은 금액과 관계없이 종합과세 대상이 될 수 있어요\"; of overseas interest and dividends: \"이런 소득은 기준 이하라도 종합과세 대상이 될 수 있어요.\""
+        }
+      ],
+      "also": [
+        "summary: \"(dividends above KRW 20m at up to about 49.5%)\" -> \"(dividends at up to about 49.5%)\"",
+        "sources: added Toss Bank"
+      ],
+      "note": "The KRW 20m threshold and the rates are confirmed. What the profile left out matters to its reader: dividends from a US broker are not withheld in Korea, and income not withheld at source \"can be\" comprehensively taxed whatever the amount (Toss Bank, citing the NTS). The tax fact keeps its wording and adds the case; the summary's threshold went. A Korean primary page was not read (PwC Korea's One Point Tax returned HTTP 403). Tax score stays 2."
+    },
+    {
+      "id": "kr-tax-foreign-share-gains",
+      "fact": "tax",
+      "cities": [
+        "seoul"
+      ],
+      "claim": "Gains on foreign shares pay 22% above a KRW 2.5m yearly allowance",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Bizwatch: overseas stock capital gains tax",
+          "url": "https://news.bizwatch.co.kr/article/market/2026/04/13/0022",
+          "read": "2026-11-15",
+          "says": "Dated April 14, 2026. \"기본공제로 250만원의 양도차익은 빼주지만, 이를 초과하는 양도차익에 대해선 지방소득세를 포함해 22%의 세금을 부담한다.\""
+        }
+      ],
+      "note": "PwC gives no rate for foreign shares; a dated 2026 news page does."
+    },
+    {
+      "id": "kr-tax-exit-tax",
+      "fact": "tax",
+      "cities": [
+        "seoul"
+      ],
+      "claim": "From 2027 an exit tax reaches foreign shares worth more than KRW 500m in total for anyone resident 5 of the last 10 years who emigrates",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "KPMG GMS Flash Alert 2026-066: Korea exit tax extended to overseas stocks",
+          "url": "https://kpmg.com/xx/en/our-insights/gms-flash-alert/2026/flash-alert-2026-066.html",
+          "read": "2026-11-15",
+          "says": "Dated 11 March 2026. \"Following recent legislative amendments\", from departures on or after 1 January 2027 the exit tax covers overseas stocks for people resident at least five of the ten years before departure; \"the major shareholder condition will not be applicable to overseas stocks\"; holdings worth KRW 500 million or less in total are exempt; exemptions for foreign workers need 80% of the 10 years in Korean employment."
+        }
+      ],
+      "note": "The foreign-worker exemptions need 80% of the 10 years in Korean employment, so they do not reach a retiree.",
+      "modelMismatch": "localTaxes.ts has no South Korea entry (the plan already notes it); the 2027 exit tax on foreign shares over KRW 500m is not modelled."
+    },
+    {
+      "id": "kr-estate-rates",
+      "fact": "estate",
+      "cities": [
+        "seoul"
+      ],
+      "claim": "Inheritance tax of 10–50% (50% above KRW 3bn) with a basic deduction of up to KRW 500m",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PBL Legal: a guide to Korean inheritance law",
+          "url": "https://pbl.legal/insights/international-estate-planning-a-guide-to-korean-inheritance-law/",
+          "read": "2026-11-15",
+          "says": "Dated May 1, 2025. \"If the deceased was a resident of Korea at the time of death, inheritance tax applies to worldwide assets\"; \"For non-residents, only assets situated in Korea are subject to inheritance tax\"; rates \"range from 10% to 50%\", \"50% for inheritances exceeding 3 billion KRW\"; a general deduction \"up to 500 million KRW\" for residents."
+        },
+        {
+          "name": "PwC: Korea, other taxes",
+          "url": "https://taxsummaries.pwc.com/republic-of-korea/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 04 June 2026 (quick chart date). \"No net wealth/worth taxes exist in Korea at this time.\" Inheritance tax rates \"range from 10% to 50%, excluding local income tax\"; \"No estate tax separate from inheritance tax exists in Korea.\""
+        },
+        {
+          "name": "PwC: quick chart, inheritance and gift tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates",
+          "read": "2026-11-15",
+          "says": "Inheritance / gift entries: Australia \"NA\"/\"NA\" (30 June 2026); Japan 55/55 (07 August 2026); New Zealand \"NA\"/\"NA\" (06 July 2026); Singapore \"NA\"/\"NA\" (02 July 2026); Taiwan 20/20 (20 August 2026); Republic of Korea 50/50 (04 June 2026). \"NA\" = \"the territory does not have the indicated tax\"."
+        }
+      ]
+    },
+    {
+      "id": "kr-estate-worldwide",
+      "fact": "estate",
+      "cities": [
+        "seoul"
+      ],
+      "claim": "Inheritance tax reaches the worldwide estate of anyone resident in Korea at death (domicile or 183+ days), foreigners included; non-residents are taxed only on Korean assets",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PBL Legal: a guide to Korean inheritance law",
+          "url": "https://pbl.legal/insights/international-estate-planning-a-guide-to-korean-inheritance-law/",
+          "read": "2026-11-15",
+          "says": "Dated May 1, 2025. \"If the deceased was a resident of Korea at the time of death, inheritance tax applies to worldwide assets\"; \"For non-residents, only assets situated in Korea are subject to inheritance tax\"; rates \"range from 10% to 50%\", \"50% for inheritances exceeding 3 billion KRW\"; a general deduction \"up to 500 million KRW\" for residents."
+        },
+        {
+          "name": "PwC: Korea, residence",
+          "url": "https://taxsummaries.pwc.com/republic-of-korea/individual/residence",
+          "read": "2026-11-15",
+          "says": "Last reviewed 02 July 2026. Residents are \"Any individuals having a domicile in Korea, having a residence within Korea for 183 days or more in a tax year.\""
+        }
+      ],
+      "note": "PBL gives the residence split and says nothing separate on foreigners, which is consistent with residence, not nationality, deciding; the domicile-or-183-days test is PwC's income tax definition, which the inheritance law shares.",
+      "modelMismatch": "localTaxes.ts has no South Korea entry (noted in the plan), so the model taxes nothing at death; a resident's worldwide estate pays 10–50% (50% above KRW 3bn) after deductions of up to KRW 500m."
+    },
+    {
+      "id": "kr-estate-per-heir-proposal",
+      "fact": "estate",
+      "cities": [
+        "seoul"
+      ],
+      "claim": "A 2025 government plan to tax each heir on their own share from 2028, top rate unchanged, was still a proposal at last report",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Newsis: per-heir inheritance tax fails to pass in 2025",
+          "url": "https://www.newsis.com/view/NISX20251201_0003424072",
+          "read": "2026-11-15",
+          "says": "Dated December 1, 2025. The 유산취득세 proposal \"연내 처리에 실패했다\"; the parties planned to resume discussion in the first half of 2026."
+        },
+        {
+          "name": "Tax Times: per-heir inheritance tax bill notice",
+          "url": "https://www.taxtimes.co.kr/news/article.html?no=268904",
+          "read": "2026-11-15",
+          "says": "Dated March 19, 2025. The ministry put the inheritance tax amendment out for comment to April 28 and planned to submit it to the National Assembly in May; no effective date given."
+        }
+      ],
+      "also": [
+        "sources: added Newsis"
+      ],
+      "note": "Newsis (December 2025) reports the bill failed to pass in 2025; a November 2026 search found no report of its passage. The 2028 start comes from the profile's JoongAng source and was not re-read."
+    },
+    {
+      "id": "kr-estate-us-treaty",
+      "fact": "estate",
+      "cities": [
+        "seoul"
+      ],
+      "claim": "There is no US estate treaty",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-without",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list); none of the 37 countries named in this claim is among them."
+        }
+      ],
+      "note": "Wording: \"there is no US–Korea estate treaty\"."
+    },
+    {
+      "id": "kr-estate-us-exemption",
+      "fact": "estate",
+      "cities": [
+        "seoul"
+      ],
+      "claim": "The $15M US estate exemption (2026) applies to a US citizen living here as anywhere",
+      "verdict": "confirmed",
+      "shared": "us-estate-exemption-2026",
+      "sources": [
+        {
+          "name": "IRS: What's new, estate and gift tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax",
+          "read": "2026-11-15",
+          "says": "The table \"Basic exclusion amount for year of death\" has the row 2026: $15,000,000 (2025: $13,990,000). The page says the Working Families Tax Cuts, Public Law 119-21, signed July 4, 2025, \"amends § 2010(c)(3) by increasing the basic exclusion amount to $15,000,000 for calendar year 2026\". Page last reviewed or updated 03-Nov-2026."
+        },
+        {
+          "name": "IRS: Some nonresidents with U.S. assets must file estate tax returns",
+          "url": "https://www.irs.gov/individuals/international-taxpayers/some-nonresidents-with-us-assets-must-file-estate-tax-returns",
+          "read": "2026-11-15",
+          "says": "\"U.S. citizens are subject to U.S. estate taxation with respect to their worldwide assets\"; Form 706 is required when worldwide assets plus adjusted taxable gifts exceed the basic exclusion amount in effect on the date of death. By contrast a nonresident who is not a citizen files when US-situated assets exceed $60,000. Page last reviewed or updated 27-Jun-2026."
+        }
+      ],
+      "note": "Wording: \"the $15M US exemption (2026) applies as anywhere\"."
+    },
+    {
+      "id": "kr-lending-ibkr",
+      "fact": "lending",
+      "cities": [
+        "seoul"
+      ],
+      "claim": "Interactive Brokers accepts Korea residents",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly accepts Korea residents",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Japan, Australia, Taiwan, South Korea, Singapore and New Zealand. It names no IBKR entity for them; it says \"In Australia, India, Japan, Hong Kong, or Singapore, the respective financial authorities regulate local entities.\""
+        },
+        {
+          "name": "Your Tax Base: best brokerage for US expats",
+          "url": "https://yourtaxbase.com/blog/best-brokerage-for-us-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. Quotes Fidelity's FAQ: \"we do not open accounts for any new customers residing outside the United States\"; Vanguard requires US citizenship or permanent residence \"with a U.S. mailing address\". Quotes IBKR: accounts accepted from residents of all countries except sanctioned or \"higher risk\" ones, and \"US Citizens who reside in Australia, Canada, Hong Kong, Japan, Singapore and India can not open an IRA account\"."
+        }
+      ],
+      "note": "IBKR's own sites (interactivebrokers.com.au, .co.jp, .com.sg) returned HTTP 403 on 2026-11-15, so acceptance stays reported (rule 3)."
+    },
+    {
+      "id": "kr-lending-schwab",
+      "fact": "lending",
+      "cities": [
+        "seoul"
+      ],
+      "claim": "Schwab One International's online form accepted South Korea residents in Oct 2026",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab One International's online form reportedly accepted South Korea in Oct 2026",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published and last modified October 23, 2026; country check run that day through Schwab's international application. Accepted (51): ... Australia ... Singapore, South Korea ... Taiwan ...; named as not accepted: Canada, Croatia, Dominican Republic, France, Italy, Japan, Malta, New Zealand, Philippines, South Africa, Turkey, Vietnam. Only margin restriction quoted: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds\"."
+        }
+      ],
+      "note": "Agrees with the dated list. Schwab's own sites were not retried for this country (stage 1 found them blocked). Stays reported (rule 3)."
+    },
+    {
+      "id": "kr-lending-margin-unknown",
+      "fact": "lending",
+      "cities": [
+        "seoul"
+      ],
+      "claim": "Margin terms for residents of this country are not reported",
+      "verdict": "cant-confirm",
+      "hedge": "unreported",
+      "wording": "margin by country of residence is unreported",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published and last modified October 23, 2026; country check run that day through Schwab's international application. Accepted (51): ... Australia ... Singapore, South Korea ... Taiwan ...; named as not accepted: Canada, Croatia, Dominican Republic, France, Italy, Japan, Malta, New Zealand, Philippines, South Africa, Turkey, Vietnam. Only margin restriction quoted: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds\"."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Japan, Australia, Taiwan, South Korea, Singapore and New Zealand. It names no IBKR entity for them; it says \"In Australia, India, Japan, Hong Kong, or Singapore, the respective financial authorities regulate local entities.\""
+        }
+      ],
+      "note": "A statement of what is not known; nothing read gives margin terms for residents of this country."
+    },
+    {
+      "id": "kr-lending-fidelity-vanguard",
+      "fact": "lending",
+      "cities": [
+        "seoul"
+      ],
+      "claim": "Fidelity and Vanguard open no accounts for residents abroad",
+      "verdict": "cant-confirm",
+      "hedge": "reportedly",
+      "oldWording": "and Fidelity and Vanguard open no accounts for residents abroad",
+      "wording": "Fidelity and Vanguard reportedly open no new accounts for residents abroad",
+      "sources": [
+        {
+          "name": "Your Tax Base: best brokerage for US expats",
+          "url": "https://yourtaxbase.com/blog/best-brokerage-for-us-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. Quotes Fidelity's FAQ: \"we do not open accounts for any new customers residing outside the United States\"; Vanguard requires US citizenship or permanent residence \"with a U.S. mailing address\". Quotes IBKR: accounts accepted from residents of all countries except sanctioned or \"higher risk\" ones, and \"US Citizens who reside in Australia, Canada, Hong Kong, Japan, Singapore and India can not open an IRA account\"."
+        }
+      ],
+      "also": [
+        "hedge added: \"reportedly\", and \"no accounts\" narrowed to \"no new accounts\" as Fidelity's quoted FAQ says",
+        "sources: added Your Tax Base, best brokerage for US expats"
+      ],
+      "note": "A broker claim resting on a secondary page stays reported (rule 3); Fidelity's FAQ was not retried (HTTP 403 in stage 4). Worded as in the Thailand, Peru and Chile ledgers."
+    },
+    {
+      "id": "kr-visa-retiree-abolished",
+      "fact": "visa",
+      "cities": [
+        "seoul"
+      ],
+      "claim": "There is no retirement visa: the retiree investor route (KRW 300m at 55+) was abolished in 2023",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Ministry of Justice (Korea): investment immigration press release",
+          "url": "https://www.moj.go.kr/bbs/moj/182/572502/artclView.do",
+          "read": "2026-11-15",
+          "says": "Created 2023.06.29. General investment immigration \"기준금액 5억 원 → 15억 원으로 상향\"; high-value \"15억 원 → 30억 원으로 상향\"; \"은퇴 투자이민제도 폐지\"; in force \"6월 29일부터\"."
+        },
+        {
+          "name": "Korea Immigration Service: Immigrant Investor Scheme for Public Business",
+          "url": "https://www.moj.go.kr/immigration_eng/1853/subview.do",
+          "read": "2026-11-15",
+          "says": "Undated, pre-2023 amounts (KRW 500m; KRW 300m for a retiree over 55). Gives F-2 status, with a change to F-5 if the investment is kept at least 5 years; in the \"Principal Guaranteed and Interest-Free type\" only the principal is returned after 5 years from a public fund."
+        }
+      ],
+      "note": "Searched for a November 2026 change to investment immigration: none found."
+    },
+    {
+      "id": "kr-visa-public-business",
+      "fact": "visa",
+      "cities": [
+        "seoul"
+      ],
+      "claim": "Public-business investment immigration takes a KRW 1.5bn deposit held interest-free in a government-run fund for 5 years, giving F-2 and then F-5; KRW 3bn gives permanent residence at once",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Ministry of Justice (Korea): investment immigration press release",
+          "url": "https://www.moj.go.kr/bbs/moj/182/572502/artclView.do",
+          "read": "2026-11-15",
+          "says": "Created 2023.06.29. General investment immigration \"기준금액 5억 원 → 15억 원으로 상향\"; high-value \"15억 원 → 30억 원으로 상향\"; \"은퇴 투자이민제도 폐지\"; in force \"6월 29일부터\"."
+        },
+        {
+          "name": "Korea Immigration Service: Immigrant Investor Scheme for Public Business",
+          "url": "https://www.moj.go.kr/immigration_eng/1853/subview.do",
+          "read": "2026-11-15",
+          "says": "Undated, pre-2023 amounts (KRW 500m; KRW 300m for a retiree over 55). Gives F-2 status, with a change to F-5 if the investment is kept at least 5 years; in the \"Principal Guaranteed and Interest-Free type\" only the principal is returned after 5 years from a public fund."
+        },
+        {
+          "name": "Incheon Free Economic Zone: investment immigration",
+          "url": "https://www.ifez.go.kr/world/content/view.do?sn=561",
+          "read": "2026-11-15",
+          "says": "Undated. Public interest investment: KRW 1.5 billion or more in designated funds \"grants residency (F-2)\", F-5 \"upon maintaining the investment status for 5 years\". Real estate investment immigration in the Incheon Free Economic Zone (Songdo, Yeongjong, Cheongna), KRW 1 billion or more, \"Valid until December 31, 2027.\""
+        }
+      ],
+      "note": "The Ministry's English page still shows the pre-2023 amounts; the 2023 press release sets KRW 1.5bn and 3bn. \"Permanent residence at once\" for the KRW 3bn tier rests on the 2023 framing (고액투자이민 gives F-5) and the profile's Segye source."
+    },
+    {
+      "id": "kr-visa-property-route",
+      "fact": "visa",
+      "cities": [
+        "seoul"
+      ],
+      "claim": "A separate property-investment route applies only to designated developments such as those in Jeju and Incheon",
+      "verdict": "corrected",
+      "oldWording": "such as those in Jeju and Incheon",
+      "newWording": "such as Incheon's free economic zone (to the end of 2027)",
+      "sources": [
+        {
+          "name": "Incheon Free Economic Zone: investment immigration",
+          "url": "https://www.ifez.go.kr/world/content/view.do?sn=561",
+          "read": "2026-11-15",
+          "says": "Undated. Public interest investment: KRW 1.5 billion or more in designated funds \"grants residency (F-2)\", F-5 \"upon maintaining the investment status for 5 years\". Real estate investment immigration in the Incheon Free Economic Zone (Songdo, Yeongjong, Cheongna), KRW 1 billion or more, \"Valid until December 31, 2027.\""
+        },
+        {
+          "name": "Korea Times: real estate investment immigration program extended by 3 years",
+          "url": "https://www.koreatimes.co.kr/amp/southkorea/law-crime/20230501/korea-extends-real-estate-investment-immigration-program-by-3-years",
+          "read": "2026-11-15",
+          "says": "Dated May 1, 2023. The programme for \"Jeju, Incheon's Songdo, Yeongjong and Cheongna districts, Pyeongchang's Alpensia, and Yeosu's Gyeongdo\" \"has been extended to April 30, 2026\"."
+        }
+      ],
+      "also": [
+        "sources: added IFEZ"
+      ],
+      "note": "The 2023 extension ran the Jeju (and Incheon, Pyeongchang, Yeosu) designations to 30 April 2026; IFEZ now gives Incheon's to 31 December 2027, and no page read says Jeju's was renewed, so Jeju was dropped. Residency score unchanged (2)."
+    },
+    {
+      "id": "kr-health-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "seoul"
+      ],
+      "claim": "World-class teaching hospitals, including Severance (JCI-accredited since 2007), Samsung Medical Center, Asan and Seoul National University Hospital",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Korea Times: service improvement at Severance",
+          "url": "https://www.koreatimes.co.kr/economy/20110828/service-improvement-at-severance",
+          "read": "2026-11-15",
+          "says": "Dated August 28, 2011. Severance underwent a three-phase evaluation \"until finally being certified in April 2007\" by JCI."
+        },
+        {
+          "name": "K-Trip Tips: Severance Hospital",
+          "url": "https://www.ktriptips.com/eng/tourspot/3548909",
+          "read": "2026-11-15",
+          "says": "Updated 2025-10-23. \"Severance Hospital was the first medical institution in Korea to receive JCI (Joint Commission International) accreditation.\""
+        }
+      ],
+      "note": "JCI's own directory (jointcommission.org) returned 403 in earlier stages and was not retried; current accreditation rests on the 2025 tourism page."
+    },
+    {
+      "id": "kr-health-nhis",
+      "fact": "healthcare",
+      "cities": [
+        "seoul"
+      ],
+      "claim": "Foreigners staying over 6 months must join the National Health Insurance, whose premium for those without an employer is set on income and property",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "NHIS: mandatory health insurance for foreigners staying over 6 months",
+          "url": "https://www.nhis.or.kr/static/images/banner/longdesc/20190520_pop02longdesc_eng.html",
+          "read": "2026-11-15",
+          "says": "Foreign nationals living in Korea longer than six months \"should be enrolled in the National Health Insurance mandatorily\", from 16 July 2019."
+        },
+        {
+          "name": "NHIS: guidance for foreigners",
+          "url": "https://www.nhis.or.kr/english/wbheaa02900m01.do",
+          "read": "2026-11-15",
+          "says": "\"Any foreigner or overseas Korean who has stayed in Korea for over six months is subject to mandatory subscription\"; for the self-employed insured \"The method is same as local resident's\", and \"If the calculated insurance fee is less than the average fee, the average insurance fee levied.\""
+        },
+        {
+          "name": "NHIS: contributions",
+          "url": "https://www.nhis.or.kr/english/wbheaa02500m01.do",
+          "read": "2026-11-15",
+          "says": "For the self-employed insured the premium \"is set based on the information of the household's wealth, such as income, property, and cars\"."
+        }
+      ],
+      "also": [
+        "sources: added NHIS guidance for foreigners"
+      ],
+      "note": "NHIS adds a floor: a foreigner's premium is at least the average premium."
+    }
+  ]
+}

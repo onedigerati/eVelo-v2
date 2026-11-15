@@ -15,7 +15,7 @@ const profile: ExpatProfile = {
     estate:
       'No inheritance or estate tax: estate duty was abolished for deaths from 15 Feb 2008, and there is no gift tax, so US assets pass to US-resident children with no Singapore tax; there is no US estate treaty and none is needed, and the $15M US exemption (2026) applies as anywhere.',
     lending:
-      'IBKR serves Singapore residents through its MAS-licensed Singapore entity (margin accounts from age 21), and Schwab One International\'s online form reportedly accepted Singapore in Oct 2026, though Schwab Singapore serves only accredited investors (net financial assets above S$1M, net personal assets above S$2M or income above S$300k); margin by country of residence is unreported.',
+      'IBKR reportedly serves Singapore residents through its MAS-licensed Singapore entity (margin accounts from age 21), and Schwab One International\'s online form reportedly accepted Singapore in Oct 2026, though Schwab Singapore reportedly serves only accredited investors (net financial assets above S$1M, net personal assets above S$2M or income above S$300k); margin by country of residence is unreported.',
     climate:
       'Tropical rainforest: hot and humid all year (typically 25–33 °C), about 2,100–2,300 mm of rain with afternoon storms, and two monsoons, mid-Nov to early Mar and Jun to Sep.',
     community:
@@ -58,6 +58,10 @@ const profile: ExpatProfile = {
     { name: 'Wise: opening an IBKR account in Singapore', url: 'https://wise.com/sg/blog/ibkr-account-opening', edition: '2026' },
     { name: 'Charles Schwab Singapore: working with Schwab as an accredited investor', url: 'https://www.schwab.com.sg/become-accredited-investor' },
     { name: 'YourTaxBase: Charles Schwab for expats (country list, Oct 2026)', url: 'https://yourtaxbase.com/blog/charles-schwab-for-expats' },
+    { name: 'EDB: changes to the Global Investor Programme (from 15 March 2023)', url: 'https://www.edb.gov.sg/en/about-edb/media-releases-publications/changes-to-global-investor-programme-will-generate-more-spin-offs-for-the-singapore-economy.html', edition: '2023' },
+    { name: 'ICA: Long-Term Visit Pass eligibility', url: 'https://www.ica.gov.sg/reside/LTVP/apply', edition: '2026' },
+    { name: 'The Money Bees: TD Ameritrade Singapore and Schwab Singapore in 2026', url: 'https://themoneybees.co/blog/td-ameritrade', edition: '2026' },
+    { name: 'Where Next: Singapore expat tax guide 2026', url: 'https://getwherenext.com/blog/singapore-expat-tax-guide-2026', edition: '2026' },
   ],
 }
 

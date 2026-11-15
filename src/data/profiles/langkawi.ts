@@ -16,7 +16,7 @@ const profile: ExpatProfile = {
     estate:
       'No inheritance, estate or gift tax, so US assets pass to US-resident children with no Malaysian tax; there is no US estate treaty, but nothing to double-tax, and US estate tax applies only above the $15M exemption (2026).',
     lending:
-      'IBKR reportedly accepts Malaysia residents (IBKR Pro), and Schwab One International\'s online form reportedly accepted Malaysia in Oct 2026; margin by country of residence is unreported, and Fidelity and Vanguard open no accounts for residents abroad.',
+      'IBKR reportedly accepts Malaysia residents (IBKR Pro), and Schwab One International\'s online form reportedly accepted Malaysia in Oct 2026; margin by country of residence is unreported, and Fidelity and Vanguard reportedly open no new accounts for residents abroad.',
     climate: 'Tropical monsoon: hot and humid all year with more than 2,400 mm of rain; December–February is dry and September the wettest month.',
     community:
       'A small expat retiree community on an island of about 65,000 people (no headcount found); English is widely used in Malaysia, but services are thinner than in Penang or Kuala Lumpur.',

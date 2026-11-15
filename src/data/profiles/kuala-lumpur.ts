@@ -15,7 +15,7 @@ const profile: ExpatProfile = {
     estate:
       'No inheritance, estate or gift tax, so US assets pass to US-resident children with no Malaysian tax; there is no US estate treaty, but nothing to double-tax, and US estate tax applies only above the $15M exemption (2026).',
     lending:
-      'IBKR reportedly accepts Malaysia residents (IBKR Pro), and Schwab One International\'s online form reportedly accepted Malaysia in Oct 2026; margin by country of residence is unreported, and Fidelity and Vanguard open no accounts for residents abroad.',
+      'IBKR reportedly accepts Malaysia residents (IBKR Pro), and Schwab One International\'s online form reportedly accepted Malaysia in Oct 2026; margin by country of residence is unreported, and Fidelity and Vanguard reportedly open no new accounts for residents abroad.',
     climate: 'Hot and humid all year (about 32°C), with heavy afternoon storms and occasional haze from regional fires.',
     community: 'A large, established expat community (Mont Kiara, Bangsar); English is an everyday business language.',
     access: 'KLIA, Malaysia\'s main hub, is about 50 km south of the centre, linked by the KLIA Ekspres train in about 30 minutes; trains also run north to Penang and south to the Singapore border.',

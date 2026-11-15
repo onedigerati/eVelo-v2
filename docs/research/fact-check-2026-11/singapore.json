@@ -1,0 +1,400 @@
+{
+  "country": "Singapore",
+  "cities": [
+    "singapore"
+  ],
+  "claims": [
+    {
+      "id": "sg-tax-no-wealth",
+      "fact": "tax",
+      "cities": [
+        "singapore"
+      ],
+      "claim": "Singapore has no wealth tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Singapore, other taxes",
+          "url": "https://taxsummaries.pwc.com/singapore/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 02 July 2026. \"There are no net wealth or net worth taxes in Singapore.\" \"Estate duty has been abolished for deaths occurring on or after 15 February 2008.\""
+        },
+        {
+          "name": "PwC: quick chart, net wealth/worth tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/net-wealth-worth-tax-rates",
+          "read": "2026-11-15",
+          "says": "Australia (30 June 2026), Japan (07 August 2026), New Zealand (06 July 2026), Singapore (02 July 2026), Taiwan (20 August 2026) and the Republic of Korea (04 June 2026) are all \"NA\": \"the territory does not have the indicated tax\"."
+        }
+      ]
+    },
+    {
+      "id": "sg-tax-foreign-income",
+      "fact": "tax",
+      "cities": [
+        "singapore"
+      ],
+      "claim": "All foreign-sourced income received by individuals is exempt (unless received through a Singapore partnership) and Singapore dividends are exempt, so US dividends, interest and loan draws are untaxed locally",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Singapore, income determination",
+          "url": "https://taxsummaries.pwc.com/singapore/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 02 July 2026. \"foreign-sourced income received by individuals is exempt from tax\", except when received by a resident individual through a Singapore partnership; \"Dividends received from a Singapore-resident company under the one-tier corporate tax system are exempt from tax\"."
+        }
+      ]
+    },
+    {
+      "id": "sg-tax-gains",
+      "fact": "tax",
+      "cities": [
+        "singapore"
+      ],
+      "claim": "Gains on shares held as personal investments are generally not taxed",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IRAS: gains from sale of property, shares and financial instruments",
+          "url": "https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/what-is-taxable-what-is-not/gains-from-sale-of-property-shares-and-financial-instruments",
+          "read": "2026-11-15",
+          "says": "Last updated 27 February 2026. Gains from shares held as personal investments are \"generally viewed as personal investments\" and listed among non-taxable gains."
+        }
+      ]
+    },
+    {
+      "id": "sg-tax-no-exit",
+      "fact": "tax",
+      "cities": [
+        "singapore"
+      ],
+      "claim": "There is no exit tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Where Next: Singapore expat tax guide 2026",
+          "url": "https://getwherenext.com/blog/singapore-expat-tax-guide-2026",
+          "read": "2026-11-15",
+          "says": "Updated March 29, 2026. \"Singapore has no deemed disposition or exit tax on investments.\" \"Your shares, crypto, and property are not taxed when you leave.\""
+        },
+        {
+          "name": "PwC: Singapore, income determination",
+          "url": "https://taxsummaries.pwc.com/singapore/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 02 July 2026. \"foreign-sourced income received by individuals is exempt from tax\", except when received by a resident individual through a Singapore partnership; \"Dividends received from a Singapore-resident company under the one-tier corporate tax system are exempt from tax\"."
+        }
+      ],
+      "note": "PwC mentions only the deemed exercise of employee share options on leaving; a dated 2026 secondary page states there is no exit tax on investments."
+    },
+    {
+      "id": "sg-estate-abolished",
+      "fact": "estate",
+      "cities": [
+        "singapore"
+      ],
+      "claim": "Estate duty was abolished for deaths from 15 Feb 2008 and there is no gift tax, so US assets pass to US-resident children with no Singapore tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Singapore, other taxes",
+          "url": "https://taxsummaries.pwc.com/singapore/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 02 July 2026. \"There are no net wealth or net worth taxes in Singapore.\" \"Estate duty has been abolished for deaths occurring on or after 15 February 2008.\""
+        },
+        {
+          "name": "PwC: quick chart, inheritance and gift tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates",
+          "read": "2026-11-15",
+          "says": "Inheritance / gift entries: Australia \"NA\"/\"NA\" (30 June 2026); Japan 55/55 (07 August 2026); New Zealand \"NA\"/\"NA\" (06 July 2026); Singapore \"NA\"/\"NA\" (02 July 2026); Taiwan 20/20 (20 August 2026); Republic of Korea 50/50 (04 June 2026). \"NA\" = \"the territory does not have the indicated tax\"."
+        }
+      ],
+      "note": "localTaxes.ts (SG) agrees."
+    },
+    {
+      "id": "sg-estate-us-treaty",
+      "fact": "estate",
+      "cities": [
+        "singapore"
+      ],
+      "claim": "There is no US estate treaty",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-without",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list); none of the 37 countries named in this claim is among them."
+        }
+      ],
+      "note": "Wording: \"there is no US estate treaty and none is needed\"."
+    },
+    {
+      "id": "sg-estate-us-exemption",
+      "fact": "estate",
+      "cities": [
+        "singapore"
+      ],
+      "claim": "The $15M US estate exemption (2026) applies to a US citizen living here as anywhere",
+      "verdict": "confirmed",
+      "shared": "us-estate-exemption-2026",
+      "sources": [
+        {
+          "name": "IRS: What's new, estate and gift tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax",
+          "read": "2026-11-15",
+          "says": "The table \"Basic exclusion amount for year of death\" has the row 2026: $15,000,000 (2025: $13,990,000). The page says the Working Families Tax Cuts, Public Law 119-21, signed July 4, 2025, \"amends § 2010(c)(3) by increasing the basic exclusion amount to $15,000,000 for calendar year 2026\". Page last reviewed or updated 03-Nov-2026."
+        },
+        {
+          "name": "IRS: Some nonresidents with U.S. assets must file estate tax returns",
+          "url": "https://www.irs.gov/individuals/international-taxpayers/some-nonresidents-with-us-assets-must-file-estate-tax-returns",
+          "read": "2026-11-15",
+          "says": "\"U.S. citizens are subject to U.S. estate taxation with respect to their worldwide assets\"; Form 706 is required when worldwide assets plus adjusted taxable gifts exceed the basic exclusion amount in effect on the date of death. By contrast a nonresident who is not a citizen files when US-situated assets exceed $60,000. Page last reviewed or updated 27-Jun-2026."
+        }
+      ],
+      "note": "Wording: \"the $15M US exemption (2026) applies as anywhere\"."
+    },
+    {
+      "id": "sg-lending-ibkr",
+      "fact": "lending",
+      "cities": [
+        "singapore"
+      ],
+      "claim": "Interactive Brokers serves Singapore residents through its MAS-licensed Singapore entity (margin accounts from age 21)",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly serves Singapore residents through its MAS-licensed Singapore entity (margin accounts from age 21)",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Japan, Australia, Taiwan, South Korea, Singapore and New Zealand. It names no IBKR entity for them; it says \"In Australia, India, Japan, Hong Kong, or Singapore, the respective financial authorities regulate local entities.\""
+        },
+        {
+          "name": "Your Tax Base: best brokerage for US expats",
+          "url": "https://yourtaxbase.com/blog/best-brokerage-for-us-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. Quotes Fidelity's FAQ: \"we do not open accounts for any new customers residing outside the United States\"; Vanguard requires US citizenship or permanent residence \"with a U.S. mailing address\". Quotes IBKR: accounts accepted from residents of all countries except sanctioned or \"higher risk\" ones, and \"US Citizens who reside in Australia, Canada, Hong Kong, Japan, Singapore and India can not open an IRA account\"."
+        },
+        {
+          "name": "Wise: opening an IBKR account in Singapore",
+          "url": "https://wise.com/sg/blog/ibkr-account-opening",
+          "read": "2026-11-15",
+          "says": "Last updated 11.05.26. \"Interactive Brokers Singapore Pte. Ltd. is licensed and regulated by the Monetary Authority of Singapore (MAS)\"; \"Singapore residents must be at least 18 years old for a cash account and 21 years old for a margin account.\""
+        }
+      ],
+      "note": "interactivebrokers.com.sg returned HTTP 403, and MAS's Financial Institutions Directory loaded but its search results could not be filtered to the firm. The licence and the age 21 margin rule rest on Wise (May 2026), so the broker claim takes \"reportedly\" (rule 3).",
+      "oldWording": "IBKR serves Singapore residents through",
+      "also": [
+        "hedge added: \"reportedly\" (shared.json named this wording as unhedged)"
+      ]
+    },
+    {
+      "id": "sg-lending-schwab",
+      "fact": "lending",
+      "cities": [
+        "singapore"
+      ],
+      "claim": "Schwab One International's online form accepted Singapore residents in Oct 2026",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab One International's online form reportedly accepted Singapore in Oct 2026",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published and last modified October 23, 2026; country check run that day through Schwab's international application. Accepted (51): ... Australia ... Singapore, South Korea ... Taiwan ...; named as not accepted: Canada, Croatia, Dominican Republic, France, Italy, Japan, Malta, New Zealand, Philippines, South Africa, Turkey, Vietnam. Only margin restriction quoted: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds\"."
+        }
+      ],
+      "note": "Agrees with the dated list. Schwab's own sites were not retried for this country (stage 1 found them blocked). Stays reported (rule 3)."
+    },
+    {
+      "id": "sg-lending-schwab-accredited",
+      "fact": "lending",
+      "cities": [
+        "singapore"
+      ],
+      "claim": "Schwab Singapore serves only accredited investors (net financial assets above S$1M, net personal assets above S$2M or income above S$300k)",
+      "verdict": "cant-confirm",
+      "hedge": "reportedly",
+      "oldWording": "though Schwab Singapore serves only accredited investors",
+      "wording": "though Schwab Singapore reportedly serves only accredited investors",
+      "sources": [
+        {
+          "name": "The Money Bees: TD Ameritrade Singapore in 2026",
+          "url": "https://themoneybees.co/blog/td-ameritrade",
+          "read": "2026-11-15",
+          "says": "Last updated 13 October 2026. \"Charles Schwab's Singapore office services accredited investors\" and \"does not accept applications from ordinary retail investors\"; thresholds: income of at least S$300,000 in the past 12 months, net financial assets above S$1 million, or net personal assets above S$2 million."
+        },
+        {
+          "name": "Endowus: how to become an accredited investor in Singapore",
+          "url": "https://endowus.com/insights/why-accredited-investor-singapore",
+          "read": "2026-11-15",
+          "says": "Updated 17 Nov 2025. MAS criteria: \"Net personal assets exceeding S$2 million\" (primary residence capped at S$1 million), \"Net financial assets exceeding S$1 million\", or \"Annual income of at least S$300,000\" in the preceding 12 months."
+        }
+      ],
+      "also": [
+        "hedge added: \"reportedly\""
+      ],
+      "note": "Schwab Singapore's own page (https://www.schwab.com.sg/become-accredited-investor, in the profile's sources) returned HTTP 403; a search result (not a read) shows it saying Schwab Singapore serves only accredited investors. The thresholds are MAS's, confirmed on Endowus. \"income above S$300k\" is \"at least S$300,000\" on both pages."
+    },
+    {
+      "id": "sg-lending-margin-unknown",
+      "fact": "lending",
+      "cities": [
+        "singapore"
+      ],
+      "claim": "Margin terms for residents of this country are not reported",
+      "verdict": "cant-confirm",
+      "hedge": "unreported",
+      "wording": "margin by country of residence is unreported",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published and last modified October 23, 2026; country check run that day through Schwab's international application. Accepted (51): ... Australia ... Singapore, South Korea ... Taiwan ...; named as not accepted: Canada, Croatia, Dominican Republic, France, Italy, Japan, Malta, New Zealand, Philippines, South Africa, Turkey, Vietnam. Only margin restriction quoted: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds\"."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Japan, Australia, Taiwan, South Korea, Singapore and New Zealand. It names no IBKR entity for them; it says \"In Australia, India, Japan, Hong Kong, or Singapore, the respective financial authorities regulate local entities.\""
+        }
+      ],
+      "note": "A statement of what is not known; nothing read gives margin terms for residents of this country."
+    },
+    {
+      "id": "sg-visa-no-retirement",
+      "fact": "visa",
+      "cities": [
+        "singapore"
+      ],
+      "claim": "Singapore has no retirement visa",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Wise: retiring in Singapore",
+          "url": "https://wise.com/sg/blog/retiring-in-singapore",
+          "read": "2026-11-15",
+          "says": "Published 24 September 2025. \"There is no dedicated Singapore retirement visa, so retirees must qualify through other channels.\""
+        },
+        {
+          "name": "ICA: Long-Term Visit Pass eligibility",
+          "url": "https://www.ica.gov.sg/reside/LTVP/apply",
+          "read": "2026-11-15",
+          "says": "Last updated 30 Oct 2026. Eligible: spouses, children under 21 and parents of Singapore citizens or PRs; graduates seeking work; parents or grandparents of a Student's Pass holder; visitors giving birth sponsored by a citizen or PR. No retiree category."
+        }
+      ]
+    },
+    {
+      "id": "sg-visa-gip",
+      "fact": "visa",
+      "cities": [
+        "singapore"
+      ],
+      "claim": "The Global Investor Programme gives PR for S$10M into a Singapore business that must reach 30 staff, S$25M in a GIP-select fund, or a family office with S$200M of assets and S$50M invested locally, open only to established business owners, founders and family-office principals",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "EDB: changes to the Global Investor Programme",
+          "url": "https://www.edb.gov.sg/en/about-edb/media-releases-publications/changes-to-global-investor-programme-will-generate-more-spin-offs-for-the-singapore-economy.html",
+          "read": "2026-11-15",
+          "says": "Dated 2 March 2023, in force 15 March 2023. Option A: at least S$10 million in a new or existing Singapore business, and for Re-entry Permit renewal \"Hire minimally 30 employees, at least half of whom must be Singapore Citizens\"; Option B: S$25 million in a GIP-select fund; Option C: a single-family office with \"AUM of at least S$200 million\", at least S$50 million deployed in Singapore categories."
+        },
+        {
+          "name": "VCC Singapore: Singapore Global Investor Programme",
+          "url": "https://vccsingapore.com/singapore-global-investor-programme/",
+          "read": "2026-11-15",
+          "says": "Last updated 6 September 2026 (EDB factsheet of May 2025). Options: S$10M into a Singapore business (with \"headcount and spending milestones\"), S$25M into a GIP-select fund, or an SFO with S$200M AUM and S$50M deployed; four applicant profiles: established business owners, next-generation owners of family businesses, founders of fast-growth companies, and family office principals."
+        },
+        {
+          "name": "EDB: Global Investor Programme",
+          "url": "https://www.edb.gov.sg/en/how-we-help/global-investor-programme.html",
+          "read": "2026-11-15",
+          "says": "Last updated 13 Nov 2026. \"You will need to have a substantial business track record and successful entrepreneurial background to qualify.\""
+        }
+      ],
+      "note": "The 30 staff is a condition for renewing the Re-entry Permit after 5 years. Searched for a November 2026 change: none found; EDB's page (updated 13 November 2026) still describes the same programme. The GIP factsheet PDF uses CID fonts and could not be read."
+    },
+    {
+      "id": "sg-visa-ltvp",
+      "fact": "visa",
+      "cities": [
+        "singapore"
+      ],
+      "claim": "Long-Term Visit Passes are for relatives of citizens, PRs or pass holders",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "ICA: Long-Term Visit Pass eligibility",
+          "url": "https://www.ica.gov.sg/reside/LTVP/apply",
+          "read": "2026-11-15",
+          "says": "Last updated 30 Oct 2026. Eligible: spouses, children under 21 and parents of Singapore citizens or PRs; graduates seeking work; parents or grandparents of a Student's Pass holder; visitors giving birth sponsored by a citizen or PR. No retiree category."
+        }
+      ],
+      "note": "ICA's list covers relatives of citizens and PRs and parents of student-pass holders; family of work-pass holders apply through MOM, not read."
+    },
+    {
+      "id": "sg-health-quality",
+      "fact": "healthcare",
+      "cities": [
+        "singapore"
+      ],
+      "claim": "Healthcare is of a high quality and expensive, with English-speaking staff in public and private hospitals",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "GOV.UK: Singapore travel advice, health",
+          "url": "https://www.gov.uk/foreign-travel-advice/singapore/health",
+          "read": "2026-11-15",
+          "says": "Healthcare in Singapore \"is of a high quality and expensive\"; English is \"almost universally spoken\", so hospitals should have staff who can communicate in English."
+        }
+      ]
+    },
+    {
+      "id": "sg-health-medishield",
+      "fact": "healthcare",
+      "cities": [
+        "singapore"
+      ],
+      "claim": "MediShield Life covers only citizens and permanent residents, so a foreigner pays unsubsidised rates and needs private cover",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "MOH: MediShield Life",
+          "url": "https://www.moh.gov.sg/managing-expenses/schemes-and-subsidies/medishield-life",
+          "read": "2026-11-15",
+          "says": "MediShield Life \"protects all Singapore Citizens and Permanent Residents\" against large bills."
+        },
+        {
+          "name": "GOV.UK: Singapore travel advice, health",
+          "url": "https://www.gov.uk/foreign-travel-advice/singapore/health",
+          "read": "2026-11-15",
+          "says": "Healthcare in Singapore \"is of a high quality and expensive\"; English is \"almost universally spoken\", so hospitals should have staff who can communicate in English."
+        }
+      ]
+    },
+    {
+      "id": "sg-health-local-plans",
+      "fact": "healthcare",
+      "cities": [
+        "singapore"
+      ],
+      "claim": "Some local plans take new members up to 80",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "HSBC Life Singapore: InternationalExclusive health plan",
+          "url": "https://hsbc.com.sg/insurance/products/health/international",
+          "read": "2026-11-15",
+          "says": "\"The last entry age is eighty (80) years old\"; \"There is no maximum expiry age for cover.\""
+        }
+      ],
+      "note": "\"premiums at 65–75 not published\" is a statement of what was not found; HSBC's page gives no premium table."
+    }
+  ]
+}

@@ -3,7 +3,7 @@ import type { ExpatProfile } from '../expatPicks'
 const profile: ExpatProfile = {
   tagline: 'Great harbour city with no inheritance tax, but no visa to retire on',
   summary:
-    'Sydney has one of the world\'s great harbours, a mild, sunny climate, world-class hospitals and no language barrier, and Australia has no wealth, inheritance or estate tax, an estate and gift tax treaty with the US and Schwab International access. For buy-borrow-die it is a base for long visits rather than a retirement home: Australia\'s retiree visas are closed to new applicants, so without a child settled there a portfolio retiree is left with a visitor visa of up to 12 months at a time, in one of the most expensive cities anywhere. A visitor\'s US dividends and gains go untaxed, but a permanent resident pays up to 47% on worldwide income, and at death on the gains in shares left to children abroad.',
+    'Sydney has one of the world\'s great harbours, a mild, sunny climate, world-class hospitals and no language barrier, and Australia has no wealth, inheritance or estate tax, an estate and gift tax treaty with the US and reported Schwab International access. For buy-borrow-die it is a base for long visits rather than a retirement home: Australia\'s retiree visas are closed to new applicants, so without a child settled there a portfolio retiree is left with a visitor visa of up to 12 months at a time, in one of the most expensive cities anywhere. A visitor\'s US dividends and gains go untaxed, but a permanent resident pays up to 47% on worldwide income, and at death on the gains in shares left to children abroad.',
   scores: { cost: 1, healthcare: 4, safety: 4, visa: 1, climate: 5, community: 4, tax: 4, estate: 3, lending: 4 },
   facts: {
     healthcare:
@@ -11,11 +11,11 @@ const profile: ExpatProfile = {
     safety:
       'Australia is 20th of 163 in the 2026 Global Peace Index; violent crime is low by US big-city standards, and the natural hazards are summer heatwaves and bushfire smoke.',
     visa: 'No retirement or passive-income visa: the Investor Retirement (405) and Retirement (410) visas are closed to new applicants (existing holders can renew), and the business and investor programme closed in July 2024; parent visas need a child settled in Australia (the temporary Sponsored Parent 870 gives 3 or 5 years at a time, up to 10, with no Medicare; the permanent queues run many years), so most retirees are left with a visitor visa of up to 12 months, generally no more than 12 months in any 18 (secondary source).',
-    tax: 'No wealth tax; a temporary resident (on a temporary visa, without an Australian-resident spouse) is taxed only on Australian income and on gains from Australian real property, so US dividends, interest and share gains go untaxed for as long as the temporary visa lasts; a permanent resident pays tax on worldwide income at up to 45% plus the 2% Medicare levy, with half of a gain on assets held over a year taxed until June 2027, when (as proposed in the 2026 budget) indexation and a 30% minimum tax replace the discount; non-residents get no discount on gains after May 2012.',
+    tax: 'No wealth tax; a temporary resident (on a temporary visa, without an Australian-resident spouse) is taxed only on Australian income and on gains from Australian real property, so US dividends, interest and share gains go untaxed for as long as the temporary visa lasts; a permanent resident pays tax on worldwide income at up to 45% plus the 2% Medicare levy, with half of a gain on assets held over a year taxed until June 2027, when (under a law passed in June 2026) indexation and a 30% minimum tax replace the discount; non-residents get no discount on gains after May 2012.',
     estate:
       'No inheritance, estate or gift tax; but when an Australian resident dies leaving shares or other non-Australian-property assets to a non-resident heir (such as children living in the US), CGT event K3 taxes the unrealised gain in the final return as if sold, which undoes the local benefit of holding until death; a temporary resident\'s foreign assets are outside Australian CGT, so this reaches mainly permanent residents (check); the US–Australia estate and gift tax treaty applies, and the $15M US exemption (2026) applies as anywhere.',
     lending:
-      'IBKR reportedly serves Australia residents through Interactive Brokers Australia, and Schwab International\'s online application reportedly accepts Australia residents (Oct 2026); margin terms by country of residence are unconfirmed, and Fidelity and Vanguard open no accounts for residents abroad.',
+      'IBKR reportedly serves Australia residents through Interactive Brokers Australia, and Schwab International\'s online application reportedly accepts Australia residents (Oct 2026); margin terms by country of residence are unconfirmed, and Fidelity and Vanguard reportedly open no new accounts for residents abroad.',
     climate:
       'Humid subtropical: warm, sometimes humid summers (January highs about 26 °C / 79 °F) and mild, sunny winters (July highs about 17 °C / 63 °F); about 1,150 mm of rain a year.',
     community:
@@ -37,7 +37,6 @@ const profile: ExpatProfile = {
       url: 'https://taxsummaries.pwc.com/australia/individual/taxes-on-personal-income',
       edition: '2026',
     },
-    { name: 'BDO: Budget 2026, changes to the capital gains tax discount', url: 'https://www.bdo.com.au/en-au/insights/budget/2026/changes-to-the-capital-gains-tax-discount', edition: '2026' },
     { name: 'Atlas Wealth: deceased estates with overseas connections (CGT event K3)', url: 'https://atlaswealth.com/news/deceased-estates-with-overseas-connections/', edition: '2026' },
     { name: 'Widen: retire to Australia, visa options (Oct 2026)', url: 'https://www.widen.com.au/retire-to-australia-visa-options/', edition: '2026' },
     { name: 'nib: reciprocal health care agreements for visitors to Australia', url: 'https://www.nib.com.au/the-checkup/reciprocal-health-care-agreements-for-visitors-to-australia' },
@@ -52,6 +51,10 @@ const profile: ExpatProfile = {
     { name: 'ABS: people in Greater Sydney born in the United States (2021 census)', url: 'https://www.abs.gov.au/census/find-census-data/quickstats/2021/8104_1GSYD' },
     { name: 'Wikipedia: Sydney', url: 'https://en.wikipedia.org/wiki/Sydney' },
     { name: 'Wikipedia: Sydney Airport', url: 'https://en.wikipedia.org/wiki/Sydney_Airport' },
+    { name: 'KPMG: Australia, legislation amending capital gains tax passes Parliament (26 June 2026)', url: 'https://kpmg.com/us/en/taxnewsflash/news/2026/06/tnf-australia-legislation-amending-capital-gains-tax-and-introduce-new-tax-reform-measures-passes-parliament-with-amendments.html', edition: '2026' },
+    { name: 'NSW Government: Investor Retirement visa (subclass 405), closed to new applicants', url: 'https://www.nsw.gov.au/visas-and-migration/business-and-investor-visas/subclass-405' },
+    { name: 'Bristax: CGT event K3', url: 'https://bristax.com.au/cgt-articles/cgt-event-k3/' },
+    { name: 'Your Tax Base: best brokerage for US expats (Oct 2026)', url: 'https://yourtaxbase.com/blog/best-brokerage-for-us-expats', edition: '2026' },
   ],
 }
 

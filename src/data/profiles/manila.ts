@@ -16,7 +16,7 @@ const profile: ExpatProfile = {
     estate:
       'A flat 6% estate tax on the net estate (after a PHP 5m standard deduction and up to PHP 10m for the family home) reaches the worldwide estate of resident aliens, which an SRRV holder living here would likely be, so US brokerage accounts left to US-resident children are taxed (a non-resident alien is taxed only on Philippine assets); there is no US estate treaty to relieve it, and the $15M US exemption (2026) applies as anywhere.',
     lending:
-      'IBKR reportedly accepts residents of almost every country outside sanctions lists, while Schwab One International reportedly does not accept Philippine residents (Oct 2026); margin terms by country of residence are unreported, and Fidelity and Vanguard open no accounts for residents abroad.',
+      'IBKR reportedly accepts residents of almost every country outside sanctions lists, while Schwab One International reportedly does not accept Philippine residents (Oct 2026); margin terms by country of residence are unreported, and Fidelity and Vanguard reportedly open no new accounts for residents abroad.',
     climate:
       'Tropical monsoon: hot and very humid all year (April highs about 34 °C / 93 °F), a dry season from late December to early April, heavy rain peaking July–September (about 2,240 mm a year), typhoons mostly June–September, and Manila is among the world\'s most disaster-exposed capitals, with deadly floods such as Ondoy in 2009.',
     community:

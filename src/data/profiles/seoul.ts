@@ -3,19 +3,19 @@ import type { ExpatProfile } from '../expatPicks'
 const profile: ExpatProfile = {
   tagline: 'Top hospitals and great transit, with a 50% worldwide inheritance tax',
   summary:
-    'Seoul has some of Asia\'s best hospitals, open to foreign residents through the National Health Insurance, low street crime, superb transit and nonstops to about 15 US cities. For buy-borrow-die it is a poor home: Korea taxes residents on worldwide income after 5 years (dividends above KRW 20m at up to about 49.5%), its inheritance tax reaches the worldwide estate of anyone resident at death at up to 50%, and since the retiree investor route closed in 2023 the only passive residence route is a KRW 1.5bn (about $1.1M) interest-free deposit locked for 5 years.',
+    'Seoul has some of Asia\'s best hospitals, open to foreign residents through the National Health Insurance, low street crime, superb transit and nonstops to about 15 US cities. For buy-borrow-die it is a poor home: Korea taxes residents on worldwide income after 5 years (dividends at up to about 49.5%), its inheritance tax reaches the worldwide estate of anyone resident at death at up to 50%, and since the retiree investor route closed in 2023 the only passive residence route is a KRW 1.5bn (about $1.1M) interest-free deposit locked for 5 years.',
   scores: { cost: 2, healthcare: 5, safety: 4, visa: 2, climate: 2, community: 2, tax: 2, estate: 1, lending: 4 },
   facts: {
     healthcare:
       'World-class teaching hospitals, including Severance (JCI-accredited since 2007), Samsung Medical Center, Asan and Seoul National University Hospital; foreigners staying over 6 months must join the National Health Insurance, whose premium for those without an employer is set on income and property.',
     safety:
       'South Korea is 57th of 163 in the 2026 Global Peace Index, pulled down by tension with North Korea rather than crime; the US rates it Level 1, street crime in Seoul is low, and the hazards are summer monsoon floods and winter fine dust.',
-    visa: 'No retirement visa: the retiree investor route (KRW 300m at 55+) was abolished in 2023, and the passive route left is public-business investment immigration, a KRW 1.5bn (about $1.1M) deposit held interest-free in a government-run fund for 5 years, which gives F-2 residence and then F-5 permanent residence (KRW 3bn gives permanent residence at once); a separate property-investment route applies only to designated developments such as those in Jeju and Incheon.',
-    tax: 'No wealth tax; a foreign resident living in Korea 5 years or less of the last 10 is taxed on foreign-source income only when it is paid by a Korean entity or transferred to Korea; after that, worldwide: interest and dividends above KRW 20m a year join the progressive scale up to 45% plus 10% local tax (about 49.5%), and gains on foreign shares pay 22% above a KRW 2.5m yearly allowance; from 2027 an exit tax reaches foreign shares worth more than KRW 500m in total for anyone resident 5 of the last 10 years who emigrates.',
+    visa: 'No retirement visa: the retiree investor route (KRW 300m at 55+) was abolished in 2023, and the passive route left is public-business investment immigration, a KRW 1.5bn (about $1.1M) deposit held interest-free in a government-run fund for 5 years, which gives F-2 residence and then F-5 permanent residence (KRW 3bn gives permanent residence at once); a separate property-investment route applies only to designated developments such as Incheon\'s free economic zone (to the end of 2027).',
+    tax: 'No wealth tax; a foreign resident living in Korea 5 years or less of the last 10 is taxed on foreign-source income only when it is paid by a Korean entity or transferred to Korea; after that, worldwide: interest and dividends above KRW 20m a year join the progressive scale up to 45% plus 10% local tax (about 49.5%), and foreign dividends and interest not withheld in Korea can be taxed this way below KRW 20m too, and gains on foreign shares pay 22% above a KRW 2.5m yearly allowance; from 2027 an exit tax reaches foreign shares worth more than KRW 500m in total for anyone resident 5 of the last 10 years who emigrates.',
     estate:
       'Inheritance tax of 10–50% (50% above KRW 3bn, about $2.2M) reaches the worldwide estate of anyone resident in Korea at death (domicile or 183+ days), foreigners included, while non-residents are taxed only on Korean assets; the basic deduction is up to KRW 500m; a 2025 government plan to tax each heir on their own share from 2028, top rate unchanged, was still a proposal at last report; there is no US–Korea estate treaty, and the $15M US exemption (2026) applies as anywhere.',
     lending:
-      'IBKR reportedly accepts Korea residents, and Schwab One International\'s online form reportedly accepted South Korea in Oct 2026; margin by country of residence is unreported, and Fidelity and Vanguard open no accounts for residents abroad.',
+      'IBKR reportedly accepts Korea residents, and Schwab One International\'s online form reportedly accepted South Korea in Oct 2026; margin by country of residence is unreported, and Fidelity and Vanguard reportedly open no new accounts for residents abroad.',
     climate:
       'Humid continental: cold, dry winters (January highs about 2 °C / 36 °F, lows about −6 °C), a June–July monsoon and hot, humid summers (August highs about 30 °C / 86 °F), about 1,420 mm of rain a year, and spring fine dust and yellow dust.',
     community:
@@ -63,6 +63,13 @@ const profile: ExpatProfile = {
     { name: 'Wikipedia: Incheon International Airport', url: 'https://en.wikipedia.org/wiki/Incheon_International_Airport' },
     { name: 'HODU Atlas: opening a US brokerage account from Korea', url: 'https://hodu-atlas.pages.dev/blog/open-us-brokerage-account-korea/', edition: '2026' },
     { name: 'YourTaxBase: Charles Schwab for expats (country list, Oct 2026)', url: 'https://yourtaxbase.com/blog/charles-schwab-for-expats' },
+    { name: 'Toss Bank: comprehensive taxation of financial income (NTS sources, Apr 2026)', url: 'https://www.tossbank.com/articles/comprehensive-taxation-of-financial-income', edition: '2026' },
+    { name: 'Bizwatch: overseas stock capital gains tax, 22% above KRW 2.5m', url: 'https://news.bizwatch.co.kr/article/market/2026/04/13/0022', edition: '2026' },
+    { name: 'Ministry of Justice: investment immigration amounts raised, retiree route abolished (press release)', url: 'https://www.moj.go.kr/bbs/moj/182/572502/artclView.do', edition: '2023' },
+    { name: 'Incheon Free Economic Zone: investment immigration programmes', url: 'https://www.ifez.go.kr/world/content/view.do?sn=561' },
+    { name: 'Newsis: per-heir inheritance tax fails to pass in 2025', url: 'https://www.newsis.com/view/NISX20251201_0003424072', edition: '2025' },
+    { name: 'NHIS: guidance for foreigners', url: 'https://www.nhis.or.kr/english/wbheaa02900m01.do' },
+    { name: 'Your Tax Base: best brokerage for US expats (Oct 2026)', url: 'https://yourtaxbase.com/blog/best-brokerage-for-us-expats', edition: '2026' },
   ],
 }
 

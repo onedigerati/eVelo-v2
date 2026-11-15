@@ -8,15 +8,15 @@ const profile: ExpatProfile = {
   scores: { cost: 5, healthcare: 3, safety: 3, visa: 4, climate: 2, community: 3, tax: 4, estate: 5, lending: 4 },
   facts: {
     healthcare:
-      'Private hospitals in town (Bangkok Hospital Chiang Rai, Overbrook, Kasemrad Sriburin, Chiang Rai Inter), and Overbrook reportedly claims JCI accreditation (secondary); specialist care is often in Chiang Mai, about 3.5 hours away; foreigners are outside the public schemes, and most Thai insurers take new applicants only under 60–65 (Pacific Cross to 75).',
+      'Private hospitals in town (Bangkok Hospital Chiang Rai, Overbrook, Kasemrad Sriburin), and Overbrook reportedly claims JCI accreditation (secondary); the most specialised care may mean Chiang Mai, about 2–3 hours away (secondary source); foreigners are outside the public schemes, and most Thai insurers take new applicants only under 60–65 (Pacific Cross to 75).',
     safety:
       'Thailand scores 2.089 in the 2026 Global Peace Index, 8th in Southeast Asia, and is reportedly at US Level 1 (an old 2023 stamp; secondary); UK warnings cover only the deep south and the Cambodian border, not Chiang Rai; road safety is poor.',
-    visa: 'Retirement (Non-O or O-A, age 50+): THB 800,000 in a Thai bank or THB 65,000/month of income, renewed yearly with 90-day reporting; O-A needs USD 100k health cover (or a USD 100k deposit), the in-country Non-O extension none; the 10-year LTR Wealthy Pensioner (50+) needs USD 80,000/year of passive income that you must actually show (or USD 40,000 plus USD 250,000 invested in Thailand).',
+    visa: 'Retirement (Non-O or O-A, age 50+): THB 800,000 in a Thai bank or THB 65,000/month of income, renewed yearly with 90-day reporting; O-A needs USD 100k health cover (or, if insurers refuse you, a USD 100k deposit), the in-country Non-O extension none; the 10-year LTR Wealthy Pensioner (50+) needs USD 80,000/year of passive income that you must actually show (or USD 40,000 plus USD 250,000 invested in Thailand).',
     tax: 'No wealth tax; since 2024, residents present 180+ days a year pay up to 35% on foreign income arising from 2024 when it is brought into Thailand, so dividends left in the US account are untaxed; LTR holders are exempt on remitted foreign income (Royal Decree 743), relief for others is unenacted (Oct 2026), and whether remitted margin-loan proceeds count is unverified (they are probably not assessable income).',
     estate:
       'Inheritance tax (5% for descendants above THB 100m per heir) is paid by the heir and reaches non-Thai heirs living abroad only on property in Thailand, so US assets left to US-resident children are outside it; there is no US estate treaty.',
     lending:
-      'IBKR reportedly accepts Thailand residents (IBKR Pro), and Schwab One International\'s online form reportedly accepted Thailand in Oct 2026; margin by country of residence is unreported, and Fidelity and Vanguard open no accounts for residents abroad.',
+      'IBKR reportedly accepts Thailand residents (IBKR Pro), and Schwab One International\'s online form reportedly accepted Thailand in Oct 2026; margin by country of residence is unreported, and Fidelity and Vanguard reportedly open no new accounts for residents abroad.',
     climate:
       'Tropical wet-and-dry: a pleasant cool season (roughly November–February), then a hot, smoky burning season with April highs near 34.5°C and an air-quality index of 269 on 2 Apr 2026, worse than Chiang Mai; Typhoon Yagi\'s floods in September 2024 killed at least 36 people in the province and closed the airport.',
     community:
@@ -48,6 +48,7 @@ const profile: ExpatProfile = {
     { name: 'Royal Thai Embassy Oslo: Non-Immigrant O-A (long stay)', url: 'https://oslo.thaiembassy.org/en/page/non-immigrant-o-a-long-stay' },
     { name: 'Pattaya Mail: health insurance entry ages and premiums for retirees', url: 'https://www.pattayamail.com/latestnews/news/547221-547221' },
     { name: 'Nation Thailand: Chiang Rai air quality worst in Thailand (2 Apr 2026)', url: 'https://www.nationthailand.com/news/general/40064573', edition: '2026' },
+    { name: 'Chiang Rai Times: best hospitals in Chiang Rai (Feb 2026)', url: 'https://www.chiangraitimes.com/health/best-hospitals-in-chiang-rai/', edition: '2026' },
     { name: 'Wikipedia: Chiang Rai', url: 'https://en.wikipedia.org/wiki/Chiang_Rai' },
     { name: 'Wikipedia: Mae Fah Luang–Chiang Rai International Airport', url: 'https://en.wikipedia.org/wiki/Mae_Fah_Luang_%E2%80%93_Chiang_Rai_International_Airport' },
     { name: 'Wikipedia: Typhoon Yagi', url: 'https://en.wikipedia.org/wiki/Typhoon_Yagi' },

@@ -15,7 +15,7 @@ const profile: ExpatProfile = {
     estate:
       'No inheritance, estate or gift tax, so US assets pass to US-resident children with no Malaysian tax; there is no US estate treaty, but nothing to double-tax, and US estate tax applies only above the $15M exemption (2026).',
     lending:
-      'IBKR reportedly accepts Malaysia residents (IBKR Pro), and Schwab One International\'s online form reportedly accepted Malaysia in Oct 2026; margin by country of residence is unreported, and Fidelity and Vanguard open no accounts for residents abroad.',
+      'IBKR reportedly accepts Malaysia residents (IBKR Pro), and Schwab One International\'s online form reportedly accepted Malaysia in Oct 2026; margin by country of residence is unreported, and Fidelity and Vanguard reportedly open no new accounts for residents abroad.',
     climate: 'Tropical: hot and humid all year, with monsoon rains and occasional haze; sea breezes help a little.',
     community: 'A long-established Western retiree community in George Town, Tanjung Bungah and Batu Ferringhi; English is widely spoken.',
     access: 'Penang International (PEN) is on the island, about 30–45 minutes from George Town; a bridge and ferries link to the mainland, and Kuala Lumpur and Singapore are the usual connecting hubs.',

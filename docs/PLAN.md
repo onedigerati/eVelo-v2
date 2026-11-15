@@ -7,14 +7,14 @@ Every city profile makes claims a retiree could act on: the tax on holding a por
 2026-11-15 · tests: 982 pass · typecheck: clean
 
 ## Now
-Stage 6 of 8 · Asia-Pacific
-Scope: Thailand (5), Malaysia (3), Vietnam (3), Philippines (2), Japan (2), Australia (2), Indonesia, Taiwan, South Korea, Singapore, New Zealand — 22 cities, one ledger file per country, by the method in `docs/research/fact-check-2026-11/README.md`, in two builder batches run one after the other.
+Stage 7 of 8 · United States
+Scope: 33 US cities in one ledger file (`united-states.json`): state income tax on dividends, interest and gains, state estate and inheritance tax, lending (US broker access), the visa line, and each city's healthcare, by the method in `docs/research/fact-check-2026-11/README.md`; Colorado's Amendment 87 and Florida's Amendment 3 settled if certified. Three builder batches run one after the other (West; Central and South; East and Florida).
 Risk: UI only (profile copy and scores; the research reads public web pages)
 Checks:
-- [ ] The ledger holds every claim in the five facts of the 22 profiles, each with a verdict, a source URL and the date it was read; none is left pending, and `CHECKED_COUNTRIES` names all eleven countries (proof: test)
+- [ ] The ledger holds every claim in the five facts of the 33 profiles, each with a verdict, a source URL and the date it was read; none is left pending, and `CHECKED_COUNTRIES` names the United States (proof: test)
 - [ ] For every corrected claim, the old wording is gone from those profiles and the new wording is in them (proof: test)
-- [ ] A fresh re-read of 11 ledger sources, one per country and spread across the five facts, finds each page says what the ledger says it says (proof: run, a test can't read the web)
-- [ ] Three open profiles in the running build, from three of these countries, show the corrected facts, with scores, summary and drawbacks that agree with them (proof: run the product, a test can't judge the rendered page)
+- [ ] A fresh re-read of 12 ledger sources, from 12 different states and spread across tax, estate and healthcare, finds each page says what the ledger says it says (proof: run, a test can't read the web)
+- [ ] Three open profiles in the running build, from three states, show the corrected facts, with scores, summary and drawbacks that agree with them (proof: run the product, a test can't judge the rendered page)
 Open: none
 Mode: autopilot — unattended
 Agents: lean
@@ -25,7 +25,7 @@ Agents: lean
 - [x] 3. Eastern Europe, Mediterranean, Middle East, Africa — Greece (2), Cyprus (2), Turkey (2), Georgia (2), Croatia, Montenegro, Albania, Bulgaria, Hungary, Czech Republic, UAE, South Africa, Mauritius: 17 cities — [evidence](evidence/stage-3/report.md)
 - [x ] 4. Mexico, Central America, Caribbean — Mexico (9), Belize (5), Panama (4), Costa Rica (2), Guatemala (2), Honduras, Dominican Republic: 24 cities — [evidence](evidence/stage-4/report.md)
 - [x ] 5. South America and Canada — Colombia (3), Canada (3), Ecuador, Peru, Chile, Argentina, Uruguay, Paraguay: 12 cities — [evidence](evidence/stage-5/report.md)
-- [ ] 6. Asia-Pacific — Thailand (5), Malaysia (3), Vietnam (3), Philippines (2), Japan (2), Australia (2), Indonesia, Taiwan, South Korea, Singapore, New Zealand: 22 cities
+- [x ] 6. Asia-Pacific — Thailand (5), Malaysia (3), Vietnam (3), Philippines (2), Japan (2), Australia (2), Indonesia, Taiwan, South Korea, Singapore, New Zealand: 22 cities — [evidence](evidence/stage-6/report.md)
 - [ ] 7. United States — 33 cities: state income tax on dividends and gains, state estate and inheritance tax, and each city's healthcare
 - [ ] 8. Model and report — `localTaxes.ts` brought in line with the corrected tax and estate facts (risky: money), the research doc and the as-of date updated, scores checked on one scale across all 133, and the city-by-city report of what changed
 
@@ -51,6 +51,8 @@ Agents: lean
 - 2026-11-15 · Peru, Chile and Paraguay's Lending goes 3 → 4 on the same Schwab list as Guatemala (re-read 2026-11-15); Montréal keeps Residency 2 against Toronto's and Vancouver's 1 (Quebec's Investor Program is open, but needs CAD 2M, French and management experience) — builder's calls by the rubric, PM agreed.
 
 ## Open questions
+- For stage 8 (model), from stage 6: `localTaxes.ts` has no entry for Australia (gains tax at death on shares to heirs abroad), New Zealand (FIF, up to 1.95% of value a year after 4 years) or Korea (10–50% worldwide inheritance, 2027 exit tax); Japan's entry brings overseas assets in only after 10 years, though a permanent resident or spouse is taxed worldwide from arrival, and its exit tax isn't modelled; the Philippines' estate model leaves out the family-home deduction (to PHP 10m) and its note still says "Wealth tax not verified" — each in the country file's `modelMismatch`.
+- From stage 6: Chiang Rai's healthcare fact now puts Chiang Mai "about 2–3 hours away (secondary source)", while its Getting there fact (out of scope) says 3–4 hours by road — reconcile at the next local-note pass. A New Zealand bill (Sep 2026) would raise the FIF threshold to NZD 100,000; Vietnam's proposed golden visa has no legal basis yet — recheck later.
 - For stage 8 (model), from stage 5: `localTaxes.ts` has no Canada entry (tax on accrued gains at death up to 26.8%, 26.7% in Quebec; probate Ontario 1.5% above CAD 50k, BC about 1.4%), and Argentina's entry uses the steady-state 0.25% Bienes Personales rate while 2026 is 0.5–0.75%, with debts not deductible (`canada.json`, `argentina.json` `modelMismatch`).
 - From stage 5, for the user at the final report: Asunción's `why` calls the residency means test "unverified"; it is now verified (since 6 July 2026 permanent residence needs active income, a pension or the $200k Investor Pass) — `paraguay.json` rankFlag.
 - From stage 4, for the user at the final report: Roatán's `why` (pick 59) reads as if the hospital gap were current, but a replacement public hospital has reportedly run since September 2025 (`honduras.json` rankFlag); Las Terrenas's `why` says flat "Schwab International is unavailable", which the profile now hedges with "reportedly". Neither `why` was changed (the plan keeps `why` lines).

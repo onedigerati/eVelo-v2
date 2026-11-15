@@ -1,0 +1,589 @@
+{
+  "country": "Japan",
+  "cities": [
+    "tokyo",
+    "osaka"
+  ],
+  "claims": [
+    {
+      "id": "jp-tax-no-wealth",
+      "fact": "tax",
+      "cities": [
+        "tokyo",
+        "osaka"
+      ],
+      "claim": "Japan has no wealth tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Japan, other taxes",
+          "url": "https://taxsummaries.pwc.com/japan/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 07 August 2026. \"There are currently no net wealth/worth taxes in Japan.\" Inheritance tax is levied on recipients; \"The basic exemption is JPY 30 million plus JPY 6 million per statutory heir\"; rates 10% to 55%, 55% on a taxable amount over JPY 600,000,000. Transfers of overseas assets from foreign nationals with a 'Jusho' in Japan for less than ten of the last 15 years who hold a Table 1 visa are exempt; Table 1 \"does not include ... permanent resident, spouse or child of a Japanese national\". The page does not cover an exit tax."
+        },
+        {
+          "name": "PwC: quick chart, net wealth/worth tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/net-wealth-worth-tax-rates",
+          "read": "2026-11-15",
+          "says": "Australia (30 June 2026), Japan (07 August 2026), New Zealand (06 July 2026), Singapore (02 July 2026), Taiwan (20 August 2026) and the Republic of Korea (04 June 2026) are all \"NA\": \"the territory does not have the indicated tax\"."
+        }
+      ]
+    },
+    {
+      "id": "jp-tax-npr-remittance",
+      "fact": "tax",
+      "cities": [
+        "tokyo",
+        "osaka"
+      ],
+      "claim": "A foreign resident is a non-permanent resident for the first 5 of 10 years, taxed on foreign dividends and interest only when paid in or remitted to Japan",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Japan, residence",
+          "url": "https://taxsummaries.pwc.com/japan/individual/residence",
+          "read": "2026-11-15",
+          "says": "Last reviewed 07 August 2026. \"A resident taxpayer who is not a Japanese national and whose aggregate stay in Japan is five years or less within the preceding ten years is classified as a non-permanent resident taxpayer.\""
+        },
+        {
+          "name": "PwC: Japan, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/japan/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 07 August 2026. \"Non-permanent resident taxpayers are taxed on Japan-sourced income and foreign-source income only to the extent that it is paid in Japan or remitted to Japan.\" National income tax tops out at 45% over JPY 40 million; a 2.1% surtax on national tax applies; local inhabitant's tax \"at a flat rate of 10%\"."
+        }
+      ],
+      "note": "\"how borrowed money sent in is treated needs advice\" is a hedge, not a claim; nothing read addresses it."
+    },
+    {
+      "id": "jp-tax-npr-securities-gains",
+      "fact": "tax",
+      "cities": [
+        "tokyo",
+        "osaka"
+      ],
+      "claim": "A non-permanent resident is taxed on gains from securities bought while living in Japan (since April 2017) whether or not remitted; holdings bought before arrival stay on the remittance basis",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "National Tax Agency: Income Tax Basic Circular, chapter 2 (scope of taxable income), 7-1",
+          "url": "https://www.nta.go.jp/law/tsutatsu/kihon/shotoku/02/01.htm",
+          "read": "2026-11-15",
+          "says": "Undated (page text partly garbled in Shift_JIS). Circular 7-1 defines 特定有価証券 as securities acquired more than 10 years before, acquired during the 10 years while the person was not a non-permanent resident, or acquired on or before 31 March 2017."
+        },
+        {
+          "name": "Deloitte (Legal 500): change in taxation of non-permanent residents",
+          "url": "https://www.legal500.com/intelligence/japan/tax/change-in-taxation-of-non-permanent-residents",
+          "read": "2026-11-15",
+          "says": "Dated 20 January 2017. \"Effective from 1 April 2017\" an NPR's gains on shares or securities can be excluded \"with the exception of those relating to shares or securities acquired by a non-permanent resident after 1 April 2017\"; taxation is limited to \"acquisitions subsequent to the later of 1 April 2017 or their arrival in Japan.\""
+        }
+      ],
+      "note": "The NTA circular defines the protected securities (bought over 10 years ago, bought while not a non-permanent resident, or bought by 31 March 2017); Legal 500 (Deloitte, 2017) explains the April 2017 change. The 2017 page is older than the source order prefers; the circular is the primary text, though WebFetch returned it partly garbled."
+    },
+    {
+      "id": "jp-tax-listed-rate",
+      "fact": "tax",
+      "cities": [
+        "tokyo",
+        "osaka"
+      ],
+      "claim": "After 5 years, worldwide income: 20.315% on listed-share dividends and capital gains, US-listed included",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Japan, income determination",
+          "url": "https://taxsummaries.pwc.com/japan/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 07 August 2026. Listed-company dividends \"can optionally be taxed separately ... at a flat rate of 20.315%\"; gains on certain securities including shares are \"taxed separately ... at a flat rate of 20.315%\"; \"Listed shares\" means \"shares listed on Japanese or foreign stock exchanges\"; \"Interest paid by offshore financial institutions is taxed at graduated rates.\""
+        },
+        {
+          "name": "National Tax Agency: Tax Answer No.1463, listed shares (上場株式等)",
+          "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1463.htm",
+          "read": "2026-11-15",
+          "says": "As of 1 April 2026 (令和8年4月1日現在法令等). 上場株式等 include \"外国金融商品市場において売買されている株式等\" (shares traded on a foreign market); gains are taxed at 15% national plus 5% local, with the 2.1% reconstruction surtax on the national tax."
+        },
+        {
+          "name": "National Tax Agency: Tax Answer No.1330, dividends",
+          "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1330.htm",
+          "read": "2026-11-15",
+          "says": "As of 1 April 2026. Listed-share dividends are withheld at 15.315% (plus 5% local) and may be taxed by comprehensive taxation, separate self-assessment (申告分離課税) or left out of the return."
+        }
+      ]
+    },
+    {
+      "id": "jp-tax-offshore-interest",
+      "fact": "tax",
+      "cities": [
+        "tokyo",
+        "osaka"
+      ],
+      "claim": "Offshore bank interest is taxed at progressive rates up to about 56%",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Japan, income determination",
+          "url": "https://taxsummaries.pwc.com/japan/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 07 August 2026. Listed-company dividends \"can optionally be taxed separately ... at a flat rate of 20.315%\"; gains on certain securities including shares are \"taxed separately ... at a flat rate of 20.315%\"; \"Listed shares\" means \"shares listed on Japanese or foreign stock exchanges\"; \"Interest paid by offshore financial institutions is taxed at graduated rates.\""
+        },
+        {
+          "name": "PwC: Japan, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/japan/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 07 August 2026. \"Non-permanent resident taxpayers are taxed on Japan-sourced income and foreign-source income only to the extent that it is paid in Japan or remitted to Japan.\" National income tax tops out at 45% over JPY 40 million; a 2.1% surtax on national tax applies; local inhabitant's tax \"at a flat rate of 10%\"."
+        }
+      ],
+      "note": "PwC gives 45% national, a 2.1% surtax on the national tax and 10% local: 45% x 1.021 + 10% = 55.945%, \"about 56%\"."
+    },
+    {
+      "id": "jp-tax-exit-tax",
+      "fact": "tax",
+      "cities": [
+        "tokyo",
+        "osaka"
+      ],
+      "claim": "Leaving after more than 5 of 10 years of residence outside Table I statuses with JPY 100m or more in securities triggers an exit tax on unrealised gains",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "National Tax Agency: Tax Answer No.1478, exit tax",
+          "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1478.htm",
+          "read": "2026-11-15",
+          "says": "As of 1 April 2026. Subject to the exit tax: residents whose covered assets total \"1億円以上\" at departure and who, \"原則として\", had a domicile or residence in Japan for more than 5 of the 10 years before departure. The page does not mention residence statuses."
+        },
+        {
+          "name": "Toma Consultants: basics of Japan's exit tax",
+          "url": "https://toma.co.jp/en/blog/jtg/basics-exittax-japan/",
+          "read": "2026-11-15",
+          "says": "Dated 2025/05/15. Conditions: \"Own over 100 million yen in subjected assets, both in Japan and overseas\" and a domicile or residence in Japan \"for over 5 of the last 10 years\", \"Excluding period of stay under a status listed in Table I of the Immigration Control and Refugee Recognition Act.\""
+        }
+      ],
+      "note": "The NTA page gives the JPY 100m and 5-of-10-years tests \"as a rule\"; the Table I exclusion is from Toma (2025). No change was found in the FY2027 tax reform requests (searched November 2026). localTaxes.ts does not model the exit tax.",
+      "modelMismatch": "localTaxes.ts (JP) models only inheritance tax; the exit tax on unrealised gains (securities of JPY 100m+, after 5 of 10 years outside Table I statuses) is not modelled. A Long Stay visitor never reaches it."
+    },
+    {
+      "id": "jp-estate-rates",
+      "fact": "estate",
+      "cities": [
+        "tokyo",
+        "osaka"
+      ],
+      "claim": "Inheritance tax of 10–55% is paid by the heirs, 55% above JPY 600m per heir's share, after a basic exemption of JPY 30m + 6m per heir",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Japan, other taxes",
+          "url": "https://taxsummaries.pwc.com/japan/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 07 August 2026. \"There are currently no net wealth/worth taxes in Japan.\" Inheritance tax is levied on recipients; \"The basic exemption is JPY 30 million plus JPY 6 million per statutory heir\"; rates 10% to 55%, 55% on a taxable amount over JPY 600,000,000. Transfers of overseas assets from foreign nationals with a 'Jusho' in Japan for less than ten of the last 15 years who hold a Table 1 visa are exempt; Table 1 \"does not include ... permanent resident, spouse or child of a Japanese national\". The page does not cover an exit tax."
+        },
+        {
+          "name": "PwC: quick chart, inheritance and gift tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates",
+          "read": "2026-11-15",
+          "says": "Inheritance / gift entries: Australia \"NA\"/\"NA\" (30 June 2026); Japan 55/55 (07 August 2026); New Zealand \"NA\"/\"NA\" (06 July 2026); Singapore \"NA\"/\"NA\" (02 July 2026); Taiwan 20/20 (20 August 2026); Republic of Korea 50/50 (04 June 2026). \"NA\" = \"the territory does not have the indicated tax\"."
+        }
+      ],
+      "note": "localTaxes.ts (JP) uses the same bands and exemption."
+    },
+    {
+      "id": "jp-estate-foreign-national-reach",
+      "fact": "estate",
+      "cities": [
+        "tokyo",
+        "osaka"
+      ],
+      "claim": "A foreign national on a Table I status such as Long Stay is taxed only on Japan-sited assets until 10 of the last 15 years in Japan; statuses outside Table I (spouse of a Japanese national, permanent resident) put the worldwide estate in reach from the start",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Japan, other taxes",
+          "url": "https://taxsummaries.pwc.com/japan/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 07 August 2026. \"There are currently no net wealth/worth taxes in Japan.\" Inheritance tax is levied on recipients; \"The basic exemption is JPY 30 million plus JPY 6 million per statutory heir\"; rates 10% to 55%, 55% on a taxable amount over JPY 600,000,000. Transfers of overseas assets from foreign nationals with a 'Jusho' in Japan for less than ten of the last 15 years who hold a Table 1 visa are exempt; Table 1 \"does not include ... permanent resident, spouse or child of a Japanese national\". The page does not cover an exit tax."
+        }
+      ],
+      "note": "Long Stay is a Designated Activities status, which sits in Table I of the Immigration Act (PwC lists the excluded statuses, and designated activities is not among them). Searched November 2026 for an FY2027 change to the foreign-national rules: none found.",
+      "modelMismatch": "localTaxes.ts (JP) brings overseas assets in after 10 years (afterYearsResident: 10) for everyone; for a resident on a permanent-resident or spouse status the worldwide estate is taxed from arrival. A Long Stay visitor (the profiles' case) never reaches 10 years, which the model only matches if the horizon is short."
+    },
+    {
+      "id": "jp-estate-us-treaty",
+      "fact": "estate",
+      "cities": [
+        "tokyo",
+        "osaka"
+      ],
+      "claim": "A US estate and gift tax treaty exists",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-with",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "All 13 countries are in the table (see us-estate-treaty-list). Estate & Gift: Australia, Austria, France, Germany, Japan, United Kingdom. Estate only: Greece, Ireland, Italy, Netherlands, South Africa, Switzerland, and Canada by Article XXIX B of the income tax treaty."
+        }
+      ],
+      "note": "Wording: \"the US–Japan estate and gift tax treaty gives credit relief\"."
+    },
+    {
+      "id": "jp-estate-treaty-credit",
+      "fact": "estate",
+      "cities": [
+        "tokyo",
+        "osaka"
+      ],
+      "claim": "The US–Japan estate and gift tax treaty gives credit relief",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Taxes for Expats: Japan inheritance tax in 2026",
+          "url": "https://www.taxesforexpats.com/country-guides/japan/japan-inheritance-tax.html",
+          "read": "2026-11-15",
+          "says": "Last updated Oct 29, 2026. \"the US-Japan estate tax treaty was signed in 1954 and has been in force since April 1, 1955\"; \"If a US citizen in Japan pays Japanese inheritance tax, they can credit that amount against their US estate tax liability.\""
+        }
+      ],
+      "note": "The treaty text was not read: the Japanese implementing act on japaneselawtranslation.go.jp is untranslated and mofa.go.jp returned HTTP 403. A dated 2026 secondary page describes the credit."
+    },
+    {
+      "id": "jp-estate-us-exemption",
+      "fact": "estate",
+      "cities": [
+        "tokyo",
+        "osaka"
+      ],
+      "claim": "The $15M US estate exemption (2026) applies to a US citizen living here as anywhere",
+      "verdict": "confirmed",
+      "shared": "us-estate-exemption-2026",
+      "sources": [
+        {
+          "name": "IRS: What's new, estate and gift tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax",
+          "read": "2026-11-15",
+          "says": "The table \"Basic exclusion amount for year of death\" has the row 2026: $15,000,000 (2025: $13,990,000). The page says the Working Families Tax Cuts, Public Law 119-21, signed July 4, 2025, \"amends § 2010(c)(3) by increasing the basic exclusion amount to $15,000,000 for calendar year 2026\". Page last reviewed or updated 03-Nov-2026."
+        },
+        {
+          "name": "IRS: Some nonresidents with U.S. assets must file estate tax returns",
+          "url": "https://www.irs.gov/individuals/international-taxpayers/some-nonresidents-with-us-assets-must-file-estate-tax-returns",
+          "read": "2026-11-15",
+          "says": "\"U.S. citizens are subject to U.S. estate taxation with respect to their worldwide assets\"; Form 706 is required when worldwide assets plus adjusted taxable gifts exceed the basic exclusion amount in effect on the date of death. By contrast a nonresident who is not a citizen files when US-situated assets exceed $60,000. Page last reviewed or updated 27-Jun-2026."
+        }
+      ],
+      "note": "Wording: \"the $15M US exemption (2026) applies as anywhere\"."
+    },
+    {
+      "id": "jp-lending-ibkr",
+      "fact": "lending",
+      "cities": [
+        "tokyo",
+        "osaka"
+      ],
+      "claim": "Interactive Brokers serves Japan residents, and Japan-resident clients may be moved to IB Securities Japan",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly serves Japan residents (Japan-resident clients may be moved to IB Securities Japan)",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Japan, Australia, Taiwan, South Korea, Singapore and New Zealand. It names no IBKR entity for them; it says \"In Australia, India, Japan, Hong Kong, or Singapore, the respective financial authorities regulate local entities.\""
+        },
+        {
+          "name": "Your Tax Base: best brokerage for US expats",
+          "url": "https://yourtaxbase.com/blog/best-brokerage-for-us-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. Quotes Fidelity's FAQ: \"we do not open accounts for any new customers residing outside the United States\"; Vanguard requires US citizenship or permanent residence \"with a U.S. mailing address\". Quotes IBKR: accounts accepted from residents of all countries except sanctioned or \"higher risk\" ones, and \"US Citizens who reside in Australia, Canada, Hong Kong, Japan, Singapore and India can not open an IRA account\"."
+        },
+        {
+          "name": "Finance Magnates: Interactive Brokers targets Japanese market with tax-free accounts",
+          "url": "https://www.financemagnates.com/forex/brokers/interactive-brokers-targets-japanese-market-with-tax-free-investment-accounts/",
+          "read": "2026-11-15",
+          "says": "Dated July 30, 2025. Interactive Brokers \"rolled out NISA accounts through its Japanese unit, giving local investors access to tax-free investment growth\"; IBSJ \"now offers these accounts alongside the firm's existing trading platform.\""
+        }
+      ],
+      "note": "IBKR's FAQ on migrating IB LLC accounts to IBSJ (https://ibkb.interactivebrokers.com/article/4739) and interactivebrokers.co.jp returned HTTP 403; a search result (not a read) shows the FAQ. Finance Magnates confirms IBSJ serves local investors. Stays reported (rule 3).",
+      "also": [
+        "sources: replaced RetireJapan's 2016 review with Finance Magnates (2025)"
+      ]
+    },
+    {
+      "id": "jp-lending-schwab",
+      "fact": "lending",
+      "cities": [
+        "tokyo",
+        "osaka"
+      ],
+      "claim": "Schwab One International does not accept Japan residents",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab One International reportedly does not accept Japan residents",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published and last modified October 23, 2026; country check run that day through Schwab's international application. Accepted (51): ... Australia ... Singapore, South Korea ... Taiwan ...; named as not accepted: Canada, Croatia, Dominican Republic, France, Italy, Japan, Malta, New Zealand, Philippines, South Africa, Turkey, Vietnam. Only margin restriction quoted: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds\"."
+        }
+      ],
+      "note": "Agrees with the dated list. Schwab's own sites were not retried for this country (stage 1 found them blocked). Stays reported (rule 3)."
+    },
+    {
+      "id": "jp-lending-margin-unknown",
+      "fact": "lending",
+      "cities": [
+        "tokyo",
+        "osaka"
+      ],
+      "claim": "Margin terms for residents of this country are not reported",
+      "verdict": "cant-confirm",
+      "hedge": "unconfirmed",
+      "wording": "margin terms by country of residence are unconfirmed",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published and last modified October 23, 2026; country check run that day through Schwab's international application. Accepted (51): ... Australia ... Singapore, South Korea ... Taiwan ...; named as not accepted: Canada, Croatia, Dominican Republic, France, Italy, Japan, Malta, New Zealand, Philippines, South Africa, Turkey, Vietnam. Only margin restriction quoted: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds\"."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Japan, Australia, Taiwan, South Korea, Singapore and New Zealand. It names no IBKR entity for them; it says \"In Australia, India, Japan, Hong Kong, or Singapore, the respective financial authorities regulate local entities.\""
+        }
+      ],
+      "note": "A statement of what is not known; nothing read gives margin terms for residents of this country."
+    },
+    {
+      "id": "jp-lending-fidelity-vanguard",
+      "fact": "lending",
+      "cities": [
+        "tokyo",
+        "osaka"
+      ],
+      "claim": "Fidelity and Vanguard open no accounts for residents abroad",
+      "verdict": "cant-confirm",
+      "hedge": "reportedly",
+      "oldWording": "and Fidelity and Vanguard open no accounts for residents abroad",
+      "wording": "Fidelity and Vanguard reportedly open no new accounts for residents abroad",
+      "sources": [
+        {
+          "name": "Your Tax Base: best brokerage for US expats",
+          "url": "https://yourtaxbase.com/blog/best-brokerage-for-us-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. Quotes Fidelity's FAQ: \"we do not open accounts for any new customers residing outside the United States\"; Vanguard requires US citizenship or permanent residence \"with a U.S. mailing address\". Quotes IBKR: accounts accepted from residents of all countries except sanctioned or \"higher risk\" ones, and \"US Citizens who reside in Australia, Canada, Hong Kong, Japan, Singapore and India can not open an IRA account\"."
+        }
+      ],
+      "also": [
+        "hedge added: \"reportedly\", and \"no accounts\" narrowed to \"no new accounts\" as Fidelity's quoted FAQ says",
+        "sources: added Your Tax Base, best brokerage for US expats"
+      ],
+      "note": "A broker claim resting on a secondary page stays reported (rule 3); Fidelity's FAQ was not retried (HTTP 403 in stage 4). Worded as in the Thailand, Peru and Chile ledgers."
+    },
+    {
+      "id": "jp-visa-no-retirement",
+      "fact": "visa",
+      "cities": [
+        "tokyo",
+        "osaka"
+      ],
+      "claim": "Japan has no retirement or passive-income visa",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Migaku: retirement visa options in Japan",
+          "url": "https://migaku.com/blog/language-fun/retirement-visa-options-in-japan-whats-actually-available",
+          "read": "2026-11-15",
+          "says": "Last updated May 27, 2026. \"Japan does not issue a dedicated retirement visa.\" Long Stay (Designated Activities No. 40): savings of \"more than ¥30 million\"; \"If a spouse will travel separately on the same scheme, combined savings of ¥60 million are required\"; \"Initially 6 months, renewable once for a total of 12 months\", then holders must leave; time on it does not count toward PR; \"Long Stay visa holders cannot enroll in National Health Insurance and must carry private insurance.\" It gives the Business Manager capital as ¥5,000,000 (out of date)."
+        }
+      ],
+      "note": "Searched \"Japan long stay sightseeing visa change November 2026\": no pending change found (visa-fee rises and JESTA concern short stays)."
+    },
+    {
+      "id": "jp-visa-long-stay-terms",
+      "fact": "visa",
+      "cities": [
+        "tokyo",
+        "osaka"
+      ],
+      "claim": "Long Stay needs savings above JPY 30m (JPY 60m for a couple on separate itineraries) and private insurance, gives 6 months extendable once to 1 year at most, after which a new stay means applying again from abroad; no work, no path to permanent residence",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Migaku: retirement visa options in Japan",
+          "url": "https://migaku.com/blog/language-fun/retirement-visa-options-in-japan-whats-actually-available",
+          "read": "2026-11-15",
+          "says": "Last updated May 27, 2026. \"Japan does not issue a dedicated retirement visa.\" Long Stay (Designated Activities No. 40): savings of \"more than ¥30 million\"; \"If a spouse will travel separately on the same scheme, combined savings of ¥60 million are required\"; \"Initially 6 months, renewable once for a total of 12 months\", then holders must leave; time on it does not count toward PR; \"Long Stay visa holders cannot enroll in National Health Insurance and must carry private insurance.\" It gives the Business Manager capital as ¥5,000,000 (out of date)."
+        },
+        {
+          "name": "Japan Visa: long-term tourism (Long Stay)",
+          "url": "https://japan-visa.com/visas/long-term-tourism",
+          "read": "2026-11-15",
+          "says": "Last updated July 12, 2026. \"Liquid assets of at least ¥30 million\"; insurance \"covering the entire stay\"; \"Initial 6-month stay, extendable once to a total of 1 year\"; \"the holder must exit Japan at the end of the period\"; \"No work or paid activities permitted\"; time on it \"does NOT count toward permanent residency\"."
+        }
+      ],
+      "note": "mofa.go.jp (page22e_000738, page22_002161 and the visa index) and the US Embassy in Japan returned HTTP 403, and the VFS PDF in the profile's sources uses CID fonts whose text could not be recovered; so this rests on two dated 2026 secondary pages. A search result (not a read) shows MOFA's own page with the same JPY 30m/60m and 6-months-to-1-year terms."
+    },
+    {
+      "id": "jp-visa-business-manager",
+      "fact": "visa",
+      "cities": [
+        "tokyo",
+        "osaka"
+      ],
+      "claim": "The Business Manager route now needs JPY 30m capital and an employee",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Office Tree (gyoseishoshi): Business Manager status after the 2025 reform",
+          "url": "https://office-tree.jp/blog/immigration/keiei-kanri-visa-2025-kaisei/",
+          "read": "2026-11-15",
+          "says": "Updated 18 May 2026 and 16 September 2026. From 16 October 2025: business assets of \"3,000万円以上\" (up from JPY 5m) and \"常勤職員1名以上の必須化（資本金との両方必須）\" — both one full-time employee and JPY 30m are required."
+        }
+      ],
+      "note": "Migaku (May 2026) still gives the old JPY 5m; the gyoseishoshi page and the profile's Morgan Lewis source agree on the October 2025 reform. The Immigration Services Agency's own notice was not read."
+    },
+    {
+      "id": "jp-health-tokyo-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "tokyo"
+      ],
+      "claim": "Tokyo has excellent hospitals with English-speaking staff, including JCI-accredited St. Luke's International and NTT Medical Center",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Cities Insider: Tokyo healthcare, the 2025-2026 guide",
+          "url": "https://citiesinsider.com/country/japan/tokyo/guides/tokyo-healthcare/zh",
+          "read": "2026-11-15",
+          "says": "Titled the 2025-2026 guide, © 2026. St. Luke's International Hospital (Tsukiji): \"fluent English support across almost all departments\"; \"It is JCI accredited.\" NTT Medical Center Tokyo has \"a dedicated international patient support center\"."
+        },
+        {
+          "name": "NTT Medical Center Tokyo: Department of International Healthcare",
+          "url": "https://www.nmct.ntt-east.co.jp/en/divisions/international_healthcare",
+          "read": "2026-11-15",
+          "says": "Undated hospital page. Lists an English-support phone line (英語での対応をご希望の場合), a \"Department of International Healthcare\" and JMIP certification (外国人患者受入れ医療機関認証制度(JMIP)認証取得)."
+        }
+      ],
+      "note": "St. Luke's own JCI page (hospital.luke.ac.jp, in the profile's sources) returned HTTP 403, and no JCI directory page loaded; the JCI status rests on a dated 2025-26 guide."
+    },
+    {
+      "id": "jp-health-osaka-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "osaka"
+      ],
+      "claim": "Osaka University Hospital is JMIP-accredited and Iseikai International General Hospital in Kita-ku was JCI-accredited in Dec 2024 with multilingual staff",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "University of Osaka Hospital: JMIP accreditation",
+          "url": "https://www.hosp.med.osaka-u.ac.jp/english/topics/detail.php?id=358",
+          "read": "2026-11-15",
+          "says": "Posted 2019-03-29: \"OUH was successfully accredited on March 15\" after a re-audit on January 22 and 23."
+        },
+        {
+          "name": "Iseikai International General Hospital: about the hospital",
+          "url": "https://www.iseikaihp.or.jp/english/about.html",
+          "read": "2026-11-15",
+          "says": "Announcement dated December 28, 2024: \"We obtained JCI accreditation\"; address 4-14 Minamiogi-machi, Kita-ku, Osaka; \"Many of our staff are fluent in foreign languages such as English, Chinese, Korean, and Indonesian.\""
+        }
+      ],
+      "note": "The university hospital's page is from 2019; a search result (not a read) shows its 2024 outline saying JMIP was renewed in March 2022. JMIP certificates run for a fixed term, so a renewal after that is assumed, not read."
+    },
+    {
+      "id": "jp-health-osaka-fewer-english",
+      "fact": "healthcare",
+      "cities": [
+        "osaka"
+      ],
+      "claim": "Osaka has fewer English-speaking doctors than Tokyo",
+      "verdict": "cant-confirm",
+      "hedge": "generally",
+      "oldWording": "though fewer English-speaking doctors than Tokyo",
+      "wording": "though generally fewer English-speaking doctors than Tokyo",
+      "sources": [
+        {
+          "name": "Iseikai International General Hospital: about the hospital",
+          "url": "https://www.iseikaihp.or.jp/english/about.html",
+          "read": "2026-11-15",
+          "says": "Announcement dated December 28, 2024: \"We obtained JCI accreditation\"; address 4-14 Minamiogi-machi, Kita-ku, Osaka; \"Many of our staff are fluent in foreign languages such as English, Chinese, Korean, and Indonesian.\""
+        },
+        {
+          "name": "Cities Insider: Tokyo healthcare, the 2025-2026 guide",
+          "url": "https://citiesinsider.com/country/japan/tokyo/guides/tokyo-healthcare/zh",
+          "read": "2026-11-15",
+          "says": "Titled the 2025-2026 guide, © 2026. St. Luke's International Hospital (Tsukiji): \"fluent English support across almost all departments\"; \"It is JCI accredited.\" NTT Medical Center Tokyo has \"a dedicated international patient support center\"."
+        }
+      ],
+      "also": [
+        "hedge added: \"generally\""
+      ],
+      "note": "No page read compares the two cities; Iseikai says many of its staff speak English, and the Tokyo guide lists several English-friendly hospitals."
+    },
+    {
+      "id": "jp-health-long-stay-no-nhi",
+      "fact": "healthcare",
+      "cities": [
+        "tokyo",
+        "osaka"
+      ],
+      "claim": "Long Stay holders cannot join National Health Insurance and must carry private cover for the whole stay",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Meguro City: National Health Insurance for foreign residents",
+          "url": "https://www.city.meguro.tokyo.jp/kokuho/kurashi/kokuho/kanyu-gaikoku.html",
+          "read": "2026-11-15",
+          "says": "Updated 1 October 2025. Cannot join: \"在留資格が「特定活動」のかたのうち、医療目的で入国したかたやその介助者、または観光保養などで滞在するかたおよび同じ目的で滞在する配偶者\"."
+        },
+        {
+          "name": "Sakai City: what National Health Insurance is (who cannot join)",
+          "url": "https://www.city.sakai.lg.jp/kurashi/honen/kokuho/kokumin_kenkouhoken/kokuhotoha.html",
+          "read": "2026-11-15",
+          "says": "Updated 9 March 2026. Foreigners on 特定活動 whose designated activity is \"観光や保養その他これらに類似する活動\" cannot join National Health Insurance."
+        },
+        {
+          "name": "Japan Visa: long-term tourism (Long Stay)",
+          "url": "https://japan-visa.com/visas/long-term-tourism",
+          "read": "2026-11-15",
+          "says": "Last updated July 12, 2026. \"Liquid assets of at least ¥30 million\"; insurance \"covering the entire stay\"; \"Initial 6-month stay, extendable once to a total of 1 year\"; \"the holder must exit Japan at the end of the period\"; \"No work or paid activities permitted\"; time on it \"does NOT count toward permanent residency\"."
+        }
+      ]
+    },
+    {
+      "id": "jp-health-insurer-ages",
+      "fact": "healthcare",
+      "cities": [
+        "tokyo",
+        "osaka"
+      ],
+      "claim": "International plans often stop taking new members around 65–70",
+      "verdict": "corrected",
+      "oldWording": "and international plans often stop taking new members around 65–70",
+      "newWording": "and some international plans take new members only up to about 75 (Allianz Care, secondary source), while Cigna Global sets no upper age limit",
+      "sources": [
+        {
+          "name": "Cigna Global: international health plans",
+          "url": "https://cignaglobal.com/international-health-plans",
+          "read": "2026-11-15",
+          "says": "Undated insurer page. \"Available from the age of 18 years old with no upper age limit\"; the FAQ says Cigna does \"not implement an age cap on any of our plans.\""
+        },
+        {
+          "name": "Expatica: Allianz Care health insurance review",
+          "url": "https://www.expatica.com/global/healthcare/healthcare-basics/allianz-care-health-insurance-review-2173537",
+          "read": "2026-11-15",
+          "says": "Last updated 22 September 2026. FAQ: \"You have to be 75 or under\" to apply for Allianz Care; applications are accepted up to the 76th birthday."
+        }
+      ],
+      "also": [
+        "tokyo drawback 3: \"private cover with age limits\" -> \"private cover for the whole stay\"",
+        "osaka drawback 3: \"private health cover with age limits on Long Stay\" -> \"private health cover for the whole stay on Long Stay\"",
+        "sources: added Cigna Global and Expatica (Allianz Care)"
+      ],
+      "note": "Cigna's own page sets no entry age cap; Allianz Care takes applicants to 75 (Expatica, Sep 2026). Premiums at those ages were not read. Healthcare scores unchanged (4): the hospitals, not insurance, drive them."
+    }
+  ]
+}

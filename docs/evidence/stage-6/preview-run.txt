@@ -1,0 +1,417 @@
+$ node docs/evidence/stage-6/verify6.mjs http://localhost:4317  (production build, npx vite preview)
+
+===== desktop · Bali =====
+No. 74 Bali (Denpasar / Canggu)
+YOUR PLAN HERE
+79%
+plan holds
++15 pts vs 64% in St. Louis
+All 5 photos
+Photos: Vyacheslav Argenberg, Jakub Hałun, Dajobimi, Artem Beliaikin · CC BY / CC BY-SA / Public domain / CC0 · Wikimedia Commons
+ID
+TOP PICK 74 OF 75 · INDONESIA
+Island lifestyle and easy visas, but worldwide tax on dividends
+Bali is 22nd in International Living's 2026 index and Indonesia was 8th in Expat Insider 2025, with a large international community and no wealth, inheritance or gift tax. For BBD it ranks near the bottom: residents are taxed on worldwide income at up to 35%, US dividends included whether or not they are brought in, and the foreign-income exemption is for experts, not retirees. Healthcare is limited, and the retirement KITAS is for ages 55 and over.
+HOW IT SCORES · out of 5, for a US retiree on buy-borrow-die
+Tax on holdings
+2
+out of 5
+Estate
+5
+out of 5
+Lending
+4
+out of 5
+Residency
+3
+out of 5
+Healthcare
+2
+out of 5
+Cost
+4
+out of 5
+Safety
+3
+out of 5
+Climate
+3
+out of 5
+Community
+4
+out of 5
+THE ESSENTIALS
+TAX ON HOLDINGS
+No wealth tax, but residents (183+ days in 12 months, or present in the year with intent to reside) are taxed on worldwide income at 5–35%, and foreign dividends are ordinary income taxed yearly whether or not they are remitted; the 4-year foreign-income exemption is only for foreigners with certain expertise, with no retiree category; a US–Indonesia income tax treaty applies (get local advice).
+ESTATE & INHERITANCE
+No inheritance, estate or gift tax, so US assets pass to US-resident children with no Indonesian tax; there is no US estate treaty, but nothing to double-tax, and US estate tax applies only above the $15M exemption (2026).
+LENDING & BROKERS
+IBKR reportedly accepts Indonesia residents (IBKR Pro), and Schwab One International's online form reportedly accepted Indonesia in Oct 2026; margin by country of residence is unreported, and Fidelity and Vanguard reportedly open no new accounts for residents abroad.
+RESIDENCY
+Second Home Visa (E33): USD 130,000 on deposit at a state-owned bank, or a USD 1m apartment, for up to 5 years and 10 in all, with no age limit; Silver Hair (E33E): 5 years (10 in all) from age 55 on a USD 50,000 deposit plus USD 3,000/month of income, with no sponsor; the retirement KITAS (E33F) is for ages 55+ (some listings say 60), renewed yearly, needs a sponsor and USD 3,000/month of income, and reportedly a hired Indonesian household worker.
+HEALTHCARE
+Private hospitals (BIMC, Siloam) handle routine and emergency care with English-speaking staff, but complex cases are usually evacuated to Singapore or Bangkok, so evacuation cover is essential; international cover runs about USD 2,500–6,000 a year at 55–70, and optional public BPJS cover about USD 12 a month.
+SAFETY
+Indonesia is 69th in the 2026 Global Peace Index; UK advice reports frequent bag-snatching, card fraud, drink spiking and deaths from methanol-tainted drinks in Bali, a sharp rise in scooter accidents, and earthquake, tsunami and volcano risk.
+CLIMATE
+Tropical: hot and humid all year, with a rainy season (roughly October–March) that brings local flooding; Ubud's hills are a little cooler.
+COMMUNITY
+A very large international community, skewed to younger digital nomads in Canggu; retirees tend to prefer Sanur and Ubud.
+GETTING THERE
+From St. Louis (STL): two stops, for example via Minneapolis and Tokyo, about 24–28 h.
+Ngurah Rai (DPS) is in the south near Kuta, so inland and northern areas mean a long drive on busy roads; the airport closes for Nyepi, the day of silence, each year (usually March).
+Routes as of Nov 2026; flying times are estimates.
+WORTH KNOWING
+US dividends taxed at up to 35% every year, with no retiree exemption
+Serious medical care usually means evacuation to Singapore or Bangkok
+Visa rules shift often and the retirement KITAS needs a paid sponsor; traffic and overtourism in the south
+YOUR PLAN HERE
+PLAN HOLDS
+79
+%
++15 pts vs 64% in St. Louis
+A YEAR HERE
+$83,162
+−24% vs $110,000 in St. Louis
+BY CATEGORY
+St. Louis
+Bali (Denpasar / Canggu)
+Housing: $25K here vs $26K in St. Louis, −3%.
+Housing
+$25K
+−3%
+Groceries: $7.3K here vs $11K in St. Louis, −33%.
+Groceries
+$7.3K
+−33%
+Dining out: $4.4K here vs $8.0K in St. Louis, −45%.
+Dining out
+$4.4K
+−45%
+Transport: $6.5K here vs $10K in St. Louis, −35%.
+Transport
+$6.5K
+−35%
+Utilities: $3.6K here vs $5.5K in St. Louis, −35%.
+Utilities
+$3.6K
+−35%
+Healthcare: $9.2K here vs $16K in St. Louis, −42%.
+Healthcare
+$9.2K
+−42%
+Travel: $14K here vs $14K in St. Louis, same.
+Travel
+$14K
+same
+Other: $13K here vs $20K in St. Louis, −35%.
+Other
+$13K
+−35%
+Your St. Louis budget at local prices, with your expat price premium (35%).
+Local tax and estate for Bali (Denpasar / Canggu) ready.
+LOCAL TAX & ESTATE
+No wealth or inheritance tax modelled for Indonesia: none reaches a US portfolio.
+Estate at 85
+median, borrow and never sell
+$12M
++$2.0M vs $10M staying in St. Louis
+Today’s dollars, from 4,000 simulated futures of your plan with Bali (Denpasar / Canggu) as the destination.
+Make Bali (Denpasar / Canggu) my destination
+SOURCES
+PwC: Indonesia, taxes on personal income
+PwC: Indonesia, income determination
+PwC: Indonesia, other taxes
+DJP (Indonesian tax office): tax returns for foreign citizens
+Liberty Mundo: Retire in Indonesia, the E33F visa and residency guide (2026)
+Directorate General of Immigration: E33 second home visa
+Directorate General of Immigration: E33E second home visa for the elderly (5 years)
+Directorate General of Immigration: E33F second home visa for the elderly (1 year)
+APRIL International: healthcare options for digital nomads in Bali · 2026
+Emerhub: Indonesia retirement visa
+BIMC Hospital Bali: Emergency medical evacuation program
+GOV.UK: Indonesia travel advice, safety and security
+Time Out: Indonesia 69th in the Global Peace Index 2026 · 2026
+Wikipedia: I Gusti Ngurah Rai International Airport
+YourTaxBase: Charles Schwab for expats (country list, Oct 2026)
+401(k) Specialist: International Living Global Retirement Index 2026 · 2026
+Cost indices verified November 6, 2026 from Numbeo current city index. Not tax or legal advice.
+
+===== desktop · Taipei =====
+No. 49 Taipei
+YOUR PLAN HERE
+78%
+plan holds
++14 pts vs 64% in St. Louis
+All 5 photos
+Photos: ynes95, CEphoto, Uwe Aranas, Ji Soo Song, 4300streetcar, Thumbhero · CC BY-SA / CC BY · Wikimedia Commons
+TW
+TOP PICK 49 OF 75 · TAIWAN
+Safe, efficient Asian capital, no retiree visa
+Taipei pairs very low crime, strong teaching hospitals and the National Health Insurance with a mild BBD tax profile: no wealth tax, foreign income taxed only above a high threshold, and estate tax that reaches only Taiwan-sited assets for foreigners. The obstacle is residency: there is no retirement or passive-income visa, so it ranks low for a portfolio retiree.
+HOW IT SCORES · out of 5, for a US retiree on buy-borrow-die
+Tax on holdings
+5
+out of 5
+Estate
+5
+out of 5
+Lending
+4
+out of 5
+Residency
+1
+out of 5
+Healthcare
+5
+out of 5
+Cost
+3
+out of 5
+Safety
+4
+out of 5
+Climate
+3
+out of 5
+Community
+2
+out of 5
+THE ESSENTIALS
+TAX ON HOLDINGS
+No wealth tax; regular income tax is territorial, and residents (183+ days) owe the Income Basic Tax only when foreign income is TWD 1m or more, at 20% of basic income above TWD 7.5m and only to the extent it exceeds regular tax, with a foreign tax credit, so up to about TWD 7.5m (roughly $230k) a year of foreign dividends and interest is effectively untaxed.
+ESTATE & INHERITANCE
+Estate tax of 10–20% (exemption TWD 13.33m) reaches only property located in Taiwan for non-ROC nationals (Estate and Gift Tax Act Art. 1), so a US citizen's US brokerage account is outside it; there is no US estate treaty, and US estate tax applies above the $15M exemption (2026).
+LENDING & BROKERS
+IBKR reportedly serves Taiwan residents (IBKR Pro), and Schwab One International's online form reportedly accepted Taiwan in Oct 2026; margin by country of residence is unreported, and Fidelity and Vanguard reportedly open no new accounts for residents abroad.
+RESIDENCY
+No retirement or passive-income visa: the Resident Visa for Investment needs a USD 200,000 business investment approved by the Ministry of Economic Affairs (a portfolio does not count) and cannot be switched to after visa-free entry; other routes, such as the Employment Gold Card, need work credentials.
+HEALTHCARE
+National Taiwan University Hospital, the country's largest public hospital (about 2,400 beds), and other major teaching hospitals are in the city; ARC holders without an employer join National Health Insurance after 6 months of continuous residence (one trip under 30 days allowed), paying 5.17% of the insured-salary basis, and keep paying through trips abroad of under 6 months (secondary source).
+SAFETY
+Taiwan is 42nd of 163 in the 2026 Global Peace Index (25th on societal safety), held back by regional military tension; the UK says crime rates are extremely low, and the risks are earthquakes, typhoons and scooter-heavy traffic.
+CLIMATE
+Humid subtropical: mild, damp winters (January about 14–19 °C) and hot, humid summers (July highs about 35 °C), about 1,900 mm of rain a year, and typhoons from roughly May to November.
+COMMUNITY
+About 72,000 foreign residents (end of 2022), mostly from Indonesia, the Philippines and Japan; the English-speaking retiree community is small, though English is common in hospitals and transit.
+GETTING THERE
+From St. Louis (STL): no nonstop; one stop via Chicago or Seattle, about 17–20 h.
+Taoyuan (TPE) is about 40 km west of Taipei, linked by the airport MRT; Songshan (TSA), in the city, handles domestic and some regional flights, and high-speed rail runs down the west coast.
+Routes as of Nov 2026; flying times are estimates.
+WORTH KNOWING
+No residence route on a portfolio: a USD 200k business investment or work-based Gold Card
+Hot, humid summers, typhoons and earthquake risk
+A small English-speaking retiree community, and regional military tension
+YOUR PLAN HERE
+PLAN HOLDS
+78
+%
++14 pts vs 64% in St. Louis
+A YEAR HERE
+$86,037
+−22% vs $110,000 in St. Louis
+BY CATEGORY
+St. Louis
+Taipei
+Housing: $21K here vs $26K in St. Louis, −18%.
+Housing
+$21K
+−18%
+Groceries: $8.3K here vs $11K in St. Louis, −25%.
+Groceries
+$8.3K
+−25%
+Dining out: $5.6K here vs $8.0K in St. Louis, −30%.
+Dining out
+$5.6K
+−30%
+Transport: $7.9K here vs $10K in St. Louis, −21%.
+Transport
+$7.9K
+−21%
+Utilities: $4.3K here vs $5.5K in St. Louis, −21%.
+Utilities
+$4.3K
+−21%
+Healthcare: $9.2K here vs $16K in St. Louis, −42%.
+Healthcare
+$9.2K
+−42%
+Travel: $14K here vs $14K in St. Louis, same.
+Travel
+$14K
+same
+Other: $15K here vs $20K in St. Louis, −21%.
+Other
+$15K
+−21%
+Your St. Louis budget at local prices, with your expat price premium (35%).
+Local tax and estate for Taipei ready.
+LOCAL TAX & ESTATE
+No wealth or inheritance tax modelled for Taiwan: none reaches a US portfolio.
+Estate at 85
+median, borrow and never sell
+$12M
++$1.8M vs $10M staying in St. Louis
+Today’s dollars, from 4,000 simulated futures of your plan with Taipei as the destination.
+Make Taipei my destination
+SOURCES
+PwC: Taiwan, other taxes
+PwC: Taiwan, taxes on personal income
+Laws & Regulations Database of the ROC: Estate and Gift Tax Act
+TECO: Resident visas for investment (updated Jul 2024) · 2024
+Taiwan Gold Card community: health insurance FAQ
+Wikipedia: National Taiwan University Hospital
+Focus Taiwan: Taiwan 42nd in the 2026 Global Peace Index · 2026
+GOV.UK: Taiwan travel advice, safety and security
+Wikipedia: Taipei
+Wikipedia: Taoyuan International Airport
+YourTaxBase: Charles Schwab for expats (country list, Oct 2026)
+Bureau of Consular Affairs: resident visa for investment · 2024
+Taipei Times: NHI premium rate to stay at 5.17 percent · 2025
+FAQs.tw: Taiwan NHI for foreigners, how much it costs (2026 rates) · 2026
+Banker on Wheels: Interactive Brokers review (country availability) · 2026
+Your Tax Base: best brokerage for US expats (Oct 2026) · 2026
+Cost indices verified November 6, 2026 from livingcost.org. Low confidence: derived from livingcost.org prices vs New York, scaled to Numbeo with factors fitted on Lisbon, Athens, Bangkok and Montevideo; Numbeo was rate-limiting. Not tax or legal advice.
+
+===== phone · Sydney =====
+Sydney
+YOUR PLAN HERE
+50%
+plan holds
+−14 pts vs 64% in St. Louis
+1 / 5
+The Opera House and Harbour Bridge across Farm Cove
+DXR · CC BY-SA 4.0
+AU
+PROFILE · AUSTRALIA
+Great harbour city with no inheritance tax, but no visa to retire on
+Sydney has one of the world's great harbours, a mild, sunny climate, world-class hospitals and no language barrier, and Australia has no wealth, inheritance or estate tax, an estate and gift tax treaty with the US and reported Schwab International access. For buy-borrow-die it is a base for long visits rather than a retirement home: Australia's retiree visas are closed to new applicants, so without a child settled there a portfolio retiree is left with a visitor visa of up to 12 months at a time, in one of the most expensive cities anywhere. A visitor's US dividends and gains go untaxed, but a permanent resident pays up to 47% on worldwide income, and at death on the gains in shares left to children abroad.
+HOW IT SCORES · out of 5, for a US retiree on buy-borrow-die
+Tax on holdings
+4
+out of 5
+Estate
+3
+out of 5
+Lending
+4
+out of 5
+Residency
+1
+out of 5
+Healthcare
+4
+out of 5
+Cost
+1
+out of 5
+Safety
+4
+out of 5
+Climate
+5
+out of 5
+Community
+4
+out of 5
+THE ESSENTIALS
+TAX ON HOLDINGS
+No wealth tax; a temporary resident (on a temporary visa, without an Australian-resident spouse) is taxed only on Australian income and on gains from Australian real property, so US dividends, interest and share gains go untaxed for as long as the temporary visa lasts; a permanent resident pays tax on worldwide income at up to 45% plus the 2% Medicare levy, with half of a gain on assets held over a year taxed until June 2027, when (under a law passed in June 2026) indexation and a 30% minimum tax replace the discount; non-residents get no discount on gains after May 2012.
+ESTATE & INHERITANCE
+No inheritance, estate or gift tax; but when an Australian resident dies leaving shares or other non-Australian-property assets to a non-resident heir (such as children living in the US), CGT event K3 taxes the unrealised gain in the final return as if sold, which undoes the local benefit of holding until death; a temporary resident's foreign assets are outside Australian CGT, so this reaches mainly permanent residents (check); the US–Australia estate and gift tax treaty applies, and the $15M US exemption (2026) applies as anywhere.
+LENDING & BROKERS
+IBKR reportedly serves Australia residents through Interactive Brokers Australia, and Schwab International's online application reportedly accepts Australia residents (Oct 2026); margin terms by country of residence are unconfirmed, and Fidelity and Vanguard reportedly open no new accounts for residents abroad.
+RESIDENCY
+No retirement or passive-income visa: the Investor Retirement (405) and Retirement (410) visas are closed to new applicants (existing holders can renew), and the business and investor programme closed in July 2024; parent visas need a child settled in Australia (the temporary Sponsored Parent 870 gives 3 or 5 years at a time, up to 10, with no Medicare; the permanent queues run many years), so most retirees are left with a visitor visa of up to 12 months, generally no more than 12 months in any 18 (secondary source).
+HEALTHCARE
+World-class public teaching hospitals, led by Royal Prince Alfred, in Newsweek's 2026 world top 100; Medicare covers citizens and permanent residents, and the US has no reciprocal health agreement with Australia, so a visitor or temporary-visa retiree pays in full and needs private overseas visitors cover for the whole stay.
+SAFETY
+Australia is 20th of 163 in the 2026 Global Peace Index; violent crime is low by US big-city standards, and the natural hazards are summer heatwaves and bushfire smoke.
+CLIMATE
+Humid subtropical: warm, sometimes humid summers (January highs about 26 °C / 79 °F) and mild, sunny winters (July highs about 17 °C / 63 °F); about 1,150 mm of rain a year.
+COMMUNITY
+English-speaking, with about 39% of Greater Sydney born overseas and about 26,000 US-born residents (2021 census); with no retiree visa, the community of foreign retirees is small, but nothing in daily life needs another language.
+GETTING THERE
+From St. Louis (STL): no nonstop; one stop via Los Angeles or Dallas, about 20–23 h.
+Sydney Airport (SYD) is about 8 km south of the CBD, about 15 minutes by train; Auckland is about 3 hours away by air.
+Routes as of Nov 2026; flying times are estimates.
+WORTH KNOWING
+No retirement visa: visits of up to 12 months at a time without a child settled in Australia
+Among the world's most expensive cities for housing
+Permanent residents pay up to 47% on worldwide income, and tax on gains in shares left to heirs abroad
+YOUR PLAN HERE
+PLAN HOLDS
+50
+%
+−14 pts vs 64% in St. Louis
+A YEAR HERE
+$140,957
++28% vs $110,000 in St. Louis
+BY CATEGORY
+St. Louis
+Sydney
+Housing: $58K here vs $26K in St. Louis, +124%.
+Housing
+$58K
++124%
+Groceries: $11K here vs $11K in St. Louis, same.
+Groceries
+$11K
+same
+Dining out: $8.0K here vs $8.0K in St. Louis, same.
+Dining out
+$8.0K
+same
+Transport: $11K here vs $10K in St. Louis, +13%.
+Transport
+$11K
++13%
+Utilities: $6.2K here vs $5.5K in St. Louis, +13%.
+Utilities
+$6.2K
++13%
+Healthcare: $10K here vs $16K in St. Louis, −36%.
+Healthcare
+$10K
+−36%
+Travel: $14K here vs $14K in St. Louis, same.
+Travel
+$14K
+same
+Other: $22K here vs $20K in St. Louis, +13%.
+Other
+$22K
++13%
+Your St. Louis budget at local prices, with your expat price premium (35%).
+Local tax and estate for Sydney ready.
+LOCAL TAX & ESTATE
+Local wealth and inheritance tax not modelled for Australia: eVelo hasn’t researched it, so the odds and estate here assume none. Check before you count on that.
+Estate at 85
+median, borrow and never sell
+$6.4M
+−$4.0M vs $10M staying in St. Louis
+Today’s dollars, from 4,000 simulated futures of your plan with Sydney as the destination.
+Make Sydney my destination
+SOURCES
+PwC: Australia, residence · 2026
+PwC: Australia, income determination · 2026
+PwC: Australia, other taxes · 2026
+PwC: Australia, taxes on personal income · 2026
+Atlas Wealth: deceased estates with overseas connections (CGT event K3) · 2026
+Widen: retire to Australia, visa options (Oct 2026) · 2026
+nib: reciprocal health care agreements for visitors to Australia
+IRS: estate and gift tax treaties
+YourTaxBase: Charles Schwab for expats (country list, Oct 2026)
+Alfred Health: The Alfred named one of the world's best hospitals (Newsweek 2026) · 2026
+Greek City Times: Global Peace Index 2026 rankings · 2026
+ABS: people in Greater Sydney born in the United States (2021 census)
+Wikipedia: Sydney
+Wikipedia: Sydney Airport
+KPMG: Australia, legislation amending capital gains tax passes Parliament (26 June 2026) · 2026
+NSW Government: Investor Retirement visa (subclass 405), closed to new applicants
+Bristax: CGT event K3
+Your Tax Base: best brokerage for US expats (Oct 2026) · 2026
+Cost indices for Sydney are rough estimates, not checked against a current source. Not tax or legal advice.
+
+console errors: none

@@ -1,0 +1,423 @@
+{
+  "country": "New Zealand",
+  "cities": [
+    "auckland"
+  ],
+  "claims": [
+    {
+      "id": "nz-tax-no-wealth-no-cgt",
+      "fact": "tax",
+      "cities": [
+        "auckland"
+      ],
+      "claim": "New Zealand has no wealth tax and no general capital gains tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: quick chart, net wealth/worth tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/net-wealth-worth-tax-rates",
+          "read": "2026-11-15",
+          "says": "Australia (30 June 2026), Japan (07 August 2026), New Zealand (06 July 2026), Singapore (02 July 2026), Taiwan (20 August 2026) and the Republic of Korea (04 June 2026) are all \"NA\": \"the territory does not have the indicated tax\"."
+        },
+        {
+          "name": "PwC: New Zealand, income determination",
+          "url": "https://taxsummaries.pwc.com/new-zealand/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 06 July 2026. \"New Zealand does not have a comprehensive capital gains tax.\" No FIF income generally where \"the total cost of FIF interests held by the individual does not exceed NZD 50,000 at any point in the income year.\" \"The RAM allows qualifying new migrants to calculate FIF income on a realisation basis\"; \"eligible taxpayers are taxed on dividends received and 70% of any realised gain on disposal of qualifying foreign shares\"."
+        }
+      ]
+    },
+    {
+      "id": "nz-tax-transitional-exemption",
+      "fact": "tax",
+      "cities": [
+        "auckland"
+      ],
+      "claim": "New residents get a once-only, roughly 4-year exemption on most foreign income, dividends, interest and FIF income included",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Inland Revenue: temporary tax exemption",
+          "url": "https://www.ird.govt.nz/topics/tax-residency/temporary-tax-exemption",
+          "read": "2026-11-15",
+          "says": "Last updated 17 Jun 2026. The exemption \"lasts for about 4 years after you become a New Zealand tax resident\"; \"You can only get the exemption once\"; exempt foreign income includes \"overseas interest, dividends, foreign investment fund income, rent\"; you must not have been tax resident in the 10 years before."
+        }
+      ]
+    },
+    {
+      "id": "nz-tax-fif",
+      "fact": "tax",
+      "cities": [
+        "auckland"
+      ],
+      "claim": "After it, foreign shares and ETFs costing over NZD 50,000 fall under the FIF rules, usually taxed on a deemed 5% of opening market value at up to 39%, or on the actual return in a weaker year, whether or not anything is sold (a yearly charge of up to about 2%)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Become: the FIF rules, a plain-English guide",
+          "url": "https://www.become.nz/articles/fif-rules-nz-overseas-investment-tax-guide",
+          "read": "2026-11-15",
+          "says": "Last updated 13 October 2026. The threshold \"has been NZ$50,000 since 2000\", measured on cost; a bill would double it but \"is not law until it passes\". FDR \"deems 5% of the opening market value ... to be taxable income\"; investors can generally use whichever of FDR and CV is lower, and \"The minimum taxable income under either method is zero\"; FIF applies \"regardless of whether gains are realised\"; \"Tax is paid at your marginal rate up to 39%\"."
+        },
+        {
+          "name": "PwC: New Zealand, income determination",
+          "url": "https://taxsummaries.pwc.com/new-zealand/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 06 July 2026. \"New Zealand does not have a comprehensive capital gains tax.\" No FIF income generally where \"the total cost of FIF interests held by the individual does not exceed NZD 50,000 at any point in the income year.\" \"The RAM allows qualifying new migrants to calculate FIF income on a realisation basis\"; \"eligible taxpayers are taxed on dividends received and 70% of any realised gain on disposal of qualifying foreign shares\"."
+        },
+        {
+          "name": "Deloitte: the fifth wave, the FIF reforms continue",
+          "url": "https://www.deloitte.com/nz/en/services/tax/perspectives/the-fifth-wave-the-fif-reforms-continue.html",
+          "read": "2026-11-15",
+          "says": "Dated 22 Sep 2026. The Taxation (Annual Rates for 2026–27, FBT Simplification, Foreign Investment Funds, and Remedial Measures) Bill proposes \"the proposed increase of the FIF de minimis threshold from $50,000 to $100,000 with effect from 1 April 2026\" and \"expanding access to the RAM to all New Zealand-resident individual taxpayers from 1 April 2026\"."
+        }
+      ],
+      "also": [
+        "tax fact: added \"a bill introduced in September 2026 would raise the FIF threshold to NZD 100,000 and open the revenue account method to all residents\" (pending; today's rule scored)",
+        "sources: added Deloitte, the fifth wave"
+      ],
+      "note": "Searched the FIF threshold bill in November 2026: introduced September 2026, still a proposal in the latest pages read (Become, 13 October 2026), with an election on 7 November 2026 in between. Tax score stays 2 on today's rule.",
+      "modelMismatch": "localTaxes.ts has no New Zealand entry. The FIF fair-dividend-rate method works like a yearly tax of up to 1.95% of the opening value of foreign shares above NZD 50,000 cost (5% deemed return x 39%), after the 4-year transitional exemption; the revenue account method (US citizens arriving from April 2024) taxes dividends and 70% of realised gains instead."
+    },
+    {
+      "id": "nz-tax-ram",
+      "fact": "tax",
+      "cities": [
+        "auckland"
+      ],
+      "claim": "A US citizen who became resident on or after 1 April 2024, after at least 5 years abroad and once out of the transitional exemption, can opt into the revenue account method (enacted March 2026), taxing dividends and 70% of realised gains",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Deloitte: a small step, the revenue account method enacted",
+          "url": "https://www.deloitte.com/nz/en/services/tax/perspectives/a-small-step-the-revenue-account-method-enacted.html",
+          "read": "2026-11-15",
+          "says": "Dated 12 May 2026. Base RAM: individuals who became tax resident on or after 1 April 2024, are not transitional residents, and were non-resident for at least five consecutive years; extended RAM for people taxed because of citizenship, \"primarily US citizens and green card holders\". Realised gains are discounted by 30% (70% taxable at marginal rates) and dividends remain fully taxable. Introduced by the Taxation (Annual Rates for 2025–26, Compliance Simplification, and Remedial Measures) Act 2026."
+        },
+        {
+          "name": "Inland Revenue (tax policy): compliance simplification Act",
+          "url": "https://www.taxpolicy.ird.govt.nz/news/2026/ac-compliance-simplication-act",
+          "read": "2026-11-15",
+          "says": "Published 12 May 2026. The Act \"received Royal assent on 30 March 2026.\""
+        },
+        {
+          "name": "PwC: New Zealand, income determination",
+          "url": "https://taxsummaries.pwc.com/new-zealand/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 06 July 2026. \"New Zealand does not have a comprehensive capital gains tax.\" No FIF income generally where \"the total cost of FIF interests held by the individual does not exceed NZD 50,000 at any point in the income year.\" \"The RAM allows qualifying new migrants to calculate FIF income on a realisation basis\"; \"eligible taxpayers are taxed on dividends received and 70% of any realised gain on disposal of qualifying foreign shares\"."
+        }
+      ],
+      "note": "Deloitte gives the 1 April 2024 and 5-year tests for the base RAM; the extended RAM for US citizens may cover all foreign shares. \"(check the exit rules on leaving)\" is a hedge."
+    },
+    {
+      "id": "nz-estate-none",
+      "fact": "estate",
+      "cities": [
+        "auckland"
+      ],
+      "claim": "No inheritance or estate tax (estate duty ended in 1992) and no gift duty since October 2011",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Inland Revenue (tax technical): gift duty abolition",
+          "url": "https://www.taxtechnical.ird.govt.nz/new-legislation/act-articles/taxation-tax-administration-and-remedial-matters-act-2011/gift-duty-abolition",
+          "read": "2026-11-15",
+          "says": "Gift duty is abolished for gifts made \"on or after 1 October 2011\"; when estate duty was abolished in 1992, gift duty had been kept as a safeguard."
+        },
+        {
+          "name": "PwC: quick chart, inheritance and gift tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates",
+          "read": "2026-11-15",
+          "says": "Inheritance / gift entries: Australia \"NA\"/\"NA\" (30 June 2026); Japan 55/55 (07 August 2026); New Zealand \"NA\"/\"NA\" (06 July 2026); Singapore \"NA\"/\"NA\" (02 July 2026); Taiwan 20/20 (20 August 2026); Republic of Korea 50/50 (04 June 2026). \"NA\" = \"the territory does not have the indicated tax\"."
+        }
+      ]
+    },
+    {
+      "id": "nz-estate-us-treaty",
+      "fact": "estate",
+      "cities": [
+        "auckland"
+      ],
+      "claim": "There is no US estate treaty",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-without",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list); none of the 37 countries named in this claim is among them."
+        }
+      ],
+      "note": "Wording: \"there is no US–New Zealand estate tax treaty\"."
+    },
+    {
+      "id": "nz-estate-us-exemption",
+      "fact": "estate",
+      "cities": [
+        "auckland"
+      ],
+      "claim": "The $15M US estate exemption (2026) applies to a US citizen living here as anywhere",
+      "verdict": "confirmed",
+      "shared": "us-estate-exemption-2026",
+      "sources": [
+        {
+          "name": "IRS: What's new, estate and gift tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax",
+          "read": "2026-11-15",
+          "says": "The table \"Basic exclusion amount for year of death\" has the row 2026: $15,000,000 (2025: $13,990,000). The page says the Working Families Tax Cuts, Public Law 119-21, signed July 4, 2025, \"amends § 2010(c)(3) by increasing the basic exclusion amount to $15,000,000 for calendar year 2026\". Page last reviewed or updated 03-Nov-2026."
+        },
+        {
+          "name": "IRS: Some nonresidents with U.S. assets must file estate tax returns",
+          "url": "https://www.irs.gov/individuals/international-taxpayers/some-nonresidents-with-us-assets-must-file-estate-tax-returns",
+          "read": "2026-11-15",
+          "says": "\"U.S. citizens are subject to U.S. estate taxation with respect to their worldwide assets\"; Form 706 is required when worldwide assets plus adjusted taxable gifts exceed the basic exclusion amount in effect on the date of death. By contrast a nonresident who is not a citizen files when US-situated assets exceed $60,000. Page last reviewed or updated 27-Jun-2026."
+        }
+      ],
+      "note": "Wording: \"the $15M US exemption (2026) applies as anywhere\"."
+    },
+    {
+      "id": "nz-lending-ibkr",
+      "fact": "lending",
+      "cities": [
+        "auckland"
+      ],
+      "claim": "Interactive Brokers accepts New Zealand residents on IBKR Pro, margin included",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly accepts New Zealand residents on IBKR Pro, margin included",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Japan, Australia, Taiwan, South Korea, Singapore and New Zealand. It names no IBKR entity for them; it says \"In Australia, India, Japan, Hong Kong, or Singapore, the respective financial authorities regulate local entities.\""
+        },
+        {
+          "name": "Your Tax Base: best brokerage for US expats",
+          "url": "https://yourtaxbase.com/blog/best-brokerage-for-us-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. Quotes Fidelity's FAQ: \"we do not open accounts for any new customers residing outside the United States\"; Vanguard requires US citizenship or permanent residence \"with a U.S. mailing address\". Quotes IBKR: accounts accepted from residents of all countries except sanctioned or \"higher risk\" ones, and \"US Citizens who reside in Australia, Canada, Hong Kong, Japan, Singapore and India can not open an IRA account\"."
+        },
+        {
+          "name": "MoneyBalance: Interactive Brokers NZ review",
+          "url": "https://moneybalance.co.nz/investing/platforms/interactive-brokers-nz-review/",
+          "read": "2026-11-15",
+          "says": "Updated October 2026. \"NZ residents can open accounts, on IBKR Pro only\"; lists margin among IBKR Pro features (\"~USD $2,000 typically expected for a margin account\"); names no IBKR entity for New Zealand."
+        }
+      ],
+      "note": "IBKR's own sites (interactivebrokers.com.au, .co.jp, .com.sg) returned HTTP 403 on 2026-11-15, so acceptance stays reported (rule 3)."
+    },
+    {
+      "id": "nz-lending-schwab",
+      "fact": "lending",
+      "cities": [
+        "auckland"
+      ],
+      "claim": "Schwab International's online application does not accept New Zealand residents",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab International's online application reportedly does not (Oct 2026)",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published and last modified October 23, 2026; country check run that day through Schwab's international application. Accepted (51): ... Australia ... Singapore, South Korea ... Taiwan ...; named as not accepted: Canada, Croatia, Dominican Republic, France, Italy, Japan, Malta, New Zealand, Philippines, South Africa, Turkey, Vietnam. Only margin restriction quoted: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds\"."
+        }
+      ],
+      "note": "Agrees with the dated list. Schwab's own sites were not retried for this country (stage 1 found them blocked). Stays reported (rule 3).",
+      "also": [
+        "drawback 3: \"and no Schwab International access\" -> \"and reportedly no Schwab International access\" (hedge added to the same claim stated flat)"
+      ]
+    },
+    {
+      "id": "nz-lending-margin-unknown",
+      "fact": "lending",
+      "cities": [
+        "auckland"
+      ],
+      "claim": "Margin terms for residents of this country are not reported",
+      "verdict": "cant-confirm",
+      "hedge": "unconfirmed",
+      "wording": "margin terms by country of residence are unconfirmed",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published and last modified October 23, 2026; country check run that day through Schwab's international application. Accepted (51): ... Australia ... Singapore, South Korea ... Taiwan ...; named as not accepted: Canada, Croatia, Dominican Republic, France, Italy, Japan, Malta, New Zealand, Philippines, South Africa, Turkey, Vietnam. Only margin restriction quoted: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds\"."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Japan, Australia, Taiwan, South Korea, Singapore and New Zealand. It names no IBKR entity for them; it says \"In Australia, India, Japan, Hong Kong, or Singapore, the respective financial authorities regulate local entities.\""
+        }
+      ],
+      "note": "A statement of what is not known; nothing read gives margin terms for residents of this country."
+    },
+    {
+      "id": "nz-lending-fidelity-vanguard",
+      "fact": "lending",
+      "cities": [
+        "auckland"
+      ],
+      "claim": "Fidelity and Vanguard open no accounts for residents abroad",
+      "verdict": "cant-confirm",
+      "hedge": "reportedly",
+      "oldWording": "and Fidelity and Vanguard open no accounts for residents abroad",
+      "wording": "Fidelity and Vanguard reportedly open no new accounts for residents abroad",
+      "sources": [
+        {
+          "name": "Your Tax Base: best brokerage for US expats",
+          "url": "https://yourtaxbase.com/blog/best-brokerage-for-us-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. Quotes Fidelity's FAQ: \"we do not open accounts for any new customers residing outside the United States\"; Vanguard requires US citizenship or permanent residence \"with a U.S. mailing address\". Quotes IBKR: accounts accepted from residents of all countries except sanctioned or \"higher risk\" ones, and \"US Citizens who reside in Australia, Canada, Hong Kong, Japan, Singapore and India can not open an IRA account\"."
+        }
+      ],
+      "also": [
+        "hedge added: \"reportedly\", and \"no accounts\" narrowed to \"no new accounts\" as Fidelity's quoted FAQ says",
+        "sources: added Your Tax Base, best brokerage for US expats"
+      ],
+      "note": "A broker claim resting on a secondary page stays reported (rule 3); Fidelity's FAQ was not retried (HTTP 403 in stage 4). Worded as in the Thailand, Peru and Chile ledgers."
+    },
+    {
+      "id": "nz-visa-trvv",
+      "fact": "visa",
+      "cities": [
+        "auckland"
+      ],
+      "claim": "The Temporary Retirement Visitor Visa from age 66 needs NZD 750,000 invested in New Zealand for 2 years, NZD 500,000 to live on, NZD 60,000 a year and insurance; 2 years at a time, renewable, never leading to residence",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Immigration New Zealand: Temporary Retirement Visitor Visa",
+          "url": "https://www.immigration.govt.nz/visas/temporary-retirement-visitor-visa/",
+          "read": "2026-11-15",
+          "says": "© 2026 (site notice 13 Nov 2026). \"You must be 66 years or over\"; \"invest NZD $750,000 in acceptable investments in New Zealand for a minimum of 2 years\"; \"NZD $500,000 or more to live on\"; \"annual income of NZD $60,000 or more\"; \"maintain acceptable travel and/or health insurance\"; stay up to 2 years, after which you \"can apply for another Temporary Retirement Visitor Visa\" if you still meet the requirements."
+        },
+        {
+          "name": "Going NZ: retiring to New Zealand, the real visa options",
+          "url": "https://goingnz.com/moving-to-new-zealand/retiring-to-new-zealand/",
+          "read": "2026-11-15",
+          "says": "Updated July 2026. The Temporary Retirement Visitor Visa \"is temporary. It does not lead to residence.\""
+        }
+      ],
+      "note": "INZ's page does not say whether it leads to residence; the \"no residence\" rests on Going NZ, which quotes INZ. Searched for a November 2026 change: none to this visa (family-visa lodging moves online on 16 November 2026)."
+    },
+    {
+      "id": "nz-visa-prrv",
+      "fact": "visa",
+      "cities": [
+        "auckland"
+      ],
+      "claim": "The Parent Retirement Resident Visa needs NZD 1M invested for 4 years, the same funds and income, and an adult child who is a New Zealand citizen or resident",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Immigration New Zealand: Parent Retirement Resident Visa",
+          "url": "https://www.immigration.govt.nz/visas/parent-retirement-resident-visa/",
+          "read": "2026-11-15",
+          "says": "© 2026. \"NZD $1 million or more to invest in New Zealand for 4 years\"; settlement funds \"at least NZD $500,000\"; \"annual income of NZD $60,000 or more\"; you must \"have an adult child who is a New Zealand citizen or resident living in New Zealand\"."
+        }
+      ]
+    },
+    {
+      "id": "nz-visa-aip",
+      "fact": "visa",
+      "cities": [
+        "auckland"
+      ],
+      "claim": "Active Investor Plus residence needs NZD 5M (Growth, 3 years) or NZD 10M (Balanced, 5 years)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Immigration New Zealand: Active Investor Plus visa overview",
+          "url": "https://www.immigration.govt.nz/about-us/news-centre/investor-category",
+          "read": "2026-11-15",
+          "says": "Published 16 December 2025, last updated 11 November 2026. Growth: \"a minimum investment of NZD $5 million for a minimum period of 3 years\"; Balanced: \"a minimum investment of NZD $10 million over 5 years\"."
+        }
+      ]
+    },
+    {
+      "id": "nz-health-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "auckland"
+      ],
+      "claim": "Auckland City Hospital is New Zealand's largest public hospital, with private surgery at Southern Cross hospitals",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Healthpoint: Auckland City Hospital",
+          "url": "https://healthpoint.co.nz/auckland-city-hospital/print",
+          "read": "2026-11-15",
+          "says": "Undated directory page. \"Auckland City Hospital is New Zealand's largest public hospital and clinical research facility.\""
+        },
+        {
+          "name": "Southern Cross Healthcare: Brightside Hospital",
+          "url": "https://healthcare.southerncross.co.nz/brightside-hospital",
+          "read": "2026-11-15",
+          "says": "Undated. Brightside (Epsom, Auckland) \"offers a wide range of surgical services and post-operative care to around 4,500 patients each year\" in general surgery, gynaecology, orthopaedics, plastics and urology."
+        }
+      ],
+      "note": "southerncrosshospitals.co.nz failed on its certificate; the healthcare.southerncross.co.nz page loaded."
+    },
+    {
+      "id": "nz-health-eligibility",
+      "fact": "healthcare",
+      "cities": [
+        "auckland"
+      ],
+      "claim": "Public care is free to resident-visa holders (Parent Retirement residents included), while a Temporary Retirement Visitor is not eligible and must hold health insurance for the whole stay",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Immigration New Zealand: who can get public health care",
+          "url": "https://www.immigration.govt.nz/live/setting-up-your-life-in-new-zealand/getting-health-care-and-finding-a-doctor/who-can-get-public-health-care/",
+          "read": "2026-11-15",
+          "says": "© 2026. \"Most people who have resident visas and live in New Zealand can get publicly funded health care\"; people on \"temporary visas to visit, study and work in New Zealand\" generally \"cannot get publicly funded health care\"."
+        },
+        {
+          "name": "Immigration New Zealand: Temporary Retirement Visitor Visa",
+          "url": "https://www.immigration.govt.nz/visas/temporary-retirement-visitor-visa/",
+          "read": "2026-11-15",
+          "says": "© 2026 (site notice 13 Nov 2026). \"You must be 66 years or over\"; \"invest NZD $750,000 in acceptable investments in New Zealand for a minimum of 2 years\"; \"NZD $500,000 or more to live on\"; \"annual income of NZD $60,000 or more\"; \"maintain acceptable travel and/or health insurance\"; stay up to 2 years, after which you \"can apply for another Temporary Retirement Visitor Visa\" if you still meet the requirements."
+        }
+      ],
+      "note": "The Ministry of Health eligibility guide (health.govt.nz, in the profile's sources) returned HTTP 403."
+    },
+    {
+      "id": "nz-health-insurer-ages",
+      "fact": "healthcare",
+      "cities": [
+        "auckland"
+      ],
+      "claim": "International plans often stop taking new members around 65–70",
+      "verdict": "corrected",
+      "oldWording": "and international plans often stop taking new members around 65–70",
+      "newWording": "and some international plans take new members only up to about 75 (Allianz Care, secondary source), while Cigna Global sets no upper age limit",
+      "sources": [
+        {
+          "name": "Cigna Global: international health plans",
+          "url": "https://cignaglobal.com/international-health-plans",
+          "read": "2026-11-15",
+          "says": "Undated insurer page. \"Available from the age of 18 years old with no upper age limit\"; the FAQ says Cigna does \"not implement an age cap on any of our plans.\""
+        },
+        {
+          "name": "Expatica: Allianz Care health insurance review",
+          "url": "https://www.expatica.com/global/healthcare/healthcare-basics/allianz-care-health-insurance-review-2173537",
+          "read": "2026-11-15",
+          "says": "Last updated 22 September 2026. FAQ: \"You have to be 75 or under\" to apply for Allianz Care; applications are accepted up to the 76th birthday."
+        }
+      ],
+      "also": [
+        "sources: added Cigna Global and Expatica (Allianz Care)"
+      ],
+      "note": "As japan.json jp-health-insurer-ages. Healthcare score unchanged (4)."
+    }
+  ]
+}

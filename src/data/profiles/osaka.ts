@@ -7,7 +7,7 @@ const profile: ExpatProfile = {
   scores: { cost: 3, healthcare: 4, safety: 5, visa: 2, climate: 3, community: 1, tax: 3, estate: 2, lending: 3 },
   facts: {
     healthcare:
-      'Good hospitals, including Osaka University Hospital (accredited under Japan\'s JMIP scheme for international patients) and Iseikai International General Hospital in Kita-ku (JCI-accredited Dec 2024, multilingual staff), though fewer English-speaking doctors than Tokyo; Long Stay holders cannot join National Health Insurance and must carry private cover for the whole stay, and international plans often stop taking new members around 65–70.',
+      'Good hospitals, including Osaka University Hospital (accredited under Japan\'s JMIP scheme for international patients) and Iseikai International General Hospital in Kita-ku (JCI-accredited Dec 2024, multilingual staff), though generally fewer English-speaking doctors than Tokyo; Long Stay holders cannot join National Health Insurance and must carry private cover for the whole stay, and some international plans take new members only up to about 75 (Allianz Care, secondary source), while Cigna Global sets no upper age limit.',
     safety:
       'Japan is 10th of 163 in the 2026 Global Peace Index; violent and street crime are very low even at night, and the real risks are earthquakes and summer typhoons.',
     visa: 'No retirement or passive-income visa: the Designated Activities "Long Stay for sightseeing and recreation" status needs savings above JPY 30m (about $190k; JPY 60m for a couple on separate itineraries) and private insurance, and gives 6 months, extendable once to 1 year at most, after which a new stay means applying again from abroad; it allows no work and does not lead to permanent residence, and the Business Manager route now needs JPY 30m capital and an employee.',
@@ -15,7 +15,7 @@ const profile: ExpatProfile = {
     estate:
       'Inheritance tax of 10–55%, paid by the heirs (55% above JPY 600m per heir\'s share; basic exemption JPY 30m + 6m per heir); a foreign national on a Table I status such as Long Stay is taxed only on Japan-sited assets until 10 of the last 15 years in Japan, which a 1-year Long Stay cannot reach, while statuses outside Table I (spouse of a Japanese national, permanent resident) put the worldwide estate in reach from the start; the US–Japan estate and gift tax treaty gives credit relief, and the $15M US exemption (2026) applies as anywhere.',
     lending:
-      'IBKR reportedly serves Japan residents (Japan-resident clients may be moved to IB Securities Japan), while Schwab One International reportedly does not accept Japan residents; margin terms by country of residence are unconfirmed, and Fidelity and Vanguard open no accounts for residents abroad.',
+      'IBKR reportedly serves Japan residents (Japan-resident clients may be moved to IB Securities Japan), while Schwab One International reportedly does not accept Japan residents; margin terms by country of residence are unconfirmed, and Fidelity and Vanguard reportedly open no new accounts for residents abroad.',
     climate:
       'Humid subtropical: hot, humid summers (August highs about 34 °C / 93 °F) with an early-summer rainy season and typhoons in late summer and autumn, and cool, mostly dry winters (January highs about 10 °C / 50 °F); about 1,340 mm of rain a year.',
     community:
@@ -26,7 +26,7 @@ const profile: ExpatProfile = {
   drawbacks: [
     'No residence route on a portfolio: Long Stay ends after a year at most and needs JPY 30m in savings',
     'Up to 55% inheritance tax on worldwide assets for anyone who settles beyond Long Stay, and an exit tax on leaving',
-    'Few English-speaking foreigners, and private health cover with age limits on Long Stay',
+    'Few English-speaking foreigners, and private health cover for the whole stay on Long Stay',
   ],
   sources: [
     { name: 'PwC: Japan, other taxes', url: 'https://taxsummaries.pwc.com/japan/individual/other-taxes', edition: '2026' },
@@ -73,8 +73,15 @@ const profile: ExpatProfile = {
     },
     { name: 'Wikipedia: Osaka', url: 'https://en.wikipedia.org/wiki/Osaka' },
     { name: 'Wikipedia: Kansai International Airport', url: 'https://en.wikipedia.org/wiki/Kansai_International_Airport' },
-    { name: 'RetireJapan: Interactive Brokers review', url: 'https://retirejapan.com/blog/review-interactive-brokers' },
     { name: 'YourTaxBase: Charles Schwab for expats (country list, Oct 2026)', url: 'https://yourtaxbase.com/blog/charles-schwab-for-expats' },
+    { name: 'Meguro City: National Health Insurance for foreign residents (who cannot join)', url: 'https://www.city.meguro.tokyo.jp/kokuho/kurashi/kokuho/kanyu-gaikoku.html', edition: '2025' },
+    { name: 'National Tax Agency: exit tax (Tax Answer No.1478)', url: 'https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1478.htm', edition: '2026' },
+    { name: 'Office Tree (gyoseishoshi): Business Manager status after the October 2025 reform', url: 'https://office-tree.jp/blog/immigration/keiei-kanri-visa-2025-kaisei/', edition: '2026' },
+    { name: 'Japan Visa: long-term tourism (Long Stay) requirements', url: 'https://japan-visa.com/visas/long-term-tourism', edition: '2026' },
+    { name: 'Finance Magnates: Interactive Brokers launches NISA accounts through IB Securities Japan', url: 'https://www.financemagnates.com/forex/brokers/interactive-brokers-targets-japanese-market-with-tax-free-investment-accounts/', edition: '2025' },
+    { name: 'Cigna Global: international health plans (no upper age limit)', url: 'https://cignaglobal.com/international-health-plans' },
+    { name: 'Expatica: Allianz Care health insurance review (entry to age 75)', url: 'https://www.expatica.com/global/healthcare/healthcare-basics/allianz-care-health-insurance-review-2173537', edition: '2026' },
+    { name: 'Your Tax Base: best brokerage for US expats (Oct 2026)', url: 'https://yourtaxbase.com/blog/best-brokerage-for-us-expats', edition: '2026' },
   ],
 }
 

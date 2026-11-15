@@ -1,0 +1,845 @@
+{
+  "country": "Thailand",
+  "cities": [
+    "bangkok",
+    "chiang-mai",
+    "phuket",
+    "hua-hin",
+    "chiang-rai"
+  ],
+  "claims": [
+    {
+      "id": "th-tax-no-wealth",
+      "fact": "tax",
+      "cities": [
+        "bangkok",
+        "chiang-mai",
+        "phuket",
+        "hua-hin",
+        "chiang-rai"
+      ],
+      "claim": "Thailand has no wealth tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Thailand, other taxes",
+          "url": "https://taxsummaries.pwc.com/thailand/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 24 August 2026. \"There are no net wealth/worth taxes in Thailand.\" Inheritance tax is paid by the heir, \"regardless of nationality\", only on the amount above THB 100 million from each testator; \"The inheritance tax rate is 10%\", 5% for \"heirs who are ascendants or descendants of the testator\"; legacies to a spouse are exempt. The page does not say where the property must be."
+        },
+        {
+          "name": "PwC: quick chart, net wealth/worth tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/net-wealth-worth-tax-rates",
+          "read": "2026-11-15",
+          "says": "Headline net wealth/worth tax rate \"NA\" (\"the territory does not have the indicated tax\") for Thailand (last reviewed 24 August 2026), Malaysia (16 June 2026), Vietnam (23 September 2026), Indonesia (11 June 2026) and the Philippines (01 August 2026)."
+        }
+      ]
+    },
+    {
+      "id": "th-tax-residence-180",
+      "fact": "tax",
+      "cities": [
+        "bangkok",
+        "chiang-mai",
+        "phuket",
+        "hua-hin",
+        "chiang-rai"
+      ],
+      "claim": "Residents are those present 180+ days in a calendar year",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Thailand, residence",
+          "url": "https://taxsummaries.pwc.com/thailand/individual/residence",
+          "read": "2026-11-15",
+          "says": "Last reviewed 24 August 2026. A resident is present for an \"aggregate period of 180 days or more in any tax (calendar) year\"."
+        },
+        {
+          "name": "Thai Law Online: Thailand foreign income remittance tax, what applies in 2026",
+          "url": "https://www.thailawonline.com/thailand-foreign-income-tax-2026-what-actually-applies/",
+          "read": "2026-11-15",
+          "says": "Dated 1 August 2026, \"Last updated 10 November 2026\". Section 41: a person staying \"a period or several periods totalling 180 days or more\" in a tax year is resident; \"Income earned before 1 January 2024 falls outside the new interpretation\" (Por. 162/2566); the same-year exemption \"has not been published in the Royal Gazette\" (as of 19 October 2026). The page does not address loans or loan proceeds, nor the LTR."
+        }
+      ]
+    },
+    {
+      "id": "th-tax-remittance-2024",
+      "fact": "tax",
+      "cities": [
+        "bangkok",
+        "chiang-mai",
+        "phuket",
+        "hua-hin",
+        "chiang-rai"
+      ],
+      "claim": "Since 2024, residents pay up to 35% on foreign income arising from 2024 when it is brought into Thailand, so dividends left in the US account are untaxed",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Thailand, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/thailand/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 24 August 2026. Residents are taxed on income from outside Thailand only if it \"is earned in any tax year starting from 1 January 2024 onwards and is remitted to Thailand\", in full or in part, in the same or a later year. Top rate 35% on net income \"Over 5,000,000\" THB. Nothing on loans, the LTR or the proposed exemption."
+        },
+        {
+          "name": "Thai Law Online: Thailand foreign income remittance tax, what applies in 2026",
+          "url": "https://www.thailawonline.com/thailand-foreign-income-tax-2026-what-actually-applies/",
+          "read": "2026-11-15",
+          "says": "Dated 1 August 2026, \"Last updated 10 November 2026\". Section 41: a person staying \"a period or several periods totalling 180 days or more\" in a tax year is resident; \"Income earned before 1 January 2024 falls outside the new interpretation\" (Por. 162/2566); the same-year exemption \"has not been published in the Royal Gazette\" (as of 19 October 2026). The page does not address loans or loan proceeds, nor the LTR."
+        }
+      ]
+    },
+    {
+      "id": "th-tax-ltr-exempt",
+      "fact": "tax",
+      "cities": [
+        "bangkok",
+        "chiang-mai",
+        "phuket",
+        "hua-hin",
+        "chiang-rai"
+      ],
+      "claim": "LTR holders are exempt on remitted foreign income (Royal Decree 743)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "BOI: Royal Decree No. 743 (LTR tax exemptions), English translation",
+          "url": "https://ltr.boi.go.th/documents/Royal%20Decree%20issued%20under%20the%20Revenue%20Code%20No.743%20(EN).pdf",
+          "read": "2026-11-15",
+          "says": "B.E. 2565 (2022), given 21 May 2022 (text recovered from the PDF's compressed streams). Section 5: income tax \"shall be exempted for a foreigner categorised as Wealthy Global Citizen, Wealthy Pensioner, or Work-from-Thailand Professional who is granted a Long-Term Resident Visa\" for assessable income \"derived in the previous tax year from an employment, or from business carried on abroad, or from a property situated abroad, and brought into Thailand.\""
+        }
+      ],
+      "note": "The decree covers the Wealthy Global Citizen, Wealthy Pensioner and Work-from-Thailand Professional categories (not the Highly Skilled Professional), for income \"derived in the previous tax year\" and brought in. The profiles' shorter wording stands; the Wealthy Pensioner route they describe is covered."
+    },
+    {
+      "id": "th-tax-relief-unenacted",
+      "fact": "tax",
+      "cities": [
+        "bangkok",
+        "chiang-mai",
+        "phuket",
+        "hua-hin",
+        "chiang-rai"
+      ],
+      "claim": "Relief for others (the draft same-year or next-year remittance exemption) is unenacted (Oct 2026)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Thai Law Online: Thailand remittance tax exemption status tracker",
+          "url": "https://www.thailawonline.com/thailand-remittance-tax-exemption-status/",
+          "read": "2026-11-15",
+          "says": "\"Last updated 4 November 2026\", status \"last checked 19 October 2026\": the exemption decree \"has not been published in the Royal Gazette, and until it is, it changes nothing\"; it has not cleared Cabinet approval and Council of State review; the draft would exempt foreign income remitted in the year earned or the next. Por. 161/2566 governs remittances until then."
+        },
+        {
+          "name": "Thai Law Online: still not in the Royal Gazette, the foreign-income remittance exemption decree",
+          "url": "https://www.thailawonline.com/thai-legal-news/still-not-in-the-royal-gazette-the-foreign-income-remittance-exemption-decree/",
+          "read": "2026-11-15",
+          "says": "Dated 14 September 2026. The decree exempting same-year remittances, \"approved in principle months ago\", \"has still not been published\"; \"Until it appears, remitted foreign income remains assessable under the current rules.\""
+        }
+      ],
+      "note": "Searched for the exemption decree with the current month (November 2026): the newest page read, checked 19 October and updated 4 November 2026, says it is still not in the Royal Gazette. No government page on the draft was found; the Revenue Department was not read."
+    },
+    {
+      "id": "th-tax-loan-proceeds",
+      "fact": "tax",
+      "cities": [
+        "bangkok",
+        "chiang-mai",
+        "phuket",
+        "hua-hin",
+        "chiang-rai"
+      ],
+      "claim": "Whether remitted margin-loan proceeds are assessable income is unverified (probably not)",
+      "verdict": "cant-confirm",
+      "hedge": "unverified",
+      "wording": "whether remitted margin-loan proceeds count is unverified (they are probably not assessable income)",
+      "sources": [
+        {
+          "name": "PwC: Thailand, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/thailand/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 24 August 2026. Residents are taxed on income from outside Thailand only if it \"is earned in any tax year starting from 1 January 2024 onwards and is remitted to Thailand\", in full or in part, in the same or a later year. Top rate 35% on net income \"Over 5,000,000\" THB. Nothing on loans, the LTR or the proposed exemption."
+        },
+        {
+          "name": "Thai Law Online: Thailand foreign income remittance tax, what applies in 2026",
+          "url": "https://www.thailawonline.com/thailand-foreign-income-tax-2026-what-actually-applies/",
+          "read": "2026-11-15",
+          "says": "Dated 1 August 2026, \"Last updated 10 November 2026\". Section 41: a person staying \"a period or several periods totalling 180 days or more\" in a tax year is resident; \"Income earned before 1 January 2024 falls outside the new interpretation\" (Por. 162/2566); the same-year exemption \"has not been published in the Royal Gazette\" (as of 19 October 2026). The page does not address loans or loan proceeds, nor the LTR."
+        }
+      ],
+      "note": "Both pages tie the remittance rule to assessable income and say nothing on loans. A search result quoted BDO as saying the rule does not reach \"a loan remitted to Thailand\", but the BDO alert could not be read (fulcrum-www.bdo.global failed on DNS; the same path on www.bdo.global is a 404), so it is not used."
+    },
+    {
+      "id": "th-estate-rate-threshold",
+      "fact": "estate",
+      "cities": [
+        "bangkok",
+        "chiang-mai",
+        "phuket",
+        "hua-hin",
+        "chiang-rai"
+      ],
+      "claim": "Inheritance tax is 5% for descendants above THB 100m per heir, paid by the heir",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Thailand, other taxes",
+          "url": "https://taxsummaries.pwc.com/thailand/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 24 August 2026. \"There are no net wealth/worth taxes in Thailand.\" Inheritance tax is paid by the heir, \"regardless of nationality\", only on the amount above THB 100 million from each testator; \"The inheritance tax rate is 10%\", 5% for \"heirs who are ascendants or descendants of the testator\"; legacies to a spouse are exempt. The page does not say where the property must be."
+        },
+        {
+          "name": "Thai Law Online (French edition): inheritance tax in Thailand",
+          "url": "https://www.thailawonline.com/fr/inheritance-tax-in-thailand/",
+          "read": "2026-11-15",
+          "says": "\"Dernière mise à jour le 2 novembre 2026\". The tax is \"à la charge de la personne qui reçoit\"; liable are Thai nationals, non-Thais \"ayant un domicile dans le Royaume conformément à la loi sur l'immigration\", and non-Thais who receive \"une succession constituée d'un bien situé en Thaïlande\"; 5% for ascendants and descendants, 10% otherwise; \"Le seuil est par bénéficiaire, par personne décédée\" (THB 100 million)."
+        },
+        {
+          "name": "PwC: quick chart, inheritance and gift tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates",
+          "read": "2026-11-15",
+          "says": "Thailand (24 August 2026): inheritance 10, gift 5; Malaysia (16 June 2026): NA, NA; Vietnam (23 September 2026): 10, 10; Indonesia (11 June 2026): NA, NA; Philippines (01 August 2026): \"There is no inheritance tax in the Philippines.\" \"an estate tax of 6% is imposed on the assets of the decedent taxpayer.\""
+        }
+      ]
+    },
+    {
+      "id": "th-estate-reach",
+      "fact": "estate",
+      "cities": [
+        "bangkok",
+        "chiang-mai",
+        "phuket",
+        "hua-hin",
+        "chiang-rai"
+      ],
+      "claim": "It reaches non-Thai heirs living abroad only on property in Thailand, so US assets left to US-resident children are outside it",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Thai Law Online (French edition): inheritance tax in Thailand",
+          "url": "https://www.thailawonline.com/fr/inheritance-tax-in-thailand/",
+          "read": "2026-11-15",
+          "says": "\"Dernière mise à jour le 2 novembre 2026\". The tax is \"à la charge de la personne qui reçoit\"; liable are Thai nationals, non-Thais \"ayant un domicile dans le Royaume conformément à la loi sur l'immigration\", and non-Thais who receive \"une succession constituée d'un bien situé en Thaïlande\"; 5% for ascendants and descendants, 10% otherwise; \"Le seuil est par bénéficiaire, par personne décédée\" (THB 100 million)."
+        },
+        {
+          "name": "Forvis Mazars: Thailand Inheritance Tax Act",
+          "url": "https://www.forvismazars.com/th/en/insights/doing-business-in-thailand/tax/inheritance-tax-act",
+          "read": "2026-11-15",
+          "says": "Dated 3 September 2015. Liable: Thai nationals; a non-Thai \"who has residence in Thailand under the immigration law\"; and a non-Thai \"who is receiving an inheritance of property situated in Thailand\". 10%, \"reduced to 5%\" for descendants and ascendants, on inheritances \"exceeding 100 million baht\"."
+        }
+      ],
+      "note": "Both pages list the three groups liable; a non-Thai heir with residence in Thailand is taxed whatever the property's location, which does not touch the profiles' case of US-resident children. PwC says only \"regardless of nationality\". localTaxes.ts (TH) agrees."
+    },
+    {
+      "id": "th-estate-no-treaty",
+      "fact": "estate",
+      "cities": [
+        "bangkok",
+        "chiang-mai",
+        "phuket",
+        "hua-hin",
+        "chiang-rai"
+      ],
+      "claim": "There is no US estate treaty",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-without",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list); none of the 37 countries named in this claim is among them."
+        }
+      ],
+      "note": "Wording: \"there is no US estate treaty\"."
+    },
+    {
+      "id": "th-lending-ibkr",
+      "fact": "lending",
+      "cities": [
+        "bangkok",
+        "chiang-mai",
+        "phuket",
+        "hua-hin",
+        "chiang-rai"
+      ],
+      "claim": "Interactive Brokers accepts Thailand residents",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly accepts Thailand residents (IBKR Pro)",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Indonesia, Malaysia, the Philippines, Thailand and Vietnam; it names no IBKR entity for them, and says the default account type outside the US is IBKR PRO."
+        },
+        {
+          "name": "Your Tax Base: best brokerage for US expats",
+          "url": "https://yourtaxbase.com/blog/best-brokerage-for-us-expats",
+          "read": "2026-11-15",
+          "says": "Dated October 23, 2026. Quotes Fidelity's FAQ: \"we do not open accounts for any new customers residing outside the United States\"; Vanguard requires US citizenship or permanent residence \"with a U.S. mailing address\". Quotes IBKR's account page: \"Accounts are accepted from citizens or residents of all countries\", except sanctioned countries or those \"determined to be higher risk\". Says nothing country-specific on IBKR for Thailand, Malaysia, Vietnam, Indonesia or the Philippines."
+        }
+      ],
+      "note": "IBKR's country list (https://www.interactivebrokers.com/en/accounts/open-account-country-list.php) returned HTTP 403 again on 2026-11-15, so acceptance stays reported (rule 3)."
+    },
+    {
+      "id": "th-lending-schwab",
+      "fact": "lending",
+      "cities": [
+        "bangkok",
+        "chiang-mai",
+        "phuket",
+        "hua-hin",
+        "chiang-rai"
+      ],
+      "claim": "Schwab One International accepted Thailand residents in Oct 2026",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab One International's online form reportedly accepted Thailand in Oct 2026",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. On that day the author ran every entry in Schwab's international account selector through the application: it accepted residents of 51 of 263 countries and regions: Argentina, Australia, Austria, the Bahamas, Belgium, Bermuda, Brazil, the British Virgin Islands, the Cayman Islands, Chile, China, Colombia, Costa Rica, the Czech Republic, Denmark, Ecuador, Finland, Germany, Greece, Guatemala, Hong Kong, Iceland, India, Indonesia, Ireland, Israel, Jersey, Luxembourg, Malaysia, the Marshall Islands, Mexico, the Netherlands, Norway, Panama, Paraguay, Peru, Poland, Portugal, Qatar, Singapore, South Korea, Spain, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Turks and Caicos, the United Arab Emirates, the United Kingdom and Uruguay. Named as not accepted: Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam; for the rest the application said \"Schwab currently cannot open accounts for residents of your country/region.\" The test covers new applicants on that day only."
+        },
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026 (country check run that day). Online application open to residents: Thailand \"Yes\"; Malaysia and Indonesia in the list of 51 accepted; Vietnam \"No\"; Philippines \"No\". The only margin restriction quoted: \"Customers residing within Europe are restricted from using their Available Margin Loan Value\" to withdraw funds; nothing on Asia."
+        }
+      ],
+      "note": "Agrees with the dated list (re-read 2026-11-15). Schwab's own sites were not retried; stage 1 found them blocked (HTTP 403 or an error page). Stays reported (rule 3)."
+    },
+    {
+      "id": "th-lending-margin-unreported",
+      "fact": "lending",
+      "cities": [
+        "bangkok",
+        "chiang-mai",
+        "phuket",
+        "hua-hin",
+        "chiang-rai"
+      ],
+      "claim": "Margin terms for Thailand residents are not reported",
+      "verdict": "cant-confirm",
+      "hedge": "unreported",
+      "wording": "margin by country of residence is unreported",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026 (country check run that day). Online application open to residents: Thailand \"Yes\"; Malaysia and Indonesia in the list of 51 accepted; Vietnam \"No\"; Philippines \"No\". The only margin restriction quoted: \"Customers residing within Europe are restricted from using their Available Margin Loan Value\" to withdraw funds; nothing on Asia."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Indonesia, Malaysia, the Philippines, Thailand and Vietnam; it names no IBKR entity for them, and says the default account type outside the US is IBKR PRO."
+        }
+      ],
+      "note": "A statement of what is not known; nothing read gives margin terms for residents of this country."
+    },
+    {
+      "id": "th-lending-fidelity-vanguard",
+      "fact": "lending",
+      "cities": [
+        "bangkok",
+        "chiang-mai",
+        "phuket",
+        "hua-hin",
+        "chiang-rai"
+      ],
+      "claim": "Fidelity and Vanguard open no accounts for residents abroad",
+      "verdict": "cant-confirm",
+      "hedge": "reportedly",
+      "oldWording": "and Fidelity and Vanguard open no accounts for residents abroad",
+      "wording": "Fidelity and Vanguard reportedly open no new accounts for residents abroad",
+      "sources": [
+        {
+          "name": "Your Tax Base: best brokerage for US expats",
+          "url": "https://yourtaxbase.com/blog/best-brokerage-for-us-expats",
+          "read": "2026-11-15",
+          "says": "Dated October 23, 2026. Quotes Fidelity's FAQ: \"we do not open accounts for any new customers residing outside the United States\"; Vanguard requires US citizenship or permanent residence \"with a U.S. mailing address\". Quotes IBKR's account page: \"Accounts are accepted from citizens or residents of all countries\", except sanctioned countries or those \"determined to be higher risk\". Says nothing country-specific on IBKR for Thailand, Malaysia, Vietnam, Indonesia or the Philippines."
+        }
+      ],
+      "also": [
+        "hedge added: \"reportedly\", and \"no accounts\" narrowed to \"no new accounts\" as Fidelity's quoted FAQ says"
+      ],
+      "note": "A broker claim resting on a secondary page stays reported (rule 3); Fidelity's FAQ returned HTTP 403 in stage 4 and was not retried. Worded as in the Guatemala, Peru and Chile ledgers."
+    },
+    {
+      "id": "th-visa-retirement-funds",
+      "fact": "visa",
+      "cities": [
+        "bangkok",
+        "chiang-mai",
+        "phuket",
+        "hua-hin",
+        "chiang-rai"
+      ],
+      "claim": "Retirement stay (Non-O or O-A) from age 50 on THB 800,000 in a Thai bank or THB 65,000/month of income",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Royal Thai Embassy, Oslo: Non-Immigrant O-A (long stay)",
+          "url": "https://oslo.thaiembassy.org/en/page/non-immigrant-o-a-long-stay",
+          "read": "2026-11-15",
+          "says": "Updated 15 Sep 2026. Age \"50 years of age and above\"; a bank balance \"not less than 800,000 Baht\", or monthly income \"of not less than 65,000 Baht\", or a combination totalling 800,000 Baht a year; health insurance \"not less than 100,000 USD (or not less than 3,000,000 Baht)\". Only an applicant with official proof that insurers denied cover may instead show a deposit of \"not less than 100,000USD (or 3,000,000 Baht)\" held two months for medical use. Visa valid one year; stay of one year; 90-day notification required."
+        },
+        {
+          "name": "Thai Law Online: Thailand retirement visa 2026, O-A, O-X and the 800,000 baht rule",
+          "url": "https://www.thailawonline.com/thailand-retirement-visa-requirements/",
+          "read": "2026-11-15",
+          "says": "Byline 22 August 2026, \"Last updated 8 November 2026\". The Non-O retirement extension inside Thailand \"carries no insurance requirement\"; the O-A needs 3,000,000 baht or USD 100,000 cover. From 50: 800,000 baht in a Thai bank (two months before filing, three after; never below 400,000), or 65,000 baht a month, or a combination; extensions are one year at a time; 90-day address reports under section 37(5) of the Immigration Act."
+        },
+        {
+          "name": "Issa Compass: Thailand retirement visa 2026",
+          "url": "https://www.issacompass.com/insights/retirement-visa-thailand",
+          "read": "2026-11-15",
+          "says": "Published 26 Mar 2026, updated 18 Oct 2026. From 50; 800,000 THB or 65,000 THB a month; each year another one-year extension at the local immigration office (fee 1,900 THB); TM.47 every 90 days."
+        }
+      ]
+    },
+    {
+      "id": "th-visa-yearly-90-day",
+      "fact": "visa",
+      "cities": [
+        "bangkok",
+        "chiang-mai",
+        "phuket",
+        "hua-hin",
+        "chiang-rai"
+      ],
+      "claim": "Renewed yearly, with 90-day reporting",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Royal Thai Embassy, Oslo: Non-Immigrant O-A (long stay)",
+          "url": "https://oslo.thaiembassy.org/en/page/non-immigrant-o-a-long-stay",
+          "read": "2026-11-15",
+          "says": "Updated 15 Sep 2026. Age \"50 years of age and above\"; a bank balance \"not less than 800,000 Baht\", or monthly income \"of not less than 65,000 Baht\", or a combination totalling 800,000 Baht a year; health insurance \"not less than 100,000 USD (or not less than 3,000,000 Baht)\". Only an applicant with official proof that insurers denied cover may instead show a deposit of \"not less than 100,000USD (or 3,000,000 Baht)\" held two months for medical use. Visa valid one year; stay of one year; 90-day notification required."
+        },
+        {
+          "name": "Thai Law Online: Thailand retirement visa 2026, O-A, O-X and the 800,000 baht rule",
+          "url": "https://www.thailawonline.com/thailand-retirement-visa-requirements/",
+          "read": "2026-11-15",
+          "says": "Byline 22 August 2026, \"Last updated 8 November 2026\". The Non-O retirement extension inside Thailand \"carries no insurance requirement\"; the O-A needs 3,000,000 baht or USD 100,000 cover. From 50: 800,000 baht in a Thai bank (two months before filing, three after; never below 400,000), or 65,000 baht a month, or a combination; extensions are one year at a time; 90-day address reports under section 37(5) of the Immigration Act."
+        },
+        {
+          "name": "Issa Compass: Thailand retirement visa 2026",
+          "url": "https://www.issacompass.com/insights/retirement-visa-thailand",
+          "read": "2026-11-15",
+          "says": "Published 26 Mar 2026, updated 18 Oct 2026. From 50; 800,000 THB or 65,000 THB a month; each year another one-year extension at the local immigration office (fee 1,900 THB); TM.47 every 90 days."
+        }
+      ]
+    },
+    {
+      "id": "th-visa-oa-insurance",
+      "fact": "visa",
+      "cities": [
+        "bangkok",
+        "chiang-mai",
+        "phuket",
+        "hua-hin",
+        "chiang-rai"
+      ],
+      "claim": "The O-A needs USD 100k health cover, or a USD 100k deposit",
+      "verdict": "corrected",
+      "oldWording": "O-A needs USD 100k health cover (or a USD 100k deposit)",
+      "newWording": "O-A needs USD 100k health cover (or, if insurers refuse you, a USD 100k deposit)",
+      "sources": [
+        {
+          "name": "Royal Thai Embassy, Oslo: Non-Immigrant O-A (long stay)",
+          "url": "https://oslo.thaiembassy.org/en/page/non-immigrant-o-a-long-stay",
+          "read": "2026-11-15",
+          "says": "Updated 15 Sep 2026. Age \"50 years of age and above\"; a bank balance \"not less than 800,000 Baht\", or monthly income \"of not less than 65,000 Baht\", or a combination totalling 800,000 Baht a year; health insurance \"not less than 100,000 USD (or not less than 3,000,000 Baht)\". Only an applicant with official proof that insurers denied cover may instead show a deposit of \"not less than 100,000USD (or 3,000,000 Baht)\" held two months for medical use. Visa valid one year; stay of one year; 90-day notification required."
+        },
+        {
+          "name": "Thai Law Online: Thailand retirement visa 2026, O-A, O-X and the 800,000 baht rule",
+          "url": "https://www.thailawonline.com/thailand-retirement-visa-requirements/",
+          "read": "2026-11-15",
+          "says": "Byline 22 August 2026, \"Last updated 8 November 2026\". The Non-O retirement extension inside Thailand \"carries no insurance requirement\"; the O-A needs 3,000,000 baht or USD 100,000 cover. From 50: 800,000 baht in a Thai bank (two months before filing, three after; never below 400,000), or 65,000 baht a month, or a combination; extensions are one year at a time; 90-day address reports under section 37(5) of the Immigration Act."
+        }
+      ],
+      "note": "The cover amount is right; the deposit is not a free alternative: the embassy accepts it only with official proof that insurers refused cover. No score change."
+    },
+    {
+      "id": "th-visa-non-o-no-insurance",
+      "fact": "visa",
+      "cities": [
+        "chiang-mai",
+        "phuket",
+        "hua-hin",
+        "chiang-rai"
+      ],
+      "claim": "The in-country Non-O retirement extension needs no health insurance",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Thai Law Online: Thailand retirement visa 2026, O-A, O-X and the 800,000 baht rule",
+          "url": "https://www.thailawonline.com/thailand-retirement-visa-requirements/",
+          "read": "2026-11-15",
+          "says": "Byline 22 August 2026, \"Last updated 8 November 2026\". The Non-O retirement extension inside Thailand \"carries no insurance requirement\"; the O-A needs 3,000,000 baht or USD 100,000 cover. From 50: 800,000 baht in a Thai bank (two months before filing, three after; never below 400,000), or 65,000 baht a month, or a combination; extensions are one year at a time; 90-day address reports under section 37(5) of the Immigration Act."
+        }
+      ],
+      "note": "A dated 2026 secondary page; no Immigration Bureau page was read."
+    },
+    {
+      "id": "th-visa-ltr-pensioner",
+      "fact": "visa",
+      "cities": [
+        "bangkok",
+        "chiang-mai",
+        "phuket",
+        "hua-hin",
+        "chiang-rai"
+      ],
+      "claim": "The 10-year LTR Wealthy Pensioner (50+) needs USD 80,000/year of passive income, investment returns included, or USD 40,000 plus USD 250,000 invested in Thailand",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "BOI: Long-Term Resident visa",
+          "url": "https://ltr.boi.go.th/",
+          "read": "2026-11-15",
+          "says": "Undated (footer © 2022; content refers to 2025 and 2026). Wealthy Pensioners: 50 or older with \"an annual pension or stable passive income\" of at least \"USD 80,000 / year\"; with USD 40,000–80,000 the applicant must make \"additional investments of USD 250,000\" in Thai bonds, companies or property; passive income \"includes, but are not limited to pension, rental, realized capital gain\", dividends and interest. Wealthy Global Citizens: \"at least USD 1 million in global assets\", plus \"Investment in Thailand of at least USD 500,000\". Five years, extendable by five more."
+        },
+        {
+          "name": "KPMG: GMS Flash Alert 2026-148, Thailand LTR visa industry categories",
+          "url": "https://kpmg.com/xx/en/our-insights/gms-flash-alert/2026/flash-alert-2026-148.html",
+          "read": "2026-11-15",
+          "says": "Dated 15 June 2026. The BOI broadened the targeted-industry categories for the LTR's highly skilled professional category; nothing on the Wealthy Pensioner or Wealthy Global Citizen categories."
+        }
+      ],
+      "note": "Bangkok says \"investment returns included\", the others \"that you must actually show\"; the BOI page sets the income at the time of application and counts dividends, interest and realized gains. Searched the LTR and the retirement visa with the current month: the only 2026 change found (KPMG, June 2026) concerns the highly skilled professional category."
+    },
+    {
+      "id": "th-visa-ltr-wgc",
+      "fact": "visa",
+      "cities": [
+        "bangkok"
+      ],
+      "claim": "The LTR Wealthy Global Citizen needs USD 1M in assets plus USD 500k in Thailand",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "BOI: Long-Term Resident visa",
+          "url": "https://ltr.boi.go.th/",
+          "read": "2026-11-15",
+          "says": "Undated (footer © 2022; content refers to 2025 and 2026). Wealthy Pensioners: 50 or older with \"an annual pension or stable passive income\" of at least \"USD 80,000 / year\"; with USD 40,000–80,000 the applicant must make \"additional investments of USD 250,000\" in Thai bonds, companies or property; passive income \"includes, but are not limited to pension, rental, realized capital gain\", dividends and interest. Wealthy Global Citizens: \"at least USD 1 million in global assets\", plus \"Investment in Thailand of at least USD 500,000\". Five years, extendable by five more."
+        }
+      ]
+    },
+    {
+      "id": "th-health-public-schemes",
+      "fact": "healthcare",
+      "cities": [
+        "bangkok",
+        "chiang-mai",
+        "phuket",
+        "hua-hin",
+        "chiang-rai"
+      ],
+      "claim": "Foreigners are outside the public schemes (Phuket: foreigners rely on private insurance)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Thailand Starter Kit: universal healthcare coverage, a guide for expats",
+          "url": "https://www.thailandstarterkit.com/health/universal-healthcare-coverage/",
+          "read": "2026-11-15",
+          "says": "Dated June 17, 2026. The UCS \"is only available to Thai citizens\"; for expats \"both the CSMBS and UCS are off-limits\"; non-working expats, retirees included, \"aren't covered by the SSS and aren't eligible for care under the UCS or CSMBS\"."
+        }
+      ]
+    },
+    {
+      "id": "th-health-insurer-ages",
+      "fact": "healthcare",
+      "cities": [
+        "bangkok",
+        "chiang-mai",
+        "phuket",
+        "hua-hin",
+        "chiang-rai"
+      ],
+      "claim": "Most Thai insurers take new applicants only under 60–65 (Pacific Cross to 75)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Pattaya Mail: health insurance entry ages and premiums for retirees",
+          "url": "https://www.pattayamail.com/latestnews/news/547221-547221",
+          "read": "2026-11-15",
+          "says": "Dated May 4, 2026. \"Most domestic insurance companies restrict new applicants to those under 60-65 years old\"; \"Even specialized expat insurers such as Pacific Cross limit new policyholders to a maximum age of 75.\""
+        }
+      ]
+    },
+    {
+      "id": "th-health-bangkok-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "bangkok"
+      ],
+      "claim": "Internationally accredited private hospitals: Bumrungrad, Bangkok Hospital, Samitivej, MedPark",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Better by MTA: best hospitals in Thailand for international patients 2026",
+          "url": "https://www.better.medicaltourism.com/article/best-hospitals-thailand-international-patients-2026",
+          "read": "2026-11-15",
+          "says": "Dated May 11, 2026. Bumrungrad: \"JCI Accreditation: Yes — continuously accredited since 2002\"."
+        },
+        {
+          "name": "Bangkok Hospital: sixth JCI accreditation",
+          "url": "https://www.bangkokhospital.com/en/bangkok/content/news-jci-gold-seal-of-approval-6th-time",
+          "read": "2026-11-15",
+          "says": "Updated 16 Jan 2026. Bangkok Hospital Headquarters received the JCI Gold Seal of Approval in February 2023, its sixth JCI accreditation."
+        },
+        {
+          "name": "MedPark Hospital: second consecutive JCI accreditation",
+          "url": "https://www.medparkhospital.com/zh-CN/news/jci-accreditation-certificate-2026",
+          "read": "2026-11-15",
+          "says": "\"MedPark Hospital has earned Joint Commission International (JCI) accreditation for the second consecutive term\", valid \"from 27 February 2026 to 26 February 2029\"."
+        },
+        {
+          "name": "CureMeAbroad: Samitivej Sukhumvit Hospital",
+          "url": "https://curemeabroad.com/hospitals/samitivej-sukhumvit-hospital",
+          "read": "2026-11-15",
+          "says": "Undated (footer © 2026). \"Accredited by JCI since 2007\"."
+        }
+      ],
+      "note": "Samitivej rests on a secondary page: samitivejhospitals.com returned HTTP 403 (both /en/ and /id/ \"about us\" pages). JCI's own directory was not read (stage 4 found it blocked)."
+    },
+    {
+      "id": "th-health-bangkok-staff-prices",
+      "fact": "healthcare",
+      "cities": [
+        "bangkok"
+      ],
+      "claim": "English-speaking, often US-trained specialists, well below US prices",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Better by MTA: best hospitals in Thailand for international patients 2026",
+          "url": "https://www.better.medicaltourism.com/article/best-hospitals-thailand-international-patients-2026",
+          "read": "2026-11-15",
+          "says": "Dated May 11, 2026. Bumrungrad physicians trained at \"Harvard, Johns Hopkins, Mayo Clinic\"; English is \"the primary language of international patient care\"; costs \"50–70% lower than the United States or Western Europe\"."
+        }
+      ],
+      "note": "A promotional page, and it speaks of Bumrungrad; the profile's \"often\" fits."
+    },
+    {
+      "id": "th-health-chiang-mai-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "chiang-mai"
+      ],
+      "claim": "Good, low-cost private hospitals: Bangkok Hospital Chiang Mai and Chiang Mai Ram",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Thailand Starter Kit: top hospitals in Chiang Mai for foreigners (2026)",
+          "url": "https://www.thailandstarterkit.com/health/hospitals-in-chiang-mai/",
+          "read": "2026-11-15",
+          "says": "Dated November 13, 2026. Bangkok Hospital Chiang Mai and Chiang Mai Ram are \"the only two private facilities in the city that are accredited\" by JCI; Chiang Mai Ram is \"One of the most popular private hospitals\"; a walk-in visit with consultation and X-ray cost \"THB1,900 or US$53.85\". Nothing on referrals to Bangkok."
+        }
+      ]
+    },
+    {
+      "id": "th-health-chiang-mai-referral",
+      "fact": "healthcare",
+      "cities": [
+        "chiang-mai"
+      ],
+      "claim": "Complex care is often referred to Bangkok",
+      "verdict": "cant-confirm",
+      "hedge": "reportedly",
+      "oldWording": "complex care is often referred to Bangkok",
+      "wording": "complex care is reportedly often referred to Bangkok",
+      "sources": [
+        {
+          "name": "Thailand Starter Kit: top hospitals in Chiang Mai for foreigners (2026)",
+          "url": "https://www.thailandstarterkit.com/health/hospitals-in-chiang-mai/",
+          "read": "2026-11-15",
+          "says": "Dated November 13, 2026. Does not describe complex or specialist cases being referred to Bangkok; advises \"For anything big like surgery, choose the doctor, not the hospital.\""
+        },
+        {
+          "name": "Thai Condo Guide: Chiang Mai healthcare, international hospitals guide 2026",
+          "url": "https://thai-condo-guide.blogspot.com/2026/03/chiang-mai-healthcare-international-hospitals-guide-2026.html",
+          "read": "2026-11-15",
+          "says": "Dated March 10, 2026. Nothing on referral to Bangkok; Bangkok Hospital Chiang Mai is part of a national network with strong cardiac and oncology departments."
+        }
+      ],
+      "also": [
+        "hedge added: \"reportedly\""
+      ],
+      "note": "No page read says it; kept with a hedge rather than removed because it bears on the healthcare score (3) only as context."
+    },
+    {
+      "id": "th-health-phuket-bhp-jci",
+      "fact": "healthcare",
+      "cities": [
+        "phuket"
+      ],
+      "claim": "Bangkok Hospital Phuket has been JCI-accredited since 2009, its 6th cycle covering 2025–2028",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Bangkok Hospital Phuket: Joint Commission International accreditation",
+          "url": "https://www.bangkokhospital.com/en/phuket/about-us/awards-accreditations/joint-commission-international-accreditation-jci",
+          "read": "2026-11-15",
+          "says": "Undated (footer © 2026). \"first achieved JCI accreditation in 2009\"; \"6th Accreditation: 2025–2028 (Latest)\"."
+        }
+      ]
+    },
+    {
+      "id": "th-health-phuket-others",
+      "fact": "healthcare",
+      "cities": [
+        "phuket"
+      ],
+      "claim": "Phuket International Hospital and Mission Hospital are other private options, Vachira Phuket the public hospital",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Phuket Expat Guide: hospitals in Phuket compared (2026)",
+          "url": "https://phuketexpatguide.pages.dev/healthcare/hospitals-phuket/",
+          "read": "2026-11-15",
+          "says": "\"Last updated: May 2026\". Phuket International Hospital is \"another private option\"; Siriroj Hospital, \"often called Mission Hospital\", is \"a private hospital on Thepkasattri Road\"; Vachira Phuket is \"the main government hospital on Yaowarat Road\"."
+        }
+      ]
+    },
+    {
+      "id": "th-health-huahin-jci",
+      "fact": "healthcare",
+      "cities": [
+        "hua-hin"
+      ],
+      "claim": "Bangkok Hospital Hua Hin is JCI-accredited from 1 March 2024",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Bangkok Hospital Hua Hin: Joint Commission International accreditation",
+          "url": "https://www.bangkokhospital.com/en/huahin/about-us/awards-accreditations/joint-commission-international-jci-bhh",
+          "read": "2026-11-15",
+          "says": "Accreditation \"effective 1 March 2024\"; it \"applies only to Bangkok Hospital Hua Hin\" and not its outlying clinics."
+        }
+      ]
+    },
+    {
+      "id": "th-health-huahin-others",
+      "fact": "healthcare",
+      "cities": [
+        "hua-hin"
+      ],
+      "claim": "San Paulo Hua Hin is a cheaper private option; serious cases often go to Bangkok, 2.5–3 hours by road",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Thailand Starter Kit: living in Hua Hin",
+          "url": "https://www.thailandstarterkit.com/moving/living-in-hua-hin/",
+          "read": "2026-11-15",
+          "says": "Dated October 19, 2026. San Paulo Hua-Hin is \"the more affordable private alternative\"; for serious cases \"it's better to go to Bangkok\", \"roughly 200km and 2.5 to 3 hours depending on traffic\"."
+        }
+      ]
+    },
+    {
+      "id": "th-health-chiangrai-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "chiang-rai"
+      ],
+      "claim": "Private hospitals in town include Bangkok Hospital Chiang Rai, Overbrook and Kasemrad Sriburin",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Chiang Rai Times: best hospitals in Chiang Rai",
+          "url": "https://www.chiangraitimes.com/health/best-hospitals-in-chiang-rai/",
+          "read": "2026-11-15",
+          "says": "\"Last updated: February 17, 2026\". Names Bangkok Hospital Chiang Rai, Kasemrad Sriburin General Hospital, Overbrook Hospital Chiang Rai, Chiang Rai Prachanukroh Hospital (public) and Mae Fah Luang University Medical Center; no \"Chiang Rai Inter\" or \"Chiang Rai International Hospital\"."
+        },
+        {
+          "name": "Chiang Rai Times: Chiang Rai healthcare options for expats",
+          "url": "https://www.chiangraitimes.com/health/chiang-rai-healthcare-options-for-expats/",
+          "read": "2026-11-15",
+          "says": "\"Last updated: August 20, 2026\". Names Bangkok Hospital Chiang Rai, Overbrook and Kasemrad Sriburin; Overbrook and Bangkok Hospital Chiang Rai signed a referral agreement on June 10, 2026. Nothing on JCI or on Chiang Mai."
+        }
+      ]
+    },
+    {
+      "id": "th-health-chiangrai-inter",
+      "fact": "healthcare",
+      "cities": [
+        "chiang-rai"
+      ],
+      "claim": "Chiang Rai Inter is among the private hospitals in town",
+      "verdict": "cant-confirm",
+      "hedge": "removed",
+      "oldWording": "Kasemrad Sriburin, Chiang Rai Inter)",
+      "sources": [
+        {
+          "name": "Chiang Rai Times: best hospitals in Chiang Rai",
+          "url": "https://www.chiangraitimes.com/health/best-hospitals-in-chiang-rai/",
+          "read": "2026-11-15",
+          "says": "\"Last updated: February 17, 2026\". Five hospitals named; neither \"Chiang Rai Inter\" nor \"Chiang Rai International Hospital\" appears."
+        }
+      ],
+      "also": [
+        "healthcare: \"Chiang Rai Inter\" dropped from the hospital list"
+      ],
+      "note": "A search result named a \"Chiang Rai International Christian Hospital\" near the airport, but no page read confirmed it, so the name was removed rather than guessed."
+    },
+    {
+      "id": "th-health-chiangrai-overbrook-jci",
+      "fact": "healthcare",
+      "cities": [
+        "chiang-rai"
+      ],
+      "claim": "Overbrook claims JCI accreditation",
+      "verdict": "cant-confirm",
+      "hedge": "reportedly",
+      "wording": "Overbrook reportedly claims JCI accreditation (secondary)",
+      "sources": [
+        {
+          "name": "ArokaGO: Overbrook Hospital",
+          "url": "https://arokago.com/providers/overbrook-hospital",
+          "read": "2026-11-15",
+          "says": "Undated (© 2026). Overbrook \"achieved certification from the esteemed Joint Commissions International (JCI)\", \"the first healthcare institution in Chiang Rai to attain such global recognition\"."
+        }
+      ],
+      "note": "Only a directory page says so; JCI's directory was not read, and neither Chiang Rai Times page mentions JCI. The hedge stays."
+    },
+    {
+      "id": "th-health-chiangrai-chiang-mai",
+      "fact": "healthcare",
+      "cities": [
+        "chiang-rai"
+      ],
+      "claim": "Specialist care is often in Chiang Mai, about 3.5 hours away",
+      "verdict": "corrected",
+      "oldWording": "specialist care is often in Chiang Mai, about 3.5 hours away",
+      "newWording": "the most specialised care may mean Chiang Mai, about 2–3 hours away (secondary source)",
+      "sources": [
+        {
+          "name": "Chiang Rai Times: best hospitals in Chiang Rai",
+          "url": "https://www.chiangraitimes.com/health/best-hospitals-in-chiang-rai/",
+          "read": "2026-11-15",
+          "says": "\"Last updated: February 17, 2026\". \"For rare, highly specialized treatment, Chiang Mai (about 2 to 3 hours away) may be the next step.\""
+        }
+      ],
+      "also": [
+        "sources: added Chiang Rai Times, best hospitals in Chiang Rai"
+      ],
+      "note": "The page puts Chiang Mai at 2–3 hours and speaks only of rare, highly specialised treatment, not specialist care in general. The access fact (\"about 3–4 hours by road\") is outside this plan's scope and was left alone; the two now differ."
+    }
+  ]
+}

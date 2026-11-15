@@ -1,0 +1,673 @@
+{
+  "country": "Vietnam",
+  "cities": [
+    "ho-chi-minh-city",
+    "da-nang",
+    "hanoi"
+  ],
+  "claims": [
+    {
+      "id": "vn-tax-no-wealth",
+      "fact": "tax",
+      "cities": [
+        "ho-chi-minh-city",
+        "da-nang",
+        "hanoi"
+      ],
+      "claim": "Vietnam has no wealth tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: quick chart, net wealth/worth tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/net-wealth-worth-tax-rates",
+          "read": "2026-11-15",
+          "says": "Headline net wealth/worth tax rate \"NA\" (\"the territory does not have the indicated tax\") for Thailand (last reviewed 24 August 2026), Malaysia (16 June 2026), Vietnam (23 September 2026), Indonesia (11 June 2026) and the Philippines (01 August 2026)."
+        }
+      ]
+    },
+    {
+      "id": "vn-tax-residence",
+      "fact": "tax",
+      "cities": [
+        "ho-chi-minh-city",
+        "da-nang",
+        "hanoi"
+      ],
+      "claim": "A resident is present 183+ days in a year, or has a rented home on a fixed-term lease",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Law on Personal Income Tax No. 109/2025/QH15 (English translation, VN Law Firm)",
+          "url": "https://vnlawfirm.vn/wp-content/uploads/2026/01/109_2025_QH15_687756.doc",
+          "read": "2026-11-15",
+          "says": "Art. 29(1): the law \"enters into force on July 01, 2026\". Art. 2(2): resident if present \"at least 183 days in 01 calendar year\" (or 12 consecutive months) or with \"a regular residence in Vietnam\", including a house leased under a fixed-term contract. Art. 12(1): capital investment income taxed at 5%; Art. 4(6) exempts \"interest on deposit at credit institutions\". Art. 13(2): 0.1% of the transfer price on securities; Art. 13(1): capital transfers 20% of the gain (2% of the price if cost unknown). Arts. 3(9) and 18: inheritances of securities, business stakes, real estate and registered assets, 10% on the value above VND 20 million each time."
+        },
+        {
+          "name": "PwC: Vietnam, residence",
+          "url": "https://taxsummaries.pwc.com/vietnam/individual/residence",
+          "read": "2026-11-15",
+          "says": "Last reviewed 23 September 2026. Resident if \"Residing in Vietnam for 183 days or more in either the calendar year\" or 12 consecutive months from arrival, or \"Having a permanent residence in Vietnam (including a registered residence or a rented house\" with a definite lease term."
+        }
+      ]
+    },
+    {
+      "id": "vn-tax-worldwide",
+      "fact": "tax",
+      "cities": [
+        "ho-chi-minh-city",
+        "da-nang",
+        "hanoi"
+      ],
+      "claim": "A resident is taxed on worldwide income",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Vietnam, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/vietnam/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 23 September 2026. \"Tax residents are subject to Vietnamese personal income tax (PIT) on their worldwide taxable income\"; \"Interest (but not bank interest) / dividends\" 5%; \"Sale of securities\" 0.1% of proceeds; \"Capital assignment\" 20% of net gain; \"Income from inheritances / gifts\" 10%."
+        }
+      ]
+    },
+    {
+      "id": "vn-tax-law-109",
+      "fact": "tax",
+      "cities": [
+        "ho-chi-minh-city",
+        "da-nang",
+        "hanoi"
+      ],
+      "claim": "The new Personal Income Tax Law (Law 109/2025/QH15) is in force from 1 Jul 2026",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Law on Personal Income Tax No. 109/2025/QH15 (English translation, VN Law Firm)",
+          "url": "https://vnlawfirm.vn/wp-content/uploads/2026/01/109_2025_QH15_687756.doc",
+          "read": "2026-11-15",
+          "says": "Art. 29(1): the law \"enters into force on July 01, 2026\". Art. 2(2): resident if present \"at least 183 days in 01 calendar year\" (or 12 consecutive months) or with \"a regular residence in Vietnam\", including a house leased under a fixed-term contract. Art. 12(1): capital investment income taxed at 5%; Art. 4(6) exempts \"interest on deposit at credit institutions\". Art. 13(2): 0.1% of the transfer price on securities; Art. 13(1): capital transfers 20% of the gain (2% of the price if cost unknown). Arts. 3(9) and 18: inheritances of securities, business stakes, real estate and registered assets, 10% on the value above VND 20 million each time."
+        },
+        {
+          "name": "PwC: Vietnam, significant developments",
+          "url": "https://taxsummaries.pwc.com/vietnam/individual/significant-developments",
+          "read": "2026-11-15",
+          "says": "Last reviewed 23 September 2026. \"A new Personal Income Tax (PIT) Law will come into effect on 1 July 2026.\""
+        }
+      ],
+      "also": [
+        "sources: the law's URL updated from lawfirm.vn to vnlawfirm.vn, where the old address now redirects (HTTP 301)"
+      ]
+    },
+    {
+      "id": "vn-tax-dividends-interest",
+      "fact": "tax",
+      "cities": [
+        "ho-chi-minh-city",
+        "da-nang",
+        "hanoi"
+      ],
+      "claim": "The law keeps 5% on dividends and interest, with bank-deposit interest exempt",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Law on Personal Income Tax No. 109/2025/QH15 (English translation, VN Law Firm)",
+          "url": "https://vnlawfirm.vn/wp-content/uploads/2026/01/109_2025_QH15_687756.doc",
+          "read": "2026-11-15",
+          "says": "Art. 29(1): the law \"enters into force on July 01, 2026\". Art. 2(2): resident if present \"at least 183 days in 01 calendar year\" (or 12 consecutive months) or with \"a regular residence in Vietnam\", including a house leased under a fixed-term contract. Art. 12(1): capital investment income taxed at 5%; Art. 4(6) exempts \"interest on deposit at credit institutions\". Art. 13(2): 0.1% of the transfer price on securities; Art. 13(1): capital transfers 20% of the gain (2% of the price if cost unknown). Arts. 3(9) and 18: inheritances of securities, business stakes, real estate and registered assets, 10% on the value above VND 20 million each time."
+        },
+        {
+          "name": "PwC: Vietnam, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/vietnam/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 23 September 2026. \"Tax residents are subject to Vietnamese personal income tax (PIT) on their worldwide taxable income\"; \"Interest (but not bank interest) / dividends\" 5%; \"Sale of securities\" 0.1% of proceeds; \"Capital assignment\" 20% of net gain; \"Income from inheritances / gifts\" 10%."
+        }
+      ]
+    },
+    {
+      "id": "vn-tax-securities",
+      "fact": "tax",
+      "cities": [
+        "ho-chi-minh-city",
+        "da-nang",
+        "hanoi"
+      ],
+      "claim": "Securities sales pay 0.1% of the price",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Law on Personal Income Tax No. 109/2025/QH15 (English translation, VN Law Firm)",
+          "url": "https://vnlawfirm.vn/wp-content/uploads/2026/01/109_2025_QH15_687756.doc",
+          "read": "2026-11-15",
+          "says": "Art. 29(1): the law \"enters into force on July 01, 2026\". Art. 2(2): resident if present \"at least 183 days in 01 calendar year\" (or 12 consecutive months) or with \"a regular residence in Vietnam\", including a house leased under a fixed-term contract. Art. 12(1): capital investment income taxed at 5%; Art. 4(6) exempts \"interest on deposit at credit institutions\". Art. 13(2): 0.1% of the transfer price on securities; Art. 13(1): capital transfers 20% of the gain (2% of the price if cost unknown). Arts. 3(9) and 18: inheritances of securities, business stakes, real estate and registered assets, 10% on the value above VND 20 million each time."
+        },
+        {
+          "name": "PwC: Vietnam, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/vietnam/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 23 September 2026. \"Tax residents are subject to Vietnamese personal income tax (PIT) on their worldwide taxable income\"; \"Interest (but not bank interest) / dividends\" 5%; \"Sale of securities\" 0.1% of proceeds; \"Capital assignment\" 20% of net gain; \"Income from inheritances / gifts\" 10%."
+        }
+      ]
+    },
+    {
+      "id": "vn-tax-us-shares-capital",
+      "fact": "tax",
+      "cities": [
+        "ho-chi-minh-city",
+        "da-nang",
+        "hanoi"
+      ],
+      "claim": "Gains on US-listed shares might instead be taxed as other capital transfers, at 20% of the gain (Art. 13(1))",
+      "verdict": "cant-confirm",
+      "hedge": "might",
+      "wording": "though gains on US-listed shares might instead be taxed as other capital transfers, at 20% of the gain (Art. 13(1))",
+      "sources": [
+        {
+          "name": "Law on Personal Income Tax No. 109/2025/QH15 (English translation, VN Law Firm)",
+          "url": "https://vnlawfirm.vn/wp-content/uploads/2026/01/109_2025_QH15_687756.doc",
+          "read": "2026-11-15",
+          "says": "Art. 29(1): the law \"enters into force on July 01, 2026\". Art. 2(2): resident if present \"at least 183 days in 01 calendar year\" (or 12 consecutive months) or with \"a regular residence in Vietnam\", including a house leased under a fixed-term contract. Art. 12(1): capital investment income taxed at 5%; Art. 4(6) exempts \"interest on deposit at credit institutions\". Art. 13(2): 0.1% of the transfer price on securities; Art. 13(1): capital transfers 20% of the gain (2% of the price if cost unknown). Arts. 3(9) and 18: inheritances of securities, business stakes, real estate and registered assets, 10% on the value above VND 20 million each time."
+        },
+        {
+          "name": "PwC: Vietnam, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/vietnam/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 23 September 2026. \"Tax residents are subject to Vietnamese personal income tax (PIT) on their worldwide taxable income\"; \"Interest (but not bank interest) / dividends\" 5%; \"Sale of securities\" 0.1% of proceeds; \"Capital assignment\" 20% of net gain; \"Income from inheritances / gifts\" 10%."
+        }
+      ],
+      "note": "Art. 13(1) does set 20% of the gain for capital transfers; which article reaches shares listed abroad is not settled by anything read. The hedge stays."
+    },
+    {
+      "id": "vn-tax-no-treaty",
+      "fact": "tax",
+      "cities": [
+        "ho-chi-minh-city",
+        "da-nang",
+        "hanoi"
+      ],
+      "claim": "There is no US income tax treaty",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IRS: United States income tax treaties, A to Z",
+          "url": "https://www.irs.gov/businesses/international-businesses/united-states-income-tax-treaties-a-to-z",
+          "read": "2026-11-15",
+          "says": "Page last reviewed or updated 03-Jan-2026. The A-to-Z list includes Indonesia, the Philippines and Thailand; Vietnam and Malaysia are not on it."
+        }
+      ]
+    },
+    {
+      "id": "vn-estate-inheritance-income",
+      "fact": "estate",
+      "cities": [
+        "ho-chi-minh-city",
+        "da-nang",
+        "hanoi"
+      ],
+      "claim": "No estate tax: inheritances above VND 20m are taxed as income of the recipient at 10%, covering inherited securities, business stakes, real estate and registered assets",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Law on Personal Income Tax No. 109/2025/QH15 (English translation, VN Law Firm)",
+          "url": "https://vnlawfirm.vn/wp-content/uploads/2026/01/109_2025_QH15_687756.doc",
+          "read": "2026-11-15",
+          "says": "Art. 29(1): the law \"enters into force on July 01, 2026\". Art. 2(2): resident if present \"at least 183 days in 01 calendar year\" (or 12 consecutive months) or with \"a regular residence in Vietnam\", including a house leased under a fixed-term contract. Art. 12(1): capital investment income taxed at 5%; Art. 4(6) exempts \"interest on deposit at credit institutions\". Art. 13(2): 0.1% of the transfer price on securities; Art. 13(1): capital transfers 20% of the gain (2% of the price if cost unknown). Arts. 3(9) and 18: inheritances of securities, business stakes, real estate and registered assets, 10% on the value above VND 20 million each time."
+        },
+        {
+          "name": "PwC: Vietnam, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/vietnam/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 23 September 2026. \"Tax residents are subject to Vietnamese personal income tax (PIT) on their worldwide taxable income\"; \"Interest (but not bank interest) / dividends\" 5%; \"Sale of securities\" 0.1% of proceeds; \"Capital assignment\" 20% of net gain; \"Income from inheritances / gifts\" 10%."
+        },
+        {
+          "name": "PwC: quick chart, inheritance and gift tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates",
+          "read": "2026-11-15",
+          "says": "Thailand (24 August 2026): inheritance 10, gift 5; Malaysia (16 June 2026): NA, NA; Vietnam (23 September 2026): 10, 10; Indonesia (11 June 2026): NA, NA; Philippines (01 August 2026): \"There is no inheritance tax in the Philippines.\" \"an estate tax of 6% is imposed on the assets of the decedent taxpayer.\""
+        }
+      ]
+    },
+    {
+      "id": "vn-estate-us-heirs",
+      "fact": "estate",
+      "cities": [
+        "ho-chi-minh-city",
+        "da-nang",
+        "hanoi"
+      ],
+      "claim": "US-resident heirs receiving US assets are likely outside it",
+      "verdict": "cant-confirm",
+      "hedge": "inferred, not confirmed",
+      "wording": "US-resident heirs receiving US assets are likely outside it (inferred, not confirmed)",
+      "sources": [
+        {
+          "name": "Law on Personal Income Tax No. 109/2025/QH15 (English translation, VN Law Firm)",
+          "url": "https://vnlawfirm.vn/wp-content/uploads/2026/01/109_2025_QH15_687756.doc",
+          "read": "2026-11-15",
+          "says": "Art. 29(1): the law \"enters into force on July 01, 2026\". Art. 2(2): resident if present \"at least 183 days in 01 calendar year\" (or 12 consecutive months) or with \"a regular residence in Vietnam\", including a house leased under a fixed-term contract. Art. 12(1): capital investment income taxed at 5%; Art. 4(6) exempts \"interest on deposit at credit institutions\". Art. 13(2): 0.1% of the transfer price on securities; Art. 13(1): capital transfers 20% of the gain (2% of the price if cost unknown). Arts. 3(9) and 18: inheritances of securities, business stakes, real estate and registered assets, 10% on the value above VND 20 million each time."
+        },
+        {
+          "name": "PwC: Vietnam, residence",
+          "url": "https://taxsummaries.pwc.com/vietnam/individual/residence",
+          "read": "2026-11-15",
+          "says": "Last reviewed 23 September 2026. Resident if \"Residing in Vietnam for 183 days or more in either the calendar year\" or 12 consecutive months from arrival, or \"Having a permanent residence in Vietnam (including a registered residence or a rented house\" with a definite lease term."
+        }
+      ],
+      "note": "Neither page says how a non-resident heir of foreign assets is treated. localTaxes.ts (VN) models the same inference and says so."
+    },
+    {
+      "id": "vn-estate-no-treaty",
+      "fact": "estate",
+      "cities": [
+        "ho-chi-minh-city",
+        "da-nang",
+        "hanoi"
+      ],
+      "claim": "There is no US estate treaty",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-without",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list); none of the 37 countries named in this claim is among them."
+        }
+      ],
+      "note": "Wording: \"there is no US estate treaty\"."
+    },
+    {
+      "id": "vn-estate-us-exemption",
+      "fact": "estate",
+      "cities": [
+        "ho-chi-minh-city",
+        "da-nang",
+        "hanoi"
+      ],
+      "claim": "US estate tax applies above the $15M exemption (2026): \"the $15M US exemption (2026) applies as anywhere\"",
+      "verdict": "confirmed",
+      "shared": "us-estate-exemption-2026",
+      "sources": [
+        {
+          "name": "IRS: What's new, estate and gift tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax",
+          "read": "2026-11-15",
+          "says": "The table \"Basic exclusion amount for year of death\" has the row 2026: $15,000,000 (2025: $13,990,000). The page says the Working Families Tax Cuts, Public Law 119-21, signed July 4, 2025, \"amends § 2010(c)(3) by increasing the basic exclusion amount to $15,000,000 for calendar year 2026\". Page last reviewed or updated 03-Nov-2026."
+        },
+        {
+          "name": "IRS: Estate tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-tax",
+          "read": "2026-11-15",
+          "says": "A return is required when the gross estate, plus adjusted taxable gifts and specific exemption, is more than the filing threshold for the year of death; the table gives 2026: $15,000,000. Page last reviewed or updated 23-Oct-2026."
+        },
+        {
+          "name": "IRS news release IR-2025-103: tax inflation adjustments for tax year 2026",
+          "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill",
+          "read": "2026-11-15",
+          "says": "\"Estates of decedents who die during 2026 have a basic exclusion amount of $15,000,000\", up from $13,990,000 for 2025; the release (October 9, 2025) cites Revenue Procedure 2025-32 and is marked as an archival document."
+        },
+        {
+          "name": "IRS: Some nonresidents with U.S. assets must file estate tax returns",
+          "url": "https://www.irs.gov/individuals/international-taxpayers/some-nonresidents-with-us-assets-must-file-estate-tax-returns",
+          "read": "2026-11-15",
+          "says": "\"U.S. citizens are subject to U.S. estate taxation with respect to their worldwide assets\"; Form 706 is required when worldwide assets plus adjusted taxable gifts exceed the basic exclusion amount in effect on the date of death. By contrast a nonresident who is not a citizen files when US-situated assets exceed $60,000. Page last reviewed or updated 27-Jun-2026."
+        }
+      ]
+    },
+    {
+      "id": "vn-lending-ibkr",
+      "fact": "lending",
+      "cities": [
+        "ho-chi-minh-city",
+        "da-nang",
+        "hanoi"
+      ],
+      "claim": "Interactive Brokers accepts Vietnam residents",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly accepts residents of almost every country outside sanctions lists",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Indonesia, Malaysia, the Philippines, Thailand and Vietnam; it names no IBKR entity for them, and says the default account type outside the US is IBKR PRO."
+        },
+        {
+          "name": "Your Tax Base: best brokerage for US expats",
+          "url": "https://yourtaxbase.com/blog/best-brokerage-for-us-expats",
+          "read": "2026-11-15",
+          "says": "Dated October 23, 2026. Quotes Fidelity's FAQ: \"we do not open accounts for any new customers residing outside the United States\"; Vanguard requires US citizenship or permanent residence \"with a U.S. mailing address\". Quotes IBKR's account page: \"Accounts are accepted from citizens or residents of all countries\", except sanctioned countries or those \"determined to be higher risk\". Says nothing country-specific on IBKR for Thailand, Malaysia, Vietnam, Indonesia or the Philippines."
+        }
+      ],
+      "note": "IBKR's country list (https://www.interactivebrokers.com/en/accounts/open-account-country-list.php) returned HTTP 403 again on 2026-11-15, so acceptance stays reported (rule 3)."
+    },
+    {
+      "id": "vn-lending-schwab",
+      "fact": "lending",
+      "cities": [
+        "ho-chi-minh-city",
+        "da-nang",
+        "hanoi"
+      ],
+      "claim": "Schwab One International does not accept Vietnam residents (Oct 2026)",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab One International reportedly does not accept Vietnam residents (Oct 2026)",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. On that day the author ran every entry in Schwab's international account selector through the application: it accepted residents of 51 of 263 countries and regions: Argentina, Australia, Austria, the Bahamas, Belgium, Bermuda, Brazil, the British Virgin Islands, the Cayman Islands, Chile, China, Colombia, Costa Rica, the Czech Republic, Denmark, Ecuador, Finland, Germany, Greece, Guatemala, Hong Kong, Iceland, India, Indonesia, Ireland, Israel, Jersey, Luxembourg, Malaysia, the Marshall Islands, Mexico, the Netherlands, Norway, Panama, Paraguay, Peru, Poland, Portugal, Qatar, Singapore, South Korea, Spain, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Turks and Caicos, the United Arab Emirates, the United Kingdom and Uruguay. Named as not accepted: Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam; for the rest the application said \"Schwab currently cannot open accounts for residents of your country/region.\" The test covers new applicants on that day only."
+        },
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026 (country check run that day). Online application open to residents: Thailand \"Yes\"; Malaysia and Indonesia in the list of 51 accepted; Vietnam \"No\"; Philippines \"No\". The only margin restriction quoted: \"Customers residing within Europe are restricted from using their Available Margin Loan Value\" to withdraw funds; nothing on Asia."
+        }
+      ],
+      "note": "Agrees with the dated list (re-read 2026-11-15). Schwab's own sites were not retried; stage 1 found them blocked (HTTP 403 or an error page). Stays reported (rule 3)."
+    },
+    {
+      "id": "vn-lending-margin-unreported",
+      "fact": "lending",
+      "cities": [
+        "ho-chi-minh-city",
+        "da-nang",
+        "hanoi"
+      ],
+      "claim": "Margin terms for Vietnam residents are not reported",
+      "verdict": "cant-confirm",
+      "hedge": "unreported",
+      "wording": "margin terms by country of residence are unreported",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026 (country check run that day). Online application open to residents: Thailand \"Yes\"; Malaysia and Indonesia in the list of 51 accepted; Vietnam \"No\"; Philippines \"No\". The only margin restriction quoted: \"Customers residing within Europe are restricted from using their Available Margin Loan Value\" to withdraw funds; nothing on Asia."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Indonesia, Malaysia, the Philippines, Thailand and Vietnam; it names no IBKR entity for them, and says the default account type outside the US is IBKR PRO."
+        }
+      ],
+      "note": "A statement of what is not known; nothing read gives margin terms for residents of this country."
+    },
+    {
+      "id": "vn-lending-fidelity-vanguard",
+      "fact": "lending",
+      "cities": [
+        "ho-chi-minh-city",
+        "da-nang",
+        "hanoi"
+      ],
+      "claim": "Fidelity and Vanguard open no accounts for residents abroad",
+      "verdict": "cant-confirm",
+      "hedge": "reportedly",
+      "oldWording": "and Fidelity and Vanguard open no accounts for residents abroad",
+      "wording": "Fidelity and Vanguard reportedly open no new accounts for residents abroad",
+      "sources": [
+        {
+          "name": "Your Tax Base: best brokerage for US expats",
+          "url": "https://yourtaxbase.com/blog/best-brokerage-for-us-expats",
+          "read": "2026-11-15",
+          "says": "Dated October 23, 2026. Quotes Fidelity's FAQ: \"we do not open accounts for any new customers residing outside the United States\"; Vanguard requires US citizenship or permanent residence \"with a U.S. mailing address\". Quotes IBKR's account page: \"Accounts are accepted from citizens or residents of all countries\", except sanctioned countries or those \"determined to be higher risk\". Says nothing country-specific on IBKR for Thailand, Malaysia, Vietnam, Indonesia or the Philippines."
+        }
+      ],
+      "also": [
+        "hedge added: \"reportedly\", and \"no accounts\" narrowed to \"no new accounts\" as Fidelity's quoted FAQ says"
+      ],
+      "note": "A broker claim resting on a secondary page stays reported (rule 3); Fidelity's FAQ returned HTTP 403 in stage 4 and was not retried. Worded as in the Guatemala, Peru and Chile ledgers."
+    },
+    {
+      "id": "vn-visa-no-retirement",
+      "fact": "visa",
+      "cities": [
+        "ho-chi-minh-city",
+        "da-nang",
+        "hanoi"
+      ],
+      "claim": "Vietnam has no retirement or passive-income visa",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "GetWhereNext: Vietnam retirement visa 2026, the honest truth",
+          "url": "https://getwherenext.com/blog/vietnam-retirement-visa-2026-honest-truth",
+          "read": "2026-11-15",
+          "says": "Dated May 19, 2026. \"There is no Vietnam retirement visa.\" The e-visa covers up to 90 days, $25 single and $50 multiple entry; \"The e-visa itself is not renewable\", and extending needs an inviting or guaranteeing company, organisation or person. Tourist and e-visa holders cannot get a temporary residence card; routes are qualifying work, a TT family visa (spouse of a Vietnamese citizen; card up to 3 years) or the ĐT3 investor route, VND 3 billion to under 50 billion in an active Vietnamese company (card up to 3 years)."
+        },
+        {
+          "name": "Viet An Law: Vietnam's proposed 10-year golden visa",
+          "url": "https://vietanlaw.com/vietnams-new-10-year-golden-visa/",
+          "read": "2026-11-15",
+          "says": "Undated (footer © 2026). The programme \"is currently in the proposal stage and does not yet have an official legal basis\"; proposed to the Prime Minister by the Tourism Advisory Council in early 2025; 5 to 10 years; target groups include \"Retirees or long-term residents\"."
+        }
+      ],
+      "note": "Searched retirement and golden visas with the current month (November 2026): a search result said Law 118/2025/QH15 (in force 1 July 2026) added digital-technology visas but no retirement visa; that law was not read."
+    },
+    {
+      "id": "vn-visa-evisa",
+      "fact": "visa",
+      "cities": [
+        "ho-chi-minh-city",
+        "da-nang",
+        "hanoi"
+      ],
+      "claim": "US citizens use the 90-day e-visa (USD 25 single, USD 50 multiple entry)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Vietnam Hội nhập: understanding Viet Nam's e-visa",
+          "url": "https://vietnamhoinhap.vn/en/understanding-viet-nam-s-e-visa-51016.htm",
+          "read": "2026-11-15",
+          "says": "Dated 19 February 2025. The e-visa is open to all countries and territories, valid \"up to 90 days\"; fee US$25 single entry and US$50 multiple entry, non-refundable."
+        },
+        {
+          "name": "GetWhereNext: Vietnam retirement visa 2026, the honest truth",
+          "url": "https://getwherenext.com/blog/vietnam-retirement-visa-2026-honest-truth",
+          "read": "2026-11-15",
+          "says": "Dated May 19, 2026. \"There is no Vietnam retirement visa.\" The e-visa covers up to 90 days, $25 single and $50 multiple entry; \"The e-visa itself is not renewable\", and extending needs an inviting or guaranteeing company, organisation or person. Tourist and e-visa holders cannot get a temporary residence card; routes are qualifying work, a TT family visa (spouse of a Vietnamese citizen; card up to 3 years) or the ĐT3 investor route, VND 3 billion to under 50 billion in an active Vietnamese company (card up to 3 years)."
+        }
+      ],
+      "note": "The government e-visa portal (evisa.gov.vn) failed on its certificate (\"unable to verify the first certificate\")."
+    },
+    {
+      "id": "vn-visa-evisa-no-extension",
+      "fact": "visa",
+      "cities": [
+        "ho-chi-minh-city",
+        "da-nang",
+        "hanoi"
+      ],
+      "claim": "The e-visa cannot be extended without a Vietnamese sponsor and leads to no residence card, so long stays mean leaving and reapplying",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "GetWhereNext: Vietnam retirement visa 2026, the honest truth",
+          "url": "https://getwherenext.com/blog/vietnam-retirement-visa-2026-honest-truth",
+          "read": "2026-11-15",
+          "says": "Dated May 19, 2026. \"There is no Vietnam retirement visa.\" The e-visa covers up to 90 days, $25 single and $50 multiple entry; \"The e-visa itself is not renewable\", and extending needs an inviting or guaranteeing company, organisation or person. Tourist and e-visa holders cannot get a temporary residence card; routes are qualifying work, a TT family visa (spouse of a Vietnamese citizen; card up to 3 years) or the ĐT3 investor route, VND 3 billion to under 50 billion in an active Vietnamese company (card up to 3 years)."
+        }
+      ],
+      "note": "A dated 2026 secondary page, which the profiles already flag \"(secondary sources)\"."
+    },
+    {
+      "id": "vn-visa-trc-routes",
+      "fact": "visa",
+      "cities": [
+        "ho-chi-minh-city",
+        "da-nang",
+        "hanoi"
+      ],
+      "claim": "A temporary residence card needs work, marriage to a Vietnamese citizen or an active business investment of VND 3bn or more (about $115k), giving a card of up to 3 years",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "GetWhereNext: Vietnam retirement visa 2026, the honest truth",
+          "url": "https://getwherenext.com/blog/vietnam-retirement-visa-2026-honest-truth",
+          "read": "2026-11-15",
+          "says": "Dated May 19, 2026. \"There is no Vietnam retirement visa.\" The e-visa covers up to 90 days, $25 single and $50 multiple entry; \"The e-visa itself is not renewable\", and extending needs an inviting or guaranteeing company, organisation or person. Tourist and e-visa holders cannot get a temporary residence card; routes are qualifying work, a TT family visa (spouse of a Vietnamese citizen; card up to 3 years) or the ĐT3 investor route, VND 3 billion to under 50 billion in an active Vietnamese company (card up to 3 years)."
+        }
+      ]
+    },
+    {
+      "id": "vn-visa-golden-proposal",
+      "fact": "visa",
+      "cities": [
+        "ho-chi-minh-city",
+        "da-nang",
+        "hanoi"
+      ],
+      "claim": "A proposed 5–10-year golden visa that would include retirees has no legal basis yet (Nov 2026)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Viet An Law: Vietnam's proposed 10-year golden visa",
+          "url": "https://vietanlaw.com/vietnams-new-10-year-golden-visa/",
+          "read": "2026-11-15",
+          "says": "Undated (footer © 2026). The programme \"is currently in the proposal stage and does not yet have an official legal basis\"; proposed to the Prime Minister by the Tourism Advisory Council in early 2025; 5 to 10 years; target groups include \"Retirees or long-term residents\"."
+        }
+      ],
+      "also": [
+        "visa: added \"a proposed 5–10-year golden visa that would include retirees has no legal basis yet (Nov 2026)\" (README: say what is pending)",
+        "sources: added Viet An Law"
+      ],
+      "note": "Added by this check, not a claim the profiles made: the plan asks for pending changes to be named. Score unchanged (visa 1: today's rule)."
+    },
+    {
+      "id": "vn-health-hcmc-jci",
+      "fact": "healthcare",
+      "cities": [
+        "ho-chi-minh-city"
+      ],
+      "claim": "FV Hospital (JCI for a fourth consecutive cycle in 2025) and Vinmec Central Park (JCI) lead a deep private sector at well below US prices",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "FV Hospital: fourth consecutive JCI accreditation",
+          "url": "https://www.fvhospital.com/en/fv-hospital-achieves-fourth-consecutive-jci-accreditation-reaffirming-commitment-to-international-standard-care-at-only-50-of-the-cost-compared-to-leading-hospitals-in-the-region/",
+          "read": "2026-11-15",
+          "says": "Dated May 13, 2025. FV Hospital earned its fourth consecutive JCI accreditation; care comparable to Bumrungrad, Prince Court and Mount Elizabeth \"at approximately half the cost\"."
+        },
+        {
+          "name": "Vinmec: medical tourism and accreditations",
+          "url": "https://www.vinmec.com/eng/medical-tourism/",
+          "read": "2026-11-15",
+          "says": "Undated (footer © 2026). Vinmec Times City and Vinmec Central Park have \"achieved JCI accreditation\"; Vinmec Da Nang is among the hospitals that \"have achieved the 4-Star Global Hospital Rating (GHR) certification\", not listed as JCI."
+        },
+        {
+          "name": "Better by MTA: medical tourism in Hanoi, Vinmec International 2026",
+          "url": "https://www.better.medicaltourism.com/article/medical-tourism-in-hanoi-vinmec-international-2026",
+          "read": "2026-11-15",
+          "says": "Dated July 22, 2026. Vinmec Times City \"was the first general hospital in Vietnam to earn Joint Commission International accreditation\" and has renewed it; Hanoi treatment \"commonly costs a fraction of comparable care in the United States\", \"often 50 to 70 percent less\"."
+        }
+      ]
+    },
+    {
+      "id": "vn-health-hanoi-jci",
+      "fact": "healthcare",
+      "cities": [
+        "hanoi"
+      ],
+      "claim": "Vinmec Times City is JCI-accredited, one of two Vinmec hospitals with it; other large hospitals, at well below US prices",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Vinmec: medical tourism and accreditations",
+          "url": "https://www.vinmec.com/eng/medical-tourism/",
+          "read": "2026-11-15",
+          "says": "Undated (footer © 2026). Vinmec Times City and Vinmec Central Park have \"achieved JCI accreditation\"; Vinmec Da Nang is among the hospitals that \"have achieved the 4-Star Global Hospital Rating (GHR) certification\", not listed as JCI."
+        },
+        {
+          "name": "Better by MTA: medical tourism in Hanoi, Vinmec International 2026",
+          "url": "https://www.better.medicaltourism.com/article/medical-tourism-in-hanoi-vinmec-international-2026",
+          "read": "2026-11-15",
+          "says": "Dated July 22, 2026. Vinmec Times City \"was the first general hospital in Vietnam to earn Joint Commission International accreditation\" and has renewed it; Hanoi treatment \"commonly costs a fraction of comparable care in the United States\", \"often 50 to 70 percent less\"."
+        }
+      ]
+    },
+    {
+      "id": "vn-health-public-insurance",
+      "fact": "healthcare",
+      "cities": [
+        "ho-chi-minh-city",
+        "da-nang",
+        "hanoi"
+      ],
+      "claim": "Public-insurance access for foreigners was not confirmed",
+      "verdict": "cant-confirm",
+      "hedge": "not confirmed",
+      "wording": "since public-insurance access for foreigners was not confirmed",
+      "sources": [
+        {
+          "name": "Tuoi Tre: are foreign spouses eligible for household health insurance in Vietnam?",
+          "url": "https://news.tuoitre.vn/are-foreign-spouses-eligible-for-household-health-insurance-in-vietnam-10378995.htm",
+          "read": "2026-11-15",
+          "says": "Dated 26 March 2024. Household health insurance covers everyone listed in the family register or temporary residence book; a foreign spouse \"registered as part of the household, either temporarily or permanently\" is eligible. Nothing on foreigners without Vietnamese family."
+        }
+      ],
+      "note": "The one page read concerns foreign spouses registered in a Vietnamese household. ExpatFocus and Luma Health guides returned HTTP 403."
+    },
+    {
+      "id": "vn-health-danang-vinmec",
+      "fact": "healthcare",
+      "cities": [
+        "da-nang"
+      ],
+      "claim": "Vinmec Da Nang has a 4-star Global Hospital Rating, not JCI, and with other private hospitals covers routine and much specialist care",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Vinmec: medical tourism and accreditations",
+          "url": "https://www.vinmec.com/eng/medical-tourism/",
+          "read": "2026-11-15",
+          "says": "Undated (footer © 2026). Vinmec Times City and Vinmec Central Park have \"achieved JCI accreditation\"; Vinmec Da Nang is among the hospitals that \"have achieved the 4-Star Global Hospital Rating (GHR) certification\", not listed as JCI."
+        },
+        {
+          "name": "Vietnam Tourism: healthcare in Da Nang",
+          "url": "https://www.vietnamtourism.com/en/health/da-nang",
+          "read": "2026-11-15",
+          "says": "\"Checked on October 29, 2026\". Vinmec Da Nang has a \"24/7 emergency department\" and English; Hoan My Da Nang is \"Open 24 hours\"; the insurer's assistance line can \"organise a transfer or a medical evacuation\". Nothing on referrals to Ho Chi Minh City, Hanoi or Bangkok."
+        }
+      ],
+      "note": "Vietnam Tourism's emergencies page calls Vinmec Da Nang JCI-accredited; Vinmec's own page names only Times City and Central Park, so the profile follows Vinmec."
+    },
+    {
+      "id": "vn-health-danang-referral",
+      "fact": "healthcare",
+      "cities": [
+        "da-nang"
+      ],
+      "claim": "Complex cases often go to Ho Chi Minh City, Hanoi or Bangkok",
+      "verdict": "cant-confirm",
+      "hedge": "(secondary source)",
+      "wording": "complex cases often go to Ho Chi Minh City, Hanoi or Bangkok (secondary source)",
+      "sources": [
+        {
+          "name": "Vietnam Tourism: medical emergencies in Vietnam's big cities",
+          "url": "https://vietnamtourism.com/en/medical-emergencies-in-vietnam-s-big-cities-what-travelers-need-to-know",
+          "read": "2026-11-15",
+          "says": "\"Updated on October 11, 2026\". Calls Vinmec Da Nang \"the safest choice\" (and JCI accredited); for severe heart attack or stroke cases, \"evacuation to Singapore or Bangkok ($20,000–$50,000) may be needed\". Does not name Ho Chi Minh City or Hanoi as transfer destinations."
+        },
+        {
+          "name": "Vietnam Tourism: healthcare in Da Nang",
+          "url": "https://www.vietnamtourism.com/en/health/da-nang",
+          "read": "2026-11-15",
+          "says": "\"Checked on October 29, 2026\". Vinmec Da Nang has a \"24/7 emergency department\" and English; Hoan My Da Nang is \"Open 24 hours\"; the insurer's assistance line can \"organise a transfer or a medical evacuation\". Nothing on referrals to Ho Chi Minh City, Hanoi or Bangkok."
+        }
+      ],
+      "note": "The pages read mention evacuation to Singapore or Bangkok for severe cases but not transfers to Ho Chi Minh City or Hanoi. The hedge stays."
+    }
+  ]
+}

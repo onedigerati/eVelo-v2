@@ -8,22 +8,22 @@ const profile: ExpatProfile = {
   scores: { cost: 4, healthcare: 2, safety: 3, visa: 3, climate: 3, community: 4, tax: 2, estate: 5, lending: 4 },
   facts: {
     healthcare:
-      'Private hospitals (BIMC, Siloam) handle routine and emergency care with English-speaking staff, but complex cases are usually evacuated to Jakarta or Singapore, so evacuation cover is essential; international cover runs about USD 2,500–6,000 a year at 55–70, and optional public BPJS cover about USD 12 a month.',
+      'Private hospitals (BIMC, Siloam) handle routine and emergency care with English-speaking staff, but complex cases are usually evacuated to Singapore or Bangkok, so evacuation cover is essential; international cover runs about USD 2,500–6,000 a year at 55–70, and optional public BPJS cover about USD 12 a month.',
     safety:
       'Indonesia is 69th in the 2026 Global Peace Index; UK advice reports frequent bag-snatching, card fraud, drink spiking and deaths from methanol-tainted drinks in Bali, a sharp rise in scooter accidents, and earthquake, tsunami and volcano risk.',
-    visa: 'Second Home Visa (E33): about USD 130,000 (IDR 2bn) on deposit at a state-owned bank, or a USD 1m apartment, for 5 or 10 years with no age limit; Silver Hair (E33E): 5 years on a USD 50,000 deposit; the retirement KITAS (E33F) is for ages 55+ (some listings say 60), renewed yearly, needs a sponsor and a hired Indonesian household worker, and sources disagree on its income bar (USD 1,500 or 3,000/month).',
-    tax: 'No wealth tax, but residents (183+ days, or a KITAS read as intent to reside) are taxed on worldwide income at 5–35%, and foreign dividends are ordinary income taxed yearly whether or not they are remitted; the 4-year foreign-income exemption is only for foreigners with certain expertise, with no retiree category; a US–Indonesia income tax treaty applies (get local advice).',
+    visa: 'Second Home Visa (E33): USD 130,000 on deposit at a state-owned bank, or a USD 1m apartment, for up to 5 years and 10 in all, with no age limit; Silver Hair (E33E): 5 years (10 in all) from age 55 on a USD 50,000 deposit plus USD 3,000/month of income, with no sponsor; the retirement KITAS (E33F) is for ages 55+ (some listings say 60), renewed yearly, needs a sponsor and USD 3,000/month of income, and reportedly a hired Indonesian household worker.',
+    tax: 'No wealth tax, but residents (183+ days in 12 months, or present in the year with intent to reside) are taxed on worldwide income at 5–35%, and foreign dividends are ordinary income taxed yearly whether or not they are remitted; the 4-year foreign-income exemption is only for foreigners with certain expertise, with no retiree category; a US–Indonesia income tax treaty applies (get local advice).',
     estate:
       'No inheritance, estate or gift tax, so US assets pass to US-resident children with no Indonesian tax; there is no US estate treaty, but nothing to double-tax, and US estate tax applies only above the $15M exemption (2026).',
     lending:
-      'IBKR reportedly accepts Indonesia residents (IBKR Pro), and Schwab One International\'s online form reportedly accepted Indonesia in Oct 2026; margin by country of residence is unreported, and Fidelity and Vanguard open no accounts for residents abroad.',
+      'IBKR reportedly accepts Indonesia residents (IBKR Pro), and Schwab One International\'s online form reportedly accepted Indonesia in Oct 2026; margin by country of residence is unreported, and Fidelity and Vanguard reportedly open no new accounts for residents abroad.',
     climate: 'Tropical: hot and humid all year, with a rainy season (roughly October–March) that brings local flooding; Ubud\'s hills are a little cooler.',
     community: 'A very large international community, skewed to younger digital nomads in Canggu; retirees tend to prefer Sanur and Ubud.',
     access: 'Ngurah Rai (DPS) is in the south near Kuta, so inland and northern areas mean a long drive on busy roads; the airport closes for Nyepi, the day of silence, each year (usually March).',
   },
   drawbacks: [
     'US dividends taxed at up to 35% every year, with no retiree exemption',
-    'Serious medical care usually means evacuation to Jakarta or Singapore',
+    'Serious medical care usually means evacuation to Singapore or Bangkok',
     'Visa rules shift often and the retirement KITAS needs a paid sponsor; traffic and overtourism in the south',
   ],
   sources: [
@@ -32,6 +32,10 @@ const profile: ExpatProfile = {
     { name: 'PwC: Indonesia, other taxes', url: 'https://taxsummaries.pwc.com/indonesia/individual/other-taxes' },
     { name: 'DJP (Indonesian tax office): tax returns for foreign citizens', url: 'https://pajak.go.id/en/artikel/tax-return-reporting-foreign-citizens-indonesia' },
     { name: 'Liberty Mundo: Retire in Indonesia, the E33F visa and residency guide (2026)', url: 'https://www.libertymundo.com/retire-in-indonesia/' },
+    { name: 'Directorate General of Immigration: E33 second home visa', url: 'https://www.imigrasi.go.id/wna/daftar-visa-indonesia/E33' },
+    { name: 'Directorate General of Immigration: E33E second home visa for the elderly (5 years)', url: 'https://www.imigrasi.go.id/wna/daftar-visa-indonesia/E33E' },
+    { name: 'Directorate General of Immigration: E33F second home visa for the elderly (1 year)', url: 'https://www.imigrasi.go.id/wna/daftar-visa-indonesia/E33F' },
+    { name: 'APRIL International: healthcare options for digital nomads in Bali', url: 'https://www.april-international.com/en/long-term-international-health-insurance/guide/healthcare-options-for-digital-nomads-in-bali', edition: '2026' },
     { name: 'Emerhub: Indonesia retirement visa', url: 'https://emerhub.com/indonesia/visas/retirement-visa/' },
     { name: 'BIMC Hospital Bali: Emergency medical evacuation program', url: 'https://bimcbali.com/medical-evacuation-program' },
     { name: 'GOV.UK: Indonesia travel advice, safety and security', url: 'https://www.gov.uk/foreign-travel-advice/indonesia/safety-and-security' },

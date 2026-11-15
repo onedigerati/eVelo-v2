@@ -1,0 +1,647 @@
+{
+  "country": "Malaysia",
+  "cities": [
+    "kuala-lumpur",
+    "penang",
+    "langkawi"
+  ],
+  "claims": [
+    {
+      "id": "my-tax-no-wealth",
+      "fact": "tax",
+      "cities": [
+        "kuala-lumpur",
+        "penang",
+        "langkawi"
+      ],
+      "claim": "Malaysia has no wealth tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Malaysia, other taxes",
+          "url": "https://taxsummaries.pwc.com/malaysia/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 16 June 2026. \"There are no net wealth/worth taxes in Malaysia.\" \"There are no inheritance, estate, or gift taxes in Malaysia.\""
+        },
+        {
+          "name": "PwC: quick chart, net wealth/worth tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/net-wealth-worth-tax-rates",
+          "read": "2026-11-15",
+          "says": "Headline net wealth/worth tax rate \"NA\" (\"the territory does not have the indicated tax\") for Thailand (last reviewed 24 August 2026), Malaysia (16 June 2026), Vietnam (23 September 2026), Indonesia (11 June 2026) and the Philippines (01 August 2026)."
+        }
+      ]
+    },
+    {
+      "id": "my-tax-fsi-exempt-2036",
+      "fact": "tax",
+      "cities": [
+        "kuala-lumpur",
+        "penang",
+        "langkawi"
+      ],
+      "claim": "Foreign-sourced income received in Malaysia by resident individuals (182+ days) is exempt, subject to conditions, through 31 Dec 2036, so US dividends, interest and loan draws are untaxed locally",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Malaysia, income determination",
+          "url": "https://taxsummaries.pwc.com/malaysia/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 16 June 2026. Foreign-sourced income received in Malaysia by resident individuals \"from 1 January 2022 to 31 December 2036 may qualify for tax exemption, subject to conditions\" (all classes except partnership income). The 2% tax on \"annual dividend income exceeding MYR 100,000 received by resident individuals\", from YA 2025: \"This tax applies to dividend income distributed by resident companies.\""
+        },
+        {
+          "name": "PwC: Malaysia, residence",
+          "url": "https://taxsummaries.pwc.com/malaysia/individual/residence",
+          "read": "2026-11-15",
+          "says": "Last reviewed 16 June 2026. An individual \"in Malaysia for a period or periods amounting to 182 days or more in a calendar year\" is generally resident."
+        }
+      ],
+      "note": "Searched the exemption with the current month: nothing pending found. PwC does not list the conditions (in the 2024 guidelines they concern income already taxed abroad); a loan is not income, so \"loan draws\" rides with the claim. The Star (2024) and Bloomberg Tax pages in the profiles were not re-read; PwC is higher in the source order."
+    },
+    {
+      "id": "my-tax-dividend-2pct",
+      "fact": "tax",
+      "cities": [
+        "kuala-lumpur",
+        "penang"
+      ],
+      "claim": "The 2% tax on dividends above MYR 100,000 appears to reach only Malaysian-company dividends",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Malaysia, income determination",
+          "url": "https://taxsummaries.pwc.com/malaysia/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 16 June 2026. Foreign-sourced income received in Malaysia by resident individuals \"from 1 January 2022 to 31 December 2036 may qualify for tax exemption, subject to conditions\" (all classes except partnership income). The 2% tax on \"annual dividend income exceeding MYR 100,000 received by resident individuals\", from YA 2025: \"This tax applies to dividend income distributed by resident companies.\""
+        }
+      ],
+      "note": "PwC: \"This tax applies to dividend income distributed by resident companies.\" The profiles' \"(confirm with an adviser)\" may stay."
+    },
+    {
+      "id": "my-tax-langkawi-duty-free",
+      "fact": "tax",
+      "cities": [
+        "langkawi"
+      ],
+      "claim": "Langkawi's duty-free status (since 1987) covers goods, not income tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "TTG Asia: Malaysia reviews plan to restore Langkawi duty-free status",
+          "url": "https://www.ttgasia.com/2026/04/22/malaysia-reviews-plan-to-restore-langkawi-duty-free-status/",
+          "read": "2026-11-15",
+          "says": "Dated 22 April 2026. Langkawi \"was declared a duty-free island on January 1, 1987\"; goods were generally free of duties, and duties on tobacco products returned on January 1, 2021."
+        },
+        {
+          "name": "PwC: Malaysia, income determination",
+          "url": "https://taxsummaries.pwc.com/malaysia/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 16 June 2026. Foreign-sourced income received in Malaysia by resident individuals \"from 1 January 2022 to 31 December 2036 may qualify for tax exemption, subject to conditions\" (all classes except partnership income). The 2% tax on \"annual dividend income exceeding MYR 100,000 received by resident individuals\", from YA 2025: \"This tax applies to dividend income distributed by resident companies.\""
+        }
+      ],
+      "note": "PwC describes income tax for residents nationwide with no Langkawi exception."
+    },
+    {
+      "id": "my-estate-none",
+      "fact": "estate",
+      "cities": [
+        "kuala-lumpur",
+        "penang",
+        "langkawi"
+      ],
+      "claim": "No inheritance, estate or gift tax, so US assets pass to US-resident children with no Malaysian tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Malaysia, other taxes",
+          "url": "https://taxsummaries.pwc.com/malaysia/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 16 June 2026. \"There are no net wealth/worth taxes in Malaysia.\" \"There are no inheritance, estate, or gift taxes in Malaysia.\""
+        },
+        {
+          "name": "PwC: quick chart, inheritance and gift tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates",
+          "read": "2026-11-15",
+          "says": "Thailand (24 August 2026): inheritance 10, gift 5; Malaysia (16 June 2026): NA, NA; Vietnam (23 September 2026): 10, 10; Indonesia (11 June 2026): NA, NA; Philippines (01 August 2026): \"There is no inheritance tax in the Philippines.\" \"an estate tax of 6% is imposed on the assets of the decedent taxpayer.\""
+        }
+      ],
+      "note": "localTaxes.ts (MY) agrees."
+    },
+    {
+      "id": "my-estate-no-treaty",
+      "fact": "estate",
+      "cities": [
+        "kuala-lumpur",
+        "penang",
+        "langkawi"
+      ],
+      "claim": "There is no US estate treaty",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-without",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list); none of the 37 countries named in this claim is among them."
+        }
+      ],
+      "note": "Wording: \"there is no US estate treaty, but nothing to double-tax\"."
+    },
+    {
+      "id": "my-estate-us-exemption",
+      "fact": "estate",
+      "cities": [
+        "kuala-lumpur",
+        "penang",
+        "langkawi"
+      ],
+      "claim": "US estate tax applies above the $15M exemption (2026): \"US estate tax applies only above the $15M exemption (2026)\"",
+      "verdict": "confirmed",
+      "shared": "us-estate-exemption-2026",
+      "sources": [
+        {
+          "name": "IRS: What's new, estate and gift tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax",
+          "read": "2026-11-15",
+          "says": "The table \"Basic exclusion amount for year of death\" has the row 2026: $15,000,000 (2025: $13,990,000). The page says the Working Families Tax Cuts, Public Law 119-21, signed July 4, 2025, \"amends § 2010(c)(3) by increasing the basic exclusion amount to $15,000,000 for calendar year 2026\". Page last reviewed or updated 03-Nov-2026."
+        },
+        {
+          "name": "IRS: Estate tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-tax",
+          "read": "2026-11-15",
+          "says": "A return is required when the gross estate, plus adjusted taxable gifts and specific exemption, is more than the filing threshold for the year of death; the table gives 2026: $15,000,000. Page last reviewed or updated 23-Oct-2026."
+        },
+        {
+          "name": "IRS news release IR-2025-103: tax inflation adjustments for tax year 2026",
+          "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill",
+          "read": "2026-11-15",
+          "says": "\"Estates of decedents who die during 2026 have a basic exclusion amount of $15,000,000\", up from $13,990,000 for 2025; the release (October 9, 2025) cites Revenue Procedure 2025-32 and is marked as an archival document."
+        },
+        {
+          "name": "IRS: Some nonresidents with U.S. assets must file estate tax returns",
+          "url": "https://www.irs.gov/individuals/international-taxpayers/some-nonresidents-with-us-assets-must-file-estate-tax-returns",
+          "read": "2026-11-15",
+          "says": "\"U.S. citizens are subject to U.S. estate taxation with respect to their worldwide assets\"; Form 706 is required when worldwide assets plus adjusted taxable gifts exceed the basic exclusion amount in effect on the date of death. By contrast a nonresident who is not a citizen files when US-situated assets exceed $60,000. Page last reviewed or updated 27-Jun-2026."
+        }
+      ]
+    },
+    {
+      "id": "my-lending-ibkr",
+      "fact": "lending",
+      "cities": [
+        "kuala-lumpur",
+        "penang",
+        "langkawi"
+      ],
+      "claim": "Interactive Brokers accepts Malaysia residents",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly accepts Malaysia residents (IBKR Pro)",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Indonesia, Malaysia, the Philippines, Thailand and Vietnam; it names no IBKR entity for them, and says the default account type outside the US is IBKR PRO."
+        },
+        {
+          "name": "Your Tax Base: best brokerage for US expats",
+          "url": "https://yourtaxbase.com/blog/best-brokerage-for-us-expats",
+          "read": "2026-11-15",
+          "says": "Dated October 23, 2026. Quotes Fidelity's FAQ: \"we do not open accounts for any new customers residing outside the United States\"; Vanguard requires US citizenship or permanent residence \"with a U.S. mailing address\". Quotes IBKR's account page: \"Accounts are accepted from citizens or residents of all countries\", except sanctioned countries or those \"determined to be higher risk\". Says nothing country-specific on IBKR for Thailand, Malaysia, Vietnam, Indonesia or the Philippines."
+        }
+      ],
+      "note": "IBKR's country list (https://www.interactivebrokers.com/en/accounts/open-account-country-list.php) returned HTTP 403 again on 2026-11-15, so acceptance stays reported (rule 3)."
+    },
+    {
+      "id": "my-lending-schwab",
+      "fact": "lending",
+      "cities": [
+        "kuala-lumpur",
+        "penang",
+        "langkawi"
+      ],
+      "claim": "Schwab One International accepted Malaysia residents in Oct 2026",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab One International's online form reportedly accepted Malaysia in Oct 2026",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. On that day the author ran every entry in Schwab's international account selector through the application: it accepted residents of 51 of 263 countries and regions: Argentina, Australia, Austria, the Bahamas, Belgium, Bermuda, Brazil, the British Virgin Islands, the Cayman Islands, Chile, China, Colombia, Costa Rica, the Czech Republic, Denmark, Ecuador, Finland, Germany, Greece, Guatemala, Hong Kong, Iceland, India, Indonesia, Ireland, Israel, Jersey, Luxembourg, Malaysia, the Marshall Islands, Mexico, the Netherlands, Norway, Panama, Paraguay, Peru, Poland, Portugal, Qatar, Singapore, South Korea, Spain, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Turks and Caicos, the United Arab Emirates, the United Kingdom and Uruguay. Named as not accepted: Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam; for the rest the application said \"Schwab currently cannot open accounts for residents of your country/region.\" The test covers new applicants on that day only."
+        },
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026 (country check run that day). Online application open to residents: Thailand \"Yes\"; Malaysia and Indonesia in the list of 51 accepted; Vietnam \"No\"; Philippines \"No\". The only margin restriction quoted: \"Customers residing within Europe are restricted from using their Available Margin Loan Value\" to withdraw funds; nothing on Asia."
+        }
+      ],
+      "note": "Agrees with the dated list (re-read 2026-11-15). Schwab's own sites were not retried; stage 1 found them blocked (HTTP 403 or an error page). Stays reported (rule 3)."
+    },
+    {
+      "id": "my-lending-margin-unreported",
+      "fact": "lending",
+      "cities": [
+        "kuala-lumpur",
+        "penang",
+        "langkawi"
+      ],
+      "claim": "Margin terms for Malaysia residents are not reported",
+      "verdict": "cant-confirm",
+      "hedge": "unreported",
+      "wording": "margin by country of residence is unreported",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026 (country check run that day). Online application open to residents: Thailand \"Yes\"; Malaysia and Indonesia in the list of 51 accepted; Vietnam \"No\"; Philippines \"No\". The only margin restriction quoted: \"Customers residing within Europe are restricted from using their Available Margin Loan Value\" to withdraw funds; nothing on Asia."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Indonesia, Malaysia, the Philippines, Thailand and Vietnam; it names no IBKR entity for them, and says the default account type outside the US is IBKR PRO."
+        }
+      ],
+      "note": "A statement of what is not known; nothing read gives margin terms for residents of this country."
+    },
+    {
+      "id": "my-lending-fidelity-vanguard",
+      "fact": "lending",
+      "cities": [
+        "kuala-lumpur",
+        "penang",
+        "langkawi"
+      ],
+      "claim": "Fidelity and Vanguard open no accounts for residents abroad",
+      "verdict": "cant-confirm",
+      "hedge": "reportedly",
+      "oldWording": "and Fidelity and Vanguard open no accounts for residents abroad",
+      "wording": "Fidelity and Vanguard reportedly open no new accounts for residents abroad",
+      "sources": [
+        {
+          "name": "Your Tax Base: best brokerage for US expats",
+          "url": "https://yourtaxbase.com/blog/best-brokerage-for-us-expats",
+          "read": "2026-11-15",
+          "says": "Dated October 23, 2026. Quotes Fidelity's FAQ: \"we do not open accounts for any new customers residing outside the United States\"; Vanguard requires US citizenship or permanent residence \"with a U.S. mailing address\". Quotes IBKR's account page: \"Accounts are accepted from citizens or residents of all countries\", except sanctioned countries or those \"determined to be higher risk\". Says nothing country-specific on IBKR for Thailand, Malaysia, Vietnam, Indonesia or the Philippines."
+        }
+      ],
+      "also": [
+        "hedge added: \"reportedly\", and \"no accounts\" narrowed to \"no new accounts\" as Fidelity's quoted FAQ says"
+      ],
+      "note": "A broker claim resting on a secondary page stays reported (rule 3); Fidelity's FAQ returned HTTP 403 in stage 4 and was not retried. Worded as in the Guatemala, Peru and Chile ledgers."
+    },
+    {
+      "id": "my-visa-silver-deposit",
+      "fact": "visa",
+      "cities": [
+        "kuala-lumpur",
+        "penang",
+        "langkawi"
+      ],
+      "claim": "MM2H Silver needs a USD 150,000 fixed deposit with a Malaysian bank, up to half withdrawable after approval (KL: for a home, medical or other costs)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "MM2H official guidelines (Ministry of Tourism, Arts and Culture)",
+          "url": "https://www.mm2h.gov.my/apply/guidelines",
+          "read": "2026-11-15",
+          "says": "\"Last Update: 10/02/2026\". For Silver, Gold and Platinum: \"A maximum withdrawal of 50% is allowed on the principal FD value after the approval\" (residence, education, medical and tourism); buying a residence is mandatory and \"Selling of the residence is not allowed for 10 years\"; the pass \"is renewable every five years\"; applicants under 50 must stay 90 days a year. The deposit and property amounts are in table images the fetch could not read."
+        },
+        {
+          "name": "Asia Lifestyle Magazine: MM2H 2026 requirements, tiers and deposits",
+          "url": "https://www.asialifestylemagazine.com/mm2h-2026-requirements-tiers-deposits-how-to-apply/",
+          "read": "2026-11-15",
+          "says": "Dated 24 October 2026, rules \"as at October 2026\". Silver: USD 150,000 fixed deposit with a licensed Malaysian bank, up to 50% withdrawable after approval for a home, education, medical needs or travel in Malaysia; a home \"worth at least RM 600,000\"; in Kuala Lumpur the state minimum for foreigners is RM 1 million and \"the higher figure applies\"; 5-year renewable pass; from age 50 no minimum stay. No state minimums given for Penang or Kedah."
+        }
+      ],
+      "note": "The amount rests on a dated secondary page: the official page shows it only in an image. Searched MM2H with the current month: no pending change found (latest news September 2026)."
+    },
+    {
+      "id": "my-visa-home-10-years",
+      "fact": "visa",
+      "cities": [
+        "kuala-lumpur",
+        "penang",
+        "langkawi"
+      ],
+      "claim": "A compulsory home that cannot be sold for 10 years, at least RM600k for Silver",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "MM2H official guidelines (Ministry of Tourism, Arts and Culture)",
+          "url": "https://www.mm2h.gov.my/apply/guidelines",
+          "read": "2026-11-15",
+          "says": "\"Last Update: 10/02/2026\". For Silver, Gold and Platinum: \"A maximum withdrawal of 50% is allowed on the principal FD value after the approval\" (residence, education, medical and tourism); buying a residence is mandatory and \"Selling of the residence is not allowed for 10 years\"; the pass \"is renewable every five years\"; applicants under 50 must stay 90 days a year. The deposit and property amounts are in table images the fetch could not read."
+        },
+        {
+          "name": "Asia Lifestyle Magazine: MM2H 2026 requirements, tiers and deposits",
+          "url": "https://www.asialifestylemagazine.com/mm2h-2026-requirements-tiers-deposits-how-to-apply/",
+          "read": "2026-11-15",
+          "says": "Dated 24 October 2026, rules \"as at October 2026\". Silver: USD 150,000 fixed deposit with a licensed Malaysian bank, up to 50% withdrawable after approval for a home, education, medical needs or travel in Malaysia; a home \"worth at least RM 600,000\"; in Kuala Lumpur the state minimum for foreigners is RM 1 million and \"the higher figure applies\"; 5-year renewable pass; from age 50 no minimum stay. No state minimums given for Penang or Kedah."
+        }
+      ]
+    },
+    {
+      "id": "my-visa-kl-floor",
+      "fact": "visa",
+      "cities": [
+        "kuala-lumpur"
+      ],
+      "claim": "In Kuala Lumpur the home must meet the RM1m foreign-buyer floor rather than the tier's RM600k",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Asia Lifestyle Magazine: MM2H 2026 requirements, tiers and deposits",
+          "url": "https://www.asialifestylemagazine.com/mm2h-2026-requirements-tiers-deposits-how-to-apply/",
+          "read": "2026-11-15",
+          "says": "Dated 24 October 2026, rules \"as at October 2026\". Silver: USD 150,000 fixed deposit with a licensed Malaysian bank, up to 50% withdrawable after approval for a home, education, medical needs or travel in Malaysia; a home \"worth at least RM 600,000\"; in Kuala Lumpur the state minimum for foreigners is RM 1 million and \"the higher figure applies\"; 5-year renewable pass; from age 50 no minimum stay. No state minimums given for Penang or Kedah."
+        }
+      ]
+    },
+    {
+      "id": "my-visa-penang-floor",
+      "fact": "visa",
+      "cities": [
+        "penang"
+      ],
+      "claim": "Penang's own foreign-buyer floor may be higher than RM600k",
+      "verdict": "cant-confirm",
+      "hedge": "unverified",
+      "wording": "or more if Penang's own foreign-buyer floor is higher (unverified)",
+      "sources": [
+        {
+          "name": "Asia Lifestyle Magazine: MM2H 2026 requirements, tiers and deposits",
+          "url": "https://www.asialifestylemagazine.com/mm2h-2026-requirements-tiers-deposits-how-to-apply/",
+          "read": "2026-11-15",
+          "says": "Dated 24 October 2026, rules \"as at October 2026\". Silver: USD 150,000 fixed deposit with a licensed Malaysian bank, up to 50% withdrawable after approval for a home, education, medical needs or travel in Malaysia; a home \"worth at least RM 600,000\"; in Kuala Lumpur the state minimum for foreigners is RM 1 million and \"the higher figure applies\"; 5-year renewable pass; from age 50 no minimum stay. No state minimums given for Penang or Kedah."
+        }
+      ],
+      "note": "The page gives no Penang figure."
+    },
+    {
+      "id": "my-visa-kedah-floor",
+      "fact": "visa",
+      "cities": [
+        "langkawi"
+      ],
+      "claim": "Kedah's foreign-buyer floor may be higher than RM600k",
+      "verdict": "cant-confirm",
+      "hedge": "unverified",
+      "wording": "or more if Kedah's foreign-buyer floor is higher (unverified)",
+      "sources": [
+        {
+          "name": "Asia Lifestyle Magazine: MM2H 2026 requirements, tiers and deposits",
+          "url": "https://www.asialifestylemagazine.com/mm2h-2026-requirements-tiers-deposits-how-to-apply/",
+          "read": "2026-11-15",
+          "says": "Dated 24 October 2026, rules \"as at October 2026\". Silver: USD 150,000 fixed deposit with a licensed Malaysian bank, up to 50% withdrawable after approval for a home, education, medical needs or travel in Malaysia; a home \"worth at least RM 600,000\"; in Kuala Lumpur the state minimum for foreigners is RM 1 million and \"the higher figure applies\"; 5-year renewable pass; from age 50 no minimum stay. No state minimums given for Penang or Kedah."
+        }
+      ],
+      "note": "The page gives no Kedah figure."
+    },
+    {
+      "id": "my-visa-federal",
+      "fact": "visa",
+      "cities": [
+        "penang",
+        "langkawi"
+      ],
+      "claim": "Federal MM2H applies (Penang: no separate Penang programme found)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "MM2H official guidelines (Ministry of Tourism, Arts and Culture)",
+          "url": "https://www.mm2h.gov.my/apply/guidelines",
+          "read": "2026-11-15",
+          "says": "\"Last Update: 10/02/2026\". For Silver, Gold and Platinum: \"A maximum withdrawal of 50% is allowed on the principal FD value after the approval\" (residence, education, medical and tourism); buying a residence is mandatory and \"Selling of the residence is not allowed for 10 years\"; the pass \"is renewable every five years\"; applicants under 50 must stay 90 days a year. The deposit and property amounts are in table images the fetch could not read."
+        }
+      ],
+      "note": "The programme is run by the federal Ministry of Tourism, Arts and Culture; no Penang or Kedah programme was found in any search."
+    },
+    {
+      "id": "my-visa-pass-stay",
+      "fact": "visa",
+      "cities": [
+        "kuala-lumpur",
+        "penang",
+        "langkawi"
+      ],
+      "claim": "A renewable 5-year pass, with no minimum stay from age 50",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "MM2H official guidelines (Ministry of Tourism, Arts and Culture)",
+          "url": "https://www.mm2h.gov.my/apply/guidelines",
+          "read": "2026-11-15",
+          "says": "\"Last Update: 10/02/2026\". For Silver, Gold and Platinum: \"A maximum withdrawal of 50% is allowed on the principal FD value after the approval\" (residence, education, medical and tourism); buying a residence is mandatory and \"Selling of the residence is not allowed for 10 years\"; the pass \"is renewable every five years\"; applicants under 50 must stay 90 days a year. The deposit and property amounts are in table images the fetch could not read."
+        },
+        {
+          "name": "Asia Lifestyle Magazine: MM2H 2026 requirements, tiers and deposits",
+          "url": "https://www.asialifestylemagazine.com/mm2h-2026-requirements-tiers-deposits-how-to-apply/",
+          "read": "2026-11-15",
+          "says": "Dated 24 October 2026, rules \"as at October 2026\". Silver: USD 150,000 fixed deposit with a licensed Malaysian bank, up to 50% withdrawable after approval for a home, education, medical needs or travel in Malaysia; a home \"worth at least RM 600,000\"; in Kuala Lumpur the state minimum for foreigners is RM 1 million and \"the higher figure applies\"; 5-year renewable pass; from age 50 no minimum stay. No state minimums given for Penang or Kedah."
+        }
+      ]
+    },
+    {
+      "id": "my-health-kl-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "kuala-lumpur"
+      ],
+      "claim": "Excellent, affordable private hospitals (Gleneagles, Prince Court, Sunway) with English-speaking, often Western-trained doctors",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Malaysia4U: healthcare guide",
+          "url": "https://malaysia4u.com/healthcare-guide",
+          "read": "2026-11-15",
+          "says": "\"Updated 21 August 2026\". Gleneagles Kuala Lumpur, Prince Court Medical Centre and Sunway Medical Centre are on its list of \"JCI-Accredited Hospitals in Malaysia\"; foreigners \"Pay higher 'foreigner' rates\" at public hospitals."
+        },
+        {
+          "name": "Expat Wiki: healthcare in Malaysia, an expats guide",
+          "url": "https://expatwiki.blogspot.com/2026/06/healthcare-malaysia-expats-guide.html",
+          "read": "2026-11-15",
+          "says": "Dated June 12, 2026. Temporary expats \"are generally not entitled to the subsidised public rates\" and pay foreigner rates; Pantai, Gleneagles and Prince Court \"are internationally accredited\"; KL specialists have \"many with overseas qualifications from UK, Australia and the US\"; \"Most speak excellent English.\""
+        }
+      ]
+    },
+    {
+      "id": "my-health-no-subsidy",
+      "fact": "healthcare",
+      "cities": [
+        "kuala-lumpur",
+        "langkawi"
+      ],
+      "claim": "Foreigners get no public subsidy (Langkawi: foreigners pay foreigner rates)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Expat Wiki: healthcare in Malaysia, an expats guide",
+          "url": "https://expatwiki.blogspot.com/2026/06/healthcare-malaysia-expats-guide.html",
+          "read": "2026-11-15",
+          "says": "Dated June 12, 2026. Temporary expats \"are generally not entitled to the subsidised public rates\" and pay foreigner rates; Pantai, Gleneagles and Prince Court \"are internationally accredited\"; KL specialists have \"many with overseas qualifications from UK, Australia and the US\"; \"Most speak excellent English.\""
+        },
+        {
+          "name": "Malaysia4U: healthcare guide",
+          "url": "https://malaysia4u.com/healthcare-guide",
+          "read": "2026-11-15",
+          "says": "\"Updated 21 August 2026\". Gleneagles Kuala Lumpur, Prince Court Medical Centre and Sunway Medical Centre are on its list of \"JCI-Accredited Hospitals in Malaysia\"; foreigners \"Pay higher 'foreigner' rates\" at public hospitals."
+        }
+      ]
+    },
+    {
+      "id": "my-health-sst",
+      "fact": "healthcare",
+      "cities": [
+        "kuala-lumpur",
+        "penang",
+        "langkawi"
+      ],
+      "claim": "Since July 2025 private hospitals add 6% service tax for foreign patients",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "The Star: healthcare travel sector not affected by 6% SST",
+          "url": "https://www.thestar.com.my/news/nation/2026/05/19/healthcare-travel-sector-not-affected-by-6-sst",
+          "read": "2026-11-15",
+          "says": "Dated 19 May 2026. From 1 July 2025, private healthcare providers with annual revenue above RM1.5 million add 6% service tax for non-citizens; \"Malaysians are exempt\". Nothing on MM2H holders or permanent residents."
+        }
+      ],
+      "note": "Only providers with revenue above RM1.5 million charge it, which covers the hospitals named."
+    },
+    {
+      "id": "my-health-sst-mm2h",
+      "fact": "healthcare",
+      "cities": [
+        "kuala-lumpur",
+        "penang"
+      ],
+      "claim": "Whether MM2H holders are carved out of the 6% tax is unconfirmed",
+      "verdict": "cant-confirm",
+      "hedge": "unconfirmed",
+      "wording": "(whether MM2H holders are carved out is unconfirmed)",
+      "sources": [
+        {
+          "name": "The Star: healthcare travel sector not affected by 6% SST",
+          "url": "https://www.thestar.com.my/news/nation/2026/05/19/healthcare-travel-sector-not-affected-by-6-sst",
+          "read": "2026-11-15",
+          "says": "Dated 19 May 2026. From 1 July 2025, private healthcare providers with annual revenue above RM1.5 million add 6% service tax for non-citizens; \"Malaysians are exempt\". Nothing on MM2H holders or permanent residents."
+        }
+      ],
+      "note": "No page read mentions MM2H; the Wolters Kluwer explainer (wolterskluwer.com/en-my/expert-insights/sst-on-private-healthcare-services) returned HTTP 403."
+    },
+    {
+      "id": "my-health-penang-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "penang"
+      ],
+      "claim": "Accredited private hospitals (Island Hospital, Gleneagles Penang, Loh Guan Lye) draw medical tourists, at a fraction of US prices",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Malaysia4U: Penang medical guide",
+          "url": "https://malaysia4u.com/penang-medical-guide",
+          "read": "2026-11-15",
+          "says": "\"Updated 11 July 2026\". Accreditation: Island Hospital \"MSQH, MHTC flagship\"; Gleneagles Penang \"JCI, MSQH, MHTC\"; Loh Guan Lye Specialist Centre \"MSQH, MHTC\". Penang runs \"roughly 55% to 75% below Singapore prices and further below the United States\"; about 970,000 Indonesian healthcare travellers in 2025."
+        }
+      ]
+    },
+    {
+      "id": "my-health-langkawi-no-private",
+      "fact": "healthcare",
+      "cities": [
+        "langkawi"
+      ],
+      "claim": "There is no private or specialist hospital on Langkawi: public Hospital Sultanah Maliha, 7 km from Kuah, is the only one",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Penang Travel Tips: Hospital Langkawi",
+          "url": "https://www.penang-traveltips.com/malaysia/kedah/langkawi/hospital-langkawi.htm",
+          "read": "2026-11-15",
+          "says": "Photo dated 8 September 2018. Hospital Langkawi is \"the main government hospital on Langkawi\", \"about 7km from Kuah\"; \"This is the only hospital on the island, apart from the private and public health clinics.\""
+        },
+        {
+          "name": "Kosmo: Langkawi still without a private hospital",
+          "url": "https://www.kosmo.com.my/?p=586379",
+          "read": "2026-11-15",
+          "says": "Dated 21 April 2024. Tourism players say \"sudah tiba masanya hospital pakar swasta dibina\" (it is time a private specialist hospital was built); residents depend on Hospital Sultanah Maliha and \"perlu menunggu sehingga berbulan lamanya untuk rawatan bukan kecemasan\"."
+        },
+        {
+          "name": "The Sun: assemblyman calls for a world-class specialist hospital in Langkawi",
+          "url": "https://thesun.my/news/malaysia-news/assemblyman-calls-for-establishment-of-world-class-specialist-hospital-in-langkawi-ef12179278/",
+          "read": "2026-11-15",
+          "says": "Undated. Refers only to the public Sultanah Maliha Hospital, which \"does not have a Royal Ward\", and calls for an international-standard specialist hospital on the island."
+        },
+        {
+          "name": "The Vibes: Langkawi sea ambulance to start operating early next year",
+          "url": "https://www.thevibes.com/articles/news/124448/langkawi-sea-ambulance-to-start-operating-early-next-year",
+          "read": "2026-11-15",
+          "says": "Published 28 June 2026. Residents and tourists \"who require emergency treatment at mainland hospitals will be evacuated more quickly\" by sea ambulance; the Langkawi Hospital expansion, in its second phase, should finish in March next year."
+        }
+      ],
+      "note": "Hospital Langkawi and Hospital Sultanah Maliha are the same hospital. The newest pages (2026) describe only the public hospital and calls for a private one; no 2026 report of a private hospital opening was found."
+    },
+    {
+      "id": "my-health-langkawi-waits",
+      "fact": "healthcare",
+      "cities": [
+        "langkawi"
+      ],
+      "claim": "Non-emergency waits can run to months",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Kosmo: Langkawi still without a private hospital",
+          "url": "https://www.kosmo.com.my/?p=586379",
+          "read": "2026-11-15",
+          "says": "Dated 21 April 2024. Residents \"perlu menunggu sehingga berbulan lamanya untuk rawatan bukan kecemasan\" (wait months for non-emergency treatment)."
+        }
+      ],
+      "note": "A 2024 newspaper; the profile's \"reportedly\" may stay."
+    },
+    {
+      "id": "my-health-langkawi-penang",
+      "fact": "healthcare",
+      "cities": [
+        "langkawi"
+      ],
+      "claim": "Private care (Island Hospital, Gleneagles, Pantai) is a short AirAsia or Firefly flight away in Penang",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Wikipedia: Langkawi International Airport",
+          "url": "https://en.wikipedia.org/wiki/Langkawi_International_Airport",
+          "read": "2026-11-15",
+          "says": "Airlines and destinations: AirAsia to \"Johor Bahru, Kuala Lumpur–International, Penang, Singapore\"; Firefly to \"Kuala Lumpur–Subang, Penang\"."
+        },
+        {
+          "name": "Malaysia4U: Penang medical guide",
+          "url": "https://malaysia4u.com/penang-medical-guide",
+          "read": "2026-11-15",
+          "says": "\"Updated 11 July 2026\". Accreditation: Island Hospital \"MSQH, MHTC flagship\"; Gleneagles Penang \"JCI, MSQH, MHTC\"; Loh Guan Lye Specialist Centre \"MSQH, MHTC\". Penang runs \"roughly 55% to 75% below Singapore prices and further below the United States\"; about 970,000 Indonesian healthcare travellers in 2025."
+        },
+        {
+          "name": "Pantai Hospital Penang",
+          "url": "https://www.pantai.com.my/penang",
+          "read": "2026-11-15",
+          "says": "\"Pantai Hospital Penang is committed to excellence in healthcare and patient experience\"; a private hospital at 82 Jalan Tengah, Bayan Baru, Bayan Lepas, Penang."
+        }
+      ]
+    }
+  ]
+}
