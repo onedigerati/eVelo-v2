@@ -8,11 +8,11 @@ const profile: ExpatProfile = {
   scores: { cost: 4, healthcare: 3, safety: 4, visa: 3, climate: 4, community: 4, tax: 5, estate: 5, lending: 4 },
   facts: {
     healthcare:
-      'Town clinics handle routine care (visits often $20–40); private hospitals (Hospital Chiriquí, Mae Lewis) are under an hour away in David, and specialist cases fly to Panama City, about an hour; most expats insure privately, as the public CSS is tied to payroll contributions.',
+      'Town clinics handle routine care; private hospitals (Hospital Chiriquí, Mae Lewis) are under an hour away in David, and specialist cases fly to Panama City, about an hour; most expats insure privately, as the public CSS is tied to payroll contributions.',
     safety:
       'Panama is 81st of 163 in the 2026 Global Peace Index and US State Dept Level 2 (August 2026); Boquete itself is a quiet small town where petty theft is the main concern.',
     visa:
-      'A US portfolio alone does not qualify: Friendly Nations needs $200k+ in Panamanian real estate or a local fixed-term deposit (the US being on the list is unverified), and Qualified Investor starts at $300k in local property (one source reports a rise to $500k in September 2026); Pensionado gives permanent residency at any age on a $1,000/month lifetime pension ($750 with $100k+ of Panama property), which portfolio income does not meet.',
+      'A US portfolio alone does not qualify: Friendly Nations needs $200k+ in Panamanian real estate or a local fixed-term deposit (the US is on the list), and Qualified Investor starts at $300k in new local property ($500k for resale, Decree 17 of September 2026); Pensionado gives permanent residency at any age on a $1,000/month lifetime pension ($750 with $100k+ of Panama property), which portfolio income does not meet.',
     tax: 'No wealth tax; Panama taxes only Panamanian-source income, so US brokerage dividends and interest are generally untaxed locally (PwC states the territorial principle, not the specific items), though US tax still applies.',
     estate:
       'Panama has no inheritance, estate or gift tax, so heirs owe nothing locally on US assets; there is no US estate treaty, and US estate tax applies to the worldwide estate above the $15M exemption (2026).',
@@ -42,6 +42,8 @@ const profile: ExpatProfile = {
     S.il,
     S.pensionado,
     S.gpiPoster,
+    { name: 'Kraemer & Kraemer: Panama Qualified Investor visa (Decree 17 of 2026)', url: 'https://kraemerlaw.com/en/immigration/panama-qualified-investor-visa', edition: '2026' },
+    { name: 'Gaceta Oficial 30601: Executive Decree 16 of 2026, friendly-nations list (copy by NDM)', url: 'https://www.ndm.com.pa/wp-content/uploads/2026/09/Decreto-Ejecutivo-N°-16.-Incluye-a-Ecuador-en-lista-de-paises-amigos.pdf', edition: '2026' },
   ],
 }
 

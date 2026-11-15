@@ -1,0 +1,930 @@
+{
+  "country": "Belize",
+  "cities": [
+    "cayo",
+    "ambergris-caye",
+    "placencia",
+    "hopkins",
+    "corozal"
+  ],
+  "claims": [
+    {
+      "id": "bz-tax-qrp-foreign-income-exempt",
+      "fact": "tax",
+      "cities": [
+        "cayo",
+        "ambergris-caye",
+        "placencia",
+        "hopkins",
+        "corozal"
+      ],
+      "claim": "QRP members are exempt from all taxes and duties on income from outside Belize, so US dividends and interest are untaxed",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Belize Tourism Board: Qualified Retired Persons programme",
+          "url": "https://www.belizetourismboard.org/programs-events/retirement-program/",
+          "read": "2026-11-15",
+          "says": "Undated rules (page ©2024; brochures dated 2026). \"Any person 40 years or older\"; \"a retirement income of $2K monthly or $24K annually\" generated outside Belize; acceptable sources include pension, annuity, Social Security, investment account, personal savings, retirement plans, reverse mortgage and inheritance; a \"written undertaking to deposit the requisite amount in a bank, credit union or licensed financial institution in Belize\"; \"a minimum of 30 consecutive days annually\"; QRP members are \"exempted from all taxes and duties on income received from a source outside of Belize\" and from capital gains tax and inheritance tax; \"Resident card to be renewed annually\". The page does not use the term permanent residency."
+        },
+        {
+          "name": "Rio Times: Taxes in Belize for expats 2026",
+          "url": "https://www.riotimesonline.com/taxes-belize-expats-2026/",
+          "read": "2026-11-15",
+          "says": "Dated September 14, 2026. \"Income earned outside the country falls outside the charge.\" \"Belize levies no capital gains tax and no inheritance tax on anyone living there.\" \"Section 4(4) exempts a qualified retired person from all taxes on income arising outside Belize.\" Says the 2023 amendment lowered the QRP entry age from 45 to 40. Reports no 2026 tax change or bill."
+        }
+      ],
+      "note": "The programme's own page and a dated secondary page citing section 4(4) of the Retired Persons (Incentives) Act agree. Also the summaries (\"exempts all foreign income\") and the why lines."
+    },
+    {
+      "id": "bz-tax-no-wealth-tax",
+      "fact": "tax",
+      "cities": [
+        "cayo",
+        "ambergris-caye",
+        "placencia",
+        "hopkins",
+        "corozal"
+      ],
+      "claim": "No wealth tax is believed to exist, but that is unverified",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "TaxAtlas: Belize wealth and property tax rates (2026)",
+          "url": "https://taxatlas.io/country/belize/wealth-tax",
+          "read": "2026-11-15",
+          "says": "Labelled 2026. \"Belize does not impose a wealth tax\" (rate 0%); \"Belize does not impose an inheritance or estate tax\" (top rate 0%)."
+        },
+        {
+          "name": "PwC: quick chart, net wealth/worth tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/net-wealth-worth-tax-rates",
+          "read": "2026-11-15",
+          "says": "About 146 territories, each with its own review date. Belize is not in the list. Panama: \"NA\" (last reviewed 04 August 2026); Costa Rica: \"Costa Rica does not have a net wealth/worth tax\" (last reviewed 30 June 2026); Dominican Republic: \"NA\" (last reviewed 25 August 2026)."
+        }
+      ],
+      "note": "No government page or Big Four summary covers it (PwC has no Belize summary and Belize is absent from its wealth-tax quick chart), so the dated 2026 secondary page settles it. The profile's \"believed ... unverified\" hedge was left: it does no harm and no primary source was read. localTaxes.ts (BZ) models no wealth tax, which agrees."
+    },
+    {
+      "id": "bz-tax-pwc-no-cover",
+      "fact": "tax",
+      "cities": [
+        "cayo",
+        "ambergris-caye",
+        "placencia",
+        "hopkins",
+        "corozal"
+      ],
+      "claim": "PwC does not cover Belize",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC Worldwide Tax Summaries: Belize (URL tried)",
+          "url": "https://taxsummaries.pwc.com/belize",
+          "read": "2026-11-15",
+          "says": "HTTP 404 Not Found: PwC publishes no Belize summary, and Belize is absent from its net wealth and inheritance quick charts."
+        },
+        {
+          "name": "PwC: quick chart, net wealth/worth tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/net-wealth-worth-tax-rates",
+          "read": "2026-11-15",
+          "says": "About 146 territories, each with its own review date. Belize is not in the list. Panama: \"NA\" (last reviewed 04 August 2026); Costa Rica: \"Costa Rica does not have a net wealth/worth tax\" (last reviewed 30 June 2026); Dominican Republic: \"NA\" (last reviewed 25 August 2026)."
+        }
+      ]
+    },
+    {
+      "id": "bz-tax-non-qrp-rules",
+      "fact": "tax",
+      "cities": [
+        "cayo",
+        "ambergris-caye",
+        "placencia",
+        "hopkins",
+        "corozal"
+      ],
+      "claim": "The tax rules for residents outside the QRP are unverified",
+      "verdict": "cant-confirm",
+      "hedge": "unverified",
+      "wording": "but that is unverified (PwC does not cover Belize), as are the rules for residents outside the QRP",
+      "sources": [
+        {
+          "name": "Rio Times: Taxes in Belize for expats 2026",
+          "url": "https://www.riotimesonline.com/taxes-belize-expats-2026/",
+          "read": "2026-11-15",
+          "says": "Dated September 14, 2026. \"Income earned outside the country falls outside the charge.\" \"Belize levies no capital gains tax and no inheritance tax on anyone living there.\" \"Section 4(4) exempts a qualified retired person from all taxes on income arising outside Belize.\" Says the 2023 amendment lowered the QRP entry age from 45 to 40. Reports no 2026 tax change or bill."
+        },
+        {
+          "name": "BrightTax: Retire in Belize",
+          "url": "https://brighttax.com/blog/retire-in-belize/",
+          "read": "2026-11-15",
+          "says": "Dated July 4, 2026. QRP: \"Be at least 40 years old\", \"a monthly income of $2,000 U.S. dollars (USD) or more\", \"This income must be deposited into a local Belize bank account\", \"Spend at least 30 consecutive days per year in Belize\"; QRP holders get a resident card \"(note: this is not permanent residency)\", renewed annually. Lists \"No inheritance tax\" and \"No tax on interest or dividends earned abroad\"."
+        }
+      ],
+      "note": "Two dated secondary pages say Belize taxes residents only on Belize-source income (\"Income earned outside the country falls outside the charge\"), but the Income and Business Tax Act was not read and no tax-authority page was found, so the profile's \"unverified\" stays. Nothing a QRP member relies on turns on it."
+    },
+    {
+      "id": "bz-estate-qrp-inheritance-exempt",
+      "fact": "estate",
+      "cities": [
+        "cayo",
+        "ambergris-caye",
+        "placencia",
+        "hopkins",
+        "corozal"
+      ],
+      "claim": "The Belize Tourism Board lists QRP members as exempt from inheritance tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Belize Tourism Board: Qualified Retired Persons programme",
+          "url": "https://www.belizetourismboard.org/programs-events/retirement-program/",
+          "read": "2026-11-15",
+          "says": "Undated rules (page ©2024; brochures dated 2026). \"Any person 40 years or older\"; \"a retirement income of $2K monthly or $24K annually\" generated outside Belize; acceptable sources include pension, annuity, Social Security, investment account, personal savings, retirement plans, reverse mortgage and inheritance; a \"written undertaking to deposit the requisite amount in a bank, credit union or licensed financial institution in Belize\"; \"a minimum of 30 consecutive days annually\"; QRP members are \"exempted from all taxes and duties on income received from a source outside of Belize\" and from capital gains tax and inheritance tax; \"Resident card to be renewed annually\". The page does not use the term permanent residency."
+        },
+        {
+          "name": "Rio Times: Taxes in Belize for expats 2026",
+          "url": "https://www.riotimesonline.com/taxes-belize-expats-2026/",
+          "read": "2026-11-15",
+          "says": "Dated September 14, 2026. \"Income earned outside the country falls outside the charge.\" \"Belize levies no capital gains tax and no inheritance tax on anyone living there.\" \"Section 4(4) exempts a qualified retired person from all taxes on income arising outside Belize.\" Says the 2023 amendment lowered the QRP entry age from 45 to 40. Reports no 2026 tax change or bill."
+        },
+        {
+          "name": "TaxAtlas: Belize wealth and property tax rates (2026)",
+          "url": "https://taxatlas.io/country/belize/wealth-tax",
+          "read": "2026-11-15",
+          "says": "Labelled 2026. \"Belize does not impose a wealth tax\" (rate 0%); \"Belize does not impose an inheritance or estate tax\" (top rate 0%)."
+        }
+      ],
+      "note": "The BTB page lists the inheritance-tax exemption; two dated secondary pages say Belize has no inheritance tax at all. Estate score 5 stays; localTaxes.ts (BZ) models none."
+    },
+    {
+      "id": "bz-estate-no-us-treaty",
+      "fact": "estate",
+      "cities": [
+        "cayo",
+        "ambergris-caye",
+        "placencia",
+        "hopkins",
+        "corozal"
+      ],
+      "claim": "There is no US estate treaty",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-without",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list); none of the 37 countries named in this claim is among them."
+        }
+      ]
+    },
+    {
+      "id": "bz-estate-us-exemption",
+      "fact": "estate",
+      "cities": [
+        "cayo",
+        "ambergris-caye",
+        "placencia",
+        "hopkins",
+        "corozal"
+      ],
+      "claim": "US estate tax applies to the worldwide estate above the $15M exemption (2026)",
+      "verdict": "confirmed",
+      "shared": "us-estate-exemption-2026",
+      "sources": [
+        {
+          "name": "IRS: What's new, estate and gift tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax",
+          "read": "2026-11-15",
+          "says": "The table \"Basic exclusion amount for year of death\" has the row 2026: $15,000,000 (2025: $13,990,000). The page says the Working Families Tax Cuts, Public Law 119-21, signed July 4, 2025, \"amends § 2010(c)(3) by increasing the basic exclusion amount to $15,000,000 for calendar year 2026\". Page last reviewed or updated 03-Nov-2026."
+        },
+        {
+          "name": "IRS: Estate tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-tax",
+          "read": "2026-11-15",
+          "says": "A return is required when the gross estate, plus adjusted taxable gifts and specific exemption, is more than the filing threshold for the year of death; the table gives 2026: $15,000,000. Page last reviewed or updated 23-Oct-2026."
+        },
+        {
+          "name": "IRS news release IR-2025-103: tax inflation adjustments for tax year 2026",
+          "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill",
+          "read": "2026-11-15",
+          "says": "\"Estates of decedents who die during 2026 have a basic exclusion amount of $15,000,000\", up from $13,990,000 for 2025; the release (October 9, 2025) cites Revenue Procedure 2025-32 and is marked as an archival document."
+        },
+        {
+          "name": "IRS: Some nonresidents with U.S. assets must file estate tax returns",
+          "url": "https://www.irs.gov/individuals/international-taxpayers/some-nonresidents-with-us-assets-must-file-estate-tax-returns",
+          "read": "2026-11-15",
+          "says": "\"U.S. citizens are subject to U.S. estate taxation with respect to their worldwide assets\"; Form 706 is required when worldwide assets plus adjusted taxable gifts exceed the basic exclusion amount in effect on the date of death. By contrast a nonresident who is not a citizen files when US-situated assets exceed $60,000. Page last reviewed or updated 27-Jun-2026."
+        }
+      ]
+    },
+    {
+      "id": "bz-lending-ibkr",
+      "fact": "lending",
+      "cities": [
+        "cayo",
+        "ambergris-caye",
+        "placencia",
+        "hopkins",
+        "corozal"
+      ],
+      "claim": "Interactive Brokers serves all non-sanctioned countries, so Belize residents should be accepted",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Interactive Brokers reportedly serves all non-sanctioned countries",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes \"Belize\", \"Panama\", \"Costa Rica\" and \"Dominican Republic\"; the section says only \"Check if Interactive Brokers is available in your country\" and names no IBKR entity for these residents."
+        }
+      ],
+      "note": "IBKR's country list (https://www.interactivebrokers.com/en/accounts/open-account-country-list.php) returned HTTP 403 again on 2026-11-15. Banker on Wheels lists Belize."
+    },
+    {
+      "id": "bz-lending-margin-unconfirmed",
+      "fact": "lending",
+      "cities": [
+        "cayo",
+        "ambergris-caye",
+        "placencia",
+        "hopkins",
+        "corozal"
+      ],
+      "claim": "IBKR margin terms for Belize residents are unconfirmed",
+      "verdict": "cant-confirm",
+      "hedge": "unconfirmed",
+      "wording": "but margin terms are unconfirmed",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes \"Belize\", \"Panama\", \"Costa Rica\" and \"Dominican Republic\"; the section says only \"Check if Interactive Brokers is available in your country\" and names no IBKR entity for these residents."
+        }
+      ],
+      "note": "A statement of what is not known."
+    },
+    {
+      "id": "bz-lending-schwab",
+      "fact": "lending",
+      "cities": [
+        "cayo",
+        "ambergris-caye",
+        "placencia",
+        "hopkins",
+        "corozal"
+      ],
+      "claim": "Schwab One International probably does not accept Belize (missing from the October 2026 accepted list)",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "probably",
+      "wording": "Schwab One International probably does not accept Belize (it is missing from the October 2026 accepted list)",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. On that day the author ran every entry in Schwab's international account selector through the application: it accepted residents of 51 of 263 countries and regions: Argentina, Australia, Austria, the Bahamas, Belgium, Bermuda, Brazil, the British Virgin Islands, the Cayman Islands, Chile, China, Colombia, Costa Rica, the Czech Republic, Denmark, Ecuador, Finland, Germany, Greece, Guatemala, Hong Kong, Iceland, India, Indonesia, Ireland, Israel, Jersey, Luxembourg, Malaysia, the Marshall Islands, Mexico, the Netherlands, Norway, Panama, Paraguay, Peru, Poland, Portugal, Qatar, Singapore, South Korea, Spain, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Turks and Caicos, the United Arab Emirates, the United Kingdom and Uruguay. Named as not accepted: Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam; for the rest the application said \"Schwab currently cannot open accounts for residents of your country/region.\" The test covers new applicants on that day only."
+        },
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Dated October 23, 2026 (country check that day). Rows \"Costa Rica | Yes\" and \"Panama | Yes\" (both among the 51 accepted); \"Dominican Republic | No\"; Belize is absent from the table and the 51-country list, and residents of the other countries saw \"Schwab currently cannot open accounts for residents of your country/region.\" On margin: \"Customers residing within Europe are restricted from using their Available Margin Loan Value\" to withdraw funds, called \"one regional limit\"; no restriction is named for any other region."
+        },
+        {
+          "name": "Your Tax Base: best brokerage for US expats",
+          "url": "https://yourtaxbase.com/blog/best-brokerage-for-us-expats",
+          "read": "2026-11-15",
+          "says": "Dated October 23, 2026. Quotes Fidelity's FAQ: \"we do not open accounts for any new customers residing outside the United States.\" Vanguard requires US citizenship or permanent residence \"with a U.S. mailing address\". Its Schwab table puts Belize and the Dominican Republic among countries that cannot apply online, Panama and Costa Rica among those that can."
+        }
+      ],
+      "note": "Agrees with the dated list (re-read today): Belize is absent, and the best-brokerage page puts it among countries that cannot apply online. Schwab's site returned 403 in stage 1. The drawbacks' \"Schwab International is likely unavailable\" is hedged too. Lending score 3 stays (IBKR only)."
+    },
+    {
+      "id": "bz-visa-qrp-age",
+      "fact": "visa",
+      "cities": [
+        "cayo",
+        "ambergris-caye",
+        "placencia",
+        "hopkins",
+        "corozal"
+      ],
+      "claim": "QRP is open from age 40",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Belize Tourism Board: Qualified Retired Persons programme",
+          "url": "https://www.belizetourismboard.org/programs-events/retirement-program/",
+          "read": "2026-11-15",
+          "says": "Undated rules (page ©2024; brochures dated 2026). \"Any person 40 years or older\"; \"a retirement income of $2K monthly or $24K annually\" generated outside Belize; acceptable sources include pension, annuity, Social Security, investment account, personal savings, retirement plans, reverse mortgage and inheritance; a \"written undertaking to deposit the requisite amount in a bank, credit union or licensed financial institution in Belize\"; \"a minimum of 30 consecutive days annually\"; QRP members are \"exempted from all taxes and duties on income received from a source outside of Belize\" and from capital gains tax and inheritance tax; \"Resident card to be renewed annually\". The page does not use the term permanent residency."
+        },
+        {
+          "name": "BrightTax: Retire in Belize",
+          "url": "https://brighttax.com/blog/retire-in-belize/",
+          "read": "2026-11-15",
+          "says": "Dated July 4, 2026. QRP: \"Be at least 40 years old\", \"a monthly income of $2,000 U.S. dollars (USD) or more\", \"This income must be deposited into a local Belize bank account\", \"Spend at least 30 consecutive days per year in Belize\"; QRP holders get a resident card \"(note: this is not permanent residency)\", renewed annually. Lists \"No inheritance tax\" and \"No tax on interest or dividends earned abroad\"."
+        },
+        {
+          "name": "Rio Times: Taxes in Belize for expats 2026",
+          "url": "https://www.riotimesonline.com/taxes-belize-expats-2026/",
+          "read": "2026-11-15",
+          "says": "Dated September 14, 2026. \"Income earned outside the country falls outside the charge.\" \"Belize levies no capital gains tax and no inheritance tax on anyone living there.\" \"Section 4(4) exempts a qualified retired person from all taxes on income arising outside Belize.\" Says the 2023 amendment lowered the QRP entry age from 45 to 40. Reports no 2026 tax change or bill."
+        }
+      ]
+    },
+    {
+      "id": "bz-visa-qrp-income",
+      "fact": "visa",
+      "cities": [
+        "cayo",
+        "ambergris-caye",
+        "placencia",
+        "hopkins",
+        "corozal"
+      ],
+      "claim": "At least $2,000/month of income from outside Belize, which explicitly includes an investment account, savings or an inheritance",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Belize Tourism Board: Qualified Retired Persons programme",
+          "url": "https://www.belizetourismboard.org/programs-events/retirement-program/",
+          "read": "2026-11-15",
+          "says": "Undated rules (page ©2024; brochures dated 2026). \"Any person 40 years or older\"; \"a retirement income of $2K monthly or $24K annually\" generated outside Belize; acceptable sources include pension, annuity, Social Security, investment account, personal savings, retirement plans, reverse mortgage and inheritance; a \"written undertaking to deposit the requisite amount in a bank, credit union or licensed financial institution in Belize\"; \"a minimum of 30 consecutive days annually\"; QRP members are \"exempted from all taxes and duties on income received from a source outside of Belize\" and from capital gains tax and inheritance tax; \"Resident card to be renewed annually\". The page does not use the term permanent residency."
+        },
+        {
+          "name": "BrightTax: Retire in Belize",
+          "url": "https://brighttax.com/blog/retire-in-belize/",
+          "read": "2026-11-15",
+          "says": "Dated July 4, 2026. QRP: \"Be at least 40 years old\", \"a monthly income of $2,000 U.S. dollars (USD) or more\", \"This income must be deposited into a local Belize bank account\", \"Spend at least 30 consecutive days per year in Belize\"; QRP holders get a resident card \"(note: this is not permanent residency)\", renewed annually. Lists \"No inheritance tax\" and \"No tax on interest or dividends earned abroad\"."
+        }
+      ],
+      "note": "Check for a bill: a search for a QRP amendment in November 2026 found none (the latest found are Act 13 of 2023 and SI 88 of 2024, on the National Assembly site); the Rio Times tax page of September 2026 reports no 2026 change. Visa score 4 stays."
+    },
+    {
+      "id": "bz-visa-qrp-deposit",
+      "fact": "visa",
+      "cities": [
+        "cayo",
+        "ambergris-caye",
+        "placencia",
+        "hopkins",
+        "corozal"
+      ],
+      "claim": "The income must be deposited in a Belize institution",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Belize Tourism Board: Qualified Retired Persons programme",
+          "url": "https://www.belizetourismboard.org/programs-events/retirement-program/",
+          "read": "2026-11-15",
+          "says": "Undated rules (page ©2024; brochures dated 2026). \"Any person 40 years or older\"; \"a retirement income of $2K monthly or $24K annually\" generated outside Belize; acceptable sources include pension, annuity, Social Security, investment account, personal savings, retirement plans, reverse mortgage and inheritance; a \"written undertaking to deposit the requisite amount in a bank, credit union or licensed financial institution in Belize\"; \"a minimum of 30 consecutive days annually\"; QRP members are \"exempted from all taxes and duties on income received from a source outside of Belize\" and from capital gains tax and inheritance tax; \"Resident card to be renewed annually\". The page does not use the term permanent residency."
+        },
+        {
+          "name": "BrightTax: Retire in Belize",
+          "url": "https://brighttax.com/blog/retire-in-belize/",
+          "read": "2026-11-15",
+          "says": "Dated July 4, 2026. QRP: \"Be at least 40 years old\", \"a monthly income of $2,000 U.S. dollars (USD) or more\", \"This income must be deposited into a local Belize bank account\", \"Spend at least 30 consecutive days per year in Belize\"; QRP holders get a resident card \"(note: this is not permanent residency)\", renewed annually. Lists \"No inheritance tax\" and \"No tax on interest or dividends earned abroad\"."
+        }
+      ]
+    },
+    {
+      "id": "bz-visa-qrp-30-days",
+      "fact": "visa",
+      "cities": [
+        "cayo",
+        "ambergris-caye",
+        "placencia",
+        "hopkins",
+        "corozal"
+      ],
+      "claim": "At least 30 consecutive days a year in Belize",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Belize Tourism Board: Qualified Retired Persons programme",
+          "url": "https://www.belizetourismboard.org/programs-events/retirement-program/",
+          "read": "2026-11-15",
+          "says": "Undated rules (page ©2024; brochures dated 2026). \"Any person 40 years or older\"; \"a retirement income of $2K monthly or $24K annually\" generated outside Belize; acceptable sources include pension, annuity, Social Security, investment account, personal savings, retirement plans, reverse mortgage and inheritance; a \"written undertaking to deposit the requisite amount in a bank, credit union or licensed financial institution in Belize\"; \"a minimum of 30 consecutive days annually\"; QRP members are \"exempted from all taxes and duties on income received from a source outside of Belize\" and from capital gains tax and inheritance tax; \"Resident card to be renewed annually\". The page does not use the term permanent residency."
+        },
+        {
+          "name": "BrightTax: Retire in Belize",
+          "url": "https://brighttax.com/blog/retire-in-belize/",
+          "read": "2026-11-15",
+          "says": "Dated July 4, 2026. QRP: \"Be at least 40 years old\", \"a monthly income of $2,000 U.S. dollars (USD) or more\", \"This income must be deposited into a local Belize bank account\", \"Spend at least 30 consecutive days per year in Belize\"; QRP holders get a resident card \"(note: this is not permanent residency)\", renewed annually. Lists \"No inheritance tax\" and \"No tax on interest or dividends earned abroad\"."
+        }
+      ]
+    },
+    {
+      "id": "bz-visa-qrp-not-permanent",
+      "fact": "visa",
+      "cities": [
+        "cayo",
+        "ambergris-caye",
+        "placencia",
+        "hopkins",
+        "corozal"
+      ],
+      "claim": "QRP is a renewable status, not permanent residency",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Belize Tourism Board: Qualified Retired Persons programme",
+          "url": "https://www.belizetourismboard.org/programs-events/retirement-program/",
+          "read": "2026-11-15",
+          "says": "Undated rules (page ©2024; brochures dated 2026). \"Any person 40 years or older\"; \"a retirement income of $2K monthly or $24K annually\" generated outside Belize; acceptable sources include pension, annuity, Social Security, investment account, personal savings, retirement plans, reverse mortgage and inheritance; a \"written undertaking to deposit the requisite amount in a bank, credit union or licensed financial institution in Belize\"; \"a minimum of 30 consecutive days annually\"; QRP members are \"exempted from all taxes and duties on income received from a source outside of Belize\" and from capital gains tax and inheritance tax; \"Resident card to be renewed annually\". The page does not use the term permanent residency."
+        },
+        {
+          "name": "BrightTax: Retire in Belize",
+          "url": "https://brighttax.com/blog/retire-in-belize/",
+          "read": "2026-11-15",
+          "says": "Dated July 4, 2026. QRP: \"Be at least 40 years old\", \"a monthly income of $2,000 U.S. dollars (USD) or more\", \"This income must be deposited into a local Belize bank account\", \"Spend at least 30 consecutive days per year in Belize\"; QRP holders get a resident card \"(note: this is not permanent residency)\", renewed annually. Lists \"No inheritance tax\" and \"No tax on interest or dividends earned abroad\"."
+        }
+      ],
+      "note": "The BTB page has the card renewed annually and never says permanent residency; BrightTax says \"this is not permanent residency\"."
+    },
+    {
+      "id": "bz-healthcare-cayo-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "cayo"
+      ],
+      "claim": "San Ignacio has a community hospital, with the private Adventist La Loma Luz in Santa Elena and the Western Regional Hospital in Belmopan",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Rio Times: Healthcare in Belize for expats 2026",
+          "url": "https://www.riotimesonline.com/healthcare-belize-expats-2026/",
+          "read": "2026-11-15",
+          "says": "Published September 16, 2026, modified November 8, 2026. The US Embassy says \"a medical evacuation can easily cost US$10,000 and up, depending on location and condition.\" \"a community hospital in San Ignacio\"; \"La Loma Luz Hospital on the Western Highway at Santa Elena is the main private choice for the Cayo expat belt\" (Seventh-day Adventist); \"Western Regional serves Belmopan\"; Karl Heusner Memorial Hospital \"is the national referral hospital\"; regional destinations Mérida, Cancún, San Pedro Sula and Guatemala City, and \"Miami remains the option\". \"Ambergris Caye has San Pedro Polyclinic and San Juan Health Center\"; \"The two most popular foreign destinations have no hospital.\" Placencia has \"a single health centre\"; \"The nearest hospital to Placencia is Southern Regional in Dangriga\". \"Corozal has its own community hospital and the Mexican town of Chetumal across the border\"; the private Northern Medical Specialty Plaza is in Orange Walk."
+        },
+        {
+          "name": "GOV.UK: Belize list of medical facilities",
+          "url": "https://www.gov.uk/government/publications/belize-list-of-medical-facilities/belize-medical-facilities",
+          "read": "2026-11-15",
+          "says": "Last updated 1 June 2021. San Ignacio Hospital (gynaecology, surgery, paediatrics, internal medicine); La Loma Luz Adventist Hospital, Santa Elena; Western Regional Hospital, Belmopan; Karl Heusner Memorial Hospital, Belize City (public; ICU, A&E); San Pedro Polyclinic II, San Pedro Town (\"24-hour general healthcare\", radiology, lab); Southern Regional Hospital, Dangriga (public; general and maternity care, ICU, pre/post-surgical care); Corozal Community Hospital (public; internal medicine, general surgery, paediatrics, OB/GYN, orthopaedics); Northern Medical Specialty Plaza, Orange Walk (private). No entry for Placencia or Hopkins."
+        }
+      ]
+    },
+    {
+      "id": "bz-healthcare-cayo-referral",
+      "fact": "healthcare",
+      "cities": [
+        "cayo"
+      ],
+      "claim": "Serious cases go to Karl Heusner in Belize City, then by air to Mérida, Guatemala City, Cancún or Miami",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Rio Times: Healthcare in Belize for expats 2026",
+          "url": "https://www.riotimesonline.com/healthcare-belize-expats-2026/",
+          "read": "2026-11-15",
+          "says": "Published September 16, 2026, modified November 8, 2026. The US Embassy says \"a medical evacuation can easily cost US$10,000 and up, depending on location and condition.\" \"a community hospital in San Ignacio\"; \"La Loma Luz Hospital on the Western Highway at Santa Elena is the main private choice for the Cayo expat belt\" (Seventh-day Adventist); \"Western Regional serves Belmopan\"; Karl Heusner Memorial Hospital \"is the national referral hospital\"; regional destinations Mérida, Cancún, San Pedro Sula and Guatemala City, and \"Miami remains the option\". \"Ambergris Caye has San Pedro Polyclinic and San Juan Health Center\"; \"The two most popular foreign destinations have no hospital.\" Placencia has \"a single health centre\"; \"The nearest hospital to Placencia is Southern Regional in Dangriga\". \"Corozal has its own community hospital and the Mexican town of Chetumal across the border\"; the private Northern Medical Specialty Plaza is in Orange Walk."
+        },
+        {
+          "name": "GOV.UK: Belize list of medical facilities",
+          "url": "https://www.gov.uk/government/publications/belize-list-of-medical-facilities/belize-medical-facilities",
+          "read": "2026-11-15",
+          "says": "Last updated 1 June 2021. San Ignacio Hospital (gynaecology, surgery, paediatrics, internal medicine); La Loma Luz Adventist Hospital, Santa Elena; Western Regional Hospital, Belmopan; Karl Heusner Memorial Hospital, Belize City (public; ICU, A&E); San Pedro Polyclinic II, San Pedro Town (\"24-hour general healthcare\", radiology, lab); Southern Regional Hospital, Dangriga (public; general and maternity care, ICU, pre/post-surgical care); Corozal Community Hospital (public; internal medicine, general surgery, paediatrics, OB/GYN, orthopaedics); Northern Medical Specialty Plaza, Orange Walk (private). No entry for Placencia or Hopkins."
+        }
+      ]
+    },
+    {
+      "id": "bz-healthcare-medevac-cost",
+      "fact": "healthcare",
+      "cities": [
+        "cayo",
+        "ambergris-caye",
+        "placencia",
+        "hopkins"
+      ],
+      "claim": "The US Embassy says medevac \"can easily cost US$10,000 and up\"",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Rio Times: Healthcare in Belize for expats 2026",
+          "url": "https://www.riotimesonline.com/healthcare-belize-expats-2026/",
+          "read": "2026-11-15",
+          "says": "Published September 16, 2026, modified November 8, 2026. The US Embassy says \"a medical evacuation can easily cost US$10,000 and up, depending on location and condition.\" \"a community hospital in San Ignacio\"; \"La Loma Luz Hospital on the Western Highway at Santa Elena is the main private choice for the Cayo expat belt\" (Seventh-day Adventist); \"Western Regional serves Belmopan\"; Karl Heusner Memorial Hospital \"is the national referral hospital\"; regional destinations Mérida, Cancún, San Pedro Sula and Guatemala City, and \"Miami remains the option\". \"Ambergris Caye has San Pedro Polyclinic and San Juan Health Center\"; \"The two most popular foreign destinations have no hospital.\" Placencia has \"a single health centre\"; \"The nearest hospital to Placencia is Southern Regional in Dangriga\". \"Corozal has its own community hospital and the Mexican town of Chetumal across the border\"; the private Northern Medical Specialty Plaza is in Orange Walk."
+        }
+      ],
+      "note": "Quoted from the US Embassy by the dated Rio Times page; the embassy's own page was not found by search, and travel.state.gov returned 403 in earlier stages. Healthcare score 1 stays for Cayo, Ambergris Caye, Placencia and Hopkins."
+    },
+    {
+      "id": "bz-healthcare-ambergris-no-hospital",
+      "fact": "healthcare",
+      "cities": [
+        "ambergris-caye"
+      ],
+      "claim": "There is no hospital on the island",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Rio Times: Healthcare in Belize for expats 2026",
+          "url": "https://www.riotimesonline.com/healthcare-belize-expats-2026/",
+          "read": "2026-11-15",
+          "says": "Published September 16, 2026, modified November 8, 2026. The US Embassy says \"a medical evacuation can easily cost US$10,000 and up, depending on location and condition.\" \"a community hospital in San Ignacio\"; \"La Loma Luz Hospital on the Western Highway at Santa Elena is the main private choice for the Cayo expat belt\" (Seventh-day Adventist); \"Western Regional serves Belmopan\"; Karl Heusner Memorial Hospital \"is the national referral hospital\"; regional destinations Mérida, Cancún, San Pedro Sula and Guatemala City, and \"Miami remains the option\". \"Ambergris Caye has San Pedro Polyclinic and San Juan Health Center\"; \"The two most popular foreign destinations have no hospital.\" Placencia has \"a single health centre\"; \"The nearest hospital to Placencia is Southern Regional in Dangriga\". \"Corozal has its own community hospital and the Mexican town of Chetumal across the border\"; the private Northern Medical Specialty Plaza is in Orange Walk."
+        }
+      ],
+      "note": "Also the tagline, summary, drawback and why line."
+    },
+    {
+      "id": "bz-healthcare-ambergris-polyclinic",
+      "fact": "healthcare",
+      "cities": [
+        "ambergris-caye"
+      ],
+      "claim": "San Pedro has the San Pedro Polyclinic II (24-hour general care, lab, radiology), the San Juan Health Center and private doctors",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "GOV.UK: Belize list of medical facilities",
+          "url": "https://www.gov.uk/government/publications/belize-list-of-medical-facilities/belize-medical-facilities",
+          "read": "2026-11-15",
+          "says": "Last updated 1 June 2021. San Ignacio Hospital (gynaecology, surgery, paediatrics, internal medicine); La Loma Luz Adventist Hospital, Santa Elena; Western Regional Hospital, Belmopan; Karl Heusner Memorial Hospital, Belize City (public; ICU, A&E); San Pedro Polyclinic II, San Pedro Town (\"24-hour general healthcare\", radiology, lab); Southern Regional Hospital, Dangriga (public; general and maternity care, ICU, pre/post-surgical care); Corozal Community Hospital (public; internal medicine, general surgery, paediatrics, OB/GYN, orthopaedics); Northern Medical Specialty Plaza, Orange Walk (private). No entry for Placencia or Hopkins."
+        },
+        {
+          "name": "Rio Times: Healthcare in Belize for expats 2026",
+          "url": "https://www.riotimesonline.com/healthcare-belize-expats-2026/",
+          "read": "2026-11-15",
+          "says": "Published September 16, 2026, modified November 8, 2026. The US Embassy says \"a medical evacuation can easily cost US$10,000 and up, depending on location and condition.\" \"a community hospital in San Ignacio\"; \"La Loma Luz Hospital on the Western Highway at Santa Elena is the main private choice for the Cayo expat belt\" (Seventh-day Adventist); \"Western Regional serves Belmopan\"; Karl Heusner Memorial Hospital \"is the national referral hospital\"; regional destinations Mérida, Cancún, San Pedro Sula and Guatemala City, and \"Miami remains the option\". \"Ambergris Caye has San Pedro Polyclinic and San Juan Health Center\"; \"The two most popular foreign destinations have no hospital.\" Placencia has \"a single health centre\"; \"The nearest hospital to Placencia is Southern Regional in Dangriga\". \"Corozal has its own community hospital and the Mexican town of Chetumal across the border\"; the private Northern Medical Specialty Plaza is in Orange Walk."
+        }
+      ],
+      "note": "The service list rests on GOV.UK's 2021 list; the dated 2026 page confirms both facilities still exist."
+    },
+    {
+      "id": "bz-healthcare-ambergris-chambers",
+      "fact": "healthcare",
+      "cities": [
+        "ambergris-caye"
+      ],
+      "claim": "There are two dive decompression chambers",
+      "verdict": "cant-confirm",
+      "hedge": "reportedly",
+      "wording": "plus reportedly two dive decompression chambers",
+      "oldWording": "plus two dive decompression chambers",
+      "sources": [
+        {
+          "name": "Ambergris Today: Second hyperbaric chamber installed in San Pedro",
+          "url": "https://ambergristoday.com/?p=34924",
+          "read": "2026-11-15",
+          "says": "Dated May 22, 2015. The clinic's new building \"houses the island's second Hyperbaric Chamber.\""
+        }
+      ],
+      "also": [
+        "hedge added: \"reportedly\"",
+        "sources: added Ambergris Today (2015)"
+      ],
+      "note": "The only page read is from 2015; search results disagree on whether one or two chambers operate now. Hedged rather than removed."
+    },
+    {
+      "id": "bz-healthcare-ambergris-tropic-air",
+      "fact": "healthcare",
+      "cities": [
+        "ambergris-caye"
+      ],
+      "claim": "Tropic Air runs 24-hour medical transfers for stable patients to Belize City, and serious cases go on to Mérida, Cancún, Guatemala City or Miami",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Tropic Air: Medical transfer",
+          "url": "https://www.tropicair.com/medical-transfer/",
+          "read": "2026-11-15",
+          "says": "Service \"24 hours a day, year round\" from San Pedro and Caye Caulker to Belize City tertiary care facilities; \"All passengers aboard a medical transfer flight must be medically stable\"; regional transfers to Mérida, Cancún, San Pedro Sula and Guatemala City. Placencia appears only in the airline's general \"Where We Fly\" list, not as a medical-transfer origin. Undated."
+        },
+        {
+          "name": "Rio Times: Healthcare in Belize for expats 2026",
+          "url": "https://www.riotimesonline.com/healthcare-belize-expats-2026/",
+          "read": "2026-11-15",
+          "says": "Published September 16, 2026, modified November 8, 2026. The US Embassy says \"a medical evacuation can easily cost US$10,000 and up, depending on location and condition.\" \"a community hospital in San Ignacio\"; \"La Loma Luz Hospital on the Western Highway at Santa Elena is the main private choice for the Cayo expat belt\" (Seventh-day Adventist); \"Western Regional serves Belmopan\"; Karl Heusner Memorial Hospital \"is the national referral hospital\"; regional destinations Mérida, Cancún, San Pedro Sula and Guatemala City, and \"Miami remains the option\". \"Ambergris Caye has San Pedro Polyclinic and San Juan Health Center\"; \"The two most popular foreign destinations have no hospital.\" Placencia has \"a single health centre\"; \"The nearest hospital to Placencia is Southern Regional in Dangriga\". \"Corozal has its own community hospital and the Mexican town of Chetumal across the border\"; the private Northern Medical Specialty Plaza is in Orange Walk."
+        }
+      ]
+    },
+    {
+      "id": "bz-healthcare-placencia-polyclinic",
+      "fact": "healthcare",
+      "cities": [
+        "placencia"
+      ],
+      "claim": "No hospital on the peninsula: the public Placencia Polyclinic opened in May 2024 and was billed as 24-hour, but a parent found it unstaffed in the early hours that October",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Belize Tourism Board: New Placencia Polyclinic enhances healthcare in Belize",
+          "url": "https://www.belizetourismboard.org/?p=39983",
+          "read": "2026-11-15",
+          "says": "Dated May 15, 2024. The BTB, with the Ministry of Health and Wellness and the Heineman-Robicsek Foundation, \"officially inaugurated the Placencia Polyclinic today in Placencia Village\". No hours given."
+        },
+        {
+          "name": "Greater Belize Media: Is the Placencia Polyclinic truly open 24/7?",
+          "url": "https://www.greaterbelize.com/is-the-placencia-polyclinic-truly-open-24-7/",
+          "read": "2026-11-15",
+          "says": "Dated October 8, 2024. At the May 2024 opening the health minister said \"this will be a 24-hour facility\"; a father, Chris Chun, went \"in the wee hours of the morning\" over the weekend for his son and said \"no one was there\"."
+        },
+        {
+          "name": "Rio Times: Healthcare in Belize for expats 2026",
+          "url": "https://www.riotimesonline.com/healthcare-belize-expats-2026/",
+          "read": "2026-11-15",
+          "says": "Published September 16, 2026, modified November 8, 2026. The US Embassy says \"a medical evacuation can easily cost US$10,000 and up, depending on location and condition.\" \"a community hospital in San Ignacio\"; \"La Loma Luz Hospital on the Western Highway at Santa Elena is the main private choice for the Cayo expat belt\" (Seventh-day Adventist); \"Western Regional serves Belmopan\"; Karl Heusner Memorial Hospital \"is the national referral hospital\"; regional destinations Mérida, Cancún, San Pedro Sula and Guatemala City, and \"Miami remains the option\". \"Ambergris Caye has San Pedro Polyclinic and San Juan Health Center\"; \"The two most popular foreign destinations have no hospital.\" Placencia has \"a single health centre\"; \"The nearest hospital to Placencia is Southern Regional in Dangriga\". \"Corozal has its own community hospital and the Mexican town of Chetumal across the border\"; the private Northern Medical Specialty Plaza is in Orange Walk."
+        }
+      ]
+    },
+    {
+      "id": "bz-healthcare-placencia-dangriga",
+      "fact": "healthcare",
+      "cities": [
+        "placencia"
+      ],
+      "claim": "The nearest hospital is the public Southern Regional in Dangriga, about 1¼–1¾ hours by road",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Rio Times: Healthcare in Belize for expats 2026",
+          "url": "https://www.riotimesonline.com/healthcare-belize-expats-2026/",
+          "read": "2026-11-15",
+          "says": "Published September 16, 2026, modified November 8, 2026. The US Embassy says \"a medical evacuation can easily cost US$10,000 and up, depending on location and condition.\" \"a community hospital in San Ignacio\"; \"La Loma Luz Hospital on the Western Highway at Santa Elena is the main private choice for the Cayo expat belt\" (Seventh-day Adventist); \"Western Regional serves Belmopan\"; Karl Heusner Memorial Hospital \"is the national referral hospital\"; regional destinations Mérida, Cancún, San Pedro Sula and Guatemala City, and \"Miami remains the option\". \"Ambergris Caye has San Pedro Polyclinic and San Juan Health Center\"; \"The two most popular foreign destinations have no hospital.\" Placencia has \"a single health centre\"; \"The nearest hospital to Placencia is Southern Regional in Dangriga\". \"Corozal has its own community hospital and the Mexican town of Chetumal across the border\"; the private Northern Medical Specialty Plaza is in Orange Walk."
+        },
+        {
+          "name": "GOV.UK: Belize list of medical facilities",
+          "url": "https://www.gov.uk/government/publications/belize-list-of-medical-facilities/belize-medical-facilities",
+          "read": "2026-11-15",
+          "says": "Last updated 1 June 2021. San Ignacio Hospital (gynaecology, surgery, paediatrics, internal medicine); La Loma Luz Adventist Hospital, Santa Elena; Western Regional Hospital, Belmopan; Karl Heusner Memorial Hospital, Belize City (public; ICU, A&E); San Pedro Polyclinic II, San Pedro Town (\"24-hour general healthcare\", radiology, lab); Southern Regional Hospital, Dangriga (public; general and maternity care, ICU, pre/post-surgical care); Corozal Community Hospital (public; internal medicine, general surgery, paediatrics, OB/GYN, orthopaedics); Northern Medical Specialty Plaza, Orange Walk (private). No entry for Placencia or Hopkins."
+        },
+        {
+          "name": "Rome2rio: Placencia to Dangriga",
+          "url": "https://www.rome2rio.com/s/Placencia/Dangriga",
+          "read": "2026-11-15",
+          "says": "Bus \"Ave. Duration 1h 21m\"; shuttle about 1h 15m. No driving time or road distance given. Undated."
+        }
+      ],
+      "note": "The page supports the low end (about 1¼ hours); the 1¾ upper bound is a slower trip, inside the \"about\" range."
+    },
+    {
+      "id": "bz-healthcare-placencia-private-care",
+      "fact": "healthcare",
+      "cities": [
+        "placencia"
+      ],
+      "claim": "Private care is in Belize City, 3½ hours by road",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Moon: Getting to and around Placencia",
+          "url": "https://www.moontravelguides.com/travel/planning/getting-to-and-around-belizes-placencia-village/",
+          "read": "2026-11-15",
+          "says": "\"It's now about a three- or four-hour drive from Belize City.\" \"At last check, there were more than 20 daily flights in and out of Placencia's airstrip.\" No date beyond road paving completed in 2010."
+        },
+        {
+          "name": "Rio Times: Healthcare in Belize for expats 2026",
+          "url": "https://www.riotimesonline.com/healthcare-belize-expats-2026/",
+          "read": "2026-11-15",
+          "says": "Published September 16, 2026, modified November 8, 2026. The US Embassy says \"a medical evacuation can easily cost US$10,000 and up, depending on location and condition.\" \"a community hospital in San Ignacio\"; \"La Loma Luz Hospital on the Western Highway at Santa Elena is the main private choice for the Cayo expat belt\" (Seventh-day Adventist); \"Western Regional serves Belmopan\"; Karl Heusner Memorial Hospital \"is the national referral hospital\"; regional destinations Mérida, Cancún, San Pedro Sula and Guatemala City, and \"Miami remains the option\". \"Ambergris Caye has San Pedro Polyclinic and San Juan Health Center\"; \"The two most popular foreign destinations have no hospital.\" Placencia has \"a single health centre\"; \"The nearest hospital to Placencia is Southern Regional in Dangriga\". \"Corozal has its own community hospital and the Mexican town of Chetumal across the border\"; the private Northern Medical Specialty Plaza is in Orange Walk."
+        }
+      ],
+      "note": "Undated secondary page; consistent with the summary and drawback (\"private care 3½ hours\")."
+    },
+    {
+      "id": "bz-healthcare-placencia-daytime-flight",
+      "fact": "healthcare",
+      "cities": [
+        "placencia"
+      ],
+      "claim": "The flight to Belize City is daytime only",
+      "verdict": "cant-confirm",
+      "hedge": "removed",
+      "oldWording": "(3½ hours by road or a daytime flight)",
+      "sources": [
+        {
+          "name": "Moon: Getting to and around Placencia",
+          "url": "https://www.moontravelguides.com/travel/planning/getting-to-and-around-belizes-placencia-village/",
+          "read": "2026-11-15",
+          "says": "\"At last check, there were more than 20 daily flights in and out of Placencia's airstrip.\" Nothing on night flights."
+        }
+      ],
+      "also": [
+        "fact reworded: \"or a short flight\""
+      ],
+      "note": "No page read says the airstrip closes at night; \"daytime\" was taken out, the flight kept."
+    },
+    {
+      "id": "bz-healthcare-placencia-tropic-air",
+      "fact": "healthcare",
+      "cities": [
+        "placencia"
+      ],
+      "claim": "Tropic Air's 24-hour medical transfers do not list Placencia",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Tropic Air: Medical transfer",
+          "url": "https://www.tropicair.com/medical-transfer/",
+          "read": "2026-11-15",
+          "says": "Service \"24 hours a day, year round\" from San Pedro and Caye Caulker to Belize City tertiary care facilities; \"All passengers aboard a medical transfer flight must be medically stable\"; regional transfers to Mérida, Cancún, San Pedro Sula and Guatemala City. Placencia appears only in the airline's general \"Where We Fly\" list, not as a medical-transfer origin. Undated."
+        }
+      ],
+      "note": "The medical-transfer text names only San Pedro and Caye Caulker as origins; Placencia appears in the general route list only."
+    },
+    {
+      "id": "bz-healthcare-hopkins-clinic",
+      "fact": "healthcare",
+      "cities": [
+        "hopkins"
+      ],
+      "claim": "Only a small public clinic in the village",
+      "verdict": "corrected",
+      "oldWording": "Only a small public clinic in the village;",
+      "newWording": "Only a community health post in the village, whose nurse is not on site full time;",
+      "sources": [
+        {
+          "name": "Global Brigades: Hopkins Village",
+          "url": "https://www.globalbrigades.org/communities/hopkins-village/",
+          "read": "2026-11-15",
+          "says": "Work there began in 2025 (medical brigade June 2025). Hopkins \"has a community health post; however, the nurse attending the community members is not permanently on-site\"; \"there are no other private clinics\"; no lab."
+        }
+      ],
+      "also": [
+        "sources: added Global Brigades",
+        "scores.healthcare stays 1"
+      ],
+      "note": "\"A small public clinic\" overstated it: the page describes a health post without a permanent nurse."
+    },
+    {
+      "id": "bz-healthcare-hopkins-dangriga",
+      "fact": "healthcare",
+      "cities": [
+        "hopkins"
+      ],
+      "claim": "The public Southern Regional Hospital in Dangriga (general, maternity, intensive and surgical care) is about 20 miles, or 30 minutes, by road",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "GOV.UK: Belize list of medical facilities",
+          "url": "https://www.gov.uk/government/publications/belize-list-of-medical-facilities/belize-medical-facilities",
+          "read": "2026-11-15",
+          "says": "Last updated 1 June 2021. San Ignacio Hospital (gynaecology, surgery, paediatrics, internal medicine); La Loma Luz Adventist Hospital, Santa Elena; Western Regional Hospital, Belmopan; Karl Heusner Memorial Hospital, Belize City (public; ICU, A&E); San Pedro Polyclinic II, San Pedro Town (\"24-hour general healthcare\", radiology, lab); Southern Regional Hospital, Dangriga (public; general and maternity care, ICU, pre/post-surgical care); Corozal Community Hospital (public; internal medicine, general surgery, paediatrics, OB/GYN, orthopaedics); Northern Medical Specialty Plaza, Orange Walk (private). No entry for Placencia or Hopkins."
+        },
+        {
+          "name": "Rome2rio: Hopkins to Dangriga",
+          "url": "https://www.rome2rio.com/s/Hopkins-Belize/Dangriga",
+          "read": "2026-11-15",
+          "says": "\"The road distance is 19.8 miles.\" \"It takes approximately 29 min to drive from Hopkins to Dangriga.\" Undated."
+        }
+      ]
+    },
+    {
+      "id": "bz-healthcare-hopkins-private-care",
+      "fact": "healthcare",
+      "cities": [
+        "hopkins"
+      ],
+      "claim": "Private care is in Belize City about 2.5 hours away",
+      "verdict": "corrected",
+      "oldWording": "private care is in Belize City about 2.5 hours away (secondary source)",
+      "newWording": "private care is in Belize City about 2 hours away by road (secondary source)",
+      "sources": [
+        {
+          "name": "Rome2rio: Hopkins to Belize City",
+          "url": "https://www.rome2rio.com/s/Hopkins-Belize/Belize-City",
+          "read": "2026-11-15",
+          "says": "Driving time about 2 hours 9 minutes; \"The road distance is 82.3 miles.\" Undated."
+        }
+      ],
+      "also": [
+        "drawback 1 reworded: \"private care is 2.5 hours away\" became \"private care is about 2 hours away\""
+      ],
+      "note": "The only drive time read is about 2 hours 9 minutes."
+    },
+    {
+      "id": "bz-healthcare-corozal-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "corozal"
+      ],
+      "claim": "Corozal Community Hospital (public; internal medicine, general surgery, paediatrics, obstetrics, orthopaedics) is in town, and private care is at Northern Medical Specialty Plaza in Orange Walk",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "GOV.UK: Belize list of medical facilities",
+          "url": "https://www.gov.uk/government/publications/belize-list-of-medical-facilities/belize-medical-facilities",
+          "read": "2026-11-15",
+          "says": "Last updated 1 June 2021. San Ignacio Hospital (gynaecology, surgery, paediatrics, internal medicine); La Loma Luz Adventist Hospital, Santa Elena; Western Regional Hospital, Belmopan; Karl Heusner Memorial Hospital, Belize City (public; ICU, A&E); San Pedro Polyclinic II, San Pedro Town (\"24-hour general healthcare\", radiology, lab); Southern Regional Hospital, Dangriga (public; general and maternity care, ICU, pre/post-surgical care); Corozal Community Hospital (public; internal medicine, general surgery, paediatrics, OB/GYN, orthopaedics); Northern Medical Specialty Plaza, Orange Walk (private). No entry for Placencia or Hopkins."
+        },
+        {
+          "name": "Rio Times: Healthcare in Belize for expats 2026",
+          "url": "https://www.riotimesonline.com/healthcare-belize-expats-2026/",
+          "read": "2026-11-15",
+          "says": "Published September 16, 2026, modified November 8, 2026. The US Embassy says \"a medical evacuation can easily cost US$10,000 and up, depending on location and condition.\" \"a community hospital in San Ignacio\"; \"La Loma Luz Hospital on the Western Highway at Santa Elena is the main private choice for the Cayo expat belt\" (Seventh-day Adventist); \"Western Regional serves Belmopan\"; Karl Heusner Memorial Hospital \"is the national referral hospital\"; regional destinations Mérida, Cancún, San Pedro Sula and Guatemala City, and \"Miami remains the option\". \"Ambergris Caye has San Pedro Polyclinic and San Juan Health Center\"; \"The two most popular foreign destinations have no hospital.\" Placencia has \"a single health centre\"; \"The nearest hospital to Placencia is Southern Regional in Dangriga\". \"Corozal has its own community hospital and the Mexican town of Chetumal across the border\"; the private Northern Medical Specialty Plaza is in Orange Walk."
+        }
+      ]
+    },
+    {
+      "id": "bz-healthcare-corozal-chetumal",
+      "fact": "healthcare",
+      "cities": [
+        "corozal"
+      ],
+      "claim": "Many retirees cross to Chetumal, Mexico, about 15.7 miles (26 minutes), for a wider range of services",
+      "verdict": "cant-confirm",
+      "hedge": "reportedly",
+      "wording": "and many retirees reportedly cross to Chetumal",
+      "oldWording": "and many retirees cross to Chetumal",
+      "sources": [
+        {
+          "name": "Rio Times: Healthcare in Belize for expats 2026",
+          "url": "https://www.riotimesonline.com/healthcare-belize-expats-2026/",
+          "read": "2026-11-15",
+          "says": "Published September 16, 2026, modified November 8, 2026. The US Embassy says \"a medical evacuation can easily cost US$10,000 and up, depending on location and condition.\" \"a community hospital in San Ignacio\"; \"La Loma Luz Hospital on the Western Highway at Santa Elena is the main private choice for the Cayo expat belt\" (Seventh-day Adventist); \"Western Regional serves Belmopan\"; Karl Heusner Memorial Hospital \"is the national referral hospital\"; regional destinations Mérida, Cancún, San Pedro Sula and Guatemala City, and \"Miami remains the option\". \"Ambergris Caye has San Pedro Polyclinic and San Juan Health Center\"; \"The two most popular foreign destinations have no hospital.\" Placencia has \"a single health centre\"; \"The nearest hospital to Placencia is Southern Regional in Dangriga\". \"Corozal has its own community hospital and the Mexican town of Chetumal across the border\"; the private Northern Medical Specialty Plaza is in Orange Walk."
+        },
+        {
+          "name": "Rome2rio: Corozal to Chetumal",
+          "url": "https://www.rome2rio.com/s/Corozal-Town/Chetumal",
+          "read": "2026-11-15",
+          "says": "\"The road distance is 15.7 miles.\" \"It takes approximately 26 min to drive from Corozal to Chetumal.\" Undated."
+        }
+      ],
+      "also": [
+        "hedge added: \"reportedly\""
+      ],
+      "note": "The distance and time are confirmed. That many retirees use Chetumal rests on expat forum posts seen in search results (expatexchange.com, which returned 403 in stage 3) and on Rio Times naming Chetumal as Corozal's alternative; no page counts them."
+    },
+    {
+      "id": "bz-healthcare-corozal-no-jci",
+      "fact": "healthcare",
+      "cities": [
+        "corozal"
+      ],
+      "claim": "No JCI hospital was found",
+      "verdict": "cant-confirm",
+      "hedge": "no JCI hospital was found",
+      "wording": "no JCI hospital was found",
+      "sources": [
+        {
+          "name": "Rio Times: Healthcare in Belize for expats 2026",
+          "url": "https://www.riotimesonline.com/healthcare-belize-expats-2026/",
+          "read": "2026-11-15",
+          "says": "Published September 16, 2026, modified November 8, 2026. The US Embassy says \"a medical evacuation can easily cost US$10,000 and up, depending on location and condition.\" \"a community hospital in San Ignacio\"; \"La Loma Luz Hospital on the Western Highway at Santa Elena is the main private choice for the Cayo expat belt\" (Seventh-day Adventist); \"Western Regional serves Belmopan\"; Karl Heusner Memorial Hospital \"is the national referral hospital\"; regional destinations Mérida, Cancún, San Pedro Sula and Guatemala City, and \"Miami remains the option\". \"Ambergris Caye has San Pedro Polyclinic and San Juan Health Center\"; \"The two most popular foreign destinations have no hospital.\" Placencia has \"a single health centre\"; \"The nearest hospital to Placencia is Southern Regional in Dangriga\". \"Corozal has its own community hospital and the Mexican town of Chetumal across the border\"; the private Northern Medical Specialty Plaza is in Orange Walk."
+        },
+        {
+          "name": "GOV.UK: Belize list of medical facilities",
+          "url": "https://www.gov.uk/government/publications/belize-list-of-medical-facilities/belize-medical-facilities",
+          "read": "2026-11-15",
+          "says": "Last updated 1 June 2021. San Ignacio Hospital (gynaecology, surgery, paediatrics, internal medicine); La Loma Luz Adventist Hospital, Santa Elena; Western Regional Hospital, Belmopan; Karl Heusner Memorial Hospital, Belize City (public; ICU, A&E); San Pedro Polyclinic II, San Pedro Town (\"24-hour general healthcare\", radiology, lab); Southern Regional Hospital, Dangriga (public; general and maternity care, ICU, pre/post-surgical care); Corozal Community Hospital (public; internal medicine, general surgery, paediatrics, OB/GYN, orthopaedics); Northern Medical Specialty Plaza, Orange Walk (private). No entry for Placencia or Hopkins."
+        }
+      ],
+      "note": "A statement of a search's result: neither page names an accredited hospital. The JCI directory returned 403 in stage 4's first half."
+    },
+    {
+      "id": "bz-healthcare-corozal-passport",
+      "fact": "healthcare",
+      "cities": [
+        "corozal"
+      ],
+      "claim": "Cross-border care needs a passport",
+      "verdict": "cant-confirm",
+      "hedge": "generally",
+      "wording": "cross-border care generally needs a passport",
+      "oldWording": "cross-border care needs a passport",
+      "sources": [
+        {
+          "name": "GOV.UK: Mexico entry requirements",
+          "url": "https://www.gov.uk/foreign-travel-advice/mexico/entry-requirements",
+          "read": "2026-11-15",
+          "says": "For British nationals: \"To enter Mexico, your passport must be valid for the duration of your stay.\" Undated."
+        }
+      ],
+      "also": [
+        "hedge added: \"generally\""
+      ],
+      "note": "travel.state.gov's Mexico page (the US citizen's rules, where a passport card may also serve at land crossings) returned 403, and the INM URL tried was a 404."
+    },
+    {
+      "id": "bz-healthcare-corozal-insurer",
+      "fact": "healthcare",
+      "cities": [
+        "corozal"
+      ],
+      "claim": "Insurer cover in Mexico is unverified",
+      "verdict": "cant-confirm",
+      "hedge": "unverified",
+      "wording": "insurer cover in Mexico is unverified",
+      "sources": [
+        {
+          "name": "Rio Times: Healthcare in Belize for expats 2026",
+          "url": "https://www.riotimesonline.com/healthcare-belize-expats-2026/",
+          "read": "2026-11-15",
+          "says": "Published September 16, 2026, modified November 8, 2026. The US Embassy says \"a medical evacuation can easily cost US$10,000 and up, depending on location and condition.\" \"a community hospital in San Ignacio\"; \"La Loma Luz Hospital on the Western Highway at Santa Elena is the main private choice for the Cayo expat belt\" (Seventh-day Adventist); \"Western Regional serves Belmopan\"; Karl Heusner Memorial Hospital \"is the national referral hospital\"; regional destinations Mérida, Cancún, San Pedro Sula and Guatemala City, and \"Miami remains the option\". \"Ambergris Caye has San Pedro Polyclinic and San Juan Health Center\"; \"The two most popular foreign destinations have no hospital.\" Placencia has \"a single health centre\"; \"The nearest hospital to Placencia is Southern Regional in Dangriga\". \"Corozal has its own community hospital and the Mexican town of Chetumal across the border\"; the private Northern Medical Specialty Plaza is in Orange Walk."
+        }
+      ],
+      "note": "A statement of what is not known; no page read addresses it."
+    }
+  ]
+}

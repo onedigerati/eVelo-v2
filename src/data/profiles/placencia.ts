@@ -7,7 +7,7 @@ const profile: ExpatProfile = {
   scores: { cost: 3, healthcare: 1, safety: 3, visa: 4, climate: 2, community: 3, tax: 5, estate: 5, lending: 3 },
   facts: {
     healthcare:
-      'No hospital on the peninsula: the public Placencia Polyclinic opened in May 2024 and was billed as 24-hour, but a parent found it unstaffed in the early hours that October; the nearest hospital is the public Southern Regional in Dangriga, about 1¼–1¾ hours by road, private care is in Belize City (3½ hours by road or a daytime flight), Tropic Air\'s 24-hour medical transfers do not list Placencia, and medevac "can easily cost US$10,000 and up".',
+      'No hospital on the peninsula: the public Placencia Polyclinic opened in May 2024 and was billed as 24-hour, but a parent found it unstaffed in the early hours that October; the nearest hospital is the public Southern Regional in Dangriga, about 1¼–1¾ hours by road, private care is in Belize City (3½ hours by road or a short flight), Tropic Air\'s 24-hour medical transfers do not list Placencia, and medevac "can easily cost US$10,000 and up".',
     safety:
       'Belize is at US State Dept Level 2 (March 2026, secondary source), with Level 3 only for Southside Belize City, and is not scored in the Global Peace Index; the UK notes one of the world\'s highest murder rates per capita, mostly gang violence in Belize City, names Placencia among places where tourists are vulnerable to theft, and flags flooded bridges in Stann Creek in severe weather.',
     visa:

@@ -7,7 +7,7 @@ const profile: ExpatProfile = {
   scores: { cost: 4, healthcare: 2, safety: 3, visa: 4, climate: 2, community: 3, tax: 5, estate: 5, lending: 3 },
   facts: {
     healthcare:
-      'Corozal Community Hospital (public; internal medicine, general surgery, paediatrics, obstetrics, orthopaedics) is in town, private care is at Northern Medical Specialty Plaza in Orange Walk, and many retirees cross to Chetumal, Mexico, about 15.7 miles (26 minutes), for a wider range of services; no JCI hospital was found, cross-border care needs a passport, and insurer cover in Mexico is unverified.',
+      'Corozal Community Hospital (public; internal medicine, general surgery, paediatrics, obstetrics, orthopaedics) is in town, private care is at Northern Medical Specialty Plaza in Orange Walk, and many retirees reportedly cross to Chetumal, Mexico, about 15.7 miles (26 minutes), for a wider range of services; no JCI hospital was found, cross-border care generally needs a passport, and insurer cover in Mexico is unverified.',
     safety:
       'Belize is at US State Dept Level 2 (March 2026, secondary source), with Level 3 only for Southside Belize City, and is not scored in the Global Peace Index; the UK notes one of the world\'s highest murder rates per capita, mostly gang violence in Belize City, and does not mention Corozal or the Chetumal crossing.',
     visa:

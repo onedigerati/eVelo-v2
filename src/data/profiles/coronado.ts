@@ -12,7 +12,7 @@ const profile: ExpatProfile = {
     safety:
       'Panama is 81st of 163 in the 2026 Global Peace Index and US State Dept Level 2 (secondary source), with its Level 4 areas in Darién and the Mosquito Gulf, far from Coronado; UK advice (October 2026) names no restriction for the area, and petty theft is the main concern.',
     visa:
-      'A US portfolio alone does not qualify: Friendly Nations needs $200k+ in Panamanian real estate or a local fixed-term deposit (a beach condo can count; the US being on the list is unverified), and Qualified Investor starts at $300k in local property; Pensionado is permanent on a $1,000/month lifetime pension, which portfolio income does not meet.',
+      'A US portfolio alone does not qualify: Friendly Nations needs $200k+ in Panamanian real estate or a local fixed-term deposit (a beach condo can count; the US is on the list), and Qualified Investor starts at $300k in new local property ($500k for resale, Decree 17 of September 2026); Pensionado is permanent on a $1,000/month lifetime pension, which portfolio income does not meet.',
     tax: 'No wealth tax; Panama taxes only Panamanian-source income, so US brokerage dividends and interest are generally untaxed locally (PwC states the territorial principle, not the specific items).',
     estate:
       'Panama has no inheritance, estate or gift tax, so heirs owe nothing locally on US assets; there is no US estate treaty, and US estate tax applies above the $15M exemption (2026).',
@@ -42,6 +42,8 @@ const profile: ExpatProfile = {
     { name: 'Wikipedia: Tocumen International Airport', url: 'https://en.wikipedia.org/wiki/Tocumen_International_Airport' },
     { name: 'Your Tax Base: Charles Schwab for expats (country list, Oct 2026)', url: 'https://yourtaxbase.com/blog/charles-schwab-for-expats' },
     S.gpiPoster,
+    { name: 'Kraemer & Kraemer: Panama Qualified Investor visa (Decree 17 of 2026)', url: 'https://kraemerlaw.com/en/immigration/panama-qualified-investor-visa', edition: '2026' },
+    { name: 'Gaceta Oficial 30601: Executive Decree 16 of 2026, friendly-nations list (copy by NDM)', url: 'https://www.ndm.com.pa/wp-content/uploads/2026/09/Decreto-Ejecutivo-N°-16.-Incluye-a-Ecuador-en-lista-de-paises-amigos.pdf', edition: '2026' },
   ],
 }
 

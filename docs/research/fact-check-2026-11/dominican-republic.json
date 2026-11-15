@@ -1,0 +1,387 @@
+{
+  "country": "Dominican Republic",
+  "cities": [
+    "las-terrenas"
+  ],
+  "claims": [
+    {
+      "id": "do-tax-no-wealth-tax",
+      "fact": "tax",
+      "cities": [
+        "las-terrenas"
+      ],
+      "claim": "No wealth tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Dominican Republic, other taxes",
+          "url": "https://taxsummaries.pwc.com/dominican-republic/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 25 August 2026. \"There are no net wealth/worth taxes in the Dominican Republic.\" \"Inheritance tax for individuals is 3%, which is charged to the successors and beneficiaries.\" \"Gifts made to physical persons are subject to 27% withholding tax (WHT).\" The base (worldwide or local assets) is not stated."
+        }
+      ]
+    },
+    {
+      "id": "do-tax-territorial-third-year",
+      "fact": "tax",
+      "cities": [
+        "las-terrenas"
+      ],
+      "claim": "The system is territorial, but residents are taxed on foreign investments and financial gains after their third year",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Dominican Republic, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/dominican-republic/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 25 August 2026. \"The Dominican Republic follows a territorial concept for the determination of taxable income.\" Residents are taxed on foreign investments and financial gains; for new residents \"this foreign-source income is taxed only after the third year\". Top rate 25% for FY 2026; from FY 2027 a 27% rate applies above DOP 4,800,000."
+        }
+      ],
+      "note": "Also the summary and drawback 2."
+    },
+    {
+      "id": "do-tax-rate",
+      "fact": "tax",
+      "cities": [
+        "las-terrenas"
+      ],
+      "claim": "Up to 25% (27% from FY2027)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Dominican Republic, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/dominican-republic/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 25 August 2026. \"The Dominican Republic follows a territorial concept for the determination of taxable income.\" Residents are taxed on foreign investments and financial gains; for new residents \"this foreign-source income is taxed only after the third year\". Top rate 25% for FY 2026; from FY 2027 a 27% rate applies above DOP 4,800,000."
+        }
+      ],
+      "note": "Check for a bill: the 2026 \"procrecimiento\" fiscal bill news read (zolfm.com, 30 June 2026) does not touch these rates or Law 171-07; PwC (August 2026) gives the FY2027 scale. Tax score 3 stays."
+    },
+    {
+      "id": "do-tax-law-171-07",
+      "fact": "tax",
+      "cities": [
+        "las-terrenas"
+      ],
+      "claim": "Law 171-07 exempts the income declared by rentistas and pensionados",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Pellerano & Herrera: Pensionado or rentista under Law 171-07",
+          "url": "https://phlaw.com/pensionado-o-rentista-bajo-la-ley-171-07/",
+          "read": "2026-11-15",
+          "says": "Dated 2 April 2010 (law of 2007). \"Las rentas o sumas declaradas como ingreso por los beneficiarios de esta ley estarán exentas\" of income tax; rentista: \"una suma mensual correspondiente a USD$2,000.00\" of stable income mainly from abroad, including deposits or investments in foreign banks, investments in companies abroad and interest on foreign-currency securities; pensionado: \"no menor de USD$1,500.00\" plus \"USD$250.00\" per dependant. Investor residence is a separate programme; no amount given."
+        }
+      ],
+      "note": "Read on a law firm's 2010 summary of the 2007 law; a search for a 2026 amendment of Law 171-07 found none. Also the summary and why line."
+    },
+    {
+      "id": "do-tax-171-07-reach",
+      "fact": "tax",
+      "cities": [
+        "las-terrenas"
+      ],
+      "claim": "Whether the exemption covers dividends above the qualifying amount is unclear",
+      "verdict": "cant-confirm",
+      "hedge": "unclear",
+      "wording": "whether that covers dividends above the qualifying amount is unclear",
+      "sources": [
+        {
+          "name": "Pellerano & Herrera: Pensionado or rentista under Law 171-07",
+          "url": "https://phlaw.com/pensionado-o-rentista-bajo-la-ley-171-07/",
+          "read": "2026-11-15",
+          "says": "Dated 2 April 2010 (law of 2007). \"Las rentas o sumas declaradas como ingreso por los beneficiarios de esta ley estarán exentas\" of income tax; rentista: \"una suma mensual correspondiente a USD$2,000.00\" of stable income mainly from abroad, including deposits or investments in foreign banks, investments in companies abroad and interest on foreign-currency securities; pensionado: \"no menor de USD$1,500.00\" plus \"USD$250.00\" per dependant. Investor residence is a separate programme; no amount given."
+        },
+        {
+          "name": "PwC: Dominican Republic, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/dominican-republic/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 25 August 2026. \"The Dominican Republic follows a territorial concept for the determination of taxable income.\" Residents are taxed on foreign investments and financial gains; for new residents \"this foreign-source income is taxed only after the third year\". Top rate 25% for FY 2026; from FY 2027 a 27% rate applies above DOP 4,800,000."
+        }
+      ],
+      "note": "Neither page settles it."
+    },
+    {
+      "id": "do-estate-rate",
+      "fact": "estate",
+      "cities": [
+        "las-terrenas"
+      ],
+      "claim": "Inheritance tax is 3% on successors (gifts 27%)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Dominican Republic, other taxes",
+          "url": "https://taxsummaries.pwc.com/dominican-republic/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 25 August 2026. \"There are no net wealth/worth taxes in the Dominican Republic.\" \"Inheritance tax for individuals is 3%, which is charged to the successors and beneficiaries.\" \"Gifts made to physical persons are subject to 27% withholding tax (WHT).\" The base (worldwide or local assets) is not stated."
+        },
+        {
+          "name": "PwC: quick chart, inheritance and gift tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates",
+          "read": "2026-11-15",
+          "says": "Costa Rica (last reviewed 30 June 2026): \"Costa Rica does not have an inheritance tax.\" \"Costa Rica does not have a gift tax.\" Panama (last reviewed 04 August 2026): NA | NA. Dominican Republic (last reviewed 25 August 2026): 3 | 27. Belize is not listed."
+        }
+      ],
+      "note": "localTaxes.ts (DO) models 3% with no allowance, which agrees."
+    },
+    {
+      "id": "do-estate-reach",
+      "fact": "estate",
+      "cities": [
+        "las-terrenas"
+      ],
+      "claim": "Whether it reaches a resident's US assets is unverified",
+      "verdict": "cant-confirm",
+      "hedge": "unverified",
+      "wording": "whether it reaches a resident's US assets is unverified",
+      "sources": [
+        {
+          "name": "PwC: Dominican Republic, other taxes",
+          "url": "https://taxsummaries.pwc.com/dominican-republic/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 25 August 2026. \"There are no net wealth/worth taxes in the Dominican Republic.\" \"Inheritance tax for individuals is 3%, which is charged to the successors and beneficiaries.\" \"Gifts made to physical persons are subject to 27% withholding tax (WHT).\" The base (worldwide or local assets) is not stated."
+        }
+      ],
+      "note": "PwC does not state the base. localTaxes.ts models it as applying, which matches the cautious reading. Estate score 4 stays."
+    },
+    {
+      "id": "do-estate-no-us-treaty",
+      "fact": "estate",
+      "cities": [
+        "las-terrenas"
+      ],
+      "claim": "There is no US estate treaty",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-without",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list); none of the 37 countries named in this claim is among them."
+        }
+      ]
+    },
+    {
+      "id": "do-estate-no-us-credit",
+      "fact": "estate",
+      "cities": [
+        "las-terrenas"
+      ],
+      "claim": "So there would be no US credit for it on US-sited stocks",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Cornell LII: 26 U.S. Code § 2014, credit for foreign death taxes",
+          "url": "https://www.law.cornell.edu/uscode/text/26/2014",
+          "read": "2026-11-15",
+          "says": "Subsection (a): the estate tax is credited with foreign estate, inheritance, legacy or succession taxes \"actually paid to any foreign country in respect of any property situated within such foreign country\"."
+        }
+      ],
+      "note": "Without a treaty the statutory credit reaches only property sited in the DR, so a DR tax on US-sited stocks gets no US credit."
+    },
+    {
+      "id": "do-lending-ibkr",
+      "fact": "lending",
+      "cities": [
+        "las-terrenas"
+      ],
+      "claim": "Interactive Brokers accepts Dominican residents",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Interactive Brokers reportedly accepts Dominican residents",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes \"Belize\", \"Panama\", \"Costa Rica\" and \"Dominican Republic\"; the section says only \"Check if Interactive Brokers is available in your country\" and names no IBKR entity for these residents."
+        }
+      ],
+      "note": "IBKR's country list (https://www.interactivebrokers.com/en/accounts/open-account-country-list.php) returned HTTP 403 again on 2026-11-15. Banker on Wheels lists the Dominican Republic."
+    },
+    {
+      "id": "do-lending-margin",
+      "fact": "lending",
+      "cities": [
+        "las-terrenas"
+      ],
+      "claim": "Margin terms are unconfirmed",
+      "verdict": "cant-confirm",
+      "hedge": "unconfirmed",
+      "wording": "though margin terms are unconfirmed",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes \"Belize\", \"Panama\", \"Costa Rica\" and \"Dominican Republic\"; the section says only \"Check if Interactive Brokers is available in your country\" and names no IBKR entity for these residents."
+        }
+      ],
+      "note": "A statement of what is not known."
+    },
+    {
+      "id": "do-lending-schwab",
+      "fact": "lending",
+      "cities": [
+        "las-terrenas"
+      ],
+      "claim": "Schwab One International's application does not accept the Dominican Republic (October 2026), so IBKR is the only known route",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab One International's application reportedly does not accept the Dominican Republic (October 2026)",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. On that day the author ran every entry in Schwab's international account selector through the application: it accepted residents of 51 of 263 countries and regions: Argentina, Australia, Austria, the Bahamas, Belgium, Bermuda, Brazil, the British Virgin Islands, the Cayman Islands, Chile, China, Colombia, Costa Rica, the Czech Republic, Denmark, Ecuador, Finland, Germany, Greece, Guatemala, Hong Kong, Iceland, India, Indonesia, Ireland, Israel, Jersey, Luxembourg, Malaysia, the Marshall Islands, Mexico, the Netherlands, Norway, Panama, Paraguay, Peru, Poland, Portugal, Qatar, Singapore, South Korea, Spain, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Turks and Caicos, the United Arab Emirates, the United Kingdom and Uruguay. Named as not accepted: Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam; for the rest the application said \"Schwab currently cannot open accounts for residents of your country/region.\" The test covers new applicants on that day only."
+        },
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Dated October 23, 2026 (country check that day). Rows \"Costa Rica | Yes\" and \"Panama | Yes\" (both among the 51 accepted); \"Dominican Republic | No\"; Belize is absent from the table and the 51-country list, and residents of the other countries saw \"Schwab currently cannot open accounts for residents of your country/region.\" On margin: \"Customers residing within Europe are restricted from using their Available Margin Loan Value\" to withdraw funds, called \"one regional limit\"; no restriction is named for any other region."
+        },
+        {
+          "name": "Your Tax Base: best brokerage for US expats",
+          "url": "https://yourtaxbase.com/blog/best-brokerage-for-us-expats",
+          "read": "2026-11-15",
+          "says": "Dated October 23, 2026. Quotes Fidelity's FAQ: \"we do not open accounts for any new customers residing outside the United States.\" Vanguard requires US citizenship or permanent residence \"with a U.S. mailing address\". Its Schwab table puts Belize and the Dominican Republic among countries that cannot apply online, Panama and Costa Rica among those that can."
+        }
+      ],
+      "note": "The dated list marks the Dominican Republic \"No\". Lending score 3 stays (IBKR only)."
+    },
+    {
+      "id": "do-lending-schwab-summary",
+      "fact": "lending",
+      "cities": [
+        "las-terrenas"
+      ],
+      "claim": "Schwab International does not accept DR residents (summary and drawback, unhedged)",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab International reportedly does not accept DR residents",
+      "oldWording": "Schwab International does not accept DR residents",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Dated October 23, 2026 (country check that day). Rows \"Costa Rica | Yes\" and \"Panama | Yes\" (both among the 51 accepted); \"Dominican Republic | No\"; Belize is absent from the table and the 51-country list, and residents of the other countries saw \"Schwab currently cannot open accounts for residents of your country/region.\" On margin: \"Customers residing within Europe are restricted from using their Available Margin Loan Value\" to withdraw funds, called \"one regional limit\"; no restriction is named for any other region."
+        }
+      ],
+      "also": [
+        "summary: hedge added",
+        "drawback 3 reworded: \"Schwab International unavailable\" became \"Schwab International reportedly unavailable\""
+      ],
+      "note": "Broker claims rest on a secondary page and stay reported (rule 3); the fact was hedged but the summary and drawback were not. The why line in expatPicks.ts (\"Schwab International is unavailable\") is unhedged too and was left (expatPicks.ts is not edited here)."
+    },
+    {
+      "id": "do-visa-rentista",
+      "fact": "visa",
+      "cities": [
+        "las-terrenas"
+      ],
+      "claim": "Rentista (Law 171-07) needs $2,000/month of stable foreign income, and investments in foreign banks or companies and interest from securities qualify",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Pellerano & Herrera: Pensionado or rentista under Law 171-07",
+          "url": "https://phlaw.com/pensionado-o-rentista-bajo-la-ley-171-07/",
+          "read": "2026-11-15",
+          "says": "Dated 2 April 2010 (law of 2007). \"Las rentas o sumas declaradas como ingreso por los beneficiarios de esta ley estarán exentas\" of income tax; rentista: \"una suma mensual correspondiente a USD$2,000.00\" of stable income mainly from abroad, including deposits or investments in foreign banks, investments in companies abroad and interest on foreign-currency securities; pensionado: \"no menor de USD$1,500.00\" plus \"USD$250.00\" per dependant. Investor residence is a separate programme; no amount given."
+        }
+      ],
+      "note": "The law firm's page is from 2010; the amounts are set in the 2007 law, and no amendment was found. The fact ends \"(secondary sources)\". Visa score 4 stays."
+    },
+    {
+      "id": "do-visa-pensionado",
+      "fact": "visa",
+      "cities": [
+        "las-terrenas"
+      ],
+      "claim": "Pensionado needs $1,500/month plus $250 per dependant",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Pellerano & Herrera: Pensionado or rentista under Law 171-07",
+          "url": "https://phlaw.com/pensionado-o-rentista-bajo-la-ley-171-07/",
+          "read": "2026-11-15",
+          "says": "Dated 2 April 2010 (law of 2007). \"Las rentas o sumas declaradas como ingreso por los beneficiarios de esta ley estarán exentas\" of income tax; rentista: \"una suma mensual correspondiente a USD$2,000.00\" of stable income mainly from abroad, including deposits or investments in foreign banks, investments in companies abroad and interest on foreign-currency securities; pensionado: \"no menor de USD$1,500.00\" plus \"USD$250.00\" per dependant. Investor residence is a separate programme; no amount given."
+        }
+      ]
+    },
+    {
+      "id": "do-visa-investor",
+      "fact": "visa",
+      "cities": [
+        "las-terrenas"
+      ],
+      "claim": "An investor route needs about $200k",
+      "verdict": "cant-confirm",
+      "hedge": "(secondary sources)",
+      "wording": "and an investor route about $200k (secondary sources)",
+      "sources": [
+        {
+          "name": "Henley & Partners: Dominican Republic residence by investment",
+          "url": "https://www.henleyglobal.com/es/residence-investment/dominican-republic",
+          "read": "2026-11-15",
+          "says": "Undated (©2026). Direct investment: \"Aportación de capital de al menos USD 200,000 a un negocio nuevo o existente\"; CONFOTUR real estate of at least USD 500,000."
+        }
+      ],
+      "note": "Only an undated firm page was read; no DGM or ProDominicana page."
+    },
+    {
+      "id": "do-healthcare-facilities",
+      "fact": "healthcare",
+      "cities": [
+        "las-terrenas"
+      ],
+      "claim": "The public municipal hospital and two private clinics (Clínica Especializada Internacional, Centro Galeno Integral) offer 24-hour emergency care; complex cases go to Santo Domingo or Santiago, 2–3 hours by road or by helicopter",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PlayaMax: Healthcare in Las Terrenas",
+          "url": "https://playamax.com/?p=6331",
+          "read": "2026-11-15",
+          "says": "Undated (\"1 year ago\"; header image January 2026). Hospital Municipal Lic. Pablo A. Paulino is \"the main public hospital in Las Terrenas\", 24/7; Clínica Especializada Internacional has 24-hour emergency care; Centro Galeno Integral offers \"24-hour emergency services\"; \"Complex cases can be transferred to Santo Domingo or Santiago, approximately 2–3 hours by car or via medical helicopter.\" No insurance prices."
+        }
+      ],
+      "note": "Undated local page, the only one found; healthcare score 2 stays."
+    },
+    {
+      "id": "do-healthcare-insurance-cost",
+      "fact": "healthcare",
+      "cities": [
+        "las-terrenas"
+      ],
+      "claim": "Local private cover reportedly costs $80–150/month",
+      "verdict": "corrected",
+      "oldWording": "and local private cover reportedly costs $80–150/month",
+      "newWording": "and local private plans are priced per applicant, from a published floor of about $28–70/month that rises with age (secondary source)",
+      "sources": [
+        {
+          "name": "Rio Times: Healthcare in the Dominican Republic for expats 2026",
+          "url": "https://www.riotimesonline.com/healthcare-dominican-republic-expats-2026/",
+          "read": "2026-11-15",
+          "says": "Published September 13, 2026, modified November 14, 2026. \"No Dominican insurer publishes its premiums\"; two small insurers publish about US$28 to US$70 per person per month, \"Treat those as a floor rather than a benchmark\"; applicants 55+ need a medical exam; \"No insurer publishes its maximum entry age\"."
+        }
+      ],
+      "also": [
+        "sources: added Rio Times (DR healthcare, 2026)"
+      ],
+      "note": "No page read gives $80–150; a July 2026 guide seen in search results gave $80–200 and forums much more at 70. The dated page says premiums are not published and are age-priced."
+    }
+  ]
+}

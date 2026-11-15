@@ -1,0 +1,603 @@
+{
+  "country": "Costa Rica",
+  "cities": [
+    "san-jose-cr",
+    "atenas"
+  ],
+  "claims": [
+    {
+      "id": "cr-tax-no-wealth-tax",
+      "fact": "tax",
+      "cities": [
+        "san-jose-cr",
+        "atenas"
+      ],
+      "claim": "Costa Rica has no wealth tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: quick chart, net wealth/worth tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/net-wealth-worth-tax-rates",
+          "read": "2026-11-15",
+          "says": "About 146 territories, each with its own review date. Belize is not in the list. Panama: \"NA\" (last reviewed 04 August 2026); Costa Rica: \"Costa Rica does not have a net wealth/worth tax\" (last reviewed 30 June 2026); Dominican Republic: \"NA\" (last reviewed 25 August 2026)."
+        }
+      ]
+    },
+    {
+      "id": "cr-tax-source-based",
+      "fact": "tax",
+      "cities": [
+        "san-jose-cr",
+        "atenas"
+      ],
+      "claim": "Taxation is source-based today, so foreign dividends and interest are untaxed",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Costa Rica, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/costa-rica/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 30 June 2026. \"Income taxes on individuals in Costa Rica are levied on local income irrespective of nationality and resident status.\" Foreign-source dividends and interest are not addressed; no worldwide-income bill is mentioned."
+        },
+        {
+          "name": "KPMG Costa Rica: Newsflash, 29 September 2026",
+          "url": "https://kpmg.com/cr/es/insights/2026/09/newsflash-29-sep.html",
+          "read": "2026-11-15",
+          "says": "Filed 22 September 2026 as expediente 25.796; \"Se extiende el gravamen de las rentas pasivas de fuente extranjera a residentes en Costa Rica en general\"; \"se plantea un esquema de deducción y no de acreditación\"; no exemptions mentioned; still in the legislative process. No rate given."
+        }
+      ],
+      "note": "PwC taxes \"local income\" and does not name foreign dividends; KPMG's note that the bill would \"extend\" the tax on foreign passive income to residents in general confirms it is not taxed today. Tax score 5 stays (today's rule)."
+    },
+    {
+      "id": "cr-tax-bill-25796-filed",
+      "fact": "tax",
+      "cities": [
+        "san-jose-cr",
+        "atenas"
+      ],
+      "claim": "Bill 25.796 was filed on 22 September 2026 and is in committee",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Delfino: Expediente 25.796",
+          "url": "https://delfino.cr/asamblea/proyecto/25796",
+          "read": "2026-11-15",
+          "says": "\"Ley sobre el gravamen de rentas pasivas de fuente extranjera\"; filed \"22 de septiembre de 2026\" by the government; status \"En comisión\" (Asuntos Hacendarios); no dictamen; \"No hay votaciones registradas\". It would tax foreign interest, dividends, royalties, rents and capital gains, and \"descontar el impuesto extranjero de la renta bruta\" (deduct foreign tax from gross income). No rentista or pensionado exemption is mentioned."
+        },
+        {
+          "name": "KPMG Costa Rica: Newsflash, 29 September 2026",
+          "url": "https://kpmg.com/cr/es/insights/2026/09/newsflash-29-sep.html",
+          "read": "2026-11-15",
+          "says": "Filed 22 September 2026 as expediente 25.796; \"Se extiende el gravamen de las rentas pasivas de fuente extranjera a residentes en Costa Rica en general\"; \"se plantea un esquema de deducción y no de acreditación\"; no exemptions mentioned; still in the legislative process. No rate given."
+        }
+      ],
+      "note": "Check for a bill: no committee vote or dictamen was found for November 2026. Also the taglines, summaries, drawbacks and why lines."
+    },
+    {
+      "id": "cr-tax-bill-25796-rate",
+      "fact": "tax",
+      "cities": [
+        "san-jose-cr",
+        "atenas"
+      ],
+      "claim": "The bill would tax all residents' foreign interest, dividends and gains at a reported 15%",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "La Nación: Hacienda proposes a 15% tax on five kinds of foreign passive income",
+          "url": "https://www.nacion.com/economia/hacienda-propone-impuesto-del-15-a-rentas-pasivas/FAWHTYZQKNG4ZKACOS5FH7UQBM/story/",
+          "read": "2026-11-15",
+          "says": "Dated 22 September 2026. Expediente 25796 proposes a \"tarifa general del 15%\" on interest, dividends, royalties, rents and capital gains from abroad, for \"personas físicas, personas jurídicas, fideicomisos, fondos de inversión y otras estructuras residentes en el país\"; it describes relief for \"impuestos equivalentes\" paid abroad as a credit. Rentistas and pensionados are not mentioned."
+        },
+        {
+          "name": "KPMG Costa Rica: Newsflash, 29 September 2026",
+          "url": "https://kpmg.com/cr/es/insights/2026/09/newsflash-29-sep.html",
+          "read": "2026-11-15",
+          "says": "Filed 22 September 2026 as expediente 25.796; \"Se extiende el gravamen de las rentas pasivas de fuente extranjera a residentes en Costa Rica en general\"; \"se plantea un esquema de deducción y no de acreditación\"; no exemptions mentioned; still in the legislative process. No rate given."
+        },
+        {
+          "name": "Delfino: Expediente 25.796",
+          "url": "https://delfino.cr/asamblea/proyecto/25796",
+          "read": "2026-11-15",
+          "says": "\"Ley sobre el gravamen de rentas pasivas de fuente extranjera\"; filed \"22 de septiembre de 2026\" by the government; status \"En comisión\" (Asuntos Hacendarios); no dictamen; \"No hay votaciones registradas\". It would tax foreign interest, dividends, royalties, rents and capital gains, and \"descontar el impuesto extranjero de la renta bruta\" (deduct foreign tax from gross income). No rentista or pensionado exemption is mentioned."
+        }
+      ]
+    },
+    {
+      "id": "cr-tax-bill-25796-deduction",
+      "fact": "tax",
+      "cities": [
+        "san-jose-cr",
+        "atenas"
+      ],
+      "claim": "The bill deducts rather than credits foreign tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "KPMG Costa Rica: Newsflash, 29 September 2026",
+          "url": "https://kpmg.com/cr/es/insights/2026/09/newsflash-29-sep.html",
+          "read": "2026-11-15",
+          "says": "Filed 22 September 2026 as expediente 25.796; \"Se extiende el gravamen de las rentas pasivas de fuente extranjera a residentes en Costa Rica en general\"; \"se plantea un esquema de deducción y no de acreditación\"; no exemptions mentioned; still in the legislative process. No rate given."
+        },
+        {
+          "name": "Delfino: Expediente 25.796",
+          "url": "https://delfino.cr/asamblea/proyecto/25796",
+          "read": "2026-11-15",
+          "says": "\"Ley sobre el gravamen de rentas pasivas de fuente extranjera\"; filed \"22 de septiembre de 2026\" by the government; status \"En comisión\" (Asuntos Hacendarios); no dictamen; \"No hay votaciones registradas\". It would tax foreign interest, dividends, royalties, rents and capital gains, and \"descontar el impuesto extranjero de la renta bruta\" (deduct foreign tax from gross income). No rentista or pensionado exemption is mentioned."
+        },
+        {
+          "name": "La Nación: Hacienda proposes a 15% tax on five kinds of foreign passive income",
+          "url": "https://www.nacion.com/economia/hacienda-propone-impuesto-del-15-a-rentas-pasivas/FAWHTYZQKNG4ZKACOS5FH7UQBM/story/",
+          "read": "2026-11-15",
+          "says": "Dated 22 September 2026. Expediente 25796 proposes a \"tarifa general del 15%\" on interest, dividends, royalties, rents and capital gains from abroad, for \"personas físicas, personas jurídicas, fideicomisos, fondos de inversión y otras estructuras residentes en el país\"; it describes relief for \"impuestos equivalentes\" paid abroad as a credit. Rentistas and pensionados are not mentioned."
+        }
+      ],
+      "note": "KPMG and Delfino describe a deduction; La Nación's first-day report called it a credit. The Big Four reading is kept."
+    },
+    {
+      "id": "cr-tax-bill-no-rentista-exemption",
+      "fact": "tax",
+      "cities": [
+        "san-jose-cr"
+      ],
+      "claim": "No rentista exemption is mentioned in the bill",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Delfino: Expediente 25.796",
+          "url": "https://delfino.cr/asamblea/proyecto/25796",
+          "read": "2026-11-15",
+          "says": "\"Ley sobre el gravamen de rentas pasivas de fuente extranjera\"; filed \"22 de septiembre de 2026\" by the government; status \"En comisión\" (Asuntos Hacendarios); no dictamen; \"No hay votaciones registradas\". It would tax foreign interest, dividends, royalties, rents and capital gains, and \"descontar el impuesto extranjero de la renta bruta\" (deduct foreign tax from gross income). No rentista or pensionado exemption is mentioned."
+        },
+        {
+          "name": "KPMG Costa Rica: Newsflash, 29 September 2026",
+          "url": "https://kpmg.com/cr/es/insights/2026/09/newsflash-29-sep.html",
+          "read": "2026-11-15",
+          "says": "Filed 22 September 2026 as expediente 25.796; \"Se extiende el gravamen de las rentas pasivas de fuente extranjera a residentes en Costa Rica en general\"; \"se plantea un esquema de deducción y no de acreditación\"; no exemptions mentioned; still in the legislative process. No rate given."
+        },
+        {
+          "name": "La Nación: Hacienda proposes a 15% tax on five kinds of foreign passive income",
+          "url": "https://www.nacion.com/economia/hacienda-propone-impuesto-del-15-a-rentas-pasivas/FAWHTYZQKNG4ZKACOS5FH7UQBM/story/",
+          "read": "2026-11-15",
+          "says": "Dated 22 September 2026. Expediente 25796 proposes a \"tarifa general del 15%\" on interest, dividends, royalties, rents and capital gains from abroad, for \"personas físicas, personas jurídicas, fideicomisos, fondos de inversión y otras estructuras residentes en el país\"; it describes relief for \"impuestos equivalentes\" paid abroad as a credit. Rentistas and pensionados are not mentioned."
+        }
+      ]
+    },
+    {
+      "id": "cr-estate-none",
+      "fact": "estate",
+      "cities": [
+        "san-jose-cr",
+        "atenas"
+      ],
+      "claim": "Costa Rica has no inheritance tax, so heirs owe nothing locally on US assets",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: quick chart, inheritance and gift tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates",
+          "read": "2026-11-15",
+          "says": "Costa Rica (last reviewed 30 June 2026): \"Costa Rica does not have an inheritance tax.\" \"Costa Rica does not have a gift tax.\" Panama (last reviewed 04 August 2026): NA | NA. Dominican Republic (last reviewed 25 August 2026): 3 | 27. Belize is not listed."
+        }
+      ],
+      "note": "localTaxes.ts (CR) agrees."
+    },
+    {
+      "id": "cr-estate-no-us-treaty",
+      "fact": "estate",
+      "cities": [
+        "san-jose-cr",
+        "atenas"
+      ],
+      "claim": "There is no US estate treaty",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-without",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list); none of the 37 countries named in this claim is among them."
+        }
+      ]
+    },
+    {
+      "id": "cr-estate-us-exemption",
+      "fact": "estate",
+      "cities": [
+        "san-jose-cr",
+        "atenas"
+      ],
+      "claim": "US estate tax applies to the worldwide estate above the $15M exemption (2026)",
+      "verdict": "confirmed",
+      "shared": "us-estate-exemption-2026",
+      "sources": [
+        {
+          "name": "IRS: What's new, estate and gift tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax",
+          "read": "2026-11-15",
+          "says": "The table \"Basic exclusion amount for year of death\" has the row 2026: $15,000,000 (2025: $13,990,000). The page says the Working Families Tax Cuts, Public Law 119-21, signed July 4, 2025, \"amends § 2010(c)(3) by increasing the basic exclusion amount to $15,000,000 for calendar year 2026\". Page last reviewed or updated 03-Nov-2026."
+        },
+        {
+          "name": "IRS: Estate tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-tax",
+          "read": "2026-11-15",
+          "says": "A return is required when the gross estate, plus adjusted taxable gifts and specific exemption, is more than the filing threshold for the year of death; the table gives 2026: $15,000,000. Page last reviewed or updated 23-Oct-2026."
+        },
+        {
+          "name": "IRS news release IR-2025-103: tax inflation adjustments for tax year 2026",
+          "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill",
+          "read": "2026-11-15",
+          "says": "\"Estates of decedents who die during 2026 have a basic exclusion amount of $15,000,000\", up from $13,990,000 for 2025; the release (October 9, 2025) cites Revenue Procedure 2025-32 and is marked as an archival document."
+        },
+        {
+          "name": "IRS: Some nonresidents with U.S. assets must file estate tax returns",
+          "url": "https://www.irs.gov/individuals/international-taxpayers/some-nonresidents-with-us-assets-must-file-estate-tax-returns",
+          "read": "2026-11-15",
+          "says": "\"U.S. citizens are subject to U.S. estate taxation with respect to their worldwide assets\"; Form 706 is required when worldwide assets plus adjusted taxable gifts exceed the basic exclusion amount in effect on the date of death. By contrast a nonresident who is not a citizen files when US-situated assets exceed $60,000. Page last reviewed or updated 27-Jun-2026."
+        }
+      ]
+    },
+    {
+      "id": "cr-lending-ibkr",
+      "fact": "lending",
+      "cities": [
+        "san-jose-cr",
+        "atenas"
+      ],
+      "claim": "Interactive Brokers accepts Costa Rica residents",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Interactive Brokers reportedly accepts Costa Rica residents",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes \"Belize\", \"Panama\", \"Costa Rica\" and \"Dominican Republic\"; the section says only \"Check if Interactive Brokers is available in your country\" and names no IBKR entity for these residents."
+        }
+      ],
+      "note": "IBKR's country list (https://www.interactivebrokers.com/en/accounts/open-account-country-list.php) returned HTTP 403 again on 2026-11-15. Banker on Wheels lists Costa Rica."
+    },
+    {
+      "id": "cr-lending-schwab",
+      "fact": "lending",
+      "cities": [
+        "san-jose-cr",
+        "atenas"
+      ],
+      "claim": "Schwab One International's application lists Costa Rica (October 2026)",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab One International's application reportedly lists Costa Rica",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. On that day the author ran every entry in Schwab's international account selector through the application: it accepted residents of 51 of 263 countries and regions: Argentina, Australia, Austria, the Bahamas, Belgium, Bermuda, Brazil, the British Virgin Islands, the Cayman Islands, Chile, China, Colombia, Costa Rica, the Czech Republic, Denmark, Ecuador, Finland, Germany, Greece, Guatemala, Hong Kong, Iceland, India, Indonesia, Ireland, Israel, Jersey, Luxembourg, Malaysia, the Marshall Islands, Mexico, the Netherlands, Norway, Panama, Paraguay, Peru, Poland, Portugal, Qatar, Singapore, South Korea, Spain, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Turks and Caicos, the United Arab Emirates, the United Kingdom and Uruguay. Named as not accepted: Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam; for the rest the application said \"Schwab currently cannot open accounts for residents of your country/region.\" The test covers new applicants on that day only."
+        },
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Dated October 23, 2026 (country check that day). Rows \"Costa Rica | Yes\" and \"Panama | Yes\" (both among the 51 accepted); \"Dominican Republic | No\"; Belize is absent from the table and the 51-country list, and residents of the other countries saw \"Schwab currently cannot open accounts for residents of your country/region.\" On margin: \"Customers residing within Europe are restricted from using their Available Margin Loan Value\" to withdraw funds, called \"one regional limit\"; no restriction is named for any other region."
+        }
+      ],
+      "note": "Costa Rica is on the dated list (re-read today). Lending score 4 stays (rubric: Schwab reported to accept residents outside Europe, plus IBKR, margin terms unconfirmed). international.schwab.com returned 403 in stage 1."
+    },
+    {
+      "id": "cr-lending-no-margin-restriction",
+      "fact": "lending",
+      "cities": [
+        "san-jose-cr",
+        "atenas"
+      ],
+      "claim": "There is no known margin restriction outside Europe",
+      "verdict": "cant-confirm",
+      "shared": "schwab-europe-margin-cash-out",
+      "hedge": "no known",
+      "wording": "with no known margin restriction outside Europe",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. It quotes the Schwab One Account Agreement (\"October 2026 edition, form 09/26\"), Schwab One International terms: \"Customers residing within Europe are restricted from using their Available Margin Loan Value\" to withdraw funds from their account, and advises keeping enough actual cash in the account for spending. It does not define \"Europe\"."
+        },
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Dated October 23, 2026 (country check that day). Rows \"Costa Rica | Yes\" and \"Panama | Yes\" (both among the 51 accepted); \"Dominican Republic | No\"; Belize is absent from the table and the 51-country list, and residents of the other countries saw \"Schwab currently cannot open accounts for residents of your country/region.\" On margin: \"Customers residing within Europe are restricted from using their Available Margin Loan Value\" to withdraw funds, called \"one regional limit\"; no restriction is named for any other region."
+        }
+      ],
+      "note": "The reported clause bars Europe residents only and the page names no restriction for other regions; Schwab's agreement could not be read, so \"no known\" is the right strength. Whether Schwab One International offers margin at all to residents abroad was not readable either."
+    },
+    {
+      "id": "cr-lending-ibkr-margin",
+      "fact": "lending",
+      "cities": [
+        "san-jose-cr",
+        "atenas"
+      ],
+      "claim": "IBKR margin terms by country are unconfirmed",
+      "verdict": "cant-confirm",
+      "hedge": "unconfirmed",
+      "wording": "IBKR margin terms by country are unconfirmed",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes \"Belize\", \"Panama\", \"Costa Rica\" and \"Dominican Republic\"; the section says only \"Check if Interactive Brokers is available in your country\" and names no IBKR entity for these residents."
+        }
+      ],
+      "note": "A statement of what is not known."
+    },
+    {
+      "id": "cr-visa-rentista",
+      "fact": "visa",
+      "cities": [
+        "san-jose-cr",
+        "atenas"
+      ],
+      "claim": "Rentista needs stable income of at least $2,500/month for 2 years, with no compulsory deposit on the official checklist checked in September 2026",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "CRIE: Costa Rica Rentista residency deposit requirements",
+          "url": "https://crie.cr/costa-rica-rentista-residency-bank-deposit-requirements/",
+          "read": "2026-11-15",
+          "says": "Dated October 4, 2026. DGME requires \"stable and permanent income of at least US$2,500 per month\" for at least two years; \"The published checklist does not set out a compulsory US$60,000 deposit for every applicant\" (checked September 6, 2026); US$60,000 is 24 × US$2,500. Graphic: pensionado US$1,000/month, investor US$150,000."
+        },
+        {
+          "name": "Rio Times: Residency in Costa Rica for foreigners 2026",
+          "url": "https://www.riotimesonline.com/residency-costa-rica-foreigners-2026/",
+          "read": "2026-11-15",
+          "says": "Published 20 September 2026, modified 8 November 2026. Rentista: \"US$2,500 a month, guaranteed for at least two years\"; \"Investment income, an annuity or savings point to rentista\", but whether brokerage income counts as evidence is not addressed. Pensionado: \"at least US$1,000 a month\". Investor: Ley 9996's US$150,000 window closed; \"Anyone filing now should plan on US$200,000\", figure unconfirmed. Processing: three months by rule, but the ombudsman \"found a backlog of about one year\". \"Every temporary resident must join the Caja\"; \"The health insurance rate totals 12% of declared income\" (February 2025 report)."
+        }
+      ],
+      "note": "Check for a bill: no 2026 bill changing the rentista or pensionado amounts was found. Visa score 4 stays."
+    },
+    {
+      "id": "cr-visa-rentista-dividends",
+      "fact": "visa",
+      "cities": [
+        "san-jose-cr",
+        "atenas"
+      ],
+      "claim": "Whether brokerage dividends count as \"stable\" income is unaddressed",
+      "verdict": "cant-confirm",
+      "hedge": "unaddressed",
+      "wording": "whether brokerage dividends count as \"stable\" income is unaddressed",
+      "sources": [
+        {
+          "name": "Rio Times: Residency in Costa Rica for foreigners 2026",
+          "url": "https://www.riotimesonline.com/residency-costa-rica-foreigners-2026/",
+          "read": "2026-11-15",
+          "says": "Published 20 September 2026, modified 8 November 2026. Rentista: \"US$2,500 a month, guaranteed for at least two years\"; \"Investment income, an annuity or savings point to rentista\", but whether brokerage income counts as evidence is not addressed. Pensionado: \"at least US$1,000 a month\". Investor: Ley 9996's US$150,000 window closed; \"Anyone filing now should plan on US$200,000\", figure unconfirmed. Processing: three months by rule, but the ombudsman \"found a backlog of about one year\". \"Every temporary resident must join the Caja\"; \"The health insurance rate totals 12% of declared income\" (February 2025 report)."
+        },
+        {
+          "name": "CRIE: Costa Rica Rentista residency deposit requirements",
+          "url": "https://crie.cr/costa-rica-rentista-residency-bank-deposit-requirements/",
+          "read": "2026-11-15",
+          "says": "Dated October 4, 2026. DGME requires \"stable and permanent income of at least US$2,500 per month\" for at least two years; \"The published checklist does not set out a compulsory US$60,000 deposit for every applicant\" (checked September 6, 2026); US$60,000 is 24 × US$2,500. Graphic: pensionado US$1,000/month, investor US$150,000."
+        }
+      ],
+      "note": "Neither page settles it; Rio Times advises confirming with the directorate."
+    },
+    {
+      "id": "cr-visa-inversionista",
+      "fact": "visa",
+      "cities": [
+        "san-jose-cr",
+        "atenas"
+      ],
+      "claim": "Inversionista needs about $150k",
+      "verdict": "corrected",
+      "oldWording": "Inversionista needs about $150k",
+      "newWording": "Inversionista needs $150k, or reportedly $200k since Law 9996's window closed in July 2026",
+      "sources": [
+        {
+          "name": "CRIE: Law 9996 expiration, consequences for Costa Rica residency",
+          "url": "https://crie.cr/law-9996-expiration-consequences-costa-rica-residency/",
+          "read": "2026-11-15",
+          "says": "Published June 2, 2026, updated September 8, 2026. The five-year window \"reached its anniversary in July 2026\"; DGME's investor page \"still displayed a minimum investment of US$150,000\" on September 8, 2026, and its checklist too; the page warns against saying the threshold \"automatically became US$200,000\"."
+        },
+        {
+          "name": "Rio Times: Residency in Costa Rica for foreigners 2026",
+          "url": "https://www.riotimesonline.com/residency-costa-rica-foreigners-2026/",
+          "read": "2026-11-15",
+          "says": "Published 20 September 2026, modified 8 November 2026. Rentista: \"US$2,500 a month, guaranteed for at least two years\"; \"Investment income, an annuity or savings point to rentista\", but whether brokerage income counts as evidence is not addressed. Pensionado: \"at least US$1,000 a month\". Investor: Ley 9996's US$150,000 window closed; \"Anyone filing now should plan on US$200,000\", figure unconfirmed. Processing: three months by rule, but the ombudsman \"found a backlog of about one year\". \"Every temporary resident must join the Caja\"; \"The health insurance rate totals 12% of declared income\" (February 2025 report)."
+        }
+      ],
+      "also": [
+        "sources: added Rio Times (residency, 2026)"
+      ],
+      "note": "Law 9996's five-year window closed on 14 July 2026. DGME's pages still showed $150k on 8 September 2026 (CRIE), while Rio Times says to plan on $200k; DGME's own site was not tried. Both figures are now stated."
+    },
+    {
+      "id": "cr-visa-pensionado",
+      "fact": "visa",
+      "cities": [
+        "san-jose-cr",
+        "atenas"
+      ],
+      "claim": "Pensionado needs a $1,000/month pension",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Rio Times: Residency in Costa Rica for foreigners 2026",
+          "url": "https://www.riotimesonline.com/residency-costa-rica-foreigners-2026/",
+          "read": "2026-11-15",
+          "says": "Published 20 September 2026, modified 8 November 2026. Rentista: \"US$2,500 a month, guaranteed for at least two years\"; \"Investment income, an annuity or savings point to rentista\", but whether brokerage income counts as evidence is not addressed. Pensionado: \"at least US$1,000 a month\". Investor: Ley 9996's US$150,000 window closed; \"Anyone filing now should plan on US$200,000\", figure unconfirmed. Processing: three months by rule, but the ombudsman \"found a backlog of about one year\". \"Every temporary resident must join the Caja\"; \"The health insurance rate totals 12% of declared income\" (February 2025 report)."
+        },
+        {
+          "name": "CRIE: Costa Rica Rentista residency deposit requirements",
+          "url": "https://crie.cr/costa-rica-rentista-residency-bank-deposit-requirements/",
+          "read": "2026-11-15",
+          "says": "Dated October 4, 2026. DGME requires \"stable and permanent income of at least US$2,500 per month\" for at least two years; \"The published checklist does not set out a compulsory US$60,000 deposit for every applicant\" (checked September 6, 2026); US$60,000 is 24 × US$2,500. Graphic: pensionado US$1,000/month, investor US$150,000."
+        }
+      ]
+    },
+    {
+      "id": "cr-visa-processing",
+      "fact": "visa",
+      "cities": [
+        "san-jose-cr"
+      ],
+      "claim": "Expect 6–18 months",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Rio Times: Residency in Costa Rica for foreigners 2026",
+          "url": "https://www.riotimesonline.com/residency-costa-rica-foreigners-2026/",
+          "read": "2026-11-15",
+          "says": "Published 20 September 2026, modified 8 November 2026. Rentista: \"US$2,500 a month, guaranteed for at least two years\"; \"Investment income, an annuity or savings point to rentista\", but whether brokerage income counts as evidence is not addressed. Pensionado: \"at least US$1,000 a month\". Investor: Ley 9996's US$150,000 window closed; \"Anyone filing now should plan on US$200,000\", figure unconfirmed. Processing: three months by rule, but the ombudsman \"found a backlog of about one year\". \"Every temporary resident must join the Caja\"; \"The health insurance rate totals 12% of declared income\" (February 2025 report)."
+        }
+      ],
+      "note": "Three months by rule, but a backlog of about a year was reported; the range covers it."
+    },
+    {
+      "id": "cr-healthcare-ccss",
+      "fact": "healthcare",
+      "cities": [
+        "san-jose-cr",
+        "atenas"
+      ],
+      "claim": "Residents must join the CCSS (\"Caja\") public system at a share of declared income",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Rio Times: Residency in Costa Rica for foreigners 2026",
+          "url": "https://www.riotimesonline.com/residency-costa-rica-foreigners-2026/",
+          "read": "2026-11-15",
+          "says": "Published 20 September 2026, modified 8 November 2026. Rentista: \"US$2,500 a month, guaranteed for at least two years\"; \"Investment income, an annuity or savings point to rentista\", but whether brokerage income counts as evidence is not addressed. Pensionado: \"at least US$1,000 a month\". Investor: Ley 9996's US$150,000 window closed; \"Anyone filing now should plan on US$200,000\", figure unconfirmed. Processing: three months by rule, but the ombudsman \"found a backlog of about one year\". \"Every temporary resident must join the Caja\"; \"The health insurance rate totals 12% of declared income\" (February 2025 report)."
+        }
+      ]
+    },
+    {
+      "id": "cr-healthcare-ccss-2022-amounts",
+      "fact": "healthcare",
+      "cities": [
+        "san-jose-cr"
+      ],
+      "claim": "Contributions were reported at $200–400/month on $1,500–2,500 in 2022",
+      "verdict": "cant-confirm",
+      "hedge": "reported",
+      "wording": "reported at $200–400/month on $1,500–2,500 in 2022",
+      "sources": [
+        {
+          "name": "Rio Times: Residency in Costa Rica for foreigners 2026",
+          "url": "https://www.riotimesonline.com/residency-costa-rica-foreigners-2026/",
+          "read": "2026-11-15",
+          "says": "Published 20 September 2026, modified 8 November 2026. Rentista: \"US$2,500 a month, guaranteed for at least two years\"; \"Investment income, an annuity or savings point to rentista\", but whether brokerage income counts as evidence is not addressed. Pensionado: \"at least US$1,000 a month\". Investor: Ley 9996's US$150,000 window closed; \"Anyone filing now should plan on US$200,000\", figure unconfirmed. Processing: three months by rule, but the ombudsman \"found a backlog of about one year\". \"Every temporary resident must join the Caja\"; \"The health insurance rate totals 12% of declared income\" (February 2025 report)."
+        }
+      ],
+      "note": "The 2022 report was not re-read; Rio Times gives a 12% health rate on declared income (2025), split between member and State, which puts the member's share below the 2022 figures. Left as hedged and dated."
+    },
+    {
+      "id": "cr-healthcare-biblica",
+      "fact": "healthcare",
+      "cities": [
+        "san-jose-cr",
+        "atenas"
+      ],
+      "claim": "Hospital Clínica Bíblica is JCI-accredited and on Newsweek's 2026 list of Latin America's top private hospitals",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Tico Times: Costa Rican hospital among Latin America's best (2026)",
+          "url": "https://ticotimes.net/2026/02/06/costa-rican-hospital-climbs-ranks-among-latin-americas-best-in-2026",
+          "read": "2026-11-15",
+          "says": "Dated February 6, 2026. Hospital Clínica Bíblica is \"the only facility from Costa Rica included\" in Newsweek and Statista's Latin America's Top Private Hospitals & Clinics 2026, and \"holds Joint Commission International accreditation\"."
+        }
+      ]
+    },
+    {
+      "id": "cr-healthcare-cima-metropolitano",
+      "fact": "healthcare",
+      "cities": [
+        "san-jose-cr"
+      ],
+      "claim": "CIMA and Metropolitano are also nearby",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "GOV.UK: Costa Rica list of medical facilities",
+          "url": "https://www.gov.uk/government/publications/list-of-medical-facilities-in-costa-rica/costa-rica-list-of-medical-facilities",
+          "read": "2026-11-15",
+          "says": "Updated 25 February 2021. Private, English-speaking: Hospital Metropolitano (San José, \"Branches Countrywide\"), Clínica Bíblica (San José), Hospital CIMA (Autopista Próspero Fernández, Ruta 27), with a doctor at \"Hospital CIMA Torre 1 ... Escazú\". No Atenas facility listed."
+        }
+      ]
+    },
+    {
+      "id": "cr-healthcare-atenas-clinic",
+      "fact": "healthcare",
+      "cities": [
+        "atenas"
+      ],
+      "claim": "Atenas has a 24-hour clinic",
+      "verdict": "cant-confirm",
+      "hedge": "reportedly",
+      "wording": "Atenas reportedly has a 24-hour private clinic",
+      "oldWording": "Atenas has a 24-hour clinic;",
+      "sources": [
+        {
+          "name": "International Living: Atenas, Costa Rica",
+          "url": "https://internationalliving.com/countries/costa-rica/atenas-costa-rica",
+          "read": "2026-11-15",
+          "says": "Updated November 26, 2020. Atenas has a private minor emergency facility, a public CCSS clinic and a Red Cross branch with ambulances; many expats use the private Línea Vital clinic, which has three ambulances; it does not say any is open 24 hours. Hospital CIMA is about 30 minutes away in Escazú."
+        }
+      ],
+      "also": [
+        "hedge added: \"reportedly\"; \"private\" added"
+      ],
+      "note": "Only a clinic directory seen in search results (not read) gives Línea Vital as 24/7; expatexchange.com returned 403."
+    },
+    {
+      "id": "cr-healthcare-atenas-cima",
+      "fact": "healthcare",
+      "cities": [
+        "atenas"
+      ],
+      "claim": "Hospital CIMA in Escazú (JCI-accredited per a secondary source) and JCI-accredited Clínica Bíblica are under an hour away with English-speaking staff",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Wikipedia: Hospital CIMA",
+          "url": "https://en.wikipedia.org/wiki/Hospital_CIMA",
+          "read": "2026-11-15",
+          "says": "Last edited 2 July 2026. \"Hospital CIMA San José is accredited by the Joint Commission International\"."
+        },
+        {
+          "name": "Expatra: What it's like living in Atenas, Costa Rica",
+          "url": "https://www.expatra.com/what-its-like-living-in-atenas-costa-rica-as-an-expat/",
+          "read": "2026-11-15",
+          "says": "Updated May 19, 2025. CIMA and Clínica Bíblica are \"the most popular private hospitals in the country\"; San José is \"less than an hour's drive\" away; \"over 1500 expats\"."
+        },
+        {
+          "name": "Tico Times: Costa Rican hospital among Latin America's best (2026)",
+          "url": "https://ticotimes.net/2026/02/06/costa-rican-hospital-climbs-ranks-among-latin-americas-best-in-2026",
+          "read": "2026-11-15",
+          "says": "Dated February 6, 2026. Hospital Clínica Bíblica is \"the only facility from Costa Rica included\" in Newsweek and Statista's Latin America's Top Private Hospitals & Clinics 2026, and \"holds Joint Commission International accreditation\"."
+        },
+        {
+          "name": "GOV.UK: Costa Rica list of medical facilities",
+          "url": "https://www.gov.uk/government/publications/list-of-medical-facilities-in-costa-rica/costa-rica-list-of-medical-facilities",
+          "read": "2026-11-15",
+          "says": "Updated 25 February 2021. Private, English-speaking: Hospital Metropolitano (San José, \"Branches Countrywide\"), Clínica Bíblica (San José), Hospital CIMA (Autopista Próspero Fernández, Ruta 27), with a doctor at \"Hospital CIMA Torre 1 ... Escazú\". No Atenas facility listed."
+        }
+      ]
+    }
+  ]
+}

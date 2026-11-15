@@ -1,0 +1,813 @@
+{
+  "country": "Panama",
+  "cities": [
+    "panama-city",
+    "boquete",
+    "coronado",
+    "volcan"
+  ],
+  "claims": [
+    {
+      "id": "pa-tax-no-wealth-tax",
+      "fact": "tax",
+      "cities": [
+        "panama-city",
+        "boquete",
+        "coronado",
+        "volcan"
+      ],
+      "claim": "Panama has no wealth tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Panama, other taxes",
+          "url": "https://taxsummaries.pwc.com/panama/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 04 August 2026. \"There are no net wealth/worth taxes in Panama.\" \"There are no inheritance, estate, or gift taxes in Panama.\""
+        },
+        {
+          "name": "PwC: quick chart, net wealth/worth tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/net-wealth-worth-tax-rates",
+          "read": "2026-11-15",
+          "says": "About 146 territories, each with its own review date. Belize is not in the list. Panama: \"NA\" (last reviewed 04 August 2026); Costa Rica: \"Costa Rica does not have a net wealth/worth tax\" (last reviewed 30 June 2026); Dominican Republic: \"NA\" (last reviewed 25 August 2026)."
+        }
+      ]
+    },
+    {
+      "id": "pa-tax-territorial",
+      "fact": "tax",
+      "cities": [
+        "panama-city",
+        "boquete",
+        "coronado",
+        "volcan"
+      ],
+      "claim": "Panama taxes only Panamanian-source income, so US brokerage dividends and interest are generally outside Panamanian tax (PwC states the principle, not the specific items)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Panama, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/panama/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 04 August 2026. \"Citizens and residents are taxed on income earned from Panamanian sources.\" Foreign-source dividends and interest are not addressed; no retiree or newcomer regime is mentioned."
+        }
+      ],
+      "note": "PwC states the source rule and does not name foreign dividends or interest, as the profiles say; \"generally\" stays. No newcomer regime is mentioned, which fits \"no newcomer regime is needed\" (Panama City). Also the summaries and why lines."
+    },
+    {
+      "id": "pa-tax-usd",
+      "fact": "tax",
+      "cities": [
+        "panama-city"
+      ],
+      "claim": "The currency is the US dollar",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Wikipedia: Panamanian balboa",
+          "url": "https://en.wikipedia.org/wiki/Panamanian_balboa",
+          "read": "2026-11-15",
+          "says": "Last edited 12 November 2026. The balboa is \"tied to the United States dollar (which is also legal tender in Panama)\" at 1:1; \"U.S. banknotes are legal tender in Panama as the main form of cash in the country.\""
+        }
+      ],
+      "note": "Read on a secondary page: the CIA Factbook is retired, GOV.UK's money page does not say, and two dated currency pages returned 404 and 410. The balboa is the official unit, pegged 1:1, with US banknotes legal tender as the cash in use; also the summaries of Coronado and Volcán (\"the US dollar\")."
+    },
+    {
+      "id": "pa-tax-us-tax-applies",
+      "fact": "tax",
+      "cities": [
+        "boquete",
+        "volcan"
+      ],
+      "claim": "US tax still applies",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IRS: U.S. citizens and resident aliens abroad",
+          "url": "https://www.irs.gov/individuals/international-taxpayers/us-citizens-and-resident-aliens-abroad",
+          "read": "2026-11-15",
+          "says": "\"You are subject to tax on worldwide income from all sources.\" Last reviewed or updated 20-Oct-2026."
+        }
+      ]
+    },
+    {
+      "id": "pa-estate-none",
+      "fact": "estate",
+      "cities": [
+        "panama-city",
+        "boquete",
+        "coronado",
+        "volcan"
+      ],
+      "claim": "Panama has no inheritance, estate or gift tax, so heirs owe nothing locally on US assets",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Panama, other taxes",
+          "url": "https://taxsummaries.pwc.com/panama/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 04 August 2026. \"There are no net wealth/worth taxes in Panama.\" \"There are no inheritance, estate, or gift taxes in Panama.\""
+        },
+        {
+          "name": "PwC: quick chart, inheritance and gift tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates",
+          "read": "2026-11-15",
+          "says": "Costa Rica (last reviewed 30 June 2026): \"Costa Rica does not have an inheritance tax.\" \"Costa Rica does not have a gift tax.\" Panama (last reviewed 04 August 2026): NA | NA. Dominican Republic (last reviewed 25 August 2026): 3 | 27. Belize is not listed."
+        }
+      ],
+      "note": "localTaxes.ts (PA) agrees."
+    },
+    {
+      "id": "pa-estate-no-us-treaty",
+      "fact": "estate",
+      "cities": [
+        "panama-city",
+        "boquete",
+        "coronado",
+        "volcan"
+      ],
+      "claim": "There is no US estate treaty",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-without",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list); none of the 37 countries named in this claim is among them."
+        }
+      ]
+    },
+    {
+      "id": "pa-estate-us-exemption",
+      "fact": "estate",
+      "cities": [
+        "panama-city",
+        "boquete",
+        "coronado",
+        "volcan"
+      ],
+      "claim": "US estate tax applies to the worldwide estate above the $15M exemption (2026)",
+      "verdict": "confirmed",
+      "shared": "us-estate-exemption-2026",
+      "sources": [
+        {
+          "name": "IRS: What's new, estate and gift tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax",
+          "read": "2026-11-15",
+          "says": "The table \"Basic exclusion amount for year of death\" has the row 2026: $15,000,000 (2025: $13,990,000). The page says the Working Families Tax Cuts, Public Law 119-21, signed July 4, 2025, \"amends § 2010(c)(3) by increasing the basic exclusion amount to $15,000,000 for calendar year 2026\". Page last reviewed or updated 03-Nov-2026."
+        },
+        {
+          "name": "IRS: Estate tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-tax",
+          "read": "2026-11-15",
+          "says": "A return is required when the gross estate, plus adjusted taxable gifts and specific exemption, is more than the filing threshold for the year of death; the table gives 2026: $15,000,000. Page last reviewed or updated 23-Oct-2026."
+        },
+        {
+          "name": "IRS news release IR-2025-103: tax inflation adjustments for tax year 2026",
+          "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill",
+          "read": "2026-11-15",
+          "says": "\"Estates of decedents who die during 2026 have a basic exclusion amount of $15,000,000\", up from $13,990,000 for 2025; the release (October 9, 2025) cites Revenue Procedure 2025-32 and is marked as an archival document."
+        },
+        {
+          "name": "IRS: Some nonresidents with U.S. assets must file estate tax returns",
+          "url": "https://www.irs.gov/individuals/international-taxpayers/some-nonresidents-with-us-assets-must-file-estate-tax-returns",
+          "read": "2026-11-15",
+          "says": "\"U.S. citizens are subject to U.S. estate taxation with respect to their worldwide assets\"; Form 706 is required when worldwide assets plus adjusted taxable gifts exceed the basic exclusion amount in effect on the date of death. By contrast a nonresident who is not a citizen files when US-situated assets exceed $60,000. Page last reviewed or updated 27-Jun-2026."
+        }
+      ]
+    },
+    {
+      "id": "pa-lending-ibkr",
+      "fact": "lending",
+      "cities": [
+        "panama-city",
+        "boquete",
+        "coronado",
+        "volcan"
+      ],
+      "claim": "Interactive Brokers accepts Panama residents",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Interactive Brokers reportedly accepts Panama residents",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes \"Belize\", \"Panama\", \"Costa Rica\" and \"Dominican Republic\"; the section says only \"Check if Interactive Brokers is available in your country\" and names no IBKR entity for these residents."
+        }
+      ],
+      "note": "IBKR's country list (https://www.interactivebrokers.com/en/accounts/open-account-country-list.php) returned HTTP 403 again on 2026-11-15. Banker on Wheels lists Panama."
+    },
+    {
+      "id": "pa-lending-schwab",
+      "fact": "lending",
+      "cities": [
+        "panama-city",
+        "boquete",
+        "coronado",
+        "volcan"
+      ],
+      "claim": "Schwab One International's application lists Panama (October 2026)",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab One International's application reportedly lists Panama",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. On that day the author ran every entry in Schwab's international account selector through the application: it accepted residents of 51 of 263 countries and regions: Argentina, Australia, Austria, the Bahamas, Belgium, Bermuda, Brazil, the British Virgin Islands, the Cayman Islands, Chile, China, Colombia, Costa Rica, the Czech Republic, Denmark, Ecuador, Finland, Germany, Greece, Guatemala, Hong Kong, Iceland, India, Indonesia, Ireland, Israel, Jersey, Luxembourg, Malaysia, the Marshall Islands, Mexico, the Netherlands, Norway, Panama, Paraguay, Peru, Poland, Portugal, Qatar, Singapore, South Korea, Spain, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Turks and Caicos, the United Arab Emirates, the United Kingdom and Uruguay. Named as not accepted: Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam; for the rest the application said \"Schwab currently cannot open accounts for residents of your country/region.\" The test covers new applicants on that day only."
+        },
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Dated October 23, 2026 (country check that day). Rows \"Costa Rica | Yes\" and \"Panama | Yes\" (both among the 51 accepted); \"Dominican Republic | No\"; Belize is absent from the table and the 51-country list, and residents of the other countries saw \"Schwab currently cannot open accounts for residents of your country/region.\" On margin: \"Customers residing within Europe are restricted from using their Available Margin Loan Value\" to withdraw funds, called \"one regional limit\"; no restriction is named for any other region."
+        }
+      ],
+      "note": "Panama is on the dated list (re-read today). Lending score 4 stays (rubric: Schwab reported to accept residents outside Europe, plus IBKR, margin terms unconfirmed). international.schwab.com returned 403 in stage 1."
+    },
+    {
+      "id": "pa-lending-no-margin-restriction",
+      "fact": "lending",
+      "cities": [
+        "panama-city",
+        "boquete",
+        "coronado",
+        "volcan"
+      ],
+      "claim": "There is no known margin restriction outside Europe",
+      "verdict": "cant-confirm",
+      "shared": "schwab-europe-margin-cash-out",
+      "hedge": "no known",
+      "wording": "with no known margin restriction outside Europe",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. It quotes the Schwab One Account Agreement (\"October 2026 edition, form 09/26\"), Schwab One International terms: \"Customers residing within Europe are restricted from using their Available Margin Loan Value\" to withdraw funds from their account, and advises keeping enough actual cash in the account for spending. It does not define \"Europe\"."
+        },
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Dated October 23, 2026 (country check that day). Rows \"Costa Rica | Yes\" and \"Panama | Yes\" (both among the 51 accepted); \"Dominican Republic | No\"; Belize is absent from the table and the 51-country list, and residents of the other countries saw \"Schwab currently cannot open accounts for residents of your country/region.\" On margin: \"Customers residing within Europe are restricted from using their Available Margin Loan Value\" to withdraw funds, called \"one regional limit\"; no restriction is named for any other region."
+        }
+      ],
+      "note": "The reported clause bars Europe residents only and the page names no restriction for other regions; Schwab's agreement could not be read, so \"no known\" is the right strength. Whether Schwab One International offers margin at all to residents abroad was not readable either."
+    },
+    {
+      "id": "pa-lending-ibkr-margin",
+      "fact": "lending",
+      "cities": [
+        "panama-city",
+        "boquete",
+        "coronado",
+        "volcan"
+      ],
+      "claim": "IBKR margin terms by country are unconfirmed",
+      "verdict": "cant-confirm",
+      "hedge": "unconfirmed",
+      "wording": "IBKR margin terms by country are unconfirmed",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes \"Belize\", \"Panama\", \"Costa Rica\" and \"Dominican Republic\"; the section says only \"Check if Interactive Brokers is available in your country\" and names no IBKR entity for these residents."
+        }
+      ],
+      "note": "A statement of what is not known."
+    },
+    {
+      "id": "pa-lending-fidelity-vanguard",
+      "fact": "lending",
+      "cities": [
+        "panama-city"
+      ],
+      "claim": "Fidelity and Vanguard open no new accounts for residents abroad",
+      "verdict": "cant-confirm",
+      "hedge": "reportedly",
+      "wording": "and Fidelity and Vanguard reportedly open no new accounts for residents abroad",
+      "oldWording": "and Fidelity and Vanguard open no new accounts for residents abroad",
+      "sources": [
+        {
+          "name": "Your Tax Base: best brokerage for US expats",
+          "url": "https://yourtaxbase.com/blog/best-brokerage-for-us-expats",
+          "read": "2026-11-15",
+          "says": "Dated October 23, 2026. Quotes Fidelity's FAQ: \"we do not open accounts for any new customers residing outside the United States.\" Vanguard requires US citizenship or permanent residence \"with a U.S. mailing address\". Its Schwab table puts Belize and the Dominican Republic among countries that cannot apply online, Panama and Costa Rica among those that can."
+        }
+      ],
+      "also": [
+        "hedge added: \"reportedly\"",
+        "sources: added the Your Tax Base best-brokerage page"
+      ],
+      "note": "A broker claim on a secondary page stays reported (rule 3), as in mexico.json. Fidelity's FAQ returned 403 in stage 4's first half."
+    },
+    {
+      "id": "pa-visa-portfolio-not-qualify",
+      "fact": "visa",
+      "cities": [
+        "panama-city",
+        "boquete",
+        "coronado",
+        "volcan"
+      ],
+      "claim": "A US portfolio alone does not qualify, and Pensionado's pension test is not met by portfolio income",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Reside Panama: Panama visa options for expats in 2026",
+          "url": "https://www.residepanama.com/en/reside-panama-blog/panama-visa-options-for-expats-in-2026-the-complete-guide",
+          "read": "2026-11-15",
+          "says": "Published 12 May 2026. Friendly Nations: \"Ownership of Panamanian real estate valued at USD 200,000+\" or \"A fixed-term deposit of USD 200,000+ in a Panamanian bank\"; \"two years of provisional residency, followed by eligibility for permanent residency\". Qualified Investor: USD 300,000+ real estate, USD 500,000+ approved securities, USD 750,000+ fixed-term deposit. Pensionado: \"lifetime pension income of at least USD 1,000 per month\"; qualifying sources are Social Security, government, military or qualifying private pensions; investment income is not listed."
+        },
+        {
+          "name": "Relofirm: Panama Pensionado requirements",
+          "url": "https://www.relofirm.com/?p=60",
+          "read": "2026-11-15",
+          "says": "Updated November 11, 2026. \"A guaranteed lifetime pension of at least $1,000 per month\"; \"The minimum may be reduced to $750 per month if the applicant has acquired real estate in Panama\" in the applicant's name worth more than $100,000; no minimum age to apply (\"These ages are requirements for the statutory discounts, not new minimum ages\"); \"grants permanent resident status\". Current discounts: \"20% on medical and surgical consultation fees\", \"15% on qualifying private hospital and clinic services\"; Law 562 changes them from May 2, 2027."
+        }
+      ],
+      "note": "Neither page lists investment income as a qualifying Pensionado source; Friendly Nations and Qualified Investor need assets placed in Panama. Visa score 3 stays."
+    },
+    {
+      "id": "pa-visa-friendly-nations",
+      "fact": "visa",
+      "cities": [
+        "panama-city",
+        "boquete",
+        "coronado",
+        "volcan"
+      ],
+      "claim": "Friendly Nations needs $200k+ in Panamanian real estate or a local fixed-term deposit, 2 years provisional, then permanent",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Reside Panama: Panama visa options for expats in 2026",
+          "url": "https://www.residepanama.com/en/reside-panama-blog/panama-visa-options-for-expats-in-2026-the-complete-guide",
+          "read": "2026-11-15",
+          "says": "Published 12 May 2026. Friendly Nations: \"Ownership of Panamanian real estate valued at USD 200,000+\" or \"A fixed-term deposit of USD 200,000+ in a Panamanian bank\"; \"two years of provisional residency, followed by eligibility for permanent residency\". Qualified Investor: USD 300,000+ real estate, USD 500,000+ approved securities, USD 750,000+ fixed-term deposit. Pensionado: \"lifetime pension income of at least USD 1,000 per month\"; qualifying sources are Social Security, government, military or qualifying private pensions; investment income is not listed."
+        },
+        {
+          "name": "Global Citizen Solutions: Panama Friendly Nations visa 2026",
+          "url": "https://www.globalcitizensolutions.com/panama-friendly-nations-visa/",
+          "read": "2026-11-15",
+          "says": "Last updated August 10, 2026. 50 eligible countries, ending \"... Peru, Uruguay, United States of America\"; USD 200,000 in real estate or a USD 200,000 fixed-term deposit with a Panamanian bank for at least three years; provisional residency valid two years, then permanent."
+        },
+        {
+          "name": "Gaceta Oficial 30601: Executive Decree 16 of 2026 (copy hosted by NDM)",
+          "url": "https://www.ndm.com.pa/wp-content/uploads/2026/09/Decreto-Ejecutivo-N°-16.-Incluye-a-Ecuador-en-lista-de-paises-amigos.pdf",
+          "read": "2026-11-15",
+          "says": "Gaceta Oficial Digital No. 30601, 31 August 2026: the decree amends article 2 of Decree 416 of 2012 to add Ecuador; the amended article lists the nationals eligible for friendly-nations permanent residence, including \"Estados Unidos de América\". The preamble recalls Decree 226 of 2021's two-year provisional phase."
+        }
+      ],
+      "note": "Check for a bill: the only 2026 change found is Executive Decree 16 of 31 August 2026, which adds Ecuador to the list. Also the drawbacks and Panama City's why (\"about $200k placed in Panama\")."
+    },
+    {
+      "id": "pa-visa-us-on-list",
+      "fact": "visa",
+      "cities": [
+        "panama-city"
+      ],
+      "claim": "That the US is on the Friendly Nations list is unverified",
+      "verdict": "corrected",
+      "oldWording": "that the US is on the list is unverified",
+      "newWording": "permanent; the US is on the list)",
+      "sources": [
+        {
+          "name": "Gaceta Oficial 30601: Executive Decree 16 of 2026 (copy hosted by NDM)",
+          "url": "https://www.ndm.com.pa/wp-content/uploads/2026/09/Decreto-Ejecutivo-N°-16.-Incluye-a-Ecuador-en-lista-de-paises-amigos.pdf",
+          "read": "2026-11-15",
+          "says": "Gaceta Oficial Digital No. 30601, 31 August 2026: the decree amends article 2 of Decree 416 of 2012 to add Ecuador; the amended article lists the nationals eligible for friendly-nations permanent residence, including \"Estados Unidos de América\". The preamble recalls Decree 226 of 2021's two-year provisional phase."
+        },
+        {
+          "name": "Global Citizen Solutions: Panama Friendly Nations visa 2026",
+          "url": "https://www.globalcitizensolutions.com/panama-friendly-nations-visa/",
+          "read": "2026-11-15",
+          "says": "Last updated August 10, 2026. 50 eligible countries, ending \"... Peru, Uruguay, United States of America\"; USD 200,000 in real estate or a USD 200,000 fixed-term deposit with a Panamanian bank for at least three years; provisional residency valid two years, then permanent."
+        }
+      ],
+      "also": [
+        "sources: added the Gaceta Oficial decree copy"
+      ],
+      "note": "The decree published in Gaceta Oficial 30601 (31 August 2026) lists \"Estados Unidos de América\"; the text was recovered from the PDF's compressed streams, as the README describes. \"Unverified\" was no longer true."
+    },
+    {
+      "id": "pa-visa-us-on-list-variant",
+      "fact": "visa",
+      "cities": [
+        "boquete",
+        "coronado",
+        "volcan"
+      ],
+      "claim": "The US being on the Friendly Nations list is unverified",
+      "verdict": "corrected",
+      "oldWording": "the US being on the list is unverified",
+      "newWording": "the US is on the list)",
+      "sources": [
+        {
+          "name": "Gaceta Oficial 30601: Executive Decree 16 of 2026 (copy hosted by NDM)",
+          "url": "https://www.ndm.com.pa/wp-content/uploads/2026/09/Decreto-Ejecutivo-N°-16.-Incluye-a-Ecuador-en-lista-de-paises-amigos.pdf",
+          "read": "2026-11-15",
+          "says": "Gaceta Oficial Digital No. 30601, 31 August 2026: the decree amends article 2 of Decree 416 of 2012 to add Ecuador; the amended article lists the nationals eligible for friendly-nations permanent residence, including \"Estados Unidos de América\". The preamble recalls Decree 226 of 2021's two-year provisional phase."
+        },
+        {
+          "name": "Global Citizen Solutions: Panama Friendly Nations visa 2026",
+          "url": "https://www.globalcitizensolutions.com/panama-friendly-nations-visa/",
+          "read": "2026-11-15",
+          "says": "Last updated August 10, 2026. 50 eligible countries, ending \"... Peru, Uruguay, United States of America\"; USD 200,000 in real estate or a USD 200,000 fixed-term deposit with a Panamanian bank for at least three years; provisional residency valid two years, then permanent."
+        }
+      ],
+      "also": [
+        "sources: added the Gaceta Oficial decree copy"
+      ],
+      "note": "As pa-visa-us-on-list."
+    },
+    {
+      "id": "pa-visa-qualified-investor-pc",
+      "fact": "visa",
+      "cities": [
+        "panama-city"
+      ],
+      "claim": "Qualified Investor needs $300k+ in local property, $500k in local securities or $750k on deposit (one source reports the minimum rose to $500k in September 2026)",
+      "verdict": "corrected",
+      "oldWording": "and Qualified Investor needs $300k+ in local property, $500k in local securities or $750k on deposit (one source reports the minimum rose to $500k in September 2026)",
+      "newWording": "and Qualified Investor needs $300k in new local property or $500k in resale property, $500k in local securities, or $500k–750k on a five-year deposit (Decree 17, September 2026)",
+      "sources": [
+        {
+          "name": "Kraemer & Kraemer: Panama Qualified Investor visa",
+          "url": "https://kraemerlaw.com/en/immigration/panama-qualified-investor-visa",
+          "read": "2026-11-15",
+          "says": "Last update October 30, 2026. \"currently governed by Executive Decree No. 17 of 2026\" (of September 16, 2026). Minimums: first-sale real estate $300,000; secondary-market (previously owned) real estate $500,000; pre-sale projects with bank guarantee $300,000; Panamanian securities $500,000; fixed-term deposit $750,000 (private banking) or $500,000 (specified national banks); investment maintained at least 5 years."
+        },
+        {
+          "name": "Fragomen: Panama Qualified Investor residence program made more restrictive",
+          "url": "https://www.fragomen.com/insights/panama-qualified-investor-residence-program-made-more-restrictive.html",
+          "read": "2026-11-15",
+          "says": "Dated September 22, 2026. A new decree sets first-sale property at PAB 300,000, secondary-market property at PAB 500,000, and \"a PAB 500,000 five-year fixed-term deposit with Banco Nacional de Panamá or Caja de Ahorros\"."
+        },
+        {
+          "name": "Reside Panama: Panama visa options for expats in 2026",
+          "url": "https://www.residepanama.com/en/reside-panama-blog/panama-visa-options-for-expats-in-2026-the-complete-guide",
+          "read": "2026-11-15",
+          "says": "Published 12 May 2026. Friendly Nations: \"Ownership of Panamanian real estate valued at USD 200,000+\" or \"A fixed-term deposit of USD 200,000+ in a Panamanian bank\"; \"two years of provisional residency, followed by eligibility for permanent residency\". Qualified Investor: USD 300,000+ real estate, USD 500,000+ approved securities, USD 750,000+ fixed-term deposit. Pensionado: \"lifetime pension income of at least USD 1,000 per month\"; qualifying sources are Social Security, government, military or qualifying private pensions; investment income is not listed."
+        }
+      ],
+      "also": [
+        "sources: added Kraemer & Kraemer"
+      ],
+      "note": "Executive Decree 17 of 16 September 2026 split the property route: $300k for a first sale, $500k for resale, and allows a $500k deposit at the state banks. The decree itself was not read (no copy found); a law firm (updated October 2026) and Fragomen (September 2026) agree. Visa score 3 stays."
+    },
+    {
+      "id": "pa-visa-qualified-investor-boquete",
+      "fact": "visa",
+      "cities": [
+        "boquete"
+      ],
+      "claim": "Qualified Investor starts at $300k in local property (one source reports a rise to $500k in September 2026)",
+      "verdict": "corrected",
+      "oldWording": "and Qualified Investor starts at $300k in local property (one source reports a rise to $500k in September 2026)",
+      "newWording": "Qualified Investor starts at $300k in new local property ($500k for resale, Decree 17 of September 2026)",
+      "sources": [
+        {
+          "name": "Kraemer & Kraemer: Panama Qualified Investor visa",
+          "url": "https://kraemerlaw.com/en/immigration/panama-qualified-investor-visa",
+          "read": "2026-11-15",
+          "says": "Last update October 30, 2026. \"currently governed by Executive Decree No. 17 of 2026\" (of September 16, 2026). Minimums: first-sale real estate $300,000; secondary-market (previously owned) real estate $500,000; pre-sale projects with bank guarantee $300,000; Panamanian securities $500,000; fixed-term deposit $750,000 (private banking) or $500,000 (specified national banks); investment maintained at least 5 years."
+        },
+        {
+          "name": "Fragomen: Panama Qualified Investor residence program made more restrictive",
+          "url": "https://www.fragomen.com/insights/panama-qualified-investor-residence-program-made-more-restrictive.html",
+          "read": "2026-11-15",
+          "says": "Dated September 22, 2026. A new decree sets first-sale property at PAB 300,000, secondary-market property at PAB 500,000, and \"a PAB 500,000 five-year fixed-term deposit with Banco Nacional de Panamá or Caja de Ahorros\"."
+        }
+      ],
+      "also": [
+        "sources: added Kraemer & Kraemer"
+      ],
+      "note": "As pa-visa-qualified-investor-pc."
+    },
+    {
+      "id": "pa-visa-qualified-investor-other",
+      "fact": "visa",
+      "cities": [
+        "coronado",
+        "volcan"
+      ],
+      "claim": "Qualified Investor starts at $300k in local property",
+      "verdict": "corrected",
+      "oldWording": "Qualified Investor starts at $300k in local property;",
+      "newWording": "Qualified Investor starts at $300k in new local property ($500k for resale, Decree 17 of September 2026)",
+      "sources": [
+        {
+          "name": "Kraemer & Kraemer: Panama Qualified Investor visa",
+          "url": "https://kraemerlaw.com/en/immigration/panama-qualified-investor-visa",
+          "read": "2026-11-15",
+          "says": "Last update October 30, 2026. \"currently governed by Executive Decree No. 17 of 2026\" (of September 16, 2026). Minimums: first-sale real estate $300,000; secondary-market (previously owned) real estate $500,000; pre-sale projects with bank guarantee $300,000; Panamanian securities $500,000; fixed-term deposit $750,000 (private banking) or $500,000 (specified national banks); investment maintained at least 5 years."
+        },
+        {
+          "name": "Fragomen: Panama Qualified Investor residence program made more restrictive",
+          "url": "https://www.fragomen.com/insights/panama-qualified-investor-residence-program-made-more-restrictive.html",
+          "read": "2026-11-15",
+          "says": "Dated September 22, 2026. A new decree sets first-sale property at PAB 300,000, secondary-market property at PAB 500,000, and \"a PAB 500,000 five-year fixed-term deposit with Banco Nacional de Panamá or Caja de Ahorros\"."
+        }
+      ],
+      "also": [
+        "sources: added Kraemer & Kraemer"
+      ],
+      "note": "Still true for a first-sale property, but resale now needs $500k; reworded to match Boquete, so the four Panama profiles agree."
+    },
+    {
+      "id": "pa-visa-pensionado",
+      "fact": "visa",
+      "cities": [
+        "panama-city",
+        "boquete",
+        "coronado",
+        "volcan"
+      ],
+      "claim": "Pensionado gives permanent residency at any age on a $1,000/month lifetime pension",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Relofirm: Panama Pensionado requirements",
+          "url": "https://www.relofirm.com/?p=60",
+          "read": "2026-11-15",
+          "says": "Updated November 11, 2026. \"A guaranteed lifetime pension of at least $1,000 per month\"; \"The minimum may be reduced to $750 per month if the applicant has acquired real estate in Panama\" in the applicant's name worth more than $100,000; no minimum age to apply (\"These ages are requirements for the statutory discounts, not new minimum ages\"); \"grants permanent resident status\". Current discounts: \"20% on medical and surgical consultation fees\", \"15% on qualifying private hospital and clinic services\"; Law 562 changes them from May 2, 2027."
+        },
+        {
+          "name": "Reside Panama: Panama visa options for expats in 2026",
+          "url": "https://www.residepanama.com/en/reside-panama-blog/panama-visa-options-for-expats-in-2026-the-complete-guide",
+          "read": "2026-11-15",
+          "says": "Published 12 May 2026. Friendly Nations: \"Ownership of Panamanian real estate valued at USD 200,000+\" or \"A fixed-term deposit of USD 200,000+ in a Panamanian bank\"; \"two years of provisional residency, followed by eligibility for permanent residency\". Qualified Investor: USD 300,000+ real estate, USD 500,000+ approved securities, USD 750,000+ fixed-term deposit. Pensionado: \"lifetime pension income of at least USD 1,000 per month\"; qualifying sources are Social Security, government, military or qualifying private pensions; investment income is not listed."
+        }
+      ],
+      "note": "Check for a bill: the only change found is Law 562 (Gaceta Oficial 30647, 2 November 2026), which changes retiree discounts from May 2027 and sets ages for the discounts, not for the visa. Relofirm says so expressly."
+    },
+    {
+      "id": "pa-visa-pensionado-750",
+      "fact": "visa",
+      "cities": [
+        "boquete"
+      ],
+      "claim": "The pension minimum is $750 with $100k+ of Panama property",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Relofirm: Panama Pensionado requirements",
+          "url": "https://www.relofirm.com/?p=60",
+          "read": "2026-11-15",
+          "says": "Updated November 11, 2026. \"A guaranteed lifetime pension of at least $1,000 per month\"; \"The minimum may be reduced to $750 per month if the applicant has acquired real estate in Panama\" in the applicant's name worth more than $100,000; no minimum age to apply (\"These ages are requirements for the statutory discounts, not new minimum ages\"); \"grants permanent resident status\". Current discounts: \"20% on medical and surgical consultation fees\", \"15% on qualifying private hospital and clinic services\"; Law 562 changes them from May 2, 2027."
+        }
+      ]
+    },
+    {
+      "id": "pa-healthcare-pc-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "panama-city"
+      ],
+      "claim": "Strong private hospitals (Hospital Punta Pacífica, affiliated with Johns Hopkins Medicine; Pacífica Salud, Hospital Nacional, Paitilla)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Reside Panama: Healthcare in Panama, hospitals, insurance and costs 2026",
+          "url": "https://www.residepanama.com/en/reside-panama-blog/healthcare-in-panama-an-expat-guide-to-hospitals-insurance-costs-2026",
+          "read": "2026-11-15",
+          "says": "Published May 28, 2026. Punta Pacífica \"maintains an international affiliation with Johns Hopkins Medicine\"; Pacífica Salud (Costa del Este), Hospital Nacional and Paitilla are named private hospitals; physicians \"often trained internationally, many of whom speak fluent English\" (it does not say US-trained). Near Boquete, residents \"rely on private hospitals in David, particularly Hospital Chiriquí and Hospital Mae Lewis\". Premiums: \"Solo expat in their 60s+: USD 350–700+\" a month. The CSS \"provides care to Panamanian workers and legal residents who contribute through payroll taxes\". General GP visits USD 40–80; no Boquete prices."
+        }
+      ]
+    },
+    {
+      "id": "pa-healthcare-pc-us-trained",
+      "fact": "healthcare",
+      "cities": [
+        "panama-city"
+      ],
+      "claim": "Doctors are often US-trained",
+      "verdict": "corrected",
+      "oldWording": "often with US-trained doctors",
+      "newWording": "often with internationally trained, English-speaking doctors",
+      "sources": [
+        {
+          "name": "Reside Panama: Healthcare in Panama, hospitals, insurance and costs 2026",
+          "url": "https://www.residepanama.com/en/reside-panama-blog/healthcare-in-panama-an-expat-guide-to-hospitals-insurance-costs-2026",
+          "read": "2026-11-15",
+          "says": "Published May 28, 2026. Punta Pacífica \"maintains an international affiliation with Johns Hopkins Medicine\"; Pacífica Salud (Costa del Este), Hospital Nacional and Paitilla are named private hospitals; physicians \"often trained internationally, many of whom speak fluent English\" (it does not say US-trained). Near Boquete, residents \"rely on private hospitals in David, particularly Hospital Chiriquí and Hospital Mae Lewis\". Premiums: \"Solo expat in their 60s+: USD 350–700+\" a month. The CSS \"provides care to Panamanian workers and legal residents who contribute through payroll taxes\". General GP visits USD 40–80; no Boquete prices."
+        }
+      ],
+      "note": "The page says \"often trained internationally, many of whom speak fluent English\", not US-trained."
+    },
+    {
+      "id": "pa-healthcare-pc-pensionado-discount",
+      "fact": "healthcare",
+      "cities": [
+        "panama-city"
+      ],
+      "claim": "Pensionados get 15–20% off medical bills",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Relofirm: Panama Pensionado requirements",
+          "url": "https://www.relofirm.com/?p=60",
+          "read": "2026-11-15",
+          "says": "Updated November 11, 2026. \"A guaranteed lifetime pension of at least $1,000 per month\"; \"The minimum may be reduced to $750 per month if the applicant has acquired real estate in Panama\" in the applicant's name worth more than $100,000; no minimum age to apply (\"These ages are requirements for the statutory discounts, not new minimum ages\"); \"grants permanent resident status\". Current discounts: \"20% on medical and surgical consultation fees\", \"15% on qualifying private hospital and clinic services\"; Law 562 changes them from May 2, 2027."
+        },
+        {
+          "name": "Telemetro: retirees and pensioners, when the new discounts apply",
+          "url": "https://www.telemetro.com/nacionales/jubilados-y-pensionados-cuando-comenzaran-aplicarse-los-nuevos-descuentos-n6097480",
+          "read": "2026-11-15",
+          "says": "Dated 4 November 2026. \"Ley 562 fue publicada el lunes 2 de noviembre de 2026 en la Gaceta Oficial N.º 30647\"; it takes effect six months after promulgation (2 May 2027); it covers women 55+ and men 60+, including foreigners with permanent residence; consultations 25%, medicines 20%."
+        }
+      ],
+      "also": [
+        "fact: added \"(Law 562 changes the discounts from May 2027)\"",
+        "sources: added Telemetro"
+      ],
+      "note": "True of today's rules (20% consultations, 15% hospital). Law 562 changes the list from 2 May 2027 and ties discounts to age (55/60 per Telemetro, 57/62 per Relofirm); added as a pending change, recorded in pa-healthcare-pc-law-562."
+    },
+    {
+      "id": "pa-healthcare-pc-law-562",
+      "fact": "healthcare",
+      "cities": [
+        "panama-city"
+      ],
+      "claim": "Law 562 changes the pensionado discounts from May 2027",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Telemetro: retirees and pensioners, when the new discounts apply",
+          "url": "https://www.telemetro.com/nacionales/jubilados-y-pensionados-cuando-comenzaran-aplicarse-los-nuevos-descuentos-n6097480",
+          "read": "2026-11-15",
+          "says": "Dated 4 November 2026. \"Ley 562 fue publicada el lunes 2 de noviembre de 2026 en la Gaceta Oficial N.º 30647\"; it takes effect six months after promulgation (2 May 2027); it covers women 55+ and men 60+, including foreigners with permanent residence; consultations 25%, medicines 20%."
+        },
+        {
+          "name": "Relofirm: Panama Pensionado requirements",
+          "url": "https://www.relofirm.com/?p=60",
+          "read": "2026-11-15",
+          "says": "Updated November 11, 2026. \"A guaranteed lifetime pension of at least $1,000 per month\"; \"The minimum may be reduced to $750 per month if the applicant has acquired real estate in Panama\" in the applicant's name worth more than $100,000; no minimum age to apply (\"These ages are requirements for the statutory discounts, not new minimum ages\"); \"grants permanent resident status\". Current discounts: \"20% on medical and surgical consultation fees\", \"15% on qualifying private hospital and clinic services\"; Law 562 changes them from May 2, 2027."
+        }
+      ],
+      "note": "Added by this check, not in the profile before."
+    },
+    {
+      "id": "pa-healthcare-private-cover",
+      "fact": "healthcare",
+      "cities": [
+        "panama-city",
+        "coronado"
+      ],
+      "claim": "Local private cover runs about $350–700+/month in your 60s, so most expats insure privately",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Reside Panama: Healthcare in Panama, hospitals, insurance and costs 2026",
+          "url": "https://www.residepanama.com/en/reside-panama-blog/healthcare-in-panama-an-expat-guide-to-hospitals-insurance-costs-2026",
+          "read": "2026-11-15",
+          "says": "Published May 28, 2026. Punta Pacífica \"maintains an international affiliation with Johns Hopkins Medicine\"; Pacífica Salud (Costa del Este), Hospital Nacional and Paitilla are named private hospitals; physicians \"often trained internationally, many of whom speak fluent English\" (it does not say US-trained). Near Boquete, residents \"rely on private hospitals in David, particularly Hospital Chiriquí and Hospital Mae Lewis\". Premiums: \"Solo expat in their 60s+: USD 350–700+\" a month. The CSS \"provides care to Panamanian workers and legal residents who contribute through payroll taxes\". General GP visits USD 40–80; no Boquete prices."
+        }
+      ]
+    },
+    {
+      "id": "pa-healthcare-boquete-clinics",
+      "fact": "healthcare",
+      "cities": [
+        "boquete"
+      ],
+      "claim": "Town clinics handle routine care, with visits often $20–40",
+      "verdict": "cant-confirm",
+      "hedge": "removed",
+      "oldWording": "Town clinics handle routine care (visits often $20–40);",
+      "sources": [
+        {
+          "name": "Reside Panama: Healthcare in Panama, hospitals, insurance and costs 2026",
+          "url": "https://www.residepanama.com/en/reside-panama-blog/healthcare-in-panama-an-expat-guide-to-hospitals-insurance-costs-2026",
+          "read": "2026-11-15",
+          "says": "Published May 28, 2026. Punta Pacífica \"maintains an international affiliation with Johns Hopkins Medicine\"; Pacífica Salud (Costa del Este), Hospital Nacional and Paitilla are named private hospitals; physicians \"often trained internationally, many of whom speak fluent English\" (it does not say US-trained). Near Boquete, residents \"rely on private hospitals in David, particularly Hospital Chiriquí and Hospital Mae Lewis\". Premiums: \"Solo expat in their 60s+: USD 350–700+\" a month. The CSS \"provides care to Panamanian workers and legal residents who contribute through payroll taxes\". General GP visits USD 40–80; no Boquete prices."
+        }
+      ],
+      "also": [
+        "fact reworded: \"Town clinics handle routine care;\""
+      ],
+      "note": "No page read gives a Boquete price: Reside Panama gives USD 40–80 for a GP visit nationally, and search results ranged from about $15 to over $100 (forum and undated pages). The figure was removed, the clinics kept."
+    },
+    {
+      "id": "pa-healthcare-david-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "boquete"
+      ],
+      "claim": "Private hospitals (Hospital Chiriquí, Mae Lewis) are under an hour away in David",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Reside Panama: Healthcare in Panama, hospitals, insurance and costs 2026",
+          "url": "https://www.residepanama.com/en/reside-panama-blog/healthcare-in-panama-an-expat-guide-to-hospitals-insurance-costs-2026",
+          "read": "2026-11-15",
+          "says": "Published May 28, 2026. Punta Pacífica \"maintains an international affiliation with Johns Hopkins Medicine\"; Pacífica Salud (Costa del Este), Hospital Nacional and Paitilla are named private hospitals; physicians \"often trained internationally, many of whom speak fluent English\" (it does not say US-trained). Near Boquete, residents \"rely on private hospitals in David, particularly Hospital Chiriquí and Hospital Mae Lewis\". Premiums: \"Solo expat in their 60s+: USD 350–700+\" a month. The CSS \"provides care to Panamanian workers and legal residents who contribute through payroll taxes\". General GP visits USD 40–80; no Boquete prices."
+        },
+        {
+          "name": "Rome2rio: Boquete to David",
+          "url": "https://www.rome2rio.com/s/Boquete/David",
+          "read": "2026-11-15",
+          "says": "Driving time about 46 minutes; about 27.5 miles. Undated."
+        }
+      ],
+      "note": "Also the summary and why (\"about an hour\")."
+    },
+    {
+      "id": "pa-healthcare-fly-panama-city",
+      "fact": "healthcare",
+      "cities": [
+        "boquete"
+      ],
+      "claim": "Specialist cases fly to Panama City, about an hour",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Rome2rio: David to Panama City",
+          "url": "https://www.rome2rio.com/s/David-Panama/Panama-City",
+          "read": "2026-11-15",
+          "says": "Air Panama David (DAV) to Albrook in about 1h; Copa David to Tocumen in about 1h 11m. Undated."
+        }
+      ]
+    },
+    {
+      "id": "pa-healthcare-css-payroll",
+      "fact": "healthcare",
+      "cities": [
+        "boquete",
+        "volcan"
+      ],
+      "claim": "The public CSS is tied to payroll contributions, so most expats insure privately",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Reside Panama: Healthcare in Panama, hospitals, insurance and costs 2026",
+          "url": "https://www.residepanama.com/en/reside-panama-blog/healthcare-in-panama-an-expat-guide-to-hospitals-insurance-costs-2026",
+          "read": "2026-11-15",
+          "says": "Published May 28, 2026. Punta Pacífica \"maintains an international affiliation with Johns Hopkins Medicine\"; Pacífica Salud (Costa del Este), Hospital Nacional and Paitilla are named private hospitals; physicians \"often trained internationally, many of whom speak fluent English\" (it does not say US-trained). Near Boquete, residents \"rely on private hospitals in David, particularly Hospital Chiriquí and Hospital Mae Lewis\". Premiums: \"Solo expat in their 60s+: USD 350–700+\" a month. The CSS \"provides care to Panamanian workers and legal residents who contribute through payroll taxes\". General GP visits USD 40–80; no Boquete prices."
+        }
+      ]
+    },
+    {
+      "id": "pa-healthcare-coronado",
+      "fact": "healthcare",
+      "cities": [
+        "coronado"
+      ],
+      "claim": "Local private clinics plus Clinical Hospital San Fernando; serious care is in Panama City, about 1–1.5 hours away, at hospitals such as Punta Pacífica",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Reside Panama: Coronado",
+          "url": "https://www.residepanama.com/areas/coronado",
+          "read": "2026-11-15",
+          "says": "Undated (©2026). Clinica Hospital San Fernando is \"one of Panama's most recommended private clinics\" with \"a lab, ICU, radiology, and even a maternity ward on site\", an extension of its Panama City location; Coronado is \"a 1.5-hour drive away from Panama City\"."
+        },
+        {
+          "name": "Reside Panama: Healthcare in Panama, hospitals, insurance and costs 2026",
+          "url": "https://www.residepanama.com/en/reside-panama-blog/healthcare-in-panama-an-expat-guide-to-hospitals-insurance-costs-2026",
+          "read": "2026-11-15",
+          "says": "Published May 28, 2026. Punta Pacífica \"maintains an international affiliation with Johns Hopkins Medicine\"; Pacífica Salud (Costa del Este), Hospital Nacional and Paitilla are named private hospitals; physicians \"often trained internationally, many of whom speak fluent English\" (it does not say US-trained). Near Boquete, residents \"rely on private hospitals in David, particularly Hospital Chiriquí and Hospital Mae Lewis\". Premiums: \"Solo expat in their 60s+: USD 350–700+\" a month. The CSS \"provides care to Panamanian workers and legal residents who contribute through payroll taxes\". General GP visits USD 40–80; no Boquete prices."
+        }
+      ]
+    },
+    {
+      "id": "pa-healthcare-volcan",
+      "fact": "healthcare",
+      "cities": [
+        "volcan"
+      ],
+      "claim": "Volcán's hospital (opened 2014) is a basic emergency facility; more care is in Concepción, about 30 minutes away, and David's private hospitals are 40 minutes to an hour away (secondary source, 2018)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "International Living: Volcán, Panama",
+          "url": "https://internationalliving.com/countries/panama/volcan-panama",
+          "read": "2026-11-15",
+          "says": "Updated Oct 12, 2018. \"A new hospital opened in Volcán in 2014, serving as a basic emergency care facility\"; \"Concepcion is only 30 minutes away\"; David is \"a quick 40-minute drive from Volcán\"."
+        },
+        {
+          "name": "Reside Panama: Healthcare in Panama, hospitals, insurance and costs 2026",
+          "url": "https://www.residepanama.com/en/reside-panama-blog/healthcare-in-panama-an-expat-guide-to-hospitals-insurance-costs-2026",
+          "read": "2026-11-15",
+          "says": "Published May 28, 2026. Punta Pacífica \"maintains an international affiliation with Johns Hopkins Medicine\"; Pacífica Salud (Costa del Este), Hospital Nacional and Paitilla are named private hospitals; physicians \"often trained internationally, many of whom speak fluent English\" (it does not say US-trained). Near Boquete, residents \"rely on private hospitals in David, particularly Hospital Chiriquí and Hospital Mae Lewis\". Premiums: \"Solo expat in their 60s+: USD 350–700+\" a month. The CSS \"provides care to Panamanian workers and legal residents who contribute through payroll taxes\". General GP visits USD 40–80; no Boquete prices."
+        }
+      ],
+      "note": "Dated 2018, as the profile says; the summary's \"small, dated healthcare data\" matches. Healthcare score 2 stays."
+    }
+  ]
+}

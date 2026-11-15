@@ -1,0 +1,506 @@
+{
+  "country": "Honduras",
+  "cities": [
+    "roatan"
+  ],
+  "claims": [
+    {
+      "id": "hn-tax-no-wealth-tax",
+      "fact": "tax",
+      "claim": "Honduras has no wealth tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "TaxAtlas: Honduras wealth and property tax rates (2026)",
+          "url": "https://taxatlas.io/country/honduras/wealth-tax",
+          "read": "2026-11-15",
+          "says": "Labelled 2026. \"Honduras does not impose a wealth tax\"; no separate inheritance tax (top rate 0%); \"Inherited income may be subject to income tax under general rules.\""
+        },
+        {
+          "name": "PwC: Honduras, other taxes",
+          "url": "https://taxsummaries.pwc.com/honduras/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 10 August 2026. Sections: social security, INFOP contributions, social housing fund contributions, sales tax. No net wealth, inheritance, estate or gift tax is listed."
+        }
+      ],
+      "note": "PwC's quick chart gives \"NP\" (not provided) for Honduras; the dated secondary page states it. localTaxes.ts (HN) agrees.",
+      "cities": [
+        "roatan"
+      ]
+    },
+    {
+      "id": "hn-tax-territorial",
+      "fact": "tax",
+      "claim": "Honduras taxes only Honduran-source income (PwC, reviewed August 2026), so US dividends and interest are outside its tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Honduras, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/honduras/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 10 August 2026. \"The tax system in Honduras is based on a territorial concept of income.\" \"Citizens and residents are taxed on income earned from Honduran income sources.\" No mention of a worldwide-income proposal."
+        }
+      ],
+      "note": "Also the summary and the why line.",
+      "cities": [
+        "roatan"
+      ]
+    },
+    {
+      "id": "hn-tax-ljt-collapsed",
+      "fact": "tax",
+      "claim": "A \"Ley de Justicia Tributaria\" to tax worldwide income collapsed in May 2025 without passing",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "El Heraldo: attempt to pass the Ley de Justicia Tributaria fails",
+          "url": "https://www.elheraldo.hn/honduras/fracasa-intentona-luis-redondo-aprobar-matacaballo-ley-justicia-tributaria-OJ25683195",
+          "read": "2026-11-15",
+          "says": "Updated May 7, 2025. Luis Redondo \"fracasó esta medianoche en su intento de aprobar\" the bill's ruling after the opposition regained a majority; the draft keeps the move from territorial to worldwide taxation, one of its most contested points."
+        }
+      ],
+      "note": "Also the summary (\"a worldwide-income bill that failed in 2025\").",
+      "cities": [
+        "roatan"
+      ]
+    },
+    {
+      "id": "hn-tax-ljt-could-return",
+      "fact": "tax",
+      "claim": "The worldwide-income bill could return",
+      "verdict": "cant-confirm",
+      "hedge": "could return",
+      "wording": "but could return",
+      "sources": [
+        {
+          "name": "El Heraldo: attempt to pass the Ley de Justicia Tributaria fails",
+          "url": "https://www.elheraldo.hn/honduras/fracasa-intentona-luis-redondo-aprobar-matacaballo-ley-justicia-tributaria-OJ25683195",
+          "read": "2026-11-15",
+          "says": "Updated May 7, 2025. Luis Redondo \"fracasó esta medianoche en su intento de aprobar\" the bill's ruling after the opposition regained a majority; the draft keeps the move from territorial to worldwide taxation, one of its most contested points."
+        },
+        {
+          "name": "PwC: Honduras, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/honduras/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 10 August 2026. \"The tax system in Honduras is based on a territorial concept of income.\" \"Citizens and residents are taxed on income earned from Honduran income sources.\" No mention of a worldwide-income proposal."
+        }
+      ],
+      "note": "Check for a bill: searches for a 2026 worldwide-income bill under the government that took office in January 2026 found none; PwC (August 2026) mentions none. The clause is a possibility, worded as one. The drawback \"A worldwide-income tax bill keeps returning to Congress\" describes 2022–2025 and was left as it is.",
+      "cities": [
+        "roatan"
+      ]
+    },
+    {
+      "id": "hn-estate-none-pwc",
+      "fact": "estate",
+      "claim": "No inheritance, estate or gift tax is listed by PwC",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Honduras, other taxes",
+          "url": "https://taxsummaries.pwc.com/honduras/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 10 August 2026. Sections: social security, INFOP contributions, social housing fund contributions, sales tax. No net wealth, inheritance, estate or gift tax is listed."
+        }
+      ],
+      "cities": [
+        "roatan"
+      ]
+    },
+    {
+      "id": "hn-estate-secondary-none",
+      "fact": "estate",
+      "claim": "A secondary source confirms none, and says inherited income may be subject to income tax under general rules",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "TaxAtlas: Honduras wealth and property tax rates (2026)",
+          "url": "https://taxatlas.io/country/honduras/wealth-tax",
+          "read": "2026-11-15",
+          "says": "Labelled 2026. \"Honduras does not impose a wealth tax\"; no separate inheritance tax (top rate 0%); \"Inherited income may be subject to income tax under general rules.\""
+        }
+      ],
+      "note": "Estate score 4 stays: the absence rests on a secondary page and no statute was read, which the rubric's \"inferred\" line covers. localTaxes.ts (HN) agrees.",
+      "cities": [
+        "roatan"
+      ]
+    },
+    {
+      "id": "hn-estate-no-statute",
+      "fact": "estate",
+      "claim": "No Honduran statute was found",
+      "verdict": "cant-confirm",
+      "hedge": "no Honduran statute was found",
+      "wording": "though no Honduran statute was found",
+      "sources": [
+        {
+          "name": "PwC: Honduras, other taxes",
+          "url": "https://taxsummaries.pwc.com/honduras/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 10 August 2026. Sections: social security, INFOP contributions, social housing fund contributions, sales tax. No net wealth, inheritance, estate or gift tax is listed."
+        },
+        {
+          "name": "TaxAtlas: Honduras wealth and property tax rates (2026)",
+          "url": "https://taxatlas.io/country/honduras/wealth-tax",
+          "read": "2026-11-15",
+          "says": "Labelled 2026. \"Honduras does not impose a wealth tax\"; no separate inheritance tax (top rate 0%); \"Inherited income may be subject to income tax under general rules.\""
+        }
+      ],
+      "note": "Still true of this check: no Honduran statute on inheritance was read.",
+      "cities": [
+        "roatan"
+      ]
+    },
+    {
+      "id": "hn-estate-no-us-treaty",
+      "fact": "estate",
+      "claim": "There is no US estate treaty",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-without",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list); none of the 37 countries named in this claim is among them."
+        }
+      ],
+      "cities": [
+        "roatan"
+      ]
+    },
+    {
+      "id": "hn-estate-us-exemption",
+      "fact": "estate",
+      "claim": "US estate tax applies above the $15M exemption (2026)",
+      "verdict": "confirmed",
+      "shared": "us-estate-exemption-2026",
+      "sources": [
+        {
+          "name": "IRS: What's new, estate and gift tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax",
+          "read": "2026-11-15",
+          "says": "The table \"Basic exclusion amount for year of death\" has the row 2026: $15,000,000 (2025: $13,990,000). The page says the Working Families Tax Cuts, Public Law 119-21, signed July 4, 2025, \"amends § 2010(c)(3) by increasing the basic exclusion amount to $15,000,000 for calendar year 2026\". Page last reviewed or updated 03-Nov-2026."
+        },
+        {
+          "name": "IRS: Estate tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-tax",
+          "read": "2026-11-15",
+          "says": "A return is required when the gross estate, plus adjusted taxable gifts and specific exemption, is more than the filing threshold for the year of death; the table gives 2026: $15,000,000. Page last reviewed or updated 23-Oct-2026."
+        },
+        {
+          "name": "IRS news release IR-2025-103: tax inflation adjustments for tax year 2026",
+          "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill",
+          "read": "2026-11-15",
+          "says": "\"Estates of decedents who die during 2026 have a basic exclusion amount of $15,000,000\", up from $13,990,000 for 2025; the release (October 9, 2025) cites Revenue Procedure 2025-32 and is marked as an archival document."
+        }
+      ],
+      "cities": [
+        "roatan"
+      ]
+    },
+    {
+      "id": "hn-lending-ibkr",
+      "fact": "lending",
+      "claim": "Interactive Brokers lists Honduras among admitted countries",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Interactive Brokers reportedly lists Honduras among admitted countries",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes \"Guatemala\" and \"Honduras\"; the page names no IBKR entity for Latin American residents."
+        },
+        {
+          "name": "Finantres: Interactive Brokers in Honduras",
+          "url": "https://finantres.com/interactive-brokers-honduras/?hub_page=2",
+          "read": "2026-11-15",
+          "says": "Published 17 August 2026, updated 19 October 2026. \"Interactive Brokers está disponible para residentes en Honduras\"; Honduras \"aparece en la lista oficial de países y territorios admitidos\"; \"determinados productos, permisos o el uso de margen pueden exigir requisitos específicos\"."
+        }
+      ],
+      "note": "IBKR's country list returned HTTP 403 on 2026-11-15.",
+      "cities": [
+        "roatan"
+      ]
+    },
+    {
+      "id": "hn-lending-margin-rules",
+      "fact": "lending",
+      "claim": "Margin is subject to product rules",
+      "verdict": "cant-confirm",
+      "hedge": "(secondary source)",
+      "wording": "with margin subject to product rules (secondary source)",
+      "sources": [
+        {
+          "name": "Finantres: Interactive Brokers in Honduras",
+          "url": "https://finantres.com/interactive-brokers-honduras/?hub_page=2",
+          "read": "2026-11-15",
+          "says": "Published 17 August 2026, updated 19 October 2026. \"Interactive Brokers está disponible para residentes en Honduras\"; Honduras \"aparece en la lista oficial de países y territorios admitidos\"; \"determinados productos, permisos o el uso de margen pueden exigir requisitos específicos\"."
+        }
+      ],
+      "cities": [
+        "roatan"
+      ]
+    },
+    {
+      "id": "hn-lending-schwab",
+      "fact": "lending",
+      "claim": "Whether Schwab One International accepts Honduras is unknown",
+      "verdict": "corrected",
+      "shared": "schwab-accepts-residents",
+      "oldWording": "whether Schwab One International accepts Honduras is unknown",
+      "newWording": "Schwab One International reportedly does not accept Honduras residents (Oct 2026)",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. On that day the author ran every entry in Schwab's international account selector through the application: it accepted residents of 51 of 263 countries and regions: Argentina, Australia, Austria, the Bahamas, Belgium, Bermuda, Brazil, the British Virgin Islands, the Cayman Islands, Chile, China, Colombia, Costa Rica, the Czech Republic, Denmark, Ecuador, Finland, Germany, Greece, Guatemala, Hong Kong, Iceland, India, Indonesia, Ireland, Israel, Jersey, Luxembourg, Malaysia, the Marshall Islands, Mexico, the Netherlands, Norway, Panama, Paraguay, Peru, Poland, Portugal, Qatar, Singapore, South Korea, Spain, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Turks and Caicos, the United Arab Emirates, the United Kingdom and Uruguay. Named as not accepted: Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam; for the rest the application said \"Schwab currently cannot open accounts for residents of your country/region.\" The test covers new applicants on that day only."
+        },
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Country check run October 23, 2026: Guatemala is among the 51 countries whose residents the online application accepted; Honduras is not on the list, and for countries off it the application said \"Schwab currently cannot open accounts for residents of your country/region. Please check back with us in the future.\" Nothing on margin outside Europe."
+        },
+        {
+          "name": "Your Tax Base: best brokerage for US expats",
+          "url": "https://yourtaxbase.com/blog/best-brokerage-for-us-expats",
+          "read": "2026-11-15",
+          "says": "Dated October 23, 2026. Quotes Fidelity's FAQ: \"we do not open accounts for any new customers residing outside the United States.\" Vanguard requires US citizenship or permanent residence \"with a U.S. mailing address\". The page lists Honduras among countries that cannot apply to Schwab online."
+        }
+      ],
+      "also": [
+        "scores.lending stays 3 (IBKR only)",
+        "sources: added the Your Tax Base Schwab and best-brokerage pages"
+      ],
+      "note": "The dated test found every country off the 51-country list refused with \"Schwab currently cannot open accounts for residents of your country/region\", and the best-brokerage page names Honduras among countries that cannot apply online. \"Unknown\" understated what is reported; kept \"reportedly\" (Schwab's site returned 403).",
+      "cities": [
+        "roatan"
+      ]
+    },
+    {
+      "id": "hn-lending-fidelity-vanguard",
+      "fact": "lending",
+      "claim": "Fidelity and Vanguard open no new accounts for residents abroad",
+      "verdict": "cant-confirm",
+      "hedge": "reportedly",
+      "oldWording": "and Fidelity and Vanguard open no new accounts for residents abroad",
+      "wording": "Fidelity and Vanguard reportedly open no new accounts for residents abroad",
+      "sources": [
+        {
+          "name": "Your Tax Base: best brokerage for US expats",
+          "url": "https://yourtaxbase.com/blog/best-brokerage-for-us-expats",
+          "read": "2026-11-15",
+          "says": "Dated October 23, 2026. Quotes Fidelity's FAQ: \"we do not open accounts for any new customers residing outside the United States.\" Vanguard requires US citizenship or permanent residence \"with a U.S. mailing address\". The page lists Honduras among countries that cannot apply to Schwab online."
+        }
+      ],
+      "also": [
+        "hedge added: \"reportedly\""
+      ],
+      "note": "A broker claim on a secondary page stays reported (rule 3). Fidelity's FAQ (https://www.fidelity.com/accounts/services/investors_outside_US_faq.shtml) returned HTTP 403 on 2026-11-15.",
+      "cities": [
+        "roatan"
+      ]
+    },
+    {
+      "id": "hn-visa-rentista",
+      "fact": "visa",
+      "claim": "Rentista residence on at least $2,500/month of stable income from abroad or in Honduras",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Consortium Legal: Permanent residence as a rentier or pensioner in Central America",
+          "url": "https://consortiumlegal.com/en/2026/01/16/permanent-residence-as-a-rentier-or-pensioner-in-central-america/",
+          "read": "2026-11-15",
+          "says": "Dated 16 January 2026. Guatemala: residency \"is regulated by Agreement IGM 16-2025\"; for those with \"legal and verifiable income from abroad\", \"The minimum income requirement is US$1,250, plus an additional US$300 for each dependent\"; submitted to the Guatemalan Migration Institute. Honduras: pensionado \"requiring a minimum income of US$1,500 per month\"; rentista \"the minimum income is US$2,500\"; handled by the Ministry of the Interior and Justice."
+        },
+        {
+          "name": "Consortium Legal: Residencia en Honduras",
+          "url": "https://consortiumlegal.com/2021/11/15/residencia-en-honduras/",
+          "read": "2026-11-15",
+          "says": "Dated 15 November 2021 by its URL. Rentista: \"rentas permanentes, lícitas, y estables generadas en el exterior o en el territorio nacional\" of at least US$2,500 a month; pensionado: pensions from abroad of at least US$1,500 a month; categories under \"artículo veintiuno de la Ley de Migracion y Extranjeria\"; the residence \"no requiere ser renovada\"."
+        },
+        {
+          "name": "Rio Times: retire in Honduras as a foreigner (2026)",
+          "url": "https://www.riotimesonline.com/retire-in-honduras-foreigners-2026/",
+          "read": "2026-11-15",
+          "says": "Dated September 22, 2026. Ley de Migración y Extranjería (Decree 208-2003): rentista (art. 23, US$2,500 a month, from abroad or Honduras) and pensionado (art. 24, US$1,500 foreign pension); \"the money has to be received through a bank or other institution of the Honduran financial system\"; \"pensionado and rentista cards are renewed yearly\", with a bank certificate at renewal."
+        }
+      ],
+      "note": "Also the summary and the why line. \"Which portfolio income should meet\" is the profile's reading and rides with this.",
+      "cities": [
+        "roatan"
+      ]
+    },
+    {
+      "id": "hn-visa-pensionado",
+      "fact": "visa",
+      "claim": "Pensionado on a $1,500/month foreign pension",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Consortium Legal: Permanent residence as a rentier or pensioner in Central America",
+          "url": "https://consortiumlegal.com/en/2026/01/16/permanent-residence-as-a-rentier-or-pensioner-in-central-america/",
+          "read": "2026-11-15",
+          "says": "Dated 16 January 2026. Guatemala: residency \"is regulated by Agreement IGM 16-2025\"; for those with \"legal and verifiable income from abroad\", \"The minimum income requirement is US$1,250, plus an additional US$300 for each dependent\"; submitted to the Guatemalan Migration Institute. Honduras: pensionado \"requiring a minimum income of US$1,500 per month\"; rentista \"the minimum income is US$2,500\"; handled by the Ministry of the Interior and Justice."
+        },
+        {
+          "name": "Consortium Legal: Residencia en Honduras",
+          "url": "https://consortiumlegal.com/2021/11/15/residencia-en-honduras/",
+          "read": "2026-11-15",
+          "says": "Dated 15 November 2021 by its URL. Rentista: \"rentas permanentes, lícitas, y estables generadas en el exterior o en el territorio nacional\" of at least US$2,500 a month; pensionado: pensions from abroad of at least US$1,500 a month; categories under \"artículo veintiuno de la Ley de Migracion y Extranjeria\"; the residence \"no requiere ser renovada\"."
+        },
+        {
+          "name": "Rio Times: retire in Honduras as a foreigner (2026)",
+          "url": "https://www.riotimesonline.com/retire-in-honduras-foreigners-2026/",
+          "read": "2026-11-15",
+          "says": "Dated September 22, 2026. Ley de Migración y Extranjería (Decree 208-2003): rentista (art. 23, US$2,500 a month, from abroad or Honduras) and pensionado (art. 24, US$1,500 foreign pension); \"the money has to be received through a bank or other institution of the Honduran financial system\"; \"pensionado and rentista cards are renewed yearly\", with a bank certificate at renewal."
+        }
+      ],
+      "cities": [
+        "roatan"
+      ]
+    },
+    {
+      "id": "hn-visa-article",
+      "fact": "visa",
+      "claim": "The categories are in the Ley de Migración y Extranjería, art. 21",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Consortium Legal: Residencia en Honduras",
+          "url": "https://consortiumlegal.com/2021/11/15/residencia-en-honduras/",
+          "read": "2026-11-15",
+          "says": "Dated 15 November 2021 by its URL. Rentista: \"rentas permanentes, lícitas, y estables generadas en el exterior o en el territorio nacional\" of at least US$2,500 a month; pensionado: pensions from abroad of at least US$1,500 a month; categories under \"artículo veintiuno de la Ley de Migracion y Extranjeria\"; the residence \"no requiere ser renovada\"."
+        },
+        {
+          "name": "Rio Times: retire in Honduras as a foreigner (2026)",
+          "url": "https://www.riotimesonline.com/retire-in-honduras-foreigners-2026/",
+          "read": "2026-11-15",
+          "says": "Dated September 22, 2026. Ley de Migración y Extranjería (Decree 208-2003): rentista (art. 23, US$2,500 a month, from abroad or Honduras) and pensionado (art. 24, US$1,500 foreign pension); \"the money has to be received through a bank or other institution of the Honduran financial system\"; \"pensionado and rentista cards are renewed yearly\", with a bank certificate at renewal."
+        }
+      ],
+      "note": "Consortium Legal cites art. 21 for the categories; Rio Times cites arts. 23 and 24 for each category's terms. Both can hold; the profile already says \"(secondary source)\". The Honduran migration institute's site was not tried.",
+      "cities": [
+        "roatan"
+      ]
+    },
+    {
+      "id": "hn-visa-bank-renewal",
+      "fact": "visa",
+      "claim": "A Honduran bank account and yearly renewal are required",
+      "verdict": "cant-confirm",
+      "hedge": "reported but unverified",
+      "wording": "a Honduran bank account and yearly renewal are reported but unverified",
+      "sources": [
+        {
+          "name": "Rio Times: retire in Honduras as a foreigner (2026)",
+          "url": "https://www.riotimesonline.com/retire-in-honduras-foreigners-2026/",
+          "read": "2026-11-15",
+          "says": "Dated September 22, 2026. Ley de Migración y Extranjería (Decree 208-2003): rentista (art. 23, US$2,500 a month, from abroad or Honduras) and pensionado (art. 24, US$1,500 foreign pension); \"the money has to be received through a bank or other institution of the Honduran financial system\"; \"pensionado and rentista cards are renewed yearly\", with a bank certificate at renewal."
+        },
+        {
+          "name": "Consortium Legal: Residencia en Honduras",
+          "url": "https://consortiumlegal.com/2021/11/15/residencia-en-honduras/",
+          "read": "2026-11-15",
+          "says": "Dated 15 November 2021 by its URL. Rentista: \"rentas permanentes, lícitas, y estables generadas en el exterior o en el territorio nacional\" of at least US$2,500 a month; pensionado: pensions from abroad of at least US$1,500 a month; categories under \"artículo veintiuno de la Ley de Migracion y Extranjeria\"; the residence \"no requiere ser renovada\"."
+        }
+      ],
+      "note": "Sources disagree: Rio Times (September 2026) says income must arrive through the Honduran financial system and the cards are renewed yearly; Consortium Legal (2021) says the residence \"no requiere ser renovada\", and its January 2026 note calls both statuses permanent. The profile's hedge stays. Visa score 4 stays.",
+      "cities": [
+        "roatan"
+      ]
+    },
+    {
+      "id": "hn-healthcare-fire",
+      "fact": "healthcare",
+      "claim": "The island's only public hospital burned down on 19 April 2024",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Direct Relief: Fire destroyed an island hospital; months later a Honduran free clinic is still bridging the gap",
+          "url": "https://www.directrelief.org/2024/10/fire-destroyed-an-island-hospital-months-later-a-honduran-free-clinic-is-still-bridging-the-gap/amp/",
+          "read": "2026-11-15",
+          "says": "Dated October 17, 2024. The April 19 fire destroyed \"the only public hospital on the island of Roatán\"; a replacement would take about 18 months to build; two privately operated hospitals are still open."
+        }
+      ],
+      "note": "Also the summary, drawback and the why line.",
+      "cities": [
+        "roatan"
+      ]
+    },
+    {
+      "id": "hn-healthcare-replacement",
+      "fact": "healthcare",
+      "claim": "Rebuilding was expected to take about 18 months, leaving private hospitals and clinics",
+      "verdict": "corrected",
+      "oldWording": "(rebuilding was expected to take about 18 months), leaving private hospitals and clinics",
+      "newWording": "its replacement, Hospital Satuyé, has reportedly operated since September 2025 alongside private hospitals and clinics",
+      "sources": [
+        {
+          "name": "La Prensa: hospital modernisation and primary care",
+          "url": "https://www.laprensa.hn/teinteresa/avances-en-modernizacion-de-hospitales-atencion-primaria-DP28639318",
+          "read": "2026-11-15",
+          "says": "Updated 17 December 2025. Health Minister Carla Paredes: the Hospital Satuyé in Roatán \"ya fue entregado y se encuentra en funcionamiento\"; caption: \"Desde septiembre, el Hospital en Roatán opera equipado, con instalaciones modernas y servicios especializados.\""
+        },
+        {
+          "name": "La Prensa: two new public hospitals will soon open in Roatán",
+          "url": "https://www.laprensa.hn/honduras/roatan-hospitales-pacientes-isla-salud-emergencias-EE26001445",
+          "read": "2026-11-15",
+          "says": "Updated 2 June 2025. The permanent public hospital at Loma Linda is being finished by the central government; an emergency hospital at Dixon Cove, 70% built, was due in August, with obstetrics, surgery, intensive care, neonatology, lab, outpatients and emergencies."
+        },
+        {
+          "name": "El Heraldo: measles case at Hospital Satuyé, Roatán",
+          "url": "https://www.elheraldo.hn/honduras/tras-caso-sarampion-roatan-piden-evaluar-quienes-estuvieron-hospital-satuye-JM30879761",
+          "read": "2026-11-15",
+          "says": "Updated 31 May 2026. Health authorities of the Bay Islands asked people who had been at \"las instalaciones del Hospital Satuyé\" in Roatán on 26 May to be checked; it is described as a \"centro asistencial\", not as public or private."
+        },
+        {
+          "name": "Direct Relief: Fire destroyed an island hospital; months later a Honduran free clinic is still bridging the gap",
+          "url": "https://www.directrelief.org/2024/10/fire-destroyed-an-island-hospital-months-later-a-honduran-free-clinic-is-still-bridging-the-gap/amp/",
+          "read": "2026-11-15",
+          "says": "Dated October 17, 2024. The April 19 fire destroyed \"the only public hospital on the island of Roatán\"; a replacement would take about 18 months to build; two privately operated hospitals are still open."
+        }
+      ],
+      "also": [
+        "summary: \"the island's only public hospital burned in April 2024\" became \"hospital care is thin: the public hospital burned in April 2024 and was reportedly replaced only in 2025\"",
+        "drawback 1 reworded: \"Thin hospital care: the public hospital burned in 2024 and was reportedly replaced only in 2025, and serious illness means an evacuation flight\"",
+        "scores.healthcare stays 1 (Canada, October 2026: facilities \"very limited\", major procedures may need evacuation)",
+        "sources: added La Prensa (December 2025)"
+      ],
+      "rankFlag": "Roatán (pick 59): the why says \"the island's public hospital burned in 2024, serious cases fly out\". Both halves are still true (Canada still advises evacuation for major procedures), but the island has had a public hospital again since September 2025 by the health minister's account, so the why reads as if the gap were current. No change proposed; the healthcare score stays 1.",
+      "note": "The 18-month estimate was right (Direct Relief, 2024) and is now moot. The minister's statement is reported by a newspaper; no Health Secretariat page was read, and the pages do not say plainly that Satuyé is the Loma Linda or the Dixon Cove building, hence \"reportedly\".",
+      "cities": [
+        "roatan"
+      ]
+    },
+    {
+      "id": "hn-healthcare-evacuation",
+      "fact": "healthcare",
+      "claim": "Canada calls Bay Islands emergency facilities \"very limited\" and says major procedures may need evacuation, so serious cases fly out and medevac cover is a must",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Government of Canada: Travel advice for Honduras",
+          "url": "https://travel.gc.ca/destinations/honduras",
+          "read": "2026-11-15",
+          "says": "Last updated 13 October 2026. \"Emergency medical facilities are also very limited on the Bay Islands.\" \"Major medical procedures and surgeries may require medical evacuation to a major centre.\""
+        }
+      ],
+      "note": "\"San Pedro Sula, Tegucigalpa or the US\" and \"a must\" ride with the evacuation advice.",
+      "cities": [
+        "roatan"
+      ]
+    }
+  ]
+}

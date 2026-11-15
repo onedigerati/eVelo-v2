@@ -1,0 +1,409 @@
+$ node docs/evidence/stage-4/verify4.mjs http://localhost:4317  (production build, npx vite preview)
+
+===== desktop · San Miguel de Allende =====
+No. 36 San Miguel de Allende
+YOUR PLAN HERE
+76%
+plan holds
++12 pts vs 64% in St. Louis
+All 5 photos
+Photos: AlejandroLinaresGarcia, Adam Jones, Cvmontuy, Adamina · CC BY-SA / CC BY · Wikimedia Commons
+MX
+TOP PICK 36 OF 75 · MEXICO
+Highland arts town, Mexico's classic American enclave
+San Miguel de Allende is on Forbes' 2026 list and is one of the towns most often reported as home by foreign residents in Mexico News Daily's 2026 survey. It offers a dry highland climate, a walkable colonial centre, a deep English-speaking community and easy residency on savings, against Mexico's dividend tax and a state with high crime.
+HOW IT SCORES · out of 5, for a US retiree on buy-borrow-die
+Tax on holdings
+2
+out of 5
+Estate
+5
+out of 5
+Lending
+4
+out of 5
+Residency
+5
+out of 5
+Healthcare
+3
+out of 5
+Cost
+3
+out of 5
+Safety
+2
+out of 5
+Climate
+4
+out of 5
+Community
+5
+out of 5
+THE ESSENTIALS
+TAX ON HOLDINGS
+No wealth tax; tax residents pay up to 35% (2026) on worldwide income, with foreign dividends fully taxable plus a separate 10% tax on the net dividend that cannot be credited, and foreign interest fully taxable, FX gains on principal included; margin-loan proceeds are not income (loans above MXN 600,000 a year must be reported in the annual return, or they are taxed as income), so a low-yield, growth-tilted portfolio limits the drag (get local advice).
+ESTATE & INHERITANCE
+No inheritance or estate tax: inheritances received by Mexican residents are exempt from income tax, and US-resident heirs receiving US assets should fall outside Mexican tax (an inference); there is no US estate treaty, so only US estate tax applies, above the $15M exemption (2026).
+LENDING & BROKERS
+IBKR reportedly accepts Mexico residents (IBKR Pro), and Schwab One International's online form reportedly accepted Mexico in Oct 2026; margin by country of residence is unreported, and Fidelity and Vanguard reportedly open no new accounts for residents abroad.
+RESIDENCY
+Temporary residency on economic solvency accepts savings or investment balances: the San Diego consulate's 2026 sheet asks for about $68,200 average monthly balance over 12 months or $4,049/month of income for 6 months, and other consulates ask more (about $74,700 or $4,430/month); permanent residency for retirees is about $299,000 or $7,430/month (2026), and a brokerage account counts as investments.
+HEALTHCARE
+Two local private hospitals (Hospital Joya and MAC; the H+ hospital closed in 2020) cover routine and moderate care; major procedures usually mean Querétaro, about an hour away, or Mexico City, about 3 hours; private local cover runs about MXN 96,000/yr for a healthy 62-year-old, and IMSS voluntary cover about MXN 21,500/yr at 70–79 (2026).
+SAFETY
+Mexico is 137th of 163 in the 2026 Global Peace Index, and Guanajuato is reportedly US State Dept Level 3, "reconsider travel", with one of Mexico's highest homicide counts; the town itself is reported to be calmer, but no city data was found.
+CLIMATE
+At about 1,900 m: dry, sunny and mild, with near-freezing winter nights, a hot May and moderate summer rains.
+COMMUNITY
+A long-standing, very large US and Canadian retiree community, rich in arts and volunteer groups; daily life is easy in English.
+GETTING THERE
+From St. Louis (STL): no nonstop; one stop via Houston or Dallas, about 5–7 h.
+No airport in town: León/Bajío (BJX) is about 1.5 hours away and Querétaro about 1 hour, with shuttles from both.
+Routes as of Nov 2026; flying times are estimates.
+WORTH KNOWING
+It sits in Guanajuato, one of Mexico's most violent states
+Mexico taxes residents' dividends at up to 35% plus a 10% levy that cannot be credited
+Serious medical care and airports are an hour or more away by road
+YOUR PLAN HERE
+PLAN HOLDS
+76
+%
++12 pts vs 64% in St. Louis
+A YEAR HERE
+$89,588
+−19% vs $110,000 in St. Louis
+BY CATEGORY
+St. Louis
+San Miguel de Allende
+Housing: $25K here vs $26K in St. Louis, −5%.
+Housing
+$25K
+−5%
+Groceries: $8.4K here vs $11K in St. Louis, −23%.
+Groceries
+$8.4K
+−23%
+Dining out: $6.7K here vs $8.0K in St. Louis, −17%.
+Dining out
+$6.7K
+−17%
+Transport: $7.9K here vs $10K in St. Louis, −21%.
+Transport
+$7.9K
+−21%
+Utilities: $4.3K here vs $5.5K in St. Louis, −21%.
+Utilities
+$4.3K
+−21%
+Healthcare: $8.2K here vs $16K in St. Louis, −49%.
+Healthcare
+$8.2K
+−49%
+Travel: $14K here vs $14K in St. Louis, same.
+Travel
+$14K
+same
+Other: $15K here vs $20K in St. Louis, −21%.
+Other
+$15K
+−21%
+Your St. Louis budget at local prices, with your expat price premium (35%).
+Local tax and estate for San Miguel de Allende ready.
+LOCAL TAX & ESTATE
+No wealth or inheritance tax modelled for Mexico: none reaches a US portfolio.
+Estate at 85
+median, borrow and never sell
+$12M
++$1.7M vs $10M staying in St. Louis
+Today’s dollars, from 4,000 simulated futures of your plan with San Miguel de Allende as the destination.
+Make San Miguel de Allende my destination
+SOURCES
+Jetpac: Is it safe to travel to Mexico (Guanajuato Level 3, 2026)
+Mexico News Daily: Expat Safety Perceptions Index Q1 2026
+San Miguel Scene: healthcare in San Miguel de Allende (Hospital La Joya, Hospitales MAC)
+San Miguel Times: H+ hospital closes its San Miguel branch (May 2020) · 2020
+San Miguel Scene: long-term care in San Miguel de Allende
+PwC: Mexico, taxes on personal income
+PwC: Mexico, other taxes
+Consulate of Mexico in San Diego: temporary resident visa, economic solvency · 2026
+Mexperience: Financial criteria for residency in Mexico (2026 UMA)
+Your Tax Base: best brokerage for US expats (Oct 2026) · 2026
+IDC Online: credit lines and the annual return (LISR art. 90, loans over MXN 600,000) · 2025
+IMSS: Seguro de Salud para la Familia · 2026
+YourTaxBase: Charles Schwab for expats (country list, Oct 2026)
+UPI: Forbes best places for Americans to retire abroad, Latin America (Aug 2026) · 2026
+Cost indices verified November 6, 2026 from Numbeo current city index. Not tax or legal advice.
+
+===== desktop · Roatán =====
+No. 59 Roatán
+YOUR PLAN HERE
+78%
+plan holds
++14 pts vs 64% in St. Louis
+All 5 photos
+Photos: Nosferattus, Prayitno, danieln492, Pi3.124 · CC0 / CC BY / CC BY-SA · Wikimedia Commons
+HN
+TOP PICK 59 OF 75 · HONDURAS
+Bay Islands dive island, territorial tax, thin hospital care
+On tax, Honduras is about as good as BBD gets: only Honduran-source income is taxed, there is no wealth or inheritance tax, and rentista residence accepts $2,500 a month of investment income. Roatán adds reefs, a long-settled English-speaking community and four US nonstops. Against that, hospital care is thin: the public hospital burned in April 2024 and was reportedly replaced only in 2025, serious cases fly out, and a worldwide-income bill that failed in 2025 could return.
+HOW IT SCORES · out of 5, for a US retiree on buy-borrow-die
+Tax on holdings
+5
+out of 5
+Estate
+4
+out of 5
+Lending
+3
+out of 5
+Residency
+4
+out of 5
+Healthcare
+1
+out of 5
+Cost
+4
+out of 5
+Safety
+3
+out of 5
+Climate
+2
+out of 5
+Community
+3
+out of 5
+THE ESSENTIALS
+TAX ON HOLDINGS
+No wealth tax; Honduras taxes only Honduran-source income (PwC, reviewed August 2026), so US dividends and interest are outside its tax; a "Ley de Justicia Tributaria" to tax worldwide income collapsed in May 2025 without passing, but could return.
+ESTATE & INHERITANCE
+No inheritance, estate or gift tax is listed by PwC, and a secondary source confirms none, though no Honduran statute was found and the same source says inherited income may be subject to income tax under general rules; there is no US estate treaty, and US estate tax applies above the $15M exemption (2026).
+LENDING & BROKERS
+Interactive Brokers reportedly lists Honduras among admitted countries, with margin subject to product rules (secondary source); Schwab One International reportedly does not accept Honduras residents (Oct 2026), and Fidelity and Vanguard reportedly open no new accounts for residents abroad.
+RESIDENCY
+Rentista residence on at least $2,500/month of stable income from abroad or in Honduras, which portfolio income should meet, or pensionado on a $1,500/month foreign pension (Ley de Migración y Extranjería, art. 21; secondary source); a Honduran bank account and yearly renewal are reported but unverified.
+HEALTHCARE
+The island's only public hospital burned down on 19 April 2024, and its replacement, Hospital Satuyé, has reportedly operated since September 2025 alongside private hospitals and clinics; Canada calls Bay Islands emergency facilities "very limited" and says major procedures may need evacuation, so serious cases fly to San Pedro Sula, Tegucigalpa or the US, and international cover with medevac is a must.
+SAFETY
+Honduras is reportedly at US State Dept Level 3, "reconsider travel" (August 2026, secondary source), with Level 4 only for Gracias a Dios; Canada says "the Bay Islands are generally safe" but reports night-time beach assaults and rental burglaries and advises avoiding Coxen Hole, Los Fuertes and Suampo after dark, and the UK flags petty theft and ATM fraud on Roatán.
+CLIMATE
+Hot and humid: highs about 28°C in winter to 32°C in August–September, a dry spring (about 76 mm in April) and a very wet October–December (about 400–450 mm a month); hurricane season runs May–November, and Hurricane Mitch (1998) paralysed the island.
+COMMUNITY
+A long-settled community of American, Canadian, British and other settlers, concentrated in West End, West Bay and French Harbour, on an island of about 110,000 (2020); no expat headcount was found.
+GETTING THERE
+From St. Louis (STL): no nonstop; one stop via Atlanta or Houston, about 5–8 h.
+Roatán's airport (RTB) is near Coxen Hole, about 20 minutes from West End; ferries link the island to La Ceiba on the mainland.
+Routes as of Nov 2026; flying times are estimates.
+WORTH KNOWING
+Thin hospital care: the public hospital burned in 2024 and was reportedly replaced only in 2025, and serious illness means an evacuation flight
+A worldwide-income tax bill keeps returning to Congress
+Very wet late-year months, hurricane risk, and a Level 3 US advisory for the country
+YOUR PLAN HERE
+PLAN HOLDS
+78
+%
++14 pts vs 64% in St. Louis
+A YEAR HERE
+$85,307
+−22% vs $110,000 in St. Louis
+BY CATEGORY
+St. Louis
+Roatán
+Housing: $23K here vs $26K in St. Louis, −13%.
+Housing
+$23K
+−13%
+Groceries: $7.4K here vs $11K in St. Louis, −32%.
+Groceries
+$7.4K
+−32%
+Dining out: $5.5K here vs $8.0K in St. Louis, −32%.
+Dining out
+$5.5K
+−32%
+Transport: $7.4K here vs $10K in St. Louis, −26%.
+Transport
+$7.4K
+−26%
+Utilities: $4.1K here vs $5.5K in St. Louis, −26%.
+Utilities
+$4.1K
+−26%
+Healthcare: $9.8K here vs $16K in St. Louis, −39%.
+Healthcare
+$9.8K
+−39%
+Travel: $14K here vs $14K in St. Louis, same.
+Travel
+$14K
+same
+Other: $15K here vs $20K in St. Louis, −26%.
+Other
+$15K
+−26%
+Your St. Louis budget at local prices, with your expat price premium (35%).
+Local tax and estate for Roatán ready.
+LOCAL TAX & ESTATE
+No wealth or inheritance tax modelled for Honduras: none reaches a US portfolio.
+Estate at 85
+median, borrow and never sell
+$12M
++$1.8M vs $10M staying in St. Louis
+Today’s dollars, from 4,000 simulated futures of your plan with Roatán as the destination.
+Make Roatán my destination
+SOURCES
+PwC Worldwide Tax Summaries: Honduras, taxes on personal income · 2026
+PwC Worldwide Tax Summaries: Honduras, other taxes · 2026
+TaxAtlas: Honduras wealth tax
+Consortium Legal: Residencia en Honduras
+El Heraldo: Ley de Justicia Tributaria vote collapses (May 2025)
+Direct Relief: Fire destroyed an island hospital (Roatán, 2024)
+Government of Canada: Honduras travel advice
+GOV.UK: Honduras travel advice, safety and security
+Travel Advisory: Honduras (US State Dept levels)
+Weather2Travel: Roatán climate
+Wikipedia: Roatán
+Wikipedia: Juan Manuel Gálvez International Airport
+Finantres: Interactive Brokers in Honduras · 2026
+YourTaxBase: Charles Schwab for expats (country list, Oct 2026)
+Your Tax Base: best brokerage for US expats (Oct 2026) · 2026
+La Prensa: hospital modernisation, Hospital Satuyé in Roatán in operation (Dec 2025) · 2025
+Cost indices verified November 6, 2026 from livingcost.org (mapped). Low confidence: livingcost.org has no Roatán page (404) and Numbeo returned HTTP 429. Tegucigalpa priced by the Stage 5 livingcost method (37/10/35/29), then adjusted for an island resort with imported goods and a US-expat rental market: col +15%, rent +100%, groceries +20%, restaurants +25%. A judgment adjustment; the result is close to livingcost's San Pedro Town (Ambergris Caye) page at 45/20/50/37. Not tax or legal advice.
+
+===== phone · Panama City =====
+No. 4 Panama City
+YOUR PLAN HERE
+73%
+plan holds
++9 pts vs 64% in St. Louis
+1 / 5
+Panama City's skyline curving around the bay
+Neoredacturus · CC BY-SA 4.0
+PA
+TOP PICK 4 OF 75 · PANAMA
+Dollarized hub city with top private hospitals
+Panama is 2nd in International Living's 2026 index and 1st in Expat Insider 2025 and 2026. Its territorial system leaves US dividends and interest untaxed, and it has no wealth or inheritance tax. The capital adds Central America's strongest private hospitals and Copa's hub, with nonstops to dozens of US cities. The catch for a portfolio-only retiree is residency, which needs a pension or about $200k placed in Panama.
+HOW IT SCORES · out of 5, for a US retiree on buy-borrow-die
+Tax on holdings
+5
+out of 5
+Estate
+5
+out of 5
+Lending
+4
+out of 5
+Residency
+3
+out of 5
+Healthcare
+4
+out of 5
+Cost
+3
+out of 5
+Safety
+3
+out of 5
+Climate
+3
+out of 5
+Community
+4
+out of 5
+THE ESSENTIALS
+TAX ON HOLDINGS
+No wealth tax; the system is territorial, so dividends and interest from a US brokerage are generally outside Panamanian tax (PwC states the principle, not the specific items); no newcomer regime is needed, and the currency is the US dollar.
+ESTATE & INHERITANCE
+Panama has no inheritance, estate or gift tax, so heirs owe nothing locally on US assets; there is no US estate treaty, and US estate tax still applies to the worldwide estate above the $15M exemption (2026).
+LENDING & BROKERS
+Interactive Brokers reportedly accepts Panama residents, and Schwab One International's application reportedly lists Panama (checked October 2026), with no known margin restriction outside Europe; IBKR margin terms by country are unconfirmed, and Fidelity and Vanguard reportedly open no new accounts for residents abroad.
+RESIDENCY
+A US portfolio alone does not qualify: Friendly Nations needs $200k+ in Panamanian real estate or a local fixed-term deposit (2 years provisional, then permanent; the US is on the list), and Qualified Investor needs $300k in new local property or $500k in resale property, $500k in local securities, or $500k–750k on a five-year deposit (Decree 17, September 2026); Pensionado is permanent on a $1,000/month lifetime pension, which portfolio income does not meet.
+HEALTHCARE
+Strong private hospitals (Hospital Punta Pacífica, affiliated with Johns Hopkins Medicine; Pacífica Salud, Hospital Nacional, Paitilla), often with internationally trained, English-speaking doctors; pensionados get 15–20% off medical bills (Law 562 changes the discounts from May 2027), and local private cover runs about $350–700+/month in your 60s, so most expats insure privately.
+SAFETY
+Panama is 81st of 163 in the 2026 Global Peace Index and US State Dept Level 2 (August 2026); expats favour Punta Pacífica, San Francisco and Casco, as some districts and nearby Colón have high crime.
+CLIMATE
+Hot and humid all year (highs about 30°C / 86°F), with heavy rain roughly May–December.
+COMMUNITY
+Large, mixed international community of retirees, diplomats and business people; English is widely used where foreigners live.
+GETTING THERE
+From St. Louis (STL): no nonstop; one stop via Tampa or Cancún, about 6–9 h.
+Tocumen (PTY), a major connecting hub for the Americas, is about 25 km east of the centre.
+Routes as of Nov 2026; flying times are estimates.
+WORTH KNOWING
+Heat, humidity and an eight-month rainy season
+Without a pension, residency means parking $200k or more in Panamanian property or deposits
+Traffic, noise, and condo prices in expat areas close to mid-tier US cities
+YOUR PLAN HERE
+PLAN HOLDS
+73
+%
++9 pts vs 64% in St. Louis
+A YEAR HERE
+$94,094
+−14% vs $110,000 in St. Louis
+BY CATEGORY
+St. Louis
+Panama City
+Housing: $29K here vs $26K in St. Louis, +12%.
+Housing
+$29K
++12%
+Groceries: $8.5K here vs $11K in St. Louis, −22%.
+Groceries
+$8.5K
+−22%
+Dining out: $6.3K here vs $8.0K in St. Louis, −21%.
+Dining out
+$6.3K
+−21%
+Transport: $8.0K here vs $10K in St. Louis, −20%.
+Transport
+$8.0K
+−20%
+Utilities: $4.4K here vs $5.5K in St. Louis, −20%.
+Utilities
+$4.4K
+−20%
+Healthcare: $8.2K here vs $16K in St. Louis, −49%.
+Healthcare
+$8.2K
+−49%
+Travel: $14K here vs $14K in St. Louis, same.
+Travel
+$14K
+same
+Other: $16K here vs $20K in St. Louis, −20%.
+Other
+$16K
+−20%
+Your St. Louis budget at local prices, with your expat price premium (35%).
+Local tax and estate for Panama City ready.
+LOCAL TAX & ESTATE
+No wealth or inheritance tax modelled for Panama: none reaches a US portfolio.
+Estate at 85
+median, borrow and never sell
+$12M
++$1.2M vs $10M staying in St. Louis
+Today’s dollars, from 4,000 simulated futures of your plan with Panama City as the destination.
+Make Panama City my destination
+SOURCES
+PwC Worldwide Tax Summaries: Panama, taxes on personal income · 2026
+PwC Worldwide Tax Summaries: Panama, other taxes · 2026
+Reside Panama: Panama visa options for expats in 2026
+Reside Panama: Healthcare in Panama, hospitals, insurance and costs 2026
+Your Tax Base: Charles Schwab for expats (country list, Oct 2026)
+Relofirm: Panama Pensionado requirements (updated Oct 2026)
+401(k) Specialist: International Living Global Retirement Index 2026 · 2026
+IEP Global Peace Index 2026 map poster · 2026
+Kraemer & Kraemer: Panama Qualified Investor visa (Decree 17 of 2026) · 2026
+Gaceta Oficial 30601: Executive Decree 16 of 2026, friendly-nations list (copy by NDM) · 2026
+Telemetro: Law 562, new retiree discounts from May 2027 · 2026
+Your Tax Base: Best brokerage for US expats (Oct 2026)
+Cost indices verified November 6, 2026 from Numbeo current city index. Not tax or legal advice.
+
+console errors: none

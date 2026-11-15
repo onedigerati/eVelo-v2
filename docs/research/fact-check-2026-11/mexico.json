@@ -1,0 +1,1240 @@
+{
+  "country": "Mexico",
+  "cities": [
+    "mexico-city",
+    "merida",
+    "puerto-vallarta",
+    "san-miguel-de-allende",
+    "playa-del-carmen",
+    "lake-chapala",
+    "oaxaca",
+    "la-paz",
+    "mazatlan"
+  ],
+  "claims": [
+    {
+      "id": "mx-tax-no-wealth-tax",
+      "fact": "tax",
+      "claim": "Mexico has no wealth tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Mexico, other taxes",
+          "url": "https://taxsummaries.pwc.com/mexico/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 06 August 2026. \"There are no net wealth/worth taxes in Mexico.\" \"There is no specific inheritance, estate, or gift tax in Mexico.\" Inheritances and gifts are treated as income but may be exempt: inherited income received by a Mexican resident is exempt from income tax; gifts from a spouse, ancestors or descendants are exempt, others up to three times the annual UMA."
+        },
+        {
+          "name": "PwC quick chart: net wealth/worth tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/net-wealth-worth-tax-rates",
+          "read": "2026-11-15",
+          "says": "Mexico (last reviewed 06 August 2026): \"NA\", which the page defines as \"the territory does not have the indicated tax or requirement\"."
+        }
+      ],
+      "note": "localTaxes.ts (MX) agrees.",
+      "cities": [
+        "mexico-city",
+        "merida",
+        "puerto-vallarta",
+        "san-miguel-de-allende",
+        "playa-del-carmen",
+        "lake-chapala",
+        "oaxaca",
+        "la-paz",
+        "mazatlan"
+      ]
+    },
+    {
+      "id": "mx-tax-top-rate-worldwide",
+      "fact": "tax",
+      "claim": "Tax residents pay up to 35% (2026) on worldwide income",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Mexico, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/mexico/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 06 August 2026. \"Resident individuals are subject to Mexican income tax on their worldwide income, regardless of their nationality.\" The 2026 tariff's top row: MXN 5,107,703.93 and above, fixed fee 1,601,862.46, 35.00%."
+        }
+      ],
+      "cities": [
+        "mexico-city",
+        "merida",
+        "puerto-vallarta",
+        "san-miguel-de-allende",
+        "playa-del-carmen",
+        "lake-chapala",
+        "oaxaca",
+        "la-paz",
+        "mazatlan"
+      ]
+    },
+    {
+      "id": "mx-tax-foreign-dividends-taxable",
+      "fact": "tax",
+      "claim": "Foreign dividends are fully taxable for residents",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Mexico, income determination",
+          "url": "https://taxsummaries.pwc.com/mexico/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 06 August 2026. \"Dividends paid by foreign corporations to resident individuals are fully taxable in the annual tax return. In addition, similar to domestic dividends, there is a 10% tax on the net dividend that the individual must pay by the 17th day of the following month\"; for domestic dividends the 10% \"is in addition to the tax paid with the annual tax return, and it cannot be credited in the return.\" Interest on bank accounts, bonds and other debt issued by non-residents \"is fully taxable\", and \"the taxable interest includes adjustments for inflationary losses and exchange gains and losses\"."
+        }
+      ],
+      "cities": [
+        "mexico-city",
+        "merida",
+        "puerto-vallarta",
+        "san-miguel-de-allende",
+        "playa-del-carmen",
+        "lake-chapala",
+        "oaxaca",
+        "la-paz",
+        "mazatlan"
+      ]
+    },
+    {
+      "id": "mx-tax-dividend-extra-10",
+      "fact": "tax",
+      "claim": "A separate 10% tax applies to the net foreign dividend and cannot be credited",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Mexico, income determination",
+          "url": "https://taxsummaries.pwc.com/mexico/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 06 August 2026. \"Dividends paid by foreign corporations to resident individuals are fully taxable in the annual tax return. In addition, similar to domestic dividends, there is a 10% tax on the net dividend that the individual must pay by the 17th day of the following month\"; for domestic dividends the 10% \"is in addition to the tax paid with the annual tax return, and it cannot be credited in the return.\" Interest on bank accounts, bonds and other debt issued by non-residents \"is fully taxable\", and \"the taxable interest includes adjustments for inflationary losses and exchange gains and losses\"."
+        }
+      ],
+      "note": "PwC states the 10% for foreign dividends (\"similar to domestic dividends\") and says of the domestic 10% that it \"cannot be credited in the return\"; the non-creditability is stated for the domestic tax and applied to the foreign one by \"similar\". Summaries, drawbacks and the expatPicks why lines (\"up to 35% plus 10%\") agree.",
+      "cities": [
+        "mexico-city",
+        "merida",
+        "puerto-vallarta",
+        "san-miguel-de-allende",
+        "playa-del-carmen",
+        "lake-chapala",
+        "oaxaca",
+        "la-paz",
+        "mazatlan"
+      ]
+    },
+    {
+      "id": "mx-tax-foreign-interest-fx",
+      "fact": "tax",
+      "claim": "Foreign interest is fully taxable, with exchange gains included",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Mexico, income determination",
+          "url": "https://taxsummaries.pwc.com/mexico/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 06 August 2026. \"Dividends paid by foreign corporations to resident individuals are fully taxable in the annual tax return. In addition, similar to domestic dividends, there is a 10% tax on the net dividend that the individual must pay by the 17th day of the following month\"; for domestic dividends the 10% \"is in addition to the tax paid with the annual tax return, and it cannot be credited in the return.\" Interest on bank accounts, bonds and other debt issued by non-residents \"is fully taxable\", and \"the taxable interest includes adjustments for inflationary losses and exchange gains and losses\"."
+        }
+      ],
+      "cities": [
+        "mexico-city",
+        "merida",
+        "puerto-vallarta",
+        "san-miguel-de-allende",
+        "playa-del-carmen",
+        "lake-chapala",
+        "oaxaca",
+        "la-paz",
+        "mazatlan"
+      ]
+    },
+    {
+      "id": "mx-tax-loan-proceeds",
+      "fact": "tax",
+      "claim": "Margin-loan proceeds are not income",
+      "verdict": "corrected",
+      "oldWording": "margin-loan proceeds are not income, so",
+      "newWording": "margin-loan proceeds are not income (loans above MXN 600,000 a year must be reported in the annual return, or they are taxed as income), so",
+      "sources": [
+        {
+          "name": "mley.mx: LISR article 90 (copy of the Cámara de Diputados text)",
+          "url": "https://mley.mx/LISR/articulo/90/",
+          "read": "2026-11-15",
+          "says": "Last checked 15/09/2026, source Cámara de Diputados. Article 90: \"Las personas físicas residentes en México están obligadas a informar\" in the annual return the loans, gifts and prizes received in the year when, individually or together, they \"excedan de $600,000.00\"."
+        },
+        {
+          "name": "IDC Online: Líneas de crédito, ¿se reportan en la declaración anual?",
+          "url": "https://idconline.mx/fiscal-contable/2025/04/30/lineas-de-credito-se-reportan-en-la-declaracion-anual",
+          "read": "2026-11-15",
+          "says": "Dated 30 April 2025. Individuals must report loans, gifts and prizes in the annual return when \"de forma individual o de manera conjunta superen la cantidad de $600,000.00\" (LISR art. 90); if not reported, the presumption in art. 91 applies and the amounts \"deben considerarse como ingresos omitidos\". The author holds that credit lines count as loans to be reported."
+        }
+      ],
+      "also": [
+        "sources: added IDC Online on LISR art. 90 to all nine profiles"
+      ],
+      "note": "A loan is not income, but LISR art. 90 requires residents to report loans, gifts and prizes over MXN 600,000 in a year, and art. 91 treats unreported amounts as omitted income with no proof to the contrary. A BBD borrower drawing margin in Mexico would cross that line quickly, so the flat statement misled; the correction adds the condition. The statute was read on mley.mx's copy of the Cámara de Diputados text (a secondary host); the DOF and diputados.gob.mx PDF were not tried. Whether a broker margin balance counts as a \"préstamo\" for the rule is not settled on any page read (IDC's author argues credit lines do), so \"get local advice\" stays.",
+      "cities": [
+        "mexico-city",
+        "merida",
+        "puerto-vallarta",
+        "san-miguel-de-allende",
+        "playa-del-carmen",
+        "lake-chapala",
+        "oaxaca",
+        "la-paz",
+        "mazatlan"
+      ]
+    },
+    {
+      "id": "mx-estate-no-inheritance-tax",
+      "fact": "estate",
+      "claim": "Mexico has no inheritance or estate tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Mexico, other taxes",
+          "url": "https://taxsummaries.pwc.com/mexico/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 06 August 2026. \"There are no net wealth/worth taxes in Mexico.\" \"There is no specific inheritance, estate, or gift tax in Mexico.\" Inheritances and gifts are treated as income but may be exempt: inherited income received by a Mexican resident is exempt from income tax; gifts from a spouse, ancestors or descendants are exempt, others up to three times the annual UMA."
+        },
+        {
+          "name": "PwC quick chart: inheritance and gift tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates",
+          "read": "2026-11-15",
+          "says": "Mexico (last reviewed 06 August 2026): inheritances \"are treated as income under the income tax law and must be reported\" but \"are generally tax exempt for tax residents\"."
+        }
+      ],
+      "note": "localTaxes.ts (MX) agrees.",
+      "cities": [
+        "mexico-city",
+        "merida",
+        "puerto-vallarta",
+        "san-miguel-de-allende",
+        "playa-del-carmen",
+        "lake-chapala",
+        "oaxaca",
+        "la-paz",
+        "mazatlan"
+      ]
+    },
+    {
+      "id": "mx-estate-inheritance-exempt",
+      "fact": "estate",
+      "claim": "Inheritances received by Mexican residents are exempt from income tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Mexico, other taxes",
+          "url": "https://taxsummaries.pwc.com/mexico/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 06 August 2026. \"There are no net wealth/worth taxes in Mexico.\" \"There is no specific inheritance, estate, or gift tax in Mexico.\" Inheritances and gifts are treated as income but may be exempt: inherited income received by a Mexican resident is exempt from income tax; gifts from a spouse, ancestors or descendants are exempt, others up to three times the annual UMA."
+        },
+        {
+          "name": "PwC quick chart: inheritance and gift tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates",
+          "read": "2026-11-15",
+          "says": "Mexico (last reviewed 06 August 2026): inheritances \"are treated as income under the income tax law and must be reported\" but \"are generally tax exempt for tax residents\"."
+        }
+      ],
+      "cities": [
+        "mexico-city",
+        "merida",
+        "puerto-vallarta",
+        "san-miguel-de-allende",
+        "playa-del-carmen",
+        "lake-chapala",
+        "oaxaca",
+        "la-paz",
+        "mazatlan"
+      ]
+    },
+    {
+      "id": "mx-estate-us-heirs-inference",
+      "fact": "estate",
+      "claim": "US-resident heirs receiving US assets fall outside Mexican tax",
+      "verdict": "cant-confirm",
+      "hedge": "an inference",
+      "wording": "should fall outside Mexican tax (an inference)",
+      "sources": [
+        {
+          "name": "PwC: Mexico, other taxes",
+          "url": "https://taxsummaries.pwc.com/mexico/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 06 August 2026. \"There are no net wealth/worth taxes in Mexico.\" \"There is no specific inheritance, estate, or gift tax in Mexico.\" Inheritances and gifts are treated as income but may be exempt: inherited income received by a Mexican resident is exempt from income tax; gifts from a spouse, ancestors or descendants are exempt, others up to three times the annual UMA."
+        },
+        {
+          "name": "PwC: Mexico, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/mexico/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 06 August 2026. \"Resident individuals are subject to Mexican income tax on their worldwide income, regardless of their nationality.\" The 2026 tariff's top row: MXN 5,107,703.93 and above, fixed fee 1,601,862.46, 35.00%."
+        }
+      ],
+      "note": "PwC taxes residents on worldwide income and exempts inheritances received by residents; no page read addresses a non-resident heir receiving non-Mexican assets. The profile already calls it an inference. Estate score 5 kept, consistent with the rubric note that an inferred reach scores one lower only where a tax exists: Mexico has no inheritance tax at all.",
+      "cities": [
+        "mexico-city",
+        "merida",
+        "puerto-vallarta",
+        "san-miguel-de-allende",
+        "playa-del-carmen",
+        "lake-chapala",
+        "oaxaca",
+        "la-paz",
+        "mazatlan"
+      ]
+    },
+    {
+      "id": "mx-estate-no-us-treaty",
+      "fact": "estate",
+      "claim": "There is no US estate treaty",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-without",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list); none of the 37 countries named in this claim is among them."
+        }
+      ],
+      "cities": [
+        "mexico-city",
+        "merida",
+        "puerto-vallarta",
+        "san-miguel-de-allende",
+        "playa-del-carmen",
+        "lake-chapala",
+        "oaxaca",
+        "la-paz",
+        "mazatlan"
+      ]
+    },
+    {
+      "id": "mx-estate-us-exemption-2026",
+      "fact": "estate",
+      "claim": "US estate tax applies above the $15M exemption (2026)",
+      "verdict": "confirmed",
+      "shared": "us-estate-exemption-2026",
+      "sources": [
+        {
+          "name": "IRS: What's new, estate and gift tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax",
+          "read": "2026-11-15",
+          "says": "The table \"Basic exclusion amount for year of death\" has the row 2026: $15,000,000 (2025: $13,990,000). The page says the Working Families Tax Cuts, Public Law 119-21, signed July 4, 2025, \"amends § 2010(c)(3) by increasing the basic exclusion amount to $15,000,000 for calendar year 2026\". Page last reviewed or updated 03-Nov-2026."
+        },
+        {
+          "name": "IRS: Estate tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-tax",
+          "read": "2026-11-15",
+          "says": "A return is required when the gross estate, plus adjusted taxable gifts and specific exemption, is more than the filing threshold for the year of death; the table gives 2026: $15,000,000. Page last reviewed or updated 23-Oct-2026."
+        },
+        {
+          "name": "IRS news release IR-2025-103: tax inflation adjustments for tax year 2026",
+          "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill",
+          "read": "2026-11-15",
+          "says": "\"Estates of decedents who die during 2026 have a basic exclusion amount of $15,000,000\", up from $13,990,000 for 2025; the release (October 9, 2025) cites Revenue Procedure 2025-32 and is marked as an archival document."
+        }
+      ],
+      "cities": [
+        "mexico-city",
+        "merida",
+        "puerto-vallarta",
+        "san-miguel-de-allende",
+        "playa-del-carmen",
+        "lake-chapala",
+        "oaxaca",
+        "la-paz",
+        "mazatlan"
+      ]
+    },
+    {
+      "id": "mx-estate-us-tax-applies-abroad",
+      "fact": "estate",
+      "claim": "Only US estate tax applies to a US citizen resident in Mexico",
+      "verdict": "confirmed",
+      "shared": "us-estate-exemption-applies-abroad",
+      "sources": [
+        {
+          "name": "IRS: Some nonresidents with U.S. assets must file estate tax returns",
+          "url": "https://www.irs.gov/individuals/international-taxpayers/some-nonresidents-with-us-assets-must-file-estate-tax-returns",
+          "read": "2026-11-15",
+          "says": "\"U.S. citizens are subject to U.S. estate taxation with respect to their worldwide assets\"; Form 706 is required when worldwide assets plus adjusted taxable gifts exceed the basic exclusion amount in effect on the date of death. By contrast a nonresident who is not a citizen files when US-situated assets exceed $60,000. Page last reviewed or updated 27-Jun-2026."
+        }
+      ],
+      "cities": [
+        "mexico-city",
+        "merida",
+        "puerto-vallarta",
+        "san-miguel-de-allende",
+        "playa-del-carmen",
+        "lake-chapala",
+        "oaxaca",
+        "la-paz",
+        "mazatlan"
+      ]
+    },
+    {
+      "id": "mx-lending-ibkr-accepts",
+      "fact": "lending",
+      "claim": "IBKR accepts Mexico residents (IBKR Pro)",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly accepts Mexico residents (IBKR Pro)",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes \"Mexico\", \"Guatemala\" and \"Honduras\"; the page names no IBKR entity for Latin American residents and says to \"Check if Interactive Brokers is available in your country\"."
+        }
+      ],
+      "note": "IBKR's country list (https://www.interactivebrokers.com/en/accounts/open-account-country-list.php) returned HTTP 403 on 2026-11-15. Banker on Wheels lists Mexico.",
+      "cities": [
+        "mexico-city",
+        "merida",
+        "puerto-vallarta",
+        "san-miguel-de-allende",
+        "playa-del-carmen",
+        "lake-chapala",
+        "oaxaca",
+        "la-paz",
+        "mazatlan"
+      ]
+    },
+    {
+      "id": "mx-lending-schwab-accepts",
+      "fact": "lending",
+      "claim": "Schwab One International's online form accepted Mexico in Oct 2026",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab One International's online form reportedly accepted Mexico in Oct 2026",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. On that day the author ran every entry in Schwab's international account selector through the application: it accepted residents of 51 of 263 countries and regions: Argentina, Australia, Austria, the Bahamas, Belgium, Bermuda, Brazil, the British Virgin Islands, the Cayman Islands, Chile, China, Colombia, Costa Rica, the Czech Republic, Denmark, Ecuador, Finland, Germany, Greece, Guatemala, Hong Kong, Iceland, India, Indonesia, Ireland, Israel, Jersey, Luxembourg, Malaysia, the Marshall Islands, Mexico, the Netherlands, Norway, Panama, Paraguay, Peru, Poland, Portugal, Qatar, Singapore, South Korea, Spain, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Turks and Caicos, the United Arab Emirates, the United Kingdom and Uruguay. Named as not accepted: Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam; for the rest the application said \"Schwab currently cannot open accounts for residents of your country/region.\" The test covers new applicants on that day only."
+        },
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Country check run October 23, 2026: Mexico and Guatemala are among the 51 countries whose residents the online application accepted; Honduras is not on the list, and for countries off it the application said \"Schwab currently cannot open accounts for residents of your country/region. Please check back with us in the future.\" Nothing on margin outside Europe."
+        }
+      ],
+      "note": "Re-read 2026-11-15: Mexico is on the list. https://international.schwab.com/ returned HTTP 403. Lending score 4 stays (rubric: Schwab reported to accept residents outside Europe plus IBKR).",
+      "cities": [
+        "mexico-city",
+        "merida",
+        "puerto-vallarta",
+        "san-miguel-de-allende",
+        "playa-del-carmen",
+        "lake-chapala",
+        "oaxaca",
+        "la-paz",
+        "mazatlan"
+      ]
+    },
+    {
+      "id": "mx-lending-margin-unreported",
+      "fact": "lending",
+      "claim": "Margin terms by country of residence are unreported",
+      "verdict": "cant-confirm",
+      "hedge": "unreported",
+      "wording": "margin by country of residence is unreported",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Country check run October 23, 2026: Mexico and Guatemala are among the 51 countries whose residents the online application accepted; Honduras is not on the list, and for countries off it the application said \"Schwab currently cannot open accounts for residents of your country/region. Please check back with us in the future.\" Nothing on margin outside Europe."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes \"Mexico\", \"Guatemala\" and \"Honduras\"; the page names no IBKR entity for Latin American residents and says to \"Check if Interactive Brokers is available in your country\"."
+        }
+      ],
+      "note": "A statement of what is not known; neither page gives margin terms for Mexico residents.",
+      "cities": [
+        "mexico-city",
+        "merida",
+        "puerto-vallarta",
+        "san-miguel-de-allende",
+        "playa-del-carmen",
+        "lake-chapala",
+        "oaxaca",
+        "la-paz",
+        "mazatlan"
+      ]
+    },
+    {
+      "id": "mx-lending-fidelity-vanguard",
+      "fact": "lending",
+      "claim": "Fidelity and Vanguard open no accounts for residents abroad",
+      "verdict": "cant-confirm",
+      "hedge": "reportedly",
+      "oldWording": "and Fidelity and Vanguard open no accounts for residents abroad",
+      "wording": "Fidelity and Vanguard reportedly open no new accounts for residents abroad",
+      "sources": [
+        {
+          "name": "Your Tax Base: best brokerage for US expats",
+          "url": "https://yourtaxbase.com/blog/best-brokerage-for-us-expats",
+          "read": "2026-11-15",
+          "says": "Dated October 23, 2026. Quotes Fidelity's FAQ: \"we do not open accounts for any new customers residing outside the United States.\" Vanguard requires US citizenship or permanent residence \"with a U.S. mailing address\" and sends people living abroad to its international site. Interactive Brokers: \"Accounts are accepted from citizens or residents of all countries.\""
+        }
+      ],
+      "also": [
+        "hedge added: \"reportedly\", and \"no accounts\" narrowed to \"no new accounts\", as Zurich's ch-lending-fidelity-vanguard",
+        "sources: added the Your Tax Base best-brokerage page to all nine profiles"
+      ],
+      "note": "A broker claim on a secondary page stays reported (rule 3). Fidelity's FAQ (https://www.fidelity.com/accounts/services/investors_outside_US_faq.shtml) returned HTTP 403 on 2026-11-15.",
+      "cities": [
+        "mexico-city",
+        "merida",
+        "puerto-vallarta",
+        "san-miguel-de-allende",
+        "playa-del-carmen",
+        "lake-chapala",
+        "oaxaca",
+        "la-paz",
+        "mazatlan"
+      ]
+    },
+    {
+      "id": "mx-visa-solvency-savings",
+      "fact": "visa",
+      "claim": "Temporary residency on economic solvency accepts savings or investment balances",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Consulate General of Mexico in San Diego: Temporary Resident Visa, Economic Solvency (2026 sheet, PDF)",
+          "url": "https://consulmex.sre.gob.mx/sandiego/images/visas/ingles/5a_Temporary_Resident_Visa_-_Economic_Solvency.pdf",
+          "read": "2026-11-15",
+          "says": "Headed 2026 (file created 2026-01-08). Proof by \"(a) Original bank statements (savings or investments) proving a minimum monthly balance of at least $68,241.00 USD for the previous twelve months\" or \"(b) ... an income of at least $4,049.00 USD per month through employment or pension for the previous six months\"."
+        },
+        {
+          "name": "Mexperience: Financial criteria for residency in Mexico",
+          "url": "https://mexperience.com/financial-criteria-for-residency-in-mexico/",
+          "read": "2026-11-15",
+          "says": "Dated November 13, 2026, \"Criteria for 2026\", based on the 2026 UMA of MXN 117.31 at 18 MXN/USD. Temporary: income MXN 79,771 (USD 4,432)/month over 6 months or savings/investments MXN 1,344,373 (USD 74,687) over 12 months. Permanent: income MXN 133,733 (USD 7,430)/month or savings/investments MXN 5,378,664 (USD 298,815); consulates require applicants \"to be retired\" for permanent residency, and consulate criteria are \"within +/- 5%-10% of these figures\"."
+        }
+      ],
+      "cities": [
+        "mexico-city",
+        "merida",
+        "puerto-vallarta",
+        "san-miguel-de-allende",
+        "playa-del-carmen",
+        "lake-chapala",
+        "oaxaca",
+        "la-paz",
+        "mazatlan"
+      ]
+    },
+    {
+      "id": "mx-visa-san-diego-amounts",
+      "fact": "visa",
+      "claim": "The San Diego consulate's 2026 sheet asks for about $68,200 average monthly balance over 12 months or $4,049/month of income for 6 months",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Consulate General of Mexico in San Diego: Temporary Resident Visa, Economic Solvency (2026 sheet, PDF)",
+          "url": "https://consulmex.sre.gob.mx/sandiego/images/visas/ingles/5a_Temporary_Resident_Visa_-_Economic_Solvency.pdf",
+          "read": "2026-11-15",
+          "says": "Headed 2026 (file created 2026-01-08). Proof by \"(a) Original bank statements (savings or investments) proving a minimum monthly balance of at least $68,241.00 USD for the previous twelve months\" or \"(b) ... an income of at least $4,049.00 USD per month through employment or pension for the previous six months\"."
+        }
+      ],
+      "note": "The sheet is the 2026 one ($68,241 and $4,049). It says the income must be \"through employment or pension\", which the profile's \"of income\" does not contradict. The figures are 11,460 and 680 times the 2026 UMA (MXN 117.31) at about 19.7 MXN/USD. The PDF came back as binary; its text streams were decompressed with Python's standard library.",
+      "cities": [
+        "mexico-city",
+        "merida",
+        "puerto-vallarta",
+        "san-miguel-de-allende",
+        "playa-del-carmen",
+        "lake-chapala",
+        "oaxaca",
+        "la-paz",
+        "mazatlan"
+      ]
+    },
+    {
+      "id": "mx-visa-other-consulates",
+      "fact": "visa",
+      "claim": "Other consulates ask more, about $74,700 or $4,430/month",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Mexperience: Financial criteria for residency in Mexico",
+          "url": "https://mexperience.com/financial-criteria-for-residency-in-mexico/",
+          "read": "2026-11-15",
+          "says": "Dated November 13, 2026, \"Criteria for 2026\", based on the 2026 UMA of MXN 117.31 at 18 MXN/USD. Temporary: income MXN 79,771 (USD 4,432)/month over 6 months or savings/investments MXN 1,344,373 (USD 74,687) over 12 months. Permanent: income MXN 133,733 (USD 7,430)/month or savings/investments MXN 5,378,664 (USD 298,815); consulates require applicants \"to be retired\" for permanent residency, and consulate criteria are \"within +/- 5%-10% of these figures\"."
+        },
+        {
+          "name": "Embassy of Mexico in Washington: Residente Permanente (jubilado oficial o mayor de 62 años), 2026 sheet (PDF)",
+          "url": "https://consulmex.sre.gob.mx/washington/images/2026/visas/esp/Residente_Permanente_Jubilado.pdf",
+          "read": "2026-11-15",
+          "says": "Filed under 2026. Solvency by \"estados de cuentas bancarias personales o cuentas de inversiones personales con un saldo mínimo promedio mensual de $5,576,000.00 MXN durante los últimos 12 meses\", or a pension of at least MXN 139,400.00 a month net for the last 6 months."
+        }
+      ],
+      "note": "Mexperience's 2026 table (UMA at 18 MXN/USD) gives $74,687 and $4,432 and says consulates vary by 5–10%. Washington still uses the 2025 daily minimum wage (MXN 278.80) multiples for its permanent sheet, so its figures are higher still. The brief's warning about yearly minimum-wage changes: consulates moved to UMA in 2025 (Mexperience); the 2026 UMA is the figure in force, and no pending change for 2027 was found.",
+      "cities": [
+        "mexico-city",
+        "merida",
+        "puerto-vallarta",
+        "san-miguel-de-allende",
+        "playa-del-carmen",
+        "lake-chapala",
+        "oaxaca",
+        "la-paz",
+        "mazatlan"
+      ]
+    },
+    {
+      "id": "mx-visa-permanent-retirees",
+      "fact": "visa",
+      "claim": "Permanent residency for retirees is about $299,000 or $7,430/month (2026)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Mexperience: Financial criteria for residency in Mexico",
+          "url": "https://mexperience.com/financial-criteria-for-residency-in-mexico/",
+          "read": "2026-11-15",
+          "says": "Dated November 13, 2026, \"Criteria for 2026\", based on the 2026 UMA of MXN 117.31 at 18 MXN/USD. Temporary: income MXN 79,771 (USD 4,432)/month over 6 months or savings/investments MXN 1,344,373 (USD 74,687) over 12 months. Permanent: income MXN 133,733 (USD 7,430)/month or savings/investments MXN 5,378,664 (USD 298,815); consulates require applicants \"to be retired\" for permanent residency, and consulate criteria are \"within +/- 5%-10% of these figures\"."
+        },
+        {
+          "name": "Embassy of Mexico in Washington: Residente Permanente (jubilado oficial o mayor de 62 años), 2026 sheet (PDF)",
+          "url": "https://consulmex.sre.gob.mx/washington/images/2026/visas/esp/Residente_Permanente_Jubilado.pdf",
+          "read": "2026-11-15",
+          "says": "Filed under 2026. Solvency by \"estados de cuentas bancarias personales o cuentas de inversiones personales con un saldo mínimo promedio mensual de $5,576,000.00 MXN durante los últimos 12 meses\", or a pension of at least MXN 139,400.00 a month net for the last 6 months."
+        }
+      ],
+      "note": "Mexperience 2026: $298,815 savings or $7,430/month income, with consulates requiring applicants to be retired. Washington's 2026 sheet for retirees (official retirement or 62+) asks more: MXN 5,576,000 average balance (about $310,000 at 18) or a MXN 139,400/month pension; \"about\" covers the consulate spread.",
+      "cities": [
+        "mexico-city",
+        "merida",
+        "puerto-vallarta",
+        "san-miguel-de-allende",
+        "playa-del-carmen",
+        "lake-chapala",
+        "oaxaca",
+        "la-paz",
+        "mazatlan"
+      ]
+    },
+    {
+      "id": "mx-visa-brokerage-counts",
+      "fact": "visa",
+      "claim": "A brokerage account counts as investments",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Embassy of Mexico in Washington: Residente Permanente (jubilado oficial o mayor de 62 años), 2026 sheet (PDF)",
+          "url": "https://consulmex.sre.gob.mx/washington/images/2026/visas/esp/Residente_Permanente_Jubilado.pdf",
+          "read": "2026-11-15",
+          "says": "Filed under 2026. Solvency by \"estados de cuentas bancarias personales o cuentas de inversiones personales con un saldo mínimo promedio mensual de $5,576,000.00 MXN durante los últimos 12 meses\", or a pension of at least MXN 139,400.00 a month net for the last 6 months."
+        },
+        {
+          "name": "Consulate General of Mexico in San Diego: Temporary Resident Visa, Economic Solvency (2026 sheet, PDF)",
+          "url": "https://consulmex.sre.gob.mx/sandiego/images/visas/ingles/5a_Temporary_Resident_Visa_-_Economic_Solvency.pdf",
+          "read": "2026-11-15",
+          "says": "Headed 2026 (file created 2026-01-08). Proof by \"(a) Original bank statements (savings or investments) proving a minimum monthly balance of at least $68,241.00 USD for the previous twelve months\" or \"(b) ... an income of at least $4,049.00 USD per month through employment or pension for the previous six months\"."
+        }
+      ],
+      "note": "Washington accepts \"cuentas de inversiones personales\"; San Diego \"bank statements (savings or investments)\". Neither names a brokerage account, but an investment account is one.",
+      "cities": [
+        "mexico-city",
+        "merida",
+        "puerto-vallarta",
+        "san-miguel-de-allende",
+        "playa-del-carmen",
+        "lake-chapala",
+        "oaxaca",
+        "la-paz",
+        "mazatlan"
+      ]
+    },
+    {
+      "id": "mx-healthcare-imss-fee",
+      "fact": "healthcare",
+      "cities": [
+        "mexico-city",
+        "merida",
+        "puerto-vallarta",
+        "san-miguel-de-allende",
+        "playa-del-carmen",
+        "lake-chapala",
+        "la-paz",
+        "mazatlan"
+      ],
+      "claim": "IMSS voluntary cover is about MXN 21,500/yr at 70–79 (2026)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IMSS: Seguro de Salud para la Familia (FAQ)",
+          "url": "https://imss.gob.mx/faq/seguro-familia",
+          "read": "2026-11-15",
+          "says": "\"Cuotas vigentes a partir del 1° de marzo de 2026\": yearly fee by age, 60-69 $20,600; 70-79 $21,500; 80 y más $22,150 (MXN). Eligible: families in Mexico and Mexicans abroad without other social security."
+        }
+      ],
+      "note": "Oaxaca's profile does not mention IMSS. Whether a foreign resident may enrol is not stated on the IMSS pages read; the profiles do not claim it."
+    },
+    {
+      "id": "mx-healthcare-imss-limits",
+      "fact": "healthcare",
+      "cities": [
+        "merida",
+        "puerto-vallarta"
+      ],
+      "claim": "IMSS voluntary cover has limits, including for pre-existing conditions",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IMSS: Incorporación al Seguro de Salud para la Familia (trámite IMSS-02-014)",
+          "url": "https://imss.gob.mx/tramites/imss02014",
+          "read": "2026-11-15",
+          "says": "Timestamp 05/03/2026; fees from 1 March 2026. \"No serán sujetos de aseguramiento las personas que presenten: Alguna enfermedad preexistente, tales como: tumores malignos, enfermedades crónico degenerativas\" and others; \"Aplican tiempos de espera\" for conditions in art. 83 of the RACERF, and there is no cover for those in art. 84."
+        }
+      ]
+    },
+    {
+      "id": "mx-healthcare-medicare",
+      "fact": "healthcare",
+      "cities": [
+        "mexico-city",
+        "lake-chapala"
+      ],
+      "claim": "Medicare is (generally) not accepted",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Medicare.gov: Travel outside the U.S.",
+          "url": "https://www.medicare.gov/coverage/travel-outside-the-u.s.",
+          "read": "2026-11-15",
+          "says": "\"Medicare usually doesn't cover health care while you're traveling outside the U.S. but there are some exceptions\"; it may pay \"in rare cases\"; \"You pay all of the costs, in most cases.\""
+        },
+        {
+          "name": "Access Lake Chapala: health care information",
+          "url": "https://www.accesslakechapala.com/guide/health-care/information/",
+          "read": "2026-11-15",
+          "says": "Undated. Lakeside Medical Group accepts many North American plans but not Medicare; \"I don't know of any place here that takes Medicare.\""
+        }
+      ]
+    },
+    {
+      "id": "mx-healthcare-cdmx-abc-jci",
+      "fact": "healthcare",
+      "cities": [
+        "mexico-city"
+      ],
+      "claim": "ABC Medical Center is JCI-accredited at Observatorio and Santa Fe (fifth consecutive accreditation in 2021)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "ABC Medical Center: Recognitions and certifications",
+          "url": "https://centromedicoabc.com/en/recognitions-and-certifications/",
+          "read": "2026-11-15",
+          "says": "Undated. \"For more than 14 years, our two campuses have been accredited in the Joint Commission International (JCI) hospital program\"; the site lists the Observatorio and Santa Fe campuses."
+        },
+        {
+          "name": "Pulse News Mexico: ABC Medical Center gets JCI accreditation for fifth year",
+          "url": "https://pulsenewsmexico.com/2021/05/21/abc-medical-center-gets-jci-accreditation-for-fifth-year/",
+          "read": "2026-11-15",
+          "says": "Dated May 21, 2021. \"For the fifth year in a row\" ABC received JCI accreditation \"at both its Observatorio and Santa Fe campuses\"."
+        }
+      ],
+      "note": "The JCI directory (jointcommission.org) returned HTTP 403, so the hospital's own page stands in. Also the summary."
+    },
+    {
+      "id": "mx-healthcare-cdmx-angeles-jci",
+      "fact": "healthcare",
+      "cities": [
+        "mexico-city"
+      ],
+      "claim": "Hospital Ángeles Pedregal and Lomas hold the JCI Gold Seal",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Hospital Ángeles: Joint Commission International",
+          "url": "https://en.hospitalangeles.com/joint-commission-international",
+          "read": "2026-11-15",
+          "says": "Undated. The Gold Seal is held \"in our hospitals Pedregal, Lomas, Puebla, Universidad, Acoxpa Centro Sur Querétaro)\"; Hospital Ángeles Oaxaca is not named."
+        }
+      ],
+      "note": "Also the summary."
+    },
+    {
+      "id": "mx-healthcare-merida-hub",
+      "fact": "healthcare",
+      "cities": [
+        "merida"
+      ],
+      "claim": "Mérida is the regional medical centre for the Yucatán Peninsula, where even Belize sends serious cases",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Yucatán Magazine: Top Mérida hospitals",
+          "url": "https://yucatanmagazine.com/top-hospitals-in-merida/",
+          "read": "2026-11-15",
+          "says": "Dated August 5, 2025. Calls Mérida \"the healthcare capital of southeastern Mexico\", with patients from Tabasco, Campeche and Quintana Roo; names Star Médica, Clínica de Mérida, Faro del Mayab (Christus network) and Centro Médico de las Américas; private care at \"30-70% less than U.S. costs\"."
+        },
+        {
+          "name": "Rio Times: healthcare in Belize for expats",
+          "url": "https://www.riotimesonline.com/healthcare-belize-expats-2026/",
+          "read": "2026-11-15",
+          "says": "Published September 16, 2026. Tropic Air's medical transfer flights name four regional destinations, \"Mérida, Cancún, San Pedro Sula in Honduras and Guatemala City\"; \"The Mexican and Guatemalan routes are the ordinary ones, because they are nearer and cheaper than Florida.\""
+        }
+      ],
+      "note": "Belize: the page names Mérida as one of the usual medical-transfer destinations, not a formal referral system; close enough to \"sends serious cases\"."
+    },
+    {
+      "id": "mx-healthcare-merida-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "merida"
+      ],
+      "claim": "Private hospitals (Star Médica, Faro del Mayab, Clínica de Mérida) well below US prices",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Yucatán Magazine: Top Mérida hospitals",
+          "url": "https://yucatanmagazine.com/top-hospitals-in-merida/",
+          "read": "2026-11-15",
+          "says": "Dated August 5, 2025. Calls Mérida \"the healthcare capital of southeastern Mexico\", with patients from Tabasco, Campeche and Quintana Roo; names Star Médica, Clínica de Mérida, Faro del Mayab (Christus network) and Centro Médico de las Américas; private care at \"30-70% less than U.S. costs\"."
+        }
+      ],
+      "also": [
+        "sources: added Yucatán Magazine to the Mérida profile"
+      ]
+    },
+    {
+      "id": "mx-healthcare-pv-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "puerto-vallarta"
+      ],
+      "claim": "Good private hospitals (CMQ, San Javier, Amerimed) at well below US prices",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Coldwell Banker La Costa: healthcare in Puerto Vallarta for expats",
+          "url": "https://www.cblacosta.com/blog/healthcare-puerto-vallarta-expats/",
+          "read": "2026-11-15",
+          "says": "Posted August 21, 2026. San Javier Marina is \"a full-service private hospital\" with ER and ICU; CMQ a \"long-established private hospital group with multiple Puerto Vallarta locations\"; Amerimed \"built specifically to serve tourists and expats\"; private care runs \"well below equivalent U.S. pricing\". It says nothing about Guadalajara."
+        }
+      ],
+      "also": [
+        "sources: added the Coldwell Banker La Costa page to the Puerto Vallarta profile"
+      ]
+    },
+    {
+      "id": "mx-healthcare-pv-guadalajara",
+      "fact": "healthcare",
+      "cities": [
+        "puerto-vallarta"
+      ],
+      "claim": "The most complex care is in Guadalajara",
+      "verdict": "cant-confirm",
+      "hedge": "reportedly",
+      "oldWording": "the most complex care is in Guadalajara",
+      "wording": "the most complex care is reportedly in Guadalajara",
+      "sources": [
+        {
+          "name": "Coldwell Banker La Costa: healthcare in Puerto Vallarta for expats",
+          "url": "https://www.cblacosta.com/blog/healthcare-puerto-vallarta-expats/",
+          "read": "2026-11-15",
+          "says": "Posted August 21, 2026. San Javier Marina is \"a full-service private hospital\" with ER and ICU; CMQ a \"long-established private hospital group with multiple Puerto Vallarta locations\"; Amerimed \"built specifically to serve tourists and expats\"; private care runs \"well below equivalent U.S. pricing\". It says nothing about Guadalajara."
+        }
+      ],
+      "also": [
+        "hedge added: \"reportedly\""
+      ],
+      "note": "No page read says Puerto Vallarta residents go to Guadalajara for complex care; a promotional search result claims CMQ Premiere offers heart surgery and cath/angio locally. Plausible but unsettled."
+    },
+    {
+      "id": "mx-healthcare-sma-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "san-miguel-de-allende"
+      ],
+      "claim": "The two local private hospitals include H+ and MAC",
+      "verdict": "corrected",
+      "oldWording": "(including H+ and MAC)",
+      "newWording": "(Hospital Joya and MAC; the H+ hospital closed in 2020)",
+      "sources": [
+        {
+          "name": "San Miguel Times: H+ hospital closes its San Miguel de Allende branch",
+          "url": "https://sanmigueltimes.com/?p=27119",
+          "read": "2026-11-15",
+          "says": "Dated May 19, 2020. The H+ hospital announced the definitive closure of its San Miguel de Allende branch: \"it is with great sadness that we find ourselves in the need to close our branch in San Miguel de Allende\"."
+        },
+        {
+          "name": "San Miguel Scene: healthcare in San Miguel de Allende, costs, quality and what to expect",
+          "url": "https://www.sanmiguelscene.com/blog/healthcare-in-san-miguel-de-allende-costs-quality-and-what-to-expect",
+          "read": "2026-11-15",
+          "says": "Dated \"April 30\", no year. \"San Miguel de Allende is served by two well-regarded private hospitals\": Hospital La Joya and Hospitales MAC San Miguel de Allende; for more complex procedures residents look to Querétaro, about an hour away. H+ is not mentioned."
+        },
+        {
+          "name": "San Miguel Scene: long-term care in San Miguel de Allende",
+          "url": "https://www.sanmiguelscene.com/blog/long-term-care-in-san-miguel-de-allende",
+          "read": "2026-11-15",
+          "says": "Dated \"May 18\", no year. \"two private hospitals with modern equipment and 24-hour emergency services\" (MAC named in a caption); specialised care: Querétaro \"about an hour away\", Mexico City \"roughly three hours away by car\"; a \"healthy 62-year-old male might expect to pay around 96,000 pesos annually for coverage with a significant deductible\"."
+        }
+      ],
+      "also": [
+        "sources: added San Miguel Scene (healthcare costs and quality) and San Miguel Times (H+ closure)",
+        "scores.healthcare stays 3"
+      ],
+      "note": "H+ closed its San Miguel branch in May 2020; Hospital Joya opened in 2021 (a search result, not read, shows it at the same address, Libramiento José Manuel Zavala 12-A). Two private hospitals is still right."
+    },
+    {
+      "id": "mx-healthcare-sma-referrals",
+      "fact": "healthcare",
+      "cities": [
+        "san-miguel-de-allende"
+      ],
+      "claim": "Major procedures usually mean Querétaro (about an hour) or Mexico City (about 3 hours)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "San Miguel Scene: long-term care in San Miguel de Allende",
+          "url": "https://www.sanmiguelscene.com/blog/long-term-care-in-san-miguel-de-allende",
+          "read": "2026-11-15",
+          "says": "Dated \"May 18\", no year. \"two private hospitals with modern equipment and 24-hour emergency services\" (MAC named in a caption); specialised care: Querétaro \"about an hour away\", Mexico City \"roughly three hours away by car\"; a \"healthy 62-year-old male might expect to pay around 96,000 pesos annually for coverage with a significant deductible\"."
+        },
+        {
+          "name": "San Miguel Scene: healthcare in San Miguel de Allende, costs, quality and what to expect",
+          "url": "https://www.sanmiguelscene.com/blog/healthcare-in-san-miguel-de-allende-costs-quality-and-what-to-expect",
+          "read": "2026-11-15",
+          "says": "Dated \"April 30\", no year. \"San Miguel de Allende is served by two well-regarded private hospitals\": Hospital La Joya and Hospitales MAC San Miguel de Allende; for more complex procedures residents look to Querétaro, about an hour away. H+ is not mentioned."
+        }
+      ]
+    },
+    {
+      "id": "mx-healthcare-sma-insurance",
+      "fact": "healthcare",
+      "cities": [
+        "san-miguel-de-allende"
+      ],
+      "claim": "Private local cover runs about MXN 96,000/yr for a healthy 62-year-old",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "San Miguel Scene: long-term care in San Miguel de Allende",
+          "url": "https://www.sanmiguelscene.com/blog/long-term-care-in-san-miguel-de-allende",
+          "read": "2026-11-15",
+          "says": "Dated \"May 18\", no year. \"two private hospitals with modern equipment and 24-hour emergency services\" (MAC named in a caption); specialised care: Querétaro \"about an hour away\", Mexico City \"roughly three hours away by car\"; a \"healthy 62-year-old male might expect to pay around 96,000 pesos annually for coverage with a significant deductible\"."
+        }
+      ],
+      "note": "The page gives one example with a significant deductible and no year."
+    },
+    {
+      "id": "mx-healthcare-playa-hospiten",
+      "fact": "healthcare",
+      "cities": [
+        "playa-del-carmen"
+      ],
+      "claim": "Hospiten Riviera Maya has 23 beds, 2 ICU beds and 24-hour emergency care, with no JCI accreditation claimed",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Hospiten: Hospiten Riviera Maya",
+          "url": "https://hospiten.com/en/hospitals/hospiten-riviera-maya",
+          "read": "2026-11-15",
+          "says": "Features: 23 beds, 2 ICU beds; services \"including 24-hour emergency care\"; located in Playa del Carmen. Certifications listed: EFQM, IDIS, AENOR, IQNET; no JCI."
+        }
+      ],
+      "note": "A search result (not read) and Riviera Maya News show an Amerimed hospital in Playa del Carmen too, so \"its own hospital is small\" in the summary understates the town slightly; not changed, since both are small next to Cancún's."
+    },
+    {
+      "id": "mx-healthcare-playa-cancun",
+      "fact": "healthcare",
+      "cities": [
+        "playa-del-carmen"
+      ],
+      "claim": "Larger private hospitals are in Cancún, about 70 km away",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Wikipedia: Playa del Carmen",
+          "url": "https://en.wikipedia.org/wiki/Playa_del_Carmen",
+          "read": "2026-11-15",
+          "says": "Playa del Carmen is \"around 68 kilometers away from Cancun\"; Cancún airport \"around 70 kilometres (43 mi) away\"."
+        },
+        {
+          "name": "Riviera Maya News: Quintana Roo stands out in private hospital quality",
+          "url": "https://www.rivieramayanews.mx/quintana-roo-stands-out-in-private-hospital-quality/",
+          "read": "2026-11-15",
+          "says": "Dated November 8, 2025. \"Galenia Hospital in Cancún ranks in 12th place\" nationally, the only Quintana Roo hospital in the top 50; Amerimed has hospitals ranked in Playa del Carmen, Cozumel and Cancún. No JCI mention."
+        }
+      ]
+    },
+    {
+      "id": "mx-healthcare-playa-galenia-jci",
+      "fact": "healthcare",
+      "cities": [
+        "playa-del-carmen"
+      ],
+      "claim": "Galenia (Cancún) is JCI-accredited",
+      "verdict": "cant-confirm",
+      "hedge": "unverified",
+      "wording": "Galenia's reported JCI status is unverified",
+      "sources": [
+        {
+          "name": "Consultor Salud: Hospital Galenia",
+          "url": "https://consultorsalud.com.mx/?p=309413",
+          "read": "2026-11-15",
+          "says": "Published October 2, 2025. Hospital Galenia is \"acreditado por organismos como la Joint Commission International (JCI) y el Consejo de Salubridad General\"; no date of accreditation."
+        }
+      ],
+      "note": "JCI's directory (https://www.jointcommission.org/en/who-we-are/accredited-organizations/) returned HTTP 403; one dated news page says accredited. The hedge stays."
+    },
+    {
+      "id": "mx-healthcare-chapala-clinics",
+      "fact": "healthcare",
+      "cities": [
+        "lake-chapala"
+      ],
+      "claim": "Local clinics with short-stay beds: Ajijic Hospital (about 20 visiting specialists), Maskaras (24/7), Lakeside Medical Group",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Access Lake Chapala: health care information",
+          "url": "https://www.accesslakechapala.com/guide/health-care/information/",
+          "read": "2026-11-15",
+          "says": "Undated. Ajijic Hospital has \"approximately twenty specialists coming up from Guadalajara every week or two\", a surgery room and two hospital rooms; Maskaras Clinic is open around the clock with a room for a day or two before transfer; Lakeside Medical Group does not take Medicare."
+        }
+      ]
+    },
+    {
+      "id": "mx-healthcare-chapala-guadalajara",
+      "fact": "healthcare",
+      "cities": [
+        "lake-chapala"
+      ],
+      "claim": "Serious care is in Guadalajara, about 55 km north",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Azteca Jalisco: Guadalajara to Ajijic, distance and time",
+          "url": "https://www.aztecajalisco.com/tendenciayviral/guadalajara-ajijic-cuanto-tiempo-trayecto-cuantos-kilometros",
+          "read": "2026-11-15",
+          "says": "Published 29/07/2026. 58.2 km by the México 23 highway, \"aproximadamente 40 minutos a una hora\"."
+        },
+        {
+          "name": "Access Lake Chapala: health care information",
+          "url": "https://www.accesslakechapala.com/guide/health-care/information/",
+          "read": "2026-11-15",
+          "says": "Undated. Ajijic Hospital has \"approximately twenty specialists coming up from Guadalajara every week or two\", a surgery room and two hospital rooms; Maskaras Clinic is open around the clock with a room for a day or two before transfer; Lakeside Medical Group does not take Medicare."
+        }
+      ],
+      "note": "58 km by road to Ajijic; \"about 55 km\" is close enough and Chapala is nearer."
+    },
+    {
+      "id": "mx-healthcare-chapala-puerta-de-hierro",
+      "fact": "healthcare",
+      "cities": [
+        "lake-chapala"
+      ],
+      "claim": "Centro Médico Puerta de Hierro is in the Mayo Clinic Care Network",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Guadalajara Reporter: Centro Médico Puerta de Hierro joins Mayo Clinic Care Network",
+          "url": "https://theguadalajarareporter.net/index.php/news/news/guadalajara/53148-centro-medico-puerta-de-hierro-joins-mayo-clinic-care-network",
+          "read": "2026-11-15",
+          "says": "Published 22 February 2019. The hospital became a member of the Mayo Clinic Care Network, \"the first network member from western Mexico\". No JCI mention."
+        }
+      ],
+      "note": "Membership dated 2019; nothing read says it lapsed."
+    },
+    {
+      "id": "mx-healthcare-chapala-jci",
+      "fact": "healthcare",
+      "cities": [
+        "lake-chapala"
+      ],
+      "claim": "Puerta de Hierro's JCI status",
+      "verdict": "cant-confirm",
+      "hedge": "unverified",
+      "wording": "(its JCI status is unverified)",
+      "sources": [
+        {
+          "name": "Guadalajara Reporter: Centro Médico Puerta de Hierro joins Mayo Clinic Care Network",
+          "url": "https://theguadalajarareporter.net/index.php/news/news/guadalajara/53148-centro-medico-puerta-de-hierro-joins-mayo-clinic-care-network",
+          "read": "2026-11-15",
+          "says": "Published 22 February 2019; does not mention JCI."
+        }
+      ],
+      "note": "JCI's directory returned HTTP 403."
+    },
+    {
+      "id": "mx-healthcare-oaxaca-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "oaxaca"
+      ],
+      "claim": "Private hospitals (Hospital Ángeles, Clínica de Especialidades, Centro Médico de Oaxaca) and a public high-specialty regional hospital; severe cases may need evacuation",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "360 Nations: Oaxaca healthcare",
+          "url": "https://360nations.com/north-america/mexico/regions/oaxaca/healthcare.html",
+          "read": "2026-11-15",
+          "says": "Last updated February 2026. Lists Hospital Ángeles, Clínica de Especialidades and Centro Médico de Oaxaca (private) and Hospital Regional de Alta Especialidad (public); \"Medical evacuation may be necessary in severe cases, particularly if specialized care is not available in Oaxaca.\" No mention of JCI."
+        }
+      ]
+    },
+    {
+      "id": "mx-healthcare-oaxaca-jci",
+      "fact": "healthcare",
+      "cities": [
+        "oaxaca"
+      ],
+      "claim": "None is JCI-accredited, and the nearest JCI care is in Puebla or Mexico City, hours away by road",
+      "verdict": "cant-confirm",
+      "hedge": "reportedly",
+      "oldWording": "none JCI-accredited; the nearest JCI care is in Puebla",
+      "wording": "none reportedly JCI-accredited; the nearest JCI care is reportedly in Puebla or Mexico City",
+      "sources": [
+        {
+          "name": "Hospital Ángeles: Joint Commission International",
+          "url": "https://en.hospitalangeles.com/joint-commission-international",
+          "read": "2026-11-15",
+          "says": "Undated. The Gold Seal is held \"in our hospitals Pedregal, Lomas, Puebla, Universidad, Acoxpa Centro Sur Querétaro)\"; Hospital Ángeles Oaxaca is not named."
+        },
+        {
+          "name": "360 Nations: Oaxaca healthcare",
+          "url": "https://360nations.com/north-america/mexico/regions/oaxaca/healthcare.html",
+          "read": "2026-11-15",
+          "says": "Last updated February 2026. Lists Hospital Ángeles, Clínica de Especialidades and Centro Médico de Oaxaca (private) and Hospital Regional de Alta Especialidad (public); \"Medical evacuation may be necessary in severe cases, particularly if specialized care is not available in Oaxaca.\" No mention of JCI."
+        }
+      ],
+      "also": [
+        "hedge added: \"reportedly\" on both clauses",
+        "summary: \"with the nearest JCI care in Puebla or Mexico City\" became \"with the nearest JCI care reportedly in Puebla or Mexico City\""
+      ],
+      "note": "Hospital Ángeles lists its Gold Seal hospitals (Puebla, Pedregal, Lomas and others) and not Oaxaca, which supports the claim; JCI's own directory returned HTTP 403, so \"none\" and \"nearest\" could not be proved. The road time to Puebla was not read; the drawback (\"hours by road to Puebla or Mexico City\") was left as it is."
+    },
+    {
+      "id": "mx-healthcare-lapaz-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "la-paz"
+      ],
+      "claim": "Private Hospital Fidepaz and The Medical Centre (across the road) handle X-rays, specialist visits and short stays, alongside the public Salvatierra, IMSS, ISSSTE and naval hospitals",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Vista Properties (Baja Linda): Medical options for foreigners in La Paz",
+          "url": "https://owl-falcon-pc56.squarespace.com/medical-options-for-foreigners",
+          "read": "2026-11-15",
+          "says": "Undated (cites a November 2021 IMSS rate). An ENT appointment at Fidepaz within 24 hours; \"the white hospital across from the purple Fidepaz Hospital\" did two X-rays and a two-day stay; names \"the new Salvatierra Hospital\"; some residents \"travelled to Guadalajara for specialized treatment\"."
+        },
+        {
+          "name": "Wikipedia: La Paz, Baja California Sur",
+          "url": "https://en.wikipedia.org/wiki/La_Paz,_Baja_California_Sur",
+          "read": "2026-11-15",
+          "says": "Health section: the Secretariat of Health runs the Juan María de Salvatierra general hospital; IMSS has a family clinic and an ambulatory unit; \"a new ISSSTE hospital\"; the Naval Sanatorium and a defence hospital."
+        },
+        {
+          "name": "The Baja Pony Express: La Paz hospitals directory",
+          "url": "https://thebajaponyexpress.com/business-directory/641/hospitals/",
+          "read": "2026-11-15",
+          "says": "Undated (copyright 2016). Fidepaz Hospital (\"purple hospital\", 24/7) for those with insurance or who can pay; Medical Center La Paz (\"white hospital\", insurance accepted, 24/7); \"the Salvatierra public hospital\"."
+        }
+      ],
+      "note": "Neither page says in words that Fidepaz is private; both describe it as paid care for the insured. IMSS has clinics rather than a hospital per Wikipedia; close enough."
+    },
+    {
+      "id": "mx-healthcare-lapaz-guadalajara",
+      "fact": "healthcare",
+      "cities": [
+        "la-paz"
+      ],
+      "claim": "Some specialist treatment is unavailable and residents go to Guadalajara",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Vista Properties (Baja Linda): Medical options for foreigners in La Paz",
+          "url": "https://owl-falcon-pc56.squarespace.com/medical-options-for-foreigners",
+          "read": "2026-11-15",
+          "says": "Undated (cites a November 2021 IMSS rate). An ENT appointment at Fidepaz within 24 hours; \"the white hospital across from the purple Fidepaz Hospital\" did two X-rays and a two-day stay; names \"the new Salvatierra Hospital\"; some residents \"travelled to Guadalajara for specialized treatment\"."
+        }
+      ],
+      "note": "Anecdotal, as the profile's \"(secondary source)\" says."
+    },
+    {
+      "id": "mx-healthcare-lapaz-jci",
+      "fact": "healthcare",
+      "cities": [
+        "la-paz"
+      ],
+      "claim": "No hospital is JCI-accredited",
+      "verdict": "cant-confirm",
+      "hedge": "reportedly",
+      "oldWording": "no hospital is JCI-accredited",
+      "wording": "no hospital is reportedly JCI-accredited",
+      "sources": [
+        {
+          "name": "Vista Properties (Baja Linda): Medical options for foreigners in La Paz",
+          "url": "https://owl-falcon-pc56.squarespace.com/medical-options-for-foreigners",
+          "read": "2026-11-15",
+          "says": "Undated (cites a November 2021 IMSS rate). An ENT appointment at Fidepaz within 24 hours; \"the white hospital across from the purple Fidepaz Hospital\" did two X-rays and a two-day stay; names \"the new Salvatierra Hospital\"; some residents \"travelled to Guadalajara for specialized treatment\"."
+        },
+        {
+          "name": "Wikipedia: La Paz, Baja California Sur",
+          "url": "https://en.wikipedia.org/wiki/La_Paz,_Baja_California_Sur",
+          "read": "2026-11-15",
+          "says": "Health section: the Secretariat of Health runs the Juan María de Salvatierra general hospital; IMSS has a family clinic and an ambulatory unit; \"a new ISSSTE hospital\"; the Naval Sanatorium and a defence hospital."
+        }
+      ],
+      "also": [
+        "hedge added: \"reportedly\""
+      ],
+      "note": "No page read mentions JCI for La Paz; JCI's directory returned HTTP 403."
+    },
+    {
+      "id": "mx-healthcare-mazatlan-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "mazatlan"
+      ],
+      "claim": "Private hospitals (Marina Mazatlán, Alhma, Médica de la Ciudad) with many English-speaking doctors; complex cases go to Guadalajara or the US",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Retire Young Travel Smart: Mazatlán healthcare",
+          "url": "https://retireyoungtravelsmart.com/mazatlan-healthcare/",
+          "read": "2026-11-15",
+          "says": "Undated. Names Marina Mazatlán, Hospital Alhma Medical Center and Hospital Médica de la Ciudad Mazatlán; many doctors are \"fluent in English\"; \"complex conditions like cancer might be better treated in major US medical centers or a city like Guadalajara\". No accreditation mentioned."
+        }
+      ]
+    },
+    {
+      "id": "mx-healthcare-mazatlan-jci",
+      "fact": "healthcare",
+      "cities": [
+        "mazatlan"
+      ],
+      "claim": "None is known to be JCI-accredited",
+      "verdict": "cant-confirm",
+      "hedge": "known",
+      "wording": "none is known to be JCI-accredited",
+      "sources": [
+        {
+          "name": "Retire Young Travel Smart: Mazatlán healthcare",
+          "url": "https://retireyoungtravelsmart.com/mazatlan-healthcare/",
+          "read": "2026-11-15",
+          "says": "Undated. Names Marina Mazatlán, Hospital Alhma Medical Center and Hospital Médica de la Ciudad Mazatlán; many doctors are \"fluent in English\"; \"complex conditions like cancer might be better treated in major US medical centers or a city like Guadalajara\". No accreditation mentioned."
+        }
+      ],
+      "note": "A statement of what is not known; JCI's directory returned HTTP 403."
+    }
+  ]
+}

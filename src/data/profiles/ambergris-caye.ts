@@ -7,7 +7,7 @@ const profile: ExpatProfile = {
   scores: { cost: 2, healthcare: 1, safety: 3, visa: 4, climate: 3, community: 3, tax: 5, estate: 5, lending: 3 },
   facts: {
     healthcare:
-      'No hospital on the island: San Pedro has the San Pedro Polyclinic II (24-hour general care, lab, radiology), the San Juan Health Center and private doctors, plus two dive decompression chambers; Tropic Air runs 24-hour medical transfers for stable patients to Belize City, serious cases go on to Mérida, Cancún, Guatemala City or Miami, and the US Embassy says medevac "can easily cost US$10,000 and up".',
+      'No hospital on the island: San Pedro has the San Pedro Polyclinic II (24-hour general care, lab, radiology), the San Juan Health Center and private doctors, plus reportedly two dive decompression chambers; Tropic Air runs 24-hour medical transfers for stable patients to Belize City, serious cases go on to Mérida, Cancún, Guatemala City or Miami, and the US Embassy says medevac "can easily cost US$10,000 and up".',
     safety:
       'Belize is at US State Dept Level 2 (March 2026, secondary source), with Level 3 only for Southside Belize City, and is not scored in the Global Peace Index; the UK notes one of the world\'s highest murder rates per capita, mostly gang violence in Belize City, and names San Pedro among places where tourists are vulnerable to theft.',
     visa:
@@ -42,6 +42,7 @@ const profile: ExpatProfile = {
     { name: 'Wikipedia: Hurricane Keith', url: 'https://en.wikipedia.org/wiki/Hurricane_Keith' },
     { name: 'Wikipedia: Philip S. W. Goldson International Airport', url: 'https://en.wikipedia.org/wiki/Philip_S._W._Goldson_International_Airport' },
     { name: 'Your Tax Base: Charles Schwab for expats (country list, Oct 2026)', url: 'https://yourtaxbase.com/blog/charles-schwab-for-expats' },
+    { name: 'Ambergris Today: Second hyperbaric chamber installed in San Pedro', url: 'https://ambergristoday.com/?p=34924', edition: '2015' },
   ],
 }
 

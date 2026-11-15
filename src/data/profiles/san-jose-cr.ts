@@ -12,7 +12,7 @@ const profile: ExpatProfile = {
     safety:
       'Costa Rica is 62nd of 163 in the 2026 Global Peace Index and US State Dept Level 2; homicides peaked at 905 in 2023 and were 873 in 2025, with 2026 projected below 800.',
     visa:
-      'Rentista suits a portfolio-funded retiree: stable income of at least $2,500/month for 2 years (the "$60k" often quoted is 24 × $2,500; the official checklist checked in September 2026 lists no compulsory deposit), though whether brokerage dividends count as "stable" income is unaddressed; Inversionista needs about $150k, and Pensionado a $1,000/month pension; expect 6–18 months.',
+      'Rentista suits a portfolio-funded retiree: stable income of at least $2,500/month for 2 years (the "$60k" often quoted is 24 × $2,500; the official checklist checked in September 2026 lists no compulsory deposit), though whether brokerage dividends count as "stable" income is unaddressed; Inversionista needs $150k, or reportedly $200k since Law 9996\'s window closed in July 2026, and Pensionado a $1,000/month pension; expect 6–18 months.',
     tax: 'No wealth tax; taxation is source-based today, so foreign dividends and interest are untaxed, but Bill 25.796 (filed 22 September 2026, in committee) would tax all residents\' foreign interest, dividends and gains at a reported 15%, deducting rather than crediting foreign tax and with no rentista exemption mentioned; check its status.',
     estate:
       'Costa Rica has no inheritance tax, so heirs owe nothing locally on US assets; there is no US estate treaty, and US estate tax applies above the $15M exemption (2026).',
@@ -42,6 +42,7 @@ const profile: ExpatProfile = {
     { name: 'Your Tax Base: Charles Schwab for expats (country list, Oct 2026)', url: 'https://yourtaxbase.com/blog/charles-schwab-for-expats' },
     S.il,
     S.gpiPoster,
+    { name: 'Rio Times: Residency in Costa Rica for foreigners 2026', url: 'https://www.riotimesonline.com/residency-costa-rica-foreigners-2026/', edition: '2026' },
   ],
 }
 

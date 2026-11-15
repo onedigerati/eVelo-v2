@@ -1,0 +1,551 @@
+{
+  "country": "Guatemala",
+  "cities": [
+    "panajachel",
+    "antigua-guatemala"
+  ],
+  "claims": [
+    {
+      "id": "gt-tax-no-wealth-tax",
+      "fact": "tax",
+      "claim": "Guatemala has no wealth tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "TaxAtlas: Guatemala wealth and property tax rates (2026)",
+          "url": "https://taxatlas.io/country/guatemala/wealth-tax",
+          "read": "2026-11-15",
+          "says": "Labelled 2026. \"Guatemala does not impose a wealth tax\"; wealth tax rate 0%."
+        },
+        {
+          "name": "PwC: Guatemala, other taxes",
+          "url": "https://taxsummaries.pwc.com/guatemala/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 09 June 2026. Real estate taxes \"are assessed annually at GTQ 2 per thousand on declared property values of from GTQ 2,000 to GTQ 20,000\", at GTQ 6 per thousand from GTQ 20,000 to 70,000 \"and at GTQ 9 per thousand on values in excess of GTQ 70,000\". No net wealth or inheritance section."
+        }
+      ],
+      "note": "PwC's Guatemala pages and quick chart (\"NP\", not provided) do not address it; TaxAtlas (2026) states it. localTaxes.ts (GT) agrees.",
+      "cities": [
+        "panajachel",
+        "antigua-guatemala"
+      ]
+    },
+    {
+      "id": "gt-tax-iusi",
+      "fact": "tax",
+      "claim": "The municipal IUSI on real estate runs about 0.2–0.9%",
+      "verdict": "corrected",
+      "oldWording": "about 0.2–0.9%);",
+      "newWording": "about 0.2–0.9%, which Decreto 18-2026 cuts to zero on homes 90 days after its 28 August 2026 publication);",
+      "sources": [
+        {
+          "name": "PwC: Guatemala, other taxes",
+          "url": "https://taxsummaries.pwc.com/guatemala/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 09 June 2026. Real estate taxes \"are assessed annually at GTQ 2 per thousand on declared property values of from GTQ 2,000 to GTQ 20,000\", at GTQ 6 per thousand from GTQ 20,000 to 70,000 \"and at GTQ 9 per thousand on values in excess of GTQ 70,000\". No net wealth or inheritance section."
+        },
+        {
+          "name": "AGN (Guatemalan government news agency): President Arévalo signs the IUSI reform",
+          "url": "https://agn.gt/presidente-arevalo-sanciona-ley-de-reformas-al-iusi/",
+          "read": "2026-11-15",
+          "says": "Dated 28 August 2026. Decreto 18-2026, published in the Diario de Centro América, exonerates from IUSI properties \"destinados únicamente para viviendas de uso residencial y uso mixto\"; commercial property pays 3 per thousand to Q500,000, 6 to Q1,000,000 and 9 above; the changes \"entran en vigencia en 90 días\"."
+        },
+        {
+          "name": "Consortium Legal: Guatemala's IUSI reform, an analysis of Decree 18-2026",
+          "url": "https://consortiumlegal.com/en/2026/09/03/guatemalas-iusi-reform-an-analysis-of-decree-18-2026/",
+          "read": "2026-11-15",
+          "says": "Dated 3 September 2026. Decree 18-2026 was published in the Official Gazette on 28 August 2026; the new article 11 makes \"properties intended for housing, residential use or mixed use ... subject to a rate of zero per thousand\", after a special ninety-day period; income tax changes (an exemption for individuals' real-estate gains) take effect 1 January 2027. Nothing on foreign-source income."
+        },
+        {
+          "name": "Rio Times: taxes in Guatemala for expats (2026)",
+          "url": "https://www.riotimesonline.com/taxes-guatemala-expats-2026/",
+          "read": "2026-11-15",
+          "says": "Published September 14, 2026. \"Only Guatemalan-source income is taxed\"; foreign dividends and offshore investment income \"remain outside the Guatemalan charge\". The property-tax reform \"sets the rate to zero on residential property\" and the new rates \"take effect 90 days after publication, which is 8 January 2027\" (inconsistent with the 28 August publication it also gives)."
+        }
+      ],
+      "also": [
+        "sources: added Consortium Legal on Decree 18-2026 to both profiles",
+        "scores.tax stays 5"
+      ],
+      "note": "Check for a bill: the 2/6/9 per-thousand scale is the law today (2026-11-15), but Decreto 18-2026, enacted and published 28 August 2026, zero-rates homes and mixed-use property after 90 days (about 26 November 2026 by count from publication; Rio Times says 8 January 2027, which does not fit its own publication date). The old wording was right today and wrong within weeks, so it is recorded as corrected with the pending date. Not a portfolio tax; localTaxes.ts (GT) does not model IUSI.",
+      "cities": [
+        "panajachel",
+        "antigua-guatemala"
+      ]
+    },
+    {
+      "id": "gt-tax-territorial",
+      "fact": "tax",
+      "claim": "The system is territorial: investment income and capital gains from abroad are not taxed, so US dividends, interest and loan proceeds are outside Guatemalan tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Guatemala, income determination",
+          "url": "https://taxsummaries.pwc.com/guatemala/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 09 June 2026. \"Capital gains and investment income from outside the country are not taxed by Guatemala.\" \"Compensation related to services performed outside Guatemala is not taxable.\""
+        },
+        {
+          "name": "Rio Times: taxes in Guatemala for expats (2026)",
+          "url": "https://www.riotimesonline.com/taxes-guatemala-expats-2026/",
+          "read": "2026-11-15",
+          "says": "Published September 14, 2026. \"Only Guatemalan-source income is taxed\"; foreign dividends and offshore investment income \"remain outside the Guatemalan charge\". The property-tax reform \"sets the rate to zero on residential property\" and the new rates \"take effect 90 days after publication, which is 8 January 2027\" (inconsistent with the 28 August publication it also gives)."
+        },
+        {
+          "name": "Consortium Legal: Guatemala's IUSI reform, an analysis of Decree 18-2026",
+          "url": "https://consortiumlegal.com/en/2026/09/03/guatemalas-iusi-reform-an-analysis-of-decree-18-2026/",
+          "read": "2026-11-15",
+          "says": "Dated 3 September 2026. Decree 18-2026 was published in the Official Gazette on 28 August 2026; the new article 11 makes \"properties intended for housing, residential use or mixed use ... subject to a rate of zero per thousand\", after a special ninety-day period; income tax changes (an exemption for individuals' real-estate gains) take effect 1 January 2027. Nothing on foreign-source income."
+        }
+      ],
+      "note": "Decree 18-2026's income tax changes (from 1 January 2027) touch only real-estate gains, per Consortium Legal. Loan proceeds are not income anywhere; the conclusion rides with the territorial rule.",
+      "cities": [
+        "panajachel",
+        "antigua-guatemala"
+      ]
+    },
+    {
+      "id": "gt-estate-repeal",
+      "fact": "estate",
+      "claim": "Decreto 6-2026 repealed the inheritance, legacy and gift tax (previously 1–25%) from 2 April 2026, so heirs owe nothing locally",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "LexLatin: Decreto 6-2026, Guatemala eliminates the inheritance, legacy and gift tax on death",
+          "url": "https://lexlatin.com/opinion/decreto-6-2026-guatemala-elimina-impuesto-herencias-legados-donaciones-muerte",
+          "read": "2026-11-15",
+          "says": "Dated 26/03/2026. Decreto 6-2026, published 2 March 2026, repeals the Impuesto de Herencias, Legados y Donaciones (Decreto 431), which charged 1% to 25% by value; transfers by reason of death \"ya no estarán afectas a impuesto específico\"; inter vivos gifts to close family get an express VAT exemption."
+        },
+        {
+          "name": "Revista E&N: Guatemala eliminates inheritance tax",
+          "url": "https://www.revistaeyn.com/centroamericaymundo/guatemala-elimina-impuesto-de-herencias-y-reordena-la-transmision-de-patrimonio-OF29970806",
+          "read": "2026-11-15",
+          "says": "\"Desde este 2 de abril entra en vigor en Guatemala la derogatoria del impuesto sobre herencias\"; inheritances, legacies and gifts on death \"están exentas del Impuesto Sobre la Renta (ISR)\" and are expressly exempted from VAT."
+        }
+      ],
+      "note": "Also the summaries (\"repealed its inheritance tax in April 2026\") and Antigua's why. The repeal covers transfers on death; the tax's own name includes \"donaciones\" (gifts on death), so the wording stands. localTaxes.ts (GT) agrees.",
+      "cities": [
+        "panajachel",
+        "antigua-guatemala"
+      ]
+    },
+    {
+      "id": "gt-estate-no-us-treaty",
+      "fact": "estate",
+      "claim": "There is no US estate treaty",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-without",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list); none of the 37 countries named in this claim is among them."
+        }
+      ],
+      "cities": [
+        "panajachel",
+        "antigua-guatemala"
+      ]
+    },
+    {
+      "id": "gt-estate-us-exemption",
+      "fact": "estate",
+      "claim": "US estate tax applies above the $15M exemption (2026)",
+      "verdict": "confirmed",
+      "shared": "us-estate-exemption-2026",
+      "sources": [
+        {
+          "name": "IRS: What's new, estate and gift tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax",
+          "read": "2026-11-15",
+          "says": "The table \"Basic exclusion amount for year of death\" has the row 2026: $15,000,000 (2025: $13,990,000). The page says the Working Families Tax Cuts, Public Law 119-21, signed July 4, 2025, \"amends § 2010(c)(3) by increasing the basic exclusion amount to $15,000,000 for calendar year 2026\". Page last reviewed or updated 03-Nov-2026."
+        },
+        {
+          "name": "IRS: Estate tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-tax",
+          "read": "2026-11-15",
+          "says": "A return is required when the gross estate, plus adjusted taxable gifts and specific exemption, is more than the filing threshold for the year of death; the table gives 2026: $15,000,000. Page last reviewed or updated 23-Oct-2026."
+        },
+        {
+          "name": "IRS news release IR-2025-103: tax inflation adjustments for tax year 2026",
+          "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill",
+          "read": "2026-11-15",
+          "says": "\"Estates of decedents who die during 2026 have a basic exclusion amount of $15,000,000\", up from $13,990,000 for 2025; the release (October 9, 2025) cites Revenue Procedure 2025-32 and is marked as an archival document."
+        }
+      ],
+      "cities": [
+        "panajachel",
+        "antigua-guatemala"
+      ]
+    },
+    {
+      "id": "gt-lending-ibkr",
+      "fact": "lending",
+      "claim": "Interactive Brokers serves all non-sanctioned countries, so Guatemala residents should be accepted",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Interactive Brokers reportedly serves all non-sanctioned countries",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes \"Guatemala\" and \"Honduras\"; the page names no IBKR entity for Latin American residents."
+        },
+        {
+          "name": "Your Tax Base: best brokerage for US expats",
+          "url": "https://yourtaxbase.com/blog/best-brokerage-for-us-expats",
+          "read": "2026-11-15",
+          "says": "Dated October 23, 2026. Quotes Fidelity's FAQ: \"we do not open accounts for any new customers residing outside the United States.\" Vanguard requires US citizenship or permanent residence \"with a U.S. mailing address\". The page lists Honduras among countries that cannot apply to Schwab online."
+        }
+      ],
+      "note": "IBKR's country list (https://www.interactivebrokers.com/en/accounts/open-account-country-list.php) returned HTTP 403 on 2026-11-15. Banker on Wheels lists Guatemala; Your Tax Base says accounts are accepted from residents of all countries.",
+      "cities": [
+        "panajachel",
+        "antigua-guatemala"
+      ]
+    },
+    {
+      "id": "gt-lending-margin-unconfirmed",
+      "fact": "lending",
+      "claim": "IBKR margin terms for Guatemala residents are unconfirmed",
+      "verdict": "cant-confirm",
+      "hedge": "unconfirmed",
+      "wording": "but margin terms are unconfirmed",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes \"Guatemala\" and \"Honduras\"; the page names no IBKR entity for Latin American residents."
+        }
+      ],
+      "note": "A statement of what is not known.",
+      "cities": [
+        "panajachel",
+        "antigua-guatemala"
+      ]
+    },
+    {
+      "id": "gt-lending-schwab",
+      "fact": "lending",
+      "claim": "Whether Schwab One International accepts Guatemala is unknown",
+      "verdict": "corrected",
+      "shared": "schwab-accepts-residents",
+      "oldWording": "whether Schwab One International accepts Guatemala is unknown",
+      "newWording": "Schwab One International's online form reportedly accepted Guatemala in Oct 2026",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. On that day the author ran every entry in Schwab's international account selector through the application: it accepted residents of 51 of 263 countries and regions: Argentina, Australia, Austria, the Bahamas, Belgium, Bermuda, Brazil, the British Virgin Islands, the Cayman Islands, Chile, China, Colombia, Costa Rica, the Czech Republic, Denmark, Ecuador, Finland, Germany, Greece, Guatemala, Hong Kong, Iceland, India, Indonesia, Ireland, Israel, Jersey, Luxembourg, Malaysia, the Marshall Islands, Mexico, the Netherlands, Norway, Panama, Paraguay, Peru, Poland, Portugal, Qatar, Singapore, South Korea, Spain, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Turks and Caicos, the United Arab Emirates, the United Kingdom and Uruguay. Named as not accepted: Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam; for the rest the application said \"Schwab currently cannot open accounts for residents of your country/region.\" The test covers new applicants on that day only."
+        },
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Country check run October 23, 2026: Guatemala is among the 51 countries whose residents the online application accepted; Honduras is not on the list, and for countries off it the application said \"Schwab currently cannot open accounts for residents of your country/region. Please check back with us in the future.\" Nothing on margin outside Europe."
+        }
+      ],
+      "also": [
+        "scores.lending 3→4 in both profiles (rubric 4: Schwab International reported to accept residents outside Europe, plus IBKR, margin terms unconfirmed; matches the Mexico profiles)",
+        "sources: added the Your Tax Base Schwab page and best-brokerage page to both profiles"
+      ],
+      "note": "The shared note flagged this: the one dated list (re-read 2026-11-15) has Guatemala among the 51 accepted. Worded like the Mexico profiles and kept \"reportedly\"; https://international.schwab.com/ returned HTTP 403. The score rises, which does not undermine either pick's rank or why (neither mentions lending).",
+      "cities": [
+        "panajachel",
+        "antigua-guatemala"
+      ]
+    },
+    {
+      "id": "gt-lending-fidelity-vanguard",
+      "fact": "lending",
+      "claim": "Fidelity and Vanguard open no new accounts for residents abroad",
+      "verdict": "cant-confirm",
+      "hedge": "reportedly",
+      "oldWording": "and Fidelity and Vanguard open no new accounts for residents abroad",
+      "wording": "Fidelity and Vanguard reportedly open no new accounts for residents abroad",
+      "sources": [
+        {
+          "name": "Your Tax Base: best brokerage for US expats",
+          "url": "https://yourtaxbase.com/blog/best-brokerage-for-us-expats",
+          "read": "2026-11-15",
+          "says": "Dated October 23, 2026. Quotes Fidelity's FAQ: \"we do not open accounts for any new customers residing outside the United States.\" Vanguard requires US citizenship or permanent residence \"with a U.S. mailing address\". The page lists Honduras among countries that cannot apply to Schwab online."
+        }
+      ],
+      "also": [
+        "hedge added: \"reportedly\""
+      ],
+      "note": "A broker claim on a secondary page stays reported (rule 3). Fidelity's FAQ (https://www.fidelity.com/accounts/services/investors_outside_US_faq.shtml) returned HTTP 403 on 2026-11-15.",
+      "cities": [
+        "panajachel",
+        "antigua-guatemala"
+      ]
+    },
+    {
+      "id": "gt-visa-income",
+      "fact": "visa",
+      "claim": "Rentista or pensionado permanent residence on verifiable foreign income of at least $1,250/month, plus $300 per dependant",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Consortium Legal: Permanent residence as a rentier or pensioner in Central America",
+          "url": "https://consortiumlegal.com/en/2026/01/16/permanent-residence-as-a-rentier-or-pensioner-in-central-america/",
+          "read": "2026-11-15",
+          "says": "Dated 16 January 2026. Guatemala: residency \"is regulated by Agreement IGM 16-2025\"; for those with \"legal and verifiable income from abroad\", \"The minimum income requirement is US$1,250, plus an additional US$300 for each dependent\"; submitted to the Guatemalan Migration Institute. Honduras: pensionado \"requiring a minimum income of US$1,500 per month\"; rentista \"the minimum income is US$2,500\"; handled by the Ministry of the Interior and Justice."
+        },
+        {
+          "name": "Living in Guatemala: IGM rentista/pensionado residence",
+          "url": "https://livinginguatemala.com/es/tramites/igm-residencia-rentista/",
+          "read": "2026-11-15",
+          "says": "Updated 2 November 2026. US$1,250/month of permanent income from abroad for the main applicant, US$300 per dependant; Reglamento de Residencias, Acuerdo IGM-016-2025; fees: application US$25, one-time permanent residence fee US$400 (plus US$40 a year); filed in person at the IGM's Subdirección de Extranjería, 6a Avenida 3-11, zona 4, Guatemala City."
+        }
+      ],
+      "note": "igm.gob.gt returned HTTP 403. A law firm's dated note and a dated guide agree.",
+      "cities": [
+        "panajachel",
+        "antigua-guatemala"
+      ]
+    },
+    {
+      "id": "gt-visa-legal-basis",
+      "fact": "visa",
+      "claim": "The route rests on Acuerdo IGM-16-2025",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Consortium Legal: Permanent residence as a rentier or pensioner in Central America",
+          "url": "https://consortiumlegal.com/en/2026/01/16/permanent-residence-as-a-rentier-or-pensioner-in-central-america/",
+          "read": "2026-11-15",
+          "says": "Dated 16 January 2026. Guatemala: residency \"is regulated by Agreement IGM 16-2025\"; for those with \"legal and verifiable income from abroad\", \"The minimum income requirement is US$1,250, plus an additional US$300 for each dependent\"; submitted to the Guatemalan Migration Institute. Honduras: pensionado \"requiring a minimum income of US$1,500 per month\"; rentista \"the minimum income is US$2,500\"; handled by the Ministry of the Interior and Justice."
+        },
+        {
+          "name": "Living in Guatemala: IGM rentista/pensionado residence",
+          "url": "https://livinginguatemala.com/es/tramites/igm-residencia-rentista/",
+          "read": "2026-11-15",
+          "says": "Updated 2 November 2026. US$1,250/month of permanent income from abroad for the main applicant, US$300 per dependant; Reglamento de Residencias, Acuerdo IGM-016-2025; fees: application US$25, one-time permanent residence fee US$400 (plus US$40 a year); filed in person at the IGM's Subdirección de Extranjería, 6a Avenida 3-11, zona 4, Guatemala City."
+        }
+      ],
+      "cities": [
+        "panajachel",
+        "antigua-guatemala"
+      ]
+    },
+    {
+      "id": "gt-visa-fees",
+      "fact": "visa",
+      "claim": "Fees are about $25 to file and $400 for the status",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Living in Guatemala: IGM rentista/pensionado residence",
+          "url": "https://livinginguatemala.com/es/tramites/igm-residencia-rentista/",
+          "read": "2026-11-15",
+          "says": "Updated 2 November 2026. US$1,250/month of permanent income from abroad for the main applicant, US$300 per dependant; Reglamento de Residencias, Acuerdo IGM-016-2025; fees: application US$25, one-time permanent residence fee US$400 (plus US$40 a year); filed in person at the IGM's Subdirección de Extranjería, 6a Avenida 3-11, zona 4, Guatemala City."
+        }
+      ],
+      "note": "Secondary only, as the profile says; the IGM fee schedule (Acuerdo AMN 005-2023) was not read (igm.gob.gt returned 403). The guide adds a US$40 yearly fee the profile omits.",
+      "cities": [
+        "panajachel",
+        "antigua-guatemala"
+      ]
+    },
+    {
+      "id": "gt-visa-in-person",
+      "fact": "visa",
+      "claim": "Filing is in person in Guatemala City",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Living in Guatemala: IGM rentista/pensionado residence",
+          "url": "https://livinginguatemala.com/es/tramites/igm-residencia-rentista/",
+          "read": "2026-11-15",
+          "says": "Updated 2 November 2026. US$1,250/month of permanent income from abroad for the main applicant, US$300 per dependant; Reglamento de Residencias, Acuerdo IGM-016-2025; fees: application US$25, one-time permanent residence fee US$400 (plus US$40 a year); filed in person at the IGM's Subdirección de Extranjería, 6a Avenida 3-11, zona 4, Guatemala City."
+        }
+      ],
+      "cities": [
+        "panajachel",
+        "antigua-guatemala"
+      ]
+    },
+    {
+      "id": "gt-healthcare-igss",
+      "fact": "healthcare",
+      "claim": "The public IGSS does not cover retirees (who never worked in Guatemala)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Living in Guatemala: Healthcare for retirees",
+          "url": "https://livinginguatemala.com/retire-in-guatemala/healthcare-for-retirees/",
+          "read": "2026-11-15",
+          "says": "Published May 4, 2026, updated October 23, 2026. Retirees who never worked for a Guatemalan employer have no IGSS route, and IGSS voluntary contributions cover pensions only (\"los beneficios no contemplan la cobertura de servicios médicos\"). Guatemala City private hospitals with 24-hour emergencies: Herrera Llerandi, Centro Médico, Universitario Esperanza, El Pilar. Hospital Privado Hermano Pedro in Antigua advertises 24/7 care. Hospitalito Atitlán offers \"the only 24/7 emergency and surgical obstetrical and gynecological care within a two-hour radius\"."
+        },
+        {
+          "name": "Living in Guatemala: Retire in Guatemala",
+          "url": "https://livinginguatemala.com/retire-in-guatemala/",
+          "read": "2026-11-15",
+          "says": "Updated November 7, 2026. Hospital Privado Hermano Pedro in Antigua states \"emergencies and hospitalisation 24 hours, 7 days a week\"; \"IGSS is not a retiree health plan\". No travel time from Antigua to Guatemala City."
+        }
+      ],
+      "note": "Also Antigua's drawback (\"No public healthcare for retirees\").",
+      "cities": [
+        "panajachel",
+        "antigua-guatemala"
+      ]
+    },
+    {
+      "id": "gt-healthcare-antigua-hermano-pedro",
+      "fact": "healthcare",
+      "cities": [
+        "antigua-guatemala"
+      ],
+      "claim": "Hospital Privado Hermano Pedro in Antigua advertises 24/7 emergencies and admissions",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Living in Guatemala: Retire in Guatemala",
+          "url": "https://livinginguatemala.com/retire-in-guatemala/",
+          "read": "2026-11-15",
+          "says": "Updated November 7, 2026. Hospital Privado Hermano Pedro in Antigua states \"emergencies and hospitalisation 24 hours, 7 days a week\"; \"IGSS is not a retiree health plan\". No travel time from Antigua to Guatemala City."
+        },
+        {
+          "name": "Living in Guatemala: Healthcare for retirees",
+          "url": "https://livinginguatemala.com/retire-in-guatemala/healthcare-for-retirees/",
+          "read": "2026-11-15",
+          "says": "Published May 4, 2026, updated October 23, 2026. Retirees who never worked for a Guatemalan employer have no IGSS route, and IGSS voluntary contributions cover pensions only (\"los beneficios no contemplan la cobertura de servicios médicos\"). Guatemala City private hospitals with 24-hour emergencies: Herrera Llerandi, Centro Médico, Universitario Esperanza, El Pilar. Hospital Privado Hermano Pedro in Antigua advertises 24/7 care. Hospitalito Atitlán offers \"the only 24/7 emergency and surgical obstetrical and gynecological care within a two-hour radius\"."
+        }
+      ]
+    },
+    {
+      "id": "gt-healthcare-antigua-gc-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "antigua-guatemala"
+      ],
+      "claim": "The serious-care hospitals (Herrera Llerandi, Centro Médico, Universitario Esperanza, El Pilar) are in Guatemala City",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Living in Guatemala: Healthcare for retirees",
+          "url": "https://livinginguatemala.com/retire-in-guatemala/healthcare-for-retirees/",
+          "read": "2026-11-15",
+          "says": "Published May 4, 2026, updated October 23, 2026. Retirees who never worked for a Guatemalan employer have no IGSS route, and IGSS voluntary contributions cover pensions only (\"los beneficios no contemplan la cobertura de servicios médicos\"). Guatemala City private hospitals with 24-hour emergencies: Herrera Llerandi, Centro Médico, Universitario Esperanza, El Pilar. Hospital Privado Hermano Pedro in Antigua advertises 24/7 care. Hospitalito Atitlán offers \"the only 24/7 emergency and surgical obstetrical and gynecological care within a two-hour radius\"."
+        }
+      ]
+    },
+    {
+      "id": "gt-healthcare-antigua-hour",
+      "fact": "healthcare",
+      "cities": [
+        "antigua-guatemala"
+      ],
+      "claim": "Guatemala City is about an hour from Antigua",
+      "verdict": "cant-confirm",
+      "hedge": "about",
+      "wording": "in Guatemala City, about an hour away",
+      "sources": [
+        {
+          "name": "Living in Guatemala: Retire in Guatemala",
+          "url": "https://livinginguatemala.com/retire-in-guatemala/",
+          "read": "2026-11-15",
+          "says": "Updated November 7, 2026. Hospital Privado Hermano Pedro in Antigua states \"emergencies and hospitalisation 24 hours, 7 days a week\"; \"IGSS is not a retiree health plan\". No travel time from Antigua to Guatemala City."
+        }
+      ],
+      "note": "No page read gives the drive time; the hedge \"about\" is on it, and the summary says \"about an hour\" too. The access fact (1–1.5 hours) is outside this check."
+    },
+    {
+      "id": "gt-healthcare-pana-no-hospital",
+      "fact": "healthcare",
+      "cities": [
+        "panajachel"
+      ],
+      "claim": "No hospital in Panajachel; the public CAP health centre is open 24 hours and there are private clinics",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Living in Guatemala: Hospitals near Panajachel (2026)",
+          "url": "https://livinginguatemala.com/directories/hospitals-panajachel/",
+          "read": "2026-11-15",
+          "says": "© 2026, latest source read 12 November 2026. \"Panajachel has several small medical facilities but no hospital\"; CAP Panajachel in Barrio Jucanya, \"which the MSPAS registry lists as open 24 hours\"; private clinics Pana Med and Centro Clínico Panajachel; Hospital Nacional de Sololá (address and phone, no travel time); Hospitalito Atitlán in Santiago Atitlán \"provides 24-hour emergency care\"."
+        },
+        {
+          "name": "Living in Guatemala: Panajachel",
+          "url": "https://livinginguatemala.com/panajachel/",
+          "read": "2026-11-15",
+          "says": "Data to October 2026. \"For specialist care (cardiology, complex surgery, MRI), expect to travel 3 hours to Guatemala City or 2 hours to Xela\"; \"For anything urgent and life-threatening, helicopter evacuation is sometimes used\"; CAP Panajachel is a 24-hour public care centre."
+        }
+      ],
+      "note": "Also the summary, tagline and drawback."
+    },
+    {
+      "id": "gt-healthcare-pana-solola",
+      "fact": "healthcare",
+      "cities": [
+        "panajachel"
+      ],
+      "claim": "The public Hospital Nacional de Sololá is about 20 minutes uphill",
+      "verdict": "cant-confirm",
+      "hedge": "about",
+      "wording": "the public Hospital Nacional de Sololá is about 20 minutes uphill",
+      "sources": [
+        {
+          "name": "Living in Guatemala: Hospitals near Panajachel (2026)",
+          "url": "https://livinginguatemala.com/directories/hospitals-panajachel/",
+          "read": "2026-11-15",
+          "says": "© 2026, latest source read 12 November 2026. \"Panajachel has several small medical facilities but no hospital\"; CAP Panajachel in Barrio Jucanya, \"which the MSPAS registry lists as open 24 hours\"; private clinics Pana Med and Centro Clínico Panajachel; Hospital Nacional de Sololá (address and phone, no travel time); Hospitalito Atitlán in Santiago Atitlán \"provides 24-hour emergency care\"."
+        }
+      ],
+      "note": "The hospital exists (address, phones, listed by the UK government as public); no page read gives the time."
+    },
+    {
+      "id": "gt-healthcare-pana-hospitalito",
+      "fact": "healthcare",
+      "cities": [
+        "panajachel"
+      ],
+      "claim": "The non-profit Hospitalito Atitlán across the lake offers 24-hour emergencies",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Living in Guatemala: Hospitals near Panajachel (2026)",
+          "url": "https://livinginguatemala.com/directories/hospitals-panajachel/",
+          "read": "2026-11-15",
+          "says": "© 2026, latest source read 12 November 2026. \"Panajachel has several small medical facilities but no hospital\"; CAP Panajachel in Barrio Jucanya, \"which the MSPAS registry lists as open 24 hours\"; private clinics Pana Med and Centro Clínico Panajachel; Hospital Nacional de Sololá (address and phone, no travel time); Hospitalito Atitlán in Santiago Atitlán \"provides 24-hour emergency care\"."
+        },
+        {
+          "name": "Living in Guatemala: Healthcare for retirees",
+          "url": "https://livinginguatemala.com/retire-in-guatemala/healthcare-for-retirees/",
+          "read": "2026-11-15",
+          "says": "Published May 4, 2026, updated October 23, 2026. Retirees who never worked for a Guatemalan employer have no IGSS route, and IGSS voluntary contributions cover pensions only (\"los beneficios no contemplan la cobertura de servicios médicos\"). Guatemala City private hospitals with 24-hour emergencies: Herrera Llerandi, Centro Médico, Universitario Esperanza, El Pilar. Hospital Privado Hermano Pedro in Antigua advertises 24/7 care. Hospitalito Atitlán offers \"the only 24/7 emergency and surgical obstetrical and gynecological care within a two-hour radius\"."
+        }
+      ]
+    },
+    {
+      "id": "gt-healthcare-pana-specialist",
+      "fact": "healthcare",
+      "cities": [
+        "panajachel"
+      ],
+      "claim": "Cardiology, complex surgery and MRI mean about 3 hours to Guatemala City (or 2 to Xela); helicopter evacuation is sometimes used",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Living in Guatemala: Panajachel",
+          "url": "https://livinginguatemala.com/panajachel/",
+          "read": "2026-11-15",
+          "says": "Data to October 2026. \"For specialist care (cardiology, complex surgery, MRI), expect to travel 3 hours to Guatemala City or 2 hours to Xela\"; \"For anything urgent and life-threatening, helicopter evacuation is sometimes used\"; CAP Panajachel is a 24-hour public care centre."
+        }
+      ],
+      "note": "The guide's own estimates. Also the summary, tagline (\"care three hours away\") and drawback."
+    }
+  ]
+}

@@ -3,11 +3,11 @@ import type { ExpatProfile } from '../expatPicks'
 const profile: ExpatProfile = {
   tagline: 'Cosmopolitan Caribbean beach town on the Samaná peninsula',
   summary:
-    'Las Terrenas is a beach town where over a third of residents come from abroad, mostly French and Italian. The Dominican Republic has no wealth tax, and Law 171-07 exempts the income a rentista declares. Inheritance tax is only 3%. Against that, foreign financial income can be taxed after year three, serious care is 2–3 hours away, and Schwab International does not accept DR residents.',
+    'Las Terrenas is a beach town where over a third of residents come from abroad, mostly French and Italian. The Dominican Republic has no wealth tax, and Law 171-07 exempts the income a rentista declares. Inheritance tax is only 3%. Against that, foreign financial income can be taxed after year three, serious care is 2–3 hours away, and Schwab International reportedly does not accept DR residents.',
   scores: { cost: 4, healthcare: 2, safety: 3, visa: 4, climate: 3, community: 3, tax: 3, estate: 4, lending: 3 },
   facts: {
     healthcare:
-      'The public municipal hospital and two private clinics (Clínica Especializada Internacional, Centro Galeno Integral) offer 24-hour emergency care; complex cases go to Santo Domingo or Santiago, 2–3 hours by road or by helicopter, and local private cover reportedly costs $80–150/month.',
+      'The public municipal hospital and two private clinics (Clínica Especializada Internacional, Centro Galeno Integral) offer 24-hour emergency care; complex cases go to Santo Domingo or Santiago, 2–3 hours by road or by helicopter, and local private plans are priced per applicant, from a published floor of about $28–70/month that rises with age (secondary source).',
     safety:
       'The Dominican Republic fell to 89th of 163 in the 2026 Global Peace Index and is at US State Dept Level 2 for crime (secondary source); the UK calls the crime rate high, with bag-snatching, robbery by motorcycle thieves and card cloning, and hurricanes June–November hit the north and east hardest.',
     visa:
@@ -26,7 +26,7 @@ const profile: ExpatProfile = {
   drawbacks: [
     'Serious hospital care is 2–3 hours away in Santo Domingo or Santiago',
     'Foreign financial income can be taxed after year three, depending on how far Law 171-07 reaches',
-    'Schwab International unavailable, and hurricane season June–November',
+    'Schwab International reportedly unavailable, and hurricane season June–November',
   ],
   sources: [
     { name: 'PwC Worldwide Tax Summaries: Dominican Republic, taxes on personal income', url: 'https://taxsummaries.pwc.com/dominican-republic/individual/taxes-on-personal-income', edition: '2026' },
@@ -40,6 +40,7 @@ const profile: ExpatProfile = {
     { name: 'Wikipedia: Las Américas International Airport', url: 'https://en.wikipedia.org/wiki/Las_Am%C3%A9ricas_International_Airport' },
     { name: 'Wikipedia: Samaná El Catey International Airport', url: 'https://en.wikipedia.org/wiki/Saman%C3%A1_El_Catey_International_Airport' },
     { name: 'Your Tax Base: Charles Schwab for expats (country list, Oct 2026)', url: 'https://yourtaxbase.com/blog/charles-schwab-for-expats' },
+    { name: 'Rio Times: Healthcare in the Dominican Republic for expats 2026', url: 'https://www.riotimesonline.com/healthcare-dominican-republic-expats-2026/', edition: '2026' },
   ],
 }
 

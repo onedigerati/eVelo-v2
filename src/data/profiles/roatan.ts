@@ -3,11 +3,11 @@ import type { ExpatProfile } from '../expatPicks'
 const profile: ExpatProfile = {
   tagline: 'Bay Islands dive island, territorial tax, thin hospital care',
   summary:
-    'On tax, Honduras is about as good as BBD gets: only Honduran-source income is taxed, there is no wealth or inheritance tax, and rentista residence accepts $2,500 a month of investment income. Roatán adds reefs, a long-settled English-speaking community and four US nonstops. Against that, the island\'s only public hospital burned in April 2024, serious cases fly out, and a worldwide-income bill that failed in 2025 could return.',
+    'On tax, Honduras is about as good as BBD gets: only Honduran-source income is taxed, there is no wealth or inheritance tax, and rentista residence accepts $2,500 a month of investment income. Roatán adds reefs, a long-settled English-speaking community and four US nonstops. Against that, hospital care is thin: the public hospital burned in April 2024 and was reportedly replaced only in 2025, serious cases fly out, and a worldwide-income bill that failed in 2025 could return.',
   scores: { cost: 4, healthcare: 1, safety: 3, visa: 4, climate: 2, community: 3, tax: 5, estate: 4, lending: 3 },
   facts: {
     healthcare:
-      'The island\'s only public hospital burned down on 19 April 2024 (rebuilding was expected to take about 18 months), leaving private hospitals and clinics; Canada calls Bay Islands emergency facilities "very limited" and says major procedures may need evacuation, so serious cases fly to San Pedro Sula, Tegucigalpa or the US, and international cover with medevac is a must.',
+      'The island\'s only public hospital burned down on 19 April 2024, and its replacement, Hospital Satuyé, has reportedly operated since September 2025 alongside private hospitals and clinics; Canada calls Bay Islands emergency facilities "very limited" and says major procedures may need evacuation, so serious cases fly to San Pedro Sula, Tegucigalpa or the US, and international cover with medevac is a must.',
     safety:
       'Honduras is reportedly at US State Dept Level 3, "reconsider travel" (August 2026, secondary source), with Level 4 only for Gracias a Dios; Canada says "the Bay Islands are generally safe" but reports night-time beach assaults and rental burglaries and advises avoiding Coxen Hole, Los Fuertes and Suampo after dark, and the UK flags petty theft and ATM fraud on Roatán.',
     visa:
@@ -16,7 +16,7 @@ const profile: ExpatProfile = {
     estate:
       'No inheritance, estate or gift tax is listed by PwC, and a secondary source confirms none, though no Honduran statute was found and the same source says inherited income may be subject to income tax under general rules; there is no US estate treaty, and US estate tax applies above the $15M exemption (2026).',
     lending:
-      'Interactive Brokers reportedly lists Honduras among admitted countries, with margin subject to product rules (secondary source); whether Schwab One International accepts Honduras is unknown, and Fidelity and Vanguard open no new accounts for residents abroad.',
+      'Interactive Brokers reportedly lists Honduras among admitted countries, with margin subject to product rules (secondary source); Schwab One International reportedly does not accept Honduras residents (Oct 2026), and Fidelity and Vanguard reportedly open no new accounts for residents abroad.',
     climate:
       'Hot and humid: highs about 28°C in winter to 32°C in August–September, a dry spring (about 76 mm in April) and a very wet October–December (about 400–450 mm a month); hurricane season runs May–November, and Hurricane Mitch (1998) paralysed the island.',
     community:
@@ -25,7 +25,7 @@ const profile: ExpatProfile = {
       'Roatán\'s airport (RTB) is near Coxen Hole, about 20 minutes from West End; ferries link the island to La Ceiba on the mainland.',
   },
   drawbacks: [
-    'The island\'s public hospital burned in 2024, and serious illness means an evacuation flight',
+    'Thin hospital care: the public hospital burned in 2024 and was reportedly replaced only in 2025, and serious illness means an evacuation flight',
     'A worldwide-income tax bill keeps returning to Congress',
     'Very wet late-year months, hurricane risk, and a Level 3 US advisory for the country',
   ],
@@ -49,6 +49,9 @@ const profile: ExpatProfile = {
     { name: 'Wikipedia: Roatán', url: 'https://en.wikipedia.org/wiki/Roat%C3%A1n' },
     { name: 'Wikipedia: Juan Manuel Gálvez International Airport', url: 'https://en.wikipedia.org/wiki/Juan_Manuel_G%C3%A1lvez_International_Airport' },
     { name: 'Finantres: Interactive Brokers in Honduras', url: 'https://finantres.com/interactive-brokers-honduras/?hub_page=2', edition: '2026' },
+    { name: 'YourTaxBase: Charles Schwab for expats (country list, Oct 2026)', url: 'https://yourtaxbase.com/blog/charles-schwab-for-expats' },
+    { name: 'Your Tax Base: best brokerage for US expats (Oct 2026)', url: 'https://yourtaxbase.com/blog/best-brokerage-for-us-expats', edition: '2026' },
+    { name: 'La Prensa: hospital modernisation, Hospital Satuyé in Roatán in operation (Dec 2025)', url: 'https://www.laprensa.hn/teinteresa/avances-en-modernizacion-de-hospitales-atencion-primaria-DP28639318', edition: '2025' },
   ],
 }
 

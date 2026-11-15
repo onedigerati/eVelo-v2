@@ -1,0 +1,14 @@
+$ npx vitest run src/data/__tests__/factCheck.test.ts src/data/__tests__/expatPicks.test.ts
+
+ Test Files  2 passed (2)
+      Tests  82 passed (82)
+   Start at  12:58:19
+   Duration  817ms (transform 55%, tests 26%, import 19%)
+
+
+$ npm test
+ Test Files  64 passed (64)
+      Tests  1042 passed (1042)
+   Start at  12:58:20
+   Duration  17.73s (transform 66%, tests 24%, import 10%)
+

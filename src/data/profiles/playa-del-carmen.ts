@@ -12,11 +12,11 @@ const profile: ExpatProfile = {
     safety:
       'Mexico is 137th of 163 in the 2026 Global Peace Index; Quintana Roo is reportedly US Level 2 (secondary source), and the UK warns that rival criminal gangs have clashed in popular Cancún tourist destinations and surrounding areas, with assaults on travellers in Cancún, Tulum and Playa del Carmen.',
     visa: 'Temporary residency on economic solvency accepts savings or investment balances: the San Diego consulate\'s 2026 sheet asks for about $68,200 average monthly balance over 12 months or $4,049/month of income for 6 months, and other consulates ask more (about $74,700 or $4,430/month); permanent residency for retirees is about $299,000 or $7,430/month (2026), and a brokerage account counts as investments.',
-    tax: 'No wealth tax; tax residents pay up to 35% (2026) on worldwide income, with foreign dividends fully taxable plus a separate 10% tax on the net dividend that cannot be credited, and foreign interest fully taxable, FX gains on principal included; margin-loan proceeds are not income, so a low-yield, growth-tilted portfolio limits the drag (get local advice).',
+    tax: 'No wealth tax; tax residents pay up to 35% (2026) on worldwide income, with foreign dividends fully taxable plus a separate 10% tax on the net dividend that cannot be credited, and foreign interest fully taxable, FX gains on principal included; margin-loan proceeds are not income (loans above MXN 600,000 a year must be reported in the annual return, or they are taxed as income), so a low-yield, growth-tilted portfolio limits the drag (get local advice).',
     estate:
       'No inheritance or estate tax: inheritances received by Mexican residents are exempt from income tax, and US-resident heirs receiving US assets should fall outside Mexican tax (an inference); there is no US estate treaty, so only US estate tax applies, above the $15M exemption (2026).',
     lending:
-      'IBKR reportedly accepts Mexico residents (IBKR Pro), and Schwab One International\'s online form reportedly accepted Mexico in Oct 2026; margin by country of residence is unreported, and Fidelity and Vanguard open no accounts for residents abroad.',
+      'IBKR reportedly accepts Mexico residents (IBKR Pro), and Schwab One International\'s online form reportedly accepted Mexico in Oct 2026; margin by country of residence is unreported, and Fidelity and Vanguard reportedly open no new accounts for residents abroad.',
     climate: 'Hot all year: highs about 28 °C in winter rising to 33 °C in late summer, rain June–November, and hurricane exposure (Wilma struck in 2005).',
     community:
       'Quintana Roo is among the top states for new US temporary residents, but the foreign community reportedly leans to remote workers and tourists more than retirees (secondary source).',
@@ -43,6 +43,8 @@ const profile: ExpatProfile = {
       edition: '2026',
     },
     S.mxResidency,
+    { name: 'Your Tax Base: best brokerage for US expats (Oct 2026)', url: 'https://yourtaxbase.com/blog/best-brokerage-for-us-expats', edition: '2026' },
+    { name: 'IDC Online: credit lines and the annual return (LISR art. 90, loans over MXN 600,000)', url: 'https://idconline.mx/fiscal-contable/2025/04/30/lineas-de-credito-se-reportan-en-la-declaracion-anual', edition: '2025' },
     { name: 'IMSS: Seguro de Salud para la Familia', url: 'https://imss.gob.mx/faq/seguro-familia', edition: '2026' },
     { name: 'YourTaxBase: Charles Schwab for expats (country list, Oct 2026)', url: 'https://yourtaxbase.com/blog/charles-schwab-for-expats' },
     S.gpiPoster,

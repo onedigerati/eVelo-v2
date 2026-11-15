@@ -4,7 +4,7 @@ const profile: ExpatProfile = {
   tagline: 'Lake Atitlán town, territorial tax, care three hours away',
   summary:
     'Guatemala taxes only Guatemalan-source income, has no wealth tax, repealed its inheritance tax in April 2026, and grants permanent residence as a rentista on $1,250 a month. Panajachel brings that profile to Lake Atitlán, with a mild highland climate and a 50-year history of foreign residents. It ranks low because there is no hospital in town and serious care is about 3 hours away in Guatemala City; Antigua carries Guatemala better.',
-  scores: { cost: 4, healthcare: 1, safety: 2, visa: 5, climate: 4, community: 3, tax: 5, estate: 5, lending: 3 },
+  scores: { cost: 4, healthcare: 1, safety: 2, visa: 5, climate: 4, community: 3, tax: 5, estate: 5, lending: 4 },
   facts: {
     healthcare:
       'No hospital in Panajachel: the public CAP health centre is open 24 hours and there are private clinics, the public Hospital Nacional de Sololá is about 20 minutes uphill, and the non-profit Hospitalito Atitlán across the lake offers 24-hour emergencies; cardiology, complex surgery and MRI mean about 3 hours to Guatemala City (or 2 to Xela), helicopter evacuation is sometimes used, and the public IGSS does not cover retirees.',
@@ -12,11 +12,11 @@ const profile: ExpatProfile = {
       'Guatemala is 88th of 163 in the 2026 Global Peace Index and reportedly at US State Dept Level 3, "reconsider travel" (secondary source, dated 2023); the UK warns of "armed attacks or robberies on most tourist routes between Guatemala City, Antigua … and Lake Atitlán", there are occasional night robberies on the Panajachel–Sololá road, and a lake boat capsized in high wind in January 2026, killing two tourists (secondary source).',
     visa:
       'Rentista or pensionado permanent residence on verifiable foreign income of at least $1,250/month, plus $300 per dependant (Acuerdo IGM-16-2025); fees are about $25 to file and $400 for the status (secondary source), and filing is in person in Guatemala City.',
-    tax: 'No wealth tax (only the municipal IUSI on real estate, about 0.2–0.9%); the system is territorial, and PwC says investment income and capital gains from abroad are not taxed, so US dividends, interest and loan proceeds are outside Guatemalan tax.',
+    tax: 'No wealth tax (only the municipal IUSI on real estate, about 0.2–0.9%, which Decreto 18-2026 cuts to zero on homes 90 days after its 28 August 2026 publication); the system is territorial, and PwC says investment income and capital gains from abroad are not taxed, so US dividends, interest and loan proceeds are outside Guatemalan tax.',
     estate:
       'Decreto 6-2026 repealed the inheritance, legacy and gift tax (previously 1–25%) from 2 April 2026, so heirs owe nothing locally; there is no US estate treaty, and US estate tax applies above the $15M exemption (2026).',
     lending:
-      'Interactive Brokers reportedly serves all non-sanctioned countries, so Guatemala residents should be accepted, but margin terms are unconfirmed; whether Schwab One International accepts Guatemala is unknown, and Fidelity and Vanguard open no new accounts for residents abroad.',
+      'Interactive Brokers reportedly serves all non-sanctioned countries, so Guatemala residents should be accepted, but margin terms are unconfirmed; Schwab One International\'s online form reportedly accepted Guatemala in Oct 2026, and Fidelity and Vanguard reportedly open no new accounts for residents abroad.',
     climate:
       'Mild at 1,597 m: highs about 25°C all year, with about 1,490 mm of rain, June the wettest; rainy-season landslides are a hazard, and a mudslide in Hurricane Stan (2005) destroyed about 100 homes along the river.',
     community:
@@ -49,6 +49,9 @@ const profile: ExpatProfile = {
     },
     { name: 'Living in Guatemala: Healthcare for retirees', url: 'https://livinginguatemala.com/retire-in-guatemala/healthcare-for-retirees/' },
     { name: 'Wikipedia: La Aurora International Airport', url: 'https://en.wikipedia.org/wiki/La_Aurora_International_Airport' },
+    { name: 'YourTaxBase: Charles Schwab for expats (country list, Oct 2026)', url: 'https://yourtaxbase.com/blog/charles-schwab-for-expats' },
+    { name: 'Your Tax Base: best brokerage for US expats (Oct 2026)', url: 'https://yourtaxbase.com/blog/best-brokerage-for-us-expats', edition: '2026' },
+    { name: 'Consortium Legal: Guatemala\'s IUSI reform, an analysis of Decree 18-2026 (Sep 2026)', url: 'https://consortiumlegal.com/en/2026/09/03/guatemalas-iusi-reform-an-analysis-of-decree-18-2026/', edition: '2026' },
   ],
 }
 

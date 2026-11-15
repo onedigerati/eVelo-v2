@@ -8,11 +8,11 @@ const profile: ExpatProfile = {
   scores: { cost: 3, healthcare: 4, safety: 3, visa: 4, climate: 5, community: 4, tax: 5, estate: 5, lending: 4 },
   facts: {
     healthcare:
-      'Atenas has a 24-hour clinic; Hospital CIMA in Escazú (JCI-accredited per a secondary source) and JCI-accredited Clínica Bíblica are under an hour away with English-speaking staff; residents must also join the CCSS ("Caja") public system at a share of declared income.',
+      'Atenas reportedly has a 24-hour private clinic; Hospital CIMA in Escazú (JCI-accredited per a secondary source) and JCI-accredited Clínica Bíblica are under an hour away with English-speaking staff; residents must also join the CCSS ("Caja") public system at a share of declared income.',
     safety:
       'Costa Rica is 62nd of 163 in the 2026 Global Peace Index and US State Dept Level 2 for crime (April 2026, secondary source); Atenas is a quiet farm town, but burglary and petty theft are the common complaints nationwide.',
     visa:
-      'Rentista suits a portfolio-funded retiree: stable income of at least $2,500/month for 2 years (no compulsory deposit on the official checklist checked in September 2026), though whether brokerage dividends count as "stable" income is unaddressed; Inversionista needs about $150k and Pensionado a $1,000/month pension.',
+      'Rentista suits a portfolio-funded retiree: stable income of at least $2,500/month for 2 years (no compulsory deposit on the official checklist checked in September 2026), though whether brokerage dividends count as "stable" income is unaddressed; Inversionista needs $150k, or reportedly $200k since Law 9996\'s window closed in July 2026, and Pensionado a $1,000/month pension.',
     tax: 'No wealth tax; taxation is source-based today, so foreign dividends and interest are untaxed, but Bill 25.796 (filed 22 September 2026, in committee) would tax all residents\' foreign interest, dividends and gains at a reported 15%, deducting rather than crediting foreign tax; check its status.',
     estate:
       'Costa Rica has no inheritance tax, so heirs owe nothing locally on US assets; there is no US estate treaty, and US estate tax applies above the $15M exemption (2026).',
@@ -39,6 +39,7 @@ const profile: ExpatProfile = {
     { name: 'Travel Advisory: Costa Rica (US State Dept levels)', url: 'https://www.traveladvisory.io/advisory/costa-rica' },
     { name: 'Your Tax Base: Charles Schwab for expats (country list, Oct 2026)', url: 'https://yourtaxbase.com/blog/charles-schwab-for-expats' },
     S.gpiPoster,
+    { name: 'Rio Times: Residency in Costa Rica for foreigners 2026', url: 'https://www.riotimesonline.com/residency-costa-rica-foreigners-2026/', edition: '2026' },
   ],
 }
 

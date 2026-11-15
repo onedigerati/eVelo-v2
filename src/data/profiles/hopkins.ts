@@ -7,7 +7,7 @@ const profile: ExpatProfile = {
   scores: { cost: 3, healthcare: 1, safety: 3, visa: 4, climate: 2, community: 2, tax: 5, estate: 5, lending: 3 },
   facts: {
     healthcare:
-      'Only a small public clinic in the village; the public Southern Regional Hospital in Dangriga (general, maternity, intensive and surgical care) is about 20 miles, or 30 minutes, by road, private care is in Belize City about 2.5 hours away (secondary source), and serious cases fly on to Mérida, Guatemala City or Miami, where the US Embassy says medevac "can easily cost US$10,000 and up".',
+      'Only a community health post in the village, whose nurse is not on site full time; the public Southern Regional Hospital in Dangriga (general, maternity, intensive and surgical care) is about 20 miles, or 30 minutes, by road, private care is in Belize City about 2 hours away by road (secondary source), and serious cases fly on to Mérida, Guatemala City or Miami, where the US Embassy says medevac "can easily cost US$10,000 and up".',
     safety:
       'Belize is at US State Dept Level 2 (March 2026, secondary source), with Level 3 only for Southside Belize City, and is not scored in the Global Peace Index; the UK notes one of the world\'s highest murder rates per capita, mostly gang violence in Belize City, gives no warning for Hopkins, and flags flooded bridges and causeways in severe weather "particularly in Stann Creek and Toledo".',
     visa:
@@ -25,7 +25,7 @@ const profile: ExpatProfile = {
       'Dangriga\'s airstrip, about 30 minutes away, has short domestic flights to Belize City, the country\'s international gateway (BZE).',
   },
   drawbacks: [
-    'A public regional hospital only; private care is 2.5 hours away and anything serious means a flight abroad',
+    'A public regional hospital only; private care is about 2 hours away and anything serious means a flight abroad',
     'Low, exposed coast in the hurricane belt',
     'A small village with few services, and Schwab International is likely unavailable',
   ],
@@ -40,6 +40,7 @@ const profile: ExpatProfile = {
     { name: 'Wikipedia: Hopkins, Belize', url: 'https://en.wikipedia.org/wiki/Hopkins,_Belize' },
     { name: 'Wikipedia: Philip S. W. Goldson International Airport', url: 'https://en.wikipedia.org/wiki/Philip_S._W._Goldson_International_Airport' },
     { name: 'Your Tax Base: Charles Schwab for expats (country list, Oct 2026)', url: 'https://yourtaxbase.com/blog/charles-schwab-for-expats' },
+    { name: 'Global Brigades: Hopkins Village', url: 'https://www.globalbrigades.org/communities/hopkins-village/' },
   ],
 }
 
