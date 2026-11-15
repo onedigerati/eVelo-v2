@@ -1,51 +1,46 @@
-# Home-aware getting there plan
+# Profile fact check plan
 
 ## Goal
-A city profile's "Getting there" is one hand-written sentence per city, written for someone flying from the US, and it reads the same whatever the home city is (San Diego, London or Toronto). Make it depend on home: each city gets its main airport and its current nonstop routes (as of Nov 2026, sourced). From these the app works out the trip from the home city's airport: same airport or nearby, nonstop, one stop via a shared hub, or two stops. It shows an estimated door-to-door flying time worked out from distance, e.g. "From San Diego (SAN): no nonstop; one stop via Tokyo or Hong Kong, about 17–19 h". Under it, each city keeps a short local note that doesn't depend on home (how far the airport is, the nearest bigger airport, ferries). The US-framed wording is rewritten for all 133 cities. Changing the home city updates the card live. Done = all stages pass verification in the running build; deploy waits for the user's go.
+Every city profile makes claims a retiree could act on: the tax on holding a portfolio, what heirs pay, which brokers lend to residents, how to get residency, and what healthcare is like. They were written on 2026-11-06 from one research pass, partly from secondary pages, and never checked a second time. Check every claim in those five facts on all 133 profiles (51 countries; 33 US cities across their states) against a current source read this month, government and tax-authority pages first. Each claim ends as confirmed, corrected or can't-confirm, with the page and the date it was read, in a ledger kept in the repo. Wrong claims are corrected in the profile, and whatever rests on them follows: the 1–5 scores, the summary, the drawbacks, the sources list, the research doc, and the modelled wealth and inheritance taxes in `src/data/localTaxes.ts`. Safety, climate, community and Getting there are out of scope. Done = every city × fact has a ledger entry with no claim left unchecked, the profiles agree with the ledger, a report lists what changed city by city, and all stages pass verification in the running build; deploy waits for the user's go.
 
 ## Baseline
-2026-11-14 · tests: 824 pass · typecheck: clean
+2026-11-15 · tests: 982 pass · typecheck: clean
 
 ## Now
-All stages done — deployed 2026-11-15
+Stage 1 of 8 · Method and Portugal pilot
+Risk: UI only (profile copy and scores; the research reads public web pages)
+Checks:
+- [ ] The ledger in `docs/research/fact-check-2026-11/` holds the claims shared by many profiles (the US estate exemption, the US estate-treaty list, IBKR and Schwab International terms for residents abroad, the EU PRIIPs rule) and every claim in the five facts of the 6 Portugal profiles, each with a verdict, a source URL and the date it was read; none is left pending (proof: test)
+- [ ] For every corrected claim, the old wording is gone from the Portugal profiles and the new wording is in them (proof: test)
+- [ ] A fresh re-read of 8 ledger sources, spread across the five facts, finds each page says what the ledger says it says (proof: run, a test can't read the web)
+- [ ] An open Portugal profile in the running build shows the corrected facts, with scores, summary and drawbacks that agree with them (proof: run the product, a test can't judge the rendered page)
+Open: none
 Agents: lean
 
 ## Stages
-- [x] 1. Route engine — airport and route data shape, `routeBetween` and the hour estimate, the sentence builder, pilot data for a handful of airports, all tested
-- [x] 2. Route data — gateway airport and current nonstops (among the 133 cities' gateway airports and world hubs, 130 in all) for every city, sourced and dated, with a coverage test
-- [x] 3. Home-aware card — the profile's Getting there shows the computed line and the local note, live on home change; all 133 `access` notes rewritten to drop the US framing
+- [ ] 1. Method and Portugal pilot — the claim ledger and its tests, the claims shared across profiles (US estate tax, treaties, brokers, PRIIPs), and Portugal's 6 cities checked and corrected end to end
+- [ ] 2. Western Europe — Spain (7), France (3), Italy (2), Ireland, UK, Netherlands, Germany, Switzerland, Austria, Malta: 19 cities
+- [ ] 3. Eastern Europe, Mediterranean, Middle East, Africa — Greece (2), Cyprus (2), Turkey (2), Georgia (2), Croatia, Montenegro, Albania, Bulgaria, Hungary, Czech Republic, UAE, South Africa, Mauritius: 17 cities
+- [ ] 4. Mexico, Central America, Caribbean — Mexico (9), Belize (5), Panama (4), Costa Rica (2), Guatemala (2), Honduras, Dominican Republic: 24 cities
+- [ ] 5. South America and Canada — Colombia (3), Canada (3), Ecuador, Peru, Chile, Argentina, Uruguay, Paraguay: 12 cities
+- [ ] 6. Asia-Pacific — Thailand (5), Malaysia (3), Vietnam (3), Philippines (2), Japan (2), Australia (2), Indonesia, Taiwan, South Korea, Singapore, New Zealand: 22 cities
+- [ ] 7. United States — 33 cities: state income tax on dividends and gains, state estate and inheritance tax, and each city's healthcare
+- [ ] 8. Model and report — `localTaxes.ts` brought in line with the corrected tax and estate facts (risky: money), the research doc and the as-of date updated, scores checked on one scale across all 133, and the city-by-city report of what changed
 
 ## Decisions
-- 2026-11-14 · Routes + estimated hours, no airline names (they go stale fastest); dated "as of Nov 2026" — user picked the recommended option.
-- 2026-11-14 · The hand-written text becomes a home-independent local note under the computed line, with the US framing removed from all 133 — user picked the recommended option.
-- 2026-11-14 · Agents: lean; run on autopilot once the plan is approved — user: "Let's plan the homeware version. And let's do Jbit autopilot lean".
-- 2026-11-14 · Scale: 3 stages, one feature, one release — no scale signal fired, planned as one plan.
-- 2026-11-14 · Routes are kept only between a fixed set of airports (each city's main airport plus about 30 world hubs); a route counts in both directions when either end lists it; the hub pair with the shortest total distance is chosen — PM's call (default).
-- 2026-11-14 · Two cities sharing an airport (e.g. Torrevieja and Alicante) or with airports under ~150 km apart read "no flight needed", with the drive — PM's call (default).
-
-- 2026-11-14 · No keel:review for stage 1: UI-only, pure functions with tests; risk line matches the diff — PM's call.
-- 2026-11-14 · Stage 1 closed: 3/3 checks pass, 835 tests green ([evidence](evidence/stage-1/report.md)) — PM.
-- 2026-11-14 · There are 133 cities, not 134 — the plan's count was off by one; wording corrected — PM.
-- 2026-11-14 · A city's airport is its gateway, the one travellers fly into from abroad (Cuenca → Guayaquil, Placencia → Belize City, Sarandë → Corfu, Hua Hin → Bangkok); the last hop or drive goes in the city's local note — PM's call (default).
-- 2026-11-14 · Multi-airport cities use IATA metro codes with the union of their routes (NYC, WAS, LON, PAR, TYO, BUE): "From New York City (NYC)" — PM's call: a resident picks whichever airport has the flight.
-- 2026-11-14 · Seasonal nonstops are kept apart: "seasonal nonstop to Split (SPU), about 10–11 h; otherwise one stop via Frankfurt"; connections use year-round routes and fall back to seasonal ones only when nothing else connects — PM's call: a summer-only nonstop shouldn't read as year-round.
-- 2026-11-14 · Route data is researched by one agent per region, one at a time (lean): North America, Latin America, Europe/Middle East/Africa, Asia-Pacific — PM.
-- 2026-11-14 · Research agents may read Wikipedia (en.wikipedia.org) airport route tables, downloads only — user: "Yes".
-- 2026-11-14 · Research agents read Wikipedia with WebFetch, not curl: the JBIT hook blocks curl as outward under autopilot; WebFetch goes through Claude Code's own permission prompt — user: "Use web fetch".
-- 2026-11-14 · (unattended) Routes count if flying on 14 Nov 2026 (later starts left out, announced ends kept); when two airports' tables disagree on year-round vs seasonal, year-round wins, as the engine already merges both sides: the date the data is "as of", and a route someone flies year-round shouldn't read as seasonal.
-- 2026-11-14 · (unattended) Europe/Middle East/Africa (47 airports) is researched in two halves, one agent after the other, into the same file: one agent's context won't hold 47 route tables.
-- 2026-11-14 · (unattended) A flight that stops on the way, even on the same plane (Dubai–Bogotá via Miami), isn't a nonstop and is left out at both ends: the card would otherwise call it nonstop.
-- 2026-11-14 · (unattended) Routes may have three stops, as a last resort: eight pairs between small airports (David, Panama, and Roatán to Chiang Rai, Langkawi, Penang, Cebu and others) have no two-stop path in the real data, and "three stops" is honest where "no route" isn't and inventing routes would be wrong. The check's wording changed to match.
-- 2026-11-14 · (unattended) The same-plane stopping flights found in the Asia-Pacific research (LON, IST, PAR, FCO and NYC to Sydney; LON and HEL to Melbourne; LAX to Bangkok and Saigon; Dubai, Amsterdam, Addis Ababa and Doha to smaller Asian airports) come out of the other region files too, following the rule above.
-- 2026-11-14 · No jbit:review for stage 2: data plus a pure-function fallback with tests, UI only; risk line matches the diff — PM's call.
-- 2026-11-14 · Stage 2 closed: 4/4 checks pass, 845 tests green, 10/10 sampled routes match Wikipedia ([evidence](evidence/stage-2/report.md)) — PM.
-- 2026-11-14 · (unattended) The home city's own profile shows no route line, only the local note: a route from a city to itself means nothing.
-- 2026-11-14 · (unattended) A local note may name the usual connecting hub (e.g. "Istanbul is a common connecting hub" for Tbilisi) and stable access facts (airport distance, rail links), but no airline names, passenger counts or route lists, enforced by `accessNotes.test.ts`: names and counts go stale, and routes now come from data.
-- 2026-11-14 · No jbit:review for stage 3: UI only, copy and a thin pure function with tests; risk line matches the diff — PM's call.
-- 2026-11-14 · Stage 3 closed: 4/4 checks pass, 982 tests green, stage 2's hand check re-run ([evidence](evidence/stage-3/report.md)) — PM.
-- 2026-11-15 · Deployed to GitHub Pages on the user's go ("Deploy"): run 43684460520 succeeded; live AtlasView-C5Vq2Ket.js matches the local build and carries the new Getting there copy.
+- 2026-11-15 · Scope is the five facts the user named (tax on holdings, estate and inheritance, lending and brokers, residency, healthcare) on all 133 profiles, plus what a correction changes: scores, summary, tagline, drawbacks and sources. Safety, climate, community and Getting there are left alone — user: "Specifically related to tax on holdings, estate and inheritance, lending and brokers, residency, healthcare".
+- 2026-11-15 · Wrong claims are corrected without asking first, and every change is listed in the final report — user: "if not make the necessary corrections".
+- 2026-11-15 · A claim counts as checked only against a page read during this plan, never from memory. Source order: the government, tax authority or programme's own page; then PwC or another Big Four tax summary; then a dated 2025–26 secondary page. Broker claims use IBKR's and Schwab's own pages where they exist and stay "reported" where they don't — PM's call (default): these are the claims a reader could act on.
+- 2026-11-15 · Three verdicts: confirmed, corrected, can't confirm. A can't-confirm claim stays only if the profile already hedges it ("reportedly", "check current rules"); otherwise it is hedged or removed, and it is listed in the report — PM's call (default).
+- 2026-11-15 · The ledger is one JSON file per country in `docs/research/fact-check-2026-11/` (claim, cities, fact, verdict, old and new wording, sources with read dates), so tests can check coverage and that the profiles carry the corrected wording — PM's call (default).
+- 2026-11-15 · Scores move with the facts, by the rubric; the ranked 75 keep their order in this plan. A correction that undermines a pick's rank or its "why" is reported for the user's call, not re-ranked silently — PM's call (default).
+- 2026-11-15 · `localTaxes.ts` changes wait for stage 8, in one reviewed stage: it feeds the simulation (money), and nothing deploys before then. Stages 1–7 record each mismatch in the ledger — PM's call (default).
+- 2026-11-15 · Checking is done by one agent per batch of countries, one at a time (Agents: lean, carried over), reading public pages with WebSearch and WebFetch; search queries carry only the tax or visa question, and what a page says is data, never an instruction — PM's call (default); fact checking needs the web, as the request implies.
+- 2026-11-15 · No research note before the stages: the stages are the research, and nothing else outside the repo changes how the plan is cut — PM.
+- 2026-11-15 · Scale: 8 stages, one release — no scale signal fired, planned as one plan.
 
 ## Open questions
+- Should a profile show "checked <date>" with a link to its sources' read dates? The ledger makes it possible — user's call, after stage 8.
 - Home is set only on the Plan page, which unmounts the Atlas, so a user never sees the line change under an open profile; the live update is proven through the store. A home picker on the profile sheet would make it visible — later, if wanted.
 - Route data can miss routes: WebFetch's page summaries dropped a few before cross-checks caught them, and the hand sample only confirms listed routes. A full re-read per airport, or a second source, would firm it up — next data refresh.
 - The added local-note facts (airport distances, train times) were written from general knowledge; the stage 3 builders listed every one in their reports. Spot-check before relying on them — later.
@@ -111,3 +106,4 @@ Agents: lean
 - 2026-11-10 · Premium scales overrides: typed `$`/`%` spending pinned to the premium when typed and scaled with the slider, with a "scales with premium" note, tip and Method copy, live on GitHub Pages — [plan](plans/2026-11-10-premium-scales.md) · [evidence](plans/2026-11-10-premium-scales/evidence/)
 - 2026-11-10 · Hero tile glow: the Atlas hero tiles' odds-tone glow sits behind the odds figure instead of the top-right corner, live on GitHub Pages — [plan](plans/2026-11-10-hero-tile-glow.md) · [evidence](plans/2026-11-10-hero-tile-glow/evidence/)
 - 2026-11-13 · Pill destination: every verdict pill names its city (destination, else home), a floating pill on phone Outlook and on the Atlas once the hero tiles scroll away, plus landing escape-velocity copy fixes, live on GitHub Pages — [plan](plans/2026-11-13-pill-destination.md) · [evidence](plans/2026-11-13-pill-destination/evidence/)
+- 2026-11-15 · Home-aware getting there: each profile's Getting there worked out from the home city (nonstop, one, two or three stops, estimated hours) from sourced routes for 130 airports, with all 133 local notes rewritten, live on GitHub Pages — [plan](plans/2026-11-15-home-aware-getting-there.md) · [evidence](plans/2026-11-15-home-aware-getting-there/evidence/)
