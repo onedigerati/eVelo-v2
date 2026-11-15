@@ -3,7 +3,7 @@ import type { ExpatProfile } from '../expatPicks'
 const profile: ExpatProfile = {
   tagline: 'Stable capital with an 11-year tax holiday on foreign income',
   summary:
-    'Uruguay is 13th in International Living\'s 2026 index and 43rd in the 2026 Global Peace Index, the highest in Latin America. New residents can exempt foreign capital income for the arrival year plus 10, and there is no inheritance tax. Montevideo is a calm, mid-priced capital with good private health cooperatives. It is far from the US, its homicide rate has been rising, and the holiday needs 183 or more days a year there.',
+    'Uruguay is 13th in International Living\'s 2026 index and 43rd in the 2026 Global Peace Index, the highest in Latin America. New residents can exempt foreign capital income for the arrival year plus 10, and there is no inheritance tax. Montevideo is a calm, mid-priced capital with good private health cooperatives. It is far from the US, its homicide rate has been rising, and the holiday needs 183 or more days a year there unless you make a large qualifying investment.',
   scores: { cost: 3, healthcare: 4, safety: 3, visa: 4, climate: 3, community: 3, tax: 4, estate: 5, lending: 4 },
   facts: {
     healthcare:
@@ -12,7 +12,7 @@ const profile: ExpatProfile = {
       'Uruguay is 43rd in the 2026 Global Peace Index and reportedly at US State Dept Level 2, but Montevideo\'s homicide rate was about 16 per 100,000 in 2025 and the first half of 2026 had Uruguay\'s most homicides since 2015; Pocitos, Punta Carretas and Carrasco are the calmer areas.',
     visa:
       'Permanent residency as a rentista on income from abroad needs a notarial certificate of its nature and monthly amount, with no published minimum (officials reportedly expect about $1,500/month, and dividends qualify as passive income); processing can take 6–18 months, and you are legal while it is pending.',
-    tax: 'Wealth tax of 0.1% (2026) reaches only net wealth located in Uruguay, so a US brokerage account is outside it; under Law 20.446 (from 2026) new residents with 183+ days\' presence can exempt foreign capital income for the arrival year plus 10, then pay 6% for 5 years and 12% after (that it covers dividends and interest is inferred from "capital income"; one source says 7%).',
+    tax: 'Wealth tax of 0.1% (2026) reaches only net wealth located in Uruguay, so a US brokerage account is outside it; under Law 20.446 (from 2026) new residents with 183+ days\' presence can exempt foreign capital income for the arrival year plus 10, then pay 6% for 5 years and 12% after (that it covers dividends and interest is inferred from "capital income"; the older 7% option is reportedly closed to new residents).',
     estate:
       'Uruguay has no inheritance tax, so heirs owe nothing locally on US assets; there is no US estate treaty, and US estate tax applies above the $15M exemption (2026).',
     lending:
@@ -23,7 +23,7 @@ const profile: ExpatProfile = {
       'Carrasco airport (MVD) is about 20 km east of the centre; ferries cross the Río de la Plata to Buenos Aires, and São Paulo, Panama City and Bogotá are common connecting hubs.',
   },
   drawbacks: [
-    'The tax holiday needs 183+ days a year in Uruguay, and after 11 years foreign income is taxed at 6%, then 12%',
+    'The tax holiday needs 183+ days a year in Uruguay (or a large investment), and after 11 years foreign income is taxed at 6%, then 12%',
     'Rising violent crime in Montevideo despite Uruguay\'s national peace ranking',
     'Very few nonstop flights to the US, and none for most of the year',
   ],

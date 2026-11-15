@@ -7,13 +7,13 @@ Every city profile makes claims a retiree could act on: the tax on holding a por
 2026-11-15 · tests: 982 pass · typecheck: clean
 
 ## Now
-Stage 5 of 8 · South America and Canada
-Scope: Colombia (3), Canada (3), Ecuador, Peru, Chile, Argentina, Uruguay, Paraguay — 12 cities, one ledger file per country, by the method in `docs/research/fact-check-2026-11/README.md`; Schwab's reported country list checked against Paraguay's, Peru's and Chile's profiles.
+Stage 6 of 8 · Asia-Pacific
+Scope: Thailand (5), Malaysia (3), Vietnam (3), Philippines (2), Japan (2), Australia (2), Indonesia, Taiwan, South Korea, Singapore, New Zealand — 22 cities, one ledger file per country, by the method in `docs/research/fact-check-2026-11/README.md`, in two builder batches run one after the other.
 Risk: UI only (profile copy and scores; the research reads public web pages)
 Checks:
-- [ ] The ledger holds every claim in the five facts of the 12 profiles, each with a verdict, a source URL and the date it was read; none is left pending, and `CHECKED_COUNTRIES` names all eight countries (proof: test)
+- [ ] The ledger holds every claim in the five facts of the 22 profiles, each with a verdict, a source URL and the date it was read; none is left pending, and `CHECKED_COUNTRIES` names all eleven countries (proof: test)
 - [ ] For every corrected claim, the old wording is gone from those profiles and the new wording is in them (proof: test)
-- [ ] A fresh re-read of 8 ledger sources, one per country and spread across the five facts, finds each page says what the ledger says it says (proof: run, a test can't read the web)
+- [ ] A fresh re-read of 11 ledger sources, one per country and spread across the five facts, finds each page says what the ledger says it says (proof: run, a test can't read the web)
 - [ ] Three open profiles in the running build, from three of these countries, show the corrected facts, with scores, summary and drawbacks that agree with them (proof: run the product, a test can't judge the rendered page)
 Open: none
 Mode: autopilot — unattended
@@ -24,7 +24,7 @@ Agents: lean
 - [x] 2. Western Europe — Spain (7), France (3), Italy (2), Ireland, UK, Netherlands, Germany, Switzerland, Austria, Malta: 19 cities — [evidence](evidence/stage-2/report.md)
 - [x] 3. Eastern Europe, Mediterranean, Middle East, Africa — Greece (2), Cyprus (2), Turkey (2), Georgia (2), Croatia, Montenegro, Albania, Bulgaria, Hungary, Czech Republic, UAE, South Africa, Mauritius: 17 cities — [evidence](evidence/stage-3/report.md)
 - [x ] 4. Mexico, Central America, Caribbean — Mexico (9), Belize (5), Panama (4), Costa Rica (2), Guatemala (2), Honduras, Dominican Republic: 24 cities — [evidence](evidence/stage-4/report.md)
-- [ ] 5. South America and Canada — Colombia (3), Canada (3), Ecuador, Peru, Chile, Argentina, Uruguay, Paraguay: 12 cities
+- [x ] 5. South America and Canada — Colombia (3), Canada (3), Ecuador, Peru, Chile, Argentina, Uruguay, Paraguay: 12 cities — [evidence](evidence/stage-5/report.md)
 - [ ] 6. Asia-Pacific — Thailand (5), Malaysia (3), Vietnam (3), Philippines (2), Japan (2), Australia (2), Indonesia, Taiwan, South Korea, Singapore, New Zealand: 22 cities
 - [ ] 7. United States — 33 cities: state income tax on dividends and gains, state estate and inheritance tax, and each city's healthcare
 - [ ] 8. Model and report — `localTaxes.ts` brought in line with the corrected tax and estate facts (risky: money), the research doc and the as-of date updated, scores checked on one scale across all 133, and the city-by-city report of what changed
@@ -48,8 +48,11 @@ Agents: lean
 - 2026-11-15 · Spain's estate score stays 4 with its "inference" hedge: the statute read supports that US-resident heirs pay only on Spanish assets, but no page states it for this case — PM's call.
 - 2026-11-15 · Montenegro and Albania keep Lending 3 and get no EU IBKR correction: neither is in the EU, and Schwab reportedly doesn't take their residents, so "IBKR only" scores 3 whether or not Schwab's "within Europe" clause reaches them — consistent with the London/Zurich decision; builder's call, PM agreed. Dubai keeps 4 (Schwab reportedly accepts residents outside Europe).
 - 2026-11-15 · Guatemala's Lending goes 3 → 4 (Schwab's online form reportedly accepted Guatemala on 23 Oct 2026, plus IBKR, outside Europe: the rubric's 4), matching Mexico; Honduras stays 3 (Schwab reportedly declines it). Mexico's "margin-loan proceeds are not income" is corrected to add that loans above MXN 600,000 a year must be reported or are taxed as income — builders' calls by the rubric and the statute, PM agreed.
+- 2026-11-15 · Peru, Chile and Paraguay's Lending goes 3 → 4 on the same Schwab list as Guatemala (re-read 2026-11-15); Montréal keeps Residency 2 against Toronto's and Vancouver's 1 (Quebec's Investor Program is open, but needs CAD 2M, French and management experience) — builder's calls by the rubric, PM agreed.
 
 ## Open questions
+- For stage 8 (model), from stage 5: `localTaxes.ts` has no Canada entry (tax on accrued gains at death up to 26.8%, 26.7% in Quebec; probate Ontario 1.5% above CAD 50k, BC about 1.4%), and Argentina's entry uses the steady-state 0.25% Bienes Personales rate while 2026 is 0.5–0.75%, with debts not deductible (`canada.json`, `argentina.json` `modelMismatch`).
+- From stage 5, for the user at the final report: Asunción's `why` calls the residency means test "unverified"; it is now verified (since 6 July 2026 permanent residence needs active income, a pension or the $200k Investor Pass) — `paraguay.json` rankFlag.
 - From stage 4, for the user at the final report: Roatán's `why` (pick 59) reads as if the hospital gap were current, but a replacement public hospital has reportedly run since September 2025 (`honduras.json` rankFlag); Las Terrenas's `why` says flat "Schwab International is unavailable", which the profile now hedges with "reportedly". Neither `why` was changed (the plan keeps `why` lines).
 - From stage 4, unsettled: Panama's Decree 17 text (thresholds rest on two law-firm pages), Costa Rica's Inversionista amount ($150k on DGME in September vs a reported $200k), whether a Mexican margin balance counts as a reportable "préstamo", Guatemala's IUSI home exemption start date (about 26 Nov 2026 by count, 8 Jan 2027 per one outlet) — later.
 - For stage 8 (model), from stage 3: South Africa's death-time capital gains tax (s9HA) and exit tax (s9H) are confirmed but not modelled (`south-africa.json` `modelMismatch`); other stage 3 mismatches are in each country file.

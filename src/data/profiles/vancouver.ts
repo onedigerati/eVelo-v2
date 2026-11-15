@@ -15,7 +15,7 @@ const profile: ExpatProfile = {
     estate:
       'No inheritance or estate tax, but at death a resident is taxed as if all capital property were sold at market value, so gains accrued since arrival pay up to 26.8% (a spouse can defer it), and leaving Canada triggers the same departure tax; BC\'s probate fee is about 1.4% of an estate above CAD 50k; the US–Canada treaty lets Canada credit US estate tax on US property and the US credit Canada\'s tax at death on non-US property, but below the $15M US exemption (2026) there is no US estate tax, so the Canadian tax is simply paid.',
     lending:
-      'IBKR serves Canadian residents through Interactive Brokers Canada (margin under CIRO rules), while Schwab One International reportedly does not accept Canada residents (October 2026); US brokers reportedly often restrict accounts once the holder lives in Canada, so plan on IBKR Canada or a Canadian bank broker.',
+      'IBKR reportedly serves Canadian residents through Interactive Brokers Canada (margin under CIRO rules), while Schwab One International reportedly does not accept Canada residents (October 2026); US brokers reportedly often restrict accounts once the holder lives in Canada, so plan on IBKR Canada or a Canadian bank broker.',
     climate:
       'Mild oceanic: dry, sunny summers (July highs about 22 °C / 72 °F) and mild, wet, grey winters (January highs about 7 °C / 45 °F) with little snow; about 1,200 mm of rain a year, nearly three-quarters of it from October to March.',
     community:

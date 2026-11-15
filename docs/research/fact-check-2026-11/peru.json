@@ -1,0 +1,458 @@
+{
+  "country": "Peru",
+  "cities": [
+    "lima"
+  ],
+  "claims": [
+    {
+      "id": "pe-tax-no-wealth",
+      "fact": "tax",
+      "cities": [
+        "lima"
+      ],
+      "claim": "There is no wealth tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: quick chart, net wealth/worth tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/net-wealth-worth-tax-rates",
+          "read": "2026-11-15",
+          "says": "Peru (last reviewed 13 July 2026): NP (not provided)."
+        },
+        {
+          "name": "PwC: Peru, other taxes",
+          "url": "https://taxsummaries.pwc.com/peru/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 13 July 2026. The only property-based tax listed is the real estate property tax \"levied on the value of urban and rural real estate property\"; no net wealth, inheritance or gift tax is described."
+        }
+      ],
+      "note": "PwC's quick chart says \"not provided\" and its Peru pages describe no wealth tax; only the municipal real estate tax exists (PwC other taxes). Treated as confirmed on PwC's full list of Peruvian individual taxes; localTaxes.ts (PE) agrees."
+    },
+    {
+      "id": "pe-tax-residence",
+      "fact": "tax",
+      "cities": [
+        "lima"
+      ],
+      "claim": "Residents are those with 183+ days in 12 months",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Peru, residence",
+          "url": "https://taxsummaries.pwc.com/peru/individual/residence",
+          "read": "2026-11-15",
+          "says": "Last reviewed 13 July 2026. Foreigners are domiciled if they \"have resided or been in Peru for more than 183 calendar days within a 12-month period\"."
+        }
+      ]
+    },
+    {
+      "id": "pe-tax-foreign-income-scale",
+      "fact": "tax",
+      "cities": [
+        "lima"
+      ],
+      "claim": "Net foreign-source income, including US dividends and interest, is added to work income at progressive rates of 8–30%, with 30% above 45 UIT (about $72k; 2026)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Peru, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/peru/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 13 July 2026. Domiciled individuals \"are subject to income tax on their worldwide income\"; foreign income is taxed on the bracket scale 8% (to 5 UIT), 14%, 17%, 20% and 30% over 45 UIT; one UIT is PEN 5,500 for 2026."
+        },
+        {
+          "name": "EY Perú: key points on income from abroad",
+          "url": "https://www.ey.com/es_pe/newsroom/2024/03/aspectos-clave-ingresos-extranjero",
+          "read": "2026-11-15",
+          "says": "Dated 30 January 2024. Domiciled individuals \"tributan por sus rentas de fuente mundial\"; net foreign-source income \"se suma a las rentas del trabajo y se grava bajo la escala progresiva acumulativa del Impuesto a la Renta (8% - 30%)\"; US dividends are taxed in Peru too, with a possible credit for tax paid abroad."
+        }
+      ],
+      "note": "45 × PEN 5,500 = PEN 247,500, about $72k at PEN 3.43 per USD."
+    },
+    {
+      "id": "pe-tax-ftc-no-treaty",
+      "fact": "tax",
+      "cities": [
+        "lima"
+      ],
+      "claim": "A foreign tax credit capped at Peru's average rate, and no US income tax treaty",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Peru, foreign tax relief and tax treaties",
+          "url": "https://taxsummaries.pwc.com/peru/individual/foreign-tax-relief-and-tax-treaties",
+          "read": "2026-11-15",
+          "says": "Last reviewed 13 July 2026. The foreign tax credit uses the \"average Peruvian tax rate applied on their foreign income\" and is limited to tax actually paid abroad. Treaties with Brazil, Canada, Chile, Japan, Korea, Mexico, Portugal, Switzerland and the Andean Community; a UK treaty from 2027; no United States."
+        }
+      ]
+    },
+    {
+      "id": "pe-tax-no-newcomer",
+      "fact": "tax",
+      "cities": [
+        "lima"
+      ],
+      "claim": "There is no newcomer regime",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Peru, residence",
+          "url": "https://taxsummaries.pwc.com/peru/individual/residence",
+          "read": "2026-11-15",
+          "says": "Last reviewed 13 July 2026. Foreigners are domiciled if they \"have resided or been in Peru for more than 183 calendar days within a 12-month period\"."
+        },
+        {
+          "name": "PwC: Peru, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/peru/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 13 July 2026. Domiciled individuals \"are subject to income tax on their worldwide income\"; foreign income is taxed on the bracket scale 8% (to 5 UIT), 14%, 17%, 20% and 30% over 45 UIT; one UIT is PEN 5,500 for 2026."
+        }
+      ],
+      "note": "PwC describes domiciled foreigners as taxed worldwide from the 183-day test and lists no special regime for new residents."
+    },
+    {
+      "id": "pe-estate-none",
+      "fact": "estate",
+      "cities": [
+        "lima"
+      ],
+      "claim": "Peru has no inheritance tax (a secondary source; PwC lists none)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Perú Gestiona: inheritance tax in Peru",
+          "url": "https://perugestiona.pe/herencias/impuesto-herencia-peru/",
+          "read": "2026-11-15",
+          "says": "© 2026, undated. \"Perú no tiene impuesto a la herencia\"; \"la transferencia por herencia está inafecta de alcabala\"."
+        },
+        {
+          "name": "PwC: quick chart, inheritance and gift tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates",
+          "read": "2026-11-15",
+          "says": "Peru (last reviewed 13 July 2026): NP | NP (not provided)."
+        }
+      ],
+      "note": "The profile's attribution stays accurate: PwC gives \"NP\". localTaxes.ts (PE) agrees."
+    },
+    {
+      "id": "pe-estate-alcabala",
+      "fact": "estate",
+      "cities": [
+        "lima"
+      ],
+      "claim": "Inheritances are outside the property transfer tax (alcabala)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Perú Gestiona: inheritance tax in Peru",
+          "url": "https://perugestiona.pe/herencias/impuesto-herencia-peru/",
+          "read": "2026-11-15",
+          "says": "© 2026, undated. \"Perú no tiene impuesto a la herencia\"; \"la transferencia por herencia está inafecta de alcabala\"."
+        }
+      ]
+    },
+    {
+      "id": "pe-estate-no-treaty",
+      "fact": "estate",
+      "cities": [
+        "lima"
+      ],
+      "claim": "There is no US estate treaty",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list); none of the 37 countries named in this claim is among them."
+        }
+      ],
+      "shared": "us-estate-treaty-profiles-without"
+    },
+    {
+      "id": "pe-estate-us-exemption",
+      "fact": "estate",
+      "cities": [
+        "lima"
+      ],
+      "claim": "US estate tax applies above the $15M exemption (2026)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IRS: What's new, estate and gift tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax",
+          "read": "2026-11-15",
+          "says": "The table \"Basic exclusion amount for year of death\" has the row 2026: $15,000,000 (2025: $13,990,000). The page says the Working Families Tax Cuts, Public Law 119-21, signed July 4, 2025, \"amends § 2010(c)(3) by increasing the basic exclusion amount to $15,000,000 for calendar year 2026\". Page last reviewed or updated 03-Nov-2026."
+        },
+        {
+          "name": "IRS: Estate tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-tax",
+          "read": "2026-11-15",
+          "says": "A return is required when the gross estate, plus adjusted taxable gifts and specific exemption, is more than the filing threshold for the year of death; the table gives 2026: $15,000,000. Page last reviewed or updated 23-Oct-2026."
+        },
+        {
+          "name": "IRS news release IR-2025-103: tax inflation adjustments for tax year 2026",
+          "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill",
+          "read": "2026-11-15",
+          "says": "\"Estates of decedents who die during 2026 have a basic exclusion amount of $15,000,000\", up from $13,990,000 for 2025; the release (October 9, 2025) cites Revenue Procedure 2025-32 and is marked as an archival document."
+        },
+        {
+          "name": "IRS: Some nonresidents with U.S. assets must file estate tax returns",
+          "url": "https://www.irs.gov/individuals/international-taxpayers/some-nonresidents-with-us-assets-must-file-estate-tax-returns",
+          "read": "2026-11-15",
+          "says": "\"U.S. citizens are subject to U.S. estate taxation with respect to their worldwide assets\"; Form 706 is required when worldwide assets plus adjusted taxable gifts exceed the basic exclusion amount in effect on the date of death. By contrast a nonresident who is not a citizen files when US-situated assets exceed $60,000. Page last reviewed or updated 27-Jun-2026."
+        }
+      ],
+      "shared": "us-estate-exemption-2026"
+    },
+    {
+      "id": "pe-lending-ibkr",
+      "fact": "lending",
+      "cities": [
+        "lima"
+      ],
+      "claim": "Interactive Brokers serves all non-sanctioned countries, so Peru residents should be accepted",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Argentina, Canada, Chile, Colombia, Ecuador, Paraguay, Peru and Uruguay; the page names no IBKR entity for these residents, and for Canada says only \"Canadians are protected up to CAD 1m\"."
+        }
+      ],
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Interactive Brokers reportedly serves all non-sanctioned countries",
+      "note": "IBKR's country list (https://www.interactivebrokers.com/en/accounts/open-account-country-list.php) returned HTTP 403 again on 2026-11-15, so acceptance stays reported (rule 3)."
+    },
+    {
+      "id": "pe-lending-ibkr-margin",
+      "fact": "lending",
+      "cities": [
+        "lima"
+      ],
+      "claim": "IBKR margin terms for Peru residents are unconfirmed",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Argentina, Canada, Chile, Colombia, Ecuador, Paraguay, Peru and Uruguay; the page names no IBKR entity for these residents, and for Canada says only \"Canadians are protected up to CAD 1m\"."
+        }
+      ],
+      "hedge": "unconfirmed",
+      "wording": "but margin terms are unconfirmed",
+      "note": "A statement of what is not known."
+    },
+    {
+      "id": "pe-lending-schwab",
+      "fact": "lending",
+      "cities": [
+        "lima"
+      ],
+      "claim": "Whether Schwab One International accepts Peru was not checked",
+      "verdict": "corrected",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. On that day the author ran every entry in Schwab's international account selector through the application: it accepted residents of 51 of 263 countries and regions: Argentina, Australia, Austria, the Bahamas, Belgium, Bermuda, Brazil, the British Virgin Islands, the Cayman Islands, Chile, China, Colombia, Costa Rica, the Czech Republic, Denmark, Ecuador, Finland, Germany, Greece, Guatemala, Hong Kong, Iceland, India, Indonesia, Ireland, Israel, Jersey, Luxembourg, Malaysia, the Marshall Islands, Mexico, the Netherlands, Norway, Panama, Paraguay, Peru, Poland, Portugal, Qatar, Singapore, South Korea, Spain, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Turks and Caicos, the United Arab Emirates, the United Kingdom and Uruguay. Named as not accepted: Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam; for the rest the application said \"Schwab currently cannot open accounts for residents of your country/region.\" The test covers new applicants on that day only."
+        },
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. That day Schwab's online international application accepted residents of 51 countries and regions, among them Argentina, Chile, Colombia (\"| Colombia | Yes |\"), Ecuador (\"| Ecuador | Yes |\"), Paraguay, Peru and Uruguay; the row for Canada reads \"| Canada | No |\". It quotes the Schwab One agreement: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds\"; no other region is named."
+        }
+      ],
+      "shared": "schwab-accepts-residents",
+      "oldWording": "whether Schwab One International accepts Peru was not checked",
+      "newWording": "Schwab One International's application reportedly lists Peru (October 2026), with no known margin restriction outside Europe",
+      "also": [
+        "scores.lending 3→4 (rubric 4: Schwab International reported to accept residents outside Europe, plus IBKR, margin terms unconfirmed)",
+        "sources: added the Your Tax Base Schwab page"
+      ],
+      "note": "The shared note flagged this: the dated list (re-read today) names Peru among the 51 accepted. Worded like Guatemala (gt-lending-schwab) with \"reportedly\". Lima's why in expatPicks.ts does not mention lending, so no rank flag."
+    },
+    {
+      "id": "pe-visa-rentista-amount",
+      "fact": "visa",
+      "cities": [
+        "lima"
+      ],
+      "claim": "Rentista residence on permanent income of at least $1,000/month from a pension or other foreign income",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "El Peruano (via ecoi.net): Legislative Decree 1350, Migration Law",
+          "url": "https://www.ecoi.net/en/file/local/1394671/1930_1488285039_58aeff9d4.pdf",
+          "read": "2026-11-15",
+          "says": "Published 7 January 2017 (text recovered from the PDF's compressed streams). Art. 29.2: \"Rentista: Permite la residencia al extranjero que goza de pensión de jubilación o renta permanente de fuente peruana o extranjera. El monto de la renta ... serán fijados en el Reglamento\"; \"El plazo de permanencia es indefinido\". \"Inversionista\": the amount is set in the Reglamento; stay 365 days. The rentista paragraph says nothing on work."
+        },
+        {
+          "name": "Rio Times: retire in Peru 2026",
+          "url": "https://www.riotimesonline.com/retire-in-peru-foreigners-2026/",
+          "read": "2026-11-15",
+          "says": "Published 10 September 2026. Rentistas must \"prove a permanent pension or passive income of at least US$1,000 net per month\" received through an SBS-supervised institution; nothing on work rights or an investor route."
+        },
+        {
+          "name": "Gestión: what foreigners setting up in Peru should consider",
+          "url": "https://gestion.pe/tendencias/extranjeros-que-desean-establecer-negocios-en-el-peru-que-aspectos-deben-tomar-en-cuenta-noticia/",
+          "read": "2026-11-15",
+          "says": "Dated 29 May 2023. \"para la calidad migratoria de un rentista, requiere demostrar una renta permanente de US$ 1,000 al mes\"; no investor amount and nothing on work."
+        }
+      ],
+      "note": "The statute leaves the amount to the regulation; Migraciones' resolution PDF on cdn.www.gob.pe returned HTTP 403, so the $1,000 rests on two dated secondary pages (2026, 2023). Searched the rentista status with November 2026: no change found."
+    },
+    {
+      "id": "pe-visa-rentista-indefinite",
+      "fact": "visa",
+      "cities": [
+        "lima"
+      ],
+      "claim": "Rentista residence is indefinite while the income continues",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "El Peruano (via ecoi.net): Legislative Decree 1350, Migration Law",
+          "url": "https://www.ecoi.net/en/file/local/1394671/1930_1488285039_58aeff9d4.pdf",
+          "read": "2026-11-15",
+          "says": "Published 7 January 2017 (text recovered from the PDF's compressed streams). Art. 29.2: \"Rentista: Permite la residencia al extranjero que goza de pensión de jubilación o renta permanente de fuente peruana o extranjera. El monto de la renta ... serán fijados en el Reglamento\"; \"El plazo de permanencia es indefinido\". \"Inversionista\": the amount is set in the Reglamento; stay 365 days. The rentista paragraph says nothing on work."
+        }
+      ]
+    },
+    {
+      "id": "pe-visa-rentista-no-work",
+      "fact": "visa",
+      "cities": [
+        "lima"
+      ],
+      "claim": "Rentista residence gives no right to work (2023 news source)",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "El Peruano (via ecoi.net): Legislative Decree 1350, Migration Law",
+          "url": "https://www.ecoi.net/en/file/local/1394671/1930_1488285039_58aeff9d4.pdf",
+          "read": "2026-11-15",
+          "says": "Published 7 January 2017 (text recovered from the PDF's compressed streams). Art. 29.2: \"Rentista: Permite la residencia al extranjero que goza de pensión de jubilación o renta permanente de fuente peruana o extranjera. El monto de la renta ... serán fijados en el Reglamento\"; \"El plazo de permanencia es indefinido\". \"Inversionista\": the amount is set in the Reglamento; stay 365 days. The rentista paragraph says nothing on work."
+        },
+        {
+          "name": "Gestión: what foreigners setting up in Peru should consider",
+          "url": "https://gestion.pe/tendencias/extranjeros-que-desean-establecer-negocios-en-el-peru-que-aspectos-deben-tomar-en-cuenta-noticia/",
+          "read": "2026-11-15",
+          "says": "Dated 29 May 2023. \"para la calidad migratoria de un rentista, requiere demostrar una renta permanente de US$ 1,000 al mes\"; no investor amount and nothing on work."
+        }
+      ],
+      "hedge": "reportedly",
+      "oldWording": "with no right to work (2023 news source)",
+      "wording": "reportedly with no right to work",
+      "also": [
+        "the \"(2023 news source)\" attribution replaced by \"(Legislative Decree 1350)\" on the indefinite term and \"reportedly\" on the work bar",
+        "sources: added Legislative Decree 1350"
+      ],
+      "note": "Neither the 2017 decree's rentista paragraph nor the 2023 article says anything on work; amendments of 2023 (DL 1582) and 2024 (DL 1687) to art. 29 were not read."
+    },
+    {
+      "id": "pe-visa-investor",
+      "fact": "visa",
+      "cities": [
+        "lima"
+      ],
+      "claim": "An investor route exists, but its amount is unverified",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "El Peruano (via ecoi.net): Legislative Decree 1350, Migration Law",
+          "url": "https://www.ecoi.net/en/file/local/1394671/1930_1488285039_58aeff9d4.pdf",
+          "read": "2026-11-15",
+          "says": "Published 7 January 2017 (text recovered from the PDF's compressed streams). Art. 29.2: \"Rentista: Permite la residencia al extranjero que goza de pensión de jubilación o renta permanente de fuente peruana o extranjera. El monto de la renta ... serán fijados en el Reglamento\"; \"El plazo de permanencia es indefinido\". \"Inversionista\": the amount is set in the Reglamento; stay 365 days. The rentista paragraph says nothing on work."
+        }
+      ],
+      "hedge": "unverified",
+      "wording": "an investor route exists, but its amount is unverified",
+      "note": "The decree creates the \"Inversionista\" status and leaves the amount to the regulation, which was not read."
+    },
+    {
+      "id": "pe-health-clinics",
+      "fact": "healthcare",
+      "cities": [
+        "lima"
+      ],
+      "claim": "Private clinics such as Clínica Anglo Americana, Clínica Internacional, Clínica San Felipe and Clínica Delgado give good care",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Rio Times: healthcare in Peru for expats 2026",
+          "url": "https://www.riotimesonline.com/healthcare-peru-expats-2026/",
+          "read": "2026-11-15",
+          "says": "Published 8 September 2026. \"Major private clinics in Lima include Clínica Internacional, Clínica Anglo Americana, Clínica San Felipe, and Clínica Delgado\"; EsSalud +Salud costs S/215 a month at 60+."
+        }
+      ]
+    },
+    {
+      "id": "pe-health-essalud",
+      "fact": "healthcare",
+      "cities": [
+        "lima"
+      ],
+      "claim": "Public EsSalud's voluntary \"+Salud\" costs PEN 215/month at 60+ but has long waits",
+      "verdict": "corrected",
+      "sources": [
+        {
+          "name": "El Popular: EsSalud suspends new +Salud affiliations until 2027",
+          "url": "https://elpopular.pe/actualidad/2026/09/19/ya-no-podras-afiliarte-a-essalud-atencion-suspenden-nuevas-afiliaciones-al-salud-hasta-2027-revisa-hasta-cuando-1013099",
+          "read": "2026-11-15",
+          "says": "Dated 19 September 2026. Acuerdo de Consejo Directivo N.° 14-17-ESSALUD-2026, communicated 18 September 2026, suspends first-time affiliation to +Salud until 31 December 2027; existing members keep cover."
+        },
+        {
+          "name": "Perú Gestiona: EsSalud seguro potestativo 2026, cost by age",
+          "url": "https://perugestiona.pe/salud-sis/essalud-seguro-potestativo-costo/",
+          "read": "2026-11-15",
+          "says": "© 2026, undated. \"60 años a más | S/215\"; carné de extranjería accepted; new affiliations are suspended until 31 December 2027; 3-month waiting period for non-emergencies."
+        },
+        {
+          "name": "Rio Times: healthcare in Peru for expats 2026",
+          "url": "https://www.riotimesonline.com/healthcare-peru-expats-2026/",
+          "read": "2026-11-15",
+          "says": "Published 8 September 2026. \"Major private clinics in Lima include Clínica Internacional, Clínica Anglo Americana, Clínica San Felipe, and Clínica Delgado\"; EsSalud +Salud costs S/215 a month at 60+."
+        }
+      ],
+      "oldWording": "public EsSalud's voluntary \"+Salud\" costs PEN 215/month at 60+ but has long waits",
+      "newWording": "public EsSalud's voluntary \"+Salud\" plan (PEN 215/month at 60+) is closed to new members until the end of 2027",
+      "also": [
+        "sources: added El Popular on the suspension",
+        "scores.healthcare 4 unchanged (rests on the private clinics)"
+      ],
+      "note": "The price is confirmed; the plan stopped taking first-time members on 18 September 2026 until 31 December 2027. \"Long waits\" had no page behind it and goes with the rewrite. EsSalud's own page on gob.pe returned HTTP 418."
+    },
+    {
+      "id": "pe-health-private-65",
+      "fact": "healthcare",
+      "cities": [
+        "lima"
+      ],
+      "claim": "New private plans get harder to buy after 65 (one forum report says Pacífico takes new members to 65)",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "Comparabien: Pacífico Multisalud",
+          "url": "https://comparabien.com.pe/producto/seguros-salud/pacifico-seguro-multisalud",
+          "read": "2026-11-15",
+          "says": "Undated product sheet. \"Edad Máxima: 65\", without saying whether it applies to entry or to staying insured."
+        }
+      ],
+      "hedge": "one forum report says",
+      "wording": "one forum report says Pacífico takes new members to 65",
+      "note": "Pacífico's June 2026 terms PDF could not be decoded (its text streams are not plain zlib); a comparison site gives \"Edad Máxima: 65\" for Multisalud. The attribution stays as the hedge."
+    }
+  ]
+}

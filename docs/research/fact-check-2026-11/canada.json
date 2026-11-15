@@ -1,0 +1,907 @@
+{
+  "country": "Canada",
+  "cities": [
+    "toronto",
+    "vancouver",
+    "montreal"
+  ],
+  "claims": [
+    {
+      "id": "ca-tax-no-wealth",
+      "fact": "tax",
+      "cities": [
+        "toronto",
+        "vancouver",
+        "montreal"
+      ],
+      "claim": "There is no wealth tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Canada, other taxes",
+          "url": "https://taxsummaries.pwc.com/canada/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 12 June 2026. \"There are no net wealth/worth taxes in Canada.\" \"There are no federal or provincial/territorial inheritance, estate, or gift taxes\", but \"an individual who dies is deemed to have disposed of any capital property immediately before death\"; most provinces impose probate fees."
+        }
+      ]
+    },
+    {
+      "id": "ca-tax-residence",
+      "fact": "tax",
+      "cities": [
+        "toronto",
+        "vancouver",
+        "montreal"
+      ],
+      "claim": "Residents are generally those who settle there, or anyone present 183 days in a year, and pay tax on worldwide income",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Canada, residence",
+          "url": "https://taxsummaries.pwc.com/canada/individual/residence",
+          "read": "2026-11-15",
+          "says": "Last reviewed 12 June 2026. Residence turns on residential ties such as \"the maintenance of a dwelling place\" and a spouse and dependants in Canada; a non-resident who \"sojourns ... in Canada for 183 days or more in a calendar year\" is deemed resident for the year."
+        },
+        {
+          "name": "PwC: Canada, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/canada/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 12 June 2026. \"Individuals resident in Canada are subject to Canadian income tax on worldwide income.\" 2026 top combined rates (interest and ordinary income / capital gains): Ontario 53.5 / 26.8, British Columbia 53.5 / 26.8, Quebec 53.3 / 26.7."
+        }
+      ]
+    },
+    {
+      "id": "ca-tax-no-dtc-foreign",
+      "fact": "tax",
+      "cities": [
+        "toronto",
+        "vancouver",
+        "montreal"
+      ],
+      "claim": "Foreign dividends get no dividend tax credit",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "CRA (archived): Federal Income Tax and Benefit Guide 2020, total income",
+          "url": "https://www.canada.ca/en/revenue-agency/services/forms-publications/tax-packages-years/archived-general-income-tax-benefit-package-2020/5000-g/income-tax-benefit-guide-total-income.html",
+          "read": "2026-11-15",
+          "says": "Archived 2020 guide. Under line 12100: \"If you received foreign interest or dividend income, report it in Canadian dollars\"; the dividend tax credit is for \"dividends you received from taxable Canadian corporations\"; foreign taxes may be claimed as a foreign tax credit (T2209)."
+        },
+        {
+          "name": "CRA: Lines 12000 and 12010, taxable dividends from taxable Canadian corporations",
+          "url": "https://www.canada.ca/line-12000",
+          "read": "2026-11-15",
+          "says": "Page details 2026-06-12. The lines and the dividend tax credit (line 40425) cover dividends from taxable Canadian corporations only; foreign dividends are not mentioned."
+        }
+      ],
+      "note": "The current CRA line pages tie the credit to taxable Canadian corporations; the archived 2020 guide puts foreign dividends on line 12100. Morningstar Canada (a profile source) returned HTTP 403."
+    },
+    {
+      "id": "ca-tax-top-rate-on",
+      "fact": "tax",
+      "cities": [
+        "toronto"
+      ],
+      "claim": "US dividends and interest are taxed at up to 53.5% combined federal and Ontario (2026)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Canada, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/canada/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 12 June 2026. \"Individuals resident in Canada are subject to Canadian income tax on worldwide income.\" 2026 top combined rates (interest and ordinary income / capital gains): Ontario 53.5 / 26.8, British Columbia 53.5 / 26.8, Quebec 53.3 / 26.7."
+        }
+      ]
+    },
+    {
+      "id": "ca-tax-top-rate-bc",
+      "fact": "tax",
+      "cities": [
+        "vancouver"
+      ],
+      "claim": "US dividends and interest are taxed at up to 53.5% combined federal and BC (2026)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Canada, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/canada/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 12 June 2026. \"Individuals resident in Canada are subject to Canadian income tax on worldwide income.\" 2026 top combined rates (interest and ordinary income / capital gains): Ontario 53.5 / 26.8, British Columbia 53.5 / 26.8, Quebec 53.3 / 26.7."
+        }
+      ]
+    },
+    {
+      "id": "ca-tax-top-rate-qc",
+      "fact": "tax",
+      "cities": [
+        "montreal"
+      ],
+      "claim": "US dividends and interest are taxed at up to 53.3% combined federal and Quebec (2026)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Canada, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/canada/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 12 June 2026. \"Individuals resident in Canada are subject to Canadian income tax on worldwide income.\" 2026 top combined rates (interest and ordinary income / capital gains): Ontario 53.5 / 26.8, British Columbia 53.5 / 26.8, Quebec 53.3 / 26.7."
+        }
+      ]
+    },
+    {
+      "id": "ca-tax-quebec-return",
+      "fact": "tax",
+      "cities": [
+        "montreal"
+      ],
+      "claim": "Quebec residents file a separate Quebec return with Revenu Québec",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "CRA: provincial and territorial tax and credits for individuals",
+          "url": "https://www.canada.ca/en/revenue-agency/services/tax/individuals/topics/about-your-tax-return/tax-return/completing-a-tax-return/provincial-territorial-tax-credits-individuals.html",
+          "read": "2026-11-15",
+          "says": "Modified 2026-01-26. The CRA administers individual income tax for the provinces and territories \"(except for the province of Quebec)\"; Quebec residents are pointed to the Quebec tax package."
+        }
+      ],
+      "note": "www.revenuquebec.ca returned HTTP 403; the CRA page says it administers provincial income tax except Quebec's."
+    },
+    {
+      "id": "ca-tax-treaty-credit",
+      "fact": "tax",
+      "cities": [
+        "toronto",
+        "vancouver",
+        "montreal"
+      ],
+      "claim": "Under the treaty Canada credits US tax on US dividends only up to 15% and the US credits the Canadian tax on the rest, so a US citizen pays about the Canadian rate overall",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Finance Canada: Canada–US tax convention (consolidated), Articles X and XXIV",
+          "url": "https://www.canada.ca/en/department-finance/programs/tax-policy/tax-treaties/country/united-states-america-convention-consolidated-1980-1983-1984-1995-1997-2007.html",
+          "read": "2026-11-15",
+          "says": "Art. X(2)(b): dividend withholding \"15 per cent of the gross amount of the dividends in all other cases\". Art. XXIV(4)-(5): for a US citizen resident in Canada, Canada deducts US tax on US-source dividends, interest and royalties only up to the tax that would apply if the person were not a citizen, and \"the United States shall allow as a credit against United States tax\" the Canadian tax remaining after that deduction."
+        }
+      ]
+    },
+    {
+      "id": "ca-tax-cg-half",
+      "fact": "tax",
+      "cities": [
+        "toronto",
+        "vancouver"
+      ],
+      "claim": "Half of a realised gain is taxable (up to 26.8%)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Canada, income determination",
+          "url": "https://taxsummaries.pwc.com/canada/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 12 June 2026. \"Half of a capital gain constitutes a taxable capital gain\"; \"a step-up in the cost base is available to new residents of Canada\"."
+        },
+        {
+          "name": "PwC: Canada, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/canada/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 12 June 2026. \"Individuals resident in Canada are subject to Canadian income tax on worldwide income.\" 2026 top combined rates (interest and ordinary income / capital gains): Ontario 53.5 / 26.8, British Columbia 53.5 / 26.8, Quebec 53.3 / 26.7."
+        }
+      ]
+    },
+    {
+      "id": "ca-tax-cg-half-qc",
+      "fact": "tax",
+      "cities": [
+        "montreal"
+      ],
+      "claim": "Half of a realised gain is taxable (up to 26.7%)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Canada, income determination",
+          "url": "https://taxsummaries.pwc.com/canada/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 12 June 2026. \"Half of a capital gain constitutes a taxable capital gain\"; \"a step-up in the cost base is available to new residents of Canada\"."
+        },
+        {
+          "name": "PwC: Canada, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/canada/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 12 June 2026. \"Individuals resident in Canada are subject to Canadian income tax on worldwide income.\" 2026 top combined rates (interest and ordinary income / capital gains): Ontario 53.5 / 26.8, British Columbia 53.5 / 26.8, Quebec 53.3 / 26.7."
+        }
+      ]
+    },
+    {
+      "id": "ca-tax-arrival-stepup",
+      "fact": "tax",
+      "cities": [
+        "toronto",
+        "vancouver",
+        "montreal"
+      ],
+      "claim": "A new resident's cost base is reset to market value on arrival",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "CRA: dispositions of property when leaving or entering Canada",
+          "url": "https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/individuals-leaving-entering-canada-non-residents/dispositions-property.html",
+          "read": "2026-11-15",
+          "says": "Undated. On ceasing residence you are deemed to have disposed of most property at fair market value (the departure tax), with exceptions for Canadian real property and registered plans and for property owned on arrival by someone resident 60 months or less in the last 10 years; \"On immigration, you're generally deemed to acquire your property at FMV, which resets its cost.\""
+        },
+        {
+          "name": "PwC: Canada, income determination",
+          "url": "https://taxsummaries.pwc.com/canada/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 12 June 2026. \"Half of a capital gain constitutes a taxable capital gain\"; \"a step-up in the cost base is available to new residents of Canada\"."
+        }
+      ]
+    },
+    {
+      "id": "ca-tax-visitor-outside",
+      "fact": "tax",
+      "cities": [
+        "toronto",
+        "vancouver",
+        "montreal"
+      ],
+      "claim": "A visitor under 6 months a year with a US home generally stays outside Canadian tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Canada, residence",
+          "url": "https://taxsummaries.pwc.com/canada/individual/residence",
+          "read": "2026-11-15",
+          "says": "Last reviewed 12 June 2026. Residence turns on residential ties such as \"the maintenance of a dwelling place\" and a spouse and dependants in Canada; a non-resident who \"sojourns ... in Canada for 183 days or more in a calendar year\" is deemed resident for the year."
+        }
+      ],
+      "note": "Follows from the 183-day sojourn rule and the residential-ties test; \"generally\" stays."
+    },
+    {
+      "id": "ca-estate-none",
+      "fact": "estate",
+      "cities": [
+        "toronto",
+        "vancouver",
+        "montreal"
+      ],
+      "claim": "There is no inheritance or estate tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Canada, other taxes",
+          "url": "https://taxsummaries.pwc.com/canada/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 12 June 2026. \"There are no net wealth/worth taxes in Canada.\" \"There are no federal or provincial/territorial inheritance, estate, or gift taxes\", but \"an individual who dies is deemed to have disposed of any capital property immediately before death\"; most provinces impose probate fees."
+        }
+      ]
+    },
+    {
+      "id": "ca-estate-deemed-disposition",
+      "fact": "estate",
+      "cities": [
+        "toronto",
+        "vancouver"
+      ],
+      "claim": "At death a resident is taxed as if all capital property were sold at market value, so gains accrued since arrival pay up to 26.8%, with a spousal deferral",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Justice Laws: Income Tax Act, section 70",
+          "url": "https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-70.html",
+          "read": "2026-11-15",
+          "says": "Current to 2026-10-19. s.70(5): \"the taxpayer shall be deemed to have, immediately before the taxpayer's death, disposed of each capital property\" for proceeds equal to fair market value. s.70(6): property passing to a spouse or common-law partner (or spousal trust) resident in Canada rolls over at adjusted cost base."
+        },
+        {
+          "name": "PwC: Canada, other taxes",
+          "url": "https://taxsummaries.pwc.com/canada/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 12 June 2026. \"There are no net wealth/worth taxes in Canada.\" \"There are no federal or provincial/territorial inheritance, estate, or gift taxes\", but \"an individual who dies is deemed to have disposed of any capital property immediately before death\"; most provinces impose probate fees."
+        },
+        {
+          "name": "PwC: Canada, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/canada/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 12 June 2026. \"Individuals resident in Canada are subject to Canadian income tax on worldwide income.\" 2026 top combined rates (interest and ordinary income / capital gains): Ontario 53.5 / 26.8, British Columbia 53.5 / 26.8, Quebec 53.3 / 26.7."
+        }
+      ],
+      "modelMismatch": "localTaxes.ts has no Canada entry (its header comment lists Canada among countries without one), so the simulation models no Canadian tax at death: no deemed disposition of accrued gains (up to 26.8% Ontario/BC, 26.7% Quebec; 50% inclusion) and no probate (Ontario 1.5% above CAD 50k, BC about 1.4% above CAD 50k, Quebec none). For stage 8."
+    },
+    {
+      "id": "ca-estate-deemed-disposition-qc",
+      "fact": "estate",
+      "cities": [
+        "montreal"
+      ],
+      "claim": "At death a resident is taxed as if all capital property were sold at market value, so gains accrued since arrival pay up to 26.7%, with a spousal deferral",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Justice Laws: Income Tax Act, section 70",
+          "url": "https://laws-lois.justice.gc.ca/eng/acts/I-3.3/section-70.html",
+          "read": "2026-11-15",
+          "says": "Current to 2026-10-19. s.70(5): \"the taxpayer shall be deemed to have, immediately before the taxpayer's death, disposed of each capital property\" for proceeds equal to fair market value. s.70(6): property passing to a spouse or common-law partner (or spousal trust) resident in Canada rolls over at adjusted cost base."
+        },
+        {
+          "name": "PwC: Canada, other taxes",
+          "url": "https://taxsummaries.pwc.com/canada/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 12 June 2026. \"There are no net wealth/worth taxes in Canada.\" \"There are no federal or provincial/territorial inheritance, estate, or gift taxes\", but \"an individual who dies is deemed to have disposed of any capital property immediately before death\"; most provinces impose probate fees."
+        },
+        {
+          "name": "PwC: Canada, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/canada/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 12 June 2026. \"Individuals resident in Canada are subject to Canadian income tax on worldwide income.\" 2026 top combined rates (interest and ordinary income / capital gains): Ontario 53.5 / 26.8, British Columbia 53.5 / 26.8, Quebec 53.3 / 26.7."
+        }
+      ],
+      "modelMismatch": "localTaxes.ts has no Canada entry (its header comment lists Canada among countries without one), so the simulation models no Canadian tax at death: no deemed disposition of accrued gains (up to 26.8% Ontario/BC, 26.7% Quebec; 50% inclusion) and no probate (Ontario 1.5% above CAD 50k, BC about 1.4% above CAD 50k, Quebec none). For stage 8."
+    },
+    {
+      "id": "ca-estate-departure-tax",
+      "fact": "estate",
+      "cities": [
+        "toronto",
+        "vancouver",
+        "montreal"
+      ],
+      "claim": "Leaving Canada triggers the same departure tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "CRA: dispositions of property when leaving or entering Canada",
+          "url": "https://www.canada.ca/en/revenue-agency/services/tax/international-non-residents/individuals-leaving-entering-canada-non-residents/dispositions-property.html",
+          "read": "2026-11-15",
+          "says": "Undated. On ceasing residence you are deemed to have disposed of most property at fair market value (the departure tax), with exceptions for Canadian real property and registered plans and for property owned on arrival by someone resident 60 months or less in the last 10 years; \"On immigration, you're generally deemed to acquire your property at FMV, which resets its cost.\""
+        }
+      ],
+      "note": "CRA exempts property owned on arrival for someone resident 60 months or less in the 10 years before leaving; the profiles do not mention it."
+    },
+    {
+      "id": "ca-estate-ontario-probate",
+      "fact": "estate",
+      "cities": [
+        "toronto"
+      ],
+      "claim": "Ontario's probate tax is 1.5% of an estate above CAD 50k",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Ontario: Estate Administration Tax",
+          "url": "https://www.ontario.ca/page/estate-administration-tax",
+          "read": "2026-11-15",
+          "says": "Updated 24 June 2026. No tax \"if the value of the estate is $50,000 or less\"; otherwise \"$15 for every $1,000 (or part thereof)\" of the value above the first $50,000."
+        }
+      ]
+    },
+    {
+      "id": "ca-estate-bc-probate",
+      "fact": "estate",
+      "cities": [
+        "vancouver"
+      ],
+      "claim": "BC's probate fee is about 1.4% of an estate above CAD 50k",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "TaxTips.ca: British Columbia probate fees",
+          "url": "https://www.taxtips.ca/willsandestates/probatefees/bc.htm",
+          "read": "2026-11-15",
+          "says": "Current as of 25 January 2026 (revised 8 November 2026). No fee up to $25,000; $6 per $1,000 (0.6%) from $25,000 to $50,000; $14 per $1,000 (1.4%) above $50,000; a $200 filing fee for estates over $25,000."
+        }
+      ],
+      "note": "Secondary page, dated 2026; the BC Supreme Court fee schedule was not read."
+    },
+    {
+      "id": "ca-estate-quebec-probate",
+      "fact": "estate",
+      "cities": [
+        "montreal"
+      ],
+      "claim": "Quebec charges no probate tax, and a notarial will needs no court verification",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Willful: probate in Quebec",
+          "url": "https://www.willful.co/en-qc-learn/probate-quebec",
+          "read": "2026-11-15",
+          "says": "© 2026, undated. \"Québec does not have the same type of probate fees as other provinces\"; the court application fee is $65; \"probate is not required if you have a notarial will\"."
+        }
+      ],
+      "note": "Secondary page (© 2026, undated); no Quebec government page was read."
+    },
+    {
+      "id": "ca-estate-treaty-credits",
+      "fact": "estate",
+      "cities": [
+        "toronto",
+        "vancouver",
+        "montreal"
+      ],
+      "claim": "The US–Canada treaty lets Canada credit US estate tax on US property and the US credit Canada's tax at death on non-US property",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Finance Canada: Canada–US tax convention (consolidated), Article XXIX B (read from offset 100,000)",
+          "url": "https://www.canada.ca/en/department-finance/programs/tax-policy/tax-treaties/country/united-states-america-convention-consolidated-1980-1983-1984-1995-1997-2007.html",
+          "read": "2026-11-15",
+          "says": "Art. XXIX B(6): Canada allows US federal and state estate and inheritance taxes on property situated in the US \"as a deduction from the amount of any Canadian tax otherwise payable\" on income arising in the US. Art. XXIX B(7): for a US citizen or resident, the US allows \"a credit ... against such tax imposed in respect of property situated outside the United States\" for Canadian income taxes arising from the death."
+        },
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "All 13 countries are in the table (see us-estate-treaty-list). Estate & Gift: Australia, Austria, France, Germany, Japan, United Kingdom. Estate only: Greece, Ireland, Italy, Netherlands, South Africa, Switzerland, and Canada by Article XXIX B of the income tax treaty."
+        }
+      ],
+      "shared": "us-estate-treaty-profiles-with",
+      "note": "The IRS list (shared) confirms an estate provision in the income tax treaty; what it does was read in Art. XXIX B(6)–(7). Canada's relief is a deduction against Canadian tax on US-source income, which the profiles call a credit."
+    },
+    {
+      "id": "ca-estate-us-exemption",
+      "fact": "estate",
+      "cities": [
+        "toronto",
+        "vancouver",
+        "montreal"
+      ],
+      "claim": "Below the $15M US exemption (2026) there is no US estate tax, so the Canadian tax is simply paid",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IRS: What's new, estate and gift tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax",
+          "read": "2026-11-15",
+          "says": "The table \"Basic exclusion amount for year of death\" has the row 2026: $15,000,000 (2025: $13,990,000). The page says the Working Families Tax Cuts, Public Law 119-21, signed July 4, 2025, \"amends § 2010(c)(3) by increasing the basic exclusion amount to $15,000,000 for calendar year 2026\". Page last reviewed or updated 03-Nov-2026."
+        },
+        {
+          "name": "IRS: Estate tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-tax",
+          "read": "2026-11-15",
+          "says": "A return is required when the gross estate, plus adjusted taxable gifts and specific exemption, is more than the filing threshold for the year of death; the table gives 2026: $15,000,000. Page last reviewed or updated 23-Oct-2026."
+        },
+        {
+          "name": "IRS news release IR-2025-103: tax inflation adjustments for tax year 2026",
+          "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill",
+          "read": "2026-11-15",
+          "says": "\"Estates of decedents who die during 2026 have a basic exclusion amount of $15,000,000\", up from $13,990,000 for 2025; the release (October 9, 2025) cites Revenue Procedure 2025-32 and is marked as an archival document."
+        },
+        {
+          "name": "IRS: Some nonresidents with U.S. assets must file estate tax returns",
+          "url": "https://www.irs.gov/individuals/international-taxpayers/some-nonresidents-with-us-assets-must-file-estate-tax-returns",
+          "read": "2026-11-15",
+          "says": "\"U.S. citizens are subject to U.S. estate taxation with respect to their worldwide assets\"; Form 706 is required when worldwide assets plus adjusted taxable gifts exceed the basic exclusion amount in effect on the date of death. By contrast a nonresident who is not a citizen files when US-situated assets exceed $60,000. Page last reviewed or updated 27-Jun-2026."
+        }
+      ],
+      "shared": "us-estate-exemption-2026"
+    },
+    {
+      "id": "ca-lending-ibkr-canada",
+      "fact": "lending",
+      "cities": [
+        "toronto",
+        "vancouver",
+        "montreal"
+      ],
+      "claim": "IBKR serves Canadian residents through Interactive Brokers Canada (margin under CIRO rules)",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Argentina, Canada, Chile, Colombia, Ecuador, Paraguay, Peru and Uruguay; the page names no IBKR entity for these residents, and for Canada says only \"Canadians are protected up to CAD 1m\"."
+        }
+      ],
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "oldWording": "IBKR serves Canadian residents through Interactive Brokers Canada",
+      "wording": "IBKR reportedly serves Canadian residents through Interactive Brokers Canada",
+      "also": [
+        "hedge added: \"reportedly\" (all three)"
+      ],
+      "note": "The shared note flagged this unhedged wording. https://www.interactivebrokers.ca/en/home.php and IBKR's country list returned HTTP 403, https://www.ciro.ca/investors/dealers-we-regulate returned 403 and https://www.cipf.ca/cipf-members 404; a search result (not a read) quotes IB Canada as a CIRO and CIPF member."
+    },
+    {
+      "id": "ca-lending-schwab-no",
+      "fact": "lending",
+      "cities": [
+        "toronto",
+        "vancouver",
+        "montreal"
+      ],
+      "claim": "Schwab One International does not accept Canada residents (October 2026)",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. On that day the author ran every entry in Schwab's international account selector through the application: it accepted residents of 51 of 263 countries and regions: Argentina, Australia, Austria, the Bahamas, Belgium, Bermuda, Brazil, the British Virgin Islands, the Cayman Islands, Chile, China, Colombia, Costa Rica, the Czech Republic, Denmark, Ecuador, Finland, Germany, Greece, Guatemala, Hong Kong, Iceland, India, Indonesia, Ireland, Israel, Jersey, Luxembourg, Malaysia, the Marshall Islands, Mexico, the Netherlands, Norway, Panama, Paraguay, Peru, Poland, Portugal, Qatar, Singapore, South Korea, Spain, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Turks and Caicos, the United Arab Emirates, the United Kingdom and Uruguay. Named as not accepted: Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam; for the rest the application said \"Schwab currently cannot open accounts for residents of your country/region.\" The test covers new applicants on that day only."
+        },
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. That day Schwab's online international application accepted residents of 51 countries and regions, among them Argentina, Chile, Colombia (\"| Colombia | Yes |\"), Ecuador (\"| Ecuador | Yes |\"), Paraguay, Peru and Uruguay; the row for Canada reads \"| Canada | No |\". It quotes the Schwab One agreement: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds\"; no other region is named."
+        }
+      ],
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab One International reportedly does not accept Canada residents (October 2026)",
+      "note": "Re-read the dated list today. international.schwab.com returned HTTP 403 in every earlier stage; Schwab's own pages were not readable, so \"reportedly\" stays. Lending 3 stays (IBKR only)."
+    },
+    {
+      "id": "ca-lending-us-brokers-restrict",
+      "fact": "lending",
+      "cities": [
+        "toronto",
+        "vancouver",
+        "montreal"
+      ],
+      "claim": "US brokers often restrict accounts once the holder lives in Canada",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "TaxesForExpats: expat brokerage account guide 2026",
+          "url": "https://www.taxesforexpats.com/articles/financial-planning/expat-brokerage-account.html",
+          "read": "2026-11-15",
+          "says": "Last updated 31 July 2026. \"some firms restrict trading, close accounts, or block new mutual fund purchases once a foreign address is added\"; Fidelity \"restricts services for customers who later move abroad\". Canada is not discussed specifically."
+        }
+      ],
+      "hedge": "reportedly",
+      "wording": "US brokers reportedly often restrict accounts once the holder lives in Canada",
+      "note": "The page read speaks of moving abroad generally, not Canada; snowbirdscrossborderwealth.com (redirected from snowbirdswealthmanagement.com) had nothing on it."
+    },
+    {
+      "id": "ca-visa-no-retiree",
+      "fact": "visa",
+      "cities": [
+        "toronto",
+        "vancouver",
+        "montreal"
+      ],
+      "claim": "There is no retirement or passive-income visa; savings or a portfolio alone give no right to live there",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IRCC: how long can I stay in Canada as a visitor",
+          "url": "https://ircc.canada.ca/english/helpcentre/answer.asp?qnum=1016&top=16",
+          "read": "2026-11-15",
+          "says": "Updated 2026-11-03. Most visitors can stay up to 6 months; the border services officer may set a shorter or longer period; apply for an extension \"at least 30 days before the authorized end of your stay\"."
+        },
+        {
+          "name": "IRCC: Comprehensive Ranking System criteria",
+          "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/check-score/crs-criteria.html",
+          "read": "2026-11-15",
+          "says": "Modified 2026-11-03. Age table: \"45 years of age or more | 0 | 0\"."
+        },
+        {
+          "name": "Québec: Programme des investisseurs, conditions",
+          "url": "https://www.quebec.ca/immigration/permanente/immigrer-affaires/investisseurs/conditions",
+          "read": "2026-11-15",
+          "says": "Updated 9 November 2026. Net worth of at least \"2 000 000 $ CA\"; a five-year placement of \"1 000 000 $ CA\" repaid without interest; a contribution of \"200 000 $ CA\" to Investissement Québec Immigrants Investisseurs; oral French \"minimalement au niveau 7\"; \"au moins deux années d'expérience en gestion\" in the last five years; a stay of at least 12 months in Quebec within two years of the work permit."
+        }
+      ],
+      "note": "No IRCC route for retirees exists among the pages read; the federal routes are family, work (Express Entry) and visits; the capital route is Quebec's."
+    },
+    {
+      "id": "ca-visa-6-months",
+      "fact": "visa",
+      "cities": [
+        "toronto",
+        "vancouver",
+        "montreal"
+      ],
+      "claim": "A US citizen can normally visit for up to 6 months; the officer sets the stay; extensions must be applied for at least 30 days before it ends",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IRCC: how long can I stay in Canada as a visitor",
+          "url": "https://ircc.canada.ca/english/helpcentre/answer.asp?qnum=1016&top=16",
+          "read": "2026-11-15",
+          "says": "Updated 2026-11-03. Most visitors can stay up to 6 months; the border services officer may set a shorter or longer period; apply for an extension \"at least 30 days before the authorized end of your stay\"."
+        }
+      ]
+    },
+    {
+      "id": "ca-visa-quebec-investor",
+      "fact": "visa",
+      "cities": [
+        "toronto",
+        "vancouver",
+        "montreal"
+      ],
+      "claim": "Quebec's Investor Program is open with no cap (2026) but needs CAD 2M net worth, a CAD 1M five-year placement returned without interest plus a CAD 200k non-refundable contribution, oral French at level 7 and 2 years of management experience in the last 5",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Québec: Programme des investisseurs, conditions",
+          "url": "https://www.quebec.ca/immigration/permanente/immigrer-affaires/investisseurs/conditions",
+          "read": "2026-11-15",
+          "says": "Updated 9 November 2026. Net worth of at least \"2 000 000 $ CA\"; a five-year placement of \"1 000 000 $ CA\" repaid without interest; a contribution of \"200 000 $ CA\" to Investissement Québec Immigrants Investisseurs; oral French \"minimalement au niveau 7\"; \"au moins deux années d'expérience en gestion\" in the last five years; a stay of at least 12 months in Quebec within two years of the work permit."
+        },
+        {
+          "name": "Québec: Programme des investisseurs, présenter une demande",
+          "url": "https://www.quebec.ca/immigration/permanente/immigrer-affaires/investisseurs/presenter-demande",
+          "read": "2026-11-15",
+          "says": "Updated 9 November 2026. \"Vous pouvez présenter une demande en tout temps.\" \"Il n'y a pas de nombre maximal de demandes à recevoir.\""
+        },
+        {
+          "name": "SiLaw: Quebec investor and entrepreneur immigration 2026",
+          "url": "https://silaws.com/2026/07/03/quebec-investor-entrepreneur-immigration-2026-fr/",
+          "read": "2026-11-15",
+          "says": "Published 3 July 2026, updated 27 August 2026. The reformed programme includes \"une contribution financière distincte non remboursable d'environ 200 000 $ CA\"."
+        }
+      ],
+      "note": "Searched \"Programme des investisseurs\" with November 2026: no pending change found; the official pages were updated 9 November 2026. \"Non-refundable\" rests on SiLaw (the official page says only that the contribution is paid to Investissement Québec)."
+    },
+    {
+      "id": "ca-visa-quebec-intent",
+      "fact": "visa",
+      "cities": [
+        "toronto",
+        "vancouver"
+      ],
+      "claim": "The Quebec Investor Program is for people who intend to live in Quebec",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Québec: Programme des investisseurs, conditions",
+          "url": "https://www.quebec.ca/immigration/permanente/immigrer-affaires/investisseurs/conditions",
+          "read": "2026-11-15",
+          "says": "Updated 9 November 2026. Net worth of at least \"2 000 000 $ CA\"; a five-year placement of \"1 000 000 $ CA\" repaid without interest; a contribution of \"200 000 $ CA\" to Investissement Québec Immigrants Investisseurs; oral French \"minimalement au niveau 7\"; \"au moins deux années d'expérience en gestion\" in the last five years; a stay of at least 12 months in Quebec within two years of the work permit."
+        }
+      ],
+      "note": "The page requires a stay of at least 12 months in Quebec within two years of the work permit."
+    },
+    {
+      "id": "ca-visa-express-entry-age",
+      "fact": "visa",
+      "cities": [
+        "toronto",
+        "vancouver",
+        "montreal"
+      ],
+      "claim": "Express Entry gives no age points after 45",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IRCC: Comprehensive Ranking System criteria",
+          "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/check-score/crs-criteria.html",
+          "read": "2026-11-15",
+          "says": "Modified 2026-11-03. Age table: \"45 years of age or more | 0 | 0\"."
+        }
+      ]
+    },
+    {
+      "id": "ca-visa-super-visa",
+      "fact": "visa",
+      "cities": [
+        "toronto",
+        "vancouver",
+        "montreal"
+      ],
+      "claim": "A parent or grandparent of a Canadian citizen or permanent resident can get the super visa, with stays of up to 5 years at a time and private medical insurance",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IRCC: parent and grandparent super visa",
+          "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/parent-grandparent-super-visa.html",
+          "read": "2026-11-15",
+          "says": "Modified 2026-07-06. Parents and grandparents of a Canadian citizen, permanent resident or registered Indian can stay \"for 5 years at a time\", with multiple entries for up to 10 years."
+        },
+        {
+          "name": "IRCC: super visa eligibility",
+          "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/visit-canada/parent-grandparent-super-visa/eligibility.html",
+          "read": "2026-11-15",
+          "says": "Modified 2026-07-06. Applicants must \"show proof that you have private health insurance valid for a minimum of 1 year from the date of entry\", from a Canadian insurer or an approved foreign one."
+        }
+      ]
+    },
+    {
+      "id": "ca-health-ohip",
+      "fact": "healthcare",
+      "cities": [
+        "toronto"
+      ],
+      "claim": "Ontario's OHIP covers only citizens, permanent residents and some permit holders, with no waiting period once eligible; a visitor pays hospital bills in full",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Ontario: apply for OHIP and get a health card",
+          "url": "https://www.ontario.ca/page/apply-ohip-and-get-health-card",
+          "read": "2026-11-15",
+          "says": "Updated 9 November 2026. Eligible: citizens, permanent residents, certain work permit holders and other listed groups who live in Ontario; \"There is no longer a waiting period for OHIP coverage\"; visitors from outside Canada \"do not qualify for OHIP\" and should buy private medical insurance."
+        }
+      ]
+    },
+    {
+      "id": "ca-health-msp",
+      "fact": "healthcare",
+      "cities": [
+        "vancouver"
+      ],
+      "claim": "BC's MSP covers only citizens, permanent residents and some permit holders, after a wait of the rest of the arrival month plus 2 months",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "BC Government: how to enrol in MSP",
+          "url": "https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/how-to-enrol",
+          "read": "2026-11-15",
+          "says": "Updated 4 June 2026. New residents \"may be eligible for coverage after completing a wait period that consists of the balance of the month in which residence is established, plus two months\"."
+        },
+        {
+          "name": "BC Government: are you eligible for MSP",
+          "url": "https://www2.gov.bc.ca/gov/content/health/health-drug-coverage/msp/bc-residents/eligibility-and-enrolment/are-you-eligible",
+          "read": "2026-11-15",
+          "says": "Updated 8 April 2025. A resident must be a Canadian citizen or lawfully admitted for permanent residence, make their home in BC and be present six months a year; some study and work permit holders are deemed residents."
+        }
+      ]
+    },
+    {
+      "id": "ca-health-ramq",
+      "fact": "healthcare",
+      "cities": [
+        "montreal"
+      ],
+      "claim": "Quebec's RAMQ does not cover tourists, and a newcomer who settles waits up to 3 months for cover",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Immigrant Québec: health coverage in Quebec",
+          "url": "https://immigrantquebec.com/fr/reussir/sante/couverture-sante",
+          "read": "2026-11-15",
+          "says": "© 2011–2026, undated. Newcomers who settle face a \"durée maximale de 3 mois (délai de carence) suivant leur inscription à la RAMQ\" and pay their own care or buy private insurance meanwhile; RAMQ covers permanent residents, temporary workers, some students and family members; visitors are not on the list."
+        }
+      ],
+      "note": "www.ramq.gouv.qc.ca returned HTTP 403 (the waiting-period definition and the billing page); Immigrant Québec, a Quebec-funded newcomer portal, was read instead."
+    },
+    {
+      "id": "ca-health-travel-cover",
+      "fact": "healthcare",
+      "cities": [
+        "toronto",
+        "vancouver",
+        "montreal"
+      ],
+      "claim": "A visitor needs travel medical cover, which often caps age or pre-existing conditions",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PolicyAdvisor: Allianz visitors to Canada insurance review",
+          "url": "https://www.policyadvisor.com/visitor-insurance-canada/allianz-visitor-to-canada-insurance-review/",
+          "read": "2026-11-15",
+          "says": "Dated 18 September 2026. Maximum age 89; pre-existing conditions must be stable 90 days before the effective date at ages 59 and under and 180 days at 60 to 89."
+        },
+        {
+          "name": "Ontario: apply for OHIP and get a health card",
+          "url": "https://www.ontario.ca/page/apply-ohip-and-get-health-card",
+          "read": "2026-11-15",
+          "says": "Updated 9 November 2026. Eligible: citizens, permanent residents, certain work permit holders and other listed groups who live in Ontario; \"There is no longer a waiting period for OHIP coverage\"; visitors from outside Canada \"do not qualify for OHIP\" and should buy private medical insurance."
+        }
+      ]
+    },
+    {
+      "id": "ca-health-tgh",
+      "fact": "healthcare",
+      "cities": [
+        "toronto"
+      ],
+      "claim": "Toronto General (UHN) was ranked 2nd in the world in Newsweek's 2026 list, with Mount Sinai in its top 30",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "UHN: Toronto General ranked 2nd in the world",
+          "url": "https://www.uhn.ca/corporate/News/PressReleases/Pages/canadian-hospital-now-ranked-2-in-the-world.aspx",
+          "read": "2026-11-15",
+          "says": "Dated 25 February 2026. Toronto General \"has ranked second in the world in Newsweek magazine's World's Best Hospitals 2026\"."
+        },
+        {
+          "name": "Sinai Health: Mount Sinai ranked second-best hospital in Canada",
+          "url": "https://www.sinaihealth.ca/news/mount-sinai-hospital-ranked-second-best-hospital-in-canada",
+          "read": "2026-11-15",
+          "says": "Dated 25 February 2026. Mount Sinai \"ranked the second best hospital in Canada and number 27 globally\" in World's Best Hospitals 2026; Sunnybrook is not mentioned."
+        }
+      ]
+    },
+    {
+      "id": "ca-health-sunnybrook",
+      "fact": "healthcare",
+      "cities": [
+        "toronto"
+      ],
+      "claim": "Sunnybrook is in the top 30 of Newsweek's 2026 world list",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "Sinai Health: Mount Sinai ranked second-best hospital in Canada",
+          "url": "https://www.sinaihealth.ca/news/mount-sinai-hospital-ranked-second-best-hospital-in-canada",
+          "read": "2026-11-15",
+          "says": "Dated 25 February 2026. Mount Sinai \"ranked the second best hospital in Canada and number 27 globally\" in World's Best Hospitals 2026; Sunnybrook is not mentioned."
+        }
+      ],
+      "hedge": "reportedly",
+      "oldWording": "with Mount Sinai and Sunnybrook also in its top 30",
+      "wording": "with Mount Sinai 27th and Sunnybrook reportedly also in its top 30",
+      "also": [
+        "hedge added: \"reportedly\" on Sunnybrook; Mount Sinai's rank (27th) added"
+      ],
+      "note": "No 2026 page with Sunnybrook's rank loaded: todocanada.ca returned 403 and a Sunnybrook media URL was a 404. Sunnybrook's foundation reported 24th in the 2025 list (search result, not read)."
+    },
+    {
+      "id": "ca-health-vgh",
+      "fact": "healthcare",
+      "cities": [
+        "vancouver"
+      ],
+      "claim": "Vancouver General is in Newsweek's 2026 specialized rankings (48th for endocrinology)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Daily Hive: two BC hospitals among the world's best specialized centres",
+          "url": "https://dailyhive.com/vancouver/b-c-hospitals-world-ranking-2026",
+          "read": "2026-11-15",
+          "says": "Dated 17 September 2025, on Newsweek's World's Best Specialized Hospitals 2026: Vancouver General \"ranked 48th in endocrinology, 105th in neurology, 140th in gastroenterology and 176th in cardiology\". St. Paul's is not mentioned."
+        }
+      ]
+    },
+    {
+      "id": "ca-health-st-pauls",
+      "fact": "healthcare",
+      "cities": [
+        "vancouver"
+      ],
+      "claim": "St. Paul's is a major referral centre",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Wikipedia: St. Paul's Hospital (Vancouver)",
+          "url": "https://en.wikipedia.org/wiki/St._Paul%27s_Hospital_(Vancouver)",
+          "read": "2026-11-15",
+          "says": "One of the teaching hospitals of UBC's Faculty of Medicine; by the 1970s a \"provincial referral and tertiary care centre for specialty services\"."
+        }
+      ],
+      "note": "Rests on Wikipedia (lower in the source order): no Providence Health page was read."
+    },
+    {
+      "id": "ca-health-muhc",
+      "fact": "healthcare",
+      "cities": [
+        "montreal"
+      ],
+      "claim": "The McGill University Health Centre is 24th in the world for neurosurgery in Newsweek's 2026 specialized rankings, with CHUM and the Jewish General also good teaching hospitals",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "MTL Blog: Montréal hospitals in Newsweek's 2026 specialized rankings",
+          "url": "https://www.mtlblog.com/montreal-best-hospitals-ranking-2026",
+          "read": "2026-11-15",
+          "says": "Dated 27 February 2026. \"The MUHC (McGill University Health Centre) came closest to the top, landing 24th in the world for neurosurgery\"; CHUM appears in six specialties; the Jewish General ranks in cardiology, neurology, oncology and orthopaedics."
+        }
+      ]
+    },
+    {
+      "id": "ca-health-quebec-er",
+      "fact": "healthcare",
+      "cities": [
+        "montreal"
+      ],
+      "claim": "Quebec's emergency rooms are known for long waits",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "CTV News: Quebec emergency room wait times 11 minutes shorter last year",
+          "url": "https://www.ctvnews.ca/montreal/health/article/report-says-wait-times-in-quebec-emergency-rooms-were-11-minutes-shorter-last-year/",
+          "read": "2026-11-15",
+          "says": "Dated 20 August 2026. \"the average wait time for patients in Quebec's emergency rooms last year was five hours and 12 minutes\" (a Montreal Economic Institute report)."
+        }
+      ]
+    }
+  ]
+}

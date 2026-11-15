@@ -7,11 +7,11 @@ const profile: ExpatProfile = {
   scores: { cost: 5, healthcare: 3, safety: 3, visa: 5, climate: 4, community: 4, tax: 2, estate: 2, lending: 4 },
   facts: {
     healthcare:
-      'Private hospitals such as Hospital Universitario del Río, Santa Inés and Monte Sinaí give good care at low prices (consultations $20–50); residents with a cédula can join IESS voluntarily at 17.6% of declared income, minimum $84.86/month (2026), and complex cases may go to Quito or Guayaquil.',
+      'Private hospitals such as Hospital Universitario del Río, Santa Inés and Monte Sinaí give good care at low prices (consultations $20–50); residents with a cédula can join IESS voluntarily at 17.6% of declared income, minimum $84.86/month (2026), and some complex cases reportedly go to Quito or Guayaquil.',
     safety:
       'Ecuador is 135th of 163 in the 2026 Global Peace Index and reportedly at US State Dept Level 2 (renewed August 2026), with Level 4 zones on the coast, including part of Guayaquil, and along the borders; Cuenca is not among the higher-risk areas.',
     visa:
-      'The rentista visa accepts investment income ("títulos de inversión") of at least 3× the basic wage, about $1,446/month (+$250 per dependant), with health insurance covering Ecuador; the investor route is about $48,200 (100× the basic wage, unverified on the official page); 2 years of temporary residence, then permanent.',
+      'The rentista visa accepts investment income ("títulos de inversión") of at least 3× the basic wage, about $1,446/month (+$250 per dependant), with health insurance covering Ecuador; the investor route is about $48,200 (100× the basic wage of $482, 2026); 2 years of temporary residence, then permanent.',
     tax: 'No general wealth tax (only a municipal asset tax on people who must keep accounts); residents are taxed on worldwide income, including US dividends and interest, at up to 37% (above $109,956 in 2026), with a foreign tax credit and no US–Ecuador income tax treaty.',
     estate:
       'Inheritance tax runs from 0% up to $78,527 to 35% above $942,353 per heir (2026 table) and reaches the foreign assets of Ecuadorian residents; with no US estate treaty, the US gives no credit on US-sited stocks, so it can stack on any US estate tax.',
@@ -32,6 +32,7 @@ const profile: ExpatProfile = {
     { name: 'NMS Law: Ecuador tax tables 2026 (income and inheritance)', url: 'https://nmslaw.com.ec/blog/2026/01/05/tablas-impuesto-renta-2026-ecuador/', edition: '2026' },
     { name: 'Ecuador Legal Online: Inheritance tax in Ecuador', url: 'https://www.ecuadorlegalonline.com/sri/impuesto-herencia-ecuador/' },
     { name: 'Gob.ec: Temporary rentista residence visa', url: 'https://www.gob.ec/mremh/tramites/concesion-visa-residencia-temporal-rentista' },
+    { name: 'Gob.ec: Temporary investor residence visa', url: 'https://www.gob.ec/mremh/tramites/concesion-visa-residencia-temporal-inversionista' },
     { name: 'Ecuador Legal Online: Voluntary IESS affiliation', url: 'https://www.ecuadorlegalonline.com/laboral/afiliacion-voluntaria-iess/' },
     { name: 'Cuenca High Life: Healthcare in Cuenca for US expats', url: 'https://cuencahighlife.com/navigating-healthcare-in-cuenca-a-comprehensive-guide-for-us-expats/' },
     { name: 'Your Tax Base: Charles Schwab for expats (country list, Oct 2026)', url: 'https://yourtaxbase.com/blog/charles-schwab-for-expats' },

@@ -1,0 +1,450 @@
+{
+  "country": "Chile",
+  "cities": [
+    "santiago"
+  ],
+  "claims": [
+    {
+      "id": "cl-tax-no-wealth",
+      "fact": "tax",
+      "cities": [
+        "santiago"
+      ],
+      "claim": "There is no wealth tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Chile, other taxes",
+          "url": "https://taxsummaries.pwc.com/chile/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 30 October 2026. \"There are no net wealth/worth taxes in Chile.\"; no bill is mentioned."
+        },
+        {
+          "name": "PwC: quick chart, net wealth/worth tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/net-wealth-worth-tax-rates",
+          "read": "2026-11-15",
+          "says": "Chile (last reviewed 30 October 2026): NA."
+        }
+      ]
+    },
+    {
+      "id": "cl-tax-wealth-bill",
+      "fact": "tax",
+      "cities": [
+        "santiago"
+      ],
+      "claim": "A 2026 wealth tax bill is pending",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "Deloitte Chile: the National Reconstruction bill",
+          "url": "https://www.deloitte.com/cl/es/services/tax/perspectives/proyecto-de-ley-para-la-reconstruccion-nacional.html",
+          "read": "2026-11-15",
+          "says": "The government's tax bill \"ingresado el 22 de abril de 2026\" includes a 10% substitute tax on retained-earnings registers; it creates no wealth tax and says nothing on the Global Complementario, inheritance tax or the three-year rule."
+        },
+        {
+          "name": "PwC: Chile, other taxes",
+          "url": "https://taxsummaries.pwc.com/chile/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 30 October 2026. \"There are no net wealth/worth taxes in Chile.\"; no bill is mentioned."
+        }
+      ],
+      "hedge": "removed",
+      "oldWording": "No wealth tax (a 2026 bill is pending); ",
+      "also": [
+        "tax fact: dropped \"(a 2026 bill is pending)\""
+      ],
+      "note": "Searched for a 2026 wealth-tax or \"grandes fortunas\" bill: none found; the government's 2026 tax bill (Boletín 18216-05) cuts corporate tax and has no wealth tax. Removed rather than hedged."
+    },
+    {
+      "id": "cl-tax-three-years",
+      "fact": "tax",
+      "cities": [
+        "santiago"
+      ],
+      "claim": "A foreigner who takes up residence is taxed only on Chilean-source income for 3 years from entry, extendable in qualified cases, then worldwide",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "SII: Ord. Nº 2123 of 12 October 2018 on article 3 of the income tax law",
+          "url": "https://www.sii.cl/normativa_legislacion/jurisprudencia_administrativa/ley_impuesto_renta/2018/ja2123.htm",
+          "read": "2026-11-15",
+          "says": "\"el extranjero que constituya domicilio o residencia en el país\" is taxed only on Chilean-source income \"durante los tres primeros años contados desde su ingreso a Chile\"; \"Este plazo podrá ser prorrogado por el Director Regional en casos calificados.\""
+        },
+        {
+          "name": "PwC: Chile, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/chile/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 30 October 2026. Foreigners are \"subject to taxation only on their Chilean-source income during the first three years in Chile\", then on worldwide income. (Its rate table, dated 2017, tops out at 35.5%.)"
+        }
+      ],
+      "note": "localTaxes.ts and cities.ts notes agree."
+    },
+    {
+      "id": "cl-tax-gc-40",
+      "fact": "tax",
+      "cities": [
+        "santiago"
+      ],
+      "claim": "US dividends and interest go into the progressive Global Complementario at up to 40%",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "SII: personal income tax values, tax year 2026",
+          "url": "https://www.sii.cl/valores_y_fechas/renta/2026/personas_naturales.html",
+          "read": "2026-11-15",
+          "says": "The Art. 52 Global Complementario table's top bracket is \"258.696.240,01 y más\" at factor 0,40 (40%)."
+        },
+        {
+          "name": "SII: second-category tax table 2026",
+          "url": "https://www.sii.cl/valores_y_fechas/impuesto_2da_categoria/impuesto2026.htm",
+          "read": "2026-11-15",
+          "says": "Monthly tables for 2026 top out at 40% (factor 0.4); December 2026 top row \"$ 22.568.620,01 Y MÁS 0,4\"."
+        },
+        {
+          "name": "PwC: Chile, income determination",
+          "url": "https://taxsummaries.pwc.com/chile/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 30 October 2026. \"Dividend income is taxed as normal income\"; only \"real interest\" (interest paid less the cost-of-living increase) is taxed."
+        }
+      ],
+      "note": "PwC's table still shows the pre-2020 35.5%; the SII's 2026 tables give 40%."
+    },
+    {
+      "id": "cl-tax-real-interest",
+      "fact": "tax",
+      "cities": [
+        "santiago"
+      ],
+      "claim": "Only real interest is taxed",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Chile, income determination",
+          "url": "https://taxsummaries.pwc.com/chile/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 30 October 2026. \"Dividend income is taxed as normal income\"; only \"real interest\" (interest paid less the cost-of-living increase) is taxed."
+        }
+      ]
+    },
+    {
+      "id": "cl-tax-us-treaty",
+      "fact": "tax",
+      "cities": [
+        "santiago"
+      ],
+      "claim": "A US–Chile income tax treaty exists",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Chile, foreign tax relief and tax treaties",
+          "url": "https://taxsummaries.pwc.com/chile/individual/foreign-tax-relief-and-tax-treaties",
+          "read": "2026-11-15",
+          "says": "Last reviewed 30 October 2026. \"Chile has tax treaties in force with the following countries:\" the list includes \"United States\"."
+        }
+      ]
+    },
+    {
+      "id": "cl-estate-scale",
+      "fact": "estate",
+      "cities": [
+        "santiago"
+      ],
+      "claim": "Heirs pay 1–25% on their share",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "SII: Law 16.271 on inheritance, legacies and gifts",
+          "url": "https://www.sii.cl/pagina/jurisprudencia/legislacion/basica/herencias_asignaciones_donaciones.doc",
+          "read": "2026-11-15",
+          "says": "Art. 1: assets abroad are included in the inventory, but \"en las sucesiones de extranjeros los bienes situados en el exterior deberán colacionarse en el inventario sólo cuando se hubieren adquirido\" with \"recursos provenientes del país\". Art. 2: progressive scale 1% (to 80 UTA), 2.5%, 5%, 7.5%, 10%, 15%, 20% and 25% above 1,200 UTA; children exempt up to 50 UTA."
+        },
+        {
+          "name": "PwC: quick chart, inheritance and gift tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates",
+          "read": "2026-11-15",
+          "says": "Chile (last reviewed 30 October 2026): 25 | 25."
+        }
+      ]
+    },
+    {
+      "id": "cl-estate-foreign-assets",
+      "fact": "estate",
+      "cities": [
+        "santiago"
+      ],
+      "claim": "Under Law 16.271 art. 1 a foreigner's assets abroad count only if bought with money from Chile, so a US brokerage account funded from the US falls outside it",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "SII: Law 16.271 on inheritance, legacies and gifts",
+          "url": "https://www.sii.cl/pagina/jurisprudencia/legislacion/basica/herencias_asignaciones_donaciones.doc",
+          "read": "2026-11-15",
+          "says": "Art. 1: assets abroad are included in the inventory, but \"en las sucesiones de extranjeros los bienes situados en el exterior deberán colacionarse en el inventario sólo cuando se hubieren adquirido\" with \"recursos provenientes del país\". Art. 2: progressive scale 1% (to 80 UTA), 2.5%, 5%, 7.5%, 10%, 15%, 20% and 25% above 1,200 UTA; children exempt up to 50 UTA."
+        }
+      ],
+      "note": "localTaxes.ts (CL) agrees."
+    },
+    {
+      "id": "cl-estate-domicile-unverified",
+      "fact": "estate",
+      "cities": [
+        "santiago"
+      ],
+      "claim": "Whether this holds for a foreigner who dies domiciled in Chile is unverified",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "SII: Law 16.271 on inheritance, legacies and gifts",
+          "url": "https://www.sii.cl/pagina/jurisprudencia/legislacion/basica/herencias_asignaciones_donaciones.doc",
+          "read": "2026-11-15",
+          "says": "Art. 1: assets abroad are included in the inventory, but \"en las sucesiones de extranjeros los bienes situados en el exterior deberán colacionarse en el inventario sólo cuando se hubieren adquirido\" with \"recursos provenientes del país\". Art. 2: progressive scale 1% (to 80 UTA), 2.5%, 5%, 7.5%, 10%, 15%, 20% and 25% above 1,200 UTA; children exempt up to 50 UTA."
+        }
+      ],
+      "hedge": "unverified",
+      "wording": "whether this holds for a foreigner who dies domiciled in Chile is unverified",
+      "note": "The article speaks of \"sucesiones de extranjeros\" without a domicile condition; no SII ruling on a domiciled foreigner was read, so the hedge stays."
+    },
+    {
+      "id": "cl-estate-no-treaty",
+      "fact": "estate",
+      "cities": [
+        "santiago"
+      ],
+      "claim": "There is no US estate treaty",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list); none of the 37 countries named in this claim is among them."
+        }
+      ],
+      "shared": "us-estate-treaty-profiles-without"
+    },
+    {
+      "id": "cl-lending-ibkr",
+      "fact": "lending",
+      "cities": [
+        "santiago"
+      ],
+      "claim": "Interactive Brokers serves all non-sanctioned countries, so Chile residents should be accepted",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Argentina, Canada, Chile, Colombia, Ecuador, Paraguay, Peru and Uruguay; the page names no IBKR entity for these residents, and for Canada says only \"Canadians are protected up to CAD 1m\"."
+        }
+      ],
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Interactive Brokers reportedly serves all non-sanctioned countries",
+      "note": "IBKR's country list (https://www.interactivebrokers.com/en/accounts/open-account-country-list.php) returned HTTP 403 again on 2026-11-15, so acceptance stays reported (rule 3)."
+    },
+    {
+      "id": "cl-lending-ibkr-margin",
+      "fact": "lending",
+      "cities": [
+        "santiago"
+      ],
+      "claim": "IBKR margin terms for Chile residents are unconfirmed",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Argentina, Canada, Chile, Colombia, Ecuador, Paraguay, Peru and Uruguay; the page names no IBKR entity for these residents, and for Canada says only \"Canadians are protected up to CAD 1m\"."
+        }
+      ],
+      "hedge": "unconfirmed",
+      "wording": "but margin terms are unconfirmed",
+      "note": "A statement of what is not known."
+    },
+    {
+      "id": "cl-lending-schwab",
+      "fact": "lending",
+      "cities": [
+        "santiago"
+      ],
+      "claim": "Whether Schwab One International accepts Chile was not checked",
+      "verdict": "corrected",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. On that day the author ran every entry in Schwab's international account selector through the application: it accepted residents of 51 of 263 countries and regions: Argentina, Australia, Austria, the Bahamas, Belgium, Bermuda, Brazil, the British Virgin Islands, the Cayman Islands, Chile, China, Colombia, Costa Rica, the Czech Republic, Denmark, Ecuador, Finland, Germany, Greece, Guatemala, Hong Kong, Iceland, India, Indonesia, Ireland, Israel, Jersey, Luxembourg, Malaysia, the Marshall Islands, Mexico, the Netherlands, Norway, Panama, Paraguay, Peru, Poland, Portugal, Qatar, Singapore, South Korea, Spain, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Turks and Caicos, the United Arab Emirates, the United Kingdom and Uruguay. Named as not accepted: Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam; for the rest the application said \"Schwab currently cannot open accounts for residents of your country/region.\" The test covers new applicants on that day only."
+        },
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. That day Schwab's online international application accepted residents of 51 countries and regions, among them Argentina, Chile, Colombia (\"| Colombia | Yes |\"), Ecuador (\"| Ecuador | Yes |\"), Paraguay, Peru and Uruguay; the row for Canada reads \"| Canada | No |\". It quotes the Schwab One agreement: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds\"; no other region is named."
+        }
+      ],
+      "shared": "schwab-accepts-residents",
+      "oldWording": "whether Schwab One International accepts Chile was not checked",
+      "newWording": "Schwab One International's application reportedly lists Chile (October 2026), with no known margin restriction outside Europe",
+      "also": [
+        "scores.lending 3→4 (rubric 4)",
+        "sources: added the Your Tax Base Schwab page"
+      ],
+      "note": "The dated list (re-read today) names Chile. Santiago's why does not mention lending, so no rank flag."
+    },
+    {
+      "id": "cl-visa-no-minimum",
+      "fact": "visa",
+      "cities": [
+        "santiago"
+      ],
+      "claim": "Temporary residence as a rentista or pensionado has no fixed minimum",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Servicio Nacional de Migraciones: retirees and rentiers",
+          "url": "https://serviciomigraciones.cl/residencia-temporal/subcategorias/jubilados-y-rentistas/",
+          "read": "2026-11-15",
+          "says": "Updated 18 December 2025. Pensioners and rentiers with income that \"permita satisfacer al menos sus necesidades básicas\", judged on the Social Development Ministry's indicators; no amount is given; extensions require showing the condition still holds."
+        },
+        {
+          "name": "Becker Abogados: how to apply for a retiree visa in Chile",
+          "url": "https://beckerabogados.cl/en/blog/how-to-apply-for-a-retiree-visa-in-chile",
+          "read": "2026-11-15",
+          "says": "Dated 23 September 2024. \"Although no fixed amount is set, it's recommended to show income exceeding $1,000 USD per month\"; initial residence \"up to one year\", renewable; permanent residence after two years, with no more than 180 days abroad."
+        }
+      ],
+      "note": "Searched the retiree/rentier permit with November 2026: no change found."
+    },
+    {
+      "id": "cl-visa-1000",
+      "fact": "visa",
+      "cities": [
+        "santiago"
+      ],
+      "claim": "In practice applicants show more than about $1,000/month",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "Becker Abogados: how to apply for a retiree visa in Chile",
+          "url": "https://beckerabogados.cl/en/blog/how-to-apply-for-a-retiree-visa-in-chile",
+          "read": "2026-11-15",
+          "says": "Dated 23 September 2024. \"Although no fixed amount is set, it's recommended to show income exceeding $1,000 USD per month\"; initial residence \"up to one year\", renewable; permanent residence after two years, with no more than 180 days abroad."
+        }
+      ],
+      "hedge": "reportedly",
+      "oldWording": "though in practice applicants show more than about $1,000/month",
+      "wording": "though applicants are reportedly advised to show more than about $1,000/month",
+      "also": [
+        "hedge added: \"reportedly\""
+      ],
+      "note": "Only a 2024 law-firm page says it, as a recommendation."
+    },
+    {
+      "id": "cl-visa-permanent",
+      "fact": "visa",
+      "cities": [
+        "santiago"
+      ],
+      "claim": "The first permit is about 1 year and renewable, and permanent residence is possible after 2 years with no more than 180 days abroad (law firm, 2024)",
+      "verdict": "corrected",
+      "sources": [
+        {
+          "name": "Servicio Nacional de Migraciones: permanent residence",
+          "url": "https://serviciomigraciones.cl/residencia-definitiva/",
+          "read": "2026-11-15",
+          "says": "Updated 17 July 2026. For temporary residence requested after 14 May 2022 the holder must have lived in Chile \"al menos por 24 meses\", reducible to 12 for reasons including income or pensions (Law 21.325 art. 79); absences of more than 2 months raise it to 30 months, more than 6 to 36, more than 12 to 48."
+        },
+        {
+          "name": "Servicio Nacional de Migraciones: retirees and rentiers",
+          "url": "https://serviciomigraciones.cl/residencia-temporal/subcategorias/jubilados-y-rentistas/",
+          "read": "2026-11-15",
+          "says": "Updated 18 December 2025. Pensioners and rentiers with income that \"permita satisfacer al menos sus necesidades básicas\", judged on the Social Development Ministry's indicators; no amount is given; extensions require showing the condition still holds."
+        },
+        {
+          "name": "Becker Abogados: how to apply for a retiree visa in Chile",
+          "url": "https://beckerabogados.cl/en/blog/how-to-apply-for-a-retiree-visa-in-chile",
+          "read": "2026-11-15",
+          "says": "Dated 23 September 2024. \"Although no fixed amount is set, it's recommended to show income exceeding $1,000 USD per month\"; initial residence \"up to one year\", renewable; permanent residence after two years, with no more than 180 days abroad."
+        }
+      ],
+      "oldWording": "the first permit is about 1 year and renewable, and permanent residence is possible after 2 years with no more than 180 days abroad (law firm, 2024)",
+      "newWording": "the permit is renewable, and permanent residence needs 24 months of temporary residence (12 in some cases, such as pension income), longer if absences total more than 2 months (Migration Service, 2026)",
+      "also": [
+        "sources: added the Migration Service's retiree and permanent-residence pages",
+        "scores.visa 4 unchanged"
+      ],
+      "note": "The Migration Service sets 24 months, reducible to 12, and lengthens it to 30 months after more than 2 months of absences; the 180-day rule is wrong for permits after May 2022. The first permit's length is not on the official page and secondary pages disagree (1 or 2 years), so it was dropped."
+    },
+    {
+      "id": "cl-health-clinics",
+      "fact": "healthcare",
+      "cities": [
+        "santiago"
+      ],
+      "claim": "Clínica Alemana, Clínica Las Condes, Clínica Indisa and Clínica Santa María are among Latin America's best",
+      "verdict": "corrected",
+      "sources": [
+        {
+          "name": "Emol: Newsweek World's Best Hospitals 2026, Chile",
+          "url": "https://www.emol.com/noticias/Internacional/2026/02/26/1192686/ranking-hospitales-clinicas-centros-salud.html",
+          "read": "2026-11-15",
+          "says": "Dated 26 February 2026. Clínica Alemana Vitacura 121st in the world and 1st in Chile; Clínica Las Condes 5th in Chile; Clínica Santa María 9th; Clínica Indisa 12th; Hospital Clínico UC 200th in the world and 2nd in Chile."
+        }
+      ],
+      "oldWording": "Clínica Alemana, Clínica Las Condes, Clínica Indisa and Clínica Santa María are among Latin America's best",
+      "newWording": "Clínica Alemana (1st in Chile and 121st in the world in Newsweek's 2026 ranking), Clínica Las Condes (5th in Chile), Clínica Santa María (9th) and Clínica Indisa (12th) lead private care",
+      "also": [
+        "summary: 'Santiago has the region's best private clinics' → 'Santiago has strong private clinics, led by Clínica Alemana'",
+        "sources: added Emol (Newsweek 2026)",
+        "scores.healthcare 4 unchanged"
+      ],
+      "note": "No regional ranking read puts all four among Latin America's best; Newsweek 2026 ranks only Alemana in its world top 250 and the others 5th to 12th in Chile."
+    },
+    {
+      "id": "cl-health-fonasa",
+      "fact": "healthcare",
+      "cities": [
+        "santiago"
+      ],
+      "claim": "Retirees with no Chilean taxable income can qualify for free public FONASA Group A",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Rio Times: healthcare in Chile for expats 2026",
+          "url": "https://www.riotimesonline.com/healthcare-chile-expats-2026/",
+          "read": "2026-11-15",
+          "says": "Published 10 September 2026. Legal residents with no taxable income may qualify for FONASA Group A, free public cover; retirees with no Chilean taxable income may also qualify. ISAPRE prices depend on age, sex and income; guides \"commonly mention waiting periods of around 18 months or more\" for declared conditions."
+        }
+      ],
+      "note": "Secondary page; fonasa.cl was not read."
+    },
+    {
+      "id": "cl-health-isapre",
+      "fact": "healthcare",
+      "cities": [
+        "santiago"
+      ],
+      "claim": "Private Isapres price steeply by age and can exclude declared conditions for about 18 months",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Rio Times: healthcare in Chile for expats 2026",
+          "url": "https://www.riotimesonline.com/healthcare-chile-expats-2026/",
+          "read": "2026-11-15",
+          "says": "Published 10 September 2026. Legal residents with no taxable income may qualify for FONASA Group A, free public cover; retirees with no Chilean taxable income may also qualify. ISAPRE prices depend on age, sex and income; guides \"commonly mention waiting periods of around 18 months or more\" for declared conditions."
+        }
+      ],
+      "note": "Secondary page dated 2026; the 18-month limit is in the Isapre law (art. 190 DFL 1), quoted only in search results."
+    }
+  ]
+}

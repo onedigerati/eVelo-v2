@@ -1,0 +1,418 @@
+{
+  "country": "Uruguay",
+  "cities": [
+    "montevideo"
+  ],
+  "claims": [
+    {
+      "id": "uy-tax-wealth-local",
+      "fact": "tax",
+      "cities": [
+        "montevideo"
+      ],
+      "claim": "Wealth tax of 0.1% (2026) reaches only net wealth located in Uruguay, so a US brokerage account is outside it",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Uruguay, other taxes",
+          "url": "https://taxsummaries.pwc.com/uruguay/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 2 September 2026. Resident individuals pay NWT at 0.1% on net wealth \"located In Uruguay\" at year-end; local net wealth below about USD 160,000 (2026) is exempt."
+        },
+        {
+          "name": "PwC: quick chart, net wealth/worth tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/net-wealth-worth-tax-rates",
+          "read": "2026-11-15",
+          "says": "Uruguay (last reviewed 2 September 2026): residents 0.1%."
+        }
+      ],
+      "note": "localTaxes.ts (UY) agrees."
+    },
+    {
+      "id": "uy-tax-holiday-11y",
+      "fact": "tax",
+      "cities": [
+        "montevideo"
+      ],
+      "claim": "Under Law 20.446 (from 2026) new residents with 183+ days' presence can exempt foreign capital income for the arrival year plus 10",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IMI Daily: Uruguay raises tax holiday threshold to US$2 million, taxes foreign income at 12%",
+          "url": "https://www.imidaily.com/latin-america/uruguay-raises-tax-holiday-threshold-to-us2-million-taxes-foreign-income-at-12/",
+          "read": "2026-11-15",
+          "says": "Dated 25 February 2026. Ley 20.446 (budget 2025–2029), from 1 January 2026: new residents get a full exemption on foreign-sourced capital income for \"the year of acquisition plus ten calendar years\", then a five-year transition at 6%, half the 12% IRPF rate; physical presence over 183 days a year is a route needing no investment; the alternatives are real estate above UI 12.5M (about US$2M) or US$100,000 a year into the innovation fund; the permanent 7% option is being phased out for new residents; holders' \"foreign-sourced capital income and gains\" fall within the exemption."
+        },
+        {
+          "name": "Funds Society: Uruguay redraws the tax map for international investments",
+          "url": "https://www.fundssociety.com/es/opinion/uruguay-redefine-el-mapa-fiscal-de-las-inversiones-internacionales/",
+          "read": "2026-11-15",
+          "says": "Undated (2026). The holiday covers certain foreign capital income \"durante el año en que adquieren la residencia y los diez ejercicios siguientes\"; conditions include more than 183 days in Uruguay, real estate above UI 12,500,000, or annual investments in productive or innovation funds."
+        }
+      ],
+      "note": "Searched the holiday with November 2026: no later change found; Decree 95/026 (May 2026) regulates foreign income in IRPF and does not change the term."
+    },
+    {
+      "id": "uy-tax-holiday-after",
+      "fact": "tax",
+      "cities": [
+        "montevideo"
+      ],
+      "claim": "Then they pay 6% for 5 years and 12% after",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IMI Daily: Uruguay raises tax holiday threshold to US$2 million, taxes foreign income at 12%",
+          "url": "https://www.imidaily.com/latin-america/uruguay-raises-tax-holiday-threshold-to-us2-million-taxes-foreign-income-at-12/",
+          "read": "2026-11-15",
+          "says": "Dated 25 February 2026. Ley 20.446 (budget 2025–2029), from 1 January 2026: new residents get a full exemption on foreign-sourced capital income for \"the year of acquisition plus ten calendar years\", then a five-year transition at 6%, half the 12% IRPF rate; physical presence over 183 days a year is a route needing no investment; the alternatives are real estate above UI 12.5M (about US$2M) or US$100,000 a year into the innovation fund; the permanent 7% option is being phased out for new residents; holders' \"foreign-sourced capital income and gains\" fall within the exemption."
+        },
+        {
+          "name": "PwC: Uruguay, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/uruguay/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 2 September 2026. Capital income is taxed \"at a flat rate of 12%, with some exceptions\", including passive income from movable assets located outside Uruguay."
+        }
+      ],
+      "note": "The 12% after the transition is the general rate on foreign capital income (PwC); IMI does not state it in so many words."
+    },
+    {
+      "id": "uy-tax-holiday-dividends",
+      "fact": "tax",
+      "cities": [
+        "montevideo"
+      ],
+      "claim": "That the holiday covers dividends and interest is inferred from \"capital income\"",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "IMI Daily: Uruguay raises tax holiday threshold to US$2 million, taxes foreign income at 12%",
+          "url": "https://www.imidaily.com/latin-america/uruguay-raises-tax-holiday-threshold-to-us2-million-taxes-foreign-income-at-12/",
+          "read": "2026-11-15",
+          "says": "Dated 25 February 2026. Ley 20.446 (budget 2025–2029), from 1 January 2026: new residents get a full exemption on foreign-sourced capital income for \"the year of acquisition plus ten calendar years\", then a five-year transition at 6%, half the 12% IRPF rate; physical presence over 183 days a year is a route needing no investment; the alternatives are real estate above UI 12.5M (about US$2M) or US$100,000 a year into the innovation fund; the permanent 7% option is being phased out for new residents; holders' \"foreign-sourced capital income and gains\" fall within the exemption."
+        }
+      ],
+      "hedge": "inferred",
+      "wording": "that it covers dividends and interest is inferred from \"capital income\"",
+      "note": "IMI says all foreign-sourced capital income and gains fall within the exemption, without naming dividends; the hedge stays."
+    },
+    {
+      "id": "uy-tax-seven-percent",
+      "fact": "tax",
+      "cities": [
+        "montevideo"
+      ],
+      "claim": "One source says 7%",
+      "verdict": "corrected",
+      "sources": [
+        {
+          "name": "IMI Daily: Uruguay raises tax holiday threshold to US$2 million, taxes foreign income at 12%",
+          "url": "https://www.imidaily.com/latin-america/uruguay-raises-tax-holiday-threshold-to-us2-million-taxes-foreign-income-at-12/",
+          "read": "2026-11-15",
+          "says": "Dated 25 February 2026. Ley 20.446 (budget 2025–2029), from 1 January 2026: new residents get a full exemption on foreign-sourced capital income for \"the year of acquisition plus ten calendar years\", then a five-year transition at 6%, half the 12% IRPF rate; physical presence over 183 days a year is a route needing no investment; the alternatives are real estate above UI 12.5M (about US$2M) or US$100,000 a year into the innovation fund; the permanent 7% option is being phased out for new residents; holders' \"foreign-sourced capital income and gains\" fall within the exemption."
+        }
+      ],
+      "oldWording": "one source says 7%)",
+      "newWording": "the older 7% option is reportedly closed to new residents)",
+      "note": "The 7% was the old regime's permanent alternative, now phased out for new residents per IMI; saying \"one source says 7%\" read as a disagreement about the new rate."
+    },
+    {
+      "id": "uy-tax-holiday-183",
+      "fact": "tax",
+      "cities": [
+        "montevideo"
+      ],
+      "claim": "The holiday needs 183 or more days a year there (summary, drawback)",
+      "verdict": "corrected",
+      "sources": [
+        {
+          "name": "IMI Daily: Uruguay raises tax holiday threshold to US$2 million, taxes foreign income at 12%",
+          "url": "https://www.imidaily.com/latin-america/uruguay-raises-tax-holiday-threshold-to-us2-million-taxes-foreign-income-at-12/",
+          "read": "2026-11-15",
+          "says": "Dated 25 February 2026. Ley 20.446 (budget 2025–2029), from 1 January 2026: new residents get a full exemption on foreign-sourced capital income for \"the year of acquisition plus ten calendar years\", then a five-year transition at 6%, half the 12% IRPF rate; physical presence over 183 days a year is a route needing no investment; the alternatives are real estate above UI 12.5M (about US$2M) or US$100,000 a year into the innovation fund; the permanent 7% option is being phased out for new residents; holders' \"foreign-sourced capital income and gains\" fall within the exemption."
+        },
+        {
+          "name": "Funds Society: Uruguay redraws the tax map for international investments",
+          "url": "https://www.fundssociety.com/es/opinion/uruguay-redefine-el-mapa-fiscal-de-las-inversiones-internacionales/",
+          "read": "2026-11-15",
+          "says": "Undated (2026). The holiday covers certain foreign capital income \"durante el año en que adquieren la residencia y los diez ejercicios siguientes\"; conditions include more than 183 days in Uruguay, real estate above UI 12,500,000, or annual investments in productive or innovation funds."
+        }
+      ],
+      "oldWording": "the holiday needs 183 or more days a year there.",
+      "newWording": "the holiday needs 183 or more days a year there unless you make a large qualifying investment.",
+      "also": [
+        "drawback 1: 'The tax holiday needs 183+ days a year in Uruguay, and after' → 'The tax holiday needs 183+ days a year in Uruguay (or a large investment), and after'",
+        "scores.tax 4 unchanged"
+      ],
+      "note": "Under Ley 20.446 the 183-day presence is one route; real estate of about US$2M or US$100,000 a year into the innovation fund are the others."
+    },
+    {
+      "id": "uy-estate-none",
+      "fact": "estate",
+      "cities": [
+        "montevideo"
+      ],
+      "claim": "Uruguay has no inheritance tax, so heirs owe nothing locally on US assets",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: quick chart, inheritance and gift tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates",
+          "read": "2026-11-15",
+          "says": "Uruguay (last reviewed 2 September 2026): NA | NA."
+        }
+      ]
+    },
+    {
+      "id": "uy-estate-no-treaty",
+      "fact": "estate",
+      "cities": [
+        "montevideo"
+      ],
+      "claim": "There is no US estate treaty",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list); none of the 37 countries named in this claim is among them."
+        }
+      ],
+      "shared": "us-estate-treaty-profiles-without"
+    },
+    {
+      "id": "uy-estate-us-exemption",
+      "fact": "estate",
+      "cities": [
+        "montevideo"
+      ],
+      "claim": "US estate tax applies above the $15M exemption (2026)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IRS: What's new, estate and gift tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax",
+          "read": "2026-11-15",
+          "says": "The table \"Basic exclusion amount for year of death\" has the row 2026: $15,000,000 (2025: $13,990,000). The page says the Working Families Tax Cuts, Public Law 119-21, signed July 4, 2025, \"amends § 2010(c)(3) by increasing the basic exclusion amount to $15,000,000 for calendar year 2026\". Page last reviewed or updated 03-Nov-2026."
+        },
+        {
+          "name": "IRS: Estate tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-tax",
+          "read": "2026-11-15",
+          "says": "A return is required when the gross estate, plus adjusted taxable gifts and specific exemption, is more than the filing threshold for the year of death; the table gives 2026: $15,000,000. Page last reviewed or updated 23-Oct-2026."
+        },
+        {
+          "name": "IRS news release IR-2025-103: tax inflation adjustments for tax year 2026",
+          "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill",
+          "read": "2026-11-15",
+          "says": "\"Estates of decedents who die during 2026 have a basic exclusion amount of $15,000,000\", up from $13,990,000 for 2025; the release (October 9, 2025) cites Revenue Procedure 2025-32 and is marked as an archival document."
+        },
+        {
+          "name": "IRS: Some nonresidents with U.S. assets must file estate tax returns",
+          "url": "https://www.irs.gov/individuals/international-taxpayers/some-nonresidents-with-us-assets-must-file-estate-tax-returns",
+          "read": "2026-11-15",
+          "says": "\"U.S. citizens are subject to U.S. estate taxation with respect to their worldwide assets\"; Form 706 is required when worldwide assets plus adjusted taxable gifts exceed the basic exclusion amount in effect on the date of death. By contrast a nonresident who is not a citizen files when US-situated assets exceed $60,000. Page last reviewed or updated 27-Jun-2026."
+        }
+      ],
+      "shared": "us-estate-exemption-2026"
+    },
+    {
+      "id": "uy-lending-ibkr",
+      "fact": "lending",
+      "cities": [
+        "montevideo"
+      ],
+      "claim": "Interactive Brokers accepts Uruguay residents",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Argentina, Canada, Chile, Colombia, Ecuador, Paraguay, Peru and Uruguay; the page names no IBKR entity for these residents, and for Canada says only \"Canadians are protected up to CAD 1m\"."
+        }
+      ],
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Interactive Brokers reportedly accepts Uruguay residents",
+      "note": "IBKR's country list (https://www.interactivebrokers.com/en/accounts/open-account-country-list.php) returned HTTP 403 again on 2026-11-15, so acceptance stays reported (rule 3)."
+    },
+    {
+      "id": "uy-lending-schwab",
+      "fact": "lending",
+      "cities": [
+        "montevideo"
+      ],
+      "claim": "Schwab One International's application lists Uruguay (October 2026)",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. On that day the author ran every entry in Schwab's international account selector through the application: it accepted residents of 51 of 263 countries and regions: Argentina, Australia, Austria, the Bahamas, Belgium, Bermuda, Brazil, the British Virgin Islands, the Cayman Islands, Chile, China, Colombia, Costa Rica, the Czech Republic, Denmark, Ecuador, Finland, Germany, Greece, Guatemala, Hong Kong, Iceland, India, Indonesia, Ireland, Israel, Jersey, Luxembourg, Malaysia, the Marshall Islands, Mexico, the Netherlands, Norway, Panama, Paraguay, Peru, Poland, Portugal, Qatar, Singapore, South Korea, Spain, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Turks and Caicos, the United Arab Emirates, the United Kingdom and Uruguay. Named as not accepted: Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam; for the rest the application said \"Schwab currently cannot open accounts for residents of your country/region.\" The test covers new applicants on that day only."
+        },
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. That day Schwab's online international application accepted residents of 51 countries and regions, among them Argentina, Chile, Colombia (\"| Colombia | Yes |\"), Ecuador (\"| Ecuador | Yes |\"), Paraguay, Peru and Uruguay; the row for Canada reads \"| Canada | No |\". It quotes the Schwab One agreement: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds\"; no other region is named."
+        }
+      ],
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab One International's application reportedly lists Uruguay (October 2026)",
+      "note": "Re-read the dated list today. international.schwab.com returned HTTP 403 in every earlier stage; Schwab's own pages were not readable, so \"reportedly\" stays. Lending 4 stays."
+    },
+    {
+      "id": "uy-lending-no-margin-restriction",
+      "fact": "lending",
+      "cities": [
+        "montevideo"
+      ],
+      "claim": "There is no known Schwab margin restriction for residents outside Europe",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. It quotes the Schwab One Account Agreement (\"October 2026 edition, form 09/26\"), Schwab One International terms: \"Customers residing within Europe are restricted from using their Available Margin Loan Value\" to withdraw funds from their account, and advises keeping enough actual cash in the account for spending. It does not define \"Europe\"."
+        },
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. That day Schwab's online international application accepted residents of 51 countries and regions, among them Argentina, Chile, Colombia (\"| Colombia | Yes |\"), Ecuador (\"| Ecuador | Yes |\"), Paraguay, Peru and Uruguay; the row for Canada reads \"| Canada | No |\". It quotes the Schwab One agreement: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds\"; no other region is named."
+        }
+      ],
+      "shared": "schwab-europe-margin-cash-out",
+      "hedge": "no known",
+      "wording": "with no known margin restriction outside Europe",
+      "note": "The reported clause bars Europe residents only and the page names no other region; Schwab's agreement could not be read, so \"no known\" is the right strength."
+    },
+    {
+      "id": "uy-lending-ibkr-margin",
+      "fact": "lending",
+      "cities": [
+        "montevideo"
+      ],
+      "claim": "IBKR margin terms for residents are unconfirmed",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Argentina, Canada, Chile, Colombia, Ecuador, Paraguay, Peru and Uruguay; the page names no IBKR entity for these residents, and for Canada says only \"Canadians are protected up to CAD 1m\"."
+        }
+      ],
+      "hedge": "unconfirmed",
+      "wording": "IBKR margin terms by country are unconfirmed",
+      "note": "A statement of what is not known; no IBKR page could be read (HTTP 403)."
+    },
+    {
+      "id": "uy-visa-certificate",
+      "fact": "visa",
+      "cities": [
+        "montevideo"
+      ],
+      "claim": "Permanent residency as a rentista on income from abroad needs a notarial certificate of its nature and monthly amount, with no published minimum",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "gub.uy: permanent legal residence",
+          "url": "https://www.gub.uy/tramites/residencia-legal-permanente",
+          "read": "2026-11-15",
+          "says": "Updated 19 February 2026. Applicants show monthly income \"suficiente para su manutención\", with no minimum amount; a rentier, retiree or pensioner abroad files a notarial certificate of that status, the nature of the income, its monthly nominal amount and how it is received in Uruguay."
+        }
+      ],
+      "note": "Searched permanent residence with November 2026: no change found."
+    },
+    {
+      "id": "uy-visa-1500",
+      "fact": "visa",
+      "cities": [
+        "montevideo"
+      ],
+      "claim": "Officials expect about $1,500/month, and dividends qualify as passive income",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "Liberty Mundo: residency in Uruguay 2026",
+          "url": "https://www.libertymundo.com/residency-in-uruguay/",
+          "read": "2026-11-15",
+          "says": "© 2026, updated after 1 January 2026. Rentistas need \"a stable passive income of at least $1,500 per month\"; passive income includes \"pensions, rent, dividends, or returns on savings\"; residency can take \"up to 18 months in some cases\"; meanwhile \"your initial receipt keeps your status legal\"."
+        },
+        {
+          "name": "gub.uy: permanent legal residence",
+          "url": "https://www.gub.uy/tramites/residencia-legal-permanente",
+          "read": "2026-11-15",
+          "says": "Updated 19 February 2026. Applicants show monthly income \"suficiente para su manutención\", with no minimum amount; a rentier, retiree or pensioner abroad files a notarial certificate of that status, the nature of the income, its monthly nominal amount and how it is received in Uruguay."
+        }
+      ],
+      "hedge": "reportedly",
+      "wording": "officials reportedly expect about $1,500/month",
+      "note": "Only a secondary page gives the benchmark, as a rentista-visa figure; it lists dividends as passive income. The hedge sits on the amount; the dividends half is consistent with gub.uy's rentier certificate."
+    },
+    {
+      "id": "uy-visa-processing",
+      "fact": "visa",
+      "cities": [
+        "montevideo"
+      ],
+      "claim": "Processing can take 6–18 months, and you are legal while it is pending",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Liberty Mundo: residency in Uruguay 2026",
+          "url": "https://www.libertymundo.com/residency-in-uruguay/",
+          "read": "2026-11-15",
+          "says": "© 2026, updated after 1 January 2026. Rentistas need \"a stable passive income of at least $1,500 per month\"; passive income includes \"pensions, rent, dividends, or returns on savings\"; residency can take \"up to 18 months in some cases\"; meanwhile \"your initial receipt keeps your status legal\"."
+        }
+      ],
+      "note": "Secondary page; gub.uy gives no processing time."
+    },
+    {
+      "id": "uy-health-mutualistas",
+      "fact": "healthcare",
+      "cities": [
+        "montevideo"
+      ],
+      "claim": "Private cooperatives (mutualistas such as Hospital Británico, Asociación Española, Médica Uruguaya, CASMU) give full coverage for about $90–140 per adult a month (2026), with age-based admission rules and senior surcharges",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Rio Times: healthcare in Uruguay for expats 2026",
+          "url": "https://www.riotimesonline.com/healthcare-uruguay-expats-2026/",
+          "read": "2026-11-15",
+          "says": "Dated 13 September 2026. Hospital Británico, Asociación Española, Médica Uruguaya and CASMU are large Montevideo mutualistas; self-pay membership about US$90 to 140 per adult a month (one 2026 source); some use age-based admission or charge older members more; ASSE is the public provider; \"advanced specialty care and larger hospital capacity are concentrated in Montevideo\"."
+        }
+      ]
+    },
+    {
+      "id": "uy-health-asse-montevideo",
+      "fact": "healthcare",
+      "cities": [
+        "montevideo"
+      ],
+      "claim": "The public ASSE serves the rest, and Montevideo holds most specialty care",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Rio Times: healthcare in Uruguay for expats 2026",
+          "url": "https://www.riotimesonline.com/healthcare-uruguay-expats-2026/",
+          "read": "2026-11-15",
+          "says": "Dated 13 September 2026. Hospital Británico, Asociación Española, Médica Uruguaya and CASMU are large Montevideo mutualistas; self-pay membership about US$90 to 140 per adult a month (one 2026 source); some use age-based admission or charge older members more; ASSE is the public provider; \"advanced specialty care and larger hospital capacity are concentrated in Montevideo\"."
+        }
+      ]
+    }
+  ]
+}

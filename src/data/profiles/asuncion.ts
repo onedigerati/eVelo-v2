@@ -4,7 +4,7 @@ const profile: ExpatProfile = {
   tagline: 'Low-cost capital with a territorial tax system',
   summary:
     'Paraguay taxes individuals only on Paraguayan-source income, so US dividends and interest appear untaxed. It has no wealth or inheritance tax, which gives it one of the cleanest BBD tax profiles on paper. Asunción is among the cheapest capitals on this list. The costs are a hot, humid climate, no US nonstop flights, and permanent residency that since July 2026 needs active income, a pension or a $200k investment.',
-  scores: { cost: 5, healthcare: 3, safety: 3, visa: 3, climate: 2, community: 2, tax: 5, estate: 5, lending: 3 },
+  scores: { cost: 5, healthcare: 3, safety: 3, visa: 3, climate: 2, community: 2, tax: 5, estate: 5, lending: 4 },
   facts: {
     healthcare:
       'Private hospitals such as Centro Médico Bautista, Sanatorio Americano, San Roque and Hospital La Costa are the country\'s best and well reviewed, with English-speaking doctors, though some equipment is dated by Western standards and no JCI accreditation was found (secondary sources); public IPS is for payroll contributors, so retirees use prepaid plans or international cover (local plans from about $75/month), and major treatment sometimes means Argentina or Brazil.',
@@ -16,7 +16,7 @@ const profile: ExpatProfile = {
     estate:
       'Paraguay has no inheritance or estate tax, so heirs owe nothing locally on US assets; there is no US estate treaty, and US estate tax applies above the $15M exemption (2026).',
     lending:
-      'Interactive Brokers reportedly serves all non-sanctioned countries, so Paraguay residents should be accepted, but margin terms are unconfirmed; whether Schwab One International accepts Paraguay was not checked.',
+      'Interactive Brokers reportedly serves all non-sanctioned countries, so Paraguay residents should be accepted, but margin terms are unconfirmed; Schwab One International\'s application reportedly lists Paraguay (October 2026), with no known margin restriction outside Europe.',
     climate:
       'Subtropical and humid: December–February highs of 33–34°C, mild winters averaging about 17°C in July with occasional near-freezing nights, and about 1,400 mm of rain a year.',
     community:
@@ -52,6 +52,7 @@ const profile: ExpatProfile = {
     },
     { name: 'GOV.UK: Paraguay travel advice, safety and security', url: 'https://www.gov.uk/foreign-travel-advice/paraguay/safety-and-security' },
     { name: 'Travel Advisory: Paraguay (US State Dept levels)', url: 'https://www.traveladvisory.io/advisory/paraguay' },
+    { name: 'Your Tax Base: Charles Schwab for expats (country list, Oct 2026)', url: 'https://yourtaxbase.com/blog/charles-schwab-for-expats' },
     { name: 'Wikipedia: Asunción (climate)', url: 'https://en.wikipedia.org/wiki/Asunci%C3%B3n' },
     { name: 'Wikipedia: Silvio Pettirossi International Airport', url: 'https://en.wikipedia.org/wiki/Silvio_Pettirossi_International_Airport' },
   ],

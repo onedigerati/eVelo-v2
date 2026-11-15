@@ -1,0 +1,561 @@
+{
+  "country": "Argentina",
+  "cities": [
+    "buenos-aires"
+  ],
+  "claims": [
+    {
+      "id": "ar-tax-residence-13th-month",
+      "fact": "tax",
+      "cities": [
+        "buenos-aires"
+      ],
+      "claim": "Foreigners become tax resident from their 13th month",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Argentina, residence",
+          "url": "https://taxsummaries.pwc.com/argentina/individual/residence",
+          "read": "2026-11-15",
+          "says": "Last reviewed 16 June 2026. Foreigners residing for non-work reasons become resident \"for more than 12 months, as of the 13th month of presence in Argentina\"."
+        }
+      ]
+    },
+    {
+      "id": "ar-tax-bp-worldwide-gross",
+      "fact": "tax",
+      "cities": [
+        "buenos-aires"
+      ],
+      "claim": "Residents pay Bienes Personales on worldwide gross assets, with no deduction for debts (including a margin loan)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Argentina, other taxes",
+          "url": "https://taxsummaries.pwc.com/argentina/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 16 June 2026. Residents pay personal assets tax on worldwide assets as of 31 December \"without consideration of liabilities\"; FY2025 non-taxable threshold ARS 384,728,044.57; FY2025 general rates 0.50%, 0.75% and 1.00%; rates \"gradually reduce to 0.25% by 2027\". REIBP is open to individuals resident on 31 December 2023; the \"good taxpayer\" 0.50-point reduction for 2023–2025 is for those compliant for 2020–2022. No federal inheritance tax; the province of Buenos Aires \"has gift and inheritance taxes based on certain conditions and amounts\"."
+        },
+        {
+          "name": "Chambers: Private Wealth 2026, Argentina",
+          "url": "https://chambers.com/practice-guides/guides/private-wealth-2026/argentina",
+          "read": "2026-11-15",
+          "says": "2026 guide (cites Law 27.802 of March 2026). Residents pay PIT on worldwide income at progressive rates from 5% to 35%; Bienes Personales base is market value and \"apart from a few exceptions\" debts are not deductible; Law 27.743 sets 0.5% to 0.75% for 2026 and \"a flat rate of 0.25%\" for 2027. Only Buenos Aires Province levies a gift and inheritance tax (ITGB): PBA-domiciled persons on all assets received, others only on PBA-situs assets; no federal tax and none in the other provinces."
+        }
+      ],
+      "note": "localTaxes.ts (AR) models a gross base, and its note says the research did not say whether debts are deductible: PwC and Chambers now say they are not."
+    },
+    {
+      "id": "ar-tax-bp-threshold",
+      "fact": "tax",
+      "cities": [
+        "buenos-aires"
+      ],
+      "claim": "The threshold is ARS 384.7M (about $249k; FY2025)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Argentina, other taxes",
+          "url": "https://taxsummaries.pwc.com/argentina/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 16 June 2026. Residents pay personal assets tax on worldwide assets as of 31 December \"without consideration of liabilities\"; FY2025 non-taxable threshold ARS 384,728,044.57; FY2025 general rates 0.50%, 0.75% and 1.00%; rates \"gradually reduce to 0.25% by 2027\". REIBP is open to individuals resident on 31 December 2023; the \"good taxpayer\" 0.50-point reduction for 2023–2025 is for those compliant for 2020–2022. No federal inheritance tax; the province of Buenos Aires \"has gift and inheritance taxes based on certain conditions and amounts\"."
+        },
+        {
+          "name": "El Cronista: Bienes Personales 2026",
+          "url": "https://www.cronista.com/economia-politica/bienes-personales-2026-bajan-las-alicuotas-pero-arca-amplia-quienes-deben-declarar/",
+          "read": "2026-11-15",
+          "says": "Dated 20 August 2026. FY2025 threshold $384.728.044,57 and rates 0.50%, 0.75% and 1.00%; adjustments now by administrative action; no bill changing the tax is mentioned."
+        }
+      ],
+      "note": "At ARS 1,545 per USD (fx.json) ARS 384.7M is about $249k. PwC gives no FY2026 figure (indexed to CPI)."
+    },
+    {
+      "id": "ar-tax-bp-rates",
+      "fact": "tax",
+      "cities": [
+        "buenos-aires"
+      ],
+      "claim": "Rates are 0.5–1.0% for 2025 and 0.5–0.75% for 2026, falling to a flat 0.25% from 2027",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: quick chart, net wealth/worth tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/net-wealth-worth-tax-rates",
+          "read": "2026-11-15",
+          "says": "Argentina (last reviewed 16 June 2026): 0.50% to 1% (fiscal year 2025); 0.50% to 0.75% (fiscal year 2026); \"0.25% (fiscal year 2027)\"."
+        },
+        {
+          "name": "Chambers: Private Wealth 2026, Argentina",
+          "url": "https://chambers.com/practice-guides/guides/private-wealth-2026/argentina",
+          "read": "2026-11-15",
+          "says": "2026 guide (cites Law 27.802 of March 2026). Residents pay PIT on worldwide income at progressive rates from 5% to 35%; Bienes Personales base is market value and \"apart from a few exceptions\" debts are not deductible; Law 27.743 sets 0.5% to 0.75% for 2026 and \"a flat rate of 0.25%\" for 2027. Only Buenos Aires Province levies a gift and inheritance tax (ITGB): PBA-domiciled persons on all assets received, others only on PBA-situs assets; no federal tax and none in the other provinces."
+        },
+        {
+          "name": "PwC: Argentina, other taxes",
+          "url": "https://taxsummaries.pwc.com/argentina/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 16 June 2026. Residents pay personal assets tax on worldwide assets as of 31 December \"without consideration of liabilities\"; FY2025 non-taxable threshold ARS 384,728,044.57; FY2025 general rates 0.50%, 0.75% and 1.00%; rates \"gradually reduce to 0.25% by 2027\". REIBP is open to individuals resident on 31 December 2023; the \"good taxpayer\" 0.50-point reduction for 2023–2025 is for those compliant for 2020–2022. No federal inheritance tax; the province of Buenos Aires \"has gift and inheritance taxes based on certain conditions and amounts\"."
+        },
+        {
+          "name": "Forbes Argentina: the 10 keys of the Inocencia Fiscal II bill",
+          "url": "https://www.forbesargentina.com/money/las-10-claves-proyecto-reforma-inocencia-fiscal-paso-senado-n96501",
+          "read": "2026-11-15",
+          "says": "Dated 27 August 2026. The bill had half-sanction from the Chamber of Deputies on 26 August; it says nothing on Bienes Personales, foreign dividends or exchange controls."
+        }
+      ],
+      "modelMismatch": "localTaxes.ts (AR) applies the steady-state 0.25% from the first year, while FY2026 is 0.5–0.75% (its note says so); the model understates the first years.",
+      "note": "Searched for 2026 changes to Bienes Personales (November 2026, the \"paquete fiscal\" and Inocencia Fiscal II): nothing read changes the rates; Inocencia Fiscal II (half-sanctioned 26 August 2026) does not touch it."
+    },
+    {
+      "id": "ar-tax-bp-no-reibp",
+      "fact": "tax",
+      "cities": [
+        "buenos-aires"
+      ],
+      "claim": "A newcomer cannot use the REIBP prepayment or the \"good taxpayer\" rate",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Argentina, other taxes",
+          "url": "https://taxsummaries.pwc.com/argentina/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 16 June 2026. Residents pay personal assets tax on worldwide assets as of 31 December \"without consideration of liabilities\"; FY2025 non-taxable threshold ARS 384,728,044.57; FY2025 general rates 0.50%, 0.75% and 1.00%; rates \"gradually reduce to 0.25% by 2027\". REIBP is open to individuals resident on 31 December 2023; the \"good taxpayer\" 0.50-point reduction for 2023–2025 is for those compliant for 2020–2022. No federal inheritance tax; the province of Buenos Aires \"has gift and inheritance taxes based on certain conditions and amounts\"."
+        }
+      ]
+    },
+    {
+      "id": "ar-tax-income-scale",
+      "fact": "tax",
+      "cities": [
+        "buenos-aires"
+      ],
+      "claim": "Foreign dividends and interest are taxed at the progressive 5–35% scale (35% above about ARS 53M, ~$34k, of taxable income for 2025)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Argentina, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/argentina/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 16 June 2026. Residents are \"taxable on worldwide income\" and \"may obtain a foreign tax credit for taxes paid on income from foreign sources\"; FY2025 scale 5% to 35%, with 35% on annual taxable income over ARS 53,153,257; from 2026 thresholds are adjusted semi-annually."
+        },
+        {
+          "name": "Chambers: Private Wealth 2026, Argentina",
+          "url": "https://chambers.com/practice-guides/guides/private-wealth-2026/argentina",
+          "read": "2026-11-15",
+          "says": "2026 guide (cites Law 27.802 of March 2026). Residents pay PIT on worldwide income at progressive rates from 5% to 35%; Bienes Personales base is market value and \"apart from a few exceptions\" debts are not deductible; Law 27.743 sets 0.5% to 0.75% for 2026 and \"a flat rate of 0.25%\" for 2027. Only Buenos Aires Province levies a gift and inheritance tax (ITGB): PBA-domiciled persons on all assets received, others only on PBA-situs assets; no federal tax and none in the other provinces."
+        },
+        {
+          "name": "iProfesional: Ganancias and Bienes Personales, keys for financial income",
+          "url": "https://www.iprofesional.com/impuestos/429917-impuestos-ganancias-y-bienes-personales-claves-para-renta-financiera",
+          "read": "2026-11-15",
+          "says": "Dated 4 June 2025. CEDEAR dividends are taxed on the Ganancias scale as foreign-source income; the 15% cedular rate covers non-listed Argentine shares and similar; foreign shares held abroad are not addressed."
+        }
+      ]
+    },
+    {
+      "id": "ar-tax-foreign-gains-15",
+      "fact": "tax",
+      "cities": [
+        "buenos-aires"
+      ],
+      "claim": "Gains on foreign shares and ETFs are taxed at a flat 15%",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "iProfesional: income tax on foreign-source financial income",
+          "url": "https://www.iprofesional.com/impuestos/291480-Impuesto-a-las-Ganancias-Renta-financiera-de-fuente-extranjera",
+          "read": "2026-11-15",
+          "says": "Dated 7 May 2019 (fiscal 2018). Foreign interest and yields take the progressive rate; foreign financial assets' sale results pay a \"alícuota proporcional del 15%\"."
+        },
+        {
+          "name": "iProfesional: Ganancias and Bienes Personales, keys for financial income",
+          "url": "https://www.iprofesional.com/impuestos/429917-impuestos-ganancias-y-bienes-personales-claves-para-renta-financiera",
+          "read": "2026-11-15",
+          "says": "Dated 4 June 2025. CEDEAR dividends are taxed on the Ganancias scale as foreign-source income; the 15% cedular rate covers non-listed Argentine shares and similar; foreign shares held abroad are not addressed."
+        },
+        {
+          "name": "Chambers: Private Wealth 2026, Argentina",
+          "url": "https://chambers.com/practice-guides/guides/private-wealth-2026/argentina",
+          "read": "2026-11-15",
+          "says": "2026 guide (cites Law 27.802 of March 2026). Residents pay PIT on worldwide income at progressive rates from 5% to 35%; Bienes Personales base is market value and \"apart from a few exceptions\" debts are not deductible; Law 27.743 sets 0.5% to 0.75% for 2026 and \"a flat rate of 0.25%\" for 2027. Only Buenos Aires Province levies a gift and inheritance tax (ITGB): PBA-domiciled persons on all assets received, others only on PBA-situs assets; no federal tax and none in the other provinces."
+        }
+      ],
+      "hedge": "reportedly",
+      "oldWording": "and gains on foreign shares and ETFs at a flat 15%",
+      "wording": "and gains on foreign shares and ETFs reportedly at a flat 15%",
+      "also": [
+        "hedge added: \"reportedly\""
+      ],
+      "note": "Only a 2019 page states 15% for foreign financial assets; Chambers 2026 names 7% and 15% rates for Argentine assets only. No ARCA page was read."
+    },
+    {
+      "id": "ar-tax-ftc-no-treaty",
+      "fact": "tax",
+      "cities": [
+        "buenos-aires"
+      ],
+      "claim": "There is credit for US tax and no US–Argentina income tax treaty",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Argentina, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/argentina/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 16 June 2026. Residents are \"taxable on worldwide income\" and \"may obtain a foreign tax credit for taxes paid on income from foreign sources\"; FY2025 scale 5% to 35%, with 35% on annual taxable income over ARS 53,153,257; from 2026 thresholds are adjusted semi-annually."
+        },
+        {
+          "name": "PwC: Argentina, foreign tax relief and tax treaties",
+          "url": "https://taxsummaries.pwc.com/argentina/individual/foreign-tax-relief-and-tax-treaties",
+          "read": "2026-11-15",
+          "says": "Last reviewed 16 June 2026. Treaties with 25 countries (Australia to the UK); the United States is not among them."
+        }
+      ]
+    },
+    {
+      "id": "ar-estate-no-national",
+      "fact": "estate",
+      "cities": [
+        "buenos-aires"
+      ],
+      "claim": "There is no national inheritance tax, and the City of Buenos Aires levies none; only Buenos Aires Province does",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Argentina, other taxes",
+          "url": "https://taxsummaries.pwc.com/argentina/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 16 June 2026. Residents pay personal assets tax on worldwide assets as of 31 December \"without consideration of liabilities\"; FY2025 non-taxable threshold ARS 384,728,044.57; FY2025 general rates 0.50%, 0.75% and 1.00%; rates \"gradually reduce to 0.25% by 2027\". REIBP is open to individuals resident on 31 December 2023; the \"good taxpayer\" 0.50-point reduction for 2023–2025 is for those compliant for 2020–2022. No federal inheritance tax; the province of Buenos Aires \"has gift and inheritance taxes based on certain conditions and amounts\"."
+        },
+        {
+          "name": "Chambers: Private Wealth 2026, Argentina",
+          "url": "https://chambers.com/practice-guides/guides/private-wealth-2026/argentina",
+          "read": "2026-11-15",
+          "says": "2026 guide (cites Law 27.802 of March 2026). Residents pay PIT on worldwide income at progressive rates from 5% to 35%; Bienes Personales base is market value and \"apart from a few exceptions\" debts are not deductible; Law 27.743 sets 0.5% to 0.75% for 2026 and \"a flat rate of 0.25%\" for 2027. Only Buenos Aires Province levies a gift and inheritance tax (ITGB): PBA-domiciled persons on all assets received, others only on PBA-situs assets; no federal tax and none in the other provinces."
+        },
+        {
+          "name": "PwC: quick chart, inheritance and gift tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates",
+          "read": "2026-11-15",
+          "says": "Argentina (last reviewed 16 June 2026): \"NA at federal level.\" Buenos Aires province has its own taxes under certain conditions."
+        }
+      ]
+    },
+    {
+      "id": "ar-estate-pba-reach",
+      "fact": "estate",
+      "cities": [
+        "buenos-aires"
+      ],
+      "claim": "The Province taxes heirs living there and property sited there, so US-resident heirs inheriting US assets owe nothing locally",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Chambers: Private Wealth 2026, Argentina",
+          "url": "https://chambers.com/practice-guides/guides/private-wealth-2026/argentina",
+          "read": "2026-11-15",
+          "says": "2026 guide (cites Law 27.802 of March 2026). Residents pay PIT on worldwide income at progressive rates from 5% to 35%; Bienes Personales base is market value and \"apart from a few exceptions\" debts are not deductible; Law 27.743 sets 0.5% to 0.75% for 2026 and \"a flat rate of 0.25%\" for 2027. Only Buenos Aires Province levies a gift and inheritance tax (ITGB): PBA-domiciled persons on all assets received, others only on PBA-situs assets; no federal tax and none in the other provinces."
+        }
+      ]
+    },
+    {
+      "id": "ar-estate-pba-rates",
+      "fact": "estate",
+      "cities": [
+        "buenos-aires"
+      ],
+      "claim": "Roughly 1.6–7% for children above an allowance indexed each year (secondary sources)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "iProfesional: how much can be inherited tax-free",
+          "url": "https://www.iprofesional.com/impuestos/414613-cuanto-es-maximo-se-puede-heredar-sin-pagar-impuestos",
+          "read": "2026-11-15",
+          "says": "Dated 3 October 2024. Buenos Aires Province: children, parents and spouses exempt up to $8.488.486; rates from 1,603% to 7,008%; amounts are indexed."
+        }
+      ],
+      "note": "A 2024 page; the rates are statutory, the amounts indexed."
+    },
+    {
+      "id": "ar-estate-no-treaty",
+      "fact": "estate",
+      "cities": [
+        "buenos-aires"
+      ],
+      "claim": "There is no US estate treaty",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list); none of the 37 countries named in this claim is among them."
+        }
+      ],
+      "shared": "us-estate-treaty-profiles-without"
+    },
+    {
+      "id": "ar-estate-us-exemption",
+      "fact": "estate",
+      "cities": [
+        "buenos-aires"
+      ],
+      "claim": "The $15M US exemption (2026) applies as anywhere",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IRS: What's new, estate and gift tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax",
+          "read": "2026-11-15",
+          "says": "The table \"Basic exclusion amount for year of death\" has the row 2026: $15,000,000 (2025: $13,990,000). The page says the Working Families Tax Cuts, Public Law 119-21, signed July 4, 2025, \"amends § 2010(c)(3) by increasing the basic exclusion amount to $15,000,000 for calendar year 2026\". Page last reviewed or updated 03-Nov-2026."
+        },
+        {
+          "name": "IRS: Estate tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-tax",
+          "read": "2026-11-15",
+          "says": "A return is required when the gross estate, plus adjusted taxable gifts and specific exemption, is more than the filing threshold for the year of death; the table gives 2026: $15,000,000. Page last reviewed or updated 23-Oct-2026."
+        },
+        {
+          "name": "IRS news release IR-2025-103: tax inflation adjustments for tax year 2026",
+          "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill",
+          "read": "2026-11-15",
+          "says": "\"Estates of decedents who die during 2026 have a basic exclusion amount of $15,000,000\", up from $13,990,000 for 2025; the release (October 9, 2025) cites Revenue Procedure 2025-32 and is marked as an archival document."
+        },
+        {
+          "name": "IRS: Some nonresidents with U.S. assets must file estate tax returns",
+          "url": "https://www.irs.gov/individuals/international-taxpayers/some-nonresidents-with-us-assets-must-file-estate-tax-returns",
+          "read": "2026-11-15",
+          "says": "\"U.S. citizens are subject to U.S. estate taxation with respect to their worldwide assets\"; Form 706 is required when worldwide assets plus adjusted taxable gifts exceed the basic exclusion amount in effect on the date of death. By contrast a nonresident who is not a citizen files when US-situated assets exceed $60,000. Page last reviewed or updated 27-Jun-2026."
+        }
+      ],
+      "shared": "us-estate-exemption-2026"
+    },
+    {
+      "id": "ar-lending-ibkr",
+      "fact": "lending",
+      "cities": [
+        "buenos-aires"
+      ],
+      "claim": "Interactive Brokers accepts Argentina residents",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Argentina, Canada, Chile, Colombia, Ecuador, Paraguay, Peru and Uruguay; the page names no IBKR entity for these residents, and for Canada says only \"Canadians are protected up to CAD 1m\"."
+        }
+      ],
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Interactive Brokers reportedly accepts Argentina residents",
+      "note": "IBKR's country list (https://www.interactivebrokers.com/en/accounts/open-account-country-list.php) returned HTTP 403 again on 2026-11-15, so acceptance stays reported (rule 3)."
+    },
+    {
+      "id": "ar-lending-schwab",
+      "fact": "lending",
+      "cities": [
+        "buenos-aires"
+      ],
+      "claim": "Schwab One International's application lists Argentina (October 2026)",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. On that day the author ran every entry in Schwab's international account selector through the application: it accepted residents of 51 of 263 countries and regions: Argentina, Australia, Austria, the Bahamas, Belgium, Bermuda, Brazil, the British Virgin Islands, the Cayman Islands, Chile, China, Colombia, Costa Rica, the Czech Republic, Denmark, Ecuador, Finland, Germany, Greece, Guatemala, Hong Kong, Iceland, India, Indonesia, Ireland, Israel, Jersey, Luxembourg, Malaysia, the Marshall Islands, Mexico, the Netherlands, Norway, Panama, Paraguay, Peru, Poland, Portugal, Qatar, Singapore, South Korea, Spain, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Turks and Caicos, the United Arab Emirates, the United Kingdom and Uruguay. Named as not accepted: Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam; for the rest the application said \"Schwab currently cannot open accounts for residents of your country/region.\" The test covers new applicants on that day only."
+        },
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. That day Schwab's online international application accepted residents of 51 countries and regions, among them Argentina, Chile, Colombia (\"| Colombia | Yes |\"), Ecuador (\"| Ecuador | Yes |\"), Paraguay, Peru and Uruguay; the row for Canada reads \"| Canada | No |\". It quotes the Schwab One agreement: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds\"; no other region is named."
+        }
+      ],
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab One International's application reportedly lists Argentina (October 2026)",
+      "note": "Re-read the dated list today. international.schwab.com returned HTTP 403 in every earlier stage; Schwab's own pages were not readable, so \"reportedly\" stays. Lending 4 stays."
+    },
+    {
+      "id": "ar-lending-no-margin-restriction",
+      "fact": "lending",
+      "cities": [
+        "buenos-aires"
+      ],
+      "claim": "There is no known Schwab margin restriction for residents outside Europe",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. It quotes the Schwab One Account Agreement (\"October 2026 edition, form 09/26\"), Schwab One International terms: \"Customers residing within Europe are restricted from using their Available Margin Loan Value\" to withdraw funds from their account, and advises keeping enough actual cash in the account for spending. It does not define \"Europe\"."
+        },
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. That day Schwab's online international application accepted residents of 51 countries and regions, among them Argentina, Chile, Colombia (\"| Colombia | Yes |\"), Ecuador (\"| Ecuador | Yes |\"), Paraguay, Peru and Uruguay; the row for Canada reads \"| Canada | No |\". It quotes the Schwab One agreement: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds\"; no other region is named."
+        }
+      ],
+      "shared": "schwab-europe-margin-cash-out",
+      "hedge": "no known",
+      "wording": "with no known margin restriction outside Europe",
+      "note": "The reported clause bars Europe residents only and the page names no other region; Schwab's agreement could not be read, so \"no known\" is the right strength."
+    },
+    {
+      "id": "ar-lending-ibkr-margin",
+      "fact": "lending",
+      "cities": [
+        "buenos-aires"
+      ],
+      "claim": "IBKR margin terms for residents are unconfirmed",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Argentina, Canada, Chile, Colombia, Ecuador, Paraguay, Peru and Uruguay; the page names no IBKR entity for these residents, and for Canada says only \"Canadians are protected up to CAD 1m\"."
+        }
+      ],
+      "hedge": "unconfirmed",
+      "wording": "margin terms by country are unconfirmed",
+      "note": "A statement of what is not known; no IBKR page could be read (HTTP 403)."
+    },
+    {
+      "id": "ar-lending-cepo-ended",
+      "fact": "lending",
+      "cities": [
+        "buenos-aires"
+      ],
+      "claim": "Most currency controls on individuals ended in April 2025, so dollars can be bought at the official rate without a cap",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "El Cronista: end of the cepo, how many dollars can be bought",
+          "url": "https://www.cronista.com/finanzas-mercados/fin-del-cepo-cuantos-dolares-se-podran-comprar-libremente-a-partir-de-hoy",
+          "read": "2026-11-15",
+          "says": "Dated 14 April 2025. From that Monday the US$200 monthly limit \"ya no tendrá efecto\" for individuals buying at the official market; cash at the counter stays capped at US$100."
+        }
+      ]
+    },
+    {
+      "id": "ar-lending-cross-restriction",
+      "fact": "lending",
+      "cities": [
+        "buenos-aires"
+      ],
+      "claim": "A 90-day bar on the MEP and CCL dollar markets after buying official dollars was reinstated in September 2025",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "El Cronista: the cross restriction returns for MEP and CCL dollars",
+          "url": "https://www.cronista.com/finanzas-mercados/nuevo-cepo-que-es-la-restriccion-cruzada-y-como-impacta-en-la-compra-de-dolar-mep-y-ccl",
+          "read": "2026-11-15",
+          "says": "Dated 26 September 2025. Buyers of official dollars \"quedarán inhabilitadas durante 90 días corridos para operar con los dólares financieros\" (MEP and CCL), and the reverse."
+        }
+      ],
+      "note": "Searched the cross restriction with November 2026: no later change found."
+    },
+    {
+      "id": "ar-lending-a8417",
+      "fact": "lending",
+      "cities": [
+        "buenos-aires"
+      ],
+      "claim": "Since April 2026 the bar also follows a transfer of dollars abroad",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Bloomberg Línea: BCRA Comunicación A 8417 widens the cross restriction",
+          "url": "https://www.bloomberglinea.com/latinoamerica/argentina/bcra-flexibiliza-exigencias-para-ingreso-y-salida-de-dolares-pero-amplia-alcance-de-norma-clave/",
+          "read": "2026-11-15",
+          "says": "Dated 9 April 2026. A 8417 extends the cross restriction to those who send dollars abroad: they must declare they will not buy securities settled in dollars for 90 calendar days after the transfer."
+        }
+      ]
+    },
+    {
+      "id": "ar-visa-rentista",
+      "fact": "visa",
+      "cities": [
+        "buenos-aires"
+      ],
+      "claim": "Rentista residence needs passive income of 5× the minimum wage, about ARS 2.0M (~$1,290) a month (November 2026), and the pensionado route needs the same in pension",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Boletín Oficial: DNM Disposición 1732/2023",
+          "url": "https://www.boletinoficial.gob.ar/detalleAviso/primera/287842/20230606",
+          "read": "2026-11-15",
+          "says": "Published 6 June 2023. Art. 2 (rentista) and art. 5 (pensionado): \"Fíjase en un monto equivalente a CINCO (5) Salarios Mínimo Vital y Móvil\" a month, per applicant in a family group."
+        },
+        {
+          "name": "iProfesional: minimum wage schedule to April 2027",
+          "url": "https://www.iprofesional.com/impuestos/463576-se-oficializaron-los-nuevos-montos-del-salario-minimo-vital-y-movil-hasta-abril-de-2027",
+          "read": "2026-11-15",
+          "says": "Dated 2 September 2026. \"A partir de noviembre de 2026: $ 398.800\" a month."
+        }
+      ],
+      "note": "5 × ARS 398,800 = ARS 1.99M, about $1,290 at ARS 1,545 per USD. argentina.gob.ar returned HTTP 500 on the disposición's text page; the Boletín Oficial copy loaded. Searched the rentista route with November 2026: no change found."
+    },
+    {
+      "id": "ar-visa-permanent-3y",
+      "fact": "visa",
+      "cities": [
+        "buenos-aires"
+      ],
+      "claim": "Both give temporary residence, renewable, with a path to permanent residence after 3 years",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "iProfesional: Argentine citizenship by residence, how long",
+          "url": "https://www.iprofesional.com/legales/430745-ciudadania-argentina-por-residencia-cuanto-tiempo-hay-que-vivir-en-el-pais",
+          "read": "2026-11-15",
+          "says": "Dated 16 June 2025. For permanent residence \"por arraigo\" from temporary residence, \"2 años para nacionales de MERCOSUR\" and \"3 años para quienes vienen de países no miembros\"."
+        }
+      ]
+    },
+    {
+      "id": "ar-health-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "buenos-aires"
+      ],
+      "claim": "Hospital Italiano, Hospital Alemán, Hospital Británico and Hospital Universitario Austral are the country's best regarded",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Rankia: Argentina's best hospitals and clinics",
+          "url": "https://www.rankia.com.ar/blog/mejores-opiniones-argentina/7540198-mejores-hospitales-clinicas-argentina",
+          "read": "2026-11-15",
+          "says": "Updated 5 November 2026. Rankia index (from IntelLat 2026, Newsweek 2026 and Global Health Intelligence): 1 Hospital Italiano, 2 Hospital Universitario Austral, 3 Hospital Alemán, 9 Hospital Británico; there is no official national ranking."
+        }
+      ]
+    },
+    {
+      "id": "ar-health-prepagas",
+      "fact": "healthcare",
+      "cities": [
+        "buenos-aires"
+      ],
+      "claim": "Private prepaga plans cannot refuse a new member because of age, though premiums after 65 are higher and rise with inflation (secondary sources)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "iProfesional: prepagas for retirees, joining new members",
+          "url": "https://www.iprofesional.com/salud/451587-prepagas-jubilados-aceptan-nuevos-afiliados-evitar-perder-cobertura",
+          "read": "2026-11-15",
+          "says": "Dated 1 April 2026. A prepaga \"no puede rechazar dicha solicitud por motivos de edad\"; prices may rise by age bracket within the Superintendencia's table, the top bracket no more than three times the lowest (Ley 26.682)."
+        }
+      ]
+    }
+  ]
+}

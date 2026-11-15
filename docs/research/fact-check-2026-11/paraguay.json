@@ -1,0 +1,381 @@
+{
+  "country": "Paraguay",
+  "cities": [
+    "asuncion"
+  ],
+  "claims": [
+    {
+      "id": "py-tax-no-wealth",
+      "fact": "tax",
+      "cities": [
+        "asuncion"
+      ],
+      "claim": "There is no wealth tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: quick chart, net wealth/worth tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/net-wealth-worth-tax-rates",
+          "read": "2026-11-15",
+          "says": "Paraguay (last reviewed 19 October 2026): NA."
+        }
+      ]
+    },
+    {
+      "id": "py-tax-territorial",
+      "fact": "tax",
+      "cities": [
+        "asuncion"
+      ],
+      "claim": "Personal income tax (IRP) applies only to Paraguayan-source income (Law 6380/2019, art. 48), so foreign brokerage dividends and interest appear untaxed",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "BACN: Law 6380/2019",
+          "url": "https://www.bacn.gov.py/leyes-paraguayas/9332/ley-n-6380-de-modernizacion-y-simplificacion-del-sistema-tributario-nacional",
+          "read": "2026-11-15",
+          "says": "Art. 48 (IRP): \"Estarán gravadas por este impuesto las rentas de fuente paraguaya previstas en el artículo anterior\". Art. 60: \"La tasa aplicable para las rentas y ganancias del capital será del 8% (ocho por ciento).\""
+        },
+        {
+          "name": "PwC: Paraguay, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/paraguay/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 19 October 2026. \"Individuals with residence in Paraguay and/or abroad are taxable on Paraguayan-source income\"; \"The PIT rate on capital gains is 8%.\""
+        }
+      ],
+      "note": "The profile's \"appear\", \"secondary sources disagree\" and \"local confirmation is advised\" stay; the statute and PwC both say Paraguayan-source."
+    },
+    {
+      "id": "py-tax-capital-8",
+      "fact": "tax",
+      "cities": [
+        "asuncion"
+      ],
+      "claim": "Local capital income is taxed at 8%",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "BACN: Law 6380/2019",
+          "url": "https://www.bacn.gov.py/leyes-paraguayas/9332/ley-n-6380-de-modernizacion-y-simplificacion-del-sistema-tributario-nacional",
+          "read": "2026-11-15",
+          "says": "Art. 48 (IRP): \"Estarán gravadas por este impuesto las rentas de fuente paraguaya previstas en el artículo anterior\". Art. 60: \"La tasa aplicable para las rentas y ganancias del capital será del 8% (ocho por ciento).\""
+        },
+        {
+          "name": "PwC: Paraguay, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/paraguay/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 19 October 2026. \"Individuals with residence in Paraguay and/or abroad are taxable on Paraguayan-source income\"; \"The PIT rate on capital gains is 8%.\""
+        }
+      ]
+    },
+    {
+      "id": "py-estate-none",
+      "fact": "estate",
+      "cities": [
+        "asuncion"
+      ],
+      "claim": "Paraguay has no inheritance or estate tax, so heirs owe nothing locally on US assets",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: quick chart, inheritance and gift tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates",
+          "read": "2026-11-15",
+          "says": "Paraguay (last reviewed 19 October 2026): NA | NA."
+        }
+      ],
+      "note": "localTaxes.ts (PY) agrees."
+    },
+    {
+      "id": "py-estate-no-treaty",
+      "fact": "estate",
+      "cities": [
+        "asuncion"
+      ],
+      "claim": "There is no US estate treaty",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list); none of the 37 countries named in this claim is among them."
+        }
+      ],
+      "shared": "us-estate-treaty-profiles-without"
+    },
+    {
+      "id": "py-estate-us-exemption",
+      "fact": "estate",
+      "cities": [
+        "asuncion"
+      ],
+      "claim": "US estate tax applies above the $15M exemption (2026)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IRS: What's new, estate and gift tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax",
+          "read": "2026-11-15",
+          "says": "The table \"Basic exclusion amount for year of death\" has the row 2026: $15,000,000 (2025: $13,990,000). The page says the Working Families Tax Cuts, Public Law 119-21, signed July 4, 2025, \"amends § 2010(c)(3) by increasing the basic exclusion amount to $15,000,000 for calendar year 2026\". Page last reviewed or updated 03-Nov-2026."
+        },
+        {
+          "name": "IRS: Estate tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-tax",
+          "read": "2026-11-15",
+          "says": "A return is required when the gross estate, plus adjusted taxable gifts and specific exemption, is more than the filing threshold for the year of death; the table gives 2026: $15,000,000. Page last reviewed or updated 23-Oct-2026."
+        },
+        {
+          "name": "IRS news release IR-2025-103: tax inflation adjustments for tax year 2026",
+          "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill",
+          "read": "2026-11-15",
+          "says": "\"Estates of decedents who die during 2026 have a basic exclusion amount of $15,000,000\", up from $13,990,000 for 2025; the release (October 9, 2025) cites Revenue Procedure 2025-32 and is marked as an archival document."
+        },
+        {
+          "name": "IRS: Some nonresidents with U.S. assets must file estate tax returns",
+          "url": "https://www.irs.gov/individuals/international-taxpayers/some-nonresidents-with-us-assets-must-file-estate-tax-returns",
+          "read": "2026-11-15",
+          "says": "\"U.S. citizens are subject to U.S. estate taxation with respect to their worldwide assets\"; Form 706 is required when worldwide assets plus adjusted taxable gifts exceed the basic exclusion amount in effect on the date of death. By contrast a nonresident who is not a citizen files when US-situated assets exceed $60,000. Page last reviewed or updated 27-Jun-2026."
+        }
+      ],
+      "shared": "us-estate-exemption-2026"
+    },
+    {
+      "id": "py-lending-ibkr",
+      "fact": "lending",
+      "cities": [
+        "asuncion"
+      ],
+      "claim": "Interactive Brokers serves all non-sanctioned countries, so Paraguay residents should be accepted",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Argentina, Canada, Chile, Colombia, Ecuador, Paraguay, Peru and Uruguay; the page names no IBKR entity for these residents, and for Canada says only \"Canadians are protected up to CAD 1m\"."
+        }
+      ],
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Interactive Brokers reportedly serves all non-sanctioned countries",
+      "note": "IBKR's country list (https://www.interactivebrokers.com/en/accounts/open-account-country-list.php) returned HTTP 403 again on 2026-11-15, so acceptance stays reported (rule 3)."
+    },
+    {
+      "id": "py-lending-ibkr-margin",
+      "fact": "lending",
+      "cities": [
+        "asuncion"
+      ],
+      "claim": "IBKR margin terms for Paraguay residents are unconfirmed",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Argentina, Canada, Chile, Colombia, Ecuador, Paraguay, Peru and Uruguay; the page names no IBKR entity for these residents, and for Canada says only \"Canadians are protected up to CAD 1m\"."
+        }
+      ],
+      "hedge": "unconfirmed",
+      "wording": "but margin terms are unconfirmed",
+      "note": "A statement of what is not known."
+    },
+    {
+      "id": "py-lending-schwab",
+      "fact": "lending",
+      "cities": [
+        "asuncion"
+      ],
+      "claim": "Whether Schwab One International accepts Paraguay was not checked",
+      "verdict": "corrected",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. On that day the author ran every entry in Schwab's international account selector through the application: it accepted residents of 51 of 263 countries and regions: Argentina, Australia, Austria, the Bahamas, Belgium, Bermuda, Brazil, the British Virgin Islands, the Cayman Islands, Chile, China, Colombia, Costa Rica, the Czech Republic, Denmark, Ecuador, Finland, Germany, Greece, Guatemala, Hong Kong, Iceland, India, Indonesia, Ireland, Israel, Jersey, Luxembourg, Malaysia, the Marshall Islands, Mexico, the Netherlands, Norway, Panama, Paraguay, Peru, Poland, Portugal, Qatar, Singapore, South Korea, Spain, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Turks and Caicos, the United Arab Emirates, the United Kingdom and Uruguay. Named as not accepted: Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam; for the rest the application said \"Schwab currently cannot open accounts for residents of your country/region.\" The test covers new applicants on that day only."
+        },
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. That day Schwab's online international application accepted residents of 51 countries and regions, among them Argentina, Chile, Colombia (\"| Colombia | Yes |\"), Ecuador (\"| Ecuador | Yes |\"), Paraguay, Peru and Uruguay; the row for Canada reads \"| Canada | No |\". It quotes the Schwab One agreement: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds\"; no other region is named."
+        }
+      ],
+      "shared": "schwab-accepts-residents",
+      "oldWording": "whether Schwab One International accepts Paraguay was not checked",
+      "newWording": "Schwab One International's application reportedly lists Paraguay (October 2026), with no known margin restriction outside Europe",
+      "also": [
+        "scores.lending 3→4 (rubric 4)",
+        "sources: added the Your Tax Base Schwab page"
+      ],
+      "note": "The dated list (re-read today) names Paraguay. Asunción's why does not mention lending."
+    },
+    {
+      "id": "py-visa-temporary",
+      "fact": "visa",
+      "cities": [
+        "asuncion"
+      ],
+      "claim": "Temporary residence (up to 2 years, fee Gs. 2,926,925) comes first, with no published means test",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Dirección Nacional de Migraciones: temporary residence",
+          "url": "https://www.migraciones.gov.py/index.php/tramites/residencia-temporal",
+          "read": "2026-11-15",
+          "says": "Undated (attachments mid-2026). Temporary residence \"De hasta 2 (dos) años, prorrogables\"; fee Gs. 2.926.925; no solvency requirement stated for adults."
+        }
+      ]
+    },
+    {
+      "id": "py-visa-permanent-407",
+      "fact": "visa",
+      "cities": [
+        "asuncion"
+      ],
+      "claim": "Since July 2026 (Resolution DNM 407/2026) converting to permanent residence needs proof of genuine income-generating activity or an actual pension",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IMI Daily: Paraguay ties long-term residency to active income, unless you invest",
+          "url": "https://www.imidaily.com/latam-linc/paraguay-ties-long-term-residency-to-active-income-unless-you-invest/",
+          "read": "2026-11-15",
+          "says": "Dated 12 July 2026. Resolution D.N.M. 407 (signed 28 May 2026) requires, at the permanent stage, current verifiable income matching the declared activity, mostly active income; the pensioner category needs an actual pension. The Investor Pass (Resolution 0283/2026) gives permanent residency for US$200,000 in real estate or US$200,000 in financial instruments held at least two years."
+        },
+        {
+          "name": "EIG Law: Paraguay updates economic solvency rules for permanent residence",
+          "url": "https://eiglaw.com/paraguay-updates-economic-solvency-rules-for-permanent-residence/",
+          "read": "2026-11-15",
+          "says": "Dated 10 July 2026. Resolution 407 \"will come into force for applications submitted from July 6, 2026\", with 12 solvency categories (employees, professionals, remote workers, owners, shareholders, retirees or pensioners and others)."
+        }
+      ],
+      "rankFlag": "Asunción's why in expatPicks.ts says \"the residency means test [is] unverified\"; it is now verified: since 6 July 2026 a portfolio-only retiree cannot convert to permanent residence without active income, a pension or the US$200k Investor Pass. The profile already says so and scores visa 3; the why line is out of date.",
+      "note": "Signed 28 May 2026, in force for applications from 6 July 2026. Searched with November 2026: no later change found."
+    },
+    {
+      "id": "py-visa-investor-pass",
+      "fact": "visa",
+      "cities": [
+        "asuncion"
+      ],
+      "claim": "A portfolio-only retiree may need the Investor Pass ($200k in real estate or financial instruments held 2 years)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IMI Daily: Paraguay ties long-term residency to active income, unless you invest",
+          "url": "https://www.imidaily.com/latam-linc/paraguay-ties-long-term-residency-to-active-income-unless-you-invest/",
+          "read": "2026-11-15",
+          "says": "Dated 12 July 2026. Resolution D.N.M. 407 (signed 28 May 2026) requires, at the permanent stage, current verifiable income matching the declared activity, mostly active income; the pensioner category needs an actual pension. The Investor Pass (Resolution 0283/2026) gives permanent residency for US$200,000 in real estate or US$200,000 in financial instruments held at least two years."
+        }
+      ],
+      "note": "The two-year hold applies to the financial-instruments option."
+    },
+    {
+      "id": "py-health-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "asuncion"
+      ],
+      "claim": "Centro Médico Bautista, Sanatorio Americano, San Roque and Hospital La Costa are the country's best and well reviewed, with English-speaking doctors",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Expatra: expat health insurance in Paraguay",
+          "url": "https://www.expatra.com/expat-health-insurance-in-paraguay/",
+          "read": "2026-11-15",
+          "says": "Updated 19 May 2025. \"Two of the very best are Centro Medico Bautista and Sanaterio Americano\"; equipment \"rather dated by Western standards\" outside the top private hospitals; a local policy at a good hospital \"in the region of $75 per month\"."
+        },
+        {
+          "name": "Global Citizen Solutions: living in Paraguay 2026",
+          "url": "https://www.globalcitizensolutions.com/living-in-paraguay/",
+          "read": "2026-11-15",
+          "says": "Undated (2026 title). Names Hospital La Costa, San Roque and Bautista as private hospitals expats choose; no mention of JCI accreditation."
+        },
+        {
+          "name": "Rio Times: healthcare in Paraguay for expats 2026",
+          "url": "https://www.riotimesonline.com/healthcare-paraguay-expats-2026/",
+          "read": "2026-11-15",
+          "says": "Published 10 September 2026, updated 21 October 2026. Leading private hospitals \"tend to have English-speaking doctors\"; IPS covers formally employed workers through payroll contributions; \"Many expats travel to Argentina or Brazil for major treatment\". No JCI mention."
+        }
+      ]
+    },
+    {
+      "id": "py-health-equipment-jci",
+      "fact": "healthcare",
+      "cities": [
+        "asuncion"
+      ],
+      "claim": "Some equipment is dated by Western standards and no JCI accreditation was found (secondary sources)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Expatra: expat health insurance in Paraguay",
+          "url": "https://www.expatra.com/expat-health-insurance-in-paraguay/",
+          "read": "2026-11-15",
+          "says": "Updated 19 May 2025. \"Two of the very best are Centro Medico Bautista and Sanaterio Americano\"; equipment \"rather dated by Western standards\" outside the top private hospitals; a local policy at a good hospital \"in the region of $75 per month\"."
+        },
+        {
+          "name": "Global Citizen Solutions: living in Paraguay 2026",
+          "url": "https://www.globalcitizensolutions.com/living-in-paraguay/",
+          "read": "2026-11-15",
+          "says": "Undated (2026 title). Names Hospital La Costa, San Roque and Bautista as private hospitals expats choose; no mention of JCI accreditation."
+        },
+        {
+          "name": "Rio Times: healthcare in Paraguay for expats 2026",
+          "url": "https://www.riotimesonline.com/healthcare-paraguay-expats-2026/",
+          "read": "2026-11-15",
+          "says": "Published 10 September 2026, updated 21 October 2026. Leading private hospitals \"tend to have English-speaking doctors\"; IPS covers formally employed workers through payroll contributions; \"Many expats travel to Argentina or Brazil for major treatment\". No JCI mention."
+        }
+      ],
+      "note": "No page read mentions a JCI-accredited hospital in Paraguay; the JCI directory was not tried (403 in stage 4)."
+    },
+    {
+      "id": "py-health-ips",
+      "fact": "healthcare",
+      "cities": [
+        "asuncion"
+      ],
+      "claim": "Public IPS is for payroll contributors, so retirees use prepaid plans or international cover (local plans from about $75/month)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Rio Times: healthcare in Paraguay for expats 2026",
+          "url": "https://www.riotimesonline.com/healthcare-paraguay-expats-2026/",
+          "read": "2026-11-15",
+          "says": "Published 10 September 2026, updated 21 October 2026. Leading private hospitals \"tend to have English-speaking doctors\"; IPS covers formally employed workers through payroll contributions; \"Many expats travel to Argentina or Brazil for major treatment\". No JCI mention."
+        },
+        {
+          "name": "Expatra: expat health insurance in Paraguay",
+          "url": "https://www.expatra.com/expat-health-insurance-in-paraguay/",
+          "read": "2026-11-15",
+          "says": "Updated 19 May 2025. \"Two of the very best are Centro Medico Bautista and Sanaterio Americano\"; equipment \"rather dated by Western standards\" outside the top private hospitals; a local policy at a good hospital \"in the region of $75 per month\"."
+        }
+      ]
+    },
+    {
+      "id": "py-health-abroad",
+      "fact": "healthcare",
+      "cities": [
+        "asuncion"
+      ],
+      "claim": "Major treatment sometimes means Argentina or Brazil",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Rio Times: healthcare in Paraguay for expats 2026",
+          "url": "https://www.riotimesonline.com/healthcare-paraguay-expats-2026/",
+          "read": "2026-11-15",
+          "says": "Published 10 September 2026, updated 21 October 2026. Leading private hospitals \"tend to have English-speaking doctors\"; IPS covers formally employed workers through payroll contributions; \"Many expats travel to Argentina or Brazil for major treatment\". No JCI mention."
+        }
+      ]
+    }
+  ]
+}

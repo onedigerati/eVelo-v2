@@ -7,7 +7,7 @@ const profile: ExpatProfile = {
   scores: { cost: 5, healthcare: 4, safety: 2, visa: 3, climate: 3, community: 3, tax: 1, estate: 2, lending: 4 },
   facts: {
     healthcare:
-      'Fundación Santa Fe de Bogotá (2nd), Hospital Universitario San Ignacio (5th), Clínica del Country (6th), Clínica de Marly (8th) and Clínica de la Colina (9th) are five of the top 10 in Newsweek\'s 2023 Colombia ranking, and the city has about nine of the top 25; EPS access depends on visa type, and private "medicina prepagada" plans have product-specific entry ages (one SURA plan requires entry under 70).',
+      'Fundación Santa Fe de Bogotá (2nd), Hospital Universitario San Ignacio (5th), Clínica del Country (6th), Clínica de Marly (8th) and Clínica de la Colina (9th) are five of the top 10 in Newsweek\'s 2023 Colombia ranking, and the city has about nine of the top 25; EPS access reportedly depends on visa type, and private "medicina prepagada" plans have product-specific entry ages (one SURA plan requires entry under 70).',
     safety:
       'Colombia is 141st of 163 in the 2026 Global Peace Index and reportedly at US Level 3, "reconsider travel" (March 2026); Bogotá is not among the reported Level 4 departments, but street robbery, phone snatching and scopolamine druggings, sometimes through dating apps, target foreigners, and expats cluster in Chapinero, Usaquén and the north.',
     visa: 'V-Rentista accepts dividends and portfolio yields but needs 10× the minimum wage, about COP 17.5M (~$5,400) a month, and is a visitor visa of up to 2 years that does not lead to permanent residency; the M-Investor route needs 350× the minimum wage, about COP 613M (~$190k), in Colombian real estate, and M-Pensionado needs a pension of 3× the minimum wage, about COP 5.25M (~$1,620) a month (2026); both M visas can lead to residency after 5 years.',
@@ -34,6 +34,7 @@ const profile: ExpatProfile = {
     { name: 'PwC Worldwide Tax Summaries: Colombia, residence', url: 'https://taxsummaries.pwc.com/colombia/individual/residence', edition: '2026' },
     { name: 'DIAN: Oficio 8914 de 2026 (wealth tax)', url: 'https://normograma.dian.gov.co/dian/compilacion/docs/oficio_dian_8914_2026.htm', edition: '2026' },
     { name: 'Colombia Move: V-Rentista visa guide', url: 'https://colombiamove.com/blog/colombia-rentista-visa-v-rentista-guide/', edition: '2026' },
+    { name: 'Cancillería: visa types and requirements', url: 'https://cancilleria.gov.co/atencion-y-servicio-al-ciudadano/tramites-y-servicios/visa/tipos-de-visa' },
     { name: 'Colombia Move: real estate investor visa (M), 2026', url: 'https://colombiamove.com/blog/colombia-real-estate-investor-visa-m10-2026/', edition: '2026' },
     { name: 'Colombia Move: pensionado visa income requirements, 2026', url: 'https://colombiamove.com/blog/es/colombia-pensionado-visa-income-requirements-2026/', edition: '2026' },
     { name: 'DIAN: Oficio 11166 de 2026 (Sentencia C-079/2026 and the wealth tax)', url: 'https://normograma.dian.gov.co/dian/compilacion/docs/oficio_dian_11166_2026.htm', edition: '2026' },

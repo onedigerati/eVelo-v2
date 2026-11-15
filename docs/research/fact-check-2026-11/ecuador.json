@@ -1,0 +1,398 @@
+{
+  "country": "Ecuador",
+  "cities": [
+    "cuenca"
+  ],
+  "claims": [
+    {
+      "id": "ec-tax-no-wealth",
+      "fact": "tax",
+      "cities": [
+        "cuenca"
+      ],
+      "claim": "No general wealth tax, only a municipal asset tax on people who must keep accounts",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Ecuador, other taxes",
+          "url": "https://taxsummaries.pwc.com/ecuador/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 23 July 2026. No net wealth tax is described; a municipal asset tax of 1.5 per thousand of total assets less liabilities applies to \"all individuals and companies required to keep accounting records\"."
+        },
+        {
+          "name": "PwC: quick chart, net wealth/worth tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/net-wealth-worth-tax-rates",
+          "read": "2026-11-15",
+          "says": "Ecuador (last reviewed 23 July 2026): 0.15."
+        }
+      ],
+      "note": "The quick chart's 0.15 is the municipal 1.5-per-thousand asset tax. localTaxes.ts (EC) models no wealth tax; consistent for a retiree without accounting duties."
+    },
+    {
+      "id": "ec-tax-worldwide-37",
+      "fact": "tax",
+      "cities": [
+        "cuenca"
+      ],
+      "claim": "Residents are taxed on worldwide income, including US dividends and interest, at up to 37% (above $109,956 in 2026)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Ecuador, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/ecuador/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 23 July 2026. \"Income generated abroad by Ecuador-resident individuals, local or foreign, is taxable\"; 2026 top rate 37% on taxable income over USD 109,956 (fixed tax USD 24,572); \"Income tax credit is granted up to the income tax attributable to such income in Ecuador.\""
+        },
+        {
+          "name": "NMS Law: Ecuador tax tables 2026",
+          "url": "https://nmslaw.com.ec/blog/2026/01/05/tablas-impuesto-renta-2026-ecuador/",
+          "read": "2026-11-15",
+          "says": "Dated 5 January 2026 (Resolution NAC-DGERCGC25-00000043 of 29 December 2025). The inheritance, legacy and gift table runs from 0% up to USD 78,527 to 35% above USD 942,353; the income tax top bracket is 37% above USD 109,956."
+        }
+      ]
+    },
+    {
+      "id": "ec-tax-ftc-no-treaty",
+      "fact": "tax",
+      "cities": [
+        "cuenca"
+      ],
+      "claim": "There is a foreign tax credit and no US–Ecuador income tax treaty",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Ecuador, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/ecuador/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 23 July 2026. \"Income generated abroad by Ecuador-resident individuals, local or foreign, is taxable\"; 2026 top rate 37% on taxable income over USD 109,956 (fixed tax USD 24,572); \"Income tax credit is granted up to the income tax attributable to such income in Ecuador.\""
+        },
+        {
+          "name": "PwC: Ecuador, corporate withholding taxes (treaty list)",
+          "url": "https://taxsummaries.pwc.com/ecuador/corporate/withholding-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 23 July 2026. Treaty partners: Andean Community, Belarus, Belgium, Brazil, Canada, Chile, China, France, Germany, Italy, Japan, Korea, Mexico, Qatar, Romania, Russia, Singapore, Spain, Switzerland, UAE, UK, Uruguay; no United States."
+        }
+      ]
+    },
+    {
+      "id": "ec-estate-table",
+      "fact": "estate",
+      "cities": [
+        "cuenca"
+      ],
+      "claim": "Inheritance tax runs from 0% up to $78,527 to 35% above $942,353 per heir (2026 table)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "NMS Law: Ecuador tax tables 2026",
+          "url": "https://nmslaw.com.ec/blog/2026/01/05/tablas-impuesto-renta-2026-ecuador/",
+          "read": "2026-11-15",
+          "says": "Dated 5 January 2026 (Resolution NAC-DGERCGC25-00000043 of 29 December 2025). The inheritance, legacy and gift table runs from 0% up to USD 78,527 to 35% above USD 942,353; the income tax top bracket is 37% above USD 109,956."
+        },
+        {
+          "name": "PwC: quick chart, inheritance and gift tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates",
+          "read": "2026-11-15",
+          "says": "Ecuador (last reviewed 23 July 2026): 35 | 35."
+        }
+      ],
+      "note": "localTaxes.ts (EC) uses the same end points."
+    },
+    {
+      "id": "ec-estate-foreign-assets",
+      "fact": "estate",
+      "cities": [
+        "cuenca"
+      ],
+      "claim": "It reaches the foreign assets of Ecuadorian residents",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Ecuador Legal Online: inheritance tax in Ecuador",
+          "url": "https://www.ecuadorlegalonline.com/sri/impuesto-herencia-ecuador/",
+          "read": "2026-11-15",
+          "says": "Dated August/June 2026. \"los bienes o derechos en el extranjero de los residentes ecuatorianos también están sujetos a este impuesto\"."
+        }
+      ],
+      "note": "Secondary page dated 2026; no SRI page was read."
+    },
+    {
+      "id": "ec-estate-no-treaty",
+      "fact": "estate",
+      "cities": [
+        "cuenca"
+      ],
+      "claim": "There is no US estate treaty",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list); none of the 37 countries named in this claim is among them."
+        }
+      ],
+      "shared": "us-estate-treaty-profiles-without"
+    },
+    {
+      "id": "ec-estate-no-us-credit",
+      "fact": "estate",
+      "cities": [
+        "cuenca"
+      ],
+      "claim": "The US gives no credit on US-sited stocks, so it can stack on any US estate tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Cornell LII: 26 U.S. Code § 2014, credit for foreign death taxes",
+          "url": "https://www.law.cornell.edu/uscode/text/26/2014",
+          "read": "2026-11-15",
+          "says": "Subsection (a): the estate tax is credited with foreign estate, inheritance, legacy or succession taxes \"actually paid to any foreign country in respect of any property situated within such foreign country\" and included in the gross estate."
+        }
+      ]
+    },
+    {
+      "id": "ec-lending-ibkr",
+      "fact": "lending",
+      "cities": [
+        "cuenca"
+      ],
+      "claim": "Interactive Brokers accepts Ecuador residents",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Argentina, Canada, Chile, Colombia, Ecuador, Paraguay, Peru and Uruguay; the page names no IBKR entity for these residents, and for Canada says only \"Canadians are protected up to CAD 1m\"."
+        }
+      ],
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Interactive Brokers reportedly accepts Ecuador residents",
+      "note": "IBKR's country list (https://www.interactivebrokers.com/en/accounts/open-account-country-list.php) returned HTTP 403 again on 2026-11-15, so acceptance stays reported (rule 3)."
+    },
+    {
+      "id": "ec-lending-schwab",
+      "fact": "lending",
+      "cities": [
+        "cuenca"
+      ],
+      "claim": "Schwab One International's application lists Ecuador (October 2026)",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. On that day the author ran every entry in Schwab's international account selector through the application: it accepted residents of 51 of 263 countries and regions: Argentina, Australia, Austria, the Bahamas, Belgium, Bermuda, Brazil, the British Virgin Islands, the Cayman Islands, Chile, China, Colombia, Costa Rica, the Czech Republic, Denmark, Ecuador, Finland, Germany, Greece, Guatemala, Hong Kong, Iceland, India, Indonesia, Ireland, Israel, Jersey, Luxembourg, Malaysia, the Marshall Islands, Mexico, the Netherlands, Norway, Panama, Paraguay, Peru, Poland, Portugal, Qatar, Singapore, South Korea, Spain, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Turks and Caicos, the United Arab Emirates, the United Kingdom and Uruguay. Named as not accepted: Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam; for the rest the application said \"Schwab currently cannot open accounts for residents of your country/region.\" The test covers new applicants on that day only."
+        },
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. That day Schwab's online international application accepted residents of 51 countries and regions, among them Argentina, Chile, Colombia (\"| Colombia | Yes |\"), Ecuador (\"| Ecuador | Yes |\"), Paraguay, Peru and Uruguay; the row for Canada reads \"| Canada | No |\". It quotes the Schwab One agreement: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds\"; no other region is named."
+        }
+      ],
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab One International's application reportedly lists Ecuador (October 2026)",
+      "note": "Re-read the dated list today. international.schwab.com returned HTTP 403 in every earlier stage; Schwab's own pages were not readable, so \"reportedly\" stays. Lending 4 stays."
+    },
+    {
+      "id": "ec-lending-no-margin-restriction",
+      "fact": "lending",
+      "cities": [
+        "cuenca"
+      ],
+      "claim": "There is no known Schwab margin restriction for residents outside Europe",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. It quotes the Schwab One Account Agreement (\"October 2026 edition, form 09/26\"), Schwab One International terms: \"Customers residing within Europe are restricted from using their Available Margin Loan Value\" to withdraw funds from their account, and advises keeping enough actual cash in the account for spending. It does not define \"Europe\"."
+        },
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. That day Schwab's online international application accepted residents of 51 countries and regions, among them Argentina, Chile, Colombia (\"| Colombia | Yes |\"), Ecuador (\"| Ecuador | Yes |\"), Paraguay, Peru and Uruguay; the row for Canada reads \"| Canada | No |\". It quotes the Schwab One agreement: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds\"; no other region is named."
+        }
+      ],
+      "shared": "schwab-europe-margin-cash-out",
+      "hedge": "no known",
+      "wording": "with no known margin restriction outside Europe",
+      "note": "The reported clause bars Europe residents only and the page names no other region; Schwab's agreement could not be read, so \"no known\" is the right strength."
+    },
+    {
+      "id": "ec-lending-ibkr-margin",
+      "fact": "lending",
+      "cities": [
+        "cuenca"
+      ],
+      "claim": "IBKR margin terms for residents are unconfirmed",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Argentina, Canada, Chile, Colombia, Ecuador, Paraguay, Peru and Uruguay; the page names no IBKR entity for these residents, and for Canada says only \"Canadians are protected up to CAD 1m\"."
+        }
+      ],
+      "hedge": "unconfirmed",
+      "wording": "IBKR margin terms by country are unconfirmed",
+      "note": "A statement of what is not known; no IBKR page could be read (HTTP 403)."
+    },
+    {
+      "id": "ec-visa-rentista",
+      "fact": "visa",
+      "cities": [
+        "cuenca"
+      ],
+      "claim": "The rentista visa accepts investment income (\"títulos de inversión\") of at least 3× the basic wage, about $1,446/month, +$250 per dependant, with health insurance covering Ecuador",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Gob.ec: temporary rentista residence visa",
+          "url": "https://www.gob.ec/mremh/tramites/concesion-visa-residencia-temporal-rentista",
+          "read": "2026-11-15",
+          "says": "Updated 31 December 2024. Monthly licit personal income of at least \"(3) tres Salarios Básicos Unificados\", plus USD 250 a month per dependant; proof includes leases and \"títulos de inversión\"; national or foreign health insurance covering Ecuador for the visa's term; visa valid 2 years."
+        },
+        {
+          "name": "El Universo: 2026 basic wage is $482",
+          "url": "https://www.eluniverso.com/noticias/economia/salario-basico-unificado-2026-482-ecuador-servicio-incrementos-multas-nota/",
+          "read": "2026-11-15",
+          "says": "Dated 15 December 2025. \"El sueldo básico del 2026 quedó definido en $ 482 a partir de enero\"."
+        }
+      ],
+      "note": "3 × $482 = $1,446. Searched the rentista visa with November 2026: no pending change found."
+    },
+    {
+      "id": "ec-visa-investor",
+      "fact": "visa",
+      "cities": [
+        "cuenca"
+      ],
+      "claim": "The investor route is about $48,200 (100× the basic wage), unverified on the official page",
+      "verdict": "corrected",
+      "sources": [
+        {
+          "name": "Gob.ec: temporary investor residence visa",
+          "url": "https://www.gob.ec/mremh/tramites/concesion-visa-residencia-temporal-inversionista",
+          "read": "2026-11-15",
+          "says": "Updated 31 December 2024. A deposit (at least 730 days), registered real estate or Ecuadorian company shares \"no menor a cien (100) salarios básicos unificados\"; visa valid 2 years."
+        },
+        {
+          "name": "El Universo: 2026 basic wage is $482",
+          "url": "https://www.eluniverso.com/noticias/economia/salario-basico-unificado-2026-482-ecuador-servicio-incrementos-multas-nota/",
+          "read": "2026-11-15",
+          "says": "Dated 15 December 2025. \"El sueldo básico del 2026 quedó definido en $ 482 a partir de enero\"."
+        }
+      ],
+      "oldWording": "100× the basic wage, unverified on the official page",
+      "newWording": "100× the basic wage of $482, 2026",
+      "also": [
+        "sources: added the gob.ec investor visa page"
+      ],
+      "note": "The amount is now read on the official page, so \"unverified\" was wrong; 100 × $482 = $48,200."
+    },
+    {
+      "id": "ec-visa-permanent",
+      "fact": "visa",
+      "cities": [
+        "cuenca"
+      ],
+      "claim": "2 years of temporary residence, then permanent",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Gob.ec: permanent residence after more than 21 months",
+          "url": "https://www.gob.ec/mremh/tramites/concesion-visa-residencia-permanente-tiempo-permanencia-mayor-21-meses",
+          "read": "2026-11-15",
+          "says": "Updated 31 December 2024. Temporary residents with \"al menos 21 meses continuos\" who intend to settle may apply for permanent residence before their status expires."
+        },
+        {
+          "name": "Gob.ec: temporary rentista residence visa",
+          "url": "https://www.gob.ec/mremh/tramites/concesion-visa-residencia-temporal-rentista",
+          "read": "2026-11-15",
+          "says": "Updated 31 December 2024. Monthly licit personal income of at least \"(3) tres Salarios Básicos Unificados\", plus USD 250 a month per dependant; proof includes leases and \"títulos de inversión\"; national or foreign health insurance covering Ecuador for the visa's term; visa valid 2 years."
+        }
+      ],
+      "note": "Permanent residence may be requested after at least 21 continuous months; the temporary visa lasts 2 years."
+    },
+    {
+      "id": "ec-health-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "cuenca"
+      ],
+      "claim": "Private hospitals such as Hospital Universitario del Río, Santa Inés and Monte Sinaí give good care at low prices (consultations $20–50)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Cuenca High Life: navigating healthcare in Cuenca",
+          "url": "https://cuencahighlife.com/navigating-healthcare-in-cuenca-a-comprehensive-guide-for-us-expats/",
+          "read": "2026-11-15",
+          "says": "Dated 18 March 2026. Hospital Universitario del Río, Hospital Santa Inés and Hospital Monte Sinaí are among the \"most popular hospitals among expats\"; \"doctor consultations typically costing between $20 to $50\". Nothing on referrals to other cities."
+        }
+      ]
+    },
+    {
+      "id": "ec-health-iess",
+      "fact": "healthcare",
+      "cities": [
+        "cuenca"
+      ],
+      "claim": "Residents with a cédula can join IESS voluntarily at 17.6% of declared income, minimum $84.86/month (2026)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Ecuador Legal Online: voluntary IESS affiliation",
+          "url": "https://www.ecuadorlegalonline.com/laboral/afiliacion-voluntaria-iess/",
+          "read": "2026-11-15",
+          "says": "Dated September 2026. The minimum contribution is \"17,60% del salario básico unificado\"; \"Durante el año 2026, el aporte mínimo es de USD 84,86 mensuales\"; \"Ciudadanos extranjeros con cédula ecuatoriana\" may join."
+        }
+      ],
+      "note": "Secondary page; no IESS page was read."
+    },
+    {
+      "id": "ec-health-referrals",
+      "fact": "healthcare",
+      "cities": [
+        "cuenca"
+      ],
+      "claim": "Complex cases may go to Quito or Guayaquil",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "Cuenca High Life: medical care in Ecuador; Cuenca is one of the top three centers",
+          "url": "https://cuencahighlife.com/?p=131132",
+          "read": "2026-11-15",
+          "says": "Dated 15 October 2009. Cuenca, Quito and Guayaquil are the top medical centres; doctors elsewhere refer seriously ill patients to one of them."
+        },
+        {
+          "name": "Cuenca High Life: navigating healthcare in Cuenca",
+          "url": "https://cuencahighlife.com/navigating-healthcare-in-cuenca-a-comprehensive-guide-for-us-expats/",
+          "read": "2026-11-15",
+          "says": "Dated 18 March 2026. Hospital Universitario del Río, Hospital Santa Inés and Hospital Monte Sinaí are among the \"most popular hospitals among expats\"; \"doctor consultations typically costing between $20 to $50\". Nothing on referrals to other cities."
+        }
+      ],
+      "hedge": "reportedly",
+      "oldWording": "and complex cases may go to Quito or Guayaquil",
+      "wording": "and some complex cases reportedly go to Quito or Guayaquil",
+      "also": [
+        "hedge added: \"reportedly\""
+      ],
+      "note": "Only a 2009 article speaks to referrals, and it names Cuenca as one of the three top centres."
+    }
+  ]
+}

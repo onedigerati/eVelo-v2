@@ -1,0 +1,726 @@
+{
+  "country": "Colombia",
+  "cities": [
+    "medellin",
+    "cartagena",
+    "bogota"
+  ],
+  "claims": [
+    {
+      "id": "co-tax-wealth-threshold",
+      "fact": "tax",
+      "cities": [
+        "medellin",
+        "cartagena",
+        "bogota"
+      ],
+      "claim": "Residents pay wealth tax on worldwide net wealth above 72,000 UVT (COP 3.77bn, about $1.2M; 2026)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Colombia, other taxes",
+          "url": "https://taxsummaries.pwc.com/colombia/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 21 July 2026. Equity tax is triggered by holding net wealth on 1 January \"in excess of 72,000 UVT (COP 3,770,928,000 for 2026)\"; marginal bands 0% to 72,000 UVT, 0.5% to 122,000, 1.0% to 239,000 and 1.5% above, the \"1.5% tax rate will apply only for 2023, 2024, 2025, and 2026\". \"There is no inheritance or gift-specific tax, as such, in Colombia\": inheritances are taxed to the heir as a capital (occasional) gain, and \"The general tax rate for capital gains in Colombia is 15%\"."
+        },
+        {
+          "name": "DIAN: Concepto 008914 de 2026",
+          "url": "https://normograma.dian.gov.co/dian/compilacion/docs/oficio_dian_8914_2026.htm",
+          "read": "2026-11-15",
+          "says": "Dated 27 May 2026. Under art. 294-3 ET the tax arises from holding patrimony on 1 January \"cuyo valor sea igual o superior a setenta y dos mil (72.000) UVT\"; the 40,000 UVT threshold added for 2026 by Decreto Legislativo 1474 de 2025 was suspended and then declared inexequible in Sentencia C-079 de 2026, so it cannot be used to require filing or payment for 2026."
+        },
+        {
+          "name": "Accounter: ABC del impuesto al patrimonio 2025",
+          "url": "https://accounter.co/noticias/editorial/abc-impuesto-al-patrimonio-2025",
+          "read": "2026-11-15",
+          "says": "Dated 20 May 2025. Gross patrimony includes \"bienes en el exterior (para residentes)\"; rates under art. 296-3 ET: 0.5% from 72,000 to 122,000 UVT, 1.0% to 239,000 UVT, 1.5% above 239,000 UVT."
+        },
+        {
+          "name": "DIAN: Concepto general 006365 (int 619) de 2023 on the wealth tax",
+          "url": "https://normograma.dian.gov.co/dian/compilacion/docs/oficio_dian_6365_2023.htm",
+          "read": "2026-11-15",
+          "says": "Dated 29 May 2023. Art. 292-3 numeral 1 makes resident individuals who are income taxpayers liable; numerals 2 and 3 make non-residents liable only on patrimony \"poseído directamente en el país\" or held through a permanent establishment. Residence follows art. 10 ET and is assessed on 1 January."
+        }
+      ],
+      "note": "PwC gives the threshold and amount but not the reach; the worldwide reach for residents rests on DIAN 6365 (non-residents liable only on patrimony in Colombia, residents without that limit) and Accounter. COP 3.77bn at the repo's fx.json rate (COP 3,240 per USD, 7 Nov 2026) is about $1.16M. localTaxes.ts (CO) agrees: 72,000 UVT, 0.5% then 1%."
+    },
+    {
+      "id": "co-tax-wealth-rates",
+      "fact": "tax",
+      "cities": [
+        "medellin",
+        "cartagena",
+        "bogota"
+      ],
+      "claim": "Rates are 0.5–1.5%, with the 1.5% band falling to 1% from 2027",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Colombia, other taxes",
+          "url": "https://taxsummaries.pwc.com/colombia/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 21 July 2026. Equity tax is triggered by holding net wealth on 1 January \"in excess of 72,000 UVT (COP 3,770,928,000 for 2026)\"; marginal bands 0% to 72,000 UVT, 0.5% to 122,000, 1.0% to 239,000 and 1.5% above, the \"1.5% tax rate will apply only for 2023, 2024, 2025, and 2026\". \"There is no inheritance or gift-specific tax, as such, in Colombia\": inheritances are taxed to the heir as a capital (occasional) gain, and \"The general tax rate for capital gains in Colombia is 15%\"."
+        },
+        {
+          "name": "PwC: quick chart, net wealth/worth tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/net-wealth-worth-tax-rates",
+          "read": "2026-11-15",
+          "says": "Colombia (last reviewed 21 July 2026): \"1.5% until 2026; 1% from 2027 onwards\"."
+        },
+        {
+          "name": "Accounter: ABC del impuesto al patrimonio 2025",
+          "url": "https://accounter.co/noticias/editorial/abc-impuesto-al-patrimonio-2025",
+          "read": "2026-11-15",
+          "says": "Dated 20 May 2025. Gross patrimony includes \"bienes en el exterior (para residentes)\"; rates under art. 296-3 ET: 0.5% from 72,000 to 122,000 UVT, 1.0% to 239,000 UVT, 1.5% above 239,000 UVT."
+        }
+      ],
+      "note": "localTaxes.ts uses the steady-state 0.5%/1% schedule and its note says so; no mismatch."
+    },
+    {
+      "id": "co-tax-residence-183",
+      "fact": "tax",
+      "cities": [
+        "bogota"
+      ],
+      "claim": "Residents are those present 183 days or more in any 365-day period",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Colombia, residence",
+          "url": "https://taxsummaries.pwc.com/colombia/individual/residence",
+          "read": "2026-11-15",
+          "says": "Last reviewed 21 July 2026. Fiscally resident if present \"for an aggregate period of time of 183 days within a period of 365 consecutive days\", not necessarily continuous."
+        }
+      ]
+    },
+    {
+      "id": "co-tax-wealth-decree-struck",
+      "fact": "tax",
+      "cities": [
+        "bogota"
+      ],
+      "claim": "A decree lowering the 2026 threshold to 40,000 UVT was struck down (Sentencia C-079/2026)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "DIAN: Oficio 011166 de 2026",
+          "url": "https://normograma.dian.gov.co/dian/compilacion/docs/oficio_dian_11166_2026.htm",
+          "read": "2026-11-15",
+          "says": "Dated 26 June 2026. Sentencia C-079 de 2026 (adopted 15 April 2026) declared Decreto Legislativo 1474 de 2025, which had added the 40,000 UVT threshold for 2026, inexequible; the decree \"no producirá efecto legal alguno hacia futuro\"."
+        },
+        {
+          "name": "DIAN: Concepto 008914 de 2026",
+          "url": "https://normograma.dian.gov.co/dian/compilacion/docs/oficio_dian_8914_2026.htm",
+          "read": "2026-11-15",
+          "says": "Dated 27 May 2026. Under art. 294-3 ET the tax arises from holding patrimony on 1 January \"cuyo valor sea igual o superior a setenta y dos mil (72.000) UVT\"; the 40,000 UVT threshold added for 2026 by Decreto Legislativo 1474 de 2025 was suspended and then declared inexequible in Sentencia C-079 de 2026, so it cannot be used to require filing or payment for 2026."
+        }
+      ]
+    },
+    {
+      "id": "co-tax-wealth-bill",
+      "fact": "tax",
+      "cities": [
+        "bogota"
+      ],
+      "claim": "A bill filed in October 2026 would raise the threshold to 95,500 UVT and end the tax after 2030 (pending)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Holland & Knight: Proyecto de Ley de Rescate Económico en Colombia",
+          "url": "https://www.hklaw.com/en/insights/publications/2026/11/proyecto-de-ley-de-rescate-economico-en-colombia",
+          "read": "2026-11-15",
+          "says": "Dated 4 November 2026. The Finance Ministry filed the bill on 29 October 2026; \"el umbral para quedar sujeto al impuesto subiría a 95.500 UVT\", the tax would apply for 2027 to 2030, at 0.5% between 95,500 and 145,500 UVT and 1% above; \"estas medidas aún no están vigentes y podrían modificarse durante el trámite legislativo\"."
+        }
+      ],
+      "note": "Proyecto de Ley 477 de 2026 Cámara, filed 29 October 2026; still a bill on 4 November 2026. Searched \"impuesto al patrimonio 95.500 UVT noviembre 2026\": nothing newer says it passed."
+    },
+    {
+      "id": "co-tax-income-39",
+      "fact": "tax",
+      "cities": [
+        "medellin",
+        "cartagena",
+        "bogota"
+      ],
+      "claim": "Worldwide income, including US dividends and interest, is taxed at up to 39%",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Colombia, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/colombia/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 21 July 2026. \"Fiscal residents (nationals or foreign) are taxed on worldwide income\"; top marginal rate 39% above 31,000 UVT; dividends taxed at the progressive 0% to 39% rates (35% flat first where not taxed at corporate level); interest is capital income taxed at the progressive 0% to 39%. \"There are no local taxes on individual income in Colombia.\""
+        }
+      ]
+    },
+    {
+      "id": "co-tax-no-treaty",
+      "fact": "tax",
+      "cities": [
+        "medellin",
+        "cartagena",
+        "bogota"
+      ],
+      "claim": "There is no US–Colombia income tax treaty",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Colombia, foreign tax relief and tax treaties",
+          "url": "https://taxsummaries.pwc.com/colombia/individual/foreign-tax-relief-and-tax-treaties",
+          "read": "2026-11-15",
+          "says": "Last reviewed 21 July 2026. Double tax treaties with Bolivia, Canada, Chile, Czech Republic, Ecuador, France, India, Italy, Japan, Mexico, Peru, Portugal, South Korea, Spain, Switzerland and the United Kingdom; no United States. Residents may credit foreign tax up to the Colombian tax on the same income."
+        }
+      ]
+    },
+    {
+      "id": "co-tax-no-local-bolivar",
+      "fact": "tax",
+      "cities": [
+        "cartagena"
+      ],
+      "claim": "There is no local relief in Bolívar (income tax is national)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Colombia, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/colombia/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 21 July 2026. \"Fiscal residents (nationals or foreign) are taxed on worldwide income\"; top marginal rate 39% above 31,000 UVT; dividends taxed at the progressive 0% to 39% rates (35% flat first where not taxed at corporate level); interest is capital income taxed at the progressive 0% to 39%. \"There are no local taxes on individual income in Colombia.\""
+        }
+      ],
+      "note": "PwC: no local taxes on individual income, so no departmental regime adds or relieves anything."
+    },
+    {
+      "id": "co-estate-occasional-gain-15",
+      "fact": "estate",
+      "cities": [
+        "medellin",
+        "cartagena",
+        "bogota"
+      ],
+      "claim": "Inheritances are taxed to the heir as an occasional gain at 15%",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Colombia, other taxes",
+          "url": "https://taxsummaries.pwc.com/colombia/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 21 July 2026. Equity tax is triggered by holding net wealth on 1 January \"in excess of 72,000 UVT (COP 3,770,928,000 for 2026)\"; marginal bands 0% to 72,000 UVT, 0.5% to 122,000, 1.0% to 239,000 and 1.5% above, the \"1.5% tax rate will apply only for 2023, 2024, 2025, and 2026\". \"There is no inheritance or gift-specific tax, as such, in Colombia\": inheritances are taxed to the heir as a capital (occasional) gain, and \"The general tax rate for capital gains in Colombia is 15%\"."
+        },
+        {
+          "name": "PwC: quick chart, inheritance and gift tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates",
+          "read": "2026-11-15",
+          "says": "Colombia (last reviewed 21 July 2026): inheritance 15, gift 15."
+        }
+      ],
+      "note": "localTaxes.ts (CO) models a flat 15% with no exemptions; consistent."
+    },
+    {
+      "id": "co-estate-us-heirs-unverified",
+      "fact": "estate",
+      "cities": [
+        "medellin",
+        "cartagena",
+        "bogota"
+      ],
+      "claim": "How the 15% applies to US-resident heirs inheriting US assets is unverified",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "PwC: Colombia, other taxes",
+          "url": "https://taxsummaries.pwc.com/colombia/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 21 July 2026. Equity tax is triggered by holding net wealth on 1 January \"in excess of 72,000 UVT (COP 3,770,928,000 for 2026)\"; marginal bands 0% to 72,000 UVT, 0.5% to 122,000, 1.0% to 239,000 and 1.5% above, the \"1.5% tax rate will apply only for 2023, 2024, 2025, and 2026\". \"There is no inheritance or gift-specific tax, as such, in Colombia\": inheritances are taxed to the heir as a capital (occasional) gain, and \"The general tax rate for capital gains in Colombia is 15%\"."
+        }
+      ],
+      "hedge": "unverified",
+      "wording": "how this applies to US-resident heirs inheriting US assets is unverified",
+      "note": "A statement of what is not known; PwC says nothing on the territorial reach. The estate score 2 already carries it."
+    },
+    {
+      "id": "co-estate-no-us-treaty",
+      "fact": "estate",
+      "cities": [
+        "medellin",
+        "cartagena",
+        "bogota"
+      ],
+      "claim": "There is no US estate treaty",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list); none of the 37 countries named in this claim is among them."
+        }
+      ],
+      "shared": "us-estate-treaty-profiles-without"
+    },
+    {
+      "id": "co-estate-no-us-credit",
+      "fact": "estate",
+      "cities": [
+        "medellin",
+        "cartagena",
+        "bogota"
+      ],
+      "claim": "So there is no US credit for the Colombian tax on US-sited stocks",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Cornell LII: 26 U.S. Code § 2014, credit for foreign death taxes",
+          "url": "https://www.law.cornell.edu/uscode/text/26/2014",
+          "read": "2026-11-15",
+          "says": "Subsection (a): the estate tax is credited with foreign estate, inheritance, legacy or succession taxes \"actually paid to any foreign country in respect of any property situated within such foreign country\" and included in the gross estate."
+        }
+      ],
+      "note": "Without a treaty the statutory credit reaches only property sited in the foreign country, so a Colombian tax on US-sited stocks gets no US credit."
+    },
+    {
+      "id": "co-lending-ibkr",
+      "fact": "lending",
+      "cities": [
+        "medellin",
+        "cartagena",
+        "bogota"
+      ],
+      "claim": "Interactive Brokers accepts Colombia residents",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Argentina, Canada, Chile, Colombia, Ecuador, Paraguay, Peru and Uruguay; the page names no IBKR entity for these residents, and for Canada says only \"Canadians are protected up to CAD 1m\"."
+        }
+      ],
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Interactive Brokers reportedly accepts Colombia residents",
+      "note": "IBKR's country list (https://www.interactivebrokers.com/en/accounts/open-account-country-list.php) returned HTTP 403 again on 2026-11-15, so acceptance stays reported (rule 3)."
+    },
+    {
+      "id": "co-lending-schwab",
+      "fact": "lending",
+      "cities": [
+        "medellin",
+        "cartagena",
+        "bogota"
+      ],
+      "claim": "Schwab One International's application lists Colombia (October 2026)",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. On that day the author ran every entry in Schwab's international account selector through the application: it accepted residents of 51 of 263 countries and regions: Argentina, Australia, Austria, the Bahamas, Belgium, Bermuda, Brazil, the British Virgin Islands, the Cayman Islands, Chile, China, Colombia, Costa Rica, the Czech Republic, Denmark, Ecuador, Finland, Germany, Greece, Guatemala, Hong Kong, Iceland, India, Indonesia, Ireland, Israel, Jersey, Luxembourg, Malaysia, the Marshall Islands, Mexico, the Netherlands, Norway, Panama, Paraguay, Peru, Poland, Portugal, Qatar, Singapore, South Korea, Spain, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Turks and Caicos, the United Arab Emirates, the United Kingdom and Uruguay. Named as not accepted: Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam; for the rest the application said \"Schwab currently cannot open accounts for residents of your country/region.\" The test covers new applicants on that day only."
+        },
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. That day Schwab's online international application accepted residents of 51 countries and regions, among them Argentina, Chile, Colombia (\"| Colombia | Yes |\"), Ecuador (\"| Ecuador | Yes |\"), Paraguay, Peru and Uruguay; the row for Canada reads \"| Canada | No |\". It quotes the Schwab One agreement: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds\"; no other region is named."
+        }
+      ],
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab One International's application reportedly lists Colombia (October 2026)",
+      "note": "Re-read the dated list today. international.schwab.com returned HTTP 403 in every earlier stage; Schwab's own pages were not readable, so \"reportedly\" stays. Lending 4 stays (rubric 4: Schwab reported to accept residents outside Europe, plus IBKR)."
+    },
+    {
+      "id": "co-lending-no-margin-restriction",
+      "fact": "lending",
+      "cities": [
+        "medellin",
+        "cartagena",
+        "bogota"
+      ],
+      "claim": "There is no known Schwab margin restriction for residents outside Europe",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. It quotes the Schwab One Account Agreement (\"October 2026 edition, form 09/26\"), Schwab One International terms: \"Customers residing within Europe are restricted from using their Available Margin Loan Value\" to withdraw funds from their account, and advises keeping enough actual cash in the account for spending. It does not define \"Europe\"."
+        },
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. That day Schwab's online international application accepted residents of 51 countries and regions, among them Argentina, Chile, Colombia (\"| Colombia | Yes |\"), Ecuador (\"| Ecuador | Yes |\"), Paraguay, Peru and Uruguay; the row for Canada reads \"| Canada | No |\". It quotes the Schwab One agreement: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds\"; no other region is named."
+        }
+      ],
+      "shared": "schwab-europe-margin-cash-out",
+      "hedge": "no known",
+      "wording": "with no known margin restriction outside Europe",
+      "note": "The reported clause bars Europe residents only and the page names no other region; Schwab's agreement could not be read, so \"no known\" is the right strength."
+    },
+    {
+      "id": "co-lending-ibkr-margin",
+      "fact": "lending",
+      "cities": [
+        "medellin",
+        "cartagena",
+        "bogota"
+      ],
+      "claim": "IBKR margin terms for residents are unconfirmed",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. The Country Availability list includes Argentina, Canada, Chile, Colombia, Ecuador, Paraguay, Peru and Uruguay; the page names no IBKR entity for these residents, and for Canada says only \"Canadians are protected up to CAD 1m\"."
+        }
+      ],
+      "hedge": "unconfirmed",
+      "wording": "IBKR margin terms by country are unconfirmed",
+      "note": "A statement of what is not known; no IBKR page could be read (HTTP 403)."
+    },
+    {
+      "id": "co-visa-rentista-income",
+      "fact": "visa",
+      "cities": [
+        "medellin",
+        "cartagena",
+        "bogota"
+      ],
+      "claim": "V-Rentista accepts dividends and portfolio yields but needs 10× the minimum wage, about COP 17.5M (~$5,400) a month",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Cancillería: tipos de visa",
+          "url": "https://cancilleria.gov.co/atencion-y-servicio-al-ciudadano/tramites-y-servicios/visa/tipos-de-visa",
+          "read": "2026-11-15",
+          "says": "Undated. Visitor (V) visa for rentistas: \"La cuantía ingresos por rentas no podrá ser inferior a diez (10) salarios mínimos legales mensuales vigentes\", validity \"Hasta dos (2) años\". The table of time toward the resident (R) visa lists only M visas as holder (5 years for M Pensionado and M Inversionista); the V rentista visa is not in it."
+        },
+        {
+          "name": "Colpensiones normograma: Decreto 0159 de 2026 (minimum wage)",
+          "url": "https://normativa.colpensiones.gov.co/compilacion/docs/decreto_0159_2026.htm",
+          "read": "2026-11-15",
+          "says": "Decreto 0159 of 19 February 2026 (Diario Oficial 53.403) fixes the 2026 monthly minimum wage at \"un millón setecientos cincuenta mil novecientos cinco pesos ($1.750.905)\"."
+        }
+      ],
+      "note": "Cancillería speaks of \"ingresos por rentas\", which takes in dividends and portfolio yields. 10 × COP 1,750,905 = COP 17.51M, about $5,400 at COP 3,240 per USD; Medellín and Cartagena say ~$5,440, Bogotá ~$5,400, both \"about\". Searched the V-Rentista with \"2026\" for a pending change: none found."
+    },
+    {
+      "id": "co-visa-rentista-no-residency",
+      "fact": "visa",
+      "cities": [
+        "medellin",
+        "cartagena",
+        "bogota"
+      ],
+      "claim": "V-Rentista is a visitor visa of up to 2 years that does not lead to permanent residency",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Cancillería: tipos de visa",
+          "url": "https://cancilleria.gov.co/atencion-y-servicio-al-ciudadano/tramites-y-servicios/visa/tipos-de-visa",
+          "read": "2026-11-15",
+          "says": "Undated. Visitor (V) visa for rentistas: \"La cuantía ingresos por rentas no podrá ser inferior a diez (10) salarios mínimos legales mensuales vigentes\", validity \"Hasta dos (2) años\". The table of time toward the resident (R) visa lists only M visas as holder (5 years for M Pensionado and M Inversionista); the V rentista visa is not in it."
+        }
+      ]
+    },
+    {
+      "id": "co-visa-m-investor-amount",
+      "fact": "visa",
+      "cities": [
+        "medellin",
+        "cartagena"
+      ],
+      "claim": "The M-Investor route needs about $145k in Colombian real estate",
+      "verdict": "corrected",
+      "sources": [
+        {
+          "name": "Cancillería: tipos de visa (second part, read from offset 100,000)",
+          "url": "https://cancilleria.gov.co/atencion-y-servicio-al-ciudadano/tramites-y-servicios/visa/tipos-de-visa",
+          "read": "2026-11-15",
+          "says": "M Pensionado: a pension \"en monto no inferior a tres (3) salarios mínimos legales mensuales vigentes\". M Inversionista in real estate: property \"por un valor mínimo equivalente a trescientos cincuenta (350) salarios mínimos mensuales legales vigentes\"; foreign direct investment above 650 SMLMV. Five years as M Pensionado or M Inversionista holder count toward the R visa, without guaranteeing it."
+        },
+        {
+          "name": "Colpensiones normograma: Decreto 0159 de 2026 (minimum wage)",
+          "url": "https://normativa.colpensiones.gov.co/compilacion/docs/decreto_0159_2026.htm",
+          "read": "2026-11-15",
+          "says": "Decreto 0159 of 19 February 2026 (Diario Oficial 53.403) fixes the 2026 monthly minimum wage at \"un millón setecientos cincuenta mil novecientos cinco pesos ($1.750.905)\"."
+        }
+      ],
+      "oldWording": "the M-Investor route needs about $145k in Colombian real estate",
+      "newWording": "the M-Investor route needs 350× the minimum wage, about COP 613M (~$190k), in Colombian real estate",
+      "also": [
+        "sources: added Cancillería visa types page (Medellín, Cartagena)",
+        "drawbacks and summaries do not mention the amount; scores.visa 3 unchanged (high threshold, and the rentista route never leads to residency)"
+      ],
+      "note": "350 × COP 1,750,905 = COP 612.8M, about $189k. Bogotá already said this; Medellín and Cartagena now match it."
+    },
+    {
+      "id": "co-visa-m-investor-amount-bogota",
+      "fact": "visa",
+      "cities": [
+        "bogota"
+      ],
+      "claim": "The M-Investor route needs 350× the minimum wage, about COP 613M (~$190k), in Colombian real estate",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Cancillería: tipos de visa (second part, read from offset 100,000)",
+          "url": "https://cancilleria.gov.co/atencion-y-servicio-al-ciudadano/tramites-y-servicios/visa/tipos-de-visa",
+          "read": "2026-11-15",
+          "says": "M Pensionado: a pension \"en monto no inferior a tres (3) salarios mínimos legales mensuales vigentes\". M Inversionista in real estate: property \"por un valor mínimo equivalente a trescientos cincuenta (350) salarios mínimos mensuales legales vigentes\"; foreign direct investment above 650 SMLMV. Five years as M Pensionado or M Inversionista holder count toward the R visa, without guaranteeing it."
+        },
+        {
+          "name": "Colpensiones normograma: Decreto 0159 de 2026 (minimum wage)",
+          "url": "https://normativa.colpensiones.gov.co/compilacion/docs/decreto_0159_2026.htm",
+          "read": "2026-11-15",
+          "says": "Decreto 0159 of 19 February 2026 (Diario Oficial 53.403) fixes the 2026 monthly minimum wage at \"un millón setecientos cincuenta mil novecientos cinco pesos ($1.750.905)\"."
+        }
+      ],
+      "also": [
+        "sources: added Cancillería visa types page"
+      ]
+    },
+    {
+      "id": "co-visa-m-residency-5y",
+      "fact": "visa",
+      "cities": [
+        "medellin",
+        "cartagena",
+        "bogota"
+      ],
+      "claim": "The M visas (investor, pensioner) lead to residency after 5 years",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Cancillería: tipos de visa (second part, read from offset 100,000)",
+          "url": "https://cancilleria.gov.co/atencion-y-servicio-al-ciudadano/tramites-y-servicios/visa/tipos-de-visa",
+          "read": "2026-11-15",
+          "says": "M Pensionado: a pension \"en monto no inferior a tres (3) salarios mínimos legales mensuales vigentes\". M Inversionista in real estate: property \"por un valor mínimo equivalente a trescientos cincuenta (350) salarios mínimos mensuales legales vigentes\"; foreign direct investment above 650 SMLMV. Five years as M Pensionado or M Inversionista holder count toward the R visa, without guaranteeing it."
+        },
+        {
+          "name": "Cancillería: tipos de visa",
+          "url": "https://cancilleria.gov.co/atencion-y-servicio-al-ciudadano/tramites-y-servicios/visa/tipos-de-visa",
+          "read": "2026-11-15",
+          "says": "Undated. Visitor (V) visa for rentistas: \"La cuantía ingresos por rentas no podrá ser inferior a diez (10) salarios mínimos legales mensuales vigentes\", validity \"Hasta dos (2) años\". The table of time toward the resident (R) visa lists only M visas as holder (5 years for M Pensionado and M Inversionista); the V rentista visa is not in it."
+        }
+      ]
+    },
+    {
+      "id": "co-visa-m-pensionado",
+      "fact": "visa",
+      "cities": [
+        "medellin",
+        "cartagena"
+      ],
+      "claim": "M-Pensionado needs an actual pension",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Cancillería: tipos de visa (second part, read from offset 100,000)",
+          "url": "https://cancilleria.gov.co/atencion-y-servicio-al-ciudadano/tramites-y-servicios/visa/tipos-de-visa",
+          "read": "2026-11-15",
+          "says": "M Pensionado: a pension \"en monto no inferior a tres (3) salarios mínimos legales mensuales vigentes\". M Inversionista in real estate: property \"por un valor mínimo equivalente a trescientos cincuenta (350) salarios mínimos mensuales legales vigentes\"; foreign direct investment above 650 SMLMV. Five years as M Pensionado or M Inversionista holder count toward the R visa, without guaranteeing it."
+        }
+      ]
+    },
+    {
+      "id": "co-visa-m-pensionado-amount",
+      "fact": "visa",
+      "cities": [
+        "bogota"
+      ],
+      "claim": "M-Pensionado needs a pension of 3× the minimum wage, about COP 5.25M (~$1,620) a month (2026)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Cancillería: tipos de visa (second part, read from offset 100,000)",
+          "url": "https://cancilleria.gov.co/atencion-y-servicio-al-ciudadano/tramites-y-servicios/visa/tipos-de-visa",
+          "read": "2026-11-15",
+          "says": "M Pensionado: a pension \"en monto no inferior a tres (3) salarios mínimos legales mensuales vigentes\". M Inversionista in real estate: property \"por un valor mínimo equivalente a trescientos cincuenta (350) salarios mínimos mensuales legales vigentes\"; foreign direct investment above 650 SMLMV. Five years as M Pensionado or M Inversionista holder count toward the R visa, without guaranteeing it."
+        },
+        {
+          "name": "Colpensiones normograma: Decreto 0159 de 2026 (minimum wage)",
+          "url": "https://normativa.colpensiones.gov.co/compilacion/docs/decreto_0159_2026.htm",
+          "read": "2026-11-15",
+          "says": "Decreto 0159 of 19 February 2026 (Diario Oficial 53.403) fixes the 2026 monthly minimum wage at \"un millón setecientos cincuenta mil novecientos cinco pesos ($1.750.905)\"."
+        }
+      ],
+      "note": "3 × COP 1,750,905 = COP 5.25M, about $1,620."
+    },
+    {
+      "id": "co-health-medellin-newsweek",
+      "fact": "healthcare",
+      "cities": [
+        "medellin"
+      ],
+      "claim": "Pablo Tobón Uribe, San Vicente Fundación, Clínica Medellín and Las Américas were all in Newsweek's Colombia top 25 (2023 edition)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "El Espectador: the 25 best hospitals in Colombia per Newsweek",
+          "url": "https://www.elespectador.com/salud/estos-son-los-25-mejores-hospitales-de-colombia-segun-newsweek/",
+          "read": "2026-11-15",
+          "says": "Dated 14 July 2023. 1 Fundación Valle del Lili (Cali), 2 Fundación Santa Fe de Bogotá, 3 Hospital Pablo Tobón Uribe (Medellín), 4 Hospital Universitario San Vicente Fundación (Medellín), 5 Hospital Universitario San Ignacio (Bogotá), 6 Clínica del Country (Bogotá), 8 Clínica de Marly (Bogotá), 9 Clínica de la Colina (Bogotá), 11 Clínica Medellín, 12 Hospital General de Medellín, 14 La Samaritana (Bogotá), 16 Clínica Universitaria Colombia (Bogotá), 17 Fundación Cardiovascular de Colombia (listed as Bogotá), 18 Clínica Las Américas (Medellín), 22 Clínica Reina Sofía (Bogotá), 25 Los Cobos Medical Center (Bogotá). No Cartagena hospital is listed."
+        }
+      ]
+    },
+    {
+      "id": "co-health-eps-visa",
+      "fact": "healthcare",
+      "cities": [
+        "medellin",
+        "bogota"
+      ],
+      "claim": "EPS access depends on visa type",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "Colombia Move: EPS vs medicina prepagada",
+          "url": "https://colombiamove.com/blog/eps-vs-medicina-prepagada-colombia-healthcare-guide/",
+          "read": "2026-11-15",
+          "says": "Published 5 August 2026, modified 18 August 2026. Foreigners \"are generally routed to contributive SGSSS affiliation\" and should \"verify the obligation for your immigration and work status\"; Resolution 5477 uses \"category-specific\" health-coverage wording; the page does not say which visas may or may not join an EPS. One SURA policy lists \"under 70 for entry\"; a SURA digital product \"states no maximum age\"."
+        }
+      ],
+      "hedge": "reportedly",
+      "oldWording": "EPS access depends on visa type",
+      "wording": "EPS access reportedly depends on visa type",
+      "also": [
+        "hedge added: \"reportedly\" (Medellín, Bogotá)"
+      ],
+      "note": "The page read says coverage wording is \"category-specific\" and advises checking one's immigration status, but names no visa that is barred; no Supersalud or Migración Colombia page was read."
+    },
+    {
+      "id": "co-health-prepagada-ages",
+      "fact": "healthcare",
+      "cities": [
+        "medellin",
+        "cartagena",
+        "bogota"
+      ],
+      "claim": "Private \"medicina prepagada\" plans have product-specific entry ages (one SURA plan requires entry under 70)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Colombia Move: EPS vs medicina prepagada",
+          "url": "https://colombiamove.com/blog/eps-vs-medicina-prepagada-colombia-healthcare-guide/",
+          "read": "2026-11-15",
+          "says": "Published 5 August 2026, modified 18 August 2026. Foreigners \"are generally routed to contributive SGSSS affiliation\" and should \"verify the obligation for your immigration and work status\"; Resolution 5477 uses \"category-specific\" health-coverage wording; the page does not say which visas may or may not join an EPS. One SURA policy lists \"under 70 for entry\"; a SURA digital product \"states no maximum age\"."
+        }
+      ],
+      "note": "Cartagena states only the first half."
+    },
+    {
+      "id": "co-health-bogota-newsweek",
+      "fact": "healthcare",
+      "cities": [
+        "bogota"
+      ],
+      "claim": "Fundación Santa Fe (2nd), San Ignacio (5th), Clínica del Country (6th), Clínica de Marly (8th) and Clínica de la Colina (9th) are five of the top 10 in Newsweek's 2023 Colombia ranking, and the city has about nine of the top 25",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "El Espectador: the 25 best hospitals in Colombia per Newsweek",
+          "url": "https://www.elespectador.com/salud/estos-son-los-25-mejores-hospitales-de-colombia-segun-newsweek/",
+          "read": "2026-11-15",
+          "says": "Dated 14 July 2023. 1 Fundación Valle del Lili (Cali), 2 Fundación Santa Fe de Bogotá, 3 Hospital Pablo Tobón Uribe (Medellín), 4 Hospital Universitario San Vicente Fundación (Medellín), 5 Hospital Universitario San Ignacio (Bogotá), 6 Clínica del Country (Bogotá), 8 Clínica de Marly (Bogotá), 9 Clínica de la Colina (Bogotá), 11 Clínica Medellín, 12 Hospital General de Medellín, 14 La Samaritana (Bogotá), 16 Clínica Universitaria Colombia (Bogotá), 17 Fundación Cardiovascular de Colombia (listed as Bogotá), 18 Clínica Las Américas (Medellín), 22 Clínica Reina Sofía (Bogotá), 25 Los Cobos Medical Center (Bogotá). No Cartagena hospital is listed."
+        }
+      ],
+      "note": "The article lists ten top-25 entries under Bogotá, one of them Fundación Cardiovascular de Colombia, which is based in Floridablanca (Santander); \"about nine\" stands."
+    },
+    {
+      "id": "co-health-serena-only",
+      "fact": "healthcare",
+      "cities": [
+        "cartagena"
+      ],
+      "claim": "Hospital Serena del Mar calls itself the only high-complexity hospital in Cartagena, and its JCI claim may refer to the Bogotá parent",
+      "verdict": "corrected",
+      "sources": [
+        {
+          "name": "Hospital Serena del Mar: about us",
+          "url": "https://www.hospitalserenadelmar.com/en/about-us",
+          "read": "2026-11-15",
+          "says": "Undated. \"We are a highly complex hospital\", \"operated by the Santa Fe de Bogotá Foundation\", certified \"by the Joint Commission International (JCI) in quality and safety in care\"; it has \"the only PET-CT in the city\". It does not call itself the only high-complexity hospital in Cartagena."
+        },
+        {
+          "name": "Hospital Serena del Mar: international certifications and recognitions",
+          "url": "https://www.hospitalserenadelmar.com/en/international-certifications-and-recognitions",
+          "read": "2026-11-15",
+          "says": "Undated. Lists Advanced Stroke Center, World's Best Hospitals 2025, Planetree Silver, Gold Stroke Center, Efficient ICU and Great Place To Work; no JCI entry; \"operated by Fundación Santa Fe de Bogotá\"."
+        },
+        {
+          "name": "El Universal: Hospital Serena del Mar, Cartagena's top hospital (Newsweek 2026)",
+          "url": "https://www.eluniversal.com.co/cartagena/2026/04/07/hospital-serena-del-mar-el-1-de-cartagena-que-consolida-la-salud-de-clase-mundial-en-el-caribe/",
+          "read": "2026-11-15",
+          "says": "Dated 7 April 2026. In Newsweek and Statista's World's Best Hospitals 2026 the hospital is among Colombia's top 20 and \"el de mayor clasificación en Cartagena y la región Caribe\"; it offers high-complexity services (nuclear medicine, hemodynamics, cardiovascular intervention, cancer care, intensive care); \"operado por la Fundación Santa Fe de Bogotá\". No JCI mention."
+        }
+      ],
+      "oldWording": "calls itself the only high-complexity hospital in Cartagena (its JCI claim may refer to the Bogotá parent; unverified)",
+      "newWording": "is a high-complexity hospital, the highest-ranked in Cartagena in Newsweek's 2026 list, and says it is JCI-certified",
+      "also": [
+        "summary: 'with one high-complexity hospital in the city' → 'led by one highly ranked private hospital, Serena del Mar'",
+        "drawback 2: 'One high-complexity hospital; the best care is in Medellín or Bogotá' → 'Few top hospitals beyond Serena del Mar; the deepest care is in Medellín or Bogotá'",
+        "sources: replaced the certifications page (no JCI entry, nothing rests on it) with El Universal (Newsweek 2026)",
+        "scores.healthcare 3 unchanged (decent private care, the deepest a flight away)"
+      ],
+      "note": "The hospital's own about page says it is \"highly complex\" and JCI-certified, under its own name, not the parent's; it does not claim to be the only one. Searched for \"único hospital\" alta complejidad Cartagena: no page says so. The JCI directory was not tried (it returned 403 in stage 4)."
+    },
+    {
+      "id": "co-health-serena-location",
+      "fact": "healthcare",
+      "cities": [
+        "cartagena"
+      ],
+      "claim": "Serena del Mar is run by Fundación Santa Fe de Bogotá, about 15 minutes from the old city",
+      "verdict": "cant-confirm",
+      "sources": [
+        {
+          "name": "Hospital Serena del Mar: about us",
+          "url": "https://www.hospitalserenadelmar.com/en/about-us",
+          "read": "2026-11-15",
+          "says": "Undated. \"We are a highly complex hospital\", \"operated by the Santa Fe de Bogotá Foundation\", certified \"by the Joint Commission International (JCI) in quality and safety in care\"; it has \"the only PET-CT in the city\". It does not call itself the only high-complexity hospital in Cartagena."
+        },
+        {
+          "name": "Hospital Serena del Mar: a new benchmark in health arrives in Cartagena",
+          "url": "https://www.hospitalserenadelmar.com/en/blog/noticias/hospital-serena-del-mar-un-nuevo-referente-en-salud-llega-cartagena",
+          "read": "2026-11-15",
+          "says": "Dated 19 April 2023. Address \"Vía al Mar, Km 8, Cartagena, Colombia\"; no travel time to the old city is given."
+        }
+      ],
+      "hedge": "about",
+      "oldWording": "run by Fundación Santa Fe de Bogotá and 15 minutes from the old city",
+      "wording": "on the Vía al Mar at km 8, about 15 minutes from the old city",
+      "also": [
+        "added the km 8 location and \"about\" on the drive time"
+      ],
+      "note": "The operator is confirmed; no page read gives the drive time, so it is now an approximation on the hospital's published address."
+    },
+    {
+      "id": "co-health-medellin-five",
+      "fact": "healthcare",
+      "cities": [
+        "cartagena"
+      ],
+      "claim": "Medellín has five hospitals in Newsweek's 2023 Colombia top 25, so serious cases may mean flying there or to Bogotá",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "El Espectador: the 25 best hospitals in Colombia per Newsweek",
+          "url": "https://www.elespectador.com/salud/estos-son-los-25-mejores-hospitales-de-colombia-segun-newsweek/",
+          "read": "2026-11-15",
+          "says": "Dated 14 July 2023. 1 Fundación Valle del Lili (Cali), 2 Fundación Santa Fe de Bogotá, 3 Hospital Pablo Tobón Uribe (Medellín), 4 Hospital Universitario San Vicente Fundación (Medellín), 5 Hospital Universitario San Ignacio (Bogotá), 6 Clínica del Country (Bogotá), 8 Clínica de Marly (Bogotá), 9 Clínica de la Colina (Bogotá), 11 Clínica Medellín, 12 Hospital General de Medellín, 14 La Samaritana (Bogotá), 16 Clínica Universitaria Colombia (Bogotá), 17 Fundación Cardiovascular de Colombia (listed as Bogotá), 18 Clínica Las Américas (Medellín), 22 Clínica Reina Sofía (Bogotá), 25 Los Cobos Medical Center (Bogotá). No Cartagena hospital is listed."
+        }
+      ],
+      "note": "Pablo Tobón Uribe (3), San Vicente (4), Clínica Medellín (11), Hospital General de Medellín (12), Las Américas (18); no Cartagena hospital is in the 2023 list."
+    }
+  ]
+}

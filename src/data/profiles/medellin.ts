@@ -7,11 +7,11 @@ const profile: ExpatProfile = {
   scores: { cost: 4, healthcare: 4, safety: 2, visa: 3, climate: 5, community: 4, tax: 1, estate: 2, lending: 4 },
   facts: {
     healthcare:
-      'Private hospitals Pablo Tobón Uribe, San Vicente Fundación, Clínica Medellín and Las Américas were all in Newsweek\'s Colombia top 25 (2023 edition); EPS access depends on visa type, and private "medicina prepagada" plans have product-specific entry ages (one SURA plan requires entry under 70).',
+      'Private hospitals Pablo Tobón Uribe, San Vicente Fundación, Clínica Medellín and Las Américas were all in Newsweek\'s Colombia top 25 (2023 edition); EPS access reportedly depends on visa type, and private "medicina prepagada" plans have product-specific entry ages (one SURA plan requires entry under 70).',
     safety:
       'Colombia is 141st of 163 in the 2026 Global Peace Index and reportedly at US State Dept Level 3, "reconsider travel" (March 2026), with warnings about scopolamine druggings and dating-app robberies in Medellín; expats cluster in El Poblado and Laureles.',
     visa:
-      'V-Rentista accepts dividends and portfolio yields but needs 10× the minimum wage, about COP 17.5M (~$5,440) a month, and is a visitor visa of up to 2 years that does not lead to permanent residency; the M-Investor route needs about $145k in Colombian real estate and leads to residency after 5 years, and M-Pensionado needs an actual pension.',
+      'V-Rentista accepts dividends and portfolio yields but needs 10× the minimum wage, about COP 17.5M (~$5,440) a month, and is a visitor visa of up to 2 years that does not lead to permanent residency; the M-Investor route needs 350× the minimum wage, about COP 613M (~$190k), in Colombian real estate and leads to residency after 5 years, and M-Pensionado needs an actual pension.',
     tax: 'Residents pay wealth tax on worldwide net wealth above 72,000 UVT (COP 3.77bn, about $1.2M; 2026) at 0.5–1.5%, with the 1.5% band falling to 1% from 2027; worldwide income, including US dividends and interest, is taxed at up to 39%, with no US–Colombia income tax treaty (check current rules).',
     estate:
       'Inheritances are taxed to the heir as an occasional gain at 15%; how this applies to US-resident heirs inheriting US assets is unverified, and with no US estate treaty there is no US credit for it on US-sited stocks.',
@@ -33,6 +33,7 @@ const profile: ExpatProfile = {
     { name: 'PwC Worldwide Tax Summaries: Colombia, taxes on personal income', url: 'https://taxsummaries.pwc.com/colombia/individual/taxes-on-personal-income', edition: '2026' },
     { name: 'DIAN: Oficio 8914 de 2026 (wealth tax)', url: 'https://normograma.dian.gov.co/dian/compilacion/docs/oficio_dian_8914_2026.htm', edition: '2026' },
     { name: 'Colombia Move: V-Rentista visa guide', url: 'https://colombiamove.com/blog/colombia-rentista-visa-v-rentista-guide/' },
+    { name: 'Cancillería: visa types and requirements', url: 'https://cancilleria.gov.co/atencion-y-servicio-al-ciudadano/tramites-y-servicios/visa/tipos-de-visa' },
     { name: 'Colombia Move: EPS vs medicina prepagada', url: 'https://colombiamove.com/blog/eps-vs-medicina-prepagada-colombia-healthcare-guide/' },
     { name: 'El Espectador: Colombia\'s 25 best hospitals per Newsweek', url: 'https://www.elespectador.com/salud/estos-son-los-25-mejores-hospitales-de-colombia-segun-newsweek/', edition: '2023' },
     { name: 'Your Tax Base: Charles Schwab for expats (country list, Oct 2026)', url: 'https://yourtaxbase.com/blog/charles-schwab-for-expats' },
