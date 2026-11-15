@@ -1,31 +1,31 @@
 # Home-aware getting there plan
 
 ## Goal
-A city profile's "Getting there" is one hand-written sentence per city, written for someone flying from the US, and it reads the same whatever the home city is (San Diego, London or Toronto). Make it depend on home: each city gets its main airport and its current nonstop routes (as of Nov 2026, sourced). From these the app works out the trip from the home city's airport: same airport or nearby, nonstop, one stop via a shared hub, or two stops. It shows an estimated door-to-door flying time worked out from distance, e.g. "From San Diego (SAN): no nonstop; one stop via Tokyo or Hong Kong, about 17–19 h". Under it, each city keeps a short local note that doesn't depend on home (how far the airport is, the nearest bigger airport, ferries). The US-framed wording is rewritten for all 134 cities. Changing the home city updates the card live. Done = all stages pass verification in the running build; deploy waits for the user's go.
+A city profile's "Getting there" is one hand-written sentence per city, written for someone flying from the US, and it reads the same whatever the home city is (San Diego, London or Toronto). Make it depend on home: each city gets its main airport and its current nonstop routes (as of Nov 2026, sourced). From these the app works out the trip from the home city's airport: same airport or nearby, nonstop, one stop via a shared hub, or two stops. It shows an estimated door-to-door flying time worked out from distance, e.g. "From San Diego (SAN): no nonstop; one stop via Tokyo or Hong Kong, about 17–19 h". Under it, each city keeps a short local note that doesn't depend on home (how far the airport is, the nearest bigger airport, ferries). The US-framed wording is rewritten for all 133 cities. Changing the home city updates the card live. Done = all stages pass verification in the running build; deploy waits for the user's go.
 
 ## Baseline
 2026-11-14 · tests: 824 pass · typecheck: clean
 
 ## Now
-Stage 2 of 3 · Route data
-Mode: autopilot
+Stage 3 of 3 · Home-aware card
+Mode: autopilot — unattended
 Agents: lean
 Risk: UI only
 Checks:
-- [ ] Every one of the 134 cities maps to a main airport; every airport has a city name, coordinates, a source, and nonstops that name only airports in the file (proof: test)
-- [ ] Every home–destination pair among the 134 cities resolves to a route (ground, nonstop, one or two stops); none reads "no route in our data" (proof: test)
-- [ ] Known pairs come out right: JFK–LHR and LHR–LIS nonstop, San Diego–Bangkok one stop, Torrevieja–Alicante no flight (proof: test)
-- [ ] Ten routes picked at random match the airport's published route list (proof: source check by hand, a test can't read the web)
+- [ ] A city profile's Getting there shows the computed route line for the current home city, with the city's local note under it, at desktop and phone width (proof: screenshots)
+- [ ] Changing the home city updates the open profile's line with no reload, e.g. San Diego → London turns Lisbon from "one stop" to "nonstop" (proof: scripted run with screenshots)
+- [ ] The home city's own profile shows no route line, only the local note (proof: screenshot)
+- [ ] All 133 local notes are home-independent: none mentions the US, Americans or a US airport/airline as the reader's origin, and none lists nonstop routes (proof: test)
 Open: none
 
 ## Stages
 - [x] 1. Route engine — airport and route data shape, `routeBetween` and the hour estimate, the sentence builder, pilot data for a handful of airports, all tested
-- [ ] 2. Route data — main airport and current nonstops (among the 134 cities' airports and about 30 world hubs) for every city, sourced and dated, with a coverage test
-- [ ] 3. Home-aware card — the profile's Getting there shows the computed line and the local note, live on home change; all 134 `access` notes rewritten to drop the US framing
+- [x] 2. Route data — gateway airport and current nonstops (among the 133 cities' gateway airports and world hubs, 130 in all) for every city, sourced and dated, with a coverage test
+- [ ] 3. Home-aware card — the profile's Getting there shows the computed line and the local note, live on home change; all 133 `access` notes rewritten to drop the US framing
 
 ## Decisions
 - 2026-11-14 · Routes + estimated hours, no airline names (they go stale fastest); dated "as of Nov 2026" — user picked the recommended option.
-- 2026-11-14 · The hand-written text becomes a home-independent local note under the computed line, with the US framing removed from all 134 — user picked the recommended option.
+- 2026-11-14 · The hand-written text becomes a home-independent local note under the computed line, with the US framing removed from all 133 — user picked the recommended option.
 - 2026-11-14 · Agents: lean; run on autopilot once the plan is approved — user: "Let's plan the homeware version. And let's do Jbit autopilot lean".
 - 2026-11-14 · Scale: 3 stages, one feature, one release — no scale signal fired, planned as one plan.
 - 2026-11-14 · Routes are kept only between a fixed set of airports (each city's main airport plus about 30 world hubs); a route counts in both directions when either end lists it; the hub pair with the shortest total distance is chosen — PM's call (default).
@@ -33,6 +33,22 @@ Open: none
 
 - 2026-11-14 · No keel:review for stage 1: UI-only, pure functions with tests; risk line matches the diff — PM's call.
 - 2026-11-14 · Stage 1 closed: 3/3 checks pass, 835 tests green ([evidence](evidence/stage-1/report.md)) — PM.
+- 2026-11-14 · There are 133 cities, not 134 — the plan's count was off by one; wording corrected — PM.
+- 2026-11-14 · A city's airport is its gateway, the one travellers fly into from abroad (Cuenca → Guayaquil, Placencia → Belize City, Sarandë → Corfu, Hua Hin → Bangkok); the last hop or drive goes in the city's local note — PM's call (default).
+- 2026-11-14 · Multi-airport cities use IATA metro codes with the union of their routes (NYC, WAS, LON, PAR, TYO, BUE): "From New York City (NYC)" — PM's call: a resident picks whichever airport has the flight.
+- 2026-11-14 · Seasonal nonstops are kept apart: "seasonal nonstop to Split (SPU), about 10–11 h; otherwise one stop via Frankfurt"; connections use year-round routes and fall back to seasonal ones only when nothing else connects — PM's call: a summer-only nonstop shouldn't read as year-round.
+- 2026-11-14 · Route data is researched by one agent per region, one at a time (lean): North America, Latin America, Europe/Middle East/Africa, Asia-Pacific — PM.
+- 2026-11-14 · Research agents may read Wikipedia (en.wikipedia.org) airport route tables, downloads only — user: "Yes".
+- 2026-11-14 · Research agents read Wikipedia with WebFetch, not curl: the JBIT hook blocks curl as outward under autopilot; WebFetch goes through Claude Code's own permission prompt — user: "Use web fetch".
+- 2026-11-14 · (unattended) Routes count if flying on 14 Nov 2026 (later starts left out, announced ends kept); when two airports' tables disagree on year-round vs seasonal, year-round wins, as the engine already merges both sides: the date the data is "as of", and a route someone flies year-round shouldn't read as seasonal.
+- 2026-11-14 · (unattended) Europe/Middle East/Africa (47 airports) is researched in two halves, one agent after the other, into the same file: one agent's context won't hold 47 route tables.
+- 2026-11-14 · (unattended) A flight that stops on the way, even on the same plane (Dubai–Bogotá via Miami), isn't a nonstop and is left out at both ends: the card would otherwise call it nonstop.
+- 2026-11-14 · (unattended) Routes may have three stops, as a last resort: eight pairs between small airports (David, Panama, and Roatán to Chiang Rai, Langkawi, Penang, Cebu and others) have no two-stop path in the real data, and "three stops" is honest where "no route" isn't and inventing routes would be wrong. The check's wording changed to match.
+- 2026-11-14 · (unattended) The same-plane stopping flights found in the Asia-Pacific research (LON, IST, PAR, FCO and NYC to Sydney; LON and HEL to Melbourne; LAX to Bangkok and Saigon; Dubai, Amsterdam, Addis Ababa and Doha to smaller Asian airports) come out of the other region files too, following the rule above.
+- 2026-11-14 · No jbit:review for stage 2: data plus a pure-function fallback with tests, UI only; risk line matches the diff — PM's call.
+- 2026-11-14 · Stage 2 closed: 4/4 checks pass, 845 tests green, 10/10 sampled routes match Wikipedia ([evidence](evidence/stage-2/report.md)) — PM.
+- 2026-11-14 · (unattended) The home city's own profile shows no route line, only the local note: a route from a city to itself means nothing.
+
 
 ## Open questions
 - At 320px the map city card's "+ Compare" chip wraps onto two lines (pre-existing) — from the stage 3 verify, later.

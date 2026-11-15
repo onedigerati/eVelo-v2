@@ -1,0 +1,33 @@
+$ npx vitest run src/ui/atlas/__tests__/airportsData.test.ts src/ui/atlas/__tests__/gettingThere.test.ts --reporter=verbose
+npm notice run evelo@2.0.0 npx
+npm notice run 'vitest' run src/ui/atlas/__tests__/airportsData.test.ts src/ui/atlas/__tests__/gettingThere.test.ts --reporter=verbose
+
+ RUN  v5.1.0 /home/jonah/repos/eVelo-v2
+
+ ✓ src/ui/atlas/__tests__/gettingThere.test.ts > routeBetween > needs no flight for a shared airport or a nearby city 2ms
+ ✓ src/ui/atlas/__tests__/gettingThere.test.ts > routeBetween > finds a nonstop listed by either end 0ms
+ ✓ src/ui/atlas/__tests__/gettingThere.test.ts > routeBetween > picks the one-stop hub with the shortest total distance, and names a close second 0ms
+ ✓ src/ui/atlas/__tests__/gettingThere.test.ts > routeBetween > names one hub when the others are much longer 0ms
+ ✓ src/ui/atlas/__tests__/gettingThere.test.ts > routeBetween > falls back to two stops when no one-stop path exists 0ms
+ ✓ src/ui/atlas/__tests__/gettingThere.test.ts > routeBetween > says unknown when there is no airport or no path 0ms
+ ✓ src/ui/atlas/__tests__/gettingThere.test.ts > three stops > falls back to three stops on the shortest path when nothing shorter connects 0ms
+ ✓ src/ui/atlas/__tests__/gettingThere.test.ts > three stops > never uses three stops when a two-stop path exists, even a longer one 0ms
+ ✓ src/ui/atlas/__tests__/gettingThere.test.ts > three stops > takes year-round three stops before seasonal ones 1ms
+ ✓ src/ui/atlas/__tests__/gettingThere.test.ts > three stops > writes the three-stop sentence 0ms
+ ✓ src/ui/atlas/__tests__/gettingThere.test.ts > seasonal nonstops > a seasonal-only nonstop says so and gives the year-round trip 0ms
+ ✓ src/ui/atlas/__tests__/gettingThere.test.ts > seasonal nonstops > connections fall back to seasonal legs only when nothing year-round connects 0ms
+ ✓ src/ui/atlas/__tests__/gettingThere.test.ts > estimateHours > JFK–LHR nonstop is within an hour of the typical 7–8 h 0ms
+ ✓ src/ui/atlas/__tests__/gettingThere.test.ts > estimateHours > SAN–BKK via Tokyo is within an hour of the typical 19–22 h 0ms
+ ✓ src/ui/atlas/__tests__/gettingThere.test.ts > estimateHours > uses great-circle distance 0ms
+ ✓ src/ui/atlas/__tests__/gettingThere.test.ts > routeSentence > writes every kind from the home city, with hub city names and no "US" 0ms
+ ✓ src/ui/atlas/__tests__/gettingThere.test.ts > routeSentence > shows an hour range at least one hour wide 0ms
+ ✓ src/ui/atlas/__tests__/airportsData.test.ts > airport data > maps every city to a gateway airport in the graph, near the city 5ms
+ ✓ src/ui/atlas/__tests__/airportsData.test.ts > airport data > has exactly one well-formed, sourced entry per node 45ms
+ ✓ src/ui/atlas/__tests__/airportsData.test.ts > airport data > gives every home–destination pair a route 165ms
+ ✓ src/ui/atlas/__tests__/airportsData.test.ts > airport data > gets known pairs right 1ms
+
+ Test Files  2 passed (2)
+      Tests  21 passed (21)
+   Start at  23:25:24
+   Duration  359ms (tests 72%, transform 16%, import 11%, worker 2%)
+

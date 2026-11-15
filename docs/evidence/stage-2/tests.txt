@@ -1,0 +1,7 @@
+$ npm test
+
+ Test Files  61 passed (61)
+      Tests  845 passed (845)
+   Start at  23:25:25
+   Duration  14.36s (transform 69%, tests 22%, import 9%)
+

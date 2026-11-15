@@ -62,6 +62,72 @@ describe('routeBetween', () => {
   })
 })
 
+describe('three stops', () => {
+  // JFK–LHR–DOH–SIN–DPS is the short way to Bali; JFK–GRU–JNB–PER–DPS the long one.
+  // SYD: two stops via GRU and JNB, though the three-stop JFK–LHR–DOH–SIN–SYD is shorter.
+  const legs = (extra: { JFK?: string[]; seasonal?: string[] } = {}) => [
+    { ...ap('JFK', 'New York', 40.64, -73.78, extra.JFK ?? ['LHR', 'GRU']), ...(extra.seasonal ? { seasonal: extra.seasonal } : {}) },
+    ap('LHR', 'London', 51.47, -0.45, ['DOH']),
+    ap('DOH', 'Doha', 25.27, 51.61, ['SIN']),
+    ap('SIN', 'Singapore', 1.36, 103.99, ['DPS', 'SYD']),
+    ap('GRU', 'São Paulo', -23.43, -46.47, ['JNB']),
+    ap('JNB', 'Johannesburg', -26.14, 28.24, ['PER', 'SYD']),
+    ap('PER', 'Perth', -31.94, 115.97, ['DPS']),
+    ap('DPS', 'Bali', -8.75, 115.17),
+    ap('SYD', 'Sydney', -33.95, 151.18),
+  ]
+  const T = buildRouteTable(legs())
+  const JFK = place('New York', 40.71, -74.01, 'JFK')
+  const DPS = place('Bali', -8.65, 115.22, 'DPS')
+
+  it('falls back to three stops on the shortest path when nothing shorter connects', () => {
+    expect(routeBetween(JFK, DPS, T)).toMatchObject({ kind: 'three-stop', from: 'JFK', to: 'DPS', via: ['LHR', 'DOH', 'SIN'] })
+    expect(routeBetween(DPS, JFK, T)).toMatchObject({ kind: 'three-stop', via: ['SIN', 'DOH', 'LHR'] })
+  })
+
+  it('never uses three stops when a two-stop path exists, even a longer one', () => {
+    expect(routeBetween(JFK, place('Sydney', -33.87, 151.21, 'SYD'), T)).toMatchObject({ kind: 'two-stop', via: ['GRU', 'JNB'] })
+  })
+
+  it('takes year-round three stops before seasonal ones', () => {
+    const U = buildRouteTable(legs({ JFK: ['GRU'], seasonal: ['LHR'] }))
+    expect(routeBetween(JFK, DPS, U)).toMatchObject({ kind: 'three-stop', via: ['GRU', 'JNB', 'PER'] })
+  })
+
+  it('writes the three-stop sentence', () => {
+    expect(routeSentence(JFK, DPS, routeBetween(JFK, DPS, T), T)).toMatch(
+      /^From New York \(JFK\): three stops, for example via London, Doha and Singapore, about \d+–\d+ h\.$/,
+    )
+  })
+})
+
+describe('seasonal nonstops', () => {
+  const T = buildRouteTable([
+    { ...ap('EWR', 'Newark', 40.69, -74.17, ['FRA']), seasonal: ['SPU'] },
+    ap('FRA', 'Frankfurt', 50.03, 8.56, ['SPU']),
+    ap('SPU', 'Split', 43.54, 16.3),
+  ])
+  const NWK = place('Newark', 40.73, -74.17, 'EWR')
+  const SPLIT = place('Split', 43.51, 16.44, 'SPU')
+
+  it('a seasonal-only nonstop says so and gives the year-round trip', () => {
+    const r = routeBetween(NWK, SPLIT, T)
+    expect(r).toMatchObject({ kind: 'nonstop', seasonal: true, otherwise: { kind: 'one-stop', via: ['FRA'] } })
+    expect(routeSentence(NWK, SPLIT, r, T)).toMatch(
+      /^From Newark \(EWR\): seasonal nonstop to Split \(SPU\), about \d+–\d+ h; otherwise one stop via Frankfurt, about \d+–\d+ h\.$/,
+    )
+  })
+
+  it('connections fall back to seasonal legs only when nothing year-round connects', () => {
+    const U = buildRouteTable([
+      { ...ap('JFK', 'New York', 40.64, -73.78, ['LHR']) },
+      { ...ap('LHR', 'London', 51.47, -0.45), seasonal: ['SPU'] },
+      ap('SPU', 'Split', 43.54, 16.3),
+    ])
+    expect(routeBetween(place('New York', 40.71, -74.01, 'JFK'), SPLIT, U)).toMatchObject({ kind: 'one-stop', via: ['LHR'] })
+  })
+})
+
 describe('estimateHours', () => {
   const real = buildRouteTable([
     ap('JFK', 'New York', 40.64, -73.78),
