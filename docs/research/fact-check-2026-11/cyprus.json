@@ -1,0 +1,647 @@
+{
+  "country": "Cyprus",
+  "cities": [
+    "paphos",
+    "limassol"
+  ],
+  "claims": [
+    {
+      "id": "cy-tax-no-wealth-tax",
+      "fact": "tax",
+      "cities": [
+        "paphos",
+        "limassol"
+      ],
+      "claim": "Cyprus has no wealth tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: quick chart, net wealth/worth tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/net-wealth-worth-tax-rates",
+          "read": "2026-11-15",
+          "says": "Headline net wealth/worth tax rate: Greece \"NA\" (last reviewed 08 September 2026), Cyprus \"NA\" (04 August 2026), Croatia \"NA\" (27 August 2026), Bulgaria \"NA\" (02 August 2026). \"NA\" is defined as \"Not Applicable (i.e. the territory does not have the indicated tax or requirement)\"."
+        }
+      ],
+      "note": "localTaxes.ts agrees (CY: \"Cyprus has neither\")."
+    },
+    {
+      "id": "cy-tax-dividends-interest-exempt-income-tax",
+      "fact": "tax",
+      "cities": [
+        "paphos",
+        "limassol"
+      ],
+      "claim": "Dividends and interest are exempt from income tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Cyprus, individual, income determination",
+          "url": "https://taxsummaries.pwc.com/cyprus/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 04 August 2026. Dividend and interest income \"received by individuals are exempt from PIT but are subject to SDC\". SDC applies only to individuals who are both Cyprus tax resident and Cyprus domiciled; for those not domiciled, \"dividend and (most types of) interest income for such individuals are exempt from all taxes in Cyprus.\" Profits from disposals of shares, bonds and fund units are exempt from income tax."
+        },
+        {
+          "name": "EY Cyprus: tax alert, February 2026 (tax reform legislation)",
+          "url": "https://www.ey.com/en_cy/technical/tax-alert/tax-legi-february-2026",
+          "read": "2026-11-15",
+          "says": "Dated 26 February 2026. Domiciled individuals' dividends are \"subject to 5% SDC\" (17% for pre-2026 profits of Cypriot companies paid by 31 December 2031); interest \"will no longer be subject to income tax and it will instead be subject to a 17% SDC\". A former non-dom \"may choose to be subject to an alternative way of SDC for up to two five-year periods\" by an upfront payment of €250,000 per five-year period. Nothing on GHS contributions for non-doms."
+        }
+      ]
+    },
+    {
+      "id": "cy-tax-non-dom-no-sdc-17-of-20",
+      "fact": "tax",
+      "cities": [
+        "paphos",
+        "limassol"
+      ],
+      "claim": "A non-domiciled resident pays no Special Defence Contribution until resident 17 of the last 20 years",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Cyprus, individual, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/cyprus/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 04 August 2026. SDC on dividends: \"17% for profits of tax years up to 2025\" \"or 5% for profits of tax years as of 2026\"; on interest 17% (3% on certain bonds). SDC is charged on income \"earned by individuals who are both Cyprus tax resident and Cyprus domiciled for the purposes of the SDC\". An individual without a Cyprus domicile of origin is treated as domiciled only after being tax resident for \"at least 17 years out of the last 20 years prior to the tax year in question\"."
+        },
+        {
+          "name": "PwC: Cyprus, individual, income determination",
+          "url": "https://taxsummaries.pwc.com/cyprus/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 04 August 2026. Dividend and interest income \"received by individuals are exempt from PIT but are subject to SDC\". SDC applies only to individuals who are both Cyprus tax resident and Cyprus domiciled; for those not domiciled, \"dividend and (most types of) interest income for such individuals are exempt from all taxes in Cyprus.\" Profits from disposals of shares, bonds and fund units are exempt from income tax."
+        }
+      ],
+      "note": "The 2026 reform (in force 1 January 2026) cut SDC on dividends to 5% for domiciled residents, on profits from 2026; it did not change the non-dom exemption. The Tax Department's own pages were not found in an HTML form (its GHS guidance on mof.gov.cy is a PDF). Paphos's `why` (\"non-dom dividends and interest effectively capped at the 2.65% health levy\") agrees; scores.tax stays 5."
+    },
+    {
+      "id": "cy-tax-gesy-rate-cap",
+      "fact": "tax",
+      "cities": [
+        "paphos",
+        "limassol"
+      ],
+      "claim": "The GeSY contribution on dividends and interest is 2.65%, capped at about €4.8k a year",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Cyprus, individual, other taxes",
+          "url": "https://taxsummaries.pwc.com/cyprus/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 04 August 2026. General Healthcare System: persons earning \"Rental, interest, dividend, and other income\" pay 2.65%; pensioners pay 2.65% on their pension; \"GHS contributions are capped at EUR 180,000 annual income.\" The page does not say whether non-domiciled individuals pay."
+        }
+      ],
+      "note": "2.65% of the EUR 180,000 income cap is €4,770. gesy.org.cy's contribution page could not be reached (the URL tried returned HTTP 404)."
+    },
+    {
+      "id": "cy-tax-gesy-applies-to-non-doms",
+      "fact": "tax",
+      "cities": [
+        "paphos",
+        "limassol"
+      ],
+      "claim": "A non-dom still pays the GeSY contribution on dividends and interest",
+      "verdict": "cant-confirm",
+      "hedge": "assume it applies",
+      "wording": "(PwC does not carve non-doms out of GeSY, so assume it applies)",
+      "sources": [
+        {
+          "name": "PwC: Cyprus, individual, other taxes",
+          "url": "https://taxsummaries.pwc.com/cyprus/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 04 August 2026. General Healthcare System: persons earning \"Rental, interest, dividend, and other income\" pay 2.65%; pensioners pay 2.65% on their pension; \"GHS contributions are capped at EUR 180,000 annual income.\" The page does not say whether non-domiciled individuals pay."
+        },
+        {
+          "name": "PwC: Cyprus, individual, income determination",
+          "url": "https://taxsummaries.pwc.com/cyprus/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 04 August 2026. Dividend and interest income \"received by individuals are exempt from PIT but are subject to SDC\". SDC applies only to individuals who are both Cyprus tax resident and Cyprus domiciled; for those not domiciled, \"dividend and (most types of) interest income for such individuals are exempt from all taxes in Cyprus.\" Profits from disposals of shares, bonds and fund units are exempt from income tax."
+        }
+      ],
+      "note": "PwC's two pages pull in different directions: the GHS section lists dividend and interest income at 2.65% with no exception for non-doms, while the income page says such income is \"exempt from all taxes in Cyprus\" for them (GHS is a contribution, not a tax). A search result, not a page read, quotes a tax blog saying non-dom dividends still carry 2.65% GHS. The profiles' hedge, which describes exactly what PwC does, stays. Not checked: whether the contribution reaches dividends paid by a US broker with no Cypriot paying agent."
+    },
+    {
+      "id": "cy-tax-lump-sum-after-17-years",
+      "fact": "tax",
+      "cities": [
+        "paphos",
+        "limassol"
+      ],
+      "claim": "After the 17 years, a €250k lump sum covers 5 more years free of SDC",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "EY Cyprus: tax alert, February 2026 (tax reform legislation)",
+          "url": "https://www.ey.com/en_cy/technical/tax-alert/tax-legi-february-2026",
+          "read": "2026-11-15",
+          "says": "Dated 26 February 2026. Domiciled individuals' dividends are \"subject to 5% SDC\" (17% for pre-2026 profits of Cypriot companies paid by 31 December 2031); interest \"will no longer be subject to income tax and it will instead be subject to a 17% SDC\". A former non-dom \"may choose to be subject to an alternative way of SDC for up to two five-year periods\" by an upfront payment of €250,000 per five-year period. Nothing on GHS contributions for non-doms."
+        },
+        {
+          "name": "Andersen Cyprus: Cyprus introduces an alternative SDC regime",
+          "url": "https://cy.andersen.com/news/cyprus-introduces-an-alternative-sdc-regime/",
+          "read": "2026-11-15",
+          "says": "Undated; \"as part of the 2026 Tax Reform\". Individuals \"deemed to acquire Cyprus domicile under the 17-out-of-20-year rule\" may \"pay a lump sum of €250,000\" for \"exemption from SDC on dividend and interest income for a period of five years\"; applications by 30 June of the first year."
+        }
+      ],
+      "note": "EY adds that the option can be used for up to two five-year periods."
+    },
+    {
+      "id": "cy-estate-no-inheritance-tax",
+      "fact": "estate",
+      "cities": [
+        "paphos",
+        "limassol"
+      ],
+      "claim": "Cyprus has no inheritance or estate tax, so a US portfolio passes to US-resident children with no Cypriot tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: quick chart, inheritance and gift tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates",
+          "read": "2026-11-15",
+          "says": "Greece (08 September 2026): inheritance \"Category A: 10; Category B: 20; Category C: 40\". Cyprus (04 August 2026): inheritance \"NA\"; gift \"Nil if up to a third degree relative.\" Croatia (27 August 2026): \"4\" and \"4\". Bulgaria (02 August 2026): \"Varies depending on category of the heir and the amount of the inheritance.\"; gift 3.3% to 6.6% to the municipalities."
+        }
+      ],
+      "note": "PwC's Cyprus \"other taxes\" page has no inheritance section; the quick chart gives \"NA\". The year of abolition is not claimed by the profiles and was not checked. localTaxes.ts agrees."
+    },
+    {
+      "id": "cy-estate-no-gift-tax-third-degree",
+      "fact": "estate",
+      "cities": [
+        "paphos",
+        "limassol"
+      ],
+      "claim": "There is no gift tax between relatives to the third degree",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: quick chart, inheritance and gift tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates",
+          "read": "2026-11-15",
+          "says": "Greece (08 September 2026): inheritance \"Category A: 10; Category B: 20; Category C: 40\". Cyprus (04 August 2026): inheritance \"NA\"; gift \"Nil if up to a third degree relative.\" Croatia (27 August 2026): \"4\" and \"4\". Bulgaria (02 August 2026): \"Varies depending on category of the heir and the amount of the inheritance.\"; gift 3.3% to 6.6% to the municipalities."
+        }
+      ]
+    },
+    {
+      "id": "cy-estate-no-us-treaty",
+      "fact": "estate",
+      "cities": [
+        "paphos",
+        "limassol"
+      ],
+      "claim": "There is no US–Cyprus estate treaty (\"no US estate treaty is needed\")",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-without",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list); none of the 37 countries named in this claim is among them."
+        }
+      ]
+    },
+    {
+      "id": "cy-lending-ibkr-accepts",
+      "fact": "lending",
+      "cities": [
+        "paphos",
+        "limassol"
+      ],
+      "claim": "IBKR serves Cyprus residents",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly serves Cyprus residents",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        }
+      ],
+      "note": "IBKR's sites were not tried again in this batch; they returned HTTP 403 to every read in stages 1 and 2. The hedge stays."
+    },
+    {
+      "id": "cy-lending-ibkr-eu-entity",
+      "fact": "lending",
+      "cities": [
+        "paphos",
+        "limassol"
+      ],
+      "claim": "Cyprus residents are served through IBKR's EU entity",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-eu-entity",
+      "hedge": "likely",
+      "wording": "(likely through its EU entity)",
+      "sources": [
+        {
+          "name": "Interactive Brokers Ireland Limited: Customer Agreement (document 4750, 7/1/2023), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/01_4750_IBIE_Customer_Agreement_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "Clause 1B: Interactive Brokers Ireland Limited (\"IBIE\") is incorporated in Ireland, company number 657406, and \"is regulated by the Central Bank of Ireland\", register number C423427. Clause 1C: unless told otherwise in writing, the client is categorised as a Retail Client. The agreement does not say which countries' residents IBIE serves."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. \"In the EU, customers sign up with the Irish entity\"; UK clients are with Interactive Brokers (U.K.) Limited; the Irish €20k compensation scheme applies to Eastern Europe after the Irish and Hungarian entities merged."
+        },
+        {
+          "name": "Investing in the Web: Interactive Brokers in Europe",
+          "url": "https://investingintheweb.com/broker-reviews/interactive-brokers-europe",
+          "read": "2026-11-15",
+          "says": "Updated on Sep 8, 2026. \"As an European resident, you are under the Central Bank of Ireland regulation\" (Interactive Brokers Ireland Limited); \"As a UK resident, you will be under this legal entity\" (Interactive Brokers UK Limited); \"Interactive Brokers Luxembourg and Central have been extinct/merged.\""
+        }
+      ]
+    },
+    {
+      "id": "cy-lending-schwab-unavailable",
+      "fact": "lending",
+      "cities": [
+        "paphos",
+        "limassol"
+      ],
+      "claim": "Schwab International is unavailable to Cyprus residents",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab International is reportedly unavailable to Cyprus residents",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026; read again on 2026-11-15 for Greece, Cyprus, Croatia and Bulgaria. The 51 countries and regions Schwab's international application accepted that day include Greece; Croatia is one of 12 named as not accepted; Cyprus and Bulgaria are not mentioned (the page says about 200 other countries and regions got a \"cannot open accounts\" message). It quotes the Schwab One Account Agreement: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds from their account.\""
+        }
+      ],
+      "also": [
+        "\"is reportedly unavailable\" became \"is reportedly unavailable to Cyprus residents\" when the sentence was rejoined"
+      ],
+      "note": "Cyprus is not among the 51 accepted on the one dated list and is not one of the 12 it names as refused; the page says every other country got a \"cannot open accounts\" message. \"Reportedly unavailable\" is what it reports."
+    },
+    {
+      "id": "cy-lending-ibkr-margin-cash-out",
+      "fact": "lending",
+      "cities": [
+        "paphos",
+        "limassol"
+      ],
+      "claim": "A Cyprus resident can borrow against the portfolio at IBKR (implied by \"with margin terms per country unknown\" and the drawback \"so borrowing rests on IBKR\")",
+      "verdict": "corrected",
+      "shared": "ibkr-eu-margin-cash-out",
+      "oldWording": "with margin terms per country unknown; Schwab International is reportedly unavailable, and",
+      "newWording": "and IBKR's EU entity reportedly lends on margin only to buy securities, not to withdraw as cash, so confirm how you would draw cash before relying on it",
+      "sources": [
+        {
+          "name": "LYNX: Withdrawal (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/payments-and-transfers/withdrawal/",
+          "read": "2026-11-15",
+          "says": "\"It is not possible to withdraw in a currency if your cash balance is negative or would go negative after the withdrawal.\" In a margin account \"some funds may be used as collateral for other positions or to cover negative cash balances\", which lowers what can be withdrawn. The page is undated (footer: Copyright 2023)."
+        },
+        {
+          "name": "CapTrader: Geld abheben (help page of a German introducing broker for Interactive Brokers)",
+          "url": "https://www.captrader.com/geld-abheben/",
+          "read": "2026-11-15",
+          "says": "\"Auszahlungen sind nur möglich, wenn kein negativer Saldo in der entsprechenden Währung\" or in the total cash arises or grows: withdrawals are possible only if they do not create or increase a negative balance. Footer: © CapTrader 2026."
+        },
+        {
+          "name": "Interactive Brokers Ireland Limited: Customer Agreement (document 4750, 7/1/2023), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/01_4750_IBIE_Customer_Agreement_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "Clause 2A(i)(d) defines the margin service as one \"to enable Clients to acquire investment instruments\". Clause 5A(iv): \"Terms and conditions for deposit and withdrawal of funds (including holding periods) are as specified on the IBIE website.\" The agreement does not say that a loan may be withdrawn as cash."
+        },
+        {
+          "name": "Mustachian Post forum: Using margin loan at Interactive Brokers, page 13",
+          "url": "https://forum.mustachianpost.com/t/using-margin-loan-at-interactive-brokers/3980?page=13",
+          "read": "2026-11-15",
+          "says": "Posts of September to November 2024. One poster says withdrawing cash on margin is \"not possible in Germany with IB IE\" but is with IB UK; Swiss residents with IB UK accounts report having done it; another reports IBKR service saying \"IBUK customers can no longer withdraw cash if aggregate cash balance is -ve\", which a manager then said applies only to UK residents."
+        }
+      ],
+      "also": [
+        "scores.lending 3→2 on both (plan decision of 2026-11-15; rubric 2: IBKR only and even that uncertain, or EU residence)",
+        "summary: added the closing sentence \"The weak point is the borrow step: Schwab is reportedly unavailable to Cyprus residents, and IBKR reportedly bars EU residents from drawing margin as cash.\" to both",
+        "drawback 3 reworded on both, see cy-lending-drawback-borrowing-rests-on-ibkr",
+        "sources: added LYNX withdrawal page to both",
+        "\"with margin terms per country unknown\" dropped: the clause that replaces it says what is reported about margin"
+      ],
+      "rankFlag": "Paphos is pick 3 and Limassol pick 18, and both now score lending 2: the one broker reported to serve Cyprus residents reportedly will not pay a margin loan out as cash, so the borrow step of buy-borrow-die is in doubt for the third-ranked pick. Paphos's `why` sells the tax profile, residence and healthcare and does not mention borrowing, so it is not contradicted, but a rank of 3 sits oddly beside a lending score of 2. Ranks and `why` lines are unchanged: user's call.",
+      "note": "The profiles never said \"so plan on IBKR margin\". The standard clause was adapted to end \"before relying on it\" (one broker, since Schwab is reportedly unavailable), as for Malta. Shared sources are copied with their stage 1 read date; the LYNX page was not re-read."
+    },
+    {
+      "id": "cy-lending-drawback-borrowing-rests-on-ibkr",
+      "fact": "lending",
+      "cities": [
+        "paphos",
+        "limassol"
+      ],
+      "claim": "Schwab International is unavailable, \"so borrowing rests on IBKR\" (drawback)",
+      "verdict": "corrected",
+      "shared": "ibkr-eu-margin-cash-out",
+      "oldWording": "so borrowing rests on IBKR",
+      "newWording": "Schwab International is reportedly unavailable, and IBKR reportedly will not pay a margin loan out as cash in the EU",
+      "sources": [
+        {
+          "name": "LYNX: Withdrawal (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/payments-and-transfers/withdrawal/",
+          "read": "2026-11-15",
+          "says": "\"It is not possible to withdraw in a currency if your cash balance is negative or would go negative after the withdrawal.\" In a margin account \"some funds may be used as collateral for other positions or to cover negative cash balances\", which lowers what can be withdrawn. The page is undated (footer: Copyright 2023)."
+        },
+        {
+          "name": "CapTrader: Geld abheben (help page of a German introducing broker for Interactive Brokers)",
+          "url": "https://www.captrader.com/geld-abheben/",
+          "read": "2026-11-15",
+          "says": "\"Auszahlungen sind nur möglich, wenn kein negativer Saldo in der entsprechenden Währung\" or in the total cash arises or grows: withdrawals are possible only if they do not create or increase a negative balance. Footer: © CapTrader 2026."
+        },
+        {
+          "name": "Interactive Brokers Ireland Limited: Customer Agreement (document 4750, 7/1/2023), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/01_4750_IBIE_Customer_Agreement_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "Clause 2A(i)(d) defines the margin service as one \"to enable Clients to acquire investment instruments\". Clause 5A(iv): \"Terms and conditions for deposit and withdrawal of funds (including holding periods) are as specified on the IBIE website.\" The agreement does not say that a loan may be withdrawn as cash."
+        },
+        {
+          "name": "Mustachian Post forum: Using margin loan at Interactive Brokers, page 13",
+          "url": "https://forum.mustachianpost.com/t/using-margin-loan-at-interactive-brokers/3980?page=13",
+          "read": "2026-11-15",
+          "says": "Posts of September to November 2024. One poster says withdrawing cash on margin is \"not possible in Germany with IB IE\" but is with IB UK; Swiss residents with IB UK accounts report having done it; another reports IBKR service saying \"IBUK customers can no longer withdraw cash if aggregate cash balance is -ve\", which a manager then said applies only to UK residents."
+        }
+      ],
+      "note": "The drawback told the reader borrowing could rest on IBKR. Reworded to cover both brokers, hedged."
+    },
+    {
+      "id": "cy-lending-priips-new-buys",
+      "fact": "lending",
+      "cities": [
+        "paphos",
+        "limassol"
+      ],
+      "claim": "EU PRIIPs rules block new purchases of US ETFs",
+      "verdict": "confirmed",
+      "shared": "priips-us-etf-new-buys-blocked",
+      "sources": [
+        {
+          "name": "LYNX: Key Information Document (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/products-and-regulations/regulations/key-information-document/",
+          "read": "2026-11-15",
+          "says": "Retail clients are \"not permitted to trade ETFs or other products that do not have a valid KID\"; many non-EU ETFs have none. Can a retail client buy US ETFs? \"No, not unless you are classified as a professional investor.\" The same applies to ETFs from Canada, Hong Kong, Mexico and Australia. The KID has applied to most products since 1 January 2018."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. \"PRIIPs is an EU rule that prohibits buying US-listed ETFs\", and this also applies to UK investors; US ETFs are open only to elective professional clients, while UCITS ETFs are available to all Europeans."
+        }
+      ],
+      "note": "The profile's \"reportedly\" stays; it does no harm."
+    },
+    {
+      "id": "cy-lending-priips-holdings-kept",
+      "fact": "lending",
+      "cities": [
+        "paphos",
+        "limassol"
+      ],
+      "claim": "Existing holdings can usually be kept",
+      "verdict": "confirmed",
+      "shared": "priips-existing-holdings-kept",
+      "sources": [
+        {
+          "name": "LYNX: Key Information Document (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/products-and-regulations/regulations/key-information-document/",
+          "read": "2026-11-15",
+          "says": "The page's FAQ says retail clients \"may still hold or sell existing positions, but new purchases are restricted.\""
+        },
+        {
+          "name": "Regulation (EU) No 1286/2014, Article 13, as adopted (legislation.gov.uk copy of the EU text)",
+          "url": "https://www.legislation.gov.uk/eur/2014/1286/article/13/adopted",
+          "read": "2026-11-15",
+          "says": "The duty to provide a KID falls on \"a person advising on, or selling, a PRIIP\" before the retail investor is bound; nothing in the article reaches a PRIIP the investor already holds or a sale by the investor."
+        }
+      ]
+    },
+    {
+      "id": "cy-visa-category-f-income",
+      "fact": "visa",
+      "cities": [
+        "paphos",
+        "limassol"
+      ],
+      "claim": "Category F permanent residence needs secured foreign income of at least €9,568 a year, plus €4,613 per dependant, and dividends and interest count",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "GK Law Firm: Cyprus Category F permanent residency",
+          "url": "https://gk-lawfirm.com/practice-areas/immigration-law/cyprus-permanent-residency/category-f-visa",
+          "read": "2026-11-15",
+          "says": "Updated October 19, 2026. A secured annual income of \"at least €9,568, raised by at least €4,613 for each dependent\"; \"Income from pensions, dividends on shares, interest on fixed deposits, rents and similar sources\"; \"a rented home is sufficient\"; the category is for people who can live \"without having to engage in any business, trade or profession in the Republic\"; an Immigration Permit \"ceases to be valid if the holder is absent from Cyprus for two years\"."
+        },
+        {
+          "name": "Cyprus Mail: Cyprus residency requirements, visas, permits and permanent residence explained",
+          "url": "https://cyprus-mail.com/2026/01/28/cyprus-residency-requirements-visas-permits-and-permanent-residence-explained",
+          "read": "2026-11-15",
+          "says": "Dated 28 January (2026 in the URL). Category F: \"Historically around €9,600 per year for the main applicant\", \"Additional income required for dependents\", \"Does not allow employment in Cyprus\", \"Property ownership or long-term rental in Cyprus\". Fast-track permanent residency by investment: \"Purchase of new residential property valued at €300,000 + VAT\" and minimum annual income from abroad of €50,000, plus €15,000 for a spouse and €10,000 per dependent child."
+        }
+      ],
+      "note": "The Migration Department's own page returned HTTP 403 (https://www.gov.cy/mip-md/en/documents/companies-investors-permanent-residence-3/immigration-permits/); a search result for it, which is not a read, shows the same two amounts and the same list of income sources. A law-firm page updated 19 October 2026 was used. Paphos's summary (\"about €9,600 a year\") agrees; scores.visa stays 5."
+    },
+    {
+      "id": "cy-visa-category-f-terms",
+      "fact": "visa",
+      "cities": [
+        "paphos",
+        "limassol"
+      ],
+      "claim": "Renting is fine, no work is allowed, and the permit lapses after 2 years away",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "GK Law Firm: Cyprus Category F permanent residency",
+          "url": "https://gk-lawfirm.com/practice-areas/immigration-law/cyprus-permanent-residency/category-f-visa",
+          "read": "2026-11-15",
+          "says": "Updated October 19, 2026. A secured annual income of \"at least €9,568, raised by at least €4,613 for each dependent\"; \"Income from pensions, dividends on shares, interest on fixed deposits, rents and similar sources\"; \"a rented home is sufficient\"; the category is for people who can live \"without having to engage in any business, trade or profession in the Republic\"; an Immigration Permit \"ceases to be valid if the holder is absent from Cyprus for two years\"."
+        },
+        {
+          "name": "Cyprus Mail: Cyprus residency requirements, visas, permits and permanent residence explained",
+          "url": "https://cyprus-mail.com/2026/01/28/cyprus-residency-requirements-visas-permits-and-permanent-residence-explained",
+          "read": "2026-11-15",
+          "says": "Dated 28 January (2026 in the URL). Category F: \"Historically around €9,600 per year for the main applicant\", \"Additional income required for dependents\", \"Does not allow employment in Cyprus\", \"Property ownership or long-term rental in Cyprus\". Fast-track permanent residency by investment: \"Purchase of new residential property valued at €300,000 + VAT\" and minimum annual income from abroad of €50,000, plus €15,000 for a spouse and €10,000 per dependent child."
+        }
+      ]
+    },
+    {
+      "id": "cy-visa-investment-route",
+      "fact": "visa",
+      "cities": [
+        "paphos",
+        "limassol"
+      ],
+      "claim": "The alternative route is €300k of new property plus €50k a year of income",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Cyprus Mail: Cyprus residency requirements, visas, permits and permanent residence explained",
+          "url": "https://cyprus-mail.com/2026/01/28/cyprus-residency-requirements-visas-permits-and-permanent-residence-explained",
+          "read": "2026-11-15",
+          "says": "Dated 28 January (2026 in the URL). Category F: \"Historically around €9,600 per year for the main applicant\", \"Additional income required for dependents\", \"Does not allow employment in Cyprus\", \"Property ownership or long-term rental in Cyprus\". Fast-track permanent residency by investment: \"Purchase of new residential property valued at €300,000 + VAT\" and minimum annual income from abroad of €50,000, plus €15,000 for a spouse and €10,000 per dependent child."
+        }
+      ],
+      "note": "The official investor page returned HTTP 403 (https://www.gov.cy/mip-md/en/documents/companies-investors-permanent-residence-3/immigration-permits-for-investors/). The secondary page adds VAT on the €300,000 and €15,000 for a spouse and €10,000 per child on the income, which the profiles leave out."
+    },
+    {
+      "id": "cy-healthcare-category-f-gesy",
+      "fact": "healthcare",
+      "cities": [
+        "paphos",
+        "limassol"
+      ],
+      "claim": "Category F holders can join GeSY",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Demetriades Law: what is GeSY",
+          "url": "https://www.demetriadeslaw.com/what-is-gesy/",
+          "read": "2026-11-15",
+          "says": "Undated (copyright 2024). Non-EU holders of Category F or Regulation 6(2) permits \"may apply for GESY registration\" and \"can register with GESY, provided they\" prove habitual residence in the government-controlled area. Contributions: employees 2.65%, pensioners 2.65%. No co-payment cap is given."
+        },
+        {
+          "name": "Cyprus Mail: how healthcare works in Cyprus, GeSY explained",
+          "url": "https://cyprus-mail.com/2026/01/28/how-healthcare-works-in-cyprus-gesy-explained-costs-compared-and-who-qualifies",
+          "read": "2026-11-15",
+          "says": "Dated 28 January (2026 in the URL). Non-EU citizens qualify if they \"Hold a valid residence permit\" and have permanent or long-term residence status or equal treatment under social insurance law. \"Annual ceilings apply, meaning frequent users are protected from escalating costs\"; no ceiling figure is given."
+        }
+      ],
+      "note": "gesy.org.cy's beneficiaries page could not be reached (the URL tried returned HTTP 404). Two secondary pages agree; the law firm adds that habitual residence has to be shown. Paphos's `why` (\"GeSY healthcare\") agrees."
+    },
+    {
+      "id": "cy-healthcare-copay-cap",
+      "fact": "healthcare",
+      "cities": [
+        "paphos",
+        "limassol"
+      ],
+      "claim": "GeSY co-pays are capped at €150 a year (2026)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "index.cy: hospitals in Cyprus, 2026 guide",
+          "url": "https://index.cy/articles/hospitals-in-cyprus-guide/",
+          "read": "2026-11-15",
+          "says": "Published 22 August 2026. Paphos: Paphos General Hospital (Anavargos) and, private, Royal Artemis, Evangelismos, Iasis and St. George & Blue Cross, where English \"is spoken as a matter of course in most of them\". Limassol: Limassol General Hospital; Ygia Polyclinic, \"the oldest and largest private hospital in Cyprus, with 188 beds and eight operating theatres\", which joined GESY in September 2023; the German Oncology Center and others. The Bank of Cyprus Oncology Centre and the Cyprus Institute of Neurology and Genetics in Nicosia are the two national reference centres. GESY co-payments stop at €150 in a calendar year (€75 for vulnerable groups); inpatient stays carry none."
+        },
+        {
+          "name": "Cyprus Mail: how healthcare works in Cyprus, GeSY explained",
+          "url": "https://cyprus-mail.com/2026/01/28/how-healthcare-works-in-cyprus-gesy-explained-costs-compared-and-who-qualifies",
+          "read": "2026-11-15",
+          "says": "Dated 28 January (2026 in the URL). Non-EU citizens qualify if they \"Hold a valid residence permit\" and have permanent or long-term residence status or equal treatment under social insurance law. \"Annual ceilings apply, meaning frequent users are protected from escalating costs\"; no ceiling figure is given."
+        }
+      ],
+      "note": "One dated secondary page gives the figure; the Cyprus Mail confirms that annual ceilings exist without giving one. gesy.org.cy was not readable."
+    },
+    {
+      "id": "cy-healthcare-paphos-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "paphos"
+      ],
+      "claim": "Paphos has Paphos General Hospital plus private hospitals (Royal Artemis, Evangelismos, Iasis, St George & Blue Cross), where English is generally spoken",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "index.cy: hospitals in Cyprus, 2026 guide",
+          "url": "https://index.cy/articles/hospitals-in-cyprus-guide/",
+          "read": "2026-11-15",
+          "says": "Published 22 August 2026. Paphos: Paphos General Hospital (Anavargos) and, private, Royal Artemis, Evangelismos, Iasis and St. George & Blue Cross, where English \"is spoken as a matter of course in most of them\". Limassol: Limassol General Hospital; Ygia Polyclinic, \"the oldest and largest private hospital in Cyprus, with 188 beds and eight operating theatres\", which joined GESY in September 2023; the German Oncology Center and others. The Bank of Cyprus Oncology Centre and the Cyprus Institute of Neurology and Genetics in Nicosia are the two national reference centres. GESY co-payments stop at €150 in a calendar year (€75 for vulnerable groups); inpatient stays carry none."
+        },
+        {
+          "name": "State Health Services Organisation (Cyprus): home page",
+          "url": "https://www.shso.org.cy/en/",
+          "read": "2026-11-15",
+          "says": "Footer \"© SHSO 2026\". Lists its hospitals: Nicosia General, Archbishop Makarios III, Limassol General Hospital, Larnaca General, Famagusta General, Paphos General Hospital, Troodos and Polis Chrysochous."
+        },
+        {
+          "name": "Iasis Private Hospital: home page",
+          "url": "https://www.iasishospital.com/",
+          "read": "2026-11-15",
+          "says": "Title \"Iasis Private Hospital Paphos | Member of Leptos Group\"; \"IASIS Private Hospital is a modern medical, diagnostic, surgical center in Cyprus\", at 8 Voriou Ipirou Street, Paphos; established in 2004."
+        },
+        {
+          "name": "St George & Bluecross Hospitals: home page",
+          "url": "https://www.bluecross.com.cy/",
+          "read": "2026-11-15",
+          "says": "Only the page title was returned: \"St George & Bluecross Hospitals Ltd - Paphos Cyprus.\""
+        }
+      ],
+      "note": "Iasis and St George & Blue Cross are current names on their own sites. The other two could not be read there: www.royalartemis.com failed on DNS and www.evangelismos.com.cy returned HTTP 403, so Royal Artemis and Evangelismos rest on the dated guide; a rename since August 2026 would not show."
+    },
+    {
+      "id": "cy-healthcare-paphos-nicosia",
+      "fact": "healthcare",
+      "cities": [
+        "paphos"
+      ],
+      "claim": "The national reference centres are in Nicosia, about 90 minutes away",
+      "verdict": "cant-confirm",
+      "hedge": "about",
+      "wording": "about 90 minutes away",
+      "sources": [
+        {
+          "name": "index.cy: hospitals in Cyprus, 2026 guide",
+          "url": "https://index.cy/articles/hospitals-in-cyprus-guide/",
+          "read": "2026-11-15",
+          "says": "Published 22 August 2026. Paphos: Paphos General Hospital (Anavargos) and, private, Royal Artemis, Evangelismos, Iasis and St. George & Blue Cross, where English \"is spoken as a matter of course in most of them\". Limassol: Limassol General Hospital; Ygia Polyclinic, \"the oldest and largest private hospital in Cyprus, with 188 beds and eight operating theatres\", which joined GESY in September 2023; the German Oncology Center and others. The Bank of Cyprus Oncology Centre and the Cyprus Institute of Neurology and Genetics in Nicosia are the two national reference centres. GESY co-payments stop at €150 in a calendar year (€75 for vulnerable groups); inpatient stays carry none."
+        }
+      ],
+      "note": "That the reference centres are in Nicosia is confirmed. No page read gives the drive time from Paphos; the figure carries \"about\" and is not repeated flat in the summary or drawbacks (\"complex care is in Nicosia\")."
+    },
+    {
+      "id": "cy-healthcare-limassol-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "limassol"
+      ],
+      "claim": "Limassol has Limassol General Hospital, Ygia Polyclinic (the largest private hospital in Cyprus, in GeSY since 2023), the German Oncology Center and other private clinics",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "index.cy: hospitals in Cyprus, 2026 guide",
+          "url": "https://index.cy/articles/hospitals-in-cyprus-guide/",
+          "read": "2026-11-15",
+          "says": "Published 22 August 2026. Paphos: Paphos General Hospital (Anavargos) and, private, Royal Artemis, Evangelismos, Iasis and St. George & Blue Cross, where English \"is spoken as a matter of course in most of them\". Limassol: Limassol General Hospital; Ygia Polyclinic, \"the oldest and largest private hospital in Cyprus, with 188 beds and eight operating theatres\", which joined GESY in September 2023; the German Oncology Center and others. The Bank of Cyprus Oncology Centre and the Cyprus Institute of Neurology and Genetics in Nicosia are the two national reference centres. GESY co-payments stop at €150 in a calendar year (€75 for vulnerable groups); inpatient stays carry none."
+        },
+        {
+          "name": "State Health Services Organisation (Cyprus): home page",
+          "url": "https://www.shso.org.cy/en/",
+          "read": "2026-11-15",
+          "says": "Footer \"© SHSO 2026\". Lists its hospitals: Nicosia General, Archbishop Makarios III, Limassol General Hospital, Larnaca General, Famagusta General, Paphos General Hospital, Troodos and Polis Chrysochous."
+        },
+        {
+          "name": "Ygia Polyclinic: home page",
+          "url": "https://www.ygiapolyclinic.com/en/",
+          "read": "2026-11-15",
+          "says": "\"YGIA Polyclinic Public Co Ltd\"; its Accident and Emergency Department \"has been integrated into the National Health System (GESY) since September 25, 2023\"; a news item of Oct 22, 2025 calls it a private hospital in Limassol. No bed count or \"largest\" claim in the text returned."
+        }
+      ],
+      "note": "www.goc.com.cy failed on DNS. Ygia's own page confirms the September 2023 GeSY date for its emergency department; \"largest private hospital\" is the guide's statement. Limassol's `why` (\"the best hospitals on the island\") is a judgment; the national reference centres are in Nicosia, which the profile says."
+    },
+    {
+      "id": "cy-healthcare-limassol-nicosia",
+      "fact": "healthcare",
+      "cities": [
+        "limassol"
+      ],
+      "claim": "Nicosia's reference centres are about an hour away",
+      "verdict": "cant-confirm",
+      "hedge": "about",
+      "wording": "about an hour away",
+      "sources": [
+        {
+          "name": "index.cy: hospitals in Cyprus, 2026 guide",
+          "url": "https://index.cy/articles/hospitals-in-cyprus-guide/",
+          "read": "2026-11-15",
+          "says": "Published 22 August 2026. Paphos: Paphos General Hospital (Anavargos) and, private, Royal Artemis, Evangelismos, Iasis and St. George & Blue Cross, where English \"is spoken as a matter of course in most of them\". Limassol: Limassol General Hospital; Ygia Polyclinic, \"the oldest and largest private hospital in Cyprus, with 188 beds and eight operating theatres\", which joined GESY in September 2023; the German Oncology Center and others. The Bank of Cyprus Oncology Centre and the Cyprus Institute of Neurology and Genetics in Nicosia are the two national reference centres. GESY co-payments stop at €150 in a calendar year (€75 for vulnerable groups); inpatient stays carry none."
+        }
+      ],
+      "note": "No page read gives the drive time from Limassol; the figure carries \"about\" and appears nowhere else in the profile."
+    }
+  ]
+}

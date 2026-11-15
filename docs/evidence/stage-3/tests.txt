@@ -1,0 +1,17 @@
+$ npx vitest run src/data/__tests__/factCheck.test.ts src/data/__tests__/expatPicks.test.ts
+ RUN  v5.1.0 /home/jonah/repos/eVelo-v2
+
+
+ Test Files  2 passed (2)
+      Tests  75 passed (75)
+   Start at  12:08:53
+   Duration  497ms (transform 65%, import 18%, tests 16%, worker 1%)
+
+
+$ npm test
+
+ Test Files  64 passed (64)
+      Tests  1035 passed (1035)
+   Start at  12:08:54
+   Duration  13.24s (transform 68%, tests 23%, import 9%)
+

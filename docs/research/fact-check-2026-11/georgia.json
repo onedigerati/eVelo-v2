@@ -1,0 +1,492 @@
+{
+  "country": "Georgia",
+  "cities": [
+    "tbilisi",
+    "batumi"
+  ],
+  "claims": [
+    {
+      "id": "ge-tax-no-wealth-tax",
+      "fact": "tax",
+      "cities": [
+        "tbilisi",
+        "batumi"
+      ],
+      "claim": "Georgia has no wealth tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC quick chart: net wealth/worth tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/net-wealth-worth-tax-rates",
+          "read": "2026-11-15",
+          "says": "Georgia: \"NA\" (last reviewed 02 September 2026); Hungary: \"N/A\" (01 July 2026); Czech Republic: \"NA\" (27 July 2026); Turkey: \"NA\" (09 September 2026). The page defines NA as \"the territory does not have the indicated tax or requirement\"."
+        },
+        {
+          "name": "PwC: Georgia, other taxes",
+          "url": "https://taxsummaries.pwc.com/georgia/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 02 September 2026. \"Resident individuals whose annual family income exceeds GEL 40,000 in a calendar year are liable for property tax\", on immovable property, yachts, aircraft and motor cars. The page has no wealth-tax or inheritance section."
+        },
+        {
+          "name": "Legal 500: Georgia tax card 2025",
+          "url": "https://www.legal500.com/intelligence/georgia/tax/georgia-tax-card-2025",
+          "read": "2026-11-15",
+          "says": "Dated 12 February 2025. Lists as exempt from personal income tax \"income of residents and non-residents from foreign sources\" and \"inherited or gifted property by I and II level legatees\"; personal income tax is 5% on dividends and interest; property tax is the one local tax; it says Georgia has no gift or inheritance taxes. It does not mention a US treaty."
+        }
+      ],
+      "note": "PwC's quick chart gives NA; its Georgia page lists property tax (for families with income above GEL 40,000); the tax card names property tax as the only local tax. Property tax falls on real estate, vehicles and the like, not on a portfolio. localTaxes.ts (GE) agrees."
+    },
+    {
+      "id": "ge-tax-foreign-income-exempt",
+      "fact": "tax",
+      "cities": [
+        "tbilisi",
+        "batumi"
+      ],
+      "claim": "Resident individuals are exempt from tax on income without a Georgian source, so US dividends and interest are untaxed locally",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Tax Code of Georgia, Article 82 (matsne.gov.ge, English consolidated text)",
+          "url": "https://matsne.gov.ge/en/document/view/1043717?publication=239",
+          "read": "2026-11-15",
+          "says": "Consolidated version shown: 17/12/2025 to 01/04/2026 (the page says it is not the final edition; publications run to 28/10/2026). Article 82(1)(u) exempts \"income (including gain) received by a resident natural person, which does not belong to Georgian source income\". 82(1)(g) exempts \"the value of property received as a gift or inherited by first and second line heirs during a fiscal year\"; 82(1)(i) exempts up to GEL 150,000 a year for third and fourth line heirs. 82(4)(c): first line is \"spouse, child, adopted child, grandchild, great grandchild and his/her child, parent, adoptive parent\"; second line is \"sister, brother, niece/nephew and their children\". Article 81: taxable income is taxed at 20%. Read at character offsets 200,000 to 300,000 of 397,979."
+        },
+        {
+          "name": "PwC: Georgia, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/georgia/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 02 September 2026. \"Resident individuals are exempt from tax on income that does not have a Georgian source.\" \"Personal income is subject to a flat tax rate of 20%.\" Nothing on a pending change to the exemption."
+        },
+        {
+          "name": "Legal 500: Georgia tax card 2025",
+          "url": "https://www.legal500.com/intelligence/georgia/tax/georgia-tax-card-2025",
+          "read": "2026-11-15",
+          "says": "Dated 12 February 2025. Lists as exempt from personal income tax \"income of residents and non-residents from foreign sources\" and \"inherited or gifted property by I and II level legatees\"; personal income tax is 5% on dividends and interest; property tax is the one local tax; it says Georgia has no gift or inheritance taxes. It does not mention a US treaty."
+        }
+      ],
+      "note": "Also both summaries and taglines, and Tbilisi's `why`. Statute read in the version in force to 1 April 2026 (the page lists later publications to 28 October 2026 that were not opened); PwC, reviewed September 2026, says the same and reports no pending change. A search for a 2026–27 reform of the exemption found none."
+    },
+    {
+      "id": "ge-tax-one-guide-disagrees",
+      "fact": "tax",
+      "cities": [
+        "tbilisi",
+        "batumi"
+      ],
+      "claim": "One guide says residents are taxed on global income, but PwC and the 2025 tax card list the exemption",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Eurofast: understanding individual taxes in Georgia",
+          "url": "https://eurofast.eu/understanding-individual-taxes-in-georgia/",
+          "read": "2026-11-15",
+          "says": "Dated 26 November 2024. \"Residents: Taxed on their global income\"; non-residents on Georgian-source income. Property tax: families earning under GEL 40,000 a year are exempt; 0.05%–0.2% up to GEL 100,000 of family income and 0.8%–1% above."
+        },
+        {
+          "name": "PwC: Georgia, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/georgia/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 02 September 2026. \"Resident individuals are exempt from tax on income that does not have a Georgian source.\" \"Personal income is subject to a flat tax rate of 20%.\" Nothing on a pending change to the exemption."
+        },
+        {
+          "name": "Legal 500: Georgia tax card 2025",
+          "url": "https://www.legal500.com/intelligence/georgia/tax/georgia-tax-card-2025",
+          "read": "2026-11-15",
+          "says": "Dated 12 February 2025. Lists as exempt from personal income tax \"income of residents and non-residents from foreign sources\" and \"inherited or gifted property by I and II level legatees\"; personal income tax is 5% on dividends and interest; property tax is the one local tax; it says Georgia has no gift or inheritance taxes. It does not mention a US treaty."
+        }
+      ]
+    },
+    {
+      "id": "ge-tax-us-treaty-withholding",
+      "fact": "tax",
+      "cities": [
+        "tbilisi",
+        "batumi"
+      ],
+      "claim": "There is no US–Georgia income tax treaty, so US withholding on dividends may be 30%",
+      "verdict": "corrected",
+      "oldWording": "with no US–Georgia income tax treaty, US withholding on dividends may be 30% (unverified)",
+      "newWording": "the IRS treats Georgia as covered by the 1973 US–USSR income tax treaty, and the 30% US withholding on dividends applies to foreign persons, so a US citizen instead pays US tax on them by return",
+      "sources": [
+        {
+          "name": "IRS: Georgia tax treaty documents",
+          "url": "https://www.irs.gov/businesses/international-businesses/georgia-tax-treaty-documents",
+          "read": "2026-11-15",
+          "says": "Page last reviewed or updated 09-Aug-2026. \"Georgia is one of the former Soviet Republics which are now covered by the treaty\" with the Commonwealth of Independent States; the one document listed is the Union of Soviet Socialist Republics income tax treaty of 1973."
+        },
+        {
+          "name": "IRS Publication 901, U.S. Tax Treaties (09/2024), HTML",
+          "url": "https://www.irs.gov/publications/p901",
+          "read": "2026-11-15",
+          "says": "Revision September 2024. The U.S.–U.S.S.R. income tax treaty \"remains in effect for the following members of the Commonwealth of Independent States\": Armenia, Azerbaijan, Belarus, Georgia, Kyrgyzstan, Moldova, Tajikistan, Turkmenistan and Uzbekistan, until new treaties are negotiated. The C.I.S. section read covers personal services income only; dividends are not addressed in the first 100,000 of 313,016 characters."
+        },
+        {
+          "name": "IRS: United States income tax treaties, A to Z",
+          "url": "https://www.irs.gov/businesses/international-businesses/united-states-income-tax-treaties-a-to-z",
+          "read": "2026-11-15",
+          "says": "Page last reviewed or updated 03-Jan-2026; read again on 2026-11-15 for this batch. Under C: Canada, Chile, China, Cyprus, Czech Republic. Under G: Georgia, Germany, Greece. Under H: Hungary, marked \"CAUTION Treaty Terminated\". Under T: Tajikistan, Thailand, Trinidad, Tunisia, Turkey, Turkmenistan. The USSR entry is marked \"CAUTION Treaty Partially Suspended for Belarus\"."
+        },
+        {
+          "name": "IRS: NRA withholding",
+          "url": "https://www.irs.gov/individuals/international-taxpayers/nra-withholding",
+          "read": "2026-11-15",
+          "says": "Page last reviewed 14 March 2026. Withholding applies to \"payments to all foreign persons, including nonresident alien individuals\"; a foreign person generally owes US tax on US-source income, typically withheld at 30% unless the Code or a treaty lowers it. The page does not mention US citizens living abroad by name."
+        }
+      ],
+      "also": [
+        "drawback 3 reworded in both: \"Only the 1973 US–USSR income tax treaty covers Georgia, and there is no US estate treaty\"",
+        "Tbilisi summary: \"no US tax treaty\" became \"thin US treaty cover (only the 1973 US–USSR income tax treaty)\"",
+        "scores.tax stays 5 (no Georgian tax on foreign income)",
+        "sources: added the IRS Georgia treaty page"
+      ],
+      "rankFlag": "Tbilisi (pick 23): the `why` ends \"there is no US tax treaty\". The IRS lists Georgia among the countries covered by the 1973 US–USSR income tax treaty (its Georgia treaty page, reviewed August 2026, and Publication 901), so on the IRS's own list that statement is false. There is no US estate treaty, and the old treaty is thin, so the practical point (little treaty relief) survives; the wording does not. The 30% withholding it was tied to in the profile does not apply to a US citizen in any case. User's call; the `why` was not edited.",
+      "note": "Two errors: the IRS does count Georgia under a treaty, and 30% withholding is for foreign persons, not US citizens (the IRS page defines it by \"payments to all foreign persons\"; it does not name citizens abroad, so the last step is a reading of the page, as in pt-tax-us-treaty-credit). Not read: the 1973 treaty's text, Georgia's own view of whether it is bound (PwC's Georgia treaty page points to a corporate list that was not opened), and what the treaty does for dividends."
+    },
+    {
+      "id": "ge-estate-no-inheritance-tax",
+      "fact": "estate",
+      "cities": [
+        "tbilisi",
+        "batumi"
+      ],
+      "claim": "No separate inheritance tax; property inherited by first- and second-line heirs (children, spouse, parents, siblings, grandchildren) is exempt from income tax, so a US portfolio passes to US-resident children with no Georgian tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Tax Code of Georgia, Article 82 (matsne.gov.ge, English consolidated text)",
+          "url": "https://matsne.gov.ge/en/document/view/1043717?publication=239",
+          "read": "2026-11-15",
+          "says": "Consolidated version shown: 17/12/2025 to 01/04/2026 (the page says it is not the final edition; publications run to 28/10/2026). Article 82(1)(u) exempts \"income (including gain) received by a resident natural person, which does not belong to Georgian source income\". 82(1)(g) exempts \"the value of property received as a gift or inherited by first and second line heirs during a fiscal year\"; 82(1)(i) exempts up to GEL 150,000 a year for third and fourth line heirs. 82(4)(c): first line is \"spouse, child, adopted child, grandchild, great grandchild and his/her child, parent, adoptive parent\"; second line is \"sister, brother, niece/nephew and their children\". Article 81: taxable income is taxed at 20%. Read at character offsets 200,000 to 300,000 of 397,979."
+        },
+        {
+          "name": "Legal 500: Georgia tax card 2025",
+          "url": "https://www.legal500.com/intelligence/georgia/tax/georgia-tax-card-2025",
+          "read": "2026-11-15",
+          "says": "Dated 12 February 2025. Lists as exempt from personal income tax \"income of residents and non-residents from foreign sources\" and \"inherited or gifted property by I and II level legatees\"; personal income tax is 5% on dividends and interest; property tax is the one local tax; it says Georgia has no gift or inheritance taxes. It does not mention a US treaty."
+        },
+        {
+          "name": "PwC quick chart: inheritance and gift tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates",
+          "read": "2026-11-15",
+          "says": "Georgia: inheritance \"NA\", gift \"NA\" (last reviewed 02 September 2026). Hungary: \"18% (but a preferential 9% rate applies to residential property). Children, siblings, and spouses may receive the inheritance without tax.\" (01 July 2026). Czech Republic: inheritance \"NA\"; gift \"If taxable, the gift is subject to the normal PIT rate.\" (27 July 2026). Turkey: inheritance \"10\", gift \"30\" (09 September 2026)."
+        }
+      ],
+      "note": "Also the summaries (\"children inherit free\") and Tbilisi's `why`. Other heirs are exempt up to GEL 150,000 a year (third and fourth line) and otherwise pay income tax at 20%; the profiles do not claim that. localTaxes.ts (GE) agrees: no entry, note says inheritances by children are exempt."
+    },
+    {
+      "id": "ge-estate-no-us-treaty",
+      "fact": "estate",
+      "cities": [
+        "tbilisi",
+        "batumi"
+      ],
+      "claim": "There is no US estate treaty",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-without",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list); none of the 37 countries named in this claim is among them."
+        }
+      ]
+    },
+    {
+      "id": "ge-lending-ibkr-accepts",
+      "fact": "lending",
+      "cities": [
+        "tbilisi",
+        "batumi"
+      ],
+      "claim": "IBKR accepts residents of all non-sanctioned countries, including Georgia",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly accepts residents of all non-sanctioned countries, including Georgia",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026; read again on 2026-11-15 for this batch. \"In the EU, customers sign up with the Irish entity\" (Interactive Brokers Ireland Limited); the Irish €20,000 protection \"applies to Eastern Europe following recent IBKR Irish and Hungarian Entity Merger\". The \"Country Availability\" list includes Hungary, the Czech Republic, Turkey and Georgia; it does not map countries to entities, and names no entity for residents of Turkey or Georgia. PRIIPs is described as \"an EU rule that prohibits buying US-listed ETFs\" that \"also applies to UK Investors\"."
+        }
+      ],
+      "note": "IBKR's own country list (https://www.interactivebrokers.co.uk/en/index.php?f=38309) returned HTTP 403 again on 2026-11-15; the other Interactive Brokers sites were not retried. Banker on Wheels lists Georgia under country availability."
+    },
+    {
+      "id": "ge-lending-margin-terms-unknown",
+      "fact": "lending",
+      "cities": [
+        "tbilisi",
+        "batumi"
+      ],
+      "claim": "IBKR's margin terms per country are unknown",
+      "verdict": "cant-confirm",
+      "hedge": "unknown",
+      "wording": "though margin terms per country are unknown",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026; read again on 2026-11-15 for this batch. \"In the EU, customers sign up with the Irish entity\" (Interactive Brokers Ireland Limited); the Irish €20,000 protection \"applies to Eastern Europe following recent IBKR Irish and Hungarian Entity Merger\". The \"Country Availability\" list includes Hungary, the Czech Republic, Turkey and Georgia; it does not map countries to entities, and names no entity for residents of Turkey or Georgia. PRIIPs is described as \"an EU rule that prohibits buying US-listed ETFs\" that \"also applies to UK Investors\"."
+        }
+      ],
+      "note": "A statement of what is not known. Which IBKR entity carries a Georgian resident's account was not found on any page, so the EU cash-out correction was not applied. The profiles make no PRIIPs claim."
+    },
+    {
+      "id": "ge-lending-schwab-unavailable",
+      "fact": "lending",
+      "cities": [
+        "tbilisi",
+        "batumi"
+      ],
+      "claim": "Schwab International is unavailable: Georgia is off its reported list",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab International is reportedly unavailable, as Georgia is off its reported list",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026; read again on 2026-11-15 for this batch. The 51 countries and regions accepted on that day include the Czech Republic (also Austria, Poland, Greece, Germany); the 12 marked \"No\" are Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam. Hungary and Georgia are in neither list. It quotes the Schwab One agreement: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds from their account\", and does not define \"Europe\"."
+        }
+      ],
+      "note": "Georgia is in neither the accepted 51 nor the 12 named as refused. Lending score left at 3 in both profiles: \"IBKR only\" is what is reported; nothing read puts IBKR's acceptance in special doubt for Georgia, and Georgia is not in the EU. Whether Georgia counts as \"Europe\" for Schwab's reported clause is moot while Schwab reportedly does not open accounts there; Georgia sits in the South Caucasus and is counted either way (cities.ts files it under Europe), and the profiles do not say."
+    },
+    {
+      "id": "ge-visa-365-days",
+      "fact": "visa",
+      "cities": [
+        "tbilisi",
+        "batumi"
+      ],
+      "claim": "US citizens can stay 365 days visa-free, with travel insurance required on entry from 2026",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Madloba: how long can you stay in Georgia visa-free?",
+          "url": "https://madloba.info/en/faq/visa-and-border/how-long-can-you-stay-visa-free/",
+          "read": "2026-11-15",
+          "says": "Checked Oct. 2, 2026. Citizens of the US, the UK, EU countries, Canada, Australia and about 90 other countries \"can enter Georgia visa-free and stay for one full year\" (Government Ordinance No 255 of 5 June 2015). From 1 January 2026 \"every foreign tourist must have health and accident insurance for the whole trip\" with \"at least 30,000 GEL of cover\" (Government Resolution No 602 of 26 December 2025). \"Leaving and coming back does not guarantee a new visa-free year.\""
+        },
+        {
+          "name": "Where in the World is Nina: Georgia's free year for Americans (2026)",
+          "url": "https://whereintheworldisnina.com/georgias-free-year-for-americans-is-still-real-2026-quietly-added-a-catch-nobodys-mentioning/",
+          "read": "2026-11-15",
+          "says": "Published August 6, 2026. Americans still get \"a full year in Georgia with zero paperwork required in advance\". From January 1, 2026 every foreign visitor needs health and accident insurance for the full stay with at least GEL 30,000 of cover; \"immigration can ask for proof on arrival\"."
+        }
+      ],
+      "note": "Also the summaries. Two secondary pages of August and October 2026 citing Government Ordinance No 255 and Resolution No 602. The official pages could not be read: two geoconsul.gov.ge URLs returned 404 and travel.state.gov returned 403."
+    },
+    {
+      "id": "ge-visa-property-150k",
+      "fact": "visa",
+      "cities": [
+        "tbilisi",
+        "batumi"
+      ],
+      "claim": "Property worth at least US$150k at market value (since March 2026, properties can be combined) gives a yearly-renewable temporary permit covering spouse and children",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Public Service Development Agency of Georgia: residence permits",
+          "url": "https://sda.gov.ge/en/products/migration-residence-permits/",
+          "read": "2026-11-15",
+          "says": "Undated (footer © 2026). Short-term residence permit: for a person who \"has the title to an immovable property in the territory of Georgia (except for agricultural land)\" with a market value above the GEL equivalent of USD 150,000, set by a certified assessor; the spouse and children may apply. Investment residence permit: an investment of at least USD 300,000 (with yearly turnover of USD 50,000, 100,000 and then 120,000 over five years) or non-agricultural property worth more than USD 300,000; its holders may apply for a residence permit for indefinite stay before the five-year term ends. The permanent residence permit is a separate type (family of citizens, or 10 years on a temporary permit)."
+        },
+        {
+          "name": "EIG Law: Georgia to increase real estate investment threshold for residence permits effective March 1, 2026",
+          "url": "https://eiglaw.com/georgia-to-increase-real-estate-investment-threshold-for-residence-permits-effective-march-1-2026/",
+          "read": "2026-11-15",
+          "says": "Dated February 27, 2026. From March 1, 2026 the threshold for the temporary residence permit by real estate rises from USD 100,000 to USD 150,000 for new applicants, \"as verified by an accredited appraiser\", \"based on the market value, not the purchase price\"; \"multiple properties may be combined to reach the required threshold\"; the permit is renewed annually and covers the spouse and children. Existing holders renew under the old rules."
+        }
+      ],
+      "also": [
+        "sources: added the Public Service Development Agency page"
+      ],
+      "note": "Also Tbilisi's summary and `why` (\"$150k of property gives residence\"). The agency's page says the market value must exceed USD 150,000 and calls it the short-term residence permit."
+    },
+    {
+      "id": "ge-visa-investment-300k",
+      "fact": "visa",
+      "cities": [
+        "tbilisi"
+      ],
+      "claim": "A US$300k investment track leads to permanent residence",
+      "verdict": "corrected",
+      "oldWording": "a US$300k investment track reportedly leads to permanent residence",
+      "newWording": "a US$300k investment permit can lead to a residence permit for indefinite stay after 5 years",
+      "sources": [
+        {
+          "name": "Public Service Development Agency of Georgia: residence permits",
+          "url": "https://sda.gov.ge/en/products/migration-residence-permits/",
+          "read": "2026-11-15",
+          "says": "Undated (footer © 2026). Short-term residence permit: for a person who \"has the title to an immovable property in the territory of Georgia (except for agricultural land)\" with a market value above the GEL equivalent of USD 150,000, set by a certified assessor; the spouse and children may apply. Investment residence permit: an investment of at least USD 300,000 (with yearly turnover of USD 50,000, 100,000 and then 120,000 over five years) or non-agricultural property worth more than USD 300,000; its holders may apply for a residence permit for indefinite stay before the five-year term ends. The permanent residence permit is a separate type (family of citizens, or 10 years on a temporary permit)."
+        }
+      ],
+      "also": [
+        "scores.visa stays 4",
+        "summary and drawbacks do not mention it"
+      ],
+      "note": "The agency lists the permanent residence permit as a different type (family of citizens, or ten years on a temporary permit); investment-permit holders apply for a \"residence permit for indefinite stay\" before their five-year term ends, and a business investment carries yearly turnover tests."
+    },
+    {
+      "id": "ge-visa-batumi-oversupply",
+      "fact": "visa",
+      "cities": [
+        "batumi"
+      ],
+      "claim": "Batumi's new-build market is oversupplied, so check resale value",
+      "verdict": "cant-confirm",
+      "hedge": "reportedly",
+      "wording": "Batumi's new-build market is reportedly oversupplied",
+      "sources": [
+        {
+          "name": "EIG Law: Georgia to increase real estate investment threshold for residence permits effective March 1, 2026",
+          "url": "https://eiglaw.com/georgia-to-increase-real-estate-investment-threshold-for-residence-permits-effective-march-1-2026/",
+          "read": "2026-11-15",
+          "says": "Dated February 27, 2026. From March 1, 2026 the threshold for the temporary residence permit by real estate rises from USD 100,000 to USD 150,000 for new applicants, \"as verified by an accredited appraiser\", \"based on the market value, not the purchase price\"; \"multiple properties may be combined to reach the required threshold\"; the permit is renewed annually and covers the spouse and children. Existing holders renew under the old rules."
+        }
+      ],
+      "note": "A market remark, not a residency rule; no page read today speaks to it. The hedge was already there."
+    },
+    {
+      "id": "ge-healthcare-tbilisi-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "tbilisi"
+      ],
+      "claim": "Modern private hospitals in Tbilisi (New Hospitals, the Evex network, American Medical Centers) are cheap by Western standards and often have English-speaking doctors",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Expat Hub Georgia: hospitals in Tbilisi",
+          "url": "https://expathub.ge/hospitals-in-tbilisi/",
+          "read": "2026-11-15",
+          "says": "Undated. Names New Hospitals, Evex Clinics, Gagua Clinic and American Medical Centers (with \"English-speaking national and international specialist consultants\"); \"the cost of services are extremely reasonable\"; reviewers say most New Hospitals staff speak good English, while at Evex calling ahead for an English speaker is advised; about 90% of hospitals are privately owned; \"once you're outside of the capital, the language barrier will likely become a problem\". Nothing on public cover for foreigners or on going abroad for complex care."
+        },
+        {
+          "name": "Georgia Expats: healthcare guide",
+          "url": "https://georgiaexpats.pages.dev/guides/healthcare",
+          "read": "2026-11-15",
+          "says": "Published and updated February 2026. On the state programme: \"foreigners are not covered by this program unless they hold a Georgian residence permit\", and \"almost no expat qualifies for meaningful state benefits\". Names Evex Clinics, New Hospitals and MediClub Georgia in Tbilisi; a GP visit costs \"$10–25\". \"Healthcare quality drops noticeably once you leave the capital\"; \"Kutaisi and Batumi have decent hospitals (Evex clinics in both)\". Nothing on going abroad for complex care or on age."
+        }
+      ],
+      "note": "Names and descriptions from two expat guides (one undated, one of February 2026); the hospitals' own sites were not read."
+    },
+    {
+      "id": "ge-healthcare-public-cover-limited",
+      "fact": "healthcare",
+      "cities": [
+        "tbilisi",
+        "batumi"
+      ],
+      "claim": "Public cover is limited for foreign residents",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Georgia Expats: healthcare guide",
+          "url": "https://georgiaexpats.pages.dev/guides/healthcare",
+          "read": "2026-11-15",
+          "says": "Published and updated February 2026. On the state programme: \"foreigners are not covered by this program unless they hold a Georgian residence permit\", and \"almost no expat qualifies for meaningful state benefits\". Names Evex Clinics, New Hospitals and MediClub Georgia in Tbilisi; a GP visit costs \"$10–25\". \"Healthcare quality drops noticeably once you leave the capital\"; \"Kutaisi and Batumi have decent hospitals (Evex clinics in both)\". Nothing on going abroad for complex care or on age."
+        }
+      ],
+      "note": "One expat guide; a search showed other guides saying residence-permit holders can enrol, under low-income tests. The Social Service Agency's rules were not found."
+    },
+    {
+      "id": "ge-healthcare-quality-outside-tbilisi",
+      "fact": "healthcare",
+      "cities": [
+        "tbilisi"
+      ],
+      "claim": "Quality falls off outside the capital",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Georgia Expats: healthcare guide",
+          "url": "https://georgiaexpats.pages.dev/guides/healthcare",
+          "read": "2026-11-15",
+          "says": "Published and updated February 2026. On the state programme: \"foreigners are not covered by this program unless they hold a Georgian residence permit\", and \"almost no expat qualifies for meaningful state benefits\". Names Evex Clinics, New Hospitals and MediClub Georgia in Tbilisi; a GP visit costs \"$10–25\". \"Healthcare quality drops noticeably once you leave the capital\"; \"Kutaisi and Batumi have decent hospitals (Evex clinics in both)\". Nothing on going abroad for complex care or on age."
+        },
+        {
+          "name": "Expat Hub Georgia: hospitals in Tbilisi",
+          "url": "https://expathub.ge/hospitals-in-tbilisi/",
+          "read": "2026-11-15",
+          "says": "Undated. Names New Hospitals, Evex Clinics, Gagua Clinic and American Medical Centers (with \"English-speaking national and international specialist consultants\"); \"the cost of services are extremely reasonable\"; reviewers say most New Hospitals staff speak good English, while at Evex calling ahead for an English speaker is advised; about 90% of hospitals are privately owned; \"once you're outside of the capital, the language barrier will likely become a problem\". Nothing on public cover for foreigners or on going abroad for complex care."
+        }
+      ]
+    },
+    {
+      "id": "ge-healthcare-over-70s-abroad",
+      "fact": "healthcare",
+      "cities": [
+        "tbilisi"
+      ],
+      "claim": "Complex care for over-70s may mean going abroad",
+      "verdict": "cant-confirm",
+      "hedge": "may",
+      "wording": "complex care for over-70s may mean going abroad",
+      "sources": [
+        {
+          "name": "Georgia Expats: healthcare guide",
+          "url": "https://georgiaexpats.pages.dev/guides/healthcare",
+          "read": "2026-11-15",
+          "says": "Published and updated February 2026. On the state programme: \"foreigners are not covered by this program unless they hold a Georgian residence permit\", and \"almost no expat qualifies for meaningful state benefits\". Names Evex Clinics, New Hospitals and MediClub Georgia in Tbilisi; a GP visit costs \"$10–25\". \"Healthcare quality drops noticeably once you leave the capital\"; \"Kutaisi and Batumi have decent hospitals (Evex clinics in both)\". Nothing on going abroad for complex care or on age."
+        }
+      ],
+      "note": "No page read says this; search results (not reads) quoted guides saying foreigners often go to Turkey or western Europe for complex conditions. Nothing ties it to age 70. Drawback 1 (\"Healthcare is thin for serious care\") is the same judgement."
+    },
+    {
+      "id": "ge-healthcare-batumi-care",
+      "fact": "healthcare",
+      "cities": [
+        "batumi"
+      ],
+      "claim": "Private hospitals and clinics in Batumi handle routine care, but the best Georgian hospitals are in Tbilisi",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Georgian Healthcare Group: referral hospitals",
+          "url": "https://gepha.com/en/referral-hospitals",
+          "read": "2026-11-15",
+          "says": "Undated. The Batumi Regional Referral Hospital (opened February 2013) \"has an emergency department, offers outpatient and inpatient primary and secondary care services\" and \"refers patients to clinics in Tbilisi\"."
+        },
+        {
+          "name": "Georgia Expats: healthcare guide",
+          "url": "https://georgiaexpats.pages.dev/guides/healthcare",
+          "read": "2026-11-15",
+          "says": "Published and updated February 2026. On the state programme: \"foreigners are not covered by this program unless they hold a Georgian residence permit\", and \"almost no expat qualifies for meaningful state benefits\". Names Evex Clinics, New Hospitals and MediClub Georgia in Tbilisi; a GP visit costs \"$10–25\". \"Healthcare quality drops noticeably once you leave the capital\"; \"Kutaisi and Batumi have decent hospitals (Evex clinics in both)\". Nothing on going abroad for complex care or on age."
+        }
+      ],
+      "note": "The hospital group's own page says its Batumi referral hospital gives primary and secondary care and refers patients to Tbilisi (the page is undated). Also drawback 1."
+    },
+    {
+      "id": "ge-healthcare-batumi-acibadem",
+      "fact": "healthcare",
+      "cities": [
+        "batumi"
+      ],
+      "claim": "Acıbadem's Batumi office exists to send patients to its hospitals in Turkey",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Acıbadem International: Batumi office",
+          "url": "https://acibademinternational.com/international-offices/office-georgia-batumi/",
+          "read": "2026-11-15",
+          "says": "The office (Zurab Gorgiladze N2, Batumi) is \"the local point of contact for patients in Georgia planning treatment at Acıbadem hospitals in Turkey\": it assesses cases, forwards records, arranges consultations and travel; treatment takes place in Turkey. Undated."
+        }
+      ]
+    }
+  ]
+}

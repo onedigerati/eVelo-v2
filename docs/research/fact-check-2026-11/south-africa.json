@@ -1,0 +1,607 @@
+{
+  "country": "South Africa",
+  "cities": [
+    "cape-town"
+  ],
+  "claims": [
+    {
+      "id": "za-tax-no-wealth-tax",
+      "fact": "tax",
+      "cities": [
+        "cape-town"
+      ],
+      "claim": "No wealth tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: South Africa, other taxes",
+          "url": "https://taxsummaries.pwc.com/south-africa/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 29 May 2026. \"South Africa does not levy any net wealth/worth taxes.\" Estate duty: abatement of ZAR 3.5 million; 20% up to ZAR 30 million and 25% above; for non-residents \"only the assets located in South Africa will be included\"."
+        },
+        {
+          "name": "PwC quick chart: net wealth/worth tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/net-wealth-worth-tax-rates",
+          "read": "2026-11-15",
+          "says": "Montenegro (last reviewed 07 August 2026), Albania (22 July 2026), Mauritius (15 June 2026), South Africa (29 May 2026) and the United Arab Emirates (09 September 2026) are all \"NA\", which the page defines as \"Not Applicable (i.e. the territory does not have the indicated tax or requirement)\"."
+        }
+      ]
+    },
+    {
+      "id": "za-tax-worldwide-income",
+      "fact": "tax",
+      "cities": [
+        "cape-town"
+      ],
+      "claim": "Residents are taxed on worldwide income",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: South Africa, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/south-africa/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 29 May 2026. \"South African residents are taxed on their worldwide income.\" 2026/27 brackets run from 18% to 45%, the top rate on income of ZAR 1,878,601 and above."
+        }
+      ]
+    },
+    {
+      "id": "za-tax-foreign-dividends-20",
+      "fact": "tax",
+      "cities": [
+        "cape-town"
+      ],
+      "claim": "Most foreign dividends are taxed at an effective 20%",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: South Africa, income determination",
+          "url": "https://taxsummaries.pwc.com/south-africa/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 29 May 2026. \"Most other foreign dividends are subject to tax at an effective rate of 20%.\" \"Interest received by or accrued to an individual is taxable\"; the exemption (ZAR 23,800, or 34,500 at 65+) is for local interest. 40% of net capital gains are taxed at normal rates: \"The maximum effective tax rate on capital gains is 18%.\""
+        }
+      ]
+    },
+    {
+      "id": "za-tax-foreign-interest-marginal",
+      "fact": "tax",
+      "cities": [
+        "cape-town"
+      ],
+      "claim": "Foreign interest is taxed at marginal rates up to 45%",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: South Africa, income determination",
+          "url": "https://taxsummaries.pwc.com/south-africa/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 29 May 2026. \"Most other foreign dividends are subject to tax at an effective rate of 20%.\" \"Interest received by or accrued to an individual is taxable\"; the exemption (ZAR 23,800, or 34,500 at 65+) is for local interest. 40% of net capital gains are taxed at normal rates: \"The maximum effective tax rate on capital gains is 18%.\""
+        },
+        {
+          "name": "PwC: South Africa, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/south-africa/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 29 May 2026. \"South African residents are taxed on their worldwide income.\" 2026/27 brackets run from 18% to 45%, the top rate on income of ZAR 1,878,601 and above."
+        }
+      ],
+      "note": "PwC says interest is taxable as income and the exemption covers local interest only; the top marginal rate is 45%."
+    },
+    {
+      "id": "za-tax-capital-gains-40-18",
+      "fact": "tax",
+      "cities": [
+        "cape-town"
+      ],
+      "claim": "40% of capital gains are included in income, at most 18%",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: South Africa, income determination",
+          "url": "https://taxsummaries.pwc.com/south-africa/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 29 May 2026. \"Most other foreign dividends are subject to tax at an effective rate of 20%.\" \"Interest received by or accrued to an individual is taxable\"; the exemption (ZAR 23,800, or 34,500 at 65+) is for local interest. 40% of net capital gains are taxed at normal rates: \"The maximum effective tax rate on capital gains is 18%.\""
+        }
+      ]
+    },
+    {
+      "id": "za-tax-treaty-dividend-credit",
+      "fact": "tax",
+      "cities": [
+        "cape-town"
+      ],
+      "claim": "The US treaty credit covers only the 15% US tax on dividends, so for someone in a 15% US bracket dividends cost about 5% more",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IRS: US–South Africa income tax convention (text)",
+          "url": "https://www.irs.gov/pub/irs-trty/safrica.pdf",
+          "read": "2026-11-15",
+          "says": "Effective 1 January 1998. Article 10(2)(b): source-country tax on portfolio dividends may not exceed \"15 per cent of the gross amount\". Article 23(2)(a): where a US citizen is resident in South Africa, South Africa \"shall allow as a credit against South African tax, only the tax paid, if any, that the United States may impose under the provisions of this Convention, other than taxes that may be imposed solely by reason of citizenship\"; 23(2)(b)–(c): the US then credits the South African tax left after that credit, without reducing the US tax creditable in South Africa. Read from the PDF that WebFetch saved, its text streams decompressed locally."
+        },
+        {
+          "name": "PwC: South Africa, income determination",
+          "url": "https://taxsummaries.pwc.com/south-africa/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 29 May 2026. \"Most other foreign dividends are subject to tax at an effective rate of 20%.\" \"Interest received by or accrued to an individual is taxable\"; the exemption (ZAR 23,800, or 34,500 at 65+) is for local interest. 40% of net capital gains are taxed at normal rates: \"The maximum effective tax rate on capital gains is 18%.\""
+        }
+      ],
+      "note": "Article 23(2) limits South Africa's credit for a US citizen-resident to the tax the treaty lets the US charge a non-citizen (15% on portfolio dividends, Article 10(2)(b)); the remaining South African tax (20% − 15% = 5%) is due, and the US credits it only without going below its own 15%. The \"about 5%\" is that arithmetic."
+    },
+    {
+      "id": "za-tax-exit-tax",
+      "fact": "tax",
+      "cities": [
+        "cape-town"
+      ],
+      "claim": "Leaving triggers an exit tax on worldwide assets (s9H, at most 18% on the gain)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PKF: ceasing South African tax residency",
+          "url": "https://pkf.co.za/news/2025/ceasing-south-african-tax-residency-key-tax-implications-for-emigrants/",
+          "read": "2026-11-15",
+          "says": "Published 17 October 2025. The exit tax is \"triggered under Section 9H of the Income Tax Act\", a deemed sale of assets at home and abroad valued the day before residence ends, excluding assets still taxable in South Africa such as \"Immovable property located in South Africa\"; the gain is taxed at \"a maximum effective tax rate of 18%\"."
+        }
+      ],
+      "modelMismatch": "localTaxes.ts ZA does not model the exit tax on ceasing residence; its note says so (\"Not modelled: ... the exit tax on ceasing residence\"). Unchanged by this check; for stage 8 to decide."
+    },
+    {
+      "id": "za-estate-duty-rates",
+      "fact": "estate",
+      "cities": [
+        "cape-town"
+      ],
+      "claim": "Estate duty is 20% above an R3.5M abatement, 25% above R30M",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "SARS: estate duty",
+          "url": "https://www.sars.gov.za/types-of-tax/estate-duty/",
+          "read": "2026-11-15",
+          "says": "Last updated 19/08/2026. \"Estate Duty is levied on the worldwide property and deemed property of a natural person\" and \"on South African property of non-residents\"; \"a rate of 20% on the first R30 million\" and \"25% on the dutiable value of the estate above R30 million\"; \"An abatement of R3.5 million is allowed\"."
+        },
+        {
+          "name": "PwC: South Africa, other taxes",
+          "url": "https://taxsummaries.pwc.com/south-africa/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 29 May 2026. \"South Africa does not levy any net wealth/worth taxes.\" Estate duty: abatement of ZAR 3.5 million; 20% up to ZAR 30 million and 25% above; for non-residents \"only the assets located in South Africa will be included\"."
+        }
+      ]
+    },
+    {
+      "id": "za-estate-worldwide",
+      "fact": "estate",
+      "cities": [
+        "cape-town"
+      ],
+      "claim": "Estate duty reaches an ordinarily resident decedent's worldwide estate",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "SARS: estate duty",
+          "url": "https://www.sars.gov.za/types-of-tax/estate-duty/",
+          "read": "2026-11-15",
+          "says": "Last updated 19/08/2026. \"Estate Duty is levied on the worldwide property and deemed property of a natural person\" and \"on South African property of non-residents\"; \"a rate of 20% on the first R30 million\" and \"25% on the dutiable value of the estate above R30 million\"; \"An abatement of R3.5 million is allowed\"."
+        },
+        {
+          "name": "PwC: South Africa, other taxes",
+          "url": "https://taxsummaries.pwc.com/south-africa/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 29 May 2026. \"South Africa does not levy any net wealth/worth taxes.\" Estate duty: abatement of ZAR 3.5 million; 20% up to ZAR 30 million and 25% above; for non-residents \"only the assets located in South Africa will be included\"."
+        }
+      ]
+    },
+    {
+      "id": "za-estate-cgt-at-death",
+      "fact": "estate",
+      "cities": [
+        "cape-town"
+      ],
+      "claim": "Capital gains tax applies at death on gains made while resident (death is a deemed disposal)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "SARS Interpretation Note 134: disposal of assets by deceased person (26 September 2024)",
+          "url": "https://www.sars.gov.za/legal-intr-in-134-disposal-of-assets-by-deceased-person-deceased-estate-and-transfer-of-assets-between-spouses",
+          "read": "2026-11-15",
+          "says": "Dated 26 September 2024. \"Under section 9HA(1) the deceased is deemed to have disposed of his or her assets at market value ... on the date of death\", other than assets passing to a resident surviving spouse, certain long-term insurance policies and retirement fund interests. Read from the PDF that WebFetch saved, its text streams decompressed locally."
+        },
+        {
+          "name": "SAIT compendium (2016): Income Tax Act, Eighth Schedule paragraph 24",
+          "url": "https://jutamedia2.blob.core.windows.net/jutacoza/uploads/SAIT_Compenduim_2016_Volume1/files/basic-html/page387.html",
+          "read": "2026-11-15",
+          "says": "2016 compendium. Paragraph 24(1): \"The base cost of an asset, other than an asset situated in the Republic listed in paragraph 2 (1) (b) (i) and (ii)\" \"acquired by a person before the date on which that person became a resident is the sum of the value of that asset\" under subparagraph (2) or (3) plus later allowable expenditure, so gains before residence are outside the tax."
+        }
+      ],
+      "modelMismatch": "localTaxes.ts ZA models estate duty only; its note says CGT at death (the s9HA deemed disposal, up to 18% of gains accrued while resident) is not modelled. On a long-held portfolio that is a second charge at death the simulation leaves out; stage 8 to decide."
+    },
+    {
+      "id": "za-estate-s4e-deduction",
+      "fact": "estate",
+      "cities": [
+        "cape-town"
+      ],
+      "claim": "Foreign assets owned before first becoming resident are deductible (s4(e))",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "SAIT compendium (2016): Estate Duty Act s4(e)",
+          "url": "https://jutamedia2.blob.core.windows.net/jutacoza/uploads/SAIT_Compenduim_2016_Volume1/files/basic-html/page668.html",
+          "read": "2026-11-15",
+          "says": "Section 4(e) deducts \"the amount included in the total value of all property of the deceased\" \"as representing the value of any right in or to property situate outside the Republic acquired by the deceased\" \"before he became ordinarily resident in the Republic for the first time\", or after it by donation or inheritance from a person not ordinarily resident (the page ends at sub-paragraph (aa))."
+        }
+      ]
+    },
+    {
+      "id": "za-estate-rebalanced-portfolio",
+      "fact": "estate",
+      "cities": [
+        "cape-town"
+      ],
+      "claim": "How s4(e) holds for a portfolio rebalanced over decades",
+      "verdict": "cant-confirm",
+      "hedge": "unclear",
+      "wording": "but how that holds for a portfolio rebalanced over decades is unclear",
+      "sources": [
+        {
+          "name": "SAIT compendium (2016): Estate Duty Act s4(e)",
+          "url": "https://jutamedia2.blob.core.windows.net/jutacoza/uploads/SAIT_Compenduim_2016_Volume1/files/basic-html/page668.html",
+          "read": "2026-11-15",
+          "says": "Section 4(e) deducts \"the amount included in the total value of all property of the deceased\" \"as representing the value of any right in or to property situate outside the Republic acquired by the deceased\" \"before he became ordinarily resident in the Republic for the first time\", or after it by donation or inheritance from a person not ordinarily resident (the page ends at sub-paragraph (aa))."
+        }
+      ],
+      "note": "The statute names property \"acquired ... before he became ordinarily resident\"; nothing read says whether proceeds reinvested later keep the deduction. localTaxes.ts ZA cites a practitioner source that says proceeds do; that page was not re-read here."
+    },
+    {
+      "id": "za-estate-treaty-exists",
+      "fact": "estate",
+      "cities": [
+        "cape-town"
+      ],
+      "claim": "There is a US–South Africa estate treaty",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-with",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "All 13 countries are in the table (see us-estate-treaty-list). Estate & Gift: Australia, Austria, France, Germany, Japan, United Kingdom. Estate only: Greece, Ireland, Italy, Netherlands, South Africa, Switzerland, and Canada by Article XXIX B of the income tax treaty."
+        }
+      ]
+    },
+    {
+      "id": "za-estate-treaty-credits-only",
+      "fact": "estate",
+      "cities": [
+        "cape-town"
+      ],
+      "claim": "The US–South Africa estate treaty gives credits only",
+      "verdict": "cant-confirm",
+      "oldWording": "the US–South Africa estate treaty gives credits only,",
+      "hedge": "reportedly",
+      "wording": "the US–South Africa estate treaty reportedly gives credits only",
+      "sources": [
+        {
+          "name": "The Tax Adviser: tax clinic on US estate tax treaties (April 2012)",
+          "url": "https://www.thetaxadviser.com/issues/2012/apr/clinic-story-06-apr-2012/",
+          "read": "2026-11-15",
+          "says": "Dated April 1, 2012 (archive). \"Treaties signed before 1966 apply the estate tax based on the situs of the property\", giving \"the situs state the primary right to tax\"; it lists South Africa among the countries with a US estate treaty but says nothing specific about it."
+        }
+      ],
+      "also": [
+        "hedge added: \"reportedly\"",
+        "sources: added SARS's estate duty page"
+      ],
+      "note": "The 1947 convention's text was not found in a readable form (mocat.library.unt.edu returned 403 in stage 3; searches found only catalogue entries). The Tax Adviser says pre-1966 treaties work on situs with the situs state taxing first and the other crediting, which fits \"credits only\" but is not about this treaty. The conclusion that duty applies in full below the US exemption follows: with no US estate tax there is nothing to credit. Estate score stays 2 (top rate 25% on the worldwide estate)."
+    },
+    {
+      "id": "za-estate-us-exemption",
+      "fact": "estate",
+      "cities": [
+        "cape-town"
+      ],
+      "claim": "Below the $15M US exemption (2026) there is no US estate tax for the treaty to credit",
+      "verdict": "confirmed",
+      "shared": "us-estate-exemption-2026",
+      "sources": [
+        {
+          "name": "IRS: What's new, estate and gift tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax",
+          "read": "2026-11-15",
+          "says": "The table \"Basic exclusion amount for year of death\" has the row 2026: $15,000,000 (2025: $13,990,000). The page says the Working Families Tax Cuts, Public Law 119-21, signed July 4, 2025, \"amends § 2010(c)(3) by increasing the basic exclusion amount to $15,000,000 for calendar year 2026\". Page last reviewed or updated 03-Nov-2026."
+        },
+        {
+          "name": "IRS: Estate tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-tax",
+          "read": "2026-11-15",
+          "says": "A return is required when the gross estate, plus adjusted taxable gifts and specific exemption, is more than the filing threshold for the year of death; the table gives 2026: $15,000,000. Page last reviewed or updated 23-Oct-2026."
+        },
+        {
+          "name": "IRS news release IR-2025-103: tax inflation adjustments for tax year 2026",
+          "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill",
+          "read": "2026-11-15",
+          "says": "\"Estates of decedents who die during 2026 have a basic exclusion amount of $15,000,000\", up from $13,990,000 for 2025; the release (October 9, 2025) cites Revenue Procedure 2025-32 and is marked as an archival document."
+        },
+        {
+          "name": "IRS: Some nonresidents with U.S. assets must file estate tax returns",
+          "url": "https://www.irs.gov/individuals/international-taxpayers/some-nonresidents-with-us-assets-must-file-estate-tax-returns",
+          "read": "2026-11-15",
+          "says": "\"U.S. citizens are subject to U.S. estate taxation with respect to their worldwide assets\"; Form 706 is required when worldwide assets plus adjusted taxable gifts exceed the basic exclusion amount in effect on the date of death. By contrast a nonresident who is not a citizen files when US-situated assets exceed $60,000. Page last reviewed or updated 27-Jun-2026."
+        }
+      ]
+    },
+    {
+      "id": "za-lending-ibkr-accepts",
+      "fact": "lending",
+      "cities": [
+        "cape-town"
+      ],
+      "claim": "IBKR accepts residents of the country",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly accepts South Africa residents (Oct 2026 review)",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        },
+        {
+          "name": "FX Scouts: Interactive Brokers review for South Africa",
+          "url": "https://fxscouts.co.za/broker/interactivebrokers/",
+          "read": "2026-11-15",
+          "says": "Edited October 15, 2026. IBKR \"Accepts South African Clients\"; it says South Africans trade under IBKR's Connecticut subsidiary but lists Interactive Brokers U.K. Limited as the company; a margin day-trading account needs more than USD 25,000."
+        }
+      ],
+      "note": "IBKR's own country list (https://www.interactivebrokers.com/en/accounts/open-account-country-list.php) returned HTTP 403 again on 2026-11-15."
+    },
+    {
+      "id": "za-lending-schwab-not-accepting",
+      "fact": "lending",
+      "cities": [
+        "cape-town"
+      ],
+      "claim": "Schwab One International does not accept South Africa",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab One International reportedly does not",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. On that day the author ran every entry in Schwab's international account selector through the application: it accepted residents of 51 of 263 countries and regions: Argentina, Australia, Austria, the Bahamas, Belgium, Bermuda, Brazil, the British Virgin Islands, the Cayman Islands, Chile, China, Colombia, Costa Rica, the Czech Republic, Denmark, Ecuador, Finland, Germany, Greece, Guatemala, Hong Kong, Iceland, India, Indonesia, Ireland, Israel, Jersey, Luxembourg, Malaysia, the Marshall Islands, Mexico, the Netherlands, Norway, Panama, Paraguay, Peru, Poland, Portugal, Qatar, Singapore, South Korea, Spain, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Turks and Caicos, the United Arab Emirates, the United Kingdom and Uruguay. Named as not accepted: Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam; for the rest the application said \"Schwab currently cannot open accounts for residents of your country/region.\" The test covers new applicants on that day only."
+        },
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Dated October 23, 2026 (country check that day). The United Arab Emirates is on the 51-country accepted list and marked \"Yes\"; South Africa is marked \"No\" (the 12 \"No\" rows: Canada, Croatia, Dominican Republic, France, Italy, Japan, Malta, New Zealand, Philippines, South Africa, Turkey, Vietnam). Montenegro, Albania and Mauritius are in neither list; the article says 200 of the 263 countries and regions in Schwab's selector showed that Schwab \"currently cannot open accounts for residents of your country/region\". It quotes the Schwab One International terms: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds from their account.\""
+        }
+      ],
+      "note": "South Africa is one of the 12 the dated list marks \"No\". Lending score stays 3 (\"IBKR only\")."
+    },
+    {
+      "id": "za-lending-margin-unreported",
+      "fact": "lending",
+      "cities": [
+        "cape-town"
+      ],
+      "claim": "IBKR's margin terms for residents of the country are unknown or unreported",
+      "verdict": "cant-confirm",
+      "hedge": "unreported",
+      "wording": "margin by country of residence is unreported",
+      "sources": [
+        {
+          "name": "FX Scouts: Interactive Brokers review for South Africa",
+          "url": "https://fxscouts.co.za/broker/interactivebrokers/",
+          "read": "2026-11-15",
+          "says": "Edited October 15, 2026. IBKR \"Accepts South African Clients\"; it says South Africans trade under IBKR's Connecticut subsidiary but lists Interactive Brokers U.K. Limited as the company; a margin day-trading account needs more than USD 25,000."
+        }
+      ],
+      "note": "A statement of what is not known; FX Scouts mentions only a margin day-trading minimum."
+    },
+    {
+      "id": "za-lending-fidelity-vanguard",
+      "fact": "lending",
+      "cities": [
+        "cape-town"
+      ],
+      "claim": "Fidelity and Vanguard open no accounts for residents abroad",
+      "verdict": "cant-confirm",
+      "oldWording": "and Fidelity and Vanguard open no accounts for residents abroad",
+      "hedge": "reportedly",
+      "wording": "Fidelity and Vanguard reportedly open no new accounts for residents abroad",
+      "sources": [
+        {
+          "name": "Your Tax Base: best brokerage for US expats",
+          "url": "https://yourtaxbase.com/blog/best-brokerage-for-us-expats",
+          "read": "2026-11-15",
+          "says": "Dated October 23, 2026. Quotes Fidelity's FAQ for customers outside the US: \"we do not open accounts for any new customers residing outside the United States.\" Vanguard's account-opening page, as checked in October 2026, requires US citizenship or permanent residence \"with a U.S. mailing address\"; people living or working outside the US are sent to Vanguard's international site."
+        }
+      ],
+      "also": [
+        "hedge added: \"reportedly\", and \"no accounts\" narrowed to \"no new accounts\", which is what the quoted Fidelity FAQ says (as Zurich's ch-lending-fidelity-vanguard)",
+        "sources: added the Your Tax Base best-brokerage page"
+      ],
+      "note": "A broker claim on a secondary page stays reported (rule 3). Fidelity's own FAQ (https://fidelity.com/accounts/services/investors_outside_US_faq.shtml) returned HTTP 403 on 2026-11-15; Vanguard's page was not tried."
+    },
+    {
+      "id": "za-visa-retired-income",
+      "fact": "visa",
+      "cities": [
+        "cape-town"
+      ],
+      "claim": "Retired person visa: at least R37,000/month from a pension, annuity or retirement account, or from a net worth or combination of assets producing that income",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "South African Embassy (Washington): requirements for a retired person's visa, updated 2 Apr 2026",
+          "url": "https://www.saembassy.org/wp-content/uploads/2026/04/Retired-Persons-Visa-updated-as-of-2-Apr-2026-1.pdf",
+          "read": "2026-11-15",
+          "says": "PDF in the embassy's April 2026 uploads (its pages carry a 2024/04/11 print stamp). Retirees must show \"a Pension with a minimum value of R37,000 per month from: Pension. Annuity. Retirement Fund. OR An Irrevocable Retirement Annuity OR Retirement Account to the equivalent amount or a Net Worth providing an income of at least R37,000 per month\", with a net worth confirmation from a South African financial institution, and medical cover with a scheme registered under the Medical Schemes Act. Read from the PDF that WebFetch saved, its text streams decompressed locally."
+        }
+      ]
+    },
+    {
+      "id": "za-visa-dollar-figure",
+      "fact": "visa",
+      "cities": [
+        "cape-town"
+      ],
+      "claim": "R37,000/month is about $2,100",
+      "verdict": "corrected",
+      "oldWording": "at least R37,000/month (about $2,100)",
+      "newWording": "at least R37,000/month (about $2,200)",
+      "sources": [
+        {
+          "name": "South African Embassy (Washington): requirements for a retired person's visa, updated 2 Apr 2026",
+          "url": "https://www.saembassy.org/wp-content/uploads/2026/04/Retired-Persons-Visa-updated-as-of-2-Apr-2026-1.pdf",
+          "read": "2026-11-15",
+          "says": "PDF in the embassy's April 2026 uploads (its pages carry a 2024/04/11 print stamp). Retirees must show \"a Pension with a minimum value of R37,000 per month from: Pension. Annuity. Retirement Fund. OR An Irrevocable Retirement Annuity OR Retirement Account to the equivalent amount or a Net Worth providing an income of at least R37,000 per month\", with a net worth confirmation from a South African financial institution, and medical cover with a scheme registered under the Medical Schemes Act. Read from the PDF that WebFetch saved, its text streams decompressed locally."
+        }
+      ],
+      "note": "A conversion, not a rule: at the rate in src/data/fx.json (ZAR 16.5148 per US$), R37,000 is $2,240. The embassy page gives the rand figure only."
+    },
+    {
+      "id": "za-visa-four-years-renewable",
+      "fact": "visa",
+      "cities": [
+        "cape-town"
+      ],
+      "claim": "The visa runs up to 4 years and is renewable",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Xpatweb: the retired person visa before new rules take hold",
+          "url": "https://www.xpatweb.com/xpatweb-news/south-africas-sought-after-retired-person-visa-a-narrow-window-for-prospective-applicants-before-new-rules-take-hold/",
+          "read": "2026-11-15",
+          "says": "Dated 14 May 2026 (by its URL). \"The visa is issued for a four-year period and can be renewed.\" Cabinet has approved the Revised White Paper; applicants will face \"a minimum age requirement, likely to be 55 years\" and \"a higher monthly income which does not come from a salary\"; the changes \"are proposed to be introduced as law later this year\", are not yet law, and will not apply retrospectively."
+        }
+      ]
+    },
+    {
+      "id": "za-visa-permanent-residence",
+      "fact": "visa",
+      "cities": [
+        "cape-town"
+      ],
+      "claim": "Permanent residence on the same income (s27(e)) or on R12M net worth plus a one-off R120,000 payment (s27(f))",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IBN Immigration: permanent residence on retirement or financial independence",
+          "url": "https://www.ibn.co.za/south-africa/pr-retire-fi/",
+          "read": "2026-11-15",
+          "says": "Last updated 18/08/2026. Retired PR under s27(e): \"Proof of a minimum guaranteed monthly income of ZAR 37,000.\" Financial independence under s27(f): \"a minimum net worth of ZAR 12 million\" and \"a once-off, non-refundable fee of ZAR 120,000 is payable to the Department of Home Affairs upon approval.\""
+        }
+      ]
+    },
+    {
+      "id": "za-visa-white-paper-pending",
+      "fact": "visa",
+      "cities": [
+        "cape-town"
+      ],
+      "claim": "A White Paper approved by Cabinet in April 2026 would add a minimum age and a higher income, not yet law",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Xpatweb: the retired person visa before new rules take hold",
+          "url": "https://www.xpatweb.com/xpatweb-news/south-africas-sought-after-retired-person-visa-a-narrow-window-for-prospective-applicants-before-new-rules-take-hold/",
+          "read": "2026-11-15",
+          "says": "Dated 14 May 2026 (by its URL). \"The visa is issued for a four-year period and can be renewed.\" Cabinet has approved the Revised White Paper; applicants will face \"a minimum age requirement, likely to be 55 years\" and \"a higher monthly income which does not come from a salary\"; the changes \"are proposed to be introduced as law later this year\", are not yet law, and will not apply retrospectively."
+        }
+      ],
+      "also": [
+        "visa fact: added the pending White Paper (\"a White Paper approved by Cabinet in April 2026 would add a minimum age and a higher income, not yet law\")",
+        "sources: added Xpatweb"
+      ],
+      "note": "Added under the method's \"check for a bill\" rule; the profile did not mention it. Search results (not reads) put Cabinet approval at 8 April 2026 (EWN, Maya on Money) and found no bill tabled by November 2026; polity.org.za returned 403. Visa score stays 4 on today's rule. If a minimum age of 55 comes in, a US retiree of that age still qualifies; a higher income threshold is the risk."
+    },
+    {
+      "id": "za-healthcare-private-standard",
+      "fact": "healthcare",
+      "cities": [
+        "cape-town"
+      ],
+      "claim": "Very good private care (UK advice: \"a very high standard of private medical care\"), while public care varies",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "GOV.UK: South Africa travel advice, health",
+          "url": "https://www.gov.uk/foreign-travel-advice/south-africa/health",
+          "read": "2026-11-15",
+          "says": "No date on the section. \"South Africa has a very high standard of private medical care.\" \"Public medical care varies across South Africa. Standards of treatment and hygiene may not be the same as in the UK.\""
+        }
+      ]
+    },
+    {
+      "id": "za-healthcare-netcare-cbm",
+      "fact": "healthcare",
+      "cities": [
+        "cape-town"
+      ],
+      "claim": "Netcare Christiaan Barnard Memorial is on the Foreshore",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Netcare: new Christiaan Barnard Memorial Hospital officially launched",
+          "url": "https://www.netcare.co.za/NewsHub/Articles/new-netcare-christiaan-barnard-memorial-hospital-officially-launched",
+          "read": "2026-11-15",
+          "says": "Dated December 6, 2016. \"a custom-designed 16-storey facility on Cape Town's foreshore\"."
+        }
+      ]
+    },
+    {
+      "id": "za-healthcare-schemes-late-joiner",
+      "fact": "healthcare",
+      "cities": [
+        "cape-town"
+      ],
+      "claim": "Local medical schemes cannot refuse on age but add a late-joiner penalty of up to 75% of the contribution for someone with no prior South African cover",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Discovery Health Medical Scheme: underwriting policies and protocols (2026)",
+          "url": "https://www.discovery.co.za/wcm/discoverycoza/assets/faz/medical-aid/2026/benefit-information/underwriting-policies-and-protocols-discovery-health-medical-scheme.pdf",
+          "read": "2026-11-15",
+          "says": "2026 edition. \"The Scheme is an open medical scheme and is community-rated\", with the same contributions \"regardless of age (late-joiner penalties will affect the risk portion of contributions) or health status\". A late joiner is 35 or older with no South African scheme membership (\"schemes and insurance policies from other countries are not recognised\"); penalty by years not a member after 35: 1–4 years 5%, 5–14 years 25%, 15–24 years 50%, \"25 years and more 75%\", added to the risk contribution only, not the savings account. Read from the PDF that WebFetch saved, its text streams decompressed locally."
+        }
+      ],
+      "note": "Discovery's rules say it is an open, community-rated scheme and the penalty applies to the risk portion of the contribution; \"cannot refuse on age\" rests on that (the Medical Schemes Act itself was not read)."
+    },
+    {
+      "id": "za-healthcare-cost-at-70",
+      "fact": "healthcare",
+      "cities": [
+        "cape-town"
+      ],
+      "claim": "A new 70-year-old pays roughly R17,500/month for comprehensive cover",
+      "verdict": "corrected",
+      "oldWording": "roughly R17,500/month (about $1,000)",
+      "newWording": "roughly R16,000–17,000/month (about $1,000)",
+      "sources": [
+        {
+          "name": "Medicalaid.com: Discovery Classic Comprehensive 2026",
+          "url": "https://medicalaid.com/medical-aid/discovery-health/comprehensive-series/classic-comprehensive/",
+          "read": "2026-11-15",
+          "says": "No explicit date (\"Copyright 2026\", images February 2026). 2026 main member contribution \"R10,037\" a month (the summary box says \"From R10,934\"); the medical savings account \"Consists of 25% of your monthly contributions\"."
+        },
+        {
+          "name": "Discovery Health Medical Scheme: underwriting policies and protocols (2026)",
+          "url": "https://www.discovery.co.za/wcm/discoverycoza/assets/faz/medical-aid/2026/benefit-information/underwriting-policies-and-protocols-discovery-health-medical-scheme.pdf",
+          "read": "2026-11-15",
+          "says": "2026 edition. \"The Scheme is an open medical scheme and is community-rated\", with the same contributions \"regardless of age (late-joiner penalties will affect the risk portion of contributions) or health status\". A late joiner is 35 or older with no South African scheme membership (\"schemes and insurance policies from other countries are not recognised\"); penalty by years not a member after 35: 1–4 years 5%, 5–14 years 25%, 15–24 years 50%, \"25 years and more 75%\", added to the risk contribution only, not the savings account. Read from the PDF that WebFetch saved, its text streams decompressed locally."
+        }
+      ],
+      "also": [
+        "sources: added Discovery's 2026 underwriting rules"
+      ],
+      "note": "Worked from the pages read: Classic Comprehensive costs R10,037 a month in 2026 (R10,934 in the page's summary box); the 25% savings portion carries no penalty, so a 75% penalty on the 75% risk portion gives about R15,700 (or R17,100 on the higher figure). \"(secondary source)\" stays. Healthcare score stays 4."
+    }
+  ]
+}

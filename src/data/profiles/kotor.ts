@@ -8,14 +8,14 @@ const profile: ExpatProfile = {
   scores: { cost: 3, healthcare: 2, safety: 4, visa: 3, climate: 3, community: 2, tax: 4, estate: 5, lending: 3 },
   facts: {
     healthcare:
-      'Kotor General Hospital covers the bay, with complex cases sent to the Clinical Centre in Podgorica or to Croatia and Serbia; the public system is stretched by newcomers, private clinics are few, and health insurance is a condition of residence.',
+      'Kotor\'s hospital covers the bay, with complex cases sent to the Clinical Centre in Podgorica or to Croatia and Serbia; the public system is stretched by newcomers, private clinics are few, and health insurance is a condition of residence.',
     safety:
       'Montenegro is 30th in the 2026 Global Peace Index; UK travel advice warns of pickpockets in tourist spots and of violence between organised crime groups that can affect bystanders.',
     visa: 'Temporary residence by owning real estate with a Tax Authority-assessed value of at least €150,000 (since January 2026; older permits are grandfathered), plus means of subsistence and health insurance; renewed yearly, and the time reportedly does not count toward permanent residence.',
-    tax: 'No wealth tax; residents are taxed on worldwide income, with dividends, interest and capital gains at 15% of the gross amount, and Kotor\'s 13% municipal surtax on income tax may raise that to about 17% (whether it applies to capital income is unverified); there is no newcomer regime.',
+    tax: 'No wealth tax; residents are taxed on worldwide income, with dividends and interest at 15% of the gross amount and capital gains at 15% of the gain, and Kotor\'s 13% municipal surtax on income tax may raise that to about 17% (whether it applies to capital income is unverified); there is no newcomer regime.',
     estate: 'Inheritance tax of 3–6% applies only to inherited real estate, and close family are reportedly exempt, so a US portfolio passes to US-resident children with no Montenegrin tax; there is no US estate treaty.',
     lending:
-      'IBKR reportedly accepts residents of all non-sanctioned countries, including Montenegro, though margin terms per country are unknown; Schwab International most likely does not accept Montenegro, which is off its reported list; as a non-EU country, PRIIPs limits on US ETFs do not apply.',
+      'IBKR reportedly accepts residents of all non-sanctioned countries, including Montenegro, though margin terms per country are unknown; Schwab International most likely does not accept Montenegro, which is off its reported list; as a non-EU country, EU PRIIPs limits on US ETFs should not apply, though which IBKR entity carries the account is unconfirmed.',
     climate: 'Hot summers (highs about 31°C in July and August) and mild but very wet winters: about 1,400 mm of rain a year, mostly from November to January, with January lows near 3°C.',
     community: 'A small but growing foreign community along the bay and in nearby Tivat and Budva (remote workers, retirees, property buyers); outside the tourist trade, English is less common.',
     access:
@@ -37,6 +37,9 @@ const profile: ExpatProfile = {
       name: 'Montenegro Business: healthcare and the boom in international residents',
       url: 'https://montenegrobusiness.eu/montenegros-healthcare-crossroads-why-the-boom-in-international-residents-demands-a-private-sector-push/',
     },
+    { name: 'Portonovi: the healthcare system in Montenegro', url: 'https://portonovi.com/en/blog/healthcare-system-montenegro-what-expats-and-second-home-buyers-need-know', edition: '2025' },
+    { name: 'Clinical Centre of Montenegro: about us', url: 'https://www.kccg.me/o-nama/' },
+    { name: 'Immigrant Invest: Montenegro tax rates', url: 'https://immigrantinvest.com/blog/taxes-in-montenegro/', edition: '2025' },
     { name: 'GOV.UK: Montenegro travel advice, safety and security', url: 'https://www.gov.uk/foreign-travel-advice/montenegro/safety-and-security' },
     S.gpiTop50,
     { name: 'Climates to Travel: Kotor climate', url: 'https://www.climatestotravel.com/climate/montenegro/kotor' },

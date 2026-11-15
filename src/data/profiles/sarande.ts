@@ -7,11 +7,11 @@ const profile: ExpatProfile = {
   scores: { cost: 4, healthcare: 2, safety: 4, visa: 3, climate: 4, community: 2, tax: 4, estate: 5, lending: 3 },
   facts: {
     healthcare:
-      'The UK embassy\'s list of English-speaking medical facilities (Mar 2026) names hospitals in Tirana, Durrës and Fier but none in Sarandë; serious care means Tirana (reportedly 4–5 hours by road) or Corfu by ferry, and the permit needs private cover anyway (Cigna Global has no upper entry age).',
+      'The UK embassy\'s list of English-speaking medical facilities (Mar 2026) names hospitals in Tirana, Durrës and Fier but none in Sarandë; serious care means Tirana (reportedly about five hours by road) or Corfu by ferry, and the permit needs private cover anyway (Cigna Global has no upper entry age).',
     safety:
       'Albania is 36th in the 2026 Global Peace Index; UK travel advice says crime targeting foreigners is rare, with pickpocketing in tourist areas, but driving is hazardous (road deaths among Europe\'s highest) and wildfires are common from April to October.',
     visa: 'US citizens can stay up to a year visa-free, with more than 90 days outside Albania before a new year; the pensioner permit (Law 79/2021) needs about ALL 1.2m a year of pension paid into an Albanian bank, and portfolio income alone does not qualify; a property route reportedly changed in 2026 (possibly €300k), so confirm it with a lawyer.',
-    tax: 'No wealth tax (only a 0.05% yearly tax on residential buildings); residents are taxed on worldwide income, with dividends at 8% and interest and gains at 15%; there is no US income tax treaty, so whether US tax is credited against the 8% is unconfirmed, and there is no newcomer regime.',
+    tax: 'No wealth tax (only a 0.05% yearly tax on residential buildings); residents are taxed on worldwide income, with dividends at 8% and interest and gains at 15%; there is no US income tax treaty, but Albania credits foreign tax paid on foreign income up to the Albanian tax on it, and there is no newcomer regime.',
     estate:
       'Albania\'s 15% inheritance tax exempts first- and second-degree heirs, so children pay nothing whether or not it reaches US assets; there is no US estate treaty, which matters little here.',
     lending:
@@ -30,6 +30,8 @@ const profile: ExpatProfile = {
     { name: 'PwC: Albania, taxes on personal income', url: 'https://taxsummaries.pwc.com/albania/individual/taxes-on-personal-income' },
     { name: 'PwC: Albania, income determination', url: 'https://taxsummaries.pwc.com/albania/individual/income-determination' },
     { name: 'PwC: Albania, other taxes', url: 'https://taxsummaries.pwc.com/albania/individual/other-taxes' },
+    { name: 'PwC: Albania, foreign tax relief and tax treaties', url: 'https://taxsummaries.pwc.com/albania/individual/foreign-tax-relief-and-tax-treaties' },
+    { name: 'e-Albania: residence permit documents by purpose', url: 'https://e-albania.al/assets/services/DPPSH/15308_LQ_dokumentacioni.pdf' },
     {
       name: 'Exit News: law on foreigners paves way for pensioner immigrants',
       url: 'https://exit.al/en/approved-law-on-foreigners-paves-way-for-pensioner-and-digital-nomad-immigrants-in-albania',
@@ -47,6 +49,7 @@ const profile: ExpatProfile = {
       url: 'https://top-channel.tv/english/over-three-thousand-italian-retirees-registered-as-residents-in-albania',
     },
     { name: 'Wikipedia: Sarandë', url: 'https://en.wikipedia.org/wiki/Sarand%C3%AB' },
+    { name: 'App Savvy Traveller: Tirana to Sarandë and Ksamil', url: 'https://appsavvytraveller.com/tirana-to-saranda-and-ksamil/', edition: '2026' },
     { name: 'Ferryhopper: Corfu to Sarandë ferry', url: 'https://www.ferryhopper.com/en/ferry-routes/direct/corfu-sarande' },
     { name: 'Money.it: GPI 2026 top 50', url: 'https://www.money.it/50-paesi-piu-sicuri-al-mondo-nel-2026', edition: '2026' },
   ],

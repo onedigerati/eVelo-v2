@@ -1,0 +1,562 @@
+{
+  "country": "Hungary",
+  "cities": [
+    "budapest"
+  ],
+  "claims": [
+    {
+      "id": "hu-tax-no-wealth-tax",
+      "fact": "tax",
+      "cities": [
+        "budapest"
+      ],
+      "claim": "Hungary has no wealth tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Hungary, other taxes",
+          "url": "https://taxsummaries.pwc.com/hungary/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 01 July 2026. \"There are no net wealth/worth taxes in Hungary.\" \"Interest income is subject to 13% social tax that is payable by the individual.\" Dividend income, \"with the exception of the dividend paid by companies the shares of which are traded on an EEA stock exchange\", is also subject to 13% social tax; \"the base of this tax is capped at 24 times the minimum wage\", reduced by other income subject to social tax. The 2026 minimum wage is given as HUF 322,800 a month. \"The general inheritance and gift tax rate is 18%, and a preferential 9% tax rate applies to residential property. The transfer of property without consideration between lineal relatives (including the spouse of the deceased) is tax exempt.\""
+        },
+        {
+          "name": "PwC quick chart: net wealth/worth tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/net-wealth-worth-tax-rates",
+          "read": "2026-11-15",
+          "says": "Georgia: \"NA\" (last reviewed 02 September 2026); Hungary: \"N/A\" (01 July 2026); Czech Republic: \"NA\" (27 July 2026); Turkey: \"NA\" (09 September 2026). The page defines NA as \"the territory does not have the indicated tax or requirement\"."
+        }
+      ],
+      "note": "localTaxes.ts (HU) agrees: no wealth tax."
+    },
+    {
+      "id": "hu-tax-worldwide-flat-15",
+      "fact": "tax",
+      "cities": [
+        "budapest"
+      ],
+      "claim": "Residents are taxed on worldwide income at a flat 15%",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Hungary, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/hungary/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 01 July 2026. \"The PIT rate is 15% in the case of nearly all types of income.\" Hungarian tax applies to \"foreign-source income, provided to an individual resident in Hungary\"; dividends, interest and capital gains are taxed separately from the consolidated base."
+        },
+        {
+          "name": "PwC: Hungary, income determination",
+          "url": "https://taxsummaries.pwc.com/hungary/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 01 July 2026. \"Dividend income is taxable at 15% PIT\"; an additional 13% social tax is payable on dividends if certain conditions are not met, \"only up to a relatively low cap\". \"Interest income is also subject to tax at 15%\"; \"an additional 13% social tax is payable on interest incomes derived from instruments purchased after 1 July 2023\". A credit for foreign withholding tax is available for treaty countries up to the treaty rate."
+        }
+      ]
+    },
+    {
+      "id": "hu-tax-szocho-dividends-cap",
+      "fact": "tax",
+      "cities": [
+        "budapest"
+      ],
+      "claim": "Non-EEA dividends (US-listed ones included) also carry the 13% social contribution tax until a yearly cap of about HUF 7.75m of income (2026): roughly 28% up to the cap and 15% above it",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Hungary, other taxes",
+          "url": "https://taxsummaries.pwc.com/hungary/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 01 July 2026. \"There are no net wealth/worth taxes in Hungary.\" \"Interest income is subject to 13% social tax that is payable by the individual.\" Dividend income, \"with the exception of the dividend paid by companies the shares of which are traded on an EEA stock exchange\", is also subject to 13% social tax; \"the base of this tax is capped at 24 times the minimum wage\", reduced by other income subject to social tax. The 2026 minimum wage is given as HUF 322,800 a month. \"The general inheritance and gift tax rate is 18%, and a preferential 9% tax rate applies to residential property. The transfer of property without consideration between lineal relatives (including the spouse of the deceased) is tax exempt.\""
+        },
+        {
+          "name": "Deloitte Hungary: the impact of the 2026 minimum wage increase on various tax obligations",
+          "url": "https://www.deloitte.com/hu/en/services/tax/perspectives/the-impact-of-the-2026-minimum-wage-increase-on-various-tax-obligations.html",
+          "read": "2026-11-15",
+          "says": "Undated (© 2026), on changes from 1 January 2026. \"The monthly minimum wage increased from HUF 290,800 to HUF 322,800.\" Social contribution tax on capital-type income is payable \"only until the sum of such income and the consolidated tax base reaches 24 times the minimum wage\", HUF 7,747,200 (at most HUF 1,007,136 of tax). Interest income is outside this cap and may bear 13% on the full amount."
+        },
+        {
+          "name": "Act LII of 2018 on social contribution tax (net.jogtar.hu consolidated text)",
+          "url": "https://net.jogtar.hu/szocho-tv",
+          "read": "2026-11-15",
+          "says": "In force from 1 October 2026 (\"2026.X.1.\"). § 1(5) lists the income taxed, with dividends at c), capital gains at d) and \"a természetes személy kamatjövedelme\" (interest, except on real-estate fund units) at f). § 2(1): the rate is 13% of the base. § 2(2): the tax is due until the person's income under § 1(1)–(3) and § 1(5) a)–e) reaches 24 times the minimum wage: interest (f) is not in that range. § 5(3): no tax on dividends from securities listed on an exchange in an EEA member state. Only the first 100,000 of 103,660 characters were read."
+        }
+      ],
+      "also": [
+        "sources: added Deloitte Hungary (the 2026 cap in forints)"
+      ],
+      "note": "24 × HUF 322,800 = HUF 7,747,200. The cap counts wages and other capped income too, so a retiree with no wages pays the 13% on roughly the first HUF 7.75m of dividends and gains."
+    },
+    {
+      "id": "hu-tax-szocho-interest-cap",
+      "fact": "tax",
+      "cities": [
+        "budapest"
+      ],
+      "claim": "Interest carries the 13% social contribution tax only until the same yearly cap (the profile put interest and dividends under one cap)",
+      "verdict": "corrected",
+      "oldWording": "and interest and non-EEA dividends (including US-listed ones) also carry the 13% social contribution tax until a yearly cap",
+      "newWording": "while interest on holdings bought since July 2023 carries the 13% with no cap, so 28% throughout",
+      "sources": [
+        {
+          "name": "Act LII of 2018 on social contribution tax (net.jogtar.hu consolidated text)",
+          "url": "https://net.jogtar.hu/szocho-tv",
+          "read": "2026-11-15",
+          "says": "In force from 1 October 2026 (\"2026.X.1.\"). § 1(5) lists the income taxed, with dividends at c), capital gains at d) and \"a természetes személy kamatjövedelme\" (interest, except on real-estate fund units) at f). § 2(1): the rate is 13% of the base. § 2(2): the tax is due until the person's income under § 1(1)–(3) and § 1(5) a)–e) reaches 24 times the minimum wage: interest (f) is not in that range. § 5(3): no tax on dividends from securities listed on an exchange in an EEA member state. Only the first 100,000 of 103,660 characters were read."
+        },
+        {
+          "name": "Deloitte Hungary: the impact of the 2026 minimum wage increase on various tax obligations",
+          "url": "https://www.deloitte.com/hu/en/services/tax/perspectives/the-impact-of-the-2026-minimum-wage-increase-on-various-tax-obligations.html",
+          "read": "2026-11-15",
+          "says": "Undated (© 2026), on changes from 1 January 2026. \"The monthly minimum wage increased from HUF 290,800 to HUF 322,800.\" Social contribution tax on capital-type income is payable \"only until the sum of such income and the consolidated tax base reaches 24 times the minimum wage\", HUF 7,747,200 (at most HUF 1,007,136 of tax). Interest income is outside this cap and may bear 13% on the full amount."
+        },
+        {
+          "name": "PwC: Hungary, income determination",
+          "url": "https://taxsummaries.pwc.com/hungary/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 01 July 2026. \"Dividend income is taxable at 15% PIT\"; an additional 13% social tax is payable on dividends if certain conditions are not met, \"only up to a relatively low cap\". \"Interest income is also subject to tax at 15%\"; \"an additional 13% social tax is payable on interest incomes derived from instruments purchased after 1 July 2023\". A credit for foreign withholding tax is available for treaty countries up to the treaty rate."
+        }
+      ],
+      "also": [
+        "drawback 1 reworded: \"Up to 28% on US dividends until the social-contribution cap, 28% on interest throughout, and no US tax treaty since 2024\"",
+        "scores.tax stays 3 (no wealth tax, 15–28% on dividends and 28% on interest: the rubric's 19–30% band)",
+        "summary unchanged on this point: \"plus up to 13% social contribution\" still holds",
+        "\"check current rules\" appended to the fact"
+      ],
+      "note": "The statute's cap (§ 2(2)) counts § 1(5) a)–e); interest is f). Deloitte says the same in plain words. PwC's \"other taxes\" page puts the cap sentence right after dividends and is ambiguous; a search summary of the jogtar text read it the other way, so the article was opened and read. NAV's own guidance was not found."
+    },
+    {
+      "id": "hu-tax-us-treaty-terminated",
+      "fact": "tax",
+      "cities": [
+        "budapest"
+      ],
+      "claim": "The US–Hungary income tax treaty ended in 2024, and without a treaty at least 5% Hungarian tax stays due after the credit for US tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IRS: Hungary tax treaty documents",
+          "url": "https://www.irs.gov/businesses/international-businesses/hungary-tax-treaty-documents",
+          "read": "2026-11-15",
+          "says": "Page last reviewed or updated 10-Jan-2026. \"Termination was effective on January 8, 2023\"; \"with respect to taxes withheld at source, the Convention ceased to have effect on January 1, 2024\", and for other taxes for taxable periods beginning on or after January 1, 2024."
+        },
+        {
+          "name": "PwC: Hungary, foreign tax relief and tax treaties",
+          "url": "https://taxsummaries.pwc.com/hungary/individual/foreign-tax-relief-and-tax-treaties",
+          "read": "2026-11-15",
+          "says": "Last reviewed 01 July 2026. \"Please note that the DTT concluded with the United States has been terminated as of 1 January 2024\"; the United States is not in the treaty list. Without a treaty, foreign tax on investment income can be offset, but \"at least 5% Hungarian tax needs to be paid in the absence of a DTT\"."
+        },
+        {
+          "name": "IRS: United States income tax treaties, A to Z",
+          "url": "https://www.irs.gov/businesses/international-businesses/united-states-income-tax-treaties-a-to-z",
+          "read": "2026-11-15",
+          "says": "Page last reviewed or updated 03-Jan-2026; read again on 2026-11-15 for this batch. Under C: Canada, Chile, China, Cyprus, Czech Republic. Under G: Georgia, Germany, Greece. Under H: Hungary, marked \"CAUTION Treaty Terminated\". Under T: Tajikistan, Thailand, Trinidad, Tunisia, Turkey, Turkmenistan. The USSR entry is marked \"CAUTION Treaty Partially Suspended for Belarus\"."
+        }
+      ],
+      "also": [
+        "clause added to the tax fact: the profile was silent on the treaty, which a reader holding US dividends needs",
+        "summary: added \"and the US tax treaty ended in 2024\"",
+        "sources: added PwC foreign tax relief and the IRS Hungary treaty page"
+      ],
+      "note": "Added, not corrected: the old fact did not mention the treaty. Not established here: how the US credits Hungarian tax on US-source dividends for a US citizen with no treaty to re-source the income; double tax on part of it is possible. A US citizen is not subject to the 30% withholding (that is for foreign persons), so the profile does not mention it."
+    },
+    {
+      "id": "hu-estate-rates",
+      "fact": "estate",
+      "cities": [
+        "budapest"
+      ],
+      "claim": "Inheritance tax is 18% (9% on homes)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Hungary, other taxes",
+          "url": "https://taxsummaries.pwc.com/hungary/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 01 July 2026. \"There are no net wealth/worth taxes in Hungary.\" \"Interest income is subject to 13% social tax that is payable by the individual.\" Dividend income, \"with the exception of the dividend paid by companies the shares of which are traded on an EEA stock exchange\", is also subject to 13% social tax; \"the base of this tax is capped at 24 times the minimum wage\", reduced by other income subject to social tax. The 2026 minimum wage is given as HUF 322,800 a month. \"The general inheritance and gift tax rate is 18%, and a preferential 9% tax rate applies to residential property. The transfer of property without consideration between lineal relatives (including the spouse of the deceased) is tax exempt.\""
+        },
+        {
+          "name": "PwC quick chart: inheritance and gift tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates",
+          "read": "2026-11-15",
+          "says": "Georgia: inheritance \"NA\", gift \"NA\" (last reviewed 02 September 2026). Hungary: \"18% (but a preferential 9% rate applies to residential property). Children, siblings, and spouses may receive the inheritance without tax.\" (01 July 2026). Czech Republic: inheritance \"NA\"; gift \"If taxable, the gift is subject to the normal PIT rate.\" (27 July 2026). Turkey: inheritance \"10\", gift \"30\" (09 September 2026)."
+        }
+      ]
+    },
+    {
+      "id": "hu-estate-children-spouse-exempt",
+      "fact": "estate",
+      "cities": [
+        "budapest"
+      ],
+      "claim": "Transfers to children and a surviving spouse are exempt, so a US portfolio passes to US-resident children with no Hungarian tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Hungary, other taxes",
+          "url": "https://taxsummaries.pwc.com/hungary/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 01 July 2026. \"There are no net wealth/worth taxes in Hungary.\" \"Interest income is subject to 13% social tax that is payable by the individual.\" Dividend income, \"with the exception of the dividend paid by companies the shares of which are traded on an EEA stock exchange\", is also subject to 13% social tax; \"the base of this tax is capped at 24 times the minimum wage\", reduced by other income subject to social tax. The 2026 minimum wage is given as HUF 322,800 a month. \"The general inheritance and gift tax rate is 18%, and a preferential 9% tax rate applies to residential property. The transfer of property without consideration between lineal relatives (including the spouse of the deceased) is tax exempt.\""
+        },
+        {
+          "name": "PwC quick chart: inheritance and gift tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates",
+          "read": "2026-11-15",
+          "says": "Georgia: inheritance \"NA\", gift \"NA\" (last reviewed 02 September 2026). Hungary: \"18% (but a preferential 9% rate applies to residential property). Children, siblings, and spouses may receive the inheritance without tax.\" (01 July 2026). Czech Republic: inheritance \"NA\"; gift \"If taxable, the gift is subject to the normal PIT rate.\" (27 July 2026). Turkey: inheritance \"10\", gift \"30\" (09 September 2026)."
+        }
+      ],
+      "note": "Also the tagline (\"children inherit free\") and the summary. localTaxes.ts (HU) agrees: no inheritance entry, note says transfers to children are exempt. PwC is the source; the duties act itself (Act XCIII of 1990) was not read."
+    },
+    {
+      "id": "hu-estate-no-us-treaty",
+      "fact": "estate",
+      "cities": [
+        "budapest"
+      ],
+      "claim": "There is no US estate treaty",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-without",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list); none of the 37 countries named in this claim is among them."
+        }
+      ]
+    },
+    {
+      "id": "hu-lending-ibkr-accepts",
+      "fact": "lending",
+      "cities": [
+        "budapest"
+      ],
+      "claim": "IBKR serves Hungarian residents",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly serves Hungarian residents",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026; read again on 2026-11-15 for this batch. \"In the EU, customers sign up with the Irish entity\" (Interactive Brokers Ireland Limited); the Irish €20,000 protection \"applies to Eastern Europe following recent IBKR Irish and Hungarian Entity Merger\". The \"Country Availability\" list includes Hungary, the Czech Republic, Turkey and Georgia; it does not map countries to entities, and names no entity for residents of Turkey or Georgia. PRIIPs is described as \"an EU rule that prohibits buying US-listed ETFs\" that \"also applies to UK Investors\"."
+        }
+      ],
+      "note": "IBKR's own country list (https://www.interactivebrokers.co.uk/en/index.php?f=38309) returned HTTP 403 again on 2026-11-15; the other Interactive Brokers sites were not retried."
+    },
+    {
+      "id": "hu-lending-ibkr-eu-entity",
+      "fact": "lending",
+      "cities": [
+        "budapest"
+      ],
+      "claim": "Hungarian residents are served through IBKR's EU entity",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-eu-entity",
+      "hedge": "likely",
+      "wording": "(likely through its EU entity)",
+      "sources": [
+        {
+          "name": "Interactive Brokers Ireland Limited: Customer Agreement (document 4750, 7/1/2023), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/01_4750_IBIE_Customer_Agreement_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "Clause 1B: Interactive Brokers Ireland Limited (\"IBIE\") is incorporated in Ireland, company number 657406, and \"is regulated by the Central Bank of Ireland\", register number C423427. Clause 1C: unless told otherwise in writing, the client is categorised as a Retail Client. The agreement does not say which countries' residents IBIE serves."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. \"In the EU, customers sign up with the Irish entity\"; UK clients are with Interactive Brokers (U.K.) Limited; the Irish €20k compensation scheme applies to Eastern Europe after the Irish and Hungarian entities merged."
+        },
+        {
+          "name": "Investing in the Web: Interactive Brokers in Europe",
+          "url": "https://investingintheweb.com/broker-reviews/interactive-brokers-europe",
+          "read": "2026-11-15",
+          "says": "Updated on Sep 8, 2026. \"As an European resident, you are under the Central Bank of Ireland regulation\" (Interactive Brokers Ireland Limited); \"As a UK resident, you will be under this legal entity\" (Interactive Brokers UK Limited); \"Interactive Brokers Luxembourg and Central have been extinct/merged.\""
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026; read again on 2026-11-15 for this batch. \"In the EU, customers sign up with the Irish entity\" (Interactive Brokers Ireland Limited); the Irish €20,000 protection \"applies to Eastern Europe following recent IBKR Irish and Hungarian Entity Merger\". The \"Country Availability\" list includes Hungary, the Czech Republic, Turkey and Georgia; it does not map countries to entities, and names no entity for residents of Turkey or Georgia. PRIIPs is described as \"an EU rule that prohibits buying US-listed ETFs\" that \"also applies to UK Investors\"."
+        }
+      ],
+      "note": "The profile names \"its EU entity\", not the Hungarian one. IBKR had a Hungarian company, Interactive Brokers Central Europe; the two secondary pages copied from shared.json say it was merged into the Irish entity, and Banker on Wheels (re-read today) speaks of the \"IBKR Irish and Hungarian Entity Merger\" without saying which company a Hungarian resident now contracts with. interactivebrokers.hu was not readable in stage 1 and was not retried. The shared margin claim's sources speak of \"IBKR Ireland and Central Europe\", so the wording holds either way."
+    },
+    {
+      "id": "hu-lending-ibkr-margin-cash-out",
+      "fact": "lending",
+      "cities": [
+        "budapest"
+      ],
+      "claim": "A Hungary resident can borrow against the portfolio at IBKR (implied by naming IBKR as the one broker, \"with margin terms per country unknown\")",
+      "verdict": "corrected",
+      "shared": "ibkr-eu-margin-cash-out",
+      "oldWording": "with margin terms per country unknown; Schwab International is reportedly unavailable, as Hungary",
+      "newWording": "and IBKR's EU entity reportedly lends on margin only to buy securities, not to withdraw as cash, so confirm how you would draw cash before relying on it",
+      "sources": [
+        {
+          "name": "LYNX: Withdrawal (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/payments-and-transfers/withdrawal/",
+          "read": "2026-11-15",
+          "says": "\"It is not possible to withdraw in a currency if your cash balance is negative or would go negative after the withdrawal.\" In a margin account \"some funds may be used as collateral for other positions or to cover negative cash balances\", which lowers what can be withdrawn. The page is undated (footer: Copyright 2023)."
+        },
+        {
+          "name": "CapTrader: Geld abheben (help page of a German introducing broker for Interactive Brokers)",
+          "url": "https://www.captrader.com/geld-abheben/",
+          "read": "2026-11-15",
+          "says": "\"Auszahlungen sind nur möglich, wenn kein negativer Saldo in der entsprechenden Währung\" or in the total cash arises or grows: withdrawals are possible only if they do not create or increase a negative balance. Footer: © CapTrader 2026."
+        },
+        {
+          "name": "Interactive Brokers Ireland Limited: Customer Agreement (document 4750, 7/1/2023), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/01_4750_IBIE_Customer_Agreement_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "Clause 2A(i)(d) defines the margin service as one \"to enable Clients to acquire investment instruments\". Clause 5A(iv): \"Terms and conditions for deposit and withdrawal of funds (including holding periods) are as specified on the IBIE website.\" The agreement does not say that a loan may be withdrawn as cash."
+        },
+        {
+          "name": "Mustachian Post forum: Using margin loan at Interactive Brokers, page 13",
+          "url": "https://forum.mustachianpost.com/t/using-margin-loan-at-interactive-brokers/3980?page=13",
+          "read": "2026-11-15",
+          "says": "Posts of September to November 2024. One poster says withdrawing cash on margin is \"not possible in Germany with IB IE\" but is with IB UK; Swiss residents with IB UK accounts report having done it; another reports IBKR service saying \"IBUK customers can no longer withdraw cash if aggregate cash balance is -ve\", which a manager then said applies only to UK residents."
+        }
+      ],
+      "also": [
+        "scores.lending 3→2 (plan decision of 2026-11-15; rubric 2: IBKR only and even that uncertain, or EU residence)",
+        "summary: added the closing sentence \"The borrow step is weak too: Schwab is reportedly unavailable to Hungary residents, and IBKR reportedly bars EU residents from drawing margin as cash.\"",
+        "drawbacks: none mentioned margin or brokers, so none was reworded and none was added; the summary sentence carries it",
+        "sources: added LYNX withdrawal page",
+        "\"with margin terms per country unknown\" dropped: the clause that replaces it says what is reported about margin",
+        "EU PRIIPs clause added (see hu-lending-priips-new-buys): the fact had none, unlike the other EU profiles"
+      ],
+      "rankFlag": "Budapest (pick 47) now scores lending 2. Its `why` does not mention borrowing, so it is not contradicted. Rank and `why` are unchanged: user's call.",
+      "note": "Worded as for Bulgaria and Malta: the standard clause ending \"before relying on it\" (one broker). Shared sources are copied with their stage 1 read date; the LYNX page was not re-read."
+    },
+    {
+      "id": "hu-lending-schwab-unavailable",
+      "fact": "lending",
+      "cities": [
+        "budapest"
+      ],
+      "claim": "Schwab International is unavailable: Hungary is off its reported list",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab International is reportedly unavailable, as Hungary is off its reported list",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026; read again on 2026-11-15 for this batch. The 51 countries and regions accepted on that day include the Czech Republic (also Austria, Poland, Greece, Germany); the 12 marked \"No\" are Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam. Hungary and Georgia are in neither list. It quotes the Schwab One agreement: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds from their account\", and does not define \"Europe\"."
+        }
+      ],
+      "note": "Hungary is not among the 51 accepted and not one of the 12 named as refused."
+    },
+    {
+      "id": "hu-lending-priips-new-buys",
+      "fact": "lending",
+      "cities": [
+        "budapest"
+      ],
+      "claim": "EU PRIIPs rules block new buys of US-listed ETFs",
+      "verdict": "confirmed",
+      "shared": "priips-us-etf-new-buys-blocked",
+      "sources": [
+        {
+          "name": "LYNX: Key Information Document (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/products-and-regulations/regulations/key-information-document/",
+          "read": "2026-11-15",
+          "says": "Retail clients are \"not permitted to trade ETFs or other products that do not have a valid KID\"; many non-EU ETFs have none. Can a retail client buy US ETFs? \"No, not unless you are classified as a professional investor.\" The same applies to ETFs from Canada, Hong Kong, Mexico and Australia. The KID has applied to most products since 1 January 2018."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. \"PRIIPs is an EU rule that prohibits buying US-listed ETFs\", and this also applies to UK investors; US ETFs are open only to elective professional clients, while UCITS ETFs are available to all Europeans."
+        }
+      ],
+      "also": [
+        "clause added with the margin correction; the profile had no PRIIPs clause"
+      ],
+      "note": "The \"reportedly\" does no harm."
+    },
+    {
+      "id": "hu-lending-priips-holdings-kept",
+      "fact": "lending",
+      "cities": [
+        "budapest"
+      ],
+      "claim": "The block is on buying, not on holding US-listed ETFs",
+      "verdict": "confirmed",
+      "shared": "priips-existing-holdings-kept",
+      "sources": [
+        {
+          "name": "LYNX: Key Information Document (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/products-and-regulations/regulations/key-information-document/",
+          "read": "2026-11-15",
+          "says": "The page's FAQ says retail clients \"may still hold or sell existing positions, but new purchases are restricted.\""
+        },
+        {
+          "name": "Regulation (EU) No 1286/2014, Article 13, as adopted (legislation.gov.uk copy of the EU text)",
+          "url": "https://www.legislation.gov.uk/eur/2014/1286/article/13/adopted",
+          "read": "2026-11-15",
+          "says": "The duty to provide a KID falls on \"a person advising on, or selling, a PRIIP\" before the retail investor is bound; nothing in the article reaches a PRIIP the investor already holds or a sale by the investor."
+        }
+      ]
+    },
+    {
+      "id": "hu-visa-guest-investor-terms",
+      "fact": "visa",
+      "cities": [
+        "budapest"
+      ],
+      "claim": "Guest investor residence permit: at least €250k in a central-bank-registered real-estate fund held 5 years, or a €1m university donation; valid up to 10 years, renewable for 10 more, with family reunification and 21-day processing",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "National Directorate-General for Aliens Policing: residence permit for guest investors",
+          "url": "https://oif.gov.hu/factsheets/residence-permit-for-guest-investor",
+          "read": "2026-11-15",
+          "says": "Page last edited 2026.03.03. Two qualifying investments: an \"investment fund share of at least EUR 250 000\" issued by a real estate fund registered by the Hungarian National Bank, held on a securities sub-account blocked for at least 5 years, or a \"financial donation in an amount of at least EUR 1 000 000\" to a higher-education institution run by a public-trust foundation. The permit is valid for up to 10 years and \"may be extended for up to another 10 years\"; the decision takes 21 days; a family-reunification permit tied to it gives the right to work. No property-purchase option is listed."
+        }
+      ],
+      "note": "Also the summary's \"a €250k real-estate fund investment gives a residence permit of up to 10 years\"."
+    },
+    {
+      "id": "hu-visa-no-property-route",
+      "fact": "visa",
+      "cities": [
+        "budapest"
+      ],
+      "claim": "Buying property directly is not a listed route",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "National Directorate-General for Aliens Policing: residence permit for guest investors",
+          "url": "https://oif.gov.hu/factsheets/residence-permit-for-guest-investor",
+          "read": "2026-11-15",
+          "says": "Page last edited 2026.03.03. Two qualifying investments: an \"investment fund share of at least EUR 250 000\" issued by a real estate fund registered by the Hungarian National Bank, held on a securities sub-account blocked for at least 5 years, or a \"financial donation in an amount of at least EUR 1 000 000\" to a higher-education institution run by a public-trust foundation. The permit is valid for up to 10 years and \"may be extended for up to another 10 years\"; the decision takes 21 days; a family-reunification permit tied to it gives the right to work. No property-purchase option is listed."
+        },
+        {
+          "name": "Daily News Hungary: changes to Hungarian residence permits for non-EU nationals",
+          "url": "https://dailynewshungary.com/changes-hungary-residence-permit-non-eu/",
+          "read": "2026-11-15",
+          "says": "Published March 27, 2025, updated May 14, 2026. The immigration law in force from 1 January 2024 brought \"the elimination of the 'Residence Permit for Other Purposes'\", with \"no direct replacement\"; for retirees it lists the guest investor route (\"EUR 250,000 investment in Hungarian real estate funds\") and EU long-term residence after five years in another EU country."
+        }
+      ],
+      "note": "The official page lists two investments only. The 2024 law also removed the \"other purposes\" permit retirees used (Daily News Hungary), which the profile does not claim either way; no White Card claim is made."
+    },
+    {
+      "id": "hu-visa-programme-closing-2027",
+      "fact": "visa",
+      "cities": [
+        "budapest"
+      ],
+      "claim": "The guest investor programme stays open (the profile gave it as the route with no end date)",
+      "verdict": "corrected",
+      "oldWording": "buying property directly is not a listed route.",
+      "newWording": "a draft bill of November 2026 would reportedly close the programme to new applications from 2027",
+      "sources": [
+        {
+          "name": "IMI Daily: Hungary proposes to abolish its golden visa program from 2027",
+          "url": "https://www.imidaily.com/europe/hungary-proposes-to-abolish-its-golden-visa-program-from-2027/",
+          "read": "2026-11-15",
+          "says": "Dated November 6, 2026. On November 4, 2026 the government published a draft bill, part of a package on law enforcement and public security, that would remove the Guest Investor Visa and Residence Permit from the immigration act from January 1, 2027 if adopted. Applications filed, with the fee paid, by December 31, 2026 would proceed under current rules; existing permits would run to expiry with no further extension. The article calls it a draft and a proposal, not a passed law."
+        },
+        {
+          "name": "National Directorate-General for Aliens Policing: residence permit for guest investors",
+          "url": "https://oif.gov.hu/factsheets/residence-permit-for-guest-investor",
+          "read": "2026-11-15",
+          "says": "Page last edited 2026.03.03. Two qualifying investments: an \"investment fund share of at least EUR 250 000\" issued by a real estate fund registered by the Hungarian National Bank, held on a securities sub-account blocked for at least 5 years, or a \"financial donation in an amount of at least EUR 1 000 000\" to a higher-education institution run by a public-trust foundation. The permit is valid for up to 10 years and \"may be extended for up to another 10 years\"; the decision takes 21 days; a family-reunification permit tied to it gives the right to work. No property-purchase option is listed."
+        }
+      ],
+      "also": [
+        "summary: added \"though a November 2026 draft bill would reportedly close that route to new applicants from 2027\"",
+        "drawback 2 reworded: \"The €250k fund stake is locked up for 5 years, and a draft bill would reportedly end the programme in 2027\"",
+        "scores.visa stays 3: the rule in force today is scored, and the pending bill is said in the fact, the summary and a drawback (profiles README)",
+        "sources: added IMI Daily"
+      ],
+      "rankFlag": "Budapest (pick 47): the `why` says \"a €250k fund investment gives residence\". A draft bill published on 4 November 2026 would close the guest investor programme to new applicants from 1 January 2027 (reported by one trade outlet; not passed when read). If it passes there is no route for a retiree on a portfolio (the 2024 law removed the \"other purposes\" permit), the visa score would fall to 1 and the `why` would be false. User's call; re-check the bill before deploy.",
+      "note": "One secondary source, dated 6 November 2026; the bill text on the government or parliament site was not found, and a search found no report of a vote. Hence \"reportedly\". The official factsheet (edited 3 March 2026) still describes the programme without an end date."
+    },
+    {
+      "id": "hu-healthcare-private-clinics",
+      "fact": "healthcare",
+      "cities": [
+        "budapest"
+      ],
+      "claim": "Budapest's private clinics offer short waits and English-speaking doctors, with a GP visit about HUF 20–35k",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Daily News Hungary: moving to Hungary, healthcare and insurance for expats",
+          "url": "https://dailynewshungary.com/moving-to-hungary-expats-healthcare-insurance",
+          "read": "2026-11-15",
+          "says": "Published February 10, 2026, updated May 14, 2026. Private clinics offer \"shorter waiting times\" and \"English-speaking doctors\"; a private GP visit \"may cost between HUF 20,000–35,000 (EUR 53–93), depending on the clinic\". In public hospitals \"waiting times can sometimes be long\". TAJ card: \"eligibility usually depends on employment or legal residency\" (work for a Hungarian employer, pay social security contributions, be registered as a resident). Private insurance is \"not legally required for everyone\" but \"strongly recommended\". A reader comment under the article, not the article, says non-working applicants have been refused. The article does not single out Budapest and names no clinic."
+        }
+      ],
+      "note": "The article speaks of Hungary's private clinics generally, not Budapest by name. No hospital or clinic is named in the profile."
+    },
+    {
+      "id": "hu-healthcare-public-waits",
+      "fact": "healthcare",
+      "cities": [
+        "budapest"
+      ],
+      "claim": "Public hospitals have long waits",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Daily News Hungary: moving to Hungary, healthcare and insurance for expats",
+          "url": "https://dailynewshungary.com/moving-to-hungary-expats-healthcare-insurance",
+          "read": "2026-11-15",
+          "says": "Published February 10, 2026, updated May 14, 2026. Private clinics offer \"shorter waiting times\" and \"English-speaking doctors\"; a private GP visit \"may cost between HUF 20,000–35,000 (EUR 53–93), depending on the clinic\". In public hospitals \"waiting times can sometimes be long\". TAJ card: \"eligibility usually depends on employment or legal residency\" (work for a Hungarian employer, pay social security contributions, be registered as a resident). Private insurance is \"not legally required for everyone\" but \"strongly recommended\". A reader comment under the article, not the article, says non-working applicants have been refused. The article does not single out Budapest and names no clinic."
+        }
+      ],
+      "note": "The page says waits \"can sometimes be long\"."
+    },
+    {
+      "id": "hu-healthcare-taj-card",
+      "fact": "healthcare",
+      "cities": [
+        "budapest"
+      ],
+      "claim": "Public cover needs a TAJ card, which non-EU residents without a job report struggling to get",
+      "verdict": "cant-confirm",
+      "hedge": "report",
+      "wording": "which non-EU residents without a job report struggling to get",
+      "sources": [
+        {
+          "name": "Daily News Hungary: moving to Hungary, healthcare and insurance for expats",
+          "url": "https://dailynewshungary.com/moving-to-hungary-expats-healthcare-insurance",
+          "read": "2026-11-15",
+          "says": "Published February 10, 2026, updated May 14, 2026. Private clinics offer \"shorter waiting times\" and \"English-speaking doctors\"; a private GP visit \"may cost between HUF 20,000–35,000 (EUR 53–93), depending on the clinic\". In public hospitals \"waiting times can sometimes be long\". TAJ card: \"eligibility usually depends on employment or legal residency\" (work for a Hungarian employer, pay social security contributions, be registered as a resident). Private insurance is \"not legally required for everyone\" but \"strongly recommended\". A reader comment under the article, not the article, says non-working applicants have been refused. The article does not single out Budapest and names no clinic."
+        }
+      ],
+      "note": "The article ties eligibility to employment or legal residency; the difficulty for non-working residents is a reader comment, which is what \"report\" says. NEAK's own page on a paid agreement for non-insured residents was not found; xpatloop's healthcare guide returned 404."
+    },
+    {
+      "id": "hu-healthcare-private-insurance",
+      "fact": "healthcare",
+      "cities": [
+        "budapest"
+      ],
+      "claim": "So plan on private international insurance",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Daily News Hungary: moving to Hungary, healthcare and insurance for expats",
+          "url": "https://dailynewshungary.com/moving-to-hungary-expats-healthcare-insurance",
+          "read": "2026-11-15",
+          "says": "Published February 10, 2026, updated May 14, 2026. Private clinics offer \"shorter waiting times\" and \"English-speaking doctors\"; a private GP visit \"may cost between HUF 20,000–35,000 (EUR 53–93), depending on the clinic\". In public hospitals \"waiting times can sometimes be long\". TAJ card: \"eligibility usually depends on employment or legal residency\" (work for a Hungarian employer, pay social security contributions, be registered as a resident). Private insurance is \"not legally required for everyone\" but \"strongly recommended\". A reader comment under the article, not the article, says non-working applicants have been refused. The article does not single out Budapest and names no clinic."
+        }
+      ],
+      "note": "Advice following from the TAJ claim; the article calls private insurance \"strongly recommended\"."
+    }
+  ]
+}

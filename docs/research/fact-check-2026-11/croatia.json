@@ -1,0 +1,471 @@
+{
+  "country": "Croatia",
+  "cities": [
+    "split"
+  ],
+  "claims": [
+    {
+      "id": "hr-tax-no-wealth-tax",
+      "fact": "tax",
+      "cities": [
+        "split"
+      ],
+      "claim": "Croatia has no wealth tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Croatia, individual, other taxes",
+          "url": "https://taxsummaries.pwc.com/croatia/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 27 August 2026. \"There are no net wealth/worth taxes in Croatia.\" \"Inheritance and gift tax is payable on cash, monetary claims, and securities, as well as movable property if individual market value of movable property exceeds EUR 6,700\"; \"Tax is determined by the Tax Administration at the rate of 4%\"; \"A taxpayer is a legal entity or an individual who inherits or receives a gift in Croatia.\" \"Certain exemptions exist.\""
+        },
+        {
+          "name": "PwC: quick chart, net wealth/worth tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/net-wealth-worth-tax-rates",
+          "read": "2026-11-15",
+          "says": "Headline net wealth/worth tax rate: Greece \"NA\" (last reviewed 08 September 2026), Cyprus \"NA\" (04 August 2026), Croatia \"NA\" (27 August 2026), Bulgaria \"NA\" (02 August 2026). \"NA\" is defined as \"Not Applicable (i.e. the territory does not have the indicated tax or requirement)\"."
+        }
+      ],
+      "note": "localTaxes.ts agrees."
+    },
+    {
+      "id": "hr-tax-worldwide-income",
+      "fact": "tax",
+      "cities": [
+        "split"
+      ],
+      "claim": "Residents are taxed on worldwide income, and there is no retiree regime",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Croatia, individual, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/croatia/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 27 August 2026. \"Resident taxpayers are subject to worldwide taxation in Croatia.\" No special regime for retirees or newcomers is mentioned."
+        }
+      ]
+    },
+    {
+      "id": "hr-tax-dividends-interest-gains-12",
+      "fact": "tax",
+      "cities": [
+        "split"
+      ],
+      "claim": "Dividends, interest and gains pay a 12% final rate",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Croatia, individual, income determination",
+          "url": "https://taxsummaries.pwc.com/croatia/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 27 August 2026. Under \"Income from capital (final income)\": \"Income from interest, dividends, capital gains: 12%.\" Taxable gains are \"Capital gains income realised from disposal of acquired financial assets and alienated within two years\". Interest from bonds, \"irrespective of the type of bond or bond issuer\", is not counted as interest income."
+        }
+      ],
+      "note": "PwC adds that bond interest is not taxed as interest income; the profile does not say so and was left. Porezna uprava's page on capital income was not searched for; PwC's page is dated August 2026. scores.tax stays 4 (no wealth tax and ≤15% on dividends)."
+    },
+    {
+      "id": "hr-tax-gains-two-years",
+      "fact": "tax",
+      "cities": [
+        "split"
+      ],
+      "claim": "Gains on financial assets held over 2 years are exempt",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Croatia, individual, income determination",
+          "url": "https://taxsummaries.pwc.com/croatia/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 27 August 2026. Under \"Income from capital (final income)\": \"Income from interest, dividends, capital gains: 12%.\" Taxable gains are \"Capital gains income realised from disposal of acquired financial assets and alienated within two years\". Interest from bonds, \"irrespective of the type of bond or bond issuer\", is not counted as interest income."
+        }
+      ],
+      "also": [
+        "fact reworded: \"(gains on assets held over 2 years appear exempt, not confirmed)\" became \"(gains on financial assets held over 2 years are not taxed)\", since PwC taxes only gains on assets sold within two years"
+      ],
+      "note": "The old hedge is gone because the page settles it."
+    },
+    {
+      "id": "hr-tax-no-us-income-treaty",
+      "fact": "tax",
+      "cities": [
+        "split"
+      ],
+      "claim": "No US–Croatia income tax treaty is in force",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IRS: United States income tax treaties, A to Z",
+          "url": "https://www.irs.gov/businesses/international-businesses/united-states-income-tax-treaties-a-to-z",
+          "read": "2026-11-15",
+          "says": "Page last reviewed or updated 03-Jan-2026. Under B: Bangladesh, Barbados, Belarus, Belgium, Bulgaria. Under C: Canada, Chile, China, Cyprus, Czech Republic; Croatia is not listed. Under G: Georgia, Germany, Greece."
+        },
+        {
+          "name": "TaxesForExpats: retire in Croatia",
+          "url": "https://www.taxesforexpats.com/country-guides/hr/retire-in-croatia.html",
+          "read": "2026-11-15",
+          "says": "Last updated October 1, 2025. There is no retirement visa: \"retirees apply for a temporary stay for other purposes or under property ownership.\" \"Retirees aged 60 or older who own Croatian property may renew their stay more easily.\" \"No bilateral income tax treaty with the United States has been ratified.\""
+        }
+      ]
+    },
+    {
+      "id": "hr-estate-4-percent-family-exempt",
+      "fact": "estate",
+      "cities": [
+        "split"
+      ],
+      "claim": "Croatia's inheritance tax is 4%, and the spouse and descendants are exempt",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Zakon.hr: Zakon o lokalnim porezima (Local Taxes Act), consolidated text",
+          "url": "https://www.zakon.hr/z/875/Zakon-o-lokalnim-porezima",
+          "read": "2026-11-15",
+          "says": "Consolidated with NN 115/16, 101/17, 114/22, 114/23 and 152/24. Art. 4: \"Porez na nasljedstva i darove plaća se na gotov novac, novčane tražbine i vrijednosne papire (vrijednosnice)\" and on movables above 6,700 euros. Art. 5: the taxpayer is a person who \"na području Republike Hrvatske naslijede, prime na dar ili steknu po drugoj osnovi bez naknade imovinu\" (inherits in the territory of Croatia). Art. 8: \"Porez na nasljedstva i darove plaća se po stopi od 4%.\" Art. 9: not paid by \"bračni drug, potomci i preci koji čine uspravnu liniju te posvojenici i posvojitelji\" (spouse, descendants and ascendants in the direct line, adoptees and adopters). First 100,000 characters of the page read."
+        },
+        {
+          "name": "Porezna uprava: inheritance and gifts tax, general rules, rates and taxpayer",
+          "url": "https://porezna-uprava.gov.hr/en/inheritanc-e-and-gifts-tax-information-on-the-general-rules-rates-and-taxpayer/7315",
+          "read": "2026-11-15",
+          "says": "Date of update 8 January 2025. \"inheritance and gifts tax is paid at the rate of 4%\"; the taxpayer is a person who inherits or receives property without compensation in Croatia; cash, claims and securities are taxed, movables only \"if individual market value of movables is greater than 6.700,00 eura\". The page lists no family exemption and says nothing about property abroad."
+        },
+        {
+          "name": "PwC: Croatia, individual, other taxes",
+          "url": "https://taxsummaries.pwc.com/croatia/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 27 August 2026. \"There are no net wealth/worth taxes in Croatia.\" \"Inheritance and gift tax is payable on cash, monetary claims, and securities, as well as movable property if individual market value of movable property exceeds EUR 6,700\"; \"Tax is determined by the Tax Administration at the rate of 4%\"; \"A taxpayer is a legal entity or an individual who inherits or receives a gift in Croatia.\" \"Certain exemptions exist.\""
+        }
+      ],
+      "note": "The Tax Administration's English page gives the rate but not the family exemption; the statute (art. 9) was read on zakon.hr, a private consolidation, not on Narodne novine. It also exempts ascendants. localTaxes.ts agrees."
+    },
+    {
+      "id": "hr-estate-abroad-not-taxed",
+      "fact": "estate",
+      "cities": [
+        "split"
+      ],
+      "claim": "The Tax Authority does not tax an inheritance located abroad, so a US portfolio passes to US-resident children with no Croatian tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Zakon.hr: Zakon o lokalnim porezima (Local Taxes Act), consolidated text",
+          "url": "https://www.zakon.hr/z/875/Zakon-o-lokalnim-porezima",
+          "read": "2026-11-15",
+          "says": "Consolidated with NN 115/16, 101/17, 114/22, 114/23 and 152/24. Art. 4: \"Porez na nasljedstva i darove plaća se na gotov novac, novčane tražbine i vrijednosne papire (vrijednosnice)\" and on movables above 6,700 euros. Art. 5: the taxpayer is a person who \"na području Republike Hrvatske naslijede, prime na dar ili steknu po drugoj osnovi bez naknade imovinu\" (inherits in the territory of Croatia). Art. 8: \"Porez na nasljedstva i darove plaća se po stopi od 4%.\" Art. 9: not paid by \"bračni drug, potomci i preci koji čine uspravnu liniju te posvojenici i posvojitelji\" (spouse, descendants and ascendants in the direct line, adoptees and adopters). First 100,000 characters of the page read."
+        },
+        {
+          "name": "Forvis Mazars Croatia: tax news, October 2022",
+          "url": "https://www.forvismazars.com/hr/en/insights/forvis-mazars-tax-newsletter/mazars-tax-news-october-2022",
+          "read": "2026-11-15",
+          "says": "October 2022, summarising a Tax Authority opinion: \"The Tax Authority emphasizes that the payment of inheritance and gifts taxes is based on the territorial principle.\"; \"the provisions of the Law on Local Taxes do not apply to the inheritance located abroad.\"; heirs of funds in foreign banks \"are not liable to pay inheritance and gifts taxes in the Republic of Croatia.\""
+        }
+      ],
+      "also": [
+        "sources: added the Local Taxes Act (zakon.hr)"
+      ],
+      "note": "The Tax Administration opinion itself was not read; a Big-ten firm's 2022 summary of it was, together with the statute's territorial wording (art. 5). Children are exempt in any case under art. 9. The profile's sources list a Porezna uprava page that does not address property abroad; the statute was added to the sources. localTaxes.ts agrees; scores.estate stays 5."
+    },
+    {
+      "id": "hr-estate-no-us-treaty",
+      "fact": "estate",
+      "cities": [
+        "split"
+      ],
+      "claim": "There is no US estate treaty with Croatia",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-without",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list); none of the 37 countries named in this claim is among them."
+        }
+      ]
+    },
+    {
+      "id": "hr-lending-ibkr-only-broker",
+      "fact": "lending",
+      "cities": [
+        "split"
+      ],
+      "claim": "IBKR is the only US broker open to Croatia residents",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "IBKR is reportedly the only broker open to Croatia residents",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        }
+      ],
+      "also": [
+        "fact reworded from \"IBKR is reportedly the only option\" when the margin clause was added; the hedge was already there"
+      ],
+      "note": "IBKR's sites were not tried again in this batch; they returned HTTP 403 to every read in stages 1 and 2. The hedge stays."
+    },
+    {
+      "id": "hr-lending-schwab-not-accepting",
+      "fact": "lending",
+      "cities": [
+        "split"
+      ],
+      "claim": "Schwab International's online form does not accept Croatia residents",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab International's online form reportedly does not accept them",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026; read again on 2026-11-15 for Greece, Cyprus, Croatia and Bulgaria. The 51 countries and regions Schwab's international application accepted that day include Greece; Croatia is one of 12 named as not accepted; Cyprus and Bulgaria are not mentioned (the page says about 200 other countries and regions got a \"cannot open accounts\" message). It quotes the Schwab One Account Agreement: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds from their account.\""
+        }
+      ],
+      "note": "Croatia is one of the 12 countries the dated list names as not accepted, re-read on 2026-11-15."
+    },
+    {
+      "id": "hr-lending-ibkr-margin-cash-out",
+      "fact": "lending",
+      "cities": [
+        "split"
+      ],
+      "claim": "With IBKR the only option, a Croatia resident can borrow against the portfolio there (implied by \"IBKR is reportedly the only option\")",
+      "verdict": "corrected",
+      "shared": "ibkr-eu-margin-cash-out",
+      "oldWording": "IBKR is reportedly the only option: Schwab International's online form reportedly does not accept Croatia residents;",
+      "newWording": "and IBKR's EU entity reportedly lends on margin only to buy securities, not to withdraw as cash, so confirm how you would draw cash before relying on it",
+      "sources": [
+        {
+          "name": "LYNX: Withdrawal (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/payments-and-transfers/withdrawal/",
+          "read": "2026-11-15",
+          "says": "\"It is not possible to withdraw in a currency if your cash balance is negative or would go negative after the withdrawal.\" In a margin account \"some funds may be used as collateral for other positions or to cover negative cash balances\", which lowers what can be withdrawn. The page is undated (footer: Copyright 2023)."
+        },
+        {
+          "name": "CapTrader: Geld abheben (help page of a German introducing broker for Interactive Brokers)",
+          "url": "https://www.captrader.com/geld-abheben/",
+          "read": "2026-11-15",
+          "says": "\"Auszahlungen sind nur möglich, wenn kein negativer Saldo in der entsprechenden Währung\" or in the total cash arises or grows: withdrawals are possible only if they do not create or increase a negative balance. Footer: © CapTrader 2026."
+        },
+        {
+          "name": "Interactive Brokers Ireland Limited: Customer Agreement (document 4750, 7/1/2023), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/01_4750_IBIE_Customer_Agreement_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "Clause 2A(i)(d) defines the margin service as one \"to enable Clients to acquire investment instruments\". Clause 5A(iv): \"Terms and conditions for deposit and withdrawal of funds (including holding periods) are as specified on the IBIE website.\" The agreement does not say that a loan may be withdrawn as cash."
+        },
+        {
+          "name": "Mustachian Post forum: Using margin loan at Interactive Brokers, page 13",
+          "url": "https://forum.mustachianpost.com/t/using-margin-loan-at-interactive-brokers/3980?page=13",
+          "read": "2026-11-15",
+          "says": "Posts of September to November 2024. One poster says withdrawing cash on margin is \"not possible in Germany with IB IE\" but is with IB UK; Swiss residents with IB UK accounts report having done it; another reports IBKR service saying \"IBUK customers can no longer withdraw cash if aggregate cash balance is -ve\", which a manager then said applies only to UK residents."
+        }
+      ],
+      "also": [
+        "scores.lending 3→2 (plan decision of 2026-11-15; rubric 2: IBKR only and even that uncertain, or EU residence)",
+        "summary: added the closing sentence \"The borrow step is weak too: Schwab reportedly does not take Croatia residents, and IBKR reportedly bars EU residents from drawing margin as cash.\"",
+        "drawbacks: none mentioned margin or brokers, so none was reworded and none was added; the summary sentence carries it",
+        "sources: added LYNX withdrawal page"
+      ],
+      "rankFlag": "Split (pick 66) now scores lending 2. Its `why` (\"Croatia's taxes suit BBD, but there is no residence route for a retiree\") does not mention borrowing, so it is not contradicted, though \"suit BBD\" now holds for the tax and estate steps only. Rank and `why` are unchanged: user's call.",
+      "note": "Worded as for Italy: the standard clause ending \"before relying on it\" (one broker). Shared sources are copied with their stage 1 read date; the LYNX page was not re-read."
+    },
+    {
+      "id": "hr-lending-priips-new-buys",
+      "fact": "lending",
+      "cities": [
+        "split"
+      ],
+      "claim": "EU PRIIPs rules block new buys of US-listed ETFs",
+      "verdict": "confirmed",
+      "shared": "priips-us-etf-new-buys-blocked",
+      "sources": [
+        {
+          "name": "LYNX: Key Information Document (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/products-and-regulations/regulations/key-information-document/",
+          "read": "2026-11-15",
+          "says": "Retail clients are \"not permitted to trade ETFs or other products that do not have a valid KID\"; many non-EU ETFs have none. Can a retail client buy US ETFs? \"No, not unless you are classified as a professional investor.\" The same applies to ETFs from Canada, Hong Kong, Mexico and Australia. The KID has applied to most products since 1 January 2018."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. \"PRIIPs is an EU rule that prohibits buying US-listed ETFs\", and this also applies to UK investors; US ETFs are open only to elective professional clients, while UCITS ETFs are available to all Europeans."
+        }
+      ],
+      "note": "The profile's \"reportedly\" stays; it does no harm."
+    },
+    {
+      "id": "hr-lending-priips-holdings-kept",
+      "fact": "lending",
+      "cities": [
+        "split"
+      ],
+      "claim": "The block is on buying, not on holding US-listed ETFs",
+      "verdict": "confirmed",
+      "shared": "priips-existing-holdings-kept",
+      "sources": [
+        {
+          "name": "LYNX: Key Information Document (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/products-and-regulations/regulations/key-information-document/",
+          "read": "2026-11-15",
+          "says": "The page's FAQ says retail clients \"may still hold or sell existing positions, but new purchases are restricted.\""
+        },
+        {
+          "name": "Regulation (EU) No 1286/2014, Article 13, as adopted (legislation.gov.uk copy of the EU text)",
+          "url": "https://www.legislation.gov.uk/eur/2014/1286/article/13/adopted",
+          "read": "2026-11-15",
+          "says": "The duty to provide a KID falls on \"a person advising on, or selling, a PRIIP\" before the retail investor is bound; nothing in the article reaches a PRIIP the investor already holds or a sale by the investor."
+        }
+      ]
+    },
+    {
+      "id": "hr-visa-no-retiree-route",
+      "fact": "visa",
+      "cities": [
+        "split"
+      ],
+      "claim": "There is no retiree or property route: the Interior Ministry's grounds for temporary stay are family, study, work, digital nomads and \"other purposes\"",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Croatian Ministry of the Interior: temporary stay of third-country nationals",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661",
+          "read": "2026-11-15",
+          "says": "Undated (copyright 2026). Purposes listed: family reunification, secondary school or university, scientific research, humanitarian grounds, life partnership, work, posted workers, long-term residents of another EEA state, other purposes, digital nomads. For other purposes: \"Temporary stay is granted for a period of up to one year\"; a new application \"only after six months have passed from the expiry of temporary stay that was granted for other purposes\". Applicants must \"have funds to support themselves\" and \"have health insurance\". No retiree, pensioner or property-owner ground."
+        }
+      ],
+      "note": "The ministry lists ten purposes; the profile names five and leaves out research, humanitarian grounds, life partnership, posted workers and long-term residents of another EEA state, none of which is a retiree route. Summary, drawback 1 and scores.visa 1 agree; Split's `why` agrees."
+    },
+    {
+      "id": "hr-visa-six-month-wait",
+      "fact": "visa",
+      "cities": [
+        "split"
+      ],
+      "claim": "An \"other purposes\" or nomad stay can be reapplied for only 6 months after the last one ends",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Croatian Ministry of the Interior: temporary stay of third-country nationals",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661",
+          "read": "2026-11-15",
+          "says": "Undated (copyright 2026). Purposes listed: family reunification, secondary school or university, scientific research, humanitarian grounds, life partnership, work, posted workers, long-term residents of another EEA state, other purposes, digital nomads. For other purposes: \"Temporary stay is granted for a period of up to one year\"; a new application \"only after six months have passed from the expiry of temporary stay that was granted for other purposes\". Applicants must \"have funds to support themselves\" and \"have health insurance\". No retiree, pensioner or property-owner ground."
+        },
+        {
+          "name": "Croatian Ministry of the Interior: temporary stay of digital nomads",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-digital-nomads/286833",
+          "read": "2026-11-15",
+          "says": "Undated (form dated April 2026; cites Official Gazette 14/21 and 3/26). A digital nomad is \"employed or performs work through communication technology\" for a foreign employer or own company that \"is not registered in the Republic of Croatia\". \"Temporary stay is granted for up to a maximum of eighteen months\"; a new application can be made \"6 months after the expiry of previously granted temporary stay\"; income of \"a minimum of 3.622,50 EUR\" a month."
+        }
+      ],
+      "note": "The summary's \"permits run up to a year\" is the ministry's limit for other purposes; a nomad stay can run 18 months."
+    },
+    {
+      "id": "hr-visa-nomad-needs-remote-work",
+      "fact": "visa",
+      "cities": [
+        "split"
+      ],
+      "claim": "The nomad permit needs remote work, so a portfolio-only retiree has no stable path",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Croatian Ministry of the Interior: temporary stay of digital nomads",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-digital-nomads/286833",
+          "read": "2026-11-15",
+          "says": "Undated (form dated April 2026; cites Official Gazette 14/21 and 3/26). A digital nomad is \"employed or performs work through communication technology\" for a foreign employer or own company that \"is not registered in the Republic of Croatia\". \"Temporary stay is granted for up to a maximum of eighteen months\"; a new application can be made \"6 months after the expiry of previously granted temporary stay\"; income of \"a minimum of 3.622,50 EUR\" a month."
+        }
+      ]
+    },
+    {
+      "id": "hr-visa-owners-60-plus",
+      "fact": "visa",
+      "cities": [
+        "split"
+      ],
+      "claim": "One secondary source says owners aged 60+ renew more easily, which the ministry list does not show",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "TaxesForExpats: retire in Croatia",
+          "url": "https://www.taxesforexpats.com/country-guides/hr/retire-in-croatia.html",
+          "read": "2026-11-15",
+          "says": "Last updated October 1, 2025. There is no retirement visa: \"retirees apply for a temporary stay for other purposes or under property ownership.\" \"Retirees aged 60 or older who own Croatian property may renew their stay more easily.\" \"No bilateral income tax treaty with the United States has been ratified.\""
+        },
+        {
+          "name": "Croatian Ministry of the Interior: temporary stay of third-country nationals",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661",
+          "read": "2026-11-15",
+          "says": "Undated (copyright 2026). Purposes listed: family reunification, secondary school or university, scientific research, humanitarian grounds, life partnership, work, posted workers, long-term residents of another EEA state, other purposes, digital nomads. For other purposes: \"Temporary stay is granted for a period of up to one year\"; a new application \"only after six months have passed from the expiry of temporary stay that was granted for other purposes\". Applicants must \"have funds to support themselves\" and \"have health insurance\". No retiree, pensioner or property-owner ground."
+        }
+      ],
+      "note": "Both halves are as the profile says: the secondary page says it, and the ministry page has no such ground."
+    },
+    {
+      "id": "hr-healthcare-kbc-split",
+      "fact": "healthcare",
+      "cities": [
+        "split"
+      ],
+      "claim": "KBC Split, the University Hospital of Split (Firule and Križine sites), is the region's public referral hospital",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "KBC Split: locations",
+          "url": "https://www.kbsplit.hr/en/about-us/locations",
+          "read": "2026-11-15",
+          "says": "Footer 2026. \"University Hospital of Split is a public institution performing specialist-consultative health care, hospital services\"; sites at Firule (1 Spinčićeva Street), Križine (1 Šoltanska Street), a rehabilitation spa in the centre and a subsidiary at Zagvozd."
+        }
+      ],
+      "note": "The hospital's page says public institution and university hospital; \"the region's referral hospital\" is not in its words."
+    },
+    {
+      "id": "hr-healthcare-hzzo-registration",
+      "fact": "healthcare",
+      "cities": [
+        "split"
+      ],
+      "claim": "Residence applicants need health insurance and then register with the public HZZO",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Croatian Ministry of the Interior: temporary stay of third-country nationals",
+          "url": "https://mup.gov.hr/aliens-281621/stay-and-work/temporary-stay-of-third-country-nationals/281661",
+          "read": "2026-11-15",
+          "says": "Undated (copyright 2026). Purposes listed: family reunification, secondary school or university, scientific research, humanitarian grounds, life partnership, work, posted workers, long-term residents of another EEA state, other purposes, digital nomads. For other purposes: \"Temporary stay is granted for a period of up to one year\"; a new application \"only after six months have passed from the expiry of temporary stay that was granted for other purposes\". Applicants must \"have funds to support themselves\" and \"have health insurance\". No retiree, pensioner or property-owner ground."
+        },
+        {
+          "name": "Zakon.hr: Act on compulsory health insurance and health care of foreigners in Croatia",
+          "url": "https://www.zakon.hr/z/634/zakon-o-obveznom-zdravstvenom-osiguranju-i-zdravstvenoj-zastiti-stranaca-u-republici-hrvatskoj-",
+          "read": "2026-11-15",
+          "says": "Text in force from 16.04.2022 (NN 46/22). Art. 6(1): a third-country national granted temporary stay \"obvezan je podnijeti prijavu na obvezno zdravstveno osiguranje područnoj službi Zavoda\" within eight days and \"je obveznik plaćanja doprinosa za obvezno zdravstveno osiguranje u skladu s posebnim zakonom\" (pays the contribution under a separate law). Digital nomads are exempt from registering. Art. 7 sets a one-time payment on the lowest base for up to 12 months as a condition of insured status. No rate or amount is in the Act."
+        }
+      ],
+      "note": "hzzo.hr was not found by search for this question; the Act was read on zakon.hr, which shows the 2022 text. Not in the profile and not added: the Act makes registration compulsory within eight days and sets a one-time payment of up to 12 months of contributions as a condition of insured status."
+    },
+    {
+      "id": "hr-healthcare-hzzo-contribution",
+      "fact": "healthcare",
+      "cities": [
+        "split"
+      ],
+      "claim": "The HZZO contribution for a non-EU retiree",
+      "verdict": "cant-confirm",
+      "hedge": "unverified",
+      "wording": "(the contribution for a non-EU retiree is unverified)",
+      "sources": [
+        {
+          "name": "Zakon.hr: Act on compulsory health insurance and health care of foreigners in Croatia",
+          "url": "https://www.zakon.hr/z/634/zakon-o-obveznom-zdravstvenom-osiguranju-i-zdravstvenoj-zastiti-stranaca-u-republici-hrvatskoj-",
+          "read": "2026-11-15",
+          "says": "Text in force from 16.04.2022 (NN 46/22). Art. 6(1): a third-country national granted temporary stay \"obvezan je podnijeti prijavu na obvezno zdravstveno osiguranje područnoj službi Zavoda\" within eight days and \"je obveznik plaćanja doprinosa za obvezno zdravstveno osiguranje u skladu s posebnim zakonom\" (pays the contribution under a separate law). Digital nomads are exempt from registering. Art. 7 sets a one-time payment on the lowest base for up to 12 months as a condition of insured status. No rate or amount is in the Act."
+        }
+      ],
+      "note": "The Act says the Tax Administration sets the base and monthly amount by decision; no page read gives the 2026 figure. The profile's own \"unverified\" stays."
+    }
+  ]
+}

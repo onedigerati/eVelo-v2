@@ -1,0 +1,498 @@
+{
+  "country": "Montenegro",
+  "cities": [
+    "kotor"
+  ],
+  "claims": [
+    {
+      "id": "me-tax-no-wealth-tax",
+      "fact": "tax",
+      "cities": [
+        "kotor"
+      ],
+      "claim": "No wealth tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC quick chart: net wealth/worth tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/net-wealth-worth-tax-rates",
+          "read": "2026-11-15",
+          "says": "Montenegro (last reviewed 07 August 2026), Albania (22 July 2026), Mauritius (15 June 2026), South Africa (29 May 2026) and the United Arab Emirates (09 September 2026) are all \"NA\", which the page defines as \"Not Applicable (i.e. the territory does not have the indicated tax or requirement)\"."
+        },
+        {
+          "name": "Adriacom: Is Montenegro a tax haven?",
+          "url": "https://adriacom.me/is-montenegro-a-tax-haven",
+          "read": "2026-11-15",
+          "says": "No page date (footer \"© adriacom 2026\"). \"Montenegro does not levy any wealth taxes.\" \"Montenegro does not impose inheritance taxes on close family members\"; for others \"a modest real estate transfer tax (typically between 3% and 6%) may apply\"."
+        }
+      ]
+    },
+    {
+      "id": "me-tax-worldwide-income",
+      "fact": "tax",
+      "cities": [
+        "kotor"
+      ],
+      "claim": "Residents are taxed on worldwide income",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Montenegro, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/montenegro/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 07 August 2026. \"Resident individuals are subject to tax on their worldwide income from any source.\" \"Other categories of personal income subject to PIT are taxed at a proportional 15% rate.\" \"A surtax rate of 13% applies in all municipalities, except Podgorica and Cetinje, where the rate is 15%\"; its base is the PIT assessed. The page does not say whether the surtax reaches capital income, and describes no newcomer regime."
+        }
+      ]
+    },
+    {
+      "id": "me-tax-dividends-interest-gross",
+      "fact": "tax",
+      "cities": [
+        "kotor"
+      ],
+      "claim": "Dividends and interest are taxed at 15% of the gross amount",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Montenegro, income determination",
+          "url": "https://taxsummaries.pwc.com/montenegro/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 07 August 2026. Dividends and interest are investment income: \"The tax base is the gross amount of taxable income. The applicable tax rate is 15%.\" Capital gains on real estate, shares and securities: \"The tax base is the difference between the sale price and the price at which the taxpayer acquired the property\"; \"The capital gains tax rate is 15%.\""
+        },
+        {
+          "name": "PwC: Montenegro, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/montenegro/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 07 August 2026. \"Resident individuals are subject to tax on their worldwide income from any source.\" \"Other categories of personal income subject to PIT are taxed at a proportional 15% rate.\" \"A surtax rate of 13% applies in all municipalities, except Podgorica and Cetinje, where the rate is 15%\"; its base is the PIT assessed. The page does not say whether the surtax reaches capital income, and describes no newcomer regime."
+        }
+      ]
+    },
+    {
+      "id": "me-tax-capital-gains-base",
+      "fact": "tax",
+      "cities": [
+        "kotor"
+      ],
+      "claim": "Capital gains are taxed at 15% of the gross amount",
+      "verdict": "corrected",
+      "oldWording": "with dividends, interest and capital gains at 15% of the gross amount,",
+      "newWording": "with dividends and interest at 15% of the gross amount and capital gains at 15% of the gain,",
+      "sources": [
+        {
+          "name": "PwC: Montenegro, income determination",
+          "url": "https://taxsummaries.pwc.com/montenegro/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 07 August 2026. Dividends and interest are investment income: \"The tax base is the gross amount of taxable income. The applicable tax rate is 15%.\" Capital gains on real estate, shares and securities: \"The tax base is the difference between the sale price and the price at which the taxpayer acquired the property\"; \"The capital gains tax rate is 15%.\""
+        }
+      ],
+      "note": "The rate was right; the base was not: PwC gives the gross amount for dividends and interest and the sale price less acquisition price for capital gains. Scores, summary (\"taxes investment income at a flat 15%\") and drawbacks unaffected."
+    },
+    {
+      "id": "me-tax-kotor-surtax",
+      "fact": "tax",
+      "cities": [
+        "kotor"
+      ],
+      "claim": "Kotor's municipal surtax on income tax is 13%",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Montenegro, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/montenegro/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 07 August 2026. \"Resident individuals are subject to tax on their worldwide income from any source.\" \"Other categories of personal income subject to PIT are taxed at a proportional 15% rate.\" \"A surtax rate of 13% applies in all municipalities, except Podgorica and Cetinje, where the rate is 15%\"; its base is the PIT assessed. The page does not say whether the surtax reaches capital income, and describes no newcomer regime."
+        },
+        {
+          "name": "Immigrant Invest: Montenegro tax rates",
+          "url": "https://immigrantinvest.com/blog/taxes-in-montenegro/",
+          "read": "2026-11-15",
+          "says": "Dated 08 Oct 2025. Under gift and inheritance tax it gives a 3% rate and says \"Gifts intended for spouses, children or parents are exempt from tax.\" Surtax: \"In Podgorica and Cetinje, it is levied at 15%, and in all other regions, at 13%.\""
+        }
+      ],
+      "note": "Kotor is neither Podgorica nor Cetinje, so the 13% applies; \"about 17%\" is 15% × 1.13 = 16.95%."
+    },
+    {
+      "id": "me-tax-surtax-capital-income",
+      "fact": "tax",
+      "cities": [
+        "kotor"
+      ],
+      "claim": "Whether the surtax applies to capital income",
+      "verdict": "cant-confirm",
+      "hedge": "unverified",
+      "wording": "whether it applies to capital income is unverified",
+      "sources": [
+        {
+          "name": "PwC: Montenegro, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/montenegro/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 07 August 2026. \"Resident individuals are subject to tax on their worldwide income from any source.\" \"Other categories of personal income subject to PIT are taxed at a proportional 15% rate.\" \"A surtax rate of 13% applies in all municipalities, except Podgorica and Cetinje, where the rate is 15%\"; its base is the PIT assessed. The page does not say whether the surtax reaches capital income, and describes no newcomer regime."
+        }
+      ],
+      "note": "PwC says the surtax base is the PIT assessed, which suggests it could reach capital income, but says no more; a search in Montenegrin found no statute text or municipal decision settling it."
+    },
+    {
+      "id": "me-tax-no-newcomer-regime",
+      "fact": "tax",
+      "cities": [
+        "kotor"
+      ],
+      "claim": "There is no newcomer regime",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Montenegro, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/montenegro/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 07 August 2026. \"Resident individuals are subject to tax on their worldwide income from any source.\" \"Other categories of personal income subject to PIT are taxed at a proportional 15% rate.\" \"A surtax rate of 13% applies in all municipalities, except Podgorica and Cetinje, where the rate is 15%\"; its base is the PIT assessed. The page does not say whether the surtax reaches capital income, and describes no newcomer regime."
+        }
+      ],
+      "note": "Confirmed by absence: PwC's personal income page, which lists rates, surtax and reliefs, describes no special regime for new residents."
+    },
+    {
+      "id": "me-estate-real-estate-only",
+      "fact": "estate",
+      "cities": [
+        "kotor"
+      ],
+      "claim": "Inheritance tax of 3–6% applies only to inherited real estate, so a US portfolio passes to US-resident children with no Montenegrin tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC quick chart: inheritance and gift tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates",
+          "read": "2026-11-15",
+          "says": "Montenegro: inheritance \"3 - 6 (payable only on inheritance of real estate)\", gift \"3 - 6 (payable only on real estate gifts)\" (last reviewed 07 August 2026). Albania: 15 and 15 (22 July 2026). Mauritius: NA, NA (15 June 2026). South Africa: \"25 (maximum)\" for both (29 May 2026). United Arab Emirates: NA, NA (09 September 2026)."
+        }
+      ]
+    },
+    {
+      "id": "me-estate-close-family-exempt",
+      "fact": "estate",
+      "cities": [
+        "kotor"
+      ],
+      "claim": "Close family are exempt",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Immigrant Invest: Montenegro tax rates",
+          "url": "https://immigrantinvest.com/blog/taxes-in-montenegro/",
+          "read": "2026-11-15",
+          "says": "Dated 08 Oct 2025. Under gift and inheritance tax it gives a 3% rate and says \"Gifts intended for spouses, children or parents are exempt from tax.\" Surtax: \"In Podgorica and Cetinje, it is levied at 15%, and in all other regions, at 13%.\""
+        },
+        {
+          "name": "Adriacom: Is Montenegro a tax haven?",
+          "url": "https://adriacom.me/is-montenegro-a-tax-haven",
+          "read": "2026-11-15",
+          "says": "No page date (footer \"© adriacom 2026\"). \"Montenegro does not levy any wealth taxes.\" \"Montenegro does not impose inheritance taxes on close family members\"; for others \"a modest real estate transfer tax (typically between 3% and 6%) may apply\"."
+        }
+      ],
+      "note": "Two dated secondary pages; the statute was not found in a readable form (searches for it in Montenegrin returned Bosnian and Serbian laws). The profile's \"reportedly\" stays. Immigrant Invest gives only 3%, not 3–6%; the 3–6% rests on PwC (me-estate-real-estate-only)."
+    },
+    {
+      "id": "me-estate-no-us-treaty",
+      "fact": "estate",
+      "cities": [
+        "kotor"
+      ],
+      "claim": "There is no US estate treaty",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-without",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list in shared.json); Montenegro is not among them."
+        }
+      ]
+    },
+    {
+      "id": "me-lending-ibkr-accepts",
+      "fact": "lending",
+      "cities": [
+        "kotor"
+      ],
+      "claim": "IBKR accepts residents of the country",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly accepts residents of all non-sanctioned countries, including Montenegro",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        }
+      ],
+      "note": "IBKR's own country list (https://www.interactivebrokers.com/en/accounts/open-account-country-list.php) returned HTTP 403 again on 2026-11-15."
+    },
+    {
+      "id": "me-lending-margin-terms-unknown",
+      "fact": "lending",
+      "cities": [
+        "kotor"
+      ],
+      "claim": "IBKR's margin terms for residents of the country are unknown or unreported",
+      "verdict": "cant-confirm",
+      "hedge": "unknown",
+      "wording": "though margin terms per country are unknown",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026 (as read for earlier batches on 2026-11-15). The \"Country Availability\" section lists countries where IBKR is available; it does not map countries to IBKR entities or name the entity for non-EU European, Gulf or African residents."
+        }
+      ],
+      "note": "A statement of what is not known. Which IBKR entity carries a Montenegrin resident's account was not found on any page, so the EU cash-out correction (ibkr-eu-margin-cash-out) was not applied: Montenegro is not in the EU."
+    },
+    {
+      "id": "me-lending-schwab-not-accepting",
+      "fact": "lending",
+      "cities": [
+        "kotor"
+      ],
+      "claim": "Schwab International does not accept Montenegro, which is off its reported list",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "most likely",
+      "wording": "Schwab International most likely does not accept Montenegro, which is off its reported list",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. On that day the author ran every entry in Schwab's international account selector through the application: it accepted residents of 51 of 263 countries and regions: Argentina, Australia, Austria, the Bahamas, Belgium, Bermuda, Brazil, the British Virgin Islands, the Cayman Islands, Chile, China, Colombia, Costa Rica, the Czech Republic, Denmark, Ecuador, Finland, Germany, Greece, Guatemala, Hong Kong, Iceland, India, Indonesia, Ireland, Israel, Jersey, Luxembourg, Malaysia, the Marshall Islands, Mexico, the Netherlands, Norway, Panama, Paraguay, Peru, Poland, Portugal, Qatar, Singapore, South Korea, Spain, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Turks and Caicos, the United Arab Emirates, the United Kingdom and Uruguay. Named as not accepted: Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam; for the rest the application said \"Schwab currently cannot open accounts for residents of your country/region.\" The test covers new applicants on that day only."
+        },
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Dated October 23, 2026 (country check that day). The United Arab Emirates is on the 51-country accepted list and marked \"Yes\"; South Africa is marked \"No\" (the 12 \"No\" rows: Canada, Croatia, Dominican Republic, France, Italy, Japan, Malta, New Zealand, Philippines, South Africa, Turkey, Vietnam). Montenegro, Albania and Mauritius are in neither list; the article says 200 of the 263 countries and regions in Schwab's selector showed that Schwab \"currently cannot open accounts for residents of your country/region\". It quotes the Schwab One International terms: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds from their account.\""
+        }
+      ],
+      "note": "Montenegro is in neither the accepted 51 nor the 12 marked \"No\"; the page says 200 of 263 selector entries showed Schwab cannot open accounts there, which supports \"most likely\". Lending score stays 3 (\"IBKR only\"). Montenegro is in Europe, so Schwab's reported \"residing within Europe\" margin clause would bar cash-out even if Schwab accepted residents; that is the London/Zurich reading (plan decision 2026-11-15), and it gives 3 either way, since 4 needs Schwab \"outside Europe\" and 2 needs IBKR itself in doubt or EU residence."
+    },
+    {
+      "id": "me-lending-priips-not-applicable",
+      "fact": "lending",
+      "cities": [
+        "kotor"
+      ],
+      "claim": "As a non-EU country, PRIIPs limits on US ETFs do not apply",
+      "verdict": "cant-confirm",
+      "oldWording": "PRIIPs limits on US ETFs do not apply",
+      "hedge": "should not apply",
+      "wording": "as a non-EU country, EU PRIIPs limits on US ETFs should not apply, though which IBKR entity carries the account is unconfirmed",
+      "sources": [
+        {
+          "name": "LYNX: Key Information Document (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/products-and-regulations/regulations/key-information-document/",
+          "read": "2026-11-15",
+          "says": "Retail clients are \"not permitted to trade ETFs or other products that do not have a valid KID\"; many non-EU ETFs have none. Can a retail client buy US ETFs? \"No, not unless you are classified as a professional investor.\" The same applies to ETFs from Canada, Hong Kong, Mexico and Australia. The KID has applied to most products since 1 January 2018."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026 (as read for earlier batches on 2026-11-15). The \"Country Availability\" section lists countries where IBKR is available; it does not map countries to IBKR entities or name the entity for non-EU European, Gulf or African residents."
+        }
+      ],
+      "also": [
+        "hedge added: the flat \"do not apply\" became \"should not apply, though which IBKR entity carries the account is unconfirmed\" (as Turkey's tr-lending-priips-not-applicable)",
+        "sources: none added"
+      ],
+      "note": "PRIIPs binds those selling to retail investors in the EU (shared priips-kid-required); Montenegro is outside the EU and EEA. No page read says which IBKR entity serves Montenegrin residents or that it lets them buy US-listed ETFs."
+    },
+    {
+      "id": "me-visa-property-150k",
+      "fact": "visa",
+      "cities": [
+        "kotor"
+      ],
+      "claim": "Temporary residence by owning real estate with a Tax Authority-assessed value of at least €150,000, since January 2026, with older permits grandfathered",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "BDK Advokati: Montenegro adopts amendments to the Foreigners Act",
+          "url": "https://bdkadvokati.com/montenegro-adopts-amendments-to-the-foreigners-act",
+          "read": "2026-11-15",
+          "says": "The amendments \"entered into force on 17 January 2026\". Applicants for temporary residence on real estate must \"submit evidence that their real estate is worth at least EUR 150,000\", the value determined \"based on the decision of the Tax Authority on transfer tax\"; permits issued before that date \"can be extended without demonstrating the value of the real estate\"."
+        },
+        {
+          "name": "NT Realty: Montenegro property residency rules 2026",
+          "url": "https://ntrealty.me/blog/montenegro-property-residency-rules-2026",
+          "read": "2026-11-15",
+          "says": "Published January 2026, \"updated in May 2026\". Law in force 17 January 2026; €150,000 threshold on the official tax valuation; holders before that date \"may renew without demonstrating the new €150,000 threshold\". Per official guidance as the article describes it, property-based temporary residence \"does not count toward the five-year qualifying period for permanent residence.\""
+        }
+      ]
+    },
+    {
+      "id": "me-visa-subsistence-insurance",
+      "fact": "visa",
+      "cities": [
+        "kotor"
+      ],
+      "claim": "The permit also needs means of subsistence and health insurance",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Violet Investment: Montenegro residency through real estate ownership in 2026",
+          "url": "https://www.violetinvestment.com/montenegro-residency-through-real-estate-ownership-in-2026-what-foreign-buyers-need-to-know/",
+          "read": "2026-11-15",
+          "says": "Undated beyond \"7 months ago\" on a 2026 article. The permit is \"generally issued for one year and may be renewed if the conditions continue to be met\"; documents include \"Proof of financial means\" (\"Means of subsistence\") and \"Proof of health insurance\"; renewal may need \"valid insurance\". Threshold \"€150,000\" on the tax-assessed value."
+        }
+      ],
+      "note": "Secondary page (2026); the Ministry of Interior's pages were not found by search, and gov.me refused the connection."
+    },
+    {
+      "id": "me-visa-renewed-yearly",
+      "fact": "visa",
+      "cities": [
+        "kotor"
+      ],
+      "claim": "The permit is renewed yearly",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Violet Investment: Montenegro residency through real estate ownership in 2026",
+          "url": "https://www.violetinvestment.com/montenegro-residency-through-real-estate-ownership-in-2026-what-foreign-buyers-need-to-know/",
+          "read": "2026-11-15",
+          "says": "Undated beyond \"7 months ago\" on a 2026 article. The permit is \"generally issued for one year and may be renewed if the conditions continue to be met\"; documents include \"Proof of financial means\" (\"Means of subsistence\") and \"Proof of health insurance\"; renewal may need \"valid insurance\". Threshold \"€150,000\" on the tax-assessed value."
+        },
+        {
+          "name": "BDK Advokati: Montenegro adopts amendments to the Foreigners Act",
+          "url": "https://bdkadvokati.com/montenegro-adopts-amendments-to-the-foreigners-act",
+          "read": "2026-11-15",
+          "says": "The amendments \"entered into force on 17 January 2026\". Applicants for temporary residence on real estate must \"submit evidence that their real estate is worth at least EUR 150,000\", the value determined \"based on the decision of the Tax Authority on transfer tax\"; permits issued before that date \"can be extended without demonstrating the value of the real estate\"."
+        }
+      ],
+      "note": "Violet says \"generally issued for one year\"; BDK gives the renewal window (60 to 30 days before expiry) without the term."
+    },
+    {
+      "id": "me-visa-no-permanent-residence",
+      "fact": "visa",
+      "cities": [
+        "kotor"
+      ],
+      "claim": "Time on the property permit does not count toward permanent residence",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "NT Realty: Montenegro property residency rules 2026",
+          "url": "https://ntrealty.me/blog/montenegro-property-residency-rules-2026",
+          "read": "2026-11-15",
+          "says": "Published January 2026, \"updated in May 2026\". Law in force 17 January 2026; €150,000 threshold on the official tax valuation; holders before that date \"may renew without demonstrating the new €150,000 threshold\". Per official guidance as the article describes it, property-based temporary residence \"does not count toward the five-year qualifying period for permanent residence.\""
+        }
+      ],
+      "note": "One dated secondary page citing official guidance; the profile's \"reportedly\" stays, and the drawback (\"builds no path to permanent residence\") agrees."
+    },
+    {
+      "id": "me-healthcare-hospital-name",
+      "fact": "healthcare",
+      "cities": [
+        "kotor"
+      ],
+      "claim": "The bay's hospital is Kotor General Hospital",
+      "verdict": "cant-confirm",
+      "hedge": "removed",
+      "oldWording": "Kotor General Hospital covers the bay",
+      "sources": [
+        {
+          "name": "Portonovi: the healthcare system in Montenegro",
+          "url": "https://portonovi.com/en/blog/healthcare-system-montenegro-what-expats-and-second-home-buyers-need-know",
+          "read": "2026-11-15",
+          "says": "Dated October 01, 2025. \"more advanced care may require travel to larger hospitals located in Podgorica, Nikšić, Kotor or Bar\"; \"more complex cases are handled in hospitals across the country and the Clinical Centre of Montenegro in Podgorica\". Private healthcare is growing \"especially in the capital and on the coast\"."
+        }
+      ],
+      "also": [
+        "healthcare fact: \"Kotor General Hospital\" became \"Kotor's hospital\"",
+        "sources: added Portonovi, the Clinical Centre's about page and Immigrant Invest"
+      ],
+      "note": "Search results (not reads) show a government document of April 2023 on changing the General Hospital Kotor into a \"Kliničko-bolnički centar Kotor\" and a December 2025 UNDP report naming that centre; gov.me refused the connection and the UNDP PDF could not be read, so the current name is not settled and was taken out."
+    },
+    {
+      "id": "me-healthcare-kotor-hospital",
+      "fact": "healthcare",
+      "cities": [
+        "kotor"
+      ],
+      "claim": "A hospital in Kotor covers the bay",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Portonovi: the healthcare system in Montenegro",
+          "url": "https://portonovi.com/en/blog/healthcare-system-montenegro-what-expats-and-second-home-buyers-need-know",
+          "read": "2026-11-15",
+          "says": "Dated October 01, 2025. \"more advanced care may require travel to larger hospitals located in Podgorica, Nikšić, Kotor or Bar\"; \"more complex cases are handled in hospitals across the country and the Clinical Centre of Montenegro in Podgorica\". Private healthcare is growing \"especially in the capital and on the coast\"."
+        }
+      ]
+    },
+    {
+      "id": "me-healthcare-referrals",
+      "fact": "healthcare",
+      "cities": [
+        "kotor"
+      ],
+      "claim": "Complex cases go to the Clinical Centre in Podgorica or to Croatia and Serbia",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Clinical Centre of Montenegro: about us",
+          "url": "https://www.kccg.me/o-nama/",
+          "read": "2026-11-15",
+          "says": "Undated. \"Klinički centar Crne Gore (KCCG) je referentna ustanova tercijarnog nivoa zdravstvene zaštite za cijelu Crnu Goru\" (the tertiary-level reference institution for all of Montenegro)."
+        },
+        {
+          "name": "Portonovi: the healthcare system in Montenegro",
+          "url": "https://portonovi.com/en/blog/healthcare-system-montenegro-what-expats-and-second-home-buyers-need-know",
+          "read": "2026-11-15",
+          "says": "Dated October 01, 2025. \"more advanced care may require travel to larger hospitals located in Podgorica, Nikšić, Kotor or Bar\"; \"more complex cases are handled in hospitals across the country and the Clinical Centre of Montenegro in Podgorica\". Private healthcare is growing \"especially in the capital and on the coast\"."
+        },
+        {
+          "name": "Montenegro Business: healthcare and the boom in international residents",
+          "url": "https://montenegrobusiness.eu/montenegros-healthcare-crossroads-why-the-boom-in-international-residents-demands-a-private-sector-push/",
+          "read": "2026-11-15",
+          "says": "Dated 25/09/2025. The public network \"was designed to serve a population of just over 600,000\" and the expatriate influx \"has already strained existing hospitals and clinics\" in Podgorica, Tivat, Budva and Kotor; \"Many foreign residents rely on neighboring Croatia or Serbia for specialist care\"; there are \"several reputable private clinics in Podgorica and coastal towns\" but \"their number and capacity remain small compared to demand\"."
+        }
+      ]
+    },
+    {
+      "id": "me-healthcare-system-stretched",
+      "fact": "healthcare",
+      "cities": [
+        "kotor"
+      ],
+      "claim": "The public system is stretched by newcomers and private clinics are few",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Montenegro Business: healthcare and the boom in international residents",
+          "url": "https://montenegrobusiness.eu/montenegros-healthcare-crossroads-why-the-boom-in-international-residents-demands-a-private-sector-push/",
+          "read": "2026-11-15",
+          "says": "Dated 25/09/2025. The public network \"was designed to serve a population of just over 600,000\" and the expatriate influx \"has already strained existing hospitals and clinics\" in Podgorica, Tivat, Budva and Kotor; \"Many foreign residents rely on neighboring Croatia or Serbia for specialist care\"; there are \"several reputable private clinics in Podgorica and coastal towns\" but \"their number and capacity remain small compared to demand\"."
+        }
+      ]
+    },
+    {
+      "id": "me-healthcare-insurance-condition",
+      "fact": "healthcare",
+      "cities": [
+        "kotor"
+      ],
+      "claim": "Health insurance is a condition of residence",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Violet Investment: Montenegro residency through real estate ownership in 2026",
+          "url": "https://www.violetinvestment.com/montenegro-residency-through-real-estate-ownership-in-2026-what-foreign-buyers-need-to-know/",
+          "read": "2026-11-15",
+          "says": "Undated beyond \"7 months ago\" on a 2026 article. The permit is \"generally issued for one year and may be renewed if the conditions continue to be met\"; documents include \"Proof of financial means\" (\"Means of subsistence\") and \"Proof of health insurance\"; renewal may need \"valid insurance\". Threshold \"€150,000\" on the tax-assessed value."
+        }
+      ]
+    }
+  ]
+}

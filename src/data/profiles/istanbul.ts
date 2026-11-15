@@ -3,19 +3,19 @@ import type { ExpatProfile } from '../expatPicks'
 const profile: ExpatProfile = {
   tagline: 'Global megacity and air hub with a 20-year foreign-income exemption',
   summary:
-    'Turkey\'s Law 7582 (June 2026) exempts a new resident\'s foreign-source income for 20 years and cuts inheritance tax to 1% during that time, with no wealth tax. Istanbul adds the country\'s best private hospitals and Turkish Airlines\' hub, with nonstops to many US cities, against higher costs than the coast, lira volatility and many districts closed to new property permits.',
+    'Turkey\'s Law 7582 (June 2026) exempts a new resident\'s foreign-source income for 20 years and cuts inheritance tax to 1% during that time, with no wealth tax. Istanbul adds the country\'s best private hospitals and Turkish Airlines\' hub, with nonstops to many US cities, against higher costs than the coast, lira volatility and unclear rules on which districts accept new property permits.',
   scores: { cost: 4, healthcare: 5, safety: 3, visa: 3, climate: 3, community: 3, tax: 5, estate: 4, lending: 3 },
   facts: {
     healthcare:
       'A major medical-tourism centre: the Acıbadem and Memorial groups run several JCI-accredited Istanbul hospitals, and Istanbul-based Medipol runs 14 hospitals; after a year of residence foreigners can join the state GSS scheme at 24% of the minimum wage, but it excludes pre-existing conditions, so top-up private cover is advised.',
     safety:
       'Turkey is 136th in the 2026 Global Peace Index; UK travel advice warns only against the area within 10 km of the Syrian border, while Istanbul has the petty crime and crowded-area risks of any megacity.',
-    visa: 'Short-term residence by owning property assessed at US$200k or more (bought since October 2023), renewable every 1–2 years while you own it; many Istanbul neighbourhoods are among the 1,169 closed to first applications, so check the DGMM list before buying; permanent residence after 8 years.',
-    tax: 'No wealth tax (a residence tax applies only to Turkish homes worth over TRY 17.7m); under Law 7582, people resident from 2026 with no Turkish residence in the prior 3 years pay no income tax on foreign-source income for 20 years, if they get the exemption certificate in the first year; whether foreign capital gains are covered is not explicit.',
+    visa: 'Short-term residence by owning property assessed at US$200k or more (bought since October 2023), renewable every 1–2 years while you own it; many Istanbul neighbourhoods were among the 1,169 closed to first applications from 2022, and most reportedly reopened in June 2026 without a published list (Fatih and Esenyurt reportedly not), so check the address with the migration office before buying; permanent residence after 8 years.',
+    tax: 'No wealth tax (a residence tax applies only to Turkish homes worth over TRY 17.7m); under Law 7582, people resident from 2026 with no Turkish residence in the prior 3 years pay no income tax on foreign-source income for 20 years, if they apply for the exemption certificate by the end of the calendar year they become resident; whether foreign capital gains are covered is not explicit.',
     estate:
-      'Inheritance tax is normally 1–30%, cut to 1% during the 20-year new-resident exemption; sources differ on whether that keys off the decedent or the heir, and a foreign resident\'s US securities left to US heirs may be out of scope entirely; there is no US estate treaty.',
+      'Inheritance tax is normally 1–10% (gifts 10–30%) above an exemption of about TRY 2.9m per child or spouse (2026), cut to 1% during the 20-year new-resident exemption; sources differ on whether that keys off the decedent or the heir, and a foreign resident\'s US securities left to US heirs may be out of scope entirely; there is no US estate treaty.',
     lending:
-      'IBKR reportedly accepts residents of all non-sanctioned countries, including Turkey, though margin terms per country are unknown; Schwab International reportedly does not accept Turkey; as a non-EU country, PRIIPs limits on US ETFs do not apply.',
+      'IBKR reportedly accepts residents of all non-sanctioned countries, including Turkey, though margin terms per country are unknown; Schwab International reportedly does not accept Turkey; as a non-EU country, EU PRIIPs limits on US ETFs should not apply, though which IBKR entity carries the account is unconfirmed.',
     climate: 'Warm summers (August highs about 28°C) and cool, damp winters: January highs about 9°C with lows near 4°C, about 865 mm of rain and some 15 snowy days a year.',
     community:
       'Turkey\'s largest expat population, mostly professionals and students in Cihangir, Beşiktaş, the Bosphorus villages and Kadıköy; retirees mostly choose the southern coast instead.',
@@ -24,7 +24,7 @@ const profile: ExpatProfile = {
   drawbacks: [
     'Lira swings and high inflation make local costs unpredictable',
     'Traffic, crowding and earthquake risk from the North Anatolian Fault',
-    'Many districts are closed to new property permits, and the tax regime is untested',
+    'Which districts accept new property permits is unclear, and the tax regime is untested',
   ],
   sources: [
     {
@@ -40,6 +40,16 @@ const profile: ExpatProfile = {
     {
       name: 'Legal 500: residence permit in Turkey by buying real estate',
       url: 'https://www.legal500.com/intelligence/turkey/real-estate-and-construction/residence-permit-in-turkey-by-buying-real-estate-%E2%80%93-legal-advice',
+    },
+    {
+      name: 'KPMG Türkiye: 2026 inheritance and gift tax exemptions and brackets',
+      url: 'https://kpmgvergi.com/yayinlar/mali-bultenler/vergi/2026-yilinda-uygulanacak-veraset-ve-intikal-vergisi-maktu-istisna-tutarlari-ile-matrah-dilim-tutarlari-yayimlandi/3355',
+      edition: '2026',
+    },
+    {
+      name: 'Turk.Estate: residence permits in formerly closed areas (2026)',
+      url: 'https://turk.estate/en/question-answer/residence-permits-in-turkey-restricted-areas-2026/',
+      edition: '2026',
     },
     { name: 'Ikamet: health care services for foreigners in Turkey', url: 'https://ikamet.com/health-care-services-for-foreigners-in-turkey/' },
     { name: 'TB Mag: hospitals and medical tourism in Türkiye 2026', url: 'https://tbmag.co.uk/hospitals-medical-tourism-turkiye-international-patients-2026/' },

@@ -1,0 +1,592 @@
+{
+  "country": "Czech Republic",
+  "cities": [
+    "prague"
+  ],
+  "claims": [
+    {
+      "id": "cz-tax-no-wealth-tax",
+      "fact": "tax",
+      "cities": [
+        "prague"
+      ],
+      "claim": "The Czech Republic has no wealth tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Czech Republic, other taxes",
+          "url": "https://taxsummaries.pwc.com/czech-republic/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 27 July 2026. \"There are no net wealth/worth taxes in the Czech Republic.\" \"There is no inheritance tax.\" \"Gifts are not taxed by a special gift tax, but rather they are included in the recipient's PIT\", with an exemption for gifts from close relatives (not defined on the page)."
+        },
+        {
+          "name": "PwC quick chart: net wealth/worth tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/net-wealth-worth-tax-rates",
+          "read": "2026-11-15",
+          "says": "Georgia: \"NA\" (last reviewed 02 September 2026); Hungary: \"N/A\" (01 July 2026); Czech Republic: \"NA\" (27 July 2026); Turkey: \"NA\" (09 September 2026). The page defines NA as \"the territory does not have the indicated tax or requirement\"."
+        }
+      ],
+      "note": "localTaxes.ts (CZ) agrees."
+    },
+    {
+      "id": "cz-tax-worldwide",
+      "fact": "tax",
+      "cities": [
+        "prague"
+      ],
+      "claim": "Residents are taxed on worldwide income",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Czech Republic, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/czech-republic/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 27 July 2026. \"Czech tax residents are generally subject to Czech income tax on their worldwide income.\" Gross annual income up to CZK 1,762,812 (36 times the average monthly salary) is taxed at 15% and income above it at 23%. \"A special tax base with the rate of 15% applies to selected types of non-Czech investment income\"; the taxpayer may opt for it, and allowances cannot reduce that base."
+        }
+      ]
+    },
+    {
+      "id": "cz-tax-separate-base-15",
+      "fact": "tax",
+      "cities": [
+        "prague"
+      ],
+      "claim": "Foreign dividends and bond interest can go in a separate base at a flat 15% (otherwise 15%/23%)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Czech Republic, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/czech-republic/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 27 July 2026. \"Czech tax residents are generally subject to Czech income tax on their worldwide income.\" Gross annual income up to CZK 1,762,812 (36 times the average monthly salary) is taxed at 15% and income above it at 23%. \"A special tax base with the rate of 15% applies to selected types of non-Czech investment income\"; the taxpayer may opt for it, and allowances cannot reduce that base."
+        },
+        {
+          "name": "PwC: Czech Republic, income determination",
+          "url": "https://taxsummaries.pwc.com/czech-republic/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 27 July 2026. Foreign dividend and interest income \"can be included in the separate tax base, which is subject to a flat 15% tax rate\". Time test for exempt capital gains: \"three years for direct ownership of securities\". From 1 January 2026 \"the annual limit of CZK 40 million for exemption of income from the sale of securities\" is abolished where the time test is met; the limit still applies to transactions closed in 2025 and continues for cryptocurrencies."
+        }
+      ],
+      "note": "Also the tagline (\"a 15% dividend option\") and the summary. The 23% band starts at CZK 1,762,812 on the page reviewed July 2026."
+    },
+    {
+      "id": "cz-tax-time-test-no-cap",
+      "fact": "tax",
+      "cities": [
+        "prague"
+      ],
+      "claim": "Securities held over 3 years are exempt from capital gains tax, with no cap from 2026",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Czech Republic, income determination",
+          "url": "https://taxsummaries.pwc.com/czech-republic/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 27 July 2026. Foreign dividend and interest income \"can be included in the separate tax base, which is subject to a flat 15% tax rate\". Time test for exempt capital gains: \"three years for direct ownership of securities\". From 1 January 2026 \"the annual limit of CZK 40 million for exemption of income from the sale of securities\" is abolished where the time test is met; the limit still applies to transactions closed in 2025 and continues for cryptocurrencies."
+        }
+      ],
+      "note": "The CZK 40m yearly cap applied to 2025 sales only; PwC says it is abolished from 1 January 2026 for securities (it stays for crypto-assets). A search listed several Czech advisers reporting the same; only PwC was read."
+    },
+    {
+      "id": "cz-tax-us-treaty-credit",
+      "fact": "tax",
+      "cities": [
+        "prague"
+      ],
+      "claim": "A credit for US withholding is presumably available under the US–Czech treaty",
+      "verdict": "cant-confirm",
+      "hedge": "unverified",
+      "wording": "a credit for US withholding is presumably available under the US–Czech treaty (unverified)",
+      "sources": [
+        {
+          "name": "PwC: Czech Republic, foreign tax relief and tax treaties",
+          "url": "https://taxsummaries.pwc.com/czech-republic/individual/foreign-tax-relief-and-tax-treaties",
+          "read": "2026-11-15",
+          "says": "Last reviewed 27 July 2026. To eliminate double taxation \"the provisions of DTTs concluded by the Czech Republic are to be followed\"; the United States is in the list of treaty countries. The page does not describe how US tax on dividends is credited."
+        },
+        {
+          "name": "IRS: United States income tax treaties, A to Z",
+          "url": "https://www.irs.gov/businesses/international-businesses/united-states-income-tax-treaties-a-to-z",
+          "read": "2026-11-15",
+          "says": "Page last reviewed or updated 03-Jan-2026; read again on 2026-11-15 for this batch. Under C: Canada, Chile, China, Cyprus, Czech Republic. Under G: Georgia, Germany, Greece. Under H: Hungary, marked \"CAUTION Treaty Terminated\". Under T: Tajikistan, Thailand, Trinidad, Tunisia, Turkey, Turkmenistan. The USSR entry is marked \"CAUTION Treaty Partially Suspended for Belarus\"."
+        }
+      ],
+      "note": "A US–Czech income tax treaty exists (IRS list, PwC). How the Czech Republic credits US tax on dividends was not read; the treaty text was not opened. For a US citizen the US tax is paid by return, not withheld (see pt-tax-us-treaty-credit in portugal.json); the profile's own hedge stays."
+    },
+    {
+      "id": "cz-estate-no-inheritance-tax",
+      "fact": "estate",
+      "cities": [
+        "prague"
+      ],
+      "claim": "There is no inheritance tax, so a US portfolio passes to US-resident children with no Czech tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Czech Republic, other taxes",
+          "url": "https://taxsummaries.pwc.com/czech-republic/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 27 July 2026. \"There are no net wealth/worth taxes in the Czech Republic.\" \"There is no inheritance tax.\" \"Gifts are not taxed by a special gift tax, but rather they are included in the recipient's PIT\", with an exemption for gifts from close relatives (not defined on the page)."
+        },
+        {
+          "name": "PwC quick chart: inheritance and gift tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates",
+          "read": "2026-11-15",
+          "says": "Georgia: inheritance \"NA\", gift \"NA\" (last reviewed 02 September 2026). Hungary: \"18% (but a preferential 9% rate applies to residential property). Children, siblings, and spouses may receive the inheritance without tax.\" (01 July 2026). Czech Republic: inheritance \"NA\"; gift \"If taxable, the gift is subject to the normal PIT rate.\" (27 July 2026). Turkey: inheritance \"10\", gift \"30\" (09 September 2026)."
+        }
+      ],
+      "note": "Also the summary (\"no wealth or inheritance tax\"). localTaxes.ts (CZ) agrees. The year the tax was abolished is not claimed by the profile and is not on the page."
+    },
+    {
+      "id": "cz-estate-gifts-close-relatives",
+      "fact": "estate",
+      "cities": [
+        "prague"
+      ],
+      "claim": "Gifts from close relatives are exempt",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Czech Republic, other taxes",
+          "url": "https://taxsummaries.pwc.com/czech-republic/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 27 July 2026. \"There are no net wealth/worth taxes in the Czech Republic.\" \"There is no inheritance tax.\" \"Gifts are not taxed by a special gift tax, but rather they are included in the recipient's PIT\", with an exemption for gifts from close relatives (not defined on the page)."
+        }
+      ]
+    },
+    {
+      "id": "cz-estate-no-us-treaty",
+      "fact": "estate",
+      "cities": [
+        "prague"
+      ],
+      "claim": "There is no US estate treaty",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-without",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list); none of the 37 countries named in this claim is among them."
+        }
+      ]
+    },
+    {
+      "id": "cz-lending-ibkr-accepts",
+      "fact": "lending",
+      "cities": [
+        "prague"
+      ],
+      "claim": "IBKR serves Czech residents",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly serves Czech residents",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026; read again on 2026-11-15 for this batch. \"In the EU, customers sign up with the Irish entity\" (Interactive Brokers Ireland Limited); the Irish €20,000 protection \"applies to Eastern Europe following recent IBKR Irish and Hungarian Entity Merger\". The \"Country Availability\" list includes Hungary, the Czech Republic, Turkey and Georgia; it does not map countries to entities, and names no entity for residents of Turkey or Georgia. PRIIPs is described as \"an EU rule that prohibits buying US-listed ETFs\" that \"also applies to UK Investors\"."
+        }
+      ],
+      "note": "IBKR's own country list (https://www.interactivebrokers.co.uk/en/index.php?f=38309) returned HTTP 403 again on 2026-11-15; the other Interactive Brokers sites were not retried."
+    },
+    {
+      "id": "cz-lending-ibkr-eu-entity",
+      "fact": "lending",
+      "cities": [
+        "prague"
+      ],
+      "claim": "Czech residents are served through IBKR's EU entity",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-eu-entity",
+      "hedge": "likely",
+      "wording": "(likely through its EU entity)",
+      "sources": [
+        {
+          "name": "Interactive Brokers Ireland Limited: Customer Agreement (document 4750, 7/1/2023), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/01_4750_IBIE_Customer_Agreement_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "Clause 1B: Interactive Brokers Ireland Limited (\"IBIE\") is incorporated in Ireland, company number 657406, and \"is regulated by the Central Bank of Ireland\", register number C423427. Clause 1C: unless told otherwise in writing, the client is categorised as a Retail Client. The agreement does not say which countries' residents IBIE serves."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. \"In the EU, customers sign up with the Irish entity\"; UK clients are with Interactive Brokers (U.K.) Limited; the Irish €20k compensation scheme applies to Eastern Europe after the Irish and Hungarian entities merged."
+        },
+        {
+          "name": "Investing in the Web: Interactive Brokers in Europe",
+          "url": "https://investingintheweb.com/broker-reviews/interactive-brokers-europe",
+          "read": "2026-11-15",
+          "says": "Updated on Sep 8, 2026. \"As an European resident, you are under the Central Bank of Ireland regulation\" (Interactive Brokers Ireland Limited); \"As a UK resident, you will be under this legal entity\" (Interactive Brokers UK Limited); \"Interactive Brokers Luxembourg and Central have been extinct/merged.\""
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026; read again on 2026-11-15 for this batch. \"In the EU, customers sign up with the Irish entity\" (Interactive Brokers Ireland Limited); the Irish €20,000 protection \"applies to Eastern Europe following recent IBKR Irish and Hungarian Entity Merger\". The \"Country Availability\" list includes Hungary, the Czech Republic, Turkey and Georgia; it does not map countries to entities, and names no entity for residents of Turkey or Georgia. PRIIPs is described as \"an EU rule that prohibits buying US-listed ETFs\" that \"also applies to UK Investors\"."
+        }
+      ],
+      "note": "The profile names \"its EU entity\". The Czech Republic was reportedly served by IBKR's Hungarian company (Interactive Brokers Central Europe) before it was merged into the Irish one; Banker on Wheels, re-read today, speaks of the merger without mapping countries to entities."
+    },
+    {
+      "id": "cz-lending-margin-terms-unknown",
+      "fact": "lending",
+      "cities": [
+        "prague"
+      ],
+      "claim": "IBKR's margin terms per country are unknown",
+      "verdict": "cant-confirm",
+      "hedge": "unknown",
+      "wording": "with margin terms per country unknown",
+      "sources": [
+        {
+          "name": "Interactive Brokers Ireland Limited: Customer Agreement (document 4750, 7/1/2023), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/01_4750_IBIE_Customer_Agreement_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "Clause 2A(i)(d): \"Subject to Applicable Laws, IBIE shall offer a margin trading service to Clients to enable Clients to acquire investment instruments\". Clause 4A: margin trading is subject to IBIE's margin requirements, which it may change at any time; IBIE generally will not issue margin calls and may liquidate positions without notice. Clause 1C: clients are Retail Clients unless notified otherwise."
+        },
+        {
+          "name": "Interactive Brokers Ireland Limited: Disclosure of Risks of Margin Trading (document 4761, December 2020), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/4761_IBIE_DISCLOSURE_OF_RISKS_OF_MARGIN_TRADING_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "\"When you purchase securities, you may pay for the securities in full or you may borrow part of the purchase price from IBIE. If you choose to borrow funds from IBIE, you will open a margin account with IBIE. The securities purchased are IBIE's collateral for the loan to you.\""
+        }
+      ],
+      "note": "A statement of what is not known; the two IBKR Ireland documents read in stage 1 give no per-country terms."
+    },
+    {
+      "id": "cz-lending-schwab-unavailable",
+      "fact": "lending",
+      "cities": [
+        "prague"
+      ],
+      "claim": "Schwab International is unavailable to Czech residents because the Czech Republic is off its reported list",
+      "verdict": "corrected",
+      "shared": "schwab-accepts-residents",
+      "oldWording": "Schwab International is reportedly unavailable, as the Czech Republic is off its reported list",
+      "newWording": "Schwab International reportedly accepts them too (the Czech Republic is on its reported list, Oct 2026)",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026; read again on 2026-11-15 for this batch. The 51 countries and regions accepted on that day include the Czech Republic (also Austria, Poland, Greece, Germany); the 12 marked \"No\" are Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam. Hungary and Georgia are in neither list. It quotes the Schwab One agreement: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds from their account\", and does not define \"Europe\"."
+        }
+      ],
+      "also": [
+        "scores.lending: this alone would not raise it, since the Czech Republic is in the EU; see cz-lending-ibkr-margin-cash-out for 3→2"
+      ],
+      "note": "The one dated list, re-read today, has the Czech Republic among the 51 accepted. It stays \"reportedly\": Schwab's own pages were unreadable in stage 1 and were not tried again."
+    },
+    {
+      "id": "cz-lending-schwab-cash-out",
+      "fact": "lending",
+      "cities": [
+        "prague"
+      ],
+      "claim": "Schwab bars Europe residents from taking cash out through margin",
+      "verdict": "cant-confirm",
+      "shared": "schwab-europe-margin-cash-out",
+      "hedge": "reportedly",
+      "wording": "Schwab reportedly bars Europe residents from taking cash out through margin",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026; read again on 2026-11-15 for this batch. The 51 countries and regions accepted on that day include the Czech Republic (also Austria, Poland, Greece, Germany); the 12 marked \"No\" are Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam. Hungary and Georgia are in neither list. It quotes the Schwab One agreement: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds from their account\", and does not define \"Europe\"."
+        }
+      ],
+      "also": [
+        "clause added with the Schwab correction: once the profile says Schwab accepts Czech residents, it has to say what Schwab reportedly bars"
+      ]
+    },
+    {
+      "id": "cz-lending-ibkr-margin-cash-out",
+      "fact": "lending",
+      "cities": [
+        "prague"
+      ],
+      "claim": "A Czech resident can borrow against the portfolio at IBKR (implied by naming IBKR as the broker that serves residents)",
+      "verdict": "corrected",
+      "shared": "ibkr-eu-margin-cash-out",
+      "oldWording": "with margin terms per country unknown; Schwab International is reportedly unavailable",
+      "newWording": "and IBKR's EU entity reportedly lends on margin only to buy securities, not to withdraw as cash, so confirm how you would draw cash before relying on either",
+      "sources": [
+        {
+          "name": "LYNX: Withdrawal (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/payments-and-transfers/withdrawal/",
+          "read": "2026-11-15",
+          "says": "\"It is not possible to withdraw in a currency if your cash balance is negative or would go negative after the withdrawal.\" In a margin account \"some funds may be used as collateral for other positions or to cover negative cash balances\", which lowers what can be withdrawn. The page is undated (footer: Copyright 2023)."
+        },
+        {
+          "name": "CapTrader: Geld abheben (help page of a German introducing broker for Interactive Brokers)",
+          "url": "https://www.captrader.com/geld-abheben/",
+          "read": "2026-11-15",
+          "says": "\"Auszahlungen sind nur möglich, wenn kein negativer Saldo in der entsprechenden Währung\" or in the total cash arises or grows: withdrawals are possible only if they do not create or increase a negative balance. Footer: © CapTrader 2026."
+        },
+        {
+          "name": "Interactive Brokers Ireland Limited: Customer Agreement (document 4750, 7/1/2023), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/01_4750_IBIE_Customer_Agreement_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "Clause 2A(i)(d) defines the margin service as one \"to enable Clients to acquire investment instruments\". Clause 5A(iv): \"Terms and conditions for deposit and withdrawal of funds (including holding periods) are as specified on the IBIE website.\" The agreement does not say that a loan may be withdrawn as cash."
+        },
+        {
+          "name": "Mustachian Post forum: Using margin loan at Interactive Brokers, page 13",
+          "url": "https://forum.mustachianpost.com/t/using-margin-loan-at-interactive-brokers/3980?page=13",
+          "read": "2026-11-15",
+          "says": "Posts of September to November 2024. One poster says withdrawing cash on margin is \"not possible in Germany with IB IE\" but is with IB UK; Swiss residents with IB UK accounts report having done it; another reports IBKR service saying \"IBUK customers can no longer withdraw cash if aggregate cash balance is -ve\", which a manager then said applies only to UK residents."
+        }
+      ],
+      "also": [
+        "scores.lending 3→2 (plan decision of 2026-11-15; rubric 2: EU residence, where Schwab and IBKR's EU entity both reportedly bar taking cash out through margin)",
+        "summary: added the closing sentence \"The borrow step is weak too: Schwab and IBKR both reportedly bar EU residents from drawing margin as cash.\"",
+        "drawbacks: none mentioned margin or brokers, so none was reworded and none was added; the summary sentence carries it",
+        "sources: added LYNX withdrawal page",
+        "EU PRIIPs clause added (see cz-lending-priips-new-buys): the fact had none, unlike the other EU profiles"
+      ],
+      "rankFlag": "Prague (pick 43) now scores lending 2. Its `why` does not mention borrowing, so it is not contradicted; rank unchanged. With Schwab reportedly accepting Czech residents, Prague would have been a 4 by the old reading outside the EU; inside the EU the rubric gives 2. User's call.",
+      "note": "Worded as for Vienna: the standard clause unchanged, ending \"either\" because Schwab reportedly accepts Czech residents too. Shared sources are copied with their stage 1 read date; the LYNX page was not re-read."
+    },
+    {
+      "id": "cz-lending-priips-new-buys",
+      "fact": "lending",
+      "cities": [
+        "prague"
+      ],
+      "claim": "EU PRIIPs rules block new buys of US-listed ETFs",
+      "verdict": "confirmed",
+      "shared": "priips-us-etf-new-buys-blocked",
+      "sources": [
+        {
+          "name": "LYNX: Key Information Document (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/products-and-regulations/regulations/key-information-document/",
+          "read": "2026-11-15",
+          "says": "Retail clients are \"not permitted to trade ETFs or other products that do not have a valid KID\"; many non-EU ETFs have none. Can a retail client buy US ETFs? \"No, not unless you are classified as a professional investor.\" The same applies to ETFs from Canada, Hong Kong, Mexico and Australia. The KID has applied to most products since 1 January 2018."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. \"PRIIPs is an EU rule that prohibits buying US-listed ETFs\", and this also applies to UK investors; US ETFs are open only to elective professional clients, while UCITS ETFs are available to all Europeans."
+        }
+      ],
+      "also": [
+        "clause added with the margin correction; the profile had no PRIIPs clause"
+      ],
+      "note": "The \"reportedly\" does no harm."
+    },
+    {
+      "id": "cz-lending-priips-holdings-kept",
+      "fact": "lending",
+      "cities": [
+        "prague"
+      ],
+      "claim": "The block is on buying, not on holding US-listed ETFs",
+      "verdict": "confirmed",
+      "shared": "priips-existing-holdings-kept",
+      "sources": [
+        {
+          "name": "LYNX: Key Information Document (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/products-and-regulations/regulations/key-information-document/",
+          "read": "2026-11-15",
+          "says": "The page's FAQ says retail clients \"may still hold or sell existing positions, but new purchases are restricted.\""
+        },
+        {
+          "name": "Regulation (EU) No 1286/2014, Article 13, as adopted (legislation.gov.uk copy of the EU text)",
+          "url": "https://www.legislation.gov.uk/eur/2014/1286/article/13/adopted",
+          "read": "2026-11-15",
+          "says": "The duty to provide a KID falls on \"a person advising on, or selling, a PRIIP\" before the retail investor is bound; nothing in the article reaches a PRIIP the investor already holds or a sale by the investor."
+        }
+      ]
+    },
+    {
+      "id": "cz-visa-no-investor-visa",
+      "fact": "visa",
+      "cities": [
+        "prague"
+      ],
+      "claim": "There is no retirement or investor visa",
+      "verdict": "corrected",
+      "oldWording": "There is no retirement or investor visa",
+      "newWording": "There is no retirement visa, and the investment permit needs CZK 75m in a business plus 20 new jobs",
+      "sources": [
+        {
+          "name": "Ministry of the Interior (ipc.gov.cz): long-term residence permit for the purpose of investment",
+          "url": "https://ipc.gov.cz/en/visa-and-residence-permit-types/third-country-nationals/long-term-residence-permits/long-term-residence-permit-for-the-purpose-of-investment/",
+          "read": "2026-11-15",
+          "says": "Undated (footer ©2026). The permit is for third-country entrepreneurs making a \"significant investment\": \"at least 75 million CZK\" (up to 60% replaceable by other assets) and \"at least 20 new jobs for EU citizens or their family members for a minimum period of 2 years\". Valid up to 2 years, extendable repeatedly by up to 2 years."
+        },
+        {
+          "name": "Ministry of the Interior (ipc.gov.cz): long-term residence, general information",
+          "url": "https://ipc.gov.cz/en/visa-and-residence-permit-types/third-country-nationals/long-term-residence-permits/long-term-residence-general-information/",
+          "read": "2026-11-15",
+          "says": "Undated (footer ©2026). A long-term residence permit \"is always issued for a specific purpose\"; the types listed are family reunification, resident of another EU state, studies, scientific research, investment, employee card, blue card and intra-company transfer card: no \"other\" purpose is listed. Holders of a long-term visa may apply to stay on for the same purpose; validity is usually up to 2 years. The page does not say how an \"other purposes\" visa holder continues."
+        }
+      ],
+      "also": [
+        "scores.visa stays 2: the investment permit is for entrepreneurs, not a route for a retiree on a portfolio",
+        "summary and drawbacks unchanged: they speak of the discretionary visa only",
+        "sources: added the Interior Ministry's investment-permit page"
+      ],
+      "note": "An investor permit exists, on terms no retiree would use. No retirement permit is among the types the ministry lists."
+    },
+    {
+      "id": "cz-visa-other-purposes-terms",
+      "fact": "visa",
+      "cities": [
+        "prague"
+      ],
+      "claim": "The route is a long-term visa for \"other purposes\": up to 12 months, decided in 90–120 days, with a purpose statement, modest proof of funds, housing and €400k+ health insurance",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Czech Embassy in Tel Aviv: long-term visa for other purposes",
+          "url": "https://mzv.gov.cz/telaviv/en/visa_and_consular_services/visas/long_term_visas_and_residence_permits/long_term_visa_for_other_purposes.html",
+          "read": "2026-11-15",
+          "says": "Published 17.06.2020, last updated 01.02.2024. \"The visa for a stay over 90 days is granted for a maximum length of 12 months.\" \"The processing of long term visas for other purposes takes up from 90 to 120 days.\" Purpose is shown by an invitation, a notarised statement or a detailed written explanation. Funds: \"at least 15 x 3 130 CZK\" for the first month plus twice 3,130 CZK for each further month (CZK 78,250 for six months). Accommodation must be proved. Health insurance: at least EUR 400,000 per insured event with no co-payment, from Pojišťovna VZP or another insurer active in the Czech Republic. Retirees are not mentioned."
+        },
+        {
+          "name": "Czech Embassy in Washington: LT visa, other purposes",
+          "url": "https://mzv.gov.cz/washington/en/consular_information/long_term_visa/LT_visa_other_purposes.html",
+          "read": "2026-11-15",
+          "says": "Published 10 May 2016, last updated 20 September 2024. For \"all other types of long stay (for over 90 days of stay) visas\"; processing takes \"from 90 to 120 days\"; all visas must be approved by the Czech Ministry of Interior. Funds: 15 times the existential minimum of CZK 3,130 for the first month plus double it for each later month. Lists travel medical insurance without an amount. Retirees are not mentioned, and the page does not say whether there is a right to the visa."
+        }
+      ],
+      "note": "Two embassy pages (Tel Aviv, updated February 2024; Washington, updated September 2024). The Interior Ministry's portal ipc.gov.cz lists long-term visa purposes without a general \"other\" entry; the embassy pages and the Bogotá embassy page (updated June 2025, read, not listed) do. Funds for a year work out to about CZK 116,000. Whether a retiree's stated purpose is accepted is at the ministry's discretion and no page speaks of retirees."
+    },
+    {
+      "id": "cz-visa-renewal-discretionary",
+      "fact": "visa",
+      "cities": [
+        "prague"
+      ],
+      "claim": "Renewal into a long-term residence permit is discretionary",
+      "verdict": "cant-confirm",
+      "hedge": "reportedly",
+      "wording": "renewal into a long-term residence permit is reportedly discretionary",
+      "sources": [
+        {
+          "name": "Ministry of the Interior (ipc.gov.cz): long-term residence, general information",
+          "url": "https://ipc.gov.cz/en/visa-and-residence-permit-types/third-country-nationals/long-term-residence-permits/long-term-residence-general-information/",
+          "read": "2026-11-15",
+          "says": "Undated (footer ©2026). A long-term residence permit \"is always issued for a specific purpose\"; the types listed are family reunification, resident of another EU state, studies, scientific research, investment, employee card, blue card and intra-company transfer card: no \"other\" purpose is listed. Holders of a long-term visa may apply to stay on for the same purpose; validity is usually up to 2 years. The page does not say how an \"other purposes\" visa holder continues."
+        },
+        {
+          "name": "Czech Embassy in Washington: LT visa, other purposes",
+          "url": "https://mzv.gov.cz/washington/en/consular_information/long_term_visa/LT_visa_other_purposes.html",
+          "read": "2026-11-15",
+          "says": "Published 10 May 2016, last updated 20 September 2024. For \"all other types of long stay (for over 90 days of stay) visas\"; processing takes \"from 90 to 120 days\"; all visas must be approved by the Czech Ministry of Interior. Funds: 15 times the existential minimum of CZK 3,130 for the first month plus double it for each later month. Lists travel medical insurance without an amount. Retirees are not mentioned, and the page does not say whether there is a right to the visa."
+        }
+      ],
+      "note": "The ministry's list of long-term residence permits has no \"other\" purpose, and says a visa holder may apply to stay on for the same purpose; no page read says how an \"other purposes\" stay is extended or on what test. The hedge was already there. Also the summary (\"a retiree's visa is discretionary\") and drawback 1, which state the visa is discretionary: every visa needs the ministry's approval (Washington page), which supports that much."
+    },
+    {
+      "id": "cz-healthcare-prague-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "prague"
+      ],
+      "claim": "Prague has the country's best hospitals and expat medical services",
+      "verdict": "cant-confirm",
+      "oldWording": "Prague has the country's best hospitals and expat medical services",
+      "hedge": "generally regarded",
+      "wording": "Prague's hospitals are generally regarded as the country's best, with expat medical services",
+      "sources": [
+        {
+          "name": "Na Homolce Hospital: patient pages",
+          "url": "https://www.homolka.cz/en/patient",
+          "read": "2026-11-15",
+          "says": "News of January 1, 2026: \"We are entering 2026 as a new institution, Motol and Homolka University Hospitals.\" The page says nothing on how Prague's hospitals compare with the rest of the country, or on services for foreign patients."
+        }
+      ],
+      "also": [
+        "hedge added: \"generally regarded\"",
+        "scores.healthcare stays 4",
+        "summary unchanged (\"Prague adds good hospitals\")"
+      ],
+      "note": "No dated page that could be read ranks Prague's hospitals against the rest of the country: fnmotol.cz and expatarrivals.com returned 403, Newsweek's ranking page returned 402, an expats.cz piece on a city ranking is from 2019 and one on Motol from 2009. Na Homolce's own site confirms only that it merged with Motol on 1 January 2026. No hospital is named in the profile."
+    },
+    {
+      "id": "cz-healthcare-comprehensive-insurance",
+      "fact": "healthcare",
+      "cities": [
+        "prague"
+      ],
+      "claim": "Non-EU residents without a Czech employer must buy commercial \"comprehensive\" health insurance with at least €400k cover",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Grant Thornton Czech Republic: the end of the monopoly of PVZP and other changes in the health insurance of foreigners",
+          "url": "https://www.grantthornton.cz/en/news/the-end-of-the-monopoly-of-pvzp-and-other-changes-in-the-health-insurance-of-foreigners/",
+          "read": "2026-11-15",
+          "says": "Dated 5 December 2023. From 20 September 2023 applicants for long-term visas and stays can buy comprehensive health insurance from any Czech insurer authorised to offer it. The limit of insurance benefits rose from EUR 60,000 to EUR 400,000, with no co-payment. Non-EU citizens staying more than 90 days must hold comprehensive health insurance for the whole stay; foreigners under 18 with long-term residence join public insurance from 1 January 2024. Nothing on premiums by age."
+        },
+        {
+          "name": "Czech Embassy in Tel Aviv: long-term visa for other purposes",
+          "url": "https://mzv.gov.cz/telaviv/en/visa_and_consular_services/visas/long_term_visas_and_residence_permits/long_term_visa_for_other_purposes.html",
+          "read": "2026-11-15",
+          "says": "Published 17.06.2020, last updated 01.02.2024. \"The visa for a stay over 90 days is granted for a maximum length of 12 months.\" \"The processing of long term visas for other purposes takes up from 90 to 120 days.\" Purpose is shown by an invitation, a notarised statement or a detailed written explanation. Funds: \"at least 15 x 3 130 CZK\" for the first month plus twice 3,130 CZK for each further month (CZK 78,250 for six months). Accommodation must be proved. Health insurance: at least EUR 400,000 per insured event with no co-payment, from Pojišťovna VZP or another insurer active in the Czech Republic. Retirees are not mentioned."
+        }
+      ],
+      "note": "Grant Thornton says non-EU citizens staying over 90 days must hold it; that employees are in public insurance instead was not read on a page today and is implied only."
+    },
+    {
+      "id": "cz-healthcare-pvzp-monopoly-ended",
+      "fact": "healthcare",
+      "cities": [
+        "prague"
+      ],
+      "claim": "The insurance can now be bought from any approved insurer rather than only PVZP",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Grant Thornton Czech Republic: the end of the monopoly of PVZP and other changes in the health insurance of foreigners",
+          "url": "https://www.grantthornton.cz/en/news/the-end-of-the-monopoly-of-pvzp-and-other-changes-in-the-health-insurance-of-foreigners/",
+          "read": "2026-11-15",
+          "says": "Dated 5 December 2023. From 20 September 2023 applicants for long-term visas and stays can buy comprehensive health insurance from any Czech insurer authorised to offer it. The limit of insurance benefits rose from EUR 60,000 to EUR 400,000, with no co-payment. Non-EU citizens staying more than 90 days must hold comprehensive health insurance for the whole stay; foreigners under 18 with long-term residence join public insurance from 1 January 2024. Nothing on premiums by age."
+        },
+        {
+          "name": "Czech Embassy in Tel Aviv: long-term visa for other purposes",
+          "url": "https://mzv.gov.cz/telaviv/en/visa_and_consular_services/visas/long_term_visas_and_residence_permits/long_term_visa_for_other_purposes.html",
+          "read": "2026-11-15",
+          "says": "Published 17.06.2020, last updated 01.02.2024. \"The visa for a stay over 90 days is granted for a maximum length of 12 months.\" \"The processing of long term visas for other purposes takes up from 90 to 120 days.\" Purpose is shown by an invitation, a notarised statement or a detailed written explanation. Funds: \"at least 15 x 3 130 CZK\" for the first month plus twice 3,130 CZK for each further month (CZK 78,250 for six months). Accommodation must be proved. Health insurance: at least EUR 400,000 per insured event with no co-payment, from Pojišťovna VZP or another insurer active in the Czech Republic. Retirees are not mentioned."
+        }
+      ],
+      "also": [
+        "sources: replaced the Expats.cz article (expats.cz failed on DNS today) with Grant Thornton"
+      ],
+      "note": "The monopoly ended on 20 September 2023. ipc.gov.cz/en/travel-medical-insurance/ returned 404 and praha.eu failed on its certificate."
+    },
+    {
+      "id": "cz-healthcare-senior-premiums",
+      "fact": "healthcare",
+      "cities": [
+        "prague"
+      ],
+      "claim": "Senior premiums can be high",
+      "verdict": "cant-confirm",
+      "hedge": "can be",
+      "wording": "senior premiums can be high",
+      "sources": [
+        {
+          "name": "Grant Thornton Czech Republic: the end of the monopoly of PVZP and other changes in the health insurance of foreigners",
+          "url": "https://www.grantthornton.cz/en/news/the-end-of-the-monopoly-of-pvzp-and-other-changes-in-the-health-insurance-of-foreigners/",
+          "read": "2026-11-15",
+          "says": "Dated 5 December 2023. From 20 September 2023 applicants for long-term visas and stays can buy comprehensive health insurance from any Czech insurer authorised to offer it. The limit of insurance benefits rose from EUR 60,000 to EUR 400,000, with no co-payment. Non-EU citizens staying more than 90 days must hold comprehensive health insurance for the whole stay; foreigners under 18 with long-term residence join public insurance from 1 January 2024. Nothing on premiums by age."
+        }
+      ],
+      "note": "No page read gives premiums by age. Drawback 3 says the same with \"can be\"."
+    }
+  ]
+}

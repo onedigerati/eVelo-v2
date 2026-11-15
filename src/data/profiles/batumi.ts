@@ -11,7 +11,7 @@ const profile: ExpatProfile = {
     safety:
       'UK travel advice says crime levels in Georgia are low, mainly pickpocketing; daily political protests centre on Tbilisi but also reach other cities, and the UK advises against travel to parts of the country near the breakaway regions, which are far from Batumi.',
     visa: 'US citizens can stay 365 days visa-free, with travel insurance required on entry from 2026; for residence, property worth at least US$150k at market value (since March 2026, properties can be combined) gives a yearly-renewable temporary permit covering spouse and children; Batumi\'s new-build market is reportedly oversupplied, so check resale value.',
-    tax: 'No wealth tax; resident individuals are exempt from tax on income without a Georgian source, so US dividends and interest are untaxed locally (one guide says residents are taxed on global income, but PwC and the 2025 tax card list the exemption); with no US–Georgia income tax treaty, US withholding on dividends may be 30% (unverified).',
+    tax: 'No wealth tax; resident individuals are exempt from tax on income without a Georgian source, so US dividends and interest are untaxed locally (one guide says residents are taxed on global income, but PwC and the 2025 tax card list the exemption); the IRS treats Georgia as covered by the 1973 US–USSR income tax treaty, and the 30% US withholding on dividends applies to foreign persons, so a US citizen instead pays US tax on them by return.',
     estate:
       'No separate inheritance tax, and property inherited by first- and second-line heirs (children, spouse, parents, siblings, grandchildren) is exempt from income tax, so a US portfolio passes to US-resident children with no Georgian tax; there is no US estate treaty.',
     lending:
@@ -24,11 +24,13 @@ const profile: ExpatProfile = {
   drawbacks: [
     'Healthcare is thinner than in Tbilisi, so serious care means Tbilisi or Turkey',
     'Very wet, humid climate for much of the year',
-    'No US tax treaty, so US dividends may carry the full 30% withholding',
+    'Only the 1973 US–USSR income tax treaty covers Georgia, and there is no US estate treaty',
   ],
   sources: [
     { name: 'PwC: Georgia, taxes on personal income', url: 'https://taxsummaries.pwc.com/georgia/individual/taxes-on-personal-income' },
     { name: 'PwC: Georgia, other taxes', url: 'https://taxsummaries.pwc.com/georgia/individual/other-taxes' },
+    { name: 'IRS: Georgia tax treaty documents', url: 'https://www.irs.gov/businesses/international-businesses/georgia-tax-treaty-documents' },
+    { name: 'Public Service Development Agency: residence permits', url: 'https://sda.gov.ge/en/products/migration-residence-permits/' },
     { name: 'Legal 500: Georgia tax card 2025', url: 'https://www.legal500.com/intelligence/georgia/tax/georgia-tax-card-2025' },
     { name: 'Eurofast: understanding individual taxes in Georgia', url: 'https://eurofast.eu/understanding-individual-taxes-in-georgia/' },
     {

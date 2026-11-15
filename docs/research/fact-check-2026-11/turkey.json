@@ -1,0 +1,577 @@
+{
+  "country": "Turkey",
+  "cities": [
+    "antalya",
+    "istanbul"
+  ],
+  "claims": [
+    {
+      "id": "tr-tax-no-wealth-tax",
+      "fact": "tax",
+      "cities": [
+        "antalya",
+        "istanbul"
+      ],
+      "claim": "Turkey has no wealth tax; a residence tax applies only to Turkish homes worth over TRY 17.7m",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Turkey, other taxes",
+          "url": "https://taxsummaries.pwc.com/turkey/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 09 September 2026. \"There are no national wealth taxes in Turkey.\" A tax on residences in Turkey valued above TRY 17,711,000 for 2026 applies to the excess at 0.3% to 1.0%. Inheritance and gift tax is paid by recipients at rates \"ranging from 1% to 30%\"; tax paid abroad on inherited property is deductible from the base. The page does not split inheritance from gift rates, give the exemptions, or say who is in scope."
+        },
+        {
+          "name": "PwC quick chart: net wealth/worth tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/net-wealth-worth-tax-rates",
+          "read": "2026-11-15",
+          "says": "Georgia: \"NA\" (last reviewed 02 September 2026); Hungary: \"N/A\" (01 July 2026); Czech Republic: \"NA\" (27 July 2026); Turkey: \"NA\" (09 September 2026). The page defines NA as \"the territory does not have the indicated tax or requirement\"."
+        }
+      ],
+      "note": "TRY 17,711,000 for 2026. localTaxes.ts (TR) agrees: no wealth tax."
+    },
+    {
+      "id": "tr-tax-law-7582-exemption",
+      "fact": "tax",
+      "cities": [
+        "antalya",
+        "istanbul"
+      ],
+      "claim": "Under Law 7582 (June 2026), people who become resident from 2026 with no Turkish residence in the prior 3 years pay no income tax on foreign-source income for 20 years",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "EY: Türkiye introduces new personal tax regime (Law No. 7582)",
+          "url": "https://www.ey.com/en_gl/technical/tax-alerts/turkiye-introduces-new-personal-tax-regime-including-foreign-income-exemption-inheritance-tax-relief-and-asset-repatriation-measure",
+          "read": "2026-11-15",
+          "says": "Dated 08 June 2026. Türkiye \"published Law No. 7582 in the Official Gazette\" on 4 June 2026. New Article 20/D exempts foreign-sourced \"income and gains\" of individuals who become tax resident \"on or after 1 January 2026\" and \"have not had residence or tax liability in Turkiye during the last three calendar years prior to becoming resident\"; \"the exemption applies for a period of 20 years\". For individuals benefiting from the regime a reduced rate of 1% applies \"if assets are transferred by inheritance within the eligibility period\"; standard inheritance rates reach 10%. It does not mention a certificate, name capital gains, or say whether the decedent or the heir must be the beneficiary."
+        },
+        {
+          "name": "PwC: Turkey, significant developments",
+          "url": "https://taxsummaries.pwc.com/turkey/individual/significant-developments",
+          "read": "2026-11-15",
+          "says": "Last reviewed 09 September 2026. Law No. 7582: foreign-source income of individuals who become tax resident and \"have not been resident or subject to tax in Turkey during the preceding three years\" gets a 20-year income tax exemption and \"will not be subject to declaration in Turkey\"; \"inheritance transfers occurring within the exemption period are subject to a reduced tax rate of 1%\"."
+        },
+        {
+          "name": "Legal 500: Türkiye's new foreign income exemption, a regime for relocating individuals",
+          "url": "https://www.legal500.com/intelligence/turkey/tax/turkiyes-new-foreign-income-exemption-a-regime-for-relocating-individuals",
+          "read": "2026-11-15",
+          "says": "Dated 10 July 2026. Law No. 7582 of 4 June 2026 added Article \"repeated 20/D\" to the Income Tax Code, with rules in Income Tax General Communiqué No. 333. It covers individuals with no domicile and no Turkish tax liability in the three calendar years before relocating; only foreign-sourced income is exempt, for twenty years; foreign capital gains are not addressed by name. Applicants must ask the tax office for an \"Exemption Certificate for Income Obtained from Abroad\" by the end of the calendar year in which they become resident (end of February of the next year if they arrive in the last two months). Individuals who benefit from the exemption pay 1% on assets transferred to them by inheritance during the period, which points to the heir."
+        }
+      ],
+      "rankFlag": "Antalya (pick 21) and Istanbul (pick 45): the `why` lines rest on this regime (\"exempts foreign income for 20 years\"). It is enacted law (Official Gazette 4 June 2026), confirmed by EY, PwC and a law-firm note; the `why` is not false. The regime is five months old, needs a certificate applied for in the year of arrival, and the profiles call it untested. No change proposed.",
+      "note": "Also the summaries and taglines. The Official Gazette text itself was not read (resmigazete.gov.tr was not tried; the Income Tax Law article was not opened); three secondary readings agree. \"Prior 3 years\" is three calendar years with no residence and no Turkish tax liability; Legal 500 says earlier Turkish passive income does not disqualify."
+    },
+    {
+      "id": "tr-tax-certificate-deadline",
+      "fact": "tax",
+      "cities": [
+        "antalya",
+        "istanbul"
+      ],
+      "claim": "The exemption needs the exemption certificate, obtained in the first year",
+      "verdict": "corrected",
+      "oldWording": "if they get the exemption certificate in the first year",
+      "newWording": "if they apply for the exemption certificate by the end of the calendar year they become resident",
+      "sources": [
+        {
+          "name": "Legal 500: Türkiye's new foreign income exemption, a regime for relocating individuals",
+          "url": "https://www.legal500.com/intelligence/turkey/tax/turkiyes-new-foreign-income-exemption-a-regime-for-relocating-individuals",
+          "read": "2026-11-15",
+          "says": "Dated 10 July 2026. Law No. 7582 of 4 June 2026 added Article \"repeated 20/D\" to the Income Tax Code, with rules in Income Tax General Communiqué No. 333. It covers individuals with no domicile and no Turkish tax liability in the three calendar years before relocating; only foreign-sourced income is exempt, for twenty years; foreign capital gains are not addressed by name. Applicants must ask the tax office for an \"Exemption Certificate for Income Obtained from Abroad\" by the end of the calendar year in which they become resident (end of February of the next year if they arrive in the last two months). Individuals who benefit from the exemption pay 1% on assets transferred to them by inheritance during the period, which points to the heir."
+        },
+        {
+          "name": "EY: Türkiye introduces new personal tax regime (Law No. 7582)",
+          "url": "https://www.ey.com/en_gl/technical/tax-alerts/turkiye-introduces-new-personal-tax-regime-including-foreign-income-exemption-inheritance-tax-relief-and-asset-repatriation-measure",
+          "read": "2026-11-15",
+          "says": "Dated 08 June 2026. Türkiye \"published Law No. 7582 in the Official Gazette\" on 4 June 2026. New Article 20/D exempts foreign-sourced \"income and gains\" of individuals who become tax resident \"on or after 1 January 2026\" and \"have not had residence or tax liability in Turkiye during the last three calendar years prior to becoming resident\"; \"the exemption applies for a period of 20 years\". For individuals benefiting from the regime a reduced rate of 1% applies \"if assets are transferred by inheritance within the eligibility period\"; standard inheritance rates reach 10%. It does not mention a certificate, name capital gains, or say whether the decedent or the heir must be the beneficiary."
+        }
+      ],
+      "also": [
+        "Antalya drawback 3 (\"must be claimed in year one\") left: it reads true of the calendar year",
+        "sources: Antalya gained the Legal 500 note on the exemption (Istanbul had it)"
+      ],
+      "note": "The deadline is the end of the calendar year of arrival (end of February if resident in the last two months), which can be far less than a year. One law-firm source, citing Communiqué No. 333; EY and PwC do not mention the certificate."
+    },
+    {
+      "id": "tr-tax-capital-gains-unclear",
+      "fact": "tax",
+      "cities": [
+        "antalya",
+        "istanbul"
+      ],
+      "claim": "Whether foreign capital gains are covered is not explicit",
+      "verdict": "cant-confirm",
+      "hedge": "not explicit",
+      "wording": "whether foreign capital gains are covered is not explicit",
+      "sources": [
+        {
+          "name": "EY: Türkiye introduces new personal tax regime (Law No. 7582)",
+          "url": "https://www.ey.com/en_gl/technical/tax-alerts/turkiye-introduces-new-personal-tax-regime-including-foreign-income-exemption-inheritance-tax-relief-and-asset-repatriation-measure",
+          "read": "2026-11-15",
+          "says": "Dated 08 June 2026. Türkiye \"published Law No. 7582 in the Official Gazette\" on 4 June 2026. New Article 20/D exempts foreign-sourced \"income and gains\" of individuals who become tax resident \"on or after 1 January 2026\" and \"have not had residence or tax liability in Turkiye during the last three calendar years prior to becoming resident\"; \"the exemption applies for a period of 20 years\". For individuals benefiting from the regime a reduced rate of 1% applies \"if assets are transferred by inheritance within the eligibility period\"; standard inheritance rates reach 10%. It does not mention a certificate, name capital gains, or say whether the decedent or the heir must be the beneficiary."
+        },
+        {
+          "name": "Legal 500: Türkiye's new foreign income exemption, a regime for relocating individuals",
+          "url": "https://www.legal500.com/intelligence/turkey/tax/turkiyes-new-foreign-income-exemption-a-regime-for-relocating-individuals",
+          "read": "2026-11-15",
+          "says": "Dated 10 July 2026. Law No. 7582 of 4 June 2026 added Article \"repeated 20/D\" to the Income Tax Code, with rules in Income Tax General Communiqué No. 333. It covers individuals with no domicile and no Turkish tax liability in the three calendar years before relocating; only foreign-sourced income is exempt, for twenty years; foreign capital gains are not addressed by name. Applicants must ask the tax office for an \"Exemption Certificate for Income Obtained from Abroad\" by the end of the calendar year in which they become resident (end of February of the next year if they arrive in the last two months). Individuals who benefit from the exemption pay 1% on assets transferred to them by inheritance during the period, which points to the heir."
+        }
+      ],
+      "note": "EY says foreign-sourced \"income and gains\"; no page names capital gains on securities."
+    },
+    {
+      "id": "tr-estate-normal-rates",
+      "fact": "estate",
+      "cities": [
+        "antalya",
+        "istanbul"
+      ],
+      "claim": "Inheritance tax is normally 1–30%",
+      "verdict": "corrected",
+      "oldWording": "Inheritance tax is normally 1–30%, cut to 1%",
+      "newWording": "Inheritance tax is normally 1–10% (gifts 10–30%) above an exemption of about TRY 2.9m per child or spouse (2026), cut to 1%",
+      "sources": [
+        {
+          "name": "KPMG Türkiye: 2026 inheritance and gift tax exemption amounts and brackets",
+          "url": "https://kpmgvergi.com/yayinlar/mali-bultenler/vergi/2026-yilinda-uygulanacak-veraset-ve-intikal-vergisi-maktu-istisna-tutarlari-ile-matrah-dilim-tutarlari-yayimlandi/3355",
+          "read": "2026-11-15",
+          "says": "Dated 02 January 2026, on General Communiqué Serial No. 57 (Official Gazette 31 December 2025, No. 33124, 5th repeated issue). From 1 January 2026: first TRY 3,000,000 at 1% by inheritance and 10% by gift; next 7,000,000 at 3% and 15%; next 15,000,000 at 5% and 20%; next 30,000,000 at 7% and 25%; above 55,000,000 at 10% and 30%. Exemptions: TRY 2,907,136 for each child (adopted included) and the spouse; TRY 5,817,845 for a spouse where there are no descendants; TRY 66,935 for gifts."
+        },
+        {
+          "name": "EY: Türkiye introduces new personal tax regime (Law No. 7582)",
+          "url": "https://www.ey.com/en_gl/technical/tax-alerts/turkiye-introduces-new-personal-tax-regime-including-foreign-income-exemption-inheritance-tax-relief-and-asset-repatriation-measure",
+          "read": "2026-11-15",
+          "says": "Dated 08 June 2026. Türkiye \"published Law No. 7582 in the Official Gazette\" on 4 June 2026. New Article 20/D exempts foreign-sourced \"income and gains\" of individuals who become tax resident \"on or after 1 January 2026\" and \"have not had residence or tax liability in Turkiye during the last three calendar years prior to becoming resident\"; \"the exemption applies for a period of 20 years\". For individuals benefiting from the regime a reduced rate of 1% applies \"if assets are transferred by inheritance within the eligibility period\"; standard inheritance rates reach 10%. It does not mention a certificate, name capital gains, or say whether the decedent or the heir must be the beneficiary."
+        },
+        {
+          "name": "PwC: Turkey, other taxes",
+          "url": "https://taxsummaries.pwc.com/turkey/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 09 September 2026. \"There are no national wealth taxes in Turkey.\" A tax on residences in Turkey valued above TRY 17,711,000 for 2026 applies to the excess at 0.3% to 1.0%. Inheritance and gift tax is paid by recipients at rates \"ranging from 1% to 30%\"; tax paid abroad on inherited property is deductible from the base. The page does not split inheritance from gift rates, give the exemptions, or say who is in scope."
+        },
+        {
+          "name": "PwC quick chart: inheritance and gift tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates",
+          "read": "2026-11-15",
+          "says": "Georgia: inheritance \"NA\", gift \"NA\" (last reviewed 02 September 2026). Hungary: \"18% (but a preferential 9% rate applies to residential property). Children, siblings, and spouses may receive the inheritance without tax.\" (01 July 2026). Czech Republic: inheritance \"NA\"; gift \"If taxable, the gift is subject to the normal PIT rate.\" (27 July 2026). Turkey: inheritance \"10\", gift \"30\" (09 September 2026)."
+        }
+      ],
+      "also": [
+        "scores.estate stays 4 (1% under the regime; 5 only if the reach over US assets were confirmed, and it is inferred)",
+        "summary unchanged (\"cuts inheritance tax to 1% during that time\")",
+        "sources: added KPMG Türkiye"
+      ],
+      "modelMismatch": "localTaxes.ts TR models inheritance as flat 1% with perHeirAllowance 0, and its note says \"normally 1–30%\" and \"the reported ~TRY 2.9m child exemption is unverified and not applied\". Checked: the 2026 scale for inheritances is 1% on the first TRY 3,000,000, 3% on the next 7,000,000, 5% on the next 15,000,000, 7% on the next 30,000,000 and 10% above TRY 55,000,000; 10–30% is the gift column. The 2026 exemption is TRY 2,907,136 for each child and the spouse (TRY 5,817,845 for a spouse with no descendants), from General Communiqué No. 57 as reported by KPMG: https://kpmgvergi.com/yayinlar/mali-bultenler/vergi/2026-yilinda-uygulanacak-veraset-ve-intikal-vergisi-maktu-istisna-tutarlari-ile-matrah-dilim-tutarlari-yayimlandi/3355. The note's \"1–30%\" should read 1–10% for inheritances, and the exemption is now verified (whether it applies on top of the 1% regime rate was not read). See also tr-estate-foreign-assets-scope for the reach.",
+      "note": "PwC gives \"1% to 30%\" for inheritance and gift tax together; EY says inheritance rates reach 10%; KPMG has the table."
+    },
+    {
+      "id": "tr-estate-one-percent-regime",
+      "fact": "estate",
+      "cities": [
+        "antalya",
+        "istanbul"
+      ],
+      "claim": "Inheritance tax is cut to 1% during the 20-year new-resident exemption",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Turkey, significant developments",
+          "url": "https://taxsummaries.pwc.com/turkey/individual/significant-developments",
+          "read": "2026-11-15",
+          "says": "Last reviewed 09 September 2026. Law No. 7582: foreign-source income of individuals who become tax resident and \"have not been resident or subject to tax in Turkey during the preceding three years\" gets a 20-year income tax exemption and \"will not be subject to declaration in Turkey\"; \"inheritance transfers occurring within the exemption period are subject to a reduced tax rate of 1%\"."
+        },
+        {
+          "name": "EY: Türkiye introduces new personal tax regime (Law No. 7582)",
+          "url": "https://www.ey.com/en_gl/technical/tax-alerts/turkiye-introduces-new-personal-tax-regime-including-foreign-income-exemption-inheritance-tax-relief-and-asset-repatriation-measure",
+          "read": "2026-11-15",
+          "says": "Dated 08 June 2026. Türkiye \"published Law No. 7582 in the Official Gazette\" on 4 June 2026. New Article 20/D exempts foreign-sourced \"income and gains\" of individuals who become tax resident \"on or after 1 January 2026\" and \"have not had residence or tax liability in Turkiye during the last three calendar years prior to becoming resident\"; \"the exemption applies for a period of 20 years\". For individuals benefiting from the regime a reduced rate of 1% applies \"if assets are transferred by inheritance within the eligibility period\"; standard inheritance rates reach 10%. It does not mention a certificate, name capital gains, or say whether the decedent or the heir must be the beneficiary."
+        },
+        {
+          "name": "Law No. 7338 on inheritance and gift tax (mevzuat.gov.tr, consolidated Word file)",
+          "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.3.7338.doc",
+          "read": "2026-11-15",
+          "says": "Article 1: property belonging to persons of Turkish nationality (\"Türkiye Cumhuriyeti tabiiyetinde bulunan şahıslara ait mallar\") and property located in Turkey is subject to the tax when it passes by inheritance or otherwise without payment; the tax also covers property Turkish nationals acquire abroad the same way; foreign persons with no residence in Turkey are not liable for such foreign property. Article 16 carries the new sentence: for those benefiting from the exemption under repeated Article 20/D of the Income Tax Law (\"istisnasından yararlananlardan ... veraset yoluyla malı intikalinde\") the rate is 1%. The file reached WebFetch partly garbled, so the exact wording of the 1% sentence was not recovered."
+        }
+      ],
+      "note": "Also the summaries. localTaxes.ts (TR) models this 1% and ignores the 20-year limit, as its note says."
+    },
+    {
+      "id": "tr-estate-decedent-or-heir",
+      "fact": "estate",
+      "cities": [
+        "antalya",
+        "istanbul"
+      ],
+      "claim": "Sources differ on whether the 1% keys off the decedent or the heir",
+      "verdict": "cant-confirm",
+      "hedge": "sources differ",
+      "wording": "sources differ on whether that keys off the decedent or the heir",
+      "sources": [
+        {
+          "name": "Legal 500: Türkiye's new foreign income exemption, a regime for relocating individuals",
+          "url": "https://www.legal500.com/intelligence/turkey/tax/turkiyes-new-foreign-income-exemption-a-regime-for-relocating-individuals",
+          "read": "2026-11-15",
+          "says": "Dated 10 July 2026. Law No. 7582 of 4 June 2026 added Article \"repeated 20/D\" to the Income Tax Code, with rules in Income Tax General Communiqué No. 333. It covers individuals with no domicile and no Turkish tax liability in the three calendar years before relocating; only foreign-sourced income is exempt, for twenty years; foreign capital gains are not addressed by name. Applicants must ask the tax office for an \"Exemption Certificate for Income Obtained from Abroad\" by the end of the calendar year in which they become resident (end of February of the next year if they arrive in the last two months). Individuals who benefit from the exemption pay 1% on assets transferred to them by inheritance during the period, which points to the heir."
+        },
+        {
+          "name": "EY: Türkiye introduces new personal tax regime (Law No. 7582)",
+          "url": "https://www.ey.com/en_gl/technical/tax-alerts/turkiye-introduces-new-personal-tax-regime-including-foreign-income-exemption-inheritance-tax-relief-and-asset-repatriation-measure",
+          "read": "2026-11-15",
+          "says": "Dated 08 June 2026. Türkiye \"published Law No. 7582 in the Official Gazette\" on 4 June 2026. New Article 20/D exempts foreign-sourced \"income and gains\" of individuals who become tax resident \"on or after 1 January 2026\" and \"have not had residence or tax liability in Turkiye during the last three calendar years prior to becoming resident\"; \"the exemption applies for a period of 20 years\". For individuals benefiting from the regime a reduced rate of 1% applies \"if assets are transferred by inheritance within the eligibility period\"; standard inheritance rates reach 10%. It does not mention a certificate, name capital gains, or say whether the decedent or the heir must be the beneficiary."
+        },
+        {
+          "name": "Law No. 7338 on inheritance and gift tax (mevzuat.gov.tr, consolidated Word file)",
+          "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.3.7338.doc",
+          "read": "2026-11-15",
+          "says": "Article 1: property belonging to persons of Turkish nationality (\"Türkiye Cumhuriyeti tabiiyetinde bulunan şahıslara ait mallar\") and property located in Turkey is subject to the tax when it passes by inheritance or otherwise without payment; the tax also covers property Turkish nationals acquire abroad the same way; foreign persons with no residence in Turkey are not liable for such foreign property. Article 16 carries the new sentence: for those benefiting from the exemption under repeated Article 20/D of the Income Tax Law (\"istisnasından yararlananlardan ... veraset yoluyla malı intikalinde\") the rate is 1%. The file reached WebFetch partly garbled, so the exact wording of the 1% sentence was not recovered."
+        }
+      ],
+      "note": "Legal 500 reads it as the heir who holds the exemption; EY and PwC do not say; the statute's sentence (\"yararlananlardan ... malı intikalinde\") reads as transfers from those who benefit, but the file came through garbled. Unsettled, as the profile says."
+    },
+    {
+      "id": "tr-estate-foreign-assets-scope",
+      "fact": "estate",
+      "cities": [
+        "antalya",
+        "istanbul"
+      ],
+      "claim": "A foreign resident's US securities left to US heirs may be out of scope entirely",
+      "verdict": "cant-confirm",
+      "hedge": "may be",
+      "wording": "a foreign resident's US securities left to US heirs may be out of scope entirely",
+      "sources": [
+        {
+          "name": "Law No. 7338 on inheritance and gift tax (mevzuat.gov.tr, consolidated Word file)",
+          "url": "https://www.mevzuat.gov.tr/MevzuatMetin/1.3.7338.doc",
+          "read": "2026-11-15",
+          "says": "Article 1: property belonging to persons of Turkish nationality (\"Türkiye Cumhuriyeti tabiiyetinde bulunan şahıslara ait mallar\") and property located in Turkey is subject to the tax when it passes by inheritance or otherwise without payment; the tax also covers property Turkish nationals acquire abroad the same way; foreign persons with no residence in Turkey are not liable for such foreign property. Article 16 carries the new sentence: for those benefiting from the exemption under repeated Article 20/D of the Income Tax Law (\"istisnasından yararlananlardan ... veraset yoluyla malı intikalinde\") the rate is 1%. The file reached WebFetch partly garbled, so the exact wording of the 1% sentence was not recovered."
+        },
+        {
+          "name": "PwC: Turkey, other taxes",
+          "url": "https://taxsummaries.pwc.com/turkey/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 09 September 2026. \"There are no national wealth taxes in Turkey.\" A tax on residences in Turkey valued above TRY 17,711,000 for 2026 applies to the excess at 0.3% to 1.0%. Inheritance and gift tax is paid by recipients at rates \"ranging from 1% to 30%\"; tax paid abroad on inherited property is deductible from the base. The page does not split inheritance from gift rates, give the exemptions, or say who is in scope."
+        }
+      ],
+      "modelMismatch": "localTaxes.ts TR charges 1% of the estate \"as the cautious reading\". Article 1 of Law 7338, read on mevzuat.gov.tr (https://www.mevzuat.gov.tr/MevzuatMetin/1.3.7338.doc), puts in scope property of Turkish nationals and property located in Turkey; a US citizen's US-held securities passing to US-resident, non-Turkish heirs are neither, so on the article's words the charge would be 0, not 1%. No adviser page states this for the case, and the 1% rule for regime beneficiaries would have little to bite on if it were so; stage 8 should decide between 0 and the cautious 1%.",
+      "rankFlag": "Antalya (pick 21): the `why` says \"with 1% inheritance tax\". By Article 1 of the inheritance tax law, US assets of a US citizen left to US-resident heirs appear to be outside Turkish inheritance tax altogether, so the 1% may overstate the cost; it is not understated. No change proposed.",
+      "note": "The statute supports the profile's inference, but the Word file reached WebFetch partly garbled and no secondary page applies Article 1 to a foreign resident decedent, so the profile's \"may be\" stays."
+    },
+    {
+      "id": "tr-estate-no-us-treaty",
+      "fact": "estate",
+      "cities": [
+        "antalya",
+        "istanbul"
+      ],
+      "claim": "There is no US estate treaty",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-without",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list); none of the 37 countries named in this claim is among them."
+        }
+      ]
+    },
+    {
+      "id": "tr-lending-ibkr-accepts",
+      "fact": "lending",
+      "cities": [
+        "antalya",
+        "istanbul"
+      ],
+      "claim": "IBKR accepts residents of all non-sanctioned countries, including Turkey",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly accepts residents of all non-sanctioned countries, including Turkey",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026; read again on 2026-11-15 for this batch. \"In the EU, customers sign up with the Irish entity\" (Interactive Brokers Ireland Limited); the Irish €20,000 protection \"applies to Eastern Europe following recent IBKR Irish and Hungarian Entity Merger\". The \"Country Availability\" list includes Hungary, the Czech Republic, Turkey and Georgia; it does not map countries to entities, and names no entity for residents of Turkey or Georgia. PRIIPs is described as \"an EU rule that prohibits buying US-listed ETFs\" that \"also applies to UK Investors\"."
+        }
+      ],
+      "note": "IBKR's own country list (https://www.interactivebrokers.co.uk/en/index.php?f=38309) returned HTTP 403 again on 2026-11-15; the other Interactive Brokers sites were not retried. Banker on Wheels lists Turkey under country availability."
+    },
+    {
+      "id": "tr-lending-margin-terms-unknown",
+      "fact": "lending",
+      "cities": [
+        "antalya",
+        "istanbul"
+      ],
+      "claim": "IBKR's margin terms per country are unknown",
+      "verdict": "cant-confirm",
+      "hedge": "unknown",
+      "wording": "though margin terms per country are unknown",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026; read again on 2026-11-15 for this batch. \"In the EU, customers sign up with the Irish entity\" (Interactive Brokers Ireland Limited); the Irish €20,000 protection \"applies to Eastern Europe following recent IBKR Irish and Hungarian Entity Merger\". The \"Country Availability\" list includes Hungary, the Czech Republic, Turkey and Georgia; it does not map countries to entities, and names no entity for residents of Turkey or Georgia. PRIIPs is described as \"an EU rule that prohibits buying US-listed ETFs\" that \"also applies to UK Investors\"."
+        }
+      ],
+      "note": "A statement of what is not known. Which IBKR entity carries a Turkish resident's account, and so whose margin and withdrawal rules apply, was not found on any page; the EU cash-out correction was therefore not applied."
+    },
+    {
+      "id": "tr-lending-schwab-not-accepting",
+      "fact": "lending",
+      "cities": [
+        "antalya",
+        "istanbul"
+      ],
+      "claim": "Schwab International does not accept Turkey",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab International reportedly does not accept Turkey",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026; read again on 2026-11-15 for this batch. The 51 countries and regions accepted on that day include the Czech Republic (also Austria, Poland, Greece, Germany); the 12 marked \"No\" are Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam. Hungary and Georgia are in neither list. It quotes the Schwab One agreement: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds from their account\", and does not define \"Europe\"."
+        }
+      ],
+      "note": "Turkey is one of the 12 the dated list marks \"No\". Lending score left at 3 in both profiles: the rubric's 3 is \"IBKR only\", which is what is reported; 4 needs Schwab, and 2 needs IBKR itself to be in doubt or EU residence. Whether Turkey falls inside Schwab's reported \"residing within Europe\" clause does not matter while Schwab reportedly refuses Turkish residents; for the record, most of Turkey (Antalya included) is in Asia and Istanbul straddles both, the clause is undefined, and the profiles do not say either way."
+    },
+    {
+      "id": "tr-lending-priips-not-applicable",
+      "fact": "lending",
+      "cities": [
+        "antalya",
+        "istanbul"
+      ],
+      "claim": "As a non-EU country, PRIIPs limits on US ETFs do not apply",
+      "verdict": "cant-confirm",
+      "oldWording": "PRIIPs limits on US ETFs do not apply",
+      "hedge": "should not apply",
+      "wording": "as a non-EU country, EU PRIIPs limits on US ETFs should not apply, though which IBKR entity carries the account is unconfirmed",
+      "sources": [
+        {
+          "name": "LYNX: Key Information Document (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/products-and-regulations/regulations/key-information-document/",
+          "read": "2026-11-15",
+          "says": "Retail clients are \"not permitted to trade ETFs or other products that do not have a valid KID\"; many non-EU ETFs have none. Can a retail client buy US ETFs? \"No, not unless you are classified as a professional investor.\" The same applies to ETFs from Canada, Hong Kong, Mexico and Australia. The KID has applied to most products since 1 January 2018."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. \"PRIIPs is an EU rule that prohibits buying US-listed ETFs\", and this also applies to UK investors; US ETFs are open only to elective professional clients, while UCITS ETFs are available to all Europeans."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026; read again on 2026-11-15 for this batch. \"In the EU, customers sign up with the Irish entity\" (Interactive Brokers Ireland Limited); the Irish €20,000 protection \"applies to Eastern Europe following recent IBKR Irish and Hungarian Entity Merger\". The \"Country Availability\" list includes Hungary, the Czech Republic, Turkey and Georgia; it does not map countries to entities, and names no entity for residents of Turkey or Georgia. PRIIPs is described as \"an EU rule that prohibits buying US-listed ETFs\" that \"also applies to UK Investors\"."
+        }
+      ],
+      "also": [
+        "hedge added: the flat \"do not apply\" became \"should not apply, though which IBKR entity carries the account is unconfirmed\""
+      ],
+      "note": "PRIIPs binds those who sell to retail investors in the EU (shared claims priips-kid-required and priips-us-etf-new-buys-blocked); Turkey is outside the EU and EEA. No page read says which IBKR entity serves Turkish residents or that it lets them buy US-listed ETFs: Banker on Wheels names no entity for Turkey, and IBKR's pages returned 403."
+    },
+    {
+      "id": "tr-visa-property-200k",
+      "fact": "visa",
+      "cities": [
+        "antalya",
+        "istanbul"
+      ],
+      "claim": "Short-term residence by owning property assessed at US$200k or more (bought since October 2023), renewable every 1–2 years while you own it",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Legal 500: residence permit in Turkey by buying real estate",
+          "url": "https://www.legal500.com/intelligence/turkey/real-estate-and-construction/residence-permit-in-turkey-by-buying-real-estate-%E2%80%93-legal-advice",
+          "read": "2026-11-15",
+          "says": "Dated 29 August 2025. From 16 October 2023 \"the assessed value of the property, as recorded in the cadastral registers, must not be less than 200,000 USD\". The permit runs one to two years and is renewable while the property is kept. Since 1 July 2022 new applications have been barred in 1,169 neighbourhoods across 15 provinces. Permanent residence is available after eight years of residence. Health insurance is required for applicants over 18 and under 65. It does not mention a USD 400,000 citizenship threshold."
+        },
+        {
+          "name": "Turk.Estate: residence permits in Turkey's \"restricted\" areas, which locations reopened in 2026",
+          "url": "https://turk.estate/en/question-answer/residence-permits-in-turkey-restricted-areas-2026/",
+          "read": "2026-11-15",
+          "says": "Dated 12 June 2026, updated 11 November 2026. In early June 2026 Turkey opened almost all previously closed districts and e-ikamet began accepting applications across most of the country, through practice and not through a decree with a published list; the migration authority's closure pages still date from 2021 and 2022 and there is no updated public register. Antalya: Kepez and Altıntaş are named as open, parts of Konyaaltı and Muratpaşa as disputed. Istanbul: Avcılar, Beylikdüzü, Şişli, Beyoğlu and others are listed as available; Fatih and Esenyurt remain unconfirmed. A purchase from USD 200,000 carries the right to a residence permit, subject to the address check; USD 400,000 is the separate citizenship threshold."
+        }
+      ],
+      "note": "Also Antalya's summary and `why` (\"a $200k property route\"), which agree. The threshold dates from 16 October 2023 and a November 2026 page still gives USD 200,000. The migration authority's page (https://en.goc.gov.tr/short-term-residence-permit) returned HTTP 500, so this rests on two secondary pages. The USD 400,000 citizenship threshold is not claimed by the profiles."
+    },
+    {
+      "id": "tr-visa-closed-neighbourhoods-antalya",
+      "fact": "visa",
+      "cities": [
+        "antalya"
+      ],
+      "claim": "First applications are barred in 1,169 closed neighbourhoods in 15 provinces, including parts of Antalya; check the DGMM list",
+      "verdict": "corrected",
+      "oldWording": "first applications are barred in 1,169 closed neighbourhoods in 15 provinces, including parts of Antalya, so check the DGMM list before buying",
+      "newWording": "first applications were barred from 2022 in 1,169 closed neighbourhoods, including parts of Antalya, and most reportedly reopened in June 2026 without a published list, so check the address with the migration office before buying",
+      "sources": [
+        {
+          "name": "Turk.Estate: residence permits in Turkey's \"restricted\" areas, which locations reopened in 2026",
+          "url": "https://turk.estate/en/question-answer/residence-permits-in-turkey-restricted-areas-2026/",
+          "read": "2026-11-15",
+          "says": "Dated 12 June 2026, updated 11 November 2026. In early June 2026 Turkey opened almost all previously closed districts and e-ikamet began accepting applications across most of the country, through practice and not through a decree with a published list; the migration authority's closure pages still date from 2021 and 2022 and there is no updated public register. Antalya: Kepez and Altıntaş are named as open, parts of Konyaaltı and Muratpaşa as disputed. Istanbul: Avcılar, Beylikdüzü, Şişli, Beyoğlu and others are listed as available; Fatih and Esenyurt remain unconfirmed. A purchase from USD 200,000 carries the right to a residence permit, subject to the address check; USD 400,000 is the separate citizenship threshold."
+        },
+        {
+          "name": "Hayat Estate: Turkey reopens almost all restricted districts for residence permits",
+          "url": "https://hayatestate.com/?p=134213",
+          "read": "2026-11-15",
+          "says": "Dated 08.06.2026, citing local media reports and no official announcement. The e-ikamet system \"has started accepting applications across almost the entire country again\"; \"only two districts in Istanbul remain closed to new applicants\" (Fatih and Esenyurt)."
+        },
+        {
+          "name": "Rest Property: Turkey reopening closed districts for residence permits",
+          "url": "https://restproperty.com/news-en/gizn-v-turcii/turkey-reopening-closed-districts-residence-permit/",
+          "read": "2026-11-15",
+          "says": "Dated 05.06.2026. \"An official document was signed on June 2, providing for the reopening of several districts\", but \"official orders and departmental instructions have not yet been delivered to the local migration offices\" and the list of locations \"is still pending publication\"."
+        },
+        {
+          "name": "Legal 500: residence permit in Turkey by buying real estate",
+          "url": "https://www.legal500.com/intelligence/turkey/real-estate-and-construction/residence-permit-in-turkey-by-buying-real-estate-%E2%80%93-legal-advice",
+          "read": "2026-11-15",
+          "says": "Dated 29 August 2025. From 16 October 2023 \"the assessed value of the property, as recorded in the cadastral registers, must not be less than 200,000 USD\". The permit runs one to two years and is renewable while the property is kept. Since 1 July 2022 new applications have been barred in 1,169 neighbourhoods across 15 provinces. Permanent residence is available after eight years of residence. Health insurance is required for applicants over 18 and under 65. It does not mention a USD 400,000 citizenship threshold."
+        }
+      ],
+      "also": [
+        "drawback 2 reworded: \"The property route needs US$200k, and which neighbourhoods accept first applications is unclear\"",
+        "scores.visa stays 3 (a property threshold and yearly renewals)",
+        "summary unchanged (it names only the US$200k route)",
+        "sources: added Turk.Estate",
+        "\"DGMM\" dropped: the pages read call it the migration authority (the directorate was renamed)"
+      ],
+      "note": "The 1,169 figure and 1 July 2022 are from Legal 500 (August 2025), which says 15 provinces; another report found by search says 63, so the province count was dropped. Three property-trade pages of June to November 2026 report a reopening in practice with no official list; none is an official source and the authority's site could not be read, hence \"reportedly\"."
+    },
+    {
+      "id": "tr-visa-closed-neighbourhoods-istanbul",
+      "fact": "visa",
+      "cities": [
+        "istanbul"
+      ],
+      "claim": "Many Istanbul neighbourhoods are among the 1,169 closed to first applications; check the DGMM list",
+      "verdict": "corrected",
+      "oldWording": "many Istanbul neighbourhoods are among the 1,169 closed to first applications, so check the DGMM list before buying",
+      "newWording": "many Istanbul neighbourhoods were among the 1,169 closed to first applications from 2022, and most reportedly reopened in June 2026 without a published list (Fatih and Esenyurt reportedly not), so check the address with the migration office before buying",
+      "sources": [
+        {
+          "name": "Turk.Estate: residence permits in Turkey's \"restricted\" areas, which locations reopened in 2026",
+          "url": "https://turk.estate/en/question-answer/residence-permits-in-turkey-restricted-areas-2026/",
+          "read": "2026-11-15",
+          "says": "Dated 12 June 2026, updated 11 November 2026. In early June 2026 Turkey opened almost all previously closed districts and e-ikamet began accepting applications across most of the country, through practice and not through a decree with a published list; the migration authority's closure pages still date from 2021 and 2022 and there is no updated public register. Antalya: Kepez and Altıntaş are named as open, parts of Konyaaltı and Muratpaşa as disputed. Istanbul: Avcılar, Beylikdüzü, Şişli, Beyoğlu and others are listed as available; Fatih and Esenyurt remain unconfirmed. A purchase from USD 200,000 carries the right to a residence permit, subject to the address check; USD 400,000 is the separate citizenship threshold."
+        },
+        {
+          "name": "Hayat Estate: Turkey reopens almost all restricted districts for residence permits",
+          "url": "https://hayatestate.com/?p=134213",
+          "read": "2026-11-15",
+          "says": "Dated 08.06.2026, citing local media reports and no official announcement. The e-ikamet system \"has started accepting applications across almost the entire country again\"; \"only two districts in Istanbul remain closed to new applicants\" (Fatih and Esenyurt)."
+        },
+        {
+          "name": "Rest Property: Turkey reopening closed districts for residence permits",
+          "url": "https://restproperty.com/news-en/gizn-v-turcii/turkey-reopening-closed-districts-residence-permit/",
+          "read": "2026-11-15",
+          "says": "Dated 05.06.2026. \"An official document was signed on June 2, providing for the reopening of several districts\", but \"official orders and departmental instructions have not yet been delivered to the local migration offices\" and the list of locations \"is still pending publication\"."
+        },
+        {
+          "name": "Legal 500: residence permit in Turkey by buying real estate",
+          "url": "https://www.legal500.com/intelligence/turkey/real-estate-and-construction/residence-permit-in-turkey-by-buying-real-estate-%E2%80%93-legal-advice",
+          "read": "2026-11-15",
+          "says": "Dated 29 August 2025. From 16 October 2023 \"the assessed value of the property, as recorded in the cadastral registers, must not be less than 200,000 USD\". The permit runs one to two years and is renewable while the property is kept. Since 1 July 2022 new applications have been barred in 1,169 neighbourhoods across 15 provinces. Permanent residence is available after eight years of residence. Health insurance is required for applicants over 18 and under 65. It does not mention a USD 400,000 citizenship threshold."
+        }
+      ],
+      "also": [
+        "summary: \"many districts closed to new property permits\" became \"unclear rules on which districts accept new property permits\"",
+        "drawback 3 reworded: \"Which districts accept new property permits is unclear, and the tax regime is untested\"",
+        "scores.visa stays 3",
+        "sources: added Turk.Estate"
+      ],
+      "note": "As for Antalya. Hayat Estate says Fatih and Esenyurt remain closed; Turk.Estate says their status is unconfirmed; the profile says \"reportedly not\"."
+    },
+    {
+      "id": "tr-visa-permanent-after-8-years",
+      "fact": "visa",
+      "cities": [
+        "antalya",
+        "istanbul"
+      ],
+      "claim": "Permanent residence after 8 years",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Legal 500: residence permit in Turkey by buying real estate",
+          "url": "https://www.legal500.com/intelligence/turkey/real-estate-and-construction/residence-permit-in-turkey-by-buying-real-estate-%E2%80%93-legal-advice",
+          "read": "2026-11-15",
+          "says": "Dated 29 August 2025. From 16 October 2023 \"the assessed value of the property, as recorded in the cadastral registers, must not be less than 200,000 USD\". The permit runs one to two years and is renewable while the property is kept. Since 1 July 2022 new applications have been barred in 1,169 neighbourhoods across 15 provinces. Permanent residence is available after eight years of residence. Health insurance is required for applicants over 18 and under 65. It does not mention a USD 400,000 citizenship threshold."
+        }
+      ],
+      "note": "One law-firm page; the migration authority's site returned HTTP 500."
+    },
+    {
+      "id": "tr-healthcare-gss",
+      "fact": "healthcare",
+      "cities": [
+        "antalya",
+        "istanbul"
+      ],
+      "claim": "After a year of residence foreigners can join the state GSS scheme at 24% of the minimum wage, but it excludes pre-existing conditions, so top-up private cover is advised",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Ikamet: health care services for foreigners in Turkey",
+          "url": "https://ikamet.com/health-care-services-for-foreigners-in-turkey/",
+          "read": "2026-11-15",
+          "says": "Published December 26, 2020, last updated October 10, 2026. A foreigner can join the state scheme (GSS) after \"living in Turkey for longer than a year\"; premiums are 24% of the national minimum wage. Since 2017 the SGK \"would not cover the costs of treatments and medicines for pre-existing conditions\", so complementary insurance is recommended. \"The prerequisite for obtaining a residence permit is to have private health insurance\"; people over 65 need not buy it before the appointment."
+        }
+      ],
+      "note": "A secondary page updated October 2026; sgk.gov.tr was not read. The same page says private insurance is a condition of the permit, with over-65s exempt, which the profiles do not claim."
+    },
+    {
+      "id": "tr-healthcare-antalya-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "antalya"
+      ],
+      "claim": "Private hospitals such as Medical Park, Memorial and Anadolu serve international patients with English-speaking staff",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Rest Property: expat life in Antalya 2026",
+          "url": "https://restproperty.com/article-en/area-guide/antalya-expat-life-2026",
+          "read": "2026-11-15",
+          "says": "Dated 28.11.2025. Leading facilities are listed as Medical Park Antalya, Memorial Antalya Hospital and Anadolu Hospitals; \"major private hospitals provide English-speaking staff\". It does not use the words \"international patients\"."
+        }
+      ],
+      "note": "Confirmed on the secondary page the profile cites (names, English-speaking staff). The hospitals' own sites could not be read: medicalpark.com.tr, memorial.com.tr (two URLs) and the ITIJ profile of Antalya Anadolu Hospitals returned 403. \"Serve international patients\" rests on the page's description of them as the leading private hospitals for expats; a search result (not a read) showed Memorial Antalya's international-patient services."
+    },
+    {
+      "id": "tr-healthcare-istanbul-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "istanbul"
+      ],
+      "claim": "The Acıbadem and Memorial groups run several JCI-accredited Istanbul hospitals, and Istanbul-based Medipol runs 14 hospitals",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "TB Mag: hospitals and medical tourism in Türkiye for international patients, 2026",
+          "url": "https://tbmag.co.uk/hospitals-medical-tourism-turkiye-international-patients-2026/",
+          "read": "2026-11-15",
+          "says": "Dated 20/05/2026. Acıbadem \"operates 23 hospitals and 17 clinics across Türkiye, with several JCI-accredited facilities in Istanbul\". \"Several Memorial hospitals in Istanbul have received JCI accreditation.\" Medipol, headquartered in Istanbul, \"offers comprehensive care across 14 hospitals\"."
+        }
+      ],
+      "note": "A dated trade page; JCI's own directory and the groups' sites were not read."
+    }
+  ]
+}

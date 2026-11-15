@@ -3,15 +3,15 @@ import type { ExpatProfile } from '../expatPicks'
 const profile: ExpatProfile = {
   tagline: 'Cheap Caucasus capital that leaves foreign income untaxed',
   summary:
-    'Georgia exempts residents\' foreign-source income, has no wealth tax, and lets children inherit free, so a US portfolio carries almost no local tax. Americans can stay a year visa-free, a US$150k property gives residence, and Tbilisi is among the cheapest capitals in the 50; the costs are uneven healthcare, a continental climate and no US tax treaty.',
+    'Georgia exempts residents\' foreign-source income, has no wealth tax, and lets children inherit free, so a US portfolio carries almost no local tax. Americans can stay a year visa-free, a US$150k property gives residence, and Tbilisi is among the cheapest capitals in the 50; the costs are uneven healthcare, a continental climate and thin US treaty cover (only the 1973 US–USSR income tax treaty).',
   scores: { cost: 5, healthcare: 3, safety: 4, visa: 4, climate: 3, community: 3, tax: 5, estate: 5, lending: 3 },
   facts: {
     healthcare:
       'Modern private hospitals in Tbilisi (New Hospitals, the Evex network, American Medical Centers) are cheap by Western standards and often have English-speaking doctors, but public cover is limited, quality falls off outside the capital, and complex care for over-70s may mean going abroad.',
     safety:
       'UK travel advice says crime levels are low, mainly pickpocketing; political protests centred on Rustaveli Avenue can escalate without warning, and the UK advises against travel to parts of the country near the breakaway regions.',
-    visa: 'US citizens can stay 365 days visa-free, with travel insurance required on entry from 2026; for residence, property worth at least US$150k at market value (since March 2026, properties can be combined) gives a yearly-renewable temporary permit covering spouse and children; a US$300k investment track reportedly leads to permanent residence.',
-    tax: 'No wealth tax; resident individuals are exempt from tax on income without a Georgian source, so US dividends and interest are untaxed locally (one guide says residents are taxed on global income, but PwC and the 2025 tax card list the exemption); with no US–Georgia income tax treaty, US withholding on dividends may be 30% (unverified).',
+    visa: 'US citizens can stay 365 days visa-free, with travel insurance required on entry from 2026; for residence, property worth at least US$150k at market value (since March 2026, properties can be combined) gives a yearly-renewable temporary permit covering spouse and children; a US$300k investment permit can lead to a residence permit for indefinite stay after 5 years.',
+    tax: 'No wealth tax; resident individuals are exempt from tax on income without a Georgian source, so US dividends and interest are untaxed locally (one guide says residents are taxed on global income, but PwC and the 2025 tax card list the exemption); the IRS treats Georgia as covered by the 1973 US–USSR income tax treaty, and the 30% US withholding on dividends applies to foreign persons, so a US citizen instead pays US tax on them by return.',
     estate:
       'No separate inheritance tax, and property inherited by first- and second-line heirs (children, spouse, parents, siblings, grandchildren) is exempt from income tax, so a US portfolio passes to US-resident children with no Georgian tax; there is no US estate treaty.',
     lending:
@@ -24,11 +24,13 @@ const profile: ExpatProfile = {
   drawbacks: [
     'Healthcare is thin for serious care, especially outside Tbilisi',
     'Political tension, protests and Russia-occupied regions nearby',
-    'No US tax treaty, so US dividends may carry the full 30% withholding',
+    'Only the 1973 US–USSR income tax treaty covers Georgia, and there is no US estate treaty',
   ],
   sources: [
     { name: 'PwC: Georgia, taxes on personal income', url: 'https://taxsummaries.pwc.com/georgia/individual/taxes-on-personal-income' },
     { name: 'PwC: Georgia, other taxes', url: 'https://taxsummaries.pwc.com/georgia/individual/other-taxes' },
+    { name: 'IRS: Georgia tax treaty documents', url: 'https://www.irs.gov/businesses/international-businesses/georgia-tax-treaty-documents' },
+    { name: 'Public Service Development Agency: residence permits', url: 'https://sda.gov.ge/en/products/migration-residence-permits/' },
     { name: 'Legal 500: Georgia tax card 2025', url: 'https://www.legal500.com/intelligence/georgia/tax/georgia-tax-card-2025' },
     { name: 'Eurofast: understanding individual taxes in Georgia', url: 'https://eurofast.eu/understanding-individual-taxes-in-georgia/' },
     {

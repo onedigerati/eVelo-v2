@@ -1,0 +1,504 @@
+{
+  "country": "Mauritius",
+  "cities": [
+    "grand-baie"
+  ],
+  "claims": [
+    {
+      "id": "mu-tax-no-wealth-cgt",
+      "fact": "tax",
+      "cities": [
+        "grand-baie"
+      ],
+      "claim": "No wealth tax and no capital gains tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Mauritius, other taxes",
+          "url": "https://taxsummaries.pwc.com/mauritius/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 15 June 2026. \"There are no net wealth/worth taxes in Mauritius.\" \"There are no inheritance, estate, or gift taxes in Mauritius.\" Registration duty on inherited property is not covered."
+        },
+        {
+          "name": "PwC: Mauritius, income determination",
+          "url": "https://taxsummaries.pwc.com/mauritius/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 15 June 2026. \"There is no tax on capital gains in Mauritius\"; \"Capital gains received by a resident or non-resident from outside Mauritius are not taxable.\" \"Investment income derived from outside Mauritius is taxable in a resident recipient's hands\" when received in or handled from Mauritius, and a foreign tax credit is generally available against the Mauritius tax on it."
+        }
+      ]
+    },
+    {
+      "id": "mu-tax-remittance-basis",
+      "fact": "tax",
+      "cities": [
+        "grand-baie"
+      ],
+      "claim": "Residents (183+ days) pay tax on foreign income only when it is received in Mauritius, so dividends left in the US are untaxed",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Mauritius, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/mauritius/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 15 June 2026. Residents are taxed on \"worldwide income from all sources\", but foreign-source income only when received in Mauritius. From 1 July 2025: first MUR 500,000 at 0%, next 500,000 at 10%, remainder at 20%. Fair Share Contribution \"at the rate of 15% of their leviable income in excess of MUR 12 million\", for the income year from 1 July 2025 and the two following."
+        },
+        {
+          "name": "PwC: Mauritius, residence",
+          "url": "https://taxsummaries.pwc.com/mauritius/individual/residence",
+          "read": "2026-11-15",
+          "says": "Last reviewed 15 June 2026. Resident if domiciled in Mauritius (unless the permanent place of abode is outside), or present 270 days or more over the income year and the two before, or \"at least 183 days in that income year\"."
+        }
+      ]
+    },
+    {
+      "id": "mu-tax-bands",
+      "fact": "tax",
+      "cities": [
+        "grand-baie"
+      ],
+      "claim": "0% on the first MUR 500k, 10% on the next MUR 500k and 20% above, from 1 Jul 2025",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Mauritius, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/mauritius/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 15 June 2026. Residents are taxed on \"worldwide income from all sources\", but foreign-source income only when received in Mauritius. From 1 July 2025: first MUR 500,000 at 0%, next 500,000 at 10%, remainder at 20%. Fair Share Contribution \"at the rate of 15% of their leviable income in excess of MUR 12 million\", for the income year from 1 July 2025 and the two following."
+        }
+      ]
+    },
+    {
+      "id": "mu-tax-fair-share",
+      "fact": "tax",
+      "cities": [
+        "grand-baie"
+      ],
+      "claim": "A 15% Fair Share Contribution applies above MUR 12m",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Mauritius, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/mauritius/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 15 June 2026. Residents are taxed on \"worldwide income from all sources\", but foreign-source income only when received in Mauritius. From 1 July 2025: first MUR 500,000 at 0%, next 500,000 at 10%, remainder at 20%. Fair Share Contribution \"at the rate of 15% of their leviable income in excess of MUR 12 million\", for the income year from 1 July 2025 and the two following."
+        }
+      ]
+    },
+    {
+      "id": "mu-tax-declaration-exemption",
+      "fact": "tax",
+      "cities": [
+        "grand-baie"
+      ],
+      "claim": "The permit's required transfers can be documented as loan proceeds or US-taxed income to use a declaration exemption",
+      "verdict": "cant-confirm",
+      "hedge": "removed",
+      "oldWording": "should be documented as loan proceeds or US-taxed income to use the declaration exemption",
+      "sources": [
+        {
+          "name": "PwC: Mauritius, income determination",
+          "url": "https://taxsummaries.pwc.com/mauritius/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 15 June 2026. \"There is no tax on capital gains in Mauritius\"; \"Capital gains received by a resident or non-resident from outside Mauritius are not taxable.\" \"Investment income derived from outside Mauritius is taxable in a resident recipient's hands\" when received in or handled from Mauritius, and a foreign tax credit is generally available against the Mauritius tax on it."
+        },
+        {
+          "name": "PwC: Mauritius, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/mauritius/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 15 June 2026. Residents are taxed on \"worldwide income from all sources\", but foreign-source income only when received in Mauritius. From 1 July 2025: first MUR 500,000 at 0%, next 500,000 at 10%, remainder at 20%. Fair Share Contribution \"at the rate of 15% of their leviable income in excess of MUR 12 million\", for the income year from 1 July 2025 and the two following."
+        }
+      ],
+      "also": [
+        "tax fact: replaced with what PwC says (\"foreign investment income brought in is taxable with a credit for foreign tax paid on it, so keep records of what each required transfer is (check with an adviser)\")",
+        "sources: added the Your Tax Base best-brokerage page (for the lending fact)"
+      ],
+      "note": "No page read names a \"declaration exemption\" or says how loan proceeds are treated; PwC says remitted foreign investment income is taxable with a foreign tax credit generally available. A reader would act on the removed advice, so it was taken out (rule 5)."
+    },
+    {
+      "id": "mu-tax-foreign-tax-credit",
+      "fact": "tax",
+      "cities": [
+        "grand-baie"
+      ],
+      "claim": "Foreign investment income brought in is taxable, with a credit for foreign tax paid on it",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Mauritius, income determination",
+          "url": "https://taxsummaries.pwc.com/mauritius/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 15 June 2026. \"There is no tax on capital gains in Mauritius\"; \"Capital gains received by a resident or non-resident from outside Mauritius are not taxable.\" \"Investment income derived from outside Mauritius is taxable in a resident recipient's hands\" when received in or handled from Mauritius, and a foreign tax credit is generally available against the Mauritius tax on it."
+        }
+      ]
+    },
+    {
+      "id": "mu-tax-margin-draws-summary",
+      "fact": "tax",
+      "cities": [
+        "grand-baie"
+      ],
+      "claim": "Spending funded by margin draws is close to untaxed locally (summary)",
+      "verdict": "cant-confirm",
+      "oldWording": "and spending funded by margin draws are close to untaxed locally",
+      "hedge": "believed",
+      "wording": "spending funded by margin draws is believed to be too",
+      "sources": [
+        {
+          "name": "PwC: Mauritius, income determination",
+          "url": "https://taxsummaries.pwc.com/mauritius/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 15 June 2026. \"There is no tax on capital gains in Mauritius\"; \"Capital gains received by a resident or non-resident from outside Mauritius are not taxable.\" \"Investment income derived from outside Mauritius is taxable in a resident recipient's hands\" when received in or handled from Mauritius, and a foreign tax credit is generally available against the Mauritius tax on it."
+        }
+      ],
+      "also": [
+        "summary: \"dividends left in the US account and spending funded by margin draws are close to untaxed locally\" became \"dividends left in the US account are untaxed locally, and spending funded by margin draws is believed to be too\""
+      ],
+      "note": "PwC taxes remitted foreign income and is silent on remitted loan proceeds; that a loan is not income is the usual reading but no page read says so for Mauritius. Tax score stays 5 (remittance basis, no wealth tax)."
+    },
+    {
+      "id": "mu-estate-none",
+      "fact": "estate",
+      "cities": [
+        "grand-baie"
+      ],
+      "claim": "No inheritance, estate or gift tax, so US assets pass to US-resident children with no Mauritian tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Mauritius, other taxes",
+          "url": "https://taxsummaries.pwc.com/mauritius/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 15 June 2026. \"There are no net wealth/worth taxes in Mauritius.\" \"There are no inheritance, estate, or gift taxes in Mauritius.\" Registration duty on inherited property is not covered."
+        },
+        {
+          "name": "PwC quick chart: inheritance and gift tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates",
+          "read": "2026-11-15",
+          "says": "Montenegro: inheritance \"3 - 6 (payable only on inheritance of real estate)\", gift \"3 - 6 (payable only on real estate gifts)\" (last reviewed 07 August 2026). Albania: 15 and 15 (22 July 2026). Mauritius: NA, NA (15 June 2026). South Africa: \"25 (maximum)\" for both (29 May 2026). United Arab Emirates: NA, NA (09 September 2026)."
+        }
+      ]
+    },
+    {
+      "id": "mu-estate-no-us-treaty",
+      "fact": "estate",
+      "cities": [
+        "grand-baie"
+      ],
+      "claim": "There is no US estate treaty",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-without",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list in shared.json); Mauritius is not among them."
+        }
+      ]
+    },
+    {
+      "id": "mu-estate-us-exemption",
+      "fact": "estate",
+      "cities": [
+        "grand-baie"
+      ],
+      "claim": "US estate tax applies only above the $15M exemption (2026)",
+      "verdict": "confirmed",
+      "shared": "us-estate-exemption-2026",
+      "sources": [
+        {
+          "name": "IRS: What's new, estate and gift tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax",
+          "read": "2026-11-15",
+          "says": "The table \"Basic exclusion amount for year of death\" has the row 2026: $15,000,000 (2025: $13,990,000). The page says the Working Families Tax Cuts, Public Law 119-21, signed July 4, 2025, \"amends § 2010(c)(3) by increasing the basic exclusion amount to $15,000,000 for calendar year 2026\". Page last reviewed or updated 03-Nov-2026."
+        },
+        {
+          "name": "IRS: Estate tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-tax",
+          "read": "2026-11-15",
+          "says": "A return is required when the gross estate, plus adjusted taxable gifts and specific exemption, is more than the filing threshold for the year of death; the table gives 2026: $15,000,000. Page last reviewed or updated 23-Oct-2026."
+        },
+        {
+          "name": "IRS news release IR-2025-103: tax inflation adjustments for tax year 2026",
+          "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill",
+          "read": "2026-11-15",
+          "says": "\"Estates of decedents who die during 2026 have a basic exclusion amount of $15,000,000\", up from $13,990,000 for 2025; the release (October 9, 2025) cites Revenue Procedure 2025-32 and is marked as an archival document."
+        },
+        {
+          "name": "IRS: Some nonresidents with U.S. assets must file estate tax returns",
+          "url": "https://www.irs.gov/individuals/international-taxpayers/some-nonresidents-with-us-assets-must-file-estate-tax-returns",
+          "read": "2026-11-15",
+          "says": "\"U.S. citizens are subject to U.S. estate taxation with respect to their worldwide assets\"; Form 706 is required when worldwide assets plus adjusted taxable gifts exceed the basic exclusion amount in effect on the date of death. By contrast a nonresident who is not a citizen files when US-situated assets exceed $60,000. Page last reviewed or updated 27-Jun-2026."
+        }
+      ]
+    },
+    {
+      "id": "mu-lending-ibkr-serves",
+      "fact": "lending",
+      "cities": [
+        "grand-baie"
+      ],
+      "claim": "IBKR accepts residents of the country",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly serves all non-sanctioned countries, so likely Mauritius",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        }
+      ],
+      "note": "IBKR's own country list (https://www.interactivebrokers.com/en/accounts/open-account-country-list.php) returned HTTP 403 again on 2026-11-15."
+    },
+    {
+      "id": "mu-lending-schwab-not-listed",
+      "fact": "lending",
+      "cities": [
+        "grand-baie"
+      ],
+      "claim": "Mauritius is not on Schwab One International's reported list of accepted countries (Oct 2026)",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "reported",
+      "wording": "Mauritius is not on Schwab One International's reported list of accepted countries (Oct 2026)",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. On that day the author ran every entry in Schwab's international account selector through the application: it accepted residents of 51 of 263 countries and regions: Argentina, Australia, Austria, the Bahamas, Belgium, Bermuda, Brazil, the British Virgin Islands, the Cayman Islands, Chile, China, Colombia, Costa Rica, the Czech Republic, Denmark, Ecuador, Finland, Germany, Greece, Guatemala, Hong Kong, Iceland, India, Indonesia, Ireland, Israel, Jersey, Luxembourg, Malaysia, the Marshall Islands, Mexico, the Netherlands, Norway, Panama, Paraguay, Peru, Poland, Portugal, Qatar, Singapore, South Korea, Spain, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Turks and Caicos, the United Arab Emirates, the United Kingdom and Uruguay. Named as not accepted: Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam; for the rest the application said \"Schwab currently cannot open accounts for residents of your country/region.\" The test covers new applicants on that day only."
+        },
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Dated October 23, 2026 (country check that day). The United Arab Emirates is on the 51-country accepted list and marked \"Yes\"; South Africa is marked \"No\" (the 12 \"No\" rows: Canada, Croatia, Dominican Republic, France, Italy, Japan, Malta, New Zealand, Philippines, South Africa, Turkey, Vietnam). Montenegro, Albania and Mauritius are in neither list; the article says 200 of the 263 countries and regions in Schwab's selector showed that Schwab \"currently cannot open accounts for residents of your country/region\". It quotes the Schwab One International terms: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds from their account.\""
+        }
+      ],
+      "note": "The dated list puts Mauritius in neither the accepted 51 nor the 12 \"No\". Lending score stays 3 (\"IBKR only\")."
+    },
+    {
+      "id": "mu-lending-margin-unreported",
+      "fact": "lending",
+      "cities": [
+        "grand-baie"
+      ],
+      "claim": "IBKR's margin terms for residents of the country are unknown or unreported",
+      "verdict": "cant-confirm",
+      "hedge": "unreported",
+      "wording": "margin by country of residence is unreported",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026 (as read for earlier batches on 2026-11-15). The \"Country Availability\" section lists countries where IBKR is available; it does not map countries to IBKR entities or name the entity for non-EU European, Gulf or African residents."
+        }
+      ],
+      "note": "A statement of what is not known."
+    },
+    {
+      "id": "mu-lending-fidelity-vanguard",
+      "fact": "lending",
+      "cities": [
+        "grand-baie"
+      ],
+      "claim": "Fidelity and Vanguard open no accounts for residents abroad",
+      "verdict": "cant-confirm",
+      "oldWording": "Fidelity and Vanguard open no accounts for residents abroad.",
+      "hedge": "reportedly",
+      "wording": "Fidelity and Vanguard reportedly open no new accounts for residents abroad",
+      "sources": [
+        {
+          "name": "Your Tax Base: best brokerage for US expats",
+          "url": "https://yourtaxbase.com/blog/best-brokerage-for-us-expats",
+          "read": "2026-11-15",
+          "says": "Dated October 23, 2026. Quotes Fidelity's FAQ for customers outside the US: \"we do not open accounts for any new customers residing outside the United States.\" Vanguard's account-opening page, as checked in October 2026, requires US citizenship or permanent residence \"with a U.S. mailing address\"; people living or working outside the US are sent to Vanguard's international site."
+        }
+      ],
+      "also": [
+        "hedge added: \"reportedly\", and \"no accounts\" narrowed to \"no new accounts\", which is what the quoted Fidelity FAQ says (as Zurich's ch-lending-fidelity-vanguard)",
+        "sources: added the Your Tax Base best-brokerage page"
+      ],
+      "note": "A broker claim on a secondary page stays reported (rule 3). Fidelity's own FAQ (https://fidelity.com/accounts/services/investors_outside_US_faq.shtml) returned HTTP 403 on 2026-11-15; Vanguard's page was not tried."
+    },
+    {
+      "id": "mu-visa-retired-permit",
+      "fact": "visa",
+      "cities": [
+        "grand-baie"
+      ],
+      "claim": "Retired Non-Citizen Residence Permit: age 50+, 10 years, renewable, no work, about $2,000/month or $24,000/year transferred (older EDB figure $1,500/month)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Sovereign Group: Mauritius residency permit amendments (Nov 2025)",
+          "url": "https://www.sovereigngroup.com/news/mauritius-residency-permit-amendments-benefits-and-qualifying-requirements-update-november-2025/",
+          "read": "2026-11-15",
+          "says": "Dated November 24, 2025. Retired Non-Citizen Residence Permit: \"At least 50 years of age\"; a 10-year renewable permit; \"Able to transfer USD2,000 per month, or a total of USD24,000 per annum, to a local bank account in Mauritius\"; holders may \"apply for a 20-year Permanent Residency Permit (PRP) after five years\" having transferred \"at least USD200,000\". Property: \"invest at least USD375,000\"; \"Individuals who invest in local qualifying property are granted a residence permit for so long as they hold the property.\""
+        },
+        {
+          "name": "EDB Mauritius (residency.mu): residency by retirement",
+          "url": "https://residency.mu/retire/residency-by-retirement/",
+          "read": "2026-11-15",
+          "says": "Undated. For those \"aged 50 or above\": \"With just USD 1500 monthly, you can benefit from a 10-year Residence Permit\"; a USD 50 non-refundable application fee from 01 December 2025."
+        }
+      ],
+      "note": "The EDB's own retirement page still says USD 1,500 a month; Sovereign (Nov 2025) gives USD 2,000 or 24,000 a year, and a search result (not read) quotes the EDB's guidelines PDF with the same USD 2,000. The profile already gives both and says \"secondary sources\". The no-work rule is not on the pages read; it rests on the permit's name and a search result (not a read)."
+    },
+    {
+      "id": "mu-visa-pr-after-5-years",
+      "fact": "visa",
+      "cities": [
+        "grand-baie"
+      ],
+      "claim": "Permanent residence after 5 years if $200k was transferred",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "EDB Mauritius (residency.mu): permanent residence permit",
+          "url": "https://residency.mu/live/permanent-residence-permit-prp/",
+          "read": "2026-11-15",
+          "says": "Undated (fee notice from 1 December 2025). A retired non-citizen who \"Holds a RP as a Retired Non-Citizen for at least 5 years\" and whose transfers over the 5 years before applying total \"at least USD 200,000\" may apply; the PRP is a 20-year residency, renewable."
+        },
+        {
+          "name": "Sovereign Group: Mauritius residency permit amendments (Nov 2025)",
+          "url": "https://www.sovereigngroup.com/news/mauritius-residency-permit-amendments-benefits-and-qualifying-requirements-update-november-2025/",
+          "read": "2026-11-15",
+          "says": "Dated November 24, 2025. Retired Non-Citizen Residence Permit: \"At least 50 years of age\"; a 10-year renewable permit; \"Able to transfer USD2,000 per month, or a total of USD24,000 per annum, to a local bank account in Mauritius\"; holders may \"apply for a 20-year Permanent Residency Permit (PRP) after five years\" having transferred \"at least USD200,000\". Property: \"invest at least USD375,000\"; \"Individuals who invest in local qualifying property are granted a residence permit for so long as they hold the property.\""
+        }
+      ]
+    },
+    {
+      "id": "mu-visa-property-375k",
+      "fact": "visa",
+      "cities": [
+        "grand-baie"
+      ],
+      "claim": "$375k in qualifying property gives residence while it is held",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Sovereign Group: Mauritius residency permit amendments (Nov 2025)",
+          "url": "https://www.sovereigngroup.com/news/mauritius-residency-permit-amendments-benefits-and-qualifying-requirements-update-november-2025/",
+          "read": "2026-11-15",
+          "says": "Dated November 24, 2025. Retired Non-Citizen Residence Permit: \"At least 50 years of age\"; a 10-year renewable permit; \"Able to transfer USD2,000 per month, or a total of USD24,000 per annum, to a local bank account in Mauritius\"; holders may \"apply for a 20-year Permanent Residency Permit (PRP) after five years\" having transferred \"at least USD200,000\". Property: \"invest at least USD375,000\"; \"Individuals who invest in local qualifying property are granted a residence permit for so long as they hold the property.\""
+        }
+      ]
+    },
+    {
+      "id": "mu-visa-premium-visa",
+      "fact": "visa",
+      "cities": [
+        "grand-baie"
+      ],
+      "claim": "The free, renewable 1-year Premium Visa sets no minimum income",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "EDB Mauritius (residency.mu): Premium Visa",
+          "url": "https://residency.mu/live/mauritius-premium-visa/",
+          "read": "2026-11-15",
+          "says": "\"The Premium Visa is valid for a period exceeding six months up to one year and is renewable.\" \"The Premium Visa is issued free of charge.\" No minimum income is set; it requires travel and health insurance and that the main source of income be outside Mauritius."
+        }
+      ]
+    },
+    {
+      "id": "mu-healthcare-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "grand-baie"
+      ],
+      "claim": "C-Care Grand Baie (Mont Choisy) is the local private clinic; the larger private hospitals are C-Care Wellkin in Moka and C-Care Darné in Floréal",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "GOV.UK: English-speaking doctors and medical facilities in Mauritius",
+          "url": "https://www.gov.uk/government/publications/mauritius-list-of-doctors/list-of-english-speaking-doctors-and-medical-facilities-in-mauritius",
+          "read": "2026-11-15",
+          "says": "Updated 21 October 2024. Lists C-Care Grand Baie (Boulevard De Mont Choisy, Chemin Vingt Pied, private), C-Care Wellkin Hospital (Royal Road, Moka, private) and C-Care Darné (Georges Guibert Street, Floréal, private). Public hospitals are free for locals, and \"foreigners are expected to pay a minimal fee\". It says nothing on travel times or evacuation abroad."
+        }
+      ]
+    },
+    {
+      "id": "mu-healthcare-drive-time",
+      "fact": "healthcare",
+      "cities": [
+        "grand-baie"
+      ],
+      "claim": "Wellkin and Darné are 45–60 minutes from Grand Baie",
+      "verdict": "cant-confirm",
+      "hedge": "reportedly",
+      "wording": "are reportedly 45–60 minutes away",
+      "sources": [
+        {
+          "name": "GOV.UK: English-speaking doctors and medical facilities in Mauritius",
+          "url": "https://www.gov.uk/government/publications/mauritius-list-of-doctors/list-of-english-speaking-doctors-and-medical-facilities-in-mauritius",
+          "read": "2026-11-15",
+          "says": "Updated 21 October 2024. Lists C-Care Grand Baie (Boulevard De Mont Choisy, Chemin Vingt Pied, private), C-Care Wellkin Hospital (Royal Road, Moka, private) and C-Care Darné (Georges Guibert Street, Floréal, private). Public hospitals are free for locals, and \"foreigners are expected to pay a minimal fee\". It says nothing on travel times or evacuation abroad."
+        }
+      ],
+      "note": "Not on any page read; already hedged."
+    },
+    {
+      "id": "mu-healthcare-evacuation",
+      "fact": "healthcare",
+      "cities": [
+        "grand-baie"
+      ],
+      "claim": "Complex cases are often sent to South Africa or France",
+      "verdict": "cant-confirm",
+      "hedge": "unverified",
+      "wording": "complex cases are often sent to South Africa or France (unverified)",
+      "sources": [
+        {
+          "name": "GOV.UK: English-speaking doctors and medical facilities in Mauritius",
+          "url": "https://www.gov.uk/government/publications/mauritius-list-of-doctors/list-of-english-speaking-doctors-and-medical-facilities-in-mauritius",
+          "read": "2026-11-15",
+          "says": "Updated 21 October 2024. Lists C-Care Grand Baie (Boulevard De Mont Choisy, Chemin Vingt Pied, private), C-Care Wellkin Hospital (Royal Road, Moka, private) and C-Care Darné (Georges Guibert Street, Floréal, private). Public hospitals are free for locals, and \"foreigners are expected to pay a minimal fee\". It says nothing on travel times or evacuation abroad."
+        }
+      ],
+      "note": "Not on any page read; already hedged, here and in the drawback (\"may mean\")."
+    },
+    {
+      "id": "mu-healthcare-public-access",
+      "fact": "healthcare",
+      "cities": [
+        "grand-baie"
+      ],
+      "claim": "Public care is free, but whether non-citizen residents get it is unverified",
+      "verdict": "cant-confirm",
+      "hedge": "unverified",
+      "wording": "whether non-citizen residents get it is unverified",
+      "sources": [
+        {
+          "name": "GOV.UK: English-speaking doctors and medical facilities in Mauritius",
+          "url": "https://www.gov.uk/government/publications/mauritius-list-of-doctors/list-of-english-speaking-doctors-and-medical-facilities-in-mauritius",
+          "read": "2026-11-15",
+          "says": "Updated 21 October 2024. Lists C-Care Grand Baie (Boulevard De Mont Choisy, Chemin Vingt Pied, private), C-Care Wellkin Hospital (Royal Road, Moka, private) and C-Care Darné (Georges Guibert Street, Floréal, private). Public hospitals are free for locals, and \"foreigners are expected to pay a minimal fee\". It says nothing on travel times or evacuation abroad."
+        }
+      ],
+      "note": "The UK list says public hospitals are free for locals and foreigners pay \"a minimal fee\"; it does not say how a resident permit holder is treated, so the hedge stays."
+    },
+    {
+      "id": "mu-healthcare-cigna-no-age-cap",
+      "fact": "healthcare",
+      "cities": [
+        "grand-baie"
+      ],
+      "claim": "Cigna Global has no entry-age cap",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Cigna Global: seniors health insurance",
+          "url": "https://cignaglobal.com/seniors-health-insurance",
+          "read": "2026-11-15",
+          "says": "Undated. \"No upper age limit - applications welcomed regardless of age\"; the FAQ says \"there is no upper age limit for applications.\""
+        }
+      ]
+    }
+  ]
+}

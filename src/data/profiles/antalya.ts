@@ -10,12 +10,12 @@ const profile: ExpatProfile = {
       'Private hospitals such as Medical Park, Memorial and Anadolu serve international patients with English-speaking staff; after a year of residence foreigners can join the state GSS scheme at 24% of the minimum wage, but it excludes pre-existing conditions, so top-up private cover is advised.',
     safety:
       'Turkey is 136th in the 2026 Global Peace Index, a national rank; UK travel advice warns only against the area within 10 km of the Syrian border, far from Antalya, where the main risks are the usual resort-town petty crime.',
-    visa: 'Short-term residence by owning property assessed at US$200k or more (bought since October 2023), renewable every 1–2 years while you own it; first applications are barred in 1,169 closed neighbourhoods in 15 provinces, including parts of Antalya, so check the DGMM list before buying; permanent residence after 8 years.',
-    tax: 'No wealth tax (a residence tax applies only to Turkish homes worth over TRY 17.7m); under Law 7582, people resident from 2026 with no Turkish residence in the prior 3 years pay no income tax on foreign-source income for 20 years, if they get the exemption certificate in the first year; whether foreign capital gains are covered is not explicit.',
+    visa: 'Short-term residence by owning property assessed at US$200k or more (bought since October 2023), renewable every 1–2 years while you own it; first applications were barred from 2022 in 1,169 closed neighbourhoods, including parts of Antalya, and most reportedly reopened in June 2026 without a published list, so check the address with the migration office before buying; permanent residence after 8 years.',
+    tax: 'No wealth tax (a residence tax applies only to Turkish homes worth over TRY 17.7m); under Law 7582, people resident from 2026 with no Turkish residence in the prior 3 years pay no income tax on foreign-source income for 20 years, if they apply for the exemption certificate by the end of the calendar year they become resident; whether foreign capital gains are covered is not explicit.',
     estate:
-      'Inheritance tax is normally 1–30%, cut to 1% during the 20-year new-resident exemption; sources differ on whether that keys off the decedent or the heir, and a foreign resident\'s US securities left to US heirs may be out of scope entirely; there is no US estate treaty.',
+      'Inheritance tax is normally 1–10% (gifts 10–30%) above an exemption of about TRY 2.9m per child or spouse (2026), cut to 1% during the 20-year new-resident exemption; sources differ on whether that keys off the decedent or the heir, and a foreign resident\'s US securities left to US heirs may be out of scope entirely; there is no US estate treaty.',
     lending:
-      'IBKR reportedly accepts residents of all non-sanctioned countries, including Turkey, though margin terms per country are unknown; Schwab International reportedly does not accept Turkey; as a non-EU country, PRIIPs limits on US ETFs do not apply.',
+      'IBKR reportedly accepts residents of all non-sanctioned countries, including Turkey, though margin terms per country are unknown; Schwab International reportedly does not accept Turkey; as a non-EU country, EU PRIIPs limits on US ETFs should not apply, though which IBKR entity carries the account is unconfirmed.',
     climate: 'Long, hot summers (July and August highs average about 35°C) and mild, wet winters: January highs about 15°C, with most of the 1,050 mm of yearly rain falling in winter.',
     community:
       'About 120,000 foreigners lived in the city in 2022, mainly in Konyaaltı and Lara, with long-standing Russian, Ukrainian, German and British communities and plenty of international shops and services.',
@@ -23,7 +23,7 @@ const profile: ExpatProfile = {
   },
   drawbacks: [
     'Lira swings and high inflation make local costs unpredictable',
-    'The property route needs US$200k, and some neighbourhoods are closed to first applications',
+    'The property route needs US$200k, and which neighbourhoods accept first applications is unclear',
     'Hot summers, and the new tax regime is untested and must be claimed in year one',
   ],
   sources: [
@@ -33,6 +33,20 @@ const profile: ExpatProfile = {
       edition: '2026',
     },
     { name: 'PwC: Turkey, other taxes', url: 'https://taxsummaries.pwc.com/turkey/individual/other-taxes' },
+    {
+      name: 'Legal 500: Türkiye\'s new foreign income exemption',
+      url: 'https://www.legal500.com/intelligence/turkey/tax/turkiyes-new-foreign-income-exemption-a-regime-for-relocating-individuals',
+    },
+    {
+      name: 'KPMG Türkiye: 2026 inheritance and gift tax exemptions and brackets',
+      url: 'https://kpmgvergi.com/yayinlar/mali-bultenler/vergi/2026-yilinda-uygulanacak-veraset-ve-intikal-vergisi-maktu-istisna-tutarlari-ile-matrah-dilim-tutarlari-yayimlandi/3355',
+      edition: '2026',
+    },
+    {
+      name: 'Turk.Estate: residence permits in formerly closed areas (2026)',
+      url: 'https://turk.estate/en/question-answer/residence-permits-in-turkey-restricted-areas-2026/',
+      edition: '2026',
+    },
     { name: 'PwC: Turkey, income determination', url: 'https://taxsummaries.pwc.com/turkey/individual/income-determination' },
     {
       name: 'Legal 500: residence permit in Turkey by buying real estate',

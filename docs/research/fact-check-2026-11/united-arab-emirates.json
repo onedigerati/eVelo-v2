@@ -1,0 +1,495 @@
+{
+  "country": "United Arab Emirates",
+  "cities": [
+    "dubai"
+  ],
+  "claims": [
+    {
+      "id": "ae-tax-no-income-wealth-cgt",
+      "fact": "tax",
+      "cities": [
+        "dubai"
+      ],
+      "claim": "No personal income tax, no wealth tax and no capital gains tax: dividends, interest and gains are untaxed locally",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: United Arab Emirates, other taxes",
+          "url": "https://taxsummaries.pwc.com/united-arab-emirates/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 09 September 2026. \"There is currently no personal income tax in the United Arab Emirates\", so \"capital gains tax is not imposed on UAE national or resident individuals\"; \"There are currently no wealth taxes imposed on individuals\"; \"There are currently no inheritance, estate, or gift taxes imposed on individuals in the United Arab Emirates.\""
+        },
+        {
+          "name": "PwC: United Arab Emirates, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/united-arab-emirates/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 09 September 2026. \"There is no federal or Emirate-level personal income tax in the United Arab Emirates.\" Personal investment income is not counted toward the AED 1 million turnover test for the 9% corporate tax on individuals' businesses."
+        }
+      ]
+    },
+    {
+      "id": "ae-tax-us-citizen-files",
+      "fact": "tax",
+      "cities": [
+        "dubai"
+      ],
+      "claim": "A US citizen still files and pays US tax on worldwide income",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IRS: US citizens and resident aliens abroad",
+          "url": "https://www.irs.gov/individuals/international-taxpayers/us-citizens-and-resident-aliens-abroad",
+          "read": "2026-11-15",
+          "says": "Last reviewed or updated 20-Oct-2026. \"You are subject to tax on worldwide income from all sources\"; the rules for filing income, estate and gift tax returns are generally the same whether you live in the US or abroad."
+        }
+      ]
+    },
+    {
+      "id": "ae-tax-no-us-income-treaty",
+      "fact": "tax",
+      "cities": [
+        "dubai"
+      ],
+      "claim": "There is no US–UAE income tax treaty",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IRS: United States income tax treaties, A to Z",
+          "url": "https://www.irs.gov/businesses/international-businesses/united-states-income-tax-treaties-a-to-z",
+          "read": "2026-11-15",
+          "says": "Page last reviewed or updated 03-Jan-2026. The list of 69 entries includes South Africa; Albania, Montenegro, the United Arab Emirates and Mauritius are not on it."
+        }
+      ]
+    },
+    {
+      "id": "ae-estate-no-inheritance-tax",
+      "fact": "estate",
+      "cities": [
+        "dubai"
+      ],
+      "claim": "No inheritance, estate or gift tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: United Arab Emirates, other taxes",
+          "url": "https://taxsummaries.pwc.com/united-arab-emirates/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 09 September 2026. \"There is currently no personal income tax in the United Arab Emirates\", so \"capital gains tax is not imposed on UAE national or resident individuals\"; \"There are currently no wealth taxes imposed on individuals\"; \"There are currently no inheritance, estate, or gift taxes imposed on individuals in the United Arab Emirates.\""
+        },
+        {
+          "name": "PwC quick chart: inheritance and gift tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates",
+          "read": "2026-11-15",
+          "says": "Montenegro: inheritance \"3 - 6 (payable only on inheritance of real estate)\", gift \"3 - 6 (payable only on real estate gifts)\" (last reviewed 07 August 2026). Albania: 15 and 15 (22 July 2026). Mauritius: NA, NA (15 June 2026). South Africa: \"25 (maximum)\" for both (29 May 2026). United Arab Emirates: NA, NA (09 September 2026)."
+        }
+      ]
+    },
+    {
+      "id": "ae-estate-civil-law-non-muslims",
+      "fact": "estate",
+      "cities": [
+        "dubai"
+      ],
+      "claim": "Since 2023 a non-Muslim foreigner's estate follows the civil personal status law (or home-country law, if chosen) rather than Sharia",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Withers: estate planning for non-Muslims and residents in the UAE",
+          "url": "https://www.withersworldwide.com/en-gb/insight/read/estate-planning-for-non-muslims-and-residents-in-the-uae",
+          "read": "2026-11-15",
+          "says": "Dated 7 October 2024. Under \"Federal Decree-Law No. (41) of 2022 on Civil Personal Status\", with changes for non-Muslims \"introduced in 2023\", a non-Muslim's estate without a will is \"distributed without a distinction between genders\", unlike Sharia; non-Muslim foreigners residing in the UAE may \"decide to follow the laws of their home country\". The DIFC Wills Service Centre \"facilitates the registration of English language wills by non-Muslims\"."
+        }
+      ],
+      "note": "A 2024 law-firm page, older than the source order's 2025–26 for secondary pages; the Ministry of Justice's copy of Federal Decree-Law 41 of 2022 (elaws.moj.gov.ae) refused the connection and the u.ae wills page tried was a 404."
+    },
+    {
+      "id": "ae-estate-difc-wills",
+      "fact": "estate",
+      "cities": [
+        "dubai"
+      ],
+      "claim": "A will registered with the DIFC Wills Service Centre is the usual safeguard",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Withers: estate planning for non-Muslims and residents in the UAE",
+          "url": "https://www.withersworldwide.com/en-gb/insight/read/estate-planning-for-non-muslims-and-residents-in-the-uae",
+          "read": "2026-11-15",
+          "says": "Dated 7 October 2024. Under \"Federal Decree-Law No. (41) of 2022 on Civil Personal Status\", with changes for non-Muslims \"introduced in 2023\", a non-Muslim's estate without a will is \"distributed without a distinction between genders\", unlike Sharia; non-Muslim foreigners residing in the UAE may \"decide to follow the laws of their home country\". The DIFC Wills Service Centre \"facilitates the registration of English language wills by non-Muslims\"."
+        }
+      ],
+      "note": "The page confirms the Centre registers English-language wills for non-Muslims; \"usual\" is the profile's judgment."
+    },
+    {
+      "id": "ae-estate-no-us-treaty",
+      "fact": "estate",
+      "cities": [
+        "dubai"
+      ],
+      "claim": "There is no US estate treaty",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-without",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list in shared.json); the United Arab Emirates is not among them."
+        }
+      ]
+    },
+    {
+      "id": "ae-estate-us-exemption-only-relief",
+      "fact": "estate",
+      "cities": [
+        "dubai"
+      ],
+      "claim": "The $15M US exemption (2026) is the only relief",
+      "verdict": "confirmed",
+      "shared": "us-estate-exemption-2026",
+      "sources": [
+        {
+          "name": "IRS: What's new, estate and gift tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax",
+          "read": "2026-11-15",
+          "says": "The table \"Basic exclusion amount for year of death\" has the row 2026: $15,000,000 (2025: $13,990,000). The page says the Working Families Tax Cuts, Public Law 119-21, signed July 4, 2025, \"amends § 2010(c)(3) by increasing the basic exclusion amount to $15,000,000 for calendar year 2026\". Page last reviewed or updated 03-Nov-2026."
+        },
+        {
+          "name": "IRS: Estate tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-tax",
+          "read": "2026-11-15",
+          "says": "A return is required when the gross estate, plus adjusted taxable gifts and specific exemption, is more than the filing threshold for the year of death; the table gives 2026: $15,000,000. Page last reviewed or updated 23-Oct-2026."
+        },
+        {
+          "name": "IRS news release IR-2025-103: tax inflation adjustments for tax year 2026",
+          "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill",
+          "read": "2026-11-15",
+          "says": "\"Estates of decedents who die during 2026 have a basic exclusion amount of $15,000,000\", up from $13,990,000 for 2025; the release (October 9, 2025) cites Revenue Procedure 2025-32 and is marked as an archival document."
+        },
+        {
+          "name": "IRS: Some nonresidents with U.S. assets must file estate tax returns",
+          "url": "https://www.irs.gov/individuals/international-taxpayers/some-nonresidents-with-us-assets-must-file-estate-tax-returns",
+          "read": "2026-11-15",
+          "says": "\"U.S. citizens are subject to U.S. estate taxation with respect to their worldwide assets\"; Form 706 is required when worldwide assets plus adjusted taxable gifts exceed the basic exclusion amount in effect on the date of death. By contrast a nonresident who is not a citizen files when US-situated assets exceed $60,000. Page last reviewed or updated 27-Jun-2026."
+        }
+      ]
+    },
+    {
+      "id": "ae-lending-ibkr-serves",
+      "fact": "lending",
+      "cities": [
+        "dubai"
+      ],
+      "claim": "IBKR accepts residents of the country",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly serves UAE residents (many fund accounts through a dirham or US-dollar account)",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        },
+        {
+          "name": "The National: what an Interactive Brokers UAE account means for local investors",
+          "url": "https://www.thenationalnews.com/business/money/2024/10/03/what-will-interactive-brokers-uae-bank-account-mean-for-local-investors",
+          "read": "2026-11-15",
+          "says": "Dated October 3, 2024. IBKR plans a DIFC branch, subject to approval; it accepts dirhams only through a UK bank account; one UAE investor funds IBKR through Wio's USD account. It does not state that UAE residents can open accounts, and does not mention margin."
+        }
+      ],
+      "note": "IBKR's own country list (https://www.interactivebrokers.com/en/accounts/open-account-country-list.php) returned HTTP 403 again on 2026-11-15. The National (2024) describes UAE investors funding IBKR accounts, which fits, but does not state IBKR's acceptance policy."
+    },
+    {
+      "id": "ae-lending-schwab-accepted",
+      "fact": "lending",
+      "cities": [
+        "dubai"
+      ],
+      "claim": "Schwab One International's online form accepted the UAE in Oct 2026",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab One International's online form reportedly accepted the UAE in Oct 2026",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. On that day the author ran every entry in Schwab's international account selector through the application: it accepted residents of 51 of 263 countries and regions: Argentina, Australia, Austria, the Bahamas, Belgium, Bermuda, Brazil, the British Virgin Islands, the Cayman Islands, Chile, China, Colombia, Costa Rica, the Czech Republic, Denmark, Ecuador, Finland, Germany, Greece, Guatemala, Hong Kong, Iceland, India, Indonesia, Ireland, Israel, Jersey, Luxembourg, Malaysia, the Marshall Islands, Mexico, the Netherlands, Norway, Panama, Paraguay, Peru, Poland, Portugal, Qatar, Singapore, South Korea, Spain, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Turks and Caicos, the United Arab Emirates, the United Kingdom and Uruguay. Named as not accepted: Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam; for the rest the application said \"Schwab currently cannot open accounts for residents of your country/region.\" The test covers new applicants on that day only."
+        },
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Dated October 23, 2026 (country check that day). The United Arab Emirates is on the 51-country accepted list and marked \"Yes\"; South Africa is marked \"No\" (the 12 \"No\" rows: Canada, Croatia, Dominican Republic, France, Italy, Japan, Malta, New Zealand, Philippines, South Africa, Turkey, Vietnam). Montenegro, Albania and Mauritius are in neither list; the article says 200 of the 263 countries and regions in Schwab's selector showed that Schwab \"currently cannot open accounts for residents of your country/region\". It quotes the Schwab One International terms: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds from their account.\""
+        }
+      ],
+      "note": "The UAE is on the dated list's accepted 51. Lending score stays 4: the rubric's 4 is Schwab reported to accept residents outside Europe, plus IBKR, with margin terms unconfirmed, which is what is reported for Dubai."
+    },
+    {
+      "id": "ae-lending-margin-unreported",
+      "fact": "lending",
+      "cities": [
+        "dubai"
+      ],
+      "claim": "IBKR's margin terms for residents of the country are unknown or unreported",
+      "verdict": "cant-confirm",
+      "hedge": "unreported",
+      "wording": "margin by country of residence is unreported",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026 (as read for earlier batches on 2026-11-15). The \"Country Availability\" section lists countries where IBKR is available; it does not map countries to IBKR entities or name the entity for non-EU European, Gulf or African residents."
+        }
+      ],
+      "note": "A statement of what is not known; no page read gives either broker's margin terms for UAE residents."
+    },
+    {
+      "id": "ae-lending-fidelity-vanguard",
+      "fact": "lending",
+      "cities": [
+        "dubai"
+      ],
+      "claim": "Fidelity and Vanguard open no accounts for residents abroad",
+      "verdict": "cant-confirm",
+      "oldWording": "and Fidelity and Vanguard open no accounts for residents abroad",
+      "hedge": "reportedly",
+      "wording": "Fidelity and Vanguard reportedly open no new accounts for residents abroad",
+      "sources": [
+        {
+          "name": "Your Tax Base: best brokerage for US expats",
+          "url": "https://yourtaxbase.com/blog/best-brokerage-for-us-expats",
+          "read": "2026-11-15",
+          "says": "Dated October 23, 2026. Quotes Fidelity's FAQ for customers outside the US: \"we do not open accounts for any new customers residing outside the United States.\" Vanguard's account-opening page, as checked in October 2026, requires US citizenship or permanent residence \"with a U.S. mailing address\"; people living or working outside the US are sent to Vanguard's international site."
+        }
+      ],
+      "also": [
+        "hedge added: \"reportedly\", and \"no accounts\" narrowed to \"no new accounts\", which is what the quoted Fidelity FAQ says (as Zurich's ch-lending-fidelity-vanguard)",
+        "sources: added the Your Tax Base best-brokerage page"
+      ],
+      "note": "A broker claim on a secondary page stays reported (rule 3). Fidelity's own FAQ (https://fidelity.com/accounts/services/investors_outside_US_faq.shtml) returned HTTP 403 on 2026-11-15; Vanguard's page was not tried."
+    },
+    {
+      "id": "ae-visa-retirement-permit",
+      "fact": "visa",
+      "cities": [
+        "dubai"
+      ],
+      "claim": "Retirement residence permit: 55+ with at least 15 years of prior work, plus property worth AED 1M, an AED 1M deposit or a fixed income of AED 240,000/year",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "GDRFA Dubai: residence permit for a retired foreigner",
+          "url": "https://www.gdrfad.gov.ae/en/services/8ea80db0-f43e-11eb-0320-0050569629e8",
+          "read": "2026-11-15",
+          "says": "Undated service page. The applicant \"has completed (55) fifty-five Gregorian years of age\" and \"The period of service of the foreigner before his retirement is not less than (15) fifteen years\"; one of: real estate worth not less than 1,000,000, a deposit of at least AED 1,000,000, or \"fixed annual income of the retiree shall not be less than (240,000)\" dirhams; issued \"for five years, renewable under the same terms as when first granted\"."
+        }
+      ],
+      "note": "GDRFA's deposit wording is garbled in places. The dollar figures in the profile ($272k, $65k) match src/data/fx.json (AED 3.6725 per US$)."
+    },
+    {
+      "id": "ae-visa-five-years-renewable",
+      "fact": "visa",
+      "cities": [
+        "dubai"
+      ],
+      "claim": "The permit runs five years, renewable on the same terms",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "GDRFA Dubai: residence permit for a retired foreigner",
+          "url": "https://www.gdrfad.gov.ae/en/services/8ea80db0-f43e-11eb-0320-0050569629e8",
+          "read": "2026-11-15",
+          "says": "Undated service page. The applicant \"has completed (55) fifty-five Gregorian years of age\" and \"The period of service of the foreigner before his retirement is not less than (15) fifteen years\"; one of: real estate worth not less than 1,000,000, a deposit of at least AED 1,000,000, or \"fixed annual income of the retiree shall not be less than (240,000)\" dirhams; issued \"for five years, renewable under the same terms as when first granted\"."
+        }
+      ]
+    },
+    {
+      "id": "ae-visa-no-permanent-residence",
+      "fact": "visa",
+      "cities": [
+        "dubai"
+      ],
+      "claim": "There is no route to permanent residence or citizenship",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "BusinessDubai: UAE golden visa renewal 2026",
+          "url": "https://www.businessdubai.ae/blogs/uae-golden-visa-renewal",
+          "read": "2026-11-15",
+          "says": "Dated August 27, 2026. \"A Golden Visa is issued for a fixed term and it is renewable, not permanent.\" It \"is not citizenship\" and \"It is not a route to citizenship\", which is \"a separate framework with its own criteria\"; repeated renewal does not lead to naturalisation."
+        },
+        {
+          "name": "UAE government portal: golden visa",
+          "url": "https://u.ae/en/information-and-services/visa-and-emirates-id/residence-visas/golden-visa",
+          "read": "2026-11-15",
+          "says": "Last updated 28 Jul 2026. Describes the golden visa as \"a long-term, renewable residence visa valid for 5 or 10 years\" (5 years for real estate investments in its table); no permanent residence or citizenship is mentioned."
+        },
+        {
+          "name": "GDRFA Dubai: residence permit for a retired foreigner",
+          "url": "https://www.gdrfad.gov.ae/en/services/8ea80db0-f43e-11eb-0320-0050569629e8",
+          "read": "2026-11-15",
+          "says": "Undated service page. The applicant \"has completed (55) fifty-five Gregorian years of age\" and \"The period of service of the foreigner before his retirement is not less than (15) fifteen years\"; one of: real estate worth not less than 1,000,000, a deposit of at least AED 1,000,000, or \"fixed annual income of the retiree shall not be less than (240,000)\" dirhams; issued \"for five years, renewable under the same terms as when first granted\"."
+        }
+      ],
+      "note": "No page read describes any UAE permanent-residence status; BusinessDubai says the golden visa is \"not a route to citizenship\" and that citizenship is a separate framework with its own criteria (the UAE grants it by nomination, not by residence; not read here). The summary's and drawback's \"no path to permanent residence\" agree."
+    },
+    {
+      "id": "ae-visa-golden-2m-property",
+      "fact": "visa",
+      "cities": [
+        "dubai"
+      ],
+      "claim": "An AED 2M property buyer can instead apply for a golden visa",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Dubai Land Department: request for golden visa (investor)",
+          "url": "https://dubailand.gov.ae/en/eservices/request-for-golden-visa-investor/",
+          "read": "2026-11-15",
+          "says": "Last updated 10 November 2026. For property \"the purchase value of which is equal to or more than 2 million AED at the time of purchase\"; a \"10-years renewable residence permit\"."
+        },
+        {
+          "name": "UAE government portal: golden visa",
+          "url": "https://u.ae/en/information-and-services/visa-and-emirates-id/residence-visas/golden-visa",
+          "read": "2026-11-15",
+          "says": "Last updated 28 Jul 2026. Describes the golden visa as \"a long-term, renewable residence visa valid for 5 or 10 years\" (5 years for real estate investments in its table); no permanent residence or citizenship is mentioned."
+        }
+      ],
+      "note": "The Dubai Land Department gives a 10-year visa for property of AED 2M or more; the federal portal's table says 5 years for real estate. The profile gives no term, so nothing changes."
+    },
+    {
+      "id": "ae-healthcare-western-trained",
+      "fact": "healthcare",
+      "cities": [
+        "dubai"
+      ],
+      "claim": "Private hospitals have Western-trained doctors",
+      "verdict": "cant-confirm",
+      "hedge": "removed",
+      "oldWording": "Good private hospitals with Western-trained doctors",
+      "sources": [
+        {
+          "name": "PR Newswire: American Hospital Dubai earns 7th JCI accreditation",
+          "url": "https://prnewswire.co.uk/news-releases/american-hospital-dubai-extends-its-pioneering-track-record-for-international-accreditations-and-685796841.html",
+          "read": "2026-11-15",
+          "says": "Dated June 18, 2018. \"the hospital was awarded its 7th consecutive accreditation following a recent JCI on-site survey\"; it is \"a 254-bed, acute care, general medical/surgical private hospital\". The page says nothing about where its doctors trained."
+        }
+      ],
+      "also": [
+        "healthcare fact rewritten: \"with Western-trained doctors\" removed"
+      ],
+      "note": "No page read says where Dubai's private-hospital doctors trained; the phrase was taken out rather than hedged."
+    },
+    {
+      "id": "ae-healthcare-ahd-jci-beds",
+      "fact": "healthcare",
+      "cities": [
+        "dubai"
+      ],
+      "claim": "American Hospital Dubai is JCI-accredited, with 254 beds",
+      "verdict": "cant-confirm",
+      "oldWording": "such as the JCI-accredited American Hospital Dubai (254 beds)",
+      "hedge": "reportedly",
+      "wording": "such as American Hospital Dubai, reportedly JCI-accredited",
+      "sources": [
+        {
+          "name": "PR Newswire: American Hospital Dubai earns 7th JCI accreditation",
+          "url": "https://prnewswire.co.uk/news-releases/american-hospital-dubai-extends-its-pioneering-track-record-for-international-accreditations-and-685796841.html",
+          "read": "2026-11-15",
+          "says": "Dated June 18, 2018. \"the hospital was awarded its 7th consecutive accreditation following a recent JCI on-site survey\"; it is \"a 254-bed, acute care, general medical/surgical private hospital\". The page says nothing about where its doctors trained."
+        }
+      ],
+      "also": [
+        "hedge added: \"reportedly JCI-accredited\"; the bed count (254) removed"
+      ],
+      "note": "The only page read is a 2018 press release (7th JCI accreditation, 254 beds); the hospital's own site (www.ahdubai.com) returned HTTP 403, and search results (not reads) give bed counts from 143 to 384. JCI re-surveys every three years, so 2018 does not show it is accredited now."
+    },
+    {
+      "id": "ae-healthcare-insurance-compulsory",
+      "fact": "healthcare",
+      "cities": [
+        "dubai"
+      ],
+      "claim": "Health insurance is compulsory for Dubai residents",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Dubai Legal Portal: Law No. (11) of 2013 regulating health insurance in the Emirate of Dubai",
+          "url": "https://dlp.dubai.gov.ae/Legislation%20Reference/2013/Law%20No.%20%2811%29%20of%202013.html",
+          "read": "2026-11-15",
+          "says": "Article 7(a): \"The entities determined in Article (9) of this Law must enrol UAE Nationals, Residents and Visitors in Health Insurance\"; Article 9(a): employers enrol employees and \"a Sponsor will be responsible for enroling the persons he sponsors who do not have an Employer\"; cover cannot be less than the Basic Coverage."
+        },
+        {
+          "name": "The National: are high insurance costs pricing retirees out of the UAE?",
+          "url": "https://thenationalnews.com/business/money/2024/07/11/are-high-insurance-costs-pricing-retirees-out-of-living-in-the-uae-long-term",
+          "read": "2026-11-15",
+          "says": "Dated July 11, 2024. \"There are no specific packages for retired people.\" Basic annual plans \"can start at about Dh5,000\" but use lower-cost hospitals; a 67-year-old retiree went from about Dh30,000 to over Dh90,000 at renewal after a knee operation and now pays \"just over Dh25,000\" on a basic policy. \"In Dubai, companies can load up to 100 per cent of the current premium per condition.\" Health insurance is mandatory in Dubai and Abu Dhabi."
+        }
+      ]
+    },
+    {
+      "id": "ae-healthcare-no-retiree-plans",
+      "fact": "healthcare",
+      "cities": [
+        "dubai"
+      ],
+      "claim": "There are no retiree-specific plans",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "The National: are high insurance costs pricing retirees out of the UAE?",
+          "url": "https://thenationalnews.com/business/money/2024/07/11/are-high-insurance-costs-pricing-retirees-out-of-living-in-the-uae-long-term",
+          "read": "2026-11-15",
+          "says": "Dated July 11, 2024. \"There are no specific packages for retired people.\" Basic annual plans \"can start at about Dh5,000\" but use lower-cost hospitals; a 67-year-old retiree went from about Dh30,000 to over Dh90,000 at renewal after a knee operation and now pays \"just over Dh25,000\" on a basic policy. \"In Dubai, companies can load up to 100 per cent of the current premium per condition.\" Health insurance is mandatory in Dubai and Abu Dhabi."
+        }
+      ]
+    },
+    {
+      "id": "ae-healthcare-premiums",
+      "fact": "healthcare",
+      "cities": [
+        "dubai"
+      ],
+      "claim": "Premiums climb sharply after 60, from about AED 5,000/year for basic narrow-network cover to AED 25,000–30,000+ for broader plans",
+      "verdict": "corrected",
+      "oldWording": "from about AED 5,000/year for basic narrow-network cover to AED 25,000–30,000+ for broader plans",
+      "newWording": "basic narrow-network plans start at about AED 5,000/year, a 67-year-old retiree paid just over AED 25,000/year for a basic policy",
+      "sources": [
+        {
+          "name": "The National: are high insurance costs pricing retirees out of the UAE?",
+          "url": "https://thenationalnews.com/business/money/2024/07/11/are-high-insurance-costs-pricing-retirees-out-of-living-in-the-uae-long-term",
+          "read": "2026-11-15",
+          "says": "Dated July 11, 2024. \"There are no specific packages for retired people.\" Basic annual plans \"can start at about Dh5,000\" but use lower-cost hospitals; a 67-year-old retiree went from about Dh30,000 to over Dh90,000 at renewal after a knee operation and now pays \"just over Dh25,000\" on a basic policy. \"In Dubai, companies can load up to 100 per cent of the current premium per condition.\" Health insurance is mandatory in Dubai and Abu Dhabi."
+        }
+      ],
+      "also": [
+        "healthcare fact: \"premiums climb sharply after 60\" became \"premiums climb with age and claims\"",
+        "sources: added the Dubai Legal Portal's health insurance law, the Dubai Land Department and BusinessDubai"
+      ],
+      "note": "The source gives AED 25,000 as one retiree's basic policy after a claim (down from AED 30,000 before a renewal jump to AED 90,000), not as the price of broader plans; the new wording says what the page says. Healthcare score stays 4; the summary's \"costly private health insurance that rises steeply after 60\" and the drawback still fit."
+    },
+    {
+      "id": "ae-healthcare-preexisting-loadings",
+      "fact": "healthcare",
+      "cities": [
+        "dubai"
+      ],
+      "claim": "Insurers load premiums for pre-existing conditions",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "The National: are high insurance costs pricing retirees out of the UAE?",
+          "url": "https://thenationalnews.com/business/money/2024/07/11/are-high-insurance-costs-pricing-retirees-out-of-living-in-the-uae-long-term",
+          "read": "2026-11-15",
+          "says": "Dated July 11, 2024. \"There are no specific packages for retired people.\" Basic annual plans \"can start at about Dh5,000\" but use lower-cost hospitals; a 67-year-old retiree went from about Dh30,000 to over Dh90,000 at renewal after a knee operation and now pays \"just over Dh25,000\" on a basic policy. \"In Dubai, companies can load up to 100 per cent of the current premium per condition.\" Health insurance is mandatory in Dubai and Abu Dhabi."
+        }
+      ],
+      "note": "Reworded with the page's figure: \"insurers may load up to 100% per pre-existing condition (2024)\"."
+    }
+  ]
+}

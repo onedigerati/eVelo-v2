@@ -1,0 +1,560 @@
+{
+  "country": "Bulgaria",
+  "cities": [
+    "plovdiv"
+  ],
+  "claims": [
+    {
+      "id": "bg-tax-no-wealth-tax",
+      "fact": "tax",
+      "cities": [
+        "plovdiv"
+      ],
+      "claim": "Bulgaria has no wealth tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Bulgaria, individual, other taxes",
+          "url": "https://taxsummaries.pwc.com/bulgaria/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 02 August 2026. \"There are no net wealth/worth taxes in Bulgaria.\" \"The aggregate rate of health insurance contributions is 8%\". \"The minimum monthly insurance base for freelancers is EUR 550.66 from 1 January 2026 until 31 July.\" The page has no inheritance or gift tax section."
+        },
+        {
+          "name": "PwC: quick chart, net wealth/worth tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/net-wealth-worth-tax-rates",
+          "read": "2026-11-15",
+          "says": "Headline net wealth/worth tax rate: Greece \"NA\" (last reviewed 08 September 2026), Cyprus \"NA\" (04 August 2026), Croatia \"NA\" (27 August 2026), Bulgaria \"NA\" (02 August 2026). \"NA\" is defined as \"Not Applicable (i.e. the territory does not have the indicated tax or requirement)\"."
+        }
+      ],
+      "note": "localTaxes.ts agrees."
+    },
+    {
+      "id": "bg-tax-dividends-5",
+      "fact": "tax",
+      "cities": [
+        "plovdiv"
+      ],
+      "claim": "Residents pay a 5% final tax on foreign dividends",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Bulgaria, individual, income determination",
+          "url": "https://taxsummaries.pwc.com/bulgaria/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 02 August 2026. \"Dividends and liquidation proceeds paid by Bulgarian and foreign entities are subject to a 5% final WHT at source\"; where a foreign payer does not withhold, \"the tax is payable by the recipient themselves on an annual basis.\" \"Interest income from bank accounts in the European Union / European Economic Area is tax free as of 1 April 2022\"; other bank interest \"is taxable at a tax rate of 10% as of 1 April 2022 instead of a final tax rate of 8%\". Exempt: \"Capital gains from transactions with securities of public companies on the Bulgarian Stock Exchange or on a regulated securities market in EU/EEA countries\", extended from 1 January 2021 to \"equivalent third-country stock markets as defined in EU Directives 2014/65/EU\"; otherwise \"Capital gains are taxed on an annual basis with a 10% flat tax rate\"."
+        }
+      ],
+      "note": "nra.bg was not searched for a page on this; PwC's page is dated August 2026. Plovdiv's `why` (\"Bulgaria taxes dividends at 5%\"), the tagline and the summary agree; scores.tax stays 4 (5% on dividends but 10% on US interest)."
+    },
+    {
+      "id": "bg-tax-interest",
+      "fact": "tax",
+      "cities": [
+        "plovdiv"
+      ],
+      "claim": "Bank interest from the EU/EEA is taxed at 0% and other interest at 10%, so US interest pays 10%",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Bulgaria, individual, income determination",
+          "url": "https://taxsummaries.pwc.com/bulgaria/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 02 August 2026. \"Dividends and liquidation proceeds paid by Bulgarian and foreign entities are subject to a 5% final WHT at source\"; where a foreign payer does not withhold, \"the tax is payable by the recipient themselves on an annual basis.\" \"Interest income from bank accounts in the European Union / European Economic Area is tax free as of 1 April 2022\"; other bank interest \"is taxable at a tax rate of 10% as of 1 April 2022 instead of a final tax rate of 8%\". Exempt: \"Capital gains from transactions with securities of public companies on the Bulgarian Stock Exchange or on a regulated securities market in EU/EEA countries\", extended from 1 January 2021 to \"equivalent third-country stock markets as defined in EU Directives 2014/65/EU\"; otherwise \"Capital gains are taxed on an annual basis with a 10% flat tax rate\"."
+        },
+        {
+          "name": "PwC: Bulgaria, individual, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/bulgaria/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 02 August 2026. \"A flat tax rate of 10% applies to all personal income, with some exceptions.\" \"Bulgarian tax residents are taxed on their worldwide income.\" No regime for newcomers or retirees is mentioned."
+        }
+      ],
+      "note": "PwC states the 10% for bank interest outside the EU/EEA (the old 8% rate ended on 1 April 2022) and the 10% flat rate for income generally; it lists interest on certain bonds as exempt, which the profile does not go into."
+    },
+    {
+      "id": "bg-tax-gains-exempt-markets",
+      "fact": "tax",
+      "cities": [
+        "plovdiv"
+      ],
+      "claim": "Gains on shares are exempt on EU and \"equivalent\" markets",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Bulgaria, individual, income determination",
+          "url": "https://taxsummaries.pwc.com/bulgaria/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 02 August 2026. \"Dividends and liquidation proceeds paid by Bulgarian and foreign entities are subject to a 5% final WHT at source\"; where a foreign payer does not withhold, \"the tax is payable by the recipient themselves on an annual basis.\" \"Interest income from bank accounts in the European Union / European Economic Area is tax free as of 1 April 2022\"; other bank interest \"is taxable at a tax rate of 10% as of 1 April 2022 instead of a final tax rate of 8%\". Exempt: \"Capital gains from transactions with securities of public companies on the Bulgarian Stock Exchange or on a regulated securities market in EU/EEA countries\", extended from 1 January 2021 to \"equivalent third-country stock markets as defined in EU Directives 2014/65/EU\"; otherwise \"Capital gains are taxed on an annual basis with a 10% flat tax rate\"."
+        }
+      ],
+      "note": "Whether US exchanges count as equivalent third-country markets is not on the page, and the profile does not claim it."
+    },
+    {
+      "id": "bg-tax-us-treaty-credit",
+      "fact": "tax",
+      "cities": [
+        "plovdiv"
+      ],
+      "claim": "The US treaty credit may cancel most of the 5%",
+      "verdict": "cant-confirm",
+      "hedge": "an inference",
+      "wording": "the US treaty credit may cancel most of the 5% (an inference)",
+      "sources": [
+        {
+          "name": "IRS: United States income tax treaties, A to Z",
+          "url": "https://www.irs.gov/businesses/international-businesses/united-states-income-tax-treaties-a-to-z",
+          "read": "2026-11-15",
+          "says": "Page last reviewed or updated 03-Jan-2026. Under B: Bangladesh, Barbados, Belarus, Belgium, Bulgaria. Under C: Canada, Chile, China, Cyprus, Czech Republic; Croatia is not listed. Under G: Georgia, Germany, Greece."
+        }
+      ],
+      "note": "A US–Bulgaria income tax treaty exists; how Bulgaria credits US withholding against its 5% was not read anywhere. The profile's own \"(an inference)\" stays."
+    },
+    {
+      "id": "bg-tax-no-newcomer-regime",
+      "fact": "tax",
+      "cities": [
+        "plovdiv"
+      ],
+      "claim": "There is no newcomer regime",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Bulgaria, individual, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/bulgaria/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 02 August 2026. \"A flat tax rate of 10% applies to all personal income, with some exceptions.\" \"Bulgarian tax residents are taxed on their worldwide income.\" No regime for newcomers or retirees is mentioned."
+        }
+      ]
+    },
+    {
+      "id": "bg-estate-children-exempt",
+      "fact": "estate",
+      "cities": [
+        "plovdiv"
+      ],
+      "claim": "Bulgaria's municipal inheritance tax fully exempts children and grandchildren",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Innovires: inheritance tax in Bulgaria",
+          "url": "https://www.innovires.com/en/blog/danak-nasledstvo-bulgaria.html",
+          "read": "2026-11-15",
+          "says": "Published and last updated 10 April 2026. \"the surviving spouse and direct line heirs (children, parents, grandchildren) are fully exempt from inheritance tax\" (Art. 31(2) LTFA). Siblings and their children pay 0.4% to 0.8%, others 3.3% to 6.6%, above \"EUR 127,823 (BGN 250,000) per heir\". Bulgarian nationals are \"taxed on the entire inheritance, including assets located abroad\"; foreign nationals \"only on property situated on the territory of the Republic of Bulgaria.\" It does not address foreign nationals who live in Bulgaria as a separate case."
+        },
+        {
+          "name": "PwC: quick chart, inheritance and gift tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates",
+          "read": "2026-11-15",
+          "says": "Greece (08 September 2026): inheritance \"Category A: 10; Category B: 20; Category C: 40\". Cyprus (04 August 2026): inheritance \"NA\"; gift \"Nil if up to a third degree relative.\" Croatia (27 August 2026): \"4\" and \"4\". Bulgaria (02 August 2026): \"Varies depending on category of the heir and the amount of the inheritance.\"; gift 3.3% to 6.6% to the municipalities."
+        }
+      ],
+      "note": "The statute could not be read: lex.bg returned HTTP 403 (https://lex.bg/laws/ldoc/2134174720, the Local Taxes and Fees Act), and PwC's Bulgaria page has no inheritance section. A law-firm page dated April 2026 was used, as the profile already says. Plovdiv's `why` (\"children inherit free\") agrees. localTaxes.ts agrees (BG has no inheritance entry and its note says the same)."
+    },
+    {
+      "id": "bg-estate-foreign-national-reach",
+      "fact": "estate",
+      "cities": [
+        "plovdiv"
+      ],
+      "claim": "The tax reaches a foreign national only on property in Bulgaria, so a US portfolio passes to US-resident children with no Bulgarian tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Innovires: inheritance tax in Bulgaria",
+          "url": "https://www.innovires.com/en/blog/danak-nasledstvo-bulgaria.html",
+          "read": "2026-11-15",
+          "says": "Published and last updated 10 April 2026. \"the surviving spouse and direct line heirs (children, parents, grandchildren) are fully exempt from inheritance tax\" (Art. 31(2) LTFA). Siblings and their children pay 0.4% to 0.8%, others 3.3% to 6.6%, above \"EUR 127,823 (BGN 250,000) per heir\". Bulgarian nationals are \"taxed on the entire inheritance, including assets located abroad\"; foreign nationals \"only on property situated on the territory of the Republic of Bulgaria.\" It does not address foreign nationals who live in Bulgaria as a separate case."
+        }
+      ],
+      "note": "One law-firm page; it states the rule by citizenship and does not treat a foreign national living in Bulgaria as a separate case. The profile's \"(law-firm source; the Ministry of Finance page could not be read)\" stays, and it is still true: no official text was readable. Children are exempt in any case. scores.estate stays 5."
+    },
+    {
+      "id": "bg-estate-no-us-treaty",
+      "fact": "estate",
+      "cities": [
+        "plovdiv"
+      ],
+      "claim": "There is no US estate treaty with Bulgaria",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-without",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list); none of the 37 countries named in this claim is among them."
+        }
+      ]
+    },
+    {
+      "id": "bg-lending-ibkr-accepts",
+      "fact": "lending",
+      "cities": [
+        "plovdiv"
+      ],
+      "claim": "IBKR serves Bulgaria residents",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly serves Bulgaria residents",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        }
+      ],
+      "note": "IBKR's sites were not tried again in this batch; they returned HTTP 403 to every read in stages 1 and 2. The hedge stays."
+    },
+    {
+      "id": "bg-lending-ibkr-eu-entity",
+      "fact": "lending",
+      "cities": [
+        "plovdiv"
+      ],
+      "claim": "Bulgaria residents are served through IBKR's EU entity",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-eu-entity",
+      "hedge": "likely",
+      "wording": "(likely through its EU entity)",
+      "sources": [
+        {
+          "name": "Interactive Brokers Ireland Limited: Customer Agreement (document 4750, 7/1/2023), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/01_4750_IBIE_Customer_Agreement_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "Clause 1B: Interactive Brokers Ireland Limited (\"IBIE\") is incorporated in Ireland, company number 657406, and \"is regulated by the Central Bank of Ireland\", register number C423427. Clause 1C: unless told otherwise in writing, the client is categorised as a Retail Client. The agreement does not say which countries' residents IBIE serves."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. \"In the EU, customers sign up with the Irish entity\"; UK clients are with Interactive Brokers (U.K.) Limited; the Irish €20k compensation scheme applies to Eastern Europe after the Irish and Hungarian entities merged."
+        },
+        {
+          "name": "Investing in the Web: Interactive Brokers in Europe",
+          "url": "https://investingintheweb.com/broker-reviews/interactive-brokers-europe",
+          "read": "2026-11-15",
+          "says": "Updated on Sep 8, 2026. \"As an European resident, you are under the Central Bank of Ireland regulation\" (Interactive Brokers Ireland Limited); \"As a UK resident, you will be under this legal entity\" (Interactive Brokers UK Limited); \"Interactive Brokers Luxembourg and Central have been extinct/merged.\""
+        }
+      ]
+    },
+    {
+      "id": "bg-lending-schwab-unavailable",
+      "fact": "lending",
+      "cities": [
+        "plovdiv"
+      ],
+      "claim": "Schwab International is unavailable: Bulgaria is not on its reported list",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab International is reportedly unavailable (Bulgaria is not on its reported list)",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026; read again on 2026-11-15 for Greece, Cyprus, Croatia and Bulgaria. The 51 countries and regions Schwab's international application accepted that day include Greece; Croatia is one of 12 named as not accepted; Cyprus and Bulgaria are not mentioned (the page says about 200 other countries and regions got a \"cannot open accounts\" message). It quotes the Schwab One Account Agreement: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds from their account.\""
+        }
+      ],
+      "note": "Bulgaria is not among the 51 accepted on the one dated list, re-read on 2026-11-15, and is not one of the 12 it names as refused."
+    },
+    {
+      "id": "bg-lending-ibkr-margin-cash-out",
+      "fact": "lending",
+      "cities": [
+        "plovdiv"
+      ],
+      "claim": "A Bulgaria resident can borrow against the portfolio at IBKR (implied by naming IBKR as the one broker, \"with margin terms per country unknown\")",
+      "verdict": "corrected",
+      "shared": "ibkr-eu-margin-cash-out",
+      "oldWording": "with margin terms per country unknown; Schwab International is reportedly unavailable (Bulgaria",
+      "newWording": "and IBKR's EU entity reportedly lends on margin only to buy securities, not to withdraw as cash, so confirm how you would draw cash before relying on it",
+      "sources": [
+        {
+          "name": "LYNX: Withdrawal (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/payments-and-transfers/withdrawal/",
+          "read": "2026-11-15",
+          "says": "\"It is not possible to withdraw in a currency if your cash balance is negative or would go negative after the withdrawal.\" In a margin account \"some funds may be used as collateral for other positions or to cover negative cash balances\", which lowers what can be withdrawn. The page is undated (footer: Copyright 2023)."
+        },
+        {
+          "name": "CapTrader: Geld abheben (help page of a German introducing broker for Interactive Brokers)",
+          "url": "https://www.captrader.com/geld-abheben/",
+          "read": "2026-11-15",
+          "says": "\"Auszahlungen sind nur möglich, wenn kein negativer Saldo in der entsprechenden Währung\" or in the total cash arises or grows: withdrawals are possible only if they do not create or increase a negative balance. Footer: © CapTrader 2026."
+        },
+        {
+          "name": "Interactive Brokers Ireland Limited: Customer Agreement (document 4750, 7/1/2023), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/01_4750_IBIE_Customer_Agreement_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "Clause 2A(i)(d) defines the margin service as one \"to enable Clients to acquire investment instruments\". Clause 5A(iv): \"Terms and conditions for deposit and withdrawal of funds (including holding periods) are as specified on the IBIE website.\" The agreement does not say that a loan may be withdrawn as cash."
+        },
+        {
+          "name": "Mustachian Post forum: Using margin loan at Interactive Brokers, page 13",
+          "url": "https://forum.mustachianpost.com/t/using-margin-loan-at-interactive-brokers/3980?page=13",
+          "read": "2026-11-15",
+          "says": "Posts of September to November 2024. One poster says withdrawing cash on margin is \"not possible in Germany with IB IE\" but is with IB UK; Swiss residents with IB UK accounts report having done it; another reports IBKR service saying \"IBUK customers can no longer withdraw cash if aggregate cash balance is -ve\", which a manager then said applies only to UK residents."
+        }
+      ],
+      "also": [
+        "scores.lending 3→2 (plan decision of 2026-11-15; rubric 2: IBKR only and even that uncertain, or EU residence)",
+        "summary: added the closing sentence \"The borrow step is weak too: Schwab is reportedly unavailable to Bulgaria residents, and IBKR reportedly bars EU residents from drawing margin as cash.\"",
+        "drawbacks: none mentioned margin or brokers, so none was reworded and none was added; the summary sentence carries it",
+        "sources: added LYNX withdrawal page",
+        "\"with margin terms per country unknown\" dropped: the clause that replaces it says what is reported about margin"
+      ],
+      "rankFlag": "Plovdiv (pick 44) now scores lending 2. Its `why` does not mention borrowing, so it is not contradicted. Rank and `why` are unchanged: user's call.",
+      "note": "Worded as for Malta: the standard clause ending \"before relying on it\" (one broker). Shared sources are copied with their stage 1 read date; the LYNX page was not re-read."
+    },
+    {
+      "id": "bg-lending-priips-new-buys",
+      "fact": "lending",
+      "cities": [
+        "plovdiv"
+      ],
+      "claim": "EU PRIIPs rules block new buys of US-listed ETFs",
+      "verdict": "confirmed",
+      "shared": "priips-us-etf-new-buys-blocked",
+      "sources": [
+        {
+          "name": "LYNX: Key Information Document (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/products-and-regulations/regulations/key-information-document/",
+          "read": "2026-11-15",
+          "says": "Retail clients are \"not permitted to trade ETFs or other products that do not have a valid KID\"; many non-EU ETFs have none. Can a retail client buy US ETFs? \"No, not unless you are classified as a professional investor.\" The same applies to ETFs from Canada, Hong Kong, Mexico and Australia. The KID has applied to most products since 1 January 2018."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. \"PRIIPs is an EU rule that prohibits buying US-listed ETFs\", and this also applies to UK investors; US ETFs are open only to elective professional clients, while UCITS ETFs are available to all Europeans."
+        }
+      ],
+      "note": "The profile's \"reportedly\" stays; it does no harm."
+    },
+    {
+      "id": "bg-lending-priips-holdings-kept",
+      "fact": "lending",
+      "cities": [
+        "plovdiv"
+      ],
+      "claim": "The block is on buying, not on holding US-listed ETFs",
+      "verdict": "confirmed",
+      "shared": "priips-existing-holdings-kept",
+      "sources": [
+        {
+          "name": "LYNX: Key Information Document (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/products-and-regulations/regulations/key-information-document/",
+          "read": "2026-11-15",
+          "says": "The page's FAQ says retail clients \"may still hold or sell existing positions, but new purchases are restricted.\""
+        },
+        {
+          "name": "Regulation (EU) No 1286/2014, Article 13, as adopted (legislation.gov.uk copy of the EU text)",
+          "url": "https://www.legislation.gov.uk/eur/2014/1286/article/13/adopted",
+          "read": "2026-11-15",
+          "says": "The duty to provide a KID falls on \"a person advising on, or selling, a PRIIP\" before the retail investor is bound; nothing in the article reaches a PRIIP the investor already holds or a sale by the investor."
+        }
+      ]
+    },
+    {
+      "id": "bg-visa-pensioner-d",
+      "fact": "visa",
+      "cities": [
+        "plovdiv"
+      ],
+      "claim": "The route is a pensioner D visa, then a residence permit renewed for up to a year at a time, and it needs a right to a pension",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Innovires: type D visa for Bulgaria",
+          "url": "https://innovires.com/en/blog/viza-d-bulgaria.html",
+          "read": "2026-11-15",
+          "says": "Published March 19, 2026; last updated October 8, 2026. Art. 24(1)(10): \"Right to a pension under Bulgarian or foreign law and sufficient means of subsistence.\" Means of \"not less than the Bulgarian minimum monthly wage (EUR 620.20 as at 2026)\" (Art. 24(2)). A long-stay permit is issued for up to one year unless the law provides otherwise. Art. 24(1)(19): \"At least BGN 600,000 (EUR 306,775.13) in Bulgarian real estate.\" Insurance with \"cover of at least EUR 30,000 for repatriation, emergency care and hospital treatment\". Every ground listed has its own requirement; none is savings alone."
+        }
+      ],
+      "note": "mfa.bg's D visa sheets are PDFs (https://www.mfa.bg/upload/99380/2_Visa_D.pdf, https://mfa.bg/upload/716/VISA_TYPE_D.pdf) and could not be read here; a law-firm page updated October 2026 was used. Summary, drawback 1 and Plovdiv's `why` (\"residence needs a pension\") agree; scores.visa stays 3 (a pension requirement)."
+    },
+    {
+      "id": "bg-visa-us-social-security",
+      "fact": "visa",
+      "cities": [
+        "plovdiv"
+      ],
+      "claim": "US Social Security should count as the pension",
+      "verdict": "cant-confirm",
+      "hedge": "an inference",
+      "wording": "US Social Security should qualify, an inference",
+      "sources": [
+        {
+          "name": "Innovires: type D visa for Bulgaria",
+          "url": "https://innovires.com/en/blog/viza-d-bulgaria.html",
+          "read": "2026-11-15",
+          "says": "Published March 19, 2026; last updated October 8, 2026. Art. 24(1)(10): \"Right to a pension under Bulgarian or foreign law and sufficient means of subsistence.\" Means of \"not less than the Bulgarian minimum monthly wage (EUR 620.20 as at 2026)\" (Art. 24(2)). A long-stay permit is issued for up to one year unless the law provides otherwise. Art. 24(1)(19): \"At least BGN 600,000 (EUR 306,775.13) in Bulgarian real estate.\" Insurance with \"cover of at least EUR 30,000 for repatriation, emergency care and hospital treatment\". Every ground listed has its own requirement; none is savings alone."
+        }
+      ],
+      "note": "The ground is a right to a pension \"under Bulgarian or foreign law\"; no page read names US Social Security. The profile's own hedge stays."
+    },
+    {
+      "id": "bg-visa-means-minimum-wage",
+      "fact": "visa",
+      "cities": [
+        "plovdiv"
+      ],
+      "claim": "Means of at least the minimum wage, €620.20/month (2026), are required",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Innovires: type D visa for Bulgaria",
+          "url": "https://innovires.com/en/blog/viza-d-bulgaria.html",
+          "read": "2026-11-15",
+          "says": "Published March 19, 2026; last updated October 8, 2026. Art. 24(1)(10): \"Right to a pension under Bulgarian or foreign law and sufficient means of subsistence.\" Means of \"not less than the Bulgarian minimum monthly wage (EUR 620.20 as at 2026)\" (Art. 24(2)). A long-stay permit is issued for up to one year unless the law provides otherwise. Art. 24(1)(19): \"At least BGN 600,000 (EUR 306,775.13) in Bulgarian real estate.\" Insurance with \"cover of at least EUR 30,000 for repatriation, emergency care and hospital treatment\". Every ground listed has its own requirement; none is savings alone."
+        },
+        {
+          "name": "Innovires: health insurance for foreigners in Bulgaria",
+          "url": "https://innovires.com/tax-residency/blog/bulgaria-health-insurance-foreigners.html",
+          "read": "2026-11-15",
+          "says": "Published March 14, 2026; last updated August 3, 2026. Self-insured persons pay \"8% of declared income\"; from 1 August 2026 \"the minimum monthly insurable income for self-insured persons is EUR 620.20\" (EUR 550.66 before), about EUR 50 a month. Private policies for a permit \"require minimum coverage of EUR 30,000 for medical expenses and repatriation.\" Anyone \"tax resident in Bulgaria (spending 183+ days per year) must pay health insurance contributions to the NHIF.\""
+        }
+      ]
+    },
+    {
+      "id": "bg-visa-no-savings-route",
+      "fact": "visa",
+      "cities": [
+        "plovdiv"
+      ],
+      "claim": "A law firm found no ground for savings-only applicants",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Innovires: type D visa for Bulgaria",
+          "url": "https://innovires.com/en/blog/viza-d-bulgaria.html",
+          "read": "2026-11-15",
+          "says": "Published March 19, 2026; last updated October 8, 2026. Art. 24(1)(10): \"Right to a pension under Bulgarian or foreign law and sufficient means of subsistence.\" Means of \"not less than the Bulgarian minimum monthly wage (EUR 620.20 as at 2026)\" (Art. 24(2)). A long-stay permit is issued for up to one year unless the law provides otherwise. Art. 24(1)(19): \"At least BGN 600,000 (EUR 306,775.13) in Bulgarian real estate.\" Insurance with \"cover of at least EUR 30,000 for repatriation, emergency care and hospital treatment\". Every ground listed has its own requirement; none is savings alone."
+        }
+      ]
+    },
+    {
+      "id": "bg-visa-investment-route",
+      "fact": "visa",
+      "cities": [
+        "plovdiv"
+      ],
+      "claim": "The investment route needs about €307k in Bulgarian property",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Innovires: type D visa for Bulgaria",
+          "url": "https://innovires.com/en/blog/viza-d-bulgaria.html",
+          "read": "2026-11-15",
+          "says": "Published March 19, 2026; last updated October 8, 2026. Art. 24(1)(10): \"Right to a pension under Bulgarian or foreign law and sufficient means of subsistence.\" Means of \"not less than the Bulgarian minimum monthly wage (EUR 620.20 as at 2026)\" (Art. 24(2)). A long-stay permit is issued for up to one year unless the law provides otherwise. Art. 24(1)(19): \"At least BGN 600,000 (EUR 306,775.13) in Bulgarian real estate.\" Insurance with \"cover of at least EUR 30,000 for repatriation, emergency care and hospital treatment\". Every ground listed has its own requirement; none is savings alone."
+        }
+      ]
+    },
+    {
+      "id": "bg-healthcare-eurohospital",
+      "fact": "healthcare",
+      "cities": [
+        "plovdiv"
+      ],
+      "claim": "Eurohospital Plovdiv is the private hospital the UK embassy lists in the city",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "GOV.UK: Bulgaria, list of medical facilities",
+          "url": "https://www.gov.uk/government/publications/bulgaria-list-of-medical-facilities/bulgaria-doctors",
+          "read": "2026-11-15",
+          "says": "Updated 17 February 2021. One facility is listed for Plovdiv: Eurohospital Plovdiv, private (general medicine, surgery). Sofia entries include Acibadem City Clinic University Hospital (private) and UMBALSM N.I. Pirogov (public)."
+        }
+      ],
+      "note": "The GOV.UK list was last updated in February 2021. The hospital's own site could not be read (https://www.eurohospital.bg/en/ returned HTTP 404), so its current name was not checked there. Plovdiv's `why` (\"private care at Eurohospital\") agrees."
+    },
+    {
+      "id": "bg-healthcare-acibadem-office",
+      "fact": "healthcare",
+      "cities": [
+        "plovdiv"
+      ],
+      "claim": "Acibadem's Plovdiv office only coordinates patients",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Acibadem International: Plovdiv office",
+          "url": "https://acibademinternational.com/international-offices/office-bulgaria-plovdiv/",
+          "read": "2026-11-15",
+          "says": "\"The Plovdiv office is a patient-support and coordination office, not a clinic.\" It forwards reports, arranges consultations and travel; treatment is at an Acıbadem hospital in Turkey."
+        }
+      ]
+    },
+    {
+      "id": "bg-healthcare-sofia-jci",
+      "fact": "healthcare",
+      "cities": [
+        "plovdiv"
+      ],
+      "claim": "Serious cases go to Sofia (Acibadem City Clinic, JCI), 144 km away",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Acibadem International: Acibadem City Clinic Tokuda Hospital",
+          "url": "https://acibademinternational.com/hospital/acibadem-city-clinic-tokuda-hospital/",
+          "read": "2026-11-15",
+          "says": "Footer 2026. A \"550-bed general-purpose hospital in Sofia's Lozenets district\" at 51B Nikola Y. Vaptsarov Blvd; it \"holds JCI accreditation\". No accreditation date on the page."
+        },
+        {
+          "name": "Wikipedia: Plovdiv",
+          "url": "https://en.wikipedia.org/wiki/Plovdiv",
+          "read": "2026-11-15",
+          "says": "Plovdiv is \"located 144 km (93 miles) southeast of the capital Sofia.\""
+        }
+      ],
+      "note": "A search result, not a page read, shows the group's Bulgarian \"about us\" page naming two other Acibadem City Clinic hospitals in Sofia as the JCI-accredited ones; either way an Acibadem City Clinic hospital in Sofia is JCI-accredited, which is all the profile says. 144 km is the city-to-city distance. Summary and `why` agree."
+    },
+    {
+      "id": "bg-healthcare-private-cover-30k",
+      "fact": "healthcare",
+      "cities": [
+        "plovdiv"
+      ],
+      "claim": "The permit needs private cover of at least €30,000",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Innovires: type D visa for Bulgaria",
+          "url": "https://innovires.com/en/blog/viza-d-bulgaria.html",
+          "read": "2026-11-15",
+          "says": "Published March 19, 2026; last updated October 8, 2026. Art. 24(1)(10): \"Right to a pension under Bulgarian or foreign law and sufficient means of subsistence.\" Means of \"not less than the Bulgarian minimum monthly wage (EUR 620.20 as at 2026)\" (Art. 24(2)). A long-stay permit is issued for up to one year unless the law provides otherwise. Art. 24(1)(19): \"At least BGN 600,000 (EUR 306,775.13) in Bulgarian real estate.\" Insurance with \"cover of at least EUR 30,000 for repatriation, emergency care and hospital treatment\". Every ground listed has its own requirement; none is savings alone."
+        },
+        {
+          "name": "Innovires: health insurance for foreigners in Bulgaria",
+          "url": "https://innovires.com/tax-residency/blog/bulgaria-health-insurance-foreigners.html",
+          "read": "2026-11-15",
+          "says": "Published March 14, 2026; last updated August 3, 2026. Self-insured persons pay \"8% of declared income\"; from 1 August 2026 \"the minimum monthly insurable income for self-insured persons is EUR 620.20\" (EUR 550.66 before), about EUR 50 a month. Private policies for a permit \"require minimum coverage of EUR 30,000 for medical expenses and repatriation.\" Anyone \"tax resident in Bulgaria (spending 183+ days per year) must pay health insurance contributions to the NHIF.\""
+        }
+      ]
+    },
+    {
+      "id": "bg-healthcare-nhif-self-insured",
+      "fact": "healthcare",
+      "cities": [
+        "plovdiv"
+      ],
+      "claim": "Joining public NHIF as self-insured costs 8% of declared income, about €50/month at the minimum base",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Innovires: health insurance for foreigners in Bulgaria",
+          "url": "https://innovires.com/tax-residency/blog/bulgaria-health-insurance-foreigners.html",
+          "read": "2026-11-15",
+          "says": "Published March 14, 2026; last updated August 3, 2026. Self-insured persons pay \"8% of declared income\"; from 1 August 2026 \"the minimum monthly insurable income for self-insured persons is EUR 620.20\" (EUR 550.66 before), about EUR 50 a month. Private policies for a permit \"require minimum coverage of EUR 30,000 for medical expenses and repatriation.\" Anyone \"tax resident in Bulgaria (spending 183+ days per year) must pay health insurance contributions to the NHIF.\""
+        },
+        {
+          "name": "PwC: Bulgaria, individual, other taxes",
+          "url": "https://taxsummaries.pwc.com/bulgaria/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 02 August 2026. \"There are no net wealth/worth taxes in Bulgaria.\" \"The aggregate rate of health insurance contributions is 8%\". \"The minimum monthly insurance base for freelancers is EUR 550.66 from 1 January 2026 until 31 July.\" The page has no inheritance or gift tax section."
+        }
+      ],
+      "note": "nhif.bg was not searched for a page on this. 8% of the EUR 620.20 minimum base from 1 August 2026 is EUR 49.62. Whether a long-term (not permanent) resident may join was not settled by any page read; the profile does not say who may."
+    }
+  ]
+}

@@ -1,0 +1,775 @@
+{
+  "country": "Greece",
+  "cities": [
+    "athens",
+    "crete"
+  ],
+  "claims": [
+    {
+      "id": "gr-tax-no-wealth-tax",
+      "fact": "tax",
+      "cities": [
+        "athens",
+        "crete"
+      ],
+      "claim": "Greece has no wealth tax; ENFIA is a tax on Greek real estate only",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: quick chart, net wealth/worth tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/net-wealth-worth-tax-rates",
+          "read": "2026-11-15",
+          "says": "Headline net wealth/worth tax rate: Greece \"NA\" (last reviewed 08 September 2026), Cyprus \"NA\" (04 August 2026), Croatia \"NA\" (27 August 2026), Bulgaria \"NA\" (02 August 2026). \"NA\" is defined as \"Not Applicable (i.e. the territory does not have the indicated tax or requirement)\"."
+        },
+        {
+          "name": "PwC: Greece, individual, other taxes",
+          "url": "https://taxsummaries.pwc.com/greece/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 08 September 2026. The page has no net wealth tax section; ENFIA applies to rights over Greek real estate held on 1 January each year. Inheritance tax, Category A (spouse, first-degree descendants, second-degree blood descendants, first-degree blood ascendants): first EUR 150,000 tax-free, EUR 150,000 to 300,000 at 1%, EUR 300,000 to 600,000 at 5%, above EUR 600,000 at 10%. Property in Greece is taxed \"regardless of the descendant's nationality\"; \"Immovable assets located abroad are not subject to Greek Inheritance Tax, regardless of nationality and residency.\""
+        }
+      ],
+      "note": "localTaxes.ts agrees: GR has no wealth entry and its note says \"No wealth tax (ENFIA is Greek real estate only)\"."
+    },
+    {
+      "id": "gr-tax-dividends-5",
+      "fact": "tax",
+      "cities": [
+        "athens",
+        "crete"
+      ],
+      "claim": "Residents pay a 5% final tax on dividends",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Greece, individual, income determination",
+          "url": "https://taxsummaries.pwc.com/greece/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 08 September 2026. \"Dividends are subject to a withholding tax (WHT) of 5%\", which for individuals satisfies the full tax liability. \"Interests are subject to a WHT of 15%\"; interest on listed corporate bonds earned from 11 April 2025 is taxed at 5%. Gains on listed shares are taxed at 15% where \"the transferor holds at least 0.5% of the share capital\" and are exempt when the transferor \"holds less than 0.5% of the share capital\"; gains from \"Greek and EU/EEA UCITS (Mutual Funds)\" are exempt. The page says nothing on foreign-listed shares or non-EU funds."
+        }
+      ],
+      "note": "PwC states it as a withholding that settles an individual's liability; for a dividend paid by a US broker with no Greek withholding, the same 5% is what the resident declares. aade.gr returned HTTP 403 (https://aade.gr/en/greeks-abroad-non-residents/income-taxation/alternative-taxation-5a-5b-5c was the page tried), so no AADE page was read for any Greek tax claim. Athens' `why` in expatPicks.ts (\"Greece taxes dividends at 5%\") agrees."
+    },
+    {
+      "id": "gr-tax-interest-15",
+      "fact": "tax",
+      "cities": [
+        "athens",
+        "crete"
+      ],
+      "claim": "Residents pay 15% on interest",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Greece, individual, income determination",
+          "url": "https://taxsummaries.pwc.com/greece/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 08 September 2026. \"Dividends are subject to a withholding tax (WHT) of 5%\", which for individuals satisfies the full tax liability. \"Interests are subject to a WHT of 15%\"; interest on listed corporate bonds earned from 11 April 2025 is taxed at 5%. Gains on listed shares are taxed at 15% where \"the transferor holds at least 0.5% of the share capital\" and are exempt when the transferor \"holds less than 0.5% of the share capital\"; gains from \"Greek and EU/EEA UCITS (Mutual Funds)\" are exempt. The page says nothing on foreign-listed shares or non-EU funds."
+        }
+      ],
+      "note": "PwC adds a 5% rate for interest on listed corporate bonds from 11 April 2025; the profiles give the general rate and were left as they are."
+    },
+    {
+      "id": "gr-tax-gains-under-half-percent",
+      "fact": "tax",
+      "cities": [
+        "athens"
+      ],
+      "claim": "Gains on listed holdings under 0.5% of the company are exempt",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Greece, individual, income determination",
+          "url": "https://taxsummaries.pwc.com/greece/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 08 September 2026. \"Dividends are subject to a withholding tax (WHT) of 5%\", which for individuals satisfies the full tax liability. \"Interests are subject to a WHT of 15%\"; interest on listed corporate bonds earned from 11 April 2025 is taxed at 5%. Gains on listed shares are taxed at 15% where \"the transferor holds at least 0.5% of the share capital\" and are exempt when the transferor \"holds less than 0.5% of the share capital\"; gains from \"Greek and EU/EEA UCITS (Mutual Funds)\" are exempt. The page says nothing on foreign-listed shares or non-EU funds."
+        }
+      ],
+      "note": "PwC states the exemption for listed shares and for Greek and EU/EEA UCITS; it is silent on shares listed outside the EU and on US-domiciled ETFs, so the profile's short wording is as far as the page goes. Crete's tax fact has no such clause."
+    },
+    {
+      "id": "gr-tax-5b-needs-pension",
+      "fact": "tax",
+      "cities": [
+        "athens",
+        "crete"
+      ],
+      "claim": "The 7% Art. 5B regime needs a foreign pension",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Greece, individual, other tax credits and incentives",
+          "url": "https://taxsummaries.pwc.com/greece/individual/other-tax-credits-and-incentives",
+          "read": "2026-11-15",
+          "says": "Last reviewed 08 September 2026. Foreign pensioners who have not been Greek tax residents \"for the previous five of the six years prior to the transfer\" and who move from a state with an administrative cooperation agreement: \"Every tax year, individuals will pay tax at a rate of 7% on their foreign-sourced income.\" Non-dom regime: the applicant must have \"invested at least EUR 500,000 in real estate, businesses, or transferable securities or shares in legal entities based in Greece\", pays EUR 100,000 a year, \"for a maximum of 15 fiscal years\"; for relatives added at EUR 20,000 a year each \"the provisions of inheritance, gift, and parental grant tax will not apply.\""
+        },
+        {
+          "name": "International Bar Association: preferential tax regimes for individuals moving their tax residency to Greece",
+          "url": "https://www.ibanet.org/preferential-tax-regimes-for-individuals-moving-their-tax-residency-to-Greece",
+          "read": "2026-11-15",
+          "says": "Dated 13 November 2024. Art. 5B: \"the total foreign-source income of the individual is subject to an annual flat tax rate of seven per cent\"; \"the 5B regime covers a maximum of 15 tax years\"; the applicant must receive a foreign pension and \"must not have been a Greek tax resident for five out of the six years prior to the application\". Art. 5A: \"a lump sum annual tax of €100,000\", an investment of \"at least €500,000\", \"a maximum of 15 tax years\"; \"property located abroad is exempt from Greek inheritance and gift tax.\""
+        },
+        {
+          "name": "Crowe Greece: alternative tax regimes",
+          "url": "https://www.crowe.com/gr/services/tax-advice-services/alternative-tax-regimes",
+          "read": "2026-11-15",
+          "says": "Cites AADE decisions A.1147/2026 and A.1192/2026. Art. 5B: \"Pensioners who move their tax residence to Greece\" pay a \"flat 7% tax\" on \"all their foreign-source income\" \"for up to 15 years\"; \"No Greek tax residence in 5 of the 6 years before the move\". Art. 5A: a \"flat annual tax of €100,000 on all their foreign-source income, whatever the amount\", for up to 15 years, with \"An investment of at least €500,000 in Greece\"; \"assets held abroad are exempt from Greek inheritance and gift tax.\""
+        }
+      ]
+    },
+    {
+      "id": "gr-tax-5b-covers-investment-income",
+      "fact": "tax",
+      "cities": [
+        "athens",
+        "crete"
+      ],
+      "claim": "Whether the 7% Art. 5B regime covers investment income is unverified",
+      "verdict": "corrected",
+      "oldWording": "(whether it covers investment income is unverified)",
+      "newWording": "and then taxes all foreign-source income, dividends included, at 7% for up to 15 years",
+      "sources": [
+        {
+          "name": "PwC: Greece, individual, other tax credits and incentives",
+          "url": "https://taxsummaries.pwc.com/greece/individual/other-tax-credits-and-incentives",
+          "read": "2026-11-15",
+          "says": "Last reviewed 08 September 2026. Foreign pensioners who have not been Greek tax residents \"for the previous five of the six years prior to the transfer\" and who move from a state with an administrative cooperation agreement: \"Every tax year, individuals will pay tax at a rate of 7% on their foreign-sourced income.\" Non-dom regime: the applicant must have \"invested at least EUR 500,000 in real estate, businesses, or transferable securities or shares in legal entities based in Greece\", pays EUR 100,000 a year, \"for a maximum of 15 fiscal years\"; for relatives added at EUR 20,000 a year each \"the provisions of inheritance, gift, and parental grant tax will not apply.\""
+        },
+        {
+          "name": "International Bar Association: preferential tax regimes for individuals moving their tax residency to Greece",
+          "url": "https://www.ibanet.org/preferential-tax-regimes-for-individuals-moving-their-tax-residency-to-Greece",
+          "read": "2026-11-15",
+          "says": "Dated 13 November 2024. Art. 5B: \"the total foreign-source income of the individual is subject to an annual flat tax rate of seven per cent\"; \"the 5B regime covers a maximum of 15 tax years\"; the applicant must receive a foreign pension and \"must not have been a Greek tax resident for five out of the six years prior to the application\". Art. 5A: \"a lump sum annual tax of €100,000\", an investment of \"at least €500,000\", \"a maximum of 15 tax years\"; \"property located abroad is exempt from Greek inheritance and gift tax.\""
+        },
+        {
+          "name": "Crowe Greece: alternative tax regimes",
+          "url": "https://www.crowe.com/gr/services/tax-advice-services/alternative-tax-regimes",
+          "read": "2026-11-15",
+          "says": "Cites AADE decisions A.1147/2026 and A.1192/2026. Art. 5B: \"Pensioners who move their tax residence to Greece\" pay a \"flat 7% tax\" on \"all their foreign-source income\" \"for up to 15 years\"; \"No Greek tax residence in 5 of the 6 years before the move\". Art. 5A: a \"flat annual tax of €100,000 on all their foreign-source income, whatever the amount\", for up to 15 years, with \"An investment of at least €500,000 in Greece\"; \"assets held abroad are exempt from Greek inheritance and gift tax.\""
+        }
+      ],
+      "also": [
+        "scores.tax stays 4: the ordinary 5% on dividends and 15% on interest are unchanged, and the regime is optional",
+        "drawback \"the 7% regime needs a pension\" (Athens) still true, not changed",
+        "sources: added Crowe Greece (Art. 5A, 5B) to both"
+      ],
+      "note": "Three pages agree that the 7% applies to all foreign-source income, not only the pension, for up to 15 tax years (the 15 years is on the IBA and Crowe pages; PwC gives no term). The consequence the new wording spells out: under 5B a US dividend pays 7%, more than the ordinary 5%, so the regime helps on pension and interest income (15% otherwise) rather than on dividends. cities.ts carries a country note (\"7% flat tax on foreign-source income for qualifying relocating pensioners\") that agrees. AADE's own page returned HTTP 403."
+    },
+    {
+      "id": "gr-tax-5a-lump-sum",
+      "fact": "tax",
+      "cities": [
+        "athens",
+        "crete"
+      ],
+      "claim": "The Art. 5A regime is a €100k/yr lump sum and needs a €500k Greek investment",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Greece, individual, other tax credits and incentives",
+          "url": "https://taxsummaries.pwc.com/greece/individual/other-tax-credits-and-incentives",
+          "read": "2026-11-15",
+          "says": "Last reviewed 08 September 2026. Foreign pensioners who have not been Greek tax residents \"for the previous five of the six years prior to the transfer\" and who move from a state with an administrative cooperation agreement: \"Every tax year, individuals will pay tax at a rate of 7% on their foreign-sourced income.\" Non-dom regime: the applicant must have \"invested at least EUR 500,000 in real estate, businesses, or transferable securities or shares in legal entities based in Greece\", pays EUR 100,000 a year, \"for a maximum of 15 fiscal years\"; for relatives added at EUR 20,000 a year each \"the provisions of inheritance, gift, and parental grant tax will not apply.\""
+        },
+        {
+          "name": "International Bar Association: preferential tax regimes for individuals moving their tax residency to Greece",
+          "url": "https://www.ibanet.org/preferential-tax-regimes-for-individuals-moving-their-tax-residency-to-Greece",
+          "read": "2026-11-15",
+          "says": "Dated 13 November 2024. Art. 5B: \"the total foreign-source income of the individual is subject to an annual flat tax rate of seven per cent\"; \"the 5B regime covers a maximum of 15 tax years\"; the applicant must receive a foreign pension and \"must not have been a Greek tax resident for five out of the six years prior to the application\". Art. 5A: \"a lump sum annual tax of €100,000\", an investment of \"at least €500,000\", \"a maximum of 15 tax years\"; \"property located abroad is exempt from Greek inheritance and gift tax.\""
+        }
+      ]
+    },
+    {
+      "id": "gr-estate-category-a-scale",
+      "fact": "estate",
+      "cities": [
+        "athens",
+        "crete"
+      ],
+      "claim": "Children pay 0% on the first €150k, then 1%, 5% and 10% above €600k, per heir",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Greek Ministry of Finance: tax guide, property (capital) taxation",
+          "url": "https://minfin.gov.gr/en/tax-policy/tax-guide/capital-taxation/",
+          "read": "2026-11-15",
+          "says": "Undated; cites Law 5219/2025 (Property Tax Code, 18 July 2025). Inheritance tax falls on \"any type of property located in Greece, belonging either to Greek nationals or to foreigners\" and on \"Tangible or intangible movable property located abroad belonging to a Greek national\", \"as well as to a foreigner residing in Greece\", subject to Article 75(2)(c). Category A scale: 0 to 150,000 at 0%; 150,001 to 300,000 at 1%; 300,001 to 600,000 at 5%; above 600,000 at 10% (cumulative tax 1,500 and 16,500)."
+        },
+        {
+          "name": "PwC: Greece, individual, other taxes",
+          "url": "https://taxsummaries.pwc.com/greece/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 08 September 2026. The page has no net wealth tax section; ENFIA applies to rights over Greek real estate held on 1 January each year. Inheritance tax, Category A (spouse, first-degree descendants, second-degree blood descendants, first-degree blood ascendants): first EUR 150,000 tax-free, EUR 150,000 to 300,000 at 1%, EUR 300,000 to 600,000 at 5%, above EUR 600,000 at 10%. Property in Greece is taxed \"regardless of the descendant's nationality\"; \"Immovable assets located abroad are not subject to Greek Inheritance Tax, regardless of nationality and residency.\""
+        },
+        {
+          "name": "PwC: quick chart, inheritance and gift tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates",
+          "read": "2026-11-15",
+          "says": "Greece (08 September 2026): inheritance \"Category A: 10; Category B: 20; Category C: 40\". Cyprus (04 August 2026): inheritance \"NA\"; gift \"Nil if up to a third degree relative.\" Croatia (27 August 2026): \"4\" and \"4\". Bulgaria (02 August 2026): \"Varies depending on category of the heir and the amount of the inheritance.\"; gift 3.3% to 6.6% to the municipalities."
+        }
+      ],
+      "note": "localTaxes.ts agrees: GR bands are 1% from €150k, 5% from €300k, 10% from €600k with no separate allowance, per heir. Athens' `why` (\"no more than 10% above €600k\") and the drawback \"Inheritance tax of up to 10% reaches a US portfolio above €600k per child\" agree with the Category A scale."
+    },
+    {
+      "id": "gr-estate-movables-abroad-in-scope",
+      "fact": "estate",
+      "cities": [
+        "athens",
+        "crete"
+      ],
+      "claim": "A foreign national resident in Greece is taxed on movable assets abroad, such as a US brokerage account",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Greek Ministry of Finance: tax guide, property (capital) taxation",
+          "url": "https://minfin.gov.gr/en/tax-policy/tax-guide/capital-taxation/",
+          "read": "2026-11-15",
+          "says": "Undated; cites Law 5219/2025 (Property Tax Code, 18 July 2025). Inheritance tax falls on \"any type of property located in Greece, belonging either to Greek nationals or to foreigners\" and on \"Tangible or intangible movable property located abroad belonging to a Greek national\", \"as well as to a foreigner residing in Greece\", subject to Article 75(2)(c). Category A scale: 0 to 150,000 at 0%; 150,001 to 300,000 at 1%; 300,001 to 600,000 at 5%; above 600,000 at 10% (cumulative tax 1,500 and 16,500)."
+        },
+        {
+          "name": "TaxLaw (Iason Skouzos): Greek inheritance tax on assets in Greece and the United States",
+          "url": "https://www.taxlaw.gr/?p=9111",
+          "read": "2026-11-15",
+          "says": "Dated 30 March 2026. The Greece–US convention on \"taxes on the estates of deceased persons\" was ratified by Legislative Decree 2734/1953 (Government Gazette A' 329, 12.11.1953). Shares are treated as located where the company is organised; bonds, deposits and other claims where the deceased resided; the state of residence or citizenship gives a deduction for the other state's tax on assets located there. The signing date is not given."
+        }
+      ],
+      "note": "The Ministry page states the rule with a cross-reference to Article 75(2)(c) that it does not spell out; a search result (not a page read) says that article exempts Greek citizens settled abroad for 5 years, which would not help a foreigner living in Greece. The profiles' \"generally\" stays. localTaxes.ts models it as applying and says the treaty is ignored; under the treaty as the law-firm page describes it, shares count as located where the company is organised and Greece credits the US tax on them, which would matter only for an estate above the US exemption. No mismatch to record."
+    },
+    {
+      "id": "gr-estate-treaty-exists",
+      "fact": "estate",
+      "cities": [
+        "athens",
+        "crete"
+      ],
+      "claim": "A US–Greece estate tax treaty exists",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-with",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "All 13 countries are in the table (see us-estate-treaty-list). Estate & Gift: Australia, Austria, France, Germany, Japan, United Kingdom. Estate only: Greece, Ireland, Italy, Netherlands, South Africa, Switzerland, and Canada by Article XXIX B of the income tax treaty."
+        }
+      ]
+    },
+    {
+      "id": "gr-estate-treaty-1950",
+      "fact": "estate",
+      "cities": [
+        "athens",
+        "crete"
+      ],
+      "claim": "The US–Greece estate tax treaty dates from 1950",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Scribd: Convention and protocol between the United States of America and Greece (income tax; Senate print with transmittal letter)",
+          "url": "https://www.scribd.com/doc/73572420",
+          "read": "2026-11-15",
+          "says": "The income tax convention \"signed at Athens on February 20, 1950\", protocol signed at Athens April 20, 1953, in force December 30, 1953. The transmittal letter says it was sent \"together with another relating to taxes on estates of deceased persons\"."
+        },
+        {
+          "name": "TaxLaw (Iason Skouzos): Greek inheritance tax on assets in Greece and the United States",
+          "url": "https://www.taxlaw.gr/?p=9111",
+          "read": "2026-11-15",
+          "says": "Dated 30 March 2026. The Greece–US convention on \"taxes on the estates of deceased persons\" was ratified by Legislative Decree 2734/1953 (Government Gazette A' 329, 12.11.1953). Shares are treated as located where the company is organised; bonds, deposits and other claims where the deceased resided; the state of residence or citizenship gives a deduction for the other state's tax on assets located there. The signing date is not given."
+        }
+      ],
+      "note": "The estate convention's own text was not read: the IRS page for Greece (https://www.irs.gov/businesses/international-businesses/greece-tax-treaty-documents) lists only the 1950 income tax treaty, the catalogue records that give \"signed at Athens February 20, 1950\" for the estate convention returned HTTP 403 (mocat.library.unt.edu) or a bot check (catalog.princeton.edu). The year rests on the transmittal letter printed with the income tax convention, which says the two were signed and sent together, and on the Greek ratification in 1953."
+    },
+    {
+      "id": "gr-estate-treaty-one-of-three",
+      "fact": "estate",
+      "cities": [
+        "athens"
+      ],
+      "claim": "Greece has \"one of only three US estate tax treaties among the candidates\" (summary)",
+      "verdict": "corrected",
+      "oldWording": "one of only three US estate tax treaties among the candidates",
+      "newWording": "a 5% final tax on dividends and a US estate tax treaty. Athens",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "A table of country and \"Estate or Gift Tax Treaty\" with 15 rows: Australia, Estate & Gift; Austria, Estate & Gift; Canada, Estate *; Denmark, Estate & Gift; Finland, Estate; France, Estate & Gift; Germany, Estate & Gift; Greece, Estate; Ireland, Estate; Italy, Estate; Japan, Estate & Gift; Netherlands, Estate; South Africa, Estate; Switzerland, Estate; United Kingdom, Estate & Gift. The footnote: \"The estate tax provisions are located in Article XXIX B of the United States – Canada Income Tax Treaty.\" Page last reviewed or updated 08-Sep-2026."
+        }
+      ],
+      "note": "The IRS lists 15 countries with an estate or gift tax treaty, and 13 of them now have profiles (shared claim us-estate-treaty-profiles-with), so \"one of only three\" is no longer true of the cities on the site. Summary only. Athens' `why` (\"has a US estate tax treaty\") is unaffected."
+    },
+    {
+      "id": "gr-estate-5a-exempts-assets-abroad",
+      "fact": "estate",
+      "cities": [
+        "athens"
+      ],
+      "claim": "The Art. 5A regime exempts assets abroad from Greek inheritance tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "International Bar Association: preferential tax regimes for individuals moving their tax residency to Greece",
+          "url": "https://www.ibanet.org/preferential-tax-regimes-for-individuals-moving-their-tax-residency-to-Greece",
+          "read": "2026-11-15",
+          "says": "Dated 13 November 2024. Art. 5B: \"the total foreign-source income of the individual is subject to an annual flat tax rate of seven per cent\"; \"the 5B regime covers a maximum of 15 tax years\"; the applicant must receive a foreign pension and \"must not have been a Greek tax resident for five out of the six years prior to the application\". Art. 5A: \"a lump sum annual tax of €100,000\", an investment of \"at least €500,000\", \"a maximum of 15 tax years\"; \"property located abroad is exempt from Greek inheritance and gift tax.\""
+        },
+        {
+          "name": "Crowe Greece: alternative tax regimes",
+          "url": "https://www.crowe.com/gr/services/tax-advice-services/alternative-tax-regimes",
+          "read": "2026-11-15",
+          "says": "Cites AADE decisions A.1147/2026 and A.1192/2026. Art. 5B: \"Pensioners who move their tax residence to Greece\" pay a \"flat 7% tax\" on \"all their foreign-source income\" \"for up to 15 years\"; \"No Greek tax residence in 5 of the 6 years before the move\". Art. 5A: a \"flat annual tax of €100,000 on all their foreign-source income, whatever the amount\", for up to 15 years, with \"An investment of at least €500,000 in Greece\"; \"assets held abroad are exempt from Greek inheritance and gift tax.\""
+        }
+      ],
+      "note": "PwC's page states the exemption only for relatives added to the regime; the IBA article (2024) and Crowe's page state it for property abroad generally. Two secondary pages; AADE returned HTTP 403."
+    },
+    {
+      "id": "gr-lending-ibkr-accepts",
+      "fact": "lending",
+      "cities": [
+        "athens",
+        "crete"
+      ],
+      "claim": "IBKR serves Greek residents",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly serves Greek residents",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        }
+      ],
+      "note": "IBKR's sites were not tried again in this batch; they returned HTTP 403 to every read in stages 1 and 2. The hedge stays."
+    },
+    {
+      "id": "gr-lending-ibkr-eu-entity",
+      "fact": "lending",
+      "cities": [
+        "athens",
+        "crete"
+      ],
+      "claim": "Greek residents are served through IBKR's EU entity",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-eu-entity",
+      "hedge": "likely",
+      "wording": "(likely through its EU entity)",
+      "sources": [
+        {
+          "name": "Interactive Brokers Ireland Limited: Customer Agreement (document 4750, 7/1/2023), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/01_4750_IBIE_Customer_Agreement_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "Clause 1B: Interactive Brokers Ireland Limited (\"IBIE\") is incorporated in Ireland, company number 657406, and \"is regulated by the Central Bank of Ireland\", register number C423427. Clause 1C: unless told otherwise in writing, the client is categorised as a Retail Client. The agreement does not say which countries' residents IBIE serves."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. \"In the EU, customers sign up with the Irish entity\"; UK clients are with Interactive Brokers (U.K.) Limited; the Irish €20k compensation scheme applies to Eastern Europe after the Irish and Hungarian entities merged."
+        },
+        {
+          "name": "Investing in the Web: Interactive Brokers in Europe",
+          "url": "https://investingintheweb.com/broker-reviews/interactive-brokers-europe",
+          "read": "2026-11-15",
+          "says": "Updated on Sep 8, 2026. \"As an European resident, you are under the Central Bank of Ireland regulation\" (Interactive Brokers Ireland Limited); \"As a UK resident, you will be under this legal entity\" (Interactive Brokers UK Limited); \"Interactive Brokers Luxembourg and Central have been extinct/merged.\""
+        }
+      ]
+    },
+    {
+      "id": "gr-lending-schwab-accepts",
+      "fact": "lending",
+      "cities": [
+        "athens",
+        "crete"
+      ],
+      "claim": "Schwab International accepts Greece residents",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab International reportedly accepts Greece",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026; read again on 2026-11-15 for Greece, Cyprus, Croatia and Bulgaria. The 51 countries and regions Schwab's international application accepted that day include Greece; Croatia is one of 12 named as not accepted; Cyprus and Bulgaria are not mentioned (the page says about 200 other countries and regions got a \"cannot open accounts\" message). It quotes the Schwab One Account Agreement: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds from their account.\""
+        }
+      ],
+      "note": "Greece is among the 51 accepted on the one dated list, re-read on 2026-11-15. Schwab's own pages were unreadable in stages 1 and 2 and were not tried again."
+    },
+    {
+      "id": "gr-lending-schwab-cash-out",
+      "fact": "lending",
+      "cities": [
+        "athens",
+        "crete"
+      ],
+      "claim": "Schwab bars Europe-resident customers from withdrawing cash against margin",
+      "verdict": "cant-confirm",
+      "shared": "schwab-europe-margin-cash-out",
+      "hedge": "reportedly",
+      "wording": "Schwab reportedly bars Europe-resident customers from withdrawing cash against margin",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026; read again on 2026-11-15 for Greece, Cyprus, Croatia and Bulgaria. The 51 countries and regions Schwab's international application accepted that day include Greece; Croatia is one of 12 named as not accepted; Cyprus and Bulgaria are not mentioned (the page says about 200 other countries and regions got a \"cannot open accounts\" message). It quotes the Schwab One Account Agreement: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds from their account.\""
+        }
+      ]
+    },
+    {
+      "id": "gr-lending-ibkr-margin-cash-out",
+      "fact": "lending",
+      "cities": [
+        "athens",
+        "crete"
+      ],
+      "claim": "With Schwab's cash-out barred, a Greek resident can still borrow at IBKR (implied: the fact named only Schwab's bar and left IBKR margin open)",
+      "verdict": "corrected",
+      "shared": "ibkr-eu-margin-cash-out",
+      "oldWording": "withdrawing cash against margin; EU PRIIPs",
+      "newWording": "and IBKR's EU entity reportedly lends on margin only to buy securities, not to withdraw as cash, so confirm how you would draw cash before relying on either",
+      "sources": [
+        {
+          "name": "LYNX: Withdrawal (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/payments-and-transfers/withdrawal/",
+          "read": "2026-11-15",
+          "says": "\"It is not possible to withdraw in a currency if your cash balance is negative or would go negative after the withdrawal.\" In a margin account \"some funds may be used as collateral for other positions or to cover negative cash balances\", which lowers what can be withdrawn. The page is undated (footer: Copyright 2023)."
+        },
+        {
+          "name": "CapTrader: Geld abheben (help page of a German introducing broker for Interactive Brokers)",
+          "url": "https://www.captrader.com/geld-abheben/",
+          "read": "2026-11-15",
+          "says": "\"Auszahlungen sind nur möglich, wenn kein negativer Saldo in der entsprechenden Währung\" or in the total cash arises or grows: withdrawals are possible only if they do not create or increase a negative balance. Footer: © CapTrader 2026."
+        },
+        {
+          "name": "Interactive Brokers Ireland Limited: Customer Agreement (document 4750, 7/1/2023), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/01_4750_IBIE_Customer_Agreement_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "Clause 2A(i)(d) defines the margin service as one \"to enable Clients to acquire investment instruments\". Clause 5A(iv): \"Terms and conditions for deposit and withdrawal of funds (including holding periods) are as specified on the IBIE website.\" The agreement does not say that a loan may be withdrawn as cash."
+        },
+        {
+          "name": "Mustachian Post forum: Using margin loan at Interactive Brokers, page 13",
+          "url": "https://forum.mustachianpost.com/t/using-margin-loan-at-interactive-brokers/3980?page=13",
+          "read": "2026-11-15",
+          "says": "Posts of September to November 2024. One poster says withdrawing cash on margin is \"not possible in Germany with IB IE\" but is with IB UK; Swiss residents with IB UK accounts report having done it; another reports IBKR service saying \"IBUK customers can no longer withdraw cash if aggregate cash balance is -ve\", which a manager then said applies only to UK residents."
+        }
+      ],
+      "also": [
+        "scores.lending 3→2 on both (plan decision of 2026-11-15; rubric 2: EU residence, where Schwab and IBKR's EU entity both reportedly bar taking cash out through margin)",
+        "summary: added the closing sentence \"The weak point is the borrow step: Schwab and IBKR both reportedly bar EU residents from drawing margin as cash.\" to both",
+        "drawbacks: none mentioned margin or brokers, so none was reworded and none was added; the summary sentence carries it",
+        "sources: added LYNX withdrawal page to both"
+      ],
+      "rankFlag": "Both Greece picks (Athens 11, Crete 13) now score lending 2, and their profiles say both reported brokers reportedly will not pay a margin loan out as cash. Their `why` lines in src/data/expatPicks.ts do not mention borrowing, so neither is contradicted. Ranks and `why` lines are unchanged: user's call.",
+      "note": "The profiles never said \"so plan on IBKR margin\"; they stopped after Schwab's bar. The standard clause was added unchanged, ending \"either\" because Schwab reportedly accepts Greece residents. Shared sources are copied with their stage 1 read date; the LYNX page was not re-read."
+    },
+    {
+      "id": "gr-lending-priips-new-buys",
+      "fact": "lending",
+      "cities": [
+        "athens",
+        "crete"
+      ],
+      "claim": "EU PRIIPs rules block new purchases of US ETFs",
+      "verdict": "confirmed",
+      "shared": "priips-us-etf-new-buys-blocked",
+      "sources": [
+        {
+          "name": "LYNX: Key Information Document (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/products-and-regulations/regulations/key-information-document/",
+          "read": "2026-11-15",
+          "says": "Retail clients are \"not permitted to trade ETFs or other products that do not have a valid KID\"; many non-EU ETFs have none. Can a retail client buy US ETFs? \"No, not unless you are classified as a professional investor.\" The same applies to ETFs from Canada, Hong Kong, Mexico and Australia. The KID has applied to most products since 1 January 2018."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. \"PRIIPs is an EU rule that prohibits buying US-listed ETFs\", and this also applies to UK investors; US ETFs are open only to elective professional clients, while UCITS ETFs are available to all Europeans."
+        }
+      ],
+      "note": "The profile's \"reportedly\" stays; it does no harm."
+    },
+    {
+      "id": "gr-lending-priips-holdings-kept",
+      "fact": "lending",
+      "cities": [
+        "athens"
+      ],
+      "claim": "Existing holdings can usually be kept",
+      "verdict": "confirmed",
+      "shared": "priips-existing-holdings-kept",
+      "sources": [
+        {
+          "name": "LYNX: Key Information Document (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/products-and-regulations/regulations/key-information-document/",
+          "read": "2026-11-15",
+          "says": "The page's FAQ says retail clients \"may still hold or sell existing positions, but new purchases are restricted.\""
+        },
+        {
+          "name": "Regulation (EU) No 1286/2014, Article 13, as adopted (legislation.gov.uk copy of the EU text)",
+          "url": "https://www.legislation.gov.uk/eur/2014/1286/article/13/adopted",
+          "read": "2026-11-15",
+          "says": "The duty to provide a KID falls on \"a person advising on, or selling, a PRIIP\" before the retail investor is bound; nothing in the article reaches a PRIIP the investor already holds or a sale by the investor."
+        }
+      ]
+    },
+    {
+      "id": "gr-visa-fip-income",
+      "fact": "visa",
+      "cities": [
+        "athens",
+        "crete"
+      ],
+      "claim": "The Financially Independent Person permit needs at least €3,500/month of passive income such as dividends or interest",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "TaxLaw (Iason Skouzos): residence permit for financially independent persons",
+          "url": "https://www.taxlaw.gr/?p=8673",
+          "read": "2026-11-15",
+          "says": "Posted 19 May 2025. Citing Ministerial Decision 225679/2024: \"the minimum amount of three thousand five hundred (3,500) euros per month\"; \"this amount shall be increased by 20% for the spouse and 15% for each child\". The permit runs three years, renewable; it needs \"An insurance policy from a private insurance provider that fully covers his/her medical treatment and hospitalization\"; it gives \"no access to the labour market\". Housing and minimum stay are not mentioned."
+        },
+        {
+          "name": "Vardikos & Vardikos: Financially Independent Person visa",
+          "url": "https://vardikos.com/what-is-financially-independent-persons-fip-visa",
+          "read": "2026-11-15",
+          "says": "Undated (footer 2026). \"The minimum income requirement is set at 3.500 Euros per month.\" \"This is increased by 20%, if the spouse is included in the application, and 15% for each child\". Legal basis \"Article 163 par.8 of the Greek Law (5038/2023)\". \"The residence permit is issued for 3 years and then it can be renewed.\" \"There is a minimum stay requirement of 183 days per calendar year in Greece in order for the permit to be renewed.\" It \"does not allow access to the labour market.\""
+        },
+        {
+          "name": "Global Citizen Solutions: FIP visa Greece",
+          "url": "https://www.globalcitizensolutions.com/fip-visa-greece/",
+          "read": "2026-11-15",
+          "says": "Last updated October 14, 2026. \"The minimum requirement is €3,500 per month for a single applicant\", \"increasing by 20% for a spouse and 15% for each dependent child\"; qualifying income \"such as pensions, rental income, dividends, or investments\"; applicants \"must have the correct health insurance\"; \"accommodation\" is listed among the documents to prepare; holders must \"spend at least 183 days each year in Greece\"; \"The FIP Visa does not allow employment or self-employment in Greece.\""
+        }
+      ],
+      "note": "The amount is set by Joint Ministerial Decision 225679/2024 (FEK B 5223, 17 September 2024). The official copies could not be read: the Ministry of Migration's copy is a PDF (https://migration.gov.gr/wp-content/uploads/2024/10/3_ΚΥΑ-Επαρκών-πόρων.pdf), e-nomothesia.gr refused the connection, and www.mfa.gr/usa/en/services/visas/ returned HTTP 403. Three secondary pages, one dated October 2026, give €3,500; older pages (the Attica decentralised administration's 2023 page among them) still show the €2,000 of the previous law. Dividends are named as qualifying income by Global Citizen Solutions; \"interest\" is not named on any page read. Drawback \"The €3,500/month passive-income bar is high\" (Athens) agrees."
+    },
+    {
+      "id": "gr-visa-fip-family-uplift",
+      "fact": "visa",
+      "cities": [
+        "athens",
+        "crete"
+      ],
+      "claim": "The amount rises 20% for a spouse and 15% per child",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "TaxLaw (Iason Skouzos): residence permit for financially independent persons",
+          "url": "https://www.taxlaw.gr/?p=8673",
+          "read": "2026-11-15",
+          "says": "Posted 19 May 2025. Citing Ministerial Decision 225679/2024: \"the minimum amount of three thousand five hundred (3,500) euros per month\"; \"this amount shall be increased by 20% for the spouse and 15% for each child\". The permit runs three years, renewable; it needs \"An insurance policy from a private insurance provider that fully covers his/her medical treatment and hospitalization\"; it gives \"no access to the labour market\". Housing and minimum stay are not mentioned."
+        },
+        {
+          "name": "Vardikos & Vardikos: Financially Independent Person visa",
+          "url": "https://vardikos.com/what-is-financially-independent-persons-fip-visa",
+          "read": "2026-11-15",
+          "says": "Undated (footer 2026). \"The minimum income requirement is set at 3.500 Euros per month.\" \"This is increased by 20%, if the spouse is included in the application, and 15% for each child\". Legal basis \"Article 163 par.8 of the Greek Law (5038/2023)\". \"The residence permit is issued for 3 years and then it can be renewed.\" \"There is a minimum stay requirement of 183 days per calendar year in Greece in order for the permit to be renewed.\" It \"does not allow access to the labour market.\""
+        }
+      ]
+    },
+    {
+      "id": "gr-visa-fip-insurance-housing",
+      "fact": "visa",
+      "cities": [
+        "athens",
+        "crete"
+      ],
+      "claim": "The permit needs private health insurance and Greek housing",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "TaxLaw (Iason Skouzos): residence permit for financially independent persons",
+          "url": "https://www.taxlaw.gr/?p=8673",
+          "read": "2026-11-15",
+          "says": "Posted 19 May 2025. Citing Ministerial Decision 225679/2024: \"the minimum amount of three thousand five hundred (3,500) euros per month\"; \"this amount shall be increased by 20% for the spouse and 15% for each child\". The permit runs three years, renewable; it needs \"An insurance policy from a private insurance provider that fully covers his/her medical treatment and hospitalization\"; it gives \"no access to the labour market\". Housing and minimum stay are not mentioned."
+        },
+        {
+          "name": "Global Citizen Solutions: FIP visa Greece",
+          "url": "https://www.globalcitizensolutions.com/fip-visa-greece/",
+          "read": "2026-11-15",
+          "says": "Last updated October 14, 2026. \"The minimum requirement is €3,500 per month for a single applicant\", \"increasing by 20% for a spouse and 15% for each dependent child\"; qualifying income \"such as pensions, rental income, dividends, or investments\"; applicants \"must have the correct health insurance\"; \"accommodation\" is listed among the documents to prepare; holders must \"spend at least 183 days each year in Greece\"; \"The FIP Visa does not allow employment or self-employment in Greece.\""
+        }
+      ],
+      "note": "Private insurance is stated plainly. Housing rests on one page listing \"accommodation\" among the documents; no page read says whether a lease or a deed is required, and the profiles do not say either."
+    },
+    {
+      "id": "gr-visa-fip-renewal-183-days-no-work",
+      "fact": "visa",
+      "cities": [
+        "athens",
+        "crete"
+      ],
+      "claim": "The permit is renewable, needs 183+ days a year in Greece to renew, and allows no work",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Vardikos & Vardikos: Financially Independent Person visa",
+          "url": "https://vardikos.com/what-is-financially-independent-persons-fip-visa",
+          "read": "2026-11-15",
+          "says": "Undated (footer 2026). \"The minimum income requirement is set at 3.500 Euros per month.\" \"This is increased by 20%, if the spouse is included in the application, and 15% for each child\". Legal basis \"Article 163 par.8 of the Greek Law (5038/2023)\". \"The residence permit is issued for 3 years and then it can be renewed.\" \"There is a minimum stay requirement of 183 days per calendar year in Greece in order for the permit to be renewed.\" It \"does not allow access to the labour market.\""
+        },
+        {
+          "name": "Global Citizen Solutions: FIP visa Greece",
+          "url": "https://www.globalcitizensolutions.com/fip-visa-greece/",
+          "read": "2026-11-15",
+          "says": "Last updated October 14, 2026. \"The minimum requirement is €3,500 per month for a single applicant\", \"increasing by 20% for a spouse and 15% for each dependent child\"; qualifying income \"such as pensions, rental income, dividends, or investments\"; applicants \"must have the correct health insurance\"; \"accommodation\" is listed among the documents to prepare; holders must \"spend at least 183 days each year in Greece\"; \"The FIP Visa does not allow employment or self-employment in Greece.\""
+        },
+        {
+          "name": "TaxLaw (Iason Skouzos): residence permit for financially independent persons",
+          "url": "https://www.taxlaw.gr/?p=8673",
+          "read": "2026-11-15",
+          "says": "Posted 19 May 2025. Citing Ministerial Decision 225679/2024: \"the minimum amount of three thousand five hundred (3,500) euros per month\"; \"this amount shall be increased by 20% for the spouse and 15% for each child\". The permit runs three years, renewable; it needs \"An insurance policy from a private insurance provider that fully covers his/her medical treatment and hospitalization\"; it gives \"no access to the labour market\". Housing and minimum stay are not mentioned."
+        }
+      ],
+      "note": "Scores.visa stays 3 (workable but a high threshold)."
+    },
+    {
+      "id": "gr-healthcare-athens-public-stretched",
+      "fact": "healthcare",
+      "cities": [
+        "athens"
+      ],
+      "claim": "The public ESY system is stretched, with long waits",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "To Vima: Greek households shoulder heavy health costs, OECD report says",
+          "url": "https://www.tovima.com/society/greek-households-shoulder-heavy-health-costs-oecd-report-says",
+          "read": "2026-11-15",
+          "says": "Dated 15 November 2025, on the OECD's Health at a Glance 2025. \"In 2024, 12.1% of Greeks said they had delayed or gone without needed medical care\" (OECD average 3.4%); \"Cost is the most common reason for postponing or skipping treatment, followed by long waits for public appointments\"; \"Nearly 39% of all health spending is paid directly out of pocket\"; \"many patients turn to private providers to avoid long waits or patchy availability\"."
+        }
+      ],
+      "note": "The OECD's own country note returned HTTP 403 (https://www.oecd.org/en/publications/country-health-profile-2025-country-notes_c0e8b8be-en/greece_9ca0bb52-en); a dated press report of the OECD figures was used."
+    },
+    {
+      "id": "gr-healthcare-athens-private-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "athens"
+      ],
+      "claim": "Hygeia, Metropolitan and Iaso are private hospitals in Athens",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Hellenic Healthcare Group: home page",
+          "url": "https://www.hhg.gr/en/",
+          "read": "2026-11-15",
+          "says": "Describes itself as \"the largest private healthcare group in Greece\" and lists HYGEIA Hospital (Maroussi, Athens), Metropolitan Hospital (N. Faliro, Athens), Hygeia-Mitera, Metropolitan General (Cholargos) and Creta InterClinic (Heraklion, Crete) among its hospitals."
+        },
+        {
+          "name": "HYGEIA Hospital: home page",
+          "url": "https://www.hygeia.gr/en/",
+          "read": "2026-11-15",
+          "says": "Footer \"© 2007-2026 HYGEIA S.M.S.A.\"; \"HYGEIA Hospital is the first Hospital in Greece that has earned the Joint Commission International's Gold Seal of Approval\"; part of the HHG group."
+        },
+        {
+          "name": "Metropolitan Hospital: home page",
+          "url": "https://www.metropolitan-hospital.gr/en/",
+          "read": "2026-11-15",
+          "says": "Calls itself a \"private healthcare center in Neo Faliro, Athens\"; address 9 Ethn. Makariou & 1 El. Venizelou Str, 185 47 N. Faliro."
+        },
+        {
+          "name": "IASO Group: home page",
+          "url": "https://www.iaso.gr/en/",
+          "read": "2026-11-15",
+          "says": "Site title \"IASO Group - Private Clinics In Athens\"; maternity-gynecology, general and pediatric clinics at 37-39 Kifissias Avenue, Maroussi, Athens. Latest news item dated 09/09/2026."
+        }
+      ],
+      "note": "All three names are current on the hospitals' own sites. \"Good\" and \"moderately priced\" are judgments no page read settles; no price was checked."
+    },
+    {
+      "id": "gr-healthcare-athens-private-insurance",
+      "fact": "healthcare",
+      "cities": [
+        "athens"
+      ],
+      "claim": "Most expats use private insurance, which the residence permit requires",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "TaxLaw (Iason Skouzos): residence permit for financially independent persons",
+          "url": "https://www.taxlaw.gr/?p=8673",
+          "read": "2026-11-15",
+          "says": "Posted 19 May 2025. Citing Ministerial Decision 225679/2024: \"the minimum amount of three thousand five hundred (3,500) euros per month\"; \"this amount shall be increased by 20% for the spouse and 15% for each child\". The permit runs three years, renewable; it needs \"An insurance policy from a private insurance provider that fully covers his/her medical treatment and hospitalization\"; it gives \"no access to the labour market\". Housing and minimum stay are not mentioned."
+        },
+        {
+          "name": "To Vima: Greek households shoulder heavy health costs, OECD report says",
+          "url": "https://www.tovima.com/society/greek-households-shoulder-heavy-health-costs-oecd-report-says",
+          "read": "2026-11-15",
+          "says": "Dated 15 November 2025, on the OECD's Health at a Glance 2025. \"In 2024, 12.1% of Greeks said they had delayed or gone without needed medical care\" (OECD average 3.4%); \"Cost is the most common reason for postponing or skipping treatment, followed by long waits for public appointments\"; \"Nearly 39% of all health spending is paid directly out of pocket\"; \"many patients turn to private providers to avoid long waits or patchy availability\"."
+        }
+      ],
+      "note": "The permit's requirement is confirmed. \"Most expats\" has no figure behind it; the press report says many patients in Greece turn to private providers."
+    },
+    {
+      "id": "gr-healthcare-crete-chania-hospital",
+      "fact": "healthcare",
+      "cities": [
+        "crete"
+      ],
+      "claim": "Chania's main public hospital is the General Hospital \"Agios Georgios\"",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "General Hospital of Chania: home page",
+          "url": "https://chaniahospital.gr/",
+          "read": "2026-11-15",
+          "says": "Name: Γενικό Νοσοκομείο Χανίων \"Ο Άγιος Γεώργιος\"; at Mournies, Chania; 503 beds; operating since 1 September 2000; links to the Ministry of Health and the 7th Health Region. Welcome article stamped 2026-06-24."
+        }
+      ]
+    },
+    {
+      "id": "gr-healthcare-crete-heraklion",
+      "fact": "healthcare",
+      "cities": [
+        "crete"
+      ],
+      "claim": "Heraklion has hospitals for more specialist care",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "University General Hospital of Heraklion (PAGNI): home page",
+          "url": "https://www.pagni.gr/",
+          "read": "2026-11-15",
+          "says": "\"Καλωσήρθατε στην Ιστοσελίδα του Πανεπιστημιακού Γενικού Νοσοκομείου Ηρακλείου (ΠΑΓΝΗ)\": the University General Hospital of Heraklion, at Voutes, Heraklion."
+        },
+        {
+          "name": "Hellenic Healthcare Group: home page",
+          "url": "https://www.hhg.gr/en/",
+          "read": "2026-11-15",
+          "says": "Describes itself as \"the largest private healthcare group in Greece\" and lists HYGEIA Hospital (Maroussi, Athens), Metropolitan Hospital (N. Faliro, Athens), Hygeia-Mitera, Metropolitan General (Cholargos) and Creta InterClinic (Heraklion, Crete) among its hospitals."
+        }
+      ],
+      "note": "The university hospital's page names it but does not describe its referral role; that it takes Chania's complex cases is the ordinary reading of a university general hospital, not a quoted statement. Crete's `why` (\"hospitals in Heraklion and Chania\") agrees."
+    },
+    {
+      "id": "gr-healthcare-crete-waits-private-cover",
+      "fact": "healthcare",
+      "cities": [
+        "crete"
+      ],
+      "claim": "Public waits are long, so most expats carry private cover, which the residence permit requires",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "To Vima: Greek households shoulder heavy health costs, OECD report says",
+          "url": "https://www.tovima.com/society/greek-households-shoulder-heavy-health-costs-oecd-report-says",
+          "read": "2026-11-15",
+          "says": "Dated 15 November 2025, on the OECD's Health at a Glance 2025. \"In 2024, 12.1% of Greeks said they had delayed or gone without needed medical care\" (OECD average 3.4%); \"Cost is the most common reason for postponing or skipping treatment, followed by long waits for public appointments\"; \"Nearly 39% of all health spending is paid directly out of pocket\"; \"many patients turn to private providers to avoid long waits or patchy availability\"."
+        },
+        {
+          "name": "TaxLaw (Iason Skouzos): residence permit for financially independent persons",
+          "url": "https://www.taxlaw.gr/?p=8673",
+          "read": "2026-11-15",
+          "says": "Posted 19 May 2025. Citing Ministerial Decision 225679/2024: \"the minimum amount of three thousand five hundred (3,500) euros per month\"; \"this amount shall be increased by 20% for the spouse and 15% for each child\". The permit runs three years, renewable; it needs \"An insurance policy from a private insurance provider that fully covers his/her medical treatment and hospitalization\"; it gives \"no access to the labour market\". Housing and minimum stay are not mentioned."
+        }
+      ],
+      "note": "National figures; nothing read is specific to Crete."
+    }
+  ]
+}

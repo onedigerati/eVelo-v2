@@ -1,0 +1,506 @@
+{
+  "country": "Albania",
+  "cities": [
+    "sarande"
+  ],
+  "claims": [
+    {
+      "id": "al-tax-no-wealth-tax",
+      "fact": "tax",
+      "cities": [
+        "sarande"
+      ],
+      "claim": "No wealth tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC quick chart: net wealth/worth tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/net-wealth-worth-tax-rates",
+          "read": "2026-11-15",
+          "says": "Montenegro (last reviewed 07 August 2026), Albania (22 July 2026), Mauritius (15 June 2026), South Africa (29 May 2026) and the United Arab Emirates (09 September 2026) are all \"NA\", which the page defines as \"Not Applicable (i.e. the territory does not have the indicated tax or requirement)\"."
+        }
+      ]
+    },
+    {
+      "id": "al-tax-building-tax",
+      "fact": "tax",
+      "cities": [
+        "sarande"
+      ],
+      "claim": "There is a 0.05% yearly tax on residential buildings",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Albania, other taxes",
+          "url": "https://taxsummaries.pwc.com/albania/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 22 July 2026. \"Residential property: 0.05% of property value.\" \"The tax rate for inheritances and gifts is 15%, without deduction of any costs.\" Exempt: \"Gifts and inheritance received from/or between the legal heirs in the first and second place\", and between siblings."
+        }
+      ]
+    },
+    {
+      "id": "al-tax-worldwide-income",
+      "fact": "tax",
+      "cities": [
+        "sarande"
+      ],
+      "claim": "Residents are taxed on worldwide income",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Albania, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/albania/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 22 July 2026. \"Resident individuals are taxed on all sources of income in and outside the territory of Albania.\" \"Income from dividends: 8%.\" \"Any other item of investment income: 15%.\" No newcomer regime is described (only a simplified business regime and a 0% rate on small business income to 2029)."
+        }
+      ]
+    },
+    {
+      "id": "al-tax-dividends-8",
+      "fact": "tax",
+      "cities": [
+        "sarande"
+      ],
+      "claim": "Dividends are taxed at 8%",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Albania, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/albania/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 22 July 2026. \"Resident individuals are taxed on all sources of income in and outside the territory of Albania.\" \"Income from dividends: 8%.\" \"Any other item of investment income: 15%.\" No newcomer regime is described (only a simplified business regime and a 0% rate on small business income to 2029)."
+        }
+      ]
+    },
+    {
+      "id": "al-tax-interest-gains-15",
+      "fact": "tax",
+      "cities": [
+        "sarande"
+      ],
+      "claim": "Interest and gains are taxed at 15%",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Albania, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/albania/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 22 July 2026. \"Resident individuals are taxed on all sources of income in and outside the territory of Albania.\" \"Income from dividends: 8%.\" \"Any other item of investment income: 15%.\" No newcomer regime is described (only a simplified business regime and a 0% rate on small business income to 2029)."
+        },
+        {
+          "name": "PwC: Albania, income determination",
+          "url": "https://taxsummaries.pwc.com/albania/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 22 July 2026. \"Capital gains on the sale of shares are taxable at rate of 15%.\""
+        }
+      ],
+      "note": "PwC names capital gains on shares at 15%; interest falls under \"any other item of investment income: 15%\", which the page does not name as interest."
+    },
+    {
+      "id": "al-tax-no-us-income-treaty",
+      "fact": "tax",
+      "cities": [
+        "sarande"
+      ],
+      "claim": "There is no US income tax treaty",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IRS: United States income tax treaties, A to Z",
+          "url": "https://www.irs.gov/businesses/international-businesses/united-states-income-tax-treaties-a-to-z",
+          "read": "2026-11-15",
+          "says": "Page last reviewed or updated 03-Jan-2026. The list of 69 entries includes South Africa; Albania, Montenegro, the United Arab Emirates and Mauritius are not on it."
+        },
+        {
+          "name": "PwC: Albania, foreign tax relief and tax treaties",
+          "url": "https://taxsummaries.pwc.com/albania/individual/foreign-tax-relief-and-tax-treaties",
+          "read": "2026-11-15",
+          "says": "Last reviewed 22 July 2026. A resident who \"realises tax income from sources outside the territory of the Republic of Albania\" may deduct foreign tax paid on it; \"The deducted amount of foreign tax paid cannot exceed the amount of PIT that would be payable for this income\"; computed separately per country and for annual investment income. The 46 treaty countries listed do not include the United States."
+        }
+      ]
+    },
+    {
+      "id": "al-tax-us-tax-credit",
+      "fact": "tax",
+      "cities": [
+        "sarande"
+      ],
+      "claim": "Whether US tax is credited against Albania's 8% is unconfirmed",
+      "verdict": "corrected",
+      "oldWording": "so whether US tax is credited against the 8% is unconfirmed",
+      "newWording": "but Albania credits foreign tax paid on foreign income up to the Albanian tax on it",
+      "sources": [
+        {
+          "name": "PwC: Albania, foreign tax relief and tax treaties",
+          "url": "https://taxsummaries.pwc.com/albania/individual/foreign-tax-relief-and-tax-treaties",
+          "read": "2026-11-15",
+          "says": "Last reviewed 22 July 2026. A resident who \"realises tax income from sources outside the territory of the Republic of Albania\" may deduct foreign tax paid on it; \"The deducted amount of foreign tax paid cannot exceed the amount of PIT that would be payable for this income\"; computed separately per country and for annual investment income. The 46 treaty countries listed do not include the United States."
+        }
+      ],
+      "also": [
+        "sources: added PwC Albania foreign tax relief and the e-Albania document list"
+      ],
+      "note": "PwC describes a credit for foreign tax on any foreign-source income, not only from treaty countries. Not settled: whether Albania treats US tax a US citizen pays on US-source dividends as creditable foreign tax (it is), and how a US citizen's US foreign tax credit interacts; the new wording states only what PwC says. Tax score stays 4 (no wealth tax and ≤15% on dividends)."
+    },
+    {
+      "id": "al-tax-no-newcomer-regime",
+      "fact": "tax",
+      "cities": [
+        "sarande"
+      ],
+      "claim": "There is no newcomer regime",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Albania, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/albania/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 22 July 2026. \"Resident individuals are taxed on all sources of income in and outside the territory of Albania.\" \"Income from dividends: 8%.\" \"Any other item of investment income: 15%.\" No newcomer regime is described (only a simplified business regime and a 0% rate on small business income to 2029)."
+        }
+      ],
+      "note": "Confirmed by absence on PwC's personal income page."
+    },
+    {
+      "id": "al-estate-heirs-exempt",
+      "fact": "estate",
+      "cities": [
+        "sarande"
+      ],
+      "claim": "Albania's 15% inheritance tax exempts first- and second-degree heirs, so children pay nothing",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Albania, other taxes",
+          "url": "https://taxsummaries.pwc.com/albania/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 22 July 2026. \"Residential property: 0.05% of property value.\" \"The tax rate for inheritances and gifts is 15%, without deduction of any costs.\" Exempt: \"Gifts and inheritance received from/or between the legal heirs in the first and second place\", and between siblings."
+        },
+        {
+          "name": "PwC quick chart: inheritance and gift tax rates",
+          "url": "https://taxsummaries.pwc.com/quick-charts/inheritance-and-gift-tax-rates",
+          "read": "2026-11-15",
+          "says": "Montenegro: inheritance \"3 - 6 (payable only on inheritance of real estate)\", gift \"3 - 6 (payable only on real estate gifts)\" (last reviewed 07 August 2026). Albania: 15 and 15 (22 July 2026). Mauritius: NA, NA (15 June 2026). South Africa: \"25 (maximum)\" for both (29 May 2026). United Arab Emirates: NA, NA (09 September 2026)."
+        }
+      ]
+    },
+    {
+      "id": "al-estate-no-us-treaty",
+      "fact": "estate",
+      "cities": [
+        "sarande"
+      ],
+      "claim": "There is no US estate treaty",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-without",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list in shared.json); Albania is not among them."
+        }
+      ]
+    },
+    {
+      "id": "al-lending-ibkr-accepts",
+      "fact": "lending",
+      "cities": [
+        "sarande"
+      ],
+      "claim": "IBKR accepts residents of the country",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly accepts residents of all non-sanctioned countries, so Albania is likely covered",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        }
+      ],
+      "note": "IBKR's own country list (https://www.interactivebrokers.com/en/accounts/open-account-country-list.php) returned HTTP 403 again on 2026-11-15."
+    },
+    {
+      "id": "al-lending-margin-terms-unknown",
+      "fact": "lending",
+      "cities": [
+        "sarande"
+      ],
+      "claim": "IBKR's margin terms for residents of the country are unknown or unreported",
+      "verdict": "cant-confirm",
+      "hedge": "unknown",
+      "wording": "with margin terms unknown",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026 (as read for earlier batches on 2026-11-15). The \"Country Availability\" section lists countries where IBKR is available; it does not map countries to IBKR entities or name the entity for non-EU European, Gulf or African residents."
+        }
+      ],
+      "note": "A statement of what is not known. Which IBKR entity serves an Albanian resident was not found; Albania is not in the EU, so the EU cash-out correction was not applied."
+    },
+    {
+      "id": "al-lending-schwab-unavailable",
+      "fact": "lending",
+      "cities": [
+        "sarande"
+      ],
+      "claim": "Schwab International is unavailable in Albania, which is not on its reported list",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "probably",
+      "wording": "Schwab International is probably unavailable (Albania is not on its reported list)",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. On that day the author ran every entry in Schwab's international account selector through the application: it accepted residents of 51 of 263 countries and regions: Argentina, Australia, Austria, the Bahamas, Belgium, Bermuda, Brazil, the British Virgin Islands, the Cayman Islands, Chile, China, Colombia, Costa Rica, the Czech Republic, Denmark, Ecuador, Finland, Germany, Greece, Guatemala, Hong Kong, Iceland, India, Indonesia, Ireland, Israel, Jersey, Luxembourg, Malaysia, the Marshall Islands, Mexico, the Netherlands, Norway, Panama, Paraguay, Peru, Poland, Portugal, Qatar, Singapore, South Korea, Spain, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Turks and Caicos, the United Arab Emirates, the United Kingdom and Uruguay. Named as not accepted: Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam; for the rest the application said \"Schwab currently cannot open accounts for residents of your country/region.\" The test covers new applicants on that day only."
+        },
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Dated October 23, 2026 (country check that day). The United Arab Emirates is on the 51-country accepted list and marked \"Yes\"; South Africa is marked \"No\" (the 12 \"No\" rows: Canada, Croatia, Dominican Republic, France, Italy, Japan, Malta, New Zealand, Philippines, South Africa, Turkey, Vietnam). Montenegro, Albania and Mauritius are in neither list; the article says 200 of the 263 countries and regions in Schwab's selector showed that Schwab \"currently cannot open accounts for residents of your country/region\". It quotes the Schwab One International terms: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds from their account.\""
+        }
+      ],
+      "note": "Albania is in neither the accepted 51 nor the 12 marked \"No\". Lending score stays 3 (\"IBKR only\"), and would stay 3 under the London/Zurich reading of Schwab's \"residing within Europe\" clause even if Schwab accepted Albanians, since Albania is in Europe."
+    },
+    {
+      "id": "al-lending-priips-not-applicable",
+      "fact": "lending",
+      "cities": [
+        "sarande"
+      ],
+      "claim": "As a non-EU country, the EU PRIIPs limit on buying US ETFs does not apply",
+      "verdict": "cant-confirm",
+      "hedge": "should not apply",
+      "wording": "the EU PRIIPs limit on buying US ETFs should not apply",
+      "sources": [
+        {
+          "name": "LYNX: Key Information Document (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/products-and-regulations/regulations/key-information-document/",
+          "read": "2026-11-15",
+          "says": "Retail clients are \"not permitted to trade ETFs or other products that do not have a valid KID\"; many non-EU ETFs have none. Can a retail client buy US ETFs? \"No, not unless you are classified as a professional investor.\" The same applies to ETFs from Canada, Hong Kong, Mexico and Australia. The KID has applied to most products since 1 January 2018."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026 (as read for earlier batches on 2026-11-15). The \"Country Availability\" section lists countries where IBKR is available; it does not map countries to IBKR entities or name the entity for non-EU European, Gulf or African residents."
+        }
+      ],
+      "note": "Already hedged. PRIIPs binds sellers to EU retail investors; which IBKR entity carries an Albanian resident's account is not stated on any page read, so whether a KID block applies is not settled."
+    },
+    {
+      "id": "al-visa-us-one-year",
+      "fact": "visa",
+      "cities": [
+        "sarande"
+      ],
+      "claim": "US citizens can stay up to a year visa-free, with more than 90 days outside Albania before a new year",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Himara.net: Albania visa requirements 2026",
+          "url": "https://himara.net/it/blog/albania-visa-requirements-2026",
+          "read": "2026-11-15",
+          "says": "Dated 22 February 2026 (it cites a joint ministerial instruction no. 91 of 30 April 2026, which is later than that date). US passport holders enter visa-free for \"up to one year (365 days)\"; border checks apply \"90 days in 180, or one year for citizens of the United States of America\"; after the year, US citizens must leave for 90 days before re-entering."
+        },
+        {
+          "name": "Exit News: Albania restores one-year stay for US citizens",
+          "url": "https://exit.al/en/albanian-government-does-u-turn-on-us-residency-requirements",
+          "read": "2026-11-15",
+          "says": "Dated 4 March 2022. US citizens \"can re-enter and stay without a residence permit\" for \"a new term of up to one year\" \"if they have stayed outside the territory of the Republic of Albania for more than 90 days\"; decided \"in support of the law \"On Foreigners\"\"."
+        },
+        {
+          "name": "Law No. 79/2021 on foreigners, consolidated with Law 43/2025 (Agency for Foreigners and Migration, asp.gov.al)",
+          "url": "https://asp.gov.al/wp-content/uploads/2025/11/Ligj-PER-TE-HUAJT-2021-06-24-79-perditesuar-2025-PDF.pdf",
+          "read": "2026-11-15",
+          "says": "Consolidated text \"i përditësuar\" with Law 43/2025 of 26.6.2025. Article 85: foreigners \"që janë në pension në vendin e tyre\" (retired in their own country) may apply for a residence permit for pensioners; it is renewable every year if the criteria set by Council of Ministers decision are still met; it is a permit \"dhënë në bazë të pensionit jashtë vendit\" (granted on a pension from abroad) and allows no economic activity. Article 84: a temporary permit for owners of real estate, up to 1 year at first and renewable yearly, criteria by Council of Ministers decision; no value is set in the law. Article 31(2): short stays are limited to 90 days in 180 \"except where otherwise provided\"."
+        }
+      ],
+      "note": "The law's Article 31(2) limits short stays to 90 in 180 days \"except where otherwise provided\"; the one-year rule for US citizens is set by government decision. Two dated secondary pages (2026 and 2022) give it; al.usembassy.gov returned HTTP 403 and travel.state.gov was not tried (403 in earlier stages)."
+    },
+    {
+      "id": "al-visa-pensioner-permit",
+      "fact": "visa",
+      "cities": [
+        "sarande"
+      ],
+      "claim": "The pensioner permit (Law 79/2021) needs about ALL 1.2m a year of pension paid into an Albanian bank",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "e-Albania: residence permit documents by purpose (Border and Migration Police)",
+          "url": "https://e-albania.al/assets/services/DPPSH/15308_LQ_dokumentacioni.pdf",
+          "read": "2026-11-15",
+          "says": "Undated. For \"Application for a residence permit for a pensioner\": \"Evidence of annual pension income in the country of origin in the amount of over 1,200,000 ALL\"; \"Evidence from a second level bank in Albania for the pension transfer\"; \"Verification of health insurance in Albania\". The real-estate permit needs an ownership certificate and \"Evidence of sufficient financial resources\", with no minimum property value listed."
+        },
+        {
+          "name": "Law No. 79/2021 on foreigners, consolidated with Law 43/2025 (Agency for Foreigners and Migration, asp.gov.al)",
+          "url": "https://asp.gov.al/wp-content/uploads/2025/11/Ligj-PER-TE-HUAJT-2021-06-24-79-perditesuar-2025-PDF.pdf",
+          "read": "2026-11-15",
+          "says": "Consolidated text \"i përditësuar\" with Law 43/2025 of 26.6.2025. Article 85: foreigners \"që janë në pension në vendin e tyre\" (retired in their own country) may apply for a residence permit for pensioners; it is renewable every year if the criteria set by Council of Ministers decision are still met; it is a permit \"dhënë në bazë të pensionit jashtë vendit\" (granted on a pension from abroad) and allows no economic activity. Article 84: a temporary permit for owners of real estate, up to 1 year at first and renewable yearly, criteria by Council of Ministers decision; no value is set in the law. Article 31(2): short stays are limited to 90 days in 180 \"except where otherwise provided\"."
+        }
+      ]
+    },
+    {
+      "id": "al-visa-portfolio-not-qualify",
+      "fact": "visa",
+      "cities": [
+        "sarande"
+      ],
+      "claim": "Portfolio income alone does not qualify for the pensioner permit",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Law No. 79/2021 on foreigners, consolidated with Law 43/2025 (Agency for Foreigners and Migration, asp.gov.al)",
+          "url": "https://asp.gov.al/wp-content/uploads/2025/11/Ligj-PER-TE-HUAJT-2021-06-24-79-perditesuar-2025-PDF.pdf",
+          "read": "2026-11-15",
+          "says": "Consolidated text \"i përditësuar\" with Law 43/2025 of 26.6.2025. Article 85: foreigners \"që janë në pension në vendin e tyre\" (retired in their own country) may apply for a residence permit for pensioners; it is renewable every year if the criteria set by Council of Ministers decision are still met; it is a permit \"dhënë në bazë të pensionit jashtë vendit\" (granted on a pension from abroad) and allows no economic activity. Article 84: a temporary permit for owners of real estate, up to 1 year at first and renewable yearly, criteria by Council of Ministers decision; no value is set in the law. Article 31(2): short stays are limited to 90 days in 180 \"except where otherwise provided\"."
+        },
+        {
+          "name": "e-Albania: residence permit documents by purpose (Border and Migration Police)",
+          "url": "https://e-albania.al/assets/services/DPPSH/15308_LQ_dokumentacioni.pdf",
+          "read": "2026-11-15",
+          "says": "Undated. For \"Application for a residence permit for a pensioner\": \"Evidence of annual pension income in the country of origin in the amount of over 1,200,000 ALL\"; \"Evidence from a second level bank in Albania for the pension transfer\"; \"Verification of health insurance in Albania\". The real-estate permit needs an ownership certificate and \"Evidence of sufficient financial resources\", with no minimum property value listed."
+        }
+      ],
+      "note": "Article 85 is for those \"retired in their own country\" on a pension from abroad, and the document list asks for evidence of pension income; neither mentions investment income."
+    },
+    {
+      "id": "al-visa-property-route-2026",
+      "fact": "visa",
+      "cities": [
+        "sarande"
+      ],
+      "claim": "A property route changed in 2026, possibly to €300k",
+      "verdict": "cant-confirm",
+      "hedge": "reportedly",
+      "wording": "a property route reportedly changed in 2026 (possibly €300k), so confirm it with a lawyer",
+      "sources": [
+        {
+          "name": "IMI Daily: how to get residency in the Balkans through investment",
+          "url": "https://www.imidaily.com/analysis/how-to-get-residency-in-the-balkans-through-investment/",
+          "read": "2026-11-15",
+          "says": "Dated March 19, 2026, updated April 7, 2026. \"A January 2026 amendment to Albania's Law on Foreigners (Law 43/2025) may have introduced new minimum thresholds\", \"with some legal sources citing €100,000 for business or government securities and €300,000 for real estate\"; \"These figures have not been confirmed by IMI Daily or by official Albanian government publications in English.\""
+        },
+        {
+          "name": "Law No. 79/2021 on foreigners, consolidated with Law 43/2025 (Agency for Foreigners and Migration, asp.gov.al)",
+          "url": "https://asp.gov.al/wp-content/uploads/2025/11/Ligj-PER-TE-HUAJT-2021-06-24-79-perditesuar-2025-PDF.pdf",
+          "read": "2026-11-15",
+          "says": "Consolidated text \"i përditësuar\" with Law 43/2025 of 26.6.2025. Article 85: foreigners \"që janë në pension në vendin e tyre\" (retired in their own country) may apply for a residence permit for pensioners; it is renewable every year if the criteria set by Council of Ministers decision are still met; it is a permit \"dhënë në bazë të pensionit jashtë vendit\" (granted on a pension from abroad) and allows no economic activity. Article 84: a temporary permit for owners of real estate, up to 1 year at first and renewable yearly, criteria by Council of Ministers decision; no value is set in the law. Article 31(2): short stays are limited to 90 days in 180 \"except where otherwise provided\"."
+        },
+        {
+          "name": "e-Albania: residence permit documents by purpose (Border and Migration Police)",
+          "url": "https://e-albania.al/assets/services/DPPSH/15308_LQ_dokumentacioni.pdf",
+          "read": "2026-11-15",
+          "says": "Undated. For \"Application for a residence permit for a pensioner\": \"Evidence of annual pension income in the country of origin in the amount of over 1,200,000 ALL\"; \"Evidence from a second level bank in Albania for the pension transfer\"; \"Verification of health insurance in Albania\". The real-estate permit needs an ownership certificate and \"Evidence of sufficient financial resources\", with no minimum property value listed."
+        }
+      ],
+      "note": "The consolidated law (Article 84) and the e-Albania list set no property value; IMI Daily reports the €300,000 figure as unconfirmed. Already hedged."
+    },
+    {
+      "id": "al-healthcare-uk-list",
+      "fact": "healthcare",
+      "cities": [
+        "sarande"
+      ],
+      "claim": "The UK embassy's list (Mar 2026) names hospitals in Tirana, Durrës and Fier but none in Sarandë",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "GOV.UK: English-speaking medical facilities in Albania",
+          "url": "https://www.gov.uk/government/publications/albania-list-of-medical-facilities/list-of-english-speaking-medical-facilities-for-british-nationals-in-albania--2",
+          "read": "2026-11-15",
+          "says": "Updated 17 March 2026. Facilities listed: in Tirana (American Hospital Tirana, German Hospital Tirana, Hygea Hospital Tirana, Nene Tereza Public Hospital), Durrës (American Hospital Durres) and Fier (American Hospital Fier); none in Sarandë."
+        }
+      ]
+    },
+    {
+      "id": "al-healthcare-tirana-drive",
+      "fact": "healthcare",
+      "cities": [
+        "sarande"
+      ],
+      "claim": "Tirana is 4–5 hours by road",
+      "verdict": "corrected",
+      "oldWording": "(reportedly 4–5 hours by road)",
+      "newWording": "(reportedly about five hours by road)",
+      "sources": [
+        {
+          "name": "App Savvy Traveller: Tirana to Sarandë and Ksamil",
+          "url": "https://appsavvytraveller.com/tirana-to-saranda-and-ksamil/",
+          "read": "2026-11-15",
+          "says": "Published 22 October 2026, updated 9 November 2026. The trip \"takes about five hours on the inland road or six to seven hours by the coast.\""
+        },
+        {
+          "name": "Albania Tour Guide: how far is Tirana from Saranda?",
+          "url": "https://albaniatourguide.com/how-far-is-tirana-from-saranda/",
+          "read": "2026-11-15",
+          "says": "Undated (images from June 2024). \"Tirana is 280 kilometres from Saranda.\" \"Driving from Tirana to Saranda will take 5 or 6 hours, depending on which route you take.\""
+        }
+      ],
+      "also": [
+        "sources: added App Savvy Traveller"
+      ],
+      "note": "Both pages read give five hours or more (about five inland, 5–6 by one guide, 6–7 by the coast); none gives four. The hedge stays."
+    },
+    {
+      "id": "al-healthcare-corfu-ferry",
+      "fact": "healthcare",
+      "cities": [
+        "sarande"
+      ],
+      "claim": "Serious care can mean Corfu by ferry",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Ferryhopper: Corfu to Sarandë ferry",
+          "url": "https://www.ferryhopper.com/en/ferry-routes/direct/corfu-sarande",
+          "read": "2026-11-15",
+          "says": "Crossings \"normally ranges from 25 min to 1 hr 15 min\"; operators Finikas Lines, Ionian Seaways and Albania Luxury Ferries; schedule data by month from last year shows gaps in winter."
+        }
+      ]
+    },
+    {
+      "id": "al-healthcare-permit-insurance",
+      "fact": "healthcare",
+      "cities": [
+        "sarande"
+      ],
+      "claim": "The permit needs private cover",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "e-Albania: residence permit documents by purpose (Border and Migration Police)",
+          "url": "https://e-albania.al/assets/services/DPPSH/15308_LQ_dokumentacioni.pdf",
+          "read": "2026-11-15",
+          "says": "Undated. For \"Application for a residence permit for a pensioner\": \"Evidence of annual pension income in the country of origin in the amount of over 1,200,000 ALL\"; \"Evidence from a second level bank in Albania for the pension transfer\"; \"Verification of health insurance in Albania\". The real-estate permit needs an ownership certificate and \"Evidence of sufficient financial resources\", with no minimum property value listed."
+        }
+      ],
+      "note": "The pensioner permit requires \"Verification of health insurance in Albania\"; the list does not say private, but a newcomer has no public cover to show."
+    },
+    {
+      "id": "al-healthcare-cigna-no-age-cap",
+      "fact": "healthcare",
+      "cities": [
+        "sarande"
+      ],
+      "claim": "Cigna Global has no upper entry age",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Cigna Global: seniors health insurance",
+          "url": "https://cignaglobal.com/seniors-health-insurance",
+          "read": "2026-11-15",
+          "says": "Undated. \"No upper age limit - applications welcomed regardless of age\"; the FAQ says \"there is no upper age limit for applications.\""
+        }
+      ]
+    }
+  ]
+}

@@ -7,13 +7,13 @@ Every city profile makes claims a retiree could act on: the tax on holding a por
 2026-11-15 · tests: 982 pass · typecheck: clean
 
 ## Now
-Stage 3 of 8 · Eastern Europe, Mediterranean, Middle East, Africa
-Scope: Greece (2), Cyprus (2), Turkey (2), Georgia (2), Croatia, Montenegro, Albania, Bulgaria, Hungary, Czech Republic, UAE, South Africa, Mauritius — 17 cities, one ledger file per country, by the method in `docs/research/fact-check-2026-11/README.md`; the shared IBKR correction and lending score applied to the EU ones.
+Stage 4 of 8 · Mexico, Central America, Caribbean
+Scope: Mexico (9), Belize (5), Panama (4), Costa Rica (2), Guatemala (2), Honduras, Dominican Republic — 24 cities, one ledger file per country, by the method in `docs/research/fact-check-2026-11/README.md`; Schwab's reported country list checked against Guatemala's profiles.
 Risk: UI only (profile copy and scores; the research reads public web pages)
 Checks:
-- [ ] The ledger holds every claim in the five facts of the 17 profiles, each with a verdict, a source URL and the date it was read; none is left pending, and `CHECKED_COUNTRIES` names all thirteen countries (proof: test)
+- [ ] The ledger holds every claim in the five facts of the 24 profiles, each with a verdict, a source URL and the date it was read; none is left pending, and `CHECKED_COUNTRIES` names all seven countries (proof: test)
 - [ ] For every corrected claim, the old wording is gone from those profiles and the new wording is in them (proof: test)
-- [ ] A fresh re-read of 13 ledger sources, one per country and spread across the five facts, finds each page says what the ledger says it says (proof: run, a test can't read the web)
+- [ ] A fresh re-read of 10 ledger sources, at least one per country and spread across the five facts, finds each page says what the ledger says it says (proof: run, a test can't read the web)
 - [ ] Three open profiles in the running build, from three of these countries, show the corrected facts, with scores, summary and drawbacks that agree with them (proof: run the product, a test can't judge the rendered page)
 Open: none
 Mode: autopilot — unattended
@@ -22,7 +22,7 @@ Agents: lean
 ## Stages
 - [x] 1. Method and Portugal pilot — the claim ledger and its tests, the claims shared across profiles (US estate tax, treaties, brokers, PRIIPs), and Portugal's 6 cities checked and corrected end to end — [evidence](evidence/stage-1/report.md)
 - [x] 2. Western Europe — Spain (7), France (3), Italy (2), Ireland, UK, Netherlands, Germany, Switzerland, Austria, Malta: 19 cities — [evidence](evidence/stage-2/report.md)
-- [ ] 3. Eastern Europe, Mediterranean, Middle East, Africa — Greece (2), Cyprus (2), Turkey (2), Georgia (2), Croatia, Montenegro, Albania, Bulgaria, Hungary, Czech Republic, UAE, South Africa, Mauritius: 17 cities
+- [x] 3. Eastern Europe, Mediterranean, Middle East, Africa — Greece (2), Cyprus (2), Turkey (2), Georgia (2), Croatia, Montenegro, Albania, Bulgaria, Hungary, Czech Republic, UAE, South Africa, Mauritius: 17 cities — [evidence](evidence/stage-3/report.md)
 - [ ] 4. Mexico, Central America, Caribbean — Mexico (9), Belize (5), Panama (4), Costa Rica (2), Guatemala (2), Honduras, Dominican Republic: 24 cities
 - [ ] 5. South America and Canada — Colombia (3), Canada (3), Ecuador, Peru, Chile, Argentina, Uruguay, Paraguay: 12 cities
 - [ ] 6. Asia-Pacific — Thailand (5), Malaysia (3), Vietnam (3), Philippines (2), Japan (2), Australia (2), Indonesia, Taiwan, South Korea, Singapore, New Zealand: 22 cities
@@ -46,8 +46,11 @@ Agents: lean
 - 2026-11-15 · (unattended) London and Zurich score Lending 3, not 4 and not 2: Schwab's reported clause bars margin cash-out for customers "residing within Europe", not the EU, which likely covers the UK and Switzerland and leaves IBKR alone (3); the evidence that IBKR's UK entity bars it too is one 2024 forum thread with mixed reports, too thin for 2. The rubric's 4 now reads "outside Europe" — research: [united-kingdom.json](research/fact-check-2026-11/united-kingdom.json) `uk-lending-ib-uk-margin-cash-out`, [switzerland.json](research/fact-check-2026-11/switzerland.json).
 - 2026-11-15 · (unattended) Italy's tax fact now says non-UCITS funds, which reportedly include US-domiciled ETFs, pay progressive income tax rather than 26%: the builder added it though the profile hadn't claimed it, and it stays, because the flat 26% misled a reader holding US funds.
 - 2026-11-15 · Spain's estate score stays 4 with its "inference" hedge: the statute read supports that US-resident heirs pay only on Spanish assets, but no page states it for this case — PM's call.
+- 2026-11-15 · Montenegro and Albania keep Lending 3 and get no EU IBKR correction: neither is in the EU, and Schwab reportedly doesn't take their residents, so "IBKR only" scores 3 whether or not Schwab's "within Europe" clause reaches them — consistent with the London/Zurich decision; builder's call, PM agreed. Dubai keeps 4 (Schwab reportedly accepts residents outside Europe).
 
 ## Open questions
+- For stage 8 (model), from stage 3: South Africa's death-time capital gains tax (s9HA) and exit tax (s9H) are confirmed but not modelled (`south-africa.json` `modelMismatch`); other stage 3 mismatches are in each country file.
+- From stage 3, unsettled by any readable page: Kotor's hospital's current name (now "Kotor's hospital"), Montenegro's inheritance statute, the UAE's non-Muslim estate law text, the US–South Africa estate treaty text, Grand Baie's drive times and evacuation practice — later, by someone with a browser.
 - For stage 8 (model), from stage 2: `localTaxes.ts` has no entry for the UK, the Netherlands (Box 3 is a real yearly tax on a portfolio), Germany or Switzerland (Zurich's wealth tax); the figures are in each country's ledger file under `modelMismatch`. Catalonia's fifth band starts 24 cents off; Italy's and France's notes carry hedges the statutes now settle.
 - Spain's Los Angeles consulate page says residency applicants "cannot have/leave loans or mortgages in the United States"; whether a margin loan counts is not established, and no profile mentions it — user's call whether to add a warning.
 - Not claimed by the profiles, so not added, but they matter to a buy-and-hold ETF portfolio: Ireland's fund exit tax and 8-year deemed disposal, Germany's Vorabpauschale, and Switzerland's "professional securities dealer" tests (borrowing to invest is reportedly one) — a later pass.

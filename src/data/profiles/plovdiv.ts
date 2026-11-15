@@ -4,8 +4,8 @@ import { S } from './_shared'
 const profile: ExpatProfile = {
   tagline: 'Cheap, historic Bulgarian city with a 5% tax on dividends',
   summary:
-    'Bulgaria has one of the EU\'s best tax profiles for buy-borrow-die: no wealth tax, a 5% final tax on dividends, and children (and a foreigner\'s foreign assets) outside inheritance tax. Plovdiv is among the cheapest cities on this list, with private care at Eurohospital and Sofia\'s JCI hospital 144 km away; the catches are a residence route that needs a pension, a continental climate and a small English-speaking community.',
-  scores: { cost: 5, healthcare: 3, safety: 4, visa: 3, climate: 3, community: 2, tax: 4, estate: 5, lending: 3 },
+    'Bulgaria has one of the EU\'s best tax profiles for buy-borrow-die: no wealth tax, a 5% final tax on dividends, and children (and a foreigner\'s foreign assets) outside inheritance tax. Plovdiv is among the cheapest cities on this list, with private care at Eurohospital and Sofia\'s JCI hospital 144 km away; the catches are a residence route that needs a pension, a continental climate and a small English-speaking community. The borrow step is weak too: Schwab is reportedly unavailable to Bulgaria residents, and IBKR reportedly bars EU residents from drawing margin as cash.',
+  scores: { cost: 5, healthcare: 3, safety: 4, visa: 3, climate: 3, community: 2, tax: 4, estate: 5, lending: 2 },
   facts: {
     healthcare:
       'Eurohospital Plovdiv is the private hospital the UK embassy lists in the city; Acibadem\'s Plovdiv office only coordinates patients, and serious cases go to Sofia (Acibadem City Clinic, JCI), 144 km away; the permit needs private cover of at least €30,000, and joining public NHIF as self-insured costs 8% of declared income, about €50/month at the minimum base.',
@@ -16,7 +16,7 @@ const profile: ExpatProfile = {
     estate:
       'Bulgaria\'s municipal inheritance tax fully exempts children and grandchildren, and reaches a foreign national only on property in Bulgaria, so a US portfolio passes to US-resident children with no Bulgarian tax (law-firm source; the Ministry of Finance page could not be read); there is no US estate treaty.',
     lending:
-      'IBKR reportedly serves Bulgaria residents (likely through its EU entity), with margin terms per country unknown; Schwab International is reportedly unavailable (Bulgaria is not on its reported list), and EU PRIIPs rules reportedly block new buys of US-listed ETFs, not holding them.',
+      'IBKR reportedly serves Bulgaria residents (likely through its EU entity), and IBKR\'s EU entity reportedly lends on margin only to buy securities, not to withdraw as cash, so confirm how you would draw cash before relying on it; Schwab International is reportedly unavailable (Bulgaria is not on its reported list), and EU PRIIPs rules reportedly block new buys of US-listed ETFs, not holding them.',
     climate: 'Continental: July and August highs about 31–33°C, January highs about 5°C with lows below freezing, and about 540 mm of rain a year.',
     community:
       'Bulgaria\'s second city (about 330,000 people in 2024), with a small English-speaking foreign community, smaller than Sofia\'s or the Black Sea coast\'s; daily life runs in Bulgarian.',
@@ -42,6 +42,7 @@ const profile: ExpatProfile = {
       name: 'Ryanair: new Milan route from Plovdiv for winter 2025/26',
       url: 'https://corporate.ryanair.com/news/ryanair-grows-in-plovdiv-with-new-milan-malpensa-route-in-winter-2025-26/',
     },
+    { name: 'LYNX: withdrawals from accounts carried by Interactive Brokers', url: 'https://www.lynxbroker.com/service/payments-and-transfers/withdrawal/' },
     { name: 'YourTaxBase: Charles Schwab for expats', url: 'https://yourtaxbase.com/blog/charles-schwab-for-expats', edition: '2026' },
     S.gpiTop50,
   ],
