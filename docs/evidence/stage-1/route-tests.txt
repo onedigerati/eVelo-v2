@@ -1,0 +1,23 @@
+$ npx vitest run src/ui/atlas/__tests__/gettingThere.test.ts --reporter=verbose
+npm notice run evelo@2.0.0 npx
+npm notice run 'vitest' run src/ui/atlas/__tests__/gettingThere.test.ts --reporter=verbose
+
+ RUN  v5.1.0 /home/jonah/repos/eVelo-v2
+
+ ✓ src/ui/atlas/__tests__/gettingThere.test.ts > routeBetween > needs no flight for a shared airport or a nearby city 2ms
+ ✓ src/ui/atlas/__tests__/gettingThere.test.ts > routeBetween > finds a nonstop listed by either end 0ms
+ ✓ src/ui/atlas/__tests__/gettingThere.test.ts > routeBetween > picks the one-stop hub with the shortest total distance, and names a close second 0ms
+ ✓ src/ui/atlas/__tests__/gettingThere.test.ts > routeBetween > names one hub when the others are much longer 0ms
+ ✓ src/ui/atlas/__tests__/gettingThere.test.ts > routeBetween > falls back to two stops when no one-stop path exists 0ms
+ ✓ src/ui/atlas/__tests__/gettingThere.test.ts > routeBetween > says unknown when there is no airport or no path 0ms
+ ✓ src/ui/atlas/__tests__/gettingThere.test.ts > estimateHours > JFK–LHR nonstop is within an hour of the typical 7–8 h 0ms
+ ✓ src/ui/atlas/__tests__/gettingThere.test.ts > estimateHours > SAN–BKK via Tokyo is within an hour of the typical 19–22 h 0ms
+ ✓ src/ui/atlas/__tests__/gettingThere.test.ts > estimateHours > uses great-circle distance 1ms
+ ✓ src/ui/atlas/__tests__/gettingThere.test.ts > routeSentence > writes every kind from the home city, with hub city names and no "US" 1ms
+ ✓ src/ui/atlas/__tests__/gettingThere.test.ts > routeSentence > shows an hour range at least one hour wide 0ms
+
+ Test Files  1 passed (1)
+      Tests  11 passed (11)
+   Start at  21:55:21
+   Duration  113ms (transform 44%, import 29%, tests 20%, worker 6%)
+

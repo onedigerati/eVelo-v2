@@ -7,17 +7,19 @@ A city profile's "Getting there" is one hand-written sentence per city, written 
 2026-11-14 · tests: 824 pass · typecheck: clean
 
 ## Now
-Stage 1 of 3 · Route engine
+Stage 2 of 3 · Route data
+Mode: autopilot
 Agents: lean
 Risk: UI only
 Checks:
-- [ ] `routeBetween(home, dest)` returns, from a fixed test route table: same or shared airport, nonstop, one stop via the shared hub(s) with the shortest total distance (up to two named), and two stops when no one-stop path exists (proof: test)
-- [ ] The hour estimate is a range from great-circle distance (cruise speed plus time per leg and per connection); SAN–BKK one-stop and JFK–LHR nonstop land within an hour of published typical times (proof: test)
-- [ ] The sentence builder gives "From <home> (<IATA>): …" for every route kind, uses city names for hubs, and never says "US" (proof: test)
+- [ ] Every one of the 134 cities maps to a main airport; every airport has a city name, coordinates, a source, and nonstops that name only airports in the file (proof: test)
+- [ ] Every home–destination pair among the 134 cities resolves to a route (ground, nonstop, one or two stops); none reads "no route in our data" (proof: test)
+- [ ] Known pairs come out right: JFK–LHR and LHR–LIS nonstop, San Diego–Bangkok one stop, Torrevieja–Alicante no flight (proof: test)
+- [ ] Ten routes picked at random match the airport's published route list (proof: source check by hand, a test can't read the web)
 Open: none
 
 ## Stages
-- [ ] 1. Route engine — airport and route data shape, `routeBetween` and the hour estimate, the sentence builder, pilot data for a handful of airports, all tested
+- [x] 1. Route engine — airport and route data shape, `routeBetween` and the hour estimate, the sentence builder, pilot data for a handful of airports, all tested
 - [ ] 2. Route data — main airport and current nonstops (among the 134 cities' airports and about 30 world hubs) for every city, sourced and dated, with a coverage test
 - [ ] 3. Home-aware card — the profile's Getting there shows the computed line and the local note, live on home change; all 134 `access` notes rewritten to drop the US framing
 
@@ -28,6 +30,9 @@ Open: none
 - 2026-11-14 · Scale: 3 stages, one feature, one release — no scale signal fired, planned as one plan.
 - 2026-11-14 · Routes are kept only between a fixed set of airports (each city's main airport plus about 30 world hubs); a route counts in both directions when either end lists it; the hub pair with the shortest total distance is chosen — PM's call (default).
 - 2026-11-14 · Two cities sharing an airport (e.g. Torrevieja and Alicante) or with airports under ~150 km apart read "no flight needed", with the drive — PM's call (default).
+
+- 2026-11-14 · No keel:review for stage 1: UI-only, pure functions with tests; risk line matches the diff — PM's call.
+- 2026-11-14 · Stage 1 closed: 3/3 checks pass, 835 tests green ([evidence](evidence/stage-1/report.md)) — PM.
 
 ## Open questions
 - At 320px the map city card's "+ Compare" chip wraps onto two lines (pre-existing) — from the stage 3 verify, later.

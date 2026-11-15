@@ -1,0 +1,11 @@
+$ npm test
+ Test Files  60 passed (60)
+      Tests  835 passed (835)
+$ npm run typecheck
+npm notice run evelo@2.0.0 typecheck
+npm notice run tsc -b
+exit 0
+$ npm run build
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 2.17s
