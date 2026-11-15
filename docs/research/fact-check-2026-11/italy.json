@@ -1,0 +1,822 @@
+{
+  "country": "Italy",
+  "cities": [
+    "rome",
+    "florence"
+  ],
+  "claims": [
+    {
+      "id": "it-tax-ivafe-rate",
+      "fact": "tax",
+      "cities": [
+        "rome",
+        "florence"
+      ],
+      "claim": "IVAFE charges 0.2% a year on the market value of financial assets held abroad, so the whole US portfolio pays yearly",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Agenzia delle Entrate: IVAFE, base imponibile e aliquote",
+          "url": "https://www.agenziaentrate.gov.it/portale/schede/pagamenti/imposta-valore-att-estero-ivafe/base-imponibile-e-aliquote-scheda-ivafe",
+          "read": "2026-11-15",
+          "says": "No date shown. The rate is 2 per mille (4 per mille from 2024 for products held in states with a privileged tax regime), on the market value at the end of each calendar year (quoted value for listed assets). No deduction for debts is mentioned. Foreign current accounts pay a fixed €34.20, nothing if the average balance is €5,000 or less. A credit is given for wealth tax paid abroad, up to the Italian tax."
+        },
+        {
+          "name": "PwC: Italy, other taxes",
+          "url": "https://taxsummaries.pwc.com/italy/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 23 July 2026. IVAFE is 0.2% of the value of foreign financial investments at 31 December (0.4% in privileged-tax states), due from Italian tax residents; bank accounts pay a fixed EUR 34.20. Inheritance and gift tax for a spouse or direct-line relatives is 4% on the value above EUR 1 million per heir. The lump-sum regime for new residents, if elected, replaces IVIE and IVAFE. The page does not state the territorial scope of inheritance tax."
+        }
+      ],
+      "also": [
+        "sources: added the Agenzia delle Entrate IVAFE page to both"
+      ],
+      "note": "Agrees with localTaxes.ts (wealth: gross base, flat 0.2%). A detail the model and profiles leave out: cash in a foreign bank account pays a fixed €34.20, not 0.2%. The summaries, drawback 1 and both `why` lines repeat 0.2%. scores.tax stays 1 (a wealth tax on the gross portfolio)."
+    },
+    {
+      "id": "it-tax-ivafe-no-loan-deduction",
+      "fact": "tax",
+      "cities": [
+        "rome",
+        "florence"
+      ],
+      "claim": "IVAFE gives no deduction for the margin loan",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Agenzia delle Entrate: IVAFE, base imponibile e aliquote",
+          "url": "https://www.agenziaentrate.gov.it/portale/schede/pagamenti/imposta-valore-att-estero-ivafe/base-imponibile-e-aliquote-scheda-ivafe",
+          "read": "2026-11-15",
+          "says": "No date shown. The rate is 2 per mille (4 per mille from 2024 for products held in states with a privileged tax regime), on the market value at the end of each calendar year (quoted value for listed assets). No deduction for debts is mentioned. Foreign current accounts pay a fixed €34.20, nothing if the average balance is €5,000 or less. A credit is given for wealth tax paid abroad, up to the Italian tax."
+        }
+      ],
+      "note": "Confirmed by the base the page defines (market value of each asset) and the absence of any deduction for debts; no page read says \"debts are not deductible\" in words. Agrees with the model's gross base."
+    },
+    {
+      "id": "it-tax-dividends-26",
+      "fact": "tax",
+      "cities": [
+        "rome",
+        "florence"
+      ],
+      "claim": "Foreign dividends and interest pay a 26% substitute tax",
+      "verdict": "corrected",
+      "oldWording": "foreign dividends and interest pay a 26% substitute tax (the US credit is contested",
+      "newWording": "foreign dividends pay a 26% substitute tax, as interest generally does (12.5% on government bonds of white-list states), though non-UCITS funds, which reportedly include US-domiciled ETFs, pay progressive income tax instead",
+      "sources": [
+        {
+          "name": "We Wealth: tax on foreign dividends in Italy",
+          "url": "https://www.we-wealth.com/en?p=131082",
+          "read": "2026-11-15",
+          "says": "Published 17 October 2025. Foreign dividends pay a 26% substitute tax: on the net after foreign withholding when a resident intermediary collects them, on the gross when declared in the return. The Agenzia delle Entrate traditionally denies a credit for the foreign withholding; Cassation judgments no. 25698/2022 and no. 10204/2024 held that where the substitute tax applies by law the credit must be recognised unless the treaty expressly excludes it (Italy–USA treaty, art. 23)."
+        },
+        {
+          "name": "Italy Handbook: withholding tax on US dividends for Italian residents",
+          "url": "https://italyhandbook.com/withholding-tax-on-us-dividends-for-italian-residents/",
+          "read": "2026-11-15",
+          "says": "Published 29 April 2026, updated 15 October 2026. Foreign dividends pay a flat 26% substitute tax on the amount received after US withholding ($100 dividend: $15 withheld, then 26% of $85); \"Italian law prohibits the application of foreign tax credits against it\". Interest and US-domiciled funds are not covered."
+        },
+        {
+          "name": "Taxing.it: Italian tax on investment income and capital gains",
+          "url": "https://taxing.it/italian-tax-on-investment-income-and-capital-gains/",
+          "read": "2026-11-15",
+          "says": "Page shows 15 November 2026. \"For ordinary private-investor disposals of shares and other financial investments, the general Italian substitute-tax rate is 26%\"; government bonds, including those of White List governments, are \"generally\" taxed at a flat 12.5%; qualifying funds and ETFs generally 26%. Non-qualifying foreign funds and ETFs are generally taxed at \"progressive IRPEF and Regional and Municipal Taxes\" on both distributions and redemption gains; a US-domiciled fund \"requires a different assessment\" from an Irish UCITS fund. The page gives no rate for interest or dividends by name."
+        }
+      ],
+      "also": [
+        "scores.tax stays 1",
+        "summary (\"26% on dividends\") and drawback 1 (\"plus 26% on dividends and interest\") left as they are: true of shares and most interest",
+        "sources: added Taxing.it and PwC taxes on personal income to both"
+      ],
+      "rankFlag": "The `why` lines of Florence (55) and Rome (69) in src/data/expatPicks.ts say \"26% on dividends\". For shares that holds. For a portfolio of US-domiciled ETFs or mutual funds, which is what most US retirees hold, distributions and gains reportedly fall outside the 26% regime and are taxed at progressive rates, which is worse than the `why` says; it supports the low rank. Florence's `why` also calls the elective-residence visa \"good\" while the profile scores visa 3 (a €31,000 passive-income bar). Neither `why` nor the ranks were changed: user's call.",
+      "note": "26% on dividends is confirmed on two dated secondary pages. Why corrected: the flat statement was too wide for this site's reader. The one page read on funds says non-qualifying foreign funds and ETFs pay progressive IRPEF plus regional and municipal tax on distributions and gains, and that a US-domiciled fund needs its own assessment; that US ETFs are non-qualifying comes from search results, not a page read, so the clause says \"reportedly\". A person should confirm it with the Agenzia delle Entrate's instructions (quadro RL/RM) or an adviser. localTaxes.ts models no income tax on dividends, so nothing to compare."
+    },
+    {
+      "id": "it-tax-interest-26",
+      "fact": "tax",
+      "cities": [
+        "rome",
+        "florence"
+      ],
+      "claim": "Foreign interest pays the 26% substitute tax",
+      "verdict": "cant-confirm",
+      "hedge": "generally",
+      "wording": "as interest generally does (12.5% on government bonds of white-list states)",
+      "sources": [
+        {
+          "name": "PwC: Italy, income determination",
+          "url": "https://taxsummaries.pwc.com/italy/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 23 July 2026. Interest, dividends and capital gains \"may be subject to a flat tax rate\" if the conditions of Italian law are met; capital gains on financial assets are generally subject to a 26% substitute tax. The page gives no rate for dividends or interest by name and nothing on non-EU funds."
+        },
+        {
+          "name": "Taxing.it: Italian tax on investment income and capital gains",
+          "url": "https://taxing.it/italian-tax-on-investment-income-and-capital-gains/",
+          "read": "2026-11-15",
+          "says": "Page shows 15 November 2026. \"For ordinary private-investor disposals of shares and other financial investments, the general Italian substitute-tax rate is 26%\"; government bonds, including those of White List governments, are \"generally\" taxed at a flat 12.5%; qualifying funds and ETFs generally 26%. Non-qualifying foreign funds and ETFs are generally taxed at \"progressive IRPEF and Regional and Municipal Taxes\" on both distributions and redemption gains; a US-domiciled fund \"requires a different assessment\" from an Irish UCITS fund. The page gives no rate for interest or dividends by name."
+        }
+      ],
+      "also": [
+        "hedge \"generally\" added; the 12.5% rate for white-list government bonds added from Taxing.it"
+      ],
+      "note": "No page read states a 26% rate on interest in words: PwC says interest \"may be subject to a flat tax rate\" and gives 26% for capital gains; Taxing.it gives 26% for disposals and 12.5% for government bonds. Very likely right (the same substitute tax), but unread. The old flat wording is proven gone by it-tax-dividends-26."
+    },
+    {
+      "id": "it-tax-us-credit-cassation",
+      "fact": "tax",
+      "cities": [
+        "rome",
+        "florence"
+      ],
+      "claim": "The credit for US withholding against the 26% is contested but backed by recent Cassation rulings",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "We Wealth: tax on foreign dividends in Italy",
+          "url": "https://www.we-wealth.com/en?p=131082",
+          "read": "2026-11-15",
+          "says": "Published 17 October 2025. Foreign dividends pay a 26% substitute tax: on the net after foreign withholding when a resident intermediary collects them, on the gross when declared in the return. The Agenzia delle Entrate traditionally denies a credit for the foreign withholding; Cassation judgments no. 25698/2022 and no. 10204/2024 held that where the substitute tax applies by law the credit must be recognised unless the treaty expressly excludes it (Italy–USA treaty, art. 23)."
+        },
+        {
+          "name": "Italy Handbook: withholding tax on US dividends for Italian residents",
+          "url": "https://italyhandbook.com/withholding-tax-on-us-dividends-for-italian-residents/",
+          "read": "2026-11-15",
+          "says": "Published 29 April 2026, updated 15 October 2026. Foreign dividends pay a flat 26% substitute tax on the amount received after US withholding ($100 dividend: $15 withheld, then 26% of $85); \"Italian law prohibits the application of foreign tax credits against it\". Interest and US-domiciled funds are not covered."
+        }
+      ],
+      "note": "The two pages show the dispute: one cites the Cassation rulings of 2022 and 2024 for the credit, the other says flatly that no credit is allowed."
+    },
+    {
+      "id": "it-tax-flat-tax-new-residents",
+      "fact": "tax",
+      "cities": [
+        "rome",
+        "florence"
+      ],
+      "claim": "A €300k/yr flat tax for new residents replaces both IVAFE and the tax on foreign dividends and interest",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Italy, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/italy/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 23 July 2026. For individuals who transfer residence from 1 January 2026 the flat tax \"is increased to EUR 300,000\" (EUR 200,000 for those who opted from 2025, EUR 100,000 from 2024 or before; EUR 50,000 per family member). It replaces income tax on foreign interest, dividends and capital gains and the wealth taxes on foreign real estate and financial investments. The 7% regime needs foreign pension income and a move to a municipality with fewer than 20,000 inhabitants in Sicily, Calabria, Sardinia, Campania, Basilicata, Abruzzo, Molise or Puglia."
+        },
+        {
+          "name": "PwC: Italy, other taxes",
+          "url": "https://taxsummaries.pwc.com/italy/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 23 July 2026. IVAFE is 0.2% of the value of foreign financial investments at 31 December (0.4% in privileged-tax states), due from Italian tax residents; bank accounts pay a fixed EUR 34.20. Inheritance and gift tax for a spouse or direct-line relatives is 4% on the value above EUR 1 million per heir. The lump-sum regime for new residents, if elected, replaces IVIE and IVAFE. The page does not state the territorial scope of inheritance tax."
+        }
+      ],
+      "note": "€300,000 applies to those who move from 1 January 2026; it also needs nine of the previous ten years as a non-resident. Agrees with the localTaxes.ts note (\"the €300k flat-tax option that replaces IVAFE\"), which the model ignores."
+    },
+    {
+      "id": "it-tax-seven-percent-excludes-city",
+      "fact": "tax",
+      "cities": [
+        "rome",
+        "florence"
+      ],
+      "claim": "The 7% pensioner regime excludes Rome and Florence",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "The Local Italy: is Italy's flat tax rate for pensioners still available in 2026",
+          "url": "https://www.thelocal.it/20260128/is-italys-flat-tax-rate-for-pensioners-still-available-in-2026",
+          "read": "2026-11-15",
+          "says": "The URL is dated 28 January 2026; the text refers to a change in April 2026, so it has been updated since, and no update date was returned. The 7% scheme covers small towns in Sicily, Calabria, Sardinia, Campania, Basilicata, Abruzzo, Molise and Puglia, plus earthquake-hit towns in Lazio, Marche and Umbria; the town must have \"no more than 30,000 inhabitants\", a limit the article says rose from 20,000 in April 2026. It needs a foreign pension and five years' residence abroad. Neither Rome nor Florence is named."
+        },
+        {
+          "name": "PwC: Italy, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/italy/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 23 July 2026. For individuals who transfer residence from 1 January 2026 the flat tax \"is increased to EUR 300,000\" (EUR 200,000 for those who opted from 2025, EUR 100,000 from 2024 or before; EUR 50,000 per family member). It replaces income tax on foreign interest, dividends and capital gains and the wealth taxes on foreign real estate and financial investments. The 7% regime needs foreign pension income and a move to a municipality with fewer than 20,000 inhabitants in Sicily, Calabria, Sardinia, Campania, Basilicata, Abruzzo, Molise or Puglia."
+        }
+      ],
+      "also": [
+        "sources: added The Local article to Rome (Florence had it)"
+      ],
+      "note": "Rome says \"the 7% southern regime excludes Rome\", Florence \"the 7% regime excludes Florence\". Tuscany is not among the regions; Lazio qualifies only for listed earthquake-hit small towns, and Rome is far above any population limit. The two pages disagree on the limit: PwC (July 2026) says fewer than 20,000 inhabitants, The Local says it rose to 30,000 in April 2026. The profiles give no limit, so nothing to correct; a later profile that quotes 20,000 should check."
+    },
+    {
+      "id": "it-estate-rate-allowance",
+      "fact": "estate",
+      "cities": [
+        "rome",
+        "florence"
+      ],
+      "claim": "Children pay 4% above a €1M allowance each",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Agenzia delle Entrate: imposta di successione, aliquote e franchigie",
+          "url": "https://www.agenziaentrate.gov.it/portale/schede/pagamenti/imposta-di-successione/aliquote-e-franchigie",
+          "read": "2026-11-15",
+          "says": "No date shown. 4% for a spouse or direct-line relatives on the net value above €1,000,000 for each beneficiary; 6% for siblings above €100,000; 6% for other relatives and 8% for anyone else with no allowance; €1.5M allowance for a beneficiary with a severe disability. Nothing on territoriality."
+        },
+        {
+          "name": "PwC: Italy, other taxes",
+          "url": "https://taxsummaries.pwc.com/italy/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 23 July 2026. IVAFE is 0.2% of the value of foreign financial investments at 31 December (0.4% in privileged-tax states), due from Italian tax residents; bank accounts pay a fixed EUR 34.20. Inheritance and gift tax for a spouse or direct-line relatives is 4% on the value above EUR 1 million per heir. The lump-sum regime for new residents, if elected, replaces IVIE and IVAFE. The page does not state the territorial scope of inheritance tax."
+        }
+      ],
+      "also": [
+        "sources: added the Agenzia delle Entrate rates page to both"
+      ],
+      "note": "Agrees with localTaxes.ts (perHeirAllowance €1,000,000, flat 4%). scores.estate stays 4. The `why` lines do not mention inheritance."
+    },
+    {
+      "id": "it-estate-worldwide-reach",
+      "fact": "estate",
+      "cities": [
+        "rome",
+        "florence"
+      ],
+      "claim": "The inheritance tax is believed to reach a resident's worldwide assets (unverified)",
+      "verdict": "corrected",
+      "oldWording": "(believed to reach a resident's worldwide assets, unverified)",
+      "newWording": "4% above a €1M allowance per child, on a resident's worldwide assets, and",
+      "sources": [
+        {
+          "name": "Brocardi: Testo unico successioni e donazioni (D.Lgs. 346/1990), art. 2, Territorialità dell'imposta",
+          "url": "https://www.brocardi.it/testo-unico-successioni-donazioni/titolo-i/art2.html",
+          "read": "2026-11-15",
+          "says": "Text updated to 12/08/2026. Comma 1: \"L'imposta è dovuta in relazione a tutti i beni e diritti trasferiti, ancorché esistenti all'estero.\" Comma 2: if at the opening of the succession the deceased was not resident in the State, \"l'imposta è dovuta limitatamente ai beni e ai diritti ivi esistenti.\""
+        },
+        {
+          "name": "We Wealth: successioni, cosa succede se il de cuius è residente (o non) in Italia",
+          "url": "https://www.we-wealth.com/?p=14272",
+          "read": "2026-11-15",
+          "says": "Published 21 January 2022, updated 11 March 2025. If the deceased was resident in Italy the tax covers all assets \"ovunque esistenti\"; if not, only assets in Italy. A new resident under the art. 24-bis flat tax pays only on Italian assets. A credit is given for inheritance tax paid abroad. The US convention is named as one of Italy's inheritance-tax treaties, covering inheritances only, not gifts."
+        }
+      ],
+      "also": [
+        "scores.estate stays 4 (≤5% and an allowance ≥ $1M per child; the rubric's one-point deduction is for a regime whose reach over US assets is only inferred, and the 4 was already given with the reach assumed)",
+        "sources: added Brocardi art. 2 to both"
+      ],
+      "modelMismatch": "No change to numbers. The IT note in localTaxes.ts says \"Worldwide reach for a resident decedent is believed but not verified on the source; modelled as applying.\" Article 2(1) of the Testo unico (D.Lgs. 346/1990), read on Brocardi's copy updated to 12/08/2026 (https://www.brocardi.it/testo-unico-successioni-donazioni/titolo-i/art2.html), says the tax is due on all assets transferred \"ancorché esistenti all'estero\" when the deceased was resident; the hedge in the note can go. Also for the note: a credit is given for inheritance tax paid abroad (art. 26, per the secondary page), and a new resident under the flat-tax regime pays only on Italian assets; the model ignores both.",
+      "note": "The statute was read on a law publisher's copy, not normattiva.it or the Agenzia (its guide of June 2026 and its rates page are silent on territoriality; two guessed Agenzia URLs returned 404). The hedge is removed because the statute settles it."
+    },
+    {
+      "id": "it-estate-summary-treaty-wording",
+      "fact": "estate",
+      "cities": [
+        "rome",
+        "florence"
+      ],
+      "claim": "Children inherit at only 4% above €1M each \"under a US estate treaty\" (summary)",
+      "verdict": "corrected",
+      "oldWording": "each under a US estate treaty",
+      "newWording": "each, and Italy has a US estate treaty",
+      "sources": [
+        {
+          "name": "Agenzia delle Entrate: imposta di successione, aliquote e franchigie",
+          "url": "https://www.agenziaentrate.gov.it/portale/schede/pagamenti/imposta-di-successione/aliquote-e-franchigie",
+          "read": "2026-11-15",
+          "says": "No date shown. 4% for a spouse or direct-line relatives on the net value above €1,000,000 for each beneficiary; 6% for siblings above €100,000; 6% for other relatives and 8% for anyone else with no allowance; €1.5M allowance for a beneficiary with a severe disability. Nothing on territoriality."
+        },
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "All 13 countries are in the table (see us-estate-treaty-list). Estate & Gift: Australia, Austria, France, Germany, Japan, United Kingdom. Estate only: Greece, Ireland, Italy, Netherlands, South Africa, Switzerland, and Canada by Article XXIX B of the income tax treaty."
+        }
+      ],
+      "note": "The 4% rate and €1M allowance are Italian law, not a term of the treaty; the summary read as if the treaty set them. Summary only; the estate fact was already worded correctly."
+    },
+    {
+      "id": "it-estate-treaty-exists",
+      "fact": "estate",
+      "cities": [
+        "rome",
+        "florence"
+      ],
+      "claim": "A US–Italy estate treaty exists",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-with",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "All 13 countries are in the table (see us-estate-treaty-list). Estate & Gift: Australia, Austria, France, Germany, Japan, United Kingdom. Estate only: Greece, Ireland, Italy, Netherlands, South Africa, Switzerland, and Canada by Article XXIX B of the income tax treaty."
+        }
+      ]
+    },
+    {
+      "id": "it-estate-treaty-1955",
+      "fact": "estate",
+      "cities": [
+        "rome",
+        "florence"
+      ],
+      "claim": "The US–Italy estate treaty dates from 1955",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Taxing.it: US treaties",
+          "url": "https://taxing.it/us-treaties/",
+          "read": "2026-11-15",
+          "says": "Page shows 15 November 2026. Lists the US–Italy convention for the \"Avoidance of Double Taxation With Respect to Taxes on Estates and Inheritances\", signed 30 March 1955, with a link to the IRS estate and gift treaty page. It gives no entry-into-force date and does not describe what the convention does."
+        }
+      ],
+      "note": "Secondary page; the treaty text was not read, and the profiles claim nothing about what it does. localTaxes.ts ignores the treaty and says so."
+    },
+    {
+      "id": "it-estate-us-exemption-2026",
+      "fact": "estate",
+      "cities": [
+        "rome",
+        "florence"
+      ],
+      "claim": "The US estate exemption is $15M in 2026",
+      "verdict": "confirmed",
+      "shared": "us-estate-exemption-2026",
+      "sources": [
+        {
+          "name": "IRS: What's new, estate and gift tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax",
+          "read": "2026-11-15",
+          "says": "The table \"Basic exclusion amount for year of death\" has the row 2026: $15,000,000 (2025: $13,990,000). The page says the Working Families Tax Cuts, Public Law 119-21, signed July 4, 2025, \"amends § 2010(c)(3) by increasing the basic exclusion amount to $15,000,000 for calendar year 2026\". Page last reviewed or updated 03-Nov-2026."
+        },
+        {
+          "name": "IRS: Estate tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-tax",
+          "read": "2026-11-15",
+          "says": "A return is required when the gross estate, plus adjusted taxable gifts and specific exemption, is more than the filing threshold for the year of death; the table gives 2026: $15,000,000. Page last reviewed or updated 23-Oct-2026."
+        },
+        {
+          "name": "IRS news release IR-2025-103: tax inflation adjustments for tax year 2026",
+          "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill",
+          "read": "2026-11-15",
+          "says": "\"Estates of decedents who die during 2026 have a basic exclusion amount of $15,000,000\", up from $13,990,000 for 2025; the release (October 9, 2025) cites Revenue Procedure 2025-32 and is marked as an archival document."
+        }
+      ]
+    },
+    {
+      "id": "it-estate-us-exemption-applies",
+      "fact": "estate",
+      "cities": [
+        "rome",
+        "florence"
+      ],
+      "claim": "The US exemption applies to a US citizen in Italy as anywhere",
+      "verdict": "confirmed",
+      "shared": "us-estate-exemption-applies-abroad",
+      "sources": [
+        {
+          "name": "IRS: Some nonresidents with U.S. assets must file estate tax returns",
+          "url": "https://www.irs.gov/individuals/international-taxpayers/some-nonresidents-with-us-assets-must-file-estate-tax-returns",
+          "read": "2026-11-15",
+          "says": "\"U.S. citizens are subject to U.S. estate taxation with respect to their worldwide assets\"; Form 706 is required when worldwide assets plus adjusted taxable gifts exceed the basic exclusion amount in effect on the date of death. By contrast a nonresident who is not a citizen files when US-situated assets exceed $60,000. Page last reviewed or updated 27-Jun-2026."
+        }
+      ]
+    },
+    {
+      "id": "it-lending-ibkr-only-broker",
+      "fact": "lending",
+      "cities": [
+        "rome",
+        "florence"
+      ],
+      "claim": "IBKR is the only US broker open to Italy residents",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "IBKR is reportedly the only broker open to Italy residents",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        }
+      ],
+      "also": [
+        "fact reworded from \"IBKR is reportedly the only option\" when the margin clause was added; the hedge was already there"
+      ],
+      "note": "Tried again on 2026-11-15: https://www.interactivebrokers.ie/en/accounts/open-account-country-list.php returned HTTP 403. The hedge stays."
+    },
+    {
+      "id": "it-lending-schwab-not-accepting",
+      "fact": "lending",
+      "cities": [
+        "rome",
+        "florence"
+      ],
+      "claim": "Schwab International's online form does not accept Italy residents",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab International's online form reportedly does not accept them",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. On that day the author ran every entry in Schwab's international account selector through the application: it accepted residents of 51 of 263 countries and regions: Argentina, Australia, Austria, the Bahamas, Belgium, Bermuda, Brazil, the British Virgin Islands, the Cayman Islands, Chile, China, Colombia, Costa Rica, the Czech Republic, Denmark, Ecuador, Finland, Germany, Greece, Guatemala, Hong Kong, Iceland, India, Indonesia, Ireland, Israel, Jersey, Luxembourg, Malaysia, the Marshall Islands, Mexico, the Netherlands, Norway, Panama, Paraguay, Peru, Poland, Portugal, Qatar, Singapore, South Korea, Spain, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Turks and Caicos, the United Arab Emirates, the United Kingdom and Uruguay. Named as not accepted: Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam; for the rest the application said \"Schwab currently cannot open accounts for residents of your country/region.\" The test covers new applicants on that day only."
+        }
+      ],
+      "note": "Italy is among the countries the shared claim records as not accepted on the dated secondary list. Schwab's own pages were not readable in stage 1 and were not tried again here."
+    },
+    {
+      "id": "it-lending-ibkr-margin-cash-out",
+      "fact": "lending",
+      "cities": [
+        "rome",
+        "florence"
+      ],
+      "claim": "With IBKR the only option, a Italy resident can borrow against the portfolio there (implied by \"IBKR is reportedly the only option\")",
+      "verdict": "corrected",
+      "shared": "ibkr-eu-margin-cash-out",
+      "oldWording": "IBKR is reportedly the only option: Schwab International's online form reportedly does not accept Italy residents;",
+      "newWording": "and IBKR's EU entity reportedly lends on margin only to buy securities, not to withdraw as cash, so confirm how you would draw cash before relying on it",
+      "sources": [
+        {
+          "name": "LYNX: Withdrawal (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/payments-and-transfers/withdrawal/",
+          "read": "2026-11-15",
+          "says": "\"It is not possible to withdraw in a currency if your cash balance is negative or would go negative after the withdrawal.\" In a margin account \"some funds may be used as collateral for other positions or to cover negative cash balances\", which lowers what can be withdrawn. The page is undated (footer: Copyright 2023)."
+        },
+        {
+          "name": "CapTrader: Geld abheben (help page of a German introducing broker for Interactive Brokers)",
+          "url": "https://www.captrader.com/geld-abheben/",
+          "read": "2026-11-15",
+          "says": "\"Auszahlungen sind nur möglich, wenn kein negativer Saldo in der entsprechenden Währung\" or in the total cash arises or grows: withdrawals are possible only if they do not create or increase a negative balance. Footer: © CapTrader 2026."
+        },
+        {
+          "name": "Interactive Brokers Ireland Limited: Customer Agreement (document 4750, 7/1/2023), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/01_4750_IBIE_Customer_Agreement_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "Clause 2A(i)(d) defines the margin service as one \"to enable Clients to acquire investment instruments\". Clause 5A(iv): \"Terms and conditions for deposit and withdrawal of funds (including holding periods) are as specified on the IBIE website.\" The agreement does not say that a loan may be withdrawn as cash."
+        },
+        {
+          "name": "Mustachian Post forum: Using margin loan at Interactive Brokers, page 13",
+          "url": "https://forum.mustachianpost.com/t/using-margin-loan-at-interactive-brokers/3980?page=13",
+          "read": "2026-11-15",
+          "says": "Posts of September to November 2024. One poster says withdrawing cash on margin is \"not possible in Germany with IB IE\" but is with IB UK; Swiss residents with IB UK accounts report having done it; another reports IBKR service saying \"IBUK customers can no longer withdraw cash if aggregate cash balance is -ve\", which a manager then said applies only to UK residents."
+        }
+      ],
+      "also": [
+        "scores.lending 3→2 on all 2 (plan decision of 2026-11-15; rubric 2: IBKR only and even that uncertain, or EU residence)",
+        "summary: added the closing sentence \"The borrow step is weak too: Schwab reportedly does not take Italy residents, and IBKR reportedly bars EU residents from drawing margin as cash.\" to all 2",
+        "drawbacks: none mentioned margin or brokers, so none was reworded and none was added; the summary sentence carries it",
+        "sources: added LYNX withdrawal page to all 2"
+      ],
+      "rankFlag": "Both Italy picks (Florence 55, Rome 69) now score lending 2, and their profiles say the one reported broker reportedly will not pay a margin loan out as cash. Their `why` lines in src/data/expatPicks.ts do not mention borrowing, so neither is contradicted. Ranks and `why` lines are unchanged: user's call.",
+      "note": "These profiles never said \"so plan on IBKR margin\"; they named IBKR as the only option and stopped. The shared correction's substance was applied with adapted wording: the standard clause, ending \"before relying on it\" (one broker, not \"either\", since Schwab reportedly does not take Italy residents at all). The summary sentence differs from Portugal's and Spain's for the same reason. The shared sources are copied with their stage 1 read date; the LYNX page was not re-read for this country."
+    },
+    {
+      "id": "it-lending-priips-new-buys",
+      "fact": "lending",
+      "cities": [
+        "rome",
+        "florence"
+      ],
+      "claim": "EU PRIIPs rules block new buys of US-listed ETFs",
+      "verdict": "confirmed",
+      "shared": "priips-us-etf-new-buys-blocked",
+      "sources": [
+        {
+          "name": "LYNX: Key Information Document (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/products-and-regulations/regulations/key-information-document/",
+          "read": "2026-11-15",
+          "says": "Retail clients are \"not permitted to trade ETFs or other products that do not have a valid KID\"; many non-EU ETFs have none. Can a retail client buy US ETFs? \"No, not unless you are classified as a professional investor.\" The same applies to ETFs from Canada, Hong Kong, Mexico and Australia. The KID has applied to most products since 1 January 2018."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. \"PRIIPs is an EU rule that prohibits buying US-listed ETFs\", and this also applies to UK investors; US ETFs are open only to elective professional clients, while UCITS ETFs are available to all Europeans."
+        }
+      ],
+      "note": "The profiles' \"reportedly\" stays; it does no harm."
+    },
+    {
+      "id": "it-lending-priips-holdings-kept",
+      "fact": "lending",
+      "cities": [
+        "rome",
+        "florence"
+      ],
+      "claim": "The block is on buying, not on holding US-listed ETFs",
+      "verdict": "confirmed",
+      "shared": "priips-existing-holdings-kept",
+      "sources": [
+        {
+          "name": "LYNX: Key Information Document (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/products-and-regulations/regulations/key-information-document/",
+          "read": "2026-11-15",
+          "says": "The page's FAQ says retail clients \"may still hold or sell existing positions, but new purchases are restricted.\""
+        },
+        {
+          "name": "Regulation (EU) No 1286/2014, Article 13, as adopted (legislation.gov.uk copy of the EU text)",
+          "url": "https://www.legislation.gov.uk/eur/2014/1286/article/13/adopted",
+          "read": "2026-11-15",
+          "says": "The duty to provide a KID falls on \"a person advising on, or selling, a PRIIP\" before the retail investor is bound; nothing in the article reaches a PRIIP the investor already holds or a sale by the investor."
+        }
+      ]
+    },
+    {
+      "id": "it-visa-elective-income",
+      "fact": "visa",
+      "cities": [
+        "rome",
+        "florence"
+      ],
+      "claim": "The elective-residence visa needs at least €31,000/year for one person and €62,000 for a couple (Houston consulate) of stable passive income",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Consulate General of Italy in Houston: Elective Residence checklist (.docx)",
+          "url": "https://conshouston.esteri.it/wp-content/uploads/2026/07/ELECTIVE-RESIDENCE.docx",
+          "read": "2026-11-15",
+          "says": "File in the consulate's July 2026 uploads. \"Proof of financial means: documented and detailed guarantee of substantial, steady economic resources deriving from private income (pension or annuity), properties, stable economic and commercial activities, or other sources... The minimum yearly income for one person is €31.000, for a married couple €62.000.\" \"The lease, rental contract, or deed must be in the applicant's name and must cover the entire duration of the visa\", registered with the Agenzia delle Entrate. \"This type of visa does not allow any kind of work in Italy.\""
+        },
+        {
+          "name": "Consulate General of Italy in Houston: elective residence page",
+          "url": "https://conshouston.esteri.it/en/?p=1961",
+          "read": "2026-11-15",
+          "says": "No date (2026 copyright). Resources must be \"autonomous, stable, regular and consistent throughout the duration of their stay in Italy\", from annuities, pensions, securities, real estate and stable business activities, and \"should not come from active employment\"; applicants \"should have accommodation(s) in Italy – owned or already rented\" and \"are not allowed to carry out any form of work activity in Italy\". Savings are not addressed; no figure on the page itself."
+        },
+        {
+          "name": "Consulate General of Italy in Boston: elective residency",
+          "url": "https://consboston.esteri.it/en/servizi-consolari-e-visti/servizi-per-il-cittadino-straniero/visti/elective-residency/",
+          "read": "2026-11-15",
+          "says": "No date (2026 copyright). Passive income \"totaling more than 31,000 euros yearly per applicant\", \"originating from pensions, annuities, income from properties, trusts or investments funds\"; \"income deriving from subordinate work will not be taken into consideration\"; \"a registered lease or deed for property in Italy\". It asks for bank letters as proof and does not say whether savings count."
+        }
+      ],
+      "also": [
+        "sources: added the Houston consulate checklist to both"
+      ],
+      "note": "The figure is in the consulate's .docx checklist, which WebFetch saved as a file; its text was read from the saved file. vistoperitalia.esteri.it (https://vistoperitalia.esteri.it/home/en) returned 404. Boston says more than €31,000 per applicant, which matches Houston's €62,000 for a couple. Drawback 3 agrees. scores.visa stays 3."
+    },
+    {
+      "id": "it-visa-lease-or-deed",
+      "fact": "visa",
+      "cities": [
+        "rome",
+        "florence"
+      ],
+      "claim": "It needs a registered lease or deed for the whole period",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Consulate General of Italy in Houston: Elective Residence checklist (.docx)",
+          "url": "https://conshouston.esteri.it/wp-content/uploads/2026/07/ELECTIVE-RESIDENCE.docx",
+          "read": "2026-11-15",
+          "says": "File in the consulate's July 2026 uploads. \"Proof of financial means: documented and detailed guarantee of substantial, steady economic resources deriving from private income (pension or annuity), properties, stable economic and commercial activities, or other sources... The minimum yearly income for one person is €31.000, for a married couple €62.000.\" \"The lease, rental contract, or deed must be in the applicant's name and must cover the entire duration of the visa\", registered with the Agenzia delle Entrate. \"This type of visa does not allow any kind of work in Italy.\""
+        },
+        {
+          "name": "Consulate General of Italy in Boston: elective residency",
+          "url": "https://consboston.esteri.it/en/servizi-consolari-e-visti/servizi-per-il-cittadino-straniero/visti/elective-residency/",
+          "read": "2026-11-15",
+          "says": "No date (2026 copyright). Passive income \"totaling more than 31,000 euros yearly per applicant\", \"originating from pensions, annuities, income from properties, trusts or investments funds\"; \"income deriving from subordinate work will not be taken into consideration\"; \"a registered lease or deed for property in Italy\". It asks for bank letters as proof and does not say whether savings count."
+        }
+      ]
+    },
+    {
+      "id": "it-visa-consular-practice",
+      "fact": "visa",
+      "cities": [
+        "rome",
+        "florence"
+      ],
+      "claim": "The income figure is consular practice rather than statute",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Boccadutri: elective residence permit in Italy, requirements",
+          "url": "https://www.boccadutri.com/elective-residence-permit-italy-requirements/",
+          "read": "2026-11-15",
+          "says": "Dated 29 January 2026. Many consulates require an indicative income of \"no less than approximately 31,000 euros\"; \"There is no income threshold expressly established by law\". Health insurance valid across the Schengen area with minimum cover of €30,000. The permit does not allow work. It lasts one year and is renewable; stays abroad of more than six consecutive months without justified reasons risk non-renewal. Savings and deposits are not addressed."
+        }
+      ],
+      "note": "Secondary page (a law firm, dated January 2026); the consulate pages state the figure without citing a law."
+    },
+    {
+      "id": "it-visa-savings-alone",
+      "fact": "visa",
+      "cities": [
+        "rome",
+        "florence"
+      ],
+      "claim": "Savings alone do not count",
+      "verdict": "cant-confirm",
+      "oldWording": "savings alone do not count, no work",
+      "hedge": "reportedly",
+      "wording": "savings alone reportedly do not count",
+      "sources": [
+        {
+          "name": "Consulate General of Italy in Houston: Elective Residence checklist (.docx)",
+          "url": "https://conshouston.esteri.it/wp-content/uploads/2026/07/ELECTIVE-RESIDENCE.docx",
+          "read": "2026-11-15",
+          "says": "File in the consulate's July 2026 uploads. \"Proof of financial means: documented and detailed guarantee of substantial, steady economic resources deriving from private income (pension or annuity), properties, stable economic and commercial activities, or other sources... The minimum yearly income for one person is €31.000, for a married couple €62.000.\" \"The lease, rental contract, or deed must be in the applicant's name and must cover the entire duration of the visa\", registered with the Agenzia delle Entrate. \"This type of visa does not allow any kind of work in Italy.\""
+        },
+        {
+          "name": "Consulate General of Italy in Boston: elective residency",
+          "url": "https://consboston.esteri.it/en/servizi-consolari-e-visti/servizi-per-il-cittadino-straniero/visti/elective-residency/",
+          "read": "2026-11-15",
+          "says": "No date (2026 copyright). Passive income \"totaling more than 31,000 euros yearly per applicant\", \"originating from pensions, annuities, income from properties, trusts or investments funds\"; \"income deriving from subordinate work will not be taken into consideration\"; \"a registered lease or deed for property in Italy\". It asks for bank letters as proof and does not say whether savings count."
+        },
+        {
+          "name": "Boccadutri: elective residence permit in Italy, requirements",
+          "url": "https://www.boccadutri.com/elective-residence-permit-italy-requirements/",
+          "read": "2026-11-15",
+          "says": "Dated 29 January 2026. Many consulates require an indicative income of \"no less than approximately 31,000 euros\"; \"There is no income threshold expressly established by law\". Health insurance valid across the Schengen area with minimum cover of €30,000. The permit does not allow work. It lasts one year and is renewable; stays abroad of more than six consecutive months without justified reasons risk non-renewal. Savings and deposits are not addressed."
+        }
+      ],
+      "also": [
+        "hedge \"reportedly\" added in both profiles"
+      ],
+      "note": "Every page read frames the test as income (pension, annuity, property, investment funds) and none says in words that a bank balance fails; Houston's list ends \"or other sources\". A reader would act on this, so it has its own hedge. Drawback 3 (\"a portfolio-only retiree with low dividends may struggle\") already hedges with \"may\"."
+    },
+    {
+      "id": "it-visa-no-work",
+      "fact": "visa",
+      "cities": [
+        "rome",
+        "florence"
+      ],
+      "claim": "No work is allowed",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Consulate General of Italy in Houston: Elective Residence checklist (.docx)",
+          "url": "https://conshouston.esteri.it/wp-content/uploads/2026/07/ELECTIVE-RESIDENCE.docx",
+          "read": "2026-11-15",
+          "says": "File in the consulate's July 2026 uploads. \"Proof of financial means: documented and detailed guarantee of substantial, steady economic resources deriving from private income (pension or annuity), properties, stable economic and commercial activities, or other sources... The minimum yearly income for one person is €31.000, for a married couple €62.000.\" \"The lease, rental contract, or deed must be in the applicant's name and must cover the entire duration of the visa\", registered with the Agenzia delle Entrate. \"This type of visa does not allow any kind of work in Italy.\""
+        },
+        {
+          "name": "Consulate General of Italy in Houston: elective residence page",
+          "url": "https://conshouston.esteri.it/en/?p=1961",
+          "read": "2026-11-15",
+          "says": "No date (2026 copyright). Resources must be \"autonomous, stable, regular and consistent throughout the duration of their stay in Italy\", from annuities, pensions, securities, real estate and stable business activities, and \"should not come from active employment\"; applicants \"should have accommodation(s) in Italy – owned or already rented\" and \"are not allowed to carry out any form of work activity in Italy\". Savings are not addressed; no figure on the page itself."
+        }
+      ]
+    },
+    {
+      "id": "it-visa-absences-six-months",
+      "fact": "visa",
+      "cities": [
+        "rome",
+        "florence"
+      ],
+      "claim": "Absences over 6 months put renewal at risk",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Boccadutri: elective residence permit in Italy, requirements",
+          "url": "https://www.boccadutri.com/elective-residence-permit-italy-requirements/",
+          "read": "2026-11-15",
+          "says": "Dated 29 January 2026. Many consulates require an indicative income of \"no less than approximately 31,000 euros\"; \"There is no income threshold expressly established by law\". Health insurance valid across the Schengen area with minimum cover of €30,000. The permit does not allow work. It lasts one year and is renewable; stays abroad of more than six consecutive months without justified reasons risk non-renewal. Savings and deposits are not addressed."
+        }
+      ],
+      "note": "Secondary page; it says more than six consecutive months without justified reasons."
+    },
+    {
+      "id": "it-healthcare-private-insurance-30k",
+      "fact": "healthcare",
+      "cities": [
+        "rome",
+        "florence"
+      ],
+      "claim": "Elective-residence holders need private insurance with at least €30k cover for the visa",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Boccadutri: elective residence permit in Italy, requirements",
+          "url": "https://www.boccadutri.com/elective-residence-permit-italy-requirements/",
+          "read": "2026-11-15",
+          "says": "Dated 29 January 2026. Many consulates require an indicative income of \"no less than approximately 31,000 euros\"; \"There is no income threshold expressly established by law\". Health insurance valid across the Schengen area with minimum cover of €30,000. The permit does not allow work. It lasts one year and is renewable; stays abroad of more than six consecutive months without justified reasons risk non-renewal. Savings and deposits are not addressed."
+        },
+        {
+          "name": "Consulate General of Italy in Boston: elective residency",
+          "url": "https://consboston.esteri.it/en/servizi-consolari-e-visti/servizi-per-il-cittadino-straniero/visti/elective-residency/",
+          "read": "2026-11-15",
+          "says": "No date (2026 copyright). Passive income \"totaling more than 31,000 euros yearly per applicant\", \"originating from pensions, annuities, income from properties, trusts or investments funds\"; \"income deriving from subordinate work will not be taken into consideration\"; \"a registered lease or deed for property in Italy\". It asks for bank letters as proof and does not say whether savings count."
+        }
+      ],
+      "note": "The €30,000 figure is from the secondary page; Boston asks for a Schengen policy without a figure, and the Houston checklist read does not list insurance at all."
+    },
+    {
+      "id": "it-healthcare-ssn-voluntary-fee",
+      "fact": "healthcare",
+      "cities": [
+        "rome",
+        "florence"
+      ],
+      "claim": "They can then join the public SSN voluntarily for €2,000–2,789 a year",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "USL Toscana Centro: iscrizione volontaria al SSR, residenza elettiva",
+          "url": "https://www.uslcentro.toscana.it/italiani-all-estero-e-stranieri/guida-interattiva-iscrizione-volontaria-al-ssr/guida-interattiva-iscrizione-ssr-extracomunitario/residenza-elettiva",
+          "read": "2026-11-15",
+          "says": "Page updated 8 February 2026. For a foreigner \"in grado di mantenersi autonomamente senza esercitare alcuna attività lavorativa\": \"il contributo è pari al 7.5% fino alla quota di reddito pari al corrispondente in € 20.658,28 e del 4% per gli importi eccedenti i € 20.658,28 fino al limite del corrispondente in € 51.645,69\". \"Il contributo minimo è pari ad € 2.000,00\" (changed by the 2024 finance law); \"il contributo massimo è pari ad € 2.788,87\". Paid for the calendar year."
+        },
+        {
+          "name": "Fiscomania: iscrizione volontaria al SSN per cittadini extra-UE",
+          "url": "https://fiscomania.com/iscrizione-volontaria-ssn-cittadini-extra-ue/",
+          "read": "2026-11-15",
+          "says": "No date read. For elective residence with only a foreign pension, registration is voluntary, as an alternative to private insurance; the contribution is 7.5% of the previous year's worldwide income up to about €20,658 and 4% above that to about €51,646 (D.M. 8 October 1986), with a minimum of €2,000 a year from 2024 (L. 213/2023, art. 1, commi 240-241)."
+        }
+      ],
+      "also": [
+        "sources: added the USL Toscana Centro page to both"
+      ],
+      "note": "Read on Florence's own health authority; the rule is national (D.M. 8 October 1986, minimum raised by the 2024 budget law), so it serves Rome too, but no Lazio page was read. No change for 2026 was found. salute.gov.it turned up no page in search."
+    },
+    {
+      "id": "it-healthcare-rome-campus-bio-medico",
+      "fact": "healthcare",
+      "cities": [
+        "rome"
+      ],
+      "claim": "Campus Bio-Medico University Hospital received JCI accreditation in 2014 (current status unverified)",
+      "verdict": "corrected",
+      "oldWording": "received JCI accreditation in 2014 (current status unverified)",
+      "newWording": "received JCI accreditation in 2014 and its site still calls it JCI-accredited",
+      "sources": [
+        {
+          "name": "Fondazione Policlinico Universitario Campus Bio-Medico: quality and accreditation",
+          "url": "https://www.policlinicocampusbiomedico.it/en/about-us/quality-and-accreditation",
+          "read": "2026-11-15",
+          "says": "No date. The page footer reads \"Academic Medical Center accreditato JCI\". It gives no year for the first or the latest accreditation."
+        },
+        {
+          "name": "Università Campus Bio-Medico: quality in healthcare (press release)",
+          "url": "https://www.unicampus.it/en/news/quality-polyclinic-in-healthcare/",
+          "read": "2026-11-15",
+          "says": "Press release of 24 September 2014: the hospital \"wins the star of the Joint Commission International (JCI)\"; \"Every three years, accredited facilities must undergo a new review.\""
+        }
+      ],
+      "also": [
+        "scores.healthcare stays 4",
+        "sources: added the hospital foundation's accreditation page"
+      ],
+      "note": "2014 confirmed on the university's press release; the current status is on the hospital's own site, in the page footer, with no date. JCI's own directory was not read."
+    },
+    {
+      "id": "it-healthcare-rome-embassy-doctor-list",
+      "fact": "healthcare",
+      "cities": [
+        "rome"
+      ],
+      "claim": "The US Embassy keeps a list of English-speaking doctors",
+      "verdict": "cant-confirm",
+      "hedge": "(secondary source)",
+      "wording": "the US Embassy keeps a list of English-speaking doctors (secondary source)",
+      "sources": [
+        {
+          "name": "Rick Steves travel forum: doctor near Vatican or Trastevere",
+          "url": "https://community.ricksteves.com/travel-forum/italy/doctor-near-vatican-or-trastevere",
+          "read": "2026-11-15",
+          "says": "Post of 21 March 2024: \"here is a list of English speaking Doctors maintained by the US Embassy\", linking https://it.usembassy.gov/wp-content/uploads/sites/67/ACS-Doctors-Rome-August2023.pdf."
+        }
+      ],
+      "note": "https://it.usembassy.gov/u-s-citizen-services/doctors/ and travel.state.gov's Italy page both returned HTTP 403. The best page read is a forum post linking the embassy's August 2023 list. The existing hedge stays."
+    },
+    {
+      "id": "it-healthcare-florence-careggi",
+      "fact": "healthcare",
+      "cities": [
+        "florence"
+      ],
+      "claim": "Careggi is a major teaching hospital",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Azienda Ospedaliero-Universitaria Careggi: home page",
+          "url": "https://www.aou-careggi.toscana.it/internet/",
+          "read": "2026-11-15",
+          "says": "The site of the \"Azienda Ospedaliero-Universitaria Careggi\", Largo Brambilla 3, Florence. No bed or staff figures on the page."
+        }
+      ],
+      "note": "The site confirms the name and university status; \"major\" was not checked against bed numbers."
+    },
+    {
+      "id": "it-healthcare-florence-tuscany-system",
+      "fact": "healthcare",
+      "cities": [
+        "florence"
+      ],
+      "claim": "Tuscany's public system is among Italy's better ones",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Sky TG24: sanità, quali sono le Regioni con l'assistenza migliore",
+          "url": "https://tg24.sky.it/salute-e-benessere/2026/07/10/sanita-regioni-migliori-classifica-lea",
+          "read": "2026-11-15",
+          "says": "Dated 10 July 2026, on the Ministry of Health's LEA monitoring for 2024: Tuscany is third with 280 points; Lazio has 237, level with the Marche, around 12th."
+        }
+      ],
+      "also": [
+        "sources: added the Sky TG24 article"
+      ],
+      "note": "News report of the Ministry of Health's monitoring; the Ministry's own report was not read. The same table puts Lazio around 12th, which Rome's profile does not comment on."
+    }
+  ]
+}

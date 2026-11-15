@@ -1,0 +1,640 @@
+{
+  "country": "United Kingdom",
+  "cities": [
+    "london"
+  ],
+  "claims": [
+    {
+      "id": "uk-tax-no-wealth-tax",
+      "fact": "tax",
+      "cities": [
+        "london"
+      ],
+      "claim": "The UK has no wealth tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: United Kingdom, other taxes",
+          "url": "https://taxsummaries.pwc.com/united-kingdom/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 23 July 2026. \"Tax is not charged on an individual's wealth each year in the United Kingdom.\" The nil-rate band is \"GBP 325,000 since 6 April 2009 and is frozen until 5 April 2031\". An individual is a long-term resident if UK resident for \"at least 10 of the previous 20 tax years\"; only non-UK assets depend on that status. Long-term residents who leave stay in scope for up to ten years: three years for 10 to 13 years of residence, rising by one year for each further year, to a maximum of ten."
+        }
+      ]
+    },
+    {
+      "id": "uk-tax-fig-regime",
+      "fact": "tax",
+      "cities": [
+        "london"
+      ],
+      "claim": "Since April 2025 the 4-year foreign income and gains (FIG) regime replaces non-dom status: after 10 years of non-UK residence, foreign dividends, interest and gains are untaxed for the first 4 UK tax years",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "GOV.UK (HMRC): check if you can claim the 4-year foreign income and gains regime",
+          "url": "https://www.gov.uk/guidance/check-if-you-can-claim-the-4-year-foreign-income-and-gains-regime",
+          "read": "2026-11-15",
+          "says": "Published 6 April 2025. You must be in your first 4 years of UK tax residence after \"at least a 10-year period as a non-UK tax resident\"; \"The regime is only available for a maximum period of 4 consecutive years beginning when your UK tax residency started.\" Eligible foreign income and gains are not taxed if you claim. Claiming means losing \"tax-free allowances for Income Tax and Capital Gains Tax\". The regime replaced the remittance basis on 6 April 2025."
+        },
+        {
+          "name": "GOV.UK: technical note, changes to the taxation of non-UK domiciled individuals",
+          "url": "https://www.gov.uk/government/publications/changes-to-the-taxation-of-non-uk-domiciled-individuals/technical-note-changes-to-the-taxation-of-non-uk-domiciled-individuals",
+          "read": "2026-11-15",
+          "says": "Updated 23 April 2024, for changes from 6 April 2025. The regime applies for the first 4 tax years \"once becoming UK tax resident after a period of 10 years non-UK tax residence\"; qualifying individuals \"will be able to bring these funds to the UK free from any additional charges\". Those who choose the regime \"will lose entitlement to personal allowances and the capital gains tax annual exempt amount.\""
+        }
+      ],
+      "note": "HMRC's manual page guessed at https://www.gov.uk/hmrc-internal-manuals/residence-and-fig-regime-manual/rfig40100 is a 404; the guidance page and the technical note carry the rule."
+    },
+    {
+      "id": "uk-tax-fig-brought-in",
+      "fact": "tax",
+      "cities": [
+        "london"
+      ],
+      "claim": "The FIG relief applies whether or not the money is brought into the UK",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "GOV.UK: technical note, changes to the taxation of non-UK domiciled individuals",
+          "url": "https://www.gov.uk/government/publications/changes-to-the-taxation-of-non-uk-domiciled-individuals/technical-note-changes-to-the-taxation-of-non-uk-domiciled-individuals",
+          "read": "2026-11-15",
+          "says": "Updated 23 April 2024, for changes from 6 April 2025. The regime applies for the first 4 tax years \"once becoming UK tax resident after a period of 10 years non-UK tax residence\"; qualifying individuals \"will be able to bring these funds to the UK free from any additional charges\". Those who choose the regime \"will lose entitlement to personal allowances and the capital gains tax annual exempt amount.\""
+        }
+      ],
+      "note": "The current guidance page says the income and gains are not taxed but is silent on bringing them in; the sentence is in the April 2024 technical note, written before the legislation. No later official page read contradicts it."
+    },
+    {
+      "id": "uk-tax-fig-allowances-lost",
+      "fact": "tax",
+      "cities": [
+        "london"
+      ],
+      "claim": "Claiming FIG relief costs the personal allowance and the CGT allowance",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "GOV.UK (HMRC): check if you can claim the 4-year foreign income and gains regime",
+          "url": "https://www.gov.uk/guidance/check-if-you-can-claim-the-4-year-foreign-income-and-gains-regime",
+          "read": "2026-11-15",
+          "says": "Published 6 April 2025. You must be in your first 4 years of UK tax residence after \"at least a 10-year period as a non-UK tax resident\"; \"The regime is only available for a maximum period of 4 consecutive years beginning when your UK tax residency started.\" Eligible foreign income and gains are not taxed if you claim. Claiming means losing \"tax-free allowances for Income Tax and Capital Gains Tax\". The regime replaced the remittance basis on 6 April 2025."
+        },
+        {
+          "name": "GOV.UK: technical note, changes to the taxation of non-UK domiciled individuals",
+          "url": "https://www.gov.uk/government/publications/changes-to-the-taxation-of-non-uk-domiciled-individuals/technical-note-changes-to-the-taxation-of-non-uk-domiciled-individuals",
+          "read": "2026-11-15",
+          "says": "Updated 23 April 2024, for changes from 6 April 2025. The regime applies for the first 4 tax years \"once becoming UK tax resident after a period of 10 years non-UK tax residence\"; qualifying individuals \"will be able to bring these funds to the UK free from any additional charges\". Those who choose the regime \"will lose entitlement to personal allowances and the capital gains tax annual exempt amount.\""
+        }
+      ]
+    },
+    {
+      "id": "uk-tax-dividend-rates",
+      "fact": "tax",
+      "cities": [
+        "london"
+      ],
+      "claim": "After the FIG years, dividends pay 10.75–39.35% (from April 2026)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "GOV.UK: tax on dividends",
+          "url": "https://www.gov.uk/tax-on-dividends",
+          "read": "2026-11-15",
+          "says": "For 6 April 2026 to 5 April 2027, dividends above the £500 allowance are taxed at 10.75% (basic rate), 35.75% (higher rate) and 39.35% (additional rate)."
+        },
+        {
+          "name": "PwC: United Kingdom, income determination",
+          "url": "https://taxsummaries.pwc.com/united-kingdom/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 23 July 2026. Dividend rates from 6 April 2026 are 10.75%, 35.75% and 39.35%, with a GBP 500 allowance. Savings income rates are described as rising from 20% (basic), 40% (higher) and 45% (additional) to 22%, 42% and 47% from April 2027."
+        }
+      ],
+      "note": "The summary and drawback 2 repeat \"up to 39.35%\"; both agree."
+    },
+    {
+      "id": "uk-tax-interest-rates",
+      "fact": "tax",
+      "cities": [
+        "london"
+      ],
+      "claim": "Interest pays 20–45%, rising to 22–47% from April 2027",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: United Kingdom, income determination",
+          "url": "https://taxsummaries.pwc.com/united-kingdom/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 23 July 2026. Dividend rates from 6 April 2026 are 10.75%, 35.75% and 39.35%, with a GBP 500 allowance. Savings income rates are described as rising from 20% (basic), 40% (higher) and 45% (additional) to 22%, 42% and 47% from April 2027."
+        }
+      ],
+      "note": "Big Four source; no gov.uk page was read for the 2027 savings rates."
+    },
+    {
+      "id": "uk-tax-gains-rates",
+      "fact": "tax",
+      "cities": [
+        "london"
+      ],
+      "claim": "Gains pay 18–24%",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "GOV.UK: Capital Gains Tax rates",
+          "url": "https://www.gov.uk/capital-gains-tax/rates",
+          "read": "2026-11-15",
+          "says": "For 2026 to 2027: 18% on gains within the basic rate band and 24% above it, or for higher and additional rate taxpayers; the annual allowance is £3,000."
+        }
+      ]
+    },
+    {
+      "id": "uk-estate-iht-rate-band",
+      "fact": "estate",
+      "cities": [
+        "london"
+      ],
+      "claim": "Inheritance tax is 40% above a £325,000 nil-rate band",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "GOV.UK: Inheritance Tax",
+          "url": "https://www.gov.uk/inheritance-tax",
+          "read": "2026-11-15",
+          "says": "Estates below \"the £325,000 threshold\" normally owe nothing; \"The standard Inheritance Tax rate is 40%\", charged only on the part above the threshold. Giving a home to children or grandchildren can raise the threshold to £500,000."
+        },
+        {
+          "name": "PwC: United Kingdom, other taxes",
+          "url": "https://taxsummaries.pwc.com/united-kingdom/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 23 July 2026. \"Tax is not charged on an individual's wealth each year in the United Kingdom.\" The nil-rate band is \"GBP 325,000 since 6 April 2009 and is frozen until 5 April 2031\". An individual is a long-term resident if UK resident for \"at least 10 of the previous 20 tax years\"; only non-UK assets depend on that status. Long-term residents who leave stay in scope for up to ten years: three years for 10 to 13 years of residence, rising by one year for each further year, to a maximum of ten."
+        }
+      ],
+      "modelMismatch": "src/data/localTaxes.ts has no GB entry (its header lists the UK among countries with \"no researched tax data\"), so the simulation applies no UK tax to London. Checked facts for stage 8: no wealth tax (PwC, https://taxsummaries.pwc.com/united-kingdom/individual/other-taxes). Inheritance tax 40% on the estate above a £325,000 nil-rate band, which is per estate, not per heir (https://www.gov.uk/inheritance-tax); non-UK assets are in scope only once the person has been UK resident 10 of the previous 20 tax years, and stay in scope 3 to 10 years after leaving (https://www.gov.uk/guidance/inheritance-tax-if-youre-a-long-term-uk-resident). The US–UK convention gives a credit (https://www.gov.uk/guidance/inheritance-tax-double-taxation-relief); the model ignores treaty credits elsewhere."
+    },
+    {
+      "id": "uk-estate-long-term-resident",
+      "fact": "estate",
+      "cities": [
+        "london"
+      ],
+      "claim": "Since April 2025 inheritance tax is residence-based, reaching non-UK assets only after 10 of the last 20 tax years in the UK, with a tail of up to 10 years after leaving",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "GOV.UK (HMRC): Inheritance Tax if you're a long-term UK resident",
+          "url": "https://www.gov.uk/guidance/inheritance-tax-if-youre-a-long-term-uk-resident",
+          "read": "2026-11-15",
+          "says": "Published 6 April 2025. You are a long-term UK resident if UK tax resident for \"a total of 10 years or more within the previous 20 years\"; then \"your non-UK (overseas) assets may be subject to Inheritance Tax\". After leaving you can stay a long-term resident for up to 10 tax years (3 years after 10 to 13 years of residence). The rules apply from 6 April 2025 and replaced the domicile rules."
+        },
+        {
+          "name": "PwC: United Kingdom, other taxes",
+          "url": "https://taxsummaries.pwc.com/united-kingdom/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 23 July 2026. \"Tax is not charged on an individual's wealth each year in the United Kingdom.\" The nil-rate band is \"GBP 325,000 since 6 April 2009 and is frozen until 5 April 2031\". An individual is a long-term resident if UK resident for \"at least 10 of the previous 20 tax years\"; only non-UK assets depend on that status. Long-term residents who leave stay in scope for up to ten years: three years for 10 to 13 years of residence, rising by one year for each further year, to a maximum of ten."
+        }
+      ],
+      "note": "The summary's and drawback 2's \"after 10 years' residence\" agree."
+    },
+    {
+      "id": "uk-estate-treaty-relief",
+      "fact": "estate",
+      "cities": [
+        "london"
+      ],
+      "claim": "The US–UK estate and gift tax treaty gives relief",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "GOV.UK (HMRC): Inheritance Tax, double taxation relief",
+          "url": "https://www.gov.uk/guidance/inheritance-tax-double-taxation-relief",
+          "read": "2026-11-15",
+          "says": "Last updated 6 April 2025. Lists the USA convention (11 November 1979) among six. The country of domicile or deemed domicile can tax all property; the other country generally only specified property such as immovable property there; where both still tax, the convention decides which gives credit. A long-term UK resident is treated as having deemed UK domicile. Relief is a credit capped at the overseas tax actually paid."
+        }
+      ],
+      "note": "HMRC's manual page IHTM27161 (https://www.gov.uk/hmrc-internal-manuals/inheritance-tax-manual/ihtm27161, updated 7 April 2026) also lists the USA among the conventions and says its terms \"must be considered and applied\". Not read: the convention's own text, so how it allocates taxing rights for a US citizen who has become a long-term UK resident is not established here."
+    },
+    {
+      "id": "uk-estate-treaty-exists",
+      "fact": "estate",
+      "cities": [
+        "london"
+      ],
+      "claim": "There is a US estate treaty with this country (estate and gift tax treaty)",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-with",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "All 13 countries are in the table (see us-estate-treaty-list). Estate & Gift: Australia, Austria, France, Germany, Japan, United Kingdom. Estate only: Greece, Ireland, Italy, Netherlands, South Africa, Switzerland, and Canada by Article XXIX B of the income tax treaty."
+        }
+      ]
+    },
+    {
+      "id": "uk-estate-us-exemption-2026",
+      "fact": "estate",
+      "cities": [
+        "london"
+      ],
+      "claim": "The US estate exemption is $15M in 2026",
+      "verdict": "confirmed",
+      "shared": "us-estate-exemption-2026",
+      "sources": [
+        {
+          "name": "IRS: What's new, estate and gift tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax",
+          "read": "2026-11-15",
+          "says": "The table \"Basic exclusion amount for year of death\" has the row 2026: $15,000,000 (2025: $13,990,000). The page says the Working Families Tax Cuts, Public Law 119-21, signed July 4, 2025, \"amends § 2010(c)(3) by increasing the basic exclusion amount to $15,000,000 for calendar year 2026\". Page last reviewed or updated 03-Nov-2026."
+        },
+        {
+          "name": "IRS: Estate tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-tax",
+          "read": "2026-11-15",
+          "says": "A return is required when the gross estate, plus adjusted taxable gifts and specific exemption, is more than the filing threshold for the year of death; the table gives 2026: $15,000,000. Page last reviewed or updated 23-Oct-2026."
+        },
+        {
+          "name": "IRS news release IR-2025-103: tax inflation adjustments for tax year 2026",
+          "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill",
+          "read": "2026-11-15",
+          "says": "\"Estates of decedents who die during 2026 have a basic exclusion amount of $15,000,000\", up from $13,990,000 for 2025; the release (October 9, 2025) cites Revenue Procedure 2025-32 and is marked as an archival document."
+        }
+      ]
+    },
+    {
+      "id": "uk-estate-us-exemption-applies",
+      "fact": "estate",
+      "cities": [
+        "london"
+      ],
+      "claim": "The US exemption applies to a US citizen living there as anywhere",
+      "verdict": "confirmed",
+      "shared": "us-estate-exemption-applies-abroad",
+      "sources": [
+        {
+          "name": "IRS: Some nonresidents with U.S. assets must file estate tax returns",
+          "url": "https://www.irs.gov/individuals/international-taxpayers/some-nonresidents-with-us-assets-must-file-estate-tax-returns",
+          "read": "2026-11-15",
+          "says": "\"U.S. citizens are subject to U.S. estate taxation with respect to their worldwide assets\"; Form 706 is required when worldwide assets plus adjusted taxable gifts exceed the basic exclusion amount in effect on the date of death. By contrast a nonresident who is not a citizen files when US-situated assets exceed $60,000. Page last reviewed or updated 27-Jun-2026."
+        }
+      ]
+    },
+    {
+      "id": "uk-lending-ibkr-accepts",
+      "fact": "lending",
+      "cities": [
+        "london"
+      ],
+      "claim": "IBKR serves UK residents",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly serves UK residents",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        }
+      ],
+      "note": "Tried on 2026-11-15: https://www.interactivebrokers.co.uk/en/accounts/open-account-country-list.php returned HTTP 403. The hedge stays."
+    },
+    {
+      "id": "uk-lending-ib-uk-entity",
+      "fact": "lending",
+      "cities": [
+        "london"
+      ],
+      "claim": "UK residents are served through Interactive Brokers (U.K.) Limited",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-eu-entity",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly serves UK residents through IB UK",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. \"In the EU, customers sign up with the Irish entity\"; UK clients are with Interactive Brokers (U.K.) Limited; the Irish €20k compensation scheme applies to Eastern Europe after the Irish and Hungarian entities merged."
+        },
+        {
+          "name": "Investing in the Web: Interactive Brokers in Europe",
+          "url": "https://investingintheweb.com/broker-reviews/interactive-brokers-europe",
+          "read": "2026-11-15",
+          "says": "Updated on Sep 8, 2026. \"As an European resident, you are under the Central Bank of Ireland regulation\" (Interactive Brokers Ireland Limited); \"As a UK resident, you will be under this legal entity\" (Interactive Brokers UK Limited); \"Interactive Brokers Luxembourg and Central have been extinct/merged.\""
+        }
+      ],
+      "note": "Two dated secondary pages name the UK entity for UK residents; IBKR's own UK site returned HTTP 403, so it stays reported."
+    },
+    {
+      "id": "uk-lending-schwab-accepts",
+      "fact": "lending",
+      "cities": [
+        "london"
+      ],
+      "claim": "Schwab International accepts UK residents",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab International reportedly accepts them",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026; read again on 2026-11-15 for the UK. It quotes the Schwab One Account Agreement (October 2026 edition): \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds.\" The article does not define \"Europe\" or say whether it includes the United Kingdom. The United Kingdom is on its list of 51 countries and regions open to online application, marked \"Yes\". It says nothing about a separate Schwab UK entity."
+        }
+      ],
+      "note": "Schwab has a UK arm, but no page naming it was read and the profile does not name it. https://www.schwab.com/legal/schwab-one-account-agreement returned Schwab's error page again (\"unable to authorize your request\")."
+    },
+    {
+      "id": "uk-lending-schwab-cash-out-europe",
+      "fact": "lending",
+      "cities": [
+        "london"
+      ],
+      "claim": "Schwab bars Europe residents from taking cash out through margin, which likely covers the UK",
+      "verdict": "cant-confirm",
+      "shared": "schwab-europe-margin-cash-out",
+      "hedge": "likely",
+      "wording": "Schwab reportedly bars Europe residents from taking cash out through margin, which likely covers the UK",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026; read again on 2026-11-15 for the UK. It quotes the Schwab One Account Agreement (October 2026 edition): \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds.\" The article does not define \"Europe\" or say whether it includes the United Kingdom. The United Kingdom is on its list of 51 countries and regions open to online application, marked \"Yes\". It says nothing about a separate Schwab UK entity."
+        }
+      ],
+      "note": "What the page says: the quoted clause is about \"Customers residing within Europe\"; the article neither defines Europe nor says the UK is in or out. The UK is in Europe and outside the EU, so \"likely\" is the right strength and stays. Schwab's own agreement could not be read."
+    },
+    {
+      "id": "uk-lending-ib-uk-margin-cash-out",
+      "fact": "lending",
+      "cities": [
+        "london"
+      ],
+      "claim": "A UK resident can draw cash on margin at IB UK (\"so plan on IBKR margin\")",
+      "verdict": "cant-confirm",
+      "oldWording": "so plan on IBKR margin",
+      "hedge": "unconfirmed",
+      "wording": "and whether IB UK still lets a margin loan be withdrawn as cash is unconfirmed (2024 forum reports conflict), so confirm how you would draw cash before relying on either",
+      "sources": [
+        {
+          "name": "Mustachian Post forum: Using margin loan at Interactive Brokers, page 13",
+          "url": "https://forum.mustachianpost.com/t/using-margin-loan-at-interactive-brokers/3980?page=13",
+          "read": "2026-11-15",
+          "says": "Posts of September to November 2024. One poster says withdrawing cash on margin is \"not possible in Germany with IB IE\" but is with IB UK; Swiss residents with IB UK accounts report having done it; another reports IBKR service saying \"IBUK customers can no longer withdraw cash if aggregate cash balance is -ve\", which a manager then said applies only to UK residents."
+        },
+        {
+          "name": "LYNX: Withdrawal (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/payments-and-transfers/withdrawal/",
+          "read": "2026-11-15",
+          "says": "\"It is not possible to withdraw in a currency if your cash balance is negative or would go negative after the withdrawal.\" In a margin account \"some funds may be used as collateral for other positions or to cover negative cash balances\", which lowers what can be withdrawn. The page is undated (footer: Copyright 2023)."
+        }
+      ],
+      "also": [
+        "hedge added: the flat \"so plan on IBKR margin\" was replaced",
+        "scores.lending left at 3 (see rankFlag)",
+        "summary and drawbacks unchanged: neither mentions borrowing or brokers",
+        "sources: added the Mustachian Post forum thread the hedge rests on"
+      ],
+      "rankFlag": "London is not one of the ranked 75, so no rank or `why` is touched. The lending score is left at 3, and the rubric as written does not fit the UK cleanly: 4 needs Schwab \"outside the EU\" plus IBKR, which the UK meets on the letter, but Schwab's reported clause says \"Europe\", not \"EU\", and likely bars the cash-out for UK residents, leaving IBKR alone (3). 2 is for \"IBKR only and even that uncertain, or EU residence\": the EU limb does not apply, and for IB UK the only evidence is one 2024 forum thread with reports both ways, where the EU correction rested on two broker help pages and IBKR Ireland's agreement. If IB UK's bar is confirmed, the score should go to 2, as the EU profiles did. The rubric's \"outside the EU\" would be truer as \"outside Europe\"; the same question will come up for Zurich. User's call.",
+      "note": "The shared EU correction was not applied: UK residents are reportedly with IB UK, not IBKR Ireland, and the LYNX and CapTrader pages describe accounts carried by the Irish entity. Not given a `shared` reference for that reason; the forum source entry is copied from shared.json's ibkr-eu-margin-cash-out with its stage 1 read date, and the LYNX entry is kept only as context for what the EU entity does. In the thread (September to November 2024) one poster says withdrawing on margin is possible with IB UK, Swiss residents with IB UK accounts report having done it, and another reports IBKR service saying IB UK customers can no longer withdraw cash when the aggregate cash balance is negative. Nothing newer or more official could be read: interactivebrokers.co.uk and ibkb.interactivebrokers.com/article/3750 returned HTTP 403."
+    },
+    {
+      "id": "uk-lending-uk-priips-us-etfs",
+      "fact": "lending",
+      "cities": [
+        "london"
+      ],
+      "claim": "UK PRIIPs rules limited new buys of US-listed ETFs",
+      "verdict": "cant-confirm",
+      "shared": "priips-us-etf-new-buys-blocked",
+      "hedge": "reportedly",
+      "wording": "UK PRIIPs rules, which reportedly limited new buys of US-listed ETFs",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. \"PRIIPs is an EU rule that prohibits buying US-listed ETFs\", and this also applies to UK investors; US ETFs are open only to elective professional clients, while UCITS ETFs are available to all Europeans."
+        }
+      ],
+      "note": "The one page read on the UK point is secondary (it says the EU rule \"also applies to UK investors\"); the UK's retained PRIIPs regulation was not read. The hedge stays."
+    },
+    {
+      "id": "uk-lending-cci-regime",
+      "fact": "lending",
+      "cities": [
+        "london"
+      ],
+      "claim": "UK PRIIPs rules were replaced on 6 April 2026 by the Consumer Composite Investments regime",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "FCA: PS25/20, final rules for Consumer Composite Investments",
+          "url": "https://www.fca.org.uk/publications/policy-statements/ps25-20-supporting-informed-decision-making-final-rules-consumer-composite-investments",
+          "read": "2026-11-15",
+          "says": "PS25/20 published 08/12/2025. The optional transition period begins \"when the legislation commences on 6 April 2026\", during which manufacturers, \"including manufacturers of Overseas Funds Regime (OFR) schemes\", may choose between a product summary and their current disclosure; the rules \"will come into effect on 8 June 2027\"."
+        },
+        {
+          "name": "Ashurst Perkins Coie: Consumer Composite Investments replace UK PRIIPs",
+          "url": "https://www.ashurstperkinscoie.com/en/insights/consumer-composite-investments-replace-uk-priips-412026-33515-pm/",
+          "read": "2026-11-15",
+          "says": "Dated 7 April 2026. \"As of 6 April 2026, the new UK Consumer Composite Investments (CCI) regime has replaced the old PRIIPs framework.\" Firms may keep producing PRIIPs KIDs until 8 June 2027. Distributors may not sell a CCI to a retail client unless it has an up-to-date product summary. The article does not say how the regime treats US-listed ETFs."
+        }
+      ],
+      "note": "The legislation commenced on 6 April 2026; until 8 June 2027 manufacturers may still use PRIIPs-style documents, and the FCA's rules apply in full from that date. Whether US-listed ETFs can now be bought by UK retail clients is not settled by either page (a distributor still may not sell a CCI without an up-to-date product summary), which is what the profile's \"(check how brokers apply it)\" covers."
+    },
+    {
+      "id": "uk-visa-no-retirement-visa",
+      "fact": "visa",
+      "cities": [
+        "london"
+      ],
+      "claim": "The UK has no retirement or passive-income visa: savings and pensions alone give no right to live there",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Taxes for Expats: retiring in the UK as an American",
+          "url": "https://www.taxesforexpats.com/country-guides/uk/retiring-in-the-uk.html",
+          "read": "2026-11-15",
+          "says": "Last updated August 14, 2026. \"The UK does not offer a dedicated retirement visa\"; pension income or savings alone give no right to live there. Routes covered: UK Ancestry (Commonwealth or related nationality, a UK-born grandparent, an intention to work; US citizenship alone does not qualify), a partner application (usually £29,000 combined income) and Skilled Worker (sponsored employment, usually at least £41,700). A Standard Visitor \"permits up to 6 months per visit\" and cannot be used to make the UK home."
+        },
+        {
+          "name": "GOV.UK: extend your stay as a retired person of independent means (withdrawn)",
+          "url": "https://www.gov.uk/government/publications/extend-your-stay-as-a-retired-person-of-independent-means/extend-your-stay-as-a-retired-person-of-independent-means",
+          "read": "2026-11-15",
+          "says": "\"This category is closed for new applicants.\" Updated 13 June 2019; the guidance was withdrawn on 9 November 2022."
+        }
+      ]
+    },
+    {
+      "id": "uk-visa-visitor-six-months",
+      "fact": "visa",
+      "cities": [
+        "london"
+      ],
+      "claim": "A US visitor can normally stay up to 6 months but cannot make the UK home through repeated visits",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "GOV.UK: Standard Visitor",
+          "url": "https://www.gov.uk/standard-visitor",
+          "read": "2026-11-15",
+          "says": "\"You can usually stay in the UK for up to 6 months.\" You must show that \"you'll not live in the UK for extended periods through frequent or successive visits, or make the UK your main home.\""
+        }
+      ]
+    },
+    {
+      "id": "uk-visa-other-routes",
+      "fact": "visa",
+      "cities": [
+        "london"
+      ],
+      "claim": "The routes left need a UK-born grandparent plus Commonwealth citizenship (Ancestry), a British or settled partner, or sponsored work",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "GOV.UK: UK Ancestry visa",
+          "url": "https://www.gov.uk/ancestry-visa",
+          "read": "2026-11-15",
+          "says": "You can apply if you are a Commonwealth citizen (or a British overseas citizen, British overseas territories citizen, British national (overseas) or citizen of Zimbabwe) and can prove that \"one of your grandparents was born in the UK, the Channel Islands or the Isle of Man.\" \"You can stay in the UK for 5 years on this visa.\""
+        },
+        {
+          "name": "GOV.UK: family visa, apply as a partner or spouse",
+          "url": "https://www.gov.uk/uk-family-visa/partner-spouse",
+          "read": "2026-11-15",
+          "says": "Your partner must be a British or Irish citizen, have settled in the UK (indefinite leave to remain or proof of permanent residence), or hold one of a few other listed statuses."
+        },
+        {
+          "name": "Taxes for Expats: retiring in the UK as an American",
+          "url": "https://www.taxesforexpats.com/country-guides/uk/retiring-in-the-uk.html",
+          "read": "2026-11-15",
+          "says": "Last updated August 14, 2026. \"The UK does not offer a dedicated retirement visa\"; pension income or savings alone give no right to live there. Routes covered: UK Ancestry (Commonwealth or related nationality, a UK-born grandparent, an intention to work; US citizenship alone does not qualify), a partner application (usually £29,000 combined income) and Skilled Worker (sponsored employment, usually at least £41,700). A Standard Visitor \"permits up to 6 months per visit\" and cannot be used to make the UK home."
+        }
+      ],
+      "note": "Ancestry and partner are confirmed on gov.uk; sponsored work rests on the secondary page the profile already cites. That the list is complete (\"the routes left\") is the secondary page's framing, and the profile marks it \"(secondary source)\". The partner may also be an Irish citizen; the Ancestry route also expects the applicant to be able and planning to work, per the secondary page."
+    },
+    {
+      "id": "uk-visa-eta",
+      "fact": "visa",
+      "cities": [
+        "london"
+      ],
+      "claim": "Visitors need an Electronic Travel Authorisation, which costs £20",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "GOV.UK: apply for an electronic travel authorisation (ETA)",
+          "url": "https://www.gov.uk/guidance/apply-for-an-electronic-travel-authorisation-eta",
+          "read": "2026-11-15",
+          "says": "\"An ETA costs £20.\" \"You usually need an ETA rather than a visa if you're from Europe, the USA, Australia, Canada or certain other countries.\" It allows travel to the UK for up to 6 months."
+        }
+      ]
+    },
+    {
+      "id": "uk-healthcare-nhs-teaching-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "london"
+      ],
+      "claim": "Guy's and St Thomas', UCLH and Imperial are leading NHS teaching hospitals",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Shelford Group: members",
+          "url": "https://shelfordgroup.org/members/",
+          "read": "2026-11-15",
+          "says": "Ten member trusts, among them Imperial College Healthcare NHS Trust, University College London Hospitals NHS Foundation Trust and Guy's and St Thomas' NHS Foundation Trust; the group's about page calls them \"ten of the largest teaching and research NHS hospital trusts in England\" and \"centres of academic excellence\"."
+        }
+      ]
+    },
+    {
+      "id": "uk-healthcare-private-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "london"
+      ],
+      "claim": "The London Clinic and Cromwell are private hospitals in London",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "The London Clinic: about us",
+          "url": "https://www.thelondonclinic.co.uk/about-us",
+          "read": "2026-11-15",
+          "says": "An independent private hospital and registered charity at 20 Devonshire Place, London W1G 6BW."
+        },
+        {
+          "name": "Cromwell Hospital: about us",
+          "url": "https://www.cromwellhospital.com/about-us/",
+          "read": "2026-11-15",
+          "says": "\"Built in 1981 as a state-of-the-art private hospital, we're continually investing in medical technology.\" The page carries a Bupa copyright notice."
+        }
+      ],
+      "note": "The IHPN page for Cromwell (https://www.ihpn.org.uk/hl-cromwell-hospital) is a 404; the hospital's own page was read."
+    },
+    {
+      "id": "uk-healthcare-ihs",
+      "fact": "healthcare",
+      "cities": [
+        "london"
+      ],
+      "claim": "Visa holders pay the Immigration Health Surcharge, £1,035 a year for most adults, for NHS access",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "GOV.UK: pay for UK healthcare as part of your immigration application, how much you have to pay",
+          "url": "https://www.gov.uk/healthcare-immigration-application/how-much-pay",
+          "read": "2026-11-15",
+          "says": "£1,035 per year for \"all other visa and immigration applications\"; £776 per year for students, their dependants, Youth Mobility Scheme visa holders and applicants under 18. The page shows no date."
+        },
+        {
+          "name": "GOV.UK: NHS entitlements, migrant health guide",
+          "url": "https://www.gov.uk/guidance/nhs-entitlements-migrant-health-guide",
+          "read": "2026-11-15",
+          "says": "Last updated 2 October 2023. Overseas visitors, people not ordinarily resident in the UK, may have to pay for NHS hospital treatment unless exempt, at 150% of the NHS cost; GP consultations and A&E are free to everyone. People who have paid the immigration health surcharge can use the NHS much as ordinarily resident patients while their visa is valid. (The page still shows the old £624 surcharge.)"
+        }
+      ],
+      "also": [
+        "sources: replaced Davidson Morris with the GOV.UK surcharge page"
+      ]
+    },
+    {
+      "id": "uk-healthcare-visitors-charged",
+      "fact": "healthcare",
+      "cities": [
+        "london"
+      ],
+      "claim": "Visitors are charged for NHS hospital care",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "GOV.UK: NHS entitlements, migrant health guide",
+          "url": "https://www.gov.uk/guidance/nhs-entitlements-migrant-health-guide",
+          "read": "2026-11-15",
+          "says": "Last updated 2 October 2023. Overseas visitors, people not ordinarily resident in the UK, may have to pay for NHS hospital treatment unless exempt, at 150% of the NHS cost; GP consultations and A&E are free to everyone. People who have paid the immigration health surcharge can use the NHS much as ordinarily resident patients while their visa is valid. (The page still shows the old £624 surcharge.)"
+        }
+      ],
+      "note": "The nhs.uk page guessed at (https://www.nhs.uk/nhs-services/visiting-or-moving-to-england/visitors-who-do-not-need-pay-for-nhs-treatment/) is a 404, and the older gov.uk page \"How the NHS charges overseas visitors for NHS hospital care\" says the same (150% of the NHS rate) but was withdrawn on 17 December 2024; the migrant health guide is current but last updated in 2023."
+    },
+    {
+      "id": "uk-healthcare-nhs-waits",
+      "fact": "healthcare",
+      "cities": [
+        "london"
+      ],
+      "claim": "NHS waits for planned treatment are long",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "BMA: NHS backlog data analysis",
+          "url": "https://www.bma.org.uk/advice-and-support/nhs-delivery-and-workforce/pressures/nhs-backlog-data-analysis",
+          "read": "2026-11-15",
+          "says": "Last updated 12 November 2026, for September 2026: a waiting list of 7.38 million cases (about 6.24 million patients), a median wait of 12.2 weeks, around 2.52 million waiting over 18 weeks and around 116,000 over a year."
+        }
+      ],
+      "note": "Secondary (the doctors' union, from NHS England data); NHS England's own statistical releases are PDFs and were not opened."
+    }
+  ]
+}

@@ -1,0 +1,701 @@
+{
+  "country": "Netherlands",
+  "cities": [
+    "amsterdam"
+  ],
+  "claims": [
+    {
+      "id": "nl-tax-box3-deemed-return",
+      "fact": "tax",
+      "cities": [
+        "amsterdam"
+      ],
+      "claim": "Box 3 taxes a deemed return of 6.00% on investments (2026) rather than actual investment income",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Belastingdienst: berekening box 3-inkomen 2026",
+          "url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/box-3/content/berekening-box-3-inkomen-2026",
+          "read": "2026-11-15",
+          "says": "For 2026: banktegoeden 1,28% (provisional), beleggingen en andere bezittingen 6,00% (\"Het percentage voor beleggingen en andere bezittingen staat al vast\"), schulden 2,70% (provisional, fixed early in 2027); heffingsvrij vermogen € 59.357 per person; box 3 rate 36%; debts count above a threshold of € 3.800 per person."
+        },
+        {
+          "name": "SRA: Box 3, percentages, vrijstellingen en bedragen 2026",
+          "url": "https://www.sra.nl/nieuws/600041/2026/01/box-3-percentages-vrijstellingen-en-bedragen-2026",
+          "read": "2026-11-15",
+          "says": "Published 8 January 2026. Overige bezittingen 6,00% (final), schulden 2,70% and bank deposits 1,28% (provisional); heffingsvrij vermogen € 59.357; rate 36%. If the actual return in 2026 is lower than the deemed return, the taxpayer can \"een beroep doen op de tegenbewijsregeling\" and is taxed on the actual return, which includes unrealised gains."
+        },
+        {
+          "name": "PwC: Netherlands, income determination",
+          "url": "https://taxsummaries.pwc.com/netherlands/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 29 May 2026. Box 3 assets fall into bank deposits, other assets and debts, each deemed to yield a fixed percentage of its 1 January value; the result above a personal exemption of \"EUR 59,357 (2026)\" is taxed at a flat 36% (2026). The transitional rules apply until a new system is implemented in 2028 \"at the earliest\". Dutch dividend withholding tax of 15% is credited against the Box 3 tax."
+        }
+      ],
+      "modelMismatch": "src/data/localTaxes.ts has no NL entry (its header lists the Netherlands among countries with \"no researched tax data\"), so the simulation applies no Dutch tax to Amsterdam, although Box 3 is a yearly wealth-type tax and there is an inheritance tax. Checked facts for stage 8. Box 3, 2026 (https://www.belastingdienst.nl/wps/wcm/connect/nl/box-3/content/berekening-box-3-inkomen-2026): deemed return 6.00% on investments and other assets (final), 1.28% on bank deposits and 2.70% on debts (both provisional; debts count above €3,800 per person), a €59,357 allowance per person, taxed at 36%, so about 2.16% a year of net investments above the allowance, with the margin loan deducted only at the lower deemed rate; a lower actual return can be claimed instead. Inheritance tax, 2026 (https://www.belastingdienst.nl/wps/wcm/connect/nl/erfbelasting/content/tarieven-erfbelasting and .../vrijstelling-erfbelasting): children pay 10% up to €158,669 and 20% above, after €26,230 each; it applies to the worldwide estate of a Dutch resident (PwC). The US treaty's Article 4(2) carve-out (under 7 of 10 years, there for business, study, tourism or a similar purpose, no clear intention to stay) may not fit a retiree.",
+      "note": "Dividends are not taxed separately for a portfolio holder: they fall inside the Box 3 deemed return (PwC). The summary's \"deemed 6% return\" agrees."
+    },
+    {
+      "id": "nl-tax-box3-debts",
+      "fact": "tax",
+      "cities": [
+        "amsterdam"
+      ],
+      "claim": "Debts are deducted at a deemed 2.70% (2026)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Belastingdienst: berekening box 3-inkomen 2026",
+          "url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/box-3/content/berekening-box-3-inkomen-2026",
+          "read": "2026-11-15",
+          "says": "For 2026: banktegoeden 1,28% (provisional), beleggingen en andere bezittingen 6,00% (\"Het percentage voor beleggingen en andere bezittingen staat al vast\"), schulden 2,70% (provisional, fixed early in 2027); heffingsvrij vermogen € 59.357 per person; box 3 rate 36%; debts count above a threshold of € 3.800 per person."
+        },
+        {
+          "name": "SRA: Box 3, percentages, vrijstellingen en bedragen 2026",
+          "url": "https://www.sra.nl/nieuws/600041/2026/01/box-3-percentages-vrijstellingen-en-bedragen-2026",
+          "read": "2026-11-15",
+          "says": "Published 8 January 2026. Overige bezittingen 6,00% (final), schulden 2,70% and bank deposits 1,28% (provisional); heffingsvrij vermogen € 59.357; rate 36%. If the actual return in 2026 is lower than the deemed return, the taxpayer can \"een beroep doen op de tegenbewijsregeling\" and is taxed on the actual return, which includes unrealised gains."
+        }
+      ],
+      "note": "The 2.70% is provisional until early 2027, which the fact's trailing \"check current rules\" covers. Debts count only above €3,800 per person."
+    },
+    {
+      "id": "nl-tax-box3-allowance-rate",
+      "fact": "tax",
+      "cities": [
+        "amsterdam"
+      ],
+      "claim": "The allowance is €59,357 and the rate 36% (2026)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Belastingdienst: berekening box 3-inkomen 2026",
+          "url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/box-3/content/berekening-box-3-inkomen-2026",
+          "read": "2026-11-15",
+          "says": "For 2026: banktegoeden 1,28% (provisional), beleggingen en andere bezittingen 6,00% (\"Het percentage voor beleggingen en andere bezittingen staat al vast\"), schulden 2,70% (provisional, fixed early in 2027); heffingsvrij vermogen € 59.357 per person; box 3 rate 36%; debts count above a threshold of € 3.800 per person."
+        },
+        {
+          "name": "PwC: Netherlands, income determination",
+          "url": "https://taxsummaries.pwc.com/netherlands/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 29 May 2026. Box 3 assets fall into bank deposits, other assets and debts, each deemed to yield a fixed percentage of its 1 January value; the result above a personal exemption of \"EUR 59,357 (2026)\" is taxed at a flat 36% (2026). The transitional rules apply until a new system is implemented in 2028 \"at the earliest\". Dutch dividend withholding tax of 15% is credited against the Box 3 tax."
+        }
+      ]
+    },
+    {
+      "id": "nl-tax-box3-effective",
+      "fact": "tax",
+      "cities": [
+        "amsterdam"
+      ],
+      "claim": "That is about 2.2% of the net portfolio a year whether or not anything is sold",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Belastingdienst: berekening box 3-inkomen 2026",
+          "url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/box-3/content/berekening-box-3-inkomen-2026",
+          "read": "2026-11-15",
+          "says": "For 2026: banktegoeden 1,28% (provisional), beleggingen en andere bezittingen 6,00% (\"Het percentage voor beleggingen en andere bezittingen staat al vast\"), schulden 2,70% (provisional, fixed early in 2027); heffingsvrij vermogen € 59.357 per person; box 3 rate 36%; debts count above a threshold of € 3.800 per person."
+        }
+      ],
+      "note": "Arithmetic on the page's figures: 6.00% × 36% = 2.16% of investments above the allowance. The summary and drawback 1 repeat \"about 2.2%\"."
+    },
+    {
+      "id": "nl-tax-box3-actual-return-rebuttal",
+      "fact": "tax",
+      "cities": [
+        "amsterdam"
+      ],
+      "claim": "A lower actual return can now be claimed instead of the deemed one",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "SRA: Box 3, percentages, vrijstellingen en bedragen 2026",
+          "url": "https://www.sra.nl/nieuws/600041/2026/01/box-3-percentages-vrijstellingen-en-bedragen-2026",
+          "read": "2026-11-15",
+          "says": "Published 8 January 2026. Overige bezittingen 6,00% (final), schulden 2,70% and bank deposits 1,28% (provisional); heffingsvrij vermogen € 59.357; rate 36%. If the actual return in 2026 is lower than the deemed return, the taxpayer can \"een beroep doen op de tegenbewijsregeling\" and is taxed on the actual return, which includes unrealised gains."
+        },
+        {
+          "name": "HBN Law & Tax: Box 3 update, Senate review and actual return relief",
+          "url": "https://hbnlawtax.com/tax-instant-news/box-3-update-senate-review-and-practical-implementation-of-actual-return-relief/",
+          "read": "2026-11-15",
+          "says": "Dated May 26, 2026. \"Taxpayers may use the Opgaaf werkelijk rendement to demonstrate that their actual return was lower\" than the deemed return; the relief stays relevant while the reform is under Senate review."
+        }
+      ],
+      "note": "Secondary sources: the two Belastingdienst URLs tried for the rebuttal (.../box-3/content/werkelijk-rendement-box-3 and .../werkelijk-rendement-opgeven) are 404s."
+    },
+    {
+      "id": "nl-tax-box3-reform-status",
+      "fact": "tax",
+      "cities": [
+        "amsterdam"
+      ],
+      "claim": "The move to taxing actual returns is uncertain: the Senate postponed its vote and in September 2026 the cabinet asked it to pause the bill, so a 2028 start is in doubt",
+      "verdict": "corrected",
+      "oldWording": "in September 2026 the cabinet asked it to pause the bill, so a 2028 start is in doubt",
+      "newWording": "in November 2026 the cabinet sent parliament an amendment that would tax gains on shares and funds only when sold, aiming to start in 2029",
+      "sources": [
+        {
+          "name": "Tweede Kamer: Novelle uitbreiding vermogenswinstbelasting box 3",
+          "url": "https://www.tweedekamer.nl/kamerstukken/plenaire_verslagen/kamer_in_het_kort/novelle-uitbreiding-vermogenswinstbelasting-box-3",
+          "read": "2026-11-15",
+          "says": "Dated 10 November 2026. Through an amendment bill (novelle) the minister wants a capital gains tax in box 3: tax is charged only when assets such as shares are sold at a profit. It changes a bill the Tweede Kamer has passed and that lies with the Eerste Kamer. Intended start: 2029. The Kamer votes on 12 November; the page gives no result."
+        },
+        {
+          "name": "Loyens & Loeff: nieuw box 3-stelsel beoogd per 2029, novelle ingediend bij Tweede Kamer",
+          "url": "https://www.loyensloeff.com/nl/insights/news--events/news/nieuw-box-3-stelsel-beoogd-per-2029-novelle-ingediend-bij-tweede-kamer/",
+          "read": "2026-11-15",
+          "says": "Dated 4 November 2026. The cabinet sent the novelle to the Tweede Kamer on 3 November 2026; the new system is intended for 1 January 2029. Gains on financial instruments would be taxed on realisation, while interest and dividends stay taxed yearly. The Tweede Kamer was due to vote on 12 November 2026, the Eerste Kamer after it. The Raad van State advised a full capital gains tax from 2030."
+        },
+        {
+          "name": "SRA: nog geen duidelijkheid over box 3 vanaf 2028",
+          "url": "https://www.sra.nl/nieuws/600041/2026/09/nog-geen-duidelijkheid-over-box-3-vanaf-2028",
+          "read": "2026-11-15",
+          "says": "Published 28-09-2026, updated 30-09-2026. \"Om die reden heeft de Eerste Kamer stemming over het wetsvoorstel tot nader orde uitgesteld.\" In a letter of 29 September the cabinet also asked the Senate not to take the bill further for now; all four scenarios in the letter start from 1 January 2028."
+        }
+      ],
+      "also": [
+        "sources: added the Tweede Kamer page; the SRA and HBN pages stay",
+        "summary and drawbacks unchanged: neither mentions the reform"
+      ],
+      "note": "The September position was overtaken: on 3 November 2026 the cabinet filed an amendment bill (novelle) that turns the reform into a tax on realised gains for financial assets, with interest and dividends still taxed yearly, intended for 1 January 2029. The Tweede Kamer was due to vote on 12 November 2026; no page read gives the result, and the Senate has still not voted on the main bill, so the fact says \"still not law\" and keeps \"check current rules\". If enacted this would help a buy-and-hold portfolio from 2029; today's rule is scored (scores.tax stays 1)."
+    },
+    {
+      "id": "nl-estate-worldwide-reach",
+      "fact": "estate",
+      "cities": [
+        "amsterdam"
+      ],
+      "claim": "Inheritance tax reaches the worldwide estate of a Dutch resident",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Netherlands, other taxes",
+          "url": "https://taxsummaries.pwc.com/netherlands/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 29 May 2026. A wealth tax \"does not exist as such\"; deemed income from investments is taxed in Box 3 at 36% above EUR 59,357 (2026). Inheritance and gift tax runs from 10% to 40% by relationship, and is due when the inheritance comes from a Dutch resident, or from a former resident of Dutch nationality within ten years of leaving."
+        }
+      ],
+      "note": "The ten-year rule on the page is for Dutch nationals who leave; it does not concern a US citizen."
+    },
+    {
+      "id": "nl-estate-child-rates",
+      "fact": "estate",
+      "cities": [
+        "amsterdam"
+      ],
+      "claim": "Children pay 10% up to €158,669 and 20% above it (2026)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Belastingdienst: tarieven erfbelasting 2026",
+          "url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/erfbelasting/content/tarieven-erfbelasting",
+          "read": "2026-11-15",
+          "says": "2026, partner and children: 10% on the part of the inheritance up to € 158.669 and 20% on the part above it."
+        }
+      ]
+    },
+    {
+      "id": "nl-estate-child-exemption",
+      "fact": "estate",
+      "cities": [
+        "amsterdam"
+      ],
+      "claim": "Children have an exemption of about €26,000",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Belastingdienst: vrijstelling erfbelasting 2026",
+          "url": "https://www.belastingdienst.nl/wps/wcm/connect/nl/erfbelasting/content/vrijstelling-erfbelasting",
+          "read": "2026-11-15",
+          "says": "2026 exemptions: partner € 828.035; child, foster child or stepchild € 26.230."
+        }
+      ]
+    },
+    {
+      "id": "nl-estate-treaty-art-4-2",
+      "fact": "estate",
+      "cities": [
+        "amsterdam"
+      ],
+      "claim": "Under Art. 4(2) of the US–Netherlands treaty a US citizen who is not Dutch, has lived there under 7 of the last 10 years and had no clear intention to stay may be treated as US-domiciled",
+      "verdict": "corrected",
+      "oldWording": "has lived there under 7 of the last 10 years and had no clear intention to stay may be treated",
+      "newWording": "has lived there under 7 of the last 10 years, was there for business, study, tourism or a similar purpose and had no clear intention to stay may be treated as US-domiciled (a retiree who settles may not fit; check with an adviser)",
+      "sources": [
+        {
+          "name": "Inview (Wolters Kluwer): US–Netherlands estate tax convention, Article 4",
+          "url": "https://www.inview.nl/openCitation/id21560f434c95e312c1de2b7d8cd88e26/convention-between-the-kingdom-of-the-netherlands-and-the-united-states-of-america-for-the-avoidance-of-double-taxation-and-the-prevention-of-fiscal-evasion-with-respect-to-taxes-on-estates-and-inheritances-artikel-4",
+          "read": "2026-11-15",
+          "says": "Article 4(2): a decedent who was a citizen of one State and not the other, and domiciled in both under paragraph 1, \"shall be deemed to have been domiciled in (and only in) the State of which he was a citizen, if\" (a) he had been domiciled in the other State \"in the aggregate less than 7 years during the 10-year period ending at his death\"; and (b) he was there \"for business, professional, educational, training, tourism, or a similar purpose\" (or as the spouse or dependant of such a person) \"and did not have a clear intention to remain indefinitely in the other State.\" Trb. 1969, 221; in force 03-02-1971."
+        }
+      ],
+      "also": [
+        "summary unchanged: \"(the US estate treaty may limit this for shorter stays)\" is still hedged with \"may\"",
+        "scores.estate stays 2 (top rate 20%)"
+      ],
+      "note": "The article has two conditions joined by \"and\"; the profile gave the years and the intention but left out the purpose of the stay, which is the one a retiree may fail. Whether retirement is a \"similar purpose\" is not something a page read settles."
+    },
+    {
+      "id": "nl-estate-treaty-credit",
+      "fact": "estate",
+      "cities": [
+        "amsterdam"
+      ],
+      "claim": "The treaty otherwise gives credit relief",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Inview (Wolters Kluwer): US–Netherlands estate tax convention, Article 11",
+          "url": "https://www.inview.nl/openCitation/id5207dfda9f7b5b4d947d858357bcc813/convention-between-the-kingdom-of-the-netherlands-and-the-united-states-of-america-for-the-avoidance-of-double-taxation-and-the-prevention-of-fiscal-evasion-with-respect-to-taxes-on-estates-and-inheritances-artikel-11",
+          "read": "2026-11-15",
+          "says": "Article 11(1): where both States tax property covered by Article 6 or 7, the State taxing on domicile or citizenship \"shall allow a credit equal to the amount of the tax imposed by the other State.\" 11(2)(a): for other property, where the decedent was a citizen of one State and had been domiciled in the other for 7 or more of the last 10 years, \"the State of which he was a citizen shall allow a credit equal to the amount of the tax imposed by such other State.\""
+        }
+      ]
+    },
+    {
+      "id": "nl-estate-treaty-exists",
+      "fact": "estate",
+      "cities": [
+        "amsterdam"
+      ],
+      "claim": "There is a US estate treaty with this country (estate tax treaty)",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-with",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "All 13 countries are in the table (see us-estate-treaty-list). Estate & Gift: Australia, Austria, France, Germany, Japan, United Kingdom. Estate only: Greece, Ireland, Italy, Netherlands, South Africa, Switzerland, and Canada by Article XXIX B of the income tax treaty."
+        }
+      ]
+    },
+    {
+      "id": "nl-estate-us-exemption-2026",
+      "fact": "estate",
+      "cities": [
+        "amsterdam"
+      ],
+      "claim": "The US estate exemption is $15M in 2026",
+      "verdict": "confirmed",
+      "shared": "us-estate-exemption-2026",
+      "sources": [
+        {
+          "name": "IRS: What's new, estate and gift tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax",
+          "read": "2026-11-15",
+          "says": "The table \"Basic exclusion amount for year of death\" has the row 2026: $15,000,000 (2025: $13,990,000). The page says the Working Families Tax Cuts, Public Law 119-21, signed July 4, 2025, \"amends § 2010(c)(3) by increasing the basic exclusion amount to $15,000,000 for calendar year 2026\". Page last reviewed or updated 03-Nov-2026."
+        },
+        {
+          "name": "IRS: Estate tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-tax",
+          "read": "2026-11-15",
+          "says": "A return is required when the gross estate, plus adjusted taxable gifts and specific exemption, is more than the filing threshold for the year of death; the table gives 2026: $15,000,000. Page last reviewed or updated 23-Oct-2026."
+        },
+        {
+          "name": "IRS news release IR-2025-103: tax inflation adjustments for tax year 2026",
+          "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill",
+          "read": "2026-11-15",
+          "says": "\"Estates of decedents who die during 2026 have a basic exclusion amount of $15,000,000\", up from $13,990,000 for 2025; the release (October 9, 2025) cites Revenue Procedure 2025-32 and is marked as an archival document."
+        }
+      ]
+    },
+    {
+      "id": "nl-estate-us-exemption-applies",
+      "fact": "estate",
+      "cities": [
+        "amsterdam"
+      ],
+      "claim": "The US exemption applies to a US citizen living there as anywhere",
+      "verdict": "confirmed",
+      "shared": "us-estate-exemption-applies-abroad",
+      "sources": [
+        {
+          "name": "IRS: Some nonresidents with U.S. assets must file estate tax returns",
+          "url": "https://www.irs.gov/individuals/international-taxpayers/some-nonresidents-with-us-assets-must-file-estate-tax-returns",
+          "read": "2026-11-15",
+          "says": "\"U.S. citizens are subject to U.S. estate taxation with respect to their worldwide assets\"; Form 706 is required when worldwide assets plus adjusted taxable gifts exceed the basic exclusion amount in effect on the date of death. By contrast a nonresident who is not a citizen files when US-situated assets exceed $60,000. Page last reviewed or updated 27-Jun-2026."
+        }
+      ]
+    },
+    {
+      "id": "nl-lending-ibkr-accepts",
+      "fact": "lending",
+      "cities": [
+        "amsterdam"
+      ],
+      "claim": "IBKR serves residents of the Netherlands",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly serves Dutch residents",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        }
+      ],
+      "note": "Tried again on 2026-11-15: https://www.interactivebrokers.co.uk/en/accounts/open-account-country-list.php returned HTTP 403, as every Interactive Brokers page did in stage 1. The hedge stays."
+    },
+    {
+      "id": "nl-lending-ibkr-eu-entity",
+      "fact": "lending",
+      "cities": [
+        "amsterdam"
+      ],
+      "claim": "EU clients are served through IBKR's Irish entity, Interactive Brokers Ireland Limited",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-eu-entity",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly serves Dutch residents (EU clients through its Irish entity)",
+      "sources": [
+        {
+          "name": "Interactive Brokers Ireland Limited: Customer Agreement (document 4750, 7/1/2023), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/01_4750_IBIE_Customer_Agreement_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "Clause 1B: Interactive Brokers Ireland Limited (\"IBIE\") is incorporated in Ireland, company number 657406, and \"is regulated by the Central Bank of Ireland\", register number C423427. Clause 1C: unless told otherwise in writing, the client is categorised as a Retail Client. The agreement does not say which countries' residents IBIE serves."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. \"In the EU, customers sign up with the Irish entity\"; UK clients are with Interactive Brokers (U.K.) Limited; the Irish €20k compensation scheme applies to Eastern Europe after the Irish and Hungarian entities merged."
+        },
+        {
+          "name": "Investing in the Web: Interactive Brokers in Europe",
+          "url": "https://investingintheweb.com/broker-reviews/interactive-brokers-europe",
+          "read": "2026-11-15",
+          "says": "Updated on Sep 8, 2026. \"As an European resident, you are under the Central Bank of Ireland regulation\" (Interactive Brokers Ireland Limited); \"As a UK resident, you will be under this legal entity\" (Interactive Brokers UK Limited); \"Interactive Brokers Luxembourg and Central have been extinct/merged.\""
+        }
+      ],
+      "note": "The entity clause has no hedge word of its own; it sits inside the \"reportedly serves\" clause, which is the hedge recorded. IBKR's own document confirms the Irish entity exists; which residents it serves rests on the two dated secondary pages."
+    },
+    {
+      "id": "nl-lending-schwab-accepts",
+      "fact": "lending",
+      "cities": [
+        "amsterdam"
+      ],
+      "claim": "Schwab International accepts residents of the Netherlands",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab International reportedly accepts them",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. On that day the author ran every entry in Schwab's international account selector through the application: it accepted residents of 51 of 263 countries and regions: Argentina, Australia, Austria, the Bahamas, Belgium, Bermuda, Brazil, the British Virgin Islands, the Cayman Islands, Chile, China, Colombia, Costa Rica, the Czech Republic, Denmark, Ecuador, Finland, Germany, Greece, Guatemala, Hong Kong, Iceland, India, Indonesia, Ireland, Israel, Jersey, Luxembourg, Malaysia, the Marshall Islands, Mexico, the Netherlands, Norway, Panama, Paraguay, Peru, Poland, Portugal, Qatar, Singapore, South Korea, Spain, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Turks and Caicos, the United Arab Emirates, the United Kingdom and Uruguay. Named as not accepted: Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam; for the rest the application said \"Schwab currently cannot open accounts for residents of your country/region.\" The test covers new applicants on that day only."
+        }
+      ],
+      "note": "The page was read again on 2026-11-15 for this country: the Netherlands is on its list of 51 countries and regions open to online application on October 23, 2026, marked \"Yes\". Schwab's own page (https://www.schwab.com/legal/schwab-one-account-agreement) returned its error page again (\"unable to authorize your request\")."
+    },
+    {
+      "id": "nl-lending-schwab-cash-out",
+      "fact": "lending",
+      "cities": [
+        "amsterdam"
+      ],
+      "claim": "Schwab bars Europe residents from taking cash out through margin",
+      "verdict": "cant-confirm",
+      "shared": "schwab-europe-margin-cash-out",
+      "hedge": "reportedly",
+      "wording": "Schwab reportedly bars Europe residents from taking cash out through margin",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. It quotes the Schwab One Account Agreement (\"October 2026 edition, form 09/26\"), Schwab One International terms: \"Customers residing within Europe are restricted from using their Available Margin Loan Value\" to withdraw funds from their account, and advises keeping enough actual cash in the account for spending. It does not define \"Europe\"."
+        }
+      ]
+    },
+    {
+      "id": "nl-lending-ibkr-margin-cash-out",
+      "fact": "lending",
+      "cities": [
+        "amsterdam"
+      ],
+      "claim": "A resident of the Netherlands can draw cash on margin at IBKR (\"so plan on IBKR margin\")",
+      "verdict": "corrected",
+      "shared": "ibkr-eu-margin-cash-out",
+      "oldWording": "so plan on IBKR margin",
+      "newWording": "and IBKR's EU entity reportedly lends on margin only to buy securities, not to withdraw as cash, so confirm how you would draw cash before relying on either",
+      "sources": [
+        {
+          "name": "LYNX: Withdrawal (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/payments-and-transfers/withdrawal/",
+          "read": "2026-11-15",
+          "says": "\"It is not possible to withdraw in a currency if your cash balance is negative or would go negative after the withdrawal.\" In a margin account \"some funds may be used as collateral for other positions or to cover negative cash balances\", which lowers what can be withdrawn. The page is undated (footer: Copyright 2023)."
+        },
+        {
+          "name": "CapTrader: Geld abheben (help page of a German introducing broker for Interactive Brokers)",
+          "url": "https://www.captrader.com/geld-abheben/",
+          "read": "2026-11-15",
+          "says": "\"Auszahlungen sind nur möglich, wenn kein negativer Saldo in der entsprechenden Währung\" or in the total cash arises or grows: withdrawals are possible only if they do not create or increase a negative balance. Footer: © CapTrader 2026."
+        },
+        {
+          "name": "Interactive Brokers Ireland Limited: Customer Agreement (document 4750, 7/1/2023), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/01_4750_IBIE_Customer_Agreement_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "Clause 2A(i)(d) defines the margin service as one \"to enable Clients to acquire investment instruments\". Clause 5A(iv): \"Terms and conditions for deposit and withdrawal of funds (including holding periods) are as specified on the IBIE website.\" The agreement does not say that a loan may be withdrawn as cash."
+        },
+        {
+          "name": "Mustachian Post forum: Using margin loan at Interactive Brokers, page 13",
+          "url": "https://forum.mustachianpost.com/t/using-margin-loan-at-interactive-brokers/3980?page=13",
+          "read": "2026-11-15",
+          "says": "Posts of September to November 2024. One poster says withdrawing cash on margin is \"not possible in Germany with IB IE\" but is with IB UK; Swiss residents with IB UK accounts report having done it; another reports IBKR service saying \"IBUK customers can no longer withdraw cash if aggregate cash balance is -ve\", which a manager then said applies only to UK residents."
+        }
+      ],
+      "also": [
+        "scores.lending 3→2 (plan decision of 2026-11-15; rubric 2: EU residence, where Schwab and IBKR's EU entity both reportedly bar taking cash out through margin)",
+        "summary: added the closing sentence \"The weak point is the borrow step: Schwab and IBKR both reportedly bar EU residents from drawing margin as cash.\"",
+        "drawbacks: none mentioned Schwab margin or brokers, so none was reworded and none was added; the summary sentence carries it",
+        "sources: added the LYNX withdrawal page"
+      ],
+      "note": "Standard wording from shared.json applied unchanged. The LYNX withdrawal page was read again on 2026-11-15 and says the same (\"It is not possible to withdraw in a currency if your cash balance is negative or would go negative after the withdrawal\"). IBKR article 3750 (https://ibkb.interactivebrokers.com/article/3750) returned HTTP 403 again, so \"reportedly\" stays. Amsterdam is not one of the ranked 75 picks in src/data/expatPicks.ts, so there is no rank or `why` line to flag."
+    },
+    {
+      "id": "nl-lending-priips-new-buys",
+      "fact": "lending",
+      "cities": [
+        "amsterdam"
+      ],
+      "claim": "EU PRIIPs rules block new buys of US-listed ETFs",
+      "verdict": "confirmed",
+      "shared": "priips-us-etf-new-buys-blocked",
+      "sources": [
+        {
+          "name": "LYNX: Key Information Document (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/products-and-regulations/regulations/key-information-document/",
+          "read": "2026-11-15",
+          "says": "Retail clients are \"not permitted to trade ETFs or other products that do not have a valid KID\"; many non-EU ETFs have none. Can a retail client buy US ETFs? \"No, not unless you are classified as a professional investor.\" The same applies to ETFs from Canada, Hong Kong, Mexico and Australia. The KID has applied to most products since 1 January 2018."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. \"PRIIPs is an EU rule that prohibits buying US-listed ETFs\", and this also applies to UK investors; US ETFs are open only to elective professional clients, while UCITS ETFs are available to all Europeans."
+        }
+      ],
+      "note": "The profile's \"reportedly\" stays; it does no harm."
+    },
+    {
+      "id": "nl-lending-priips-holdings-kept",
+      "fact": "lending",
+      "cities": [
+        "amsterdam"
+      ],
+      "claim": "The block is on buying, not on holding US-listed ETFs",
+      "verdict": "confirmed",
+      "shared": "priips-existing-holdings-kept",
+      "sources": [
+        {
+          "name": "LYNX: Key Information Document (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/products-and-regulations/regulations/key-information-document/",
+          "read": "2026-11-15",
+          "says": "The page's FAQ says retail clients \"may still hold or sell existing positions, but new purchases are restricted.\""
+        },
+        {
+          "name": "Regulation (EU) No 1286/2014, Article 13, as adopted (legislation.gov.uk copy of the EU text)",
+          "url": "https://www.legislation.gov.uk/eur/2014/1286/article/13/adopted",
+          "read": "2026-11-15",
+          "says": "The duty to provide a KID falls on \"a person advising on, or selling, a PRIIP\" before the retail investor is bound; nothing in the article reaches a PRIIP the investor already holds or a sale by the investor."
+        }
+      ]
+    },
+    {
+      "id": "nl-visa-no-retirement-permit",
+      "fact": "visa",
+      "cities": [
+        "amsterdam"
+      ],
+      "claim": "The Netherlands has no retirement or passive-income permit",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IND: residence permits (overview)",
+          "url": "https://ind.nl/en/residence-permits",
+          "read": "2026-11-15",
+          "says": "The categories shown are short stay, family and partner, work, study, au pair and exchange, EU/EEA/Swiss citizens, long-term EU residency, Brexit withdrawal agreement, other residence permits and asylum. None is for retirees or people of independent means; the nearest, \"economically inactive long-term EU resident\", is only for holders of long-term resident status from another EU country."
+        },
+        {
+          "name": "Everaert Advocaten: what older American entrepreneurs need to know about the DAFT visa",
+          "url": "https://www.everaert.nl/en/blog/thinking-of-starting-a-business-in-the-netherlands-here-is-what-older-american-entrepreneurs-need-to-know-about-the-daft-visa/",
+          "read": "2026-11-15",
+          "says": "Dated 15 October 2025. The IND \"may assess whether an older American entrepreneur is genuinely planning to start and operate a business or is merely looking to retire in the Netherlands\"; under its internal policy it may ask for additional proof. The required capital is \"at least €4,500\"; a permit can be revoked retroactively if the requirements are not met."
+        }
+      ]
+    },
+    {
+      "id": "nl-visa-investor-permit-closed",
+      "fact": "visa",
+      "cities": [
+        "amsterdam"
+      ],
+      "claim": "The wealthy-investor permit closed to new applicants in 2024",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Kroes Advocaten: abolition of the high net worth individual immigration programme",
+          "url": "https://www.kroesadvocaten.nl/en/abolition-of-high-net-worth-individual-immigration-program-golden-visa/",
+          "read": "2026-11-15",
+          "says": "\"As of April 17, 2024, it is therefore no longer possible to apply for this residence permit.\" The page shows no publication date."
+        }
+      ],
+      "note": "Law-firm page (17 April 2024); the IND overview read today lists no such permit. The fact ends \"(secondary source)\"."
+    },
+    {
+      "id": "nl-visa-daft-investment",
+      "fact": "visa",
+      "cities": [
+        "amsterdam"
+      ],
+      "claim": "The main route left for a US citizen is the DAFT self-employment permit, which needs at least €4,500 invested in a real Dutch business that the IND may check is being run",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IND: residence permit for a self-employed person",
+          "url": "https://ind.nl/en/residence-permits/work/residence-permit-self-employed-person",
+          "read": "2026-11-15",
+          "says": "Last updated 13 October 2026. Under the Dutch-American Friendship Treaty a US national must trade between the two countries or develop and lead a Dutch business; \"For most forms, the IND requires a minimum investment of €4,500.\" The investment and Chamber of Commerce registration must be made within 6 months or the IND may revoke the permit; an extension needs annual accounts. \"Your residence permit is valid for a maximum of 2 years.\""
+        },
+        {
+          "name": "Everaert Advocaten: what older American entrepreneurs need to know about the DAFT visa",
+          "url": "https://www.everaert.nl/en/blog/thinking-of-starting-a-business-in-the-netherlands-here-is-what-older-american-entrepreneurs-need-to-know-about-the-daft-visa/",
+          "read": "2026-11-15",
+          "says": "Dated 15 October 2025. The IND \"may assess whether an older American entrepreneur is genuinely planning to start and operate a business or is merely looking to retire in the Netherlands\"; under its internal policy it may ask for additional proof. The required capital is \"at least €4,500\"; a permit can be revoked retroactively if the requirements are not met."
+        }
+      ],
+      "note": "Drawback 2 (\"the DAFT route means running a real business\") agrees."
+    },
+    {
+      "id": "nl-visa-daft-older-applicants",
+      "fact": "visa",
+      "cities": [
+        "amsterdam"
+      ],
+      "claim": "Older DAFT applicants are scrutinised more closely",
+      "verdict": "cant-confirm",
+      "hedge": "reportedly",
+      "wording": "with older applicants reportedly scrutinised more closely",
+      "sources": [
+        {
+          "name": "Everaert Advocaten: what older American entrepreneurs need to know about the DAFT visa",
+          "url": "https://www.everaert.nl/en/blog/thinking-of-starting-a-business-in-the-netherlands-here-is-what-older-american-entrepreneurs-need-to-know-about-the-daft-visa/",
+          "read": "2026-11-15",
+          "says": "Dated 15 October 2025. The IND \"may assess whether an older American entrepreneur is genuinely planning to start and operate a business or is merely looking to retire in the Netherlands\"; under its internal policy it may ask for additional proof. The required capital is \"at least €4,500\"; a permit can be revoked retroactively if the requirements are not met."
+        }
+      ],
+      "note": "One law firm's account of IND internal policy; the IND page does not mention age. The hedge stays."
+    },
+    {
+      "id": "nl-healthcare-mandatory-acceptance",
+      "fact": "healthcare",
+      "cities": [
+        "amsterdam"
+      ],
+      "claim": "Every resident must take Dutch basic health insurance, which insurers must sell to anyone regardless of age or health",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Government of the Netherlands: compulsory standard health insurance",
+          "url": "https://www.government.nl/topics/health-insurance/standard-health-insurance/compulsory-standard-health-insurance",
+          "read": "2026-11-15",
+          "says": "\"Every person who lives or works in the Netherlands is legally obliged to take out standard health insurance.\""
+        },
+        {
+          "name": "Government of the Netherlands: standard health insurance",
+          "url": "https://www.government.nl/topics/health-insurance/standard-health-insurance",
+          "read": "2026-11-15",
+          "says": "\"Healthcare insurers are obliged to accept anyone who applies for the standard insurance package\", and must charge all policyholders the same premium regardless of age or health."
+        }
+      ]
+    },
+    {
+      "id": "nl-healthcare-premium",
+      "fact": "healthcare",
+      "cities": [
+        "amsterdam"
+      ],
+      "claim": "The basic policy costs about €159/month (2026 average)",
+      "verdict": "corrected",
+      "oldWording": "at about €159/month (2026 average)",
+      "newWording": "at about €157/month (2026 average)",
+      "sources": [
+        {
+          "name": "Rijksoverheid: premie zorgverzekering",
+          "url": "https://www.rijksoverheid.nl/onderwerpen/zorgverzekering/vraag-en-antwoord/premie-zorgverzekering",
+          "read": "2026-11-15",
+          "says": "\"De gemiddelde premie die mensen aan hun zorgverzekeraar moeten betalen in 2026 is € 1.884\", on average € 157 a month. \"De overheid heeft het verplicht eigen risico vastgesteld op € 385.\""
+        }
+      ],
+      "also": [
+        "sources: replaced Work in NL with the Rijksoverheid page"
+      ],
+      "note": "The government's own figure is €1,884 a year, €157 a month. Comparison sites average the listed policies at about €159 (a search result, not a read); the official figure is used."
+    },
+    {
+      "id": "nl-healthcare-deductible",
+      "fact": "healthcare",
+      "cities": [
+        "amsterdam"
+      ],
+      "claim": "The yearly deductible is €385",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Rijksoverheid: premie zorgverzekering",
+          "url": "https://www.rijksoverheid.nl/onderwerpen/zorgverzekering/vraag-en-antwoord/premie-zorgverzekering",
+          "read": "2026-11-15",
+          "says": "\"De gemiddelde premie die mensen aan hun zorgverzekeraar moeten betalen in 2026 is € 1.884\", on average € 157 a month. \"De overheid heeft het verplicht eigen risico vastgesteld op € 385.\""
+        }
+      ]
+    },
+    {
+      "id": "nl-healthcare-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "amsterdam"
+      ],
+      "claim": "Amsterdam UMC (two academic hospitals) and OLVG are close by",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Amsterdam UMC: about",
+          "url": "https://www.amsterdamumc.org/en/about.htm",
+          "read": "2026-11-15",
+          "says": "Amsterdam UMC is an academic medical centre with two locations, AMC and VUmc, formed by the 2018 merger of the two hospitals."
+        },
+        {
+          "name": "OLVG: over OLVG",
+          "url": "https://www.olvg.nl/over-olvg/",
+          "read": "2026-11-15",
+          "says": "OLVG calls itself \"hét stadsziekenhuis van Groot-Amsterdam\", with main locations Oost and West and a third at Spuistraat."
+        }
+      ]
+    },
+    {
+      "id": "nl-healthcare-gp-gatekeeper",
+      "fact": "healthcare",
+      "cities": [
+        "amsterdam"
+      ],
+      "claim": "GPs act as gatekeepers to specialists",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Thuisarts.nl (Dutch College of General Practitioners): who will I see at the GP practice",
+          "url": "https://www.thuisarts.nl/dutch-healthcare/who-will-i-see-gp-practice",
+          "read": "2026-11-15",
+          "says": "The GP refers you to a hospital specialist when needed; the referral letter is \"necessary in order to make an appointment with the specialist.\""
+        }
+      ],
+      "note": "government.nl's health insurance pages say nothing on referrals; Thuisarts is the GPs' professional body's public site."
+    }
+  ]
+}

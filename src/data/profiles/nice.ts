@@ -4,8 +4,8 @@ import { S } from './_shared'
 const profile: ExpatProfile = {
   tagline: 'Riviera city with France\'s top-rated healthcare',
   summary:
-    'France is 7th in International Living\'s 2026 index and scored best of all for healthcare, and Nice adds the Riviera\'s mild winters, a big English-speaking community and a year-round New York nonstop. For buy-borrow-die it ranks last of the 50: France taxes a resident\'s worldwide estate at up to 45% when it passes to children, and dividends pay 31.4%.',
-  scores: { cost: 1, healthcare: 5, safety: 3, visa: 4, climate: 4, community: 4, tax: 2, estate: 1, lending: 3 },
+    'France is 7th in International Living\'s 2026 index and scored best of all for healthcare, and Nice adds the Riviera\'s mild winters, a big English-speaking community and a year-round New York nonstop. For buy-borrow-die it ranks last of the 50: France taxes a resident\'s worldwide estate at up to 45% when it passes to children, and dividends pay 31.4%. The borrow step is weak too: Schwab reportedly does not take France residents, and IBKR reportedly bars EU residents from drawing margin as cash.',
+  scores: { cost: 1, healthcare: 5, safety: 3, visa: 4, climate: 4, community: 4, tax: 2, estate: 1, lending: 2 },
   facts: {
     healthcare:
       'Visitor-visa holders can join the public PUMa system after 3 months\' residence (most add a top-up mutuelle, about €120–132/month at 70); the 2026 social security law added a health contribution for residents with no French work income who pay no French social levies under a treaty, but its amount and scope await a decree (none as of Oct 2026); the CHU de Nice and private clinics are strong.',
@@ -16,7 +16,7 @@ const profile: ExpatProfile = {
     estate:
       'France taxes a French-resident decedent\'s worldwide estate: each child gets a €100k allowance, then 5–45% (20% from €15,933 to €552,324, 45% above €1,805,677); under the US–France estate treaty a US citizen (not French) who clearly intends to keep a US domicile and has lived in France under 5 of the last 7 years is treated as US-domiciled, so France taxes only French real estate and goods in France; after that, or for anyone settled in France for good, the worldwide estate is in reach, with treaty credits against double tax.',
     lending:
-      'IBKR is reportedly the only option: Schwab International\'s online form reportedly does not accept France residents; EU PRIIPs rules reportedly block new buys of US-listed ETFs, not holding them.',
+      'IBKR is reportedly the only broker open to France residents, since Schwab International\'s online form reportedly does not accept them, and IBKR\'s EU entity reportedly lends on margin only to buy securities, not to withdraw as cash, so confirm how you would draw cash before relying on it; EU PRIIPs rules reportedly block new buys of US-listed ETFs, not holding them.',
     climate: 'Mediterranean: about 300 sunny days, winter days around 13°C and hot summers near 28–30°C, with occasional heatwaves.',
     community: 'A large English-speaking community of British, American and Northern European residents along the Riviera, though daily life and paperwork run in French.',
     access:
@@ -28,6 +28,8 @@ const profile: ExpatProfile = {
     'French bureaucracy (prefecture renewals, PUMa enrolment) is slow and in French',
   ],
   sources: [
+    { name: 'LYNX: withdrawals from accounts carried by Interactive Brokers', url: 'https://www.lynxbroker.com/service/payments-and-transfers/withdrawal/' },
+    { name: 'Service-Public: social levies on investment income (CSG, CRDS)', url: 'https://www.service-public.gouv.fr/particuliers/vosdroits/F2329?lang=en', edition: '2026' },
     S.il,
     { name: 'PwC: France, other taxes', url: 'https://taxsummaries.pwc.com/france/individual/other-taxes', edition: '2026' },
     { name: 'Service-Public: inheritance tax (droits de succession)', url: 'https://www.service-public.gouv.fr/particuliers/vosdroits/F14198' },

@@ -7,21 +7,21 @@ Every city profile makes claims a retiree could act on: the tax on holding a por
 2026-11-15 · tests: 982 pass · typecheck: clean
 
 ## Now
-Stage 2 of 8 · Western Europe
-Scope: Spain (7), France (3), Italy (2), Ireland, UK, Netherlands, Germany, Switzerland, Austria, Malta — 19 cities, one ledger file per country, by the method in `docs/research/fact-check-2026-11/README.md`; the shared IBKR correction and lending score applied to the EU ones.
+Stage 3 of 8 · Eastern Europe, Mediterranean, Middle East, Africa
+Scope: Greece (2), Cyprus (2), Turkey (2), Georgia (2), Croatia, Montenegro, Albania, Bulgaria, Hungary, Czech Republic, UAE, South Africa, Mauritius — 17 cities, one ledger file per country, by the method in `docs/research/fact-check-2026-11/README.md`; the shared IBKR correction and lending score applied to the EU ones.
 Risk: UI only (profile copy and scores; the research reads public web pages)
 Checks:
-- [ ] The ledger holds every claim in the five facts of the 19 Western Europe profiles, each with a verdict, a source URL and the date it was read; none is left pending, and `CHECKED_COUNTRIES` names all ten countries (proof: test)
+- [ ] The ledger holds every claim in the five facts of the 17 profiles, each with a verdict, a source URL and the date it was read; none is left pending, and `CHECKED_COUNTRIES` names all thirteen countries (proof: test)
 - [ ] For every corrected claim, the old wording is gone from those profiles and the new wording is in them (proof: test)
-- [ ] A fresh re-read of 10 ledger sources, at least one per country and spread across the five facts, finds each page says what the ledger says it says (proof: run, a test can't read the web)
-- [ ] Three open Western Europe profiles in the running build, from three countries, show the corrected facts, with scores, summary and drawbacks that agree with them (proof: run the product, a test can't judge the rendered page)
+- [ ] A fresh re-read of 13 ledger sources, one per country and spread across the five facts, finds each page says what the ledger says it says (proof: run, a test can't read the web)
+- [ ] Three open profiles in the running build, from three of these countries, show the corrected facts, with scores, summary and drawbacks that agree with them (proof: run the product, a test can't judge the rendered page)
 Open: none
 Mode: autopilot — unattended
 Agents: lean
 
 ## Stages
 - [x] 1. Method and Portugal pilot — the claim ledger and its tests, the claims shared across profiles (US estate tax, treaties, brokers, PRIIPs), and Portugal's 6 cities checked and corrected end to end — [evidence](evidence/stage-1/report.md)
-- [ ] 2. Western Europe — Spain (7), France (3), Italy (2), Ireland, UK, Netherlands, Germany, Switzerland, Austria, Malta: 19 cities
+- [x] 2. Western Europe — Spain (7), France (3), Italy (2), Ireland, UK, Netherlands, Germany, Switzerland, Austria, Malta: 19 cities — [evidence](evidence/stage-2/report.md)
 - [ ] 3. Eastern Europe, Mediterranean, Middle East, Africa — Greece (2), Cyprus (2), Turkey (2), Georgia (2), Croatia, Montenegro, Albania, Bulgaria, Hungary, Czech Republic, UAE, South Africa, Mauritius: 17 cities
 - [ ] 4. Mexico, Central America, Caribbean — Mexico (9), Belize (5), Panama (4), Costa Rica (2), Guatemala (2), Honduras, Dominican Republic: 24 cities
 - [ ] 5. South America and Canada — Colombia (3), Canada (3), Ecuador, Peru, Chile, Argentina, Uruguay, Paraguay: 12 cities
@@ -43,8 +43,15 @@ Agents: lean
 - 2026-11-15 · Autopilot, unattended, Agents: lean — user: "Jbit autopilot lean". One builder at a time, verification in the main session, one fresh reviewer.
 - 2026-11-15 · (unattended) IBKR margin cash-out in the EU is a corrected claim, worded with "reportedly": the profiles say "so plan on IBKR margin", but two help pages for accounts IBKR carries (LYNX, CapTrader) say a withdrawal can't take the cash balance negative, and IBKR Ireland's customer agreement gives margin only "to acquire investment instruments"; IBKR's own help article returned 403, so the wording stays hedged. EU profiles' lending score goes 3 → 2 as each country is checked, and the rubric's lines for 3 and 2 are reworded to cover the case (2 = EU residence, where Schwab and IBKR's EU entity both reportedly bar taking cash out through margin). Ranks stay; the hit to the borrow step for every EU pick (Algarve 1, Lisbon 2 among them) is flagged for the user in the report — research: [shared.json](research/fact-check-2026-11/shared.json), claim `ibkr-eu-margin-cash-out`.
 - 2026-11-15 · A trailing "check current rules" hedges the rates and thresholds in its fact; a can't-confirm claim a reader would act on (eligibility, whether a broker lends) gets its own "reportedly" or is removed — PM's call, the first builder asked.
+- 2026-11-15 · (unattended) London and Zurich score Lending 3, not 4 and not 2: Schwab's reported clause bars margin cash-out for customers "residing within Europe", not the EU, which likely covers the UK and Switzerland and leaves IBKR alone (3); the evidence that IBKR's UK entity bars it too is one 2024 forum thread with mixed reports, too thin for 2. The rubric's 4 now reads "outside Europe" — research: [united-kingdom.json](research/fact-check-2026-11/united-kingdom.json) `uk-lending-ib-uk-margin-cash-out`, [switzerland.json](research/fact-check-2026-11/switzerland.json).
+- 2026-11-15 · (unattended) Italy's tax fact now says non-UCITS funds, which reportedly include US-domiciled ETFs, pay progressive income tax rather than 26%: the builder added it though the profile hadn't claimed it, and it stays, because the flat 26% misled a reader holding US funds.
+- 2026-11-15 · Spain's estate score stays 4 with its "inference" hedge: the statute read supports that US-resident heirs pay only on Spanish assets, but no page states it for this case — PM's call.
 
 ## Open questions
+- For stage 8 (model), from stage 2: `localTaxes.ts` has no entry for the UK, the Netherlands (Box 3 is a real yearly tax on a portfolio), Germany or Switzerland (Zurich's wealth tax); the figures are in each country's ledger file under `modelMismatch`. Catalonia's fifth band starts 24 cents off; Italy's and France's notes carry hedges the statutes now settle.
+- Spain's Los Angeles consulate page says residency applicants "cannot have/leave loans or mortgages in the United States"; whether a margin loan counts is not established, and no profile mentions it — user's call whether to add a warning.
+- Not claimed by the profiles, so not added, but they matter to a buy-and-hold ETF portfolio: Ireland's fund exit tax and 8-year deemed disposal, Germany's Vorabpauschale, and Switzerland's "professional securities dealer" tests (borrowing to invest is reportedly one) — a later pass.
+- Nice's summary says it "ranks last of the 50"; it is pick 58 of 75. Florence's `why` calls its visa "good" while the profile scores it 3. Sliema's `why` says "only IBKR is known to serve residents", which undersells that IBKR's EU entity reportedly won't pay a margin loan out as cash — user's call, at the final report (the plan keeps `why` lines and ranks).
 - For the user, from stage 1: every EU pick's borrow step is in doubt. Schwab reportedly bars Europe residents from taking cash out through margin, and accounts IBKR carries in the EU reportedly can't withdraw a margin loan as cash. Portugal's six picks (Algarve 1, Lisbon 2, Porto 7, Cascais 8, Tavira 14, Madeira 16) now score Lending 2 and say so; their ranks are unchanged. Re-rank, or keep and warn? IBKR's and Schwab's own pages returned 403 to every read, so someone with a browser should confirm IBKR help article 3750 and Schwab's account agreement — user's call, at the final report.
 - "Loan draws do not count as income" for the D7 has no page behind it: the official lists name pensions and income from property and financial assets only. The profiles now say "believed not to count"; a question to a consulate would settle it — later.
 - Tavira's `why` line says CUF Faro is "30 to 40 minutes away", flat; no page confirms the drive time, and the hospital is at Gambelas, beyond Faro. Left as is (the plan keeps `why` lines) — user's call, at the final report.

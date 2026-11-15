@@ -4,8 +4,8 @@ import { S } from './_shared'
 const profile: ExpatProfile = {
   tagline: 'Costa Blanca retiree town with a JCI hospital and Valencian tax rules',
   summary:
-    'Torrevieja sits in the Valencian Community, so it shares Alicante\'s rules: no wealth tax on the first €2M of net wealth from 2026 and 99% inheritance relief for children. It adds a JCI-accredited Quirónsalud hospital in town and one of the largest English-speaking retiree communities in Spain, at a lower cost than Alicante; against that, portfolios above €2M pay wealth tax every year, there are no US nonstops, and autumn flash floods are a regional risk.',
-  scores: { cost: 4, healthcare: 4, safety: 4, visa: 3, climate: 5, community: 5, tax: 2, estate: 4, lending: 3 },
+    'Torrevieja sits in the Valencian Community, so it shares Alicante\'s rules: no wealth tax on the first €2M of net wealth from 2026 and 99% inheritance relief for children. It adds a JCI-accredited Quirónsalud hospital in town and one of the largest English-speaking retiree communities in Spain, at a lower cost than Alicante; against that, portfolios above €2M pay wealth tax every year, there are no US nonstops, and autumn flash floods are a regional risk. The weak point is the borrow step: Schwab and IBKR both reportedly bar EU residents from drawing margin as cash.',
+  scores: { cost: 4, healthcare: 4, safety: 4, visa: 3, climate: 5, community: 5, tax: 2, estate: 4, lending: 2 },
   facts: {
     healthcare:
       'Hospital Quirónsalud Torrevieja (private) renewed its JCI accreditation in June 2026 (first accredited 2023), and the public Hospital Universitario de Torrevieja is reportedly in town; visa holders start on private insurance and can buy into public cover (convenio especial, €157/month at 65+) after a year.',
@@ -16,7 +16,7 @@ const profile: ExpatProfile = {
     estate:
       'Spain taxes the heir, and a non-resident heir only on Spanish assets, so US assets left to US-resident children appear outside it (an inference; confirm with a Spanish adviser); a resident child gets a €100k reduction plus 99% relief in the Valencian Community; there is no US–Spain estate treaty.',
     lending:
-      'IBKR reportedly accepts Spain residents (likely through its EU entity), and Schwab International reportedly accepts them too, but Schwab reportedly bars Europe residents from taking cash out through margin, so plan on IBKR margin; EU PRIIPs rules reportedly block new buys of US-listed ETFs, not holding them.',
+      'IBKR reportedly accepts Spain residents (likely through its EU entity), and Schwab International reportedly accepts them too, but Schwab reportedly bars Europe residents from taking cash out through margin, and IBKR\'s EU entity reportedly lends on margin only to buy securities, not to withdraw as cash, so confirm how you would draw cash before relying on either; EU PRIIPs rules reportedly block new buys of US-listed ETFs, not holding them.',
     climate:
       'Hot semi-arid: about 328 mm of rain a year, October the wettest month, and July–August highs about 32°C with mild, sunny winters; autumn DANA storms can bring flash floods to the region.',
     community:
@@ -29,6 +29,14 @@ const profile: ExpatProfile = {
     'Densely built resort sprawl, hot summers and autumn flash-flood risk',
   ],
   sources: [
+    { name: 'SEPE: yearly amounts of the IPREM and the minimum wage', url: 'https://www.sepe.es/HomeSepe/es/prestaciones-desempleo/Cuantias-anuales.html', edition: '2026' },
+    {
+      name: 'Spanish Consulate in Los Angeles: non-lucrative residence visa',
+      url: 'https://www.exteriores.gob.es/Consulados/losangeles/en/ServiciosConsulares/Paginas/Consular/Visado-de-residencia-no-lucrativa.aspx',
+      edition: '2026',
+    },
+    { name: 'LYNX: withdrawals from accounts carried by Interactive Brokers', url: 'https://www.lynxbroker.com/service/payments-and-transfers/withdrawal/' },
+    { name: 'Generalitat Valenciana: tax benefits 2026', url: 'https://hisenda.gva.es/es/web/tributos/beneficis-fiscals', edition: '2026' },
     {
       name: 'Euro Weekly News: Quirónsalud Torrevieja renews its JCI seal (Jun 2026)',
       url: 'https://euroweeklynews.com/2026/06/30/quironsalud-torrevieja-hospital-renews-its-joint-commission-international-gold-seal-reinforcing-its-leadership-in-healthcare-quality/',
@@ -48,7 +56,6 @@ const profile: ExpatProfile = {
     { name: 'YourTaxBase: Charles Schwab for expats', url: 'https://yourtaxbase.com/blog/charles-schwab-for-expats', edition: '2026' },
     { name: 'Travel Advisory: Spain', url: 'https://www.traveladvisory.io/advisory/spain' },
     { name: 'GOV.UK: Spain travel advice, safety and security', url: 'https://www.gov.uk/foreign-travel-advice/spain/safety-and-security' },
-    S.iprem,
     S.gpiTop50,
   ],
 }

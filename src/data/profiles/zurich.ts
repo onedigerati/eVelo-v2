@@ -3,8 +3,8 @@ import type { ExpatProfile } from '../expatPicks'
 const profile: ExpatProfile = {
   tagline: 'Safe, superb and very expensive, with a yearly wealth tax',
   summary:
-    'Zurich is one of the safest and best-run cities anywhere (Switzerland is 3rd in the 2026 Global Peace Index), with excellent hospitals, a lake and the Alps close by, and children inherit free of Zurich inheritance tax. For buy-borrow-die it works against you while you live: the canton taxes worldwide net wealth every year from about CHF 81k, dividends are taxed as income at up to about 39% in the city, Zurich abolished lump-sum taxation in 2009, and the retiree permit is discretionary and needs ties to Switzerland.',
-  scores: { cost: 1, healthcare: 5, safety: 5, visa: 2, climate: 3, community: 3, tax: 1, estate: 5, lending: 4 },
+    'Zurich is one of the safest and best-run cities anywhere (Switzerland is 3rd in the 2026 Global Peace Index), with excellent hospitals, a lake and the Alps close by, and children inherit free of Zurich inheritance tax. For buy-borrow-die it works against you while you live: the canton taxes worldwide net wealth every year from about CHF 81k, dividends are taxed as income at up to about 39% in the city, Zurich abolished lump-sum taxation from 2010, and the retiree permit is discretionary and needs ties to Switzerland.',
+  scores: { cost: 1, healthcare: 5, safety: 5, visa: 2, climate: 3, community: 3, tax: 1, estate: 5, lending: 3 },
   facts: {
     healthcare:
       'Excellent care, led by the University Hospital Zurich (about 900 beds); basic health insurance (KVG) is compulsory within 3 months of registering, and insurers must accept every resident regardless of age or health, but adult premiums in the city run about CHF 640/month (2026 median, CHF 300 deductible) and rise each year.',
@@ -15,7 +15,7 @@ const profile: ExpatProfile = {
     estate:
       'Zurich exempts spouses and direct descendants from its inheritance and gift tax (others pay progressive rates); Switzerland has no federal inheritance tax, and voters rejected a 50% federal tax on estates over CHF 50M by 78% in November 2025; the US–Switzerland estate treaty exists, and the $15M US exemption (2026) applies as anywhere.',
     lending:
-      'IBKR reportedly serves Swiss residents, and Schwab One International\'s online form reportedly accepted Switzerland in Oct 2026 (Switzerland is outside the EU); margin by country of residence is unreported, and Fidelity and Vanguard open no accounts for residents abroad.',
+      'IBKR reportedly serves Swiss residents (reportedly through its US or UK entity, not its EU one), and Schwab One International\'s online form reportedly accepted Switzerland in Oct 2026, but Schwab reportedly bars Europe residents from taking cash out through margin, which likely covers Switzerland although it is outside the EU, and whether IBKR lets Swiss residents withdraw a margin loan as cash is unconfirmed (2024 forum reports conflict), so confirm how you would draw cash before relying on either; Fidelity and Vanguard reportedly open no new accounts for residents abroad.',
     climate:
       'Temperate with cold, grey winters: July highs about 24°C, January highs about 4°C with lows just below freezing, and about 1,100 mm of rain or snow over some 130 days a year.',
     community:
@@ -44,9 +44,17 @@ const profile: ExpatProfile = {
       url: 'https://www.richmondchambers.ch/swiss-residence-permit/swiss-retirement-residence-permit',
     },
     { name: 'Expat Savvy: health insurance in Zurich (2026–27 premiums)', url: 'https://expat-savvy.ch/health-insurance/zurich/', edition: '2026' },
-    { name: 'Wikipedia: University Hospital of Zurich', url: 'https://en.wikipedia.org/wiki/University_Hospital_of_Zurich' },
+    { name: 'University Hospital Zurich (USZ)', url: 'https://www.usz.ch/en/' },
+    {
+      name: 'Federal Office of Public Health: compulsory health insurance for residents',
+      url: 'https://www.bag.admin.ch/de/krankenversicherung-versicherungspflicht-fuer-in-der-schweiz-wohnhafte-versicherte',
+    },
+    { name: 'Canton of Zurich: lump-sum taxation abolished from 1 January 2010 (media release)', url: 'https://www.zh.ch/de/news-uebersicht/medienmitteilungen/2011/01/004.html' },
     { name: 'IamExpat: Switzerland third in the Global Peace Index 2026', url: 'https://www.iamexpat.ch/lifestyle/lifestyle-news/switzerland-global-peace-index', edition: '2026' },
     { name: 'YourTaxBase: Charles Schwab for expats (country list, Oct 2026)', url: 'https://yourtaxbase.com/blog/charles-schwab-for-expats' },
+    { name: 'YourTaxBase: best brokerage for US expats (Fidelity, Vanguard)', url: 'https://yourtaxbase.com/blog/best-brokerage-for-us-expats', edition: '2026' },
+    { name: 'Banker on Wheels: Interactive Brokers review (entities by country)', url: 'https://www.bankeronwheels.com/interactive-brokers-review/', edition: '2026' },
+    { name: 'Mustachian Post forum: using a margin loan at Interactive Brokers', url: 'https://forum.mustachianpost.com/t/using-margin-loan-at-interactive-brokers/3980?page=13' },
     { name: 'Wikipedia: Zurich (climate, demographics)', url: 'https://en.wikipedia.org/wiki/Zurich' },
     { name: 'Wikipedia: Zurich Airport', url: 'https://en.wikipedia.org/wiki/Zurich_Airport' },
   ],

@@ -1,0 +1,52 @@
+$ npx vitest run src/data/__tests__/factCheck.test.ts --reporter=verbose
+npm notice run evelo@2.0.0 npx
+npm notice run 'vitest' run src/data/__tests__/factCheck.test.ts --reporter=verbose
+
+ RUN  v5.1.0 /home/jonah/repos/eVelo-v2
+
+ ✓ src/data/__tests__/factCheck.test.ts > fact-check ledger files > has shared.json 1ms
+ ✓ src/data/__tests__/factCheck.test.ts > fact-check ledger files > every file parses, and every claim has a known fact, one of the three verdicts and a source read during the plan 14ms
+ ✓ src/data/__tests__/factCheck.test.ts > fact-check ledger files > uses each claim id once across the whole ledger 7ms
+ ✓ src/data/__tests__/factCheck.test.ts > fact-check ledger files > shared.json covers the US estate exemption, the US estate-treaty list, IBKR, Schwab International and EU PRIIPs 1ms
+ ✓ src/data/__tests__/factCheck.test.ts > fact-check ledger files > lists every country file in CHECKED_COUNTRIES, so none escapes the coverage check 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > fact-check ledger files > CHECKED_COUNTRIES names countries that have profiled cities 1ms
+ ✓ src/data/__tests__/factCheck.test.ts > fact-check ledger files > Portugal: a ledger file covers every profiled city and each of the five facts 1ms
+ ✓ src/data/__tests__/factCheck.test.ts > fact-check ledger files > Spain: a ledger file covers every profiled city and each of the five facts 1ms
+ ✓ src/data/__tests__/factCheck.test.ts > fact-check ledger files > France: a ledger file covers every profiled city and each of the five facts 1ms
+ ✓ src/data/__tests__/factCheck.test.ts > fact-check ledger files > Italy: a ledger file covers every profiled city and each of the five facts 1ms
+ ✓ src/data/__tests__/factCheck.test.ts > fact-check ledger files > Ireland: a ledger file covers every profiled city and each of the five facts 1ms
+ ✓ src/data/__tests__/factCheck.test.ts > fact-check ledger files > United Kingdom: a ledger file covers every profiled city and each of the five facts 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > fact-check ledger files > Netherlands: a ledger file covers every profiled city and each of the five facts 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > fact-check ledger files > Germany: a ledger file covers every profiled city and each of the five facts 1ms
+ ✓ src/data/__tests__/factCheck.test.ts > fact-check ledger files > Switzerland: a ledger file covers every profiled city and each of the five facts 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > fact-check ledger files > Austria: a ledger file covers every profiled city and each of the five facts 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > fact-check ledger files > Malta: a ledger file covers every profiled city and each of the five facts 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > fact-check ledger files > profiles carry the new wording of every corrected claim and none of the old, and the hedge of every kept cant-confirm claim 20ms
+ ✓ src/data/__tests__/factCheck.test.ts > fact-check ledger files > every shared reference points at a shared.json claim 3ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 1: claim shape > passes a well-formed confirmed, corrected and cant-confirm claim 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 1: claim shape > rejects a pending or unknown verdict 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 1: claim shape > rejects an unknown fact 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 1: claim shape > rejects a claim with no source 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 1: claim shape > rejects a source without an http(s) url, a read date within the plan, or what the page says 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 1: claim shape > rejects a corrected claim without both wordings, and one whose new wording contains the old 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 1: claim shape > rejects a cant-confirm claim without a hedge, without its wording, or whose wording lacks the hedge 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 1: claim shape > rejects cities outside the file, misspelt fields and a wrong file name 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 1: claim shape > holds shared.json to its own shape: a topic, appliesTo and no cities 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 1: claim shape > knows a real ISO date from a look-alike 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 2: shared topics > names each missing topic 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 3: coverage > passes when every city × fact has a claim 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 3: coverage > names the missing city × fact, a missing city and a city that is not the country's 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 4: profile wording > passes when the old wording is gone and the new is in every listed city 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 4: profile wording > fails when a listed city still carries the old wording or lacks the new 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 4: profile wording > fails when a kept cant-confirm claim's hedged wording is not in a listed city, and passes a removed one 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 4: profile wording > fails when a listed city has no profile 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 4: profile wording > matches the text a reader sees, apostrophes unescaped 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 5: shared references > passes a reference to an existing shared claim 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 5: shared references > fails a reference to an id that is not in shared.json 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 5: shared references > fails a confirmed instance resting on a shared claim that is not confirmed 0ms
+
+ Test Files  1 passed (1)
+      Tests  40 passed (40)
+   Start at  08:59:26
+   Duration  705ms (transform 71%, import 18%, tests 11%, worker 1%)
+

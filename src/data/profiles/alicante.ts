@@ -4,8 +4,8 @@ import { S } from './_shared'
 const profile: ExpatProfile = {
   tagline: 'Dry, sunny Costa Blanca city with a big British community',
   summary:
-    'Alicante shares Valencia\'s regional tax rules (no wealth tax on the first €2M of net wealth from 2026, 99% inheritance relief for children) at a lower cost, with one of Europe\'s driest, sunniest climates. About a quarter of Spain\'s British residents live in its province, but there are no US nonstops, and portfolios above €2M pay wealth tax every year.',
-  scores: { cost: 3, healthcare: 4, safety: 4, visa: 3, climate: 5, community: 4, tax: 2, estate: 4, lending: 3 },
+    'Alicante shares Valencia\'s regional tax rules (no wealth tax on the first €2M of net wealth from 2026, 99% inheritance relief for children) at a lower cost, with one of Europe\'s driest, sunniest climates. About a quarter of Spain\'s British residents live in its province, but there are no US nonstops, and portfolios above €2M pay wealth tax every year. The weak point is the borrow step: Schwab and IBKR both reportedly bar EU residents from drawing margin as cash.',
+  scores: { cost: 3, healthcare: 4, safety: 4, visa: 3, climate: 5, community: 4, tax: 2, estate: 4, lending: 2 },
   facts: {
     healthcare:
       'The public Hospital General Universitario Dr. Balmis is the province\'s reference teaching hospital (220 transplants in 2025); visa holders start on private insurance and can buy into public cover (convenio especial, €157/month at 65+) after a year; Quirónsalud Torrevieja, about 50 km south, reportedly holds JCI accreditation.',
@@ -16,7 +16,7 @@ const profile: ExpatProfile = {
     estate:
       'Spain taxes the heir, and a non-resident heir only on Spanish assets, so US assets left to US-resident children appear outside it (an inference; confirm with a Spanish adviser); a resident child gets a €100k reduction plus 99% relief in the Valencian Community; there is no US–Spain estate treaty.',
     lending:
-      'IBKR reportedly accepts Spain residents (likely through its EU entity), and Schwab International reportedly accepts them too, but Schwab reportedly bars Europe residents from taking cash out through margin, so plan on IBKR margin; EU PRIIPs rules reportedly block new buys of US-listed ETFs, not holding them.',
+      'IBKR reportedly accepts Spain residents (likely through its EU entity), and Schwab International reportedly accepts them too, but Schwab reportedly bars Europe residents from taking cash out through margin, and IBKR\'s EU entity reportedly lends on margin only to buy securities, not to withdraw as cash, so confirm how you would draw cash before relying on either; EU PRIIPs rules reportedly block new buys of US-listed ETFs, not holding them.',
     climate: 'One of Europe\'s driest cities: about 285 mm of rain and 3,000 hours of sun a year, January days about 17°C and August days about 31°C with warm nights (1991–2020 normals).',
     community:
       'About 68,900 Britons were registered in Alicante province on 1 Jan 2025, a quarter of all Britons in Spain, mostly along the Costa Blanca, against about 2,900 Americans; in the city itself about 27% of residents are foreign-born, led by Latin Americans and North Africans.',
@@ -29,7 +29,14 @@ const profile: ExpatProfile = {
     'Hot summers with warm nights, and daily life in the city runs in Spanish and Valencian',
   ],
   sources: [
-    S.iprem,
+    { name: 'SEPE: yearly amounts of the IPREM and the minimum wage', url: 'https://www.sepe.es/HomeSepe/es/prestaciones-desempleo/Cuantias-anuales.html', edition: '2026' },
+    {
+      name: 'Spanish Consulate in Los Angeles: non-lucrative residence visa',
+      url: 'https://www.exteriores.gob.es/Consulados/losangeles/en/ServiciosConsulares/Paginas/Consular/Visado-de-residencia-no-lucrativa.aspx',
+      edition: '2026',
+    },
+    { name: 'LYNX: withdrawals from accounts carried by Interactive Brokers', url: 'https://www.lynxbroker.com/service/payments-and-transfers/withdrawal/' },
+    { name: 'Generalitat Valenciana: tax benefits 2026', url: 'https://hisenda.gva.es/es/web/tributos/beneficis-fiscals', edition: '2026' },
     { name: 'Guía Fiscal: wealth tax 2026, map of regional reliefs', url: 'https://guiafiscal.es/opinion/patrimonio-2026-mapa-bonificaciones-ccaa/', edition: '2026' },
     {
       name: 'Cuatrecasas: Valencian Community tax changes for 2026',

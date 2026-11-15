@@ -1,0 +1,1432 @@
+{
+  "country": "Spain",
+  "cities": [
+    "valencia",
+    "alicante",
+    "torrevieja",
+    "malaga",
+    "madrid",
+    "barcelona",
+    "tarragona"
+  ],
+  "claims": [
+    {
+      "id": "es-visa-nlv-no-work",
+      "fact": "visa",
+      "cities": [
+        "valencia",
+        "alicante",
+        "torrevieja",
+        "malaga",
+        "madrid",
+        "barcelona",
+        "tarragona"
+      ],
+      "claim": "Spain has a non-lucrative residence visa, and its holders may not work",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Spanish Consulate General in Los Angeles: non-lucrative residence visa",
+          "url": "https://www.exteriores.gob.es/Consulados/losangeles/en/ServiciosConsulares/Paginas/Consular/Visado-de-residencia-no-lucrativa.aspx",
+          "read": "2026-11-15",
+          "says": "Dated February 11, 2026. The visa is for residing in Spain without carrying out any gainful (work or professional) activity: \"This visa does not constitute a work permit.\" and \"This type of visa does not allow teleworking.\""
+        },
+        {
+          "name": "Spanish Consulate General in London: non-lucrative residence visa",
+          "url": "https://www.exteriores.gob.es/Consulados/londres/en/ServiciosConsulares/Paginas/Consular/Visado-de-residencia-no-lucrativa.aspx",
+          "read": "2026-11-15",
+          "says": "Dated July 6, 2026. Residence \"without carrying out any gainful (work or professional) activity\"; \"This visa does not constitute a work permit.\""
+        }
+      ],
+      "note": "The golden visa is not mentioned in any Spain profile, so its end (April 2025) is not a claim here and was not checked."
+    },
+    {
+      "id": "es-visa-nlv-income-400-iprem",
+      "fact": "visa",
+      "cities": [
+        "valencia",
+        "alicante",
+        "torrevieja",
+        "malaga",
+        "madrid",
+        "barcelona",
+        "tarragona"
+      ],
+      "claim": "The visa needs €2,400 a month or €28,800 a year, which is 400% of the 2026 IPREM",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Spanish Consulate General in Los Angeles: non-lucrative residence visa",
+          "url": "https://www.exteriores.gob.es/Consulados/losangeles/en/ServiciosConsulares/Paginas/Consular/Visado-de-residencia-no-lucrativa.aspx",
+          "read": "2026-11-15",
+          "says": "\"The minimum required amount is equivalent to 400% of Spain's Public Multiple Effects Income Indicator\" (IPREM). The page gives no euro amount; it links to an IPREM document. Dated February 11, 2026."
+        },
+        {
+          "name": "SEPE (state employment service): Cuantías anuales",
+          "url": "https://www.sepe.es/HomeSepe/es/prestaciones-desempleo/Cuantias-anuales.html",
+          "read": "2026-11-15",
+          "says": "The table of yearly amounts gives the IPREM for 2026 as 600,00 € a month and 7.200,00 € a year, citing Ley 31/2022 (the 2023 budget law, still extended)."
+        },
+        {
+          "name": "Costa Luz Lawyers: IPREM 2026 for the non-lucrative visa",
+          "url": "https://www.costaluzlawyers.com/resources/iprem-non-lucrative-visa-2026/",
+          "read": "2026-11-15",
+          "says": "IPREM €600 a month, €7,200 a year, \"unchanged from 2025\"; the main applicant must show 400% of the annual IPREM, €28,800 a year (about €2,400 a month). The page carries no date (footer © 2025) and its FAQ says the 2026 IPREM had not yet been published; two of its examples use other amounts (€31,680 and €39,600)."
+        }
+      ],
+      "also": [
+        "sources: S.iprem (Costa Luz Lawyers) replaced inline in all seven profiles by the SEPE table of yearly amounts and the Los Angeles consulate's visa page; the Costa Luz page has the right headline figures but is undated, says the 2026 IPREM is not yet published and contradicts itself in two examples"
+      ],
+      "note": "The euro figures are 4 × the official IPREM: 4 × €600 = €2,400 a month and 4 × €7,200 = €28,800 a year. No official page read states the product in euros. The Ministry of Inclusion's own information sheet (https://www.inclusion.gob.es/en/web/migraciones/w/autorizacion-inicial-de-residencia-temporal-no-lucrativa) returned HTTP 403. Valencia's first drawback repeats €2,400/month and compares it with Portugal's €920 (checked in portugal.json)."
+    },
+    {
+      "id": "es-visa-nlv-dependant",
+      "fact": "visa",
+      "cities": [
+        "valencia",
+        "alicante",
+        "torrevieja",
+        "malaga",
+        "madrid",
+        "barcelona",
+        "tarragona"
+      ],
+      "claim": "Each dependant adds €7,200 a year (100% of IPREM)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Spanish Consulate General in Los Angeles: non-lucrative residence visa",
+          "url": "https://www.exteriores.gob.es/Consulados/losangeles/en/ServiciosConsulares/Paginas/Consular/Visado-de-residencia-no-lucrativa.aspx",
+          "read": "2026-11-15",
+          "says": "\"To this amount, must be added 100% of the IPREM for each family member.\""
+        },
+        {
+          "name": "SEPE (state employment service): Cuantías anuales",
+          "url": "https://www.sepe.es/HomeSepe/es/prestaciones-desempleo/Cuantias-anuales.html",
+          "read": "2026-11-15",
+          "says": "IPREM for 2026: 7.200,00 € a year (600,00 € a month)."
+        }
+      ]
+    },
+    {
+      "id": "es-visa-nlv-income-or-savings",
+      "fact": "visa",
+      "cities": [
+        "valencia",
+        "alicante",
+        "torrevieja",
+        "malaga",
+        "madrid",
+        "barcelona",
+        "tarragona"
+      ],
+      "claim": "The means may be investment income or liquid savings",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Spanish Consulate General in Los Angeles: non-lucrative residence visa",
+          "url": "https://www.exteriores.gob.es/Consulados/losangeles/en/ServiciosConsulares/Paginas/Consular/Visado-de-residencia-no-lucrativa.aspx",
+          "read": "2026-11-15",
+          "says": "The applicant must prove \"sufficient financial means to cover the expenses of residing in Spain for the initial year of the residence permit or accrediting that they have a regular source of income\". Retirees must have a state pension or a non-capitalizable life annuity \"in convertible currency and / or investment accounts\"; bank statements for three months, year-end and average balances and the last tax return are required. The page also says: \"Residency applicants cannot have/leave loans or mortgages in the United States when applying for residency in Spain.\""
+        },
+        {
+          "name": "Spanish Consulate General in London: non-lucrative residence visa",
+          "url": "https://www.exteriores.gob.es/Consulados/londres/en/ServiciosConsulares/Paginas/Consular/Visado-de-residencia-no-lucrativa.aspx",
+          "read": "2026-11-15",
+          "says": "Requires \"original and stamped documents that verify the perception of a periodic and sufficient income or the holding of an estate that guarantees the perception of that income\", with bank balances at 31 December and the year's average balance."
+        }
+      ],
+      "note": "Both routes are on the official pages: a regular income, or funds for the year. Not in the profiles, and worth the user's eye for a buy-borrow-die reader: the Los Angeles consulate says applicants cannot have or leave loans or mortgages in the United States. The London page has no such line; whether a margin loan counts, and whether other US consulates apply it, was not established."
+    },
+    {
+      "id": "es-visa-nlv-health-insurance",
+      "fact": "visa",
+      "cities": [
+        "valencia",
+        "alicante",
+        "torrevieja",
+        "malaga",
+        "madrid",
+        "barcelona",
+        "tarragona"
+      ],
+      "claim": "The visa needs Spanish private health insurance with no co-pay",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Spanish Consulate General in Los Angeles: non-lucrative residence visa",
+          "url": "https://www.exteriores.gob.es/Consulados/losangeles/en/ServiciosConsulares/Paginas/Consular/Visado-de-residencia-no-lucrativa.aspx",
+          "read": "2026-11-15",
+          "says": "The policy must have \"no deductible, no copayment, no waiting period or coverage limit\", cover all beneficiaries for one year and be \"contracted with an insurance entity authorized to operate in Spain\"; \"No travel insurances with medical assistance coverage will be accepted.\""
+        },
+        {
+          "name": "Spanish Consulate General in London: non-lucrative residence visa",
+          "url": "https://www.exteriores.gob.es/Consulados/londres/en/ServiciosConsulares/Paginas/Consular/Visado-de-residencia-no-lucrativa.aspx",
+          "read": "2026-11-15",
+          "says": "Insurance from an insurer authorized in Spain that \"must cover all the risks insured by Spain's public health system\"."
+        }
+      ]
+    },
+    {
+      "id": "es-visa-nlv-live-in-spain",
+      "fact": "visa",
+      "cities": [
+        "valencia",
+        "alicante",
+        "torrevieja",
+        "malaga",
+        "madrid",
+        "barcelona",
+        "tarragona"
+      ],
+      "claim": "Holders must live in Spain most of the year",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "The Local Spain: Spain clarifies 183-day rule for digital nomad visa renewals",
+          "url": "https://www.thelocal.es/20260629/spain-clarifies-183-day-rule-for-digital-nomad-visa-renewals",
+          "read": "2026-11-15",
+          "says": "Dated 29 June 2026. The Supreme Court ruling for other permits does not reach the non-lucrative visa: under Article 64 f) of Royal Decree 1155/2024 a renewal needs \"real and effective residence in Spain for more than 183 days during each calendar year\"."
+        },
+        {
+          "name": "Costa Luz Lawyers: Can you renew your Spanish residency without spending 183 days in Spain?",
+          "url": "https://www.costaluzlawyers.com/can-you-renew-your-spanish-residency-without-spending-183-days-in-spain-what-the-supreme-courts-recent-decisions-really-mean/",
+          "read": "2026-11-15",
+          "says": "Posted 23 June 2026, updated 3 October 2026. Article 64.2(f) of the Immigration Regulation requires more than 183 days of real and effective residence in each calendar year to renew a non-lucrative permit; the Supreme Court judgments on absences (STS 731/2023 and later) do not automatically remove it, and holders \"should assume that the requirement remains fully applicable when renewing\"."
+        }
+      ],
+      "note": "Secondary pages: the Ministry of Inclusion's renewal sheet returned HTTP 403 (www.inclusion.gob.es), connection refused (accesible.inclusion.gob.es) and a certificate error (the PDF on ciudadaniaexterior.inclusion.gob.es). The rule is a renewal condition, and it is being argued over in the courts; one page found by search, not read, reports a lawyer saying renewal is now possible without 183 days."
+    },
+    {
+      "id": "es-tax-wealth-worldwide-net",
+      "fact": "tax",
+      "cities": [
+        "valencia",
+        "alicante",
+        "torrevieja",
+        "malaga",
+        "madrid",
+        "barcelona",
+        "tarragona"
+      ],
+      "claim": "Spain taxes a resident's worldwide net wealth",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Spain, other taxes",
+          "url": "https://taxsummaries.pwc.com/spain/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "\"Wealth tax is levied on Spanish tax residents' worldwide net assets\", measured at 31 December; regions may set their own exempt minimum, scale and reliefs. Last reviewed 30 June 2026."
+        },
+        {
+          "name": "Agencia Tributaria: Manual práctico de Patrimonio 2025, sujetos pasivos por obligación personal",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/patrimonio-2025/c-2-cuestiones-generales/quienes-estan-sujetos-i-patrimonio/sujetos-pasivos-obligacion-personal.html",
+          "read": "2026-11-15",
+          "says": "Residents must declare all assets and rights held at 31 December \"con independencia del lugar donde se encuentren situados los bienes o puedan ejercitarse los derechos\", less charges and personal debts."
+        }
+      ],
+      "note": "Agrees with the regional entries in src/data/localTaxes.ts (wealth base \"net\")."
+    },
+    {
+      "id": "es-tax-wealth-debt-deductible",
+      "fact": "tax",
+      "cities": [
+        "valencia",
+        "alicante",
+        "torrevieja",
+        "malaga",
+        "madrid",
+        "barcelona",
+        "tarragona"
+      ],
+      "claim": "Margin debt is deductible from the wealth-tax base",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Agencia Tributaria: Manual práctico de Patrimonio 2025, deudas deducibles",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/patrimonio-2025/c-3-determinacion-base-imponible/deudas-deducibles.html",
+          "read": "2026-11-15",
+          "says": "Deductible: \"las deudas y obligaciones personales de las que deba responder el sujeto pasivo\", duly justified, at nominal value on 31 December; interest is never deductible, and debts taken on to acquire exempt assets are not deductible."
+        }
+      ],
+      "note": "The page states the general rule for personal debts and does not name margin loans. A margin loan against a taxable portfolio is a personal debt of the taxpayer; one used to buy an exempt asset would not be deductible."
+    },
+    {
+      "id": "es-tax-valencia-exemption-2m",
+      "fact": "tax",
+      "cities": [
+        "valencia",
+        "alicante",
+        "torrevieja"
+      ],
+      "claim": "The Valencian Community exempts the first €2M of net wealth from the 2026 assessment, under Ley 5/2026",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Generalitat Valenciana (Hisenda): Beneficios fiscales 2026",
+          "url": "https://hisenda.gva.es/es/web/tributos/beneficis-fiscals",
+          "read": "2026-11-15",
+          "says": "\"Beneficios fiscales 2026\": for taxpayers habitually resident in the Comunitat Valenciana the taxable base \"se reduce, en concepto de mínimo exento, en 2.000.000€\" (Art. 8 Llei 13/1997). No general bonificación is listed for the tax."
+        },
+        {
+          "name": "Cuatrecasas: Comunidad Valenciana, novedades tributarias para 2026",
+          "url": "https://www.cuatrecasas.com/es/spain/art/comunidad-valenciana-novedades-tributarias-2026",
+          "read": "2026-11-15",
+          "says": "Dated 18 August 2026. Ley 5/2026, de 31 de julio (DOGV 10 August 2026, in force 11 August) raises the mínimo exento from 1,000,000 to 2,000,000 euros for resident taxpayers, \"con efectos prácticos desde el 31 de diciembre de 2026\", i.e. in the 2026 return filed in 2027. Ley 5/2025 had raised it from 500,000."
+        },
+        {
+          "name": "Garrigues: Comunidad Valenciana, novedades en los tributos autonómicos para 2026 y 2027",
+          "url": "https://www.garrigues.com/es_ES/noticia/comunidad-valenciana-repasamos-principales-novedades-tributos-autonomicos-2026-2027",
+          "read": "2026-11-15",
+          "says": "Dated 4 September 2026. \"Ahora se duplica este umbral hasta los 2.000.000 de euros, con efectos ya para 2026.\" No change to the rate scale is mentioned."
+        }
+      ],
+      "also": [
+        "sources: added the Generalitat Valenciana's \"Beneficios fiscales 2026\" page to Valencia, Alicante and Torrevieja"
+      ],
+      "note": "Agrees with ES_VALENCIA in src/data/localTaxes.ts (€2M exemption). The Generalitat's older wealth-tax page (atv.gva.es/es/ipatrimoni) was reported by search, not read, as still showing €1,000,000; the Agencia Tributaria's 2025 manual shows €1,000,000 because it covers the 2025 assessment. The summaries of all three profiles, their first or second drawback (\"above €2M\") and the `why` lines of Valencia, Alicante and Torrevieja repeat the €2M figure correctly."
+    },
+    {
+      "id": "es-tax-valencia-rates",
+      "fact": "tax",
+      "cities": [
+        "valencia",
+        "alicante",
+        "torrevieja"
+      ],
+      "claim": "Above the exemption the Valencian scale runs from 0.25% to 3.5%, with no general relief",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Agencia Tributaria: Manual práctico de Patrimonio 2025, escala autonómica de la Comunitat Valenciana",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/patrimonio-2025/c-4-determinacion-base-liquidable-integra/determinacion-cuota-integra/regla-general/escalas-autonomicas/comunitat-valenciana.html",
+          "read": "2026-11-15",
+          "says": "Eight brackets (art. 9 Ley 13/1997): 0.25% to 167,129.45; 0.37% to 334,252.88; 0.62% to 668,499.75; 1.12% to 1,336,999.51; 1.62% to 2,673,999.01; 2.12% to 5,347,998.03; 2.62% to 10,695,996.06; 3.5% above."
+        },
+        {
+          "name": "Guía Fiscal: Patrimonio 2026, mapa de bonificaciones por comunidad",
+          "url": "https://guiafiscal.es/opinion/patrimonio-2026-mapa-bonificaciones-ccaa/",
+          "read": "2026-11-15",
+          "says": "Comunitat Valenciana: mínimo exento 2,000,000 € from the 31 December 2026 accrual; bonificación 0% (the region does not relieve the tax \"con carácter general\"); scale 0.25% to 3.5%. Page marked reviewed 17 May 2026, though it cites the law of 31 July 2026."
+        }
+      ],
+      "note": "The scale is the 2025 one; Garrigues (4 September 2026, see es-tax-valencia-exemption-2m) reports no change to it for 2026. Agrees bracket for bracket with ES_VALENCIA in src/data/localTaxes.ts (0.25, 0.37, 0.62, 1.12, 1.62, 2.12, 2.62, 3.5 on the state breakpoints). scores.tax stays 2: a wealth tax above a high threshold."
+    },
+    {
+      "id": "es-tax-wealth-cap-80",
+      "fact": "tax",
+      "cities": [
+        "valencia",
+        "alicante",
+        "torrevieja",
+        "barcelona",
+        "tarragona"
+      ],
+      "claim": "The income-plus-wealth cap can cut the wealth tax by up to 80%",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Agencia Tributaria: Manual práctico de Patrimonio 2025, límite de cuota íntegra, reglas",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/patrimonio-2025/c-5-determinacion-cuota-ingresar/limite-cuota-integra-cuota-minima-patrimonio/reglas.html",
+          "read": "2026-11-15",
+          "says": "\"Si se produjera un exceso del límite del 60 por 100, dicho exceso deberá ser reducido en la cuota\" of the wealth tax, \"sin que la reducción pueda exceder del 80 por 100 de dicha cuota\", leaving a \"cuota mínima no reducible ... equivalente al 20 por 100\"."
+        }
+      ],
+      "note": "The limit is 60% of the income-tax base for the two taxes together (art. 31 of the wealth tax law). Málaga's and Madrid's profiles do not mention it; it applies there too. Agrees with ES_CAP in src/data/localTaxes.ts, which names the cap and does not model it."
+    },
+    {
+      "id": "es-tax-savings-19-30",
+      "fact": "tax",
+      "cities": [
+        "valencia",
+        "alicante",
+        "torrevieja",
+        "malaga",
+        "madrid",
+        "barcelona",
+        "tarragona"
+      ],
+      "claim": "Dividends and interest pay 19–30%",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Spain, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/spain/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Savings income (dividends, interest, capital gains): 19% on the first EUR 6,000; 21% to EUR 50,000; 23% to EUR 200,000; 27% to EUR 300,000; 30% above. Last reviewed 30 June 2026."
+        },
+        {
+          "name": "Agencia Tributaria: Manual práctico de Renta 2025, gravamen estatal de la base liquidable del ahorro",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025/c15-calculo-impuesto-determinacion-cuotas-integras/gravamen-base-liquidable-ahorro/gravamen-estatal.html",
+          "read": "2026-11-15",
+          "says": "State scale for 2025 (art. 66.1 Ley IRPF): 9.5% to 6,000; 10.5% to 50,000; 11.5% to 200,000; 13.5% to 300,000; 15% above."
+        },
+        {
+          "name": "Agencia Tributaria: Manual práctico de Renta 2025, gravamen autonómico de la base liquidable del ahorro",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025/c15-calculo-impuesto-determinacion-cuotas-integras/gravamen-base-liquidable-ahorro/gravamen-autonomico.html",
+          "read": "2026-11-15",
+          "says": "Regional scale \"para 2025\": the same five brackets at 9.5%, 10.5%, 11.5%, 13.5% and 15%, so the two together give 19%, 21%, 23%, 27% and 30%."
+        }
+      ],
+      "note": "The 30% top rate starts above €300,000 of savings income; most retirees' dividends fall in the 19–23% brackets. Not claims in the profiles, read for context: PwC's \"other issues\" page says the special expatriate (Beckham) regime needs an employment contract, a directorship, remote work, entrepreneurial activity or a qualifying professional role, so it does not reach a retiree; PwC's treaties page lists a US treaty and a deduction for foreign tax on foreign-source income. The US–Spain treaty's withholding caps were not read, and no profile states them."
+    },
+    {
+      "id": "es-tax-modelo-720",
+      "fact": "tax",
+      "cities": [
+        "valencia",
+        "alicante",
+        "torrevieja",
+        "malaga",
+        "madrid",
+        "barcelona",
+        "tarragona"
+      ],
+      "claim": "Foreign assets are reported on Modelo 720",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Agencia Tributaria: Modelo 720, declaración informativa sobre bienes y derechos situados en el extranjero",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/procedimientoini/GI34.shtml",
+          "read": "2026-11-15",
+          "says": "\"Declaración Informativa. Declaración sobre bienes y derechos situados en el extranjero\", approved by Orden HAP/72/2013; virtual currencies are not reported on it."
+        },
+        {
+          "name": "Agencia Tributaria: Modelo 720, preguntas frecuentes, contribuyentes obligados a declarar",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/declaraciones-informativas/modelo-720-decla_____sobre-bienes-derechos-extranjero_/preguntas-frecuentes/contribuyentes-obligados-declarar.html",
+          "read": "2026-11-15",
+          "says": "The form must be filed by \"las personas físicas residentes en territorio español\", among others; people under the special regime for displaced workers are excused."
+        },
+        {
+          "name": "Agencia Tributaria: Modelo 720, preguntas frecuentes, forma de calcular el límite",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/todas-gestiones/impuestos-tasas/declaraciones-informativas/modelo-720-decla_____sobre-bienes-derechos-extranjero_/preguntas-frecuentes/forma-calcular-limite-que-obliga-declarar.html",
+          "read": "2026-11-15",
+          "says": "Its examples turn on 50.000 €: an account with \"saldo medio 4T superior a 50.000 €\", a fund with \"valor liquidativo a 31/12 superior a 50.000 €\"."
+        }
+      ],
+      "note": "The €50,000-per-category threshold appears on the official pages only through examples; the profiles do not state it."
+    },
+    {
+      "id": "es-tax-exit-tax-4m",
+      "fact": "tax",
+      "cities": [
+        "valencia",
+        "alicante",
+        "torrevieja",
+        "malaga",
+        "madrid",
+        "barcelona",
+        "tarragona"
+      ],
+      "claim": "An exit tax can reach gains on shares worth over €4M",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Agencia Tributaria: Manual práctico de Renta 2025, ganancias patrimoniales por cambio de residencia",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025/c11-ganancias-perdidas-patrimoniales/regimen-especial-ganancias-patrimoniales-cambio-residencia/introduccion-ambito-aplicacion.html",
+          "read": "2026-11-15",
+          "says": "The regime applies when the market value of the shares or participations \"exceda, conjuntamente, de 4.000.000 euros\"; failing that, when a holding above 25% of an entity is worth more than 1.000.000 de euros."
+        }
+      ],
+      "note": "Five profiles omit the residence condition (see es-tax-exit-tax-10-years); what they say is still true. The €1M / 25% alternative is not in the profiles."
+    },
+    {
+      "id": "es-tax-exit-tax-10-years",
+      "fact": "tax",
+      "cities": [
+        "malaga",
+        "madrid"
+      ],
+      "claim": "The exit tax applies after 10 years' residence",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Agencia Tributaria: Manual práctico de Renta 2025, ganancias patrimoniales por cambio de residencia",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/irpf-2025/c11-ganancias-perdidas-patrimoniales/regimen-especial-ganancias-patrimoniales-cambio-residencia/introduccion-ambito-aplicacion.html",
+          "read": "2026-11-15",
+          "says": "The taxpayer must have been resident \"durante al menos diez de los quince períodos impositivos anteriores\" to the last period to be declared."
+        }
+      ],
+      "note": "Ten of the last fifteen tax years, not ten years in a row."
+    },
+    {
+      "id": "es-tax-andalusia-relief",
+      "fact": "tax",
+      "cities": [
+        "malaga"
+      ],
+      "claim": "Andalusia's 100% relief means no wealth tax is due below about €3.7M of net wealth; above that the region collects about the solidarity-tax rates, 1.7–3.5%",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Agencia Tributaria: Manual práctico de Patrimonio 2025, bonificaciones autonómicas, Andalucía",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/patrimonio-2025/c-5-determinacion-cuota-ingresar/deducciones-bonificaciones-autonomicas/bonificaciones-autonomicas/andalucia.html",
+          "read": "2026-11-15",
+          "says": "Under the disposición transitoria quinta of Ley 5/2021, from 2024 and while the ITSGF is in force the general bonus of article 25 bis \"(del 100 por 100)\" is not applicable; the taxpayer may apply a bonus equal to the difference, if any, between the wealth-tax quota and the ITSGF quota, each after its joint limit."
+        },
+        {
+          "name": "PwC: Spain, other taxes",
+          "url": "https://taxsummaries.pwc.com/spain/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Solidarity tax: applies to net assets \"equal to or higher than EUR 3 million\"; the EUR 700,000 exemption applies; rates 0% to 3,000,000, 1.7% to 5,347,998.03, 2.1% to 10,695,996.06, 3.5% above; wealth tax paid is deducted from it. Last reviewed 30 June 2026."
+        },
+        {
+          "name": "Cuatrecasas: Medidas adoptadas ante el Impuesto sobre las grandes fortunas",
+          "url": "https://www.cuatrecasas.com/es/spain/fiscalidad/art/itsgf-medidas-adoptadas-ccaa",
+          "read": "2026-11-15",
+          "says": "Dated 26 March 2026. Large fortunes for the ITSGF are those \"superior a 3.700.000€\". In Andalusia the taxpayer's option of 2023 has gone: for 2024 onward \"se ha suprimido la mecánica de la opción\" and the tax is collected under the wealth tax."
+        },
+        {
+          "name": "Agencia Tributaria: Manual práctico de Patrimonio 2025, escala autonómica de Andalucía",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/patrimonio-2025/c-4-determinacion-base-liquidable-integra/determinacion-cuota-integra/regla-general/escalas-autonomicas/comunidad-autonoma-andalucia.html",
+          "read": "2026-11-15",
+          "says": "Eight brackets from 0.20% to 3.50% on the state breakpoints (1.70% from 2,673,999.01; 2.10% from 5,347,998.03; 3.50% from 10,695,996.06)."
+        }
+      ],
+      "note": "How it works: the 100% bonus is formally suspended while the solidarity tax exists and replaced by a bonus of the wealth-tax quota minus the solidarity-tax quota, so a resident pays the region exactly what the solidarity tax would have charged: nothing until the base passes €3M after the €700k exempt minimum (about €3.7M of net wealth), then 1.7%, 2.1% and 3.5%. The profile's \"100% relief\" is loose but its effect and figures are right; the summary, the first drawback and the pick's `why` (\"no wealth tax below about €3.7M\") agree. Agrees with ES_ANDALUSIA and ITSGF_LEVEL in src/data/localTaxes.ts (0% to €700k + €3M, then 1.7% / 2.1% / 3.5% at the state breakpoints)."
+    },
+    {
+      "id": "es-tax-madrid-relief",
+      "fact": "tax",
+      "cities": [
+        "madrid"
+      ],
+      "claim": "Madrid's relief is reduced by the solidarity tax, so residents pay nothing up to about €3.7M of net wealth and about 1.7–3.5% above",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Comunidad de Madrid: Impuesto sobre el Patrimonio",
+          "url": "https://www.comunidad.madrid/servicios/atencion-contribuyente/patrimonio",
+          "read": "2026-11-15",
+          "says": "Last updated 12 May 2026. The personal minimum is 700.000 €. Madrid has had \"una bonificación del 100 por ciento\" since 2008; while the ITSGF is in force \"no será aplicable la bonificación general del 100 por ciento\" and the bonus is the difference between the wealth-tax quota and the ITSGF quota, so ITSGF taxpayers in effect pay wealth tax and their ITSGF is 0."
+        },
+        {
+          "name": "Agencia Tributaria: Manual práctico de Patrimonio 2025, bonificaciones autonómicas, Madrid",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/patrimonio-2025/c-5-determinacion-cuota-ingresar/deducciones-bonificaciones-autonomicas/bonificaciones-autonomicas/madrid.html",
+          "read": "2026-11-15",
+          "says": "General bonus \"100 por 100 de la cuota minorada\"; while the ITSGF is in force it is replaced by the difference, if any, between the wealth-tax quota and the ITSGF quota (disposición transitoria séptima and article 20 of the Texto Refundido, Decreto Legislativo 1/2010), still applicable in 2025."
+        },
+        {
+          "name": "PwC: Spain, other taxes",
+          "url": "https://taxsummaries.pwc.com/spain/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Solidarity tax: EUR 700,000 exemption; 0% to 3,000,000 of base, 1.7% to 5,347,998.03, 2.1% to 10,695,996.06, 3.5% above. Last reviewed 30 June 2026."
+        }
+      ],
+      "note": "\"Nothing between €700k and about €3.7M\" is right, and nothing is due below €700k either. The summary (\"no wealth tax between €700k and about €3.7M\"), the second drawback and the pick's `why` agree. Agrees with ES_MADRID in src/data/localTaxes.ts."
+    },
+    {
+      "id": "es-tax-catalonia-exemption-500k",
+      "fact": "tax",
+      "cities": [
+        "barcelona",
+        "tarragona"
+      ],
+      "claim": "Catalonia's wealth tax starts above a €500k exemption",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Agencia Tributaria: Manual práctico de Patrimonio 2025, mínimo exento, residentes en comunidades autónomas",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/patrimonio-2025/c-4-determinacion-base-liquidable-integra/determinacion-base-liquidable-patrimonio-no-gravamen/sujetos-pasivos-residentes-ccaa.html",
+          "read": "2026-11-15",
+          "says": "Cataluña: \"el importe del mínimo exento se fija en 500.000 euros.\" Where a region sets none, \"la base imponible se reducirá en 700.000 euros\". Comunitat Valenciana (2025): 1.000.000 euros."
+        },
+        {
+          "name": "Guía Fiscal: Patrimonio 2026, mapa de bonificaciones por comunidad",
+          "url": "https://guiafiscal.es/opinion/patrimonio-2026-mapa-bonificaciones-ccaa/",
+          "read": "2026-11-15",
+          "says": "Cataluña: mínimo exento 500,000 €, below the general 700,000 €; bonificación 0%; scale 0.21% to 3.48%; wealth tax paid in Catalonia is deducted from the ITSGF quota."
+        }
+      ],
+      "note": "The Catalan tax agency's own page was not found by search (atc.gencat.cat); the state agency's manual is official and current for 2025, and the secondary page gives the same figure for 2026. Agrees with ES_CATALONIA in src/data/localTaxes.ts. The summaries, the first drawbacks and both `why` lines (\"wealth tax from €500k\") agree. scores.tax stays 1."
+    },
+    {
+      "id": "es-tax-catalonia-rates",
+      "fact": "tax",
+      "cities": [
+        "barcelona",
+        "tarragona"
+      ],
+      "claim": "The Catalan scale runs from 0.21% to 3.48%, with no relief",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Agencia Tributaria: Manual práctico de Patrimonio 2025, escala autonómica de Cataluña",
+          "url": "https://sede.agenciatributaria.gob.es/Sede/ayuda/manuales-videos-folletos/manuales-practicos/patrimonio-2025/c-4-determinacion-base-liquidable-integra/determinacion-cuota-integra/regla-general/escalas-autonomicas/comunidad-autonoma-cataluna.html",
+          "read": "2026-11-15",
+          "says": "Nine brackets: 0.210% to 167,129.45; 0.315% to 334,252.88; 0.525% to 668,499.75; 0.945% to 1,336,999.75; 1.365% to 2,673,999.01; 1.785% to 5,347,998.03; 2.205% to 10,695,996.06; 2.750% to 20,000,000.00; 3.480% above. The scale applies while the ITSGF is in force."
+        },
+        {
+          "name": "Guía Fiscal: Patrimonio 2026, mapa de bonificaciones por comunidad",
+          "url": "https://guiafiscal.es/opinion/patrimonio-2026-mapa-bonificaciones-ccaa/",
+          "read": "2026-11-15",
+          "says": "Cataluña: bonificación 0% (\"no bonus has been considered\"); scale 0.21% to 3.48%."
+        }
+      ],
+      "modelMismatch": "ES_CATALONIA in src/data/localTaxes.ts uses the state breakpoints (ES_STEPS) for the Catalan scale, so its fifth band starts at €1,336,999.51 of base; the Catalan scale in the Agencia Tributaria's 2025 manual starts that band at €1,336,999.75 (page: .../patrimonio-2025/.../escalas-autonomicas/comunidad-autonoma-cataluna.html). A 24-cent difference with no effect on results. Every rate (0.21, 0.315, 0.525, 0.945, 1.365, 1.785, 2.205, 2.75, 3.48), the other breakpoints, the €500k exemption and the €20M start of the top band match the model.",
+      "note": "3.48% applies only above €20M of taxable base; below that the top rate is 2.75%. The profiles' \"at up to 3.48%\" is right as a ceiling."
+    },
+    {
+      "id": "es-tax-catalonia-itsgf-credit",
+      "fact": "tax",
+      "cities": [
+        "barcelona"
+      ],
+      "claim": "The Catalan wealth tax is credited against the national solidarity tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Spain, other taxes",
+          "url": "https://taxsummaries.pwc.com/spain/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "The solidarity tax is complementary to wealth tax: \"the wealth tax debt paid in relation to the same tax period should be deducted from the solidarity tax amount.\" Last reviewed 30 June 2026."
+        },
+        {
+          "name": "Guía Fiscal: Patrimonio 2026, mapa de bonificaciones por comunidad",
+          "url": "https://guiafiscal.es/opinion/patrimonio-2026-mapa-bonificaciones-ccaa/",
+          "read": "2026-11-15",
+          "says": "Cataluña: wealth tax paid is deducted from the ITSGF quota, so the state tax applies only to the difference."
+        }
+      ],
+      "note": "Tarragona's profile does not state it; it applies there too. The same credit is why the Valencian profiles need no solidarity-tax line: with a €2M exemption the Valencian tax still exceeds the solidarity tax at every level worked through (e.g. about €21,300 against €5,100 at €4M of net wealth), which agrees with the model note \"adds little on top\"."
+    },
+    {
+      "id": "es-estate-taxes-the-heir",
+      "fact": "estate",
+      "cities": [
+        "valencia",
+        "alicante",
+        "torrevieja",
+        "malaga",
+        "madrid",
+        "barcelona",
+        "tarragona"
+      ],
+      "claim": "Spain's inheritance tax is charged on the heir",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "BOE: Ley 29/1987 del Impuesto sobre Sucesiones y Donaciones, consolidated text",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1987-28141",
+          "read": "2026-11-15",
+          "says": "Article 5: in acquisitions \"mortis causa\" the taxpayers are \"los causahabientes\". Consolidated text last updated 10 July 2021."
+        },
+        {
+          "name": "PwC: Spain, other taxes",
+          "url": "https://taxsummaries.pwc.com/spain/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Inheritance tax is levied on goods and rights \"acquired by Spanish tax residents by inheritance, legacy or other type of succession\"; liability depends on the relationship to the deceased and the heir's prior wealth. Last reviewed 30 June 2026."
+        }
+      ]
+    },
+    {
+      "id": "es-estate-nonresident-heir-spanish-assets",
+      "fact": "estate",
+      "cities": [
+        "valencia",
+        "alicante",
+        "torrevieja",
+        "malaga",
+        "madrid",
+        "barcelona",
+        "tarragona"
+      ],
+      "claim": "A non-resident heir is taxed only on assets located in Spain, so US assets left to US-resident children appear to fall outside the tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "BOE: Ley 29/1987 del Impuesto sobre Sucesiones y Donaciones, consolidated text",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1987-28141",
+          "read": "2026-11-15",
+          "says": "Article 6: residents are taxed \"por obligación personal, con independencia de dónde se encuentren situados los bienes\". Article 7: others are taxed by obligación real on assets \"que estuvieran situados, pudieran ejercitarse o hubieran de cumplirse en territorio español\". Additional provision 2 (Uno, 1.b): where the deceased lived in an autonomous community, \"los contribuyentes no residentes tendrán derecho a la aplicación de la normativa propia\" of that community."
+        },
+        {
+          "name": "PwC: Spain, other taxes",
+          "url": "https://taxsummaries.pwc.com/spain/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Non-residents are taxed on goods located, exercisable or to be fulfilled in Spain; the rules were reformed from 1 January 2015 after the EU Court of Justice judgment of 3 September 2014. Last reviewed 30 June 2026."
+        }
+      ],
+      "note": "What the profiles call an inference is the plain reading of articles 6 and 7: the test is the heir's residence, not the deceased's, and a US-resident child inheriting shares of US companies held at a US broker acquires nothing located in Spain. The profiles' \"appear\" and \"(an inference; confirm with a Spanish adviser)\" stay; they do no harm. No page read addresses the situs of each asset type (for example cash in a Spanish bank account or Spanish property, which the same child would be taxed on, with the right to the deceased's region's reliefs). Which region's rule applies: for heirs, resident or not, it is the region where the deceased lived, not where the heir lives. Agrees with ES_HEIR_NOTE in src/data/localTaxes.ts. scores.estate stays 4 in all seven: the rubric takes a point off where the reach is \"only inferred, not confirmed\". With the statute now read, the user may judge it confirmed and score 5; not changed here, since no fact was corrected."
+    },
+    {
+      "id": "es-estate-valencia-child-relief",
+      "fact": "estate",
+      "cities": [
+        "valencia",
+        "alicante",
+        "torrevieja"
+      ],
+      "claim": "A resident child gets a €100k reduction plus 99% relief in the Valencian Community",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Generalitat Valenciana (Hisenda): Beneficios fiscales 2026",
+          "url": "https://hisenda.gva.es/es/web/tributos/beneficis-fiscals",
+          "read": "2026-11-15",
+          "says": "\"Beneficios fiscales 2026\": reduction of 100.000 € for \"Adquisiciones por descendientes y adoptados de 21 o más años\" (Art. 10.1.a); 99% bonus for \"Adquisiciones mortis causa efectuadas por parientes del causante pertenecientes a los grupos I y II\" (Art. 12 bis.1)."
+        },
+        {
+          "name": "Guía Fiscal: mapa de Sucesiones 2026",
+          "url": "https://guiafiscal.es/actualidad/mapa-sucesiones-2026-donde-se-paga-mas/",
+          "read": "2026-11-15",
+          "says": "Comunitat Valenciana: \"Reducción en base de 100.000 € + bonificación 99 %\" for groups I and II; a child inheriting €200,000 pays 0.00 €. Updated 1 November 2026."
+        }
+      ],
+      "note": "The summaries' \"99% inheritance relief for children\" and the `why` lines of Valencia and Alicante agree."
+    },
+    {
+      "id": "es-estate-andalusia-child-relief",
+      "fact": "estate",
+      "cities": [
+        "malaga"
+      ],
+      "claim": "In Andalusia a resident heir gets a €1M reduction plus 99% relief",
+      "verdict": "corrected",
+      "oldWording": "a resident heir gets a €1M reduction plus 99% relief in Andalusia",
+      "newWording": "a resident child gets a €1M reduction plus 99% relief in Andalusia",
+      "sources": [
+        {
+          "name": "Junta de Andalucía (Agencia Tributaria de Andalucía): beneficios fiscales en el impuesto sobre sucesiones",
+          "url": "https://www.juntadeandalucia.es/organismos/atrian/areas/informacion-tributaria/impuestos/preguntas-frecuentes/impuestos-sucesiones/beneficios.html",
+          "read": "2026-11-15",
+          "says": "For deaths from 1 January 2022 the pre-existing-wealth condition is removed for groups I and II; \"Grupo II: adquisiciones por descendientes y adoptados de 21 o más años ... 1.000.000 euros\". From 11 April 2019, \"una bonificación del 99 % de la cuota tributaria, en las adquisiciones mortis causa\" for an \"Heredero/legatario de Grupos I y II.\""
+        },
+        {
+          "name": "Guía Fiscal: mapa de Sucesiones 2026",
+          "url": "https://guiafiscal.es/actualidad/mapa-sucesiones-2026-donde-se-paga-mas/",
+          "read": "2026-11-15",
+          "says": "Andalucía: \"Reducción en base de 1.000.000 €\"; bonus 99% for groups I and II and 0% for group III. Updated 1 November 2026."
+        }
+      ],
+      "also": [
+        "scores.estate stays 4: the amounts are unchanged; only who gets them was too wide"
+      ],
+      "note": "The amounts were right; \"a resident heir\" was too wide. The reduction and the 99% bonus are for groups I and II (descendants, spouse, ascendants); a sibling, niece or friend gets neither. The other six profiles already say \"a resident child\". The summary's \"inheritance relief is near-total\" and the pick's `why` (\"99% inheritance relief\") stand for children."
+    },
+    {
+      "id": "es-estate-madrid-child-relief",
+      "fact": "estate",
+      "cities": [
+        "madrid"
+      ],
+      "claim": "A resident child gets 99% relief in Madrid; a €200k inheritance reportedly owes about €64",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Comunidad de Madrid: Beneficios fiscales",
+          "url": "https://www.comunidad.madrid/atencion-contribuyente/beneficios-fiscales",
+          "read": "2026-11-15",
+          "says": "Last updated 12 November 2026. A \"bonificación del 99%\" of the inheritance and gift tax quota for transfers between parents and children and between spouses; since 1 July 2025 the bonus for group III relatives (siblings, uncles, nephews) is 50%."
+        },
+        {
+          "name": "Guía Fiscal: mapa de Sucesiones 2026",
+          "url": "https://guiafiscal.es/actualidad/mapa-sucesiones-2026-donde-se-paga-mas/",
+          "read": "2026-11-15",
+          "says": "Madrid: \"Bonificación en cuota del 99 %\" for groups I and II; a child inheriting €200,000 (a €150,000 home and €50,000 in accounts) pays 63.89 €. Updated 1 November 2026."
+        }
+      ],
+      "note": "The page is long: the inheritance section is past the first 100,000 characters (read with an offset). The €64 example is from the secondary page and keeps its \"reportedly\"."
+    },
+    {
+      "id": "es-estate-catalonia-sliding-relief",
+      "fact": "estate",
+      "cities": [
+        "barcelona",
+        "tarragona"
+      ],
+      "claim": "A resident child gets only Catalonia's sliding relief, which thins out on large estates",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Agència Tributària de Catalunya: herències, bonificació de la quota tributària",
+          "url": "https://atc.gencat.cat/ca/tributs/isd/herencies/bonificacio/",
+          "read": "2026-11-15",
+          "says": "Spouses and stable partners: \"una bonificació del 99 % de la quota tributària\". Other group II taxpayers: a table of 11 rows, 60% on the first 100,000 € of base, then marginal 55%, 50%, 45%, 40%, 35%, 30%, 25%, 20%, 10% and 0% above 3,000,000 € (average 28.92% at 3,000,000 €). The bonus is lost if certain optional reductions are claimed."
+        },
+        {
+          "name": "Agència Tributària de Catalunya: herències, reduccions i base liquidable",
+          "url": "https://atc.gencat.cat/ca/tributs/isd/herencies/reduccions/",
+          "read": "2026-11-15",
+          "says": "Kinship reduction, group II: \"Fill/a: 100.000 €.\""
+        }
+      ],
+      "note": "The page gives no start date for the table; its neighbouring sections cover deaths up to 30 April 2020, so this is the table for later deaths. scores.estate stays 4 for both: the score rests on the heir-residence rule, not on the regional relief."
+    },
+    {
+      "id": "es-estate-barcelona-example",
+      "fact": "estate",
+      "cities": [
+        "barcelona"
+      ],
+      "claim": "In Catalonia a €200k inheritance pays about €3,825 without a home",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Guía Fiscal: mapa de Sucesiones 2026",
+          "url": "https://guiafiscal.es/actualidad/mapa-sucesiones-2026-donde-se-paga-mas/",
+          "read": "2026-11-15",
+          "says": "Cataluña: a child inheriting €200,000 pays 0.00 € where there is a main home to reduce; \"sin vivienda que reducir\" the same case comes to about 3.825 €, the highest bill among the common-regime regions. Catalonia's data reviewed 10 August 2026; page updated 1 November 2026."
+        }
+      ],
+      "note": "Secondary page only; the figure is the page's own worked case and the profile says \"about\"."
+    },
+    {
+      "id": "es-estate-no-us-treaty",
+      "fact": "estate",
+      "cities": [
+        "valencia",
+        "alicante",
+        "torrevieja",
+        "malaga",
+        "madrid",
+        "barcelona",
+        "tarragona"
+      ],
+      "claim": "There is no US–Spain estate treaty",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-without",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list); none of the 37 countries named in this claim is among them."
+        }
+      ],
+      "note": "The Spain profiles do not cite the US estate exemption, so there is no instance of the shared exemption claims here."
+    },
+    {
+      "id": "es-lending-ibkr-accepts",
+      "fact": "lending",
+      "cities": [
+        "valencia",
+        "alicante",
+        "torrevieja",
+        "malaga",
+        "madrid",
+        "barcelona",
+        "tarragona"
+      ],
+      "claim": "IBKR accepts Spain residents",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly accepts Spain residents",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        }
+      ],
+      "note": "Tried again on 2026-11-15: https://www.interactivebrokers.ie/en/accounts/open-account-country-list.php returned HTTP 403. The hedge stays."
+    },
+    {
+      "id": "es-lending-ibkr-eu-entity",
+      "fact": "lending",
+      "cities": [
+        "valencia",
+        "alicante",
+        "torrevieja",
+        "malaga",
+        "madrid",
+        "barcelona",
+        "tarragona"
+      ],
+      "claim": "Spain residents are served through IBKR's EU (Irish) entity",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-eu-entity",
+      "hedge": "likely",
+      "wording": "(likely through its EU entity)",
+      "sources": [
+        {
+          "name": "Interactive Brokers Ireland Limited: Customer Agreement (document 4750, 7/1/2023), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/01_4750_IBIE_Customer_Agreement_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "Clause 1B: Interactive Brokers Ireland Limited (\"IBIE\") is incorporated in Ireland, company number 657406, and \"is regulated by the Central Bank of Ireland\", register number C423427. Clause 1C: unless told otherwise in writing, the client is categorised as a Retail Client. The agreement does not say which countries' residents IBIE serves."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. \"In the EU, customers sign up with the Irish entity\"; UK clients are with Interactive Brokers (U.K.) Limited; the Irish €20k compensation scheme applies to Eastern Europe after the Irish and Hungarian entities merged."
+        },
+        {
+          "name": "Investing in the Web: Interactive Brokers in Europe",
+          "url": "https://investingintheweb.com/broker-reviews/interactive-brokers-europe",
+          "read": "2026-11-15",
+          "says": "Updated on Sep 8, 2026. \"As an European resident, you are under the Central Bank of Ireland regulation\" (Interactive Brokers Ireland Limited); \"As a UK resident, you will be under this legal entity\" (Interactive Brokers UK Limited); \"Interactive Brokers Luxembourg and Central have been extinct/merged.\""
+        }
+      ]
+    },
+    {
+      "id": "es-lending-schwab-accepts",
+      "fact": "lending",
+      "cities": [
+        "valencia",
+        "alicante",
+        "torrevieja",
+        "malaga",
+        "madrid",
+        "barcelona",
+        "tarragona"
+      ],
+      "claim": "Schwab International accepts Spain residents",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab International reportedly accepts them too",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. On that day the author ran every entry in Schwab's international account selector through the application: it accepted residents of 51 of 263 countries and regions: Argentina, Australia, Austria, the Bahamas, Belgium, Bermuda, Brazil, the British Virgin Islands, the Cayman Islands, Chile, China, Colombia, Costa Rica, the Czech Republic, Denmark, Ecuador, Finland, Germany, Greece, Guatemala, Hong Kong, Iceland, India, Indonesia, Ireland, Israel, Jersey, Luxembourg, Malaysia, the Marshall Islands, Mexico, the Netherlands, Norway, Panama, Paraguay, Peru, Poland, Portugal, Qatar, Singapore, South Korea, Spain, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Turks and Caicos, the United Arab Emirates, the United Kingdom and Uruguay. Named as not accepted: Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam; for the rest the application said \"Schwab currently cannot open accounts for residents of your country/region.\" The test covers new applicants on that day only."
+        }
+      ],
+      "note": "Spain is among the countries the shared claim records as accepted on the dated secondary list. Schwab's own pages were not readable."
+    },
+    {
+      "id": "es-lending-schwab-cash-out",
+      "fact": "lending",
+      "cities": [
+        "valencia",
+        "alicante",
+        "torrevieja",
+        "malaga",
+        "madrid",
+        "barcelona",
+        "tarragona"
+      ],
+      "claim": "Schwab bars Europe residents from taking cash out through margin",
+      "verdict": "cant-confirm",
+      "shared": "schwab-europe-margin-cash-out",
+      "hedge": "reportedly",
+      "wording": "Schwab reportedly bars Europe residents from taking cash out through margin",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. It quotes the Schwab One Account Agreement (\"October 2026 edition, form 09/26\"), Schwab One International terms: \"Customers residing within Europe are restricted from using their Available Margin Loan Value\" to withdraw funds from their account, and advises keeping enough actual cash in the account for spending. It does not define \"Europe\"."
+        }
+      ],
+      "note": "Tried again on 2026-11-15: https://www.schwab.com/legal/schwab-one-account-agreement returned Schwab's error page (\"unable to authorize the request\"). The hedge stays. No Spain drawback states the bar."
+    },
+    {
+      "id": "es-lending-ibkr-margin-cash-out",
+      "fact": "lending",
+      "cities": [
+        "valencia",
+        "alicante",
+        "torrevieja",
+        "malaga",
+        "madrid",
+        "barcelona",
+        "tarragona"
+      ],
+      "claim": "A Spain resident can draw cash on margin at IBKR (\"so plan on IBKR margin\")",
+      "verdict": "corrected",
+      "shared": "ibkr-eu-margin-cash-out",
+      "oldWording": "so plan on IBKR margin",
+      "newWording": "and IBKR's EU entity reportedly lends on margin only to buy securities, not to withdraw as cash, so confirm how you would draw cash before relying on either",
+      "sources": [
+        {
+          "name": "LYNX: Withdrawal (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/payments-and-transfers/withdrawal/",
+          "read": "2026-11-15",
+          "says": "\"It is not possible to withdraw in a currency if your cash balance is negative or would go negative after the withdrawal.\" In a margin account \"some funds may be used as collateral for other positions or to cover negative cash balances\", which lowers what can be withdrawn. The page is undated (footer: Copyright 2023)."
+        },
+        {
+          "name": "CapTrader: Geld abheben (help page of a German introducing broker for Interactive Brokers)",
+          "url": "https://www.captrader.com/geld-abheben/",
+          "read": "2026-11-15",
+          "says": "\"Auszahlungen sind nur möglich, wenn kein negativer Saldo in der entsprechenden Währung\" or in the total cash arises or grows: withdrawals are possible only if they do not create or increase a negative balance. Footer: © CapTrader 2026."
+        },
+        {
+          "name": "Interactive Brokers Ireland Limited: Customer Agreement (document 4750, 7/1/2023), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/01_4750_IBIE_Customer_Agreement_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "Clause 2A(i)(d) defines the margin service as one \"to enable Clients to acquire investment instruments\". Clause 5A(iv): \"Terms and conditions for deposit and withdrawal of funds (including holding periods) are as specified on the IBIE website.\" The agreement does not say that a loan may be withdrawn as cash."
+        },
+        {
+          "name": "Mustachian Post forum: Using margin loan at Interactive Brokers, page 13",
+          "url": "https://forum.mustachianpost.com/t/using-margin-loan-at-interactive-brokers/3980?page=13",
+          "read": "2026-11-15",
+          "says": "Posts of September to November 2024. One poster says withdrawing cash on margin is \"not possible in Germany with IB IE\" but is with IB UK; Swiss residents with IB UK accounts report having done it; another reports IBKR service saying \"IBUK customers can no longer withdraw cash if aggregate cash balance is -ve\", which a manager then said applies only to UK residents."
+        }
+      ],
+      "also": [
+        "scores.lending 3→2 on all seven (plan decision of 2026-11-15)",
+        "summary: added the closing sentence \"The weak point is the borrow step: Schwab and IBKR both reportedly bar EU residents from drawing margin as cash.\" to all seven",
+        "drawbacks: none of the seven mentioned Schwab margin, so none was reworded and none was added; the summary sentence carries it",
+        "sources: added LYNX withdrawal page to all seven"
+      ],
+      "rankFlag": "All seven Spain picks (Málaga 9, Madrid 10, Valencia 15, Alicante 32, Torrevieja 33, Tarragona 70, Barcelona 71) now score lending 2, and their profiles say the borrow step is reportedly closed to EU residents at both brokers. Their `why` lines in src/data/expatPicks.ts do not mention borrowing, so none is contradicted. Ranks and `why` lines are unchanged: user's call.",
+      "note": "Standard wording from shared.json applied unchanged; the seven profiles worded the fact exactly as Portugal's did. The LYNX withdrawal page was read again on 2026-11-15 and says the same (\"It is not possible to withdraw in a currency if your cash balance is negative or would go negative after the withdrawal\"). Article 3750 (https://ibkb.interactivebrokers.com/article/3750) returned HTTP 403 again, so \"reportedly\" stays."
+    },
+    {
+      "id": "es-lending-priips-new-buys",
+      "fact": "lending",
+      "cities": [
+        "valencia",
+        "alicante",
+        "torrevieja",
+        "malaga",
+        "madrid",
+        "barcelona",
+        "tarragona"
+      ],
+      "claim": "EU PRIIPs rules block new buys of US-listed ETFs",
+      "verdict": "confirmed",
+      "shared": "priips-us-etf-new-buys-blocked",
+      "sources": [
+        {
+          "name": "LYNX: Key Information Document (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/products-and-regulations/regulations/key-information-document/",
+          "read": "2026-11-15",
+          "says": "Retail clients are \"not permitted to trade ETFs or other products that do not have a valid KID\"; many non-EU ETFs have none. Can a retail client buy US ETFs? \"No, not unless you are classified as a professional investor.\" The same applies to ETFs from Canada, Hong Kong, Mexico and Australia. The KID has applied to most products since 1 January 2018."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. \"PRIIPs is an EU rule that prohibits buying US-listed ETFs\", and this also applies to UK investors; US ETFs are open only to elective professional clients, while UCITS ETFs are available to all Europeans."
+        }
+      ],
+      "note": "The profiles' \"reportedly\" stays; it does no harm."
+    },
+    {
+      "id": "es-lending-priips-holdings-kept",
+      "fact": "lending",
+      "cities": [
+        "valencia",
+        "alicante",
+        "torrevieja",
+        "malaga",
+        "madrid",
+        "barcelona",
+        "tarragona"
+      ],
+      "claim": "The block is on buying, not on holding US-listed ETFs",
+      "verdict": "confirmed",
+      "shared": "priips-existing-holdings-kept",
+      "sources": [
+        {
+          "name": "LYNX: Key Information Document (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/products-and-regulations/regulations/key-information-document/",
+          "read": "2026-11-15",
+          "says": "The page's FAQ says retail clients \"may still hold or sell existing positions, but new purchases are restricted.\""
+        },
+        {
+          "name": "Regulation (EU) No 1286/2014, Article 13, as adopted (legislation.gov.uk copy of the EU text)",
+          "url": "https://www.legislation.gov.uk/eur/2014/1286/article/13/adopted",
+          "read": "2026-11-15",
+          "says": "The duty to provide a KID falls on \"a person advising on, or selling, a PRIIP\" before the retail investor is bound; nothing in the article reaches a PRIIP the investor already holds or a sale by the investor."
+        }
+      ]
+    },
+    {
+      "id": "es-healthcare-private-insurance-first",
+      "fact": "healthcare",
+      "cities": [
+        "valencia",
+        "alicante",
+        "torrevieja",
+        "malaga",
+        "madrid",
+        "barcelona",
+        "tarragona"
+      ],
+      "claim": "Visa holders start on private health insurance",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Spanish Consulate General in Los Angeles: non-lucrative residence visa",
+          "url": "https://www.exteriores.gob.es/Consulados/losangeles/en/ServiciosConsulares/Paginas/Consular/Visado-de-residencia-no-lucrativa.aspx",
+          "read": "2026-11-15",
+          "says": "The visa requires a one-year policy covering all beneficiaries, with \"no deductible, no copayment, no waiting period or coverage limit\", from an insurer authorized to operate in Spain. Dated February 11, 2026."
+        },
+        {
+          "name": "Ministerio de Sanidad: special agreement (convenio especial) for healthcare provision",
+          "url": "https://www.sanidad.gob.es/en/servCiudadanos/internacional/convenioEspecial.htm",
+          "read": "2026-11-15",
+          "says": "The special agreement is \"aimed at economically non-active foreigners who need to take out health insurance in order to reside in Spain\"."
+        }
+      ]
+    },
+    {
+      "id": "es-healthcare-convenio-especial",
+      "fact": "healthcare",
+      "cities": [
+        "valencia",
+        "alicante",
+        "torrevieja",
+        "malaga",
+        "madrid",
+        "barcelona",
+        "tarragona"
+      ],
+      "claim": "After a year they can buy into public cover through the convenio especial, at €157 a month from age 65",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Ministerio de Sanidad: special agreement (convenio especial) for healthcare provision",
+          "url": "https://www.sanidad.gob.es/en/servCiudadanos/internacional/convenioEspecial.htm",
+          "read": "2026-11-15",
+          "says": "Requires a \"Document accrediting effective residence in Spain for a continuous period of at least one year\" and registration in a municipality; \"monthly fee of 60 euros\" under 65 and \"monthly fee of 157 euros\" at 65 or over; gives the SNS basic common basket of benefits. Outpatient prescriptions, ortho-prosthetics and non-urgent transport are at 100% patient cost. The page shows no date; it cites Royal Decree 576/2013."
+        }
+      ],
+      "note": "Two things the profiles leave out: the fee is €60 a month under 65, and the agreement does not subsidise outpatient prescriptions. Each autonomous community signs its own agreements; no regional page was read."
+    },
+    {
+      "id": "es-healthcare-entry-caps-valencia",
+      "fact": "healthcare",
+      "cities": [
+        "valencia"
+      ],
+      "claim": "Private plans commonly cap entry at 70–75",
+      "verdict": "corrected",
+      "oldWording": "private plans commonly cap entry at 70–75",
+      "newWording": "private plans commonly cap entry at 65–75",
+      "sources": [
+        {
+          "name": "Póliza Médica: ¿Hasta qué edad puedo contratar un seguro de salud?",
+          "url": "https://www.polizamedica.es/seguros/salud/hasta-que-edad-puedo-contratar-un-seguro-de-salud",
+          "read": "2026-11-15",
+          "says": "Last updated 27 October 2026 (quotes of 13 October 2026, Madrid). Most insurers set the limit \"entre 65 y 75 años\": Asisa 70, Divina Pastora at least 71, Mapfre 75; full plans without co-pay from Caser, DKV, Adeslas, Aegon and FIATC appear in the comparator only up to 65–67; some co-pay and senior plans go to 81 or have no limit."
+        }
+      ],
+      "also": [
+        "sources: added the Póliza Médica page",
+        "scores.healthcare stays 4: the public system and the route into it are unchanged"
+      ],
+      "note": "A comparator's page, not an insurer's conditions. The range starts lower than the profile said, and it matters here: the visa needs a plan without co-pay, and those are the ones that close earliest. Sanitas's own site (search result, not read) lists one plan with no upper age."
+    },
+    {
+      "id": "es-healthcare-malaga-private-price-caps",
+      "fact": "healthcare",
+      "cities": [
+        "malaga"
+      ],
+      "claim": "Private plans run about €240 a month at 65–70, with entry caps commonly 70–75",
+      "verdict": "corrected",
+      "oldWording": "private plans run about €240/month at 65–70, with entry caps commonly 70–75",
+      "newWording": "private plans without co-pay were quoted at about €120–210/month at ages 65–67 (Madrid quotes, October 2026), with entry caps commonly 65–75",
+      "sources": [
+        {
+          "name": "Póliza Médica: ¿Hasta qué edad puedo contratar un seguro de salud?",
+          "url": "https://www.polizamedica.es/seguros/salud/hasta-que-edad-puedo-contratar-un-seguro-de-salud",
+          "read": "2026-11-15",
+          "says": "Last updated 27 October 2026 (quotes of 13 October 2026, Madrid, monthly payment). Full cover without co-pay: Asisa Completa 194,79 € at 65 and 211,02 € at 67; Caser Especial Integral 120,19 € at 65 and 67. With co-pay: DKV Selección 105 € at 67. Most insurers set the entry limit \"entre 65 y 75 años\"; several no-co-pay plans appear only up to 65–67."
+        }
+      ],
+      "also": [
+        "sources: added the Póliza Médica page",
+        "scores.healthcare stays 4"
+      ],
+      "note": "No page read gives €240 a month, or any price for ages 68–70 or for Málaga province; the comparator's quotes are for Madrid. The new wording says what the page shows and where it is from. Prices rise with age and vary by province and insurer."
+    },
+    {
+      "id": "es-healthcare-valencia-la-fe",
+      "fact": "healthcare",
+      "cities": [
+        "valencia"
+      ],
+      "claim": "Valencia has a strong public system, for example La Fe hospital",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Conselleria de Sanitat: Departament de Salut València La Fe",
+          "url": "https://lafe.san.gva.es/",
+          "read": "2026-11-15",
+          "says": "The hospital's site sits under the Conselleria de Sanitat as the \"Departament de Salut València La Fe\"; a news item says the department \"manté les tres estreles, màxim nivell\" of a quality recognition."
+        }
+      ],
+      "note": "The page does not use the word \"public\"; a health department of the regional Conselleria is the public service. \"Strong\" is the profile's judgment. A search result, not read, reports 27 national reference units at La Fe."
+    },
+    {
+      "id": "es-healthcare-alicante-balmis",
+      "fact": "healthcare",
+      "cities": [
+        "alicante"
+      ],
+      "claim": "The public Hospital General Universitario Dr. Balmis is the province's reference teaching hospital and did 220 transplants in 2025",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "El Periòdic: El Hospital Doctor Balmis realiza 220 trasplantes durante 2025",
+          "url": "https://www.elperiodic.com/alicante/hospital-doctor-balmis-realiza-trasplantes-durante-2025-consolida-actividad-trasplantadora-referencia_1055867",
+          "read": "2026-11-15",
+          "says": "Dated 20 January 2026. The Hospital General Universitario Doctor Balmis performed 220 transplants in 2025 and is \"un centro de referencia en trasplantes\"."
+        },
+        {
+          "name": "Alicante Plaza: El Hospital Dr. Balmis de Alicante obtiene el Premio TOP 20",
+          "url": "https://alicanteplaza.es/alicanteplaza/el-hospital-dr-balmis-de-alicanteobtiene-el-premio-top-20-a-la-gestion-hospitalaria-global",
+          "read": "2026-11-15",
+          "says": "Dated 29 November 2022. \"El segundo Hospital de la Comunitat Valenciana en tamaño y recursos\", a third-level hospital that \"constituye el referente hospitalario de la provincia de Alicante\"."
+        }
+      ],
+      "note": "Secondary pages: the hospital's own site was not read. Neither page uses the words \"public\" or \"teaching\"; the hospital is a department of the Conselleria de Sanidad and \"Universitario\" is in its name."
+    },
+    {
+      "id": "es-healthcare-quironsalud-torrevieja-jci",
+      "fact": "healthcare",
+      "cities": [
+        "alicante",
+        "torrevieja"
+      ],
+      "claim": "Hospital Quirónsalud Torrevieja, a private hospital, holds JCI accreditation: first accredited in 2023, renewed in June 2026",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Euro Weekly News: Quirónsalud Torrevieja hospital renews its JCI gold seal",
+          "url": "https://euroweeklynews.com/2026/06/30/quironsalud-torrevieja-hospital-renews-its-joint-commission-international-gold-seal-reinforcing-its-leadership-in-healthcare-quality/",
+          "read": "2026-11-15",
+          "says": "Dated 30 June 2026 (announcement of 29 June 2026). The hospital \"has successfully renewed its Joint Commission International (JCI) Gold Seal\" and \"first obtained JCI accreditation in 2023\"; Quirónsalud is described as a leading private healthcare group."
+        },
+        {
+          "name": "The Objective (Servimedia): Quirónsalud re-accredited with the JCI Enterprise gold seal",
+          "url": "https://theobjective.com/actualidad/2025-11-26/quiron-salud-reacreditado-sello-dorado/",
+          "read": "2026-11-15",
+          "says": "Dated 26 November 2025. Hospital Quirónsalud Torrevieja is one of nine Quirónsalud hospitals named as JCI-accredited."
+        }
+      ],
+      "note": "Quirónsalud's own news page returned HTTP 403 (https://www.quironsalud.com/torrevieja/en/news/latest-news/hospital-quironsalud-torrevieja-revalida-sello-dorado-joint). JCI's directory was not read. Alicante's \"reportedly\" may stay. Torrevieja's tagline, summary and `why` (\"an accredited Quirónsalud hospital\") agree."
+    },
+    {
+      "id": "es-healthcare-alicante-torrevieja-distance",
+      "fact": "healthcare",
+      "cities": [
+        "alicante"
+      ],
+      "claim": "Quirónsalud Torrevieja is about 50 km south of Alicante",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Rome2rio: Alicante to Torrevieja",
+          "url": "https://www.rome2rio.com/s/Alicante/Torrevieja",
+          "read": "2026-11-15",
+          "says": "Road distance about 50.7 km, about 50 minutes by car."
+        }
+      ],
+      "note": "City to city; the profile says \"about\"."
+    },
+    {
+      "id": "es-healthcare-torrevieja-public-hospital",
+      "fact": "healthcare",
+      "cities": [
+        "torrevieja"
+      ],
+      "claim": "The public Hospital Universitario de Torrevieja is in town",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Alicante Plaza: Sanidad asume la gestión directa del hospital de Torrevieja",
+          "url": "https://alicanteplaza.es/sanidad-asume-la-gestion-directa-del-hospital-de-torrevieja-y-refuerza-la-plantilla",
+          "read": "2026-11-15",
+          "says": "Dated 16 October 2021. The Conselleria de Sanidad Universal y Salud Pública \"asume, desde este sábado 16 de octubre, la gestión directa del Hospital Universitario de Torrevieja\" and of the whole health department, ending the Ribera Salud concession."
+        }
+      ],
+      "note": "A 2021 page; nothing read is more recent, and the hospital's own site was not read. The profile's \"reportedly\" stays."
+    },
+    {
+      "id": "es-healthcare-malaga-public-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "malaga"
+      ],
+      "claim": "Málaga has good public hospitals, the Regional and the Clínico",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Wikipedia (es): Hospital Regional Universitario de Málaga",
+          "url": "https://es.wikipedia.org/wiki/Hospital_Regional_Universitario_de_M%C3%A1laga",
+          "read": "2026-11-15",
+          "says": "Managed by the Servicio Andaluz de Salud with public funding; a complex of three hospitals (General, Materno-Infantil and Civil) with 1,049 beds."
+        },
+        {
+          "name": "Redacción Médica: El Virgen de la Victoria, un hospital para los retos de salud futuros",
+          "url": "https://www.redaccionmedica.com/profesionales/20231010/el-virgen-de-la-victoria-un-hospital-para-los-retos-salud-futuros/205160_0.html",
+          "read": "2026-11-15",
+          "says": "Dated 10 October 2023. The \"Hospital Clínico Universitario Virgen de la Victoria de Málaga\", tagged Servicio Andaluz de Salud, is a hospital complex with \"más de 5.000 profesionales\" serving 700,000 to 1.5 million people."
+        },
+        {
+          "name": "Redacción Médica: hospitales de Andalucía",
+          "url": "https://www.redaccionmedica.com/recursos-salud/hospitales-espana/andalucia",
+          "read": "2026-11-15",
+          "says": "The directory lists \"Hospital Universitario Virgen de la Victoria (Clínico)\" and \"Hospital Universitario Regional de Málaga\" among Málaga's hospitals."
+        }
+      ],
+      "note": "Third-tier sources: both hospitals' own sites failed on their certificates (https://www.hospitalregionaldemalaga.es/ \"certificate has expired\"; https://www.huvv.es/ \"unable to verify the first certificate\"), and a Servicio Andaluz de Salud list page returned 404. \"Good\" is the profile's judgment."
+    },
+    {
+      "id": "es-healthcare-madrid-quironsalud",
+      "fact": "healthcare",
+      "cities": [
+        "madrid"
+      ],
+      "claim": "Hospital Universitario Quirónsalud Madrid has held JCI accreditation since 2022",
+      "verdict": "corrected",
+      "oldWording": "Hospital Universitario Quirónsalud Madrid (JCI since 2022)",
+      "newWording": "Hospital Universitario Quirónsalud Pozuelo (named Quirónsalud Madrid until June 2026; JCI-accredited since 2021)",
+      "sources": [
+        {
+          "name": "El Independiente: El Hospital Quirónsalud Madrid consigue el sello dorado de la Joint Commission Internacional",
+          "url": "https://www.elindependiente.com/vida-sana/salud/2021/03/30/el-hospital-quironsalud-madrid-consigue-el-sello-dorado-de-la-joint-commission-internacional/amp/",
+          "read": "2026-11-15",
+          "says": "Dated 30 March 2021. The hospital was accredited with the Joint Commission International gold seal, which must be renewed every three years."
+        },
+        {
+          "name": "The Objective: El Hospital Universitario Quirónsalud Pozuelo celebra 20 años",
+          "url": "https://theobjective.com/actualidad/2026-06-08/hospital-universitario-quironsalud-pozuelo-20-anos/",
+          "read": "2026-11-15",
+          "says": "Dated 8 June 2026. On its 20th anniversary the Hospital Universitario Quirónsalud Madrid announced its \"cambio de denominación oficial a Hospital Universitario Quirónsalud Pozuelo\"; \"el hospital ha sido reconocido en dos ocasiones con el sello dorado de la Joint Commission International (JCI)\"."
+        },
+        {
+          "name": "The Objective (Servimedia): Quirónsalud re-accredited with the JCI Enterprise gold seal",
+          "url": "https://theobjective.com/actualidad/2025-11-26/quiron-salud-reacreditado-sello-dorado/",
+          "read": "2026-11-15",
+          "says": "Dated 26 November 2025. Hospital Universitario Quirónsalud Madrid is one of nine Quirónsalud hospitals named as JCI-accredited."
+        },
+        {
+          "name": "Alicante Plaza: Quirónsalud, first private hospital group to earn JCI Enterprise accreditation",
+          "url": "https://alicanteplaza.es/alicanteplaza/quironsaludprimergrupohospitalarioprivadodelmundoenobtenerlaacreditacionjointcommissioninternationalenterprise2",
+          "read": "2026-11-15",
+          "says": "Dated 27 October 2022. Names Hospital Universitario Quirónsalud Madrid among four centres already holding JCI accreditation when the group earned its Enterprise seal; no year is given for any of them."
+        }
+      ],
+      "also": [
+        "sources: added El Independiente (March 2021) and The Objective (June 2026)",
+        "scores.healthcare stays 5: the hospital and its accreditation are the same"
+      ],
+      "note": "Two things were off. The hospital was accredited in March 2021, not 2022 (2022 is the year of the group's Enterprise seal in the profile's source), and since June 2026 it is called Hospital Universitario Quirónsalud Pozuelo; it is in Pozuelo de Alarcón, west of the city. No page read says 2021 was its first accreditation; \"since 2021\" means held from at least then, with a second seal since. Quirónsalud's own pages returned HTTP 403. The pick's `why` (\"accredited hospitals\") agrees."
+    },
+    {
+      "id": "es-healthcare-madrid-virgen-del-mar",
+      "fact": "healthcare",
+      "cities": [
+        "madrid"
+      ],
+      "claim": "Hospital Sanitas Virgen del Mar renewed its JCI accreditation in November 2025",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Redacción Médica: El Hospital Sanitas Virgen del Mar renueva la acreditación de Joint Commission International",
+          "url": "https://www.redaccionmedica.com/ultimas-noticias/20251120/el-hospital-sanitas-virgen-del-mar-renueva-la-acreditacion-de-jointcommission-international/132684_0.html",
+          "read": "2026-11-15",
+          "says": "Dated 20 November 2025. The hospital \"ha renovado la acreditación\" of Joint Commission International; no first year or count of renewals is given."
+        }
+      ],
+      "note": "The date is the article's; the page does not date the renewal itself. \"Lead a deep private and public network\" is the profile's judgment."
+    },
+    {
+      "id": "es-healthcare-barcelona-teknon",
+      "fact": "healthcare",
+      "cities": [
+        "barcelona"
+      ],
+      "claim": "Centro Médico Teknon has held JCI accreditation since 2002",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Redacción Médica: Teknon, único hospital de España en acreditar su calidad por quinta vez",
+          "url": "https://www.redaccionmedica.com/empresas/sanidad-privada/20161011/teknon-unico-hospital-de-espana-en-acreditar-su-calidad-por-quinta-vez/22872_0.html",
+          "read": "2026-11-15",
+          "says": "Dated 11 October 2016. \"Teknon ha alcanzado este mes de septiembre su quinta reacreditación\"; accredited by JCI continuously since 2002."
+        },
+        {
+          "name": "The Objective (Servimedia): Quirónsalud re-accredited with the JCI Enterprise gold seal",
+          "url": "https://theobjective.com/actualidad/2025-11-26/quiron-salud-reacreditado-sello-dorado/",
+          "read": "2026-11-15",
+          "says": "Dated 26 November 2025. Centro Médico Teknon is one of nine Quirónsalud hospitals named as JCI-accredited."
+        }
+      ]
+    },
+    {
+      "id": "es-healthcare-barcelona-three-jci",
+      "fact": "healthcare",
+      "cities": [
+        "barcelona"
+      ],
+      "claim": "Teknon, Hospital Quirónsalud Barcelona and Hospital Universitari Dexeus were all JCI-accredited in 2022",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Alicante Plaza: Quirónsalud, first private hospital group to earn JCI Enterprise accreditation",
+          "url": "https://alicanteplaza.es/alicanteplaza/quironsaludprimergrupohospitalarioprivadodelmundoenobtenerlaacreditacionjointcommissioninternationalenterprise2",
+          "read": "2026-11-15",
+          "says": "Dated 27 October 2022. Four centres already held JCI accreditation: Centro Médico Teknon, Hospital Quirónsalud Barcelona, Hospital Universitari Dexeus and Hospital Universitario Quirónsalud Madrid."
+        },
+        {
+          "name": "The Objective (Servimedia): Quirónsalud re-accredited with the JCI Enterprise gold seal",
+          "url": "https://theobjective.com/actualidad/2025-11-26/quiron-salud-reacreditado-sello-dorado/",
+          "read": "2026-11-15",
+          "says": "Dated 26 November 2025. The same three Barcelona hospitals are among nine named as JCI-accredited."
+        }
+      ],
+      "note": "Still true in November 2025. Dexeus's own page (https://en.dexeus.com/who-we-are/our-centers/quality-assurance/joint-commission-international) says the seal is renewed every three years and gives no year. The tagline (\"JCI hospitals\") agrees."
+    },
+    {
+      "id": "es-healthcare-tarragona-joan-xxiii",
+      "fact": "healthcare",
+      "cities": [
+        "tarragona"
+      ],
+      "claim": "The public Hospital Universitari Joan XXIII, opened in 1967 and being replaced by a €250M new building, is the reference hospital for the Camp de Tarragona",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Ara: The Camp de Tarragona hospital system is getting up to date",
+          "url": "https://en.ara.cat/tarragona/the-camp-tarragona-hospital-system-is-getting-up-to-date_1_5536805.html",
+          "read": "2026-11-15",
+          "says": "Dated 23 October 2025. The Joan XXIII hospital began operating in Tarragona in 1967 and its facilities have aged; the new building is a \"total investment of €250 million\"."
+        },
+        {
+          "name": "Institut Català de la Salut: Hospital Universitari Joan XXIII, pla estratègic Horitzó 29",
+          "url": "https://horitzo29hj23.icscampdetarragona.cat/",
+          "read": "2026-11-15",
+          "says": "Footer © 2026, Institut Català de la Salut. Vision: \"Ser l'hospital de referència i líder en el sistema sanitari públic\"; one of its axes is to \"Consolidar l'HJ23 com a centre de referència de l'ICS a Tarragona\"; a demarcation of 860,000 inhabitants."
+        }
+      ],
+      "note": "The hospital's own plan words the reference role as an aim it is consolidating, and says \"Tarragona\", not \"Camp de Tarragona\"."
+    },
+    {
+      "id": "es-healthcare-tarragona-viamed",
+      "fact": "healthcare",
+      "cities": [
+        "tarragona"
+      ],
+      "claim": "The private Viamed Tarragona opened in October 2025",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Ara: The Camp de Tarragona hospital system is getting up to date",
+          "url": "https://en.ara.cat/tarragona/the-camp-tarragona-hospital-system-is-getting-up-to-date_1_5536805.html",
+          "read": "2026-11-15",
+          "says": "Dated 23 October 2025. The private Viamed hospital began receiving patients in August and had its official opening on October 16th."
+        }
+      ]
+    },
+    {
+      "id": "es-healthcare-tarragona-jci-in-barcelona",
+      "fact": "healthcare",
+      "cities": [
+        "tarragona"
+      ],
+      "claim": "The top private and JCI-accredited hospitals are in Barcelona",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "The Objective (Servimedia): Quirónsalud re-accredited with the JCI Enterprise gold seal",
+          "url": "https://theobjective.com/actualidad/2025-11-26/quiron-salud-reacreditado-sello-dorado/",
+          "read": "2026-11-15",
+          "says": "Dated 26 November 2025. The nine JCI-accredited Quirónsalud hospitals named include three in Barcelona (Centro Médico Teknon, Hospital Quirónsalud Barcelona, Hospital Universitari Dexeus) and none in Tarragona."
+        }
+      ],
+      "note": "A list of one group's hospitals; JCI's own directory was not read, so a JCI hospital of another group in Tarragona is not excluded by this page. \"Top private\" is the profile's judgment. The third drawback and scores.healthcare 3 agree."
+    }
+  ]
+}

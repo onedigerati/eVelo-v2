@@ -1,0 +1,519 @@
+{
+  "country": "Malta",
+  "cities": [
+    "sliema"
+  ],
+  "claims": [
+    {
+      "id": "mt-tax-no-wealth-tax",
+      "fact": "tax",
+      "cities": [
+        "sliema"
+      ],
+      "claim": "Malta has no wealth tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Malta, individual, other taxes",
+          "url": "https://taxsummaries.pwc.com/malta/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 30 September 2026. \"There are no net wealth/worth taxes in Malta.\" \"There are no inheritance, estate, or gift taxes in Malta.\" \"In principle, stamp duty is imposed, inter alia, on heirs upon inheritance of immovable property at a rate of 5%\"; 2% on shares in a Maltese company (other than a property company) passing on death; \"Certain exemptions from stamp duty may, however, apply\"."
+        }
+      ],
+      "note": "The model agrees: LOCAL_TAX_BY_COUNTRY.MT has a note only, \"Malta has neither\"."
+    },
+    {
+      "id": "mt-tax-remittance-basis",
+      "fact": "tax",
+      "cities": [
+        "sliema"
+      ],
+      "claim": "A non-domiciled resident is taxed only on foreign income remitted to Malta (summary: dividends left in the US account are not taxed)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Malta, individual, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/malta/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 30 September 2026. Persons ordinarily resident but not domiciled \"are not taxable in Malta on income arising outside Malta, which is not received in Malta\", nor on \"capital gains arising outside Malta, regardless of whether they are received in Malta\". Those with \"income arising outside Malta of at least EUR 35,000 or equivalent\" are \"subject to a minimum tax in Malta of EUR 5,000\". Global Residence Programme: remitted foreign income is \"taxed at a flat rate of 15%, subject to a minimum tax of EUR 15,000\"; the GRP is \"set to be superseded by the new Individual Tax Programme Rules, 2026\" from 1 January 2027, with a minimum tax of EUR 35,000 for global residents; beneficiaries and applicants filing by 31 December 2026 stay on the current rules until 31 December 2031. Malta Retirement Programme: 15% on remitted foreign income, minimum EUR 7,500 plus EUR 500 per dependant (EUR 15,000 for retired pensioners under the 2027 rules)."
+        }
+      ],
+      "note": "The pick's `why` (\"Malta's remittance basis lets dividends stay in the US account\") agrees."
+    },
+    {
+      "id": "mt-tax-minimum-5000",
+      "fact": "tax",
+      "cities": [
+        "sliema"
+      ],
+      "claim": "There is a €5,000 minimum tax if foreign income is €35k or more (summary: \"a €5,000 minimum tax at most\")",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Malta, individual, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/malta/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 30 September 2026. Persons ordinarily resident but not domiciled \"are not taxable in Malta on income arising outside Malta, which is not received in Malta\", nor on \"capital gains arising outside Malta, regardless of whether they are received in Malta\". Those with \"income arising outside Malta of at least EUR 35,000 or equivalent\" are \"subject to a minimum tax in Malta of EUR 5,000\". Global Residence Programme: remitted foreign income is \"taxed at a flat rate of 15%, subject to a minimum tax of EUR 15,000\"; the GRP is \"set to be superseded by the new Individual Tax Programme Rules, 2026\" from 1 January 2027, with a minimum tax of EUR 35,000 for global residents; beneficiaries and applicants filing by 31 December 2026 stay on the current rules until 31 December 2031. Malta Retirement Programme: 15% on remitted foreign income, minimum EUR 7,500 plus EUR 500 per dependant (EUR 15,000 for retired pensioners under the 2027 rules)."
+        }
+      ]
+    },
+    {
+      "id": "mt-tax-foreign-gains-untaxed",
+      "fact": "tax",
+      "cities": [
+        "sliema"
+      ],
+      "claim": "Foreign capital gains are untaxed even if remitted",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Malta, individual, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/malta/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 30 September 2026. Persons ordinarily resident but not domiciled \"are not taxable in Malta on income arising outside Malta, which is not received in Malta\", nor on \"capital gains arising outside Malta, regardless of whether they are received in Malta\". Those with \"income arising outside Malta of at least EUR 35,000 or equivalent\" are \"subject to a minimum tax in Malta of EUR 5,000\". Global Residence Programme: remitted foreign income is \"taxed at a flat rate of 15%, subject to a minimum tax of EUR 15,000\"; the GRP is \"set to be superseded by the new Individual Tax Programme Rules, 2026\" from 1 January 2027, with a minimum tax of EUR 35,000 for global residents; beneficiaries and applicants filing by 31 December 2026 stay on the current rules until 31 December 2031. Malta Retirement Programme: 15% on remitted foreign income, minimum EUR 7,500 plus EUR 500 per dependant (EUR 15,000 for retired pensioners under the 2027 rules)."
+        }
+      ]
+    },
+    {
+      "id": "mt-tax-grp-15-percent",
+      "fact": "tax",
+      "cities": [
+        "sliema"
+      ],
+      "claim": "Under the GRP, remitted income pays 15% with a €15k minimum, €35k from 2027",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Malta, individual, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/malta/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 30 September 2026. Persons ordinarily resident but not domiciled \"are not taxable in Malta on income arising outside Malta, which is not received in Malta\", nor on \"capital gains arising outside Malta, regardless of whether they are received in Malta\". Those with \"income arising outside Malta of at least EUR 35,000 or equivalent\" are \"subject to a minimum tax in Malta of EUR 5,000\". Global Residence Programme: remitted foreign income is \"taxed at a flat rate of 15%, subject to a minimum tax of EUR 15,000\"; the GRP is \"set to be superseded by the new Individual Tax Programme Rules, 2026\" from 1 January 2027, with a minimum tax of EUR 35,000 for global residents; beneficiaries and applicants filing by 31 December 2026 stay on the current rules until 31 December 2031. Malta Retirement Programme: 15% on remitted foreign income, minimum EUR 7,500 plus EUR 500 per dependant (EUR 15,000 for retired pensioners under the 2027 rules)."
+        },
+        {
+          "name": "Deloitte Malta: Individual Tax Programme Rules, 2026 (tax alert)",
+          "url": "https://www.deloitte.com/mt/en/services/tax/perspectives/tax-alerts/2026/individual-tax-programme-rules-2026.html",
+          "read": "2026-11-15",
+          "says": "Dated 23 July 2026. Legal Notice 195 of 2026, published 14 July 2026, takes effect on 1 January 2027; the statuses are Global Resident Status, EU, EEA, Swiss Resident Status, Retired Pensioner Status and UN Pensioner Status. Global Resident Status carries \"a minimum annual tax liability of EUR 35,000\" and a \"flat tax rate of 15% on foreign source remittances\"; applications made \"on or before 31 December 2026\" under the current framework keep it \"until 31 December 2031\". The alert mentions higher property thresholds without figures."
+        },
+        {
+          "name": "GVZH Advocates: Malta Global Residence Programme",
+          "url": "https://gvzh.mt/services/practice-areas/citizenship-residence/global-residence-programme/",
+          "read": "2026-11-15",
+          "says": "Last reviewed July 2026. For \"Non-EU, non-EEA and non-Swiss nationals\". Purchase: EUR 275,000 in Malta, EUR 220,000 in the South of Malta or Gozo; rent: EUR 9,600 a year in Malta, EUR 8,750 in the South or Gozo. \"A flat rate of 15% income tax on foreign-source income remitted to Malta, subject to a minimum annual tax of EUR 15,000.\" Health insurance \"covering the applicant and any dependants throughout the EU\" is required."
+        }
+      ],
+      "note": "Not claimed by the profile and so not corrected, for the report: the Malta Retirement Programme (15%, lower minimum) is a pension route; the pages read did not state its pension-share condition."
+    },
+    {
+      "id": "mt-tax-loan-proceeds-remittance",
+      "fact": "tax",
+      "cities": [
+        "sliema"
+      ],
+      "claim": "Whether margin-loan proceeds brought into Malta count as a remittance",
+      "verdict": "cant-confirm",
+      "hedge": "unverified",
+      "wording": "whether margin-loan proceeds brought into Malta count as a remittance is unverified",
+      "sources": [
+        {
+          "name": "PwC: Malta, individual, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/malta/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 30 September 2026. Persons ordinarily resident but not domiciled \"are not taxable in Malta on income arising outside Malta, which is not received in Malta\", nor on \"capital gains arising outside Malta, regardless of whether they are received in Malta\". Those with \"income arising outside Malta of at least EUR 35,000 or equivalent\" are \"subject to a minimum tax in Malta of EUR 5,000\". Global Residence Programme: remitted foreign income is \"taxed at a flat rate of 15%, subject to a minimum tax of EUR 15,000\"; the GRP is \"set to be superseded by the new Individual Tax Programme Rules, 2026\" from 1 January 2027, with a minimum tax of EUR 35,000 for global residents; beneficiaries and applicants filing by 31 December 2026 stay on the current rules until 31 December 2031. Malta Retirement Programme: 15% on remitted foreign income, minimum EUR 7,500 plus EUR 500 per dependant (EUR 15,000 for retired pensioners under the 2027 rules)."
+        }
+      ],
+      "note": "The page describes the remittance basis for income and says nothing on borrowed money; no page read settles it. Drawback 3 says the same, as \"untested\"."
+    },
+    {
+      "id": "mt-estate-no-inheritance-tax",
+      "fact": "estate",
+      "cities": [
+        "sliema"
+      ],
+      "claim": "Malta has no inheritance, estate or gift tax, so a US portfolio passes to US-resident children with no Maltese tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Malta, individual, other taxes",
+          "url": "https://taxsummaries.pwc.com/malta/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 30 September 2026. \"There are no net wealth/worth taxes in Malta.\" \"There are no inheritance, estate, or gift taxes in Malta.\" \"In principle, stamp duty is imposed, inter alia, on heirs upon inheritance of immovable property at a rate of 5%\"; 2% on shares in a Maltese company (other than a property company) passing on death; \"Certain exemptions from stamp duty may, however, apply\"."
+        }
+      ],
+      "note": "The model agrees. The profile is silent on a US estate treaty; the IRS list has none for Malta (shared claim us-estate-treaty-profiles-without) and nothing was added."
+    },
+    {
+      "id": "mt-estate-stamp-duty",
+      "fact": "estate",
+      "cities": [
+        "sliema"
+      ],
+      "claim": "Stamp duty applies only on inheriting Maltese property (5%) or Maltese shares (2%)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Malta, individual, other taxes",
+          "url": "https://taxsummaries.pwc.com/malta/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 30 September 2026. \"There are no net wealth/worth taxes in Malta.\" \"There are no inheritance, estate, or gift taxes in Malta.\" \"In principle, stamp duty is imposed, inter alia, on heirs upon inheritance of immovable property at a rate of 5%\"; 2% on shares in a Maltese company (other than a property company) passing on death; \"Certain exemptions from stamp duty may, however, apply\"."
+        }
+      ]
+    },
+    {
+      "id": "mt-lending-ibkr-accepts",
+      "fact": "lending",
+      "cities": [
+        "sliema"
+      ],
+      "claim": "IBKR serves Malta residents",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly serves Malta residents",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        }
+      ],
+      "note": "IBKR's sites returned HTTP 403 again on 2026-11-15."
+    },
+    {
+      "id": "mt-lending-ibkr-eu-entity",
+      "fact": "lending",
+      "cities": [
+        "sliema"
+      ],
+      "claim": "Malta residents are served through IBKR's EU (Irish) entity",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-eu-entity",
+      "hedge": "likely",
+      "wording": "(likely through its EU entity)",
+      "sources": [
+        {
+          "name": "Interactive Brokers Ireland Limited: Customer Agreement (document 4750, 7/1/2023), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/01_4750_IBIE_Customer_Agreement_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "Clause 1B: Interactive Brokers Ireland Limited (\"IBIE\") is incorporated in Ireland, company number 657406, and \"is regulated by the Central Bank of Ireland\", register number C423427. Clause 1C: unless told otherwise in writing, the client is categorised as a Retail Client. The agreement does not say which countries' residents IBIE serves."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. \"In the EU, customers sign up with the Irish entity\"; UK clients are with Interactive Brokers (U.K.) Limited; the Irish €20k compensation scheme applies to Eastern Europe after the Irish and Hungarian entities merged."
+        },
+        {
+          "name": "Investing in the Web: Interactive Brokers in Europe",
+          "url": "https://investingintheweb.com/broker-reviews/interactive-brokers-europe",
+          "read": "2026-11-15",
+          "says": "Updated on Sep 8, 2026. \"As an European resident, you are under the Central Bank of Ireland regulation\" (Interactive Brokers Ireland Limited); \"As a UK resident, you will be under this legal entity\" (Interactive Brokers UK Limited); \"Interactive Brokers Luxembourg and Central have been extinct/merged.\""
+        }
+      ]
+    },
+    {
+      "id": "mt-lending-ibkr-margin-cash-out",
+      "fact": "lending",
+      "cities": [
+        "sliema"
+      ],
+      "claim": "A Malta resident can borrow against the portfolio at IBKR (implied by naming IBKR as the one broker, \"with margin terms per country unknown\")",
+      "verdict": "corrected",
+      "shared": "ibkr-eu-margin-cash-out",
+      "oldWording": "with margin terms per country unknown; Schwab International reportedly does not accept Malta, and",
+      "newWording": "and IBKR's EU entity reportedly lends on margin only to buy securities, not to withdraw as cash, so confirm how you would draw cash before relying on it",
+      "sources": [
+        {
+          "name": "LYNX: Withdrawal (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/payments-and-transfers/withdrawal/",
+          "read": "2026-11-15",
+          "says": "\"It is not possible to withdraw in a currency if your cash balance is negative or would go negative after the withdrawal.\" In a margin account \"some funds may be used as collateral for other positions or to cover negative cash balances\", which lowers what can be withdrawn. The page is undated (footer: Copyright 2023)."
+        },
+        {
+          "name": "CapTrader: Geld abheben (help page of a German introducing broker for Interactive Brokers)",
+          "url": "https://www.captrader.com/geld-abheben/",
+          "read": "2026-11-15",
+          "says": "\"Auszahlungen sind nur möglich, wenn kein negativer Saldo in der entsprechenden Währung\" or in the total cash arises or grows: withdrawals are possible only if they do not create or increase a negative balance. Footer: © CapTrader 2026."
+        },
+        {
+          "name": "Interactive Brokers Ireland Limited: Customer Agreement (document 4750, 7/1/2023), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/01_4750_IBIE_Customer_Agreement_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "Clause 2A(i)(d) defines the margin service as one \"to enable Clients to acquire investment instruments\". Clause 5A(iv): \"Terms and conditions for deposit and withdrawal of funds (including holding periods) are as specified on the IBIE website.\" The agreement does not say that a loan may be withdrawn as cash."
+        },
+        {
+          "name": "Mustachian Post forum: Using margin loan at Interactive Brokers, page 13",
+          "url": "https://forum.mustachianpost.com/t/using-margin-loan-at-interactive-brokers/3980?page=13",
+          "read": "2026-11-15",
+          "says": "Posts of September to November 2024. One poster says withdrawing cash on margin is \"not possible in Germany with IB IE\" but is with IB UK; Swiss residents with IB UK accounts report having done it; another reports IBKR service saying \"IBUK customers can no longer withdraw cash if aggregate cash balance is -ve\", which a manager then said applies only to UK residents."
+        }
+      ],
+      "also": [
+        "scores.lending 3→2 (plan decision of 2026-11-15; rubric 2: IBKR only and even that uncertain, or EU residence)",
+        "summary: added the closing sentence \"The borrow step is weak too: Schwab reportedly does not take Malta residents, and IBKR reportedly bars EU residents from drawing margin as cash.\"",
+        "drawbacks: none mentioned margin or brokers (drawback 3 is about loan proceeds as a remittance), so none was reworded and none was added",
+        "sources: added LYNX withdrawal page",
+        "\"with margin terms per country unknown\" dropped: the clause that replaces it says what is reported about margin"
+      ],
+      "rankFlag": "Sliema (rank 19) now scores lending 2, and its profile says the one reported broker reportedly will not pay a margin loan out as cash. Its `why` says \"only IBKR is known to serve residents\", which still holds but undersells the problem. Rank and `why` are unchanged: user's call.",
+      "note": "The profile never said \"so plan on IBKR margin\". The standard clause is used, ending \"before relying on it\" (one broker, since Schwab reportedly does not take Malta residents), as in France and Italy. The shared sources are copied with their stage 1 read date; the LYNX page was not re-read."
+    },
+    {
+      "id": "mt-lending-schwab-not-accepting",
+      "fact": "lending",
+      "cities": [
+        "sliema"
+      ],
+      "claim": "Schwab International does not accept Malta residents",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab International reportedly does not accept Malta residents",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026; read again on 2026-11-15 for Austria, Malta and Switzerland. The 51 countries and regions Schwab's international application accepted that day include Austria and Switzerland; Malta is listed as not accepted. It quotes the Schwab One Account Agreement: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds\"; it does not say whether \"Europe\" covers Switzerland or the UK."
+        }
+      ],
+      "also": [
+        "\"does not accept Malta\" became \"does not accept Malta residents\" when the sentence was rejoined"
+      ],
+      "note": "Malta is listed as not accepted on the one dated list, re-read on 2026-11-15."
+    },
+    {
+      "id": "mt-lending-priips-new-buys",
+      "fact": "lending",
+      "cities": [
+        "sliema"
+      ],
+      "claim": "EU PRIIPs rules block new purchases of US ETFs",
+      "verdict": "confirmed",
+      "shared": "priips-us-etf-new-buys-blocked",
+      "sources": [
+        {
+          "name": "LYNX: Key Information Document (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/products-and-regulations/regulations/key-information-document/",
+          "read": "2026-11-15",
+          "says": "Retail clients are \"not permitted to trade ETFs or other products that do not have a valid KID\"; many non-EU ETFs have none. Can a retail client buy US ETFs? \"No, not unless you are classified as a professional investor.\" The same applies to ETFs from Canada, Hong Kong, Mexico and Australia. The KID has applied to most products since 1 January 2018."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. \"PRIIPs is an EU rule that prohibits buying US-listed ETFs\", and this also applies to UK investors; US ETFs are open only to elective professional clients, while UCITS ETFs are available to all Europeans."
+        }
+      ],
+      "note": "The profile's \"reportedly\" stays; it does no harm."
+    },
+    {
+      "id": "mt-lending-priips-holdings-kept",
+      "fact": "lending",
+      "cities": [
+        "sliema"
+      ],
+      "claim": "Existing holdings can usually be kept",
+      "verdict": "confirmed",
+      "shared": "priips-existing-holdings-kept",
+      "sources": [
+        {
+          "name": "LYNX: Key Information Document (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/products-and-regulations/regulations/key-information-document/",
+          "read": "2026-11-15",
+          "says": "The page's FAQ says retail clients \"may still hold or sell existing positions, but new purchases are restricted.\""
+        },
+        {
+          "name": "Regulation (EU) No 1286/2014, Article 13, as adopted (legislation.gov.uk copy of the EU text)",
+          "url": "https://www.legislation.gov.uk/eur/2014/1286/article/13/adopted",
+          "read": "2026-11-15",
+          "says": "The duty to provide a KID falls on \"a person advising on, or selling, a PRIIP\" before the retail investor is bound; nothing in the article reaches a PRIIP the investor already holds or a sale by the investor."
+        }
+      ]
+    },
+    {
+      "id": "mt-visa-grp-thresholds",
+      "fact": "visa",
+      "cities": [
+        "sliema"
+      ],
+      "claim": "The Global Residence Programme is a tax status and residence route for non-EU nationals with a €275k purchase or €9,600/yr rental, lower in the south and Gozo",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "GVZH Advocates: Malta Global Residence Programme",
+          "url": "https://gvzh.mt/services/practice-areas/citizenship-residence/global-residence-programme/",
+          "read": "2026-11-15",
+          "says": "Last reviewed July 2026. For \"Non-EU, non-EEA and non-Swiss nationals\". Purchase: EUR 275,000 in Malta, EUR 220,000 in the South of Malta or Gozo; rent: EUR 9,600 a year in Malta, EUR 8,750 in the South or Gozo. \"A flat rate of 15% income tax on foreign-source income remitted to Malta, subject to a minimum annual tax of EUR 15,000.\" Health insurance \"covering the applicant and any dependants throughout the EU\" is required."
+        },
+        {
+          "name": "PwC: Malta, individual, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/malta/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 30 September 2026. Persons ordinarily resident but not domiciled \"are not taxable in Malta on income arising outside Malta, which is not received in Malta\", nor on \"capital gains arising outside Malta, regardless of whether they are received in Malta\". Those with \"income arising outside Malta of at least EUR 35,000 or equivalent\" are \"subject to a minimum tax in Malta of EUR 5,000\". Global Residence Programme: remitted foreign income is \"taxed at a flat rate of 15%, subject to a minimum tax of EUR 15,000\"; the GRP is \"set to be superseded by the new Individual Tax Programme Rules, 2026\" from 1 January 2027, with a minimum tax of EUR 35,000 for global residents; beneficiaries and applicants filing by 31 December 2026 stay on the current rules until 31 December 2031. Malta Retirement Programme: 15% on remitted foreign income, minimum EUR 7,500 plus EUR 500 per dependant (EUR 15,000 for retired pensioners under the 2027 rules)."
+        }
+      ],
+      "also": [
+        "sources: added the GVZH page"
+      ],
+      "note": "The tax authority's own page (cfr.gov.mt / mtca.gov.mt) was not found by search; the thresholds rest on a law firm page reviewed in July 2026. A search result (not a read) showed another firm giving €9,500 for rent."
+    },
+    {
+      "id": "mt-visa-2027-global-resident",
+      "fact": "visa",
+      "cities": [
+        "sliema"
+      ],
+      "claim": "From 2027 the new Global Resident status needs €700k or €14k/yr, while applications filed by 31 Dec 2026 keep the old terms to 2031 (summary, drawback 2 and the pick's `why` repeat the deadline)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PKF Malta: Malta's 2027 individual tax programme, new thresholds and new planning priorities",
+          "url": "https://pkfmalta.com/news/network-news/malta-s-2027-individual-tax-programme-new-thresholds-and-new-planning-priorities/",
+          "read": "2026-11-15",
+          "says": "Date not shown in the text read. For Global Resident Status the qualifying property must be bought for at least \"€700,000 anywhere in Malta or Gozo\" or rented for at least \"€14,000 per annum anywhere in Malta or Gozo\"; minimum tax €35,000; status granted under the GRP, TRP, MRP or UNPP \"by 31 December 2026\" continues \"until 31 December 2031\"."
+        },
+        {
+          "name": "Deloitte Malta: Individual Tax Programme Rules, 2026 (tax alert)",
+          "url": "https://www.deloitte.com/mt/en/services/tax/perspectives/tax-alerts/2026/individual-tax-programme-rules-2026.html",
+          "read": "2026-11-15",
+          "says": "Dated 23 July 2026. Legal Notice 195 of 2026, published 14 July 2026, takes effect on 1 January 2027; the statuses are Global Resident Status, EU, EEA, Swiss Resident Status, Retired Pensioner Status and UN Pensioner Status. Global Resident Status carries \"a minimum annual tax liability of EUR 35,000\" and a \"flat tax rate of 15% on foreign source remittances\"; applications made \"on or before 31 December 2026\" under the current framework keep it \"until 31 December 2031\". The alert mentions higher property thresholds without figures."
+        },
+        {
+          "name": "PwC: Malta, individual, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/malta/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 30 September 2026. Persons ordinarily resident but not domiciled \"are not taxable in Malta on income arising outside Malta, which is not received in Malta\", nor on \"capital gains arising outside Malta, regardless of whether they are received in Malta\". Those with \"income arising outside Malta of at least EUR 35,000 or equivalent\" are \"subject to a minimum tax in Malta of EUR 5,000\". Global Residence Programme: remitted foreign income is \"taxed at a flat rate of 15%, subject to a minimum tax of EUR 15,000\"; the GRP is \"set to be superseded by the new Individual Tax Programme Rules, 2026\" from 1 January 2027, with a minimum tax of EUR 35,000 for global residents; beneficiaries and applicants filing by 31 December 2026 stay on the current rules until 31 December 2031. Malta Retirement Programme: 15% on remitted foreign income, minimum EUR 7,500 plus EUR 500 per dependant (EUR 15,000 for retired pensioners under the 2027 rules)."
+        }
+      ],
+      "note": "The legal notice itself (LN 195 of 2026) was not read; three professional pages agree. Score: the visa score (3) is today's rule, with the 2027 change stated, as the rubric notes ask."
+    },
+    {
+      "id": "mt-visa-mprp",
+      "fact": "visa",
+      "cities": [
+        "sliema"
+      ],
+      "claim": "Permanent residence (MPRP) costs about €99k in fees plus €375k property or €14k/yr rent",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Residency Malta Agency: Malta Permanent Residence Programme",
+          "url": "https://residencymalta.gov.mt/legal-framework-mprp-2/",
+          "read": "2026-11-15",
+          "says": "Undated; cites S.L. 217.26 as amended by LN 310 of 2024 and LN 146 of 2025. A \"non-refundable administrative fee of €60,000\", \"a Government contribution of €37,000\", \"a donation of €2,000 to a local NGO\"; a qualifying property rented \"for a minimum annual rent of €14,000\" or bought \"for a minimum value of €375,000\"; capital assets of €500,000 (€150,000 financial) or €650,000 (€75,000 financial); \"health insurance covering risks in Malta and other European countries\"."
+        },
+        {
+          "name": "Legal 500 (CC Malta): Malta Permanent Residence Programme 2026",
+          "url": "https://www.legal500.com/intelligence/malta/immigration/malta-permanent-residence-programme-%28mprp%29-2026-requirements-costs-timeline",
+          "read": "2026-11-15",
+          "says": "Dated 24 July 2026. Administration fee \"€60,000 total\", contribution €37,000, donation €2,000: a \"total of €99,000\" excluding the property; purchase \"Minimum €375,000\" or rent \"Minimum €14,000 per annum\"."
+        }
+      ],
+      "also": [
+        "sources: added the Residency Malta Agency page"
+      ],
+      "note": "€60,000 + €37,000 + €2,000 = €99,000 on the agency's own page. The profile does not mention the capital test (€500,000 or €650,000), which a reader should know of; not added, since no claim was wrong."
+    },
+    {
+      "id": "mt-healthcare-mater-dei",
+      "fact": "healthcare",
+      "cities": [
+        "sliema"
+      ],
+      "claim": "Mater Dei is the acute general teaching hospital in Msida",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Wikipedia: Mater Dei Hospital",
+          "url": "https://en.wikipedia.org/wiki/Mater_Dei_Hospital",
+          "read": "2026-11-15",
+          "says": "Last edited 2 July 2026. \"an acute general and teaching hospital in Msida, Malta\", \"a public hospital affiliated to the University of Malta\"."
+        },
+        {
+          "name": "Legal 500 (Attard Baldacchino): healthcare system in Malta, a detailed overview",
+          "url": "https://www.legal500.com/intelligence/malta/food-drugs-healthcare-life-sciences/healthcare-system-in-malta-a-detailed-overview",
+          "read": "2026-11-15",
+          "says": "Dated 13 February 2024. Mater Dei in Msida is \"an acute general teaching hospital\". It names two private hospitals: Saint James Hospital Malta, the largest, and St. Thomas Hospital in Qormi. Free care goes to Maltese citizens and to legal residents who contribute to social security, depending on \"certain conditions of their residence and social security status\"; \"qualifying private healthcare coverage is a requirement for all non-EU residents\"."
+        },
+        {
+          "name": "Healthcare Entitlement Unit, Government of Malta: healthcare in Malta",
+          "url": "https://s2.eessi.gov.mt/en/information-regarding-healthcare-in-malta/",
+          "read": "2026-11-15",
+          "says": "First published May 14, 2026; last updated October 6, 2026. Free state healthcare is for \"Persons covered by Maltese Social Security legislation\", holders of an EHIC, GHIC, S1 or RHA document, and \"Persons entitled to free public healthcare under Maltese legislation\"; others pay the charges. Mater Dei Hospital is in Msida."
+        }
+      ],
+      "note": "No page of the hospital itself was found; the government's Entitlement Unit page places it in Msida. \"A short drive away\" was not checked as a figure (none is given)."
+    },
+    {
+      "id": "mt-healthcare-private-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "sliema"
+      ],
+      "claim": "Saint James and St Thomas are the main private hospitals",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Saint James Hospital Group: home page",
+          "url": "https://stjameshospital.com/",
+          "read": "2026-11-15",
+          "says": "Footer © 2026. Page title \"Malta's Largest Private Hospital\"; \"The leading name in private healthcare in Malta\"; sites in Sliema (Saint James Capua Hospital), Żejtun and Burmarrad, and an eye clinic."
+        },
+        {
+          "name": "St Thomas Hospital: home page",
+          "url": "https://sthmalta.com/",
+          "read": "2026-11-15",
+          "says": "Footer \"© 2026 St Thomas Hospital\". Address Valletta Road, Qormi; specialist departments including heart care, children's health, surgery and orthopaedics, with diagnostic tests and scans. The page does not use the word \"private\"."
+        },
+        {
+          "name": "Legal 500 (Attard Baldacchino): healthcare system in Malta, a detailed overview",
+          "url": "https://www.legal500.com/intelligence/malta/food-drugs-healthcare-life-sciences/healthcare-system-in-malta-a-detailed-overview",
+          "read": "2026-11-15",
+          "says": "Dated 13 February 2024. Mater Dei in Msida is \"an acute general teaching hospital\". It names two private hospitals: Saint James Hospital Malta, the largest, and St. Thomas Hospital in Qormi. Free care goes to Maltese citizens and to legal residents who contribute to social security, depending on \"certain conditions of their residence and social security status\"; \"qualifying private healthcare coverage is a requirement for all non-EU residents\"."
+        }
+      ],
+      "note": "Both hospitals' own sites load and are current (© 2026). \"Main\" rests on the 2024 Legal 500 article naming these two, and on Saint James calling itself the largest."
+    },
+    {
+      "id": "mt-healthcare-private-cover-required",
+      "fact": "healthcare",
+      "cities": [
+        "sliema"
+      ],
+      "claim": "Non-EU residents must hold qualifying private cover, since free public care is tied to social security status",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Residency Malta Agency: Malta Permanent Residence Programme",
+          "url": "https://residencymalta.gov.mt/legal-framework-mprp-2/",
+          "read": "2026-11-15",
+          "says": "Undated; cites S.L. 217.26 as amended by LN 310 of 2024 and LN 146 of 2025. A \"non-refundable administrative fee of €60,000\", \"a Government contribution of €37,000\", \"a donation of €2,000 to a local NGO\"; a qualifying property rented \"for a minimum annual rent of €14,000\" or bought \"for a minimum value of €375,000\"; capital assets of €500,000 (€150,000 financial) or €650,000 (€75,000 financial); \"health insurance covering risks in Malta and other European countries\"."
+        },
+        {
+          "name": "GVZH Advocates: Malta Global Residence Programme",
+          "url": "https://gvzh.mt/services/practice-areas/citizenship-residence/global-residence-programme/",
+          "read": "2026-11-15",
+          "says": "Last reviewed July 2026. For \"Non-EU, non-EEA and non-Swiss nationals\". Purchase: EUR 275,000 in Malta, EUR 220,000 in the South of Malta or Gozo; rent: EUR 9,600 a year in Malta, EUR 8,750 in the South or Gozo. \"A flat rate of 15% income tax on foreign-source income remitted to Malta, subject to a minimum annual tax of EUR 15,000.\" Health insurance \"covering the applicant and any dependants throughout the EU\" is required."
+        },
+        {
+          "name": "Healthcare Entitlement Unit, Government of Malta: healthcare in Malta",
+          "url": "https://s2.eessi.gov.mt/en/information-regarding-healthcare-in-malta/",
+          "read": "2026-11-15",
+          "says": "First published May 14, 2026; last updated October 6, 2026. Free state healthcare is for \"Persons covered by Maltese Social Security legislation\", holders of an EHIC, GHIC, S1 or RHA document, and \"Persons entitled to free public healthcare under Maltese legislation\"; others pay the charges. Mater Dei Hospital is in Msida."
+        },
+        {
+          "name": "Legal 500 (Attard Baldacchino): healthcare system in Malta, a detailed overview",
+          "url": "https://www.legal500.com/intelligence/malta/food-drugs-healthcare-life-sciences/healthcare-system-in-malta-a-detailed-overview",
+          "read": "2026-11-15",
+          "says": "Dated 13 February 2024. Mater Dei in Msida is \"an acute general teaching hospital\". It names two private hospitals: Saint James Hospital Malta, the largest, and St. Thomas Hospital in Qormi. Free care goes to Maltese citizens and to legal residents who contribute to social security, depending on \"certain conditions of their residence and social security status\"; \"qualifying private healthcare coverage is a requirement for all non-EU residents\"."
+        }
+      ],
+      "also": [
+        "sources: added the Healthcare Entitlement Unit page"
+      ],
+      "note": "The programme pages require health insurance of MPRP and GRP holders; the Entitlement Unit page ties free care to social security cover or an entitlement document. The flat \"all non-EU residents\" is from the 2024 article."
+    }
+  ]
+}

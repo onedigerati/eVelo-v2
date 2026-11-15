@@ -24,7 +24,7 @@ import {
 
 // The fact-check ledger (docs/research/fact-check-2026-11/, method in its README.md).
 // Countries whose profiles have been checked. Each stage adds its countries here, spelled as in cities.ts.
-const CHECKED_COUNTRIES: string[] = ['Portugal']
+const CHECKED_COUNTRIES: string[] = ['Portugal', 'Spain', 'France', 'Italy', 'Ireland', 'United Kingdom', 'Netherlands', 'Germany', 'Switzerland', 'Austria', 'Malta']
 
 const LEDGER_DIR = fileURLToPath(new URL('../../../docs/research/fact-check-2026-11/', import.meta.url))
 const SHARED_FILE = 'shared.json'

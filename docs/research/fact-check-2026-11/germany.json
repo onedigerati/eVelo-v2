@@ -1,0 +1,684 @@
+{
+  "country": "Germany",
+  "cities": [
+    "berlin"
+  ],
+  "claims": [
+    {
+      "id": "de-tax-no-wealth-tax",
+      "fact": "tax",
+      "cities": [
+        "berlin"
+      ],
+      "claim": "No wealth tax is levied in Germany",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Germany, other taxes",
+          "url": "https://taxsummaries.pwc.com/germany/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 30 June 2026. \"At this point of time, no wealth taxes are levied in Germany.\" Inheritance and gift tax rates run from 7% to 50%, with tax-free amounts between EUR 20,000 and EUR 500,000 by relationship; tax applies when the testator, donor, heir or donee is a German tax resident, and otherwise only to German-situated assets."
+        }
+      ]
+    },
+    {
+      "id": "de-tax-flat-rate",
+      "fact": "tax",
+      "cities": [
+        "berlin"
+      ],
+      "claim": "Dividends, interest and capital gains pay a flat 25% plus the 5.5% solidarity surcharge (26.375%), plus church tax for members",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Germany, income determination",
+          "url": "https://taxsummaries.pwc.com/germany/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 30 June 2026. Dividends, interest and capital gains from financial investments pay \"a flat tax rate of 25% plus 5.5% solidarity surcharge (in total 26.375%, plus church tax if applicable)\". The investor's allowance is \"EUR 1,000 per taxpayer for the total of all financial investment income\", \"doubled in the case of married taxpayers filing jointly\". Funds that retain profits \"can trigger deemed income to be taxed at the investor level even if no actual distributions are made.\""
+        },
+        {
+          "name": "PwC: Germany, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/germany/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 30 June 2026. \"All resident individuals are taxed on their worldwide income.\" A 5.5% solidarity surcharge applies in full to capital investment income; church tax is \"either 8% or 9% of the income tax, depending on the federal state\". The page describes no special regime for new residents, expatriates or retirees."
+        }
+      ],
+      "note": "Not in the profile and not added: Germany taxes fund investors each year on a deemed amount (Vorabpauschale) when a fund distributes little. A Dechert note of July 9, 2026 (https://www.dechert.com/knowledge/onpoint/2026/7/germany-s-advance-lump-sum-taxation--vorabpauschale---considerat.html, read 2026-11-15) gives 70% of the 3.20% base rate, 2.24% of opening value for 2026, capped at the year's actual gain, with 30% exempt for equity funds, and says it applies to foreign funds of contractual or corporate type; it does not address US-domiciled ETFs by name. A buy-and-hold ETF portfolio probably pays this each year, but no page read confirms it for US ETFs, so the fact was left alone. Worth a line in the profile if a later check settles it."
+    },
+    {
+      "id": "de-tax-saver-allowance",
+      "fact": "tax",
+      "cities": [
+        "berlin"
+      ],
+      "claim": "The allowance is €1,000 (€2,000 for a couple)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Germany, income determination",
+          "url": "https://taxsummaries.pwc.com/germany/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 30 June 2026. Dividends, interest and capital gains from financial investments pay \"a flat tax rate of 25% plus 5.5% solidarity surcharge (in total 26.375%, plus church tax if applicable)\". The investor's allowance is \"EUR 1,000 per taxpayer for the total of all financial investment income\", \"doubled in the case of married taxpayers filing jointly\". Funds that retain profits \"can trigger deemed income to be taxed at the investor level even if no actual distributions are made.\""
+        }
+      ]
+    },
+    {
+      "id": "de-tax-us-credit",
+      "fact": "tax",
+      "cities": [
+        "berlin"
+      ],
+      "claim": "Germany credits US tax on US dividends up to the treaty's 15% rate",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "extraETF: Quellensteuer bei Aktien und ETFs",
+          "url": "https://extraetf.com/de/wissen/quellensteuer",
+          "read": "2026-11-15",
+          "says": "Updated 14.07.2026. \"Auf US-Dividenden wird grundsätzlich 30 % Quellensteuer erhoben\"; with a broker in the QI agreement it is cut to 15%, and \"15 % davon sind in Deutschland anrechenbar\" against the Abgeltungsteuer, up to the treaty rate."
+        },
+        {
+          "name": "Schürmann Steuerberatung: US-Quellensteuern",
+          "url": "https://www.steuerberater-berlin-schuermann.de/steuernews_mandanten/dezember_2016/us_quellensteuern/",
+          "read": "2026-11-15",
+          "says": "Dated 29 November 2016. \"Im Fall der USA sind nach dem Doppelbesteuerungsabkommen 15 % Quellensteuern auf die deutsche Abgeltungsteuer anrechenbar.\""
+        }
+      ],
+      "note": "Secondary sources, one dated 2026 and one the profile already cites (2016). PwC's foreign-tax-relief page says only that a credit is possible up to the German tax on the foreign income and lists the US treaty. The treaty text was not read."
+    },
+    {
+      "id": "de-tax-no-newcomer-regime",
+      "fact": "tax",
+      "cities": [
+        "berlin"
+      ],
+      "claim": "There is no newcomer regime for retirees",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Germany, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/germany/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 30 June 2026. \"All resident individuals are taxed on their worldwide income.\" A 5.5% solidarity surcharge applies in full to capital investment income; church tax is \"either 8% or 9% of the income tax, depending on the federal state\". The page describes no special regime for new residents, expatriates or retirees."
+        }
+      ],
+      "note": "A negative: the page taxes all residents on worldwide income and describes no regime for new residents; no page read mentions one."
+    },
+    {
+      "id": "de-estate-worldwide-reach",
+      "fact": "estate",
+      "cities": [
+        "berlin"
+      ],
+      "claim": "Inheritance tax reaches the worldwide estate when the person who dies lives in Germany",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Inheritance and Gift Tax Act (ErbStG) § 2, gesetze-im-internet.de",
+          "url": "https://www.gesetze-im-internet.de/erbstg_1974/__2.html",
+          "read": "2026-11-15",
+          "says": "§ 2(1) no. 1: the tax covers the whole transfer (\"den gesamten Vermögensanfall\", unlimited liability) when the deceased, the donor or the recipient is a resident (Inländer): natural persons with a home or habitual abode in Germany, and German nationals abroad for not more than five years."
+        },
+        {
+          "name": "PwC: Germany, other taxes",
+          "url": "https://taxsummaries.pwc.com/germany/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 30 June 2026. \"At this point of time, no wealth taxes are levied in Germany.\" Inheritance and gift tax rates run from 7% to 50%, with tax-free amounts between EUR 20,000 and EUR 500,000 by relationship; tax applies when the testator, donor, heir or donee is a German tax resident, and otherwise only to German-situated assets."
+        }
+      ],
+      "modelMismatch": "src/data/localTaxes.ts has no DE entry (its header lists Germany among countries with \"no researched tax data\"), so the simulation applies no German tax to Berlin. Checked facts for stage 8. No wealth tax (PwC, https://taxsummaries.pwc.com/germany/individual/other-taxes). Inheritance tax: the worldwide estate when the deceased or the heir is resident in Germany (ErbStG § 2, https://www.gesetze-im-internet.de/erbstg_1974/__2.html); €400,000 allowance per child (§ 16); class I rates 7% to €75k, 11% to €300k, 15% to €600k, 19% to €6M, 23% to €13M, 27% to €26M, 30% above, each applied to the whole taxable amount, not marginally (§ 19, with step relief in (3)). Under the US treaty as amended by the 1998 protocol, a US citizen who is not German and has been domiciled in Germany for not more than 10 years is treated as domiciled only in the US, so the charge on US assets left to US-resident heirs starts after year 10 (https://www.govinfo.gov/content/pkg/CRPT-106erpt10/html/CRPT-106erpt10.htm)."
+    },
+    {
+      "id": "de-estate-child-rates",
+      "fact": "estate",
+      "cities": [
+        "berlin"
+      ],
+      "claim": "Children pay 7–30%, and the rate for the whole amount rises with its size",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Inheritance and Gift Tax Act (ErbStG) § 19, gesetze-im-internet.de",
+          "url": "https://www.gesetze-im-internet.de/erbstg_1974/__19.html",
+          "read": "2026-11-15",
+          "says": "§ 19(1), tax class I: 7% up to €75,000, 11% up to €300,000, 15% up to €600,000, 19% up to €6,000,000, 23% up to €13,000,000, 27% up to €26,000,000 and 30% above. The rate of the bracket reached applies to the whole acquisition, softened at each step by (3)."
+        }
+      ],
+      "note": "The summary's \"7–30%\" and drawback 1's \"up to 30%\" agree. scores.estate stays 2 (top rate 30%)."
+    },
+    {
+      "id": "de-estate-child-allowance",
+      "fact": "estate",
+      "cities": [
+        "berlin"
+      ],
+      "claim": "Each child has a €400,000 allowance",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Inheritance and Gift Tax Act (ErbStG) § 16, gesetze-im-internet.de",
+          "url": "https://www.gesetze-im-internet.de/erbstg_1974/__16.html",
+          "read": "2026-11-15",
+          "says": "§ 16(1): allowance for the spouse \"in Höhe von 500 000 Euro\" and for children \"in Höhe von 400 000 Euro\". Under (2) the allowance is reduced proportionally in cases of limited liability."
+        },
+        {
+          "name": "Taxes for Expats: Germany inheritance tax for US expats and heirs",
+          "url": "https://www.taxesforexpats.com/country-guides/germany/inheritance-tax-germany.html",
+          "read": "2026-11-15",
+          "says": "Last updated Oct 29, 2026. Children and stepchildren have a €400,000 allowance (ErbStG § 16, class I). Under the treaty real estate is taxable where it lies (Article 5), permanent-establishment property where the establishment is (Article 6), and all other property only by the domicile state (Article 9); the treaty is \"primarily credit-based\". The page does not describe the ten-year citizenship rule."
+        }
+      ]
+    },
+    {
+      "id": "de-estate-treaty-ten-years",
+      "fact": "estate",
+      "cities": [
+        "berlin"
+      ],
+      "claim": "Under the US–Germany estate and gift tax treaty (1998 protocol) a US citizen who is not German and has lived in Germany 10 years or less is treated as US-domiciled, so Germany generally taxes only German-sited assets left to US-resident heirs until then",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "US Senate Executive Report 106-10: protocol amending the estate and gift tax convention with Germany",
+          "url": "https://www.govinfo.gov/content/pkg/CRPT-106erpt10/html/CRPT-106erpt10.htm",
+          "read": "2026-11-15",
+          "says": "November 3, 1999, on the protocol signed December 14, 1998. The protocol would \"extend from five to ten years the period\" of the citizenship exception: \"a U.S. citizen who is domiciled in both the United States and Germany\" under each country's law, and domiciled in Germany for not more than 10 years, \"would be deemed to be domiciled only in the United States\". The domicile country may tax worldwide and credits the other's tax on property there; the other country may tax certain situs assets such as real property and the business property of a permanent establishment."
+        },
+        {
+          "name": "Taxes for Expats: Germany inheritance tax for US expats and heirs",
+          "url": "https://www.taxesforexpats.com/country-guides/germany/inheritance-tax-germany.html",
+          "read": "2026-11-15",
+          "says": "Last updated Oct 29, 2026. Children and stepchildren have a €400,000 allowance (ErbStG § 16, class I). Under the treaty real estate is taxable where it lies (Article 5), permanent-establishment property where the establishment is (Article 6), and all other property only by the domicile state (Article 9); the treaty is \"primarily credit-based\". The page does not describe the ten-year citizenship rule."
+        }
+      ],
+      "note": "Read in the Senate committee report rather than the treaty or the Treasury technical explanation the profile cites (a PDF). The report says \"not more than 10 years\", which matches \"10 years or less\". \"German-sited assets\" stands for the report's situs assets (real property, business property of a permanent establishment). A German-resident heir is taxed whatever the decedent's treaty domicile, which is why the profile says \"US-resident heirs\"; a German law firm's summary of a Federal Fiscal Court ruling to that effect appeared in a search result and was not read."
+    },
+    {
+      "id": "de-estate-treaty-exists",
+      "fact": "estate",
+      "cities": [
+        "berlin"
+      ],
+      "claim": "There is a US estate treaty with this country (estate and gift tax treaty)",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-with",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "All 13 countries are in the table (see us-estate-treaty-list). Estate & Gift: Australia, Austria, France, Germany, Japan, United Kingdom. Estate only: Greece, Ireland, Italy, Netherlands, South Africa, Switzerland, and Canada by Article XXIX B of the income tax treaty."
+        }
+      ]
+    },
+    {
+      "id": "de-estate-us-exemption-2026",
+      "fact": "estate",
+      "cities": [
+        "berlin"
+      ],
+      "claim": "The US estate exemption is $15M in 2026",
+      "verdict": "confirmed",
+      "shared": "us-estate-exemption-2026",
+      "sources": [
+        {
+          "name": "IRS: What's new, estate and gift tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax",
+          "read": "2026-11-15",
+          "says": "The table \"Basic exclusion amount for year of death\" has the row 2026: $15,000,000 (2025: $13,990,000). The page says the Working Families Tax Cuts, Public Law 119-21, signed July 4, 2025, \"amends § 2010(c)(3) by increasing the basic exclusion amount to $15,000,000 for calendar year 2026\". Page last reviewed or updated 03-Nov-2026."
+        },
+        {
+          "name": "IRS: Estate tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-tax",
+          "read": "2026-11-15",
+          "says": "A return is required when the gross estate, plus adjusted taxable gifts and specific exemption, is more than the filing threshold for the year of death; the table gives 2026: $15,000,000. Page last reviewed or updated 23-Oct-2026."
+        },
+        {
+          "name": "IRS news release IR-2025-103: tax inflation adjustments for tax year 2026",
+          "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill",
+          "read": "2026-11-15",
+          "says": "\"Estates of decedents who die during 2026 have a basic exclusion amount of $15,000,000\", up from $13,990,000 for 2025; the release (October 9, 2025) cites Revenue Procedure 2025-32 and is marked as an archival document."
+        }
+      ]
+    },
+    {
+      "id": "de-estate-us-exemption-applies",
+      "fact": "estate",
+      "cities": [
+        "berlin"
+      ],
+      "claim": "The US exemption applies to a US citizen living there as anywhere",
+      "verdict": "confirmed",
+      "shared": "us-estate-exemption-applies-abroad",
+      "sources": [
+        {
+          "name": "IRS: Some nonresidents with U.S. assets must file estate tax returns",
+          "url": "https://www.irs.gov/individuals/international-taxpayers/some-nonresidents-with-us-assets-must-file-estate-tax-returns",
+          "read": "2026-11-15",
+          "says": "\"U.S. citizens are subject to U.S. estate taxation with respect to their worldwide assets\"; Form 706 is required when worldwide assets plus adjusted taxable gifts exceed the basic exclusion amount in effect on the date of death. By contrast a nonresident who is not a citizen files when US-situated assets exceed $60,000. Page last reviewed or updated 27-Jun-2026."
+        }
+      ]
+    },
+    {
+      "id": "de-lending-ibkr-accepts",
+      "fact": "lending",
+      "cities": [
+        "berlin"
+      ],
+      "claim": "IBKR serves residents of Germany",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly serves Germany residents",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        }
+      ],
+      "note": "Tried again on 2026-11-15: https://www.interactivebrokers.co.uk/en/accounts/open-account-country-list.php returned HTTP 403, as every Interactive Brokers page did in stage 1. The hedge stays."
+    },
+    {
+      "id": "de-lending-ibkr-eu-entity",
+      "fact": "lending",
+      "cities": [
+        "berlin"
+      ],
+      "claim": "EU clients are served through IBKR's Irish entity, Interactive Brokers Ireland Limited",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-eu-entity",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly serves Germany residents (EU clients through its Irish entity)",
+      "sources": [
+        {
+          "name": "Interactive Brokers Ireland Limited: Customer Agreement (document 4750, 7/1/2023), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/01_4750_IBIE_Customer_Agreement_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "Clause 1B: Interactive Brokers Ireland Limited (\"IBIE\") is incorporated in Ireland, company number 657406, and \"is regulated by the Central Bank of Ireland\", register number C423427. Clause 1C: unless told otherwise in writing, the client is categorised as a Retail Client. The agreement does not say which countries' residents IBIE serves."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. \"In the EU, customers sign up with the Irish entity\"; UK clients are with Interactive Brokers (U.K.) Limited; the Irish €20k compensation scheme applies to Eastern Europe after the Irish and Hungarian entities merged."
+        },
+        {
+          "name": "Investing in the Web: Interactive Brokers in Europe",
+          "url": "https://investingintheweb.com/broker-reviews/interactive-brokers-europe",
+          "read": "2026-11-15",
+          "says": "Updated on Sep 8, 2026. \"As an European resident, you are under the Central Bank of Ireland regulation\" (Interactive Brokers Ireland Limited); \"As a UK resident, you will be under this legal entity\" (Interactive Brokers UK Limited); \"Interactive Brokers Luxembourg and Central have been extinct/merged.\""
+        }
+      ],
+      "note": "The entity clause has no hedge word of its own; it sits inside the \"reportedly serves\" clause, which is the hedge recorded. IBKR's own document confirms the Irish entity exists; which residents it serves rests on the two dated secondary pages."
+    },
+    {
+      "id": "de-lending-schwab-accepts",
+      "fact": "lending",
+      "cities": [
+        "berlin"
+      ],
+      "claim": "Schwab International accepts residents of Germany",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab International reportedly accepts them",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. On that day the author ran every entry in Schwab's international account selector through the application: it accepted residents of 51 of 263 countries and regions: Argentina, Australia, Austria, the Bahamas, Belgium, Bermuda, Brazil, the British Virgin Islands, the Cayman Islands, Chile, China, Colombia, Costa Rica, the Czech Republic, Denmark, Ecuador, Finland, Germany, Greece, Guatemala, Hong Kong, Iceland, India, Indonesia, Ireland, Israel, Jersey, Luxembourg, Malaysia, the Marshall Islands, Mexico, the Netherlands, Norway, Panama, Paraguay, Peru, Poland, Portugal, Qatar, Singapore, South Korea, Spain, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Turks and Caicos, the United Arab Emirates, the United Kingdom and Uruguay. Named as not accepted: Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam; for the rest the application said \"Schwab currently cannot open accounts for residents of your country/region.\" The test covers new applicants on that day only."
+        }
+      ],
+      "note": "The page was read again on 2026-11-15 for this country: Germany is on its list of 51 countries and regions open to online application on October 23, 2026, marked \"Yes\". Schwab's own page (https://www.schwab.com/legal/schwab-one-account-agreement) returned its error page again (\"unable to authorize your request\")."
+    },
+    {
+      "id": "de-lending-schwab-cash-out",
+      "fact": "lending",
+      "cities": [
+        "berlin"
+      ],
+      "claim": "Schwab bars Europe residents from taking cash out through margin",
+      "verdict": "cant-confirm",
+      "shared": "schwab-europe-margin-cash-out",
+      "hedge": "reportedly",
+      "wording": "Schwab reportedly bars Europe residents from taking cash out through margin",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. It quotes the Schwab One Account Agreement (\"October 2026 edition, form 09/26\"), Schwab One International terms: \"Customers residing within Europe are restricted from using their Available Margin Loan Value\" to withdraw funds from their account, and advises keeping enough actual cash in the account for spending. It does not define \"Europe\"."
+        }
+      ]
+    },
+    {
+      "id": "de-lending-ibkr-margin-cash-out",
+      "fact": "lending",
+      "cities": [
+        "berlin"
+      ],
+      "claim": "A resident of Germany can draw cash on margin at IBKR (\"so plan on IBKR margin\")",
+      "verdict": "corrected",
+      "shared": "ibkr-eu-margin-cash-out",
+      "oldWording": "so plan on IBKR margin",
+      "newWording": "and IBKR's EU entity reportedly lends on margin only to buy securities, not to withdraw as cash, so confirm how you would draw cash before relying on either",
+      "sources": [
+        {
+          "name": "LYNX: Withdrawal (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/payments-and-transfers/withdrawal/",
+          "read": "2026-11-15",
+          "says": "\"It is not possible to withdraw in a currency if your cash balance is negative or would go negative after the withdrawal.\" In a margin account \"some funds may be used as collateral for other positions or to cover negative cash balances\", which lowers what can be withdrawn. The page is undated (footer: Copyright 2023)."
+        },
+        {
+          "name": "CapTrader: Geld abheben (help page of a German introducing broker for Interactive Brokers)",
+          "url": "https://www.captrader.com/geld-abheben/",
+          "read": "2026-11-15",
+          "says": "\"Auszahlungen sind nur möglich, wenn kein negativer Saldo in der entsprechenden Währung\" or in the total cash arises or grows: withdrawals are possible only if they do not create or increase a negative balance. Footer: © CapTrader 2026."
+        },
+        {
+          "name": "Interactive Brokers Ireland Limited: Customer Agreement (document 4750, 7/1/2023), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/01_4750_IBIE_Customer_Agreement_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "Clause 2A(i)(d) defines the margin service as one \"to enable Clients to acquire investment instruments\". Clause 5A(iv): \"Terms and conditions for deposit and withdrawal of funds (including holding periods) are as specified on the IBIE website.\" The agreement does not say that a loan may be withdrawn as cash."
+        },
+        {
+          "name": "Mustachian Post forum: Using margin loan at Interactive Brokers, page 13",
+          "url": "https://forum.mustachianpost.com/t/using-margin-loan-at-interactive-brokers/3980?page=13",
+          "read": "2026-11-15",
+          "says": "Posts of September to November 2024. One poster says withdrawing cash on margin is \"not possible in Germany with IB IE\" but is with IB UK; Swiss residents with IB UK accounts report having done it; another reports IBKR service saying \"IBUK customers can no longer withdraw cash if aggregate cash balance is -ve\", which a manager then said applies only to UK residents."
+        }
+      ],
+      "also": [
+        "scores.lending 3→2 (plan decision of 2026-11-15; rubric 2: EU residence, where Schwab and IBKR's EU entity both reportedly bar taking cash out through margin)",
+        "summary: added the closing sentence \"The weak point is the borrow step: Schwab and IBKR both reportedly bar EU residents from drawing margin as cash.\"",
+        "drawbacks: none mentioned Schwab margin or brokers, so none was reworded and none was added; the summary sentence carries it",
+        "sources: added the LYNX withdrawal page"
+      ],
+      "note": "Standard wording from shared.json applied unchanged. The LYNX withdrawal page was read again on 2026-11-15 and says the same (\"It is not possible to withdraw in a currency if your cash balance is negative or would go negative after the withdrawal\"). IBKR article 3750 (https://ibkb.interactivebrokers.com/article/3750) returned HTTP 403 again, so \"reportedly\" stays. Berlin is not one of the ranked 75 picks in src/data/expatPicks.ts, so there is no rank or `why` line to flag."
+    },
+    {
+      "id": "de-lending-priips-new-buys",
+      "fact": "lending",
+      "cities": [
+        "berlin"
+      ],
+      "claim": "EU PRIIPs rules block new buys of US-listed ETFs",
+      "verdict": "confirmed",
+      "shared": "priips-us-etf-new-buys-blocked",
+      "sources": [
+        {
+          "name": "LYNX: Key Information Document (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/products-and-regulations/regulations/key-information-document/",
+          "read": "2026-11-15",
+          "says": "Retail clients are \"not permitted to trade ETFs or other products that do not have a valid KID\"; many non-EU ETFs have none. Can a retail client buy US ETFs? \"No, not unless you are classified as a professional investor.\" The same applies to ETFs from Canada, Hong Kong, Mexico and Australia. The KID has applied to most products since 1 January 2018."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. \"PRIIPs is an EU rule that prohibits buying US-listed ETFs\", and this also applies to UK investors; US ETFs are open only to elective professional clients, while UCITS ETFs are available to all Europeans."
+        }
+      ],
+      "note": "The profile's \"reportedly\" stays; it does no harm."
+    },
+    {
+      "id": "de-lending-priips-holdings-kept",
+      "fact": "lending",
+      "cities": [
+        "berlin"
+      ],
+      "claim": "The block is on buying, not on holding US-listed ETFs",
+      "verdict": "confirmed",
+      "shared": "priips-existing-holdings-kept",
+      "sources": [
+        {
+          "name": "LYNX: Key Information Document (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/products-and-regulations/regulations/key-information-document/",
+          "read": "2026-11-15",
+          "says": "The page's FAQ says retail clients \"may still hold or sell existing positions, but new purchases are restricted.\""
+        },
+        {
+          "name": "Regulation (EU) No 1286/2014, Article 13, as adopted (legislation.gov.uk copy of the EU text)",
+          "url": "https://www.legislation.gov.uk/eur/2014/1286/article/13/adopted",
+          "read": "2026-11-15",
+          "says": "The duty to provide a KID falls on \"a person advising on, or selling, a PRIIP\" before the retail investor is bound; nothing in the article reaches a PRIIP the investor already holds or a sale by the investor."
+        }
+      ]
+    },
+    {
+      "id": "de-visa-section-7",
+      "fact": "visa",
+      "cities": [
+        "berlin"
+      ],
+      "claim": "There is no dedicated retirement visa: retirees apply for a discretionary residence permit for \"other purposes\" under §7(1) AufenthG",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Residence Act (AufenthG) § 7, gesetze-im-internet.de",
+          "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__7.html",
+          "read": "2026-11-15",
+          "says": "§ 7(1) sentence 3: \"In begründeten Fällen kann eine Aufenthaltserlaubnis auch für einen von diesem Gesetz nicht vorgesehenen Aufenthaltszweck erteilt werden.\" Sentence 4: such a permit does not allow work unless permitted under § 4a(1)."
+        },
+        {
+          "name": "Schlun & Elseven: retiree residence permits in Germany",
+          "url": "https://se-legal.de/immigration-lawyer-germany/retiree-resident-permits-germany/?lang=en",
+          "read": "2026-11-15",
+          "says": "The permit rests on Section 7 of the Residence Act and \"is not a right. It is a discretionary decision\" of the immigration office. \"There is no fixed income threshold\": pension, savings, investments and other assets are weighed. Health insurance meeting German standards is mandatory. The permit is \"typically granted for one year initially\". US citizens can enter visa-free for up to 90 days and apply from inside Germany. After five years a settlement permit is possible if the integration requirements, including German, are met. The page shows no date."
+        }
+      ],
+      "note": "The provision is § 7(1) sentence 3. make-it-in-germany.com returned a browser-verification page (Radware) and bamf.de was not needed."
+    },
+    {
+      "id": "de-visa-no-fixed-income",
+      "fact": "visa",
+      "cities": [
+        "berlin"
+      ],
+      "claim": "There is no fixed income threshold: pensions, savings or investments must cover living costs, with adequate health insurance",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Schlun & Elseven: retiree residence permits in Germany",
+          "url": "https://se-legal.de/immigration-lawyer-germany/retiree-resident-permits-germany/?lang=en",
+          "read": "2026-11-15",
+          "says": "The permit rests on Section 7 of the Residence Act and \"is not a right. It is a discretionary decision\" of the immigration office. \"There is no fixed income threshold\": pension, savings, investments and other assets are weighed. Health insurance meeting German standards is mandatory. The permit is \"typically granted for one year initially\". US citizens can enter visa-free for up to 90 days and apply from inside Germany. After five years a settlement permit is possible if the integration requirements, including German, are met. The page shows no date."
+        }
+      ],
+      "note": "Law-firm source, as the fact says; the statute sets no figure."
+    },
+    {
+      "id": "de-visa-apply-in-germany",
+      "fact": "visa",
+      "cities": [
+        "berlin"
+      ],
+      "claim": "US citizens can apply in Germany within their 90 visa-free days",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Residence Regulation (AufenthV) § 41, gesetze-im-internet.de",
+          "url": "https://www.gesetze-im-internet.de/aufenthv/__41.html",
+          "read": "2026-11-15",
+          "says": "§ 41(1): nationals of Australia, Israel, Japan, Canada, the Republic of Korea, New Zealand, the United Kingdom and the United States may enter without a visa and obtain the residence title in Germany. (3): it must be applied for within 90 days of entry."
+        },
+        {
+          "name": "Schlun & Elseven: retiree residence permits in Germany",
+          "url": "https://se-legal.de/immigration-lawyer-germany/retiree-resident-permits-germany/?lang=en",
+          "read": "2026-11-15",
+          "says": "The permit rests on Section 7 of the Residence Act and \"is not a right. It is a discretionary decision\" of the immigration office. \"There is no fixed income threshold\": pension, savings, investments and other assets are weighed. Health insurance meeting German standards is mandatory. The permit is \"typically granted for one year initially\". US citizens can enter visa-free for up to 90 days and apply from inside Germany. After five years a settlement permit is possible if the integration requirements, including German, are met. The page shows no date."
+        }
+      ]
+    },
+    {
+      "id": "de-visa-one-year",
+      "fact": "visa",
+      "cities": [
+        "berlin"
+      ],
+      "claim": "Permits usually run a year at a time",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Schlun & Elseven: retiree residence permits in Germany",
+          "url": "https://se-legal.de/immigration-lawyer-germany/retiree-resident-permits-germany/?lang=en",
+          "read": "2026-11-15",
+          "says": "The permit rests on Section 7 of the Residence Act and \"is not a right. It is a discretionary decision\" of the immigration office. \"There is no fixed income threshold\": pension, savings, investments and other assets are weighed. Health insurance meeting German standards is mandatory. The permit is \"typically granted for one year initially\". US citizens can enter visa-free for up to 90 days and apply from inside Germany. After five years a settlement permit is possible if the integration requirements, including German, are met. The page shows no date."
+        }
+      ]
+    },
+    {
+      "id": "de-visa-settlement",
+      "fact": "visa",
+      "cities": [
+        "berlin"
+      ],
+      "claim": "Settlement is possible after 5 years with sufficient German (B1 in practice, waivable from age 60 in hardship cases)",
+      "verdict": "corrected",
+      "oldWording": "waivable from age 60 in hardship cases",
+      "newWording": "waivable in hardship cases) and 60 months of pension contributions or comparable provision, which a retiree may lack",
+      "sources": [
+        {
+          "name": "Residence Act (AufenthG) § 9, gesetze-im-internet.de",
+          "url": "https://www.gesetze-im-internet.de/aufenthg_2004/__9.html",
+          "read": "2026-11-15",
+          "says": "§ 9(2): a settlement permit needs, among other things, five years with a residence permit (no. 1), a secure livelihood (no. 2), \"mindestens 60 Monate Pflichtbeiträge oder freiwillige Beiträge zur gesetzlichen Rentenversicherung\" or proof of comparable provision (no. 3), and \"ausreichende Kenntnisse der deutschen Sprache\" (no. 7). Nos. 7 and 8 are waived for illness or disability and may be waived \"zur Vermeidung einer Härte\". The section sets no age."
+        },
+        {
+          "name": "VisaRight: Niederlassungserlaubnis",
+          "url": "https://visaright.eu/blog/niederlassungserlaubnis",
+          "read": "2026-11-15",
+          "says": "Published 1 May 2026, last checked 1 August 2026. Five years with a residence permit; \"ausreichende Kenntnisse der deutschen Sprache\", read as B1 by the BAMF rather than by the statute; 60 months of compulsory or voluntary pension contributions (comparable schemes count). It says a person over 60 without sufficient German can get an exception under § 9(2) sentence 4."
+        }
+      ],
+      "also": [
+        "sources: added AufenthG § 9",
+        "scores.visa stays 3 (workable, discretionary, heavy paperwork)",
+        "summary and drawbacks unchanged: neither mentions settlement"
+      ],
+      "note": "Two things were off. The statute requires 60 months of contributions to the statutory pension scheme or proof of comparable provision, which the fact left out and which matters most to someone who never worked in Germany. And § 9(2) has no age: the language test may be waived for hardship (and is waived for illness or disability); the \"from age 60\" is VisaRight's reading, not the law's. Whether a US pension or portfolio counts as comparable provision is for the immigration office; \"may lack\" is the hedge."
+    },
+    {
+      "id": "de-healthcare-charite",
+      "fact": "healthcare",
+      "cities": [
+        "berlin"
+      ],
+      "claim": "The Charité is Europe's largest university hospital",
+      "verdict": "corrected",
+      "oldWording": "Europe's largest university hospital",
+      "newWording": "Germany's largest university hospital",
+      "sources": [
+        {
+          "name": "Charité: facts and figures",
+          "url": "https://www.charite.de/en/charite/about_us/facts_figures/",
+          "read": "2026-11-15",
+          "says": "The site describes the Charité as \"Germany's largest university hospital\", with 4 campuses, 17 CharitéCenters and 25,256 employees in the group at 31 December 2025. Neither this page nor the about page calls it Europe's largest."
+        }
+      ],
+      "also": [
+        "summary unchanged (\"world-class hospitals such as the Charité\")",
+        "scores.healthcare stays 4"
+      ],
+      "note": "The Charité's own pages say \"Germany's largest university hospital\"; no page read says Europe's largest."
+    },
+    {
+      "id": "de-healthcare-vivantes",
+      "fact": "healthcare",
+      "cities": [
+        "berlin"
+      ],
+      "claim": "Vivantes is a leading Berlin hospital group",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "praktischArzt: die größten Krankenhausträger in Deutschland",
+          "url": "https://www.praktischarzt.de/magazin/groesste-krankenhaustraeger-deutschland-2025/",
+          "read": "2026-11-15",
+          "says": "Updated 11.02.2025. Vivantes, based in Berlin, is the largest municipal hospital operator in Germany, with 16 clinics and 10,436 beds (4th of the top 30); the Charité is listed with 3,011 beds."
+        }
+      ],
+      "note": "Vivantes' own pages (https://www.vivantes.de/en/about-us, https://www.vivantes.de/unternehmen/ueber-vivantes) are 404s; a 2025 ranking was used."
+    },
+    {
+      "id": "de-healthcare-statutory-closed",
+      "fact": "healthcare",
+      "cities": [
+        "berlin"
+      ],
+      "claim": "A retiree arriving from abroad generally cannot join statutory insurance, which needs years of prior membership",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "VisaGuard Berlin: which health insurance for a retirement residence permit",
+          "url": "https://www.visaguard.berlin/en/post/retirement-visa-in-germany-which-health-insurance-should-you-choose",
+          "read": "2026-11-15",
+          "says": "Joining the pensioners' statutory scheme needs statutory insurance for at least 90% of the second half of working life (§ 5(1) no. 11 SGB V); private insurance is \"often the only realistic option for retirees from abroad\". Cover \"must correspond in scope and depth to the standard of statutory health insurance in Germany\"; \"Simple travel insurance is by no means sufficient.\" The privately insured must also take private long-term care insurance. Premiums depend on \"individual risk and the chosen scope of coverage\". Dated \"Jul 2\", footer 2022–2025; the firm earns referral income from an insurer it recommends."
+        },
+        {
+          "name": "Social Code Book V (SGB V) § 6, gesetze-im-internet.de",
+          "url": "https://www.gesetze-im-internet.de/sgb_5/__6.html",
+          "read": "2026-11-15",
+          "says": "§ 6(3a): people who become liable to statutory insurance after turning 55 stay outside it if they were not statutorily insured \"in den letzten fünf Jahren vor Eintritt der Versicherungspflicht\" and were exempt or not liable for at least half that time."
+        }
+      ],
+      "note": "The statute read (§ 6(3a)) is the over-55 bar for people who would otherwise enter through work; the prior-membership rule for pensioners (§ 5(1) no. 11) rests on the law-firm page. The profile's \"generally\" stays."
+    },
+    {
+      "id": "de-healthcare-private-cover",
+      "fact": "healthcare",
+      "cities": [
+        "berlin"
+      ],
+      "claim": "Private cover matching statutory benefits, plus long-term care insurance, is the realistic route",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "VisaGuard Berlin: which health insurance for a retirement residence permit",
+          "url": "https://www.visaguard.berlin/en/post/retirement-visa-in-germany-which-health-insurance-should-you-choose",
+          "read": "2026-11-15",
+          "says": "Joining the pensioners' statutory scheme needs statutory insurance for at least 90% of the second half of working life (§ 5(1) no. 11 SGB V); private insurance is \"often the only realistic option for retirees from abroad\". Cover \"must correspond in scope and depth to the standard of statutory health insurance in Germany\"; \"Simple travel insurance is by no means sufficient.\" The privately insured must also take private long-term care insurance. Premiums depend on \"individual risk and the chosen scope of coverage\". Dated \"Jul 2\", footer 2022–2025; the firm earns referral income from an insurer it recommends."
+        },
+        {
+          "name": "Schlun & Elseven: retiree residence permits in Germany",
+          "url": "https://se-legal.de/immigration-lawyer-germany/retiree-resident-permits-germany/?lang=en",
+          "read": "2026-11-15",
+          "says": "The permit rests on Section 7 of the Residence Act and \"is not a right. It is a discretionary decision\" of the immigration office. \"There is no fixed income threshold\": pension, savings, investments and other assets are weighed. Health insurance meeting German standards is mandatory. The permit is \"typically granted for one year initially\". US citizens can enter visa-free for up to 90 days and apply from inside Germany. After five years a settlement permit is possible if the integration requirements, including German, are met. The page shows no date."
+        }
+      ]
+    },
+    {
+      "id": "de-healthcare-private-cost",
+      "fact": "healthcare",
+      "cities": [
+        "berlin"
+      ],
+      "claim": "Private cover is underwritten and costly at 65+",
+      "verdict": "corrected",
+      "oldWording": "and it is underwritten and costly at 65+",
+      "newWording": "and it is costly at 65+: normal tariffs are underwritten, and the basic tariff that insurers must sell without a health surcharge is capped at about €1,018/month (2026)",
+      "sources": [
+        {
+          "name": "Federal Ministry of Health: Basistarif in der privaten Krankenversicherung",
+          "url": "https://www.bundesgesundheitsministerium.de/service/begriffe-von-a-z/b/basistarif-in-der-privaten-krankenversicherung",
+          "read": "2026-11-15",
+          "says": "As of 3 March 2026. Open to, among others, \"Personen ohne Krankenversicherungsschutz mit Wohnsitz in Deutschland\". \"Private Krankenversicherungsunternehmen dürfen niemanden zurückweisen, der sich in diesem Tarif versichern darf.\" \"Im Basistarif sind Risikozuschläge oder Leistungsausschlüsse nicht erlaubt.\" Benefits are comparable to statutory insurance; the premium may not exceed the statutory maximum, about 1,018 euros a month from 1 January 2026, halved in case of need."
+        },
+        {
+          "name": "VisaGuard Berlin: which health insurance for a retirement residence permit",
+          "url": "https://www.visaguard.berlin/en/post/retirement-visa-in-germany-which-health-insurance-should-you-choose",
+          "read": "2026-11-15",
+          "says": "Joining the pensioners' statutory scheme needs statutory insurance for at least 90% of the second half of working life (§ 5(1) no. 11 SGB V); private insurance is \"often the only realistic option for retirees from abroad\". Cover \"must correspond in scope and depth to the standard of statutory health insurance in Germany\"; \"Simple travel insurance is by no means sufficient.\" The privately insured must also take private long-term care insurance. Premiums depend on \"individual risk and the chosen scope of coverage\". Dated \"Jul 2\", footer 2022–2025; the firm earns referral income from an insurer it recommends."
+        }
+      ],
+      "also": [
+        "sources: added the Federal Ministry of Health page",
+        "summary (\"usually needs costly private health insurance\") and drawback 2 unchanged: they agree"
+      ],
+      "note": "\"Underwritten\" was only half right: every private insurer must offer the Basistarif to an uninsured resident, with no risk surcharge or exclusions, at up to the statutory maximum. No page read gives a normal-tariff premium for a 65-year-old newcomer; the cap is the figure that could be confirmed."
+    }
+  ]
+}

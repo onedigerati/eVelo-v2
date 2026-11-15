@@ -1,0 +1,838 @@
+{
+  "country": "France",
+  "cities": [
+    "paris",
+    "nice",
+    "gascony"
+  ],
+  "claims": [
+    {
+      "id": "fr-tax-no-wealth-tax-on-portfolio",
+      "fact": "tax",
+      "cities": [
+        "paris",
+        "nice",
+        "gascony"
+      ],
+      "claim": "France has no wealth tax on a portfolio: IFI covers real estate only",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Service-Public: impôt sur la fortune immobilière (IFI)",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F138",
+          "read": "2026-11-15",
+          "says": "Vérifié le 6 mars 2026. The IFI concerns a net taxable non-professional real-estate estate \"supérieure à 1 300 000 €\" on 1 January 2026; once over, tax starts from €800,000: 0.50% from €800,001 to €1.3M, 0.70% to €2.57M, 1% to €5M, 1.25% to €10M, 1.50% above. It is computed on the net value after debts relating to the taxable property. The page covers real estate only and names no financial assets."
+        },
+        {
+          "name": "PwC: France, other taxes",
+          "url": "https://taxsummaries.pwc.com/france/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 24 April 2026. Real estate wealth tax applies only if net taxable real-estate wealth exceeds EUR 1.3 million on 1 January, at progressive rates from 0.50% (after an EUR 800,000 allowance) to 1.5% above EUR 10 million; \"Only non-professional real estate properties are taxable.\" Inheritance: if the deceased is a French tax resident, worldwide assets are taxed; progressive rates apply after an EUR 100,000 rebate for direct-line beneficiaries."
+        },
+        {
+          "name": "Ateis Patrimoine: Impôt sur la fortune improductive, ce que la LF 2026 a retenu",
+          "url": "https://ateispatrimoine.com/?p=13124",
+          "read": "2026-11-15",
+          "says": "Dated 1 April 2026, rewritten 13 May 2026. The impôt sur la fortune improductive was voted at first reading on 31 October 2025 but left out of the final 2026 finance law adopted on 2 February 2026; \"aucun foyer fiscal n'est assujetti à un « IFIP » en 2026\", so euro funds, cash and crypto stay outside the IFI base. \"Aucun paramètre n'a été modifié par la loi de finances pour 2026\": threshold €1.3M, scale 0.5% to 1.5%, and a 30% allowance on the main residence."
+        }
+      ],
+      "note": "Agrees with the France note in src/data/localTaxes.ts (\"No wealth tax on a portfolio: IFI covers real estate only\"); the model has no wealth entry for France. Gascony adds that IFI is \"unlikely at rural Gers prices\": no figure, not checked separately."
+    },
+    {
+      "id": "fr-tax-ifi-threshold",
+      "fact": "tax",
+      "cities": [
+        "paris",
+        "nice",
+        "gascony"
+      ],
+      "claim": "IFI applies to net real estate over €1.3M",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Service-Public: impôt sur la fortune immobilière (IFI)",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F138",
+          "read": "2026-11-15",
+          "says": "Vérifié le 6 mars 2026. The IFI concerns a net taxable non-professional real-estate estate \"supérieure à 1 300 000 €\" on 1 January 2026; once over, tax starts from €800,000: 0.50% from €800,001 to €1.3M, 0.70% to €2.57M, 1% to €5M, 1.25% to €10M, 1.50% above. It is computed on the net value after debts relating to the taxable property. The page covers real estate only and names no financial assets."
+        },
+        {
+          "name": "PwC: France, other taxes",
+          "url": "https://taxsummaries.pwc.com/france/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 24 April 2026. Real estate wealth tax applies only if net taxable real-estate wealth exceeds EUR 1.3 million on 1 January, at progressive rates from 0.50% (after an EUR 800,000 allowance) to 1.5% above EUR 10 million; \"Only non-professional real estate properties are taxable.\" Inheritance: if the deceased is a French tax resident, worldwide assets are taxed; progressive rates apply after an EUR 100,000 rebate for direct-line beneficiaries."
+        }
+      ],
+      "note": "Once over €1.3M the tax is counted from €800,000; the profiles do not say otherwise."
+    },
+    {
+      "id": "fr-tax-paris-ifi-rates",
+      "fact": "tax",
+      "cities": [
+        "paris"
+      ],
+      "claim": "IFI is charged at 0.5–1.5%",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Service-Public: impôt sur la fortune immobilière (IFI)",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F138",
+          "read": "2026-11-15",
+          "says": "Vérifié le 6 mars 2026. The IFI concerns a net taxable non-professional real-estate estate \"supérieure à 1 300 000 €\" on 1 January 2026; once over, tax starts from €800,000: 0.50% from €800,001 to €1.3M, 0.70% to €2.57M, 1% to €5M, 1.25% to €10M, 1.50% above. It is computed on the net value after debts relating to the taxable property. The page covers real estate only and names no financial assets."
+        }
+      ]
+    },
+    {
+      "id": "fr-tax-paris-price-per-m2",
+      "fact": "tax",
+      "cities": [
+        "paris"
+      ],
+      "claim": "Paris flats average about €9,700/m² (Sept 2026)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "SeLoger: immobilier Paris 2026, bilan de l'année",
+          "url": "https://edito.seloger.com/actualites/france/immobilier-paris-2026-bilan-de-l-annee-perspectives-2027-article-23824.html",
+          "read": "2026-11-15",
+          "says": "Article dated 7 October 2026: the average price of apartments in Paris is 9,670 €/m² at 1 September 2026."
+        }
+      ],
+      "note": "The summary repeats \"about €9,700/m²\"."
+    },
+    {
+      "id": "fr-tax-paris-ifi-flat-size",
+      "fact": "tax",
+      "cities": [
+        "paris"
+      ],
+      "claim": "A buyer of about 135 m² or more in Paris is in scope of IFI",
+      "verdict": "corrected",
+      "oldWording": "so a buyer of about 135 m² or more is in scope",
+      "newWording": "so a flat of about 135 m² or more is in scope, or about 190 m² as a main home, which gets a 30% allowance",
+      "sources": [
+        {
+          "name": "Ateis Patrimoine: Impôt sur la fortune improductive, ce que la LF 2026 a retenu",
+          "url": "https://ateispatrimoine.com/?p=13124",
+          "read": "2026-11-15",
+          "says": "Dated 1 April 2026, rewritten 13 May 2026. The impôt sur la fortune improductive was voted at first reading on 31 October 2025 but left out of the final 2026 finance law adopted on 2 February 2026; \"aucun foyer fiscal n'est assujetti à un « IFIP » en 2026\", so euro funds, cash and crypto stay outside the IFI base. \"Aucun paramètre n'a été modifié par la loi de finances pour 2026\": threshold €1.3M, scale 0.5% to 1.5%, and a 30% allowance on the main residence."
+        },
+        {
+          "name": "Service-Public: impôt sur la fortune immobilière (IFI)",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F138",
+          "read": "2026-11-15",
+          "says": "Vérifié le 6 mars 2026. The IFI concerns a net taxable non-professional real-estate estate \"supérieure à 1 300 000 €\" on 1 January 2026; once over, tax starts from €800,000: 0.50% from €800,001 to €1.3M, 0.70% to €2.57M, 1% to €5M, 1.25% to €10M, 1.50% above. It is computed on the net value after debts relating to the taxable property. The page covers real estate only and names no financial assets."
+        },
+        {
+          "name": "SeLoger: immobilier Paris 2026, bilan de l'année",
+          "url": "https://edito.seloger.com/actualites/france/immobilier-paris-2026-bilan-de-l-annee-perspectives-2027-article-23824.html",
+          "read": "2026-11-15",
+          "says": "Article dated 7 October 2026: the average price of apartments in Paris is 9,670 €/m² at 1 September 2026."
+        }
+      ],
+      "also": [
+        "scores.tax stays 2 (dividends above 30%; IFI is not a tax on the portfolio)",
+        "summary unchanged: \"a good-sized flat can push a buyer into the IFI\" still holds",
+        "sources: added Ateis Patrimoine"
+      ],
+      "note": "€1.3M ÷ €9,670 is 134 m², so 135 m² is right for a second home or a let flat. A retiree would live in the flat, and a main residence is valued 30% lower for IFI: €1.3M ÷ 0.7 = €1.857M, about 192 m². The 30% allowance is from the secondary page; Service-Public F138 as returned by WebFetch did not mention it (asked twice), so it rests on Ateis alone and a reader of the BOFiP or CGI art. 973 could firm it up."
+    },
+    {
+      "id": "fr-tax-financial-assets-tax-dropped",
+      "fact": "tax",
+      "cities": [
+        "paris",
+        "nice",
+        "gascony"
+      ],
+      "claim": "The proposed tax on financial assets was dropped from the 2026 budget",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Ateis Patrimoine: Impôt sur la fortune improductive, ce que la LF 2026 a retenu",
+          "url": "https://ateispatrimoine.com/?p=13124",
+          "read": "2026-11-15",
+          "says": "Dated 1 April 2026, rewritten 13 May 2026. The impôt sur la fortune improductive was voted at first reading on 31 October 2025 but left out of the final 2026 finance law adopted on 2 February 2026; \"aucun foyer fiscal n'est assujetti à un « IFIP » en 2026\", so euro funds, cash and crypto stay outside the IFI base. \"Aucun paramètre n'a été modifié par la loi de finances pour 2026\": threshold €1.3M, scale 0.5% to 1.5%, and a 30% allowance on the main residence."
+        }
+      ],
+      "note": "Secondary page only (dated 2026); the finance law itself was not read. Service-Public F138 (verified 6 March 2026) shows the IFI unchanged and real-estate only, which fits."
+    },
+    {
+      "id": "fr-tax-pfu-rate-2026",
+      "fact": "tax",
+      "cities": [
+        "paris",
+        "nice",
+        "gascony"
+      ],
+      "claim": "Dividends, interest and gains pay a 31.4% flat tax (PFU) from 2026: 12.8% plus 18.6% social levies",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: France, income determination",
+          "url": "https://taxsummaries.pwc.com/france/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 24 April 2026. Dividends and interest earned from 2026 are taxed at a total of 31.4%: 12.8% income tax and 18.6% social surtaxes; capital gains are generally subject to the same 31.4% flat rate. The taxpayer may elect the progressive scale for all such income."
+        },
+        {
+          "name": "Service-Public: social levies (CSG, CRDS) on income from assets and investments",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2329?lang=en",
+          "read": "2026-11-15",
+          "says": "Verified 30 June 2026. On 2026 investment income in the general case: CSG 10.6%, CRDS 0.5%, solidarity levy 7.5%, total 18.6%. Life insurance, PEL, CEL and popular savings plans stay at 17.2% (CSG 9.2%), as does all 2025 investment income. Only people covered by the compulsory social security of another EU/EEA country or Switzerland are exempt from CSG and CRDS (7.5% solidarity levy still due); no non-EU country is mentioned."
+        },
+        {
+          "name": "Expat.com: France raises flat tax to 31.4%",
+          "url": "https://www.expat.com/en/expat-mag/12501-france-raises-flat-tax-to-314-percent-what-it-means-for-expats.html",
+          "read": "2026-11-15",
+          "says": "Dated 10 March 2026. The flat tax rises \"to 31.4%, up from the previous 30%\" through a 1.4-point rise in the CSG from 1 January 2026 (9.2% to 10.6%, so social contributions go from 17.2% to 18.6%, plus 12.8% income tax). Life insurance, real-estate gains and unfurnished rental income keep the earlier rate."
+        }
+      ],
+      "also": [
+        "sources: added Service-Public F2329 to all three"
+      ],
+      "note": "The summaries (\"dividends pay 31.4%\"), the drawbacks (\"31.4% on dividends and interest\") and Nice's `why` in expatPicks.ts agree. Not in the profiles and not added: life insurance and regulated savings plans stay at 30%; the CSG/CRDS exemption on the official page is only for people in another EU/EEA or Swiss social security scheme, so it would not reach an American covered by Medicare. scores.tax stays 2 (\"dividends taxed above 30% with surcharges\"). localTaxes.ts models no dividend tax for France, so there is nothing to compare."
+    },
+    {
+      "id": "fr-tax-puma-levy",
+      "fact": "tax",
+      "cities": [
+        "paris",
+        "nice",
+        "gascony"
+      ],
+      "claim": "A 6.5% PUMa levy (cotisation subsidiaire maladie) can hit capital income above €24,030 for a resident with no pension or earnings",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Indy: simulateur de taxe PUMa (cotisation subsidiaire maladie) 2026",
+          "url": "https://www.indy.fr/guide/fiscalite/gestion-financiere/simulateur-taxe-puma/",
+          "read": "2026-11-15",
+          "says": "Dated 14 September 2026. The contribution is due when earned income is below 20% of the PASS (€9,612) and capital income is above 50% of the PASS (€24,030; PASS 2026 = €48,060). Formula: 6.5% × (A − 0.5 × PASS) × [1 − R / (0.2 × PASS)], capital income capped at 8 PASS (€384,480). \"Vous n'êtes pas redevable si vous avez perçu au cours de l'année : une pension de retraite\", a disability pension, an annuity or unemployment benefit."
+        }
+      ],
+      "note": "Down the source order: www.urssaf.fr reset the connection on three tries (https://www.urssaf.fr/accueil/particulier/beneficiaire-puma.html twice, https://www.urssaf.fr/portail/home/espaces-dedies/beneficiaire-de-la-puma/assujettissement.html once), so the 2026 figures rest on a dated secondary page; the fact ends \"check current rules\". \"No earnings\" is loose: the levy tapers to nil at earned income of €9,612 (20% of the PASS). The levy is collected on the previous year's income. Nice's drawback \"a possible 6.5% PUMa levy\" agrees."
+    },
+    {
+      "id": "fr-estate-worldwide-estate",
+      "fact": "estate",
+      "cities": [
+        "paris",
+        "nice",
+        "gascony"
+      ],
+      "claim": "France taxes a French-resident decedent's worldwide estate",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: France, other taxes",
+          "url": "https://taxsummaries.pwc.com/france/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 24 April 2026. Real estate wealth tax applies only if net taxable real-estate wealth exceeds EUR 1.3 million on 1 January, at progressive rates from 0.50% (after an EUR 800,000 allowance) to 1.5% above EUR 10 million; \"Only non-professional real estate properties are taxable.\" Inheritance: if the deceased is a French tax resident, worldwide assets are taxed; progressive rates apply after an EUR 100,000 rebate for direct-line beneficiaries."
+        },
+        {
+          "name": "The Local France: the French 5-year rule for inheritance tax",
+          "url": "https://www.thelocal.fr/20230921/explained-the-french-5-year-rule-for-inheritance-tax",
+          "read": "2026-11-15",
+          "says": "Dated 21 September 2023. For a French tax resident \"France will consider your global assets for inheritance tax upon your death\"; the treaty exception needs the person to have lived in France \"less than five years during the 7-year period ending with the year of his death\" and to be only temporarily there, in which case \"only your French assets would be subject to French inheritance taxes\"."
+        }
+      ],
+      "note": "PwC rather than the statute: my guess at the Légifrance URL for CGI art. 750 ter returned 404 and Service-Public F14198 is silent on foreign assets. Agrees with localTaxes.ts, which taxes the worldwide estate. The summaries, drawbacks and the `why` lines of Nice and Gascony say the same."
+    },
+    {
+      "id": "fr-estate-child-allowance",
+      "fact": "estate",
+      "cities": [
+        "paris",
+        "nice",
+        "gascony"
+      ],
+      "claim": "Each child gets a €100k allowance",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Service-Public: droits de succession",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F14198",
+          "read": "2026-11-15",
+          "says": "Vérifié le 9 février 2026. A child's allowance is €100,000, applied at the death of each parent for each child. Direct-line scale on the taxable share after the allowance: up to €8,072 5%; €8,073–12,109 10%; €12,110–15,932 15%; €15,933–552,324 20%; €552,325–902,838 30%; €902,839–1,805,677 40%; over €1,805,677 45%. The page says nothing on foreign assets or treaties."
+        }
+      ],
+      "note": "Agrees with localTaxes.ts (perHeirAllowance €100,000)."
+    },
+    {
+      "id": "fr-estate-rates",
+      "fact": "estate",
+      "cities": [
+        "paris",
+        "nice",
+        "gascony"
+      ],
+      "claim": "Children then pay 5–45%: 20% from €15,933 to €552,324, 45% above €1,805,677",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Service-Public: droits de succession",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F14198",
+          "read": "2026-11-15",
+          "says": "Vérifié le 9 février 2026. A child's allowance is €100,000, applied at the death of each parent for each child. Direct-line scale on the taxable share after the allowance: up to €8,072 5%; €8,073–12,109 10%; €12,110–15,932 15%; €15,933–552,324 20%; €552,325–902,838 30%; €902,839–1,805,677 40%; over €1,805,677 45%. The page says nothing on foreign assets or treaties."
+        }
+      ],
+      "note": "Agrees with localTaxes.ts band for band (5% from 0, 10% from €8,072, 15% from €12,109, 20% from €15,932, 30% from €552,324, 40% from €902,838, 45% from €1,805,677). The model note's remark that only three bands came from research can go: the official page gives all seven. scores.estate stays 1 (top rate above 35% on the worldwide estate)."
+    },
+    {
+      "id": "fr-estate-treaty-exists",
+      "fact": "estate",
+      "cities": [
+        "paris",
+        "nice",
+        "gascony"
+      ],
+      "claim": "There is a US–France estate treaty",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-with",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "All 13 countries are in the table (see us-estate-treaty-list). Estate & Gift: Australia, Austria, France, Germany, Japan, United Kingdom. Estate only: Greece, Ireland, Italy, Netherlands, South Africa, Switzerland, and Canada by Article XXIX B of the income tax treaty."
+        }
+      ],
+      "note": "The France profiles do not cite the US estate exemption, so there is no instance of the shared exemption claims."
+    },
+    {
+      "id": "fr-estate-treaty-five-of-seven",
+      "fact": "estate",
+      "cities": [
+        "paris",
+        "nice",
+        "gascony"
+      ],
+      "claim": "Under the treaty a US citizen (not French) who clearly intends to keep a US domicile and has lived in France under 5 of the last 7 years is treated as US-domiciled",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "SF Tax Counsel: a closer look at the US–France estate and gift tax treaty",
+          "url": "https://sftaxcounsel.com/blog/a-closer-look-at-the-u-s-france-estate-and-gift-tax-treaty/",
+          "read": "2026-11-15",
+          "says": "Dated 16 November 2023. A citizen of one state is treated as domiciled there if \"he had a clear intention to retain his domicile in that country\" and \"he was domiciled in the other country for less than five years during the 7-year period\". \"The situs country is given priority taxation in the case of real property, tangible personal property, and business assets\"; double taxation is relieved by \"requiring one of the countries to allow a credit against its tax for the taxes paid to the other country\". It cites the 2004 Protocol."
+        },
+        {
+          "name": "The Local France: the French 5-year rule for inheritance tax",
+          "url": "https://www.thelocal.fr/20230921/explained-the-french-5-year-rule-for-inheritance-tax",
+          "read": "2026-11-15",
+          "says": "Dated 21 September 2023. For a French tax resident \"France will consider your global assets for inheritance tax upon your death\"; the treaty exception needs the person to have lived in France \"less than five years during the 7-year period ending with the year of his death\" and to be only temporarily there, in which case \"only your French assets would be subject to French inheritance taxes\"."
+        }
+      ],
+      "note": "Both pages are from 2023, older than the plan's \"dated 2025–26\" for secondary sources; the treaty has not been amended since the 2004 protocol. The official consolidated text is a PDF on impots.gouv.fr (https://impots.gouv.fr/10conventionsetats-unisetats-unisconvention-avec-les-etats-unis-successions-donationsfd1836pdf) that WebFetch returned as unreadable binary, and no HTML copy was found; a person can check article 4(3) there. \"(not French)\" was not on either page read: the secondary page speaks of a citizen of one state domiciled in the other. Agrees with the localTaxes.ts note."
+    },
+    {
+      "id": "fr-estate-treaty-french-situs-only",
+      "fact": "estate",
+      "cities": [
+        "paris",
+        "nice",
+        "gascony"
+      ],
+      "claim": "For such a person France taxes only French real estate and goods in France",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "SF Tax Counsel: a closer look at the US–France estate and gift tax treaty",
+          "url": "https://sftaxcounsel.com/blog/a-closer-look-at-the-u-s-france-estate-and-gift-tax-treaty/",
+          "read": "2026-11-15",
+          "says": "Dated 16 November 2023. A citizen of one state is treated as domiciled there if \"he had a clear intention to retain his domicile in that country\" and \"he was domiciled in the other country for less than five years during the 7-year period\". \"The situs country is given priority taxation in the case of real property, tangible personal property, and business assets\"; double taxation is relieved by \"requiring one of the countries to allow a credit against its tax for the taxes paid to the other country\". It cites the 2004 Protocol."
+        },
+        {
+          "name": "The Local France: the French 5-year rule for inheritance tax",
+          "url": "https://www.thelocal.fr/20230921/explained-the-french-5-year-rule-for-inheritance-tax",
+          "read": "2026-11-15",
+          "says": "Dated 21 September 2023. For a French tax resident \"France will consider your global assets for inheritance tax upon your death\"; the treaty exception needs the person to have lived in France \"less than five years during the 7-year period ending with the year of his death\" and to be only temporarily there, in which case \"only your French assets would be subject to French inheritance taxes\"."
+        }
+      ],
+      "note": "The treaty also lets the situs country tax business assets of a permanent establishment, which the profiles leave out; it does not matter to a retiree's portfolio. Same limits as fr-estate-treaty-five-of-seven: secondary pages from 2023, treaty text not read."
+    },
+    {
+      "id": "fr-estate-treaty-credits-after",
+      "fact": "estate",
+      "cities": [
+        "paris",
+        "nice",
+        "gascony"
+      ],
+      "claim": "After five years, or for anyone settled in France for good, the worldwide estate is in reach, with treaty credits against double tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "SF Tax Counsel: a closer look at the US–France estate and gift tax treaty",
+          "url": "https://sftaxcounsel.com/blog/a-closer-look-at-the-u-s-france-estate-and-gift-tax-treaty/",
+          "read": "2026-11-15",
+          "says": "Dated 16 November 2023. A citizen of one state is treated as domiciled there if \"he had a clear intention to retain his domicile in that country\" and \"he was domiciled in the other country for less than five years during the 7-year period\". \"The situs country is given priority taxation in the case of real property, tangible personal property, and business assets\"; double taxation is relieved by \"requiring one of the countries to allow a credit against its tax for the taxes paid to the other country\". It cites the 2004 Protocol."
+        },
+        {
+          "name": "The Local France: the French 5-year rule for inheritance tax",
+          "url": "https://www.thelocal.fr/20230921/explained-the-french-5-year-rule-for-inheritance-tax",
+          "read": "2026-11-15",
+          "says": "Dated 21 September 2023. For a French tax resident \"France will consider your global assets for inheritance tax upon your death\"; the treaty exception needs the person to have lived in France \"less than five years during the 7-year period ending with the year of his death\" and to be only temporarily there, in which case \"only your French assets would be subject to French inheritance taxes\"."
+        },
+        {
+          "name": "PwC: France, other taxes",
+          "url": "https://taxsummaries.pwc.com/france/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 24 April 2026. Real estate wealth tax applies only if net taxable real-estate wealth exceeds EUR 1.3 million on 1 January, at progressive rates from 0.50% (after an EUR 800,000 allowance) to 1.5% above EUR 10 million; \"Only non-professional real estate properties are taxable.\" Inheritance: if the deceased is a French tax resident, worldwide assets are taxed; progressive rates apply after an EUR 100,000 rebate for direct-line beneficiaries."
+        }
+      ],
+      "note": "Which country credits which tax was not on the pages read. localTaxes.ts ignores the credits and says so."
+    },
+    {
+      "id": "fr-lending-ibkr-only-broker",
+      "fact": "lending",
+      "cities": [
+        "paris",
+        "nice",
+        "gascony"
+      ],
+      "claim": "IBKR is the only US broker open to France residents",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "IBKR is reportedly the only broker open to France residents",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        }
+      ],
+      "also": [
+        "fact reworded from \"IBKR is reportedly the only option\" when the margin clause was added; the hedge was already there"
+      ],
+      "note": "Tried again on 2026-11-15: https://www.interactivebrokers.ie/en/accounts/open-account-country-list.php returned HTTP 403. The hedge stays."
+    },
+    {
+      "id": "fr-lending-schwab-not-accepting",
+      "fact": "lending",
+      "cities": [
+        "paris",
+        "nice",
+        "gascony"
+      ],
+      "claim": "Schwab International's online form does not accept France residents",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab International's online form reportedly does not accept them",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. On that day the author ran every entry in Schwab's international account selector through the application: it accepted residents of 51 of 263 countries and regions: Argentina, Australia, Austria, the Bahamas, Belgium, Bermuda, Brazil, the British Virgin Islands, the Cayman Islands, Chile, China, Colombia, Costa Rica, the Czech Republic, Denmark, Ecuador, Finland, Germany, Greece, Guatemala, Hong Kong, Iceland, India, Indonesia, Ireland, Israel, Jersey, Luxembourg, Malaysia, the Marshall Islands, Mexico, the Netherlands, Norway, Panama, Paraguay, Peru, Poland, Portugal, Qatar, Singapore, South Korea, Spain, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Turks and Caicos, the United Arab Emirates, the United Kingdom and Uruguay. Named as not accepted: Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam; for the rest the application said \"Schwab currently cannot open accounts for residents of your country/region.\" The test covers new applicants on that day only."
+        }
+      ],
+      "note": "France is among the countries the shared claim records as not accepted on the dated secondary list. Schwab's own pages were not readable in stage 1 and were not tried again here."
+    },
+    {
+      "id": "fr-lending-ibkr-margin-cash-out",
+      "fact": "lending",
+      "cities": [
+        "paris",
+        "nice",
+        "gascony"
+      ],
+      "claim": "With IBKR the only option, a France resident can borrow against the portfolio there (implied by \"IBKR is reportedly the only option\")",
+      "verdict": "corrected",
+      "shared": "ibkr-eu-margin-cash-out",
+      "oldWording": "IBKR is reportedly the only option: Schwab International's online form reportedly does not accept France residents;",
+      "newWording": "and IBKR's EU entity reportedly lends on margin only to buy securities, not to withdraw as cash, so confirm how you would draw cash before relying on it",
+      "sources": [
+        {
+          "name": "LYNX: Withdrawal (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/payments-and-transfers/withdrawal/",
+          "read": "2026-11-15",
+          "says": "\"It is not possible to withdraw in a currency if your cash balance is negative or would go negative after the withdrawal.\" In a margin account \"some funds may be used as collateral for other positions or to cover negative cash balances\", which lowers what can be withdrawn. The page is undated (footer: Copyright 2023)."
+        },
+        {
+          "name": "CapTrader: Geld abheben (help page of a German introducing broker for Interactive Brokers)",
+          "url": "https://www.captrader.com/geld-abheben/",
+          "read": "2026-11-15",
+          "says": "\"Auszahlungen sind nur möglich, wenn kein negativer Saldo in der entsprechenden Währung\" or in the total cash arises or grows: withdrawals are possible only if they do not create or increase a negative balance. Footer: © CapTrader 2026."
+        },
+        {
+          "name": "Interactive Brokers Ireland Limited: Customer Agreement (document 4750, 7/1/2023), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/01_4750_IBIE_Customer_Agreement_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "Clause 2A(i)(d) defines the margin service as one \"to enable Clients to acquire investment instruments\". Clause 5A(iv): \"Terms and conditions for deposit and withdrawal of funds (including holding periods) are as specified on the IBIE website.\" The agreement does not say that a loan may be withdrawn as cash."
+        },
+        {
+          "name": "Mustachian Post forum: Using margin loan at Interactive Brokers, page 13",
+          "url": "https://forum.mustachianpost.com/t/using-margin-loan-at-interactive-brokers/3980?page=13",
+          "read": "2026-11-15",
+          "says": "Posts of September to November 2024. One poster says withdrawing cash on margin is \"not possible in Germany with IB IE\" but is with IB UK; Swiss residents with IB UK accounts report having done it; another reports IBKR service saying \"IBUK customers can no longer withdraw cash if aggregate cash balance is -ve\", which a manager then said applies only to UK residents."
+        }
+      ],
+      "also": [
+        "scores.lending 3→2 on all 3 (plan decision of 2026-11-15; rubric 2: IBKR only and even that uncertain, or EU residence)",
+        "summary: added the closing sentence \"The borrow step is weak too: Schwab reportedly does not take France residents, and IBKR reportedly bars EU residents from drawing margin as cash.\" to all 3",
+        "drawbacks: none mentioned margin or brokers, so none was reworded and none was added; the summary sentence carries it",
+        "sources: added LYNX withdrawal page to all 3"
+      ],
+      "rankFlag": "The two France picks (Nice 58, Gascony 68) and Paris (profiled, not one of the ranked 75) now score lending 2, and their profiles say the one reported broker reportedly will not pay a margin loan out as cash. Their `why` lines in src/data/expatPicks.ts (Nice, Gascony) do not mention borrowing, so none is contradicted. Ranks and `why` lines are unchanged: user's call.",
+      "note": "These profiles never said \"so plan on IBKR margin\"; they named IBKR as the only option and stopped. The shared correction's substance was applied with adapted wording: the standard clause, ending \"before relying on it\" (one broker, not \"either\", since Schwab reportedly does not take France residents at all). The summary sentence differs from Portugal's and Spain's for the same reason. The shared sources are copied with their stage 1 read date; the LYNX page was not re-read for this country."
+    },
+    {
+      "id": "fr-lending-priips-new-buys",
+      "fact": "lending",
+      "cities": [
+        "paris",
+        "nice",
+        "gascony"
+      ],
+      "claim": "EU PRIIPs rules block new buys of US-listed ETFs",
+      "verdict": "confirmed",
+      "shared": "priips-us-etf-new-buys-blocked",
+      "sources": [
+        {
+          "name": "LYNX: Key Information Document (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/products-and-regulations/regulations/key-information-document/",
+          "read": "2026-11-15",
+          "says": "Retail clients are \"not permitted to trade ETFs or other products that do not have a valid KID\"; many non-EU ETFs have none. Can a retail client buy US ETFs? \"No, not unless you are classified as a professional investor.\" The same applies to ETFs from Canada, Hong Kong, Mexico and Australia. The KID has applied to most products since 1 January 2018."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. \"PRIIPs is an EU rule that prohibits buying US-listed ETFs\", and this also applies to UK investors; US ETFs are open only to elective professional clients, while UCITS ETFs are available to all Europeans."
+        }
+      ],
+      "note": "The profiles' \"reportedly\" stays; it does no harm."
+    },
+    {
+      "id": "fr-lending-priips-holdings-kept",
+      "fact": "lending",
+      "cities": [
+        "paris",
+        "nice",
+        "gascony"
+      ],
+      "claim": "The block is on buying, not on holding US-listed ETFs",
+      "verdict": "confirmed",
+      "shared": "priips-existing-holdings-kept",
+      "sources": [
+        {
+          "name": "LYNX: Key Information Document (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/products-and-regulations/regulations/key-information-document/",
+          "read": "2026-11-15",
+          "says": "The page's FAQ says retail clients \"may still hold or sell existing positions, but new purchases are restricted.\""
+        },
+        {
+          "name": "Regulation (EU) No 1286/2014, Article 13, as adopted (legislation.gov.uk copy of the EU text)",
+          "url": "https://www.legislation.gov.uk/eur/2014/1286/article/13/adopted",
+          "read": "2026-11-15",
+          "says": "The duty to provide a KID falls on \"a person advising on, or selling, a PRIIP\" before the retail investor is bound; nothing in the article reaches a PRIIP the investor already holds or a sale by the investor."
+        }
+      ]
+    },
+    {
+      "id": "fr-visa-visitor-income",
+      "fact": "visa",
+      "cities": [
+        "paris",
+        "nice",
+        "gascony"
+      ],
+      "claim": "The long-stay visitor visa (VLS-TS visiteur) needs at least €1,477.93 net/month (€17,735/year)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Service-Public: long-stay visitor visa and visitor residence permit",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F302?lang=en",
+          "read": "2026-11-15",
+          "says": "Verified 1 June 2026. Resources of at least €1,477.93 net per month for one person over a year (€17,735.19 a year in the document list), from own income (annuities, pensions, rental income), bank certificates or sureties; family allowances don't count. Health insurance for the whole stay; a handwritten undertaking not to work in France. The card is valid \"1 year maximum\" and renewable, with the renewal filed online 4 to 2 months before expiry. Cost: €350 for a first application (€300 tax + €50 stamp duty), €250 for a renewal."
+        }
+      ],
+      "note": "The official page gives the euro figure without naming the SMIC. france-visas.gouv.fr (https://france-visas.gouv.fr/en/visitor) returned HTTP 403."
+    },
+    {
+      "id": "fr-visa-visitor-resources-count",
+      "fact": "visa",
+      "cities": [
+        "paris",
+        "nice",
+        "gascony"
+      ],
+      "claim": "The amount can be shown as passive income or resources",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Service-Public: long-stay visitor visa and visitor residence permit",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F302?lang=en",
+          "read": "2026-11-15",
+          "says": "Verified 1 June 2026. Resources of at least €1,477.93 net per month for one person over a year (€17,735.19 a year in the document list), from own income (annuities, pensions, rental income), bank certificates or sureties; family allowances don't count. Health insurance for the whole stay; a handwritten undertaking not to work in France. The card is valid \"1 year maximum\" and renewable, with the renewal filed online 4 to 2 months before expiry. Cost: €350 for a first application (€300 tax + €50 stamp duty), €250 for a renewal."
+        }
+      ],
+      "note": "The page lists annuities, pensions and rental income, and accepts bank certificates and sureties; it does not say how a consulate weighs savings against income."
+    },
+    {
+      "id": "fr-visa-visitor-insurance-no-work",
+      "fact": "visa",
+      "cities": [
+        "paris",
+        "nice",
+        "gascony"
+      ],
+      "claim": "The visa needs health insurance for the whole stay and a pledge not to work",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Service-Public: long-stay visitor visa and visitor residence permit",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F302?lang=en",
+          "read": "2026-11-15",
+          "says": "Verified 1 June 2026. Resources of at least €1,477.93 net per month for one person over a year (€17,735.19 a year in the document list), from own income (annuities, pensions, rental income), bank certificates or sureties; family allowances don't count. Health insurance for the whole stay; a handwritten undertaking not to work in France. The card is valid \"1 year maximum\" and renewable, with the renewal filed online 4 to 2 months before expiry. Cost: €350 for a first application (€300 tax + €50 stamp duty), €250 for a renewal."
+        }
+      ]
+    },
+    {
+      "id": "fr-visa-visitor-yearly-renewal",
+      "fact": "visa",
+      "cities": [
+        "paris",
+        "nice",
+        "gascony"
+      ],
+      "claim": "It is renewed yearly at the prefecture at first",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Service-Public: long-stay visitor visa and visitor residence permit",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F302?lang=en",
+          "read": "2026-11-15",
+          "says": "Verified 1 June 2026. Resources of at least €1,477.93 net per month for one person over a year (€17,735.19 a year in the document list), from own income (annuities, pensions, rental income), bank certificates or sureties; family allowances don't count. Health insurance for the whole stay; a handwritten undertaking not to work in France. The card is valid \"1 year maximum\" and renewable, with the renewal filed online 4 to 2 months before expiry. Cost: €350 for a first application (€300 tax + €50 stamp duty), €250 for a renewal."
+        }
+      ],
+      "note": "The page confirms a card of one year at most, renewable. It says the renewal is filed online; the prefecture decides and issues the card, so \"at the prefecture\" is loose but not wrong, and the drawback's \"prefecture renewals\" stands."
+    },
+    {
+      "id": "fr-visa-card-fees-2026",
+      "fact": "visa",
+      "cities": [
+        "paris",
+        "nice",
+        "gascony"
+      ],
+      "claim": "From May 2026 the first residence card costs €350 and renewals €250",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Service-Public: residence permit fees from 1 May 2026",
+          "url": "https://www.service-public.gouv.fr/particuliers/actualites/A18881",
+          "read": "2026-11-15",
+          "says": "Published 22 April 2026, updated 12 May 2026. From 1 May 2026 the normal rate is €350 for a first issue (was €225) and €250 for a renewal (was €225); the long-stay visa that stands as a residence permit (VLS-TS) goes to €300."
+        },
+        {
+          "name": "Service-Public: long-stay visitor visa and visitor residence permit",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F302?lang=en",
+          "read": "2026-11-15",
+          "says": "Verified 1 June 2026. Resources of at least €1,477.93 net per month for one person over a year (€17,735.19 a year in the document list), from own income (annuities, pensions, rental income), bank certificates or sureties; family allowances don't count. Health insurance for the whole stay; a handwritten undertaking not to work in France. The card is valid \"1 year maximum\" and renewable, with the renewal filed online 4 to 2 months before expiry. Cost: €350 for a first application (€300 tax + €50 stamp duty), €250 for a renewal."
+        }
+      ],
+      "note": "Not in the profiles: validating the VLS-TS itself now costs €300."
+    },
+    {
+      "id": "fr-healthcare-puma-after-three-months",
+      "fact": "healthcare",
+      "cities": [
+        "paris",
+        "nice",
+        "gascony"
+      ],
+      "claim": "Visitor-visa holders can join the public PUMa system after 3 months' residence",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Service-Public: protection universelle maladie (PUMa)",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F34308",
+          "read": "2026-11-15",
+          "says": "Vérifié le 13 mai 2026. For a person who does not work, rights open only after 3 months' residence in France and continue if they live in France at least 6 months a year; non-EEA nationals need a residence document. The law of 30 December 2025 provides a financial participation for PUMa beneficiaries who live in France stably and regularly, have no professional activity and are not liable for CSG, CRDS or the health contribution under an international convention; a decree, which must set the amount, is awaited."
+        }
+      ],
+      "note": "ameli.fr (https://www.ameli.fr/assure/droits-demarches/principes/protection-universelle-maladie) returned HTTP 403; Service-Public is official too. The page speaks of anyone living in France stably and regularly with a residence document, not of the visitor visa by name. scores.healthcare unchanged."
+    },
+    {
+      "id": "fr-healthcare-mutuelle-price",
+      "fact": "healthcare",
+      "cities": [
+        "paris",
+        "nice",
+        "gascony"
+      ],
+      "claim": "Most add a top-up mutuelle, about €120–132/month at 70",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Réassurez-moi: prix d'une mutuelle senior",
+          "url": "https://reassurez-moi.fr/guide/mutuelle-sante/prix-mutuelle-senior",
+          "read": "2026-11-15",
+          "says": "Updated 18.09.2026. The average price at age 70 is €120 to €132 a month, from quotes handled by the comparison site in the first quarter of 2026."
+        }
+      ],
+      "note": "A comparison site's own quotes (Q1 2026); \"most add\" was not checked against a figure."
+    },
+    {
+      "id": "fr-healthcare-health-contribution-pending",
+      "fact": "healthcare",
+      "cities": [
+        "paris",
+        "nice"
+      ],
+      "claim": "The 2026 social security law added a health contribution for residents with no French work income who pay no French social levies under a treaty; its amount and scope await a decree (none as of Oct 2026)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Service-Public: protection universelle maladie (PUMa)",
+          "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F34308",
+          "read": "2026-11-15",
+          "says": "Vérifié le 13 mai 2026. For a person who does not work, rights open only after 3 months' residence in France and continue if they live in France at least 6 months a year; non-EEA nationals need a residence document. The law of 30 December 2025 provides a financial participation for PUMa beneficiaries who live in France stably and regularly, have no professional activity and are not liable for CSG, CRDS or the health contribution under an international convention; a decree, which must set the amount, is awaited."
+        },
+        {
+          "name": "Easy France Now: the health contribution (CSS art. L160-1-1)",
+          "url": "https://easyfrancenow.com/updates/health-contribution",
+          "read": "2026-11-15",
+          "says": "Last checked 28 October 2026. Article L160-1-1, added by article 53 of loi n° 2025-1403 of 30 December 2025, covers people who live in France stably and regularly, have no professional activity in France and are not liable for the contributions of articles L131-9 and L136-1 under an international convention. The amount is \"not set, because the decree it needs has not appeared\"; no decree citing the article had been published as of 28 October 2026."
+        }
+      ],
+      "note": "The official page (13 May 2026) says the decree is awaited; the \"none as of Oct 2026\" date is from the secondary page's check of 28 October 2026. Whether one appeared between then and 2026-11-15 was not checked. Gascony's profile does not carry this clause."
+    },
+    {
+      "id": "fr-healthcare-paris-aphp",
+      "fact": "healthcare",
+      "cities": [
+        "paris"
+      ],
+      "claim": "Paris has the AP-HP public teaching hospitals",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "AP-HP: home page",
+          "url": "https://www.aphp.fr/",
+          "read": "2026-11-15",
+          "says": "\"L'AP-HP 1er CHU d'Europe\", \"un service public de santé pour tous 24h/24\" with the missions \"soigner, former, chercher et innover\", working with the universities of Île-de-France; 38 hospitals."
+        }
+      ]
+    },
+    {
+      "id": "fr-healthcare-paris-american-hospital",
+      "fact": "healthcare",
+      "cities": [
+        "paris"
+      ],
+      "claim": "The private American Hospital of Paris in Neuilly is accredited by The Joint Commission",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "American Hospital of Paris: home page",
+          "url": "https://www.american-hospital.org/en",
+          "read": "2026-11-15",
+          "says": "A \"private, not-for-profit institution founded in 1906\", \"Accredited by two organizations : the French Haute Autorité de Santé & The Joint Commission\", the latter \"since 1954\"; news items place its emergency department \"à Neuilly\". The page does not use the word bilingual."
+        },
+        {
+          "name": "Wikipedia: American Hospital of Paris",
+          "url": "https://en.wikipedia.org/wiki/American_Hospital_of_Paris",
+          "read": "2026-11-15",
+          "says": "The hospital is in Neuilly-sur-Seine, in the western suburbs of Paris; \"a private, not-for-profit, community hospital\", \"accredited by The Joint Commission\". It does not mention bilingual staff or services."
+        }
+      ],
+      "also": [
+        "sources: added the hospital's own site"
+      ]
+    },
+    {
+      "id": "fr-healthcare-paris-american-hospital-bilingual",
+      "fact": "healthcare",
+      "cities": [
+        "paris"
+      ],
+      "claim": "The American Hospital of Paris is bilingual",
+      "verdict": "cant-confirm",
+      "oldWording": "the private, bilingual American Hospital of Paris",
+      "hedge": "removed",
+      "sources": [
+        {
+          "name": "American Hospital of Paris: home page",
+          "url": "https://www.american-hospital.org/en",
+          "read": "2026-11-15",
+          "says": "A \"private, not-for-profit institution founded in 1906\", \"Accredited by two organizations : the French Haute Autorité de Santé & The Joint Commission\", the latter \"since 1954\"; news items place its emergency department \"à Neuilly\". The page does not use the word bilingual."
+        },
+        {
+          "name": "Wikipedia: American Hospital of Paris",
+          "url": "https://en.wikipedia.org/wiki/American_Hospital_of_Paris",
+          "read": "2026-11-15",
+          "says": "The hospital is in Neuilly-sur-Seine, in the western suburbs of Paris; \"a private, not-for-profit, community hospital\", \"accredited by The Joint Commission\". It does not mention bilingual staff or services."
+        }
+      ],
+      "also": [
+        "\"bilingual\" replaced by \"not-for-profit\", which the hospital's site states: now \"the private, not-for-profit American Hospital of Paris in Neuilly\""
+      ],
+      "note": "Neither the hospital's home page nor Wikipedia uses the word; https://www.american-hospital.org/en/international-patients returned 404 and .../quality-and-safety failed on DNS once. Likely true, but unread."
+    },
+    {
+      "id": "fr-healthcare-nice-chu",
+      "fact": "healthcare",
+      "cities": [
+        "nice"
+      ],
+      "claim": "Nice has the CHU de Nice (and private clinics)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "CHU de Nice: home page",
+          "url": "https://www.chu-nice.fr/",
+          "read": "2026-11-15",
+          "says": "The site of the \"CHU de Nice\", with news on the move of services to \"l'hôpital Pasteur 2 du CHU de Nice\" and the reopening of the sampling centre at \"l'hôpital Archet 2\" on 2 November 2026."
+        }
+      ],
+      "note": "\"Strong\" is a judgement; the private clinics are not named and were not checked."
+    },
+    {
+      "id": "fr-healthcare-gascony-auch-hospital",
+      "fact": "healthcare",
+      "cities": [
+        "gascony"
+      ],
+      "claim": "Auch's public hospital has 562 beds and places and is due to be rebuilt on a new site around 2028–30",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Wikipédia: Auch (section Santé; géographie)",
+          "url": "https://fr.wikipedia.org/wiki/Auch",
+          "read": "2026-11-15",
+          "says": "The centre hospitalier d'Auch has \"une capacité de 562 lits et places\"; the Grand Auch agglomeration \"prévoit à moyen terme (2028-2030) la reconstruction du centre hospitalier de zéro sur un nouveau site\" (Pavie is the preferred site). Auch is \"69 km à l'ouest de Toulouse\" as the crow flies."
+        }
+      ],
+      "note": "Wikipedia only (the profile's own source); the hospital's site was not read. The page gives the 562 figure for 2018. \"Specialists are sparser in rural Gers\" was not checked against a figure."
+    },
+    {
+      "id": "fr-healthcare-gascony-chu-toulouse",
+      "fact": "healthcare",
+      "cities": [
+        "gascony"
+      ],
+      "claim": "The CHU de Toulouse is about 70 km east of Auch",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "CHU de Toulouse: home page",
+          "url": "https://www.chu-toulouse.fr/",
+          "read": "2026-11-15",
+          "says": "\"En tant que Centre hospitalier universitaire (CHU) de Toulouse, nous tenons une place essentielle au cœur de la ville de Toulouse\"; Hôpital Rangueil and the Purpan site are among its places of care."
+        },
+        {
+          "name": "Wikipédia: Auch (section Santé; géographie)",
+          "url": "https://fr.wikipedia.org/wiki/Auch",
+          "read": "2026-11-15",
+          "says": "The centre hospitalier d'Auch has \"une capacité de 562 lits et places\"; the Grand Auch agglomeration \"prévoit à moyen terme (2028-2030) la reconstruction du centre hospitalier de zéro sur un nouveau site\" (Pavie is the preferred site). Auch is \"69 km à l'ouest de Toulouse\" as the crow flies."
+        }
+      ],
+      "note": "69 km is Auch to Toulouse in a straight line; the road distance to the hospital sites was not read. The summary and drawback 2 say the same."
+    }
+  ]
+}

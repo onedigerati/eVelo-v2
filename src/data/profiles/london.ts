@@ -15,7 +15,7 @@ const profile: ExpatProfile = {
     estate:
       'Inheritance tax of 40% above a £325,000 nil-rate band; since April 2025 it is residence-based, reaching non-UK assets only after 10 of the last 20 tax years in the UK (with a tail of up to 10 years after leaving); the US–UK estate and gift tax treaty gives relief, and the $15M US exemption (2026) applies as anywhere.',
     lending:
-      'IBKR reportedly serves UK residents through IB UK, and Schwab International reportedly accepts them, but Schwab reportedly bars Europe residents from taking cash out through margin, which likely covers the UK, so plan on IBKR margin; UK PRIIPs rules, which reportedly limited new buys of US-listed ETFs, were replaced on 6 April 2026 by the Consumer Composite Investments regime (check how brokers apply it).',
+      'IBKR reportedly serves UK residents through IB UK, and Schwab International reportedly accepts them, but Schwab reportedly bars Europe residents from taking cash out through margin, which likely covers the UK, and whether IB UK still lets a margin loan be withdrawn as cash is unconfirmed (2024 forum reports conflict), so confirm how you would draw cash before relying on either; UK PRIIPs rules, which reportedly limited new buys of US-listed ETFs, were replaced on 6 April 2026 by the Consumer Composite Investments regime (check how brokers apply it).',
     climate:
       'Mild maritime: warm summers (July highs about 24 °C / 75 °F), cool, grey winters (January highs about 8 °C / 46 °F) with rare snow, and about 600 mm of rain spread through the year.',
     community:
@@ -53,7 +53,11 @@ const profile: ExpatProfile = {
       url: 'https://www.ashurstperkinscoie.com/en/insights/consumer-composite-investments-replace-uk-priips-412026-33515-pm/',
       edition: '2026',
     },
-    { name: 'Davidson Morris: Immigration Health Surcharge 2026', url: 'https://www.davidsonmorris.com/immigration-health-surcharge/', edition: '2026' },
+    { name: 'GOV.UK: immigration health surcharge, how much you have to pay', url: 'https://www.gov.uk/healthcare-immigration-application/how-much-pay' },
+    {
+      name: 'Mustachian Post forum: margin loan withdrawals at Interactive Brokers (2024 posts)',
+      url: 'https://forum.mustachianpost.com/t/using-margin-loan-at-interactive-brokers/3980?page=13',
+    },
     { name: 'Money.it: GPI 2026 top 50', url: 'https://www.money.it/50-paesi-piu-sicuri-al-mondo-nel-2026', edition: '2026' },
     { name: 'YourTaxBase: Charles Schwab for expats (country list, Oct 2026)', url: 'https://yourtaxbase.com/blog/charles-schwab-for-expats' },
     { name: 'Wikipedia: Heathrow Airport', url: 'https://en.wikipedia.org/wiki/Heathrow_Airport' },

@@ -4,18 +4,18 @@ import { S } from './_shared'
 const profile: ExpatProfile = {
   tagline: 'Beach city, top-rated by expats, sensible prices',
   summary:
-    'Valencia was the top city in InterNations\' most recent city ranking (2024), and from 2026 the Valencian Community exempts the first €2M of net wealth, with 99% inheritance relief for children. Portfolios above €2M pay wealth tax every year, so it suits a moderate buy-borrow-die portfolio better than a large one; it has beaches, good public healthcare and lower costs than Madrid or Barcelona.',
-  scores: { cost: 3, healthcare: 4, safety: 4, visa: 3, climate: 4, community: 4, tax: 2, estate: 4, lending: 3 },
+    'Valencia was the top city in InterNations\' most recent city ranking (2024), and from 2026 the Valencian Community exempts the first €2M of net wealth, with 99% inheritance relief for children. Portfolios above €2M pay wealth tax every year, so it suits a moderate buy-borrow-die portfolio better than a large one; it has beaches, good public healthcare and lower costs than Madrid or Barcelona. The weak point is the borrow step: Schwab and IBKR both reportedly bar EU residents from drawing margin as cash.',
+  scores: { cost: 3, healthcare: 4, safety: 4, visa: 3, climate: 4, community: 4, tax: 2, estate: 4, lending: 2 },
   facts: {
     healthcare:
-      'Strong Spanish public system (for example La Fe hospital); visa holders start on private insurance and can buy into public cover (convenio especial, €157/month at 65+) after a year; private plans commonly cap entry at 70–75.',
+      'Strong Spanish public system (for example La Fe hospital); visa holders start on private insurance and can buy into public cover (convenio especial, €157/month at 65+) after a year; private plans commonly cap entry at 65–75.',
     safety: 'Spain is 27th in the 2026 Global Peace Index; violent crime is low, with petty theft in the centre and on beaches.',
     visa: 'Non-lucrative visa: €2,400/month or €28,800/year (400% of IPREM, 2026; +€7,200 per dependant) from investment income or liquid savings, plus Spanish private health insurance with no co-pay; no work is allowed, and holders must live in Spain most of the year.',
     tax: 'Wealth tax on worldwide net wealth (margin debt deductible) above a €2M exemption from the 2026 assessment (Ley 5/2026), at 0.25–3.5% with no general relief; the income-plus-wealth cap can trim it by up to 80%; dividends and interest pay 19–30%, foreign assets go on Modelo 720, and an exit tax can reach gains on shares over €4M; check current rules.',
     estate:
       'Spain taxes the heir, and a non-resident heir only on Spanish assets, so US assets left to US-resident children appear outside it (an inference; confirm with a Spanish adviser); a resident child gets a €100k reduction plus 99% relief in the Valencian Community; there is no US–Spain estate treaty.',
     lending:
-      'IBKR reportedly accepts Spain residents (likely through its EU entity), and Schwab International reportedly accepts them too, but Schwab reportedly bars Europe residents from taking cash out through margin, so plan on IBKR margin; EU PRIIPs rules reportedly block new buys of US-listed ETFs, not holding them.',
+      'IBKR reportedly accepts Spain residents (likely through its EU entity), and Schwab International reportedly accepts them too, but Schwab reportedly bars Europe residents from taking cash out through margin, and IBKR\'s EU entity reportedly lends on margin only to buy securities, not to withdraw as cash, so confirm how you would draw cash before relying on either; EU PRIIPs rules reportedly block new buys of US-listed ETFs, not holding them.',
     climate: 'Mild winters (days about 17°C) and hot, humid summers; the October 2024 floods showed the flash-flood risk.',
     community: 'A growing English-speaking expat scene in Ruzafa, the centre and the coastal suburbs, with about 4,900 Americans and 9,400 Britons registered in the province (1 Jan 2025), though daily life runs in Spanish and Valencian.',
     access: 'Valencia airport (VLC) is about 8 km west of the centre, linked by metro; high-speed trains reach Madrid in under 2 hours, and Madrid, Barcelona and Lisbon are the usual connecting hubs.',
@@ -26,7 +26,19 @@ const profile: ExpatProfile = {
     'The non-lucrative visa\'s income bar (€2,400/month) is far higher than Portugal\'s',
   ],
   sources: [
-    S.iprem,
+    { name: 'SEPE: yearly amounts of the IPREM and the minimum wage', url: 'https://www.sepe.es/HomeSepe/es/prestaciones-desempleo/Cuantias-anuales.html', edition: '2026' },
+    {
+      name: 'Spanish Consulate in Los Angeles: non-lucrative residence visa',
+      url: 'https://www.exteriores.gob.es/Consulados/losangeles/en/ServiciosConsulares/Paginas/Consular/Visado-de-residencia-no-lucrativa.aspx',
+      edition: '2026',
+    },
+    { name: 'LYNX: withdrawals from accounts carried by Interactive Brokers', url: 'https://www.lynxbroker.com/service/payments-and-transfers/withdrawal/' },
+    { name: 'Generalitat Valenciana: tax benefits 2026', url: 'https://hisenda.gva.es/es/web/tributos/beneficis-fiscals', edition: '2026' },
+    {
+      name: 'Póliza Médica: up to what age can you take out health insurance (Oct 2026)',
+      url: 'https://www.polizamedica.es/seguros/salud/hasta-que-edad-puedo-contratar-un-seguro-de-salud',
+      edition: '2026',
+    },
     {
       name: 'Cuatrecasas: Valencian Community tax changes for 2026',
       url: 'https://www.cuatrecasas.com/es/spain/art/comunidad-valenciana-novedades-tributarias-2026',

@@ -1,0 +1,714 @@
+{
+  "country": "Austria",
+  "cities": [
+    "vienna"
+  ],
+  "claims": [
+    {
+      "id": "at-tax-no-wealth-tax",
+      "fact": "tax",
+      "cities": [
+        "vienna"
+      ],
+      "claim": "Austria has no wealth tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Austria, individual, other taxes",
+          "url": "https://taxsummaries.pwc.com/austria/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 23 July 2026. \"There is no wealth/worth tax in Austria.\" \"There are no inheritance, estate, or gift taxes in Austria.\" Real estate acquisition tax: 3.5% of the consideration in general; \"in case of non-remunerated acquisition (e.g. donations), the tax rate is scaled\": 0.5% up to EUR 250,000, 2.0% to 400,000, 3.5% above."
+        }
+      ],
+      "note": "The model agrees: LOCAL_TAX_BY_COUNTRY.AT has no wealth bands."
+    },
+    {
+      "id": "at-tax-oekb-tax-office",
+      "fact": "tax",
+      "cities": [
+        "vienna"
+      ],
+      "claim": "The funds caught are those \"not registered with its tax office (OeKB)\"",
+      "verdict": "corrected",
+      "oldWording": "funds not registered with its tax office",
+      "newWording": "Austria taxes funds that do not report their tax figures to its reporting agent (OeKB)",
+      "sources": [
+        {
+          "name": "Broker-Test.at: Nichtmeldefonds, pauschale Besteuerung",
+          "url": "https://www.broker-test.at/news/nichtmeldefonds-pauschale-besteuerung/",
+          "read": "2026-11-15",
+          "says": "Dated 23 December 2025. A Meldefonds reports its tax data, through a tax representative in Austria, to the Österreichische Kontrollbank (OeKB); the data can be looked up on my.oekb.at by ISIN. For a Nichtmeldefonds a lump-sum income is set at 31 December: 90% of the year's price gain, at least 10% of the fund's value at 31 December, taxed at 27.5%. Many US ETFs with no OeKB report count as Nichtmeldefonds; it names VOO, QQQ, DGRO and VTI, and US REITs, BDCs and Canadian trusts. The article covers funds and ETFs only; share ISINs are not found on my.oekb.at."
+        },
+        {
+          "name": "Broker-Test.at: Steuern auf REITs und anderen Nicht-Meldefonds",
+          "url": "https://www.broker-test.at/news/steuern-auf-reits-und-anderen-nicht-meldefonds/",
+          "read": "2026-11-15",
+          "says": "Published 28 December 2023, last updated 15 December 2024. \"REITs oder BDCs sind nach österreichischem Steuerrecht Fonds\"; QQQ, DGRO, VOO, VEA, VIG and MBB are \"hierzulande leider steuerlich als Nichtmeldefonds zu qualifizieren\". Meldefonds report to the Österreichische Kontrollbank (OeKB)."
+        },
+        {
+          "name": "PwC: Austria, individual, income determination",
+          "url": "https://taxsummaries.pwc.com/austria/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 23 July 2026. Dividends and capital gains on securities are taxed at 27.5%; \"Bank deposit interest is taxed at 25%\"; interest and dividends paid to foreign deposit accounts with no Austrian withholding \"must be included in the income tax return\" and are taxed at the 27.5% special rate. Non-reporting foreign funds are taxed on deemed distributed income by a lump-sum rule: \"90% of the growth in value during the year\", at least 10% of the fund's year-end value; the amount taxed raises the acquisition cost. \"Interest expenses (interest paid on a loan or overdraft) cannot be offset against positive interest.\""
+        }
+      ],
+      "also": [
+        "summary reworded: \"funds that do not report to its reporting agent, the OeKB (likely including US ETFs)\"",
+        "drawback 1 reworded: \"unregistered funds\" → \"non-reporting funds\"",
+        "sources: replaced My ETF Journey (HTTP 402, unreadable) with two Broker-Test.at articles"
+      ],
+      "modelMismatch": "Wording only, no numbers: the AT note in src/data/localTaxes.ts and the Austria note in src/data/cities.ts say \"funds not registered with Austria's tax office (OeKB)\". The OeKB is the Oesterreichische Kontrollbank, to which reporting funds (Meldefonds) send their tax figures through an Austrian tax representative; it is not the tax office, and the test is whether the fund reports, not whether it is registered (Broker-Test.at, 23 December 2025, https://www.broker-test.at/news/nichtmeldefonds-pauschale-besteuerung/; PwC calls them reporting and non-reporting funds). The rule and figures in the note (90% of growth, at least 10% of year-end value, 27.5%, not modelled) agree with the pages. The note could also say that bank-deposit interest is 25%, not 27.5% (see at-tax-dividends-interest-rate).",
+      "rankFlag": "Vienna's `why` in src/data/expatPicks.ts says \"yearly tax on the growth of unregistered funds (likely US ETFs)\". The substance holds; \"unregistered\" is loose for \"non-reporting\" (the fund does not report its tax figures to the OeKB). Not edited: user's call.",
+      "note": "The OeKB's own fund-data page loaded but does not describe the tax reporting role; the official text (§ 186 InvFG) was not read. The description rests on a dated secondary page and PwC's terms."
+    },
+    {
+      "id": "at-tax-non-reporting-lump-sum",
+      "fact": "tax",
+      "cities": [
+        "vienna"
+      ],
+      "claim": "Non-reporting funds are taxed every year on a deemed distribution of 90% of their growth, at least 10% of year-end value, at 27.5%, so a never-sell ETF portfolio pays tax each year anyway",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Austria, individual, income determination",
+          "url": "https://taxsummaries.pwc.com/austria/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 23 July 2026. Dividends and capital gains on securities are taxed at 27.5%; \"Bank deposit interest is taxed at 25%\"; interest and dividends paid to foreign deposit accounts with no Austrian withholding \"must be included in the income tax return\" and are taxed at the 27.5% special rate. Non-reporting foreign funds are taxed on deemed distributed income by a lump-sum rule: \"90% of the growth in value during the year\", at least 10% of the fund's year-end value; the amount taxed raises the acquisition cost. \"Interest expenses (interest paid on a loan or overdraft) cannot be offset against positive interest.\""
+        },
+        {
+          "name": "Broker-Test.at: Nichtmeldefonds, pauschale Besteuerung",
+          "url": "https://www.broker-test.at/news/nichtmeldefonds-pauschale-besteuerung/",
+          "read": "2026-11-15",
+          "says": "Dated 23 December 2025. A Meldefonds reports its tax data, through a tax representative in Austria, to the Österreichische Kontrollbank (OeKB); the data can be looked up on my.oekb.at by ISIN. For a Nichtmeldefonds a lump-sum income is set at 31 December: 90% of the year's price gain, at least 10% of the fund's value at 31 December, taxed at 27.5%. Many US ETFs with no OeKB report count as Nichtmeldefonds; it names VOO, QQQ, DGRO and VTI, and US REITs, BDCs and Canadian trusts. The article covers funds and ETFs only; share ISINs are not found on my.oekb.at."
+        }
+      ],
+      "rankFlag": "Vienna's `why` (\"No inheritance tax and a US treaty, but 27.5% on dividends, yearly tax on the growth of unregistered funds (likely US ETFs) and a quota-limited settlement permit\") was checked clause by clause: no inheritance tax (PwC), a US estate and gift tax treaty (IRS list), 27.5% on dividends (PwC), the yearly fund tax (PwC), and the quota (oesterreich.gv.at) all hold. Rank 75 and the `why` are unchanged.",
+      "note": "A search result (not a read) quotes § 186 Abs. 2 Z 3 InvFG as 90% of the difference between the first and last redemption price of the year, at least 10% of the last redemption price; PwC and Broker-Test put it as growth in value and year-end value, which is how the profile words it. The summary and the drawback repeat it without figures."
+    },
+    {
+      "id": "at-tax-us-etfs-non-reporting",
+      "fact": "tax",
+      "cities": [
+        "vienna"
+      ],
+      "claim": "US-domiciled ETFs such as VTI or VOO are likely non-reporting funds",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Broker-Test.at: Nichtmeldefonds, pauschale Besteuerung",
+          "url": "https://www.broker-test.at/news/nichtmeldefonds-pauschale-besteuerung/",
+          "read": "2026-11-15",
+          "says": "Dated 23 December 2025. A Meldefonds reports its tax data, through a tax representative in Austria, to the Österreichische Kontrollbank (OeKB); the data can be looked up on my.oekb.at by ISIN. For a Nichtmeldefonds a lump-sum income is set at 31 December: 90% of the year's price gain, at least 10% of the fund's value at 31 December, taxed at 27.5%. Many US ETFs with no OeKB report count as Nichtmeldefonds; it names VOO, QQQ, DGRO and VTI, and US REITs, BDCs and Canadian trusts. The article covers funds and ETFs only; share ISINs are not found on my.oekb.at."
+        },
+        {
+          "name": "Broker-Test.at: Steuern auf REITs und anderen Nicht-Meldefonds",
+          "url": "https://www.broker-test.at/news/steuern-auf-reits-und-anderen-nicht-meldefonds/",
+          "read": "2026-11-15",
+          "says": "Published 28 December 2023, last updated 15 December 2024. \"REITs oder BDCs sind nach österreichischem Steuerrecht Fonds\"; QQQ, DGRO, VOO, VEA, VIG and MBB are \"hierzulande leider steuerlich als Nichtmeldefonds zu qualifizieren\". Meldefonds report to the Österreichische Kontrollbank (OeKB)."
+        }
+      ],
+      "note": "Secondary pages name VOO and VTI among US ETFs with no OeKB report; the authoritative check is the ISIN lookup on my.oekb.at, which was not done. The profile's \"likely\" stays."
+    },
+    {
+      "id": "at-tax-individual-stocks",
+      "fact": "tax",
+      "cities": [
+        "vienna"
+      ],
+      "claim": "Individual US stocks are not caught",
+      "verdict": "corrected",
+      "oldWording": "individual US stocks are not caught, dividends",
+      "newWording": "ordinary individual US stocks are not caught (US REITs and BDCs reportedly are)",
+      "sources": [
+        {
+          "name": "Broker-Test.at: Steuern auf REITs und anderen Nicht-Meldefonds",
+          "url": "https://www.broker-test.at/news/steuern-auf-reits-und-anderen-nicht-meldefonds/",
+          "read": "2026-11-15",
+          "says": "Published 28 December 2023, last updated 15 December 2024. \"REITs oder BDCs sind nach österreichischem Steuerrecht Fonds\"; QQQ, DGRO, VOO, VEA, VIG and MBB are \"hierzulande leider steuerlich als Nichtmeldefonds zu qualifizieren\". Meldefonds report to the Österreichische Kontrollbank (OeKB)."
+        },
+        {
+          "name": "Broker-Test.at: Nichtmeldefonds, pauschale Besteuerung",
+          "url": "https://www.broker-test.at/news/nichtmeldefonds-pauschale-besteuerung/",
+          "read": "2026-11-15",
+          "says": "Dated 23 December 2025. A Meldefonds reports its tax data, through a tax representative in Austria, to the Österreichische Kontrollbank (OeKB); the data can be looked up on my.oekb.at by ISIN. For a Nichtmeldefonds a lump-sum income is set at 31 December: 90% of the year's price gain, at least 10% of the fund's value at 31 December, taxed at 27.5%. Many US ETFs with no OeKB report count as Nichtmeldefonds; it names VOO, QQQ, DGRO and VTI, and US REITs, BDCs and Canadian trusts. The article covers funds and ETFs only; share ISINs are not found on my.oekb.at."
+        },
+        {
+          "name": "PwC: Austria, individual, income determination",
+          "url": "https://taxsummaries.pwc.com/austria/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 23 July 2026. Dividends and capital gains on securities are taxed at 27.5%; \"Bank deposit interest is taxed at 25%\"; interest and dividends paid to foreign deposit accounts with no Austrian withholding \"must be included in the income tax return\" and are taxed at the 27.5% special rate. Non-reporting foreign funds are taxed on deemed distributed income by a lump-sum rule: \"90% of the growth in value during the year\", at least 10% of the fund's year-end value; the amount taxed raises the acquisition cost. \"Interest expenses (interest paid on a loan or overdraft) cannot be offset against positive interest.\""
+        }
+      ],
+      "note": "The lump-sum rule is a fund rule (PwC), so ordinary shares are outside it; but a secondary page says US REITs and BDCs, which trade as shares, count as funds under Austrian tax law. Added with \"reportedly\" because the page is secondary."
+    },
+    {
+      "id": "at-tax-dividends-interest-rate",
+      "fact": "tax",
+      "cities": [
+        "vienna"
+      ],
+      "claim": "Dividends and interest on a foreign account pay 27.5%",
+      "verdict": "corrected",
+      "oldWording": "dividends and interest on a foreign account pay 27.5%",
+      "newWording": "dividends and bond interest on a foreign account pay 27.5% (bank-deposit interest 25%)",
+      "sources": [
+        {
+          "name": "PwC: Austria, individual, income determination",
+          "url": "https://taxsummaries.pwc.com/austria/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 23 July 2026. Dividends and capital gains on securities are taxed at 27.5%; \"Bank deposit interest is taxed at 25%\"; interest and dividends paid to foreign deposit accounts with no Austrian withholding \"must be included in the income tax return\" and are taxed at the 27.5% special rate. Non-reporting foreign funds are taxed on deemed distributed income by a lump-sum rule: \"90% of the growth in value during the year\", at least 10% of the fund's year-end value; the amount taxed raises the acquisition cost. \"Interest expenses (interest paid on a loan or overdraft) cannot be offset against positive interest.\""
+        }
+      ],
+      "also": [
+        "scores.tax unchanged at 1: it rests on the yearly fund tax, not on this rate",
+        "summary and drawback keep \"27.5% on dividends\", which is right"
+      ],
+      "modelMismatch": "The AT note in src/data/localTaxes.ts says \"Dividends are taxed at 27.5% as income (outside this entry)\": right as far as it goes; interest on bank deposits is 25% (PwC, last reviewed 23 July 2026, https://taxsummaries.pwc.com/austria/individual/income-determination). No bands are affected.",
+      "note": "Whether cash interest paid by a US broker counts as bank-deposit interest (25%) or falls at 27.5% was not settled by the page."
+    },
+    {
+      "id": "at-tax-margin-interest-no-deduction",
+      "fact": "tax",
+      "cities": [
+        "vienna"
+      ],
+      "claim": "Margin interest gives no deduction",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Jusline: Income Tax Act (EStG 1988) § 20",
+          "url": "https://www.jusline.at/gesetz/estg/paragraf/20",
+          "read": "2026-11-15",
+          "says": "\"Berücksichtigter Stand der Gesetzgebung: 15.11.2026\". § 20 Abs. 2: \"Aufwendungen und Ausgaben\" may not be deducted \"soweit sie in unmittelbarem wirtschaftlichen Zusammenhang stehen mit\" tax-exempt income or with capital income taxed at the special rate under § 27a Abs. 1."
+        },
+        {
+          "name": "PwC: Austria, individual, income determination",
+          "url": "https://taxsummaries.pwc.com/austria/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 23 July 2026. Dividends and capital gains on securities are taxed at 27.5%; \"Bank deposit interest is taxed at 25%\"; interest and dividends paid to foreign deposit accounts with no Austrian withholding \"must be included in the income tax return\" and are taxed at the 27.5% special rate. Non-reporting foreign funds are taxed on deemed distributed income by a lump-sum rule: \"90% of the growth in value during the year\", at least 10% of the fund's year-end value; the amount taxed raises the acquisition cost. \"Interest expenses (interest paid on a loan or overdraft) cannot be offset against positive interest.\""
+        }
+      ],
+      "also": [
+        "sources: added the EStG § 20 page"
+      ]
+    },
+    {
+      "id": "at-estate-no-inheritance-gift-tax",
+      "fact": "estate",
+      "cities": [
+        "vienna"
+      ],
+      "claim": "Austria has no inheritance, estate or gift tax, only a transfer tax on Austrian real estate, so a US portfolio passes to US-resident children with no Austrian tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Austria, individual, other taxes",
+          "url": "https://taxsummaries.pwc.com/austria/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 23 July 2026. \"There is no wealth/worth tax in Austria.\" \"There are no inheritance, estate, or gift taxes in Austria.\" Real estate acquisition tax: 3.5% of the consideration in general; \"in case of non-remunerated acquisition (e.g. donations), the tax rate is scaled\": 0.5% up to EUR 250,000, 2.0% to 400,000, 3.5% above."
+        }
+      ],
+      "note": "The page gives no abolition date and does not mention the duty to notify large gifts; the profile claims neither. The model agrees (no inheritance bands for AT)."
+    },
+    {
+      "id": "at-estate-treaty-exists",
+      "fact": "estate",
+      "cities": [
+        "vienna"
+      ],
+      "claim": "A US–Austria estate and gift tax treaty exists but is mostly moot",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-with",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "All 13 countries are in the table (see us-estate-treaty-list). Estate & Gift: Australia, Austria, France, Germany, Japan, United Kingdom. Estate only: Greece, Ireland, Italy, Netherlands, South Africa, Switzerland, and Canada by Article XXIX B of the income tax treaty."
+        },
+        {
+          "name": "PwC: Austria, individual, other taxes",
+          "url": "https://taxsummaries.pwc.com/austria/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 23 July 2026. \"There is no wealth/worth tax in Austria.\" \"There are no inheritance, estate, or gift taxes in Austria.\" Real estate acquisition tax: 3.5% of the consideration in general; \"in case of non-remunerated acquisition (e.g. donations), the tax rate is scaled\": 0.5% up to EUR 250,000, 2.0% to 400,000, 3.5% above."
+        }
+      ],
+      "note": "The IRS lists Austria as \"Estate & Gift\". \"Mostly moot\" is the profile's inference from Austria levying no inheritance, estate or gift tax (PwC); the treaty text was not read."
+    },
+    {
+      "id": "at-estate-us-exemption-2026",
+      "fact": "estate",
+      "cities": [
+        "vienna"
+      ],
+      "claim": "The US estate exemption is $15M in 2026",
+      "verdict": "confirmed",
+      "shared": "us-estate-exemption-2026",
+      "sources": [
+        {
+          "name": "IRS: What's new, estate and gift tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax",
+          "read": "2026-11-15",
+          "says": "The table \"Basic exclusion amount for year of death\" has the row 2026: $15,000,000 (2025: $13,990,000). The page says the Working Families Tax Cuts, Public Law 119-21, signed July 4, 2025, \"amends § 2010(c)(3) by increasing the basic exclusion amount to $15,000,000 for calendar year 2026\". Page last reviewed or updated 03-Nov-2026."
+        },
+        {
+          "name": "IRS: Estate tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-tax",
+          "read": "2026-11-15",
+          "says": "A return is required when the gross estate, plus adjusted taxable gifts and specific exemption, is more than the filing threshold for the year of death; the table gives 2026: $15,000,000. Page last reviewed or updated 23-Oct-2026."
+        },
+        {
+          "name": "IRS news release IR-2025-103: tax inflation adjustments for tax year 2026",
+          "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill",
+          "read": "2026-11-15",
+          "says": "\"Estates of decedents who die during 2026 have a basic exclusion amount of $15,000,000\", up from $13,990,000 for 2025; the release (October 9, 2025) cites Revenue Procedure 2025-32 and is marked as an archival document."
+        }
+      ]
+    },
+    {
+      "id": "at-estate-us-exemption-applies",
+      "fact": "estate",
+      "cities": [
+        "vienna"
+      ],
+      "claim": "The US exemption applies to a US citizen living there as anywhere",
+      "verdict": "confirmed",
+      "shared": "us-estate-exemption-applies-abroad",
+      "sources": [
+        {
+          "name": "IRS: Some nonresidents with U.S. assets must file estate tax returns",
+          "url": "https://www.irs.gov/individuals/international-taxpayers/some-nonresidents-with-us-assets-must-file-estate-tax-returns",
+          "read": "2026-11-15",
+          "says": "\"U.S. citizens are subject to U.S. estate taxation with respect to their worldwide assets\"; Form 706 is required when worldwide assets plus adjusted taxable gifts exceed the basic exclusion amount in effect on the date of death. By contrast a nonresident who is not a citizen files when US-situated assets exceed $60,000. Page last reviewed or updated 27-Jun-2026."
+        }
+      ]
+    },
+    {
+      "id": "at-lending-ibkr-accepts",
+      "fact": "lending",
+      "cities": [
+        "vienna"
+      ],
+      "claim": "IBKR serves Austria residents",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly serves Austria residents",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        }
+      ],
+      "note": "IBKR's sites returned HTTP 403 again on 2026-11-15 (the UK country list and article 3750 were tried)."
+    },
+    {
+      "id": "at-lending-ibkr-eu-entity",
+      "fact": "lending",
+      "cities": [
+        "vienna"
+      ],
+      "claim": "Austria residents are served through IBKR's EU (Irish) entity",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-eu-entity",
+      "hedge": "likely",
+      "wording": "(likely through its EU entity)",
+      "sources": [
+        {
+          "name": "Interactive Brokers Ireland Limited: Customer Agreement (document 4750, 7/1/2023), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/01_4750_IBIE_Customer_Agreement_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "Clause 1B: Interactive Brokers Ireland Limited (\"IBIE\") is incorporated in Ireland, company number 657406, and \"is regulated by the Central Bank of Ireland\", register number C423427. Clause 1C: unless told otherwise in writing, the client is categorised as a Retail Client. The agreement does not say which countries' residents IBIE serves."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. \"In the EU, customers sign up with the Irish entity\"; UK clients are with Interactive Brokers (U.K.) Limited; the Irish €20k compensation scheme applies to Eastern Europe after the Irish and Hungarian entities merged."
+        },
+        {
+          "name": "Investing in the Web: Interactive Brokers in Europe",
+          "url": "https://investingintheweb.com/broker-reviews/interactive-brokers-europe",
+          "read": "2026-11-15",
+          "says": "Updated on Sep 8, 2026. \"As an European resident, you are under the Central Bank of Ireland regulation\" (Interactive Brokers Ireland Limited); \"As a UK resident, you will be under this legal entity\" (Interactive Brokers UK Limited); \"Interactive Brokers Luxembourg and Central have been extinct/merged.\""
+        }
+      ]
+    },
+    {
+      "id": "at-lending-margin-terms-unknown",
+      "fact": "lending",
+      "cities": [
+        "vienna"
+      ],
+      "claim": "IBKR's margin terms per country are unknown",
+      "verdict": "cant-confirm",
+      "hedge": "unknown",
+      "wording": "with margin terms per country unknown",
+      "sources": [
+        {
+          "name": "Interactive Brokers Ireland Limited: Customer Agreement (document 4750, 7/1/2023), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/01_4750_IBIE_Customer_Agreement_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "Clause 2A(i)(d): \"Subject to Applicable Laws, IBIE shall offer a margin trading service to Clients to enable Clients to acquire investment instruments\". Clause 4A: margin trading is subject to IBIE's margin requirements, which it may change at any time; IBIE generally will not issue margin calls and may liquidate positions without notice. Clause 1C: clients are Retail Clients unless notified otherwise."
+        },
+        {
+          "name": "Interactive Brokers Ireland Limited: Disclosure of Risks of Margin Trading (document 4761, December 2020), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/4761_IBIE_DISCLOSURE_OF_RISKS_OF_MARGIN_TRADING_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "\"When you purchase securities, you may pay for the securities in full or you may borrow part of the purchase price from IBIE. If you choose to borrow funds from IBIE, you will open a margin account with IBIE. The securities purchased are IBIE's collateral for the loan to you.\""
+        }
+      ],
+      "note": "A statement of what is not known. The two IBKR Ireland documents read in stage 1 give no rates, loan-to-value limits or per-country terms, and nothing read here does either."
+    },
+    {
+      "id": "at-lending-schwab-unavailable",
+      "fact": "lending",
+      "cities": [
+        "vienna"
+      ],
+      "claim": "Schwab International is unavailable to Austria residents because Austria is not on its reported list",
+      "verdict": "corrected",
+      "shared": "schwab-accepts-residents",
+      "oldWording": "Schwab International is reportedly unavailable (Austria is not on its reported list)",
+      "newWording": "Schwab International reportedly accepts them too (Austria is on its reported list, Oct 2026)",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026; read again on 2026-11-15 for Austria, Malta and Switzerland. The 51 countries and regions Schwab's international application accepted that day include Austria and Switzerland; Malta is listed as not accepted. It quotes the Schwab One Account Agreement: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds\"; it does not say whether \"Europe\" covers Switzerland or the UK."
+        }
+      ],
+      "also": [
+        "scores.lending: this alone would not raise it, since Austria is in the EU; see at-lending-ibkr-margin-cash-out for 3→2"
+      ],
+      "note": "The one dated list, re-read on 2026-11-15, has Austria among the 51 accepted. It stays \"reportedly\": Schwab's own pages were unreadable in stage 1 and were not tried again."
+    },
+    {
+      "id": "at-lending-schwab-cash-out",
+      "fact": "lending",
+      "cities": [
+        "vienna"
+      ],
+      "claim": "Schwab bars Europe residents from taking cash out through margin",
+      "verdict": "cant-confirm",
+      "shared": "schwab-europe-margin-cash-out",
+      "hedge": "reportedly",
+      "wording": "Schwab reportedly bars Europe residents from taking cash out through margin",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026; read again on 2026-11-15 for Austria, Malta and Switzerland. The 51 countries and regions Schwab's international application accepted that day include Austria and Switzerland; Malta is listed as not accepted. It quotes the Schwab One Account Agreement: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds\"; it does not say whether \"Europe\" covers Switzerland or the UK."
+        }
+      ],
+      "also": [
+        "clause added with the Schwab correction: once the profile says Schwab accepts Austria residents, it has to say what Schwab reportedly bars"
+      ]
+    },
+    {
+      "id": "at-lending-ibkr-margin-cash-out",
+      "fact": "lending",
+      "cities": [
+        "vienna"
+      ],
+      "claim": "An Austria resident can borrow against the portfolio at IBKR (implied by naming IBKR as the broker that serves residents)",
+      "verdict": "corrected",
+      "shared": "ibkr-eu-margin-cash-out",
+      "oldWording": "with margin terms per country unknown; Schwab International is reportedly unavailable",
+      "newWording": "and IBKR's EU entity reportedly lends on margin only to buy securities, not to withdraw as cash, so confirm how you would draw cash before relying on either",
+      "sources": [
+        {
+          "name": "LYNX: Withdrawal (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/payments-and-transfers/withdrawal/",
+          "read": "2026-11-15",
+          "says": "\"It is not possible to withdraw in a currency if your cash balance is negative or would go negative after the withdrawal.\" In a margin account \"some funds may be used as collateral for other positions or to cover negative cash balances\", which lowers what can be withdrawn. The page is undated (footer: Copyright 2023)."
+        },
+        {
+          "name": "CapTrader: Geld abheben (help page of a German introducing broker for Interactive Brokers)",
+          "url": "https://www.captrader.com/geld-abheben/",
+          "read": "2026-11-15",
+          "says": "\"Auszahlungen sind nur möglich, wenn kein negativer Saldo in der entsprechenden Währung\" or in the total cash arises or grows: withdrawals are possible only if they do not create or increase a negative balance. Footer: © CapTrader 2026."
+        },
+        {
+          "name": "Interactive Brokers Ireland Limited: Customer Agreement (document 4750, 7/1/2023), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/01_4750_IBIE_Customer_Agreement_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "Clause 2A(i)(d) defines the margin service as one \"to enable Clients to acquire investment instruments\". Clause 5A(iv): \"Terms and conditions for deposit and withdrawal of funds (including holding periods) are as specified on the IBIE website.\" The agreement does not say that a loan may be withdrawn as cash."
+        },
+        {
+          "name": "Mustachian Post forum: Using margin loan at Interactive Brokers, page 13",
+          "url": "https://forum.mustachianpost.com/t/using-margin-loan-at-interactive-brokers/3980?page=13",
+          "read": "2026-11-15",
+          "says": "Posts of September to November 2024. One poster says withdrawing cash on margin is \"not possible in Germany with IB IE\" but is with IB UK; Swiss residents with IB UK accounts report having done it; another reports IBKR service saying \"IBUK customers can no longer withdraw cash if aggregate cash balance is -ve\", which a manager then said applies only to UK residents."
+        }
+      ],
+      "also": [
+        "scores.lending 3→2 (plan decision of 2026-11-15; rubric 2: EU residence, where Schwab and IBKR's EU entity both reportedly bar taking cash out through margin)",
+        "summary: added the closing sentence \"The borrow step is weak too: Schwab and IBKR both reportedly bar EU residents from drawing margin as cash.\"",
+        "drawbacks: none mentioned margin or brokers, so none was reworded and none was added; the summary sentence carries it",
+        "sources: added LYNX withdrawal page"
+      ],
+      "rankFlag": "Vienna (rank 75, last) now scores lending 2. Its `why` does not mention borrowing, so it is not contradicted; the rank is unchanged. With Schwab reportedly accepting Austria residents, Vienna would have been a 4 by the old reading outside the EU; inside the EU the rubric gives 2. User's call.",
+      "note": "The profile never said \"so plan on IBKR margin\"; it named IBKR and stopped. The standard wording is used unchanged, ending \"either\" because Schwab reportedly accepts Austria residents too. The shared sources are copied with their stage 1 read date; the LYNX page was not re-read."
+    },
+    {
+      "id": "at-lending-priips-new-buys",
+      "fact": "lending",
+      "cities": [
+        "vienna"
+      ],
+      "claim": "EU PRIIPs rules block new buys of US-listed ETFs",
+      "verdict": "confirmed",
+      "shared": "priips-us-etf-new-buys-blocked",
+      "sources": [
+        {
+          "name": "LYNX: Key Information Document (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/products-and-regulations/regulations/key-information-document/",
+          "read": "2026-11-15",
+          "says": "Retail clients are \"not permitted to trade ETFs or other products that do not have a valid KID\"; many non-EU ETFs have none. Can a retail client buy US ETFs? \"No, not unless you are classified as a professional investor.\" The same applies to ETFs from Canada, Hong Kong, Mexico and Australia. The KID has applied to most products since 1 January 2018."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. \"PRIIPs is an EU rule that prohibits buying US-listed ETFs\", and this also applies to UK investors; US ETFs are open only to elective professional clients, while UCITS ETFs are available to all Europeans."
+        }
+      ],
+      "note": "The profile's \"reportedly\" stays; it does no harm."
+    },
+    {
+      "id": "at-lending-priips-holdings-kept",
+      "fact": "lending",
+      "cities": [
+        "vienna"
+      ],
+      "claim": "The block is on buying, not on holding US-listed ETFs",
+      "verdict": "confirmed",
+      "shared": "priips-existing-holdings-kept",
+      "sources": [
+        {
+          "name": "LYNX: Key Information Document (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/products-and-regulations/regulations/key-information-document/",
+          "read": "2026-11-15",
+          "says": "The page's FAQ says retail clients \"may still hold or sell existing positions, but new purchases are restricted.\""
+        },
+        {
+          "name": "Regulation (EU) No 1286/2014, Article 13, as adopted (legislation.gov.uk copy of the EU text)",
+          "url": "https://www.legislation.gov.uk/eur/2014/1286/article/13/adopted",
+          "read": "2026-11-15",
+          "says": "The duty to provide a KID falls on \"a person advising on, or selling, a PRIIP\" before the retail investor is bound; nothing in the article reaches a PRIIP the investor already holds or a sale by the investor."
+        }
+      ]
+    },
+    {
+      "id": "at-visa-permit-no-work",
+      "fact": "visa",
+      "cities": [
+        "vienna"
+      ],
+      "claim": "The route is the settlement permit with no right to work (Niederlassungsbewilligung – ausgenommen Erwerbstätigkeit)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "oesterreich.gv.at: Niederlassungsbewilligung – ausgenommen Erwerbstätigkeit",
+          "url": "https://www.oesterreich.gv.at/de/themen/menschen_aus_anderen_staaten/aufenthalt/3/2/Seite.120302",
+          "read": "2026-11-15",
+          "says": "\"Letzte Aktualisierung: 07.08.2026\"; amounts as of 1 January 2026. For other third-country nationals \"muss ein Quotenplatz vorhanden sein\"; regular monthly income of €2,616.78 for single persons, €4,128.24 for couples and €403.76 per child, from pensions or returns on assets, savings or company stakes; \"Krankenversicherungsschutz, der alle Risiken abdeckt\"; a legal claim to \"eine ortsübliche Unterkunft\"; German skills are proven \"mit der Stellung eines Erstantrags\"; the application is made \"persönlich und vor der Einreise nach Österreich im Ausland\" at the Austrian representation. The page as read does not state the validity period."
+        }
+      ]
+    },
+    {
+      "id": "at-visa-income-2026",
+      "fact": "visa",
+      "cities": [
+        "vienna"
+      ],
+      "claim": "It needs regular net income of €2,616.78/month single or €4,128.24 for a couple (2026), from pensions or sufficient personal assets",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "oesterreich.gv.at: Niederlassungsbewilligung – ausgenommen Erwerbstätigkeit",
+          "url": "https://www.oesterreich.gv.at/de/themen/menschen_aus_anderen_staaten/aufenthalt/3/2/Seite.120302",
+          "read": "2026-11-15",
+          "says": "\"Letzte Aktualisierung: 07.08.2026\"; amounts as of 1 January 2026. For other third-country nationals \"muss ein Quotenplatz vorhanden sein\"; regular monthly income of €2,616.78 for single persons, €4,128.24 for couples and €403.76 per child, from pensions or returns on assets, savings or company stakes; \"Krankenversicherungsschutz, der alle Risiken abdeckt\"; a legal claim to \"eine ortsübliche Unterkunft\"; German skills are proven \"mit der Stellung eines Erstantrags\"; the application is made \"persönlich und vor der Einreise nach Österreich im Ausland\" at the Austrian representation. The page as read does not state the validity period."
+        }
+      ],
+      "note": "The page does not say the amounts are twice the ASVG reference rates; it states the amounts themselves, as of 1 January 2026."
+    },
+    {
+      "id": "at-visa-insurance-housing",
+      "fact": "visa",
+      "cities": [
+        "vienna"
+      ],
+      "claim": "It needs all-risk health insurance and housing",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "oesterreich.gv.at: Niederlassungsbewilligung – ausgenommen Erwerbstätigkeit",
+          "url": "https://www.oesterreich.gv.at/de/themen/menschen_aus_anderen_staaten/aufenthalt/3/2/Seite.120302",
+          "read": "2026-11-15",
+          "says": "\"Letzte Aktualisierung: 07.08.2026\"; amounts as of 1 January 2026. For other third-country nationals \"muss ein Quotenplatz vorhanden sein\"; regular monthly income of €2,616.78 for single persons, €4,128.24 for couples and €403.76 per child, from pensions or returns on assets, savings or company stakes; \"Krankenversicherungsschutz, der alle Risiken abdeckt\"; a legal claim to \"eine ortsübliche Unterkunft\"; German skills are proven \"mit der Stellung eines Erstantrags\"; the application is made \"persönlich und vor der Einreise nach Österreich im Ausland\" at the Austrian representation. The page as read does not state the validity period."
+        }
+      ]
+    },
+    {
+      "id": "at-visa-german-first-application",
+      "fact": "visa",
+      "cities": [
+        "vienna"
+      ],
+      "claim": "German proof is needed with the first application",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "oesterreich.gv.at: Niederlassungsbewilligung – ausgenommen Erwerbstätigkeit",
+          "url": "https://www.oesterreich.gv.at/de/themen/menschen_aus_anderen_staaten/aufenthalt/3/2/Seite.120302",
+          "read": "2026-11-15",
+          "says": "\"Letzte Aktualisierung: 07.08.2026\"; amounts as of 1 January 2026. For other third-country nationals \"muss ein Quotenplatz vorhanden sein\"; regular monthly income of €2,616.78 for single persons, €4,128.24 for couples and €403.76 per child, from pensions or returns on assets, savings or company stakes; \"Krankenversicherungsschutz, der alle Risiken abdeckt\"; a legal claim to \"eine ortsübliche Unterkunft\"; German skills are proven \"mit der Stellung eines Erstantrags\"; the application is made \"persönlich und vor der Einreise nach Österreich im Ausland\" at the Austrian representation. The page as read does not state the validity period."
+        }
+      ],
+      "note": "The page as read does not name the level (A1); the profile does not either. The summary's drawback says \"a permit that needs German and a quota place\", which the page supports."
+    },
+    {
+      "id": "at-visa-quota",
+      "fact": "visa",
+      "cities": [
+        "vienna"
+      ],
+      "claim": "A quota place is needed",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "oesterreich.gv.at: Niederlassungsbewilligung – ausgenommen Erwerbstätigkeit",
+          "url": "https://www.oesterreich.gv.at/de/themen/menschen_aus_anderen_staaten/aufenthalt/3/2/Seite.120302",
+          "read": "2026-11-15",
+          "says": "\"Letzte Aktualisierung: 07.08.2026\"; amounts as of 1 January 2026. For other third-country nationals \"muss ein Quotenplatz vorhanden sein\"; regular monthly income of €2,616.78 for single persons, €4,128.24 for couples and €403.76 per child, from pensions or returns on assets, savings or company stakes; \"Krankenversicherungsschutz, der alle Risiken abdeckt\"; a legal claim to \"eine ortsübliche Unterkunft\"; German skills are proven \"mit der Stellung eines Erstantrags\"; the application is made \"persönlich und vor der Einreise nach Österreich im Ausland\" at the Austrian representation. The page as read does not state the validity period."
+        }
+      ],
+      "note": "The yearly number of places is not in the profile and was not checked. www.migration.gv.at (the federal migration portal's page for this permit) redirected and then returned \"Diese Seite ist derzeit nicht erreichbar\"."
+    },
+    {
+      "id": "at-visa-apply-abroad-yearly",
+      "fact": "visa",
+      "cities": [
+        "vienna"
+      ],
+      "claim": "The application is made at an Austrian embassy before entry, and the permit is renewed yearly",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "oesterreich.gv.at: Niederlassungsbewilligung – ausgenommen Erwerbstätigkeit",
+          "url": "https://www.oesterreich.gv.at/de/themen/menschen_aus_anderen_staaten/aufenthalt/3/2/Seite.120302",
+          "read": "2026-11-15",
+          "says": "\"Letzte Aktualisierung: 07.08.2026\"; amounts as of 1 January 2026. For other third-country nationals \"muss ein Quotenplatz vorhanden sein\"; regular monthly income of €2,616.78 for single persons, €4,128.24 for couples and €403.76 per child, from pensions or returns on assets, savings or company stakes; \"Krankenversicherungsschutz, der alle Risiken abdeckt\"; a legal claim to \"eine ortsübliche Unterkunft\"; German skills are proven \"mit der Stellung eines Erstantrags\"; the application is made \"persönlich und vor der Einreise nach Österreich im Ausland\" at the Austrian representation. The page as read does not state the validity period."
+        },
+        {
+          "name": "Jusline: Settlement and Residence Act (NAG) § 20",
+          "url": "https://www.jusline.at/gesetz/nag/paragraf/20",
+          "read": "2026-11-15",
+          "says": "\"Berücksichtigter Stand der Gesetzgebung: 15.11.2026\". § 20 Abs. 1: \"Befristete Aufenthaltstitel sind für die Dauer von zwölf Monaten\" to be issued, unless a longer period is provided for, or a shorter one was applied for or the travel document requires it. The page also shows \"In Kraft seit 01.10.2023 bis 06.08.2026\" for this version."
+        }
+      ],
+      "note": "The oesterreich.gv.at page gives the place of application but not the validity; the 12 months come from § 20 NAG as shown on Jusline, whose page carries a current \"Stand\" date but an odd in-force range. RIS itself was not read."
+    },
+    {
+      "id": "at-healthcare-oegk-contribution",
+      "fact": "healthcare",
+      "cities": [
+        "vienna"
+      ],
+      "claim": "Once resident, you can join the public ÖGK self-insurance at €565.25/month (2026)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "oesterreich.gv.at: Selbstversicherung in der Krankenversicherung",
+          "url": "https://www.oesterreich.gv.at/de/themen/gesundheit/selbstversicherung_in_der_krankenversicherung",
+          "read": "2026-11-15",
+          "says": "\"Letzte Aktualisierung: 31.03.2026\". Open to people without health insurance \"deren Wohnsitz in Österreich liegt\"; the contribution is \"565,25 Euro pro Monat\" (2026); benefits in kind generally begin \"nach sechs Monaten\" (the waiting period), with exceptions for people insured or co-insured shortly before."
+        }
+      ]
+    },
+    {
+      "id": "at-healthcare-six-month-wait",
+      "fact": "healthcare",
+      "cities": [
+        "vienna"
+      ],
+      "claim": "Benefits start after a 6-month wait",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "oesterreich.gv.at: Selbstversicherung in der Krankenversicherung",
+          "url": "https://www.oesterreich.gv.at/de/themen/gesundheit/selbstversicherung_in_der_krankenversicherung",
+          "read": "2026-11-15",
+          "says": "\"Letzte Aktualisierung: 31.03.2026\". Open to people without health insurance \"deren Wohnsitz in Österreich liegt\"; the contribution is \"565,25 Euro pro Monat\" (2026); benefits in kind generally begin \"nach sechs Monaten\" (the waiting period), with exceptions for people insured or co-insured shortly before."
+        }
+      ]
+    },
+    {
+      "id": "at-healthcare-permit-private-cover",
+      "fact": "healthcare",
+      "cities": [
+        "vienna"
+      ],
+      "claim": "The settlement permit first needs private all-risk cover",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "oesterreich.gv.at: Niederlassungsbewilligung – ausgenommen Erwerbstätigkeit",
+          "url": "https://www.oesterreich.gv.at/de/themen/menschen_aus_anderen_staaten/aufenthalt/3/2/Seite.120302",
+          "read": "2026-11-15",
+          "says": "\"Letzte Aktualisierung: 07.08.2026\"; amounts as of 1 January 2026. For other third-country nationals \"muss ein Quotenplatz vorhanden sein\"; regular monthly income of €2,616.78 for single persons, €4,128.24 for couples and €403.76 per child, from pensions or returns on assets, savings or company stakes; \"Krankenversicherungsschutz, der alle Risiken abdeckt\"; a legal claim to \"eine ortsübliche Unterkunft\"; German skills are proven \"mit der Stellung eines Erstantrags\"; the application is made \"persönlich und vor der Einreise nach Österreich im Ausland\" at the Austrian representation. The page as read does not state the validity period."
+        }
+      ],
+      "note": "The page requires cover of all risks; that it must be private follows from the applicant not yet being resident (self-insurance needs a residence in Austria)."
+    },
+    {
+      "id": "at-healthcare-cigna-no-age-cap",
+      "fact": "healthcare",
+      "cities": [
+        "vienna"
+      ],
+      "claim": "Cigna Global has no entry-age cap",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Cigna Global: international health plans",
+          "url": "https://cignaglobal.com/international-health-plans",
+          "read": "2026-11-15",
+          "says": "Undated (brochures named 02_2026). \"Available from the age of 18 years old with no upper age limit\"; \"We don't apply an age limit on our international health plans.\""
+        }
+      ],
+      "also": [
+        "sources: added Cigna Global's page"
+      ]
+    },
+    {
+      "id": "at-healthcare-akh",
+      "fact": "healthcare",
+      "cities": [
+        "vienna"
+      ],
+      "claim": "Vienna's hospitals, led by the AKH university hospital, are generally regarded as excellent",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Advantage Austria: AKH and MedUni Wien in the 2026 hospital ranking",
+          "url": "https://www.advantageaustria.org/lr/zentral/news/akh-meduni-wien-hospital-ranking-2026.de.html",
+          "read": "2026-11-15",
+          "says": "Dated 19 March 2026. AKH Wien and MedUni Wien are 20th of 250 in Newsweek's \"World's Best Hospitals 2026\" (27th in 2025); the university hospital has 29 university clinics and about 400 outpatient units, treats about 65,000 inpatients a year and counts about 1.2 million outpatient visits."
+        }
+      ],
+      "also": [
+        "sources: added the Advantage Austria page"
+      ],
+      "note": "The hospital's own site could not be read: https://www.akhwien.at/ and two akhwien.at document URLs returned HTTP 404. Advantage Austria is the Austrian Economic Chamber's trade agency."
+    }
+  ]
+}

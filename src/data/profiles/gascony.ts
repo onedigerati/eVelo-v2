@@ -4,8 +4,8 @@ import { S } from './_shared'
 const profile: ExpatProfile = {
   tagline: 'Rolling rural France around Auch, with France\'s death taxes',
   summary:
-    'Gascony (the Gers, around Auch) offers quiet villages, Pyrenees views and France\'s easy visitor visa and public health system, with a long-standing British presence. For buy-borrow-die it ranks near the bottom: France taxes a resident\'s worldwide estate at up to 45% when it passes to children, dividends pay 31.4%, and the nearest teaching hospital is in Toulouse, about 70 km from Auch.',
-  scores: { cost: 2, healthcare: 3, safety: 4, visa: 4, climate: 4, community: 3, tax: 2, estate: 1, lending: 3 },
+    'Gascony (the Gers, around Auch) offers quiet villages, Pyrenees views and France\'s easy visitor visa and public health system, with a long-standing British presence. For buy-borrow-die it ranks near the bottom: France taxes a resident\'s worldwide estate at up to 45% when it passes to children, dividends pay 31.4%, and the nearest teaching hospital is in Toulouse, about 70 km from Auch. The borrow step is weak too: Schwab reportedly does not take France residents, and IBKR reportedly bars EU residents from drawing margin as cash.',
+  scores: { cost: 2, healthcare: 3, safety: 4, visa: 4, climate: 4, community: 3, tax: 2, estate: 1, lending: 2 },
   facts: {
     healthcare:
       'Visitor-visa holders can join the public PUMa system after 3 months\' residence (most add a top-up mutuelle, about €120–132/month at 70); Auch\'s public hospital has 562 beds and places and is due to be rebuilt on a new site around 2028–30, specialists are sparser in rural Gers, and the CHU de Toulouse is about 70 km east.',
@@ -16,7 +16,7 @@ const profile: ExpatProfile = {
     estate:
       'France taxes a French-resident decedent\'s worldwide estate: each child gets a €100k allowance, then 5–45% (20% from €15,933 to €552,324, 45% above €1,805,677); under the US–France estate treaty a US citizen (not French) who clearly intends to keep a US domicile and has lived in France under 5 of the last 7 years is treated as US-domiciled, so France taxes only French real estate and goods in France; after that, or for anyone settled in France for good, the worldwide estate is in reach, with treaty credits against double tax.',
     lending:
-      'IBKR is reportedly the only option: Schwab International\'s online form reportedly does not accept France residents; EU PRIIPs rules reportedly block new buys of US-listed ETFs, not holding them.',
+      'IBKR is reportedly the only broker open to France residents, since Schwab International\'s online form reportedly does not accept them, and IBKR\'s EU entity reportedly lends on margin only to buy securities, not to withdraw as cash, so confirm how you would draw cash before relying on it; EU PRIIPs rules reportedly block new buys of US-listed ETFs, not holding them.',
     climate: 'Mild south-western climate: Auch averages July highs about 28°C and January highs about 10°C with lows near 2°C, about 700 mm of rain and 1,980 hours of sun a year (1991–2020).',
     community:
       'The Gers has long drawn British and other European buyers: about 1,300 of its 6,400 second homes are foreign-owned, 49% of them by Britons, and long-term foreign residents join village associations; Auch itself has about 22,000 people, and daily life runs in French.',
@@ -28,6 +28,8 @@ const profile: ExpatProfile = {
     '31.4% on dividends and interest, a car-dependent rural life, and paperwork in French',
   ],
   sources: [
+    { name: 'LYNX: withdrawals from accounts carried by Interactive Brokers', url: 'https://www.lynxbroker.com/service/payments-and-transfers/withdrawal/' },
+    { name: 'Service-Public: social levies on investment income (CSG, CRDS)', url: 'https://www.service-public.gouv.fr/particuliers/vosdroits/F2329?lang=en', edition: '2026' },
     S.il,
     { name: 'PwC: France, other taxes', url: 'https://taxsummaries.pwc.com/france/individual/other-taxes', edition: '2026' },
     { name: 'Service-Public: inheritance tax (droits de succession)', url: 'https://www.service-public.gouv.fr/particuliers/vosdroits/F14198' },

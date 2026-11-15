@@ -1,0 +1,704 @@
+{
+  "country": "Ireland",
+  "cities": [
+    "dublin"
+  ],
+  "claims": [
+    {
+      "id": "ie-tax-no-wealth-tax",
+      "fact": "tax",
+      "cities": [
+        "dublin"
+      ],
+      "claim": "Ireland has no wealth tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Ireland, other taxes",
+          "url": "https://taxsummaries.pwc.com/ireland/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 05 August 2026. \"There are currently no net wealth/worth taxes on individuals in Ireland.\" A gift or inheritance \"will be subject to CAT if either the donor or the beneficiary is resident or ordinarily resident in Ireland\"; assets situated in Ireland are also subject to CAT regardless of residence. The page gives no CAT rate, threshold or five-year rule. Self-employed PRSI is 4.2%, rising by 0.1% from 1 October 2026."
+        }
+      ]
+    },
+    {
+      "id": "ie-tax-remittance-basis",
+      "fact": "tax",
+      "cities": [
+        "dublin"
+      ],
+      "claim": "A non-domiciled resident is taxed on foreign dividends, interest and gains only when they are remitted to Ireland",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Ireland, income determination",
+          "url": "https://taxsummaries.pwc.com/ireland/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 05 August 2026. Individuals who are resident but not domiciled are \"liable to Irish income tax on foreign investment income to the extent that it is remitted into Ireland\"; a non-domiciled resident is taxed on gains on Irish assets in full and on foreign gains to the extent they are \"remitted to Ireland\". The CGT rate is given as 33% (40% for certain fund interests and life policies); the page predates the 7 October 2026 change."
+        },
+        {
+          "name": "PwC: Ireland, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/ireland/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 05 August 2026. 2026 income tax: 20% up to EUR 44,000 for a single person (EUR 53,000 / 88,000 for couples) and 40% on the balance. A resident, non-domiciled individual is taxed on Irish-source income, and other foreign income only \"to the extent that it is remitted into Ireland.\""
+        },
+        {
+          "name": "Revenue: what is domicile and the domicile levy",
+          "url": "https://www.revenue.ie/en/jobs-and-pensions/tax-residence/what-is-domicile-and-the-domicile-levy.aspx",
+          "read": "2026-11-15",
+          "says": "Published 24 November 2025. \"Everyone has a 'domicile of origin' at birth (usually the domicile of the father).\" \"You keep your domicile of origin unless you choose to gain a new domicile\", which needs clear evidence that you intend to live permanently in the new country and do not intend to return. \"Your domicile affects how foreign-source income is taxed in Ireland\"; a non-domiciled resident pays tax on foreign income to the extent that it is remitted into Ireland. A remittance is funds sent to Ireland from abroad by wire, mail or online transfer. The page says nothing about loans."
+        }
+      ],
+      "note": "The remittance basis still exists. Not in the profile and not settled here: Ireland taxes Irish and \"equivalent\" offshore funds under a separate exit-tax regime (KPMG's Finance Bill 2026 page, read 2026-11-15 at https://kpmg.com/ie/en/insights/tax/finance-bill-2026/investment-funds-life-assurance.html, gives 38% falling to 35% from 1 January 2027, with the eight-year deemed disposal still a chargeable event). No page read says how US-domiciled ETFs are classed or whether the remittance basis shelters them, so nothing was added to the fact; a search result, not a read, had two retail sites disagreeing on CGT versus income tax for US ETFs. Revenue's old domicile URL (https://www.revenue.ie/en/jobs-and-pensions/tax-residence/tax-residence-and-domicile/domicile.aspx) returned 404; the current page is cited."
+    },
+    {
+      "id": "ie-tax-us-citizen-domicile",
+      "fact": "tax",
+      "cities": [
+        "dublin"
+      ],
+      "claim": "A US citizen usually keeps a US domicile",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Revenue: what is domicile and the domicile levy",
+          "url": "https://www.revenue.ie/en/jobs-and-pensions/tax-residence/what-is-domicile-and-the-domicile-levy.aspx",
+          "read": "2026-11-15",
+          "says": "Published 24 November 2025. \"Everyone has a 'domicile of origin' at birth (usually the domicile of the father).\" \"You keep your domicile of origin unless you choose to gain a new domicile\", which needs clear evidence that you intend to live permanently in the new country and do not intend to return. \"Your domicile affects how foreign-source income is taxed in Ireland\"; a non-domiciled resident pays tax on foreign income to the extent that it is remitted into Ireland. A remittance is funds sent to Ireland from abroad by wire, mail or online transfer. The page says nothing about loans."
+        }
+      ],
+      "note": "The page gives the rule (domicile of origin is kept unless a new one is chosen with clear evidence of permanent settlement); \"usually\" in the profile is the hedge for the retiree who does settle for good."
+    },
+    {
+      "id": "ie-tax-income-rate-usc",
+      "fact": "tax",
+      "cities": [
+        "dublin"
+      ],
+      "claim": "Remitted foreign income is taxed at up to 40% plus USC",
+      "verdict": "corrected",
+      "oldWording": "at up to 40% plus USC on income",
+      "newWording": "at up to 40% plus USC and generally PRSI on income",
+      "sources": [
+        {
+          "name": "PwC: Ireland, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/ireland/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 05 August 2026. 2026 income tax: 20% up to EUR 44,000 for a single person (EUR 53,000 / 88,000 for couples) and 40% on the balance. A resident, non-domiciled individual is taxed on Irish-source income, and other foreign income only \"to the extent that it is remitted into Ireland.\""
+        },
+        {
+          "name": "Revenue: USC standard rates and thresholds",
+          "url": "https://www.revenue.ie/en/jobs-and-pensions/usc/standard-rates-thresholds.aspx",
+          "read": "2026-11-15",
+          "says": "Dated 01 January 2026. 2026 USC: first €12,012 at 0.5%, next €16,688 at 2%, next €41,344 at 3%, balance at 8%."
+        },
+        {
+          "name": "KPMG Ireland: Budget 2027 tax rates and credits",
+          "url": "https://kpmg.com/ie/en/insights/tax/budget-2027/tax-rates-and-credits.html",
+          "read": "2026-11-15",
+          "says": "Dated 06-10-2026. Income tax 20%/40% (single band €44,000 in 2026, €46,500 in 2027). USC 0.5%, 2%, 3%, 8% (11% for self-employed income above €100,000). \"Unearned income in excess of €5,000 per annum is subject to PRSI.\" CGT 33% in 2026 and 31% for disposals on or after 7 October 2026. CAT 33%; Group A threshold €400,000 (2026) and €420,000 for gifts or inheritances taken on or after 7 October 2026."
+        }
+      ],
+      "also": [
+        "drawback 3 reworded: \"taxed at up to 40% plus USC\" → \"taxed at up to 40% plus USC and generally PRSI\"",
+        "sources: added KPMG Ireland Budget 2027 rates"
+      ],
+      "note": "The 40% and USC are right; PRSI was missing. KPMG: \"Unearned income in excess of €5,000 per annum is subject to PRSI\"; PwC gives the self-employed rate as 4.2%, rising 0.1% from 1 October 2026. \"generally\" covers the age limit, which no official page read settles: gov.ie's PRSI class pages (https://www.gov.ie/en/department-of-social-protection/services/prsi-class-k-rates/ and https://www.gov.ie/en/publication/14ecbe-the-different-classes-of-pay-related-social-insurance-prsi) and citizensinformation.ie returned HTTP 403; a secondary page (irishtaxhub.ie, updated 8 November 2026) says PRSI stops when the State Pension (Contributory) is awarded or at 70. Revenue's reduced-USC page returned 404; KPMG gives a 2% reduced USC rate for people aged 70 or over with income up to €60,000. scores.tax stays 4: the regime is a non-dom one, but money brought in is taxed in full."
+    },
+    {
+      "id": "ie-tax-cgt-rate",
+      "fact": "tax",
+      "cities": [
+        "dublin"
+      ],
+      "claim": "Remitted foreign gains are taxed at 33%",
+      "verdict": "corrected",
+      "oldWording": "33% on gains",
+      "newWording": "31% on gains (from 7 Oct 2026)",
+      "sources": [
+        {
+          "name": "Revenue: how to calculate CGT",
+          "url": "https://www.revenue.ie/en/gains-gifts-and-inheritance/transfering-an-asset/how-to-calculate-cgt.aspx",
+          "read": "2026-11-15",
+          "says": "Published 07 October 2026. \"The rate of CGT is 31% for most gains.\" \"Rates for most gains changed on 7 October 2026 to 31%\"; disposals from 6 December 2021 to 6 October 2026 paid 33%. 40% applies to gains from foreign life policies and foreign investment products, 33% to development land."
+        },
+        {
+          "name": "KPMG Ireland: Budget 2027 tax rates and credits",
+          "url": "https://kpmg.com/ie/en/insights/tax/budget-2027/tax-rates-and-credits.html",
+          "read": "2026-11-15",
+          "says": "Dated 06-10-2026. Income tax 20%/40% (single band €44,000 in 2026, €46,500 in 2027). USC 0.5%, 2%, 3%, 8% (11% for self-employed income above €100,000). \"Unearned income in excess of €5,000 per annum is subject to PRSI.\" CGT 33% in 2026 and 31% for disposals on or after 7 October 2026. CAT 33%; Group A threshold €400,000 (2026) and €420,000 for gifts or inheritances taken on or after 7 October 2026."
+        }
+      ],
+      "also": [
+        "sources: added Revenue's CGT rates page"
+      ],
+      "note": "The rate fell from 33% to 31% for disposals on or after 7 October 2026 (Budget 2027). PwC's page, reviewed in August, still shows 33%."
+    },
+    {
+      "id": "ie-tax-clean-capital-loan",
+      "fact": "tax",
+      "cities": [
+        "dublin"
+      ],
+      "claim": "Whether loan money brought into Ireland counts as a remittance of the securing assets is unsettled",
+      "verdict": "cant-confirm",
+      "hedge": "needs advice",
+      "wording": "whether loan money brought in counts as a remittance of the securing assets needs advice",
+      "sources": [
+        {
+          "name": "Revenue: what is domicile and the domicile levy",
+          "url": "https://www.revenue.ie/en/jobs-and-pensions/tax-residence/what-is-domicile-and-the-domicile-levy.aspx",
+          "read": "2026-11-15",
+          "says": "Published 24 November 2025. \"Everyone has a 'domicile of origin' at birth (usually the domicile of the father).\" \"You keep your domicile of origin unless you choose to gain a new domicile\", which needs clear evidence that you intend to live permanently in the new country and do not intend to return. \"Your domicile affects how foreign-source income is taxed in Ireland\"; a non-domiciled resident pays tax on foreign income to the extent that it is remitted into Ireland. A remittance is funds sent to Ireland from abroad by wire, mail or online transfer. The page says nothing about loans."
+        },
+        {
+          "name": "PwC: Ireland, income determination",
+          "url": "https://taxsummaries.pwc.com/ireland/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 05 August 2026. Individuals who are resident but not domiciled are \"liable to Irish income tax on foreign investment income to the extent that it is remitted into Ireland\"; a non-domiciled resident is taxed on gains on Irish assets in full and on foreign gains to the extent they are \"remitted to Ireland\". The CGT rate is given as 33% (40% for certain fund interests and life policies); the page predates the 7 October 2026 change."
+        }
+      ],
+      "note": "No page read addresses a loan secured on foreign assets. The advice to spend from capital held before arrival follows from the remittance rule and rides with ie-tax-remittance-basis. The profile already tells the reader to take advice; nothing was changed."
+    },
+    {
+      "id": "ie-estate-cat-rate",
+      "fact": "estate",
+      "cities": [
+        "dublin"
+      ],
+      "claim": "Capital Acquisitions Tax is 33%",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "KPMG Ireland: Budget 2027 tax rates and credits",
+          "url": "https://kpmg.com/ie/en/insights/tax/budget-2027/tax-rates-and-credits.html",
+          "read": "2026-11-15",
+          "says": "Dated 06-10-2026. Income tax 20%/40% (single band €44,000 in 2026, €46,500 in 2027). USC 0.5%, 2%, 3%, 8% (11% for self-employed income above €100,000). \"Unearned income in excess of €5,000 per annum is subject to PRSI.\" CGT 33% in 2026 and 31% for disposals on or after 7 October 2026. CAT 33%; Group A threshold €400,000 (2026) and €420,000 for gifts or inheritances taken on or after 7 October 2026."
+        }
+      ]
+    },
+    {
+      "id": "ie-estate-group-a-threshold",
+      "fact": "estate",
+      "cities": [
+        "dublin"
+      ],
+      "claim": "The lifetime allowance per child (Group A) is €420,000 from 7 October 2026",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Revenue: CAT thresholds",
+          "url": "https://www.revenue.ie/en/gains-gifts-and-inheritance/cat-thresholds-rates-and-aggregation-rules/cat-thresholds.aspx",
+          "read": "2026-11-15",
+          "says": "Published 07 October 2026. Group A threshold: €420,000 on or after 7 October 2026 (Group B €44,000, Group C €22,000); €400,000 from 2 October 2024 to 6 October 2026."
+        },
+        {
+          "name": "KPMG Ireland: Budget 2027 tax rates and credits",
+          "url": "https://kpmg.com/ie/en/insights/tax/budget-2027/tax-rates-and-credits.html",
+          "read": "2026-11-15",
+          "says": "Dated 06-10-2026. Income tax 20%/40% (single band €44,000 in 2026, €46,500 in 2027). USC 0.5%, 2%, 3%, 8% (11% for self-employed income above €100,000). \"Unearned income in excess of €5,000 per annum is subject to PRSI.\" CGT 33% in 2026 and 31% for disposals on or after 7 October 2026. CAT 33%; Group A threshold €400,000 (2026) and €420,000 for gifts or inheritances taken on or after 7 October 2026."
+        }
+      ],
+      "note": "src/data/localTaxes.ts (IE) has the same €420,000, 33% and five-year rule; no mismatch. Dublin is covered by the IE country entry."
+    },
+    {
+      "id": "ie-estate-five-year-rule",
+      "fact": "estate",
+      "cities": [
+        "dublin"
+      ],
+      "claim": "A non-domiciled parent counts as resident for CAT only after 5 consecutive years in Ireland, after which the worldwide estate is in reach",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Revenue Notes for Guidance, CAT Consolidation Act 2003, section 11 (copy on Chartered Accountants Ireland TaxSource)",
+          "url": "https://www.charteredaccountants.ie/taxsource/2003/en/act/pub/0001/nfg/sec0011-nfg.html",
+          "read": "2026-11-15",
+          "says": "\"The entire property comprised in the inheritance is liable to tax where\" the disponer is \"resident or ordinarily resident in the State at the date of the disposition\", or the successor is at the date of the inheritance; property located in the State is liable irrespective of residence. A foreign-domiciled person is not considered resident or ordinarily resident until 1 December 2004, and then only if he or she \"has been resident in the State for the 5 consecutive tax years preceding the relevant date.\""
+        },
+        {
+          "name": "Revenue Notes for Guidance, CAT Consolidation Act 2003, section 6 (copy on Chartered Accountants Ireland TaxSource)",
+          "url": "https://www.charteredaccountants.ie/taxsource/2003/en/act/pub/0001/nfg/sec0006-nfg.html",
+          "read": "2026-11-15",
+          "says": "The same rule for gifts: taxable \"where the disponer is resident or ordinarily resident in the State at the date of the disposition\" or the beneficiary is at the date of the gift; a non-domiciled person counts \"only if he/she has been resident in the State for the 5 consecutive tax years preceding that date.\""
+        },
+        {
+          "name": "Revenue: acquiring a foreign property",
+          "url": "https://www.revenue.ie/en/property/foreign-property/acquiring-a-foreign-property.aspx",
+          "read": "2026-11-15",
+          "says": "Published 16 December 2025. If you receive a gift or inheritance of foreign property you \"may have to pay Irish Capital Acquisitions Tax (CAT)\"; \"This will be the case if you, or the person that you receive the property from, are resident\" or \"ordinarily resident, in Ireland.\" The page does not mention the non-domiciled rule."
+        },
+        {
+          "name": "PwC: Ireland, other taxes",
+          "url": "https://taxsummaries.pwc.com/ireland/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 05 August 2026. \"There are currently no net wealth/worth taxes on individuals in Ireland.\" A gift or inheritance \"will be subject to CAT if either the donor or the beneficiary is resident or ordinarily resident in Ireland\"; assets situated in Ireland are also subject to CAT regardless of residence. The page gives no CAT rate, threshold or five-year rule. Self-employed PRSI is 4.2%, rising by 0.1% from 1 October 2026."
+        }
+      ],
+      "note": "Revenue's own copy of the notes (https://www.revenue.ie/en/tax-professionals/documents/notes-for-guidance/cat/2025/part02.pdf, dated 7 January 2026) came back as unreadable PDF binary, so the same Revenue notes were read as HTML on Chartered Accountants Ireland's TaxSource. The test is \"the 5 consecutive tax years preceding\" the year of the death, with residence or ordinary residence at that date; the profile's \"5 consecutive years\" and the summary's \"once the parent has lived there 5 years\" match. A resident beneficiary also brings the inheritance into charge, which the profile does not need (US-resident heirs). Revenue's guessed territorial page (https://www.revenue.ie/en/gains-gifts-and-inheritance/cat-territorial-rule/index.aspx) is a 404."
+    },
+    {
+      "id": "ie-estate-treaty-credit",
+      "fact": "estate",
+      "cities": [
+        "dublin"
+      ],
+      "claim": "The US–Ireland estate tax treaty gives credit relief",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Revenue: double taxation relief, USA (credits against CAT)",
+          "url": "https://www.revenue.ie/en/gains-gifts-and-inheritance/credits-you-can-claim-against-cat/double-taxation-relief-usa.aspx",
+          "read": "2026-11-15",
+          "says": "Published 03 September 2026. The convention \"covers Inheritance Tax in Ireland and federal estate taxes in the US\"; it does not apply to gift tax or US state death duties. A credit can be claimed against CAT where US federal estate tax was paid on the property, at the lower of the US or Irish effective rate: \"The credit given cannot exceed the Irish tax paid.\""
+        }
+      ]
+    },
+    {
+      "id": "ie-estate-treaty-exists",
+      "fact": "estate",
+      "cities": [
+        "dublin"
+      ],
+      "claim": "There is a US estate treaty with this country (estate tax treaty)",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-with",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "All 13 countries are in the table (see us-estate-treaty-list). Estate & Gift: Australia, Austria, France, Germany, Japan, United Kingdom. Estate only: Greece, Ireland, Italy, Netherlands, South Africa, Switzerland, and Canada by Article XXIX B of the income tax treaty."
+        }
+      ]
+    },
+    {
+      "id": "ie-estate-us-exemption-2026",
+      "fact": "estate",
+      "cities": [
+        "dublin"
+      ],
+      "claim": "The US estate exemption is $15M in 2026",
+      "verdict": "confirmed",
+      "shared": "us-estate-exemption-2026",
+      "sources": [
+        {
+          "name": "IRS: What's new, estate and gift tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax",
+          "read": "2026-11-15",
+          "says": "The table \"Basic exclusion amount for year of death\" has the row 2026: $15,000,000 (2025: $13,990,000). The page says the Working Families Tax Cuts, Public Law 119-21, signed July 4, 2025, \"amends § 2010(c)(3) by increasing the basic exclusion amount to $15,000,000 for calendar year 2026\". Page last reviewed or updated 03-Nov-2026."
+        },
+        {
+          "name": "IRS: Estate tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-tax",
+          "read": "2026-11-15",
+          "says": "A return is required when the gross estate, plus adjusted taxable gifts and specific exemption, is more than the filing threshold for the year of death; the table gives 2026: $15,000,000. Page last reviewed or updated 23-Oct-2026."
+        },
+        {
+          "name": "IRS news release IR-2025-103: tax inflation adjustments for tax year 2026",
+          "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill",
+          "read": "2026-11-15",
+          "says": "\"Estates of decedents who die during 2026 have a basic exclusion amount of $15,000,000\", up from $13,990,000 for 2025; the release (October 9, 2025) cites Revenue Procedure 2025-32 and is marked as an archival document."
+        }
+      ]
+    },
+    {
+      "id": "ie-estate-us-exemption-applies",
+      "fact": "estate",
+      "cities": [
+        "dublin"
+      ],
+      "claim": "The US exemption applies to a US citizen living there as anywhere",
+      "verdict": "confirmed",
+      "shared": "us-estate-exemption-applies-abroad",
+      "sources": [
+        {
+          "name": "IRS: Some nonresidents with U.S. assets must file estate tax returns",
+          "url": "https://www.irs.gov/individuals/international-taxpayers/some-nonresidents-with-us-assets-must-file-estate-tax-returns",
+          "read": "2026-11-15",
+          "says": "\"U.S. citizens are subject to U.S. estate taxation with respect to their worldwide assets\"; Form 706 is required when worldwide assets plus adjusted taxable gifts exceed the basic exclusion amount in effect on the date of death. By contrast a nonresident who is not a citizen files when US-situated assets exceed $60,000. Page last reviewed or updated 27-Jun-2026."
+        }
+      ]
+    },
+    {
+      "id": "ie-lending-ibkr-accepts",
+      "fact": "lending",
+      "cities": [
+        "dublin"
+      ],
+      "claim": "IBKR serves residents of Ireland",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly serves Ireland residents",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        }
+      ],
+      "note": "Tried again on 2026-11-15: https://www.interactivebrokers.co.uk/en/accounts/open-account-country-list.php returned HTTP 403, as every Interactive Brokers page did in stage 1. The hedge stays."
+    },
+    {
+      "id": "ie-lending-ibkr-eu-entity",
+      "fact": "lending",
+      "cities": [
+        "dublin"
+      ],
+      "claim": "EU clients are served through IBKR's Irish entity, Interactive Brokers Ireland Limited",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-eu-entity",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly serves Ireland residents through its Irish entity",
+      "sources": [
+        {
+          "name": "Interactive Brokers Ireland Limited: Customer Agreement (document 4750, 7/1/2023), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/01_4750_IBIE_Customer_Agreement_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "Clause 1B: Interactive Brokers Ireland Limited (\"IBIE\") is incorporated in Ireland, company number 657406, and \"is regulated by the Central Bank of Ireland\", register number C423427. Clause 1C: unless told otherwise in writing, the client is categorised as a Retail Client. The agreement does not say which countries' residents IBIE serves."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. \"In the EU, customers sign up with the Irish entity\"; UK clients are with Interactive Brokers (U.K.) Limited; the Irish €20k compensation scheme applies to Eastern Europe after the Irish and Hungarian entities merged."
+        },
+        {
+          "name": "Investing in the Web: Interactive Brokers in Europe",
+          "url": "https://investingintheweb.com/broker-reviews/interactive-brokers-europe",
+          "read": "2026-11-15",
+          "says": "Updated on Sep 8, 2026. \"As an European resident, you are under the Central Bank of Ireland regulation\" (Interactive Brokers Ireland Limited); \"As a UK resident, you will be under this legal entity\" (Interactive Brokers UK Limited); \"Interactive Brokers Luxembourg and Central have been extinct/merged.\""
+        }
+      ],
+      "note": "The entity clause has no hedge word of its own; it sits inside the \"reportedly serves\" clause, which is the hedge recorded. IBKR's own document confirms the Irish entity exists; which residents it serves rests on the two dated secondary pages."
+    },
+    {
+      "id": "ie-lending-schwab-accepts",
+      "fact": "lending",
+      "cities": [
+        "dublin"
+      ],
+      "claim": "Schwab International accepts residents of Ireland",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab International reportedly accepts them",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. On that day the author ran every entry in Schwab's international account selector through the application: it accepted residents of 51 of 263 countries and regions: Argentina, Australia, Austria, the Bahamas, Belgium, Bermuda, Brazil, the British Virgin Islands, the Cayman Islands, Chile, China, Colombia, Costa Rica, the Czech Republic, Denmark, Ecuador, Finland, Germany, Greece, Guatemala, Hong Kong, Iceland, India, Indonesia, Ireland, Israel, Jersey, Luxembourg, Malaysia, the Marshall Islands, Mexico, the Netherlands, Norway, Panama, Paraguay, Peru, Poland, Portugal, Qatar, Singapore, South Korea, Spain, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Turks and Caicos, the United Arab Emirates, the United Kingdom and Uruguay. Named as not accepted: Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam; for the rest the application said \"Schwab currently cannot open accounts for residents of your country/region.\" The test covers new applicants on that day only."
+        }
+      ],
+      "note": "The page was read again on 2026-11-15 for this country: Ireland is on its list of 51 countries and regions open to online application on October 23, 2026, marked \"Yes\". Schwab's own page (https://www.schwab.com/legal/schwab-one-account-agreement) returned its error page again (\"unable to authorize your request\")."
+    },
+    {
+      "id": "ie-lending-schwab-cash-out",
+      "fact": "lending",
+      "cities": [
+        "dublin"
+      ],
+      "claim": "Schwab bars Europe residents from taking cash out through margin",
+      "verdict": "cant-confirm",
+      "shared": "schwab-europe-margin-cash-out",
+      "hedge": "reportedly",
+      "wording": "Schwab reportedly bars Europe residents from taking cash out through margin",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. It quotes the Schwab One Account Agreement (\"October 2026 edition, form 09/26\"), Schwab One International terms: \"Customers residing within Europe are restricted from using their Available Margin Loan Value\" to withdraw funds from their account, and advises keeping enough actual cash in the account for spending. It does not define \"Europe\"."
+        }
+      ]
+    },
+    {
+      "id": "ie-lending-ibkr-margin-cash-out",
+      "fact": "lending",
+      "cities": [
+        "dublin"
+      ],
+      "claim": "A resident of Ireland can draw cash on margin at IBKR (\"so plan on IBKR margin\")",
+      "verdict": "corrected",
+      "shared": "ibkr-eu-margin-cash-out",
+      "oldWording": "so plan on IBKR margin",
+      "newWording": "and IBKR's EU entity reportedly lends on margin only to buy securities, not to withdraw as cash, so confirm how you would draw cash before relying on either",
+      "sources": [
+        {
+          "name": "LYNX: Withdrawal (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/payments-and-transfers/withdrawal/",
+          "read": "2026-11-15",
+          "says": "\"It is not possible to withdraw in a currency if your cash balance is negative or would go negative after the withdrawal.\" In a margin account \"some funds may be used as collateral for other positions or to cover negative cash balances\", which lowers what can be withdrawn. The page is undated (footer: Copyright 2023)."
+        },
+        {
+          "name": "CapTrader: Geld abheben (help page of a German introducing broker for Interactive Brokers)",
+          "url": "https://www.captrader.com/geld-abheben/",
+          "read": "2026-11-15",
+          "says": "\"Auszahlungen sind nur möglich, wenn kein negativer Saldo in der entsprechenden Währung\" or in the total cash arises or grows: withdrawals are possible only if they do not create or increase a negative balance. Footer: © CapTrader 2026."
+        },
+        {
+          "name": "Interactive Brokers Ireland Limited: Customer Agreement (document 4750, 7/1/2023), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/01_4750_IBIE_Customer_Agreement_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "Clause 2A(i)(d) defines the margin service as one \"to enable Clients to acquire investment instruments\". Clause 5A(iv): \"Terms and conditions for deposit and withdrawal of funds (including holding periods) are as specified on the IBIE website.\" The agreement does not say that a loan may be withdrawn as cash."
+        },
+        {
+          "name": "Mustachian Post forum: Using margin loan at Interactive Brokers, page 13",
+          "url": "https://forum.mustachianpost.com/t/using-margin-loan-at-interactive-brokers/3980?page=13",
+          "read": "2026-11-15",
+          "says": "Posts of September to November 2024. One poster says withdrawing cash on margin is \"not possible in Germany with IB IE\" but is with IB UK; Swiss residents with IB UK accounts report having done it; another reports IBKR service saying \"IBUK customers can no longer withdraw cash if aggregate cash balance is -ve\", which a manager then said applies only to UK residents."
+        }
+      ],
+      "also": [
+        "scores.lending 3→2 (plan decision of 2026-11-15; rubric 2: EU residence, where Schwab and IBKR's EU entity both reportedly bar taking cash out through margin)",
+        "summary: added the closing sentence \"The weak point is the borrow step: Schwab and IBKR both reportedly bar EU residents from drawing margin as cash.\"",
+        "drawbacks: none mentioned Schwab margin or brokers, so none was reworded and none was added; the summary sentence carries it",
+        "sources: added the LYNX withdrawal page"
+      ],
+      "note": "Standard wording from shared.json applied unchanged. The LYNX withdrawal page was read again on 2026-11-15 and says the same (\"It is not possible to withdraw in a currency if your cash balance is negative or would go negative after the withdrawal\"). IBKR article 3750 (https://ibkb.interactivebrokers.com/article/3750) returned HTTP 403 again, so \"reportedly\" stays. Dublin is not one of the ranked 75 picks in src/data/expatPicks.ts, so there is no rank or `why` line to flag."
+    },
+    {
+      "id": "ie-lending-priips-new-buys",
+      "fact": "lending",
+      "cities": [
+        "dublin"
+      ],
+      "claim": "EU PRIIPs rules block new buys of US-listed ETFs",
+      "verdict": "confirmed",
+      "shared": "priips-us-etf-new-buys-blocked",
+      "sources": [
+        {
+          "name": "LYNX: Key Information Document (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/products-and-regulations/regulations/key-information-document/",
+          "read": "2026-11-15",
+          "says": "Retail clients are \"not permitted to trade ETFs or other products that do not have a valid KID\"; many non-EU ETFs have none. Can a retail client buy US ETFs? \"No, not unless you are classified as a professional investor.\" The same applies to ETFs from Canada, Hong Kong, Mexico and Australia. The KID has applied to most products since 1 January 2018."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. \"PRIIPs is an EU rule that prohibits buying US-listed ETFs\", and this also applies to UK investors; US ETFs are open only to elective professional clients, while UCITS ETFs are available to all Europeans."
+        }
+      ],
+      "note": "The profile's \"reportedly\" stays; it does no harm."
+    },
+    {
+      "id": "ie-lending-priips-holdings-kept",
+      "fact": "lending",
+      "cities": [
+        "dublin"
+      ],
+      "claim": "The block is on buying, not on holding US-listed ETFs",
+      "verdict": "confirmed",
+      "shared": "priips-existing-holdings-kept",
+      "sources": [
+        {
+          "name": "LYNX: Key Information Document (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/products-and-regulations/regulations/key-information-document/",
+          "read": "2026-11-15",
+          "says": "The page's FAQ says retail clients \"may still hold or sell existing positions, but new purchases are restricted.\""
+        },
+        {
+          "name": "Regulation (EU) No 1286/2014, Article 13, as adopted (legislation.gov.uk copy of the EU text)",
+          "url": "https://www.legislation.gov.uk/eur/2014/1286/article/13/adopted",
+          "read": "2026-11-15",
+          "says": "The duty to provide a KID falls on \"a person advising on, or selling, a PRIIP\" before the retail investor is bound; nothing in the article reaches a PRIIP the investor already holds or a sale by the investor."
+        }
+      ]
+    },
+    {
+      "id": "ie-visa-stamp0-income",
+      "fact": "visa",
+      "cities": [
+        "dublin"
+      ],
+      "claim": "Stamp 0 needs at least €50,000 a year per person (€100,000 for a couple), from pensions or savings; \"speculative investments\" generally do not count",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Lewis Silkin: Stamp 0, Ireland's visa for retirees or persons of independent means",
+          "url": "https://www.lewissilkin.com/en-ie/insights/2025/08/07/stamp-0irelands-visa-for-retirees-or-persons-of-independent-means",
+          "read": "2026-11-15",
+          "says": "Dated 7 August 2025. A single applicant needs a verifiable annual income of \"at least €50,000\"; for a married couple \"a combined income of €100,000 is required\". Income must come from accessible sources such as savings or pensions: \"Speculative investments are generally not considered.\" Applicants need access to a lump sum for unforeseen major expenses (no amount given) and private medical insurance with full cover. Permission is \"typically granted for one year at a time\". Employment and business are not permitted without specific permission, and holders are not entitled to State benefits or publicly funded services."
+        }
+      ],
+      "note": "Went down the source order: the Immigration Service page (https://www.irishimmigration.ie/coming-to-live-in-ireland/i-want-to-retire-to-ireland/, also /living-in-ireland/... and ?p=14587) returned only its title to WebFetch (101 characters), and citizensinformation.ie returned HTTP 403. A search result, not a read, quotes the official page as saying \"an individual income of €50,000 per year\" and a lump sum comparable to \"the price of a residential dwelling\". The profile already marks the fact \"(law-firm source)\". A person with a browser should confirm the official page."
+    },
+    {
+      "id": "ie-visa-stamp0-lump-sum-insurance",
+      "fact": "visa",
+      "cities": [
+        "dublin"
+      ],
+      "claim": "Stamp 0 also needs a lump sum for emergencies and full private health insurance",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Lewis Silkin: Stamp 0, Ireland's visa for retirees or persons of independent means",
+          "url": "https://www.lewissilkin.com/en-ie/insights/2025/08/07/stamp-0irelands-visa-for-retirees-or-persons-of-independent-means",
+          "read": "2026-11-15",
+          "says": "Dated 7 August 2025. A single applicant needs a verifiable annual income of \"at least €50,000\"; for a married couple \"a combined income of €100,000 is required\". Income must come from accessible sources such as savings or pensions: \"Speculative investments are generally not considered.\" Applicants need access to a lump sum for unforeseen major expenses (no amount given) and private medical insurance with full cover. Permission is \"typically granted for one year at a time\". Employment and business are not permitted without specific permission, and holders are not entitled to State benefits or publicly funded services."
+        }
+      ],
+      "note": "Same source and same block on the official page as ie-visa-stamp0-income."
+    },
+    {
+      "id": "ie-visa-stamp0-terms",
+      "fact": "visa",
+      "cities": [
+        "dublin"
+      ],
+      "claim": "Stamp 0 is granted a year at a time, allows no work and gives no access to state benefits",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Lewis Silkin: Stamp 0, Ireland's visa for retirees or persons of independent means",
+          "url": "https://www.lewissilkin.com/en-ie/insights/2025/08/07/stamp-0irelands-visa-for-retirees-or-persons-of-independent-means",
+          "read": "2026-11-15",
+          "says": "Dated 7 August 2025. A single applicant needs a verifiable annual income of \"at least €50,000\"; for a married couple \"a combined income of €100,000 is required\". Income must come from accessible sources such as savings or pensions: \"Speculative investments are generally not considered.\" Applicants need access to a lump sum for unforeseen major expenses (no amount given) and private medical insurance with full cover. Permission is \"typically granted for one year at a time\". Employment and business are not permitted without specific permission, and holders are not entitled to State benefits or publicly funded services."
+        }
+      ],
+      "note": "Same source as ie-visa-stamp0-income. The article says \"typically\" one year at a time, and that work needs specific permission from the Department of Justice."
+    },
+    {
+      "id": "ie-healthcare-teaching-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "dublin"
+      ],
+      "claim": "St James's, the Mater, Beaumont and St Vincent's are major teaching hospitals in Dublin",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "GOV.UK (FCDO): Ireland, list of medical facilities",
+          "url": "https://www.gov.uk/government/publications/ireland-list-of-medical-facilitiespractitioners/ireland-doctors",
+          "read": "2026-11-15",
+          "says": "Last updated 10 December 2020. Lists as public hospitals in Dublin: St. James's Hospital (Dublin 8), The Mater Misericordiae University Hospital (Dublin 7), Beaumont Hospital (Dublin 9) and St. Vincent's University Hospital (Dublin 4). Beacon and Blackrock Clinic are not on the list."
+        },
+        {
+          "name": "St James's Hospital: about us",
+          "url": "https://www.stjames.ie/aboutus/",
+          "read": "2026-11-15",
+          "says": "St James's is \"Ireland's largest acute academic teaching hospital and is based in Dublin's south inner city\", with Trinity College Dublin as its academic partner."
+        },
+        {
+          "name": "Beaumont Hospital: home page",
+          "url": "https://www.beaumont.ie/",
+          "read": "2026-11-15",
+          "says": "\"We are one of Ireland's major teaching hospitals with a long tradition of academic excellence\"; the site names the Beaumont RCSI Cancer Centre."
+        },
+        {
+          "name": "St Vincent's University Hospital: about us",
+          "url": "https://www.stvincents.ie/about-us/",
+          "read": "2026-11-15",
+          "says": "The hospital calls itself \"one of the world's leading academic teaching hospitals\" and names University College Dublin as its partner."
+        }
+      ],
+      "note": "The Mater's own site (https://www.mater.ie/about/) returned HTTP 403 and UCD's clinical campus page returned 403; the Mater rests on the FCDO list, which gives its name as \"The Mater Misericordiae University Hospital\" (public). HSE's hospital-groups page is a 404."
+    },
+    {
+      "id": "ie-healthcare-private-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "dublin"
+      ],
+      "claim": "Beacon and Blackrock Clinic are private hospitals in Dublin",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Beacon Hospital: about us",
+          "url": "https://www.beaconhospital.ie/about-us/",
+          "read": "2026-11-15",
+          "says": "A private, full-service acute hospital in Sandyford, south Dublin, with 181 inpatient beds and 70 day-case beds."
+        },
+        {
+          "name": "Wikipedia: Blackrock Clinic",
+          "url": "https://en.wikipedia.org/wiki/Blackrock_Clinic",
+          "read": "2026-11-15",
+          "says": "\"Blackrock Clinic (Irish: Clinic na Carraige Duibhe) is a private hospital in Blackrock, Dublin\", founded in 1986."
+        }
+      ],
+      "note": "Blackrock Clinic's own site (blackrock-clinic.ie redirects to https://www.blackrockhealth.com/about-us/) returned an empty page twice, so Wikipedia was used for it."
+    },
+    {
+      "id": "ie-healthcare-waiting-lists",
+      "fact": "healthcare",
+      "cities": [
+        "dublin"
+      ],
+      "claim": "Public waiting lists are long",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "RTÉ News: health waiting lists (13 March 2026)",
+          "url": "https://www.rte.ie/news/health/2026/0313/1563269-health-waiting-lists",
+          "read": "2026-11-15",
+          "says": "13 March 2026, National Treatment Purchase Fund figures for February 2026: \"943,011 patients on some form of public hospital waiting list\", of whom 642,158 were waiting for a first outpatient appointment and 114,219 for inpatient or day-case treatment; Beaumont (over 12,000) and the Mater (over 10,700) had two of the largest adult inpatient lists."
+        }
+      ],
+      "note": "The Department of Health's own monthly release (https://www.gov.ie/en/department-of-health/press-releases/monthly-waiting-list-figures-august-2026/) returned HTTP 403."
+    },
+    {
+      "id": "ie-healthcare-stamp0-private-cover",
+      "fact": "healthcare",
+      "cities": [
+        "dublin"
+      ],
+      "claim": "Stamp 0 requires full private health cover",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Lewis Silkin: Stamp 0, Ireland's visa for retirees or persons of independent means",
+          "url": "https://www.lewissilkin.com/en-ie/insights/2025/08/07/stamp-0irelands-visa-for-retirees-or-persons-of-independent-means",
+          "read": "2026-11-15",
+          "says": "Dated 7 August 2025. A single applicant needs a verifiable annual income of \"at least €50,000\"; for a married couple \"a combined income of €100,000 is required\". Income must come from accessible sources such as savings or pensions: \"Speculative investments are generally not considered.\" Applicants need access to a lump sum for unforeseen major expenses (no amount given) and private medical insurance with full cover. Permission is \"typically granted for one year at a time\". Employment and business are not permitted without specific permission, and holders are not entitled to State benefits or publicly funded services."
+        }
+      ],
+      "note": "Law-firm source, as for the visa fact; the official page could not be read."
+    },
+    {
+      "id": "ie-healthcare-open-enrolment",
+      "fact": "healthcare",
+      "cities": [
+        "dublin"
+      ],
+      "claim": "Irish private health insurance takes applicants of any age",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Health Insurance Authority: open enrolment and lifetime cover",
+          "url": "https://www.hia.ie/regulations/how-we-regulate/open-enrolment-and-lifetime-cover",
+          "read": "2026-11-15",
+          "says": "Under open enrolment private insurers \"must accept all applicants for insurance cover, regardless of their risk status, age or sex\", \"subject to prescribed waiting periods\". The page shows no date."
+        }
+      ]
+    },
+    {
+      "id": "ie-healthcare-lcr-loading",
+      "fact": "healthcare",
+      "cities": [
+        "dublin"
+      ],
+      "claim": "First-time joiners pay a late-entry loading of 2% of the premium per year over 34, up to 70%",
+      "verdict": "corrected",
+      "oldWording": "with a late-entry loading of 2% of the premium per year over 34 (up to 70%) for first-time joiners",
+      "newWording": "and the late-entry loading (2% of the premium per year of age over 34, up to 70%, for at most 10 years) does not apply to anyone who buys within nine months of becoming resident",
+      "sources": [
+        {
+          "name": "Health Insurance Authority: lifetime community rating (LCR)",
+          "url": "https://www.hia.ie/information/lifetime-community-rating-lcr",
+          "read": "2026-11-15",
+          "says": "Loadings apply to people aged 35 and over who buy health insurance for the first time: 2% of the gross policy cost for each year aged 35 or over without cover, to a maximum of 70% at 69 or over. \"You will have to pay the loading for a maximum of 10 years.\" Someone who moves to Ireland and buys within nine months of becoming resident pays no loading. The page shows no date."
+        }
+      ],
+      "also": [
+        "sources: replaced Irish Life Health with the Health Insurance Authority's page",
+        "scores.healthcare stays 4"
+      ],
+      "note": "The rates were right, but the fact read as if a newcomer at 65 would pay a 62% loading. The regulator says anyone who buys within nine months of becoming resident pays none, and that a loading lasts at most 10 years. Stamp 0 needs cover from the start, so a retiree would be inside the nine months. https://www.hia.ie/consumer-information/lifetime-community-rating is a 404; the page read is the current one."
+    }
+  ]
+}

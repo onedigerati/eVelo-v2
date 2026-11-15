@@ -1,0 +1,657 @@
+{
+  "country": "Switzerland",
+  "cities": [
+    "zurich"
+  ],
+  "claims": [
+    {
+      "id": "ch-tax-wealth-worldwide-net",
+      "fact": "tax",
+      "cities": [
+        "zurich"
+      ],
+      "claim": "The canton taxes worldwide net wealth every year, with debts deductible",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Switzerland, individual, other taxes",
+          "url": "https://taxsummaries.pwc.com/switzerland/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 01 July 2026. Net wealth tax is levied by all cantons \"based on the balance of the worldwide gross assets minus debts\"; worldwide debts are deductible; foreign real estate is not taxed but counts for the rate. Zurich basic tariff, wealth taxes 2026, single: 0% to CHF 81,000, 0.05% to 322,000, 0.10% to 726,000, 0.15% to 1,371,000, 0.20% to 2,339,000, 0.25% to 3,304,000, 0.30% above; married: 0% to CHF 161,000, then the same rates, 0.30% above 3,385,000. Municipal factor \"varies between 0.71 and 1.28 (City of Zurich: 1.19)\". All cantons but Schwyz and Obwalden levy inheritance and/or gift taxes where the deceased or donor lived in the canton; spouses are exempt in all cantons and most also exempt direct descendants; the page describes no federal inheritance, estate or gift tax."
+        }
+      ],
+      "modelMismatch": "src/data/localTaxes.ts has no entry for Switzerland (its header lists Switzerland among countries with \"no researched tax data\"), so the simulation applies no wealth tax to Zurich. The page (PwC, last reviewed 01 July 2026, https://taxsummaries.pwc.com/switzerland/individual/other-taxes) gives a yearly net wealth tax for the canton of Zurich, 2026 basic tariff. Single: 0% on the first CHF 81,000; 0.05% from 81,000; 0.10% from 322,000; 0.15% from 726,000; 0.20% from 1,371,000; 0.25% from 2,339,000; 0.30% above 3,304,000. Married: 0% on the first CHF 161,000; 0.05% from 161,000; 0.10% from 403,000; 0.15% from 805,000; 0.20% from 1,451,000; 0.25% from 2,418,000; 0.30% above 3,385,000. These basic rates are multiplied by the cantonal Steuerfuss (0.95 for 2026–27) plus the commune's (City of Zurich 1.19), i.e. by 2.14, so the marginal rates in the city run from about 0.107% to about 0.642%. Debts are deductible (net wealth). Inheritance: no entry is needed for children or a spouse (exempt in Zurich).",
+      "note": "The page excludes foreign real estate from the base (it counts only for the rate); a US brokerage portfolio is movable wealth and is in. A margin loan is a debt and so deductible."
+    },
+    {
+      "id": "ch-tax-wealth-basic-scale",
+      "fact": "tax",
+      "cities": [
+        "zurich"
+      ],
+      "claim": "Zurich's basic wealth tax scale is 0% to CHF 81k (CHF 161k married), then 0.05% rising to 0.3% above about CHF 3.3M; the summary and a drawback say \"from about CHF 81k\"",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Switzerland, individual, other taxes",
+          "url": "https://taxsummaries.pwc.com/switzerland/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 01 July 2026. Net wealth tax is levied by all cantons \"based on the balance of the worldwide gross assets minus debts\"; worldwide debts are deductible; foreign real estate is not taxed but counts for the rate. Zurich basic tariff, wealth taxes 2026, single: 0% to CHF 81,000, 0.05% to 322,000, 0.10% to 726,000, 0.15% to 1,371,000, 0.20% to 2,339,000, 0.25% to 3,304,000, 0.30% above; married: 0% to CHF 161,000, then the same rates, 0.30% above 3,385,000. Municipal factor \"varies between 0.71 and 1.28 (City of Zurich: 1.19)\". All cantons but Schwyz and Obwalden levy inheritance and/or gift taxes where the deceased or donor lived in the canton; spouses are exempt in all cantons and most also exempt direct descendants; the page describes no federal inheritance, estate or gift tax."
+        }
+      ],
+      "note": "The 2026 tariff: the canton adjusted the tariff for inflation by 1.3% from 1 January 2026 (press release of 10 July 2025, https://www.zh.ch/de/news-uebersicht/medienmitteilungen/2025/07/kanton-gleicht-kalte-progression-aus.html, which gives no figures). The ordinance itself (zhlex 631.1, PDF on notes.zh.ch) came back empty to WebFetch, so the figures rest on PwC's 2026 tables. The top single threshold is CHF 3,304,000 (\"about CHF 3.3M\"); for a married couple it is 3,385,000."
+    },
+    {
+      "id": "ch-tax-wealth-multipliers",
+      "fact": "tax",
+      "cities": [
+        "zurich"
+      ],
+      "claim": "The basic wealth tax is multiplied by the canton (0.95) and the City of Zurich (1.19), about 0.64% at the top",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Switzerland, individual, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/switzerland/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 01 July 2026. Federal: \"For taxable income above CHF 793,900 the overall tax rate will be 11.5%\" (2026). Zurich: the cantonal basic tax reaches 13% in the top bracket; \"For Zurich cantonal taxes, the above rates have to be multiplied with 0.95\"; municipal factors range from 0.71 to 1.28, City of Zurich 1.19; church tax 0.08 to 0.14. The page gives no combined maximum rate."
+        },
+        {
+          "name": "PwC: Switzerland, individual, other taxes",
+          "url": "https://taxsummaries.pwc.com/switzerland/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 01 July 2026. Net wealth tax is levied by all cantons \"based on the balance of the worldwide gross assets minus debts\"; worldwide debts are deductible; foreign real estate is not taxed but counts for the rate. Zurich basic tariff, wealth taxes 2026, single: 0% to CHF 81,000, 0.05% to 322,000, 0.10% to 726,000, 0.15% to 1,371,000, 0.20% to 2,339,000, 0.25% to 3,304,000, 0.30% above; married: 0% to CHF 161,000, then the same rates, 0.30% above 3,385,000. Municipal factor \"varies between 0.71 and 1.28 (City of Zurich: 1.19)\". All cantons but Schwyz and Obwalden levy inheritance and/or gift taxes where the deceased or donor lived in the canton; spouses are exempt in all cantons and most also exempt direct descendants; the page describes no federal inheritance, estate or gift tax."
+        },
+        {
+          "name": "Blick: Zurich residents pay less tax for the next two years",
+          "url": "https://www.blick.ch/politik/schlappe-fuer-rot-gruen-zuercher-zahlen-die-naechsten-zwei-jahre-weniger-steuern-id21519126.html",
+          "read": "2026-11-15",
+          "says": "Dated 15 December 2025. The Zurich cantonal parliament lowered the cantonal Steuerfuss from 98% to 95%: \"Die Einwohnerinnen und Einwohner des Kantons Zürich zahlen in den kommenden zwei Jahren weniger Steuern.\""
+        }
+      ],
+      "note": "0.30% × (0.95 + 1.19) = 0.642%. PwC's income page gives the cantonal factor 0.95; its wealth section says the rates \"can be applied directly\" for cantonal tax, which reads as a factor of 1 and looks out of date; Blick reports the cantonal parliament's cut from 98% to 95% on 15 December 2025 for two years. No zh.ch page stating the 2026 Steuerfuss was read. Church tax (0.08 to 0.14) is left out by the profile."
+    },
+    {
+      "id": "ch-tax-dividends-ordinary-income",
+      "fact": "tax",
+      "cities": [
+        "zurich"
+      ],
+      "claim": "Dividends and interest are taxed as ordinary income",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Switzerland, individual, income determination",
+          "url": "https://taxsummaries.pwc.com/switzerland/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "Last reviewed 01 July 2026. \"Dividend income derived from investments is taxed at the ordinary rates together with the other income\"; interest income likewise. Gains on private movable assets such as shares are \"normally tax-exempt throughout Switzerland\" as long as the individual does not qualify as a professional securities dealer; the page does not list the criteria."
+        }
+      ],
+      "note": "Not claimed by the profile, recorded for the report: the same page says gains on private movable assets are normally tax-exempt unless the investor is classed as a professional securities dealer. The profile says nothing on capital gains and so carries no warning that borrowing to invest is one of the tests reported for that status (ESTV circular 36, not read: only search results were seen)."
+    },
+    {
+      "id": "ch-tax-income-top-rate",
+      "fact": "tax",
+      "cities": [
+        "zurich"
+      ],
+      "claim": "Income tax reaches about 39% in the city (federal 11.5% plus canton and commune)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC: Switzerland, individual, taxes on personal income",
+          "url": "https://taxsummaries.pwc.com/switzerland/individual/taxes-on-personal-income",
+          "read": "2026-11-15",
+          "says": "Last reviewed 01 July 2026. Federal: \"For taxable income above CHF 793,900 the overall tax rate will be 11.5%\" (2026). Zurich: the cantonal basic tax reaches 13% in the top bracket; \"For Zurich cantonal taxes, the above rates have to be multiplied with 0.95\"; municipal factors range from 0.71 to 1.28, City of Zurich 1.19; church tax 0.08 to 0.14. The page gives no combined maximum rate."
+        }
+      ],
+      "note": "Arithmetic from the page's components: 13% × (0.95 + 1.19) = 27.82%, plus 11.5% federal = 39.3%, before church tax. The page states no combined figure."
+    },
+    {
+      "id": "ch-tax-lump-sum-abolished",
+      "fact": "tax",
+      "cities": [
+        "zurich"
+      ],
+      "claim": "Zurich abolished cantonal lump-sum (expenditure) taxation from 2010",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Canton of Zurich, Finanzdirektion: media release of 7 January 2011",
+          "url": "https://www.zh.ch/de/news-uebersicht/medienmitteilungen/2011/01/004.html",
+          "read": "2026-11-15",
+          "says": "Medienmitteilung 07.01.2011: \"Auf Grund eines Volksentscheids hat der Kanton Zürich per 1. Januar 2010 die bisherige Besteuerung nach dem Aufwand, die sogenannte Pauschalbesteuerung, abgeschafft.\""
+        },
+        {
+          "name": "Swissinfo: lump-sum taxation comes under the spotlight",
+          "url": "https://www.swissinfo.ch/eng/lump-sum-taxation-comes-under-the-spotlight/29158706",
+          "read": "2026-11-15",
+          "says": "Published January 3, 2011. Canton Zurich \"voted in 2009 to abolish the lump-sum tax system from the beginning of last year\"; it \"scrapped the lump-sum tax system at the start of 2010\"."
+        }
+      ],
+      "note": "Both pages are from 2011: the fact is historical and the canton's own release states it. The summary's version is corrected separately (ch-tax-lump-sum-summary-year)."
+    },
+    {
+      "id": "ch-tax-lump-sum-summary-year",
+      "fact": "tax",
+      "cities": [
+        "zurich"
+      ],
+      "claim": "Summary: Zurich abolished lump-sum taxation in 2009",
+      "verdict": "corrected",
+      "oldWording": "Zurich abolished lump-sum taxation in 2009",
+      "newWording": "Zurich abolished lump-sum taxation from 2010",
+      "sources": [
+        {
+          "name": "Canton of Zurich, Finanzdirektion: media release of 7 January 2011",
+          "url": "https://www.zh.ch/de/news-uebersicht/medienmitteilungen/2011/01/004.html",
+          "read": "2026-11-15",
+          "says": "Medienmitteilung 07.01.2011: \"Auf Grund eines Volksentscheids hat der Kanton Zürich per 1. Januar 2010 die bisherige Besteuerung nach dem Aufwand, die sogenannte Pauschalbesteuerung, abgeschafft.\""
+        },
+        {
+          "name": "Swissinfo: lump-sum taxation comes under the spotlight",
+          "url": "https://www.swissinfo.ch/eng/lump-sum-taxation-comes-under-the-spotlight/29158706",
+          "read": "2026-11-15",
+          "says": "Published January 3, 2011. Canton Zurich \"voted in 2009 to abolish the lump-sum tax system from the beginning of last year\"; it \"scrapped the lump-sum tax system at the start of 2010\"."
+        }
+      ],
+      "also": [
+        "summary only: the tax fact already said \"from 2010\"",
+        "sources: added the canton's 2011 media release"
+      ],
+      "note": "The vote was in 2009; the regime ended on 1 January 2010."
+    },
+    {
+      "id": "ch-estate-zurich-spouse-descendants-exempt",
+      "fact": "estate",
+      "cities": [
+        "zurich"
+      ],
+      "claim": "Zurich exempts spouses and direct descendants from its inheritance and gift tax; others pay progressive rates (summary: children inherit free of Zurich inheritance tax)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Neho: Erbschaftssteuer im Kanton Zürich",
+          "url": "https://neho.ch/de/blog/erbschaftssteuer-zurich",
+          "read": "2026-11-15",
+          "says": "Undated; tables marked \"(Stand 2020)\". \"Ehegatten und direkte Nachkommen sind im Kanton Zürich von der Erbschaftssteuer befreit.\" Other heirs: parents 2–6% (CHF 200,000 allowance), siblings 6–18% (CHF 15,000), life partners 12–36% (CHF 50,000), unrelated persons up to 36%. \"Es werden keine Bundessteuern für Erbschaften gefordert.\""
+        },
+        {
+          "name": "Zürcher Kantonalbank: transferring real estate",
+          "url": "https://www.zkb.ch/de/private/blog/private/steuern/uebertragung-von-immobilien.html",
+          "read": "2026-11-15",
+          "says": "Published 13 February 2025. \"Eine Schenkungssteuer bei einem Übertrag an direkte Nachkommen wird im Kanton Zürich nicht mehr erhoben\"; \"Schenkungen an Nachkommen sind im Kanton Zürich schenkungssteuerfrei.\""
+        },
+        {
+          "name": "Canton of Zurich: Erbschafts- und Schenkungssteuer",
+          "url": "https://www.zh.ch/de/steuern-finanzen/steuern/steuern-natuerliche-personen/erbschafts-und-schenkungssteuer.html",
+          "read": "2026-11-15",
+          "says": "Undated (footer ©2026). Inheritance tax is due \"Wenn die Erblasserin oder der Erblasser ihren oder seinen letzten Wohnsitz im Kanton hatte\", when the estate is opened in the canton, or when real estate in the canton passes. The page as read does not list the exemptions for spouses or descendants and gives no tariff."
+        },
+        {
+          "name": "PwC: Switzerland, individual, other taxes",
+          "url": "https://taxsummaries.pwc.com/switzerland/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 01 July 2026. Net wealth tax is levied by all cantons \"based on the balance of the worldwide gross assets minus debts\"; worldwide debts are deductible; foreign real estate is not taxed but counts for the rate. Zurich basic tariff, wealth taxes 2026, single: 0% to CHF 81,000, 0.05% to 322,000, 0.10% to 726,000, 0.15% to 1,371,000, 0.20% to 2,339,000, 0.25% to 3,304,000, 0.30% above; married: 0% to CHF 161,000, then the same rates, 0.30% above 3,385,000. Municipal factor \"varies between 0.71 and 1.28 (City of Zurich: 1.19)\". All cantons but Schwyz and Obwalden levy inheritance and/or gift taxes where the deceased or donor lived in the canton; spouses are exempt in all cantons and most also exempt direct descendants; the page describes no federal inheritance, estate or gift tax."
+        }
+      ],
+      "modelMismatch": "None: localTaxes.ts has no Swiss entry and none is needed for inheritance by children or a spouse.",
+      "note": "The canton's own page loaded but, as read, does not list the exemptions; the statute (ESchG, zhlex 632.1) was not read. The exemption rests on Neho (tables as of 2020), Zürcher Kantonalbank (February 2025, for gifts to descendants) and PwC's general statement. Reach: the canton taxes when the deceased last lived in the canton or real estate there passes (zh.ch)."
+    },
+    {
+      "id": "ch-estate-no-federal-inheritance-tax",
+      "fact": "estate",
+      "cities": [
+        "zurich"
+      ],
+      "claim": "Switzerland has no federal inheritance tax",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Neho: Erbschaftssteuer im Kanton Zürich",
+          "url": "https://neho.ch/de/blog/erbschaftssteuer-zurich",
+          "read": "2026-11-15",
+          "says": "Undated; tables marked \"(Stand 2020)\". \"Ehegatten und direkte Nachkommen sind im Kanton Zürich von der Erbschaftssteuer befreit.\" Other heirs: parents 2–6% (CHF 200,000 allowance), siblings 6–18% (CHF 15,000), life partners 12–36% (CHF 50,000), unrelated persons up to 36%. \"Es werden keine Bundessteuern für Erbschaften gefordert.\""
+        },
+        {
+          "name": "PwC: Switzerland, individual, other taxes",
+          "url": "https://taxsummaries.pwc.com/switzerland/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "Last reviewed 01 July 2026. Net wealth tax is levied by all cantons \"based on the balance of the worldwide gross assets minus debts\"; worldwide debts are deductible; foreign real estate is not taxed but counts for the rate. Zurich basic tariff, wealth taxes 2026, single: 0% to CHF 81,000, 0.05% to 322,000, 0.10% to 726,000, 0.15% to 1,371,000, 0.20% to 2,339,000, 0.25% to 3,304,000, 0.30% above; married: 0% to CHF 161,000, then the same rates, 0.30% above 3,385,000. Municipal factor \"varies between 0.71 and 1.28 (City of Zurich: 1.19)\". All cantons but Schwyz and Obwalden levy inheritance and/or gift taxes where the deceased or donor lived in the canton; spouses are exempt in all cantons and most also exempt direct descendants; the page describes no federal inheritance, estate or gift tax."
+        }
+      ]
+    },
+    {
+      "id": "ch-estate-2025-vote",
+      "fact": "estate",
+      "cities": [
+        "zurich"
+      ],
+      "claim": "Voters rejected a 50% federal tax on estates over CHF 50M by 78% in November 2025",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "SRF: votes of 30 November, inheritance tax fails clearly",
+          "url": "https://www.srf.ch/news/abstimmungen-vom-30-november-erbschaftssteuer-scheitert-klar",
+          "read": "2026-11-15",
+          "says": "Published 30 November 2025. \"Mit 78.3 Prozent lehnt das Stimmvolk die Erbschaftssteuer-Initiative ... ab\"; the initiative demanded a federal \"Besteuerung von 50 Prozent auf Nachlässen und Schenkungen von Einzelpersonen von mehr als 50 Millionen Franken\"."
+        },
+        {
+          "name": "Blue News: Juso inheritance tax initiative rejected with 78.3% no",
+          "url": "https://www.bluewin.ch/en/news/switzerland/juso-inheritance-tax-initiative-rejected-with-783-percent-no-vote-2987118.html",
+          "read": "2026-11-15",
+          "says": "Dated 30.11.2025. \"the Juso initiative was clearly rejected with 78.3 percent of votes\", citing the Federal Statistical Office; the page gives neither the rate nor the threshold."
+        }
+      ]
+    },
+    {
+      "id": "ch-estate-treaty-exists",
+      "fact": "estate",
+      "cities": [
+        "zurich"
+      ],
+      "claim": "There is a US–Switzerland estate treaty",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-with",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "All 13 countries are in the table (see us-estate-treaty-list). Estate & Gift: Australia, Austria, France, Germany, Japan, United Kingdom. Estate only: Greece, Ireland, Italy, Netherlands, South Africa, Switzerland, and Canada by Article XXIX B of the income tax treaty."
+        }
+      ],
+      "note": "The IRS lists Switzerland as \"Estate\". The profile says only that the treaty exists; what it does (the 1951 convention) was not checked and is not claimed."
+    },
+    {
+      "id": "ch-estate-us-exemption-2026",
+      "fact": "estate",
+      "cities": [
+        "zurich"
+      ],
+      "claim": "The US estate exemption is $15M in 2026",
+      "verdict": "confirmed",
+      "shared": "us-estate-exemption-2026",
+      "sources": [
+        {
+          "name": "IRS: What's new, estate and gift tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax",
+          "read": "2026-11-15",
+          "says": "The table \"Basic exclusion amount for year of death\" has the row 2026: $15,000,000 (2025: $13,990,000). The page says the Working Families Tax Cuts, Public Law 119-21, signed July 4, 2025, \"amends § 2010(c)(3) by increasing the basic exclusion amount to $15,000,000 for calendar year 2026\". Page last reviewed or updated 03-Nov-2026."
+        },
+        {
+          "name": "IRS: Estate tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-tax",
+          "read": "2026-11-15",
+          "says": "A return is required when the gross estate, plus adjusted taxable gifts and specific exemption, is more than the filing threshold for the year of death; the table gives 2026: $15,000,000. Page last reviewed or updated 23-Oct-2026."
+        },
+        {
+          "name": "IRS news release IR-2025-103: tax inflation adjustments for tax year 2026",
+          "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill",
+          "read": "2026-11-15",
+          "says": "\"Estates of decedents who die during 2026 have a basic exclusion amount of $15,000,000\", up from $13,990,000 for 2025; the release (October 9, 2025) cites Revenue Procedure 2025-32 and is marked as an archival document."
+        }
+      ]
+    },
+    {
+      "id": "ch-estate-us-exemption-applies",
+      "fact": "estate",
+      "cities": [
+        "zurich"
+      ],
+      "claim": "The US exemption applies to a US citizen living there as anywhere",
+      "verdict": "confirmed",
+      "shared": "us-estate-exemption-applies-abroad",
+      "sources": [
+        {
+          "name": "IRS: Some nonresidents with U.S. assets must file estate tax returns",
+          "url": "https://www.irs.gov/individuals/international-taxpayers/some-nonresidents-with-us-assets-must-file-estate-tax-returns",
+          "read": "2026-11-15",
+          "says": "\"U.S. citizens are subject to U.S. estate taxation with respect to their worldwide assets\"; Form 706 is required when worldwide assets plus adjusted taxable gifts exceed the basic exclusion amount in effect on the date of death. By contrast a nonresident who is not a citizen files when US-situated assets exceed $60,000. Page last reviewed or updated 27-Jun-2026."
+        }
+      ]
+    },
+    {
+      "id": "ch-lending-ibkr-accepts",
+      "fact": "lending",
+      "cities": [
+        "zurich"
+      ],
+      "claim": "IBKR serves Swiss residents",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly serves Swiss residents",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026; read again on 2026-11-15 for Switzerland. \"US and Swiss Investors (Interactive Brokers LLC, regulated by FINRA/SEC) - the protection is up to $500,000 (with a $250,000 cash limit)\"; \"Swiss Investors may open a US or a UK account, but will benefit from US protection levels.\" EU customers sign up with the Irish entity. The page describes PRIIPs as an EU rule that also applies to UK investors and says nothing on PRIIPs, US ETFs or margin withdrawals for Swiss residents."
+        }
+      ],
+      "note": "Tried on 2026-11-15: https://www.interactivebrokers.co.uk/en/accounts/open-account-country-list.php returned HTTP 403. The hedge stays."
+    },
+    {
+      "id": "ch-lending-ibkr-entity",
+      "fact": "lending",
+      "cities": [
+        "zurich"
+      ],
+      "claim": "Swiss residents are served by IBKR's US entity (Interactive Brokers LLC) or its UK entity, not the Irish one",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-eu-entity",
+      "hedge": "reportedly",
+      "wording": "(reportedly through its US or UK entity, not its EU one)",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026; read again on 2026-11-15 for Switzerland. \"US and Swiss Investors (Interactive Brokers LLC, regulated by FINRA/SEC) - the protection is up to $500,000 (with a $250,000 cash limit)\"; \"Swiss Investors may open a US or a UK account, but will benefit from US protection levels.\" EU customers sign up with the Irish entity. The page describes PRIIPs as an EU rule that also applies to UK investors and says nothing on PRIIPs, US ETFs or margin withdrawals for Swiss residents."
+        },
+        {
+          "name": "Investing in the Web: Interactive Brokers in Europe",
+          "url": "https://investingintheweb.com/broker-reviews/interactive-brokers-europe",
+          "read": "2026-11-15",
+          "says": "Updated on Sep 8, 2026. \"As an European resident, you are under the Central Bank of Ireland regulation\" (Interactive Brokers Ireland Limited); \"As a UK resident, you will be under this legal entity\" (Interactive Brokers UK Limited); \"Interactive Brokers Luxembourg and Central have been extinct/merged.\""
+        }
+      ],
+      "also": [
+        "clause added to the lending fact (the profile named no entity); hedged from the start",
+        "sources: added Banker on Wheels"
+      ],
+      "note": "One dated secondary page says Swiss investors are with Interactive Brokers LLC and may open a US or a UK account. The other page read (Investing in the Web, updated Sep 8, 2026) names the Irish entity for \"an European resident\" and does not mention Switzerland. IBKR's own sites returned HTTP 403. The profile makes no PRIIPs claim for Zurich; Switzerland's own key-information rule (FinSA) was not checked because nothing in the profile rests on it."
+    },
+    {
+      "id": "ch-lending-schwab-accepts",
+      "fact": "lending",
+      "cities": [
+        "zurich"
+      ],
+      "claim": "Schwab One International's online form accepted Switzerland in Oct 2026",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab One International's online form reportedly accepted Switzerland in Oct 2026",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026; read again on 2026-11-15 for Austria, Malta and Switzerland. The 51 countries and regions Schwab's international application accepted that day include Austria and Switzerland; Malta is listed as not accepted. It quotes the Schwab One Account Agreement: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds\"; it does not say whether \"Europe\" covers Switzerland or the UK."
+        }
+      ],
+      "note": "Schwab's own pages were not readable in stage 1 and were not tried again here."
+    },
+    {
+      "id": "ch-lending-schwab-cash-out-outside-eu",
+      "fact": "lending",
+      "cities": [
+        "zurich"
+      ],
+      "claim": "Being outside the EU, Switzerland is not caught by Schwab's bar on taking cash out through margin (implied by \"(Switzerland is outside the EU)\")",
+      "verdict": "corrected",
+      "shared": "schwab-europe-margin-cash-out",
+      "oldWording": "(Switzerland is outside the EU); margin by country of residence is unreported",
+      "newWording": "but Schwab reportedly bars Europe residents from taking cash out through margin, which likely covers Switzerland although it is outside the EU",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026; read again on 2026-11-15 for Austria, Malta and Switzerland. The 51 countries and regions Schwab's international application accepted that day include Austria and Switzerland; Malta is listed as not accepted. It quotes the Schwab One Account Agreement: \"Customers residing within Europe are restricted from using their Available Margin Loan Value to withdraw funds\"; it does not say whether \"Europe\" covers Switzerland or the UK."
+        }
+      ],
+      "also": [
+        "scores.lending 4→3 (see rankFlag)",
+        "summary and drawbacks unchanged: neither mentions borrowing or brokers",
+        "the dropped clause \"margin by country of residence is unreported\" is replaced by the two specific statements on Schwab and IBKR"
+      ],
+      "rankFlag": "Zurich is not one of the ranked 75, so no rank or `why` is touched. Lending goes 4 → 3, to match London, which is in the same position. On the letter of the rubric Zurich still fits 4 (\"Schwab International reported to accept residents (outside the EU) plus IBKR, margin terms unconfirmed\"). But the rubric's \"(outside the EU)\" stands for \"outside Schwab's cash-out bar\", and the reported clause says \"Customers residing within Europe\", which on its plain words reaches Switzerland as it reaches the UK. With Schwab's cash-out likely barred, IBKR is the one broker left for the borrow step: the rubric's 3 (\"IBKR only\"). It is not 2: Switzerland is not EU residence, and for IBKR the reports are, if anything, better than for the EU (Swiss residents reportedly sit with the US or UK entity; 2024 forum posts report margin withdrawals, with one report against). If the user reads the rubric on its letter, both London and Zurich would be 4; the rubric would be truer as \"outside Europe\". User's call.",
+      "note": "The page does not define \"Europe\". \"likely\" is the same strength the UK ledger left on London's clause. Recorded as corrected rather than cant-confirm because the profile used \"outside the EU\" to set the clause aside, and the only page on the point quotes \"Europe\"."
+    },
+    {
+      "id": "ch-lending-ibkr-margin-cash-out",
+      "fact": "lending",
+      "cities": [
+        "zurich"
+      ],
+      "claim": "Whether a Swiss resident can withdraw an IBKR margin loan as cash",
+      "verdict": "cant-confirm",
+      "hedge": "unconfirmed",
+      "wording": "and whether IBKR lets Swiss residents withdraw a margin loan as cash is unconfirmed (2024 forum reports conflict), so confirm how you would draw cash before relying on either",
+      "sources": [
+        {
+          "name": "Mustachian Post forum: Using margin loan at Interactive Brokers, page 13",
+          "url": "https://forum.mustachianpost.com/t/using-margin-loan-at-interactive-brokers/3980?page=13",
+          "read": "2026-11-15",
+          "says": "Posts of September to November 2024. One poster says withdrawing cash on margin is \"not possible in Germany with IB IE\" but is with IB UK; Swiss residents with IB UK accounts report having done it; another reports IBKR service saying \"IBUK customers can no longer withdraw cash if aggregate cash balance is -ve\", which a manager then said applies only to UK residents."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026; read again on 2026-11-15 for Switzerland. \"US and Swiss Investors (Interactive Brokers LLC, regulated by FINRA/SEC) - the protection is up to $500,000 (with a $250,000 cash limit)\"; \"Swiss Investors may open a US or a UK account, but will benefit from US protection levels.\" EU customers sign up with the Irish entity. The page describes PRIIPs as an EU rule that also applies to UK investors and says nothing on PRIIPs, US ETFs or margin withdrawals for Swiss residents."
+        }
+      ],
+      "also": [
+        "clause added: the profile said only \"margin by country of residence is unreported\"",
+        "sources: added the Mustachian Post forum thread"
+      ],
+      "note": "The shared EU correction was not applied: Swiss residents are reportedly not with IBKR Ireland, and the LYNX and CapTrader pages describe accounts the Irish entity carries. No `shared` reference for that reason; the forum entry is copied from shared.json's ibkr-eu-margin-cash-out with its stage 1 read date and was not re-read. In that thread (September to November 2024) Swiss residents with IB UK accounts report withdrawing on margin, and another poster reports IBKR service saying IB UK customers can no longer withdraw when the aggregate cash balance is negative. IBKR's article 3750 and its UK country list returned HTTP 403 again on 2026-11-15."
+    },
+    {
+      "id": "ch-lending-fidelity-vanguard",
+      "fact": "lending",
+      "cities": [
+        "zurich"
+      ],
+      "claim": "Fidelity and Vanguard open no accounts for residents abroad",
+      "verdict": "cant-confirm",
+      "oldWording": "and Fidelity and Vanguard open no accounts for residents abroad",
+      "hedge": "reportedly",
+      "wording": "Fidelity and Vanguard reportedly open no new accounts for residents abroad",
+      "sources": [
+        {
+          "name": "Your Tax Base: best brokerage for US expats",
+          "url": "https://yourtaxbase.com/blog/best-brokerage-for-us-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. It quotes Fidelity's FAQ for customers outside the US: \"we do not open accounts for any new customers residing outside the United States.\" For Vanguard it paraphrases the account-opening page: US citizenship or permanent residence \"with a U.S. mailing address\" is required, and people living abroad are pointed to Vanguard's international site."
+        }
+      ],
+      "also": [
+        "hedge added: \"reportedly\", and \"no accounts\" narrowed to \"no new accounts\", which is what the quoted Fidelity FAQ says",
+        "sources: added the Your Tax Base page"
+      ],
+      "note": "A broker claim on a secondary page stays reported (rule 3). Fidelity's and Vanguard's own pages were not tried; the secondary page quotes Fidelity's FAQ and paraphrases Vanguard's account-opening page."
+    },
+    {
+      "id": "ch-visa-art-28-age-55",
+      "fact": "visa",
+      "cities": [
+        "zurich"
+      ],
+      "claim": "There is no passive-income visa; a non-EU retiree can get a B permit under Art. 28 of the Foreign Nationals Act from age 55",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Richmond Chambers: Swiss retirement residence permit",
+          "url": "https://www.richmondchambers.ch/swiss-residence-permit/swiss-retirement-residence-permit",
+          "read": "2026-11-15",
+          "says": "Published 2 February 2026. It cites \"Article 28 of the Federal Act on Foreign Nationals and Integration (FNIA)\" and \"Article 25(2) of the Ordinance on Admission, Residence and Employment (OASA)\" for the personal-ties requirement. Non-EU/EFTA applicants must be \"At least 55 years old at the time of application\", have \"particular personal ties with Switzerland\" (\"family ties are a plus, but not sufficient on their own\"; the connection \"must be with Switzerland itself - not merely with relatives residing in the country\"), means such that they will \"not require social assistance at any point in the future\", \"Comprehensive insurance covering all risks in Switzerland\", and a signed declaration not to work in Switzerland or abroad other than managing their own assets. \"the grant of a Swiss Retirement Permit is discretionary\"; cantons may \"impose additional requirements over and above the federal minimum thresholds\"; non-EU retirees often get a B permit \"on a shorter renewable basis\", frequently one or two years at first."
+        },
+        {
+          "name": "State of Fribourg: stay without gainful activity (cantonal migration office)",
+          "url": "https://www.fr.ch/de/alltag/vorgehen-und-dokumente/aufenthalt-ohne-erwerbstaetigkeit",
+          "read": "2026-11-15",
+          "says": "Last updated 22.12.2023. For retirees from third countries: \"Sie müssen das 55. Altersjahr vollendet haben\"; \"Sie müssen Ihre besondere persönliche Beziehung zur Schweiz belegen\"; sufficient means \"ohne auf Sozialhilfe angewiesen zu sein\"; a written declaration \"dass Sie sich vom Erwerbsleben im Ausland wie auch in der Schweiz zurückgezogen haben\"; proof of Swiss health and accident insurance."
+        },
+        {
+          "name": "law.ch (LawMedia): Aufenthalt als Rentner",
+          "url": "https://law.ch/lawinfo/aufenthaltsbewilligung-arbeitsbewilligung-schweiz/drittstaatsangehoerige-non-euefta/aufenthalt-ohne-erwerbstaetigkeit/zulassung-aufenthalt-ohne-erwerbstaetigkeit/aufenthalt-als-rentner/",
+          "read": "2026-11-15",
+          "says": "Undated (footer © 2009–2026). Retirees can be admitted if they \"ein Mindestalter von 55 Jahren erreicht haben\", have special personal ties to Switzerland, shown by longer earlier stays (holidays, training, work) or close relatives in Switzerland, and have sufficient means; managing one's own assets is not gainful activity."
+        }
+      ],
+      "note": "The statute could not be read: fedlex.admin.ch returns only a notice that the site needs JavaScript, and the Zurich migration office's own directive (PDF \"Erwerbslose Wohnsitznahme\" on zh.ch, file dated 9 October 2026) came back as binary that this machine cannot open. Used instead: another canton's official page (Fribourg), a law firm page of February 2026 and law.ch. The law firm page cites Article 28 FNIA by number; the other two do not. The profile carries \"(secondary source)\"."
+    },
+    {
+      "id": "ch-visa-special-ties",
+      "fact": "visa",
+      "cities": [
+        "zurich"
+      ],
+      "claim": "It needs special personal ties to Switzerland, such as past long stays; relatives alone are not enough",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Richmond Chambers: Swiss retirement residence permit",
+          "url": "https://www.richmondchambers.ch/swiss-residence-permit/swiss-retirement-residence-permit",
+          "read": "2026-11-15",
+          "says": "Published 2 February 2026. It cites \"Article 28 of the Federal Act on Foreign Nationals and Integration (FNIA)\" and \"Article 25(2) of the Ordinance on Admission, Residence and Employment (OASA)\" for the personal-ties requirement. Non-EU/EFTA applicants must be \"At least 55 years old at the time of application\", have \"particular personal ties with Switzerland\" (\"family ties are a plus, but not sufficient on their own\"; the connection \"must be with Switzerland itself - not merely with relatives residing in the country\"), means such that they will \"not require social assistance at any point in the future\", \"Comprehensive insurance covering all risks in Switzerland\", and a signed declaration not to work in Switzerland or abroad other than managing their own assets. \"the grant of a Swiss Retirement Permit is discretionary\"; cantons may \"impose additional requirements over and above the federal minimum thresholds\"; non-EU retirees often get a B permit \"on a shorter renewable basis\", frequently one or two years at first."
+        },
+        {
+          "name": "law.ch (LawMedia): Aufenthalt als Rentner",
+          "url": "https://law.ch/lawinfo/aufenthaltsbewilligung-arbeitsbewilligung-schweiz/drittstaatsangehoerige-non-euefta/aufenthalt-ohne-erwerbstaetigkeit/zulassung-aufenthalt-ohne-erwerbstaetigkeit/aufenthalt-als-rentner/",
+          "read": "2026-11-15",
+          "says": "Undated (footer © 2009–2026). Retirees can be admitted if they \"ein Mindestalter von 55 Jahren erreicht haben\", have special personal ties to Switzerland, shown by longer earlier stays (holidays, training, work) or close relatives in Switzerland, and have sufficient means; managing one's own assets is not gainful activity."
+        },
+        {
+          "name": "State of Fribourg: stay without gainful activity (cantonal migration office)",
+          "url": "https://www.fr.ch/de/alltag/vorgehen-und-dokumente/aufenthalt-ohne-erwerbstaetigkeit",
+          "read": "2026-11-15",
+          "says": "Last updated 22.12.2023. For retirees from third countries: \"Sie müssen das 55. Altersjahr vollendet haben\"; \"Sie müssen Ihre besondere persönliche Beziehung zur Schweiz belegen\"; sufficient means \"ohne auf Sozialhilfe angewiesen zu sein\"; a written declaration \"dass Sie sich vom Erwerbsleben im Ausland wie auch in der Schweiz zurückgezogen haben\"; proof of Swiss health and accident insurance."
+        }
+      ]
+    },
+    {
+      "id": "ch-visa-means-insurance-no-work",
+      "fact": "visa",
+      "cities": [
+        "zurich"
+      ],
+      "claim": "It needs means that make social assistance virtually impossible, health insurance, and no work anywhere",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Richmond Chambers: Swiss retirement residence permit",
+          "url": "https://www.richmondchambers.ch/swiss-residence-permit/swiss-retirement-residence-permit",
+          "read": "2026-11-15",
+          "says": "Published 2 February 2026. It cites \"Article 28 of the Federal Act on Foreign Nationals and Integration (FNIA)\" and \"Article 25(2) of the Ordinance on Admission, Residence and Employment (OASA)\" for the personal-ties requirement. Non-EU/EFTA applicants must be \"At least 55 years old at the time of application\", have \"particular personal ties with Switzerland\" (\"family ties are a plus, but not sufficient on their own\"; the connection \"must be with Switzerland itself - not merely with relatives residing in the country\"), means such that they will \"not require social assistance at any point in the future\", \"Comprehensive insurance covering all risks in Switzerland\", and a signed declaration not to work in Switzerland or abroad other than managing their own assets. \"the grant of a Swiss Retirement Permit is discretionary\"; cantons may \"impose additional requirements over and above the federal minimum thresholds\"; non-EU retirees often get a B permit \"on a shorter renewable basis\", frequently one or two years at first."
+        },
+        {
+          "name": "State of Fribourg: stay without gainful activity (cantonal migration office)",
+          "url": "https://www.fr.ch/de/alltag/vorgehen-und-dokumente/aufenthalt-ohne-erwerbstaetigkeit",
+          "read": "2026-11-15",
+          "says": "Last updated 22.12.2023. For retirees from third countries: \"Sie müssen das 55. Altersjahr vollendet haben\"; \"Sie müssen Ihre besondere persönliche Beziehung zur Schweiz belegen\"; sufficient means \"ohne auf Sozialhilfe angewiesen zu sein\"; a written declaration \"dass Sie sich vom Erwerbsleben im Ausland wie auch in der Schweiz zurückgezogen haben\"; proof of Swiss health and accident insurance."
+        }
+      ]
+    },
+    {
+      "id": "ch-visa-discretion-renewal",
+      "fact": "visa",
+      "cities": [
+        "zurich"
+      ],
+      "claim": "The permit is discretionary, cantons may add requirements, and permits are often renewed every 1–2 years at first",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Richmond Chambers: Swiss retirement residence permit",
+          "url": "https://www.richmondchambers.ch/swiss-residence-permit/swiss-retirement-residence-permit",
+          "read": "2026-11-15",
+          "says": "Published 2 February 2026. It cites \"Article 28 of the Federal Act on Foreign Nationals and Integration (FNIA)\" and \"Article 25(2) of the Ordinance on Admission, Residence and Employment (OASA)\" for the personal-ties requirement. Non-EU/EFTA applicants must be \"At least 55 years old at the time of application\", have \"particular personal ties with Switzerland\" (\"family ties are a plus, but not sufficient on their own\"; the connection \"must be with Switzerland itself - not merely with relatives residing in the country\"), means such that they will \"not require social assistance at any point in the future\", \"Comprehensive insurance covering all risks in Switzerland\", and a signed declaration not to work in Switzerland or abroad other than managing their own assets. \"the grant of a Swiss Retirement Permit is discretionary\"; cantons may \"impose additional requirements over and above the federal minimum thresholds\"; non-EU retirees often get a B permit \"on a shorter renewable basis\", frequently one or two years at first."
+        }
+      ],
+      "note": "One secondary page; the profile says so (\"(secondary source)\"). The summary and a drawback repeat \"discretionary\" and \"at cantonal discretion\", which the same page supports."
+    },
+    {
+      "id": "ch-healthcare-usz",
+      "fact": "healthcare",
+      "cities": [
+        "zurich"
+      ],
+      "claim": "Care is led by the University Hospital Zurich, with about 900 beds",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "University Hospital Zurich (USZ): home page",
+          "url": "https://www.usz.ch/en/",
+          "read": "2026-11-15",
+          "says": "Undated. \"With around 900 hospital beds and almost 300'000 days of care, the USZ is one of the largest hospitals in Switzerland.\""
+        }
+      ],
+      "also": [
+        "sources: replaced Wikipedia with the hospital's own site"
+      ]
+    },
+    {
+      "id": "ch-healthcare-kvg-three-months",
+      "fact": "healthcare",
+      "cities": [
+        "zurich"
+      ],
+      "claim": "Basic health insurance (KVG) is compulsory within 3 months of registering",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Federal Office of Public Health (BAG): compulsory insurance for residents",
+          "url": "https://www.bag.admin.ch/de/krankenversicherung-versicherungspflicht-fuer-in-der-schweiz-wohnhafte-versicherte",
+          "read": "2026-11-15",
+          "says": "Undated; linked lists dated 29 September 2026. \"Jede Person, die sich in der Schweiz niederlässt, muss spätestens drei Monate nach ihrer Wohnsitznahme\" take out health insurance; insurers must accept applicants for basic insurance \"unabhängig von ihrem Alter und ihrem Gesundheitszustand\", without reservations or waiting periods."
+        },
+        {
+          "name": "Expat Savvy: health insurance in Zurich",
+          "url": "https://expat-savvy.ch/health-insurance/zurich/",
+          "read": "2026-11-15",
+          "says": "\"Updated September 2026\". Adult median premium, Region 1 (the city), standard model, CHF 300 deductible, accident included, age 30: CHF 677 a month for 2027; \"the same medians for 2026: CHF 640 · 583 · 544\" (regions 1, 2, 3). \"The 3-month registration deadline (Art. 3 KVG) applies from cantonal registration date.\""
+        }
+      ],
+      "also": [
+        "sources: added the BAG page"
+      ]
+    },
+    {
+      "id": "ch-healthcare-insurers-must-accept",
+      "fact": "healthcare",
+      "cities": [
+        "zurich"
+      ],
+      "claim": "Insurers must accept every resident regardless of age or health",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Federal Office of Public Health (BAG): compulsory insurance for residents",
+          "url": "https://www.bag.admin.ch/de/krankenversicherung-versicherungspflicht-fuer-in-der-schweiz-wohnhafte-versicherte",
+          "read": "2026-11-15",
+          "says": "Undated; linked lists dated 29 September 2026. \"Jede Person, die sich in der Schweiz niederlässt, muss spätestens drei Monate nach ihrer Wohnsitznahme\" take out health insurance; insurers must accept applicants for basic insurance \"unabhängig von ihrem Alter und ihrem Gesundheitszustand\", without reservations or waiting periods."
+        }
+      ]
+    },
+    {
+      "id": "ch-healthcare-premium-2026",
+      "fact": "healthcare",
+      "cities": [
+        "zurich"
+      ],
+      "claim": "Adult premiums in the city run about CHF 640/month (2026 median, CHF 300 deductible) and rise each year",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Expat Savvy: health insurance in Zurich",
+          "url": "https://expat-savvy.ch/health-insurance/zurich/",
+          "read": "2026-11-15",
+          "says": "\"Updated September 2026\". Adult median premium, Region 1 (the city), standard model, CHF 300 deductible, accident included, age 30: CHF 677 a month for 2027; \"the same medians for 2026: CHF 640 · 583 · 544\" (regions 1, 2, 3). \"The 3-month registration deadline (Art. 3 KVG) applies from cantonal registration date.\""
+        },
+        {
+          "name": "Swiss Federal Council: health premiums rise by 5.0 percent on average (media release)",
+          "url": "https://www.admin.ch/de/newnsb/BfuGvedj0OOX",
+          "read": "2026-11-15",
+          "says": "Dated 29 September 2026, on 2027 premiums: the mean monthly premium rises by CHF 19.70 (5.0%) to CHF 412, and for adults by CHF 22.80 (4.9%) to CHF 487.60. The release gives no figure for the canton or city of Zurich."
+        }
+      ],
+      "note": "The city figure is from one dated secondary page (median for premium region 1, standard model, age 30, accident cover included); the federal release gives national means only and confirms the rise (adults +4.9% for 2027). The BAG's cantonal tables are PDFs and were not read. The drawback repeats \"about CHF 640/month\", hedged the same way."
+    }
+  ]
+}

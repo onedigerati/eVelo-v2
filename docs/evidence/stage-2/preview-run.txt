@@ -1,0 +1,415 @@
+$ npm run build && npx vite preview --port 4317 --strictPort; node docs/evidence/stage-2/verify2.mjs http://localhost:4317
+
+===== desktop · Valencia =====
+No. 15 Valencia
+YOUR PLAN HERE
+57%
+plan holds
+−7 pts vs 64% in St. Louis
+All 5 photos
+Photos: Diego Delso, Mihael Grmek, Manuel M. Vicente, José Luis Filpo Cabana · CC BY-SA / CC BY · Wikimedia Commons
+ES
+TOP PICK 15 OF 75 · SPAIN
+Beach city, top-rated by expats, sensible prices
+Valencia was the top city in InterNations' most recent city ranking (2024), and from 2026 the Valencian Community exempts the first €2M of net wealth, with 99% inheritance relief for children. Portfolios above €2M pay wealth tax every year, so it suits a moderate buy-borrow-die portfolio better than a large one; it has beaches, good public healthcare and lower costs than Madrid or Barcelona. The weak point is the borrow step: Schwab and IBKR both reportedly bar EU residents from drawing margin as cash.
+HOW IT SCORES · out of 5, for a US retiree on buy-borrow-die
+Tax on holdings
+2
+out of 5
+Estate
+4
+out of 5
+Lending
+2
+out of 5
+Residency
+3
+out of 5
+Healthcare
+4
+out of 5
+Cost
+3
+out of 5
+Safety
+4
+out of 5
+Climate
+4
+out of 5
+Community
+4
+out of 5
+THE ESSENTIALS
+TAX ON HOLDINGS
+Wealth tax on worldwide net wealth (margin debt deductible) above a €2M exemption from the 2026 assessment (Ley 5/2026), at 0.25–3.5% with no general relief; the income-plus-wealth cap can trim it by up to 80%; dividends and interest pay 19–30%, foreign assets go on Modelo 720, and an exit tax can reach gains on shares over €4M; check current rules.
+ESTATE & INHERITANCE
+Spain taxes the heir, and a non-resident heir only on Spanish assets, so US assets left to US-resident children appear outside it (an inference; confirm with a Spanish adviser); a resident child gets a €100k reduction plus 99% relief in the Valencian Community; there is no US–Spain estate treaty.
+LENDING & BROKERS
+IBKR reportedly accepts Spain residents (likely through its EU entity), and Schwab International reportedly accepts them too, but Schwab reportedly bars Europe residents from taking cash out through margin, and IBKR's EU entity reportedly lends on margin only to buy securities, not to withdraw as cash, so confirm how you would draw cash before relying on either; EU PRIIPs rules reportedly block new buys of US-listed ETFs, not holding them.
+RESIDENCY
+Non-lucrative visa: €2,400/month or €28,800/year (400% of IPREM, 2026; +€7,200 per dependant) from investment income or liquid savings, plus Spanish private health insurance with no co-pay; no work is allowed, and holders must live in Spain most of the year.
+HEALTHCARE
+Strong Spanish public system (for example La Fe hospital); visa holders start on private insurance and can buy into public cover (convenio especial, €157/month at 65+) after a year; private plans commonly cap entry at 65–75.
+SAFETY
+Spain is 27th in the 2026 Global Peace Index; violent crime is low, with petty theft in the centre and on beaches.
+CLIMATE
+Mild winters (days about 17°C) and hot, humid summers; the October 2024 floods showed the flash-flood risk.
+COMMUNITY
+A growing English-speaking expat scene in Ruzafa, the centre and the coastal suburbs, with about 4,900 Americans and 9,400 Britons registered in the province (1 Jan 2025), though daily life runs in Spanish and Valencian.
+GETTING THERE
+From St. Louis (STL): no nonstop; one stop via Frankfurt, about 13–15 h.
+Valencia airport (VLC) is about 8 km west of the centre, linked by metro; high-speed trains reach Madrid in under 2 hours, and Madrid, Barcelona and Lisbon are the usual connecting hubs.
+Routes as of Nov 2026; flying times are estimates.
+WORTH KNOWING
+Yearly wealth tax on net wealth above €2M, at up to 3.5%
+No direct US flights
+The non-lucrative visa's income bar (€2,400/month) is far higher than Portugal's
+YOUR PLAN HERE
+PLAN HOLDS
+57
+%
+−7 pts vs 64% in St. Louis
+A YEAR HERE
+$96,831
+−12% vs $110,000 in St. Louis
+BY CATEGORY
+St. Louis
+Valencia
+Housing: $31K here vs $26K in St. Louis, +20%.
+Housing
+$31K
++20%
+Groceries: $7.7K here vs $11K in St. Louis, −30%.
+Groceries
+$7.7K
+−30%
+Dining out: $7.5K here vs $8.0K in St. Louis, −6%.
+Dining out
+$7.5K
+−6%
+Transport: $8.1K here vs $10K in St. Louis, −19%.
+Transport
+$8.1K
+−19%
+Utilities: $4.4K here vs $5.5K in St. Louis, −19%.
+Utilities
+$4.4K
+−19%
+Healthcare: $8.2K here vs $16K in St. Louis, −49%.
+Healthcare
+$8.2K
+−49%
+Travel: $14K here vs $14K in St. Louis, same.
+Travel
+$14K
+same
+Other: $16K here vs $20K in St. Louis, −19%.
+Other
+$16K
+−19%
+Your St. Louis budget at local prices, with your expat price premium (35%).
+Local tax and estate for Valencia ready.
+LOCAL TAX & ESTATE
+Wealth tax, whole plan
+$1.6M
+median total, borrowed as it falls due
+Inheritance tax
+None on what US-resident heirs inherit
+Estate at 85
+median, after local tax
+$8.0M
+−$2.4M vs $10M staying in St. Louis
+Today’s dollars, from 4,000 simulated futures of your plan with Valencia as the destination.
+Make Valencia my destination
+SOURCES
+SEPE: yearly amounts of the IPREM and the minimum wage · 2026
+Spanish Consulate in Los Angeles: non-lucrative residence visa · 2026
+LYNX: withdrawals from accounts carried by Interactive Brokers
+Generalitat Valenciana: tax benefits 2026 · 2026
+Póliza Médica: up to what age can you take out health insurance (Oct 2026) · 2026
+Cuatrecasas: Valencian Community tax changes for 2026 · 2026
+Guía Fiscal: inheritance tax map 2026 · 2026
+PwC: Spain, other taxes · 2026
+YourTaxBase: Charles Schwab for expats · 2026
+MySpainVisa: Americans living in Spain (INE data) · 2025
+InterNations Expat City Ranking 2024 methodology · 2024
+Money.it: GPI 2026 top 50 · 2026
+Turespaña: air connectivity to Spain 2026
+Cost indices verified November 6, 2026 from Numbeo current city index. Not tax or legal advice.
+
+===== desktop · Vienna =====
+No. 75 Vienna
+YOUR PLAN HERE
+62%
+plan holds
+−2 pts vs 64% in St. Louis
+All 5 photos
+Photos: Herzi Pinki, Thomas Wolf, Dguendel, Peter Gugerell, Ma49wiki · CC BY-SA / CC BY / CC0 · Wikimedia Commons
+AT
+TOP PICK 75 OF 75 · AUSTRIA
+Safe, orderly capital where a US ETF portfolio is taxed every year
+Vienna has first-rate hospitals, Austria is 6th in the 2026 Global Peace Index, and there is no wealth, inheritance or gift tax, plus a US estate treaty. It ranks last of the 75 because Austria taxes funds that do not report to its reporting agent, the OeKB (likely including US ETFs), every year on 90% of their growth, so a never-sell ETF portfolio pays Austrian tax anyway, on top of 27.5% on dividends; eVelo's odds do not model that yearly charge. The borrow step is weak too: Schwab and IBKR both reportedly bar EU residents from drawing margin as cash.
+HOW IT SCORES · out of 5, for a US retiree on buy-borrow-die
+Tax on holdings
+1
+out of 5
+Estate
+5
+out of 5
+Lending
+2
+out of 5
+Residency
+3
+out of 5
+Healthcare
+5
+out of 5
+Cost
+1
+out of 5
+Safety
+5
+out of 5
+Climate
+2
+out of 5
+Community
+4
+out of 5
+THE ESSENTIALS
+TAX ON HOLDINGS
+No wealth tax, but Austria taxes funds that do not report their tax figures to its reporting agent (OeKB), which likely include US-domiciled ETFs such as VTI or VOO, every year on a deemed distribution of 90% of their growth (at least 10% of year-end value) at 27.5%, so a never-sell ETF portfolio pays tax each year anyway; eVelo's odds do not model this; ordinary individual US stocks are not caught (US REITs and BDCs reportedly are), dividends and bond interest on a foreign account pay 27.5% (bank-deposit interest 25%), and margin interest gives no deduction.
+ESTATE & INHERITANCE
+No inheritance, estate or gift tax (only a transfer tax on Austrian real estate), so a US portfolio passes to US-resident children with no Austrian tax; a US–Austria estate and gift tax treaty exists but is mostly moot, and the $15M US exemption (2026) applies as anywhere.
+LENDING & BROKERS
+IBKR reportedly serves Austria residents (likely through its EU entity), with margin terms per country unknown, and Schwab International reportedly accepts them too (Austria is on its reported list, Oct 2026), but Schwab reportedly bars Europe residents from taking cash out through margin, and IBKR's EU entity reportedly lends on margin only to buy securities, not to withdraw as cash, so confirm how you would draw cash before relying on either; EU PRIIPs rules reportedly block new buys of US-listed ETFs, not holding them.
+RESIDENCY
+Settlement permit with no right to work (Niederlassungsbewilligung – ausgenommen Erwerbstätigkeit): regular net income of €2,616.78/month single or €4,128.24 for a couple (2026) from pensions or sufficient personal assets, all-risk health insurance, housing, German proof with the first application and a quota place; apply at an Austrian embassy before entry, and it is renewed yearly.
+HEALTHCARE
+Once resident, you can join the public ÖGK self-insurance at €565.25/month (2026), with benefits after a 6-month wait; the settlement permit first needs private all-risk cover (Cigna Global has no entry-age cap), and Vienna's hospitals, led by the AKH university hospital, are generally regarded as excellent.
+SAFETY
+Austria is 6th in the 2026 Global Peace Index; UK travel advice says crime levels are generally low, with pickpocketing in city centres, and that terrorists are likely to try to carry out attacks (citing Vienna 2020 and Villach 2025).
+CLIMATE
+Continental: July highs about 27°C with heatwaves above 35°C, January highs about 4°C with lows near freezing and grey skies, and about 600–670 mm of rain a year.
+COMMUNITY
+A city of about 2 million, where about 740,000 residents were first-generation migrants in 2023, home to UN, OPEC and OSCE offices and a large international community; English is widely spoken, but the permit, paperwork and daily life run in German.
+GETTING THERE
+From St. Louis (STL): no nonstop; one stop via Chicago or Frankfurt, about 12–14 h.
+Vienna International (VIE) is about 18 km south-east of the centre, about 16 minutes on the City Airport Train; trains run to Bratislava, Budapest, Prague and Munich.
+Routes as of Nov 2026; flying times are estimates.
+WORTH KNOWING
+Yearly Austrian tax on the growth of non-reporting funds (likely US ETFs), on top of 27.5% on dividends
+Very high costs, and a permit that needs German and a quota place
+Cold, grey winters
+YOUR PLAN HERE
+PLAN HOLDS
+62
+%
+−2 pts vs 64% in St. Louis
+A YEAR HERE
+$115,804
++5% vs $110,000 in St. Louis
+BY CATEGORY
+St. Louis
+Vienna
+Housing: $32K here vs $26K in St. Louis, +24%.
+Housing
+$32K
++24%
+Groceries: $10K here vs $11K in St. Louis, −6%.
+Groceries
+$10K
+−6%
+Dining out: $11K here vs $8.0K in St. Louis, +31%.
+Dining out
+$11K
++31%
+Transport: $11K here vs $10K in St. Louis, +10%.
+Transport
+$11K
++10%
+Utilities: $6.0K here vs $5.5K in St. Louis, +10%.
+Utilities
+$6.0K
++10%
+Healthcare: $10K here vs $16K in St. Louis, −36%.
+Healthcare
+$10K
+−36%
+Travel: $14K here vs $14K in St. Louis, same.
+Travel
+$14K
+same
+Other: $21K here vs $20K in St. Louis, +10%.
+Other
+$21K
++10%
+Your St. Louis budget at local prices, with your expat price premium (35%).
+Local tax and estate for Vienna ready.
+LOCAL TAX & ESTATE
+No wealth or inheritance tax modelled for Austria: none reaches a US portfolio.
+Estate at 85
+median, borrow and never sell
+$10.0M
+−$388K vs $10M staying in St. Louis
+Today’s dollars, from 4,000 simulated futures of your plan with Vienna as the destination.
+Make Vienna my destination
+SOURCES
+PwC: Austria, income determination
+PwC: Austria, other taxes
+Broker-Test.at: lump-sum taxation of non-reporting funds · 2025
+Broker-Test.at: tax on REITs and other non-reporting funds
+Income Tax Act (EStG) § 20: non-deductible expenses
+IRS: estate and gift tax treaties
+oesterreich.gv.at: settlement permit, gainful employment excepted · 2026
+oesterreich.gv.at: self-insurance in health insurance · 2026
+Cigna Global: international health plans
+Advantage Austria: AKH and MedUni Vienna in the 2026 hospital ranking · 2026
+LYNX: withdrawals from accounts carried by Interactive Brokers
+GOV.UK: Austria travel advice, safety and security
+Frankfurt Flyer: Austrian Airlines North America winter 2025/26
+Wikipedia: Vienna (climate, population)
+YourTaxBase: Charles Schwab for expats · 2026
+Money.it: GPI 2026 top 50 · 2026
+Cost indices verified November 6, 2026 from livingcost.org. Low confidence: derived from livingcost.org prices vs New York, scaled to Numbeo with factors fitted on Lisbon, Athens, Bangkok and Montevideo; Numbeo was rate-limiting. Not tax or legal advice.
+
+===== phone · Sliema =====
+No. 19 Sliema
+YOUR PLAN HERE
+64%
+plan holds
+same vs 64% in St. Louis
+1 / 5
+Valletta's domes and bastions across Marsamxett Harbour, the view from Sliema's waterfront
+Chris Olszewski · CC BY-SA 4.0
+MT
+TOP PICK 19 OF 75 · MALTA
+English-speaking EU island where unremitted dividends go untaxed
+Malta taxes a resident non-dom only on foreign income brought into the country, so dividends left in the US account face a €5,000 minimum tax at most, with no wealth or inheritance tax. Sliema is the expat heart of the island, English is an official language, and Delta began flying from New York in 2026; the cheaper Global Residence terms need an application by 31 December 2026. The borrow step is weak too: Schwab reportedly does not take Malta residents, and IBKR reportedly bars EU residents from drawing margin as cash.
+HOW IT SCORES · out of 5, for a US retiree on buy-borrow-die
+Tax on holdings
+4
+out of 5
+Estate
+5
+out of 5
+Lending
+2
+out of 5
+Residency
+3
+out of 5
+Healthcare
+4
+out of 5
+Cost
+2
+out of 5
+Safety
+4
+out of 5
+Climate
+4
+out of 5
+Community
+5
+out of 5
+THE ESSENTIALS
+TAX ON HOLDINGS
+No wealth tax; a non-domiciled resident is taxed only on foreign income remitted to Malta, with a €5,000 minimum tax if foreign income is €35k+, and foreign capital gains are untaxed even if remitted; under the GRP, remitted income pays 15% with a €15k minimum (€35k from 2027); whether margin-loan proceeds brought into Malta count as a remittance is unverified.
+ESTATE & INHERITANCE
+No inheritance, estate or gift tax; stamp duty applies only on inheriting Maltese property (5%) or Maltese shares (2%), so a US portfolio passes to US-resident children with no Maltese tax.
+LENDING & BROKERS
+IBKR reportedly serves Malta residents (likely through its EU entity), and IBKR's EU entity reportedly lends on margin only to buy securities, not to withdraw as cash, so confirm how you would draw cash before relying on it; Schwab International reportedly does not accept Malta residents, and EU PRIIPs rules reportedly block new purchases of US ETFs, though existing holdings can usually be kept.
+RESIDENCY
+Global Residence Programme: a tax status and residence route for non-EU nationals with a €275k purchase or €9,600/yr rental (lower in the south and Gozo); from 2027 the new Global Resident status needs €700k or €14k/yr, while applications filed by 31 Dec 2026 keep the old terms to 2031; permanent residence (MPRP) costs about €99k in fees plus €375k property or €14k/yr rent.
+HEALTHCARE
+Mater Dei, the acute general teaching hospital in Msida, is a short drive away, and Saint James and St Thomas are the main private hospitals; non-EU residents must hold qualifying private cover, since free public care is tied to social security status.
+SAFETY
+Malta is outside the Global Peace Index; UK travel advice says crime against tourists is rare, with pickpocketing on crowded summer buses, bag snatching and drink spiking in the Paceville bars the main risks.
+CLIMATE
+Mediterranean with about 3,000 hours of sun: August days around 31°C and humid, January highs about 15°C with lows near 9°C, and little rain outside winter.
+COMMUNITY
+More than half of Sliema's 22,000 residents are foreign nationals (2024), and English is an official language, so daily life, government and healthcare all work in English.
+GETTING THERE
+From St. Louis (STL): no nonstop; one stop via Frankfurt, about 13–16 h.
+Malta International is about 10 km away, linked to Sliema by the Airport Direct bus; ferries cross to Valletta in minutes, and others run to Sicily.
+Routes as of Nov 2026; flying times are estimates.
+WORTH KNOWING
+Dense, built-up and crowded, with heavy traffic and construction
+Housing in Sliema is in the full-price tier, and the cheap GRP terms close for applications after 2026
+Whether bringing in loan proceeds counts as a taxable remittance is untested
+YOUR PLAN HERE
+PLAN HOLDS
+64
+%
+same vs 64% in St. Louis
+A YEAR HERE
+$110,738
++1% vs $110,000 in St. Louis
+BY CATEGORY
+St. Louis
+Sliema
+Housing: $40K here vs $26K in St. Louis, +52%.
+Housing
+$40K
++52%
+Groceries: $8.7K here vs $11K in St. Louis, −21%.
+Groceries
+$8.7K
+−21%
+Dining out: $8.0K here vs $8.0K in St. Louis, same.
+Dining out
+$8.0K
+same
+Transport: $9.1K here vs $10K in St. Louis, −9%.
+Transport
+$9.1K
+−9%
+Utilities: $5.0K here vs $5.5K in St. Louis, −9%.
+Utilities
+$5.0K
+−9%
+Healthcare: $8.7K here vs $16K in St. Louis, −46%.
+Healthcare
+$8.7K
+−46%
+Travel: $14K here vs $14K in St. Louis, same.
+Travel
+$14K
+same
+Other: $18K here vs $20K in St. Louis, −9%.
+Other
+$18K
+−9%
+Your St. Louis budget at local prices, with your expat price premium (35%).
+Local tax and estate for Sliema ready.
+LOCAL TAX & ESTATE
+No wealth or inheritance tax modelled for Malta: none reaches a US portfolio.
+Estate at 85
+median, borrow and never sell
+$10M
++$61K vs $10M staying in St. Louis
+Today’s dollars, from 4,000 simulated futures of your plan with Sliema as the destination.
+Make Sliema my destination
+SOURCES
+PwC: Malta, taxes on personal income
+PwC: Malta, other taxes
+Deloitte Malta: Individual Tax Programme Rules 2026 · 2026
+PKF Malta: 2027 individual tax programme thresholds
+Legal 500: Malta Permanent Residence Programme 2026
+Legal 500: healthcare system in Malta
+Residency Malta Agency: Malta Permanent Residence Programme
+GVZH Advocates: Global Residence Programme · 2026
+Healthcare Entitlement Unit (Government of Malta): healthcare in Malta · 2026
+LYNX: withdrawals from accounts carried by Interactive Brokers
+GOV.UK: Malta travel advice, safety and security
+Live and Let's Fly: Delta New York–Malta and Sardinia
+Wikipedia: Sliema (population, airport bus)
+Wikipedia: Malta (climate, languages)
+YourTaxBase: Charles Schwab for expats (Oct 2026)
+Cost indices verified November 6, 2026 from Numbeo current city index. Not tax or legal advice.
+
+console errors: none

@@ -3,19 +3,19 @@ import type { ExpatProfile } from '../expatPicks'
 const profile: ExpatProfile = {
   tagline: 'Big, green and cheaper than most capitals, with German taxes',
   summary:
-    'Berlin is the cheapest of Western Europe\'s big capitals, with lakes and forests inside the city limits, world-class hospitals such as the Charité and a large English-speaking international crowd. For buy-borrow-die it is middling at best: there is no wealth tax and dividends pay a flat 26.375%, but after 10 years\' residence children pay 7–30% inheritance tax on the worldwide estate above €400k each, the residence permit for retirees is discretionary, and a newcomer at retirement age usually needs costly private health insurance.',
-  scores: { cost: 2, healthcare: 4, safety: 4, visa: 3, climate: 2, community: 4, tax: 3, estate: 2, lending: 3 },
+    'Berlin is the cheapest of Western Europe\'s big capitals, with lakes and forests inside the city limits, world-class hospitals such as the Charité and a large English-speaking international crowd. For buy-borrow-die it is middling at best: there is no wealth tax and dividends pay a flat 26.375%, but after 10 years\' residence children pay 7–30% inheritance tax on the worldwide estate above €400k each, the residence permit for retirees is discretionary, and a newcomer at retirement age usually needs costly private health insurance. The weak point is the borrow step: Schwab and IBKR both reportedly bar EU residents from drawing margin as cash.',
+  scores: { cost: 2, healthcare: 4, safety: 4, visa: 3, climate: 2, community: 4, tax: 3, estate: 2, lending: 2 },
   facts: {
     healthcare:
-      'Excellent hospitals, led by the Charité (Europe\'s largest university hospital) and Vivantes; a retiree arriving from abroad generally cannot join statutory insurance (it needs years of prior membership), so private cover matching statutory benefits plus long-term care insurance is the realistic route, and it is underwritten and costly at 65+.',
+      'Excellent hospitals, led by the Charité (Germany\'s largest university hospital) and Vivantes; a retiree arriving from abroad generally cannot join statutory insurance (it needs years of prior membership), so private cover matching statutory benefits plus long-term care insurance is the realistic route, and it is costly at 65+: normal tariffs are underwritten, and the basic tariff that insurers must sell without a health surcharge is capped at about €1,018/month (2026).',
     safety:
       'Germany is 28th of 163 in the 2026 Global Peace Index; Berlin has more street crime than most German cities, with pickpocketing on transit and around a few hot spots such as Görlitzer Park and Kottbusser Tor.',
-    visa: 'No dedicated retirement visa: retirees apply for a discretionary residence permit for "other purposes" (§7(1) AufenthG) with no fixed income threshold, showing pensions, savings or investments that cover living costs plus adequate health insurance; US citizens can apply in Germany within their 90 visa-free days, permits usually run a year at a time, and settlement is possible after 5 years with sufficient German (B1 in practice, waivable from age 60 in hardship cases) (law-firm sources).',
+    visa: 'No dedicated retirement visa: retirees apply for a discretionary residence permit for "other purposes" (§7(1) AufenthG) with no fixed income threshold, showing pensions, savings or investments that cover living costs plus adequate health insurance; US citizens can apply in Germany within their 90 visa-free days, permits usually run a year at a time, and settlement is possible after 5 years with sufficient German (B1 in practice, waivable in hardship cases) and 60 months of pension contributions or comparable provision, which a retiree may lack (law-firm sources).',
     tax: 'No wealth tax is levied; dividends, interest and capital gains pay a flat 25% plus the 5.5% solidarity surcharge (26.375%, plus church tax for members) after a €1,000 allowance (€2,000 for a couple), and Germany credits US tax on US dividends up to the treaty\'s 15% rate; there is no newcomer regime for retirees.',
     estate:
       'Inheritance tax reaches the worldwide estate when the person who dies lives in Germany: children pay 7–30% (the rate for the whole amount rises with its size) after a €400,000 allowance each; but under the US–Germany estate and gift tax treaty (1998 protocol) a US citizen who is not German and has lived in Germany 10 years or less is treated as US-domiciled, so Germany generally taxes only German-sited assets left to US-resident heirs until then; and the $15M US exemption (2026) applies as anywhere.',
     lending:
-      'IBKR reportedly serves Germany residents (EU clients through its Irish entity), and Schwab International reportedly accepts them, but Schwab reportedly bars Europe residents from taking cash out through margin, so plan on IBKR margin; EU PRIIPs rules reportedly block new buys of US-listed ETFs, not holding them.',
+      'IBKR reportedly serves Germany residents (EU clients through its Irish entity), and Schwab International reportedly accepts them, but Schwab reportedly bars Europe residents from taking cash out through margin, and IBKR\'s EU entity reportedly lends on margin only to buy securities, not to withdraw as cash, so confirm how you would draw cash before relying on either; EU PRIIPs rules reportedly block new buys of US-listed ETFs, not holding them.',
     climate:
       'Continental: warm summers (July highs about 25 °C / 77 °F), long grey winters around freezing (January highs about 3 °C / 37 °F) with short days, and a fairly dry 570 mm of rain a year.',
     community:
@@ -54,6 +54,13 @@ const profile: ExpatProfile = {
       url: 'https://www.steuerberater-berlin-schuermann.de/steuernews_mandanten/dezember_2016/us_quellensteuern/',
     },
     { name: 'VisaRight: settlement permit (Niederlassungserlaubnis)', url: 'https://visaright.eu/blog/niederlassungserlaubnis' },
+    { name: 'Residence Act (AufenthG) § 9: settlement permit', url: 'https://www.gesetze-im-internet.de/aufenthg_2004/__9.html' },
+    {
+      name: 'Federal Ministry of Health: the basic tariff in private health insurance',
+      url: 'https://www.bundesgesundheitsministerium.de/service/begriffe-von-a-z/b/basistarif-in-der-privaten-krankenversicherung',
+      edition: '2026',
+    },
+    { name: 'LYNX: withdrawals from accounts carried by Interactive Brokers', url: 'https://www.lynxbroker.com/service/payments-and-transfers/withdrawal/' },
     { name: 'Money.it: GPI 2026 top 50', url: 'https://www.money.it/50-paesi-piu-sicuri-al-mondo-nel-2026', edition: '2026' },
     { name: 'YourTaxBase: Charles Schwab for expats (country list, Oct 2026)', url: 'https://yourtaxbase.com/blog/charles-schwab-for-expats' },
     { name: 'BER: summer 2026 flight schedule', url: 'https://ber.berlin-airport.de/en/news/2026-03-25-sommerflugplan-rw.html', edition: '2026' },

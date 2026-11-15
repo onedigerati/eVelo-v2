@@ -4,8 +4,8 @@ import { S } from './_shared'
 const profile: ExpatProfile = {
   tagline: 'Roman seaside city on the Costa Daurada, under Catalonia\'s wealth tax',
   summary:
-    'Tarragona has a Roman old town, Mediterranean beaches and Spain\'s non-lucrative visa, an hour down the coast from Barcelona. For buy-borrow-die it ranks near the bottom: Catalonia taxes worldwide net wealth above only €500,000 every year, at up to 3.48% with no relief, the weakest Spanish region for a large portfolio.',
-  scores: { cost: 3, healthcare: 3, safety: 4, visa: 3, climate: 4, community: 2, tax: 1, estate: 4, lending: 3 },
+    'Tarragona has a Roman old town, Mediterranean beaches and Spain\'s non-lucrative visa, an hour down the coast from Barcelona. For buy-borrow-die it ranks near the bottom: Catalonia taxes worldwide net wealth above only €500,000 every year, at up to 3.48% with no relief, the weakest Spanish region for a large portfolio. The weak point is the borrow step: Schwab and IBKR both reportedly bar EU residents from drawing margin as cash.',
+  scores: { cost: 3, healthcare: 3, safety: 4, visa: 3, climate: 4, community: 2, tax: 1, estate: 4, lending: 2 },
   facts: {
     healthcare:
       'The public Hospital Universitari Joan XXIII (opened 1967, being replaced by a €250M new building) is the reference hospital for the Camp de Tarragona, and the private Viamed Tarragona opened in October 2025; the top private and JCI hospitals are in Barcelona; visa holders start on private insurance and can buy into public cover (convenio especial, €157/month at 65+) after a year.',
@@ -16,7 +16,7 @@ const profile: ExpatProfile = {
     estate:
       'Spain taxes the heir, and a non-resident heir only on Spanish assets, so US assets left to US-resident children appear outside it (an inference; confirm with a Spanish adviser); a resident child gets only Catalonia\'s sliding relief, which thins out on large estates; there is no US–Spain estate treaty.',
     lending:
-      'IBKR reportedly accepts Spain residents (likely through its EU entity), and Schwab International reportedly accepts them too, but Schwab reportedly bars Europe residents from taking cash out through margin, so plan on IBKR margin; EU PRIIPs rules reportedly block new buys of US-listed ETFs, not holding them.',
+      'IBKR reportedly accepts Spain residents (likely through its EU entity), and Schwab International reportedly accepts them too, but Schwab reportedly bars Europe residents from taking cash out through margin, and IBKR\'s EU entity reportedly lends on margin only to buy securities, not to withdraw as cash, so confirm how you would draw cash before relying on either; EU PRIIPs rules reportedly block new buys of US-listed ETFs, not holding them.',
     climate: 'Mediterranean: July–August highs about 29–30°C, January highs about 12–14°C with lows of 4–8°C, and about 500 mm of rain a year, mostly in spring and autumn.',
     community:
       'A city of about 140,000 with a small English-speaking community: one count puts British residents at about 212 (0.16% of residents, undated); daily life runs in Catalan and Spanish.',
@@ -28,6 +28,13 @@ const profile: ExpatProfile = {
     'US flights and the top private hospitals are in Barcelona, an hour away',
   ],
   sources: [
+    { name: 'SEPE: yearly amounts of the IPREM and the minimum wage', url: 'https://www.sepe.es/HomeSepe/es/prestaciones-desempleo/Cuantias-anuales.html', edition: '2026' },
+    {
+      name: 'Spanish Consulate in Los Angeles: non-lucrative residence visa',
+      url: 'https://www.exteriores.gob.es/Consulados/losangeles/en/ServiciosConsulares/Paginas/Consular/Visado-de-residencia-no-lucrativa.aspx',
+      edition: '2026',
+    },
+    { name: 'LYNX: withdrawals from accounts carried by Interactive Brokers', url: 'https://www.lynxbroker.com/service/payments-and-transfers/withdrawal/' },
     { name: 'Guía Fiscal: wealth tax 2026, map of regional reliefs', url: 'https://guiafiscal.es/opinion/patrimonio-2026-mapa-bonificaciones-ccaa/', edition: '2026' },
     { name: 'Guía Fiscal: inheritance tax map 2026', url: 'https://guiafiscal.es/actualidad/mapa-sucesiones-2026-donde-se-paga-mas/', edition: '2026' },
     { name: 'PwC: Spain, other taxes', url: 'https://taxsummaries.pwc.com/spain/individual/other-taxes', edition: '2026' },
@@ -41,7 +48,6 @@ const profile: ExpatProfile = {
     { name: 'thinkSPAIN: living in Tarragona city', url: 'https://www.thinkspain.com/where-to-buy-rent-live/places/tarragona-city' },
     { name: 'Rome2rio: Tarragona to Barcelona airport', url: 'https://www.rome2rio.com/s/Tarragona/Barcelona-Airport-BCN' },
     { name: 'Wikipedia: Josep Tarradellas Barcelona–El Prat Airport', url: 'https://en.wikipedia.org/wiki/Josep_Tarradellas_Barcelona%E2%80%93El_Prat_Airport' },
-    S.iprem,
     S.gpiTop50,
   ],
 }

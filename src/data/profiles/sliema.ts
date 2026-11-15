@@ -3,8 +3,8 @@ import type { ExpatProfile } from '../expatPicks'
 const profile: ExpatProfile = {
   tagline: 'English-speaking EU island where unremitted dividends go untaxed',
   summary:
-    'Malta taxes a resident non-dom only on foreign income brought into the country, so dividends left in the US account face a €5,000 minimum tax at most, with no wealth or inheritance tax. Sliema is the expat heart of the island, English is an official language, and Delta began flying from New York in 2026; the cheaper Global Residence terms need an application by 31 December 2026.',
-  scores: { cost: 2, healthcare: 4, safety: 4, visa: 3, climate: 4, community: 5, tax: 4, estate: 5, lending: 3 },
+    'Malta taxes a resident non-dom only on foreign income brought into the country, so dividends left in the US account face a €5,000 minimum tax at most, with no wealth or inheritance tax. Sliema is the expat heart of the island, English is an official language, and Delta began flying from New York in 2026; the cheaper Global Residence terms need an application by 31 December 2026. The borrow step is weak too: Schwab reportedly does not take Malta residents, and IBKR reportedly bars EU residents from drawing margin as cash.',
+  scores: { cost: 2, healthcare: 4, safety: 4, visa: 3, climate: 4, community: 5, tax: 4, estate: 5, lending: 2 },
   facts: {
     healthcare:
       'Mater Dei, the acute general teaching hospital in Msida, is a short drive away, and Saint James and St Thomas are the main private hospitals; non-EU residents must hold qualifying private cover, since free public care is tied to social security status.',
@@ -14,7 +14,7 @@ const profile: ExpatProfile = {
     tax: 'No wealth tax; a non-domiciled resident is taxed only on foreign income remitted to Malta, with a €5,000 minimum tax if foreign income is €35k+, and foreign capital gains are untaxed even if remitted; under the GRP, remitted income pays 15% with a €15k minimum (€35k from 2027); whether margin-loan proceeds brought into Malta count as a remittance is unverified.',
     estate: 'No inheritance, estate or gift tax; stamp duty applies only on inheriting Maltese property (5%) or Maltese shares (2%), so a US portfolio passes to US-resident children with no Maltese tax.',
     lending:
-      'IBKR reportedly serves Malta residents (likely through its EU entity), with margin terms per country unknown; Schwab International reportedly does not accept Malta, and EU PRIIPs rules reportedly block new purchases of US ETFs, though existing holdings can usually be kept.',
+      'IBKR reportedly serves Malta residents (likely through its EU entity), and IBKR\'s EU entity reportedly lends on margin only to buy securities, not to withdraw as cash, so confirm how you would draw cash before relying on it; Schwab International reportedly does not accept Malta residents, and EU PRIIPs rules reportedly block new purchases of US ETFs, though existing holdings can usually be kept.',
     climate: 'Mediterranean with about 3,000 hours of sun: August days around 31°C and humid, January highs about 15°C with lows near 9°C, and little rain outside winter.',
     community:
       'More than half of Sliema\'s 22,000 residents are foreign nationals (2024), and English is an official language, so daily life, government and healthcare all work in English.',
@@ -45,6 +45,10 @@ const profile: ExpatProfile = {
       name: 'Legal 500: healthcare system in Malta',
       url: 'https://www.legal500.com/intelligence/malta/food-drugs-healthcare-life-sciences/healthcare-system-in-malta-a-detailed-overview',
     },
+    { name: 'Residency Malta Agency: Malta Permanent Residence Programme', url: 'https://residencymalta.gov.mt/legal-framework-mprp-2/' },
+    { name: 'GVZH Advocates: Global Residence Programme', url: 'https://gvzh.mt/services/practice-areas/citizenship-residence/global-residence-programme/', edition: '2026' },
+    { name: 'Healthcare Entitlement Unit (Government of Malta): healthcare in Malta', url: 'https://s2.eessi.gov.mt/en/information-regarding-healthcare-in-malta/', edition: '2026' },
+    { name: 'LYNX: withdrawals from accounts carried by Interactive Brokers', url: 'https://www.lynxbroker.com/service/payments-and-transfers/withdrawal/' },
     { name: 'GOV.UK: Malta travel advice, safety and security', url: 'https://www.gov.uk/foreign-travel-advice/malta/safety-and-security' },
     { name: 'Live and Let\'s Fly: Delta New York–Malta and Sardinia', url: 'https://liveandletsfly.com/delta-air-lines-new-york-malta-sardinia-flights' },
     { name: 'Wikipedia: Sliema (population, airport bus)', url: 'https://en.wikipedia.org/wiki/Sliema' },
