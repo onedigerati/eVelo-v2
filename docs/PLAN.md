@@ -7,7 +7,7 @@ A city profile's "Getting there" is one hand-written sentence per city, written 
 2026-11-14 · tests: 824 pass · typecheck: clean
 
 ## Now
-All stages done — deploy waits for the user's go
+All stages done — deployed 2026-11-15
 Agents: lean
 
 ## Stages
@@ -43,7 +43,7 @@ Agents: lean
 - 2026-11-14 · (unattended) A local note may name the usual connecting hub (e.g. "Istanbul is a common connecting hub" for Tbilisi) and stable access facts (airport distance, rail links), but no airline names, passenger counts or route lists, enforced by `accessNotes.test.ts`: names and counts go stale, and routes now come from data.
 - 2026-11-14 · No jbit:review for stage 3: UI only, copy and a thin pure function with tests; risk line matches the diff — PM's call.
 - 2026-11-14 · Stage 3 closed: 4/4 checks pass, 982 tests green, stage 2's hand check re-run ([evidence](evidence/stage-3/report.md)) — PM.
-
+- 2026-11-15 · Deployed to GitHub Pages on the user's go ("Deploy"): run 43684460520 succeeded; live AtlasView-C5Vq2Ket.js matches the local build and carries the new Getting there copy.
 
 ## Open questions
 - Home is set only on the Plan page, which unmounts the Atlas, so a user never sees the line change under an open profile; the live update is proven through the store. A home picker on the profile sheet would make it visible — later, if wanted.
