@@ -1,52 +1,33 @@
-# Pill destination plan
+# Home-aware getting there plan
 
 ## Goal
-The verdict pill ("Holds in 68% of futures") tells you the odds but not which city they're for, and on a phone the Outlook has no pill at all once the big headline scrolls away. Two changes: (1) every verdict pill names the city the odds are for: the destination, else the home city ("Holds in 68% of futures · Bangkok"); a long name gets cut off with "…" and the percentage never does; the spoken label adds "in <city>". This covers the phone Plan pill and the desktop/tablet docked pill. (2) On a phone, the Outlook gets the same floating pill once the verdict's number scrolls behind the top bar, with the same look and tap-back-to-verdict as desktop. (3) The Atlas page gets the same floating pill on every breakpoint once its three hero tiles scroll behind the top bar; tapping it scrolls back to the tiles. Done = all stages pass verification in the running build; deploy waits for the user's go.
+A city profile's "Getting there" is one hand-written sentence per city, written for someone flying from the US, and it reads the same whatever the home city is (San Diego, London or Toronto). Make it depend on home: each city gets its main airport and its current nonstop routes (as of Nov 2026, sourced). From these the app works out the trip from the home city's airport: same airport or nearby, nonstop, one stop via a shared hub, or two stops. It shows an estimated door-to-door flying time worked out from distance, e.g. "From San Diego (SAN): no nonstop; one stop via Tokyo or Hong Kong, about 17–19 h". Under it, each city keeps a short local note that doesn't depend on home (how far the airport is, the nearest bigger airport, ferries). The US-framed wording is rewritten for all 134 cities. Changing the home city updates the card live. Done = all stages pass verification in the running build; deploy waits for the user's go.
 
 ## Baseline
-2026-11-10 · tests: 818 pass · typecheck: clean
+2026-11-14 · tests: 824 pass · typecheck: clean
 
 ## Now
-All stages done
-Agents: wide — confirmed 2026-11-10 14:35
+Stage 1 of 3 · Route engine
+Agents: lean
 Risk: UI only
 Checks:
-- [x] On the Atlas, at 1280px, tablet width and a 390px phone, no pill shows while the hero tiles are in view; once they scroll behind the top bar the pill appears just under it, reading "Holds in N% of futures · <city>" with the main simulation's odds (the same number as the Outlook verdict), and hides again on scroll back (proof: running app, scroll + DOM + screenshot)
-- [x] Tapping the Atlas pill scrolls back to the hero tiles and puts focus there; making another city the destination from the list or map while the pill shows updates it live (city, odds, running ring, "±N pts") (proof: running app, scripted taps + DOM)
-- [x] The pill never covers the tab bar, open sheets (city profile, compare) or the map's own controls, and doesn't catch taps outside its box; it holds at 320px and 390px, light and dark, with a long city name (proof: running app, elementFromPoint + screenshots, a test can't judge layout)
-- [x] The Outlook, phone Plan and tablet drawer pills behave as before; tests and typecheck stay green (proof: screenshots compared to ded840e + test run)
+- [ ] `routeBetween(home, dest)` returns, from a fixed test route table: same or shared airport, nonstop, one stop via the shared hub(s) with the shortest total distance (up to two named), and two stops when no one-stop path exists (proof: test)
+- [ ] The hour estimate is a range from great-circle distance (cruise speed plus time per leg and per connection); SAN–BKK one-stop and JFK–LHR nonstop land within an hour of published typical times (proof: test)
+- [ ] The sentence builder gives "From <home> (<IATA>): …" for every route kind, uses city names for hubs, and never says "US" (proof: test)
 Open: none
 
 ## Stages
-- [x] 1. City on the pills — name the destination (else home) on the phone Plan pill and the desktop/tablet docked pill, with ellipsis and spoken label
-- [x] 2. Phone Outlook pill — turn on the docked pill on phone Outlook under the top bar once the number scrolls away, tap back to the verdict, without blocking the tab bar or chart touches
-- [x] 3. Atlas pill — the same floating pill on the Atlas, all breakpoints, once the hero tiles scroll away; tap scrolls back to the tiles
-
-## Fixes
-- 2026-11-10 · Atlas hero tiles reordered: your destination first (full-width on phone, left on desktop), then home, then best odds; with no destination, that tile suggests the best-odds city with "Move to <city> →"; half-width phone tiles wrap a two-word city name instead of trimming it — typecheck + 823 tests green; screenshots at 1280/390/320, light and dark, with and without a destination, and the suggestion tapped
-- 2026-11-10 · With no destination, the top Atlas card names the city as "your best odds" and the best-odds card drops its duplicate "Make destination" (it returns once a destination is set) — typecheck + 823 tests green; screenshots at 1280/390/320, light and dark, with and without a destination
-- 2026-11-10 · Atlas map no longer loses its land and globe after a theme switch (it read the old theme's colours; the theme now applies before the map repaints), and a failed land-shape load retries on the next visit instead of staying blank — new retry test, typecheck + 824 tests green; browser probe switching Dark↔Light at 1280 and 390, canvas colours match a fresh reload, screenshots both themes
-- 2026-11-13 · Landing hero copy from the escape-velocity tagline study: eyebrow "eVelo · escape velocity", a kicker "Find your escape velocity with eVelo." under the headline, primary button "How far am I from escape velocity?" (button labels now wrap at 320px) — typecheck + 824 tests green; screenshots at 1280/390/320, light and dark
-- 2026-11-13 · Landing primary button now reads "Find your eVelo" — typecheck + 824 tests green; screenshots at 1280/390/320, light and dark
-- 2026-11-13 · Landing body copy replaced with the tagline study's two paragraphs (escape velocity defined, first sentence emphasised; "which move gets you over it" kept at the user's request) — typecheck + 824 tests green; screenshots at 1280/390/320, light and dark
+- [ ] 1. Route engine — airport and route data shape, `routeBetween` and the hour estimate, the sentence builder, pilot data for a handful of airports, all tested
+- [ ] 2. Route data — main airport and current nonstops (among the 134 cities' airports and about 30 world hubs) for every city, sourced and dated, with a coverage test
+- [ ] 3. Home-aware card — the profile's Getting there shows the computed line and the local note, live on home change; all 134 `access` notes rewritten to drop the US framing
 
 ## Decisions
-- 2026-11-10 · Pill city = destination, else home city; with no city (can't happen today: home is always set) the pill stays as it is; long names get "…", the % is never cut; the spoken label includes the city — user: "Yes this matches. Please plan it and run on autopilot."
-- 2026-11-10 · Phone Outlook reuses DockedVerdict (same look, delta, tap-back-to-verdict) rather than a second component — PM's call: one pill for three breakpoints.
-- 2026-11-10 · Run on autopilot — user: "run on autopilot." The Agents line carries over as wide; it counts as balanced until confirmed in this session.
-- 2026-11-10 · Stage 1: the city gives way first, so at 320px even short names cut ("· Bang…"); accepted, the % is never cut — PM's call.
-- 2026-11-10 · No keel:review for stage 1: UI-only, a label helper with tests and CSS; risk line matches the diff — PM's call.
-- 2026-11-10 · Stage 1 closed: 4/4 checks pass in the running app, verified by a fresh agent ([evidence](evidence/stage-1/report.md)) — PM.
-- 2026-11-10 · Agents: wide, confirmed for this plan — user: "yes we want to go wide."
-- 2026-11-10 · Stage 2: phone gets a tighter pill (smaller padding and delta chip, plain arrow like the Plan pill) because the desktop pill's back section spilled ~30px at 320px; the chart-yield rule (pill steps aside while a chart under it has focus) now applies on phone too — builder's call, accepted by PM.
-- 2026-11-10 · No keel:review for stage 2: UI-only, one component's breakpoint gate and CSS; risk line matches the diff — PM's call.
-- 2026-11-10 · Stage 2 closed: 4/4 checks pass in the running app, verified by a fresh agent; other pills byte-identical to b11905d ([evidence](evidence/stage-2/report.md)) — PM.
-- 2026-11-10 · Stage 3 added before the push: the Atlas gets the same pill once its tiles scroll away, all breakpoints; tapping scrolls back to the tiles; the pill shows the main simulation's odds, not the Atlas ranking's — user: "Go, scroll back to the tiles and use the main number".
-- 2026-11-10 · Stage 3 reuses the docked pill with a configurable target rather than a copy — PM's call: Outlook and Atlas can't drift apart.
-- 2026-11-10 · Stage 3: on the Atlas the pill also steps aside while the map's zoom buttons or city card overlap its box (touch has no hover), and while the pointer is over the map, like the Outlook charts; the first verify found it yielding on vertical overlap alone (blinked out at 1280), fixed to need overlap in both axes and re-verified — PM.
-- 2026-11-10 · No keel:review for stage 3: UI-only, a target prop on one component plus CSS; risk line matches the diff — PM's call.
-- 2026-11-10 · Stage 3 closed: 4/4 checks pass, stage 1–2 checks re-run green, other pills byte-identical to ded840e ([evidence](evidence/stage-3/report.md)) — PM.
-- 2026-11-10 · Deployed: pushed main (5836dd9), Pages run 42910837286 build and deploy succeeded; the live index bundle (index-Crfp_Q99.js) carries `verdict-pill__city` and "Back to the top of the atlas" — user: "Push and deploy please."
+- 2026-11-14 · Routes + estimated hours, no airline names (they go stale fastest); dated "as of Nov 2026" — user picked the recommended option.
+- 2026-11-14 · The hand-written text becomes a home-independent local note under the computed line, with the US framing removed from all 134 — user picked the recommended option.
+- 2026-11-14 · Agents: lean; run on autopilot once the plan is approved — user: "Let's plan the homeware version. And let's do Jbit autopilot lean".
+- 2026-11-14 · Scale: 3 stages, one feature, one release — no scale signal fired, planned as one plan.
+- 2026-11-14 · Routes are kept only between a fixed set of airports (each city's main airport plus about 30 world hubs); a route counts in both directions when either end lists it; the hub pair with the shortest total distance is chosen — PM's call (default).
+- 2026-11-14 · Two cities sharing an airport (e.g. Torrevieja and Alicante) or with airports under ~150 km apart read "no flight needed", with the drive — PM's call (default).
 
 ## Open questions
 - At 320px the map city card's "+ Compare" chip wraps onto two lines (pre-existing) — from the stage 3 verify, later.
@@ -110,3 +91,4 @@ Open: none
 - 2026-11-10 · Country on city cards: muted country name beside the city on atlas tiles and top-pick cards, and swipe-down to close phone sheets, live on GitHub Pages — [plan](plans/2026-11-10-country-label.md) · [evidence](plans/2026-11-10-country-label/evidence/)
 - 2026-11-10 · Premium scales overrides: typed `$`/`%` spending pinned to the premium when typed and scaled with the slider, with a "scales with premium" note, tip and Method copy, live on GitHub Pages — [plan](plans/2026-11-10-premium-scales.md) · [evidence](plans/2026-11-10-premium-scales/evidence/)
 - 2026-11-10 · Hero tile glow: the Atlas hero tiles' odds-tone glow sits behind the odds figure instead of the top-right corner, live on GitHub Pages — [plan](plans/2026-11-10-hero-tile-glow.md) · [evidence](plans/2026-11-10-hero-tile-glow/evidence/)
+- 2026-11-13 · Pill destination: every verdict pill names its city (destination, else home), a floating pill on phone Outlook and on the Atlas once the hero tiles scroll away, plus landing escape-velocity copy fixes, live on GitHub Pages — [plan](plans/2026-11-13-pill-destination.md) · [evidence](plans/2026-11-13-pill-destination/evidence/)
