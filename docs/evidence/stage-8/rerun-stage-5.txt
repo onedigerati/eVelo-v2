@@ -1,0 +1,407 @@
+$ node docs/evidence/stage-5/verify5.mjs http://localhost:4333  (re-run at stage 8, production build)
+
+===== desktop · Lima =====
+No. 51 Lima
+YOUR PLAN HERE
+81%
+plan holds
++17 pts vs 64% in St. Louis
+All 5 photos
+Photos: Avodrocc, PA, S. Sasaki, McKay Savage · CC BY / CC BY-SA · Wikimedia Commons
+PE
+TOP PICK 51 OF 75 · PERU
+Mild coastal capital, easy rentista visa, taxed dividends
+Peru has no wealth or inheritance tax, and its rentista status runs indefinitely on $1,000 a month of foreign income. Lima has good private clinics in Miraflores and San Isidro and a mild, almost rainless climate. The cost for BBD is income tax: residents' foreign dividends and interest are taxed at up to 30%, with no US income tax treaty and no newcomer relief.
+HOW IT SCORES · out of 5, for a US retiree on buy-borrow-die
+Tax on holdings
+3
+out of 5
+Estate
+5
+out of 5
+Lending
+4
+out of 5
+Residency
+4
+out of 5
+Healthcare
+4
+out of 5
+Cost
+4
+out of 5
+Safety
+3
+out of 5
+Climate
+3
+out of 5
+Community
+2
+out of 5
+THE ESSENTIALS
+TAX ON HOLDINGS
+No wealth tax; residents (183+ days in 12 months) add net foreign-source income, including US dividends and interest, to work income at progressive rates of 8–30%, with 30% above 45 UIT (about $72k; 2026), a foreign tax credit capped at Peru's average rate, no US income tax treaty and no newcomer regime.
+ESTATE & INHERITANCE
+Peru has no inheritance tax (a secondary source; PwC lists none), and inheritances are also outside the property transfer tax; there is no US estate treaty, and US estate tax applies above the $15M exemption (2026).
+LENDING & BROKERS
+Interactive Brokers reportedly serves all non-sanctioned countries, so Peru residents should be accepted, but margin terms are unconfirmed; Schwab One International's application reportedly lists Peru (October 2026), with no known margin restriction outside Europe.
+RESIDENCY
+Rentista residence on permanent income of at least $1,000/month from a pension or other foreign income, indefinite while the income continues (Legislative Decree 1350) and reportedly with no right to work; an investor route exists, but its amount is unverified.
+HEALTHCARE
+Private clinics such as Clínica Anglo Americana, Clínica Internacional, Clínica San Felipe and Clínica Delgado give good care; public EsSalud's voluntary "+Salud" plan (PEN 215/month at 60+) is closed to new members until the end of 2027, and new private plans get harder to buy after 65 (one forum report says Pacífico takes new members to 65).
+SAFETY
+Peru is at US State Dept Level 2 and "deteriorating" (September 2026, secondary source), with Level 4 for VRAEM and several Andean and Amazon areas; the UK reports gunpoint robberies in Miraflores and Barranco, fake taxis and express kidnappings, and protests that can escalate quickly.
+CLIMATE
+Mild and nearly rainless: sunny, muggy summers (December–April, highs 25–30°C) and grey, cool winters (June–October, highs 16–19°C) under low cloud and morning garúa drizzle; earthquake risk.
+COMMUNITY
+A modest expat community, concentrated in Miraflores, Barranco and San Isidro, with a growing number of international restaurants but no large US-retiree enclave; Spanish is needed.
+GETTING THERE
+From St. Louis (STL): no nonstop; one stop via Cancún or Atlanta, about 9–12 h.
+Jorge Chávez, in Callao west of the centre, opened a new terminal in June 2025 and is the hub for Cusco and the rest of Peru; Lima traffic can make the ride to Miraflores long.
+Routes as of Nov 2026; flying times are estimates.
+WORTH KNOWING
+Foreign dividends and interest taxed at up to 30%, with no treaty and no newcomer holiday
+Grey, overcast winters for about half the year
+Street crime in the expat districts, chronic political instability and earthquake risk
+YOUR PLAN HERE
+PLAN HOLDS
+81
+%
++17 pts vs 64% in St. Louis
+A YEAR HERE
+$80,101
+−27% vs $110,000 in St. Louis
+BY CATEGORY
+St. Louis
+Lima
+Housing: $21K here vs $26K in St. Louis, −21%.
+Housing
+$21K
+−21%
+Groceries: $6.7K here vs $11K in St. Louis, −39%.
+Groceries
+$6.7K
+−39%
+Dining out: $4.7K here vs $8.0K in St. Louis, −42%.
+Dining out
+$4.7K
+−42%
+Transport: $7.3K here vs $10K in St. Louis, −27%.
+Transport
+$7.3K
+−27%
+Utilities: $4.0K here vs $5.5K in St. Louis, −27%.
+Utilities
+$4.0K
+−27%
+Healthcare: $8.7K here vs $16K in St. Louis, −46%.
+Healthcare
+$8.7K
+−46%
+Travel: $14K here vs $14K in St. Louis, same.
+Travel
+$14K
+same
+Other: $14K here vs $20K in St. Louis, −27%.
+Other
+$14K
+−27%
+Your St. Louis budget at local prices, with your expat price premium (35%).
+Local tax and estate for Lima ready.
+LOCAL TAX & ESTATE
+No wealth or inheritance tax modelled for Peru: none reaches a US portfolio.
+Estate at 85
+median, borrow and never sell
+$13M
++$2.1M vs $10M staying in St. Louis
+Today’s dollars, from 4,000 simulated futures of your plan with Lima as the destination.
+Make Lima my destination
+SOURCES
+PwC Worldwide Tax Summaries: Peru, taxes on personal income · 2026
+PwC Worldwide Tax Summaries: Peru, foreign tax relief and tax treaties · 2026
+PwC Worldwide Tax Summaries: Peru, other taxes · 2026
+Perú Gestiona: Inheritance tax in Peru
+Gestión: What foreigners setting up in Peru should consider (rentista) · 2023
+Rio Times: Healthcare in Peru for expats 2026
+International Living: Lima vs Arequipa for retirees
+GOV.UK: Peru travel advice, safety and security
+Travel Advisory: Peru (US State Dept levels)
+El Popular: EsSalud suspends new +Salud affiliations until 2027 · 2026
+El Peruano via ecoi.net: Legislative Decree 1350, Migration Law (rentista) · 2017
+Your Tax Base: Charles Schwab for expats (country list, Oct 2026)
+Wikipedia: Lima (climate)
+Wikipedia: Jorge Chávez International Airport
+Cost indices verified November 6, 2026 from livingcost.org. Low confidence: derived from livingcost.org prices vs New York, scaled to Numbeo with factors fitted on Lisbon, Athens, Bangkok and Montevideo; Numbeo was rate-limiting. Researched November 6, 2026; tax, estate, lending, residency and healthcare re-checked November 15, 2026. Not tax or legal advice.
+
+===== desktop · Santiago =====
+No. 42 Santiago
+YOUR PLAN HERE
+79%
+plan holds
++15 pts vs 64% in St. Louis
+All 5 photos
+Photos: victor san martin, CARLOS TEIXIDOR CADENAS, Rjcastillo, Almonroth, Carlos Figueroa Rojas · CC BY-SA · Wikimedia Commons
+CL
+TOP PICK 42 OF 75 · CHILE
+Andean capital with top clinics and a three-year tax window
+Chile taxes a newly arrived foreigner only on Chilean-source income for the first three years, and a foreigner's assets abroad bought with non-Chilean money fall outside its inheritance tax. There is no wealth tax. Santiago has strong private clinics, led by Clínica Alemana and is 52nd in the 2026 Global Peace Index. After year three, though, US dividends are taxed at up to 40%, so a growth-tilted portfolio matters.
+HOW IT SCORES · out of 5, for a US retiree on buy-borrow-die
+Tax on holdings
+2
+out of 5
+Estate
+4
+out of 5
+Lending
+4
+out of 5
+Residency
+4
+out of 5
+Healthcare
+4
+out of 5
+Cost
+4
+out of 5
+Safety
+3
+out of 5
+Climate
+4
+out of 5
+Community
+3
+out of 5
+THE ESSENTIALS
+TAX ON HOLDINGS
+No wealth tax; a foreigner who takes up residence is taxed only on Chilean-source income for 3 years from entry, extendable in qualified cases, then worldwide, with US dividends and interest in the progressive Global Complementario at up to 40% (only real interest is taxed, and a US–Chile income tax treaty exists).
+ESTATE & INHERITANCE
+Heirs pay 1–25% on their share, but under Law 16.271 art. 1 a foreigner's assets abroad count only if bought with money from Chile, so a US brokerage account funded from the US falls outside it; whether this holds for a foreigner who dies domiciled in Chile is unverified, and there is no US estate treaty.
+LENDING & BROKERS
+Interactive Brokers reportedly serves all non-sanctioned countries, so Chile residents should be accepted, but margin terms are unconfirmed; Schwab One International's application reportedly lists Chile (October 2026), with no known margin restriction outside Europe.
+RESIDENCY
+Temporary residence as a rentista or pensionado has no fixed minimum, though applicants are reportedly advised to show more than about $1,000/month; the permit is renewable, and permanent residence needs 24 months of temporary residence (12 in some cases, such as pension income), longer if absences total more than 2 months (Migration Service, 2026).
+HEALTHCARE
+Clínica Alemana (1st in Chile and 121st in the world in Newsweek's 2026 ranking), Clínica Las Condes (5th in Chile), Clínica Santa María (9th) and Clínica Indisa (12th) lead private care; retirees with no Chilean taxable income can qualify for free public FONASA Group A, while private Isapres price steeply by age and can exclude declared conditions for about 18 months.
+SAFETY
+Chile is 52nd of 163 in the 2026 Global Peace Index and US State Dept Level 2 (August 2026, secondary source); the UK reports common and increasingly armed muggings, pickpocketing and carjackings in affluent areas, and expats favour Providencia, Las Condes, Vitacura and Ñuñoa.
+CLIMATE
+Mediterranean at about 570 m: dry summers with January highs about 30°C, cool winters with July highs about 16°C and lows near 4°C, and most of the roughly 290 mm of rain May–August; winter smog in the valley and earthquake risk.
+COMMUNITY
+A lively, mostly working-age expat scene centred on the east-side communes (Providencia, Las Condes, Vitacura, Ñuñoa), with meetups and online groups but no large retiree enclave; Spanish is needed day to day.
+GETTING THERE
+From St. Louis (STL): no nonstop; one stop via Cancún or Atlanta, about 12–15 h.
+Arturo Merino Benítez (SCL) is about 17 km north-west of the centre; the UK advises booking official taxis or transfers inside the terminal.
+Routes as of Nov 2026; flying times are estimates.
+WORTH KNOWING
+After three years, US dividends are taxed at up to 40%
+Winter smog, and earthquake risk
+Rising armed street crime, and costs high for the region
+YOUR PLAN HERE
+PLAN HOLDS
+79
+%
++15 pts vs 64% in St. Louis
+A YEAR HERE
+$84,724
+−23% vs $110,000 in St. Louis
+BY CATEGORY
+St. Louis
+Santiago
+Housing: $20K here vs $26K in St. Louis, −23%.
+Housing
+$20K
+−23%
+Groceries: $7.6K here vs $11K in St. Louis, −31%.
+Groceries
+$7.6K
+−31%
+Dining out: $6.7K here vs $8.0K in St. Louis, −17%.
+Dining out
+$6.7K
+−17%
+Transport: $7.8K here vs $10K in St. Louis, −22%.
+Transport
+$7.8K
+−22%
+Utilities: $4.3K here vs $5.5K in St. Louis, −22%.
+Utilities
+$4.3K
+−22%
+Healthcare: $9.2K here vs $16K in St. Louis, −42%.
+Healthcare
+$9.2K
+−42%
+Travel: $14K here vs $14K in St. Louis, same.
+Travel
+$14K
+same
+Other: $15K here vs $20K in St. Louis, −22%.
+Other
+$15K
+−22%
+Your St. Louis budget at local prices, with your expat price premium (35%).
+Local tax and estate for Santiago ready.
+LOCAL TAX & ESTATE
+No wealth or inheritance tax modelled for Chile: none reaches a US portfolio.
+Estate at 85
+median, borrow and never sell
+$12M
++$2.0M vs $10M staying in St. Louis
+Today’s dollars, from 4,000 simulated futures of your plan with Santiago as the destination.
+Make Santiago my destination
+SOURCES
+PwC Worldwide Tax Summaries: Chile, income determination · 2026
+PwC Worldwide Tax Summaries: Chile, other taxes · 2026
+SII: Law 16.271 on inheritance, legacies and gifts
+SII: Second-category tax table 2026 · 2026
+Becker Abogados: How to apply for a retiree visa in Chile · 2024
+Servicio Nacional de Migraciones: retirees and rentiers
+Servicio Nacional de Migraciones: permanent residence · 2026
+Emol: Newsweek World's Best Hospitals 2026, Chile · 2026
+Your Tax Base: Charles Schwab for expats (country list, Oct 2026)
+Rio Times: Healthcare in Chile for expats 2026
+Forbes Chile: Chile second-safest in South America in the Global Peace Index 2026 · 2026
+GOV.UK: Chile travel advice, safety and security
+Travel Advisory: Chile (US State Dept levels)
+Expatra: Living in Santiago
+Wikipedia: Santiago (climate)
+Wikipedia: Arturo Merino Benítez International Airport
+Cost indices verified November 6, 2026 from livingcost.org. Low confidence: derived from livingcost.org prices vs New York, scaled to Numbeo with factors fitted on Lisbon, Athens, Bangkok and Montevideo; Numbeo was rate-limiting. Researched November 6, 2026; tax, estate, lending, residency and healthcare re-checked November 15, 2026. Not tax or legal advice.
+
+===== phone · Montevideo =====
+No. 17 Montevideo
+YOUR PLAN HERE
+77%
+plan holds
++13 pts vs 64% in St. Louis
+1 / 5
+Montevideo's city centre and the Rambla Gran Bretaña along the Río de la Plata
+Sala de Medios - Intendencia de Montevideo · CC BY-SA 4.0
+UY
+TOP PICK 17 OF 75 · URUGUAY
+Stable capital with an 11-year tax holiday on foreign income
+Uruguay is 13th in International Living's 2026 index and 43rd in the 2026 Global Peace Index, the highest in Latin America. New residents can exempt foreign capital income for the arrival year plus 10, and there is no inheritance tax. Montevideo is a calm, mid-priced capital with good private health cooperatives. It is far from the US, its homicide rate has been rising, and the holiday needs 183 or more days a year there unless you make a large qualifying investment.
+HOW IT SCORES · out of 5, for a US retiree on buy-borrow-die
+Tax on holdings
+4
+out of 5
+Estate
+5
+out of 5
+Lending
+4
+out of 5
+Residency
+4
+out of 5
+Healthcare
+4
+out of 5
+Cost
+3
+out of 5
+Safety
+3
+out of 5
+Climate
+3
+out of 5
+Community
+3
+out of 5
+THE ESSENTIALS
+TAX ON HOLDINGS
+Wealth tax of 0.1% (2026) reaches only net wealth located in Uruguay, so a US brokerage account is outside it; under Law 20.446 (from 2026) new residents with 183+ days' presence can exempt foreign capital income for the arrival year plus 10, then pay 6% for 5 years and 12% after (that it covers dividends and interest is inferred from "capital income"; the older 7% option is reportedly closed to new residents).
+ESTATE & INHERITANCE
+Uruguay has no inheritance tax, so heirs owe nothing locally on US assets; there is no US estate treaty, and US estate tax applies above the $15M exemption (2026).
+LENDING & BROKERS
+Interactive Brokers reportedly accepts Uruguay residents, and Schwab One International's application reportedly lists Uruguay (October 2026), with no known margin restriction outside Europe; IBKR margin terms by country are unconfirmed.
+RESIDENCY
+Permanent residency as a rentista on income from abroad needs a notarial certificate of its nature and monthly amount, with no published minimum (officials reportedly expect about $1,500/month, and dividends qualify as passive income); processing can take 6–18 months, and you are legal while it is pending.
+HEALTHCARE
+Private nonprofit cooperatives (mutualistas such as Hospital Británico, Asociación Española, Médica Uruguaya, CASMU) give full coverage for about $90–140 per adult a month (2026), with age-based admission rules and senior surcharges; the public ASSE serves the rest, and Montevideo holds most specialty care.
+SAFETY
+Uruguay is 43rd in the 2026 Global Peace Index and reportedly at US State Dept Level 2, but Montevideo's homicide rate was about 16 per 100,000 in 2025 and the first half of 2026 had Uruguay's most homicides since 2015; Pocitos, Punta Carretas and Carrasco are the calmer areas.
+CLIMATE
+Temperate: warm, humid summers (December–March) and cool, damp, windy winters around 10°C.
+COMMUNITY
+A small but steady expat community, mostly Argentine and European; fewer US retirees and English speakers than the Mexican or Panamanian hubs.
+GETTING THERE
+From St. Louis (STL): two stops, for example via Tampa and Bogotá, about 15–19 h.
+Carrasco airport (MVD) is about 20 km east of the centre; ferries cross the Río de la Plata to Buenos Aires, and São Paulo, Panama City and Bogotá are common connecting hubs.
+Routes as of Nov 2026; flying times are estimates.
+WORTH KNOWING
+The tax holiday needs 183+ days a year in Uruguay (or a large investment), and after 11 years foreign income is taxed at 6%, then 12%
+Rising violent crime in Montevideo despite Uruguay's national peace ranking
+Very few nonstop flights to the US, and none for most of the year
+YOUR PLAN HERE
+PLAN HOLDS
+77
+%
++13 pts vs 64% in St. Louis
+A YEAR HERE
+$87,820
+−20% vs $110,000 in St. Louis
+BY CATEGORY
+St. Louis
+Montevideo
+Housing: $20K here vs $26K in St. Louis, −23%.
+Housing
+$20K
+−23%
+Groceries: $8.3K here vs $11K in St. Louis, −25%.
+Groceries
+$8.3K
+−25%
+Dining out: $7.6K here vs $8.0K in St. Louis, −6%.
+Dining out
+$7.6K
+−6%
+Transport: $8.5K here vs $10K in St. Louis, −15%.
+Transport
+$8.5K
+−15%
+Utilities: $4.7K here vs $5.5K in St. Louis, −15%.
+Utilities
+$4.7K
+−15%
+Healthcare: $8.2K here vs $16K in St. Louis, −49%.
+Healthcare
+$8.2K
+−49%
+Travel: $14K here vs $14K in St. Louis, same.
+Travel
+$14K
+same
+Other: $17K here vs $20K in St. Louis, −15%.
+Other
+$17K
+−15%
+Your St. Louis budget at local prices, with your expat price premium (35%).
+Local tax and estate for Montevideo ready.
+LOCAL TAX & ESTATE
+No wealth or inheritance tax modelled for Uruguay: none reaches a US portfolio.
+Estate at 85
+median, borrow and never sell
+$12M
++$1.7M vs $10M staying in St. Louis
+Today’s dollars, from 4,000 simulated futures of your plan with Montevideo as the destination.
+Make Montevideo my destination
+SOURCES
+IMI Daily: Uruguay raises tax holiday threshold, taxes foreign income at 12% (Feb 2026)
+PwC Worldwide Tax Summaries: Uruguay, other taxes · 2026
+PwC Worldwide Tax Summaries: inheritance and gift tax rates · 2026
+gub.uy: Permanent legal residence
+Liberty Mundo: Residency in Uruguay 2026
+Rio Times: Healthcare in Uruguay for expats 2026
+Your Tax Base: Charles Schwab for expats (country list, Oct 2026)
+Ámbito: Uruguay 43rd in the Global Peace Index 2026 · 2026
+Rio Times: Is Uruguay safe for expats 2026
+MercoPress: American Airlines resumes seasonal Montevideo–Miami route in December
+Cost indices verified November 6, 2026 from Numbeo current city index. Researched November 6, 2026; tax, estate, lending, residency and healthcare re-checked November 15, 2026. Not tax or legal advice.
+
+console errors: none

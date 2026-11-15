@@ -142,7 +142,8 @@
           "says": "Published 17 October 2025. The exit tax is \"triggered under Section 9H of the Income Tax Act\", a deemed sale of assets at home and abroad valued the day before residence ends, excluding assets still taxable in South Africa such as \"Immovable property located in South Africa\"; the gain is taxed at \"a maximum effective tax rate of 18%\"."
         }
       ],
-      "modelMismatch": "localTaxes.ts ZA does not model the exit tax on ceasing residence; its note says so (\"Not modelled: ... the exit tax on ceasing residence\"). Unchanged by this check; for stage 8 to decide."
+      "modelMismatch": "localTaxes.ts ZA does not model the exit tax on ceasing residence; its note says so (\"Not modelled: ... the exit tax on ceasing residence\"). Unchanged by this check; for stage 8 to decide.",
+      "notModelled": "An exit tax on ceasing residence needs a cost basis and a departure event the engine does not have; named in the ZA note (unchanged) and the localTaxes.ts header."
     },
     {
       "id": "za-estate-duty-rates",
@@ -212,7 +213,8 @@
           "says": "2016 compendium. Paragraph 24(1): \"The base cost of an asset, other than an asset situated in the Republic listed in paragraph 2 (1) (b) (i) and (ii)\" \"acquired by a person before the date on which that person became a resident is the sum of the value of that asset\" under subparagraph (2) or (3) plus later allowable expenditure, so gains before residence are outside the tax."
         }
       ],
-      "modelMismatch": "localTaxes.ts ZA models estate duty only; its note says CGT at death (the s9HA deemed disposal, up to 18% of gains accrued while resident) is not modelled. On a long-held portfolio that is a second charge at death the simulation leaves out; stage 8 to decide."
+      "modelMismatch": "localTaxes.ts ZA models estate duty only; its note says CGT at death (the s9HA deemed disposal, up to 18% of gains accrued while resident) is not modelled. On a long-held portfolio that is a second charge at death the simulation leaves out; stage 8 to decide.",
+      "notModelled": "CGT at death (s9HA) taxes gains accrued while resident, which needs the cost basis at arrival; neither shape carries it. Named in the ZA note (unchanged) and the localTaxes.ts header."
     },
     {
       "id": "za-estate-s4e-deduction",

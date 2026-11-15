@@ -3,7 +3,7 @@ import { createRecorder, kernelOpeningSale, runPaths, type KernelConfig } from '
 import { HEIRS, packBands } from './localTax'
 import { prepare, type Prepared } from './prepare'
 import { generateScenarios, type Scenarios } from './scenarios'
-import type { Bands, BudgetCategory, City, MarketData, PlanInputs, SimulationResult } from './types'
+import type { Bands, BudgetCategory, City, LocalTax, MarketData, PlanInputs, SimulationResult } from './types'
 
 const now = () => (typeof performance !== 'undefined' ? performance.now() : Date.now())
 
@@ -15,6 +15,9 @@ export interface Destination {
   amounts: Record<BudgetCategory, number> | null
   /** Annual destination spend, today's USD (null when staying home). */
   annual: number | null
+  /** The home city's own local tax when the run stays home (no destination, or the destination is
+   *  the home city): applied as if resident from month 0. Null on a move or for an untaxed home. */
+  homeTax: LocalTax | null
 }
 
 export function findCity(cities: City[], id: string | null): City | null {
@@ -26,9 +29,10 @@ export function findCity(cities: City[], id: string | null): City | null {
  *  typed overrides scale with the expat premium from their anchors. Fixed amounts come only from
  *  `inputs.amountOverrides[dest.id]`, so each city sees only its own. */
 export function resolveDestination(inputs: PlanInputs, home: City | null, dest: City | null): Destination {
-  if (!dest || !home || dest.id === home.id) return { city: null, ratios: null, amounts: null, annual: null }
+  if (!dest || !home || dest.id === home.id)
+    return { city: null, ratios: null, amounts: null, annual: null, homeTax: home?.localTax ?? null }
   const { ratios, amounts } = destinationSpend(inputs, home, dest)
-  return { city: dest, ratios, amounts, annual: amountsTotal(amounts) }
+  return { city: dest, ratios, amounts, annual: amountsTotal(amounts), homeTax: null }
 }
 
 export function kernelConfig(inputs: PlanInputs, dest: Destination, budgetMultiplier = 1): KernelConfig {
@@ -41,13 +45,17 @@ export function kernelConfig(inputs: PlanInputs, dest: Destination, budgetMultip
   const retireMonth = Number.isFinite(retireRaw) ? Math.min(T, Math.max(0, retireRaw)) : 0
   // The move can't come before retirement, so the wealth tax and the residence test start no earlier.
   const moveMonth = hasDest ? Math.max(0, Math.round(inputs.moveInYears * 12), retireMonth) : T
-  const lt = hasDest ? dest.city!.localTax : undefined
+  // The regime that applies: the destination's from the move, or, staying home, the home city's own
+  // (a taxed home such as Chicago or Zurich) as if resident from month 0. A move charges only the
+  // destination's: the home's wealth tax for the years before the move is not modelled.
+  const lt = hasDest ? dest.city!.localTax : (dest.homeTax ?? undefined)
+  const taxFrom = hasDest ? moveMonth : 0
   const wealth = lt?.wealth && lt.wealth.bands.length ? lt.wealth : null
   const inh = lt?.inheritance && lt.inheritance.bands.length ? lt.inheritance : null
   // A regime that reaches the worldwide estate only after N years' residence applies if the years
-  // lived there by the horizon (T - moveMonth months) are strictly more than N (Ireland: after 5
+  // lived there by the horizon (T - taxFrom months) are strictly more than N (Ireland: after 5
   // years; Japan: more than 10 of 15).
-  const inhApplies = inh != null && moveMonth < T && T - moveMonth > 12 * (inh.afterYearsResident ?? 0)
+  const inhApplies = inh != null && taxFrom < T && T - taxFrom > 12 * (inh.afterYearsResident ?? 0)
   return {
     T,
     portfolio: inputs.portfolio,
@@ -70,7 +78,15 @@ export function kernelConfig(inputs: PlanInputs, dest: Destination, budgetMultip
       Number.isFinite(inputs.savingsWhileWorking) && inputs.savingsWhileWorking > 0 ? inputs.savingsWhileWorking / 12 : 0,
     // finite and > 0, else 0 (Math.max would pass Infinity through)
     initialLoan: Number.isFinite(inputs.existingLoan) && inputs.existingLoan > 0 ? inputs.existingLoan : 0,
-    wealthTax: wealth && moveMonth < T ? { gross: wealth.base === 'gross', bands: packBands(wealth.bands) } : null,
+    wealthTax:
+      wealth && taxFrom < T
+        ? {
+            gross: wealth.base === 'gross',
+            bands: packBands(wealth.bands),
+            // Home: from month 0. A destination's starts at the move (the kernel's moveMonth).
+            ...(hasDest ? {} : { fromMonth: 0 }),
+          }
+        : null,
     inheritance: inhApplies ? { heirs: HEIRS, perHeirAllowance: inh.perHeirAllowance, bands: packBands(inh.bands) } : null,
   }
 }
@@ -192,7 +208,7 @@ export function simulate(market: MarketData, cities: City[], rawInputs: PlanInpu
       sellTaxMedian: median(rec.sellTax),
     },
     localTax:
-      dest.city?.localTax
+      (dest.city ? dest.city.localTax : dest.homeTax)
         ? {
             wealthTaxMedian: median(rec.wealthTax),
             inheritanceTaxMedian: median(rec.inheritanceTax),

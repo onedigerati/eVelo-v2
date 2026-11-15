@@ -4,7 +4,7 @@ const profile: ExpatProfile = {
   tagline: 'World city with four tax-free years, but no visa to stay',
   summary:
     'London has the most US nonstops of any city outside North America, world-class hospitals and free national museums, and no language barrier. For buy-borrow-die it is mostly a base for long visits: there is no retirement or passive-income visa (a US visitor can stay up to 6 months), and anyone who did settle gets only 4 years of tax-free foreign income and gains before dividends pay up to 39.35%, with 40% inheritance tax on the worldwide estate after 10 years\' residence.',
-  scores: { cost: 1, healthcare: 4, safety: 3, visa: 1, climate: 3, community: 5, tax: 2, estate: 2, lending: 3 },
+  scores: { cost: 1, healthcare: 4, safety: 3, visa: 1, climate: 3, community: 5, tax: 2, estate: 1, lending: 3 },
   facts: {
     healthcare:
       'World-class NHS teaching hospitals (Guy\'s and St Thomas\', UCLH, Imperial) and a large private sector (The London Clinic, Cromwell); visa holders pay the Immigration Health Surcharge (£1,035 a year for most adults) for NHS access, visitors are charged for NHS hospital care, and NHS waits for planned treatment are long.',

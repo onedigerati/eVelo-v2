@@ -158,7 +158,8 @@
         }
       ],
       "note": "The NTA page gives the JPY 100m and 5-of-10-years tests \"as a rule\"; the Table I exclusion is from Toma (2025). No change was found in the FY2027 tax reform requests (searched November 2026). localTaxes.ts does not model the exit tax.",
-      "modelMismatch": "localTaxes.ts (JP) models only inheritance tax; the exit tax on unrealised gains (securities of JPY 100m+, after 5 of 10 years outside Table I statuses) is not modelled. A Long Stay visitor never reaches it."
+      "modelMismatch": "localTaxes.ts (JP) models only inheritance tax; the exit tax on unrealised gains (securities of JPY 100m+, after 5 of 10 years outside Table I statuses) is not modelled. A Long Stay visitor never reaches it.",
+      "notModelled": "An exit tax on unrealised gains on departure needs a cost basis and a departure event, neither of which the engine has; named in the JP note and the localTaxes.ts header."
     },
     {
       "id": "jp-estate-rates",
@@ -203,7 +204,8 @@
         }
       ],
       "note": "Long Stay is a Designated Activities status, which sits in Table I of the Immigration Act (PwC lists the excluded statuses, and designated activities is not among them). Searched November 2026 for an FY2027 change to the foreign-national rules: none found.",
-      "modelMismatch": "localTaxes.ts (JP) brings overseas assets in after 10 years (afterYearsResident: 10) for everyone; for a resident on a permanent-resident or spouse status the worldwide estate is taxed from arrival. A Long Stay visitor (the profiles' case) never reaches 10 years, which the model only matches if the horizon is short."
+      "modelMismatch": "localTaxes.ts (JP) brings overseas assets in after 10 years (afterYearsResident: 10) for everyone; for a resident on a permanent-resident or spouse status the worldwide estate is taxed from arrival. A Long Stay visitor (the profiles' case) never reaches 10 years, which the model only matches if the horizon is short.",
+      "notModelled": "The shape has one residence wait per country; JP keeps afterYearsResident 10, which fits the profiles' case (Long Stay, a Table I status). The JP note now says a permanent resident or spouse of a Japanese national is taxed on the worldwide estate from arrival, which the model understates in the first 10 years."
     },
     {
       "id": "jp-estate-us-treaty",

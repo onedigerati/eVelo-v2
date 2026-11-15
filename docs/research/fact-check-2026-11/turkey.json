@@ -163,6 +163,7 @@
         "sources: added KPMG Türkiye"
       ],
       "modelMismatch": "localTaxes.ts TR models inheritance as flat 1% with perHeirAllowance 0, and its note says \"normally 1–30%\" and \"the reported ~TRY 2.9m child exemption is unverified and not applied\". Checked: the 2026 scale for inheritances is 1% on the first TRY 3,000,000, 3% on the next 7,000,000, 5% on the next 15,000,000, 7% on the next 30,000,000 and 10% above TRY 55,000,000; 10–30% is the gift column. The 2026 exemption is TRY 2,907,136 for each child and the spouse (TRY 5,817,845 for a spouse with no descendants), from General Communiqué No. 57 as reported by KPMG: https://kpmgvergi.com/yayinlar/mali-bultenler/vergi/2026-yilinda-uygulanacak-veraset-ve-intikal-vergisi-maktu-istisna-tutarlari-ile-matrah-dilim-tutarlari-yayimlandi/3355. The note's \"1–30%\" should read 1–10% for inheritances, and the exemption is now verified (whether it applies on top of the 1% regime rate was not read). See also tr-estate-foreign-assets-scope for the reach.",
+      "modelled": "TR note corrected: inheritance 1–10% (1% on the first TRY 3m up to 10% above TRY 55m, 2026; 10–30% is the gift scale) above TRY 2,907,136 per child, 1% under the new-resident regime; KPMG source added. These rates are not applied: see tr-estate-foreign-assets-scope.",
       "note": "PwC gives \"1% to 30%\" for inheritance and gift tax together; EY says inheritance rates reach 10%; KPMG has the table."
     },
     {
@@ -255,6 +256,7 @@
         }
       ],
       "modelMismatch": "localTaxes.ts TR charges 1% of the estate \"as the cautious reading\". Article 1 of Law 7338, read on mevzuat.gov.tr (https://www.mevzuat.gov.tr/MevzuatMetin/1.3.7338.doc), puts in scope property of Turkish nationals and property located in Turkey; a US citizen's US-held securities passing to US-resident, non-Turkish heirs are neither, so on the article's words the charge would be 0, not 1%. No adviser page states this for the case, and the 1% rule for regime beneficiaries would have little to bite on if it were so; stage 8 should decide between 0 and the cautious 1%.",
+      "modelled": "Decided 0: the TR inheritance component is removed (was a flat 1% of the estate), on Article 1 of Law 7338 (Turkish nationals' property and property in Turkey only), in line with the other heir-based regimes modelled as zero. A $5M estate: $50,000 before, $0 now. The note keeps the rates in case it applies.",
       "rankFlag": "Antalya (pick 21): the `why` says \"with 1% inheritance tax\". By Article 1 of the inheritance tax law, US assets of a US citizen left to US-resident heirs appear to be outside Turkish inheritance tax altogether, so the 1% may overstate the cost; it is not understated. No change proposed.",
       "note": "The statute supports the profile's inference, but the Word file reached WebFetch partly garbled and no secondary page applies Article 1 to a foreign resident decedent, so the profile's \"may be\" stays."
     },

@@ -11,7 +11,7 @@ import { preloadOnIntent } from './photoLoad'
 import { ListRegionChips } from './RegionChips'
 import { matchesQuery } from './regionCounts'
 import { verifiedLabel } from './picks'
-import { taxStatus } from './taxLines'
+import { taxStatus, unmodelledReason } from './taxLines'
 import { costBands, defaultOpen, groupTiers, oddsBands, type Tier } from './tiers'
 
 type SortKey = 'odds' | 'cost' | 'name'
@@ -259,7 +259,7 @@ function Row({
   const top = r.rank <= 3
   const vl = verifiedLabel(r.city)
   const noTax = taxStatus(r.city) === 'unmodelled'
-  const taxTitle = `Local wealth and inheritance tax not modelled for ${r.city.country}: not researched, so the odds here assume none.`
+  const taxTitle = `Local tax not modelled for ${r.city.country} (${unmodelledReason(r.city).short}), so the odds here assume none.`
   const taxSpoken = noTax ? `; local wealth and inheritance tax not modelled for ${r.city.country}` : ''
   const pick = expatPickFor(r.cityId)
   const profiled = pick?.profile && onOpenProfile ? pick : undefined

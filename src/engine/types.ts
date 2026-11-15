@@ -75,9 +75,11 @@ export interface City {
    */
   verified?: CityVerification
   /**
-   * The destination's annual wealth tax and inheritance tax as they reach a US
-   * citizen's US brokerage portfolio. Absent for US cities and for countries
-   * without researched tax data (src/data/localTaxes.ts).
+   * The city's annual wealth tax and inheritance (or US state estate) tax as
+   * they reach a US citizen's US brokerage portfolio: applied from the move for
+   * a destination, and from year 0 for the home city when the plan stays home.
+   * Absent for US cities in states with no estate or inheritance tax, and for
+   * countries without researched tax data (src/data/localTaxes.ts).
    */
   localTax?: LocalTax
 }
@@ -91,9 +93,9 @@ export interface TaxBand {
   rate: number
 }
 
-/** Local wealth and inheritance tax for a destination. Amounts are today's USD. */
+/** Local wealth and inheritance tax for a city. Amounts are today's USD. */
 export interface LocalTax {
-  /** Annual wealth tax, charged at each year-end after the move. */
+  /** Annual wealth tax, charged at each year-end after the move (from year 0 for a home city). */
   wealth?: {
     /** 'net' = portfolio minus loan; 'gross' = portfolio value (e.g. Italy's IVAFE). */
     base: 'net' | 'gross'
@@ -107,6 +109,7 @@ export interface LocalTax {
     /**
      * The tax reaches the worldwide estate only when the years resident at the
      * horizon are strictly more than this (Ireland 5, Japan 10). Omitted = from the move.
+     * Years are counted from the move, or from year 0 for a home city.
      */
     afterYearsResident?: number
   }
@@ -248,7 +251,7 @@ export interface SimulationResult {
   categoryAmounts: Record<BudgetCategory, number> | null
 
   /** Estate at horizon (real USD), BBD with step-up vs selling to fund spending. Both are after the
-   *  destination's inheritance tax, if any. */
+   *  local inheritance tax, if any (the destination's, or a taxed home city's when staying home). */
   estate: {
     bbdMedian: number
     sellMedian: number
@@ -258,9 +261,9 @@ export interface SimulationResult {
     sellTaxMedian: number
   }
 
-  /** The destination's local taxes on the borrow plan (real USD), or null when there is no
-   *  destination or it has no local tax data. A destination with data but no tax that reaches the
-   *  portfolio reports zeros. */
+  /** The local taxes on the borrow plan (real USD): the destination's, or, staying home (no
+   *  destination, or the destination is home), the home city's own from year 0. Null when that city
+   *  has no local tax data. A city with data but no tax that reaches the portfolio reports zeros. */
   localTax: {
     /** Median cumulative wealth tax paid (borrowed) over the horizon. */
     wealthTaxMedian: number
@@ -269,7 +272,7 @@ export interface SimulationResult {
     /** Median BBD estate before inheritance tax (estate.bbdMedian is after it). These are medians of
      *  separate per-future figures: bbdEstateBeforeTaxMedian − inheritanceTaxMedian is not bbdMedian. */
     bbdEstateBeforeTaxMedian: number
-    /** True when the destination's inheritance tax reaches the estate at this horizon (both estate
+    /** True when the local inheritance tax reaches the estate at this horizon (both estate
      *  figures are then after it), even if the median tax is zero. */
     inheritanceApplies: boolean
   } | null

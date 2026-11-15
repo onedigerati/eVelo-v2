@@ -79,6 +79,10 @@ export interface ExpatRankingSource {
 /** Date the research behind the ranking and profiles was done (ISO). */
 export const EXPAT_AS_OF = '2026-11-06'
 
+/** Date the profiles' tax, estate, lending, residency and healthcare facts were re-checked claim by
+ *  claim (ISO; the fact-check ledger in docs/research/fact-check-2026-11/). */
+export const FACTS_CHECKED_AS_OF = '2026-11-15'
+
 export const EXPAT_SCORE_LABELS: Record<ExpatScoreKey, string> = {
   cost: 'Cost',
   healthcare: 'Healthcare',

@@ -47,6 +47,10 @@ export interface LedgerClaim {
   sources: LedgerSource[]
   also?: string[]
   modelMismatch?: string
+  /** Stage 8: how localTaxes.ts was brought in line with a modelMismatch. */
+  modelled?: string
+  /** Stage 8: why a modelMismatch was left unmodelled. */
+  notModelled?: string
   rankFlag?: string
   note?: string
 }
@@ -63,11 +67,11 @@ export type LedgerKind = 'country' | 'shared'
 
 const COUNTRY_CLAIM_KEYS = [
   'id', 'fact', 'cities', 'claim', 'verdict', 'shared', 'oldWording', 'newWording', 'hedge', 'wording',
-  'sources', 'also', 'modelMismatch', 'rankFlag', 'note',
+  'sources', 'also', 'modelMismatch', 'modelled', 'notModelled', 'rankFlag', 'note',
 ]
 const SHARED_CLAIM_KEYS = [
   'id', 'topic', 'fact', 'appliesTo', 'claim', 'verdict', 'oldWording', 'newWording', 'hedge', 'wording',
-  'sources', 'also', 'modelMismatch', 'rankFlag', 'note',
+  'sources', 'also', 'modelMismatch', 'modelled', 'notModelled', 'rankFlag', 'note',
 ]
 const SOURCE_KEYS = ['name', 'url', 'read', 'says']
 
@@ -174,9 +178,13 @@ export function claimProblems(claim: unknown, kind: LedgerKind, fileCities: read
   }
 
   if (claim.also !== undefined && !isTextList(claim.also)) add('also must be a list of short notes')
-  for (const key of ['modelMismatch', 'rankFlag', 'note']) {
+  for (const key of ['modelMismatch', 'modelled', 'notModelled', 'rankFlag', 'note']) {
     if (claim[key] !== undefined && !isText(claim[key])) add(`${key} must be text when present`)
   }
+  for (const key of ['modelled', 'notModelled']) {
+    if (claim[key] !== undefined && claim.modelMismatch === undefined) add(`${key} belongs only on a claim with a modelMismatch`)
+  }
+  if (claim.modelled !== undefined && claim.notModelled !== undefined) add('a claim is either modelled or notModelled, not both')
   return out
 }
 

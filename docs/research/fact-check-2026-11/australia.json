@@ -155,7 +155,8 @@
         }
       ],
       "note": "The ATO's CGT guide page on deceased estates (https://www.ato.gov.au/forms-and-instructions/capital-gains-tax-guide-2026/about-capital-gains-tax/deceased-estates) returned HTTP 403, so this rests on two secondary pages; Bristax names the date-of-death return.",
-      "modelMismatch": "localTaxes.ts has no Australia entry, so no tax at death is modelled. A permanent resident who leaves shares to US-resident children triggers CGT event K3 on the unrealised gain in the date-of-death return (marginal rates up to 45% + 2% Medicare levy, with the 50% discount on gains accrued to June 2027 and indexation plus a 30% minimum tax after)."
+      "modelMismatch": "localTaxes.ts has no Australia entry, so no tax at death is modelled. A permanent resident who leaves shares to US-resident children triggers CGT event K3 on the unrealised gain in the date-of-death return (marginal rates up to 45% + 2% Medicare levy, with the 50% discount on gains accrued to June 2027 and indexation plus a 30% minimum tax after).",
+      "notModelled": "A tax on the unrealised gain at death needs the cost basis at arrival, which neither shape carries; no Australia entry, named with the reason in the localTaxes.ts header and Appendix L of the research doc."
     },
     {
       "id": "au-estate-k3-temporary",

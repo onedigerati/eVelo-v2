@@ -4,7 +4,7 @@ const profile: ExpatProfile = {
   tagline: 'Green, walkable and no sales tax, but with some of the highest income and estate taxes in the US',
   summary:
     'Portland offers a buy-borrow-die retiree a green, walkable city with OHSU\'s academic hospital, no sales tax, the Columbia Gorge, Mount Hood and the coast within reach, and prices below Seattle and California, with full access to US brokers and securities-based lending. It is a costly base for the portfolio, though: Oregon taxes dividends, interest and gains at up to 9.9%, Portland-area taxes add up to 4% more, and Oregon\'s estate tax starts at just $1M. Living on borrowing keeps the income tax low, but the estate tax still reaches most portfolios worth planning for.',
-  scores: { cost: 2, healthcare: 5, safety: 3, visa: 5, climate: 3, community: 3, tax: 4, estate: 4, lending: 5 },
+  scores: { cost: 2, healthcare: 5, safety: 3, visa: 5, climate: 3, community: 3, tax: 4, estate: 2, lending: 5 },
   facts: {
     healthcare:
       'OHSU, the state\'s academic medical centre, has a Level 1 trauma centre and the Knight Cancer Institute (NCI-designated comprehensive); Legacy Emanuel is the second Level 1 centre, with Providence and Kaiser networks across the metro; Medicare applies from 65, though some practices have long waits for new patients.',

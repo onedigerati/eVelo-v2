@@ -158,6 +158,8 @@ A country file:
 | `sources` | claim | One or more of `{ name, url, read, says }`. `url` starts `http(s)://`; `read` is `YYYY-MM-DD`, 2026-11-15 or later. |
 | `also` | optional | List of what else the correction changed. |
 | `modelMismatch` | optional | How `localTaxes.ts` differs from the checked fact, for stage 8. |
+| `modelled` | optional, with `modelMismatch` | Stage 8: what was done in `localTaxes.ts` (modelled, corrected, or the note fixed), with the figures used. |
+| `notModelled` | optional, with `modelMismatch` | Stage 8: why the regime is left out of the model (the shapes can't express it). Every `modelMismatch` carries `modelled` or `notModelled`, not both. |
 | `rankFlag` | optional | A correction that undermines a pick's rank or `why`, or the rubric, for the user. |
 | `note` | optional | Anything a reviewer needs: why a lower source, what was blocked, what is still open. |
 

@@ -1,13 +1,13 @@
 import { AnimatePresence, m as motion } from 'framer-motion'
 import { useId, useMemo, useRef, useState } from 'react'
-import { EXPAT_AS_OF, EXPAT_PICKS, EXPAT_RANKING_METHOD, EXPAT_RANKING_SOURCES, EXPAT_SCORE_LABELS, EXPAT_SCORE_RUBRIC } from '../../data/expatPicks'
+import { EXPAT_AS_OF, EXPAT_PICKS, FACTS_CHECKED_AS_OF, EXPAT_RANKING_METHOD, EXPAT_RANKING_SOURCES, EXPAT_SCORE_LABELS, EXPAT_SCORE_RUBRIC } from '../../data/expatPicks'
 import { currency, currencyCompact, percent } from '../format'
 import { useBreakpoint } from '../hooks'
 import { ease } from '../motion'
 import { Card, Chevron, Skeleton, cx } from '../primitives'
 import { costDelta, successColor, successTextColor, type Ranked } from './atlasData'
 import { CodeChip } from './CodeChip'
-import { SCORE_KEYS, isProfiled, longDate, pickViews, splitPicks, type PickView, type ProfiledPickView } from './picks'
+import { SCORE_KEYS, isProfiled, pickViews, researchedLine, splitPicks, type PickView, type ProfiledPickView } from './picks'
 import { ScoreDots } from './ScoreDots'
 import { preloadOnIntent } from './photoLoad'
 
@@ -279,7 +279,7 @@ function HowRanked() {
                 ))}
               </dl>
               <p className="t-small ink-3">
-                Researched {longDate(EXPAT_AS_OF)}. Visa and tax rules change often: each profile is a starting point, not legal or tax advice.
+                {researchedLine(EXPAT_AS_OF, FACTS_CHECKED_AS_OF)}. Visa and tax rules change often: each profile is a starting point, not legal or tax advice.
               </p>
             </div>
           </motion.div>

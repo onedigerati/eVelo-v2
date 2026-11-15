@@ -257,6 +257,7 @@
         "sources: added Brocardi art. 2 to both"
       ],
       "modelMismatch": "No change to numbers. The IT note in localTaxes.ts says \"Worldwide reach for a resident decedent is believed but not verified on the source; modelled as applying.\" Article 2(1) of the Testo unico (D.Lgs. 346/1990), read on Brocardi's copy updated to 12/08/2026 (https://www.brocardi.it/testo-unico-successioni-donazioni/titolo-i/art2.html), says the tax is due on all assets transferred \"ancorché esistenti all'estero\" when the deceased was resident; the hedge in the note can go. Also for the note: a credit is given for inheritance tax paid abroad (art. 26, per the secondary page), and a new resident under the flat-tax regime pays only on Italian assets; the model ignores both.",
+      "modelled": "Hedge removed from the IT note: Testo unico art. 2(1) taxes a resident decedent's assets even if abroad; the credit for foreign inheritance tax (art. 26) and the flat-tax new resident's Italian-assets-only scope are named as ignored. Brocardi and Agenzia sources added. No amounts change.",
       "note": "The statute was read on a law publisher's copy, not normattiva.it or the Agenzia (its guide of June 2026 and its rates page are silent on territoriality; two guessed Agenzia URLs returned 404). The hedge is removed because the statute settles it."
     },
     {

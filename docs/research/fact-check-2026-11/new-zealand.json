@@ -77,7 +77,8 @@
         "sources: added Deloitte, the fifth wave"
       ],
       "note": "Searched the FIF threshold bill in November 2026: introduced September 2026, still a proposal in the latest pages read (Become, 13 October 2026), with an election on 7 November 2026 in between. Tax score stays 2 on today's rule.",
-      "modelMismatch": "localTaxes.ts has no New Zealand entry. The FIF fair-dividend-rate method works like a yearly tax of up to 1.95% of the opening value of foreign shares above NZD 50,000 cost (5% deemed return x 39%), after the 4-year transitional exemption; the revenue account method (US citizens arriving from April 2024) taxes dividends and 70% of realised gains instead."
+      "modelMismatch": "localTaxes.ts has no New Zealand entry. The FIF fair-dividend-rate method works like a yearly tax of up to 1.95% of the opening value of foreign shares above NZD 50,000 cost (5% deemed return x 39%), after the 4-year transitional exemption; the revenue account method (US citizens arriving from April 2024) taxes dividends and 70% of realised gains instead.",
+      "notModelled": "The FIF fair-dividend-rate charge depends on cost (NZD 50,000), the lower of two methods and a 4-year exemption, and qualifying new migrants can use the revenue account method, which taxes a never-sell portfolio only on dividends (outside localTaxes.ts); New Zealand keeps no entry, named with the reason in the localTaxes.ts header."
     },
     {
       "id": "nz-tax-ram",

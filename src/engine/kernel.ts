@@ -30,9 +30,10 @@ import { openingSale, type OpeningSale } from './openingSale'
 //   3. need = spending_t - otherIncome_t (both inflated by the path's CPI; destination spending
 //      also × exp(X_t)), or -savings_t while working. need > 0 is borrowed; a surplus repays the
 //      loan, and any leftover is reinvested in the portfolio (cost basis += leftover).
-//   3b. Local wealth tax (destinations that have one): at each year-end month ((t+1) % 12 === 0)
-//      with t >= moveMonth, tax = bands(real base), base = (V - L)/P (net) or V/P (gross). The
-//      bands are today's USD, so thresholds stay constant in real terms. The tax is borrowed:
+//   3b. Local wealth tax (a taxed destination, or a taxed home city when staying home): at each
+//      year-end month ((t+1) % 12 === 0) from the tax's start (moveMonth, or month 0 at home),
+//      tax = bands(real base), base = (V - L)/P (net) or V/P (gross). The bands are today's USD,
+//      so thresholds stay constant in real terms. The tax is borrowed:
 //      L += tax · P, before this month's solvency and margin checks.
 //   4. Insolvent if portfolio <= loan (or <= 0): the path is "broken" for good — the lender
 //      liquidates, so portfolio/loan/net worth are 0 and LTV is recorded as 1 thereafter.
@@ -99,8 +100,9 @@ export interface KernelConfig {
    *  maxLtv · portfolio it triggers the opening forced sale. The sell strategy starts at
    *  portfolio - initialLoan with no debt. */
   initialLoan?: number
-  /** Annual wealth tax from moveMonth on (bands in real today's USD); null/absent = none. */
-  wealthTax?: { gross: boolean; bands: PackedBands } | null
+  /** Annual wealth tax (bands in real today's USD) from `fromMonth` on, absent = from moveMonth (a
+   *  destination's); 0 for a taxed home city, resident from the start. null/absent = none. */
+  wealthTax?: { gross: boolean; bands: PackedBands; fromMonth?: number } | null
   /** Inheritance tax at the horizon (real today's USD); null/absent = none. */
   inheritance?: { heirs: number; perHeirAllowance: number; bands: PackedBands } | null
 }
@@ -175,9 +177,11 @@ export function runPaths(
   const fxDrift = -0.5 * fxSigmaM * fxSigmaM
   const wt = cfg.wealthTax ?? null
   const wGross = wt !== null && wt.gross
-  // First wealth-tax month: the first year-end month ((t + 1) % 12 === 0) at or after the move;
-  // T (never) without a wealth tax, so the untaxed loop does one integer compare a month.
-  const firstTaxMonth = wt === null ? T : moveMonth + ((((11 - moveMonth) % 12) + 12) % 12)
+  // First wealth-tax month: the first year-end month ((t + 1) % 12 === 0) at or after the tax starts
+  // (the move, or month 0 for a taxed home); T (never) without a wealth tax, so the untaxed loop does
+  // one integer compare a month.
+  const wFrom = wt === null ? T : Math.max(0, wt.fromMonth ?? moveMonth)
+  const firstTaxMonth = wt === null ? T : wFrom + ((((11 - wFrom) % 12) + 12) % 12)
   const inh = rec ? (cfg.inheritance ?? null) : null
   const inhTax = (estate: number) =>
     inh === null || !(estate > 0)

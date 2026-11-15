@@ -1,7 +1,7 @@
 import { m as motion } from 'framer-motion'
 import { useMemo, useSyncExternalStore } from 'react'
 import { AIRPORTS_AS_OF } from '../../data/airports'
-import { EXPAT_SCORE_LABELS, EXPAT_SCORE_RUBRIC, type ExpatFacts } from '../../data/expatPicks'
+import { EXPAT_AS_OF, EXPAT_SCORE_LABELS, EXPAT_SCORE_RUBRIC, FACTS_CHECKED_AS_OF, type ExpatFacts } from '../../data/expatPicks'
 import type { City, PlanInputs } from '../../engine/types'
 import { useDestinationSim } from '../../state/sim'
 import { currency, currencyCompact, percent } from '../format'
@@ -9,9 +9,9 @@ import { ease } from '../motion'
 import { Button, InfoTip, Sheet, Skeleton, cx } from '../primitives'
 import { CATEGORY_LABEL, costDelta, successColor, successTextColor, type Ranked } from './atlasData'
 import { CodeChip } from './CodeChip'
-import { SCORE_KEYS, categoryCompare, costDataLine, oddsVsHome, profileEyebrow, type ProfileView } from './picks'
+import { SCORE_KEYS, categoryCompare, costDataLine, oddsVsHome, profileEyebrow, researchedLine, type ProfileView } from './picks'
 import { homeRoute } from './homeRoute'
-import { estateVsHome, taxLines, taxNotice, taxStatus } from './taxLines'
+import { estateVsHome, taxInfoLabel, taxLines, taxNotice, taxStatus } from './taxLines'
 // Photo data is imported only here, in the lazy Atlas chunk, so it stays out of the main chunk.
 import { photosFor, subscribePhotos } from '../../data/photos'
 import { oddsBadge } from './gallery'
@@ -325,7 +325,9 @@ function ProfileBody({
               </li>
             ))}
           </ul>
-          <p className="prof__data">{costDataLine(city)} Not tax or legal advice.</p>
+          <p className="prof__data">
+            {costDataLine(city)} {researchedLine(EXPAT_AS_OF, FACTS_CHECKED_AS_OF)}. Not tax or legal advice.
+          </p>
         </div>
       </aside>
     </div>
@@ -337,12 +339,13 @@ function ProfileBody({
 function PlanTaxes({ city, inputs, homeName, isHome }: { city: City; inputs: PlanInputs; homeName: string; isHome: boolean }) {
   const sim = useDestinationSim(inputs, city.id)
   const status = taxStatus(city)
+  // A taxed home city is taxed from year 0 in the staying-home run (and so in the comparison).
   const notice = taxNotice(city)
   const endAge = Math.round(inputs.age + inputs.horizonYears)
   if (sim.status === 'empty') return null
   const ready = sim.status === 'ready' ? sim : null
   const loading = sim.status === 'loading'
-  const lines = ready?.dest.localTax ? taxLines(city, ready.dest.localTax, inputs) : []
+  const lines = ready?.dest.localTax ? taxLines(city, ready.dest.localTax, inputs, isHome) : []
   const estate = ready?.dest.estate.bbdMedian
   const homeEstate = ready?.home.estate.bbdMedian
   const better = estate != null && homeEstate != null ? estate - homeEstate : 0
@@ -358,7 +361,7 @@ function PlanTaxes({ city, inputs, homeName, isHome }: { city: City; inputs: Pla
           Local tax & estate
         </span>
         {city.localTax && (
-          <InfoTip label={`How ${city.country}’s local taxes are modelled`}>{city.localTax.note}</InfoTip>
+          <InfoTip label={taxInfoLabel(city)}>{city.localTax.note}</InfoTip>
         )}
       </div>
 

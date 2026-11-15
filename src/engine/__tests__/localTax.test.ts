@@ -272,3 +272,107 @@ describe('local taxes end to end', () => {
     expect(r.localTax!.inheritanceTaxMedian).toBe(0)
   })
 })
+
+describe('wealth tax from month 0 (a taxed home city)', () => {
+  it('fromMonth 0 charges from the first year-end, whatever moveMonth says', () => {
+    const { rec } = run({ ...base, moveMonth: 36, wealthTax: { ...wt(false, [{ from: 500, rate: 0.1 }]), fromMonth: 0 } })
+    // 50, then 45, then 40.5: the same as moving at month 0
+    expect(rec.loan[1]).toBeCloseTo(50, 9)
+    expect(rec.loan[3]).toBeCloseTo(135.5, 9)
+    expect(rec.wealthTax[0]).toBeCloseTo(135.5, 9)
+  })
+})
+
+describe('a taxed home city (staying home, or a destination equal to home)', () => {
+  const inp = withInputs({ paths: 1500, portfolio: 5_000_000 })
+  const home = (localTax?: LocalTax): City => ({ ...STL, ...(localTax ? { localTax } : {}) })
+  const stay = { ...inp, destCityId: null }
+
+  it('an estate tax at home reduces the baseline estate, from year 0, but not the odds', () => {
+    const untaxed = simulate(market, [home(), BKK], stay)
+    const taxed = simulate(market, [home(FRANCE_LIKE), BKK], stay)
+    expect(untaxed.localTax).toBeNull()
+    expect(taxed.localTax).not.toBeNull()
+    expect(taxed.localTax!.inheritanceApplies).toBe(true)
+    expect(taxed.localTax!.inheritanceTaxMedian).toBeGreaterThan(0)
+    expect(taxed.localTax!.bbdEstateBeforeTaxMedian).toBe(untaxed.estate.bbdMedian)
+    expect(taxed.estate.bbdMedian).toBeLessThan(untaxed.estate.bbdMedian)
+    expect(taxed.estate.sellMedian).toBeLessThan(untaxed.estate.sellMedian)
+    expect(taxed.successRate).toBe(untaxed.successRate)
+  })
+
+  it('residence is counted from year 0 at home: a gate shorter than the horizon is passed', () => {
+    const gated = tax({ inheritance: { perHeirAllowance: 0, bands: [{ from: 0, rate: 0.33 }], afterYearsResident: 10 } })
+    // A move at year 25 of 30 would not pass a 10-year gate; staying home resident from year 0 does.
+    const i = { ...stay, moveInYears: 25 }
+    const cfg = kernelConfig(i, resolveDestination(i, home(gated), null))
+    expect(cfg.inheritance).not.toBeNull()
+  })
+
+  it('a wealth tax at home is charged from year 0, lowering odds and estate', () => {
+    const i = { ...stay, moveInYears: 10 } // ignored: nobody moves
+    const cfg = kernelConfig(i, resolveDestination(i, home(VALENCIA_LIKE), null))
+    expect(cfg.wealthTax?.fromMonth).toBe(0)
+    const untaxed = simulate(market, [home(), BKK], i)
+    const taxed = simulate(market, [home(VALENCIA_LIKE), BKK], i)
+    expect(taxed.localTax!.wealthTaxMedian).toBeGreaterThan(0)
+    expect(taxed.successRate).toBeLessThan(untaxed.successRate)
+    expect(taxed.estate.bbdMedian).toBeLessThan(untaxed.estate.bbdMedian)
+  })
+
+  it('a destination equal to the taxed home is identical to staying home', () => {
+    const both = tax({ ...VALENCIA_LIKE, ...FRANCE_LIKE })
+    const cities = [home(both), BKK]
+    for (const moveInYears of [0, 5]) {
+      const a = simulate(market, cities, { ...inp, moveInYears, destCityId: null })
+      const b = simulate(market, cities, { ...inp, moveInYears, destCityId: 'st-louis' })
+      expect({ ...b, inputs: null, elapsedMs: 0 }).toEqual({ ...a, inputs: null, elapsedMs: 0 })
+      expect(a.localTax!.wealthTaxMedian).toBeGreaterThan(0)
+      expect(a.localTax!.inheritanceTaxMedian).toBeGreaterThan(0)
+      // The atlas's home entry carries the same tax as the home run.
+      const [e] = runAtlas(market, cities, { ...inp, moveInYears }, ['st-louis'])
+      expect(e.successRate).toBe(a.successRate)
+    }
+  })
+
+  it('a move charges only the destination’s tax, never the home’s', () => {
+    const moveFrom = (h: City) => kernelConfig(inp, resolveDestination(inp, h, city(VALENCIA_LIKE)))
+    expect(moveFrom(home(FRANCE_LIKE))).toEqual(moveFrom(home()))
+    expect(moveFrom(home(FRANCE_LIKE)).inheritance).toBeNull()
+    const moveToUntaxed = (h: City) => simulate(market, [h, city()], inp)
+    expect({ ...moveToUntaxed(home(FRANCE_LIKE)), elapsedMs: 0 }).toEqual({ ...moveToUntaxed(home()), elapsedMs: 0 })
+  })
+
+  it('an untaxed home is unchanged: no home tax in the config or the result', () => {
+    // Bit-identity with the code before home taxes was checked against a snapshot of 273 runs
+    // (simulate, atlas and solve over untaxed homes); here, the invariants that guarantee it.
+    for (const destCityId of [null, 'st-louis']) {
+      const i = { ...inp, destCityId }
+      const d = resolveDestination(i, home(), destCityId ? home() : null)
+      expect(d.homeTax).toBeNull()
+      const cfg = kernelConfig(i, d)
+      expect(cfg.wealthTax).toBeNull()
+      expect(cfg.inheritance).toBeNull()
+      expect(simulate(market, [home(), BKK], i).localTax).toBeNull()
+    }
+    expect(resolveDestination(inp, home(FRANCE_LIKE), city(VALENCIA_LIKE)).homeTax).toBeNull()
+  })
+})
+
+describe('US state estate tax at home (real cities)', () => {
+  it('Chicago home vs Portland and Miami: both sides of the comparison are taxed', async () => {
+    const { CITIES } = await import('../../data/cities')
+    const i = withInputs({ paths: 1000, portfolio: 8_000_000, homeCityId: 'chicago', moveInYears: 0 })
+    const chicago = simulate(market, CITIES, { ...i, destCityId: null })
+    const portland = simulate(market, CITIES, { ...i, destCityId: 'portland' })
+    const miami = simulate(market, CITIES, { ...i, destCityId: 'miami' })
+    expect(chicago.localTax!.inheritanceTaxMedian).toBeGreaterThan(0)
+    expect(chicago.estate.bbdMedian).toBeLessThan(chicago.localTax!.bbdEstateBeforeTaxMedian)
+    expect(miami.localTax).toBeNull()
+    // Moving to an untaxed state now beats staying in Illinois…
+    expect(miami.estate.bbdMedian).toBeGreaterThan(chicago.estate.bbdMedian)
+    // …and the Portland gap is Oregon's tax less Illinois's, not Oregon's whole tax.
+    const gap = chicago.estate.bbdMedian - portland.estate.bbdMedian
+    expect(gap).toBeLessThan(portland.localTax!.inheritanceTaxMedian * 0.5)
+  })
+})

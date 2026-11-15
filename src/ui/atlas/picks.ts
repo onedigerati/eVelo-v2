@@ -128,6 +128,11 @@ export function monthYear(iso: string): string {
   return MONTHS[mi] ? `${MONTHS[mi]} ${m[1]}` : iso
 }
 
+/** "Researched November 6, 2026; tax, estate, lending, residency and healthcare re-checked November 15, 2026" */
+export function researchedLine(researched: string, checked: string): string {
+  return `Researched ${longDate(researched)}; tax, estate, lending, residency and healthcare re-checked ${longDate(checked)}`
+}
+
 /** "2026-11-06" -> "November 6, 2026". */
 export function longDate(iso: string): string {
   const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso)

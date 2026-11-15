@@ -303,3 +303,13 @@ describe('ledger checks on fixtures', () => {
     })
   })
 })
+
+describe('stage 8: every modelMismatch is resolved', () => {
+  it('carries modelled or notModelled', () => {
+    const problems: string[] = []
+    for (const name of LEDGER_NAMES)
+      for (const c of load(name).claims)
+        if (c.modelMismatch !== undefined && !c.modelled && !c.notModelled) problems.push(`${name}: ${c.id} has a modelMismatch but neither modelled nor notModelled`)
+    expectNone(problems)
+  })
+})

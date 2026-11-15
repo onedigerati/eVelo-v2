@@ -420,7 +420,8 @@
         }
       ],
       "note": "K&L Gates wrote before signing; the DOR table (with $3,000,000 for 2027 and after) and the Tax Foundation page (SB 6347, June 2026) show it took effect.",
-      "modelMismatch": "src/data/localTaxes.ts has no US entries, so Washington's estate tax ($3M exemption, 10%-20%) is not modelled for Seattle."
+      "modelMismatch": "src/data/localTaxes.ts has no US entries, so Washington's estate tax ($3M exemption, 10%-20%) is not modelled for Seattle.",
+      "modelled": "New seattle entry: $3M exclusion, then the DOR table for deaths from 1 July 2026 (10% on the first $1M of taxable estate, 14%, 15%, 16%, 18%, 19%, 19.5%, 20% above $9M), whole estate halved per heir. E.g. $5M: $240,000."
     },
     {
       "id": "us-estate-wa-rates",
@@ -444,7 +445,8 @@
           "says": "20 March 2026. SB 6347 would, for decedents dying on or after 1 July 2026, revert the exemption to $3,000,000 (from $3,076,000 for 1 January to 30 June 2026) and replace the inflation index with a former one that no longer exists, so the exemption stays frozen."
         }
       ],
-      "modelMismatch": "Not modelled: localTaxes.ts has no US entries (see us-estate-wa-exemption)."
+      "modelMismatch": "Not modelled: localTaxes.ts has no US entries (see us-estate-wa-exemption).",
+      "modelled": "See us-estate-wa-exemption: the 10%–20% table from the DOR page."
     },
     {
       "id": "us-estate-wa-no-inheritance",
@@ -492,7 +494,11 @@
         }
       ],
       "note": "Also carried by Portland's summary (\"Oregon's estate tax starts at just $1M\") and drawback (\"an estate tax from just $1M\").",
-      "modelMismatch": "src/data/localTaxes.ts has no US entries, so Oregon's estate tax ($1M, 10%-16%) is not modelled for Portland."
+      "modelMismatch": "src/data/localTaxes.ts has no US entries, so Oregon's estate tax ($1M, 10%-16%) is not modelled for Portland.",
+      "modelled": "New portland entry: ORS 118.010, nothing under $1M, then 10% of the excess over $1M rising to 16% above $9.5M, whole estate halved per heir. E.g. $2M: $101,250.",
+      "also": [
+        "scores.estate 4→2 (stage 8 score audit): the $1M exemption is for the whole estate, so two children get $500k each, short of the rubric's 4 (\"an allowance ≥ $1M per child\"), and the 16% top rate is the rubric's 2 (11–35%); Massachusetts' $2M still gives $1M per child for two"
+      ]
     },
     {
       "id": "us-estate-or-rates",
@@ -516,7 +522,8 @@
           "says": "Dated 12 October 2026, rates and exemptions as of 1 October 2026. Twelve states and DC have an estate tax, among them Hawaii ($5,490,000 exemption, 10%-20%), Oregon ($1,000,000, 10%-16%) and Washington ($3,000,000, 10%-20%; SB 6347 of June 2026 restored the 20% top rate and reset the exemption to $3M from 1 July 2026). Five states have an inheritance tax: Kentucky, Maryland, Nebraska, New Jersey and Pennsylvania. Arizona, California, Colorado, Idaho, Nevada and Utah are on neither list."
         }
       ],
-      "modelMismatch": "Not modelled: localTaxes.ts has no US entries (see us-estate-or-exemption)."
+      "modelMismatch": "Not modelled: localTaxes.ts has no US entries (see us-estate-or-exemption).",
+      "modelled": "See us-estate-or-exemption: all ten ORS 118.010 brackets."
     },
     {
       "id": "us-estate-or-no-inheritance",
@@ -570,7 +577,8 @@
         }
       ],
       "note": "The Form M-6 instructions PDF (files.hawaii.gov) came back as binary whose text could not be recovered. Also carried by Honolulu's summary and drawback (\"an estate tax from $5.49M\").",
-      "modelMismatch": "src/data/localTaxes.ts has no US entries, so Hawaii's estate tax ($5.49M, 10%-20%) is not modelled for Honolulu."
+      "modelMismatch": "src/data/localTaxes.ts has no US entries, so Hawaii's estate tax ($5.49M, 10%-20%) is not modelled for Honolulu.",
+      "modelled": "New honolulu entry: $5.49M exclusion, then HRS 236E-8 (10% on the first $1M, 11%, 12%, 13%, 14%, 15.7% from $5M, 20% above $10M), whole estate halved per heir. E.g. $7.5M: $211,200."
     },
     {
       "id": "us-estate-hi-rates",
@@ -594,7 +602,8 @@
           "says": "Dated 12 October 2026, rates and exemptions as of 1 October 2026. Twelve states and DC have an estate tax, among them Hawaii ($5,490,000 exemption, 10%-20%), Oregon ($1,000,000, 10%-16%) and Washington ($3,000,000, 10%-20%; SB 6347 of June 2026 restored the 20% top rate and reset the exemption to $3M from 1 July 2026). Five states have an inheritance tax: Kentucky, Maryland, Nebraska, New Jersey and Pennsylvania. Arizona, California, Colorado, Idaho, Nevada and Utah are on neither list."
         }
       ],
-      "modelMismatch": "Not modelled: localTaxes.ts has no US entries (see us-estate-hi-exclusion)."
+      "modelMismatch": "Not modelled: localTaxes.ts has no US entries (see us-estate-hi-exclusion).",
+      "modelled": "See us-estate-hi-exclusion: the HRS 236E-8 schedule."
     },
     {
       "id": "us-estate-hi-no-inheritance",
@@ -3375,7 +3384,8 @@
           "says": "Dated 12 October 2026, as of 1 October 2026. Twelve states and DC have an estate tax, among them Illinois ($4,000,000 exemption, 0.8%-16.0%) and Minnesota ($3,000,000, 13%-16%); proposed 2025-26 reforms in Minnesota and other states \"were not ultimately adopted\", and its 2026 changes section names no Illinois change. Five states have an inheritance tax: Kentucky, Maryland, Nebraska, New Jersey and Pennsylvania. Texas, Missouri, Tennessee, Georgia and North Carolina are on neither list."
         }
       ],
-      "modelMismatch": "src/data/localTaxes.ts has no US entries, so Illinois's estate tax ($4M exclusion, threshold rather than credit, up to 16%) is not modelled for Chicago."
+      "modelMismatch": "src/data/localTaxes.ts has no US entries, so Illinois's estate tax ($4M exclusion, threshold rather than credit, up to 16%) is not modelled for Chicago.",
+      "modelled": "New chicago entry: the interrelated calculation reproduced exactly as bands: 2/7 (28.57%) of the estate above $4M to the crossover at about $5,359,276, then the 26 USC 2011(b) credit table's rates r as r/(1+r) (top 16% → 13.79%), whole estate halved per heir. The AG's $5M all-Illinois example: $285,714 (tested within $1.50)."
     },
     {
       "id": "us-estate-il-not-indexed-portable",
@@ -3518,7 +3528,8 @@
           "says": "Dated 12 October 2026, as of 1 October 2026. Twelve states and DC have an estate tax, among them Illinois ($4,000,000 exemption, 0.8%-16.0%) and Minnesota ($3,000,000, 13%-16%); proposed 2025-26 reforms in Minnesota and other states \"were not ultimately adopted\", and its 2026 changes section names no Illinois change. Five states have an inheritance tax: Kentucky, Maryland, Nebraska, New Jersey and Pennsylvania. Texas, Missouri, Tennessee, Georgia and North Carolina are on neither list."
         }
       ],
-      "modelMismatch": "src/data/localTaxes.ts has no US entries, so Minnesota's estate tax ($3M exclusion, 13%-16%) is not modelled for Minneapolis."
+      "modelMismatch": "src/data/localTaxes.ts has no US entries, so Minnesota's estate tax ($3M exclusion, 13%-16%) is not modelled for Minneapolis.",
+      "modelled": "New minneapolis entry: $3M subtracted, then Minn. Stat. 291.03 (13% to $7.1M of taxable estate, 13.6%, 14.4%, 15.2%, 16% above $10.1M); § 2058 deduction added back so not interrelated; gift add-back not modelled. E.g. $5M: $260,000."
     },
     {
       "id": "us-estate-mn-rates-16",

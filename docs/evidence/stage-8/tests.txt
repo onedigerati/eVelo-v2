@@ -1,0 +1,181 @@
+$ npx vitest run
+ RUN  v5.1.0 /home/jonah/repos/eVelo-v2
+
+
+ Test Files  66 passed (66)
+      Tests  1103 passed (1103)
+   Start at  17:51:09
+   Duration  17.03s (transform 69%, tests 23%, import 8%)
+
+
+$ npx vitest run src/data/__tests__/localTaxes.test.ts src/data/__tests__/scoreConsistency.test.ts src/data/__tests__/factCheckReport.test.ts src/data/__tests__/factCheck.test.ts src/data/__tests__/expatPicks.test.ts src/ui/atlas/__tests__/taxLines.test.ts src/ui/atlas/__tests__/picks.test.ts src/engine/__tests__/localTax.test.ts --reporter=verbose
+npm notice run evelo@2.0.0 npx
+npm notice run 'vitest' run src/data/__tests__/localTaxes.test.ts src/data/__tests__/scoreConsistency.test.ts src/data/__tests__/factCheckReport.test.ts src/data/__tests__/factCheck.test.ts src/data/__tests__/expatPicks.test.ts src/ui/atlas/__tests__/taxLines.test.ts src/ui/atlas/__tests__/picks.test.ts src/engine/__tests__/localTax.test.ts --reporter=verbose
+
+ RUN  v5.1.0 /home/jonah/repos/eVelo-v2
+
+ ✓ src/data/__tests__/factCheckReport.test.ts > fact-check report > exists 2ms
+ ✓ src/data/__tests__/factCheckReport.test.ts > fact-check report > names every corrected claim by its ledger id 56ms
+ ✓ src/data/__tests__/factCheckReport.test.ts > fact-check report > names every claim with a rank flag by its ledger id 36ms
+ ✓ src/data/__tests__/scoreConsistency.test.ts > scores on one scale across profiles > knows the state of every profiled US city 2ms
+ ✓ src/data/__tests__/scoreConsistency.test.ts > scores on one scale across profiles > gives cities in one country the same tax, estate, lending and residency scores, unless an exception is listed 2ms
+ ✓ src/data/__tests__/scoreConsistency.test.ts > scores on one scale across profiles > gives every US city the same lending and residency scores 0ms
+ ✓ src/data/__tests__/scoreConsistency.test.ts > scores on one scale across profiles > gives cities in one US state the same tax and estate scores, unless an exception is listed 0ms
+ ✓ src/data/__tests__/scoreConsistency.test.ts > scores on one scale across profiles > lists only exceptions that are still needed, and each excepted city says why in its own fact 0ms
+ ✓ src/ui/atlas/__tests__/taxLines.test.ts > taxStatus > separates taxed, none, not modelled and US 2ms
+ ✓ src/ui/atlas/__tests__/taxLines.test.ts > taxStatus > every top pick is in a researched country 2ms
+ ✓ src/ui/atlas/__tests__/taxLines.test.ts > taxNotice > says "none" only for researched countries and "not modelled" otherwise 0ms
+ ✓ src/ui/atlas/__tests__/taxLines.test.ts > taxNotice > gives each unmodelled country its own reason: gains at death (Canada, Australia), a yearly deemed return (New Zealand) 0ms
+ ✓ src/ui/atlas/__tests__/taxLines.test.ts > taxNotice > every unmodelled country in the dataset has a reason 0ms
+ ✓ src/ui/atlas/__tests__/taxLines.test.ts > taxInfoLabel > names the state for US cities and the country elsewhere 1ms
+ ✓ src/ui/atlas/__tests__/taxLines.test.ts > taxLines > Tarragona: a wealth-tax amount, inheritance none for US heirs 20ms
+ ✓ src/ui/atlas/__tests__/taxLines.test.ts > taxLines > Nice: no wealth tax on a portfolio, inheritance tax at the horizon age 0ms
+ ✓ src/ui/atlas/__tests__/taxLines.test.ts > taxLines > a zero median reads as under the threshold, muted 1ms
+ ✓ src/ui/atlas/__tests__/taxLines.test.ts > taxLines > a residence-gated inheritance tax not reached says when it would apply 0ms
+ ✓ src/ui/atlas/__tests__/taxLines.test.ts > taxLines > a move at or after the horizon: one line saying no local tax applies 1ms
+ ✓ src/ui/atlas/__tests__/taxLines.test.ts > taxLines > a taxed home city: lines from year 0, whatever the move year 0ms
+ ✓ src/ui/atlas/__tests__/taxLines.test.ts > taxLines > is empty for untaxed and unmodelled cities 0ms
+ ✓ src/ui/atlas/__tests__/taxLines.test.ts > taxLines > US state taxes read as state estate (or Pennsylvania inheritance) tax 0ms
+ ✓ src/ui/atlas/__tests__/taxLines.test.ts > taxCompareText and estateVsHome > compare text 0ms
+ ✓ src/ui/atlas/__tests__/taxLines.test.ts > taxCompareText and estateVsHome > estate delta 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > pickViews > joins every pick to its city and ranking row, in pick order 3ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > pickViews > profiles every pick 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > pickViews > drops picks whose city is missing 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > splitPicks > puts ranks 1–15 in the card grid and 16–75 in the compact rows 1ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > splitPicks > keeps an unprofiled later pick in the rows and leaves an unprofiled top pick out of the grid 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > scoreLabel > reads all nine factors in display order, out of 5 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > dates > formats ISO dates without a time-zone shift 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > verifiedLabel > labels verified cities with month and source 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > verifiedLabel > says so when confidence is low 1ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > verifiedLabel > labels unverified cities as estimates 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > verifiedLabel > every pick is verified 1ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > costDataLine > cites the date and source, with the low-confidence note where it applies 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > oddsVsHome > compares displayed whole percents 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > categoryCompare > prices the home budget with the plan’s expat factor and overrides 1ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > categoryCompare > is 1:1 for the home city and skips empty categories 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > categoryCompare > uses a fixed amount only for its own city 1ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > categoryCompare > shows a fixed amount on a $0 home category with no ratio, never Infinity or NaN 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > cityCosts > applies only the city’s own fixed amounts 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > profileView / profileEyebrow (any profiled city) > opens a pick with its rank and row 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > profileView / profileEyebrow (any profiled city) > opens an unranked profiled city without a pick, and says "Profile · <country>" 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > profileView / profileEyebrow (any profiled city) > returns null for a city with no profile or an unknown id 0ms
+ ✓ src/ui/atlas/__tests__/picks.test.ts > profileView / profileEyebrow (any profiled city) > never adds an unranked profile to the top-picks list 0ms
+ ✓ src/data/__tests__/localTaxes.test.ts > local taxes data > covers every country in the draft top 75 17ms
+ ✓ src/data/__tests__/localTaxes.test.ts > local taxes data > covers the seven Stage 7 countries 0ms
+ ✓ src/data/__tests__/localTaxes.test.ts > local taxes data > South Africa: estate duty on the whole estate, not per heir (hand-worked) 0ms
+ ✓ src/data/__tests__/localTaxes.test.ts > local taxes data > cites at least one source per entry, each URL from the research doc 6ms
+ ✓ src/data/__tests__/localTaxes.test.ts > local taxes data > has well-formed bands 4ms
+ ✓ src/data/__tests__/localTaxes.test.ts > local taxes data > converts with the bundled fx.json rates 1ms
+ ✓ src/data/__tests__/localTaxes.test.ts > local taxes data > attaches entries to cities: a city override, else the country entry (none for the US) 1ms
+ ✓ src/data/__tests__/localTaxes.test.ts > local taxes data > Spanish cities use their own region's rules 2ms
+ ✓ src/data/__tests__/localTaxes.test.ts > local taxes data > France: tax on a $5M estate left to two children (hand-worked) 1ms
+ ✓ src/data/__tests__/localTaxes.test.ts > local taxes data > Japan: tax on a $5M estate left to two children (hand-worked) 0ms
+ ✓ src/data/__tests__/localTaxes.test.ts > local taxes data > models heir-based and situs-only regimes as zero, decedent-based ones as taxed 0ms
+ ✓ src/data/__tests__/localTaxes.test.ts > US state estate and inheritance taxes (whole estate, two equal heirs) > only the cities of taxing states carry an entry; none has a wealth tax or a residence wait 0ms
+ ✓ src/data/__tests__/localTaxes.test.ts > US state estate and inheritance taxes (whole estate, two equal heirs) > Washington: $3M exclusion, then the DOR table (10% to 20%) 0ms
+ ✓ src/data/__tests__/localTaxes.test.ts > US state estate and inheritance taxes (whole estate, two equal heirs) > Oregon: nothing under $1M, then ORS 118.010 (10% to 16%) 0ms
+ ✓ src/data/__tests__/localTaxes.test.ts > US state estate and inheritance taxes (whole estate, two equal heirs) > Hawaii: $5.49M exclusion, then HRS 236E-8 (10% to 20%) 0ms
+ ✓ src/data/__tests__/localTaxes.test.ts > US state estate and inheritance taxes (whole estate, two equal heirs) > Minnesota: $3M subtracted, then 291.03 (13% to 16%) 0ms
+ ✓ src/data/__tests__/localTaxes.test.ts > US state estate and inheritance taxes (whole estate, two equal heirs) > the 2011(b) credit table (spot checks) 0ms
+ ✓ src/data/__tests__/localTaxes.test.ts > US state estate and inheritance taxes (whole estate, two equal heirs) > Illinois: the interrelated calculation; the AG's $5M example owes $285,714 2ms
+ ✓ src/data/__tests__/localTaxes.test.ts > US state estate and inheritance taxes (whole estate, two equal heirs) > Massachusetts: the credit table less $99,600, nothing at $2M, no cliff 1ms
+ ✓ src/data/__tests__/localTaxes.test.ts > US state estate and inheritance taxes (whole estate, two equal heirs) > New York: nothing to $7.35M, the cliff by 105%, then the § 952 table on the whole estate 0ms
+ ✓ src/data/__tests__/localTaxes.test.ts > US state estate and inheritance taxes (whole estate, two equal heirs) > District of Columbia: 0% to $4,988,400, then 11.2% to 16% 0ms
+ ✓ src/data/__tests__/localTaxes.test.ts > US state estate and inheritance taxes (whole estate, two equal heirs) > Pennsylvania: 4.5% to children from the first dollar 0ms
+ ✓ src/data/__tests__/localTaxes.test.ts > countries added or changed in the November 2026 fact check > United Kingdom: 40% above the £325k nil-rate band, after 10 years 0ms
+ ✓ src/data/__tests__/localTaxes.test.ts > countries added or changed in the November 2026 fact check > Netherlands: Box 3 at 36% × 6% of the gross portfolio above €59,357; inheritance 10/20% 0ms
+ ✓ src/data/__tests__/localTaxes.test.ts > countries added or changed in the November 2026 fact check > Germany: § 19 whole-amount rates with the § 19(3) step relief, per child above €400k, after 10 years 0ms
+ ✓ src/data/__tests__/localTaxes.test.ts > countries added or changed in the November 2026 fact check > South Korea: 10–50% on the whole estate after the KRW 500m deduction 0ms
+ ✓ src/data/__tests__/localTaxes.test.ts > countries added or changed in the November 2026 fact check > Zurich: net wealth tax, basic tariff × 2.14 0ms
+ ✓ src/data/__tests__/localTaxes.test.ts > countries added or changed in the November 2026 fact check > Turkey, UAE: no tax on a US portfolio; Catalonia: fifth step at €1,336,999.75 0ms
+ ✓ src/data/__tests__/localTaxes.test.ts > countries added or changed in the November 2026 fact check > notes no longer carry hedges the statutes settle 0ms
+ ✓ src/data/__tests__/expatPicks.test.ts > EXPAT_PICKS > has 75 unique picks ranked 1..75 in order 5ms
+ ✓ src/data/__tests__/expatPicks.test.ts > EXPAT_PICKS > follows the research doc's draft top 75 at the ends and the inserted picks 1ms
+ ✓ src/data/__tests__/expatPicks.test.ts > EXPAT_PICKS > cites the BBD research for every pick 2ms
+ ✓ src/data/__tests__/expatPicks.test.ts > EXPAT_PICKS > points at verified cities in the dataset 1ms
+ ✓ src/data/__tests__/expatPicks.test.ts > EXPAT_PICKS > gives every pick a one-sentence reason and known source refs 3ms
+ ✓ src/data/__tests__/expatPicks.test.ts > EXPAT_PICKS > has a profile file for every pick 0ms
+ ✓ src/data/__tests__/expatPicks.test.ts > EXPAT_PICKS > names every profile file after a city id in cities.ts 0ms
+ ✓ src/data/__tests__/expatPicks.test.ts > EXPAT_PICKS > gives every profile, pick or not, a full profile 66ms
+ ✓ src/data/__tests__/expatPicks.test.ts > EXPAT_PICKS > has no TODO placeholders left in any profile 4ms
+ ✓ src/data/__tests__/expatPicks.test.ts > EXPAT_PICKS > keeps every pick's scores on one 1–5 scale, using the whole range 1ms
+ ✓ src/data/__tests__/expatPicks.test.ts > EXPAT_PICKS > has no internal research markers in the prose 7ms
+ ✓ src/data/__tests__/expatPicks.test.ts > sources and method > uses http(s) urls everywhere 7ms
+ ✓ src/data/__tests__/expatPicks.test.ts > sources and method > has unique ranking source names 0ms
+ ✓ src/data/__tests__/expatPicks.test.ts > sources and method > exports the method, date and labels 0ms
+ ✓ src/data/__tests__/expatPicks.test.ts > sources and method > dates the fact re-check: an ISO date on or after the research date 0ms
+ ✓ src/data/__tests__/expatPicks.test.ts > sources and method > has a rubric line for every score key 0ms
+ ✓ src/data/__tests__/expatPicks.test.ts > sources and method > names the BBD research as a ranking source and in the method 0ms
+ ✓ src/data/__tests__/expatPicks.test.ts > helpers > finds a pick by city id 0ms
+ ✓ src/data/__tests__/expatPicks.test.ts > helpers > returns all 75 profiled picks in rank order 0ms
+ ✓ src/data/__tests__/expatPicks.test.ts > helpers > looks up a profile for any profiled city, pick or not 2ms
+ ✓ src/data/__tests__/factCheck.test.ts > fact-check ledger files > has shared.json 2ms
+ ✓ src/data/__tests__/factCheck.test.ts > fact-check ledger files > every file parses, and every claim has a known fact, one of the three verdicts and a source read during the plan 50ms
+ ✓ src/data/__tests__/factCheck.test.ts > fact-check ledger files > uses each claim id once across the whole ledger 30ms
+ ✓ src/data/__tests__/factCheck.test.ts > fact-check ledger files > shared.json covers the US estate exemption, the US estate-treaty list, IBKR, Schwab International and EU PRIIPs 1ms
+ ✓ src/data/__tests__/factCheck.test.ts > fact-check ledger files > lists every country file in CHECKED_COUNTRIES, so none escapes the coverage check 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > fact-check ledger files > CHECKED_COUNTRIES names countries that have profiled cities 1ms
+ ✓ src/data/__tests__/expatPicks.test.ts > profile files (buildProfileIndex + unknownProfileIds) > keys profiles by file name 0ms
+ ✓ src/data/__tests__/expatPicks.test.ts > profile files (buildProfileIndex + unknownProfileIds) > accepts a profile file named after any city id, picks or not 1ms
+ ✓ src/data/__tests__/expatPicks.test.ts > profile files (buildProfileIndex + unknownProfileIds) > fails a profile file named after an id that is not in cities.ts 0ms
+ ✓ src/engine/__tests__/localTax.test.ts > band math > applies marginal bands (hand-worked) 2ms
+ ✓ src/engine/__tests__/localTax.test.ts > band math > charges nothing below the first threshold and sorts bands 1ms
+ ✓ src/engine/__tests__/localTax.test.ts > band math > inheritance: equal shares, per-heir allowance, then the bands (hand-worked) 0ms
+ ✓ src/engine/__tests__/localTax.test.ts > wealth tax in the kernel > is charged only at year-ends after the move, on net worth, and borrowed (BBD) 2ms
+ ✓ src/engine/__tests__/localTax.test.ts > wealth tax in the kernel > on a gross base ignores the loan 0ms
+ ✓ src/engine/__tests__/localTax.test.ts > wealth tax in the kernel > charges nothing below the threshold 0ms
+ ✓ src/engine/__tests__/localTax.test.ts > wealth tax in the kernel > charges every year-end from month 0 when moving now 0ms
+ ✓ src/engine/__tests__/localTax.test.ts > wealth tax in the kernel > a move month off the year boundary is first taxed at the next year-end (move 13 → month 23) 1ms
+ ✓ src/engine/__tests__/localTax.test.ts > wealth tax in the kernel > can tip a path into insolvency, and charges nothing once it is broken 1ms
+ ✓ src/engine/__tests__/localTax.test.ts > wealth tax in the kernel > never applies when there is no move (moveMonth >= T) 0ms
+ ✓ src/engine/__tests__/localTax.test.ts > wealth tax in the kernel > holds thresholds constant in real terms 0ms
+ ✓ src/engine/__tests__/localTax.test.ts > wealth tax in the kernel > is borrowed before the margin check: a large tax can trigger a call that month 0ms
+ ✓ src/engine/__tests__/localTax.test.ts > wealth tax in the kernel > sell strategy sells shares to pay it, grossed up for capital-gains tax 0ms
+ ✓ src/engine/__tests__/localTax.test.ts > inheritance tax in the kernel > reduces both estates by the hand-worked amount 0ms
+ ✓ src/engine/__tests__/localTax.test.ts > inheritance tax in the kernel > combines with a wealth tax: the estate is taxed after the borrowed wealth tax 0ms
+ ✓ src/engine/__tests__/localTax.test.ts > inheritance tax in the kernel > does not change success (it is charged after the horizon) 0ms
+ ✓ src/engine/__tests__/localTax.test.ts > local taxes end to end > no or empty localTax is bit-identical to the feature absent 552ms
+ ✓ src/data/__tests__/factCheck.test.ts > fact-check ledger files > profiles carry the new wording of every corrected claim and none of the old, and the hedge of every kept cant-confirm claim 25ms
+ ✓ src/data/__tests__/factCheck.test.ts > fact-check ledger files > every shared reference points at a shared.json claim 12ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 1: claim shape > passes a well-formed confirmed, corrected and cant-confirm claim 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 1: claim shape > rejects a pending or unknown verdict 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 1: claim shape > rejects an unknown fact 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 1: claim shape > rejects a claim with no source 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 1: claim shape > rejects a source without an http(s) url, a read date within the plan, or what the page says 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 1: claim shape > rejects a corrected claim without both wordings, and one whose new wording contains the old 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 1: claim shape > rejects a cant-confirm claim without a hedge, without its wording, or whose wording lacks the hedge 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 1: claim shape > rejects cities outside the file, misspelt fields and a wrong file name 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 1: claim shape > holds shared.json to its own shape: a topic, appliesTo and no cities 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 1: claim shape > knows a real ISO date from a look-alike 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 2: shared topics > names each missing topic 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 3: coverage > passes when every city × fact has a claim 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 3: coverage > names the missing city × fact, a missing city and a city that is not the country's 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 4: profile wording > passes when the old wording is gone and the new is in every listed city 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 4: profile wording > fails when a listed city still carries the old wording or lacks the new 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 4: profile wording > fails when a kept cant-confirm claim's hedged wording is not in a listed city, and passes a removed one 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 4: profile wording > fails when a listed city has no profile 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 4: profile wording > matches the text a reader sees, apostrophes unescaped 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 5: shared references > passes a reference to an existing shared claim 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 5: shared references > fails a reference to an id that is not in shared.json 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 5: shared references > fails a confirmed instance resting on a shared claim that is not confirmed 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > stage 8: every modelMismatch is resolved > carries modelled or notModelled 12ms
+ ✓ src/engine/__tests__/localTax.test.ts > local taxes end to end > a zero-rate band reproduces the untaxed result exactly 118ms
+ ✓ src/engine/__tests__/localTax.test.ts > local taxes end to end > staying home ignores the destination tax 61ms
+ ✓ src/engine/__tests__/localTax.test.ts > local taxes end to end > a wealth-tax destination lowers success and the estate vs the same city untaxed 102ms
+ ✓ src/engine/__tests__/localTax.test.ts > local taxes end to end > an inheritance-only destination lowers the estate but not success 90ms
+ ✓ src/engine/__tests__/localTax.test.ts > local taxes end to end > atlas odds equal the Outlook for a taxed city 93ms
+ ✓ src/engine/__tests__/localTax.test.ts > local taxes end to end > a residence period gates the inheritance tax: strictly more than N years (Ireland 5, Japan 10) 49ms
+ ✓ src/engine/__tests__/localTax.test.ts > wealth tax from month 0 (a taxed home city) > fromMonth 0 charges from the first year-end, whatever moveMonth says 0ms
+ ✓ src/engine/__tests__/localTax.test.ts > a taxed home city (staying home, or a destination equal to home) > an estate tax at home reduces the baseline estate, from year 0, but not the odds 102ms
+ ✓ src/engine/__tests__/localTax.test.ts > a taxed home city (staying home, or a destination equal to home) > residence is counted from year 0 at home: a gate shorter than the horizon is passed 0ms
+ ✓ src/engine/__tests__/localTax.test.ts > a taxed home city (staying home, or a destination equal to home) > a wealth tax at home is charged from year 0, lowering odds and estate 109ms
+ ✓ src/engine/__tests__/localTax.test.ts > a taxed home city (staying home, or a destination equal to home) > a destination equal to the taxed home is identical to staying home 301ms
+ ✓ src/engine/__tests__/localTax.test.ts > a taxed home city (staying home, or a destination equal to home) > a move charges only the destination’s tax, never the home’s 105ms
+ ✓ src/engine/__tests__/localTax.test.ts > a taxed home city (staying home, or a destination equal to home) > an untaxed home is unchanged: no home tax in the config or the result 104ms
+ ✓ src/engine/__tests__/localTax.test.ts > US state estate tax at home (real cities) > Chicago home vs Portland and Miami: both sides of the comparison are taxed 114ms
+
+ Test Files  8 passed (8)
+      Tests  210 passed (210)
+   Start at  17:51:25
+   Duration  2.34s (transform 48%, tests 35%, import 16%)
+

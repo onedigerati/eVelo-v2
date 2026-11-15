@@ -104,6 +104,7 @@
         }
       ],
       "modelMismatch": "localTaxes.ts (AR) applies the steady-state 0.25% from the first year, while FY2026 is 0.5–0.75% (its note says so); the model understates the first years.",
+      "notModelled": "The shape has no time-varying rates, so AR keeps the steady-state flat 0.25% (FY2027 on) above ARS 384.7M from the first year; the FY2026 year-end (0.5–0.75%) is understated, and the note now says so. The FY2026 bracket limits were not read. Note and sources (PwC quick chart, Chambers 2026) updated; gross base confirmed (debts not deductible).",
       "note": "Searched for 2026 changes to Bienes Personales (November 2026, the \"paquete fiscal\" and Inocencia Fiscal II): nothing read changes the rates; Inocencia Fiscal II (half-sanctioned 26 August 2026) does not touch it."
     },
     {

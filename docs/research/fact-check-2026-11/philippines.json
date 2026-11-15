@@ -22,7 +22,8 @@
           "says": "Headline net wealth/worth tax rate \"NA\" (\"the territory does not have the indicated tax\") for Thailand (last reviewed 24 August 2026), Malaysia (16 June 2026), Vietnam (23 September 2026), Indonesia (11 June 2026) and the Philippines (01 August 2026)."
         }
       ],
-      "modelMismatch": "localTaxes.ts (PH) note says \"Wealth tax not verified; none modelled\". PwC's quick chart now verifies there is none; the model is right, only the note's \"not verified\" can go in stage 8."
+      "modelMismatch": "localTaxes.ts (PH) note says \"Wealth tax not verified; none modelled\". PwC's quick chart now verifies there is none; the model is right, only the note's \"not verified\" can go in stage 8.",
+      "modelled": "PH note: \"Wealth tax not verified\" replaced by \"No wealth tax\", with PwC's quick charts added as sources. No amounts change."
     },
     {
       "id": "ph-tax-sec23",
@@ -109,7 +110,8 @@
         }
       ],
       "note": "The BIR's estate-tax page (bir.gov.ph/estate-tax) loaded with only its heading.",
-      "modelMismatch": "localTaxes.ts (PH) models the 6% after the PHP 5m standard deduction only; the family-home deduction (up to PHP 10m) is not modelled. For stage 8 to judge; it overstates the tax only where the family home is in the estate."
+      "modelMismatch": "localTaxes.ts (PH) models the 6% after the PHP 5m standard deduction only; the family-home deduction (up to PHP 10m) is not modelled. For stage 8 to judge; it overstates the tax only where the family home is in the estate.",
+      "notModelled": "The family-home deduction (up to PHP 10m) is not applied: the modelled estate is the portfolio, with no home in it, so the 6% after PHP 5m stands. The PH note says so."
     },
     {
       "id": "ph-estate-resident-alien",

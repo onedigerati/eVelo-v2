@@ -18,6 +18,7 @@ import {
   pickViews,
   profileEyebrow,
   profileView,
+  researchedLine,
   scoreLabel,
   splitPicks,
   verifiedLabel,
@@ -96,6 +97,9 @@ describe('dates', () => {
     expect(monthYear('2026-11-06')).toBe('Nov 2026')
     expect(monthYear('2026-01-01')).toBe('Jan 2026')
     expect(longDate('2026-11-06')).toBe('November 6, 2026')
+    expect(researchedLine('2026-11-06', '2026-11-15')).toBe(
+      'Researched November 6, 2026; tax, estate, lending, residency and healthcare re-checked November 15, 2026',
+    )
     expect(monthYear('soon')).toBe('soon')
   })
 })

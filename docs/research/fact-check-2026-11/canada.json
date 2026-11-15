@@ -304,7 +304,8 @@
           "says": "Last reviewed 12 June 2026. \"Individuals resident in Canada are subject to Canadian income tax on worldwide income.\" 2026 top combined rates (interest and ordinary income / capital gains): Ontario 53.5 / 26.8, British Columbia 53.5 / 26.8, Quebec 53.3 / 26.7."
         }
       ],
-      "modelMismatch": "localTaxes.ts has no Canada entry (its header comment lists Canada among countries without one), so the simulation models no Canadian tax at death: no deemed disposition of accrued gains (up to 26.8% Ontario/BC, 26.7% Quebec; 50% inclusion) and no probate (Ontario 1.5% above CAD 50k, BC about 1.4% above CAD 50k, Quebec none). For stage 8."
+      "modelMismatch": "localTaxes.ts has no Canada entry (its header comment lists Canada among countries without one), so the simulation models no Canadian tax at death: no deemed disposition of accrued gains (up to 26.8% Ontario/BC, 26.7% Quebec; 50% inclusion) and no probate (Ontario 1.5% above CAD 50k, BC about 1.4% above CAD 50k, Quebec none). For stage 8.",
+      "notModelled": "The deemed disposition taxes gains accrued since arrival, which needs a cost basis neither shape carries; probate alone (Ontario 1.5%, BC about 1.4% above CAD 50k) would make Canada read as taxed while leaving out the larger charge, so Canada keeps no entry, named with the reason in the localTaxes.ts header."
     },
     {
       "id": "ca-estate-deemed-disposition-qc",
@@ -334,7 +335,8 @@
           "says": "Last reviewed 12 June 2026. \"Individuals resident in Canada are subject to Canadian income tax on worldwide income.\" 2026 top combined rates (interest and ordinary income / capital gains): Ontario 53.5 / 26.8, British Columbia 53.5 / 26.8, Quebec 53.3 / 26.7."
         }
       ],
-      "modelMismatch": "localTaxes.ts has no Canada entry (its header comment lists Canada among countries without one), so the simulation models no Canadian tax at death: no deemed disposition of accrued gains (up to 26.8% Ontario/BC, 26.7% Quebec; 50% inclusion) and no probate (Ontario 1.5% above CAD 50k, BC about 1.4% above CAD 50k, Quebec none). For stage 8."
+      "modelMismatch": "localTaxes.ts has no Canada entry (its header comment lists Canada among countries without one), so the simulation models no Canadian tax at death: no deemed disposition of accrued gains (up to 26.8% Ontario/BC, 26.7% Quebec; 50% inclusion) and no probate (Ontario 1.5% above CAD 50k, BC about 1.4% above CAD 50k, Quebec none). For stage 8.",
+      "notModelled": "As ca-estate-deemed-disposition: a tax on gains needs a cost basis; Canada keeps no entry, named with the reason in the localTaxes.ts header."
     },
     {
       "id": "ca-estate-departure-tax",

@@ -4,7 +4,7 @@ const profile: ExpatProfile = {
   tagline: 'Andean capital with top clinics and a three-year tax window',
   summary:
     'Chile taxes a newly arrived foreigner only on Chilean-source income for the first three years, and a foreigner\'s assets abroad bought with non-Chilean money fall outside its inheritance tax. There is no wealth tax. Santiago has strong private clinics, led by Clínica Alemana and is 52nd in the 2026 Global Peace Index. After year three, though, US dividends are taxed at up to 40%, so a growth-tilted portfolio matters.',
-  scores: { cost: 4, healthcare: 4, safety: 3, visa: 4, climate: 4, community: 3, tax: 2, estate: 5, lending: 4 },
+  scores: { cost: 4, healthcare: 4, safety: 3, visa: 4, climate: 4, community: 3, tax: 2, estate: 4, lending: 4 },
   facts: {
     healthcare:
       'Clínica Alemana (1st in Chile and 121st in the world in Newsweek\'s 2026 ranking), Clínica Las Condes (5th in Chile), Clínica Santa María (9th) and Clínica Indisa (12th) lead private care; retirees with no Chilean taxable income can qualify for free public FONASA Group A, while private Isapres price steeply by age and can exclude declared conditions for about 18 months.',

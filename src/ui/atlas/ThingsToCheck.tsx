@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { COL_AS_OF, COL_SOURCES, EXPAT_CAVEATS } from '../../data/cities'
-import { EXPAT_AS_OF, EXPAT_RANKING_SOURCES } from '../../data/expatPicks'
-import { longDate, monthYear } from './picks'
+import { EXPAT_AS_OF, EXPAT_RANKING_SOURCES, FACTS_CHECKED_AS_OF } from '../../data/expatPicks'
+import { longDate, monthYear, researchedLine } from './picks'
 import type { City } from '../../engine/types'
 import { useFx } from '../../state/fx'
 import { cx } from '../primitives'
@@ -70,7 +70,7 @@ export function SourcesLine() {
                 ({s.edition})
               </span>
             ))}
-            ; factor scores are eVelo’s own. Researched {longDate(EXPAT_AS_OF)}.
+            ; factor scores are eVelo’s own. {researchedLine(EXPAT_AS_OF, FACTS_CHECKED_AS_OF)}.
           </li>
         </ul>
       )}

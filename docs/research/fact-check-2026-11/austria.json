@@ -58,6 +58,7 @@
         "sources: replaced My ETF Journey (HTTP 402, unreadable) with two Broker-Test.at articles"
       ],
       "modelMismatch": "Wording only, no numbers: the AT note in src/data/localTaxes.ts and the Austria note in src/data/cities.ts say \"funds not registered with Austria's tax office (OeKB)\". The OeKB is the Oesterreichische Kontrollbank, to which reporting funds (Meldefonds) send their tax figures through an Austrian tax representative; it is not the tax office, and the test is whether the fund reports, not whether it is registered (Broker-Test.at, 23 December 2025, https://www.broker-test.at/news/nichtmeldefonds-pauschale-besteuerung/; PwC calls them reporting and non-reporting funds). The rule and figures in the note (90% of growth, at least 10% of year-end value, 27.5%, not modelled) agree with the pages. The note could also say that bank-deposit interest is 25%, not 27.5% (see at-tax-dividends-interest-rate).",
+      "modelled": "Note corrected in localTaxes.ts (AT) and cities.ts: funds that do not report their tax figures to Austria's reporting agent, the Oesterreichische Kontrollbank (OeKB); US REITs and BDCs reportedly count. Broker-Test source added. No amounts change (the deemed-distribution tax stays unmodelled).",
       "rankFlag": "Vienna's `why` in src/data/expatPicks.ts says \"yearly tax on the growth of unregistered funds (likely US ETFs)\". The substance holds; \"unregistered\" is loose for \"non-reporting\" (the fund does not report its tax figures to the OeKB). Not edited: user's call.",
       "note": "The OeKB's own fund-data page loaded but does not describe the tax reporting role; the official text (§ 186 InvFG) was not read. The description rests on a dated secondary page and PwC's terms."
     },
@@ -165,6 +166,7 @@
         "summary and drawback keep \"27.5% on dividends\", which is right"
       ],
       "modelMismatch": "The AT note in src/data/localTaxes.ts says \"Dividends are taxed at 27.5% as income (outside this entry)\": right as far as it goes; interest on bank deposits is 25% (PwC, last reviewed 23 July 2026, https://taxsummaries.pwc.com/austria/individual/income-determination). No bands are affected.",
+      "modelled": "Note corrected in localTaxes.ts (AT) and cities.ts: dividends and bond interest 27.5%, bank-deposit interest 25%. No bands affected.",
       "note": "Whether cash interest paid by a US broker counts as bank-deposit interest (25%) or falls at 27.5% was not settled by the page."
     },
     {

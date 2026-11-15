@@ -394,7 +394,7 @@ const AL: Base = {
 const AT: Base = {
   country: 'Austria', countryCode: 'AT', region: 'Europe', currency: 'EUR', fxVol: 0.09, healthcare: 0.45,
   notes: [
-    'Funds not registered with Austria\'s tax office (OeKB), likely including US ETFs, are taxed every year at 27.5% on 90% of their growth, so a never-sell ETF portfolio is taxed anyway (not modelled). Dividends pay 27.5%; no wealth or inheritance tax.',
+    'Funds that do not report their tax figures to Austria\'s reporting agent (OeKB), reportedly including many US ETFs, are taxed every year at 27.5% on 90% of their growth, so a never-sell ETF portfolio is taxed anyway (not modelled). Dividends and bond interest pay 27.5%, bank-deposit interest 25%; no wealth or inheritance tax.',
     'The settlement permit (no work) needs about €2,617/month single or €4,128 for a couple (2026), German, and a quota place.',
   ],
 }
@@ -936,10 +936,11 @@ const VERIFIED: Record<string, CityVerification> = {
 
 const withVerified = (c: City): City => (VERIFIED[c.id] ? { ...c, verified: VERIFIED[c.id] } : c)
 
-/** Local wealth/inheritance tax (src/data/localTaxes.ts): a city override (Spain's regions) or the
- *  country entry. US cities, and countries without researched data, get none. */
+/** Local wealth/inheritance tax (src/data/localTaxes.ts): a city override (Spain's regions, Zurich,
+ *  US cities in states with an estate or inheritance tax) or the country entry. Other US cities, and
+ *  countries without an entry, get none. */
 const withLocalTax = (c: City): City => {
-  const localTax = c.countryCode === 'US' ? undefined : localTaxFor(c.id, c.countryCode)
+  const localTax = localTaxFor(c.id, c.countryCode)
   return localTax ? { ...c, localTax } : c
 }
 

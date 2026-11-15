@@ -121,7 +121,8 @@
         }
       ],
       "note": "The foreign-worker exemptions need 80% of the 10 years in Korean employment, so they do not reach a retiree.",
-      "modelMismatch": "localTaxes.ts has no South Korea entry (the plan already notes it); the 2027 exit tax on foreign shares over KRW 500m is not modelled."
+      "modelMismatch": "localTaxes.ts has no South Korea entry (the plan already notes it); the 2027 exit tax on foreign shares over KRW 500m is not modelled.",
+      "notModelled": "An exit tax on foreign shares on emigration (from 2027) needs a cost basis and a departure event; named in the new KR note and the localTaxes.ts header."
     },
     {
       "id": "kr-estate-rates",
@@ -175,7 +176,8 @@
         }
       ],
       "note": "PBL gives the residence split and says nothing separate on foreigners, which is consistent with residence, not nationality, deciding; the domicile-or-183-days test is PwC's income tax definition, which the inheritance law shares.",
-      "modelMismatch": "localTaxes.ts has no South Korea entry (noted in the plan), so the model taxes nothing at death; a resident's worldwide estate pays 10–50% (50% above KRW 3bn) after deductions of up to KRW 500m."
+      "modelMismatch": "localTaxes.ts has no South Korea entry (noted in the plan), so the model taxes nothing at death; a resident's worldwide estate pays 10–50% (50% above KRW 3bn) after deductions of up to KRW 500m.",
+      "modelled": "New KR entry: the whole estate after the KRW 500m lump-sum deduction at 10% to KRW 100m, 20% to 500m, 30% to 1bn, 40% to 3bn, 50% above (Article 26, read on a dated secondary page; NTS page for the resident's worldwide reach), split per heir by halving the deduction and limits; applies from the move. E.g. a $2M estate: about $535k."
     },
     {
       "id": "kr-estate-per-heir-proposal",

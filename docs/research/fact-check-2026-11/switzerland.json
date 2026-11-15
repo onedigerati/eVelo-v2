@@ -21,6 +21,7 @@
         }
       ],
       "modelMismatch": "src/data/localTaxes.ts has no entry for Switzerland (its header lists Switzerland among countries with \"no researched tax data\"), so the simulation applies no wealth tax to Zurich. The page (PwC, last reviewed 01 July 2026, https://taxsummaries.pwc.com/switzerland/individual/other-taxes) gives a yearly net wealth tax for the canton of Zurich, 2026 basic tariff. Single: 0% on the first CHF 81,000; 0.05% from 81,000; 0.10% from 322,000; 0.15% from 726,000; 0.20% from 1,371,000; 0.25% from 2,339,000; 0.30% above 3,304,000. Married: 0% on the first CHF 161,000; 0.05% from 161,000; 0.10% from 403,000; 0.15% from 805,000; 0.20% from 1,451,000; 0.25% from 2,418,000; 0.30% above 3,385,000. These basic rates are multiplied by the cantonal Steuerfuss (0.95 for 2026–27) plus the commune's (City of Zurich 1.19), i.e. by 2.14, so the marginal rates in the city run from about 0.107% to about 0.642%. Debts are deductible (net wealth). Inheritance: no entry is needed for children or a spouse (exempt in Zurich).",
+      "modelled": "New Zurich city entry: net wealth, 2026 single basic tariff (0% to CHF 81,000; 0.05% from 81,000, 0.10% from 322,000, 0.15% from 726,000, 0.20% from 1,371,000, 0.25% from 2,339,000, 0.30% from 3,304,000) × 2.14 (canton 0.95 + City of Zurich 1.19), yearly from the move; no inheritance tax for children. Married tariff and church tax not modelled. E.g. $1M net: about $1.7k a year; $5M: about $21.5k.",
       "note": "The page excludes foreign real estate from the base (it counts only for the rate); a US brokerage portfolio is movable wealth and is in. A margin loan is a debt and so deductible."
     },
     {
@@ -196,6 +197,7 @@
         }
       ],
       "modelMismatch": "None: localTaxes.ts has no Swiss entry and none is needed for inheritance by children or a spouse.",
+      "modelled": "The Zurich entry has no inheritance component and its note says children and a spouse are exempt.",
       "note": "The canton's own page loaded but, as read, does not list the exemptions; the statute (ESchG, zhlex 632.1) was not read. The exemption rests on Neho (tables as of 2020), Zürcher Kantonalbank (February 2025, for gifts to descendants) and PwC's general statement. Reach: the canton taxes when the deceased last lived in the canton or real estate there passes (zh.ch)."
     },
     {

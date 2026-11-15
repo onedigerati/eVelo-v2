@@ -1,0 +1,36 @@
+$ node docs/evidence/stage-8/verify8.mjs http://localhost:4331 before  (production build of fd5ef41, npx vite preview)
+
+===== before · Seattle =====
+Local tax and estate for Seattle ready.
+LOCAL TAX & ESTATE
+No state or federal estate tax is modelled for US cities.
+Estate at 85
+median, borrow and never sell
+$2.9M
+−$7.5M vs $10M staying in St. Louis
+Today’s dollars, from 4,000 simulated futures of your plan with Seattle as the destination.
+as-of line: (none)
+
+===== before · London =====
+Local tax and estate for London ready.
+LOCAL TAX & ESTATE
+Local wealth and inheritance tax not modelled for United Kingdom: eVelo hasn’t researched it, so the odds and estate here assume none. Check before you count on that.
+Estate at 85
+median, borrow and never sell
+$3.2M
+−$7.2M vs $10M staying in St. Louis
+Today’s dollars, from 4,000 simulated futures of your plan with London as the destination.
+as-of line: (none)
+
+===== before · Lisbon =====
+Local tax and estate for Lisbon ready.
+LOCAL TAX & ESTATE
+No wealth or inheritance tax modelled for Portugal: none reaches a US portfolio.
+Estate at 85
+median, borrow and never sell
+$11M
++$688K vs $10M staying in St. Louis
+Today’s dollars, from 4,000 simulated futures of your plan with Lisbon as the destination.
+as-of line: (none)
+
+console errors: none

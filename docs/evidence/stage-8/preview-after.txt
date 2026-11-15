@@ -1,0 +1,44 @@
+$ node docs/evidence/stage-8/verify8.mjs http://localhost:4332 after shots  (production build of the stage 8 working tree after review fixes, npx vite preview)
+
+===== after · Seattle =====
+Local tax and estate for Seattle ready.
+LOCAL TAX & ESTATE
+Wealth tax
+None on a portfolio
+State estate tax at 85
+$0
+in the median future: shares stay under the allowance
+Estate at 85
+median, after local tax
+$2.9M
+−$7.5M vs $10M staying in St. Louis
+Today’s dollars, from 4,000 simulated futures of your plan with Seattle as the destination.
+as-of line: Researched November 6, 2026; tax, estate, lending, residency and healthcare re-checked November 15, 2026. Not tax or legal advice.
+
+===== after · London =====
+Local tax and estate for London ready.
+LOCAL TAX & ESTATE
+Wealth tax
+None on a portfolio
+Inheritance tax at 85
+$1.1M
+median, two US-resident children as heirs
+Estate at 85
+median, after local tax
+$2.1M
+−$8.3M vs $10M staying in St. Louis
+Today’s dollars, from 4,000 simulated futures of your plan with London as the destination.
+as-of line: Researched November 6, 2026; tax, estate, lending, residency and healthcare re-checked November 15, 2026. Not tax or legal advice.
+
+===== after · Lisbon =====
+Local tax and estate for Lisbon ready.
+LOCAL TAX & ESTATE
+No wealth or inheritance tax modelled for Portugal: none reaches a US portfolio.
+Estate at 85
+median, borrow and never sell
+$11M
++$688K vs $10M staying in St. Louis
+Today’s dollars, from 4,000 simulated futures of your plan with Lisbon as the destination.
+as-of line: Researched November 6, 2026; tax, estate, lending, residency and healthcare re-checked November 15, 2026. Not tax or legal advice.
+
+console errors: none

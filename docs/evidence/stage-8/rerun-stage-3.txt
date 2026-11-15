@@ -1,0 +1,427 @@
+$ node docs/evidence/stage-3/verify3.mjs http://localhost:4333  (re-run at stage 8, production build)
+
+===== desktop · Dubai =====
+Dubai
+YOUR PLAN HERE
+54%
+plan holds
+−10 pts vs 64% in St. Louis
+All 5 photos
+Photos: Robert Bock, Shahid1024, EditQ, Diego Delso, flightlog · CC0 / CC BY-SA / CC BY · Wikimedia Commons
+AE
+PROFILE · UNITED ARAB EMIRATES
+No income, wealth or inheritance tax, in a desert heat and a tense region
+Dubai has no personal income tax, no wealth tax and no inheritance tax, a five-year renewable retirement visa from age 55 on AED 1M of property or savings, strong private hospitals and nonstops to a dozen US cities, which on paper makes it a near-ideal buy-borrow-die base. What stands against it: summers above 40°C, costly private health insurance that rises steeply after 60, no path to permanent residence, and a US Level 3 "reconsider travel" advisory since March 2026 over the conflict with Iran.
+HOW IT SCORES · out of 5, for a US retiree on buy-borrow-die
+Tax on holdings
+5
+out of 5
+Estate
+5
+out of 5
+Lending
+4
+out of 5
+Residency
+4
+out of 5
+Healthcare
+4
+out of 5
+Cost
+2
+out of 5
+Safety
+3
+out of 5
+Climate
+2
+out of 5
+Community
+4
+out of 5
+THE ESSENTIALS
+TAX ON HOLDINGS
+No personal income tax, no wealth tax and no capital gains tax: dividends, interest and gains are untaxed locally; a US citizen still files and pays US tax on worldwide income, and there is no US–UAE income tax treaty.
+ESTATE & INHERITANCE
+No inheritance, estate or gift tax; since 2023 a non-Muslim foreigner's estate follows the civil personal status law (or home-country law, if chosen) rather than Sharia, and a will registered with the DIFC Wills Service Centre is the usual safeguard; there is no US–UAE estate treaty, so the $15M US exemption (2026) is the only relief.
+LENDING & BROKERS
+IBKR reportedly serves UAE residents (many fund accounts through a dirham or US-dollar account), and Schwab One International's online form reportedly accepted the UAE in Oct 2026; margin by country of residence is unreported, and Fidelity and Vanguard reportedly open no new accounts for residents abroad.
+RESIDENCY
+Retirement residence permit: 55+ with at least 15 years of prior work (the GDRFA page lists both), plus property worth AED 1M (about $272k), an AED 1M deposit in a UAE bank, or a fixed income of AED 240,000/year (about $65k); five years, renewable on the same terms, with no route to permanent residence or citizenship; an AED 2M property buyer can instead apply for a golden visa.
+HEALTHCARE
+Good private hospitals, such as American Hospital Dubai, reportedly JCI-accredited; health insurance is compulsory for Dubai residents, there are no retiree-specific plans, and premiums climb with age and claims: basic narrow-network plans start at about AED 5,000/year, a 67-year-old retiree paid just over AED 25,000/year for a basic policy, and insurers may load up to 100% per pre-existing condition (2024).
+SAFETY
+The US has rated the UAE Level 3, "reconsider travel", for terrorism and armed conflict since early March 2026, when the US urged citizens to leave during the US and Israeli strikes on Iran (summary updated October 2026 for possible Houthi attacks); street crime is very low, but local laws are strict, with arrest or exit bans for offences that would be minor at home.
+CLIMATE
+Hot desert: August highs about 40°C (104°F) with very humid nights near 30°C, so from about May to September life moves indoors; January highs about 24°C, and under 100 mm of rain a year.
+COMMUNITY
+About 92% of Dubai's nearly 4 million people are expatriates, with over 100,000 Britons the largest Western group and English the everyday working language; the population is young and working, and retirees are few.
+GETTING THERE
+From St. Louis (STL): no nonstop; one stop via Chicago or Toronto, about 17–20 h.
+Dubai International (DXB), one of the world's busiest hubs, is close to the old centre and linked by metro; flights were suspended during the 2026 conflict and restored by May 2026, and schedules can still change at short notice.
+Routes as of Nov 2026; flying times are estimates.
+WORTH KNOWING
+Summers above 40°C for about five months
+US Level 3 advisory since March 2026 over the regional conflict with Iran
+Private health insurance that rises steeply with age, and no permanent residence
+YOUR PLAN HERE
+PLAN HOLDS
+54
+%
+−10 pts vs 64% in St. Louis
+A YEAR HERE
+$127,019
++15% vs $110,000 in St. Louis
+BY CATEGORY
+St. Louis
+Dubai
+Housing: $54K here vs $26K in St. Louis, +108%.
+Housing
+$54K
++108%
+Groceries: $8.6K here vs $11K in St. Louis, −22%.
+Groceries
+$8.6K
+−22%
+Dining out: $7.4K here vs $8.0K in St. Louis, −7%.
+Dining out
+$7.4K
+−7%
+Transport: $9.2K here vs $10K in St. Louis, −8%.
+Transport
+$9.2K
+−8%
+Utilities: $5.0K here vs $5.5K in St. Louis, −8%.
+Utilities
+$5.0K
+−8%
+Healthcare: $11K here vs $16K in St. Louis, −32%.
+Healthcare
+$11K
+−32%
+Travel: $14K here vs $14K in St. Louis, same.
+Travel
+$14K
+same
+Other: $18K here vs $20K in St. Louis, −8%.
+Other
+$18K
+−8%
+Your St. Louis budget at local prices, with your expat price premium (35%).
+Local tax and estate for Dubai ready.
+LOCAL TAX & ESTATE
+No wealth or inheritance tax modelled for United Arab Emirates: none reaches a US portfolio.
+Estate at 85
+median, borrow and never sell
+$8.4M
+−$2.0M vs $10M staying in St. Louis
+Today’s dollars, from 4,000 simulated futures of your plan with Dubai as the destination.
+Make Dubai my destination
+SOURCES
+PwC: United Arab Emirates, other taxes · 2026
+GDRFA Dubai: residence permit for a retired foreigner
+Dubai Land Department: golden visa for real estate investors
+BusinessDubai: UAE golden visa renewal 2026 · 2026
+Dubai Legal Portal: Law No. 11 of 2013 on health insurance
+UAE government portal: golden visa
+Withers: estate planning for non-Muslims and residents in the UAE · 2024
+The National: are high insurance costs pricing retirees out of the UAE? · 2024
+PR Newswire: American Hospital Dubai earns 7th JCI accreditation · 2018
+NewKerala: US updates UAE travel advisory citing heightened threat · 2026
+Jordan News: Washington raises travel advisory to Level 3 for Jordan, Oman, Saudi Arabia and the UAE · 2026
+The National: what an Interactive Brokers UAE account means for local investors · 2024
+IRS: United States income tax treaties A to Z
+IRS: estate and gift tax treaties
+YourTaxBase: Charles Schwab for expats (country list, Oct 2026)
+YourTaxBase: best brokerage for US expats · 2026
+Boltflight: Emirates restores flights to Los Angeles, Miami, Orlando and Houston · 2026
+Wikipedia: Dubai (climate, demographics)
+Cost indices for Dubai are rough estimates, not checked against a current source. Researched November 6, 2026; tax, estate, lending, residency and healthcare re-checked November 15, 2026. Not tax or legal advice.
+
+===== desktop · Cape Town =====
+Cape Town
+YOUR PLAN HERE
+80%
+plan holds
++16 pts vs 64% in St. Louis
+All 5 photos
+Photos: Leo za1, Barry haynes, Martinvl, Mattias Hill · CC BY-SA · Wikimedia Commons
+ZA
+PROFILE · SOUTH AFRICA
+Spectacular and cheap, but crime and South Africa's taxes at death
+Cape Town pairs mountains, ocean and wine country with a Mediterranean climate, very good private hospitals, English as an everyday language, low costs and US nonstops, and its retired person visa accepts income from a portfolio. For buy-borrow-die it is a poor fit: South Africa taxes residents on worldwide income, treats death as a sale (capital gains tax on gains made while resident, which defeats the US step-up), adds 20–25% estate duty on a worldwide estate and charges an exit tax on leaving, and violent crime is high.
+HOW IT SCORES · out of 5, for a US retiree on buy-borrow-die
+Tax on holdings
+3
+out of 5
+Estate
+2
+out of 5
+Lending
+3
+out of 5
+Residency
+4
+out of 5
+Healthcare
+4
+out of 5
+Cost
+4
+out of 5
+Safety
+2
+out of 5
+Climate
+4
+out of 5
+Community
+4
+out of 5
+THE ESSENTIALS
+TAX ON HOLDINGS
+No wealth tax; residents are taxed on worldwide income: most foreign dividends at an effective 20%, foreign interest at marginal rates up to 45%, and 40% of capital gains included in income (at most 18%); the US treaty credit covers only the 15% US tax on dividends, so for someone in a 15% US bracket dividends cost about 5% more; leaving triggers an exit tax on worldwide assets (s9H, at most 18% on the gain).
+ESTATE & INHERITANCE
+Estate duty of 20% above an R3.5M abatement (25% above R30M) on an ordinarily resident decedent's worldwide estate, plus capital gains tax at death on gains made while resident (death is a deemed disposal); foreign assets owned before first becoming resident are deductible (s4(e)), but how that holds for a portfolio rebalanced over decades is unclear; the US–South Africa estate treaty reportedly gives credits only, so below the $15M US exemption (2026) the duty applies in full.
+LENDING & BROKERS
+IBKR reportedly accepts South Africa residents (Oct 2026 review), while Schwab One International reportedly does not; margin by country of residence is unreported, and Fidelity and Vanguard reportedly open no new accounts for residents abroad.
+RESIDENCY
+Retired person visa: at least R37,000/month (about $2,200) from a pension, annuity or retirement account, or from a net worth or combination of assets producing that income; up to 4 years and renewable, with permanent residence on the same income (s27(e)) or on R12M net worth plus a one-off R120,000 payment (financial independence, s27(f)); a White Paper approved by Cabinet in April 2026 would add a minimum age and a higher income, not yet law.
+HEALTHCARE
+Very good private care (UK advice: "a very high standard of private medical care") at hospitals such as Netcare Christiaan Barnard Memorial on the Foreshore, while public care varies; local medical schemes cannot refuse on age but add a late-joiner penalty of up to 75% of the contribution for someone with no prior South African cover, so a new 70-year-old pays roughly R16,000–17,000/month (about $1,000) for comprehensive cover (secondary source).
+SAFETY
+The US rates South Africa Level 2, "exercise increased caution", for crime, terrorism, unrest and kidnapping, and requires its staff to get permission for many townships around Cape Town; UK advice reports violent crime mostly in townships and informal settlements, attacks on the airport roads (use the M3 and N2, not the R300) and muggings of hikers in Table Mountain National Park.
+CLIMATE
+Mediterranean: dry, warm summers (January–February highs about 27°C) and mild, wet winters (July about 18°C by day, 7°C at night), about 500 mm of rain a year, and a strong south-easterly wind in spring and summer; a severe drought nearly ran the city dry in 2015–18.
+COMMUNITY
+English is the first language of about 28% of Capetonians (with Afrikaans and Xhosa) and is widely used in business and daily life, so a newcomer manages in English; the size of the foreign retiree community is not well documented.
+GETTING THERE
+From St. Louis (STL): no nonstop; one stop via Atlanta or Washington, about 19–22 h.
+Cape Town International is about 20 km east of the centre; many long-haul trips connect through Johannesburg, about 2 hours' flight away.
+Routes as of Nov 2026; flying times are estimates.
+WORTH KNOWING
+High violent crime, including carjacking and attacks on the airport roads and mountain trails
+Capital gains tax at death and 20–25% estate duty on the worldwide estate
+Worldwide income tax while resident and an exit tax on leaving
+YOUR PLAN HERE
+PLAN HOLDS
+80
+%
++16 pts vs 64% in St. Louis
+A YEAR HERE
+$81,815
+−26% vs $110,000 in St. Louis
+BY CATEGORY
+St. Louis
+Cape Town
+Housing: $21K here vs $26K in St. Louis, −18%.
+Housing
+$21K
+−18%
+Groceries: $6.9K here vs $11K in St. Louis, −37%.
+Groceries
+$6.9K
+−37%
+Dining out: $5.3K here vs $8.0K in St. Louis, −33%.
+Dining out
+$5.3K
+−33%
+Transport: $7.2K here vs $10K in St. Louis, −28%.
+Transport
+$7.2K
+−28%
+Utilities: $3.9K here vs $5.5K in St. Louis, −28%.
+Utilities
+$3.9K
+−28%
+Healthcare: $9.2K here vs $16K in St. Louis, −42%.
+Healthcare
+$9.2K
+−42%
+Travel: $14K here vs $14K in St. Louis, same.
+Travel
+$14K
+same
+Other: $14K here vs $20K in St. Louis, −28%.
+Other
+$14K
+−28%
+Your St. Louis budget at local prices, with your expat price premium (35%).
+Local tax and estate for Cape Town ready.
+LOCAL TAX & ESTATE
+Wealth tax
+None on a portfolio
+Inheritance tax at 85
+$3.0M
+median, two US-resident children as heirs
+Estate at 85
+median, after local tax
+$9.6M
+−$820K vs $10M staying in St. Louis
+Today’s dollars, from 4,000 simulated futures of your plan with Cape Town as the destination.
+Make Cape Town my destination
+SOURCES
+PwC: South Africa, other taxes · 2026
+PwC: South Africa, income determination · 2026
+IRS: US–South Africa income tax treaty
+PKF: ceasing South African tax residency · 2025
+SAIT compendium: Estate Duty Act s4(e)
+Capital Legacy: how much tax do you pay on a deceased estate
+IRS: estate and gift tax treaties
+South African Embassy (Washington): retired persons visa, updated 2 Apr 2026 · 2026
+Xpatweb: the retired person visa before new rules take hold · 2026
+IBN Immigration: permanent residence on retirement or financial independence · 2026
+GOV.UK: South Africa travel advice, health
+GOV.UK: South Africa travel advice, safety and security
+TravelAdvisory.io: South Africa (US State Department level) · 2026
+Netcare: new Christiaan Barnard Memorial Hospital officially launched
+Discovery: late-joiner penalty (2025)
+Discovery Health Medical Scheme: underwriting policies and protocols (2026) · 2026
+Medicalaid.com: Discovery Classic Comprehensive 2026
+FX Scouts: Interactive Brokers review for South Africa
+YourTaxBase: Charles Schwab for expats (country list, Oct 2026)
+YourTaxBase: best brokerage for US expats · 2026
+SARS: estate duty
+Wikipedia: Cape Town (climate, languages)
+Wikipedia: Cape Town International Airport
+Cost indices for Cape Town are rough estimates, not checked against a current source. Researched November 6, 2026; tax, estate, lending, residency and healthcare re-checked November 15, 2026. Not tax or legal advice.
+
+===== phone · Kotor =====
+No. 38 Kotor
+YOUR PLAN HERE
+77%
+plan holds
++13 pts vs 64% in St. Louis
+1 / 5
+Kotor's walled old town and the bay below the mountains, from the path up to the fortress
+miketnorton · CC BY 2.0
+ME
+TOP PICK 38 OF 75 · MONTENEGRO
+Adriatic fjord town with residence through a €150k home
+Montenegro has no wealth tax, taxes investment income at a flat 15% and levies inheritance tax only on real estate, so a US portfolio passes to children untaxed. Buying a €150k property gives temporary residence, and Kotor's walled old town sits on one of the Adriatic's most striking bays, but healthcare is thin.
+HOW IT SCORES · out of 5, for a US retiree on buy-borrow-die
+Tax on holdings
+4
+out of 5
+Estate
+5
+out of 5
+Lending
+3
+out of 5
+Residency
+3
+out of 5
+Healthcare
+2
+out of 5
+Cost
+3
+out of 5
+Safety
+4
+out of 5
+Climate
+3
+out of 5
+Community
+2
+out of 5
+THE ESSENTIALS
+TAX ON HOLDINGS
+No wealth tax; residents are taxed on worldwide income, with dividends and interest at 15% of the gross amount and capital gains at 15% of the gain, and Kotor's 13% municipal surtax on income tax may raise that to about 17% (whether it applies to capital income is unverified); there is no newcomer regime.
+ESTATE & INHERITANCE
+Inheritance tax of 3–6% applies only to inherited real estate, and close family are reportedly exempt, so a US portfolio passes to US-resident children with no Montenegrin tax; there is no US estate treaty.
+LENDING & BROKERS
+IBKR reportedly accepts residents of all non-sanctioned countries, including Montenegro, though margin terms per country are unknown; Schwab International most likely does not accept Montenegro, which is off its reported list; as a non-EU country, EU PRIIPs limits on US ETFs should not apply, though which IBKR entity carries the account is unconfirmed.
+RESIDENCY
+Temporary residence by owning real estate with a Tax Authority-assessed value of at least €150,000 (since January 2026; older permits are grandfathered), plus means of subsistence and health insurance; renewed yearly, and the time reportedly does not count toward permanent residence.
+HEALTHCARE
+Kotor's hospital covers the bay, with complex cases sent to the Clinical Centre in Podgorica or to Croatia and Serbia; the public system is stretched by newcomers, private clinics are few, and health insurance is a condition of residence.
+SAFETY
+Montenegro is 30th in the 2026 Global Peace Index; UK travel advice warns of pickpockets in tourist spots and of violence between organised crime groups that can affect bystanders.
+CLIMATE
+Hot summers (highs about 31°C in July and August) and mild but very wet winters: about 1,400 mm of rain a year, mostly from November to January, with January lows near 3°C.
+COMMUNITY
+A small but growing foreign community along the bay and in nearby Tivat and Budva (remote workers, retirees, property buyers); outside the tourist trade, English is less common.
+GETTING THERE
+From St. Louis (STL): two stops, for example via Chicago and Istanbul, about 17–21 h.
+Tivat airport is 5 km away and busiest in summer, and Podgorica (65 km) is open year-round; Dubrovnik's airport, with wider service, is about 90 minutes' drive across the Croatian border.
+Routes as of Nov 2026; flying times are estimates.
+WORTH KNOWING
+Weak healthcare: serious care means Podgorica or another country
+Cruise-ship crowds in summer and heavy winter rain
+The property permit renews yearly and builds no path to permanent residence
+YOUR PLAN HERE
+PLAN HOLDS
+77
+%
++13 pts vs 64% in St. Louis
+A YEAR HERE
+$87,339
+−21% vs $110,000 in St. Louis
+BY CATEGORY
+St. Louis
+Kotor
+Housing: $22K here vs $26K in St. Louis, −16%.
+Housing
+$22K
+−16%
+Groceries: $7.2K here vs $11K in St. Louis, −35%.
+Groceries
+$7.2K
+−35%
+Dining out: $7.6K here vs $8.0K in St. Louis, −6%.
+Dining out
+$7.6K
+−6%
+Transport: $8.0K here vs $10K in St. Louis, −20%.
+Transport
+$8.0K
+−20%
+Utilities: $4.4K here vs $5.5K in St. Louis, −20%.
+Utilities
+$4.4K
+−20%
+Healthcare: $8.7K here vs $16K in St. Louis, −46%.
+Healthcare
+$8.7K
+−46%
+Travel: $14K here vs $14K in St. Louis, same.
+Travel
+$14K
+same
+Other: $16K here vs $20K in St. Louis, −20%.
+Other
+$16K
+−20%
+Your St. Louis budget at local prices, with your expat price premium (35%).
+Local tax and estate for Kotor ready.
+LOCAL TAX & ESTATE
+No wealth or inheritance tax modelled for Montenegro: none reaches a US portfolio.
+Estate at 85
+median, borrow and never sell
+$12M
++$1.7M vs $10M staying in St. Louis
+Today’s dollars, from 4,000 simulated futures of your plan with Kotor as the destination.
+Make Kotor my destination
+SOURCES
+PwC: Montenegro, taxes on personal income
+PwC: Montenegro, income determination
+PwC: inheritance and gift tax rates (quick chart)
+Adriacom: Is Montenegro a tax haven?
+BDK Advokati: Montenegro amends the Foreigners Act
+NT Realty: Montenegro property residency rules 2026
+Montenegro Business: healthcare and the boom in international residents
+Portonovi: the healthcare system in Montenegro · 2025
+Clinical Centre of Montenegro: about us
+Immigrant Invest: Montenegro tax rates · 2025
+GOV.UK: Montenegro travel advice, safety and security
+Money.it: GPI 2026 top 50 · 2026
+Climates to Travel: Kotor climate
+Total Croatia News: Dubrovnik–US direct flights continue in 2026
+Wikipedia: Kotor (airports)
+Cost indices verified November 6, 2026 from Numbeo current city index. Low confidence: numbeo has a Kotor page but it could not be read (rate-limited). Mapped unadjusted to Numbeo's Budva row (a similar coastal resort about 20 km away). Researched November 6, 2026; tax, estate, lending, residency and healthcare re-checked November 15, 2026. Not tax or legal advice.
+
+console errors: none

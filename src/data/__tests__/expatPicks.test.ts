@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { CITY_BY_ID } from '../cities'
 import {
   EXPAT_AS_OF,
+  FACTS_CHECKED_AS_OF,
   EXPAT_PICKS,
   EXPAT_PROFILES,
   EXPAT_RANKING_METHOD,
@@ -135,6 +136,14 @@ describe('sources and method', () => {
   it('exports the method, date and labels', () => {
     expect(EXPAT_RANKING_METHOD.length).toBeGreaterThan(100)
     expect(EXPAT_AS_OF).toMatch(/^\d{4}-\d{2}-\d{2}$/)
+    expect(EXPAT_AS_OF).toBe('2026-11-06') // the original research date stays
+  })
+
+  it('dates the fact re-check: an ISO date on or after the research date', () => {
+    expect(FACTS_CHECKED_AS_OF).toMatch(/^\d{4}-\d{2}-\d{2}$/)
+    expect(FACTS_CHECKED_AS_OF).toBe('2026-11-15')
+    expect(Number.isNaN(Date.parse(FACTS_CHECKED_AS_OF))).toBe(false)
+    expect(FACTS_CHECKED_AS_OF >= EXPAT_AS_OF).toBe(true)
     expect(Object.keys(EXPAT_SCORE_LABELS).sort()).toEqual([...SCORE_KEYS].sort())
     expect(EXPAT_SCORE_LABELS.visa).toBe('Residency')
   })

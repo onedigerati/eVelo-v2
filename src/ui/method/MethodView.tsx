@@ -588,14 +588,22 @@ export function MethodView() {
               Some destinations tax the portfolio itself. When nothing is ever
               sold, these taxes cost more than tax on gains. Each destination
               carries its current-law schedule from sourced research, converted
-              to today’s dollars. Spain’s cities use their own region’s rules.
+              to today’s dollars. Spain’s cities use their own region’s rules,
+              Zurich its canton’s, and US cities in states with an estate or
+              inheritance tax their state’s. A destination’s tax applies from
+              the move. A taxed home city’s applies from today in the plan
+              that stays home, as if you had always lived there, so the
+              comparison with staying home is taxed on both sides. A move
+              charges only the destination’s tax, not the home’s for the years
+              before it.
             </p>
             <ul className="mlist">
               <li>
-                <b>Wealth tax, every year.</b> At each year-end after the move,
+                <b>Wealth tax, every year.</b> At each year-end after the move
+                (or from the first year-end, for a taxed home city),
                 the marginal bands are applied to your real net worth (portfolio
                 minus loan) or, where the law taxes the gross value (Italy’s
-                IVAFE), to the portfolio. Because the bands are in today’s
+                IVAFE, the Netherlands’ Box 3), to the portfolio. Because the bands are in today’s
                 dollars, the thresholds hold steady in real terms. The borrow
                 plan adds the tax to the loan, before that month’s margin check;
                 the sell plan sells shares to pay it, with capital-gains tax on
@@ -605,11 +613,14 @@ export function MethodView() {
                 <b>Inheritance tax, at the end.</b> At the horizon both estates
                 are split equally between two heirs, assumed to be US-resident
                 adult children. Each share, less its allowance, runs through the
-                bands, and the tax comes off the estate.
+                bands, and the tax comes off the estate. A tax charged on the
+                whole estate (the UK, South Korea, South Africa, the US states)
+                is split the same way with its allowance and thresholds halved,
+                which gives the same total.
               </li>
               <li>
                 <b>Who the tax reaches.</b> Where the tax falls on the heir by
-                the heir’s residence (Spain, Thailand, Vietnam), US assets
+                the heir’s residence (Spain, Thailand, Vietnam, Turkey), US assets
                 passing to US-resident children are out of scope, so nothing is
                 charged. Where it falls on the estate of a resident (France,
                 Greece, Italy, Ecuador, Colombia, the Philippines and others), it
@@ -622,6 +633,9 @@ export function MethodView() {
               the income-tax base) is ignored, so is every treaty credit, and
               there is no US estate tax (the 2026 exemption is $15 million, so it
               rarely applies). Thresholds are per person, as for a single owner.
+              Tax on gains at death (Canada, Australia, South Africa) and exit
+              taxes on leaving need a cost basis the model doesn’t carry, so
+              they are left out.
               Phased-in rate cuts use the rate the law settles on. None of this
               is tax advice.
             </p>
@@ -672,7 +686,9 @@ export function MethodView() {
               <li>
                 <b>Taxes are simplified.</b> There is no US estate tax: the 2026
                 federal exemption is $15 million per person, and estates above
-                it can owe up to 40%. No state income or estate taxes. Capital
+                it can owe up to 40%. No state income tax; a state estate or
+                inheritance tax applies where you live at the end: your
+                destination’s, or your home city’s if you stay. Capital
                 gains use one flat rate; dividend tax is a flat drag.
               </li>
               <li>

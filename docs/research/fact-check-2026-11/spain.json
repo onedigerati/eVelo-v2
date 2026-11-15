@@ -564,6 +564,7 @@
         }
       ],
       "modelMismatch": "ES_CATALONIA in src/data/localTaxes.ts uses the state breakpoints (ES_STEPS) for the Catalan scale, so its fifth band starts at €1,336,999.51 of base; the Catalan scale in the Agencia Tributaria's 2025 manual starts that band at €1,336,999.75 (page: .../patrimonio-2025/.../escalas-autonomicas/comunidad-autonoma-cataluna.html). A 24-cent difference with no effect on results. Every rate (0.21, 0.315, 0.525, 0.945, 1.365, 1.785, 2.205, 2.75, 3.48), the other breakpoints, the €500k exemption and the €20M start of the top band match the model.",
+      "modelled": "ES_CATALONIA now uses the Catalan scale's own fifth step, €1,336,999.75 (AEAT manual added as a source); the other steps are the state scale's. Effect under $1.",
       "note": "3.48% applies only above €20M of taxable base; below that the top rate is 2.75%. The profiles' \"at up to 3.48%\" is right as a ceiling."
     },
     {
