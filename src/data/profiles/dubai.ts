@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'About 92% of Dubai\'s nearly 4 million people are expatriates, with over 100,000 Britons the largest Western group and English the everyday working language; the population is young and working, and retirees are few.',
     access:
-      'Emirates flies nonstop to 12 US airports, among them New York JFK, Newark, Boston, Washington, Chicago, Dallas, Houston, Miami, Orlando, Los Angeles, San Francisco and Seattle; flights were suspended during the 2026 conflict and restored by May 2026, and schedules can still change at short notice.',
+      'Dubai International (DXB), one of the world\'s busiest hubs, is close to the old centre and linked by metro; flights were suspended during the 2026 conflict and restored by May 2026, and schedules can still change at short notice.',
   },
   drawbacks: [
     'Summers above 40°C for about five months',

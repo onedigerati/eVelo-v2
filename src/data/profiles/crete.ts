@@ -19,7 +19,7 @@ const profile: ExpatProfile = {
     climate: 'Mediterranean: in Chania, August highs average about 30°C and January about 14°C (lows 8°C), with about 2,800 hours of sun and most rain in winter.',
     community:
       'Mostly older British and German expats, plus Americans linked to the US naval base at Souda Bay; locals in the main towns get by in English.',
-    access: 'No US nonstops to any Greek island: connect through Athens (about an hour\'s flight) or fly direct from many European cities to Chania or Heraklion.',
+    access: 'Heraklion and Chania airports serve the island, with flights to many European cities and about an hour\'s flight to Athens; ferries also run to Piraeus.',
   },
   drawbacks: [
     'Complex care can mean a trip to Heraklion or Athens',

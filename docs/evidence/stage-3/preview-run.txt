@@ -1,0 +1,8 @@
+$ node verify3.mjs http://localhost:4321 preview  (production build, home changed on the Plan page without reload)
+desktop SD→Lisbon: "From San Diego (SAN): no nonstop; one stop via Chicago or Toronto, about 14–16 h.\nHumberto Delgado, Portugal's main hub, is inside the city about 7 km from the centre and linked by metro; trains run to Porto in about 3 hours and to the Algarve.\nRoutes as of Nov 2026; flying times are estimates."
+desktop LON→Lisbon: "From London (LON): nonstop to Lisbon (LIS), about 2–3 h.\nHumberto Delgado, Portugal's main hub, is inside the city about 7 km from the centre and linked by metro; trains run to Porto in about 3 hours and to the Algarve.\nRoutes as of Nov 2026; flying times are estimates."
+desktop London own: "Heathrow, west of the centre, is linked by the Elizabeth line and Heathrow Express, and Gatwick, Stansted, Luton and City add more; Eurostar runs from St Pancras to Paris and Brussels."
+phone SD→Lisbon: "From San Diego (SAN): no nonstop; one stop via Chicago or Toronto, about 14–16 h.\nHumberto Delgado, Portugal's main hub, is inside the city about 7 km from the centre and linked by metro; trains run to Porto in about 3 hours and to the Algarve.\nRoutes as of Nov 2026; flying times are estimates."
+phone LON→Lisbon: "From London (LON): nonstop to Lisbon (LIS), about 2–3 h.\nHumberto Delgado, Portugal's main hub, is inside the city about 7 km from the centre and linked by metro; trains run to Porto in about 3 hours and to the Algarve.\nRoutes as of Nov 2026; flying times are estimates."
+phone London own: "Heathrow, west of the centre, is linked by the Elizabeth line and Heathrow Express, and Gatwick, Stansted, Luton and City add more; Eurostar runs from St Pancras to Paris and Brussels."
+console errors: none

@@ -19,7 +19,7 @@ const profile: ExpatProfile = {
     climate: 'Warm summers (August highs about 28°C) and cool, damp winters: January highs about 9°C with lows near 4°C, about 865 mm of rain and some 15 snowy days a year.',
     community:
       'Turkey\'s largest expat population, mostly professionals and students in Cihangir, Beşiktaş, the Bosphorus villages and Kadıköy; retirees mostly choose the southern coast instead.',
-    access: 'Istanbul Airport is Turkish Airlines\' hub, with nonstops to New York JFK, Atlanta, Seattle and other US cities (2026), and a second airport, Sabiha Gökçen, on the Asian side.',
+    access: 'Istanbul Airport, a major global hub north of the city on the European side, is linked to the centre by metro; Sabiha Gökçen, the second airport, serves the Asian side.',
   },
   drawbacks: [
     'Lira swings and high inflation make local costs unpredictable',

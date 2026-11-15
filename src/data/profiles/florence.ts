@@ -18,7 +18,7 @@ const profile: ExpatProfile = {
       'IBKR is reportedly the only option: Schwab International\'s online form reportedly does not accept Italy residents; EU PRIIPs rules reportedly block new buys of US-listed ETFs, not holding them.',
     climate: 'Hot, humid summers often above 35°C in the river basin, and cool, damp winters with occasional frost.',
     community: 'A large, long-established American and British community, helped by many US university programmes; English is common in the centre.',
-    access: 'No regular US nonstop to Florence or Pisa could be confirmed for 2026; most trips go via Rome (about 1.5 hours by fast train), Milan or a European hub.',
+    access: 'Florence\'s small airport (FLR) is about 5 km from the centre, with a tram link; Pisa\'s airport is about an hour by train, and Rome, the main hub, about 1.5 hours by fast train.',
   },
   drawbacks: [
     'IVAFE at 0.2% a year on the whole portfolio, plus 26% on dividends and interest',

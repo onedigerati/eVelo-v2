@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'One of the largest and most diverse metros in the US, with retirees spread across beach towns, the Westside, Pasadena and the valleys; newcomers find communities for almost any background or interest.',
     access:
-      'LAX is one of the world\'s busiest airports, with nonstops across the US and to Asia, Europe, Australia, Latin America and the Pacific; Burbank, Long Beach and Ontario add easy domestic flights.',
+      'LAX, one of the world\'s busiest airports, is on the coast south-west of downtown, and traffic can make the trip slow; Burbank, Long Beach and Ontario add easier domestic flights.',
   },
   drawbacks: [
     'Very high housing costs, and home insurance that is hard to find in fire zones after insurers pulled back',

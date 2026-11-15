@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'An English-speaking capital with a large international population and a sizeable American community; most newcomers are working-age, but daily life needs no other language.',
     access:
-      'Dublin Airport has nonstops to more than 20 US cities on Aer Lingus, Delta, American, United and JetBlue (some seasonal), and most Terminal 2 flights include US preclearance, so you skip immigration queues on landing.',
+      'Dublin Airport is about 10 km north of the centre, reached by bus, coach or taxi; ferries cross the Irish Sea to Holyhead and Liverpool.',
   },
   drawbacks: [
     'Very high rents and house prices, and a tight rental market',

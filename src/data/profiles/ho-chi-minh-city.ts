@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'The largest foreign community in Vietnam, put at more than 200,000 foreigners living and working in the city by consulates (2021); Vietnam was 5th of 46 in the 2025 edition of InterNations\' Expat Insider, first for personal finance.',
     access:
-      'Vietnam Airlines reportedly flies to San Francisco nonstop, and United serves Los Angeles via Hong Kong; otherwise connect through an Asian hub; Metro Line 1 (opened Dec 2024) runs 19.7 km from Bến Thành to the eastern suburbs.',
+      'Tân Sơn Nhất airport (SGN) sits inside the city, close to the centre; Metro Line 1 (opened Dec 2024) runs 19.7 km from Bến Thành to the eastern suburbs.',
   },
   drawbacks: [
     'No residence route for a retiree: life on repeated 90-day e-visas',

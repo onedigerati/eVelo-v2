@@ -22,7 +22,7 @@ const profile: ExpatProfile = {
     community:
       'A town of about 15,000 (2018) with a foreign community dating back about 50 years, English-speaking doctors and brokers, and long-term expats often in Jucanya across the river; no headcount was found.',
     access:
-      'La Aurora (GUA) in Guatemala City is about 3 hours by road (shared shuttles about $32–40), with nonstops to Miami, Fort Lauderdale, Atlanta, Dallas, Houston, Chicago, Newark, New York-JFK and Los Angeles.',
+      'La Aurora (GUA) in Guatemala City is about 3 hours by road, with shared shuttles daily; boats link Panajachel to the other villages around Lake Atitlán.',
   },
   drawbacks: [
     'No hospital in town, and serious care is about 3 hours away in Guatemala City',

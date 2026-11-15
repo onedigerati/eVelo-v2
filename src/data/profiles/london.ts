@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'English-speaking, with one of the largest American communities abroad and residents from everywhere; nothing about daily life needs another language.',
     access:
-      'Heathrow has nonstops to about 30 US cities on British Airways, Virgin Atlantic, American, United and Delta, and Gatwick adds more; it is the best-connected place to the US outside North America.',
+      'Heathrow, west of the centre, is linked by the Elizabeth line and Heathrow Express, and Gatwick, Stansted, Luton and City add more; Eurostar runs from St Pancras to Paris and Brussels.',
   },
   drawbacks: [
     'No visa for a retiree living on a portfolio: visits of up to 6 months only',

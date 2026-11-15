@@ -19,7 +19,7 @@ const profile: ExpatProfile = {
     climate: 'Hot summers (highs about 31°C in July and August) and mild but very wet winters: about 1,400 mm of rain a year, mostly from November to January, with January lows near 3°C.',
     community: 'A small but growing foreign community along the bay and in nearby Tivat and Budva (remote workers, retirees, property buyers); outside the tourist trade, English is less common.',
     access:
-      'Tivat airport is 5 km away, with flights to Belgrade, London and Paris and summer charters, and Podgorica (65 km) is open year-round; for the US, United flies Newark–Dubrovnik seasonally (2026), about 90 minutes\' drive across the Croatian border.',
+      'Tivat airport is 5 km away and busiest in summer, and Podgorica (65 km) is open year-round; Dubrovnik\'s airport, with wider service, is about 90 minutes\' drive across the Croatian border.',
   },
   drawbacks: [
     'Weak healthcare: serious care means Podgorica or another country',

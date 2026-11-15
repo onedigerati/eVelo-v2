@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'Quintana Roo is among the top states for new US temporary residents, but the foreign community reportedly leans to remote workers and tourists more than retirees (secondary source).',
     access:
-      'Cancún airport (CUN), about 70 km away, is Mexico\'s busiest for international passengers, with seasonal or year-round service to about 44 US cities on nine US airlines plus Mexican carriers.',
+      'Cancún airport (CUN), about 70 km north, is under an hour by road or shuttle bus; ferries cross to Cozumel.',
   },
   drawbacks: [
     'A small local hospital: anything serious means Cancún, 70 km away',

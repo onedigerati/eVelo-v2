@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'One of the fastest-growing US metros, full of newcomers from the Northeast and Midwest and a long-standing draw for Black professionals and retirees; retirees settle in the northern and eastern suburbs and in active-adult communities around the metro.',
     access:
-      'Hartsfield-Jackson (ATL), Delta\'s main hub and the world\'s busiest airport by passengers, has nonstops to nearly every US city and to Europe, Latin America, Africa and Asia; MARTA rail runs from the terminal to downtown and Midtown.',
+      'Hartsfield-Jackson (ATL), the world\'s busiest airport by passengers, is just south of downtown; MARTA rail runs from the terminal to downtown and Midtown.',
   },
   drawbacks: [
     'Heavy traffic and car-dependent sprawl',

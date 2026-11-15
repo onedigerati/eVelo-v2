@@ -22,7 +22,7 @@ const profile: ExpatProfile = {
     community:
       'French is the common language, and Quebec law has government bodies serve immigrants in English only for their first 6 months, but English is widely spoken downtown and in the west of the island, and McGill and Concordia anchor a large English-speaking community; fewer Americans than in Toronto or Vancouver.',
     access:
-      'Montréal–Trudeau has nonstops to dozens of US cities on Air Canada, American, Delta and United, cleared through US preclearance before boarding; New York is about 1.5 hours by air, and the Vermont border is about an hour\'s drive.',
+      'Montréal–Trudeau (YUL) is about 20 km west of downtown, linked by the 747 express bus; trains run to Ottawa, Toronto and Québec City, and the Vermont border is about an hour\'s drive.',
   },
   drawbacks: [
     'No retiree visa; the Investor Program needs CAD 2M, French and recent management experience',

@@ -19,7 +19,7 @@ const profile: ExpatProfile = {
     climate: 'Continental: July highs about 27°C with heatwaves above 35°C, January highs about 4°C with lows near freezing and grey skies, and about 600–670 mm of rain a year.',
     community:
       'A city of about 2 million, where about 740,000 residents were first-generation migrants in 2023, home to UN, OPEC and OSCE offices and a large international community; English is widely spoken, but the permit, paperwork and daily life run in German.',
-    access: 'Austrian Airlines flies nonstop to New York JFK, Washington Dulles, Boston and Chicago O\'Hare (Boston and Chicago paused in early 2026), and other US routes are reported but unverified.',
+    access: 'Vienna International (VIE) is about 18 km south-east of the centre, about 16 minutes on the City Airport Train; trains run to Bratislava, Budapest, Prague and Munich.',
   },
   drawbacks: [
     'Yearly Austrian tax on the growth of unregistered funds (likely US ETFs), on top of 27.5% on dividends',

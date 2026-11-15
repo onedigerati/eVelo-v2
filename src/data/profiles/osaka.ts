@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'Osaka City counted 214,337 registered foreigners at the end of 2025, mostly Chinese (60,946), Korean (56,539), Vietnamese (32,608) and Nepalese (19,345), with only about 2,100 Americans, out of Japan\'s record 4.1 million foreign residents; English-speaking retirees are few, and daily life needs more Japanese than in central Tokyo.',
     access:
-      'Kansai airport (KIX) has nonstops to Honolulu (JAL, Hawaiian), Los Angeles (JAL; United from Mar 2027) and San Francisco (United), with Seattle due in May 2027; other US cities mean a connection, often via Tokyo.',
+      'Kansai (KIX), on an island in Osaka Bay, is about an hour from the city by express train; Itami (ITM), closer in, handles domestic flights, and the shinkansen reaches Tokyo in about 2.5 hours.',
   },
   drawbacks: [
     'No residence route on a portfolio: Long Stay ends after a year at most and needs JPY 30m in savings',

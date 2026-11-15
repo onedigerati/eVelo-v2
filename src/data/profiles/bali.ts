@@ -19,7 +19,7 @@ const profile: ExpatProfile = {
       'IBKR reportedly accepts Indonesia residents (IBKR Pro), and Schwab One International\'s online form reportedly accepted Indonesia in Oct 2026; margin by country of residence is unreported, and Fidelity and Vanguard open no accounts for residents abroad.',
     climate: 'Tropical: hot and humid all year, with a rainy season (roughly October–March) that brings local flooding; Ubud\'s hills are a little cooler.',
     community: 'A very large international community, skewed to younger digital nomads in Canggu; retirees tend to prefer Sanur and Ubud.',
-    access: 'No US nonstops: connect via Singapore, Doha, Dubai, Tokyo, Seoul, Taipei or Hong Kong, typically 24+ hours; the airport closes for the Nyepi day of silence each March.',
+    access: 'Ngurah Rai (DPS) is in the south near Kuta, so inland and northern areas mean a long drive on busy roads; the airport closes for Nyepi, the day of silence, each year (usually March).',
   },
   drawbacks: [
     'US dividends taxed at up to 35% every year, with no retiree exemption',

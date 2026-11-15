@@ -19,7 +19,7 @@ const profile: ExpatProfile = {
       'IBKR reportedly accepts Mexico residents (IBKR Pro), and Schwab One International\'s online form reportedly accepted Mexico in Oct 2026; margin by country of residence is unreported, and Fidelity and Vanguard open no accounts for residents abroad.',
     climate: 'Hot all year, often 40°C (104°F) in April–May, with a humid rainy season June–October and hurricane exposure.',
     community: 'A sizeable, growing US, Canadian and European community in the centre and northern suburbs, less English-dominated than Puerto Vallarta or San Miguel.',
-    access: 'A few US nonstops, reportedly to Houston, Miami, Dallas and Orlando (check current schedules); otherwise connect via Mexico City or drive 4 hours to Cancún.',
+    access: 'Mérida\'s airport (MID) is about 7 km south of the centre; Mexico City is the usual connecting hub, and Cancún\'s much busier airport is about 4 hours by road.',
   },
   drawbacks: [
     'Punishing heat in spring and summer, and high air-conditioning bills',

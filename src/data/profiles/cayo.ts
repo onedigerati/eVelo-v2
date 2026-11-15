@@ -22,7 +22,7 @@ const profile: ExpatProfile = {
     community:
       'Expats cluster along the Western Highway around San Ignacio and Santa Elena (about 21,000 people together), a more rural scene than the cayes with no reliable headcount found; English is Belize\'s official language, which makes daily life easy.',
     access:
-      'Belize City (BZE) is about 100 km east by the Western Highway, with nonstops to Miami, Dallas, Houston, Atlanta, Los Angeles and Charlotte (seasonal) on American, United, Delta, Southwest and Alaska, plus seasonal routes from Denver, Chicago, Newark and others.',
+      'Belize City\'s international airport (BZE) is about 100 km east by the Western Highway; the Guatemalan border is a few minutes west of San Ignacio.',
   },
   drawbacks: [
     'Weak healthcare: anything serious means Belize City or an expensive flight abroad',

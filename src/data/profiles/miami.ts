@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'A large, international metro where about 54% of the county\'s residents were born abroad (2024) and Spanish is as common as English; retirees and newcomers from the Northeast cluster in Coral Gables, Brickell, the beaches and Broward and Palm Beach to the north.',
     access:
-      'Miami International (MIA), American Airlines\' Latin American hub, has more flights to Latin America and the Caribbean than any other US airport, about 99 international destinations in all, including Europe; Fort Lauderdale (FLL), 30 miles north, adds low-cost routes.',
+      'Miami International (MIA), the main gateway to Latin America and the Caribbean, is about 13 km west of downtown, linked by Metrorail; Fort Lauderdale (FLL), about 45 km north, adds low-cost routes.',
   },
   drawbacks: [
     'Home insurance among the dearest in the US (roughly $6,000 a year for a typical Miami-Dade house by private estimates, 2026), plus flood cover; Citizens cut Miami-Dade rates about 14% from June 2026',

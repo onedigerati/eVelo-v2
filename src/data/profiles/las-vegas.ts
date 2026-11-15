@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'Large retiree communities in Summerlin, Henderson and the Sun City developments, with many newcomers from California; daily life in the suburbs is far from the Strip.',
     access:
-      'Harry Reid International (LAS) has nonstops to most US cities and about two dozen international markets, including London Heathrow (British Airways, Virgin Atlantic), Canada and Mexico, with seasonal Qantas flights from Sydney, three a week, from 29 December 2026 to March 2027.',
+      'Harry Reid International (LAS) sits next to the south end of the Strip, a short drive from downtown, and reaches about two dozen international markets besides most of the country.',
   },
   drawbacks: [
     'Thin specialist care; complex cases often go out of state',

@@ -1,0 +1,5 @@
+$ node verify3.mjs http://localhost:4322 dev  (home changed in the store while the profile stays open)
+live before: "From San Diego (SAN): no nonstop; one stop via Chicago or Toronto, about 14–16 h.\nHumberto Delgado, Portugal's main hub, is inside the city about 7 km from the centre and linked by metro; trains run to Porto in about 3 hours and to the Algarve.\nRoutes as of Nov 2026; flying times are estimates."
+live after: "From London (LON): nonstop to Lisbon (LIS), about 2–3 h.\nHumberto Delgado, Portugal's main hub, is inside the city about 7 km from the centre and linked by metro; trains run to Porto in about 3 hours and to the Algarve.\nRoutes as of Nov 2026; flying times are estimates."
+sheet still open: true
+console errors: none

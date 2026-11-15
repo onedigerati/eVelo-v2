@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'Japan had a record 4.1 million foreign residents at the end of 2025, mostly working-age and from China, Vietnam and Korea, and Tokyo has the largest share; with no retiree visa, the English-speaking retiree community is small, and daily life outside central areas needs some Japanese.',
     access:
-      'Haneda and Narita have nonstops to more than a dozen US cities on ANA, JAL, United, Delta and American, including Los Angeles, San Francisco, Seattle, Dallas, Houston, Chicago, New York, Washington, Atlanta and Honolulu.',
+      'Haneda (HND) is about 30 minutes from central Tokyo and Narita (NRT) about an hour by express train; the shinkansen runs to Kyoto, Osaka and beyond.',
   },
   drawbacks: [
     'No residence route on a portfolio: Long Stay ends after a year at most and needs JPY 30m in savings',

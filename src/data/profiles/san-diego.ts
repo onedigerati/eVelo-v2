@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'A large retiree population, many of them Navy and Marine Corps veterans, plus steady arrivals from colder states; coastal towns such as La Jolla, Coronado and Carlsbad have long-established retiree communities.',
     access:
-      'San Diego International (SAN) has 87 nonstop destinations (2026), mostly domestic, plus London Heathrow, Munich, Amsterdam (seasonal), Panama City and Canada; for Asia and most long-haul flights, LAX is about two hours north, and Tijuana\'s airport across the border adds Mexico.',
+      'San Diego International (SAN) is about 5 km from downtown; LAX is about two hours north, and Tijuana\'s airport is reached across the border by the Cross Border Xpress bridge.',
   },
   drawbacks: [
     'Housing costs near the top of the US, with median house prices around $1M',

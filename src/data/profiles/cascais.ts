@@ -22,7 +22,7 @@ const profile: ExpatProfile = {
     community:
       'AIMA counted about 56,000 foreign residents in the municipality in 2025, among the most in Portugal; Brazilians lead, followed by Italians, Britons (over 2,600 in 2020–23) and other Europeans, and about 15 international schools serve the area.',
     access:
-      'Commuter trains on the 25 km Cascais Line and the A5 motorway link the town to Lisbon, whose airport has nonstops to about ten US cities on TAP, United, Delta and American.',
+      'Commuter trains on the 25 km Cascais Line and the A5 motorway link the town to Lisbon, whose airport, Portugal\'s main hub, is about 30–40 minutes\' drive away.',
   },
   drawbacks: [
     'Among Portugal\'s most expensive property markets and living costs',

@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     climate: 'Days in the 70s–80s°F and nights in the 60s all year, with afternoon rains roughly May–November.',
     community: 'Over 1,500 expats (2025, secondary source), mostly North American retirees, in a town where Spanish still dominates daily life.',
     access:
-      'Juan Santamaría (SJO) is about 30–45 minutes away, with broad US nonstops: American (Charlotte, Dallas, Miami), United (Houston, Newark, San Francisco), Delta (Atlanta), Southwest, JetBlue, Alaska (Los Angeles) and Avianca.',
+      'Juan Santamaría (SJO), Costa Rica\'s main airport, is about 30–45 minutes away by road, among the shortest airport runs in the Central Valley.',
   },
   drawbacks: [
     'Bill 25.796 would add a 15% tax on foreign dividends and interest if it passes',

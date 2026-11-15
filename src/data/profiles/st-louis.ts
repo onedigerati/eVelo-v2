@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'An affordable metro whose newcomers are mostly regional; retirees settle in suburbs such as Kirkwood, Webster Groves, Clayton and St. Charles, with free entry to the art museum, zoo, history and science museums in Forest Park.',
     access:
-      'St. Louis Lambert (STL), a large Southwest base, has nonstops to most big US cities; abroad, Lufthansa flies to Frankfurt (three a week, five from June to October 2026) and British Airways began London Heathrow flights in April 2026 (four a week in summer), plus Toronto, Mexico and the Caribbean.',
+      'St. Louis Lambert (STL) is about 20 km north-west of downtown, linked by the MetroLink light rail.',
   },
   drawbacks: [
     'One of the highest homicide rates of any US city, concentrated in north city',

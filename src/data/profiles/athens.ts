@@ -19,7 +19,7 @@ const profile: ExpatProfile = {
     climate: 'Hot, dry summers with frequent 40°C heatwaves and wildfire smoke; short, mild winters.',
     community: 'A smaller English-speaking retiree scene than Portugal or Spain, growing in the southern coastal suburbs (Glyfada, Vouliagmeni); English is widely spoken.',
     access:
-      'The only Greek airport with US nonstops: Delta from Atlanta and Boston and American from Philadelphia year-round, plus seasonal flights from New York, Chicago, Washington Dulles, Charlotte and Dallas (2026).',
+      'Athens International, Greece\'s main hub, is about 35 km east of the centre and linked by metro and suburban rail; ferries from Piraeus and short flights reach the islands.',
   },
   drawbacks: [
     'Extreme summer heat and wildfire smoke are getting worse',

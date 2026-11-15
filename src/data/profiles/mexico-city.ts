@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
       'Subtropical highland at 2,240 m: mild all year, with cool dry winters, a summer rainy season, and air pollution that has improved but persists; the altitude can matter for heart and lung conditions.',
     community:
       'A large US population, but skewed to remote workers rather than retirees: the city took the largest share of new US temporary residents (1,619, or 19%, in January–September 2022).',
-    access: 'Mexico City airport (MEX) has nonstops to about 28 US cities on Aeroméxico, American, Delta and United.',
+    access: 'Benito Juárez International (MEX) is inside the city, about 5 km east of the centre and on the Metro; the newer Felipe Ángeles airport (NLU), about 45 km north, handles mostly domestic flights.',
   },
   drawbacks: [
     'A sprawling megacity with street crime, traffic and air pollution',

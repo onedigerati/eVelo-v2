@@ -22,7 +22,7 @@ const profile: ExpatProfile = {
     community:
       'A town of about 13,500 (2017 estimate), known as an expat and retiree town, partly for the care across the border, but no headcount was found; English is Belize\'s official language.',
     access:
-      'Belize City (BZE), 84 miles south, about 2 hours by road (unverified), has year-round nonstops to Atlanta, Dallas, Houston, Los Angeles and Miami; Corozal\'s airstrip flies only to San Pedro, and Chetumal\'s airport has no US nonstops.',
+      'Belize City\'s international airport (BZE) is 84 miles south, roughly 2 hours by road; Corozal\'s airstrip flies only to San Pedro, and Chetumal, Mexico, is just across the border.',
   },
   drawbacks: [
     'Serious care means crossing into Mexico or a flight abroad',

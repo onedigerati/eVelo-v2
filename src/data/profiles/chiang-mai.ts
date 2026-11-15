@@ -19,7 +19,7 @@ const profile: ExpatProfile = {
       'IBKR reportedly accepts Thailand residents (IBKR Pro), and Schwab One International\'s online form reportedly accepted Thailand in Oct 2026; margin by country of residence is unreported, and Fidelity and Vanguard open no accounts for residents abroad.',
     climate: 'A pleasant cool season (November–February), then a hot, smoky burning season (roughly February–April) with some of the world\'s worst air quality.',
     community: 'A large, long-standing Western retiree and digital-nomad community, with many English-language clubs and services.',
-    access: 'No US nonstops; connect via Bangkok, Tokyo, Seoul or Taipei, typically 20+ hours.',
+    access: 'Chiang Mai airport is about 4 km from the old city; Bangkok is about an hour by air or an overnight train ride.',
   },
   drawbacks: [
     'Burning-season air pollution is severe, and many expats leave for 2–3 months',

@@ -18,7 +18,7 @@ const profile: ExpatProfile = {
       'IBKR reportedly accepts Spain residents (likely through its EU entity), and Schwab International reportedly accepts them too, but Schwab reportedly bars Europe residents from taking cash out through margin, so plan on IBKR margin; EU PRIIPs rules reportedly block new buys of US-listed ETFs, not holding them.',
     climate: 'Mild winters (days about 17°C) and hot, humid summers; the October 2024 floods showed the flash-flood risk.',
     community: 'A growing English-speaking expat scene in Ruzafa, the centre and the coastal suburbs, with about 4,900 Americans and 9,400 Britons registered in the province (1 Jan 2025), though daily life runs in Spanish and Valencian.',
-    access: 'No US nonstop found; connect via Madrid, Barcelona, Lisbon or another European hub.',
+    access: 'Valencia airport (VLC) is about 8 km west of the centre, linked by metro; high-speed trains reach Madrid in under 2 hours, and Madrid, Barcelona and Lisbon are the usual connecting hubs.',
   },
   drawbacks: [
     'Yearly wealth tax on net wealth above €2M, at up to 3.5%',

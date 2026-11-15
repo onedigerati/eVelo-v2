@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'A city that lost people for decades and is now drawing newcomers with its universities, hospitals and low costs; the population is older than in most US cities, but the newcomer and retiree networks are smaller than in the Sun Belt.',
     access:
-      'Pittsburgh International (PIT) has nonstops to most large US cities, London Heathrow on British Airways year-round, Dublin on Aer Lingus (since May 2026), seasonal Reykjavik on Icelandair, Toronto on Air Canada and seasonal Caribbean flights; most other international trips connect.',
+      'Pittsburgh International (PIT) is about 30 km west of downtown, roughly 30 minutes by car.',
   },
   drawbacks: [
     'Pennsylvania\'s 4.5% inheritance tax on what children inherit, with no exemption amount',

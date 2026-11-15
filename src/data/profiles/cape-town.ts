@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'English is the first language of about 28% of Capetonians (with Afrikaans and Xhosa) and is widely used in business and daily life, so a newcomer manages in English; the size of the foreign retiree community is not well documented.',
     access:
-      'United flies nonstop to Newark (year-round) and Washington Dulles, and Delta to Atlanta (some southbound flights stop in Johannesburg).',
+      'Cape Town International is about 20 km east of the centre; many long-haul trips connect through Johannesburg, about 2 hours\' flight away.',
   },
   drawbacks: [
     'High violent crime, including carjacking and attacks on the airport roads and mountain trails',

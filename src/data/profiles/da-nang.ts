@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'A growing scene of long-stay foreigners, remote workers and retirees, most on the 90-day e-visa (the city had 6.3 million international visitors in 2025); no headcount of foreign residents was found.',
     access:
-      'Da Nang airport (DAD) has no US nonstops; it has direct flights to Seoul, Tokyo, Taipei, Hong Kong, Singapore and Bangkok for a one-stop trip.',
+      'Da Nang airport (DAD) is in the city, minutes from the beaches, with flights to Seoul, Tokyo, Taipei, Hong Kong, Singapore and Bangkok; Hoi An is about 30 km south, and the north–south railway runs through.',
   },
   drawbacks: [
     'No residence route for a retiree: life on repeated 90-day e-visas',

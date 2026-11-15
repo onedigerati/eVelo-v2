@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'A large international city where nearly everyone speaks English, with a big English-speaking expat population (mostly working-age); the retiree community is smaller, but daily life rarely needs Dutch.',
     access:
-      'Schiphol is a KLM and Delta hub with nonstops to more than a dozen US cities, including New York, Atlanta, Detroit, Minneapolis, Chicago, Boston, Washington, Houston, Los Angeles, San Francisco and Seattle; trains reach the centre in about 15 minutes.',
+      'Schiphol, one of Europe\'s largest hubs, is about 15 minutes from the centre by train; high-speed trains run on to Brussels, Paris and Germany.',
   },
   drawbacks: [
     'Box 3 taxes about 2.2% of the portfolio a year, so buy-borrow-die loses its main advantage',

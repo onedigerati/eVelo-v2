@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'One of the largest retiree populations in the US, from Sun City and the active-adult towns of the West Valley to the snowbirds who arrive each winter; newcomers from California and the Midwest keep the metro growing.',
     access:
-      'Phoenix Sky Harbor (PHX), an American hub and a big Southwest base, has nonstops to most US cities, London Heathrow (British Airways and American), Taipei (STARLUX since January 2026), Canada and Mexico.',
+      'Phoenix Sky Harbor (PHX) is about 5 km east of downtown, linked to light rail by the PHX Sky Train.',
   },
   drawbacks: [
     'Four months or more of 100 °F heat each summer',

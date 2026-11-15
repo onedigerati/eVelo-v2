@@ -18,7 +18,7 @@ const profile: ExpatProfile = {
       'IBKR reportedly accepts Malaysia residents (IBKR Pro), and Schwab One International\'s online form reportedly accepted Malaysia in Oct 2026; margin by country of residence is unreported, and Fidelity and Vanguard open no accounts for residents abroad.',
     climate: 'Tropical: hot and humid all year, with monsoon rains and occasional haze; sea breezes help a little.',
     community: 'A long-established Western retiree community in George Town, Tanjung Bungah and Batu Ferringhi; English is widely spoken.',
-    access: 'No US nonstops; connect via Singapore, Kuala Lumpur or another Asian hub, often with two stops.',
+    access: 'Penang International (PEN) is on the island, about 30–45 minutes from George Town; a bridge and ferries link to the mainland, and Kuala Lumpur and Singapore are the usual connecting hubs.',
   },
   drawbacks: [
     'Very long trips to the US, often with two connections',

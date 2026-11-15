@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'A sizeable foreign community of diplomats, business people and digital nomads in Chapinero, Zona G and Usaquén, but fewer retirees than in Medellín; Spanish is needed for most daily life.',
     access:
-      'El Dorado is Colombia\'s main hub, with nonstops reportedly to Miami, Fort Lauderdale, Orlando, Tampa, New York-JFK, Newark, Boston, Washington-Dulles, Chicago, Dallas, Houston and Atlanta on Avianca, American, United, Delta and LATAM; Miami is about 3.5 hours (check current schedules).',
+      'El Dorado, Colombia\'s main hub, is on the city\'s western side, with domestic flights across the country; traffic can make the ride in and out slow at peak hours.',
   },
   drawbacks: [
     'A worldwide wealth tax above about $1.2M, dividends taxed at up to 39% and 15% on inheritances',

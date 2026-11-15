@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'A university and medical city with many newcomers; retirees are a modest share in the city itself, and many settle in the inner suburbs, on the North and South Shores or on Cape Cod.',
     access:
-      'Logan (BOS), minutes from downtown, has nonstops across the US and to most large European cities, plus Tokyo, Seoul, Dubai and Doha; Amtrak runs to New York and Washington.',
+      'Logan (BOS) is minutes from downtown, linked by the Blue Line and Silver Line; Amtrak runs to New York and Washington.',
   },
   drawbacks: [
     'Housing among the most expensive in the US; Boston\'s residential property tax rose to $12.40 per $1,000 (FY2026), offset in part by a residential exemption of about $4,350 on an owner\'s home',

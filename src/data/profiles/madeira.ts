@@ -18,7 +18,7 @@ const profile: ExpatProfile = {
       'IBKR reportedly accepts Portugal residents (likely through its EU entity), and Schwab International reportedly accepts them too, but Schwab reportedly bars Europe residents from taking cash out through margin, so plan on IBKR margin; EU PRIIPs rules reportedly block new buys of US-listed ETFs, not holding them.',
     climate: 'Subtropical and very even: days roughly 19–20°C in winter and 25–26°C in summer, drier and sunnier on the south coast around Funchal.',
     community: 'A smaller English-speaking scene than the Algarve, mostly British and German retirees plus a growing remote-worker crowd.',
-    access: 'United flies Newark–Madeira 3 times a week in summer (from 16 May 2026); the rest of the year, connect via Lisbon, Porto or another European hub.',
+    access: 'Madeira airport is on the east coast, about 20 minutes\' drive from Funchal; Lisbon is under 2 hours by air, and a ferry runs to Porto Santo.',
   },
   drawbacks: [
     'One main public hospital, and complex care can mean a flight to Lisbon',

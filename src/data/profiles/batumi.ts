@@ -19,7 +19,7 @@ const profile: ExpatProfile = {
     climate: 'Humid subtropical and the wettest city in the Caucasus, with about 2,400–2,500 mm of rain a year; July–August highs about 31°C and a January average about 5°C, with light snow at times.',
     community:
       'Georgia\'s second city (about 246,000 people, 2026) draws Russian-speaking residents, international medical students and summer tourists, but few Western retirees; Russian is the usual second language, more than English.',
-    access: 'Batumi airport, 2 km from the centre, handled about 1.2M passengers in 2025, mostly to Istanbul, Tel Aviv (seasonal), Riga (seasonal) and Russia; there are no US nonstops, so trips connect through Istanbul.',
+    access: 'Batumi airport, 2 km from the centre, handled about 1.2M passengers in 2025, mostly to Istanbul plus seasonal routes; Tbilisi, the country\'s main airport, is about 5 hours by train.',
   },
   drawbacks: [
     'Healthcare is thinner than in Tbilisi, so serious care means Tbilisi or Turkey',

@@ -20,7 +20,7 @@ const profile: ExpatProfile = {
     climate: 'Mediterranean: July–August highs about 29–30°C, January highs about 12–14°C with lows of 4–8°C, and about 500 mm of rain a year, mostly in spring and autumn.',
     community:
       'A city of about 140,000 with a small English-speaking community: one count puts British residents at about 212 (0.16% of residents, undated); daily life runs in Catalan and Spanish.',
-    access: 'Reus airport, a few kilometres away, has mostly low-cost and charter flights; Barcelona airport, with US nonstops on American, Delta, United and Level, is about 83 km (about an hour) by road, or about 1 h 45 min by train via Barcelona-Sants.',
+    access: 'Reus airport, a few kilometres away, has mostly low-cost and charter flights; Barcelona airport is about 83 km (about an hour) by road, or about 1 h 45 min by train via Barcelona-Sants.',
   },
   drawbacks: [
     'Catalonia\'s yearly wealth tax on net wealth above €500,000, at up to 3.48%',

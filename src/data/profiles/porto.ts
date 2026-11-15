@@ -18,7 +18,7 @@ const profile: ExpatProfile = {
       'IBKR reportedly accepts Portugal residents (likely through its EU entity), and Schwab International reportedly accepts them too, but Schwab reportedly bars Europe residents from taking cash out through margin, so plan on IBKR margin; EU PRIIPs rules reportedly block new buys of US-listed ETFs, not holding them.',
     climate: 'Atlantic: warm summers and cool, rainy, grey winters; cooler and wetter than Lisbon or the Algarve.',
     community: 'A smaller, newer English-speaking scene than Lisbon or the Algarve, growing fast with remote workers and retirees.',
-    access: 'United has flown Newark–Porto in past summers, but 2026 service could not be confirmed; most trips connect via Lisbon or a European hub.',
+    access: 'Francisco Sá Carneiro (OPO) is about 11 km north of the centre, linked by metro; trains reach Lisbon in about 3 hours, and Lisbon is the main connecting hub.',
   },
   drawbacks: [
     'Rainy, damp winters, and many older homes are poorly heated',

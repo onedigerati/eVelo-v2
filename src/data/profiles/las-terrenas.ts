@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'Over a third of the town\'s 20,000–30,000 residents come from abroad, mostly French (French is the second language), Italian, German, Swiss and Canadian, so English is less common than in North American enclaves (secondary sources).',
     access:
-      'Santo Domingo (SDQ) is about 2–2.5 hours by toll road, with nonstops to Miami, New York-JFK, Newark, Boston, Atlanta, Fort Lauderdale and Orlando on American, Delta, JetBlue, United and Arajet; nearby El Catey (20–30 minutes) serves only Canada and Europe.',
+      'Santo Domingo (SDQ) is about 2–2.5 hours by toll road; El Catey (AZS), 20–30 minutes away, is closer but has far fewer flights.',
   },
   drawbacks: [
     'Serious hospital care is 2–3 hours away in Santo Domingo or Santiago',

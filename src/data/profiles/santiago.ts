@@ -22,7 +22,7 @@ const profile: ExpatProfile = {
     community:
       'A lively, mostly working-age expat scene centred on the east-side communes (Providencia, Las Condes, Vitacura, Ñuñoa), with meetups and online groups but no large retiree enclave; Spanish is needed day to day.',
     access:
-      'SCL has nonstops to Miami, Atlanta, Los Angeles and New York-JFK (LATAM, American, Delta), plus seasonal Dallas, Houston and Orlando; the UK advises booking official taxis inside the terminal.',
+      'Arturo Merino Benítez (SCL) is about 17 km north-west of the centre; the UK advises booking official taxis or transfers inside the terminal.',
   },
   drawbacks: [
     'After three years, US dividends are taxed at up to 40%',

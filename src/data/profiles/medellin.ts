@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'A large, young-skewing expat and digital-nomad scene in El Poblado and Laureles, and a smaller retiree community in nearby Envigado and Sabaneta; Spanish helps a lot.',
     access:
-      'Nonstops reportedly include Miami, Fort Lauderdale and New York-JFK (mostly Avianca), plus American to Miami and United to Houston; about 4 hours to South Florida (check current schedules).',
+      'José María Córdova (MDE) is in Rionegro, about 45 minutes to an hour by road over the mountains; the city-centre Olaya Herrera airport handles regional flights.',
   },
   drawbacks: [
     'A worldwide wealth tax above about $1.2M, plus dividends taxed at up to 39%',

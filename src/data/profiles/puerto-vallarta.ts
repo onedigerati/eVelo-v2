@@ -19,7 +19,7 @@ const profile: ExpatProfile = {
       'IBKR reportedly accepts Mexico residents (IBKR Pro), and Schwab One International\'s online form reportedly accepted Mexico in Oct 2026; margin by country of residence is unreported, and Fidelity and Vanguard open no accounts for residents abroad.',
     climate: 'Dry and warm November–May; hot, humid and rainy June–October, with hurricane risk.',
     community: 'One of Mexico\'s largest US and Canadian communities, swelled by winter snowbirds and LGBTQ-friendly; daily life works in English.',
-    access: 'Many nonstops to US and Canadian cities: about 3 hours to Dallas or Los Angeles.',
+    access: 'Puerto Vallarta\'s airport (PVR) is about 15 minutes north of the centre, close to the Marina and Nuevo Vallarta.',
   },
   drawbacks: [
     'Jalisco cartel violence can reach the city, as the February 2026 blockades and flight shutdown showed',

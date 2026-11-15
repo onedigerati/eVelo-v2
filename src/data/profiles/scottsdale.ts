@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'A long-established retiree and snowbird town, with many active-adult and golf communities in north Scottsdale and a busy winter season of spring training, arts and resorts.',
     access:
-      'Phoenix Sky Harbor (PHX) is about 20 minutes away, with nonstops to most US cities, London Heathrow, Taipei, Canada and Mexico; Scottsdale Airport serves private jets.',
+      'Phoenix Sky Harbor (PHX) is about 20 minutes away; Scottsdale Airport serves private jets.',
   },
   drawbacks: [
     'House prices among the highest in Arizona',

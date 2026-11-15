@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'Hawaii has one of the oldest populations in the US, and Honolulu has a large, settled retiree community, many of them military retirees and long-time residents, alongside mainland newcomers in Kailua, Hawaii Kai and Waikiki.',
     access:
-      'Daniel K. Inouye International (HNL) has nonstops to most West Coast cities (about five to six hours), several eastern hubs, Japan, Korea, Australia, New Zealand and the South Pacific; the Skyline driverless rail line reached the airport in October 2025.',
+      'Daniel K. Inouye International (HNL) is just west of downtown, and the Skyline driverless rail line reached it in October 2025; short inter-island flights reach Maui, Kauai and the Big Island.',
   },
   drawbacks: [
     'The highest cost of living of any US state, with food, fuel and housing all shipped-in dear',

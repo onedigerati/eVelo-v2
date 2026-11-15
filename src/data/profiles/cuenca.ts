@@ -20,7 +20,7 @@ const profile: ExpatProfile = {
     climate: 'Spring-like all year at about 2,560 m (roughly 10–22°C), with frequent rain; the altitude can matter for heart and lung conditions.',
     community: 'One of the largest US retiree communities in Latin America, with English-language groups and services; Spanish is still needed day to day.',
     access:
-      'No commercial US flights from Cuenca: drive or fly to Guayaquil or Quito, which reportedly have nonstops to Miami, Fort Lauderdale, Houston, Atlanta and New York (check current schedules).',
+      'Cuenca\'s small airport has domestic flights only; Guayaquil (GYE), the usual gateway, is about 3–4 hours by road over the Andes or a short flight, and Quito is the other option.',
   },
   drawbacks: [
     'An inheritance tax of up to 35% that reaches US assets, with no treaty relief',

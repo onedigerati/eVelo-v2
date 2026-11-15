@@ -1,0 +1,6 @@
+$ npx vitest run src/data/__tests__/accessNotes.test.ts src/ui/atlas/__tests__/homeRoute.test.ts
+ Test Files  2 passed (2)
+      Tests  137 passed (137)
+   Start at  23:45:19
+   Duration  535ms (transform 78%, import 18%, tests 3%, worker 1%)
+

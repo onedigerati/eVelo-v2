@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'One of the largest retiree communities in the US: Sarasota County\'s median age is about 57 (2024), among the oldest of any large US county, with many newcomers from the Midwest and Northeast and a busy arts calendar (the Ringling, opera, orchestra and theatre).',
     access:
-      'Sarasota Bradenton (SRQ) set a record of over 4.5 million passengers in 2025 and has 60-plus nonstops on 10 airlines, almost all domestic (2026); Tampa International, about an hour north, adds transatlantic flights.',
+      'Sarasota Bradenton (SRQ) is about 15 minutes north of downtown; Tampa International, about an hour north, has a wider network.',
   },
   drawbacks: [
     'High home insurance on the coast, plus flood cover in surge zones, though Citizens cut average rates about 8.7% from June 2026',

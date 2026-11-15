@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'One of the fastest-growing US metros, with many newcomers from other states; the city skews young, and retirees tend to settle in the suburbs and Hill Country towns around it.',
     access:
-      'Austin-Bergstrom (AUS) has nonstops to most large US cities, plus London Heathrow (British Airways, twice daily from March 2026), Frankfurt (Lufthansa), Panama City (Copa) and Mexican resorts.',
+      'Austin-Bergstrom (AUS) is about 8 km south-east of downtown; for a wider long-haul choice, the Dallas–Fort Worth and Houston hubs are about 3 hours\' drive.',
   },
   drawbacks: [
     'Property tax of about 2.1% of taxable value inside the city (2026); homesteads get $140k off school tax ($200k from 65, when school tax is also frozen) but only 20% off city, county and Central Health tax',

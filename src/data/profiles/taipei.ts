@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'About 72,000 foreign residents (end of 2022), mostly from Indonesia, the Philippines and Japan; the English-speaking retiree community is small, though English is common in hospitals and transit.',
     access:
-      'Taoyuan airport (TPE) has nonstops to about 11 US cities on EVA Air, China Airlines, Starlux, United (San Francisco) and Delta (Seattle), including Los Angeles, New York, Chicago, Dallas, Houston and Washington.',
+      'Taoyuan (TPE) is about 40 km west of Taipei, linked by the airport MRT; Songshan (TSA), in the city, handles domestic and some regional flights, and high-speed rail runs down the west coast.',
   },
   drawbacks: [
     'No residence route on a portfolio: a USD 200k business investment or work-based Gold Card',

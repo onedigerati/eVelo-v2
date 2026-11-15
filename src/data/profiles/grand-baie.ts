@@ -22,7 +22,7 @@ const profile: ExpatProfile = {
     community:
       'A sizeable French, South African and British community in Grand Baie and on the west coast (no headcount found); English is official and French is widely spoken, so French helps day to day.',
     access:
-      'No US nonstops: connect via Dubai (Emirates), Paris (Air France, Air Mauritius), Istanbul, London-Gatwick or Johannesburg, about 20–24 hours to the US East Coast; the airport is in the south-east, 48 km beyond Port Louis from Grand Baie.',
+      'Mauritius\'s international airport (MRU) is in the south-east, 48 km beyond Port Louis from Grand Baie, so arrivals face a long cross-island drive; many long trips connect via Dubai, Paris or Johannesburg.',
   },
   drawbacks: [
     'A day of travel to the US, with no nonstops',

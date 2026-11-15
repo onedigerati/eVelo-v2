@@ -19,7 +19,7 @@ const profile: ExpatProfile = {
     climate: 'Mild Atlantic-Mediterranean climate: warm dry summers, and wet but mild winters around 15°C.',
     community: 'Large, mixed international crowd of retirees, remote workers and digital nomads; English is widely spoken.',
     access:
-      'The most US nonstops in the region: TAP flies to Boston, Chicago, LA, Miami, Newark, New York, San Francisco and Washington (Orlando from Oct 2026), plus United, Delta and American routes.',
+      'Humberto Delgado, Portugal\'s main hub, is inside the city about 7 km from the centre and linked by metro; trains run to Porto in about 3 hours and to the Algarve.',
   },
   drawbacks: [
     'Housing costs have climbed fast and are high relative to local incomes',

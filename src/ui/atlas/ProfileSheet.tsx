@@ -1,5 +1,6 @@
 import { m as motion } from 'framer-motion'
-import { useSyncExternalStore } from 'react'
+import { useMemo, useSyncExternalStore } from 'react'
+import { AIRPORTS_AS_OF } from '../../data/airports'
 import { EXPAT_SCORE_LABELS, EXPAT_SCORE_RUBRIC, type ExpatFacts } from '../../data/expatPicks'
 import type { City, PlanInputs } from '../../engine/types'
 import { useDestinationSim } from '../../state/sim'
@@ -9,6 +10,7 @@ import { Button, InfoTip, Sheet, Skeleton, cx } from '../primitives'
 import { CATEGORY_LABEL, costDelta, successColor, successTextColor, type Ranked } from './atlasData'
 import { CodeChip } from './CodeChip'
 import { SCORE_KEYS, categoryCompare, costDataLine, oddsVsHome, profileEyebrow, type ProfileView } from './picks'
+import { homeRoute } from './homeRoute'
 import { estateVsHome, taxLines, taxNotice, taxStatus } from './taxLines'
 // Photo data is imported only here, in the lazy Atlas chunk, so it stays out of the main chunk.
 import { photosFor, subscribePhotos } from '../../data/photos'
@@ -99,6 +101,8 @@ function ProfileBody({
   // The profiled city is home: show it as home, never compared with itself.
   const isHome = !!home && home.cityId === city.id
   const vs = isHome ? undefined : home
+  // Straight from the store's inputs (not the ranked row), so it changes the moment home does.
+  const trip = useMemo(() => homeRoute(inputs.homeCityId, city.id), [inputs.homeCityId, city.id])
 
   return (
     <div className="prof">
@@ -150,7 +154,17 @@ function ProfileBody({
             {FACT_KEYS.map((k) => (
               <div key={k} className="pfacts__row">
                 <dt>{FACT_LABEL[k]}</dt>
-                <dd>{p.facts[k]}</dd>
+                <dd>
+                  {k === 'access' && trip ? (
+                    <>
+                      <span className="pfacts__route">{trip.sentence}</span>
+                      <span className="pfacts__note">{p.facts.access}</span>
+                      <span className="pfacts__asof">Routes as of {AIRPORTS_AS_OF}; flying times are estimates.</span>
+                    </>
+                  ) : (
+                    p.facts[k]
+                  )}
+                </dd>
               </div>
             ))}
           </dl>

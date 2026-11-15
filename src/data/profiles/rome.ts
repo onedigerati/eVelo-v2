@@ -18,7 +18,7 @@ const profile: ExpatProfile = {
       'IBKR is reportedly the only option: Schwab International\'s online form reportedly does not accept Italy residents; EU PRIIPs rules reportedly block new buys of US-listed ETFs, not holding them.',
     climate: 'Mediterranean: July–August highs about 31–33°C with long hot spells, and January highs about 12°C with lows near 3°C.',
     community: 'A large international community around the embassies, the Vatican, UN agencies and US university programmes, though its size is not measured; English is common in the centre, but daily life and paperwork run in Italian.',
-    access: 'Fiumicino has year-round and seasonal nonstops to many US cities on ITA, Delta, United and American (including New York, Boston, Chicago, Atlanta, Washington, Miami and Los Angeles).',
+    access: 'Fiumicino (FCO) is about 30 km from the centre, linked to Termini by the Leonardo Express; Ciampino handles low-cost flights, and fast trains reach Florence in about 1.5 hours.',
   },
   drawbacks: [
     'IVAFE at 0.2% a year on the whole portfolio, plus 26% on dividends and interest',

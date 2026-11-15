@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'A smaller foreign community than Ho Chi Minh City\'s (no headcount found), in a capital with 83 foreign embassies; Vietnam was 5th of 46 in the 2025 edition of InterNations\' Expat Insider, first for personal finance but 34th for quality of life.',
     access:
-      'Nội Bài airport (HAN) has no US passenger nonstops; connect through an Asian hub or via Ho Chi Minh City; the elevated Cát Linh–Hà Đông metro line serves the west of the city.',
+      'Nội Bài airport (HAN) is north of the city across the Red River; the elevated Cát Linh–Hà Đông metro line serves the west of the city, and trains and short flights run south to Da Nang and Ho Chi Minh City.',
   },
   drawbacks: [
     'No residence route for a retiree: life on repeated 90-day e-visas',

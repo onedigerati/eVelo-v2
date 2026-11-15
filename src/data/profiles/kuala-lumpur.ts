@@ -18,7 +18,7 @@ const profile: ExpatProfile = {
       'IBKR reportedly accepts Malaysia residents (IBKR Pro), and Schwab One International\'s online form reportedly accepted Malaysia in Oct 2026; margin by country of residence is unreported, and Fidelity and Vanguard open no accounts for residents abroad.',
     climate: 'Hot and humid all year (about 32°C), with heavy afternoon storms and occasional haze from regional fires.',
     community: 'A large, established expat community (Mont Kiara, Bangsar); English is an everyday business language.',
-    access: 'No US nonstops; one stop via Tokyo, Seoul, Taipei, Doha or Dubai, typically 20+ hours.',
+    access: 'KLIA, Malaysia\'s main hub, is about 50 km south of the centre, linked by the KLIA Ekspres train in about 30 minutes; trains also run north to Penang and south to the Singapore border.',
   },
   drawbacks: [
     'MM2H\'s entry cost: USD 150k on deposit plus a RM1m home that cannot be sold for 10 years',

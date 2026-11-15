@@ -20,7 +20,7 @@ const profile: ExpatProfile = {
     climate: 'Temperate: warm, humid summers (December–March) and cool, damp, windy winters around 10°C.',
     community: 'A small but steady expat community, mostly Argentine and European; fewer US retirees and English speakers than the Mexican or Panamanian hubs.',
     access:
-      'The only US nonstop is American\'s seasonal Miami–Montevideo (daily December to early March, then 3 a week until late March); otherwise connect via São Paulo, Panama City or Bogotá, roughly 12–15 hours.',
+      'Carrasco airport (MVD) is about 20 km east of the centre; ferries cross the Río de la Plata to Buenos Aires, and São Paulo, Panama City and Bogotá are common connecting hubs.',
   },
   drawbacks: [
     'The tax holiday needs 183+ days a year in Uruguay, and after 11 years foreign income is taxed at 6%, then 12%',

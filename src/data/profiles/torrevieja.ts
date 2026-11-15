@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
       'Hot semi-arid: about 328 mm of rain a year, October the wettest month, and July–August highs about 32°C with mild, sunny winters; autumn DANA storms can bring flash floods to the region.',
     community:
       'About 98,500 residents (2025); in 2012 British and Russian residents were each 5.6% of the population, and it was long reported as the Spanish municipality with the most British residents; English is everywhere in daily life.',
-    access: 'Alicante–Elche airport is about 43 km (about 42 minutes by road) away and flies mainly to the UK and Northern Europe, with no US nonstops; connect via Madrid or a European hub.',
+    access: 'Alicante–Elche airport is about 43 km (about 42 minutes by road) away and flies mainly to the UK and Northern Europe; longer trips connect via Madrid or another European hub.',
   },
   drawbacks: [
     'Yearly wealth tax on net wealth above €2M, at up to 3.5%',

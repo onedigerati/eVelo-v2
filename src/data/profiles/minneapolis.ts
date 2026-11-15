@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'A civic-minded city with strong arts (the Guthrie, the Walker, the orchestra) and lake and river parks used year-round, but few retirees move to Minnesota and many snowbird south for winter; newcomers mostly arrive for work.',
     access:
-      'Minneapolis–St. Paul (MSP), a Delta hub, has nonstops to most US cities and served a record 35 international destinations in 2025, including eight in Europe (Delta added Copenhagen and Rome that year) and Delta\'s flights to Seoul and Tokyo; light rail links the airport to downtown.',
+      'Minneapolis–St. Paul (MSP), a major hub, sits between the two downtowns, about 15 km from downtown Minneapolis and linked to it by light rail.',
   },
   drawbacks: [
     'Income tax up to about 10.85% on investment income and estate tax above $3M',

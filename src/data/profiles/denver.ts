@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'A big draw for newcomers from other states; retirees tend to settle in the southern and western suburbs (Highlands Ranch, Littleton, Lakewood) and the foothill towns, with the ski areas and hiking within 1–2 hours.',
     access:
-      'Denver International (DEN), a United and Southwest hub, has nonstops to most US cities and about 35 international destinations in 19 countries, including London Heathrow, Frankfurt, Munich, Rome, Tokyo Narita and much of Mexico; United adds daily Paris from 27 May 2027.',
+      'Denver International (DEN), a major hub about 40 km north-east of downtown, is linked to Union Station by the A Line commuter train.',
   },
   drawbacks: [
     'Housing and living costs well above the US average',

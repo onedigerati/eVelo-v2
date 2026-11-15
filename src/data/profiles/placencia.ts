@@ -22,7 +22,7 @@ const profile: ExpatProfile = {
     community:
       'Small: about 1,500 in the village and 3,500 on the peninsula (2010 census), with "a healthy number of expats" in Maya Beach and Seine Bight to the north but no headcount; English is Belize\'s official language.',
     access:
-      'The Placencia airstrip has more than 20 daily Tropic Air and Maya Island Air flights to Belize City (BZE), which has year-round nonstops to Atlanta, Dallas, Houston, Los Angeles and Miami; by road BZE is about 3½ hours.',
+      'The Placencia airstrip has frequent short flights to Belize City (BZE), the country\'s international airport; by road BZE is about 3½ hours.',
   },
   drawbacks: [
     'No hospital on the peninsula: Dangriga is over an hour away and private care 3½ hours',

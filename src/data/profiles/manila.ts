@@ -22,7 +22,7 @@ const profile: ExpatProfile = {
     community:
       'The US ambassador put the number of US citizens in the Philippines at about 750,000 in 2025 (many of them Filipino-Americans), and English is a language of business and schooling.',
     access:
-      'Manila (MNL) has nonstops on Philippine Airlines to Los Angeles, San Francisco, Seattle, New York–JFK, Honolulu and Chicago (from Nov 2026), and on United to San Francisco and Guam; Delta adds Los Angeles in Mar 2027.',
+      'Ninoy Aquino International (MNL), the country\'s main hub, is inside Metro Manila, but traffic often makes the ride to Makati or BGC slow.',
   },
   drawbacks: [
     '6% estate tax on a resident alien\'s worldwide estate, US accounts included',

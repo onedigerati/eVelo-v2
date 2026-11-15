@@ -2608,6 +2608,21 @@
   color: var(--ink-2);
   text-wrap: pretty;
 }
+/* Getting there: the computed route, then the city's local note and the data's date, quieter. */
+.pfacts__route,
+.pfacts__note,
+.pfacts__asof {
+  display: block;
+}
+.pfacts__note {
+  margin-top: 4px;
+  color: var(--ink-3);
+}
+.pfacts__asof {
+  margin-top: 4px;
+  font-size: var(--fs-xs);
+  color: var(--ink-3);
+}
 
 .pworth {
   display: flex;

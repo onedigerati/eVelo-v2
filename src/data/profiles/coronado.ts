@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     climate: 'Tropical but on Panama\'s drier coast: about 22–32°C, with a dry season January–April and rain May–December.',
     community: 'About 4,000 expats in a town of about 10,000 (2025, secondary source), many of them retirees, so English-speaking social life is easy to find.',
     access:
-      'Tocumen is about 1.5 hours by road, with about 20 US destinations (mostly Copa, plus American to Miami, Delta to Atlanta and United to Houston and Newark); nearby Río Hato has only some Canadian charters.',
+      'Tocumen (PTY), Panama City\'s hub, is about 1.5 hours by road along the Pan-American Highway; nearby Río Hato has only some seasonal charters.',
   },
   drawbacks: [
     'Hospitals and the airport are 1–1.5 hours away in Panama City',

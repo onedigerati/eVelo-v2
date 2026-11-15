@@ -18,7 +18,7 @@ const profile: ExpatProfile = {
     climate: 'Central European: July highs average about 27°C, while winters are cold and grey, with January highs about 4°C, lows just below freezing and only about 1,700 hours of sun a year.',
     community:
       'About 350,000 foreigners, roughly a quarter of residents (2025), mostly from elsewhere in Europe; the English-speaking scene is long established but younger and work-oriented, with few retirees.',
-    access: 'American flies Philadelphia–Prague daily in summer (from May 2026) and Delta flies from New York JFK; in winter, connect through a European hub.',
+    access: 'Václav Havel Airport (PRG) is about 17 km west of the centre, reached by bus and metro; trains run to Vienna, Berlin and Budapest.',
   },
   drawbacks: [
     'The visa is discretionary and renewed year by year at first',

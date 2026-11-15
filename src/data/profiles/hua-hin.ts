@@ -22,7 +22,7 @@ const profile: ExpatProfile = {
     community:
       'A large expat community for a Thai beach town, with online groups of tens of thousands, skewed to retirees, especially Scandinavians and Britons.',
     access:
-      'Hua Hin airport has only a few domestic flights and no international service (Jul 2026); most arrivals fly into Bangkok and go 2.5–3 hours by road or bus, and there are no US nonstops to Bangkok.',
+      'Hua Hin airport has only a few domestic flights and no international service (Jul 2026); most arrivals fly into Bangkok and go 2.5–3 hours by road or bus, and trains also run from Bangkok.',
   },
   drawbacks: [
     'Serious medical cases mean a 2.5–3 hour trip to Bangkok',

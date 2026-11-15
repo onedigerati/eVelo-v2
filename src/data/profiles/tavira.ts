@@ -19,7 +19,7 @@ const profile: ExpatProfile = {
     climate: 'Hot-summer Mediterranean: about 3,150 hours of sun, a mean of about 18°C and about 480 mm of rain a year, falling mostly in winter; no hurricanes, though the region carries historic earthquake and tsunami risk (1755).',
     community:
       'A municipality of about 26,000 with an older, settled foreign community, mostly British, French and German; English-speaking lawyers and doctors are easy to find, but the scene is smaller than in the western Algarve resorts.',
-    access: 'Faro airport is 35–40 minutes away (10.4M passengers in 2025); United flies Newark–Faro seasonally (May–Sep 2026), and the rest of the year trips connect via Lisbon or a European hub.',
+    access: 'Faro airport is 35–40 minutes away by road; regional trains run along the Algarve coast to Faro, and Lisbon or another European hub is the usual connection.',
   },
   drawbacks: [
     'No 24-hour emergency unit in town; hospitals are in Faro, 30–40 minutes away',

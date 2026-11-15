@@ -22,7 +22,7 @@ const profile: ExpatProfile = {
     community:
       'A village of about 1,600 (2010 census), 70% Garifuna, with a small foreign community among small resorts and no reliable headcount; English is Belize\'s official language, which makes daily life easy.',
     access:
-      'Dangriga\'s airstrip, about 30 minutes away, has domestic flights to Belize City (BZE), which has year-round nonstops to Atlanta, Dallas, Houston, Los Angeles and Miami and seasonal routes from Charlotte, Chicago, Denver, Newark and others.',
+      'Dangriga\'s airstrip, about 30 minutes away, has short domestic flights to Belize City, the country\'s international gateway (BZE).',
   },
   drawbacks: [
     'A public regional hospital only; private care is 2.5 hours away and anything serious means a flight abroad',

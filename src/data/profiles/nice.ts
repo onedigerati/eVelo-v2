@@ -20,7 +20,7 @@ const profile: ExpatProfile = {
     climate: 'Mediterranean: about 300 sunny days, winter days around 13°C and hot summers near 28–30°C, with occasional heatwaves.',
     community: 'A large English-speaking community of British, American and Northern European residents along the Riviera, though daily life and paperwork run in French.',
     access:
-      'La Compagnie (business class only) flies Newark–Nice year-round from the 2026–27 winter, and US carriers add summer New York flights; check current schedules.',
+      'Nice Côte d\'Azur airport is about 7 km west of the centre, linked by tram; trains run along the coast to Cannes, Monaco and Italy.',
   },
   drawbacks: [
     'Inheritance tax of up to 45% on the worldwide estate passing to children',

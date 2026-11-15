@@ -22,7 +22,7 @@ const profile: ExpatProfile = {
     community:
       'A large, long-established English-speaking community, Americans included; about one Paris resident in five is an immigrant (2012 census), and daily life and paperwork still run in French.',
     access:
-      'Charles de Gaulle has nonstops to about two dozen US cities on Air France, Delta, United and American, including New York, Newark, Boston, Washington, Atlanta, Chicago, Miami, Dallas, Houston, Los Angeles, San Francisco and Seattle.',
+      'Charles de Gaulle is about 25 km north-east of the centre, on the RER B, and Orly about 15 km south; high-speed trains reach London, Brussels and most of France.',
   },
   drawbacks: [
     'Inheritance tax of up to 45% on the worldwide estate passing to children',

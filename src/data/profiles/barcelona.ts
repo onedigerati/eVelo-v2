@@ -19,7 +19,7 @@ const profile: ExpatProfile = {
       'IBKR reportedly accepts Spain residents (likely through its EU entity), and Schwab International reportedly accepts them too, but Schwab reportedly bars Europe residents from taking cash out through margin, so plan on IBKR margin; EU PRIIPs rules reportedly block new buys of US-listed ETFs, not holding them.',
     climate: 'Mediterranean: summer highs about 28–29°C with humid nights, and winter days about 15°C.',
     community: 'A large international community of Europeans, Latin Americans and North Americans (its size not measured here); English is common in business and the centre, but daily life runs in Catalan and Spanish.',
-    access: 'Barcelona–El Prat has nonstops on American (Miami, Philadelphia, plus seasonal routes), Delta (Atlanta, New York JFK, plus seasonal Boston and Seattle), United (Newark, Washington Dulles, plus seasonal Chicago and San Francisco) and Level.',
+    access: 'Barcelona–El Prat is about 15 km from the centre, linked by metro, train and bus; high-speed trains run to Madrid in about 2.5 hours and across the border to France.',
   },
   drawbacks: [
     'Catalonia\'s yearly wealth tax on net wealth above €500,000, at up to 3.48%',

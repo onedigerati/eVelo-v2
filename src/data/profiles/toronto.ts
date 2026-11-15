@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'English-speaking, and nearly half its residents were born abroad (2021 census), so newcomers from everywhere, Americans included, fit in easily; nothing about daily life needs another language.',
     access:
-      'Pearson has nonstops to dozens of US cities on Air Canada, WestJet, Porter, American, United and Delta, most cleared through US preclearance before boarding; New York is about 1.5 hours away, and Buffalo is a 2-hour drive.',
+      'Pearson (YYZ) is about 25 minutes from downtown on the UP Express train; Billy Bishop, on the waterfront, handles short regional flights, and Buffalo is a 2-hour drive.',
   },
   drawbacks: [
     'No visa for a retiree living on a portfolio: visits of up to 6 months only',

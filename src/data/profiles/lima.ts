@@ -22,7 +22,7 @@ const profile: ExpatProfile = {
     community:
       'A modest expat community, concentrated in Miraflores, Barranco and San Isidro, with a growing number of international restaurants but no large US-retiree enclave; Spanish is needed.',
     access:
-      'Jorge Chávez (new terminal since June 2025) has nonstops to Miami, Atlanta, Houston, Los Angeles and New York-JFK on American, Delta, United, LATAM and Sky; United\'s Newark route ends in March 2027.',
+      'Jorge Chávez, in Callao west of the centre, opened a new terminal in June 2025 and is the hub for Cusco and the rest of Peru; Lima traffic can make the ride to Miraflores long.',
   },
   drawbacks: [
     'Foreign dividends and interest taxed at up to 30%, with no treaty and no newcomer holiday',

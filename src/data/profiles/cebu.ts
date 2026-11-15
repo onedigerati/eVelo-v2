@@ -22,7 +22,7 @@ const profile: ExpatProfile = {
     community:
       'English is a main language of schooling and business, and Metro Cebu (about 3.2 million people) is a major outsourcing hub; no headcount of the foreign retiree community was found.',
     access:
-      'Mactan–Cebu (CEB) has no US mainland nonstops: United flies to Tokyo Narita and Philippine Airlines to Guam (seasonal), with direct flights to Seoul, Singapore, Hong Kong and Taipei for one-stop trips.',
+      'Mactan–Cebu (CEB) is on Mactan Island, linked to the city by bridges; it has flights to Seoul, Singapore, Hong Kong, Taipei and Tokyo, and ferries and short flights reach Manila and the rest of the Visayas.',
   },
   drawbacks: [
     '6% estate tax on a resident alien\'s worldwide estate, US accounts included',

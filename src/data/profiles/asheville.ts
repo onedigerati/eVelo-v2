@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'A long-standing retirement magnet: many newcomers are retirees from Florida, the Northeast and the Midwest, drawn by the mountains, the arts and craft scene, breweries and the University of North Carolina Asheville\'s lifelong-learning programme.',
     access:
-      'Asheville Regional (AVL) is small, with about 26 nonstop destinations (2026), mostly airline hubs and Florida, and handled a near-record 2.24 million passengers in 2025; for long-haul and international flights most residents connect or drive about 2 hours to Charlotte (CLT).',
+      'Asheville Regional (AVL) is small, with about 26 destinations (2026), mostly airline hubs and Florida, and handled 2.24M passengers in 2025; for long-haul trips many residents drive about 2 hours to Charlotte (CLT).',
   },
   drawbacks: [
     'One dominant hospital system, with top-tier care 2–4 hours away',

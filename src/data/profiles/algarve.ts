@@ -19,7 +19,7 @@ const profile: ExpatProfile = {
     climate: 'Mediterranean: about 300 sunny days, hot dry summers and mild winters around 15–17°C.',
     community:
       'One of Europe\'s largest English-speaking retiree populations (British, Irish, North American), concentrated in Lagos, Tavira, Loulé and the golf resorts.',
-    access: 'United flies Newark–Faro seasonally (4 weekly, May–Sep 2026); the rest of the year, connect via Lisbon or a European hub.',
+    access: 'Faro airport, just west of Faro, serves the whole Algarve coast; Lisbon, with a far wider choice of flights, is about 2.5–3 hours by motorway or train.',
   },
   drawbacks: [
     'Public hospital capacity in the region is thin, so complex care often means a trip to Lisbon',

@@ -18,7 +18,7 @@ const profile: ExpatProfile = {
       'IBKR reportedly accepts Spain residents (likely through its EU entity), and Schwab International reportedly accepts them too, but Schwab reportedly bars Europe residents from taking cash out through margin, so plan on IBKR margin; EU PRIIPs rules reportedly block new buys of US-listed ETFs, not holding them.',
     climate: 'About 300 sunny days; winters around 17°C; hot, dry summers.',
     community: 'A very large British and Northern European community on the Costa del Sol (Fuengirola, Marbella, Nerja), with about 49,000 Britons and 3,900 Americans registered in the province (1 Jan 2025).',
-    access: 'United has flown Newark–Málaga in past summers, but 2026 service could not be confirmed; otherwise connect via Madrid or a European hub.',
+    access: 'Málaga airport (AGP) is about 8 km from the centre, linked by a commuter train; high-speed trains reach Madrid in under 3 hours.',
   },
   drawbacks: [
     'Wealth tax at about 1.7–3.5% a year on net wealth above about €3.7M',

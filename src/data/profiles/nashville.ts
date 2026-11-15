@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'One of the fastest-growing US metros, with many newcomers from California, the Northeast and the Midwest; retirees settle in Franklin, Brentwood, Hendersonville and the lake towns around the city.',
     access:
-      'Nashville International (BNA), a Southwest focus city with a newly expanded terminal, has 115 nonstop destinations (June 2026), including daily British Airways flights to London Heathrow, Aer Lingus to Dublin (about five a week in summer), Porter to Toronto, and Mexico and the Caribbean.',
+      'Nashville International (BNA), with a newly expanded terminal, is about 15 minutes\' drive east of downtown.',
   },
   drawbacks: [
     'Fast-rising housing costs and a 9.75% sales tax',

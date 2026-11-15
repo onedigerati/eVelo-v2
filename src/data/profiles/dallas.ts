@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'A fast-growing metro of about 8 million with many newcomers from other states; retirees mostly settle in the suburbs (Plano, Frisco, McKinney) rather than the city itself.',
     access:
-      'DFW Airport, American Airlines\' largest hub, served about 85.6 million passengers in 2025 and with Love Field (Southwest\'s domestic network) the region has nonstops to 269 destinations, including Europe, Asia, Australia (Qantas), the Middle East and Latin America.',
+      'DFW Airport sits between Dallas and Fort Worth, and Love Field, close to downtown, adds a large domestic network; together they reach Europe, Asia, Australia and Latin America.',
   },
   drawbacks: [
     'Property tax of about 2.2% of taxable value inside the city (2025 combined rate of $2.23 per $100); homesteads get $140k off school tax ($200k from 65, when school tax is also frozen)',

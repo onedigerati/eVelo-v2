@@ -20,7 +20,7 @@ const profile: ExpatProfile = {
     climate: 'At 1,555 m: warm, dry days (highs about 27 °C in December and 33 °C in April), cool nights (January lows about 9 °C) and rain May–October.',
     community:
       'Popular with Americans and other foreigners, but no residency figures were found and the community is smaller than Lake Chapala\'s or San Miguel\'s; expect more Spanish in daily life.',
-    access: 'Oaxaca airport (OAX) has nonstops to Dallas (American), Houston (United Express) and Los Angeles (Volaris).',
+    access: 'Oaxaca\'s airport (OAX) is about 10 km south of the city; Mexico City, the main connecting hub, is about an hour away by air.',
   },
   drawbacks: [
     'Thin hospitals: serious care means hours by road to Puebla or Mexico City',

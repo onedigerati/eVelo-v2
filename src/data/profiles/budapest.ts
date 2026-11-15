@@ -18,7 +18,7 @@ const profile: ExpatProfile = {
     climate: 'Continental: hot summers (July highs about 29°C) and cold winters, with January highs about 5°C and lows below freezing; about 1,900 hours of sun a year.',
     community:
       'An active, mixed expat scene with some retirees, organised mostly through Facebook groups and InterNations; English works in central Budapest, less so in the outer districts and among older Hungarians.',
-    access: 'American\'s daily summer Philadelphia–Budapest flight (from May 2026) is the only US nonstop; the rest of the year, connect through a European hub.',
+    access: 'Budapest airport is about 16 km south-east of the centre, linked by the 100E airport bus; trains run to Vienna in under 3 hours.',
   },
   drawbacks: [
     'Up to 28% on US dividends and interest until the social-contribution cap',

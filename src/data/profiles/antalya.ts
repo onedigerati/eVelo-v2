@@ -19,7 +19,7 @@ const profile: ExpatProfile = {
     climate: 'Long, hot summers (July and August highs average about 35°C) and mild, wet winters: January highs about 15°C, with most of the 1,050 mm of yearly rain falling in winter.',
     community:
       'About 120,000 foreigners lived in the city in 2022, mainly in Konyaaltı and Lara, with long-standing Russian, Ukrainian, German and British communities and plenty of international shops and services.',
-    access: 'Antalya airport is one of Turkey\'s busiest for international traffic, with many direct flights to Europe; there are no US nonstops, so connect through Istanbul or a European hub.',
+    access: 'Antalya airport, east of the city, is one of Turkey\'s busiest for international traffic, with many flights to Europe; Istanbul, the country\'s main hub, is a short domestic flight away.',
   },
   drawbacks: [
     'Lira swings and high inflation make local costs unpredictable',

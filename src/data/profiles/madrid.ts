@@ -22,7 +22,7 @@ const profile: ExpatProfile = {
     community:
       'About 14,200 US citizens were registered in the Madrid province on 1 Jan 2025 (10,400 in the city), a quarter of Americans in Spain; the international crowd is large but mostly working-age, and daily life runs in Spanish.',
     access:
-      'Barajas has the most US nonstops in Spain: Iberia to Boston, Chicago, Dallas, Los Angeles, Miami, New York, Orlando and Washington (plus seasonal Newark and San Francisco), and American, Delta and Air Europa routes.',
+      'Barajas, Spain\'s main hub, is about 12 km north-east of the centre, linked by metro and suburban rail; high-speed trains from Atocha reach most of the country.',
   },
   drawbacks: [
     'Hot summers and cold, frosty winters, unlike the coast',

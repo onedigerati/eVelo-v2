@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'Korea had a record 2.73 million foreign residents in mid-2025, a third of them Chinese and most working-age, with over half of registered foreigners in the Seoul area; the English-speaking retiree community is small, and daily life outside central areas needs some Korean.',
     access:
-      'Incheon (ICN) has nonstops to about 15 US cities on Korean Air, Asiana, Delta, Air Premia, American and Alaska, including Los Angeles, San Francisco, Seattle, New York, Chicago, Atlanta, Dallas, Washington, Boston, Detroit, Las Vegas and Honolulu.',
+      'Incheon (ICN), on an island west of the city, is about an hour from central Seoul on the AREX train; Gimpo (GMP), closer in, handles domestic and some regional flights.',
   },
   drawbacks: [
     'Up to 50% inheritance tax on the worldwide estate of anyone resident at death, with no US estate treaty',

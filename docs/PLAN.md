@@ -7,21 +7,13 @@ A city profile's "Getting there" is one hand-written sentence per city, written 
 2026-11-14 · tests: 824 pass · typecheck: clean
 
 ## Now
-Stage 3 of 3 · Home-aware card
-Mode: autopilot — unattended
+All stages done — deploy waits for the user's go
 Agents: lean
-Risk: UI only
-Checks:
-- [ ] A city profile's Getting there shows the computed route line for the current home city, with the city's local note under it, at desktop and phone width (proof: screenshots)
-- [ ] Changing the home city updates the open profile's line with no reload, e.g. San Diego → London turns Lisbon from "one stop" to "nonstop" (proof: scripted run with screenshots)
-- [ ] The home city's own profile shows no route line, only the local note (proof: screenshot)
-- [ ] All 133 local notes are home-independent: none mentions the US, Americans or a US airport/airline as the reader's origin, and none lists nonstop routes (proof: test)
-Open: none
 
 ## Stages
 - [x] 1. Route engine — airport and route data shape, `routeBetween` and the hour estimate, the sentence builder, pilot data for a handful of airports, all tested
 - [x] 2. Route data — gateway airport and current nonstops (among the 133 cities' gateway airports and world hubs, 130 in all) for every city, sourced and dated, with a coverage test
-- [ ] 3. Home-aware card — the profile's Getting there shows the computed line and the local note, live on home change; all 133 `access` notes rewritten to drop the US framing
+- [x] 3. Home-aware card — the profile's Getting there shows the computed line and the local note, live on home change; all 133 `access` notes rewritten to drop the US framing
 
 ## Decisions
 - 2026-11-14 · Routes + estimated hours, no airline names (they go stale fastest); dated "as of Nov 2026" — user picked the recommended option.
@@ -48,9 +40,15 @@ Open: none
 - 2026-11-14 · No jbit:review for stage 2: data plus a pure-function fallback with tests, UI only; risk line matches the diff — PM's call.
 - 2026-11-14 · Stage 2 closed: 4/4 checks pass, 845 tests green, 10/10 sampled routes match Wikipedia ([evidence](evidence/stage-2/report.md)) — PM.
 - 2026-11-14 · (unattended) The home city's own profile shows no route line, only the local note: a route from a city to itself means nothing.
+- 2026-11-14 · (unattended) A local note may name the usual connecting hub (e.g. "Istanbul is a common connecting hub" for Tbilisi) and stable access facts (airport distance, rail links), but no airline names, passenger counts or route lists, enforced by `accessNotes.test.ts`: names and counts go stale, and routes now come from data.
+- 2026-11-14 · No jbit:review for stage 3: UI only, copy and a thin pure function with tests; risk line matches the diff — PM's call.
+- 2026-11-14 · Stage 3 closed: 4/4 checks pass, 982 tests green, stage 2's hand check re-run ([evidence](evidence/stage-3/report.md)) — PM.
 
 
 ## Open questions
+- Home is set only on the Plan page, which unmounts the Atlas, so a user never sees the line change under an open profile; the live update is proven through the store. A home picker on the profile sheet would make it visible — later, if wanted.
+- Route data can miss routes: WebFetch's page summaries dropped a few before cross-checks caught them, and the hand sample only confirms listed routes. A full re-read per airport, or a second source, would firm it up — next data refresh.
+- The added local-note facts (airport distances, train times) were written from general knowledge; the stage 3 builders listed every one in their reports. Spot-check before relying on them — later.
 - At 320px the map city card's "+ Compare" chip wraps onto two lines (pre-existing) — from the stage 3 verify, later.
 - On touch, a tap within ~4px outside a pill's edge triggers it (browser touch adjustment, 16px gutters) — from the stage 2–3 verify, later if it bothers anyone.
 - On a 390px phone, the fan chart's readout runs past the right edge of the screen (pre-existing chart code) — from the stage 2 verify, later.

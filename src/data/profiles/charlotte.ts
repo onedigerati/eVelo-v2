@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'One of the fastest-growing large US cities, full of newcomers from the Northeast and Midwest; retirees settle around Lake Norman, Lake Wylie and in active-adult communities in the surrounding counties.',
     access:
-      'Charlotte Douglas (CLT) is American Airlines\' second-largest hub, with nonstops to most US cities, the Caribbean and Mexico, and to London, Frankfurt, Munich, Dublin and other European cities.',
+      'Charlotte Douglas (CLT), one of the country\'s biggest connecting hubs, is a short drive west of uptown; Amtrak runs to Raleigh and up the East Coast.',
   },
   drawbacks: [
     'Car-dependent sprawl, with limited transit beyond one light-rail line',

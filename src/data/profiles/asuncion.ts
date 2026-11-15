@@ -22,7 +22,7 @@ const profile: ExpatProfile = {
     community:
       'A small foreign community with no sizeable US-retiree enclave, and English is not widely spoken, so Spanish is needed day to day.',
     access:
-      'Silvio Pettirossi (ASU) has no US nonstops: connect via Panama City (Copa), Bogotá (Avianca), Lima, Santiago or São Paulo (LATAM), or Madrid (Air Europa).',
+      'Silvio Pettirossi (ASU), on the city\'s north-eastern edge, is Paraguay\'s main airport; most long trips connect through a regional hub such as Panama City, Bogotá, Lima, Santiago or São Paulo.',
   },
   drawbacks: [
     'Permanent residency now needs active income, a pension or a $200k investment',

@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'A tech-driven city that skews young; retirees are a modest share and many settle in suburbs, on the islands or around the Sound, where newcomers from California and elsewhere have arrived in numbers.',
     access:
-      'Seattle-Tacoma (SEA) is a hub for Alaska Airlines and Delta, with nonstops across the US and about 36 international destinations, including Tokyo, Seoul, Taipei, Hong Kong, London, Paris, Amsterdam, Reykjavik and Rome, and short hops to Vancouver and Alaska.',
+      'Seattle-Tacoma (SEA), a major hub, is about 20 km south of downtown, linked by Link light rail; ferries cross Puget Sound, and Vancouver is about 3 hours by road or train.',
   },
   drawbacks: [
     'Housing and living costs among the highest in the US, plus a combined sales tax of about 10.35%',

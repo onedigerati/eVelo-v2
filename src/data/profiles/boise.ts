@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'One of the fastest-growing US metros, with many retirees from California and the Pacific Northwest settling in Boise, Meridian and Eagle; the city is conservative-leaning, with a lively downtown and university.',
     access:
-      'Boise Airport (BOI) has domestic nonstops only, to about 27–30 cities on Alaska, Southwest, Delta, United, American and others; international trips connect through Salt Lake City, Seattle or Denver.',
+      'Boise Airport (BOI) is a few minutes from downtown and has domestic flights only, to about 27–30 cities; international trips connect through Salt Lake City, Seattle or Denver.',
   },
   drawbacks: [
     'No Level 1 trauma centre in Idaho and few specialists; serious cases may go to Salt Lake City',

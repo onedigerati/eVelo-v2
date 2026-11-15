@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'A city of about 8.5 million where newcomers are the norm; retirees have every interest, language and community within reach, and many split the year with Florida.',
     access:
-      'JFK, Newark and LaGuardia together have nonstops to almost every large city in the world, and Amtrak runs fast trains to Boston, Philadelphia and Washington.',
+      'JFK and LaGuardia in Queens and Newark in New Jersey are 30–60 minutes from Manhattan by road or rail link; Amtrak runs fast trains to Boston, Philadelphia and Washington.',
   },
   drawbacks: [
     'The highest combined state and city income tax in the US, up to about 14.8% on dividends and gains',

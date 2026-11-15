@@ -19,7 +19,7 @@ const profile: ExpatProfile = {
     climate: 'Continental: July highs average about 31°C (heatwaves top 35°C), and January highs about 7°C with lows below freezing and some snow; about 510 mm of rain a year.',
     community:
       'Grew sharply after 2022 with Russian, Belarusian and Ukrainian arrivals and remote workers, alongside long-term Westerners in Vake and Vera; English is common among younger Georgians in the centre, and Russian is the usual fallback.',
-    access: 'There are no US nonstops, so trips connect through Istanbul or another hub.',
+    access: 'Tbilisi International (TBS) is about 17 km south-east of the centre; trains run to Batumi on the Black Sea, and Istanbul is a common connecting hub.',
   },
   drawbacks: [
     'Healthcare is thin for serious care, especially outside Tbilisi',

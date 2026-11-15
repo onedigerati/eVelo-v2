@@ -20,7 +20,7 @@ const profile: ExpatProfile = {
     climate: 'Mediterranean: July–August highs about 31°C, January highs about 11°C with lows near 6°C, about 2,700 hours of sun and 800 mm of rain a year, and the cold bura wind on some winter days.',
     community:
       'A city of about 160,000 (2021) with a small English-speaking resident scene; English is common on the coast, but Split is crowded with tourists and cruise passengers in summer and much quieter in winter.',
-    access: 'Split airport (Kaštela, about 20 km; 3.9M passengers in 2025) has a summer United nonstop to Newark from 2026; the rest of the year, connect via Zagreb or a European hub.',
+    access: 'Split airport is at Kaštela, about 20 km west of the centre; Zagreb is the main domestic hub, and ferries and catamarans run from the harbour to the islands and to Ancona in Italy.',
   },
   drawbacks: [
     'No residence route for a retiree living on a portfolio',

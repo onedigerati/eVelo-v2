@@ -20,7 +20,7 @@ const profile: ExpatProfile = {
     climate: 'Continental: July and August highs about 31–33°C, January highs about 5°C with lows below freezing, and about 540 mm of rain a year.',
     community:
       'Bulgaria\'s second city (about 330,000 people in 2024), with a small English-speaking foreign community, smaller than Sofia\'s or the Black Sea coast\'s; daily life runs in Bulgarian.',
-    access: 'Plovdiv airport has a handful of Ryanair routes (London Stansted, Manchester, Birmingham and Milan in winter 2025/26); Sofia airport, 144 km away, has no US nonstop, so trips connect via Vienna, Frankfurt, Istanbul or another hub.',
+    access: 'Plovdiv\'s small airport has a handful of low-cost routes; Sofia airport, about 144 km away, is the usual gateway.',
   },
   drawbacks: [
     'Residence needs a pension, with no route on savings or investment income alone',

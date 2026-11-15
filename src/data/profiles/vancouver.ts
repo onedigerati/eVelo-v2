@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'English-speaking, with 42% of residents born abroad (2021 census, largely from East and South Asia) and many Americans; nothing about daily life needs another language.',
     access:
-      'YVR has nonstops to nearly 30 US cities on Air Canada, WestJet, Alaska, United, Delta and American, cleared through US preclearance before boarding; Seattle is about a 3-hour drive or a short flight.',
+      'YVR is about 25 minutes from downtown on the Canada Line; ferries cross to Vancouver Island, and Seattle is about a 3-hour drive or a short flight.',
   },
   drawbacks: [
     'No visa for a retiree living on a portfolio: visits of up to 6 months only',

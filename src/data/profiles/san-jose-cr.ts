@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     climate: 'At 1,000–1,200 m the Central Valley is spring-like all year (about 20–27°C), with afternoon rains May–November.',
     community: 'A long-established US and Canadian community in Escazú, Santa Ana, Atenas and Grecia; English is common in services.',
     access:
-      'SJO has broad US nonstops (American, United, Delta, Southwest, JetBlue, Alaska, Avianca): about 2.5–3 hours to Miami, Houston and Atlanta; Liberia also serves the US.',
+      'Juan Santamaría (SJO) is about 20 km west of San José, in Alajuela; Liberia (LIR), in the north-west, is closer to the Guanacaste beaches.',
   },
   drawbacks: [
     'Bill 25.796 would add a 15% tax on foreign dividends and interest, removing the main BBD advantage if it passes',

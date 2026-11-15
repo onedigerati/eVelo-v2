@@ -20,7 +20,7 @@ const profile: ExpatProfile = {
       'Interactive Brokers reportedly accepts Panama residents, and Schwab One International\'s application reportedly lists Panama (checked October 2026), with no known margin restriction outside Europe; IBKR margin terms by country are unconfirmed, and Fidelity and Vanguard open no new accounts for residents abroad.',
     climate: 'Hot and humid all year (highs about 30°C / 86°F), with heavy rain roughly May–December.',
     community: 'Large, mixed international community of retirees, diplomats and business people; English is widely used where foreigners live.',
-    access: 'Tocumen is Copa\'s hub, with about 20 US destinations (plus American, Delta and United): about 3 hours to Miami and 4.5 to Houston.',
+    access: 'Tocumen (PTY), a major connecting hub for the Americas, is about 25 km east of the centre.',
   },
   drawbacks: [
     'Heat, humidity and an eight-month rainy season',

@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'Foreign citizens are 34% of Zurich\'s 441,000 residents (mostly German, Italian, Spanish, Portuguese and French), 14% speak English and 40% use it at work, but expats are mostly working professionals, retirees are few, and daily life runs in Swiss German.',
     access:
-      'Zurich Airport has nonstops on SWISS, United, Delta and American to New York JFK, Newark, Boston, Washington, Chicago, Miami, Los Angeles, San Francisco and Philadelphia, some seasonal.',
+      'Zurich Airport (ZRH) is about 10 km north of the city, about 10–15 minutes by train; trains run across Switzerland and to Milan, Munich and Paris.',
   },
   drawbacks: [
     'Yearly wealth tax on the worldwide portfolio from about CHF 81k, and dividends taxed as income',

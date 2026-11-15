@@ -22,7 +22,7 @@ const profile: ExpatProfile = {
     community:
       'A small Western retiree community in a city of about 70,000, far smaller than Chiang Mai\'s (no headcount found); English is less widely spoken than in Chiang Mai or Bangkok.',
     access:
-      'No US nonstops: Chiang Rai airport flies to Bangkok (Don Mueang and Suvarnabhumi), Phuket and Singapore (Scoot), so the US is two or more connections and 20+ hours away.',
+      'Chiang Rai airport has flights to Bangkok (Don Mueang and Suvarnabhumi), Phuket and Singapore, so most long trips connect in Bangkok; Chiang Mai is about 3–4 hours by road.',
   },
   drawbacks: [
     'Burning-season smoke among Thailand\'s worst, and many expats leave for 2–3 months',

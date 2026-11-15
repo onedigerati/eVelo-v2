@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'A friendly, affordable metro whose newcomers are mostly regional; retirees, many returning to family, settle in Missouri-side suburbs such as Lee\'s Summit and the Northland (Kansas-side suburbs such as Overland Park fall under Kansas income tax), with jazz, barbecue, the Nelson-Atkins and the Plaza for city life.',
     access:
-      'Kansas City International (MCI) opened a new single terminal in 2023 and has nonstops to most large US cities, but no transatlantic service as of November 2025; abroad it flies to Cancún, Los Cabos, Montego Bay and Punta Cana, and most international trips connect through a hub.',
+      'Kansas City International (MCI), north of downtown, opened a new single terminal in 2023; most long-haul trips connect through a larger hub.',
   },
   drawbacks: [
     'A high homicide rate in the city proper',

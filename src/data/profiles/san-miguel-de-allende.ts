@@ -19,7 +19,7 @@ const profile: ExpatProfile = {
       'IBKR reportedly accepts Mexico residents (IBKR Pro), and Schwab One International\'s online form reportedly accepted Mexico in Oct 2026; margin by country of residence is unreported, and Fidelity and Vanguard open no accounts for residents abroad.',
     climate: 'At about 1,900 m: dry, sunny and mild, with near-freezing winter nights, a hot May and moderate summer rains.',
     community: 'A long-standing, very large US and Canadian retiree community, rich in arts and volunteer groups; daily life is easy in English.',
-    access: 'No airport: León/Bajío is about 1.5 hours away and Querétaro about 1 hour, both with nonstops to Texas and some other US hubs (check current routes).',
+    access: 'No airport in town: León/Bajío (BJX) is about 1.5 hours away and Querétaro about 1 hour, with shuttles from both.',
   },
   drawbacks: [
     'It sits in Guanajuato, one of Mexico\'s most violent states',

@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'A large, old city of neighbourhoods with many newcomers priced out of New York and Washington; Center City, Old City and the Main Line suburbs have well-established retiree communities.',
     access:
-      'Philadelphia International (PHL) is an American Airlines hub with nonstops across the US and to London, Dublin, Paris, Rome and other European cities, and Amtrak reaches New York in about 75 minutes and Washington in under two hours.',
+      'Philadelphia International (PHL) is about 20 minutes from Center City by regional rail; Amtrak reaches New York in about 75 minutes and Washington in under two hours.',
   },
   drawbacks: [
     'The School Income Tax adds 3.735% on dividends and short-term gains to Pennsylvania\'s 3.07%',

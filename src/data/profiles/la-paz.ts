@@ -22,7 +22,7 @@ const profile: ExpatProfile = {
     community:
       'A city of about 250,000 (2020) with a modest, settled foreign community: Mexico\'s immigration institute counted 19,765 resident foreigners in all of Baja California Sur in February 2024 (secondary source), with no figure for La Paz itself.',
     access:
-      'La Paz airport (LAP) has one US nonstop, Alaska to Los Angeles, plus domestic flights to Mexico City, Guadalajara and Tijuana; Los Cabos (SJD), about 2 hours by road, has many more US routes.',
+      'La Paz airport (LAP), a short drive from town, has domestic flights to Mexico City, Guadalajara and Tijuana; Los Cabos (SJD), about 2 hours by road, has many more international routes.',
   },
   drawbacks: [
     'Mexico taxes residents\' dividends at up to 35% plus a 10% levy that cannot be credited',

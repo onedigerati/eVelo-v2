@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'One of the fastest-growing metros in the US, drawing newcomers from the Northeast, the Midwest and California to its universities and tech jobs; retirees settle in Cary, Wake Forest, Apex and active-adult communities around the city.',
     access:
-      'Raleigh-Durham (RDU) has nonstops to most large US cities, London Heathrow on American, Paris, Frankfurt, Reykjavik, Dublin on Aer Lingus (since April 2026), Toronto on Air Canada and Cancún; Charlotte\'s hub is about 2.5 hours away by car or Amtrak.',
+      'Raleigh-Durham (RDU) sits between the two cities, about 25 minutes from downtown Raleigh; Charlotte\'s hub is about 2.5 hours away by car or Amtrak.',
   },
   drawbacks: [
     'Car-dependent suburbs and little public transit',

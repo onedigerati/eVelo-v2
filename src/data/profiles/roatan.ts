@@ -22,7 +22,7 @@ const profile: ExpatProfile = {
     community:
       'A long-settled community of American, Canadian, British and other settlers, concentrated in West End, West Bay and French Harbour, on an island of about 110,000 (2020); no expat headcount was found.',
     access:
-      'Roatán airport (RTB) has nonstops to Miami and Dallas (American), Atlanta (Delta) and Houston (United), plus seasonal Minneapolis (Sun Country) and winter flights to Canada.',
+      'Roatán\'s airport (RTB) is near Coxen Hole, about 20 minutes from West End; ferries link the island to La Ceiba on the mainland.',
   },
   drawbacks: [
     'The island\'s public hospital burned in 2024, and serious illness means an evacuation flight',

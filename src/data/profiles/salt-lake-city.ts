@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'A growing city with many newcomers from other states; the LDS church shapes Utah\'s culture and liquor laws, though Salt Lake City itself is mixed and more liberal, and retirees are fewer than in Arizona or Nevada.',
     access:
-      'Salt Lake City International (SLC), a Delta hub with a new terminal, has nonstops to most US cities plus Amsterdam, Paris, London, Seoul (daily since June 2025, Utah\'s first nonstop to Asia), Mexico City and Mexican resorts.',
+      'Salt Lake City International (SLC), a major hub with a new terminal, is about 15 minutes\' drive from downtown and on the TRAX light rail; ski resorts are within an hour.',
   },
   drawbacks: [
     'Winter inversions that trap smog in the valley',

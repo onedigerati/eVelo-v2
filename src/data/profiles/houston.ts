@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'One of the most diverse US cities, with a large international and newcomer population; retirees mostly settle in suburbs such as The Woodlands, Sugar Land, Katy and Clear Lake.',
     access:
-      'Bush Intercontinental (IAH), a United hub, has nonstops to Europe, Latin America, the Middle East, East Asia and Sydney; with Hobby (HOU), Southwest\'s base, Houston\'s airports reach 129 domestic and 72 international destinations on five continents (2026) and handled 62.1 million passengers in 2025.',
+      'Bush Intercontinental (IAH), north of the city, is the main long-haul airport, and Hobby (HOU), south-east of downtown, is mostly domestic; together they handled 62.1M passengers in 2025.',
   },
   drawbacks: [
     'Property tax around 2.0–2.2% of taxable value inside the city (2025 rates); homesteads get $140k off school tax ($200k from 65, when school tax is also frozen)',

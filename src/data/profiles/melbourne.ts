@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'English-speaking, with about 20,000 US-born residents in Greater Melbourne (2021 census); with no retiree visa, the community of foreign retirees is small, but nothing in daily life needs another language.',
     access:
-      'Nonstops to Los Angeles (Qantas, United, Delta), San Francisco (United) and Dallas–Fort Worth (Qantas); other US cities connect via those, Sydney or Auckland, and the flight to the West Coast takes about 15 hours.',
+      'Melbourne Airport (MEL), at Tullamarine about 25 km north-west of the city, is linked by the SkyBus; Sydney is about 1.5 hours by air, and Auckland is the other nearby hub.',
   },
   drawbacks: [
     'No retirement visa: visits of up to 12 months at a time without a child settled in Australia',

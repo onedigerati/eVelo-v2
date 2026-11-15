@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'About 68,900 Britons were registered in Alicante province on 1 Jan 2025, a quarter of all Britons in Spain, mostly along the Costa Blanca, against about 2,900 Americans; in the city itself about 27% of residents are foreign-born, led by Latin Americans and North Africans.',
     access:
-      'Alicante–Elche airport, 9 km from the city, handled about 20M passengers in 2025, mainly to the UK and Northern Europe, but has no US nonstops; connect via Madrid or another European hub.',
+      'Alicante–Elche airport, 9 km from the city, handled about 20M passengers in 2025, mostly to the UK and Northern Europe; Madrid, the nearest bigger hub, is about 2.5 hours by high-speed train.',
   },
   drawbacks: [
     'No US nonstops, so every trip home means a connection',

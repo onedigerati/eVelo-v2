@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'English-speaking, with about 39% of Greater Sydney born overseas and about 26,000 US-born residents (2021 census); with no retiree visa, the community of foreign retirees is small, but nothing in daily life needs another language.',
     access:
-      'Nonstops to Los Angeles (Qantas, United, Delta, American), San Francisco (Qantas, United), Dallas–Fort Worth (Qantas), Houston (United, seasonal) and Honolulu (Qantas, Hawaiian), plus Qantas to New York–JFK via Auckland; the flight to the West Coast takes about 14 hours.',
+      'Sydney Airport (SYD) is about 8 km south of the CBD, about 15 minutes by train; Auckland is about 3 hours away by air.',
   },
   drawbacks: [
     'No retirement visa: visits of up to 12 months at a time without a child settled in Australia',

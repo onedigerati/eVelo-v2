@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'A small expat retiree community on an island of about 65,000 people (no headcount found); English is widely used in Malaysia, but services are thinner than in Penang or Kuala Lumpur.',
     access:
-      'No US nonstops: Langkawi airport flies to Kuala Lumpur, Penang, Johor Bahru, Singapore, Dubai and Bengaluru, so the US means two or more connections; no ferry to Penang is listed.',
+      'Langkawi airport has flights to Kuala Lumpur, Penang and Singapore, so most long trips connect in Kuala Lumpur; ferries run to the mainland at Kuala Perlis and Kuala Kedah.',
   },
   drawbacks: [
     'No private hospital on the island; private care is a flight away in Penang',

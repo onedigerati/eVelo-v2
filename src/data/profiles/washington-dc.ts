@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'A city of newcomers from across the US and the world, with large diplomatic, academic and policy communities; many retirees stay after federal careers, and Capitol Hill, Georgetown and the close-in Maryland and Virginia suburbs are popular.',
     access:
-      'Dulles (IAD) is a United hub with nonstops to Europe, Asia, Africa, the Middle East and Latin America; Reagan National (DCA), on the Metro, covers the US, and BWI adds low-cost flights; Amtrak reaches New York in under three hours.',
+      'Reagan National (DCA) is on the Metro just across the river; Dulles (IAD), on the Silver Line, handles most long-haul flights, and BWI adds low-cost options; Amtrak reaches New York in under three hours.',
   },
   drawbacks: [
     'Housing among the most expensive in the US, though property tax is moderate at $0.85 per $100 of assessed value for homes',

@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'A mid-sized, outdoorsy city that has drawn many newcomers from California; retirees are a modest share in the city itself, with more in suburbs such as Lake Oswego and in the Willamette Valley.',
     access:
-      'Portland International (PDX), rebuilt with a new main terminal in 2024, has nonstops to most large US cities and 11 international destinations (2026), mostly Mexico and Canada, plus London Heathrow (British Airways), Amsterdam (KLM) and seasonal Frankfurt (Condor) and Reykjavik (Icelandair); Aeromexico\'s daily Mexico City flight returns on 21 January 2027.',
+      'Portland International (PDX), rebuilt with a new main terminal in 2024, is about 20 minutes from downtown by car or on the MAX Red Line.',
   },
   drawbacks: [
     'Combined state and local income tax up to about 13.9%, and an estate tax from just $1M',

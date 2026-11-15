@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'A fast-growing metro with many newcomers and retirees, especially in Winter Park, Lake Nona and the retirement communities to the north and west; The Villages, the largest retirement community in the US, is about an hour away.',
     access:
-      'Orlando International (MCO), Florida\'s busiest airport and the seventh busiest in the US, handled about 57.7 million passengers in 2025, nearly 8.5 million of them international, with wide nonstops to Europe and Latin America; Sanford (SFB) adds low-cost routes.',
+      'Orlando International (MCO) is about 20 km south-east of downtown, with Brightline trains to Miami; Sanford (SFB), north of the city, adds low-cost routes.',
   },
   drawbacks: [
     'Home insurance two to three times the US average (Florida averages roughly $4,000–6,000 a year by private estimates, 2026), though rates began to fall in 2026',

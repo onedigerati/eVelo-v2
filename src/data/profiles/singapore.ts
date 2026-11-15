@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'English is the working language and the expat community is large, but it is mostly working professionals on employment passes rather than retirees, since there is no retirement route.',
     access:
-      'Changi (SIN) has nonstops on Singapore Airlines to Los Angeles, San Francisco, Seattle, New York–JFK and Newark, and on United to San Francisco.',
+      'Changi (SIN), a major hub for Asia and Australia, is about 20 km east of the centre, about 30 minutes by MRT or taxi.',
   },
   drawbacks: [
     'No retirement visa: permanent residence needs S$25M in a fund or a S$200M family office',

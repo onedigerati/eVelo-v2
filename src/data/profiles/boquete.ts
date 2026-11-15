@@ -22,7 +22,7 @@ const profile: ExpatProfile = {
       'At about 1,200 m (3,900 ft), spring-like all year; a long May–November wet season, and misty drizzle and wind in the dry season.',
     community: 'About 25,000 people, over a fifth of them expats (mostly from the US and Canada), so an English-speaking social life is easy to find.',
     access:
-      'No direct US flights: fly David–Panama City on Copa (or drive about 7 hours), then connect at Tocumen, which has about 20 US destinations.',
+      'David\'s airport (DAV), under an hour\'s drive away, has short flights to Tocumen, Panama City\'s hub; the drive to Panama City takes about 7 hours.',
   },
   drawbacks: [
     'Specialist and emergency care means a trip to David or a flight to Panama City',

@@ -18,7 +18,7 @@ const profile: ExpatProfile = {
     climate: 'Mediterranean with about 3,400 hours of sun: August highs average about 34°C, and January highs about 18°C with lows near 11°C.',
     community:
       'A large international population (about 22% of the district are non-Cypriot citizens, 2021 census), many of them Russian-speaking or working in shipping, finance and tech; English is the common language, though the scene is less retiree-centred than Paphos.',
-    access: 'Larnaca airport is about 60 km away and Paphos airport about 45 minutes; both have direct flights to the UK and Europe, but there are no US nonstops.',
+    access: 'Larnaca airport is about 60 km away and Paphos airport about 45 minutes; the motorway links all three, and both airports have flights to the UK and Europe.',
   },
   drawbacks: [
     'Rents and property prices are the highest in Cyprus',

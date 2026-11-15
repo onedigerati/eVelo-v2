@@ -19,7 +19,7 @@ const profile: ExpatProfile = {
       'IBKR reportedly accepts Thailand residents (IBKR Pro), and Schwab One International\'s online form reportedly accepted Thailand in Oct 2026; margin by country of residence is unreported, and Fidelity and Vanguard open no accounts for residents abroad.',
     climate: 'Hot and humid all year (about 30–35°C), with a wet season (roughly June–October) that floods streets, and smoggy air in the dry months.',
     community: 'A large expat community along Sukhumvit and in Sathorn, with plenty of English-language services, though more working expats than retirees.',
-    access: 'No US nonstops; one stop via Tokyo, Seoul, Taipei or Hong Kong (United flies Los Angeles–Bangkok via Hong Kong), typically 18–22 hours.',
+    access: 'Suvarnabhumi (BKK), the main airport, is about 30 minutes from the centre on the Airport Rail Link; Don Mueang (DMK) handles most low-cost and domestic flights.',
   },
   drawbacks: [
     'Relentless heat, rainy-season flooding and dry-season air pollution',

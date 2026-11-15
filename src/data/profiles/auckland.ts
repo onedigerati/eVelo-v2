@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'English-speaking, with about 43% of Auckland\'s people born overseas and about 32,000 US-born residents across New Zealand (2023 census); the foreign retiree community is small, since retiree visas are costly, but nothing in daily life needs another language.',
     access:
-      'Air New Zealand flies nonstop to Los Angeles, San Francisco, Houston, New York–JFK and Honolulu, with United to San Francisco, Qantas to New York–JFK, and American and Delta seasonally to Dallas–Fort Worth and Los Angeles; the flight to the West Coast takes about 12–13 hours.',
+      'Auckland Airport, New Zealand\'s main international gateway, is about 20 km south of the centre, reached by road or airport bus; short domestic flights reach the rest of the country.',
   },
   drawbacks: [
     'The retiree visa needs NZD 1.25M in New Zealand plus NZD 60,000 a year, renews every 2 years and never leads to residence',

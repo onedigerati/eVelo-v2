@@ -22,7 +22,7 @@ const profile: ExpatProfile = {
     community:
       'The most established expat retirement town in Guatemala, with US and European retirees living among Guatemalans rather than in an enclave (secondary sources; no headcount found); Spanish is needed day to day.',
     access:
-      'La Aurora (GUA) in Guatemala City is about 1–1.5 hours by road, with nonstops to Miami, Dallas, Atlanta, Houston, Newark, Los Angeles, New York-JFK, Fort Lauderdale and Chicago (seasonal) on American, United, Delta, JetBlue, Alaska and Avianca.',
+      'La Aurora (GUA) in Guatemala City is the nearest airport, about 1–1.5 hours by road depending on traffic.',
   },
   drawbacks: [
     'Serious hospital care and the airport are an hour or more away in Guatemala City',

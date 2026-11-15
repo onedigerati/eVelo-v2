@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'Foreigners are said to be over half of Ajijic\'s winter population (11,439 residents in 2020), and Chapala is one of Jalisco\'s three main areas for new US temporary residents; clubs, services and daily life work in English.',
     access:
-      'Guadalajara airport (GDL), between the city and the lake, has wide US nonstop service: American (Dallas), Delta (Atlanta), United (Houston), Alaska (Los Angeles), Aeroméxico, and Volaris to about 28 US cities.',
+      'Guadalajara airport (GDL), one of Mexico\'s busiest, sits between the city and the lake, about 30–45 minutes\' drive from Chapala and Ajijic.',
   },
   drawbacks: [
     'Mexico taxes residents\' dividends at up to 35% plus a 10% levy that cannot be credited',

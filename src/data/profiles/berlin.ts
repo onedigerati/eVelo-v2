@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'One of Europe\'s largest international communities, with English widely spoken in central districts; offices and landlords mostly work in German, and the retiree share is small.',
     access:
-      'BER has daily nonstops in summer 2026 to New York on United (Newark) and Delta; winter schedules are thinner (check before relying on them), and other US cities mean connecting via Frankfurt, Munich, Amsterdam or London.',
+      'BER is about 25 km south-east of the centre, linked by airport express and S-Bahn; long-haul service is thinner than at Frankfurt or Munich, Germany\'s main hubs, and winter schedules thin further.',
   },
   drawbacks: [
     'After 10 years\' residence, up to 30% inheritance tax on the worldwide estate above €400k per child',

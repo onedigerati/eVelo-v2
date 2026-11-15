@@ -20,7 +20,7 @@ const profile: ExpatProfile = {
     climate: 'Tropical monsoon: highs about 32 °C all year, dry December–March, and about 2,200 mm of rain a year, peaking in September.',
     community:
       'A large foreign population: the 2010 census counted about 116,000 "expatriates", 21% of residents (a figure flagged as possibly inaccurate), mixing retirees with tourism workers and nomads.',
-    access: 'Phuket airport (HKT) has no US nonstops; one-stop routes run via Dubai, Abu Dhabi, Singapore, Seoul, Hong Kong or Istanbul.',
+    access: 'Phuket airport (HKT) is in the north of the island, about 45 minutes to an hour from the main west-coast beaches; Bangkok is about 1.5 hours by air.',
   },
   drawbacks: [
     'No US nonstops, and long one-stop trips home',

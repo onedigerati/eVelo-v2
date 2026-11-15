@@ -22,7 +22,7 @@ const profile: ExpatProfile = {
     community:
       'A city of about 442,000 (2020) with a sizeable community of American and Canadian retirees and winter snowbirds, though "not as jammed with Americans and Canadians" as Puerto Vallarta (secondary source; no headcount found).',
     access:
-      'Mazatlán airport (MZT) has year-round nonstops to Los Angeles (Alaska), Dallas and Phoenix (American) and Houston (United), seasonal Minneapolis (Delta, Sun Country), and many seasonal WestJet flights to Canada.',
+      'Mazatlán\'s airport (MZT) is about 20 km south-east of the centre; Mexico City is the main connecting hub, and overnight ferries cross to La Paz in Baja California.',
   },
   drawbacks: [
     'The US rates Sinaloa, Mazatlán included, Level 4 "do not travel", which can matter to insurers and family',

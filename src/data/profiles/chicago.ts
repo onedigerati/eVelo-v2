@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'A big, diverse city with deep cultural life (the Art Institute, the symphony, the lyric opera, the lakefront), but more retirees leave Illinois than arrive; those who stay tend to live along the lakefront (Lincoln Park, the Gold Coast, Edgewater) or in the northern and western suburbs.',
     access:
-      'O\'Hare (ORD), a United and American hub, has nonstops to almost every US city and dozens of international destinations across Europe, Asia and Latin America, and Midway (MDW) is a Southwest base; the L trains link both airports to the Loop.',
+      'O\'Hare (ORD), one of the world\'s biggest hubs, and Midway (MDW) are both linked to the Loop by the L; Amtrak\'s national network fans out from Union Station.',
   },
   drawbacks: [
     'Estate tax above $4M, with a cliff and no portability',

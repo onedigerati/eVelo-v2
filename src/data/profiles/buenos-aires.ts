@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'A large and long-standing foreign community of Europeans, Latin Americans and a growing number of Americans and digital nomads, concentrated in Palermo, Recoleta and Belgrano; Spanish (with a strong local accent) is needed for most daily life and all paperwork.',
     access:
-      'Ezeiza has nonstops to Miami (American, Aerolíneas Argentinas, LATAM), New York-JFK (American, and Delta seasonally), Atlanta (Delta), Houston (United) and seasonally Dallas (American); Miami is about 9 hours (check current schedules).',
+      'Ezeiza (EZE), about 35 km south-west of the centre, handles most international flights, and Aeroparque, on the riverfront near Palermo, domestic and regional ones; ferries cross the River Plate to Uruguay.',
   },
   drawbacks: [
     'A wealth tax on worldwide gross assets above about $249k, plus up to 35% on US dividends',

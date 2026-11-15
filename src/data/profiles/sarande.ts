@@ -19,7 +19,7 @@ const profile: ExpatProfile = {
     climate: 'Hot-summer Mediterranean: July and August highs about 33°C, January highs about 13°C with lows near 5°C, and about 1,075 mm of rain a year, mostly from October to December.',
     community:
       'A town of about 22,600 (2023) with a growing but small foreign-resident scene; about 3,000 Italian pensioners had registered as residents across Albania by 2023, and English is spoken mostly in tourism.',
-    access: 'There is no airport in town: ferries to Corfu take about 25–75 minutes (fewer sailings in winter), and Corfu or Tirana are the usual airports; no US nonstop to Albania could be confirmed for 2026.',
+    access: 'There is no airport in town: ferries to Corfu take about 25–75 minutes (fewer sailings in winter), and Corfu or Tirana, a long drive north, are the usual airports.',
   },
   drawbacks: [
     'Weak local healthcare, with serious care in Tirana or Corfu',

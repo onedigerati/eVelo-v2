@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'Tampa Bay (with St. Petersburg and Clearwater) is one of the largest US destinations for retirees and newcomers from the Midwest and Northeast, with a big established community in Pinellas and South Tampa.',
     access:
-      'Tampa International (TPA) has nonstops to about 22 international destinations (2026), including London Heathrow (Virgin Atlantic, and British Airways five times a week from 25 October 2026) and seasonal Zurich (Edelweiss, paused January to March 2027), plus Canada, Mexico, Panama and the Caribbean; Orlando\'s larger airport is 90 minutes away.',
+      'Tampa International (TPA) is about 10 km west of downtown; Orlando\'s larger airport is about 90 minutes away.',
   },
   drawbacks: [
     'High home insurance and flood cover in surge zones, though Citizens cut average rates about 8.7% from June 2026',

@@ -23,7 +23,7 @@ const profile: ExpatProfile = {
     community:
       'A farm town of about 12,700 (2010) with an expat community of "just around 250 people" (2018, secondary source), much smaller than Boquete\'s; Spanish is needed day to day.',
     access:
-      'David airport (DAV) has only domestic flights to Panama City; US flights connect at Tocumen (PTY), which has about 20 US destinations.',
+      'David airport (DAV), about an hour\'s drive away, has only domestic flights to Panama City, where Tocumen (PTY) is the international hub.',
   },
   drawbacks: [
     'Only a basic emergency hospital in town; David is up to an hour away and specialists are in Panama City',

@@ -18,7 +18,7 @@ const profile: ExpatProfile = {
     climate: 'Mediterranean with about 3,300 hours of sun: August highs average 31°C (heatwaves reach 35–38°C), and January highs about 17°C with lows near 9°C.',
     community:
       'Cyprus\'s main British retiree town, with an estimated 20,000+ British residents in the district (Tala, Chloraka, Peyia) plus Dutch, German and Scandinavian retirees, and English everywhere.',
-    access: 'Paphos airport (10 km) has direct flights to the UK and much of Europe; there are no US nonstops, so connect through a European hub.',
+    access: 'Paphos airport is about 10 km from town, with flights to the UK and much of Europe; Larnaca, the island\'s main airport, is about 1.5 hours\' drive.',
   },
   drawbacks: [
     'Hot summers push up air-conditioning bills, and wildfire season is long',

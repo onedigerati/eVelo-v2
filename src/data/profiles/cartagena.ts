@@ -20,7 +20,7 @@ const profile: ExpatProfile = {
     community:
       'A tourist-heavy city of about 900,000, with foreigners concentrated in the old city, Getsemaní and Bocagrande; no reliable count of resident retirees was found, and Spanish helps a lot.',
     access:
-      'Nonstops reportedly include Miami (American), New York-JFK and Fort Lauderdale (JetBlue) and Atlanta (Delta), with Houston, Washington-Dulles (United) and Orlando (Frontier) due from December 2026 (check current schedules).',
+      'Rafael Núñez airport (CTG) is in the city, a short taxi ride from the walled old town; Bogotá and Medellín, Colombia\'s main hubs, are 1–1.5 hours away by air.',
   },
   drawbacks: [
     'A worldwide wealth tax above about $1.2M, dividends taxed at up to 39% and 15% on inheritances',

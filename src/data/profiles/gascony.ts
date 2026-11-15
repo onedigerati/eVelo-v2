@@ -20,7 +20,7 @@ const profile: ExpatProfile = {
     climate: 'Mild south-western climate: Auch averages July highs about 28°C and January highs about 10°C with lows near 2°C, about 700 mm of rain and 1,980 hours of sun a year (1991–2020).',
     community:
       'The Gers has long drawn British and other European buyers: about 1,300 of its 6,400 second homes are foreign-owned, 49% of them by Britons, and long-term foreign residents join village associations; Auch itself has about 22,000 people, and daily life runs in French.',
-    access: 'Toulouse–Blagnac is the nearest major airport (Auch is about 70 km west of Toulouse, with TER trains to Toulouse-Matabiau); there are no US nonstops from Toulouse, so connect via Paris or another hub.',
+    access: 'Toulouse–Blagnac is the nearest major airport; Auch is about 70 km west of Toulouse, with TER trains to Toulouse-Matabiau, and Paris is about an hour\'s flight from Toulouse.',
   },
   drawbacks: [
     'Inheritance tax of up to 45% on the worldwide estate passing to children',

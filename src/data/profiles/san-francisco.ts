@@ -21,7 +21,7 @@ const profile: ExpatProfile = {
     community:
       'A dense, high-income city that skews young and professional; retirees are a modest share, many of them long-time owners, and newcomers who retire here tend to choose the Peninsula or Marin for space.',
     access:
-      'SFO is a major hub for United, with nonstops across the US and long-haul to Asia, Europe, Australia and Latin America; Oakland and San José airports add more domestic choice.',
+      'SFO, a major hub, is about 20 km south of downtown and on BART; Oakland and San José airports add more choice.',
   },
   drawbacks: [
     'Among the highest housing and living costs in the US; the median house price is well over $1M',

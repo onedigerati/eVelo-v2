@@ -18,7 +18,7 @@ const profile: ExpatProfile = {
     climate: 'Mediterranean with about 3,000 hours of sun: August days around 31°C and humid, January highs about 15°C with lows near 9°C, and little rain outside winter.',
     community:
       'More than half of Sliema\'s 22,000 residents are foreign nationals (2024), and English is an official language, so daily life, government and healthcare all work in English.',
-    access: 'Delta flies New York JFK–Malta 3 times a week in summer (from June 2026); the rest of the year, connect through a European hub; the Airport Direct bus links Sliema to Malta International.',
+    access: 'Malta International is about 10 km away, linked to Sliema by the Airport Direct bus; ferries cross to Valletta in minutes, and others run to Sicily.',
   },
   drawbacks: [
     'Dense, built-up and crowded, with heavy traffic and construction',

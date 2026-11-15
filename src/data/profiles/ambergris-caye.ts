@@ -22,7 +22,7 @@ const profile: ExpatProfile = {
     community:
       'San Pedro, the island\'s only town, has about 20,000 people (2024 estimate), most of them bilingual in Spanish and English, and a tourist and diving economy with resident foreigners, though no expat headcount was found.',
     access:
-      'Tropic Air and Maya Island Air fly from the San Pedro airstrip to Belize City (BZE), and fast ferries run there too; BZE has year-round nonstops to Atlanta, Dallas, Houston, Los Angeles and Miami and seasonal routes from Charlotte, Chicago, Denver, Newark and others.',
+      'Short hops from the San Pedro airstrip and fast ferries link the island to Belize City, where the country\'s international airport (BZE) is; there is no road to the mainland.',
   },
   drawbacks: [
     'No hospital on the island: anything beyond the polyclinic means a flight or boat out',
