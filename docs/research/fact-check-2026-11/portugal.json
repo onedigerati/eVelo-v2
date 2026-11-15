@@ -1,0 +1,1479 @@
+{
+  "country": "Portugal",
+  "cities": [
+    "lisbon",
+    "porto",
+    "algarve",
+    "madeira",
+    "cascais",
+    "tavira"
+  ],
+  "claims": [
+    {
+      "id": "pt-visa-d7-route",
+      "fact": "visa",
+      "cities": [
+        "lisbon",
+        "porto",
+        "algarve",
+        "madeira",
+        "cascais",
+        "tavira"
+      ],
+      "claim": "Portugal has a residence visa (the D7) for people living on passive income",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Portuguese Ministry of Foreign Affairs, visas: necessary documentation, residency",
+          "url": "https://vistos.mne.gov.pt/en/national-visas/necessary-documentation/residency",
+          "read": "2026-11-15",
+          "says": "The residency list has a section \"Fixed residency for retirement purposes, religious purposes or people living from passive income\"; for retirement it asks for a \"Document certifying retirement amount\" and for people living from passive income a \"Document certifying revenue from movable and immovable property; intellectual or financial assets\". The general list also asks for \"Proof of financial resources, as defined by decree of the competent government members\". The page gives no amounts and does not use the label \"D7\"."
+        }
+      ],
+      "note": "The label \"D7\" is on the consulates' own checklist (see pt-visa-d7-second-adult), not on this page."
+    },
+    {
+      "id": "pt-visa-d7-income-minimum",
+      "fact": "visa",
+      "cities": [
+        "lisbon",
+        "porto",
+        "algarve",
+        "madeira",
+        "cascais",
+        "tavira"
+      ],
+      "claim": "The D7 needs at least €920 a month, which is the 2026 minimum wage",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Portuguese Ministry of Foreign Affairs, visas: means of subsistence",
+          "url": "https://vistos.mne.gov.pt/en/national-visas/necessary-documentation/means-of-subsistence",
+          "read": "2026-11-15",
+          "says": "Means of subsistence are measured against \"the minimum monthly salary - currently in 2026 - amounting to 920€\", net of social security deductions, citing Regulatory Decree n.º 139/2025 of 29 December; the first adult counts 100%."
+        },
+        {
+          "name": "PwC Worldwide Tax Summaries: Portugal, individual, other taxes",
+          "url": "https://taxsummaries.pwc.com/portugal/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "\"In 2026, the Portuguese monthly minimum wage is EUR 920.\" Last reviewed 03 October 2026."
+        },
+        {
+          "name": "Garrigues: Portugal, minimum monthly wage increases in 2026",
+          "url": "https://www.garrigues.com/pt/en_GB/new/portugal-minimum-monthly-wage-increases-2026",
+          "read": "2026-11-15",
+          "says": "Decree-Law no. 139/2025 of December 29th sets the minimum monthly wage at €920.00 from January 1, 2026; \"The minimum monthly wage in the autonomous regions of Madeira and Azores is subject to specific ruling.\" Page dated 01/07/2026."
+        }
+      ],
+      "note": "The decree itself could not be read: diariodarepublica.pt returned an empty page, and dgert.gov.pt and aima.gov.pt failed with a certificate error (\"unable to verify the first certificate\"). The ministry's visa page uses the national €920 for every applicant. A search result, which is not a read, says Madeira set its own minimum wage at €980 for 2026 (Decreto Legislativo Regional n.º 1/2026/M); nothing read says a consulate applies it to a D7 applicant bound for Madeira."
+    },
+    {
+      "id": "pt-visa-d7-second-adult",
+      "fact": "visa",
+      "cities": [
+        "lisbon",
+        "porto",
+        "algarve",
+        "madeira",
+        "cascais",
+        "tavira"
+      ],
+      "claim": "A second adult adds 50% to the required income",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Portuguese Ministry of Foreign Affairs, visas: means of subsistence",
+          "url": "https://vistos.mne.gov.pt/en/national-visas/necessary-documentation/means-of-subsistence",
+          "read": "2026-11-15",
+          "says": "Per family unit: \"First adult 100%; Second adult and additional adults 50%; Children and young people under 18 years of age and non-minor dependent children 30%.\""
+        },
+        {
+          "name": "Consulate General of Portugal in Manchester: D7 residence visa checklist (PDF, file dated 6 March 2025, hosted by VFS Global)",
+          "url": "https://www.vfsglobal.com/one-pager/portugal/uk/english/pdf/D7-Residence-Visa-For-Retirement-Purposes-Religious-Purposes-Or-For-Living-From-Individual-Revenues-March-2025.pdf",
+          "read": "2026-11-15",
+          "says": "The checklist is headed \"Residence visa for retirement purposes, religious purposes or for living from individual revenues (D7)\". Means of subsistence are based on the minimum monthly salary, \"currently in 2024 amounting to 820€\", with \"First adult: 100%. Second adult and additional adults: 50%. Children and young people under 18 years of age and non-minor dependent children: 30%\"."
+        }
+      ]
+    },
+    {
+      "id": "pt-visa-d7-income-types",
+      "fact": "visa",
+      "cities": [
+        "lisbon",
+        "porto",
+        "algarve",
+        "madeira",
+        "cascais",
+        "tavira"
+      ],
+      "claim": "The income may come from dividends, interest, rent or pensions",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Portuguese Ministry of Foreign Affairs, visas: necessary documentation, residency",
+          "url": "https://vistos.mne.gov.pt/en/national-visas/necessary-documentation/residency",
+          "read": "2026-11-15",
+          "says": "Retirement: \"Document certifying retirement amount\". People living from passive income: \"Document certifying revenue from movable and immovable property; intellectual or financial assets\". Dividends, interest and rent are not named one by one."
+        },
+        {
+          "name": "Consulate General of Portugal in Manchester: D7 residence visa checklist (PDF, file dated 6 March 2025, hosted by VFS Global)",
+          "url": "https://www.vfsglobal.com/one-pager/portugal/uk/english/pdf/D7-Residence-Visa-For-Retirement-Purposes-Religious-Purposes-Or-For-Living-From-Individual-Revenues-March-2025.pdf",
+          "read": "2026-11-15",
+          "says": "\"For people living out from personal revenue: Document certifying revenue, made available weekly, monthly or yearly, from movable and immovable property; intellectual or financial assets (dividends, investment portfolio, etc.)\", plus a Portuguese bank account; for retirement, a document certifying the pension amount."
+        },
+        {
+          "name": "Portugalist: Portugal D7 visa requirements",
+          "url": "https://www.portugalist.com/d7-visa-requirements/",
+          "read": "2026-11-15",
+          "says": "\"Last checked: November 4, 2026.\" Income that counts: pensions and US Social Security, rental income, dividends and other investment income, interest if ongoing and recurring, and royalties; salary from a remote job and freelancing are sent to the D8, and savings alone do not count unless they produce ongoing income."
+        }
+      ],
+      "note": "The official pages name the classes (pensions; revenue from movable and immovable property and from financial assets); the list of dividends, interest, rent and pensions one by one is on the secondary page."
+    },
+    {
+      "id": "pt-visa-d7-savings",
+      "fact": "visa",
+      "cities": [
+        "lisbon",
+        "porto",
+        "algarve",
+        "madeira",
+        "cascais",
+        "tavira"
+      ],
+      "claim": "Applicants also show about €11,040 of savings (12 months of the minimum wage)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Portugalist: Portugal D7 visa requirements",
+          "url": "https://www.portugalist.com/d7-visa-requirements/",
+          "read": "2026-11-15",
+          "says": "\"Last checked: November 4, 2026.\" Savings of €11,040 for one person, \"Proof you can support yourself for at least 12 months\" (€16,560 for a couple); it says some checklists require a Portuguese bank account and others only prefer one, and gives no legal source for the savings figure."
+        },
+        {
+          "name": "Consulate General of Portugal in Manchester: D7 residence visa checklist (PDF, file dated 6 March 2025, hosted by VFS Global)",
+          "url": "https://www.vfsglobal.com/one-pager/portugal/uk/english/pdf/D7-Residence-Visa-For-Retirement-Purposes-Religious-Purposes-Or-For-Living-From-Individual-Revenues-March-2025.pdf",
+          "read": "2026-11-15",
+          "says": "Proof of financial resources: \"Last 3 months bank statement\" and an \"Up-to-date bank statement with available funds amounting to at least €9840 (single applicant)\", which is 12 × the €820 minimum wage the checklist quotes for 2024."
+        },
+        {
+          "name": "VFS Global Brazil: checklist, visto de residência para reformados, religiosos e pessoas que vivam de rendimentos (PDF, file dated 28 February 2025)",
+          "url": "https://www.vfsglobal.com/Portugal/Brazil/pdf/Visto-de-Residência-para-a-fixação-de-residência-de-reformados-religiosos-e-pessoas-que-vivam-de-rendimentos.pdf",
+          "read": "2026-11-15",
+          "says": "General requirement: \"Comprovativo de meios de subsistência para um período de, pelo menos, 12 meses, nos termos do n.º 2 do artigo 2.º da Portaria n.º 1563/2007\"."
+        }
+      ],
+      "note": "€11,040 is 12 × €920. The 2026 figure itself is on the secondary page only; the two official checklists read are dated 2025 and give the 12-month rule and the 2024 amount (€9,840). The text of Portaria 1563/2007 could not be read (diariodarepublica.pt returned an empty page)."
+    },
+    {
+      "id": "pt-visa-d7-loan-draws",
+      "fact": "visa",
+      "cities": [
+        "lisbon",
+        "porto",
+        "algarve",
+        "madeira",
+        "cascais",
+        "tavira"
+      ],
+      "claim": "Draws on a loan do not count as income for the D7",
+      "verdict": "cant-confirm",
+      "hedge": "believed",
+      "wording": "loan draws are not on the consulates' list of income and are believed not to count",
+      "oldWording": "loan draws do not count as income",
+      "sources": [
+        {
+          "name": "Portuguese Ministry of Foreign Affairs, visas: necessary documentation, residency",
+          "url": "https://vistos.mne.gov.pt/en/national-visas/necessary-documentation/residency",
+          "read": "2026-11-15",
+          "says": "The documents accepted for people living from passive income are those \"certifying revenue from movable and immovable property; intellectual or financial assets\"; for retirees, a document certifying the retirement amount. Loans or borrowing are not mentioned."
+        },
+        {
+          "name": "Consulate General of Portugal in Manchester: D7 residence visa checklist (PDF, file dated 6 March 2025, hosted by VFS Global)",
+          "url": "https://www.vfsglobal.com/one-pager/portugal/uk/english/pdf/D7-Residence-Visa-For-Retirement-Purposes-Religious-Purposes-Or-For-Living-From-Individual-Revenues-March-2025.pdf",
+          "read": "2026-11-15",
+          "says": "The revenue accepted is \"from movable and immovable property; intellectual or financial assets (dividends, investment portfolio, etc.)\". Loans are not mentioned."
+        },
+        {
+          "name": "Portugalist: Portugal D7 visa requirements",
+          "url": "https://www.portugalist.com/d7-visa-requirements/",
+          "read": "2026-11-15",
+          "says": "\"Last checked: November 4, 2026.\" The lists of income that counts and does not count say nothing about loans, margin loans or borrowing."
+        }
+      ],
+      "also": [
+        "hedge added (\"believed\") and the clause reworded to what the official lists show; the unhedged \"loan draws do not count as income\" is gone",
+        "sources: added the Ministry of Foreign Affairs residency visa documents page"
+      ],
+      "note": "No page read says in terms that loan proceeds are refused. The official lists name income from property and financial assets and pensions, and a loan is none of these, so the profiles' conclusion is an inference. A search for a page on the point found none. Worth a question to a consulate, since the whole plan rests on living off loan draws."
+    },
+    {
+      "id": "pt-visa-aima-backlogs",
+      "fact": "visa",
+      "cities": [
+        "lisbon",
+        "porto",
+        "algarve",
+        "madeira",
+        "cascais",
+        "tavira"
+      ],
+      "claim": "AIMA processing backlogs are common",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Portugalist: Portugal D7 visa requirements",
+          "url": "https://www.portugalist.com/d7-visa-requirements/",
+          "read": "2026-11-15",
+          "says": "\"Last checked: November 4, 2026.\" Some applicants get an AIMA appointment booked with the visa; others \"don't, and wait months\". It reports about 29,000 Golden Visa investors still waiting as of August 2026, and that under Lei 62/2026, in force since 11 September 2026, a renewal is no longer treated as approved because AIMA missed its deadline."
+        },
+        {
+          "name": "Portugal.com: AIMA rejects 23,000 residency applications, continues to work through its huge backlog",
+          "url": "https://www.portugal.com/news/aima-rejects-23000-residency-applications-continues-to-work-through-its-huge-backlog",
+          "read": "2026-11-15",
+          "says": "Dated May 9, 2025. AIMA had approved 123,000 residence permits, 27.5% of 446,921 pending expressions of interest; 117,000 cases were reported as still pending, and the queue still included about 50,000 Golden Visa investors and family reunification applicants."
+        }
+      ],
+      "note": "Secondary pages only: aima.gov.pt failed with a certificate error, and two 2026 Portugal News articles (1 July and 9 June 2026) came back empty. The 2025 page gives the scale; the November 2026 page says waits of months still happen. Search results, not read, say the backlog had fallen to about 30,000 cases by July 2026, so \"common\" may overstate it by now."
+    },
+    {
+      "id": "pt-tax-no-wealth-tax",
+      "fact": "tax",
+      "cities": [
+        "lisbon",
+        "porto",
+        "algarve",
+        "madeira",
+        "cascais",
+        "tavira"
+      ],
+      "claim": "Portugal has no wealth tax on financial assets (and its property surcharge, AIMI, does not reach a foreign portfolio)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC Worldwide Tax Summaries: Portugal, individual, other taxes",
+          "url": "https://taxsummaries.pwc.com/portugal/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "\"There are no net wealth/worth taxes in Portugal.\" Property: \"Municipal property tax is charged on the registered value of real estate.\" Last reviewed 03 October 2026."
+        },
+        {
+          "name": "Portal das Finanças: Código do IMI, artigo 135.º-A (Adicional ao IMI, incidência subjetiva)",
+          "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cimi/Pages/cimi135a.aspx",
+          "read": "2026-11-15",
+          "says": "The additional to IMI falls on \"proprietários, usufrutuários ou superficiários de prédios urbanos situados no território português\"; the article extends it to nothing but real estate."
+        }
+      ],
+      "note": "Agrees with LOCAL_TAX_BY_COUNTRY.PT in src/data/localTaxes.ts (\"Portugal has no net wealth tax\"). AIMI's thresholds and rates were not read, since the profiles do not state them."
+    },
+    {
+      "id": "pt-tax-dividends-interest-28",
+      "fact": "tax",
+      "cities": [
+        "lisbon",
+        "porto",
+        "algarve",
+        "madeira",
+        "cascais",
+        "tavira"
+      ],
+      "claim": "Dividends and interest pay a 28% flat rate",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC Worldwide Tax Summaries: Portugal, individual, income determination",
+          "url": "https://taxsummaries.pwc.com/portugal/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "\"Dividends and interest are liable to taxation at a flat rate of 28%.\" Interest paid by non-resident entities to tax-resident individuals is also taxed at 28%; income paid by entities in blacklisted jurisdictions is \"liable to a tax rate of 35% (in 2026)\". Last reviewed 03 October 2026."
+        },
+        {
+          "name": "Portal das Finanças: Código do IRS, artigo 72.º (Taxas especiais)",
+          "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs72.aspx",
+          "read": "2026-11-15",
+          "says": "N.º 1 taxes autonomously at 28%, among others, alínea d): \"Os rendimentos de capitais, tal como são definidos no artigo 5.º, quando não sujeitos a retenção na fonte\"; n.º 18 sets 35% for capital income due by entities in listed low-tax jurisdictions. Last amended by Lei n.º 73-A/2025."
+        }
+      ],
+      "also": [
+        "sources: the five profiles that cited \"PwC: Portugal, taxes on personal income\" now cite PwC's income determination page instead; the personal-income page read today gives no rate (\"Special rates apply to capital gains and investment income\") and nothing on NHR",
+        "sources: PwC income determination and PwC other tax credits and incentives added to all six"
+      ],
+      "note": "For a US portfolio held at a US broker the income is not withheld in Portugal, so the special rate of article 72 applies, declared in the annual return. Madeira words it \"Portugal's 28% flat rate\"; see pt-tax-madeira-flat-rate for the regional cut."
+    },
+    {
+      "id": "pt-tax-option-aggregate",
+      "fact": "tax",
+      "cities": [
+        "lisbon",
+        "porto",
+        "algarve",
+        "cascais",
+        "tavira"
+      ],
+      "claim": "The taxpayer may choose the progressive scale instead of the flat rate",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC Worldwide Tax Summaries: Portugal, individual, income determination",
+          "url": "https://taxsummaries.pwc.com/portugal/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "\"the taxpayer may opt to be liable to tax on dividends and interest received at the marginal rates\", which it gives as 12.50% to 48% plus the solidarity rate if applicable. Last reviewed 03 October 2026."
+        },
+        {
+          "name": "Portal das Finanças: Código do IRS, artigo 72.º (Taxas especiais)",
+          "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs72.aspx",
+          "read": "2026-11-15",
+          "says": "N.º 13: \"Os rendimentos previstos nas alíneas c) a f) do n.º 1 ... podem ser englobados por opção dos respetivos titulares residentes em território português.\""
+        }
+      ],
+      "note": "Madeira's profile does not state the option; it applies there too, on the regional scale."
+    },
+    {
+      "id": "pt-tax-us-treaty-credit",
+      "fact": "tax",
+      "cities": [
+        "lisbon",
+        "porto",
+        "algarve",
+        "madeira",
+        "cascais",
+        "tavira"
+      ],
+      "claim": "US tax on the income is creditable in Portugal under the treaty: the profiles said \"the 15% US withholding\", for dividends and interest alike",
+      "verdict": "corrected",
+      "oldWording": "with the 15% US withholding creditable under the treaty",
+      "newWording": "with US tax on them creditable up to the treaty caps (15% on dividends, 10% on interest)",
+      "sources": [
+        {
+          "name": "IRS: Convention between the United States and the Portuguese Republic on taxes on income, with protocol (signed 6 September 1994)",
+          "url": "https://www.irs.gov/pub/irs-trty/portugal.pdf",
+          "read": "2026-11-15",
+          "says": "Article 10(2): tax in the country of the paying company \"shall not exceed 15 percent of the gross amount of the dividends\". Article 11(2): on interest it \"shall not exceed 10 percent of the gross amount of such interest\". Article 25(3)(a): Portugal allows as a deduction \"an amount equal to the income tax paid in the United States\" on income the US may tax \"other than solely by reason of citizenship\", up to the Portuguese tax on that income. Article 25(2): for a US citizen resident in Portugal, income the US taxes solely by reason of citizenship is deemed to arise in Portugal to the extent needed to avoid double taxation. General effective date 1 January 1996."
+        },
+        {
+          "name": "Portal das Finanças: Código do IRS, artigo 81.º (Eliminação da dupla tributação jurídica internacional)",
+          "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs81.aspx",
+          "read": "2026-11-15",
+          "says": "N.º 1: income obtained abroad gives \"um crédito de imposto por dupla tributação jurídica internacional\", the lower of the tax paid abroad and the share of IRS on that income; n.º 2: where a convention exists the deduction \"não pode ultrapassar o imposto pago no estrangeiro\" under the convention."
+        },
+        {
+          "name": "PwC Worldwide Tax Summaries: Portugal, individual, income determination",
+          "url": "https://taxsummaries.pwc.com/portugal/individual/income-determination",
+          "read": "2026-11-15",
+          "says": "\"A credit against the Portuguese tax liability is available for the lower of the tax paid in the foreign country\" and the Portuguese tax; for a treaty country the credit cannot exceed the treaty percentage. Last reviewed 03 October 2026."
+        }
+      ],
+      "also": [
+        "sources: added the IRS copy of the US–Portugal convention to all six"
+      ],
+      "note": "Two things were off. The 15% is the treaty cap for dividends; for interest it is 10%. And for a US citizen it is not a withholding: a US broker withholds nothing from a citizen, who pays US tax by return; Portugal credits US tax only up to what the US could charge a non-citizen resident of Portugal (the caps), and the US then credits the Portuguese tax on the rest. The tax score stays 3 (no wealth tax, 28% on dividends). Read from the IRS PDF of the treaty; the Treasury technical explanation was not read."
+    },
+    {
+      "id": "pt-tax-nhr-closed",
+      "fact": "tax",
+      "cities": [
+        "lisbon",
+        "porto",
+        "algarve",
+        "madeira",
+        "cascais",
+        "tavira"
+      ],
+      "claim": "The NHR regime is closed to new entrants",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC Worldwide Tax Summaries: Portugal, individual, other tax credits and incentives",
+          "url": "https://taxsummaries.pwc.com/portugal/individual/other-tax-credits-and-incentives",
+          "read": "2026-11-15",
+          "says": "\"The NHR regime was revoked with effect from 1 January 2024 onward\"; it still applies to those already registered on 1 January 2024 or who met the conditions by 31 December 2023, and to some who became tax residents by 31 December 2024. Last reviewed 03 October 2026."
+        }
+      ]
+    },
+    {
+      "id": "pt-tax-ifici-workers",
+      "fact": "tax",
+      "cities": [
+        "lisbon",
+        "porto",
+        "algarve",
+        "cascais",
+        "tavira"
+      ],
+      "claim": "NHR's successor, IFICI, is for workers, so a retiree has no special regime",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC Worldwide Tax Summaries: Portugal, individual, other tax credits and incentives",
+          "url": "https://taxsummaries.pwc.com/portugal/individual/other-tax-credits-and-incentives",
+          "read": "2026-11-15",
+          "says": "The tax incentive for scientific research and innovation is for individuals who become tax residents, were not resident in the previous five years, and \"carry out eligible activities in eligible entities as defined in the applicable legislation\"; it gives a special 20% rate on employment and business income and exempts foreign-sourced income \"with the exception of pension income\". Last reviewed 03 October 2026."
+        }
+      ],
+      "note": "For someone who does qualify, IFICI exempts foreign investment income; a retiree with no eligible activity does not qualify, which is what the profiles say. Madeira's profile says only that NHR is closed."
+    },
+    {
+      "id": "pt-tax-madeira-regional-cut",
+      "fact": "tax",
+      "cities": [
+        "madeira"
+      ],
+      "claim": "Madeira cuts the progressive IRS scale by up to 30% below mainland rates",
+      "verdict": "corrected",
+      "oldWording": "(up to 30% below mainland rates)",
+      "newWording": "(30% below mainland rates in 2026)",
+      "sources": [
+        {
+          "name": "AT-RAM (Madeira regional tax authority): Agenda Fiscal, Janeiro 2026 (PDF)",
+          "url": "https://at.madeira.gov.pt/Ficheiros/NL/AFJaneiro2026.pdf",
+          "read": "2026-11-15",
+          "says": "\"em 2026 a Madeira passa a aplicar o diferencial fiscal máximo de 30% face às taxas de IRS vigente no continente a todos os nove escalões de rendimento, alargando um desagravamento que antes estava limitado aos escalões mais baixos.\""
+        },
+        {
+          "name": "Simula.pt: IRS Madeira, taxas de novembro de 2026",
+          "url": "https://simula.pt/noticias/irs-madeira-taxas-novembro-2026/",
+          "read": "2026-11-15",
+          "says": "Published 6 November 2026. Decreto Legislativo Regional n.º 17/2026/M, published 5 November, lowers the first six brackets with effect from 1 January 2026 (first bracket 8,75% → 8,54%, against 12,2% nationally) and keeps brackets 7 to 9 at 30,17%, 31,22% and 33,60%; the regional budget for 2026 had already set rates 30% below the national ones."
+        }
+      ],
+      "also": [
+        "sources: added the AT-RAM Agenda Fiscal of January 2026"
+      ],
+      "note": "\"Up to 30%\" was true until 2025, when the full 30% applied only to the lower brackets. The decree of November 2026 on Portal das Finanças is an image-only PDF that could not be read."
+    },
+    {
+      "id": "pt-tax-madeira-flat-rate",
+      "fact": "tax",
+      "cities": [
+        "madeira"
+      ],
+      "claim": "Madeira's cut reportedly does not apply to the 28% flat rate",
+      "verdict": "corrected",
+      "oldWording": "reportedly not to the 28% flat rate",
+      "newWording": "to the flat rate withheld on Portuguese-paid interest and dividends, but whether they reach the 28% on dividends from a US broker is unverified",
+      "sources": [
+        {
+          "name": "AT-RAM (Madeira regional tax authority): Agenda Fiscal, Janeiro 2026 (PDF)",
+          "url": "https://at.madeira.gov.pt/Ficheiros/NL/AFJaneiro2026.pdf",
+          "read": "2026-11-15",
+          "says": "\"Em 2026 mantém-se a redução de 30% das taxas liberatórias em sede de IRS e de IRC para a RAM, face à taxa aplicada no território continental.\" Its examples are income \"obtidos em território português\": bank interest, interest on savings and treasury certificates, \"Dividendos resultantes de ações\"."
+        },
+        {
+          "name": "Portal das Finanças: Código do IRS, artigo 72.º (Taxas especiais)",
+          "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/cirs_rep/Pages/irs72.aspx",
+          "read": "2026-11-15",
+          "says": "The 28% in n.º 1, alínea d) is a special rate charged in the annual assessment on capital income \"quando não sujeitos a retenção na fonte\", a different provision from the liberatory rates withheld at source under the preceding article. The page says nothing of the autonomous regions."
+        }
+      ],
+      "also": [
+        "scores.tax stays 3: 28% (or 19.6% if the cut applies) is inside the rubric's 19–30% band"
+      ],
+      "note": "The regional tax authority says the 30% cut does apply to the liberatory rates, so a Madeira resident pays 19.6%, not 28%, on interest and dividends paid in Portugal. A US portfolio at a US broker is not withheld in Portugal and falls under the special rate of article 72; no page read says whether the cut reaches it. Consultancy pages found by search (mcs.pt, HTTP 403; not read) appear to disagree with one another. PwC Portugal's 2026 tax guide (pwc.pt, HTTP 403) would settle it. Until then the profile keeps 28% for US dividends and says the point is unverified."
+    },
+    {
+      "id": "pt-estate-stamp-duty-10",
+      "fact": "estate",
+      "cities": [
+        "lisbon",
+        "porto",
+        "algarve",
+        "madeira",
+        "cascais",
+        "tavira"
+      ],
+      "claim": "There is no inheritance tax as such: inheritances pay a 10% stamp duty",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "PwC Worldwide Tax Summaries: Portugal, individual, other taxes",
+          "url": "https://taxsummaries.pwc.com/portugal/individual/other-taxes",
+          "read": "2026-11-15",
+          "says": "\"Free acquisition of goods by individuals (inheritance and gifts) is taxed under the stamp tax at 10%.\" \"Donation of property is subject to an additional rate of 0.8%.\" Last reviewed 03 October 2026."
+        }
+      ],
+      "note": "Agrees with LOCAL_TAX_BY_COUNTRY.PT (\"its 10% stamp duty on inheritances\")."
+    },
+    {
+      "id": "pt-estate-situs-only-portugal",
+      "fact": "estate",
+      "cities": [
+        "lisbon",
+        "porto",
+        "algarve",
+        "madeira",
+        "cascais",
+        "tavira"
+      ],
+      "claim": "The stamp duty reaches only assets located in Portugal",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Portal das Finanças: Código do Imposto do Selo, artigo 4.º (Territorialidade)",
+          "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/selo/Pages/selo4.aspx",
+          "read": "2026-11-15",
+          "says": "N.º 3: \"Nas transmissões gratuitas, o imposto é devido sempre que os bens estejam situados em território nacional.\" N.º 4 lists what counts as situated there. Last amended by Lei n.º 24-D/2022."
+        }
+      ],
+      "note": "Agrees with LOCAL_TAX_BY_COUNTRY.PT (\"covers Portuguese-situs assets only\")."
+    },
+    {
+      "id": "pt-estate-family-exempt",
+      "fact": "estate",
+      "cities": [
+        "lisbon",
+        "porto",
+        "algarve",
+        "madeira",
+        "cascais",
+        "tavira"
+      ],
+      "claim": "Spouses, children and grandchildren are exempt",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Portal das Finanças: Código do Imposto do Selo, artigo 6.º (Isenções subjectivas)",
+          "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/selo/Pages/selo6.aspx",
+          "read": "2026-11-15",
+          "says": "N.º 1, alínea e) exempts \"O cônjuge ou unido de facto, descendentes e ascendentes, nas transmissões gratuitas sujeitas à verba 1.2\" of the general table."
+        }
+      ],
+      "note": "The exemption is wider than the profiles say: it also covers a de facto partner and ascendants (parents, grandparents). Children and grandchildren are \"descendentes\"."
+    },
+    {
+      "id": "pt-estate-us-brokerage-outside",
+      "fact": "estate",
+      "cities": [
+        "lisbon",
+        "porto",
+        "algarve",
+        "madeira",
+        "cascais",
+        "tavira"
+      ],
+      "claim": "US brokerage assets left to US-resident children appear untaxed in Portugal",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Portal das Finanças: Código do Imposto do Selo, artigo 4.º (Territorialidade)",
+          "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/selo/Pages/selo4.aspx",
+          "read": "2026-11-15",
+          "says": "N.º 4, alínea d): shares count as situated in Portugal \"quando a sociedade participada tenha a sua sede, direcção efectiva ou estabelecimento estável em território nacional, desde que o adquirente tenha domicílio neste território\". Alínea e): money and crypto-assets count when \"depositados em instituições com sede, direção efetiva ou estabelecimento estável em território nacional\", or, when not deposited, in a succession when the deceased was domiciled in Portugal."
+        },
+        {
+          "name": "Portal das Finanças: Código do Imposto do Selo, artigo 6.º (Isenções subjectivas)",
+          "url": "https://info.portaldasfinancas.gov.pt/pt/informacao_fiscal/codigos_tributarios/selo/Pages/selo6.aspx",
+          "read": "2026-11-15",
+          "says": "Descendants are exempt in any case (n.º 1, alínea e))."
+        }
+      ],
+      "note": "Two independent reasons: shares in companies seated outside Portugal are not Portuguese-situs, and children are exempt whatever the asset. The profiles' \"appear\" may stay. For an heir who is not exempt (a sibling, a friend), US shares and cash deposited at a US broker are still outside the rule as read; cash not held on deposit follows the deceased's Portuguese domicile. No Portuguese ruling on a US brokerage account was read. LOCAL_TAX_BY_COUNTRY.PT models no inheritance tax, which agrees."
+    },
+    {
+      "id": "pt-estate-no-us-treaty",
+      "fact": "estate",
+      "cities": [
+        "lisbon",
+        "porto",
+        "algarve",
+        "madeira",
+        "cascais",
+        "tavira"
+      ],
+      "claim": "There is no US–Portugal estate treaty",
+      "verdict": "confirmed",
+      "shared": "us-estate-treaty-profiles-without",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list); none of the 37 countries named in this claim is among them."
+        }
+      ]
+    },
+    {
+      "id": "pt-estate-us-exemption-2026",
+      "fact": "estate",
+      "cities": [
+        "lisbon",
+        "porto",
+        "algarve",
+        "madeira",
+        "cascais",
+        "tavira"
+      ],
+      "claim": "The US estate tax exemption is $15M (2026)",
+      "verdict": "confirmed",
+      "shared": "us-estate-exemption-2026",
+      "sources": [
+        {
+          "name": "IRS: What's new, estate and gift tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax",
+          "read": "2026-11-15",
+          "says": "The table \"Basic exclusion amount for year of death\" has the row 2026: $15,000,000 (2025: $13,990,000). The page says the Working Families Tax Cuts, Public Law 119-21, signed July 4, 2025, \"amends § 2010(c)(3) by increasing the basic exclusion amount to $15,000,000 for calendar year 2026\". Page last reviewed or updated 03-Nov-2026."
+        },
+        {
+          "name": "IRS: Estate tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-tax",
+          "read": "2026-11-15",
+          "says": "A return is required when the gross estate, plus adjusted taxable gifts and specific exemption, is more than the filing threshold for the year of death; the table gives 2026: $15,000,000. Page last reviewed or updated 23-Oct-2026."
+        },
+        {
+          "name": "IRS news release IR-2025-103: tax inflation adjustments for tax year 2026",
+          "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill",
+          "read": "2026-11-15",
+          "says": "\"Estates of decedents who die during 2026 have a basic exclusion amount of $15,000,000\", up from $13,990,000 for 2025; the release (October 9, 2025) cites Revenue Procedure 2025-32 and is marked as an archival document."
+        }
+      ]
+    },
+    {
+      "id": "pt-estate-us-exemption-applies-abroad",
+      "fact": "estate",
+      "cities": [
+        "lisbon",
+        "porto",
+        "algarve",
+        "madeira",
+        "cascais",
+        "tavira"
+      ],
+      "claim": "The US exemption applies to a US citizen living in Portugal as anywhere",
+      "verdict": "confirmed",
+      "shared": "us-estate-exemption-applies-abroad",
+      "sources": [
+        {
+          "name": "IRS: Some nonresidents with U.S. assets must file estate tax returns",
+          "url": "https://www.irs.gov/individuals/international-taxpayers/some-nonresidents-with-us-assets-must-file-estate-tax-returns",
+          "read": "2026-11-15",
+          "says": "\"U.S. citizens are subject to U.S. estate taxation with respect to their worldwide assets\"; Form 706 is required when worldwide assets plus adjusted taxable gifts exceed the basic exclusion amount in effect on the date of death. By contrast a nonresident who is not a citizen files when US-situated assets exceed $60,000. Page last reviewed or updated 27-Jun-2026."
+        }
+      ]
+    },
+    {
+      "id": "pt-lending-ibkr-accepts",
+      "fact": "lending",
+      "cities": [
+        "lisbon",
+        "porto",
+        "algarve",
+        "madeira",
+        "cascais",
+        "tavira"
+      ],
+      "claim": "IBKR accepts Portugal residents",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly accepts Portugal residents",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        }
+      ],
+      "note": "Tried again on 2026-11-15: https://www.interactivebrokers.ie/en/accounts/open-account-country-list.php returned HTTP 403. The hedge stays."
+    },
+    {
+      "id": "pt-lending-ibkr-eu-entity",
+      "fact": "lending",
+      "cities": [
+        "lisbon",
+        "porto",
+        "algarve",
+        "madeira",
+        "cascais",
+        "tavira"
+      ],
+      "claim": "Portugal residents are served through IBKR's EU (Irish) entity",
+      "verdict": "cant-confirm",
+      "shared": "ibkr-eu-entity",
+      "hedge": "likely",
+      "wording": "(likely through its EU entity)",
+      "sources": [
+        {
+          "name": "Interactive Brokers Ireland Limited: Customer Agreement (document 4750, 7/1/2023), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/01_4750_IBIE_Customer_Agreement_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "Clause 1B: Interactive Brokers Ireland Limited (\"IBIE\") is incorporated in Ireland, company number 657406, and \"is regulated by the Central Bank of Ireland\", register number C423427. Clause 1C: unless told otherwise in writing, the client is categorised as a Retail Client. The agreement does not say which countries' residents IBIE serves."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. \"In the EU, customers sign up with the Irish entity\"; UK clients are with Interactive Brokers (U.K.) Limited; the Irish €20k compensation scheme applies to Eastern Europe after the Irish and Hungarian entities merged."
+        },
+        {
+          "name": "Investing in the Web: Interactive Brokers in Europe",
+          "url": "https://investingintheweb.com/broker-reviews/interactive-brokers-europe",
+          "read": "2026-11-15",
+          "says": "Updated on Sep 8, 2026. \"As an European resident, you are under the Central Bank of Ireland regulation\" (Interactive Brokers Ireland Limited); \"As a UK resident, you will be under this legal entity\" (Interactive Brokers UK Limited); \"Interactive Brokers Luxembourg and Central have been extinct/merged.\""
+        }
+      ]
+    },
+    {
+      "id": "pt-lending-schwab-accepts",
+      "fact": "lending",
+      "cities": [
+        "lisbon",
+        "porto",
+        "algarve",
+        "madeira",
+        "cascais",
+        "tavira"
+      ],
+      "claim": "Schwab International accepts Portugal residents",
+      "verdict": "cant-confirm",
+      "shared": "schwab-accepts-residents",
+      "hedge": "reportedly",
+      "wording": "Schwab International reportedly accepts them too",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. On that day the author ran every entry in Schwab's international account selector through the application: it accepted residents of 51 of 263 countries and regions: Argentina, Australia, Austria, the Bahamas, Belgium, Bermuda, Brazil, the British Virgin Islands, the Cayman Islands, Chile, China, Colombia, Costa Rica, the Czech Republic, Denmark, Ecuador, Finland, Germany, Greece, Guatemala, Hong Kong, Iceland, India, Indonesia, Ireland, Israel, Jersey, Luxembourg, Malaysia, the Marshall Islands, Mexico, the Netherlands, Norway, Panama, Paraguay, Peru, Poland, Portugal, Qatar, Singapore, South Korea, Spain, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Turks and Caicos, the United Arab Emirates, the United Kingdom and Uruguay. Named as not accepted: Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam; for the rest the application said \"Schwab currently cannot open accounts for residents of your country/region.\" The test covers new applicants on that day only."
+        }
+      ],
+      "note": "Portugal is on the dated secondary list of 51 accepted countries. Schwab's own pages were not readable."
+    },
+    {
+      "id": "pt-lending-schwab-cash-out",
+      "fact": "lending",
+      "cities": [
+        "lisbon",
+        "porto",
+        "algarve",
+        "madeira",
+        "cascais",
+        "tavira"
+      ],
+      "claim": "Schwab bars Europe residents from taking cash out through margin",
+      "verdict": "cant-confirm",
+      "shared": "schwab-europe-margin-cash-out",
+      "hedge": "reportedly",
+      "wording": "Schwab reportedly bars Europe residents from taking cash out through margin",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. It quotes the Schwab One Account Agreement (\"October 2026 edition, form 09/26\"), Schwab One International terms: \"Customers residing within Europe are restricted from using their Available Margin Loan Value\" to withdraw funds from their account, and advises keeping enough actual cash in the account for spending. It does not define \"Europe\"."
+        }
+      ],
+      "note": "Tried again on 2026-11-15: https://www.schwab.com/legal/schwab-one-account-agreement returned Schwab's error page (\"unable to authorize your request\"). The hedge stays. The drawback that stated this without a hedge was reworded under pt-lending-ibkr-margin-cash-out."
+    },
+    {
+      "id": "pt-lending-ibkr-margin-cash-out",
+      "fact": "lending",
+      "cities": [
+        "lisbon",
+        "porto",
+        "algarve",
+        "madeira",
+        "cascais",
+        "tavira"
+      ],
+      "claim": "A Portugal resident can draw cash on margin at IBKR (\"so plan on IBKR margin\")",
+      "verdict": "corrected",
+      "shared": "ibkr-eu-margin-cash-out",
+      "oldWording": "so plan on IBKR margin",
+      "newWording": "and IBKR's EU entity reportedly lends on margin only to buy securities, not to withdraw as cash, so confirm how you would draw cash before relying on either",
+      "sources": [
+        {
+          "name": "LYNX: Withdrawal (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/payments-and-transfers/withdrawal/",
+          "read": "2026-11-15",
+          "says": "\"It is not possible to withdraw in a currency if your cash balance is negative or would go negative after the withdrawal.\" In a margin account \"some funds may be used as collateral for other positions or to cover negative cash balances\", which lowers what can be withdrawn. The page is undated (footer: Copyright 2023)."
+        },
+        {
+          "name": "CapTrader: Geld abheben (help page of a German introducing broker for Interactive Brokers)",
+          "url": "https://www.captrader.com/geld-abheben/",
+          "read": "2026-11-15",
+          "says": "\"Auszahlungen sind nur möglich, wenn kein negativer Saldo in der entsprechenden Währung\" or in the total cash arises or grows: withdrawals are possible only if they do not create or increase a negative balance. Footer: © CapTrader 2026."
+        },
+        {
+          "name": "Interactive Brokers Ireland Limited: Customer Agreement (document 4750, 7/1/2023), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/01_4750_IBIE_Customer_Agreement_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "Clause 2A(i)(d) defines the margin service as one \"to enable Clients to acquire investment instruments\". Clause 5A(iv): \"Terms and conditions for deposit and withdrawal of funds (including holding periods) are as specified on the IBIE website.\" The agreement does not say that a loan may be withdrawn as cash."
+        },
+        {
+          "name": "Mustachian Post forum: Using margin loan at Interactive Brokers, page 13",
+          "url": "https://forum.mustachianpost.com/t/using-margin-loan-at-interactive-brokers/3980?page=13",
+          "read": "2026-11-15",
+          "says": "Posts of September to November 2024. One poster says withdrawing cash on margin is \"not possible in Germany with IB IE\" but is with IB UK; Swiss residents with IB UK accounts report having done it; another reports IBKR service saying \"IBUK customers can no longer withdraw cash if aggregate cash balance is -ve\", which a manager then said applies only to UK residents."
+        }
+      ],
+      "also": [
+        "scores.lending 3→2 on all six (plan decision of 2026-11-15)",
+        "drawback 3 reworded: \"Schwab margin can't be drawn as cash\" → \"Schwab and IBKR both reportedly bar drawing margin as cash\"",
+        "summary: added the closing sentence \"The weak point is the borrow step: Schwab and IBKR both reportedly bar EU residents from drawing margin as cash.\"",
+        "sources: added LYNX withdrawal page",
+        "rubric: lending lines for 3 and 2 reworded in src/data/expatPicks.ts (EXPAT_SCORE_RUBRIC) and src/data/profiles/README.md",
+        "test: factCheck.test.ts pinned the old Algarve drawback as its apostrophe sample; it now pins a phrase of the new lending fact"
+      ],
+      "rankFlag": "All six Portugal picks (Algarve 1, Lisbon 2, Porto 7, Cascais 8, Tavira 14, Madeira 16) now score lending 2, and their profiles say the borrow step is reportedly closed to EU residents at both brokers. Their `why` lines in src/data/expatPicks.ts do not mention borrowing, so none is contradicted, but the top two picks of a buy-borrow-die ranking are places where the borrow step reportedly does not work as cash. Ranks and `why` lines are unchanged: user's call.",
+      "note": "Standard wording from shared.json applied unchanged. Article 3750 (https://ibkb.interactivebrokers.com/article/3750) returned HTTP 403 again, so \"reportedly\" stays."
+    },
+    {
+      "id": "pt-lending-priips-new-buys",
+      "fact": "lending",
+      "cities": [
+        "lisbon",
+        "porto",
+        "algarve",
+        "madeira",
+        "cascais",
+        "tavira"
+      ],
+      "claim": "EU PRIIPs rules block new buys of US-listed ETFs",
+      "verdict": "confirmed",
+      "shared": "priips-us-etf-new-buys-blocked",
+      "sources": [
+        {
+          "name": "LYNX: Key Information Document (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/products-and-regulations/regulations/key-information-document/",
+          "read": "2026-11-15",
+          "says": "Retail clients are \"not permitted to trade ETFs or other products that do not have a valid KID\"; many non-EU ETFs have none. Can a retail client buy US ETFs? \"No, not unless you are classified as a professional investor.\" The same applies to ETFs from Canada, Hong Kong, Mexico and Australia. The KID has applied to most products since 1 January 2018."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. \"PRIIPs is an EU rule that prohibits buying US-listed ETFs\", and this also applies to UK investors; US ETFs are open only to elective professional clients, while UCITS ETFs are available to all Europeans."
+        }
+      ],
+      "note": "The profiles' \"reportedly\" stays; it does no harm."
+    },
+    {
+      "id": "pt-lending-priips-holdings-kept",
+      "fact": "lending",
+      "cities": [
+        "lisbon",
+        "porto",
+        "algarve",
+        "madeira",
+        "cascais",
+        "tavira"
+      ],
+      "claim": "The block is on buying, not on holding US-listed ETFs",
+      "verdict": "confirmed",
+      "shared": "priips-existing-holdings-kept",
+      "sources": [
+        {
+          "name": "LYNX: Key Information Document (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/products-and-regulations/regulations/key-information-document/",
+          "read": "2026-11-15",
+          "says": "The page's FAQ says retail clients \"may still hold or sell existing positions, but new purchases are restricted.\""
+        },
+        {
+          "name": "Regulation (EU) No 1286/2014, Article 13, as adopted (legislation.gov.uk copy of the EU text)",
+          "url": "https://www.legislation.gov.uk/eur/2014/1286/article/13/adopted",
+          "read": "2026-11-15",
+          "says": "The duty to provide a KID falls on \"a person advising on, or selling, a PRIIP\" before the retail investor is bound; nothing in the article reaches a PRIIP the investor already holds or a sale by the investor."
+        }
+      ]
+    },
+    {
+      "id": "pt-healthcare-sns-residents",
+      "fact": "healthcare",
+      "cities": [
+        "lisbon",
+        "algarve"
+      ],
+      "claim": "Legal residents can join and use the public health service (SNS)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "gov.pt: Migrantes, cuidados de saúde em Portugal",
+          "url": "https://www.gov.pt/en/guias/migrantes-cuidados-de-saude-em-portugal",
+          "read": "2026-11-15",
+          "says": "Updated 23/06/2026. \"Qualquer pessoa estrangeira com residência legal em Portugal pode obter o número de utente\" of the SNS; for the SNS to cover costs the record needs an identity document, a Portuguese NIF, a full address in Portugal and a residence permit in date; \"Pode inscrever-se no centro de saúde da sua área de residência através do número de utente\"."
+        }
+      ]
+    },
+    {
+      "id": "pt-healthcare-sns-waits",
+      "fact": "healthcare",
+      "cities": [
+        "lisbon",
+        "porto",
+        "algarve"
+      ],
+      "claim": "The SNS has waits (Lisbon \"good, but with waits\"; Porto \"typical SNS waits\"; Algarve \"long waits\")",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Observador: SNS regista nova quebra nas cirurgias e aumento das listas de espera em 2026",
+          "url": "https://observador.pt/2026/06/03/sns-regista-nova-quebra-nas-cirurgias-e-aumento-das-listas-de-espera-em-2026-primeiras-consultas-tambem-em-queda/",
+          "read": "2026-11-15",
+          "says": "Published 3 June 2026, from the Portal da Transparência do SNS: 277.293 patients were registered for surgery in the first quarter of 2026; at the end of March 84.335 of them, 30.4%, were waiting beyond the maximum guaranteed response time, up from 27% a year earlier."
+        },
+        {
+          "name": "Postal do Algarve: Urgências do Algarve regressam à normalidade após constrangimentos em Portimão",
+          "url": "https://postal.pt/algarve/urgencias-do-algarve-regressam-a-normalidade-apos-constrangimentos-em-portimao/",
+          "read": "2026-11-15",
+          "says": "12 August 2026. After staff were shared between the Lagos and Portimão emergency departments, waits at Portimão reached 17 hours; the ULS president called them \"atrasos maiores do que o esperado e do que o desejável\", and a doctors' union leader said \"a exceção no Algarve torna-se regra\"."
+        }
+      ],
+      "note": "National figures and an Algarve report; nothing read measures Lisbon or Porto hospitals separately, and \"good\" is the profile's judgment. The regulator's own monitoring report (ers.pt, PDF) was not read; rr.pt returned HTTP 403."
+    },
+    {
+      "id": "pt-healthcare-private-plans-close-65",
+      "fact": "healthcare",
+      "cities": [
+        "lisbon",
+        "cascais",
+        "algarve"
+      ],
+      "claim": "Local private health plans often close to new joiners around 65",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Doutor Finanças: Até que idade se pode fazer um seguro de saúde?",
+          "url": "https://www.doutorfinancas.pt/seguros/ate-que-idade-se-pode-fazer-um-seguro-de-saude/",
+          "read": "2026-11-15",
+          "says": "Published 24 November 2025. \"Pode encontrar idades limite de adesão de 60, 65 ou 70 anos, por exemplo\"; many policies have no limit on staying, but in some one applies, \"geralmente até aos 75 anos\", to those who join from 56; senior products take new members up to about 70 or 75. No insurer is named."
+        }
+      ],
+      "note": "A dated secondary page; no insurer's own conditions were read. A search result, not read, cites DECO Proteste naming MGEN as having no entry age limit, so \"often\", not \"always\", is right."
+    },
+    {
+      "id": "pt-healthcare-lisbon-private-network",
+      "fact": "healthcare",
+      "cities": [
+        "lisbon"
+      ],
+      "claim": "Lisbon has a dense private network of CUF, Luz and Lusíadas hospitals",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "CUF: where to find us (international patients)",
+          "url": "https://cuf.pt/en/cuf-services/internacional-cuf/where-find-us",
+          "read": "2026-11-15",
+          "says": "Lists CUF Descobertas Hospital (Parque das Nações, Lisbon) and CUF Tejo Hospital (Lisbon), with CUF Cascais Hospital and CUF Porto Hospital."
+        },
+        {
+          "name": "Hospital da Luz Lisboa (English site)",
+          "url": "https://www.hospitaldaluz.pt/lisboa/en",
+          "read": "2026-11-15",
+          "says": "The page is the English home of \"Hospital da Luz Lisboa\"; its title lists consultations, exams and emergency. No street address in the text returned."
+        },
+        {
+          "name": "Lusíadas Saúde: unidades",
+          "url": "https://www.lusiadas.pt/pt/unidades",
+          "read": "2026-11-15",
+          "says": "Lists Hospital Lusíadas Lisboa and Clínica Lusíadas Entrecampos (Lisboa), Hospital Lusíadas Amadora and Hospital Lusíadas Alfragide (Amadora), among 17 hospitals and clinics."
+        }
+      ]
+    },
+    {
+      "id": "pt-healthcare-lisbon-english",
+      "fact": "healthcare",
+      "cities": [
+        "lisbon"
+      ],
+      "claim": "Those private hospitals have English-speaking doctors",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "GOV.UK: list of English-speaking medical facilities for British nationals in Portugal",
+          "url": "https://www.gov.uk/government/publications/portugal-list-of-medical-facilitiespractitioners/list-of-english-speaking-medical-facilities-for-british-nationals-in-portugal",
+          "read": "2026-11-15",
+          "says": "Last updated 6 May 2021. The list of English-speaking facilities includes Hospital CUF Descobertas (Lisboa), Hospital da Luz Lisboa (Avenida Lusíada, n.º 100) and Hospital Lusiadas Parque das Nações (Lisbon)."
+        }
+      ],
+      "note": "The UK government list is from 2021; the hospitals' own pages read today did not state languages. Hospital da Luz Lisboa serves its site in English."
+    },
+    {
+      "id": "pt-healthcare-porto-public",
+      "fact": "healthcare",
+      "cities": [
+        "porto"
+      ],
+      "claim": "Porto has large public hospitals, São João and Santo António",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Wikipédia: Hospital de São João",
+          "url": "https://pt.wikipedia.org/wiki/Hospital_de_S%C3%A3o_Jo%C3%A3o",
+          "read": "2026-11-15",
+          "says": "The Hospital Universitário de São João is \"central, universitário, geral e polivalente\", in Asprela, Porto, with \"1 100 camas de Internamento\"; since 2024 it is part of the Unidade Local de Saúde de São João, which \"pertence ao Serviço Nacional de Saúde\"."
+        },
+        {
+          "name": "Wikipédia: Hospital de Santo António",
+          "url": "https://pt.wikipedia.org/wiki/Hospital_de_Santo_Ant%C3%B3nio",
+          "read": "2026-11-15",
+          "says": "The Hospital Geral de Santo António is a \"Hospital geral, central e universitário\" in Porto, in the former parish of Miragaia, teaching the medical degree of ICBAS; it is listed among the public hospitals of the Porto area (ULS Santo António), with the Santa Casa da Misericórdia do Porto named as owner of the building."
+        }
+      ],
+      "note": "Third-tier source: the hospitals' own sites could not be read (ulssjoao.min-saude.pt did not resolve; chporto.pt failed with a certificate error). The page for Santo António does not state SNS status in terms."
+    },
+    {
+      "id": "pt-healthcare-porto-private",
+      "fact": "healthcare",
+      "cities": [
+        "porto"
+      ],
+      "claim": "Porto has private CUF, Lusíadas and Trofa hospitals",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "CUF: where to find us (international patients)",
+          "url": "https://cuf.pt/en/cuf-services/internacional-cuf/where-find-us",
+          "read": "2026-11-15",
+          "says": "Lists CUF Porto Hospital (Porto)."
+        },
+        {
+          "name": "Lusíadas Saúde: unidades",
+          "url": "https://www.lusiadas.pt/pt/unidades",
+          "read": "2026-11-15",
+          "says": "Lists Hospital Lusíadas Porto (Porto) and Clínica Lusíadas Gaia (Vila Nova de Gaia)."
+        },
+        {
+          "name": "Trofa Saúde: unidades",
+          "url": "https://www.trofasaude.pt/unidades/",
+          "read": "2026-11-15",
+          "says": "Lists Trofa Saúde Boa Nova (Perafita, Matosinhos), Trofa Saúde Alfena (Valongo), Trofa Saúde Gaia (Vila Nova de Gaia), Trofa Saúde Maia and the Hospital Escola Fernando Pessoa (Gondomar), among others."
+        }
+      ],
+      "note": "Trofa Saúde's hospitals are in the municipalities around Porto (Matosinhos, Gaia, Maia, Valongo, Gondomar), not in the city itself. \"Expats widely use\" them is not something a page read states."
+    },
+    {
+      "id": "pt-healthcare-porto-cuf-jci",
+      "fact": "healthcare",
+      "cities": [
+        "porto"
+      ],
+      "claim": "CUF Porto is the (one) CUF hospital that cites JCI accreditation",
+      "verdict": "corrected",
+      "oldWording": "CUF Porto is the CUF hospital that cites JCI accreditation",
+      "newWording": "CUF Porto cites JCI accreditation",
+      "sources": [
+        {
+          "name": "CUF: where to find us (international patients)",
+          "url": "https://cuf.pt/en/cuf-services/internacional-cuf/where-find-us",
+          "read": "2026-11-15",
+          "says": "CUF Porto Hospital is described as the first private unit to receive accreditation from the Joint Commission International (JCI); no other hospital's accreditation is mentioned on this page."
+        },
+        {
+          "name": "CUF: Hospital CUF Faro (the page's Markdown copy; the plain URL returned HTTP 406)",
+          "url": "https://www.cuf.pt/hospitais-e-clinicas/hospital-cuf-faro.md",
+          "read": "2026-11-15",
+          "says": "Hospital CUF Faro says it is accredited by \"a Joint Commission International\"."
+        }
+      ],
+      "note": "CUF Porto's accreditation is confirmed on CUF's page. It is no longer the only one: the former HPA hospital at Gambelas joined the CUF network in 2026 as Hospital CUF Faro and cites JCI too. JCI's own directory was not read."
+    },
+    {
+      "id": "pt-healthcare-cascais-cuf",
+      "fact": "healthcare",
+      "cities": [
+        "cascais"
+      ],
+      "claim": "The private Hospital CUF Cascais is in town, with CUF Tejo and CUF Descobertas in Lisbon",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "CUF: where to find us (international patients)",
+          "url": "https://cuf.pt/en/cuf-services/internacional-cuf/where-find-us",
+          "read": "2026-11-15",
+          "says": "Lists CUF Cascais Hospital (Cascais), CUF Tejo Hospital (Lisbon) and CUF Descobertas Hospital (Parque das Nações, Lisbon)."
+        },
+        {
+          "name": "GOV.UK: list of English-speaking medical facilities for British nationals in Portugal",
+          "url": "https://www.gov.uk/government/publications/portugal-list-of-medical-facilitiespractitioners/list-of-english-speaking-medical-facilities-for-british-nationals-in-portugal",
+          "read": "2026-11-15",
+          "says": "Last updated 6 May 2021. Lists \"Hospital CUF Cascais\", Rua Fernão Lopes, 60, 2750-663 Cobre."
+        }
+      ],
+      "note": "The address is in Cobre, a neighbourhood of Cascais."
+    },
+    {
+      "id": "pt-healthcare-cascais-public-hospital",
+      "fact": "healthcare",
+      "cities": [
+        "cascais"
+      ],
+      "claim": "The public Hospital de Cascais is in the SNS, run as a PPP, and won an IHF silver award in October 2026",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Diário de Notícias: Hospital de Cascais recebe prata em prémio internacional e integra grupo de oito finalistas",
+          "url": "https://www.dn.pt/sociedade/hospital-de-cascais-recebe-prata-em-prmio-internacional-e-integra-grupo-de-oito-finalistas",
+          "read": "2026-11-15",
+          "says": "Published 29 October 2026. The hospital received the Silver of the Dr Kwang Tae Kim Grand Hospital Award 2026 of the International Hospital Federation at a ceremony in Seoul, second among eight finalists; it is presented as part of the Serviço Nacional de Saúde, managed in \"regime de parceria público-privada (PPP)\". The article notes the result \"não constitui uma classificação geral dos hospitais de todo o mundo\"."
+        }
+      ],
+      "note": "The hospital's own site showed only a maintenance notice (footer: Hospital de Cascais Dr. José de Almeida, Grupo de Saúde Ribera)."
+    },
+    {
+      "id": "pt-healthcare-cascais-jci",
+      "fact": "healthcare",
+      "cities": [
+        "cascais"
+      ],
+      "claim": "Hospital de Cascais holds JCI accreditation",
+      "verdict": "cant-confirm",
+      "hedge": "unverified",
+      "wording": "its current JCI status is unverified",
+      "sources": [
+        {
+          "name": "Diário de Notícias: Hospital de Cascais recebe prata em prémio internacional e integra grupo de oito finalistas",
+          "url": "https://www.dn.pt/sociedade/hospital-de-cascais-recebe-prata-em-prmio-internacional-e-integra-grupo-de-oito-finalistas",
+          "read": "2026-11-15",
+          "says": "Published 29 October 2026. The board president says improvement also comes from regular evaluations, among them those of the Joint Commission International, ISO certifications and technical inspections; the article does not say the hospital is accredited now."
+        }
+      ],
+      "note": "The hospital's site was under maintenance and JCI's directory was not read. The profile already says \"unverified\"; no change."
+    },
+    {
+      "id": "pt-healthcare-algarve-public-thin",
+      "fact": "healthcare",
+      "cities": [
+        "algarve"
+      ],
+      "claim": "The Algarve has few public hospitals",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Postal do Algarve: ULS Algarve reforça hospitais de Faro e Portimão com 136 novos profissionais",
+          "url": "https://postal.pt/algarve/uls-algarve-reforca-hospitais-de-faro-e-portimao-com-136-novos-profissionais/",
+          "read": "2026-11-15",
+          "says": "22 September 2026. The regional health unit added staff to its hospitals of Faro and Portimão, the only two the article names; the nurses' union says \"faltam cerca de 2.000 enfermeiros no Algarve\"."
+        },
+        {
+          "name": "Postal do Algarve: Urgências do Algarve regressam à normalidade após constrangimentos em Portimão",
+          "url": "https://postal.pt/algarve/urgencias-do-algarve-regressam-a-normalidade-apos-constrangimentos-em-portimao/",
+          "read": "2026-11-15",
+          "says": "12 August 2026. The ULS president counts six hospital emergency departments open 24 hours in the region: Lagos, Portimão, Albufeira, Loulé, Faro and Vila Real de Santo António, plus two paediatric ones."
+        }
+      ],
+      "note": "ULS Algarve's own site was not found by search. The pages read name two acute hospitals (Faro, Portimão) and a smaller one at Lagos for a region of several hundred thousand residents; \"few\" is the profile's word, not a page's. Waits are under pt-healthcare-sns-waits."
+    },
+    {
+      "id": "pt-healthcare-algarve-private-groups",
+      "fact": "healthcare",
+      "cities": [
+        "algarve"
+      ],
+      "claim": "The private hospital groups in the Algarve are HPA, Lusíadas and CUF",
+      "verdict": "corrected",
+      "oldWording": "(HPA, Lusíadas, CUF)",
+      "newWording": "(CUF, which took over the HPA hospitals in 2026, and Lusíadas)",
+      "sources": [
+        {
+          "name": "HPA Saúde: HPA Group is now CUF",
+          "url": "https://www.grupohpa.com/en/blog/hpa-group-is-now-cuf/",
+          "read": "2026-11-15",
+          "says": "Dated 9 July 2026. \"The HPA Group is now part of the CUF network\"; from 21 June its units carry the CUF brand: CUF Alvor Hospital (Alvor, Portimão), CUF Faro Hospital (Gambelas, Faro), CUF Madeira Hospital (Funchal), CUF Sines Hospital, and clinics in Faro, Lagos, Loulé, Vilamoura, Vila Real de Santo António and elsewhere."
+        },
+        {
+          "name": "Postal do Algarve: Hospital Particular do Algarve passa a integrar rede CUF",
+          "url": "https://postal.pt/algarve/hospital-particular-do-algarve-passa-a-integrar-rede-cuf/",
+          "read": "2026-11-15",
+          "says": "Published 30 January 2026. CUF completed the purchase of 75% of Hospital Particular do Algarve (Grupo HPA Saúde, five hospitals and 17 clinics in the Alentejo, Algarve and Madeira) after the competition authority did not oppose it."
+        },
+        {
+          "name": "Lusíadas Saúde: unidades",
+          "url": "https://www.lusiadas.pt/pt/unidades",
+          "read": "2026-11-15",
+          "says": "Lists Hospital Lusíadas Albufeira, Hospital Lusíadas Vilamoura (Quarteira) and Clínica Lusíadas Faro."
+        }
+      ],
+      "also": [
+        "sources: added the HPA Saúde notice \"HPA Group is now CUF\"",
+        "scores.healthcare stays 3: the hospitals are the same, under a new owner"
+      ],
+      "note": "HPA and CUF are no longer separate groups, so the Algarve has two private hospital groups where the profile listed three. A search result, not read, says the competition authority required CUF to build and sell a new mid-sized hospital in the region to another operator."
+    },
+    {
+      "id": "pt-healthcare-algarve-lisbon-complex",
+      "fact": "healthcare",
+      "cities": [
+        "algarve"
+      ],
+      "claim": "Expats go to Lisbon for complex care",
+      "verdict": "cant-confirm",
+      "hedge": "generally",
+      "wording": "generally look to Lisbon for complex care",
+      "oldWording": "and go to Lisbon for complex care",
+      "sources": [
+        {
+          "name": "Postal do Algarve: Urgências do Algarve regressam à normalidade após constrangimentos em Portimão",
+          "url": "https://postal.pt/algarve/urgencias-do-algarve-regressam-a-normalidade-apos-constrangimentos-em-portimao/",
+          "read": "2026-11-15",
+          "says": "12 August 2026. Describes the region's emergency departments and their staffing strain; it says nothing about which cases are sent to Lisbon."
+        }
+      ],
+      "also": [
+        "hedge added: \"generally\""
+      ],
+      "note": "No page read says where complex cases from the Algarve are treated. Search results, not read, mention heart-surgery patients sent to Lisbon in 2022 and a newborn transferred to Lisbon for neurosurgery in November 2025. The drawback \"complex care often means a trip to Lisbon\" already carries \"often\" and was left."
+    },
+    {
+      "id": "pt-healthcare-algarve-cigna",
+      "fact": "healthcare",
+      "cities": [
+        "algarve"
+      ],
+      "claim": "Cigna's international cover has no upper entry age",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Cigna Global: seniors health insurance",
+          "url": "https://cignaglobal.com/seniors-health-insurance",
+          "read": "2026-11-15",
+          "says": "\"No upper age limit - applications welcomed regardless of age\"; the FAQ adds \"there is no upper age limit for applications\" and that \"Acceptance, available cover and premiums remain subject to eligibility, underwriting\". The page is undated."
+        }
+      ]
+    },
+    {
+      "id": "pt-healthcare-tavira-no-24h",
+      "fact": "healthcare",
+      "cities": [
+        "tavira"
+      ],
+      "claim": "Tavira has no 24-hour urgency unit; the nearest is at Vila Real de Santo António, about 30 minutes east",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Expatsi: Tavira, Portugal",
+          "url": "https://expatsi.com/cities/portugal/tavira",
+          "read": "2026-11-15",
+          "says": "\"Estimates updated Aug 2026.\" \"Tavira has no 24-hour urgency unit\"; the nearest is at Vila Real de Santo António, \"half an hour east\"."
+        },
+        {
+          "name": "Postal do Algarve: Urgências do Algarve regressam à normalidade após constrangimentos em Portimão",
+          "url": "https://postal.pt/algarve/urgencias-do-algarve-regressam-a-normalidade-apos-constrangimentos-em-portimao/",
+          "read": "2026-11-15",
+          "says": "12 August 2026. The six hospital emergency departments open 24 hours in the Algarve are in Lagos, Portimão, Albufeira, Loulé, Faro and Vila Real de Santo António; Tavira is not among them."
+        },
+        {
+          "name": "Postal do Algarve: Bloco de Esquerda de Tavira apresenta preocupações ao secretário de Estado da Saúde",
+          "url": "https://postal.pt/saude/bloco-de-esquerda-de-tavira-apresenta-preocupacoes-ao-secretario-de-estado-da-saude/",
+          "read": "2026-11-15",
+          "says": "24 January 2023. Urgent care at the Tavira health centre is hard to get, \"seja pela falta de recursos humanos, seja por não atender 24 horas, como se fosse um escritório\"."
+        }
+      ],
+      "note": "ULS Algarve's own pages were not found. The travel time is from the secondary page."
+    },
+    {
+      "id": "pt-healthcare-tavira-local-care",
+      "fact": "healthcare",
+      "cities": [
+        "tavira"
+      ],
+      "claim": "In town there is only the public Centro de Saúde, with after-hours cover, and small private clinics",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Expatsi: Tavira, Portugal",
+          "url": "https://expatsi.com/cities/portugal/tavira",
+          "read": "2026-11-15",
+          "says": "\"Estimates updated Aug 2026.\" Centro de Saúde de Tavira gives public primary care with an after-hours service on evenings and weekends; the private Clínica do Plaza, in the Gran Plaza mall, takes walk-ins until 9pm."
+        }
+      ],
+      "note": "Secondary page only."
+    },
+    {
+      "id": "pt-healthcare-tavira-faro-hospitals",
+      "fact": "healthcare",
+      "cities": [
+        "tavira"
+      ],
+      "claim": "The public Hospital de Faro and the private Hospital CUF Faro (formerly HPA, reportedly JCI-accredited) serve Tavira",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "CUF: Hospital CUF Faro (the page's Markdown copy; the plain URL returned HTTP 406)",
+          "url": "https://www.cuf.pt/hospitais-e-clinicas/hospital-cuf-faro.md",
+          "read": "2026-11-15",
+          "says": "\"Hospital CUF Faro\", Urbanização Casal de Gambelas, Lote 2, Gambelas, 8005-226 Faro; adult urgent care \"Aberto 24h\"; the unit is accredited by \"a Joint Commission International\"; the footer names Hospital Particular do Algarve, S.A."
+        },
+        {
+          "name": "HPA Saúde: HPA Group is now CUF",
+          "url": "https://www.grupohpa.com/en/blog/hpa-group-is-now-cuf/",
+          "read": "2026-11-15",
+          "says": "Dated 9 July 2026. HPA's Gambelas hospital is now \"CUF Faro Hospital (Gambelas, Faro)\"."
+        },
+        {
+          "name": "Expatsi: Tavira, Portugal",
+          "url": "https://expatsi.com/cities/portugal/tavira",
+          "read": "2026-11-15",
+          "says": "\"Estimates updated Aug 2026.\" Names Hospital de Faro (public) and Hospital CUF Faro, formerly Hospital Particular do Algarve at Gambelas, \"JCI-accredited\"."
+        }
+      ],
+      "note": "The accreditation is now on CUF's own page, so the profile's \"reportedly\" could go; it was left, since it does no harm. A CUF news item (cuf.pt, dated 9 December 2024) says the hospital was accredited by JCI for the third time running. The pick's `why` (\"the accredited CUF Faro hospital\") agrees."
+    },
+    {
+      "id": "pt-healthcare-tavira-distance-km",
+      "fact": "healthcare",
+      "cities": [
+        "tavira"
+      ],
+      "claim": "The Faro hospitals are 28 km from Tavira",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Wikipedia: Tavira",
+          "url": "https://en.wikipedia.org/wiki/Tavira",
+          "read": "2026-11-15",
+          "says": "Tavira is \"28 kilometres (17 miles) east of Faro\"."
+        }
+      ],
+      "note": "Town to town. Hospital CUF Faro is at Gambelas, on the far (western) side of Faro, so the drive to it is longer than 28 km; no page read gives that road distance."
+    },
+    {
+      "id": "pt-healthcare-tavira-drive-time",
+      "fact": "healthcare",
+      "cities": [
+        "tavira"
+      ],
+      "claim": "The Faro hospitals are 30–40 minutes from Tavira",
+      "verdict": "cant-confirm",
+      "hedge": "about",
+      "wording": "about 30–40 minutes",
+      "oldWording": "Faro, 30–40 minutes away",
+      "also": [
+        "hedge added (\"about\") where the summary and the second drawback repeated the figure flat"
+      ],
+      "sources": [
+        {
+          "name": "Expatsi: Tavira, Portugal",
+          "url": "https://expatsi.com/cities/portugal/tavira",
+          "read": "2026-11-15",
+          "says": "\"Estimates updated Aug 2026.\" Gives no travel time to the Faro hospitals; its transport section puts Faro about 35 to 40 minutes west by train."
+        }
+      ],
+      "note": "No page read gives a drive time from Tavira to either hospital. The fact already says \"about\"; the summary and the second drawback repeated the figure without it and now say \"about\" too. The pick's `why` still states it flat; that line is not this stage's to edit.",
+      "rankFlag": "Tavira's `why` in src/data/expatPicks.ts says the CUF Faro hospital is \"30 to 40 minutes away\"; no page read confirms the drive time, and the hospital is at Gambelas, beyond Faro. Not changed."
+    },
+    {
+      "id": "pt-healthcare-tavira-lisbon-complex",
+      "fact": "healthcare",
+      "cities": [
+        "tavira"
+      ],
+      "claim": "Complex cases go to Lisbon",
+      "verdict": "cant-confirm",
+      "hedge": "generally",
+      "wording": "complex cases generally go to Lisbon",
+      "oldWording": "and complex cases go to Lisbon",
+      "sources": [
+        {
+          "name": "Expatsi: Tavira, Portugal",
+          "url": "https://expatsi.com/cities/portugal/tavira",
+          "read": "2026-11-15",
+          "says": "\"Estimates updated Aug 2026.\" Does not say complex cases are referred to Lisbon; it gives only the rail time to Lisbon, a little over four hours with a change at Faro."
+        }
+      ],
+      "also": [
+        "hedge added: \"generally\""
+      ],
+      "note": "Same gap as pt-healthcare-algarve-lisbon-complex."
+    },
+    {
+      "id": "pt-healthcare-madeira-sesaram",
+      "fact": "healthcare",
+      "cities": [
+        "madeira"
+      ],
+      "claim": "Legal residents can register with SESARAM, the regional public health service, whose main hospital is Dr. Nélio Mendonça in Funchal",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "SESARAM: portal",
+          "url": "https://www.sesaram.pt/portal/",
+          "read": "2026-11-15",
+          "says": "The organisation is the \"Serviço de Saúde da RAM, E.P.E.\"; the page lists Hospital Dr. Nélio Mendonça, Hospital dos Marmeleiros and Hospital Dr. João de Almada, links \"Onde Estamos\" to the Hospital Dr. Nélio Mendonça page and promotes the \"Novo Hospital Central da Madeira\". It gives no registration rules."
+        },
+        {
+          "name": "Cyril Jarnias: healthcare for expats in Madeira, a complete guide",
+          "url": "https://www.jarniascyril.com/expatriation/settling-in-madeira-complete-guide-expats/healthcare-expatriates-madeira-complete-guide/",
+          "read": "2026-11-15",
+          "says": "Published April 26, 2026. Public cover is for legal residents: an expat must \"hold a valid residence permit\", prove an address on the island and have a NIF, and registers for a \"número de utente\" at a health centre or Loja do Cidadão; the main public hospital is Hospital Dr. Nélio Mendonça in Funchal, with 24/7 emergency services."
+        }
+      ],
+      "note": "The registration rule is from the secondary page; SESARAM's portal confirms the service and its hospitals but not who may register. The national rule (gov.pt, see pt-healthcare-sns-residents) is that any foreigner with legal residence can get a user number."
+    },
+    {
+      "id": "pt-healthcare-madeira-private",
+      "fact": "healthcare",
+      "cities": [
+        "madeira"
+      ],
+      "claim": "The private hospitals are Hospital Particular da Madeira and Hospital da Luz Funchal",
+      "verdict": "corrected",
+      "oldWording": "the private Hospital Particular da Madeira and",
+      "newWording": "the private Hospital CUF Madeira (the former Hospital Particular da Madeira) and",
+      "sources": [
+        {
+          "name": "CUF: Hospital CUF Madeira (the page's Markdown copy)",
+          "url": "https://www.cuf.pt/hospitais-e-clinicas/hospital-cuf-madeira.md",
+          "read": "2026-11-15",
+          "says": "\"Hospital CUF Madeira\", Avenida Mário Soares, nº143, 9000-783 Funchal, a \"Unidade de saúde de referência na Região Autónoma da Madeira\" with adult \"Atendimento Permanente\" \"Aberto 24h\"; the footer names \"HPM - Hospital Particular da Madeira, S.A\"."
+        },
+        {
+          "name": "HPA Saúde: HPA Group is now CUF",
+          "url": "https://www.grupohpa.com/en/blog/hpa-group-is-now-cuf/",
+          "read": "2026-11-15",
+          "says": "Dated 9 July 2026. From 21 June 2026 the HPA units carry the CUF brand, among them \"CUF Madeira Hospital (Funchal)\" and \"CUF Funchal Clinic\"."
+        },
+        {
+          "name": "Hospital da Luz Funchal (English site)",
+          "url": "https://www.hospitaldaluz.pt/funchal/en",
+          "read": "2026-11-15",
+          "says": "The page is the English home of \"Hospital da Luz Funchal\"; its title lists consultations, exams and urgent care."
+        }
+      ],
+      "also": [
+        "sources: added CUF's Hospital CUF Madeira page (the plain URL, for readers)",
+        "scores.healthcare stays 3: same hospital, new name"
+      ],
+      "note": "The hospital changed name when HPA joined CUF in June 2026; the company behind it is still Hospital Particular da Madeira, S.A. The profile's source list gives the plain page URL; the copy read was the same page with \".md\" added, which is how the site answered this client."
+    },
+    {
+      "id": "pt-healthcare-madeira-english",
+      "fact": "healthcare",
+      "cities": [
+        "madeira"
+      ],
+      "claim": "Both private hospitals have English-speaking staff",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Cyril Jarnias: healthcare for expats in Madeira, a complete guide",
+          "url": "https://www.jarniascyril.com/expatriation/settling-in-madeira-complete-guide-expats/healthcare-expatriates-madeira-complete-guide/",
+          "read": "2026-11-15",
+          "says": "Published April 26, 2026. Hospital Particular da Madeira: English is spoken; Hospital da Luz Funchal: a private multidisciplinary clinic with English-speaking doctors."
+        },
+        {
+          "name": "GOV.UK: list of English-speaking medical facilities for British nationals in Portugal",
+          "url": "https://www.gov.uk/government/publications/portugal-list-of-medical-facilitiespractitioners/list-of-english-speaking-medical-facilities-for-british-nationals-in-portugal",
+          "read": "2026-11-15",
+          "says": "Last updated 6 May 2021. The list of English-speaking facilities includes \"Hospital da Luz - Funchal\" and \"Hospital Particular da Madeira - Funchal\"."
+        }
+      ],
+      "note": "Both pages predate or ignore the rename to Hospital CUF Madeira."
+    },
+    {
+      "id": "pt-healthcare-madeira-transfers",
+      "fact": "healthcare",
+      "cities": [
+        "madeira"
+      ],
+      "claim": "Highly specialised care generally means a transfer to Lisbon or Porto",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Cyril Jarnias: healthcare for expats in Madeira, a complete guide",
+          "url": "https://www.jarniascyril.com/expatriation/settling-in-madeira-complete-guide-expats/healthcare-expatriates-madeira-complete-guide/",
+          "read": "2026-11-15",
+          "says": "Published April 26, 2026. Highly specialised care not available on the island is handled by transfer to mainland Portugal, with flights and a food allowance; very high-level specialties such as advanced neurosurgery and certain transplants \"still requires Lisbon or Porto\"."
+        }
+      ],
+      "note": "Secondary page only; SESARAM's own rules on transfers were not found."
+    }
+  ]
+}

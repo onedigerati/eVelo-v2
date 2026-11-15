@@ -1,0 +1,376 @@
+{
+  "country": "shared",
+  "claims": [
+    {
+      "id": "us-estate-exemption-2026",
+      "topic": "us-estate-exemption",
+      "fact": "estate",
+      "appliesTo": "Every profile whose estate fact cites the $15M US exemption (2026): 96 profile files, non-US and US alike",
+      "claim": "The US estate tax basic exclusion amount for deaths in 2026 is $15,000,000 (the profiles' \"$15M US exemption (2026)\")",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IRS: What's new, estate and gift tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/whats-new-estate-and-gift-tax",
+          "read": "2026-11-15",
+          "says": "The table \"Basic exclusion amount for year of death\" has the row 2026: $15,000,000 (2025: $13,990,000). The page says the Working Families Tax Cuts, Public Law 119-21, signed July 4, 2025, \"amends § 2010(c)(3) by increasing the basic exclusion amount to $15,000,000 for calendar year 2026\". Page last reviewed or updated 03-Nov-2026."
+        },
+        {
+          "name": "IRS: Estate tax",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-tax",
+          "read": "2026-11-15",
+          "says": "A return is required when the gross estate, plus adjusted taxable gifts and specific exemption, is more than the filing threshold for the year of death; the table gives 2026: $15,000,000. Page last reviewed or updated 23-Oct-2026."
+        },
+        {
+          "name": "IRS news release IR-2025-103: tax inflation adjustments for tax year 2026",
+          "url": "https://www.irs.gov/newsroom/irs-releases-tax-inflation-adjustments-for-tax-year-2026-including-amendments-from-the-one-big-beautiful-bill",
+          "read": "2026-11-15",
+          "says": "\"Estates of decedents who die during 2026 have a basic exclusion amount of $15,000,000\", up from $13,990,000 for 2025; the release (October 9, 2025) cites Revenue Procedure 2025-32 and is marked as an archival document."
+        }
+      ],
+      "note": "No change needed in any profile. The amount is per decedent (each estate). Wording variants, all covered: \"the $15M US exemption (2026) applies as anywhere\"; \"US estate tax applies above the $15M exemption (2026)\"; \"so only US estate tax applies, above the $15M exemption (2026)\"; \"US estate tax applies only above the $15M exemption (2026)\"; \"heirs also face the federal estate tax above the $15M exemption (2026)\" and \"heirs owe only the federal estate tax above the $15M exemption (2026)\" (US profiles); \"the $15M US exemption (2026) is the only relief\" (Dubai); \"below the $15M US exemption (2026)\" (Canada, South Africa); \"the federal $15M exemption (2026)\" (Minnesota). The IRS page calls the law the Working Families Tax Cuts and the news release calls it the One, Big, Beautiful Bill; both name Public Law 119-21."
+    },
+    {
+      "id": "us-estate-exemption-indexed",
+      "topic": "us-estate-exemption",
+      "fact": "estate",
+      "appliesTo": "Context for the same estate facts: no profile states it, but each dates the figure \"(2026)\"",
+      "claim": "$15,000,000 is the amount written into the statute, and it is indexed for inflation for deaths after 2026",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Cornell Legal Information Institute: 26 U.S. Code § 2010, unified credit against estate tax",
+          "url": "https://www.law.cornell.edu/uscode/text/26/2010",
+          "read": "2026-11-15",
+          "says": "Subsection (c)(3)(A): \"the basic exclusion amount is $15,000,000\". (c)(3)(B): for a decedent dying in a calendar year after 2026 the amount is increased by the cost-of-living adjustment under section 1(f)(3), with calendar year 2025 as the base year, rounded to the nearest multiple of $10,000. The notes credit the change to Pub. L. 119-21, for estates of decedents dying after December 31, 2025."
+        }
+      ],
+      "note": "The three IRS pages read for us-estate-exemption-2026 give the 2026 amount but do not say whether it is indexed; the statute text was read on Cornell's copy of the US Code, not on a government site. Keep the \"(2026)\" date in the profiles: the figure rises from 2027. A search result (not a page read) reported a 2027 amount set by a Rev. Proc. 2026-35; that is unverified and is not used here."
+    },
+    {
+      "id": "us-estate-exemption-applies-abroad",
+      "topic": "us-estate-exemption",
+      "fact": "estate",
+      "appliesTo": "Every non-US profile's estate fact that says the US exemption \"applies as anywhere\" or that US estate tax applies to the worldwide estate above it",
+      "claim": "A US citizen living abroad is taxed by the US on the worldwide estate, with the same basic exclusion amount as at home",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IRS: Some nonresidents with U.S. assets must file estate tax returns",
+          "url": "https://www.irs.gov/individuals/international-taxpayers/some-nonresidents-with-us-assets-must-file-estate-tax-returns",
+          "read": "2026-11-15",
+          "says": "\"U.S. citizens are subject to U.S. estate taxation with respect to their worldwide assets\"; Form 706 is required when worldwide assets plus adjusted taxable gifts exceed the basic exclusion amount in effect on the date of death. By contrast a nonresident who is not a citizen files when US-situated assets exceed $60,000. Page last reviewed or updated 27-Jun-2026."
+        }
+      ],
+      "note": "The page ties the worldwide reach to citizenship, not residence, which is what \"applies as anywhere\" means. It does not cover a spouse or heir who is not a US citizen."
+    },
+    {
+      "id": "us-estate-treaty-list",
+      "topic": "us-estate-treaty",
+      "fact": "estate",
+      "appliesTo": "Every non-US profile's estate fact that says whether a US estate treaty exists, and the `why` lines for Athens and Vienna in src/data/expatPicks.ts",
+      "claim": "The US has estate and/or gift tax treaties with 15 countries: Australia (estate & gift), Austria (estate & gift), Canada (estate, inside the income tax treaty), Denmark (estate & gift), Finland (estate), France (estate & gift), Germany (estate & gift), Greece (estate), Ireland (estate), Italy (estate), Japan (estate & gift), Netherlands (estate), South Africa (estate), Switzerland (estate), United Kingdom (estate & gift)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "A table of country and \"Estate or Gift Tax Treaty\" with 15 rows: Australia, Estate & Gift; Austria, Estate & Gift; Canada, Estate *; Denmark, Estate & Gift; Finland, Estate; France, Estate & Gift; Germany, Estate & Gift; Greece, Estate; Ireland, Estate; Italy, Estate; Japan, Estate & Gift; Netherlands, Estate; South Africa, Estate; Switzerland, Estate; United Kingdom, Estate & Gift. The footnote: \"The estate tax provisions are located in Article XXIX B of the United States – Canada Income Tax Treaty.\" Page last reviewed or updated 08-Sep-2026."
+        }
+      ],
+      "note": "Read twice on 2026-11-15, once through WebFetch and once as the page's own HTML; both gave the same 15 rows. Norway is not on the list. A country not on this list has no US estate or gift tax treaty. The page says nothing about what each treaty does or when it was signed. The candidate list in src/data/profiles/README.md (France, Greece, Italy, Austria, Ireland, Japan, South Africa) is 7 of the 15; it leaves out Australia, Canada, Denmark, Finland, Germany, the Netherlands, Switzerland and the United Kingdom."
+    },
+    {
+      "id": "us-estate-treaty-profiles-with",
+      "topic": "us-estate-treaty",
+      "fact": "estate",
+      "appliesTo": "The estate facts of the 21 profiles in Australia, Austria, Canada, France, Germany, Greece, Ireland, Italy, Japan, the Netherlands, South Africa, Switzerland and the United Kingdom",
+      "claim": "Each of these 13 countries has a US estate treaty, as its profiles say",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "All 13 countries are in the table (see us-estate-treaty-list). Estate & Gift: Australia, Austria, France, Germany, Japan, United Kingdom. Estate only: Greece, Ireland, Italy, Netherlands, South Africa, Switzerland, and Canada by Article XXIX B of the income tax treaty."
+        }
+      ],
+      "note": "No profile says \"no treaty\" where the IRS lists one. The treaty kinds the profiles name also match: \"estate and gift tax treaty\" for Australia, Austria, Germany, Japan and the UK; \"estate tax treaty\" for Greece, Ireland and the Netherlands; the Canada profiles describe the income tax treaty's credit, which fits the IRS footnote. In expatPicks.ts, Athens' why (\"has a US estate tax treaty\") and Vienna's (\"a US treaty\") agree with the list. Not checked here, and not on the IRS page: the treaty years (\"1950 US–Greece\", \"1955 US–Italy\", Germany's \"1998 protocol\") and what each treaty does (France's 5-of-7-years rule, Germany's 10 years, \"credit relief\" for Ireland and Japan, \"credits only\" for South Africa, \"mostly moot\" for Austria, the Netherlands article cited). The country builder checks those against the treaty text or a Big Four summary."
+    },
+    {
+      "id": "us-estate-treaty-profiles-without",
+      "topic": "us-estate-treaty",
+      "fact": "estate",
+      "appliesTo": "The estate facts of the 78 profiles in the 36 countries that say there is no US estate treaty, and Malta's, which is silent",
+      "claim": "None of these countries has a US estate treaty: Albania, Argentina, Belize, Bulgaria, Chile, Colombia, Costa Rica, Croatia, Cyprus, Czech Republic, Dominican Republic, Ecuador, Georgia, Guatemala, Honduras, Hungary, Indonesia, Malaysia, Mauritius, Mexico, Montenegro, New Zealand, Panama, Paraguay, Peru, Philippines, Portugal, Singapore, South Korea, Spain, Taiwan, Thailand, Turkey, United Arab Emirates, Uruguay, Vietnam (and Malta)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "IRS: Estate & gift tax treaties (international)",
+          "url": "https://www.irs.gov/businesses/small-businesses-self-employed/estate-gift-tax-treaties-international",
+          "read": "2026-11-15",
+          "says": "The table has 15 countries (see us-estate-treaty-list); none of the 37 countries named in this claim is among them."
+        }
+      ],
+      "note": "No profile claims a treaty where the IRS lists none. Wording variants: \"there is no US estate treaty\"; \"there is no US–Portugal estate treaty\" (also Spain, UAE, Korea); \"there is no US–New Zealand estate tax treaty\"; \"with no US estate treaty\" (Colombia, Ecuador); \"there is no US estate treaty to relieve it\" (Philippines); \"no US estate treaty is needed\" (Cyprus); \"there is no US estate treaty and none is needed\" (Singapore). What follows from having no treaty (\"there is no US credit for it on US-sited stocks\", \"nothing to double-tax\") is the country's own claim and is checked with the country. Tbilisi's why in expatPicks.ts says \"there is no US tax treaty\": that is about an income tax treaty, which this list does not cover; the Georgia builder checks it against the IRS income tax treaty list."
+    },
+    {
+      "id": "ibkr-accepts-residents",
+      "topic": "ibkr",
+      "fact": "lending",
+      "appliesTo": "Every non-US profile's lending fact: \"IBKR reportedly accepts <country> residents\", \"IBKR reportedly serves <country> residents\", \"IBKR reportedly accepts residents of all non-sanctioned countries\"",
+      "claim": "Interactive Brokers opens accounts for residents of the country",
+      "verdict": "cant-confirm",
+      "hedge": "reportedly",
+      "wording": "IBKR reportedly accepts Portugal residents",
+      "sources": [
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. A \"Country Availability\" section lists many countries under \"Check if Interactive Brokers is available in your country\"; the page does not say which countries are refused."
+        }
+      ],
+      "note": "IBKR's own pages could not be read: every Interactive Brokers site returned HTTP 403 to WebFetch on 2026-11-15 (interactivebrokers.com, .ie, .co.uk, .eu, .hu, .ca, .com.hk and ibkb.interactivebrokers.com). IBKR publishes an \"Available Countries and Territories\" page (https://www.interactivebrokers.ie/en/accounts/open-account-country-list.php and the same page on its other sites); a later builder should try it again for their countries, and a person with a browser can settle it. A search result (not a page read) quoted IBKR as accepting residents of all countries except those on sanctions lists or judged higher risk. Until the page is read, the profiles' \"reportedly\" stays. The stronger wordings need the country builder's eye: \"IBKR serves Canadian residents through Interactive Brokers Canada (margin under CIRO rules)\" and \"IBKR serves Singapore residents through its MAS-licensed Singapore entity\" carry no hedge."
+    },
+    {
+      "id": "ibkr-eu-entity",
+      "topic": "ibkr",
+      "fact": "lending",
+      "appliesTo": "EU and UK profiles' lending facts: \"(likely through its EU entity)\", \"(EU clients through its Irish entity)\", \"through its Irish entity\" (Dublin), \"through IB UK\" (London)",
+      "claim": "EU residents are served by IBKR's EU entity, Interactive Brokers Ireland Limited",
+      "verdict": "cant-confirm",
+      "hedge": "likely",
+      "wording": "(likely through its EU entity)",
+      "sources": [
+        {
+          "name": "Interactive Brokers Ireland Limited: Customer Agreement (document 4750, 7/1/2023), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/01_4750_IBIE_Customer_Agreement_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "Clause 1B: Interactive Brokers Ireland Limited (\"IBIE\") is incorporated in Ireland, company number 657406, and \"is regulated by the Central Bank of Ireland\", register number C423427. Clause 1C: unless told otherwise in writing, the client is categorised as a Retail Client. The agreement does not say which countries' residents IBIE serves."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. \"In the EU, customers sign up with the Irish entity\"; UK clients are with Interactive Brokers (U.K.) Limited; the Irish €20k compensation scheme applies to Eastern Europe after the Irish and Hungarian entities merged."
+        },
+        {
+          "name": "Investing in the Web: Interactive Brokers in Europe",
+          "url": "https://investingintheweb.com/broker-reviews/interactive-brokers-europe",
+          "read": "2026-11-15",
+          "says": "Updated on Sep 8, 2026. \"As an European resident, you are under the Central Bank of Ireland regulation\" (Interactive Brokers Ireland Limited); \"As a UK resident, you will be under this legal entity\" (Interactive Brokers UK Limited); \"Interactive Brokers Luxembourg and Central have been extinct/merged.\""
+        }
+      ],
+      "note": "IBKR's own document confirms the Irish entity exists, is regulated by the Central Bank of Ireland and treats clients as retail by default. Which residents it serves rests on two dated secondary pages, because IBKR's site returned HTTP 403 (see ibkr-accepts-residents); so the hedge stays. Both secondary pages say the Hungarian entity (IBKR Central Europe) was merged into the Irish one, so \"its EU entity\" also fits Hungary, the Czech Republic, Bulgaria and Croatia. For Switzerland and other non-EU European countries the entity is not established here."
+    },
+    {
+      "id": "ibkr-eu-margin-loans",
+      "topic": "ibkr",
+      "fact": "lending",
+      "appliesTo": "Background to the EU profiles' \"plan on IBKR margin\" and \"margin terms per country unknown\"; no profile states it alone",
+      "claim": "IBKR's Irish entity offers margin accounts in which it lends against securities, to clients it treats as retail by default",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Interactive Brokers Ireland Limited: Customer Agreement (document 4750, 7/1/2023), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/01_4750_IBIE_Customer_Agreement_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "Clause 2A(i)(d): \"Subject to Applicable Laws, IBIE shall offer a margin trading service to Clients to enable Clients to acquire investment instruments\". Clause 4A: margin trading is subject to IBIE's margin requirements, which it may change at any time; IBIE generally will not issue margin calls and may liquidate positions without notice. Clause 1C: clients are Retail Clients unless notified otherwise."
+        },
+        {
+          "name": "Interactive Brokers Ireland Limited: Disclosure of Risks of Margin Trading (document 4761, December 2020), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/4761_IBIE_DISCLOSURE_OF_RISKS_OF_MARGIN_TRADING_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "\"When you purchase securities, you may pay for the securities in full or you may borrow part of the purchase price from IBIE. If you choose to borrow funds from IBIE, you will open a margin account with IBIE. The securities purchased are IBIE's collateral for the loan to you.\""
+        }
+      ],
+      "note": "Both are IBKR's own documents, read as PDF copies on the site of LYNX, a broker that introduces clients to IBIE; they are dated July 2023 and December 2020, and the current versions on IBKR's site could not be read (HTTP 403). Both describe the loan as money to buy securities. Neither gives rates, loan-to-value limits or any per-country terms, so \"margin terms per country unknown\" in the profiles stays as it is. See ibkr-eu-margin-cash-out for drawing the loan as cash."
+    },
+    {
+      "id": "ibkr-eu-margin-cash-out",
+      "topic": "ibkr",
+      "fact": "lending",
+      "appliesTo": "The 16 EU profiles whose lending fact ends \"so plan on IBKR margin\" after saying Schwab bars cash-out: Portugal (6), Spain (7), Amsterdam, Berlin and Dublin; London says the same of IB UK",
+      "claim": "An EU resident who cannot take cash out of Schwab on margin can do so at IBKR (\"so plan on IBKR margin\")",
+      "verdict": "corrected",
+      "oldWording": "so plan on IBKR margin",
+      "newWording": "and IBKR's EU entity reportedly lends on margin only to buy securities, not to withdraw as cash, so confirm how you would draw cash before relying on either",
+      "sources": [
+        {
+          "name": "LYNX: Withdrawal (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/payments-and-transfers/withdrawal/",
+          "read": "2026-11-15",
+          "says": "\"It is not possible to withdraw in a currency if your cash balance is negative or would go negative after the withdrawal.\" In a margin account \"some funds may be used as collateral for other positions or to cover negative cash balances\", which lowers what can be withdrawn. The page is undated (footer: Copyright 2023)."
+        },
+        {
+          "name": "CapTrader: Geld abheben (help page of a German introducing broker for Interactive Brokers)",
+          "url": "https://www.captrader.com/geld-abheben/",
+          "read": "2026-11-15",
+          "says": "\"Auszahlungen sind nur möglich, wenn kein negativer Saldo in der entsprechenden Währung\" or in the total cash arises or grows: withdrawals are possible only if they do not create or increase a negative balance. Footer: © CapTrader 2026."
+        },
+        {
+          "name": "Interactive Brokers Ireland Limited: Customer Agreement (document 4750, 7/1/2023), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/01_4750_IBIE_Customer_Agreement_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "Clause 2A(i)(d) defines the margin service as one \"to enable Clients to acquire investment instruments\". Clause 5A(iv): \"Terms and conditions for deposit and withdrawal of funds (including holding periods) are as specified on the IBIE website.\" The agreement does not say that a loan may be withdrawn as cash."
+        },
+        {
+          "name": "Mustachian Post forum: Using margin loan at Interactive Brokers, page 13",
+          "url": "https://forum.mustachianpost.com/t/using-margin-loan-at-interactive-brokers/3980?page=13",
+          "read": "2026-11-15",
+          "says": "Posts of September to November 2024. One poster says withdrawing cash on margin is \"not possible in Germany with IB IE\" but is with IB UK; Swiss residents with IB UK accounts report having done it; another reports IBKR service saying \"IBUK customers can no longer withdraw cash if aggregate cash balance is -ve\", which a manager then said applies only to UK residents."
+        }
+      ],
+      "also": [
+        "Portugal's six profiles have a drawback ending \"Schwab margin can't be drawn as cash\"; reword it to cover both brokers when the fact changes",
+        "summaries or taglines that rest on borrowing through IBKR while resident in the EU need the same care"
+      ],
+      "rankFlag": "For EU residents this removes the one reported way to draw cash against the portfolio, which is the borrow step of buy-borrow-die. It touches every EU pick, the top two included (Algarve 1, Lisbon 2), and the lending rubric in src/data/expatPicks.ts, whose score 3 reads \"IBKR only, or EU residence where Schwab reportedly restricts cash-out by margin\": if IBKR restricts it too, EU profiles may belong at 2 (\"IBKR only, and even that uncertain\") or the rubric needs a line of its own. Neither the scores nor the rubric were changed here: user's call.",
+      "note": "Why corrected and not cant-confirm: the profiles tell the reader to plan on IBKR margin for cash, and every page read on the point says the opposite for accounts carried by IBKR's Irish entity. Why the new wording still says \"reportedly\": IBKR's own statement could not be read. Its knowledge-base articles 3750 (\"TWS Account Window for Retail Clients of IBKR Ireland and Central Europe\", https://ibkb.interactivebrokers.com/article/3750) and 4581 returned HTTP 403; a search result, which is not a read, quotes 3750 as saying a retail client is \"not permitted to withdraw from the margin facility\" when already borrowing or when the withdrawal would create a loan. A later builder should try that article again, and if it reads as quoted, drop \"reportedly\". Nothing read says whether a client reclassified as professional may withdraw. Apply the standard wording to the EU profiles only. London's variant, \"which likely covers the UK, so plan on IBKR margin\", is about IB UK, where the only evidence is the forum anecdote above: the UK builder treats it as a cant-confirm of its own. Swiss residents are reported to be with IB UK and able to withdraw; that is anecdote too. In place, the standard wording reads: \"..., but Schwab reportedly bars Europe residents from taking cash out through margin, and IBKR's EU entity reportedly lends on margin only to buy securities, not to withdraw as cash, so confirm how you would draw cash before relying on either; EU PRIIPs rules ...\". Added by the Portugal builder on 2026-11-15: the search snippet quoting \"not permitted to withdraw from the margin facility\" appears to come from IBKR Australia's help article, not article 3750, so it is no evidence for IBKR Ireland; the correction rests on the LYNX and CapTrader help pages and the IBIE customer agreement. Article 3750 and IBKR's country list returned HTTP 403 again on a second try the same day. The plan's decision of 2026-11-15 settled what the rankFlag left open: EU profiles' lending score goes 3 → 2 as each country is checked, and the rubric's lines for 3 and 2 were reworded in src/data/expatPicks.ts and src/data/profiles/README.md (2 = IBKR only and even that uncertain, or EU residence, where Schwab and IBKR's EU entity both reportedly bar taking cash out through margin). Portugal's six profiles carry the standard wording unchanged, the drawback \"Schwab and IBKR both reportedly bar drawing margin as cash\", and a closing summary sentence: \"The weak point is the borrow step: Schwab and IBKR both reportedly bar EU residents from drawing margin as cash.\""
+    },
+    {
+      "id": "schwab-accepts-residents",
+      "topic": "schwab",
+      "fact": "lending",
+      "appliesTo": "Every non-US profile's lending fact that says whether Schwab International (Schwab One International) accepts the country's residents",
+      "claim": "Schwab International opens accounts for residents of the country (or does not)",
+      "verdict": "cant-confirm",
+      "hedge": "reportedly",
+      "wording": "Schwab International reportedly accepts them too",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. On that day the author ran every entry in Schwab's international account selector through the application: it accepted residents of 51 of 263 countries and regions: Argentina, Australia, Austria, the Bahamas, Belgium, Bermuda, Brazil, the British Virgin Islands, the Cayman Islands, Chile, China, Colombia, Costa Rica, the Czech Republic, Denmark, Ecuador, Finland, Germany, Greece, Guatemala, Hong Kong, Iceland, India, Indonesia, Ireland, Israel, Jersey, Luxembourg, Malaysia, the Marshall Islands, Mexico, the Netherlands, Norway, Panama, Paraguay, Peru, Poland, Portugal, Qatar, Singapore, South Korea, Spain, Sweden, Switzerland, Taiwan, Thailand, Trinidad and Tobago, Turks and Caicos, the United Arab Emirates, the United Kingdom and Uruguay. Named as not accepted: Canada, Croatia, the Dominican Republic, France, Italy, Japan, Malta, New Zealand, the Philippines, South Africa, Turkey and Vietnam; for the rest the application said \"Schwab currently cannot open accounts for residents of your country/region.\" The test covers new applicants on that day only."
+        }
+      ],
+      "note": "Schwab's own pages could not be read on 2026-11-15: international.schwab.com (brokerage account, margin loans, account application summary) and www.schwab.com.sg returned HTTP 403, and www.schwab.com pages returned an error page (\"could not be authorized\"). So this stays reported, on the one dated secondary page, which is already a source in the profiles. Profiles that disagree with that page's list, for the country builders to correct (still as \"reportedly\"): Vienna says Schwab is unavailable because \"Austria is not on its reported list\", but Austria is on it; Prague says \"the Czech Republic is off its reported list\", but it is on it; Antigua Guatemala and Panajachel say whether Schwab accepts Guatemala \"is unknown\", Asunción, Lima and Santiago say it \"was not checked\", but Guatemala, Paraguay, Peru and Chile are all on the list. Profiles that agree with it: accepted for Portugal, Spain, Greece, Ireland, Germany, the Netherlands, the UK, Switzerland, Mexico, Panama, Costa Rica, Colombia, Ecuador, Uruguay, Argentina, Thailand, Malaysia, Indonesia, Singapore, South Korea, Taiwan, the UAE and Australia; not accepted for France, Italy, Croatia, Malta, Turkey, Canada, the Dominican Republic, Japan, the Philippines, Vietnam, New Zealand and South Africa; off the list for Belize, Honduras, Hungary, Bulgaria, Cyprus, Georgia, Montenegro, Albania and Mauritius. The lending rubric in expatPicks.ts gives 4 where Schwab is reported to accept residents outside the EU, so a change here can move a score (Guatemala, Paraguay, Peru and Chile are the candidates)."
+    },
+    {
+      "id": "schwab-europe-margin-cash-out",
+      "topic": "schwab",
+      "fact": "lending",
+      "appliesTo": "European profiles' lending facts: \"Schwab reportedly bars Europe residents from taking cash out through margin\" (17 profiles), \"Schwab reportedly bars Europe-resident customers from withdrawing cash against margin\" (Athens, Crete); also the lending rubric in src/data/expatPicks.ts and Portugal's drawback \"Schwab margin can't be drawn as cash\"",
+      "claim": "Schwab does not let customers who live in Europe withdraw cash against their margin loan value",
+      "verdict": "cant-confirm",
+      "hedge": "reportedly",
+      "wording": "Schwab reportedly bars Europe residents from taking cash out through margin",
+      "sources": [
+        {
+          "name": "Your Tax Base: Charles Schwab for expats",
+          "url": "https://yourtaxbase.com/blog/charles-schwab-for-expats",
+          "read": "2026-11-15",
+          "says": "Published October 23, 2026. It quotes the Schwab One Account Agreement (\"October 2026 edition, form 09/26\"), Schwab One International terms: \"Customers residing within Europe are restricted from using their Available Margin Loan Value\" to withdraw funds from their account, and advises keeping enough actual cash in the account for spending. It does not define \"Europe\"."
+        }
+      ],
+      "note": "Schwab's own agreement could not be read: https://www.schwab.com/legal/schwab-one-account-agreement returned Schwab's error page, and the copies on advisorservices.schwab.com and international.schwab.com returned HTTP 403. A search result, which is not a read, shows the same sentence on Schwab's page, so it is very likely there; a person with a browser can confirm it in a minute, and the hedge could then go. Until then the profiles' \"reportedly\" keeps it. Two things the country builders should carry: the reported clause says \"Europe\", not \"EU\", so it plausibly reaches the UK and Switzerland (Zurich's profile notes \"Switzerland is outside the EU\" as if that avoided it, and the rubric says \"outside the EU\" and \"EU residence\"); and Portugal's drawback states the bar without a hedge (\"Schwab margin can't be drawn as cash\"), which should gain one when it is reworded for ibkr-eu-margin-cash-out. Whether Schwab One International offers margin loans at all to residents abroad was not readable either (its margin-loans page returned 403)."
+    },
+    {
+      "id": "priips-kid-required",
+      "topic": "priips",
+      "fact": "lending",
+      "appliesTo": "The rule behind every EU profile's PRIIPs clause (34 profile files mention PRIIPs)",
+      "claim": "Under the EU PRIIPs Regulation a packaged retail product may be made available or sold to a retail investor only with a key information document (KID)",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Regulation (EU) No 1286/2014, Article 5, as adopted (legislation.gov.uk copy of the EU text)",
+          "url": "https://www.legislation.gov.uk/eur/2014/1286/article/5/adopted",
+          "read": "2026-11-15",
+          "says": "Article 5(1): \"Before a PRIIP is made available to retail investors, the PRIIP manufacturer shall draw up\" a key information document for that product in accordance with the Regulation, and publish it on its website. The page shows the original version as adopted by the EU."
+        },
+        {
+          "name": "Regulation (EU) No 1286/2014, Article 13, as adopted (legislation.gov.uk copy of the EU text)",
+          "url": "https://www.legislation.gov.uk/eur/2014/1286/article/13/adopted",
+          "read": "2026-11-15",
+          "says": "Article 13(1): \"A person advising on, or selling, a PRIIP shall provide retail investors with the key information document\" in good time before those retail investors are bound by any contract or offer relating to that PRIIP. The article puts duties on those who advise or sell; it says nothing about an investor selling or keeping a PRIIP already held."
+        },
+        {
+          "name": "European Commission: Key information documents for packaged retail and insurance-based investment products (PRIIPs)",
+          "url": "https://finance.ec.europa.eu/consumer-finance-and-payments/retail-financial-services/key-information-documents-packaged-retail-and-insurance-based-investment-products-priips_en",
+          "read": "2026-11-15",
+          "says": "The PRIIPs Regulation (1286/2014/EU) \"obliges those who produce or sell investment products to provide investors with key information documents (KIDs)\" of no more than three pages. The page does not mention non-EU funds or what happens to a product with no KID."
+        }
+      ],
+      "note": "The Regulation was read in the originally adopted text on the UK government's legislation site, because EUR-Lex returned an empty page to WebFetch (three URL forms tried). That copy does not show later EU amendments; the two articles quoted are the core duty. The Regulation never names US ETFs: the block is how brokers apply it to funds whose managers publish no KID (see priips-us-etf-new-buys-blocked)."
+    },
+    {
+      "id": "priips-us-etf-new-buys-blocked",
+      "topic": "priips",
+      "fact": "lending",
+      "appliesTo": "EU profiles' lending facts: \"EU PRIIPs rules reportedly block new buys of US-listed ETFs\" (24 profiles) and \"EU PRIIPs rules reportedly block new purchases of US ETFs\" (Athens, Crete, Paphos, Limassol, Sliema)",
+      "claim": "A retail client of an EU broker cannot buy US-listed ETFs, because they have no KID",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "LYNX: Key Information Document (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/products-and-regulations/regulations/key-information-document/",
+          "read": "2026-11-15",
+          "says": "Retail clients are \"not permitted to trade ETFs or other products that do not have a valid KID\"; many non-EU ETFs have none. Can a retail client buy US ETFs? \"No, not unless you are classified as a professional investor.\" The same applies to ETFs from Canada, Hong Kong, Mexico and Australia. The KID has applied to most products since 1 January 2018."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. \"PRIIPs is an EU rule that prohibits buying US-listed ETFs\", and this also applies to UK investors; US ETFs are open only to elective professional clients, while UCITS ETFs are available to all Europeans."
+        }
+      ],
+      "note": "Confirmed on a broker's own help page and a dated secondary page, with the rule itself in priips-kid-required. The profiles' \"reportedly\" may stay; it is not wrong. IBKR's own knowledge-base articles on PRIIPs (https://ibkb.interactivebrokers.com/node/3324 and /node/2993) returned HTTP 403. Not settled here: who counts as an EU retail client for a resident of a non-EU country. Antalya, Istanbul and Kotor say \"as a non-EU country, PRIIPs limits on US ETFs do not apply\" without a hedge, and Sarandë says the limit \"should not apply\"; that depends on which IBKR entity carries the account, which no page read here states. The stage 3 builder checks it and hedges it if it can't be confirmed. London's clause on the UK's replacement regime (Consumer Composite Investments, 6 April 2026) belongs to the UK builder."
+    },
+    {
+      "id": "priips-existing-holdings-kept",
+      "topic": "priips",
+      "fact": "lending",
+      "appliesTo": "EU profiles' lending facts: \"not holding them\" (24 profiles) and \"though existing holdings can usually be kept\" (Athens, Paphos, Limassol, Sliema; Crete has no such clause)",
+      "claim": "The block is on new purchases: US-listed ETFs already held can be kept, and sold",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "LYNX: Key Information Document (help page of a broker whose accounts are carried by Interactive Brokers)",
+          "url": "https://www.lynxbroker.com/service/products-and-regulations/regulations/key-information-document/",
+          "read": "2026-11-15",
+          "says": "The page's FAQ says retail clients \"may still hold or sell existing positions, but new purchases are restricted.\""
+        },
+        {
+          "name": "Regulation (EU) No 1286/2014, Article 13, as adopted (legislation.gov.uk copy of the EU text)",
+          "url": "https://www.legislation.gov.uk/eur/2014/1286/article/13/adopted",
+          "read": "2026-11-15",
+          "says": "The duty to provide a KID falls on \"a person advising on, or selling, a PRIIP\" before the retail investor is bound; nothing in the article reaches a PRIIP the investor already holds or a sale by the investor."
+        }
+      ],
+      "note": "Confirmed for accounts carried by IBKR's Irish entity through LYNX's page; the Regulation is silent on existing holdings, which fits. What was not read: whether a US broker such as Schwab lets a client who moves to the EU keep buying, and whether positions can be transferred in. \"Can usually be kept\" and \"not holding them\" both stand."
+    },
+    {
+      "id": "priips-professional-clients",
+      "topic": "priips",
+      "fact": "lending",
+      "appliesTo": "Context for the same PRIIPs clauses; no profile states it",
+      "claim": "The KID rule protects retail clients only: a client classified as professional can buy US-listed ETFs",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Regulation (EU) No 1286/2014, Article 4, as adopted (legislation.gov.uk copy of the EU text)",
+          "url": "https://www.legislation.gov.uk/eur/2014/1286/article/4/adopted",
+          "read": "2026-11-15",
+          "says": "Article 4(6): \"retail investor\" means \"a retail client as defined in point (11) of Article 4(1) of Directive 2014/65/EU\", or an insurance customer who would not qualify as a professional client under that Directive."
+        },
+        {
+          "name": "Interactive Brokers Ireland Limited: Customer Agreement (document 4750, 7/1/2023), copy hosted by LYNX",
+          "url": "https://www.lynxbroker.com/media/doc/IBIE/01_4750_IBIE_Customer_Agreement_ENG.pdf",
+          "read": "2026-11-15",
+          "says": "Appendix 1, point 3: \"The requirements to deliver certain product-specific documents, such as Key Investor Information Documents (\\\"KIID\\\") for Packaged Retail and Insurance-based Investment Products (\\\"PRIIPs\\\"), are not applied to Professional Clients.\" Clause 1C: a client may ask to be re-categorised as a Professional Client, which IBIE need not grant, and then loses certain protections."
+        },
+        {
+          "name": "Banker on Wheels: Interactive Brokers review",
+          "url": "https://www.bankeronwheels.com/interactive-brokers-review/",
+          "read": "2026-11-15",
+          "says": "Last updated 2 November 2026. Access to US ETFs is limited to \"elective professional clients\", who must meet two of three tests: a year of relevant professional experience, a portfolio over €500k, or frequent large trades (an average of 10 a quarter over the previous four quarters)."
+        }
+      ],
+      "note": "Useful to a retiree with a large portfolio, since the €500k test is one of the two needed; the second test is the hard one for a buy-and-hold investor. The three tests are from the secondary page, not from IBKR or the Directive, so a profile that mentions this route should say \"reportedly\". No profile needs to change."
+    }
+  ]
+}

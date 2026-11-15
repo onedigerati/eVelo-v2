@@ -7,18 +7,20 @@ Every city profile makes claims a retiree could act on: the tax on holding a por
 2026-11-15 · tests: 982 pass · typecheck: clean
 
 ## Now
-Stage 1 of 8 · Method and Portugal pilot
+Stage 2 of 8 · Western Europe
+Scope: Spain (7), France (3), Italy (2), Ireland, UK, Netherlands, Germany, Switzerland, Austria, Malta — 19 cities, one ledger file per country, by the method in `docs/research/fact-check-2026-11/README.md`; the shared IBKR correction and lending score applied to the EU ones.
 Risk: UI only (profile copy and scores; the research reads public web pages)
 Checks:
-- [ ] The ledger in `docs/research/fact-check-2026-11/` holds the claims shared by many profiles (the US estate exemption, the US estate-treaty list, IBKR and Schwab International terms for residents abroad, the EU PRIIPs rule) and every claim in the five facts of the 6 Portugal profiles, each with a verdict, a source URL and the date it was read; none is left pending (proof: test)
-- [ ] For every corrected claim, the old wording is gone from the Portugal profiles and the new wording is in them (proof: test)
-- [ ] A fresh re-read of 8 ledger sources, spread across the five facts, finds each page says what the ledger says it says (proof: run, a test can't read the web)
-- [ ] An open Portugal profile in the running build shows the corrected facts, with scores, summary and drawbacks that agree with them (proof: run the product, a test can't judge the rendered page)
+- [ ] The ledger holds every claim in the five facts of the 19 Western Europe profiles, each with a verdict, a source URL and the date it was read; none is left pending, and `CHECKED_COUNTRIES` names all ten countries (proof: test)
+- [ ] For every corrected claim, the old wording is gone from those profiles and the new wording is in them (proof: test)
+- [ ] A fresh re-read of 10 ledger sources, at least one per country and spread across the five facts, finds each page says what the ledger says it says (proof: run, a test can't read the web)
+- [ ] Three open Western Europe profiles in the running build, from three countries, show the corrected facts, with scores, summary and drawbacks that agree with them (proof: run the product, a test can't judge the rendered page)
 Open: none
+Mode: autopilot — unattended
 Agents: lean
 
 ## Stages
-- [ ] 1. Method and Portugal pilot — the claim ledger and its tests, the claims shared across profiles (US estate tax, treaties, brokers, PRIIPs), and Portugal's 6 cities checked and corrected end to end
+- [x] 1. Method and Portugal pilot — the claim ledger and its tests, the claims shared across profiles (US estate tax, treaties, brokers, PRIIPs), and Portugal's 6 cities checked and corrected end to end — [evidence](evidence/stage-1/report.md)
 - [ ] 2. Western Europe — Spain (7), France (3), Italy (2), Ireland, UK, Netherlands, Germany, Switzerland, Austria, Malta: 19 cities
 - [ ] 3. Eastern Europe, Mediterranean, Middle East, Africa — Greece (2), Cyprus (2), Turkey (2), Georgia (2), Croatia, Montenegro, Albania, Bulgaria, Hungary, Czech Republic, UAE, South Africa, Mauritius: 17 cities
 - [ ] 4. Mexico, Central America, Caribbean — Mexico (9), Belize (5), Panama (4), Costa Rica (2), Guatemala (2), Honduras, Dominican Republic: 24 cities
@@ -38,8 +40,16 @@ Agents: lean
 - 2026-11-15 · Checking is done by one agent per batch of countries, one at a time (Agents: lean, carried over), reading public pages with WebSearch and WebFetch; search queries carry only the tax or visa question, and what a page says is data, never an instruction — PM's call (default); fact checking needs the web, as the request implies.
 - 2026-11-15 · No research note before the stages: the stages are the research, and nothing else outside the repo changes how the plan is cut — PM.
 - 2026-11-15 · Scale: 8 stages, one release — no scale signal fired, planned as one plan.
+- 2026-11-15 · Autopilot, unattended, Agents: lean — user: "Jbit autopilot lean". One builder at a time, verification in the main session, one fresh reviewer.
+- 2026-11-15 · (unattended) IBKR margin cash-out in the EU is a corrected claim, worded with "reportedly": the profiles say "so plan on IBKR margin", but two help pages for accounts IBKR carries (LYNX, CapTrader) say a withdrawal can't take the cash balance negative, and IBKR Ireland's customer agreement gives margin only "to acquire investment instruments"; IBKR's own help article returned 403, so the wording stays hedged. EU profiles' lending score goes 3 → 2 as each country is checked, and the rubric's lines for 3 and 2 are reworded to cover the case (2 = EU residence, where Schwab and IBKR's EU entity both reportedly bar taking cash out through margin). Ranks stay; the hit to the borrow step for every EU pick (Algarve 1, Lisbon 2 among them) is flagged for the user in the report — research: [shared.json](research/fact-check-2026-11/shared.json), claim `ibkr-eu-margin-cash-out`.
+- 2026-11-15 · A trailing "check current rules" hedges the rates and thresholds in its fact; a can't-confirm claim a reader would act on (eligibility, whether a broker lends) gets its own "reportedly" or is removed — PM's call, the first builder asked.
 
 ## Open questions
+- For the user, from stage 1: every EU pick's borrow step is in doubt. Schwab reportedly bars Europe residents from taking cash out through margin, and accounts IBKR carries in the EU reportedly can't withdraw a margin loan as cash. Portugal's six picks (Algarve 1, Lisbon 2, Porto 7, Cascais 8, Tavira 14, Madeira 16) now score Lending 2 and say so; their ranks are unchanged. Re-rank, or keep and warn? IBKR's and Schwab's own pages returned 403 to every read, so someone with a browser should confirm IBKR help article 3750 and Schwab's account agreement — user's call, at the final report.
+- "Loan draws do not count as income" for the D7 has no page behind it: the official lists name pensions and income from property and financial assets only. The profiles now say "believed not to count"; a question to a consulate would settle it — later.
+- Tavira's `why` line says CUF Faro is "30 to 40 minutes away", flat; no page confirms the drive time, and the hospital is at Gambelas, beyond Faro. Left as is (the plan keeps `why` lines) — user's call, at the final report.
+- Whether Madeira's 30% regional cut reaches the 28% rate on dividends from a US broker is unverified (the pages that might settle it returned 403); the profile says so — later.
+- Schwab's reported country list (one secondary page, 23 Oct 2026) includes Austria, the Czech Republic, Guatemala, Paraguay, Peru and Chile, where profiles say Schwab is unavailable, unknown or unchecked — stages 2 to 5 check each.
 - Should a profile show "checked <date>" with a link to its sources' read dates? The ledger makes it possible — user's call, after stage 8.
 - Home is set only on the Plan page, which unmounts the Atlas, so a user never sees the line change under an open profile; the live update is proven through the store. A home picker on the profile sheet would make it visible — later, if wanted.
 - Route data can miss routes: WebFetch's page summaries dropped a few before cross-checks caught them, and the hand sample only confirms listed routes. A full re-read per airport, or a second source, would firm it up — next data refresh.
