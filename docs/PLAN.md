@@ -15,7 +15,7 @@ Agents: lean
 
 ## Fixes
 - 2026-11-15 · Spain's seven profiles now warn, in the residency fact, that the Los Angeles consulate says applicants "cannot have/leave loans or mortgages in the United States" and doesn't say whether a margin loan counts (ledger `es-visa-la-no-us-loans`) — tests 1103/1103, typecheck, and Madrid seen on a phone-width profile
-- 2026-11-15 · Landing buttons get a quiet hover effect: "Find your eVelo"'s arrow curves up into an escape path, and "Explore the Atlas" gains a small globe whose meridians turn; hover, keyboard focus and press only, nothing ambient, off under reduced motion — user picked it from a six-way sampler; tests 1111/1111, typecheck, build, and the buttons seen at rest and hovered on desktop and at phone width
+- 2026-11-15 · Landing buttons get a quiet hover effect: "Find your eVelo"'s arrow curves up into an escape path, and "Explore the Atlas" gains a small globe whose meridians turn; hover, keyboard focus and press only, nothing ambient, off under reduced motion — user picked it from a six-way sampler; tests 1111/1111, typecheck, build, and the buttons seen at rest and hovered on desktop and at phone width; live on GitHub Pages (run 43802583448)
 
 ## Decisions
 - 2026-11-15 · Keep the ranked 75's order and rewrite the flagged `why` lines and Nice's summary to match the corrected facts — user: "Let's go with your recommendation" (the PM recommended keep and warn over re-ranking).
