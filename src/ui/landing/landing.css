@@ -186,12 +186,70 @@
   background: color-mix(in oklab, var(--accent) 88%, var(--ink));
   color: var(--accent-ink);
 }
-.landing__cta--primary svg {
+.landing__cta svg {
   flex-shrink: 0;
-  transition: transform var(--dur-2) var(--ease-out);
+  overflow: visible;
 }
-.landing__cta--primary:hover svg {
-  transform: translateX(2px);
+.landing__cta--ghost {
+  gap: 10px;
+}
+/* Hover whimsy, kept to hover, keyboard focus and the press itself: no ambient motion.
+ * "Find your eVelo": the flat arrow becomes an escape path that climbs up and away.
+ * "Explore the Atlas": the globe's meridians turn. Off entirely under reduced motion. */
+.landing__cta-path {
+  stroke-dasharray: 22;
+  stroke-dashoffset: 22;
+}
+.landing__cta-head {
+  opacity: 0;
+}
+.landing__cta-mer {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .landing__cta-flat {
+    transition: opacity var(--dur-2) var(--ease-out);
+  }
+  .landing__cta-path {
+    transition: stroke-dashoffset 700ms var(--ease-out);
+  }
+  .landing__cta-head {
+    transform: translate(-4px, 4px);
+    transition:
+      opacity var(--dur-3) 350ms,
+      transform 500ms var(--ease-out) 300ms;
+  }
+  .landing__cta--primary:is(:hover, :focus-visible, :active) .landing__cta-flat {
+    opacity: 0;
+  }
+  .landing__cta--primary:is(:hover, :focus-visible, :active) .landing__cta-path {
+    stroke-dashoffset: 0;
+  }
+  .landing__cta--primary:is(:hover, :focus-visible, :active) .landing__cta-head {
+    opacity: 1;
+    transform: none;
+  }
+  .landing__cta--ghost:is(:hover, :focus-visible, :active) .landing__cta-mer {
+    animation: landing-globe-turn 2.4s linear infinite;
+  }
+  .landing__cta--ghost:is(:hover, :focus-visible, :active) .landing__cta-mer--b {
+    animation-delay: -1.2s;
+  }
+}
+@keyframes landing-globe-turn {
+  0% {
+    transform: scaleX(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scaleX(0);
+    opacity: 0.35;
+  }
+  100% {
+    transform: scaleX(-1);
+    opacity: 0.9;
+  }
 }
 .landing__cta--ghost {
   padding: 0 22px;

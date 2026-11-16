@@ -74,11 +74,21 @@ export function LandingView({ bp }: { bp: Breakpoint }) {
                 <div className="landing__ctas">
                   <a href={hrefFor('plan')} className="landing__cta landing__cta--primary">
                     Find your eVelo
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                      <path d="M3 8h10M9 4l4 4-4 4" />
+                    {/* On hover the flat arrow becomes an escape path climbing up and away. */}
+                    <svg className="landing__cta-traj" width="18" height="16" viewBox="0 0 18 16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path className="landing__cta-flat" d="M3 8h10M9 4l4 4-4 4" />
+                      <path className="landing__cta-path" d="M2 13C7 13 11 10 15 3" />
+                      <path className="landing__cta-head" d="M10.5 3.2 15 3l.6 4.4" />
                     </svg>
                   </a>
                   <a href={hrefFor('atlas')} className="landing__cta landing__cta--ghost">
+                    {/* A small globe whose meridians turn on hover. */}
+                    <svg className="landing__cta-globe" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.3" aria-hidden="true">
+                      <circle cx="8" cy="8" r="6.2" />
+                      <path d="M1.8 8h12.4" opacity="0.6" />
+                      <ellipse className="landing__cta-mer" cx="8" cy="8" rx="3" ry="6.2" />
+                      <ellipse className="landing__cta-mer landing__cta-mer--b" cx="8" cy="8" rx="3" ry="6.2" opacity="0.5" />
+                    </svg>
                     Explore the Atlas
                   </a>
                 </div>
