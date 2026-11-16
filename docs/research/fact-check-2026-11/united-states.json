@@ -4005,7 +4005,37 @@
           "says": "Dated 18 March 2026. HCMC is \"the state's busiest Level 1 trauma hospital\"; officials warned it could close as soon as 2026 without state action; it is keeping its trauma centre open despite cutting five departments."
         }
       ],
-      "note": "hennepinhealthcare.org and health.mn.gov (the state trauma list and STAC minutes) returned HTTP 403. Not in the profile and not changed: HCMC's 2026 financial crisis, met with one year of state aid (flagged in the report for the PM)."
+      "note": "hennepinhealthcare.org and health.mn.gov (the state trauma list and STAC minutes) returned HTTP 403. HCMC's 2026 financial crisis was added to the profile after the plan, at the user's call: see us-health-msp-hcmc-funding."
+    },
+    {
+      "id": "us-health-msp-hcmc-funding",
+      "fact": "healthcare",
+      "cities": [
+        "minneapolis"
+      ],
+      "claim": "HCMC warned in early 2026 that it could close; the Legislature gave it $205 million for 2026 and access to a $500 million hospital reserve through 2031, which its board chair called a bridge to the next session rather than a fix",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "CBS Minnesota: Hennepin Healthcare officials warn lawmakers it could close in 2026 without tax boost",
+          "url": "https://www.cbsnews.com/amp/minnesota/news/hennepin-healthcare-hcmc-closure-threat-minneapolis/",
+          "read": "2026-11-15",
+          "says": "Dated 18 March 2026. Officials warned HCMC could close as soon as 2026 without state action."
+        },
+        {
+          "name": "MPR News: Capitol cash injection will keep HCMC open",
+          "url": "https://www.mprnews.org/story/2026/05/19/minneapolis-hospital-hcmc-stays-open-with-funding-bill",
+          "read": "2026-11-15",
+          "says": "Dated 19 May 2026. $205 million in state support this year and access to a $500 million reserve account available through 2031; the money \"will tide them over until the next legislative session\"; Jeffrey Lunde, chair of Hennepin Healthcare: \"there needs to be structural changes\"."
+        },
+        {
+          "name": "Minnesota House: New laws 2026, health and human services",
+          "url": "https://www.house.mn.gov/NewLaws/story/2026/5778",
+          "read": "2026-11-15",
+          "says": "A $105 million direct stabilization payment for Hennepin County Medical Center and $100 million toward the nonfederal share of HCMC's Directed Payment Program; a hospital stabilization reserve of $354 million (by 15 July 2027) plus $146 million (by 15 July 2028), available over the next five years to financially distressed hospitals."
+        }
+      ],
+      "note": "Added after stage 8 at the user's call (answer to the report's question 3). No page dated October or November 2026 shows further funding or a closure plan (search 2026-11-15)."
     },
     {
       "id": "us-health-msp-masonic",

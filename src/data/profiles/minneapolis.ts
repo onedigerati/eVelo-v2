@@ -7,7 +7,7 @@ const profile: ExpatProfile = {
   scores: { cost: 2, healthcare: 5, safety: 2, visa: 5, climate: 1, community: 3, tax: 4, estate: 4, lending: 5 },
   facts: {
     healthcare:
-      'Hennepin Healthcare (Level 1 trauma), M Health Fairview University of Minnesota Medical Center (with the NCI-designated comprehensive Masonic Cancer Center) and Abbott Northwestern lead in the city, and the Mayo Clinic in Rochester is about 85 miles (1.5 hours) south; Medicare applies from 65.',
+      'Hennepin Healthcare (Level 1 trauma), M Health Fairview University of Minnesota Medical Center (with the NCI-designated comprehensive Masonic Cancer Center) and Abbott Northwestern lead in the city, and the Mayo Clinic in Rochester is about 85 miles (1.5 hours) south; Medicare applies from 65. HCMC, the state\'s busiest Level 1 trauma centre, warned in early 2026 that it could close; the Legislature gave it $205 million for 2026 and access to a $500 million hospital reserve through 2031, which its board chair called a bridge to the next session rather than a fix.',
     safety:
       'The US is 134th of 163 in the 2026 Global Peace Index; Minneapolis counted 64 homicides in 2025, down from 76–77 in 2024 but above 2019\'s 48 (about 15 per 100,000), with violent crime concentrated in parts of the North Side and downtown; the lake neighbourhoods and suburbs are much safer.',
     visa: 'No visa needed: a US citizen can live there without any residency process.',
@@ -29,6 +29,11 @@ const profile: ExpatProfile = {
     'Violent crime above pre-2020 levels in parts of the city',
   ],
   sources: [
+    {
+      name: 'MPR News: Capitol cash injection will keep HCMC open (19 May 2026)',
+      url: 'https://www.mprnews.org/story/2026/05/19/minneapolis-hospital-hcmc-stays-open-with-funding-bill',
+      edition: '2026',
+    },
     {
       name: 'Minnesota Department of Revenue: income tax brackets for tax year 2026',
       url: 'https://www.revenue.state.mn.us/mndor-pp/21641',

@@ -17,13 +17,13 @@ The final report of the profile fact check (plan: `docs/PLAN.md`; method: `READM
 ## Summary
 
 <!-- generated:summary -->
-1533 claims in 51 country files, plus 16 claims in `shared.json` that many profiles repeat (US estate exemption and treaties, IBKR, Schwab, the EU PRIIPs rule): 11 confirmed, 1 corrected, 4 can't confirm.
+1534 claims in 51 country files, plus 16 claims in `shared.json` that many profiles repeat (US estate exemption and treaties, IBKR, Schwab, the EU PRIIPs rule): 11 confirmed, 1 corrected, 4 can't confirm.
 
 **By verdict** (country files)
 
 | Confirmed | Corrected | Can't confirm | Total |
 |---|---|---|---|
-| 1130 | 121 | 282 | 1533 |
+| 1131 | 121 | 282 | 1534 |
 
 **By fact**
 
@@ -33,7 +33,7 @@ The final report of the profile fact check (plan: `docs/PLAN.md`; method: `READM
 | Estate | 254 | 7 | 11 | 272 |
 | Lending | 40 | 24 | 183 | 247 |
 | Residency | 181 | 21 | 17 | 219 |
-| Healthcare | 322 | 37 | 51 | 410 |
+| Healthcare | 323 | 37 | 51 | 411 |
 
 **By region** (as `src/data/cities.ts` groups countries)
 
@@ -43,7 +43,7 @@ The final report of the profile fact check (plan: `docs/PLAN.md`; method: `READM
 | Middle East | 1 | 1 | 15 | 1 | 6 | 22 |
 | Africa | 2 | 2 | 34 | 2 | 15 | 51 |
 | Latin America | 14 | 33 | 227 | 27 | 87 | 341 |
-| North America | 2 | 36 | 255 | 17 | 8 | 280 |
+| North America | 2 | 36 | 256 | 17 | 8 | 281 |
 | Asia | 9 | 19 | 145 | 11 | 51 | 207 |
 | Oceania | 2 | 3 | 28 | 2 | 8 | 38 |
 
@@ -248,7 +248,7 @@ Collected from the plan's open questions marked for the user, plus the stage 8 a
 
 1. **The borrow step in Europe.** Every EU pick now scores lending 2: Schwab reportedly bars Europe residents from taking cash out through margin, and IBKR's EU entity reportedly lends only to buy securities. Portugal's six picks (Algarve 1, Lisbon 2, Porto 7, Cascais 8, Tavira 14, Madeira 16), Spain's seven, Paphos 3, Athens 11, Crete 13 and the rest kept their ranks. Re-rank, or keep and warn? IBKR's and Schwab's own pages refused every read, so someone with a browser should confirm IBKR help article 3750 and Schwab's account agreement first.
 2. **`why` lines and summaries that no longer match the profile** (the plan keeps `why` lines; each is yours): Nice's summary says it "ranks last of the 50" (it is pick 58 of 75); Florence's `why` calls its visa "good" while it scores 3; Sliema's says "only IBKR is known to serve residents", which undersells that IBKR's EU entity reportedly won't pay a margin loan out as cash; Tavira's says CUF Faro is "30 to 40 minutes away", which no page confirms (the hospital is at Gambelas, beyond Faro); Roatán's (pick 59) reads as if the island still had no public hospital, though a replacement has reportedly run since September 2025; Las Terrenas's says flatly "Schwab International is unavailable", which the profile now hedges; Asunción's calls the residency means test "unverified", which is now verified (since July 2026 permanent residence needs active income, a pension or the $200k Investor Pass); Santiago's (pick 42) says foreigners' assets abroad fall outside inheritance tax, which the profile hedges and now scores estate 4. The other rank flags above (Vienna, Tbilisi, Budapest, Florence and Rome, Antalya and Istanbul, Zurich, London) are in the same position.
-3. **Minneapolis's hospital.** HCMC, Minneapolis's Level 1 safety-net hospital, warned in 2026 that it could close and got one year of state aid. The profile doesn't mention it; adding it would be a new claim, not a correction. Add a line?
+3. **Minneapolis's hospital.** *Settled 2026-11-15: added.* HCMC, Minneapolis's Level 1 safety-net hospital, warned in 2026 that it could close; the Legislature gave it $205 million for 2026 and access to a $500 million reserve through 2031. The profile's healthcare fact now says so (`us-health-msp-hcmc-funding`).
 4. **Spain and US loans.** Spain's Los Angeles consulate says residency applicants "cannot have/leave loans or mortgages in the United States". Whether a margin loan counts is not established, and no profile mentions it. Add a warning to Spain's seven profiles?
 5. **A "checked" date on each profile.** The ledger makes it possible to show "checked 15 November 2026" with links to each claim's sources and read dates. Want it?
 6. **Taxes on gains at death and on leaving.** Canada, Australia, South Africa, Japan and South Korea charge tax on unrealised gains at death or on departure, which the simulation cannot express without a new feature that tracks cost basis (a plan decision left this to you). Build it, in a later plan?
@@ -1303,7 +1303,7 @@ Can't confirm:
 
 ### United States
 
-San Francisco, Los Angeles, San Diego, Seattle, Portland, OR, Denver, Phoenix, Scottsdale, Las Vegas, Honolulu, Boise, Salt Lake City, Austin, Dallas, Houston, Chicago, Minneapolis, Kansas City, St. Louis, Nashville, Atlanta, Charlotte, Raleigh, Asheville, New York City, Boston, Washington, DC, Philadelphia, Pittsburgh, Tampa, Miami, Orlando, Sarasota · North America · `united-states.json`, 240 claims
+San Francisco, Los Angeles, San Diego, Seattle, Portland, OR, Denver, Phoenix, Scottsdale, Las Vegas, Honolulu, Boise, Salt Lake City, Austin, Dallas, Houston, Chicago, Minneapolis, Kansas City, St. Louis, Nashville, Atlanta, Charlotte, Raleigh, Asheville, New York City, Boston, Washington, DC, Philadelphia, Pittsburgh, Tampa, Miami, Orlando, Sarasota · North America · `united-states.json`, 241 claims
 
 #### San Francisco
 
