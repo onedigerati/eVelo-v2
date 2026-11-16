@@ -7,14 +7,7 @@ The fact check corrected the city profiles but kept the ranked 75's order and th
 2026-11-15 · tests: 1103 pass · typecheck: clean · build: ok
 
 ## Now
-Stage 1 of 1 · Pick reasons
-Risk: UI only (pick copy; ranks, scores and the model untouched)
-Checks:
-- [x] For every `rankFlag` claim, the flagged wording is gone from its pick's `why` (or summary) and the line agrees with the ledger's verdict; each flag records how it was resolved in the ledger (proof: test)
-- [x] Every ranked pick that scores lending 2 says in its `why` that the borrow step is in doubt, and the ranked 75's order is unchanged (proof: test)
-- [x] Three rewritten reasons read correctly in the running build: a Portugal pick, Tbilisi and Asunción on the Top picks list (proof: run the product, a test can't judge the rendered list)
-Open: none
-Mode: autopilot — unattended
+All stages done. The fact check and the pick reasons are ready to deploy together, on the user's go.
 Agents: lean
 
 ## Stages
