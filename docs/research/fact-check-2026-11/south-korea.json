@@ -173,9 +173,21 @@
           "url": "https://taxsummaries.pwc.com/republic-of-korea/individual/residence",
           "read": "2026-11-15",
           "says": "Last reviewed 02 July 2026. Residents are \"Any individuals having a domicile in Korea, having a residence within Korea for 183 days or more in a tax year.\""
+        },
+        {
+          "name": "Seoulz: Korea inheritance tax",
+          "url": "https://www.seoulz.com/korea-inheritance-tax/amp/",
+          "read": "2026-11-15",
+          "says": "Undated (byline \"2 months ago\", images from September 2026). Rates: 10% up to KRW 100 million, 20% to 500 million, 30% to 1 billion, 40% to 3 billion, 50% above 3 billion."
+        },
+        {
+          "name": "MoneyToday: inheritance tax framework unchanged",
+          "url": "https://www.mt.co.kr/en/economy/2026/09/21/2026092023051532205",
+          "read": "2026-11-15",
+          "says": "Updated 21 September 2026. The framework set in 1997 is unchanged apart from the 50% band above KRW 3 billion; no inheritance tax reform was enacted or proposed in the government's 2026 tax plan (its English bracket figures are garbled)."
         }
       ],
-      "note": "PBL gives the residence split and says nothing separate on foreigners, which is consistent with residence, not nationality, deciding; the domicile-or-183-days test is PwC's income tax definition, which the inheritance law shares.",
+      "note": "PBL gives the residence split and says nothing separate on foreigners, which is consistent with residence, not nationality, deciding; the domicile-or-183-days test is PwC's income tax definition, which the inheritance law shares. Pre-ship re-check (2026-11-15): the bracket table the model uses is confirmed on a second dated page (Seoulz, about September 2026), and MoneyToday (21 September 2026) reports no 2026 change; law.go.kr's Article 26 page did not load its text.",
       "modelMismatch": "localTaxes.ts has no South Korea entry (noted in the plan), so the model taxes nothing at death; a resident's worldwide estate pays 10–50% (50% above KRW 3bn) after deductions of up to KRW 500m.",
       "modelled": "New KR entry: the whole estate after the KRW 500m lump-sum deduction at 10% to KRW 100m, 20% to 500m, 30% to 1bn, 40% to 3bn, 50% above (Article 26, read on a dated secondary page; NTS page for the resident's worldwide reach), split per heir by halving the deduction and limits; applies from the move. E.g. a $2M estate: about $535k."
     },

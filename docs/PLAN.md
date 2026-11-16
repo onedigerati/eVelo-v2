@@ -22,6 +22,7 @@ Agents: lean
 
 ## Fixes
 - 2026-11-15 · Minneapolis's healthcare fact now says HCMC warned it could close in 2026 and got $205M plus access to a $500M reserve through 2031 (ledger `us-health-msp-hcmc-funding`) — tests 1103/1103, typecheck, and the line seen on a phone-width profile
+- 2026-11-15 · Pre-ship checks: a taxed home works in the running build (Chicago home: Illinois tax $978K, Portland −$653K; London home: UK tax $4.0M, Lisbon +$5.8M, no console errors); Korea's brackets confirmed on a second dated page with no 2026 change (sources added to `kr-estate-worldwide`); Turkey's reading holds on Law 7338 art. 1's text; Massachusetts's estate model rests on the statute (ch. 65C §2A) — factCheck tests 81/81
 
 ## Decisions
 - 2026-11-15 · Scope is the five facts the user named (tax on holdings, estate and inheritance, lending and brokers, residency, healthcare) on all 133 profiles, plus what a correction changes: scores, summary, tagline, drawbacks and sources. Safety, climate, community and Getting there are left alone — user: "Specifically related to tax on holdings, estate and inheritance, lending and brokers, residency, healthcare".
