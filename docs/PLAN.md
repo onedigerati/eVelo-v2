@@ -19,6 +19,9 @@ Agents: lean
 ## Stages
 - [ ] 1. Pick reasons — rewrite the 25 rank-flagged `why` lines and Nice's summary to match the corrected facts, with a borrow warning on every ranked lending-2 pick
 
+## Fixes
+- 2026-11-15 · Spain's seven profiles now warn, in the residency fact, that the Los Angeles consulate says applicants "cannot have/leave loans or mortgages in the United States" and doesn't say whether a margin loan counts (ledger `es-visa-la-no-us-loans`) — tests 1103/1103, typecheck, and Madrid seen on a phone-width profile
+
 ## Decisions
 - 2026-11-15 · Keep the ranked 75's order and rewrite the flagged `why` lines and Nice's summary to match the corrected facts — user: "Let's go with your recommendation" (the PM recommended keep and warn over re-ranking).
 - 2026-11-15 · Scores that sit between two rubric rungs (Japan vs London estate, New Zealand vs Netherlands tax, Korea residency, Mauritius tax, Colombia tax) stay as they are, with no tie-break rule — same answer.
@@ -26,12 +29,12 @@ Agents: lean
 - 2026-11-15 · Scale: 1 stage, one release — no scale signal fired, planned as one plan.
 - 2026-11-15 · Agents: lean, carried over from the fact check plan.
 - 2026-11-15 · No research note: the ledger already holds the facts each line must match.
+- 2026-11-15 · User took the PM's recommendations ("Let's go with your recommendations"): Spain's seven profiles get the Los Angeles consulate's loans warning, hedged (done, see Fixes); a "checked" date on profiles is held for later; the fact check deploys after this plan's stage, not before; reminders to recheck Florida's Amendment 3 (after 17 November) and Colorado's Amendment 87 (after 30 November).
 
 ## Open questions
+- Deploy the fact check and this plan together once stage 1 closes — on the user's go (outward).
+- Show a "checked <date>" on each profile, linked to its sources and read dates — held for later at the user's call.
 - Colorado's Amendment 87 (Denver tax 5 → 4 if certified, by 30 November 2026) and Florida's Amendment 3 ("unofficial results" in four Florida profiles; certification 17 November 2026): re-read the certified results and update, each as a quick fix after its date.
-- Spain's Los Angeles consulate page says residency applicants "cannot have/leave loans or mortgages in the United States"; whether a margin loan counts is not established, and no profile mentions it — user's call whether to add a warning to Spain's seven profiles.
-- Should a profile show "checked <date>" with links to each claim's sources and read dates? The ledger makes it possible — user's call.
-- Deploy: the fact check's changes (profiles, scores, tax model, report) are not live yet — user's go.
 - A taxed home city's wealth tax for the years before a delayed move is not charged (matters for a Zurich home), and a move set at or after the horizon runs without the home's estate tax; both need the kernel to handle two tax regimes in one run (money) — later.
 - From stage 6: Chiang Rai's healthcare fact now puts Chiang Mai "about 2–3 hours away (secondary source)", while its Getting there fact (out of scope) says 3–4 hours by road — reconcile at the next local-note pass. A New Zealand bill (Sep 2026) would raise the FIF threshold to NZD 100,000; Vietnam's proposed golden visa has no legal basis yet — recheck later.
 - From stage 4, unsettled: Panama's Decree 17 text (thresholds rest on two law-firm pages), Costa Rica's Inversionista amount ($150k on DGME in September vs a reported $200k), whether a Mexican margin balance counts as a reportable "préstamo", Guatemala's IUSI home exemption start date (about 26 Nov 2026 by count, 8 Jan 2027 per one outlet) — later.

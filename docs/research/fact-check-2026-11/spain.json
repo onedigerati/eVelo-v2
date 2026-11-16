@@ -136,7 +136,31 @@
           "says": "Requires \"original and stamped documents that verify the perception of a periodic and sufficient income or the holding of an estate that guarantees the perception of that income\", with bank balances at 31 December and the year's average balance."
         }
       ],
-      "note": "Both routes are on the official pages: a regular income, or funds for the year. Not in the profiles, and worth the user's eye for a buy-borrow-die reader: the Los Angeles consulate says applicants cannot have or leave loans or mortgages in the United States. The London page has no such line; whether a margin loan counts, and whether other US consulates apply it, was not established."
+      "note": "Both routes are on the official pages: a regular income, or funds for the year. Not in the profiles, and worth the user's eye for a buy-borrow-die reader: the Los Angeles consulate says applicants cannot have or leave loans or mortgages in the United States. The London page has no such line; whether a margin loan counts, and whether other US consulates apply it, was not established. Added to the seven profiles after the plan at the user's call: see es-visa-la-no-us-loans."
+    },
+    {
+      "id": "es-visa-la-no-us-loans",
+      "fact": "visa",
+      "cities": [
+        "valencia",
+        "alicante",
+        "torrevieja",
+        "malaga",
+        "madrid",
+        "barcelona",
+        "tarragona"
+      ],
+      "claim": "The Los Angeles consulate says non-lucrative visa applicants \"cannot have/leave loans or mortgages in the United States\", without saying whether a margin loan counts",
+      "verdict": "confirmed",
+      "sources": [
+        {
+          "name": "Spanish Consulate General in Los Angeles: non-lucrative residence visa",
+          "url": "https://www.exteriores.gob.es/Consulados/losangeles/en/ServiciosConsulares/Paginas/Consular/Visado-de-residencia-no-lucrativa.aspx",
+          "read": "2026-11-15",
+          "says": "In the financial-means section, after \"Attach bank statements from the last three months and a copy of the last tax return\": \"Residency applicants cannot have/leave loans or mortgages in the United States when applying for residency in Spain.\" No type of loan is named and no explanation is given."
+        }
+      ],
+      "note": "Added after the fact check at the user's call (the report's question 4). The London consulate's page has no such line; whether other US consulates apply it was not established."
     },
     {
       "id": "es-visa-nlv-health-insurance",
