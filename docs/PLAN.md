@@ -7,7 +7,7 @@ The fact check corrected the city profiles but kept the ranked 75's order and th
 2026-11-15 · tests: 1103 pass · typecheck: clean · build: ok
 
 ## Now
-All stages done. The fact check and the pick reasons are ready to deploy together, on the user's go.
+All stages done. The fact check and the pick reasons are live on GitHub Pages (run 43783468539, 2026-11-16).
 Agents: lean
 
 ## Stages
@@ -27,9 +27,9 @@ Agents: lean
 - 2026-11-15 · Autopilot, unattended, Agents: lean — user: "Jbit autopilot lean". The reminders are scheduled: Florida on 18 November, Colorado on 1 December.
 - 2026-11-15 · (unattended) 27 flags rather than 25: Las Terrenas and Santiago were named only in the report's questions, so the builder gave them flags of their own (`do-lending-schwab-summary`, `cl-estate-domicile-unverified`) to record and test their fixes like the others. Nice's summary fix is recorded on `fr-lending-ibkr-margin-cash-out`.
 - 2026-11-15 · (unattended) The borrow warning reads "borrowing cash against the portfolio is reportedly blocked for residents" on all 27 lending-2 picks (all in the EU), one shared phrase that a test checks. Hedges kept where no page settles the fact: Tavira's "about 30–40 minutes", Santiago's "likely falls outside", Budapest's "a draft bill would reportedly close that route from 2027".
+- 2026-11-16 · Deployed the fact check and the pick reasons together — user: "Deploy". Pushed main; Deploy to GitHub Pages run 43783468539 passed (tests, build, publish); the live AtlasView chunk carries the new reasons and the re-check date line.
 
 ## Open questions
-- Deploy the fact check and this plan together once stage 1 closes — on the user's go (outward).
 - Show a "checked <date>" on each profile, linked to its sources and read dates — held for later at the user's call.
 - Colorado's Amendment 87 (Denver tax 5 → 4 if certified, by 30 November 2026) and Florida's Amendment 3 ("unofficial results" in four Florida profiles; certification 17 November 2026): re-read the certified results and update, each as a quick fix after its date.
 - A taxed home city's wealth tax for the years before a delayed move is not charged (matters for a Zurich home), and a move set at or after the horizon runs without the home's estate tax; both need the kernel to handle two tax regimes in one run (money) — later.
@@ -103,4 +103,4 @@ Agents: lean
 - 2026-11-10 · Hero tile glow: the Atlas hero tiles' odds-tone glow sits behind the odds figure instead of the top-right corner, live on GitHub Pages — [plan](2026-11-10-hero-tile-glow.md) · [evidence](2026-11-10-hero-tile-glow/evidence/)
 - 2026-11-13 · Pill destination: every verdict pill names its city (destination, else home), a floating pill on phone Outlook and on the Atlas once the hero tiles scroll away, plus landing escape-velocity copy fixes, live on GitHub Pages — [plan](2026-11-13-pill-destination.md) · [evidence](2026-11-13-pill-destination/evidence/)
 - 2026-11-15 · Home-aware getting there: each profile's Getting there worked out from the home city (nonstop, one, two or three stops, estimated hours) from sourced routes for 130 airports, with all 133 local notes rewritten, live on GitHub Pages — [plan](2026-11-15-home-aware-getting-there.md) · [evidence](2026-11-15-home-aware-getting-there/evidence/)
-- 2026-11-15 · Profile fact check: every tax, estate, lending, residency and healthcare claim in the 133 profiles checked against a current page (1,550 claims in a ledger; 122 corrected, 40 scores moved), the tax model brought in line (UK, NL, DE, KR, Zurich and nine US state taxes; a taxed home now taxed), and a city-by-city report in `docs/research/fact-check-2026-11/what-changed.md` — not yet deployed — [plan](plans/2026-11-15-profile-fact-check.md) · [evidence](plans/2026-11-15-profile-fact-check/evidence/)
+- 2026-11-15 · Profile fact check: every tax, estate, lending, residency and healthcare claim in the 133 profiles checked against a current page (1,550 claims in a ledger; 122 corrected, 40 scores moved), the tax model brought in line (UK, NL, DE, KR, Zurich and nine US state taxes; a taxed home now taxed), and a city-by-city report in `docs/research/fact-check-2026-11/what-changed.md`, live on GitHub Pages 2026-11-16 — [plan](plans/2026-11-15-profile-fact-check.md) · [evidence](plans/2026-11-15-profile-fact-check/evidence/)
