@@ -10,14 +10,15 @@ The fact check corrected the city profiles but kept the ranked 75's order and th
 Stage 1 of 1 · Pick reasons
 Risk: UI only (pick copy; ranks, scores and the model untouched)
 Checks:
-- [ ] For every `rankFlag` claim, the flagged wording is gone from its pick's `why` (or summary) and the line agrees with the ledger's verdict; each flag records how it was resolved in the ledger (proof: test)
-- [ ] Every ranked pick that scores lending 2 says in its `why` that the borrow step is in doubt, and the ranked 75's order is unchanged (proof: test)
-- [ ] Three rewritten reasons read correctly in the running build: a Portugal pick, Tbilisi and Asunción on the Top picks list (proof: run the product, a test can't judge the rendered list)
+- [x] For every `rankFlag` claim, the flagged wording is gone from its pick's `why` (or summary) and the line agrees with the ledger's verdict; each flag records how it was resolved in the ledger (proof: test)
+- [x] Every ranked pick that scores lending 2 says in its `why` that the borrow step is in doubt, and the ranked 75's order is unchanged (proof: test)
+- [x] Three rewritten reasons read correctly in the running build: a Portugal pick, Tbilisi and Asunción on the Top picks list (proof: run the product, a test can't judge the rendered list)
 Open: none
+Mode: autopilot — unattended
 Agents: lean
 
 ## Stages
-- [ ] 1. Pick reasons — rewrite the 25 rank-flagged `why` lines and Nice's summary to match the corrected facts, with a borrow warning on every ranked lending-2 pick
+- [x] 1. Pick reasons — rewrite the 25 rank-flagged `why` lines and Nice's summary to match the corrected facts, with a borrow warning on every ranked lending-2 pick — [evidence](evidence/stage-1/report.md)
 
 ## Fixes
 - 2026-11-15 · Spain's seven profiles now warn, in the residency fact, that the Los Angeles consulate says applicants "cannot have/leave loans or mortgages in the United States" and doesn't say whether a margin loan counts (ledger `es-visa-la-no-us-loans`) — tests 1103/1103, typecheck, and Madrid seen on a phone-width profile
@@ -30,6 +31,9 @@ Agents: lean
 - 2026-11-15 · Agents: lean, carried over from the fact check plan.
 - 2026-11-15 · No research note: the ledger already holds the facts each line must match.
 - 2026-11-15 · User took the PM's recommendations ("Let's go with your recommendations"): Spain's seven profiles get the Los Angeles consulate's loans warning, hedged (done, see Fixes); a "checked" date on profiles is held for later; the fact check deploys after this plan's stage, not before; reminders to recheck Florida's Amendment 3 (after 17 November) and Colorado's Amendment 87 (after 30 November).
+- 2026-11-15 · Autopilot, unattended, Agents: lean — user: "Jbit autopilot lean". The reminders are scheduled: Florida on 18 November, Colorado on 1 December.
+- 2026-11-15 · (unattended) 27 flags rather than 25: Las Terrenas and Santiago were named only in the report's questions, so the builder gave them flags of their own (`do-lending-schwab-summary`, `cl-estate-domicile-unverified`) to record and test their fixes like the others. Nice's summary fix is recorded on `fr-lending-ibkr-margin-cash-out`.
+- 2026-11-15 · (unattended) The borrow warning reads "borrowing cash against the portfolio is reportedly blocked for residents" on all 27 lending-2 picks (all in the EU), one shared phrase that a test checks. Hedges kept where no page settles the fact: Tavira's "about 30–40 minutes", Santiago's "likely falls outside", Budapest's "a draft bill would reportedly close that route from 2027".
 
 ## Open questions
 - Deploy the fact check and this plan together once stage 1 closes — on the user's go (outward).

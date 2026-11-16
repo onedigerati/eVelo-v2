@@ -60,6 +60,7 @@
       "modelMismatch": "Wording only, no numbers: the AT note in src/data/localTaxes.ts and the Austria note in src/data/cities.ts say \"funds not registered with Austria's tax office (OeKB)\". The OeKB is the Oesterreichische Kontrollbank, to which reporting funds (Meldefonds) send their tax figures through an Austrian tax representative; it is not the tax office, and the test is whether the fund reports, not whether it is registered (Broker-Test.at, 23 December 2025, https://www.broker-test.at/news/nichtmeldefonds-pauschale-besteuerung/; PwC calls them reporting and non-reporting funds). The rule and figures in the note (90% of growth, at least 10% of year-end value, 27.5%, not modelled) agree with the pages. The note could also say that bank-deposit interest is 25%, not 27.5% (see at-tax-dividends-interest-rate).",
       "modelled": "Note corrected in localTaxes.ts (AT) and cities.ts: funds that do not report their tax figures to Austria's reporting agent, the Oesterreichische Kontrollbank (OeKB); US REITs and BDCs reportedly count. Broker-Test source added. No amounts change (the deemed-distribution tax stays unmodelled).",
       "rankFlag": "Vienna's `why` in src/data/expatPicks.ts says \"yearly tax on the growth of unregistered funds (likely US ETFs)\". The substance holds; \"unregistered\" is loose for \"non-reporting\" (the fund does not report its tax figures to the OeKB). Not edited: user's call.",
+      "rankResolved": "Vienna's `why` now says \"yearly tax on the growth of non-reporting funds (likely US ETFs)\", where it said unregistered funds.",
       "note": "The OeKB's own fund-data page loaded but does not describe the tax reporting role; the official text (§ 186 InvFG) was not read. The description rests on a dated secondary page and PwC's terms."
     },
     {
@@ -85,6 +86,7 @@
         }
       ],
       "rankFlag": "Vienna's `why` (\"No inheritance tax and a US treaty, but 27.5% on dividends, yearly tax on the growth of unregistered funds (likely US ETFs) and a quota-limited settlement permit\") was checked clause by clause: no inheritance tax (PwC), a US estate and gift tax treaty (IRS list), 27.5% on dividends (PwC), the yearly fund tax (PwC), and the quota (oesterreich.gv.at) all hold. Rank 75 and the `why` are unchanged.",
+      "rankResolved": "Vienna's `why` keeps every checked clause and its rank; unregistered became \"non-reporting funds\" (see at-tax-oekb-tax-office) and it gained the borrow warning: \"borrowing cash against the portfolio is reportedly blocked for residents\".",
       "note": "A search result (not a read) quotes § 186 Abs. 2 Z 3 InvFG as 90% of the difference between the first and last redemption price of the year, at least 10% of the last redemption price; PwC and Broker-Test put it as growth in value and year-end value, which is how the profile words it. The summary and the drawback repeat it without figures."
     },
     {
@@ -456,6 +458,7 @@
         "sources: added LYNX withdrawal page"
       ],
       "rankFlag": "Vienna (rank 75, last) now scores lending 2. Its `why` does not mention borrowing, so it is not contradicted; the rank is unchanged. With Schwab reportedly accepting Austria residents, Vienna would have been a 4 by the old reading outside the EU; inside the EU the rubric gives 2. User's call.",
+      "rankResolved": "Vienna's `why` now ends \"and a quota-limited settlement permit, and borrowing cash against the portfolio is reportedly blocked for residents\"; rank 75 unchanged.",
       "note": "The profile never said \"so plan on IBKR margin\"; it named IBKR and stopped. The standard wording is used unchanged, ending \"either\" because Schwab reportedly accepts Austria residents too. The shared sources are copied with their stage 1 read date; the LYNX page was not re-read."
     },
     {

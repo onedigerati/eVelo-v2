@@ -1,0 +1,13 @@
+$ node docs/evidence/stage-1/verify1.mjs http://localhost:4337  (production build, npx vite preview)
+
+===== desktop =====
+--- Madeira: 16 | PT | Madeira (Funchal) | Portugal | Portugal's BBD tax profile with one of Europe's mildest climates, but flights are limited and borrowing cash against the portfolio is reportedly blocked for residents. | 70% | Profile →
+--- Tbilisi: 23 | GE | Tbilisi | Georgia | Foreign-source income is exempt, children inherit free and $150k of property gives residence, though healthcare is uneven and there is no US estate treaty, only the old 1973 US–USSR income tax treaty. | 81% | Profile →
+--- Asunción: 50 | PY | Asunción | Paraguay | Territorial tax with no wealth or inheritance tax, though since July 2026 permanent residence needs active income, a pension or the $200k Investor Pass, and major treatment sometimes means Argentina or Brazil. | 85% | Profile →
+
+===== phone =====
+--- Madeira: 16 | PT | Madeira (Funchal) | Portugal | Portugal's BBD tax profile with one of Europe's mildest climates, but flights are limited and borrowing cash against the portfolio is reportedly blocked for residents. | 70% | Profile →
+--- Tbilisi: 23 | GE | Tbilisi | Georgia | Foreign-source income is exempt, children inherit free and $150k of property gives residence, though healthcare is uneven and there is no US estate treaty, only the old 1973 US–USSR income tax treaty. | 81% | Profile →
+--- Asunción: 50 | PY | Asunción | Paraguay | Territorial tax with no wealth or inheritance tax, though since July 2026 permanent residence needs active income, a pension or the $200k Investor Pass, and major treatment sometimes means Argentina or Brazil. | 85% | Profile →
+
+console errors: none

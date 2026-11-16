@@ -136,7 +136,8 @@ function rankFlags() {
   for (const c of [...shared.claims.map((c) => ({ ...c, country: 'Shared' })), ...byRegion.flatMap((f) => f.claims.map((c) => ({ ...c, country: f.country })))]) {
     if (!c.rankFlag) continue
     const where = c.cities ? c.cities.map(cityName).join(', ') : md(c.appliesTo)
-    out.push(`- **${c.country}** — ${where} (\`${c.id}\`): ${md(c.rankFlag)}`)
+    const resolved = c.rankResolved ? ` *Resolved:* ${md(c.rankResolved)}` : ''
+    out.push(`- **${c.country}** — ${where} (\`${c.id}\`): ${md(c.rankFlag)}${resolved}`)
   }
   return out.join('\n')
 }

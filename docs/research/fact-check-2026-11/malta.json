@@ -257,6 +257,7 @@
         "\"with margin terms per country unknown\" dropped: the clause that replaces it says what is reported about margin"
       ],
       "rankFlag": "Sliema (rank 19) now scores lending 2, and its profile says the one reported broker reportedly will not pay a margin loan out as cash. Its `why` says \"only IBKR is known to serve residents\", which still holds but undersells the problem. Rank and `why` are unchanged: user's call.",
+      "rankResolved": "Sliema's `why` now says \"though borrowing cash against the portfolio is reportedly blocked for residents at IBKR, the one broker known to serve them\", where it said only that IBKR alone serves residents, which undersold the cash-out bar.",
       "note": "The profile never said \"so plan on IBKR margin\". The standard clause is used, ending \"before relying on it\" (one broker, since Schwab reportedly does not take Malta residents), as in France and Italy. The shared sources are copied with their stage 1 read date; the LYNX page was not re-read."
     },
     {

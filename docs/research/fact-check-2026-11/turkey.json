@@ -60,6 +60,7 @@
         }
       ],
       "rankFlag": "Antalya (pick 21) and Istanbul (pick 45): the `why` lines rest on this regime (\"exempts foreign income for 20 years\"). It is enacted law (Official Gazette 4 June 2026), confirmed by EY, PwC and a law-firm note; the `why` is not false. The regime is five months old, needs a certificate applied for in the year of arrival, and the profiles call it untested. No change proposed.",
+      "rankResolved": "Antalya's `why` now says \"exempts foreign income for 20 years if claimed in year one\" and names \"an untested regime\"; Istanbul's says \"Turkey's new-resident regime, untested and claimed in year one\".",
       "note": "Also the summaries and taglines. The Official Gazette text itself was not read (resmigazete.gov.tr was not tried; the Income Tax Law article was not opened); three secondary readings agree. \"Prior 3 years\" is three calendar years with no residence and no Turkish tax liability; Legal 500 says earlier Turkish passive income does not disqualify."
     },
     {
@@ -258,6 +259,7 @@
       "modelMismatch": "localTaxes.ts TR charges 1% of the estate \"as the cautious reading\". Article 1 of Law 7338, read on mevzuat.gov.tr (https://www.mevzuat.gov.tr/MevzuatMetin/1.3.7338.doc), puts in scope property of Turkish nationals and property located in Turkey; a US citizen's US-held securities passing to US-resident, non-Turkish heirs are neither, so on the article's words the charge would be 0, not 1%. No adviser page states this for the case, and the 1% rule for regime beneficiaries would have little to bite on if it were so; stage 8 should decide between 0 and the cautious 1%.",
       "modelled": "Decided 0: the TR inheritance component is removed (was a flat 1% of the estate), on Article 1 of Law 7338 (Turkish nationals' property and property in Turkey only), in line with the other heir-based regimes modelled as zero. A $5M estate: $50,000 before, $0 now. The note keeps the rates in case it applies.",
       "rankFlag": "Antalya (pick 21): the `why` says \"with 1% inheritance tax\". By Article 1 of the inheritance tax law, US assets of a US citizen left to US-resident heirs appear to be outside Turkish inheritance tax altogether, so the 1% may overstate the cost; it is not understated. No change proposed.",
+      "rankResolved": "Antalya's `why` now says \"cuts inheritance tax to 1% (US assets left to US heirs may owe none)\", where it said flatly 1% inheritance tax.",
       "note": "The statute supports the profile's inference, but the Word file reached WebFetch partly garbled and no secondary page applies Article 1 to a foreign resident decedent, so the profile's \"may be\" stays."
     },
     {

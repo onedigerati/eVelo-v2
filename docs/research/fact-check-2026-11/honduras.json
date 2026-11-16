@@ -479,6 +479,7 @@
         "sources: added La Prensa (December 2025)"
       ],
       "rankFlag": "Roatán (pick 59): the why says \"the island's public hospital burned in 2024, serious cases fly out\". Both halves are still true (Canada still advises evacuation for major procedures), but the island has had a public hospital again since September 2025 by the health minister's account, so the why reads as if the gap were current. No change proposed; the healthcare score stays 1.",
+      "rankResolved": "Roatán's `why` now says \"island care is limited even with the public hospital's replacement, reportedly open since September 2025, serious cases fly out\", where it read as if the island still had no public hospital; healthcare score and rank unchanged.",
       "note": "The 18-month estimate was right (Direct Relief, 2024) and is now moot. The minister's statement is reported by a newspaper; no Health Secretariat page was read, and the pages do not say plainly that Satuyé is the Loma Linda or the Dixon Cove building, hence \"reportedly\".",
       "cities": [
         "roatan"

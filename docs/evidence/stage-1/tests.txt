@@ -1,0 +1,84 @@
+$ npx vitest run
+
+ Test Files  67 passed (67)
+      Tests  1111 passed (1111)
+   Start at  18:50:11
+   Duration  26.63s (transform 71%, tests 18%, import 11%)
+
+
+$ npx vitest run src/data/__tests__/pickReasons.test.ts src/data/__tests__/factCheck.test.ts src/data/__tests__/expatPicks.test.ts src/data/__tests__/factCheckReport.test.ts --reporter=verbose
+npm notice run evelo@2.0.0 npx
+npm notice run 'vitest' run src/data/__tests__/pickReasons.test.ts src/data/__tests__/factCheck.test.ts src/data/__tests__/expatPicks.test.ts src/data/__tests__/factCheckReport.test.ts --reporter=verbose
+
+ RUN  v5.1.0 /home/jonah/repos/eVelo-v2
+
+ ✓ src/data/__tests__/factCheckReport.test.ts > fact-check report > exists 1ms
+ ✓ src/data/__tests__/factCheckReport.test.ts > fact-check report > names every corrected claim by its ledger id 69ms
+ ✓ src/data/__tests__/factCheckReport.test.ts > fact-check report > names every claim with a rank flag by its ledger id 26ms
+ ✓ src/data/__tests__/pickReasons.test.ts > pick reasons: rank flags resolved > finds the flags (25 from the fact check, plus Las Terrenas and Santiago from its question 2) 1ms
+ ✓ src/data/__tests__/pickReasons.test.ts > pick reasons: rank flags resolved > every rank-flagged claim records how it was resolved 1ms
+ ✓ src/data/__tests__/pickReasons.test.ts > pick reasons: rank flags resolved > the wording each resolution quotes is in the pick's why, its summary or the rubric 1ms
+ ✓ src/data/__tests__/pickReasons.test.ts > pick reasons: rank flags resolved > the flagged old wording is gone 1ms
+ ✓ src/data/__tests__/pickReasons.test.ts > pick reasons: rank flags resolved > Nice's summary gives its real rank 0ms
+ ✓ src/data/__tests__/pickReasons.test.ts > pick reasons: borrow warning > every ranked pick that scores lending 2 says the borrow step is in doubt, and no other pick does 0ms
+ ✓ src/data/__tests__/pickReasons.test.ts > pick reasons: ranks kept > the ranked 75 keep their order 1ms
+ ✓ src/data/__tests__/pickReasons.test.ts > pick reasons: ranks kept > every why is still one sentence 2ms
+ ✓ src/data/__tests__/expatPicks.test.ts > EXPAT_PICKS > has 75 unique picks ranked 1..75 in order 3ms
+ ✓ src/data/__tests__/expatPicks.test.ts > EXPAT_PICKS > follows the research doc's draft top 75 at the ends and the inserted picks 1ms
+ ✓ src/data/__tests__/expatPicks.test.ts > EXPAT_PICKS > cites the BBD research for every pick 2ms
+ ✓ src/data/__tests__/expatPicks.test.ts > EXPAT_PICKS > points at verified cities in the dataset 2ms
+ ✓ src/data/__tests__/expatPicks.test.ts > EXPAT_PICKS > gives every pick a one-sentence reason and known source refs 3ms
+ ✓ src/data/__tests__/expatPicks.test.ts > EXPAT_PICKS > has a profile file for every pick 0ms
+ ✓ src/data/__tests__/expatPicks.test.ts > EXPAT_PICKS > names every profile file after a city id in cities.ts 0ms
+ ✓ src/data/__tests__/expatPicks.test.ts > EXPAT_PICKS > gives every profile, pick or not, a full profile 79ms
+ ✓ src/data/__tests__/expatPicks.test.ts > EXPAT_PICKS > has no TODO placeholders left in any profile 7ms
+ ✓ src/data/__tests__/expatPicks.test.ts > EXPAT_PICKS > keeps every pick's scores on one 1–5 scale, using the whole range 0ms
+ ✓ src/data/__tests__/expatPicks.test.ts > EXPAT_PICKS > has no internal research markers in the prose 8ms
+ ✓ src/data/__tests__/expatPicks.test.ts > sources and method > uses http(s) urls everywhere 6ms
+ ✓ src/data/__tests__/expatPicks.test.ts > sources and method > has unique ranking source names 0ms
+ ✓ src/data/__tests__/expatPicks.test.ts > sources and method > exports the method, date and labels 0ms
+ ✓ src/data/__tests__/expatPicks.test.ts > sources and method > dates the fact re-check: an ISO date on or after the research date 0ms
+ ✓ src/data/__tests__/expatPicks.test.ts > sources and method > has a rubric line for every score key 0ms
+ ✓ src/data/__tests__/expatPicks.test.ts > sources and method > names the BBD research as a ranking source and in the method 0ms
+ ✓ src/data/__tests__/expatPicks.test.ts > helpers > finds a pick by city id 0ms
+ ✓ src/data/__tests__/expatPicks.test.ts > helpers > returns all 75 profiled picks in rank order 0ms
+ ✓ src/data/__tests__/expatPicks.test.ts > helpers > looks up a profile for any profiled city, pick or not 2ms
+ ✓ src/data/__tests__/expatPicks.test.ts > profile files (buildProfileIndex + unknownProfileIds) > keys profiles by file name 0ms
+ ✓ src/data/__tests__/expatPicks.test.ts > profile files (buildProfileIndex + unknownProfileIds) > accepts a profile file named after any city id, picks or not 1ms
+ ✓ src/data/__tests__/expatPicks.test.ts > profile files (buildProfileIndex + unknownProfileIds) > fails a profile file named after an id that is not in cities.ts 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > fact-check ledger files > has shared.json 2ms
+ ✓ src/data/__tests__/factCheck.test.ts > fact-check ledger files > every file parses, and every claim has a known fact, one of the three verdicts and a source read during the plan 48ms
+ ✓ src/data/__tests__/factCheck.test.ts > fact-check ledger files > uses each claim id once across the whole ledger 21ms
+ ✓ src/data/__tests__/factCheck.test.ts > fact-check ledger files > shared.json covers the US estate exemption, the US estate-treaty list, IBKR, Schwab International and EU PRIIPs 1ms
+ ✓ src/data/__tests__/factCheck.test.ts > fact-check ledger files > lists every country file in CHECKED_COUNTRIES, so none escapes the coverage check 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > fact-check ledger files > CHECKED_COUNTRIES names countries that have profiled cities 1ms
+ ✓ src/data/__tests__/factCheck.test.ts > fact-check ledger files > profiles carry the new wording of every corrected claim and none of the old, and the hedge of every kept cant-confirm claim 29ms
+ ✓ src/data/__tests__/factCheck.test.ts > fact-check ledger files > every shared reference points at a shared.json claim 13ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 1: claim shape > passes a well-formed confirmed, corrected and cant-confirm claim 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 1: claim shape > rejects a pending or unknown verdict 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 1: claim shape > rejects an unknown fact 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 1: claim shape > rejects a claim with no source 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 1: claim shape > rejects a source without an http(s) url, a read date within the plan, or what the page says 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 1: claim shape > rejects a corrected claim without both wordings, and one whose new wording contains the old 1ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 1: claim shape > rejects a cant-confirm claim without a hedge, without its wording, or whose wording lacks the hedge 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 1: claim shape > rejects cities outside the file, misspelt fields and a wrong file name 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 1: claim shape > holds shared.json to its own shape: a topic, appliesTo and no cities 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 1: claim shape > knows a real ISO date from a look-alike 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 2: shared topics > names each missing topic 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 3: coverage > passes when every city × fact has a claim 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 3: coverage > names the missing city × fact, a missing city and a city that is not the country's 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 4: profile wording > passes when the old wording is gone and the new is in every listed city 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 4: profile wording > fails when a listed city still carries the old wording or lacks the new 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 4: profile wording > fails when a kept cant-confirm claim's hedged wording is not in a listed city, and passes a removed one 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 4: profile wording > fails when a listed city has no profile 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 4: profile wording > matches the text a reader sees, apostrophes unescaped 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 5: shared references > passes a reference to an existing shared claim 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 5: shared references > fails a reference to an id that is not in shared.json 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > ledger checks on fixtures > check 5: shared references > fails a confirmed instance resting on a shared claim that is not confirmed 0ms
+ ✓ src/data/__tests__/factCheck.test.ts > stage 8: every modelMismatch is resolved > carries modelled or notModelled 22ms
+
+ Test Files  4 passed (4)
+      Tests  115 passed (115)
+   Start at  18:50:36
+   Duration  849ms (transform 62%, tests 19%, import 19%, worker 1%)
+

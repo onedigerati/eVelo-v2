@@ -465,6 +465,7 @@
         "sources: added LYNX withdrawal page to both"
       ],
       "rankFlag": "Both Greece picks (Athens 11, Crete 13) now score lending 2, and their profiles say both reported brokers reportedly will not pay a margin loan out as cash. Their `why` lines in src/data/expatPicks.ts do not mention borrowing, so neither is contradicted. Ranks and `why` lines are unchanged: user's call.",
+      "rankResolved": "Athens's and Crete's `why` lines now end \"though borrowing cash against the portfolio is reportedly blocked for residents\"; ranks unchanged.",
       "note": "The profiles never said \"so plan on IBKR margin\"; they stopped after Schwab's bar. The standard clause was added unchanged, ending \"either\" because Schwab reportedly accepts Greece residents. Shared sources are copied with their stage 1 read date; the LYNX page was not re-read."
     },
     {

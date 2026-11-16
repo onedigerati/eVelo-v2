@@ -326,6 +326,7 @@
         "\"with margin terms per country unknown\" dropped: the clause that replaces it says what is reported about margin"
       ],
       "rankFlag": "Paphos is pick 3 and Limassol pick 18, and both now score lending 2: the one broker reported to serve Cyprus residents reportedly will not pay a margin loan out as cash, so the borrow step of buy-borrow-die is in doubt for the third-ranked pick. Paphos's `why` sells the tax profile, residence and healthcare and does not mention borrowing, so it is not contradicted, but a rank of 3 sits oddly beside a lending score of 2. Ranks and `why` lines are unchanged: user's call.",
+      "rankResolved": "Paphos's and Limassol's `why` lines now end \"though borrowing cash against the portfolio is reportedly blocked for residents\"; ranks 3 and 18 unchanged.",
       "note": "The profiles never said \"so plan on IBKR margin\". The standard clause was adapted to end \"before relying on it\" (one broker, since Schwab is reportedly unavailable), as for Malta. Shared sources are copied with their stage 1 read date; the LYNX page was not re-read."
     },
     {

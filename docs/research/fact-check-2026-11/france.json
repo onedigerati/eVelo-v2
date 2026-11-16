@@ -477,6 +477,7 @@
         "sources: added LYNX withdrawal page to all 3"
       ],
       "rankFlag": "The two France picks (Nice 58, Gascony 68) and Paris (profiled, not one of the ranked 75) now score lending 2, and their profiles say the one reported broker reportedly will not pay a margin loan out as cash. Their `why` lines in src/data/expatPicks.ts (Nice, Gascony) do not mention borrowing, so none is contradicted. Ranks and `why` lines are unchanged: user's call.",
+      "rankResolved": "Nice's and Gascony's `why` lines now end \"rank it low, and borrowing cash against the portfolio is reportedly blocked for residents\"; ranks unchanged. Nice's summary, which said it ranked last of the 50, now says \"For buy-borrow-die it ranks low, 58th of the 75\" (raised in what-changed.md's question 2).",
       "note": "These profiles never said \"so plan on IBKR margin\"; they named IBKR as the only option and stopped. The shared correction's substance was applied with adapted wording: the standard clause, ending \"before relying on it\" (one broker, not \"either\", since Schwab reportedly does not take France residents at all). The summary sentence differs from Portugal's and Spain's for the same reason. The shared sources are copied with their stage 1 read date; the LYNX page was not re-read for this country."
     },
     {

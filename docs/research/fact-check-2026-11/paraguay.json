@@ -258,6 +258,7 @@
         }
       ],
       "rankFlag": "Asunción's why in expatPicks.ts says \"the residency means test [is] unverified\"; it is now verified: since 6 July 2026 a portfolio-only retiree cannot convert to permanent residence without active income, a pension or the US$200k Investor Pass. The profile already says so and scores visa 3; the why line is out of date.",
+      "rankResolved": "Asunción's `why` now says \"since July 2026 permanent residence needs active income, a pension or the $200k Investor Pass\", where it called the means test unverified.",
       "note": "Signed 28 May 2026, in force for applications from 6 July 2026. Searched with November 2026: no later change found."
     },
     {

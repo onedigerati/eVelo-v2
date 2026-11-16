@@ -813,6 +813,7 @@
         "test: factCheck.test.ts pinned the old Algarve drawback as its apostrophe sample; it now pins a phrase of the new lending fact"
       ],
       "rankFlag": "All six Portugal picks (Algarve 1, Lisbon 2, Porto 7, Cascais 8, Tavira 14, Madeira 16) now score lending 2, and their profiles say the borrow step is reportedly closed to EU residents at both brokers. Their `why` lines in src/data/expatPicks.ts do not mention borrowing, so none is contradicted, but the top two picks of a buy-borrow-die ranking are places where the borrow step reportedly does not work as cash. Ranks and `why` lines are unchanged: user's call.",
+      "rankResolved": "All six Portugal picks' `why` lines now carry \"borrowing cash against the portfolio is reportedly blocked for residents\" (Algarve, Lisbon, Porto, Cascais and Tavira as \"though borrowing cash against the portfolio is reportedly blocked for residents\", Madeira as \"but flights are limited and borrowing cash against the portfolio is reportedly blocked for residents\"); ranks unchanged.",
       "note": "Standard wording from shared.json applied unchanged. Article 3750 (https://ibkb.interactivebrokers.com/article/3750) returned HTTP 403 again, so \"reportedly\" stays."
     },
     {
@@ -1347,7 +1348,8 @@
         }
       ],
       "note": "No page read gives a drive time from Tavira to either hospital. The fact already says \"about\"; the summary and the second drawback repeated the figure without it and now say \"about\" too. The pick's `why` still states it flat; that line is not this stage's to edit.",
-      "rankFlag": "Tavira's `why` in src/data/expatPicks.ts says the CUF Faro hospital is \"30 to 40 minutes away\"; no page read confirms the drive time, and the hospital is at Gambelas, beyond Faro. Not changed."
+      "rankFlag": "Tavira's `why` in src/data/expatPicks.ts says the CUF Faro hospital is \"30 to 40 minutes away\"; no page read confirms the drive time, and the hospital is at Gambelas, beyond Faro. Not changed.",
+      "rankResolved": "Tavira's `why` now says \"with Faro's hospitals about 30–40 minutes away\", hedged as the profile is, where it put the accredited CUF Faro hospital a flat 30 to 40 minutes away."
     },
     {
       "id": "pt-healthcare-tavira-lisbon-complex",

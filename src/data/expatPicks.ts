@@ -217,19 +217,19 @@ const RANKING: Ranked[] = [
   {
     rank: 1,
     cityId: 'algarve',
-    why: 'No wealth tax, children inherit free, the D7 visa accepts dividend income, and the Algarve adds EU healthcare, safety and a large English-speaking retiree community.',
+    why: 'No wealth tax, children inherit free, the D7 visa accepts dividend income, and the Algarve adds EU healthcare, safety and a large English-speaking retiree community, though borrowing cash against the portfolio is reportedly blocked for residents.',
     sourceRefs: [BBD, LIOS, IL, EI26, GPI],
   },
   {
     rank: 2,
     cityId: 'lisbon',
-    why: 'Portugal\'s BBD tax profile (no wealth tax, children inherit free), with the country\'s airport hub and international hospitals.',
+    why: 'Portugal\'s BBD tax profile (no wealth tax, children inherit free), with the country\'s airport hub and international hospitals, though borrowing cash against the portfolio is reportedly blocked for residents.',
     sourceRefs: [BBD, IL, EI26, GPI],
   },
   {
     rank: 3,
     cityId: 'paphos',
-    why: 'The best BBD tax profile in the EU (non-dom dividends and interest effectively capped at the 2.65% health levy, no wealth or inheritance tax), with cheap Category F residence, GeSY healthcare and a large English-speaking retiree base.',
+    why: 'The best BBD tax profile in the EU (non-dom dividends and interest effectively capped at the 2.65% health levy, no wealth or inheritance tax), with cheap Category F residence, GeSY healthcare and a large English-speaking retiree base, though borrowing cash against the portfolio is reportedly blocked for residents.',
     sourceRefs: [BBD],
   },
   {
@@ -253,31 +253,31 @@ const RANKING: Ranked[] = [
   {
     rank: 7,
     cityId: 'porto',
-    why: 'Portugal\'s BBD tax profile at a lower cost than Lisbon.',
+    why: 'Portugal\'s BBD tax profile at a lower cost than Lisbon, though borrowing cash against the portfolio is reportedly blocked for residents.',
     sourceRefs: [BBD, IL, GPI],
   },
   {
     rank: 8,
     cityId: 'cascais',
-    why: 'Lisbon\'s tax profile on the coast, close to Lisbon\'s airport and hospitals.',
+    why: 'Lisbon\'s tax profile on the coast, close to Lisbon\'s airport and hospitals, though borrowing cash against the portfolio is reportedly blocked for residents.',
     sourceRefs: [BBD, IL, EI26, GPI],
   },
   {
     rank: 9,
     cityId: 'malaga',
-    why: 'Andalusia has no wealth tax below about €3.7M and 99% inheritance relief, with Spanish healthcare, though the wealth tax bites above that.',
+    why: 'Andalusia has no wealth tax below about €3.7M and 99% inheritance relief, with Spanish healthcare, though the wealth tax bites above that and borrowing cash against the portfolio is reportedly blocked for residents.',
     sourceRefs: [BBD, IN_CITY, IL],
   },
   {
     rank: 10,
     cityId: 'madrid',
-    why: 'The Madrid region relieves wealth tax up to about €3.7M and gives children 99% inheritance relief, with accredited hospitals and many US nonstops.',
+    why: 'The Madrid region relieves wealth tax up to about €3.7M and gives children 99% inheritance relief, with accredited hospitals and many US nonstops, though borrowing cash against the portfolio is reportedly blocked for residents.',
     sourceRefs: [BBD, IL, EI26],
   },
   {
     rank: 11,
     cityId: 'athens',
-    why: 'Greece taxes dividends at 5%, has a US estate tax treaty and taxes children\'s inheritances at no more than 10% above €600k.',
+    why: 'Greece taxes dividends at 5%, has a US estate tax treaty and taxes children\'s inheritances at no more than 10% above €600k, though borrowing cash against the portfolio is reportedly blocked for residents.',
     sourceRefs: [BBD, IL, FORBES],
   },
   {
@@ -289,25 +289,25 @@ const RANKING: Ranked[] = [
   {
     rank: 13,
     cityId: 'crete',
-    why: 'Greece\'s tax profile and a warm climate on the island Live and Invest Overseas ranks 5th, with hospitals in Heraklion and Chania.',
+    why: 'Greece\'s tax profile and a warm climate on the island Live and Invest Overseas ranks 5th, with hospitals in Heraklion and Chania, though borrowing cash against the portfolio is reportedly blocked for residents.',
     sourceRefs: [BBD, LIOS, IL],
   },
   {
     rank: 14,
     cityId: 'tavira',
-    why: 'Portugal\'s BBD tax profile in the quieter eastern Algarve, with the accredited CUF Faro hospital 30 to 40 minutes away and a seasonal Faro–Newark flight, though the town has no 24-hour emergency unit.',
+    why: 'Portugal\'s BBD tax profile in the quieter eastern Algarve, with Faro\'s hospitals about 30–40 minutes away and a seasonal Faro–Newark flight, though the town has no 24-hour emergency unit and borrowing cash against the portfolio is reportedly blocked for residents.',
     sourceRefs: [BBD, IL, EI26, GPI],
   },
   {
     rank: 15,
     cityId: 'valencia',
-    why: 'A €2M wealth-tax exemption from 2026 and 99% inheritance relief, though larger portfolios fare worse than in Málaga.',
+    why: 'A €2M wealth-tax exemption from 2026 and 99% inheritance relief, though larger portfolios fare worse than in Málaga and borrowing cash against the portfolio is reportedly blocked for residents.',
     sourceRefs: [BBD, IN_CITY, EI26, IL],
   },
   {
     rank: 16,
     cityId: 'madeira',
-    why: 'Portugal\'s BBD tax profile with one of Europe\'s mildest climates, but limited flights.',
+    why: 'Portugal\'s BBD tax profile with one of Europe\'s mildest climates, but flights are limited and borrowing cash against the portfolio is reportedly blocked for residents.',
     sourceRefs: [BBD, IL, GPI],
   },
   {
@@ -319,13 +319,13 @@ const RANKING: Ranked[] = [
   {
     rank: 18,
     cityId: 'limassol',
-    why: 'Cyprus\'s tax profile with the best hospitals on the island, at a higher cost than Paphos.',
+    why: 'Cyprus\'s tax profile with the best hospitals on the island, at a higher cost than Paphos, though borrowing cash against the portfolio is reportedly blocked for residents.',
     sourceRefs: [BBD],
   },
   {
     rank: 19,
     cityId: 'sliema',
-    why: 'Malta\'s remittance basis lets dividends stay in the US account, with no wealth or inheritance tax and English spoken, though only IBKR is known to serve residents and the old terms need an application by 31 Dec 2026.',
+    why: 'Malta\'s remittance basis lets dividends stay in the US account, with no wealth or inheritance tax and English spoken, though borrowing cash against the portfolio is reportedly blocked for residents at IBKR, the one broker known to serve them, and the old terms need an application by 31 Dec 2026.',
     sourceRefs: [BBD],
   },
   {
@@ -337,7 +337,7 @@ const RANKING: Ranked[] = [
   {
     rank: 21,
     cityId: 'antalya',
-    why: 'Turkey\'s new-resident regime exempts foreign income for 20 years with 1% inheritance tax, at a low cost with good private hospitals, against lira volatility and a $200k property route.',
+    why: 'Turkey\'s new-resident regime exempts foreign income for 20 years if claimed in year one and cuts inheritance tax to 1% (US assets left to US heirs may owe none), at a low cost with good private hospitals, against lira volatility, an untested regime and a $200k property route.',
     sourceRefs: [BBD],
   },
   {
@@ -349,7 +349,7 @@ const RANKING: Ranked[] = [
   {
     rank: 23,
     cityId: 'tbilisi',
-    why: 'Foreign-source income is exempt, children inherit free and $150k of property gives residence, though healthcare is uneven and there is no US tax treaty.',
+    why: 'Foreign-source income is exempt, children inherit free and $150k of property gives residence, though healthcare is uneven and there is no US estate treaty, only the old 1973 US–USSR income tax treaty.',
     sourceRefs: [BBD],
   },
   {
@@ -403,13 +403,13 @@ const RANKING: Ranked[] = [
   {
     rank: 32,
     cityId: 'alicante',
-    why: 'The Valencian Community\'s €2M wealth-tax exemption and 99% inheritance relief at a lower cost than Valencia, but no US nonstops.',
+    why: 'The Valencian Community\'s €2M wealth-tax exemption and 99% inheritance relief at a lower cost than Valencia, but there are no US nonstops and borrowing cash against the portfolio is reportedly blocked for residents.',
     sourceRefs: [BBD, IL, EI26],
   },
   {
     rank: 33,
     cityId: 'torrevieja',
-    why: 'The Valencian rules as in Alicante, with an accredited Quirónsalud hospital and a large retiree community, against autumn flash-flood risk.',
+    why: 'The Valencian rules as in Alicante, with an accredited Quirónsalud hospital and a large retiree community, against autumn flash-flood risk, and borrowing cash against the portfolio is reportedly blocked for residents.',
     sourceRefs: [BBD, IL, EI26],
   },
   {
@@ -463,25 +463,25 @@ const RANKING: Ranked[] = [
   {
     rank: 42,
     cityId: 'santiago',
-    why: 'Foreign income is untaxed for the first three years and foreigners\' assets abroad fall outside inheritance tax, with strong clinics, but worldwide tax applies after year three.',
+    why: 'Foreign income is untaxed for the first three years and a US-funded portfolio likely falls outside inheritance tax, with strong clinics, but worldwide tax applies after year three.',
     sourceRefs: [BBD],
   },
   {
     rank: 43,
     cityId: 'prague',
-    why: 'A 15% option on dividends, no wealth tax, children inherit free and EU healthcare, but the visa is discretionary.',
+    why: 'A 15% option on dividends, no wealth tax, children inherit free and EU healthcare, but the visa is discretionary and borrowing cash against the portfolio is reportedly blocked for residents.',
     sourceRefs: [BBD],
   },
   {
     rank: 44,
     cityId: 'plovdiv',
-    why: 'Bulgaria taxes dividends at 5%, children inherit free and Plovdiv has private care at Eurohospital, but residence needs a pension and serious cases go to Sofia.',
+    why: 'Bulgaria taxes dividends at 5%, children inherit free and Plovdiv has private care at Eurohospital, but residence needs a pension, serious cases go to Sofia and borrowing cash against the portfolio is reportedly blocked for residents.',
     sourceRefs: [BBD],
   },
   {
     rank: 45,
     cityId: 'istanbul',
-    why: 'Turkey\'s new-resident regime with top private hospitals and a major hub, against higher costs and lira volatility.',
+    why: 'Turkey\'s new-resident regime, untested and claimed in year one, with top private hospitals and a major hub, against higher costs and lira volatility.',
     sourceRefs: [BBD],
   },
   {
@@ -493,7 +493,7 @@ const RANKING: Ranked[] = [
   {
     rank: 47,
     cityId: 'budapest',
-    why: 'Children inherit free and a €250k fund investment gives residence, but dividends carry 15% plus a social contribution.',
+    why: 'Children inherit free and a €250k fund investment gives residence, though a draft bill would reportedly close that route from 2027, dividends carry 15% plus a social contribution and borrowing cash against the portfolio is reportedly blocked for residents.',
     sourceRefs: [BBD],
   },
   {
@@ -511,7 +511,7 @@ const RANKING: Ranked[] = [
   {
     rank: 50,
     cityId: 'asuncion',
-    why: 'Territorial tax with no wealth or inheritance tax, though healthcare and the residency means test are unverified.',
+    why: 'Territorial tax with no wealth or inheritance tax, though since July 2026 permanent residence needs active income, a pension or the $200k Investor Pass, and major treatment sometimes means Argentina or Brazil.',
     sourceRefs: [BBD],
   },
   {
@@ -529,7 +529,7 @@ const RANKING: Ranked[] = [
   {
     rank: 53,
     cityId: 'las-terrenas',
-    why: 'Law 171-07 shields declared rentista income and inheritance tax is 3%, but serious care is far and Schwab International is unavailable.',
+    why: 'Law 171-07 shields declared rentista income and inheritance tax is 3%, but serious care is far and Schwab International is reportedly unavailable.',
     sourceRefs: [BBD],
   },
   {
@@ -541,7 +541,7 @@ const RANKING: Ranked[] = [
   {
     rank: 55,
     cityId: 'florence',
-    why: 'A good elective-residence visa and healthcare, but Italy\'s 0.2% yearly IVAFE on the portfolio and 26% on dividends rank it low.',
+    why: 'An elective-residence visa on €31,000 a year of passive income and good healthcare, but Italy\'s 0.2% yearly IVAFE on the portfolio and 26% on dividends (US-domiciled ETFs reportedly pay progressive income tax instead) rank it low, and borrowing cash against the portfolio is reportedly blocked for residents.',
     sourceRefs: [BBD, IL, FORBES],
   },
   {
@@ -559,13 +559,13 @@ const RANKING: Ranked[] = [
   {
     rank: 58,
     cityId: 'nice',
-    why: 'The best healthcare in the set, but France\'s 5–45% worldwide inheritance tax and 31.4% on dividends rank it low.',
+    why: 'The best healthcare in the set, but France\'s 5–45% worldwide inheritance tax and 31.4% on dividends rank it low, and borrowing cash against the portfolio is reportedly blocked for residents.',
     sourceRefs: [BBD, IL],
   },
   {
     rank: 59,
     cityId: 'roatan',
-    why: 'Territorial tax, no inheritance tax and a rentista visa on $2,500 a month, but the island\'s public hospital burned in 2024, serious cases fly out and a worldwide-income bill could return.',
+    why: 'Territorial tax, no inheritance tax and a rentista visa on $2,500 a month, but island care is limited even with the public hospital\'s replacement, reportedly open since September 2025, serious cases fly out and a worldwide-income bill could return.',
     sourceRefs: [BBD],
   },
   {
@@ -607,7 +607,7 @@ const RANKING: Ranked[] = [
   {
     rank: 66,
     cityId: 'split',
-    why: 'Croatia\'s taxes suit BBD, but there is no residence route for a retiree.',
+    why: 'Croatia\'s tax and inheritance rules suit BBD, but there is no residence route for a retiree and borrowing cash against the portfolio is reportedly blocked for residents.',
     sourceRefs: [BBD, IL],
   },
   {
@@ -619,25 +619,25 @@ const RANKING: Ranked[] = [
   {
     rank: 68,
     cityId: 'gascony',
-    why: 'France\'s inheritance tax and long distances to rural healthcare rank it low.',
+    why: 'France\'s inheritance tax and long distances to rural healthcare rank it low, and borrowing cash against the portfolio is reportedly blocked for residents.',
     sourceRefs: [BBD, IL],
   },
   {
     rank: 69,
     cityId: 'rome',
-    why: 'Italy\'s 0.2% yearly IVAFE on the portfolio and 26% on dividends rank it low, as for Florence.',
+    why: 'Italy\'s 0.2% yearly IVAFE on the portfolio and 26% on dividends (US-domiciled ETFs reportedly pay progressive income tax instead) rank it low, as for Florence, and borrowing cash against the portfolio is reportedly blocked for residents.',
     sourceRefs: [BBD, IL, FORBES],
   },
   {
     rank: 70,
     cityId: 'tarragona',
-    why: 'Catalonia\'s wealth tax from €500k ranks it low for BBD.',
+    why: 'Catalonia\'s wealth tax from €500k ranks it low for BBD, and borrowing cash against the portfolio is reportedly blocked for residents.',
     sourceRefs: [BBD, IL, EI26],
   },
   {
     rank: 71,
     cityId: 'barcelona',
-    why: 'Catalonia\'s wealth tax from €500k ranks it low for BBD, as for Tarragona.',
+    why: 'Catalonia\'s wealth tax from €500k ranks it low for BBD, as for Tarragona, and borrowing cash against the portfolio is reportedly blocked for residents.',
     sourceRefs: [BBD, IL, EI26],
   },
   {
@@ -661,7 +661,7 @@ const RANKING: Ranked[] = [
   {
     rank: 75,
     cityId: 'vienna',
-    why: 'No inheritance tax and a US treaty, but 27.5% on dividends, yearly tax on the growth of unregistered funds (likely US ETFs) and a quota-limited settlement permit.',
+    why: 'No inheritance tax and a US treaty, but 27.5% on dividends, yearly tax on the growth of non-reporting funds (likely US ETFs) and a quota-limited settlement permit, and borrowing cash against the portfolio is reportedly blocked for residents.',
     sourceRefs: [BBD],
   },
 ]

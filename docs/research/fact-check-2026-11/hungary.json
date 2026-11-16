@@ -334,6 +334,7 @@
         "EU PRIIPs clause added (see hu-lending-priips-new-buys): the fact had none, unlike the other EU profiles"
       ],
       "rankFlag": "Budapest (pick 47) now scores lending 2. Its `why` does not mention borrowing, so it is not contradicted. Rank and `why` are unchanged: user's call.",
+      "rankResolved": "Budapest's `why` now ends \"dividends carry 15% plus a social contribution and borrowing cash against the portfolio is reportedly blocked for residents\"; rank unchanged.",
       "note": "Worded as for Bulgaria and Malta: the standard clause ending \"before relying on it\" (one broker). Shared sources are copied with their stage 1 read date; the LYNX page was not re-read."
     },
     {
@@ -482,6 +483,7 @@
         "sources: added IMI Daily"
       ],
       "rankFlag": "Budapest (pick 47): the `why` says \"a €250k fund investment gives residence\". A draft bill published on 4 November 2026 would close the guest investor programme to new applicants from 1 January 2027 (reported by one trade outlet; not passed when read). If it passes there is no route for a retiree on a portfolio (the 2024 law removed the \"other purposes\" permit), the visa score would fall to 1 and the `why` would be false. User's call; re-check the bill before deploy.",
+      "rankResolved": "Budapest's `why` now adds \"though a draft bill would reportedly close that route from 2027\"; re-check the bill before deploy still stands.",
       "note": "One secondary source, dated 6 November 2026; the bill text on the government or parliament site was not found, and a search found no report of a vote. Hence \"reportedly\". The official factsheet (edited 3 March 2026) still describes the programme without an end date."
     },
     {

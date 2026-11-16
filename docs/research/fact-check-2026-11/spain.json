@@ -990,6 +990,7 @@
         "sources: added LYNX withdrawal page to all seven"
       ],
       "rankFlag": "All seven Spain picks (Málaga 9, Madrid 10, Valencia 15, Alicante 32, Torrevieja 33, Tarragona 70, Barcelona 71) now score lending 2, and their profiles say the borrow step is reportedly closed to EU residents at both brokers. Their `why` lines in src/data/expatPicks.ts do not mention borrowing, so none is contradicted. Ranks and `why` lines are unchanged: user's call.",
+      "rankResolved": "All seven Spain picks' `why` lines now carry \"borrowing cash against the portfolio is reportedly blocked for residents\" (e.g. Málaga's \"the wealth tax bites above that and borrowing cash against the portfolio is reportedly blocked for residents\"); ranks unchanged.",
       "note": "Standard wording from shared.json applied unchanged; the seven profiles worded the fact exactly as Portugal's did. The LYNX withdrawal page was read again on 2026-11-15 and says the same (\"It is not possible to withdraw in a currency if your cash balance is negative or would go negative after the withdrawal\"). Article 3750 (https://ibkb.interactivebrokers.com/article/3750) returned HTTP 403 again, so \"reportedly\" stays."
     },
     {

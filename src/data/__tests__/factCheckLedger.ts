@@ -52,6 +52,9 @@ export interface LedgerClaim {
   /** Stage 8: why a modelMismatch was left unmodelled. */
   notModelled?: string
   rankFlag?: string
+  /** Pick reasons plan (2026-11-15): how the flagged `why` line or summary was rewritten, quoting the new
+   *  wording in double quotes. Only alongside rankFlag. */
+  rankResolved?: string
   note?: string
 }
 
@@ -67,11 +70,11 @@ export type LedgerKind = 'country' | 'shared'
 
 const COUNTRY_CLAIM_KEYS = [
   'id', 'fact', 'cities', 'claim', 'verdict', 'shared', 'oldWording', 'newWording', 'hedge', 'wording',
-  'sources', 'also', 'modelMismatch', 'modelled', 'notModelled', 'rankFlag', 'note',
+  'sources', 'also', 'modelMismatch', 'modelled', 'notModelled', 'rankFlag', 'rankResolved', 'note',
 ]
 const SHARED_CLAIM_KEYS = [
   'id', 'topic', 'fact', 'appliesTo', 'claim', 'verdict', 'oldWording', 'newWording', 'hedge', 'wording',
-  'sources', 'also', 'modelMismatch', 'modelled', 'notModelled', 'rankFlag', 'note',
+  'sources', 'also', 'modelMismatch', 'modelled', 'notModelled', 'rankFlag', 'rankResolved', 'note',
 ]
 const SOURCE_KEYS = ['name', 'url', 'read', 'says']
 
@@ -178,13 +181,14 @@ export function claimProblems(claim: unknown, kind: LedgerKind, fileCities: read
   }
 
   if (claim.also !== undefined && !isTextList(claim.also)) add('also must be a list of short notes')
-  for (const key of ['modelMismatch', 'modelled', 'notModelled', 'rankFlag', 'note']) {
+  for (const key of ['modelMismatch', 'modelled', 'notModelled', 'rankFlag', 'rankResolved', 'note']) {
     if (claim[key] !== undefined && !isText(claim[key])) add(`${key} must be text when present`)
   }
   for (const key of ['modelled', 'notModelled']) {
     if (claim[key] !== undefined && claim.modelMismatch === undefined) add(`${key} belongs only on a claim with a modelMismatch`)
   }
   if (claim.modelled !== undefined && claim.notModelled !== undefined) add('a claim is either modelled or notModelled, not both')
+  if (claim.rankResolved !== undefined && claim.rankFlag === undefined) add('rankResolved belongs only on a claim with a rankFlag')
   return out
 }
 

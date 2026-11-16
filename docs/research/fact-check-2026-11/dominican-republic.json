@@ -285,7 +285,9 @@
         "summary: hedge added",
         "drawback 3 reworded: \"Schwab International unavailable\" became \"Schwab International reportedly unavailable\""
       ],
-      "note": "Broker claims rest on a secondary page and stay reported (rule 3); the fact was hedged but the summary and drawback were not. The why line in expatPicks.ts (\"Schwab International is unavailable\") is unhedged too and was left (expatPicks.ts is not edited here)."
+      "note": "Broker claims rest on a secondary page and stay reported (rule 3); the fact was hedged but the summary and drawback were not. The why line in expatPicks.ts (\"Schwab International is unavailable\") is unhedged too and was left (expatPicks.ts is not edited here).",
+      "rankFlag": "Las Terrenas (pick 53): the `why` says flatly \"Schwab International is unavailable\", which the profile now hedges (\"reportedly\"). Raised in what-changed.md, \"Questions for you\" item 2; recorded here as a flag on 2026-11-15 so its resolution is held by a test.",
+      "rankResolved": "Las Terrenas's `why` now ends \"Schwab International is reportedly unavailable\"."
     },
     {
       "id": "do-visa-rentista",

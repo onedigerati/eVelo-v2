@@ -4,7 +4,7 @@ import { S } from './_shared'
 const profile: ExpatProfile = {
   tagline: 'Riviera city with France\'s top-rated healthcare',
   summary:
-    'France is 7th in International Living\'s 2026 index and scored best of all for healthcare, and Nice adds the Riviera\'s mild winters, a big English-speaking community and a year-round New York nonstop. For buy-borrow-die it ranks last of the 50: France taxes a resident\'s worldwide estate at up to 45% when it passes to children, and dividends pay 31.4%. The borrow step is weak too: Schwab reportedly does not take France residents, and IBKR reportedly bars EU residents from drawing margin as cash.',
+    'France is 7th in International Living\'s 2026 index and scored best of all for healthcare, and Nice adds the Riviera\'s mild winters, a big English-speaking community and a year-round New York nonstop. For buy-borrow-die it ranks low, 58th of the 75: France taxes a resident\'s worldwide estate at up to 45% when it passes to children, and dividends pay 31.4%. The borrow step is weak too: Schwab reportedly does not take France residents, and IBKR reportedly bars EU residents from drawing margin as cash.',
   scores: { cost: 1, healthcare: 5, safety: 3, visa: 4, climate: 4, community: 4, tax: 2, estate: 1, lending: 2 },
   facts: {
     healthcare:

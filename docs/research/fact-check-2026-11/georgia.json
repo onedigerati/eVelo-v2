@@ -141,6 +141,7 @@
         "sources: added the IRS Georgia treaty page"
       ],
       "rankFlag": "Tbilisi (pick 23): the `why` ends \"there is no US tax treaty\". The IRS lists Georgia among the countries covered by the 1973 US–USSR income tax treaty (its Georgia treaty page, reviewed August 2026, and Publication 901), so on the IRS's own list that statement is false. There is no US estate treaty, and the old treaty is thin, so the practical point (little treaty relief) survives; the wording does not. The 30% withholding it was tied to in the profile does not apply to a US citizen in any case. User's call; the `why` was not edited.",
+      "rankResolved": "Tbilisi's `why` now ends \"there is no US estate treaty, only the old 1973 US–USSR income tax treaty\", where it said there was no US tax treaty.",
       "note": "Two errors: the IRS does count Georgia under a treaty, and 30% withholding is for foreign persons, not US citizens (the IRS page defines it by \"payments to all foreign persons\"; it does not name citizens abroad, so the last step is a reading of the page, as in pt-tax-us-treaty-credit). Not read: the 1973 treaty's text, Georgia's own view of whether it is bound (PwC's Georgia treaty page points to a corporate list that was not opened), and what the treaty does for dividends."
     },
     {

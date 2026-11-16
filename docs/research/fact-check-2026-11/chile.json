@@ -206,7 +206,9 @@
       "note": "The article speaks of \"sucesiones de extranjeros\" without a domicile condition; no SII ruling on a domiciled foreigner was read, so the hedge stays.",
       "also": [
         "scores.estate 5→4 (stage 8 score audit): a 1–25% tax exists and its reach over a domiciled foreigner's US assets is only inferred, so the rubric's \"scores one point lower\" applies, as for Spain and Vietnam"
-      ]
+      ],
+      "rankFlag": "Santiago (pick 42): the `why` says \"foreigners' assets abroad fall outside inheritance tax\", which the profile hedges (only a US account funded from the US is outside, and whether that holds for a foreigner who dies domiciled in Chile is unverified) and now scores estate 4. Raised in what-changed.md, \"Questions for you\" item 2; recorded here as a flag on 2026-11-15 so its resolution is held by a test.",
+      "rankResolved": "Santiago's `why` now says \"a US-funded portfolio likely falls outside inheritance tax\", where it said all of a foreigner's assets abroad fall outside it."
     },
     {
       "id": "cl-estate-no-treaty",

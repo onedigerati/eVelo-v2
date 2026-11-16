@@ -89,6 +89,7 @@
         "sources: added Taxing.it and PwC taxes on personal income to both"
       ],
       "rankFlag": "The `why` lines of Florence (55) and Rome (69) in src/data/expatPicks.ts say \"26% on dividends\". For shares that holds. For a portfolio of US-domiciled ETFs or mutual funds, which is what most US retirees hold, distributions and gains reportedly fall outside the 26% regime and are taxed at progressive rates, which is worse than the `why` says; it supports the low rank. Florence's `why` also calls the elective-residence visa \"good\" while the profile scores visa 3 (a €31,000 passive-income bar). Neither `why` nor the ranks were changed: user's call.",
+      "rankResolved": "Florence's `why` now opens \"An elective-residence visa on €31,000 a year of passive income\", where it called the visa good, and both Florence's and Rome's say \"26% on dividends (US-domiciled ETFs reportedly pay progressive income tax instead)\".",
       "note": "26% on dividends is confirmed on two dated secondary pages. Why corrected: the flat statement was too wide for this site's reader. The one page read on funds says non-qualifying foreign funds and ETFs pay progressive IRPEF plus regional and municipal tax on distributions and gains, and that a US-domiciled fund needs its own assessment; that US ETFs are non-qualifying comes from search results, not a page read, so the clause says \"reportedly\". A person should confirm it with the Agenzia delle Entrate's instructions (quadro RL/RM) or an adviser. localTaxes.ts models no income tax on dividends, so nothing to compare."
     },
     {
@@ -467,6 +468,7 @@
         "sources: added LYNX withdrawal page to all 2"
       ],
       "rankFlag": "Both Italy picks (Florence 55, Rome 69) now score lending 2, and their profiles say the one reported broker reportedly will not pay a margin loan out as cash. Their `why` lines in src/data/expatPicks.ts do not mention borrowing, so neither is contradicted. Ranks and `why` lines are unchanged: user's call.",
+      "rankResolved": "Florence's and Rome's `why` lines now end \"and borrowing cash against the portfolio is reportedly blocked for residents\"; ranks unchanged.",
       "note": "These profiles never said \"so plan on IBKR margin\"; they named IBKR as the only option and stopped. The shared correction's substance was applied with adapted wording: the standard clause, ending \"before relying on it\" (one broker, not \"either\", since Schwab reportedly does not take Italy residents at all). The summary sentence differs from Portugal's and Spain's for the same reason. The shared sources are copied with their stage 1 read date; the LYNX page was not re-read for this country."
     },
     {
