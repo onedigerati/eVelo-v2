@@ -35,7 +35,7 @@ export const DEFAULT_INPUTS: PlanInputs = {
   maxLtv: 0.6,
   targetLtvAfterCall: 0.45,
   capGainsRate: 0.238,
-  dividendTaxDrag: 0.0025,
+  dividendTaxDrag: 0.004,
   method: 'bootstrap',
   outlook: 'balanced',
   blockMonths: 24,
