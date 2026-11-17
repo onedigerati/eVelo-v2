@@ -7,27 +7,27 @@ A review of the financial calculations (2026-11-16) found the engine's core math
 2026-11-16 · tests: 1111 pass · typecheck: clean · build: ok
 
 ## Now
-Stage 1 of 2 · Safe plan loading
-Risk: user input (share links, localStorage), money
+Stage 2 of 2 · Honest growth
+Risk: money
 Checks:
-- [x] A plan with no destination (stay home) survives a save/reload and a share-link round trip as stay home, and its odds match the stay-home run (proof: test)
-- [x] A link or stored plan with a home or destination id that isn't a known city (`constructor`, `__proto__`, `nowhere`) loads: an unknown home falls back to the default home, an unknown destination to stay home (proof: test)
-- [x] The engine is never run with a home it can't resolve while the page names a destination (proof: test)
-- [x] If a screen still throws while drawing, the app shows a recovery message with a "Reset plan" button instead of a blank page, and the reset clears the stored plan (proof: test for the reset; screenshot, a test can't show the blank-page case in a browser)
-- [x] Opening a crafted `#p=…` link with `constructor` as a city in the running app shows the app, not a blank page, and a reload still works (proof: run the product, the crash only happens in a browser render)
+- [ ] The "loan costs more than the portfolio earns" diagnosis compares the loan rate with the portfolio's compounded (median CAGR, nominal) growth, not its average return: a plan whose average return beats the loan rate but whose compounded growth doesn't gets the warning (proof: test)
+- [ ] The Outlook's "Exp. return" figure is labelled as the average year, beside the Median CAGR it compounds to (proof: screenshot, a test can't judge the wording in place)
+- [ ] The real-FX walk has zero log drift: across paths the median currency factor stays at 1 for every horizon, and raising a city's FX volatility never raises its odds (same seed, 4,000 paths: Buenos Aires, Lisbon, Bangkok) (proof: test)
+- [ ] The Method page's currency paragraph says the typical future keeps today's rate and that more currency swing costs odds (proof: test on the rendered copy or screenshot, the copy is the claim)
+- [ ] The default dividend tax drag is 0.40%; a saved plan or link that carries its own value keeps it, and the Method page shows the new default (proof: test)
 Open: none
 Agents: wide — confirmed 2026-11-16 19:28
 Mode: autopilot — unattended
 
 ## Stages
 - [x] 1. Safe plan loading — stay home survives reload and links; city ids checked at the boundary; an error boundary with reset — [evidence](evidence/stage-1/report.md)
-- [ ] 2. Honest growth — "Exp. return" shows compounded growth (warning uses it); currency walk centred on the typical future, Method copy updated; dividend drag default 0.4%
+- [ ] 2. Honest growth — loan-vs-return warning uses compounded growth, "Exp. return" labelled as the average year; currency walk centred on the typical future, Method copy updated; dividend drag default 0.4%
 
 ## Decisions
 - 2026-11-16 · Fix the review's items 1–6 in two stages, the rest deferred to open questions — user: "Yes, plan it then autopilot wide."
 - 2026-11-16 · An unknown home id falls back to the default home and an unknown destination id to stay home, at `sanitizeInputs` — PM default: the page then names exactly what the engine runs.
 - 2026-11-16 · The error boundary sits at the app root and offers "Reset plan" (clears the stored plan, reloads to the default); it never shows the error text to the user — PM default.
-- 2026-11-16 · "Exp. return" becomes the annualised geometric growth of the portfolio's monthly returns (the rate the paths compound at); the loan-vs-return warning compares the loan rate with that nominal growth — PM default, from the review's reproduction (9.69% shown vs 8.68% compounded at the defaults).
+- ~~2026-11-16 · "Exp. return" becomes the annualised geometric growth of the portfolio's monthly returns (the rate the paths compound at); the loan-vs-return warning compares the loan rate with that nominal growth — PM default, from the review's reproduction (9.69% shown vs 8.68% compounded at the defaults).~~ Replaced the same day (see below).
 - 2026-11-16 · The real-FX walk gets zero log drift, so the typical (median) future keeps today's rate and more currency volatility costs odds rather than adding them; the Method page says so — PM default; the review measured Buenos Aires +1.4 points and Lisbon +0.9 from the current drift.
 - 2026-11-16 · Default dividend tax drag 0.25% → 0.40% (≈1.7% yield × 23.8%). Saved plans and links that carry their own value keep it; only the default moves — PM default.
 - 2026-11-16 · Rejected from the review: the sell side's untaxed opening repayment (standing 2026-11-08 decision) and counting a survived margin call as a failure (conservative by design).
@@ -39,6 +39,8 @@ Mode: autopilot — unattended
 - 2026-11-16 · User approved stage 1 (user input, money) under autopilot ("go").
 - 2026-11-16 · User approved stage 1 (user input, money) under autopilot again for the review fixes ("go").
 - 2026-11-16 · (unattended) Stage 1 review fixes taken beyond the city ids: holdings symbols checked as own keys (`assetMeta`, the engine's `market.assets` lookups, plan-rail slots), a stored plan that isn't an object is ignored, and Reset keeps the theme — the same prototype-key hole and two crash/UX gaps the reviewers reproduced; all within the stage's goal.
+- 2026-11-16 · (unattended) "Exp. return" stays the average (arithmetic) return, labelled as the average year, because the Outlook card already shows "Median CAGR" beside it; replacing it would show one number twice. The bug is the diagnosis, which now compares the loan rate with nominal median CAGR. Replaces the earlier "Exp. return becomes geometric growth" decision.
+- 2026-11-16 · User approved stage 2 (money) under autopilot ("go").
 
 ## Open questions
 - From the 2026-11-16 review: the engine reads NaN inputs (loanRate, dividendTaxDrag, expatFactor, maxLtv) as a clean plan; `sanitizeInputs` blocks them, so only direct engine callers are exposed — guard in `kernelConfig`, later.
