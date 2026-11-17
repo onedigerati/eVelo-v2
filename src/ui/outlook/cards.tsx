@@ -238,9 +238,9 @@ export function LensBody({ result }: { result: SimulationResult }) {
     <div className="lens">
       <div className="lens__stats">
         <div>
-          <div className="t-eyebrow">Exp. return</div>
+          <div className="t-eyebrow">Avg. return</div>
           <AnimatedNumber value={rs.expReturn} format="percent1" className="lens__num" />
-          <div className="lens__sub">{rs.real ? `after inflation · ${pct1(rs.expReturnNominal)} nominal` : 'before inflation'}</div>
+          <div className="lens__sub">{rs.real ? `average year · after inflation · ${pct1(rs.expReturnNominal)} nominal` : 'average year · before inflation'}</div>
         </div>
         <div>
           <div className="t-eyebrow">Volatility</div>

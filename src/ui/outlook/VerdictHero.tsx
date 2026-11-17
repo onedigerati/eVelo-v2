@@ -67,16 +67,18 @@ function headline(level: VerdictLevel): { lead: ReactNode; tail: ReactNode } {
   }
 }
 
-/** Why a weak plan fails, in one sentence, from the result itself. */
+/** Why a weak plan fails, in one sentence, from the result itself. Compares against compounded growth
+ *  (median CAGR), not the average year: debt compounds against what the portfolio actually compounds to,
+ *  which runs below the arithmetic average by roughly half the variance. */
 export function diagnosis(r: SimulationResult): string | null {
   const i = r.inputs
-  const exp = returnStats(r.stats).expReturn
-  const nominal = r.stats.expReturn
+  const real = returnStats(r.stats).cagrMedian
+  const nominal = r.stats.cagrMedian
   if (r.successRate >= VERDICT_THRESHOLDS.mostly) return null
   if (nominal < i.loanRate)
-    return `The loan costs ${pct1(i.loanRate)} a year but this portfolio is expected to earn about ${pct1(nominal)}: the debt compounds faster than the assets securing it, so in most futures it catches up with them.`
-  if (r.brokenRate > r.bruisedRate && exp < 0.03)
-    return `With an expected real return near ${pct1(exp)}, spending plus interest outruns growth in most futures.`
+    return `The loan costs ${pct1(i.loanRate)} a year but this portfolio is expected to grow about ${pct1(nominal)} a year compounded: the debt compounds faster than the assets securing it, so in most futures it catches up with them.`
+  if (r.brokenRate > r.bruisedRate && real < 0.03)
+    return `With real growth near ${pct1(real)} a year compounded, spending plus interest outruns growth in most futures.`
   return null
 }
 const pct1 = (x: number) => `${(x * 100).toFixed(1).replace(/\.0$/, '')}%`
