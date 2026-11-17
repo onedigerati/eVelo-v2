@@ -298,3 +298,33 @@ em,
     transition-delay: 0ms !important;
   }
 }
+
+/* App-root error boundary (src/ui/shell/ErrorBoundary.tsx): a centred way out instead of a blank page. */
+.app-recover {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: var(--space-7) var(--gutter);
+  background: var(--bg);
+  color: var(--ink);
+}
+.app-recover__card {
+  max-width: 28rem;
+  text-align: center;
+  display: grid;
+  justify-items: center;
+  gap: var(--space-4);
+}
+.app-recover__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-snug);
+}
+.app-recover__body {
+  margin: 0 0 var(--space-2);
+  color: var(--ink-2);
+  font-size: var(--fs-md);
+  line-height: var(--lh-body);
+}
