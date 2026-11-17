@@ -8,10 +8,15 @@ import '@fontsource-variable/geist-mono/wght.css'
 import './styles/tokens.css'
 import './styles/global.css'
 
+import './ui/primitives/primitives.css'
+
 import { App } from './App'
+import { ErrorBoundary } from './ui/shell/ErrorBoundary'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <ErrorBoundary>
+      <App />
+    </ErrorBoundary>
   </StrictMode>,
 )
