@@ -1,36 +1,48 @@
-# Pick reasons plan
+# Sound numbers plan
 
 ## Goal
-The fact check corrected the city profiles but kept the ranked 75's order and their one-line `why` reasons as they were, and flagged 25 places where a reason or a summary no longer matches the corrected facts (the `rankFlag` entries in `docs/research/fact-check-2026-11/`, listed in `what-changed.md`). The user chose to keep the ranks and rewrite those lines. Done = every flagged `why` line in `src/data/expatPicks.ts`, and Nice's summary, agrees with its profile and the ledger, every ranked pick whose borrow step is in doubt (lending 2) says so in its reason, the ranks are unchanged, and a test holds it.
+A review of the financial calculations (2026-11-16) found the engine's core maths sound, but several things change the odds users are shown. A stay-home plan comes back as a move to Bangkok after a reload or through a share link (64% fragile shows as 80% holds). A crafted link with a city id like `constructor` crashes the app for good on that device. An unknown home city silently drops the destination. "Exp. return" shows the average month compounded (9.7%) rather than the growth the paths actually compound at (~8.7%), and the loan-vs-return warning uses it. The currency walk centres the average, not the typical future, so more currency risk raises the odds. And the default dividend tax drag (0.25%) is below what the default portfolio yields (~0.4%). Done = each is fixed, proven by tests, seen in the running app, and live.
 
 ## Baseline
-2026-11-15 · tests: 1103 pass · typecheck: clean · build: ok
+2026-11-16 · tests: 1111 pass · typecheck: clean · build: ok
 
 ## Now
-All stages done. The fact check and the pick reasons are live on GitHub Pages (run 43783468539, 2026-11-16).
-Agents: lean
+Stage 1 of 2 · Safe plan loading
+Risk: user input (share links, localStorage), money
+Checks:
+- [ ] A plan with no destination (stay home) survives a save/reload and a share-link round trip as stay home, and its odds match the stay-home run (proof: test)
+- [ ] A link or stored plan with a home or destination id that isn't a known city (`constructor`, `__proto__`, `nowhere`) loads: an unknown home falls back to the default home, an unknown destination to stay home (proof: test)
+- [ ] The engine is never run with a home it can't resolve while the page names a destination (proof: test)
+- [ ] If a screen still throws while drawing, the app shows a recovery message with a "Reset plan" button instead of a blank page, and the reset clears the stored plan (proof: test for the reset; screenshot, a test can't show the blank-page case in a browser)
+- [ ] Opening a crafted `#p=…` link with `constructor` as a city in the running app shows the app, not a blank page, and a reload still works (proof: run the product, the crash only happens in a browser render)
+Open: none
+Agents: wide — confirmed 2026-11-16 19:28
+Mode: autopilot
 
 ## Stages
-- [x] 1. Pick reasons — rewrite the 25 rank-flagged `why` lines and Nice's summary to match the corrected facts, with a borrow warning on every ranked lending-2 pick — [evidence](evidence/stage-1/report.md)
-
-## Fixes
-- 2026-11-15 · Spain's seven profiles now warn, in the residency fact, that the Los Angeles consulate says applicants "cannot have/leave loans or mortgages in the United States" and doesn't say whether a margin loan counts (ledger `es-visa-la-no-us-loans`) — tests 1103/1103, typecheck, and Madrid seen on a phone-width profile
-- 2026-11-15 · Landing buttons get a quiet hover effect: "Find your eVelo"'s arrow curves up into an escape path, and "Explore the Atlas" gains a small globe whose meridians turn; hover, keyboard focus and press only, nothing ambient, off under reduced motion — user picked it from a six-way sampler; tests 1111/1111, typecheck, build, and the buttons seen at rest and hovered on desktop and at phone width; live on GitHub Pages (run 43802583448)
+- [ ] 1. Safe plan loading — stay home survives reload and links; city ids checked at the boundary; an error boundary with reset
+- [ ] 2. Honest growth — "Exp. return" shows compounded growth (warning uses it); currency walk centred on the typical future, Method copy updated; dividend drag default 0.4%
 
 ## Decisions
-- 2026-11-15 · Keep the ranked 75's order and rewrite the flagged `why` lines and Nice's summary to match the corrected facts — user: "Let's go with your recommendation" (the PM recommended keep and warn over re-ranking).
-- 2026-11-15 · Scores that sit between two rubric rungs (Japan vs London estate, New Zealand vs Netherlands tax, Korea residency, Mauritius tax, Colombia tax) stay as they are, with no tie-break rule — same answer.
-- 2026-11-15 · A `why` line keeps its length and voice (one sentence, the pick's case and its main catch); a rewrite says what the ledger says, with "reportedly" where the profile has it — PM default, matching the profiles' rules.
-- 2026-11-15 · Scale: 1 stage, one release — no scale signal fired, planned as one plan.
-- 2026-11-15 · Agents: lean, carried over from the fact check plan.
-- 2026-11-15 · No research note: the ledger already holds the facts each line must match.
-- 2026-11-15 · User took the PM's recommendations ("Let's go with your recommendations"): Spain's seven profiles get the Los Angeles consulate's loans warning, hedged (done, see Fixes); a "checked" date on profiles is held for later; the fact check deploys after this plan's stage, not before; reminders to recheck Florida's Amendment 3 (after 17 November) and Colorado's Amendment 87 (after 30 November).
-- 2026-11-15 · Autopilot, unattended, Agents: lean — user: "Jbit autopilot lean". The reminders are scheduled: Florida on 18 November, Colorado on 1 December.
-- 2026-11-15 · (unattended) 27 flags rather than 25: Las Terrenas and Santiago were named only in the report's questions, so the builder gave them flags of their own (`do-lending-schwab-summary`, `cl-estate-domicile-unverified`) to record and test their fixes like the others. Nice's summary fix is recorded on `fr-lending-ibkr-margin-cash-out`.
-- 2026-11-15 · (unattended) The borrow warning reads "borrowing cash against the portfolio is reportedly blocked for residents" on all 27 lending-2 picks (all in the EU), one shared phrase that a test checks. Hedges kept where no page settles the fact: Tavira's "about 30–40 minutes", Santiago's "likely falls outside", Budapest's "a draft bill would reportedly close that route from 2027".
-- 2026-11-16 · Deployed the fact check and the pick reasons together — user: "Deploy". Pushed main; Deploy to GitHub Pages run 43783468539 passed (tests, build, publish); the live AtlasView chunk carries the new reasons and the re-check date line.
+- 2026-11-16 · Fix the review's items 1–6 in two stages, the rest deferred to open questions — user: "Yes, plan it then autopilot wide."
+- 2026-11-16 · An unknown home id falls back to the default home and an unknown destination id to stay home, at `sanitizeInputs` — PM default: the page then names exactly what the engine runs.
+- 2026-11-16 · The error boundary sits at the app root and offers "Reset plan" (clears the stored plan, reloads to the default); it never shows the error text to the user — PM default.
+- 2026-11-16 · "Exp. return" becomes the annualised geometric growth of the portfolio's monthly returns (the rate the paths compound at); the loan-vs-return warning compares the loan rate with that nominal growth — PM default, from the review's reproduction (9.69% shown vs 8.68% compounded at the defaults).
+- 2026-11-16 · The real-FX walk gets zero log drift, so the typical (median) future keeps today's rate and more currency volatility costs odds rather than adding them; the Method page says so — PM default; the review measured Buenos Aires +1.4 points and Lisbon +0.9 from the current drift.
+- 2026-11-16 · Default dividend tax drag 0.25% → 0.40% (≈1.7% yield × 23.8%). Saved plans and links that carry their own value keep it; only the default moves — PM default.
+- 2026-11-16 · Rejected from the review: the sell side's untaxed opening repayment (standing 2026-11-08 decision) and counting a survived margin call as a failure (conservative by design).
+- 2026-11-16 · Scale: 2 stages, one release — no scale signal fired, planned as one plan.
+- 2026-11-16 · No research: the review's reproductions settle the numbers, and nothing outside the repo changes this plan.
+- 2026-11-16 · Autopilot, Agents: wide — user: "plan it then autopilot wide".
 
 ## Open questions
+- From the 2026-11-16 review: the engine reads NaN inputs (loanRate, dividendTaxDrag, expatFactor, maxLtv) as a clean plan; `sanitizeInputs` blocks them, so only direct engine callers are exposed — guard in `kernelConfig`, later.
+- From the 2026-11-16 review: fractional `age`, `horizonYears`, `moveInYears`, `blockMonths` from links aren't rounded ("age 30.2"; a 0.5-year move prices a full destination year in `firstYearSpend`) — later.
+- From the 2026-11-16 review: holdings with all-zero weights pass the sanitizer and the engine throws ("Simulation failed" badge) — reject at the boundary, later.
+- From the 2026-11-16 review: `outcomeScale.ts` colours the raw rate while the verdict uses the whole percent, so 64.5–64.99% reads "65%, mostly holds" in the fragile colour — later.
+- From the 2026-11-16 review: caption wording — `atlasData.ts:93` can say "trims −12%" when the best city costs more; `estateCaption` presents the gap between two medians as the gap "in the median future"; `safeSpendCaption` hardcodes 90% instead of `SOLVE_TARGET` — later.
+- From the 2026-11-16 review: once retired, a sell side that ran dry stays at $0 and never reinvests later surplus income (e.g. Social Security above spending); estate comparison only — later.
+- From the 2026-11-16 review, model limits worth stating on the Method page: month-end prices only (intramonth lows missed, margin calls undercounted), 1993–2026 history (no 1970s or 1929), a fixed loan rate, one flat capital-gains rate, data gaps filled with 0% returns — later, user's call.
 - Show a "checked <date>" on each profile, linked to its sources and read dates — held for later at the user's call.
 - Colorado's Amendment 87 (Denver tax 5 → 4 if certified, by 30 November 2026) and Florida's Amendment 3 ("unofficial results" in four Florida profiles; certification 17 November 2026): re-read the certified results and update, each as a quick fix after its date.
 - A taxed home city's wealth tax for the years before a delayed move is not charged (matters for a Zurich home), and a move set at or after the horizon runs without the home's estate tax; both need the kernel to handle two tax regimes in one run (money) — later.
@@ -79,29 +91,30 @@ Agents: lean
 - Standing decisions from earlier plans are in [decisions.md](decisions.md).
 
 ## Shipped
-- 2026-11-06 · eVelo v2 build: BBD planner with engine, plan inputs, outlook charts, Atlas and methodology, live on GitHub Pages — [plan](2026-11-06-evelo-v2-build.md)
-- 2026-11-06 · Expat picks: verified costs for 25 destinations + US home cities, ranked top 25 with sources, profiles for the top 15 in the Atlas — [plan](2026-11-06-expat-picks.md)
-- 2026-11-06 · Profiles 16–25: full profiles for picks 16–25, plus the new escape-velocity logo and Geist wordmark — [plan](2026-11-06-profiles-16-25.md)
-- 2026-11-06 · Saved portfolios: save/apply/rename/delete holdings mixes, Atlas on the plan's full path count, info bubbles kept on screen — [plan](2026-11-06-saved-portfolios.md)
-- 2026-11-07 · Mobile slider gestures: touch-safe sliders, expat price premium relabel with local/tourist ends — [plan](2026-11-06-mobile-slider-gestures.md)
-- 2026-11-07 · Pan and zoom map: mouse, trackpad and touch pan/zoom on the Atlas map, zoom buttons, hover fix and tablet tap bubbles, live on GitHub Pages — [plan](2026-11-07-map-pan-zoom.md) · [evidence](2026-11-07-map-pan-zoom/evidence/)
-- 2026-11-07 · Landing page: first-visit landing (study G, "The Atlas is the chart") with the illustrative odds map and four steps, live on GitHub Pages — [plan](2026-11-07-landing-page.md) · [evidence](2026-11-07-landing-page/evidence/)
-- 2026-11-07 · City photo galleries: five checked, openly licensed photos in a cover mosaic with the odds badge and a full-size view for all 75 picks, live on GitHub Pages — [plan](2026-11-07-city-photos.md) · [evidence](2026-11-07-city-photos/evidence/)
-- 2026-11-07 · City profiles for all 133: unranked profiles and 5 checked photos for every city (Europe, Africa, Middle East, Asia-Pacific, Canada, South America, 32 US cities), a coverage test, live on GitHub Pages — [plan](2026-11-07-all-city-profiles.md) · [evidence](2026-11-07-all-city-profiles/evidence/)
-- 2026-11-08 · City list navigation: collapsible tiers following the sort, region chips with counts in the list toolbar, a more opaque map city card, one Plan tab on desktop, live on GitHub Pages — [plan](2026-11-08-city-list-navigation.md) · [evidence](2026-11-08-city-list-navigation/evidence/)
-- 2026-11-08 · Existing loan balance: an "Existing loan balance" input in Borrowing that every output starts from (BBD loan, opening forced sale above the call line, sell side at equal net worth), with warnings, limits and copy, live on GitHub Pages — [plan](2026-11-08-existing-loan.md) · [evidence](2026-11-08-existing-loan/evidence/)
-- 2026-11-08 · Docked verdict: a glass verdict pill docked at the top of the results column on desktop and tablet once the headline scrolls away, with live delta, back-to-verdict and drawer support, live on GitHub Pages — [plan](2026-11-08-docked-verdict.md) · [evidence](2026-11-08-docked-verdict/evidence/)
-- 2026-11-08 · Set your own spending: type a category's destination spending in $ or %, fixed amounts per city that don't drift, an ⓘ tip on the card, live on GitHub Pages — [plan](2026-11-08-set-your-own-spending.md) · [evidence](2026-11-08-set-your-own-spending/evidence/)
-- 2026-11-09 · Retire later: a "Retire in" setting and "Saving while working" amount across the engine and app, shaded working years and a Retire line on the charts, and a "When could you retire?" comparison, live on GitHub Pages — [plan](2026-11-09-retire-later.md) · [evidence](2026-11-09-retire-later/evidence/)
-- 2026-11-09 · Landing hero: the four-beat story card (Buy, Borrow, Live anywhere, Die; St. Louis to Bangkok) with play/pause, step sync and reduced motion, replacing the map card, live on GitHub Pages — [plan](2026-11-09-landing-hero.md) · [evidence](2026-11-09-landing-hero/evidence/)
-- 2026-11-09 · Landing default: the plain URL shows the landing on every visit, the first-visit flag removed, live on GitHub Pages — [plan](2026-11-09-landing-default.md) · [evidence](2026-11-09-landing-default/evidence/)
-- 2026-11-09 · Dark by default: the site opens in dark mode, saved System switched to Dark once, no light flash, live on GitHub Pages — [plan](2026-11-09-dark-by-default.md) · [evidence](2026-11-09-dark-by-default/evidence/)
-- 2026-11-10 · Atlas speed: city odds split across workers, saved last ranking and an idle start (odds ~1.1 s vs ~3.0 s), 640px photo copies with srcset and hover preload (profiles 178–256 KB vs 700–910 KB), live on GitHub Pages — [plan](2026-11-10-atlas-speed.md) · [evidence](2026-11-10-atlas-speed/evidence/)
-- 2026-11-10 · Your spending on profiles: user-set spending rows marked "your amount"/"your change" on city profiles, named in the note, live on GitHub Pages — [plan](2026-11-10-spending-markers.md) · [evidence](2026-11-10-spending-markers/evidence/)
-- 2026-11-10 · Clickable atlas tiles: Best odds, Your home and Your destination tiles open the city profile from anywhere on the tile, with pick-card hover, live on GitHub Pages — [plan](2026-11-10-clickable-tiles.md) · [evidence](2026-11-10-clickable-tiles/evidence/)
-- 2026-11-10 · Country on city cards: muted country name beside the city on atlas tiles and top-pick cards, and swipe-down to close phone sheets, live on GitHub Pages — [plan](2026-11-10-country-label.md) · [evidence](2026-11-10-country-label/evidence/)
-- 2026-11-10 · Premium scales overrides: typed `$`/`%` spending pinned to the premium when typed and scaled with the slider, with a "scales with premium" note, tip and Method copy, live on GitHub Pages — [plan](2026-11-10-premium-scales.md) · [evidence](2026-11-10-premium-scales/evidence/)
-- 2026-11-10 · Hero tile glow: the Atlas hero tiles' odds-tone glow sits behind the odds figure instead of the top-right corner, live on GitHub Pages — [plan](2026-11-10-hero-tile-glow.md) · [evidence](2026-11-10-hero-tile-glow/evidence/)
-- 2026-11-13 · Pill destination: every verdict pill names its city (destination, else home), a floating pill on phone Outlook and on the Atlas once the hero tiles scroll away, plus landing escape-velocity copy fixes, live on GitHub Pages — [plan](2026-11-13-pill-destination.md) · [evidence](2026-11-13-pill-destination/evidence/)
-- 2026-11-15 · Home-aware getting there: each profile's Getting there worked out from the home city (nonstop, one, two or three stops, estimated hours) from sourced routes for 130 airports, with all 133 local notes rewritten, live on GitHub Pages — [plan](2026-11-15-home-aware-getting-there.md) · [evidence](2026-11-15-home-aware-getting-there/evidence/)
+- 2026-11-06 · eVelo v2 build: BBD planner with engine, plan inputs, outlook charts, Atlas and methodology, live on GitHub Pages — [plan](plans/2026-11-06-evelo-v2-build.md)
+- 2026-11-06 · Expat picks: verified costs for 25 destinations + US home cities, ranked top 25 with sources, profiles for the top 15 in the Atlas — [plan](plans/2026-11-06-expat-picks.md)
+- 2026-11-06 · Profiles 16–25: full profiles for picks 16–25, plus the new escape-velocity logo and Geist wordmark — [plan](plans/2026-11-06-profiles-16-25.md)
+- 2026-11-06 · Saved portfolios: save/apply/rename/delete holdings mixes, Atlas on the plan's full path count, info bubbles kept on screen — [plan](plans/2026-11-06-saved-portfolios.md)
+- 2026-11-07 · Mobile slider gestures: touch-safe sliders, expat price premium relabel with local/tourist ends — [plan](plans/2026-11-06-mobile-slider-gestures.md)
+- 2026-11-07 · Pan and zoom map: mouse, trackpad and touch pan/zoom on the Atlas map, zoom buttons, hover fix and tablet tap bubbles, live on GitHub Pages — [plan](plans/2026-11-07-map-pan-zoom.md) · [evidence](plans/2026-11-07-map-pan-zoom/evidence/)
+- 2026-11-07 · Landing page: first-visit landing (study G, "The Atlas is the chart") with the illustrative odds map and four steps, live on GitHub Pages — [plan](plans/2026-11-07-landing-page.md) · [evidence](plans/2026-11-07-landing-page/evidence/)
+- 2026-11-07 · City photo galleries: five checked, openly licensed photos in a cover mosaic with the odds badge and a full-size view for all 75 picks, live on GitHub Pages — [plan](plans/2026-11-07-city-photos.md) · [evidence](plans/2026-11-07-city-photos/evidence/)
+- 2026-11-07 · City profiles for all 133: unranked profiles and 5 checked photos for every city (Europe, Africa, Middle East, Asia-Pacific, Canada, South America, 32 US cities), a coverage test, live on GitHub Pages — [plan](plans/2026-11-07-all-city-profiles.md) · [evidence](plans/2026-11-07-all-city-profiles/evidence/)
+- 2026-11-08 · City list navigation: collapsible tiers following the sort, region chips with counts in the list toolbar, a more opaque map city card, one Plan tab on desktop, live on GitHub Pages — [plan](plans/2026-11-08-city-list-navigation.md) · [evidence](plans/2026-11-08-city-list-navigation/evidence/)
+- 2026-11-08 · Existing loan balance: an "Existing loan balance" input in Borrowing that every output starts from (BBD loan, opening forced sale above the call line, sell side at equal net worth), with warnings, limits and copy, live on GitHub Pages — [plan](plans/2026-11-08-existing-loan.md) · [evidence](plans/2026-11-08-existing-loan/evidence/)
+- 2026-11-08 · Docked verdict: a glass verdict pill docked at the top of the results column on desktop and tablet once the headline scrolls away, with live delta, back-to-verdict and drawer support, live on GitHub Pages — [plan](plans/2026-11-08-docked-verdict.md) · [evidence](plans/2026-11-08-docked-verdict/evidence/)
+- 2026-11-08 · Set your own spending: type a category's destination spending in $ or %, fixed amounts per city that don't drift, an ⓘ tip on the card, live on GitHub Pages — [plan](plans/2026-11-08-set-your-own-spending.md) · [evidence](plans/2026-11-08-set-your-own-spending/evidence/)
+- 2026-11-09 · Retire later: a "Retire in" setting and "Saving while working" amount across the engine and app, shaded working years and a Retire line on the charts, and a "When could you retire?" comparison, live on GitHub Pages — [plan](plans/2026-11-09-retire-later.md) · [evidence](plans/2026-11-09-retire-later/evidence/)
+- 2026-11-09 · Landing hero: the four-beat story card (Buy, Borrow, Live anywhere, Die; St. Louis to Bangkok) with play/pause, step sync and reduced motion, replacing the map card, live on GitHub Pages — [plan](plans/2026-11-09-landing-hero.md) · [evidence](plans/2026-11-09-landing-hero/evidence/)
+- 2026-11-09 · Landing default: the plain URL shows the landing on every visit, the first-visit flag removed, live on GitHub Pages — [plan](plans/2026-11-09-landing-default.md) · [evidence](plans/2026-11-09-landing-default/evidence/)
+- 2026-11-09 · Dark by default: the site opens in dark mode, saved System switched to Dark once, no light flash, live on GitHub Pages — [plan](plans/2026-11-09-dark-by-default.md) · [evidence](plans/2026-11-09-dark-by-default/evidence/)
+- 2026-11-10 · Atlas speed: city odds split across workers, saved last ranking and an idle start (odds ~1.1 s vs ~3.0 s), 640px photo copies with srcset and hover preload (profiles 178–256 KB vs 700–910 KB), live on GitHub Pages — [plan](plans/2026-11-10-atlas-speed.md) · [evidence](plans/2026-11-10-atlas-speed/evidence/)
+- 2026-11-10 · Your spending on profiles: user-set spending rows marked "your amount"/"your change" on city profiles, named in the note, live on GitHub Pages — [plan](plans/2026-11-10-spending-markers.md) · [evidence](plans/2026-11-10-spending-markers/evidence/)
+- 2026-11-10 · Clickable atlas tiles: Best odds, Your home and Your destination tiles open the city profile from anywhere on the tile, with pick-card hover, live on GitHub Pages — [plan](plans/2026-11-10-clickable-tiles.md) · [evidence](plans/2026-11-10-clickable-tiles/evidence/)
+- 2026-11-10 · Country on city cards: muted country name beside the city on atlas tiles and top-pick cards, and swipe-down to close phone sheets, live on GitHub Pages — [plan](plans/2026-11-10-country-label.md) · [evidence](plans/2026-11-10-country-label/evidence/)
+- 2026-11-10 · Premium scales overrides: typed `$`/`%` spending pinned to the premium when typed and scaled with the slider, with a "scales with premium" note, tip and Method copy, live on GitHub Pages — [plan](plans/2026-11-10-premium-scales.md) · [evidence](plans/2026-11-10-premium-scales/evidence/)
+- 2026-11-10 · Hero tile glow: the Atlas hero tiles' odds-tone glow sits behind the odds figure instead of the top-right corner, live on GitHub Pages — [plan](plans/2026-11-10-hero-tile-glow.md) · [evidence](plans/2026-11-10-hero-tile-glow/evidence/)
+- 2026-11-13 · Pill destination: every verdict pill names its city (destination, else home), a floating pill on phone Outlook and on the Atlas once the hero tiles scroll away, plus landing escape-velocity copy fixes, live on GitHub Pages — [plan](plans/2026-11-13-pill-destination.md) · [evidence](plans/2026-11-13-pill-destination/evidence/)
+- 2026-11-15 · Home-aware getting there: each profile's Getting there worked out from the home city (nonstop, one, two or three stops, estimated hours) from sourced routes for 130 airports, with all 133 local notes rewritten, live on GitHub Pages — [plan](plans/2026-11-15-home-aware-getting-there.md) · [evidence](plans/2026-11-15-home-aware-getting-there/evidence/)
 - 2026-11-15 · Profile fact check: every tax, estate, lending, residency and healthcare claim in the 133 profiles checked against a current page (1,550 claims in a ledger; 122 corrected, 40 scores moved), the tax model brought in line (UK, NL, DE, KR, Zurich and nine US state taxes; a taxed home now taxed), and a city-by-city report in `docs/research/fact-check-2026-11/what-changed.md`, live on GitHub Pages 2026-11-16 — [plan](plans/2026-11-15-profile-fact-check.md) · [evidence](plans/2026-11-15-profile-fact-check/evidence/)
+- 2026-11-16 · Pick reasons: the 27 rank-flagged `why` lines and Nice's summary rewritten to match the fact check, a borrow warning on every lending-2 pick, ranks unchanged, live on GitHub Pages — [plan](plans/2026-11-16-pick-reasons.md) · [evidence](plans/2026-11-16-pick-reasons/evidence/)
