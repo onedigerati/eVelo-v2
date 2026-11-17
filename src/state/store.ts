@@ -10,6 +10,7 @@ import type { CompareEntry } from './retireCompare'
 import { parseHash, resolveRoute, type Route } from './router'
 import { themeFromSaved, withThemeVersion, type ThemePref } from './theme'
 import { decodeInputs, sanitizeInputs } from './share'
+import { parsePersisted, type Persisted } from './persisted'
 
 export type { ThemePref }
 export type Status = 'idle' | 'running' | 'error'
@@ -65,16 +66,9 @@ export interface Baseline {
 
 const LS_KEY = 'evelo:v2'
 
-interface Persisted {
-  inputs?: unknown
-  theme?: unknown
-  themeV?: unknown
-}
-
 function readPersisted(): Persisted {
   try {
-    const raw = window.localStorage.getItem(LS_KEY)
-    return raw ? (JSON.parse(raw) as Persisted) : {}
+    return parsePersisted(window.localStorage.getItem(LS_KEY))
   } catch {
     return {}
   }

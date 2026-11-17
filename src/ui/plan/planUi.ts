@@ -50,10 +50,10 @@ export function useSyncPlanUi() {
     const syms = holdings.map((h) => h.symbol)
     usePlanUi.setState((s) => {
       const slots: Record<string, number> = {}
-      for (const sym of syms) if (s.slots[sym] !== undefined) slots[sym] = s.slots[sym]
+      for (const sym of syms) if (Object.hasOwn(s.slots, sym)) slots[sym] = s.slots[sym]
       const used = new Set(Object.values(slots))
       for (const sym of syms) {
-        if (slots[sym] !== undefined) continue
+        if (Object.hasOwn(slots, sym)) continue
         let k = 0
         while (used.has(k) && k < PALETTE_SLOTS - 1) k++
         slots[sym] = k

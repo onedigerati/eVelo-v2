@@ -109,7 +109,7 @@ export function backfillSeries(
   u: Float64Array = donorUniforms(market),
   pool?: [number, number],
 ): { r: Float64Array; alpha: number; beta: number; first: number } {
-  const a = market.assets[symbol]
+  const a = Object.hasOwn(market.assets, symbol) ? market.assets[symbol] : undefined
   if (!a) throw new Error(`Unknown symbol ${symbol}`)
   const spy = market.assets.SPY
   if (!spy) throw new Error('Market data has no SPY series')
@@ -173,7 +173,7 @@ export function prepare(market: MarketData, holdings: Holding[], outlook: Outloo
   if (!(wsum > 0)) throw new Error('Holding weights must sum to a positive number')
   const weights = Float64Array.from(holdings, (h) => h.weight / wsum)
 
-  for (const sym of symbols) if (!market.assets[sym]) throw new Error(`Unknown symbol ${sym}`)
+  for (const sym of symbols) if (!Object.hasOwn(market.assets, sym)) throw new Error(`Unknown symbol ${sym}`)
   // Shared donor months: the window where every held asset has real data, if long enough.
   const commonFirst = Math.max(...symbols.map((s) => market.assets[s].first))
   const pool: [number, number] | undefined =

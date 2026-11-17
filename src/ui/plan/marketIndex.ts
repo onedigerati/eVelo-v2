@@ -98,7 +98,11 @@ let cached: ReturnType<typeof build> | null = null
 const idx = () => (cached ??= build())
 
 export const allAssets = (): AssetMeta[] => idx().list
-export const assetMeta = (symbol: string): AssetMeta | undefined => idx().bySymbol[symbol]
+/** Own keys only: `bySymbol` is a plain object, so `constructor`/`__proto__`/`toString` would otherwise resolve. */
+export const assetMeta = (symbol: string): AssetMeta | undefined => {
+  const by = idx().bySymbol
+  return Object.hasOwn(by, symbol) ? by[symbol] : undefined
+}
 
 /** Subsequence score: higher when characters are close together and early. -1 if no match. */
 function subseq(q: string, s: string): number {

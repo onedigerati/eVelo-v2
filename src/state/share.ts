@@ -137,10 +137,7 @@ export function sanitizeInputs(raw: unknown): PlanInputs {
     const d = src.destCityId
     base.destCityId = typeof d === 'string' && isCityId(d) ? d : null
   }
-  if (base.destCityId !== null && !isCityId(base.destCityId)) base.destCityId = null
-  if (base.destCityId === base.homeCityId) base.destCityId = null
   // Numbers within the UI's own ranges.
-
   const nums = base as unknown as Record<string, number>
   for (const [k, [lo, hi]] of Object.entries(INPUT_LIMITS)) nums[k] = clamp(nums[k], lo, hi)
   // An existing loan can't reach the portfolio it borrows against (the UI field's own max).
