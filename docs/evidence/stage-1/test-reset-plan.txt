@@ -1,0 +1,15 @@
+$ npx vitest run src/state/__tests__/resetPlan.test.ts --reporter=verbose
+
+ RUN  v5.1.0 /home/jonah/src/repos/eVelo-v2
+
+ ✓ src/state/__tests__/resetPlan.test.ts > resetPlan > clears the stored plan and keeps saved portfolios and other keys 1ms
+ ✓ src/state/__tests__/resetPlan.test.ts > resetPlan > strips a #p= share hash, then reloads 0ms
+ ✓ src/state/__tests__/resetPlan.test.ts > resetPlan > strips a legacy #/?p= and a routed #plan?p= share hash 0ms
+ ✓ src/state/__tests__/resetPlan.test.ts > resetPlan > keeps a plain route hash 0ms
+ ✓ src/state/__tests__/resetPlan.test.ts > resetPlan > still reloads when storage is missing or throws 0ms
+
+ Test Files  1 passed (1)
+      Tests  5 passed (5)
+   Start at  20:04:02
+   Duration  64ms (import 41%, transform 30%, tests 17%, worker 12%)
+

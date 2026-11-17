@@ -10,17 +10,17 @@ A review of the financial calculations (2026-11-16) found the engine's core math
 Stage 1 of 2 · Safe plan loading
 Risk: user input (share links, localStorage), money
 Checks:
-- [ ] A plan with no destination (stay home) survives a save/reload and a share-link round trip as stay home, and its odds match the stay-home run (proof: test)
-- [ ] A link or stored plan with a home or destination id that isn't a known city (`constructor`, `__proto__`, `nowhere`) loads: an unknown home falls back to the default home, an unknown destination to stay home (proof: test)
-- [ ] The engine is never run with a home it can't resolve while the page names a destination (proof: test)
-- [ ] If a screen still throws while drawing, the app shows a recovery message with a "Reset plan" button instead of a blank page, and the reset clears the stored plan (proof: test for the reset; screenshot, a test can't show the blank-page case in a browser)
-- [ ] Opening a crafted `#p=…` link with `constructor` as a city in the running app shows the app, not a blank page, and a reload still works (proof: run the product, the crash only happens in a browser render)
+- [x] A plan with no destination (stay home) survives a save/reload and a share-link round trip as stay home, and its odds match the stay-home run (proof: test)
+- [x] A link or stored plan with a home or destination id that isn't a known city (`constructor`, `__proto__`, `nowhere`) loads: an unknown home falls back to the default home, an unknown destination to stay home (proof: test)
+- [x] The engine is never run with a home it can't resolve while the page names a destination (proof: test)
+- [x] If a screen still throws while drawing, the app shows a recovery message with a "Reset plan" button instead of a blank page, and the reset clears the stored plan (proof: test for the reset; screenshot, a test can't show the blank-page case in a browser)
+- [x] Opening a crafted `#p=…` link with `constructor` as a city in the running app shows the app, not a blank page, and a reload still works (proof: run the product, the crash only happens in a browser render)
 Open: none
 Agents: wide — confirmed 2026-11-16 19:28
-Mode: paused — stage 1 risk names money and user input, waiting for approval
+Mode: autopilot — unattended
 
 ## Stages
-- [ ] 1. Safe plan loading — stay home survives reload and links; city ids checked at the boundary; an error boundary with reset
+- [x] 1. Safe plan loading — stay home survives reload and links; city ids checked at the boundary; an error boundary with reset — [evidence](evidence/stage-1/report.md)
 - [ ] 2. Honest growth — "Exp. return" shows compounded growth (warning uses it); currency walk centred on the typical future, Method copy updated; dividend drag default 0.4%
 
 ## Decisions
@@ -34,6 +34,11 @@ Mode: paused — stage 1 risk names money and user input, waiting for approval
 - 2026-11-16 · Scale: 2 stages, one release — no scale signal fired, planned as one plan.
 - 2026-11-16 · No research: the review's reproductions settle the numbers, and nothing outside the repo changes this plan.
 - 2026-11-16 · Autopilot, Agents: wide — user: "plan it then autopilot wide".
+- 2026-11-16 · Autopilot unattended, Agents: wide — user: "JBit autopilot wide".
+- 2026-11-16 · Playwright (headless Chromium) and Lighthouse become dev dependencies with `npm run e2e` / `npm run lighthouse`, listed in CLAUDE.md: the copies earlier verifications used were gone from this machine — user: "Yes go ahead and do it now." The user installed Chromium's system libraries (`playwright install-deps`).
+- 2026-11-16 · User approved stage 1 (user input, money) under autopilot ("go").
+- 2026-11-16 · User approved stage 1 (user input, money) under autopilot again for the review fixes ("go").
+- 2026-11-16 · (unattended) Stage 1 review fixes taken beyond the city ids: holdings symbols checked as own keys (`assetMeta`, the engine's `market.assets` lookups, plan-rail slots), a stored plan that isn't an object is ignored, and Reset keeps the theme — the same prototype-key hole and two crash/UX gaps the reviewers reproduced; all within the stage's goal.
 
 ## Open questions
 - From the 2026-11-16 review: the engine reads NaN inputs (loanRate, dividendTaxDrag, expatFactor, maxLtv) as a clean plan; `sanitizeInputs` blocks them, so only direct engine callers are exposed — guard in `kernelConfig`, later.

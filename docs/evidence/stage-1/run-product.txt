@@ -1,0 +1,152 @@
+$ node docs/evidence/stage-1/verify.mjs   (after npm run build; serves dist via scripts/serve-preview.mjs)
+== Check 5: crafted #p= links, desktop 1440 and phone 390, dark ==
+[desktop] dest-constructor payload {"destCityId":"constructor"}
+   load:   {"rootLen":99108,"recover":false,"place":"03 Where you live Home city US St. Louis USA · USD Your budget is priced here. Retire to Stay home Remain in St. Louis","odds":"40%","stored":{"home":"st-louis","dest":null},"hash":"#plan"}
+   reload: {"rootLen":98597,"recover":false,"place":"03 Where you live Home city US St. Louis USA · USD Your budget is priced here. Retire to Stay home Remain in St. Louis","odds":"40%","stored":{"home":"st-louis","dest":null},"hash":"#plan"}
+ok   [desktop] dest-constructor load: app drawn (root 99108 chars, no recovery screen)
+ok   [desktop] dest-constructor load: plan home=st-louis dest=null (want st-louis / null)
+ok   [desktop] dest-constructor load: "Where you live" reads /Stay home/ with home St. Louis, no Bangkok
+ok   [desktop] dest-constructor reload: app drawn (root 98597 chars, no recovery screen)
+ok   [desktop] dest-constructor reload: plan home=st-louis dest=null (want st-louis / null)
+ok   [desktop] dest-constructor reload: "Where you live" reads /Stay home/ with home St. Louis, no Bangkok
+ok   [desktop] dest-constructor: no page errors
+[desktop] home-constructor payload {"homeCityId":"constructor","destCityId":"lisbon"}
+   load:   {"rootLen":112872,"recover":false,"place":"03 Where you live Home city US St. Louis USA · USD Your budget is priced here. Retire to PT Lisbon Portugal · EUR Move Now Now Now 10y 20y 29y Expat price premi","odds":"40%","stored":{"home":"st-louis","dest":"lisbon"},"hash":"#plan"}
+   reload: {"rootLen":112872,"recover":false,"place":"03 Where you live Home city US St. Louis USA · USD Your budget is priced here. Retire to PT Lisbon Portugal · EUR Move Now Now Now 10y 20y 29y Expat price premi","odds":"40%","stored":{"home":"st-louis","dest":"lisbon"},"hash":"#plan"}
+ok   [desktop] home-constructor load: app drawn (root 112872 chars, no recovery screen)
+ok   [desktop] home-constructor load: plan home=st-louis dest=lisbon (want st-louis / lisbon)
+ok   [desktop] home-constructor load: "Where you live" reads /Lisbon/ with home St. Louis
+ok   [desktop] home-constructor reload: app drawn (root 112872 chars, no recovery screen)
+ok   [desktop] home-constructor reload: plan home=st-louis dest=lisbon (want st-louis / lisbon)
+ok   [desktop] home-constructor reload: "Where you live" reads /Lisbon/ with home St. Louis
+ok   [desktop] home-constructor: no page errors
+[desktop] dest-proto payload {"destCityId":"__proto__"}
+   load:   {"rootLen":99108,"recover":false,"place":"03 Where you live Home city US St. Louis USA · USD Your budget is priced here. Retire to Stay home Remain in St. Louis","odds":"40%","stored":{"home":"st-louis","dest":null},"hash":"#plan"}
+   reload: {"rootLen":98597,"recover":false,"place":"03 Where you live Home city US St. Louis USA · USD Your budget is priced here. Retire to Stay home Remain in St. Louis","odds":"40%","stored":{"home":"st-louis","dest":null},"hash":"#plan"}
+ok   [desktop] dest-proto load: app drawn (root 99108 chars, no recovery screen)
+ok   [desktop] dest-proto load: plan home=st-louis dest=null (want st-louis / null)
+ok   [desktop] dest-proto load: "Where you live" reads /Stay home/ with home St. Louis, no Bangkok
+ok   [desktop] dest-proto reload: app drawn (root 98597 chars, no recovery screen)
+ok   [desktop] dest-proto reload: plan home=st-louis dest=null (want st-louis / null)
+ok   [desktop] dest-proto reload: "Where you live" reads /Stay home/ with home St. Louis, no Bangkok
+ok   [desktop] dest-proto: no page errors
+[desktop] home-proto payload {"homeCityId":"__proto__"}
+   load:   {"rootLen":112949,"recover":false,"place":"03 Where you live Home city US St. Louis USA · USD Your budget is priced here. Retire to TH Bangkok Thailand · THB Move Now Now Now 10y 20y 29y Expat price prem","odds":"40%","stored":{"home":"st-louis","dest":"bangkok"},"hash":"#plan"}
+   reload: {"rootLen":112949,"recover":false,"place":"03 Where you live Home city US St. Louis USA · USD Your budget is priced here. Retire to TH Bangkok Thailand · THB Move Now Now Now 10y 20y 29y Expat price prem","odds":"40%","stored":{"home":"st-louis","dest":"bangkok"},"hash":"#plan"}
+ok   [desktop] home-proto load: app drawn (root 112949 chars, no recovery screen)
+ok   [desktop] home-proto load: plan home=st-louis dest=bangkok (want st-louis / bangkok)
+ok   [desktop] home-proto load: "Where you live" reads /Bangkok/ with home St. Louis
+ok   [desktop] home-proto reload: app drawn (root 112949 chars, no recovery screen)
+ok   [desktop] home-proto reload: plan home=st-louis dest=bangkok (want st-louis / bangkok)
+ok   [desktop] home-proto reload: "Where you live" reads /Bangkok/ with home St. Louis
+ok   [desktop] home-proto: no page errors
+[desktop] dest-nowhere payload {"destCityId":"nowhere"}
+   load:   {"rootLen":99108,"recover":false,"place":"03 Where you live Home city US St. Louis USA · USD Your budget is priced here. Retire to Stay home Remain in St. Louis","odds":"40%","stored":{"home":"st-louis","dest":null},"hash":"#plan"}
+   reload: {"rootLen":98597,"recover":false,"place":"03 Where you live Home city US St. Louis USA · USD Your budget is priced here. Retire to Stay home Remain in St. Louis","odds":"40%","stored":{"home":"st-louis","dest":null},"hash":"#plan"}
+ok   [desktop] dest-nowhere load: app drawn (root 99108 chars, no recovery screen)
+ok   [desktop] dest-nowhere load: plan home=st-louis dest=null (want st-louis / null)
+ok   [desktop] dest-nowhere load: "Where you live" reads /Stay home/ with home St. Louis, no Bangkok
+ok   [desktop] dest-nowhere reload: app drawn (root 98597 chars, no recovery screen)
+ok   [desktop] dest-nowhere reload: plan home=st-louis dest=null (want st-louis / null)
+ok   [desktop] dest-nowhere reload: "Where you live" reads /Stay home/ with home St. Louis, no Bangkok
+ok   [desktop] dest-nowhere: no page errors
+[desktop] home-nowhere payload {"homeCityId":"nowhere","destCityId":"nowhere"}
+   load:   {"rootLen":99108,"recover":false,"place":"03 Where you live Home city US St. Louis USA · USD Your budget is priced here. Retire to Stay home Remain in St. Louis","odds":"40%","stored":{"home":"st-louis","dest":null},"hash":"#plan"}
+   reload: {"rootLen":98597,"recover":false,"place":"03 Where you live Home city US St. Louis USA · USD Your budget is priced here. Retire to Stay home Remain in St. Louis","odds":"40%","stored":{"home":"st-louis","dest":null},"hash":"#plan"}
+ok   [desktop] home-nowhere load: app drawn (root 99108 chars, no recovery screen)
+ok   [desktop] home-nowhere load: plan home=st-louis dest=null (want st-louis / null)
+ok   [desktop] home-nowhere load: "Where you live" reads /Stay home/ with home St. Louis, no Bangkok
+ok   [desktop] home-nowhere reload: app drawn (root 98597 chars, no recovery screen)
+ok   [desktop] home-nowhere reload: plan home=st-louis dest=null (want st-louis / null)
+ok   [desktop] home-nowhere reload: "Where you live" reads /Stay home/ with home St. Louis, no Bangkok
+ok   [desktop] home-nowhere: no page errors
+[desktop] stay-home payload {"destCityId":null}
+   load:   {"rootLen":99108,"recover":false,"place":"03 Where you live Home city US St. Louis USA · USD Your budget is priced here. Retire to Stay home Remain in St. Louis","odds":"40%","stored":{"home":"st-louis","dest":null},"hash":"#plan"}
+   reload: {"rootLen":98597,"recover":false,"place":"03 Where you live Home city US St. Louis USA · USD Your budget is priced here. Retire to Stay home Remain in St. Louis","odds":"40%","stored":{"home":"st-louis","dest":null},"hash":"#plan"}
+ok   [desktop] stay-home load: app drawn (root 99108 chars, no recovery screen)
+ok   [desktop] stay-home load: plan home=st-louis dest=null (want st-louis / null)
+ok   [desktop] stay-home load: "Where you live" reads /Stay home/ with home St. Louis, no Bangkok
+ok   [desktop] stay-home reload: app drawn (root 98597 chars, no recovery screen)
+ok   [desktop] stay-home reload: plan home=st-louis dest=null (want st-louis / null)
+ok   [desktop] stay-home reload: "Where you live" reads /Stay home/ with home St. Louis, no Bangkok
+ok   [desktop] stay-home: no page errors
+[phone] dest-constructor payload {"destCityId":"constructor"}
+   load:   {"rootLen":55321,"recover":false,"place":"03 Where you live Home city US St. Louis USA · USD Your budget is priced here. Retire to Stay home Remain in St. Louis","odds":"64%","stored":{"home":"st-louis","dest":null},"hash":"#plan"}
+   reload: {"rootLen":54810,"recover":false,"place":"03 Where you live Home city US St. Louis USA · USD Your budget is priced here. Retire to Stay home Remain in St. Louis","odds":"64%","stored":{"home":"st-louis","dest":null},"hash":"#plan"}
+ok   [phone] dest-constructor load: app drawn (root 55321 chars, no recovery screen)
+ok   [phone] dest-constructor load: plan home=st-louis dest=null (want st-louis / null)
+ok   [phone] dest-constructor reload: app drawn (root 54810 chars, no recovery screen)
+ok   [phone] dest-constructor reload: plan home=st-louis dest=null (want st-louis / null)
+ok   [phone] dest-constructor: no page errors
+[phone] home-constructor payload {"homeCityId":"constructor","destCityId":"lisbon"}
+   load:   {"rootLen":63743,"recover":false,"place":"03 Where you live Home city US St. Louis USA · USD Your budget is priced here. Retire to PT Lisbon Portugal · EUR Move Now Now Now 10y 20y 29y Expat price premi","odds":"69%","stored":{"home":"st-louis","dest":"lisbon"},"hash":"#plan"}
+   reload: {"rootLen":63743,"recover":false,"place":"03 Where you live Home city US St. Louis USA · USD Your budget is priced here. Retire to PT Lisbon Portugal · EUR Move Now Now Now 10y 20y 29y Expat price premi","odds":"69%","stored":{"home":"st-louis","dest":"lisbon"},"hash":"#plan"}
+ok   [phone] home-constructor load: app drawn (root 63743 chars, no recovery screen)
+ok   [phone] home-constructor load: plan home=st-louis dest=lisbon (want st-louis / lisbon)
+ok   [phone] home-constructor reload: app drawn (root 63743 chars, no recovery screen)
+ok   [phone] home-constructor reload: plan home=st-louis dest=lisbon (want st-louis / lisbon)
+ok   [phone] home-constructor: no page errors
+[phone] dest-proto payload {"destCityId":"__proto__"}
+   load:   {"rootLen":55319,"recover":false,"place":"03 Where you live Home city US St. Louis USA · USD Your budget is priced here. Retire to Stay home Remain in St. Louis","odds":"64%","stored":{"home":"st-louis","dest":null},"hash":"#plan"}
+   reload: {"rootLen":54810,"recover":false,"place":"03 Where you live Home city US St. Louis USA · USD Your budget is priced here. Retire to Stay home Remain in St. Louis","odds":"64%","stored":{"home":"st-louis","dest":null},"hash":"#plan"}
+ok   [phone] dest-proto load: app drawn (root 55319 chars, no recovery screen)
+ok   [phone] dest-proto load: plan home=st-louis dest=null (want st-louis / null)
+ok   [phone] dest-proto reload: app drawn (root 54810 chars, no recovery screen)
+ok   [phone] dest-proto reload: plan home=st-louis dest=null (want st-louis / null)
+ok   [phone] dest-proto: no page errors
+[phone] home-proto payload {"homeCityId":"__proto__"}
+   load:   {"rootLen":63782,"recover":false,"place":"03 Where you live Home city US St. Louis USA · USD Your budget is priced here. Retire to TH Bangkok Thailand · THB Move Now Now Now 10y 20y 29y Expat price prem","odds":"80%","stored":{"home":"st-louis","dest":"bangkok"},"hash":"#plan"}
+   reload: {"rootLen":63782,"recover":false,"place":"03 Where you live Home city US St. Louis USA · USD Your budget is priced here. Retire to TH Bangkok Thailand · THB Move Now Now Now 10y 20y 29y Expat price prem","odds":"80%","stored":{"home":"st-louis","dest":"bangkok"},"hash":"#plan"}
+ok   [phone] home-proto load: app drawn (root 63782 chars, no recovery screen)
+ok   [phone] home-proto load: plan home=st-louis dest=bangkok (want st-louis / bangkok)
+ok   [phone] home-proto reload: app drawn (root 63782 chars, no recovery screen)
+ok   [phone] home-proto reload: plan home=st-louis dest=bangkok (want st-louis / bangkok)
+ok   [phone] home-proto: no page errors
+[phone] dest-nowhere payload {"destCityId":"nowhere"}
+   load:   {"rootLen":54810,"recover":false,"place":"03 Where you live Home city US St. Louis USA · USD Your budget is priced here. Retire to Stay home Remain in St. Louis","odds":"64%","stored":{"home":"st-louis","dest":null},"hash":"#plan"}
+   reload: {"rootLen":54810,"recover":false,"place":"03 Where you live Home city US St. Louis USA · USD Your budget is priced here. Retire to Stay home Remain in St. Louis","odds":"64%","stored":{"home":"st-louis","dest":null},"hash":"#plan"}
+ok   [phone] dest-nowhere load: app drawn (root 54810 chars, no recovery screen)
+ok   [phone] dest-nowhere load: plan home=st-louis dest=null (want st-louis / null)
+ok   [phone] dest-nowhere reload: app drawn (root 54810 chars, no recovery screen)
+ok   [phone] dest-nowhere reload: plan home=st-louis dest=null (want st-louis / null)
+ok   [phone] dest-nowhere: no page errors
+[phone] home-nowhere payload {"homeCityId":"nowhere","destCityId":"nowhere"}
+   load:   {"rootLen":55321,"recover":false,"place":"03 Where you live Home city US St. Louis USA · USD Your budget is priced here. Retire to Stay home Remain in St. Louis","odds":"64%","stored":{"home":"st-louis","dest":null},"hash":"#plan"}
+   reload: {"rootLen":54810,"recover":false,"place":"03 Where you live Home city US St. Louis USA · USD Your budget is priced here. Retire to Stay home Remain in St. Louis","odds":"64%","stored":{"home":"st-louis","dest":null},"hash":"#plan"}
+ok   [phone] home-nowhere load: app drawn (root 55321 chars, no recovery screen)
+ok   [phone] home-nowhere load: plan home=st-louis dest=null (want st-louis / null)
+ok   [phone] home-nowhere reload: app drawn (root 54810 chars, no recovery screen)
+ok   [phone] home-nowhere reload: plan home=st-louis dest=null (want st-louis / null)
+ok   [phone] home-nowhere: no page errors
+[phone] stay-home payload {"destCityId":null}
+   load:   {"rootLen":55321,"recover":false,"place":"03 Where you live Home city US St. Louis USA · USD Your budget is priced here. Retire to Stay home Remain in St. Louis","odds":"64%","stored":{"home":"st-louis","dest":null},"hash":"#plan"}
+   reload: {"rootLen":54810,"recover":false,"place":"03 Where you live Home city US St. Louis USA · USD Your budget is priced here. Retire to Stay home Remain in St. Louis","odds":"64%","stored":{"home":"st-louis","dest":null},"hash":"#plan"}
+ok   [phone] stay-home load: app drawn (root 55321 chars, no recovery screen)
+ok   [phone] stay-home load: plan home=st-louis dest=null (want st-louis / null)
+ok   [phone] stay-home reload: app drawn (root 54810 chars, no recovery screen)
+ok   [phone] stay-home reload: plan home=st-louis dest=null (want st-louis / null)
+ok   [phone] stay-home: no page errors
+
+== Check 4: forced render error (harness only), Reset plan ==
+[desktop] before reset: {"recoverText":"Something went wrong drawing this plan.\n\nResetting the plan brings back the defaults; your saved portfolios are kept.\n\nReset plan","stored":"{\"inputs\":{\"holdings\":[{\"symbol\":\"VTI\",\"weight\":0.5},{\"symbol\":\"QQQ\",\"weight\":0.2},{\"symbol\":\"SCHD\",\"weight\":0.15},{\"symbol\":\"BND\",\"weight\":0.1},{\"symbol\":\"GLD\",\"weight\":0.05}],\"portfolio\":3000000,\"basisFraction\":0.4,\"age\":55,\"horizonYears\":30,\"budget\":{\"housing\":26000,\"groceries\":11000,\"dining\":8000,\"transport\":10000,\"utilities\":5500,\"healthcare\":16000,\"travel\":14000,\"other\":19500},\"homeCityId\":\"st-louis\",\"destCityId\":null,\"moveInYears\":0,\"retireInYears\":0,\"savingsWhileWorking\":0,\"expatFactor\":0.35,\"otherIncome\":40000,\"incomeStartAge\":67,\"existingLoan\":0,\"loanRate\":0.06,\"maxLtv\":0.6,\"targetLtvAfterCall\":0.45,\"capGainsRate\":0.238,\"dividendTaxDrag\":0.0025,\"method\":\"bootstrap\",\"outlook\":\"balanced\",\"blockMonths\":24,\"paths\":4000,\"seed\":7},\"theme\":\"dark\",\"themeV\":2}","portfolios":"[{\"name\":\"harness-kept\",\"holdings\":[]}]","hash":"#plan?p=eyJ2IjoxLCJkIjp7ImRlc3"}
+ok   [desktop] recovery screen with "Reset plan" shown instead of a blank page
+ok   [desktop] the forced error reached the console (so the boundary caught a real throw)
+[desktop] after reset: {"url":"/","recover":false,"rootLen":37699,"stored":"{\"theme\":\"dark\",\"themeV\":2}","portfolios":"[{\"name\":\"harness-kept\",\"holdings\":[]}]"}
+ok   [desktop] app is back after reset (no recovery screen)
+ok   [desktop] share hash stripped (url /)
+ok   [desktop] stored plan cleared, theme kept (evelo:v2 before: present, after: {"theme":"dark","themeV":2})
+ok   [desktop] saved portfolios kept
+[desktop] #plan after reset: {"rootLen":112888,"recover":false,"place":"03 Where you live Home city US St. Louis USA · USD Your budget is priced here. Retire to TH Bangkok Thailand · THB Move Now Now Now 10y 20y 29y Expat price prem","odds":"40%","stored":null,"hash":"#plan"}
+ok   [desktop] #plan draws after reset with the default plan (stored null, place: 03 Where you live Home city US St. Louis USA · USD Your budget is priced here. Retire to TH Bangkok Thailand · THB Move Now Now Now 10y 20y 29y Expat price prem)
+[phone] before reset: {"recoverText":"Something went wrong drawing this plan.\n\nResetting the plan brings back the defaults; your saved portfolios are kept.\n\nReset plan","stored":"{\"inputs\":{\"holdings\":[{\"symbol\":\"VTI\",\"weight\":0.5},{\"symbol\":\"QQQ\",\"weight\":0.2},{\"symbol\":\"SCHD\",\"weight\":0.15},{\"symbol\":\"BND\",\"weight\":0.1},{\"symbol\":\"GLD\",\"weight\":0.05}],\"portfolio\":3000000,\"basisFraction\":0.4,\"age\":55,\"horizonYears\":30,\"budget\":{\"housing\":26000,\"groceries\":11000,\"dining\":8000,\"transport\":10000,\"utilities\":5500,\"healthcare\":16000,\"travel\":14000,\"other\":19500},\"homeCityId\":\"st-louis\",\"destCityId\":null,\"moveInYears\":0,\"retireInYears\":0,\"savingsWhileWorking\":0,\"expatFactor\":0.35,\"otherIncome\":40000,\"incomeStartAge\":67,\"existingLoan\":0,\"loanRate\":0.06,\"maxLtv\":0.6,\"targetLtvAfterCall\":0.45,\"capGainsRate\":0.238,\"dividendTaxDrag\":0.0025,\"method\":\"bootstrap\",\"outlook\":\"balanced\",\"blockMonths\":24,\"paths\":4000,\"seed\":7},\"theme\":\"dark\",\"themeV\":2}","portfolios":"[{\"name\":\"harness-kept\",\"holdings\":[]}]","hash":"#plan?p=eyJ2IjoxLCJkIjp7ImRlc3"}
+ok   [phone] recovery screen with "Reset plan" shown instead of a blank page
+ok   [phone] the forced error reached the console (so the boundary caught a real throw)
+[phone] after reset: {"url":"/","recover":false,"rootLen":37639,"stored":"{\"theme\":\"dark\",\"themeV\":2}","portfolios":"[{\"name\":\"harness-kept\",\"holdings\":[]}]"}
+ok   [phone] app is back after reset (no recovery screen)
+ok   [phone] share hash stripped (url /)
+ok   [phone] stored plan cleared, theme kept (evelo:v2 before: present, after: {"theme":"dark","themeV":2})
+ok   [phone] saved portfolios kept
+[phone] #plan after reset: {"rootLen":63802,"recover":false,"place":"03 Where you live Home city US St. Louis USA · USD Your budget is priced here. Retire to TH Bangkok Thailand · THB Move Now Now Now 10y 20y 29y Expat price prem","odds":"80%","stored":null,"hash":"#plan"}
+ok   [phone] #plan draws after reset with the default plan (stored null, place: 03 Where you live Home city US St. Louis USA · USD Your budget is priced here. Retire to TH Bangkok Thailand · THB Move Now Now Now 10y 20y 29y Expat price prem)
+
+all browser checks passed

@@ -1,0 +1,24 @@
+$ npx vitest run src/state/__tests__/shareCities.test.ts --reporter=verbose
+
+ RUN  v5.1.0 /home/jonah/src/repos/eVelo-v2
+
+ ✓ src/state/__tests__/shareCities.test.ts > stay home survives save/reload and share links > keeps destCityId null through localStorage and a share link 3ms
+ ✓ src/state/__tests__/shareCities.test.ts > stay home survives save/reload and share links > decoded stay-home plans get the stay-home odds, not the default destination 102ms
+ ✓ src/state/__tests__/shareCities.test.ts > stay home survives save/reload and share links > keeps a known destination and a known home 1ms
+ ✓ src/state/__tests__/shareCities.test.ts > stay home survives save/reload and share links > a destination equal to home means stay home 0ms
+ ✓ src/state/__tests__/shareCities.test.ts > hostile or unknown city ids > home "constructor" -> default home; destination "constructor" -> stay home 0ms
+ ✓ src/state/__tests__/shareCities.test.ts > hostile or unknown city ids > home "__proto__" -> default home; destination "__proto__" -> stay home 0ms
+ ✓ src/state/__tests__/shareCities.test.ts > hostile or unknown city ids > home "toString" -> default home; destination "toString" -> stay home 0ms
+ ✓ src/state/__tests__/shareCities.test.ts > hostile or unknown city ids > home "nowhere" -> default home; destination "nowhere" -> stay home 0ms
+ ✓ src/state/__tests__/shareCities.test.ts > hostile or unknown city ids > home "hasOwnProperty" -> default home; destination "hasOwnProperty" -> stay home 0ms
+ ✓ src/state/__tests__/shareCities.test.ts > hostile or unknown city ids > home "valueOf" -> default home; destination "valueOf" -> stay home 1ms
+ ✓ src/state/__tests__/shareCities.test.ts > hostile or unknown city ids > home "" -> default home; destination "" -> stay home 0ms
+ ✓ src/state/__tests__/shareCities.test.ts > hostile or unknown city ids > home "BANGKOK" -> default home; destination "BANGKOK" -> stay home 0ms
+ ✓ src/state/__tests__/shareCities.test.ts > hostile or unknown city ids > after sanitizing, home is always a known city and the destination is null or a known city 56ms
+ ✓ src/state/__tests__/shareCities.test.ts > hostile or unknown city ids > a hostile plan simulates without throwing 20ms
+
+ Test Files  1 passed (1)
+      Tests  14 passed (14)
+   Start at  20:04:01
+   Duration  293ms (tests 77%, import 13%, transform 9%, worker 1%)
+

@@ -1,0 +1,58 @@
+$ (worktree at 67c79d0, before stage 1, with the new shareCities.test.ts copied in) npx vitest run src/state/__tests__/shareCities.test.ts
+     × keeps destCityId null through localStorage and a share link 4ms
+     × decoded stay-home plans get the stay-home odds, not the default destination 65ms
+     × home "constructor" -> default home; destination "constructor" -> stay home 1ms
+     × home "__proto__" -> default home; destination "__proto__" -> stay home 0ms
+     × home "toString" -> default home; destination "toString" -> stay home 0ms
+     × home "nowhere" -> default home; destination "nowhere" -> stay home 0ms
+     × home "hasOwnProperty" -> default home; destination "hasOwnProperty" -> stay home 0ms
+     × home "valueOf" -> default home; destination "valueOf" -> stay home 0ms
+     × home "" -> default home; destination "" -> stay home 0ms
+     × home "BANGKOK" -> default home; destination "BANGKOK" -> stay home 0ms
+     × after sanitizing, home is always a known city and the destination is null or a known city 0ms
+⎯⎯⎯⎯⎯⎯ Failed Tests 11 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/state/__tests__/shareCities.test.ts > stay home survives save/reload and share links > keeps destCityId null through localStorage and a share link
+AssertionError: expected 'bangkok' to be null
+- Expected:
++ Received:
+ FAIL  src/state/__tests__/shareCities.test.ts > stay home survives save/reload and share links > decoded stay-home plans get the stay-home odds, not the default destination
+AssertionError: expected 0.783 to be 0.615 // Object.is equality
+- Expected
++ Received
+ FAIL  src/state/__tests__/shareCities.test.ts > hostile or unknown city ids > home "constructor" -> default home; destination "constructor" -> stay home
+AssertionError: expected 'constructor' to be 'st-louis' // Object.is equality
+Expected: "st-louis"
+Received: "constructor"
+ FAIL  src/state/__tests__/shareCities.test.ts > hostile or unknown city ids > home "__proto__" -> default home; destination "__proto__" -> stay home
+AssertionError: expected '__proto__' to be 'st-louis' // Object.is equality
+Expected: "st-louis"
+Received: "__proto__"
+ FAIL  src/state/__tests__/shareCities.test.ts > hostile or unknown city ids > home "toString" -> default home; destination "toString" -> stay home
+AssertionError: expected 'toString' to be 'st-louis' // Object.is equality
+Expected: "st-louis"
+Received: "toString"
+ FAIL  src/state/__tests__/shareCities.test.ts > hostile or unknown city ids > home "nowhere" -> default home; destination "nowhere" -> stay home
+AssertionError: expected 'nowhere' to be 'st-louis' // Object.is equality
+Expected: "st-louis"
+Received: "nowhere"
+ FAIL  src/state/__tests__/shareCities.test.ts > hostile or unknown city ids > home "hasOwnProperty" -> default home; destination "hasOwnProperty" -> stay home
+AssertionError: expected 'hasOwnProperty' to be 'st-louis' // Object.is equality
+Expected: "st-louis"
+Received: "hasOwnProperty"
+ FAIL  src/state/__tests__/shareCities.test.ts > hostile or unknown city ids > home "valueOf" -> default home; destination "valueOf" -> stay home
+AssertionError: expected 'valueOf' to be 'st-louis' // Object.is equality
+Expected: "st-louis"
+Received: "valueOf"
+ FAIL  src/state/__tests__/shareCities.test.ts > hostile or unknown city ids > home "" -> default home; destination "" -> stay home
+AssertionError: expected '' to be 'st-louis' // Object.is equality
+- Expected
++ Received
+ FAIL  src/state/__tests__/shareCities.test.ts > hostile or unknown city ids > home "BANGKOK" -> default home; destination "BANGKOK" -> stay home
+AssertionError: expected 'BANGKOK' to be 'st-louis' // Object.is equality
+Expected: "st-louis"
+Received: "BANGKOK"
+ FAIL  src/state/__tests__/shareCities.test.ts > hostile or unknown city ids > after sanitizing, home is always a known city and the destination is null or a known city
+AssertionError: expected false to be true // Object.is equality
+- Expected
++ Received
+      Tests  11 failed | 3 passed (14)

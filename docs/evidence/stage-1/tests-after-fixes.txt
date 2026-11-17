@@ -1,0 +1,9 @@
+
+ RUN  v5.1.0 /home/jonah/src/repos/eVelo-v2
+
+
+ Test Files  71 passed (71)
+      Tests  1139 passed (1139)
+   Start at  20:13:17
+   Duration  5.34s (transform 55%, tests 31%, import 13%)
+
