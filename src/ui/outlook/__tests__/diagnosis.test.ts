@@ -29,9 +29,19 @@ function fake(loanRate: number, opts: { successRate?: number; stats?: Partial<ty
 describe('diagnosis', () => {
   it('warns when the loan rate sits between the average return and compounded growth', () => {
     const why = diagnosis(fake(0.092))
-    expect(why).toMatch(/^The loan costs 9\.2% a year but this portfolio is expected to grow about 8\.7% a year compounded:/)
+    expect(why).toMatch(/^The loan costs 9\.2% a year but this portfolio typically grows only about 8\.7% a year compounded:/)
     expect(why).toContain('the debt compounds faster than the assets')
     expect(why).not.toContain('9.7%')
+  })
+
+  it('compares the effective annual loan cost (APR compounded monthly), quoting the APR', () => {
+    // 12% APR costs 12.68% a year: above 12.4% growth although the APR is below it.
+    const why = diagnosis(fake(0.12, { stats: { cagrMedian: 0.124 } }))
+    expect(why).toMatch(/^The loan costs 12% a year but this portfolio typically grows only about 12\.4% a year compounded:/)
+  })
+
+  it('gives no loan sentence when the effective loan cost is just below growth', () => {
+    expect(diagnosis(fake(0.12, { stats: { cagrMedian: 0.127, cagrMedianReal: 0.1 } }))).toBeNull()
   })
 
   it('gives no loan sentence when the loan rate is below both', () => {
