@@ -1,0 +1,22 @@
+$ npx vitest run --reporter=verbose src/ui/outlook/__tests__/diagnosis.test.ts src/engine/__tests__/fxWalk.test.ts src/state/__tests__/dividendDrag.test.ts
+
+ RUN  v5.1.0 /home/jonah/src/repos/eVelo-v2
+
+ ✓ src/state/__tests__/dividendDrag.test.ts > dividend tax drag default > is 0.40% and the Method page reads it 101ms
+ ✓ src/state/__tests__/dividendDrag.test.ts > dividend tax drag default > a stored plan with 0.25% keeps 0.25% 1ms
+ ✓ src/state/__tests__/dividendDrag.test.ts > dividend tax drag default > a link carrying 0.25% explicitly keeps 0.25% 0ms
+ ✓ src/state/__tests__/dividendDrag.test.ts > dividend tax drag default > a plan at 0.25% encodes the value, so its link round-trips 0ms
+ ✓ src/state/__tests__/dividendDrag.test.ts > dividend tax drag default > a link that omits the drag gets the new default 0ms
+ ✓ src/ui/outlook/__tests__/diagnosis.test.ts > diagnosis > warns when the loan rate sits between the average return and compounded growth 1ms
+ ✓ src/ui/outlook/__tests__/diagnosis.test.ts > diagnosis > gives no loan sentence when the loan rate is below both 0ms
+ ✓ src/ui/outlook/__tests__/diagnosis.test.ts > diagnosis > stays silent for a plan that mostly holds 0ms
+ ✓ src/ui/outlook/__tests__/diagnosis.test.ts > diagnosis > uses real compounded growth, not the real average, for the low-growth sentence 0ms
+ ✓ src/engine/__tests__/fxWalk.test.ts > FX walk > keeps the median factor at 1 at every horizon while the mean rises 68ms
+ ✓ src/engine/__tests__/fxWalk.test.ts > FX walk > raising a destination’s FX volatility never raises the odds 577ms
+
+ Test Files  3 passed (3)
+      Tests  11 passed (11)
+   Start at  20:26:04
+   Duration  763ms (tests 76%, import 15%, transform 9%, worker 1%)
+
+exit 0

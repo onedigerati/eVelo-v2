@@ -10,18 +10,18 @@ A review of the financial calculations (2026-11-16) found the engine's core math
 Stage 2 of 2 · Honest growth
 Risk: money
 Checks:
-- [ ] The "loan costs more than the portfolio earns" diagnosis compares the loan rate with the portfolio's compounded (median CAGR, nominal) growth, not its average return: a plan whose average return beats the loan rate but whose compounded growth doesn't gets the warning (proof: test)
-- [ ] The Outlook's "Exp. return" figure is labelled as the average year, beside the Median CAGR it compounds to (proof: screenshot, a test can't judge the wording in place)
-- [ ] The real-FX walk has zero log drift: across paths the median currency factor stays at 1 for every horizon, and raising a city's FX volatility never raises its odds (same seed, 4,000 paths: Buenos Aires, Lisbon, Bangkok) (proof: test)
-- [ ] The Method page's currency paragraph says the typical future keeps today's rate and that more currency swing costs odds (proof: test on the rendered copy or screenshot, the copy is the claim)
-- [ ] The default dividend tax drag is 0.40%; a saved plan or link that carries its own value keeps it, and the Method page shows the new default (proof: test)
+- [x] The "loan costs more than the portfolio earns" diagnosis compares the loan rate with the portfolio's compounded (median CAGR, nominal) growth, not its average return: a plan whose average return beats the loan rate but whose compounded growth doesn't gets the warning (proof: test)
+- [x] The Outlook's "Exp. return" figure is labelled as the average year, beside the Median CAGR it compounds to (proof: screenshot, a test can't judge the wording in place)
+- [x] The real-FX walk has zero log drift: across paths the median currency factor stays at 1 for every horizon, and raising a city's FX volatility never raises its odds (same seed, 4,000 paths: Buenos Aires, Lisbon, Bangkok) (proof: test)
+- [x] The Method page's currency paragraph says the typical future keeps today's rate and that more currency swing costs odds (proof: test on the rendered copy or screenshot, the copy is the claim)
+- [x] The default dividend tax drag is 0.40%; a saved plan or link that carries its own value keeps it, and the Method page shows the new default (proof: test)
 Open: none
 Agents: wide — confirmed 2026-11-16 19:28
 Mode: autopilot — unattended
 
 ## Stages
 - [x] 1. Safe plan loading — stay home survives reload and links; city ids checked at the boundary; an error boundary with reset — [evidence](evidence/stage-1/report.md)
-- [ ] 2. Honest growth — loan-vs-return warning uses compounded growth, "Exp. return" labelled as the average year; currency walk centred on the typical future, Method copy updated; dividend drag default 0.4%
+- [x] 2. Honest growth — loan-vs-return warning uses compounded growth, "Exp. return" labelled as the average year; currency walk centred on the typical future, Method copy updated; dividend drag default 0.4% — [evidence](evidence/stage-2/report.md)
 
 ## Decisions
 - 2026-11-16 · Fix the review's items 1–6 in two stages, the rest deferred to open questions — user: "Yes, plan it then autopilot wide."
@@ -41,8 +41,14 @@ Mode: autopilot — unattended
 - 2026-11-16 · (unattended) Stage 1 review fixes taken beyond the city ids: holdings symbols checked as own keys (`assetMeta`, the engine's `market.assets` lookups, plan-rail slots), a stored plan that isn't an object is ignored, and Reset keeps the theme — the same prototype-key hole and two crash/UX gaps the reviewers reproduced; all within the stage's goal.
 - 2026-11-16 · (unattended) "Exp. return" stays the average (arithmetic) return, labelled as the average year, because the Outlook card already shows "Median CAGR" beside it; replacing it would show one number twice. The bug is the diagnosis, which now compares the loan rate with nominal median CAGR. Replaces the earlier "Exp. return becomes geometric growth" decision.
 - 2026-11-16 · User approved stage 2 (money) under autopilot ("go").
+- 2026-11-16 · User approved stage 2 (money) under autopilot again for the review fix ("go").
+- 2026-11-16 · (unattended) Stage 2 review fix: the diagnosis compares the loan's effective yearly cost, (1 + r/12)^12 − 1, with nominal median CAGR (the engine compounds the loan monthly), still quoting the APR; and says "typically grows" since the figure is a median.
+- 2026-11-16 · (unattended) Zero-drift FX kept even though it moves Buenos Aires from 76.2% to 63.3% (4,000 paths, seed 7; zero-vol 74.0%): it's the plan's decision and the honest direction (currency risk costs odds); the size comes from a 25%/yr random walk over 30 years, which a mean-reverting model would temper — raised as an open question. Defaults: St. Louis stay home 63.9 → 61.8% (drag only), St. Louis → Bangkok 79.5 → 77.1%.
 
 ## Open questions
+- From the stage 2 verify: at 390px the Outlook lens card cuts its "Median CAGR" eyebrow to "MEDIAN CAG…" (pre-existing, unchanged since 6a2ce30) — later.
+- From the stage 2 review: share links leave out values equal to the default, so every link made before the drag default moved (0.25%) now opens at 0.40%, while saved plans keep 0.25%; the same plan can show slightly different odds from a link and from storage. Options: bump the link `VERSION` and decode v1 links with the old default, and/or move saved plans that sit at exactly 0.25% to 0.40% — user's call; today "only the default moves" holds for saved plans, not for old links.
+- From stage 2: the real-FX walk is a pure random walk, so over 30 years a 25%/yr currency (Buenos Aires) has a mean cost factor of ~2.5×, and now that the typical future is centred at today's rate, its odds drop ~11 points vs no currency risk. Real exchange rates revert toward purchasing-power parity (half-lives of a few years in the literature); a mean-reverting walk (e.g. AR(1) in log real FX) would be more realistic for long horizons — user's call, needs research on half-lives.
 - From the 2026-11-16 review: the engine reads NaN inputs (loanRate, dividendTaxDrag, expatFactor, maxLtv) as a clean plan; `sanitizeInputs` blocks them, so only direct engine callers are exposed — guard in `kernelConfig`, later.
 - From the 2026-11-16 review: fractional `age`, `horizonYears`, `moveInYears`, `blockMonths` from links aren't rounded ("age 30.2"; a 0.5-year move prices a full destination year in `firstYearSpend`) — later.
 - From the 2026-11-16 review: holdings with all-zero weights pass the sanitizer and the engine throws ("Simulation failed" badge) — reject at the boundary, later.

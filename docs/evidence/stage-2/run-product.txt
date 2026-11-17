@@ -1,0 +1,68 @@
+$ node docs/evidence/stage-2/verify.mjs
+
+== [desktop] Check 2: Outlook lens card, default plan ==
+lens cells: [{"text":"AVG. RETURN 6.9% 6.9% average year · after inflation · 9.7% nominal","truncated":false,"rect":[984,2314,122]},{"text":"VOLATILITY 13.6% 13.6% annualized","truncated":false,"rect":[1122,2314,122]},{"text":"MEDIAN CAGR 5.5% 5.5% after inflation · 8.3% nominal","truncated":false,"rect":[1261,2314,122]}]
+ok   [desktop] "Avg. return" labelled "average year · after inflation · N% nominal": AVG. RETURN 6.9% 6.9% average year · after inflation · 9.7% nominal
+ok   [desktop] "Median CAGR" present in the same row: MEDIAN CAGR 5.5% 5.5% after inflation · 8.3% nominal
+ok   [desktop] no "Exp. return" left on the Outlook
+ok   [desktop] no stat label/number/sub truncated
+default: avg year nominal 9.7%, median CAGR nominal 8.3%, default diagnosis: null
+ok   [desktop] no page errors
+
+== [desktop] Check 1 in app: loanRate 9.00% (CAGR 8.3% < rate < avg 9.7%) ==
+ok   [desktop] chosen rate sits between the two
+diagnosis: The loan costs 9% a year but this portfolio typically grows only about 8.3% a year compounded: the debt compounds faster than the assets securing it, so in most futures it catches up with them.
+lens: ["AVG. RETURN 6.9% 6.9% average year · after inflation · 9.7% nominal","VOLATILITY 13.6% 13.6% annualized","MEDIAN CAGR 5.5% 5.5% after inflation · 8.3% nominal"]
+ok   [desktop] diagnosis quotes loan 9.0% and the compounded 8.3% shown as Median CAGR nominal
+ok   [desktop] diagnosis does not quote the average year 9.7%
+ok   [desktop] no page errors
+
+== [desktop] Checks 4/5: Method page ==
+currency paragraph: Then the currency. Prices abroad are set in local money, so destination spending is multiplied by a real exchange-rate random walk: each month it takes a small random step, sized so that over a year it swings by the city’s volatility (THB 7% a year for Bangkok; zero for dollar economies), and centered so the typical future keeps today’s rate. Some futures get a strong dollar and a cheap life; others the opposite, for decades. The swings don’t even out: a bad run compounds into decades of dear living, so a volatile currency costs odds. The move can happen today or years from now, but never before you retire.
+ok   [desktop] currency paragraph: typical future keeps today's rate
+ok   [desktop] currency paragraph: a volatile currency costs odds
+dividend paragraph: The key is that a whole month is drawn at once. When the future borrows October 2008, every holding gets its October 2008 return and inflation gets October 2008’s CPI. Crashes stay as deep as they were, recoveries as long, and the way your holdings fall together (or don’t) is preserved without estimating a single correlation. The portfolio is rebalanced to your weights every month, and a 0.4% a year drag stands in for tax on dividends.
+ok   [desktop] Method page shows the 0.4% dividend drag default
+all dividend mentions with numbers: []
+ok   [desktop] no page errors
+
+== [desktop] Check 5: plan rail dividend drag ==
+drag field: 0.40% | Dividend tax drag 0.40% 0.40% 0% 0.5% 1.0% 1.5%
+ok   [desktop] drag input shows 0.40% by default
+tooltip: Dividends are taxed each year even if you never sell. This is the yearly hit to returns: roughly dividend yield × your dividend tax rate. The default is 1.7% × 23.8% ≈ 0.40%. | Dividends are taxed each year even if you never sell. This is the yearly hit to returns: roughly dividend yield × your dividend tax rate. The default is 1.7% × 23.8% ≈ 0.40%.
+ok   [desktop] tooltip gives 1.7% × 23.8% ≈ 0.40%
+ok   [desktop] no page errors
+
+== [phone] Check 2: Outlook lens card, default plan ==
+lens cells: [{"text":"AVG. RETURN 6.9% 6.9% average year · after inflation · 9.7% nominal","truncated":false,"rect":[37,3524,95]},{"text":"VOLATILITY 13.6% 13.6% annualized","truncated":false,"rect":[148,3524,95]},{"text":"MEDIAN CAGR 5.5% 5.5% after inflation · 8.3% nominal","truncated":false,"rect":[258,3524,95]}]
+ok   [phone] "Avg. return" labelled "average year · after inflation · N% nominal": AVG. RETURN 6.9% 6.9% average year · after inflation · 9.7% nominal
+ok   [phone] "Median CAGR" present in the same row: MEDIAN CAGR 5.5% 5.5% after inflation · 8.3% nominal
+ok   [phone] no "Exp. return" left on the Outlook
+ok   [phone] no stat label/number/sub truncated
+ok   [phone] no page errors
+
+== [phone] Check 1 in app: loanRate 9.00% (CAGR 8.3% < rate < avg 9.7%) ==
+ok   [phone] chosen rate sits between the two
+diagnosis: The loan costs 9% a year but this portfolio typically grows only about 8.3% a year compounded: the debt compounds faster than the assets securing it, so in most futures it catches up with them.
+lens: ["AVG. RETURN 6.9% 6.9% average year · after inflation · 9.7% nominal","VOLATILITY 13.6% 13.6% annualized","MEDIAN CAGR 5.5% 5.5% after inflation · 8.3% nominal"]
+ok   [phone] diagnosis quotes loan 9.0% and the compounded 8.3% shown as Median CAGR nominal
+ok   [phone] diagnosis does not quote the average year 9.7%
+ok   [phone] no page errors
+
+== [phone] Checks 4/5: Method page ==
+currency paragraph: Then the currency. Prices abroad are set in local money, so destination spending is multiplied by a real exchange-rate random walk: each month it takes a small random step, sized so that over a year it swings by the city’s volatility (THB 7% a year for Bangkok; zero for dollar economies), and centered so the typical future keeps today’s rate. Some futures get a strong dollar and a cheap life; others the opposite, for decades. The swings don’t even out: a bad run compounds into decades of dear living, so a volatile currency costs odds. The move can happen today or years from now, but never before you retire.
+ok   [phone] currency paragraph: typical future keeps today's rate
+ok   [phone] currency paragraph: a volatile currency costs odds
+dividend paragraph: The key is that a whole month is drawn at once. When the future borrows October 2008, every holding gets its October 2008 return and inflation gets October 2008’s CPI. Crashes stay as deep as they were, recoveries as long, and the way your holdings fall together (or don’t) is preserved without estimating a single correlation. The portfolio is rebalanced to your weights every month, and a 0.4% a year drag stands in for tax on dividends.
+ok   [phone] Method page shows the 0.4% dividend drag default
+all dividend mentions with numbers: []
+ok   [phone] no page errors
+
+== [phone] Check 5: plan rail dividend drag ==
+drag field: 0.40% | Dividend tax drag 0.40% 0.40% 0% 0.5% 1.0% 1.5%
+ok   [phone] drag input shows 0.40% by default
+tooltip: Dividends are taxed each year even if you never sell. This is the yearly hit to returns: roughly dividend yield × your dividend tax rate. The default is 1.7% × 23.8% ≈ 0.40%. | Dividends are taxed each year even if you never sell. This is the yearly hit to returns: roughly dividend yield × your dividend tax rate. The default is 1.7% × 23.8% ≈ 0.40%.
+ok   [phone] tooltip gives 1.7% × 23.8% ≈ 0.40%
+ok   [phone] no page errors
+
+all ok
