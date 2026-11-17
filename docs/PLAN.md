@@ -7,17 +7,8 @@ A review of the financial calculations (2026-11-16) found the engine's core math
 2026-11-16 · tests: 1111 pass · typecheck: clean · build: ok
 
 ## Now
-Stage 2 of 2 · Honest growth
-Risk: money
-Checks:
-- [x] The "loan costs more than the portfolio earns" diagnosis compares the loan rate with the portfolio's compounded (median CAGR, nominal) growth, not its average return: a plan whose average return beats the loan rate but whose compounded growth doesn't gets the warning (proof: test)
-- [x] The Outlook's "Exp. return" figure is labelled as the average year, beside the Median CAGR it compounds to (proof: screenshot, a test can't judge the wording in place)
-- [x] The real-FX walk has zero log drift: across paths the median currency factor stays at 1 for every horizon, and raising a city's FX volatility never raises its odds (same seed, 4,000 paths: Buenos Aires, Lisbon, Bangkok) (proof: test)
-- [x] The Method page's currency paragraph says the typical future keeps today's rate and that more currency swing costs odds (proof: test on the rendered copy or screenshot, the copy is the claim)
-- [x] The default dividend tax drag is 0.40%; a saved plan or link that carries its own value keeps it, and the Method page shows the new default (proof: test)
-Open: none
+All stages done. Not deployed yet: pushing main to GitHub Pages waits for the user.
 Agents: wide — confirmed 2026-11-16 19:28
-Mode: autopilot — unattended
 
 ## Stages
 - [x] 1. Safe plan loading — stay home survives reload and links; city ids checked at the boundary; an error boundary with reset — [evidence](evidence/stage-1/report.md)
