@@ -7,7 +7,7 @@ A review of the financial calculations (2026-11-16) found the engine's core math
 2026-11-16 · tests: 1111 pass · typecheck: clean · build: ok
 
 ## Now
-All stages done. Not deployed yet: pushing main to GitHub Pages waits for the user.
+All stages done. Live on GitHub Pages (run 44006469181, 2026-11-17).
 Agents: wide — confirmed 2026-11-16 19:28
 
 ## Stages
@@ -35,6 +35,7 @@ Agents: wide — confirmed 2026-11-16 19:28
 - 2026-11-16 · User approved stage 2 (money) under autopilot again for the review fix ("go").
 - 2026-11-16 · (unattended) Stage 2 review fix: the diagnosis compares the loan's effective yearly cost, (1 + r/12)^12 − 1, with nominal median CAGR (the engine compounds the loan monthly), still quoting the APR; and says "typically grows" since the figure is a median.
 - 2026-11-16 · (unattended) Zero-drift FX kept even though it moves Buenos Aires from 76.2% to 63.3% (4,000 paths, seed 7; zero-vol 74.0%): it's the plan's decision and the honest direction (currency risk costs odds); the size comes from a 25%/yr random walk over 30 years, which a mean-reverting model would temper — raised as an open question. Defaults: St. Louis stay home 63.9 → 61.8% (drag only), St. Louis → Bangkok 79.5 → 77.1%.
+- 2026-11-17 · Deployed the sound numbers plan — user: "Deploy it." Pushed main after the user logged in with `gh` (this machine had lost its GitHub login); Deploy to GitHub Pages run 44006469181 passed (build, deploy); the live index chunk carries "Avg. return" and "typically grows only about".
 
 ## Open questions
 - From the stage 2 verify: at 390px the Outlook lens card cuts its "Median CAGR" eyebrow to "MEDIAN CAG…" (pre-existing, unchanged since 6a2ce30) — later.
