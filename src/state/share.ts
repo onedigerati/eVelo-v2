@@ -104,11 +104,15 @@ export function sanitizeInputs(raw: unknown): PlanInputs {
     if (!(k in src)) continue
     const dv = out[k]
     const v = src[k]
-    if (typeof dv === 'number') {
+    if (k === 'homeCityId' || k === 'destCityId') {
+      // City ids are checked after the loop: the default destination is a string, so the generic
+      // string branch would reject null (stay home) and accept any non-city string.
+      continue
+    } else if (typeof dv === 'number') {
       if (typeof v === 'number' && Number.isFinite(v)) out[k] = v
     } else if (typeof dv === 'string') {
       if (typeof v === 'string' && v.length < 200) out[k] = v
-    } else if (dv === null || k === 'destCityId') {
+    } else if (dv === null) {
       if (v === null || typeof v === 'string') out[k] = v
     } else if (Array.isArray(dv)) {
       if (k === 'holdings' && Array.isArray(v)) {
@@ -125,7 +129,18 @@ export function sanitizeInputs(raw: unknown): PlanInputs {
       }
     }
   }
+  // Cities: home must be a known city (else the default home); the destination is kept only when
+  // it is null (stay home) or a known city other than home (else stay home). A key that's present
+  // but invalid never falls back to the default destination, so stay home can't become Bangkok.
+  base.homeCityId = typeof src.homeCityId === 'string' && isCityId(src.homeCityId) ? src.homeCityId : DEFAULT_INPUTS.homeCityId
+  if ('destCityId' in src) {
+    const d = src.destCityId
+    base.destCityId = typeof d === 'string' && isCityId(d) ? d : null
+  }
+  if (base.destCityId !== null && !isCityId(base.destCityId)) base.destCityId = null
+  if (base.destCityId === base.homeCityId) base.destCityId = null
   // Numbers within the UI's own ranges.
+
   const nums = base as unknown as Record<string, number>
   for (const [k, [lo, hi]] of Object.entries(INPUT_LIMITS)) nums[k] = clamp(nums[k], lo, hi)
   // An existing loan can't reach the portfolio it borrows against (the UI field's own max).
