@@ -17,7 +17,7 @@ Checks:
 - [ ] Opening a crafted `#p=…` link with `constructor` as a city in the running app shows the app, not a blank page, and a reload still works (proof: run the product, the crash only happens in a browser render)
 Open: none
 Agents: wide — confirmed 2026-11-16 19:28
-Mode: autopilot
+Mode: paused — stage 1 risk names money and user input, waiting for approval
 
 ## Stages
 - [ ] 1. Safe plan loading — stay home survives reload and links; city ids checked at the boundary; an error boundary with reset
