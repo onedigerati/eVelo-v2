@@ -5,3 +5,4 @@ dist
 .claude/
 tsconfig.tsbuildinfo
 .preview/
+lighthouse/
