@@ -189,7 +189,7 @@ export interface PlanInputs {
   targetLtvAfterCall: number
   /** Long-term capital gains rate used when selling (decimal, e.g. 0.238). */
   capGainsRate: number
-  /** Annual drag from taxes on dividends (decimal, e.g. 0.0025). */
+  /** Annual drag from taxes on dividends (decimal, e.g. 0.004). */
   dividendTaxDrag: number
 
   method: ModelMethod

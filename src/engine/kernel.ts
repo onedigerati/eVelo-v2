@@ -25,7 +25,9 @@ import { openingSale, type OpeningSale } from './openingSale'
 // LTV), so savings never prevent it.
 //
 // Month t, in order:
-//   1. portfolio *= 1 + r_t - dividendTaxDrag/12;  price level *= 1 + cpi_t;  FX walk steps.
+//   1. portfolio *= 1 + r_t - dividendTaxDrag/12;  price level *= 1 + cpi_t;  FX walk steps
+//      X += fxSigmaM · z_t with no drift, so the median factor exp(X) stays 1 (the typical future
+//      keeps today's rate) and the mean rises with volatility: currency swings cost odds.
 //   2. loan accrues interest (loanRate/12, capitalized).
 //   3. need = spending_t - otherIncome_t (both inflated by the path's CPI; destination spending
 //      also × exp(X_t)), or -savings_t while working. need > 0 is borrowed; a surplus repays the
@@ -157,6 +159,13 @@ export function initialLoanOf(cfg: KernelConfig): number {
   return Number.isFinite(L) && L > 0 ? L : 0
 }
 
+/** One month of the log real-exchange-rate walk: no drift, so the median factor exp(X) stays 1 at
+ *  every horizon (the typical future keeps today's rate) and the mean, exp(σ²t/2), rises with
+ *  volatility. Destination spending is multiplied by exp(X). */
+export function fxWalkStep(X: number, sigmaM: number, z: number): number {
+  return X + sigmaM * z
+}
+
 /** The opening forced sale for this config (identical across paths); see openingSale.ts. */
 export function kernelOpeningSale(cfg: KernelConfig): OpeningSale {
   return openingSale(cfg.portfolio, cfg.portfolio * cfg.basisFraction, initialLoanOf(cfg), cfg.maxLtv, cfg.targetLtv, cfg.tax)
@@ -174,7 +183,6 @@ export function runPaths(
   // The move can't come before retirement (kernelConfig already ensures it; this guards hand-written
   // configs and leaves retireMonth 0 untouched).
   const moveMonth = retireMonth > 0 && retireMonth > cfg.moveMonth ? retireMonth : cfg.moveMonth
-  const fxDrift = -0.5 * fxSigmaM * fxSigmaM
   const wt = cfg.wealthTax ?? null
   const wGross = wt !== null && wt.gross
   // First wealth-tax month: the first year-end month ((t + 1) % 12 === 0) at or after the tax starts
@@ -233,7 +241,7 @@ export function runPaths(
     for (let t = 0; t < T; t++) {
       const r = sc.ret[o + t] - dragM
       P *= 1 + sc.infl[o + t]
-      if (fxSigmaM > 0) X += fxDrift + fxSigmaM * sc.fxz[o + t]
+      if (fxSigmaM > 0) X = fxWalkStep(X, fxSigmaM, sc.fxz[o + t])
       const need =
         t < retireMonth
           ? -savingsM * P

@@ -173,7 +173,7 @@ export function BorrowingSection() {
         aside={
           <InfoTip label="What is dividend tax drag?">
             Dividends are taxed each year even if you never sell. This is the yearly hit to returns: roughly dividend yield × your
-            dividend tax rate (e.g. 1.5% × 15% ≈ 0.25%).
+            dividend tax rate. The default is 1.7% × 23.8% ≈ 0.40%.
           </InfoTip>
         }
         value={drag}

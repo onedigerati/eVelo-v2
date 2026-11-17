@@ -544,9 +544,11 @@ export function MethodView() {
               <b>real exchange-rate random walk</b>: each month it takes a small
               random step, sized so that over a year it swings by the city’s
               volatility ({ABROAD.currency} {pct1(ABROAD.fxVol)} a year for{" "}
-              {ABROAD.dest}; zero for dollar economies), and centered so it
-              neither drifts up nor down on average. Some futures get a strong
+              {ABROAD.dest}; zero for dollar economies), and centered so the
+              typical future keeps today’s rate. Some futures get a strong
               dollar and a cheap life; others the opposite, for decades. The
+              swings don’t even out: a bad run compounds into decades of dear
+              living, so a volatile currency costs odds. The
               move can happen today or years from now, but never before you
               retire.
             </p>
