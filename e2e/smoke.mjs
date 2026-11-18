@@ -42,6 +42,11 @@ await withPreview(async (base) => {
         const text = await p.locator('#root').innerText()
         check(text.includes('Where you live') && !text.includes('Something went wrong'), `${name} (${when}): plan renders, no recovery screen`)
         if (name === 'stay home') {
+          // Plan sections start collapsed (and remember being opened): open "Where you live" if shut.
+          const place = p.locator('.section__head', { hasText: 'Where you live' }).first()
+          if ((await place.getAttribute('aria-expanded')) === 'false') await place.click()
+          await p.getByText('Retire to').first().waitFor()
+          const text = await p.locator('#root').innerText()
           // The "Retire to" select shows its value on the next line; Bangkok is the default destination.
           const lines = text.split('\n').map((l) => l.trim()).filter(Boolean)
           const shown = lines[lines.indexOf('Retire to') + 1]

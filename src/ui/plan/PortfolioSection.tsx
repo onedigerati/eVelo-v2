@@ -2,6 +2,7 @@ import { useStore } from '../../state/store'
 import { currency, currencyCompact, percent } from '../format'
 import { InfoTip, NumberField, Section, Slider } from '../primitives'
 import { HoldingsEditor } from './HoldingsEditor'
+import { useSectionOpen } from './planUi'
 
 /** The portfolio field's hint; with a loan balance it also says the portfolio must stay above it.
  *  The balance is compact unless that would round it to the portfolio's own compact figure
@@ -20,8 +21,10 @@ export function PortfolioSection() {
   const n = useStore((s) => s.inputs.holdings.length)
   const loan = useStore((s) => s.inputs.existingLoan ?? 0)
   const setInput = useStore((s) => s.setInput)
+  const section = useSectionOpen('portfolio')
   return (
     <Section
+      {...section}
       index="01"
       title="Portfolio"
       summary={`${currencyCompact(portfolio)} · ${n} ${n === 1 ? 'holding' : 'holdings'} · ${percent(basis)} basis`}

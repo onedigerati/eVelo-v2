@@ -12,6 +12,7 @@ import { CITY_OPTIONS, cityLabel } from './placeholderCities'
 import { planCardSpend } from './planCardSpend'
 import { scaleNotes, spendTip, type ScaleNote } from './scaleNote'
 import { AMOUNT_HINT, CHANGE_HINT, changeLabel, clearRow, hasAnyOverride, parseAmount, parseChange, resetAll, rowOverride, setAmount, setRatio, type SpendOverrides } from './spendOverrides'
+import { useSectionOpen } from './planUi'
 
 const STAY = '__stay'
 
@@ -31,8 +32,9 @@ export function PlaceSection() {
   ]
   const maxMove = Math.max(1, Math.min(horizon - 1, 30))
 
+  const section = useSectionOpen('place')
   return (
-    <Section index="03" title="Where you live" summary={summary}>
+    <Section {...section} index="03" title="Where you live" summary={summary}>
       <Select
         label="Home city"
         value={home}

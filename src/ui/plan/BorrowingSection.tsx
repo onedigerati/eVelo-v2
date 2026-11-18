@@ -6,6 +6,7 @@ import { currencyCompact, percent } from '../format'
 import { ease } from '../motion'
 import { InfoTip, NumberField, Section, SegmentedControl, Slider } from '../primitives'
 import { existingLoanInfo, firstYearSpend } from './existingLoan'
+import { useSectionOpen } from './planUi'
 
 const GAP = 0.05 // target must sit at least this far under the threshold
 const CG_PRESETS = [0.15, 0.2, 0.238]
@@ -30,8 +31,10 @@ export function BorrowingSection() {
   const targetMax = Math.round((maxLtv - GAP) * 100) / 100
   const loan = existingLoanInfo({ portfolio, balance, maxLtv, targetLtv: target, basisFraction: basis, capGainsRate: cg, annualSpend })
 
+  const section = useSectionOpen('borrowing')
   return (
     <Section
+      {...section}
       index="04"
       title="Borrowing"
       summary={`${balance > 0 ? `${currencyCompact(balance)} owed · ` : ''}${percent(rate, { digits: 1 })} loan · call at ${percent(maxLtv)} LTV · ${percent(cg, { digits: 1 })} gains tax`}

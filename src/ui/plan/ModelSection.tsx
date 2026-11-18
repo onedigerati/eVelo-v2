@@ -5,6 +5,7 @@ import { useStore } from '../../state/store'
 import { number } from '../format'
 import { ease } from '../motion'
 import { NumberField, Section, SegmentedControl, Slider } from '../primitives'
+import { useSectionOpen } from './planUi'
 
 const METHOD: Record<ModelMethod, { label: string; desc: string }> = {
   bootstrap: { label: 'History replay', desc: 'Stitches together real stretches of market history, keeping crashes and recoveries intact.' },
@@ -27,12 +28,13 @@ export function ModelSection() {
   const uid = useId()
   const [spin, setSpin] = useState(0)
 
+  const section = useSectionOpen('model')
   return (
     <Section
+      {...section}
       index="05"
       title="Model"
       summary={`${METHOD[method].label} · ${OUTLOOK[outlook].label} · ${number(paths)} futures`}
-      defaultOpen={false}
     >
       <div>
         <div className="field__row">

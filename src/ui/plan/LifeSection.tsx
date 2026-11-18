@@ -8,6 +8,7 @@ import { currencyCompact } from '../format'
 import { ease } from '../motion'
 import { NumberField, Section, SegmentedControl, Slider } from '../primitives'
 import { BudgetEditor } from './BudgetEditor'
+import { useSectionOpen } from './planUi'
 
 export { budgetTotal }
 
@@ -41,8 +42,9 @@ export function LifeSection() {
   const customShowsValue = custom && !PRESET_HORIZONS.includes(horizon)
   const summary = [`Age ${age}`, retireIn > 0 && `retire ${age + retireIn}`, `${horizon} yrs`, `${currencyCompact(total)}/yr`].filter(Boolean).join(' · ')
 
+  const section = useSectionOpen('life')
   return (
-    <Section index="02" title="Life & lifestyle" summary={summary}>
+    <Section {...section} index="02" title="Life & lifestyle" summary={summary}>
       <Slider label="Your age" value={age} min={30} max={85} step={1} ticks={[30, 45, 60, 75, 85]} onChange={(v) => setInput('age', v)} />
       <div>
         <div className="field__row">
