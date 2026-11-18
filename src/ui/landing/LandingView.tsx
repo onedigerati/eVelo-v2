@@ -1,4 +1,4 @@
-import { type MouseEvent } from 'react'
+import { type CSSProperties, type MouseEvent } from 'react'
 import { hrefFor } from '../../state/router'
 import type { Breakpoint } from '../hooks'
 import { ThemeCycleButton, ThemeToggle } from '../shell/ThemeToggle'
@@ -39,6 +39,39 @@ const GLOBE_DOTS: ReadonlyArray<readonly [number, number]> = (() => {
       }
   return dots
 })()
+
+/** Where the arrow's dots sit at rest (x, on y = 8) and how far each moves to make the escape curve. */
+const CLIMB_DOTS = [
+  [2, 4],
+  [4.6, 3.2],
+  [7.2, 1.4],
+  [9.8, -1.4],
+] as const
+
+/**
+ * The main button's arrow: four dots and a chevron, in the dotted globe's style. On hover it grows,
+ * the dots spring up into an escape curve, the head turns up to lead them and a pulse runs along
+ * the dots (landing.css).
+ */
+function ClimbArrow() {
+  return (
+    <svg className="landing__cta-climb" width="18" height="16" viewBox="0 0 18 16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      {CLIMB_DOTS.map(([x, dy], i) => (
+        <circle
+          key={x}
+          className="landing__cta-dot"
+          cx={x}
+          cy="8"
+          r="1"
+          fill="currentColor"
+          stroke="none"
+          style={{ '--dy': `${dy}px`, '--i': i } as CSSProperties}
+        />
+      ))}
+      <path className="landing__cta-chev" d="M12.5 4.5 16 8l-3.5 3.5" />
+    </svg>
+  )
+}
 
 /** A dot-matrix globe; on hover it grows, turns accent and its continents drift across. */
 function AtlasGlobe() {
@@ -123,12 +156,7 @@ export function LandingView({ bp }: { bp: Breakpoint }) {
                 <div className="landing__ctas">
                   <a href={hrefFor('plan')} className="landing__cta landing__cta--primary">
                     Find your eVelo
-                    {/* On hover the flat arrow becomes an escape path climbing up and away. */}
-                    <svg className="landing__cta-traj" width="18" height="16" viewBox="0 0 18 16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                      <path className="landing__cta-flat" d="M3 8h10M9 4l4 4-4 4" />
-                      <path className="landing__cta-path" d="M2 13C7 13 11 10 15 3" />
-                      <path className="landing__cta-head" d="M10.5 3.2 15 3l.6 4.4" />
-                    </svg>
+                    <ClimbArrow />
                   </a>
                   <a href={hrefFor('atlas')} className="landing__cta landing__cta--ghost">
                     <AtlasGlobe />

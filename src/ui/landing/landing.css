@@ -194,16 +194,10 @@
   gap: 10px;
 }
 /* Hover whimsy, kept to hover, keyboard focus and the press itself: no ambient motion.
- * "Find your eVelo": the flat arrow becomes an escape path that climbs up and away.
+ * "Find your eVelo": the dotted arrow grows to 22px, its dots spring up into an escape curve and the
+ * head turns up to lead them, with a pulse running along the dots.
  * "Explore the Atlas": the dotted globe takes the accent, grows to 22px and its continents drift.
  * Off entirely under reduced motion (the colour change stays). */
-.landing__cta-path {
-  stroke-dasharray: 22;
-  stroke-dashoffset: 22;
-}
-.landing__cta-head {
-  opacity: 0;
-}
 .landing__cta-globe {
   transition: color var(--dur-3) var(--ease-out);
 }
@@ -211,27 +205,26 @@
   color: var(--accent);
 }
 @media (prefers-reduced-motion: no-preference) {
-  .landing__cta-flat {
-    transition: opacity var(--dur-2) var(--ease-out);
+  .landing__cta-climb {
+    transform-origin: center;
+    transition: transform 420ms cubic-bezier(0.34, 1.56, 0.64, 1);
   }
-  .landing__cta-path {
-    transition: stroke-dashoffset 700ms var(--ease-out);
+  .landing__cta-dot {
+    transition: transform 520ms cubic-bezier(0.34, 1.56, 0.64, 1) calc(var(--i) * 40ms);
   }
-  .landing__cta-head {
-    transform: translate(-4px, 4px);
-    transition:
-      opacity var(--dur-3) 350ms,
-      transform 500ms var(--ease-out) 300ms;
+  .landing__cta-chev {
+    transform-origin: 16px 8px;
+    transition: transform 520ms cubic-bezier(0.34, 1.56, 0.64, 1) 120ms;
   }
-  .landing__cta--primary:is(:hover, :focus-visible, :active) .landing__cta-flat {
-    opacity: 0;
+  .landing__cta--primary:is(:hover, :focus-visible, :active) .landing__cta-climb {
+    transform: scale(1.375); /* 16px -> 22px tall, matching the globe */
   }
-  .landing__cta--primary:is(:hover, :focus-visible, :active) .landing__cta-path {
-    stroke-dashoffset: 0;
+  .landing__cta--primary:is(:hover, :focus-visible, :active) .landing__cta-dot {
+    transform: translateY(var(--dy));
+    animation: landing-dot-pulse 1.2s calc(550ms + var(--i) * 150ms) infinite;
   }
-  .landing__cta--primary:is(:hover, :focus-visible, :active) .landing__cta-head {
-    opacity: 1;
-    transform: none;
+  .landing__cta--primary:is(:hover, :focus-visible, :active) .landing__cta-chev {
+    transform: translate(-1.2px, -5.2px) rotate(-45deg);
   }
   .landing__cta-globe {
     transform-origin: center;
@@ -247,6 +240,11 @@
   }
   .landing__cta--ghost:is(:hover, :focus-visible, :active) .landing__cta-land {
     animation-play-state: running;
+  }
+}
+@keyframes landing-dot-pulse {
+  50% {
+    opacity: 0.35;
   }
 }
 @keyframes landing-globe-drift {
