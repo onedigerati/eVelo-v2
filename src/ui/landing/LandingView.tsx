@@ -68,7 +68,8 @@ export function LandingView({ bp }: { bp: Breakpoint }) {
                   </p>
                   <p>
                     eVelo shows how far you are from that line, and which move gets you over it: a different city, a
-                    smaller draw, a bigger portfolio or a later start.
+                    smaller draw, a bigger portfolio, a later start or a different mix of assets. What you hold sets the
+                    returns that have to outrun the loan.
                   </p>
                 </div>
                 <div className="landing__ctas">
