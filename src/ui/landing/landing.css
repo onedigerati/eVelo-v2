@@ -195,7 +195,8 @@
 }
 /* Hover whimsy, kept to hover, keyboard focus and the press itself: no ambient motion.
  * "Find your eVelo": the flat arrow becomes an escape path that climbs up and away.
- * "Explore the Atlas": the globe's meridians turn. Off entirely under reduced motion. */
+ * "Explore the Atlas": the dotted globe takes the accent, grows to 22px and its continents drift.
+ * Off entirely under reduced motion (the colour change stays). */
 .landing__cta-path {
   stroke-dasharray: 22;
   stroke-dashoffset: 22;
@@ -203,9 +204,11 @@
 .landing__cta-head {
   opacity: 0;
 }
-.landing__cta-mer {
-  transform-box: fill-box;
-  transform-origin: center;
+.landing__cta-globe {
+  transition: color var(--dur-3) var(--ease-out);
+}
+.landing__cta--ghost:is(:hover, :focus-visible, :active) .landing__cta-globe {
+  color: var(--accent);
 }
 @media (prefers-reduced-motion: no-preference) {
   .landing__cta-flat {
@@ -230,25 +233,25 @@
     opacity: 1;
     transform: none;
   }
-  .landing__cta--ghost:is(:hover, :focus-visible, :active) .landing__cta-mer {
-    animation: landing-globe-turn 2.4s linear infinite;
+  .landing__cta-globe {
+    transform-origin: center;
+    transition:
+      color var(--dur-3) var(--ease-out),
+      transform 420ms cubic-bezier(0.34, 1.56, 0.64, 1);
   }
-  .landing__cta--ghost:is(:hover, :focus-visible, :active) .landing__cta-mer--b {
-    animation-delay: -1.2s;
+  .landing__cta-land {
+    animation: landing-globe-drift 3.2s linear infinite paused;
+  }
+  .landing__cta--ghost:is(:hover, :focus-visible, :active) .landing__cta-globe {
+    transform: scale(1.375); /* 16px -> 22px; a scale, so the button and its text don't move */
+  }
+  .landing__cta--ghost:is(:hover, :focus-visible, :active) .landing__cta-land {
+    animation-play-state: running;
   }
 }
-@keyframes landing-globe-turn {
-  0% {
-    transform: scaleX(1);
-    opacity: 0.9;
-  }
-  50% {
-    transform: scaleX(0);
-    opacity: 0.35;
-  }
-  100% {
-    transform: scaleX(-1);
-    opacity: 0.9;
+@keyframes landing-globe-drift {
+  to {
+    transform: translateX(-16px);
   }
 }
 .landing__cta--ghost {

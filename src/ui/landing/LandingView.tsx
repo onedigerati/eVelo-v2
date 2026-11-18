@@ -22,6 +22,54 @@ function scrollToSteps(e: MouseEvent<HTMLAnchorElement>) {
 }
 
 /**
+ * Pseudo-continents for the Atlas button's globe, as dots on a 16-unit strip that wraps. Drawn
+ * twice side by side, so sliding the strip 16 units left loops seamlessly (landing.css).
+ */
+const GLOBE_DOTS: ReadonlyArray<readonly [number, number]> = (() => {
+  const blobs = [[2.5, 5.5, 2.6], [4, 9.5, 2.2], [9, 5, 2], [10.5, 9, 3], [13.5, 6.5, 1.8], [14, 11.5, 1.6], [6.5, 12.5, 1.4]]
+  const dots: Array<readonly [number, number]> = []
+  for (let rep = 0; rep < 2; rep++)
+    for (let x = 0.5; x < 16; x += 1.25)
+      for (let y = 1.6; y < 15; y += 1.25) {
+        const land = blobs.some(([bx, by, r]) => {
+          const dx = Math.min(Math.abs(x - bx), 16 - Math.abs(x - bx))
+          return dx * dx + (y - by) ** 2 < r * r
+        })
+        if (land) dots.push([x + rep * 16, y])
+      }
+  return dots
+})()
+
+/** A dot-matrix globe; on hover it grows, turns accent and its continents drift across. */
+function AtlasGlobe() {
+  return (
+    <svg className="landing__cta-globe" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.3" aria-hidden="true">
+      <defs>
+        <clipPath id="landing-globe-clip">
+          <circle cx="8" cy="8" r="6.2" />
+        </clipPath>
+        {/* Fades the dots toward the rim so the flat strip reads as a sphere. */}
+        <radialGradient id="landing-globe-shade" cx="45%" cy="42%" r="58%">
+          <stop offset="55%" stopColor="#fff" />
+          <stop offset="100%" stopColor="#fff" stopOpacity="0.15" />
+        </radialGradient>
+        <mask id="landing-globe-mask">
+          <rect width="16" height="16" fill="url(#landing-globe-shade)" />
+        </mask>
+      </defs>
+      <g clipPath="url(#landing-globe-clip)" mask="url(#landing-globe-mask)">
+        <g className="landing__cta-land">
+          {GLOBE_DOTS.map(([x, y]) => (
+            <circle key={`${x},${y}`} cx={x} cy={y} r="0.48" fill="currentColor" stroke="none" />
+          ))}
+        </g>
+      </g>
+      <circle cx="8" cy="8" r="6.2" />
+    </svg>
+  )
+}
+
+/**
  * The landing page (`#home`). Full-bleed, with its own header in place of the app's top bar: the
  * hero copy beside the story card (one illustrative plan, St. Louis to Bangkok, in four beats),
  * then the four steps; LandingStory owns their shared playback, so this view doesn't re-render as
@@ -83,13 +131,7 @@ export function LandingView({ bp }: { bp: Breakpoint }) {
                     </svg>
                   </a>
                   <a href={hrefFor('atlas')} className="landing__cta landing__cta--ghost">
-                    {/* A small globe whose meridians turn on hover. */}
-                    <svg className="landing__cta-globe" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.3" aria-hidden="true">
-                      <circle cx="8" cy="8" r="6.2" />
-                      <path d="M1.8 8h12.4" opacity="0.6" />
-                      <ellipse className="landing__cta-mer" cx="8" cy="8" rx="3" ry="6.2" />
-                      <ellipse className="landing__cta-mer landing__cta-mer--b" cx="8" cy="8" rx="3" ry="6.2" opacity="0.5" />
-                    </svg>
+                    <AtlasGlobe />
                     Explore the Atlas
                   </a>
                 </div>

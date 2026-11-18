@@ -16,6 +16,7 @@ Agents: wide — confirmed 2026-11-16 19:28
 
 ## Fixes
 - 2026-11-17 · Landing copy names a different mix of assets as a move, and says what you hold sets the returns that have to outrun the loan — typecheck, 1152 tests, build green; built landing screenshotted at desktop and phone width, no horizontal scroll; deployed 2026-11-17 (run 44217256818), live bundle carries the new copy
+- 2026-11-17 · "Explore the Atlas" globe is now a dotted-earth globe: on hover it grows 16→22px, turns accent and its continents drift (option E of the globe studies); still under reduced motion — typecheck, 1152 tests, build green; built landing screenshotted at rest and on hover, desktop and phone, drift confirmed running
 
 ## Decisions
 - 2026-11-16 · Fix the review's items 1–6 in two stages, the rest deferred to open questions — user: "Yes, plan it then autopilot wide."
