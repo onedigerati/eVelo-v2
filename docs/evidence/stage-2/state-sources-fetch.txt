@@ -1,0 +1,15 @@
+$ WebFetch (read-only) of the three primary URLs cited in docs/research/state-muni-rules.md, 2026-11-18. Fetch-tool summaries, quoted:
+
+1. https://tax.illinois.gov/forms/incometax/currentyear/individual/il-1040-instr/step-2---income.html
+   Line 2: "Enter the amount of federally tax-exempt interest and dividend income reported on federal Form 1040" (Form 1040 Line 2a).
+   No in-state carve-out on that page. Code: IL muni = 'all-taxed', flat 4.95%. -> consistent.
+
+2. https://code.dccouncil.gov/us/dc/council/code/sections/47-1803.02
+   (a)(1)(B)(ii), tax years beginning after 2024-12-31: individuals "Shall include interest upon the obligations of a state or any political subdivision thereof";
+   excluded: obligations of the District of Columbia, DC Water, WMATA, DC Housing Finance Agency.
+   Code: DC muni = 'in-state-exempt' (national fund taxed). -> consistent.
+
+3. https://incometax.utah.gov/additions/municipal-bond-interest
+   TC-40A code 57: add interest on municipal bonds "issued by non-federal government entities outside Utah ... acquired after Jan. 1, 2003";
+   "Do not enter interest earned on non-Utah municipal bonds if the issuer does not impose an income tax on bonds issued by Utah or the issuing state does not impose an income tax."
+   Code: UT muni = 'reciprocal' (taken as taxed for a national fund). -> consistent.

@@ -1,0 +1,43 @@
+$ OUT=states.txt npx vitest run --config vitest.config.ts states.test.ts   (scratchpad; test source in independent-states.test.ts.txt)
+CITIES total 133; US cities 33; records 33
+US cities without a record: []
+records for non-US/unknown city ids: []
+records without a source: []
+new-york: NY muni=in-state-exempt taxesInv=true top=0.109 local=0.03876
+san-francisco: CA muni=in-state-exempt taxesInv=true top=0.133
+los-angeles: CA muni=in-state-exempt taxesInv=true top=0.133
+san-diego: CA muni=in-state-exempt taxesInv=true top=0.133
+seattle: WA muni=all-exempt taxesInv=false top=-
+portland: OR muni=in-state-exempt taxesInv=true top=0.099
+denver: CO muni=in-state-exempt taxesInv=true top=0.044
+austin: TX muni=all-exempt taxesInv=false top=-
+dallas: TX muni=all-exempt taxesInv=false top=-
+houston: TX muni=all-exempt taxesInv=false top=-
+phoenix: AZ muni=in-state-exempt taxesInv=true top=0.025
+scottsdale: AZ muni=in-state-exempt taxesInv=true top=0.025
+las-vegas: NV muni=all-exempt taxesInv=false top=-
+chicago: IL muni=all-taxed taxesInv=true top=0.0495
+minneapolis: MN muni=in-state-exempt taxesInv=true top=0.0985
+kansas-city: MO muni=in-state-exempt taxesInv=true top=0.047
+st-louis: MO muni=in-state-exempt taxesInv=true top=0.047
+nashville: TN muni=all-exempt taxesInv=false top=-
+atlanta: GA muni=in-state-exempt taxesInv=true top=0.0519
+charlotte: NC muni=in-state-exempt taxesInv=true top=0.0399
+raleigh: NC muni=in-state-exempt taxesInv=true top=0.0399
+asheville: NC muni=in-state-exempt taxesInv=true top=0.0399
+tampa: FL muni=all-exempt taxesInv=false top=-
+miami: FL muni=all-exempt taxesInv=false top=-
+orlando: FL muni=all-exempt taxesInv=false top=-
+sarasota: FL muni=all-exempt taxesInv=false top=-
+boston: MA muni=in-state-exempt taxesInv=true top=0.09
+washington-dc: DC muni=in-state-exempt taxesInv=true top=0.1075
+philadelphia: PA muni=in-state-exempt taxesInv=true top=0.0307 local=0.0374
+pittsburgh: PA muni=in-state-exempt taxesInv=true top=0.0307
+honolulu: HI muni=in-state-exempt taxesInv=true top=0.11
+boise: ID muni=in-state-exempt taxesInv=true top=0.053
+salt-lake-city: UT muni=reciprocal taxesInv=true top=0.045
+non-US cities that get a state record: 0
+state tax chicago: hand 3815.21  code 3815.21
+state tax washington-dc: hand 3831.50  code 3831.50
+state tax salt-lake-city: hand 3600.00  code 3600.00
+foreign home (toronto: record undefined): state 0

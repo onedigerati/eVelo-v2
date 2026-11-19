@@ -1,0 +1,55 @@
+Stage 2 recheck after the six review fixes — 2026-11-18, fresh-eyes agent
+
+== Independent federal comparison, rerun against the fixed incomeTax.ts
+Adaptation: independent-compare.test.ts.txt now passes year: 2026 (the only API change); independent-calculator.ts.txt unchanged.
+Run: OUT=... npx vitest run --root <scratchpad>/reverify-s2 compare.test.ts -> 1 passed
+
+| Case | Income | Indep federal | incomeTax federal | Indep NIIT | Code NIIT | Indep taxable SS | Code taxable SS | max abs diff |
+|---|---|---|---|---|---|---|---|---|
+| single: QD crosses 0->15 (65+: 0, priceLevel 1) | {"other":30000,"qd":40000} | 2087.50 | 2087.50 | 0.00 | 0.00 | 0.00 | 0.00 | 0.0e+0 |
+| mfj: QD crosses 0->15, NIIT off (65+: 0, priceLevel 1) | {"int":60000,"qd":90000} | 5675.00 | 5675.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.0e+0 |
+| mfj: QD crosses 15->20, NIIT on (65+: 0, priceLevel 1) | {"int":300000,"qd":400000} | 129273.00 | 129273.00 | 17100.00 | 17100.00 | 0.00 | 0.00 | 0.0e+0 |
+| single: LTCG crosses 15->20, NIIT on (65+: 0, priceLevel 1) | {"int":100000,"ltcg":500000,"tsy":20000} | 111450.00 | 111450.00 | 15960.00 | 15960.00 | 0.00 | 0.00 | 0.0e+0 |
+| single: NIIT off (MAGI 150k) (65+: 0, priceLevel 1) | {"int":100000,"qd":50000} | 20670.00 | 20670.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.0e+0 |
+| single: NIIT on, capped by MAGI excess (65+: 0, priceLevel 1) | {"int":150000,"ltcg":100000} | 41634.00 | 41634.00 | 1900.00 | 1900.00 | 0.00 | 0.00 | 0.0e+0 |
+| mfj: SS at 50% with muni (65+: 2, priceLevel 1) | {"ss":30000,"muni":10000,"other":8000} | 0.00 | 0.00 | 0.00 | 0.00 | 500.00 | 500.00 | 0.0e+0 |
+| single: SS at 85% cap with muni (65+: 1, priceLevel 1) | {"ss":40000,"muni":30000,"int":20000} | 3334.00 | 3334.00 | 0.00 | 0.00 | 34000.00 | 34000.00 | 0.0e+0 |
+| single: SS mid-85% with muni (65+: 1, priceLevel 1) | {"ss":30000,"muni":15000,"int":10000} | 0.00 | 0.00 | 0.00 | 0.00 | 9600.00 | 9600.00 | 0.0e+0 |
+| single: 65+, senior deduction partly phased out (65+: 1, priceLevel 1) | {"other":80000} | 7065.00 | 7065.00 | 0.00 | 0.00 | 0.00 | 0.00 | 0.0e+0 |
+| mfj: priceLevel 1.5, NIIT+SS+65+ (65+: 2, priceLevel 1.5) | {"int":150000,"qd":100000,"ss":50000,"muni":20000} | 43745.67 | 43745.67 | 4781.67 | 4781.67 | 42500.00 | 42500.00 | 0.0e+0 |
+| single: priceLevel 1.5, NIIT near threshold (65+: 0, priceLevel 1.5) | {"int":90000,"qd":60000} | 20603.33 | 20603.33 | 633.33 | 633.33 | 0.00 | 0.00 | 0.0e+0 |
+
+Worst absolute difference: 0.00e+0 USD
+
+== Philadelphia SIT regulations (phila.gov PDF, updated 2023-09-25), fetched read-only 2026-11-18
+§206(a): excludes interest on bonds of PA, its political subdivisions, PA municipal authorities, the US Government.
+§206(b)(3): funds exempt only in proportion to exempt holdings ("multiple state municipal bonds ... Pennsylvania Bonds represent .0278 ... $27.80 would not be subject"); a fund not reporting its PA share is fully taxable.
+§206(c): gains on property held more than six months not taxed; capital-gain distributions treated as long-term, not taxed.
+§206(e): old age, retirement and pension payments excluded (consistent with PA taxesPensions false).
+=> localExcludesLongTermGains true and a national muni fund taxed: confirmed.
+
+== Project checks
+> evelo@2.0.0 typecheck
+> tsc -b
+
+
+ Test Files  78 passed (78)
+      Tests  1250 passed (1250)
+   Start at  19:18:05
+   Duration  7.62s (transform 61%, tests 26%, import 12%)
+
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 824ms
+
+== Bundle check: new-module strings in dist/assets (1360 files)
+incomeTax: 0 files, 0 hits
+STATE_INCOME_TAX: 0 files, 0 hits
+priceLevel must be finite: 0 files, 0 hits
+localExcludesLongTermGains: 0 files, 0 hits
+taxesPensions: 0 files, 0 hits
+stateIncomeTaxFor: 0 files, 0 hits
+Rev. Proc. 2025-32: 0 files, 0 hits
+School Income Tax: 1 files, 6 hits
+Note: the 'School Income Tax' hits are in AtlasView (the existing src/data/profiles/philadelphia.ts prose), not the new module.

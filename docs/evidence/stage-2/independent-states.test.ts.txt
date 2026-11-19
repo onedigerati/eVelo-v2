@@ -1,0 +1,36 @@
+import { test, expect } from 'vitest'
+import { writeFileSync } from 'node:fs'
+import { CITIES } from '/home/jonah/src/repos/eVelo-v2/src/data/cities'
+import { STATE_INCOME_TAX, stateIncomeTaxFor } from '/home/jonah/src/repos/eVelo-v2/src/data/stateIncomeTax'
+import { incomeTax } from '/home/jonah/src/repos/eVelo-v2/src/engine/incomeTax'
+test('coverage + IL/DC/UT', () => {
+  const L: string[] = []
+  const us = CITIES.filter((c) => c.countryCode === 'US')
+  const missing = us.filter((c) => !stateIncomeTaxFor(c.id))
+  const extra = Object.keys(STATE_INCOME_TAX).filter((k) => !us.some((c) => c.id === k))
+  const noSource = us.filter((c) => !(stateIncomeTaxFor(c.id)?.sources.length))
+  L.push(`CITIES total ${CITIES.length}; US cities ${us.length}; records ${Object.keys(STATE_INCOME_TAX).length}`)
+  L.push(`US cities without a record: ${JSON.stringify(missing.map((c) => c.id))}`)
+  L.push(`records for non-US/unknown city ids: ${JSON.stringify(extra)}`)
+  L.push(`records without a source: ${JSON.stringify(noSource.map((c) => c.id))}`)
+  for (const c of us) { const r = stateIncomeTaxFor(c.id)!; L.push(`${c.id}: ${r.state} muni=${r.muni} taxesInv=${r.taxesInvestmentIncome} top=${r.bands.single.at(-1)?.rate ?? '-'}${r.localRate ? ' local=' + r.localRate : ''}`) }
+  const nonUS = CITIES.filter((c) => c.countryCode !== 'US').filter((c) => stateIncomeTaxFor(c.id))
+  L.push(`non-US cities that get a state record: ${nonUS.length}`)
+  // Hand state calcs, single, under 65, priceLevel 1: muni 40k, treasury 20k, interest 10k, QD 30k.
+  const inc = { muniInterest: 40000, treasuryInterest: 20000, taxableInterest: 10000, qualifiedDividends: 30000 }
+  const base = 40000 + 10000 + 30000 // treasury removed, national-fund muni taxed in IL, DC, UT
+  const hand = {
+    chicago: 0.0495 * (base - 2925),
+    'washington-dc': 0.04 * 10000 + 0.06 * 30000 + 0.065 * 20000 + 0.085 * (base - 16100 - 60000),
+    'salt-lake-city': 0.045 * base,
+  } as Record<string, number>
+  for (const [id, h] of Object.entries(hand)) {
+    const r = incomeTax(inc, { status: 'single', over65: 0, priceLevel: 1, state: stateIncomeTaxFor(id) })
+    L.push(`state tax ${id}: hand ${h.toFixed(2)}  code ${r.state.toFixed(2)}`)
+    expect(Math.abs(r.state - h)).toBeLessThan(1e-6)
+  }
+  const fed = incomeTax(inc, { status: 'single', over65: 0, priceLevel: 1, state: stateIncomeTaxFor(CITIES.find((c) => c.countryCode !== 'US')!.id) })
+  L.push(`foreign home (${CITIES.find((c) => c.countryCode !== 'US')!.id}: record ${String(stateIncomeTaxFor(CITIES.find((c) => c.countryCode !== 'US')!.id))}): state ${fed.state}`)
+  writeFileSync(process.env.OUT!, L.join('\n') + '\n')
+  expect(missing.length).toBe(0)
+})

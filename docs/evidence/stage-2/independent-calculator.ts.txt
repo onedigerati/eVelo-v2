@@ -1,0 +1,45 @@
+// Independent 2026 federal calculator, written from docs/research/conventional-income-taxes.md §1
+// (Rev. Proc. 2025-32 tables, Pub 915 worksheet, IRS Topic 559). Uses the IRS Qualified Dividends and
+// Capital Gain Tax Worksheet structure, not incomeTax.ts's overlap method.
+type S = 'single' | 'mfj'
+const BR: Record<S, [number, number][]> = { // [upper limit, rate]
+  single: [[12400, .10], [50400, .12], [105700, .22], [201775, .24], [256225, .32], [640600, .35], [Infinity, .37]],
+  mfj: [[24800, .10], [100800, .12], [211400, .22], [403550, .24], [512450, .32], [768700, .35], [Infinity, .37]],
+}
+function ordTax(x: number, s: S) { let t = 0, lo = 0; for (const [hi, r] of BR[s]) { if (x > lo) t += (Math.min(x, hi) - lo) * r; lo = hi } return t }
+const STD = { single: 16100, mfj: 32200 }, AGED = { single: 2050, mfj: 1650 }
+const Q = { single: [49450, 545500], mfj: [98900, 613700] }
+const NIIT = { single: 200000, mfj: 250000 }
+const SSB = { single: [25000, 34000], mfj: [32000, 44000] }
+const SEN = { single: 75000, mfj: 150000 }
+export interface In { qd?: number; int?: number; tsy?: number; muni?: number; ltcg?: number; ss?: number; other?: number }
+export function indep(i: In, s: S, over65: number, p: number) {
+  const qd = i.qd ?? 0, int = i.int ?? 0, tsy = i.tsy ?? 0, muni = i.muni ?? 0, ltcg = i.ltcg ?? 0, ss = i.ss ?? 0, other = i.other ?? 0
+  // Pub 915 worksheet, nominal bases deflated to real
+  const [b1, b2] = SSB[s].map(v => v / p)
+  const otherInc = qd + int + tsy + ltcg + other
+  const L = otherInc + muni + ss / 2 // provisional
+  let tss = 0
+  if (L > b1) {
+    const l9 = L - b1, l10 = b2 - b1
+    const l11 = Math.max(0, l9 - l10)
+    const l12 = Math.min(l9, l10), l13 = l12 / 2, l14 = Math.min(ss / 2, l13)
+    tss = Math.min(l14 + l11 * 0.85, ss * 0.85)
+  }
+  const agi = otherInc + tss
+  let ded = STD[s] + over65 * AGED[s]
+  if (over65 > 0) ded += over65 * Math.max(0, 6000 / p - 0.06 * Math.max(0, agi - SEN[s] / p))
+  const ti = Math.max(0, agi - ded)
+  // QD&CG worksheet
+  const l4 = Math.min(qd + ltcg, ti), l5 = ti - l4
+  const l7 = Math.min(ti, Q[s][0]), l8 = Math.min(l5, l7), l9 = l7 - l8 // at 0%
+  const l10 = Math.min(ti, l4), l12 = l10 - l9
+  const l14 = Math.min(ti, Q[s][1]), l15 = l5 + l9, l16 = Math.max(0, l14 - l15)
+  const l17 = Math.min(l12, l16), l18 = l17 * 0.15
+  const l20 = l10 - (l9 + l17), l21 = l20 * 0.20
+  const l22 = ordTax(l5, s)
+  const tax = Math.min(l18 + l21 + l22, ordTax(ti, s))
+  const nii = qd + int + tsy + ltcg
+  const niit = 0.038 * Math.max(0, Math.min(nii, agi - NIIT[s] / p))
+  return { federal: tax + niit, niit, tss, ti, agi }
+}

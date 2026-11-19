@@ -1,0 +1,33 @@
+import { test, expect } from 'vitest'
+import { writeFileSync } from 'node:fs'
+import { indep, type In } from './indep'
+import { incomeTax } from '/home/jonah/src/repos/eVelo-v2/src/engine/incomeTax'
+type C = [string, In, 'single' | 'mfj', 0 | 1 | 2, number]
+const cases: C[] = [
+  ['single: QD crosses 0->15', { other: 30000, qd: 40000 }, 'single', 0, 1],
+  ['mfj: QD crosses 0->15, NIIT off', { int: 60000, qd: 90000 }, 'mfj', 0, 1],
+  ['mfj: QD crosses 15->20, NIIT on', { int: 300000, qd: 400000 }, 'mfj', 0, 1],
+  ['single: LTCG crosses 15->20, NIIT on', { int: 100000, ltcg: 500000, tsy: 20000 }, 'single', 0, 1],
+  ['single: NIIT off (MAGI 150k)', { int: 100000, qd: 50000 }, 'single', 0, 1],
+  ['single: NIIT on, capped by MAGI excess', { int: 150000, ltcg: 100000 }, 'single', 0, 1],
+  ['mfj: SS at 50% with muni', { ss: 30000, muni: 10000, other: 8000 }, 'mfj', 2, 1],
+  ['single: SS at 85% cap with muni', { ss: 40000, muni: 30000, int: 20000 }, 'single', 1, 1],
+  ['single: SS mid-85% with muni', { ss: 30000, muni: 15000, int: 10000 }, 'single', 1, 1],
+  ['single: 65+, senior deduction partly phased out', { other: 80000 }, 'single', 1, 1],
+  ['mfj: priceLevel 1.5, NIIT+SS+65+', { int: 150000, qd: 100000, ss: 50000, muni: 20000 }, 'mfj', 2, 1.5],
+  ['single: priceLevel 1.5, NIIT near threshold', { int: 90000, qd: 60000 }, 'single', 0, 1.5],
+]
+test('independent vs incomeTax', () => {
+  const rows = ['| Case | Income | Indep federal | incomeTax federal | Indep NIIT | Code NIIT | Indep taxable SS | Code taxable SS | max abs diff |', '|---|---|---|---|---|---|---|---|---|']
+  let worst = 0
+  for (const [name, i, s, o, p] of cases) {
+    const a = indep(i, s, o, p)
+    const b = incomeTax({ qualifiedDividends: i.qd, taxableInterest: i.int, treasuryInterest: i.tsy, muniInterest: i.muni, longTermGains: i.ltcg, socialSecurity: i.ss, otherOrdinary: i.other }, { status: s, over65: o, priceLevel: p })
+    const d = Math.max(Math.abs(a.federal - b.federal), Math.abs(a.niit - b.niit), Math.abs(a.tss - b.taxableSocialSecurity))
+    worst = Math.max(worst, d)
+    rows.push(`| ${name} (65+: ${o}, priceLevel ${p}) | ${JSON.stringify(i)} | ${a.federal.toFixed(2)} | ${b.federal.toFixed(2)} | ${a.niit.toFixed(2)} | ${b.niit.toFixed(2)} | ${a.tss.toFixed(2)} | ${b.taxableSocialSecurity.toFixed(2)} | ${d.toExponential(1)} |`)
+  }
+  rows.push('', `Worst absolute difference: ${worst.toExponential(2)} USD`)
+  writeFileSync(process.env.OUT!, rows.join('\n') + '\n')
+  expect(worst).toBeLessThan(1e-6)
+})
