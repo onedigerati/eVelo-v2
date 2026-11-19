@@ -52,8 +52,15 @@ function incomeMarket(
 
 describe('same months as eVelo', () => {
   // Captured from HEAD (281cf30) before generateScenarios learned to return its month indices.
+  // The bootstrap simulate hash differs in the last bits between arm64 and x64 (their libm
+  // rounds differently); the x64 value was captured in CI from 192a960, before stage 3, and
+  // matches 0a6a176 there too. The scenario hashes are the same on both.
+  const SIM_BOOTSTRAP: Record<string, string> = {
+    arm64: '276c6b093ec7d995f8cf7da182f737077f0a15b206233f93630a7f2d78b3db2d',
+    x64: '2518efdee8d7deec6194b7e0b5aabe72195fb9d198fbf8e8d6d089603eef7b65',
+  }
   const GOLDEN: Record<string, string> = {
-    'sim-bootstrap': '276c6b093ec7d995f8cf7da182f737077f0a15b206233f93630a7f2d78b3db2d',
+    'sim-bootstrap': SIM_BOOTSTRAP[process.arch] ?? SIM_BOOTSTRAP.x64,
     'sc-bootstrap': '79eea6f38d3f35932095a7e043a7773347607a685b3e93d1e49dd092a94053a0',
     'sim-fat-tail': '1aab50bff23151da149a919e5f9226b0e44b792a2fd1b5c8c76ab09ad8dfe799',
     'sc-fat-tail': '64e274d8d0e1b1a43eb337eaba541f76a36f66569219cec5676a940ea3526cd8',
