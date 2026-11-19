@@ -67,6 +67,10 @@ export interface IncomeResult {
   afterTaxIncome: Bands
   /** Per year 1..horizon, the per-year medians of each field. */
   median: IncomeYearRow[]
+  /** Median over paths of each path's lifetime tax (sum of its yearly real tax), real USD. */
+  totalTaxMedian: number
+  /** Median over paths of each path's lifetime gap sales (sum of its yearly real gapSold), real USD. */
+  totalSoldMedian: number
   /** The yields the paths start from (each fund's latest; taxable = mean of VFITX and VBMFX). */
   startYield: { stocks: number; munis: number; taxable: number }
 }

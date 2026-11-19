@@ -17,6 +17,7 @@ import { useIncomeRun, type IncomeComputed } from './incomeClient'
 import type { FigureStatus } from './ChartPanel'
 import { STEPS } from './incomeFlow'
 import { IncomeResultsView } from './IncomeResultsView'
+import { SyncHeader } from './SyncChip'
 import './income.css'
 import './incomeFlow.css'
 
@@ -53,6 +54,11 @@ export default function IncomeMode() {
             <span className="sr-only">Question </span>
             {step} of {STEPS}
           </span>
+        )}
+        {done && (
+          <div className="income__sync">
+            <SyncHeader />
+          </div>
         )}
         <a className="income__back" href={hrefFor('plan')}>
           <span aria-hidden="true">←</span> <span className="income__back-text">Back to eVelo</span>

@@ -1,0 +1,31 @@
+{
+  "home": [],
+  "plan": [
+    "text: \"Income starts\" <text.[object SVGAnimatedString]>"
+  ],
+  "outlook": [
+    "text: \"Income starts\" <text.[object SVGAnimatedString]>"
+  ],
+  "atlas": [
+    "text: \"Modern, English-friendly city, tax-free foreign income\" <p.pick__tag>",
+    "text: \"An 11-year tax holiday on foreign capital income, no inheritance tax and good mutualista care, for r\" <span.also__why>",
+    "text: \"Mauritius taxes foreign income only when it is remitted and has no wealth, inheritance or capital ga\" <span.also__why>",
+    "text: \"Turkey's new-resident regime exempts foreign income for 20 years if claimed in year one and cuts inh\" <span.also__why>",
+    "text: \"Foreign-source income is exempt, children inherit free and $150k of property gives residence, though\" <span.also__why>",
+    "text: \"Territorial tax today, but a pending bill would tax foreign passive income at about 15%, so it ranks\" <span.also__why>",
+    "attr aria-label=\"Top pick 6: Kuala Lumpur, Malaysia. Modern, English-friendly city, tax-free foreign income. Plan hol\" <button>",
+    "attr aria-label=\"Top pick 17: Montevideo, Uruguay. Plan holds in 73%. An 11-year tax holiday on foreign capital incom\" <button>",
+    "attr aria-label=\"Top pick 20: Grand Baie, Mauritius. Plan holds in 80%. Mauritius taxes foreign income only when it i\" <button>",
+    "attr aria-label=\"Top pick 21: Antalya, Turkey. Plan holds in 72%. Turkey's new-resident regime exempts foreign income\" <button>",
+    "attr aria-label=\"Top pick 23: Tbilisi, Georgia. Plan holds in 78%. Foreign-source income is exempt, children inherit \" <button>",
+    "attr aria-label=\"Top pick 24: San José, Costa Rica. Plan holds in 69%. Territorial tax today, but a pending bill woul\" <button>"
+  ],
+  "method": [
+    "text: \"This month’s spending, grown with inflation, minus any other income (Social Security, a pension) is \" <li.>",
+    "text: \"by default, the top federal long-term rate including the 3.8% investment-income tax) comes out of th\" <p.>",
+    "text: \"whole years. Until then each month is a working month: nothing is drawn for spending and other incom\" <p.>",
+    "text: \"a year by default, kept level with inflation) go in. They pay down any loan first and the rest is in\" <p.>",
+    "text: \"The simplifications: Spain’s cap on income plus wealth tax (60% of the income-tax base) is ignored, \" <p.>",
+    "text: \"There is no US estate tax: the 2026 federal exemption is $15 million per person, and estates above i\" <li.>"
+  ]
+}

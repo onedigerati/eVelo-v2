@@ -8,6 +8,7 @@ import { useIncomeStore } from '../../state/incomeState'
 import { ChartPanel, STATUS_TEXT, type FigureStatus } from './ChartPanel'
 import { HowWorkedOut } from './HowWorkedOut'
 import type { IncomeComputed } from './incomeClient'
+import { IncomeCompare } from './IncomeCompare'
 import { IncomeMeasures } from './IncomeMeasures'
 import { IncomeSummary } from './IncomeSummary'
 import { YearByYear } from './YearByYear'
@@ -42,6 +43,7 @@ export function IncomeResultsView({ computed, busy, status, wide, focusOnMount }
       {computed ? <IncomeSummary result={computed.result} inputs={computed.inputs} /> : <p className="isummary ires__wait">Working out your futures…</p>}
       <ChartPanel computed={computed} busy={busy} status={status} layers={5} variant={wide ? 'results' : 'phone-results'} showStatus={false} />
       {computed && <IncomeMeasures result={computed.result} />}
+      {computed && <IncomeCompare computed={computed} wide={wide} />}
       <div className="ires__actions">
         {computed && <YearByYear result={computed.result} />}
         <button type="button" className="ires__edit" onClick={() => setFlow({ step: 1, done: false })}>

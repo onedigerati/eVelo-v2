@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Comparison, phone</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0a0d0c}
+a{color:#e3b262}a:hover{color:#f0c987}
+</style>
+</helmet>
+<div style="width:390px;height:844px;box-sizing:border-box;background:#0a0d0c;color:#ecf1ee;font-family:'Geist',system-ui,sans-serif;display:flex;flex-direction:column;padding:16px 24px 24px;gap:16px">
+
+  <div style="display:flex;justify-content:space-between;align-items:center;height:44px">
+    <a href="#" aria-label="Back to living on income" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;margin-left:-12px;color:#a9b5af;text-decoration:none;font-size:20px">←</a>
+    <span style="font-size:12px;color:#84918b">Synced 18 Nov · <a href="#">Re-sync</a></span>
+  </div>
+
+  <h2 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:30px;line-height:1.15">Two ways, same markets</h2>
+
+  <div role="tablist" aria-label="Measure" style="display:flex;padding:4px;border-radius:999px;background:rgba(220,255,240,0.05);border:1px solid rgba(220,255,240,0.085)">
+    <button role="tab" aria-selected="true" style="flex:1;min-height:40px;border-radius:999px;border:0;background:#ecf1ee;color:#0a0d0c;font:inherit;font-size:12px;font-weight:500">Lasts</button>
+    <button role="tab" aria-selected="false" style="flex:1;min-height:40px;border-radius:999px;border:0;background:transparent;color:#a9b5af;font:inherit;font-size:12px">Principal</button>
+    <button role="tab" aria-selected="false" style="flex:1;min-height:40px;border-radius:999px;border:0;background:transparent;color:#a9b5af;font:inherit;font-size:12px">Keeps pace</button>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px">
+    <div style="padding:14px;border-radius:16px;background:rgba(227,178,98,0.07);border:1px solid rgba(227,178,98,0.34);display:flex;flex-direction:column;gap:4px">
+      <span style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#e3b262">Income</span>
+      <span style="font-family:'Instrument Serif',serif;font-size:44px;line-height:1;color:#e3b262">84%</span>
+      <span style="font-size:12px;color:#a9b5af">estate $2.1M</span>
+    </div>
+    <div style="padding:14px;border-radius:16px;background:rgba(91,227,176,0.05);border:1px solid rgba(91,227,176,0.32);display:flex;flex-direction:column;gap:4px">
+      <span style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#5be3b0">eVelo</span>
+      <span style="font-family:'Instrument Serif',serif;font-size:44px;line-height:1;color:#5be3b0">88%</span>
+      <span style="font-size:12px;color:#a9b5af">estate $4.6M</span>
+    </div>
+  </div>
+
+  <figure style="margin:0;display:flex;flex-direction:column;gap:6px">
+    <svg width="342" height="170" viewBox="0 0 342 170" role="img" aria-label="Median net worth: eVelo climbs to 4.6 million, living on income ends near 2.1 million">
+      <line x1="0" y1="169" x2="342" y2="169" stroke="rgba(220,255,240,0.16)"></line>
+      <path d="M0 99 C 90 90, 180 70, 342 16" fill="none" stroke="#5be3b0" stroke-width="2.5"></path>
+      <path d="M0 99 C 90 104, 180 110, 342 106" fill="none" stroke="#e3b262" stroke-width="2.5"></path>
+    </svg>
+    <figcaption style="display:flex;justify-content:space-between;font-size:11px;color:#84918b"><span>age 58</span><span>median net worth</span><span>88</span></figcaption>
+  </figure>
+
+  <div style="display:flex;flex-direction:column;border-top:1px solid rgba(220,255,240,0.085)">
+    <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(220,255,240,0.05);font-size:13px"><span style="color:#a9b5af">Tax paid, lifetime</span><span><span style="color:#e3b262">$310K</span> · <span style="color:#5be3b0">$95K</span></span></div>
+    <div style="display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(220,255,240,0.05);font-size:13px"><span style="color:#a9b5af">Sold / borrowed</span><span><span style="color:#e3b262">$1.0M</span> · <span style="color:#5be3b0">$1.7M</span></span></div>
+  </div>
+
+  <div style="flex-grow:1"></div>
+  <span style="text-align:center;font-size:12px;color:#84918b">Illustrative numbers</span>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

@@ -85,6 +85,10 @@ export interface RefPath {
   lasts: boolean
   principalKept: boolean
   keepsPace: boolean
+  /** Sum of the path's yearly real tax. */
+  totalTax: number
+  /** Sum of the path's yearly real gap sales. */
+  totalSold: number
 }
 
 export interface RefResult {
@@ -267,7 +271,15 @@ export function referenceIncome(market: MarketData, inputs: RefInputs, monthIdx:
       })
       values.push(value)
     }
-    paths.push({ rows, values, lasts: !failed, principalKept: !gapEver, keepsPace })
+    paths.push({
+      rows,
+      values,
+      lasts: !failed,
+      principalKept: !gapEver,
+      keepsPace,
+      totalTax: rows.reduce((a, r) => a + r.tax, 0),
+      totalSold: rows.reduce((a, r) => a + r.gapSold, 0),
+    })
   }
 
   return {

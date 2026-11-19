@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Comparison, verdict and small multiples</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0a0d0c}
+a{color:#e3b262}a:hover{color:#f0c987}
+</style>
+</helmet>
+<div style="width:1280px;height:980px;box-sizing:border-box;background:#0a0d0c;color:#ecf1ee;font-family:'Geist',system-ui,sans-serif;display:flex;flex-direction:column;gap:28px;padding:24px 40px 32px">
+
+  <header style="display:flex;align-items:center;justify-content:space-between;height:44px">
+    <a href="#" style="font-size:13px;color:#a9b5af;text-decoration:none">← Living on income</a>
+    <span style="font-size:13px;color:#84918b">Synced 18 Nov · <a href="#">Re-sync</a></span>
+  </header>
+
+  <p style="margin:0;font-family:'Instrument Serif',serif;font-size:46px;line-height:1.18;letter-spacing:-0.015em;max-width:1120px">
+    Living on income lasts in <span style="color:#e3b262">84</span> of 100 futures. Borrowing lasts in <span style="color:#5be3b0">88</span>, and leaves your heirs about <span style="color:#5be3b0">$2.5M more</span>.
+  </p>
+
+  <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px">
+    <sc-for list="{{fans}}" as="f" hint-placeholder-count="2">
+      <figure style="margin:0;padding:20px;border-radius:20px;background:rgba(220,255,240,0.025);border:1px solid rgba(220,255,240,0.085);display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:{{f.ink}}">{{f.name}}</span>
+          <span style="font-family:'Instrument Serif',serif;font-size:32px;color:{{f.ink}}">{{f.odds}}</span>
+        </div>
+        <svg width="540" height="240" viewBox="0 0 540 240" role="img" aria-label="{{f.aria}}">
+          <line x1="0" y1="20" x2="540" y2="20" stroke="rgba(220,255,240,0.07)"></line>
+          <line x1="0" y1="120" x2="540" y2="120" stroke="rgba(220,255,240,0.07)"></line>
+          <line x1="0" y1="220" x2="540" y2="220" stroke="rgba(220,255,240,0.16)"></line>
+          <path d="{{f.outer}}" fill="{{f.soft}}"></path>
+          <path d="{{f.inner}}" fill="{{f.soft2}}"></path>
+          <path d="{{f.median}}" fill="none" stroke="{{f.ink}}" stroke-width="2.5"></path>
+        </svg>
+        <figcaption style="display:flex;justify-content:space-between;font-family:'Geist Mono',monospace;font-size:11px;color:#84918b"><span>age 58</span><span>same scale, $0–$6M</span><span>88</span></figcaption>
+      </figure>
+    </sc-for>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px">
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <span style="font-size:12px;color:#e3b262">What living on income gives up</span>
+      <p style="margin:0;font-size:15px;line-height:1.55;color:#a9b5af">About $1.0M of shares sold along the way, and the tax on every sale and dividend. Its futures sit closer together, though: fewer great outcomes and fewer bad ones.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <span style="font-size:12px;color:#5be3b0">What eVelo takes on</span>
+      <p style="margin:0;font-size:15px;line-height:1.55;color:#a9b5af">A loan that grows to about $1.7M, and in 23 of 100 futures a crash that forces a sale at the worst time.</p>
+    </div>
+  </div>
+
+  <span style="font-size:12px;color:#84918b">Illustrative numbers</span>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":980}}'>
+class Component extends DCLogic {
+  renderVals() {
+    function y(v) { return (220 - v / 6 * 200).toFixed(1); }
+    function line(pts) { return pts.map(function (p, i) { return (i ? 'L' : 'M') + (i * 540 / (pts.length - 1)).toFixed(1) + ' ' + y(p); }).join(' '); }
+    function band(lo, hi) {
+      var top = hi.map(function (p, i) { return (i ? 'L' : 'M') + (i * 540 / (hi.length - 1)).toFixed(1) + ' ' + y(p); }).join(' ');
+      var bot = lo.slice().reverse().map(function (p, j) { var i = lo.length - 1 - j; return 'L' + (i * 540 / (lo.length - 1)).toFixed(1) + ' ' + y(p); }).join(' ');
+      return top + ' ' + bot + ' Z';
+    }
+    var inc = { med: [2.4, 2.3, 2.25, 2.2, 2.15, 2.1, 2.1], p25: [2.4, 2.0, 1.8, 1.6, 1.4, 1.25, 1.1], p75: [2.4, 2.6, 2.75, 2.9, 3.0, 3.1, 3.2], p5: [2.4, 1.7, 1.3, 1.0, 0.6, 0.3, 0.0], p95: [2.4, 3.0, 3.4, 3.8, 4.1, 4.3, 4.5] };
+    var ev = { med: [2.4, 2.7, 3.0, 3.4, 3.8, 4.2, 4.6], p25: [2.4, 2.2, 2.2, 2.3, 2.4, 2.5, 2.6], p75: [2.4, 3.2, 3.9, 4.5, 5.0, 5.4, 5.8], p5: [2.4, 1.5, 1.0, 0.6, 0.3, 0.0, 0.0], p95: [2.4, 3.8, 4.6, 5.3, 5.8, 6.0, 6.0] };
+    return {
+      fans: [
+        { name: 'Living on income', odds: '84%', ink: '#e3b262', soft: 'rgba(227,178,98,0.1)', soft2: 'rgba(227,178,98,0.2)', outer: band(inc.p5, inc.p95), inner: band(inc.p25, inc.p75), median: line(inc.med), aria: 'Living on income: median net worth eases from 2.4 to 2.1 million, a narrower fan' },
+        { name: 'eVelo', odds: '88%', ink: '#5be3b0', soft: 'rgba(91,227,176,0.08)', soft2: 'rgba(91,227,176,0.18)', outer: band(ev.p5, ev.p95), inner: band(ev.p25, ev.p75), median: line(ev.med), aria: 'eVelo: median net worth climbs from 2.4 to 4.6 million, a wider fan' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

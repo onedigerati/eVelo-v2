@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Side by side, once synced</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0a0d0c}
+a{color:#e3b262}a:hover{color:#f0c987}
+</style>
+</helmet>
+<div style="width:1280px;height:860px;box-sizing:border-box;background:#0a0d0c;color:#ecf1ee;font-family:'Geist',system-ui,sans-serif;display:flex;flex-direction:column;gap:22px;padding:32px 40px">
+
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px">
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#84918b">Same person, same markets, two ways · 5 values synced</span>
+      <h2 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:38px;line-height:1.08">Living on income, beside Buy, Borrow, Die</h2>
+    </div>
+    <span style="font-size:12px;color:#84918b">Illustrative numbers</span>
+  </div>
+
+  <div style="font-family:'Geist Mono',monospace;font-size:12px;color:#84918b">Option 1 · two columns</div>
+  <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px">
+    <sc-for list="{{cols}}" as="c" hint-placeholder-count="2">
+      <div style="padding:24px;border-radius:20px;background:{{c.bg}};border:1px solid {{c.line}};display:flex;flex-direction:column;gap:16px">
+        <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:{{c.ink}}">{{c.name}}</span>
+          <span style="font-size:13px;color:#a9b5af">{{c.how}}</span>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:12px">
+          <span style="font-family:'Instrument Serif',serif;font-size:72px;line-height:0.9;color:{{c.ink}}">{{c.odds}}</span>
+          <span style="font-size:14px;color:#a9b5af">of futures, the money lasts</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;border-top:1px solid rgba(220,255,240,0.085);padding-top:14px">
+          <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:12px;color:#84918b">Median estate</span><span style="font-family:'Instrument Serif',serif;font-size:26px">{{c.estate}}</span></div>
+          <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:12px;color:#84918b">Tax paid, lifetime</span><span style="font-family:'Instrument Serif',serif;font-size:26px">{{c.tax}}</span></div>
+          <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:12px;color:#84918b">{{c.lastLabel}}</span><span style="font-family:'Instrument Serif',serif;font-size:26px">{{c.last}}</span></div>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="font-family:'Geist Mono',monospace;font-size:12px;color:#84918b">Option 2 · one chart, two medians</div>
+  <figure style="margin:0;padding:20px 24px;border-radius:20px;background:rgba(220,255,240,0.025);border:1px solid rgba(220,255,240,0.085);display:flex;flex-direction:column;gap:12px">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <span style="font-size:14px;color:#a9b5af">Net worth, median future, today's dollars</span>
+      <div style="display:flex;gap:18px;font-size:12px;color:#a9b5af">
+        <span style="display:flex;align-items:center;gap:6px"><span style="width:16px;height:3px;background:#5be3b0"></span>eVelo</span>
+        <span style="display:flex;align-items:center;gap:6px"><span style="width:16px;height:3px;background:#e3b262"></span>Living on income</span>
+      </div>
+    </div>
+    <svg width="1150" height="190" viewBox="0 0 1150 190" role="img" aria-label="eVelo's median net worth climbs from 2.4 to 4.6 million; living on income's dips, then stays near 2.1 million">
+      <line x1="40" y1="20" x2="1150" y2="20" stroke="rgba(220,255,240,0.07)"></line>
+      <line x1="40" y1="80" x2="1150" y2="80" stroke="rgba(220,255,240,0.07)"></line>
+      <line x1="40" y1="140" x2="1150" y2="140" stroke="rgba(220,255,240,0.07)"></line>
+      <text x="0" y="24" fill="#84918b" font-size="11" font-family="Geist Mono, monospace">$5M</text>
+      <text x="0" y="84" fill="#84918b" font-size="11" font-family="Geist Mono, monospace">$3M</text>
+      <text x="0" y="144" fill="#84918b" font-size="11" font-family="Geist Mono, monospace">$1M</text>
+      <path d="M40 98 C 300 90, 600 70, 1150 32" fill="none" stroke="#5be3b0" stroke-width="2.5"></path>
+      <path d="M40 98 C 300 104, 600 112, 1150 107" fill="none" stroke="#e3b262" stroke-width="2.5"></path>
+      <text x="1146" y="26" fill="#5be3b0" font-size="12" text-anchor="end" font-family="Geist, sans-serif">$4.6M</text>
+      <text x="1146" y="126" fill="#e3b262" font-size="12" text-anchor="end" font-family="Geist, sans-serif">$2.1M</text>
+      <text x="40" y="184" fill="#84918b" font-size="11" font-family="Geist Mono, monospace">age 58</text>
+      <text x="1150" y="184" fill="#84918b" font-size="11" text-anchor="end" font-family="Geist Mono, monospace">age 88</text>
+    </svg>
+  </figure>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":860}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      cols: [
+        { name: 'Living on income', how: 'dividends, coupons, sell for the gap', odds: '84%', estate: '$2.1M', tax: '$310K', lastLabel: 'Shares sold', last: '$1.0M', ink: '#e3b262', bg: 'rgba(227,178,98,0.06)', line: 'rgba(227,178,98,0.34)' },
+        { name: 'eVelo', how: 'buy, borrow, never sell', odds: '77%', estate: '$4.6M', tax: '$95K', lastLabel: 'Loan at the end', last: '$1.7M', ink: '#5be3b0', bg: 'rgba(91,227,176,0.05)', line: 'rgba(91,227,176,0.32)' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,322 @@
+/* ============ Sync with my eVelo plan — the header control and its sheet ============ */
+/* The sheet is portalled to <body>, outside .income, so it takes the brass accent itself. */
+
+.sync-sheet {
+  --accent: var(--bruised);
+  --accent-text: var(--bruised-text);
+  --accent-soft: var(--bruised-soft);
+  --focus: var(--bruised);
+  --focus-ring: 0 0 0 2px var(--bg), 0 0 0 4px var(--bruised);
+}
+@media (min-width: 700px) {
+  .sync-sheet.sheet--bottom {
+    /* Centred by margins: framer-motion owns the transform. */
+    width: min(720px, calc(100vw - 64px));
+    margin: 0 auto;
+  }
+}
+
+.isync {
+  display: flex;
+  flex-direction: column;
+}
+.isync__lead {
+  margin: 0;
+  padding: 0 var(--space-6) var(--space-4);
+  max-width: 56ch;
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+
+.isync__head,
+.isync__row {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) minmax(0, 168px) 20px minmax(0, 168px);
+  align-items: center;
+  column-gap: var(--space-2);
+  padding: 0 var(--space-6);
+}
+.isync__head {
+  padding-top: var(--space-2);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--hairline);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.isync__h-evelo,
+.isync__h-mode {
+  text-align: right;
+}
+.isync__h-evelo {
+  color: var(--holds-text, var(--ink-2));
+}
+.isync__h-mode {
+  color: var(--bruised-text);
+}
+
+.isync__rows {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.isync__row {
+  min-height: 56px;
+  padding-top: var(--space-2);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--hairline);
+  font-size: var(--fs-md, 0.9375rem);
+}
+.isync__tick {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  accent-color: var(--bruised);
+  cursor: pointer;
+}
+.isync__tick:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: 4px;
+}
+.isync__label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  cursor: pointer;
+}
+.isync__note {
+  font-size: var(--fs-xs);
+  line-height: 1.35;
+  color: var(--ink-3);
+}
+/* The values live in the two right-hand columns on wide screens. */
+.isync__vals {
+  display: contents;
+}
+.isync__ev,
+.isync__cv {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+.isync__ev {
+  color: var(--ink);
+}
+@media (min-width: 560px) {
+  .isync__ev > span,
+  .isync__cv > span {
+    white-space: nowrap;
+  }
+}
+.isync__arrow {
+  text-align: center;
+  color: var(--ink-3);
+}
+.isync__row--same .isync__cv {
+  color: var(--ink-3);
+}
+.isync__row--diff .isync__cv {
+  color: var(--bruised-text);
+}
+
+.isync__never {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: var(--space-3) var(--space-6);
+  background: var(--surface-2);
+  font-size: var(--fs-sm);
+  color: var(--ink-2);
+}
+.isync__never-lead {
+  font-size: var(--fs-xs);
+  color: var(--ink-3);
+}
+
+.isync__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  padding: var(--space-5) var(--space-6) var(--space-6);
+}
+.isync__cancel,
+.isync__copy {
+  min-height: var(--tap);
+  padding: 0 var(--space-5);
+  border-radius: var(--radius-pill);
+  font: inherit;
+  font-size: var(--fs-sm);
+  font-weight: 520;
+  cursor: pointer;
+}
+.isync__cancel {
+  border: 1px solid var(--hairline-strong);
+  background: transparent;
+  color: var(--ink);
+}
+.isync__cancel:hover {
+  background: var(--surface-2);
+}
+.isync__copy {
+  border: 0;
+  background: var(--bruised);
+  color: #1a1408;
+}
+.isync__copy:hover {
+  filter: brightness(1.06);
+}
+.isync__copy:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  filter: none;
+}
+.isync__cancel:focus-visible,
+.isync__copy:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+@media (max-width: 559px) {
+  .isync__lead,
+  .isync__never,
+  .isync__actions {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+  .isync__head {
+    display: none;
+  }
+  .isync__row {
+    grid-template-columns: 32px minmax(0, 1fr);
+    row-gap: 4px;
+    padding: var(--space-3) var(--space-4);
+  }
+  /* The values drop under the name: "eVelo value → this mode's value". */
+  .isync__vals {
+    grid-column: 2;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 2px var(--space-2);
+  }
+  .isync__ev,
+  .isync__cv {
+    align-items: flex-start;
+    text-align: left;
+  }
+  /* Two-line values (the futures): eVelo's above, "→ this mode's" below. */
+  .isync__row--multi .isync__vals {
+    display: grid;
+    grid-template-columns: 1.4em minmax(0, 1fr);
+  }
+  .isync__row--multi .isync__ev {
+    grid-column: 1 / -1;
+  }
+  .isync__actions > * {
+    flex: 1;
+  }
+}
+
+/* ---------- The header control ---------- */
+.isync-ctl,
+.isync-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+}
+.isync-chip {
+  padding: 4px 4px 4px 14px;
+  border: 1px solid var(--bruised-line);
+  border-radius: var(--radius-pill);
+  background: var(--bruised-soft);
+  font-size: var(--fs-sm);
+}
+.isync-chip--changed {
+  border-color: var(--hairline-strong);
+  background: transparent;
+  color: var(--ink-2);
+}
+.isync-chip__dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--bruised);
+}
+.isync-chip--changed .isync-chip__dot {
+  background: transparent;
+  border: 1.5px solid var(--ink-3);
+}
+.isync-chip__text {
+  min-width: 0;
+}
+.isync-chip__resync {
+  flex: none;
+  min-height: 36px;
+  padding: 0 var(--space-3);
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  font: inherit;
+  color: var(--bruised-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+.isync-chip__resync:hover {
+  background: var(--bruised-soft);
+}
+.isync-open {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--tap);
+  padding: 0 var(--space-4);
+  border: 1px solid var(--bruised-line);
+  border-radius: var(--radius-pill);
+  background: var(--bruised-soft);
+  font: inherit;
+  font-size: var(--fs-sm);
+  font-weight: 520;
+  color: var(--bruised-text);
+  cursor: pointer;
+}
+.isync-open:hover {
+  filter: brightness(1.06);
+}
+.isync-chip__resync:focus-visible,
+.isync-open:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* Placement in the mode's header: between the wordmark and the back link on wide screens; on a
+ * phone, a row of its own under them. */
+.income__sync {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+@media (max-width: 699px) {
+  .income--results .income__header {
+    flex-wrap: wrap;
+    row-gap: var(--space-2);
+    padding-bottom: var(--space-3);
+  }
+  .income__sync {
+    order: 3;
+    flex-basis: 100%;
+    justify-content: flex-start;
+  }
+}

@@ -30,6 +30,8 @@ function result(income: number, sales: number[] = [], rows: Partial<IncomeYearRo
     keepsPaceRate: 0.5,
     value: { p5: [], p25: [], p50: [], p75: [], p95: [] },
     afterTaxIncome: { p5: band, p25: band, p50: band, p75: band, p95: band },
+    totalTaxMedian: 0,
+    totalSoldMedian: 0,
     median: Array.from({ length: years }, (_, i) => row(i + 1, { gapSold: sales[i] ?? 0, ...rows[i] })),
     startYield: { stocks: 0.012, munis: 0.031, taxable: 0.04 },
   }

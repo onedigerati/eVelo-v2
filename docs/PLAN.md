@@ -7,18 +7,8 @@ A hidden, experimental mode for retiring the conventional way: living on dividen
 2026-11-18 · tests: 1155 pass · typecheck: clean · build: ok
 
 ## Now
-Stage 6 of 6 · Sync and compare
-Mode: autopilot — unattended
+All stages done
 Agents: wide — confirmed 2026-11-18 18:38
-Risk: user input (the eVelo plan read across, stored copy); comparison must be like for like
-Scope: inside the mode, a "Sync with my eVelo plan" sheet that lists the shared values with ticks and copies the ticked ones once; a re-sync button and a "changed since" chip when the eVelo plan has moved on; after a sync, the comparison: two columns (living on income | eVelo) over one chart of both medians with middle-half bands, and a switch between the three measures, using the eVelo plan's own cached result. The main site stays unchanged.
-Checks:
-- [ ] The sync sheet lists each shared value (portfolio, cost basis, age, horizon, yearly spending, Social Security and its start age, home city, and the futures: seed, paths, block length, outlook) with its eVelo value beside the mode's, all ticked by default; only ticked values are copied, once; nothing changes in the eVelo plan (proof: e2e + test)
-- [ ] After a sync, editing the eVelo plan shows a "changed since" chip naming the fields that differ, and never re-syncs silently; "Re-sync" copies again (proof: e2e)
-- [ ] The comparison shows two columns and one chart of real net worth (the mode's portfolio, eVelo's portfolio less loan): both medians with their middle-half bands; a switch moves both columns between the money lasts, principal never sold and income keeps pace, with eVelo's meanings stated (lasts = solvent at the horizon; principal never sold = no forced sale; income keeps pace = spending met every year, the same as lasts for eVelo) (proof: e2e + test that the numbers equal the two results)
-- [ ] Like for like: after a full sync the mode's futures (month draws) are eVelo's for the plan's seed, paths and block length, and where the eVelo plan differs in ways the mode can't follow (a move abroad, retiring later, fat-tail method, a loan) the comparison says so in a line (proof: test + e2e)
-- [ ] Desktop and phone (390) without horizontal scroll, keyboard and screen reader, light and dark; main site unchanged (`npm run e2e`); suite green; main chunk ≤ 1 KB gzipped growth (proof: e2e + build output)
-Open: none
 
 ## Stages
 - [x] 1. Yield data — add VWITX, VFITX, VBMFX; keep distributions and derive a monthly income yield per income asset; data tests
@@ -26,7 +16,7 @@ Open: none
 - [x] 3. Income engine — `runIncomePaths` on the same scenarios as eVelo: yields that start at today's and move with each block, income paid first, gap sold with tax, three measures, bands; worker kind; tests and a speed budget
 - [x] 4. The door — the arrow's hidden click sequence and coupon, a hidden `#income` route, a lazy mode shell, its own sanitized state (`evelo:v2:income`) cleared by Reset; e2e
 - [x] 5. The reveal — six sentence questions (split layout while asking, stacked results after, phone screens), the layered chart, the three measures, "See year by year" ledger
-- [ ] 6. Sync and compare — tick-what-to-copy sheet, one-time copy with re-sync and a "changed since" chip, the comparison (columns, one chart, measure switch) against the eVelo plan's result
+- [x] 6. Sync and compare — tick-what-to-copy sheet, one-time copy with re-sync and a "changed since" chip, the comparison (columns, one chart, measure switch) against the eVelo plan's result
 
 ## Decisions
 - 2026-11-18 · Build it as a hidden experimental mode; the main site keeps the eVelo ethos and never points to it — user.
@@ -59,6 +49,8 @@ Open: none
 - 2026-11-18 · (unattended) The six questions: (1) saved and yearly spending, with how much of it is what you paid (cost basis); (2) age and years to plan for; (3) the stocks share — draws dividends; (4) the muni share of bonds — draws muni coupons and taxable interest; (5) home city and filing status — draws tax; (6) Social Security amount and start age — draws spending and the gap. The mockups' "federal bracket" question is replaced by home city and filing status, since the engine works tax out from them.
 - 2026-11-18 · (unattended) The chart's "Sold to cover" band is the engine's median `gapSold` (gains tax on the sale included), the same number as the ledger and the summary, so the three never disagree; while a run is working, or after an error, the results from older answers are dimmed and labelled as out of date, and the spending line always comes from the result's own rows — from the stage 5 review.
 - 2026-11-18 · (unattended) For the comparison, eVelo's three measures are read from its own result: the money lasts = 1 − brokenRate (solvent at the horizon, the same test the mode uses); principal never sold = successRate (no forced sale and solvent); income keeps pace = 1 − brokenRate, since eVelo funds the full inflation-indexed spending every year until a plan breaks. The shared chart is real net worth. Sync copies spending as the eVelo plan's home spending (today's dollars), since the mode stays home — from `SimulationResult` in `src/engine/types.ts`.
+- 2026-11-18 · (unattended) Stage 6 review fixes: the comparison names each shared value that differs between the eVelo plan and the mode (two lines at most, then one collapsed line), and says "Same person, same markets, two ways" only when nothing differs (a fat-tail plan isn't "same markets"); the mode's estate reads "before inheritance tax", and a home or destination city with a wealth or inheritance tax gets a line saying eVelo's figures include it; the retire-later line names eVelo's saving while working. Why: the review found the heading claimed like for like when it wasn't, and the estates were compared after different taxes.
+- 2026-11-18 · (unattended) Deferred from the Stage 6 review: the comparison's second IncomeClient worker and its unbounded per-session run cache, and an in-flight comparison run that isn't cancelled on leaving. Harmless at the mode's scale (a hidden route, a few runs a session); logged as an open question.
 - 2026-11-18 · Income yield starts at each asset's latest real yield and moves by each bootstrapped month's yield change, with a floor; income = yield × value, price change = total return − income. Yield levels are never replayed, so a 1990s block can't pay 6% today — PM default, from [conventional-bond-modelling](research/conventional-bond-modelling.md).
 - 2026-11-18 · No separate default or call model for investment-grade munis, and a "ladder" changes only when income arrives, not the returns: fund history already carries both — PM default, from [conventional-bond-modelling](research/conventional-bond-modelling.md).
 - 2026-11-18 · The mode holds three sleeves, not tickers: stocks (SPY), munis, taxable bonds, set by a stocks/bonds split and a muni share — PM default: the questions stay one sentence each.
@@ -71,6 +63,7 @@ Open: none
 - 2026-11-18 · How the mode works is explained inside the mode ("How this is worked out"), not on the Method page, which would give it away — PM default.
 
 ## Open questions
+- The compare view keeps a second income worker and a per-session run cache that only grows, and doesn't cancel a run on leaving (Stage 6 review defer).
 - From the stage 3 verify: the income yields walk additively, and over 30 years the walk is wide (SPY starts at 1.0%, so the 0.25% floor binds often and lifts its median to 1.21%; bonds stay within 0.25 points). A log-yield or mean-reverting walk would be tighter and floor-free; it moves "income keeps pace" (15% of default paths today) — research half-lives, later, user's call. The Georgia per-65 exclusion is scaled like an indexed amount though Georgia's is fixed in dollars (small).
 - From stage 2: Philadelphia's School Income Tax is 3.74% (2025) in `stateIncomeTax.ts` but 3.735% (2026) in the city profile, which cites a phila.gov 2026 rate notice; reconcile on that page. The state records aren't frozen (the packed-band cache assumes they never change in place). Federal brackets index to chained CPI, ~0.25 pt/yr below CPI, so under `priceLevel` = CPI they creep up slightly in real terms — say so in the mode's "How this is worked out" (stage 5).
 - From the stage 1 re-review: the refresh fails only when the latest window holds under 6 of 12 payouts, so a fund could go 6 months without one and pass (stricter: a payout in each of the last 3 months); the 1993-06 "sits with its neighbours" test passes trivially after the warm-up back-fill, and the implied-vs-event payout agreement (median gap 0.3–0.4%) is measured but not tested — later.

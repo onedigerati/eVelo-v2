@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { INCOME_DEFAULTS, INCOME_LIMITS } from '../../engine/income'
-import { FLOW_DEFAULTS, INCOME_KEY, loadIncomeFlow, loadIncomeInputs, sanitizeIncomeFlow, sanitizeIncomeInputs, saveIncomeInputs } from '../incomeState'
+import { DEFAULT_INPUTS } from '../../engine/defaults'
+import { EVELO_KEY, FLOW_DEFAULTS, INCOME_KEY, loadEveloPlan, loadIncomeFlow, loadIncomeInputs, loadIncomeSync, sanitizeIncomeFlow, sanitizeIncomeInputs, saveIncomeInputs } from '../incomeState'
 
 function fakeStorage(init: Record<string, string> = {}) {
   const map = new Map(Object.entries(init))
@@ -129,5 +130,39 @@ describe('income flow (step / done)', () => {
     expect(JSON.parse(s.map.get(INCOME_KEY)!)).toEqual({ ...inputs, step: 4, done: true })
     expect(loadIncomeInputs(s)).toEqual(inputs)
     expect(loadIncomeFlow(s)).toEqual({ step: 4, done: true })
+  })
+})
+
+describe('income state: the sync record and the eVelo plan', () => {
+  const rec = { at: '2026-11-18T10:00:00.000Z', fields: ['spending'], snapshot: { spending: 90_000 } }
+
+  it('stores the sync record beside inputs and flow, and loads it back', () => {
+    const s = fakeStorage()
+    saveIncomeInputs(s, INCOME_DEFAULTS, { step: 6, done: true }, rec as never)
+    const raw = JSON.parse(s.map.get(INCOME_KEY)!)
+    expect(raw.sync).toEqual(rec)
+    expect(loadIncomeSync(s)).toEqual(rec)
+    expect(loadIncomeInputs(s)).toEqual(INCOME_DEFAULTS)
+    expect(loadIncomeFlow(s)).toEqual({ step: 6, done: true })
+  })
+
+  it('no record, a hostile record, or bad JSON loads as none', () => {
+    expect(loadIncomeSync(fakeStorage())).toBeNull()
+    expect(loadIncomeSync(null)).toBeNull()
+    expect(loadIncomeSync(fakeStorage({ [INCOME_KEY]: '{oops' }))).toBeNull()
+    expect(loadIncomeSync(fakeStorage({ [INCOME_KEY]: JSON.stringify({ sync: { ...rec, at: 'never' } }) }))).toBeNull()
+    expect(loadIncomeSync(fakeStorage({ [INCOME_KEY]: '{"__proto__":{"sync":{"at":"2026-11-18T10:00:00Z","fields":["age"],"snapshot":{}}}}' }))).toBeNull()
+    expect(loadIncomeSync(fakeStorage({ [INCOME_KEY]: '[1]' }))).toBeNull()
+  })
+
+  it('reads the eVelo plan through eVelo’s sanitizer, defaults when absent or broken', () => {
+    expect(loadEveloPlan(fakeStorage())).toEqual(DEFAULT_INPUTS)
+    expect(loadEveloPlan(fakeStorage({ [EVELO_KEY]: 'nope' }))).toEqual(DEFAULT_INPUTS)
+    const s = fakeStorage({ [EVELO_KEY]: JSON.stringify({ inputs: { portfolio: 1_234_567, age: 999, homeCityId: 'atlantis' }, theme: 'dark' }) })
+    const p = loadEveloPlan(s)
+    expect(p.portfolio).toBe(1_234_567)
+    expect(p.age).toBe(85)
+    expect(p.homeCityId).toBe(DEFAULT_INPUTS.homeCityId)
+    expect(EVELO_KEY).toBe('evelo:v2')
   })
 })

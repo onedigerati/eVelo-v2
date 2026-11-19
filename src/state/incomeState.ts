@@ -9,8 +9,18 @@ import { create } from 'zustand'
 import { CITY_BY_ID } from '../data/cities'
 import { INCOME_DEFAULTS, INCOME_LIMITS } from '../engine/income'
 import type { IncomeInputs } from '../engine/incomeTypes'
+import type { PlanInputs } from '../engine/types'
+import {
+  makeSyncRecord,
+  sanitizeSyncRecord,
+  snapshotFromEvelo,
+  applySync as applySyncTo,
+  type SyncField,
+  type SyncRecord,
+} from './incomeSync'
+import { parsePersisted } from './persisted'
 import { INCOME_KEY } from './resetPlan'
-import { PATH_OPTIONS } from './share'
+import { PATH_OPTIONS, sanitizeInputs } from './share'
 
 export { INCOME_KEY }
 export const SAVE_DEBOUNCE_MS = 250
@@ -86,9 +96,38 @@ export function loadIncomeInputs(storage: Pick<Storage, 'getItem'> | null): Inco
   return sanitizeIncomeInputs(readStored(storage))
 }
 
-export function saveIncomeInputs(storage: Pick<Storage, 'setItem'> | null, inputs: IncomeInputs, flow?: IncomeFlow): void {
+/** The last sync's record, stored beside the inputs and flow under `sync`; null if none or unfit. */
+export function loadIncomeSync(storage: Pick<Storage, 'getItem'> | null): SyncRecord | null {
+  const raw = readStored(storage)
+  return raw && typeof raw === 'object' && !Array.isArray(raw) && Object.hasOwn(raw, 'sync')
+    ? sanitizeSyncRecord((raw as { sync: unknown }).sync)
+    : null
+}
+
+/** eVelo's own key (store.ts's LS_KEY). Read only, never written from the mode. */
+export const EVELO_KEY = 'evelo:v2'
+
+/** The eVelo plan as stored, through eVelo's own sanitizer (its defaults when nothing is stored). */
+export function loadEveloPlan(storage: Pick<Storage, 'getItem'> | null): PlanInputs {
+  let raw: string | null = null
   try {
-    storage?.setItem(INCOME_KEY, JSON.stringify(flow ? { ...inputs, step: flow.step, done: flow.done } : inputs))
+    raw = storage?.getItem(EVELO_KEY) ?? null
+  } catch {
+    /* blocked */
+  }
+  return sanitizeInputs(parsePersisted(raw).inputs)
+}
+
+export function saveIncomeInputs(
+  storage: Pick<Storage, 'setItem'> | null,
+  inputs: IncomeInputs,
+  flow?: IncomeFlow,
+  sync?: SyncRecord | null,
+): void {
+  try {
+    const value: Record<string, unknown> = flow ? { ...inputs, step: flow.step, done: flow.done } : { ...inputs }
+    if (sync) value.sync = sync
+    storage?.setItem(INCOME_KEY, JSON.stringify(value))
   } catch {
     /* storage full or blocked — the mode keeps working for this visit */
   }
@@ -109,6 +148,14 @@ interface IncomeState {
   setInputs: (patch: Partial<IncomeInputs>) => void
   /** Move through the questions; sanitized the same way, then saved. */
   setFlow: (patch: Partial<IncomeFlow>) => void
+  /** The last sync with the eVelo plan (null until one): when, which fields, and eVelo's values then. */
+  sync: SyncRecord | null
+  /** The eVelo plan, read only: eVelo's store when the mode refreshes it, else `evelo:v2` sanitized. */
+  evelo: PlanInputs
+  /** Replace the read copy of the eVelo plan (the mode calls it on mount, focus and storage events). */
+  setEvelo: (plan: PlanInputs) => void
+  /** Copy the ticked fields from the eVelo plan once, and record the copy. */
+  syncFrom: (fields: readonly SyncField[]) => void
 }
 
 export const useIncomeStore = create<IncomeState>((set, get) => ({
@@ -116,14 +163,37 @@ export const useIncomeStore = create<IncomeState>((set, get) => ({
   flow: loadIncomeFlow(browserStorage()),
   setInputs: (patch) => set({ inputs: sanitizeIncomeInputs({ ...get().inputs, ...patch }) }),
   setFlow: (patch) => set({ flow: sanitizeIncomeFlow({ ...get().flow, ...patch }) }),
+  sync: loadIncomeSync(browserStorage()),
+  evelo: loadEveloPlan(browserStorage()),
+  setEvelo: (plan) => {
+    const evelo = sanitizeInputs(plan)
+    // Same plan, same object: readers re-render only when eVelo really changed.
+    if (JSON.stringify(evelo) !== JSON.stringify(get().evelo)) set({ evelo })
+  },
+  syncFrom: (fields) => {
+    const { inputs, evelo, sync } = get()
+    const snap = snapshotFromEvelo(evelo)
+    const record = makeSyncRecord(sync, snap, fields)
+    if (record === sync) return
+    set({
+      inputs: sanitizeIncomeInputs(applySyncTo(inputs, snap, fields)),
+      sync: record,
+    })
+  },
 }))
+
+/** The eVelo plan as the mode reads it (for the comparison and the sync sheet). */
+export const selectEvelo = (s: IncomeState) => s.evelo
+export const useEveloPlan = () => useIncomeStore(selectEvelo)
+/** The last sync record, or null. */
+export const selectSync = (s: IncomeState) => s.sync
 
 let saveTimer: ReturnType<typeof setTimeout> | undefined
 useIncomeStore.subscribe((s, prev) => {
-  if (s.inputs === prev.inputs && s.flow === prev.flow) return
+  if (s.inputs === prev.inputs && s.flow === prev.flow && s.sync === prev.sync) return
   clearTimeout(saveTimer)
   saveTimer = setTimeout(() => {
     const now = useIncomeStore.getState()
-    saveIncomeInputs(browserStorage(), now.inputs, now.flow)
+    saveIncomeInputs(browserStorage(), now.inputs, now.flow, now.sync)
   }, SAVE_DEBOUNCE_MS)
 })

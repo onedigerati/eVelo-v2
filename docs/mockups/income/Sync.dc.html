@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sync with my eVelo plan</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#050605}
+a{color:#e3b262}a:hover{color:#f0c987}
+</style>
+</helmet>
+<div style="width:1280px;height:860px;box-sizing:border-box;background:#050605;color:#ecf1ee;font-family:'Geist',system-ui,sans-serif;display:flex;align-items:center;justify-content:center;gap:48px;padding:40px">
+
+  <div role="dialog" aria-labelledby="sync-title" style="width:620px;box-sizing:border-box;border-radius:28px;background:#111715;border:1px solid rgba(220,255,240,0.16);box-shadow:0 32px 64px -24px rgba(0,0,0,0.6);display:flex;flex-direction:column;overflow:hidden">
+    <div style="padding:28px 32px 18px;display:flex;flex-direction:column;gap:8px">
+      <span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#84918b">⇄ Sync</span>
+      <h2 id="sync-title" style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:32px;line-height:1.1">Bring values from your eVelo plan</h2>
+      <p style="margin:0;font-size:14px;line-height:1.5;color:#a9b5af">Tick what both plans should share. It's a one-time copy: after this the two plans are separate, until you sync again.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:44px minmax(0,1fr) 120px 24px 120px;align-items:center;padding:8px 32px;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#84918b;border-bottom:1px solid rgba(220,255,240,0.085)">
+      <span></span><span>Value</span><span style="text-align:right;color:#5be3b0">eVelo</span><span></span><span style="text-align:right;color:#e3b262">This mode</span>
+    </div>
+
+    <sc-for list="{{rows}}" as="r" hint-placeholder-count="6">
+      <label style="display:grid;grid-template-columns:44px minmax(0,1fr) 120px 24px 120px;align-items:center;min-height:52px;padding:0 32px;border-bottom:1px solid rgba(220,255,240,0.05);font-size:14px">
+        <input type="checkbox" checked="{{r.on}}" style="width:20px;height:20px;accent-color:#e3b262;margin:0">
+        <span style="display:flex;flex-direction:column;gap:2px"><span>{{r.label}}</span><span style="font-size:12px;color:#84918b">{{r.note}}</span></span>
+        <span style="text-align:right;font-family:'Geist Mono',monospace;font-size:13px;color:#ecf1ee">{{r.ev}}</span>
+        <span style="text-align:center;color:#84918b">→</span>
+        <span style="text-align:right;font-family:'Geist Mono',monospace;font-size:13px;color:{{r.cc}}">{{r.cv}}</span>
+      </label>
+    </sc-for>
+
+    <div style="padding:14px 32px;display:flex;flex-direction:column;gap:6px;background:rgba(220,255,240,0.025)">
+      <span style="font-size:12px;color:#84918b">Never shared, because each side has its own:</span>
+      <span style="font-size:13px;color:#a9b5af">loan rate, max LTV, destination city · holdings mix, muni share, tax bracket</span>
+    </div>
+
+    <div style="display:flex;justify-content:flex-end;gap:10px;padding:20px 32px 28px">
+      <button style="min-height:44px;padding:0 20px;border-radius:999px;border:1px solid rgba(220,255,240,0.16);background:transparent;color:#ecf1ee;font:inherit;font-size:14px">Cancel</button>
+      <button style="min-height:44px;padding:0 20px;border-radius:999px;border:0;background:#e3b262;color:#1a1408;font:inherit;font-size:14px;font-weight:500">Copy 5 values</button>
+    </div>
+  </div>
+
+  <div style="width:340px;display:flex;flex-direction:column;gap:18px">
+    <span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#84918b">After syncing, in the header</span>
+    <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:999px;border:1px solid rgba(227,178,98,0.34);background:rgba(227,178,98,0.07);align-self:flex-start">
+      <span style="width:8px;height:8px;border-radius:50%;background:#e3b262"></span>
+      <span style="font-size:13px">Synced 18 Nov · 5 values</span>
+      <button style="min-height:32px;padding:0 12px;border-radius:999px;border:0;background:transparent;color:#e3b262;font:inherit;font-size:13px;text-decoration:underline">Re-sync</button>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:999px;border:1px solid rgba(220,255,240,0.16);align-self:flex-start">
+      <span style="width:8px;height:8px;border-radius:50%;border:1.5px solid #84918b;box-sizing:border-box"></span>
+      <span style="font-size:13px;color:#a9b5af">eVelo changed since · spending</span>
+      <button style="min-height:32px;padding:0 12px;border-radius:999px;border:0;background:transparent;color:#e3b262;font:inherit;font-size:13px;text-decoration:underline">Re-sync</button>
+    </div>
+    <p style="margin:0;font-size:13px;line-height:1.55;color:#84918b">The chip only notices that eVelo changed. It never pulls the new values in by itself.</p>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":860}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var rows = [
+      { label: 'Age', note: '', ev: '52', cv: '58', on: true },
+      { label: 'Years to plan for', note: '', ev: '40', cv: '30', on: true },
+      { label: 'Portfolio', note: '', ev: '$2,400,000', cv: '$2,400,000', on: true },
+      { label: 'Spending', note: 'Your home-city budget, before any move', ev: '$96,000', cv: '$90,000', on: true },
+      { label: 'Home city', note: 'Sets your state tax on bond interest', ev: 'St. Louis', cv: 'St. Louis', on: true },
+      { label: 'Social Security', note: '', ev: '$38K at 67', cv: 'none', on: false }
+    ].map(function (r) { r.cc = r.ev === r.cv ? '#84918b' : '#e3b262'; return r; });
+    return { rows: rows };
+  }
+}
+</script>
+</body>
+</html>

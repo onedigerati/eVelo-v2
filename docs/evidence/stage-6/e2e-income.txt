@@ -1,0 +1,273 @@
+$ node e2e/income.mjs
+ok   landing: mode chunk not requested
+ok   landing: no link to the mode
+ok   #plan: mode chunk not requested
+ok   #plan: top nav doesn't show the mode (Plan Atlas Method)
+ok   #plan: no link to the mode
+ok   #method: no link to the mode
+ok   #method: mode chunk not requested
+ok   #income: mode chunk requested
+ok   #income: eVelo's nav isn't drawn in the mode
+ok   #income: the fields are brass (rgb(227, 178, 98))
+ok   #income: the sentence is set in Instrument Serif
+ok   #income: "Back to eVelo" returns to the plan
+ok   no uncaught page errors
+ok   1280-light: before question 3 the chart frame is empty with its calm line
+ok   1280-light q1: progress reads 1 of 6
+ok   1280-light q1: every field has a label
+ok   1280-light q1: chart draws 0 layer(s) (0)
+ok   1280-light q1: no horizontal scroll
+ok   1280-light q2: progress reads 2 of 6
+ok   1280-light q2: focus moved to the new sentence's first field (age)
+ok   1280-light q2: every field has a label
+ok   1280-light q2: chart draws 0 layer(s) (0)
+ok   1280-light q2: no horizontal scroll
+ok   1280-light q3: progress reads 3 of 6
+ok   1280-light q3: focus moved to the new sentence's first field (stockShare)
+ok   1280-light q3: every field has a label
+ok   1280-light q3: chart draws 1 layer(s) (1)
+ok   1280-light q3: names what it just added (Just added: dividends, $13,300 a year)
+ok   1280-light q3: no horizontal scroll
+ok   1280-light q4: progress reads 4 of 6
+ok   1280-light q4: focus moved to the new sentence's first field (muniShare)
+ok   1280-light q4: every field has a label
+ok   1280-light q4: chart draws 2 layer(s) (2)
+ok   1280-light q4: names what it just added (Just added: muni coupons, $25,200 a year, tax-free · taxable interest, $13,000)
+ok   1280-light q4: no horizontal scroll
+ok   1280-light q5: progress reads 5 of 6
+ok   1280-light q5: focus moved to the new sentence's first field (if-home)
+ok   1280-light q5: every field has a label
+ok   1280-light q5: chart draws 3 layer(s) (3)
+ok   1280-light q5: names what it just added (Just added: tax, $4,400 a year)
+ok   1280-light q5: no horizontal scroll
+ok   1280-light q6: progress reads 6 of 6
+ok   1280-light q6: focus moved to the new sentence's first field (otherIncome)
+ok   1280-light q6: every field has a label
+ok   1280-light q6: chart draws 4 layer(s) (4)
+ok   1280-light q6: names what it just added (Just added: spending, $96,000 a year · sold to cover, $48,700 · Social Security, $40,000 from age 67)
+ok   1280-light q6: no horizontal scroll
+ok   1280-light: the layer count grows step by step (0 → 0 → 1 → 2 → 3 → 4)
+ok   1280-light: results draw every layer (5)
+ok   1280-light: results show no question progress
+ok   1280-light: the three measures equal the worker's result ({"lasts":"100%","principal":"0%","pace":"43%"} vs {"lasts":"100%","principal":"0%","pace":"43%"})
+ok   1280-light: the worker ran on the typed answers (30 years from 62)
+ok   1280-light: lasts card says "Same test as eVelo"
+ok   1280-light: the results chart has a legend
+ok   1280-light: one-line summary shown
+ok   1280-light results: no horizontal scroll
+ok   1280-light: answers saved to evelo:v2:income
+ok   1280-light: the ledger lists the 30 median years (30)
+ok   1280-light ledger: no horizontal page scroll
+ok   1280-light: "How this is worked out" opens and names what's left out
+ok   1280-light: reload lands on the results
+ok   1280-light: Edit answers returns to question 1
+ok   1280-light: the answers are kept
+ok   1280-light: Edit answers focuses the first field
+ok   1280-light: Back returns to the previous question
+ok   1280-light: no uncaught page errors
+ok   1280-dark: before question 3 the chart frame is empty with its calm line
+ok   1280-dark q1: progress reads 1 of 6
+ok   1280-dark q1: every field has a label
+ok   1280-dark q1: chart draws 0 layer(s) (0)
+ok   1280-dark q1: no horizontal scroll
+ok   1280-dark q2: progress reads 2 of 6
+ok   1280-dark q2: focus moved to the new sentence's first field (age)
+ok   1280-dark q2: every field has a label
+ok   1280-dark q2: chart draws 0 layer(s) (0)
+ok   1280-dark q2: no horizontal scroll
+ok   1280-dark q3: progress reads 3 of 6
+ok   1280-dark q3: focus moved to the new sentence's first field (stockShare)
+ok   1280-dark q3: every field has a label
+ok   1280-dark q3: chart draws 1 layer(s) (1)
+ok   1280-dark q3: names what it just added (Just added: dividends, $13,300 a year)
+ok   1280-dark q3: no horizontal scroll
+ok   1280-dark q4: progress reads 4 of 6
+ok   1280-dark q4: focus moved to the new sentence's first field (muniShare)
+ok   1280-dark q4: every field has a label
+ok   1280-dark q4: chart draws 2 layer(s) (2)
+ok   1280-dark q4: names what it just added (Just added: muni coupons, $25,200 a year, tax-free · taxable interest, $13,000)
+ok   1280-dark q4: no horizontal scroll
+ok   1280-dark q5: progress reads 5 of 6
+ok   1280-dark q5: focus moved to the new sentence's first field (if-home)
+ok   1280-dark q5: every field has a label
+ok   1280-dark q5: chart draws 3 layer(s) (3)
+ok   1280-dark q5: names what it just added (Just added: tax, $4,400 a year)
+ok   1280-dark q5: no horizontal scroll
+ok   1280-dark q6: progress reads 6 of 6
+ok   1280-dark q6: focus moved to the new sentence's first field (otherIncome)
+ok   1280-dark q6: every field has a label
+ok   1280-dark q6: chart draws 4 layer(s) (4)
+ok   1280-dark q6: names what it just added (Just added: spending, $96,000 a year · sold to cover, $48,700 · Social Security, $40,000 from age 67)
+ok   1280-dark q6: no horizontal scroll
+ok   1280-dark: the layer count grows step by step (0 → 0 → 1 → 2 → 3 → 4)
+ok   1280-dark: results draw every layer (5)
+ok   1280-dark: results show no question progress
+ok   1280-dark: the three measures equal the worker's result ({"lasts":"100%","principal":"0%","pace":"43%"} vs {"lasts":"100%","principal":"0%","pace":"43%"})
+ok   1280-dark: the worker ran on the typed answers (30 years from 62)
+ok   1280-dark: lasts card says "Same test as eVelo"
+ok   1280-dark: the results chart has a legend
+ok   1280-dark: one-line summary shown
+ok   1280-dark results: no horizontal scroll
+ok   1280-dark: answers saved to evelo:v2:income
+ok   1280-dark: the ledger lists the 30 median years (30)
+ok   1280-dark ledger: no horizontal page scroll
+ok   1280-dark: "How this is worked out" opens and names what's left out
+ok   1280-dark: reload lands on the results
+ok   1280-dark: Edit answers returns to question 1
+ok   1280-dark: the answers are kept
+ok   1280-dark: Edit answers focuses the first field
+ok   1280-dark: Back returns to the previous question
+ok   1280-dark: no uncaught page errors
+ok   390-light: before question 3 the chart frame is empty with its calm line
+ok   390-light q1: progress reads 1 of 6
+ok   390-light q1: every field has a label
+ok   390-light q1: chart draws 0 layer(s) (0)
+ok   390-light q1: no horizontal scroll
+ok   390-light q2: progress reads 2 of 6
+ok   390-light q2: focus moved to the new sentence's first field (age)
+ok   390-light q2: every field has a label
+ok   390-light q2: chart draws 0 layer(s) (0)
+ok   390-light q2: no horizontal scroll
+ok   390-light q3: progress reads 3 of 6
+ok   390-light q3: focus moved to the new sentence's first field (stockShare)
+ok   390-light q3: every field has a label
+ok   390-light q3: chart draws 1 layer(s) (1)
+ok   390-light q3: names what it just added (Just added: dividends, $13,300 a year)
+ok   390-light q3: no horizontal scroll
+ok   390-light q4: progress reads 4 of 6
+ok   390-light q4: focus moved to the new sentence's first field (muniShare)
+ok   390-light q4: every field has a label
+ok   390-light q4: chart draws 2 layer(s) (2)
+ok   390-light q4: names what it just added (Just added: muni coupons, $25,200 a year, tax-free · taxable interest, $13,000)
+ok   390-light q4: no horizontal scroll
+ok   390-light q5: progress reads 5 of 6
+ok   390-light q5: focus moved to the new sentence's first field (if-home)
+ok   390-light q5: every field has a label
+ok   390-light q5: chart draws 3 layer(s) (3)
+ok   390-light q5: names what it just added (Just added: tax, $4,400 a year)
+ok   390-light q5: no horizontal scroll
+ok   390-light q6: progress reads 6 of 6
+ok   390-light q6: focus moved to the new sentence's first field (otherIncome)
+ok   390-light q6: every field has a label
+ok   390-light q6: chart draws 4 layer(s) (4)
+ok   390-light q6: names what it just added (Just added: spending, $96,000 a year · sold to cover, $48,700 · Social Security, $40,000 from age 67)
+ok   390-light q6: no horizontal scroll
+ok   390-light: the layer count grows step by step (0 → 0 → 1 → 2 → 3 → 4)
+ok   390-light: results draw every layer (5)
+ok   390-light: results show no question progress
+ok   390-light: the three measures equal the worker's result ({"lasts":"100%","principal":"0%","pace":"43%"} vs {"lasts":"100%","principal":"0%","pace":"43%"})
+ok   390-light: the worker ran on the typed answers (30 years from 62)
+ok   390-light: lasts card says "Same test as eVelo"
+ok   390-light: the results chart has a legend
+ok   390-light: one-line summary shown
+ok   390-light results: no horizontal scroll
+ok   390-light: answers saved to evelo:v2:income
+ok   390-light: the ledger lists the 30 median years (30)
+ok   390-light ledger: no horizontal page scroll
+ok   390-light: "How this is worked out" opens and names what's left out
+ok   390-light: reload lands on the results
+ok   390-light: Edit answers returns to question 1
+ok   390-light: the answers are kept
+ok   390-light: Edit answers focuses the first field
+ok   390-light: Back returns to the previous question
+ok   390-light: no uncaught page errors
+ok   390-dark: before question 3 the chart frame is empty with its calm line
+ok   390-dark q1: progress reads 1 of 6
+ok   390-dark q1: every field has a label
+ok   390-dark q1: chart draws 0 layer(s) (0)
+ok   390-dark q1: no horizontal scroll
+ok   390-dark q2: progress reads 2 of 6
+ok   390-dark q2: focus moved to the new sentence's first field (age)
+ok   390-dark q2: every field has a label
+ok   390-dark q2: chart draws 0 layer(s) (0)
+ok   390-dark q2: no horizontal scroll
+ok   390-dark q3: progress reads 3 of 6
+ok   390-dark q3: focus moved to the new sentence's first field (stockShare)
+ok   390-dark q3: every field has a label
+ok   390-dark q3: chart draws 1 layer(s) (1)
+ok   390-dark q3: names what it just added (Just added: dividends, $13,300 a year)
+ok   390-dark q3: no horizontal scroll
+ok   390-dark q4: progress reads 4 of 6
+ok   390-dark q4: focus moved to the new sentence's first field (muniShare)
+ok   390-dark q4: every field has a label
+ok   390-dark q4: chart draws 2 layer(s) (2)
+ok   390-dark q4: names what it just added (Just added: muni coupons, $25,200 a year, tax-free · taxable interest, $13,000)
+ok   390-dark q4: no horizontal scroll
+ok   390-dark q5: progress reads 5 of 6
+ok   390-dark q5: focus moved to the new sentence's first field (if-home)
+ok   390-dark q5: every field has a label
+ok   390-dark q5: chart draws 3 layer(s) (3)
+ok   390-dark q5: names what it just added (Just added: tax, $4,400 a year)
+ok   390-dark q5: no horizontal scroll
+ok   390-dark q6: progress reads 6 of 6
+ok   390-dark q6: focus moved to the new sentence's first field (otherIncome)
+ok   390-dark q6: every field has a label
+ok   390-dark q6: chart draws 4 layer(s) (4)
+ok   390-dark q6: names what it just added (Just added: spending, $96,000 a year · sold to cover, $48,700 · Social Security, $40,000 from age 67)
+ok   390-dark q6: no horizontal scroll
+ok   390-dark: the layer count grows step by step (0 → 0 → 1 → 2 → 3 → 4)
+ok   390-dark: results draw every layer (5)
+ok   390-dark: results show no question progress
+ok   390-dark: the three measures equal the worker's result ({"lasts":"100%","principal":"0%","pace":"43%"} vs {"lasts":"100%","principal":"0%","pace":"43%"})
+ok   390-dark: the worker ran on the typed answers (30 years from 62)
+ok   390-dark: lasts card says "Same test as eVelo"
+ok   390-dark: the results chart has a legend
+ok   390-dark: one-line summary shown
+ok   390-dark results: no horizontal scroll
+ok   390-dark: answers saved to evelo:v2:income
+ok   390-dark: the ledger lists the 30 median years (30)
+ok   390-dark ledger: no horizontal page scroll
+ok   390-dark: "How this is worked out" opens and names what's left out
+ok   390-dark: reload lands on the results
+ok   390-dark: Edit answers returns to question 1
+ok   390-dark: the answers are kept
+ok   390-dark: Edit answers focuses the first field
+ok   390-dark: Back returns to the previous question
+ok   390-dark: no uncaught page errors
+ok   keyboard: Tab reaches the first field (3 presses)
+ok   keyboard: Enter moves to question 2, focus on age
+ok   keyboard: question 5 focuses the home city
+ok   keyboard: Enter on a select moves on
+ok   keyboard: Enter on question 6 shows the results
+ok   keyboard: focus moves to the results heading
+ok   keyboard: every answer typed was saved ({"p":3000000,"s":120000,"a":60,"h":35,"city":"tampa","f":"mfj","ss":30000,"done":true})
+ok   defaults: question 1 with $3,000,000, $110,000
+ok   stored state: resumes at the saved question (Question 3 of 6)
+ok   stored state: the mode reads the saved answers ($60,000)
+ok   stored state: a finished flow lands on the results
+ok   stored state: out-of-range step clamps and done needs true (Question 6 of 6)
+ok   corrupt state (bad JSON): mode opens on the defaults
+ok   corrupt state (bad JSON): no uncaught page errors
+ok   corrupt state (wrong shape): mode opens on the defaults
+ok   corrupt state (wrong shape): no uncaught page errors
+ok   corrupt state (hostile keys and values): mode opens on the defaults
+ok   corrupt state (hostile keys and values): no uncaught page errors
+ok   stale-1280: question 6 draws its four layers
+ok   stale-1280: the figures start current
+ok   stale-1280: changing an answer dims the chart and says "Updating…" (Updating…, opacity 0.5)
+ok   stale-1280: "Updating…" is visible
+ok   stale-1280: "Updating" appears and clears (updating → current)
+ok   stale-1280: the chart is back to full strength
+ok   stale-1280: after a failed run the label says the figures are for earlier answers (These figures are for your earlier answers)
+ok   stale-1280: the alert says how to try again (This couldn’t be worked out. Change an answer to try again, or reload.)
+ok   stale-1280: the earlier figures are dimmed
+ok   stale-1280: the results are dimmed and labelled out of date (These figures are for your earlier answers, opacity 0.5)
+ok   stale-1280: no horizontal scroll
+ok   stale-1280: changing an answer tries again and clears the error
+ok   stale-1280: no uncaught page errors
+ok   stale-390: question 6 draws its four layers
+ok   stale-390: the figures start current
+ok   stale-390: changing an answer dims the chart and says "Updating…" (Updating…, opacity 0.5)
+ok   stale-390: "Updating…" is visible
+ok   stale-390: "Updating" appears and clears (updating → current)
+ok   stale-390: the chart is back to full strength
+ok   stale-390: after a failed run the label says the figures are for earlier answers (These figures are for your earlier answers)
+ok   stale-390: the alert says how to try again (This couldn’t be worked out. Change an answer to try again, or reload.)
+ok   stale-390: the earlier figures are dimmed
+ok   stale-390: the results are dimmed and labelled out of date (These figures are for your earlier answers, opacity 0.5)
+ok   stale-390: no horizontal scroll
+ok   stale-390: changing an answer tries again and clears the error
+ok   stale-390: no uncaught page errors
+
+income e2e passed — screenshots in /home/jonah/src/repos/eVelo-v2/e2e/screenshots/
+exit 0

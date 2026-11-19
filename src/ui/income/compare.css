@@ -1,0 +1,320 @@
+/* ============ Living on income — the comparison with eVelo (IncomeCompare.tsx) ============ */
+/* Living on income in brass (--bruised), eVelo in its own green (--holds), in both themes. */
+
+.icmp {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding-top: var(--space-7);
+  border-top: 1px solid var(--hairline);
+  min-width: 0;
+}
+
+.icmp__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+.icmp__head {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--fs-h1);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-display);
+  text-wrap: balance;
+}
+
+/* ---------- The measure switch ---------- */
+.icmp__tabs {
+  display: flex;
+  padding: 4px;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-pill);
+  background: var(--surface-3);
+  max-width: 100%;
+}
+.icmp__tab {
+  min-height: 40px;
+  padding: 0 var(--space-4);
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--ink-2);
+  font: inherit;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.icmp__tab:hover {
+  color: var(--ink);
+}
+.icmp__tab[aria-selected='true'] {
+  background: var(--ink);
+  color: var(--ink-inverse);
+}
+.icmp__tab:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* ---------- The two columns ---------- */
+.icmp__panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.icmp__cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+.icmp__col {
+  --icmp-ink: var(--bruised-text);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 0;
+  padding: var(--space-6);
+  border: 1px solid var(--bruised-line);
+  border-radius: var(--radius-lg);
+  background: var(--bruised-soft);
+}
+.icmp__col--evelo {
+  --icmp-ink: var(--holds-text);
+  border-color: var(--holds-line);
+  background: var(--holds-soft);
+}
+.icmp__name-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-1) var(--space-3);
+}
+.icmp__name {
+  font-size: var(--fs-xs);
+  font-weight: 560;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--icmp-ink);
+}
+.icmp__how {
+  font-size: var(--fs-sm);
+  color: var(--ink-2);
+}
+.icmp__rate-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1) var(--space-3);
+}
+.icmp__rate {
+  font-family: var(--font-display);
+  font-size: 4.5rem;
+  line-height: 0.9;
+  font-variant-numeric: tabular-nums;
+  color: var(--icmp-ink);
+}
+.icmp__rate-note {
+  font-size: var(--fs-md);
+  color: var(--ink-2);
+}
+.icmp__stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin: 0;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--hairline);
+}
+.icmp__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.icmp__stat dt {
+  font-size: var(--fs-sm);
+  color: var(--ink-3);
+}
+.icmp__stat dd {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.625rem;
+  line-height: 1.15;
+  font-variant-numeric: tabular-nums;
+}
+.icmp__stat--note dd {
+  font-family: var(--font-ui);
+  font-size: var(--fs-sm);
+  line-height: 1.35;
+  color: var(--ink-2);
+}
+.icmp__wait {
+  margin: 0;
+  color: var(--ink-2);
+}
+.icmp__meaning {
+  margin: 0;
+  font-size: var(--fs-sm);
+  color: var(--ink-2);
+}
+
+/* ---------- The chart ---------- */
+.cchart {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-5) var(--space-6);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg);
+  background: var(--surface-1);
+  min-width: 0;
+}
+.cchart__head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-2) var(--space-5);
+}
+.cchart__title {
+  font-size: var(--fs-sm);
+  color: var(--ink-2);
+}
+.cchart__legend {
+  display: flex;
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--fs-sm);
+  color: var(--ink-2);
+}
+.cchart__legend li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.cchart__key {
+  width: 16px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--bruised);
+}
+.cchart__key--evelo {
+  background: var(--holds);
+}
+.cchart__plot {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+.cchart__svg {
+  display: block;
+  overflow: visible;
+}
+.cchart__grid line {
+  stroke: var(--chart-grid);
+}
+.cchart__axis {
+  stroke: var(--chart-grid-strong);
+}
+.cchart__tick {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  fill: var(--chart-axis);
+}
+.cchart__series--income {
+  --cs: var(--bruised);
+  --cs-band: color-mix(in srgb, var(--bruised) 16%, transparent);
+}
+.cchart__series--evelo {
+  --cs: var(--holds);
+  --cs-band: color-mix(in srgb, var(--holds) 14%, transparent);
+}
+.cchart__band {
+  fill: var(--cs-band);
+  stroke: none;
+}
+.cchart__median {
+  fill: none;
+  stroke: var(--cs);
+  stroke-width: 2.25;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.cchart__dot {
+  fill: var(--cs);
+}
+
+/* ---------- Like for like ---------- */
+.icmp__lines {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--fs-sm);
+  color: var(--ink-2);
+}
+.icmp__lines--diff {
+  color: var(--ink);
+  font-weight: 500;
+}
+.icmp__lines li::before {
+  content: '·';
+  margin-right: var(--space-2);
+  color: var(--ink-3);
+}
+
+/* ---------- Phone ---------- */
+@media (max-width: 699px) {
+  .icmp__head {
+    font-size: var(--fs-h2);
+  }
+  .icmp__tabs {
+    width: 100%;
+  }
+  .icmp__tab {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 0 var(--space-2);
+  }
+  .icmp__cols {
+    gap: var(--space-3);
+  }
+  .icmp__col {
+    padding: var(--space-4);
+    gap: var(--space-2);
+  }
+  .icmp__how {
+    display: none;
+  }
+  .icmp__rate {
+    font-size: 2.75rem;
+  }
+  .icmp__rate-note {
+    font-size: var(--fs-xs);
+  }
+  .icmp__stats {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+  .icmp__stat dd {
+    font-size: 1.25rem;
+  }
+  .icmp__stat--note dd {
+    font-size: var(--fs-xs);
+  }
+  .cchart {
+    padding: var(--space-4);
+  }
+}

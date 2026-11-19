@@ -1,0 +1,133 @@
+$ node docs/evidence/stage-6/probe-stage6.mjs
+
+## Check 1
+ok   rows: portfolio, basisFraction, age, horizonYears, spending, otherIncome, homeCityId, futures
+ok   all 8 ticked by default (true,true,true,true,true,true,true,true)
+     eVelo → mode: {"portfolio":["$1,750,000","$900,000"],"basisFraction":["42%","20%"],"age":["57","63"],"horizonYears":["33 years","25 years"],"spending":["$110,000","$61,000"],"otherIncome":["$31,000 at 70","$12,000 at 66"],"homeCityId":["Denver","Austin"],"futures":["1,000 paths · 12 mo Historical · seed 31337","1,000 paths · 24 mo Balanced · seed 5"]}
+ok   portfolio shows eVelo beside mode
+ok   age and basis beside each other
+ok   city and horizon beside each other
+ok   Social Security and start age beside each other
+ok   futures: seed, paths, block, outlook (1,000 paths · 12 mo Historical · seed 31337)
+ok   reads Copy 4 values
+ok   ticked copied: basis 0.42, age 57, horizon 33, spending 110000 (eVelo 110000)
+ok   unticked kept: portfolio 900000, SS 12000@66, city austin
+ok   futures unticked kept: seed 5, block 24, outlook balanced
+ok   never-shared fields untouched
+ok   evelo:v2 byte-identical after copy (sha 5d2d12515724649c → 5d2d12515724649c, 775 → 775 bytes)
+ok   evelo:v2 still byte-identical after reload (sha 5d2d12515724649c)
+ok   copy persists, nothing extra copied on reload
+ok   no page/console errors 
+
+## Check 2
+ok   full sync copied
+     chip: eVelo changed since · age, home city, futures Re-sync
+ok   chip names age, home city, futures only (eVelo changed since · age, home city, futures Re-sync)
+ok   no silent re-sync after waiting and reloading (age 57, city denver, seed 31337)
+ok   chip still says changed after reload (eVelo changed since · age, home city, futures Re-sync)
+ok   Re-sync ticks the changed fields (age,homeCityId,futures)
+ok   Re-sync copied (age 59, city seattle, seed 4242)
+ok   chip back to synced (Synced Nov 18 · 8 values Re-sync)
+ok   no page/console errors 
+
+## Check 3
+     node: {"lasts":["92%","64%"],"principal":["0%","44%"],"pace":["9%","64%"]}
+ok   1280-light: comparison ready
+ok   1280-light lasts: 92% | 64% (node 92% | 64%); meaning "For eVelo, the money lasts means solvent at the horizon: the loan neve…"
+ok   1280-light principal: 0% | 44% (node 0% | 44%); meaning "For eVelo, principal kept means no forced sale: no margin call ever so…"
+ok   1280-light pace: 9% | 64% (node 9% | 64%); meaning "For eVelo, income keeps pace is the same as the money lasts: it borrow…"
+ok   1280-light: 2 columns, stats equal node {"compare-income-estate":"$4.5M","compare-income-tax":"$14K","compare-income-sold":"$1.5M","compare-evelo-estate":"$3.7M","compare-evelo-loan":"$2.4M"}
+ok   1280-light: chart table 32 ages; age 86: mode $4,529,861 ($1,383,007 to $9,707,993) / eVelo $3,685,996 ($0 to $15,091,406) (node $4,529,861 / $3,685,996 ($0 to $15,091,406); p50(netWorth)==p50(port)-p50(loan) on every year: false)
+ok   1280-light: chart draws 4 paths (2 bands + 2 medians)
+ok   1280-light: scrollWidth 1280 ≤ clientWidth 1280
+ok   1280-light: no page/console errors 
+ok   1280-dark: comparison ready
+ok   1280-dark lasts: 92% | 64% (node 92% | 64%); meaning "For eVelo, the money lasts means solvent at the horizon: the loan neve…"
+ok   1280-dark principal: 0% | 44% (node 0% | 44%); meaning "For eVelo, principal kept means no forced sale: no margin call ever so…"
+ok   1280-dark pace: 9% | 64% (node 9% | 64%); meaning "For eVelo, income keeps pace is the same as the money lasts: it borrow…"
+ok   1280-dark: 2 columns, stats equal node {"compare-income-estate":"$4.5M","compare-income-tax":"$14K","compare-income-sold":"$1.5M","compare-evelo-estate":"$3.7M","compare-evelo-loan":"$2.4M"}
+ok   1280-dark: chart table 32 ages; age 86: mode $4,529,861 ($1,383,007 to $9,707,993) / eVelo $3,685,996 ($0 to $15,091,406) (node $4,529,861 / $3,685,996 ($0 to $15,091,406); p50(netWorth)==p50(port)-p50(loan) on every year: false)
+ok   1280-dark: chart draws 4 paths (2 bands + 2 medians)
+ok   1280-dark: scrollWidth 1280 ≤ clientWidth 1280
+ok   1280-dark: no page/console errors 
+ok   390-light: comparison ready
+ok   390-light lasts: 92% | 64% (node 92% | 64%); meaning "For eVelo, the money lasts means solvent at the horizon: the loan neve…"
+ok   390-light principal: 0% | 44% (node 0% | 44%); meaning "For eVelo, principal kept means no forced sale: no margin call ever so…"
+ok   390-light pace: 9% | 64% (node 9% | 64%); meaning "For eVelo, income keeps pace is the same as the money lasts: it borrow…"
+ok   390-light: 2 columns, stats equal node {"compare-income-estate":"$4.5M","compare-income-tax":"$14K","compare-income-sold":"$1.5M","compare-evelo-estate":"$3.7M","compare-evelo-loan":"$2.4M"}
+ok   390-light: chart table 32 ages; age 86: mode $4,529,861 ($1,383,007 to $9,707,993) / eVelo $3,685,996 ($0 to $15,091,406) (node $4,529,861 / $3,685,996 ($0 to $15,091,406); p50(netWorth)==p50(port)-p50(loan) on every year: false)
+ok   390-light: chart draws 4 paths (2 bands + 2 medians)
+ok   390-light: scrollWidth 390 ≤ clientWidth 390
+ok   390-light: no page/console errors 
+ok   390-dark: comparison ready
+ok   390-dark lasts: 92% | 64% (node 92% | 64%); meaning "For eVelo, the money lasts means solvent at the horizon: the loan neve…"
+ok   390-dark principal: 0% | 44% (node 0% | 44%); meaning "For eVelo, principal kept means no forced sale: no margin call ever so…"
+ok   390-dark pace: 9% | 64% (node 9% | 64%); meaning "For eVelo, income keeps pace is the same as the money lasts: it borrow…"
+ok   390-dark: 2 columns, stats equal node {"compare-income-estate":"$4.5M","compare-income-tax":"$14K","compare-income-sold":"$1.5M","compare-evelo-estate":"$3.7M","compare-evelo-loan":"$2.4M"}
+ok   390-dark: chart table 32 ages; age 86: mode $4,529,861 ($1,383,007 to $9,707,993) / eVelo $3,685,996 ($0 to $15,091,406) (node $4,529,861 / $3,685,996 ($0 to $15,091,406); p50(netWorth)==p50(port)-p50(loan) on every year: false)
+ok   390-dark: chart draws 4 paths (2 bands + 2 medians)
+ok   390-dark: scrollWidth 390 ≤ clientWidth 390
+ok   390-dark: no page/console errors 
+
+## Check 4
+ok   node: full sync of seed 1234567 / 500 paths / 30-mo blocks / 19 y / conservative → mode result equals the run on eVelo's drawn months
+ok   node: with another seed the mode draws other months
+ok   A-away-1280: comparison ready
+     A-away-1280 lines: ["Age differs: 55 in eVelo, 58 here.","Spending differs: $110K a year in eVelo, $40K a year here.","Your eVelo plan moves to Rome, and its figures include Rome’s wealth tax and inheritance tax; living on income stays home and doesn’t model it.","eVelo retires in 1 year; this mode retires now.","eVelo uses fat tails; this mode always replays history.","eVelo starts with a $75K loan."] | heading: Your two plans, side by side
+ok   A-away-1280: lines as expected
+ok   A-away-1280: neutral heading when anything differs (Your two plans, side by side)
+ok   A-away-1280: scrollWidth 1280 ≤ clientWidth 1280
+ok   A-away-1280: no page/console errors 
+ok   A-away-390: comparison ready
+     A-away-390 lines: ["Age differs: 55 in eVelo, 58 here.","Spending differs: $110K a year in eVelo, $40K a year here.","Your eVelo plan moves to Rome, and its figures include Rome’s wealth tax and inheritance tax; living on income stays home and doesn’t model it.","eVelo retires in 1 year; this mode retires now.","eVelo uses fat tails; this mode always replays history.","eVelo starts with a $75K loan."] | heading: Your two plans, side by side
+ok   A-away-390: lines as expected
+ok   A-away-390: neutral heading when anything differs (Your two plans, side by side)
+ok   A-away-390: scrollWidth 390 ≤ clientWidth 390
+ok   A-away-390: no page/console errors 
+ok   B-pittsburgh-390: comparison ready
+     B-pittsburgh-390 lines: ["Portfolio, cost basis and social security differ from your eVelo plan.","eVelo’s figures include Pittsburgh’s state inheritance tax; living on income doesn’t model it.","Both run on the same 1,000 futures."] | heading: Your two plans, side by side
+ok   B-pittsburgh-390: lines as expected
+ok   B-pittsburgh-390: neutral heading when anything differs (Your two plans, side by side)
+ok   B-pittsburgh-390: scrollWidth 390 ≤ clientWidth 390
+ok   B-pittsburgh-390: no page/console errors 
+
+## Check 5
+ok   1280-light: page scrollWidth 1280 ≤ clientWidth 1280 (body bg rgb(245, 242, 234))
+ok   1280-light: sheet open scrollWidth 1280 ≤ clientWidth 1280
+ok   1280-light: no page/console errors 
+ok   1280-dark: page scrollWidth 1280 ≤ clientWidth 1280 (body bg rgb(10, 13, 12))
+ok   1280-dark: sheet open scrollWidth 1280 ≤ clientWidth 1280
+ok   1280-dark: no page/console errors 
+ok   390-light: page scrollWidth 390 ≤ clientWidth 390 (body bg rgb(245, 242, 234))
+ok   390-light: sheet open scrollWidth 390 ≤ clientWidth 390
+ok   390-light: no page/console errors 
+ok   390-dark: page scrollWidth 390 ≤ clientWidth 390 (body bg rgb(10, 13, 12))
+ok   390-dark: sheet open scrollWidth 390 ≤ clientWidth 390
+ok   390-dark: no page/console errors 
+ok   Tab reaches Re-sync from the top in 2 presses
+ok   Enter opens the dialog (aria-modal=true); focus on first tick ({"tag":"INPUT","id":"isync-portfolio","text":null,"role":null,"inDialog":true})
+     checkbox name / description:
+       Portfolio / desc: eVelo: $2,200,000→, this mode: $2,200,000 (the same)
+       Cost basisThe share of the portfolio that’s basis, for tax on sales / desc: eVelo: 40%→, this mode: 40% (the same)
+       Age / desc: eVelo: 55→, this mode: 55 (the same)
+       Years to plan for / desc: eVelo: 31 years→, this mode: 31 years (the same)
+       SpendingYour home-city budget, before any move / desc: eVelo: $110,000→, this mode: $110,000 (the same)
+       Social SecurityThe amount and the age it starts / desc: eVelo: $40,000 at 67→, this mode: $40,000 at 67 (the same)
+       Home citySets your state tax on bond interest / desc: eVelo: Austin→, this mode: Austin (the same)
+       Simulated futuresSeed, paths, block length and outlook, so both face the same markets / desc: eVelo: 1,000 paths · 24 moBalanced · seed 2718→, this mode: 1,000 paths · 24 moBalanced · seed 2718 (the same)
+ok   every tick has a label and an eVelo/this-mode description
+     Tab order in sheet: isync-basisFraction → isync-age → isync-horizonYears → isync-spending → isync-otherIncome → isync-homeCityId → isync-futures → Cancel → Copy 8 values → Close → isync-portfolio → isync-basisFraction
+ok   Tab cycles within the sheet
+ok   Escape returns focus to Re-sync
+ok   tablist "Measure" with 3 tabs: Money lasts, Principal kept, Income keeps pace
+ok   roving tabindex (0,-1,-1)
+     switch keys: ArrowRight→principal/compare-tab-principal, ArrowRight→pace/compare-tab-pace, ArrowRight→lasts/compare-tab-lasts, ArrowLeft→pace/compare-tab-pace, End→pace/compare-tab-pace, Home→lasts/compare-tab-lasts
+ok   arrows move focus and selection across the switch, wrapping
+ok   tabpanel labelled by the selected tab
+ok   chart role=img with label: "Real net worth, today's dollars: Living on income's median goes from $2.2M at age 55 to $4…"
+ok   comparison section labelled by "Same person, same markets, two ways"
+ok   chip text is a live region
+ok   keyboard pass: no page/console errors 
+
+all stage-6 probes passed
+exit 0

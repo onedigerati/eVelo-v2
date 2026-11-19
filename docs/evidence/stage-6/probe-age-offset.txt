@@ -1,0 +1,43 @@
+$ node docs/evidence/stage-6/probe-age-offset.mjs
+{
+ "ms": [
+  "M101.941,206.91C112.824,206.78",
+  "M4,206.91C14.882,206.605,25.76"
+ ],
+ "first": [
+  [
+   "55",
+   "—",
+   "$2,200,000 ($2"
+  ],
+  [
+   "56",
+   "—",
+   "$2,275,038 ($2"
+  ],
+  [
+   "57",
+   "—",
+   "$2,315,472 ($1"
+  ],
+  [
+   "58",
+   "$2,200,000 ($2",
+   "$2,350,338 ($1"
+  ]
+ ],
+ "last": [
+  [
+   "88",
+   "$4,070,913 ($1",
+   "—"
+  ],
+  [
+   "89",
+   "$4,166,419 ($1",
+   "—"
+  ]
+ ],
+ "n": 35,
+ "label": "Real net worth, today's dollars: Living on income's median goes from $2.2M at age 58 to $4.2M at age 89; eVelo's median goes from $2.2M at age 55 to $3.7M at age 86. The table below lists every year."
+}

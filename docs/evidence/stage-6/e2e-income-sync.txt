@@ -1,0 +1,65 @@
+$ node e2e/income-sync.mjs
+ok   the results header offers "⇄ Sync with my eVelo plan"
+ok   no chip before a sync
+ok   the sheet lists every shared value (portfolio, basisFraction, age, horizonYears, spending, otherIncome, homeCityId, futures)
+ok   all ticked by default
+ok   eVelo's values shown ({"portfolio":"$2,400,000","basisFraction":"55%","age":"52","horizonYears":"40 years","spending":"$110,000","otherIncome":"$38,000 at 68","homeCityId":"New York City","futures":"1,000 paths · 36 mo Conservative · seed 99"})
+ok   eVelo's futures shown (1,000 paths · 36 mo Conservative · seed 99)
+ok   eVelo's spending is its home budget total ($110,000)
+ok   matching values are marked the same, differing ones not
+ok   matching grey, differing brass ({"same":"rgb(132, 145, 139)","diff":"rgb(227, 178, 98)","brass":"#e3b262"})
+ok   names what is never shared
+ok   Copy 8 values
+ok   Cancel copies nothing
+ok   focus returns to the opener ({"text":"⇄ Sync with my eVelo plan","id":"","tag":"BUTTON"})
+ok   unticking one reads "Copy 7 values"
+ok   the ticked values are copied ({"portfolio":2400000,"basisFraction":0.55,"age":60,"horizonYears":40,"spending":110000,"otherIncome":38000,"incomeStartAge":68,"stockShare":0.7,"muniShare":0.4,"filingStatus":"mfj","homeCityId":"new-york","method":"bootstrap","outlook":"conservative","blockMonths":36,"paths":1000,"seed":99,"step":6,"done":true,"sync":{"at":"2026-11-19T04:02:18.291Z","fields":["portfolio","basisFraction","horizonYears","spending","otherIncome","homeCityId","futures"],"snapshot":{"portfolio":2400000,"basisFraction":0.55,"horizonYears":40,"spending":110000,"otherIncome":38000,"incomeStartAge":68,"homeCityId":"new-york","seed":99,"paths":1000,"blockMonths":36,"outlook":"conservative"}}})
+ok   the unticked one is not (age 60)
+ok   the mode keeps its own mix and filing status
+ok   the sync record is stored beside the inputs (["portfolio","basisFraction","horizonYears","spending","otherIncome","homeCityId","futures"])
+ok   evelo:v2 is byte-identical after the sync
+ok   the chip says when and how many (Synced Nov 18 · 7 values Re-sync)
+ok   focus lands on Re-sync after the copy ({"text":"Re-sync","id":"","tag":"BUTTON"})
+ok   the plan page saved a new eVelo plan
+ok   the chip says eVelo changed and names spending (eVelo changed since · spending Re-sync)
+ok   the change is not copied silently
+ok   re-sync ticks the changed field only (false,false,false,false,true,false,false,false)
+ok   the sheet shows eVelo's new spending ($122,000)
+ok   Re-sync copies it (122000)
+ok   the chip is back to synced (Synced Nov 18 · 7 values Re-sync)
+ok   focus starts on the first tick ({"text":"","id":"isync-portfolio","tag":"INPUT"})
+ok   Space toggles a tick
+ok   Tab stays inside the sheet ({"text":"","id":"isync-age","tag":"INPUT"} → {"text":"","id":"isync-horizonYears","tag":"INPUT"})
+ok   Shift+Tab stays inside the sheet
+ok   Escape closes and focus returns to Re-sync
+ok   Escape copies nothing
+ok   a save in another tab shows in the chip (eVelo changed since · portfolio Re-sync)
+ok   no horizontal scroll
+ok   no uncaught page errors
+ok   1280-light: no horizontal scroll with the sync button
+ok   1280-light: no horizontal scroll with the sheet open
+ok   1280-light: the sheet fits the screen
+ok   1280-light: changed chip (eVelo changed since · spending Re-sync)
+ok   1280-light: no horizontal scroll with the changed chip
+ok   1280-light: no uncaught page errors
+ok   1280-dark: no horizontal scroll with the sync button
+ok   1280-dark: no horizontal scroll with the sheet open
+ok   1280-dark: the sheet fits the screen
+ok   1280-dark: changed chip (eVelo changed since · spending Re-sync)
+ok   1280-dark: no horizontal scroll with the changed chip
+ok   1280-dark: no uncaught page errors
+ok   390-light: no horizontal scroll with the sync button
+ok   390-light: no horizontal scroll with the sheet open
+ok   390-light: the sheet fits the screen
+ok   390-light: changed chip (eVelo changed since · spending Re-sync)
+ok   390-light: no horizontal scroll with the changed chip
+ok   390-light: no uncaught page errors
+ok   390-dark: no horizontal scroll with the sync button
+ok   390-dark: no horizontal scroll with the sheet open
+ok   390-dark: the sheet fits the screen
+ok   390-dark: changed chip (eVelo changed since · spending Re-sync)
+ok   390-dark: no horizontal scroll with the changed chip
+ok   390-dark: no uncaught page errors
+
+income sync e2e passed — screenshots in /home/jonah/src/repos/eVelo-v2/e2e/screenshots/
+exit 0

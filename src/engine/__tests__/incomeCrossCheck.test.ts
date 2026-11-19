@@ -84,6 +84,8 @@ describe('engine vs the independent reference', () => {
         const b = (x: number) => x === 1
         if (b(one.lastsRate) !== rp.lasts) miss(c, `path ${p} lasts`, b(one.lastsRate), rp.lasts)
         if (b(one.principalKeptRate) !== rp.principalKept) miss(c, `path ${p} principalKept`, b(one.principalKeptRate), rp.principalKept)
+        if (!close(one.totalTaxMedian, rp.totalTax)) miss(c, `path ${p} totalTax`, one.totalTaxMedian, rp.totalTax)
+        if (!close(one.totalSoldMedian, rp.totalSold)) miss(c, `path ${p} totalSold`, one.totalSoldMedian, rp.totalSold)
         if (b(one.keepsPaceRate) !== rp.keepsPace) miss(c, `path ${p} keepsPace`, b(one.keepsPaceRate), rp.keepsPace)
         if (rp.rows.some((r) => r.gapSold > 0)) seen.gap++
         if (!rp.lasts) seen.failed++
@@ -122,6 +124,9 @@ function compareAggregate(
   if (all.lastsRate !== share((p) => p.lasts)) miss(c, 'lastsRate', all.lastsRate, share((p) => p.lasts))
   if (all.principalKeptRate !== share((p) => p.principalKept)) miss(c, 'principalKeptRate', all.principalKeptRate, share((p) => p.principalKept))
   if (all.keepsPaceRate !== share((p) => p.keepsPace)) miss(c, 'keepsPaceRate', all.keepsPaceRate, share((p) => p.keepsPace))
+  const totMed = (f: (p: RefPath) => number) => quantile(Float64Array.from(paths, f).sort(), 0.5)
+  if (!close(all.totalTaxMedian, totMed((p) => p.totalTax))) miss(c, 'totalTaxMedian', all.totalTaxMedian, totMed((p) => p.totalTax))
+  if (!close(all.totalSoldMedian, totMed((p) => p.totalSold))) miss(c, 'totalSoldMedian', all.totalSoldMedian, totMed((p) => p.totalSold))
   const med = (k: number, f: keyof RefYearRow) => quantile(Float64Array.from(paths, (p) => p.rows[k][f]).sort(), 0.5)
   all.median.forEach((row: IncomeYearRow, k) => {
     for (const f of FIELDS) if (!close(row[f], med(k, f))) miss(c, `median year ${k + 1} ${f}`, row[f], med(k, f))

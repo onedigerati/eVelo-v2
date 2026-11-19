@@ -7,11 +7,12 @@
 
 import { useEffect, useState } from 'react'
 import type { IncomeInputs, IncomeResult, IncomeWorkerRequest, IncomeWorkerResponse } from '../../engine/incomeTypes'
+import type { PlanInputs, SimulationResult, WorkerRequest, WorkerResponse } from '../../engine/types'
 import WORKER_URL from '../../engine/worker.ts?worker&url'
 
 export const INCOME_DEBOUNCE_MS = 180
 
-type Reply = IncomeWorkerResponse | { id: number; kind: 'error'; message: string }
+type Reply = IncomeWorkerResponse | Extract<WorkerResponse, { kind: 'simulate' }> | { id: number; kind: 'error'; message: string }
 
 /** A result with the answers it was worked out for, so nothing on screen mixes the two. */
 export interface IncomeComputed {
@@ -21,59 +22,76 @@ export interface IncomeComputed {
 
 export type IncomeRun = { status: 'loading' } | ({ status: 'done' } & IncomeComputed) | { status: 'error'; message: string }
 
+type Pending = { resolve: (r: never) => void; reject: (e: Error) => void }
+
 export class IncomeClient {
   private worker: Worker | null = null
   private nextId = 1
-  private pending: { id: number; resolve: (r: IncomeResult) => void; reject: (e: Error) => void } | null = null
+  /** Every request in flight, by id. */
+  private pending = new Map<number, Pending>()
+  /** The latest request of each kind: a newer one of the same kind supersedes it. An income run
+   *  and the comparison's eVelo run don't cancel each other. */
+  private latest: Partial<Record<'income' | 'simulate', number>> = {}
 
   private spawn(): Worker {
     if (this.worker) return this.worker
     const w = new Worker(WORKER_URL, { type: 'module' })
     w.onmessage = (ev: MessageEvent<Reply>) => {
-      const p = this.pending
-      if (!p || ev.data.id !== p.id) return
-      this.pending = null
+      const p = this.pending.get(ev.data.id)
+      if (!p) return
+      this.pending.delete(ev.data.id)
       if (ev.data.kind === 'error') p.reject(new Error(ev.data.message))
-      else p.resolve(ev.data.result)
+      else p.resolve(ev.data.result as never)
     }
     w.onerror = (ev) => {
       ev.preventDefault()
-      this.pending?.reject(new Error(ev.message || 'Income worker failed'))
-      this.pending = null
+      for (const p of this.pending.values()) p.reject(new Error(ev.message || 'Income worker failed'))
+      this.pending.clear()
       this.stop()
     }
     this.worker = w
     return w
   }
 
-  run(inputs: IncomeInputs): Promise<IncomeResult> {
-    // A run still in flight belongs to older inputs: settle it as cancelled and let its reply be
-    // dropped by id when it arrives. The worker itself stays.
-    if (this.pending) {
-      this.pending.reject(new Error('cancelled'))
-      this.pending = null
+  private send<R>(kind: 'income' | 'simulate', body: IncomeWorkerRequest | Extract<WorkerRequest, { kind: 'simulate' }>): Promise<R> {
+    // A request still in flight of the same kind belongs to older inputs: settle it as cancelled
+    // and let its reply be dropped by id when it arrives. The worker itself stays.
+    const prev = this.latest[kind]
+    const old = prev === undefined ? undefined : this.pending.get(prev)
+    if (old && prev !== undefined) {
+      this.pending.delete(prev)
+      old.reject(new Error('cancelled'))
     }
-    const id = this.nextId++
+    this.latest[kind] = body.id
     // Spawning and posting inside the executor: a worker that can't be made (CSP, no module
     // workers) rejects the run, so the mode shows its error instead of waiting forever.
-    return new Promise((resolve, reject) => {
+    return new Promise<R>((resolve, reject) => {
       try {
         const w = this.spawn()
-        this.pending = { id, resolve, reject }
-        w.postMessage({ id, kind: 'income', inputs } satisfies IncomeWorkerRequest)
+        this.pending.set(body.id, { resolve: resolve as (r: never) => void, reject })
+        w.postMessage(body)
       } catch (e) {
-        this.pending = null
+        this.pending.delete(body.id)
         this.stop()
         reject(e instanceof Error && e.message && e.message !== 'cancelled' ? e : new Error('Income worker failed'))
       }
     })
   }
 
+  run(inputs: IncomeInputs): Promise<IncomeResult> {
+    return this.send<IncomeResult>('income', { id: this.nextId++, kind: 'income', inputs } satisfies IncomeWorkerRequest)
+  }
+
+  /** eVelo's own run of a plan (the comparison's, when the app's cached result isn't for it). */
+  simulate(inputs: PlanInputs): Promise<SimulationResult> {
+    return this.send<SimulationResult>('simulate', { id: this.nextId++, kind: 'simulate', inputs })
+  }
+
   stop() {
     this.worker?.terminate()
     this.worker = null
-    if (this.pending) this.pending.reject(new Error('cancelled'))
-    this.pending = null
+    for (const p of this.pending.values()) p.reject(new Error('cancelled'))
+    this.pending.clear()
   }
 }
 

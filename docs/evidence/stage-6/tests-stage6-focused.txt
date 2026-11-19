@@ -1,0 +1,88 @@
+$ npx vitest run src/state/__tests__/incomeSync.test.ts src/ui/income/__tests__/compare.test.ts src/ui/income/__tests__/syncText.test.ts src/engine/__tests__/income.test.ts --reporter=verbose
+
+ RUN  v5.1.0 /home/jonah/src/repos/eVelo-v2
+
+ ✓ src/ui/income/__tests__/syncText.test.ts > sync words > labels every field 1ms
+ ✓ src/ui/income/__tests__/syncText.test.ts > sync words > names what is never shared 0ms
+ ✓ src/ui/income/__tests__/syncText.test.ts > sync words > writes dates month first, like the site 6ms
+ ✓ src/ui/income/__tests__/syncText.test.ts > sync words > chip: synced, or what changed 0ms
+ ✓ src/ui/income/__tests__/syncText.test.ts > sync words > copy button counts the ticks 0ms
+ ✓ src/ui/income/__tests__/syncText.test.ts > sync words > shows each side’s value, a dash when missing 2ms
+ ✓ src/state/__tests__/incomeSync.test.ts > snapshotFromEvelo > maps every shared value, spending as the home budget total 1ms
+ ✓ src/state/__tests__/incomeSync.test.ts > snapshotFromEvelo > never copies what each side keeps (loan, destination, holdings, method) 1ms
+ ✓ src/state/__tests__/incomeSync.test.ts > snapshotFromEvelo > does not touch the plan 0ms
+ ✓ src/state/__tests__/incomeSync.test.ts > applySync > copies the ticked fields only, and keeps the mode’s own 0ms
+ ✓ src/state/__tests__/incomeSync.test.ts > applySync > copies the futures together 0ms
+ ✓ src/state/__tests__/incomeSync.test.ts > applySync > returns sanitized inputs, even from a hostile snapshot 0ms
+ ✓ src/state/__tests__/incomeSync.test.ts > applySync > a full sync makes every field match 0ms
+ ✓ src/state/__tests__/incomeSync.test.ts > applySync > ignores unknown fields and leaves the input object alone 0ms
+ ✓ src/state/__tests__/incomeSync.test.ts > changedSince and records > records the ticked fields and their values 0ms
+ ✓ src/state/__tests__/incomeSync.test.ts > changedSince and records > nothing changed → empty; no record → empty 0ms
+ ✓ src/state/__tests__/incomeSync.test.ts > changedSince and records > names the synced fields that moved, not the unsynced ones 0ms
+ ✓ src/state/__tests__/incomeSync.test.ts > changedSince and records > a re-sync of some fields keeps the others tracked 0ms
+ ✓ src/state/__tests__/incomeSync.test.ts > changedSince and records > copying nothing makes no record 0ms
+ ✓ src/state/__tests__/incomeSync.test.ts > sanitizeSyncRecord > keeps a good record 0ms
+ ✓ src/state/__tests__/incomeSync.test.ts > sanitizeSyncRecord > drops an unfit record (0) 0ms
+ ✓ src/state/__tests__/incomeSync.test.ts > sanitizeSyncRecord > drops an unfit record (1) 0ms
+ ✓ src/state/__tests__/incomeSync.test.ts > sanitizeSyncRecord > drops an unfit record (2) 0ms
+ ✓ src/state/__tests__/incomeSync.test.ts > sanitizeSyncRecord > drops an unfit record (3) 0ms
+ ✓ src/state/__tests__/incomeSync.test.ts > sanitizeSyncRecord > drops an unfit record (4) 0ms
+ ✓ src/state/__tests__/incomeSync.test.ts > sanitizeSyncRecord > drops an unfit record (5) 0ms
+ ✓ src/state/__tests__/incomeSync.test.ts > sanitizeSyncRecord > drops an unfit record (6) 0ms
+ ✓ src/state/__tests__/incomeSync.test.ts > sanitizeSyncRecord > drops an unfit record (7) 0ms
+ ✓ src/state/__tests__/incomeSync.test.ts > sanitizeSyncRecord > drops an unfit record (8) 0ms
+ ✓ src/state/__tests__/incomeSync.test.ts > sanitizeSyncRecord > drops an unfit record (9) 0ms
+ ✓ src/state/__tests__/incomeSync.test.ts > sanitizeSyncRecord > drops an unfit record (10) 0ms
+ ✓ src/state/__tests__/incomeSync.test.ts > sanitizeSyncRecord > drops an unfit record (11) 0ms
+ ✓ src/state/__tests__/incomeSync.test.ts > sanitizeSyncRecord > ignores inherited keys 0ms
+ ✓ src/state/__tests__/incomeSync.test.ts > sanitizeSyncRecord > cleans hostile fields and values 0ms
+ ✓ src/state/__tests__/incomeSync.test.ts > sanitizeSyncRecord > a dropped value reads as changed, never as the same 0ms
+ ✓ src/state/__tests__/incomeSync.test.ts > sanitizeSyncRecord > snapshot sanitizer rejects arrays and non-objects 0ms
+ ✓ src/ui/income/__tests__/compare.test.ts > columns > equal the two results’ fields under every measure 8ms
+ ✓ src/ui/income/__tests__/compare.test.ts > likeForLike > says both run on the same futures when nothing differs 0ms
+ ✓ src/ui/income/__tests__/compare.test.ts > likeForLike > names a move, retiring later, fat tails and a loan 2ms
+ ✓ src/ui/income/__tests__/compare.test.ts > likeForLike > a destination equal to home is no move 0ms
+ ✓ src/ui/income/__tests__/compare.test.ts > likeForLike > flags different futures when seed, paths, block length or outlook differ 1ms
+ ✓ src/ui/income/__tests__/compare.test.ts > likeForLike: the person > names each differing field with both values 1ms
+ ✓ src/ui/income/__tests__/compare.test.ts > likeForLike: the person > lists two differing fields one line each, more than two in one line 1ms
+ ✓ src/ui/income/__tests__/compare.test.ts > likeForLike: the person > says “same person, same markets” only when nothing about the person or the futures differs 0ms
+ ✓ src/ui/income/__tests__/compare.test.ts > likeForLike: local taxes > says eVelo includes a taxed home city’s tax and the mode doesn’t 1ms
+ ✓ src/ui/income/__tests__/compare.test.ts > likeForLike: local taxes > the move line names a taxed destination’s tax 0ms
+ ✓ src/ui/income/__tests__/compare.test.ts > like for like: the same months as eVelo > after syncing futures and years, the mode runs on the months eVelo draws for the plan 124ms
+ ✓ src/ui/income/__tests__/compare.test.ts > compare chart geometry > puts both on one scale over the upper quartile 1ms
+ ✓ src/ui/income/__tests__/compare.test.ts > compare chart geometry > lists every age with both series in the hidden table 0ms
+ ✓ src/engine/__tests__/income.test.ts > same months as eVelo > bootstrap: simulate and the scenarios are bit-identical to the golden from before 41ms
+ ✓ src/engine/__tests__/income.test.ts > same months as eVelo > bootstrap: the indices are the months eVelo drew 303ms
+ ✓ src/engine/__tests__/income.test.ts > same months as eVelo > bootstrap: indicesOnly draws the same months, skipping the values 8ms
+ ✓ src/engine/__tests__/income.test.ts > same months as eVelo > bootstrap: runIncomePaths runs on eVelo's months for the same seed, paths, horizon and blocks 50ms
+ ✓ src/engine/__tests__/income.test.ts > same months as eVelo > fat-tail: simulate and the scenarios are bit-identical to the golden from before 52ms
+ ✓ src/engine/__tests__/income.test.ts > same months as eVelo > fat-tail: the indices are the months eVelo drew 148ms
+ ✓ src/engine/__tests__/income.test.ts > same months as eVelo > fat-tail: indicesOnly draws the same months, skipping the values 7ms
+ ✓ src/engine/__tests__/income.test.ts > same months as eVelo > fat-tail: runIncomePaths runs on eVelo's months for the same seed, paths, horizon and blocks 15ms
+ ✓ src/engine/__tests__/income.test.ts > yields anchored to today > a history that is all 1990s-like high yields still starts at the latest yield 1ms
+ ✓ src/engine/__tests__/income.test.ts > yields anchored to today > caps a month’s change at the 99th percentile |Δy| and floors the yield at 0.25% 1ms
+ ✓ src/engine/__tests__/income.test.ts > yields anchored to today > month 1 pays the starting yield, month 2 the moved one, and a rise in y raises income 2ms
+ ✓ src/engine/__tests__/income.test.ts > yields anchored to today > the real data starts at each fund’s latest yield, with caps near the plan’s 1ms
+ ✓ src/engine/__tests__/income.test.ts > a hand-worked path > year 1: income by type, tax by incomeTax, a gap sale with gains tax 0ms
+ ✓ src/engine/__tests__/income.test.ts > a hand-worked path > years 2 and 3: a smaller gap sale, then Social Security and a surplus reinvested 0ms
+ ✓ src/engine/__tests__/income.test.ts > a hand-worked path > a surplus is reinvested at the target weights with basis at cost 0ms
+ ✓ src/engine/__tests__/income.test.ts > a hand-worked path > a portfolio that can’t cover the gap fails that year: value 0, not met, not keeping pace 0ms
+ ✓ src/engine/__tests__/income.test.ts > a hand-worked path > inflation: amounts are nominal inside a year and real in the result, brackets lag a year 0ms
+ ✓ src/engine/__tests__/income.test.ts > the three measures and the bands > an all-bond plan spending below its income keeps principal on every path 31ms
+ ✓ src/engine/__tests__/income.test.ts > the three measures and the bands > spending far above income: the money lasts less often as the horizon grows 83ms
+stdout | src/engine/__tests__/income.test.ts > speed > runIncomePaths at eVelo’s default paths and horizon takes at most 2× simulate
+simulate 82 ms, runIncomePaths 98 ms (4000 × 30y), ratio 1.19
+
+ ✓ src/engine/__tests__/income.test.ts > the three measures and the bands > bands: ordered, the right lengths, and from the same quantile helper as simulate 18ms
+ ✓ src/engine/__tests__/income.test.ts > the three measures and the bands > median50 equals quantile(sorted, 0.5) exactly 1ms
+ ✓ src/engine/__tests__/income.test.ts > worker > answers an income request with runIncomePaths’ result 27ms
+ ✓ src/engine/__tests__/income.test.ts > speed > runIncomePaths at eVelo’s default paths and horizon takes at most 2× simulate 1103ms
+ ✓ src/engine/__tests__/income.test.ts > input limits on the income request > clamps or defaults every field, as eVelo’s sanitizer does 1ms
+ ✓ src/engine/__tests__/income.test.ts > input limits on the income request > huge paths, 1e308 otherIncome, NaN and bad enums give a finite, sane result 44ms
+
+ Test Files  4 passed (4)
+      Tests  74 passed (74)
+   Start at  22:11:12
+   Duration  2.10s (tests 81%, import 9%, transform 9%)
+
+exit 0

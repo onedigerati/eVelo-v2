@@ -1,0 +1,77 @@
+$ node docs/evidence/stage-6/rerun-stage4/verify-script.mjs
+
+== door · desktop
+ok   desktop: label click -> #plan at once (54 ms)
+ok   desktop: 1 arrow click(s) -> #plan after 316 ms
+ok   desktop: 2 arrow click(s) -> #plan after 386 ms
+ok   desktop: 3 quick arrow hits hold on #home, no coupon
+ok   desktop: 4 quick arrow hits hold on #home, no coupon
+ok   desktop: 5 quick hits -> coupon, stays on #home
+ok   desktop: coupon saved in sessionStorage
+ok   desktop: coupon still there after reload in same tab
+ok   desktop: coupon opens #income
+ok   desktop: mode rendered after coupon
+ok   desktop: no console/page errors ()
+ok   desktop: new context has the arrow, no coupon
+
+== door · phone
+ok   phone: label tap -> #plan at once (34 ms)
+ok   phone: 1 arrow tap(s) -> #plan after 316 ms
+ok   phone: 2 arrow tap(s) -> #plan after 400 ms
+ok   phone: 3 quick arrow hits hold on #home, no coupon
+ok   phone: 4 quick arrow hits hold on #home, no coupon
+ok   phone: 5 quick hits -> coupon, stays on #home
+ok   phone: coupon saved in sessionStorage
+ok   phone: coupon still there after reload in same tab
+ok   phone: coupon opens #income
+ok   phone: mode rendered after coupon
+ok   phone: no console/page errors ()
+ok   phone: new context has the arrow, no coupon
+
+== hidden + lazy
+home: 0 hits
+plan: 1 hits
+   text: "Income starts" <text.[object SVGAnimatedString]>
+outlook: 1 hits
+   text: "Income starts" <text.[object SVGAnimatedString]>
+atlas: 12 hits
+   text: "Modern, English-friendly city, tax-free foreign income" <p.pick__tag>
+   text: "An 11-year tax holiday on foreign capital income, no inheritance tax and good mutualista care, for r" <span.also__why>
+   text: "Mauritius taxes foreign income only when it is remitted and has no wealth, inheritance or capital ga" <span.also__why>
+   text: "Turkey's new-resident regime exempts foreign income for 20 years if claimed in year one and cuts inh" <span.also__why>
+   text: "Foreign-source income is exempt, children inherit free and $150k of property gives residence, though" <span.also__why>
+   text: "Territorial tax today, but a pending bill would tax foreign passive income at about 15%, so it ranks" <span.also__why>
+   attr aria-label="Top pick 6: Kuala Lumpur, Malaysia. Modern, English-friendly city, tax-free foreign income. Plan hol" <button>
+   attr aria-label="Top pick 17: Montevideo, Uruguay. Plan holds in 73%. An 11-year tax holiday on foreign capital incom" <button>
+   attr aria-label="Top pick 20: Grand Baie, Mauritius. Plan holds in 80%. Mauritius taxes foreign income only when it i" <button>
+   attr aria-label="Top pick 21: Antalya, Turkey. Plan holds in 72%. Turkey's new-resident regime exempts foreign income" <button>
+   attr aria-label="Top pick 23: Tbilisi, Georgia. Plan holds in 78%. Foreign-source income is exempt, children inherit " <button>
+   attr aria-label="Top pick 24: San José, Costa Rica. Plan holds in 69%. Territorial tax today, but a pending bill woul" <button>
+method: 6 hits
+   text: "This month’s spending, grown with inflation, minus any other income (Social Security, a pension) is " <li.>
+   text: "by default, the top federal long-term rate including the 3.8% investment-income tax) comes out of th" <p.>
+   text: "whole years. Until then each month is a working month: nothing is drawn for spending and other incom" <p.>
+   text: "a year by default, kept level with inflation) go in. They pay down any loan first and the rest is in" <p.>
+   text: "The simplifications: Spain’s cap on income plus wealth tax (60% of the income-tax base) is ignored, " <p.>
+   text: "There is no US estate tax: the 2026 federal exemption is $15 million per person, and estates above i" <li.>
+ok   no link to #income and no "Admit" on main routes before coupon ()
+ok   IncomeMode chunk not fetched on home/plan/outlook/atlas/method (27 requests seen)
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+locator.waitFor: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for locator('[data-testid=income-lasts-rate]') to be visible[22m
+
+    at /home/jonah/src/repos/eVelo-v2/docs/evidence/stage-6/rerun-stage4/verify-script.mjs:160:58
+    at async withPreview (/home/jonah/src/repos/eVelo-v2/scripts/serve-preview.mjs:18:12)
+    at async file:///home/jonah/src/repos/eVelo-v2/docs/evidence/stage-6/rerun-stage4/verify-script.mjs:42:1 {
+  log: [
+    "  - waiting for locator('[data-testid=income-lasts-rate]') to be visible"
+  ],
+  name: 'TimeoutError'
+}
+
+Node.js v22.23.5
+exit 1

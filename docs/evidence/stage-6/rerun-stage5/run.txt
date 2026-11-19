@@ -1,0 +1,228 @@
+$ node docs/evidence/stage-6/rerun-stage5/verify.mjs docs/evidence/stage-6/rerun-stage5/
+ok   1280-light: question left, chart right (ask 32,137,420, chart 508,137,740,372)
+ok   1280-light q1: progress 1 of 6
+ok   1280-light q1: Tab reaches the first field
+ok   1280-light q1: role/name audit: input#if-portfolio "Saved, in dollars", input#if-basisFraction "Share of it that is what you paid (cost basis), percent", input#if-spending "Spending a year after tax, in dollars", button# "Next"
+ok   1280-light q1: axe finds no violations other than contrast (none)
+ok   1280-light q1: chart draws 0 layers
+ok   1280-light q2: Enter moves on, progress 2 of 6, focus on age (age)
+ok   1280-light: Back (keyboard) returns to q1 with answers kept
+ok   1280-light: Next button moves to q2
+ok   1280-light q2: role/name audit: input#if-age "Your age", input#if-horizonYears "Years it should last", button# "Back", button# "Next"
+ok   1280-light q2: axe finds no violations other than contrast (none)
+ok   1280-light q2: chart draws 0 layers
+ok   1280-light q3: Next via keyboard, focus on stocks
+ok   1280-light q3: data-layers=1 (want 1)
+ok   1280-light q3: "Just added: dividends, $6,100 a year" (want "Just added: dividends, $6,100 a year")
+ok   1280-light q3: worker's year 1 equals my node runIncomePaths year 1
+ok   1280-light q3: no horizontal scroll
+ok   1280-light q3: role/name audit: input#if-stockShare "Share in stocks, percent", button# "Back", button# "Next"
+ok   1280-light q3: axe finds no violations other than contrast (none)
+ok   1280-light: reload mid-flow resumes at q3 with 40%
+ok   1280-light q4: focus on muni share
+ok   1280-light q4: data-layers=2 (want 2)
+ok   1280-light q4: "Just added: muni coupons, $24,000 a year, tax-free · taxable interest, $7,200" (want "Just added: muni coupons, $24,000 a year, tax-free · taxable interest, $7,200")
+ok   1280-light q4: worker's year 1 equals my node runIncomePaths year 1
+ok   1280-light q4: no horizontal scroll
+ok   1280-light q4: role/name audit: input#if-muniShare "Share of bonds in munis, percent", button# "Back", button# "Next"
+ok   1280-light q4: axe finds no violations other than contrast (none)
+ok   1280-light q5: focus on home city
+ok   1280-light q5: keyboard typed selects read chicago, mfj
+ok   1280-light q5: data-layers=3 (want 3)
+ok   1280-light q5: "Just added: tax, $2,500 a year" (want "Just added: tax, $2,500 a year")
+ok   1280-light q5: worker's year 1 equals my node runIncomePaths year 1
+ok   1280-light q5: no horizontal scroll
+ok   1280-light q5: role/name audit: select#if-home "Home city", select#if-filing "Filing status", button# "Back", button# "Next"
+ok   1280-light q5: axe finds no violations other than contrast (none)
+ok   1280-light q6: Enter on a select moves on; focus on Social Security
+ok   1280-light q6: data-layers=4 (want 4)
+ok   1280-light q6: "Just added: spending, $70,000 a year · sold to cover, $35,200 · Social Security, $36,000 from age 70" (want "Just added: spending, $70,000 a year · sold to cover, $35,200 · Social Security, $36,000 from age 70")
+ok   1280-light q6: worker's year 1 equals my node runIncomePaths year 1
+ok   1280-light q6: no horizontal scroll
+ok   1280-light q6: role/name audit: input#if-otherIncome "Social Security a year, in dollars", input#if-incomeStartAge "Age Social Security starts", button# "Back", button# "See the answer"
+ok   1280-light q6: axe finds no violations other than contrast (none)
+ok   1280-light q6: the button reads "See the answer"
+ok   1280-light results: focus on the results heading (ires__head)
+ok   1280-light results: no progress mark
+ok   1280-light results: measures {"lasts":"100%","principal":"0%","pace":"47%"} = my node result {"lasts":"100%","principal":"0%","pace":"47%"} (raw 1, 0, 0.46625)
+ok   1280-light results: lasts card says "Same test as eVelo", rate colour rgb(138, 99, 18) (brass rgb(138, 99, 18))
+ok   1280-light results: summary "Your income after tax pays about half of the bills. Selling covers the rest." — year-1 median after-tax 34842 / 70000 = 0.498 → "about half"
+ok   1280-light results: legend Dividends / Muni coupons / Taxable interest / Social Security / Sold to cover / Tax / Spending
+ok   1280-light results: chart's Sold to cover equals gapSold in all 25 rows (yr1 $35,158 vs 35158.00; yr25 $521 vs 520.68)
+ok   1280-light results: chart text equivalent: "Income each year, median future, in today's dollars, age 66 to 90. Year 1, age 66: dividends $6,100, muni coupons $24,000, taxable interest $7,200, tax $2,500, …"
+ok   1280-light results: no horizontal scroll
+ok   1280-light results: axe finds no violations other than contrast (none)
+ok   1280-light: saved under evelo:v2:income: {"portfolio":1500000,"basisFraction":0.4,"age":66,"horizonYears":25,"spending":70000,"otherIncome":36000,"incomeStartAge":70,"stockShare":0.4,"muniShare":0.8,"filingStatus":"mfj","homeCityId":"chicago","method":"bootstrap","outlook":"balanced","blockMonths":24,"paths":4000,"seed":7,"step":6,"done":true}
+ok   1280-light ledger year 1 (1 age 66): $6,100 $24,000 $3,600 $3,600 $0 $2,500 $35,200 vs mine $6,100 $24,000 $3,600 $3,600 $0 $2,500 $35,200; value $1.5M vs 1493900
+ok   1280-light ledger year 9 (9 age 74): $7,700 $18,000 $2,600 $2,500 $36,000 $1,300 $4,100 vs mine $7,700 $18,000 $2,600 $2,500 $36,000 $1,300 $4,100; value $1.6M vs 1560457
+ok   1280-light ledger year 25 (25 age 90): $19,200 $12,400 $1,600 $1,400 $36,000 $1,400 $500 vs mine $19,200 $12,400 $1,600 $1,400 $36,000 $1,400 $500; value $2.5M vs 2503557
+ok   1280-light ledger: 25 rows
+ok   1280-light ledger: no page scroll (box 1016/1016)
+ok   1280-light how: covers AMT, IRMAA, perState, foreign, historical
+ok   1280-light: reload resumes on the results
+ok   1280-light: Edit answers reopens q1 with $1,500,000, focus on it
+ok   1280-light: change on results: "Updating…" shown (chart opacity 1) then cleared; pace now 41% = mine 41% at $75k
+FAIL 1280-light: blocked worker → "These figures are for your earlier answers" (ask: "These figures are for your earlier answers"), chart opacity 1, label colour rgb(138, 99, 18) vs brass rgb(138, 99, 18) (brass)
+     1280-light: error alert: "This couldn’t be worked out. Change an answer to try again, or reload."
+ok   1280-light: no console/page errors
+ok   1280-dark: question left, chart right (ask 32,137,420, chart 508,137,740,372)
+ok   1280-dark q1: progress 1 of 6
+ok   1280-dark q1: Tab reaches the first field
+ok   1280-dark q1: chart draws 0 layers
+ok   1280-dark q2: Enter moves on, progress 2 of 6, focus on age (age)
+ok   1280-dark: Back (keyboard) returns to q1 with answers kept
+ok   1280-dark: Next button moves to q2
+ok   1280-dark q2: chart draws 0 layers
+ok   1280-dark q3: Next via keyboard, focus on stocks
+ok   1280-dark q3: data-layers=1 (want 1)
+ok   1280-dark q3: "Just added: dividends, $6,100 a year" (want "Just added: dividends, $6,100 a year")
+ok   1280-dark q3: worker's year 1 equals my node runIncomePaths year 1
+ok   1280-dark q3: no horizontal scroll
+ok   1280-dark q4: focus on muni share
+ok   1280-dark q4: data-layers=2 (want 2)
+ok   1280-dark q4: "Just added: muni coupons, $24,000 a year, tax-free · taxable interest, $7,200" (want "Just added: muni coupons, $24,000 a year, tax-free · taxable interest, $7,200")
+ok   1280-dark q4: worker's year 1 equals my node runIncomePaths year 1
+ok   1280-dark q4: no horizontal scroll
+ok   1280-dark q5: focus on home city
+ok   1280-dark q5: keyboard typed selects read chicago, mfj
+ok   1280-dark q5: data-layers=3 (want 3)
+ok   1280-dark q5: "Just added: tax, $2,500 a year" (want "Just added: tax, $2,500 a year")
+ok   1280-dark q5: worker's year 1 equals my node runIncomePaths year 1
+ok   1280-dark q5: no horizontal scroll
+ok   1280-dark q6: Enter on a select moves on; focus on Social Security
+ok   1280-dark q6: data-layers=4 (want 4)
+ok   1280-dark q6: "Just added: spending, $70,000 a year · sold to cover, $35,200 · Social Security, $36,000 from age 70" (want "Just added: spending, $70,000 a year · sold to cover, $35,200 · Social Security, $36,000 from age 70")
+ok   1280-dark q6: worker's year 1 equals my node runIncomePaths year 1
+ok   1280-dark q6: no horizontal scroll
+ok   1280-dark q6: the button reads "See the answer"
+ok   1280-dark results: focus on the results heading (ires__head)
+ok   1280-dark results: no progress mark
+ok   1280-dark results: measures {"lasts":"100%","principal":"0%","pace":"47%"} = my node result {"lasts":"100%","principal":"0%","pace":"47%"} (raw 1, 0, 0.46625)
+ok   1280-dark results: lasts card says "Same test as eVelo", rate colour rgb(227, 178, 98) (brass rgb(227, 178, 98))
+ok   1280-dark results: summary "Your income after tax pays about half of the bills. Selling covers the rest." — year-1 median after-tax 34842 / 70000 = 0.498 → "about half"
+ok   1280-dark results: legend Dividends / Muni coupons / Taxable interest / Social Security / Sold to cover / Tax / Spending
+ok   1280-dark results: chart's Sold to cover equals gapSold in all 25 rows (yr1 $35,158 vs 35158.00; yr25 $521 vs 520.68)
+ok   1280-dark results: chart text equivalent: "Income each year, median future, in today's dollars, age 66 to 90. Year 1, age 66: dividends $6,100, muni coupons $24,000, taxable interest $7,200, tax $2,500, …"
+ok   1280-dark results: no horizontal scroll
+ok   1280-dark: saved under evelo:v2:income: {"portfolio":1500000,"basisFraction":0.4,"age":66,"horizonYears":25,"spending":70000,"otherIncome":36000,"incomeStartAge":70,"stockShare":0.4,"muniShare":0.8,"filingStatus":"mfj","homeCityId":"chicago","method":"bootstrap","outlook":"balanced","blockMonths":24,"paths":4000,"seed":7,"step":6,"done":true}
+ok   1280-dark ledger year 1 (1 age 66): $6,100 $24,000 $3,600 $3,600 $0 $2,500 $35,200 vs mine $6,100 $24,000 $3,600 $3,600 $0 $2,500 $35,200; value $1.5M vs 1493900
+ok   1280-dark ledger year 9 (9 age 74): $7,700 $18,000 $2,600 $2,500 $36,000 $1,300 $4,100 vs mine $7,700 $18,000 $2,600 $2,500 $36,000 $1,300 $4,100; value $1.6M vs 1560457
+ok   1280-dark ledger year 25 (25 age 90): $19,200 $12,400 $1,600 $1,400 $36,000 $1,400 $500 vs mine $19,200 $12,400 $1,600 $1,400 $36,000 $1,400 $500; value $2.5M vs 2503557
+ok   1280-dark ledger: 25 rows
+ok   1280-dark ledger: no page scroll (box 1016/1016)
+ok   1280-dark how: covers AMT, IRMAA, perState, foreign, historical
+ok   1280-dark: reload resumes on the results
+ok   1280-dark: Edit answers reopens q1 with $1,500,000, focus on it
+ok   1280-dark: change on results: "Updating…" shown (chart opacity 1) then cleared; pace now 41% = mine 41% at $75k
+FAIL 1280-dark: blocked worker → "These figures are for your earlier answers" (ask: "These figures are for your earlier answers"), chart opacity 1, label colour rgb(227, 178, 98) vs brass rgb(227, 178, 98) (brass)
+     1280-dark: error alert: "This couldn’t be worked out. Change an answer to try again, or reload."
+ok   1280-dark: no console/page errors
+ok   390-light: small chart above the sentence (ask 16,295,358, chart 16,125,358,150)
+ok   390-light q1: progress 1 of 6
+ok   390-light q1: Tab reaches the first field
+ok   390-light q1: chart draws 0 layers
+ok   390-light q2: Enter moves on, progress 2 of 6, focus on age (age)
+ok   390-light: Back (keyboard) returns to q1 with answers kept
+ok   390-light: Next button moves to q2
+ok   390-light q2: chart draws 0 layers
+ok   390-light q3: Next via keyboard, focus on stocks
+ok   390-light q3: data-layers=1 (want 1)
+ok   390-light q3: "Just added: dividends, $6,100 a year" (want "Just added: dividends, $6,100 a year")
+ok   390-light q3: worker's year 1 equals my node runIncomePaths year 1
+ok   390-light q3: no horizontal scroll
+ok   390-light q4: focus on muni share
+ok   390-light q4: data-layers=2 (want 2)
+ok   390-light q4: "Just added: muni coupons, $24,000 a year, tax-free · taxable interest, $7,200" (want "Just added: muni coupons, $24,000 a year, tax-free · taxable interest, $7,200")
+ok   390-light q4: worker's year 1 equals my node runIncomePaths year 1
+ok   390-light q4: no horizontal scroll
+ok   390-light q5: focus on home city
+ok   390-light q5: keyboard typed selects read chicago, mfj
+ok   390-light q5: data-layers=3 (want 3)
+ok   390-light q5: "Just added: tax, $2,500 a year" (want "Just added: tax, $2,500 a year")
+ok   390-light q5: worker's year 1 equals my node runIncomePaths year 1
+ok   390-light q5: no horizontal scroll
+ok   390-light q6: Enter on a select moves on; focus on Social Security
+ok   390-light q6: data-layers=4 (want 4)
+ok   390-light q6: "Just added: spending, $70,000 a year · sold to cover, $35,200 · Social Security, $36,000 from age 70" (want "Just added: spending, $70,000 a year · sold to cover, $35,200 · Social Security, $36,000 from age 70")
+ok   390-light q6: worker's year 1 equals my node runIncomePaths year 1
+ok   390-light q6: no horizontal scroll
+ok   390-light q6: the button reads "See the answer"
+ok   390-light results: focus on the results heading (ires__head)
+ok   390-light results: no progress mark
+ok   390-light results: measures {"lasts":"100%","principal":"0%","pace":"47%"} = my node result {"lasts":"100%","principal":"0%","pace":"47%"} (raw 1, 0, 0.46625)
+ok   390-light results: lasts card says "Same test as eVelo", rate colour rgb(138, 99, 18) (brass rgb(138, 99, 18))
+ok   390-light results: summary "Your income after tax pays about half of the bills. Selling covers the rest." — year-1 median after-tax 34842 / 70000 = 0.498 → "about half"
+ok   390-light results: legend Dividends / Muni coupons / Taxable interest / Social Security / Sold to cover / Tax / Spending
+ok   390-light results: chart's Sold to cover equals gapSold in all 25 rows (yr1 $35,158 vs 35158.00; yr25 $521 vs 520.68)
+ok   390-light results: chart text equivalent: "Income each year, median future, in today's dollars, age 66 to 90. Year 1, age 66: dividends $6,100, muni coupons $24,000, taxable interest $7,200, tax $2,500, …"
+ok   390-light results: no horizontal scroll
+ok   390-light: saved under evelo:v2:income: {"portfolio":1500000,"basisFraction":0.4,"age":66,"horizonYears":25,"spending":70000,"otherIncome":36000,"incomeStartAge":70,"stockShare":0.4,"muniShare":0.8,"filingStatus":"mfj","homeCityId":"chicago","method":"bootstrap","outlook":"balanced","blockMonths":24,"paths":4000,"seed":7,"step":6,"done":true}
+ok   390-light ledger year 1 (1 age 66): $6,100 $24,000 $3,600 $3,600 $0 $2,500 $35,200 vs mine $6,100 $24,000 $3,600 $3,600 $0 $2,500 $35,200; value $1.5M vs 1493900
+ok   390-light ledger year 9 (9 age 74): $7,700 $18,000 $2,600 $2,500 $36,000 $1,300 $4,100 vs mine $7,700 $18,000 $2,600 $2,500 $36,000 $1,300 $4,100; value $1.6M vs 1560457
+ok   390-light ledger year 25 (25 age 90): $19,200 $12,400 $1,600 $1,400 $36,000 $1,400 $500 vs mine $19,200 $12,400 $1,600 $1,400 $36,000 $1,400 $500; value $2.5M vs 2503557
+ok   390-light ledger: 25 rows
+ok   390-light ledger: scrolls inside its box (scrollWidth 896 > 306, scrolled 200), page overflow 0
+ok   390-light how: covers AMT, IRMAA, perState, foreign, historical
+ok   390-light: reload resumes on the results
+ok   390-light: Edit answers reopens q1 with $1,500,000, focus on it
+ok   390-light: change on results: "Updating…" shown (chart opacity 1) then cleared; pace now 41% = mine 41% at $75k
+FAIL 390-light: blocked worker → "These figures are for your earlier answers" (ask: "These figures are for your earlier answers"), chart opacity 1, label colour rgb(138, 99, 18) vs brass rgb(138, 99, 18) (brass)
+     390-light: error alert: "This couldn’t be worked out. Change an answer to try again, or reload."
+ok   390-light: no console/page errors
+ok   390-dark: small chart above the sentence (ask 16,295,358, chart 16,125,358,150)
+ok   390-dark q1: progress 1 of 6
+ok   390-dark q1: Tab reaches the first field
+ok   390-dark q1: chart draws 0 layers
+ok   390-dark q2: Enter moves on, progress 2 of 6, focus on age (age)
+ok   390-dark: Back (keyboard) returns to q1 with answers kept
+ok   390-dark: Next button moves to q2
+ok   390-dark q2: chart draws 0 layers
+ok   390-dark q3: Next via keyboard, focus on stocks
+ok   390-dark q3: data-layers=1 (want 1)
+ok   390-dark q3: "Just added: dividends, $6,100 a year" (want "Just added: dividends, $6,100 a year")
+ok   390-dark q3: worker's year 1 equals my node runIncomePaths year 1
+ok   390-dark q3: no horizontal scroll
+ok   390-dark q4: focus on muni share
+ok   390-dark q4: data-layers=2 (want 2)
+ok   390-dark q4: "Just added: muni coupons, $24,000 a year, tax-free · taxable interest, $7,200" (want "Just added: muni coupons, $24,000 a year, tax-free · taxable interest, $7,200")
+ok   390-dark q4: worker's year 1 equals my node runIncomePaths year 1
+ok   390-dark q4: no horizontal scroll
+ok   390-dark q5: focus on home city
+ok   390-dark q5: keyboard typed selects read chicago, mfj
+ok   390-dark q5: data-layers=3 (want 3)
+ok   390-dark q5: "Just added: tax, $2,500 a year" (want "Just added: tax, $2,500 a year")
+ok   390-dark q5: worker's year 1 equals my node runIncomePaths year 1
+ok   390-dark q5: no horizontal scroll
+ok   390-dark q6: Enter on a select moves on; focus on Social Security
+ok   390-dark q6: data-layers=4 (want 4)
+ok   390-dark q6: "Just added: spending, $70,000 a year · sold to cover, $35,200 · Social Security, $36,000 from age 70" (want "Just added: spending, $70,000 a year · sold to cover, $35,200 · Social Security, $36,000 from age 70")
+ok   390-dark q6: worker's year 1 equals my node runIncomePaths year 1
+ok   390-dark q6: no horizontal scroll
+ok   390-dark q6: the button reads "See the answer"
+ok   390-dark results: focus on the results heading (ires__head)
+ok   390-dark results: no progress mark
+ok   390-dark results: measures {"lasts":"100%","principal":"0%","pace":"47%"} = my node result {"lasts":"100%","principal":"0%","pace":"47%"} (raw 1, 0, 0.46625)
+ok   390-dark results: lasts card says "Same test as eVelo", rate colour rgb(227, 178, 98) (brass rgb(227, 178, 98))
+ok   390-dark results: summary "Your income after tax pays about half of the bills. Selling covers the rest." — year-1 median after-tax 34842 / 70000 = 0.498 → "about half"
+ok   390-dark results: legend Dividends / Muni coupons / Taxable interest / Social Security / Sold to cover / Tax / Spending
+ok   390-dark results: chart's Sold to cover equals gapSold in all 25 rows (yr1 $35,158 vs 35158.00; yr25 $521 vs 520.68)
+ok   390-dark results: chart text equivalent: "Income each year, median future, in today's dollars, age 66 to 90. Year 1, age 66: dividends $6,100, muni coupons $24,000, taxable interest $7,200, tax $2,500, …"
+ok   390-dark results: no horizontal scroll
+ok   390-dark: saved under evelo:v2:income: {"portfolio":1500000,"basisFraction":0.4,"age":66,"horizonYears":25,"spending":70000,"otherIncome":36000,"incomeStartAge":70,"stockShare":0.4,"muniShare":0.8,"filingStatus":"mfj","homeCityId":"chicago","method":"bootstrap","outlook":"balanced","blockMonths":24,"paths":4000,"seed":7,"step":6,"done":true}
+ok   390-dark ledger year 1 (1 age 66): $6,100 $24,000 $3,600 $3,600 $0 $2,500 $35,200 vs mine $6,100 $24,000 $3,600 $3,600 $0 $2,500 $35,200; value $1.5M vs 1493900
+ok   390-dark ledger year 9 (9 age 74): $7,700 $18,000 $2,600 $2,500 $36,000 $1,300 $4,100 vs mine $7,700 $18,000 $2,600 $2,500 $36,000 $1,300 $4,100; value $1.6M vs 1560457
+ok   390-dark ledger year 25 (25 age 90): $19,200 $12,400 $1,600 $1,400 $36,000 $1,400 $500 vs mine $19,200 $12,400 $1,600 $1,400 $36,000 $1,400 $500; value $2.5M vs 2503557
+ok   390-dark ledger: 25 rows
+ok   390-dark ledger: scrolls inside its box (scrollWidth 896 > 306, scrolled 200), page overflow 0
+ok   390-dark how: covers AMT, IRMAA, perState, foreign, historical
+ok   390-dark: reload resumes on the results
+ok   390-dark: Edit answers reopens q1 with $1,500,000, focus on it
+ok   390-dark: change on results: "Updating…" shown (chart opacity 1) then cleared; pace now 41% = mine 41% at $75k
+FAIL 390-dark: blocked worker → "These figures are for your earlier answers" (ask: "These figures are for your earlier answers"), chart opacity 1, label colour rgb(227, 178, 98) vs brass rgb(227, 178, 98) (brass)
+     390-dark: error alert: "This couldn’t be worked out. Change an answer to try again, or reload."
+ok   390-dark: no console/page errors
+ok   390px: horizontal overflow per step 1:0 2:0 3:0 4:0 5:0 6:0 done:0 ledger:0
+ok   320px: horizontal overflow per step 1:0 2:0 3:0 4:0 5:0 6:0 done:0 ledger:0
+
+4 failed
+exit 1

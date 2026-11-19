@@ -278,6 +278,8 @@ function settle(s: IncomeSeries, n: IncomeInputs, idx: Int32Array): IncomeResult
   const B = new Float64Array(NF)
   const Y = new Float64Array(NF)
   const inc = new Float64Array(NF)
+  const taxTot = new Float64Array(paths) // per path, lifetime real tax
+  const soldTot = new Float64Array(paths) // per path, lifetime real gap sold
   let lasts = 0, kept = 0, pace = 0
 
   for (let p = 0; p < paths; p++) {
@@ -292,6 +294,7 @@ function settle(s: IncomeSeries, n: IncomeInputs, idx: Int32Array): IncomeResult
     let P0 = 1 // the price level at the start of the year
     let failed = false, sold = false, keepsPace = true
     let base = 0
+    let taxSum = 0, soldSum = 0
     const o = p * T
     for (let t = 0; t < T; t++) {
       if (t % 12 === 0) P0 = P
@@ -379,9 +382,13 @@ function settle(s: IncomeSeries, n: IncomeInputs, idx: Int32Array): IncomeResult
       rec[F_OTHER * H * paths + j] = other / P
       rec[F_TAX * H * paths + j] = tax / P
       rec[F_GAP * H * paths + j] = gap / P
+      taxSum += tax / P
+      soldSum += gap / P
       rec[F_REINV * H * paths + j] = reinv / P
       for (let i = 0; i < NF; i++) inc[i] = 0
     }
+    taxTot[p] = taxSum
+    soldTot[p] = soldSum
     if (!failed) lasts++
     if (!sold) kept++
     if (keepsPace) pace++
@@ -416,6 +423,8 @@ function settle(s: IncomeSeries, n: IncomeInputs, idx: Int32Array): IncomeResult
     value,
     afterTaxIncome,
     median,
+    totalTaxMedian: median50(taxTot),
+    totalSoldMedian: median50(soldTot),
     startYield: { stocks: y0[0], munis: y0[1], taxable: (y0[2] + y0[3]) / 2 },
   }
 }
