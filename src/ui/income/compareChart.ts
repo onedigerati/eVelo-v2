@@ -94,3 +94,46 @@ export function compareSummary(series: readonly CompareSeries[]): string {
   })
   return `Real net worth, today's dollars: ${parts.join('; ')}. The table below lists every year.`
 }
+
+export interface ReadoutSeries {
+  key: CompareSeries['key']
+  label: string
+  /** Median and middle half, compact money. */
+  median: string
+  middle: string
+  /** The raw [p25, p50, p75]. */
+  values: [number, number, number]
+}
+
+export interface CompareReadout {
+  age: number
+  /** "today" at the first age, else "year n". */
+  note: string
+  /** The series with a value at this age, in the chart's order. */
+  rows: ReadoutSeries[]
+  /** The gap between the medians, when both have one. */
+  gap: { ahead: CompareSeries['key'] | null; text: string; value: string } | null
+}
+
+/** The crosshair readout's figures at chart index `index` (years from the chart's first age). */
+export function compareReadout(series: readonly CompareSeries[], index: number): CompareReadout {
+  const age = ageDomain(series)[0] + index
+  const rows: ReadoutSeries[] = []
+  for (const s of series) {
+    const i = age - s.age
+    if (i < 0 || i >= s.bands.p50.length) continue
+    const v: [number, number, number] = [s.bands.p25[i], s.bands.p50[i], s.bands.p75[i]]
+    rows.push({ key: s.key, label: s.label, median: currencyCompact(v[1]), middle: `${currencyCompact(v[0])}–${currencyCompact(v[2])}`, values: v })
+  }
+  const inc = rows.find((r) => r.key === 'income')
+  const ev = rows.find((r) => r.key === 'evelo')
+  let gap: CompareReadout['gap'] = null
+  if (inc && ev) {
+    const d = ev.values[1] - inc.values[1]
+    const lead = d > 0 ? ev : d < 0 ? inc : null
+    gap = lead
+      ? { ahead: lead.key, text: `${lead.label} ahead by`, value: currencyCompact(Math.abs(d)) }
+      : { ahead: null, text: 'Gap between medians', value: currencyCompact(0) }
+  }
+  return { age, note: index === 0 ? 'today' : `year ${index}`, rows, gap }
+}

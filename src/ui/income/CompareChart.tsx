@@ -1,10 +1,13 @@
 // The comparison's one chart: real net worth by age, eVelo (green, its netWorth: portfolio less
 // loan) and living on income (brass, its portfolio value), each a median line over its middle-half
 // band, on one scale. Geometry in compareChart.ts; the figures are also in a hidden table.
+// Hover, tap/drag or the arrow keys pick an age: a guide line, a dot per median and a readout.
 
+import { useId } from 'react'
 import { currency } from '../format'
-import { moneyTick, useSize } from '../outlook/chartKit'
-import { chartGeom, compareRows, compareSummary, type CompareSeries } from './compareChart'
+import { moneyTick, useCrosshair, useSize } from '../outlook/chartKit'
+import { ChartReadout, ReadoutHead, ReadoutRow } from './ChartReadout'
+import { chartGeom, compareReadout, compareRows, compareSummary, type CompareSeries } from './compareChart'
 
 export interface CompareChartProps {
   series: CompareSeries[]
@@ -22,6 +25,13 @@ export function CompareChart({ series, phone }: CompareChartProps) {
   const xTicks = phone ? [a0, a1] : ticksBetween(a0, a1)
   const rows = compareRows(series)
   const labelOf = (k: CompareSeries['key']) => series.find((s) => s.key === k)?.label ?? k
+  const uid = useId().replace(/:/g, '')
+
+  const x0 = m.l, x1 = Math.max(m.l + 10, width - m.r)
+  const ch = useCrosshair(a1 - a0 + 1, (cx, rect) => Math.round(((cx - rect.left - x0) / (x1 - x0)) * (a1 - a0)))
+  const hi = ch.index
+  const hx = hi !== null ? g.x(a0 + hi) : 0
+  const read = hi !== null ? compareReadout(series, hi) : null
 
   return (
     <figure className="cchart" data-testid="compare-chart">
@@ -38,7 +48,16 @@ export function CompareChart({ series, phone }: CompareChartProps) {
       </div>
       <div className="cchart__plot" ref={wrap} style={{ height }}>
         {width > 0 && (
-          <svg className="cchart__svg" width={width} height={height} role="img" aria-label={compareSummary(series)}>
+          <svg
+            className="cchart__svg"
+            width={width}
+            height={height}
+            role="img"
+            aria-label={compareSummary(series)}
+            tabIndex={0}
+            aria-describedby={`${uid}-read`}
+            {...ch.handlers}
+          >
             <g className="cchart__grid" aria-hidden="true">
               {g.yTicks.map((v) => (
                 <line key={v} x1={m.l} x2={width - m.r} y1={Math.round(g.y(v)) + 0.5} y2={Math.round(g.y(v)) + 0.5} />
@@ -68,8 +87,39 @@ export function CompareChart({ series, phone }: CompareChartProps) {
                 </text>
               ))}
             </g>
+            {read && (
+              <g className="cchart__cross" aria-hidden="true">
+                <line x1={hx} x2={hx} y1={m.t} y2={height - m.b} />
+                {read.rows.map((r) => (
+                  <g key={r.key} className={`cchart__series cchart__series--${r.key}`}>
+                    <circle cx={hx} cy={g.y(Math.max(0, r.values[0]))} r={2.5} className="cchart__cross-ring" />
+                    <circle cx={hx} cy={g.y(Math.max(0, r.values[2]))} r={2.5} className="cchart__cross-ring" />
+                    <circle cx={hx} cy={g.y(Math.max(0, r.values[1]))} r={4.5} className="cchart__cross-dot" />
+                  </g>
+                ))}
+              </g>
+            )}
           </svg>
         )}
+        <ChartReadout id={`${uid}-read`} x={hx} width={width} top={m.t + 6} on={read !== null}>
+          {read && (
+            <>
+              <ReadoutHead age={read.age} note={read.note} />
+              {read.rows.map((r) => (
+                <div key={r.key}>
+                  <ReadoutRow keyClass={`cchart__swatch cchart__swatch--${r.key}`} label={r.label} value={r.median} />
+                  <ReadoutRow faint label="middle half" value={r.middle} />
+                </div>
+              ))}
+              {series
+                .filter((s) => !read.rows.some((r) => r.key === s.key))
+                .map((s) => (
+                  <ReadoutRow key={s.key} faint label={s.label} value="—" />
+                ))}
+              {read.gap && <ReadoutRow total label={read.gap.text} value={read.gap.value} />}
+            </>
+          )}
+        </ChartReadout>
       </div>
       <div className="sr-only">
         <table>
