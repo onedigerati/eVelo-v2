@@ -6,11 +6,15 @@
 //   4 Social Security, the spending line and the gap sold to cover · 5 everything (results).
 //
 // A bar, bottom to top: dividends, muni coupons, taxable interest, Social Security (the gross
-// income), cut back to after-tax income; then the gap sold to cover, up to spending; then the tax,
-// hatched, on top. So everything under the hatch is what the year pays out, the dashed spending
-// line meets the top of the gap in a year that sells, and in a year that doesn't, the bar's
-// after-tax part stands above the line. Each income segment is clipped from the top, so the tax
-// is carved off the top of the income, never added on.
+// income), cut back to after-tax income; then the gap sold to cover; then the tax, hatched, on
+// top. So everything under the hatch is what the year pays out. Each income segment is clipped
+// from the top, so the tax is carved off the top of the income, never added on.
+//
+// Every layer is its own median across the futures, as the engine reports it. "Sold to cover" is
+// the engine's median gapSold, the same number the ledger and the summary use, so it sits on top of
+// after-tax income up toward the dashed spending line. Medians of parts don't add up to the median
+// of the whole, so its top can land a little off the line; that small mismatch is accepted rather
+// than inventing a number (docs/PLAN.md, 2026-11-18).
 
 import { scaleLinear } from 'd3-scale'
 import type { IncomeYearRow } from '../../engine/incomeTypes'
@@ -42,13 +46,10 @@ const pos = (v: number) => (Number.isFinite(v) && v > 0 ? v : 0)
 /** Taxable bond income the chart shows as one segment: taxable funds plus Treasuries. */
 export const taxableOf = (r: IncomeYearRow) => pos(r.taxableInterest) + pos(r.treasuryInterest)
 
-/** Shortfall the year sells to cover: spending less after-tax income (0 if income covers it). */
-export function gapFor(r: IncomeYearRow, spending: number): number {
-  const gross = pos(r.dividends) + pos(r.muniInterest) + taxableOf(r) + pos(r.otherIncome)
-  return Math.max(0, pos(spending) - (gross - Math.min(pos(r.tax), gross)))
-}
+/** The note that goes with the chart wherever the layers are read together. */
+export const MEDIAN_NOTE = 'Each layer is its own median across the futures, so together they can land a little off the spending line.'
 
-export function stackRow(r: IncomeYearRow, layers: IncomeLayers, spending: number): IncomeStack {
+export function stackRow(r: IncomeYearRow, layers: IncomeLayers): IncomeStack {
   const parts = [
     layers >= 1 ? pos(r.dividends) : 0,
     layers >= 2 ? pos(r.muniInterest) : 0,
@@ -64,7 +65,7 @@ export function stackRow(r: IncomeYearRow, layers: IncomeLayers, spending: numbe
     spans.push([Math.min(cum, afterTax), Math.min(cum + p, afterTax)])
     cum += p
   }
-  const gap = layers >= 4 ? Math.max(0, pos(spending) - afterTax) : 0
+  const gap = layers >= 4 ? pos(r.gapSold) : 0
   const top = afterTax + gap + tax
   return {
     age: r.age,
@@ -80,13 +81,13 @@ export function stackRow(r: IncomeYearRow, layers: IncomeLayers, spending: numbe
   }
 }
 
-export const stackRows = (rows: IncomeYearRow[], layers: IncomeLayers, spending: number) => rows.map((r) => stackRow(r, layers, spending))
+export const stackRows = (rows: IncomeYearRow[], layers: IncomeLayers) => rows.map((r) => stackRow(r, layers))
 
 /** Nice y max over the whole series with every layer and the spending line, whatever is drawn now:
  *  the scale never moves as layers are added. Positive even for an empty or all-zero series. */
 export function yMaxFor(rows: IncomeYearRow[], spending: number): number {
   let m = pos(spending)
-  for (const r of rows) m = Math.max(m, stackRow(r, 5, spending).top)
+  for (const r of rows) m = Math.max(m, stackRow(r, 5).top)
   if (!(m > 0)) return 1000
   return scaleLinear().domain([0, m]).nice(5).domain()[1]
 }
@@ -135,7 +136,7 @@ export function justAddedLine(rows: IncomeYearRow[], layer: number): string {
       return `${pre}tax, ${r100(r.tax)} a year`
     case 4: {
       const ss = socialStart(rows)
-      const parts = [`spending, ${r100(r.spending)} a year`, `sold to cover, ${r100(gapFor(r, r.spending))}`]
+      const parts = [`spending, ${r100(r.spending)} a year`, `sold to cover, ${r100(r.gapSold)}`]
       if (ss) parts.push(`Social Security, ${r100(ss.otherIncome)}${ss === r ? '' : ` from age ${ss.age}`}`)
       return pre + parts.join(' · ')
     }
@@ -146,13 +147,13 @@ export function justAddedLine(rows: IncomeYearRow[], layer: number): string {
 
 /** One year in words, for the layers shown. */
 function yearWords(r: IncomeYearRow, layers: IncomeLayers, spending: number): string {
-  const s = stackRow(r, layers, spending)
+  const s = stackRow(r, layers)
   const w: string[] = []
   if (layers >= 1) w.push(`dividends ${r100(r.dividends)}`)
   if (layers >= 2) w.push(`muni coupons ${r100(r.muniInterest)}`, `taxable interest ${r100(taxableOf(r))}`)
   if (layers >= 4 && pos(r.otherIncome) > 0) w.push(`Social Security ${r100(r.otherIncome)}`)
   if (layers >= 3) w.push(`tax ${r100(s.tax[1] - s.tax[0])}`, `after tax ${r100(s.afterTax)}`)
-  if (layers >= 4) w.push(`spending ${r100(spending)}`, `sold to cover ${r100(s.gap[1] - s.gap[0])}`)
+  if (layers >= 4) w.push(`spending ${r100(spending)}`, `sold to cover ${r100(r.gapSold)}`)
   return w.join(', ')
 }
 
@@ -163,5 +164,6 @@ export function chartSummary(rows: IncomeYearRow[], layers: IncomeLayers, spendi
   const z = rows[rows.length - 1]
   const head = `Income each year, median future, in today's dollars, age ${a.age} to ${z.age}.`
   if (layers === 0) return `${head} Nothing answered yet.`
-  return `${head} Year 1, age ${a.age}: ${yearWords(a, layers, spending)}. Final year, age ${z.age}: ${yearWords(z, layers, spending)}.`
+  const note = layers >= 4 ? ` ${MEDIAN_NOTE}` : ''
+  return `${head} Year 1, age ${a.age}: ${yearWords(a, layers, spending)}. Final year, age ${z.age}: ${yearWords(z, layers, spending)}.${note}`
 }

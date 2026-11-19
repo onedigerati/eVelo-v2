@@ -1,8 +1,9 @@
 // The mode's own worker client. It spawns the same bundled worker as eVelo's sim client (the same
 // hashed URL) but its own instance: eVelo's client keeps running on every route and terminates its
 // worker when the plan changes, which would cancel an income run sharing it. This one lives only
-// while the mode is open, keeps one request in flight (a newer one replaces it) and drops stale
-// answers.
+// while the mode is open. One worker serves every run: a newer run supersedes the pending one (its
+// promise settles as cancelled) and the older reply, when it comes, is dropped by id. The worker is
+// terminated only when the mode closes or the worker fails, never per keystroke.
 
 import { useEffect, useState } from 'react'
 import type { IncomeInputs, IncomeResult, IncomeWorkerRequest, IncomeWorkerResponse } from '../../engine/incomeTypes'
@@ -12,7 +13,13 @@ export const INCOME_DEBOUNCE_MS = 180
 
 type Reply = IncomeWorkerResponse | { id: number; kind: 'error'; message: string }
 
-export type IncomeRun = { status: 'loading' } | { status: 'done'; result: IncomeResult } | { status: 'error'; message: string }
+/** A result with the answers it was worked out for, so nothing on screen mixes the two. */
+export interface IncomeComputed {
+  inputs: IncomeInputs
+  result: IncomeResult
+}
+
+export type IncomeRun = { status: 'loading' } | ({ status: 'done' } & IncomeComputed) | { status: 'error'; message: string }
 
 export class IncomeClient {
   private worker: Worker | null = null
@@ -40,8 +47,12 @@ export class IncomeClient {
   }
 
   run(inputs: IncomeInputs): Promise<IncomeResult> {
-    // A run still in flight belongs to older inputs: drop the worker rather than wait for it.
-    if (this.pending) this.stop()
+    // A run still in flight belongs to older inputs: settle it as cancelled and let its reply be
+    // dropped by id when it arrives. The worker itself stays.
+    if (this.pending) {
+      this.pending.reject(new Error('cancelled'))
+      this.pending = null
+    }
     const id = this.nextId++
     // Spawning and posting inside the executor: a worker that can't be made (CSP, no module
     // workers) rejects the run, so the mode shows its error instead of waiting forever.
@@ -78,7 +89,7 @@ export function useIncomeRun(inputs: IncomeInputs): IncomeRun {
     setRun((r) => (r.status === 'loading' ? r : { status: 'loading' }))
     const t = setTimeout(() => {
       client.run(inputs).then(
-        (result) => live && setRun({ status: 'done', result }),
+        (result) => live && setRun({ status: 'done', inputs, result }),
         (e: Error) => live && e.message !== 'cancelled' && setRun({ status: 'error', message: e.message }),
       )
     }, INCOME_DEBOUNCE_MS)

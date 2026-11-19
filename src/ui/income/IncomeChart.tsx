@@ -8,7 +8,7 @@ import type { IncomeYearRow } from '../../engine/incomeTypes'
 import { currency, currencyCompact } from '../format'
 import { moneyTick, useSize } from '../outlook/chartKit'
 import { cx } from '../primitives'
-import { ageTicks, bandX, chartSummary, justAddedLine, stackRows, taxableOf, yMaxFor, type IncomeLayers, type Span } from './incomeChart'
+import { ageTicks, bandX, chartSummary, justAddedLine, MEDIAN_NOTE, stackRows, taxableOf, yMaxFor, type IncomeLayers, type Span } from './incomeChart'
 import './incomeChart.css'
 
 export type IncomeChartVariant = 'ask' | 'results' | 'phone-ask' | 'phone-results'
@@ -50,7 +50,7 @@ export function IncomeChart({ rows, layers, spending, variant, justAdded }: Inco
   const yMax = yMaxFor(rows, spending)
   const y = scaleLinear().domain([0, yMax]).range([m.t + ih, m.t])
   const x = bandX(rows, m.l, iw, rows.length > 40 ? 0.1 : phone ? 0.12 : 0.18)
-  const stacks = stackRows(rows, layers, spending)
+  const stacks = stackRows(rows, layers)
   const showSpend = layers >= 4
   const spendY = Math.round(y(spending)) + 0.5
   const yTicks = phone ? [] : y.ticks(4).filter((v) => v > 0)
@@ -159,6 +159,11 @@ export function IncomeChart({ rows, layers, spending, variant, justAdded }: Inco
           )}
         </ul>
       )}
+      {results && layers >= 4 && (
+        <p className="ic__note" aria-hidden="true">
+          {MEDIAN_NOTE}
+        </p>
+      )}
 
       {added && (
         <figcaption className="ic__added" aria-live="polite">
@@ -168,7 +173,7 @@ export function IncomeChart({ rows, layers, spending, variant, justAdded }: Inco
 
       <div className="sr-only">
       <table>
-        <caption>Median income by year, today's dollars</caption>
+        <caption>Median income by year, today's dollars. {MEDIAN_NOTE}</caption>
         <thead>
           <tr>
             <th scope="col">Age</th>
@@ -189,7 +194,7 @@ export function IncomeChart({ rows, layers, spending, variant, justAdded }: Inco
               {layers >= 2 && <td>{currency(taxableOf(r))}</td>}
               {layers >= 4 && hasSocial && <td>{currency(r.otherIncome)}</td>}
               {layers >= 3 && <td>{currency(stacks[i].tax[1] - stacks[i].tax[0])}</td>}
-              {layers >= 4 && <td>{currency(stacks[i].gap[1] - stacks[i].gap[0])}</td>}
+              {layers >= 4 && <td>{currency(r.gapSold)}</td>}
             </tr>
           ))}
         </tbody>

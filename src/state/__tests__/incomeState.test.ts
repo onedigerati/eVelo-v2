@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { INCOME_DEFAULTS, INCOME_LIMITS } from '../../engine/income'
-import { INCOME_KEY, loadIncomeInputs, sanitizeIncomeInputs, saveIncomeInputs } from '../incomeState'
+import { FLOW_DEFAULTS, INCOME_KEY, loadIncomeFlow, loadIncomeInputs, sanitizeIncomeFlow, sanitizeIncomeInputs, saveIncomeInputs } from '../incomeState'
 
 function fakeStorage(init: Record<string, string> = {}) {
   const map = new Map(Object.entries(init))
@@ -100,5 +100,34 @@ describe('income state', () => {
     }
     expect(() => saveIncomeInputs(full, INCOME_DEFAULTS)).not.toThrow()
     expect(() => saveIncomeInputs(null, INCOME_DEFAULTS)).not.toThrow()
+  })
+})
+
+describe('income flow (step / done)', () => {
+  it('starts on question 1, not done', () => {
+    expect(loadIncomeFlow(fakeStorage())).toEqual(FLOW_DEFAULTS)
+    expect(loadIncomeFlow(null)).toEqual({ step: 1, done: false })
+    expect(load('{"spending":50000}')).toEqual({ ...INCOME_DEFAULTS, spending: 50000 })
+  })
+  it('clamps and rounds the step to 1–6, and takes done only as true', () => {
+    expect(sanitizeIncomeFlow({ step: 4, done: true })).toEqual({ step: 4, done: true })
+    expect(sanitizeIncomeFlow({ step: 0 }).step).toBe(1)
+    expect(sanitizeIncomeFlow({ step: 99 }).step).toBe(6)
+    expect(sanitizeIncomeFlow({ step: 2.6 }).step).toBe(3)
+    for (const bad of [NaN, Infinity, '3', null]) expect(sanitizeIncomeFlow({ step: bad }).step).toBe(1)
+    for (const bad of ['true', 1, {}, null]) expect(sanitizeIncomeFlow({ done: bad }).done).toBe(false)
+    for (const bad of [null, [], 'x', 5]) expect(sanitizeIncomeFlow(bad)).toEqual(FLOW_DEFAULTS)
+    expect(sanitizeIncomeFlow(JSON.parse('{"__proto__":{"done":true,"step":5}}'))).toEqual(FLOW_DEFAULTS)
+  })
+  it('bad JSON is the default flow', () => {
+    expect(loadIncomeFlow(fakeStorage({ [INCOME_KEY]: '{not json' }))).toEqual(FLOW_DEFAULTS)
+  })
+  it('round-trips beside the inputs under the same key', () => {
+    const s = fakeStorage()
+    const inputs = { ...INCOME_DEFAULTS, spending: 90_000 }
+    saveIncomeInputs(s, inputs, { step: 4, done: true })
+    expect(JSON.parse(s.map.get(INCOME_KEY)!)).toEqual({ ...inputs, step: 4, done: true })
+    expect(loadIncomeInputs(s)).toEqual(inputs)
+    expect(loadIncomeFlow(s)).toEqual({ step: 4, done: true })
   })
 })

@@ -1,0 +1,395 @@
+/* ============ Living on income — the six questions and the stacked results ============ */
+/* Desktop (≥ 900px) asks in a split: the sentence column left (~420px), the chart right. Narrower,
+ * a small chart sits above the sentence and Next sits at the bottom. Results stack at every width. */
+
+.income__header {
+  position: relative;
+}
+.income__progress {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-3);
+}
+.income__error {
+  margin: 0 0 var(--space-5);
+  color: var(--ink-2);
+}
+.income--asking .income__main,
+.income--results .income__main {
+  padding-top: var(--space-7);
+}
+
+/* ---------- Inline fields, set in the sentence's serif ---------- */
+.ifield {
+  display: inline;
+  white-space: nowrap;
+}
+.ifield__input,
+.ifield__select {
+  max-width: 100%;
+  margin: 0;
+  padding: 0 2px;
+  border: 0;
+  border-bottom: 2px solid var(--bruised);
+  border-radius: 0;
+  background: transparent;
+  color: var(--bruised-text);
+  font: inherit;
+  letter-spacing: inherit;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+  transition: background-color 0.15s ease;
+}
+.ifield__input {
+  min-width: 2ch;
+  text-align: center;
+}
+.ifield__select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 0.9em;
+  cursor: pointer;
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position: calc(100% - 0.45em) 58%, calc(100% - 0.2em) 58%;
+  background-size: 0.25em 0.25em;
+  background-repeat: no-repeat;
+}
+.ifield__select option,
+.ifield__select optgroup {
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--bg);
+}
+.ifield__input:hover,
+.ifield__select:hover {
+  background-color: var(--bruised-soft);
+}
+.ifield__input:focus-visible,
+.ifield__select:focus-visible {
+  outline: none;
+  background-color: var(--bruised-soft);
+  box-shadow: 0 2px 0 0 var(--bruised);
+}
+.ifield__input[aria-invalid='true'] {
+  border-bottom-color: var(--broken);
+  color: var(--broken-text, var(--broken));
+}
+
+/* ---------- Asking ---------- */
+.iask {
+  display: grid;
+  gap: var(--space-7);
+}
+.iask--split {
+  grid-template-columns: 420px minmax(0, 1fr);
+  gap: var(--space-9);
+  align-items: start;
+}
+.iask__ask {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  min-width: 0;
+}
+.iask__recap {
+  margin: 0;
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+  color: var(--ink-3);
+}
+.iask__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+.iask__sentence {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  line-height: 1.34;
+  letter-spacing: -0.01em;
+  text-wrap: pretty;
+  overflow-wrap: anywhere;
+  animation: iask-in 0.32s ease-out both;
+}
+@keyframes iask-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+.iask__hint {
+  margin: 0;
+  max-width: 46ch;
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+.iask__nav {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+.iask__back,
+.iask__next,
+.ires__edit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 var(--space-6);
+  border-radius: var(--radius-pill);
+  font: inherit;
+  font-size: var(--fs-md);
+  font-weight: 520;
+  cursor: pointer;
+  transition: background-color 0.15s ease, filter 0.15s ease;
+}
+.iask__next {
+  flex: 1;
+  border: 0;
+  background: var(--bruised);
+  color: #1a1408;
+}
+.iask__next:hover {
+  filter: brightness(1.06);
+}
+.iask__back,
+.ires__edit {
+  border: 1px solid var(--hairline-strong);
+  background: transparent;
+  color: var(--ink);
+}
+.iask__back:hover,
+.ires__edit:hover {
+  background: var(--surface-hover);
+}
+.iask__back:focus-visible,
+.iask__next:focus-visible,
+.ires__edit:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* ---------- The chart's frame ---------- */
+.ichart-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 0;
+}
+.ichart-panel__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-4);
+  font-size: var(--fs-sm);
+  color: var(--ink-2);
+}
+.ichart-panel__busy {
+  font-size: var(--fs-xs);
+  color: var(--ink-3);
+}
+.ichart-panel__busy.ichart-panel__busy--stale,
+.ires__status.ires__status--stale {
+  color: var(--bruised-text);
+  font-weight: 520;
+}
+/* Figures for answers other than the current ones: dimmed while a newer run is pending, or after
+   one failed (with the label saying so). */
+.ichart-panel__figure {
+  transition: opacity 0.2s ease;
+}
+.ichart-panel.is-updating .ichart-panel__figure,
+.ichart-panel.is-stale .ichart-panel__figure,
+.ires.is-updating .imeasures,
+.ires.is-updating .isummary,
+.ires.is-stale .imeasures,
+.ires.is-stale .isummary {
+  opacity: 0.5;
+}
+/* Phone: no head line over the small chart, so the status sits on the chart's top-right corner. */
+.ichart-panel--phone-ask {
+  position: relative;
+}
+.ichart-panel--phone-ask .ichart-panel__head {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+.ichart-panel--phone-ask .ichart-panel__busy:not(:empty) {
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-sm, 4px);
+  background: var(--bg);
+}
+.ichart-panel__empty {
+  display: grid;
+  place-items: center;
+  height: 340px;
+  border-bottom: 1px solid var(--hairline-strong);
+  /* faint gridlines at a quarter and three quarters, clear of the line in the middle */
+  background:
+    linear-gradient(var(--hairline), var(--hairline)) 0 25% / 100% 1px no-repeat,
+    linear-gradient(var(--hairline), var(--hairline)) 0 75% / 100% 1px no-repeat;
+}
+.ichart-panel__empty p {
+  margin: 0;
+  padding: 0 var(--space-5);
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  font-style: italic;
+  text-align: center;
+  color: var(--ink-3);
+}
+.ichart-panel--phone-ask .ichart-panel__empty {
+  height: 150px;
+  background: none;
+}
+.ichart-panel--phone-ask .ichart-panel__empty p,
+.ichart-panel--phone-results .ichart-panel__empty p {
+  font-size: 1.125rem;
+}
+.ichart-panel--results .ichart-panel__empty {
+  height: 300px;
+}
+.ichart-panel--phone-results .ichart-panel__empty {
+  height: 170px;
+}
+/* the "Just added" line as the mockup's brass box */
+.ichart-panel--ask .ic__added {
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--bruised-line);
+  border-radius: var(--radius-md);
+  background: var(--bruised-soft);
+  color: var(--ink);
+}
+.ichart-panel--phone-ask .ic__added {
+  font-size: var(--fs-xs);
+}
+
+/* ---------- Phone and tablet asking: small chart on top, Next at the bottom ---------- */
+.iask--phone {
+  gap: var(--space-5);
+  min-height: calc(100dvh - 60px - var(--space-7) - var(--space-10) - 2.5rem);
+  grid-template-rows: auto 1fr;
+}
+.iask--phone .ichart-panel {
+  order: -1;
+}
+.iask--phone .iask__ask,
+.iask--phone .iask__form {
+  flex: 1;
+}
+.iask--phone .iask__form {
+  justify-content: center;
+}
+.iask--phone .iask__sentence {
+  margin-top: auto;
+}
+.iask--phone .iask__nav {
+  margin-top: auto;
+}
+@media (max-width: 699px) {
+  /* the back link is the arrow alone, as in the mockup; its name stays for screen readers */
+  .income__back-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .income__back {
+    width: var(--tap);
+    justify-content: center;
+    padding: 0;
+  }
+  .iask__sentence {
+    font-size: 1.875rem;
+    line-height: 1.32;
+  }
+}
+
+/* ---------- Results, stacked ---------- */
+.ires {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+}
+.ires__head:focus {
+  outline: none;
+}
+.ires__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: var(--space-1) var(--space-4);
+  margin: 0 0 calc(-1 * var(--space-5));
+}
+.ires__status {
+  font-size: var(--fs-xs);
+  color: var(--ink-3);
+}
+.ires__head {
+  margin: 0;
+  font-size: var(--fs-sm);
+  font-weight: 520;
+  color: var(--ink-3);
+}
+.ires .isummary {
+  max-width: 44ch;
+}
+.ires__wait {
+  color: var(--ink-3);
+}
+.ires__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+.ires .imeasures,
+.ires .isummary {
+  transition: opacity 0.2s ease;
+}
+@media (max-width: 699px) {
+  .ires {
+    gap: var(--space-6);
+  }
+  .ires .isummary {
+    font-size: 1.75rem;
+  }
+  .ires__actions > * {
+    flex: 1 1 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iask__sentence {
+    animation: none;
+  }
+  .ifield__input,
+  .ifield__select,
+  .iask__back,
+  .iask__next,
+  .ires__edit {
+    transition: none;
+  }
+}
+
+/* Fit each field to what's typed where the browser can; the inline ch width is the fallback. */
+@supports (field-sizing: content) {
+  .ifield__input {
+    field-sizing: content;
+    width: auto !important;
+    min-width: 1.5ch;
+    padding: 0 0.12em;
+  }
+  .ifield__select {
+    field-sizing: content;
+  }
+}

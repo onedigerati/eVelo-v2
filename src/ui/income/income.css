@@ -48,7 +48,6 @@
 }
 
 .income__main {
-  max-width: 760px;
   padding: var(--space-10) 0 var(--space-11);
 }
 .income__main:focus {
@@ -62,72 +61,6 @@
   text-transform: uppercase;
   color: var(--bruised-text);
 }
-.income__title {
-  margin: 0;
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: var(--fs-h1);
-  line-height: var(--lh-snug);
-  letter-spacing: var(--tracking-display);
-  text-wrap: balance;
-}
-
-.income__measure {
-  margin-top: var(--space-9);
-  padding: var(--space-7) var(--space-7) var(--space-6);
-  border: 1px solid var(--bruised-line);
-  border-radius: var(--radius-lg);
-  background: linear-gradient(180deg, var(--bruised-soft), transparent 70%), var(--surface-1);
-  box-shadow: var(--shadow-2);
-}
-.income__measure-label {
-  margin: 0;
-  font-family: var(--font-ui);
-  font-size: var(--fs-sm);
-  font-weight: 560;
-  letter-spacing: var(--tracking-eyebrow);
-  text-transform: uppercase;
-  color: var(--bruised-text);
-}
-.income__rate {
-  margin: var(--space-2) 0 var(--space-3);
-  min-height: 1em;
-  font-family: var(--font-display);
-  font-size: var(--fs-hero);
-  line-height: var(--lh-tight);
-  letter-spacing: var(--tracking-display);
-  font-variant-numeric: tabular-nums;
-  color: var(--bruised-text);
-}
-.income__rate-wait {
-  display: inline-block;
-  width: 2.2em;
-  height: 0.72em;
-  border-radius: var(--radius-sm);
-  background: var(--bruised-soft);
-  animation: income-pulse 1.2s ease-in-out infinite alternate;
-}
-@keyframes income-pulse {
-  to {
-    opacity: 0.45;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .income__rate-wait {
-    animation: none;
-  }
-}
-.income__measure-note {
-  margin: 0;
-  max-width: 56ch;
-  color: var(--ink-2);
-}
-.income__next {
-  margin: var(--space-7) 0 0;
-  font-size: var(--fs-sm);
-  color: var(--ink-3);
-}
-
 @media (max-width: 699px) {
   .income {
     --income-pad: 16px;
@@ -140,9 +73,5 @@
   }
   .income__main {
     padding: var(--space-8) 0 var(--space-10);
-  }
-  .income__measure {
-    margin-top: var(--space-7);
-    padding: var(--space-6) var(--space-5) var(--space-5);
   }
 }

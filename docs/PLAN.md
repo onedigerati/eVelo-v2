@@ -7,17 +7,17 @@ A hidden, experimental mode for retiring the conventional way: living on dividen
 2026-11-18 · tests: 1155 pass · typecheck: clean · build: ok
 
 ## Now
-Stage 5 of 6 · The reveal
+Stage 6 of 6 · Sync and compare
 Mode: autopilot — unattended
 Agents: wide — confirmed 2026-11-18 18:38
-Risk: UI; money shown to the user (labels must match the engine's meaning)
-Scope: the mode's six one-sentence questions, the layered chart that builds as they're answered, the stacked results (summary sentence, chart, three measures), the "See year by year" ledger and "How this is worked out", desktop and phone, per the mockups in `docs/mockups/income/` (HybridSplit, HybridStacked, HybridPhoneAsk, HybridPhoneDone, Ledger; numbers there are illustrative). Sync and comparison are stage 6.
+Risk: user input (the eVelo plan read across, stored copy); comparison must be like for like
+Scope: inside the mode, a "Sync with my eVelo plan" sheet that lists the shared values with ticks and copies the ticked ones once; a re-sync button and a "changed since" chip when the eVelo plan has moved on; after a sync, the comparison: two columns (living on income | eVelo) over one chart of both medians with middle-half bands, and a switch between the three measures, using the eVelo plan's own cached result. The main site stays unchanged.
 Checks:
-- [ ] Six questions, one sentence each with inline fields, step by step with Back/Next and a 1–6 progress mark; answers are saved to `evelo:v2:income` and an "Edit answers" path reopens them; on desktop the question sits left and the chart right, on phone a small chart sits above the sentence (proof: e2e screenshots at 1280 and 390)
-- [ ] The chart is the engine's median income by year and builds one layer per answered question in order: dividends, muni coupons, taxable interest, tax, then the spending line and the gap sold to cover; each step names what it just added in dollars (proof: test + e2e)
-- [ ] The results show a one-line summary, the stacked chart with a legend, and the three measures (the money lasts, principal never sold, income keeps pace) from the engine, the lasts card in brass and labelled "Same test as eVelo" (proof: e2e + test that the numbers shown equal the worker's result)
-- [ ] "See year by year" opens a ledger of the median year rows (dividends, muni coupons, taxable and Treasury interest, tax, gap sold, value) in today's dollars, scrollable on phone; "How this is worked out" explains the model in the mode, including what's left out (AMT, IRMAA, the per-state simplifications, a foreign home federal only, historical months only) (proof: e2e + screenshots)
-- [ ] Keyboard and screen reader: every field is labelled, focus moves to each new question, the chart has a text equivalent; no horizontal scroll at 390; the main site unchanged (`npm run e2e`), suite green (proof: e2e + test)
+- [ ] The sync sheet lists each shared value (portfolio, cost basis, age, horizon, yearly spending, Social Security and its start age, home city, and the futures: seed, paths, block length, outlook) with its eVelo value beside the mode's, all ticked by default; only ticked values are copied, once; nothing changes in the eVelo plan (proof: e2e + test)
+- [ ] After a sync, editing the eVelo plan shows a "changed since" chip naming the fields that differ, and never re-syncs silently; "Re-sync" copies again (proof: e2e)
+- [ ] The comparison shows two columns and one chart of real net worth (the mode's portfolio, eVelo's portfolio less loan): both medians with their middle-half bands; a switch moves both columns between the money lasts, principal never sold and income keeps pace, with eVelo's meanings stated (lasts = solvent at the horizon; principal never sold = no forced sale; income keeps pace = spending met every year, the same as lasts for eVelo) (proof: e2e + test that the numbers equal the two results)
+- [ ] Like for like: after a full sync the mode's futures (month draws) are eVelo's for the plan's seed, paths and block length, and where the eVelo plan differs in ways the mode can't follow (a move abroad, retiring later, fat-tail method, a loan) the comparison says so in a line (proof: test + e2e)
+- [ ] Desktop and phone (390) without horizontal scroll, keyboard and screen reader, light and dark; main site unchanged (`npm run e2e`); suite green; main chunk ≤ 1 KB gzipped growth (proof: e2e + build output)
 Open: none
 
 ## Stages
@@ -25,7 +25,7 @@ Open: none
 - [x] 2. Income tax — a pure 2026 US tax module: federal brackets, 0/15/20% on qualified dividends and gains, 3.8% NIIT, muni interest exempt (but counted for Social Security), per-state muni rules for the US home cities, foreign home = federal only; tests
 - [x] 3. Income engine — `runIncomePaths` on the same scenarios as eVelo: yields that start at today's and move with each block, income paid first, gap sold with tax, three measures, bands; worker kind; tests and a speed budget
 - [x] 4. The door — the arrow's hidden click sequence and coupon, a hidden `#income` route, a lazy mode shell, its own sanitized state (`evelo:v2:income`) cleared by Reset; e2e
-- [ ] 5. The reveal — six sentence questions (split layout while asking, stacked results after, phone screens), the layered chart, the three measures, "See year by year" ledger
+- [x] 5. The reveal — six sentence questions (split layout while asking, stacked results after, phone screens), the layered chart, the three measures, "See year by year" ledger
 - [ ] 6. Sync and compare — tick-what-to-copy sheet, one-time copy with re-sync and a "changed since" chip, the comparison (columns, one chart, measure switch) against the eVelo plan's result
 
 ## Decisions
@@ -57,6 +57,8 @@ Open: none
 - 2026-11-18 · (unattended) Indexed tax amounts lag a year: year k's brackets sit at the price level at the start of the year, not its end, so the engine doesn't hand every path ~3% wider brackets than the law; the `income` worker request also clamps its inputs to eVelo's limits — from the stage 3 review.
 - 2026-11-18 · (unattended) A double-click on the arrow (two quick clicks, then a pause) goes to the plan like a single click; only three or four quick clicks hold, and the fifth opens the coupon — people who double-click links would otherwise find the main call to action dead; the arrow's link also gets `touch-action: manipulation` so quick taps count instead of zooming — from the stage 4 review.
 - 2026-11-18 · (unattended) The six questions: (1) saved and yearly spending, with how much of it is what you paid (cost basis); (2) age and years to plan for; (3) the stocks share — draws dividends; (4) the muni share of bonds — draws muni coupons and taxable interest; (5) home city and filing status — draws tax; (6) Social Security amount and start age — draws spending and the gap. The mockups' "federal bracket" question is replaced by home city and filing status, since the engine works tax out from them.
+- 2026-11-18 · (unattended) The chart's "Sold to cover" band is the engine's median `gapSold` (gains tax on the sale included), the same number as the ledger and the summary, so the three never disagree; while a run is working, or after an error, the results from older answers are dimmed and labelled as out of date, and the spending line always comes from the result's own rows — from the stage 5 review.
+- 2026-11-18 · (unattended) For the comparison, eVelo's three measures are read from its own result: the money lasts = 1 − brokenRate (solvent at the horizon, the same test the mode uses); principal never sold = successRate (no forced sale and solvent); income keeps pace = 1 − brokenRate, since eVelo funds the full inflation-indexed spending every year until a plan breaks. The shared chart is real net worth. Sync copies spending as the eVelo plan's home spending (today's dollars), since the mode stays home — from `SimulationResult` in `src/engine/types.ts`.
 - 2026-11-18 · Income yield starts at each asset's latest real yield and moves by each bootstrapped month's yield change, with a floor; income = yield × value, price change = total return − income. Yield levels are never replayed, so a 1990s block can't pay 6% today — PM default, from [conventional-bond-modelling](research/conventional-bond-modelling.md).
 - 2026-11-18 · No separate default or call model for investment-grade munis, and a "ladder" changes only when income arrives, not the returns: fund history already carries both — PM default, from [conventional-bond-modelling](research/conventional-bond-modelling.md).
 - 2026-11-18 · The mode holds three sleeves, not tickers: stocks (SPY), munis, taxable bonds, set by a stocks/bonds split and a muni share — PM default: the questions stay one sentence each.

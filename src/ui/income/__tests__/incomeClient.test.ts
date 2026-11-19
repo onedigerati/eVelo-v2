@@ -34,4 +34,43 @@ describe('IncomeClient', () => {
     )
     await expect(new IncomeClient().run({} as IncomeInputs)).rejects.toThrow('Income worker failed')
   })
+
+  it("a second run while one is pending doesn't spawn a new worker, and the stale reply is dropped", async () => {
+    const made: FakeWorker[] = []
+    class FakeWorker {
+      onmessage: ((ev: { data: unknown }) => void) | null = null
+      onerror: unknown = null
+      posted: { id: number }[] = []
+      terminated = 0
+      constructor() {
+        made.push(this)
+      }
+      postMessage(m: { id: number }) {
+        this.posted.push(m)
+      }
+      terminate() {
+        this.terminated++
+      }
+    }
+    vi.stubGlobal('Worker', FakeWorker)
+    const client = new IncomeClient()
+    const first = client.run({} as IncomeInputs)
+    const second = client.run({} as IncomeInputs)
+    await expect(first).rejects.toThrow('cancelled')
+    expect(made).toHaveLength(1)
+    const w = made[0]
+    expect(w.terminated).toBe(0)
+    expect(w.posted.map((m) => m.id)).toEqual([1, 2])
+    // The first run's reply arrives late and is ignored; the second's resolves the run.
+    const settled = vi.fn()
+    second.then(settled, settled)
+    w.onmessage!({ data: { id: 1, kind: 'income', result: { tag: 'stale' } } })
+    await Promise.resolve()
+    expect(settled).not.toHaveBeenCalled()
+    w.onmessage!({ data: { id: 2, kind: 'income', result: { tag: 'fresh' } } })
+    await expect(second).resolves.toEqual({ tag: 'fresh' })
+    // Leaving the mode is what terminates it.
+    client.stop()
+    expect(w.terminated).toBe(1)
+  })
 })

@@ -15,8 +15,9 @@ export function HowWorkedOut({ defaultOpen = false }: { defaultOpen?: boolean })
       <div className="ihow__body">
         <h3>The same futures as eVelo</h3>
         <p>
-          Each future is stitched from runs of real months drawn from history, with eVelo’s own seed, block length and number of
-          futures. So this mode and eVelo live through the same months in the same order, and their odds can be set side by side.
+          Each future is stitched from runs of real months drawn from history: the same draws eVelo makes with its default settings,
+          the same seed, block length and number of futures. So with eVelo on its defaults, the two live through the same months in
+          the same order, and their odds can be set side by side.
         </p>
         <p>
           The money sits in three sleeves, each a real fund’s history: stocks are the S&amp;P 500 fund (SPY), munis an

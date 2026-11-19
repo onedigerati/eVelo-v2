@@ -1,0 +1,41 @@
+$ npm run e2e
+
+> evelo@2.0.0 e2e
+> npm run build && node e2e/smoke.mjs
+
+
+> evelo@2.0.0 build
+> tsc -b && vite build
+
+vite v8.3.6 building client environment for production...
+transforming...
+✓ 2255 modules transformed.
+rendering chunks...
+computing gzip size...
+
+[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 835ms
+ok   landing renders text
+ok   Atlas route renders
+ok   no uncaught page errors
+ok   home "constructor" (link): plan renders, no recovery screen
+ok   home "constructor" (reload): plan renders, no recovery screen
+ok   home "constructor": no uncaught page errors
+ok   destination "__proto__" (link): plan renders, no recovery screen
+ok   destination "__proto__" (reload): plan renders, no recovery screen
+ok   destination "__proto__": no uncaught page errors
+ok   holding "constructor" (link): plan renders, no recovery screen
+ok   holding "constructor" (reload): plan renders, no recovery screen
+ok   holding "constructor": no uncaught page errors
+ok   stay home (link): plan renders, no recovery screen
+ok   stay home (link): "Retire to" shows Stay home, no Bangkok (got Stay home)
+ok   stay home (reload): plan renders, no recovery screen
+ok   stay home (reload): "Retire to" shows Stay home, no Bangkok (got Stay home)
+ok   stay home: no uncaught page errors
+
+e2e smoke passed
+exit 0

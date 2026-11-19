@@ -51,18 +51,44 @@ export function sanitizeIncomeInputs(raw: unknown): IncomeInputs {
   return base
 }
 
-export function loadIncomeInputs(storage: Pick<Storage, 'getItem'> | null): IncomeInputs {
+/** Where the six questions stand: the question on screen (1–6), and whether they were finished (a
+ *  returning visitor then lands on the results). Stored beside the inputs, under the same key. */
+export interface IncomeFlow {
+  step: number
+  done: boolean
+}
+export const INCOME_STEPS = 6
+export const FLOW_DEFAULTS: IncomeFlow = { step: 1, done: false }
+
+export function sanitizeIncomeFlow(raw: unknown): IncomeFlow {
+  if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return { ...FLOW_DEFAULTS }
+  const src = raw as Record<string, unknown>
+  const st = Object.hasOwn(src, 'step') ? src.step : undefined
+  const step = typeof st === 'number' && Number.isFinite(st) ? Math.min(INCOME_STEPS, Math.max(1, Math.round(st))) : FLOW_DEFAULTS.step
+  const done = Object.hasOwn(src, 'done') && src.done === true
+  return { step, done }
+}
+
+function readStored(storage: Pick<Storage, 'getItem'> | null): unknown {
   try {
     const s = storage?.getItem(INCOME_KEY)
-    return sanitizeIncomeInputs(s == null ? null : JSON.parse(s))
+    return s == null ? null : JSON.parse(s)
   } catch {
-    return sanitizeIncomeInputs(null)
+    return null
   }
 }
 
-export function saveIncomeInputs(storage: Pick<Storage, 'setItem'> | null, inputs: IncomeInputs): void {
+export function loadIncomeFlow(storage: Pick<Storage, 'getItem'> | null): IncomeFlow {
+  return sanitizeIncomeFlow(readStored(storage))
+}
+
+export function loadIncomeInputs(storage: Pick<Storage, 'getItem'> | null): IncomeInputs {
+  return sanitizeIncomeInputs(readStored(storage))
+}
+
+export function saveIncomeInputs(storage: Pick<Storage, 'setItem'> | null, inputs: IncomeInputs, flow?: IncomeFlow): void {
   try {
-    storage?.setItem(INCOME_KEY, JSON.stringify(inputs))
+    storage?.setItem(INCOME_KEY, JSON.stringify(flow ? { ...inputs, step: flow.step, done: flow.done } : inputs))
   } catch {
     /* storage full or blocked — the mode keeps working for this visit */
   }
@@ -78,18 +104,26 @@ function browserStorage(): Store | null {
 
 interface IncomeState {
   inputs: IncomeInputs
+  flow: IncomeFlow
   /** Merge a change; it is sanitized like a stored value, then saved (debounced). */
   setInputs: (patch: Partial<IncomeInputs>) => void
+  /** Move through the questions; sanitized the same way, then saved. */
+  setFlow: (patch: Partial<IncomeFlow>) => void
 }
 
 export const useIncomeStore = create<IncomeState>((set, get) => ({
   inputs: loadIncomeInputs(browserStorage()),
+  flow: loadIncomeFlow(browserStorage()),
   setInputs: (patch) => set({ inputs: sanitizeIncomeInputs({ ...get().inputs, ...patch }) }),
+  setFlow: (patch) => set({ flow: sanitizeIncomeFlow({ ...get().flow, ...patch }) }),
 }))
 
 let saveTimer: ReturnType<typeof setTimeout> | undefined
 useIncomeStore.subscribe((s, prev) => {
-  if (s.inputs === prev.inputs) return
+  if (s.inputs === prev.inputs && s.flow === prev.flow) return
   clearTimeout(saveTimer)
-  saveTimer = setTimeout(() => saveIncomeInputs(browserStorage(), useIncomeStore.getState().inputs), SAVE_DEBOUNCE_MS)
+  saveTimer = setTimeout(() => {
+    const now = useIncomeStore.getState()
+    saveIncomeInputs(browserStorage(), now.inputs, now.flow)
+  }, SAVE_DEBOUNCE_MS)
 })

@@ -1,15 +1,30 @@
-/* The layered income chart (IncomeChart.tsx). Colours come from the site's tokens, so both themes
-   follow: dividends slate (--neutral), muni coupons brass (--bruised), taxable interest a darker
-   brass, Social Security a neutral grey (income from outside the portfolio), the gap rose
-   (--broken, soft), tax a hatch of --ink-3 over a faint well. */
+/* The layered income chart (IncomeChart.tsx). Dividends slate, muni coupons brass, taxable
+   interest a darker brass, Social Security a warm grey (income from outside the portfolio), the gap
+   rose, tax a hatch of --ink-3 over a faint well. Both themes, by light-dark() on the page's
+   color-scheme.
+
+   Every layer is at least 3:1 against the page (--bg, src/styles/tokens.css), and each pair that
+   touches in a bar differs in lightness as well as hue (CIE L*), so the stack reads in greyscale
+   too. WCAG contrast ratios, and L*:
+
+                        light, on #f5f2ea          dark, on #0a0d0c
+     dividends          #46566a  6.70:1  L* 36     #6a7f93  4.71:1  L* 52
+     muni coupons       #a87a1f  3.43:1  L* 54     #e3b262 10.05:1  L* 75   (= --bruised)
+     taxable interest   #6b4c10  7.04:1  L* 35     #9a6f24  4.34:1  L* 50
+     Social Security    #85877f  3.25:1  L* 56     #b6bcb8 10.11:1  L* 76
+     sold to cover      #9e4a3b  5.37:1  L* 42     #cf7364  5.85:1  L* 58
+     tax hatch line     #5e655f  5.36:1  L* 42     #84918b  5.95:1  L* 59   (= --ink-3, over --surface-3)
+
+   Neighbours, ΔL* light / dark: dividends–munis 18 / 23 · munis–taxable 20 / 26 ·
+   taxable–Social Security 21 / 26 · Social Security–sold 14 / 17. The tax sits on the gap as a
+   hatch over the near-page well, so it's told apart by texture and by the well, not the line. */
 
 .ic {
-  --ic-div: var(--neutral);
-  --ic-muni: var(--bruised);
-  --ic-taxable: color-mix(in oklab, var(--bruised) 56%, black);
-  --ic-social: color-mix(in oklab, var(--ink) 34%, var(--bg));
-  /* rose: pale on paper; on the dark ground a stronger mix, or it reads as maroon beside the dark brass */
-  --ic-gap: light-dark(color-mix(in oklab, var(--broken) 34%, var(--bg)), color-mix(in oklab, var(--broken) 52%, var(--bg)));
+  --ic-div: light-dark(#46566a, #6a7f93);
+  --ic-muni: light-dark(#a87a1f, #e3b262);
+  --ic-taxable: light-dark(#6b4c10, #9a6f24);
+  --ic-social: light-dark(#85877f, #b6bcb8);
+  --ic-gap: light-dark(#9e4a3b, #cf7364);
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -139,6 +154,13 @@
 .ic--phone-results .ic__legend {
   font-size: 11px;
   gap: 2px var(--space-3);
+}
+
+.ic__note {
+  margin: 0;
+  font-size: var(--fs-xs);
+  color: var(--ink-3);
+  line-height: 1.45;
 }
 
 .ic__added {
