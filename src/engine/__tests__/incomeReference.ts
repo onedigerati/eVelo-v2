@@ -2,9 +2,11 @@
 // Test-only. Plain scalar code, one path at a time, written to be read, not to be fast.
 //
 // AMBIGUITIES: (how this reference reads the spec where it could be read more than one way)
-//  A1. Δy for calendar month 0 (no month −1) is taken as 0.
-//  A2. CAP = 99th percentile of |Δy| over calendar months 1..M−1, using the same linear-interpolation
-//      quantile as simulate.ts (pos = (n − 1)·q on the sorted values).
+//  A1. Δy for calendar month 0 (no month −1) is taken as 0. For months 1..M−1 Δy is demeaned
+//      (spec, Resolved point 1): Δy[c] = y[c] − y[c−1] − mean of those M−1 raw changes.
+//  A2. CAP = 99th percentile of the demeaned |Δy| over calendar months 1..M−1, using the same
+//      linear-interpolation quantile as simulate.ts (pos = (n − 1)·q on the sorted values). The clamp
+//      applies to the demeaned change.
 //  A3. Order within a month: income and the value update use the yield in force at the start of the
 //      month; the yield is updated with that month's Δy at month end. So month 1 of year 1 uses
 //      exactly the latest market.json yield (startYield), and income is V·y/12 with it.
@@ -103,8 +105,16 @@ function quantileSorted(sorted: number[], q: number): number {
   return sorted[lo] + (sorted[hi] - sorted[lo]) * (pos - lo)
 }
 
-function deltaY(y: number[], c: number): number {
-  return c === 0 ? 0 : y[c] - y[c - 1]
+/** Mean of a yield series' raw monthly changes over months 1..M−1. */
+function meanDy(y: number[]): number {
+  let s = 0
+  for (let c = 1; c < y.length; c++) s += y[c] - y[c - 1]
+  return y.length > 1 ? s / (y.length - 1) : 0
+}
+
+/** Demeaned yield change into calendar month c (0 for c = 0). */
+function deltaY(y: number[], c: number, mean: number): number {
+  return c === 0 ? 0 : y[c] - y[c - 1] - mean
 }
 
 export function referenceIncome(market: MarketData, inputs: RefInputs, monthIdx: Int32Array): RefResult {
@@ -121,11 +131,14 @@ export function referenceIncome(market: MarketData, inputs: RefInputs, monthIdx:
 
   // Yield caps and start yields.
   const caps: Record<string, number> = {}
+  const means: number[] = []
   const y0: number[] = []
   for (const sym of SLEEVES) {
     const y = market.assets[sym].y!
+    const mean = meanDy(y)
+    means.push(mean)
     const abs: number[] = []
-    for (let c = 1; c < y.length; c++) abs.push(Math.abs(y[c] - y[c - 1]))
+    for (let c = 1; c < y.length; c++) abs.push(Math.abs(deltaY(y, c, mean)))
     abs.sort((a, b) => a - b)
     caps[sym] = quantileSorted(abs, 0.99)
     y0.push(y[y.length - 1])
@@ -152,6 +165,7 @@ export function referenceIncome(market: MarketData, inputs: RefInputs, monthIdx:
     const values: number[] = [inputs.portfolio]
 
     for (let t = 1; t <= H; t++) {
+      const Pstart = P // brackets in year t are indexed to the price level at its start (Resolved 11)
       // ---- 12 months ----
       const inc = [0, 0, 0, 0] // nominal income by sleeve: SPY div, muni, treasury (VFITX), taxable (VBMFX)
       for (let k = 0; k < 12; k++) {
@@ -162,7 +176,7 @@ export function referenceIncome(market: MarketData, inputs: RefInputs, monthIdx:
             V[i] = Math.max(0, V[i] * (1 + r(i, c) - yld[i] / 12))
           }
           const cap = caps[SLEEVES[i]]
-          const dy = Math.min(cap, Math.max(-cap, deltaY(market.assets[SLEEVES[i]].y!, c)))
+          const dy = Math.min(cap, Math.max(-cap, deltaY(market.assets[SLEEVES[i]].y!, c, means[i])))
           yld[i] = Math.max(FLOOR, yld[i] + dy)
         }
         P *= 1 + market.cpi[c]
@@ -185,7 +199,7 @@ export function referenceIncome(market: MarketData, inputs: RefInputs, monthIdx:
             socialSecurity: ssReal,
             longTermGains: Math.max(0, realisedNominal) / P,
           },
-          { status, over65, priceLevel: P, state, year: 2026 + (t - 1) },
+          { status, over65, priceLevel: P, indexLevel: Pstart, state, year: 2026 + (t - 1) },
         ).total * P
       const totalV = (): number => V[0] + V[1] + V[2] + V[3]
       const gainOn = (S: number): number => {

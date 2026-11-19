@@ -4,8 +4,10 @@
 import marketJson from '../data/market.json'
 import { CITIES } from '../data/cities'
 import { runAtlas, type ScenarioMemo } from './atlas'
+import { runIncomePaths } from './income'
 import { simulate } from './simulate'
 import { solveSpending } from './solve'
+import type { IncomeWorkerRequest, IncomeWorkerResponse } from './incomeTypes'
 import type { MarketData, WorkerRequest, WorkerResponse } from './types'
 
 const market = marketJson as unknown as MarketData
@@ -17,9 +19,9 @@ const atlasMemo: ScenarioMemo = { current: null }
 let memoTimer: ReturnType<typeof setTimeout> | undefined
 const MEMO_IDLE_MS = 3000
 
-ctx.onmessage = (ev: MessageEvent<WorkerRequest>) => {
+ctx.onmessage = (ev: MessageEvent<WorkerRequest | IncomeWorkerRequest>) => {
   const req = ev.data
-  let res: WorkerResponse
+  let res: WorkerResponse | IncomeWorkerResponse
   try {
     switch (req.kind) {
       case 'simulate':
@@ -32,6 +34,9 @@ ctx.onmessage = (ev: MessageEvent<WorkerRequest>) => {
         break
       case 'solve':
         res = { id: req.id, kind: 'solve', result: solveSpending(market, CITIES, req.inputs, req.target) }
+        break
+      case 'income':
+        res = { id: req.id, kind: 'income', result: runIncomePaths(market, req.inputs) }
         break
       default:
         throw new Error(`Unknown request ${(req as { kind: string }).kind}`)

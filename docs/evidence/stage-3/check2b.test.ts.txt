@@ -1,0 +1,18 @@
+import { it } from 'vitest'
+import { appendFileSync } from 'node:fs'
+const NEW = '/home/jonah/src/repos/eVelo-v2/src'
+it('floor attribution', async () => {
+  const market = (await import(NEW + '/data/market.json')).default as any
+  const inc = await import(NEW + '/engine/income.ts')
+  const { generateScenarios } = await import(NEW + '/engine/scenarios.ts')
+  const { prepare } = await import(NEW + '/engine/prepare.ts')
+  const { DEFAULT_INPUTS } = await import(NEW + '/engine/defaults.ts')
+  const ser = inc.incomeSeries(market, 'balanced'); const I = inc.INCOME_DEFAULTS, T = 360, M = market.months
+  const sc = generateScenarios(prepare(market, DEFAULT_INPUTS.holdings, I.outlook), I.method, I.blockMonths, I.paths, T, I.seed, { indicesOnly: true })
+  const lines: string[] = []
+  for (let i = 0; i < 4; i++) { const end: number[] = []; const sums: number[] = []
+    for (let p = 0; p < I.paths; p++) { let y = ser.y0[i], s = 0; for (let t = 0; t < T; t++) { const d = ser.dy[sc.idx![p * T + t] * 4 + i]; y += d; s += d } end.push(y); sums.push(s) }
+    end.sort((a, b) => a - b); sums.sort((a,b)=>a-b)
+    lines.push(`${inc.INCOME_FUNDS[i]} without the 0.25% floor: median y30 ${(end[2000] * 100).toFixed(3)}% (start ${(ser.y0[i] * 100).toFixed(3)}%), mean of summed capped dy over 30y ${(sums.reduce((a,b)=>a+b,0)/sums.length*100).toFixed(3)} pts`) }
+  appendFileSync(import.meta.dirname + '/check2.out', lines.join('\n') + '\n')
+}, 600000)

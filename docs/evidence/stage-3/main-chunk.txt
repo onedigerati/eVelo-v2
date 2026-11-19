@@ -1,0 +1,5 @@
+$ npm run build in HEAD 192a960 worktree and in the working tree; compare dist/assets/index-*.js
+HEAD 192a960: index-B18OfEwq.js 417493 bytes; normalized md5 cc4d0c4b213b98fd5316a68143439890
+working tree: index-DAojrcnJ.js 417493 bytes; normalized md5 cc4d0c4b213b98fd5316a68143439890
+raw cmp: 69 differing bytes, all inside chunk-name hashes (normalization replaces the 8-char hashes of lazily loaded chunk names: AtlasView, worker, ...)
+worker chunk: HEAD worker-DUbvNVTs.js 654301 bytes -> working tree worker-6rqooHuj.js 679946 bytes (income engine lands only in the worker)

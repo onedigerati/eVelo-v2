@@ -1,0 +1,77 @@
+import { createHash } from 'node:crypto'
+import { it, expect } from 'vitest'
+const NEW = '/home/jonah/src/repos/eVelo-v2/src'
+const OLD = '/tmp/claude-1000/-home-jonah-src-repos-eVelo-v2/f3f20d04-42e7-457e-913c-5329f11922e1/scratchpad/verify-s3b/src'
+const h = (x: unknown) => createHash('sha256').update(JSON.stringify(x)).digest('hex').slice(0, 16)
+const hb = (...as: ArrayBufferView[]) => { const c = createHash('sha256'); for (const a of as) c.update(new Uint8Array(a.buffer, a.byteOffset, a.byteLength)); return c.digest('hex').slice(0, 16) }
+it('check 1', async () => {
+  const out: string[] = []
+  const trees = {} as Record<string, any>
+  for (const [k, root] of [['HEAD', OLD], ['new', NEW]] as const) {
+    trees[k] = {
+      sim: await import(root + '/engine/simulate.ts'),
+      sc: await import(root + '/engine/scenarios.ts'),
+      prep: await import(root + '/engine/prepare.ts'),
+      def: await import(root + '/engine/defaults.ts'),
+      cities: await import(root + '/data/cities.ts'),
+      market: (await import(root + '/data/market.json')).default,
+    }
+  }
+  const D = trees.new.def.DEFAULT_INPUTS
+  const variants = { default: {}, 'fat-tail': { method: 'fat-tail' }, 'seed 12345': { seed: 12345 } }
+  for (const [name, v] of Object.entries(variants)) {
+    const hs: string[] = []
+    for (const k of ['HEAD', 'new']) {
+      const t = trees[k]
+      const { elapsedMs: _, ...rest } = t.sim.simulate(t.market, t.cities.CITIES, { ...t.def.DEFAULT_INPUTS, ...v })
+      hs.push(h(rest))
+    }
+    out.push(`simulate ${name} (paths ${D.paths}, ${D.horizonYears}y): HEAD ${hs[0]}  new ${hs[1]}  ${hs[0] === hs[1] ? 'IDENTICAL' : 'DIFFERENT'}`)
+    expect(hs[0]).toBe(hs[1])
+  }
+  // Scenarios bit for bit, and indices = eVelo's draws
+  for (const [name, v] of Object.entries(variants)) {
+    const inp = { ...D, ...v }
+    const T = inp.horizonYears * 12
+    const po = trees.HEAD.prep.prepare(trees.HEAD.market, inp.holdings, inp.outlook)
+    const pn = trees.new.prep.prepare(trees.new.market, inp.holdings, inp.outlook)
+    const a = trees.HEAD.sc.generateScenarios(po, inp.method, inp.blockMonths, inp.paths, T, inp.seed)
+    const b = trees.new.sc.generateScenarios(pn, inp.method, inp.blockMonths, inp.paths, T, inp.seed, { indices: true })
+    const c = trees.new.sc.generateScenarios(pn, inp.method, inp.blockMonths, inp.paths, T, inp.seed, { indicesOnly: true })
+    const ho = hb(a.ret, a.infl, a.fxz), hn = hb(b.ret, b.infl, b.fxz)
+    // independent replay of eVelo's month draws: re-derive each month from infl (and ret under bootstrap)
+    let mism = 0
+    for (let k = 0; k < b.idx.length; k++) {
+      const m = b.idx[k]
+      if (a.infl[k] !== Math.fround(po.cpi[m])) mism++
+      if (inp.method === 'bootstrap' && a.ret[k] !== Math.fround(po.port[m])) mism++
+    }
+    // own replay of the rng for all paths (bootstrap: draw indices then 1 normal/month fx; fat-tail: 7 normals/month)
+    const { createRng } = await import(OLD + '/engine/rng.ts')
+    const rng = createRng(inp.seed); const idx = new Int32Array(T); let replayMism = 0
+    for (let p = 0; p < inp.paths; p++) {
+      trees.HEAD.sc.drawBlockIndices(rng, po.months, inp.blockMonths, idx)
+      for (let t = 0; t < T; t++) if (idx[t] !== c.idx[p * T + t]) replayMism++
+      const nn = (inp.method === 'bootstrap' ? 1 : 7) * T
+      for (let k = 0; k < nn; k++) rng.normal()
+    }
+    const same = c.idx.every((x: number, k: number) => x === b.idx[k])
+    out.push(`scenarios ${name}: HEAD ${ho} new ${hn} ${ho === hn ? 'IDENTICAL' : 'DIFFERENT'}; idx vs eVelo's infl/ret months: ${mism} mismatches of ${b.idx.length}; indicesOnly==indices: ${same}; replay with HEAD rng: ${replayMism} mismatches`)
+    expect(ho).toBe(hn); expect(mism).toBe(0); expect(same).toBe(true); expect(replayMism).toBe(0)
+  }
+  // runIncomePaths uses exactly those months
+  const inc = await import(NEW + '/engine/income.ts')
+  for (const [name, v] of Object.entries(variants)) {
+    const inp = { ...inc.INCOME_DEFAULTS, ...v, paths: 500 }
+    const pn = trees.new.prep.prepare(trees.new.market, D.holdings, inp.outlook)
+    const sc = trees.HEAD.sc.generateScenarios(pn, inp.method, inp.blockMonths, inp.paths, inp.horizonYears * 12, inp.seed)
+    // reconstruct indices from HEAD's own output under bootstrap via rng replay
+    const { createRng } = await import(OLD + '/engine/rng.ts')
+    const rng = createRng(inp.seed); const T = inp.horizonYears * 12; const all = new Int32Array(inp.paths * T); const idx = new Int32Array(T)
+    for (let p = 0; p < inp.paths; p++) { trees.HEAD.sc.drawBlockIndices(rng, pn.months, inp.blockMonths, idx); all.set(idx, p * T); for (let k = 0; k < (inp.method === 'bootstrap' ? 1 : 7) * T; k++) rng.normal() }
+    const r1 = inc.runIncomePaths(trees.new.market, inp), r2 = inc.runIncomeOnMonths(trees.new.market, inp, all)
+    out.push(`runIncomePaths ${name} (500 paths) == runIncomeOnMonths(HEAD-replayed eVelo months): ${h(r1) === h(r2)}`)
+    expect(h(r1)).toBe(h(r2))
+  }
+  (await import('node:fs')).writeFileSync('/tmp/claude-1000/-home-jonah-src-repos-eVelo-v2/f3f20d04-42e7-457e-913c-5329f11922e1/scratchpad/vt/check1.out', out.join('\n') + '\n')
+}, 600000)

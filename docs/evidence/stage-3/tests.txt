@@ -1,0 +1,11 @@
+$ npm test
+
+ RUN  v5.1.0 /home/jonah/src/repos/eVelo-v2
+
+
+ Test Files  81 passed (81)
+      Tests  1289 passed (1289)
+   Start at  19:46:49
+   Duration  8.68s (transform 60%, tests 28%, import 11%)
+
+exit 0

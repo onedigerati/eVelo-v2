@@ -1,0 +1,4 @@
+$ node builtworker.mjs   # drives dist/assets/worker-*.js (the production bundle) with a stubbed self; script: builtworker.mjs.txt
+built worker worker-6rqooHuj.js answered id 42 kind income in 110 ms; lastsRate 0.995 principalKept 0 keepsPace 0.152 startYield {"stocks":0.01004,"munis":0.034,"taxable":0.0411} value p50 y30 6913403
+bad kind -> {"id":43,"kind":"error","message":"Unknown request bogus"}
+bad inputs -> kind income paths 4000 years 30 lasts 0.995 

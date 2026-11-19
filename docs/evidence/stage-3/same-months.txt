@@ -1,0 +1,10 @@
+$ vitest run --root <scratchpad>/vt check1.test.ts   # HEAD 192a960 worktree vs working tree; script: check1.test.ts.txt
+simulate default (paths 4000, 30y): HEAD 83936e2af0ae782b  new 83936e2af0ae782b  IDENTICAL
+simulate fat-tail (paths 4000, 30y): HEAD c27aeff24f32b811  new c27aeff24f32b811  IDENTICAL
+simulate seed 12345 (paths 4000, 30y): HEAD a407d48a515a6a81  new a407d48a515a6a81  IDENTICAL
+scenarios default: HEAD f310a4d8354c8538 new f310a4d8354c8538 IDENTICAL; idx vs eVelo's infl/ret months: 0 mismatches of 1440000; indicesOnly==indices: true; replay with HEAD rng: 0 mismatches
+scenarios fat-tail: HEAD 4193a2dc40357514 new 4193a2dc40357514 IDENTICAL; idx vs eVelo's infl/ret months: 0 mismatches of 1440000; indicesOnly==indices: true; replay with HEAD rng: 0 mismatches
+scenarios seed 12345: HEAD e397962423b4471f new e397962423b4471f IDENTICAL; idx vs eVelo's infl/ret months: 0 mismatches of 1440000; indicesOnly==indices: true; replay with HEAD rng: 0 mismatches
+runIncomePaths default (500 paths) == runIncomeOnMonths(HEAD-replayed eVelo months): true
+runIncomePaths fat-tail (500 paths) == runIncomeOnMonths(HEAD-replayed eVelo months): true
+runIncomePaths seed 12345 (500 paths) == runIncomeOnMonths(HEAD-replayed eVelo months): true

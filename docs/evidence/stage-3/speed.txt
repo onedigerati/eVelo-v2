@@ -1,0 +1,4 @@
+$ vitest run --root <scratchpad>/vt speed.test.ts; node speedbuilt.mjs   # median of 5, interleaved, after one warm-up each; scripts: speed.test.ts.txt, speedbuilt.mjs.txt
+source (vitest), income first: simulate 98,96,87,85,86 ms (median 87); runIncomePaths 125,109,78,77,75 ms (median 78); ratio 0.90
+source (vitest), simulate first: simulate 80,81,81,85,86 ms (median 81); runIncomePaths 78,77,87,81,78 ms (median 78); ratio 0.96
+built worker (production bundle, node v22.23.5): simulate 87,93,85,81,73 ms (median 85); income 93,91,77,88,76 ms (median 88); ratio 1.04

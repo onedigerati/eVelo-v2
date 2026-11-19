@@ -1,0 +1,16 @@
+$ vitest run --root <scratchpad>/vt check2.test.ts check2b.test.ts   # scripts: check2.test.ts.txt, check2b.test.ts.txt
+runIncomePaths(INCOME_DEFAULTS, 4000 paths, 30y) startYield = {"stocks":0.01004,"munis":0.034,"taxable":0.0411}
+market.json latest y (405 months from 1993-02): SPY 0.01004 VWITX 0.034 VFITX 0.04128 VBMFX 0.04092; taxable mean 0.0411
+SPY: raw mean monthly dy -0.371 bp (=-1.33 pts/30y, removed); my cap 0.003038; first y 0.02501
+VWITX: raw mean monthly dy -0.514 bp (=-1.85 pts/30y, removed); my cap 0.001391; first y 0.05475
+VFITX: raw mean monthly dy -0.517 bp (=-1.86 pts/30y, removed); my cap 0.002507; first y 0.06218
+VBMFX: raw mean monthly dy -0.717 bp (=-2.58 pts/30y, removed); my cap 0.001832; first y 0.06989
+SPY yield median at years 0/1/5/10/20/30: 1.004% / 1.001% / 1.001% / 1.015% / 1.110% / 1.212%; mean y30 1.469%; p5..p95 y30 0.26..3.57%
+VWITX yield median at years 0/1/5/10/20/30: 3.400% / 3.396% / 3.352% / 3.314% / 3.328% / 3.348%; mean y30 3.400%; p5..p95 y30 1.46..5.54%
+VFITX yield median at years 0/1/5/10/20/30: 4.128% / 4.161% / 4.056% / 3.951% / 4.012% / 3.965%; mean y30 4.325%; p5..p95 y30 0.37..9.55%
+VBMFX yield median at years 0/1/5/10/20/30: 4.092% / 4.108% / 4.155% / 4.093% / 4.151% / 4.221%; mean y30 4.286%; p5..p95 y30 0.62..8.24%
+own 30-year replay (1 path, all VWITX, no tax, income reinvested) vs engine: max relative difference in yearly muni income and value 0.00e+0; tax yr1 0
+SPY without the 0.25% floor: median y30 0.866% (start 1.004%), mean of summed capped dy over 30y -0.122 pts
+VWITX without the 0.25% floor: median y30 3.348% (start 3.400%), mean of summed capped dy over 30y -0.000 pts
+VFITX without the 0.25% floor: median y30 3.880% (start 4.128%), mean of summed capped dy over 30y -0.098 pts
+VBMFX without the 0.25% floor: median y30 4.219% (start 4.092%), mean of summed capped dy over 30y 0.106 pts

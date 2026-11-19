@@ -1,0 +1,10 @@
+$ vitest run --root <scratchpad>/vt check3.test.ts   # script: check3.test.ts.txt; constant market, 2 years, MFJ New York, gap sales with gains, CPI 0.25%/mo
+Year 1: P0 1.000000 P 1.030416 age 64; nominal income SPY 16561.20 VWITX 7200.00 VFITX 7239.73 VBMFX 8055.60 SS 0.00; need 113345.76
+  tax0 1226.03; V 1544186.95 B 450000.00 gain/$ 0.708585; rounds: S=80382.75 tax=6093.52 | S=80702.68 tax=6413.45 | S=80723.71 tax=6434.48 | S=80725.09 tax=6435.86 | S=80725.18 tax=6435.95
+  final S 80725.18 tax 6435.95 nominal (with no bracket lag the tax would be 6380.56, a 55.39 difference)
+Year 2: P0 1.030416 P 1.061757 age 65; nominal income SPY 16465.61 VWITX 6823.61 VFITX 6944.05 VBMFX 7543.37 SS 31852.71; need 116793.27
+  tax0 1111.53; V 1507441.70 B 426475.43 gain/$ 0.717087; rounds: S=51358.41 tax=4194.47 | S=51563.47 tax=4399.54 | S=51577.11 tax=4413.18 | S=51578.02 tax=4414.09
+  final S 51578.02 tax 4414.09 nominal (with no bracket lag the tax would be 4357.07, a 57.02 difference)
+Year 1 real: dividends hand 16072.34 engine 16072.34; muniInterest hand 6987.47 engine 6987.47; treasuryInterest hand 7026.03 engine 7026.03; taxableInterest hand 7817.81 engine 7817.81; otherIncome hand 0.00 engine 0.00; tax hand 6245.97 engine 6245.97; gapSold hand 78342.32 engine 78342.32; reinvested hand 0.00 engine 0.00; value hand 1420263.11 engine 1420263.11; afterTax hand 31657.68 engine 31657.68
+Year 2 real: dividends hand 15507.89 engine 15507.89; muniInterest hand 6426.71 engine 6426.71; treasuryInterest hand 6540.15 engine 6540.15; taxableInterest hand 7104.61 engine 7104.61; otherIncome hand 30000.00 engine 30000.00; tax hand 4157.34 engine 4157.34; gapSold hand 48577.99 engine 48577.99; reinvested hand 0.00 engine 0.00; value hand 1371183.44 engine 1371183.44; afterTax hand 61422.01 engine 61422.01
+lastsRate 1 principalKeptRate 0 keepsPaceRate 1; worst |hand - engine| = 0.000e+0 USD

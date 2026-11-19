@@ -1,0 +1,23 @@
+import { it } from 'vitest'
+import { writeFileSync } from 'node:fs'
+const NEW = '/home/jonah/src/repos/eVelo-v2/src'
+it('check 4', async () => {
+  const market = (await import(NEW + '/data/market.json')).default as any
+  const inc = await import(NEW + '/engine/income.ts')
+  const D = inc.INCOME_DEFAULTS
+  const out: string[] = [`INCOME_DEFAULTS: ${JSON.stringify(D)}`]
+  const f = (x: number) => Math.round(x).toLocaleString('en-US')
+  const show = (name: string, inp: any) => {
+    const r = inc.runIncomePaths(market, inp)
+    out.push(`${name}: lasts ${(r.lastsRate * 100).toFixed(1)}%  principalKept ${(r.principalKeptRate * 100).toFixed(1)}%  keepsPace ${(r.keepsPaceRate * 100).toFixed(1)}%`)
+    for (const k of [1, 10, 30]) { const m = r.median[k - 1]
+      out.push(`  year ${k} (age ${m.age}): value p50 ${f(r.value.p50[k])} [p5 ${f(r.value.p5[k])}, p95 ${f(r.value.p95[k])}]; after-tax income p50 ${f(r.afterTaxIncome.p50[k - 1])}; median rows: div ${f(m.dividends)} muni ${f(m.muniInterest)} treas ${f(m.treasuryInterest)} taxable ${f(m.taxableInterest)} other ${f(m.otherIncome)} tax ${f(m.tax)} gapSold ${f(m.gapSold)} reinvested ${f(m.reinvested)}`) }
+    return r
+  }
+  show('INCOME_DEFAULTS (60/40, munis 50%, St. Louis, spend ' + f(D.spending) + ', SS 40k from 67)', D)
+  show('All-bond, same spending (stockShare 0)', { ...D, stockShare: 0 })
+  const lowSpend = { ...D, stockShare: 0, spending: 60_000 }
+  const rl = show('All-bond, spending 60k (below ~3.6% x 3M income)', lowSpend)
+  for (const h of [5, 15, 30, 40]) { const r = inc.runIncomePaths(market, { ...D, spending: 400_000, horizonYears: h }); out.push(`  spending 400k, horizon ${h}: lasts ${(r.lastsRate * 100).toFixed(1)}%`) }
+  writeFileSync(import.meta.dirname + '/check4.out', out.join('\n') + '\n')
+}, 600000)

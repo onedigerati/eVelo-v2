@@ -1,0 +1,18 @@
+$ vitest run --root <scratchpad>/vt check4.test.ts   # script: check4.test.ts.txt
+INCOME_DEFAULTS: {"portfolio":3000000,"basisFraction":0.4,"age":55,"horizonYears":30,"spending":110000,"otherIncome":40000,"incomeStartAge":67,"stockShare":0.6,"muniShare":0.5,"filingStatus":"single","homeCityId":"st-louis","method":"bootstrap","outlook":"balanced","blockMonths":24,"paths":4000,"seed":7}
+INCOME_DEFAULTS (60/40, munis 50%, St. Louis, spend 110,000, SS 40k from 67): lasts 99.5%  principalKept 0.0%  keepsPace 15.2%
+  year 1 (age 55): value p50 3,068,361 [p5 2,493,607, p95 3,478,035]; after-tax income p50 58,521; median rows: div 18,185 muni 19,969 treas 12,081 taxable 12,050 other 0 tax 3,870 gapSold 51,479 reinvested 0
+  year 10 (age 64): value p50 3,418,357 [p5 1,703,180, p95 6,613,927]; after-tax income p50 48,620; median rows: div 23,178 muni 13,998 treas 7,756 taxable 7,935 other 0 tax 4,873 gapSold 61,380 reinvested 0
+  year 30 (age 84): value p50 6,913,403 [p5 996,720, p95 33,022,979]; after-tax income p50 109,610; median rows: div 65,291 muni 8,089 treas 3,627 taxable 3,928 other 40,000 tax 12,590 gapSold 0 reinvested 0
+All-bond, same spending (stockShare 0): lasts 95.2%  principalKept 0.0%  keepsPace 2.5%
+  year 1 (age 55): value p50 2,943,137 [p5 2,708,177, p95 3,122,994]; after-tax income p50 102,226; median rows: div 0 muni 49,923 treas 30,202 taxable 30,124 other 0 tax 8,124 gapSold 7,774 reinvested 0
+  year 10 (age 64): value p50 2,280,404 [p5 1,468,380, p95 2,931,052]; after-tax income p50 76,040; median rows: div 0 muni 38,278 treas 21,200 taxable 21,685 other 0 tax 5,032 gapSold 33,960 reinvested 0
+  year 30 (age 84): value p50 1,079,608 [p5 7,255, p95 2,471,506]; after-tax income p50 67,894; median rows: div 0 muni 17,517 treas 7,414 taxable 8,302 other 40,000 tax 5,719 gapSold 40,220 reinvested 0
+All-bond, spending 60k (below ~3.6% x 3M income): lasts 100.0%  principalKept 88.6%  keepsPace 27.6%
+  year 1 (age 55): value p50 2,993,231 [p5 2,758,251, p95 3,173,257]; after-tax income p50 102,447; median rows: div 0 muni 49,923 treas 30,202 taxable 30,124 other 0 tax 7,975 gapSold 0 reinvested 42,447
+  year 10 (age 64): value p50 2,811,950 [p5 1,934,044, p95 3,518,376]; after-tax income p50 91,584; median rows: div 0 muni 46,061 treas 25,722 taxable 26,393 other 0 tax 6,641 gapSold 0 reinvested 31,584
+  year 30 (age 84): value p50 2,824,903 [p5 1,447,291, p95 4,658,983]; after-tax income p50 121,203; median rows: div 0 muni 45,685 treas 22,974 taxable 24,162 other 40,000 tax 11,064 gapSold 0 reinvested 61,203
+  spending 400k, horizon 5: lasts 100.0%
+  spending 400k, horizon 15: lasts 1.8%
+  spending 400k, horizon 30: lasts 0.1%
+  spending 400k, horizon 40: lasts 0.1%

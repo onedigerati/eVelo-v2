@@ -25,6 +25,9 @@ export interface Scenarios {
   ret: Float32Array
   infl: Float32Array
   fxz: Float32Array
+  /** Calendar month index of each drawn month, index p * T + t; only when asked for (`indices`).
+   *  Under 'fat-tail' these are the CPI months (the return is a t-draw). */
+  idx?: Int32Array
 }
 
 /** Fill `out` with a stationary-block-bootstrap sequence of calendar month indices. */
@@ -49,13 +52,21 @@ export function generateScenarios(
   paths: number,
   T: number,
   seed: number,
+  opts: { indices?: boolean; indicesOnly?: boolean } = {},
 ): Scenarios {
   const rng = createRng(seed)
-  const ret = new Float32Array(paths * T)
-  const infl = new Float32Array(paths * T)
-  const fxz = new Float32Array(paths * T)
+  // indicesOnly: just the month indices (ret, infl and fxz come back empty). The normals are still
+  // drawn, in the same order, so the indices are the ones a full call returns; only the arithmetic
+  // that turns them into values is skipped.
+  const only = !!opts.indicesOnly
+  const N = only ? 0 : paths * T
+  const ret = new Float32Array(N)
+  const infl = new Float32Array(N)
+  const fxz = new Float32Array(N)
   const M = prep.months
   const idx = new Int32Array(T)
+  // Copying the drawn indices out takes no random numbers, so the rng sequence is unchanged.
+  const allIdx = opts.indices || only ? new Int32Array(paths * T) : undefined
 
   let mu = 0, scale = 0
   if (method === 'fat-tail') {
@@ -71,6 +82,12 @@ export function generateScenarios(
   for (let p = 0; p < paths; p++) {
     const o = p * T
     drawBlockIndices(rng, M, blockMonths, idx)
+    if (allIdx) allIdx.set(idx, o)
+    if (only) {
+      // The fat-tail t-draws (T_DF + 1 normals a month), then the fx normals (one a month).
+      for (let k = (method === 'bootstrap' ? 1 : T_DF + 2) * T; k > 0; k--) rng.skipNormal()
+      continue
+    }
     if (method === 'bootstrap') {
       for (let t = 0; t < T; t++) {
         ret[o + t] = prep.port[idx[t]]
@@ -90,5 +107,5 @@ export function generateScenarios(
     }
     for (let t = 0; t < T; t++) fxz[o + t] = rng.normal()
   }
-  return { paths, T, ret, infl, fxz }
+  return allIdx ? { paths, T, ret, infl, fxz, idx: allIdx } : { paths, T, ret, infl, fxz }
 }

@@ -1,0 +1,23 @@
+import { it } from 'vitest'
+import { writeFileSync } from 'node:fs'
+const NEW = '/home/jonah/src/repos/eVelo-v2/src'
+it('speed', async () => {
+  const market = (await import(NEW + '/data/market.json')).default as any
+  const inc = await import(NEW + '/engine/income.ts')
+  const { simulate } = await import(NEW + '/engine/simulate.ts')
+  const { CITIES } = await import(NEW + '/data/cities.ts')
+  const { DEFAULT_INPUTS } = await import(NEW + '/engine/defaults.ts')
+  const out: string[] = []
+  simulate(market, CITIES, DEFAULT_INPUTS); inc.runIncomePaths(market, inc.INCOME_DEFAULTS)
+  for (const order of ['income first', 'simulate first']) {
+    const s: number[] = [], r: number[] = []
+    for (let i = 0; i < 5; i++) {
+      const runS = () => { const t = performance.now(); simulate(market, CITIES, DEFAULT_INPUTS); s.push(performance.now() - t) }
+      const runI = () => { const t = performance.now(); inc.runIncomePaths(market, inc.INCOME_DEFAULTS); r.push(performance.now() - t) }
+      if (order === 'income first') { runI(); runS() } else { runS(); runI() }
+    }
+    const med = (a: number[]) => [...a].sort((x, y) => x - y)[2]
+    out.push(`source (vitest), ${order}: simulate ${s.map((x) => x.toFixed(0)).join(',')} ms (median ${med(s).toFixed(0)}); runIncomePaths ${r.map((x) => x.toFixed(0)).join(',')} ms (median ${med(r).toFixed(0)}); ratio ${(med(r) / med(s)).toFixed(2)}`)
+  }
+  writeFileSync(import.meta.dirname + '/speed.out', out.join('\n') + '\n')
+}, 600000)

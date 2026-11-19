@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import { FEDERAL_BANDS, incomeTax, type IncomeTaxOptions } from '../incomeTax'
-import { bandTax } from '../localTax'
+import { FEDERAL_BANDS, incomeTax, scaledBandTax, type IncomeTaxOptions } from '../incomeTax'
+import { bandTax, packBands } from '../localTax'
 import { STATE_INCOME_TAX } from '../../data/stateIncomeTax'
 import type { FilingStatus, IncomeYear, MuniRule, StateIncomeTax } from '../incomeTaxTypes'
 
@@ -387,5 +387,61 @@ describe('local tax that skips long-term gains', () => {
     expect(
       incomeTax({ taxableInterest: 30_000, longTermGains: 20_000 }, { ...single, state: { ...st, localExcludesLongTermGains: false } }).state,
     ).toBeCloseTo(2_800, 6)
+  })
+})
+
+describe('bracket lag: indexLevel (spec Resolved point 11)', () => {
+  it('a scaled lookup equals the tax on explicitly scaled bands: s · tax(x / s) = tax(x; s·bands)', () => {
+    // Each slice above a threshold s·f is (x − s·f)·rate = s·(x/s − f)·rate, so the sums agree.
+    const sets = [FEDERAL_BANDS.single, FEDERAL_BANDS.mfj, ...Object.values(STATE_INCOME_TAX).flatMap((st) => [st.bands.single, st.bands.mfj])]
+    for (const bands of sets)
+      for (const sc of [0.5, 1 / 1.3, 1, 1.07, 2.5])
+        for (const x of [0, 5_000, 12_400, 60_000, 333_333, 2e6]) {
+          const scaled = bands.map((b) => ({ from: b.from * sc, rate: b.rate }))
+          expect(scaledBandTax(x, packBands(bands), sc)).toBeCloseTo(bandTax(x, scaled), 6)
+        }
+  })
+
+  it('omitted, it is priceLevel: results are unchanged', () => {
+    const inc: IncomeYear = { qualifiedDividends: 40_000, taxableInterest: 60_000, longTermGains: 30_000, socialSecurity: 30_000 }
+    for (const P of [1, 1.4]) {
+      const o = { ...single, priceLevel: P, over65: 1 as const }
+      expect(incomeTax(inc, { ...o, indexLevel: P })).toEqual(incomeTax(inc, o))
+    }
+  })
+
+  it('by hand: a year of 10% inflation with brackets still at 2026 levels', () => {
+    // Nominal 30,000 of interest when prices have risen 10% and the brackets haven't moved yet:
+    // 2026 law on 30,000 nominal is 1,420 (above), so the real tax is 1,420 / 1.1 = 1,290.91.
+    // Without the lag the brackets keep pace and the real tax is 2026 law on 27,272.73: TI 11,172.73
+    // at 10% = 1,117.27.
+    const inc = { taxableInterest: 30_000 / 1.1 }
+    expect(incomeTax(inc, { ...single, priceLevel: 1.1, indexLevel: 1 }).total).toBeCloseTo(1_420 / 1.1, 6)
+    expect(incomeTax(inc, { ...single, priceLevel: 1.1 }).total).toBeCloseTo(1_117.2727, 3)
+  })
+
+  it('every indexed amount (federal and state) scales by indexLevel ÷ priceLevel', () => {
+    // Below every fixed nominal threshold (no Social Security, no NIIT, no senior deduction after
+    // 2028), the whole tax is homogeneous in the indexed amounts: tax(x; s) = s · tax(x / s; 1).
+    const states = Object.values(STATE_INCOME_TAX).filter((st) => st.taxesInvestmentIncome)
+    expect(states.length).toBeGreaterThan(5)
+    const inc: IncomeYear = { qualifiedDividends: 30_000, taxableInterest: 40_000, muniInterest: 10_000, longTermGains: 25_000, otherOrdinary: 20_000 }
+    const div = (x: IncomeYear, k: number): IncomeYear =>
+      Object.fromEntries(Object.entries(x).map(([key, v]) => [key, (v as number) / k])) as IncomeYear
+    for (const state of states)
+      for (const status of ['single', 'mfj'] as FilingStatus[])
+        for (const over65 of [0, 2] as const) {
+          const o: IncomeTaxOptions = { status, over65, priceLevel: 1.25, indexLevel: 1.1, state, year: 2030 }
+          const sc = 1.1 / 1.25
+          const lagged = incomeTax(inc, o)
+          const ref = incomeTax(div(inc, sc), { ...o, priceLevel: 1, indexLevel: 1 })
+          expect(lagged.niit).toBe(0)
+          expect(lagged.federal).toBeCloseTo(sc * ref.federal, 6)
+          expect(lagged.state).toBeCloseTo(sc * ref.state, 6)
+        }
+  })
+
+  it('a non-finite or non-positive indexLevel is a RangeError', () => {
+    for (const indexLevel of [0, -1, NaN, Infinity]) expect(() => incomeTax({}, { ...single, indexLevel })).toThrow(RangeError)
   })
 })

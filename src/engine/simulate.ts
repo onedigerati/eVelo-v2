@@ -96,7 +96,8 @@ export function makeScenarios(prep: Prepared, inputs: PlanInputs, paths: number)
   return generateScenarios(prep, inputs.method, inputs.blockMonths, Math.max(1, Math.floor(paths)), T, inputs.seed)
 }
 
-function quantile(sorted: ArrayLike<number>, q: number): number {
+/** Linear-interpolation quantile of an ascending array. */
+export function quantile(sorted: ArrayLike<number>, q: number): number {
   const n = sorted.length
   if (!n) return 0
   const pos = (n - 1) * q
@@ -109,7 +110,9 @@ function median(a: Float64Array): number {
   return quantile(Float64Array.from(a).sort(), 0.5)
 }
 
-function bands(data: Float64Array, paths: number, years: number): Bands {
+/** Per-year percentile bands of `data` laid out year-major (index y * paths + p), years 0..years.
+ *  Sorts each year's column in place. */
+export function bands(data: Float64Array, paths: number, years: number): Bands {
   const b: Bands = { p5: [], p25: [], p50: [], p75: [], p95: [] }
   for (let y = 0; y <= years; y++) {
     const col = data.subarray(y * paths, (y + 1) * paths).sort()

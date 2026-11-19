@@ -1,0 +1,11 @@
+const sent = []
+globalThis.self = { postMessage: (m) => sent.push(m), onmessage: null }
+await import('/home/jonah/src/repos/eVelo-v2/dist/assets/worker-6rqooHuj.js')
+const D = JSON.parse(process.argv[2])
+const I = { portfolio: 3000000, basisFraction: 0.4, age: 55, horizonYears: 30, spending: 110000, otherIncome: 40000, incomeStartAge: 67, stockShare: 0.6, muniShare: 0.5, filingStatus: 'single', homeCityId: 'st-louis', method: 'bootstrap', outlook: 'balanced', blockMonths: 24, paths: 4000, seed: 7 }
+const time = (req) => { const t = performance.now(); self.onmessage({ data: req }); const ms = performance.now() - t; const r = sent.pop(); if (r.kind === 'error') throw new Error(r.message); return ms }
+time({ id: 1, kind: 'simulate', inputs: D }); time({ id: 2, kind: 'income', inputs: I })
+const s = [], r = []
+for (let i = 0; i < 5; i++) { s.push(time({ id: 1, kind: 'simulate', inputs: D })); r.push(time({ id: 2, kind: 'income', inputs: I })) }
+const med = (a) => [...a].sort((x, y) => x - y)[2]
+console.log('built worker (production bundle, node ' + process.version + '): simulate ' + s.map((x) => x.toFixed(0)).join(',') + ' ms (median ' + med(s).toFixed(0) + '); income ' + r.map((x) => x.toFixed(0)).join(',') + ' ms (median ' + med(r).toFixed(0) + '); ratio ' + (med(r) / med(s)).toFixed(2))

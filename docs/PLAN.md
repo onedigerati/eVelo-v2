@@ -7,23 +7,23 @@ A hidden, experimental mode for retiring the conventional way: living on dividen
 2026-11-18 · tests: 1155 pass · typecheck: clean · build: ok
 
 ## Now
-Stage 3 of 6 · Income engine
+Stage 4 of 6 · The door
 Mode: autopilot — unattended
 Agents: wide — confirmed 2026-11-18 18:38
-Risk: money (income, tax and sale arithmetic over every path), engine speed
-Scope: `runIncomePaths` in `src/engine/income.ts` per [the spec](specs/income-engine.md); `generateScenarios` can return its month indices without changing eVelo's output; worker kind `income`; tests, including an independent reference implementation. Not wired into the UI.
+Risk: user input (stored state is an input boundary), routing; the main site must stay unchanged
+Scope: the landing arrow's hidden click sequence and coupon; a hidden `#income` route; a lazy mode shell (its own chunk) that runs the `income` worker request on its saved inputs; its own sanitized state under `evelo:v2:income`, cleared by the error boundary's Reset; e2e. The questions, chart and measures are stage 5.
 Checks:
-- [ ] The income engine draws the same months as eVelo for the same seed, paths, horizon and block length, and eVelo's own results are bit-identical to before (proof: test)
-- [ ] Yields start at each sleeve's latest real yield and move only by each drawn month's capped change, with a 0.25% floor, so a 1990s-only future still starts at today's yield (proof: test)
-- [ ] A hand-worked one-path, three-year case (income by type, tax by `incomeTax`, a gap sale with gains tax, a surplus reinvested) matches the engine to the cent, and an independently written reference implementation matches the engine on many random inputs (proof: test)
-- [ ] The three measures (money lasts, principal never sold, income keeps pace) and the value and income bands come out of `runIncomePaths`, sane on known cases (all-bond plan with spending below income: principal kept on every path; spending above any plausible income: lasts falls as horizon grows) (proof: test)
-- [ ] The worker answers an `income` request; at the plan's default paths and horizon, `runIncomePaths` runs within 2× `simulate`'s time on the same machine; app main chunk unchanged (proof: test + build output)
+- [ ] On the landing page a click on the "Find your eVelo" label goes straight to the plan as before; one click on the arrow glyph goes to the plan after a 300 ms wait; five quick clicks on the arrow turn it into a coupon, and the coupon opens the mode and stays for the visit (sessionStorage) (proof: e2e)
+- [ ] `#income` opens the mode, and nothing on the main site links to or names it (nav, Method page, sitemap-like lists); keyboard and screen-reader users still reach the plan through the label as before (proof: e2e + test)
+- [ ] The mode loads lazily: its code is in its own chunk fetched only on `#income`, and the main chunk grows by no more than 3 KB gzipped (proof: build output + e2e network log)
+- [ ] The mode's state lives under `evelo:v2:income`, parsed like `sanitizeInputs` (bad JSON, wrong types and out-of-range values fall back or clamp), and the error boundary's Reset also clears it (proof: test + e2e)
+- [ ] The mode shell runs the `income` worker request on its inputs and shows its headline ("the money lasts" rate) on desktop and phone widths, in brass, with a way back to eVelo (proof: e2e screenshots)
 Open: none
 
 ## Stages
 - [x] 1. Yield data — add VWITX, VFITX, VBMFX; keep distributions and derive a monthly income yield per income asset; data tests
 - [x] 2. Income tax — a pure 2026 US tax module: federal brackets, 0/15/20% on qualified dividends and gains, 3.8% NIIT, muni interest exempt (but counted for Social Security), per-state muni rules for the US home cities, foreign home = federal only; tests
-- [ ] 3. Income engine — `runIncomePaths` on the same scenarios as eVelo: yields that start at today's and move with each block, income paid first, gap sold with tax, three measures, bands; worker kind; tests and a speed budget
+- [x] 3. Income engine — `runIncomePaths` on the same scenarios as eVelo: yields that start at today's and move with each block, income paid first, gap sold with tax, three measures, bands; worker kind; tests and a speed budget
 - [ ] 4. The door — the arrow's hidden click sequence and coupon, a hidden `#income` route, a lazy mode shell, its own sanitized state (`evelo:v2:income`) cleared by Reset; e2e
 - [ ] 5. The reveal — six sentence questions (split layout while asking, stacked results after, phone screens), the layered chart, the three measures, "See year by year" ledger
 - [ ] 6. Sync and compare — tick-what-to-copy sheet, one-time copy with re-sync and a "changed since" chip, the comparison (columns, one chart, measure switch) against the eVelo plan's result
@@ -53,6 +53,8 @@ Open: none
 - 2026-11-18 · (unattended) The tax module throws on a `priceLevel` that isn't finite and positive and requires the tax `year` (so the senior deduction's 2029 sunset can't be skipped), treats non-finite or negative incomes as 0, and takes net realised gains (no loss carry-forward); states that exclude pensions (IL, PA, HI) leave them out; Philadelphia's School Income Tax keeps a national muni fund taxed and skips long-term gains, per its regulations §206 — from the stage 2 review.
 - 2026-11-18 · (unattended) The income engine settles once a year: monthly income by type and price change per sleeve, then at year-end tax, the gap sold pro rata to sleeve values (gains tax solved by iteration, average-cost basis) or the surplus reinvested to the target weights, and no other rebalancing; taxable bonds are half VFITX, half VBMFX; Social Security is the mode's other income; it starts retired, at home (no move, no retire-later) — keeps the questions to one sentence each; [spec](specs/income-engine.md).
 - 2026-11-18 · (unattended) Under eVelo's `fat-tail` method the income engine still uses the bootstrapped months (the t-draw is a portfolio return, not per-sleeve), so the mode is always historical-bootstrap, said in the comparison; yield changes are capped at each asset's 99th-percentile monthly move (SPY 0.27, VWITX 0.13, VFITX 0.25, VBMFX 0.18 points) with a 0.25% floor.
+- 2026-11-18 · (unattended) Replayed yield changes are demeaned per asset (history's −1.3 to −2.6 points per 30 years removed), so yields wander around today's level instead of carrying 1993–2026's fall into every future; the 99th-percentile cap applies to the demeaned change — the builder found an all-bond plan's median income falling from $68k to $44k by year 30 from that drift alone; [spec](specs/income-engine.md) §Resolved points.
+- 2026-11-18 · (unattended) Indexed tax amounts lag a year: year k's brackets sit at the price level at the start of the year, not its end, so the engine doesn't hand every path ~3% wider brackets than the law; the `income` worker request also clamps its inputs to eVelo's limits — from the stage 3 review.
 - 2026-11-18 · Income yield starts at each asset's latest real yield and moves by each bootstrapped month's yield change, with a floor; income = yield × value, price change = total return − income. Yield levels are never replayed, so a 1990s block can't pay 6% today — PM default, from [conventional-bond-modelling](research/conventional-bond-modelling.md).
 - 2026-11-18 · No separate default or call model for investment-grade munis, and a "ladder" changes only when income arrives, not the returns: fund history already carries both — PM default, from [conventional-bond-modelling](research/conventional-bond-modelling.md).
 - 2026-11-18 · The mode holds three sleeves, not tickers: stocks (SPY), munis, taxable bonds, set by a stocks/bonds split and a muni share — PM default: the questions stay one sentence each.
@@ -65,6 +67,7 @@ Open: none
 - 2026-11-18 · How the mode works is explained inside the mode ("How this is worked out"), not on the Method page, which would give it away — PM default.
 
 ## Open questions
+- From the stage 3 verify: the income yields walk additively, and over 30 years the walk is wide (SPY starts at 1.0%, so the 0.25% floor binds often and lifts its median to 1.21%; bonds stay within 0.25 points). A log-yield or mean-reverting walk would be tighter and floor-free; it moves "income keeps pace" (15% of default paths today) — research half-lives, later, user's call. The Georgia per-65 exclusion is scaled like an indexed amount though Georgia's is fixed in dollars (small).
 - From stage 2: Philadelphia's School Income Tax is 3.74% (2025) in `stateIncomeTax.ts` but 3.735% (2026) in the city profile, which cites a phila.gov 2026 rate notice; reconcile on that page. The state records aren't frozen (the packed-band cache assumes they never change in place). Federal brackets index to chained CPI, ~0.25 pt/yr below CPI, so under `priceLevel` = CPI they creep up slightly in real terms — say so in the mode's "How this is worked out" (stage 5).
 - From the stage 1 re-review: the refresh fails only when the latest window holds under 6 of 12 payouts, so a fund could go 6 months without one and pass (stricter: a payout in each of the last 3 months); the 1993-06 "sits with its neighbours" test passes trivially after the warm-up back-fill, and the implied-vs-event payout agreement (median gap 0.3–0.4%) is measured but not tested — later.
 - `npm run data:refresh` also refreshes `fx.json`, and today's rates move ALL 1.45% from the hardcoded fallback in `src/data/cities.ts`, failing `localTaxes.test.ts`; update the fallbacks whenever FX is refreshed (or have the test or script do it) — from stage 1, later.

@@ -1,0 +1,50 @@
+$ npx vitest run src/engine/__tests__/income.test.ts src/engine/__tests__/incomeCrossCheck.test.ts src/engine/__tests__/incomeReference.selftest.test.ts --reporter=verbose
+
+ RUN  v5.1.0 /home/jonah/src/repos/eVelo-v2
+
+ ✓ src/engine/__tests__/incomeReference.selftest.test.ts > income reference self-test > income = V·y, untaxed below the deduction, surplus reinvested 3ms
+ ✓ src/engine/__tests__/incomeReference.selftest.test.ts > income reference self-test > splits income by type to the sleeve weights 1ms
+ ✓ src/engine/__tests__/incomeReference.selftest.test.ts > income reference self-test > reports real amounts under constant inflation 1ms
+ ✓ src/engine/__tests__/incomeReference.selftest.test.ts > income reference self-test > taxes qualified dividends at 0/15% (federal only, foreign home) 1ms
+ ✓ src/engine/__tests__/incomeReference.selftest.test.ts > income reference self-test > a gap sale with no gain 1ms
+ ✓ src/engine/__tests__/incomeReference.selftest.test.ts > income reference self-test > a gap sale with gains solves S = 120,167.50 + 0.094·S 1ms
+ ✓ src/engine/__tests__/incomeReference.selftest.test.ts > income reference self-test > fails when the portfolio cannot cover the gap, and stays failed 0ms
+ ✓ src/engine/__tests__/incomeReference.selftest.test.ts > income reference self-test > caps Δy at its 99th percentile and floors the yield at 0.25% 0ms
+ ✓ src/engine/__tests__/income.test.ts > same months as eVelo > bootstrap: simulate and the scenarios are bit-identical to the golden from before 42ms
+ ✓ src/engine/__tests__/income.test.ts > same months as eVelo > bootstrap: the indices are the months eVelo drew 287ms
+ ✓ src/engine/__tests__/income.test.ts > same months as eVelo > bootstrap: indicesOnly draws the same months, skipping the values 8ms
+ ✓ src/engine/__tests__/income.test.ts > same months as eVelo > bootstrap: runIncomePaths runs on eVelo's months for the same seed, paths, horizon and blocks 46ms
+ ✓ src/engine/__tests__/income.test.ts > same months as eVelo > fat-tail: simulate and the scenarios are bit-identical to the golden from before 52ms
+ ✓ src/engine/__tests__/income.test.ts > same months as eVelo > fat-tail: the indices are the months eVelo drew 146ms
+stdout | src/engine/__tests__/incomeCrossCheck.test.ts > engine vs the independent reference > agrees on 240 random plans × 3 paths on the real data
+cross-check: 240 plans × 3 paths; {"gap":417,"failed":140,"kept":303,"pace":322,"us":146,"mfj":124,"over65":237,"other":147}
+
+ ✓ src/engine/__tests__/incomeCrossCheck.test.ts > engine vs the independent reference > agrees on 240 random plans × 3 paths on the real data 679ms
+ ✓ src/engine/__tests__/income.test.ts > same months as eVelo > fat-tail: indicesOnly draws the same months, skipping the values 7ms
+ ✓ src/engine/__tests__/income.test.ts > same months as eVelo > fat-tail: runIncomePaths runs on eVelo's months for the same seed, paths, horizon and blocks 16ms
+ ✓ src/engine/__tests__/income.test.ts > yields anchored to today > a history that is all 1990s-like high yields still starts at the latest yield 1ms
+ ✓ src/engine/__tests__/income.test.ts > yields anchored to today > caps a month’s change at the 99th percentile |Δy| and floors the yield at 0.25% 1ms
+ ✓ src/engine/__tests__/income.test.ts > yields anchored to today > month 1 pays the starting yield, month 2 the moved one, and a rise in y raises income 2ms
+ ✓ src/engine/__tests__/income.test.ts > yields anchored to today > the real data starts at each fund’s latest yield, with caps near the plan’s 1ms
+ ✓ src/engine/__tests__/income.test.ts > a hand-worked path > year 1: income by type, tax by incomeTax, a gap sale with gains tax 0ms
+ ✓ src/engine/__tests__/income.test.ts > a hand-worked path > years 2 and 3: a smaller gap sale, then Social Security and a surplus reinvested 0ms
+ ✓ src/engine/__tests__/income.test.ts > a hand-worked path > a surplus is reinvested at the target weights with basis at cost 0ms
+ ✓ src/engine/__tests__/income.test.ts > a hand-worked path > a portfolio that can’t cover the gap fails that year: value 0, not met, not keeping pace 0ms
+ ✓ src/engine/__tests__/income.test.ts > a hand-worked path > inflation: amounts are nominal inside a year and real in the result, brackets lag a year 0ms
+ ✓ src/engine/__tests__/income.test.ts > the three measures and the bands > an all-bond plan spending below its income keeps principal on every path 32ms
+ ✓ src/engine/__tests__/income.test.ts > the three measures and the bands > spending far above income: the money lasts less often as the horizon grows 82ms
+stdout | src/engine/__tests__/income.test.ts > speed > runIncomePaths at eVelo’s default paths and horizon takes at most 2× simulate
+simulate 83 ms, runIncomePaths 92 ms (4000 × 30y), ratio 1.11
+
+ ✓ src/engine/__tests__/income.test.ts > the three measures and the bands > bands: ordered, the right lengths, and from the same quantile helper as simulate 16ms
+ ✓ src/engine/__tests__/income.test.ts > the three measures and the bands > median50 equals quantile(sorted, 0.5) exactly 1ms
+ ✓ src/engine/__tests__/income.test.ts > worker > answers an income request with runIncomePaths’ result 21ms
+ ✓ src/engine/__tests__/income.test.ts > speed > runIncomePaths at eVelo’s default paths and horizon takes at most 2× simulate 1066ms
+ ✓ src/engine/__tests__/income.test.ts > input limits on the income request > clamps or defaults every field, as eVelo’s sanitizer does 1ms
+ ✓ src/engine/__tests__/income.test.ts > input limits on the income request > huge paths, 1e308 otherIncome, NaN and bad enums give a finite, sane result 42ms
+
+ Test Files  3 passed (3)
+      Tests  34 passed (34)
+   Start at  19:50:03
+   Duration  2.02s (tests 92%, transform 4%, import 4%)
+

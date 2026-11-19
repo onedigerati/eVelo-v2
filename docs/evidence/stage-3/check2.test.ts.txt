@@ -1,0 +1,54 @@
+import { it, expect } from 'vitest'
+import { writeFileSync } from 'node:fs'
+const NEW = '/home/jonah/src/repos/eVelo-v2/src'
+it('check 2', async () => {
+  const market = (await import(NEW + '/data/market.json')).default as any
+  const inc = await import(NEW + '/engine/income.ts')
+  const { generateScenarios } = await import(NEW + '/engine/scenarios.ts')
+  const { prepare } = await import(NEW + '/engine/prepare.ts')
+  const { DEFAULT_INPUTS } = await import(NEW + '/engine/defaults.ts')
+  const out: string[] = []
+  const F = ['SPY', 'VWITX', 'VFITX', 'VBMFX']
+  const r = inc.runIncomePaths(market, inc.INCOME_DEFAULTS)
+  const last = (s: string) => market.assets[s].y[market.months - 1]
+  out.push(`runIncomePaths(INCOME_DEFAULTS, ${r.paths} paths, ${r.years}y) startYield = ${JSON.stringify(r.startYield)}`)
+  out.push(`market.json latest y (${market.months} months from ${market.start}): SPY ${last('SPY')} VWITX ${last('VWITX')} VFITX ${last('VFITX')} VBMFX ${last('VBMFX')}; taxable mean ${(last('VFITX') + last('VBMFX')) / 2}`)
+  expect(r.startYield.stocks).toBe(last('SPY')); expect(r.startYield.munis).toBe(last('VWITX')); expect(r.startYield.taxable).toBe((last('VFITX') + last('VBMFX')) / 2)
+  // My own demeaned dy and cap
+  const q = (a: number[], p: number) => { const s = [...a].sort((x, y) => x - y); const pos = (s.length - 1) * p, lo = Math.floor(pos), hi = Math.min(s.length - 1, lo + 1); return s[lo] + (s[hi] - s[lo]) * (pos - lo) }
+  const M = market.months
+  const dys: number[][] = [], caps: number[] = []
+  for (const s of F) {
+    const y = market.assets[s].y as number[]
+    const raw = y.slice(1).map((v, i) => v - y[i]); const mean = raw.reduce((a, b) => a + b, 0) / raw.length
+    const d = [0, ...raw.map((x) => x - mean)]; const cap = q(d.slice(1).map(Math.abs), 0.99)
+    caps.push(cap); dys.push(d.map((x) => Math.min(cap, Math.max(-cap, x))))
+    out.push(`${s}: raw mean monthly dy ${(mean * 1e4).toFixed(3)} bp (=${(mean * 360 * 100).toFixed(2)} pts/30y, removed); my cap ${cap.toFixed(6)}; first y ${y[0]}`)
+  }
+  const ser = inc.incomeSeries(market, 'balanced')
+  for (let i = 0; i < 4; i++) expect(ser.cap[i]).toBe(caps[i])
+  // yield paths on the engine's drawn months
+  const I = inc.INCOME_DEFAULTS, T = I.horizonYears * 12
+  const sc = generateScenarios(prepare(market, DEFAULT_INPUTS.holdings, I.outlook), I.method, I.blockMonths, I.paths, T, I.seed, { indicesOnly: true })
+  for (let i = 0; i < 4; i++) {
+    const atYear: number[][] = Array.from({ length: 31 }, () => [])
+    for (let p = 0; p < I.paths; p++) {
+      let y = market.assets[F[i]].y[M - 1]
+      atYear[0].push(y)
+      for (let t = 0; t < T; t++) { y = Math.max(0.0025, y + dys[i][sc.idx![p * T + t]]); if ((t + 1) % 12 === 0) atYear[(t + 1) / 12].push(y) }
+    }
+    const med = atYear.map((a) => q(a, 0.5))
+    const mean = atYear.map((a) => a.reduce((s, x) => s + x, 0) / a.length)
+    out.push(`${F[i]} yield median at years 0/1/5/10/20/30: ${[0, 1, 5, 10, 20, 30].map((k) => (med[k] * 100).toFixed(3) + '%').join(' / ')}; mean y30 ${(mean[30] * 100).toFixed(3)}%; p5..p95 y30 ${(q(atYear[30], 0.05) * 100).toFixed(2)}..${(q(atYear[30], 0.95) * 100).toFixed(2)}%`)
+  }
+  // Validate my yield replay against the engine: 1 path, all VWITX, foreign home (no tax), spend 0 -> income reinvested
+  const one = { ...I, paths: 1, stockShare: 0, muniShare: 1, homeCityId: 'bangkok', spending: 0, otherIncome: 0, portfolio: 1e6 }
+  const idx1 = sc.idx!.subarray(0, T)
+  const res = inc.runIncomeOnMonths(market, one, idx1)
+  let V = 1e6, y = market.assets.VWITX.y[M - 1], P = 1, ii = 0, maxRel = 0
+  for (let t = 0; t < T; t++) { const m = idx1[t]; ii += V * y / 12; V = Math.max(0, V * (1 + ser.R[m * 4 + 1] - y / 12)); y = Math.max(0.0025, y + dys[1][m]); P *= 1 + market.cpi[m]
+    if ((t + 1) % 12 === 0) { const k = (t + 1) / 12; maxRel = Math.max(maxRel, Math.abs(ii / P - res.median[k - 1].muniInterest) / (ii / P), Math.abs((V + ii) / P - res.median[k - 1].value) / ((V + ii) / P)); V += ii; ii = 0 } }
+  out.push(`own 30-year replay (1 path, all VWITX, no tax, income reinvested) vs engine: max relative difference in yearly muni income and value ${maxRel.toExponential(2)}; tax yr1 ${res.median[0].tax}`)
+  expect(maxRel).toBeLessThan(1e-9)
+  writeFileSync(import.meta.dirname + '/check2.out', out.join('\n') + '\n')
+}, 600000)

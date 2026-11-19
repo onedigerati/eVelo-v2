@@ -7,6 +7,8 @@ export interface Rng {
   int(n: number): number
   /** Standard normal (Box-Muller, cached pair). */
   normal(): number
+  /** Advance the state exactly as normal() would, without computing the value. */
+  skipNormal(): void
 }
 
 function splitmix32(a: number): () => number {
@@ -36,6 +38,9 @@ export function createRng(seed: number): Rng {
   }
   let spare = 0
   let hasSpare = false
+  // A pair skipped by skipNormal keeps its uniforms, so a normal() after it still returns the pair's
+  // second value.
+  let skippedU = 0, skippedV = 0, spareSkipped = false
   const next = () => u32() / 4294967296
   return {
     next,
@@ -43,6 +48,10 @@ export function createRng(seed: number): Rng {
     normal() {
       if (hasSpare) {
         hasSpare = false
+        if (spareSkipped) {
+          spareSkipped = false
+          return Math.sqrt(-2 * Math.log(skippedU)) * Math.sin(2 * Math.PI * skippedV)
+        }
         return spare
       }
       let u = 0
@@ -52,6 +61,18 @@ export function createRng(seed: number): Rng {
       spare = r * Math.sin(2 * Math.PI * v)
       hasSpare = true
       return r * Math.cos(2 * Math.PI * v)
+    },
+    skipNormal() {
+      if (hasSpare) {
+        hasSpare = false
+        spareSkipped = false
+        return
+      }
+      let u = 0
+      while (u === 0) u = next()
+      skippedU = u
+      skippedV = next()
+      hasSpare = spareSkipped = true
     },
   }
 }

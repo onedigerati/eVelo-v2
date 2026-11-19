@@ -6,6 +6,12 @@
 // statute (NIIT, Social Security provisional income, the OBBBA senior deduction and its phase-out)
 // are divided by `priceLevel` to get their real value.
 //
+// Bracket lag (docs/specs/income-engine.md, Resolved point 11): the indexed amounts follow
+// `indexLevel` (default `priceLevel`), the price level the IRS indexed them to. In real terms they
+// scale by s = indexLevel ÷ priceLevel: federal brackets, the standard deduction, the 65+ additions,
+// the 0/15/20% breakpoints, and the state bands, deductions and per-65+ exclusions. Scaled bands are
+// looked up without allocating: for marginal bands, tax(x; s·bands) = s · tax(x / s; bands).
+//
 // Figures: docs/research/conventional-income-taxes.md §1 (Rev. Proc. 2025-32 for 2026; IRS Topic
 // 559; Pub 915; IRS newsroom on the OBBBA senior deduction).
 //
@@ -27,10 +33,10 @@
 //   `over65`) come off the state base before the state deduction; `otherOrdinary` is left out where
 //   the state excludes pensions. The local rate uses the same base, less long-term gains where the
 //   local tax skips them (Philadelphia).
-// - Inputs: `priceLevel` finite and > 0 and `year` an integer, else a RangeError; a non-finite or
+// - Inputs: `priceLevel` (and `indexLevel` when given) finite and > 0 and `year` an integer, else a RangeError; a non-finite or
 //   negative income field counts as 0.
 
-import { bandTaxPacked, packBands, type PackedBands } from './localTax'
+import { bandTaxPacked as importedBandTax, packBands, type PackedBands } from './localTax'
 import type {
   FilingStatus,
   IncomeTaxOptions,
@@ -40,6 +46,10 @@ import type {
 import type { TaxBand } from './types'
 
 export type { IncomeTaxOptions }
+
+// Bound once: incomeTax runs once or more per path-year in the income engine, and a test runner may
+// reach an import through a getter on every call.
+const bandTaxPacked = importedBandTax
 
 /** 2026 ordinary brackets, taxable income (Rev. Proc. 2025-32 §4.01). */
 export const FEDERAL_BANDS: Record<FilingStatus, TaxBand[]> = {
@@ -123,10 +133,21 @@ export function taxableSocialSecurity(
   return Math.min(fifty + eightyFive, 0.85 * benefits)
 }
 
+/** Tax on `x` under marginal bands whose thresholds are all scaled by `s` > 0, without building
+ *  them: each slice (x − s·f)·rate = s·(x/s − f)·rate, so the sum is s · tax(x / s). */
+export function scaledBandTax(x: number, packed: PackedBands, s: number): number {
+  return s === 1 ? bandTaxPacked(x, packed) : s * bandTaxPacked(x / s, packed)
+}
+
 export function incomeTax(income: IncomeYear, opts: IncomeTaxOptions): IncomeTaxResult {
   const { status, priceLevel, year } = opts
   if (!(Number.isFinite(priceLevel) && priceLevel > 0))
     throw new RangeError(`incomeTax: priceLevel must be finite and > 0, got ${priceLevel}`)
+  const indexLevel = opts.indexLevel ?? priceLevel
+  if (!(Number.isFinite(indexLevel) && indexLevel > 0))
+    throw new RangeError(`incomeTax: indexLevel must be finite and > 0, got ${indexLevel}`)
+  // Real scale of the inflation-indexed amounts (exactly 1 when indexLevel is omitted).
+  const sc = indexLevel === priceLevel ? 1 : indexLevel / priceLevel
   if (!Number.isInteger(year)) throw new RangeError(`incomeTax: year must be an integer, got ${year}`)
   const qd = amt(income.qualifiedDividends)
   const interest = amt(income.taxableInterest)
@@ -143,7 +164,7 @@ export function incomeTax(income: IncomeYear, opts: IncomeTaxOptions): IncomeTax
 
   // Deductions.
   const aged = Math.min(opts.over65, status === 'single' ? 1 : 2)
-  let deduction = STANDARD_DEDUCTION[status] + aged * AGED_ADDITION[status]
+  let deduction = sc * (STANDARD_DEDUCTION[status] + aged * AGED_ADDITION[status])
   if (aged > 0 && year >= 2025 && year <= SENIOR_LAST_YEAR) {
     const excess = Math.max(0, agi - SENIOR_PHASEOUT_FROM[status] / priceLevel)
     const each = Math.max(0, SENIOR_DEDUCTION / priceLevel - SENIOR_PHASEOUT_RATE * excess)
@@ -156,8 +177,9 @@ export function incomeTax(income: IncomeYear, opts: IncomeTaxOptions): IncomeTax
   const taxable = Math.max(0, ordinary + pref - deduction)
   const prefTaxable = Math.min(pref, taxable)
   const ordTaxable = taxable - prefTaxable
-  const ordinaryTax = bandTaxPacked(ordTaxable, FEDERAL_PACKED[status])
-  const { zeroTo, fifteenTo } = PREF_BREAKS[status]
+  const ordinaryTax = scaledBandTax(ordTaxable, FEDERAL_PACKED[status], sc)
+  const zeroTo = sc * PREF_BREAKS[status].zeroTo
+  const fifteenTo = sc * PREF_BREAKS[status].fifteenTo
   const overlap = (lo: number, hi: number) =>
     Math.max(0, Math.min(taxable, hi) - Math.max(ordTaxable, lo))
   const prefTax = 0.15 * overlap(zeroTo, fifteenTo) + 0.2 * overlap(fifteenTo, Infinity)
@@ -181,11 +203,11 @@ export function incomeTax(income: IncomeYear, opts: IncomeTaxOptions): IncomeTax
       (st.taxesPensions ? other : 0) +
       (st.muni === 'all-exempt' ? 0 : muni) +
       (st.taxesSocialSecurity ? taxableSS : 0)
-    const perAged = (st.retirementExclusionPer65 ?? 0) * aged
-    const ded = st.deduction[status]
+    const perAged = sc * (st.retirementExclusionPer65 ?? 0) * aged
+    const ded = sc * st.deduction[status]
     const taxableOf = (b: number) => Math.max(0, b - Math.min(Math.max(0, b), perAged) - ded)
     const stTaxable = taxableOf(base)
-    state = bandTaxPacked(stTaxable, packedState(st.bands[status]))
+    state = scaledBandTax(stTaxable, packedState(st.bands[status]), sc)
     if (st.localRate) {
       const localTaxable = st.localExcludesLongTermGains ? taxableOf(base - gains) : stTaxable
       state += st.localRate * localTaxable

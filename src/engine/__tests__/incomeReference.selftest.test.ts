@@ -114,8 +114,9 @@ describe('income reference self-test', () => {
       { ...base, horizonYears: 1 },
       idx(1, 1, 50),
     )
-    // 99 diffs of 0.0001 and one of 0.0101: position 98.01 of the sorted 100.
-    expect(res.caps.VWITX).toBeCloseTo(0.0001 + 0.01 * 0.01, 12)
+    // 99 diffs of 0.0001 and one of 0.0101, mean 0.0200 / 100 = 0.0002. Demeaned: 99 of −0.0001 and
+    // one of 0.0099; sorted |Δy|, position 99 × 0.99 = 98.01: 0.0001 + 0.01 × (0.0099 − 0.0001).
+    expect(res.caps.VWITX).toBeCloseTo(0.0001 + 0.01 * 0.0098, 12)
     // SPY starts at 0.001 (used in month 1), then floors to 0.0025 for months 2..12.
     expect(res.paths[0].rows[0].dividends).toBeCloseTo((100_000 * 0.001) / 12 + (11 * 100_000 * 0.0025) / 12, 0)
   })

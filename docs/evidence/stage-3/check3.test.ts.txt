@@ -1,0 +1,64 @@
+import { it, expect } from 'vitest'
+import { writeFileSync } from 'node:fs'
+const NEW = '/home/jonah/src/repos/eVelo-v2/src'
+it('check 3: my own 2-year hand case', async () => {
+  const { runIncomeOnMonths } = await import(NEW + '/engine/income.ts')
+  const { incomeTax } = await import(NEW + '/engine/incomeTax.ts')
+  const { stateIncomeTaxFor } = await import(NEW + '/data/stateIncomeTax.ts')
+  const out: string[] = []
+  const F = ['SPY', 'VWITX', 'VFITX', 'VBMFX'] as const
+  // Constant market: yields constant (so demeaned dy = 0), price change per month = r - y/12.
+  const y = { SPY: 0.018, VWITX: 0.03, VFITX: 0.04, VBMFX: 0.045 }
+  const px = { SPY: 0.004, VWITX: 0, VFITX: 0.001, VBMFX: -0.001 }
+  const cpi = 0.0025, months = 24
+  const assets: any = {}
+  for (const s of F) assets[s] = { symbol: s, name: s, cls: s === 'SPY' ? 'etf-equity' : 'etf-bond', first: 0,
+    r: Array(months).fill(y[s] / 12 + px[s]), y: Array(months).fill(y[s]) }
+  const market = { asOf: '2026-11-01', start: '1993-02', months, cpi: Array(months).fill(cpi), assets }
+  const inputs = { portfolio: 1_500_000, basisFraction: 0.3, age: 64, horizonYears: 2, spending: 110_000, otherIncome: 30_000,
+    incomeStartAge: 65, stockShare: 0.6, muniShare: 0.4, filingStatus: 'mfj', homeCityId: 'new-york',
+    method: 'bootstrap', outlook: 'historical', blockMonths: 24, paths: 1, seed: 1 } as any
+  const res = runIncomeOnMonths(market as any, inputs, new Int32Array(24))
+  // ---- by hand ----
+  const st = stateIncomeTaxFor('new-york')!
+  const w = [0.6, 0.4 * 0.4, 0.4 * 0.6 / 2, 0.4 * 0.6 / 2]
+  let V = w.map((x) => 1_500_000 * x), B = V.map((v) => v * 0.3)
+  let P = 1
+  const exp: any[] = []
+  for (let k = 1; k <= 2; k++) {
+    const P0 = P
+    const inc = [0, 0, 0, 0]
+    for (let t = 0; t < 12; t++) { for (let i = 0; i < 4; i++) { inc[i] += V[i] * y[F[i]] / 12; V[i] *= 1 + px[F[i]] } ; P *= 1 + cpi }
+    const age = 64 + k - 1
+    const ss = age >= 65 ? 30_000 * P : 0
+    const cashIn = inc[0] + inc[1] + inc[2] + inc[3] + ss
+    const need = 110_000 * P
+    const tax = (gain: number) => incomeTax({ qualifiedDividends: inc[0] / P, muniInterest: inc[1] / P, treasuryInterest: inc[2] / P, taxableInterest: inc[3] / P, socialSecurity: ss / P, longTermGains: gain / P },
+      { status: 'mfj', over65: age >= 65 ? 2 : 0, priceLevel: P, indexLevel: P0, state: st, year: 2026 + k - 1 }).total * P
+    const t0 = tax(0)
+    const Vt = V.reduce((a, b) => a + b), Bt = B.reduce((a, b) => a + b), g = 1 - Bt / Vt
+    let S = need - cashIn + t0, tx = t0
+    const rounds: string[] = []
+    for (let i = 0; i < 6; i++) { tx = tax(S * g); const nx = need - cashIn + tx; rounds.push(`S=${nx.toFixed(2)} tax=${tx.toFixed(2)}`); const done = Math.abs(nx - S) < 1; S = nx; if (done) break }
+    const noLag = incomeTax({ qualifiedDividends: inc[0] / P, muniInterest: inc[1] / P, treasuryInterest: inc[2] / P, taxableInterest: inc[3] / P, socialSecurity: ss / P, longTermGains: S * g / P },
+      { status: 'mfj', over65: age >= 65 ? 2 : 0, priceLevel: P, state: st, year: 2026 + k - 1 }).total * P
+    out.push(`Year ${k}: P0 ${P0.toFixed(6)} P ${P.toFixed(6)} age ${age}; nominal income SPY ${inc[0].toFixed(2)} VWITX ${inc[1].toFixed(2)} VFITX ${inc[2].toFixed(2)} VBMFX ${inc[3].toFixed(2)} SS ${ss.toFixed(2)}; need ${need.toFixed(2)}`)
+    out.push(`  tax0 ${t0.toFixed(2)}; V ${Vt.toFixed(2)} B ${Bt.toFixed(2)} gain/$ ${g.toFixed(6)}; rounds: ${rounds.join(' | ')}`)
+    out.push(`  final S ${S.toFixed(2)} tax ${tx.toFixed(2)} nominal (with no bracket lag the tax would be ${noLag.toFixed(2)}, a ${(tx - noLag).toFixed(2)} difference)`)
+    const f = 1 - S / Vt; V = V.map((v) => v * f); B = B.map((b) => b * f)
+    exp.push({ dividends: inc[0] / P, muniInterest: inc[1] / P, treasuryInterest: inc[2] / P, taxableInterest: inc[3] / P, otherIncome: ss / P, tax: tx / P, gapSold: S / P, reinvested: 0, value: V.reduce((a, b) => a + b) / P, after: (cashIn - tx) / P })
+  }
+  let worst = 0
+  for (let k = 0; k < 2; k++) {
+    const e = exp[k], r = res.median[k] as any
+    const pairs: string[] = []
+    for (const key of ['dividends', 'muniInterest', 'treasuryInterest', 'taxableInterest', 'otherIncome', 'tax', 'gapSold', 'reinvested', 'value']) {
+      const d = Math.abs(r[key] - e[key]); worst = Math.max(worst, d); pairs.push(`${key} hand ${e[key].toFixed(2)} engine ${r[key].toFixed(2)}`) }
+    const da = Math.abs(res.afterTaxIncome.p50[k] - e.after); worst = Math.max(worst, da)
+    pairs.push(`afterTax hand ${e.after.toFixed(2)} engine ${res.afterTaxIncome.p50[k].toFixed(2)}`)
+    out.push(`Year ${k + 1} real: ` + pairs.join('; '))
+  }
+  out.push(`lastsRate ${res.lastsRate} principalKeptRate ${res.principalKeptRate} keepsPaceRate ${res.keepsPaceRate}; worst |hand - engine| = ${worst.toExponential(3)} USD`)
+  writeFileSync(import.meta.dirname + '/check3.out', out.join('\n') + '\n')
+  expect(worst).toBeLessThan(0.005)
+})

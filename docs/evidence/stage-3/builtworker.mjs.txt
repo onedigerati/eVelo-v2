@@ -1,0 +1,13 @@
+const sent = []
+globalThis.self = { postMessage: (m) => sent.push(m), onmessage: null }
+await import('/home/jonah/src/repos/eVelo-v2/dist/assets/worker-6rqooHuj.js')
+const inputs = { portfolio: 3000000, basisFraction: 0.4, age: 55, horizonYears: 30, spending: 110000, otherIncome: 40000, incomeStartAge: 67, stockShare: 0.6, muniShare: 0.5, filingStatus: 'single', homeCityId: 'st-louis', method: 'bootstrap', outlook: 'balanced', blockMonths: 24, paths: 4000, seed: 7 }
+const t0 = performance.now()
+self.onmessage({ data: { id: 42, kind: 'income', inputs } })
+const ms = performance.now() - t0
+const r = sent[0]
+console.log('built worker', '/home/jonah/src/repos/eVelo-v2/dist/assets/worker-6rqooHuj.js'.split('/').pop(), 'answered id', r.id, 'kind', r.kind, 'in', ms.toFixed(0), 'ms; lastsRate', r.result.lastsRate, 'principalKept', r.result.principalKeptRate, 'keepsPace', r.result.keepsPaceRate, 'startYield', JSON.stringify(r.result.startYield), 'value p50 y30', Math.round(r.result.value.p50[30]))
+self.onmessage({ data: { id: 43, kind: 'bogus' } })
+console.log('bad kind ->', JSON.stringify(sent[1]))
+self.onmessage({ data: { id: 44, kind: 'income', inputs: { ...inputs, paths: NaN, horizonYears: 'x', homeCityId: 5 } } })
+console.log('bad inputs ->', 'kind', sent[2].kind, 'paths', sent[2].result?.paths, 'years', sent[2].result?.years, 'lasts', sent[2].result?.lastsRate, sent[2].error ?? '')

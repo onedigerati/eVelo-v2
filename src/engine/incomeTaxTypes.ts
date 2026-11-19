@@ -78,6 +78,10 @@ export interface IncomeTaxOptions {
   over65: 0 | 1 | 2
   /** Cumulative US inflation since 2026 (1 = 2026). Finite and > 0, else a RangeError. */
   priceLevel: number
+  /** The price level the inflation-indexed amounts (brackets, deductions, 0/15/20 breakpoints,
+   *  state bands) were last indexed to; in real terms they scale by indexLevel ÷ priceLevel.
+   *  Finite and > 0, else a RangeError. Defaults to `priceLevel` (no lag). */
+  indexLevel?: number
   /** The home state's income tax; omitted means federal only (a foreign home). */
   state?: StateIncomeTax
   /** Tax year (an integer), required so the OBBBA senior deduction's 2029 sunset is never skipped. */
