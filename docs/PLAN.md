@@ -7,7 +7,7 @@ Make the Living on Income mode's two charts answer the mouse, a finger and the k
 2026-11-19 · tests: 1443 pass, 1 skipped · typecheck: clean · build: ok (chunk-size warning only)
 
 ## Now
-All stages done — awaiting the user's review, then push to deploy
+All stages done — live on GitHub Pages (run 44566618397)
 Agents: wide — confirmed 2026-11-19 09:59
 
 ## Stages
