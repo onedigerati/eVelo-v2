@@ -113,7 +113,7 @@ export function bandIndexAt(px: number, n: number, x0: number, step: number, bw:
   return Math.max(0, Math.min(n - 1, i))
 }
 
-export type ReadoutKey = 'dividends' | 'muni' | 'taxable' | 'social' | 'tax' | 'gap' | 'reinvested' | 'short'
+export type ReadoutKey = 'dividends' | 'muni' | 'taxable' | 'social' | 'tax' | 'spending' | 'gap' | 'reinvested'
 
 export interface ReadoutLine {
   key: ReadoutKey
@@ -123,8 +123,9 @@ export interface ReadoutLine {
 }
 
 /** The chart readout's rows for one year, for the layers shown: the income lines unlocked so far,
- *  tax (layer 3), sold to cover (layer 4, when any), then from layer 4 how cash after tax compares
- *  with spending: the surplus reinvested, or the shortfall. */
+ *  tax (layer 3), then from layer 4 spending and how it was met: the shares sold to cover it, or
+ *  the surplus reinvested. Each figure is the engine's own median for the year (as the ledger), not
+ *  a difference of medians, so the rows never contradict the ledger. */
 export function readoutRows(r: IncomeYearRow, layers: IncomeLayers, hasSocial: boolean): ReadoutLine[] {
   const out: ReadoutLine[] = []
   if (layers >= 1) out.push({ key: 'dividends', label: 'Dividends', value: pos(r.dividends) })
@@ -133,10 +134,9 @@ export function readoutRows(r: IncomeYearRow, layers: IncomeLayers, hasSocial: b
   if (layers >= 4 && (hasSocial || pos(r.otherIncome) > 0)) out.push({ key: 'social', label: 'Social Security', value: pos(r.otherIncome) })
   if (layers >= 3) out.push({ key: 'tax', label: 'Tax', value: pos(r.tax) })
   if (layers >= 4) {
+    out.push({ key: 'spending', label: 'Spending', value: pos(r.spending) })
     if (pos(r.gapSold) > 0) out.push({ key: 'gap', label: 'Sold to cover', value: pos(r.gapSold) })
-    const afterTax = pos(r.dividends) + pos(r.muniInterest) + taxableOf(r) + pos(r.otherIncome) - pos(r.tax)
-    const d = afterTax - pos(r.spending)
-    out.push(d >= 0 ? { key: 'reinvested', label: 'Reinvested', value: d } : { key: 'short', label: 'Short of spending', value: -d })
+    else if (pos(r.reinvested) > 0) out.push({ key: 'reinvested', label: 'Reinvested', value: pos(r.reinvested) })
   }
   return out
 }

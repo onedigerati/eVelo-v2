@@ -40,7 +40,7 @@ const LAYER_OF: Record<(typeof SEGMENTS)[number][0], number> = { dividends: 1, m
 /** Readout money to the nearest $100, as the year-by-year ledger writes it. */
 const money = (v: number) => currency(Math.round(v / 100) * 100)
 
-/** The readout's swatch for a row: the bar's own segment, none for the reinvested/short total. */
+/** The readout's swatch for a row: the bar's own segment; none for spending and reinvested. */
 const KEY_OF: Record<string, string | undefined> = { dividends: 'dividends', muni: 'muni', taxable: 'taxable', social: 'social', tax: 'tax', gap: 'gap' }
 
 export function IncomeChart({ rows, layers, spending, variant, justAdded }: IncomeChartProps) {
@@ -174,7 +174,7 @@ export function IncomeChart({ rows, layers, spending, variant, justAdded }: Inco
                       keyFill={k === 'tax' ? `url(#${uid}-hatch)` : undefined}
                       label={l.label}
                       value={money(l.value)}
-                      total={!k}
+                      total={l.key === 'spending'}
                     />
                   )
                 })}

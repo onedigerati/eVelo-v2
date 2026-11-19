@@ -108,7 +108,8 @@ export function CompareChart({ series, phone }: CompareChartProps) {
               {read.rows.map((r) => (
                 <div key={r.key}>
                   <ReadoutRow keyClass={`cchart__swatch cchart__swatch--${r.key}`} label={r.label} value={r.median} />
-                  <ReadoutRow faint label="middle half" value={r.middle} />
+                  {/* a phone plot is 180px tall: medians and the gap only, so the readout fits */}
+                  {!phone && <ReadoutRow faint label="middle half" value={r.middle} />}
                 </div>
               ))}
               {series

@@ -225,7 +225,7 @@ describe('readoutRows', () => {
     expect(keys(r, 1, true)).toEqual(['dividends'])
     expect(keys(r, 2, true)).toEqual(['dividends', 'muni', 'taxable'])
     expect(keys(r, 3, true)).toEqual(['dividends', 'muni', 'taxable', 'tax'])
-    expect(keys(r, 4, true)).toEqual(['dividends', 'muni', 'taxable', 'social', 'tax', 'gap', 'short'])
+    expect(keys(r, 4, true)).toEqual(['dividends', 'muni', 'taxable', 'social', 'tax', 'spending', 'gap'])
     expect(keys(r, 5, true)).toEqual(keys(r, 4, true))
   })
 
@@ -246,13 +246,13 @@ describe('readoutRows', () => {
     expect(v.social).toBe(r.otherIncome)
     expect(v.tax).toBe(r.tax)
     expect(v.gap).toBe(r.gapSold)
-    expect(lines.slice(0, 6).map((x) => x.label)).toEqual(['Dividends', 'Muni coupons', 'Taxable interest', 'Social Security', 'Tax', 'Sold to cover'])
+    expect(v.spending).toBe(r.spending)
+    expect(lines.map((x) => x.label)).toEqual(['Dividends', 'Muni coupons', 'Taxable interest', 'Social Security', 'Tax', 'Spending', 'Sold to cover'])
   })
 
-  it('ends with the surplus reinvested or the shortfall against spending', () => {
-    // after tax: 22,400 + 24,200 + 8,600 − 3,000 = 52,200
-    expect(readoutRows(row({ spending: 60_000 }), 4, false).at(-1)).toEqual({ key: 'short', label: 'Short of spending', value: 7_800 })
-    expect(readoutRows(row({ spending: 50_000 }), 4, false).at(-1)).toEqual({ key: 'reinvested', label: 'Reinvested', value: 2_200 })
-    expect(readoutRows(row({ spending: 52_200 }), 4, false).at(-1)?.key).toBe('reinvested')
+  it('ends with spending, then the shares sold or the surplus reinvested, never both', () => {
+    expect(keys(row({ gapSold: 7_800, reinvested: 0 }), 4).slice(-2)).toEqual(['spending', 'gap'])
+    expect(readoutRows(row({ gapSold: 0, reinvested: 2_200 }), 4, false).at(-1)).toEqual({ key: 'reinvested', label: 'Reinvested', value: 2_200 })
+    expect(keys(row({ gapSold: 0, reinvested: 0 }), 4).at(-1)).toBe('spending')
   })
 })
