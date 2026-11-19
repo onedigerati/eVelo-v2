@@ -1,49 +1,55 @@
-# Sound numbers plan
+# Living on income plan
 
 ## Goal
-A review of the financial calculations (2026-11-16) found the engine's core maths sound, but several things change the odds users are shown. A stay-home plan comes back as a move to Bangkok after a reload or through a share link (64% fragile shows as 80% holds). A crafted link with a city id like `constructor` crashes the app for good on that device. An unknown home city silently drops the destination. "Exp. return" shows the average month compounded (9.7%) rather than the growth the paths actually compound at (~8.7%), and the loan-vs-return warning uses it. The currency walk centres the average, not the typical future, so more currency risk raises the odds. And the default dividend tax drag (0.25%) is below what the default portfolio yields (~0.4%). Done = each is fixed, proven by tests, seen in the running app, and live.
+A hidden, experimental mode for retiring the conventional way: living on dividends and bond interest (municipal bonds included), selling shares only to cover the gap. The main site stays pure eVelo. Nothing on it points to the mode. You get in by clicking the landing page's "Find your eVelo" arrow until it gives up and becomes a coupon, or through `#income` once you have it. Inside, it asks one sentence at a time while a chart of income builds layer by layer (dividends, muni coupons, taxable interest, tax, then spending and the gap), and it ends with three measures: the money lasts, principal never sold, income keeps pace. It starts fresh. An opt-in sync copies the shared values you tick from your eVelo plan, once, with a re-sync. After a sync, a side-by-side comparison with eVelo appears: two columns over one chart, with a switch between the measures. Done = all of it works in the built app on desktop and phone, its money logic is proven by tests on the same futures eVelo runs, the main site is unchanged except for the arrow's hidden behaviour, and the mode is live.
 
 ## Baseline
-2026-11-16 · tests: 1111 pass · typecheck: clean · build: ok
+2026-11-18 · tests: 1155 pass · typecheck: clean · build: ok
 
 ## Now
-All stages done. Live on GitHub Pages (run 44006469181, 2026-11-17).
-Agents: wide — confirmed 2026-11-16 19:28
+Stage 1 of 6 · Yield data
+Agents: wide — confirmed 2026-11-18 18:06
+Risk: external services (Yahoo, FRED fetch), parsing
+Checks:
+- [ ] `market.json` carries VWITX (munis), VFITX and VBMFX (taxable) as real series from 1993, not backfilled (proof: test)
+- [ ] Each income asset (the three funds, SPY) has a monthly income yield series, built from trailing 12 months of distributions ÷ price, sane against known points (VWITX ≈ 6% in 1993, ≈ 2.5% in 2025) (proof: test)
+- [ ] One year of Yahoo's VFITX total return matches Vanguard's published annual return within 0.5 points, and the note says so (proof: command, the published figure is outside the repo)
+- [ ] `npm run data:refresh` reproduces the files; the index test still passes; app bundle size grows by no more than 60 KB gzipped (proof: test + build output)
+Open: none
 
 ## Stages
-- [x] 1. Safe plan loading — stay home survives reload and links; city ids checked at the boundary; an error boundary with reset — [evidence](evidence/stage-1/report.md)
-- [x] 2. Honest growth — loan-vs-return warning uses compounded growth, "Exp. return" labelled as the average year; currency walk centred on the typical future, Method copy updated; dividend drag default 0.4% — [evidence](evidence/stage-2/report.md)
-
-## Fixes
-- 2026-11-17 · Landing copy names a different mix of assets as a move, and says what you hold sets the returns that have to outrun the loan — typecheck, 1152 tests, build green; built landing screenshotted at desktop and phone width, no horizontal scroll; deployed 2026-11-17 (run 44217256818), live bundle carries the new copy
-- 2026-11-17 · "Explore the Atlas" globe is now a dotted-earth globe: on hover it grows 16→22px, turns accent and its continents drift (option E of the globe studies); still under reduced motion — typecheck, 1152 tests, build green; built landing screenshotted at rest and on hover, desktop and phone, drift confirmed running; deployed 2026-11-17 (run 44219028719), live bundle carries it
-- 2026-11-17 · "Find your eVelo" arrow is now a dotted arrow: on hover it grows 16→22px (matching the globe), its dots spring up into an escape curve, the head turns up and a pulse runs along the dots (option F of the escape velocity icons); still under reduced motion — typecheck, 1152 tests, build green; built landing screenshotted at rest and on hover, desktop and phone; deployed 2026-11-17 (run 44220941656), live bundle carries it
-- 2026-11-17 · Your terms: the five plan sections start collapsed and reopen as the visitor last left them, remembered in this browser (`evelo:v2:sections`, like weight locks; user chose per-browser over storing it with saved portfolios) — typecheck, 1155 tests (new: stored flags sanitised), build, e2e smoke (now opens Where you live before reading it) green; built app checked on desktop and phone: all collapsed on first visit, open/close survives reload; deployed 2026-11-17 (run 44221943917), live bundle carries it
+- [ ] 1. Yield data — add VWITX, VFITX, VBMFX; keep distributions and derive a monthly income yield per income asset; data tests
+- [ ] 2. Income tax — a pure 2026 US tax module: federal brackets, 0/15/20% on qualified dividends and gains, 3.8% NIIT, muni interest exempt (but counted for Social Security), per-state muni rules for the US home cities, foreign home = federal only; tests
+- [ ] 3. Income engine — `runIncomePaths` on the same scenarios as eVelo: yields that start at today's and move with each block, income paid first, gap sold with tax, three measures, bands; worker kind; tests and a speed budget
+- [ ] 4. The door — the arrow's hidden click sequence and coupon, a hidden `#income` route, a lazy mode shell, its own sanitized state (`evelo:v2:income`) cleared by Reset; e2e
+- [ ] 5. The reveal — six sentence questions (split layout while asking, stacked results after, phone screens), the layered chart, the three measures, "See year by year" ledger
+- [ ] 6. Sync and compare — tick-what-to-copy sheet, one-time copy with re-sync and a "changed since" chip, the comparison (columns, one chart, measure switch) against the eVelo plan's result
 
 ## Decisions
-- 2026-11-16 · Fix the review's items 1–6 in two stages, the rest deferred to open questions — user: "Yes, plan it then autopilot wide."
-- 2026-11-16 · An unknown home id falls back to the default home and an unknown destination id to stay home, at `sanitizeInputs` — PM default: the page then names exactly what the engine runs.
-- 2026-11-16 · The error boundary sits at the app root and offers "Reset plan" (clears the stored plan, reloads to the default); it never shows the error text to the user — PM default.
-- ~~2026-11-16 · "Exp. return" becomes the annualised geometric growth of the portfolio's monthly returns (the rate the paths compound at); the loan-vs-return warning compares the loan rate with that nominal growth — PM default, from the review's reproduction (9.69% shown vs 8.68% compounded at the defaults).~~ Replaced the same day (see below).
-- 2026-11-16 · The real-FX walk gets zero log drift, so the typical (median) future keeps today's rate and more currency volatility costs odds rather than adding them; the Method page says so — PM default; the review measured Buenos Aires +1.4 points and Lisbon +0.9 from the current drift.
-- 2026-11-16 · Default dividend tax drag 0.25% → 0.40% (≈1.7% yield × 23.8%). Saved plans and links that carry their own value keep it; only the default moves — PM default.
-- 2026-11-16 · Rejected from the review: the sell side's untaxed opening repayment (standing 2026-11-08 decision) and counting a survived margin call as a failure (conservative by design).
-- 2026-11-16 · Scale: 2 stages, one release — no scale signal fired, planned as one plan.
-- 2026-11-16 · No research: the review's reproductions settle the numbers, and nothing outside the repo changes this plan.
-- 2026-11-16 · Autopilot, Agents: wide — user: "plan it then autopilot wide".
-- 2026-11-16 · Autopilot unattended, Agents: wide — user: "JBit autopilot wide".
-- 2026-11-16 · Playwright (headless Chromium) and Lighthouse become dev dependencies with `npm run e2e` / `npm run lighthouse`, listed in CLAUDE.md: the copies earlier verifications used were gone from this machine — user: "Yes go ahead and do it now." The user installed Chromium's system libraries (`playwright install-deps`).
-- 2026-11-16 · User approved stage 1 (user input, money) under autopilot ("go").
-- 2026-11-16 · User approved stage 1 (user input, money) under autopilot again for the review fixes ("go").
-- 2026-11-16 · (unattended) Stage 1 review fixes taken beyond the city ids: holdings symbols checked as own keys (`assetMeta`, the engine's `market.assets` lookups, plan-rail slots), a stored plan that isn't an object is ignored, and Reset keeps the theme — the same prototype-key hole and two crash/UX gaps the reviewers reproduced; all within the stage's goal.
-- 2026-11-16 · (unattended) "Exp. return" stays the average (arithmetic) return, labelled as the average year, because the Outlook card already shows "Median CAGR" beside it; replacing it would show one number twice. The bug is the diagnosis, which now compares the loan rate with nominal median CAGR. Replaces the earlier "Exp. return becomes geometric growth" decision.
-- 2026-11-16 · User approved stage 2 (money) under autopilot ("go").
-- 2026-11-16 · User approved stage 2 (money) under autopilot again for the review fix ("go").
-- 2026-11-16 · (unattended) Stage 2 review fix: the diagnosis compares the loan's effective yearly cost, (1 + r/12)^12 − 1, with nominal median CAGR (the engine compounds the loan monthly), still quoting the APR; and says "typically grows" since the figure is a median.
-- 2026-11-16 · (unattended) Zero-drift FX kept even though it moves Buenos Aires from 76.2% to 63.3% (4,000 paths, seed 7; zero-vol 74.0%): it's the plan's decision and the honest direction (currency risk costs odds); the size comes from a 25%/yr random walk over 30 years, which a mean-reverting model would temper — raised as an open question. Defaults: St. Louis stay home 63.9 → 61.8% (drag only), St. Louis → Bangkok 79.5 → 77.1%.
-- 2026-11-17 · Deployed the sound numbers plan — user: "Deploy it." Pushed main after the user logged in with `gh` (this machine had lost its GitHub login); Deploy to GitHub Pages run 44006469181 passed (build, deploy); the live index chunk carries "Avg. return" and "typically grows only about".
+- 2026-11-18 · Build it as a hidden experimental mode; the main site keeps the eVelo ethos and never points to it — user.
+- 2026-11-18 · The door is an easter egg: the "Find your eVelo" arrow gives up after repeated clicks and becomes a coupon; `#income` also opens the mode — user picked "Arrow gives up".
+- 2026-11-18 · The mode starts fresh; sync is opt-in, the user ticks which shared values to copy, and it's a one-time copy with a re-sync button — user picked "Copy once + re-sync".
+- 2026-11-18 · After a sync, the mode compares itself with eVelo side by side — user: "I meant that I would like to compare it to eVelo."
+- 2026-11-18 · Reveal: the Letter's one-sentence questions feed the Coupon Ladder's layered chart, with the Ledger's year-by-year table one tap away; desktop asks in the split layout (sentence left, chart right) and shows results in the stacked layout; phone asks with a small chart above the sentence — user: "Let's go with your recommendations." Mockups: https://claude.ai/artifact/MHebL5x158cF4J61GUkgJo
+- 2026-11-18 · Comparison: two columns over one chart of both medians with middle-half bands, with a switch between the three measures; for eVelo, "principal kept" means no forced sale — user: "Let's go with your recommendations."
+- 2026-11-18 · Agents: wide — user picked "Wide".
+- 2026-11-18 · Scale: 6 stages, one release; no scale signal fired, planned as one plan.
+- 2026-11-18 · Brass (`--bruised` hues) is the mode's accent in place of eVelo's green, so it reads as a different room in the same house — PM default, from the mockups.
+- 2026-11-18 · Bond returns come from real fund history: VWITX stands for munis, VFITX and VBMFX for taxable bonds (MUB stays, unused by the mode: its pre-2007 months are backfilled from SPY) — PM default, from [conventional-bond-modelling](research/conventional-bond-modelling.md).
+- 2026-11-18 · Income yield starts at each asset's latest real yield and moves by each bootstrapped month's yield change, with a floor; income = yield × value, price change = total return − income. Yield levels are never replayed, so a 1990s block can't pay 6% today — PM default, from [conventional-bond-modelling](research/conventional-bond-modelling.md).
+- 2026-11-18 · No separate default or call model for investment-grade munis, and a "ladder" changes only when income arrives, not the returns: fund history already carries both — PM default, from [conventional-bond-modelling](research/conventional-bond-modelling.md).
+- 2026-11-18 · The mode holds three sleeves, not tickers: stocks (SPY), munis, taxable bonds, set by a stocks/bonds split and a muni share — PM default: the questions stay one sentence each.
+- 2026-11-18 · The mode taxes income by type each year with its own 2026 federal model and per-state muni rules for US home cities; eVelo's flat dividend drag is not used; a non-US home city gets federal tax only, with a note that local tax on interest isn't modelled — PM default, from [conventional-income-taxes](research/conventional-income-taxes.md).
+- 2026-11-18 · Three measures: the money lasts (headline, the same test as eVelo's survival), principal never sold, income keeps pace (real income never falls more than 10% below year one) — PM default, from [conventional-income-taxes](research/conventional-income-taxes.md).
+- 2026-11-18 · The income engine runs on the same scenarios (seed, path count, blocks) as eVelo, so the comparison is like for like; it's a separate loop, not more branches in `runPaths` — PM default, from the engine survey (the loop is speed-tuned).
+- 2026-11-18 · The arrow: a click on the label still goes straight to the plan; a click on the arrow glyph waits 300 ms for a follow-up click before going, and five quick clicks open the coupon instead; keyboard and screen-reader users reach the mode by `#income` only. The coupon stays for this visit (sessionStorage) — PM default: the main call to action keeps working as before.
+- 2026-11-18 · The mode keeps its own state under `evelo:v2:income`, parsed like `sanitizeInputs` (typed merge, clamped, own keys); the error boundary's Reset also clears it; no share links for the mode in this plan — PM default: every stored value is a user-input boundary.
+- 2026-11-18 · The comparison reads the eVelo plan's own result (the cached run of the plan as it stands); fields that differ from the copy are flagged, never silently re-synced — PM default.
+- 2026-11-18 · How the mode works is explained inside the mode ("How this is worked out"), not on the Method page, which would give it away — PM default.
 
 ## Open questions
+- Fidelity's state-by-state muni guide wouldn't extract; the per-state rules for the US home cities need a manual read of a second source before stage 2 closes (Illinois taxes its own munis; DC exempts all; Utah uncertain) — stage 2 research, PM.
+- Yahoo's Treasury-fund lists carry lump distributions the adjusted close mostly ignores, so their total return may be slightly low; stage 1's check against Vanguard settles whether to correct it — stage 1.
 - From the stage 2 verify: at 390px the Outlook lens card cuts its "Median CAGR" eyebrow to "MEDIAN CAG…" (pre-existing, unchanged since 6a2ce30) — later.
 - From the stage 2 review: share links leave out values equal to the default, so every link made before the drag default moved (0.25%) now opens at 0.40%, while saved plans keep 0.25%; the same plan can show slightly different odds from a link and from storage. Options: bump the link `VERSION` and decode v1 links with the old default, and/or move saved plans that sit at exactly 0.25% to 0.40% — user's call; today "only the default moves" holds for saved plans, not for old links.
 - From stage 2: the real-FX walk is a pure random walk, so over 30 years a 25%/yr currency (Buenos Aires) has a mean cost factor of ~2.5×, and now that the typical future is centred at today's rate, its odds drop ~11 points vs no currency risk. Real exchange rates revert toward purchasing-power parity (half-lives of a few years in the literature); a mean-reverting walk (e.g. AR(1) in log real FX) would be more realistic for long horizons — user's call, needs research on half-lives.
@@ -129,3 +135,4 @@ Agents: wide — confirmed 2026-11-16 19:28
 - 2026-11-15 · Home-aware getting there: each profile's Getting there worked out from the home city (nonstop, one, two or three stops, estimated hours) from sourced routes for 130 airports, with all 133 local notes rewritten, live on GitHub Pages — [plan](plans/2026-11-15-home-aware-getting-there.md) · [evidence](plans/2026-11-15-home-aware-getting-there/evidence/)
 - 2026-11-15 · Profile fact check: every tax, estate, lending, residency and healthcare claim in the 133 profiles checked against a current page (1,550 claims in a ledger; 122 corrected, 40 scores moved), the tax model brought in line (UK, NL, DE, KR, Zurich and nine US state taxes; a taxed home now taxed), and a city-by-city report in `docs/research/fact-check-2026-11/what-changed.md`, live on GitHub Pages 2026-11-16 — [plan](plans/2026-11-15-profile-fact-check.md) · [evidence](plans/2026-11-15-profile-fact-check/evidence/)
 - 2026-11-16 · Pick reasons: the 27 rank-flagged `why` lines and Nice's summary rewritten to match the fact check, a borrow warning on every lending-2 pick, ranks unchanged, live on GitHub Pages — [plan](plans/2026-11-16-pick-reasons.md) · [evidence](plans/2026-11-16-pick-reasons/evidence/)
+- 2026-11-17 · Sound numbers: stay-home plans survive reloads and links, city ids checked at the boundary with an error boundary and reset, the loan diagnosis against compounded growth, a zero-drift currency walk, a 0.40% dividend drag default, plus landing icon and collapsed-section fixes, live on GitHub Pages — [plan](plans/2026-11-17-sound-numbers.md) · [evidence](plans/2026-11-17-sound-numbers/evidence/)
