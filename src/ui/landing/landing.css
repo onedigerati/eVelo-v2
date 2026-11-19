@@ -242,6 +242,96 @@
     animation-play-state: running;
   }
 }
+/* The arrow giving up: each quick click (--tries, 1–4) droops it further from its tail and dims it,
+ * with a wobble that grows each time. Its padding widens the click target without moving the layout.
+ * Under reduced motion the droop still shows, without the wobble or the easing. */
+.landing__cta-door {
+  display: inline-flex;
+  padding: 8px;
+  margin: -8px;
+  transform-origin: 10px 50%;
+  transform: rotate(calc(var(--tries, 0) * 13deg)) translateY(calc(var(--tries, 0) * 0.6px));
+  opacity: calc(1 - var(--tries, 0) * 0.1);
+}
+.landing__cta-door > span {
+  display: inline-flex;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .landing__cta-door {
+    transition:
+      transform 360ms cubic-bezier(0.34, 1.56, 0.64, 1),
+      opacity var(--dur-2) var(--ease-out);
+  }
+  .landing__cta-wobble {
+    transform-origin: 2px 50%;
+    animation: landing-arrow-wobble 380ms var(--ease-out);
+  }
+  .landing__coupon {
+    animation: landing-coupon-in 520ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+}
+@keyframes landing-arrow-wobble {
+  25% {
+    rotate: calc(-5deg - var(--tries, 0) * 3deg);
+  }
+  55% {
+    rotate: calc(4deg + var(--tries, 0) * 2deg);
+  }
+  80% {
+    rotate: -2deg;
+  }
+}
+@keyframes landing-coupon-in {
+  from {
+    opacity: 0;
+    transform: translateX(-10px) rotate(-10deg) scale(0.7);
+  }
+}
+/* The coupon: a small brass ticket with notched ends and a perforated stub. */
+.landing__coupon {
+  display: inline-flex;
+  align-items: stretch;
+  height: 38px;
+  border-radius: 4px;
+  background: color-mix(in oklab, var(--bruised) 16%, var(--surface-solid));
+  color: var(--bruised-text);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transform: rotate(-3deg);
+  -webkit-mask:
+    radial-gradient(circle 5px at 0 50%, #0000 96%, #000) left / 51% 100% no-repeat,
+    radial-gradient(circle 5px at 100% 50%, #0000 96%, #000) right / 51% 100% no-repeat;
+  mask:
+    radial-gradient(circle 5px at 0 50%, #0000 96%, #000) left / 51% 100% no-repeat,
+    radial-gradient(circle 5px at 100% 50%, #0000 96%, #000) right / 51% 100% no-repeat;
+  transition:
+    background-color var(--dur-2) var(--ease-out),
+    transform var(--dur-3) var(--ease-out);
+}
+.landing__coupon:hover {
+  background: color-mix(in oklab, var(--bruised) 26%, var(--surface-solid));
+  color: var(--bruised-text);
+  transform: rotate(0deg);
+}
+.landing__coupon:focus-visible {
+  outline: 2px solid var(--bruised);
+  outline-offset: 3px;
+}
+.landing__coupon-stub {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 9px 0 13px;
+  border-right: 1.5px dashed var(--bruised-line);
+  font-size: 10px;
+}
+.landing__coupon-text {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 15px 0 10px;
+  font-weight: 500;
+}
 @keyframes landing-dot-pulse {
   50% {
     opacity: 0.35;
@@ -407,6 +497,9 @@
   .landing__ctas {
     flex-direction: column;
     align-items: stretch;
+  }
+  .landing__coupon {
+    align-self: center;
   }
   .landing__steps {
     padding-bottom: 56px;

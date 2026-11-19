@@ -1,8 +1,9 @@
-import { type CSSProperties, type MouseEvent } from 'react'
+import { type CSSProperties, type MouseEvent, useEffect, useRef, useState } from 'react'
 import { hrefFor } from '../../state/router'
 import type { Breakpoint } from '../hooks'
 import { ThemeCycleButton, ThemeToggle } from '../shell/ThemeToggle'
 import { Wordmark } from '../shell/TopBar'
+import { createDoor, readCoupon, saveCoupon } from './arrowDoor'
 import './landing.css'
 import { LandingStory } from './LandingStory'
 
@@ -102,6 +103,75 @@ function AtlasGlobe() {
   )
 }
 
+/** A small brass ticket, drawn where the arrow was once it gives up. */
+function Coupon() {
+  return (
+    <a href="#income" className="landing__coupon" aria-label="Admit one: living on income">
+      <span className="landing__coupon-stub" aria-hidden="true">
+        ✦
+      </span>
+      <span className="landing__coupon-text" aria-hidden="true">
+        Admit one
+      </span>
+    </a>
+  )
+}
+
+/**
+ * "Find your eVelo": a plain link to the plan. Pointer clicks on the arrow alone go through the
+ * click sequence (arrowDoor.ts): one click follows the link after a short wait, each quick click
+ * after that droops the arrow further, and the fifth swaps it for a coupon that lasts the visit.
+ * The label, the keyboard and modified clicks behave as an ordinary link.
+ */
+function FindCta() {
+  const [coupon, setCoupon] = useState(readCoupon)
+  const [tries, setTries] = useState(0)
+  const linkRef = useRef<HTMLAnchorElement>(null)
+  const doorRef = useRef<ReturnType<typeof createDoor> | null>(null)
+
+  useEffect(() => {
+    const door = createDoor({
+      // A programmatic click on the link itself: its target isn't the arrow, so it navigates as usual.
+      onGo: () => linkRef.current?.click(),
+      onCoupon: () => {
+        saveCoupon()
+        setCoupon(true)
+      },
+      onClicks: setTries,
+    })
+    doorRef.current = door
+    return () => {
+      door.dispose()
+      doorRef.current = null
+    }
+  }, [])
+
+  const onClick = (e: MouseEvent<HTMLAnchorElement>) => {
+    if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return
+    if (!(e.target instanceof Element) || !e.target.closest('.landing__cta-door')) return
+    if (!doorRef.current) return
+    e.preventDefault()
+    doorRef.current.click()
+  }
+
+  return (
+    <>
+      <a ref={linkRef} href={hrefFor('plan')} className="landing__cta landing__cta--primary" onClick={onClick}>
+        Find your eVelo
+        {!coupon && (
+          <span className="landing__cta-door" style={{ '--tries': tries } as CSSProperties}>
+            {/* Keyed by the count, so each quick click replays the wobble. */}
+            <span key={tries} className={tries ? 'landing__cta-wobble' : undefined}>
+              <ClimbArrow />
+            </span>
+          </span>
+        )}
+      </a>
+      {coupon && <Coupon />}
+    </>
+  )
+}
+
 /**
  * The landing page (`#home`). Full-bleed, with its own header in place of the app's top bar: the
  * hero copy beside the story card (one illustrative plan, St. Louis to Bangkok, in four beats),
@@ -154,10 +224,7 @@ export function LandingView({ bp }: { bp: Breakpoint }) {
                   </p>
                 </div>
                 <div className="landing__ctas">
-                  <a href={hrefFor('plan')} className="landing__cta landing__cta--primary">
-                    Find your eVelo
-                    <ClimbArrow />
-                  </a>
+                  <FindCta />
                   <a href={hrefFor('atlas')} className="landing__cta landing__cta--ghost">
                     <AtlasGlobe />
                     Explore the Atlas
