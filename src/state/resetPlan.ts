@@ -1,11 +1,15 @@
 // Recovery for a plan that can't be drawn: clear the stored plan, drop a share link from the URL,
-// reload to the defaults. The theme (stored beside the plan), saved portfolios
-// (`evelo:v2:portfolios`) and other keys are kept.
+// reload to the defaults. The living-on-income mode's own state (`evelo:v2:income`) is cleared too.
+// The theme (stored beside the plan), saved portfolios (`evelo:v2:portfolios`) and other keys are
+// kept.
 import { parsePersisted } from './persisted'
 import { parseHash } from './router'
 
 /** The localStorage key the store keeps the plan (and theme) under — see store.ts. */
 export const PLAN_KEY = 'evelo:v2'
+/** The living-on-income mode's own inputs — see incomeState.ts. Kept here so the main chunk can
+ *  clear it without loading the mode. */
+export const INCOME_KEY = 'evelo:v2:income'
 
 export interface ResetDeps {
   /** Null when storage is unavailable. */
@@ -33,6 +37,11 @@ export function clearStoredPlan(storage: Pick<Storage, 'getItem' | 'setItem' | '
 }
 
 export function resetPlan(deps: ResetDeps): void {
+  try {
+    deps.storage?.removeItem(INCOME_KEY)
+  } catch {
+    /* storage blocked */
+  }
   try {
     if (deps.storage) clearStoredPlan(deps.storage)
   } catch {

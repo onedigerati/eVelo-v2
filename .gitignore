@@ -7,3 +7,4 @@ tsconfig.tsbuildinfo
 .preview/
 lighthouse/
 e2e/out/
+e2e/screenshots/

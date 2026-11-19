@@ -6,12 +6,16 @@
 // and the legacy `#/?p=…` all work.
 // `#home` is the landing page, and the default: the bare URL shows it on every visit (see
 // resolveRoute).
+// `#income` is the hidden living-on-income mode: a known route, so it resolves, but it is in no
+// nav or visible list (NAV_ROUTES, the tab bar, Method, the styleguide) — a test checks.
 
-export type Route = 'home' | 'outlook' | 'plan' | 'atlas' | 'method' | 'styleguide'
+export type Route = 'home' | 'outlook' | 'plan' | 'atlas' | 'method' | 'styleguide' | 'income'
 
 /** App routes (everything but the landing). */
 const APP_ROUTES: readonly Route[] = ['outlook', 'plan', 'atlas', 'method', 'styleguide']
-const ROUTES: readonly Route[] = ['home', ...APP_ROUTES]
+/** Known but never listed anywhere a user could see. */
+const HIDDEN_ROUTES: readonly Route[] = ['income']
+const ROUTES: readonly Route[] = ['home', ...APP_ROUTES, ...HIDDEN_ROUTES]
 
 export const NAV_ROUTES: { route: Route; label: string; href: string }[] = [
   { route: 'plan', label: 'Plan', href: '#plan' },
@@ -27,7 +31,7 @@ export const NAV_ROUTES: { route: Route; label: string; href: string }[] = [
  */
 export function topNav(route: Route, desktop: boolean): { items: typeof NAV_ROUTES; active: Route | null } {
   const items = desktop ? NAV_ROUTES.filter((n) => n.route !== 'outlook') : NAV_ROUTES
-  const active = route === 'styleguide' || route === 'home' ? null : desktop && route === 'outlook' ? 'plan' : route
+  const active = route === 'styleguide' || route === 'home' || route === 'income' ? null : desktop && route === 'outlook' ? 'plan' : route
   return { items, active }
 }
 
