@@ -13,7 +13,8 @@ import { simulate } from '../../../engine/simulate'
 import type { MarketData, PlanInputs } from '../../../engine/types'
 import { applySync, snapshotFromEvelo, SYNC_FIELDS } from '../../../state/incomeSync'
 import { compareColumns, compareHeading, eveloRate, incomeRate, likeForLike, localTaxWords, MEASURES, SAME_HEADING, SIDE_BY_SIDE_HEADING, stableKey, statText } from '../compare'
-import { chartGeom, compareRows, compareSummary, yMaxOf, type CompareSeries } from '../compareChart'
+import { chartGeom, compareReadout, compareRows, compareSummary, yMaxOf, type CompareSeries } from '../compareChart'
+import { currencyCompact } from '../../format'
 
 const market = marketJson as unknown as MarketData
 // DEFAULT_INPUTS moves abroad; these plans stay home unless a test says otherwise.
@@ -197,5 +198,47 @@ describe('compare chart geometry', () => {
     expect(rows[3].income).toBeNull()
     expect(rows[1].evelo).toEqual([0.8e6, 1e6, 1.25e6])
     expect(compareSummary(series)).toContain('eVelo’s median'.replace('’', "'"))
+  })
+})
+
+describe('compare chart readout', () => {
+  const band = (a: number[]) => ({ p25: a.map((v) => v * 0.8), p50: a, p75: a.map((v) => v * 1.25) })
+  const income: CompareSeries = { key: 'income', label: 'Living on income', age: 60, bands: band([1e6, 1.1e6, 1.2e6]) }
+  const evelo: CompareSeries = { key: 'evelo', label: 'eVelo', age: 60, bands: band([1e6, 1.4e6, 0.9e6]) }
+
+  it('reads each series’ bands at the age, and the gap by who is ahead', () => {
+    const r = compareReadout([income, evelo], 1)
+    expect(r.age).toBe(61)
+    expect(r.note).toBe('year 1')
+    expect(r.rows.map((x) => x.values)).toEqual([
+      [income.bands.p25[1], income.bands.p50[1], income.bands.p75[1]],
+      [evelo.bands.p25[1], evelo.bands.p50[1], evelo.bands.p75[1]],
+    ])
+    expect(r.rows[1].median).toBe(currencyCompact(1.4e6))
+    expect(r.rows[1].middle).toBe(`${currencyCompact(1.12e6)}–${currencyCompact(1.75e6)}`)
+    expect(r.gap).toEqual({ ahead: 'evelo', text: 'eVelo ahead by', value: currencyCompact(0.3e6) })
+    expect(compareReadout([income, evelo], 2).gap).toEqual({ ahead: 'income', text: 'Living on income ahead by', value: currencyCompact(0.3e6) })
+    expect(compareReadout([income, evelo], 0)).toMatchObject({ note: 'today', gap: { ahead: null, text: 'Gap between medians' } })
+  })
+
+  it('has no gap while eVelo is missing', () => {
+    const r = compareReadout([income], 2)
+    expect(r.age).toBe(62)
+    expect(r.rows.map((x) => x.key)).toEqual(['income'])
+    expect(r.gap).toBeNull()
+  })
+
+  it('leaves out a series with no value at the age when the ages differ', () => {
+    const later = { ...evelo, age: 61 }
+    const first = compareReadout([income, later], 0)
+    expect(first.rows.map((x) => x.key)).toEqual(['income'])
+    expect(first.gap).toBeNull()
+    const end = compareReadout([income, later], 3)
+    expect(end.age).toBe(63)
+    expect(end.rows.map((x) => x.key)).toEqual(['evelo'])
+    expect(end.rows[0].values[1]).toBe(0.9e6)
+    const mid = compareReadout([income, later], 1)
+    expect(mid.rows.map((x) => x.values[1])).toEqual([1.1e6, 1e6])
+    expect(mid.gap?.ahead).toBe('income')
   })
 })

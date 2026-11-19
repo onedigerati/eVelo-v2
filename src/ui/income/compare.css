@@ -215,10 +215,21 @@
   position: relative;
   width: 100%;
   min-width: 0;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
 }
 .cchart__svg {
   display: block;
   overflow: visible;
+  cursor: crosshair;
+}
+.cchart__svg:focus-visible {
+  outline: none;
+}
+.cchart__plot:has(svg:focus-visible) {
+  border-radius: var(--radius-sm);
+  box-shadow: var(--focus-ring);
 }
 .cchart__grid line {
   stroke: var(--chart-grid);
@@ -252,6 +263,27 @@
 }
 .cchart__dot {
   fill: var(--cs);
+}
+/* The crosshair: a guide at the age, a dot on each median, rings at its quartiles. */
+.cchart__cross line {
+  stroke: var(--chart-crosshair);
+  stroke-width: 1;
+}
+.cchart__cross-dot {
+  fill: var(--cs);
+  stroke: var(--bg);
+  stroke-width: 2.5;
+}
+.cchart__cross-ring {
+  fill: var(--bg);
+  stroke: var(--cs);
+  stroke-width: 1.5;
+}
+.cchart__swatch--income {
+  fill: var(--bruised);
+}
+.cchart__swatch--evelo {
+  fill: var(--holds);
 }
 
 /* ---------- Like for like ---------- */
