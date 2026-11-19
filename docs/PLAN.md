@@ -7,25 +7,19 @@ Make the Living on Income mode's two charts answer the mouse, a finger and the k
 2026-11-19 · tests: 1443 pass, 1 skipped · typecheck: clean · build: ok (chunk-size warning only)
 
 ## Now
-Stage 1 of 1 · Chart readouts
-Risk: UI only
-Checks:
-- [ ] Hovering a year on the results income chart highlights that bar, dims the rest, and shows a readout with the age, each unlocked income line, tax, amount sold, and cash in vs spending (with the surplus reinvested or the gap) — the same figures as that year's ledger row (proof: test for the readout figures; run the built app with Playwright for the hover, a test can't move a pointer over the rendered SVG)
-- [ ] While answering the questions on desktop, the readout shows only the layers unlocked so far; the 150px phone question chart has no readout (proof: test for the layer filter; run the built app, a test can't see the rendered variant)
-- [ ] Hovering the comparison chart shows a vertical guide with dots on both medians and a readout with each side's median and middle-half range at that age and the gap between the medians (proof: test for the figures; run the built app for the hover)
-- [ ] Both charts: Arrow, Home and End step through years with the chart focused and Escape clears it; on a phone a tap or drag scrubs; moving the mouse off clears the readout (proof: run the built app, needs real pointer and key events)
-- [ ] At 390px and 1280px the readout stays fully on screen at the first and last year, and the page doesn't scroll sideways (proof: screenshots and measured bounds, a test can't judge the layout)
-- [ ] The main site's charts and `npm run e2e` are unchanged and the suite is green (proof: test)
-Open: none
+All stages done — awaiting the user's review, then push to deploy
 Agents: wide — confirmed 2026-11-19 09:59
 
 ## Stages
-- [ ] 1. Chart readouts — hover, tap and keyboard readouts on the income chart (results and desktop ask) and the comparison chart, reusing `useCrosshair` from `chartKit.ts`
+- [x] 1. Chart readouts — hover, tap and keyboard readouts on the income chart (results and desktop ask) and the comparison chart, reusing `useCrosshair` from `chartKit.ts`
 
 ## Decisions
 - 2026-11-19 · Reuse eVelo's crosshair (`useCrosshair` in `src/ui/outlook/chartKit.ts`) and the fan chart's readout pattern for both charts, so the mode feels like the rest of the app — user: "Yes proceed."
 - 2026-11-19 · The readout is on for the desktop question chart and both results charts, and off for the 150px phone question chart (too small to scrub) — PM default, proposed to the user before they said proceed.
 - 2026-11-19 · The income readout shows only the layers unlocked so far, so it doesn't run ahead of the questions — PM default.
+- 2026-11-19 · Agents: wide, confirmed for this session — user picked "Wide".
+- 2026-11-19 · The income readout ends with spending, then either "Sold to cover" or "Reinvested", each the engine's own median for the year, rather than a "short of spending" line worked out from other medians, which sat beside a nearly equal "Sold to cover" — PM, on the builder's report.
+- 2026-11-19 · On a phone the comparison readout shows medians and the gap only (no middle-half rows) so it fits the 180px plot, and the income readout sits just under its 170px plot, over the legend, so the bars stay in view; a tap outside either chart clears its readout — from the verify.
 - 2026-11-19 · Scale: one stage, one release; no scale signal fired, planned as one plan.
 
 ## Open questions

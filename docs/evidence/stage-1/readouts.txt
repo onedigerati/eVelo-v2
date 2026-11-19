@@ -1,0 +1,117 @@
+ok   1280 ask q1: no layers yet, no readout
+ok   1280 ask q2: no layers yet, no readout
+ok   1280 ask q3: desktop ask chart (ic ic--ask) is focusable with a readout
+ok   1280 ask q3 (layers 1): readout shows only unlocked lines: Dividends
+ok   1280 ask q4: desktop ask chart (ic ic--ask) is focusable with a readout
+ok   1280 ask q4 (layers 2): readout shows only unlocked lines: Dividends, Muni coupons, Taxable interest
+ok   1280 ask q5: desktop ask chart (ic ic--ask) is focusable with a readout
+ok   1280 ask q5 (layers 3): readout shows only unlocked lines: Dividends, Muni coupons, Taxable interest, Tax
+ok   1280 ask q6: desktop ask chart (ic ic--ask) is focusable with a readout
+ok   1280 ask q6 (layers 4): readout adds Social Security/Spending: Dividends, Muni coupons, Taxable interest, Social Security, Tax, Spending, Sold to cover (age 77)
+ok   1280 results: 30 bars for 30 median years
+ok   1280 results hover bar 0: readout on, age 62 (= 62), one bar active, rest dimmed (opacity 1 vs 0.32)
+ok   1280 results bar 0: readout = worker's median year → Dividends $13,300 · Muni coupons $25,200 · Taxable interest $13,000 · Social Security $0 · Tax $4,400 · Spending $96,000 · Sold to cover $48,700
+ok   1280 results bar 0: matches ledger row age 62 (ledger: Dividends $13,300, Muni coupons $25,200, Taxable interest $6,500, Treasury interest $6,500, Social Security $0, Tax $4,400, Sold to cover $48,700)
+ok   1280 results bar 0: cash in vs spending, with Spending $96,000 / Sold to cover $48,700
+ok   1280 results year first: readout inside viewport width (L62.0 R268.0 T63.9 B303.7, vw 1280), page overflow 0
+ok   1280 results year first: readout inside viewport height (vh 860)
+     income plot 32.0..1248.0 x, 33.9..393.9 y; readout below plot bottom by -90.3px
+ok   1280 results hover bar 4: readout on, age 66 (= 66), one bar active, rest dimmed (opacity 1 vs 0.32)
+ok   1280 results bar 4: readout = worker's median year → Dividends $14,200 · Muni coupons $21,200 · Taxable interest $10,700 · Social Security $0 · Tax $4,800 · Spending $96,000 · Sold to cover $54,000
+ok   1280 results bar 4: matches ledger row age 66 (ledger: Dividends $14,200, Muni coupons $21,200, Taxable interest $5,400, Treasury interest $5,300, Social Security $0, Tax $4,800, Sold to cover $54,000)
+ok   1280 results bar 4: cash in vs spending, with Spending $96,000 / Sold to cover $54,000
+ok   1280 results hover bar 12: readout on, age 74 (= 74), one bar active, rest dimmed (opacity 1 vs 0.32)
+ok   1280 results bar 12: readout = worker's median year → Dividends $20,800 · Muni coupons $16,800 · Taxable interest $7,800 · Social Security $40,000 · Tax $3,800 · Spending $96,000 · Sold to cover $13,800
+ok   1280 results bar 12: matches ledger row age 74 (ledger: Dividends $20,800, Muni coupons $16,800, Taxable interest $4,000, Treasury interest $3,900, Social Security $40,000, Tax $3,800, Sold to cover $13,800)
+ok   1280 results bar 12: cash in vs spending, with Spending $96,000 / Sold to cover $13,800
+ok   1280 results hover bar 22: readout on, age 84 (= 84), one bar active, rest dimmed (opacity 1 vs 0.32)
+ok   1280 results bar 22: readout = worker's median year → Dividends $36,400 · Muni coupons $13,100 · Taxable interest $5,500 · Social Security $40,000 · Tax $4,000 · Spending $96,000 · Sold to cover $4,700
+ok   1280 results bar 22: matches ledger row age 84 (ledger: Dividends $36,400, Muni coupons $13,100, Taxable interest $2,900, Treasury interest $2,700, Social Security $40,000, Tax $4,000, Sold to cover $4,700)
+ok   1280 results bar 22: cash in vs spending, with Spending $96,000 / Sold to cover $4,700
+ok   1280 results hover bar 29: readout on, age 91 (= 91), one bar active, rest dimmed (opacity 1 vs 0.32)
+ok   1280 results bar 29: readout = worker's median year → Dividends $53,400 · Muni coupons $11,700 · Taxable interest $4,800 · Social Security $40,000 · Tax $5,000 · Spending $96,000 · Reinvested $9,800
+ok   1280 results bar 29: matches ledger row age 91 (ledger: Dividends $53,400, Muni coupons $11,700, Taxable interest $2,500, Treasury interest $2,300, Social Security $40,000, Tax $5,000, Sold to cover $0)
+ok   1280 results bar 29: cash in vs spending, with Spending $96,000 / Reinvested $9,800
+ok   1280 results year last: readout inside viewport width (L979.0 R1178.0 T63.9 B303.7, vw 1280), page overflow 0
+ok   1280 results year last: readout inside viewport height (vh 860)
+     income plot 32.0..1248.0 x, 33.9..393.9 y; readout below plot bottom by -90.3px
+ok   1280 results: mouse off the chart clears the readout and dimming
+ok   1280 results keys: Home→62 ArrowRight→63 ArrowRight→64 End→91 ArrowLeft→90 PageDown→85 Home→62 ArrowLeft→62
+ok   1280 results: Escape clears the readout
+ok   1280: no page/console errors
+ok   390 ask q1: no layers yet, no readout
+ok   390 ask q2: no layers yet, no readout
+ok   390 ask q3: phone ask chart (ic ic--phone-ask) has no tabindex (null) and no readout element (0)
+ok   390 ask q3: phone ask plot is 150px tall (150)
+ok   390 ask q3: a tap on the phone ask chart shows no readout and dims nothing
+ok   390 ask q4: phone ask chart (ic ic--phone-ask) has no tabindex (null) and no readout element (0)
+ok   390 ask q4: phone ask plot is 150px tall (150)
+ok   390 ask q4: a tap on the phone ask chart shows no readout and dims nothing
+ok   390 ask q5: phone ask chart (ic ic--phone-ask) has no tabindex (null) and no readout element (0)
+ok   390 ask q5: phone ask plot is 150px tall (150)
+ok   390 ask q5: a tap on the phone ask chart shows no readout and dims nothing
+ok   390 ask q6: phone ask chart (ic ic--phone-ask) has no tabindex (null) and no readout element (0)
+ok   390 ask q6: phone ask plot is 150px tall (150)
+ok   390 ask q6: a tap on the phone ask chart shows no readout and dims nothing
+ok   390 results: 30 bars for 30 median years
+ok   390 results tap bar 0: readout on, age 62 (= 62), one bar active, rest dimmed (opacity 1 vs 0.32)
+ok   390 results bar 0: readout = worker's median year → Dividends $13,300 · Muni coupons $25,200 · Taxable interest $13,000 · Social Security $0 · Tax $4,400 · Spending $96,000 · Sold to cover $48,700
+ok   390 results bar 0: matches ledger row age 62 (ledger: Dividends $13,300, Muni coupons $25,200, Taxable interest $6,500, Treasury interest $6,500, Social Security $0, Tax $4,400, Sold to cover $48,700)
+ok   390 results bar 0: cash in vs spending, with Spending $96,000 / Sold to cover $48,700
+ok   390 results year first: readout inside viewport width (L35.0 R241.0 T456.4 B696.1, vw 390), page overflow 0
+ok   390 results year first: readout inside viewport height (vh 844)
+     income plot 16.0..374.0 x, 280.4..450.4 y; readout below plot bottom by 245.7px
+ok   390 results tap bar 5: readout on, age 67 (= 67), one bar active, rest dimmed (opacity 1 vs 0.32)
+ok   390 results bar 5: readout = worker's median year → Dividends $14,400 · Muni coupons $20,300 · Taxable interest $10,100 · Social Security $40,000 · Tax $3,700 · Spending $96,000 · Sold to cover $14,200
+ok   390 results bar 5: matches ledger row age 67 (ledger: Dividends $14,400, Muni coupons $20,300, Taxable interest $5,100, Treasury interest $5,000, Social Security $40,000, Tax $3,700, Sold to cover $14,200)
+ok   390 results bar 5: cash in vs spending, with Spending $96,000 / Sold to cover $14,200
+ok   390 results tap bar 29: readout on, age 91 (= 91), one bar active, rest dimmed (opacity 1 vs 0.32)
+ok   390 results bar 29: readout = worker's median year → Dividends $53,400 · Muni coupons $11,700 · Taxable interest $4,800 · Social Security $40,000 · Tax $5,000 · Spending $96,000 · Reinvested $9,800
+ok   390 results bar 29: matches ledger row age 91 (ledger: Dividends $53,400, Muni coupons $11,700, Taxable interest $2,500, Treasury interest $2,300, Social Security $40,000, Tax $5,000, Sold to cover $0)
+ok   390 results bar 29: cash in vs spending, with Spending $96,000 / Reinvested $9,800
+ok   390 results year last: readout inside viewport width (L156.0 R355.0 T456.4 B696.1, vw 390), page overflow 0
+ok   390 results year last: readout inside viewport height (vh 844)
+     income plot 16.0..374.0 x, 280.4..450.4 y; readout below plot bottom by 245.7px
+ok   390 results: on a phone the readout sits under the bars (readout top 456.4 ≥ plot bottom 450.4)
+     outside tap target {"x":16,"y":132,"width":358,"height":17.046875}; url http://localhost:4183/#income
+     after outside tap url http://localhost:4183/#income
+ok   390 results: a tap outside the chart clears the readout
+ok   390 results: a touch drag from bar 2 to bar 20 scrubs (readout age 82, expected 82)
+ok   390 results: no sideways scroll after drag
+ok   390: no page/console errors
+ok   1280 compare: comparison ready with eVelo's result
+ok   1280 compare hover 30%: guide line at x=360.8, 2 median dots, 4 quartile rings; readout age 69
+ok   1280 compare hover 30%: readout = node compareReadout → Living on income $3.4M · middle half $2.6M–$4.4M · eVelo $3.9M · middle half $2.7M–$5.4M · eVelo ahead by $489K
+ok   1280 compare hover 70%: guide line at x=796.9, 2 median dots, 4 quartile rings; readout age 80
+ok   1280 compare hover 70%: readout = node compareReadout → Living on income $4.8M · middle half $3.0M–$7.8M · eVelo $6.4M · middle half $3.0M–$11M · eVelo ahead by $1.5M
+ok   1280 compare: mouse off clears readout and guide
+ok   1280 compare keys: Home→60 ArrowRight→61 End→88 ArrowLeft→87
+ok   1280 compare key Home: guide line at x=4.0, 2 median dots, 4 quartile rings; readout age 60
+ok   1280 compare key Home: readout = node compareReadout → Living on income $3.0M · middle half $3.0M–$3.0M · eVelo $3.0M · middle half $3.0M–$3.0M · Gap between medians $0
+ok   1280 compare first age: readout inside viewport width (L75.0 R287.0 T335.9 B528.9, vw 1280), overflow 0
+ok   1280 compare first age: readout inside viewport height (vh 860)
+ok   1280 compare key End: guide line at x=1114.0, 2 median dots, 4 quartile rings; readout age 88
+ok   1280 compare key End: readout = node compareReadout → Living on income $6.9M · middle half $3.5M–$12M · eVelo $9.6M · middle half $2.2M–$18M · eVelo ahead by $2.8M
+ok   1280 compare last age: readout inside viewport width (L957.0 R1157.0 T335.9 B528.9, vw 1280), overflow 0
+ok   1280 compare last age: readout inside viewport height (vh 860)
+ok   1280 compare: Escape clears the readout
+ok   1280 compare: no page/console errors
+ok   390 compare: comparison ready with eVelo's result
+ok   390 compare tap first: guide line at x=4.0, 2 median dots, 4 quartile rings; readout age 60
+ok   390 compare tap first: readout = node compareReadout → Living on income $3.0M · eVelo $3.0M · Gap between medians $0
+ok   390 compare first age (60): readout inside viewport width (L51.0 R263.0 T390.7 B536.8, vw 390), overflow 0
+ok   390 compare first age: readout inside viewport height (vh 844)
+     compare plot 372.7..552.7 y; readout below svg bottom by -15.8px
+ok   390 compare tap last: guide line at x=320.0, 2 median dots, 4 quartile rings; readout age 88
+ok   390 compare tap last: readout = node compareReadout → Living on income $6.9M · eVelo $9.6M · eVelo ahead by $2.8M
+ok   390 compare last age (88): readout inside viewport width (L140.0 R339.0 T390.7 B536.8, vw 390), overflow 0
+ok   390 compare last age: readout inside viewport height (vh 844)
+     compare plot 372.7..552.7 y; readout below svg bottom by -15.8px
+ok   390 compare: a touch drag scrubs (age 83)
+ok   390 compare: no page/console errors
+ok   fan (#plan): hover shows eVelo's own .fan__readout (Age 72 year 17)
+ok   fan (#plan): mouse off clears it
+ok   fan (#plan): the mode's readout isn't on the main site
+ok   fan: no page errors
+
+all readout checks passed

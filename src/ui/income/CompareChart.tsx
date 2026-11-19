@@ -6,7 +6,7 @@
 import { useId } from 'react'
 import { currency } from '../format'
 import { moneyTick, useCrosshair, useSize } from '../outlook/chartKit'
-import { ChartReadout, ReadoutHead, ReadoutRow } from './ChartReadout'
+import { ChartReadout, useClearOnOutsideTap, ReadoutHead, ReadoutRow } from './ChartReadout'
 import { chartGeom, compareReadout, compareRows, compareSummary, type CompareSeries } from './compareChart'
 
 export interface CompareChartProps {
@@ -30,6 +30,7 @@ export function CompareChart({ series, phone }: CompareChartProps) {
   const x0 = m.l, x1 = Math.max(m.l + 10, width - m.r)
   const ch = useCrosshair(a1 - a0 + 1, (cx, rect) => Math.round(((cx - rect.left - x0) / (x1 - x0)) * (a1 - a0)))
   const hi = ch.index
+  useClearOnOutsideTap(wrap, hi !== null, ch.clear)
   const hx = hi !== null ? g.x(a0 + hi) : 0
   const read = hi !== null ? compareReadout(series, hi) : null
 

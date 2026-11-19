@@ -8,7 +8,7 @@
 //     <ReadoutRow keyClass="ic__seg ic__seg--dividends" label="Dividends" value="$12,400" />
 //   </ChartReadout>
 
-import { useLayoutEffect, useRef, useState, type ReactNode } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState, type ReactNode, type RefObject } from 'react'
 import { cx } from '../primitives'
 import { readoutLeft } from './chartReadout'
 import './chartReadout.css'
@@ -49,6 +49,21 @@ export function ChartReadout({ id, x, width, top, on, children }: ChartReadoutPr
       {on && children}
     </div>
   )
+}
+
+/** Clears a chart's crosshair when a pointer goes down outside `ref` while it's on: on touch the
+ *  crosshair never hears a pointer leave, so a tap elsewhere is how a phone puts it away. */
+export function useClearOnOutsideTap(ref: RefObject<Element | null>, on: boolean, clear: () => void) {
+  const latest = useRef(clear)
+  latest.current = clear
+  useEffect(() => {
+    if (!on) return
+    const down = (e: PointerEvent) => {
+      if (ref.current && e.target instanceof Node && !ref.current.contains(e.target)) latest.current()
+    }
+    document.addEventListener('pointerdown', down, true)
+    return () => document.removeEventListener('pointerdown', down, true)
+  }, [on, ref])
 }
 
 /** The readout's heading: "Age 67" with a faint note on the right. */

@@ -10,7 +10,7 @@ import type { IncomeYearRow } from '../../engine/incomeTypes'
 import { currency, currencyCompact } from '../format'
 import { moneyTick, useCrosshair, useSize } from '../outlook/chartKit'
 import { cx } from '../primitives'
-import { ChartReadout, ReadoutHead, ReadoutRow } from './ChartReadout'
+import { ChartReadout, useClearOnOutsideTap, ReadoutHead, ReadoutRow } from './ChartReadout'
 import { ageTicks, bandIndexAt, bandX, chartSummary, justAddedLine, MEDIAN_NOTE, readoutRows, stackRows, taxableOf, yMaxFor, type IncomeLayers, type Span } from './incomeChart'
 import './incomeChart.css'
 
@@ -71,6 +71,7 @@ export function IncomeChart({ rows, layers, spending, variant, justAdded }: Inco
   const interactive = variant !== 'phone-ask' && layers >= 1 && rows.length > 0
   const ch = useCrosshair(rows.length, (clientX, r) => bandIndexAt(clientX - r.left, rows.length, m.l, x.step(), x.bandwidth()))
   const hi = interactive && ch.index !== null && ch.index < rows.length ? ch.index : null
+  useClearOnOutsideTap(wrap, hi !== null, ch.clear)
   const hx = hi !== null ? (x(rows[hi].age) ?? 0) + x.bandwidth() / 2 : 0
   const rect = (s: Span) => {
     const y0 = y(s[0])
@@ -160,8 +161,9 @@ export function IncomeChart({ rows, layers, spending, variant, justAdded }: Inco
             </g>
           </svg>
         )}
+        {/* on a phone the plot is 170px: the readout sits under it, over the legend, so the bars stay in view */}
         {interactive && width > 0 && (
-          <ChartReadout id={`${uid}-read`} x={hx} width={width} top={m.t + 6} on={hi !== null}>
+          <ChartReadout id={`${uid}-read`} x={hx} width={width} top={phone ? height + 6 : m.t + 6} on={hi !== null}>
             {hi !== null && (
               <>
                 <ReadoutHead age={rows[hi].age} note={`year ${rows[hi].year}`} />
