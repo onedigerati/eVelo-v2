@@ -60,6 +60,14 @@ await withPreview(async (base) => {
       const waited = Date.now() - t0
       check(early === '#home' && new URL(p.url()).hash === '#plan' && waited >= 100 && waited < 900, `${name}: one arrow click goes to #plan after the wait (still ${early} at 150 ms, there by ~${waited} ms)`)
 
+      // Two quick clicks (a double-click) still go to the plan after the wait.
+      await home()
+      await clickArrow(p, 2)
+      await p.waitForTimeout(150)
+      const early2 = new URL(p.url()).hash
+      await p.waitForFunction(() => location.hash === '#plan', null, { timeout: 2000 }).catch(() => {})
+      check(early2 === '#home' && new URL(p.url()).hash === '#plan' && (await coupon(p).count()) === 0, `${name}: a quick double-click on the arrow goes to #plan after the wait (still ${early2} at 150 ms)`)
+
       // Three quick clicks go nowhere.
       await home()
       await clickArrow(p, 3)
@@ -91,6 +99,30 @@ await withPreview(async (base) => {
       check(new URL(p.url()).hash === '#plan', `${name}: label click with the coupon goes to #plan`)
 
       check(errors.length === 0, `${name}: no uncaught page errors${errors.length ? ': ' + errors.join(' | ') : ''}`)
+      await ctx.close()
+    }
+
+    // Touch: five quick taps on the arrow at phone width give the coupon (no double-tap zoom).
+    {
+      const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true })
+      const p = await ctx.newPage()
+      const errors = []
+      p.on('pageerror', (e) => errors.push(e.message))
+      await p.goto(base + '#home')
+      await p.waitForLoadState('networkidle')
+      await arrow(p).waitFor()
+      const ta = await p.evaluate(() => getComputedStyle(document.querySelector('a.landing__cta--primary')).touchAction)
+      check(ta === 'manipulation', `touch: CTA has touch-action: manipulation (got ${ta})`)
+      const box = await arrow(p).boundingBox()
+      for (let i = 0; i < 5; i++) {
+        await p.touchscreen.tap(box.x + box.width / 2, box.y + box.height / 2)
+        if (i < 4) await p.waitForTimeout(80)
+      }
+      await coupon(p).waitFor({ timeout: 2000 }).catch(() => {})
+      await p.waitForTimeout(500)
+      check((await coupon(p).count()) === 1 && new URL(p.url()).hash === '#home', 'touch: five quick taps on the arrow show the coupon and stay on #home')
+      await p.screenshot({ path: `${OUT}door-touch-coupon.png` })
+      check(errors.length === 0, `touch: no uncaught page errors${errors.length ? ': ' + errors.join(' | ') : ''}`)
       await ctx.close()
     }
 

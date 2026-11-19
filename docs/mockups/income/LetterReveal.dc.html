@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Study C: The Letter, reveal</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0d0c09}
+a{color:#e3b262}a:hover{color:#f0c987}
+</style>
+</helmet>
+<div style="width:390px;height:844px;box-sizing:border-box;background:#0d0c09;color:#ecf1ee;font-family:'Geist',system-ui,sans-serif;display:flex;flex-direction:column;padding:24px 24px 28px;gap:22px">
+
+  <div style="display:flex;justify-content:space-between;align-items:center;height:44px">
+    <a href="#" aria-label="Back to eVelo" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;margin-left:-12px;color:#a9b5af;text-decoration:none;font-size:20px">←</a>
+    <span style="font-family:'Geist Mono',monospace;font-size:12px;color:#84918b">your answer</span>
+  </div>
+
+  <span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#e3b262">The other way, in reply</span>
+
+  <p style="margin:0;font-family:'Instrument Serif',serif;font-size:30px;line-height:1.25;letter-spacing:-0.01em">Your money pays about <span style="color:#e3b262">three-fifths</span> of your bills. The rest comes from selling, and the money lasts in <span style="color:#e3b262">84 of 100</span> futures.</p>
+
+  <figure style="margin:0;padding:16px;border-radius:16px;background:rgba(220,255,240,0.035);border:1px solid rgba(220,255,240,0.085);display:flex;flex-direction:column;gap:10px">
+    <svg width="326" height="120" viewBox="0 0 326 120" role="img" aria-label="Income rises from 61% toward 85% of a flat spending line over 30 years; the gap between them is shaded">
+      <path d="M0 24 L326 24 L326 44 C 220 52, 120 62, 0 70 Z" fill="rgba(255,122,106,0.16)"></path>
+      <line x1="0" y1="24" x2="326" y2="24" stroke="#ecf1ee" stroke-width="1.5" stroke-dasharray="4 4"></line>
+      <path d="M0 70 C 120 62, 220 52, 326 44" fill="none" stroke="#e3b262" stroke-width="2.5"></path>
+      <line x1="0" y1="119" x2="326" y2="119" stroke="rgba(220,255,240,0.16)"></line>
+    </svg>
+    <figcaption style="display:flex;justify-content:space-between;font-size:12px;color:#a9b5af"><span><span style="color:#e3b262">—</span> income</span><span>- - spending</span><span style="color:#ff7a6a">▮ sold to cover</span></figcaption>
+  </figure>
+
+  <p style="margin:0;font-size:15px;line-height:1.55;color:#a9b5af">Over 30 years you'd sell about $1.0M of shares, in today's dollars. The munis spare you about $4,100 a year in tax.</p>
+
+  <div style="flex-grow:1"></div>
+
+  <div style="display:flex;flex-direction:column;gap:10px">
+    <a href="#" style="display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:999px;background:#e3b262;color:#1a1408;text-decoration:none;font-size:16px;font-weight:500">See year by year</a>
+    <a href="#" style="display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:999px;border:1px solid rgba(220,255,240,0.16);color:#ecf1ee;text-decoration:none;font-size:15px">⇄ Sync with my eVelo plan</a>
+  </div>
+  <span style="text-align:center;font-size:12px;color:#84918b">Illustrative numbers</span>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

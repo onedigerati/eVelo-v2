@@ -34,13 +34,19 @@ describe('the hidden #income route', () => {
     }
   })
 
-  it('is linked from nowhere on the main site (only the shell that renders it and the mode itself)', () => {
+  it('is linked from nowhere on the main site but the earned coupon (only the shell that renders it and the mode itself)', () => {
     const allowed = new Set(['state/router.ts', 'ui/shell/AppShell.tsx'])
     const offenders = files(SRC)
       .filter((p) => /\.(tsx?|css|html|json|md)$/.test(p) && !p.includes('__tests__'))
       .map((p) => relative(SRC, p).split('\\').join('/'))
       .filter((r) => !r.startsWith('ui/income/') && !r.startsWith('engine/') && !allowed.has(r))
       .filter((r) => /#\/?income\b|['"]income['"]|IncomeMode/.test(readFileSync(join(SRC, r), 'utf8')))
-    expect(offenders).toEqual([])
+    expect(offenders).toEqual(['ui/landing/LandingView.tsx'])
+    // The landing's one mention is the coupon, rendered only after five quick arrow clicks
+    // (arrowDoor.ts; proven by e2e/door.mjs).
+    const landing = readFileSync(join(SRC, 'ui/landing/LandingView.tsx'), 'utf8')
+    const mentions = landing.split('\n').filter((l) => /#\/?income\b|['"]income['"]|IncomeMode/.test(l))
+    expect(mentions).toHaveLength(1)
+    expect(mentions[0]).toContain('className="landing__coupon"')
   })
 })

@@ -177,6 +177,7 @@
 }
 .landing__cta--primary {
   padding: 12px 24px;
+  touch-action: manipulation; /* rapid taps on the arrow count as clicks, not a double-tap zoom */
   background: var(--accent);
   color: var(--accent-ink);
   font-weight: 500;
@@ -252,6 +253,10 @@
   transform-origin: 10px 50%;
   transform: rotate(calc(var(--tries, 0) * 13deg)) translateY(calc(var(--tries, 0) * 0.6px));
   opacity: calc(1 - var(--tries, 0) * 0.1);
+}
+.landing__cta-door {
+  -webkit-user-select: none;
+  user-select: none; /* quick clicks on the arrow don't select the label */
 }
 .landing__cta-door > span {
   display: inline-flex;

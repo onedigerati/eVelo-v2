@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Study A: The Ledger</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0b0c09}
+a{color:#e3b262}a:hover{color:#f0c987}
+</style>
+</helmet>
+<div style="width:1280px;height:860px;box-sizing:border-box;background:#0b0c09;color:#ecf1ee;font-family:'Geist',system-ui,sans-serif;display:flex;flex-direction:column">
+
+  <header style="display:flex;align-items:center;justify-content:space-between;padding:20px 40px;border-bottom:1px solid rgba(227,178,98,0.18)">
+    <a href="#" style="font-size:13px;color:#a9b5af;text-decoration:none">← Back to eVelo</a>
+    <div style="display:flex;align-items:center;gap:10px">
+      <span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#e3b262">The other way</span>
+      <span style="font-family:'Instrument Serif',serif;font-size:20px">Living on income</span>
+    </div>
+    <span style="font-family:'Geist Mono',monospace;font-size:11px;color:#84918b;padding:4px 10px;border:1px solid rgba(227,178,98,0.3);border-radius:999px">experimental</span>
+  </header>
+
+  <div style="display:flex;gap:40px;padding:36px 40px;flex-grow:1">
+
+    <section style="width:440px;flex-shrink:0;display:flex;flex-direction:column;gap:0">
+      <div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#84918b;padding-bottom:12px">Your ledger · 4 of 7 answered</div>
+
+      <div style="display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-bottom:1px solid rgba(227,178,98,0.16)">
+        <span style="font-size:14px;color:#a9b5af">Saved</span>
+        <span style="font-family:'Instrument Serif',serif;font-size:24px">$2,400,000</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-bottom:1px solid rgba(227,178,98,0.16)">
+        <span style="font-size:14px;color:#a9b5af">Need each year</span>
+        <span style="font-family:'Instrument Serif',serif;font-size:24px">$96,000</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-bottom:1px solid rgba(227,178,98,0.16)">
+        <span style="font-size:14px;color:#a9b5af">Stocks / bonds</span>
+        <span style="font-family:'Instrument Serif',serif;font-size:24px">55 / 45</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-bottom:1px solid rgba(227,178,98,0.16)">
+        <span style="font-size:14px;color:#a9b5af">Bonds held as munis</span>
+        <span style="font-family:'Instrument Serif',serif;font-size:24px">70%</span>
+      </div>
+
+      <div style="margin:18px 0;padding:20px;border-radius:14px;background:rgba(227,178,98,0.07);border:1px solid rgba(227,178,98,0.34);display:flex;flex-direction:column;gap:12px">
+        <label for="bracket" style="font-family:'Instrument Serif',serif;font-size:22px;line-height:1.2">Which federal bracket does your ordinary income land in?</label>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button style="min-height:44px;padding:0 14px;border-radius:999px;border:1px solid rgba(220,255,240,0.16);background:transparent;color:#a9b5af;font:inherit;font-size:14px">12%</button>
+          <button style="min-height:44px;padding:0 14px;border-radius:999px;border:1px solid rgba(220,255,240,0.16);background:transparent;color:#a9b5af;font:inherit;font-size:14px">22%</button>
+          <button id="bracket" style="min-height:44px;padding:0 14px;border-radius:999px;border:1px solid #e3b262;background:#e3b262;color:#1a1408;font:inherit;font-size:14px;font-weight:500">24%</button>
+          <button style="min-height:44px;padding:0 14px;border-radius:999px;border:1px solid rgba(220,255,240,0.16);background:transparent;color:#a9b5af;font:inherit;font-size:14px">32%</button>
+          <button style="min-height:44px;padding:0 14px;border-radius:999px;border:1px solid rgba(220,255,240,0.16);background:transparent;color:#a9b5af;font:inherit;font-size:14px">35%+</button>
+        </div>
+        <p style="margin:0;font-size:13px;line-height:1.5;color:#a9b5af">This sets what a muni's tax-free coupon is worth next to a taxable one.</p>
+        <button style="align-self:flex-start;min-height:44px;padding:0 18px;border-radius:999px;border:0;background:#ecf1ee;color:#0b0c09;font:inherit;font-size:14px;font-weight:500">Write it in ↵</button>
+      </div>
+
+      <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px dotted rgba(220,255,240,0.14);color:#5c6762;font-size:14px"><span>Home state</span><span>…</span></div>
+      <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px dotted rgba(220,255,240,0.14);color:#5c6762;font-size:14px"><span>Years to plan for</span><span>…</span></div>
+    </section>
+
+    <section style="flex-grow:1;min-width:0;display:flex;flex-direction:column;gap:20px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px">
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#84918b">So far, in the median future</span>
+          <h2 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:40px;line-height:1.08;letter-spacing:-0.015em">Your income covers <span style="color:#e3b262">61%</span> of what you need in year one.</h2>
+        </div>
+        <span style="font-size:12px;color:#84918b;white-space:nowrap">Illustrative numbers</span>
+      </div>
+
+      <div style="border-radius:20px;border:1px solid rgba(220,255,240,0.085);background:rgba(220,255,240,0.025);overflow:hidden">
+        <div style="display:grid;grid-template-columns:70px repeat(5,minmax(0,1fr));gap:0;padding:12px 20px;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#84918b;border-bottom:1px solid rgba(220,255,240,0.085)">
+          <span>Year</span><span style="text-align:right">Dividends</span><span style="text-align:right">Muni coupons</span><span style="text-align:right">Taxable interest</span><span style="text-align:right">Tax</span><span style="text-align:right">Gap</span>
+        </div>
+        <sc-for list="{{rows}}" as="r" hint-placeholder-count="8">
+          <div style="display:grid;grid-template-columns:70px repeat(5,minmax(0,1fr));padding:11px 20px;font-family:'Geist Mono',monospace;font-size:13px;border-bottom:1px solid rgba(220,255,240,0.05)">
+            <span style="color:#a9b5af">{{r.y}}</span><span style="text-align:right">{{r.d}}</span><span style="text-align:right;color:#e3b262">{{r.m}}</span><span style="text-align:right">{{r.t}}</span><span style="text-align:right;color:#a9b5af">{{r.tax}}</span><span style="text-align:right;color:{{r.gc}}">{{r.g}}</span>
+          </div>
+        </sc-for>
+        <div style="padding:12px 20px;font-size:13px;color:#84918b">The gap is paid by selling shares. Real dollars, today's prices.</div>
+      </div>
+
+      <p style="margin:0;font-size:14px;line-height:1.55;color:#a9b5af;max-width:620px">Each answer on the left writes another column or row into this page. Odds across many futures appear once the last line is filled in.</p>
+    </section>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":860}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const rows = [
+      ['2027','$22,400','$31,900','$8,600','−$3,900','−$37,000'],
+      ['2028','$23,100','$31,900','$8,700','−$4,000','−$36,300'],
+      ['2030','$24,600','$31,100','$8,900','−$4,200','−$35,600'],
+      ['2033','$27,200','$29,800','$9,300','−$4,600','−$34,300'],
+      ['2037','$30,900','$28,400','$9,800','−$5,100','−$32,000'],
+      ['2042','$36,000','$26,900','$10,400','−$5,800','−$28,500'],
+      ['2047','$41,800','$25,300','$11,000','−$6,500','−$24,400'],
+      ['2052','$48,600','$23,700','$11,700','−$7,300','−$19,300']
+    ].map(function(a){return {y:a[0],d:a[1],m:a[2],t:a[3],tax:a[4],g:a[5],gc:'#ff7a6a'};});
+    return { rows: rows };
+  }
+}
+</script>
+</body>
+</html>

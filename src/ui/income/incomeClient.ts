@@ -14,7 +14,7 @@ type Reply = IncomeWorkerResponse | { id: number; kind: 'error'; message: string
 
 export type IncomeRun = { status: 'loading' } | { status: 'done'; result: IncomeResult } | { status: 'error'; message: string }
 
-class IncomeClient {
+export class IncomeClient {
   private worker: Worker | null = null
   private nextId = 1
   private pending: { id: number; resolve: (r: IncomeResult) => void; reject: (e: Error) => void } | null = null
@@ -42,11 +42,19 @@ class IncomeClient {
   run(inputs: IncomeInputs): Promise<IncomeResult> {
     // A run still in flight belongs to older inputs: drop the worker rather than wait for it.
     if (this.pending) this.stop()
-    const w = this.spawn()
     const id = this.nextId++
+    // Spawning and posting inside the executor: a worker that can't be made (CSP, no module
+    // workers) rejects the run, so the mode shows its error instead of waiting forever.
     return new Promise((resolve, reject) => {
-      this.pending = { id, resolve, reject }
-      w.postMessage({ id, kind: 'income', inputs } satisfies IncomeWorkerRequest)
+      try {
+        const w = this.spawn()
+        this.pending = { id, resolve, reject }
+        w.postMessage({ id, kind: 'income', inputs } satisfies IncomeWorkerRequest)
+      } catch (e) {
+        this.pending = null
+        this.stop()
+        reject(e instanceof Error && e.message && e.message !== 'cancelled' ? e : new Error('Income worker failed'))
+      }
     })
   }
 

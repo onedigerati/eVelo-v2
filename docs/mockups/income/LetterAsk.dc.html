@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Study C: The Letter, asking</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0d0c09}
+a{color:#e3b262}a:hover{color:#f0c987}
+</style>
+</helmet>
+<div style="width:390px;height:844px;box-sizing:border-box;background:#0d0c09;color:#ecf1ee;font-family:'Geist',system-ui,sans-serif;display:flex;flex-direction:column;padding:24px 24px 32px">
+
+  <div style="display:flex;justify-content:space-between;align-items:center;height:44px">
+    <a href="#" aria-label="Back to eVelo" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;margin-left:-12px;color:#a9b5af;text-decoration:none;font-size:20px">←</a>
+    <span style="font-family:'Geist Mono',monospace;font-size:12px;color:#84918b">2 of 6</span>
+  </div>
+
+  <div style="flex-grow:1;display:flex;flex-direction:column;justify-content:center;gap:28px">
+    <span style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#e3b262">The other way</span>
+
+    <p style="margin:0;font-family:'Instrument Serif',serif;font-size:34px;line-height:1.3;letter-spacing:-0.01em">
+      I have
+      <label for="saved" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Amount saved</label>
+      <input id="saved" value="$2.4M" style="width:120px;font:inherit;color:#e3b262;background:transparent;border:0;border-bottom:2px solid #e3b262;padding:0 2px;outline:none">
+      saved, and I'd like
+      <label for="need" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Yearly spending</label>
+      <input id="need" value="$96,000" style="width:150px;font:inherit;color:#e3b262;background:transparent;border:0;border-bottom:2px solid #e3b262;padding:0 2px;outline:none">
+      a year to live on,
+      <span style="color:#5c6762">without ever selling a share.</span>
+    </p>
+
+    <p style="margin:0;font-size:14px;line-height:1.55;color:#a9b5af">The grey words are the old promise: living on what your money pays you and leaving the principal alone. We'll see how often it holds.</p>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:12px">
+    <button style="min-height:52px;border-radius:999px;border:0;background:#e3b262;color:#1a1408;font:inherit;font-size:16px;font-weight:500">Next</button>
+    <span style="text-align:center;font-size:12px;color:#84918b">Your eVelo plan isn't touched</span>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

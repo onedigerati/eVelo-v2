@@ -14,9 +14,9 @@ describe('stepDoor', () => {
     expect(s).toEqual(DOOR_IDLE)
   })
 
-  it('goes after one click, stays after two to four, and ignores a stray timeout', () => {
-    expect(stepDoor({ clicks: 1 }, 'timeout')).toEqual({ state: DOOR_IDLE, effect: 'go' })
-    for (const clicks of [2, 3, 4]) expect(stepDoor({ clicks }, 'timeout')).toEqual({ state: DOOR_IDLE, effect: 'stay' })
+  it('goes after one or two clicks, stays after three or four, and ignores a stray timeout', () => {
+    for (const clicks of [1, 2]) expect(stepDoor({ clicks }, 'timeout')).toEqual({ state: DOOR_IDLE, effect: 'go' })
+    for (const clicks of [3, 4]) expect(stepDoor({ clicks }, 'timeout')).toEqual({ state: DOOR_IDLE, effect: 'stay' })
     expect(stepDoor(DOOR_IDLE, 'timeout').effect).toBe('stay')
   })
 })
@@ -42,8 +42,21 @@ describe('createDoor', () => {
     expect(onCoupon).not.toHaveBeenCalled()
   })
 
-  it('two to four quick clicks go nowhere', () => {
-    for (const n of [2, 3, 4]) {
+  it('a quick double-click goes to the plan after the window', () => {
+    const { door, onGo, onCoupon, onClicks } = setup()
+    door.click()
+    vi.advanceTimersByTime(80)
+    door.click()
+    vi.advanceTimersByTime(DOOR_WINDOW_MS - 1)
+    expect(onGo).not.toHaveBeenCalled()
+    vi.advanceTimersByTime(1)
+    expect(onGo).toHaveBeenCalledTimes(1)
+    expect(onCoupon).not.toHaveBeenCalled()
+    expect(onClicks).toHaveBeenLastCalledWith(0)
+  })
+
+  it('three or four quick clicks go nowhere', () => {
+    for (const n of [3, 4]) {
       const { door, onGo, onCoupon, onClicks } = setup()
       for (let i = 0; i < n; i++) {
         door.click()

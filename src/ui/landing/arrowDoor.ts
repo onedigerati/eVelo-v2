@@ -1,11 +1,14 @@
 // The landing arrow's click sequence. Pure (the timer is injected), so it's tested.
-// One click on the arrow goes to the plan after a short wait; quick clicks count up instead,
-// and the fifth gives up the arrow for a coupon. Two to four clicks that then stop go nowhere.
+// One or two clicks on the arrow go to the plan after a short wait (a double-click is still a
+// click); quick clicks count up instead, and the fifth gives up the arrow for a coupon. Three or
+// four clicks that then stop go nowhere.
 
 /** How long a click waits for the next one before it counts as the last. */
 export const DOOR_WINDOW_MS = 300
 /** Quick clicks that turn the arrow into a coupon. */
 export const DOOR_CLICKS = 5
+/** Up to this many quick clicks still go to the plan. */
+export const DOOR_GO_MAX = 2
 
 export type DoorState = { clicks: number }
 export type DoorEvent = 'click' | 'timeout'
@@ -20,7 +23,7 @@ export function stepDoor(state: DoorState, event: DoorEvent): { state: DoorState
     return clicks >= DOOR_CLICKS ? { state: DOOR_IDLE, effect: 'coupon' } : { state: { clicks }, effect: 'wait' }
   }
   if (state.clicks === 0) return { state, effect: 'stay' }
-  return { state: DOOR_IDLE, effect: state.clicks === 1 ? 'go' : 'stay' }
+  return { state: DOOR_IDLE, effect: state.clicks <= DOOR_GO_MAX ? 'go' : 'stay' }
 }
 
 type Timers = {

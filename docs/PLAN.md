@@ -7,24 +7,24 @@ A hidden, experimental mode for retiring the conventional way: living on dividen
 2026-11-18 · tests: 1155 pass · typecheck: clean · build: ok
 
 ## Now
-Stage 4 of 6 · The door
+Stage 5 of 6 · The reveal
 Mode: autopilot — unattended
 Agents: wide — confirmed 2026-11-18 18:38
-Risk: user input (stored state is an input boundary), routing; the main site must stay unchanged
-Scope: the landing arrow's hidden click sequence and coupon; a hidden `#income` route; a lazy mode shell (its own chunk) that runs the `income` worker request on its saved inputs; its own sanitized state under `evelo:v2:income`, cleared by the error boundary's Reset; e2e. The questions, chart and measures are stage 5.
+Risk: UI; money shown to the user (labels must match the engine's meaning)
+Scope: the mode's six one-sentence questions, the layered chart that builds as they're answered, the stacked results (summary sentence, chart, three measures), the "See year by year" ledger and "How this is worked out", desktop and phone, per the mockups in `docs/mockups/income/` (HybridSplit, HybridStacked, HybridPhoneAsk, HybridPhoneDone, Ledger; numbers there are illustrative). Sync and comparison are stage 6.
 Checks:
-- [ ] On the landing page a click on the "Find your eVelo" label goes straight to the plan as before; one click on the arrow glyph goes to the plan after a 300 ms wait; five quick clicks on the arrow turn it into a coupon, and the coupon opens the mode and stays for the visit (sessionStorage) (proof: e2e)
-- [ ] `#income` opens the mode, and nothing on the main site links to or names it (nav, Method page, sitemap-like lists); keyboard and screen-reader users still reach the plan through the label as before (proof: e2e + test)
-- [ ] The mode loads lazily: its code is in its own chunk fetched only on `#income`, and the main chunk grows by no more than 3 KB gzipped (proof: build output + e2e network log)
-- [ ] The mode's state lives under `evelo:v2:income`, parsed like `sanitizeInputs` (bad JSON, wrong types and out-of-range values fall back or clamp), and the error boundary's Reset also clears it (proof: test + e2e)
-- [ ] The mode shell runs the `income` worker request on its inputs and shows its headline ("the money lasts" rate) on desktop and phone widths, in brass, with a way back to eVelo (proof: e2e screenshots)
+- [ ] Six questions, one sentence each with inline fields, step by step with Back/Next and a 1–6 progress mark; answers are saved to `evelo:v2:income` and an "Edit answers" path reopens them; on desktop the question sits left and the chart right, on phone a small chart sits above the sentence (proof: e2e screenshots at 1280 and 390)
+- [ ] The chart is the engine's median income by year and builds one layer per answered question in order: dividends, muni coupons, taxable interest, tax, then the spending line and the gap sold to cover; each step names what it just added in dollars (proof: test + e2e)
+- [ ] The results show a one-line summary, the stacked chart with a legend, and the three measures (the money lasts, principal never sold, income keeps pace) from the engine, the lasts card in brass and labelled "Same test as eVelo" (proof: e2e + test that the numbers shown equal the worker's result)
+- [ ] "See year by year" opens a ledger of the median year rows (dividends, muni coupons, taxable and Treasury interest, tax, gap sold, value) in today's dollars, scrollable on phone; "How this is worked out" explains the model in the mode, including what's left out (AMT, IRMAA, the per-state simplifications, a foreign home federal only, historical months only) (proof: e2e + screenshots)
+- [ ] Keyboard and screen reader: every field is labelled, focus moves to each new question, the chart has a text equivalent; no horizontal scroll at 390; the main site unchanged (`npm run e2e`), suite green (proof: e2e + test)
 Open: none
 
 ## Stages
 - [x] 1. Yield data — add VWITX, VFITX, VBMFX; keep distributions and derive a monthly income yield per income asset; data tests
 - [x] 2. Income tax — a pure 2026 US tax module: federal brackets, 0/15/20% on qualified dividends and gains, 3.8% NIIT, muni interest exempt (but counted for Social Security), per-state muni rules for the US home cities, foreign home = federal only; tests
 - [x] 3. Income engine — `runIncomePaths` on the same scenarios as eVelo: yields that start at today's and move with each block, income paid first, gap sold with tax, three measures, bands; worker kind; tests and a speed budget
-- [ ] 4. The door — the arrow's hidden click sequence and coupon, a hidden `#income` route, a lazy mode shell, its own sanitized state (`evelo:v2:income`) cleared by Reset; e2e
+- [x] 4. The door — the arrow's hidden click sequence and coupon, a hidden `#income` route, a lazy mode shell, its own sanitized state (`evelo:v2:income`) cleared by Reset; e2e
 - [ ] 5. The reveal — six sentence questions (split layout while asking, stacked results after, phone screens), the layered chart, the three measures, "See year by year" ledger
 - [ ] 6. Sync and compare — tick-what-to-copy sheet, one-time copy with re-sync and a "changed since" chip, the comparison (columns, one chart, measure switch) against the eVelo plan's result
 
@@ -55,6 +55,8 @@ Open: none
 - 2026-11-18 · (unattended) Under eVelo's `fat-tail` method the income engine still uses the bootstrapped months (the t-draw is a portfolio return, not per-sleeve), so the mode is always historical-bootstrap, said in the comparison; yield changes are capped at each asset's 99th-percentile monthly move (SPY 0.27, VWITX 0.13, VFITX 0.25, VBMFX 0.18 points) with a 0.25% floor.
 - 2026-11-18 · (unattended) Replayed yield changes are demeaned per asset (history's −1.3 to −2.6 points per 30 years removed), so yields wander around today's level instead of carrying 1993–2026's fall into every future; the 99th-percentile cap applies to the demeaned change — the builder found an all-bond plan's median income falling from $68k to $44k by year 30 from that drift alone; [spec](specs/income-engine.md) §Resolved points.
 - 2026-11-18 · (unattended) Indexed tax amounts lag a year: year k's brackets sit at the price level at the start of the year, not its end, so the engine doesn't hand every path ~3% wider brackets than the law; the `income` worker request also clamps its inputs to eVelo's limits — from the stage 3 review.
+- 2026-11-18 · (unattended) A double-click on the arrow (two quick clicks, then a pause) goes to the plan like a single click; only three or four quick clicks hold, and the fifth opens the coupon — people who double-click links would otherwise find the main call to action dead; the arrow's link also gets `touch-action: manipulation` so quick taps count instead of zooming — from the stage 4 review.
+- 2026-11-18 · (unattended) The six questions: (1) saved and yearly spending, with how much of it is what you paid (cost basis); (2) age and years to plan for; (3) the stocks share — draws dividends; (4) the muni share of bonds — draws muni coupons and taxable interest; (5) home city and filing status — draws tax; (6) Social Security amount and start age — draws spending and the gap. The mockups' "federal bracket" question is replaced by home city and filing status, since the engine works tax out from them.
 - 2026-11-18 · Income yield starts at each asset's latest real yield and moves by each bootstrapped month's yield change, with a floor; income = yield × value, price change = total return − income. Yield levels are never replayed, so a 1990s block can't pay 6% today — PM default, from [conventional-bond-modelling](research/conventional-bond-modelling.md).
 - 2026-11-18 · No separate default or call model for investment-grade munis, and a "ladder" changes only when income arrives, not the returns: fund history already carries both — PM default, from [conventional-bond-modelling](research/conventional-bond-modelling.md).
 - 2026-11-18 · The mode holds three sleeves, not tickers: stocks (SPY), munis, taxable bonds, set by a stocks/bonds split and a muni share — PM default: the questions stay one sentence each.

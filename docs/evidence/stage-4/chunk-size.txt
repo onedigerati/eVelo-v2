@@ -1,0 +1,23 @@
+$ gzip -9c <each asset index.html loads> | wc -c   (base = git worktree of 544668b, vite build; head = npm run build on working tree)
+== base/dist
+130108 assets/index-DAojrcnJ.js
+26930 assets/SwitchLayoutGroupContext-CWUgHHbR.js
+68744 assets/d3-array-B2aoWrxL.js
+eager JS total: 225782
+4667 assets/d3-array-BqIGVMsf.css
+15711 assets/index-C4-dxWBR.css
+== dist
+129559 assets/index-DJGhKlEZ.js
+26930 assets/SwitchLayoutGroupContext-CWUgHHbR.js
+67811 assets/primitives-7Uvksb2t.js
+1412 assets/icons-CzQa38x5.js
+1086 assets/d3-array-Co06MLes.js
+eager JS total: 226798
+4669 assets/primitives-BqIGVMsf.css
+16081 assets/index-DBABlkQ1.css
+
+Main chunk index-*.js: 130108 -> 129559 (-549 B). All eager JS: 225782 -> 226798 (+1016 B). Eager CSS: 20378 -> 20750 (+372 B). Shared modules were re-split (icons, d3-array) because IncomeMode imports Wordmark/format. Limit 3 KB: pass.
+
+IncomeMode chunk present in base: 0; in head:
+IncomeMode-CIxYnKQB.css
+IncomeMode-D3JwzmE9.js

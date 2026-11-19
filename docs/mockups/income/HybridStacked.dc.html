@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Recommended reveal, stacked</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0a0d0c}
+a{color:#e3b262}a:hover{color:#f0c987}
+</style>
+</helmet>
+<div style="width:1280px;height:860px;box-sizing:border-box;background:#0a0d0c;color:#ecf1ee;font-family:'Geist',system-ui,sans-serif;display:flex;flex-direction:column;padding:24px 40px 28px;gap:18px">
+
+  <header style="display:flex;align-items:center;justify-content:space-between;height:44px">
+    <a href="#" style="font-size:13px;color:#a9b5af;text-decoration:none">← Back to eVelo</a>
+    <div style="flex-grow:1;max-width:520px;height:3px;border-radius:2px;background:rgba(220,255,240,0.1);margin:0 32px;display:flex"><div style="width:100%;background:#e3b262;border-radius:2px"></div></div>
+    <a href="#" style="display:flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;border:1px solid rgba(220,255,240,0.16);color:#ecf1ee;text-decoration:none;font-size:13px">⇄ Sync with eVelo</a>
+  </header>
+
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:32px">
+    <p style="margin:0;font-family:'Instrument Serif',serif;font-size:40px;line-height:1.2;letter-spacing:-0.01em;max-width:900px">
+      Plan for <span style="color:#e3b262;border-bottom:2px solid #e3b262">30 years</span>, from age <span style="color:#e3b262;border-bottom:2px solid #e3b262">58</span>. <span style="color:#a9b5af">Your income pays about three-fifths of the bills; selling covers the rest.</span>
+    </p>
+    <span style="font-size:12px;color:#84918b;white-space:nowrap">Illustrative numbers</span>
+  </div>
+
+  <div style="position:relative;height:360px;border-bottom:1px solid rgba(220,255,240,0.16)">
+    <div style="position:absolute;inset:0;display:flex;align-items:flex-end;gap:5px">
+      <sc-for list="{{bars}}" as="b" hint-placeholder-count="30">
+        <div style="flex:1 1 0;display:flex;flex-direction:column;justify-content:flex-end">
+          <div style="height:{{b.g}}px;background:rgba(255,122,106,0.2);border-top:1px solid rgba(255,122,106,0.55)"></div>
+          <div style="height:{{b.t}}px;background:#6a5a3a"></div>
+          <div style="height:{{b.m}}px;background:#e3b262"></div>
+          <div style="height:{{b.d}}px;background:#93a4b4"></div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="position:absolute;left:0;right:0;bottom:288px;border-top:2px dashed #ecf1ee"></div>
+    <span style="position:absolute;left:0;bottom:294px;font-family:'Geist Mono',monospace;font-size:11px;color:#ecf1ee">$96K a year, today's dollars</span>
+  </div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:-8px">
+    <div style="display:flex;gap:18px;font-size:12px;color:#a9b5af">
+      <span style="display:flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:2px;background:#93a4b4"></span>Dividends</span>
+      <span style="display:flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:2px;background:#e3b262"></span>Muni coupons</span>
+      <span style="display:flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:2px;background:#6a5a3a"></span>Taxable interest</span>
+      <span style="display:flex;align-items:center;gap:6px"><span style="width:10px;height:10px;border-radius:2px;background:rgba(255,122,106,0.4)"></span>Sold to cover</span>
+    </div>
+    <span style="font-family:'Geist Mono',monospace;font-size:11px;color:#84918b">age 58 → 88</span>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px">
+    <div style="padding:16px 20px;border-radius:16px;border:1px solid rgba(227,178,98,0.34);background:rgba(227,178,98,0.07);display:flex;flex-direction:column;gap:4px">
+      <span style="font-size:12px;color:#a9b5af">The money lasts</span>
+      <span style="font-family:'Instrument Serif',serif;font-size:40px;line-height:1;color:#e3b262">84%</span>
+      <span style="font-size:12px;color:#84918b">of futures. Same test as eVelo.</span>
+    </div>
+    <div style="padding:16px 20px;border-radius:16px;border:1px solid rgba(220,255,240,0.085);background:rgba(220,255,240,0.025);display:flex;flex-direction:column;gap:4px">
+      <span style="font-size:12px;color:#a9b5af">Principal never sold</span>
+      <span style="font-family:'Instrument Serif',serif;font-size:40px;line-height:1">9%</span>
+      <span style="font-size:12px;color:#84918b">The strict income-only promise.</span>
+    </div>
+    <div style="padding:16px 20px;border-radius:16px;border:1px solid rgba(220,255,240,0.085);background:rgba(220,255,240,0.025);display:flex;flex-direction:column;gap:4px">
+      <span style="font-size:12px;color:#a9b5af">Income keeps pace</span>
+      <span style="font-family:'Instrument Serif',serif;font-size:40px;line-height:1">61%</span>
+      <span style="font-size:12px;color:#84918b">Never falls 10% behind inflation.</span>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":860}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var bars = [];
+    var px = 360 / 120000;
+    var need = 96000;
+    for (var i = 0; i < 30; i++) {
+      var d = 22400 * Math.pow(1.03, i) * (1 + 0.06 * Math.sin(i * 0.9));
+      var m = 24200 * Math.pow(0.992, i);
+      var t = 8600 * Math.pow(1.01, i);
+      var g = Math.max(0, need - d - m - t);
+      bars.push({ d: Math.round(d * px), m: Math.round(m * px), t: Math.round(t * px), g: Math.round(g * px) });
+    }
+    return { bars: bars };
+  }
+}
+</script>
+</body>
+</html>

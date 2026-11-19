@@ -1,0 +1,10 @@
+$ npx vitest run src/state/__tests__/incomeState.test.ts src/state/__tests__/resetPlan.test.ts src/state/__tests__/incomeRoute.test.ts src/ui/landing/__tests__/arrowDoor.test.ts src/ui/income/__tests__/incomeClient.test.ts
+
+ RUN  v5.1.0 /home/jonah/src/repos/eVelo-v2
+
+
+ Test Files  5 passed (5)
+      Tests  34 passed (34)
+   Start at  20:10:01
+   Duration  145ms (transform 37%, import 31%, tests 26%, worker 5%)
+

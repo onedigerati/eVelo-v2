@@ -1,0 +1,28 @@
+$ node e2e/income.mjs
+ok   landing: mode chunk not requested
+ok   landing: no link to the mode
+ok   #plan: mode chunk not requested
+ok   #plan: top nav doesn't show the mode (Plan Atlas Method)
+ok   #plan: no link to the mode
+ok   #method: no link to the mode
+ok   #method: mode chunk not requested
+ok   #income: mode chunk requested
+ok   #income: headline "the money lasts" rate appears once the worker answers (100%)
+ok   #income: eVelo's nav isn't drawn in the mode
+ok   #income: the rate is brass (rgb(227, 178, 98))
+ok   #income: "Back to eVelo" returns to the plan
+ok   no uncaught page errors
+ok   390 #plan: tab bar doesn't show the mode (Plan Outlook Atlas Method)
+ok   390 #income: headline rate appears (100%)
+ok   390 #income: no horizontal scroll (0px)
+ok   defaults: 100% | In 100% of 4,000 futures drawn from history, $110,000 a year after tax is met every year to age 85.
+ok   stored state: the mode runs on the saved inputs (100% | In 100% of 4,000 futures drawn from history, $60,000 a year after tax is met every year to age 85.)
+ok   corrupt state (bad JSON): mode opens on the defaults
+ok   corrupt state (bad JSON): no uncaught page errors
+ok   corrupt state (wrong shape): mode opens on the defaults
+ok   corrupt state (wrong shape): no uncaught page errors
+ok   corrupt state (hostile keys and values): mode opens on the defaults
+ok   corrupt state (hostile keys and values): no uncaught page errors
+
+income e2e passed — screenshots in /home/jonah/src/repos/eVelo-v2/e2e/screenshots/
+exit 0

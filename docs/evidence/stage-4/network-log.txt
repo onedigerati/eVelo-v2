@@ -1,0 +1,32 @@
+$ verify.mjs request log (all requests in one context: #home #plan #outlook #atlas #method, then #income)
+/
+/assets/index-DJGhKlEZ.js
+/assets/SwitchLayoutGroupContext-CWUgHHbR.js
+/assets/primitives-7Uvksb2t.js
+/assets/icons-CzQa38x5.js
+/assets/d3-array-Co06MLes.js
+/assets/primitives-BqIGVMsf.css
+/assets/index-DBABlkQ1.css
+/assets/geist-latin-wght-normal-BgDaEnEv.woff2
+/assets/worker-6rqooHuj.js
+/assets/instrument-serif-latin-400-normal-DnYpCC2O.woff2
+/assets/instrument-serif-latin-400-italic-DKMiL14s.woff2
+/assets/geist-mono-latin-wght-normal-XN7g48iV.woff2
+/assets/motionFeatures-BTop_Bvg.js
+https://open.er-api.com/v6/latest/USD
+/assets/AtlasView-BLfqDexh.js
+/assets/AtlasView-Q_m9WxVe.css
+/assets/views-CxSpT-RT.css
+/assets/MethodView-BKC6vif1.js
+/assets/MethodView-DIZaZpEk.css
+/assets/worker-6rqooHuj.js
+/assets/worker-6rqooHuj.js
+/assets/worker-6rqooHuj.js
+/assets/worker-6rqooHuj.js
+/assets/worker-6rqooHuj.js
+/assets/worker-6rqooHuj.js
+/assets/land-110m-BK2aCDID.js
+--- navigate to #income ---
+/assets/IncomeMode-D3JwzmE9.js
+/assets/IncomeMode-CIxYnKQB.css
+/assets/worker-6rqooHuj.js
