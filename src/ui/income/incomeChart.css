@@ -1,0 +1,159 @@
+/* The layered income chart (IncomeChart.tsx). Colours come from the site's tokens, so both themes
+   follow: dividends slate (--neutral), muni coupons brass (--bruised), taxable interest a darker
+   brass, Social Security a neutral grey (income from outside the portfolio), the gap rose
+   (--broken, soft), tax a hatch of --ink-3 over a faint well. */
+
+.ic {
+  --ic-div: var(--neutral);
+  --ic-muni: var(--bruised);
+  --ic-taxable: color-mix(in oklab, var(--bruised) 56%, black);
+  --ic-social: color-mix(in oklab, var(--ink) 34%, var(--bg));
+  /* rose: pale on paper; on the dark ground a stronger mix, or it reads as maroon beside the dark brass */
+  --ic-gap: light-dark(color-mix(in oklab, var(--broken) 34%, var(--bg)), color-mix(in oklab, var(--broken) 52%, var(--bg)));
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.ic__plot {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+.ic__svg {
+  display: block;
+  overflow: visible;
+}
+
+.ic__grid line {
+  stroke: var(--chart-grid);
+}
+.ic__axis {
+  stroke: var(--chart-grid-strong);
+}
+
+.ic__tick {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  fill: var(--chart-axis);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Bars: every segment is always drawn (zero high when its layer isn't), so a new layer grows from
+   where it sits and the tax/gap move into place. */
+.ic__seg {
+  transition:
+    y var(--dur-4) var(--ease-out),
+    height var(--dur-4) var(--ease-out);
+}
+.ic__seg--dividends {
+  fill: var(--ic-div);
+}
+.ic__seg--muni {
+  fill: var(--ic-muni);
+}
+.ic__seg--taxable {
+  fill: var(--ic-taxable);
+}
+.ic__seg--social {
+  fill: var(--ic-social);
+}
+.ic__seg--gap {
+  fill: var(--ic-gap);
+}
+.ic__hatch-bg {
+  fill: var(--surface-3);
+}
+.ic__hatch-line {
+  stroke: var(--ink-3);
+  stroke-width: 1.6px;
+}
+.ic__seg.is-new {
+  animation: ic-new 1.6s var(--ease-out) 1;
+}
+@keyframes ic-new {
+  0%,
+  35% {
+    filter: brightness(1.25);
+  }
+  100% {
+    filter: none;
+  }
+}
+
+.ic__spend line {
+  stroke: var(--ink);
+  stroke-width: 2px;
+  stroke-dasharray: 6 4;
+  transition: stroke var(--dur-3) var(--ease-out);
+}
+.ic__spend.is-ghost line {
+  stroke: var(--ink-faint);
+  stroke-width: 1.5px;
+}
+.ic__spend-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  fill: var(--ink);
+  paint-order: stroke;
+  stroke: var(--bg);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+.ic__spend.is-ghost .ic__spend-label {
+  fill: var(--ink-3);
+}
+.ic__spend {
+  animation: ic-fade var(--dur-4) var(--ease-out) 1;
+}
+@keyframes ic-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+.ic__legend {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-4);
+  font-size: 12px;
+  color: var(--ink-2);
+}
+.ic__legend li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.ic__key {
+  flex: none;
+}
+.ic__key--line {
+  width: 14px;
+  border-top: 2px dashed var(--ink);
+}
+.ic--phone-results .ic__legend {
+  font-size: 11px;
+  gap: 2px var(--space-3);
+}
+
+.ic__added {
+  font-size: var(--fs-sm);
+  color: var(--ink-2);
+  line-height: 1.45;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ic__seg,
+  .ic__spend line {
+    transition: none;
+  }
+  .ic__seg.is-new,
+  .ic__spend {
+    animation: none;
+  }
+}

@@ -1,4 +1,8 @@
 import { useState } from 'react'
+import type { IncomeResult } from '../../engine/incomeTypes'
+import { IncomeChart } from '../income/IncomeChart'
+import type { IncomeLayers } from '../income/incomeChart'
+import incomeFixture from '../income/__tests__/fixtures/incomeResult.json'
 import { PlaceholderFan } from '../outlook/PlaceholderFan'
 import {
   AnimatedNumber,
@@ -40,6 +44,8 @@ const SWATCHES = [
   ['--hairline-strong', 'Hairline'],
 ]
 
+const INCOME_ROWS = (incomeFixture as IncomeResult).median
+
 function Board({ theme }: { theme: 'light' | 'dark' }) {
   const [money, setMoney] = useState(5_000_000)
   const [rate, setRate] = useState(0.065)
@@ -49,6 +55,7 @@ function Board({ theme }: { theme: 'light' | 'dark' }) {
   const [city, setCity] = useState<string | null>('lisbon')
   const [n, setN] = useState(0.87)
   const [sheet, setSheet] = useState<false | 'bottom' | 'left'>(false)
+  const [layers, setLayers] = useState<IncomeLayers>(5)
 
   return (
     <div className="sg-board theme-scope" data-theme={theme}>
@@ -180,6 +187,23 @@ function Board({ theme }: { theme: 'light' | 'dark' }) {
           <Stat label="Median estate" value={n * 9_400_000} format="currency-compact" delta={0.124} deltaFormat="percent1" hint="vs. selling" />
           <Stat label="Holds" value={n} format="percent" tone="holds" />
           <Stat label="Peak LTV" value={0.42} format="percent" delta={0.03} deltaFormat="percent" deltaPositive="bad" tone="bruised" />
+        </div>
+      </section>
+
+      <section className="sg-group sg-income">
+        <h2 className="t-h2">Income chart</h2>
+        <SegmentedControl
+          aria-label="Layers"
+          block
+          value={layers}
+          onChange={setLayers}
+          options={([0, 1, 2, 3, 4, 5] as const).map((v) => ({ value: v, label: String(v) }))}
+        />
+        <IncomeChart rows={INCOME_ROWS} layers={layers} spending={INCOME_ROWS[0].spending} variant="ask" justAdded />
+        <IncomeChart rows={INCOME_ROWS} layers={5} spending={INCOME_ROWS[0].spending} variant="results" />
+        <div className="sg-income__phones">
+          <IncomeChart rows={INCOME_ROWS} layers={Math.min(layers, 4) as IncomeLayers} spending={INCOME_ROWS[0].spending} variant="phone-ask" justAdded />
+          <IncomeChart rows={INCOME_ROWS} layers={5} spending={INCOME_ROWS[0].spending} variant="phone-results" />
         </div>
       </section>
 
