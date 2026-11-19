@@ -1,14 +1,17 @@
 // The layered income chart: the engine's median income by year as stacked bars that build one layer
 // per answered question (geometry and encodings in incomeChart.ts). Layers grow in with CSS
-// transitions on the bars' y/height, which reduced motion turns off (incomeChart.css).
+// transitions on the bars' y/height, which reduced motion turns off (incomeChart.css). Hover, tap
+// or arrow keys pick a year: its bar stays full strength, the rest dim, and a readout shows its
+// figures (not on the small phone chart while asking).
 
 import { scaleLinear } from 'd3-scale'
 import { useId } from 'react'
 import type { IncomeYearRow } from '../../engine/incomeTypes'
 import { currency, currencyCompact } from '../format'
-import { moneyTick, useSize } from '../outlook/chartKit'
+import { moneyTick, useCrosshair, useSize } from '../outlook/chartKit'
 import { cx } from '../primitives'
-import { ageTicks, bandX, chartSummary, justAddedLine, MEDIAN_NOTE, stackRows, taxableOf, yMaxFor, type IncomeLayers, type Span } from './incomeChart'
+import { ChartReadout, ReadoutHead, ReadoutRow } from './ChartReadout'
+import { ageTicks, bandIndexAt, bandX, chartSummary, justAddedLine, MEDIAN_NOTE, readoutRows, stackRows, taxableOf, yMaxFor, type IncomeLayers, type Span } from './incomeChart'
 import './incomeChart.css'
 
 export type IncomeChartVariant = 'ask' | 'results' | 'phone-ask' | 'phone-results'
@@ -34,6 +37,12 @@ const SEGMENTS = [
 /** Which layer turns each segment on. */
 const LAYER_OF: Record<(typeof SEGMENTS)[number][0], number> = { dividends: 1, muni: 2, taxable: 2, social: 4, gap: 4, tax: 3 }
 
+/** Readout money to the nearest $100, as the year-by-year ledger writes it. */
+const money = (v: number) => currency(Math.round(v / 100) * 100)
+
+/** The readout's swatch for a row: the bar's own segment, none for the reinvested/short total. */
+const KEY_OF: Record<string, string | undefined> = { dividends: 'dividends', muni: 'muni', taxable: 'taxable', social: 'social', tax: 'tax', gap: 'gap' }
+
 export function IncomeChart({ rows, layers, spending, variant, justAdded }: IncomeChartProps) {
   const uid = useId().replace(/:/g, '')
   const [wrap, { width }] = useSize<HTMLDivElement>()
@@ -58,6 +67,11 @@ export function IncomeChart({ rows, layers, spending, variant, justAdded }: Inco
   const summary = chartSummary(rows, layers, spending)
   const added = justAdded ? justAddedLine(rows, layers) : ''
   const hasSocial = rows.some((r) => r.otherIncome > 0)
+  // The year readout: everywhere but the 150px phone chart while asking.
+  const interactive = variant !== 'phone-ask' && layers >= 1 && rows.length > 0
+  const ch = useCrosshair(rows.length, (clientX, r) => bandIndexAt(clientX - r.left, rows.length, m.l, x.step(), x.bandwidth()))
+  const hi = interactive && ch.index !== null && ch.index < rows.length ? ch.index : null
+  const hx = hi !== null ? (x(rows[hi].age) ?? 0) + x.bandwidth() / 2 : 0
   const rect = (s: Span) => {
     const y0 = y(s[0])
     const y1 = y(s[1])
@@ -68,7 +82,14 @@ export function IncomeChart({ rows, layers, spending, variant, justAdded }: Inco
     <figure className={cx('ic', `ic--${variant}`)}>
       <div className="ic__plot" ref={wrap} style={{ height }}>
         {width > 0 && (
-          <svg className="ic__svg" width={width} height={height} role="img" aria-label={summary}>
+          <svg
+            className="ic__svg"
+            width={width}
+            height={height}
+            role="img"
+            aria-label={summary}
+            {...(interactive ? { tabIndex: 0, 'aria-describedby': `${uid}-read`, ...ch.handlers } : {})}
+          >
             <defs>
               <pattern id={`${uid}-hatch`} width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
                 <rect width="6" height="6" className="ic__hatch-bg" />
@@ -82,12 +103,12 @@ export function IncomeChart({ rows, layers, spending, variant, justAdded }: Inco
               ))}
             </g>
 
-            <g className="ic__bars">
-              {stacks.map((s) => {
+            <g className={cx('ic__bars', hi !== null && 'is-hovering')}>
+              {stacks.map((s, i) => {
                 const bx = x(s.age) ?? 0
                 const bw = x.bandwidth()
                 return (
-                  <g key={s.age} transform={`translate(${bx},0)`}>
+                  <g key={s.age} transform={`translate(${bx},0)`} className={cx('ic__bar', i === hi && 'is-active')}>
                     {SEGMENTS.map(([k]) => (
                       <rect
                         key={k}
@@ -138,6 +159,28 @@ export function IncomeChart({ rows, layers, spending, variant, justAdded }: Inco
               ))}
             </g>
           </svg>
+        )}
+        {interactive && width > 0 && (
+          <ChartReadout id={`${uid}-read`} x={hx} width={width} top={m.t + 6} on={hi !== null}>
+            {hi !== null && (
+              <>
+                <ReadoutHead age={rows[hi].age} note={`year ${rows[hi].year}`} />
+                {readoutRows(rows[hi], layers, hasSocial).map((l) => {
+                  const k = KEY_OF[l.key]
+                  return (
+                    <ReadoutRow
+                      key={l.key}
+                      keyClass={k ? cx('ic__seg', `ic__seg--${k}`) : undefined}
+                      keyFill={k === 'tax' ? `url(#${uid}-hatch)` : undefined}
+                      label={l.label}
+                      value={money(l.value)}
+                      total={!k}
+                    />
+                  )
+                })}
+              </>
+            )}
+          </ChartReadout>
         )}
       </div>
 

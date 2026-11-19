@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import type { IncomeResult, IncomeYearRow } from '../../../engine/incomeTypes'
 import { currency } from '../../format'
-import { ageTicks, bandX, chartSummary, justAddedLine, MEDIAN_NOTE, stackRow, stackRows, yMaxFor, type IncomeLayers } from '../incomeChart'
+import { ageTicks, bandIndexAt, bandX, chartSummary, justAddedLine, MEDIAN_NOTE, readoutRows, stackRow, stackRows, yMaxFor, type IncomeLayers } from '../incomeChart'
 import fixture from './fixtures/incomeResult.json'
 
 const rows = (fixture as IncomeResult).median
@@ -184,5 +184,75 @@ describe('bandX', () => {
     expect(x(999)).toBeUndefined()
     expect(bandX([], 0, 100, 0.2).bandwidth()).toBe(100)
     expect(bandX(rows.slice(0, 1), 0, 100, 0.2).bandwidth()).toBe(100)
+  })
+})
+
+describe('bandIndexAt', () => {
+  it('maps a plot x to the nearest bar, padding included, clamped to the ends', () => {
+    const rs = [row({ age: 58 }), row({ age: 59 }), row({ age: 60 }), row({ age: 61 })]
+    const x = bandX(rs, 0, 400, 0.2)
+    const step = x.step()
+    const bw = x.bandwidth()
+    expect(step).toBeGreaterThan(bw)
+    rs.forEach((r, i) => {
+      const c = (x(r.age) ?? 0) + bw / 2
+      expect(bandIndexAt(c, rs.length, 0, step, bw)).toBe(i)
+      // anywhere up to half a step either side of the centre: the bar plus its share of the gaps
+      expect(bandIndexAt(c - step * 0.49, rs.length, 0, step, bw)).toBe(i)
+      expect(bandIndexAt(c + step * 0.49, rs.length, 0, step, bw)).toBe(i)
+    })
+    expect(bandIndexAt(-50, rs.length, 0, step, bw)).toBe(0)
+    expect(bandIndexAt(1e4, rs.length, 0, step, bw)).toBe(3)
+  })
+
+  it('works with an offset, a single bar and an empty series', () => {
+    const rs = [row({ age: 58 }), row({ age: 59 })]
+    const x = bandX(rs, 30, 200, 0.1)
+    expect(bandIndexAt((x(59) ?? 0) + 1, 2, 30, x.step(), x.bandwidth())).toBe(1)
+    expect(bandIndexAt((x(58) ?? 0) + 1, 2, 30, x.step(), x.bandwidth())).toBe(0)
+    const one = bandX([row()], 0, 100, 0.2)
+    expect(bandIndexAt(80, 1, 0, one.step(), one.bandwidth())).toBe(0)
+    expect(bandIndexAt(10, 0, 0, 0, 0)).toBe(0)
+  })
+})
+
+describe('readoutRows', () => {
+  const keys = (r: IncomeYearRow, l: IncomeLayers, s = false) => readoutRows(r, l, s).map((x) => x.key)
+
+  it('shows only the lines unlocked so far', () => {
+    const r = row({ otherIncome: 30_000, gapSold: 5_000, spending: 200_000 })
+    expect(keys(r, 0, true)).toEqual([])
+    expect(keys(r, 1, true)).toEqual(['dividends'])
+    expect(keys(r, 2, true)).toEqual(['dividends', 'muni', 'taxable'])
+    expect(keys(r, 3, true)).toEqual(['dividends', 'muni', 'taxable', 'tax'])
+    expect(keys(r, 4, true)).toEqual(['dividends', 'muni', 'taxable', 'social', 'tax', 'gap', 'short'])
+    expect(keys(r, 5, true)).toEqual(keys(r, 4, true))
+  })
+
+  it('shows Social Security when the plan has it or the year pays it, and sold to cover only when any', () => {
+    expect(keys(row(), 4, false)).not.toContain('social')
+    expect(keys(row(), 4, true)).toContain('social')
+    expect(keys(row({ otherIncome: 10_000 }), 4, false)).toContain('social')
+    expect(keys(row({ gapSold: 0 }), 4)).not.toContain('gap')
+  })
+
+  it("uses the row's own figures, under the ledger's labels", () => {
+    const r = row({ otherIncome: 30_000, gapSold: 5_000 })
+    const lines = readoutRows(r, 5, true)
+    const v = Object.fromEntries(lines.map((x) => [x.key, x.value]))
+    expect(v.dividends).toBe(r.dividends)
+    expect(v.muni).toBe(r.muniInterest)
+    expect(v.taxable).toBe(r.taxableInterest + r.treasuryInterest)
+    expect(v.social).toBe(r.otherIncome)
+    expect(v.tax).toBe(r.tax)
+    expect(v.gap).toBe(r.gapSold)
+    expect(lines.slice(0, 6).map((x) => x.label)).toEqual(['Dividends', 'Muni coupons', 'Taxable interest', 'Social Security', 'Tax', 'Sold to cover'])
+  })
+
+  it('ends with the surplus reinvested or the shortfall against spending', () => {
+    // after tax: 22,400 + 24,200 + 8,600 − 3,000 = 52,200
+    expect(readoutRows(row({ spending: 60_000 }), 4, false).at(-1)).toEqual({ key: 'short', label: 'Short of spending', value: 7_800 })
+    expect(readoutRows(row({ spending: 50_000 }), 4, false).at(-1)).toEqual({ key: 'reinvested', label: 'Reinvested', value: 2_200 })
+    expect(readoutRows(row({ spending: 52_200 }), 4, false).at(-1)?.key).toBe('reinvested')
   })
 })

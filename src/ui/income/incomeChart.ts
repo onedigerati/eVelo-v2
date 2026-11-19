@@ -101,7 +101,44 @@ export function bandX(rows: IncomeYearRow[], x0: number, w: number, pad: number)
   const at = new Map(rows.map((r, i) => [r.age, x0 + i * step]))
   const x = (age: number) => at.get(age)
   x.bandwidth = () => bw
+  x.step = () => step
   return x
+}
+
+/** The bar nearest plot-x `px` (its band with padding around its centre), clamped to 0..n-1; the
+ *  crosshair's indexAt. `x0`, `step`, `bw` as bandX lays them out. */
+export function bandIndexAt(px: number, n: number, x0: number, step: number, bw: number): number {
+  if (n <= 0 || !(step > 0) || !Number.isFinite(px)) return 0
+  const i = Math.round((px - x0 - bw / 2) / step)
+  return Math.max(0, Math.min(n - 1, i))
+}
+
+export type ReadoutKey = 'dividends' | 'muni' | 'taxable' | 'social' | 'tax' | 'gap' | 'reinvested' | 'short'
+
+export interface ReadoutLine {
+  key: ReadoutKey
+  label: string
+  /** Today's dollars, the row's median figure (the year-by-year ledger's number). */
+  value: number
+}
+
+/** The chart readout's rows for one year, for the layers shown: the income lines unlocked so far,
+ *  tax (layer 3), sold to cover (layer 4, when any), then from layer 4 how cash after tax compares
+ *  with spending: the surplus reinvested, or the shortfall. */
+export function readoutRows(r: IncomeYearRow, layers: IncomeLayers, hasSocial: boolean): ReadoutLine[] {
+  const out: ReadoutLine[] = []
+  if (layers >= 1) out.push({ key: 'dividends', label: 'Dividends', value: pos(r.dividends) })
+  if (layers >= 2)
+    out.push({ key: 'muni', label: 'Muni coupons', value: pos(r.muniInterest) }, { key: 'taxable', label: 'Taxable interest', value: taxableOf(r) })
+  if (layers >= 4 && (hasSocial || pos(r.otherIncome) > 0)) out.push({ key: 'social', label: 'Social Security', value: pos(r.otherIncome) })
+  if (layers >= 3) out.push({ key: 'tax', label: 'Tax', value: pos(r.tax) })
+  if (layers >= 4) {
+    if (pos(r.gapSold) > 0) out.push({ key: 'gap', label: 'Sold to cover', value: pos(r.gapSold) })
+    const afterTax = pos(r.dividends) + pos(r.muniInterest) + taxableOf(r) + pos(r.otherIncome) - pos(r.tax)
+    const d = afterTax - pos(r.spending)
+    out.push(d >= 0 ? { key: 'reinvested', label: 'Reinvested', value: d } : { key: 'short', label: 'Short of spending', value: -d })
+  }
+  return out
 }
 
 /** Age ticks: the first age, then each multiple of `step` years after it, through the last. */

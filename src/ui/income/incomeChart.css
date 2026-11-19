@@ -171,11 +171,40 @@
 
 @media (prefers-reduced-motion: reduce) {
   .ic__seg,
+  .ic__bar,
   .ic__spend line {
     transition: none;
   }
   .ic__seg.is-new,
   .ic__spend {
     animation: none;
+  }
+}
+
+/* The year readout (not on the phone chart while asking): the picked bar stays, the rest dim. */
+.ic__plot:has(.ic__svg[tabindex]) {
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.ic__svg[tabindex] {
+  cursor: crosshair;
+}
+.ic__svg:focus-visible {
+  outline: none;
+}
+.ic__plot:has(.ic__svg:focus-visible) {
+  border-radius: var(--radius-sm);
+  box-shadow: var(--focus-ring);
+}
+.ic__bar {
+  transition: opacity var(--dur-2) var(--ease-out);
+}
+.ic__bars.is-hovering .ic__bar:not(.is-active) {
+  opacity: 0.32;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ic__bar {
+    transition: none;
   }
 }
