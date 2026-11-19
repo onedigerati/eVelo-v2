@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { lazy, Suspense, useState } from 'react'
 import { PlaceholderFan } from '../outlook/PlaceholderFan'
 import {
   AnimatedNumber,
@@ -24,6 +24,10 @@ import { IconShare } from '../icons'
 import { PLACEHOLDER_CITIES } from '../plan/placeholderCities'
 import '../views.css'
 import './styleguide.css'
+
+// Dev only: the living-on-income results on a fixture. Gated on DEV so the build drops the import
+// and the built styleguide never points to the hidden mode.
+const IncomePreview = import.meta.env.DEV ? lazy(() => import('../income/IncomePreview')) : null
 
 const SWATCHES = [
   ['--bg', 'Background'],
@@ -225,6 +229,11 @@ export function Styleguide() {
         <Board theme="light" />
         <Board theme="dark" />
       </div>
+      {IncomePreview && (
+        <Suspense fallback={null}>
+          <IncomePreview />
+        </Suspense>
+      )}
     </div>
   )
 }

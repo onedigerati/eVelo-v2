@@ -1,0 +1,306 @@
+/* ============ Living on income — results panels ============ */
+/* Measures, summary, year-by-year ledger, "How this is worked out". Brass (--bruised) is the accent. */
+
+/* The ledger's sheet is portalled to <body>, outside .income, so it takes the mode's accent here. */
+.income-sheet {
+  --accent: var(--bruised);
+  --accent-text: var(--bruised-text);
+  --accent-soft: var(--bruised-soft);
+  --focus: var(--bruised);
+  --focus-ring: 0 0 0 2px var(--bg), 0 0 0 4px var(--bruised);
+}
+
+/* ---------- Summary ---------- */
+.isummary {
+  margin: 0;
+  max-width: 34ch;
+  font-family: var(--font-display);
+  font-size: var(--fs-h1);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-display);
+  text-wrap: pretty;
+}
+.isummary__em {
+  font-style: normal;
+  color: var(--bruised-text);
+}
+
+/* ---------- Measures: three cards, a list on phone ---------- */
+.imeasures {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.imeasure {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-4) var(--space-5);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+  background: var(--surface-1);
+}
+.imeasure--lasts {
+  border-color: var(--bruised-line);
+  background: var(--bruised-soft);
+}
+.imeasure__label {
+  font-size: var(--fs-sm);
+  color: var(--ink-2);
+}
+.imeasure__rate {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.imeasure--lasts .imeasure__rate {
+  color: var(--bruised-text);
+}
+.imeasure__note {
+  font-size: var(--fs-sm);
+  color: var(--ink-3);
+}
+
+@media (max-width: 699px) {
+  .imeasures {
+    grid-template-columns: 1fr;
+    gap: 0;
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+  .imeasure {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    column-gap: var(--space-3);
+    row-gap: 0;
+    padding: var(--space-3) var(--space-4);
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+  .imeasure + .imeasure {
+    border-top: 1px solid var(--hairline);
+  }
+  .imeasure--lasts {
+    background: var(--bruised-soft);
+  }
+  .imeasure__label {
+    font-size: var(--fs-md);
+    color: var(--ink);
+  }
+  .imeasure__rate {
+    grid-row: span 2;
+    grid-column: 2;
+    font-size: 1.75rem;
+  }
+  .imeasure__note {
+    grid-column: 1;
+    font-size: var(--fs-xs);
+  }
+}
+
+/* ---------- Year by year ---------- */
+.iyears__open {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 var(--space-6);
+  border: 1px solid var(--hairline-strong);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: var(--fs-md);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+.iyears__open:hover {
+  background: var(--surface-hover);
+}
+.iyears__open:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.iledger {
+  min-width: 0;
+}
+.iledger__scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+  background: var(--surface-1);
+}
+.iledger__scroll:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+.iledger__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-sm);
+  font-variant-numeric: tabular-nums;
+}
+.iledger__caption {
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  font-size: var(--fs-xs);
+  font-weight: 560;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--ink-3);
+  border-bottom: 1px solid var(--hairline);
+}
+.iledger__table th,
+.iledger__table td {
+  padding: var(--space-2) var(--space-4);
+  white-space: nowrap;
+  border-bottom: 1px solid var(--hairline);
+}
+.iledger__table tbody tr:last-child > * {
+  border-bottom: 0;
+}
+.iledger__table thead th {
+  font-size: var(--fs-xs);
+  font-weight: 560;
+  color: var(--ink-3);
+  vertical-align: bottom;
+}
+.iledger__num {
+  text-align: right;
+  font-family: var(--font-mono);
+}
+.iledger__table thead .iledger__num {
+  font-family: var(--font-ui);
+}
+.iledger__year {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  text-align: left;
+  font-weight: 500;
+  background: var(--surface-solid);
+}
+.iledger__age {
+  margin-left: var(--space-1);
+  font-weight: 400;
+  color: var(--ink-3);
+}
+td.iledger__col--muniInterest {
+  color: var(--bruised-text);
+}
+td.iledger__col--tax {
+  color: var(--ink-2);
+}
+td.iledger__col--gapSold {
+  color: var(--broken-text);
+}
+td.is-zero {
+  color: var(--ink-3);
+}
+.iledger__note {
+  margin: var(--space-3) 0 0;
+  font-size: var(--fs-sm);
+  color: var(--ink-3);
+}
+.income-sheet .iledger {
+  padding: 0 var(--space-5) var(--space-6);
+}
+@media (min-width: 700px) {
+  .income-sheet.sheet--bottom {
+    /* Centred by margins: framer-motion owns the transform. */
+    width: min(1100px, calc(100vw - 64px));
+    margin: 0 auto;
+  }
+}
+
+/* ---------- How this is worked out ---------- */
+.ihow {
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+}
+.ihow__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  min-height: var(--tap);
+  padding: var(--space-3) 0;
+  list-style: none;
+  cursor: pointer;
+  font-size: var(--fs-md);
+  font-weight: 520;
+}
+.ihow__summary::-webkit-details-marker {
+  display: none;
+}
+.ihow__summary:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: var(--radius-xs);
+}
+.ihow__chev {
+  flex-shrink: 0;
+  color: var(--ink-3);
+  transition: transform 0.2s ease;
+}
+.ihow[open] .ihow__chev {
+  transform: rotate(180deg);
+}
+.ihow__body {
+  max-width: 68ch;
+  padding: 0 0 var(--space-6);
+  color: var(--ink-2);
+  line-height: var(--lh-body);
+}
+.ihow__body h3 {
+  margin: var(--space-6) 0 var(--space-2);
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: var(--fs-h3);
+  color: var(--ink);
+}
+.ihow__body h3:first-child {
+  margin-top: var(--space-2);
+}
+.ihow__body p,
+.ihow__body ul {
+  margin: 0 0 var(--space-3);
+}
+.ihow__body ul {
+  padding-left: 1.2em;
+}
+.ihow__body li + li {
+  margin-top: var(--space-2);
+}
+.ihow__body b {
+  color: var(--ink);
+  font-weight: 560;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ihow__chev {
+    transition: none;
+  }
+}
+
+/* ---------- Dev preview (#styleguide in dev only) ---------- */
+.income.income-preview {
+  margin-top: var(--space-9);
+  padding: var(--space-7) 0 0;
+  border-top: 1px solid var(--bruised-line);
+}
+.income-preview__stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+  max-width: 1000px;
+}
