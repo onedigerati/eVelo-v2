@@ -17,7 +17,7 @@ Checks:
 - [ ] At 390px and 1280px the readout stays fully on screen at the first and last year, and the page doesn't scroll sideways (proof: screenshots and measured bounds, a test can't judge the layout)
 - [ ] The main site's charts and `npm run e2e` are unchanged and the suite is green (proof: test)
 Open: none
-Agents: wide — confirmed 2026-11-18 18:38
+Agents: wide — confirmed 2026-11-19 09:59
 
 ## Stages
 - [ ] 1. Chart readouts — hover, tap and keyboard readouts on the income chart (results and desktop ask) and the comparison chart, reusing `useCrosshair` from `chartKit.ts`

@@ -1,0 +1,95 @@
+/* The mode's chart readout (ChartReadout.tsx): eVelo's fan readout (outlook.css .fan__readout) in
+   the mode's brass, placed by readoutLeft() so it stays inside the plot. */
+
+.cread {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  box-sizing: border-box;
+  min-width: 180px;
+  padding: 10px 12px 11px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-glass);
+  border: 1px solid var(--hairline-strong);
+  box-shadow: var(--shadow-3), inset 0 1px 0 var(--highlight);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+  backdrop-filter: blur(16px) saturate(1.2);
+  font-size: var(--fs-sm);
+  color: var(--ink-2);
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity var(--dur-2) var(--ease-out),
+    transform 90ms linear;
+}
+.cread.is-on {
+  opacity: 1;
+  visibility: visible;
+}
+.cread__age {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 6px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--hairline);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--ink);
+}
+.cread__age b {
+  font-weight: 400;
+}
+.cread__age span {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-3);
+}
+.cread__row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1.8;
+  white-space: nowrap;
+}
+.cread__label {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cread__row b {
+  margin-left: auto;
+  padding-left: 12px;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+.cread__row.is-faint,
+.cread__row.is-faint b {
+  color: var(--ink-3);
+}
+.cread__row.is-total {
+  margin-top: 4px;
+  padding-top: 4px;
+  border-top: 1px solid var(--hairline);
+  color: var(--ink);
+}
+.cread__key {
+  flex-shrink: 0;
+  display: block;
+}
+.cread__key--none {
+  width: 10px;
+  height: 10px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cread {
+    transition: none;
+  }
+}
