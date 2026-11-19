@@ -1,0 +1,23 @@
+$ npm run data:refresh
+
+> evelo@2.0.0 data:refresh
+> node scripts/refresh-data.mjs
+
+Fetching 175 symbols from Yahoo...
+  SPY y: implied payout months 0
+  SPY y: copied months 0; warm-up back-filled 11
+  VWITX y: implied payout months 0
+  VWITX y: copied months 0; warm-up back-filled 0
+  VFITX y: implied payout months 14 (2025-08, 2025-09, 2025-10, 2025-11, 2025-12, 2026-01, 2026-02, 2026-03, 2026-04, 2026-05, 2026-06, 2026-07, 2026-08, 2026-09)
+  VFITX y: copied months 0; warm-up back-filled 0
+  VBMFX y: implied payout months 10 (2025-12, 2026-01, 2026-02, 2026-03, 2026-04, 2026-05, 2026-06, 2026-07, 2026-08, 2026-09)
+  VBMFX y: copied months 0; warm-up back-filled 0
+Wrote /home/jonah/src/repos/eVelo-v2/src/data/market.json
+  175 assets, 0 failed
+  calendar 1993-02..2026-10 (405 months), CPI tail-filled 0 month(s)
+  548 KB
+Wrote /home/jonah/src/repos/eVelo-v2/src/data/market-index.json
+  172 assets (3 hidden), 27 KB
+Wrote /home/jonah/src/repos/eVelo-v2/src/data/fx.json
+  36 currencies, as of 2026-11-19
+exit 0

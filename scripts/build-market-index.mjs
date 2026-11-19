@@ -12,12 +12,17 @@ export const SPARK_N = 40
 /** Sparkline levels are packed one character each (64 levels is plenty for a 22px-tall line). */
 export const SPARK_ALPHABET = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_'
 
+/** In market.json for the hidden income mode only: kept out of the index, so eVelo's ticker search,
+ *  holdings rows and Method page never list them (the main site stays unchanged). */
+export const INDEX_HIDDEN = ['VWITX', 'VFITX', 'VBMFX']
+
 const r4 = (x) => Math.round(x * 1e4) / 1e4
 const r3 = (x) => Math.round(x * 1e3) / 1e3
 
 /** Pure: MarketData -> MarketIndex. */
 export function buildIndex(market) {
-  const assets = Object.values(market.assets).map((a) => {
+  const shown = Object.values(market.assets).filter((a) => !INDEX_HIDDEN.includes(a.symbol))
+  const assets = shown.map((a) => {
     const months = market.months - a.first
     const lg = [0]
     let acc = 0
@@ -53,7 +58,7 @@ export async function writeIndex() {
   const out = resolve(DATA_DIR, 'market-index.json')
   const text = JSON.stringify(buildIndex(market))
   await writeFile(out, text + '\n')
-  console.log(`Wrote ${out}\n  ${Object.keys(market.assets).length} assets, ${(text.length / 1024).toFixed(0)} KB`)
+  console.log(`Wrote ${out}\n  ${JSON.parse(text).assets.length} assets (${INDEX_HIDDEN.length} hidden), ${(text.length / 1024).toFixed(0)} KB`)
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

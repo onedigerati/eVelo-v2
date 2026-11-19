@@ -1,0 +1,6 @@
+$ npx vitest run --reporter=verbose src/ui/plan/__tests__/marketIndex.test.ts   (on the refreshed data)
+ ✓ src/ui/plan/__tests__/marketIndex.test.ts > market index > finds tickers by symbol first 4ms
+ ✓ src/ui/plan/__tests__/marketIndex.test.ts > market index > matches names and fuzzy fragments 2ms
+ ✓ src/ui/plan/__tests__/marketIndex.test.ts > market index > groups and summarizes every asset 14ms
+ ✓ src/ui/plan/__tests__/marketIndex.test.ts > market index > is in sync with market.json (run `npm run data:index` after editing the data) 10ms
+      Tests  4 passed (4)

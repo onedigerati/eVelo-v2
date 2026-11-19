@@ -1,0 +1,10 @@
+$ npx vitest run
+
+ RUN  v5.1.0 /home/jonah/src/repos/eVelo-v2
+
+
+ Test Files  76 passed (76)
+      Tests  1181 passed (1181)
+   Start at  18:53:34
+   Duration  8.92s (transform 66%, tests 24%, import 9%)
+

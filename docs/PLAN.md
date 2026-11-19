@@ -7,18 +7,21 @@ A hidden, experimental mode for retiring the conventional way: living on dividen
 2026-11-18 · tests: 1155 pass · typecheck: clean · build: ok
 
 ## Now
-Stage 1 of 6 · Yield data
-Agents: wide — confirmed 2026-11-18 18:06
-Risk: external services (Yahoo, FRED fetch), parsing
+Stage 2 of 6 · Income tax
+Mode: autopilot — unattended
+Agents: wide — confirmed 2026-11-18 18:38
+Risk: money (tax arithmetic), parsing of state rules
+Scope: a pure `src/engine/incomeTax.ts` (no DOM): one year's tax on income by type for a US filer (single or married filing jointly), real-dollar thresholds per year, per-state muni and Treasury rules for the US home cities, foreign home = federal only; tests. Not wired into any engine or UI yet.
 Checks:
-- [ ] `market.json` carries VWITX (munis), VFITX and VBMFX (taxable) as real series from 1993, not backfilled (proof: test)
-- [ ] Each income asset (the three funds, SPY) has a monthly income yield series, built from trailing 12 months of distributions ÷ price, sane against known points (VWITX ≈ 6% in 1993, ≈ 2.5% in 2025) (proof: test)
-- [ ] One year of Yahoo's VFITX total return matches Vanguard's published annual return within 0.5 points, and the note says so (proof: command, the published figure is outside the repo)
-- [ ] `npm run data:refresh` reproduces the files; the index test still passes; app bundle size grows by no more than 60 KB gzipped (proof: test + build output)
+- [ ] 2026 federal ordinary brackets, standard deduction and 65+ additions (single, MFJ) match Rev. Proc. 2025-32 at worked incomes, three or more per filing status (proof: test, figures cited to the note)
+- [ ] Qualified dividends and long-term gains stack on ordinary income at 0/15/20%, and NIIT is 3.8% above $200k/$250k MAGI, with thresholds that stay fixed in nominal terms (so they shrink in real terms year by year) while brackets are indexed; worked examples match hand calculations (proof: test)
+- [ ] Muni interest is federally exempt but counts in provisional income for Social Security (0/50/85% taxable, fixed nominal thresholds); Treasury interest is state-exempt (proof: test)
+- [ ] Every US home city in `cities.ts` has a state rule for muni interest (in-state exempt / all taxed / all exempt / reciprocal) and a state rate on interest and dividends, with a read source; Illinois, DC and Utah settled in `docs/research/state-muni-rules.md`; a foreign home is federal only (proof: test + note)
+- [ ] Typecheck clean, suite green, app bundle unchanged (the module isn't imported by the app yet) (proof: test + build output)
 Open: none
 
 ## Stages
-- [ ] 1. Yield data — add VWITX, VFITX, VBMFX; keep distributions and derive a monthly income yield per income asset; data tests
+- [x] 1. Yield data — add VWITX, VFITX, VBMFX; keep distributions and derive a monthly income yield per income asset; data tests
 - [ ] 2. Income tax — a pure 2026 US tax module: federal brackets, 0/15/20% on qualified dividends and gains, 3.8% NIIT, muni interest exempt (but counted for Social Security), per-state muni rules for the US home cities, foreign home = federal only; tests
 - [ ] 3. Income engine — `runIncomePaths` on the same scenarios as eVelo: yields that start at today's and move with each block, income paid first, gap sold with tax, three measures, bands; worker kind; tests and a speed budget
 - [ ] 4. The door — the arrow's hidden click sequence and coupon, a hidden `#income` route, a lazy mode shell, its own sanitized state (`evelo:v2:income`) cleared by Reset; e2e
@@ -33,9 +36,18 @@ Open: none
 - 2026-11-18 · Reveal: the Letter's one-sentence questions feed the Coupon Ladder's layered chart, with the Ledger's year-by-year table one tap away; desktop asks in the split layout (sentence left, chart right) and shows results in the stacked layout; phone asks with a small chart above the sentence — user: "Let's go with your recommendations." Mockups: https://claude.ai/artifact/MHebL5x158cF4J61GUkgJo
 - 2026-11-18 · Comparison: two columns over one chart of both medians with middle-half bands, with a switch between the three measures; for eVelo, "principal kept" means no forced sale — user: "Let's go with your recommendations."
 - 2026-11-18 · Agents: wide — user picked "Wide".
+- 2026-11-18 · Agents: wide, confirmed again for this session — user: "JBit Autopilot wide".
 - 2026-11-18 · Scale: 6 stages, one release; no scale signal fired, planned as one plan.
 - 2026-11-18 · Brass (`--bruised` hues) is the mode's accent in place of eVelo's green, so it reads as a different room in the same house — PM default, from the mockups.
 - 2026-11-18 · Bond returns come from real fund history: VWITX stands for munis, VFITX and VBMFX for taxable bonds (MUB stays, unused by the mode: its pre-2007 months are backfilled from SPY) — PM default, from [conventional-bond-modelling](research/conventional-bond-modelling.md).
+- 2026-11-18 · (unattended) VFITX total return uses Yahoo's adjusted close as is, no correction for lump distributions: it matches Vanguard's published calendar-year returns within 0.06 points in all 20 years checked, payout years included; raw distribution events stay unfit as income — from [vfitx-total-return](research/vfitx-total-return.md).
+- 2026-11-18 · (unattended) Income yield = payments per year × median of the trailing 12 months' payments ÷ raw close (12 for the funds, 4 for SPY), so lumps and slipped payments drop out; VWITX reads 5.4% in mid-1993 and 3.1% in mid-2025, not the plan's ≈2.5%, which matches its actual ~$0.035 monthly payout on a ~$13.5 price, so the test bands are 5–7% and 2–3.5%.
+- 2026-11-18 · (unattended) "Reproduces the files" means the same assets, calendar and yields, with returns within one rounding step (1e-5): Yahoo's adjusted closes move in the last digit between requests, so a byte-identical second run isn't possible.
+- 2026-11-18 · (unattended) This stage keeps `fx.json` as committed: a fresh FX refresh moves ALL past the 1% fallback-rate test in `cities.ts`, which is outside the stage; refreshing FX means updating those fallbacks too (open question).
+- 2026-11-18 · (unattended) Where Yahoo's distribution events thin out (VFITX has none from 2025-08, VBMFX lacks 10 of its last 15 months), a month's payout is implied from the adjusted close against the raw close, which the VFITX check proved sound; the refresh logs each such month and fails if the latest 12-month window holds fewer than half the expected payouts — from the stage 1 review.
+- 2026-11-18 · (unattended) VWITX, VFITX and VBMFX stay out of `market-index.json`, so eVelo's ticker search doesn't show them: the Goal keeps the main site unchanged — from the stage 1 review.
+- 2026-11-18 · (unattended) Stage 3 caps each month's replayed yield change, so a one-off jump in the history can't return as a yield shock — from the stage 1 review.
+- 2026-11-18 · (unattended) The tax module covers single and married filing jointly; the mode's question picks one in stage 5. The muni sleeve is a national fund, so its income is state-taxed except in no-tax states and DC (and only the in-state share would be exempt, taken as none); AMT and IRMAA are left out, noted in the mode's "How this is worked out" — from [conventional-income-taxes](research/conventional-income-taxes.md): AMT matters little below ~$1M, and a national fund is the honest default.
 - 2026-11-18 · Income yield starts at each asset's latest real yield and moves by each bootstrapped month's yield change, with a floor; income = yield × value, price change = total return − income. Yield levels are never replayed, so a 1990s block can't pay 6% today — PM default, from [conventional-bond-modelling](research/conventional-bond-modelling.md).
 - 2026-11-18 · No separate default or call model for investment-grade munis, and a "ladder" changes only when income arrives, not the returns: fund history already carries both — PM default, from [conventional-bond-modelling](research/conventional-bond-modelling.md).
 - 2026-11-18 · The mode holds three sleeves, not tickers: stocks (SPY), munis, taxable bonds, set by a stocks/bonds split and a muni share — PM default: the questions stay one sentence each.
@@ -48,8 +60,9 @@ Open: none
 - 2026-11-18 · How the mode works is explained inside the mode ("How this is worked out"), not on the Method page, which would give it away — PM default.
 
 ## Open questions
+- From the stage 1 re-review: the refresh fails only when the latest window holds under 6 of 12 payouts, so a fund could go 6 months without one and pass (stricter: a payout in each of the last 3 months); the 1993-06 "sits with its neighbours" test passes trivially after the warm-up back-fill, and the implied-vs-event payout agreement (median gap 0.3–0.4%) is measured but not tested — later.
+- `npm run data:refresh` also refreshes `fx.json`, and today's rates move ALL 1.45% from the hardcoded fallback in `src/data/cities.ts`, failing `localTaxes.test.ts`; update the fallbacks whenever FX is refreshed (or have the test or script do it) — from stage 1, later.
 - Fidelity's state-by-state muni guide wouldn't extract; the per-state rules for the US home cities need a manual read of a second source before stage 2 closes (Illinois taxes its own munis; DC exempts all; Utah uncertain) — stage 2 research, PM.
-- Yahoo's Treasury-fund lists carry lump distributions the adjusted close mostly ignores, so their total return may be slightly low; stage 1's check against Vanguard settles whether to correct it — stage 1.
 - From the stage 2 verify: at 390px the Outlook lens card cuts its "Median CAGR" eyebrow to "MEDIAN CAG…" (pre-existing, unchanged since 6a2ce30) — later.
 - From the stage 2 review: share links leave out values equal to the default, so every link made before the drag default moved (0.25%) now opens at 0.40%, while saved plans keep 0.25%; the same plan can show slightly different odds from a link and from storage. Options: bump the link `VERSION` and decode v1 links with the old default, and/or move saved plans that sit at exactly 0.25% to 0.40% — user's call; today "only the default moves" holds for saved plans, not for old links.
 - From stage 2: the real-FX walk is a pure random walk, so over 30 years a 25%/yr currency (Buenos Aires) has a mean cost factor of ~2.5×, and now that the typical future is centred at today's rate, its odds drop ~11 points vs no currency risk. Real exchange rates revert toward purchasing-power parity (half-lives of a few years in the literature); a mean-reverting walk (e.g. AR(1) in log real FX) would be more realistic for long horizons — user's call, needs research on half-lives.

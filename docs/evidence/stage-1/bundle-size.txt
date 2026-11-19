@@ -1,0 +1,18 @@
+$ node gz.mjs <HEAD worktree> <working tree>   # gzip -9 of every dist/assets js+css, after npm run build in each
+AtlasView.js                 HEAD 371.61 KB  tree 371.61 KB  delta -0.00 KB
+MethodView.js                HEAD 13.80 KB  tree 13.80 KB  delta -0.00 KB
+d3-array.js                  HEAD 67.63 KB  tree 67.64 KB  delta 0.00 KB
+index.js                     HEAD 127.39 KB  tree 127.39 KB  delta -0.00 KB
+worker.js                    HEAD 177.35 KB  tree 183.64 KB  delta 6.29 KB
+TOTAL js+css gzip: HEAD 860.2 KB, tree 866.5 KB, delta 6.29 KB (limit 60 KB)
+
+$ ls -l dist/assets/worker-*.js (tree, then HEAD)
+631164 head-wt/dist/assets/worker-DFHcCklT.js
+654301 dist/assets/worker-DUbvNVTs.js
+--- gz.mjs ---
+import fs from 'node:fs'; import zlib from 'node:zlib'; import path from 'node:path';
+const sum = d => { const out = {}; for (const f of fs.readdirSync(d)) if (/\.(js|css)$/.test(f)) out[f.replace(/-[\w-]{8}\.(js|css)$/, '.$1')] = (out[f.replace(/-[\w-]{8}\.(js|css)$/, '.$1')] || 0) + zlib.gzipSync(fs.readFileSync(path.join(d, f)), { level: 9 }).length; return out; };
+const [a, b] = process.argv.slice(2).map(d => sum(d + '/dist/assets'));
+let ta = 0, tb = 0;
+for (const k of [...new Set([...Object.keys(a), ...Object.keys(b)])].sort()) { ta += a[k] || 0; tb += b[k] || 0; if ((a[k] || 0) !== (b[k] || 0)) console.log(`${k.padEnd(28)} HEAD ${((a[k] || 0) / 1024).toFixed(2)} KB  tree ${((b[k] || 0) / 1024).toFixed(2)} KB  delta ${(((b[k] || 0) - (a[k] || 0)) / 1024).toFixed(2)} KB`); }
+console.log(`TOTAL js+css gzip: HEAD ${(ta / 1024).toFixed(1)} KB, tree ${(tb / 1024).toFixed(1)} KB, delta ${((tb - ta) / 1024).toFixed(2)} KB (limit 60 KB)`);

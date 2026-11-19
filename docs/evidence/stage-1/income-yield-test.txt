@@ -1,0 +1,36 @@
+$ npx vitest run src/data/__tests__/incomeYield.test.ts
+
+ RUN  v5.1.0 /home/jonah/src/repos/eVelo-v2
+
+ ✓ src/data/__tests__/incomeYield.test.ts > bundled bond funds > starts on the calendar 1ms
+ ✓ src/data/__tests__/incomeYield.test.ts > bundled bond funds > VWITX is a real series from 1993-02 (first = 0, no backfill) 9ms
+ ✓ src/data/__tests__/incomeYield.test.ts > bundled bond funds > VFITX is a real series from 1993-02 (first = 0, no backfill) 5ms
+ ✓ src/data/__tests__/incomeYield.test.ts > bundled bond funds > VBMFX is a real series from 1993-02 (first = 0, no backfill) 4ms
+ ✓ src/data/__tests__/incomeYield.test.ts > income yield series > only income assets carry y 0ms
+ ✓ src/data/__tests__/incomeYield.test.ts > income yield series > SPY has a full, sane monthly y aligned with r 17ms
+ ✓ src/data/__tests__/incomeYield.test.ts > income yield series > VWITX has a full, sane monthly y aligned with r 15ms
+ ✓ src/data/__tests__/incomeYield.test.ts > income yield series > VFITX has a full, sane monthly y aligned with r 13ms
+ ✓ src/data/__tests__/incomeYield.test.ts > income yield series > VBMFX has a full, sane monthly y aligned with r 12ms
+ ✓ src/data/__tests__/incomeYield.test.ts > income yield series > records where each month of y came from, for the same calendar 1ms
+ ✓ src/data/__tests__/incomeYield.test.ts > income yield series > SPY: the last 12 months of y rest on real or implied payouts, not copies 0ms
+ ✓ src/data/__tests__/incomeYield.test.ts > income yield series > VWITX: the last 12 months of y rest on real or implied payouts, not copies 0ms
+ ✓ src/data/__tests__/incomeYield.test.ts > income yield series > VFITX: the last 12 months of y rest on real or implied payouts, not copies 0ms
+ ✓ src/data/__tests__/incomeYield.test.ts > income yield series > VBMFX: the last 12 months of y rest on real or implied payouts, not copies 0ms
+ ✓ src/data/__tests__/incomeYield.test.ts > income yield series > SPY has no warm-up jump: 1993 is flat until its first full window 0ms
+ ✓ src/data/__tests__/incomeYield.test.ts > income yield series > matches known yield points 0ms
+ ✓ src/data/__tests__/incomeYield.test.ts > market index > keeps the hidden-mode bond funds out of the ticker index 6ms
+ ✓ src/data/__tests__/incomeYield.test.ts > incomeYield (pure) > median 0ms
+ ✓ src/data/__tests__/incomeYield.test.ts > incomeYield (pure) > rejects lump distributions in a monthly payer 1ms
+ ✓ src/data/__tests__/incomeYield.test.ts > incomeYield (pure) > annualises a quarterly payer and absorbs slipped payments 1ms
+ ✓ src/data/__tests__/incomeYield.test.ts > incomeYield (pure) > uses the price of the month and carries gaps forward 1ms
+ ✓ src/data/__tests__/incomeYield.test.ts > incomeYield (pure) > buckets Yahoo dividend events by month 0ms
+ ✓ src/data/__tests__/incomeYield.test.ts > incomeYield (pure) > ignores non-numeric and non-finite amounts 0ms
+ ✓ src/data/__tests__/incomeYield.test.ts > incomeYield (pure) > implies a payout from adjusted against raw close 0ms
+ ✓ src/data/__tests__/incomeYield.test.ts > incomeYield (pure) > fills a monthly payer's missing events with implied payouts, and only a monthly payer's 2ms
+ ✓ src/data/__tests__/incomeYield.test.ts > incomeYield (pure) > back-fills the warm-up so a partial first payment leaves no jump 1ms
+
+ Test Files  1 passed (1)
+      Tests  26 passed (26)
+   Start at  18:53:43
+   Duration  204ms (tests 63%, import 20%, transform 16%, worker 1%)
+

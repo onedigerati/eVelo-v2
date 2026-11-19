@@ -1,0 +1,17 @@
+# Stage 1 · Yield data — evidence
+Verified 2026-11-18 on 2e55081, plus uncommitted changes (the stage's work is uncommitted)
+
+| Check | Result | Evidence |
+|---|---|---|
+| `market.json` carries VWITX (munis), VFITX and VBMFX (taxable) as real series from 1993, not backfilled (proof: test) | pass | [income-yield-test.txt](income-yield-test.txt): `VWITX/VFITX/VBMFX is a real series from 1993-02 (first = 0, no backfill)`; [funds-and-yields.txt](funds-and-yields.txt): first=0 for all three, 0/405 months equal to SPY, corr with SPY 0.17 / -0.05 / 0.16, CAGR 4.0–4.2%, vol 4.1–4.8%, 2008 -0.1% / +13.4% / +5.1%, 2022 -6.9% / -10.4% / -13.2% |
+| Each income asset (the three funds, SPY) has a monthly income yield series, built from trailing 12 months of distributions ÷ price, sane against known points (VWITX ≈ 6% in 1993, ≈ 2.5% in 2025) (proof: test) | pass | [income-yield-test.txt](income-yield-test.txt): `matches known yield points` and the four `has a full, sane monthly y` tests (bands 5–7% and 2–3.5% per the 2026-11-18 unattended decision); [funds-and-yields.txt](funds-and-yields.txt): VWITX 5.35% (1993-06), 3.13% (2025-06), 3.40% (2026-10); SPY 2.50 / 0.99 / 3.01 / 1.48 / 1.14 / 1.00%; only those four assets carry y; sources file has 0 copied months anywhere (last 12: SPY, VWITX all E; VFITX all I; VBMFX 1 E + 11 I) |
+| One year of Yahoo's VFITX total return matches Vanguard's published annual return within 0.5 points, and the note says so (proof: command, the published figure is outside the repo) | pass | [check-vfitx.txt](check-vfitx.txt): fresh run reproduces every adjTR in docs/research/vfitx-total-return.md (e.g. 2008 13.35 vs published 13.32, 2025 7.56 vs 7.53); max diff over the 20 published years 0.06 points, and the note's verdict says so |
+| `npm run data:refresh` reproduces the files; the index test still passes; app bundle size grows by no more than 60 KB gzipped (proof: test + build output) | pass | [data-refresh.txt](data-refresh.txt), [refresh-reproduces.txt](refresh-reproduces.txt): same 175 assets, calendar 1993-02+405, fields and `first`; max abs dr 1.0e-5, max abs dy 1.0e-5, CPI identical, sources file identical, no structural difference; full suite 1181/1181 on the refreshed data; [index-test.txt](index-test.txt): 4/4 incl. `is in sync with market.json`; [bundle-size.txt](bundle-size.txt): +6.29 KB gzipped (all in the worker chunk) vs HEAD; VWITX, VFITX, VBMFX absent from market-index.json ([funds-and-yields.txt](funds-and-yields.txt), test `keeps the hidden-mode bond funds out of the ticker index`) |
+
+Project checks: type check pass ([typecheck.txt](typecheck.txt)) · lint none configured · tests 1181/1181 ([tests.txt](tests.txt)) · build pass ([build.txt](build.txt), HEAD: [build-head.txt](build-head.txt))
+Audit: `npm audit --omit=dev`: 0 high, 0 critical ([audit.txt](audit.txt))
+
+Notes
+- After the refresh, `src/data/fx.json` was restored with `git checkout`, and the working-tree copies of market.json, market-index.json and income-yield-sources.json were put back (cmp-identical).
+- market-index.json differed after refresh only by last-digit drift (one spark character, one cagr10 0.0211 -> 0.021), consistent with the 1e-5 return drift.
+- The refresh log lists 14 implied VFITX months and 10 for VBMFX, while the sources file marks 15 and 11 months `I`: `I` means the trailing window uses an implied month, so the counts are consistent. VFITX's latest month (2026-10) has neither an event nor an implied payout; its y is the median of the window.

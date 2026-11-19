@@ -24,6 +24,11 @@ export interface AssetSeries {
   first: number
   /** Monthly total returns aligned to the calendar; null before `first`. Rounded to 5 dp. */
   r: (number | null)[]
+  /** Income assets only (SPY and the Vanguard bond funds): annualised income yield per calendar
+   *  month (decimal, e.g. 0.025), aligned with `r` over the whole calendar. Trailing-12-month
+   *  median payout × payments per year ÷ raw close; a fund month with no Yahoo event uses the payout
+   *  implied by adjclose (scripts/income-yield.mjs; per-month sources in income-yield-sources.json). 5 dp. */
+  y?: number[]
 }
 
 export interface Holding {

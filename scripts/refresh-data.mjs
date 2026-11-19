@@ -4,6 +4,7 @@
 // Also refreshes FX spot rates (open.er-api.com, USD base) for every currency used by
 // src/data/cities.ts into src/data/fx.json ({ asOf, rates }), and derives
 // src/data/market-index.json (build-market-index.mjs) — the small summary the UI's main chunk uses.
+// Income assets (INCOME_FREQ) also get `y`, a monthly income-yield series (income-yield.mjs).
 //
 // Usage: npm run data:refresh        (market + FX)
 //        npm run data:fx             (FX only: node scripts/refresh-data.mjs --fx-only)
@@ -11,16 +12,21 @@ import { readFile, writeFile, mkdir } from 'node:fs/promises'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { writeIndex } from './build-market-index.mjs'
+import { impliedPayouts, incomeYieldDetail, monthlyDistributions } from './income-yield.mjs'
 
 const DATA_DIR = resolve(dirname(fileURLToPath(import.meta.url)), '../src/data')
 const OUT = resolve(DATA_DIR, 'market.json')
+// Where each income asset's `y` came from, month by month (tests only; not bundled).
+const Y_SRC_OUT = resolve(DATA_DIR, 'income-yield-sources.json')
 const FX_OUT = resolve(DATA_DIR, 'fx.json')
 const FX_URL = 'https://open.er-api.com/v6/latest/USD'
 const UA =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36'
 const CONCURRENCY = 4
 const DELAY_MS = 150
-const PERIOD1 = Date.UTC(1992, 11, 1) / 1000
+// A year before SPY's inception (1993-01), so income yields have a full trailing-12-month window
+// from the calendar's first month. Returns still start at the calendar (SPY's first return).
+const PERIOD1 = Date.UTC(1991, 11, 1) / 1000
 
 // symbol -> asset class
 const UNIVERSE = {}
@@ -29,6 +35,13 @@ const add = (cls, list) => list.split(/\s+/).filter(Boolean).forEach((s) => (UNI
 add('etf-equity', `SPY VOO VTI QQQ DIA IWM VXUS VEA VWO EFA EEM VT SCHD VIG DGRO VYM NOBL RSP MTUM QUAL USMV
   XLK XLF XLV XLE XLY XLP XLI XLU XLB XLRE XLC SMH SOXX VGT IBB ITA`)
 add('etf-bond', 'AGG BND TLT IEF SHY TIP LQD HYG MUB BNDX VGSH SGOV')
+// Vanguard mutual funds with real history from before 1993 (docs/research/conventional-bond-modelling.md):
+// intermediate munis, intermediate Treasuries, total bond market. They must cover the whole calendar.
+// They serve the hidden income mode only: build-market-index.mjs keeps them out of the ticker index.
+add('etf-bond', 'VWITX VFITX VBMFX')
+const FULL_HISTORY = ['VWITX', 'VFITX', 'VBMFX']
+// Income assets that get a `y` series: symbol -> distributions per year.
+const INCOME_FREQ = { SPY: 4, VWITX: 12, VFITX: 12, VBMFX: 12 }
 add('etf-real-estate', 'VNQ')
 add('commodity', 'GLD IAU SLV DBC')
 add('crypto', 'BTC-USD ETH-USD IBIT')
@@ -67,7 +80,8 @@ async function withRetry(fn) {
   }
 }
 
-/** Returns { name, closes: Map<"YYYY-MM", adjclose> } of COMPLETE months only. */
+/** Returns { name, closes: Map<"YYYY-MM", adjclose>, raw: Map<"YYYY-MM", close>, dists: Map<"YYYY-MM", amount> }
+ *  of COMPLETE months only. */
 async function fetchYahoo(sym) {
   // range=max silently downgrades long histories to 3-month bars, so ask for an explicit
   // window starting just before SPY's inception (the calendar never goes earlier).
@@ -80,8 +94,10 @@ async function fetchYahoo(sym) {
     throw new Error(`granularity ${res.meta.dataGranularity}`)
   const ts = res.timestamp || []
   const adj = res.indicators?.adjclose?.[0]?.adjclose || []
+  const close = res.indicators?.quote?.[0]?.close || []
   const current = ym(new Date())
   const closes = new Map()
+  const raw = new Map()
   for (let i = 0; i < ts.length; i++) {
     // Monthly bars are stamped at local midnight on the 1st (04:00/05:00 UTC for New York,
     // 00:00 UTC for crypto). Key by the UTC month of timestamp + 12h, which is the bar's month for
@@ -92,8 +108,11 @@ async function fetchYahoo(sym) {
     if (v == null || !(v > 0)) continue
     if (closes.has(key)) throw new Error(`duplicate bar for ${key}`)
     closes.set(key, v)
+    if (close[i] > 0) raw.set(key, close[i])
   }
-  return { name: res.meta?.longName || res.meta?.shortName || sym, closes }
+  const dists = monthlyDistributions(res.events?.dividends)
+  for (const k of [...dists.keys()]) if (k >= current) dists.delete(k)
+  return { name: res.meta?.longName || res.meta?.shortName || sym, closes, raw, dists }
 }
 
 async function fetchCpi() {
@@ -175,6 +194,7 @@ async function main() {
   }
 
   const assets = {}
+  const ySources = {}
   for (const sym of symbols) {
     const r0 = results.get(sym)
     if (!r0) continue
@@ -200,13 +220,28 @@ async function main() {
     const gaps = []
     for (let i = first; i < months; i++) if (r[i] == null) (r[i] = 0), gaps.push(cal[i])
     if (gaps.length) console.warn(`  ! ${sym}: ${gaps.length} interior gap month(s) set to 0: ${gaps.join(', ')}`)
+    if (FULL_HISTORY.includes(sym) && first !== 0) throw new Error(`${sym} must start at ${start}, starts at ${cal[first]}`)
     assets[sym] = { symbol: sym, name: r0.name, cls: UNIVERSE[sym], first, r }
+    if (INCOME_FREQ[sym]) {
+      const perYear = INCOME_FREQ[sym]
+      const d = incomeYieldDetail(cal, r0.dists, r0.raw, perYear, impliedPayouts(r0.closes, r0.raw))
+      assets[sym].y = d.y
+      ySources[sym] = d.src
+      const list = (xs) => (xs.length ? `${xs.length} (${xs.join(', ')})` : '0')
+      console.log(`  ${sym} y: implied payout months ${list(d.implied)}`)
+      console.log(`  ${sym} y: copied months ${list(d.copied)}; warm-up back-filled ${d.backfilled.length}`)
+      const last = d.paid[months - 1]
+      if (last < perYear / 2)
+        throw new Error(`${sym}: latest month's window has ${last} payments (events or implied), expected ${perYear}`)
+    }
   }
+  for (const sym of Object.keys(INCOME_FREQ)) if (!assets[sym]?.y) throw new Error(`${sym}: no income yield series`)
 
   const data = { asOf: new Date().toISOString().slice(0, 10), start, months, cpi, assets }
   await mkdir(dirname(OUT), { recursive: true })
   const text = JSON.stringify(data)
   await writeFile(OUT, text)
+  await writeFile(Y_SRC_OUT, JSON.stringify({ asOf: data.asOf, start, months, codes: 'E events, I implied, C copied, B warm-up', assets: ySources }, null, 2) + '\n')
   console.log(
     `Wrote ${OUT}\n  ${Object.keys(assets).length} assets, ${failures.length} failed${failures.length ? ` (${failures.join(', ')})` : ''}` +
       `\n  calendar ${start}..${end} (${months} months), CPI tail-filled ${filled} month(s)\n  ${(text.length / 1024).toFixed(0)} KB`,

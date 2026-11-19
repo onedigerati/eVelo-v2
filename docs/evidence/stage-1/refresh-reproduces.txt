@@ -1,0 +1,46 @@
+$ node diff.mjs before after   # before = working-tree copies, after = fresh npm run data:refresh (fx.json restored); script source at the end
+asOf 2026-11-19 -> 2026-11-19; calendar 1993-02+405 -> 1993-02+405
+max |dr| = 1.00e-5 at BAC[193] (1427 values changed); within 1e-5: true
+max |dy| = 1.00e-5 VBMFX[404]; max |dcpi| = 0.00e+0
+market-index.json identical: false (size 27640 -> 27639)
+sources SPY: same
+sources VWITX: same
+sources VFITX: same
+sources VBMFX: same
+no structural differences
+
+$ npx vitest run   (on the refreshed data)
+
+ Test Files  76 passed (76)
+      Tests  1181 passed (1181)
+   Start at  18:55:05
+   Duration  9.13s (transform 65%, tests 23%, import 11%)
+
+--- diff.mjs ---
+import fs from 'node:fs';
+const [A, B] = process.argv.slice(2);
+const load = (d, f) => JSON.parse(fs.readFileSync(`${d}/${f}`, 'utf8'));
+const a = load(A, 'market.json'), b = load(B, 'market.json');
+const issues = [];
+for (const k of ['start', 'months']) if (a[k] !== b[k]) issues.push(`${k}: ${a[k]} -> ${b[k]}`);
+console.log(`asOf ${a.asOf} -> ${b.asOf}; calendar ${a.start}+${a.months} -> ${b.start}+${b.months}`);
+const ka = Object.keys(a.assets), kb = Object.keys(b.assets);
+if (ka.join() !== kb.join()) issues.push(`asset keys differ: -${ka.filter(k => !kb.includes(k))} +${kb.filter(k => !ka.includes(k))}`);
+let maxR = 0, maxRat = '', maxY = 0, maxYat = '', cpi = 0, nR = 0;
+for (let i = 0; i < a.cpi.length; i++) cpi = Math.max(cpi, Math.abs(a.cpi[i] - b.cpi[i]));
+for (const k of ka) {
+  const x = a.assets[k], y = b.assets[k]; if (!y) continue;
+  for (const f of ['symbol', 'name', 'cls', 'first']) if (x[f] !== y[f]) issues.push(`${k}.${f}: ${x[f]} -> ${y[f]}`);
+  const fx = Object.keys(x).join(), fy = Object.keys(y).join(); if (fx !== fy) issues.push(`${k} fields ${fx} -> ${fy}`);
+  if (x.r.length !== y.r.length) issues.push(`${k}.r length`);
+  x.r.forEach((v, i) => { const d = Math.abs(v - y.r[i]); if (d > 0) nR++; if (d > maxR) { maxR = d; maxRat = `${k}[${i}]`; } });
+  if (x.y || y.y) { if (!x.y || !y.y || x.y.length !== y.y.length) issues.push(`${k}.y presence/length`); else x.y.forEach((v, i) => { const d = Math.abs(v - y.y[i]); if (d > maxY) { maxY = d; maxYat = `${k}[${i}]`; } }); }
+}
+console.log(`max |dr| = ${maxR.toExponential(2)} at ${maxRat} (${nR} values changed); within 1e-5: ${maxR <= 1e-5 + 1e-12}`);
+console.log(`max |dy| = ${maxY.toExponential(2)} ${maxYat}; max |dcpi| = ${cpi.toExponential(2)}`);
+const ia = load(A, 'market-index.json'), ib = load(B, 'market-index.json');
+const sa = JSON.stringify(ia), sb = JSON.stringify(ib);
+console.log(`market-index.json identical: ${sa === sb}${sa === sb ? '' : ' (size ' + sa.length + ' -> ' + sb.length + ')'}`);
+const qa = load(A, 'income-yield-sources.json'), qb = load(B, 'income-yield-sources.json');
+for (const k of Object.keys(qa.assets)) { const s = qa.assets[k], t = qb.assets[k]; const d = []; for (let i = 0; i < s.length; i++) if (s[i] !== t[i]) d.push(`${i}:${s[i]}->${t[i]}`); console.log(`sources ${k}: ${d.length ? d.join(' ') : 'same'}`); }
+console.log(issues.length ? 'STRUCTURAL DIFFERENCES:\n  ' + issues.join('\n  ') : 'no structural differences');

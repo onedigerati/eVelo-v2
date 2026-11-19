@@ -1,0 +1,59 @@
+$ node funds.mjs src/data   # script source at the end of this file
+start 1993-02, months 405, last 2026-10
+
+# Check 1: real series from 1993, distinct from SPY, plausible bond returns
+VWITX cls=etf-bond first=0 len=405 equalToSPY=0/405 corrSPY=0.17 CAGR=4.04% vol=4.10% min=-4.08% max=5.08% 1994=-2.1% 2008=-0.1% 2022=-6.9%
+VFITX cls=etf-bond first=0 len=405 equalToSPY=0/405 corrSPY=-0.05 CAGR=4.19% vol=4.81% min=-3.88% max=5.59% 1994=-4.5% 2008=13.4% 2022=-10.4%
+VBMFX cls=etf-bond first=0 len=405 equalToSPY=0/405 corrSPY=0.16 CAGR=4.23% vol=4.14% min=-4.17% max=4.51% 1994=-2.6% 2008=5.1% 2022=-13.2%
+SPY   cls=etf-equity first=0 len=405 equalToSPY=405/405 corrSPY=1.00 CAGR=10.75% vol=14.71% min=-16.52% max=12.70% 1994=0.4% 2008=-36.8% 2022=-18.2%
+
+# Check 2: income yield y at points (percent)
+asset  1993-06  2000-06  2008-12  2020-12  2025-06  2026-10
+SPY       2.50     0.99     3.01     1.48     1.14     1.00   (len 405, min 0.94, max 3.68)
+VWITX     5.35     5.08     4.21     2.30     3.13     3.40   (len 405, min 2.08, max 5.58)
+VFITX     5.91     6.19     3.77     1.23     3.96     4.13   (len 405, min 0.89, max 6.51)
+VBMFX     6.69     6.56     4.71     2.22     3.66     4.09   (len 405, min 1.81, max 6.99)
+
+assets carrying y: SPY, VWITX, VFITX, VBMFX
+
+# Sources: codes "E events, I implied, C copied, B warm-up"
+SPY    len=405 counts={"B":11,"E":394} last12=EEEEEEEEEEEE copiedInLast12=0
+VWITX  len=405 counts={"E":405} last12=EEEEEEEEEEEE copiedInLast12=0
+VFITX  len=405 counts={"E":390,"I":15} last12=IIIIIIIIIIII copiedInLast12=0
+VBMFX  len=405 counts={"E":394,"I":11} last12=EIIIIIIIIIII copiedInLast12=0
+
+# market-index.json mentions: VWITX=false VFITX=false VBMFX=false SPY=true
+
+--- funds.mjs ---
+import fs from 'node:fs';
+const dir = process.argv[2];
+const m = JSON.parse(fs.readFileSync(dir + '/market.json', 'utf8'));
+const idx = JSON.parse(fs.readFileSync(dir + '/market-index.json', 'utf8'));
+const src = JSON.parse(fs.readFileSync(dir + '/income-yield-sources.json', 'utf8'));
+const [sy, sm] = m.start.split('-').map(Number);
+const ym = i => { const t = sy * 12 + sm - 1 + i; return `${Math.floor(t / 12)}-${String(t % 12 + 1).padStart(2, '0')}`; };
+const at = s => { const [y, mo] = s.split('-').map(Number); return y * 12 + mo - 1 - (sy * 12 + sm - 1); };
+const spy = m.assets.SPY.r;
+const ann = (r, from, to) => { let g = 1; for (let i = from; i < to; i++) g *= 1 + r[i]; return (g ** (12 / (to - from)) - 1); };
+const sd = r => { const mu = r.reduce((a, b) => a + b, 0) / r.length; return Math.sqrt(r.reduce((a, b) => a + (b - mu) ** 2, 0) / (r.length - 1)) * Math.sqrt(12); };
+const corr = (a, b) => { const n = a.length, ma = a.reduce((x, y) => x + y) / n, mb = b.reduce((x, y) => x + y) / n; let c = 0, va = 0, vb = 0; for (let i = 0; i < n; i++) { c += (a[i] - ma) * (b[i] - mb); va += (a[i] - ma) ** 2; vb += (b[i] - mb) ** 2; } return c / Math.sqrt(va * vb); };
+console.log(`start ${m.start}, months ${m.months}, last ${ym(m.months - 1)}`);
+console.log('\n# Check 1: real series from 1993, distinct from SPY, plausible bond returns');
+for (const k of ['VWITX', 'VFITX', 'VBMFX', 'SPY']) {
+  const a = m.assets[k], r = a.r;
+  const same = r.filter((x, i) => x === spy[i]).length;
+  const yr = y => ann(r, at(`${y}-01`), at(`${y}-12`) + 1);
+  console.log(`${k.padEnd(5)} cls=${a.cls} first=${a.first} len=${r.length} equalToSPY=${same}/${r.length} corrSPY=${corr(r, spy).toFixed(2)} CAGR=${(ann(r, 0, r.length) * 100).toFixed(2)}% vol=${(sd(r) * 100).toFixed(2)}% min=${(Math.min(...r) * 100).toFixed(2)}% max=${(Math.max(...r) * 100).toFixed(2)}% 1994=${(yr(1994) * 100).toFixed(1)}% 2008=${(yr(2008) * 100).toFixed(1)}% 2022=${(yr(2022) * 100).toFixed(1)}%`);
+}
+console.log('\n# Check 2: income yield y at points (percent)');
+const pts = ['1993-06', '2000-06', '2008-12', '2020-12', '2025-06', ym(m.months - 1)];
+console.log('asset  ' + pts.join('  '));
+for (const k of ['SPY', 'VWITX', 'VFITX', 'VBMFX']) {
+  const y = m.assets[k].y;
+  console.log(k.padEnd(6) + ' ' + pts.map(p => (y[at(p)] * 100).toFixed(2).padStart(7)).join('  ') + `   (len ${y.length}, min ${(Math.min(...y) * 100).toFixed(2)}, max ${(Math.max(...y) * 100).toFixed(2)})`);
+}
+console.log('\nassets carrying y:', Object.keys(m.assets).filter(k => m.assets[k].y).join(', '));
+console.log('\n# Sources: codes', JSON.stringify(src.codes));
+for (const [k, v] of Object.entries(src.assets)) { const c = {}; for (const ch of v) c[ch] = (c[ch] || 0) + 1; console.log(`${k.padEnd(6)} len=${v.length} counts=${JSON.stringify(c)} last12=${v.slice(-12)} copiedInLast12=${[...v.slice(-12)].filter(x => x === 'C').length}`); }
+const syms = JSON.stringify(idx);
+console.log('\n# market-index.json mentions:', ['VWITX', 'VFITX', 'VBMFX', 'SPY'].map(s => `${s}=${syms.includes('"' + s + '"')}`).join(' '));
