@@ -6,3 +6,4 @@ dist
 tsconfig.tsbuildinfo
 .preview/
 lighthouse/
+e2e/screenshots/

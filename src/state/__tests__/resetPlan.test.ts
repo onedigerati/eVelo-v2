@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { PLAN_KEY, resetPlan, urlWithoutShare } from '../resetPlan'
+import { INCOME_KEY, PLAN_KEY, resetPlan, urlWithoutShare } from '../resetPlan'
 
 function fakeStorage(init: Record<string, string>) {
   const map = new Map(Object.entries(init))
@@ -49,6 +49,38 @@ describe('resetPlan', () => {
       expect(s.map.has(PLAN_KEY)).toBe(false)
       expect(s.map.get('evelo:v2:portfolios')).toBe('[1]')
     }
+  })
+
+  it("also clears the living-on-income mode's state, keeping the theme and portfolios", () => {
+    const s = fakeStorage({
+      [PLAN_KEY]: JSON.stringify({ inputs: { portfolio: 5 }, theme: 'dark', themeV: 2 }),
+      [INCOME_KEY]: '{"portfolio":123}',
+      'evelo:v2:portfolios': '[1]',
+    })
+    run('#income', s)
+    expect(INCOME_KEY).toBe('evelo:v2:income')
+    expect(s.map.has(INCOME_KEY)).toBe(false)
+    expect(JSON.parse(s.map.get(PLAN_KEY)!)).toEqual({ theme: 'dark', themeV: 2 })
+    expect(s.map.get('evelo:v2:portfolios')).toBe('[1]')
+  })
+
+  it("clears the mode's state even when it is corrupt, and when there is no stored plan", () => {
+    const s = fakeStorage({ [INCOME_KEY]: '{not json' })
+    run('', s)
+    expect(s.map.size).toBe(0)
+  })
+
+  it('clears the stored plan even if removing the mode state throws', () => {
+    const s = fakeStorage({ [PLAN_KEY]: '{"inputs":{}}' })
+    const flaky = {
+      ...s,
+      removeItem: (k: string) => {
+        if (k === INCOME_KEY) throw new Error('blocked')
+        s.removeItem(k)
+      },
+    }
+    expect(run('', flaky).calls).toEqual(['replace', 'reload'])
+    expect(s.map.has(PLAN_KEY)).toBe(false)
   })
 
   it('strips a #p= share hash, then reloads', () => {

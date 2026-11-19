@@ -17,6 +17,8 @@ import './shell.css'
 const AtlasView = lazy(() => import('../atlas/AtlasView').then((m) => ({ default: m.AtlasView })))
 const MethodView = lazy(() => import('../method/MethodView').then((m) => ({ default: m.MethodView })))
 const Styleguide = lazy(() => import('../styleguide/Styleguide').then((m) => ({ default: m.Styleguide })))
+// The hidden living-on-income mode: its own chunk, fetched only on #income (never prefetched).
+const IncomeMode = lazy(() => import('../income/IncomeMode'))
 
 /** Warm the lazy views once the app is idle so tab switches stay instant. */
 export function prefetchViews() {
@@ -91,6 +93,19 @@ export function AppShell() {
     return (
       <>
         <LandingView bp={bp} />
+        <Toaster />
+      </>
+    )
+  }
+
+  // The income mode is a different room in the same house: full-bleed with its own header (the
+  // wordmark and a way back), no top bar or tab bar, so the app's nav never shows it.
+  if (route === 'income') {
+    return (
+      <>
+        <Suspense fallback={<ViewFallback />}>
+          <IncomeMode />
+        </Suspense>
         <Toaster />
       </>
     )
