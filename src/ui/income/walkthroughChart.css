@@ -1,0 +1,90 @@
+/* The walkthrough's overview net-worth chart (WalkthroughChart.tsx). */
+.wtchart {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.wtchart__svg {
+  display: block;
+  overflow: visible;
+  cursor: pointer;
+  touch-action: pan-y;
+}
+.wtchart__svg:focus-visible {
+  outline: none;
+}
+.wtchart:has(svg:focus-visible) {
+  border-radius: var(--radius-sm);
+  box-shadow: var(--focus-ring);
+}
+.wtchart__title {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  fill: var(--ink-3);
+}
+.wtchart__tick {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  fill: var(--chart-axis);
+}
+.wtchart__value {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  fill: var(--cs-text);
+  paint-order: stroke;
+  stroke: var(--bg);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+/* A phone plot keeps every label at 12px or more. */
+.wtchart--phone .wtchart__title,
+.wtchart--phone .wtchart__tick {
+  font-size: 12px;
+}
+.wtchart--phone .wtchart__value {
+  font-size: 13px;
+}
+.wtchart__grid {
+  stroke: var(--chart-grid);
+}
+.wtchart__lit {
+  fill: var(--surface-press);
+}
+.wtchart__divider {
+  stroke: var(--hairline);
+}
+.wtchart__series--income {
+  --cs: var(--bruised);
+  --cs-text: var(--bruised-text);
+}
+.wtchart__series--evelo {
+  --cs: var(--holds);
+  --cs-text: var(--holds-text);
+}
+.wtchart__faint,
+.wtchart__bold {
+  fill: none;
+  stroke: var(--cs);
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.wtchart__faint {
+  stroke-width: 1.5;
+  opacity: 0.35;
+}
+.wtchart__bold {
+  stroke-width: 3;
+}
+.wtchart__mark line {
+  stroke: var(--chart-crosshair);
+  stroke-dasharray: 3 3;
+}
+.wtchart__dot {
+  fill: var(--cs);
+  stroke: var(--bg);
+  stroke-width: 2;
+}
