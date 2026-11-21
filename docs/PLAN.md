@@ -7,18 +7,17 @@ A walkthrough on the Living on Income results that shows how the mode and eVelo 
 2026-11-21 · tests: 1457 pass, 1 skipped · typecheck: clean
 
 ## Now
-Stage 2 of 4 · Chapters and ledgers
+Stage 3 of 4 · Matched sample futures
 Mode: autopilot — unattended
-Risk: UI (shows engine figures; the chapter rules are logic, tested)
+Risk: money (engine figures: new engine output; existing figures must not move)
 Agents: wide — confirmed 2026-11-21 15:45
-Scope: a pure chapter module (rules from the plan's own ages, Social Security start, the median paths and the horizon), the walkthrough section under the existing comparison (shown once synced and both results are in), chapter rail, per-plan paragraphs, overview net-worth chart with the chapter lit and tap-to-jump, a year slider limited to the chapter, twin ledgers from the engines' per-year medians, Play story stopping at the chapter's end, phone and keyboard. Design: the chosen mockup (no reservoir drawing, no Same storm yet).
+Scope: a pure picker (`src/engine/sampleFutures.ts`) choosing four path indices by the logged market rule from the drawn months; simulate and the income engine each return per-year rows for those paths when the method replays history (bootstrap), recorded only on the paths picked; nothing under fat-tail. Both engines draw their months with the same call, so equal settings give equal picks without either engine seeing the other.
 Checks:
-- [x] Chapter rules are pure and tested: 3–6 chapters, contiguous, covering every year of the horizon once; no Social Security in the horizon → no "arrives" chapter; no bad year in the medians → no bad-market chapter; the estate chapter is the last years (proof: test)
-- [x] Once synced and both results are in, the walkthrough shows under the comparison (not before sync), from the engines' real results: per-plan chapter paragraphs, and twin ledgers for the chosen year (living on income: dividends and interest, Social Security, shares sold, tax, portfolio; eVelo: Social Security, borrowed, interest, repaid and forced sales, loan, portfolio, loan-to-value), with a note that medians don't add up where a total shows (proof: e2e)
-- [x] The overview net-worth chart lights the chapter's span; tapping or clicking a year jumps to it (and its chapter); the slider covers only the chapter's years (proof: e2e)
-- [x] Play story runs the chapter's years and stops at its end; Next chapter carries on; under reduced motion it steps without animation (proof: e2e)
-- [x] Desktop and a 390px phone with no horizontal scroll; the keyboard reaches and works the rail (arrow keys), buttons, slider and chart (proof: e2e with screenshots)
-- [x] The rest of the site is unchanged: the suite and the e2e smoke pass (proof: test)
+- [ ] A pure, tested picker chooses early crash, typical, late crash and lucky by the logged plan-neutral market rule from the drawn months; it reads only the month indices and real stock returns, and the same inputs give the same picks (proof: test)
+- [ ] Under the historical method, simulate and the income engine return per-year rows for the picked paths (eVelo: net worth, portfolio, loan, loan-to-value, borrowed, interest, forced-sale sold; living on income: portfolio, dividends and interest, Social Security, sold, tax), and each row equals that engine's own per-path figures (proof: test)
+- [ ] With equal seed, paths, block length and horizon, both engines pick the same path indices and those paths share calendar months, proven by comparing their drawn month indices (proof: test)
+- [ ] Under fat-tail, no sample futures are returned (proof: test)
+- [ ] Existing figures don't move: the narrowed simulate golden, the income goldens and the atlas/solve hash pass, and the simulate, atlas and income timing budgets still pass (proof: test)
 Open: none
 
 ## Stages
