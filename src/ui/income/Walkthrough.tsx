@@ -5,9 +5,10 @@
 // carries on. The data and chapter rules live in walkthrough.ts; the chart, ledgers and paragraphs
 // are leaves (WalkthroughChart.tsx, TwinLedgers.tsx, walkthroughStory.ts) coding against its types.
 
-import { useEffect, useMemo, useRef, useState, useSyncExternalStore, type KeyboardEvent } from 'react'
+import { useEffect, useMemo, useRef, useState, type KeyboardEvent } from 'react'
 import type { IncomeInputs, IncomeResult } from '../../engine/incomeTypes'
 import type { SimulationResult } from '../../engine/types'
+import { useReducedMotion } from './reducedMotion'
 import { TwinLedgers } from './TwinLedgers'
 import { buildYears, chapterOf, chapters, type Chapter, type StoryPart, type WalkInputs, type WalkYear } from './walkthrough'
 import { WalkthroughChart } from './WalkthroughChart'
@@ -17,20 +18,6 @@ import './walkthrough.css'
 /** Play story's step, ms: a year at a time, slower with reduced motion (and no transitions then). */
 export const PLAY_MS = 650
 export const PLAY_MS_REDUCED = 1100
-
-const REDUCED = '(prefers-reduced-motion: reduce)'
-/** prefers-reduced-motion, live. (Not ../hooks' useMediaQuery: that module pulls in the app store.) */
-function useReducedMotion(): boolean {
-  return useSyncExternalStore(
-    (cb) => {
-      const m = window.matchMedia(REDUCED)
-      m.addEventListener('change', cb)
-      return () => m.removeEventListener('change', cb)
-    },
-    () => window.matchMedia(REDUCED).matches,
-    () => false,
-  )
-}
 
 /** Play story is running for exactly the chapter list it started on: any change to the years or
  *  chapters (an input or sync update makes a new list) stops it. */

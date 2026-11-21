@@ -2,8 +2,9 @@
 // between two futures, the shared scales' domains, the age ticks and the chart's text alternative.
 // SameStormChart.tsx draws them.
 
+import { scaleLinear } from 'd3-scale'
 import { currencyCompact, percent } from '../format'
-import type { StormFuture } from './sameStorm'
+import type { StormFuture, StormYear } from './sameStorm'
 
 /** The plans' values before the first year (the same for every future): each plan's start. */
 export interface StormStart {
@@ -47,7 +48,20 @@ export function tweenPoints(from: StormPoints, to: StormPoints, e: number): Stor
   return { income: mix(from.income, to.income), evelo: mix(from.evelo, to.evelo), ltv: mix(from.ltv, to.ltv) }
 }
 
-/** Net worth domain over every future, so switching keeps the scale: always includes 0. */
+/** One future's net-worth domain, niced to `ticks` ticks: each future gets its own scale (a lucky
+ *  future's $25M would squash the others), tweened between futures with `tweenDomain`. */
+export function futureDomain(p: StormPoints, ticks: number): [number, number] {
+  const [lo, hi] = scaleLinear().domain(worthDomain([p])).nice(ticks).domain()
+  return [lo, hi]
+}
+
+/** `from` moved a share `e` of the way to `to`. */
+export function tweenDomain(from: readonly [number, number], to: readonly [number, number], e: number): [number, number] {
+  if (e >= 1) return [to[0], to[1]]
+  return [from[0] + (to[0] - from[0]) * e, from[1] + (to[1] - from[1]) * e]
+}
+
+/** Net worth domain over the given futures: always includes 0. */
 export function worthDomain(all: readonly StormPoints[]): [number, number] {
   let lo = 0
   let hi = 1
@@ -59,19 +73,44 @@ export function worthDomain(all: readonly StormPoints[]): [number, number] {
   return [lo, hi]
 }
 
-/** Loan-to-value domain: 0 to a little past the margin call, or to the highest LTV seen (at most 100%). */
-export function ltvDomain(all: readonly StormPoints[], callLtv: number): [number, number] {
-  let hi = Math.max(0.1, fin(callLtv, 0.5) * 1.25)
-  for (const p of all) for (const v of p.ltv) if (v > hi) hi = v
-  return [0, Math.min(1, hi)]
-}
-
 /** Year indices (0-based) with a margin-call forced sale. */
 export function forcedSaleYears(f: StormFuture): number[] {
   const out: number[] = []
   f.years.forEach((y, i) => {
     if (y.evelo.forcedSaleSold > 0) out.push(i)
   })
+  return out
+}
+
+/** Forced-sale markers: x at the middle of the year the sale happened (x domain position k = year
+ *  end, so year y spans y..y + 1 and its middle is y + 0.5) and the age the caption names for it
+ *  (the age lived during that year), so the dot sits between that age's tick and the next. */
+export function forcedSaleMarks(f: StormFuture): { k: number; age: number }[] {
+  return forcedSaleYears(f).map((y) => ({ k: y + 0.5, age: f.years[y].eveloAge }))
+}
+
+/** (Shared with sameStorm.ts's captions.) The age (during the year) from which a value is at $0 to the end, or null when it ends above. */
+export function runOutAt(ys: readonly StormYear[], v: (y: StormYear) => number, age: (y: StormYear) => number = (y) => y.age): number | null {
+  if (!ys.length || v(ys[ys.length - 1]) > 1) return null
+  let i = ys.length - 1
+  while (i > 0 && v(ys[i - 1]) <= 1) i--
+  return age(ys[i])
+}
+
+/** Where eVelo runs out (its net worth at $0 from there to the end): the year-end position k where
+ *  it first reaches 0 and the age the caption names (lived during that year), or null. */
+export function eveloRunOut(f: StormFuture): { k: number; age: number } | null {
+  const age = runOutAt(f.years, (y) => y.evelo.netWorth, (y) => y.eveloAge)
+  if (age === null) return null
+  const y = f.years.findIndex((r) => r.eveloAge === age)
+  return { k: y + 1, age }
+}
+
+/** Loan-to-value tick values: 0, the margin call, then every 20% above it (at least 10 points clear
+ *  of it) up to the domain's top, 100% at most. */
+export function ltvTicks(callLtv: number, top: number): number[] {
+  const out = [0, callLtv]
+  for (let p = 20; p <= Math.min(100, Math.round(top * 100)); p += 20) if (p / 100 > callLtv + 0.1 + 1e-9) out.push(p / 100)
   return out
 }
 
@@ -89,16 +128,19 @@ export function stormChartLabel(f: StormFuture): string {
   const last = f.years[f.years.length - 1]
   if (!last) return `Both plans through the ${f.label.toLowerCase()} future: no years to show.`
   const end = last.age + 1
-  const peak = Math.max(...f.years.map((y) => y.evelo.ltv))
+  // The peak before eVelo runs out (after that the loan is the whole portfolio), as the chart's line stops there.
+  const out = eveloRunOut(f)
+  const lived = out ? f.years.slice(0, out.k - 1) : f.years
+  const peak = lived.length ? Math.max(...lived.map((y) => y.evelo.ltv)) : 0
   const sales = forcedSaleYears(f)
   const sold = sales.reduce((s, i) => s + f.years[i].evelo.forcedSaleSold, 0)
   const salesText =
     sales.length === 0
       ? 'no forced sale'
-      : `forced sales of ${currencyCompact(sold)} in ${sales.length === 1 ? 'one year' : `${sales.length} years`} (${sales.length === 1 ? 'age' : 'ages'} ${sales.map((i) => f.years[i].age).join(', ')})`
+      : `forced sales of ${currencyCompact(sold)} in ${sales.length === 1 ? 'one year' : `${sales.length} years`} (${sales.length === 1 ? 'age' : 'ages'} ${sales.map((i) => f.years[i].eveloAge).join(', ')})`
   return (
     `Both plans’ net worth through the ${f.label.toLowerCase()} future, today’s dollars. ` +
     `At ${end}: living on income ${currencyCompact(last.income.portfolio)}, eVelo ${currencyCompact(last.evelo.netWorth)} after its loan. ` +
-    `eVelo’s loan-to-value peaks at ${percent(peak)} against a ${percent(f.callLtv)} margin call; ${salesText}.`
+    `eVelo’s loan-to-value peaks at ${percent(peak)} against a ${percent(f.callLtv)} margin call${out ? `, then eVelo runs out at ${out.age}` : ''}; ${salesText}.`
   )
 }

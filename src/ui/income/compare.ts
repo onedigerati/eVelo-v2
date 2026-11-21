@@ -8,6 +8,7 @@
 //                                           year until a plan breaks, so it's the same as lasts)
 
 import { CITY_BY_ID } from '../../data/cities'
+import { normalizeIncomeInputs } from '../../engine/income'
 import type { IncomeInputs, IncomeResult } from '../../engine/incomeTypes'
 import type { City, PlanInputs, SimulationResult } from '../../engine/types'
 import { fieldMatches, snapshotFromEvelo, SYNC_FIELDS, type SyncField, type SyncSnapshot } from '../../state/incomeSync'
@@ -164,6 +165,48 @@ export function personDiffs(evelo: PlanInputs, income: IncomeInputs): SyncField[
   return PERSON_FIELDS.filter((f) => !fieldMatches(f, income, snap))
 }
 
+/** The draw settings each engine actually uses, after its own normalisation. eVelo (simulate):
+ *  horizon = max(1, round(h)) as normalizeInputs does (mirrored here so the UI doesn't bundle
+ *  simulate), paths floored to at least 1 (makeScenarios), blockMonths used as given (the block
+ *  draw reads 1/max(1, b), so a fractional share-link value stays fractional), seed read as
+ *  seed >>> 0 by the RNG. Income: normalizeIncomeInputs, which rounds blockMonths and the seed. */
+export function drawSettings(evelo: PlanInputs, income: IncomeInputs) {
+  const i = normalizeIncomeInputs(income)
+  return {
+    e: {
+      method: evelo.method,
+      horizon: Math.max(1, Math.round(evelo.horizonYears)),
+      paths: Math.max(1, Math.floor(evelo.paths)),
+      block: Math.max(1, evelo.blockMonths),
+      seed: evelo.seed >>> 0,
+      outlook: evelo.outlook,
+    },
+    i: { method: i.method, horizon: i.horizonYears, paths: i.paths, block: i.blockMonths, seed: i.seed >>> 0, outlook: i.outlook },
+    age: i.age,
+    portfolio: i.portfolio,
+  }
+}
+
+/** Whether both plans draw the same futures, the one test the comparison's lines and Same storm's
+ *  gate share (method aside: fat tails are reported on their own). 'futures' when the seed, path
+ *  count, block length or outlook differ as each engine uses them (a different outlook is different
+ *  returns); 'block-fraction' when the only difference is eVelo's non-whole block length, which
+ *  syncing can't match (the mode only takes whole months); 'years' when the horizons differ;
+ *  otherwise 'same'. */
+export type DrawDiff = 'same' | 'futures' | 'block-fraction' | 'years'
+export function drawDiff(evelo: PlanInputs, income: IncomeInputs): DrawDiff {
+  const { e, i } = drawSettings(evelo, income)
+  const others = e.seed !== i.seed || e.paths !== i.paths || e.outlook !== i.outlook
+  if (others) return 'futures'
+  if (e.block !== i.block) return Number.isInteger(e.block) ? 'futures' : 'block-fraction'
+  if (e.horizon !== i.horizon) return 'years'
+  return 'same'
+}
+
+/** The line for an eVelo block length that isn't a whole number of months. */
+export const blockFractionText = (blockMonths: number) =>
+  `eVelo’s block length (${Math.round(blockMonths * 100) / 100} months) isn’t a whole number, so the two can’t draw the same months; set it in eVelo’s settings.`
+
 /** Where the eVelo plan differs from the mode in ways that matter for a like-for-like reading, one
  *  line each, the differing person fields first; "same futures" when both draw the same months. */
 export function likeForLike(evelo: PlanInputs, income: IncomeInputs): LikeLine[] {
@@ -200,10 +243,10 @@ export function likeForLike(evelo: PlanInputs, income: IncomeInputs): LikeLine[]
   }
   if (evelo.method === 'fat-tail') out.push({ key: 'method', text: 'eVelo uses fat tails; this mode always replays history.' })
   if (evelo.existingLoan > 0) out.push({ key: 'loan', text: `eVelo starts with a ${currencyCompact(evelo.existingLoan)} loan.` })
-  const futuresDiffer =
-    evelo.seed !== income.seed || evelo.paths !== income.paths || evelo.blockMonths !== income.blockMonths || evelo.outlook !== income.outlook
-  if (futuresDiffer) out.push({ key: 'futures', text: 'These run on different futures; sync ‘Futures’ to match.' })
-  else if (evelo.horizonYears !== income.horizonYears)
+  const draw = drawDiff(evelo, income)
+  if (draw === 'futures') out.push({ key: 'futures', text: 'These run on different futures; sync ‘Futures’ to match.' })
+  else if (draw === 'block-fraction') out.push({ key: 'futures', text: `These run on different futures: ${blockFractionText(evelo.blockMonths)}` })
+  else if (draw === 'years')
     out.push({ key: 'horizon', text: `eVelo plans ${evelo.horizonYears} years and this mode ${income.horizonYears}, so the futures differ; sync ‘Years’ to match.` })
   else if (evelo.method === income.method) out.push({ key: 'same', text: `Both run on the same ${number(evelo.paths)} futures.` })
   return out

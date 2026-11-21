@@ -10,6 +10,7 @@ import type { PlanInputs, SimulationResult } from '../../engine/types'
 import { stormFutures, stormGate, stormHiddenText, type StormFuture } from './sameStorm'
 import type { StormStart } from './sameStormChart'
 import { SameStormChart } from './SameStormChart'
+import { chipForKey, selectedChip, type StormPick } from './stormChips'
 import './sameStorm.css'
 
 export interface SameStormProps {
@@ -20,8 +21,7 @@ export interface SameStormProps {
   phone: boolean
 }
 
-/** The chip selected by default: the one holding the typical future, else the first. */
-export const defaultFuture = (futures: readonly StormFuture[]) => Math.max(0, futures.findIndex((f) => f.keys.includes('typical')))
+export { defaultFuture } from './stormChips'
 
 const TITLE = 'Same storm, two boats'
 
@@ -43,7 +43,7 @@ export function SameStorm({ evelo, eveloResult, income, incomeResult, phone }: S
     [incomeResult, eveloResult],
   )
   // The picked chip, for exactly the futures it was picked on (new results go back to the default).
-  const [picked, setPicked] = useState<{ on: readonly StormFuture[]; key: string } | null>(null)
+  const [picked, setPicked] = useState<StormPick>(null)
   const chips = useRef<(HTMLButtonElement | null)[]>([])
 
   if (gate !== 'shown' || futures.length === 0) {
@@ -53,21 +53,19 @@ export function SameStorm({ evelo, eveloResult, income, incomeResult, phone }: S
           {TITLE}
         </h3>
         <p className="ss__hidden" data-testid="storm-hidden">
-          {stormHiddenText(gate === 'shown' ? 'no-samples' : gate)}
+          {stormHiddenText(gate === 'shown' ? 'no-samples' : gate, evelo.blockMonths)}
         </p>
       </section>
     )
   }
 
-  const found = picked !== null && picked.on === futures ? futures.findIndex((f) => f.keys[0] === picked.key) : -1
-  const i = found >= 0 ? found : defaultFuture(futures)
+  const i = selectedChip(futures, picked)
   const f = futures[i]
 
   const pick = (j: number) => setPicked({ on: futures, key: futures[j].keys[0] })
   const onKey = (e: KeyboardEvent<HTMLDivElement>) => {
-    const n = futures.length
-    const j = e.key === 'ArrowRight' ? (i + 1) % n : e.key === 'ArrowLeft' ? (i + n - 1) % n : e.key === 'Home' ? 0 : e.key === 'End' ? n - 1 : -1
-    if (j < 0) return
+    const j = chipForKey(e.key, i, futures.length)
+    if (j === null) return
     e.preventDefault()
     pick(j)
     chips.current[j]?.focus()
@@ -104,7 +102,7 @@ export function SameStorm({ evelo, eveloResult, income, incomeResult, phone }: S
         ))}
       </div>
 
-      <div id="ss-panel" role="tabpanel" aria-labelledby={`ss-chip-${f.keys[0]}`} className="ss__panel">
+      <div id="ss-panel" role="tabpanel" tabIndex={0} aria-labelledby={`ss-chip-${f.keys[0]}`} className="ss__panel">
         <ul className="ss__legend" aria-hidden="true">
           <li className="ss__key ss__key--income">Living on income</li>
           <li className="ss__key ss__key--evelo">eVelo, after its loan</li>

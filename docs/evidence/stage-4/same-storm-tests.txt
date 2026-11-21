@@ -1,0 +1,63 @@
+$ npx vitest run sameStorm tests --reporter=verbose
+
+ RUN  v5.1.0 /home/jonah/src/repos/eVelo-v2
+
+ ✓ src/ui/income/__tests__/sameStorm.test.ts > stormGate > is shown when both plans draw the same futures and the sample paths agree 1ms
+ ✓ src/ui/income/__tests__/sameStorm.test.ts > stormGate > fat tails on either side hide it 0ms
+ ✓ src/ui/income/__tests__/sameStorm.test.ts > stormGate > a different seed, path count, block length or outlook is different futures 1ms
+ ✓ src/ui/income/__tests__/sameStorm.test.ts > stormGate > a fractional eVelo block length is its own reason, since syncing can’t match it 1ms
+ ✓ src/ui/income/__tests__/sameStorm.test.ts > stormGate > compares what each engine draws, not the raw inputs 0ms
+ ✓ src/ui/income/__tests__/sameStorm.test.ts > stormGate > different horizons are different years; futures are named first when both differ 0ms
+ ✓ src/ui/income/__tests__/sameStorm.test.ts > stormGate > start ages don’t matter 0ms
+ ✓ src/ui/income/__tests__/sameStorm.test.ts > stormGate > missing samples on either side, or paths that disagree key by key, are no samples 1ms
+ ✓ src/ui/income/__tests__/sameStorm.test.ts > stormHiddenText > says why in one sentence 1ms
+ ✓ src/ui/income/__tests__/sameStorm.test.ts > stormFutures > is empty when hidden 0ms
+ ✓ src/ui/income/__tests__/sameStorm.test.ts > stormFutures > one chip per path in key order, with labels, ages from the income plan and the call line 8ms
+ ✓ src/ui/income/__tests__/sameStorm.test.ts > stormFutures > merges keys that picked the same path and leaves missing ones out 0ms
+ ✓ src/ui/income/__tests__/sameStorm.test.ts > stormFutures > zips both engines’ rows by year 0ms
+ ✓ src/ui/income/__tests__/sameStorm.test.ts > stormFutures > eVelo ahead, no forced sale, nothing sold 0ms
+ ✓ src/ui/income/__tests__/sameStorm.test.ts > stormFutures > living on income ahead, a forced sale summed from its first year, selling in the first seven years 0ms
+ ✓ src/ui/income/__tests__/sameStorm.test.ts > stormFutures > crash chips add the fall from the rows 0ms
+ ✓ src/ui/income/__tests__/sameStorm.test.ts > stormFutures > a crash chip whose rows never fall leaves the clause out 0ms
+ ✓ src/ui/income/__tests__/sameStorm.test.ts > stormFutures > the crash clause looks only in the chip’s window and needs a 5% fall 1ms
+ ✓ src/ui/income/__tests__/sameStorm.test.ts > stormFutures > crash windows follow the sample picker 0ms
+ ✓ src/ui/income/__tests__/sameStorm.test.ts > stormFutures > eVelo’s events use eVelo’s own age, living on income’s use the income age 0ms
+ ✓ src/ui/income/__tests__/sameStorm.test.ts > stormFutures > names fewer first years on a short horizon 0ms
+ ✓ src/ui/income/__tests__/sameStorm.test.ts > stormFutures > running out is said as such, not a level finish at $0 0ms
+ ✓ src/ui/income/__tests__/sameStorm.test.ts > stormFutures > a crash chip doesn't call running dry a 100% fall 0ms
+ ✓ src/ui/income/__tests__/sameStorm.test.ts > Same storm and the comparison agree on "same futures" > identical 1ms
+ ✓ src/ui/income/__tests__/sameStorm.test.ts > Same storm and the comparison agree on "same futures" > seed differs 0ms
+ ✓ src/ui/income/__tests__/sameStorm.test.ts > Same storm and the comparison agree on "same futures" > fractional seed, same as used 0ms
+ ✓ src/ui/income/__tests__/sameStorm.test.ts > Same storm and the comparison agree on "same futures" > fractional paths, same as used 0ms
+ ✓ src/ui/income/__tests__/sameStorm.test.ts > Same storm and the comparison agree on "same futures" > paths differ 0ms
+ ✓ src/ui/income/__tests__/sameStorm.test.ts > Same storm and the comparison agree on "same futures" > block differs 0ms
+ ✓ src/ui/income/__tests__/sameStorm.test.ts > Same storm and the comparison agree on "same futures" > fractional eVelo block 0ms
+ ✓ src/ui/income/__tests__/sameStorm.test.ts > Same storm and the comparison agree on "same futures" > outlook differs 0ms
+ ✓ src/ui/income/__tests__/sameStorm.test.ts > Same storm and the comparison agree on "same futures" > years differ 0ms
+ ✓ src/ui/income/__tests__/sameStorm.test.ts > Same storm and the comparison agree on "same futures" > years and seed differ 0ms
+ ✓ src/ui/income/__tests__/sameStormView.test.tsx > SameStorm > shown: heading, lede, a chip per future with the typical one selected, the chart and the caption 13ms
+ ✓ src/ui/income/__tests__/sameStormView.test.tsx > SameStorm > the chart carries a text alternative for the chosen future 1ms
+ ✓ src/ui/income/__tests__/sameStormView.test.tsx > SameStorm > without a typical future the first chip is selected 1ms
+ ✓ src/ui/income/__tests__/sameStormView.test.tsx > SameStorm > hidden (fat-tail): the heading and one muted line, no chips or chart 1ms
+ ✓ src/ui/income/__tests__/sameStormView.test.tsx > SameStorm > hidden (different-futures): the heading and one muted line, no chips or chart 1ms
+ ✓ src/ui/income/__tests__/sameStormView.test.tsx > SameStorm > hidden (different-years): the heading and one muted line, no chips or chart 0ms
+ ✓ src/ui/income/__tests__/sameStormView.test.tsx > SameStorm > hidden (no-samples): the heading and one muted line, no chips or chart 0ms
+ ✓ src/ui/income/__tests__/sameStormView.test.tsx > SameStorm > shown with no futures falls back to the no-samples line 0ms
+ ✓ src/ui/income/__tests__/sameStormView.test.tsx > Same storm chart helpers > default chip: the one holding typical, else the first 0ms
+ ✓ src/ui/income/__tests__/sameStormView.test.tsx > Same storm chart helpers > points start at the plans’ start and follow the year ends 0ms
+ ✓ src/ui/income/__tests__/sameStormView.test.tsx > Same storm chart helpers > tween eases from one future to the next, and snaps on a length mismatch 0ms
+ ✓ src/ui/income/__tests__/sameStormView.test.tsx > Same storm chart helpers > net worth domains run through 0; each future gets its own niced domain, tweened between 0ms
+ ✓ src/ui/income/__tests__/sameStormView.test.tsx > Same storm chart helpers > loan-to-value ticks: 0, the call, every 20% above it to 100% 0ms
+ ✓ src/ui/income/__tests__/sameStormView.test.tsx > Same storm chart helpers > forced-sale dots sit mid-year at the age the caption names; run-out is placed at its year end 0ms
+ ✓ src/ui/income/__tests__/sameStormView.test.tsx > Same storm chart helpers > forced sales and the label name the years and the total 0ms
+ ✓ src/ui/income/__tests__/sameStormView.test.tsx > Same storm chart helpers > age ticks: the ends and round ages between 0ms
+ ✓ src/ui/income/__tests__/sameStormView.test.tsx > Same storm chart helpers > the label peaks before eVelo runs out and names the run-out; events use eVelo’s ages 0ms
+ ✓ src/ui/income/__tests__/sameStormView.test.tsx > chip selection > defaults to the typical chip, else the first 0ms
+ ✓ src/ui/income/__tests__/sameStormView.test.tsx > chip selection > keeps a pick for the list it was made on, and resets when the futures change 0ms
+ ✓ src/ui/income/__tests__/sameStormView.test.tsx > chip selection > arrow keys wrap, Home and End jump, other keys do nothing 0ms
+
+ Test Files  2 passed (2)
+      Tests  53 passed (53)
+   Start at  16:58:37
+   Duration  193ms (import 54%, transform 25%, tests 19%, worker 1%)
+

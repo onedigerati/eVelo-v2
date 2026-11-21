@@ -1,0 +1,10 @@
+$ npm run lighthouse   (landing)
+dist/assets/AtlasView-DXwWBdQJ.js                               1,381.15 kB │ gzip: 383.48 kB
+
+✓ built in 800ms
+http://localhost:4173/
+performance 85
+accessibility 100
+best-practices 100
+seo 91
+agentic-browsing 45

@@ -1,0 +1,10 @@
+$ npm run lighthouse -- '#income'
+dist/assets/AtlasView-DXwWBdQJ.js                               1,381.15 kB │ gzip: 383.48 kB
+
+✓ built in 793ms
+http://localhost:4173/#income
+performance 78
+accessibility 100
+best-practices 100
+seo 91
+agentic-browsing 50

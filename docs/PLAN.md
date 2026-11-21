@@ -8,15 +8,15 @@ A walkthrough on the Living on Income results that shows how the mode and eVelo 
 
 ## Now
 Stage 4 of 4 · Same storm
-Mode: autopilot — unattended
+Mode: paused — release needs a push to main (GitHub Pages deploys on push); outward steps aren't allowed in this run
 Risk: UI (shows engine figures; the gate and captions are logic, tested); release is outward (push to GitHub Pages)
 Agents: wide — confirmed 2026-11-21 15:45
 Scope: under the chapters, "Same storm, two boats": chips for the sample futures both engines returned (early crash, typical, late crash, lucky; missing ones left out, repeated paths merged), a chart of both net worths through the chosen future with eVelo's loan-to-value against its margin-call line and forced sales marked, and a caption per future from that future's rows. Shown only when both plans draw the same futures (the comparison's "same futures" line, and both results' sample paths agree), otherwise one line says why. Then release.
 Checks:
-- [ ] Same storm shows only when both plans draw the same futures (the comparison's "same futures" line holds and both engines' sample paths agree key by key); otherwise one line says why it's hidden (fat tails, different futures, different years) (proof: test + e2e)
-- [ ] The future chips switch a chart of both plans' net worth through that future, with eVelo's loan-to-value against its margin-call line and forced-sale years marked; missing futures are left out and repeated paths merged (proof: e2e)
-- [ ] Each future's caption comes from that future's rows, and its words follow the numbers (who ends ahead, whether a forced sale happened, how much living on income sold in the first years) (proof: test)
-- [ ] Desktop and a 390px phone with no horizontal scroll; the keyboard works the chips (arrow keys) and the chart has a text alternative; under reduced motion the switch doesn't animate (proof: e2e with screenshots)
+- [x] Same storm shows only when both plans draw the same futures (the comparison's "same futures" line holds and both engines' sample paths agree key by key); otherwise one line says why it's hidden (fat tails, different futures, different years) (proof: test + e2e)
+- [x] The future chips switch a chart of both plans' net worth through that future, with eVelo's loan-to-value against its margin-call line and forced-sale years marked; missing futures are left out and repeated paths merged (proof: e2e)
+- [x] Each future's caption comes from that future's rows, and its words follow the numbers (who ends ahead, whether a forced sale happened, how much living on income sold in the first years) (proof: test)
+- [x] Desktop and a 390px phone with no horizontal scroll; the keyboard works the chips (arrow keys) and the chart has a text alternative; under reduced motion the switch doesn't animate (proof: e2e with screenshots)
 - [ ] Release: suite, build, e2e smoke and Lighthouse pass, the rest of the site is unchanged, and it's live on GitHub Pages (proof: test + live check)
 Open: none
 
@@ -47,6 +47,7 @@ Open: none
 - 2026-11-21 · (unattended) Chapter rules, refined in the build: an "early years" chapter covers the years between Social Security's arrival and a later bad market (so six is the real maximum and merge-to-6 is a guard); with fewer than three chapters the middle splits, or a two-year bad market gives its second year to the middle; a first bad year inside before / arrives / estate stays there (`badYear`) and no later bad chapter is made; the estate is five years, or a third of horizons under 15. Chapters index rows (years), not ages. eVelo's Social Security line is the plan input, its loan-to-value its own median, and "the market falls" reads the change in the median portfolio (there's no per-year market return). Why: keeps every year in one chapter and 3–6 chapters on 10–40-year horizons.
 - 2026-11-21 · (unattended) A bad year needs both plans' median portfolios to fall 5% or more, not either. Why: in the real app the first rule named ages 83–84 "the bad market" because eVelo's portfolio sagged late (loan growth and forced sales), not because markets fell; a market drop shows in both.
 - 2026-11-21 · (unattended) Sample-future details: a crash needs a worst 24-month real stock decline of 20% or more (otherwise every path "has" a drawdown); "the median path among those" ranks by cumulative real stock return over the horizon; ties go to the lowest path index; the stock series is the market's broad US stock fund (SPY) less CPI; a sample with no qualifying path is null and Same storm shows only the ones found. On 10–14-year horizons the late window is [60, T) so it never overlaps early. Why: makes the logged rule deterministic. (Stage 3 verify: under default inputs 3,940 of 4,000 paths have a ≥20% fall, so early/late mostly sort paths by when their worst fall starts; the threshold only rules out calm paths.)
+- 2026-11-21 · (unattended) A different outlook keeps Same storm hidden as "different futures", though the drawn months match: the outlook shifts each plan's returns, so the two wouldn't live through the same returns, and the comparison already calls it different futures. Same storm's gate and the comparison's "same futures" line now share one helper so they never disagree.
 
 ## Open questions
 - For stage 4, from the stage 3 review: eVelo's `blockMonths` from a share link is clamped but not rounded, while the income engine rounds it, so a fractional block length (e.g. 24.5) draws different months in the two engines; Same storm's "same futures" gate must compare the normalised values. Two sample keys can pick the same path (e.g. typical = lucky on tiny path counts); the chips show or merge repeats.

@@ -1,0 +1,89 @@
+$ node docs/evidence/stage-4/verify-same-storm.mjs  (after npm run e2e build)
+  hidden fat-tail: page gate=fat-tail node gate=fat-tail line="Same storm needs both plans on the same futures: eVelo uses fat tails, so its months aren’t replayed history."
+ok   hidden (fat-tail): one line says why ("fat tails"), no chips
+ok   hidden (fat-tail): no console/page errors 
+  hidden different-futures: page gate=different-futures node gate=different-futures line="Same storm needs both plans on the same futures; sync ‘Futures’ to match."
+ok   hidden (different-futures): one line says why ("Futures"), no chips
+ok   hidden (different-futures): no console/page errors 
+  hidden different-years: page gate=different-years node gate=different-years line="Same storm needs both plans over the same years; sync ‘Years’ to match."
+ok   hidden (different-years): one line says why ("Years"), no chips
+ok   hidden (different-years): no console/page errors 
+  hidden block-fraction: page gate=block-fraction node gate=block-fraction line="Same storm needs both plans on the same futures: eVelo’s block length (36.5 months) isn’t a whole number, so the two can’t draw the same months; set it in eVelo’s settings."
+ok   hidden (block-fraction): one line says why ("isn’t a whole number"), no chips
+ok   hidden (block-fraction): no console/page errors 
+default: node gate=shown chips=earlyCrash#983 typical#371 lateCrash#49 lucky#313
+ok   default: shown when both plans draw the same futures (page and node)
+ok   default: chips = node's distinct sample paths in key order (earlyCrash, typical, lateCrash, lucky)
+ok   default: mounted after the comparison and the walkthrough
+ok   default/earlyCrash: plotted net worths and LTV = engine sample rows for path 983 (31 pts; max err 0.0002% / 0.0002% of axis, LTV 0.000 pts; 10 LTV pts)
+ok   default/earlyCrash: margin-call line at maxLtv 0.6 (read 0.6000)
+ok   default/earlyCrash: forced-sale markers at ages [65,66,67,68] = years with forcedSaleSold>0 [65,66,67,68]
+ok   default/earlyCrash: caption equals stormFutures in node
+ok   default/earlyCrash: caption words follow the rows (ahead $0, forced 65/$1.0M, sold 7y $579K): "At 62 living on income’s portfolio falls 23% in a year, and both plans run out of money: eVelo at 68, living on income at 79. eVelo hits a forced sale at 65 ($1.0M sold in all); living on income sells $579K in its first seven years."
+ok   default/earlyCrash: chart text alternative (role=img) names both end values: "Both plans’ net worth through the early crash future, today’s dollars. At 90: living on income $0, eVelo $0 after its lo…"
+ok   default/typical: plotted net worths and LTV = engine sample rows for path 371 (31 pts; max err 0.0002% / 0.0002% of axis, LTV 0.000 pts; 31 LTV pts)
+ok   default/typical: margin-call line at maxLtv 0.6 (read 0.6000)
+ok   default/typical: forced-sale markers at ages [80,83,85,88,89] = years with forcedSaleSold>0 [80,83,85,88,89]
+ok   default/typical: caption equals stormFutures in node
+ok   default/typical: caption words follow the rows (ahead −$3.8M, forced 80/$4.9M, sold 7y $532K): "Living on income ends $3.8M ahead, after eVelo runs out at 89. eVelo hits a forced sale at 80 ($4.9M sold in all); living on income sells $532K in its first seven years."
+ok   default/typical: chart text alternative (role=img) names both end values: "Both plans’ net worth through the typical future, today’s dollars. At 90: living on income $3.8M, eVelo $0 after its loa…"
+ok   default/lateCrash: plotted net worths and LTV = engine sample rows for path 49 (31 pts; max err 0.0002% / 0.0002% of axis, LTV 0.000 pts; 31 LTV pts)
+ok   default/lateCrash: margin-call line at maxLtv 0.6 (read 0.6000)
+ok   default/lateCrash: forced-sale markers at ages [86] = years with forcedSaleSold>0 [86]
+ok   default/lateCrash: caption equals stormFutures in node
+ok   default/lateCrash: caption words follow the rows (ahead −$1.9M, forced 86/$2.9M, sold 7y $599K): "At 85 living on income’s portfolio falls 17% in a year, and living on income ends $1.9M ahead. eVelo hits a forced sale at 86 ($2.9M sold in all); living on income sells $599K in its first seven years."
+ok   default/lateCrash: chart text alternative (role=img) names both end values: "Both plans’ net worth through the late crash future, today’s dollars. At 90: living on income $3.9M, eVelo $2.0M after i…"
+ok   default/lucky: plotted net worths and LTV = engine sample rows for path 313 (31 pts; max err 0.0002% / 0.0002% of axis, LTV 0.000 pts; 31 LTV pts)
+ok   default/lucky: margin-call line at maxLtv 0.6 (read 0.6000)
+ok   default/lucky: forced-sale markers at ages [] = years with forcedSaleSold>0 []
+ok   default/lucky: caption equals stormFutures in node
+ok   default/lucky: caption words follow the rows (ahead $16M, forced none/$0, sold 7y $519K): "eVelo ends $16M ahead. eVelo never hits a forced sale; living on income sells $519K in its first seven years."
+ok   default/lucky: chart text alternative (role=img) names both end values: "Both plans’ net worth through the lucky future, today’s dollars. At 90: living on income $8.5M, eVelo $25M after its loa…"
+ok   default: desktop 1280 no horizontal scroll
+  keys lucky → earlyCrash → lucky → lucky → earlyCrash → lucky
+ok   default: arrow keys / Home / End move selection and focus with a roving tabindex (wraps)
+ok   default: without reduced motion the switch tweens (37 intermediate line updates)
+ok   default: no console/page errors 
+risky: node gate=shown chips=earlyCrash#983 typical#371 lateCrash#49 lucky#313
+ok   risky: shown when both plans draw the same futures (page and node)
+ok   risky: chips = node's distinct sample paths in key order (earlyCrash, typical, lateCrash, lucky)
+ok   risky: mounted after the comparison and the walkthrough
+ok   risky/earlyCrash: plotted net worths and LTV = engine sample rows for path 983 (31 pts; max err 0.0001% / 0.0002% of axis, LTV 0.000 pts; 7 LTV pts)
+ok   risky/earlyCrash: margin-call line at maxLtv 0.6 (read 0.6000)
+ok   risky/earlyCrash: forced-sale markers at ages [62,63,64,65] = years with forcedSaleSold>0 [62,63,64,65]
+ok   risky/earlyCrash: caption equals stormFutures in node
+ok   risky/earlyCrash: caption words follow the rows (ahead $0, forced 62/$641K, sold 7y $688K): "At 64 living on income’s portfolio falls 35% in a year, and both plans run out of money: eVelo at 65, living on income at 68. eVelo hits a forced sale at 62 ($641K sold in all); living on income sells $688K in its first seven years."
+ok   risky/earlyCrash: chart text alternative (role=img) names both end values: "Both plans’ net worth through the early crash future, today’s dollars. At 90: living on income $0, eVelo $0 after its lo…"
+ok   risky/typical: plotted net worths and LTV = engine sample rows for path 371 (31 pts; max err 0.0002% / 0.0002% of axis, LTV 0.000 pts; 19 LTV pts)
+ok   risky/typical: margin-call line at maxLtv 0.6 (read 0.6000)
+ok   risky/typical: forced-sale markers at ages [71,74,75,76,77] = years with forcedSaleSold>0 [71,74,75,76,77]
+ok   risky/typical: caption equals stormFutures in node
+ok   risky/typical: caption words follow the rows (ahead $0, forced 71/$2.9M, sold 7y $662K): "Both plans run out of money: eVelo at 77, living on income at 80. eVelo hits a forced sale at 71 ($2.9M sold in all); living on income sells $662K in its first seven years."
+ok   risky/typical: chart text alternative (role=img) names both end values: "Both plans’ net worth through the typical future, today’s dollars. At 90: living on income $0, eVelo $0 after its loan. …"
+ok   risky/lateCrash: plotted net worths and LTV = engine sample rows for path 49 (31 pts; max err 0.0002% / 0.0002% of axis, LTV 0.000 pts; 27 LTV pts)
+ok   risky/lateCrash: margin-call line at maxLtv 0.6 (read 0.6000)
+ok   risky/lateCrash: forced-sale markers at ages [78,81,84,85] = years with forcedSaleSold>0 [78,81,84,85]
+ok   risky/lateCrash: caption equals stormFutures in node
+ok   risky/lateCrash: caption words follow the rows (ahead $0, forced 78/$4.8M, sold 7y $699K): "At 83 living on income’s portfolio falls 54% in a year, and both plans run out of money: eVelo at 85, living on income at 84. eVelo hits a forced sale at 78 ($4.8M sold in all); living on income sells $699K in its first seven years."
+ok   risky/lateCrash: chart text alternative (role=img) names both end values: "Both plans’ net worth through the late crash future, today’s dollars. At 90: living on income $0, eVelo $0 after its loa…"
+ok   risky/lucky: plotted net worths and LTV = engine sample rows for path 313 (31 pts; max err 0.0002% / 0.0002% of axis, LTV 0.000 pts; 16 LTV pts)
+ok   risky/lucky: margin-call line at maxLtv 0.6 (read 0.6000)
+ok   risky/lucky: forced-sale markers at ages [70,71,73,74] = years with forcedSaleSold>0 [70,71,73,74]
+ok   risky/lucky: caption equals stormFutures in node
+ok   risky/lucky: caption words follow the rows (ahead $0, forced 70/$2.3M, sold 7y $658K): "Both plans run out of money: eVelo at 74, living on income at 73. eVelo hits a forced sale at 70 ($2.3M sold in all); living on income sells $658K in its first seven years."
+ok   risky/lucky: chart text alternative (role=img) names both end values: "Both plans’ net worth through the lucky future, today’s dollars. At 90: living on income $0, eVelo $0 after its loan. eV…"
+ok   risky: desktop 1280 no horizontal scroll
+ok   risky: no console/page errors 
+ok   reduced motion: the switch jumps in one update, no tween (1 update)
+ok   reduced motion: chip transitions off (1e-06s)
+ok   reduced/dark: no console/page errors 
+ok   phone 390 light: no horizontal scroll (overflow 0px, section 16..374)
+ok   phone 390 light: every chip inside the viewport and >=24px tall
+ok   phone 390 light: no horizontal scroll after a tap
+ok   phone light: no console/page errors 
+ok   phone 390 dark: no horizontal scroll (overflow 0px, section 16..374)
+ok   phone 390 dark: every chip inside the viewport and >=24px tall
+ok   phone 390 dark: no horizontal scroll after a tap
+ok   phone dark: no console/page errors 
+
+all passed

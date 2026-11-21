@@ -1,0 +1,17 @@
+# Stage 4 · Same storm — verification
+
+Verified 2026-11-21 on arm64 by a fresh verifier agent (built nothing) on a settled tree ([tree-state.txt](tree-state.txt)); the review fix round landed during its run, so the PM re-ran the suite, the e2e smoke, the verifier's script and the stage-2 walkthrough script on the final tree.
+
+| Check | Result | Evidence |
+|---|---|---|
+| Same storm shows only when both plans draw the same futures; otherwise one line says why (fat tails, different futures, different years; also a non-whole eVelo block length) | pass | [same-storm-tests.txt](same-storm-tests.txt) (gate tests; gate and comparison line share one helper, 10-case agreement table); [same-storm-e2e.txt](same-storm-e2e.txt), [same-storm-e2e-final.txt](same-storm-e2e-final.txt): each hidden reason in the real UI matches node's `stormGate`, one line, no chips. Script: [verify-same-storm.mjs](verify-same-storm.mjs) |
+| Chips switch a chart of both net worths, with eVelo's loan-to-value against its margin-call line and forced-sale years marked; missing futures left out, repeats merged | pass | same e2e files: 2 plans × 4 chips; plotted points read back from the SVG equal the engines' sample rows re-run in node (net worth within 0.0002% of the axis; LTV exact); call line at maxLtv; dot ages = years with forced sales. Missing/merged futures by unit test only (the app's ≥1000 paths always gave four distinct paths) |
+| Each future's caption comes from its rows; words follow the numbers | pass | [same-storm-tests.txt](same-storm-tests.txt); e2e: captions equal node's `stormFutures`, re-derived from rows (who's ahead and by how much, first forced-sale age and total, first-seven-years sold) |
+| Desktop and 390px phone with no horizontal scroll; arrow keys work the chips; text alternative; reduced motion doesn't animate | pass | same e2e files: overflow 0 at 1280/390, light and dark; roving tabindex with arrows/Home/End; `role=img` label names both end values; 37 frame updates per switch normally, 1 under reduced motion. Screenshots local (git-ignored PNGs) |
+| Release: suite, build, e2e smoke and Lighthouse pass, the rest of the site unchanged, live on GitHub Pages | pass except **live: pending push** | [tests-final.txt](tests-final.txt) 1637 passed, 1 skipped; [typecheck-final.txt](typecheck-final.txt); [build.txt](build.txt); [e2e-smoke-final.txt](e2e-smoke-final.txt); [walkthrough-regression.txt](walkthrough-regression.txt) (stage-2 script on the final tree); Lighthouse `#income` 78 / 100 / 100 / 91, landing 85 / 100 / 100 / 91 ([lighthouse-income.txt](lighthouse-income.txt), [lighthouse-landing.txt](lighthouse-landing.txt)); [diff-scope.txt](diff-scope.txt): only `src/ui/income/*`, `e2e/smoke.mjs`, the plan |
+
+Audit: 0 vulnerabilities ([audit.txt](audit.txt)).
+
+Notes: one smoke run built mid-edit failed the walkthrough Play check ([e2e-smoke-midedit.txt](e2e-smoke-midedit.txt)); every run on a settled tree passed. One vitest worker crash (SIGSEGV) on an earlier tree with all tests passing; not seen again. A late-crash caption can name a near-run-out year as the fall (inside the window; wording only).
+
+Review: 12 findings; 9 fixed (block-fraction reason, one shared "same futures" helper, crash clause limited to the chip's window and ≥5%, eVelo events at eVelo's ages, text alternative stops at run-out, stale comment, shared reduced-motion hook, chip logic extracted and tested, focusable tab panel); 1 rejected by decision (a different outlook stays "different futures"); 2 were checks that found no issue.

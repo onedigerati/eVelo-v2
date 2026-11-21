@@ -59,7 +59,8 @@ await withPreview(async (base) => {
 
     // The two-retirements walkthrough on #income: absent before a sync, under the comparison after
     // one; Next chapter, the slider spanning just the chapter, and Play stopping at its end (a
-    // two-year first chapter: Social Security at 62 from 60, so Play takes one step).
+    // two-year first chapter: Social Security at 62 from 60, so Play takes one step). Then Same
+    // storm on the same page.
     {
       const EVELO = { portfolio: 2_000_000, age: 60, horizonYears: 20, homeCityId: 'new-york', otherIncome: 30_000, incomeStartAge: 62, paths: 300, seed: 11 }
       const MODE = { portfolio: 2_000_000, basisFraction: 0.5, age: 60, horizonYears: 20, spending: 90_000, otherIncome: 30_000, incomeStartAge: 62, stockShare: 0.6, muniShare: 0.5, filingStatus: 'mfj', homeCityId: 'new-york', seed: 11, paths: 300, blockMonths: 36, outlook: 'balanced', step: 6, done: true }
@@ -106,7 +107,29 @@ await withPreview(async (base) => {
       await p.locator('[data-testid="wt-next"]').click()
       const next = await st()
       check(next.ch !== 'before' && next.year === s1.max + 1 && (await spans()), `walkthrough: Next chapter carries on, slider spans the new chapter (${next.ch})`)
-      check(errs.length === 0, `walkthrough: no uncaught page errors${errs.length ? ': ' + errs.join(' | ') : ''}`)
+
+      // Same storm, on the same synced page: chips switch the caption; a different seed on the mode's
+      // side (stored, then reloaded) hides it with its reason.
+      const SS = '[data-testid="same-storm"]'
+      await p.locator(`${SS}[data-gate="shown"]`).waitFor({ timeout: 10000 })
+      const chips = p.locator(`${SS} [role="tab"]`)
+      const n = await chips.count()
+      check(n >= 2, `same storm: shown after sync with ${n} future chips`)
+      const caption = () => p.locator('[data-testid="storm-caption"]').innerText()
+      const cap0 = await caption()
+      const other = (await chips.nth(0).getAttribute('aria-selected')) === 'true' ? 1 : 0
+      await chips.nth(other).click()
+      check((await caption()) !== cap0, 'same storm: picking another future changes the caption')
+      await p.evaluate(() => {
+        const s = JSON.parse(localStorage.getItem('evelo:v2:income'))
+        localStorage.setItem('evelo:v2:income', JSON.stringify({ ...s, seed: s.seed + 1 }))
+      })
+      await p.reload()
+      await p.locator(SS).waitFor({ timeout: 30000 })
+      const hidden = await p.locator(SS).getAttribute('data-gate')
+      const why = await p.locator('[data-testid="storm-hidden"]').innerText().catch(() => '')
+      check(hidden === 'different-futures' && why.includes('Futures'), `same storm: hidden with its reason when the futures differ (${hidden})`)
+      check(errs.length === 0, `walkthrough and same storm: no uncaught page errors${errs.length ? ': ' + errs.join(' | ') : ''}`)
       await ctx.close()
     }
   } finally {

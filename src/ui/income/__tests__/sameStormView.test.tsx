@@ -7,7 +7,8 @@ import type { IncomeInputs, IncomeResult } from '../../../engine/incomeTypes'
 import type { PlanInputs, SimulationResult } from '../../../engine/types'
 import type { StormFuture, StormGate, StormYear } from '../sameStorm'
 import { defaultFuture, SameStorm } from '../SameStorm'
-import { easeOut, forcedSaleYears, ltvDomain, stormAgeTicks, stormChartLabel, stormPoints, tweenPoints, worthDomain } from '../sameStormChart'
+import { chipForKey, selectedChip } from '../stormChips'
+import { easeOut, eveloRunOut, forcedSaleMarks, forcedSaleYears, futureDomain, ltvTicks, stormAgeTicks, tweenDomain, stormChartLabel, stormPoints, tweenPoints, worthDomain } from '../sameStormChart'
 
 const state = vi.hoisted(() => ({ gate: 'shown' as string, futures: [] as unknown[] }))
 vi.mock('../sameStorm', () => ({
@@ -16,8 +17,9 @@ vi.mock('../sameStorm', () => ({
   stormHiddenText: (g: string) => `Hidden because ${g}.`,
 }))
 
-const row = (age: number, inc: number, nw: number, ltv: number, forced = 0): StormYear => ({
+const row = (age: number, inc: number, nw: number, ltv: number, forced = 0, eveloAge = age): StormYear => ({
   age,
+  eveloAge,
   income: { portfolio: inc, dividendsInterest: 0, socialSecurity: 0, sold: 0, tax: 0, reinvested: 0 },
   evelo: { netWorth: nw, portfolio: nw, loan: 0, ltv, borrowed: 0, interest: 0, forcedSaleSold: forced },
 })
@@ -119,11 +121,35 @@ describe('Same storm chart helpers', () => {
     expect(easeOut(0.5)).toBeGreaterThan(0.5)
   })
 
-  it('domains are shared by every future: net worth through 0, loan-to-value past the call', () => {
+  it('net worth domains run through 0; each future gets its own niced domain, tweened between', () => {
     const all = [early, typical, late].map((f) => stormPoints(f, null))
     expect(worthDomain(all)).toEqual([-1e5, 2.5e6])
-    expect(ltvDomain(all, 0.5)).toEqual([0, 0.625])
-    expect(ltvDomain([{ income: [], evelo: [], ltv: [0.9, 1.4] }], 0.5)).toEqual([0, 1])
+    const dl = futureDomain(stormPoints(late, null), 4)
+    const de = futureDomain(stormPoints(early, null), 4)
+    expect(dl[0]).toBeLessThan(0)
+    expect(de[0]).toBe(0)
+    expect(de[1]).toBeGreaterThanOrEqual(1.95e6)
+    expect(de[1]).toBeLessThan(2.5e6)
+    expect(tweenDomain([0, 2e6], [0, 4e6], 0.5)).toEqual([0, 3e6])
+    expect(tweenDomain([0, 2e6], [0, 4e6], 1)).toEqual([0, 4e6])
+  })
+
+  it('loan-to-value ticks: 0, the call, every 20% above it to 100%', () => {
+    expect(ltvTicks(0.6, 1)).toEqual([0, 0.6, 0.8, 1])
+    expect(ltvTicks(0.5, 1)).toEqual([0, 0.5, 0.8, 1])
+    expect(ltvTicks(0.55, 1)).toEqual([0, 0.55, 0.8, 1])
+    expect(ltvTicks(0.3, 1)).toEqual([0, 0.3, 0.6, 0.8, 1])
+  })
+
+  it('forced-sale dots sit mid-year at the age the caption names; run-out is placed at its year end', () => {
+    const marks = forcedSaleMarks(late)
+    expect(marks).toEqual([{ k: 1.5, age: 61 }, { k: 2.5, age: 62 }])
+    const a0 = late.years[0].age
+    // Between that age's tick (k = age − a0) and the next.
+    for (const m of marks) expect(m.k > m.age - a0 && m.k < m.age - a0 + 1).toBe(true)
+    expect(stormChartLabel(late)).toContain(`ages ${marks.map((m) => m.age).join(', ')}`)
+    expect(eveloRunOut(late)).toEqual({ k: 3, age: 62 })
+    expect(eveloRunOut(typical)).toBeNull()
   })
 
   it('forced sales and the label name the years and the total', () => {
@@ -138,4 +164,37 @@ describe('Same storm chart helpers', () => {
     expect(stormAgeTicks(60, 90, false)).toEqual([60, 65, 70, 75, 80, 85, 90])
     expect(stormAgeTicks(58, 93, true)).toEqual([58, 70, 80, 93])
   })
+
+  it('the label peaks before eVelo runs out and names the run-out; events use eVelo’s ages', () => {
+    const broke = future(['lateCrash'], 'Late crash', [row(60, 2e6, 2e6, 0.3, 0, 55), row(61, 1.8e6, 1e6, 0.5, 2e5, 56), row(62, 1.7e6, 0, 1, 0, 57)])
+    const label = stormChartLabel(broke)
+    expect(label).toContain('peaks at 50% against a 50% margin call, then eVelo runs out at 57')
+    expect(label).not.toContain('100%')
+    expect(label).toContain('age 56)')
+    expect(forcedSaleMarks(broke)).toEqual([{ k: 1.5, age: 56 }])
+    expect(eveloRunOut(broke)).toEqual({ k: 3, age: 57 })
+  })
 })
+
+describe('chip selection', () => {
+  const list = [early, typical, late]
+  it('defaults to the typical chip, else the first', () => {
+    expect(selectedChip(list, null)).toBe(1)
+    expect(selectedChip([early, late], null)).toBe(0)
+  })
+  it('keeps a pick for the list it was made on, and resets when the futures change', () => {
+    expect(selectedChip(list, { on: list, key: 'lateCrash' })).toBe(2)
+    expect(selectedChip([...list], { on: list, key: 'lateCrash' })).toBe(1)
+    expect(selectedChip(list, { on: list, key: 'gone' as never })).toBe(1)
+  })
+  it('arrow keys wrap, Home and End jump, other keys do nothing', () => {
+    expect(chipForKey('ArrowRight', 2, 3)).toBe(0)
+    expect(chipForKey('ArrowLeft', 0, 3)).toBe(2)
+    expect(chipForKey('ArrowRight', 0, 3)).toBe(1)
+    expect(chipForKey('Home', 2, 3)).toBe(0)
+    expect(chipForKey('End', 0, 3)).toBe(2)
+    expect(chipForKey('Enter', 0, 3)).toBeNull()
+    expect(chipForKey('ArrowRight', 0, 0)).toBeNull()
+  })
+})
+

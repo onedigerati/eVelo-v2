@@ -1,0 +1,30 @@
+$ git diff 9cea451 --stat
+ docs/PLAN.md                                   |  17 +-
+ e2e/smoke.mjs                                  |  27 ++-
+ src/ui/income/IncomeCompare.tsx                |   5 +-
+ src/ui/income/SameStorm.tsx                    | 118 ++++++++++++
+ src/ui/income/SameStormChart.tsx               | 170 ++++++++++++++++
+ src/ui/income/Walkthrough.tsx                  |  17 +-
+ src/ui/income/__tests__/sameStorm.test.ts      | 256 +++++++++++++++++++++++++
+ src/ui/income/__tests__/sameStormView.test.tsx | 200 +++++++++++++++++++
+ src/ui/income/compare.ts                       |  51 ++++-
+ src/ui/income/sameStorm.css                    | 118 ++++++++++++
+ src/ui/income/sameStorm.ts                     | 185 ++++++++++++++++++
+ src/ui/income/sameStormChart.css               |  70 +++++++
+ src/ui/income/sameStormChart.ts                | 146 ++++++++++++++
+ 13 files changed, 1350 insertions(+), 30 deletions(-)
+
+$ git status --short
+ M docs/PLAN.md
+ M e2e/smoke.mjs
+ M src/ui/income/SameStorm.tsx
+ M src/ui/income/SameStormChart.tsx
+ M src/ui/income/Walkthrough.tsx
+ M src/ui/income/__tests__/sameStorm.test.ts
+ M src/ui/income/__tests__/sameStormView.test.tsx
+ M src/ui/income/compare.ts
+ M src/ui/income/sameStorm.ts
+ M src/ui/income/sameStormChart.ts
+?? docs/evidence/stage-4/
+?? src/ui/income/reducedMotion.ts
+?? src/ui/income/stormChips.ts
