@@ -76,20 +76,22 @@ export function pickSampleFutures(idx: Int32Array, T: number, realStock: ArrayLi
   // typical = median path by cumulative return (lower middle for an even count); lucky = the 90th
   // percentile (nearest rank: the ⌈0.9·n⌉-th smallest); ties go to the lowest path index.
   // earlyCrash / lateCrash = the median by cumulative return (same conventions) among paths whose
-  // worst decline is ≥ 20% and starts in [0, 60) / [T − 120, T). When T < 120 the late window is
-  // the second half, [⌊T/2⌋, T), and the early window is capped to the first half,
-  // [0, min(60, ⌊T/2⌋)), so the two never overlap. A sample with no qualifying path is null.
+  // worst decline is ≥ 20% and starts in [0, 60) / [max(T − 120, 60), T), so for T ≥ 120 the two
+  // never overlap (at T = 120 late is [60, 120)). When T < 120 the late window is the second half,
+  // [⌊T/2⌋, T), and the early window is capped to the first half, [0, min(60, ⌊T/2⌋)).
+  // A sample with no qualifying path is null.
   const none: SamplePicks = { earlyCrash: null, typical: null, lateCrash: null, lucky: null }
   if (T <= 0) return none
   const n = Math.floor(idx.length / T)
   if (n === 0) return none
 
   const half = Math.floor(T / 2)
-  const lateStart = T >= LATE_MONTHS ? T - LATE_MONTHS : half
+  const lateStart = T >= LATE_MONTHS ? Math.max(T - LATE_MONTHS, EARLY_MONTHS) : half
   const earlyEnd = T >= LATE_MONTHS ? EARLY_MONTHS : Math.min(EARLY_MONTHS, half)
 
   const cum = new Float64Array(n)
   const I = new Float64Array(T + 1)
+  const dq = new Int32Array(T + 1)
   const early: number[] = []
   const late: number[] = []
   for (let p = 0; p < n; p++) {
@@ -98,14 +100,22 @@ export function pickSampleFutures(idx: Int32Array, T: number, realStock: ArrayLi
     for (let t = 0; t < T; t++) I[t + 1] = I[t] * (1 + realStock[idx[o + t]])
     cum[p] = I[T] - 1
 
+    // min of I over (s, s + 24] by a sliding-window minimum, scanning s downward: the deque holds
+    // month indices e with I increasing from head to tail, so the head is the window's minimum.
+    // Each e enters and leaves once: O(T). The minimum is exact (no logs), so results match a
+    // direct scan bit for bit; `<=` while scanning down keeps the earliest start on ties.
     let worst = 0
     let worstStart = -1
-    for (let s = 0; s < T; s++) {
-      const end = Math.min(T, s + CRASH_WINDOW)
-      let lo = Infinity
-      for (let e = s + 1; e <= end; e++) if (I[e] < lo) lo = I[e]
-      const d = lo / I[s] - 1
-      if (d < worst) {
+    let head = 0
+    let tail = 0
+    for (let s = T - 1; s >= 0; s--) {
+      const e = s + 1
+      const v = I[e]
+      while (tail > head && I[dq[tail - 1]] >= v) tail--
+      dq[tail++] = e
+      while (dq[head] > s + CRASH_WINDOW) head++
+      const d = I[dq[head]] / I[s] - 1
+      if (d <= worst && d < 0) {
         worst = d
         worstStart = s
       }

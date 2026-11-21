@@ -113,25 +113,92 @@ describe('pickSampleFutures', () => {
     expect(at(97)).toMatchObject({ earlyCrash: null, lateCrash: 0 })
   })
 
-  it('10,000 × 480 is fast', () => {
+  it('T = 120: late is [60, 120), not the whole horizon', () => {
+    const t = 120
+    const at = (s: number) => pickSampleFutures(pack([path(t, 0.001, s)]), t, realStock)
+    expect(at(10)).toMatchObject({ earlyCrash: 0, lateCrash: null })
+    expect(at(59)).toMatchObject({ earlyCrash: 0, lateCrash: null })
+    expect(at(60)).toMatchObject({ earlyCrash: null, lateCrash: 0 })
+    expect(at(117)).toMatchObject({ earlyCrash: null, lateCrash: 0 })
+  })
+
+  it('T = 150: late is [60, 150)', () => {
+    const t = 150
+    const at = (s: number) => pickSampleFutures(pack([path(t, 0.001, s)]), t, realStock)
+    expect(at(59)).toMatchObject({ earlyCrash: 0, lateCrash: null })
+    expect(at(60)).toMatchObject({ earlyCrash: null, lateCrash: 0 }) // T − 120 = 30 would overlap
+    expect(at(147)).toMatchObject({ earlyCrash: null, lateCrash: 0 })
+  })
+
+  it('matches a direct O(T·24) scan on random paths', () => {
+    // Reference: the rule written out plainly.
+    function reference(idx: Int32Array, H: number, rs: ArrayLike<number>) {
+      const n = idx.length / H
+      const lateStart = Math.max(H - 120, 60)
+      const cum: number[] = []
+      const early: number[] = []
+      const late: number[] = []
+      for (let p = 0; p < n; p++) {
+        const I = [1]
+        for (let t = 0; t < H; t++) I.push(I[t] * (1 + rs[idx[p * H + t]]))
+        cum.push(I[H] - 1)
+        let worst = 0
+        let start = -1
+        for (let s = 0; s < H; s++)
+          for (let k = 1; k <= 24 && s + k <= H; k++) {
+            const d = I[s + k] / I[s] - 1
+            if (d < worst || (d === worst && d < 0 && s < start)) [worst, start] = [d, s]
+          }
+        if (worst <= -0.2) {
+          if (start < 60) early.push(p)
+          if (start >= lateStart) late.push(p)
+        }
+      }
+      const rank = (ps: number[], q: (m: number) => number) => {
+        if (!ps.length) return null
+        const o = [...ps].sort((a, b) => cum[a] - cum[b] || a - b)
+        const v = cum[o[q(o.length)]]
+        return o.find((x) => cum[x] === v)!
+      }
+      const all = Array.from({ length: n }, (_, p) => p)
+      const med = (m: number) => Math.floor((m - 1) / 2)
+      return {
+        earlyCrash: rank(early, med),
+        typical: rank(all, med),
+        lateCrash: rank(late, med),
+        lucky: rank(all, (m) => Math.ceil(0.9 * m) - 1),
+      }
+    }
+    let seed = 777
+    const rand = () => ((seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0) / 2 ** 32)
+    const rs = Float64Array.from({ length: 50 }, () => 0.004 + 0.06 * (rand() + rand() + rand() - 1.5))
+    for (const H of [120, 150, 360]) {
+      for (let trial = 0; trial < 5; trial++) {
+        const idx = Int32Array.from({ length: 101 * H }, () => Math.floor(rand() * 50))
+        expect(pickSampleFutures(idx, H, rs)).toEqual(reference(idx, H, rs))
+      }
+    }
+  })
+
+  function timed(n: number, H: number) {
     const M = 405
     let seed = 12345
     const rand = () => ((seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0) / 2 ** 32)
     const rs = Float64Array.from({ length: M }, () => 0.006 + 0.045 * (rand() + rand() + rand() - 1.5))
-    const n = 10_000
-    const H = 480
     const idx = new Int32Array(n * H)
     for (let i = 0; i < idx.length; i++) idx[i] = Math.floor(rand() * M)
     pickSampleFutures(idx.subarray(0, 100 * H), H, rs) // warm up
     const t0 = performance.now()
     const picks = pickSampleFutures(idx, H, rs)
     const ms = performance.now() - t0
-    console.log(`pickSampleFutures 10,000 × 480: ${ms.toFixed(1)} ms`)
+    console.log(`pickSampleFutures ${n} × ${H}: ${ms.toFixed(1)} ms`)
     expect(picks.typical).not.toBeNull()
     expect(picks.earlyCrash).not.toBeNull()
     expect(picks.lateCrash).not.toBeNull()
-    expect(ms).toBeLessThan(1000) // generous for CI; target well under 200 ms
-  })
+    expect(ms).toBeLessThan(1000) // generous for CI; target well under 100 ms
+  }
+  it('10,000 × 480 is fast', () => timed(10_000, 480))
+  it('4,000 × 360 is fast', () => timed(4_000, 360))
 })
 
 describe('realStockMonthly', () => {
