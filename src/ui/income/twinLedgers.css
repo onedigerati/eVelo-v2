@@ -1,0 +1,142 @@
+/* ============ Living on income — the walkthrough's twin ledgers (TwinLedgers.tsx) ============ */
+/* Living on income in brass (--bruised), eVelo in green (--holds), the loan in --broken, Social
+   Security in --neutral, shares sold in --ramp-1, as in compare.css and the mockup. */
+
+.tl {
+  display: grid;
+  gap: var(--space-2);
+  min-width: 0;
+}
+.tl__twins {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--space-3);
+}
+.tl--phone .tl__twins {
+  grid-template-columns: minmax(0, 1fr);
+}
+.tl__ledger {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  padding: 14px;
+  min-width: 0;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+  background: var(--surface-solid);
+}
+.tl__ledger--none {
+  border-style: dashed;
+  background: transparent;
+}
+.tl__who {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+.tl__name {
+  margin: 0;
+  font: 400 1.2rem/1 var(--font-display);
+  letter-spacing: var(--tracking-display);
+}
+.tl__ledger--inc .tl__name {
+  color: var(--bruised-text);
+}
+.tl__ledger--ev .tl__name {
+  color: var(--holds-text);
+}
+.tl__ledger--none .tl__name {
+  color: var(--ink-3);
+}
+.tl__small {
+  margin: 0;
+  font-size: var(--fs-sm);
+  color: var(--ink-3);
+}
+.tl__num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+.tl__from {
+  display: grid;
+  gap: var(--space-1);
+}
+.tl__bar {
+  display: flex;
+  height: 22px;
+  border-radius: var(--radius-xs);
+  overflow: hidden;
+  background: var(--hairline);
+}
+.tl__part {
+  display: block;
+  min-width: 0;
+  transition: flex-basis var(--dur-3) var(--ease-out);
+}
+.tl__rows {
+  display: grid;
+  gap: 3px;
+  margin: 0;
+  font-size: var(--fs-sm);
+}
+.tl__row {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+.tl__row dt,
+.tl__row dd {
+  margin: 0;
+}
+.tl__key {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink-2);
+}
+.tl__sw {
+  flex: none;
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 3px;
+}
+.tl__event {
+  margin: 0;
+  min-height: 2.8em;
+  padding-left: 10px;
+  border-left: 2px solid var(--hairline-strong);
+  font-size: var(--fs-sm);
+  color: var(--ink-2);
+}
+.tl__note {
+  margin: 0;
+  font-size: var(--fs-xs);
+  color: var(--ink-3);
+}
+
+.tl--income {
+  background: var(--bruised);
+}
+.tl--evelo {
+  background: var(--holds);
+}
+.tl--loan {
+  background: var(--broken);
+}
+.tl--ss {
+  background: var(--neutral);
+}
+.tl--sold {
+  background: var(--ramp-1);
+}
+.tl--tax {
+  background: var(--ink-faint);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tl__part {
+    transition: none;
+  }
+}
