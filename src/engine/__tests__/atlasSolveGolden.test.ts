@@ -36,9 +36,10 @@ const GOLDEN: Record<string, string> = {
 }
 
 describe('Atlas and solve are unchanged by the yearly tallies', () => {
-  it.skipIf(!GOLDEN[process.arch])('atlas and solve outputs match the golden from before', () => {
+  it('atlas and solve outputs match the golden from before', () => {
     const d = digest()
     console.log(`atlas+solve digest (${process.arch}): ${d}`)
-    expect(d).toBe(GOLDEN[process.arch])
+    // An arch without an entry logs its digest (CI's x64 log) instead of asserting.
+    if (GOLDEN[process.arch]) expect(d).toBe(GOLDEN[process.arch])
   })
 })

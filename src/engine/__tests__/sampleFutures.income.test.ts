@@ -119,6 +119,12 @@ describe('income sample futures', () => {
       'fat-tail': '6e718a1d1e774ae53b545f637b3fe13077ec4d427ae5dc7305038bb4a4e0fa84',
       samples: 'be41593837be084e341b53253b39fba3cfb2e73e65067d41c315afd6d82d6b2f',
     },
+    // From CI's x64 run of a44df52 (identical to arm64).
+    x64: {
+      bootstrap: '2de684351760de626bffcd030fa21d1a5c634f4c49fe4a65ee8cf0ea5f86b1b9',
+      'fat-tail': '6e718a1d1e774ae53b545f637b3fe13077ec4d427ae5dc7305038bb4a4e0fa84',
+      samples: 'be41593837be084e341b53253b39fba3cfb2e73e65067d41c315afd6d82d6b2f',
+    },
   }
   it('goldens: the result without samples is bit-identical to before; the samples are pinned', () => {
     const g = GOLDEN[process.arch]

@@ -73,6 +73,11 @@ describe('same months as eVelo', () => {
       bootstrap: '15daa81b69f958cf70a327c881edfe914ab951c115fe9e36c9fcbe52642d18fd',
       'fat-tail': 'ad18b92214f30504d446a54013274f5bc42a7b0ce30e3112c036c967231bdb6d',
     },
+    // From CI's x64 run of a44df52 (identical to arm64).
+    x64: {
+      bootstrap: '15daa81b69f958cf70a327c881edfe914ab951c115fe9e36c9fcbe52642d18fd',
+      'fat-tail': 'ad18b92214f30504d446a54013274f5bc42a7b0ce30e3112c036c967231bdb6d',
+    },
   }
   const mkt = syntheticMarket(240, [
     { symbol: 'QQQ', alpha: 0.002, beta: 1.2, noise: 0.02, cls: 'etf-equity' },
@@ -91,6 +96,11 @@ describe('same months as eVelo', () => {
   // like YEARLY; an arch without an entry logs its hashes instead.
   const SAMPLES: Record<string, Record<'evelo' | 'income', string>> = {
     arm64: {
+      evelo: 'f32dd6f5c9b5f3bf6ad4e7b29efb46325f5ae1e60b50aa7966385388f1b0cdfe',
+      income: '3122754cbe531607ac96b9e647ec93aa68f83ddf7c17ec1a1c4b81bbafeeab53',
+    },
+    // From CI's x64 run of a44df52 (identical to arm64).
+    x64: {
       evelo: 'f32dd6f5c9b5f3bf6ad4e7b29efb46325f5ae1e60b50aa7966385388f1b0cdfe',
       income: '3122754cbe531607ac96b9e647ec93aa68f83ddf7c17ec1a1c4b81bbafeeab53',
     },

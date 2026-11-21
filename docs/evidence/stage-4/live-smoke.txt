@@ -1,0 +1,28 @@
+ok   landing renders text
+ok   Atlas route renders
+ok   no uncaught page errors
+ok   home "constructor" (link): plan renders, no recovery screen
+ok   home "constructor" (reload): plan renders, no recovery screen
+ok   home "constructor": no uncaught page errors
+ok   destination "__proto__" (link): plan renders, no recovery screen
+ok   destination "__proto__" (reload): plan renders, no recovery screen
+ok   destination "__proto__": no uncaught page errors
+ok   holding "constructor" (link): plan renders, no recovery screen
+ok   holding "constructor" (reload): plan renders, no recovery screen
+ok   holding "constructor": no uncaught page errors
+ok   stay home (link): plan renders, no recovery screen
+ok   stay home (link): "Retire to" shows Stay home, no Bangkok (got Stay home)
+ok   stay home (reload): plan renders, no recovery screen
+ok   stay home (reload): "Retire to" shows Stay home, no Bangkok (got Stay home)
+ok   stay home: no uncaught page errors
+ok   walkthrough: absent before sync
+ok   walkthrough: shows under the comparison after sync
+ok   walkthrough: first chapter is before-Social-Security and the slider spans it (before)
+ok   walkthrough: Play stops at the chapter's last year ({"ch":"before","year":1})
+ok   walkthrough: Next chapter carries on, slider spans the new chapter (arrives)
+ok   same storm: shown after sync with 4 future chips
+ok   same storm: picking another future changes the caption
+ok   same storm: hidden with its reason when the futures differ (different-futures)
+ok   walkthrough and same storm: no uncaught page errors
+
+e2e smoke passed

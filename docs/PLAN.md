@@ -8,7 +8,7 @@ A walkthrough on the Living on Income results that shows how the mode and eVelo 
 
 ## Now
 Stage 4 of 4 · Same storm
-Mode: paused — release needs a push to main (GitHub Pages deploys on push); outward steps aren't allowed in this run
+Mode: autopilot — unattended outward
 Risk: UI (shows engine figures; the gate and captions are logic, tested); release is outward (push to GitHub Pages)
 Agents: wide — confirmed 2026-11-21 15:45
 Scope: under the chapters, "Same storm, two boats": chips for the sample futures both engines returned (early crash, typical, late crash, lucky; missing ones left out, repeated paths merged), a chart of both net worths through the chosen future with eVelo's loan-to-value against its margin-call line and forced sales marked, and a caption per future from that future's rows. Shown only when both plans draw the same futures (the comparison's "same futures" line, and both results' sample paths agree), otherwise one line says why. Then release.
@@ -17,14 +17,14 @@ Checks:
 - [x] The future chips switch a chart of both plans' net worth through that future, with eVelo's loan-to-value against its margin-call line and forced-sale years marked; missing futures are left out and repeated paths merged (proof: e2e)
 - [x] Each future's caption comes from that future's rows, and its words follow the numbers (who ends ahead, whether a forced sale happened, how much living on income sold in the first years) (proof: test)
 - [x] Desktop and a 390px phone with no horizontal scroll; the keyboard works the chips (arrow keys) and the chart has a text alternative; under reduced motion the switch doesn't animate (proof: e2e with screenshots)
-- [ ] Release: suite, build, e2e smoke and Lighthouse pass, the rest of the site is unchanged, and it's live on GitHub Pages (proof: test + live check)
+- [x] Release: suite, build, e2e smoke and Lighthouse pass, the rest of the site is unchanged, and it's live on GitHub Pages (proof: test + live check)
 Open: none
 
 ## Stages
 - [x] 1. eVelo yearly tallies — borrowed, interest and forced-sale per-year medians from the kernel, guarded to the recording branch
 - [x] 2. Chapters and ledgers — chapter rules (pure, tested), the walkthrough section under the comparison, overview chart with tap-to-jump, chapter slider, twin ledgers, Play story stopping at each chapter's end, phone and keyboard
 - [x] 3. Matched sample futures — both engines return per-year rows for a few chosen path indices (same months in both), picked by a plan-neutral market rule
-- [ ] 4. Same storm — the future chips, both net worths and eVelo loan-to-value with the call line and forced sales, captions, gated on "same futures"; release
+- [x] 4. Same storm — the future chips, both net worths and eVelo loan-to-value with the call line and forced sales, captions, gated on "same futures"; release
 
 ## Decisions
 - 2026-11-21 · The walkthrough sits under the existing comparison; it doesn't replace the comparison chart — user.
@@ -52,7 +52,7 @@ Open: none
 ## Open questions
 - For stage 4, from the stage 3 review: eVelo's `blockMonths` from a share link is clamped but not rounded, while the income engine rounds it, so a fractional block length (e.g. 24.5) draws different months in the two engines; Same storm's "same futures" gate must compare the normalised values. Two sample keys can pick the same path (e.g. typical = lucky on tiny path counts); the chips show or merge repeats.
 - From the stage 3 review: the samples goldens are arm64-only like the others (see the x64 item), and the income samples golden hashes the bundled `market.json`, so `npm run data:refresh` changes it (as it already does the other income goldens) — refresh the hashes with the data.
-- From the stage 1 review (walkthrough plan): the new atlas/solve golden and the `yearly` golden are pinned for arm64 only (this machine); on CI's x64 the atlas/solve test is skipped and the yearly hash is only logged. Add the x64 hashes from the next CI run's log, as was done for `SIM_BOOTSTRAP`. The scalar cross-check pins the tallies semantically on every arch meanwhile — next push.
+- The atlas/solve golden is still arm64-only: it now logs its digest on x64 instead of skipping, so add CI's x64 digest from the next run's log (the yearly, samples and income goldens are pinned for x64 since the release run, identical to arm64) — next push.
 - From the stage 1 review: the `yearly` medians run over all paths, with broken paths counted as 0, so once more than half have broken, borrowed and interest read $0 while the survivors still borrow. Stage 2's ledger says so, or shows medians among surviving paths — stage 2 design.
 - The compare view keeps a second income worker and a per-session run cache that only grows, and doesn't cancel a run on leaving (Stage 6 review defer).
 - From the stage 3 verify: the income yields walk additively, and over 30 years the walk is wide (SPY starts at 1.0%, so the 0.25% floor binds often and lifts its median to 1.21%; bonds stay within 0.25 points). A log-yield or mean-reverting walk would be tighter and floor-free; it moves "income keeps pace" (15% of default paths today) — research half-lives, later, user's call. The Georgia per-65 exclusion is scaled like an indexed amount though Georgia's is fixed in dollars (small).

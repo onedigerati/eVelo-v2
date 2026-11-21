@@ -163,6 +163,8 @@ describe('eVelo sample futures', () => {
     // result.samples under the fixed picks (0, 150, 299, 1); an arch without an entry logs its hash.
     const SAMPLES: Record<string, string> = {
       arm64: '78e68c81918044748c31003f2da4a9cea7e5da5a98553bb6b38f88abd21bbf88',
+      // From CI's x64 run of a44df52 (identical to arm64).
+      x64: '78e68c81918044748c31003f2da4a9cea7e5da5a98553bb6b38f88abd21bbf88',
     }
     const { elapsedMs: _, yearly: __, samples, ...rest } = simulate(mkt, CITIES_FIX, goldenInputs('bootstrap'))
     expect(createHash('sha256').update(JSON.stringify(rest)).digest('hex')).toBe(SIM_BOOTSTRAP[process.arch] ?? SIM_BOOTSTRAP.x64)
