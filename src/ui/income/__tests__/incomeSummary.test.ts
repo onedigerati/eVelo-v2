@@ -34,6 +34,7 @@ function result(income: number, sales: number[] = [], rows: Partial<IncomeYearRo
     totalSoldMedian: 0,
     median: Array.from({ length: years }, (_, i) => row(i + 1, { gapSold: sales[i] ?? 0, ...rows[i] })),
     startYield: { stocks: 0.012, munis: 0.031, taxable: 0.04 },
+    samples: null,
   }
 }
 const inputs = { spending: 100_000, otherIncome: 0, age: 60, incomeStartAge: 67 }
