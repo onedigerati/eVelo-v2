@@ -21,14 +21,106 @@ export interface SampleFuture<Row> {
 
 /** Real monthly stock return per calendar month (the market's broad US stock series, less CPI). */
 export function realStockMonthly(market: MarketData): Float64Array {
-  void market
-  throw new Error('realStockMonthly: not built yet')
+  // The broad US stock fund is SPY (prepare.ts uses it as the factor too). The bundled data has it
+  // from calendar month 0; a null month (before `first`, only possible in hand-built data) counts
+  // as a 0 nominal return.
+  const spy = market.assets.SPY
+  if (!spy) throw new Error('Market data has no SPY series')
+  const M = market.months
+  const out = new Float64Array(M)
+  for (let m = 0; m < M; m++) {
+    const r = spy.r[m] ?? 0
+    const c = market.cpi[m] ?? 0
+    out[m] = (1 + r) / (1 + c) - 1
+  }
+  return out
+}
+
+/** Longest window, in months, of the drawdown that defines a crash. */
+const CRASH_WINDOW = 24
+/** A crash is a worst-window real decline of at least this much. */
+const CRASH_DECLINE = 0.2
+/** Early crash: the decline starts in months [0, EARLY_MONTHS). */
+const EARLY_MONTHS = 60
+/** Late crash: the decline starts in the last LATE_MONTHS months. */
+const LATE_MONTHS = 120
+
+/** Sort path indices ascending by (cumulative return, path index). */
+function sortByCum(paths: number[], cum: Float64Array): number[] {
+  return paths.sort((a, b) => cum[a] - cum[b] || a - b)
+}
+
+/** The path at position `pos` of a (value, index)-sorted order, moved to the first of its tie run
+ *  so ties always go to the lowest path index. */
+function pickAt(order: number[], cum: Float64Array, pos: number): number {
+  const v = cum[order[pos]]
+  let i = pos
+  while (i > 0 && cum[order[i - 1]] === v) i--
+  return order[i]
+}
+
+/** Median (lower middle for an even count) by cumulative return; null for none. */
+function medianOf(paths: number[], cum: Float64Array): number | null {
+  if (paths.length === 0) return null
+  const order = sortByCum(paths, cum)
+  return pickAt(order, cum, Math.floor((order.length - 1) / 2))
 }
 
 /** Choose the sample paths. `idx` holds paths × T calendar month indices (index p·T + t). */
 export function pickSampleFutures(idx: Int32Array, T: number, realStock: ArrayLike<number>): SamplePicks {
-  void idx
-  void T
-  void realStock
-  throw new Error('pickSampleFutures: not built yet')
+  // Per path p, with the real stock index I[0] = 1, I[t+1] = I[t]·(1 + realStock[idx[p·T + t]]):
+  //   cumulative return = I[T] − 1;
+  //   worst ≤24-month decline = min over s in [0, T), k in [1, 24], s + k ≤ T of I[s+k]/I[s] − 1,
+  //   and its start month is that s (month s is the first month of the fall); among equal
+  //   declines the earliest start wins.
+  // typical = median path by cumulative return (lower middle for an even count); lucky = the 90th
+  // percentile (nearest rank: the ⌈0.9·n⌉-th smallest); ties go to the lowest path index.
+  // earlyCrash / lateCrash = the median by cumulative return (same conventions) among paths whose
+  // worst decline is ≥ 20% and starts in [0, 60) / [T − 120, T). When T < 120 the late window is
+  // the second half, [⌊T/2⌋, T), and the early window is capped to the first half,
+  // [0, min(60, ⌊T/2⌋)), so the two never overlap. A sample with no qualifying path is null.
+  const none: SamplePicks = { earlyCrash: null, typical: null, lateCrash: null, lucky: null }
+  if (T <= 0) return none
+  const n = Math.floor(idx.length / T)
+  if (n === 0) return none
+
+  const half = Math.floor(T / 2)
+  const lateStart = T >= LATE_MONTHS ? T - LATE_MONTHS : half
+  const earlyEnd = T >= LATE_MONTHS ? EARLY_MONTHS : Math.min(EARLY_MONTHS, half)
+
+  const cum = new Float64Array(n)
+  const I = new Float64Array(T + 1)
+  const early: number[] = []
+  const late: number[] = []
+  for (let p = 0; p < n; p++) {
+    const o = p * T
+    I[0] = 1
+    for (let t = 0; t < T; t++) I[t + 1] = I[t] * (1 + realStock[idx[o + t]])
+    cum[p] = I[T] - 1
+
+    let worst = 0
+    let worstStart = -1
+    for (let s = 0; s < T; s++) {
+      const end = Math.min(T, s + CRASH_WINDOW)
+      let lo = Infinity
+      for (let e = s + 1; e <= end; e++) if (I[e] < lo) lo = I[e]
+      const d = lo / I[s] - 1
+      if (d < worst) {
+        worst = d
+        worstStart = s
+      }
+    }
+    if (worst <= -CRASH_DECLINE) {
+      if (worstStart < earlyEnd) early.push(p)
+      if (worstStart >= lateStart) late.push(p)
+    }
+  }
+
+  const order = sortByCum(Array.from({ length: n }, (_, p) => p), cum)
+  return {
+    earlyCrash: medianOf(early, cum),
+    typical: pickAt(order, cum, Math.floor((n - 1) / 2)),
+    lateCrash: medianOf(late, cum),
+    lucky: pickAt(order, cum, Math.ceil(0.9 * n) - 1),
+  }
 }
