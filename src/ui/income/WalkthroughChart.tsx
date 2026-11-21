@@ -92,6 +92,43 @@ export function WalkthroughChart({ years, chapters, chapter, year, onPickYear, p
   // the higher value's label sits above its dot, the lower's below
   const top = marks.length === 2 ? (marks[0].v >= marks[1].v ? marks[0].key : marks[1].key) : marks[0]?.key
 
+  // Each value label goes where neither line runs through it: its default side (right, or left near
+  // the right edge), else the other side, else a little further from its dot.
+  const fs = phone ? 13 : 12
+  const lineAt = (vals: (number | null)[], px: number) => {
+    const k = Math.max(0, Math.min(n, x.invert(px)))
+    const i = Math.min(Math.floor(k), Math.max(0, n - 1))
+    const va = vals[i], vb = vals[i + 1] ?? va
+    return va === null || vb === null || va === undefined ? null : y(va + (vb - va) * (k - i))
+  }
+  const hits = (l: number, r: number, base: number) => {
+    let h = 0
+    for (let px = l; px <= r; px += 2)
+      for (const pl of PLANS) {
+        const ly = lineAt(pts[pl.key], px)
+        if (ly !== null && ly >= base - fs * 0.85 - 2 && ly <= base + 3) h++
+      }
+    return h
+  }
+  const place = (key: PlanKey, v: number) => {
+    const w = currencyCompact(v).length * fs * 0.62
+    const up = key === top
+    const sides: ('start' | 'end')[] = flip ? ['end', 'start'] : ['start', 'end']
+    let best: { x: number; y: number; anchor: 'start' | 'end'; h: number } | null = null
+    for (const extra of [0, 8, 16])
+      for (const anchor of sides) {
+        const lx = mx + (anchor === 'start' ? 8 : -8)
+        const [l, r] = anchor === 'start' ? [lx, lx + w] : [lx - w, lx]
+        if (l < x0 - 4 || r > x1 + 4) continue
+        const base = y(v) + (up ? -8 - extra : (phone ? 18 : 16) + extra)
+        if (base - fs < m.t - 14 || base > height - m.b) continue
+        const h = hits(l, r, base)
+        if (!best || h < best.h) best = { x: lx, y: base, anchor, h }
+        if (h === 0) return best
+      }
+    return best ?? { x: mx + (flip ? -8 : 8), y: y(v) + (up ? -8 : phone ? 18 : 16), anchor: flip ? ('end' as const) : ('start' as const), h: 0 }
+  }
+
   const pick = (e: MouseEvent<SVGSVGElement>) => {
     const rect = e.currentTarget.getBoundingClientRect()
     if (n > 0) onPickYear(rowAtX(e.clientX - rect.left, x0, x1, n))
@@ -138,19 +175,22 @@ export function WalkthroughChart({ years, chapters, chapter, year, onPickYear, p
             {row && (
               <g className="wtchart__mark">
                 <line x1={mx} x2={mx} y1={m.t} y2={height - m.b} />
-                {marks.map((p) => (
+                {marks.map((p) => {
+                  const at = place(p.key, p.v)
+                  return (
                   <g key={p.key} className={`wtchart__series wtchart__series--${p.key}`}>
                     <circle cx={mx} cy={y(p.v)} r={4.5} className="wtchart__dot" />
                     <text
-                      x={mx + (flip ? -8 : 8)}
-                      y={y(p.v) + (p.key === top ? -8 : phone ? 18 : 16)}
-                      textAnchor={flip ? 'end' : 'start'}
+                      x={at.x}
+                      y={at.y}
+                      textAnchor={at.anchor}
                       className="wtchart__value"
                     >
                       {currencyCompact(p.v)}
                     </text>
                   </g>
-                ))}
+                  )
+                })}
               </g>
             )}
             <g transform={`translate(0, ${height - m.b})`}>

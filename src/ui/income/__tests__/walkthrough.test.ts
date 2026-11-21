@@ -59,13 +59,37 @@ describe('chapters', () => {
     expect(c[2]).toMatchObject({ from: 8, to: 8 })
   })
 
-  it('a fall in either plan counts, and under 5% does not', () => {
+  it('a bad market just before the estate leaves the years before it as the long middle', () => {
+    const c = chapters(rows(30, (i) => (i === 23 ? -0.1 : i === 24 ? -0.02 : 0.04)), ss(67))
+    wellFormed(c, 30)
+    expect(keys(c)).toEqual(['before', 'arrives', 'middle', 'bad', 'estate'])
+    expect(c[2]).toMatchObject({ from: 8, to: 22 })
+  })
+
+  it('a bad year needs both plans to fall 5% or more: one plan alone, or under 5%, is not one', () => {
+    const both = rows(30)
+    both[12].evelo!.portfolio = both[12].evelo!.portfolioStart * 0.95
+    both[12].income!.portfolio = both[12].income!.portfolioStart * 0.95
+    expect(keys(chapters(both, ss(67)))).toContain('bad')
+    const eveloOnly = rows(30)
+    eveloOnly[12].evelo!.portfolio = eveloOnly[12].evelo!.portfolioStart * 0.8
+    expect(keys(chapters(eveloOnly, ss(67)))).not.toContain('bad')
+    const incomeOnly = rows(30)
+    incomeOnly[12].income!.portfolio = incomeOnly[12].income!.portfolioStart * 0.8
+    expect(keys(chapters(incomeOnly, ss(67)))).not.toContain('bad')
+    const small = rows(30)
+    small[12].evelo!.portfolio = small[12].evelo!.portfolioStart * 0.96
+    small[12].income!.portfolio = small[12].income!.portfolioStart * 0.96
+    expect(keys(chapters(small, ss(67)))).not.toContain('bad')
+  })
+
+  it('a fall to near zero (a plan running dry) is not a bad market', () => {
     const y = rows(30)
-    y[12].evelo!.portfolio = y[12].evelo!.portfolioStart * 0.95
+    y[12].evelo!.portfolio = y[12].evelo!.portfolioStart * 0.04
+    y[12].income!.portfolio = y[12].income!.portfolioStart * 0.5
+    expect(keys(chapters(y, ss(67)))).not.toContain('bad')
+    y[12].evelo!.portfolio = y[12].evelo!.portfolioStart * 0.06
     expect(keys(chapters(y, ss(67)))).toContain('bad')
-    const z = rows(30)
-    z[12].income!.portfolio = z[12].income!.portfolioStart * 0.96
-    expect(keys(chapters(z, ss(67)))).not.toContain('bad')
   })
 
   it('no Social Security in the horizon: no before or arrives chapter', () => {

@@ -2,7 +2,7 @@
 // one year. No DOM. Every figure is that year's median in today's dollars, so the parts needn't add up.
 
 import { currencyCompact, percent } from '../format'
-import type { EveloYear, IncomeYear } from './walkthrough'
+import type { EveloYear, IncomeYear, WalkYear } from './walkthrough'
 
 /** A portfolio falling this much or more over the year (median end vs start) is a bad year. */
 export const DROP = 0.05
@@ -47,6 +47,15 @@ export function eveloFunded(y: EveloYear): number {
   return pos(y.socialSecurity) + pos(y.borrowed)
 }
 
+/** The one spending figure both cards show ("This year's $X came from"): the living-on-income
+ *  plan's spending that year (its per-year median, constant in today's dollars and the same as
+ *  eVelo's once synced). Only a year the income plan doesn't live falls back to eVelo's Social
+ *  Security plus borrowing. Each bar's parts are scaled to their own sum (see `parts`). */
+export function ledgerSpending(row: WalkYear): number {
+  if (row.income) return pos(row.income.spending)
+  return row.evelo ? eveloFunded(row.evelo) : 0
+}
+
 /** The fall of the median portfolio over the year (0.2 = fell 20%), or 0 when it held or rose. */
 export function portfolioFall(start: number, end: number): number {
   if (!(start > 0) || !Number.isFinite(end)) return 0
@@ -77,10 +86,20 @@ export function eveloEvent(y: EveloYear, prev?: EveloYear | null): string {
   const out: string[] = []
   const fall = portfolioFall(y.portfolioStart, y.portfolio)
   if (pos(y.forcedSaleSold) > 0) out.push(`Forced sale: ${money(y.forcedSaleSold)} of shares sold.`)
-  else if (fall >= DROP) out.push(`The portfolio falls ${percent(fall)}; loan-to-value jumps to ${percent(y.ltv)}.`)
+  else if (fall >= DROP)
+    out.push(
+      prev && prev.ltv < y.ltv
+        ? `The portfolio falls ${percent(fall)}; loan-to-value jumps from ${percent(prev.ltv)} to ${percent(y.ltv)}.`
+        : pos(y.loan) > 0 && pos(y.ltv) > 0
+          ? `The portfolio falls ${percent(fall)}; loan-to-value is ${percent(y.ltv)}.`
+          : `The portfolio falls ${percent(fall)}, but there is no loan.`,
+    )
   if (ssStarts(y.socialSecurity, prev?.socialSecurity)) out.push('Social Security starts.')
   if (pos(y.repaid) > 0) out.push(`Income above spending repays ${money(y.repaid)} of the loan.`)
-  return out.length ? out.join(' ') : 'A quiet year: the loan grows, nothing is sold.'
+  if (out.length) return out.join(' ')
+  if (!(pos(y.loan) > 0)) return 'A quiet year: no loan, nothing is sold.'
+  const grows = prev ? y.loan > prev.loan : pos(y.borrowed) + pos(y.interest) > 0
+  return grows ? 'A quiet year: the loan grows, nothing is sold.' : 'A quiet year: nothing is sold.'
 }
 
 /** The one line under both ledgers. */

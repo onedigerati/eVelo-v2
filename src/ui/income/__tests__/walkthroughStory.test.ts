@@ -52,9 +52,9 @@ describe('chapterStory', () => {
     ]
     const s = chapterStory(ch('before', 0, 1), y, inputs)
     expect(s.income.title).toBe('Sells to fill the gap')
-    expect(s.income.figure).toBe(`${k(102_000)} sold over 2 years`)
+    expect(s.income.figure).toBe(`about ${k(102_000)} sold over 2 years`)
     expect(s.income.text).toContain(`about ${pct(0.4)} of spending`)
-    expect(s.evelo.figure).toBe(`${k(162_000)} borrowed`)
+    expect(s.evelo.figure).toBe(`about ${k(162_000)} borrowed`)
     expect(s.evelo.text).toContain('Nothing is sold.')
     expect(s.evelo.text).toContain(`reaches ${k(165_000)} by 62`)
   })
@@ -80,7 +80,7 @@ describe('chapterStory', () => {
     ]
     const s = chapterStory(ch('bad', 0, 1), y, inputs)
     expect(s.income.title).toBe('Sells into the drop')
-    expect(s.income.figure).toBe(`${k(85_000)} sold in the drop`)
+    expect(s.income.figure).toBe(`about ${k(85_000)} sold in the drop`)
     expect(s.income.text).toContain(`falls ${pct(0.25)}`)
     expect(s.evelo.title).toBe('A scare, not a call')
     expect(s.evelo.figure).toBe(`Loan-to-value peaks at ${pct(0.31)}`)
@@ -142,6 +142,35 @@ describe('chapterStory', () => {
     expect(s.evelo.title).toBe('Not in these years')
     expect(s.evelo.text).toContain('ages 60–61')
     expect(s.income.figure).toContain('→')
+  })
+
+  it('arrives: eVelo\'s text follows its title when borrowing doesn\'t fall, or Social Security comes in year 1', () => {
+    const up = [row(0, inc(), ev({ borrowed: 50_000 })), row(1, inc(), ev({ borrowed: 60_000, socialSecurity: 30_000 }))]
+    const s = chapterStory(ch('arrives', 1, 1), up, inputs)
+    expect(s.evelo.title).toBe('Still borrowing')
+    expect(s.evelo.text).not.toContain('borrows less')
+    expect(s.evelo.text).toContain('borrows no less than the year before')
+    const first = chapterStory(ch('arrives', 0, 0), [row(0, inc(), ev({ borrowed: 60_000, socialSecurity: 30_000 }))], inputs)
+    expect(first.evelo.title).toBe('Still borrowing')
+    expect(first.evelo.text).not.toContain('borrows less')
+    const down = chapterStory(ch('arrives', 1, 1), [row(0, inc(), ev({ borrowed: 80_000 })), row(1, inc(), ev({ borrowed: 50_000, socialSecurity: 30_000 }))], inputs)
+    expect(down.evelo.title).toBe('Borrowing slows')
+    expect(down.evelo.text).toContain('borrows less')
+  })
+
+  it('arrives: "Selling stops" only when something was sold the year before', () => {
+    const stops = chapterStory(ch('arrives', 1, 1), [row(0, inc({ sold: 20_000 }), ev()), row(1, inc({ sold: 0, socialSecurity: 30_000 }), ev())], inputs)
+    expect(stops.income.title).toBe('Selling stops')
+    const never = chapterStory(ch('arrives', 1, 1), [row(0, inc({ sold: 0 }), ev()), row(1, inc({ sold: 0, socialSecurity: 30_000 }), ev())], inputs)
+    expect(never.income.title).not.toBe('Selling stops')
+    const first = chapterStory(ch('arrives', 0, 0), [row(0, inc({ sold: 0, socialSecurity: 30_000 }), ev())], inputs)
+    expect(first.income.title).not.toBe('Selling stops')
+  })
+
+  it('a one-year figure has no "about"; a margin call over two years does', () => {
+    const y = [row(0, inc(), ev({ forcedSaleSold: 10_000, portfolio: 1e6 })), row(1, inc(), ev({ forcedSaleSold: 20_000, portfolio: 9e5 }))]
+    expect(chapterStory(ch('bad', 0, 1), y, inputs).evelo.figure).toBe(`about ${k(30_000)} of shares sold`)
+    expect(chapterStory(ch('bad', 0, 0), y, inputs).evelo.figure).toBe(`${k(10_000)} of shares sold`)
   })
 
   it('zero sales: no "sold $0" anywhere', () => {

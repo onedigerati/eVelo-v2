@@ -10,6 +10,8 @@ import { currencyCompact as k, percent as pct } from '../format'
 import type { Chapter, ChapterStoryFn, EveloYear, IncomeYear, StoryPart, WalkYear } from './walkthrough'
 
 const sum = <T>(list: readonly T[], f: (x: T) => number) => list.reduce((s, x) => s + f(x), 0)
+/** A total over `n` years of per-year medians: "about $X" when it adds more than one year. */
+const total = (v: number, n: number) => (n > 1 ? `about ${k(v)}` : k(v))
 const yearsWord = (n: number) => (n === 1 ? '1 year' : `${n} years`)
 const agesText = (rows: readonly WalkYear[]) => {
   const a = rows[0]?.age
@@ -65,12 +67,12 @@ function before(inc: Lived<IncomeYear>[], ev: Lived<EveloYear>[]) {
       sold > 0
         ? {
             title: 'Sells to fill the gap',
-            figure: `${k(sold)} sold over ${yearsWord(inc.length)}`,
+            figure: `${total(sold, inc.length)} sold over ${yearsWord(inc.length)}`,
             text: `${share}The rest comes from selling shares until Social Security starts.`,
           }
         : {
             title: 'Income covers it',
-            figure: `${k(sum(inc, (x) => x.y.dividendsInterest))} of dividends and interest`,
+            figure: `${total(sum(inc, (x) => x.y.dividendsInterest), inc.length)} of dividends and interest`,
             text: 'Dividends and interest pay for the spending, so no shares are sold before Social Security.',
           }
   }
@@ -84,7 +86,7 @@ function before(inc: Lived<IncomeYear>[], ev: Lived<EveloYear>[]) {
       borrowed > 0
         ? {
             title: forced > 0 ? 'Borrows, then a margin call' : 'Borrows all of it',
-            figure: `${k(borrowed)} borrowed`,
+            figure: `${total(borrowed, ev.length)} borrowed`,
             text:
               (forced > 0 ? forcedText(forced).trim() + ' ' : 'Nothing is sold. ') +
               `The spending comes from the loan, which reaches ${k(last.y.loan)} by ${by}.`,
@@ -110,21 +112,28 @@ function arrives(chapter: Chapter, years: readonly WalkYear[], inc: Lived<Income
     const was = prev?.income?.sold
     const ssText = ss > 0 ? `${k(ss)} of Social Security` : 'Social Security'
     if (sold <= 0) {
-      income = {
-        title: 'Selling stops',
-        figure: `Nothing sold ${when}`,
-        text: `${ssText} and the portfolio’s income cover the spending, so no shares are sold.`,
-      }
+      income =
+        was != null && was > 0
+          ? {
+              title: 'Selling stops',
+              figure: `Nothing sold ${when}`,
+              text: `${ssText} and the portfolio’s income cover the spending, so no shares are sold.`,
+            }
+          : {
+              title: 'Still no selling',
+              figure: `Nothing sold ${when}`,
+              text: `${ssText} adds to the portfolio’s income, which already covers the spending.`,
+            }
     } else if (was != null && was > 0 && sold < was) {
       income = {
         title: 'Selling slows',
-        figure: `${k(sold)} sold ${when}`,
+        figure: `${total(sold, inc.length)} sold ${when}`,
         text: `${ssText} closes part of the gap: sales fall from ${k(was)} the year before.`,
       }
     } else {
       income = {
         title: 'Still selling',
-        figure: `${k(sold)} sold ${when}`,
+        figure: `${total(sold, inc.length)} sold ${when}`,
         text: `${ssText} arrives, but selling still fills the rest of the gap.`,
       }
     }
@@ -137,7 +146,16 @@ function arrives(chapter: Chapter, years: readonly WalkYear[], inc: Lived<Income
     const forced = sum(ev, (x) => x.y.forcedSaleSold)
     const was = prev?.evelo?.borrowed
     const ss = ev[0].y.socialSecurity
-    const ssText = ss > 0 ? `With ${k(ss)} of Social Security it borrows less.` : 'Its own Social Security hasn’t started, so it borrows as before.'
+    const slows = was != null && was > 0 && borrowed < was
+    // The text follows the same comparison as the title.
+    const ssText =
+      ss <= 0
+        ? `Its own Social Security hasn’t started, so it ${slows ? 'borrows a little less' : 'keeps borrowing'}.`
+        : slows
+          ? `With ${k(ss)} of Social Security it borrows less.`
+          : was != null && was > 0
+            ? `${k(ss)} of Social Security comes in, but it borrows no less than the year before.`
+            : `${k(ss)} of Social Security comes in, and the loan covers the rest of the spending.`
     const share =
       borrowed + interest > 0 ? ` Interest is ${pct(interest / (borrowed + interest))} of what the loan added ${when}.` : ''
     if (borrowed <= 0) {
@@ -148,8 +166,8 @@ function arrives(chapter: Chapter, years: readonly WalkYear[], inc: Lived<Income
       }
     } else {
       evelo = {
-        title: was != null && was > 0 && borrowed < was ? 'Borrowing slows' : 'Still borrowing',
-        figure: `${k(borrowed)} borrowed ${when}`,
+        title: slows ? 'Borrowing slows' : 'Still borrowing',
+        figure: `${total(borrowed, ev.length)} borrowed ${when}`,
         text: `${ssText}${share}${forcedText(forced)}`,
       }
     }
@@ -169,7 +187,7 @@ function bad(inc: Lived<IncomeYear>[], ev: Lived<EveloYear>[], maxLtv: number) {
       sold > 0
         ? {
             title: 'Sells into the drop',
-            figure: `${k(sold)} sold in the drop`,
+            figure: `${total(sold, inc.length)} sold in the drop`,
             text: `${move}, and the shares it sells to cover spending go cheap.`,
           }
         : {
@@ -187,7 +205,7 @@ function bad(inc: Lived<IncomeYear>[], ev: Lived<EveloYear>[], maxLtv: number) {
     if (forced > 0) {
       evelo = {
         title: 'A margin call',
-        figure: `${k(forced)} of shares sold`,
+        figure: `${total(forced, ev.length)} of shares sold`,
         text: `Loan-to-value peaks at ${pct(peak)} against the ${line} margin-call line, and a margin call sells shares to pay the loan down.`,
       }
     } else if (!(peak > 0)) {

@@ -1,0 +1,24 @@
+$ npx vitest run src/ui/income/__tests__/walkthrough.test.ts --reporter=verbose
+ ✓ src/ui/income/__tests__/walkthrough.test.ts > chapters > splits a 30-year plan with Social Security at 67 and a drop at 70 into the five named chapters 4ms
+ ✓ src/ui/income/__tests__/walkthrough.test.ts > chapters > a bad market right after Social Security arrives has no early chapter, and a one-year drop is one year 2ms
+ ✓ src/ui/income/__tests__/walkthrough.test.ts > chapters > a bad market just before the estate leaves the years before it as the long middle 2ms
+ ✓ src/ui/income/__tests__/walkthrough.test.ts > chapters > a bad year needs both plans to fall 5% or more: one plan alone, or under 5%, is not one 0ms
+ ✓ src/ui/income/__tests__/walkthrough.test.ts > chapters > a fall to near zero (a plan running dry) is not a bad market 0ms
+ ✓ src/ui/income/__tests__/walkthrough.test.ts > chapters > no Social Security in the horizon: no before or arrives chapter 5ms
+ ✓ src/ui/income/__tests__/walkthrough.test.ts > chapters > Social Security in the first year: an arrives chapter and no before 2ms
+ ✓ src/ui/income/__tests__/walkthrough.test.ts > chapters > Social Security in the last year is left to the estate 1ms
+ ✓ src/ui/income/__tests__/walkthrough.test.ts > chapters > late Social Security shortens the estate so it stays last 2ms
+ ✓ src/ui/income/__tests__/walkthrough.test.ts > chapters > no bad year in the medians: no bad-market chapter 1ms
+ ✓ src/ui/income/__tests__/walkthrough.test.ts > chapters > a bad year inside before-Social-Security stays there, flagged, with no bad chapter 2ms
+ ✓ src/ui/income/__tests__/walkthrough.test.ts > chapters > a bad year in the arrives year or the estate is kept there 0ms
+ ✓ src/ui/income/__tests__/walkthrough.test.ts > chapters > the estate is the last five years, fewer on a short horizon 0ms
+ ✓ src/ui/income/__tests__/walkthrough.test.ts > chapters > a 10-year horizon still gets 3–6 chapters 6ms
+ ✓ src/ui/income/__tests__/walkthrough.test.ts > chapters > no Social Security and no bad year: the middle splits so there are still three chapters 1ms
+ ✓ src/ui/income/__tests__/walkthrough.test.ts > chapters > every horizon from 3 to 40 years, with and without Social Security and drops, is well formed 1111ms
+ ✓ src/ui/income/__tests__/walkthrough.test.ts > chapters > one and two years give one chapter per year at most, estate last 0ms
+ ✓ src/ui/income/__tests__/walkthrough.test.ts > chapters > capChapters merges adjacent chapters down to six, keeping the estate last and every year 0ms
+ ✓ src/ui/income/__tests__/walkthrough.test.ts > chapters > chapterOf finds the chapter holding a year 0ms
+ ✓ src/ui/income/__tests__/walkthrough.test.ts > buildYears > lines both plans up by age, year-end bands at index y and tallies at y − 1 1ms
+ ✓ src/ui/income/__tests__/walkthrough.test.ts > buildYears > covers every age either plan lives, null outside a plan’s own years 0ms
+ ✓ src/ui/income/__tests__/walkthrough.test.ts > buildYears > eVelo’s Social Security waits for retirement 0ms
+      Tests  22 passed (22)

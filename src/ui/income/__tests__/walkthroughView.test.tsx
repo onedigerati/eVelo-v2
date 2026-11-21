@@ -4,7 +4,9 @@ import { describe, expect, it } from 'vitest'
 import { INCOME_DEFAULTS } from '../../../engine/income'
 import type { IncomeResult } from '../../../engine/incomeTypes'
 import type { Bands, SimulationResult } from '../../../engine/types'
-import { Walkthrough } from '../Walkthrough'
+import { TwinLedgers } from '../TwinLedgers'
+import { buildYears, chapters } from '../walkthrough'
+import { isPlaying, Walkthrough } from '../Walkthrough'
 import fixture from './fixtures/incomeResult.json'
 
 const income = fixture as IncomeResult
@@ -36,5 +38,40 @@ describe('Walkthrough', () => {
     const html = renderToStaticMarkup(<Walkthrough income={income} incomeInputs={inputs} evelo={evelo} wide={false} />)
     expect(html).toContain('wt--phone')
     expect(html).not.toContain('wt__tab-name')
+  })
+
+  it('the ledgers say Social Security starts in its start year, given the year before, and not after', () => {
+    const years = buildYears(income, inputs, evelo)
+    const arrives = chapters(years, inputs).find((c) => c.key === 'arrives')!
+    const s = arrives.from
+    expect(years[s].age).toBe(67)
+    const at = renderToStaticMarkup(<TwinLedgers row={years[s]} prev={years[s - 1]} phone={false} />)
+    expect(at.match(/Social Security starts\./g)).toHaveLength(2)
+    const after = renderToStaticMarkup(<TwinLedgers row={years[s + 1]} prev={years[s]} phone={false} />)
+    expect(after).not.toContain('Social Security starts.')
+  })
+
+  it('Back and Next stay focusable at the ends: aria-disabled, not disabled', () => {
+    const html = renderToStaticMarkup(<Walkthrough income={income} incomeInputs={inputs} evelo={evelo} wide />)
+    const prev = html.match(/<button[^>]*data-testid="wt-prev"[^>]*>/)![0]
+    const next = html.match(/<button[^>]*data-testid="wt-next"[^>]*>/)![0]
+    expect(prev).toContain('aria-disabled="true"')
+    expect(prev).not.toMatch(/\sdisabled=/)
+    expect(next).toContain('aria-disabled="false"')
+  })
+
+  it('the ledgers show tax once, in the header', () => {
+    const years = buildYears(income, inputs, evelo)
+    const html = renderToStaticMarkup(<TwinLedgers row={years[0]} prev={null} phone={false} />)
+    expect(html.match(/>Tax</g)).toBeNull()
+    expect(html).toContain('tax <span')
+  })
+
+  it('Play stops when the years or chapters change: it only runs for the list it started on', () => {
+    const a = chapters(buildYears(income, inputs, evelo), inputs)
+    const b = chapters(buildYears(income, inputs, evelo), inputs)
+    expect(isPlaying(a, a)).toBe(true)
+    expect(isPlaying(a, b)).toBe(false)
+    expect(isPlaying(null, a)).toBe(false)
   })
 })

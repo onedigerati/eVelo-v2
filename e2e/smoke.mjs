@@ -56,6 +56,59 @@ await withPreview(async (base) => {
       check(errs.length === 0, `${name}: no uncaught page errors${errs.length ? ': ' + errs.join(' | ') : ''}`)
       await ctx.close()
     }
+
+    // The two-retirements walkthrough on #income: absent before a sync, under the comparison after
+    // one; Next chapter, the slider spanning just the chapter, and Play stopping at its end (a
+    // two-year first chapter: Social Security at 62 from 60, so Play takes one step).
+    {
+      const EVELO = { portfolio: 2_000_000, age: 60, horizonYears: 20, homeCityId: 'new-york', otherIncome: 30_000, incomeStartAge: 62, paths: 300, seed: 11 }
+      const MODE = { portfolio: 2_000_000, basisFraction: 0.5, age: 60, horizonYears: 20, spending: 90_000, otherIncome: 30_000, incomeStartAge: 62, stockShare: 0.6, muniShare: 0.5, filingStatus: 'mfj', homeCityId: 'new-york', seed: 11, paths: 300, blockMonths: 36, outlook: 'balanced', step: 6, done: true }
+      const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 } })
+      await ctx.addInitScript(([e, m]) => {
+        try {
+          if (!localStorage.getItem('evelo:v2')) localStorage.setItem('evelo:v2', JSON.stringify({ inputs: e, theme: 'light', themeV: 2 }))
+          if (!localStorage.getItem('evelo:v2:income')) localStorage.setItem('evelo:v2:income', JSON.stringify(m))
+        } catch {}
+      }, [EVELO, MODE])
+      const p = await ctx.newPage()
+      const errs = []
+      p.on('pageerror', (e) => errs.push(e.message))
+      await p.goto(base + '#income')
+      await p.locator('[data-testid="income-results"]').waitFor({ timeout: 20000 })
+      const WT = '[data-testid="walkthrough"]'
+      check((await p.locator(WT).count()) === 0, 'walkthrough: absent before sync')
+      await p.getByRole('button', { name: 'Sync with my eVelo plan' }).click()
+      await p.locator('.isync__copy').click()
+      await p.locator(WT).waitFor({ timeout: 30000 })
+      const below = await p.evaluate((sel) => {
+        const cmp = document.querySelector('[data-testid="income-compare"]')
+        const wt = document.querySelector(sel)
+        return !!cmp && !!wt && !!(cmp.compareDocumentPosition(wt) & Node.DOCUMENT_POSITION_FOLLOWING)
+      }, WT)
+      check(below, 'walkthrough: shows under the comparison after sync')
+      const st = () => p.locator(WT).evaluate((el) => ({ ch: el.dataset.chapter, year: Number(el.dataset.year) }))
+      const slider = () => p.locator('[data-testid="wt-year"]').evaluate((el) => ({ min: Number(el.min), max: Number(el.max), value: Number(el.value) }))
+      const tabAges = async (key) => (await p.locator(`[data-testid="wt-tab-${key}"] .wt__tab-ages`).innerText()).split('–').map(Number)
+      // The slider spans exactly the chapter: as many steps as the tab's ages.
+      const spans = async () => {
+        const { ch } = await st()
+        const [a, b = a] = await tabAges(ch)
+        const s = await slider()
+        return s.max - s.min === b - a && s.value === s.min
+      }
+      const first = await st()
+      check(first.ch === 'before' && (await spans()), `walkthrough: first chapter is before-Social-Security and the slider spans it (${first.ch})`)
+      await p.locator('[data-testid="wt-play"]').click()
+      await p.waitForFunction(() => document.querySelector('[data-testid="wt-play"]').getAttribute('aria-pressed') === 'false', null, { timeout: 5000 })
+      const played = await st()
+      const s1 = await slider()
+      check(played.ch === 'before' && played.year === s1.max, `walkthrough: Play stops at the chapter's last year (${JSON.stringify(played)})`)
+      await p.locator('[data-testid="wt-next"]').click()
+      const next = await st()
+      check(next.ch !== 'before' && next.year === s1.max + 1 && (await spans()), `walkthrough: Next chapter carries on, slider spans the new chapter (${next.ch})`)
+      check(errs.length === 0, `walkthrough: no uncaught page errors${errs.length ? ': ' + errs.join(' | ') : ''}`)
+      await ctx.close()
+    }
   } finally {
     await browser.close()
   }

@@ -4,7 +4,7 @@
 // No aria-live: Play story steps the year and would chatter.
 
 import { currencyCompact, percent } from '../format'
-import { eveloBar, eveloEvent, eveloFunded, incomeBar, incomeEvent, LEDGER_NOTE, type BarPart } from './twinLedgers'
+import { eveloBar, eveloEvent, incomeBar, incomeEvent, LEDGER_NOTE, ledgerSpending, type BarPart } from './twinLedgers'
 import type { EveloYear, IncomeYear, TwinLedgersProps } from './walkthrough'
 import './twinLedgers.css'
 
@@ -58,12 +58,11 @@ function Missing({ name, plan }: { name: string; plan: 'inc' | 'ev' }) {
   )
 }
 
-function IncomeLedger({ y }: { y: IncomeYear }) {
+function IncomeLedger({ y, prev, spending }: { y: IncomeYear; prev?: IncomeYear | null; spending: number }) {
   const rows: Row[] = [
     { label: 'Dividends and interest', value: y.dividendsInterest, tone: 'income' },
     { label: 'Social Security', value: y.socialSecurity, tone: 'ss' },
     { label: 'Shares sold', value: y.sold, tone: 'sold' },
-    { label: 'Tax', value: y.tax, tone: 'tax' },
     { label: 'Portfolio at year end', value: y.portfolio, tone: 'income' },
   ]
   return (
@@ -74,14 +73,14 @@ function IncomeLedger({ y }: { y: IncomeYear }) {
           tax <span className="tl__num">{money(y.tax)}</span>
         </span>
       </div>
-      <Bar total={y.spending} parts={incomeBar(y)} />
+      <Bar total={spending} parts={incomeBar(y)} />
       <Rows rows={rows} />
-      <p className="tl__event" data-testid="tl-income-event">{incomeEvent(y)}</p>
+      <p className="tl__event" data-testid="tl-income-event">{incomeEvent(y, prev)}</p>
     </section>
   )
 }
 
-function EveloLedger({ y }: { y: EveloYear }) {
+function EveloLedger({ y, prev, spending }: { y: EveloYear; prev?: EveloYear | null; spending: number }) {
   const rows: Row[] = [
     { label: 'Social Security', value: y.socialSecurity, tone: 'ss' },
     { label: 'Borrowed', value: y.borrowed, tone: 'loan' },
@@ -99,19 +98,21 @@ function EveloLedger({ y }: { y: EveloYear }) {
           loan-to-value <span className="tl__num">{percent(y.ltv)}</span>
         </span>
       </div>
-      <Bar total={eveloFunded(y)} parts={eveloBar(y)} />
+      <Bar total={spending} parts={eveloBar(y)} />
       <Rows rows={rows} />
-      <p className="tl__event" data-testid="tl-evelo-event">{eveloEvent(y)}</p>
+      <p className="tl__event" data-testid="tl-evelo-event">{eveloEvent(y, prev)}</p>
     </section>
   )
 }
 
-export function TwinLedgers({ row, phone }: TwinLedgersProps) {
+export function TwinLedgers({ row, prev, phone }: TwinLedgersProps) {
+  // One spending figure for both cards (see ledgerSpending).
+  const spending = ledgerSpending(row)
   return (
     <div className={`tl${phone ? ' tl--phone' : ''}`} data-testid="wt-ledgers" data-age={row.age}>
       <div className="tl__twins">
-        {row.income ? <IncomeLedger y={row.income} /> : <Missing name="Living on income" plan="inc" />}
-        {row.evelo ? <EveloLedger y={row.evelo} /> : <Missing name="eVelo" plan="ev" />}
+        {row.income ? <IncomeLedger y={row.income} prev={prev?.income} spending={spending} /> : <Missing name="Living on income" plan="inc" />}
+        {row.evelo ? <EveloLedger y={row.evelo} prev={prev?.evelo} spending={spending} /> : <Missing name="eVelo" plan="ev" />}
       </div>
       <p className="tl__note">{LEDGER_NOTE}</p>
     </div>

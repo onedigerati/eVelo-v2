@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import { eveloBar, eveloEvent, eveloFunded, incomeBar, incomeEvent, portfolioFall } from '../twinLedgers'
-import type { EveloYear, IncomeYear } from '../walkthrough'
+import { eveloBar, eveloEvent, eveloFunded, incomeBar, incomeEvent, ledgerSpending, portfolioFall } from '../twinLedgers'
+import type { EveloYear, IncomeYear, WalkYear } from '../walkthrough'
 
 const inc = (o: Partial<IncomeYear> = {}): IncomeYear => ({
   netWorthStart: 2e6,
@@ -99,12 +99,38 @@ describe('eveloEvent', () => {
     expect(eveloEvent(ev({ forcedSaleSold: 250_000, portfolio: 1.5e6 }))).toBe('Forced sale: $250K of shares sold.')
   })
   it('loan-to-value jumps when the portfolio falls', () => {
-    expect(eveloEvent(ev({ portfolio: 1.68e6, ltv: 0.12 }))).toBe('The portfolio falls 20%; loan-to-value jumps to 12%.')
+    expect(eveloEvent(ev({ portfolio: 1.68e6, ltv: 0.12 }))).toBe('The portfolio falls 20%; loan-to-value is 12%.')
+    expect(eveloEvent(ev({ portfolio: 1.68e6, ltv: 0.12 }), ev({ ltv: 0.09 }))).toBe('The portfolio falls 20%; loan-to-value jumps from 9% to 12%.')
   })
   it('Social Security starts', () => {
     expect(eveloEvent(ev({ socialSecurity: 30_000 }), ev())).toBe('Social Security starts.')
   })
   it('income above spending repays the loan', () => {
     expect(eveloEvent(ev({ borrowed: 0, repaid: 5_000, socialSecurity: 90_000 }))).toBe('Income above spending repays $5.0K of the loan.')
+  })
+})
+
+describe('eveloEvent wording follows the numbers', () => {
+  it('says "jumps" only when there is a previous year and loan-to-value rose', () => {
+    const fallen = ev({ portfolio: 1.68e6, ltv: 0.12 })
+    expect(eveloEvent(fallen, ev({ ltv: 0.15 }))).toBe('The portfolio falls 20%; loan-to-value is 12%.')
+    expect(eveloEvent(fallen)).not.toContain('jumps')
+    expect(eveloEvent(ev({ portfolio: 1.68e6, ltv: 0, loan: 0, borrowed: 0, interest: 0 }), ev({ ltv: 0, loan: 0 }))).toBe('The portfolio falls 20%, but there is no loan.')
+  })
+  it('a quiet year with no loan doesn\'t say the loan grows', () => {
+    expect(eveloEvent(ev({ loan: 0, borrowed: 0, interest: 0, ltv: 0 }))).toBe('A quiet year: no loan, nothing is sold.')
+    expect(eveloEvent(ev({ loan: 100_000 }), ev({ loan: 120_000 }))).toBe('A quiet year: nothing is sold.')
+    expect(eveloEvent(ev({ loan: 120_000 }), ev({ loan: 100_000 }))).toBe('A quiet year: the loan grows, nothing is sold.')
+  })
+})
+
+describe('ledgerSpending', () => {
+  const row = (income: IncomeYear | null, evelo: EveloYear | null): WalkYear => ({ index: 0, age: 60, income, evelo })
+  it('both cards use the income plan\'s spending, not eVelo\'s Social Security plus borrowing', () => {
+    expect(ledgerSpending(row(inc({ spending: 85_000 }), ev({ borrowed: 60_000, socialSecurity: 30_000 })))).toBe(85_000)
+  })
+  it('falls back to eVelo\'s funding in a year the income plan doesn\'t live', () => {
+    expect(ledgerSpending(row(null, ev({ borrowed: 60_000, socialSecurity: 30_000 })))).toBe(90_000)
+    expect(ledgerSpending(row(null, null))).toBe(0)
   })
 })

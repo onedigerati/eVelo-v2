@@ -32,6 +32,10 @@ function useReducedMotion(): boolean {
   )
 }
 
+/** Play story is running for exactly the chapter list it started on: any change to the years or
+ *  chapters (an input or sync update makes a new list) stops it. */
+export const isPlaying = (playingOn: readonly Chapter[] | null, list: readonly Chapter[]) => playingOn !== null && playingOn === list
+
 export interface WalkthroughProps {
   income: IncomeResult
   incomeInputs: IncomeInputs
@@ -50,7 +54,9 @@ export function Walkthrough({ income, incomeInputs, evelo, wide }: WalkthroughPr
   const list = useMemo(() => chapters(years, incomeInputs), [years, incomeInputs])
   const inputs = useMemo<WalkInputs>(() => ({ income: incomeInputs, evelo: evelo.inputs }), [incomeInputs, evelo.inputs])
   const [pos, setPos] = useState({ chapter: 0, year: 0 })
-  const [playing, setPlaying] = useState(false)
+  const [playingOn, setPlayingOn] = useState<readonly Chapter[] | null>(null)
+  const playing = isPlaying(playingOn, list)
+  const setPlaying = (on: boolean) => setPlayingOn(on ? list : null)
   const reduced = useReducedMotion()
   const tabs = useRef<(HTMLButtonElement | null)[]>([])
 
@@ -64,7 +70,7 @@ export function Walkthrough({ income, incomeInputs, evelo, wide }: WalkthroughPr
   useEffect(() => {
     if (!playing || !c) return
     if (year >= c.to) {
-      setPlaying(false)
+      setPlayingOn(null)
       return
     }
     const t = window.setTimeout(() => setPos({ chapter: ci, year: year + 1 }), ms)
@@ -143,10 +149,11 @@ export function Walkthrough({ income, incomeInputs, evelo, wide }: WalkthroughPr
             {c.name}
           </h3>
           <div className="wt__nav">
-            <button type="button" className="wt__btn" aria-label="Previous chapter" disabled={ci === 0} data-testid="wt-prev" onClick={() => go(ci - 1)}>
+            {/* aria-disabled, not disabled, at the ends: a disabled button drops keyboard focus to the page. */}
+            <button type="button" className="wt__btn" aria-label="Previous chapter" aria-disabled={ci === 0} data-testid="wt-prev" onClick={() => ci > 0 && go(ci - 1)}>
               ← Back
             </button>
-            <button type="button" className="wt__btn" disabled={ci === list.length - 1} data-testid="wt-next" onClick={() => go(ci + 1)}>
+            <button type="button" className="wt__btn" aria-disabled={ci === list.length - 1} data-testid="wt-next" onClick={() => ci < list.length - 1 && go(ci + 1)}>
               Next chapter →
             </button>
             <button type="button" className="wt__btn wt__btn--play" aria-pressed={playing} data-testid="wt-play" onClick={play}>
@@ -182,7 +189,7 @@ export function Walkthrough({ income, incomeInputs, evelo, wide }: WalkthroughPr
           </span>
         </div>
 
-        <TwinLedgers row={row} phone={!wide} />
+        <TwinLedgers row={row} prev={year > 0 ? years[year - 1] : null} phone={!wide} />
       </div>
     </section>
   )

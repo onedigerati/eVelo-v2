@@ -15,11 +15,13 @@
 //            first year, was already being paid, or never starts in the horizon)
 //   arrives  the year it starts. A start in the horizon's very last year is left to the estate (no
 //            before or arrives chapter then), so the estate can stay last.
-//   bad      the first year where either plan's median real portfolio falls 5% or more, plus the
+//   bad      the first year where both plans' median real portfolios fall 5% or more (not to under
+//            5% of where they started: that's a plan running dry, not a market), plus the
 //            next year when either also falls. When that first bad year lands inside before, arrives
 //            or the estate, that chapter keeps it (`badYear`) and there is no bad chapter.
 //   early    the years between Social Security's arrival (or the start) and the bad market, when a
-//            bad chapter comes later than that. (Not named in the decision: it keeps the long middle
+//            bad chapter comes later than that and a middle follows it (with nothing between the bad
+//            market and the estate, those years are the long middle instead). (Not named in the decision: it keeps the long middle
 //            after the bad market, as in the mockup, and is what a short plan splits into.)
 //   middle   the rest.
 //   estate   the last five years (a third of the horizon, at least one, below 15 years; it starts
@@ -127,6 +129,9 @@ export interface WalkthroughChartProps {
 /** TwinLedgers.tsx: the two ledgers for one year. */
 export interface TwinLedgersProps {
   row: WalkYear
+  /** The row before (row index − 1), or null/absent in the first year: for "Social Security starts."
+   *  and the loan-to-value change. */
+  prev?: WalkYear | null
   phone: boolean
 }
 
@@ -211,9 +216,14 @@ export function buildYears(income: IncomeResult, incomeInputs: IncomeInputs, eve
 /** A median real portfolio falling by at least `by` (0.05 = 5%) over the year. */
 const fell = (p: { portfolioStart: number; portfolio: number } | null, by: number) =>
   !!p && p.portfolioStart > 0 && p.portfolio <= p.portfolioStart * (1 - by)
+/** A fall that ends at or near zero (under 5% of the start): the median path breaking or running
+ *  dry, not a market drop. */
+const collapsed = (p: { portfolioStart: number; portfolio: number } | null) => !!p && p.portfolio < p.portfolioStart * 0.05
 
-/** Either plan's median real portfolio falls 5% or more this year. */
-export const isBadYear = (r: WalkYear) => fell(r.income, 0.05) || fell(r.evelo, 0.05)
+/** Both plans' median real portfolios fall 5% or more this year, neither to near zero (a market drop shows in both; one
+ *  plan sagging on its own, like eVelo's portfolio late under a growing loan, isn't a bad market). */
+export const isBadYear = (r: WalkYear) =>
+  fell(r.income, 0.05) && fell(r.evelo, 0.05) && !collapsed(r.income) && !collapsed(r.evelo)
 /** Either plan's median real portfolio falls at all this year. */
 const falls = (r: WalkYear) => fell(r.income, 1e-9) || fell(r.evelo, 1e-9)
 
@@ -244,9 +254,11 @@ export function chapters(years: readonly WalkYear[], ss: Pick<IncomeInputs, 'age
   const b = years.findIndex(isBadYear)
   if (b > headEnd && b < estStart) {
     const bEnd = b + 1 < estStart && falls(years[b + 1]) ? b + 1 : b
-    if (b > headEnd + 1) out.push(ch('early', headEnd + 1, b - 1))
+    const after = bEnd + 1 <= estStart - 1
+    // The years before the bad market are the early years when a middle follows it, else the middle.
+    if (b > headEnd + 1) out.push(ch(after ? 'early' : 'middle', headEnd + 1, b - 1))
     out.push(ch('bad', b, bEnd))
-    if (bEnd + 1 <= estStart - 1) out.push(ch('middle', bEnd + 1, estStart - 1))
+    if (after) out.push(ch('middle', bEnd + 1, estStart - 1))
   } else if (headEnd + 1 <= estStart - 1) {
     out.push(ch('middle', headEnd + 1, estStart - 1))
   }
