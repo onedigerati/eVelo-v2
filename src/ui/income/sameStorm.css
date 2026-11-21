@@ -1,0 +1,118 @@
+/* "Same storm, two boats" (SameStorm.tsx): under the walkthrough's chapters, matching its type
+   and chip treatment (walkthrough.css). The chart has its own sameStormChart.css. */
+.ss {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-top: var(--space-5);
+  border-top: 1px dashed var(--hairline-strong);
+  min-width: 0;
+}
+.ss__head {
+  display: grid;
+  gap: 6px;
+}
+.ss__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-h2);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: var(--tracking-display);
+  text-wrap: balance;
+}
+.ss__lede,
+.ss__hidden,
+.ss__caption {
+  margin: 0;
+  max-width: 68ch;
+  font-size: var(--fs-sm);
+  color: var(--ink-2);
+}
+.ss__hidden {
+  color: var(--ink-3);
+}
+
+.ss__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.ss__chip {
+  min-height: 36px;
+  padding: 8px 14px;
+  border: 1px solid var(--hairline-strong);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color var(--dur-1) var(--ease-out), color var(--dur-1) var(--ease-out), border-color var(--dur-1) var(--ease-out);
+}
+.ss--phone .ss__chip {
+  min-height: 44px;
+}
+.ss__chip:hover {
+  background: var(--surface-hover);
+}
+.ss__chip[aria-selected='true'] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--ink-inverse);
+}
+.ss__chip:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.ss__panel {
+  display: grid;
+  gap: var(--space-3);
+  min-width: 0;
+}
+.ss__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--fs-sm);
+  color: var(--ink-2);
+}
+.ss__key {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.ss__key::before {
+  content: '';
+  flex: none;
+  width: 14px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--ks);
+}
+.ss__key--income {
+  --ks: var(--bruised);
+}
+.ss__key--evelo {
+  --ks: var(--holds);
+}
+.ss__key--loan {
+  --ks: var(--broken);
+}
+.ss__key--loan::before {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ss__chip {
+    transition: none;
+  }
+}
