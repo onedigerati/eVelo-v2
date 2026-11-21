@@ -11,6 +11,14 @@ export const SAMPLE_KEYS: readonly SampleKey[] = ['earlyCrash', 'typical', 'late
 /** Path index per sample, or null when the rule finds no path (e.g. no early drawdown at all). */
 export type SamplePicks = Record<SampleKey, number | null>
 
+/** One engine's rows for one picked path: `years[y]` covers year y (length horizonYears), real
+ *  (today's USD), year-end values at the end of year y. */
+export interface SampleFuture<Row> {
+  key: SampleKey
+  path: number
+  years: Row[]
+}
+
 /** Real monthly stock return per calendar month (the market's broad US stock series, less CPI). */
 export function realStockMonthly(market: MarketData): Float64Array {
   void market
