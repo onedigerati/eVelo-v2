@@ -1,26 +1,40 @@
-# Chart readouts plan
+# Two retirements walkthrough plan
 
 ## Goal
-Make the Living on Income mode's two charts answer the mouse, a finger and the keyboard the way eVelo's own charts do. The layered income chart shows a year's median income lines, tax, amount sold and spending. The comparison chart shows both plans' median net worth and middle-half range at an age. Done = both work in the built app on desktop and on a 390px phone, the readouts never leave the screen, the main site is unchanged, and it's live.
+A walkthrough on the Living on Income results that shows how the mode and eVelo play out year by year. It sits under the existing comparison and appears once the user has synced. Chapters come from the plan itself: the years before Social Security, the year it starts, a bad market, the long middle and the estate. Each chapter has a short paragraph per plan, an overview net-worth chart with the chapter's span lit (tap to jump), a year slider limited to the chapter, and twin ledgers for that year (where the spending came from, loan-to-value, what happened). Play story runs a chapter's years and stops at its end. A "Same storm" view then shows both plans on the same sampled futures (early crash, typical, late crash, lucky), with eVelo's loan-to-value against the margin-call line. Reviewed as mockups: [variations](https://claude.ai/artifact/2Wzywk5Z3mJB1NpvwWaREe), [chosen design](https://claude.ai/artifact/FZJmkd58dghXUo5hngVevE). Done = it works from the engines' real results on desktop and a 390px phone, with the keyboard and with reduced motion, the main site is unchanged, and it's live.
 
 ## Baseline
-2026-11-19 · tests: 1443 pass, 1 skipped · typecheck: clean · build: ok (chunk-size warning only)
+2026-11-21 · tests: 1457 pass, 1 skipped · typecheck: clean
 
 ## Now
-All stages done — live on GitHub Pages (run 44566618397)
-Agents: wide — confirmed 2026-11-19 09:59
+Stage 1 of 4 · eVelo yearly tallies
+Risk: money (engine figures)
+Agents: wide — confirmed 2026-11-21 15:39
+Checks:
+- [ ] `SimulationResult` carries per-year medians of what eVelo borrowed, the interest added and the shares a forced sale sold, tallied in the kernel's recording branch only (proof: test)
+- [ ] On a hand-worked path, the tallies match a scalar reference to the cent: borrowing equals spending less Social Security, interest is the loan × monthly rate summed over the year, and loan at year end = last year's loan + borrowed + interest − repayments (proof: test)
+- [ ] Atlas and solve results are byte-identical to before, and the simulate, atlas and income timing budgets still pass (proof: test)
+- [ ] The simulate golden hash is updated or narrowed, and its decision is logged (proof: test)
+Open: none
 
 ## Stages
-- [x] 1. Chart readouts — hover, tap and keyboard readouts on the income chart (results and desktop ask) and the comparison chart, reusing `useCrosshair` from `chartKit.ts`
+- [ ] 1. eVelo yearly tallies — borrowed, interest and forced-sale per-year medians from the kernel, guarded to the recording branch
+- [ ] 2. Chapters and ledgers — chapter rules (pure, tested), the walkthrough section under the comparison, overview chart with tap-to-jump, chapter slider, twin ledgers, Play story stopping at each chapter's end, phone and keyboard
+- [ ] 3. Matched sample futures — both engines return per-year rows for a few chosen path indices (same months in both), picked by a plan-neutral market rule
+- [ ] 4. Same storm — the future chips, both net worths and eVelo loan-to-value with the call line and forced sales, captions, gated on "same futures"; release
 
 ## Decisions
-- 2026-11-19 · Reuse eVelo's crosshair (`useCrosshair` in `src/ui/outlook/chartKit.ts`) and the fan chart's readout pattern for both charts, so the mode feels like the rest of the app — user: "Yes proceed."
-- 2026-11-19 · The readout is on for the desktop question chart and both results charts, and off for the 150px phone question chart (too small to scrub) — PM default, proposed to the user before they said proceed.
-- 2026-11-19 · The income readout shows only the layers unlocked so far, so it doesn't run ahead of the questions — PM default.
-- 2026-11-19 · Agents: wide, confirmed for this session — user picked "Wide".
-- 2026-11-19 · The income readout ends with spending, then either "Sold to cover" or "Reinvested", each the engine's own median for the year, rather than a "short of spending" line worked out from other medians, which sat beside a nearly equal "Sold to cover" — PM, on the builder's report.
-- 2026-11-19 · On a phone the comparison readout shows medians and the gap only (no middle-half rows) so it fits the 180px plot, and the income readout sits just under its 170px plot, over the legend, so the bars stay in view; a tap outside either chart clears its readout — from the verify.
-- 2026-11-19 · Scale: one stage, one release; no scale signal fired, planned as one plan.
+- 2026-11-21 · The walkthrough sits under the existing comparison; it doesn't replace the comparison chart — user.
+- 2026-11-21 · Play story stops at the end of each chapter; Next chapter carries on — user.
+- 2026-11-21 · No reservoir drawing — user.
+- 2026-11-21 · Same storm is part of this plan — user.
+- 2026-11-21 · Agents: wide, confirmed for this session — user picked "Wide".
+- 2026-11-21 · The chapters and ledgers follow the engines' per-year medians. Medians of different fields don't add up, so the ledger says so where it shows a total — PM default, from the mockup review notes.
+- 2026-11-21 · A sample future is one path index shown for both plans, so both live through the same calendar months. It is picked by a plan-neutral market rule over the drawn months: typical = median real stock return over the horizon; lucky = the 90th percentile; early crash and late crash = the median path among those whose worst two-year real drawdown starts in the first five years, or in the last ten. Ranking each plan's own outcome would show the two plans on different futures — PM default, from the survey.
+- 2026-11-21 · Same storm shows only when the two plans draw the same futures (the comparison's "same futures" line: same seed, paths, block length, horizon and historical method). Otherwise it says why it's hidden. Under fat-tail, eVelo's returns aren't the replayed months, so no matched paths exist — PM default, from the survey.
+- 2026-11-21 · The new eVelo tallies are computed only inside the kernel's `if (rec)` branch, so atlas and solve do no new work (the kernel comment notes ~35% slowdowns from small hot-loop changes) — PM default, from the survey.
+- 2026-11-21 · Scale: four stages, one release; no scale signal fired, planned as one plan.
+- 2026-11-21 · No research: nothing outside the repo changes this plan.
 
 ## Open questions
 - The compare view keeps a second income worker and a per-session run cache that only grows, and doesn't cancel a run on leaving (Stage 6 review defer).
@@ -83,6 +97,7 @@ Agents: wide — confirmed 2026-11-19 09:59
 - The photo credit cleaner misses "upload on <date>" suffixes — later.
 - Region chip rows (list and map) use `role="toolbar"` without arrow-key navigation; fix both or drop the role. The list chips also read region from context while the list reads it as a prop (consistent today) — later.
 
+
 ## Standing decisions
 - Standing decisions from earlier plans are in [decisions.md](decisions.md).
 
@@ -116,3 +131,4 @@ Agents: wide — confirmed 2026-11-19 09:59
 - 2026-11-16 · Pick reasons: the 27 rank-flagged `why` lines and Nice's summary rewritten to match the fact check, a borrow warning on every lending-2 pick, ranks unchanged, live on GitHub Pages — [plan](2026-11-16-pick-reasons.md) · [evidence](2026-11-16-pick-reasons/evidence/)
 - 2026-11-17 · Sound numbers: stay-home plans survive reloads and links, city ids checked at the boundary with an error boundary and reset, the loan diagnosis against compounded growth, a zero-drift currency walk, a 0.40% dividend drag default, plus landing icon and collapsed-section fixes, live on GitHub Pages — [plan](2026-11-17-sound-numbers.md) · [evidence](2026-11-17-sound-numbers/evidence/)
 - 2026-11-19 · Living on income: a hidden mode (the arrow's coupon, `#income`) that retires on dividends and bond interest with munis, its own 2026 income-tax model, six one-sentence questions over a layered income chart, three measures, and an opt-in sync with a side-by-side comparison against eVelo, live on GitHub Pages — [plan](plans/2026-11-19-living-on-income.md) · [evidence](plans/2026-11-19-living-on-income/evidence/)
+- 2026-11-19 · Chart readouts: hover, tap and keyboard readouts on the Living on Income chart and the comparison chart, live on GitHub Pages — [plan](plans/2026-11-19-chart-readouts.md) · [evidence](plans/2026-11-19-chart-readouts/evidence/)
