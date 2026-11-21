@@ -22,19 +22,22 @@ export interface SampleFuture<Row> {
 /** Real monthly stock return per calendar month (the market's broad US stock series, less CPI). */
 export function realStockMonthly(market: MarketData): Float64Array {
   // The broad US stock fund is SPY (prepare.ts uses it as the factor too). The bundled data has it
-  // from calendar month 0; a null month (before `first`, only possible in hand-built data) counts
-  // as a 0 nominal return.
+  // from calendar month 0; a null or non-finite month (before `first`, or bad hand-built data)
+  // counts as a 0 nominal return, a non-finite CPI as 0 inflation, and a non-finite result as 0.
   const spy = market.assets.SPY
   if (!spy) throw new Error('Market data has no SPY series')
   const M = market.months
   const out = new Float64Array(M)
   for (let m = 0; m < M; m++) {
-    const r = spy.r[m] ?? 0
-    const c = market.cpi[m] ?? 0
-    out[m] = (1 + r) / (1 + c) - 1
+    const r = fin(spy.r[m])
+    const c = fin(market.cpi[m])
+    out[m] = fin((1 + r) / (1 + c) - 1)
   }
   return out
 }
+
+/** x when it is a finite number, else 0 (null, undefined, NaN and ±Infinity). */
+const fin = (x: number | null | undefined): number => (typeof x === 'number' && Number.isFinite(x) ? x : 0)
 
 /** Longest window, in months, of the drawdown that defines a crash. */
 const CRASH_WINDOW = 24
@@ -97,7 +100,8 @@ export function pickSampleFutures(idx: Int32Array, T: number, realStock: ArrayLi
   for (let p = 0; p < n; p++) {
     const o = p * T
     I[0] = 1
-    for (let t = 0; t < T; t++) I[t + 1] = I[t] * (1 + realStock[idx[o + t]])
+    // A non-finite month counts as a 0 return, so NaN never reaches the sort or the drawdown scan.
+    for (let t = 0; t < T; t++) I[t + 1] = I[t] * (1 + fin(realStock[idx[o + t]]))
     cum[p] = I[T] - 1
 
     // min of I over (s, s + 24] by a sliding-window minimum, scanning s downward: the deque holds

@@ -54,6 +54,19 @@ describe('pickSampleFutures', () => {
     })
   })
 
+  it('a non-finite month counts as a 0 return: it neither poisons the sort nor gets picked by accident', () => {
+    // Calendar months 12 (NaN) and 13 (Infinity) appended; month 0 is the finite 0-return twin.
+    const bad = [...realStock, NaN, Infinity]
+    const odd = Array.from({ length: T }, (_, t) => 12 + (t % 2)) // all non-finite: flat, cum 0
+    const p9 = TEN[9].map((m, t) => (t % 50 === 7 ? 12 : m)) // a few NaN months in the lucky end
+    const withBad = pack([...TEN.slice(0, 9), p9, odd])
+    const twin = pack([...TEN.slice(0, 9), p9.map((m) => (m >= 12 ? 0 : m)), odd.map(() => 0)])
+    const picks = pickSampleFutures(withBad, T, bad)
+    expect(picks).toEqual(pickSampleFutures(twin, T, realStock))
+    // 11 paths by cum: p4 p5 p10(0) p6 p0 p2 p7 p1 p3 p8 p9 → typical 6th = p2, lucky ⌈9.9⌉ = 10th = p8.
+    expect(picks).toEqual({ earlyCrash: 2, typical: 2, lateCrash: 5, lucky: 8 })
+  })
+
   it('is deterministic and reads only its inputs', () => {
     const idx = pack(TEN)
     const copy = idx.slice()
@@ -215,6 +228,22 @@ describe('realStockMonthly', () => {
     expect(r[0]).toBeCloseTo(1 / 1.01 - 1, 12)
     expect(r[1]).toBeCloseTo(0.05, 12)
     expect(r[2]).toBeCloseTo(0.9 / 1.02 - 1, 12)
+  })
+
+  it('a non-finite return or CPI counts as 0', () => {
+    const market = {
+      asOf: '2026-01-01',
+      start: '2000-01',
+      months: 4,
+      cpi: [NaN, Infinity, 0.01, -1],
+      assets: { SPY: { symbol: 'SPY', name: 'SPY', cls: 'etf-equity', first: 0, r: [0.05, 0.05, NaN, 0.02] } },
+    } as MarketData
+    const r = Array.from(realStockMonthly(market))
+    expect(r.every(Number.isFinite)).toBe(true)
+    expect(r[0]).toBeCloseTo(0.05, 12)
+    expect(r[1]).toBeCloseTo(0.05, 12)
+    expect(r[2]).toBeCloseTo(1 / 1.01 - 1, 12)
+    expect(r[3]).toBe(0) // 1.02 / 0 − 1 is Infinity
   })
 
   it('throws without SPY', () => {

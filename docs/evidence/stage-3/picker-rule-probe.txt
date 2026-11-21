@@ -1,0 +1,26 @@
+$ PROBE_ROOT=$PWD npx vitest run --config <scratch>/probe.config.mjs --reporter=verbose --silent=false docs/evidence/stage-3/picker-rule.probe.ts
+
+ RUN  v5.1.0 /home/jonah/src/repos/eVelo-v2
+
+stdout | docs/evidence/stage-3/picker-rule.probe.ts > verifier: picker rule re-derived on the bundled market > DEFAULT_INPUTS
+DEFAULT_INPUTS: mine {"earlyCrash":1991,"typical":2721,"lateCrash":981,"lucky":2147} stats {"n":4000,"crashes":3940,"early":724,"late":1178,"lateStart":240} | picker {"earlyCrash":1991,"typical":2721,"lateCrash":981,"lucky":2147} | simulate {"earlyCrash":1991,"typical":2721,"lateCrash":981,"lucky":2147} | income {"earlyCrash":1991,"typical":2721,"lateCrash":981,"lucky":2147}
+
+ ✓ docs/evidence/stage-3/picker-rule.probe.ts > verifier: picker rule re-derived on the bundled market > DEFAULT_INPUTS 415ms
+stdout | docs/evidence/stage-3/picker-rule.probe.ts > verifier: picker rule re-derived on the bundled market > defaults-like 1000x30y
+defaults-like 1000x30y: mine {"earlyCrash":739,"typical":797,"lateCrash":862,"lucky":997} stats {"n":1000,"crashes":985,"early":173,"late":292,"lateStart":240} | picker {"earlyCrash":739,"typical":797,"lateCrash":862,"lucky":997} | simulate {"earlyCrash":739,"typical":797,"lateCrash":862,"lucky":997} | income {"earlyCrash":739,"typical":797,"lateCrash":862,"lucky":997}
+
+ ✓ docs/evidence/stage-3/picker-rule.probe.ts > verifier: picker rule re-derived on the bundled market > defaults-like 1000x30y 152ms
+stdout | docs/evidence/stage-3/picker-rule.probe.ts > verifier: picker rule re-derived on the bundled market > 500x40y block24 seed 7
+500x40y block24 seed 7: mine {"earlyCrash":221,"typical":336,"lateCrash":9,"lucky":207} stats {"n":500,"crashes":498,"early":80,"late":112,"lateStart":360} | picker {"earlyCrash":221,"typical":336,"lateCrash":9,"lucky":207} | simulate {"earlyCrash":221,"typical":336,"lateCrash":9,"lucky":207} | income {"earlyCrash":221,"typical":336,"lateCrash":9,"lucky":207}
+
+stdout | docs/evidence/stage-3/picker-rule.probe.ts > verifier: picker rule re-derived on the bundled market > 300x15y block6 seed 42
+300x15y block6 seed 42: mine {"earlyCrash":90,"typical":56,"lateCrash":182,"lucky":263} stats {"n":300,"crashes":264,"early":87,"late":177,"lateStart":60} | picker {"earlyCrash":90,"typical":56,"lateCrash":182,"lucky":263} | simulate {"earlyCrash":90,"typical":56,"lateCrash":182,"lucky":263} | income {"earlyCrash":90,"typical":56,"lateCrash":182,"lucky":263}
+
+ ✓ docs/evidence/stage-3/picker-rule.probe.ts > verifier: picker rule re-derived on the bundled market > 500x40y block24 seed 7 98ms
+ ✓ docs/evidence/stage-3/picker-rule.probe.ts > verifier: picker rule re-derived on the bundled market > 300x15y block6 seed 42 20ms
+
+ Test Files  1 passed (1)
+      Tests  4 passed (4)
+   Start at  16:33:07
+   Duration  823ms (tests 89%, transform 6%, import 5%)
+

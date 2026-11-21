@@ -1,0 +1,71 @@
+stdout | src/engine/__tests__/sampleFutures.test.ts > pickSampleFutures > 10,000 × 480 is fast
+pickSampleFutures 10000 × 480: 49.1 ms
+ ✓ src/engine/__tests__/sampleFutures.test.ts > pickSampleFutures > picks each sample from a hand-built set (even count) 1ms
+ ✓ src/engine/__tests__/sampleFutures.test.ts > pickSampleFutures > odd count 1ms
+ ✓ src/engine/__tests__/sampleFutures.test.ts > pickSampleFutures > a non-finite month counts as a 0 return: it neither poisons the sort nor gets picked by accident 2ms
+ ✓ src/engine/__tests__/sampleFutures.test.ts > pickSampleFutures > is deterministic and reads only its inputs 1ms
+ ✓ src/engine/__tests__/sampleFutures.test.ts > pickSampleFutures > ties go to the lowest path index 0ms
+ ✓ src/engine/__tests__/sampleFutures.test.ts > pickSampleFutures > null when no path qualifies 0ms
+ ✓ src/engine/__tests__/sampleFutures.test.ts > pickSampleFutures > window boundaries: early is [0, 60), late is [T − 120, T) 1ms
+ ✓ src/engine/__tests__/sampleFutures.test.ts > pickSampleFutures > the decline is measured over at most 24 months 0ms
+ ✓ src/engine/__tests__/sampleFutures.test.ts > pickSampleFutures > T < 120: late is the second half and early stops at the first half 1ms
+ ✓ src/engine/__tests__/sampleFutures.test.ts > pickSampleFutures > T = 120: late is [60, 120), not the whole horizon 0ms
+ ✓ src/engine/__tests__/sampleFutures.test.ts > pickSampleFutures > T = 150: late is [60, 150) 0ms
+ ✓ src/engine/__tests__/sampleFutures.test.ts > pickSampleFutures > matches a direct O(T·24) scan on random paths 32ms
+ ✓ src/engine/__tests__/sampleFutures.test.ts > pickSampleFutures > 10,000 × 480 is fast 104ms
+stdout | src/engine/__tests__/sampleFutures.test.ts > pickSampleFutures > 4,000 × 360 is fast
+pickSampleFutures 4000 × 360: 14.8 ms
+ ✓ src/engine/__tests__/income.test.ts > same months as eVelo > bootstrap: the sample futures under the real picker are pinned 115ms
+ ✓ src/engine/__tests__/sampleFutures.test.ts > pickSampleFutures > 4,000 × 360 is fast 36ms
+ ✓ src/engine/__tests__/sampleFutures.test.ts > realStockMonthly > SPY less CPI, (1 + r) / (1 + cpi) − 1 0ms
+ ✓ src/engine/__tests__/sampleFutures.test.ts > realStockMonthly > a non-finite return or CPI counts as 0 0ms
+ ✓ src/engine/__tests__/sampleFutures.test.ts > realStockMonthly > throws without SPY 0ms
+ ✓ src/engine/__tests__/sampleFutures.evelo.test.ts > eVelo sample futures > each row is the kernel's own per-path figure for that path (clean, bruised and broken paths) 52ms
+ ✓ src/engine/__tests__/sampleFutures.evelo.test.ts > eVelo sample futures > a sample row equals a 1-path run on that path's own months 31ms
+ ✓ src/engine/__tests__/sampleFutures.evelo.test.ts > eVelo sample futures > the picker gets the drawn calendar months, the horizon in months and the real stock series 68ms
+ ✓ src/engine/__tests__/atlasSolveGolden.test.ts > Atlas and solve are unchanged by the yearly tallies > atlas and solve outputs match the golden from before 150ms
+ ✓ src/engine/__tests__/sampleFutures.match.test.ts > matched sample futures across the two engines > synthetic market: same keys, same paths, same calendar months 161ms
+ ✓ src/engine/__tests__/sampleFutures.income.test.ts > income sample futures > picks from the drawn months before settling, one entry per non-null pick in SAMPLE_KEYS order 26ms
+ ✓ src/engine/__tests__/sampleFutures.income.test.ts > income sample futures > each row equals that path's own figures, year by year, to the cent 35ms
+ ✓ src/engine/__tests__/sampleFutures.income.test.ts > income sample futures > under fat-tail there are none, and the picker is not asked 13ms
+ ✓ src/engine/__tests__/sampleFutures.income.test.ts > income sample futures > skips null picks; all null gives an empty list; a pick outside the paths throws 4ms
+ ✓ src/engine/__tests__/sampleFutures.income.test.ts > income sample futures > leaves every other figure unchanged 21ms
+ ✓ src/engine/__tests__/sampleFutures.income.test.ts > income sample futures > goldens: the result without samples is bit-identical to before; the samples are pinned 68ms
+ ✓ src/engine/__tests__/sampleFutures.evelo.test.ts > eVelo sample futures > under fat-tail there are no sample futures, and the picker is not asked 26ms
+ ✓ src/engine/__tests__/sampleFutures.evelo.test.ts > eVelo sample futures > null picks are skipped; the rest keep SAMPLE_KEYS order 11ms
+ ✓ src/engine/__tests__/sampleFutures.evelo.test.ts > eVelo sample futures > simulate's other figures are unchanged with samples on (the golden from before), and samples are pinned 6ms
+ ✓ src/engine/__tests__/sampleFutures.match.test.ts > matched sample futures across the two engines > synthetic market: a different seed draws different months for the picked paths 75ms
+ ✓ src/engine/__tests__/sampleFutures.match.test.ts > matched sample futures across the two engines > synthetic market: a different block length draws different months for the picked paths 38ms
+stdout | src/engine/__tests__/sampleFutures.match.test.ts > matched sample futures across the two engines > bundled market, default plan, 1000 paths × 30 years: same keys, same paths, same calendar months
+bundled market, default plan, 1000 paths × 30 years: picks {"earlyCrash":986,"typical":975,"lateCrash":958,"lucky":182}
+ ✓ src/engine/__tests__/sampleFutures.match.test.ts > matched sample futures across the two engines > bundled market, default plan, 1000 paths × 30 years: same keys, same paths, same calendar months 128ms
+ ✓ src/engine/__tests__/income.test.ts > same months as eVelo > bootstrap: simulate and the scenarios are bit-identical to the golden from before 26ms
+ ✓ src/engine/__tests__/income.test.ts > same months as eVelo > bootstrap: the indices are the months eVelo drew 294ms
+ ✓ src/engine/__tests__/income.test.ts > same months as eVelo > bootstrap: indicesOnly draws the same months, skipping the values 8ms
+ ✓ src/engine/__tests__/income.test.ts > same months as eVelo > bootstrap: runIncomePaths runs on eVelo's months for the same seed, paths, horizon and blocks 39ms
+ ✓ src/engine/__tests__/income.test.ts > same months as eVelo > fat-tail: simulate and the scenarios are bit-identical to the golden from before 54ms
+ ✓ src/engine/__tests__/sampleFutures.match.test.ts > matched sample futures across the two engines > bundled market, default plan, 1000 paths × 30 years: a different seed draws different months for the picked paths 81ms
+ ✓ src/engine/__tests__/sampleFutures.match.test.ts > matched sample futures across the two engines > bundled market, default plan, 1000 paths × 30 years: a different block length draws different months for the picked paths 65ms
+ ✓ src/engine/__tests__/income.test.ts > same months as eVelo > fat-tail: the indices are the months eVelo drew 140ms
+ ✓ src/engine/__tests__/income.test.ts > same months as eVelo > fat-tail: indicesOnly draws the same months, skipping the values 7ms
+ ✓ src/engine/__tests__/income.test.ts > same months as eVelo > fat-tail: runIncomePaths runs on eVelo's months for the same seed, paths, horizon and blocks 17ms
+ ✓ src/engine/__tests__/income.test.ts > yields anchored to today > a history that is all 1990s-like high yields still starts at the latest yield 1ms
+ ✓ src/engine/__tests__/income.test.ts > yields anchored to today > caps a month’s change at the 99th percentile |Δy| and floors the yield at 0.25% 1ms
+ ✓ src/engine/__tests__/income.test.ts > yields anchored to today > month 1 pays the starting yield, month 2 the moved one, and a rise in y raises income 1ms
+ ✓ src/engine/__tests__/income.test.ts > yields anchored to today > the real data starts at each fund’s latest yield, with caps near the plan’s 1ms
+ ✓ src/engine/__tests__/income.test.ts > a hand-worked path > year 1: income by type, tax by incomeTax, a gap sale with gains tax 0ms
+ ✓ src/engine/__tests__/income.test.ts > a hand-worked path > years 2 and 3: a smaller gap sale, then Social Security and a surplus reinvested 0ms
+ ✓ src/engine/__tests__/income.test.ts > a hand-worked path > a surplus is reinvested at the target weights with basis at cost 0ms
+ ✓ src/engine/__tests__/income.test.ts > a hand-worked path > a portfolio that can’t cover the gap fails that year: value 0, not met, not keeping pace 0ms
+ ✓ src/engine/__tests__/income.test.ts > a hand-worked path > inflation: amounts are nominal inside a year and real in the result, brackets lag a year 0ms
+ ✓ src/engine/__tests__/income.test.ts > the three measures and the bands > an all-bond plan spending below its income keeps principal on every path 36ms
+ ✓ src/engine/__tests__/income.test.ts > the three measures and the bands > spending far above income: the money lasts less often as the horizon grows 88ms
+stdout | src/engine/__tests__/income.test.ts > speed > runIncomePaths at eVelo’s default paths and horizon takes at most 2× simulate
+simulate 110 ms, runIncomePaths 154 ms (4000 × 30y), ratio 1.40
+ ✓ src/engine/__tests__/income.test.ts > the three measures and the bands > bands: ordered, the right lengths, and from the same quantile helper as simulate 11ms
+ ✓ src/engine/__tests__/income.test.ts > the three measures and the bands > median50 equals quantile(sorted, 0.5) exactly 1ms
+ ✓ src/engine/__tests__/income.test.ts > worker > answers an income request with runIncomePaths’ result 22ms
+ ✓ src/engine/__tests__/income.test.ts > speed > runIncomePaths at eVelo’s default paths and horizon takes at most 2× simulate 1615ms
+ ✓ src/engine/__tests__/income.test.ts > input limits on the income request > clamps or defaults every field, as eVelo’s sanitizer does 1ms
+ ✓ src/engine/__tests__/income.test.ts > input limits on the income request > huge paths, 1e308 otherIncome, NaN and bad enums give a finite, sane result 62ms
+      Tests  62 passed (62)

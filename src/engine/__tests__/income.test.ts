@@ -85,11 +85,33 @@ describe('same months as eVelo', () => {
     return h.digest('hex')
   }
 
+  // The sample futures with the real picker, captured when the picker landed (stage 3): eVelo's on
+  // the simulate golden's fixture, the income engine's on the income goldens' (bundled market,
+  // defaults, 300 paths; sampleFutures.income.test.ts pins them under fixed picks). Arch-dependent
+  // like YEARLY; an arch without an entry logs its hashes instead.
+  const SAMPLES: Record<string, Record<'evelo' | 'income', string>> = {
+    arm64: {
+      evelo: 'f32dd6f5c9b5f3bf6ad4e7b29efb46325f5ae1e60b50aa7966385388f1b0cdfe',
+      income: '3122754cbe531607ac96b9e647ec93aa68f83ddf7c17ec1a1c4b81bbafeeab53',
+    },
+  }
+  it('bootstrap: the sample futures under the real picker are pinned', () => {
+    const sim = simulate(mkt, CITIES_FIX, { ...DEFAULT_INPUTS, holdings, method: 'bootstrap', paths: 300, horizonYears: 25 })
+    const inc = runIncomePaths(market, { ...INCOME_DEFAULTS, paths: 300 })
+    const sha = (x: unknown) => createHash('sha256').update(JSON.stringify(x)).digest('hex')
+    const got = { evelo: sha(sim.samples), income: sha(inc.samples) }
+    expect(sim.samples!.length).toBeGreaterThan(0)
+    expect(inc.samples!.length).toBeGreaterThan(0)
+    if (SAMPLES[process.arch]) expect(got).toEqual(SAMPLES[process.arch])
+    else console.log(`no sample-futures goldens for ${process.arch}: ${JSON.stringify(got)}`)
+  })
+
   for (const method of ['bootstrap', 'fat-tail'] as const) {
     it(`${method}: simulate and the scenarios are bit-identical to the golden from before`, () => {
       // The golden predates the eVelo yearly tallies and the sample futures: hash without them
       // (proving every older figure unchanged), and pin the tallies on their own. The samples are
-      // pinned under fixed picks in sampleFutures.evelo.test.ts (they depend on the picker).
+      // pinned under the real picker by the SAMPLES golden above, and under fixed picks in
+      // sampleFutures.evelo.test.ts.
       const { elapsedMs: _, yearly, samples: __, ...rest } = simulate(mkt, CITIES_FIX, { ...DEFAULT_INPUTS, holdings, method, paths: 300, horizonYears: 25 })
       expect(createHash('sha256').update(JSON.stringify(rest)).digest('hex')).toBe(GOLDEN[`sim-${method}`])
       const yearlyHash = createHash('sha256').update(JSON.stringify(yearly)).digest('hex')

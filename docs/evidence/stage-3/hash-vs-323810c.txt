@@ -1,0 +1,36 @@
+$ PROBE_ROOT=<root> npx vitest run --config <scratch>/probe.config.mjs docs/evidence/stage-3/hash-old-figures.probe.ts  # on HEAD+working tree, and on a worktree of 323810c
+arch: aarch64
+--- HEAD (f6518eb + uncommitted)
+simulate default (method bootstrap): 91b36301196a0182ccd4e0df5bd705fd01e43be458f32abe735b8c51204a0635
+simulate bootstrap 30y seed 3 block 24 (method bootstrap): 534ffe9c34db37888e222534957aa3c173dbfeb85eeeff2e0f9591d40319fe82
+simulate fat-tail (method fat-tail): 863d0209e1464fb09a63b5d038717e8d134b2446e785bccc7088aed0297c619b
+simulate existing loan (method bootstrap): 069d7daadf664c26bf6e5cef8cdbf15b7c26010f1cbdbcd9cf8fcb7c6837ee8c
+simulate retire later (method bootstrap): 61df7f0b8ae4f3a706408d274fae2c75a64db88e43cfee03caa8087b40289b8f
+income income defaults: 9af804adb119b7b1620ea94f364b70f58120ac7305750b51e15df9eecf96fae4
+income income bootstrap 40y seed 5: f13b7d8d3fec9dc7adb84e88acb2affa165b487b37dae80290ced215499713d6
+income income fat-tail: 6e718a1d1e774ae53b545f637b3fe13077ec4d427ae5dc7305038bb4a4e0fa84
+atlas default: 660455462280735e6ffd9d692f64bc3ffa00e01bdb8f70644c9a71731831973b
+solve default: eebb86da602943de3f6d12d5bf8c95c69970764ba9129eff0a461aa69aaef4f5
+atlas bootstrap 30y seed 3 block 24: b604b8bc35055f9561643fc22682b497143bc73e10fb0b0b9ad64f04a79b2325
+solve bootstrap 30y seed 3 block 24: f3705c2a43b50f0e117ad2e4e125491d39706b214fea2ffa802824da989c5663
+atlas fat-tail: 199f1656935efd745bd80bc924ab873215f546cea86cf2ee9e3d2ee2b0944844
+solve fat-tail: 462e2f0ce733a2b673f997855bbeab3920bc4d0f3f4c2e0bb1ac9a3dd81f2aeb
+
+--- 323810c
+simulate default (method bootstrap): 91b36301196a0182ccd4e0df5bd705fd01e43be458f32abe735b8c51204a0635
+simulate bootstrap 30y seed 3 block 24 (method bootstrap): 534ffe9c34db37888e222534957aa3c173dbfeb85eeeff2e0f9591d40319fe82
+simulate fat-tail (method fat-tail): 863d0209e1464fb09a63b5d038717e8d134b2446e785bccc7088aed0297c619b
+simulate existing loan (method bootstrap): 069d7daadf664c26bf6e5cef8cdbf15b7c26010f1cbdbcd9cf8fcb7c6837ee8c
+simulate retire later (method bootstrap): 61df7f0b8ae4f3a706408d274fae2c75a64db88e43cfee03caa8087b40289b8f
+income income defaults: 9af804adb119b7b1620ea94f364b70f58120ac7305750b51e15df9eecf96fae4
+income income bootstrap 40y seed 5: f13b7d8d3fec9dc7adb84e88acb2affa165b487b37dae80290ced215499713d6
+income income fat-tail: 6e718a1d1e774ae53b545f637b3fe13077ec4d427ae5dc7305038bb4a4e0fa84
+atlas default: 660455462280735e6ffd9d692f64bc3ffa00e01bdb8f70644c9a71731831973b
+solve default: eebb86da602943de3f6d12d5bf8c95c69970764ba9129eff0a461aa69aaef4f5
+atlas bootstrap 30y seed 3 block 24: b604b8bc35055f9561643fc22682b497143bc73e10fb0b0b9ad64f04a79b2325
+solve bootstrap 30y seed 3 block 24: f3705c2a43b50f0e117ad2e4e125491d39706b214fea2ffa802824da989c5663
+atlas fat-tail: 199f1656935efd745bd80bc924ab873215f546cea86cf2ee9e3d2ee2b0944844
+solve fat-tail: 462e2f0ce733a2b673f997855bbeab3920bc4d0f3f4c2e0bb1ac9a3dd81f2aeb
+
+--- diff
+IDENTICAL (14 hashes)

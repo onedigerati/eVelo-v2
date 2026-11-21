@@ -1,0 +1,14 @@
+$ PROBE_ROOT=$PWD npx vitest run --config <scratch>/probe.config.mjs --silent=false docs/evidence/stage-3/message-size.probe.ts
+
+ RUN  v5.1.0 /home/jonah/src/repos/eVelo-v2
+
+stdout | docs/evidence/stage-3/message-size.probe.ts > sizes
+simulate 4000x40y: samples 4 entries x 40 rows; JSON 30641 B vs rest 19836 B (+154.5%); structured clone 21602 B vs rest 12410 B (+174.1%)
+income 40y: samples 4 entries x 40 rows; JSON 25358 B vs rest 19275 B (+131.6%); structured clone 20322 B vs rest 12782 B (+159.0%)
+
+
+ Test Files  1 passed (1)
+      Tests  1 passed (1)
+   Start at  16:33:17
+   Duration  514ms (tests 83%, transform 9%, import 8%)
+
