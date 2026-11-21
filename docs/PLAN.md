@@ -7,18 +7,8 @@ A walkthrough on the Living on Income results that shows how the mode and eVelo 
 2026-11-21 · tests: 1457 pass, 1 skipped · typecheck: clean
 
 ## Now
-Stage 4 of 4 · Same storm
-Mode: autopilot — unattended outward
-Risk: UI (shows engine figures; the gate and captions are logic, tested); release is outward (push to GitHub Pages)
+All stages done — live on GitHub Pages (run 44962189939)
 Agents: wide — confirmed 2026-11-21 15:45
-Scope: under the chapters, "Same storm, two boats": chips for the sample futures both engines returned (early crash, typical, late crash, lucky; missing ones left out, repeated paths merged), a chart of both net worths through the chosen future with eVelo's loan-to-value against its margin-call line and forced sales marked, and a caption per future from that future's rows. Shown only when both plans draw the same futures (the comparison's "same futures" line, and both results' sample paths agree), otherwise one line says why. Then release.
-Checks:
-- [x] Same storm shows only when both plans draw the same futures (the comparison's "same futures" line holds and both engines' sample paths agree key by key); otherwise one line says why it's hidden (fat tails, different futures, different years) (proof: test + e2e)
-- [x] The future chips switch a chart of both plans' net worth through that future, with eVelo's loan-to-value against its margin-call line and forced-sale years marked; missing futures are left out and repeated paths merged (proof: e2e)
-- [x] Each future's caption comes from that future's rows, and its words follow the numbers (who ends ahead, whether a forced sale happened, how much living on income sold in the first years) (proof: test)
-- [x] Desktop and a 390px phone with no horizontal scroll; the keyboard works the chips (arrow keys) and the chart has a text alternative; under reduced motion the switch doesn't animate (proof: e2e with screenshots)
-- [x] Release: suite, build, e2e smoke and Lighthouse pass, the rest of the site is unchanged, and it's live on GitHub Pages (proof: test + live check)
-Open: none
 
 ## Stages
 - [x] 1. eVelo yearly tallies — borrowed, interest and forced-sale per-year medians from the kernel, guarded to the recording branch
