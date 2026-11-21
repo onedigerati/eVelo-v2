@@ -5,7 +5,8 @@
 // eVelo's figures are its own result for the plan as it stands: the app's result when it was run
 // for exactly this plan (the main pipeline runs on every route), else the main client's cache, else
 // a run of `simulate` through the mode's own worker, kept for the session. Once eVelo's result is
-// in, the two-retirements walkthrough (Walkthrough.tsx) follows the comparison.
+// in, the two-retirements walkthrough (Walkthrough.tsx) follows the comparison, then Same storm
+// (SameStorm.tsx), which needs the plan as well as the results.
 
 import { useEffect, useMemo, useRef, useState, type KeyboardEvent } from 'react'
 import type { PlanInputs, SimulationResult } from '../../engine/types'
@@ -17,6 +18,7 @@ import { CompareChart } from './CompareChart'
 import type { CompareSeries } from './compareChart'
 import { IncomeClient, type IncomeComputed } from './incomeClient'
 import { measureRate } from './IncomeMeasures'
+import { SameStorm } from './SameStorm'
 import { Walkthrough } from './Walkthrough'
 import './compare.css'
 
@@ -171,6 +173,7 @@ function CompareBody({ computed, wide }: IncomeCompareProps) {
         )}
       </section>
       {evelo && <Walkthrough income={computed.result} incomeInputs={computed.inputs} evelo={evelo} wide={wide} />}
+      {evelo && <SameStorm evelo={plan} eveloResult={evelo} income={computed.inputs} incomeResult={computed.result} phone={!wide} />}
     </>
   )
 }

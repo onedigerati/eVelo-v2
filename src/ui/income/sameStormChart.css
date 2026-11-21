@@ -1,0 +1,70 @@
+/* Same storm's chart (SameStormChart.tsx): living on income in brass (--bruised), eVelo in green
+   (--holds), the loan-to-value and its margin call in coral (--broken), as in the walkthrough. */
+.sschart {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  touch-action: pan-y;
+}
+.sschart__svg {
+  display: block;
+  overflow: visible;
+  touch-action: pan-y;
+}
+.sschart__title {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  fill: var(--ink-3);
+}
+.sschart__tick {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  fill: var(--chart-axis);
+}
+.sschart__call-label {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  fill: var(--broken-text);
+  paint-order: stroke;
+  stroke: var(--bg);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+/* A phone plot keeps every label at 12px. */
+.sschart--phone .sschart__title,
+.sschart--phone .sschart__tick,
+.sschart--phone .sschart__call-label {
+  font-size: 12px;
+}
+.sschart__grid {
+  stroke: var(--chart-grid);
+}
+.sschart__zero {
+  stroke: var(--hairline-strong);
+  stroke-width: 1.5;
+}
+.sschart__line {
+  fill: none;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-width: 2.5;
+}
+.sschart__line--income {
+  stroke: var(--bruised);
+}
+.sschart__line--evelo {
+  stroke: var(--holds);
+}
+.sschart__line--ltv {
+  stroke: var(--broken);
+  stroke-width: 2;
+}
+.sschart__call {
+  stroke: var(--broken);
+  stroke-dasharray: 4 3;
+}
+.sschart__sale {
+  fill: var(--broken);
+  stroke: var(--bg);
+  stroke-width: 2;
+}
