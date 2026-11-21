@@ -1,6 +1,8 @@
 // Contract between the simulation engine and the UI.
 // Everything here is plain data so it can cross a Web Worker boundary.
 
+import type { SampleFuture } from './sampleFutures'
+
 /** Bundled market dataset (src/data/market.json). Monthly total returns. */
 export interface MarketData {
   /** ISO date the data was fetched. */
@@ -214,6 +216,22 @@ export interface Bands {
   p95: number[]
 }
 
+/** One year of one sample future under eVelo, real (today's USD). Year-end values are at the end of
+ *  year y (the band's index y + 1); flows are over year y (months 12y..12y+11), as in `yearly`.
+ *  After the path breaks: netWorth, portfolio and loan 0, ltv 1, flows 0. */
+export interface EveloSampleYear {
+  netWorth: number
+  portfolio: number
+  loan: number
+  ltv: number
+  /** Spending drawn on the loan (not the wealth tax). */
+  borrowed: number
+  /** Interest added to the loan. */
+  interest: number
+  /** Shares sold by margin-call forced sales (not the opening sale). */
+  forcedSaleSold: number
+}
+
 export interface SimulationResult {
   inputs: PlanInputs
   /** P(no forced sale AND solvent at horizon). Headline. */
@@ -255,6 +273,10 @@ export interface SimulationResult {
     /** Wealth tax added to the loan at year-end: Σ w (already real; the loan grows by w × P). */
     wealthTax: number[]
   }
+  /** Per-year rows for the sample futures (path indices picked by `pickSampleFutures` from the
+   *  drawn calendar months), one entry per non-null pick in SAMPLE_KEYS order. Each row is that
+   *  path's own figures from the kernel. null under fat-tail, whose returns aren't replayed months. */
+  samples: SampleFuture<EveloSampleYear>[] | null
 
   /** P(first forced sale happens in year y), length horizonYears. */
   marginCallByYear: number[]
