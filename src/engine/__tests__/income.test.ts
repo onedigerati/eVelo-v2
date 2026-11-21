@@ -87,9 +87,10 @@ describe('same months as eVelo', () => {
 
   for (const method of ['bootstrap', 'fat-tail'] as const) {
     it(`${method}: simulate and the scenarios are bit-identical to the golden from before`, () => {
-      // The golden predates the eVelo yearly tallies: hash without them (proving every older figure
-      // unchanged), and pin the tallies on their own.
-      const { elapsedMs: _, yearly, ...rest } = simulate(mkt, CITIES_FIX, { ...DEFAULT_INPUTS, holdings, method, paths: 300, horizonYears: 25 })
+      // The golden predates the eVelo yearly tallies and the sample futures: hash without them
+      // (proving every older figure unchanged), and pin the tallies on their own. The samples are
+      // pinned under fixed picks in sampleFutures.evelo.test.ts (they depend on the picker).
+      const { elapsedMs: _, yearly, samples: __, ...rest } = simulate(mkt, CITIES_FIX, { ...DEFAULT_INPUTS, holdings, method, paths: 300, horizonYears: 25 })
       expect(createHash('sha256').update(JSON.stringify(rest)).digest('hex')).toBe(GOLDEN[`sim-${method}`])
       const yearlyHash = createHash('sha256').update(JSON.stringify(yearly)).digest('hex')
       if (YEARLY[process.arch]) expect(yearlyHash).toBe(YEARLY[process.arch][method])

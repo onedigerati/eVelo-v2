@@ -1,9 +1,19 @@
 import { amountsTotal, budgetTotal, destinationSpend } from './cost'
-import { createRecorder, kernelOpeningSale, runPaths, type KernelConfig } from './kernel'
+import { createRecorder, kernelOpeningSale, runPaths, type KernelConfig, type Recorder } from './kernel'
 import { HEIRS, packBands } from './localTax'
 import { prepare, type Prepared } from './prepare'
+import { SAMPLE_KEYS, pickSampleFutures, realStockMonthly, type SampleFuture, type SamplePicks } from './sampleFutures'
 import { generateScenarios, type Scenarios } from './scenarios'
-import type { Bands, BudgetCategory, City, LocalTax, MarketData, PlanInputs, SimulationResult } from './types'
+import type {
+  Bands,
+  BudgetCategory,
+  City,
+  EveloSampleYear,
+  LocalTax,
+  MarketData,
+  PlanInputs,
+  SimulationResult,
+} from './types'
 
 const now = () => (typeof performance !== 'undefined' ? performance.now() : Date.now())
 
@@ -91,9 +101,35 @@ export function kernelConfig(inputs: PlanInputs, dest: Destination, budgetMultip
   }
 }
 
-export function makeScenarios(prep: Prepared, inputs: PlanInputs, paths: number): Scenarios {
+export function makeScenarios(prep: Prepared, inputs: PlanInputs, paths: number, opts?: { indices?: boolean }): Scenarios {
   const T = Math.max(1, Math.round(inputs.horizonYears * 12))
-  return generateScenarios(prep, inputs.method, inputs.blockMonths, Math.max(1, Math.floor(paths)), T, inputs.seed)
+  return generateScenarios(prep, inputs.method, inputs.blockMonths, Math.max(1, Math.floor(paths)), T, inputs.seed, opts)
+}
+
+/** The picked paths' per-year rows, read from a recorder filled by `runPaths` (before anything
+ *  sorts its columns in place). Null picks are skipped; order is SAMPLE_KEYS. */
+export function eveloSampleRows(rec: Recorder, paths: number, picks: SamplePicks): SampleFuture<EveloSampleYear>[] {
+  const out: SampleFuture<EveloSampleYear>[] = []
+  for (const key of SAMPLE_KEYS) {
+    const p = picks[key]
+    if (p == null) continue
+    const rows: EveloSampleYear[] = []
+    for (let y = 0; y < rec.years; y++) {
+      const e = (y + 1) * paths + p // year-end snapshot at the end of year y
+      const f = y * paths + p // flows over year y
+      rows.push({
+        netWorth: rec.nw[e],
+        portfolio: rec.port[e],
+        loan: rec.loan[e],
+        ltv: rec.ltv[e],
+        borrowed: rec.borrowed[f],
+        interest: rec.interest[f],
+        forcedSaleSold: rec.forcedSaleSold[f],
+      })
+    }
+    out.push({ key, path: p, years: rows })
+  }
+  return out
 }
 
 /** Linear-interpolation quantile of an ascending array. */
@@ -171,11 +207,16 @@ export function simulate(market: MarketData, cities: City[], rawInputs: PlanInpu
   const home = findCity(cities, inputs.homeCityId)
   const dest = resolveDestination(inputs, home, findCity(cities, inputs.destCityId))
   const cfg = kernelConfig(inputs, dest)
-  const sc = makeScenarios(prep, inputs, inputs.paths)
+  // Sample futures need the drawn calendar months, which only the historical method replays.
+  // Asking for the indices leaves the scenarios bit-identical.
+  const replays = inputs.method === 'bootstrap'
+  const sc = makeScenarios(prep, inputs, inputs.paths, replays ? { indices: true } : undefined)
   const paths = sc.paths
   const years = Math.floor(cfg.T / 12)
   const rec = createRecorder(paths, years)
   runPaths(sc, cfg, rec)
+  // Read before bands()/yearMedians() sort the recorder's columns in place.
+  const samples = replays ? eveloSampleRows(rec, paths, pickSampleFutures(sc.idx!, sc.T, realStockMonthly(market))) : null
   const open = kernelOpeningSale(cfg)
 
   const counts = [0, 0, 0]
@@ -211,6 +252,7 @@ export function simulate(market: MarketData, cities: City[], rawInputs: PlanInpu
       repaid: yearMedians(rec.repaid, paths, years),
       wealthTax: yearMedians(rec.wealthTaxAdded, paths, years),
     },
+    samples,
     marginCallByYear: byYear,
     marginCallCumulative: cumulative,
     openingSale: open !== null && !open.broken ? { sold: open.sold, taxPaid: open.taxPaid } : null,
