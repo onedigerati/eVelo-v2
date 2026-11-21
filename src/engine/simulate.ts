@@ -110,6 +110,14 @@ function median(a: Float64Array): number {
   return quantile(Float64Array.from(a).sort(), 0.5)
 }
 
+/** Per-year medians of `data` laid out year-major (index y * paths + p), years 0..years-1. Sorts
+ *  each year's column in place. */
+function yearMedians(data: Float64Array, paths: number, years: number): number[] {
+  const out: number[] = []
+  for (let y = 0; y < years; y++) out.push(quantile(data.subarray(y * paths, (y + 1) * paths).sort(), 0.5))
+  return out
+}
+
 /** Per-year percentile bands of `data` laid out year-major (index y * paths + p), years 0..years.
  *  Sorts each year's column in place. */
 export function bands(data: Float64Array, paths: number, years: number): Bands {
@@ -196,6 +204,13 @@ export function simulate(market: MarketData, cities: City[], rawInputs: PlanInpu
     portfolioValue: bands(rec.port, paths, years),
     loan: bands(rec.loan, paths, years),
     ltv: bands(rec.ltv, paths, years),
+    yearly: {
+      borrowed: yearMedians(rec.borrowed, paths, years),
+      interest: yearMedians(rec.interest, paths, years),
+      forcedSaleSold: yearMedians(rec.forcedSaleSold, paths, years),
+      repaid: yearMedians(rec.repaid, paths, years),
+      wealthTax: yearMedians(rec.wealthTaxAdded, paths, years),
+    },
     marginCallByYear: byYear,
     marginCallCumulative: cumulative,
     openingSale: open !== null && !open.broken ? { sold: open.sold, taxPaid: open.taxPaid } : null,

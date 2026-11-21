@@ -5,13 +5,17 @@ import { describe, expect, it } from 'vitest'
 import { DEFAULT_INPUTS } from '../defaults'
 import { prepare } from '../prepare'
 import { makeScenarios, normalizeInputs, simulate } from '../simulate'
-import type { MarketData, PlanInputs, SimulationResult } from '../types'
+import type { City, MarketData, PlanInputs, SimulationResult } from '../types'
 import { evReference, type EvRefInputs, type EvRefYears } from './evReference'
-import { CITIES_FIX } from './fixtures'
+import { CITIES_FIX, STL } from './fixtures'
 
-/** The contract the kernel builder adds to SimulationResult (typed here until it lands). */
-type Yearly = { borrowed: number[]; interest: number[]; forcedSaleSold: number[] }
-const yearlyOf = (r: SimulationResult) => (r as SimulationResult & { yearly: Yearly }).yearly
+/** St. Louis's costs with a flat 1% wealth tax on net worth, charged from year 0 (a taxed home). */
+const TAXED_HOME: City = {
+  ...STL,
+  id: 'taxed-home',
+  localTax: { wealth: { base: 'net', bands: [{ from: 0, rate: 0.01 }] }, note: 'test', sources: [] },
+}
+const CITIES_TAX = [...CITIES_FIX, TAXED_HOME]
 
 /** A market where SPY returns `ret` and CPI is `cpi` every month. */
 function constantMarket(ret: number, cpi: number, months = 360): MarketData {
@@ -59,7 +63,7 @@ function planInputs(o: Partial<PlanInputs>): PlanInputs {
 }
 
 /** The reference fed the exact monthly returns and inflation the engine draws (Float32 scenarios). */
-function referenceFor(market: MarketData, inputs: PlanInputs): EvRefYears {
+function referenceFor(market: MarketData, inputs: PlanInputs, wealthTaxRate?: number): EvRefYears {
   const prep = prepare(market, inputs.holdings, inputs.outlook)
   const sc = makeScenarios(prep, inputs, 1)
   const ref: EvRefInputs = {
@@ -74,6 +78,7 @@ function referenceFor(market: MarketData, inputs: PlanInputs): EvRefYears {
     incomeStartMonth: (inputs.incomeStartAge - inputs.age) * 12,
     ret: Array.from(sc.ret, (r) => r - inputs.dividendTaxDrag / 12),
     infl: Array.from(sc.infl),
+    wealthTaxRate,
   }
   return evReference(ref)
 }
@@ -81,6 +86,15 @@ function referenceFor(market: MarketData, inputs: PlanInputs): EvRefYears {
 const expectCents = (got: number[], want: number[]) => {
   expect(got).toHaveLength(want.length)
   want.forEach((w, i) => expect(got[i], `year ${i}`).toBeCloseTo(w, 2))
+}
+
+/** Every field of simulate(...).yearly against the reference, to the cent. */
+function expectYearly(res: SimulationResult, ref: EvRefYears) {
+  expectCents(res.yearly.borrowed, ref.borrowed)
+  expectCents(res.yearly.interest, ref.interest)
+  expectCents(res.yearly.forcedSaleSold, ref.forcedSaleSold)
+  expectCents(res.yearly.repaid, ref.repaid)
+  expectCents(res.yearly.wealthTax, ref.wealthTax)
 }
 
 describe('eVelo yearly tallies: hand-worked flat path', () => {
@@ -143,6 +157,23 @@ describe('eVelo yearly tallies: hand-worked flat path', () => {
     }
   })
 
+  it('simulate(...).yearly.repaid equals the reference when Social Security exceeds spending', () => {
+    const inp = planInputs({ otherIncome: 84_000 })
+    const r = referenceFor(market, inp)
+    expect(r.repaid[2]).toBeGreaterThan(0)
+    expectYearly(simulate(market, CITIES_FIX, inp), r)
+  })
+
+  it('a surplus larger than the loan repays only the loan; the rest is reinvested, not counted', () => {
+    // $200k/yr Social Security from month 24: the loan is cleared within year 2, then repaid is 0.
+    const inp = planInputs({ otherIncome: 200_000 })
+    const r = referenceFor(market, inp)
+    expect(r.loanEnd[2]).toBe(0)
+    expect(r.repaid[2]).toBeCloseTo(r.loanEnd[1] + r.interest[2], 2)
+    expect(r.repaid[3]).toBe(0)
+    expectYearly(simulate(market, CITIES_FIX, inp), r)
+  })
+
   it('the engine\'s loan band median (index y + 1 = end of year y, real) is the reference\'s year-end loan', () => {
     const res = simulate(market, CITIES_FIX, inputs)
     expectCents(res.loan.p50.slice(1), ref.loanEnd)
@@ -150,12 +181,7 @@ describe('eVelo yearly tallies: hand-worked flat path', () => {
   })
 
   it('simulate(...).yearly equals the reference to the cent', () => {
-    const res = simulate(market, CITIES_FIX, inputs)
-    const yearly = yearlyOf(res)
-    expect(yearly, 'SimulationResult.yearly (stage 1 contract)').toBeDefined()
-    expectCents(yearly.borrowed, ref.borrowed)
-    expectCents(yearly.interest, ref.interest)
-    expectCents(yearly.forcedSaleSold, ref.forcedSaleSold)
+    expectYearly(simulate(market, CITIES_FIX, inputs), ref)
   })
 })
 
@@ -200,11 +226,81 @@ describe('eVelo yearly tallies: a stressed path with forced sales', () => {
   })
 
   it('simulate(...).yearly equals the reference to the cent, forced sales included', () => {
+    expectYearly(simulate(market, CITIES_FIX, inputs), ref)
+  })
+})
+
+describe('eVelo yearly tallies: forced-sale repayments', () => {
+  // The stressed path with a low cost basis (10%), so the sales realize gains: in the sale years,
+  // repaid is the proceeds after capital-gains tax, more than zero and less than what was sold.
+  const market = constantMarket(-0.015, 0.002)
+  const inputs = planInputs({ basisFraction: 0.1, horizonYears: 6 })
+  const ref = referenceFor(market, inputs)
+
+  it('the proceeds after tax repay the loan in the sale years, and match the engine', () => {
+    for (const y of [4, 5]) {
+      expect(ref.repaid[y]).toBeGreaterThan(0)
+      expect(ref.repaid[y]).toBeLessThan(ref.forcedSaleSold[y])
+    }
+    expectCents(ref.repaid.slice(0, 4), [0, 0, 0, 0])
+    expectCents(simulate(market, CITIES_FIX, inputs).yearly.repaid, ref.repaid)
+  })
+})
+
+describe('eVelo yearly tallies: a wealth tax added to the loan', () => {
+  // A taxed home: 1% of real net worth each year-end, borrowed. CPI +0.2% a month, SPY +0.5%.
+  const market = constantMarket(0.005, 0.002)
+  const inputs = planInputs({ homeCityId: TAXED_HOME.id, horizonYears: 5 })
+  const ref = referenceFor(market, inputs, 0.01)
+
+  it('every year adds about 1% of net worth, and the nominal loan identity holds with it', () => {
+    ref.wealthTax.forEach((w) => expect(w).toBeGreaterThan(5_000))
+    const n = ref.nominal
+    let prev = 0
+    for (let y = 0; y < n.loanEnd.length; y++) {
+      expect(n.loanEnd[y]).toBeCloseTo(prev + n.borrowed[y] + n.interest[y] + n.wealthTax[y] - n.repaid[y], 2)
+      prev = n.loanEnd[y]
+    }
+  })
+
+  it('simulate(...).yearly equals the reference to the cent, wealth tax included and not in borrowed', () => {
+    const res = simulate(market, CITIES_TAX, inputs)
+    expectCents(res.loan.p50.slice(1), ref.loanEnd)
+    expectYearly(res, ref)
+    expectCents(res.yearly.borrowed, [60_000, 60_000, 36_000, 36_000, 36_000])
+  })
+})
+
+describe('eVelo yearly tallies: a path that breaks mid-horizon', () => {
+  // SPY −3% a month: margin calls until a sale can no longer reach the target and the lender
+  // liquidates, in month 57 (year 4, its tenth month).
+  const market = constantMarket(-0.03, 0)
+  const inputs = planInputs({ horizonYears: 8 })
+  const ref = referenceFor(market, inputs)
+  const breakYear = Math.floor(ref.breakMonth / 12)
+
+  it('the reference breaks inside the horizon, not at a year boundary', () => {
+    expect(ref.broken).toBe(true)
+    expect(ref.breakMonth).toBe(57)
+  })
+
+  it('the break month\'s borrowing and interest count; nothing after it does', () => {
+    // Retired at 65, Social Security from month 24: need is $5,000 a month before, $3,000 after.
+    let want = 0
+    for (let t = breakYear * 12; t <= ref.breakMonth; t++) want += t < 24 ? 5000 : 3000
+    expect(ref.borrowed[breakYear]).toBeCloseTo(want, 2)
+    expect(ref.interest[breakYear]).toBeGreaterThan(0)
+    for (let y = breakYear + 1; y < 8; y++) {
+      expect(ref.borrowed[y]).toBe(0)
+      expect(ref.interest[y]).toBe(0)
+      expect(ref.forcedSaleSold[y]).toBe(0)
+      expect(ref.repaid[y]).toBe(0)
+    }
+  })
+
+  it('the kernel agrees: simulate(...).yearly equals the reference, and the path is broken', () => {
     const res = simulate(market, CITIES_FIX, inputs)
-    const yearly = yearlyOf(res)
-    expect(yearly, 'SimulationResult.yearly (stage 1 contract)').toBeDefined()
-    expectCents(yearly.borrowed, ref.borrowed)
-    expectCents(yearly.interest, ref.interest)
-    expectCents(yearly.forcedSaleSold, ref.forcedSaleSold)
+    expect(res.brokenRate).toBe(1)
+    expectYearly(res, ref)
   })
 })

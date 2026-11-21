@@ -65,6 +65,15 @@ describe('same months as eVelo', () => {
     'sim-fat-tail': '1aab50bff23151da149a919e5f9226b0e44b792a2fd1b5c8c76ab09ad8dfe799',
     'sc-fat-tail': '64e274d8d0e1b1a43eb337eaba541f76a36f66569219cec5676a940ea3526cd8',
   }
+  // The eVelo yearly tallies (result.yearly) on their own, captured when they were added. They divide
+  // by the path's price level and include the FX walk's exp, so they may differ by arch like the
+  // bootstrap hash; an arch without an entry logs its hash instead (add it from a run there).
+  const YEARLY: Record<string, Record<'bootstrap' | 'fat-tail', string>> = {
+    arm64: {
+      bootstrap: '15daa81b69f958cf70a327c881edfe914ab951c115fe9e36c9fcbe52642d18fd',
+      'fat-tail': 'ad18b92214f30504d446a54013274f5bc42a7b0ce30e3112c036c967231bdb6d',
+    },
+  }
   const mkt = syntheticMarket(240, [
     { symbol: 'QQQ', alpha: 0.002, beta: 1.2, noise: 0.02, cls: 'etf-equity' },
     { symbol: 'BND', alpha: 0.003, beta: 0.1, noise: 0.01, first: 120 },
@@ -78,8 +87,13 @@ describe('same months as eVelo', () => {
 
   for (const method of ['bootstrap', 'fat-tail'] as const) {
     it(`${method}: simulate and the scenarios are bit-identical to the golden from before`, () => {
-      const { elapsedMs: _, ...rest } = simulate(mkt, CITIES_FIX, { ...DEFAULT_INPUTS, holdings, method, paths: 300, horizonYears: 25 })
+      // The golden predates the eVelo yearly tallies: hash without them (proving every older figure
+      // unchanged), and pin the tallies on their own.
+      const { elapsedMs: _, yearly, ...rest } = simulate(mkt, CITIES_FIX, { ...DEFAULT_INPUTS, holdings, method, paths: 300, horizonYears: 25 })
       expect(createHash('sha256').update(JSON.stringify(rest)).digest('hex')).toBe(GOLDEN[`sim-${method}`])
+      const yearlyHash = createHash('sha256').update(JSON.stringify(yearly)).digest('hex')
+      if (YEARLY[process.arch]) expect(yearlyHash).toBe(YEARLY[process.arch][method])
+      else console.log(`no yearly golden for ${process.arch}; ${method}: ${yearlyHash}`)
       const prep = prepare(mkt, holdings, 'balanced')
       expect(hashScenarios(generateScenarios(prep, method, 24, 200, 300, 11))).toBe(GOLDEN[`sc-${method}`])
       // Asking for the indices changes nothing else.

@@ -1,0 +1,27 @@
+$ npx vitest run src/engine/__tests__/yearlyTallies.test.ts src/engine/__tests__/yearlyTallies.reference.test.ts --reporter=verbose
+
+ RUN  v5.1.0 /home/jonah/src/repos/eVelo-v2
+
+ ✓ src/engine/__tests__/yearlyTallies.reference.test.ts > eVelo yearly tallies: hand-worked flat path > the market is flat: every drawn month returns 0 with no inflation 1ms
+ ✓ src/engine/__tests__/yearlyTallies.reference.test.ts > eVelo yearly tallies: hand-worked flat path > borrowing equals spending less Social Security, each year: 60,000, 60,000, 36,000, 36,000 1ms
+ ✓ src/engine/__tests__/yearlyTallies.reference.test.ts > eVelo yearly tallies: hand-worked flat path > interest is the loan × monthly rate summed over the year: 1,677.81, 5,481.96, 8,849.62, 11,615.85 1ms
+ ✓ src/engine/__tests__/yearlyTallies.reference.test.ts > eVelo yearly tallies: hand-worked flat path > loan at year end = last year's loan + borrowed + interest − repayments 1ms
+ ✓ src/engine/__tests__/yearlyTallies.reference.test.ts > eVelo yearly tallies: hand-worked flat path > a surplus repays the loan first: Social Security above spending pays the loan down 1ms
+ ✓ src/engine/__tests__/yearlyTallies.reference.test.ts > eVelo yearly tallies: hand-worked flat path > the engine's loan band median (index y + 1 = end of year y, real) is the reference's year-end loan 1ms
+ ✓ src/engine/__tests__/yearlyTallies.reference.test.ts > eVelo yearly tallies: hand-worked flat path > simulate(...).yearly equals the reference to the cent 2ms
+ ✓ src/engine/__tests__/yearlyTallies.reference.test.ts > eVelo yearly tallies: a stressed path with forced sales > the reference sells in years 4 and 5 only, and stays solvent 0ms
+ ✓ src/engine/__tests__/yearlyTallies.reference.test.ts > eVelo yearly tallies: a stressed path with forced sales > borrowing is still spending less Social Security in real terms 1ms
+ ✓ src/engine/__tests__/yearlyTallies.reference.test.ts > eVelo yearly tallies: a stressed path with forced sales > the nominal loan identity holds to the cent; under inflation the real one does not (erosion) 0ms
+ ✓ src/engine/__tests__/yearlyTallies.reference.test.ts > eVelo yearly tallies: a stressed path with forced sales > the engine's loan band median matches the reference's real year-end loan, and the path is bruised 1ms
+ ✓ src/engine/__tests__/yearlyTallies.reference.test.ts > eVelo yearly tallies: a stressed path with forced sales > simulate(...).yearly equals the reference to the cent, forced sales included 1ms
+ ✓ src/engine/__tests__/yearlyTallies.test.ts > eVelo yearly tallies > one finite, non-negative median per year for each field 57ms
+ ✓ src/engine/__tests__/yearlyTallies.test.ts > eVelo yearly tallies > nothing is borrowed (and with no loan, no interest) before retirement 25ms
+ ✓ src/engine/__tests__/yearlyTallies.test.ts > eVelo yearly tallies > an existing loan accrues interest from month 0, about a year of the loan rate in year 0 18ms
+ ✓ src/engine/__tests__/yearlyTallies.test.ts > eVelo yearly tallies > a stressed plan has forced sales; a calm one has none 22ms
+ ✓ src/engine/__tests__/yearlyTallies.test.ts > eVelo yearly tallies > a path broken today tallies nothing 14ms
+
+ Test Files  2 passed (2)
+      Tests  17 passed (17)
+   Start at  15:50:36
+   Duration  254ms (tests 59%, transform 20%, import 19%, worker 2%)
+

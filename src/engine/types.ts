@@ -233,6 +233,28 @@ export interface SimulationResult {
   loan: Bands
   /** Loan-to-value ratio. */
   ltv: Bands
+  /** Per-year medians across all paths of the eVelo ledger, real (today's USD, ÷ the path's price
+   *  level P that month), length horizonYears. Year y = months 12y..12y+11. The month a path breaks
+   *  still counts that month's borrowing, interest and wealth tax; later months add 0. Medians of
+   *  different fields don't add up. Per path, in nominal dollars, a year's loan change is exactly
+   *  borrowed + interest + wealthTax − repaid; in real dollars that holds only at zero inflation
+   *  (each flow is deflated by its own month's P, the year-end loan by December's). */
+  yearly: {
+    /** Spending drawn on the loan: Σ need/P over months where need > 0 (spending less Social
+     *  Security/income). The wealth tax the kernel adds to the loan is not counted here (see
+     *  wealthTax). */
+    borrowed: number[]
+    /** Interest added: Σ L_before × loanRateM / P per month (L_before = loan before that month's interest). */
+    interest: number[]
+    /** Shares sold by margin-call forced sales: Σ S/P. (Not the opening sale, which is already reported.) */
+    forcedSaleSold: number[]
+    /** Loan repaid: Σ (surplus applied to the loan + forced-sale proceeds after capital-gains tax,
+     *  S(1 − g·tax)) / P. A surplus repays the loan after that month's interest; what is left over is
+     *  reinvested and not counted. (The opening sale is not counted.) */
+    repaid: number[]
+    /** Wealth tax added to the loan at year-end: Σ w (already real; the loan grows by w × P). */
+    wealthTax: number[]
+  }
 
   /** P(first forced sale happens in year y), length horizonYears. */
   marginCallByYear: number[]

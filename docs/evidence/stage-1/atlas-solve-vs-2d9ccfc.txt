@@ -1,0 +1,45 @@
+$ (probe test, copied into src/engine/__tests__/zzprobe.test.ts of each tree, then removed) npx vitest run src/engine/__tests__/zzprobe.test.ts --reporter=verbose
+
+== 2d9ccfc (pre-change, git worktree) · arch arm64
+PROBE atlas+solve (same digest as atlasSolveGolden): b86829e4c63111a3224457af57ce65a19743d166ed9a9e432ef3ce3f41f13f08
+PROBE atlas+solve real market: 760f106589eb37fd9a193d2f442a1112dc98efa58e6cbefbde0292e96ff2655d
+PROBE simulate old fields (no elapsedMs, no yearly): 879175926cc7f9e201698ac0bc66a52b3b8064fed22f3e049eeaadd891ff59dc
+      Tests  1 passed (1)
+
+== ce81a8d + uncommitted stage-1 changes · arch arm64
+PROBE atlas+solve (same digest as atlasSolveGolden): b86829e4c63111a3224457af57ce65a19743d166ed9a9e432ef3ce3f41f13f08
+PROBE atlas+solve real market: 760f106589eb37fd9a193d2f442a1112dc98efa58e6cbefbde0292e96ff2655d
+PROBE simulate old fields (no elapsedMs, no yearly): 879175926cc7f9e201698ac0bc66a52b3b8064fed22f3e049eeaadd891ff59dc
+      Tests  1 passed (1)
+
+--- probe source ---
+import { createHash } from 'node:crypto'
+import { it } from 'vitest'
+import marketJson from '../../data/market.json'
+import { runAtlas } from '../atlas'
+import { DEFAULT_INPUTS } from '../defaults'
+import { solveSpending } from '../solve'
+import { simulate } from '../simulate'
+import type { MarketData, PlanInputs } from '../types'
+import { CITIES_FIX, syntheticMarket } from './fixtures'
+const mkt = syntheticMarket(240, [
+  { symbol: 'QQQ', alpha: 0.002, beta: 1.2, noise: 0.02, cls: 'etf-equity' },
+  { symbol: 'BND', alpha: 0.003, beta: 0.1, noise: 0.01, first: 120 },
+])
+const real = marketJson as unknown as MarketData
+const holdings = [{ symbol: 'SPY', weight: 0.5 }, { symbol: 'QQQ', weight: 0.3 }, { symbol: 'BND', weight: 0.2 }]
+const plan = (o: Partial<PlanInputs>): PlanInputs => ({ ...structuredClone(DEFAULT_INPUTS), holdings, paths: 300, horizonYears: 25, ...o })
+const PLANS: PlanInputs[] = [plan({}), plan({ existingLoan: 900_000 }), plan({ retireInYears: 6, savingsWhileWorking: 40_000, moveInYears: 8 }), plan({ method: 'fat-tail', destCityId: 'zurich' })]
+const IDS = CITIES_FIX.map((c) => c.id)
+const sha = (x: unknown) => createHash('sha256').update(JSON.stringify(x)).digest('hex')
+it('probe', () => {
+  console.log('PROBE atlas+solve (same digest as atlasSolveGolden):', sha(PLANS.map((inp) => ({ atlas: runAtlas(mkt, CITIES_FIX, inp, IDS), solve: solveSpending(mkt, CITIES_FIX, inp, 0.85) }))))
+  // Real market, a different seed and a stressed plan, so this is not the golden test's own case.
+  const rp = [
+    { ...structuredClone(DEFAULT_INPUTS), paths: 800, seed: 17 },
+    { ...structuredClone(DEFAULT_INPUTS), paths: 800, seed: 5, existingLoan: 1_500_000, destCityId: 'zurich' },
+    { ...structuredClone(DEFAULT_INPUTS), paths: 800, method: 'fat-tail' as const, retireInYears: 4, savingsWhileWorking: 30_000 },
+  ]
+  console.log('PROBE atlas+solve real market:', sha(rp.map((inp) => ({ atlas: runAtlas(real, CITIES_FIX, inp, IDS), solve: solveSpending(real, CITIES_FIX, inp, 0.85) }))))
+  console.log('PROBE simulate old fields (no elapsedMs, no yearly):', sha(rp.map((inp) => { const { elapsedMs: _e, yearly: _y, ...rest } = simulate(real, CITIES_FIX, inp) as any; return rest })))
+})

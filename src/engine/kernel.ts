@@ -130,6 +130,17 @@ export interface Recorder {
   bbdEstateBeforeTax: Float64Array
   cagr: Float64Array
   cagrReal: Float64Array
+  /** eVelo ledger per year (real, ÷ the path's P that month), index y * paths + p, y = 0..years-1;
+   *  0 for months after the path breaks. Spending drawn on the loan (need > 0; not the wealth tax). */
+  borrowed: Float64Array
+  /** Interest added to the loan: loan before that month's interest × loanRateM. */
+  interest: Float64Array
+  /** Shares sold by margin-call forced sales (not the opening sale). */
+  forcedSaleSold: Float64Array
+  /** Loan repaid: surplus applied to the loan, plus forced-sale proceeds after tax (not the opening sale). */
+  repaid: Float64Array
+  /** Wealth tax added to the loan. */
+  wealthTaxAdded: Float64Array
 }
 
 export function createRecorder(paths: number, years: number): Recorder {
@@ -150,6 +161,11 @@ export function createRecorder(paths: number, years: number): Recorder {
     bbdEstateBeforeTax: new Float64Array(paths),
     cagr: new Float64Array(paths),
     cagrReal: new Float64Array(paths),
+    borrowed: new Float64Array(years * paths),
+    interest: new Float64Array(years * paths),
+    forcedSaleSold: new Float64Array(years * paths),
+    repaid: new Float64Array(years * paths),
+    wealthTaxAdded: new Float64Array(years * paths),
   }
 }
 
@@ -251,6 +267,14 @@ export function runPaths(
       if (taxNow) taxMonth += 12
 
       if (!broken) {
+        // The eVelo yearly tallies, recording mode only (the Atlas and solve pass no recorder).
+        if (rec !== null) {
+          const k = ((t / 12) | 0) * paths + p
+          rec.interest[k] += (L * loanRateM) / P
+          if (need > 0) rec.borrowed[k] += need / P
+          // A surplus repays the loan after this month's interest (the L *= 1 + loanRateM below).
+          else if (need < 0) rec.repaid[k] += Math.min(-need, L * (1 + loanRateM)) / P
+        }
         V *= 1 + r
         L *= 1 + loanRateM
         if (need > 0) L += need
@@ -269,6 +293,7 @@ export function runPaths(
             const w = bandTaxPacked(base, wt!.bands)
             L += w * P
             wtReal += w
+            if (rec !== null) rec.wealthTaxAdded[((t / 12) | 0) * paths + p] += w
           }
         }
         if (V <= 0 || V <= L) {
@@ -283,6 +308,11 @@ export function runPaths(
             B *= 1 - S / V
             L -= S * (1 - g * tax)
             V -= S
+            if (rec !== null) {
+              const k = ((t / 12) | 0) * paths + p
+              rec.forcedSaleSold[k] += S / P
+              rec.repaid[k] += (S * (1 - g * tax)) / P
+            }
           }
         }
       }

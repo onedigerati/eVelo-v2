@@ -1,0 +1,36 @@
+# Mutation check, in a scratch worktree (ce81a8d + the stage-1 changes copied in), never in the repo.
+# Mutant A: interest tallied on the loan AFTER the month's interest (L*(1+i)*i).
+267:          rec.interest[k] += (L * (1 + loanRateM) * loanRateM) / P
+$ npx vitest run src/engine/__tests__/yearlyTallies.reference.test.ts
+     × simulate(...).yearly equals the reference to the cent 4ms
+     × simulate(...).yearly equals the reference to the cent, forced sales included 1ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/engine/__tests__/yearlyTallies.reference.test.ts > eVelo yearly tallies: hand-worked flat path > simulate(...).yearly equals the reference to the cent
+ FAIL  src/engine/__tests__/yearlyTallies.reference.test.ts > eVelo yearly tallies: a stressed path with forced sales > simulate(...).yearly equals the reference to the cent, forced sales included
+      Tests  2 failed | 10 passed (12)
+
+# Mutant B: tallies recorded unconditionally-style in atlas path impossible to express; instead tally touches L: L += 0 replaced by moving the tally after L *= 1+i (interest on post-interest loan) is A. Mutant B: borrowed not deflated (need instead of need/P).
+268:          if (need > 0) rec.borrowed[k] += need
+$ npx vitest run src/engine/__tests__/yearlyTallies.reference.test.ts
+     × simulate(...).yearly equals the reference to the cent, forced sales included 2ms
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+ FAIL  src/engine/__tests__/yearlyTallies.reference.test.ts > eVelo yearly tallies: a stressed path with forced sales > simulate(...).yearly equals the reference to the cent, forced sales included
+      Tests  1 failed | 11 passed (12)
+
+# Mutant C: the hot loop does new work when no recorder (a write to L that changes atlas/solve): L *= 1 + loanRateM * (rec === null ? 1.0000001 : 1)
+271:        L *= 1 + loanRateM * (rec === null ? 1.0000001 : 1)
+$ npx vitest run src/engine/__tests__/atlasSolveGolden.test.ts
+      Tests  1 passed (1)
+
+# Unmutated control
+      Tests  13 passed (13)
+
+# Note: atlas and solve consume only runPaths' clean-path COUNT (atlas.ts:55, solve.ts:19, rec = null), so their golden sees a kernel change only if it flips some path's clean/broken outcome. Mutant C (1e-7 relative) flipped none and passed. Larger:
+# Mutant C': L *= 1 + loanRateM * (rec === null ? 1.001 : 1)
+$ npx vitest run src/engine/__tests__/atlasSolveGolden.test.ts
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+      Tests  1 failed (1)
+# Mutant C': L *= 1 + loanRateM * (rec === null ? 1.01 : 1)
+$ npx vitest run src/engine/__tests__/atlasSolveGolden.test.ts
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+      Tests  1 failed (1)

@@ -1,0 +1,2 @@
+Atlas 80-city timing test (engine.test.ts), HEAD kernel.ts vs stage-1 kernel.ts swapped in place, interleaved, after the review fixes (arm64, 2026-11-21):
+old 867ms / new 859ms / old 857ms / new 869ms / old 852ms / new 868ms  -> within noise (~1%)

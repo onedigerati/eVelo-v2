@@ -1,0 +1,55 @@
+ ✓ src/engine/__tests__/yearlyTallies.reference.test.ts > eVelo yearly tallies: hand-worked flat path > the market is flat: every drawn month returns 0 with no inflation 1ms
+ ✓ src/engine/__tests__/yearlyTallies.reference.test.ts > eVelo yearly tallies: hand-worked flat path > borrowing equals spending less Social Security, each year: 60,000, 60,000, 36,000, 36,000 1ms
+ ✓ src/engine/__tests__/yearlyTallies.reference.test.ts > eVelo yearly tallies: hand-worked flat path > interest is the loan × monthly rate summed over the year: 1,677.81, 5,481.96, 8,849.62, 11,615.85 1ms
+ ✓ src/engine/__tests__/yearlyTallies.reference.test.ts > eVelo yearly tallies: hand-worked flat path > loan at year end = last year's loan + borrowed + interest − repayments 1ms
+ ✓ src/engine/__tests__/yearlyTallies.reference.test.ts > eVelo yearly tallies: hand-worked flat path > a surplus repays the loan first: Social Security above spending pays the loan down 1ms
+ ✓ src/engine/__tests__/yearlyTallies.reference.test.ts > eVelo yearly tallies: hand-worked flat path > simulate(...).yearly.repaid equals the reference when Social Security exceeds spending 2ms
+ ✓ src/engine/__tests__/yearlyTallies.reference.test.ts > eVelo yearly tallies: hand-worked flat path > a surplus larger than the loan repays only the loan; the rest is reinvested, not counted 1ms
+ ✓ src/engine/__tests__/yearlyTallies.reference.test.ts > eVelo yearly tallies: hand-worked flat path > the engine's loan band median (index y + 1 = end of year y, real) is the reference's year-end loan 0ms
+ ✓ src/engine/__tests__/yearlyTallies.reference.test.ts > eVelo yearly tallies: hand-worked flat path > simulate(...).yearly equals the reference to the cent 1ms
+ ✓ src/engine/__tests__/yearlyTallies.reference.test.ts > eVelo yearly tallies: a stressed path with forced sales > the reference sells in years 4 and 5 only, and stays solvent 0ms
+ ✓ src/engine/__tests__/yearlyTallies.reference.test.ts > eVelo yearly tallies: a stressed path with forced sales > borrowing is still spending less Social Security in real terms 0ms
+ ✓ src/engine/__tests__/yearlyTallies.reference.test.ts > eVelo yearly tallies: a stressed path with forced sales > the nominal loan identity holds to the cent; under inflation the real one does not (erosion) 1ms
+ ✓ src/engine/__tests__/yearlyTallies.reference.test.ts > eVelo yearly tallies: a stressed path with forced sales > the engine's loan band median matches the reference's real year-end loan, and the path is bruised 1ms
+ ✓ src/engine/__tests__/yearlyTallies.reference.test.ts > eVelo yearly tallies: a stressed path with forced sales > simulate(...).yearly equals the reference to the cent, forced sales included 1ms
+ ✓ src/engine/__tests__/yearlyTallies.reference.test.ts > eVelo yearly tallies: forced-sale repayments > the proceeds after tax repay the loan in the sale years, and match the engine 1ms
+ ✓ src/engine/__tests__/yearlyTallies.reference.test.ts > eVelo yearly tallies: a wealth tax added to the loan > every year adds about 1% of net worth, and the nominal loan identity holds with it 0ms
+ ✓ src/engine/__tests__/yearlyTallies.reference.test.ts > eVelo yearly tallies: a wealth tax added to the loan > simulate(...).yearly equals the reference to the cent, wealth tax included and not in borrowed 2ms
+ ✓ src/engine/__tests__/yearlyTallies.reference.test.ts > eVelo yearly tallies: a path that breaks mid-horizon > the reference breaks inside the horizon, not at a year boundary 0ms
+ ✓ src/engine/__tests__/yearlyTallies.reference.test.ts > eVelo yearly tallies: a path that breaks mid-horizon > the break month's borrowing and interest count; nothing after it does 0ms
+ ✓ src/engine/__tests__/yearlyTallies.reference.test.ts > eVelo yearly tallies: a path that breaks mid-horizon > the kernel agrees: simulate(...).yearly equals the reference, and the path is broken 1ms
+ ✓ src/engine/__tests__/yearlyTallies.test.ts > eVelo yearly tallies > one finite, non-negative median per year for each field 66ms
+ ✓ src/engine/__tests__/yearlyTallies.test.ts > eVelo yearly tallies > nothing is borrowed (and with no loan, no interest) before retirement 31ms
+ ✓ src/engine/__tests__/yearlyTallies.test.ts > eVelo yearly tallies > an existing loan accrues interest from month 0, about a year of the loan rate in year 0 19ms
+ ✓ src/engine/__tests__/atlasSolveGolden.test.ts > Atlas and solve are unchanged by the yearly tallies > atlas and solve outputs match the golden from before 142ms
+ ✓ src/engine/__tests__/yearlyTallies.test.ts > eVelo yearly tallies > a stressed plan has forced sales; a calm one has none 25ms
+ ✓ src/engine/__tests__/yearlyTallies.test.ts > eVelo yearly tallies > a path broken today tallies nothing 16ms
+ ✓ src/engine/__tests__/income.test.ts > same months as eVelo > bootstrap: simulate and the scenarios are bit-identical to the golden from before 44ms
+ ✓ src/engine/__tests__/income.test.ts > same months as eVelo > bootstrap: the indices are the months eVelo drew 297ms
+ ✓ src/engine/__tests__/income.test.ts > same months as eVelo > bootstrap: indicesOnly draws the same months, skipping the values 7ms
+ ✓ src/engine/__tests__/income.test.ts > same months as eVelo > bootstrap: runIncomePaths runs on eVelo's months for the same seed, paths, horizon and blocks 47ms
+ ✓ src/engine/__tests__/income.test.ts > same months as eVelo > fat-tail: simulate and the scenarios are bit-identical to the golden from before 52ms
+ ✓ src/engine/__tests__/income.test.ts > same months as eVelo > fat-tail: the indices are the months eVelo drew 144ms
+ ✓ src/engine/__tests__/income.test.ts > same months as eVelo > fat-tail: indicesOnly draws the same months, skipping the values 7ms
+ ✓ src/engine/__tests__/income.test.ts > same months as eVelo > fat-tail: runIncomePaths runs on eVelo's months for the same seed, paths, horizon and blocks 15ms
+ ✓ src/engine/__tests__/income.test.ts > yields anchored to today > a history that is all 1990s-like high yields still starts at the latest yield 1ms
+ ✓ src/engine/__tests__/income.test.ts > yields anchored to today > caps a month’s change at the 99th percentile |Δy| and floors the yield at 0.25% 1ms
+ ✓ src/engine/__tests__/income.test.ts > yields anchored to today > month 1 pays the starting yield, month 2 the moved one, and a rise in y raises income 2ms
+ ✓ src/engine/__tests__/income.test.ts > yields anchored to today > the real data starts at each fund’s latest yield, with caps near the plan’s 1ms
+ ✓ src/engine/__tests__/income.test.ts > a hand-worked path > year 1: income by type, tax by incomeTax, a gap sale with gains tax 0ms
+ ✓ src/engine/__tests__/income.test.ts > a hand-worked path > years 2 and 3: a smaller gap sale, then Social Security and a surplus reinvested 0ms
+ ✓ src/engine/__tests__/income.test.ts > a hand-worked path > a surplus is reinvested at the target weights with basis at cost 0ms
+ ✓ src/engine/__tests__/income.test.ts > a hand-worked path > a portfolio that can’t cover the gap fails that year: value 0, not met, not keeping pace 0ms
+ ✓ src/engine/__tests__/income.test.ts > a hand-worked path > inflation: amounts are nominal inside a year and real in the result, brackets lag a year 0ms
+ ✓ src/engine/__tests__/income.test.ts > the three measures and the bands > an all-bond plan spending below its income keeps principal on every path 29ms
+ ✓ src/engine/__tests__/income.test.ts > the three measures and the bands > spending far above income: the money lasts less often as the horizon grows 80ms
+stdout | src/engine/__tests__/income.test.ts > speed > runIncomePaths at eVelo’s default paths and horizon takes at most 2× simulate
+simulate 97 ms, runIncomePaths 95 ms (4000 × 30y), ratio 0.98
+ ✓ src/engine/__tests__/income.test.ts > the three measures and the bands > bands: ordered, the right lengths, and from the same quantile helper as simulate 18ms
+ ✓ src/engine/__tests__/income.test.ts > the three measures and the bands > median50 equals quantile(sorted, 0.5) exactly 1ms
+ ✓ src/engine/__tests__/income.test.ts > worker > answers an income request with runIncomePaths’ result 19ms
+ ✓ src/engine/__tests__/income.test.ts > speed > runIncomePaths at eVelo’s default paths and horizon takes at most 2× simulate 1165ms
+ ✓ src/engine/__tests__/income.test.ts > input limits on the income request > clamps or defaults every field, as eVelo’s sanitizer does 1ms
+ ✓ src/engine/__tests__/income.test.ts > input limits on the income request > huge paths, 1e308 otherIncome, NaN and bad enums give a finite, sane result 43ms
+ Test Files  4 passed (4)
+      Tests  51 passed (51)

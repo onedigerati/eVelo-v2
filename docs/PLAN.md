@@ -8,17 +8,18 @@ A walkthrough on the Living on Income results that shows how the mode and eVelo 
 
 ## Now
 Stage 1 of 4 · eVelo yearly tallies
+Mode: autopilot — unattended
 Risk: money (engine figures)
-Agents: wide — confirmed 2026-11-21 15:39
+Agents: wide — confirmed 2026-11-21 15:45
 Checks:
-- [ ] `SimulationResult` carries per-year medians of what eVelo borrowed, the interest added and the shares a forced sale sold, tallied in the kernel's recording branch only (proof: test)
-- [ ] On a hand-worked path, the tallies match a scalar reference to the cent: borrowing equals spending less Social Security, interest is the loan × monthly rate summed over the year, and loan at year end = last year's loan + borrowed + interest − repayments (proof: test)
-- [ ] Atlas and solve results are byte-identical to before, and the simulate, atlas and income timing budgets still pass (proof: test)
-- [ ] The simulate golden hash is updated or narrowed, and its decision is logged (proof: test)
+- [x] `SimulationResult` carries per-year medians of what eVelo borrowed, the interest added and the shares a forced sale sold, tallied in the kernel's recording branch only (proof: test)
+- [x] On a hand-worked path, the tallies match a scalar reference to the cent: borrowing equals spending less Social Security, interest is the loan × monthly rate summed over the year, and loan at year end = last year's loan + borrowed + interest − repayments (proof: test)
+- [x] Atlas and solve results are byte-identical to before, and the simulate, atlas and income timing budgets still pass (proof: test)
+- [x] The simulate golden hash is updated or narrowed, and its decision is logged (proof: test)
 Open: none
 
 ## Stages
-- [ ] 1. eVelo yearly tallies — borrowed, interest and forced-sale per-year medians from the kernel, guarded to the recording branch
+- [x] 1. eVelo yearly tallies — borrowed, interest and forced-sale per-year medians from the kernel, guarded to the recording branch
 - [ ] 2. Chapters and ledgers — chapter rules (pure, tested), the walkthrough section under the comparison, overview chart with tap-to-jump, chapter slider, twin ledgers, Play story stopping at each chapter's end, phone and keyboard
 - [ ] 3. Matched sample futures — both engines return per-year rows for a few chosen path indices (same months in both), picked by a plan-neutral market rule
 - [ ] 4. Same storm — the future chips, both net worths and eVelo loan-to-value with the call line and forced sales, captions, gated on "same futures"; release
@@ -35,8 +36,14 @@ Open: none
 - 2026-11-21 · The new eVelo tallies are computed only inside the kernel's `if (rec)` branch, so atlas and solve do no new work (the kernel comment notes ~35% slowdowns from small hot-loop changes) — PM default, from the survey.
 - 2026-11-21 · Scale: four stages, one release; no scale signal fired, planned as one plan.
 - 2026-11-21 · No research: nothing outside the repo changes this plan.
+- 2026-11-21 · Agents: wide, re-confirmed in this session by the user's "JBIT Autopilot wide" — user.
+- 2026-11-21 · (unattended) The simulate golden hash is narrowed, not just updated: it hashes the result without the new `yearly` field, so every existing figure is proven bit-identical, and `yearly` gets its own golden. Updating the one hash would hide any drift in the old figures.
+- 2026-11-21 · (unattended) The tallies are real (today's USD, ÷ the path's price level), like the existing bands; `borrowed` is spending less Social Security only, and wealth tax added to the loan isn't counted in it (it's reported on its own already); forced-sale sold excludes the opening sale (reported on its own). A path's tallies are 0 after it breaks.
+- 2026-11-21 · (unattended) The loan identity (year-end loan = last year's + borrowed + interest − repayments) is exact in nominal dollars, and in real dollars only with no inflation: the tallies are divided by each month's price level, the year-end loan by December's. The test proves it nominally, and in real terms on a zero-inflation path. Stage 2's ledger shows an inflation line or says so where it shows a total. The month a path breaks counts its borrowing and interest (they hit the loan before it's liquidated).
 
 ## Open questions
+- From the stage 1 review (walkthrough plan): the new atlas/solve golden and the `yearly` golden are pinned for arm64 only (this machine); on CI's x64 the atlas/solve test is skipped and the yearly hash is only logged. Add the x64 hashes from the next CI run's log, as was done for `SIM_BOOTSTRAP`. The scalar cross-check pins the tallies semantically on every arch meanwhile — next push.
+- From the stage 1 review: the `yearly` medians run over all paths, with broken paths counted as 0, so once more than half have broken, borrowed and interest read $0 while the survivors still borrow. Stage 2's ledger says so, or shows medians among surviving paths — stage 2 design.
 - The compare view keeps a second income worker and a per-session run cache that only grows, and doesn't cancel a run on leaving (Stage 6 review defer).
 - From the stage 3 verify: the income yields walk additively, and over 30 years the walk is wide (SPY starts at 1.0%, so the 0.25% floor binds often and lifts its median to 1.21%; bonds stay within 0.25 points). A log-yield or mean-reverting walk would be tighter and floor-free; it moves "income keeps pace" (15% of default paths today) — research half-lives, later, user's call. The Georgia per-65 exclusion is scaled like an indexed amount though Georgia's is fixed in dollars (small).
 - From stage 2: Philadelphia's School Income Tax is 3.74% (2025) in `stateIncomeTax.ts` but 3.735% (2026) in the city profile, which cites a phila.gov 2026 rate notice; reconcile on that page. The state records aren't frozen (the packed-band cache assumes they never change in place). Federal brackets index to chained CPI, ~0.25 pt/yr below CPI, so under `priceLevel` = CPI they creep up slightly in real terms — say so in the mode's "How this is worked out" (stage 5).

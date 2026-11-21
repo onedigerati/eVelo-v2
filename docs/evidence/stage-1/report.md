@@ -1,0 +1,14 @@
+# Stage 1 · eVelo yearly tallies — verification
+
+Verified 2026-11-21 on arm64 by a fresh verifier agent (built nothing), then re-run by the PM after the review fix round (`repaid`, `wealthTax`, mid-horizon break case).
+
+| Check | Result | Evidence |
+|---|---|---|
+| `SimulationResult` carries per-year medians of what eVelo borrowed, the interest added and the shares a forced sale sold, tallied in the kernel's recording branch only | pass | [tallies-tests.txt](tallies-tests.txt), [tallies-after-review.txt](tallies-after-review.txt): `yearlyTallies.test.ts`. Kernel diff: every tally is under `rec !== null`; atlas and solve call `runPaths(..., null)`. `yearly` also carries `repaid` and `wealthTax` (review fix). |
+| On a hand-worked path, the tallies match a scalar reference to the cent (borrowing = spending − Social Security, interest = loan × monthly rate summed, year-end loan identity) | pass | [tallies-after-review.txt](tallies-after-review.txt): `yearlyTallies.reference.test.ts` (flat, surplus, forced-sale, wealth-tax and mid-horizon break paths; all five fields to the cent). [mutation.txt](mutation.txt): two deliberately broken tallies fail it. Identity is exact nominally; in real terms on the zero-inflation path (decision logged). |
+| Atlas and solve results are byte-identical to before, and the simulate, atlas and income timing budgets still pass | pass | [golden-and-timing.txt](golden-and-timing.txt), [atlas-solve-vs-2d9ccfc.txt](atlas-solve-vs-2d9ccfc.txt) (hash run on 2d9ccfc and on the new tree, synthetic and real market data, match), [atlas-timing-interleaved.txt](atlas-timing-interleaved.txt). Caveat: atlas/solve hash only moves when a path's outcome flips, so "no new work" also rests on the code read; goldens are arm64-only (x64 deferred to CI, open question). |
+| The simulate golden hash is updated or narrowed, and its decision is logged | pass | [golden-and-timing.txt](golden-and-timing.txt): old `sim-*` hashes untouched and passing on the result without `yearly`; `yearly` pinned separately. Decision 2026-11-21 (unattended) "narrowed". |
+
+Project checks: typecheck pass ([typecheck-after-review.txt](typecheck-after-review.txt)) · lint not configured · tests 1483 passed, 1 skipped ([tests-after-review.txt](tests-after-review.txt); first pass [tests.txt](tests.txt)) · build pass ([build-after-review.txt](build-after-review.txt)) · e2e 17 ok ([e2e.txt](e2e.txt), before the review fixes, which touch only the engine's added fields) · audit 0 vulnerabilities ([audit.txt](audit.txt)).
+
+Review: security pass found nothing (share-link inputs clamped: horizon 10–40, paths ∈ {1000, 4000, 10000}; new arrays ≤ ~16 MB, worker message +5 × horizon numbers). Correctness review: 2 fixed (repaid/wealthTax added; break-month case), 2 deferred (x64 goldens; medians count broken paths as 0 — stage 2 design), 4 rejected.

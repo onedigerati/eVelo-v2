@@ -1,0 +1,76 @@
+$ npx vitest run src/engine/__tests__/atlasSolveGolden.test.ts src/engine/__tests__/income.test.ts src/engine/__tests__/engine.test.ts -t "golden|performance|speed" --reporter=verbose
+
+ RUN  v5.1.0 /home/jonah/src/repos/eVelo-v2
+
+ ✓ src/engine/__tests__/income.test.ts > same months as eVelo > bootstrap: simulate and the scenarios are bit-identical to the golden from before 46ms
+ ↓ src/engine/__tests__/income.test.ts > same months as eVelo > bootstrap: the indices are the months eVelo drew
+ ↓ src/engine/__tests__/income.test.ts > same months as eVelo > bootstrap: indicesOnly draws the same months, skipping the values
+ ↓ src/engine/__tests__/income.test.ts > same months as eVelo > bootstrap: runIncomePaths runs on eVelo's months for the same seed, paths, horizon and blocks
+ ✓ src/engine/__tests__/income.test.ts > same months as eVelo > fat-tail: simulate and the scenarios are bit-identical to the golden from before 56ms
+stdout | src/engine/__tests__/atlasSolveGolden.test.ts > Atlas and solve are unchanged by the yearly tallies > atlas and solve outputs match the golden from before
+atlas+solve digest (arm64): b86829e4c63111a3224457af57ce65a19743d166ed9a9e432ef3ce3f41f13f08
+
+ ✓ src/engine/__tests__/atlasSolveGolden.test.ts > Atlas and solve are unchanged by the yearly tallies > atlas and solve outputs match the golden from before 139ms
+stdout | src/engine/__tests__/engine.test.ts > performance > 4000 paths x 30y in < 1500 ms
+simulate 4000x30y: 120 ms, success 79.1%
+
+ ↓ src/engine/__tests__/engine.test.ts > block bootstrap > preserves cross-asset correlation (same month index for all assets)
+ ↓ src/engine/__tests__/engine.test.ts > block bootstrap > portfolio variance from scenarios matches the correlated historical variance
+ ↓ src/engine/__tests__/engine.test.ts > block bootstrap > fat-tail draws match variance and have heavy tails
+ ↓ src/engine/__tests__/engine.test.ts > prepare > backfills a 5-year asset to the full calendar with beta ≈ generating beta
+ ↓ src/engine/__tests__/engine.test.ts > prepare > 'historical' keeps the real-history mean; 'balanced' moves it toward the prior
+ ↓ src/engine/__tests__/engine.test.ts > outlook on a long-lived winner > 100% NVDA: balanced median CAGR roughly 8-16%, conservative < balanced < historical
+ ↓ src/engine/__tests__/engine.test.ts > outlook on a long-lived winner > clamps beta in the prior
+ ↓ src/engine/__tests__/engine.test.ts > backfill co-movement and non-equity priors > co-moving young assets keep their correlation in the backfilled span (shared donor months)
+ ↓ src/engine/__tests__/engine.test.ts > backfill co-movement and non-equity priors > bonds, real estate and commodities shrink toward explicit priors
+ ↓ src/engine/__tests__/engine.test.ts > margin call > fires when LTV crosses maxLtv and the forced sale lands at targetLtv incl. tax
+ ↓ src/engine/__tests__/engine.test.ts > margin call > does not fire below maxLtv
+ ↓ src/engine/__tests__/engine.test.ts > margin call > is broken when the portfolio falls below the loan
+ ↓ src/engine/__tests__/engine.test.ts > margin call > failure rate equals cumulative forced-sale probability
+ ↓ src/engine/__tests__/engine.test.ts > cities > categoryRatios maps indices and applies the expat factor
+ ↓ src/engine/__tests__/engine.test.ts > cities > a cheaper destination raises success; a pricier one lowers it
+ ↓ src/engine/__tests__/engine.test.ts > cities > expatFactor = 1 removes the savings on local-price categories
+ ↓ src/engine/__tests__/engine.test.ts > cities > later move is between staying and moving now
+ ↓ src/engine/__tests__/engine.test.ts > cities > atlas ranks cities with common random numbers
+ ↓ src/engine/__tests__/engine.test.ts > cities > atlas odds equal the Outlook for every city, at the full path count
+ ↓ src/engine/__tests__/engine.test.ts > results > outcomeDots sums to 100 and is sorted
+ ↓ src/engine/__tests__/engine.test.ts > results > is deterministic for equal seeds and differs for different seeds
+ ↓ src/engine/__tests__/engine.test.ts > results > sell strategy pays capital-gains tax; BBD estate benefits from step-up
+ ↓ src/engine/__tests__/engine.test.ts > results > reports real stats below nominal and rounds the horizon to whole years
+ ↓ src/engine/__tests__/engine.test.ts > results > fat-tail method runs end to end
+ ↓ src/engine/__tests__/engine.test.ts > solver > solved spend meets the target and +10% does not
+ ↓ src/engine/__tests__/engine.test.ts > solver > reports destination spend for a move
+ ✓ src/engine/__tests__/engine.test.ts > performance > 4000 paths x 30y in < 1500 ms 147ms
+stdout | src/engine/__tests__/engine.test.ts > performance > atlas over 80 cities in < 3500 ms
+atlas 80 cities: 750 ms
+
+ ✓ src/engine/__tests__/engine.test.ts > performance > atlas over 80 cities in < 3500 ms 833ms
+stdout | src/engine/__tests__/income.test.ts > speed > runIncomePaths at eVelo’s default paths and horizon takes at most 2× simulate
+simulate 98 ms, runIncomePaths 119 ms (4000 × 30y), ratio 1.21
+
+ ↓ src/engine/__tests__/income.test.ts > same months as eVelo > fat-tail: the indices are the months eVelo drew
+ ↓ src/engine/__tests__/income.test.ts > same months as eVelo > fat-tail: indicesOnly draws the same months, skipping the values
+ ↓ src/engine/__tests__/income.test.ts > same months as eVelo > fat-tail: runIncomePaths runs on eVelo's months for the same seed, paths, horizon and blocks
+ ↓ src/engine/__tests__/income.test.ts > yields anchored to today > a history that is all 1990s-like high yields still starts at the latest yield
+ ↓ src/engine/__tests__/income.test.ts > yields anchored to today > caps a month’s change at the 99th percentile |Δy| and floors the yield at 0.25%
+ ↓ src/engine/__tests__/income.test.ts > yields anchored to today > month 1 pays the starting yield, month 2 the moved one, and a rise in y raises income
+ ↓ src/engine/__tests__/income.test.ts > yields anchored to today > the real data starts at each fund’s latest yield, with caps near the plan’s
+ ↓ src/engine/__tests__/income.test.ts > a hand-worked path > year 1: income by type, tax by incomeTax, a gap sale with gains tax
+ ↓ src/engine/__tests__/income.test.ts > a hand-worked path > years 2 and 3: a smaller gap sale, then Social Security and a surplus reinvested
+ ↓ src/engine/__tests__/income.test.ts > a hand-worked path > a surplus is reinvested at the target weights with basis at cost
+ ↓ src/engine/__tests__/income.test.ts > a hand-worked path > a portfolio that can’t cover the gap fails that year: value 0, not met, not keeping pace
+ ↓ src/engine/__tests__/income.test.ts > a hand-worked path > inflation: amounts are nominal inside a year and real in the result, brackets lag a year
+ ↓ src/engine/__tests__/income.test.ts > the three measures and the bands > an all-bond plan spending below its income keeps principal on every path
+ ↓ src/engine/__tests__/income.test.ts > the three measures and the bands > spending far above income: the money lasts less often as the horizon grows
+ ↓ src/engine/__tests__/income.test.ts > the three measures and the bands > bands: ordered, the right lengths, and from the same quantile helper as simulate
+ ↓ src/engine/__tests__/income.test.ts > the three measures and the bands > median50 equals quantile(sorted, 0.5) exactly
+ ↓ src/engine/__tests__/income.test.ts > worker > answers an income request with runIncomePaths’ result
+ ✓ src/engine/__tests__/income.test.ts > speed > runIncomePaths at eVelo’s default paths and horizon takes at most 2× simulate 1306ms
+ ↓ src/engine/__tests__/income.test.ts > input limits on the income request > clamps or defaults every field, as eVelo’s sanitizer does
+ ↓ src/engine/__tests__/income.test.ts > input limits on the income request > huge paths, 1e308 otherIncome, NaN and bad enums give a finite, sane result
+
+ Test Files  3 passed (3)
+      Tests  6 passed | 48 skipped (54)
+   Start at  15:50:37
+   Duration  1.56s (tests 93%, import 4%, transform 4%)
+

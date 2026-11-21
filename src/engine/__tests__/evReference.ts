@@ -3,7 +3,7 @@
 // to be fast, from the rules in the kernel's header comment (src/engine/kernel.ts), not from its loop.
 //
 // Scope: retired from month 0, no existing loan (so no opening sale), staying home (no move, no FX
-// walk), no wealth or inheritance tax. Returns are taken as given per month (pass them after the
+// walk), no inheritance tax; optionally a flat wealth tax on net worth from year 0 (a taxed home). Returns are taken as given per month (pass them after the
 // dividend-tax drag).
 //
 // Month t, in order:
@@ -11,6 +11,8 @@
 //   2. interest = L × loanRate/12 on the loan before this month's interest; L += interest.
 //   3. need = (spending − income once started) × P. need > 0 is borrowed (L += need). A surplus
 //      (need < 0) repays the loan first; what is left over is reinvested (V and cost basis rise).
+//   3b. At each year-end month (t % 12 = 11), with a wealth tax: w = rate × (V − L)/P (real, if the
+//      base is > 0) is added to the loan as w × P.
 //   4. Broken if V <= 0 or V <= L: the lender liquidates; nothing more happens on this path.
 //   5. If L > maxLtv × V, a forced sale of S shares brings the loan to targetLtv:
 //        (L − S(1 − g·tax)) / (V − S) = targetLtv,   g = max(0, 1 − basis/V)
@@ -22,13 +24,14 @@
 //   interest       Σ interest/P
 //   forcedSaleSold Σ S/P (shares sold by margin calls, gross of tax)
 //   repaid         Σ (surplus applied to the loan + forced-sale proceeds applied to the loan)/P
+//   wealthTax      Σ w (real wealth tax added to the loan)
 //   loanEnd        L/P at the year's last month (0 once broken)
 // Nominal versions of the flows are returned too: the nominal loan identity
-//   L_end = L_start + borrowed + interest − repaid
+//   L_end = L_start + borrowed + interest + wealthTax − repaid
 // holds exactly, while the real one also loses the year's inflation erosion of the balance.
 //
-// AMBIGUITY: the month a path breaks still counts that month's borrowing and interest (they were
-// added to the loan before the lender liquidated); every later month adds 0.
+// AMBIGUITY: the month a path breaks still counts that month's borrowing, interest and wealth tax
+// (they were added to the loan before the lender liquidated); every later month adds 0.
 
 export interface EvRefInputs {
   portfolio: number
@@ -46,6 +49,8 @@ export interface EvRefInputs {
   /** Monthly portfolio returns (after any drag) and monthly inflation; equal lengths, a multiple of 12. */
   ret: ArrayLike<number>
   infl: ArrayLike<number>
+  /** Flat annual wealth tax rate on real net worth, charged at each year-end; absent = none. */
+  wealthTaxRate?: number
 }
 
 export interface EvRefYears {
@@ -53,14 +58,24 @@ export interface EvRefYears {
   interest: number[]
   forcedSaleSold: number[]
   repaid: number[]
+  wealthTax: number[]
   /** Real loan at each year's end (0 once broken). */
   loanEnd: number[]
   /** Price level at each year's end. */
   priceEnd: number[]
-  nominal: { borrowed: number[]; interest: number[]; forcedSaleSold: number[]; repaid: number[]; loanEnd: number[] }
+  nominal: {
+    borrowed: number[]
+    interest: number[]
+    forcedSaleSold: number[]
+    repaid: number[]
+    wealthTax: number[]
+    loanEnd: number[]
+  }
   /** First month a forced sale (or the breaking liquidation) happened, or -1. */
   firstCallMonth: number
   broken: boolean
+  /** Month the path broke, or -1. */
+  breakMonth: number
 }
 
 export function evReference(inp: EvRefInputs): EvRefYears {
@@ -72,11 +87,13 @@ export function evReference(inp: EvRefInputs): EvRefYears {
     interest: zeros(),
     forcedSaleSold: zeros(),
     repaid: zeros(),
+    wealthTax: zeros(),
     loanEnd: zeros(),
     priceEnd: zeros(),
-    nominal: { borrowed: zeros(), interest: zeros(), forcedSaleSold: zeros(), repaid: zeros(), loanEnd: zeros() },
+    nominal: { borrowed: zeros(), interest: zeros(), forcedSaleSold: zeros(), repaid: zeros(), wealthTax: zeros(), loanEnd: zeros() },
     firstCallMonth: -1,
     broken: false,
+    breakMonth: -1,
   }
   const monthlyRate = inp.loanRate / 12
 
@@ -117,9 +134,21 @@ export function evReference(inp: EvRefInputs): EvRefYears {
         basis += leftover
       }
 
+      // 3b. year-end wealth tax on real net worth, borrowed
+      if (inp.wealthTaxRate && t % 12 === 11) {
+        const base = (portfolio - loan) / price
+        if (base > 0) {
+          const w = inp.wealthTaxRate * base
+          loan += w * price
+          out.wealthTax[y] += w
+          out.nominal.wealthTax[y] += w * price
+        }
+      }
+
       // 4. insolvency
       if (portfolio <= 0 || portfolio <= loan) {
         out.broken = true
+        out.breakMonth = t
         if (out.firstCallMonth < 0) out.firstCallMonth = t
       } else if (loan > inp.maxLtv * portfolio) {
         // 5. margin call
@@ -127,7 +156,10 @@ export function evReference(inp: EvRefInputs): EvRefYears {
         const gainShare = basis < portfolio ? 1 - basis / portfolio : 0
         const keep = 1 - gainShare * inp.capGainsRate // proceeds per $ sold, after tax
         const sold = (loan - inp.targetLtv * portfolio) / (keep - inp.targetLtv)
-        if (!(sold > 0) || sold >= portfolio) out.broken = true
+        if (!(sold > 0) || sold >= portfolio) {
+          out.broken = true
+          out.breakMonth = t
+        }
         else {
           const proceeds = sold * keep
           basis *= 1 - sold / portfolio
