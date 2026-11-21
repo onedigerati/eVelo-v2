@@ -1,0 +1,254 @@
+/* ============ Living on income — the two-retirements walkthrough (Walkthrough.tsx) ============ */
+/* Living on income in brass (--bruised), eVelo in green (--holds), as in compare.css. Leaves
+   (WalkthroughChart, TwinLedgers) add their own wt__* rules; .wt--phone is the !wide layout. */
+
+.wt {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding-top: var(--space-7);
+  border-top: 1px solid var(--hairline);
+  min-width: 0;
+}
+
+.wt__head {
+  display: grid;
+  gap: var(--space-2);
+}
+.wt__eyebrow {
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.wt__title,
+.wt__name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: var(--tracking-display);
+  text-wrap: balance;
+}
+.wt__title {
+  font-size: var(--fs-h1);
+  line-height: var(--lh-snug);
+}
+.wt__name {
+  font-size: var(--fs-h2);
+  line-height: 1.1;
+}
+.wt__lede {
+  margin: 0;
+  max-width: 68ch;
+  color: var(--ink-2);
+}
+
+/* ---------- Chapter rail ---------- */
+.wt__rail {
+  display: grid;
+  gap: 6px;
+}
+.wt__tab {
+  display: grid;
+  align-content: start;
+  gap: 3px;
+  min-width: 0;
+  min-height: 52px;
+  padding: var(--space-2) 10px;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.wt__tab:hover {
+  background: var(--surface-hover);
+}
+.wt__tab--done {
+  border-color: var(--hairline-strong);
+}
+.wt__tab[aria-selected='true'] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--ink-inverse);
+}
+.wt__tab:focus-visible,
+.wt__btn:focus-visible,
+.wt__slider:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+.wt__tab-name {
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+.wt__tab-ages {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-3);
+}
+.wt__tab[aria-selected='true'] .wt__tab-ages {
+  color: inherit;
+  opacity: 0.75;
+}
+.wt--phone .wt__tab {
+  min-height: 44px;
+  padding: 6px 2px;
+  place-items: center;
+  text-align: center;
+}
+.wt--phone .wt__tab-ages {
+  font-size: var(--fs-sm);
+}
+
+/* ---------- Chapter ---------- */
+.wt__panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-width: 0;
+}
+.wt__chapter {
+  display: grid;
+  gap: 6px;
+}
+.wt__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: var(--space-1);
+}
+.wt__btn {
+  min-height: 40px;
+  padding: 0 var(--space-4);
+  border: 1px solid var(--hairline-strong);
+  border-radius: var(--radius-pill);
+  background: var(--surface-solid);
+  color: var(--ink);
+  font: inherit;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+.wt__btn:hover:not(:disabled) {
+  background: var(--surface-hover);
+}
+.wt__btn:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.wt__btn[aria-pressed='true'] {
+  background: var(--ink);
+  color: var(--ink-inverse);
+}
+
+/* ---------- Paragraphs ---------- */
+.wt__story {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+.wt--phone .wt__story {
+  grid-template-columns: minmax(0, 1fr);
+}
+.wt__part {
+  display: grid;
+  align-content: start;
+  gap: var(--space-1);
+  min-width: 0;
+  padding-top: 10px;
+  border-top: 2px solid var(--bruised);
+  font-size: var(--fs-md);
+  color: var(--ink-2);
+}
+.wt__part--evelo {
+  border-top-color: var(--holds);
+}
+.wt__part-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--ink);
+}
+.wt__part-title small {
+  display: block;
+  margin-bottom: var(--space-1);
+  font-family: var(--font-ui);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.wt__part-figure {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  color: var(--bruised-text);
+}
+.wt__part--evelo .wt__part-figure {
+  color: var(--holds-text);
+}
+.wt__part-text {
+  margin: 0;
+}
+
+/* ---------- Year slider ---------- */
+.wt__scrub {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-3);
+}
+.wt__scrub-label {
+  font-size: var(--fs-sm);
+  color: var(--ink-3);
+}
+.wt__slider {
+  width: 100%;
+  min-height: 32px;
+  accent-color: var(--ink);
+  border-radius: var(--radius-pill);
+}
+.wt__slider:disabled {
+  opacity: 0.45;
+}
+.wt__age {
+  min-width: 3ch;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  line-height: 1;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Leaf placeholders (removed with the stubs) ---------- */
+.wt__placeholder {
+  padding: var(--space-4);
+  border: 1px dashed var(--hairline-strong);
+  border-radius: var(--radius-md);
+  font-size: var(--fs-sm);
+  color: var(--ink-3);
+}
+
+@media (max-width: 699px) {
+  .wt__title {
+    font-size: var(--fs-h2);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wt,
+  .wt * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

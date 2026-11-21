@@ -7,15 +7,18 @@ A walkthrough on the Living on Income results that shows how the mode and eVelo 
 2026-11-21 · tests: 1457 pass, 1 skipped · typecheck: clean
 
 ## Now
-Stage 1 of 4 · eVelo yearly tallies
+Stage 2 of 4 · Chapters and ledgers
 Mode: autopilot — unattended
-Risk: money (engine figures)
+Risk: UI (shows engine figures; the chapter rules are logic, tested)
 Agents: wide — confirmed 2026-11-21 15:45
+Scope: a pure chapter module (rules from the plan's own ages, Social Security start, the median paths and the horizon), the walkthrough section under the existing comparison (shown once synced and both results are in), chapter rail, per-plan paragraphs, overview net-worth chart with the chapter lit and tap-to-jump, a year slider limited to the chapter, twin ledgers from the engines' per-year medians, Play story stopping at the chapter's end, phone and keyboard. Design: the chosen mockup (no reservoir drawing, no Same storm yet).
 Checks:
-- [x] `SimulationResult` carries per-year medians of what eVelo borrowed, the interest added and the shares a forced sale sold, tallied in the kernel's recording branch only (proof: test)
-- [x] On a hand-worked path, the tallies match a scalar reference to the cent: borrowing equals spending less Social Security, interest is the loan × monthly rate summed over the year, and loan at year end = last year's loan + borrowed + interest − repayments (proof: test)
-- [x] Atlas and solve results are byte-identical to before, and the simulate, atlas and income timing budgets still pass (proof: test)
-- [x] The simulate golden hash is updated or narrowed, and its decision is logged (proof: test)
+- [ ] Chapter rules are pure and tested: 3–6 chapters, contiguous, covering every year of the horizon once; no Social Security in the horizon → no "arrives" chapter; no bad year in the medians → no bad-market chapter; the estate chapter is the last years (proof: test)
+- [ ] Once synced and both results are in, the walkthrough shows under the comparison (not before sync), from the engines' real results: per-plan chapter paragraphs, and twin ledgers for the chosen year (living on income: dividends and interest, Social Security, shares sold, tax, portfolio; eVelo: Social Security, borrowed, interest, repaid and forced sales, loan, portfolio, loan-to-value), with a note that medians don't add up where a total shows (proof: e2e)
+- [ ] The overview net-worth chart lights the chapter's span; tapping or clicking a year jumps to it (and its chapter); the slider covers only the chapter's years (proof: e2e)
+- [ ] Play story runs the chapter's years and stops at its end; Next chapter carries on; under reduced motion it steps without animation (proof: e2e)
+- [ ] Desktop and a 390px phone with no horizontal scroll; the keyboard reaches and works the rail (arrow keys), buttons, slider and chart (proof: e2e with screenshots)
+- [ ] The rest of the site is unchanged: the suite and the e2e smoke pass (proof: test)
 Open: none
 
 ## Stages
@@ -40,6 +43,10 @@ Open: none
 - 2026-11-21 · (unattended) The simulate golden hash is narrowed, not just updated: it hashes the result without the new `yearly` field, so every existing figure is proven bit-identical, and `yearly` gets its own golden. Updating the one hash would hide any drift in the old figures.
 - 2026-11-21 · (unattended) The tallies are real (today's USD, ÷ the path's price level), like the existing bands; `borrowed` is spending less Social Security only, and wealth tax added to the loan isn't counted in it (it's reported on its own already); forced-sale sold excludes the opening sale (reported on its own). A path's tallies are 0 after it breaks.
 - 2026-11-21 · (unattended) The loan identity (year-end loan = last year's + borrowed + interest − repayments) is exact in nominal dollars, and in real dollars only with no inflation: the tallies are divided by each month's price level, the year-end loan by December's. The test proves it nominally, and in real terms on a zero-inflation path. Stage 2's ledger shows an inflation line or says so where it shows a total. The month a path breaks counts its borrowing and interest (they hit the loan before it's liquidated).
+- 2026-11-21 · (unattended) Chapter rules: before Social Security = the years before the income plan's Social Security start (absent when it starts in year 1 or never in the horizon); arrives = the year it starts; bad market = the first year after that where either plan's median real portfolio falls 5% or more, plus the next year when it also falls (absent when none; if it lands inside before-Social-Security, that chapter keeps it and its paragraph says so, so chapters stay contiguous); estate = the last five years (fewer on a short horizon, the whole remainder if needed to keep 3+); long middle = the rest. Chapters with no years are dropped, and adjacent chapters merge down to 6 at most. Why: the mockup's note ("no Social Security means no arrives chapter; no bad year in the median means no bad market chapter. Three to six chapters"), kept contiguous so the slider and rail never skip a year.
+- 2026-11-21 · (unattended) The eVelo ledger shows borrowed, interest, repaid (and forced sales when non-zero) beside the year-end loan, with one line saying these are each year's medians in today's dollars, so they don't add up to the loan's change (inflation and medians both). Why: stage 1's finding that the identity is only exact nominally.
+
+- 2026-11-21 · (unattended) Chapter rules, refined in the build: an "early years" chapter covers the years between Social Security's arrival and a later bad market (so six is the real maximum and merge-to-6 is a guard); with fewer than three chapters the middle splits, or a two-year bad market gives its second year to the middle; a first bad year inside before / arrives / estate stays there (`badYear`) and no later bad chapter is made; the estate is five years, or a third of horizons under 15. Chapters index rows (years), not ages. eVelo's Social Security line is the plan input, its loan-to-value its own median, and "the market falls" reads the change in the median portfolio (there's no per-year market return). Why: keeps every year in one chapter and 3–6 chapters on 10–40-year horizons.
 
 ## Open questions
 - From the stage 1 review (walkthrough plan): the new atlas/solve golden and the `yearly` golden are pinned for arm64 only (this machine); on CI's x64 the atlas/solve test is skipped and the yearly hash is only logged. Add the x64 hashes from the next CI run's log, as was done for `SIM_BOOTSTRAP`. The scalar cross-check pins the tallies semantically on every arch meanwhile — next push.
