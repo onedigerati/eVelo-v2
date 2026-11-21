@@ -2,6 +2,7 @@
 // crosses the Web Worker boundary.
 
 import type { FilingStatus } from './incomeTaxTypes'
+import type { SampleFuture } from './sampleFutures'
 import type { Bands, ModelMethod, Outlook } from './types'
 
 export interface IncomeInputs {
@@ -52,6 +53,20 @@ export interface IncomeYearRow {
   value: number
 }
 
+/** One year of one sample future (src/engine/sampleFutures.ts), real (today's USD): the portfolio at
+ *  the end of year y, the flows over year y. */
+export interface IncomeSampleYear {
+  portfolio: number
+  /** Dividends + muni + taxable + Treasury interest, as IncomeYearRow's four fields add. */
+  dividendsInterest: number
+  /** The other income (otherIncome, Social Security) that arrived in the year. */
+  socialSecurity: number
+  /** Sold to cover the gap (IncomeYearRow.gapSold). */
+  sold: number
+  tax: number
+  reinvested: number
+}
+
 export interface IncomeResult {
   paths: number
   years: number
@@ -73,6 +88,9 @@ export interface IncomeResult {
   totalSoldMedian: number
   /** The yields the paths start from (each fund's latest; taxable = mean of VFITX and VBMFX). */
   startYield: { stocks: number; munis: number; taxable: number }
+  /** The picked sample futures' own per-year rows, one per non-null pick in SAMPLE_KEYS order;
+   *  null under fat-tail (no replayed months to match). */
+  samples: SampleFuture<IncomeSampleYear>[] | null
 }
 
 /** Worker protocol for the mode, alongside types.ts's WorkerRequest/WorkerResponse (kept apart so

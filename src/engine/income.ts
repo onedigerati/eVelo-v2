@@ -37,8 +37,9 @@ import { budgetTotal } from './cost'
 import { DEFAULT_INPUTS } from './defaults'
 import { incomeTax } from './incomeTax'
 import type { IncomeTaxOptions, IncomeYear } from './incomeTaxTypes'
-import type { IncomeInputs, IncomeResult, IncomeYearRow } from './incomeTypes'
+import type { IncomeInputs, IncomeResult, IncomeSampleYear, IncomeYearRow } from './incomeTypes'
 import { prepare, type Prepared } from './prepare'
+import { SAMPLE_KEYS, pickSampleFutures, realStockMonthly, type SampleFuture, type SamplePicks } from './sampleFutures'
 import { generateScenarios } from './scenarios'
 import { bands, quantile } from './simulate'
 import type { MarketData, Outlook } from './types'
@@ -228,10 +229,18 @@ export function normalizeIncomeInputs(inputs: IncomeInputs): IncomeInputs {
 }
 
 /** Run every path of `runIncomePaths` on given months: `idx` holds paths × (horizonYears·12)
- *  calendar month indices, index p·T + t. The seam tests and the reference drive. */
-export function runIncomeOnMonths(market: MarketData, inputs: IncomeInputs, idx: Int32Array): IncomeResult {
+ *  calendar month indices, index p·T + t. The seam tests and the reference drive. `picks` chooses
+ *  the sample futures recorded (omitted: picked from `idx` as runIncomePaths does; null: none);
+ *  under fat-tail there are none either way. */
+export function runIncomeOnMonths(market: MarketData, inputs: IncomeInputs, idx: Int32Array, picks?: SamplePicks | null): IncomeResult {
   const n = normalizeIncomeInputs(inputs)
-  return settle(incomeSeries(market, n.outlook), n, idx)
+  return settle(incomeSeries(market, n.outlook), n, idx, picks === undefined ? picksFor(market, n, idx) : picks)
+}
+
+/** The sample futures for these months: the picker's plan-neutral rule over the drawn months, as
+ *  simulate applies it to the same draw; none under fat-tail. */
+function picksFor(market: MarketData, n: IncomeInputs, idx: Int32Array): SamplePicks | null {
+  return n.method === 'fat-tail' ? null : pickSampleFutures(idx, n.horizonYears * 12, realStockMonthly(market))
 }
 
 export function runIncomePaths(market: MarketData, inputs: IncomeInputs): IncomeResult {
@@ -239,14 +248,14 @@ export function runIncomePaths(market: MarketData, inputs: IncomeInputs): Income
   const s = incomeSeries(market, n.outlook)
   // The same call simulate makes (makeScenarios), so the drawn months are eVelo's.
   const sc = generateScenarios(s.prep, n.method, n.blockMonths, n.paths, n.horizonYears * 12, n.seed, { indicesOnly: true })
-  return settle(s, n, sc.idx!)
+  return settle(s, n, sc.idx!, picksFor(market, n, sc.idx!))
 }
 
 // Recorded per path-year, fields of IncomeYearRow other than year, age, spending and value.
 const F_DIV = 0, F_MUNI = 1, F_TAXABLE = 2, F_TREASURY = 3, F_OTHER = 4, F_TAX = 5, F_GAP = 6, F_REINV = 7
 const NFIELDS = 8
 
-function settle(s: IncomeSeries, n: IncomeInputs, idx: Int32Array): IncomeResult {
+function settle(s: IncomeSeries, n: IncomeInputs, idx: Int32Array, picks: SamplePicks | null): IncomeResult {
   const H = n.horizonYears
   const T = H * 12
   if (idx.length === 0 || idx.length % T !== 0) throw new Error(`Month indices must be paths × ${T}`)
@@ -282,6 +291,27 @@ function settle(s: IncomeSeries, n: IncomeInputs, idx: Int32Array): IncomeResult
   const soldTot = new Float64Array(paths) // per path, lifetime real gap sold
   let lasts = 0, kept = 0, pace = 0
 
+  // Sample futures: the picked paths' own rows, recorded only on those paths (one lookup per path).
+  // Two keys may pick the same path, so rows are kept per distinct path.
+  const slotOf = new Map<number, number>()
+  const sampleSlots: [SampleFuture<IncomeSampleYear>['key'], number, number][] = [] // key, path, slot
+  if (n.method !== 'fat-tail' && picks) {
+    for (const key of SAMPLE_KEYS) {
+      const path = picks[key]
+      if (path === null || path === undefined) continue
+      if (!(Number.isInteger(path) && path >= 0 && path < paths)) throw new Error(`Sample path out of range: ${key} ${path}`)
+      let slot = slotOf.get(path)
+      if (slot === undefined) {
+        slot = slotOf.size
+        slotOf.set(path, slot)
+      }
+      sampleSlots.push([key, path, slot])
+    }
+  }
+  const slotRows: IncomeSampleYear[][] = Array.from({ length: slotOf.size }, () => [])
+  const pathSlot = new Int32Array(slotOf.size > 0 ? paths : 0).fill(-1)
+  for (const [path, slot] of slotOf) pathSlot[path] = slot
+
   for (let p = 0; p < paths; p++) {
     for (let i = 0; i < NF; i++) {
       V[i] = n.portfolio * w[i]
@@ -295,6 +325,7 @@ function settle(s: IncomeSeries, n: IncomeInputs, idx: Int32Array): IncomeResult
     let failed = false, sold = false, keepsPace = true
     let base = 0
     let taxSum = 0, soldSum = 0
+    const sampleRows = pathSlot.length > 0 && pathSlot[p] >= 0 ? slotRows[pathSlot[p]] : null
     const o = p * T
     for (let t = 0; t < T; t++) {
       if (t % 12 === 0) P0 = P
@@ -385,6 +416,16 @@ function settle(s: IncomeSeries, n: IncomeInputs, idx: Int32Array): IncomeResult
       taxSum += tax / P
       soldSum += gap / P
       rec[F_REINV * H * paths + j] = reinv / P
+      if (sampleRows !== null)
+        sampleRows.push({
+          portfolio: valueRec[k * paths + p],
+          // Divided and added as IncomeYearRow's dividends, muni, taxable and Treasury fields are.
+          dividendsInterest: inc[0] / P + inc[1] / P + inc[3] / P + inc[2] / P,
+          socialSecurity: other / P,
+          sold: gap / P,
+          tax: tax / P,
+          reinvested: reinv / P,
+        })
       for (let i = 0; i < NF; i++) inc[i] = 0
     }
     taxTot[p] = taxSum
@@ -426,5 +467,9 @@ function settle(s: IncomeSeries, n: IncomeInputs, idx: Int32Array): IncomeResult
     totalTaxMedian: median50(taxTot),
     totalSoldMedian: median50(soldTot),
     startYield: { stocks: y0[0], munis: y0[1], taxable: (y0[2] + y0[3]) / 2 },
+    samples:
+      n.method === 'fat-tail' || picks === null
+        ? null
+        : sampleSlots.map(([key, path, slot]) => ({ key, path, years: slotRows[slot].map((r) => ({ ...r })) })),
   }
 }
