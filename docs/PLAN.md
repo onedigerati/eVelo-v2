@@ -8,17 +8,18 @@ On the Living on Income results, the comparison card gets a "Holdings" switch wi
 
 ## Now
 Mode: autopilot — unattended
-Stage 1 of 3 · Swapped runs
-Risk: UI only (figures shown as plan results; the mapping is proven by tests)
+Stage 2 of 3 · The switch
+Risk: UI only
 Checks:
-- [ ] eVelo's mix maps onto the mode's shares by asset class: equity, real estate, commodity and crypto count as stocks; bonds count as bonds; MUB and VWITX count as munis within the bonds; a plan with no bonds gives muni share 0 (proof: test)
-- [ ] The swapped eVelo plan is the saved plan with holdings = the mode's four funds at its weights, built without the sanitizer (which drops the bond funds), and it simulates over the same months as the unswapped plan (proof: test)
-- [ ] Each swapped run is paired with the inputs it ran for and cached for the session by its key, so switching back is instant, and a swapped run never cancels the plan's own run (proof: test)
-- [ ] The sample futures Same storm picks are the same path indices with eVelo on the mode's mix as on its own (proof: test)
+- [ ] The comparison card has a "Holdings" switch with three choices (Each its own · Both on eVelo's mix · Both on this mode's mix), a radio group reachable and operable by keyboard; "Each its own" is the default and the default view is unchanged from before this plan (proof: e2e screenshots + keyboard script)
+- [ ] Picking a shared mix re-runs the borrowing plan (via `useSwapPair`) and the columns and the comparison chart show the swapped pair's results; switching back to a seen choice is instant (no loading state) (proof: e2e)
+- [ ] The borrowing plan's mix bar shows the borrowed mix with a "borrowed" tag; a line says what's being compared; on "Both on eVelo's mix" a note says the mode's run is approximate (mapped onto its stock and muni shares) (proof: e2e screenshots)
+- [ ] The switch goes back to "Each its own" on leaving the results and coming back, and neither saved plan changes (storage and share link unchanged) (proof: e2e)
+- [ ] It works at a 390px phone width with no horizontal scroll, and with reduced motion (proof: e2e screenshots)
 Open: none
 
 ## Stages
-- [ ] 1. Swapped runs — the mix mapping (pure, tested), the swapped eVelo plan and income inputs, session-cached runs on their own clients, paired with their inputs
+- [x] 1. Swapped runs — the mix mapping (pure, tested), the swapped eVelo plan and income inputs, session-cached runs on their own clients, paired with their inputs
 - [ ] 2. The switch — the three-way Holdings switch on the card, the borrowed tag on the mix bar, the "what's compared" line and the approximate note, columns and chart following, reset on leaving, phone and keyboard
 - [ ] 3. Below the card — the walkthrough and Same storm follow the switch (Same storm gets the swapped plan); release
 
@@ -32,6 +33,9 @@ Open: none
 - 2026-11-24 · Agents: balanced (the old plan's wide line is dropped) — user picked "Balanced".
 - 2026-11-24 · Scale: three stages, one release; no scale signal fired, planned as one plan.
 - 2026-11-24 · No research: nothing outside the repo changes this plan.
+- 2026-11-24 · (unattended) Single stocks (`stock` class) count as stocks in the mapping; unknown symbols and non-positive weights are dropped and the rest renormalised, and an empty mix gives no swapped run ("empty"). Why: the logged rule didn't name single stocks, and they behave as equity.
+- 2026-11-24 · (unattended) Swapped runs share one dedicated `IncomeClient` (own worker), so a newer swapped run supersedes only an older swapped one; a failed run retries on remount. Why: keeps one extra worker, never touches the plans' own clients.
+- 2026-11-24 · Stage 1: "same months" needs no new code — `prepare` back-fills every holding to month 0, so the calendar is the whole bundled market whatever the holdings; the test proves it on the default and a young-holdings plan.
 
 ## Open questions
 - From the stage 3 review: the samples goldens are arm64-only like the others (see the x64 item), and the income samples golden hashes the bundled `market.json`, so `npm run data:refresh` changes it (as it already does the other income goldens) — refresh the hashes with the data.

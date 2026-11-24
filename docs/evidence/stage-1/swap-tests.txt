@@ -1,0 +1,24 @@
+$ npx vitest run src/ui/income/__tests__/swap.test.ts src/ui/income/__tests__/swapRuns.test.ts --reporter=verbose
+
+ RUN  v5.1.0 /home/jonah/src/repos/eVelo-v2
+
+ ✓ src/ui/income/__tests__/swapRuns.test.ts > SwapRuns > pairs each swapped run with the inputs it ran for and caches it for the session by its key 3ms
+ ✓ src/ui/income/__tests__/swapRuns.test.ts > SwapRuns > a swapped run never cancels the plan’s own runs: they sit on other clients and workers 3ms
+ ✓ src/ui/income/__tests__/swapRuns.test.ts > SwapRuns > a newer swapped run supersedes only an older swapped run of its kind; neither is cached or failed 1ms
+ ✓ src/ui/income/__tests__/swapRuns.test.ts > resolvePair > “Each its own” passes both plans’ own results through, with their own inputs 0ms
+ ✓ src/ui/income/__tests__/swapRuns.test.ts > resolvePair > a shared mix reads the borrower’s swapped run (loading until it is in, error if it fails), paired with its inputs 2ms
+ ✓ src/ui/income/__tests__/swap.test.ts > mixShares: eVelo holdings onto the mode’s shares > reads asset classes from the ticker index (and knows the mode’s own funds) 2ms
+ ✓ src/ui/income/__tests__/swap.test.ts > mixShares: eVelo holdings onto the mode’s shares > equity, real estate, commodity and crypto count as stocks; bonds as bonds; MUB and VWITX as munis within the bonds 0ms
+ ✓ src/ui/income/__tests__/swap.test.ts > mixShares: eVelo holdings onto the mode’s shares > a plan with no bonds gives muni share 0 (and stock share 1) 0ms
+ ✓ src/ui/income/__tests__/swap.test.ts > mixShares: eVelo holdings onto the mode’s shares > weights are renormalised; zero, non-finite and unknown holdings are left out; nothing left gives null 0ms
+ ✓ src/ui/income/__tests__/swap.test.ts > mixShares: eVelo holdings onto the mode’s shares > the default eVelo plan maps to 90% stocks, no munis; the mode’s own mix maps back onto its own shares 0ms
+ ✓ src/ui/income/__tests__/swap.test.ts > mixShares: eVelo holdings onto the mode’s shares > the swapped income inputs are the mode’s own with the two shares from eVelo’s mix (null for an empty mix) 0ms
+ ✓ src/ui/income/__tests__/swap.test.ts > the swapped eVelo plan > is the saved plan with holdings = the mode’s four funds at its weights, built without the sanitizer 1ms
+ ✓ src/ui/income/__tests__/swap.test.ts > the swapped eVelo plan > simulates over the same months as the unswapped plan (whole calendar, same drawn months) 117ms
+ ✓ src/ui/income/__tests__/swap.test.ts > Same storm under the swap > picks the same path indices with eVelo on the mode’s mix as on its own (real engine calls) 103ms
+
+ Test Files  2 passed (2)
+      Tests  14 passed (14)
+   Start at  13:41:41
+   Duration  362ms (tests 61%, import 19%, transform 18%, worker 1%)
+
