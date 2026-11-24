@@ -16,6 +16,9 @@ Agents: wide — confirmed 2026-11-21 15:45
 - [x] 3. Matched sample futures — both engines return per-year rows for a few chosen path indices (same months in both), picked by a plan-neutral market rule
 - [x] 4. Same storm — the future chips, both net worths and eVelo loan-to-value with the call line and forced sales, captions, gated on "same futures"; release
 
+## Fixes
+- 2026-11-24 · The comparison card now shows each plan's holdings: a thin weight-split bar with ticker labels under each column's name (eVelo's own holdings; Living on Income's SPY / munis / taxable bonds), top four plus "N more", one sentence for screen readers — typecheck, 1,642 tests, build, income-compare e2e, screenshots at 1280 light/dark and 390
+
 ## Decisions
 - 2026-11-21 · The walkthrough sits under the existing comparison; it doesn't replace the comparison chart — user.
 - 2026-11-21 · Play story stops at the end of each chapter; Next chapter carries on — user.

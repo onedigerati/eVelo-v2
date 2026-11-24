@@ -13,7 +13,7 @@ import type { PlanInputs, SimulationResult } from '../../engine/types'
 import { selectSync, useEveloPlan, useIncomeStore } from '../../state/incomeState'
 import { sim } from '../../state/sim'
 import { useStore } from '../../state/store'
-import { compareColumns, compareHeading, EVELO_MEANING, incomeColumn, isDiffLine, likeForLike, MEASURES, stableKey, statText, type CompareColumn, type MeasureKey } from './compare'
+import { compareColumns, compareHeading, EVELO_MEANING, incomeColumn, incomeHoldings, isDiffLine, likeForLike, MEASURES, mixParts, mixPercent, mixSentence, stableKey, statText, type CompareColumn, type MeasureKey, type MixPart } from './compare'
 import { CompareChart } from './CompareChart'
 import type { CompareSeries } from './compareChart'
 import { IncomeClient, type IncomeComputed } from './incomeClient'
@@ -78,6 +78,10 @@ function CompareBody({ computed, wide }: IncomeCompareProps) {
   const lines = useMemo(() => likeForLike(plan, computed.inputs), [plan, computed.inputs])
   // The differences that stop this being like for like go up under the heading; the rest stay below.
   const diffs = lines.filter(isDiffLine)
+  const mixes = useMemo(
+    () => ({ income: mixParts(incomeHoldings(computed.inputs)), evelo: mixParts(plan.holdings) }),
+    [computed.inputs, plan.holdings],
+  )
   const notes = lines.filter((l) => !isDiffLine(l))
 
   const onKey = (e: KeyboardEvent<HTMLDivElement>) => {
@@ -138,12 +142,13 @@ function CompareBody({ computed, wide }: IncomeCompareProps) {
         <div id="cmp-panel" role="tabpanel" aria-labelledby={`icmp-tab-${measure}`} className="icmp__panel" data-measure={measure}>
           <div className="icmp__cols">
             {cols ? (
-              cols.map((c) => <Column key={c.key} col={c} />)
+              cols.map((c) => <Column key={c.key} col={c} mix={mixes[c.key]} />)
             ) : (
               <>
-                <Column col={incomeColumn(measure, computed.result)} />
+                <Column col={incomeColumn(measure, computed.result)} mix={mixes.income} />
                 <div className="icmp__col icmp__col--evelo icmp__col--wait" data-testid="compare-col-evelo">
                   <span className="icmp__name">eVelo</span>
+                  {mixes.evelo.length > 0 && <Mix name="eVelo" parts={mixes.evelo} side="evelo" />}
                   <p className="icmp__wait">
                     {run.status === 'empty'
                       ? 'Your eVelo plan has no holdings yet, so there is nothing to compare.'
@@ -178,13 +183,40 @@ function CompareBody({ computed, wide }: IncomeCompareProps) {
   )
 }
 
-function Column({ col }: { col: CompareColumn }) {
+/** Shades of the column's own hue for the mix, darkest = largest; the "N more" slice is neutral. */
+const MIX_TONES = [100, 72, 50, 32, 20]
+
+/** A plan's holdings: a thin bar split by weight, with ticker labels keyed to its shades. */
+function Mix({ name, parts, side }: { name: string; parts: readonly MixPart[]; side: CompareColumn['key'] }) {
+  const tone = (p: MixPart, i: number) => (p.rest ? 'color-mix(in oklab, var(--ink-3) 40%, transparent)' : `color-mix(in oklab, var(--icmp-ink) ${MIX_TONES[i] ?? 20}%, transparent)`)
+  return (
+    <div className="icmp__mix" data-testid={`compare-mix-${side}`}>
+      <span className="sr-only">{mixSentence(name, parts)}</span>
+      <div className="icmp__mix-bar" aria-hidden="true">
+        {parts.map((p, i) => (
+          <span key={p.symbol} style={{ flexGrow: p.weight, background: tone(p, i) }} />
+        ))}
+      </div>
+      <ul className="icmp__mix-keys" aria-hidden="true">
+        {parts.map((p, i) => (
+          <li key={p.symbol}>
+            <span className="icmp__mix-dot" style={{ background: tone(p, i) }} />
+            <span className="icmp__mix-sym">{p.symbol}</span> {mixPercent(p.weight)}
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+function Column({ col, mix }: { col: CompareColumn; mix: readonly MixPart[] }) {
   return (
     <div className={`icmp__col icmp__col--${col.key}`} data-testid={`compare-col-${col.key}`}>
       <div className="icmp__name-row">
         <span className="icmp__name">{col.name}</span>
         <span className="icmp__how">{col.how}</span>
       </div>
+      {mix.length > 0 && <Mix name={col.name} parts={mix} side={col.key} />}
       <div className="icmp__rate-row">
         <span className="icmp__rate" data-testid={`compare-rate-${col.key}`}>
           {measureRate(col.rate)}

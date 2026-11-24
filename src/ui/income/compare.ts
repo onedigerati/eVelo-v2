@@ -10,7 +10,7 @@
 import { CITY_BY_ID } from '../../data/cities'
 import { normalizeIncomeInputs } from '../../engine/income'
 import type { IncomeInputs, IncomeResult } from '../../engine/incomeTypes'
-import type { City, PlanInputs, SimulationResult } from '../../engine/types'
+import type { City, Holding, PlanInputs, SimulationResult } from '../../engine/types'
 import { fieldMatches, snapshotFromEvelo, SYNC_FIELDS, type SyncField, type SyncSnapshot } from '../../state/incomeSync'
 import { deathTaxWord, taxStatus } from '../atlas/taxLines'
 import { currencyCompact, number, percent } from '../format'
@@ -102,6 +102,52 @@ export function eveloColumn(m: MeasureKey, evelo: SimulationResult): CompareColu
       { key: 'loan', label: 'Loan at the end', value: last(evelo.loan.p50) },
     ],
   }
+}
+
+/** One slice of a plan's holdings mix, as the comparison shows it. `rest` = the "N more" slice. */
+export interface MixPart {
+  symbol: string
+  weight: number
+  rest?: number
+}
+
+/** How many holdings are named before the rest fold into "N more". */
+export const MIX_SHOWN = 4
+
+/** A plan's mix, largest first: the top MIX_SHOWN by name, the rest folded into one slice.
+ *  Zero and non-finite weights are dropped; weights are taken as given (they sum to 1). */
+export function mixParts(holdings: readonly Holding[]): MixPart[] {
+  const live = holdings.filter((h) => Number.isFinite(h.weight) && h.weight > 0).sort((a, b) => b.weight - a.weight)
+  if (live.length <= MIX_SHOWN + 1) return live.map((h) => ({ symbol: h.symbol, weight: h.weight }))
+  const top = live.slice(0, MIX_SHOWN).map((h) => ({ symbol: h.symbol, weight: h.weight }))
+  const rest = live.slice(MIX_SHOWN)
+  return [...top, { symbol: `${rest.length} more`, weight: rest.reduce((s, h) => s + h.weight, 0), rest: rest.length }]
+}
+
+/** The mode's holdings from its two shares: SPY, then munis (VWITX), then the taxable half-and-half
+ *  (VFITX, VBMFX), as the engine invests them (incomeTypes.ts). */
+export function incomeHoldings(i: Pick<IncomeInputs, 'stockShare' | 'muniShare'>): Holding[] {
+  const bonds = 1 - i.stockShare
+  const taxable = bonds * (1 - i.muniShare)
+  return [
+    { symbol: 'SPY', weight: i.stockShare },
+    { symbol: 'VWITX', weight: bonds * i.muniShare },
+    { symbol: 'VFITX', weight: taxable / 2 },
+    { symbol: 'VBMFX', weight: taxable / 2 },
+  ]
+}
+
+/** A slice's share as shown: whole percent, "<1%" for a sliver. */
+export function mixPercent(w: number): string {
+  return w > 0 && w < 0.005 ? '<1%' : percent(w)
+}
+
+/** The mix as one sentence for screen readers: "eVelo holds SPY 60%, QQQ 25% and BND 15%." */
+export function mixSentence(name: string, parts: readonly MixPart[]): string {
+  if (!parts.length) return `${name} holds nothing yet.`
+  const items = parts.map((p) => `${p.symbol} ${mixPercent(p.weight)}`)
+  const list = items.length === 1 ? items[0] : `${items.slice(0, -1).join(', ')} and ${items[items.length - 1]}`
+  return `${name} holds ${list}.`
 }
 
 /** The two columns for a measure, straight from the two results' fields. */

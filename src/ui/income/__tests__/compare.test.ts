@@ -12,7 +12,7 @@ import { generateScenarios } from '../../../engine/scenarios'
 import { simulate } from '../../../engine/simulate'
 import type { MarketData, PlanInputs } from '../../../engine/types'
 import { applySync, snapshotFromEvelo, SYNC_FIELDS } from '../../../state/incomeSync'
-import { compareColumns, compareHeading, eveloRate, incomeRate, likeForLike, localTaxWords, MEASURES, SAME_HEADING, SIDE_BY_SIDE_HEADING, stableKey, statText } from '../compare'
+import { compareColumns, compareHeading, eveloRate, incomeHoldings, incomeRate, likeForLike, localTaxWords, MEASURES, mixParts, mixPercent, mixSentence, SAME_HEADING, SIDE_BY_SIDE_HEADING, stableKey, statText } from '../compare'
 import { chartGeom, compareReadout, compareRows, compareSummary, yMaxOf, type CompareSeries } from '../compareChart'
 import { currencyCompact } from '../../format'
 
@@ -240,5 +240,35 @@ describe('compare chart readout', () => {
     const mid = compareReadout([income, later], 1)
     expect(mid.rows.map((x) => x.values[1])).toEqual([1.1e6, 1e6])
     expect(mid.gap?.ahead).toBe('income')
+  })
+})
+
+describe('holdings mix', () => {
+  it('lists holdings largest first and folds the tail into "N more"', () => {
+    const h = [0.05, 0.4, 0.1, 0.2, 0.15, 0.1].map((weight, i) => ({ symbol: `S${i}`, weight }))
+    const parts = mixParts(h)
+    expect(parts.map((p) => p.symbol)).toEqual(['S1', 'S3', 'S4', 'S2', '2 more'])
+    expect(parts[4].rest).toBe(2)
+    expect(parts[4].weight).toBeCloseTo(0.15)
+  })
+  it('names five holdings rather than folding one', () => {
+    const h = [0.2, 0.2, 0.2, 0.2, 0.2].map((weight, i) => ({ symbol: `S${i}`, weight }))
+    expect(mixParts(h).some((p) => p.rest)).toBe(false)
+  })
+  it('drops zero weights', () => {
+    expect(mixParts([{ symbol: 'SPY', weight: 1 }, { symbol: 'BND', weight: 0 }])).toEqual([{ symbol: 'SPY', weight: 1 }])
+  })
+  it('splits the mode into SPY, munis and the taxable half-and-half', () => {
+    const h = incomeHoldings({ stockShare: 0.6, muniShare: 0.5 })
+    expect(h.map((x) => x.symbol)).toEqual(['SPY', 'VWITX', 'VFITX', 'VBMFX'])
+    expect(h.map((x) => x.weight).reduce((a, b) => a + b, 0)).toBeCloseTo(1)
+    expect(h[1].weight).toBeCloseTo(0.2)
+    expect(h[2].weight).toBeCloseTo(0.1)
+  })
+  it('says the mix as a sentence', () => {
+    expect(mixSentence('eVelo', mixParts([{ symbol: 'SPY', weight: 0.6 }, { symbol: 'QQQ', weight: 0.25 }, { symbol: 'BND', weight: 0.15 }]))).toBe(
+      'eVelo holds SPY 60%, QQQ 25% and BND 15%.',
+    )
+    expect(mixPercent(0.003)).toBe('<1%')
   })
 })
