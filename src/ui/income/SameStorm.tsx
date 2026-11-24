@@ -19,6 +19,9 @@ export interface SameStormProps {
   income: IncomeInputs
   incomeResult: IncomeResult
   phone: boolean
+  /** Under a shared mix, the line saying which mix both plans are on (the props are then the
+   *  swapped pair's plan and results). Absent under "Each its own". */
+  mixLine?: string | null
 }
 
 export { defaultFuture } from './stormChips'
@@ -35,7 +38,7 @@ const listId = (futures: readonly StormFuture[]) => {
   return id
 }
 
-export function SameStorm({ evelo, eveloResult, income, incomeResult, phone }: SameStormProps) {
+export function SameStorm({ evelo, eveloResult, income, incomeResult, phone, mixLine }: SameStormProps) {
   const gate = useMemo(() => stormGate(evelo, eveloResult, income, incomeResult), [evelo, eveloResult, income, incomeResult])
   const futures = useMemo(() => (gate === 'shown' ? stormFutures(evelo, eveloResult, income, incomeResult) : []), [gate, evelo, eveloResult, income, incomeResult])
   const start = useMemo<Partial<StormStart>>(
@@ -45,6 +48,11 @@ export function SameStorm({ evelo, eveloResult, income, incomeResult, phone }: S
   // The picked chip, for exactly the futures it was picked on (new results go back to the default).
   const [picked, setPicked] = useState<StormPick>(null)
   const chips = useRef<(HTMLButtonElement | null)[]>([])
+  const mix = mixLine ? (
+    <p className="ss__mix" data-testid="storm-mix">
+      {mixLine}
+    </p>
+  ) : null
 
   if (gate !== 'shown' || futures.length === 0) {
     return (
@@ -52,6 +60,7 @@ export function SameStorm({ evelo, eveloResult, income, incomeResult, phone }: S
         <h3 id="ss-head" className="ss__title">
           {TITLE}
         </h3>
+        {mix}
         <p className="ss__hidden" data-testid="storm-hidden">
           {stormHiddenText(gate === 'shown' ? 'no-samples' : gate, evelo.blockMonths)}
         </p>
@@ -78,6 +87,7 @@ export function SameStorm({ evelo, eveloResult, income, incomeResult, phone }: S
           {TITLE}
         </h3>
         <p className="ss__lede">The chapters follow each year’s median. Pick a future to see both plans live through the same months.</p>
+        {mix}
       </div>
 
       <div className="ss__chips" role="tablist" aria-label="Future" onKeyDown={onKey}>

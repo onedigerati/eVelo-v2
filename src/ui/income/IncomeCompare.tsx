@@ -6,7 +6,8 @@
 // for exactly this plan (the main pipeline runs on every route), else the main client's cache, else
 // a run of `simulate` through the mode's own worker, kept for the session. Once eVelo's result is
 // in, the two-retirements walkthrough (Walkthrough.tsx) follows the comparison, then Same storm
-// (SameStorm.tsx), which needs the plan as well as the results.
+// (SameStorm.tsx), which needs the plan as well as the results. Both follow the Holdings switch
+// (holdings.ts's belowCard): on a shared mix they read the swapped pair, each with its inputs.
 
 import { useEffect, useMemo, useRef, useState, type KeyboardEvent } from 'react'
 import type { PlanInputs, SimulationResult } from '../../engine/types'
@@ -16,7 +17,7 @@ import { useStore } from '../../state/store'
 import { SegmentedControl } from '../primitives'
 import { compareHeading, EVELO_MEANING, eveloColumn, incomeColumn, isDiffLine, likeForLike, MEASURES, mixPercent, mixSentence, stableKey, statText, type CompareColumn, type MeasureKey, type MixPart } from './compare'
 import { CompareChart } from './CompareChart'
-import { approxNote, comparedLine, compareMixes, compareSides, HOLDINGS_CHOICES, waitText, type MixView } from './holdings'
+import { approxNote, belowCard, belowWaitText, comparedLine, compareMixes, compareSides, HOLDINGS_CHOICES, waitText, type MixView } from './holdings'
 import type { CompareSeries } from './compareChart'
 import { IncomeClient, type IncomeComputed } from './incomeClient'
 import { measureRate } from './IncomeMeasures'
@@ -101,8 +102,9 @@ function CompareBody({ computed, wide }: IncomeCompareProps) {
     tabs.current[j]?.focus()
   }
 
-  // The walkthrough and Same storm still read the plans' own results (stage 3 moves them).
-  const evelo = run.status === 'done' ? run.result : null
+  // The walkthrough and Same storm follow the switch: the plans' own results under "Each its own",
+  // the swapped pair under a shared mix (stage 3).
+  const below = belowCard(holdings, pair, plan, computed, run)
   const series: CompareSeries[] = []
   if (sides.income.status === 'done') {
     const i = sides.income.value
@@ -207,8 +209,24 @@ function CompareBody({ computed, wide }: IncomeCompareProps) {
           </ul>
         )}
       </section>
-      {evelo && <Walkthrough income={computed.result} incomeInputs={computed.inputs} evelo={evelo} wide={wide} />}
-      {evelo && <SameStorm evelo={plan} eveloResult={evelo} income={computed.inputs} incomeResult={computed.result} phone={!wide} />}
+      {below.status === 'done' && (
+        <>
+          <Walkthrough income={below.income.result} incomeInputs={below.income.inputs} evelo={below.evelo.result} wide={wide} mixLine={below.mixLine} />
+          <SameStorm
+            evelo={below.evelo.inputs}
+            eveloResult={below.evelo.result}
+            income={below.income.inputs}
+            incomeResult={below.income.result}
+            phone={!wide}
+            mixLine={below.mixLine}
+          />
+        </>
+      )}
+      {below.status !== 'done' && holdings !== 'own' && (
+        <p className="icmp__below-wait" role={below.status === 'error' ? 'alert' : 'status'} data-testid="below-wait" data-wait={below.status}>
+          {belowWaitText(holdings, below.status)}
+        </p>
+      )}
     </>
   )
 }

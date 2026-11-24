@@ -252,3 +252,12 @@
     animation: none !important;
   }
 }
+
+/* Under a shared mix (the comparison's Holdings switch): which mix both plans are on. */
+.wt__mix {
+  margin: 0;
+  max-width: 68ch;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--ink);
+}

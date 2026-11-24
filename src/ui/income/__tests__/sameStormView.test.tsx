@@ -198,3 +198,19 @@ describe('chip selection', () => {
   })
 })
 
+
+describe('SameStorm under the Holdings switch', () => {
+  const line = 'Both plans on eVelo’s mix: 90% stocks, 10% bonds.'
+  it('says which mix it’s on, shown or hidden; nothing extra without a mix line', () => {
+    state.gate = 'shown'
+    state.futures = [early, typical, late]
+    const shown = renderToStaticMarkup(<SameStorm {...props} phone={false} mixLine={line} />)
+    expect(shown).toContain('data-testid="storm-mix"')
+    expect(shown).toContain(line)
+    expect(render()).not.toContain('storm-mix')
+    state.gate = 'different-futures'
+    const hidden = renderToStaticMarkup(<SameStorm {...props} phone={false} mixLine={line} />)
+    expect(hidden).toContain('data-testid="storm-hidden"')
+    expect(hidden).toContain(line)
+  })
+})

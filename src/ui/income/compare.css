@@ -448,3 +448,10 @@
     padding: var(--space-4);
   }
 }
+
+/* Below the card while a shared mix's run is worked out: the walkthrough and Same storm wait. */
+.icmp__below-wait {
+  margin: var(--space-4) 0 0;
+  font-size: var(--fs-sm);
+  color: var(--ink-2);
+}

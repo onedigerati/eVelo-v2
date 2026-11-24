@@ -30,6 +30,13 @@ const [{ runIncomePaths, INCOME_DEFAULTS }, { simulate }, { CITIES }, { DEFAULT_
   load('src/ui/format.ts'),
 ])
 const { swappedEveloPlan, swappedIncomeInputs } = await load('src/ui/income/swap.ts')
+const [{ buildYears, chapters }, { chapterStory }, { stormFutures, stormGate }, { defaultFuture }, { incomeEvent, eveloEvent }] = await Promise.all([
+  load('src/ui/income/walkthrough.ts'),
+  load('src/ui/income/walkthroughStory.ts'),
+  load('src/ui/income/sameStorm.ts'),
+  load('src/ui/income/stormChips.ts'),
+  load('src/ui/income/twinLedgers.ts'),
+])
 const market = JSON.parse(readFileSync(ROOT + 'src/data/market.json', 'utf8'))
 
 const pct = (r) => `${Math.round(r * 100)}%`
@@ -264,6 +271,122 @@ await withPreview(async (base) => {
         check((await page.getByRole('radiogroup', { name: 'Holdings' }).getByRole('radio', { name: 'Each its own' }).getAttribute('aria-checked')) === 'true' && (await page.locator(COMPARE).getAttribute('data-holdings')) === 'own', `${name}: back to "Each its own" after leaving`)
         const after2 = await saved(page)
         check(after2[0] === before[0] && after2[1] === before[1], `${name}: still nothing saved after leaving`)
+        check(errors.length === 0, `${name}: no uncaught page errors${errors.length ? ': ' + errors.join(' | ') : ''}`)
+        await ctx.close()
+      }
+    }
+
+    // Below the card (Swap the mixes, stage 3): the walkthrough and Same storm follow the switch. On a
+    // shared mix their figures are node's runs of the swapped pair (chapters, story, chart, ledgers,
+    // Play, the storm's futures and captions), with the same path indices as each plan's own; each
+    // says which mix it's on, the card's line; "Each its own" is as before.
+    {
+      const onEvelo = swappedIncomeInputs(home.inputs, home.plan)
+      const onMode = swappedEveloPlan(home.plan, home.inputs)
+      const swIr = runIncomePaths(market, onEvelo)
+      const swEr = simulate(market, CITIES, onMode)
+      /** What node expects below the card for a pair of runs. */
+      const expectBelow = (incInputs, ir, evInputs, er) => {
+        const years = buildYears(ir, incInputs, er)
+        const list = chapters(years, incInputs)
+        const story = chapterStory(list[0], years, { income: incInputs, evelo: er.inputs })
+        const gate = stormGate(evInputs, er, incInputs, ir)
+        const futures = gate === 'shown' ? stormFutures(evInputs, er, incInputs, ir) : []
+        return { years, list, story, gate, futures, f: futures[defaultFuture(futures)] }
+      }
+      const X = {
+        own: expectBelow(home.inputs, home.ir, home.plan, home.er),
+        evelo: expectBelow(onEvelo, swIr, home.plan, home.er),
+        income: expectBelow(home.inputs, home.ir, onMode, swEr),
+      }
+      const picks = (x) => JSON.stringify(x.futures.map((f) => [f.keys.join('+'), f.path]))
+      console.log(`node: storm gates own ${X.own.gate}, on eVelo's mix ${X.evelo.gate}, on the mode's mix ${X.income.gate}; paths ${picks(X.own)}`)
+      check(X.own.gate === 'shown' && X.evelo.gate === 'shown' && X.income.gate === 'shown', 'node: Same storm shown for the own pair and both swapped pairs')
+      check(picks(X.evelo) === picks(X.own) && picks(X.income) === picks(X.own), 'node: the swapped pairs pick the same path indices as the own pair')
+      const nw = (row, k) => (row[k] ? currencyCompact(row[k].netWorth) : 'not lived')
+      const pairDone = (page, mode) =>
+        page
+          .waitForFunction((m) => {
+            const el = document.querySelector('[data-testid="income-compare"]')
+            return el?.dataset.holdings === m && el.dataset.pair === 'done' && !!document.querySelector('[data-testid="walkthrough"]') && !!document.querySelector('[data-testid="same-storm"]')
+          }, mode, { timeout: 90000 })
+          .then(() => true, () => false)
+      const belowCheck = async (page, name, x, mixLine) => {
+        const WT = page.getByTestId('walkthrough')
+        const tabs = await page.locator('[data-testid^="wt-tab-"]').evaluateAll((els) => els.map((e) => e.dataset.testid.slice(7)))
+        check(JSON.stringify(tabs) === JSON.stringify(x.list.map((c) => c.key)), `${name}: walkthrough chapters ${tabs.join(',')} (node ${x.list.map((c) => c.key).join(',')})`)
+        for (const who of ['income', 'evelo']) {
+          const fig = (await page.locator(`[data-testid="wt-story-${who}"] .wt__part-figure`).innerText()).trim()
+          check(fig === x.story[who].figure, `${name}: walkthrough story (${who}) figure ${fig} (node ${x.story[who].figure})`)
+        }
+        const year = Number(await WT.getAttribute('data-year'))
+        const row = x.years[year]
+        const label = (await page.locator('[data-testid="wt-chart"] svg[role="img"]').getAttribute('aria-label')) ?? ''
+        check(label.includes(`Living on income ${nw(row, 'income')}`) && label.includes(`eVelo ${nw(row, 'evelo')}`), `${name}: overview chart at age ${row.age}: income ${nw(row, 'income')}, eVelo ${nw(row, 'evelo')}`)
+        const prev = year > 0 ? x.years[year - 1] : null
+        const ev = [await text(page, 'tl-income-event'), await text(page, 'tl-evelo-event')]
+        const nodeEv = [incomeEvent(row.income, prev?.income), eveloEvent(row.evelo, prev?.evelo)]
+        check(ev[0] === nodeEv[0] && ev[1] === nodeEv[1], `${name}: twin ledgers' events match node (${ev.join(' | ')})`)
+        // Same storm: the chips are node's futures (same paths), the selected one's caption is node's.
+        const SS = page.getByTestId('same-storm')
+        const gate = await SS.getAttribute('data-gate')
+        const chips = await page.locator('[data-testid^="storm-chip-"]').allInnerTexts()
+        check(gate === 'shown' && JSON.stringify(chips) === JSON.stringify(x.futures.map((f) => f.label)), `${name}: Same storm shown with chips ${chips.join(' / ')}`)
+        const cap = await text(page, 'storm-caption')
+        check((await SS.getAttribute('data-future')) === x.f.keys[0] && cap === x.f.caption.replace(/\s+/g, ' ').trim(), `${name}: storm caption is node's for ${x.f.label} (${cap})`)
+        // The mix lines.
+        const wtMix = await page.getByTestId('wt-mix').count()
+        const ssMix = await page.getByTestId('storm-mix').count()
+        if (!mixLine) check(wtMix === 0 && ssMix === 0, `${name}: no mix line below the card`)
+        else {
+          const a = await text(page, 'wt-mix')
+          const b = await text(page, 'storm-mix')
+          check(a === b && a.startsWith(mixLine), `${name}: walkthrough and Same storm say which mix (${a})`)
+        }
+      }
+      for (const w of [1280, 390]) {
+        const name = `below-${w}`
+        const { ctx, page, errors } = await open(browser, base, home, { w, scheme: 'dark' })
+        check(await ready(page), `${name}: the comparison appears`)
+        await page.getByTestId('same-storm').waitFor({ timeout: 30000 })
+        await belowCheck(page, `${name} each its own`, X.own, null)
+        const group = page.getByRole('radiogroup', { name: 'Holdings' })
+
+        await group.getByRole('radio', { name: 'Both on eVelo’s mix' }).click()
+        const waited = await page.getByTestId('below-wait').count().then((n) => n > 0, () => false)
+        check(await pairDone(page, 'evelo'), `${name}: below the card follows eVelo's mix${waited ? ' (after a waiting line)' : ''}`)
+        const what = await text(page, 'compare-what')
+        await belowCheck(page, `${name} eVelo's mix`, X.evelo, what)
+        check(/approximate/.test(await text(page, 'wt-mix')), `${name}: the mix line says the mode's side is approximate`)
+        check((await overflow(page)) <= 0, `${name}: no horizontal scroll below the card on eVelo's mix`)
+        await page.getByTestId('walkthrough').screenshot({ path: `${SHOTS}income-compare-${name}-evelo-mix-walkthrough.png` })
+        await page.getByTestId('same-storm').screenshot({ path: `${SHOTS}income-compare-${name}-evelo-mix-storm.png` })
+
+        await group.getByRole('radio', { name: 'Both on this mode’s mix' }).click()
+        check(await pairDone(page, 'income'), `${name}: below the card follows the mode's mix`)
+        const what2 = await text(page, 'compare-what')
+        await belowCheck(page, `${name} mode's mix`, X.income, what2)
+        check((await text(page, 'wt-mix')) === what2 && (await text(page, 'storm-mix')) === what2, `${name}: on the mode's mix the lines are the card's (${what2})`)
+        // Play story on the shared mix: stops on the chapter's last year, with node's figures there.
+        await page.getByTestId('wt-play').click()
+        await page.waitForFunction(() => document.querySelector('[data-testid="wt-play"]')?.getAttribute('aria-pressed') === 'false', null, { timeout: 30000 })
+        const end = X.income.list[0].to
+        const y = Number(await page.getByTestId('walkthrough').getAttribute('data-year'))
+        const label = (await page.locator('[data-testid="wt-chart"] svg[role="img"]').getAttribute('aria-label')) ?? ''
+        check(y === end && label.includes(`eVelo ${nw(X.income.years[end], 'evelo')}`), `${name}: Play story stops at the chapter's end with the swapped eVelo's figure (${nw(X.income.years[end], 'evelo')})`)
+        // A non-default future: its caption is node's for the swapped pair.
+        const other = X.income.futures.find((f) => f !== X.income.f)
+        if (other) {
+          await page.getByTestId(`storm-chip-${other.keys[0]}`).click()
+          check((await text(page, 'storm-caption')) === other.caption.replace(/\s+/g, ' ').trim(), `${name}: storm caption for ${other.label} is node's on the mode's mix`)
+        }
+        check((await overflow(page)) <= 0, `${name}: no horizontal scroll below the card on the mode's mix`)
+        await page.getByTestId('walkthrough').screenshot({ path: `${SHOTS}income-compare-${name}-mode-mix-walkthrough.png` })
+        await page.getByTestId('same-storm').screenshot({ path: `${SHOTS}income-compare-${name}-mode-mix-storm.png` })
+
+        await group.getByRole('radio', { name: 'Each its own' }).click()
+        await page.waitForFunction(() => document.querySelector('[data-testid="income-compare"]')?.dataset.holdings === 'own', null, { timeout: 5000 })
+        await belowCheck(page, `${name} back to each its own`, X.own, null)
         check(errors.length === 0, `${name}: no uncaught page errors${errors.length ? ': ' + errors.join(' | ') : ''}`)
         await ctx.close()
       }

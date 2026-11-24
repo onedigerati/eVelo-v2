@@ -75,3 +75,15 @@ describe('Walkthrough', () => {
     expect(isPlaying(null, a)).toBe(false)
   })
 })
+
+describe('Walkthrough under the Holdings switch', () => {
+  it('says which mix it’s on when given a mix line, and nothing extra under “Each its own”', () => {
+    const line = 'Both plans on this mode’s mix: 60% stocks, 40% bonds.'
+    const shared = renderToStaticMarkup(<Walkthrough income={income} incomeInputs={inputs} evelo={evelo} wide mixLine={line} />)
+    expect(shared).toContain('data-testid="wt-mix"')
+    expect(shared).toContain(line)
+    const own = renderToStaticMarkup(<Walkthrough income={income} incomeInputs={inputs} evelo={evelo} wide />)
+    expect(own).not.toContain('wt-mix')
+    expect(renderToStaticMarkup(<Walkthrough income={income} incomeInputs={inputs} evelo={evelo} wide mixLine={null} />)).toBe(own)
+  })
+})

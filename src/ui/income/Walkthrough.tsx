@@ -28,6 +28,9 @@ export interface WalkthroughProps {
   incomeInputs: IncomeInputs
   evelo: SimulationResult
   wide: boolean
+  /** Under a shared mix (the comparison's Holdings switch), the line saying which mix both plans are
+   *  on; the results passed are then the swapped pair's. Absent under "Each its own". */
+  mixLine?: string | null
 }
 
 const agesOf = (c: Chapter, years: readonly WalkYear[]) => {
@@ -36,7 +39,7 @@ const agesOf = (c: Chapter, years: readonly WalkYear[]) => {
   return a === b ? `${a}` : `${a}–${b}`
 }
 
-export function Walkthrough({ income, incomeInputs, evelo, wide }: WalkthroughProps) {
+export function Walkthrough({ income, incomeInputs, evelo, wide, mixLine }: WalkthroughProps) {
   const years = useMemo(() => buildYears(income, incomeInputs, evelo), [income, incomeInputs, evelo])
   const list = useMemo(() => chapters(years, incomeInputs), [years, incomeInputs])
   const inputs = useMemo<WalkInputs>(() => ({ income: incomeInputs, evelo: evelo.inputs }), [incomeInputs, evelo.inputs])
@@ -101,6 +104,11 @@ export function Walkthrough({ income, incomeInputs, evelo, wide }: WalkthroughPr
           How the two plans play out
         </h2>
         <p className="wt__lede">Same money, same markets. One lives on what the portfolio pays and sells for the rest; the other never sells and borrows.</p>
+        {mixLine && (
+          <p className="wt__mix" data-testid="wt-mix">
+            {mixLine}
+          </p>
+        )}
       </div>
 
       <div className="wt__rail" role="tablist" aria-label="Chapters" onKeyDown={onKey} style={{ gridTemplateColumns: `repeat(${list.length}, minmax(0, 1fr))` }}>

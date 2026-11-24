@@ -7,14 +7,14 @@ On the Living on Income results, the comparison card gets a "Holdings" switch wi
 2026-11-24 · tests: 1642 pass, 1 skipped · typecheck: clean · build: ok · income-compare e2e: pass
 
 ## Now
-Mode: autopilot — unattended
+Mode: paused — stage 3 is built and verified; the release (push to main → GitHub Pages) is outward-facing and waits for the user
 Stage 3 of 3 · Below the card
 Risk: UI only
 Checks:
-- [ ] The walkthrough (chapters, overview chart, twin ledgers, Play story) follows the Holdings switch: on a shared mix it reads the swapped pair's per-year results, and on "Each its own" it is unchanged (proof: test + e2e)
-- [ ] Same storm follows the switch: it gets the swapped plan, shows the same sample futures (same path indices) and each plan's path on the shared mix, and its "same futures" gate still holds (proof: test + e2e)
-- [ ] On a shared mix the walkthrough and Same storm say which mix they're on (the borrowed one), consistent with the card's line (proof: e2e screenshots)
-- [ ] The full suite is green and the earlier stages' checks still pass in the built app at 1280 and 390 (proof: e2e)
+- [x] The walkthrough (chapters, overview chart, twin ledgers, Play story) follows the Holdings switch: on a shared mix it reads the swapped pair's per-year results, and on "Each its own" it is unchanged (proof: test + e2e)
+- [x] Same storm follows the switch: it gets the swapped plan, shows the same sample futures (same path indices) and each plan's path on the shared mix, and its "same futures" gate still holds (proof: test + e2e)
+- [x] On a shared mix the walkthrough and Same storm say which mix they're on (the borrowed one), consistent with the card's line (proof: e2e screenshots)
+- [x] The full suite is green and the earlier stages' checks still pass in the built app at 1280 and 390 (proof: e2e)
 - [ ] It's live: pushed to main and the GitHub Pages deploy serves the switch (proof: deploy run + live page)
 Open: none
 
@@ -36,6 +36,7 @@ Open: none
 - 2026-11-24 · (unattended) Single stocks (`stock` class) count as stocks in the mapping; unknown symbols and non-positive weights are dropped and the rest renormalised, and an empty mix gives no swapped run ("empty"). Why: the logged rule didn't name single stocks, and they behave as equity.
 - 2026-11-24 · (unattended) Swapped runs share one dedicated `IncomeClient` (own worker), so a newer swapped run supersedes only an older swapped one; a failed run retries on remount. Why: keeps one extra worker, never touches the plans' own clients.
 - 2026-11-24 · (unattended) The switch reuses the app's `SegmentedControl`; under "Each its own" there is no compared line, so the only change to the default view is the switch row; while a swapped run loads the chart shows only the plan that isn't re-running. Why: one look and keyboard model across the app, and the default view stays as it was.
+- 2026-11-24 · (unattended) Same storm reads its sample futures from the cached swapped run's result (each run already carries them), so it needs no extra run and never touches the plans' own runs. While a shared mix loads, the walkthrough and Same storm are replaced by one waiting line; the walkthrough keeps its chapter and year across finished switches, Same storm goes back to its default future. Their mix line is the card's "what's compared" line, plus "Living on income's side is approximate." on eVelo's mix. Why: one story on the page, no extra worker work.
 - 2026-11-24 · Stage 1: "same months" needs no new code — `prepare` back-fills every holding to month 0, so the calendar is the whole bundled market whatever the holdings; the test proves it on the default and a young-holdings plan.
 
 ## Open questions

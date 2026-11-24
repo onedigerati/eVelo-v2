@@ -1,0 +1,18 @@
+$ npx vitest run src/ui/income/__tests__/belowCard.test.ts --reporter=verbose
+
+ RUN  v5.1.0 /home/jonah/src/repos/eVelo-v2
+
+ ✓ src/ui/income/__tests__/belowCard.test.ts > what the walkthrough and Same storm read (belowCard) > “Each its own” reads each plan’s own result exactly as before, with no mix line 1ms
+ ✓ src/ui/income/__tests__/belowCard.test.ts > what the walkthrough and Same storm read (belowCard) > a shared mix reads the swapped pair, each result with the inputs it ran for 7ms
+ ✓ src/ui/income/__tests__/belowCard.test.ts > what the walkthrough and Same storm read (belowCard) > waits (loading / error / empty) while the shared mix’s run isn’t in, never falling back to the own results 0ms
+ ✓ src/ui/income/__tests__/belowCard.test.ts > what the walkthrough and Same storm read (belowCard) > the mix line is the card’s “what’s compared” line (plus “approximate” when the mode borrows) 0ms
+ ✓ src/ui/income/__tests__/belowCard.test.ts > what the walkthrough and Same storm read (belowCard) > the waiting line names what’s being re-run 0ms
+ ✓ src/ui/income/__tests__/belowCard.test.ts > below the card on a shared mix, from real engine runs > the walkthrough reads the swapped pair’s per-year results; “Each its own” is unchanged 4ms
+ ✓ src/ui/income/__tests__/belowCard.test.ts > below the card on a shared mix, from real engine runs > Same storm gets the swapped plan: same path indices, each plan’s path on the shared mix, gate holds 4ms
+ ✓ src/ui/income/__tests__/belowCard.test.ts > below the card on a shared mix, from real engine runs > the gate still holds on a shared mix: unsynced futures hide Same storm with the comparison’s reason 0ms
+
+ Test Files  1 passed (1)
+      Tests  8 passed (8)
+   Start at  14:08:02
+   Duration  781ms (import 90%, transform 7%, tests 2%)
+

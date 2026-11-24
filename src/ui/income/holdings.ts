@@ -87,3 +87,36 @@ export function waitText(side: 'income' | 'evelo', status: 'loading' | 'error' |
   if (status === 'error') return `${who} couldn’t be worked out. Pick another mix, or reload to try again.`
   return side === 'evelo' ? 'Re-running eVelo on this mode’s mix…' : 'Re-running living on income on eVelo’s mix…'
 }
+
+/** The mix line the walkthrough and Same storm show under a shared mix: the card's "what's
+ *  compared" line, plus a short approximate note when the mode borrows eVelo's mix. Null under
+ *  "Each its own" (unchanged). */
+export function belowMixLine(mode: HoldingsMode, plan: Pick<PlanInputs, 'holdings'>, income: Pick<IncomeInputs, 'stockShare' | 'muniShare'>): string | null {
+  const line = comparedLine(mode, plan, income)
+  if (!line) return null
+  return mode === 'evelo' ? `${line} Living on income’s side is approximate.` : line
+}
+
+/** What the walkthrough and Same storm (below the card) read under a choice. "Each its own": each
+ *  plan's own result exactly as before the switch (nothing below until eVelo's is in). A shared mix:
+ *  the swapped pair, with a waiting state while the borrower's run is worked out. */
+export type BelowCard =
+  | { status: 'done'; evelo: EveloComputed; income: IncomeComputed; mixLine: string | null }
+  | { status: 'loading' | 'error' | 'empty'; mixLine: string | null }
+
+export function belowCard(mode: HoldingsMode, pair: SwapPair, plan: PlanInputs, ownIncome: IncomeComputed, ownEvelo: OwnEvelo): BelowCard {
+  if (mode === 'own') {
+    if (ownEvelo.status !== 'done') return { status: ownEvelo.status, mixLine: null }
+    return { status: 'done', evelo: { inputs: plan, result: ownEvelo.result }, income: ownIncome, mixLine: null }
+  }
+  const mixLine = belowMixLine(mode, plan, ownIncome.inputs)
+  if (pair.status !== 'done' || pair.mode !== mode) return { status: pair.status === 'done' ? 'loading' : pair.status, mixLine }
+  return { status: 'done', evelo: pair.evelo, income: pair.income, mixLine }
+}
+
+/** The calm line below the card while a shared mix's run is worked out (or can't be). */
+export function belowWaitText(mode: Exclude<HoldingsMode, 'own'>, status: 'loading' | 'error' | 'empty'): string {
+  if (status === 'empty') return 'The walkthrough and Same storm need an eVelo plan with holdings to share a mix.'
+  if (status === 'error') return 'The walkthrough and Same storm can’t follow this mix right now. Pick another mix, or reload to try again.'
+  return mode === 'evelo' ? 'The walkthrough and Same storm will follow once living on income is re-run on eVelo’s mix…' : 'The walkthrough and Same storm will follow once eVelo is re-run on this mode’s mix…'
+}

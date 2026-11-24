@@ -1,0 +1,34 @@
+$ node e2e/door.mjs
+ok   desktop: nothing names the mode before the coupon
+ok   desktop: CTA is a link to #plan named "Find your eVelo"
+ok   desktop: label click goes to #plan at once (got #plan)
+ok   desktop: one arrow click goes to #plan after the wait (still #home at 150 ms, there by ~320 ms)
+ok   desktop: a quick double-click on the arrow goes to #plan after the wait (still #home at 150 ms)
+ok   desktop: three quick arrow clicks stay put, no coupon
+ok   desktop: five quick arrow clicks turn the arrow into a coupon
+ok   desktop: the fifth click doesn't navigate
+ok   desktop: coupon links to #income
+ok   desktop: CTA still links to #plan
+ok   desktop: coupon still there after reload
+ok   desktop: label click with the coupon goes to #plan
+ok   desktop: no uncaught page errors
+ok   phone: nothing names the mode before the coupon
+ok   phone: CTA is a link to #plan named "Find your eVelo"
+ok   phone: label click goes to #plan at once (got #plan)
+ok   phone: one arrow click goes to #plan after the wait (still #home at 150 ms, there by ~307 ms)
+ok   phone: a quick double-click on the arrow goes to #plan after the wait (still #home at 150 ms)
+ok   phone: three quick arrow clicks stay put, no coupon
+ok   phone: five quick arrow clicks turn the arrow into a coupon
+ok   phone: the fifth click doesn't navigate
+ok   phone: coupon links to #income
+ok   phone: CTA still links to #plan
+ok   phone: coupon still there after reload
+ok   phone: label click with the coupon goes to #plan
+ok   phone: no uncaught page errors
+ok   touch: CTA has touch-action: manipulation (got manipulation)
+ok   touch: five quick taps on the arrow show the coupon and stay on #home
+ok   touch: no uncaught page errors
+ok   keyboard: Enter on the CTA goes to #plan at once
+ok   a fresh tab without the flag shows the arrow, not the coupon
+
+e2e door passed
