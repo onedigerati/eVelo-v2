@@ -8,18 +8,11 @@ On Living on income's walkthrough, the net-worth overview chart becomes the year
 
 ## Now
 Agents: wide — confirmed 2026-11-24 15:32
-Stage 2 of 2 · Chart as scrubber
-Risk: UI only
-Checks:
-- [x] The slider row (slider, "N years" label, big age) is gone and the chart is the only year control: it has slider semantics (role, value, min/max, value text naming the age), and its keys (arrows, Home, End) and the tap/sideways-drag pick logic are covered by tests; existing tests and e2e scripts follow the change (proof: test + `npm run e2e`)
-- [x] On the built app at a 390px phone (touch emulation), a tap on the chart picks that year and a mostly sideways drag scrubs the picked year, while a vertical drag scrolls the page without changing the year (proof: scripted run + screenshots, a test can't judge touch gestures or layout)
-- [x] On the built app at desktop width, hover, click and keyboard still work as in stage 1 without the slider, the screen-reader name and value read sensibly, both themes and reduced motion read cleanly (proof: scripted run + screenshots)
-- [x] It's live on GitHub Pages (proof: deploy run + the live page)
-Open: none
+All stages done — the walkthrough chart is the year scrubber with a hover readout, live on GitHub Pages 2026-11-24.
 
 ## Stages
 - [x] 1. Hover readout — crosshair and `ChartReadout` box on mouse hover, previewing without picking; click picks; readout on keyboard focus
-- [ ] 2. Chart as scrubber — slider row removed; the chart gets slider semantics; tap and sideways drag pick the year on touch, vertical scroll kept; tests and e2e follow; release
+- [x] 2. Chart as scrubber — slider row removed; the chart gets slider semantics; tap and sideways drag pick the year on touch, vertical scroll kept; tests and e2e follow; release
 
 ## Decisions
 - 2026-11-24 · Hover previews a year (crosshair and readout box); a click picks it, and only a pick moves the story, ledgers and marker — user, from the recommendation ("Let's go with your recommendation"). Why: the page below stays put as the pointer crosses the chart.
