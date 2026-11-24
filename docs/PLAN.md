@@ -14,6 +14,9 @@ All stages done. Swap the mixes is live on GitHub Pages (deployed 2026-11-24 fro
 - [x] 2. The switch — the three-way Holdings switch on the card, the borrowed tag on the mix bar, the "what's compared" line and the approximate note, columns and chart following, reset on leaving, phone and keyboard
 - [x] 3. Below the card — the walkthrough and Same storm follow the switch (Same storm gets the swapped plan); release
 
+## Fixes
+- 2026-11-24 · Living on income's "How this is worked out" gains "Comparing on one mix": how the Holdings switch re-runs the borrowing plan (eVelo on the mode's mix exact, the mode on eVelo's mapped mix approximate) — typecheck, 1680 tests and a desktop/390px look at the styleguide preview
+
 ## Decisions
 - 2026-11-24 · The other way round (the mode on eVelo's mix) is an approximation mapped onto the mode's stock and muni shares, labelled as approximate — user: "Yes I am okay." Why: the mode needs dividend and interest history, which only SPY and the three Vanguard bond funds have.
 - 2026-11-24 · A temporary what-if: neither saved plan changes, and the switch goes back to "Each its own" on leaving — user, from the recommendation.

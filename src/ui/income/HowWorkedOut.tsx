@@ -54,6 +54,16 @@ export function HowWorkedOut({ defaultOpen = false }: { defaultOpen?: boolean })
           The chart and the year-by-year table show the typical future: each figure is that year’s median across all futures.
         </p>
 
+        <h3>Comparing on one mix</h3>
+        <p>
+          When the comparison with eVelo puts both plans on one mix, the plan that borrows the other’s mix is run again on it,
+          through the same drawn months; everything else about it stays its own. eVelo on this mode’s mix is exact: it holds SPY,
+          VWITX, VFITX and VBMFX at this mode’s weights. This mode on eVelo’s mix is an approximation, since it can only hold its
+          own four funds: eVelo’s bond funds count as bonds and everything else as stocks, its muni funds set the muni share of
+          the bonds, and any surplus is reinvested at that mapped mix. It’s a what-if: neither saved plan changes, and the
+          figures above the comparison are always this mode on your own mix.
+        </p>
+
         <h3>Tax</h3>
         <p>
           Federal tax follows 2026 law, single or married filing jointly, with the standard deduction always taken. Qualified
