@@ -3,6 +3,8 @@
 ## Goal
 A walkthrough on the Living on Income results that shows how the mode and eVelo play out year by year. It sits under the existing comparison and appears once the user has synced. Chapters come from the plan itself: the years before Social Security, the year it starts, a bad market, the long middle and the estate. Each chapter has a short paragraph per plan, an overview net-worth chart with the chapter's span lit (tap to jump), a year slider limited to the chapter, and twin ledgers for that year (where the spending came from, loan-to-value, what happened). Play story runs a chapter's years and stops at its end. A "Same storm" view then shows both plans on the same sampled futures (early crash, typical, late crash, lucky), with eVelo's loan-to-value against the margin-call line. Reviewed as mockups: [variations](https://claude.ai/artifact/2Wzywk5Z3mJB1NpvwWaREe), [chosen design](https://claude.ai/artifact/FZJmkd58dghXUo5hngVevE). Done = it works from the engines' real results on desktop and a 390px phone, with the keyboard and with reduced motion, the main site is unchanged, and it's live.
 
+Evidence: [2026-11-21-two-retirements/evidence/](2026-11-21-two-retirements/evidence/)
+
 ## Baseline
 2026-11-21 · tests: 1457 pass, 1 skipped · typecheck: clean
 
