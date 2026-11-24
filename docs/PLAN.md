@@ -1,39 +1,33 @@
-# Swap the mixes plan
+# Walkthrough scrubber plan
 
 ## Goal
-On the Living on Income results, the comparison card gets a "Holdings" switch with three choices: each plan on its own mix, both on eVelo's mix, or both on this mode's mix. Picking a shared mix re-runs the plan that borrows it, so the user sees the two strategies on one portfolio. eVelo on the mode's mix is exact (SPY, VWITX, VFITX and VBMFX at the mode's weights). The mode on eVelo's mix is an approximation, mapped onto its stocks/bonds and muni shares and labelled as approximate on the page. The borrowing plan's mix bar shows the borrowed mix with a "borrowed" tag. A line says what's being compared. The columns, the chart, the walkthrough and Same storm all follow the switch. It's a what-if: neither saved plan changes, and it goes back to "Each its own" on leaving. Done = it works from the engines' real results on desktop and a 390px phone, with the keyboard and reduced motion, the default view is unchanged, and it's live.
+On Living on income's walkthrough, the net-worth overview chart becomes the year scrubber and shows a hover readout. Moving the mouse over it previews a year: a crosshair and the mode's floating readout box (the same `ChartReadout` as the income and comparison charts), headed "end of age N", with each plan's net worth, the gap, eVelo's portfolio, loan and loan-to-value, and what Living on income sold that year. A click still picks the year (story, ledgers and the dashed marker follow). The slider row under the chart (slider, "N years" label, big age) goes away, so there's one way to choose a year: the chart takes the slider's place for the keyboard and screen readers, and on a phone a sideways drag or tap on the chart picks the year while vertical scrolling still works. Done = it works from the engines' real results on desktop and a 390px phone, with the keyboard, both themes and reduced motion, and it's live.
 
 ## Baseline
-2026-11-24 · tests: 1642 pass, 1 skipped · typecheck: clean · build: ok · income-compare e2e: pass
+2026-11-24 · tests: 1680 pass, 1 skipped · typecheck: clean
 
 ## Now
-All stages done. Swap the mixes is live on GitHub Pages (deployed 2026-11-24 from f5d0853, checked on the live site — [stage 3 evidence](evidence/stage-3/report.md)).
+Stage 1 of 2 · Hover readout
+Risk: UI only
+Checks:
+- [ ] The row under a pointer x and the readout's figures (each plan's net worth, the gap, eVelo's portfolio/loan/LTV, income's shares sold; a plan not lived that year shows none) come from the walkthrough's year rows (proof: test)
+- [ ] On the built app at desktop width, moving the mouse over the chart shows a crosshair and the readout box for the year under it, inside the plot at both ends, while the dashed marker, story, ledgers and slider stay on the picked year; leaving the chart hides it; a click picks the hovered year (proof: scripted run + screenshots, a test can't judge pointer behaviour or layout)
+- [ ] Keyboard focus on the chart shows the readout for the picked year and arrows move it; both themes read cleanly (proof: scripted run + screenshots, a test can't judge focus or colour)
+Open: none
 
 ## Stages
-- [x] 1. Swapped runs — the mix mapping (pure, tested), the swapped eVelo plan and income inputs, session-cached runs on their own clients, paired with their inputs
-- [x] 2. The switch — the three-way Holdings switch on the card, the borrowed tag on the mix bar, the "what's compared" line and the approximate note, columns and chart following, reset on leaving, phone and keyboard
-- [x] 3. Below the card — the walkthrough and Same storm follow the switch (Same storm gets the swapped plan); release
-
-## Fixes
-- 2026-11-24 · Living on income's "How this is worked out" gains "Comparing on one mix": how the Holdings switch re-runs the borrowing plan (eVelo on the mode's mix exact, the mode on eVelo's mapped mix approximate) — typecheck, 1680 tests and a desktop/390px look at the styleguide preview
-- 2026-11-24 · An ⓘ tip beside the comparison's Holdings switch says in two sentences what picking a shared mix does (the existing InfoTip) — typecheck, 1680 tests, and a scripted check on the built app: hover, focus, Escape and Tab on desktop, tap open/close at 390px, both themes, no overflow
+- [ ] 1. Hover readout — crosshair and `ChartReadout` box on mouse hover, previewing without picking; click picks; readout on keyboard focus
+- [ ] 2. Chart as scrubber — slider row removed; the chart gets slider semantics; tap and sideways drag pick the year on touch, vertical scroll kept; tests and e2e follow; release
 
 ## Decisions
-- 2026-11-24 · The other way round (the mode on eVelo's mix) is an approximation mapped onto the mode's stock and muni shares, labelled as approximate — user: "Yes I am okay." Why: the mode needs dividend and interest history, which only SPY and the three Vanguard bond funds have.
-- 2026-11-24 · A temporary what-if: neither saved plan changes, and the switch goes back to "Each its own" on leaving — user, from the recommendation.
-- 2026-11-24 · The walkthrough and Same storm follow the switch, so the whole page tells one story — user, from the recommendation.
-- 2026-11-24 · Asset-class mapping for the approximation: `etf-equity`, `etf-real-estate`, `commodity` and `crypto` count as stocks (SPY); `etf-bond` counts as bonds; MUB and VWITX count as munis within the bonds; any other bond is taxable — PM default.
-- 2026-11-24 · The swapped eVelo plan is built in memory and never sanitized, saved or put in a share link: `sanitizeHoldings` keeps only symbols in the ticker index, which leaves out the three bond funds on purpose — PM default, from the survey.
-- 2026-11-24 · With a shared mix the comparison reads a re-run of the borrowing plan, not its cached result; "Each its own" still reads each plan's own result as before (refines the 2026-11-18 "the comparison reads the eVelo plan's own result") — PM default.
-- 2026-11-24 · Agents: balanced (the old plan's wide line is dropped) — user picked "Balanced".
-- 2026-11-24 · Scale: three stages, one release; no scale signal fired, planned as one plan.
+- 2026-11-24 · Hover previews a year (crosshair and readout box); a click picks it, and only a pick moves the story, ledgers and marker — user, from the recommendation ("Let's go with your recommendation"). Why: the page below stays put as the pointer crosses the chart.
+- 2026-11-24 · The chart replaces the year slider, so there's one way to choose a year; the slider, its "N years" label and the big age number go — user. Why: no redundant controls.
+- 2026-11-24 · The readout reuses the mode's `ChartReadout` (as the income and comparison charts do), headed "end of age N" because the chart plots year ends — user, from the recommendation.
+- 2026-11-24 · Readout figures: each plan's net worth, the gap between them, eVelo's portfolio, loan and loan-to-value, and Living on income's shares sold that year; the full breakdown stays in the ledgers — user, from the recommendation.
+- 2026-11-24 · On touch, a tap or a mostly sideways drag on the chart picks the year (no separate preview), and vertical drags scroll the page — user, from the recommendation.
+- 2026-11-24 · Agents: balanced (carried from the last plan).
+- 2026-11-24 · Scale: two stages, one release; no scale signal fired, planned as one plan.
 - 2026-11-24 · No research: nothing outside the repo changes this plan.
-- 2026-11-24 · (unattended) Single stocks (`stock` class) count as stocks in the mapping; unknown symbols and non-positive weights are dropped and the rest renormalised, and an empty mix gives no swapped run ("empty"). Why: the logged rule didn't name single stocks, and they behave as equity.
-- 2026-11-24 · (unattended) Swapped runs share one dedicated `IncomeClient` (own worker), so a newer swapped run supersedes only an older swapped one; a failed run retries on remount. Why: keeps one extra worker, never touches the plans' own clients.
-- 2026-11-24 · (unattended) The switch reuses the app's `SegmentedControl`; under "Each its own" there is no compared line, so the only change to the default view is the switch row; while a swapped run loads the chart shows only the plan that isn't re-running. Why: one look and keyboard model across the app, and the default view stays as it was.
-- 2026-11-24 · (unattended) Same storm reads its sample futures from the cached swapped run's result (each run already carries them), so it needs no extra run and never touches the plans' own runs. While a shared mix loads, the walkthrough and Same storm are replaced by one waiting line; the walkthrough keeps its chapter and year across finished switches, Same storm goes back to its default future. Their mix line is the card's "what's compared" line, plus "Living on income's side is approximate." on eVelo's mix. Why: one story on the page, no extra worker work.
-- 2026-11-24 · Released at the user's "deploy": pushed to main, Pages deploy run 45478131037 succeeded, and the income-compare e2e passed 262/262 against the live site.
-- 2026-11-24 · Stage 1: "same months" needs no new code — `prepare` back-fills every holding to month 0, so the calendar is the whole bundled market whatever the holdings; the test proves it on the default and a young-holdings plan.
 
 ## Open questions
 - The scheduled "Refresh market data" workflow failed on 2026-11-23 (run 45236365283), separate from this plan — look at its log.
@@ -135,3 +129,4 @@ All stages done. Swap the mixes is live on GitHub Pages (deployed 2026-11-24 fro
 - 2026-11-19 · Living on income: a hidden mode (the arrow's coupon, `#income`) that retires on dividends and bond interest with munis, its own 2026 income-tax model, six one-sentence questions over a layered income chart, three measures, and an opt-in sync with a side-by-side comparison against eVelo, live on GitHub Pages — [plan](plans/2026-11-19-living-on-income.md) · [evidence](plans/2026-11-19-living-on-income/evidence/)
 - 2026-11-19 · Chart readouts: hover, tap and keyboard readouts on the Living on Income chart and the comparison chart, live on GitHub Pages — [plan](plans/2026-11-19-chart-readouts.md) · [evidence](plans/2026-11-19-chart-readouts/evidence/)
 - 2026-11-21 · Two retirements walkthrough: chapters from the plan, an overview chart, twin ledgers and Play story under the comparison, then Same storm on matched sample futures, live on GitHub Pages — [plan](plans/2026-11-21-two-retirements.md) · [evidence](plans/2026-11-21-two-retirements/evidence/)
+- 2026-11-24 · Swap the mixes: a three-way Holdings switch on the comparison card that re-runs the borrowing plan on a shared mix (eVelo on the mode's mix exact, the mode on eVelo's mix approximate), with a borrowed tag, a what's-compared line, and the walkthrough and Same storm following, live on GitHub Pages — [plan](plans/2026-11-24-swap-the-mixes.md) · [evidence](plans/2026-11-24-swap-the-mixes/evidence/)
