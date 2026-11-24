@@ -358,6 +358,11 @@
   gap: var(--space-2) var(--space-3);
   min-width: 0;
 }
+.icmp__holdings-head {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
 .icmp__holdings-label {
   font-size: var(--fs-xs);
   font-weight: 560;

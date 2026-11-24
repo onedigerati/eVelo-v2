@@ -14,10 +14,10 @@ import type { PlanInputs, SimulationResult } from '../../engine/types'
 import { selectSync, useEveloPlan, useIncomeStore } from '../../state/incomeState'
 import { sim } from '../../state/sim'
 import { useStore } from '../../state/store'
-import { SegmentedControl } from '../primitives'
+import { InfoTip, SegmentedControl } from '../primitives'
 import { compareHeading, EVELO_MEANING, eveloColumn, incomeColumn, isDiffLine, likeForLike, MEASURES, mixPercent, mixSentence, stableKey, statText, type CompareColumn, type MeasureKey, type MixPart } from './compare'
 import { CompareChart } from './CompareChart'
-import { approxNote, belowCard, belowWaitText, comparedLine, compareMixes, compareSides, HOLDINGS_CHOICES, waitText, type MixView } from './holdings'
+import { approxNote, belowCard, belowWaitText, comparedLine, compareMixes, compareSides, HOLDINGS_CHOICES, HOLDINGS_TIP, waitText, type MixView } from './holdings'
 import type { CompareSeries } from './compareChart'
 import { IncomeClient, type IncomeComputed } from './incomeClient'
 import { measureRate } from './IncomeMeasures'
@@ -146,8 +146,13 @@ function CompareBody({ computed, wide }: IncomeCompareProps) {
         </div>
 
         <div className="icmp__holdings" data-testid="compare-holdings">
-          <span id="icmp-holdings-label" className="icmp__holdings-label">
-            Holdings
+          <span className="icmp__holdings-head">
+            <span id="icmp-holdings-label" className="icmp__holdings-label">
+              Holdings
+            </span>
+            <InfoTip label="How the Holdings switch works" side="bottom">
+              {HOLDINGS_TIP}
+            </InfoTip>
           </span>
           <SegmentedControl<HoldingsMode>
             options={HOLDINGS_CHOICES.map((c) => ({ value: c.value, label: c.label }))}

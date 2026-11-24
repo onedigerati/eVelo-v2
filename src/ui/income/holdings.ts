@@ -38,6 +38,10 @@ export function comparedLine(mode: HoldingsMode, plan: Pick<PlanInputs, 'holding
   return shares ? `Both plans on eVelo’s mix: ${sharesText(shares)}.` : 'Both plans on eVelo’s mix.'
 }
 
+/** The switch's info tip; the full account is in "How this is worked out" (HowWorkedOut.tsx). */
+export const HOLDINGS_TIP =
+  'Picking a shared mix re-runs the plan that borrows it, through the same market months, so you see both strategies on one portfolio. eVelo on this mode’s mix is exact; this mode on eVelo’s mix is approximate, since it can only hold SPY and three Vanguard bond funds.'
+
 export const APPROX_NOTE =
   'Living on income’s run here is approximate: it can only hold SPY and three Vanguard bond funds, so eVelo’s mix is mapped onto its stock and muni shares.'
 

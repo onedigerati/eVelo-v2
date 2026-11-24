@@ -16,6 +16,7 @@ All stages done. Swap the mixes is live on GitHub Pages (deployed 2026-11-24 fro
 
 ## Fixes
 - 2026-11-24 · Living on income's "How this is worked out" gains "Comparing on one mix": how the Holdings switch re-runs the borrowing plan (eVelo on the mode's mix exact, the mode on eVelo's mapped mix approximate) — typecheck, 1680 tests and a desktop/390px look at the styleguide preview
+- 2026-11-24 · An ⓘ tip beside the comparison's Holdings switch says in two sentences what picking a shared mix does (the existing InfoTip) — typecheck, 1680 tests, and a scripted check on the built app: hover, focus, Escape and Tab on desktop, tap open/close at 390px, both themes, no overflow
 
 ## Decisions
 - 2026-11-24 · The other way round (the mode on eVelo's mix) is an approximation mapped onto the mode's stock and muni shares, labelled as approximate — user: "Yes I am okay." Why: the mode needs dividend and interest history, which only SPY and the three Vanguard bond funds have.
