@@ -7,7 +7,7 @@ On Living on income's walkthrough, the net-worth overview chart becomes the year
 2026-11-24 · tests: 1680 pass, 1 skipped · typecheck: clean
 
 ## Now
-Mode: autopilot — unattended
+Mode: paused — release: push d7d479f to main to deploy stage 2 to GitHub Pages (user asked to deploy; the hook holds pushes)
 Agents: wide — confirmed 2026-11-24 15:32
 Stage 2 of 2 · Chart as scrubber
 Risk: UI only
