@@ -1,0 +1,14 @@
+$ npm test
+
+> evelo@2.0.0 test
+> vitest run
+
+
+ RUN  v5.1.0 /home/jonah/src/repos/eVelo-v2
+
+
+ Test Files  112 passed (112)
+      Tests  1670 passed | 1 skipped (1671)
+   Start at  13:49:41
+   Duration  10.26s (transform 52%, tests 34%, import 13%)
+

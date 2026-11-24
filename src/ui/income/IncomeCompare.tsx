@@ -13,12 +13,16 @@ import type { PlanInputs, SimulationResult } from '../../engine/types'
 import { selectSync, useEveloPlan, useIncomeStore } from '../../state/incomeState'
 import { sim } from '../../state/sim'
 import { useStore } from '../../state/store'
-import { compareColumns, compareHeading, EVELO_MEANING, incomeColumn, incomeHoldings, isDiffLine, likeForLike, MEASURES, mixParts, mixPercent, mixSentence, stableKey, statText, type CompareColumn, type MeasureKey, type MixPart } from './compare'
+import { SegmentedControl } from '../primitives'
+import { compareHeading, EVELO_MEANING, eveloColumn, incomeColumn, isDiffLine, likeForLike, MEASURES, mixPercent, mixSentence, stableKey, statText, type CompareColumn, type MeasureKey, type MixPart } from './compare'
 import { CompareChart } from './CompareChart'
+import { approxNote, comparedLine, compareMixes, compareSides, HOLDINGS_CHOICES, waitText, type MixView } from './holdings'
 import type { CompareSeries } from './compareChart'
 import { IncomeClient, type IncomeComputed } from './incomeClient'
 import { measureRate } from './IncomeMeasures'
 import { SameStorm } from './SameStorm'
+import type { HoldingsMode } from './swap'
+import { useSwapPair } from './swapRuns'
 import { Walkthrough } from './Walkthrough'
 import './compare.css'
 
@@ -74,14 +78,17 @@ function CompareBody({ computed, wide }: IncomeCompareProps) {
   const plan = useEveloPlan()
   const run = useEveloResult(plan)
   const [measure, setMeasure] = useState<MeasureKey>('lasts')
+  // The Holdings switch: a what-if, local to the card (back to "Each its own" when it remounts).
+  const [holdings, setHoldings] = useState<HoldingsMode>('own')
+  const pair = useSwapPair(holdings, plan, computed, run)
+  const sides = compareSides(holdings, pair, plan, computed, run)
   const tabs = useRef<(HTMLButtonElement | null)[]>([])
   const lines = useMemo(() => likeForLike(plan, computed.inputs), [plan, computed.inputs])
   // The differences that stop this being like for like go up under the heading; the rest stay below.
   const diffs = lines.filter(isDiffLine)
-  const mixes = useMemo(
-    () => ({ income: mixParts(incomeHoldings(computed.inputs)), evelo: mixParts(plan.holdings) }),
-    [computed.inputs, plan.holdings],
-  )
+  const mixes = useMemo(() => compareMixes(holdings, plan, computed.inputs), [holdings, plan, computed.inputs])
+  const compared = comparedLine(holdings, plan, computed.inputs)
+  const approx = approxNote(holdings)
   const notes = lines.filter((l) => !isDiffLine(l))
 
   const onKey = (e: KeyboardEvent<HTMLDivElement>) => {
@@ -94,14 +101,21 @@ function CompareBody({ computed, wide }: IncomeCompareProps) {
     tabs.current[j]?.focus()
   }
 
+  // The walkthrough and Same storm still read the plans' own results (stage 3 moves them).
   const evelo = run.status === 'done' ? run.result : null
-  const cols = evelo ? compareColumns(measure, computed.result, evelo) : null
-  const series: CompareSeries[] = [{ key: 'income', label: 'Living on income', age: computed.inputs.age, bands: computed.result.value }]
-  if (evelo) series.push({ key: 'evelo', label: 'eVelo', age: evelo.inputs.age, bands: evelo.netWorth })
+  const series: CompareSeries[] = []
+  if (sides.income.status === 'done') {
+    const i = sides.income.value
+    series.push({ key: 'income', label: 'Living on income', age: i.inputs.age, bands: i.result.value })
+  }
+  if (sides.evelo.status === 'done') {
+    const e = sides.evelo.value.result
+    series.push({ key: 'evelo', label: 'eVelo', age: e.inputs.age, bands: e.netWorth })
+  }
 
   return (
     <>
-      <section className="icmp" aria-labelledby="cmp-head" data-testid="income-compare" data-evelo={run.status}>
+      <section className="icmp" aria-labelledby="cmp-head" data-testid="income-compare" data-evelo={run.status} data-holdings={holdings} data-pair={pair.status}>
         <div className="icmp__top">
           <h2 id="cmp-head" className="icmp__head">
             {compareHeading(lines)}
@@ -129,6 +143,30 @@ function CompareBody({ computed, wide }: IncomeCompareProps) {
           </div>
         </div>
 
+        <div className="icmp__holdings" data-testid="compare-holdings">
+          <span id="icmp-holdings-label" className="icmp__holdings-label">
+            Holdings
+          </span>
+          <SegmentedControl<HoldingsMode>
+            options={HOLDINGS_CHOICES.map((c) => ({ value: c.value, label: c.label }))}
+            value={holdings}
+            onChange={setHoldings}
+            aria-labelledby="icmp-holdings-label"
+            size="sm"
+            className="icmp__seg"
+          />
+          {compared && (
+            <p className="icmp__compared" data-testid="compare-what">
+              {compared}
+            </p>
+          )}
+          {approx && (
+            <p className="icmp__approx" data-testid="compare-approx">
+              {approx}
+            </p>
+          )}
+        </div>
+
         {diffs.length > 0 && (
           <ul className="icmp__lines icmp__lines--diff" aria-label="What differs" data-testid="compare-diffs">
             {diffs.map((l) => (
@@ -141,23 +179,15 @@ function CompareBody({ computed, wide }: IncomeCompareProps) {
 
         <div id="cmp-panel" role="tabpanel" aria-labelledby={`icmp-tab-${measure}`} className="icmp__panel" data-measure={measure}>
           <div className="icmp__cols">
-            {cols ? (
-              cols.map((c) => <Column key={c.key} col={c} mix={mixes[c.key]} />)
+            {sides.income.status === 'done' ? (
+              <Column col={incomeColumn(measure, sides.income.value.result)} mix={mixes.income} />
             ) : (
-              <>
-                <Column col={incomeColumn(measure, computed.result)} mix={mixes.income} />
-                <div className="icmp__col icmp__col--evelo icmp__col--wait" data-testid="compare-col-evelo">
-                  <span className="icmp__name">eVelo</span>
-                  {mixes.evelo.length > 0 && <Mix name="eVelo" parts={mixes.evelo} side="evelo" />}
-                  <p className="icmp__wait">
-                    {run.status === 'empty'
-                      ? 'Your eVelo plan has no holdings yet, so there is nothing to compare.'
-                      : run.status === 'error'
-                        ? 'eVelo’s figures couldn’t be worked out. Reload to try again.'
-                        : 'Working out eVelo’s futures…'}
-                  </p>
-                </div>
-              </>
+              <Waiting side="income" name="Living on income" status={sides.income.status} mix={mixes.income} />
+            )}
+            {sides.evelo.status === 'done' ? (
+              <Column col={eveloColumn(measure, sides.evelo.value.result)} mix={mixes.evelo} />
+            ) : (
+              <Waiting side="evelo" name="eVelo" status={sides.evelo.status} mix={mixes.evelo} />
             )}
           </div>
           <p className="icmp__meaning" data-testid="compare-meaning">
@@ -187,11 +217,14 @@ function CompareBody({ computed, wide }: IncomeCompareProps) {
 const MIX_TONES = [100, 72, 50, 32, 20]
 
 /** A plan's holdings: a thin bar split by weight, with ticker labels keyed to its shades. */
-function Mix({ name, parts, side }: { name: string; parts: readonly MixPart[]; side: CompareColumn['key'] }) {
+function Mix({ name, parts, side, borrowed }: { name: string; parts: readonly MixPart[]; side: CompareColumn['key']; borrowed?: boolean }) {
   const tone = (p: MixPart, i: number) => (p.rest ? 'color-mix(in oklab, var(--ink-3) 40%, transparent)' : `color-mix(in oklab, var(--icmp-ink) ${MIX_TONES[i] ?? 20}%, transparent)`)
   return (
-    <div className="icmp__mix" data-testid={`compare-mix-${side}`}>
-      <span className="sr-only">{mixSentence(name, parts)}</span>
+    <div className="icmp__mix" data-testid={`compare-mix-${side}`} data-borrowed={borrowed ? 'true' : undefined}>
+      <span className="sr-only">
+        {mixSentence(name, parts)}
+        {borrowed && ` Borrowed from ${side === 'income' ? 'eVelo' : 'living on income'} for this comparison.`}
+      </span>
       <div className="icmp__mix-bar" aria-hidden="true">
         {parts.map((p, i) => (
           <span key={p.symbol} style={{ flexGrow: p.weight, background: tone(p, i) }} />
@@ -204,19 +237,38 @@ function Mix({ name, parts, side }: { name: string; parts: readonly MixPart[]; s
             <span className="icmp__mix-sym">{p.symbol}</span> {mixPercent(p.weight)}
           </li>
         ))}
+        {borrowed && (
+          <li className="icmp__mix-tag" data-testid={`compare-mix-borrowed-${side}`}>
+            borrowed
+          </li>
+        )}
       </ul>
     </div>
   )
 }
 
-function Column({ col, mix }: { col: CompareColumn; mix: readonly MixPart[] }) {
+/** A column waiting on its result: under "Each its own" only eVelo's, as before the switch; under a
+ *  shared mix the borrower's while its swapped run is worked out. */
+function Waiting({ side, name, status, mix }: { side: CompareColumn['key']; name: string; status: 'loading' | 'error' | 'empty'; mix: MixView }) {
+  return (
+    <div className={`icmp__col icmp__col--${side} icmp__col--wait`} data-testid={`compare-col-${side}`} data-wait={status}>
+      <span className="icmp__name">{name}</span>
+      {mix.parts.length > 0 && <Mix name={name} parts={mix.parts} side={side} borrowed={mix.borrowed} />}
+      <p className="icmp__wait" role={status === 'error' ? 'alert' : undefined}>
+        {waitText(side, status, mix.borrowed)}
+      </p>
+    </div>
+  )
+}
+
+function Column({ col, mix }: { col: CompareColumn; mix: MixView }) {
   return (
     <div className={`icmp__col icmp__col--${col.key}`} data-testid={`compare-col-${col.key}`}>
       <div className="icmp__name-row">
         <span className="icmp__name">{col.name}</span>
         <span className="icmp__how">{col.how}</span>
       </div>
-      {mix.length > 0 && <Mix name={col.name} parts={mix} side={col.key} />}
+      {mix.parts.length > 0 && <Mix name={col.name} parts={mix.parts} side={col.key} borrowed={mix.borrowed} />}
       <div className="icmp__rate-row">
         <span className="icmp__rate" data-testid={`compare-rate-${col.key}`}>
           {measureRate(col.rate)}

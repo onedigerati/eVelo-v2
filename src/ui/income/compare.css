@@ -350,6 +350,48 @@
   color: var(--ink-3);
 }
 
+/* ---------- The Holdings switch ---------- */
+.icmp__holdings {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+  min-width: 0;
+}
+.icmp__holdings-label {
+  font-size: var(--fs-xs);
+  font-weight: 560;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+.icmp__seg {
+  max-width: 100%;
+}
+.icmp__compared,
+.icmp__approx {
+  flex-basis: 100%;
+  margin: 0;
+  font-size: var(--fs-sm);
+}
+.icmp__compared {
+  color: var(--ink);
+  font-weight: 500;
+}
+.icmp__approx {
+  color: var(--ink-2);
+}
+.icmp__mix-keys li.icmp__mix-tag {
+  padding: 0 6px;
+  border: 1px solid color-mix(in oklab, var(--icmp-ink) 45%, transparent);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-xs);
+  font-weight: 560;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--icmp-ink);
+}
+
 /* ---------- Phone ---------- */
 @media (max-width: 699px) {
   .icmp__head {
@@ -357,6 +399,19 @@
   }
   .icmp__tabs {
     width: 100%;
+  }
+  /* the three choices share the width and wrap their words */
+  .icmp__seg {
+    display: flex;
+    width: 100%;
+  }
+  .icmp__seg .seg__opt {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 4px var(--space-2);
+    white-space: normal;
+    text-align: center;
+    line-height: 1.2;
   }
   .icmp__tab {
     flex: 1 1 0;

@@ -29,6 +29,7 @@ const [{ runIncomePaths, INCOME_DEFAULTS }, { simulate }, { CITIES }, { DEFAULT_
   load('src/state/incomeState.ts'),
   load('src/ui/format.ts'),
 ])
+const { swappedEveloPlan, swappedIncomeInputs } = await load('src/ui/income/swap.ts')
 const market = JSON.parse(readFileSync(ROOT + 'src/data/market.json', 'utf8'))
 
 const pct = (r) => `${Math.round(r * 100)}%`
@@ -156,6 +157,113 @@ await withPreview(async (base) => {
         await page.locator(COMPARE).scrollIntoViewIfNeeded()
         await page.locator(COMPARE).screenshot({ path: `${SHOTS}income-compare-${name}.png` })
         await page.screenshot({ path: `${SHOTS}income-compare-${name}-page.png`, fullPage: true })
+        check(errors.length === 0, `${name}: no uncaught page errors${errors.length ? ': ' + errors.join(' | ') : ''}`)
+        await ctx.close()
+      }
+    }
+
+    // The Holdings switch (Swap the mixes, stage 2): a radio group, "Each its own" by default; a shared
+    // mix re-runs the borrower and the columns and chart show the swapped pair's figures (node's);
+    // a seen choice is instant; nothing saved changes; it resets on leaving and coming back.
+    {
+      const onEvelo = swappedIncomeInputs(home.inputs, home.plan)
+      const onMode = swappedEveloPlan(home.plan, home.inputs)
+      const SW = { evelo: pct(runIncomePaths(market, onEvelo).lastsRate), income: pct(1 - simulate(market, CITIES, onMode).brokenRate) }
+      console.log(`node: income on eVelo's mix lasts ${SW.evelo}; eVelo on the mode's mix lasts ${SW.income}`)
+      const pairDone = (page, mode) =>
+        page
+          .waitForFunction((m) => {
+            const el = document.querySelector('[data-testid="income-compare"]')
+            return el?.dataset.holdings === m && el.dataset.pair === 'done'
+          }, mode, { timeout: 90000 })
+          .then(() => true, () => false)
+      const saved = (page) => page.evaluate(() => [localStorage.getItem('evelo:v2'), localStorage.getItem('evelo:v2:income'), location.href])
+      for (const w of [1280, 390]) {
+        const name = `holdings-${w}`
+        const { ctx, page, errors } = await open(browser, base, home, { w, scheme: 'dark' })
+        check(await ready(page), `${name}: the comparison appears`)
+        const before = await saved(page)
+        const group = page.getByRole('radiogroup', { name: 'Holdings' })
+        const radios = group.getByRole('radio')
+        const labels = (await radios.allInnerTexts()).map((t) => t.replace(/\s+/g, ' ').trim())
+        check(JSON.stringify(labels) === JSON.stringify(['Each its own', 'Both on eVelo’s mix', 'Both on this mode’s mix']), `${name}: three choices (${labels.join(' / ')})`)
+        const own = group.getByRole('radio', { name: 'Each its own' })
+        check((await own.getAttribute('aria-checked')) === 'true', `${name}: "Each its own" is the default`)
+        const plain = [await text(page, 'compare-rate-income'), await text(page, 'compare-rate-evelo')]
+        check(plain[0] === R.lasts[0] && plain[1] === R.lasts[1] && (await page.getByTestId('compare-what').count()) === 0 && (await page.locator('.icmp__mix-tag').count()) === 0, `${name}: the default view is unchanged (${plain.join(' | ')}, no line, no tag)`)
+
+        // Keyboard on desktop: Tab into the group lands on the checked radio; arrows move. Taps on the phone.
+        const pick = async (label, key) => {
+          if (w === 1280) await page.keyboard.press(key)
+          else await group.getByRole('radio', { name: label }).click()
+        }
+        if (w === 1280) {
+          await page.getByTestId('compare-tab-pace').focus() // the control before the group
+          await page.keyboard.press('Tab')
+          check((await page.evaluate(() => document.activeElement?.textContent)) === 'Each its own', `${name}: Tab enters the group on the checked choice`)
+        }
+        await pick('Both on eVelo’s mix', 'ArrowRight')
+        const eveloRadio = group.getByRole('radio', { name: 'Both on eVelo’s mix' })
+        check((await eveloRadio.getAttribute('aria-checked')) === 'true', `${name}: "Both on eVelo’s mix" picked`)
+        if (w === 1280) check((await page.evaluate(() => document.activeElement?.textContent)) === 'Both on eVelo’s mix', `${name}: focus follows the arrow`)
+        check(await pairDone(page, 'evelo'), `${name}: the mode re-runs on eVelo's mix`)
+        let got = [await text(page, 'compare-rate-income'), await text(page, 'compare-rate-evelo')]
+        check(got[0] === SW.evelo && got[1] === R.lasts[1], `${name}: on eVelo's mix ${got.join(' | ')} (node ${SW.evelo} | ${R.lasts[1]})`)
+        const swIr = runIncomePaths(market, onEvelo)
+        for (const [id, v] of [['compare-income-tax', swIr.totalTaxMedian], ['compare-income-sold', swIr.totalSoldMedian], ['compare-income-estate', last(swIr.value.p50)]]) {
+          const shown = (await text(page, id)).split(' ').slice(-1)[0]
+          check(shown === currencyCompact(v), `${name}: on eVelo's mix ${id} = ${shown} (node ${currencyCompact(v)}, raw ${Math.round(v)})`)
+        }
+        const what = await text(page, 'compare-what')
+        check(/^Both plans on eVelo’s mix: \d+% stocks/.test(what), `${name}: what's compared (${what})`)
+        const approx = await text(page, 'compare-approx')
+        check(/approximate/.test(approx) && /stock and muni shares/.test(approx), `${name}: the approximate note (${approx})`)
+        const tag = page.getByTestId('compare-mix-borrowed-income')
+        const keys = (side) => page.locator(`[data-testid="compare-mix-${side}"] .icmp__mix-keys li:not(.icmp__mix-tag)`).allInnerTexts()
+        const incomeMix = (await keys('income')).join(', ')
+        const eveloMix = (await keys('evelo')).join(', ')
+        check((await tag.isVisible()) && (await tag.innerText()).trim().toLowerCase() === 'borrowed' && incomeMix === eveloMix, `${name}: the mode's mix bar shows eVelo's mix, tagged borrowed (${incomeMix})`)
+        const chartOwnLabel = `Living on income's median goes from`
+        const chartLabel = (await page.locator('[data-testid="compare-chart"] svg[role="img"]').getAttribute('aria-label')) ?? ''
+        check(chartLabel.includes(chartOwnLabel) && chartLabel.includes(currencyCompact(last(runIncomePaths(market, onEvelo).value.p50))), `${name}: the chart shows the swapped mode's median`)
+        check((await overflow(page)) <= 0, `${name}: no horizontal scroll on eVelo's mix`)
+        await page.locator(COMPARE).screenshot({ path: `${SHOTS}income-compare-${name}-evelo-mix.png` })
+
+        await pick('Both on this mode’s mix', 'ArrowRight')
+        check(await pairDone(page, 'income'), `${name}: eVelo re-runs on the mode's mix`)
+        got = [await text(page, 'compare-rate-income'), await text(page, 'compare-rate-evelo')]
+        check(got[0] === R.lasts[0] && got[1] === SW.income, `${name}: on the mode's mix ${got.join(' | ')} (node ${R.lasts[0]} | ${SW.income})`)
+        const what2 = await text(page, 'compare-what')
+        check(what2 === 'Both plans on this mode’s mix: 60% stocks, 20% munis, 20% taxable bonds.', `${name}: what's compared (${what2})`)
+        check((await page.getByTestId('compare-approx').count()) === 0, `${name}: no approximate note on the mode's mix (eVelo's run is exact)`)
+        check((await page.getByTestId('compare-mix-borrowed-evelo').isVisible()) && /SPY.*VWITX.*VFITX.*VBMFX/.test(await text(page, 'compare-mix-evelo')), `${name}: eVelo's mix bar shows the mode's four funds, tagged borrowed`)
+        check((await overflow(page)) <= 0, `${name}: no horizontal scroll on the mode's mix`)
+        await page.locator(COMPARE).screenshot({ path: `${SHOTS}income-compare-${name}-mode-mix.png` })
+
+        // Back to a seen choice: instant, no loading state.
+        await pick('Both on eVelo’s mix', 'ArrowLeft')
+        const instant = await page.evaluate(() => {
+          const el = document.querySelector('[data-testid="income-compare"]')
+          return el?.dataset.holdings === 'evelo' && el.dataset.pair === 'done' && !document.querySelector('[data-testid="income-compare"] [data-wait]')
+        })
+        check(instant, `${name}: switching back to eVelo's mix is instant`)
+        await pick('Each its own', 'ArrowLeft')
+        got = [await text(page, 'compare-rate-income'), await text(page, 'compare-rate-evelo')]
+        check(got[0] === R.lasts[0] && got[1] === R.lasts[1] && (await page.getByTestId('compare-what').count()) === 0, `${name}: back to each its own (${got.join(' | ')})`)
+
+        // A what-if: the saved plans and the link are untouched; leaving and coming back resets it.
+        await pick('Both on this mode’s mix', 'ArrowRight') // via own → eVelo's on the keyboard
+        if (w === 1280) await page.keyboard.press('ArrowRight')
+        check(await pairDone(page, 'income'), `${name}: on the mode's mix before leaving`)
+        const after = await saved(page)
+        check(JSON.stringify(after) === JSON.stringify(before), `${name}: neither saved plan nor the link changed`)
+        await page.evaluate(() => { location.hash = '#plan' })
+        await page.waitForFunction(() => !document.querySelector('[data-testid="income-compare"]'), null, { timeout: 20000 })
+        await page.evaluate(() => { location.hash = '#income' })
+        check(await ready(page), `${name}: the comparison is back`)
+        check((await page.getByRole('radiogroup', { name: 'Holdings' }).getByRole('radio', { name: 'Each its own' }).getAttribute('aria-checked')) === 'true' && (await page.locator(COMPARE).getAttribute('data-holdings')) === 'own', `${name}: back to "Each its own" after leaving`)
+        const after2 = await saved(page)
+        check(after2[0] === before[0] && after2[1] === before[1], `${name}: still nothing saved after leaving`)
         check(errors.length === 0, `${name}: no uncaught page errors${errors.length ? ': ' + errors.join(' | ') : ''}`)
         await ctx.close()
       }
