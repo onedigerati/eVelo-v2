@@ -1,0 +1,4 @@
+2026-11-24 · Release check
+Deploy run 45497110284 on 639ee36: success (deploy-run.json)
+Live: https://onedigerati.github.io/eVelo-v2/assets/IncomeMode-B-S0fBXF.js -> HTTP 200, contains "Year in the walkthrough" (1 match)
+Local `npm run build` of 639ee36 emits the same hashed chunk name, so the live chunk is this build.

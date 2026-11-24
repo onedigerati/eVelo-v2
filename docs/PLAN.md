@@ -7,7 +7,6 @@ On Living on income's walkthrough, the net-worth overview chart becomes the year
 2026-11-24 · tests: 1680 pass, 1 skipped · typecheck: clean
 
 ## Now
-Mode: paused — release: push d7d479f to main to deploy stage 2 to GitHub Pages (user asked to deploy; the hook holds pushes)
 Agents: wide — confirmed 2026-11-24 15:32
 Stage 2 of 2 · Chart as scrubber
 Risk: UI only
@@ -15,7 +14,7 @@ Checks:
 - [x] The slider row (slider, "N years" label, big age) is gone and the chart is the only year control: it has slider semantics (role, value, min/max, value text naming the age), and its keys (arrows, Home, End) and the tap/sideways-drag pick logic are covered by tests; existing tests and e2e scripts follow the change (proof: test + `npm run e2e`)
 - [x] On the built app at a 390px phone (touch emulation), a tap on the chart picks that year and a mostly sideways drag scrubs the picked year, while a vertical drag scrolls the page without changing the year (proof: scripted run + screenshots, a test can't judge touch gestures or layout)
 - [x] On the built app at desktop width, hover, click and keyboard still work as in stage 1 without the slider, the screen-reader name and value read sensibly, both themes and reduced motion read cleanly (proof: scripted run + screenshots)
-- [ ] It's live on GitHub Pages (proof: deploy run + the live page)
+- [x] It's live on GitHub Pages (proof: deploy run + the live page)
 Open: none
 
 ## Stages
@@ -30,7 +29,7 @@ Open: none
 - 2026-11-24 · On touch, a tap or a mostly sideways drag on the chart picks the year (no separate preview), and vertical drags scroll the page — user, from the recommendation.
 - 2026-11-24 · Agents: balanced (carried from the last plan).
 - 2026-11-24 · Agents: wide — user, in their autopilot command ("Jbit Autopilot, wide").
-- 2026-11-24 · Release: deploy and publish stage 2 when it's verified — user, mid-run ("deploy and publish when done").
+- 2026-11-24 · Release: deploy and publish stage 2 when it's verified — user, mid-run ("deploy and publish when done", then "deploy and publish"); pushed 639ee36, live the same day.
 - 2026-11-24 · Scale: two stages, one release; no scale signal fired, planned as one plan.
 - 2026-11-24 · No research: nothing outside the repo changes this plan.
 
