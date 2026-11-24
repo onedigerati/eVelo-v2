@@ -1,0 +1,50 @@
+$ node <scratchpad>/verify-s1.mjs docs/evidence/stage-1   (after npm run build)
+theme light: html data-theme=light
+plot {"x0":80,"x1":1240,"top":300.140625,"h":300}
+before: {"year":"0","slider":"0","readoutOn":false,"cross":null}
+marker: 106|106,106
+ok   marker value labels shown before hover (2)
+ok   no readout or crosshair before hover
+ok   hover left: marker value labels hidden (0)
+hover left: cross row=0 readout="End of age | 60 | year 1 | Living on income | $2.0M | eVelo | $2.1M | eVelo ahead by | $93K | eVelo portfolio | $2.2M | eVelo loan | $70K | Loan-to-value | 3% | Income’s shares sold | $74K" box={"l":152,"r":369,"t":328.140625,"b":567.875}
+ok   hover left: readout shown, crosshair row 0
+ok   hover left: readout box inside the plot (152..369 within 80..1240)
+ok   hover left: picked year 0, slider 0, story/ledgers text and marker unchanged
+ok   hover middle: marker value labels hidden (0)
+hover middle: cross row=10 readout="End of age | 70 | year 11 | Living on income | $2.1M | eVelo | $3.1M | eVelo ahead by | $995K | eVelo portfolio | $3.7M | eVelo loan | $597K | Loan-to-value | 16% | Income’s shares sold | $53K" box={"l":732,"r":949,"t":328.140625,"b":567.875}
+ok   hover middle: readout shown, crosshair row 10
+ok   hover middle: readout box inside the plot (732..949 within 80..1240)
+ok   hover middle: picked year 0, slider 0, story/ledgers text and marker unchanged
+ok   hover right: marker value labels hidden (0)
+hover right: cross row=19 readout="End of age | 79 | year 20 | Living on income | $2.4M | eVelo | $4.8M | eVelo ahead by | $2.3M | eVelo portfolio | $6.0M | eVelo loan | $1.2M | Loan-to-value | 21% | Income’s shares sold | $55K" box={"l":1009,"r":1226,"t":328.140625,"b":567.875}
+ok   hover right: readout shown, crosshair row 19
+ok   hover right: readout box inside the plot (1009..1226 within 80..1240)
+ok   hover right: picked year 0, slider 0, story/ledgers text and marker unchanged
+ok   mouse leave: marker value labels back (2)
+ok   mouse leave: readout hidden (is-on=false), crosshair gone
+click: hovered row 10 -> data-year 10, slider 10
+ok   click picks hovered year (row 10 -> year 10; story changed)
+ok   light: no page/console errors 
+theme light: html data-theme=light
+light focus: focused=true focus-visible=true year=0 cross=0 readout="End of age | 60 | year 1 | Living on income | $2.0M | eVelo | $2.1M | eVelo ahead by | $93K | eVelo portfolio | $2.2M | eVelo loan | $70K | Loan-to-value | 3% | Income’s shares sold | $74K"
+ok   light focus: marker value labels hidden (0)
+ok   light: Tab focus shows readout for picked year 0 (cross row 0)
+light after 2x ArrowRight: year=2 slider=2 cross=2 readout="End of age | 62 | year 3 | Living on income | $2.0M | eVelo | $2.2M | eVelo ahead by | $248K | eVelo portfolio | $2.4M | eVelo loan | $186K | Loan-to-value | 8% | Income’s shares sold | $47K"
+ok   light: arrows move the year and readout (0 -> 2)
+ok   light: ArrowLeft moves back (1)
+ok   light blur: marker value labels back (2)
+ok   light: readout hides when focus leaves the chart
+ok   light: no page/console errors 
+theme dark: html data-theme=dark
+dark focus: focused=true focus-visible=true year=0 cross=0 readout="End of age | 60 | year 1 | Living on income | $2.0M | eVelo | $2.1M | eVelo ahead by | $93K | eVelo portfolio | $2.2M | eVelo loan | $70K | Loan-to-value | 3% | Income’s shares sold | $74K"
+ok   dark focus: marker value labels hidden (0)
+ok   dark: Tab focus shows readout for picked year 0 (cross row 0)
+dark after 2x ArrowRight: year=2 slider=2 cross=2 readout="End of age | 62 | year 3 | Living on income | $2.0M | eVelo | $2.2M | eVelo ahead by | $248K | eVelo portfolio | $2.4M | eVelo loan | $186K | Loan-to-value | 8% | Income’s shares sold | $47K"
+ok   dark: arrows move the year and readout (0 -> 2)
+ok   dark: ArrowLeft moves back (1)
+ok   dark blur: marker value labels back (2)
+ok   dark: readout hides when focus leaves the chart
+ok   dark: no page/console errors 
+
+all ok
+exit 0

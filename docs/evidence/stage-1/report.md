@@ -1,0 +1,14 @@
+# Stage 1 · Hover readout — evidence
+Verified 2026-11-24 on 882a85c, plus uncommitted changes (ChartReadout.tsx, WalkthroughChart.tsx, walkthroughChart.css, walkthroughReadout.ts and its test)
+
+| Check | Result | Evidence |
+|---|---|---|
+| The row under a pointer x and the readout's figures (each plan's net worth, the gap, eVelo's portfolio/loan/LTV, income's shares sold; a plan not lived that year shows none) come from the walkthrough's year rows (proof: test) | pass | [tests-readout.txt](tests-readout.txt): 5/5 in `walkthroughReadout.test.ts` (`walkReadout` figures, gap both ways, plan not lived → null, clamping; `walkReadoutAt` row under x at both ends) |
+| On the built app at desktop width, moving the mouse over the chart shows a crosshair and the readout box for the year under it, inside the plot at both ends, while the dashed marker, story, ledgers and slider stay on the picked year; leaving the chart hides it; a click picks the hovered year (proof: scripted run + screenshots, a test can't judge pointer behaviour or layout) | pass | [browser-run.txt](browser-run.txt) (1280×900: crosshair rows 0/10/19, box x 152–369 / 732–949 / 1009–1226 inside plot 80–1240; data-year, slider, story/ledger text and marker position unchanged; marker value labels hidden while the readout is on and back on leave; leave hides readout and crosshair; click on row 10 picks year 10); [hover-0-before.png](hover-0-before.png), [hover-left.png](hover-left.png), [hover-middle.png](hover-middle.png), [hover-right.png](hover-right.png), [hover-leave.png](hover-leave.png), [hover-click-picked.png](hover-click-picked.png) (local) |
+| Keyboard focus on the chart shows the readout for the picked year and arrows move it; both themes read cleanly (proof: scripted run + screenshots, a test can't judge focus or colour) | pass | [browser-run.txt](browser-run.txt) (light and dark: Tab gives :focus-visible and the readout for year 0; ArrowRight×2 → year 2, ArrowLeft → 1; readout hides and marker labels return when focus leaves; no console errors); [keyboard-light-focus.png](keyboard-light-focus.png), [keyboard-light-arrows.png](keyboard-light-arrows.png), [keyboard-dark-focus.png](keyboard-dark-focus.png), [keyboard-dark-arrows.png](keyboard-dark-arrows.png), [hover-light-theme.png](hover-light-theme.png), [hover-dark-theme.png](hover-dark-theme.png) (local) |
+
+Project checks: type check pass ([typecheck.txt](typecheck.txt)) · lint none configured · tests 1685 pass, 1 skipped, 114 files ([tests.txt](tests.txt)) · build pass, chunk-size warning only ([build.txt](build.txt))
+Audit: `npm audit --omit=dev`: 0 high, 0 critical ([audit.txt](audit.txt))
+
+## History
+- 2026-11-24 · Hover/keyboard readout: the dashed marker's value labels peeked out beside the box as a stray "$" (cosmetic, checks passed). Fixed: the marker's value labels hide while the readout is on and return on leave/blur.

@@ -7,16 +7,19 @@ On Living on income's walkthrough, the net-worth overview chart becomes the year
 2026-11-24 · tests: 1680 pass, 1 skipped · typecheck: clean
 
 ## Now
-Stage 1 of 2 · Hover readout
+Mode: autopilot — unattended
+Agents: wide — confirmed 2026-11-24 15:32
+Stage 2 of 2 · Chart as scrubber
 Risk: UI only
 Checks:
-- [ ] The row under a pointer x and the readout's figures (each plan's net worth, the gap, eVelo's portfolio/loan/LTV, income's shares sold; a plan not lived that year shows none) come from the walkthrough's year rows (proof: test)
-- [ ] On the built app at desktop width, moving the mouse over the chart shows a crosshair and the readout box for the year under it, inside the plot at both ends, while the dashed marker, story, ledgers and slider stay on the picked year; leaving the chart hides it; a click picks the hovered year (proof: scripted run + screenshots, a test can't judge pointer behaviour or layout)
-- [ ] Keyboard focus on the chart shows the readout for the picked year and arrows move it; both themes read cleanly (proof: scripted run + screenshots, a test can't judge focus or colour)
+- [ ] The slider row (slider, "N years" label, big age) is gone and the chart is the only year control: it has slider semantics (role, value, min/max, value text naming the age), and its keys (arrows, Home, End) and the tap/sideways-drag pick logic are covered by tests; existing tests and e2e scripts follow the change (proof: test + `npm run e2e`)
+- [ ] On the built app at a 390px phone (touch emulation), a tap on the chart picks that year and a mostly sideways drag scrubs the picked year, while a vertical drag scrolls the page without changing the year (proof: scripted run + screenshots, a test can't judge touch gestures or layout)
+- [ ] On the built app at desktop width, hover, click and keyboard still work as in stage 1 without the slider, the screen-reader name and value read sensibly, both themes and reduced motion read cleanly (proof: scripted run + screenshots)
+- [ ] It's live on GitHub Pages (proof: deploy run + the live page)
 Open: none
 
 ## Stages
-- [ ] 1. Hover readout — crosshair and `ChartReadout` box on mouse hover, previewing without picking; click picks; readout on keyboard focus
+- [x] 1. Hover readout — crosshair and `ChartReadout` box on mouse hover, previewing without picking; click picks; readout on keyboard focus
 - [ ] 2. Chart as scrubber — slider row removed; the chart gets slider semantics; tap and sideways drag pick the year on touch, vertical scroll kept; tests and e2e follow; release
 
 ## Decisions
@@ -26,6 +29,7 @@ Open: none
 - 2026-11-24 · Readout figures: each plan's net worth, the gap between them, eVelo's portfolio, loan and loan-to-value, and Living on income's shares sold that year; the full breakdown stays in the ledgers — user, from the recommendation.
 - 2026-11-24 · On touch, a tap or a mostly sideways drag on the chart picks the year (no separate preview), and vertical drags scroll the page — user, from the recommendation.
 - 2026-11-24 · Agents: balanced (carried from the last plan).
+- 2026-11-24 · Agents: wide — user, in their autopilot command ("Jbit Autopilot, wide").
 - 2026-11-24 · Scale: two stages, one release; no scale signal fired, planned as one plan.
 - 2026-11-24 · No research: nothing outside the repo changes this plan.
 

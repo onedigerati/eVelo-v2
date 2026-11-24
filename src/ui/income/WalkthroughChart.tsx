@@ -5,28 +5,28 @@
 //
 // The x axis runs over year ends: position k is the end of row k − 1 (k = 0 the start of row 0), so
 // row i spans k = i .. i + 1 and the domain is 0 .. years.length.
+//
+// Hover readout: a mouse over the plot previews the year under it (a crosshair at its year end and
+// the mode's ChartReadout box, figures from walkthroughReadout.ts) without picking it; leaving hides
+// it. Keyboard focus shows the readout for the picked year.
 
-import type { KeyboardEvent, MouseEvent } from 'react'
+import { useId, useState, type FocusEvent, type KeyboardEvent, type MouseEvent, type PointerEvent } from 'react'
 import { scaleLinear } from 'd3-scale'
 import { line } from 'd3-shape'
 import { currencyCompact } from '../format'
 import { moneyTick, useSize } from '../outlook/chartKit'
 import type { EveloYear, IncomeYear, WalkthroughChartProps, WalkYear } from './walkthrough'
+import { ChartReadout, ReadoutHead, ReadoutRow } from './ChartReadout'
+import { rowAtX, walkReadout } from './walkthroughReadout'
 import './walkthroughChart.css'
+
+export { rowAtX }
 
 type PlanKey = 'income' | 'evelo'
 const PLANS: { key: PlanKey; label: string }[] = [
   { key: 'income', label: 'Living on income' },
   { key: 'evelo', label: 'eVelo' },
 ]
-
-/** The row under a pixel x, for a plot running x0..x1 over `n` rows: clamped to 0..n − 1. */
-export function rowAtX(x: number, x0: number, x1: number, n: number): number {
-  if (n <= 0) return 0
-  const span = x1 - x0
-  const r = span > 0 ? Math.floor(((x - x0) / span) * n) : 0
-  return Math.max(0, Math.min(n - 1, r))
-}
 
 /** The row a key moves to from `year`, or null for a key the chart doesn't take. */
 export function rowForKey(key: string, year: number, n: number): number | null {
@@ -62,6 +62,9 @@ function ageTicks(a0: number, a1: number, phone: boolean): number[] {
 
 export function WalkthroughChart({ years, chapters, chapter, year, onPickYear, phone }: WalkthroughChartProps) {
   const [wrap, { width }] = useSize<HTMLDivElement>()
+  const [hover, setHover] = useState<number | null>(null)
+  const [keyed, setKeyed] = useState(false)
+  const uid = useId().replace(/:/g, '')
   const n = years.length
   const height = phone ? 200 : Math.round(Math.min(300, Math.max(210, width * 0.3)))
   const m = { t: 22, r: 8, b: 24, l: phone ? 42 : 48 }
@@ -137,8 +140,25 @@ export function WalkthroughChart({ years, chapters, chapter, year, onPickYear, p
     const r = rowForKey(e.key, year, n)
     if (r === null) return
     e.preventDefault()
+    setKeyed(true)
     if (r !== year) onPickYear(r)
   }
+  // Hover previews (a mouse or pen, not touch: a tap just picks); keyboard focus reads the picked year.
+  const hoverAt = (e: PointerEvent<SVGSVGElement>) => {
+    if (e.pointerType === 'touch' || n <= 0) return
+    const rect = e.currentTarget.getBoundingClientRect()
+    setHover(rowAtX(e.clientX - rect.left, x0, x1, n))
+  }
+  const focus = (e: FocusEvent<SVGSVGElement>) => {
+    let visible = true
+    try {
+      visible = e.currentTarget.matches(':focus-visible')
+    } catch {}
+    setKeyed(visible)
+  }
+  const shown = hover ?? (keyed ? Math.min(year, n - 1) : null)
+  const read = shown !== null ? walkReadout(years, shown) : null
+  const hx = read ? x(read.index + 1) : 0
 
   const label =
     `Net worth of both plans by age, today’s dollars` +
@@ -149,7 +169,21 @@ export function WalkthroughChart({ years, chapters, chapter, year, onPickYear, p
   return (
     <div className={`wtchart${phone ? ' wtchart--phone' : ''}`} ref={wrap} style={{ height }} data-testid="wt-chart">
       {width > 0 && n > 0 && (
-        <svg className="wtchart__svg" width={width} height={height} role="img" aria-label={label} tabIndex={0} onClick={pick} onKeyDown={key}>
+        <svg
+          className="wtchart__svg"
+          width={width}
+          height={height} role="img"
+          aria-label={label}
+          aria-describedby={`${uid}-read`}
+          tabIndex={0}
+          data-testid="wt-chart-svg"
+          onClick={pick}
+          onKeyDown={key}
+          onPointerMove={hoverAt}
+          onPointerLeave={() => setHover(null)}
+          onFocus={focus}
+          onBlur={() => setKeyed(false)}
+        >
           <g aria-hidden="true">
             <text x={x0} y={12} className="wtchart__title">
               Net worth, today’s dollars
@@ -176,10 +210,12 @@ export function WalkthroughChart({ years, chapters, chapter, year, onPickYear, p
               <g className="wtchart__mark">
                 <line x1={mx} x2={mx} y1={m.t} y2={height - m.b} />
                 {marks.map((p) => {
-                  const at = place(p.key, p.v)
+                  // while the readout is on it carries the figures, so the labels go (no peeking past the box)
+                  const at = read ? null : place(p.key, p.v)
                   return (
                   <g key={p.key} className={`wtchart__series wtchart__series--${p.key}`}>
                     <circle cx={mx} cy={y(p.v)} r={4.5} className="wtchart__dot" />
+                    {at && (
                     <text
                       x={at.x}
                       y={at.y}
@@ -188,9 +224,19 @@ export function WalkthroughChart({ years, chapters, chapter, year, onPickYear, p
                     >
                       {currencyCompact(p.v)}
                     </text>
+                    )}
                   </g>
                   )
                 })}
+              </g>
+            )}
+            {read && (
+              <g className="wtchart__cross" data-testid="wt-crosshair" data-row={read.index}>
+                <line x1={hx} x2={hx} y1={m.t} y2={height - m.b} />
+                {read.income && (
+                  <circle cx={hx} cy={y(read.income.netWorth)} r={3.5} className="wtchart__cross-dot wtchart__series--income" />
+                )}
+                {read.evelo && <circle cx={hx} cy={y(read.evelo.netWorth)} r={3.5} className="wtchart__cross-dot wtchart__series--evelo" />}
               </g>
             )}
             <g transform={`translate(0, ${height - m.b})`}>
@@ -209,6 +255,20 @@ export function WalkthroughChart({ years, chapters, chapter, year, onPickYear, p
           </g>
         </svg>
       )}
+      <ChartReadout id={`${uid}-read`} x={hx} width={width} top={m.t + 6} on={read !== null}>
+        {read && (
+          <>
+            <ReadoutHead lead="End of age" age={read.age} note={read.note} />
+            <ReadoutRow keyClass="wtchart__swatch wtchart__swatch--income" label="Living on income" value={read.income?.text.netWorth ?? '—'} faint={!read.income} />
+            <ReadoutRow keyClass="wtchart__swatch wtchart__swatch--evelo" label="eVelo" value={read.evelo?.text.netWorth ?? '—'} faint={!read.evelo} />
+            {read.gap && <ReadoutRow total label={read.gap.text} value={read.gap.value} />}
+            <ReadoutRow faint label="eVelo portfolio" value={read.evelo?.text.portfolio ?? '—'} />
+            <ReadoutRow faint label="eVelo loan" value={read.evelo?.text.loan ?? '—'} />
+            <ReadoutRow faint label="Loan-to-value" value={read.evelo?.text.ltv ?? '—'} />
+            <ReadoutRow faint label="Income’s shares sold" value={read.income?.text.sold ?? '—'} />
+          </>
+        )}
+      </ChartReadout>
     </div>
   )
 }

@@ -88,3 +88,21 @@
   stroke: var(--bg);
   stroke-width: 2;
 }
+/* The hover readout's crosshair (solid, under the readout box) and its key swatches. */
+.wtchart__cross {
+  pointer-events: none;
+}
+.wtchart__cross line {
+  stroke: var(--chart-crosshair);
+}
+.wtchart__cross-dot {
+  fill: var(--bg);
+  stroke: var(--cs);
+  stroke-width: 2;
+}
+.wtchart__swatch--income {
+  fill: var(--bruised);
+}
+.wtchart__swatch--evelo {
+  fill: var(--holds);
+}

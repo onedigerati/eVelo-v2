@@ -9,7 +9,7 @@
 //   </ChartReadout>
 
 import { useEffect, useLayoutEffect, useRef, useState, type ReactNode, type RefObject } from 'react'
-import { cx } from '../primitives'
+import { cx } from '../primitives/cx'
 import { readoutLeft } from './chartReadout'
 import './chartReadout.css'
 
@@ -66,11 +66,12 @@ export function useClearOnOutsideTap(ref: RefObject<Element | null>, on: boolean
   }, [on, ref])
 }
 
-/** The readout's heading: "Age 67" with a faint note on the right. */
-export function ReadoutHead({ age, note }: { age: number; note?: ReactNode }) {
+/** The readout's heading: "Age 67" (or `lead` before the age, e.g. "End of age") with a faint note
+ *  on the right. */
+export function ReadoutHead({ age, note, lead = 'Age' }: { age: number; note?: ReactNode; lead?: ReactNode }) {
   return (
     <div className="cread__age">
-      Age <b>{age}</b>
+      {lead} <b>{age}</b>
       {note != null && <span>{note}</span>}
     </div>
   )
