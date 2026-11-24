@@ -7,21 +7,12 @@ On the Living on Income results, the comparison card gets a "Holdings" switch wi
 2026-11-24 · tests: 1642 pass, 1 skipped · typecheck: clean · build: ok · income-compare e2e: pass
 
 ## Now
-Mode: paused — stage 3 is built and verified; the release (push to main → GitHub Pages) is outward-facing and waits for the user
-Stage 3 of 3 · Below the card
-Risk: UI only
-Checks:
-- [x] The walkthrough (chapters, overview chart, twin ledgers, Play story) follows the Holdings switch: on a shared mix it reads the swapped pair's per-year results, and on "Each its own" it is unchanged (proof: test + e2e)
-- [x] Same storm follows the switch: it gets the swapped plan, shows the same sample futures (same path indices) and each plan's path on the shared mix, and its "same futures" gate still holds (proof: test + e2e)
-- [x] On a shared mix the walkthrough and Same storm say which mix they're on (the borrowed one), consistent with the card's line (proof: e2e screenshots)
-- [x] The full suite is green and the earlier stages' checks still pass in the built app at 1280 and 390 (proof: e2e)
-- [ ] It's live: pushed to main and the GitHub Pages deploy serves the switch (proof: deploy run + live page)
-Open: none
+All stages done. Swap the mixes is live on GitHub Pages (deployed 2026-11-24 from f5d0853, checked on the live site — [stage 3 evidence](evidence/stage-3/report.md)).
 
 ## Stages
 - [x] 1. Swapped runs — the mix mapping (pure, tested), the swapped eVelo plan and income inputs, session-cached runs on their own clients, paired with their inputs
 - [x] 2. The switch — the three-way Holdings switch on the card, the borrowed tag on the mix bar, the "what's compared" line and the approximate note, columns and chart following, reset on leaving, phone and keyboard
-- [ ] 3. Below the card — the walkthrough and Same storm follow the switch (Same storm gets the swapped plan); release
+- [x] 3. Below the card — the walkthrough and Same storm follow the switch (Same storm gets the swapped plan); release
 
 ## Decisions
 - 2026-11-24 · The other way round (the mode on eVelo's mix) is an approximation mapped onto the mode's stock and muni shares, labelled as approximate — user: "Yes I am okay." Why: the mode needs dividend and interest history, which only SPY and the three Vanguard bond funds have.
@@ -37,9 +28,11 @@ Open: none
 - 2026-11-24 · (unattended) Swapped runs share one dedicated `IncomeClient` (own worker), so a newer swapped run supersedes only an older swapped one; a failed run retries on remount. Why: keeps one extra worker, never touches the plans' own clients.
 - 2026-11-24 · (unattended) The switch reuses the app's `SegmentedControl`; under "Each its own" there is no compared line, so the only change to the default view is the switch row; while a swapped run loads the chart shows only the plan that isn't re-running. Why: one look and keyboard model across the app, and the default view stays as it was.
 - 2026-11-24 · (unattended) Same storm reads its sample futures from the cached swapped run's result (each run already carries them), so it needs no extra run and never touches the plans' own runs. While a shared mix loads, the walkthrough and Same storm are replaced by one waiting line; the walkthrough keeps its chapter and year across finished switches, Same storm goes back to its default future. Their mix line is the card's "what's compared" line, plus "Living on income's side is approximate." on eVelo's mix. Why: one story on the page, no extra worker work.
+- 2026-11-24 · Released at the user's "deploy": pushed to main, Pages deploy run 45478131037 succeeded, and the income-compare e2e passed 262/262 against the live site.
 - 2026-11-24 · Stage 1: "same months" needs no new code — `prepare` back-fills every holding to month 0, so the calendar is the whole bundled market whatever the holdings; the test proves it on the default and a young-holdings plan.
 
 ## Open questions
+- The scheduled "Refresh market data" workflow failed on 2026-11-23 (run 45236365283), separate from this plan — look at its log.
 - From the stage 3 review: the samples goldens are arm64-only like the others (see the x64 item), and the income samples golden hashes the bundled `market.json`, so `npm run data:refresh` changes it (as it already does the other income goldens) — refresh the hashes with the data.
 - The atlas/solve golden is still arm64-only: it now logs its digest on x64 instead of skipping, so add CI's x64 digest from the next run's log (the yearly, samples and income goldens are pinned for x64 since the release run, identical to arm64) — next push.
 - From the stage 1 review: the `yearly` medians run over all paths, with broken paths counted as 0, so once more than half have broken, borrowed and interest read $0 while the survivors still borrow. Stage 2's ledger says so, or shows medians among surviving paths — stage 2 design.

@@ -1,0 +1,278 @@
+$ node e2e/income-compare.mjs, run against the live site https://onedigerati.github.io/eVelo-v2/ (a temporary copy with withPreview swapped for the live URL)
+node: income lasts 100%, kept 0%, pace 31%; eVelo lasts 86%, principal 68%; {"compare-income-estate":"$6.9M","compare-income-tax":"$167K","compare-income-sold":"$737K","compare-evelo-estate":"$8.6M","compare-evelo-loan":"$3.8M"}
+ok   1280-dark: the comparison appears with eVelo's result
+ok   1280-dark: the header line (Same person, same markets, two ways)
+ok   1280-dark: "lasts" shows 100% | 86% (node 100% | 86%)
+ok   1280-dark: "lasts" states eVelo's meaning
+ok   1280-dark: "principal" shows 0% | 68% (node 0% | 68%)
+ok   1280-dark: "principal" states eVelo's meaning
+ok   1280-dark: "pace" shows 31% | 86% (node 31% | 86%)
+ok   1280-dark: "pace" states eVelo's meaning
+ok   1280-dark: the arrow wraps round to the first tab
+ok   1280-dark: compare-income-estate = $6.9M (node $6.9M)
+ok   1280-dark: compare-income-tax = $167K (node $167K)
+ok   1280-dark: compare-income-sold = $737K (node $737K)
+ok   1280-dark: compare-evelo-estate = $8.6M (node $8.6M)
+ok   1280-dark: compare-evelo-loan = $3.8M (node $3.8M)
+ok   1280-dark: eVelo's lifetime tax is not invented (Tax paid, lifetime Not tallied: a 0.4% yearly dividend-tax drag)
+ok   1280-dark: the chart's label names both medians
+ok   1280-dark: hidden table has 29 ages, 2 median lines
+ok   1280-dark: like for like names the home's tax and says the futures match (eVelo’s figures include New York City’s state estate tax; living on income doesn’t model it. / Both run on the same 1,000 futures.)
+ok   1280-dark: nothing flagged as differing
+ok   1280-dark: the mode's estate says it is before inheritance tax (Median estate, before inheritance tax)
+ok   1280-dark: no horizontal scroll
+ok   1280-dark: no uncaught page errors
+ok   1280-light: the comparison appears with eVelo's result
+ok   1280-light: the header line (Same person, same markets, two ways)
+ok   1280-light: "lasts" shows 100% | 86% (node 100% | 86%)
+ok   1280-light: "lasts" states eVelo's meaning
+ok   1280-light: "principal" shows 0% | 68% (node 0% | 68%)
+ok   1280-light: "principal" states eVelo's meaning
+ok   1280-light: "pace" shows 31% | 86% (node 31% | 86%)
+ok   1280-light: "pace" states eVelo's meaning
+ok   1280-light: the arrow wraps round to the first tab
+ok   1280-light: compare-income-estate = $6.9M (node $6.9M)
+ok   1280-light: compare-income-tax = $167K (node $167K)
+ok   1280-light: compare-income-sold = $737K (node $737K)
+ok   1280-light: compare-evelo-estate = $8.6M (node $8.6M)
+ok   1280-light: compare-evelo-loan = $3.8M (node $3.8M)
+ok   1280-light: eVelo's lifetime tax is not invented (Tax paid, lifetime Not tallied: a 0.4% yearly dividend-tax drag)
+ok   1280-light: the chart's label names both medians
+ok   1280-light: hidden table has 29 ages, 2 median lines
+ok   1280-light: like for like names the home's tax and says the futures match (eVelo’s figures include New York City’s state estate tax; living on income doesn’t model it. / Both run on the same 1,000 futures.)
+ok   1280-light: nothing flagged as differing
+ok   1280-light: the mode's estate says it is before inheritance tax (Median estate, before inheritance tax)
+ok   1280-light: no horizontal scroll
+ok   1280-light: no uncaught page errors
+ok   390-dark: the comparison appears with eVelo's result
+ok   390-dark: the header line (Same person, same markets, two ways)
+ok   390-dark: "lasts" shows 100% | 86% (node 100% | 86%)
+ok   390-dark: "lasts" states eVelo's meaning
+ok   390-dark: "principal" shows 0% | 68% (node 0% | 68%)
+ok   390-dark: "principal" states eVelo's meaning
+ok   390-dark: "pace" shows 31% | 86% (node 31% | 86%)
+ok   390-dark: "pace" states eVelo's meaning
+ok   390-dark: compare-income-estate = $6.9M (node $6.9M)
+ok   390-dark: compare-income-tax = $167K (node $167K)
+ok   390-dark: compare-income-sold = $737K (node $737K)
+ok   390-dark: compare-evelo-estate = $8.6M (node $8.6M)
+ok   390-dark: compare-evelo-loan = $3.8M (node $3.8M)
+ok   390-dark: eVelo's lifetime tax is not invented (Tax paid, lifetime Not tallied: a 0.4% yearly dividend-tax drag)
+ok   390-dark: the chart's label names both medians
+ok   390-dark: hidden table has 29 ages, 2 median lines
+ok   390-dark: like for like names the home's tax and says the futures match (eVelo’s figures include New York City’s state estate tax; living on income doesn’t model it. / Both run on the same 1,000 futures.)
+ok   390-dark: nothing flagged as differing
+ok   390-dark: the mode's estate says it is before inheritance tax (Median estate, before inheritance tax)
+ok   390-dark: no horizontal scroll
+ok   390-dark: no uncaught page errors
+ok   390-light: the comparison appears with eVelo's result
+ok   390-light: the header line (Same person, same markets, two ways)
+ok   390-light: "lasts" shows 100% | 86% (node 100% | 86%)
+ok   390-light: "lasts" states eVelo's meaning
+ok   390-light: "principal" shows 0% | 68% (node 0% | 68%)
+ok   390-light: "principal" states eVelo's meaning
+ok   390-light: "pace" shows 31% | 86% (node 31% | 86%)
+ok   390-light: "pace" states eVelo's meaning
+ok   390-light: compare-income-estate = $6.9M (node $6.9M)
+ok   390-light: compare-income-tax = $167K (node $167K)
+ok   390-light: compare-income-sold = $737K (node $737K)
+ok   390-light: compare-evelo-estate = $8.6M (node $8.6M)
+ok   390-light: compare-evelo-loan = $3.8M (node $3.8M)
+ok   390-light: eVelo's lifetime tax is not invented (Tax paid, lifetime Not tallied: a 0.4% yearly dividend-tax drag)
+ok   390-light: the chart's label names both medians
+ok   390-light: hidden table has 29 ages, 2 median lines
+ok   390-light: like for like names the home's tax and says the futures match (eVelo’s figures include New York City’s state estate tax; living on income doesn’t model it. / Both run on the same 1,000 futures.)
+ok   390-light: nothing flagged as differing
+ok   390-light: the mode's estate says it is before inheritance tax (Median estate, before inheritance tax)
+ok   390-light: no horizontal scroll
+ok   390-light: no uncaught page errors
+node: income on eVelo's mix lasts 99%; eVelo on the mode's mix lasts 89%
+ok   holdings-1280: the comparison appears
+ok   holdings-1280: three choices (Each its own / Both on eVelo’s mix / Both on this mode’s mix)
+ok   holdings-1280: "Each its own" is the default
+ok   holdings-1280: the default view is unchanged (100% | 86%, no line, no tag)
+ok   holdings-1280: Tab enters the group on the checked choice
+ok   holdings-1280: "Both on eVelo’s mix" picked
+ok   holdings-1280: focus follows the arrow
+ok   holdings-1280: the mode re-runs on eVelo's mix
+ok   holdings-1280: on eVelo's mix 99% | 86% (node 99% | 86%)
+ok   holdings-1280: on eVelo's mix compare-income-tax = $167K (node $167K, raw 167062)
+ok   holdings-1280: on eVelo's mix compare-income-sold = $952K (node $952K, raw 951616)
+ok   holdings-1280: on eVelo's mix compare-income-estate = $9.2M (node $9.2M, raw 9182203)
+ok   holdings-1280: what's compared (Both plans on eVelo’s mix: 90% stocks, 10% bonds.)
+ok   holdings-1280: the approximate note (Living on income’s run here is approximate: it can only hold SPY and three Vanguard bond funds, so eVelo’s mix is mapped onto its stock and muni shares.)
+ok   holdings-1280: the mode's mix bar shows eVelo's mix, tagged borrowed (VTI
+50%, QQQ
+20%, SCHD
+15%, BND
+10%, GLD
+5%)
+ok   holdings-1280: the chart shows the swapped mode's median
+ok   holdings-1280: no horizontal scroll on eVelo's mix
+ok   holdings-1280: eVelo re-runs on the mode's mix
+ok   holdings-1280: on the mode's mix 100% | 89% (node 100% | 89%)
+ok   holdings-1280: what's compared (Both plans on this mode’s mix: 60% stocks, 20% munis, 20% taxable bonds.)
+ok   holdings-1280: no approximate note on the mode's mix (eVelo's run is exact)
+ok   holdings-1280: eVelo's mix bar shows the mode's four funds, tagged borrowed
+ok   holdings-1280: no horizontal scroll on the mode's mix
+ok   holdings-1280: switching back to eVelo's mix is instant
+ok   holdings-1280: back to each its own (100% | 86%)
+ok   holdings-1280: on the mode's mix before leaving
+ok   holdings-1280: neither saved plan nor the link changed
+ok   holdings-1280: the comparison is back
+ok   holdings-1280: back to "Each its own" after leaving
+ok   holdings-1280: still nothing saved after leaving
+ok   holdings-1280: no uncaught page errors
+ok   holdings-390: the comparison appears
+ok   holdings-390: three choices (Each its own / Both on eVelo’s mix / Both on this mode’s mix)
+ok   holdings-390: "Each its own" is the default
+ok   holdings-390: the default view is unchanged (100% | 86%, no line, no tag)
+ok   holdings-390: "Both on eVelo’s mix" picked
+ok   holdings-390: the mode re-runs on eVelo's mix
+ok   holdings-390: on eVelo's mix 99% | 86% (node 99% | 86%)
+ok   holdings-390: on eVelo's mix compare-income-tax = $167K (node $167K, raw 167062)
+ok   holdings-390: on eVelo's mix compare-income-sold = $952K (node $952K, raw 951616)
+ok   holdings-390: on eVelo's mix compare-income-estate = $9.2M (node $9.2M, raw 9182203)
+ok   holdings-390: what's compared (Both plans on eVelo’s mix: 90% stocks, 10% bonds.)
+ok   holdings-390: the approximate note (Living on income’s run here is approximate: it can only hold SPY and three Vanguard bond funds, so eVelo’s mix is mapped onto its stock and muni shares.)
+ok   holdings-390: the mode's mix bar shows eVelo's mix, tagged borrowed (VTI
+50%, QQQ
+20%, SCHD
+15%, BND
+10%, GLD
+5%)
+ok   holdings-390: the chart shows the swapped mode's median
+ok   holdings-390: no horizontal scroll on eVelo's mix
+ok   holdings-390: eVelo re-runs on the mode's mix
+ok   holdings-390: on the mode's mix 100% | 89% (node 100% | 89%)
+ok   holdings-390: what's compared (Both plans on this mode’s mix: 60% stocks, 20% munis, 20% taxable bonds.)
+ok   holdings-390: no approximate note on the mode's mix (eVelo's run is exact)
+ok   holdings-390: eVelo's mix bar shows the mode's four funds, tagged borrowed
+ok   holdings-390: no horizontal scroll on the mode's mix
+ok   holdings-390: switching back to eVelo's mix is instant
+ok   holdings-390: back to each its own (100% | 86%)
+ok   holdings-390: on the mode's mix before leaving
+ok   holdings-390: neither saved plan nor the link changed
+ok   holdings-390: the comparison is back
+ok   holdings-390: back to "Each its own" after leaving
+ok   holdings-390: still nothing saved after leaving
+ok   holdings-390: no uncaught page errors
+node: storm gates own shown, on eVelo's mix shown, on the mode's mix shown; paths [["earlyCrash",663],["typical",251],["lateCrash",934],["lucky",664]]
+ok   node: Same storm shown for the own pair and both swapped pairs
+ok   node: the swapped pairs pick the same path indices as the own pair
+ok   below-1280: the comparison appears
+ok   below-1280 each its own: walkthrough chapters before,arrives,middle,estate (node before,arrives,middle,estate)
+ok   below-1280 each its own: walkthrough story (income) figure about $405K sold over 7 years (node about $405K sold over 7 years)
+ok   below-1280 each its own: walkthrough story (evelo) figure about $770K borrowed (node about $770K borrowed)
+ok   below-1280 each its own: overview chart at age 60: income $3.1M, eVelo $3.2M
+ok   below-1280 each its own: twin ledgers' events match node (A quiet year: income plus a top-up sale. | A quiet year: the loan grows, nothing is sold.)
+ok   below-1280 each its own: Same storm shown with chips Early crash / Typical / Late crash / Lucky
+ok   below-1280 each its own: storm caption is node's for Typical (eVelo ends $3.0M ahead. eVelo never hits a forced sale; living on income sells $403K in its first seven years.)
+ok   below-1280 each its own: no mix line below the card
+ok   below-1280: below the card follows eVelo's mix (after a waiting line)
+ok   below-1280 eVelo's mix: walkthrough chapters before,arrives,middle,estate (node before,arrives,middle,estate)
+ok   below-1280 eVelo's mix: walkthrough story (income) figure about $543K sold over 7 years (node about $543K sold over 7 years)
+ok   below-1280 eVelo's mix: walkthrough story (evelo) figure about $770K borrowed (node about $770K borrowed)
+ok   below-1280 eVelo's mix: overview chart at age 60: income $3.2M, eVelo $3.2M
+ok   below-1280 eVelo's mix: twin ledgers' events match node (A quiet year: income plus a top-up sale. | A quiet year: the loan grows, nothing is sold.)
+ok   below-1280 eVelo's mix: Same storm shown with chips Early crash / Typical / Late crash / Lucky
+ok   below-1280 eVelo's mix: storm caption is node's for Typical (eVelo ends $486K ahead. eVelo never hits a forced sale; living on income sells $499K in its first seven years.)
+ok   below-1280 eVelo's mix: walkthrough and Same storm say which mix (Both plans on eVelo’s mix: 90% stocks, 10% bonds. Living on income’s side is approximate.)
+ok   below-1280: the mix line says the mode's side is approximate
+ok   below-1280: no horizontal scroll below the card on eVelo's mix
+ok   below-1280: below the card follows the mode's mix
+ok   below-1280 mode's mix: walkthrough chapters before,arrives,middle,estate (node before,arrives,middle,estate)
+ok   below-1280 mode's mix: walkthrough story (income) figure about $405K sold over 7 years (node about $405K sold over 7 years)
+ok   below-1280 mode's mix: walkthrough story (evelo) figure about $770K borrowed (node about $770K borrowed)
+ok   below-1280 mode's mix: overview chart at age 60: income $3.1M, eVelo $3.1M
+ok   below-1280 mode's mix: twin ledgers' events match node (A quiet year: income plus a top-up sale. | A quiet year: the loan grows, nothing is sold.)
+ok   below-1280 mode's mix: Same storm shown with chips Early crash / Typical / Late crash / Lucky
+ok   below-1280 mode's mix: storm caption is node's for Typical (Living on income ends $912K ahead. eVelo never hits a forced sale; living on income sells $403K in its first seven years.)
+ok   below-1280 mode's mix: walkthrough and Same storm say which mix (Both plans on this mode’s mix: 60% stocks, 20% munis, 20% taxable bonds.)
+ok   below-1280: on the mode's mix the lines are the card's (Both plans on this mode’s mix: 60% stocks, 20% munis, 20% taxable bonds.)
+ok   below-1280: Play story stops at the chapter's end with the swapped eVelo's figure ($3.2M)
+ok   below-1280: storm caption for Early crash is node's on the mode's mix
+ok   below-1280: no horizontal scroll below the card on the mode's mix
+ok   below-1280 back to each its own: walkthrough chapters before,arrives,middle,estate (node before,arrives,middle,estate)
+ok   below-1280 back to each its own: walkthrough story (income) figure about $405K sold over 7 years (node about $405K sold over 7 years)
+ok   below-1280 back to each its own: walkthrough story (evelo) figure about $770K borrowed (node about $770K borrowed)
+ok   below-1280 back to each its own: overview chart at age 66: income $3.3M, eVelo $3.7M
+ok   below-1280 back to each its own: twin ledgers' events match node (A quiet year: income plus a top-up sale. | A quiet year: the loan grows, nothing is sold.)
+ok   below-1280 back to each its own: Same storm shown with chips Early crash / Typical / Late crash / Lucky
+ok   below-1280 back to each its own: storm caption is node's for Typical (eVelo ends $3.0M ahead. eVelo never hits a forced sale; living on income sells $403K in its first seven years.)
+ok   below-1280 back to each its own: no mix line below the card
+ok   below-1280: no uncaught page errors
+ok   below-390: the comparison appears
+ok   below-390 each its own: walkthrough chapters before,arrives,middle,estate (node before,arrives,middle,estate)
+ok   below-390 each its own: walkthrough story (income) figure about $405K sold over 7 years (node about $405K sold over 7 years)
+ok   below-390 each its own: walkthrough story (evelo) figure about $770K borrowed (node about $770K borrowed)
+ok   below-390 each its own: overview chart at age 60: income $3.1M, eVelo $3.2M
+ok   below-390 each its own: twin ledgers' events match node (A quiet year: income plus a top-up sale. | A quiet year: the loan grows, nothing is sold.)
+ok   below-390 each its own: Same storm shown with chips Early crash / Typical / Late crash / Lucky
+ok   below-390 each its own: storm caption is node's for Typical (eVelo ends $3.0M ahead. eVelo never hits a forced sale; living on income sells $403K in its first seven years.)
+ok   below-390 each its own: no mix line below the card
+ok   below-390: below the card follows eVelo's mix (after a waiting line)
+ok   below-390 eVelo's mix: walkthrough chapters before,arrives,middle,estate (node before,arrives,middle,estate)
+ok   below-390 eVelo's mix: walkthrough story (income) figure about $543K sold over 7 years (node about $543K sold over 7 years)
+ok   below-390 eVelo's mix: walkthrough story (evelo) figure about $770K borrowed (node about $770K borrowed)
+ok   below-390 eVelo's mix: overview chart at age 60: income $3.2M, eVelo $3.2M
+ok   below-390 eVelo's mix: twin ledgers' events match node (A quiet year: income plus a top-up sale. | A quiet year: the loan grows, nothing is sold.)
+ok   below-390 eVelo's mix: Same storm shown with chips Early crash / Typical / Late crash / Lucky
+ok   below-390 eVelo's mix: storm caption is node's for Typical (eVelo ends $486K ahead. eVelo never hits a forced sale; living on income sells $499K in its first seven years.)
+ok   below-390 eVelo's mix: walkthrough and Same storm say which mix (Both plans on eVelo’s mix: 90% stocks, 10% bonds. Living on income’s side is approximate.)
+ok   below-390: the mix line says the mode's side is approximate
+ok   below-390: no horizontal scroll below the card on eVelo's mix
+ok   below-390: below the card follows the mode's mix
+ok   below-390 mode's mix: walkthrough chapters before,arrives,middle,estate (node before,arrives,middle,estate)
+ok   below-390 mode's mix: walkthrough story (income) figure about $405K sold over 7 years (node about $405K sold over 7 years)
+ok   below-390 mode's mix: walkthrough story (evelo) figure about $770K borrowed (node about $770K borrowed)
+ok   below-390 mode's mix: overview chart at age 60: income $3.1M, eVelo $3.1M
+ok   below-390 mode's mix: twin ledgers' events match node (A quiet year: income plus a top-up sale. | A quiet year: the loan grows, nothing is sold.)
+ok   below-390 mode's mix: Same storm shown with chips Early crash / Typical / Late crash / Lucky
+ok   below-390 mode's mix: storm caption is node's for Typical (Living on income ends $912K ahead. eVelo never hits a forced sale; living on income sells $403K in its first seven years.)
+ok   below-390 mode's mix: walkthrough and Same storm say which mix (Both plans on this mode’s mix: 60% stocks, 20% munis, 20% taxable bonds.)
+ok   below-390: on the mode's mix the lines are the card's (Both plans on this mode’s mix: 60% stocks, 20% munis, 20% taxable bonds.)
+ok   below-390: Play story stops at the chapter's end with the swapped eVelo's figure ($3.2M)
+ok   below-390: storm caption for Early crash is node's on the mode's mix
+ok   below-390: no horizontal scroll below the card on the mode's mix
+ok   below-390 back to each its own: walkthrough chapters before,arrives,middle,estate (node before,arrives,middle,estate)
+ok   below-390 back to each its own: walkthrough story (income) figure about $405K sold over 7 years (node about $405K sold over 7 years)
+ok   below-390 back to each its own: walkthrough story (evelo) figure about $770K borrowed (node about $770K borrowed)
+ok   below-390 back to each its own: overview chart at age 66: income $3.3M, eVelo $3.7M
+ok   below-390 back to each its own: twin ledgers' events match node (A quiet year: income plus a top-up sale. | A quiet year: the loan grows, nothing is sold.)
+ok   below-390 back to each its own: Same storm shown with chips Early crash / Typical / Late crash / Lucky
+ok   below-390 back to each its own: storm caption is node's for Typical (eVelo ends $3.0M ahead. eVelo never hits a forced sale; living on income sells $403K in its first seven years.)
+ok   below-390 back to each its own: no mix line below the card
+ok   below-390: no uncaught page errors
+ok   away-1280: the comparison appears
+ok   away-1280: like-for-like lines (Your eVelo plan moves to Lisbon; living on income stays home. / eVelo retires in 3 years, adding $40K a year until then; this mode retires now. / eVelo uses fat tails; this mode always replays history. / eVelo starts with a $200K loan.)
+ok   away-1280: fat tails are not the same markets, so the neutral heading (Your two plans, side by side)
+ok   away-1280: rates 100% | 98% (node 100% | 98%)
+ok   away-1280: no horizontal scroll
+ok   away-1280: no uncaught page errors
+ok   away-390: the comparison appears
+ok   away-390: like-for-like lines (Your eVelo plan moves to Lisbon; living on income stays home. / eVelo retires in 3 years, adding $40K a year until then; this mode retires now. / eVelo uses fat tails; this mode always replays history. / eVelo starts with a $200K loan.)
+ok   away-390: fat tails are not the same markets, so the neutral heading (Your two plans, side by side)
+ok   away-390: rates 100% | 98% (node 100% | 98%)
+ok   away-390: no horizontal scroll
+ok   away-390: no uncaught page errors
+ok   different futures: the comparison appears
+ok   different futures: the line says so, up top (These run on different futures; sync ‘Futures’ to match.)
+ok   futures-only-1280: the comparison appears
+ok   futures-only-1280: the neutral heading (Your two plans, side by side)
+ok   futures-only-1280: the portfolio line, up top (Portfolio differs: $3.0M in eVelo, $2.0M here.)
+ok   futures-only-1280: no horizontal scroll
+ok   futures-only-1280: no uncaught page errors
+ok   futures-only-390: the comparison appears
+ok   futures-only-390: the neutral heading (Your two plans, side by side)
+ok   futures-only-390: the portfolio line, up top (Portfolio differs: $3.0M in eVelo, $2.0M here.)
+ok   futures-only-390: no horizontal scroll
+ok   futures-only-390: no uncaught page errors
+ok   philadelphia: the comparison appears
+ok   philadelphia: the tax line (eVelo’s figures include Philadelphia’s state inheritance tax; living on income doesn’t model it. / Both run on the same 1,000 futures.)
+ok   philadelphia: fully synced, same person (Same person, same markets, two ways)
+ok   philadelphia: eVelo’s estate is after inheritance tax
+ok   philadelphia: no uncaught page errors
+ok   no sync: no comparison
+
+income-compare e2e passed — screenshots in /tmp/claude-1000/-home-jonah-src-repos-eVelo-v2/2a25829b-2e5b-4927-847c-16ce6fefbc89/scratchpad/live-
