@@ -1,0 +1,27 @@
+$ npx vitest run src/ui/income/__tests__/chartScrub.test.ts src/ui/income/__tests__/walkthroughView.test.tsx --reporter=verbose
+
+ RUN  v5.1.0 /home/jonah/src/repos/eVelo-v2
+
+ ✓ src/ui/income/__tests__/chartScrub.test.ts > rowForKey > arrows step a year, either axis, clamped to the rows 1ms
+ ✓ src/ui/income/__tests__/chartScrub.test.ts > rowForKey > PageUp / PageDown move a few years, clamped 0ms
+ ✓ src/ui/income/__tests__/chartScrub.test.ts > rowForKey > Home and End jump to the ends; other keys and no rows are not taken 0ms
+ ✓ src/ui/income/__tests__/chartScrub.test.ts > gestureOf > stays a tap until the touch moves the lock distance along either axis 0ms
+ ✓ src/ui/income/__tests__/chartScrub.test.ts > gestureOf > then mostly sideways scrubs and mostly vertical (or a tie) scrolls, either direction 0ms
+ ✓ src/ui/income/__tests__/chartScrub.test.ts > gestureOf > locks: a scrub stays a scrub and a scroll a scroll whatever the later moves 0ms
+ ✓ src/ui/income/__tests__/chartScrub.test.ts > gestureOf > takes another lock distance 0ms
+ ✓ src/ui/income/__tests__/chartScrub.test.ts > gestureOf > a non-finite move stays a tap 0ms
+ ✓ src/ui/income/__tests__/chartScrub.test.ts > yearValueText > names the age whose end is shown and the year of the horizon 0ms
+ ✓ src/ui/income/__tests__/walkthroughView.test.tsx > Walkthrough > renders the section, a tab per chapter, the controls, and no year slider row (the chart is the year control) 16ms
+ ✓ src/ui/income/__tests__/walkthroughView.test.tsx > Walkthrough > on a phone the rail shows ages only 3ms
+ ✓ src/ui/income/__tests__/walkthroughView.test.tsx > Walkthrough > the ledgers say Social Security starts in its start year, given the year before, and not after 4ms
+ ✓ src/ui/income/__tests__/walkthroughView.test.tsx > Walkthrough > Back and Next stay focusable at the ends: aria-disabled, not disabled 3ms
+ ✓ src/ui/income/__tests__/walkthroughView.test.tsx > Walkthrough > the ledgers show tax once, in the header 2ms
+ ✓ src/ui/income/__tests__/walkthroughView.test.tsx > Walkthrough > Play stops when the years or chapters change: it only runs for the list it started on 0ms
+ ✓ src/ui/income/__tests__/walkthroughView.test.tsx > Walkthrough under the Holdings switch > says which mix it’s on when given a mix line, and nothing extra under “Each its own” 9ms
+
+ Test Files  2 passed (2)
+      Tests  16 passed (16)
+   Start at  15:56:55
+   Duration  238ms (import 54%, transform 24%, tests 21%, worker 2%)
+
+exit 0

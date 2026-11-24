@@ -1,9 +1,10 @@
 // The two-retirements walkthrough (docs/PLAN.md stage 2): under the comparison once synced and both
 // results are in. A chapter rail (a tablist), the chapter's title and ages, Back / Next chapter /
-// Play story, a paragraph per plan, the overview chart, a year slider limited to the chapter and the
-// twin ledgers for that year. Play story steps the chapter's years and stops at its end; Next chapter
-// carries on. The data and chapter rules live in walkthrough.ts; the chart, ledgers and paragraphs
-// are leaves (WalkthroughChart.tsx, TwinLedgers.tsx, walkthroughStory.ts) coding against its types.
+// Play story, a paragraph per plan, the overview chart (the only year control: tap, drag or keys
+// pick a year, and the section moves to its chapter) and the twin ledgers for that year. Play story
+// steps the chapter's years and stops at its end; Next chapter carries on. The data and chapter rules
+// live in walkthrough.ts; the chart, ledgers and paragraphs are leaves (WalkthroughChart.tsx,
+// TwinLedgers.tsx, walkthroughStory.ts) coding against its types.
 
 import { useEffect, useMemo, useRef, useState, type KeyboardEvent } from 'react'
 import type { IncomeInputs, IncomeResult } from '../../engine/incomeTypes'
@@ -163,26 +164,6 @@ export function Walkthrough({ income, incomeInputs, evelo, wide, mixLine }: Walk
         </div>
 
         <WalkthroughChart years={years} chapters={list} chapter={ci} year={year} onPickYear={pickYear} phone={!wide} />
-
-        <div className="wt__scrub">
-          <span className="wt__scrub-label">{one ? 'One year' : `${c.to - c.from + 1} years`}</span>
-          <input
-            type="range"
-            className="wt__slider"
-            min={c.from}
-            max={c.to}
-            step={1}
-            value={year}
-            disabled={one}
-            aria-label="Year within the chapter"
-            aria-valuetext={`Age ${row.age}`}
-            data-testid="wt-year"
-            onChange={(e) => go(ci, Number(e.target.value))}
-          />
-          <span className="wt__age" aria-hidden="true">
-            {row.age}
-          </span>
-        </div>
 
         <TwinLedgers row={row} prev={year > 0 ? years[year - 1] : null} phone={!wide} />
       </div>

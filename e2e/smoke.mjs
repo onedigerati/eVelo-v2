@@ -58,7 +58,7 @@ await withPreview(async (base) => {
     }
 
     // The two-retirements walkthrough on #income: absent before a sync, under the comparison after
-    // one; Next chapter, the slider spanning just the chapter, and Play stopping at its end (a
+    // one; the chart as the only year control (slider semantics, keys, a click), Next chapter, and Play stopping at its end (a
     // two-year first chapter: Social Security at 62 from 60, so Play takes one step). Then Same
     // storm on the same page.
     {
@@ -88,25 +88,51 @@ await withPreview(async (base) => {
       }, WT)
       check(below, 'walkthrough: shows under the comparison after sync')
       const st = () => p.locator(WT).evaluate((el) => ({ ch: el.dataset.chapter, year: Number(el.dataset.year) }))
-      const slider = () => p.locator('[data-testid="wt-year"]').evaluate((el) => ({ min: Number(el.min), max: Number(el.max), value: Number(el.value) }))
+      const CH = '[data-testid="wt-chart-svg"]'
+      // The chart is the only year control: a slider over every year, its value the shown year.
+      const slider = () =>
+        p.locator(CH).evaluate((el) => ({
+          role: el.getAttribute('role'),
+          min: Number(el.getAttribute('aria-valuemin')),
+          max: Number(el.getAttribute('aria-valuemax')),
+          value: Number(el.getAttribute('aria-valuenow')),
+          text: el.getAttribute('aria-valuetext') ?? '',
+        }))
       const tabAges = async (key) => (await p.locator(`[data-testid="wt-tab-${key}"] .wt__tab-ages`).innerText()).split('–').map(Number)
-      // The slider spans exactly the chapter: as many steps as the tab's ages.
-      const spans = async () => {
-        const { ch } = await st()
-        const [a, b = a] = await tabAges(ch)
-        const s = await slider()
-        return s.max - s.min === b - a && s.value === s.min
-      }
+      check((await p.locator(`${WT} input[type="range"], [data-testid="wt-year"]`).count()) === 0, 'walkthrough: no year slider row under the chart')
       const first = await st()
-      check(first.ch === 'before' && (await spans()), `walkthrough: first chapter is before-Social-Security and the slider spans it (${first.ch})`)
+      const s0 = await slider()
+      const [a0, b0 = a0] = await tabAges('before')
+      check(
+        first.ch === 'before' && first.year === 0 && s0.role === 'slider' && s0.min === 0 && s0.value === 0 && s0.max >= b0 - a0 && s0.text === `End of age ${a0}, year 1 of ${s0.max + 1}`,
+        `walkthrough: first chapter is before-Social-Security and the chart is a slider at its first year (${JSON.stringify(s0)})`,
+      )
       await p.locator('[data-testid="wt-play"]').click()
-      await p.waitForFunction(() => document.querySelector('[data-testid="wt-play"]').getAttribute('aria-pressed') === 'false', null, { timeout: 5000 })
+      await p
+        .waitForFunction(
+          (end) => document.querySelector('[data-testid="wt-play"]').getAttribute('aria-pressed') === 'false' && Number(document.querySelector('[data-testid="walkthrough"]').dataset.year) === end,
+          b0 - a0,
+          { timeout: 15000 },
+        )
+        .catch(() => {})
       const played = await st()
-      const s1 = await slider()
-      check(played.ch === 'before' && played.year === s1.max, `walkthrough: Play stops at the chapter's last year (${JSON.stringify(played)})`)
+      check(played.ch === 'before' && played.year === b0 - a0 && (await slider()).value === played.year, `walkthrough: Play stops at the chapter's last year (${JSON.stringify(played)})`)
       await p.locator('[data-testid="wt-next"]').click()
       const next = await st()
-      check(next.ch !== 'before' && next.year === s1.max + 1 && (await spans()), `walkthrough: Next chapter carries on, slider spans the new chapter (${next.ch})`)
+      check(next.ch !== 'before' && next.year === b0 - a0 + 1 && (await slider()).value === next.year, `walkthrough: Next chapter carries on at the new chapter's first year (${next.ch})`)
+      // Keys on the chart: End, Home, PageUp, arrows; a click picks the year under it.
+      await p.locator(CH).focus()
+      await p.keyboard.press('End')
+      const atEnd = await st()
+      check(atEnd.year === s0.max && atEnd.ch === 'estate', `walkthrough: End on the chart picks the last year (${JSON.stringify(atEnd)})`)
+      await p.keyboard.press('Home')
+      await p.keyboard.press('PageUp')
+      await p.keyboard.press('ArrowRight')
+      check((await st()).year === 6 && (await slider()).value === 6, 'walkthrough: Home, PageUp, ArrowRight on the chart go to year 6')
+      const box = await p.locator(CH).boundingBox()
+      await p.mouse.click(box.x + box.width - 12, box.y + box.height / 2)
+      check((await st()).year === s0.max, 'walkthrough: a click at the chart\'s right end picks the last year')
+      await p.mouse.move(0, 0)
 
       // Same storm, on the same synced page: chips switch the caption; a different seed on the mode's
       // side (stored, then reloaded) hides it with its reason.

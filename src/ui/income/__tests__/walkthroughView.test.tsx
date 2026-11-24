@@ -24,12 +24,14 @@ const evelo = {
 const inputs = { ...INCOME_DEFAULTS, age: 58, horizonYears: n, otherIncome: 30_000, incomeStartAge: 67 }
 
 describe('Walkthrough', () => {
-  it('renders the section, a tab per chapter, the controls and the first chapter’s years on the slider', () => {
+  it('renders the section, a tab per chapter, the controls, and no year slider row (the chart is the year control)', () => {
     const html = renderToStaticMarkup(<Walkthrough income={income} incomeInputs={inputs} evelo={evelo} wide />)
-    for (const id of ['walkthrough', 'wt-tab-before', 'wt-tab-arrives', 'wt-tab-estate', 'wt-prev', 'wt-next', 'wt-play', 'wt-year', 'wt-chart', 'wt-ledgers', 'wt-story-income', 'wt-story-evelo'])
+    for (const id of ['walkthrough', 'wt-tab-before', 'wt-tab-arrives', 'wt-tab-estate', 'wt-prev', 'wt-next', 'wt-play', 'wt-chart', 'wt-ledgers', 'wt-story-income', 'wt-story-evelo'])
       expect(html).toContain(`data-testid="${id}"`)
     expect(html).toContain('role="tablist"')
-    expect(html).toMatch(/data-testid="wt-year"[^>]*min="0"[^>]*max="8"|min="0"[^>]*max="8"[^>]*data-testid="wt-year"/)
+    expect(html).not.toContain('wt-year')
+    expect(html).not.toContain('type="range"')
+    expect(html).not.toContain('wt__scrub')
     expect(html).toContain('Chapter 1 of')
     expect(html).toContain('Before Social Security')
   })

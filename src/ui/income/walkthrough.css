@@ -77,8 +77,7 @@
   color: var(--ink-inverse);
 }
 .wt__tab:focus-visible,
-.wt__btn:focus-visible,
-.wt__slider:focus-visible {
+.wt__btn:focus-visible {
   outline: none;
   box-shadow: var(--focus-ring);
 }
@@ -199,35 +198,6 @@
 }
 .wt__part-text {
   margin: 0;
-}
-
-/* ---------- Year slider ---------- */
-.wt__scrub {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  align-items: center;
-  gap: var(--space-3);
-}
-.wt__scrub-label {
-  font-size: var(--fs-sm);
-  color: var(--ink-3);
-}
-.wt__slider {
-  width: 100%;
-  min-height: 32px;
-  accent-color: var(--ink);
-  border-radius: var(--radius-pill);
-}
-.wt__slider:disabled {
-  opacity: 0.45;
-}
-.wt__age {
-  min-width: 3ch;
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  line-height: 1;
-  text-align: right;
-  font-variant-numeric: tabular-nums;
 }
 
 /* ---------- Leaf placeholders (removed with the stubs) ---------- */

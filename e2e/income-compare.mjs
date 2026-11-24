@@ -205,8 +205,11 @@ await withPreview(async (base) => {
           else await group.getByRole('radio', { name: label }).click()
         }
         if (w === 1280) {
-          await page.getByTestId('compare-tab-pace').focus() // the control before the group
-          await page.keyboard.press('Tab')
+          await page.getByTestId('compare-tab-pace').focus() // before the group (its info tip may come between)
+          for (let i = 0; i < 3; i++) {
+            await page.keyboard.press('Tab')
+            if (await page.evaluate(() => document.activeElement?.getAttribute('role') === 'radio')) break
+          }
           check((await page.evaluate(() => document.activeElement?.textContent)) === 'Each its own', `${name}: Tab enters the group on the checked choice`)
         }
         await pick('Both on eVelo’s mix', 'ArrowRight')
@@ -304,6 +307,15 @@ await withPreview(async (base) => {
       check(X.own.gate === 'shown' && X.evelo.gate === 'shown' && X.income.gate === 'shown', 'node: Same storm shown for the own pair and both swapped pairs')
       check(picks(X.evelo) === picks(X.own) && picks(X.income) === picks(X.own), 'node: the swapped pairs pick the same path indices as the own pair')
       const nw = (row, k) => (row[k] ? currencyCompact(row[k].netWorth) : 'not lived')
+      // The overview chart's marked year: each plan's value label at the dashed marker ('not lived' when
+      // the plan has no dot there). The labels hide while the readout is on, so the pointer goes away first.
+      const chartMark = async (page) => {
+        await page.mouse.move(0, 0)
+        return page.locator('[data-testid="wt-chart-svg"] .wtchart__mark').evaluate((g) => {
+          const v = (k) => g.querySelector(`.wtchart__series--${k} .wtchart__value`)?.textContent?.trim() ?? 'not lived'
+          return { income: v('income'), evelo: v('evelo') }
+        })
+      }
       const pairDone = (page, mode) =>
         page
           .waitForFunction((m) => {
@@ -321,8 +333,8 @@ await withPreview(async (base) => {
         }
         const year = Number(await WT.getAttribute('data-year'))
         const row = x.years[year]
-        const label = (await page.locator('[data-testid="wt-chart"] svg[role="img"]').getAttribute('aria-label')) ?? ''
-        check(label.includes(`Living on income ${nw(row, 'income')}`) && label.includes(`eVelo ${nw(row, 'evelo')}`), `${name}: overview chart at age ${row.age}: income ${nw(row, 'income')}, eVelo ${nw(row, 'evelo')}`)
+        const shown = await chartMark(page)
+        check(shown.income === nw(row, 'income') && shown.evelo === nw(row, 'evelo'), `${name}: overview chart at age ${row.age}: income ${nw(row, 'income')}, eVelo ${nw(row, 'evelo')} (${JSON.stringify(shown)})`)
         const prev = year > 0 ? x.years[year - 1] : null
         const ev = [await text(page, 'tl-income-event'), await text(page, 'tl-evelo-event')]
         const nodeEv = [incomeEvent(row.income, prev?.income), eveloEvent(row.evelo, prev?.evelo)]
@@ -372,8 +384,8 @@ await withPreview(async (base) => {
         await page.waitForFunction(() => document.querySelector('[data-testid="wt-play"]')?.getAttribute('aria-pressed') === 'false', null, { timeout: 30000 })
         const end = X.income.list[0].to
         const y = Number(await page.getByTestId('walkthrough').getAttribute('data-year'))
-        const label = (await page.locator('[data-testid="wt-chart"] svg[role="img"]').getAttribute('aria-label')) ?? ''
-        check(y === end && label.includes(`eVelo ${nw(X.income.years[end], 'evelo')}`), `${name}: Play story stops at the chapter's end with the swapped eVelo's figure (${nw(X.income.years[end], 'evelo')})`)
+        const shown = await chartMark(page)
+        check(y === end && shown.evelo === nw(X.income.years[end], 'evelo'), `${name}: Play story stops at the chapter's end with the swapped eVelo's figure (${nw(X.income.years[end], 'evelo')})`)
         // A non-default future: its caption is node's for the swapped pair.
         const other = X.income.futures.find((f) => f !== X.income.f)
         if (other) {

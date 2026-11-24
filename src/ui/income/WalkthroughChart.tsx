@@ -1,7 +1,9 @@
 // The walkthrough's overview net-worth chart: both plans' median real net worth at every year end,
 // faint across the horizon and bold within the chapter, the chapter's span lit, a dashed marker at
-// the year shown with each plan's value (docs/PLAN.md stage 2). Tap or click anywhere picks the year
-// under it; Left/Right step a year, Home/End jump to the ends. The section moves to that chapter.
+// the year shown with each plan's value (docs/PLAN.md stage 2). It's the walkthrough's only year
+// control, a slider to assistive tech: tap or click anywhere picks the year under it; on touch a
+// mostly sideways drag scrubs the year while a vertical drag scrolls the page (chartScrub.ts); arrows
+// step a year, PageUp/PageDown a few, Home/End jump to the ends. The section moves to that chapter.
 //
 // The x axis runs over year ends: position k is the end of row k − 1 (k = 0 the start of row 0), so
 // row i spans k = i .. i + 1 and the domain is 0 .. years.length.
@@ -10,33 +12,24 @@
 // the mode's ChartReadout box, figures from walkthroughReadout.ts) without picking it; leaving hides
 // it. Keyboard focus shows the readout for the picked year.
 
-import { useId, useState, type FocusEvent, type KeyboardEvent, type MouseEvent, type PointerEvent } from 'react'
+import { useId, useRef, useState, type FocusEvent, type KeyboardEvent, type MouseEvent, type PointerEvent } from 'react'
 import { scaleLinear } from 'd3-scale'
 import { line } from 'd3-shape'
 import { currencyCompact } from '../format'
 import { moneyTick, useSize } from '../outlook/chartKit'
 import type { EveloYear, IncomeYear, WalkthroughChartProps, WalkYear } from './walkthrough'
 import { ChartReadout, ReadoutHead, ReadoutRow } from './ChartReadout'
+import { gestureOf, rowForKey, yearValueText, type Gesture } from './chartScrub'
 import { rowAtX, walkReadout } from './walkthroughReadout'
 import './walkthroughChart.css'
 
-export { rowAtX }
+export { rowAtX, rowForKey }
 
 type PlanKey = 'income' | 'evelo'
 const PLANS: { key: PlanKey; label: string }[] = [
   { key: 'income', label: 'Living on income' },
   { key: 'evelo', label: 'eVelo' },
 ]
-
-/** The row a key moves to from `year`, or null for a key the chart doesn't take. */
-export function rowForKey(key: string, year: number, n: number): number | null {
-  if (n <= 0) return null
-  if (key === 'ArrowLeft') return Math.max(0, year - 1)
-  if (key === 'ArrowRight') return Math.min(n - 1, year + 1)
-  if (key === 'Home') return 0
-  if (key === 'End') return n - 1
-  return null
-}
 
 /** A plan's net worth at each year end k = 0..n, null where the plan isn't lived (a gap). */
 export function netWorthPoints(years: readonly WalkYear[], key: PlanKey): (number | null)[] {
@@ -65,6 +58,8 @@ export function WalkthroughChart({ years, chapters, chapter, year, onPickYear, p
   const [hover, setHover] = useState<number | null>(null)
   const [keyed, setKeyed] = useState(false)
   const uid = useId().replace(/:/g, '')
+  // A touch pointer in progress: where it went down and its gesture so far.
+  const touch = useRef<{ id: number; x: number; y: number; g: Gesture } | null>(null)
   const n = years.length
   const height = phone ? 200 : Math.round(Math.min(300, Math.max(210, width * 0.3)))
   const m = { t: 22, r: 8, b: 24, l: phone ? 42 : 48 }
@@ -132,10 +127,12 @@ export function WalkthroughChart({ years, chapters, chapter, year, onPickYear, p
     return best ?? { x: mx + (flip ? -8 : 8), y: y(v) + (up ? -8 : phone ? 18 : 16), anchor: flip ? ('end' as const) : ('start' as const), h: 0 }
   }
 
-  const pick = (e: MouseEvent<SVGSVGElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect()
-    if (n > 0) onPickYear(rowAtX(e.clientX - rect.left, x0, x1, n))
+  const pickAt = (el: SVGSVGElement, clientX: number) => {
+    if (n <= 0) return
+    const r = rowAtX(clientX - el.getBoundingClientRect().left, x0, x1, n)
+    if (r !== year) onPickYear(r)
   }
+  const pick = (e: MouseEvent<SVGSVGElement>) => pickAt(e.currentTarget, e.clientX)
   const key = (e: KeyboardEvent<SVGSVGElement>) => {
     const r = rowForKey(e.key, year, n)
     if (r === null) return
@@ -143,11 +140,39 @@ export function WalkthroughChart({ years, chapters, chapter, year, onPickYear, p
     setKeyed(true)
     if (r !== year) onPickYear(r)
   }
-  // Hover previews (a mouse or pen, not touch: a tap just picks); keyboard focus reads the picked year.
-  const hoverAt = (e: PointerEvent<SVGSVGElement>) => {
-    if (e.pointerType === 'touch' || n <= 0) return
-    const rect = e.currentTarget.getBoundingClientRect()
-    setHover(rowAtX(e.clientX - rect.left, x0, x1, n))
+  // Hover previews (a mouse or pen, not touch); keyboard focus reads the picked year. On touch a tap
+  // picks, a mostly sideways drag scrubs the picked year (the pointer captured), and a vertical drag is
+  // left to the page (touch-action: pan-y; the browser then cancels the pointer).
+  const down = (e: PointerEvent<SVGSVGElement>) => {
+    if (e.pointerType !== 'touch' || !e.isPrimary) return
+    touch.current = { id: e.pointerId, x: e.clientX, y: e.clientY, g: 'tap' }
+  }
+  const move = (e: PointerEvent<SVGSVGElement>) => {
+    if (n <= 0) return
+    if (e.pointerType !== 'touch') {
+      const rect = e.currentTarget.getBoundingClientRect()
+      setHover(rowAtX(e.clientX - rect.left, x0, x1, n))
+      return
+    }
+    const t = touch.current
+    if (!t || t.id !== e.pointerId) return
+    const g = gestureOf(e.clientX - t.x, e.clientY - t.y, t.g)
+    if (g === 'scrub' && t.g !== 'scrub') {
+      try {
+        e.currentTarget.setPointerCapture(e.pointerId)
+      } catch {}
+    }
+    t.g = g
+    if (g === 'scrub') pickAt(e.currentTarget, e.clientX)
+  }
+  const end = (e: PointerEvent<SVGSVGElement>, lifted: boolean) => {
+    const t = touch.current
+    if (!t || t.id !== e.pointerId) return
+    if (lifted && t.g === 'tap') pickAt(e.currentTarget, e.clientX)
+    touch.current = null
+    try {
+      if (e.currentTarget.hasPointerCapture(e.pointerId)) e.currentTarget.releasePointerCapture(e.pointerId)
+    } catch {}
   }
   const focus = (e: FocusEvent<SVGSVGElement>) => {
     let visible = true
@@ -160,26 +185,28 @@ export function WalkthroughChart({ years, chapters, chapter, year, onPickYear, p
   const read = shown !== null ? walkReadout(years, shown) : null
   const hx = read ? x(read.index + 1) : 0
 
-  const label =
-    `Net worth of both plans by age, today’s dollars` +
-    (c ? `; ${c.name} lit` : '') +
-    (row ? `; age ${row.age}, year end: ${PLANS.map((p) => `${p.label} ${row[p.key] ? currencyCompact(row[p.key]!.netWorth) : 'not lived'}`).join(', ')}` : '') +
-    '. Left and right arrows change the year.'
-
   return (
     <div className={`wtchart${phone ? ' wtchart--phone' : ''}`} ref={wrap} style={{ height }} data-testid="wt-chart">
       {width > 0 && n > 0 && (
         <svg
           className="wtchart__svg"
           width={width}
-          height={height} role="img"
-          aria-label={label}
-          aria-describedby={`${uid}-read`}
+          height={height}
+          role="slider"
+          aria-label="Year in the walkthrough"
+          aria-valuemin={0}
+          aria-valuemax={n - 1}
+          aria-valuenow={Math.min(year, n - 1)}
+          aria-valuetext={row ? yearValueText(row.age, year, n) : undefined}
+          aria-orientation="horizontal"
           tabIndex={0}
           data-testid="wt-chart-svg"
           onClick={pick}
           onKeyDown={key}
-          onPointerMove={hoverAt}
+          onPointerDown={down}
+          onPointerMove={move}
+          onPointerUp={(e) => end(e, true)}
+          onPointerCancel={(e) => end(e, false)}
           onPointerLeave={() => setHover(null)}
           onFocus={focus}
           onBlur={() => setKeyed(false)}

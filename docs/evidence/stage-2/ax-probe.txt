@@ -1,0 +1,7 @@
+$ node probe-ax.mjs   # CDP AX tree vs a reference HTML div role=slider
+load DOM valuetext= End of age 60, year 1 of 20 | full tree: [{"name":"Year in the walkthrough","value":0,"vt":""}] | queried: [{"role":"slider","name":"Year in the walkthrough","value":{"type":"number","value":0},"vt":{"name":"valuetext","value":{"type":"string","value":""}}}]
+load ariaSnapshot: - slider "Year in the walkthrough"
+after ArrowRight DOM valuetext= End of age 61, year 2 of 20 | full tree: [{"name":"Year in the walkthrough","value":1,"vt":""}] | queried: [{"role":"slider","name":"Year in the walkthrough","value":{"type":"number","value":1},"vt":{"name":"valuetext","value":{"type":"string","value":""}}}]
+after ArrowRight ariaSnapshot: - slider "Year in the walkthrough"
+control div: [{"name":"control","value":1,"vt":""},{"name":"Year in the walkthrough","value":1,"vt":""}]
+control ariaSnapshot: - slider "control"

@@ -1,0 +1,77 @@
+$ node verify-s2.mjs docs/evidence/stage-2 all   # script copied as verify-s2.mjs
+open theme=light (data-theme=light) phone=true reducedMotion=false
+ok   phone: no slider row elements in the DOM
+phone chart -> next block: {"chartBottom":548.25,"next":"wt-ledgers","nextTop":564.25,"gap":16}
+ok   phone: no leftover gap under the chart (16px to wt-ledgers)
+phone start: {"year":"0","now":"0","text":"End of age 60, year 1 of 20","scrollY":2322}
+tap: {"year":"15","now":"15","text":"End of age 75, year 16 of 20","readoutOn":false}
+ok   phone: tap at 75% picks that year (0 -> 15, valuenow 15)
+ok   phone: touchscreen.tap at 25% picks that year (15 -> 5)
+sideways drag years per move: 5,5,7,7,9,10,10,12,13,14,15,15 scrollY 2322 -> 2322
+ok   phone: sideways drag scrubs year step by step (5->7->9->10->12->13->14->15), page not scrolled (2322->2322)
+leftward drag years: 15,14,13,12,11,10,10,9,8,7,6,5
+ok   phone: leftward drag scrubs back (15 -> 5)
+vertical drag years per move: 5,5,5,5,5,5,5,5,5,5,5,5 scrollY 2322 -> 2635
+ok   phone: vertical drag scrolls the page (2322->2635) and leaves the year (5 -> 5)
+downward drag scrollY 2624 -> 2390 year 5 -> 5
+ok   phone: downward vertical drag scrolls up (2624->2390), year unchanged
+ok   phone: no page/console errors 
+open theme=dark (data-theme=dark) phone=true reducedMotion=false
+ok   phone dark: no errors 
+open theme=light (data-theme=light) phone=false reducedMotion=false
+ok   desktop: no readout/crosshair before hover, marker labels shown
+aria snapshot of chart: - slider "Year in the walkthrough"
+AX sliders: [{"name":"Year in the walkthrough","value":0,"props":{"focusable":true,"orientation":"horizontal","valuemin":0,"valuemax":19,"valuetext":""}}]
+ok   desktop: AX slider name "Year in the walkthrough", value 0 of 0..19, aria-valuetext "End of age 60, year 1 of 20"
+ok   desktop: only one year slider in the AX tree (1 sliders total: Year in the walkthrough)
+chart children all aria-hidden: true
+hover left: cross=0 readout="End of age | 60 | year 1 | Living on income | $2.0M | eVelo | $2.1M | eVelo ahead by | $93K | eVelo portfolio | $2.2M | eVelo loan | $70K | Loan-to-value | 3% | Income’s shares sold | $74K"
+ok   desktop hover left: readout + crosshair row 0, picked year unchanged (0)
+hover middle: cross=10 readout="End of age | 70 | year 11 | Living on income | $2.1M | eVelo | $3.1M | eVelo ahead by | $995K | eVelo portfolio | $3.7M | eVelo loan | $597K | Loan-to-value | 16% | Income’s shares sold | $53K"
+ok   desktop hover middle: readout + crosshair row 10, picked year unchanged (0)
+hover right: cross=19 readout="End of age | 79 | year 20 | Living on income | $2.4M | eVelo | $4.8M | eVelo ahead by | $2.3M | eVelo portfolio | $6.0M | eVelo loan | $1.2M | Loan-to-value | 21% | Income’s shares sold | $55K"
+ok   desktop hover right: readout + crosshair row 19, picked year unchanged (0)
+ok   desktop: mouse leave hides readout, labels back
+click: hovered 10 -> year 10, valuenow 10, valuetext "End of age 70, year 11 of 20"
+ok   desktop: click picks hovered year 10; aria-valuenow/valuetext follow ("End of age 70, year 11 of 20")
+after click + leave: focused true readoutOn false
+ok   desktop: after a click and leaving, no stuck readout (mouse focus is not keyboard focus)
+ok   desktop light: no page/console errors 
+open theme=light (data-theme=light) phone=false reducedMotion=false
+ok   light: Tab focuses chart, readout for picked year 0
+ok   light: 2x ArrowRight 0 -> 2 ("End of age 62, year 3 of 20")
+ok   light: End -> 19 ("End of age 79, year 20 of 20")
+ok   light: Home -> 0 ("End of age 60, year 1 of 20")
+ok   light: ArrowLeft at the start stays at 0
+ok   light: readout hides when focus leaves the chart
+ok   light: no page/console errors 
+open theme=dark (data-theme=dark) phone=false reducedMotion=false
+ok   dark: Tab focuses chart, readout for picked year 0
+ok   dark: 2x ArrowRight 0 -> 2 ("End of age 62, year 3 of 20")
+ok   dark: End -> 19 ("End of age 79, year 20 of 20")
+ok   dark: Home -> 0 ("End of age 60, year 1 of 20")
+ok   dark: ArrowLeft at the start stays at 0
+ok   dark: readout hides when focus leaves the chart
+ok   dark: no page/console errors 
+open theme=light (data-theme=light) phone=false reducedMotion=true
+ok   light-reduced: Tab focuses chart, readout for picked year 0
+ok   light-reduced: 2x ArrowRight 0 -> 2 ("End of age 62, year 3 of 20")
+ok   light-reduced: End -> 19 ("End of age 79, year 20 of 20")
+ok   light-reduced: Home -> 0 ("End of age 60, year 1 of 20")
+ok   light-reduced: ArrowLeft at the start stays at 0
+ok   light-reduced: readout hides when focus leaves the chart
+light-reduced: elements in chart with transitions/animations > 10ms: 0
+ok   light-reduced: no transitions/animations in the chart under reduced motion (0)
+ok   light-reduced: no page/console errors 
+open theme=dark (data-theme=dark) phone=false reducedMotion=true
+ok   dark-reduced: Tab focuses chart, readout for picked year 0
+ok   dark-reduced: 2x ArrowRight 0 -> 2 ("End of age 62, year 3 of 20")
+ok   dark-reduced: End -> 19 ("End of age 79, year 20 of 20")
+ok   dark-reduced: Home -> 0 ("End of age 60, year 1 of 20")
+ok   dark-reduced: ArrowLeft at the start stays at 0
+ok   dark-reduced: readout hides when focus leaves the chart
+dark-reduced: elements in chart with transitions/animations > 10ms: 0
+ok   dark-reduced: no transitions/animations in the chart under reduced motion (0)
+ok   dark-reduced: no page/console errors 
+
+all ok
