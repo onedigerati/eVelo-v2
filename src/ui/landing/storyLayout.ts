@@ -91,6 +91,54 @@ export const NARROW: StoryLayout = {
   sliceLabelDy: [20, 36, 54],
 }
 
+/**
+ * Up to this plot width (CSS px) WIDE is drawn as is, scaling with the card. Above it the wide
+ * layout widens instead (`wideFor`), so its text keeps the size it has here (13.5 units at
+ * 560/600 ≈ 12.6px) however wide the card gets.
+ */
+export const WIDE_UP_TO = 560
+/** Viewbox units per CSS px once the wide layout widens (the scale WIDE has at WIDE_UP_TO). */
+const WIDE_UNIT = WIDE.width / WIDE_UP_TO
+/** The chart gains this much height (units) per unit of extra width, up to WIDE_MAX_GROW. */
+const WIDE_GROW_RATE = 0.15
+const WIDE_MAX_GROW = 120
+
+const wideCache = new Map<number, StoryLayout>()
+
+/**
+ * The wide layout for a plot `px` CSS pixels wide: WIDE itself up to WIDE_UP_TO, then a widened
+ * copy whose viewBox follows the plot (so its units stay a fixed size on screen and the text keeps
+ * its size). The extra width goes to the bars and the map strip; the chart grows a little taller
+ * (a fraction of the extra width, capped) so it doesn't turn into a thin strip. Widths are rounded
+ * to 10 units so resizing reuses a handful of layouts (and their cached static geometry).
+ */
+export function wideFor(px: number): StoryLayout {
+  if (!(px > WIDE_UP_TO)) return WIDE
+  const width = Math.round((px * WIDE_UNIT) / 10) * 10
+  if (width <= WIDE.width) return WIDE
+  const hit = wideCache.get(width)
+  if (hit) return hit
+  const dx = width - WIDE.width
+  const dy = Math.round(Math.min(WIDE_MAX_GROW, dx * WIDE_GROW_RATE))
+  const m = WIDE.map
+  const w = m.w + dx
+  // The pins keep their places as shares of the strip.
+  const at = (x: number) => Math.round(m.x + ((x - m.x) / m.w) * w)
+  const L: StoryLayout = {
+    ...WIDE,
+    width,
+    height: WIDE.height + dy,
+    map: { ...m, w, home: { ...m.home, x: at(m.home.x) }, dest: { ...m.dest, x: at(m.dest.x) } },
+    X1: WIDE.X1 + dx,
+    YB: WIDE.YB + dy,
+    xTickY: WIDE.xTickY + dy,
+    personY: WIDE.personY + dy,
+    EX: WIDE.EX + dx,
+  }
+  wideCache.set(width, L)
+  return L
+}
+
 /* ---------- Geometry ---------- */
 
 /** Value axis top: the highest y tick ($20M). */

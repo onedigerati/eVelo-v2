@@ -460,6 +460,18 @@
 }
 
 /* ---------- Tablet and below: hero stacks (copy, then card), nav folds away ---------- */
+/* ---------- Wide screens ---------- */
+/* Above 1440px the frame follows the window (as the app's, --frame-max: ~94vw up to 2400px) and the
+ * story card takes ~60% of the hero; its chart widens rather than scaling up (StoryCard wideFor). */
+@media (min-width: 1441px) {
+  .landing__frame {
+    max-width: var(--frame-max);
+  }
+  .landing__hero {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  }
+}
+
 @media (max-width: 900px) {
   .landing {
     --lp-pad: 24px;
