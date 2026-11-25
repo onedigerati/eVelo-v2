@@ -1,5 +1,5 @@
 import { AnimatePresence, m as motion, useReducedMotion } from 'framer-motion'
-import { useCallback, useEffect, useId, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react'
+import { useCallback, useEffect, useId, useRef, useState, type PointerEvent as ReactPointerEvent, type Ref } from 'react'
 import { createPortal } from 'react-dom'
 import type { CityPhoto } from '../../data/photos'
 import { ease } from '../motion'
@@ -13,7 +13,20 @@ import { leadSizes, photoSrcSet, smallSizes } from './photoLoad'
  * badge on the large photo, and a full-size view. On phones it becomes one swipeable cover.
  * Both layouts are rendered; CSS shows one (see `.pgal` in atlas.css).
  */
-export function PhotoGallery({ cityName, photos, badge }: { cityName: string; photos: CityPhoto[]; badge: OddsBadgeModel }) {
+export function PhotoGallery({
+  cityName,
+  photos,
+  badge,
+  compact,
+  ref,
+}: {
+  cityName: string
+  photos: CityPhoto[]
+  badge: OddsBadgeModel
+  /** The wide profile's pinned banner, shrunk to a strip (see bannerShrink.ts). */
+  compact?: boolean
+  ref?: Ref<HTMLElement>
+}) {
   const [viewing, setViewing] = useState<number | null>(null)
   const opener = useRef<HTMLElement | null>(null)
   const [slide, setSlide] = useState(0)
@@ -71,7 +84,7 @@ export function PhotoGallery({ cityName, photos, badge }: { cityName: string; ph
   const cur = photos[slide] ?? photos[0]
 
   return (
-    <section className="pgal" aria-label={`Photos of ${cityName}`}>
+    <section ref={ref} className={cx('pgal', compact && 'is-compact')} aria-label={`Photos of ${cityName}`}>
       {/* Desktop and tablet: the mosaic */}
       <div className="pgal__mosaic">
         {photos.slice(0, 5).map((p, i) => tile(p, i, cx('pgal__tile', i === 0 && 'is-lead'), i > 0, i === 0 ? leadSizes(p) : smallSizes(p)))}

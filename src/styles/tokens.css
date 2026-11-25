@@ -180,6 +180,8 @@
   --shadow-1: 0 1px 2px rgba(40, 32, 12, 0.05), 0 1px 1px rgba(40, 32, 12, 0.03);
   --shadow-2: 0 2px 6px rgba(40, 32, 12, 0.05), 0 12px 32px -12px rgba(40, 32, 12, 0.14);
   --shadow-3: 0 8px 24px -6px rgba(40, 32, 12, 0.16), 0 32px 64px -24px rgba(40, 32, 12, 0.24);
+  /* Bottom edge only: a pinned band with content scrolling under it */
+  --shadow-band: 0 14px 18px -14px rgba(40, 32, 12, 0.22);
   --shadow-thumb: 0 1px 2px rgba(20, 24, 21, 0.2), 0 2px 8px rgba(20, 24, 21, 0.12);
 }
 
@@ -269,6 +271,7 @@
   --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
   --shadow-2: 0 2px 8px rgba(0, 0, 0, 0.35), 0 16px 40px -16px rgba(0, 0, 0, 0.6);
   --shadow-3: 0 12px 32px -8px rgba(0, 0, 0, 0.6), 0 40px 80px -24px rgba(0, 0, 0, 0.7);
+  --shadow-band: 0 14px 18px -14px rgba(0, 0, 0, 0.55);
   --shadow-thumb: 0 1px 2px rgba(0, 0, 0, 0.5), 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
@@ -349,6 +352,7 @@
     --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
     --shadow-2: 0 2px 8px rgba(0, 0, 0, 0.35), 0 16px 40px -16px rgba(0, 0, 0, 0.6);
     --shadow-3: 0 12px 32px -8px rgba(0, 0, 0, 0.6), 0 40px 80px -24px rgba(0, 0, 0, 0.7);
+    --shadow-band: 0 14px 18px -14px rgba(0, 0, 0, 0.55);
     --shadow-thumb: 0 1px 2px rgba(0, 0, 0, 0.5), 0 4px 12px rgba(0, 0, 0, 0.4);
   }
 }
