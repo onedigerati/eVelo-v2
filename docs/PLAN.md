@@ -7,20 +7,21 @@ On big screens (above today's frame caps, so ~1600px and up) the app uses the wi
 2026-11-24 · tests: 1694 pass, 1 skipped · typecheck: clean
 
 ## Now
-Agents: wide — confirmed 2026-11-24 22:39
-Stage 1 of 2 · Fluid Atlas and Plan
+Mode: autopilot — unattended
+Agents: wide — confirmed 2026-11-24 22:41
+Stage 1 of 2 · Fluid Atlas and Plan — done, evidence in docs/evidence/stage-1/report.md
 Risk: UI only
 Checks:
-- [ ] At 2560px the top bar, Plan workspace and Atlas page span about 94vw (Atlas ≈92vw), capped at 2400px; at 1440px every page measures as it does today (proof: run the product, measured widths and screenshots; a unit test can't lay out CSS)
-- [ ] Atlas top picks and "Also worth a look" fill as many columns as fit, with no lone card in a last row of the default six picks at 1920 and 2560px (proof: screenshots, layout)
-- [ ] The Atlas ranking table at 2560px keeps its plan-holds bar column capped, so the odds, yearly cost and vs-home columns sit beside the bar rather than across the page (proof: screenshot plus measured column gap)
-- [ ] Plan chart cards are 3 across at 2560px, 2 across at 1920 and 1440px, and the fan chart still spans the row (proof: screenshots)
-- [ ] No horizontal page scroll at 1440, 1920, 2560 and 390px, in both themes (proof: run the product, scrollWidth vs clientWidth)
-- [ ] Test suite and typecheck green; e2e smoke passes (proof: test)
+- [x] At 2560px the top bar, Plan workspace and Atlas page span about 94vw (Atlas ≈92vw), capped at 2400px; at 1440px every page measures as it does today (proof: run the product, measured widths and screenshots; a unit test can't lay out CSS)
+- [x] Atlas top picks and "Also worth a look" fill as many columns as fit, with no lone card in a last row of the default six picks at 1920 and 2560px (proof: screenshots, layout)
+- [x] The Atlas ranking table at 2560px keeps its plan-holds bar column capped, so the odds, yearly cost and vs-home columns sit beside the bar rather than across the page (proof: screenshot plus measured column gap)
+- [x] Plan chart cards are 3 across at 2560px, 2 across at 1920 and 1440px, and the fan chart still spans the row (proof: screenshots)
+- [x] No horizontal page scroll at 1440, 1920, 2560 and 390px, in both themes (proof: run the product, scrollWidth vs clientWidth)
+- [x] Test suite and typecheck green; e2e smoke passes (proof: test)
 Open: none
 
 ## Stages
-- [ ] 1. Fluid Atlas and Plan — fluid frame above today's caps, auto-fill grids, capped ranking bars, Plan cards 3-up when wide
+- [x] 1. Fluid Atlas and Plan — fluid frame above today's caps, auto-fill grids, capped ranking bars, Plan cards 3-up when wide
 - [ ] 2. Landing side by side — wider landing frame, story card ~60% of the hero, chart text keeps its size; release
 
 ## Decisions
@@ -28,7 +29,11 @@ Open: none
 - 2026-11-24 · Keep C but fix its two weak spots: cap the ranking table's bar column, and let Plan cards go 3 across once each card is still ≥ ~560px — user, from the recommendation.
 - 2026-11-24 · Landing B keeps the story chart's labels at today's size as the card grows (the prototype's SVG scaled them up to poster size) — PM default, needed for B to read right.
 - 2026-11-24 · The changes apply only where today's caps would bind (wider than ~1520px of content); up to 1440px every page is unchanged — PM default. Why: laptops, tablets and phones were not in question.
-- 2026-11-24 · Agents: wide — user, asked at planning.
+- 2026-11-24 · Agents: wide — user, asked at planning; confirmed in this session ("Jbit Autopilot Wide").
+- 2026-11-24 · (unattended) Plan cards at 3 across: the fourth half card, which would sit alone in its row, spans the row instead. Why: a lone card in a short last row reads as broken, and the plan's no-orphans rule for Atlas applies here in spirit.
+- 2026-11-24 · (unattended) Atlas "Also worth a look" keeps auto-fill (3 across at 1920, so 10 rows leave one alone in the last line). Why: it's a compact text list whose length changes with "Show 26–75", so no fixed column count avoids a short last row; 2 across would make 810px rows and 5 across cramps the text. The no-orphans rule stays for the six top picks (3 across to 2480px, then 6).
+- 2026-11-24 · (unattended) Atlas frame: `.page` was really 1200px (views.css wins over atlas.css's 1320px), so the fluid rule applies above 1440px viewport as min(92vw, 2400px), leaving ≤1440 unchanged.
+- 2026-11-24 · Autopilot, unattended — user's command. Then "Jbit Autopilot Outward": the deploy push at the end of stage 2 goes through.
 - 2026-11-24 · Release: deploy at the end of stage 2 — PM default, as with earlier UI plans.
 - 2026-11-24 · Scale: two stages, one release; no scale signal fired, planned as one plan.
 - 2026-11-24 · No research: nothing outside the repo changes this plan.
