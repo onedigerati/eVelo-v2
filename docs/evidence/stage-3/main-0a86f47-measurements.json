@@ -1,0 +1,810 @@
+[
+ {
+  "label": "main-0a86f47",
+  "theme": "light",
+  "width": 1440,
+  "height": 900,
+  "title": "No. 2 Lisbon",
+  "clientWidth": 1440,
+  "scrollWidth": 1440,
+  "bodyScrollWidth": 1440,
+  "sheet": {
+   "l": 180,
+   "t": 24,
+   "w": 1080,
+   "h": 876
+  },
+  "sheetMaxWidth": "1080px",
+  "sheetBody": {
+   "l": 181,
+   "t": 107.4,
+   "w": 1078,
+   "h": 792.6,
+   "scrollWidth": 1078,
+   "clientWidth": 1078,
+   "scrollHeight": 2096,
+   "clientHeight": 793
+  },
+  "prof": {
+   "l": 213,
+   "t": 534.8,
+   "w": 1014,
+   "h": 1636.6
+  },
+  "profCols": "559.531px 414.469px",
+  "sections": [
+   {
+    "cls": "prof__lead",
+    "l": 213,
+    "t": 534.8,
+    "w": 559.5,
+    "h": 233.5
+   },
+   {
+    "cls": "prof__sec.prof__sec--scores",
+    "l": 213,
+    "t": 800.4,
+    "w": 559.5,
+    "h": 178.8
+   },
+   {
+    "cls": "prof__sec.prof__sec--facts",
+    "l": 213,
+    "t": 1011.1,
+    "w": 559.5,
+    "h": 996.3
+   },
+   {
+    "cls": "prof__sec.prof__sec--worth",
+    "l": 213,
+    "t": 2039.4,
+    "w": 559.5,
+    "h": 132
+   },
+   {
+    "cls": "prof__plan",
+    "l": 812.5,
+    "t": 534.8,
+    "w": 414.5,
+    "h": 1121.8
+   }
+  ],
+  "pgal": {
+   "l": 213,
+   "t": 107.4,
+   "w": 1014,
+   "h": 395.4
+  },
+  "pgalPosition": "static",
+  "mosaic": {
+   "l": 213,
+   "t": 107.4,
+   "w": 1014,
+   "h": 372
+  },
+  "cover": {
+   "l": 0,
+   "t": 0,
+   "w": 0,
+   "h": 0
+  },
+  "pastEdge": 0,
+  "pastSample": [],
+  "pastSheet": 5,
+  "pastSheetSample": [
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [179,459]",
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [134,414]",
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [148,428]",
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [123,403]",
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [152,432]"
+  ],
+  "errors": []
+ },
+ {
+  "label": "main-0a86f47",
+  "theme": "light",
+  "width": 1920,
+  "height": 1080,
+  "title": "No. 2 Lisbon",
+  "clientWidth": 1920,
+  "scrollWidth": 1920,
+  "bodyScrollWidth": 1920,
+  "sheet": {
+   "l": 76.8,
+   "t": 24,
+   "w": 1766.4,
+   "h": 1056
+  },
+  "sheetMaxWidth": "1766.4px",
+  "sheetBody": {
+   "l": 77.8,
+   "t": 107.4,
+   "w": 1764.4,
+   "h": 972.6,
+   "scrollWidth": 1764,
+   "clientWidth": 1764,
+   "scrollHeight": 1618,
+   "clientHeight": 973
+  },
+  "prof": {
+   "l": 109.8,
+   "t": 587.2,
+   "w": 1700.4,
+   "h": 1105.8
+  },
+  "profCols": "520.781px 598.891px 468.703px",
+  "sections": [
+   {
+    "cls": "prof__lead",
+    "l": 109.8,
+    "t": 587.2,
+    "w": 520.8,
+    "h": 233.5
+   },
+   {
+    "cls": "prof__sec.prof__sec--scores",
+    "l": 109.8,
+    "t": 860.8,
+    "w": 520.8,
+    "h": 178.8
+   },
+   {
+    "cls": "prof__sec.prof__sec--facts",
+    "l": 686.6,
+    "t": 587.2,
+    "w": 598.9,
+    "h": 956
+   },
+   {
+    "cls": "prof__sec.prof__sec--worth",
+    "l": 109.8,
+    "t": 1079.5,
+    "w": 520.8,
+    "h": 132
+   },
+   {
+    "cls": "prof__plan",
+    "l": 1341.5,
+    "t": 587.2,
+    "w": 468.7,
+    "h": 1105.8
+   }
+  ],
+  "pgal": {
+   "l": 109.8,
+   "t": 107.4,
+   "w": 1700.4,
+   "h": 455.8
+  },
+  "pgalPosition": "sticky",
+  "mosaic": {
+   "l": 109.8,
+   "t": 107.4,
+   "w": 1700.4,
+   "h": 422.4
+  },
+  "cover": {
+   "l": 0,
+   "t": 0,
+   "w": 0,
+   "h": 0
+  },
+  "pastEdge": 0,
+  "pastSample": [],
+  "pastSheet": 5,
+  "pastSheetSample": [
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [76,356]",
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [31,311]",
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [45,325]",
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [20,300]",
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [49,329]"
+  ],
+  "errors": []
+ },
+ {
+  "label": "main-0a86f47",
+  "theme": "light",
+  "width": 2560,
+  "height": 1440,
+  "title": "No. 2 Lisbon",
+  "clientWidth": 2560,
+  "scrollWidth": 2560,
+  "bodyScrollWidth": 2560,
+  "sheet": {
+   "l": 180,
+   "t": 24,
+   "w": 2200,
+   "h": 1416
+  },
+  "sheetMaxWidth": "2200px",
+  "sheetBody": {
+   "l": 181,
+   "t": 107.4,
+   "w": 2198,
+   "h": 1332.6,
+   "scrollWidth": 2198,
+   "clientWidth": 2198,
+   "scrollHeight": 1664,
+   "clientHeight": 1333
+  },
+  "prof": {
+   "l": 213,
+   "t": 684.8,
+   "w": 2134,
+   "h": 1054.5
+  },
+  "profCols": "662.938px 762.406px 596.641px",
+  "sections": [
+   {
+    "cls": "prof__lead",
+    "l": 213,
+    "t": 684.8,
+    "w": 662.9,
+    "h": 210.3
+   },
+   {
+    "cls": "prof__sec.prof__sec--scores",
+    "l": 213,
+    "t": 935.1,
+    "w": 662.9,
+    "h": 178.8
+   },
+   {
+    "cls": "prof__sec.prof__sec--facts",
+    "l": 931.9,
+    "t": 684.8,
+    "w": 762.4,
+    "h": 774.8
+   },
+   {
+    "cls": "prof__sec.prof__sec--worth",
+    "l": 213,
+    "t": 1153.9,
+    "w": 662.9,
+    "h": 132
+   },
+   {
+    "cls": "prof__plan",
+    "l": 1750.3,
+    "t": 684.8,
+    "w": 596.6,
+    "h": 1054.5
+   }
+  ],
+  "pgal": {
+   "l": 213,
+   "t": 107.4,
+   "w": 2134,
+   "h": 553.4
+  },
+  "pgalPosition": "sticky",
+  "mosaic": {
+   "l": 213,
+   "t": 107.4,
+   "w": 2134,
+   "h": 520
+  },
+  "cover": {
+   "l": 0,
+   "t": 0,
+   "w": 0,
+   "h": 0
+  },
+  "pastEdge": 0,
+  "pastSample": [],
+  "pastSheet": 5,
+  "pastSheetSample": [
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [179,459]",
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [134,414]",
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [148,428]",
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [123,403]",
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [152,432]"
+  ],
+  "errors": []
+ },
+ {
+  "label": "main-0a86f47",
+  "theme": "light",
+  "width": 390,
+  "height": 844,
+  "title": "No. 2 Lisbon",
+  "clientWidth": 390,
+  "scrollWidth": 390,
+  "bodyScrollWidth": 390,
+  "sheet": {
+   "l": 0,
+   "t": 24,
+   "w": 390,
+   "h": 820
+  },
+  "sheetMaxWidth": "1080px",
+  "sheetBody": {
+   "l": 1,
+   "t": 105,
+   "w": 388,
+   "h": 739,
+   "scrollWidth": 388,
+   "clientWidth": 388,
+   "scrollHeight": 3781,
+   "clientHeight": 739
+  },
+  "prof": {
+   "l": 21,
+   "t": 501.8,
+   "w": 348,
+   "h": 3359.8
+  },
+  "profCols": "348px",
+  "sections": [
+   {
+    "cls": "prof__lead",
+    "l": 21,
+    "t": 501.8,
+    "w": 348,
+    "h": 299.5
+   },
+   {
+    "cls": "prof__sec.prof__sec--scores",
+    "l": 21,
+    "t": 833.2,
+    "w": 348,
+    "h": 299.3
+   },
+   {
+    "cls": "prof__sec.prof__sec--facts",
+    "l": 21,
+    "t": 1164.5,
+    "w": 348,
+    "h": 1304.4
+   },
+   {
+    "cls": "prof__sec.prof__sec--worth",
+    "l": 21,
+    "t": 2501,
+    "w": 348,
+    "h": 190.5
+   },
+   {
+    "cls": "prof__plan",
+    "l": 21,
+    "t": 2723.5,
+    "w": 348,
+    "h": 1138
+   }
+  ],
+  "pgal": {
+   "l": 21,
+   "t": 105,
+   "w": 348,
+   "h": 364.8
+  },
+  "pgalPosition": "static",
+  "mosaic": {
+   "l": 0,
+   "t": 0,
+   "w": 0,
+   "h": 0
+  },
+  "cover": {
+   "l": 1,
+   "t": 105,
+   "w": 388,
+   "h": 273
+  },
+  "pastEdge": 0,
+  "pastSample": [],
+  "pastSheet": 9,
+  "pastSheetSample": [
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [-13,267]",
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [-69,211]",
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [-58,222]",
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [-44,236]",
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [-44,236]"
+  ],
+  "errors": []
+ },
+ {
+  "label": "main-0a86f47",
+  "theme": "dark",
+  "width": 1440,
+  "height": 900,
+  "title": "No. 2 Lisbon",
+  "clientWidth": 1440,
+  "scrollWidth": 1440,
+  "bodyScrollWidth": 1440,
+  "sheet": {
+   "l": 180,
+   "t": 24,
+   "w": 1080,
+   "h": 876
+  },
+  "sheetMaxWidth": "1080px",
+  "sheetBody": {
+   "l": 181,
+   "t": 107.4,
+   "w": 1078,
+   "h": 792.6,
+   "scrollWidth": 1078,
+   "clientWidth": 1078,
+   "scrollHeight": 2096,
+   "clientHeight": 793
+  },
+  "prof": {
+   "l": 213,
+   "t": 534.8,
+   "w": 1014,
+   "h": 1636.6
+  },
+  "profCols": "559.531px 414.469px",
+  "sections": [
+   {
+    "cls": "prof__lead",
+    "l": 213,
+    "t": 534.8,
+    "w": 559.5,
+    "h": 233.5
+   },
+   {
+    "cls": "prof__sec.prof__sec--scores",
+    "l": 213,
+    "t": 800.4,
+    "w": 559.5,
+    "h": 178.8
+   },
+   {
+    "cls": "prof__sec.prof__sec--facts",
+    "l": 213,
+    "t": 1011.1,
+    "w": 559.5,
+    "h": 996.3
+   },
+   {
+    "cls": "prof__sec.prof__sec--worth",
+    "l": 213,
+    "t": 2039.4,
+    "w": 559.5,
+    "h": 132
+   },
+   {
+    "cls": "prof__plan",
+    "l": 812.5,
+    "t": 534.8,
+    "w": 414.5,
+    "h": 1121.8
+   }
+  ],
+  "pgal": {
+   "l": 213,
+   "t": 107.4,
+   "w": 1014,
+   "h": 395.4
+  },
+  "pgalPosition": "static",
+  "mosaic": {
+   "l": 213,
+   "t": 107.4,
+   "w": 1014,
+   "h": 372
+  },
+  "cover": {
+   "l": 0,
+   "t": 0,
+   "w": 0,
+   "h": 0
+  },
+  "pastEdge": 0,
+  "pastSample": [],
+  "pastSheet": 5,
+  "pastSheetSample": [
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [179,459]",
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [134,414]",
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [148,428]",
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [123,403]",
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [152,432]"
+  ],
+  "errors": []
+ },
+ {
+  "label": "main-0a86f47",
+  "theme": "dark",
+  "width": 1920,
+  "height": 1080,
+  "title": "No. 2 Lisbon",
+  "clientWidth": 1920,
+  "scrollWidth": 1920,
+  "bodyScrollWidth": 1920,
+  "sheet": {
+   "l": 76.8,
+   "t": 24,
+   "w": 1766.4,
+   "h": 1056
+  },
+  "sheetMaxWidth": "1766.4px",
+  "sheetBody": {
+   "l": 77.8,
+   "t": 107.4,
+   "w": 1764.4,
+   "h": 972.6,
+   "scrollWidth": 1764,
+   "clientWidth": 1764,
+   "scrollHeight": 1618,
+   "clientHeight": 973
+  },
+  "prof": {
+   "l": 109.8,
+   "t": 587.2,
+   "w": 1700.4,
+   "h": 1105.8
+  },
+  "profCols": "520.781px 598.891px 468.703px",
+  "sections": [
+   {
+    "cls": "prof__lead",
+    "l": 109.8,
+    "t": 587.2,
+    "w": 520.8,
+    "h": 233.5
+   },
+   {
+    "cls": "prof__sec.prof__sec--scores",
+    "l": 109.8,
+    "t": 860.8,
+    "w": 520.8,
+    "h": 178.8
+   },
+   {
+    "cls": "prof__sec.prof__sec--facts",
+    "l": 686.6,
+    "t": 587.2,
+    "w": 598.9,
+    "h": 956
+   },
+   {
+    "cls": "prof__sec.prof__sec--worth",
+    "l": 109.8,
+    "t": 1079.5,
+    "w": 520.8,
+    "h": 132
+   },
+   {
+    "cls": "prof__plan",
+    "l": 1341.5,
+    "t": 587.2,
+    "w": 468.7,
+    "h": 1105.8
+   }
+  ],
+  "pgal": {
+   "l": 109.8,
+   "t": 107.4,
+   "w": 1700.4,
+   "h": 455.8
+  },
+  "pgalPosition": "sticky",
+  "mosaic": {
+   "l": 109.8,
+   "t": 107.4,
+   "w": 1700.4,
+   "h": 422.4
+  },
+  "cover": {
+   "l": 0,
+   "t": 0,
+   "w": 0,
+   "h": 0
+  },
+  "pastEdge": 0,
+  "pastSample": [],
+  "pastSheet": 5,
+  "pastSheetSample": [
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [76,356]",
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [31,311]",
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [45,325]",
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [20,300]",
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [49,329]"
+  ],
+  "errors": []
+ },
+ {
+  "label": "main-0a86f47",
+  "theme": "dark",
+  "width": 2560,
+  "height": 1440,
+  "title": "No. 2 Lisbon",
+  "clientWidth": 2560,
+  "scrollWidth": 2560,
+  "bodyScrollWidth": 2560,
+  "sheet": {
+   "l": 180,
+   "t": 24,
+   "w": 2200,
+   "h": 1416
+  },
+  "sheetMaxWidth": "2200px",
+  "sheetBody": {
+   "l": 181,
+   "t": 107.4,
+   "w": 2198,
+   "h": 1332.6,
+   "scrollWidth": 2198,
+   "clientWidth": 2198,
+   "scrollHeight": 1664,
+   "clientHeight": 1333
+  },
+  "prof": {
+   "l": 213,
+   "t": 684.8,
+   "w": 2134,
+   "h": 1054.5
+  },
+  "profCols": "662.938px 762.406px 596.641px",
+  "sections": [
+   {
+    "cls": "prof__lead",
+    "l": 213,
+    "t": 684.8,
+    "w": 662.9,
+    "h": 210.3
+   },
+   {
+    "cls": "prof__sec.prof__sec--scores",
+    "l": 213,
+    "t": 935.1,
+    "w": 662.9,
+    "h": 178.8
+   },
+   {
+    "cls": "prof__sec.prof__sec--facts",
+    "l": 931.9,
+    "t": 684.8,
+    "w": 762.4,
+    "h": 774.8
+   },
+   {
+    "cls": "prof__sec.prof__sec--worth",
+    "l": 213,
+    "t": 1153.9,
+    "w": 662.9,
+    "h": 132
+   },
+   {
+    "cls": "prof__plan",
+    "l": 1750.3,
+    "t": 684.8,
+    "w": 596.6,
+    "h": 1054.5
+   }
+  ],
+  "pgal": {
+   "l": 213,
+   "t": 107.4,
+   "w": 2134,
+   "h": 553.4
+  },
+  "pgalPosition": "sticky",
+  "mosaic": {
+   "l": 213,
+   "t": 107.4,
+   "w": 2134,
+   "h": 520
+  },
+  "cover": {
+   "l": 0,
+   "t": 0,
+   "w": 0,
+   "h": 0
+  },
+  "pastEdge": 0,
+  "pastSample": [],
+  "pastSheet": 5,
+  "pastSheetSample": [
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [179,459]",
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [134,414]",
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [148,428]",
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [123,403]",
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [152,432]"
+  ],
+  "errors": []
+ },
+ {
+  "label": "main-0a86f47",
+  "theme": "dark",
+  "width": 390,
+  "height": 844,
+  "title": "No. 2 Lisbon",
+  "clientWidth": 390,
+  "scrollWidth": 390,
+  "bodyScrollWidth": 390,
+  "sheet": {
+   "l": 0,
+   "t": 24,
+   "w": 390,
+   "h": 820
+  },
+  "sheetMaxWidth": "1080px",
+  "sheetBody": {
+   "l": 1,
+   "t": 105,
+   "w": 388,
+   "h": 739,
+   "scrollWidth": 388,
+   "clientWidth": 388,
+   "scrollHeight": 3781,
+   "clientHeight": 739
+  },
+  "prof": {
+   "l": 21,
+   "t": 501.8,
+   "w": 348,
+   "h": 3359.8
+  },
+  "profCols": "348px",
+  "sections": [
+   {
+    "cls": "prof__lead",
+    "l": 21,
+    "t": 501.8,
+    "w": 348,
+    "h": 299.5
+   },
+   {
+    "cls": "prof__sec.prof__sec--scores",
+    "l": 21,
+    "t": 833.2,
+    "w": 348,
+    "h": 299.3
+   },
+   {
+    "cls": "prof__sec.prof__sec--facts",
+    "l": 21,
+    "t": 1164.5,
+    "w": 348,
+    "h": 1304.4
+   },
+   {
+    "cls": "prof__sec.prof__sec--worth",
+    "l": 21,
+    "t": 2501,
+    "w": 348,
+    "h": 190.5
+   },
+   {
+    "cls": "prof__plan",
+    "l": 21,
+    "t": 2723.5,
+    "w": 348,
+    "h": 1138
+   }
+  ],
+  "pgal": {
+   "l": 21,
+   "t": 105,
+   "w": 348,
+   "h": 364.8
+  },
+  "pgalPosition": "static",
+  "mosaic": {
+   "l": 0,
+   "t": 0,
+   "w": 0,
+   "h": 0
+  },
+  "cover": {
+   "l": 1,
+   "t": 105,
+   "w": 388,
+   "h": 273
+  },
+  "pastEdge": 0,
+  "pastSample": [],
+  "pastSheet": 9,
+  "pastSheetSample": [
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [-13,267]",
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [-69,211]",
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [-58,222]",
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [-44,236]",
+   "span.tip__bubble.tip__bubble--top.infotip__bubble [-44,236]"
+  ],
+  "errors": []
+ }
+]

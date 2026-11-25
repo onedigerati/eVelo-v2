@@ -1,0 +1,31 @@
+$ node docs/evidence/stage-3/measure.mjs <preview> <label> docs/evidence/stage-3  # baseline-803e875 on :4174 (worktree build), main-0a86f47 on :4173
+theme width | build | sheet w (max-width) | .prof columns | mosaic h | doc scrollW/clientW | sheet body scrollW/clientW | past viewport | errors
+light | 1440 | baseline-803e875 | 1080 (1080px) | 559.531px 414.469px | 372 | 1440/1440 | 1078/1078 | 0 | 0
+light | 1920 | baseline-803e875 | 1080 (1080px) | 559.531px 414.469px | 372 | 1920/1920 | 1078/1078 | 0 | 0
+light | 2560 | baseline-803e875 | 1080 (1080px) | 559.531px 414.469px | 372 | 2560/2560 | 1078/1078 | 0 | 0
+light | 390 | baseline-803e875 | 390 (1080px) | 348px | 0 | 390/390 | 388/388 | 0 | 0
+dark | 1440 | baseline-803e875 | 1080 (1080px) | 559.531px 414.469px | 372 | 1440/1440 | 1078/1078 | 0 | 0
+dark | 1920 | baseline-803e875 | 1080 (1080px) | 559.531px 414.469px | 372 | 1920/1920 | 1078/1078 | 0 | 0
+dark | 2560 | baseline-803e875 | 1080 (1080px) | 559.531px 414.469px | 372 | 2560/2560 | 1078/1078 | 0 | 0
+dark | 390 | baseline-803e875 | 390 (1080px) | 348px | 0 | 390/390 | 388/388 | 0 | 0
+light | 1440 | main-0a86f47 | 1080 (1080px) | 559.531px 414.469px | 372 | 1440/1440 | 1078/1078 | 0 | 0
+light | 1920 | main-0a86f47 | 1766.4 (1766.4px) | 520.781px 598.891px 468.703px | 422.4 | 1920/1920 | 1764/1764 | 0 | 0
+light | 2560 | main-0a86f47 | 2200 (2200px) | 662.938px 762.406px 596.641px | 520 | 2560/2560 | 2198/2198 | 0 | 0
+light | 390 | main-0a86f47 | 390 (1080px) | 348px | 0 | 390/390 | 388/388 | 0 | 0
+dark | 1440 | main-0a86f47 | 1080 (1080px) | 559.531px 414.469px | 372 | 1440/1440 | 1078/1078 | 0 | 0
+dark | 1920 | main-0a86f47 | 1766.4 (1766.4px) | 520.781px 598.891px 468.703px | 422.4 | 1920/1920 | 1764/1764 | 0 | 0
+dark | 2560 | main-0a86f47 | 2200 (2200px) | 662.938px 762.406px 596.641px | 520 | 2560/2560 | 2198/2198 | 0 | 0
+dark | 390 | main-0a86f47 | 390 (1080px) | 348px | 0 | 390/390 | 388/388 | 0 | 0
+
+main vs baseline, every measurement equal (ignoring the new .prof__sec--* modifier class names):
+  light 1440 true
+  light 1920 false
+  light 2560 false
+  light 390 true
+  dark 1440 true
+  dark 1920 false
+  dark 2560 false
+  dark 390 true
+
+2560 light main sections: [{"cls":"prof__lead","l":213,"t":684.8,"w":662.9,"h":210.3},{"cls":"prof__sec.prof__sec--scores","l":213,"t":935.1,"w":662.9,"h":178.8},{"cls":"prof__sec.prof__sec--facts","l":931.9,"t":684.8,"w":762.4,"h":774.8},{"cls":"prof__sec.prof__sec--worth","l":213,"t":1153.9,"w":662.9,"h":132},{"cls":"prof__plan","l":1750.3,"t":684.8,"w":596.6,"h":1054.5}]
+Note: the 5 (desktop) / 9 (390) elements past the sheet body edge are hidden InfoTip bubbles (.tip__bubble), identical in the baseline; clipped, no scroll.

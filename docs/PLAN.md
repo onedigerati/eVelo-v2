@@ -9,14 +9,14 @@ On big screens (above today's frame caps, so ~1600px and up) the app uses the wi
 ## Now
 Mode: autopilot — unattended
 Agents: wide — confirmed 2026-11-24 22:41
-Stage 3 of 3 · Wide city profile
+Stage 3 of 3 · Wide city profile — built and verified, release pending
 Risk: UI only
 Checks:
-- [ ] Above 1440px the profile sheet widens (about 92vw, capped at 2200px) and lays out in three columns: story, scores and worth knowing; the essentials; your plan here. At 1440px and below, and on a 390px phone, the sheet measures and looks as it does today (proof: run the product, measured widths and screenshots against the stage 2 build)
-- [ ] At 1920 and 2560px the photo banner stays pinned at the top of the sheet; scrolling the sheet shrinks it to a strip about 200px tall, and scrolling back to the top restores it, with no flicker on a profile that only just overflows (proof: scripted scroll, measured banner heights over time; a test can't lay out CSS)
-- [ ] In the shrunk strip the odds badge doesn't crowd the photos (smaller or hidden), "All N photos" still opens the gallery, and a city without photos shows no banner (proof: screenshots, scripted click)
-- [ ] No horizontal page scroll in the open profile at 1440, 1920, 2560 and 390px, both themes (proof: scrollWidth vs clientWidth)
-- [ ] Test suite and typecheck green; e2e smoke passes (proof: test)
+- [x] Above 1440px the profile sheet widens (about 92vw, capped at 2200px) and lays out in three columns: story, scores and worth knowing; the essentials; your plan here. At 1440px and below, and on a 390px phone, the sheet measures and looks as it does today (proof: run the product, measured widths and screenshots against the stage 2 build)
+- [x] At 1920 and 2560px the photo banner stays pinned at the top of the sheet; scrolling the sheet shrinks it to a strip about 200px tall, and scrolling back to the top restores it, with no flicker on a profile that only just overflows (proof: scripted scroll, measured banner heights over time; a test can't lay out CSS)
+- [x] In the shrunk strip the odds badge doesn't crowd the photos (smaller or hidden), "All N photos" still opens the gallery, and a city without photos shows no banner (proof: screenshots, scripted click)
+- [x] No horizontal page scroll in the open profile at 1440, 1920, 2560 and 390px, both themes (proof: scrollWidth vs clientWidth)
+- [x] Test suite and typecheck green; e2e smoke passes (proof: test)
 - [ ] Live: the deploy run is green and the live profile shows the three columns and the shrinking banner at 2560px (proof: deploy run and live-page measurements)
 Open: none
 
@@ -41,8 +41,11 @@ Open: none
 - 2026-11-24 · Not a quick fix: three pages plus a change to how the story chart sizes its text, and checks at four widths.
 - 2026-11-24 · City profile sheet goes wide with B2 (three columns, pinned banner that shrinks to a strip on scroll), added to this plan as stage 3 — user, from the profile comparison; they forgot it in the first pass, and it fits this plan's Goal.
 - 2026-11-24 · On phones and up to 1440px the profile is unchanged: phones keep the swipeable photo cover and the one-column sheet; the banner is not pinned there — PM default, confirmed to the user. Why: a pinned banner would take a large share of a phone screen.
+- 2026-11-24 · (unattended) Profile banner shrink: hysteresis (shrink past 60px of scroll, grow back at ≤4px), scroll anchoring off on the sheet body, and while the banner is a strip a spacer keeps at least 60px of scroll, so a profile that overflows by more than 60px shrinks without flicker and one that overflows less never shrinks. Why: the prototype's rule never shrank Lisbon at 2560×1440 (overflow 331px < height saved 343px), and without anchoring off the browser bounced scrollTop back to 0.
+- 2026-11-24 · (unattended) The odds badge hides in the shrunk strip (the plan panel beside it shows the same number), and the plan panel scrolls with the other columns: it is the tallest column (sources sit inside it), so pinning it would never take effect.
 
 ## Open questions
+- From the stage 3 verify: in the shrunk-strip state a profile that only just overflows (Lisbon at 2560×1440) shows a band of empty sheet below the content and the tagline half under the strip's edge; at 2560 columns 1 and 3 end well above column 2. Minor — tighten later if it bothers, user's call.
 - From the stage 2 verify: at 2560 the landing has about 350px of empty space between the hero text and the story card, and the legend fills only the left half of the card. Readable, but could be tightened (e.g. widen the headline column or centre the legend) — later, user's call.
 - The scheduled "Refresh market data" workflow failed on 2026-11-23 (run 45236365283), separate from this plan — look at its log.
 - From the stage 3 review: the samples goldens are arm64-only like the others (see the x64 item), and the income samples golden hashes the bundled `market.json`, so `npm run data:refresh` changes it (as it already does the other income goldens) — refresh the hashes with the data.

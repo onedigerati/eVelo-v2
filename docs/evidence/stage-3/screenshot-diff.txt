@@ -1,0 +1,5 @@
+$ node docs/evidence/stage-3/screenshot-diff.mjs
+light 1440: 1440x900 vs 1440x900, differing pixels: 0
+light 390: 390x844 vs 390x844, differing pixels: 0
+dark 1440: 1440x900 vs 1440x900, differing pixels: 0
+dark 390: 390x844 vs 390x844, differing pixels: 0
