@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { pickSampleFutures, realStockMonthly } from '../sampleFutures'
+import { pickSampleFutures, realStockMonthly, typicalCheckpoints } from '../sampleFutures'
 import type { MarketData } from '../types'
 
 // Calendar months used by the hand-built paths: month 0 is flat, month 1 is a −10% real month
@@ -15,6 +15,30 @@ function path(T: number, a: number, crashAt = -1, crashLen = 3): number[] {
   return p
 }
 const pack = (paths: number[][]) => Int32Array.from(paths.flat())
+
+/** The typical rule written out plainly: at each checkpoint (12, 24, …, plus H when H isn't a
+ *  multiple of 12) the median of log I over paths by a full sort, then the path with the smallest
+ *  sum of squared distances to those medians, lowest index on ties. */
+function typicalRef(idx: Int32Array, H: number, rs: ArrayLike<number>): number | null {
+  const n = Math.floor(idx.length / H)
+  if (!n) return null
+  const cps: number[] = []
+  for (let c = 12; c < H; c += 12) cps.push(c)
+  cps.push(H)
+  const fin = (x: number) => (Number.isFinite(x) ? x : 0)
+  const logs = Array.from({ length: n }, (_, p) => {
+    const I = [1]
+    for (let t = 0; t < H; t++) I.push(I[t] * (1 + fin(rs[idx[p * H + t]])))
+    return cps.map((c) => Math.log(Math.min(Math.max(I[c], Number.MIN_VALUE), Number.MAX_VALUE)))
+  })
+  const med = cps.map((_, k) => {
+    const v = logs.map((l) => l[k]).sort((a, b) => a - b)
+    const lo = Math.floor((n - 1) / 2)
+    return n % 2 ? v[lo] : v[lo] + (v[lo + 1] - v[lo]) * 0.5
+  })
+  const dist = logs.map((l) => l.reduce((s, x, k) => s + (x - med[k]) ** 2, 0))
+  return dist.indexOf(Math.min(...dist))
+}
 
 // T = 200: early = start in [0, 60), late = start in [80, 200).
 const T = 200
@@ -35,9 +59,10 @@ const TEN = [
 
 describe('pickSampleFutures', () => {
   it('picks each sample from a hand-built set (even count)', () => {
+    expect(typicalRef(pack(TEN), T, realStock)).toBe(1)
     expect(pickSampleFutures(pack(TEN), T, realStock)).toEqual({
       earlyCrash: 2, // early {p4, p2, p3} by cum → median p2
-      typical: 2, // 10 paths: lower middle (5th smallest) = p2
+      typical: 1, // p1: steady, no crash, nearest the median trajectory year by year
       lateCrash: 5, // late {p5, p6} → lower middle p5
       lucky: 8, // nearest rank ⌈0.9·10⌉ = 9th smallest = p8
     })
@@ -46,9 +71,10 @@ describe('pickSampleFutures', () => {
   it('odd count', () => {
     const nine = TEN.slice(1) // drop p0; indices shift down by one
     // order: p4 p5 p6 p2 p7 p1 p3 p8 p9 (original numbering)
+    expect(typicalRef(pack(nine), T, realStock)).toBe(0)
     expect(pickSampleFutures(pack(nine), T, realStock)).toEqual({
       earlyCrash: 1, // p2
-      typical: 6, // 5th smallest = p7
+      typical: 0, // p1 again (the same steady path, now index 0)
       lateCrash: 4, // p5
       lucky: 8, // ⌈8.1⌉ = 9th = p9
     })
@@ -63,8 +89,10 @@ describe('pickSampleFutures', () => {
     const twin = pack([...TEN.slice(0, 9), p9.map((m) => (m >= 12 ? 0 : m)), odd.map(() => 0)])
     const picks = pickSampleFutures(withBad, T, bad)
     expect(picks).toEqual(pickSampleFutures(twin, T, realStock))
-    // 11 paths by cum: p4 p5 p10(0) p6 p0 p2 p7 p1 p3 p8 p9 → typical 6th = p2, lucky ⌈9.9⌉ = 10th = p8.
-    expect(picks).toEqual({ earlyCrash: 2, typical: 2, lateCrash: 5, lucky: 8 })
+    // 11 paths by cum: p4 p5 p10(0) p6 p0 p2 p7 p1 p3 p8 p9 → lucky ⌈9.9⌉ = 10th = p8. The flat path
+    // pulls the median trajectory down, so the steady p0 is now nearest it.
+    expect(typicalRef(twin, T, realStock)).toBe(0)
+    expect(picks).toEqual({ earlyCrash: 2, typical: 0, lateCrash: 5, lucky: 8 })
   })
 
   it('is deterministic and reads only its inputs', () => {
@@ -79,7 +107,8 @@ describe('pickSampleFutures', () => {
   it('ties go to the lowest path index', () => {
     const A = path(T, 0.001)
     const B = path(T, 0.002)
-    // sorted: A0 A3 B1 B2. Median position 1 (A3) → p0; 90th position 3 (B2) → p1.
+    // typical: the median trajectory is midway between A and B, so all four are equally near → p0.
+    // lucky: sorted A0 A3 B1 B2, 90th position 3 (B2) → p1.
     const picks = pickSampleFutures(pack([A, B, B, A]), T, realStock)
     expect(picks.typical).toBe(0)
     expect(picks.lucky).toBe(1)
@@ -88,8 +117,11 @@ describe('pickSampleFutures', () => {
   })
 
   it('null when no path qualifies', () => {
-    const picks = pickSampleFutures(pack([path(T, 0.001), path(T, 0.002, 5, 2), path(T, 0.003, 70)]), T, realStock)
-    expect(picks).toEqual({ earlyCrash: null, typical: 0, lateCrash: null, lucky: 2 })
+    const three = pack([path(T, 0.001), path(T, 0.002, 5, 2), path(T, 0.003, 70)])
+    const picks = pickSampleFutures(three, T, realStock)
+    // typical: p2's mid-horizon crash runs it through the median for years; it stays nearest overall.
+    expect(typicalRef(three, T, realStock)).toBe(2)
+    expect(picks).toEqual({ earlyCrash: null, typical: 2, lateCrash: null, lucky: 2 })
     expect(pickSampleFutures(new Int32Array(0), T, realStock)).toEqual({
       earlyCrash: null,
       typical: null,
@@ -177,7 +209,7 @@ describe('pickSampleFutures', () => {
       const med = (m: number) => Math.floor((m - 1) / 2)
       return {
         earlyCrash: rank(early, med),
-        typical: rank(all, med),
+        typical: typicalRef(idx, H, rs),
         lateCrash: rank(late, med),
         lucky: rank(all, (m) => Math.ceil(0.9 * m) - 1),
       }
@@ -191,6 +223,75 @@ describe('pickSampleFutures', () => {
         expect(pickSampleFutures(idx, H, rs)).toEqual(reference(idx, H, rs))
       }
     }
+    // Short and ragged horizons (and an even count) for the typical rule on its own.
+    for (const H of [1, 6, 12, 30, 100]) {
+      for (const n of [100, 101]) {
+        const idx = Int32Array.from({ length: n * H }, () => Math.floor(rand() * 50))
+        expect(pickSampleFutures(idx, H, rs).typical).toBe(typicalRef(idx, H, rs))
+      }
+    }
+  })
+
+  describe('typical follows the median trajectory, not just the endpoint', () => {
+    // Months: 0 flat, 1 −50%, 2 +100%, 3 +1%, 4 −0.5% (−11% over 24 months: no crash). Halving and doubling are exact in binary, so
+    // the crash-and-recovery path ends exactly where the flat one does.
+    const rs = [0, -0.5, 1, 0.01, -0.005]
+    const H = 60
+    const flat = new Array<number>(H).fill(0)
+    const crashBoom = flat.map((_, t) => (t < 2 ? 1 : t >= H - 2 ? 2 : 0)) // −75% at once, back at the end
+    const low = new Array<number>(H).fill(4)
+    const high = new Array<number>(H).fill(3)
+
+    it('an early crash with a late recovery to the median endpoint is not typical', () => {
+      const idx = pack([low, crashBoom, flat, high])
+      // By endpoint alone the two middle paths tie at exactly 0% and the lower index (the crash) wins.
+      const cum = [low, crashBoom, flat, high].map((p) => p.reduce((v, m) => v * (1 + rs[m]), 1) - 1)
+      expect(cum[1]).toBe(0)
+      expect(cum[2]).toBe(0)
+      const picks = pickSampleFutures(idx, H, rs)
+      expect(picks.typical).toBe(2) // the steady flat path
+      expect(picks.earlyCrash).toBe(1) // the crash path is still the early-crash sample
+      expect(typicalRef(idx, H, rs)).toBe(2)
+    })
+
+    it('ties go to the lowest path index', () => {
+      // Identical paths tie exactly; low and high are mirror images around the flat median.
+      expect(pickSampleFutures(pack([high, flat, flat]), H, rs).typical).toBe(1)
+      expect(pickSampleFutures(pack([low, high]), H, rs).typical).toBe(0)
+      expect(pickSampleFutures(pack([high, low]), H, rs).typical).toBe(0)
+    })
+
+    it('a wiped-out or overflowing index stays finite and is never typical', () => {
+      // Month 5 is −100% (the index hits 0, log −∞); month 6 overflows the index to +∞.
+      const wild = [...rs, -1, 1e308]
+      const wiped = flat.map((_, t) => (t === 3 ? 5 : 0))
+      const huge = flat.map((_, t) => (t < 3 ? 6 : 0))
+      const idx = pack([wiped, huge, low, crashBoom, flat, high])
+      const picks = pickSampleFutures(idx, H, wild)
+      expect(picks.typical).toBe(4)
+      expect(typicalRef(idx, H, wild)).toBe(4)
+      // A whole population of wiped-out paths still picks one, deterministically.
+      expect(pickSampleFutures(pack([wiped, wiped]), H, wild).typical).toBe(0)
+    })
+
+    it('T < 12: one checkpoint at T, so typical is the median endpoint', () => {
+      const t = 6
+      const at = (m: number) => new Array<number>(t).fill(m)
+      // Endpoints: 4 < 0 < 3; the flat path (index 2) is the median.
+      expect(pickSampleFutures(pack([at(3), at(4), at(0)]), t, rs).typical).toBe(2)
+      expect(pickSampleFutures(pack([at(0)]), 1, rs).typical).toBe(0)
+    })
+
+    it('checkpoints: each year end, plus T when T is not a whole number of years', () => {
+      expect(typicalCheckpoints(0)).toEqual([])
+      expect(typicalCheckpoints(6)).toEqual([6])
+      expect(typicalCheckpoints(12)).toEqual([12])
+      expect(typicalCheckpoints(30)).toEqual([12, 24, 30])
+      const c = typicalCheckpoints(360)
+      expect(c.length).toBe(30)
+      expect(c[0]).toBe(12)
+      expect(c.at(-1)).toBe(360)
+    })
   })
 
   function timed(n: number, H: number) {

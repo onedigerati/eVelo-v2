@@ -95,14 +95,17 @@ describe('same months as eVelo', () => {
   // defaults, 300 paths; sampleFutures.income.test.ts pins them under fixed picks). Arch-dependent
   // like YEARLY; an arch without an entry logs its hashes instead.
   const SAMPLES: Record<string, Record<'evelo' | 'income', string>> = {
+    // Re-pinned when typical became the path nearest the median trajectory (only the typical rows
+    // changed; the other samples hash as before). Captured on arm64; the earlier arm64 and x64
+    // hashes were identical and the new rule only adds V8's software Math.log, so x64 is pinned
+    // the same.
     arm64: {
-      evelo: 'f32dd6f5c9b5f3bf6ad4e7b29efb46325f5ae1e60b50aa7966385388f1b0cdfe',
-      income: '3122754cbe531607ac96b9e647ec93aa68f83ddf7c17ec1a1c4b81bbafeeab53',
+      evelo: 'c673f237fd52eb39df8905dadd8fe7e78ff3d838807fcc4167956d27ed3729ab',
+      income: 'd4c1eec5258246b94e6d2bf1ac4eb2471b3c7a9453e8c1e55d2c90fa3f65ed2a',
     },
-    // From CI's x64 run of a44df52 (identical to arm64).
     x64: {
-      evelo: 'f32dd6f5c9b5f3bf6ad4e7b29efb46325f5ae1e60b50aa7966385388f1b0cdfe',
-      income: '3122754cbe531607ac96b9e647ec93aa68f83ddf7c17ec1a1c4b81bbafeeab53',
+      evelo: 'c673f237fd52eb39df8905dadd8fe7e78ff3d838807fcc4167956d27ed3729ab',
+      income: 'd4c1eec5258246b94e6d2bf1ac4eb2471b3c7a9453e8c1e55d2c90fa3f65ed2a',
     },
   }
   it('bootstrap: the sample futures under the real picker are pinned', () => {

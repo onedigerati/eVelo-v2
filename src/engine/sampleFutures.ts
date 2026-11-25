@@ -3,6 +3,7 @@
 // Contract shared by the picker, simulate (eVelo) and the income engine. The picker reads only the
 // drawn month indices and the market's real stock returns, never either plan's outcome.
 
+import { median50 } from './select'
 import type { MarketData } from './types'
 
 export type SampleKey = 'earlyCrash' | 'typical' | 'lateCrash' | 'lucky'
@@ -69,6 +70,40 @@ function medianOf(paths: number[], cum: Float64Array): number | null {
   return pickAt(order, cum, Math.floor((order.length - 1) / 2))
 }
 
+/** Checkpoints of the typical rule, in months: the end of each year, 12, 24, …, plus T itself when T
+ *  is not a whole number of years (so T < 12 has the one checkpoint T). */
+export function typicalCheckpoints(T: number): number[] {
+  const out: number[] = []
+  for (let c = 12; c < T; c += 12) out.push(c)
+  if (T > 0) out.push(T)
+  return out
+}
+
+const LOG_MIN = Math.log(Number.MIN_VALUE)
+const LOG_MAX = Math.log(Number.MAX_VALUE)
+/** log x, kept finite: x ≤ 0 or NaN (a −100% month wipes the index out) maps to log of the smallest
+ *  positive double, +Infinity (overflow) to log of the largest. */
+const safeLog = (x: number): number => (x > 0 ? (x < Infinity ? Math.log(x) : LOG_MAX) : LOG_MIN)
+
+/** The path (lowest index on ties) minimising Σ_k (L[k·n + p] − median_k)², median_k the median of
+ *  column k. Selection, not sorting: O(n·K). */
+function closestToMedianTrajectory(L: Float64Array, n: number, K: number): number {
+  const dist = new Float64Array(n)
+  const col = new Float64Array(n)
+  for (let k = 0; k < K; k++) {
+    const o = k * n
+    col.set(L.subarray(o, o + n))
+    const m = median50(col)
+    for (let p = 0; p < n; p++) {
+      const d = L[o + p] - m
+      dist[p] += d * d
+    }
+  }
+  let best = 0
+  for (let p = 1; p < n; p++) if (dist[p] < dist[best]) best = p
+  return best
+}
+
 /** Choose the sample paths. `idx` holds paths × T calendar month indices (index p·T + t). */
 export function pickSampleFutures(idx: Int32Array, T: number, realStock: ArrayLike<number>): SamplePicks {
   // Per path p, with the real stock index I[0] = 1, I[t+1] = I[t]·(1 + realStock[idx[p·T + t]]):
@@ -76,8 +111,14 @@ export function pickSampleFutures(idx: Int32Array, T: number, realStock: ArrayLi
   //   worst ≤24-month decline = min over s in [0, T), k in [1, 24], s + k ≤ T of I[s+k]/I[s] − 1,
   //   and its start month is that s (month s is the first month of the fall); among equal
   //   declines the earliest start wins.
-  // typical = median path by cumulative return (lower middle for an even count); lucky = the 90th
-  // percentile (nearest rank: the ⌈0.9·n⌉-th smallest); ties go to the lowest path index.
+  // typical = the path whose real stock index stays closest to the median trajectory over the whole
+  // horizon, not just at its end: at the checkpoints c = 12, 24, …, plus T when T isn't a multiple
+  // of 12 (typicalCheckpoints), with m[c] = the median over paths of log I[c] (the midpoint of the
+  // two middle values for an even count), typical minimises Σ_c (log I[c] − m[c])²; ties go to the
+  // lowest path index. So a path that crashes early and only catches up with a late boom (median
+  // endpoint, far-from-median years in between) loses to one that tracks the median year by year.
+  // lucky = the 90th percentile by cumulative return (nearest rank: the ⌈0.9·n⌉-th smallest); ties
+  // go to the lowest path index.
   // earlyCrash / lateCrash = the median by cumulative return (same conventions) among paths whose
   // worst decline is ≥ 20% and starts in [0, 60) / [max(T − 120, 60), T), so for T ≥ 120 the two
   // never overlap (at T = 120 late is [60, 120)). When T < 120 the late window is the second half,
@@ -92,6 +133,10 @@ export function pickSampleFutures(idx: Int32Array, T: number, realStock: ArrayLi
   const lateStart = T >= LATE_MONTHS ? Math.max(T - LATE_MONTHS, EARLY_MONTHS) : half
   const earlyEnd = T >= LATE_MONTHS ? EARLY_MONTHS : Math.min(EARLY_MONTHS, half)
 
+  const cps = typicalCheckpoints(T)
+  const K = cps.length
+  // log I at each checkpoint, checkpoint-major ([k·n + p]) so each checkpoint's column is contiguous.
+  const L = new Float64Array(K * n)
   const cum = new Float64Array(n)
   const I = new Float64Array(T + 1)
   const dq = new Int32Array(T + 1)
@@ -103,6 +148,7 @@ export function pickSampleFutures(idx: Int32Array, T: number, realStock: ArrayLi
     // A non-finite month counts as a 0 return, so NaN never reaches the sort or the drawdown scan.
     for (let t = 0; t < T; t++) I[t + 1] = I[t] * (1 + fin(realStock[idx[o + t]]))
     cum[p] = I[T] - 1
+    for (let k = 0; k < K; k++) L[k * n + p] = safeLog(I[cps[k]])
 
     // min of I over (s, s + 24] by a sliding-window minimum, scanning s downward: the deque holds
     // month indices e with I increasing from head to tail, so the head is the window's minimum.
@@ -133,7 +179,7 @@ export function pickSampleFutures(idx: Int32Array, T: number, realStock: ArrayLi
   const order = sortByCum(Array.from({ length: n }, (_, p) => p), cum)
   return {
     earlyCrash: medianOf(early, cum),
-    typical: pickAt(order, cum, Math.floor((n - 1) / 2)),
+    typical: closestToMedianTrajectory(L, n, K),
     lateCrash: medianOf(late, cum),
     lucky: pickAt(order, cum, Math.ceil(0.9 * n) - 1),
   }
