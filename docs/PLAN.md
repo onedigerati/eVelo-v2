@@ -15,6 +15,9 @@ All stages done — Wide screens live on GitHub Pages 2026-11-24 (evidence: docs
 - [x] 2. Landing side by side — wider landing frame, story card ~60% of the hero, chart text keeps its size; release
 - [x] 3. Wide city profile — three-column profile sheet above 1440px, pinned photo banner that shrinks on scroll; release
 
+## Fixes
+- 2026-11-25 · Dropdowns in a plan section you open by click ("Home city", "Retire to") show in full again instead of being cut off at the section's edge — a regression from sections starting collapsed (9a6218e); new e2e smoke check fails without the fix, passes with it; typecheck, 1717 tests, e2e green; looked at 1440 dark/light and 390 phone.
+
 ## Decisions
 - 2026-11-24 · Atlas, Plan (verdict area) and Plan chart cards use C (Fluid); Landing uses B (Side by side) — user, from the comparison artifact. Why: their pick after seeing all three variants on the real pages.
 - 2026-11-24 · Keep C but fix its two weak spots: cap the ranking table's bar column, and let Plan cards go 3 across once each card is still ≥ ~560px — user, from the recommendation.

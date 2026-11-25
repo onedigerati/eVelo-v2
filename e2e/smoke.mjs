@@ -51,6 +51,27 @@ await withPreview(async (base) => {
           const lines = text.split('\n').map((l) => l.trim()).filter(Boolean)
           const shown = lines[lines.indexOf('Retire to') + 1]
           check(shown === 'Stay home' && !text.includes('Bangkok'), `${name} (${when}): "Retire to" shows Stay home, no Bangkok (got ${shown})`)
+          if (when === 'link') {
+            // A section opened by click must stop clipping once open, or its Select popovers get cut off.
+            await p.waitForTimeout(700)
+            await p.locator('.select__button').filter({ hasText: 'Stay home' }).first().click()
+            const pop = p.locator('.select__pop').first()
+            await pop.waitFor()
+            await p.waitForTimeout(400)
+            // Scroll only the rail (scrollIntoView would also scroll a clipping wrapper and hide the bug).
+            await pop.evaluate((el) => {
+              const rail = el.closest('.rail')
+              if (rail) rail.scrollTop += Math.max(0, el.getBoundingClientRect().bottom - Math.min(innerHeight, rail.getBoundingClientRect().bottom) + 16)
+            })
+            await p.waitForTimeout(200)
+            const hit = await pop.evaluate((el) => {
+              const r = el.getBoundingClientRect()
+              const top = document.elementFromPoint(r.left + r.width / 2, r.bottom - 8)
+              return el.contains(top)
+            })
+            check(hit, `${name}: "Retire to" popover shows in full in an opened section (not clipped)`)
+            await p.keyboard.press('Escape')
+          }
         }
       }
       check(errs.length === 0, `${name}: no uncaught page errors${errs.length ? ': ' + errs.join(' | ') : ''}`)

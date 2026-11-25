@@ -36,11 +36,15 @@ export function Chevron({ open }: { open: boolean }) {
 
 export function Section({ title, summary, index, defaultOpen = true, open: openProp, onOpenChange, children, className, id }: SectionProps) {
   const [openState, setOpenState] = useState(defaultOpen)
+  // Clip the body only while it animates, so popovers (Select) can escape once it is open.
+  // Driven by state, not framer's transitionEnd, which leaves `overflow: hidden` behind here.
+  const [clip, setClip] = useState(false)
   const open = openProp ?? openState
   const uid = useId()
   const bodyId = `${uid}-body`
   const toggle = () => {
     const next = !open
+    setClip(true)
     setOpenState(next)
     onOpenChange?.(next)
   }
@@ -73,10 +77,12 @@ export function Section({ title, summary, index, defaultOpen = true, open: openP
           <motion.div
             id={bodyId}
             className="section__body-wrap"
-            // Clip only while animating so popovers (Select) can escape once open.
-            initial={{ height: 0, opacity: 0, overflow: 'hidden' }}
-            animate={{ height: 'auto', opacity: 1, transitionEnd: { overflow: 'visible' } }}
-            exit={{ height: 0, opacity: 0, overflow: 'hidden' }}
+            style={{ overflow: clip ? 'hidden' : 'visible' }}
+            onAnimationStart={() => setClip(true)}
+            onAnimationComplete={() => setClip(false)}
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
             transition={{ height: { duration: 0.42, ease }, opacity: { duration: 0.28, ease } }}
           >
             <div className="section__body">{children}</div>
