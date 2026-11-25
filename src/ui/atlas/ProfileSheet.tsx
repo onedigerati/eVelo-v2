@@ -1,13 +1,15 @@
 import { m as motion } from 'framer-motion'
-import { useMemo, useSyncExternalStore } from 'react'
+import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react'
 import { AIRPORTS_AS_OF } from '../../data/airports'
 import { EXPAT_AS_OF, EXPAT_SCORE_LABELS, EXPAT_SCORE_RUBRIC, FACTS_CHECKED_AS_OF, type ExpatFacts } from '../../data/expatPicks'
 import type { City, PlanInputs } from '../../engine/types'
 import { useDestinationSim } from '../../state/sim'
 import { currency, currencyCompact, percent } from '../format'
 import { ease } from '../motion'
+import { useMediaQuery } from '../hooks'
 import { Button, InfoTip, Sheet, Skeleton, cx } from '../primitives'
 import { CATEGORY_LABEL, costDelta, successColor, successTextColor, type Ranked } from './atlasData'
+import { WIDE_PROFILE_QUERY, compactSpacer, nextCompact, stripHeight } from './bannerShrink'
 import { CodeChip } from './CodeChip'
 import { SCORE_KEYS, categoryCompare, costDataLine, oddsVsHome, profileEyebrow, researchedLine, type ProfileView } from './picks'
 import { homeRoute } from './homeRoute'
@@ -77,9 +79,46 @@ function usePhotos(cityId: string) {
 function ProfileGallery({ view, home }: { view: ProfileView<Ranked>; home?: Ranked }) {
   const { city, row } = view
   const photos = usePhotos(city.id)
+  const wide = useMediaQuery(WIDE_PROFILE_QUERY)
+  const [banner, compact] = useShrinkingBanner(wide && photos.length > 0, city.id)
   if (!photos.length) return null
   const badge = oddsBadge(row, home && { cityId: home.cityId, successRate: home.successRate, name: home.city.name }, city.name)
-  return <PhotoGallery cityName={city.name} photos={photos} badge={badge} />
+  return <PhotoGallery ref={banner} cityName={city.name} photos={photos} badge={badge} compact={compact} />
+}
+
+/**
+ * Wide screens: the pinned photo banner shrinks to a strip once the sheet's body is scrolled and
+ * grows back at the top (thresholds, hysteresis and the spacer in bannerShrink.ts). Listens only while
+ * `enabled`; stops, and the banner is full again, on close, on another city, or below the breakpoint.
+ */
+function useShrinkingBanner(enabled: boolean, key: string) {
+  const ref = useRef<HTMLElement>(null)
+  const [compact, setCompact] = useState(false)
+  useEffect(() => {
+    const banner = ref.current
+    const body = banner?.closest<HTMLElement>('.sheet__body')
+    if (!enabled || !banner || !body) return
+    let state = false
+    const update = () => {
+      const next = nextCompact(state, body.scrollTop)
+      if (next === state) return
+      // Measured with the full banner, just before it shrinks: keep enough scroll that the
+      // shrink can't clamp scrollTop back to the top (see compactSpacer).
+      if (next) {
+        const spacer = compactSpacer(body.scrollHeight - body.clientHeight, banner.offsetHeight - stripHeight(window.innerWidth))
+        body.style.setProperty('--pgal-spacer', `${spacer}px`)
+      }
+      setCompact((state = next))
+    }
+    update()
+    body.addEventListener('scroll', update, { passive: true })
+    return () => {
+      body.removeEventListener('scroll', update)
+      body.style.removeProperty('--pgal-spacer')
+      setCompact(false)
+    }
+  }, [enabled, key])
+  return [ref, enabled && compact] as const
 }
 
 function ProfileBody({
@@ -115,7 +154,7 @@ function ProfileBody({
           <p className="prof__summary">{p.summary}</p>
         </div>
 
-        <section className="prof__sec" aria-labelledby="prof-scores">
+        <section className="prof__sec prof__sec--scores" aria-labelledby="prof-scores">
           <h3 id="prof-scores" className="t-eyebrow prof__h">
             How it scores <span className="prof__h-note">· out of 5, for a US retiree on buy-borrow-die</span>
           </h3>
@@ -146,7 +185,7 @@ function ProfileBody({
           </ul>
         </section>
 
-        <section className="prof__sec" aria-labelledby="prof-facts">
+        <section className="prof__sec prof__sec--facts" aria-labelledby="prof-facts">
           <h3 id="prof-facts" className="t-eyebrow prof__h">
             The essentials
           </h3>
@@ -170,7 +209,7 @@ function ProfileBody({
           </dl>
         </section>
 
-        <section className="prof__sec" aria-labelledby="prof-worth">
+        <section className="prof__sec prof__sec--worth" aria-labelledby="prof-worth">
           <h3 id="prof-worth" className="t-eyebrow prof__h">
             Worth knowing
           </h3>

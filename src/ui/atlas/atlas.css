@@ -3580,6 +3580,98 @@
   }
 }
 
+/* ---------- Wide city profile (wide screens, stage 3) ----------
+   Above 1440px the sheet widens and lays out in three columns: story, scores and
+   worth knowing | the essentials | your plan here. The photo banner stays pinned
+   at the top of the sheet's scroller and shrinks to a strip once it's scrolled
+   (.is-compact, set by useShrinkingBanner in ProfileSheet.tsx; the strip height
+   is mirrored in bannerShrink.ts). At 1440px and below nothing here applies. */
+@media (min-width: 1441px) {
+  .prof-sheet {
+    --pgal-strip: clamp(170px, 9vw, 210px);
+    --pgal-pad: 10px;
+  }
+  .sheet.prof-sheet {
+    max-width: min(92vw, 2200px);
+  }
+  .prof {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr) minmax(400px, 0.9fr);
+    grid-template-rows: auto auto 1fr;
+    gap: var(--space-8) var(--space-9);
+  }
+  .prof__main {
+    display: contents;
+  }
+  .prof__main > * {
+    grid-column: 1;
+  }
+  .prof__main > .prof__lead {
+    grid-row: 1;
+  }
+  .prof__main > .prof__sec--scores {
+    grid-row: 2;
+  }
+  .prof__main > .prof__sec--worth {
+    grid-row: 3;
+  }
+  .prof__main > .prof__sec--facts {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+  }
+  .prof__plan {
+    grid-column: 3;
+    grid-row: 1 / span 3;
+  }
+  /* Stick below the strip, when there is one. */
+  .sheet__body:has(> .pgal) .prof__plan {
+    top: calc(var(--pgal-strip) + var(--pgal-pad) + var(--space-6));
+  }
+
+  /* Shrinking the banner must not move scrollTop: scroll anchoring would pull it back to the
+     top, growing the banner again. */
+  .prof-sheet .sheet__body {
+    overflow-anchor: none;
+  }
+  .prof-sheet .sheet__body:has(> .pgal.is-compact) > .prof {
+    margin-bottom: var(--pgal-spacer, 0px);
+  }
+  .prof-sheet .pgal {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--pgal-pad);
+    background: var(--surface-solid);
+    box-shadow: var(--shadow-band);
+  }
+  .prof-sheet .pgal__mosaic {
+    height: clamp(372px, 22vw, 520px);
+    transition: height var(--dur-3) var(--ease-out);
+  }
+  .prof-sheet .pgal__mosaic .podds {
+    transition:
+      opacity var(--dur-2) var(--ease-out),
+      visibility var(--dur-2);
+  }
+  .prof-sheet .pgal.is-compact .pgal__mosaic {
+    height: var(--pgal-strip);
+  }
+  /* The plan panel beside the strip shows the same odds. */
+  .prof-sheet .pgal.is-compact .pgal__mosaic .podds {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .prof-sheet .pgal.is-compact > .pgal__credit {
+    display: none;
+  }
+}
+@media (min-width: 1441px) and (prefers-reduced-motion: reduce) {
+  .prof-sheet .pgal__mosaic,
+  .prof-sheet .pgal__mosaic .podds {
+    transition: none;
+  }
+}
+
 /* ---------- List region chips (stage 2) ----------
    Same chip look as the map's (.rchip); the list toolbar gives them their own
    full-width row. Phones scroll the row edge to edge inside the card; wider
