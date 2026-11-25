@@ -9,15 +9,14 @@ On big screens (above today's frame caps, so ~1600px and up) the app uses the wi
 ## Now
 Mode: autopilot — unattended
 Agents: wide — confirmed 2026-11-24 22:41
-Stage 1 of 2 · Fluid Atlas and Plan — done, evidence in docs/evidence/stage-1/report.md
+Stage 2 of 2 · Landing side by side — built and verified, release pending
 Risk: UI only
 Checks:
-- [x] At 2560px the top bar, Plan workspace and Atlas page span about 94vw (Atlas ≈92vw), capped at 2400px; at 1440px every page measures as it does today (proof: run the product, measured widths and screenshots; a unit test can't lay out CSS)
-- [x] Atlas top picks and "Also worth a look" fill as many columns as fit, with no lone card in a last row of the default six picks at 1920 and 2560px (proof: screenshots, layout)
-- [x] The Atlas ranking table at 2560px keeps its plan-holds bar column capped, so the odds, yearly cost and vs-home columns sit beside the bar rather than across the page (proof: screenshot plus measured column gap)
-- [x] Plan chart cards are 3 across at 2560px, 2 across at 1920 and 1440px, and the fan chart still spans the row (proof: screenshots)
-- [x] No horizontal page scroll at 1440, 1920, 2560 and 390px, in both themes (proof: run the product, scrollWidth vs clientWidth)
+- [x] Above 1440px the landing frame widens with the window (about 94vw, capped at 2400px, matching the top bar of the other pages), and the story card takes about 60% of the hero row at 1920 and 2560px; at 1440px and below the landing measures as it does today (proof: run the product, measured widths and screenshots against the stage 1 build)
+- [x] The story chart's text stays its normal size as the card grows: axis and label font sizes measured on screen at 1920 and 2560px are within 1px of 1440px (proof: measured rendered font sizes, screenshots)
+- [x] No horizontal page scroll on the landing at 1440, 1920, 2560 and 390px, in both themes, and the 390px phone landing is unchanged (proof: scrollWidth vs clientWidth, screenshots)
 - [x] Test suite and typecheck green; e2e smoke passes (proof: test)
+- [ ] Live: the deploy run is green and the live site shows the wide Atlas, Plan and Landing at 2560px (proof: deploy run and live-page measurements)
 Open: none
 
 ## Stages
@@ -40,6 +39,7 @@ Open: none
 - 2026-11-24 · Not a quick fix: three pages plus a change to how the story chart sizes its text, and checks at four widths.
 
 ## Open questions
+- From the stage 2 verify: at 2560 the landing has about 350px of empty space between the hero text and the story card, and the legend fills only the left half of the card. Readable, but could be tightened (e.g. widen the headline column or centre the legend) — later, user's call.
 - The scheduled "Refresh market data" workflow failed on 2026-11-23 (run 45236365283), separate from this plan — look at its log.
 - From the stage 3 review: the samples goldens are arm64-only like the others (see the x64 item), and the income samples golden hashes the bundled `market.json`, so `npm run data:refresh` changes it (as it already does the other income goldens) — refresh the hashes with the data.
 - The atlas/solve golden is still arm64-only: it now logs its digest on x64 instead of skipping, so add CI's x64 digest from the next run's log (the yearly, samples and income goldens are pinned for x64 since the release run, identical to arm64) — next push.

@@ -1,0 +1,42 @@
+$ npm run e2e
+dist/assets/d3-array-BbREFQr7.js                                  192.33 kB │ gzip:  69.89 kB
+dist/assets/index-tblUVVFD.js                                     416.54 kB │ gzip: 131.77 kB
+dist/assets/AtlasView-DfyAtd3y.js                               1,381.15 kB │ gzip: 383.48 kB
+[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 874ms
+ok   landing renders text
+ok   Atlas route renders
+ok   no uncaught page errors
+ok   home "constructor" (link): plan renders, no recovery screen
+ok   home "constructor" (reload): plan renders, no recovery screen
+ok   home "constructor": no uncaught page errors
+ok   destination "__proto__" (link): plan renders, no recovery screen
+ok   destination "__proto__" (reload): plan renders, no recovery screen
+ok   destination "__proto__": no uncaught page errors
+ok   holding "constructor" (link): plan renders, no recovery screen
+ok   holding "constructor" (reload): plan renders, no recovery screen
+ok   holding "constructor": no uncaught page errors
+ok   stay home (link): plan renders, no recovery screen
+ok   stay home (link): "Retire to" shows Stay home, no Bangkok (got Stay home)
+ok   stay home (reload): plan renders, no recovery screen
+ok   stay home (reload): "Retire to" shows Stay home, no Bangkok (got Stay home)
+ok   stay home: no uncaught page errors
+ok   walkthrough: absent before sync
+ok   walkthrough: shows under the comparison after sync
+ok   walkthrough: no year slider row under the chart
+ok   walkthrough: first chapter is before-Social-Security and the chart is a slider at its first year ({"role":"slider","min":0,"max":19,"value":0,"text":"End of age 60, year 1 of 20"})
+ok   walkthrough: Play stops at the chapter's last year ({"ch":"before","year":1})
+ok   walkthrough: Next chapter carries on at the new chapter's first year (arrives)
+ok   walkthrough: End on the chart picks the last year ({"ch":"estate","year":19})
+ok   walkthrough: Home, PageUp, ArrowRight on the chart go to year 6
+ok   walkthrough: a click at the chart's right end picks the last year
+ok   same storm: shown after sync with 4 future chips
+ok   same storm: picking another future changes the caption
+ok   same storm: hidden with its reason when the futures differ (different-futures)
+ok   walkthrough and same storm: no uncaught page errors
+e2e smoke passed
+exit 0

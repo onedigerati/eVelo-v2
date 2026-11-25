@@ -1,0 +1,5 @@
+$ cmp / ImageMagick compare -metric AE baseline vs main landing screenshots (1440, 390; both themes)
+1440-light: byte-identical
+1440-dark: byte-identical
+390-light: byte-identical
+390-dark: byte-identical
