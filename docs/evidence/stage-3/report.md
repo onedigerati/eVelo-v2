@@ -8,7 +8,7 @@ Verified 2026-11-24 on 0a86f47 (uncommitted: docs/PLAN.md only, not read by the 
 | In the shrunk strip the odds badge doesn't crowd the photos (smaller or hidden), "All N photos" still opens the gallery, and a city without photos shows no banner (proof: screenshots, scripted click) | pass | [banner.txt](banner.txt): `.podds` hidden in the strip at 1920 and 2560, both themes; "All 5 photos" opens the `.pview` dialog, Escape returns to the strip. All 75 profiled cities have photos, so no-banner was simulated by removing `.pgal` at 2560: 3 columns hold, no horizontal overflow |
 | No horizontal page scroll in the open profile at 1440, 1920, 2560 and 390px, both themes (proof: scrollWidth vs clientWidth) | pass | [measurements.txt](measurements.txt): document and sheet body scrollWidth = clientWidth at all 8 width/theme combinations; 0 unclipped elements past the viewport |
 | Test suite and typecheck green; e2e smoke passes (proof: test) | pass | [tests.txt](tests.txt) 1717 pass, 1 skipped · [typecheck.txt](typecheck.txt) clean · [e2e.txt](e2e.txt) passed, 0 FAIL |
-| Live: the deploy run is green and the live profile shows the three columns and the shrinking banner at 2560px (proof: deploy run and live-page measurements) | pending | Checked after deploy, see [live.md](live.md) |
+| Live: the deploy run is green and the live profile shows the three columns and the shrinking banner at 2560px (proof: deploy run and live-page measurements) | pass | [live.md](live.md): deploy run 45556203923 green; live sheet 2200px, 3 columns, banner 520→210→520px |
 
 Project checks: type check pass · lint none configured · tests 1717 pass, 1 skipped · build pass · e2e pass
 Audit: `npm audit --omit=dev`: 0 vulnerabilities ([audit.txt](audit.txt))

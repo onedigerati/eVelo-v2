@@ -9,7 +9,7 @@ On big screens (above today's frame caps, so ~1600px and up) the app uses the wi
 ## Now
 Mode: autopilot — unattended
 Agents: wide — confirmed 2026-11-24 22:41
-Stage 3 of 3 · Wide city profile — built and verified, release pending
+Stage 3 of 3 · Wide city profile — done, live
 Risk: UI only
 Checks:
 - [x] Above 1440px the profile sheet widens (about 92vw, capped at 2200px) and lays out in three columns: story, scores and worth knowing; the essentials; your plan here. At 1440px and below, and on a 390px phone, the sheet measures and looks as it does today (proof: run the product, measured widths and screenshots against the stage 2 build)
@@ -17,13 +17,13 @@ Checks:
 - [x] In the shrunk strip the odds badge doesn't crowd the photos (smaller or hidden), "All N photos" still opens the gallery, and a city without photos shows no banner (proof: screenshots, scripted click)
 - [x] No horizontal page scroll in the open profile at 1440, 1920, 2560 and 390px, both themes (proof: scrollWidth vs clientWidth)
 - [x] Test suite and typecheck green; e2e smoke passes (proof: test)
-- [ ] Live: the deploy run is green and the live profile shows the three columns and the shrinking banner at 2560px (proof: deploy run and live-page measurements)
+- [x] Live: the deploy run is green and the live profile shows the three columns and the shrinking banner at 2560px (proof: deploy run and live-page measurements)
 Open: none
 
 ## Stages
 - [x] 1. Fluid Atlas and Plan — fluid frame above today's caps, auto-fill grids, capped ranking bars, Plan cards 3-up when wide
 - [x] 2. Landing side by side — wider landing frame, story card ~60% of the hero, chart text keeps its size; release
-- [ ] 3. Wide city profile — three-column profile sheet above 1440px, pinned photo banner that shrinks on scroll; release
+- [x] 3. Wide city profile — three-column profile sheet above 1440px, pinned photo banner that shrinks on scroll; release
 
 ## Decisions
 - 2026-11-24 · Atlas, Plan (verdict area) and Plan chart cards use C (Fluid); Landing uses B (Side by side) — user, from the comparison artifact. Why: their pick after seeing all three variants on the real pages.
