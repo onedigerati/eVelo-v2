@@ -1,30 +1,38 @@
-# Walkthrough scrubber plan
+# Wide screens plan
 
 ## Goal
-On Living on income's walkthrough, the net-worth overview chart becomes the year scrubber and shows a hover readout. Moving the mouse over it previews a year: a crosshair and the mode's floating readout box (the same `ChartReadout` as the income and comparison charts), headed "end of age N", with each plan's net worth, the gap, eVelo's portfolio, loan and loan-to-value, and what Living on income sold that year. A click still picks the year (story, ledgers and the dashed marker follow). The slider row under the chart (slider, "N years" label, big age) goes away, so there's one way to choose a year: the chart takes the slider's place for the keyboard and screen readers, and on a phone a sideways drag or tap on the chart picks the year while vertical scrolling still works. Done = it works from the engines' real results on desktop and a 390px phone, with the keyboard, both themes and reduced motion, and it's live.
+On big screens (above today's frame caps, so ~1600px and up) the app uses the window's width instead of leaving half of it as margin, as picked from the [comparison](https://claude.ai/artifact/6ZehETsEJ5tnhgQA92dwUu). Atlas, the Plan verdict and the Plan chart cards go fluid: the frame follows the window (about 94vw, up to 2400px) and grids fill as many columns as fit, with the ranking table's bars kept near their numbers and the Plan cards going three across once each is still wide enough. The Landing page goes side by side: a wider frame with the story card taking more of the hero, its chart text staying its normal size. Laptops (≤1440px), tablets and phones look as they do today. Done = checked at 1440, 1920 and 2560px plus a 390px phone, both themes, and it's live.
 
 ## Baseline
-2026-11-24 · tests: 1680 pass, 1 skipped · typecheck: clean
+2026-11-24 · tests: 1694 pass, 1 skipped · typecheck: clean
 
 ## Now
-Agents: wide — confirmed 2026-11-24 15:32
-All stages done — the walkthrough chart is the year scrubber with a hover readout, live on GitHub Pages 2026-11-24.
+Agents: wide — confirmed 2026-11-24 22:39
+Stage 1 of 2 · Fluid Atlas and Plan
+Risk: UI only
+Checks:
+- [ ] At 2560px the top bar, Plan workspace and Atlas page span about 94vw (Atlas ≈92vw), capped at 2400px; at 1440px every page measures as it does today (proof: run the product, measured widths and screenshots; a unit test can't lay out CSS)
+- [ ] Atlas top picks and "Also worth a look" fill as many columns as fit, with no lone card in a last row of the default six picks at 1920 and 2560px (proof: screenshots, layout)
+- [ ] The Atlas ranking table at 2560px keeps its plan-holds bar column capped, so the odds, yearly cost and vs-home columns sit beside the bar rather than across the page (proof: screenshot plus measured column gap)
+- [ ] Plan chart cards are 3 across at 2560px, 2 across at 1920 and 1440px, and the fan chart still spans the row (proof: screenshots)
+- [ ] No horizontal page scroll at 1440, 1920, 2560 and 390px, in both themes (proof: run the product, scrollWidth vs clientWidth)
+- [ ] Test suite and typecheck green; e2e smoke passes (proof: test)
+Open: none
 
 ## Stages
-- [x] 1. Hover readout — crosshair and `ChartReadout` box on mouse hover, previewing without picking; click picks; readout on keyboard focus
-- [x] 2. Chart as scrubber — slider row removed; the chart gets slider semantics; tap and sideways drag pick the year on touch, vertical scroll kept; tests and e2e follow; release
+- [ ] 1. Fluid Atlas and Plan — fluid frame above today's caps, auto-fill grids, capped ranking bars, Plan cards 3-up when wide
+- [ ] 2. Landing side by side — wider landing frame, story card ~60% of the hero, chart text keeps its size; release
 
 ## Decisions
-- 2026-11-24 · Hover previews a year (crosshair and readout box); a click picks it, and only a pick moves the story, ledgers and marker — user, from the recommendation ("Let's go with your recommendation"). Why: the page below stays put as the pointer crosses the chart.
-- 2026-11-24 · The chart replaces the year slider, so there's one way to choose a year; the slider, its "N years" label and the big age number go — user. Why: no redundant controls.
-- 2026-11-24 · The readout reuses the mode's `ChartReadout` (as the income and comparison charts do), headed "end of age N" because the chart plots year ends — user, from the recommendation.
-- 2026-11-24 · Readout figures: each plan's net worth, the gap between them, eVelo's portfolio, loan and loan-to-value, and Living on income's shares sold that year; the full breakdown stays in the ledgers — user, from the recommendation.
-- 2026-11-24 · On touch, a tap or a mostly sideways drag on the chart picks the year (no separate preview), and vertical drags scroll the page — user, from the recommendation.
-- 2026-11-24 · Agents: balanced (carried from the last plan).
-- 2026-11-24 · Agents: wide — user, in their autopilot command ("Jbit Autopilot, wide").
-- 2026-11-24 · Release: deploy and publish stage 2 when it's verified — user, mid-run ("deploy and publish when done", then "deploy and publish"); pushed 639ee36, live the same day.
+- 2026-11-24 · Atlas, Plan (verdict area) and Plan chart cards use C (Fluid); Landing uses B (Side by side) — user, from the comparison artifact. Why: their pick after seeing all three variants on the real pages.
+- 2026-11-24 · Keep C but fix its two weak spots: cap the ranking table's bar column, and let Plan cards go 3 across once each card is still ≥ ~560px — user, from the recommendation.
+- 2026-11-24 · Landing B keeps the story chart's labels at today's size as the card grows (the prototype's SVG scaled them up to poster size) — PM default, needed for B to read right.
+- 2026-11-24 · The changes apply only where today's caps would bind (wider than ~1520px of content); up to 1440px every page is unchanged — PM default. Why: laptops, tablets and phones were not in question.
+- 2026-11-24 · Agents: wide — user, asked at planning.
+- 2026-11-24 · Release: deploy at the end of stage 2 — PM default, as with earlier UI plans.
 - 2026-11-24 · Scale: two stages, one release; no scale signal fired, planned as one plan.
 - 2026-11-24 · No research: nothing outside the repo changes this plan.
+- 2026-11-24 · Not a quick fix: three pages plus a change to how the story chart sizes its text, and checks at four widths.
 
 ## Open questions
 - The scheduled "Refresh market data" workflow failed on 2026-11-23 (run 45236365283), separate from this plan — look at its log.
@@ -127,3 +135,4 @@ All stages done — the walkthrough chart is the year scrubber with a hover read
 - 2026-11-19 · Chart readouts: hover, tap and keyboard readouts on the Living on Income chart and the comparison chart, live on GitHub Pages — [plan](plans/2026-11-19-chart-readouts.md) · [evidence](plans/2026-11-19-chart-readouts/evidence/)
 - 2026-11-21 · Two retirements walkthrough: chapters from the plan, an overview chart, twin ledgers and Play story under the comparison, then Same storm on matched sample futures, live on GitHub Pages — [plan](plans/2026-11-21-two-retirements.md) · [evidence](plans/2026-11-21-two-retirements/evidence/)
 - 2026-11-24 · Swap the mixes: a three-way Holdings switch on the comparison card that re-runs the borrowing plan on a shared mix (eVelo on the mode's mix exact, the mode on eVelo's mix approximate), with a borrowed tag, a what's-compared line, and the walkthrough and Same storm following, live on GitHub Pages — [plan](plans/2026-11-24-swap-the-mixes.md) · [evidence](plans/2026-11-24-swap-the-mixes/evidence/)
+- 2026-11-24 · Walkthrough scrubber: the walkthrough's net-worth chart is the year scrubber, with a crosshair and hover readout; the slider row is gone, tap and sideways drag pick the year on touch, live on GitHub Pages — [plan](plans/2026-11-24-walkthrough-scrubber.md) · [evidence](plans/2026-11-24-walkthrough-scrubber/evidence/)
