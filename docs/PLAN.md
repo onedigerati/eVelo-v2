@@ -9,19 +9,19 @@ On big screens (above today's frame caps, so ~1600px and up) the app uses the wi
 ## Now
 Mode: autopilot — unattended
 Agents: wide — confirmed 2026-11-24 22:41
-Stage 2 of 2 · Landing side by side — built and verified, release pending
+Stage 2 of 2 · Landing side by side — done, live
 Risk: UI only
 Checks:
 - [x] Above 1440px the landing frame widens with the window (about 94vw, capped at 2400px, matching the top bar of the other pages), and the story card takes about 60% of the hero row at 1920 and 2560px; at 1440px and below the landing measures as it does today (proof: run the product, measured widths and screenshots against the stage 1 build)
 - [x] The story chart's text stays its normal size as the card grows: axis and label font sizes measured on screen at 1920 and 2560px are within 1px of 1440px (proof: measured rendered font sizes, screenshots)
 - [x] No horizontal page scroll on the landing at 1440, 1920, 2560 and 390px, in both themes, and the 390px phone landing is unchanged (proof: scrollWidth vs clientWidth, screenshots)
 - [x] Test suite and typecheck green; e2e smoke passes (proof: test)
-- [ ] Live: the deploy run is green and the live site shows the wide Atlas, Plan and Landing at 2560px (proof: deploy run and live-page measurements)
+- [x] Live: the deploy run is green and the live site shows the wide Atlas, Plan and Landing at 2560px (proof: deploy run and live-page measurements)
 Open: none
 
 ## Stages
 - [x] 1. Fluid Atlas and Plan — fluid frame above today's caps, auto-fill grids, capped ranking bars, Plan cards 3-up when wide
-- [ ] 2. Landing side by side — wider landing frame, story card ~60% of the hero, chart text keeps its size; release
+- [x] 2. Landing side by side — wider landing frame, story card ~60% of the hero, chart text keeps its size; release
 
 ## Decisions
 - 2026-11-24 · Atlas, Plan (verdict area) and Plan chart cards use C (Fluid); Landing uses B (Side by side) — user, from the comparison artifact. Why: their pick after seeing all three variants on the real pages.
