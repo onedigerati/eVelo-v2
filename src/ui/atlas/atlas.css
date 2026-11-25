@@ -4,6 +4,14 @@
   gap: var(--space-6);
   padding-bottom: calc(var(--space-11) + 40px);
 }
+/* Wide screens: above a laptop the frame follows the window (about 92vw, up to 2400px).
+   `.page` in views.css caps every page at 1200px and wins the cascade over the rule above,
+   so the wide rule doubles the class; at 1440px and below the page measures as before. */
+@media (min-width: 1440.02px) {
+  .page.page--atlas {
+    max-width: min(92vw, 2400px);
+  }
+}
 
 /* The docked pill (outlook/DockedVerdict, styles in outlook.css, which the shell loads up front)
    sits in a zero-height sticky slot before the page; keep it inside the gutters. */
@@ -1071,6 +1079,14 @@
   align-items: center;
   column-gap: var(--space-4);
 }
+/* Wide screens: cap the plan-holds bar column so the odds, yearly cost and vs-home numbers
+   stay beside the bar; the city column takes the extra width. */
+@media (min-width: 1440.02px) {
+  .clist__head,
+  .crow {
+    grid-template-columns: 34px minmax(0, 1fr) minmax(170px, 400px) 104px 74px 112px 52px;
+  }
+}
 .clist__head {
   padding: 0 var(--space-3) var(--space-2);
   font-size: var(--fs-xs);
@@ -1855,6 +1871,13 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+/* Wide screens: the six cards go from 3 to 6 across once each is still as wide as at 1440px
+   (~350px). Explicit steps, not auto-fill: 4 or 5 across would strand a card in the last row. */
+@media (min-width: 2480px) {
+  .picks {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
 .pick {
   --tone: var(--hairline-strong);
   position: relative;
@@ -2120,6 +2143,12 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   column-gap: var(--space-7);
+}
+/* Wide screens: as many columns as fit, each row about as wide as at 1440px (~530px). */
+@media (min-width: 1440.02px) {
+  .also__list {
+    grid-template-columns: repeat(auto-fill, minmax(460px, 1fr));
+  }
 }
 .also__row {
   position: relative;
