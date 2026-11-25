@@ -7,18 +7,8 @@ On big screens (above today's frame caps, so ~1600px and up) the app uses the wi
 2026-11-24 · tests: 1694 pass, 1 skipped · typecheck: clean
 
 ## Now
-Mode: autopilot — unattended
 Agents: wide — confirmed 2026-11-24 22:41
-Stage 3 of 3 · Wide city profile — done, live
-Risk: UI only
-Checks:
-- [x] Above 1440px the profile sheet widens (about 92vw, capped at 2200px) and lays out in three columns: story, scores and worth knowing; the essentials; your plan here. At 1440px and below, and on a 390px phone, the sheet measures and looks as it does today (proof: run the product, measured widths and screenshots against the stage 2 build)
-- [x] At 1920 and 2560px the photo banner stays pinned at the top of the sheet; scrolling the sheet shrinks it to a strip about 200px tall, and scrolling back to the top restores it, with no flicker on a profile that only just overflows (proof: scripted scroll, measured banner heights over time; a test can't lay out CSS)
-- [x] In the shrunk strip the odds badge doesn't crowd the photos (smaller or hidden), "All N photos" still opens the gallery, and a city without photos shows no banner (proof: screenshots, scripted click)
-- [x] No horizontal page scroll in the open profile at 1440, 1920, 2560 and 390px, both themes (proof: scrollWidth vs clientWidth)
-- [x] Test suite and typecheck green; e2e smoke passes (proof: test)
-- [x] Live: the deploy run is green and the live profile shows the three columns and the shrinking banner at 2560px (proof: deploy run and live-page measurements)
-Open: none
+All stages done — Wide screens live on GitHub Pages 2026-11-24 (evidence: docs/evidence/stage-1/report.md, stage-2/report.md, stage-3/report.md).
 
 ## Stages
 - [x] 1. Fluid Atlas and Plan — fluid frame above today's caps, auto-fill grids, capped ranking bars, Plan cards 3-up when wide
