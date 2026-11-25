@@ -135,11 +135,38 @@
 /* ---------- Chart grid ---------- */
 .outlook__grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-5);
+  /* Two across; three once each card would still be >= 560px wide (wide
+     screens only). The track minimum is the 3-up width when that is >= 560px,
+     else the 2-up width (capped at 560px), so the count is always 2 or 3.
+     The 0.5px keeps rounding from dropping a column. */
+  --og-gap: var(--space-5);
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(
+      min(
+        max(560px, calc((100% - 2 * var(--og-gap)) / 3 - 0.5px)),
+        calc((100% - var(--og-gap)) / 2 - 0.5px)
+      ),
+      1fr
+    )
+  );
+  gap: var(--og-gap);
 }
 .chart-frame--full {
   grid-column: 1 / -1;
+}
+/* The grid is its own size container (its children are the descendants the
+   query styles). It is 3 across exactly when its width is >= 3 * 560px + 2 gaps
+   (20px, --space-5) = 1720px; keep this number in step with the track above.
+   There, the last half card spans the row if it would sit alone in it (its
+   index among the half cards is 3n + 1; full cards span whole rows anyway). */
+.outlook__grid {
+  container-type: inline-size;
+}
+@container (min-width: 1720px) {
+  .outlook__grid > .chart-frame--half:nth-last-child(1 of .chart-frame--half):nth-child(3n + 1 of .chart-frame--half) {
+    grid-column: 1 / -1;
+  }
 }
 @media (max-width: 899.98px) {
   .outlook__grid {
