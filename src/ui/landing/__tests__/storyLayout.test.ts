@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { bandFor, BEATS, COPY, DEST, HOME, YEARS } from '../story'
-import { chartGeometry, frameCopy, frameGeometry, NARROW, REST_FRAME, sliceLabelLines, staticGeometry, VMAX, WIDE } from '../storyLayout'
+import { chartGeometry, frameCopy, frameGeometry, NARROW, REST_FRAME, sliceLabelLines, staticGeometry, VMAX, WIDE, WIDE_UP_TO, wideFor } from '../storyLayout'
 import { BEAT_IDS, beatFinish, beatIndex, beatStart, frameAt, TOTAL } from '../storyTimeline'
 
 /** Times across the whole story, every 1/20 s, plus each beat's start and finished frame. */
@@ -9,9 +9,12 @@ const TIMES = [
   ...BEAT_IDS.flatMap((id) => [beatStart(id), beatFinish(id)]),
 ]
 
+/** Widened wide layouts: the plot widths at 1920 and 2560px (and the largest the frame allows). */
+const WIDENED = [965, 1322, 1500].map((px) => wideFor(px))
+
 describe('story card geometry', () => {
-  for (const L of [WIDE, NARROW]) {
-    it(`${L.id}: the resting frame draws the Die state inside the viewBox`, () => {
+  for (const L of [WIDE, NARROW, ...WIDENED]) {
+    it(`${L.id} ${L.width}: the resting frame draws the Die state inside the viewBox`, () => {
       const g = chartGeometry(L)
       const y = (v: number) => L.YB - (v / VMAX) * (L.YB - L.YT)
       expect(g.bars).toHaveLength(YEARS + 1)
@@ -31,7 +34,7 @@ describe('story card geometry', () => {
       expect(g.travel).toBeNull()
     })
 
-    it(`${L.id}: static parts are computed once per layout`, () => {
+    it(`${L.id} ${L.width}: static parts are computed once per layout`, () => {
       expect(staticGeometry(L)).toBe(staticGeometry(L))
       const a = chartGeometry(L, frameAt(1))
       const b = chartGeometry(L, frameAt(13))
@@ -39,7 +42,7 @@ describe('story card geometry', () => {
       expect(a.margin).toBe(b.margin)
     })
 
-    it(`${L.id}: every frame stays inside the viewBox`, () => {
+    it(`${L.id} ${L.width}: every frame stays inside the viewBox`, () => {
       for (const t of TIMES) {
         const g = frameGeometry(L, frameAt(t))
         for (const b of g.bars) {
@@ -59,7 +62,7 @@ describe('story card geometry', () => {
       }
     })
 
-    it(`${L.id}: the person walks between the baseline and the x-tick labels`, () => {
+    it(`${L.id} ${L.width}: the person walks between the baseline and the x-tick labels`, () => {
       // Person: head r 3.8 at personY, body to personY + 17; tick labels ~13 units tall above xTickY.
       expect(L.personY - 3.8).toBeGreaterThan(L.YB)
       expect(L.personY + 17).toBeLessThan(L.xTickY - 13)
@@ -91,6 +94,46 @@ describe('story card geometry', () => {
     // Lines don't collide: 13-unit text, at least 15 units apart.
     for (let i = 1; i < lines.length; i++) expect(g.sliceLabel[i].y - g.sliceLabel[i - 1].y).toBeGreaterThanOrEqual(15)
     expect(sliceLabelLines(WIDE)).toEqual([COPY.estate.loanLabel, COPY.estate.loan])
+  })
+})
+
+describe('wide layout on big screens', () => {
+  it('is WIDE itself up to WIDE_UP_TO (so laptops look as before)', () => {
+    for (const px of [490, 548, WIDE_UP_TO]) expect(wideFor(px)).toBe(WIDE)
+  })
+
+  it('widens with the plot so text keeps its on-screen size (within 1px of WIDE at WIDE_UP_TO)', () => {
+    const unitPx = WIDE_UP_TO / WIDE.width
+    for (const px of [700, 965, 1322, 2000]) {
+      const L = wideFor(px)
+      // 13.5-unit text, rendered at px / L.width per unit.
+      expect(Math.abs(13.5 * (px / L.width) - 13.5 * unitPx)).toBeLessThan(0.25)
+      expect(L.width).toBeGreaterThan(WIDE.width)
+    }
+  })
+
+  it('grows only a little taller, so the chart widens rather than going tall and empty', () => {
+    for (const px of [700, 1322, 3000]) {
+      const L = wideFor(px)
+      expect(L.height).toBeGreaterThanOrEqual(WIDE.height)
+      expect(L.height).toBeLessThanOrEqual(WIDE.height + 120)
+      expect(L.width / L.height).toBeGreaterThan(WIDE.width / WIDE.height)
+    }
+  })
+
+  it('keeps the estate column, map and labels in the same places relative to the right edge', () => {
+    const L = wideFor(1322)
+    const dx = L.width - WIDE.width
+    expect(L.EX - WIDE.EX).toBe(dx)
+    expect(L.X1 - WIDE.X1).toBe(dx)
+    expect(L.map.x + L.map.w).toBe(WIDE.map.x + WIDE.map.w + dx)
+    expect(L.map.home.x).toBeLessThan(L.map.dest.x)
+    expect(L.id).toBe('wide')
+  })
+
+  it('reuses one layout per rounded width (its static geometry stays cached)', () => {
+    expect(wideFor(1322)).toBe(wideFor(1323))
+    expect(staticGeometry(wideFor(1322))).toBe(staticGeometry(wideFor(1323)))
   })
 })
 

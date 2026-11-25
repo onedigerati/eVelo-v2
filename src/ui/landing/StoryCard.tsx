@@ -8,6 +8,7 @@ import {
   sliceLabelLines,
   staticGeometry,
   WIDE,
+  wideFor,
   type StoryFrame,
   type StoryLayout,
 } from './storyLayout'
@@ -39,7 +40,8 @@ interface StoryCardProps {
  * anywhere / Die, St. Louis to Bangkok. A pure render of the model at a frame (storyTimeline.ts's
  * `frameAt(t)`); with no frame it draws the finished resting frame (the Die state). One SVG, the
  * wide or the phone layout by the plot's width, so chart text stays legible and only the visible
- * chart is drawn each frame.
+ * chart is drawn each frame. Past WIDE_UP_TO the wide layout widens with the plot (`wideFor`), so
+ * on big screens the chart gets wider rather than its text bigger.
  */
 export const StoryCard = memo(function StoryCard({ frame = REST_FRAME, playing = false, live = '', onTogglePlay, onReplay, cardRef }: StoryCardProps) {
   const c = frameCopy(frame)
@@ -49,7 +51,7 @@ export const StoryCard = memo(function StoryCard({ frame = REST_FRAME, playing =
   useLayoutEffect(() => {
     const el = plotRef.current
     if (!el) return
-    const pick = () => setLayout(el.clientWidth < NARROW_BELOW ? NARROW : WIDE)
+    const pick = () => setLayout(el.clientWidth < NARROW_BELOW ? NARROW : wideFor(el.clientWidth))
     pick()
     const ro = new ResizeObserver(pick)
     ro.observe(el)
