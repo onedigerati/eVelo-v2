@@ -135,8 +135,22 @@
 /* ---------- Chart grid ---------- */
 .outlook__grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-5);
+  /* Two across; three once each card would still be >= 560px wide (wide
+     screens only). The track minimum is the 3-up width when that is >= 560px,
+     else the 2-up width (capped at 560px), so the count is always 2 or 3.
+     The 0.5px keeps rounding from dropping a column. */
+  --og-gap: var(--space-5);
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(
+      min(
+        max(560px, calc((100% - 2 * var(--og-gap)) / 3 - 0.5px)),
+        calc((100% - var(--og-gap)) / 2 - 0.5px)
+      ),
+      1fr
+    )
+  );
+  gap: var(--og-gap);
 }
 .chart-frame--full {
   grid-column: 1 / -1;

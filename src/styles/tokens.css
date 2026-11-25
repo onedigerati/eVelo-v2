@@ -66,6 +66,9 @@
   --tabbar-h: 64px;
   --rail-w: 400px;
   --content-max: 1520px;
+  /* Top bar + Plan workspace: today's cap up to ~1617px viewports, then fluid
+     (94vw) up to 2400px on wide screens. */
+  --frame-max: max(var(--content-max), min(94vw, 2400px));
   --tap: 44px;
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
